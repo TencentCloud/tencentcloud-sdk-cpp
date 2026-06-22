@@ -24,7 +24,8 @@ AISpeakEvent::AISpeakEvent() :
     m_canBeInterruptedHasBeenSet(false),
     m_spokenTextHasBeenSet(false),
     m_spokenTypeHasBeenSet(false),
-    m_latencyMetricsHasBeenSet(false)
+    m_latencyMetricsHasBeenSet(false),
+    m_traverseReasonHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,16 @@ CoreInternalOutcome AISpeakEvent::Deserialize(const rapidjson::Value &value)
         m_latencyMetricsHasBeenSet = true;
     }
 
+    if (value.HasMember("TraverseReason") && !value["TraverseReason"].IsNull())
+    {
+        if (!value["TraverseReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AISpeakEvent.TraverseReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_traverseReason = string(value["TraverseReason"].GetString());
+        m_traverseReasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +129,14 @@ void AISpeakEvent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_latencyMetrics.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_traverseReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TraverseReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_traverseReason.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -185,5 +204,21 @@ void AISpeakEvent::SetLatencyMetrics(const AICallLatencyMetrics& _latencyMetrics
 bool AISpeakEvent::LatencyMetricsHasBeenSet() const
 {
     return m_latencyMetricsHasBeenSet;
+}
+
+string AISpeakEvent::GetTraverseReason() const
+{
+    return m_traverseReason;
+}
+
+void AISpeakEvent::SetTraverseReason(const string& _traverseReason)
+{
+    m_traverseReason = _traverseReason;
+    m_traverseReasonHasBeenSet = true;
+}
+
+bool AISpeakEvent::TraverseReasonHasBeenSet() const
+{
+    return m_traverseReasonHasBeenSet;
 }
 

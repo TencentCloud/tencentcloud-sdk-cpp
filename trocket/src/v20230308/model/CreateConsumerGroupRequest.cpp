@@ -30,7 +30,8 @@ CreateConsumerGroupRequest::CreateConsumerGroupRequest() :
     m_consumerGroupHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_tagListHasBeenSet(false),
-    m_retryPolicyHasBeenSet(false)
+    m_retryPolicyHasBeenSet(false),
+    m_liteTopicHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,14 @@ string CreateConsumerGroupRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_retryPolicy.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_liteTopicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LiteTopic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_liteTopic.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -247,6 +256,22 @@ void CreateConsumerGroupRequest::SetRetryPolicy(const RetryPolicy& _retryPolicy)
 bool CreateConsumerGroupRequest::RetryPolicyHasBeenSet() const
 {
     return m_retryPolicyHasBeenSet;
+}
+
+string CreateConsumerGroupRequest::GetLiteTopic() const
+{
+    return m_liteTopic;
+}
+
+void CreateConsumerGroupRequest::SetLiteTopic(const string& _liteTopic)
+{
+    m_liteTopic = _liteTopic;
+    m_liteTopicHasBeenSet = true;
+}
+
+bool CreateConsumerGroupRequest::LiteTopicHasBeenSet() const
+{
+    return m_liteTopicHasBeenSet;
 }
 
 

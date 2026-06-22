@@ -32,7 +32,8 @@ DescribeRocketMQMsgRequest::DescribeRocketMQMsgRequest() :
     m_queryDeadLetterMessageHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_filterTrackGroupHasBeenSet(false)
+    m_filterTrackGroupHasBeenSet(false),
+    m_queryDelayMessageHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string DescribeRocketMQMsgRequest::ToJsonString() const
         string key = "FilterTrackGroup";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_filterTrackGroup.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queryDelayMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryDelayMessage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_queryDelayMessage, allocator);
     }
 
 
@@ -289,6 +298,22 @@ void DescribeRocketMQMsgRequest::SetFilterTrackGroup(const string& _filterTrackG
 bool DescribeRocketMQMsgRequest::FilterTrackGroupHasBeenSet() const
 {
     return m_filterTrackGroupHasBeenSet;
+}
+
+bool DescribeRocketMQMsgRequest::GetQueryDelayMessage() const
+{
+    return m_queryDelayMessage;
+}
+
+void DescribeRocketMQMsgRequest::SetQueryDelayMessage(const bool& _queryDelayMessage)
+{
+    m_queryDelayMessage = _queryDelayMessage;
+    m_queryDelayMessageHasBeenSet = true;
+}
+
+bool DescribeRocketMQMsgRequest::QueryDelayMessageHasBeenSet() const
+{
+    return m_queryDelayMessageHasBeenSet;
 }
 
 

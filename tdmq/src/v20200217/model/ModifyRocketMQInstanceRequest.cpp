@@ -28,7 +28,8 @@ ModifyRocketMQInstanceRequest::ModifyRocketMQInstanceRequest() :
     m_remarkHasBeenSet(false),
     m_messageRetentionHasBeenSet(false),
     m_enableDeletionProtectionHasBeenSet(false),
-    m_sendReceiveRatioHasBeenSet(false)
+    m_sendReceiveRatioHasBeenSet(false),
+    m_aclEnabledHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string ModifyRocketMQInstanceRequest::ToJsonString() const
         string key = "SendReceiveRatio";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sendReceiveRatio, allocator);
+    }
+
+    if (m_aclEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AclEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_aclEnabled, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void ModifyRocketMQInstanceRequest::SetSendReceiveRatio(const double& _sendRecei
 bool ModifyRocketMQInstanceRequest::SendReceiveRatioHasBeenSet() const
 {
     return m_sendReceiveRatioHasBeenSet;
+}
+
+bool ModifyRocketMQInstanceRequest::GetAclEnabled() const
+{
+    return m_aclEnabled;
+}
+
+void ModifyRocketMQInstanceRequest::SetAclEnabled(const bool& _aclEnabled)
+{
+    m_aclEnabled = _aclEnabled;
+    m_aclEnabledHasBeenSet = true;
+}
+
+bool ModifyRocketMQInstanceRequest::AclEnabledHasBeenSet() const
+{
+    return m_aclEnabledHasBeenSet;
 }
 
 

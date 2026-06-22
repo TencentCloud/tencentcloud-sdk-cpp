@@ -270,6 +270,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/NextOriginACL.h
   include/tencentcloud/teo/v20220901/model/DescribeMultiPathGatewayRegionsRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeZoneSettingRequest.h
+  include/tencentcloud/teo/v20220901/model/AdvancedOriginRoutingParameters.h
   include/tencentcloud/teo/v20220901/model/ModifyL4ProxyStatusResponse.h
   include/tencentcloud/teo/v20220901/model/FileVerification.h
   include/tencentcloud/teo/v20220901/model/ModifyWebSecurityTemplateResponse.h
@@ -1082,6 +1083,7 @@ set(teo_src
   src/v20220901/model/NextOriginACL.cpp
   src/v20220901/model/DescribeMultiPathGatewayRegionsRequest.cpp
   src/v20220901/model/DescribeZoneSettingRequest.cpp
+  src/v20220901/model/AdvancedOriginRoutingParameters.cpp
   src/v20220901/model/ModifyL4ProxyStatusResponse.cpp
   src/v20220901/model/FileVerification.cpp
   src/v20220901/model/ModifyWebSecurityTemplateResponse.cpp

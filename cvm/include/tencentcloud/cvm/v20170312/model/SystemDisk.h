@@ -47,51 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取系统盘类型。系统盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br>
-<li>LOCAL_BASIC：本地硬盘</li>
-<li>LOCAL_SSD：本地SSD硬盘</li>
-<li>CLOUD_BASIC：普通云硬盘</li>
-<li>CLOUD_SSD：SSD云硬盘</li>
-<li>CLOUD_PREMIUM：高性能云硬盘</li>
-<li>CLOUD_BSSD：通用型SSD云硬盘</li>
-<li>CLOUD_HSSD：增强型SSD云硬盘</li>
-<li>CLOUD_TSSD：极速型SSD云硬盘</li><br>
-默认取值：当前有库存的硬盘类型。
-                     * @return DiskType 系统盘类型。系统盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br>
-<li>LOCAL_BASIC：本地硬盘</li>
-<li>LOCAL_SSD：本地SSD硬盘</li>
-<li>CLOUD_BASIC：普通云硬盘</li>
-<li>CLOUD_SSD：SSD云硬盘</li>
-<li>CLOUD_PREMIUM：高性能云硬盘</li>
-<li>CLOUD_BSSD：通用型SSD云硬盘</li>
-<li>CLOUD_HSSD：增强型SSD云硬盘</li>
-<li>CLOUD_TSSD：极速型SSD云硬盘</li><br>
-默认取值：当前有库存的硬盘类型。
+                     * 获取<p>系统盘类型。系统盘类型限制详见<a href="https://cloud.tencent.com/document/product/213/4952">存储概述</a>。取值范围：<br></p><li>LOCAL_BASIC：本地硬盘</li><li>LOCAL_SSD：本地SSD硬盘</li><li>CLOUD_BASIC：普通云硬盘</li><li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li>CLOUD_BSSD：通用型SSD云硬盘</li><li>CLOUD_HSSD：增强型SSD云硬盘</li><li>CLOUD_TSSD：极速型SSD云硬盘</li><br>默认取值：当前有库存的硬盘类型。
+                     * @return DiskType <p>系统盘类型。系统盘类型限制详见<a href="https://cloud.tencent.com/document/product/213/4952">存储概述</a>。取值范围：<br></p><li>LOCAL_BASIC：本地硬盘</li><li>LOCAL_SSD：本地SSD硬盘</li><li>CLOUD_BASIC：普通云硬盘</li><li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li>CLOUD_BSSD：通用型SSD云硬盘</li><li>CLOUD_HSSD：增强型SSD云硬盘</li><li>CLOUD_TSSD：极速型SSD云硬盘</li><br>默认取值：当前有库存的硬盘类型。
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置系统盘类型。系统盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br>
-<li>LOCAL_BASIC：本地硬盘</li>
-<li>LOCAL_SSD：本地SSD硬盘</li>
-<li>CLOUD_BASIC：普通云硬盘</li>
-<li>CLOUD_SSD：SSD云硬盘</li>
-<li>CLOUD_PREMIUM：高性能云硬盘</li>
-<li>CLOUD_BSSD：通用型SSD云硬盘</li>
-<li>CLOUD_HSSD：增强型SSD云硬盘</li>
-<li>CLOUD_TSSD：极速型SSD云硬盘</li><br>
-默认取值：当前有库存的硬盘类型。
-                     * @param _diskType 系统盘类型。系统盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br>
-<li>LOCAL_BASIC：本地硬盘</li>
-<li>LOCAL_SSD：本地SSD硬盘</li>
-<li>CLOUD_BASIC：普通云硬盘</li>
-<li>CLOUD_SSD：SSD云硬盘</li>
-<li>CLOUD_PREMIUM：高性能云硬盘</li>
-<li>CLOUD_BSSD：通用型SSD云硬盘</li>
-<li>CLOUD_HSSD：增强型SSD云硬盘</li>
-<li>CLOUD_TSSD：极速型SSD云硬盘</li><br>
-默认取值：当前有库存的硬盘类型。
+                     * 设置<p>系统盘类型。系统盘类型限制详见<a href="https://cloud.tencent.com/document/product/213/4952">存储概述</a>。取值范围：<br></p><li>LOCAL_BASIC：本地硬盘</li><li>LOCAL_SSD：本地SSD硬盘</li><li>CLOUD_BASIC：普通云硬盘</li><li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li>CLOUD_BSSD：通用型SSD云硬盘</li><li>CLOUD_HSSD：增强型SSD云硬盘</li><li>CLOUD_TSSD：极速型SSD云硬盘</li><br>默认取值：当前有库存的硬盘类型。
+                     * @param _diskType <p>系统盘类型。系统盘类型限制详见<a href="https://cloud.tencent.com/document/product/213/4952">存储概述</a>。取值范围：<br></p><li>LOCAL_BASIC：本地硬盘</li><li>LOCAL_SSD：本地SSD硬盘</li><li>CLOUD_BASIC：普通云硬盘</li><li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li>CLOUD_BSSD：通用型SSD云硬盘</li><li>CLOUD_HSSD：增强型SSD云硬盘</li><li>CLOUD_TSSD：极速型SSD云硬盘</li><br>默认取值：当前有库存的硬盘类型。
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -104,19 +68,15 @@ namespace TencentCloud
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取系统盘ID。
-该参数目前仅用于 [DescribeInstances](https://cloud.tencent.com/document/product/213/15728) 等查询类接口的返回参数，不可用于 [RunInstances](https://cloud.tencent.com/document/product/213/15730) 等写接口的入参。
-                     * @return DiskId 系统盘ID。
-该参数目前仅用于 [DescribeInstances](https://cloud.tencent.com/document/product/213/15728) 等查询类接口的返回参数，不可用于 [RunInstances](https://cloud.tencent.com/document/product/213/15730) 等写接口的入参。
+                     * 获取<p>系统盘ID。<br>该参数目前仅用于 <a href="https://cloud.tencent.com/document/product/213/15728">DescribeInstances</a> 等查询类接口的返回参数，不可用于 <a href="https://cloud.tencent.com/document/product/213/15730">RunInstances</a> 等写接口的入参。</p>
+                     * @return DiskId <p>系统盘ID。<br>该参数目前仅用于 <a href="https://cloud.tencent.com/document/product/213/15728">DescribeInstances</a> 等查询类接口的返回参数，不可用于 <a href="https://cloud.tencent.com/document/product/213/15730">RunInstances</a> 等写接口的入参。</p>
                      * 
                      */
                     std::string GetDiskId() const;
 
                     /**
-                     * 设置系统盘ID。
-该参数目前仅用于 [DescribeInstances](https://cloud.tencent.com/document/product/213/15728) 等查询类接口的返回参数，不可用于 [RunInstances](https://cloud.tencent.com/document/product/213/15730) 等写接口的入参。
-                     * @param _diskId 系统盘ID。
-该参数目前仅用于 [DescribeInstances](https://cloud.tencent.com/document/product/213/15728) 等查询类接口的返回参数，不可用于 [RunInstances](https://cloud.tencent.com/document/product/213/15730) 等写接口的入参。
+                     * 设置<p>系统盘ID。<br>该参数目前仅用于 <a href="https://cloud.tencent.com/document/product/213/15728">DescribeInstances</a> 等查询类接口的返回参数，不可用于 <a href="https://cloud.tencent.com/document/product/213/15730">RunInstances</a> 等写接口的入参。</p>
+                     * @param _diskId <p>系统盘ID。<br>该参数目前仅用于 <a href="https://cloud.tencent.com/document/product/213/15728">DescribeInstances</a> 等查询类接口的返回参数，不可用于 <a href="https://cloud.tencent.com/document/product/213/15730">RunInstances</a> 等写接口的入参。</p>
                      * 
                      */
                     void SetDiskId(const std::string& _diskId);
@@ -129,15 +89,15 @@ namespace TencentCloud
                     bool DiskIdHasBeenSet() const;
 
                     /**
-                     * 获取系统盘大小，单位：GiB。默认值为 50
-                     * @return DiskSize 系统盘大小，单位：GiB。默认值为 50
+                     * 获取<p>系统盘大小，单位：GiB。默认值为 50</p>
+                     * @return DiskSize <p>系统盘大小，单位：GiB。默认值为 50</p>
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
-                     * 设置系统盘大小，单位：GiB。默认值为 50
-                     * @param _diskSize 系统盘大小，单位：GiB。默认值为 50
+                     * 设置<p>系统盘大小，单位：GiB。默认值为 50</p>
+                     * @param _diskSize <p>系统盘大小，单位：GiB。默认值为 50</p>
                      * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
@@ -150,18 +110,18 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取所属的独享集群ID。
+                     * 获取<p>所属的独享集群ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CdcId 所属的独享集群ID。
+                     * @return CdcId <p>所属的独享集群ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
-                     * 设置所属的独享集群ID。
+                     * 设置<p>所属的独享集群ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cdcId 所属的独享集群ID。
+                     * @param _cdcId <p>所属的独享集群ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -175,15 +135,15 @@ namespace TencentCloud
                     bool CdcIdHasBeenSet() const;
 
                     /**
-                     * 获取磁盘名称，长度不超过128 个字符。
-                     * @return DiskName 磁盘名称，长度不超过128 个字符。
+                     * 获取<p>磁盘名称，长度不超过128 个字符。</p>
+                     * @return DiskName <p>磁盘名称，长度不超过128 个字符。</p>
                      * 
                      */
                     std::string GetDiskName() const;
 
                     /**
-                     * 设置磁盘名称，长度不超过128 个字符。
-                     * @param _diskName 磁盘名称，长度不超过128 个字符。
+                     * 设置<p>磁盘名称，长度不超过128 个字符。</p>
+                     * @param _diskName <p>磁盘名称，长度不超过128 个字符。</p>
                      * 
                      */
                     void SetDiskName(const std::string& _diskName);
@@ -195,48 +155,92 @@ namespace TencentCloud
                      */
                     bool DiskNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>系统盘是否加密。取值范围：true：加密false：不加密默认取值：false该参数目前仅用于 RunInstances 接口。当前参数灰度中。</p>
+                     * @return Encrypt <p>系统盘是否加密。取值范围：true：加密false：不加密默认取值：false该参数目前仅用于 RunInstances 接口。当前参数灰度中。</p>
+                     * 
+                     */
+                    bool GetEncrypt() const;
+
+                    /**
+                     * 设置<p>系统盘是否加密。取值范围：true：加密false：不加密默认取值：false该参数目前仅用于 RunInstances 接口。当前参数灰度中。</p>
+                     * @param _encrypt <p>系统盘是否加密。取值范围：true：加密false：不加密默认取值：false该参数目前仅用于 RunInstances 接口。当前参数灰度中。</p>
+                     * 
+                     */
+                    void SetEncrypt(const bool& _encrypt);
+
+                    /**
+                     * 判断参数 Encrypt 是否已赋值
+                     * @return Encrypt 是否已赋值
+                     * 
+                     */
+                    bool EncryptHasBeenSet() const;
+
+                    /**
+                     * 获取<p>自定义CMK对应的ID，取值为UUID或者类似kms-abcd1234。用于加密云盘。该参数目前仅用于 RunInstances 接口。当前参数灰度中。</p>
+                     * @return KmsKeyId <p>自定义CMK对应的ID，取值为UUID或者类似kms-abcd1234。用于加密云盘。该参数目前仅用于 RunInstances 接口。当前参数灰度中。</p>
+                     * 
+                     */
+                    std::string GetKmsKeyId() const;
+
+                    /**
+                     * 设置<p>自定义CMK对应的ID，取值为UUID或者类似kms-abcd1234。用于加密云盘。该参数目前仅用于 RunInstances 接口。当前参数灰度中。</p>
+                     * @param _kmsKeyId <p>自定义CMK对应的ID，取值为UUID或者类似kms-abcd1234。用于加密云盘。该参数目前仅用于 RunInstances 接口。当前参数灰度中。</p>
+                     * 
+                     */
+                    void SetKmsKeyId(const std::string& _kmsKeyId);
+
+                    /**
+                     * 判断参数 KmsKeyId 是否已赋值
+                     * @return KmsKeyId 是否已赋值
+                     * 
+                     */
+                    bool KmsKeyIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 系统盘类型。系统盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br>
-<li>LOCAL_BASIC：本地硬盘</li>
-<li>LOCAL_SSD：本地SSD硬盘</li>
-<li>CLOUD_BASIC：普通云硬盘</li>
-<li>CLOUD_SSD：SSD云硬盘</li>
-<li>CLOUD_PREMIUM：高性能云硬盘</li>
-<li>CLOUD_BSSD：通用型SSD云硬盘</li>
-<li>CLOUD_HSSD：增强型SSD云硬盘</li>
-<li>CLOUD_TSSD：极速型SSD云硬盘</li><br>
-默认取值：当前有库存的硬盘类型。
+                     * <p>系统盘类型。系统盘类型限制详见<a href="https://cloud.tencent.com/document/product/213/4952">存储概述</a>。取值范围：<br></p><li>LOCAL_BASIC：本地硬盘</li><li>LOCAL_SSD：本地SSD硬盘</li><li>CLOUD_BASIC：普通云硬盘</li><li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li>CLOUD_BSSD：通用型SSD云硬盘</li><li>CLOUD_HSSD：增强型SSD云硬盘</li><li>CLOUD_TSSD：极速型SSD云硬盘</li><br>默认取值：当前有库存的硬盘类型。
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * 系统盘ID。
-该参数目前仅用于 [DescribeInstances](https://cloud.tencent.com/document/product/213/15728) 等查询类接口的返回参数，不可用于 [RunInstances](https://cloud.tencent.com/document/product/213/15730) 等写接口的入参。
+                     * <p>系统盘ID。<br>该参数目前仅用于 <a href="https://cloud.tencent.com/document/product/213/15728">DescribeInstances</a> 等查询类接口的返回参数，不可用于 <a href="https://cloud.tencent.com/document/product/213/15730">RunInstances</a> 等写接口的入参。</p>
                      */
                     std::string m_diskId;
                     bool m_diskIdHasBeenSet;
 
                     /**
-                     * 系统盘大小，单位：GiB。默认值为 50
+                     * <p>系统盘大小，单位：GiB。默认值为 50</p>
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 所属的独享集群ID。
+                     * <p>所属的独享集群ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;
 
                     /**
-                     * 磁盘名称，长度不超过128 个字符。
+                     * <p>磁盘名称，长度不超过128 个字符。</p>
                      */
                     std::string m_diskName;
                     bool m_diskNameHasBeenSet;
+
+                    /**
+                     * <p>系统盘是否加密。取值范围：true：加密false：不加密默认取值：false该参数目前仅用于 RunInstances 接口。当前参数灰度中。</p>
+                     */
+                    bool m_encrypt;
+                    bool m_encryptHasBeenSet;
+
+                    /**
+                     * <p>自定义CMK对应的ID，取值为UUID或者类似kms-abcd1234。用于加密云盘。该参数目前仅用于 RunInstances 接口。当前参数灰度中。</p>
+                     */
+                    std::string m_kmsKeyId;
+                    bool m_kmsKeyIdHasBeenSet;
 
                 };
             }

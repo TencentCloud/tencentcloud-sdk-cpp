@@ -28,7 +28,9 @@ CcnPolicyBasedRoutingRule::CcnPolicyBasedRoutingRule() :
     m_destinationCidrBlockHasBeenSet(false),
     m_priorityHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_policyBasedRoutingRuleIdHasBeenSet(false)
+    m_policyBasedRoutingRuleIdHasBeenSet(false),
+    m_destinationInstanceTypeHasBeenSet(false),
+    m_destinationInstanceIdHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,26 @@ CoreInternalOutcome CcnPolicyBasedRoutingRule::Deserialize(const rapidjson::Valu
         m_policyBasedRoutingRuleIdHasBeenSet = true;
     }
 
+    if (value.HasMember("DestinationInstanceType") && !value["DestinationInstanceType"].IsNull())
+    {
+        if (!value["DestinationInstanceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CcnPolicyBasedRoutingRule.DestinationInstanceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_destinationInstanceType = string(value["DestinationInstanceType"].GetString());
+        m_destinationInstanceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DestinationInstanceId") && !value["DestinationInstanceId"].IsNull())
+    {
+        if (!value["DestinationInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CcnPolicyBasedRoutingRule.DestinationInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_destinationInstanceId = string(value["DestinationInstanceId"].GetString());
+        m_destinationInstanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +208,22 @@ void CcnPolicyBasedRoutingRule::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "PolicyBasedRoutingRuleId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_policyBasedRoutingRuleId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_destinationInstanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DestinationInstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_destinationInstanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_destinationInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DestinationInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_destinationInstanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +355,37 @@ void CcnPolicyBasedRoutingRule::SetPolicyBasedRoutingRuleId(const string& _polic
 bool CcnPolicyBasedRoutingRule::PolicyBasedRoutingRuleIdHasBeenSet() const
 {
     return m_policyBasedRoutingRuleIdHasBeenSet;
+}
+
+string CcnPolicyBasedRoutingRule::GetDestinationInstanceType() const
+{
+    return m_destinationInstanceType;
+}
+
+void CcnPolicyBasedRoutingRule::SetDestinationInstanceType(const string& _destinationInstanceType)
+{
+    m_destinationInstanceType = _destinationInstanceType;
+    m_destinationInstanceTypeHasBeenSet = true;
+}
+
+bool CcnPolicyBasedRoutingRule::DestinationInstanceTypeHasBeenSet() const
+{
+    return m_destinationInstanceTypeHasBeenSet;
+}
+
+string CcnPolicyBasedRoutingRule::GetDestinationInstanceId() const
+{
+    return m_destinationInstanceId;
+}
+
+void CcnPolicyBasedRoutingRule::SetDestinationInstanceId(const string& _destinationInstanceId)
+{
+    m_destinationInstanceId = _destinationInstanceId;
+    m_destinationInstanceIdHasBeenSet = true;
+}
+
+bool CcnPolicyBasedRoutingRule::DestinationInstanceIdHasBeenSet() const
+{
+    return m_destinationInstanceIdHasBeenSet;
 }
 

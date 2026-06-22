@@ -34,7 +34,15 @@ Instance::Instance() :
     m_specFeaturesHasBeenSet(false),
     m_cvmInstanceIdHasBeenSet(false),
     m_errCodeHasBeenSet(false),
-    m_errMsgHasBeenSet(false)
+    m_errMsgHasBeenSet(false),
+    m_availableResourceHasBeenSet(false),
+    m_instanceIPHasBeenSet(false),
+    m_instanceNameHasBeenSet(false),
+    m_cvmInstanceTypeHasBeenSet(false),
+    m_autoRenewHasBeenSet(false),
+    m_isolatedHasBeenSet(false),
+    m_repairTaskInfoHasBeenSet(false),
+    m_zoneNameHasBeenSet(false)
 {
 }
 
@@ -200,6 +208,100 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_errMsgHasBeenSet = true;
     }
 
+    if (value.HasMember("AvailableResource") && !value["AvailableResource"].IsNull())
+    {
+        if (!value["AvailableResource"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.AvailableResource` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_availableResource.Deserialize(value["AvailableResource"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_availableResourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceIP") && !value["InstanceIP"].IsNull())
+    {
+        if (!value["InstanceIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.InstanceIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceIP = string(value["InstanceIP"].GetString());
+        m_instanceIPHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceName") && !value["InstanceName"].IsNull())
+    {
+        if (!value["InstanceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceName = string(value["InstanceName"].GetString());
+        m_instanceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("CvmInstanceType") && !value["CvmInstanceType"].IsNull())
+    {
+        if (!value["CvmInstanceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.CvmInstanceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cvmInstanceType = string(value["CvmInstanceType"].GetString());
+        m_cvmInstanceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoRenew") && !value["AutoRenew"].IsNull())
+    {
+        if (!value["AutoRenew"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.AutoRenew` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRenew = value["AutoRenew"].GetBool();
+        m_autoRenewHasBeenSet = true;
+    }
+
+    if (value.HasMember("Isolated") && !value["Isolated"].IsNull())
+    {
+        if (!value["Isolated"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.Isolated` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolated = value["Isolated"].GetBool();
+        m_isolatedHasBeenSet = true;
+    }
+
+    if (value.HasMember("RepairTaskInfo") && !value["RepairTaskInfo"].IsNull())
+    {
+        if (!value["RepairTaskInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.RepairTaskInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_repairTaskInfo.Deserialize(value["RepairTaskInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_repairTaskInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("ZoneName") && !value["ZoneName"].IsNull())
+    {
+        if (!value["ZoneName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneName = string(value["ZoneName"].GetString());
+        m_zoneNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -324,6 +426,72 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ErrMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_errMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_availableResourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailableResource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_availableResource.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_instanceIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cvmInstanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CvmInstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cvmInstanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoRenewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenew";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRenew, allocator);
+    }
+
+    if (m_isolatedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Isolated";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isolated, allocator);
+    }
+
+    if (m_repairTaskInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepairTaskInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_repairTaskInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_zoneNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -551,5 +719,133 @@ void Instance::SetErrMsg(const string& _errMsg)
 bool Instance::ErrMsgHasBeenSet() const
 {
     return m_errMsgHasBeenSet;
+}
+
+ResourceInfo Instance::GetAvailableResource() const
+{
+    return m_availableResource;
+}
+
+void Instance::SetAvailableResource(const ResourceInfo& _availableResource)
+{
+    m_availableResource = _availableResource;
+    m_availableResourceHasBeenSet = true;
+}
+
+bool Instance::AvailableResourceHasBeenSet() const
+{
+    return m_availableResourceHasBeenSet;
+}
+
+string Instance::GetInstanceIP() const
+{
+    return m_instanceIP;
+}
+
+void Instance::SetInstanceIP(const string& _instanceIP)
+{
+    m_instanceIP = _instanceIP;
+    m_instanceIPHasBeenSet = true;
+}
+
+bool Instance::InstanceIPHasBeenSet() const
+{
+    return m_instanceIPHasBeenSet;
+}
+
+string Instance::GetInstanceName() const
+{
+    return m_instanceName;
+}
+
+void Instance::SetInstanceName(const string& _instanceName)
+{
+    m_instanceName = _instanceName;
+    m_instanceNameHasBeenSet = true;
+}
+
+bool Instance::InstanceNameHasBeenSet() const
+{
+    return m_instanceNameHasBeenSet;
+}
+
+string Instance::GetCvmInstanceType() const
+{
+    return m_cvmInstanceType;
+}
+
+void Instance::SetCvmInstanceType(const string& _cvmInstanceType)
+{
+    m_cvmInstanceType = _cvmInstanceType;
+    m_cvmInstanceTypeHasBeenSet = true;
+}
+
+bool Instance::CvmInstanceTypeHasBeenSet() const
+{
+    return m_cvmInstanceTypeHasBeenSet;
+}
+
+bool Instance::GetAutoRenew() const
+{
+    return m_autoRenew;
+}
+
+void Instance::SetAutoRenew(const bool& _autoRenew)
+{
+    m_autoRenew = _autoRenew;
+    m_autoRenewHasBeenSet = true;
+}
+
+bool Instance::AutoRenewHasBeenSet() const
+{
+    return m_autoRenewHasBeenSet;
+}
+
+bool Instance::GetIsolated() const
+{
+    return m_isolated;
+}
+
+void Instance::SetIsolated(const bool& _isolated)
+{
+    m_isolated = _isolated;
+    m_isolatedHasBeenSet = true;
+}
+
+bool Instance::IsolatedHasBeenSet() const
+{
+    return m_isolatedHasBeenSet;
+}
+
+RepairTaskInfo Instance::GetRepairTaskInfo() const
+{
+    return m_repairTaskInfo;
+}
+
+void Instance::SetRepairTaskInfo(const RepairTaskInfo& _repairTaskInfo)
+{
+    m_repairTaskInfo = _repairTaskInfo;
+    m_repairTaskInfoHasBeenSet = true;
+}
+
+bool Instance::RepairTaskInfoHasBeenSet() const
+{
+    return m_repairTaskInfoHasBeenSet;
+}
+
+string Instance::GetZoneName() const
+{
+    return m_zoneName;
+}
+
+void Instance::SetZoneName(const string& _zoneName)
+{
+    m_zoneName = _zoneName;
+    m_zoneNameHasBeenSet = true;
+}
+
+bool Instance::ZoneNameHasBeenSet() const
+{
+    return m_zoneNameHasBeenSet;
 }
 

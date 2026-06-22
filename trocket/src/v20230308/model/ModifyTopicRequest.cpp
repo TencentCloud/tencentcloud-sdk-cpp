@@ -27,7 +27,9 @@ ModifyTopicRequest::ModifyTopicRequest() :
     m_topicHasBeenSet(false),
     m_queueNumHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_msgTTLHasBeenSet(false)
+    m_msgTTLHasBeenSet(false),
+    m_autoExpireDeleteHasBeenSet(false),
+    m_autoExpireTimeHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,22 @@ string ModifyTopicRequest::ToJsonString() const
         string key = "MsgTTL";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_msgTTL, allocator);
+    }
+
+    if (m_autoExpireDeleteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoExpireDelete";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoExpireDelete, allocator);
+    }
+
+    if (m_autoExpireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoExpireTime, allocator);
     }
 
 
@@ -164,6 +182,38 @@ void ModifyTopicRequest::SetMsgTTL(const int64_t& _msgTTL)
 bool ModifyTopicRequest::MsgTTLHasBeenSet() const
 {
     return m_msgTTLHasBeenSet;
+}
+
+bool ModifyTopicRequest::GetAutoExpireDelete() const
+{
+    return m_autoExpireDelete;
+}
+
+void ModifyTopicRequest::SetAutoExpireDelete(const bool& _autoExpireDelete)
+{
+    m_autoExpireDelete = _autoExpireDelete;
+    m_autoExpireDeleteHasBeenSet = true;
+}
+
+bool ModifyTopicRequest::AutoExpireDeleteHasBeenSet() const
+{
+    return m_autoExpireDeleteHasBeenSet;
+}
+
+int64_t ModifyTopicRequest::GetAutoExpireTime() const
+{
+    return m_autoExpireTime;
+}
+
+void ModifyTopicRequest::SetAutoExpireTime(const int64_t& _autoExpireTime)
+{
+    m_autoExpireTime = _autoExpireTime;
+    m_autoExpireTimeHasBeenSet = true;
+}
+
+bool ModifyTopicRequest::AutoExpireTimeHasBeenSet() const
+{
+    return m_autoExpireTimeHasBeenSet;
 }
 
 

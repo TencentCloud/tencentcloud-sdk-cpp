@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例Id
-                     * @return InstanceId 实例Id
+                     * 获取<p>实例Id</p>
+                     * @return InstanceId <p>实例Id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例Id
-                     * @param _instanceId 实例Id
+                     * 设置<p>实例Id</p>
+                     * @param _instanceId <p>实例Id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Vhost参数
-                     * @return VirtualHost Vhost参数
+                     * 获取<p>Vhost参数</p>
+                     * @return VirtualHost <p>Vhost参数</p>
                      * 
                      */
                     std::string GetVirtualHost() const;
 
                     /**
-                     * 设置Vhost参数
-                     * @param _virtualHost Vhost参数
+                     * 设置<p>Vhost参数</p>
+                     * @param _virtualHost <p>Vhost参数</p>
                      * 
                      */
                     void SetVirtualHost(const std::string& _virtualHost);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool VirtualHostHasBeenSet() const;
 
                     /**
-                     * 获取分页Offset
-                     * @return Offset 分页Offset
+                     * 获取<p>分页Offset</p>
+                     * @return Offset <p>分页Offset</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页Offset
-                     * @param _offset 分页Offset
+                     * 设置<p>分页Offset</p>
+                     * @param _offset <p>分页Offset</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页Limit
-                     * @return Limit 分页Limit
+                     * 获取<p>分页Limit</p>
+                     * @return Limit <p>分页Limit</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页Limit
-                     * @param _limit 分页Limit
+                     * 设置<p>分页Limit</p>
+                     * @param _limit <p>分页Limit</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取搜索关键词
-                     * @return SearchWord 搜索关键词
+                     * 获取<p>搜索关键词</p>
+                     * @return SearchWord <p>搜索关键词</p>
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置搜索关键词
-                     * @param _searchWord 搜索关键词
+                     * 设置<p>搜索关键词</p>
+                     * @param _searchWord <p>搜索关键词</p>
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取队列类型筛选，不填或 "all"：classic 和 quorum 队列；"classic"：筛选 classic 队列；"quorum"：筛选 quorum 队列
-                     * @return QueueType 队列类型筛选，不填或 "all"：classic 和 quorum 队列；"classic"：筛选 classic 队列；"quorum"：筛选 quorum 队列
+                     * 获取<p>队列类型筛选，不填或 &quot;all&quot;：classic 和 quorum 队列；&quot;classic&quot;：筛选 classic 队列；&quot;quorum&quot;：筛选 quorum 队列</p>
+                     * @return QueueType <p>队列类型筛选，不填或 &quot;all&quot;：classic 和 quorum 队列；&quot;classic&quot;：筛选 classic 队列；&quot;quorum&quot;：筛选 quorum 队列</p>
                      * 
                      */
                     std::string GetQueueType() const;
 
                     /**
-                     * 设置队列类型筛选，不填或 "all"：classic 和 quorum 队列；"classic"：筛选 classic 队列；"quorum"：筛选 quorum 队列
-                     * @param _queueType 队列类型筛选，不填或 "all"：classic 和 quorum 队列；"classic"：筛选 classic 队列；"quorum"：筛选 quorum 队列
+                     * 设置<p>队列类型筛选，不填或 &quot;all&quot;：classic 和 quorum 队列；&quot;classic&quot;：筛选 classic 队列；&quot;quorum&quot;：筛选 quorum 队列</p>
+                     * @param _queueType <p>队列类型筛选，不填或 &quot;all&quot;：classic 和 quorum 队列；&quot;classic&quot;：筛选 classic 队列；&quot;quorum&quot;：筛选 quorum 队列</p>
                      * 
                      */
                     void SetQueueType(const std::string& _queueType);
@@ -169,35 +169,15 @@ namespace TencentCloud
                     bool QueueTypeHasBeenSet() const;
 
                     /**
-                     * 获取排序依据的字段：
-ConsumerNumber - 在线消费者数量；
-MessageHeapCount - 消息堆积数；
-MessageRateInOut - 生产消费速率之和；
-MessageRateIn - 生产速率；
-MessageRateOut - 消费速率；
-                     * @return SortElement 排序依据的字段：
-ConsumerNumber - 在线消费者数量；
-MessageHeapCount - 消息堆积数；
-MessageRateInOut - 生产消费速率之和；
-MessageRateIn - 生产速率；
-MessageRateOut - 消费速率；
+                     * 获取<p>排序依据的字段：<br>messages_ready - 消息堆积数；<br>publish - 生产速率；<br>deliver - 消费速率；<br>consumers - 在线消费者数量；</p>
+                     * @return SortElement <p>排序依据的字段：<br>messages_ready - 消息堆积数；<br>publish - 生产速率；<br>deliver - 消费速率；<br>consumers - 在线消费者数量；</p>
                      * 
                      */
                     std::string GetSortElement() const;
 
                     /**
-                     * 设置排序依据的字段：
-ConsumerNumber - 在线消费者数量；
-MessageHeapCount - 消息堆积数；
-MessageRateInOut - 生产消费速率之和；
-MessageRateIn - 生产速率；
-MessageRateOut - 消费速率；
-                     * @param _sortElement 排序依据的字段：
-ConsumerNumber - 在线消费者数量；
-MessageHeapCount - 消息堆积数；
-MessageRateInOut - 生产消费速率之和；
-MessageRateIn - 生产速率；
-MessageRateOut - 消费速率；
+                     * 设置<p>排序依据的字段：<br>messages_ready - 消息堆积数；<br>publish - 生产速率；<br>deliver - 消费速率；<br>consumers - 在线消费者数量；</p>
+                     * @param _sortElement <p>排序依据的字段：<br>messages_ready - 消息堆积数；<br>publish - 生产速率；<br>deliver - 消费速率；<br>consumers - 在线消费者数量；</p>
                      * 
                      */
                     void SetSortElement(const std::string& _sortElement);
@@ -210,15 +190,15 @@ MessageRateOut - 消费速率；
                     bool SortElementHasBeenSet() const;
 
                     /**
-                     * 获取排序顺序，ascend 或 descend
-                     * @return SortOrder 排序顺序，ascend 或 descend
+                     * 获取<p>排序顺序，asc 或 desc</p>
+                     * @return SortOrder <p>排序顺序，asc 或 desc</p>
                      * 
                      */
                     std::string GetSortOrder() const;
 
                     /**
-                     * 设置排序顺序，ascend 或 descend
-                     * @param _sortOrder 排序顺序，ascend 或 descend
+                     * 设置<p>排序顺序，asc 或 desc</p>
+                     * @param _sortOrder <p>排序顺序，asc 或 desc</p>
                      * 
                      */
                     void SetSortOrder(const std::string& _sortOrder);
@@ -233,54 +213,49 @@ MessageRateOut - 消费速率；
                 private:
 
                     /**
-                     * 实例Id
+                     * <p>实例Id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Vhost参数
+                     * <p>Vhost参数</p>
                      */
                     std::string m_virtualHost;
                     bool m_virtualHostHasBeenSet;
 
                     /**
-                     * 分页Offset
+                     * <p>分页Offset</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页Limit
+                     * <p>分页Limit</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 搜索关键词
+                     * <p>搜索关键词</p>
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 队列类型筛选，不填或 "all"：classic 和 quorum 队列；"classic"：筛选 classic 队列；"quorum"：筛选 quorum 队列
+                     * <p>队列类型筛选，不填或 &quot;all&quot;：classic 和 quorum 队列；&quot;classic&quot;：筛选 classic 队列；&quot;quorum&quot;：筛选 quorum 队列</p>
                      */
                     std::string m_queueType;
                     bool m_queueTypeHasBeenSet;
 
                     /**
-                     * 排序依据的字段：
-ConsumerNumber - 在线消费者数量；
-MessageHeapCount - 消息堆积数；
-MessageRateInOut - 生产消费速率之和；
-MessageRateIn - 生产速率；
-MessageRateOut - 消费速率；
+                     * <p>排序依据的字段：<br>messages_ready - 消息堆积数；<br>publish - 生产速率；<br>deliver - 消费速率；<br>consumers - 在线消费者数量；</p>
                      */
                     std::string m_sortElement;
                     bool m_sortElementHasBeenSet;
 
                     /**
-                     * 排序顺序，ascend 或 descend
+                     * <p>排序顺序，asc 或 desc</p>
                      */
                     std::string m_sortOrder;
                     bool m_sortOrderHasBeenSet;

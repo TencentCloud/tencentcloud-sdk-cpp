@@ -92,12 +92,14 @@ namespace TencentCloud
 - FIFO: 顺序消息
 - DELAY: 延时消息
 - TRANSACTION: 事务消息
+- LITE: 轻量消息
                      * @return TopicType 主题类型，枚举值如下：
 
 - NORMAL: 普通消息
 - FIFO: 顺序消息
 - DELAY: 延时消息
 - TRANSACTION: 事务消息
+- LITE: 轻量消息
                      * 
                      */
                     std::string GetTopicType() const;
@@ -109,12 +111,14 @@ namespace TencentCloud
 - FIFO: 顺序消息
 - DELAY: 延时消息
 - TRANSACTION: 事务消息
+- LITE: 轻量消息
                      * @param _topicType 主题类型，枚举值如下：
 
 - NORMAL: 普通消息
 - FIFO: 顺序消息
 - DELAY: 延时消息
 - TRANSACTION: 事务消息
+- LITE: 轻量消息
                      * 
                      */
                     void SetTopicType(const std::string& _topicType);
@@ -210,6 +214,48 @@ namespace TencentCloud
                      */
                     bool TagListHasBeenSet() const;
 
+                    /**
+                     * 获取是否过期自动删除（仅针对轻量主题类型）
+                     * @return AutoExpireDelete 是否过期自动删除（仅针对轻量主题类型）
+                     * 
+                     */
+                    bool GetAutoExpireDelete() const;
+
+                    /**
+                     * 设置是否过期自动删除（仅针对轻量主题类型）
+                     * @param _autoExpireDelete 是否过期自动删除（仅针对轻量主题类型）
+                     * 
+                     */
+                    void SetAutoExpireDelete(const bool& _autoExpireDelete);
+
+                    /**
+                     * 判断参数 AutoExpireDelete 是否已赋值
+                     * @return AutoExpireDelete 是否已赋值
+                     * 
+                     */
+                    bool AutoExpireDeleteHasBeenSet() const;
+
+                    /**
+                     * 获取过期时间，单位：秒（仅针对轻量主题类型）
+                     * @return AutoExpireTime 过期时间，单位：秒（仅针对轻量主题类型）
+                     * 
+                     */
+                    int64_t GetAutoExpireTime() const;
+
+                    /**
+                     * 设置过期时间，单位：秒（仅针对轻量主题类型）
+                     * @param _autoExpireTime 过期时间，单位：秒（仅针对轻量主题类型）
+                     * 
+                     */
+                    void SetAutoExpireTime(const int64_t& _autoExpireTime);
+
+                    /**
+                     * 判断参数 AutoExpireTime 是否已赋值
+                     * @return AutoExpireTime 是否已赋值
+                     * 
+                     */
+                    bool AutoExpireTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -231,6 +277,7 @@ namespace TencentCloud
 - FIFO: 顺序消息
 - DELAY: 延时消息
 - TRANSACTION: 事务消息
+- LITE: 轻量消息
                      */
                     std::string m_topicType;
                     bool m_topicTypeHasBeenSet;
@@ -258,6 +305,18 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tagList;
                     bool m_tagListHasBeenSet;
+
+                    /**
+                     * 是否过期自动删除（仅针对轻量主题类型）
+                     */
+                    bool m_autoExpireDelete;
+                    bool m_autoExpireDeleteHasBeenSet;
+
+                    /**
+                     * 过期时间，单位：秒（仅针对轻量主题类型）
+                     */
+                    int64_t m_autoExpireTime;
+                    bool m_autoExpireTimeHasBeenSet;
 
                 };
             }

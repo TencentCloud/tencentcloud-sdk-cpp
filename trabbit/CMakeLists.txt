@@ -21,6 +21,7 @@ set(trabbit_public_header
 set(trabbit_public_header_model
   include/tencentcloud/trabbit/v20230418/model/DescribeRabbitMQServerlessConnectionResponse.h
   include/tencentcloud/trabbit/v20230418/model/DeleteRabbitMQServerlessPermissionResponse.h
+  include/tencentcloud/trabbit/v20230418/model/RabbitMQServerlessKeyValuePair.h
   include/tencentcloud/trabbit/v20230418/model/RabbitMQBindingListInfo.h
   include/tencentcloud/trabbit/v20230418/model/ModifyRabbitMQServerlessUserResponse.h
   include/tencentcloud/trabbit/v20230418/model/CreateRabbitMQServerlessVirtualHostRequest.h
@@ -106,6 +107,7 @@ set(trabbit_src
   src/v20230418/TrabbitClient.cpp
   src/v20230418/model/DescribeRabbitMQServerlessConnectionResponse.cpp
   src/v20230418/model/DeleteRabbitMQServerlessPermissionResponse.cpp
+  src/v20230418/model/RabbitMQServerlessKeyValuePair.cpp
   src/v20230418/model/RabbitMQBindingListInfo.cpp
   src/v20230418/model/ModifyRabbitMQServerlessUserResponse.cpp
   src/v20230418/model/CreateRabbitMQServerlessVirtualHostRequest.cpp

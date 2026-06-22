@@ -29,7 +29,8 @@ RabbitMQBindingListInfo::RabbitMQBindingListInfo() :
     m_routingKeyHasBeenSet(false),
     m_sourceExchangeTypeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_modifyTimeHasBeenSet(false)
+    m_modifyTimeHasBeenSet(false),
+    m_argumentsHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,26 @@ CoreInternalOutcome RabbitMQBindingListInfo::Deserialize(const rapidjson::Value 
         m_modifyTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Arguments") && !value["Arguments"].IsNull())
+    {
+        if (!value["Arguments"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RabbitMQBindingListInfo.Arguments` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Arguments"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RabbitMQServerlessKeyValuePair item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_arguments.push_back(item);
+        }
+        m_argumentsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +226,21 @@ void RabbitMQBindingListInfo::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "ModifyTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_argumentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Arguments";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_arguments.begin(); itr != m_arguments.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -352,5 +388,21 @@ void RabbitMQBindingListInfo::SetModifyTime(const string& _modifyTime)
 bool RabbitMQBindingListInfo::ModifyTimeHasBeenSet() const
 {
     return m_modifyTimeHasBeenSet;
+}
+
+vector<RabbitMQServerlessKeyValuePair> RabbitMQBindingListInfo::GetArguments() const
+{
+    return m_arguments;
+}
+
+void RabbitMQBindingListInfo::SetArguments(const vector<RabbitMQServerlessKeyValuePair>& _arguments)
+{
+    m_arguments = _arguments;
+    m_argumentsHasBeenSet = true;
+}
+
+bool RabbitMQBindingListInfo::ArgumentsHasBeenSet() const
+{
+    return m_argumentsHasBeenSet;
 }
 

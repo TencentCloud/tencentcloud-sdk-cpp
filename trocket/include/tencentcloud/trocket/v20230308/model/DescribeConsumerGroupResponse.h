@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取在线消费者数量
-                     * @return ConsumerNum 在线消费者数量
+                     * 获取<p>在线消费者数量</p>
+                     * @return ConsumerNum <p>在线消费者数量</p>
                      * 
                      */
                     int64_t GetConsumerNum() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool ConsumerNumHasBeenSet() const;
 
                     /**
-                     * 获取TPS
-                     * @return Tps TPS
+                     * 获取<p>TPS</p>
+                     * @return Tps <p>TPS</p>
                      * 
                      */
                     int64_t GetTps() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool TpsHasBeenSet() const;
 
                     /**
-                     * 获取消息堆积数量
-                     * @return ConsumerLag 消息堆积数量
+                     * 获取<p>消息堆积数量</p>
+                     * @return ConsumerLag <p>消息堆积数量</p>
                      * 
                      */
                     int64_t GetConsumerLag() const;
@@ -87,16 +87,8 @@ namespace TencentCloud
                     bool ConsumerLagHasBeenSet() const;
 
                     /**
-                     * 获取消费类型，枚举值如下：
-
-- PULL：PULL 消费类型
-- PUSH：PUSH 消费类型
-- POP：POP 消费类型
-                     * @return ConsumeType 消费类型，枚举值如下：
-
-- PULL：PULL 消费类型
-- PUSH：PUSH 消费类型
-- POP：POP 消费类型
+                     * 获取<p>消费类型，枚举值如下：</p><ul><li>PULL：PULL 消费类型</li><li>PUSH：PUSH 消费类型</li><li>POP：POP 消费类型</li></ul>
+                     * @return ConsumeType <p>消费类型，枚举值如下：</p><ul><li>PULL：PULL 消费类型</li><li>PUSH：PUSH 消费类型</li><li>POP：POP 消费类型</li></ul>
                      * 
                      */
                     std::string GetConsumeType() const;
@@ -109,8 +101,8 @@ namespace TencentCloud
                     bool ConsumeTypeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，**Unix时间戳（毫秒）**
-                     * @return CreatedTime 创建时间，**Unix时间戳（毫秒）**
+                     * 获取<p>创建时间，<strong>Unix时间戳（毫秒）</strong></p>
+                     * @return CreatedTime <p>创建时间，<strong>Unix时间戳（毫秒）</strong></p>
                      * 
                      */
                     int64_t GetCreatedTime() const;
@@ -123,10 +115,8 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取顺序投递：true
-并发投递：false
-                     * @return ConsumeMessageOrderly 顺序投递：true
-并发投递：false
+                     * 获取<p>顺序投递：true<br>并发投递：false</p>
+                     * @return ConsumeMessageOrderly <p>顺序投递：true<br>并发投递：false</p>
                      * 
                      */
                     bool GetConsumeMessageOrderly() const;
@@ -139,8 +129,8 @@ namespace TencentCloud
                     bool ConsumeMessageOrderlyHasBeenSet() const;
 
                     /**
-                     * 获取是否开启消费
-                     * @return ConsumeEnable 是否开启消费
+                     * 获取<p>是否开启消费</p>
+                     * @return ConsumeEnable <p>是否开启消费</p>
                      * 
                      */
                     bool GetConsumeEnable() const;
@@ -153,8 +143,8 @@ namespace TencentCloud
                     bool ConsumeEnableHasBeenSet() const;
 
                     /**
-                     * 获取最大重试次数
-                     * @return MaxRetryTimes 最大重试次数
+                     * 获取<p>最大重试次数</p>
+                     * @return MaxRetryTimes <p>最大重试次数</p>
                      * 
                      */
                     int64_t GetMaxRetryTimes() const;
@@ -167,8 +157,8 @@ namespace TencentCloud
                     bool MaxRetryTimesHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Remark 备注
+                     * 获取<p>备注</p>
+                     * @return Remark <p>备注</p>
                      * 
                      */
                     std::string GetRemark() const;
@@ -181,12 +171,8 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取消费模式：
-BROADCASTING 广播模式
-CLUSTERING 集群模式
-                     * @return MessageModel 消费模式：
-BROADCASTING 广播模式
-CLUSTERING 集群模式
+                     * 获取<p>消费模式：<br>BROADCASTING 广播模式<br>CLUSTERING 集群模式</p>
+                     * @return MessageModel <p>消费模式：<br>BROADCASTING 广播模式<br>CLUSTERING 集群模式</p>
                      * 
                      */
                     std::string GetMessageModel() const;
@@ -199,8 +185,8 @@ CLUSTERING 集群模式
                     bool MessageModelHasBeenSet() const;
 
                     /**
-                     * 获取重试策略
-                     * @return RetryPolicy 重试策略
+                     * 获取<p>重试策略</p>
+                     * @return RetryPolicy <p>重试策略</p>
                      * 
                      */
                     RetryPolicy GetRetryPolicy() const;
@@ -212,80 +198,113 @@ CLUSTERING 集群模式
                      */
                     bool RetryPolicyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>消费模式</p><p>枚举值：</p><ul><li>CLUSTERING： 集群/广播消费</li><li>LITE： LiteTopic消费</li></ul><p>默认值：CLUSTERING</p>
+                     * @return ConsumeModel <p>消费模式</p><p>枚举值：</p><ul><li>CLUSTERING： 集群/广播消费</li><li>LITE： LiteTopic消费</li></ul><p>默认值：CLUSTERING</p>
+                     * 
+                     */
+                    std::string GetConsumeModel() const;
+
+                    /**
+                     * 判断参数 ConsumeModel 是否已赋值
+                     * @return ConsumeModel 是否已赋值
+                     * 
+                     */
+                    bool ConsumeModelHasBeenSet() const;
+
+                    /**
+                     * 获取<p>订阅的轻量主题（仅适用于轻量消费模式）</p>
+                     * @return LiteTopic <p>订阅的轻量主题（仅适用于轻量消费模式）</p>
+                     * 
+                     */
+                    std::string GetLiteTopic() const;
+
+                    /**
+                     * 判断参数 LiteTopic 是否已赋值
+                     * @return LiteTopic 是否已赋值
+                     * 
+                     */
+                    bool LiteTopicHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 在线消费者数量
+                     * <p>在线消费者数量</p>
                      */
                     int64_t m_consumerNum;
                     bool m_consumerNumHasBeenSet;
 
                     /**
-                     * TPS
+                     * <p>TPS</p>
                      */
                     int64_t m_tps;
                     bool m_tpsHasBeenSet;
 
                     /**
-                     * 消息堆积数量
+                     * <p>消息堆积数量</p>
                      */
                     int64_t m_consumerLag;
                     bool m_consumerLagHasBeenSet;
 
                     /**
-                     * 消费类型，枚举值如下：
-
-- PULL：PULL 消费类型
-- PUSH：PUSH 消费类型
-- POP：POP 消费类型
+                     * <p>消费类型，枚举值如下：</p><ul><li>PULL：PULL 消费类型</li><li>PUSH：PUSH 消费类型</li><li>POP：POP 消费类型</li></ul>
                      */
                     std::string m_consumeType;
                     bool m_consumeTypeHasBeenSet;
 
                     /**
-                     * 创建时间，**Unix时间戳（毫秒）**
+                     * <p>创建时间，<strong>Unix时间戳（毫秒）</strong></p>
                      */
                     int64_t m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 顺序投递：true
-并发投递：false
+                     * <p>顺序投递：true<br>并发投递：false</p>
                      */
                     bool m_consumeMessageOrderly;
                     bool m_consumeMessageOrderlyHasBeenSet;
 
                     /**
-                     * 是否开启消费
+                     * <p>是否开启消费</p>
                      */
                     bool m_consumeEnable;
                     bool m_consumeEnableHasBeenSet;
 
                     /**
-                     * 最大重试次数
+                     * <p>最大重试次数</p>
                      */
                     int64_t m_maxRetryTimes;
                     bool m_maxRetryTimesHasBeenSet;
 
                     /**
-                     * 备注
+                     * <p>备注</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 消费模式：
-BROADCASTING 广播模式
-CLUSTERING 集群模式
+                     * <p>消费模式：<br>BROADCASTING 广播模式<br>CLUSTERING 集群模式</p>
                      */
                     std::string m_messageModel;
                     bool m_messageModelHasBeenSet;
 
                     /**
-                     * 重试策略
+                     * <p>重试策略</p>
                      */
                     RetryPolicy m_retryPolicy;
                     bool m_retryPolicyHasBeenSet;
+
+                    /**
+                     * <p>消费模式</p><p>枚举值：</p><ul><li>CLUSTERING： 集群/广播消费</li><li>LITE： LiteTopic消费</li></ul><p>默认值：CLUSTERING</p>
+                     */
+                    std::string m_consumeModel;
+                    bool m_consumeModelHasBeenSet;
+
+                    /**
+                     * <p>订阅的轻量主题（仅适用于轻量消费模式）</p>
+                     */
+                    std::string m_liteTopic;
+                    bool m_liteTopicHasBeenSet;
 
                 };
             }

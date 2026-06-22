@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取专享实例ID
-                     * @return InstanceId 专享实例ID
+                     * 获取<p>专享实例ID</p>
+                     * @return InstanceId <p>专享实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置专享实例ID
-                     * @param _instanceId 专享实例ID
+                     * 设置<p>专享实例ID</p>
+                     * @param _instanceId <p>专享实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return Name 实例名称
+                     * 获取<p>实例名称</p>
+                     * @return Name <p>实例名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _name 实例名称
+                     * 设置<p>实例名称</p>
+                     * @param _name <p>实例名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取实例备注信息
-                     * @return Remark 实例备注信息
+                     * 获取<p>实例备注信息</p>
+                     * @return Remark <p>实例备注信息</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置实例备注信息
-                     * @param _remark 实例备注信息
+                     * 设置<p>实例备注信息</p>
+                     * @param _remark <p>实例备注信息</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取实例消息保留时间，小时为单位
-                     * @return MessageRetention 实例消息保留时间，小时为单位
+                     * 获取<p>实例消息保留时间，小时为单位</p>
+                     * @return MessageRetention <p>实例消息保留时间，小时为单位</p>
                      * 
                      */
                     int64_t GetMessageRetention() const;
 
                     /**
-                     * 设置实例消息保留时间，小时为单位
-                     * @param _messageRetention 实例消息保留时间，小时为单位
+                     * 设置<p>实例消息保留时间，小时为单位</p>
+                     * @param _messageRetention <p>实例消息保留时间，小时为单位</p>
                      * 
                      */
                     void SetMessageRetention(const int64_t& _messageRetention);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool MessageRetentionHasBeenSet() const;
 
                     /**
-                     * 获取是否开启删除保护
-                     * @return EnableDeletionProtection 是否开启删除保护
+                     * 获取<p>是否开启删除保护</p>
+                     * @return EnableDeletionProtection <p>是否开启删除保护</p>
                      * 
                      */
                     bool GetEnableDeletionProtection() const;
 
                     /**
-                     * 设置是否开启删除保护
-                     * @param _enableDeletionProtection 是否开启删除保护
+                     * 设置<p>是否开启删除保护</p>
+                     * @param _enableDeletionProtection <p>是否开启删除保护</p>
                      * 
                      */
                     void SetEnableDeletionProtection(const bool& _enableDeletionProtection);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool EnableDeletionProtectionHasBeenSet() const;
 
                     /**
-                     * 获取控制生产和消费消息的 TPS 占比，取值范围0～1，默认值为0.5
-                     * @return SendReceiveRatio 控制生产和消费消息的 TPS 占比，取值范围0～1，默认值为0.5
+                     * 获取<p>控制生产和消费消息的 TPS 占比，取值范围0～1，默认值为0.5</p>
+                     * @return SendReceiveRatio <p>控制生产和消费消息的 TPS 占比，取值范围0～1，默认值为0.5</p>
                      * 
                      */
                     double GetSendReceiveRatio() const;
 
                     /**
-                     * 设置控制生产和消费消息的 TPS 占比，取值范围0～1，默认值为0.5
-                     * @param _sendReceiveRatio 控制生产和消费消息的 TPS 占比，取值范围0～1，默认值为0.5
+                     * 设置<p>控制生产和消费消息的 TPS 占比，取值范围0～1，默认值为0.5</p>
+                     * @param _sendReceiveRatio <p>控制生产和消费消息的 TPS 占比，取值范围0～1，默认值为0.5</p>
                      * 
                      */
                     void SetSendReceiveRatio(const double& _sendReceiveRatio);
@@ -168,43 +168,70 @@ namespace TencentCloud
                      */
                     bool SendReceiveRatioHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启ACL</p>
+                     * @return AclEnabled <p>是否开启ACL</p>
+                     * 
+                     */
+                    bool GetAclEnabled() const;
+
+                    /**
+                     * 设置<p>是否开启ACL</p>
+                     * @param _aclEnabled <p>是否开启ACL</p>
+                     * 
+                     */
+                    void SetAclEnabled(const bool& _aclEnabled);
+
+                    /**
+                     * 判断参数 AclEnabled 是否已赋值
+                     * @return AclEnabled 是否已赋值
+                     * 
+                     */
+                    bool AclEnabledHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 专享实例ID
+                     * <p>专享实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * <p>实例名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 实例备注信息
+                     * <p>实例备注信息</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 实例消息保留时间，小时为单位
+                     * <p>实例消息保留时间，小时为单位</p>
                      */
                     int64_t m_messageRetention;
                     bool m_messageRetentionHasBeenSet;
 
                     /**
-                     * 是否开启删除保护
+                     * <p>是否开启删除保护</p>
                      */
                     bool m_enableDeletionProtection;
                     bool m_enableDeletionProtectionHasBeenSet;
 
                     /**
-                     * 控制生产和消费消息的 TPS 占比，取值范围0～1，默认值为0.5
+                     * <p>控制生产和消费消息的 TPS 占比，取值范围0～1，默认值为0.5</p>
                      */
                     double m_sendReceiveRatio;
                     bool m_sendReceiveRatioHasBeenSet;
+
+                    /**
+                     * <p>是否开启ACL</p>
+                     */
+                    bool m_aclEnabled;
+                    bool m_aclEnabledHasBeenSet;
 
                 };
             }

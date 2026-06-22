@@ -34,7 +34,9 @@ DescribeConsumerGroupResponse::DescribeConsumerGroupResponse() :
     m_maxRetryTimesHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_messageModelHasBeenSet(false),
-    m_retryPolicyHasBeenSet(false)
+    m_retryPolicyHasBeenSet(false),
+    m_consumeModelHasBeenSet(false),
+    m_liteTopicHasBeenSet(false)
 {
 }
 
@@ -189,6 +191,26 @@ CoreInternalOutcome DescribeConsumerGroupResponse::Deserialize(const string &pay
         m_retryPolicyHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ConsumeModel") && !rsp["ConsumeModel"].IsNull())
+    {
+        if (!rsp["ConsumeModel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumeModel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_consumeModel = string(rsp["ConsumeModel"].GetString());
+        m_consumeModelHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LiteTopic") && !rsp["LiteTopic"].IsNull())
+    {
+        if (!rsp["LiteTopic"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LiteTopic` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_liteTopic = string(rsp["LiteTopic"].GetString());
+        m_liteTopicHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -286,6 +308,22 @@ string DescribeConsumerGroupResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_retryPolicy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_consumeModelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumeModel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_consumeModel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_liteTopicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LiteTopic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_liteTopic.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -408,6 +446,26 @@ RetryPolicy DescribeConsumerGroupResponse::GetRetryPolicy() const
 bool DescribeConsumerGroupResponse::RetryPolicyHasBeenSet() const
 {
     return m_retryPolicyHasBeenSet;
+}
+
+string DescribeConsumerGroupResponse::GetConsumeModel() const
+{
+    return m_consumeModel;
+}
+
+bool DescribeConsumerGroupResponse::ConsumeModelHasBeenSet() const
+{
+    return m_consumeModelHasBeenSet;
+}
+
+string DescribeConsumerGroupResponse::GetLiteTopic() const
+{
+    return m_liteTopic;
+}
+
+bool DescribeConsumerGroupResponse::LiteTopicHasBeenSet() const
+{
+    return m_liteTopicHasBeenSet;
 }
 
 

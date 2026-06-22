@@ -36,6 +36,7 @@
 #include <tencentcloud/teo/v20220901/model/StatusCodeCacheParameters.h>
 #include <tencentcloud/teo/v20220901/model/OfflineCacheParameters.h>
 #include <tencentcloud/teo/v20220901/model/SmartRoutingParameters.h>
+#include <tencentcloud/teo/v20220901/model/AdvancedOriginRoutingParameters.h>
 #include <tencentcloud/teo/v20220901/model/RangeOriginPullParameters.h>
 #include <tencentcloud/teo/v20220901/model/UpstreamHTTP2Parameters.h>
 #include <tencentcloud/teo/v20220901/model/HostHeaderParameters.h>
@@ -87,175 +88,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作名称。名称需要与参数结构体对应，例如 Name=Cache，则 CacheParameters 必填。
-<li>Cache：节点缓存 TTL；</li>
-<li>CacheKey：自定义 Cache Key；</li>
-<li>CachePrefresh：缓存预刷新；</li>
-<li>AccessURLRedirect：访问 URL 重定向；</li>
-<li>UpstreamURLRewrite：回源 URL 重写；</li>
-<li>QUIC：QUIC；</li>
-<li>WebSocket：WebSocket；</li>
-<li>Authentication：Token 鉴权；</li>
-<li>MaxAge：浏览器缓存 TTL；</li>
-<li>StatusCodeCache：状态码缓存 TTL；</li>
-<li>OfflineCache：离线缓存；</li>
-<li>SmartRouting：智能加速；</li>
-<li>RangeOriginPull：分片回源 ；</li>
-<li>UpstreamHTTP2：HTTP2 回源；</li>
-<li>HostHeader：Host Header 重写；</li>
-<li>ForceRedirectHTTPS：访问协议强制 HTTPS 跳转配置；</li>
-<li>OriginPullProtocol：回源 HTTPS；</li>
-<li>Compression：智能压缩配置；</li>
-<li>HSTS：HSTS；</li>
-<li>ClientIPHeader：存储客户端请求 IP 的头部信息配置；</li>
-<li>OCSPStapling：OCSP 装订；</li>
-<li>HTTP2：HTTP2 接入；</li>
-<li>PostMaxSize：POST 请求上传文件流式传输最大限制配置；</li>
-<li>ClientIPCountry：回源时携带客户端 IP 所属地域信息；</li>
-<li>UpstreamFollowRedirect：回源跟随重定向参数配置；</li>
-<li>UpstreamRequest：回源请求参数；</li>
-<li>Shield：源站卸载配置；</li>
-<li>TLSConfig：SSL/TLS 安全；</li>
-<li>ModifyOrigin：修改源站；</li>
-<li> SiteFailover：源站故障转移；</li>
-<li>HTTPUpstreamTimeout：七层回源超时配置；</li>
-<li>HttpResponse：HTTP 应答；</li>
-<li>ErrorPage：自定义错误页面；</li>
-<li>ModifyResponseHeader：修改 HTTP 节点响应头；</li>
-<li>ModifyRequestHeader：修改 HTTP 节点请求头；</li>
-<li>ResponseSpeedLimit：单连接下载限速；</li>
-<li>SetContentIdentifier：设置内容标识符；</li>
-<li>Vary：Vary 特性配置；</li>
-<li>ContentCompression：内容压缩配置；</li>
-<li>OriginAuthentication：回源鉴权配置。</li>
-                     * @return Name 操作名称。名称需要与参数结构体对应，例如 Name=Cache，则 CacheParameters 必填。
-<li>Cache：节点缓存 TTL；</li>
-<li>CacheKey：自定义 Cache Key；</li>
-<li>CachePrefresh：缓存预刷新；</li>
-<li>AccessURLRedirect：访问 URL 重定向；</li>
-<li>UpstreamURLRewrite：回源 URL 重写；</li>
-<li>QUIC：QUIC；</li>
-<li>WebSocket：WebSocket；</li>
-<li>Authentication：Token 鉴权；</li>
-<li>MaxAge：浏览器缓存 TTL；</li>
-<li>StatusCodeCache：状态码缓存 TTL；</li>
-<li>OfflineCache：离线缓存；</li>
-<li>SmartRouting：智能加速；</li>
-<li>RangeOriginPull：分片回源 ；</li>
-<li>UpstreamHTTP2：HTTP2 回源；</li>
-<li>HostHeader：Host Header 重写；</li>
-<li>ForceRedirectHTTPS：访问协议强制 HTTPS 跳转配置；</li>
-<li>OriginPullProtocol：回源 HTTPS；</li>
-<li>Compression：智能压缩配置；</li>
-<li>HSTS：HSTS；</li>
-<li>ClientIPHeader：存储客户端请求 IP 的头部信息配置；</li>
-<li>OCSPStapling：OCSP 装订；</li>
-<li>HTTP2：HTTP2 接入；</li>
-<li>PostMaxSize：POST 请求上传文件流式传输最大限制配置；</li>
-<li>ClientIPCountry：回源时携带客户端 IP 所属地域信息；</li>
-<li>UpstreamFollowRedirect：回源跟随重定向参数配置；</li>
-<li>UpstreamRequest：回源请求参数；</li>
-<li>Shield：源站卸载配置；</li>
-<li>TLSConfig：SSL/TLS 安全；</li>
-<li>ModifyOrigin：修改源站；</li>
-<li> SiteFailover：源站故障转移；</li>
-<li>HTTPUpstreamTimeout：七层回源超时配置；</li>
-<li>HttpResponse：HTTP 应答；</li>
-<li>ErrorPage：自定义错误页面；</li>
-<li>ModifyResponseHeader：修改 HTTP 节点响应头；</li>
-<li>ModifyRequestHeader：修改 HTTP 节点请求头；</li>
-<li>ResponseSpeedLimit：单连接下载限速；</li>
-<li>SetContentIdentifier：设置内容标识符；</li>
-<li>Vary：Vary 特性配置；</li>
-<li>ContentCompression：内容压缩配置；</li>
-<li>OriginAuthentication：回源鉴权配置。</li>
+                     * 获取<p>操作名称。名称需要与参数结构体对应，例如 Name=Cache，则 CacheParameters 必填。</p><li>Cache：节点缓存 TTL；</li><li>CacheKey：自定义 Cache Key；</li><li>CachePrefresh：缓存预刷新；</li><li>AccessURLRedirect：访问 URL 重定向；</li><li>UpstreamURLRewrite：回源 URL 重写；</li><li>QUIC：QUIC；</li><li>WebSocket：WebSocket；</li><li>Authentication：Token 鉴权；</li><li>MaxAge：浏览器缓存 TTL；</li><li>StatusCodeCache：状态码缓存 TTL；</li><li>OfflineCache：离线缓存；</li><li>SmartRouting：智能加速；</li><li>AdvancedOriginRouting：高级回源优化；</li><li>RangeOriginPull：分片回源 ；</li><li>UpstreamHTTP2：HTTP2 回源；</li><li>HostHeader：Host Header 重写；</li><li>ForceRedirectHTTPS：访问协议强制 HTTPS 跳转配置；</li><li>OriginPullProtocol：回源 HTTPS；</li><li>Compression：智能压缩配置；</li><li>HSTS：HSTS；</li><li>ClientIPHeader：存储客户端请求 IP 的头部信息配置；</li><li>OCSPStapling：OCSP 装订；</li><li>HTTP2：HTTP2 接入；</li><li>PostMaxSize：POST 请求上传文件流式传输最大限制配置；</li><li>ClientIPCountry：回源时携带客户端 IP 所属地域信息；</li><li>UpstreamFollowRedirect：回源跟随重定向参数配置；</li><li>UpstreamRequest：回源请求参数；</li><li>Shield：源站卸载配置；</li><li>TLSConfig：SSL/TLS 安全；</li><li>ModifyOrigin：修改源站；</li><li> SiteFailover：源站故障转移；</li><li>HTTPUpstreamTimeout：七层回源超时配置；</li><li>HttpResponse：HTTP 应答；</li><li>ErrorPage：自定义错误页面；</li><li>ModifyResponseHeader：修改 HTTP 节点响应头；</li><li>ModifyRequestHeader：修改 HTTP 节点请求头；</li><li>ResponseSpeedLimit：单连接下载限速；</li><li>SetContentIdentifier：设置内容标识符；</li><li>Vary：Vary 特性配置；</li><li>ContentCompression：内容压缩配置；</li><li>OriginAuthentication：回源鉴权配置。</li>
+                     * @return Name <p>操作名称。名称需要与参数结构体对应，例如 Name=Cache，则 CacheParameters 必填。</p><li>Cache：节点缓存 TTL；</li><li>CacheKey：自定义 Cache Key；</li><li>CachePrefresh：缓存预刷新；</li><li>AccessURLRedirect：访问 URL 重定向；</li><li>UpstreamURLRewrite：回源 URL 重写；</li><li>QUIC：QUIC；</li><li>WebSocket：WebSocket；</li><li>Authentication：Token 鉴权；</li><li>MaxAge：浏览器缓存 TTL；</li><li>StatusCodeCache：状态码缓存 TTL；</li><li>OfflineCache：离线缓存；</li><li>SmartRouting：智能加速；</li><li>AdvancedOriginRouting：高级回源优化；</li><li>RangeOriginPull：分片回源 ；</li><li>UpstreamHTTP2：HTTP2 回源；</li><li>HostHeader：Host Header 重写；</li><li>ForceRedirectHTTPS：访问协议强制 HTTPS 跳转配置；</li><li>OriginPullProtocol：回源 HTTPS；</li><li>Compression：智能压缩配置；</li><li>HSTS：HSTS；</li><li>ClientIPHeader：存储客户端请求 IP 的头部信息配置；</li><li>OCSPStapling：OCSP 装订；</li><li>HTTP2：HTTP2 接入；</li><li>PostMaxSize：POST 请求上传文件流式传输最大限制配置；</li><li>ClientIPCountry：回源时携带客户端 IP 所属地域信息；</li><li>UpstreamFollowRedirect：回源跟随重定向参数配置；</li><li>UpstreamRequest：回源请求参数；</li><li>Shield：源站卸载配置；</li><li>TLSConfig：SSL/TLS 安全；</li><li>ModifyOrigin：修改源站；</li><li> SiteFailover：源站故障转移；</li><li>HTTPUpstreamTimeout：七层回源超时配置；</li><li>HttpResponse：HTTP 应答；</li><li>ErrorPage：自定义错误页面；</li><li>ModifyResponseHeader：修改 HTTP 节点响应头；</li><li>ModifyRequestHeader：修改 HTTP 节点请求头；</li><li>ResponseSpeedLimit：单连接下载限速；</li><li>SetContentIdentifier：设置内容标识符；</li><li>Vary：Vary 特性配置；</li><li>ContentCompression：内容压缩配置；</li><li>OriginAuthentication：回源鉴权配置。</li>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置操作名称。名称需要与参数结构体对应，例如 Name=Cache，则 CacheParameters 必填。
-<li>Cache：节点缓存 TTL；</li>
-<li>CacheKey：自定义 Cache Key；</li>
-<li>CachePrefresh：缓存预刷新；</li>
-<li>AccessURLRedirect：访问 URL 重定向；</li>
-<li>UpstreamURLRewrite：回源 URL 重写；</li>
-<li>QUIC：QUIC；</li>
-<li>WebSocket：WebSocket；</li>
-<li>Authentication：Token 鉴权；</li>
-<li>MaxAge：浏览器缓存 TTL；</li>
-<li>StatusCodeCache：状态码缓存 TTL；</li>
-<li>OfflineCache：离线缓存；</li>
-<li>SmartRouting：智能加速；</li>
-<li>RangeOriginPull：分片回源 ；</li>
-<li>UpstreamHTTP2：HTTP2 回源；</li>
-<li>HostHeader：Host Header 重写；</li>
-<li>ForceRedirectHTTPS：访问协议强制 HTTPS 跳转配置；</li>
-<li>OriginPullProtocol：回源 HTTPS；</li>
-<li>Compression：智能压缩配置；</li>
-<li>HSTS：HSTS；</li>
-<li>ClientIPHeader：存储客户端请求 IP 的头部信息配置；</li>
-<li>OCSPStapling：OCSP 装订；</li>
-<li>HTTP2：HTTP2 接入；</li>
-<li>PostMaxSize：POST 请求上传文件流式传输最大限制配置；</li>
-<li>ClientIPCountry：回源时携带客户端 IP 所属地域信息；</li>
-<li>UpstreamFollowRedirect：回源跟随重定向参数配置；</li>
-<li>UpstreamRequest：回源请求参数；</li>
-<li>Shield：源站卸载配置；</li>
-<li>TLSConfig：SSL/TLS 安全；</li>
-<li>ModifyOrigin：修改源站；</li>
-<li> SiteFailover：源站故障转移；</li>
-<li>HTTPUpstreamTimeout：七层回源超时配置；</li>
-<li>HttpResponse：HTTP 应答；</li>
-<li>ErrorPage：自定义错误页面；</li>
-<li>ModifyResponseHeader：修改 HTTP 节点响应头；</li>
-<li>ModifyRequestHeader：修改 HTTP 节点请求头；</li>
-<li>ResponseSpeedLimit：单连接下载限速；</li>
-<li>SetContentIdentifier：设置内容标识符；</li>
-<li>Vary：Vary 特性配置；</li>
-<li>ContentCompression：内容压缩配置；</li>
-<li>OriginAuthentication：回源鉴权配置。</li>
-                     * @param _name 操作名称。名称需要与参数结构体对应，例如 Name=Cache，则 CacheParameters 必填。
-<li>Cache：节点缓存 TTL；</li>
-<li>CacheKey：自定义 Cache Key；</li>
-<li>CachePrefresh：缓存预刷新；</li>
-<li>AccessURLRedirect：访问 URL 重定向；</li>
-<li>UpstreamURLRewrite：回源 URL 重写；</li>
-<li>QUIC：QUIC；</li>
-<li>WebSocket：WebSocket；</li>
-<li>Authentication：Token 鉴权；</li>
-<li>MaxAge：浏览器缓存 TTL；</li>
-<li>StatusCodeCache：状态码缓存 TTL；</li>
-<li>OfflineCache：离线缓存；</li>
-<li>SmartRouting：智能加速；</li>
-<li>RangeOriginPull：分片回源 ；</li>
-<li>UpstreamHTTP2：HTTP2 回源；</li>
-<li>HostHeader：Host Header 重写；</li>
-<li>ForceRedirectHTTPS：访问协议强制 HTTPS 跳转配置；</li>
-<li>OriginPullProtocol：回源 HTTPS；</li>
-<li>Compression：智能压缩配置；</li>
-<li>HSTS：HSTS；</li>
-<li>ClientIPHeader：存储客户端请求 IP 的头部信息配置；</li>
-<li>OCSPStapling：OCSP 装订；</li>
-<li>HTTP2：HTTP2 接入；</li>
-<li>PostMaxSize：POST 请求上传文件流式传输最大限制配置；</li>
-<li>ClientIPCountry：回源时携带客户端 IP 所属地域信息；</li>
-<li>UpstreamFollowRedirect：回源跟随重定向参数配置；</li>
-<li>UpstreamRequest：回源请求参数；</li>
-<li>Shield：源站卸载配置；</li>
-<li>TLSConfig：SSL/TLS 安全；</li>
-<li>ModifyOrigin：修改源站；</li>
-<li> SiteFailover：源站故障转移；</li>
-<li>HTTPUpstreamTimeout：七层回源超时配置；</li>
-<li>HttpResponse：HTTP 应答；</li>
-<li>ErrorPage：自定义错误页面；</li>
-<li>ModifyResponseHeader：修改 HTTP 节点响应头；</li>
-<li>ModifyRequestHeader：修改 HTTP 节点请求头；</li>
-<li>ResponseSpeedLimit：单连接下载限速；</li>
-<li>SetContentIdentifier：设置内容标识符；</li>
-<li>Vary：Vary 特性配置；</li>
-<li>ContentCompression：内容压缩配置；</li>
-<li>OriginAuthentication：回源鉴权配置。</li>
+                     * 设置<p>操作名称。名称需要与参数结构体对应，例如 Name=Cache，则 CacheParameters 必填。</p><li>Cache：节点缓存 TTL；</li><li>CacheKey：自定义 Cache Key；</li><li>CachePrefresh：缓存预刷新；</li><li>AccessURLRedirect：访问 URL 重定向；</li><li>UpstreamURLRewrite：回源 URL 重写；</li><li>QUIC：QUIC；</li><li>WebSocket：WebSocket；</li><li>Authentication：Token 鉴权；</li><li>MaxAge：浏览器缓存 TTL；</li><li>StatusCodeCache：状态码缓存 TTL；</li><li>OfflineCache：离线缓存；</li><li>SmartRouting：智能加速；</li><li>AdvancedOriginRouting：高级回源优化；</li><li>RangeOriginPull：分片回源 ；</li><li>UpstreamHTTP2：HTTP2 回源；</li><li>HostHeader：Host Header 重写；</li><li>ForceRedirectHTTPS：访问协议强制 HTTPS 跳转配置；</li><li>OriginPullProtocol：回源 HTTPS；</li><li>Compression：智能压缩配置；</li><li>HSTS：HSTS；</li><li>ClientIPHeader：存储客户端请求 IP 的头部信息配置；</li><li>OCSPStapling：OCSP 装订；</li><li>HTTP2：HTTP2 接入；</li><li>PostMaxSize：POST 请求上传文件流式传输最大限制配置；</li><li>ClientIPCountry：回源时携带客户端 IP 所属地域信息；</li><li>UpstreamFollowRedirect：回源跟随重定向参数配置；</li><li>UpstreamRequest：回源请求参数；</li><li>Shield：源站卸载配置；</li><li>TLSConfig：SSL/TLS 安全；</li><li>ModifyOrigin：修改源站；</li><li> SiteFailover：源站故障转移；</li><li>HTTPUpstreamTimeout：七层回源超时配置；</li><li>HttpResponse：HTTP 应答；</li><li>ErrorPage：自定义错误页面；</li><li>ModifyResponseHeader：修改 HTTP 节点响应头；</li><li>ModifyRequestHeader：修改 HTTP 节点请求头；</li><li>ResponseSpeedLimit：单连接下载限速；</li><li>SetContentIdentifier：设置内容标识符；</li><li>Vary：Vary 特性配置；</li><li>ContentCompression：内容压缩配置；</li><li>OriginAuthentication：回源鉴权配置。</li>
+                     * @param _name <p>操作名称。名称需要与参数结构体对应，例如 Name=Cache，则 CacheParameters 必填。</p><li>Cache：节点缓存 TTL；</li><li>CacheKey：自定义 Cache Key；</li><li>CachePrefresh：缓存预刷新；</li><li>AccessURLRedirect：访问 URL 重定向；</li><li>UpstreamURLRewrite：回源 URL 重写；</li><li>QUIC：QUIC；</li><li>WebSocket：WebSocket；</li><li>Authentication：Token 鉴权；</li><li>MaxAge：浏览器缓存 TTL；</li><li>StatusCodeCache：状态码缓存 TTL；</li><li>OfflineCache：离线缓存；</li><li>SmartRouting：智能加速；</li><li>AdvancedOriginRouting：高级回源优化；</li><li>RangeOriginPull：分片回源 ；</li><li>UpstreamHTTP2：HTTP2 回源；</li><li>HostHeader：Host Header 重写；</li><li>ForceRedirectHTTPS：访问协议强制 HTTPS 跳转配置；</li><li>OriginPullProtocol：回源 HTTPS；</li><li>Compression：智能压缩配置；</li><li>HSTS：HSTS；</li><li>ClientIPHeader：存储客户端请求 IP 的头部信息配置；</li><li>OCSPStapling：OCSP 装订；</li><li>HTTP2：HTTP2 接入；</li><li>PostMaxSize：POST 请求上传文件流式传输最大限制配置；</li><li>ClientIPCountry：回源时携带客户端 IP 所属地域信息；</li><li>UpstreamFollowRedirect：回源跟随重定向参数配置；</li><li>UpstreamRequest：回源请求参数；</li><li>Shield：源站卸载配置；</li><li>TLSConfig：SSL/TLS 安全；</li><li>ModifyOrigin：修改源站；</li><li> SiteFailover：源站故障转移；</li><li>HTTPUpstreamTimeout：七层回源超时配置；</li><li>HttpResponse：HTTP 应答；</li><li>ErrorPage：自定义错误页面；</li><li>ModifyResponseHeader：修改 HTTP 节点响应头；</li><li>ModifyRequestHeader：修改 HTTP 节点请求头；</li><li>ResponseSpeedLimit：单连接下载限速；</li><li>SetContentIdentifier：设置内容标识符；</li><li>Vary：Vary 特性配置；</li><li>ContentCompression：内容压缩配置；</li><li>OriginAuthentication：回源鉴权配置。</li>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -268,18 +109,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取节点缓存 TTL 配置参数，当 Name 取值为 Cache 时，该参数必填。
+                     * 获取<p>节点缓存 TTL 配置参数，当 Name 取值为 Cache 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CacheParameters 节点缓存 TTL 配置参数，当 Name 取值为 Cache 时，该参数必填。
+                     * @return CacheParameters <p>节点缓存 TTL 配置参数，当 Name 取值为 Cache 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CacheParameters GetCacheParameters() const;
 
                     /**
-                     * 设置节点缓存 TTL 配置参数，当 Name 取值为 Cache 时，该参数必填。
+                     * 设置<p>节点缓存 TTL 配置参数，当 Name 取值为 Cache 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cacheParameters 节点缓存 TTL 配置参数，当 Name 取值为 Cache 时，该参数必填。
+                     * @param _cacheParameters <p>节点缓存 TTL 配置参数，当 Name 取值为 Cache 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -293,18 +134,18 @@ namespace TencentCloud
                     bool CacheParametersHasBeenSet() const;
 
                     /**
-                     * 获取自定义 Cache Key 配置参数，当 Name 取值为 CacheKey 时，该参数必填。
+                     * 获取<p>自定义 Cache Key 配置参数，当 Name 取值为 CacheKey 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CacheKeyParameters 自定义 Cache Key 配置参数，当 Name 取值为 CacheKey 时，该参数必填。
+                     * @return CacheKeyParameters <p>自定义 Cache Key 配置参数，当 Name 取值为 CacheKey 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CacheKeyParameters GetCacheKeyParameters() const;
 
                     /**
-                     * 设置自定义 Cache Key 配置参数，当 Name 取值为 CacheKey 时，该参数必填。
+                     * 设置<p>自定义 Cache Key 配置参数，当 Name 取值为 CacheKey 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cacheKeyParameters 自定义 Cache Key 配置参数，当 Name 取值为 CacheKey 时，该参数必填。
+                     * @param _cacheKeyParameters <p>自定义 Cache Key 配置参数，当 Name 取值为 CacheKey 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -318,18 +159,18 @@ namespace TencentCloud
                     bool CacheKeyParametersHasBeenSet() const;
 
                     /**
-                     * 获取缓存预刷新配置参数，当 Name 取值为 CachePrefresh 时，该参数必填。
+                     * 获取<p>缓存预刷新配置参数，当 Name 取值为 CachePrefresh 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CachePrefreshParameters 缓存预刷新配置参数，当 Name 取值为 CachePrefresh 时，该参数必填。
+                     * @return CachePrefreshParameters <p>缓存预刷新配置参数，当 Name 取值为 CachePrefresh 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CachePrefreshParameters GetCachePrefreshParameters() const;
 
                     /**
-                     * 设置缓存预刷新配置参数，当 Name 取值为 CachePrefresh 时，该参数必填。
+                     * 设置<p>缓存预刷新配置参数，当 Name 取值为 CachePrefresh 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cachePrefreshParameters 缓存预刷新配置参数，当 Name 取值为 CachePrefresh 时，该参数必填。
+                     * @param _cachePrefreshParameters <p>缓存预刷新配置参数，当 Name 取值为 CachePrefresh 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -343,18 +184,18 @@ namespace TencentCloud
                     bool CachePrefreshParametersHasBeenSet() const;
 
                     /**
-                     * 获取访问 URL 重定向配置参数，当 Name 取值为 AccessURLRedirect 时，该参数必填。
+                     * 获取<p>访问 URL 重定向配置参数，当 Name 取值为 AccessURLRedirect 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AccessURLRedirectParameters 访问 URL 重定向配置参数，当 Name 取值为 AccessURLRedirect 时，该参数必填。
+                     * @return AccessURLRedirectParameters <p>访问 URL 重定向配置参数，当 Name 取值为 AccessURLRedirect 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AccessURLRedirectParameters GetAccessURLRedirectParameters() const;
 
                     /**
-                     * 设置访问 URL 重定向配置参数，当 Name 取值为 AccessURLRedirect 时，该参数必填。
+                     * 设置<p>访问 URL 重定向配置参数，当 Name 取值为 AccessURLRedirect 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _accessURLRedirectParameters 访问 URL 重定向配置参数，当 Name 取值为 AccessURLRedirect 时，该参数必填。
+                     * @param _accessURLRedirectParameters <p>访问 URL 重定向配置参数，当 Name 取值为 AccessURLRedirect 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -368,18 +209,18 @@ namespace TencentCloud
                     bool AccessURLRedirectParametersHasBeenSet() const;
 
                     /**
-                     * 获取回源 URL 重写配置参数，当 Name 取值为 UpstreamURLRewrite 时，该参数必填。
+                     * 获取<p>回源 URL 重写配置参数，当 Name 取值为 UpstreamURLRewrite 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpstreamURLRewriteParameters 回源 URL 重写配置参数，当 Name 取值为 UpstreamURLRewrite 时，该参数必填。
+                     * @return UpstreamURLRewriteParameters <p>回源 URL 重写配置参数，当 Name 取值为 UpstreamURLRewrite 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     UpstreamURLRewriteParameters GetUpstreamURLRewriteParameters() const;
 
                     /**
-                     * 设置回源 URL 重写配置参数，当 Name 取值为 UpstreamURLRewrite 时，该参数必填。
+                     * 设置<p>回源 URL 重写配置参数，当 Name 取值为 UpstreamURLRewrite 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _upstreamURLRewriteParameters 回源 URL 重写配置参数，当 Name 取值为 UpstreamURLRewrite 时，该参数必填。
+                     * @param _upstreamURLRewriteParameters <p>回源 URL 重写配置参数，当 Name 取值为 UpstreamURLRewrite 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -393,18 +234,18 @@ namespace TencentCloud
                     bool UpstreamURLRewriteParametersHasBeenSet() const;
 
                     /**
-                     * 获取QUIC 配置参数，当 Name 取值为 QUIC 时，该参数必填。
+                     * 获取<p>QUIC 配置参数，当 Name 取值为 QUIC 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QUICParameters QUIC 配置参数，当 Name 取值为 QUIC 时，该参数必填。
+                     * @return QUICParameters <p>QUIC 配置参数，当 Name 取值为 QUIC 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     QUICParameters GetQUICParameters() const;
 
                     /**
-                     * 设置QUIC 配置参数，当 Name 取值为 QUIC 时，该参数必填。
+                     * 设置<p>QUIC 配置参数，当 Name 取值为 QUIC 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _qUICParameters QUIC 配置参数，当 Name 取值为 QUIC 时，该参数必填。
+                     * @param _qUICParameters <p>QUIC 配置参数，当 Name 取值为 QUIC 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -418,18 +259,18 @@ namespace TencentCloud
                     bool QUICParametersHasBeenSet() const;
 
                     /**
-                     * 获取WebSocket 配置参数，当 Name 取值为 WebSocket 时，该参数必填。
+                     * 获取<p>WebSocket 配置参数，当 Name 取值为 WebSocket 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WebSocketParameters WebSocket 配置参数，当 Name 取值为 WebSocket 时，该参数必填。
+                     * @return WebSocketParameters <p>WebSocket 配置参数，当 Name 取值为 WebSocket 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     WebSocketParameters GetWebSocketParameters() const;
 
                     /**
-                     * 设置WebSocket 配置参数，当 Name 取值为 WebSocket 时，该参数必填。
+                     * 设置<p>WebSocket 配置参数，当 Name 取值为 WebSocket 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _webSocketParameters WebSocket 配置参数，当 Name 取值为 WebSocket 时，该参数必填。
+                     * @param _webSocketParameters <p>WebSocket 配置参数，当 Name 取值为 WebSocket 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -443,18 +284,18 @@ namespace TencentCloud
                     bool WebSocketParametersHasBeenSet() const;
 
                     /**
-                     * 获取Token 鉴权配置参数，当 Name 取值为 Authentication 时，该参数必填。
+                     * 获取<p>Token 鉴权配置参数，当 Name 取值为 Authentication 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AuthenticationParameters Token 鉴权配置参数，当 Name 取值为 Authentication 时，该参数必填。
+                     * @return AuthenticationParameters <p>Token 鉴权配置参数，当 Name 取值为 Authentication 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AuthenticationParameters GetAuthenticationParameters() const;
 
                     /**
-                     * 设置Token 鉴权配置参数，当 Name 取值为 Authentication 时，该参数必填。
+                     * 设置<p>Token 鉴权配置参数，当 Name 取值为 Authentication 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _authenticationParameters Token 鉴权配置参数，当 Name 取值为 Authentication 时，该参数必填。
+                     * @param _authenticationParameters <p>Token 鉴权配置参数，当 Name 取值为 Authentication 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -468,18 +309,18 @@ namespace TencentCloud
                     bool AuthenticationParametersHasBeenSet() const;
 
                     /**
-                     * 获取浏览器缓存 TTL 配置参数，当 Name 取值为 MaxAge 时，该参数必填。
+                     * 获取<p>浏览器缓存 TTL 配置参数，当 Name 取值为 MaxAge 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxAgeParameters 浏览器缓存 TTL 配置参数，当 Name 取值为 MaxAge 时，该参数必填。
+                     * @return MaxAgeParameters <p>浏览器缓存 TTL 配置参数，当 Name 取值为 MaxAge 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MaxAgeParameters GetMaxAgeParameters() const;
 
                     /**
-                     * 设置浏览器缓存 TTL 配置参数，当 Name 取值为 MaxAge 时，该参数必填。
+                     * 设置<p>浏览器缓存 TTL 配置参数，当 Name 取值为 MaxAge 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxAgeParameters 浏览器缓存 TTL 配置参数，当 Name 取值为 MaxAge 时，该参数必填。
+                     * @param _maxAgeParameters <p>浏览器缓存 TTL 配置参数，当 Name 取值为 MaxAge 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -493,18 +334,18 @@ namespace TencentCloud
                     bool MaxAgeParametersHasBeenSet() const;
 
                     /**
-                     * 获取状态码缓存 TTL 配置参数，当 Name 取值为 StatusCodeCache 时，该参数必填。
+                     * 获取<p>状态码缓存 TTL 配置参数，当 Name 取值为 StatusCodeCache 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StatusCodeCacheParameters 状态码缓存 TTL 配置参数，当 Name 取值为 StatusCodeCache 时，该参数必填。
+                     * @return StatusCodeCacheParameters <p>状态码缓存 TTL 配置参数，当 Name 取值为 StatusCodeCache 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     StatusCodeCacheParameters GetStatusCodeCacheParameters() const;
 
                     /**
-                     * 设置状态码缓存 TTL 配置参数，当 Name 取值为 StatusCodeCache 时，该参数必填。
+                     * 设置<p>状态码缓存 TTL 配置参数，当 Name 取值为 StatusCodeCache 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _statusCodeCacheParameters 状态码缓存 TTL 配置参数，当 Name 取值为 StatusCodeCache 时，该参数必填。
+                     * @param _statusCodeCacheParameters <p>状态码缓存 TTL 配置参数，当 Name 取值为 StatusCodeCache 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -518,18 +359,18 @@ namespace TencentCloud
                     bool StatusCodeCacheParametersHasBeenSet() const;
 
                     /**
-                     * 获取离线缓存配置参数，当 Name 取值为 OfflineCache 时，该参数必填。
+                     * 获取<p>离线缓存配置参数，当 Name 取值为 OfflineCache 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OfflineCacheParameters 离线缓存配置参数，当 Name 取值为 OfflineCache 时，该参数必填。
+                     * @return OfflineCacheParameters <p>离线缓存配置参数，当 Name 取值为 OfflineCache 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OfflineCacheParameters GetOfflineCacheParameters() const;
 
                     /**
-                     * 设置离线缓存配置参数，当 Name 取值为 OfflineCache 时，该参数必填。
+                     * 设置<p>离线缓存配置参数，当 Name 取值为 OfflineCache 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _offlineCacheParameters 离线缓存配置参数，当 Name 取值为 OfflineCache 时，该参数必填。
+                     * @param _offlineCacheParameters <p>离线缓存配置参数，当 Name 取值为 OfflineCache 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -543,18 +384,18 @@ namespace TencentCloud
                     bool OfflineCacheParametersHasBeenSet() const;
 
                     /**
-                     * 获取智能加速配置参数，当 Name 取值为 SmartRouting 时，该参数必填。
+                     * 获取<p>智能加速配置参数，当 Name 取值为 SmartRouting 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SmartRoutingParameters 智能加速配置参数，当 Name 取值为 SmartRouting 时，该参数必填。
+                     * @return SmartRoutingParameters <p>智能加速配置参数，当 Name 取值为 SmartRouting 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SmartRoutingParameters GetSmartRoutingParameters() const;
 
                     /**
-                     * 设置智能加速配置参数，当 Name 取值为 SmartRouting 时，该参数必填。
+                     * 设置<p>智能加速配置参数，当 Name 取值为 SmartRouting 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _smartRoutingParameters 智能加速配置参数，当 Name 取值为 SmartRouting 时，该参数必填。
+                     * @param _smartRoutingParameters <p>智能加速配置参数，当 Name 取值为 SmartRouting 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -568,18 +409,43 @@ namespace TencentCloud
                     bool SmartRoutingParametersHasBeenSet() const;
 
                     /**
-                     * 获取分片回源配置参数，当 Name 取值为 RangeOriginPull 时，该参数必填。
+                     * 获取<p>高级回源优化配置参数，当 Name 取值为 AdvancedOriginRouting 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RangeOriginPullParameters 分片回源配置参数，当 Name 取值为 RangeOriginPull 时，该参数必填。
+                     * @return AdvancedOriginRoutingParameters <p>高级回源优化配置参数，当 Name 取值为 AdvancedOriginRouting 时，该参数必填。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AdvancedOriginRoutingParameters GetAdvancedOriginRoutingParameters() const;
+
+                    /**
+                     * 设置<p>高级回源优化配置参数，当 Name 取值为 AdvancedOriginRouting 时，该参数必填。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _advancedOriginRoutingParameters <p>高级回源优化配置参数，当 Name 取值为 AdvancedOriginRouting 时，该参数必填。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAdvancedOriginRoutingParameters(const AdvancedOriginRoutingParameters& _advancedOriginRoutingParameters);
+
+                    /**
+                     * 判断参数 AdvancedOriginRoutingParameters 是否已赋值
+                     * @return AdvancedOriginRoutingParameters 是否已赋值
+                     * 
+                     */
+                    bool AdvancedOriginRoutingParametersHasBeenSet() const;
+
+                    /**
+                     * 获取<p>分片回源配置参数，当 Name 取值为 RangeOriginPull 时，该参数必填。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RangeOriginPullParameters <p>分片回源配置参数，当 Name 取值为 RangeOriginPull 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RangeOriginPullParameters GetRangeOriginPullParameters() const;
 
                     /**
-                     * 设置分片回源配置参数，当 Name 取值为 RangeOriginPull 时，该参数必填。
+                     * 设置<p>分片回源配置参数，当 Name 取值为 RangeOriginPull 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _rangeOriginPullParameters 分片回源配置参数，当 Name 取值为 RangeOriginPull 时，该参数必填。
+                     * @param _rangeOriginPullParameters <p>分片回源配置参数，当 Name 取值为 RangeOriginPull 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -593,18 +459,18 @@ namespace TencentCloud
                     bool RangeOriginPullParametersHasBeenSet() const;
 
                     /**
-                     * 获取HTTP2 回源配置参数，当 Name 取值为 UpstreamHTTP2 时，该参数必填。
+                     * 获取<p>HTTP2 回源配置参数，当 Name 取值为 UpstreamHTTP2 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpstreamHTTP2Parameters HTTP2 回源配置参数，当 Name 取值为 UpstreamHTTP2 时，该参数必填。
+                     * @return UpstreamHTTP2Parameters <p>HTTP2 回源配置参数，当 Name 取值为 UpstreamHTTP2 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     UpstreamHTTP2Parameters GetUpstreamHTTP2Parameters() const;
 
                     /**
-                     * 设置HTTP2 回源配置参数，当 Name 取值为 UpstreamHTTP2 时，该参数必填。
+                     * 设置<p>HTTP2 回源配置参数，当 Name 取值为 UpstreamHTTP2 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _upstreamHTTP2Parameters HTTP2 回源配置参数，当 Name 取值为 UpstreamHTTP2 时，该参数必填。
+                     * @param _upstreamHTTP2Parameters <p>HTTP2 回源配置参数，当 Name 取值为 UpstreamHTTP2 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -618,18 +484,18 @@ namespace TencentCloud
                     bool UpstreamHTTP2ParametersHasBeenSet() const;
 
                     /**
-                     * 获取Host Header 重写配置参数，当 Name 取值为 HostHeader 时，该参数必填。
+                     * 获取<p>Host Header 重写配置参数，当 Name 取值为 HostHeader 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HostHeaderParameters Host Header 重写配置参数，当 Name 取值为 HostHeader 时，该参数必填。
+                     * @return HostHeaderParameters <p>Host Header 重写配置参数，当 Name 取值为 HostHeader 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     HostHeaderParameters GetHostHeaderParameters() const;
 
                     /**
-                     * 设置Host Header 重写配置参数，当 Name 取值为 HostHeader 时，该参数必填。
+                     * 设置<p>Host Header 重写配置参数，当 Name 取值为 HostHeader 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hostHeaderParameters Host Header 重写配置参数，当 Name 取值为 HostHeader 时，该参数必填。
+                     * @param _hostHeaderParameters <p>Host Header 重写配置参数，当 Name 取值为 HostHeader 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -643,18 +509,18 @@ namespace TencentCloud
                     bool HostHeaderParametersHasBeenSet() const;
 
                     /**
-                     * 获取访问协议强制 HTTPS 跳转配置，当 Name 取值为 ForceRedirectHTTPS 时，该参数必填。
+                     * 获取<p>访问协议强制 HTTPS 跳转配置，当 Name 取值为 ForceRedirectHTTPS 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ForceRedirectHTTPSParameters 访问协议强制 HTTPS 跳转配置，当 Name 取值为 ForceRedirectHTTPS 时，该参数必填。
+                     * @return ForceRedirectHTTPSParameters <p>访问协议强制 HTTPS 跳转配置，当 Name 取值为 ForceRedirectHTTPS 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ForceRedirectHTTPSParameters GetForceRedirectHTTPSParameters() const;
 
                     /**
-                     * 设置访问协议强制 HTTPS 跳转配置，当 Name 取值为 ForceRedirectHTTPS 时，该参数必填。
+                     * 设置<p>访问协议强制 HTTPS 跳转配置，当 Name 取值为 ForceRedirectHTTPS 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _forceRedirectHTTPSParameters 访问协议强制 HTTPS 跳转配置，当 Name 取值为 ForceRedirectHTTPS 时，该参数必填。
+                     * @param _forceRedirectHTTPSParameters <p>访问协议强制 HTTPS 跳转配置，当 Name 取值为 ForceRedirectHTTPS 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -668,18 +534,18 @@ namespace TencentCloud
                     bool ForceRedirectHTTPSParametersHasBeenSet() const;
 
                     /**
-                     * 获取回源 HTTPS 配置参数，当 Name 取值为 OriginPullProtocol 时，该参数必填。
+                     * 获取<p>回源 HTTPS 配置参数，当 Name 取值为 OriginPullProtocol 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OriginPullProtocolParameters 回源 HTTPS 配置参数，当 Name 取值为 OriginPullProtocol 时，该参数必填。
+                     * @return OriginPullProtocolParameters <p>回源 HTTPS 配置参数，当 Name 取值为 OriginPullProtocol 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OriginPullProtocolParameters GetOriginPullProtocolParameters() const;
 
                     /**
-                     * 设置回源 HTTPS 配置参数，当 Name 取值为 OriginPullProtocol 时，该参数必填。
+                     * 设置<p>回源 HTTPS 配置参数，当 Name 取值为 OriginPullProtocol 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _originPullProtocolParameters 回源 HTTPS 配置参数，当 Name 取值为 OriginPullProtocol 时，该参数必填。
+                     * @param _originPullProtocolParameters <p>回源 HTTPS 配置参数，当 Name 取值为 OriginPullProtocol 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -693,18 +559,18 @@ namespace TencentCloud
                     bool OriginPullProtocolParametersHasBeenSet() const;
 
                     /**
-                     * 获取智能压缩配置，当 Name 取值为 Compression 时，该参数必填。
+                     * 获取<p>智能压缩配置，当 Name 取值为 Compression 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CompressionParameters 智能压缩配置，当 Name 取值为 Compression 时，该参数必填。
+                     * @return CompressionParameters <p>智能压缩配置，当 Name 取值为 Compression 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CompressionParameters GetCompressionParameters() const;
 
                     /**
-                     * 设置智能压缩配置，当 Name 取值为 Compression 时，该参数必填。
+                     * 设置<p>智能压缩配置，当 Name 取值为 Compression 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _compressionParameters 智能压缩配置，当 Name 取值为 Compression 时，该参数必填。
+                     * @param _compressionParameters <p>智能压缩配置，当 Name 取值为 Compression 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -718,18 +584,18 @@ namespace TencentCloud
                     bool CompressionParametersHasBeenSet() const;
 
                     /**
-                     * 获取HSTS 配置参数，当 Name 取值为 HSTS 时，该参数必填。
+                     * 获取<p>HSTS 配置参数，当 Name 取值为 HSTS 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HSTSParameters HSTS 配置参数，当 Name 取值为 HSTS 时，该参数必填。
+                     * @return HSTSParameters <p>HSTS 配置参数，当 Name 取值为 HSTS 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     HSTSParameters GetHSTSParameters() const;
 
                     /**
-                     * 设置HSTS 配置参数，当 Name 取值为 HSTS 时，该参数必填。
+                     * 设置<p>HSTS 配置参数，当 Name 取值为 HSTS 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hSTSParameters HSTS 配置参数，当 Name 取值为 HSTS 时，该参数必填。
+                     * @param _hSTSParameters <p>HSTS 配置参数，当 Name 取值为 HSTS 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -743,18 +609,18 @@ namespace TencentCloud
                     bool HSTSParametersHasBeenSet() const;
 
                     /**
-                     * 获取存储客户端请求 IP 的头部信息配置，当 Name 取值为 ClientIPHeader 时，该参数必填。
+                     * 获取<p>存储客户端请求 IP 的头部信息配置，当 Name 取值为 ClientIPHeader 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClientIPHeaderParameters 存储客户端请求 IP 的头部信息配置，当 Name 取值为 ClientIPHeader 时，该参数必填。
+                     * @return ClientIPHeaderParameters <p>存储客户端请求 IP 的头部信息配置，当 Name 取值为 ClientIPHeader 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ClientIPHeaderParameters GetClientIPHeaderParameters() const;
 
                     /**
-                     * 设置存储客户端请求 IP 的头部信息配置，当 Name 取值为 ClientIPHeader 时，该参数必填。
+                     * 设置<p>存储客户端请求 IP 的头部信息配置，当 Name 取值为 ClientIPHeader 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clientIPHeaderParameters 存储客户端请求 IP 的头部信息配置，当 Name 取值为 ClientIPHeader 时，该参数必填。
+                     * @param _clientIPHeaderParameters <p>存储客户端请求 IP 的头部信息配置，当 Name 取值为 ClientIPHeader 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -768,18 +634,18 @@ namespace TencentCloud
                     bool ClientIPHeaderParametersHasBeenSet() const;
 
                     /**
-                     * 获取OCSP 装订配置参数，当 Name 取值为 OCSPStapling 时，该参数必填。
+                     * 获取<p>OCSP 装订配置参数，当 Name 取值为 OCSPStapling 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OCSPStaplingParameters OCSP 装订配置参数，当 Name 取值为 OCSPStapling 时，该参数必填。
+                     * @return OCSPStaplingParameters <p>OCSP 装订配置参数，当 Name 取值为 OCSPStapling 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OCSPStaplingParameters GetOCSPStaplingParameters() const;
 
                     /**
-                     * 设置OCSP 装订配置参数，当 Name 取值为 OCSPStapling 时，该参数必填。
+                     * 设置<p>OCSP 装订配置参数，当 Name 取值为 OCSPStapling 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _oCSPStaplingParameters OCSP 装订配置参数，当 Name 取值为 OCSPStapling 时，该参数必填。
+                     * @param _oCSPStaplingParameters <p>OCSP 装订配置参数，当 Name 取值为 OCSPStapling 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -793,18 +659,18 @@ namespace TencentCloud
                     bool OCSPStaplingParametersHasBeenSet() const;
 
                     /**
-                     * 获取HTTP2 接入配置参数，当 Name 取值为 HTTP2 时，该参数必填。
+                     * 获取<p>HTTP2 接入配置参数，当 Name 取值为 HTTP2 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HTTP2Parameters HTTP2 接入配置参数，当 Name 取值为 HTTP2 时，该参数必填。
+                     * @return HTTP2Parameters <p>HTTP2 接入配置参数，当 Name 取值为 HTTP2 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     HTTP2Parameters GetHTTP2Parameters() const;
 
                     /**
-                     * 设置HTTP2 接入配置参数，当 Name 取值为 HTTP2 时，该参数必填。
+                     * 设置<p>HTTP2 接入配置参数，当 Name 取值为 HTTP2 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hTTP2Parameters HTTP2 接入配置参数，当 Name 取值为 HTTP2 时，该参数必填。
+                     * @param _hTTP2Parameters <p>HTTP2 接入配置参数，当 Name 取值为 HTTP2 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -818,18 +684,18 @@ namespace TencentCloud
                     bool HTTP2ParametersHasBeenSet() const;
 
                     /**
-                     * 获取POST 请求上传文件流式传输最大限制配置，当 Name 取值为 PostMaxSize 时，该参数必填。
+                     * 获取<p>POST 请求上传文件流式传输最大限制配置，当 Name 取值为 PostMaxSize 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PostMaxSizeParameters POST 请求上传文件流式传输最大限制配置，当 Name 取值为 PostMaxSize 时，该参数必填。
+                     * @return PostMaxSizeParameters <p>POST 请求上传文件流式传输最大限制配置，当 Name 取值为 PostMaxSize 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PostMaxSizeParameters GetPostMaxSizeParameters() const;
 
                     /**
-                     * 设置POST 请求上传文件流式传输最大限制配置，当 Name 取值为 PostMaxSize 时，该参数必填。
+                     * 设置<p>POST 请求上传文件流式传输最大限制配置，当 Name 取值为 PostMaxSize 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _postMaxSizeParameters POST 请求上传文件流式传输最大限制配置，当 Name 取值为 PostMaxSize 时，该参数必填。
+                     * @param _postMaxSizeParameters <p>POST 请求上传文件流式传输最大限制配置，当 Name 取值为 PostMaxSize 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -843,18 +709,18 @@ namespace TencentCloud
                     bool PostMaxSizeParametersHasBeenSet() const;
 
                     /**
-                     * 获取回源时携带客户端 IP 所属地域信息配置参数，当 Name 取值为 ClientIPCountry 时，该参数必填。
+                     * 获取<p>回源时携带客户端 IP 所属地域信息配置参数，当 Name 取值为 ClientIPCountry 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClientIPCountryParameters 回源时携带客户端 IP 所属地域信息配置参数，当 Name 取值为 ClientIPCountry 时，该参数必填。
+                     * @return ClientIPCountryParameters <p>回源时携带客户端 IP 所属地域信息配置参数，当 Name 取值为 ClientIPCountry 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ClientIPCountryParameters GetClientIPCountryParameters() const;
 
                     /**
-                     * 设置回源时携带客户端 IP 所属地域信息配置参数，当 Name 取值为 ClientIPCountry 时，该参数必填。
+                     * 设置<p>回源时携带客户端 IP 所属地域信息配置参数，当 Name 取值为 ClientIPCountry 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clientIPCountryParameters 回源时携带客户端 IP 所属地域信息配置参数，当 Name 取值为 ClientIPCountry 时，该参数必填。
+                     * @param _clientIPCountryParameters <p>回源时携带客户端 IP 所属地域信息配置参数，当 Name 取值为 ClientIPCountry 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -868,18 +734,18 @@ namespace TencentCloud
                     bool ClientIPCountryParametersHasBeenSet() const;
 
                     /**
-                     * 获取回源跟随重定向参数配置，当 Name 取值为 UpstreamFollowRedirect 时，该参数必填。
+                     * 获取<p>回源跟随重定向参数配置，当 Name 取值为 UpstreamFollowRedirect 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpstreamFollowRedirectParameters 回源跟随重定向参数配置，当 Name 取值为 UpstreamFollowRedirect 时，该参数必填。
+                     * @return UpstreamFollowRedirectParameters <p>回源跟随重定向参数配置，当 Name 取值为 UpstreamFollowRedirect 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     UpstreamFollowRedirectParameters GetUpstreamFollowRedirectParameters() const;
 
                     /**
-                     * 设置回源跟随重定向参数配置，当 Name 取值为 UpstreamFollowRedirect 时，该参数必填。
+                     * 设置<p>回源跟随重定向参数配置，当 Name 取值为 UpstreamFollowRedirect 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _upstreamFollowRedirectParameters 回源跟随重定向参数配置，当 Name 取值为 UpstreamFollowRedirect 时，该参数必填。
+                     * @param _upstreamFollowRedirectParameters <p>回源跟随重定向参数配置，当 Name 取值为 UpstreamFollowRedirect 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -893,18 +759,18 @@ namespace TencentCloud
                     bool UpstreamFollowRedirectParametersHasBeenSet() const;
 
                     /**
-                     * 获取回源请求参数配置参数，当 Name 取值为 UpstreamRequest 时，该参数必填。
+                     * 获取<p>回源请求参数配置参数，当 Name 取值为 UpstreamRequest 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpstreamRequestParameters 回源请求参数配置参数，当 Name 取值为 UpstreamRequest 时，该参数必填。
+                     * @return UpstreamRequestParameters <p>回源请求参数配置参数，当 Name 取值为 UpstreamRequest 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     UpstreamRequestParameters GetUpstreamRequestParameters() const;
 
                     /**
-                     * 设置回源请求参数配置参数，当 Name 取值为 UpstreamRequest 时，该参数必填。
+                     * 设置<p>回源请求参数配置参数，当 Name 取值为 UpstreamRequest 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _upstreamRequestParameters 回源请求参数配置参数，当 Name 取值为 UpstreamRequest 时，该参数必填。
+                     * @param _upstreamRequestParameters <p>回源请求参数配置参数，当 Name 取值为 UpstreamRequest 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -918,18 +784,18 @@ namespace TencentCloud
                     bool UpstreamRequestParametersHasBeenSet() const;
 
                     /**
-                     * 获取源站卸载配置参数，当 Name 取值为 Shield 时，该参数必填。
+                     * 获取<p>源站卸载配置参数，当 Name 取值为 Shield 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ShieldParameters 源站卸载配置参数，当 Name 取值为 Shield 时，该参数必填。
+                     * @return ShieldParameters <p>源站卸载配置参数，当 Name 取值为 Shield 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ShieldParameters GetShieldParameters() const;
 
                     /**
-                     * 设置源站卸载配置参数，当 Name 取值为 Shield 时，该参数必填。
+                     * 设置<p>源站卸载配置参数，当 Name 取值为 Shield 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _shieldParameters 源站卸载配置参数，当 Name 取值为 Shield 时，该参数必填。
+                     * @param _shieldParameters <p>源站卸载配置参数，当 Name 取值为 Shield 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -943,18 +809,18 @@ namespace TencentCloud
                     bool ShieldParametersHasBeenSet() const;
 
                     /**
-                     * 获取SSL/TLS 安全配置参数，当 Name 取值为 TLSConfig 时，该参数必填。
+                     * 获取<p>SSL/TLS 安全配置参数，当 Name 取值为 TLSConfig 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TLSConfigParameters SSL/TLS 安全配置参数，当 Name 取值为 TLSConfig 时，该参数必填。
+                     * @return TLSConfigParameters <p>SSL/TLS 安全配置参数，当 Name 取值为 TLSConfig 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TLSConfigParameters GetTLSConfigParameters() const;
 
                     /**
-                     * 设置SSL/TLS 安全配置参数，当 Name 取值为 TLSConfig 时，该参数必填。
+                     * 设置<p>SSL/TLS 安全配置参数，当 Name 取值为 TLSConfig 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tLSConfigParameters SSL/TLS 安全配置参数，当 Name 取值为 TLSConfig 时，该参数必填。
+                     * @param _tLSConfigParameters <p>SSL/TLS 安全配置参数，当 Name 取值为 TLSConfig 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -968,18 +834,18 @@ namespace TencentCloud
                     bool TLSConfigParametersHasBeenSet() const;
 
                     /**
-                     * 获取修改源站配置参数，当 Name 取值为 ModifyOrigin 时，该参数必填。
+                     * 获取<p>修改源站配置参数，当 Name 取值为 ModifyOrigin 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModifyOriginParameters 修改源站配置参数，当 Name 取值为 ModifyOrigin 时，该参数必填。
+                     * @return ModifyOriginParameters <p>修改源站配置参数，当 Name 取值为 ModifyOrigin 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ModifyOriginParameters GetModifyOriginParameters() const;
 
                     /**
-                     * 设置修改源站配置参数，当 Name 取值为 ModifyOrigin 时，该参数必填。
+                     * 设置<p>修改源站配置参数，当 Name 取值为 ModifyOrigin 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modifyOriginParameters 修改源站配置参数，当 Name 取值为 ModifyOrigin 时，该参数必填。
+                     * @param _modifyOriginParameters <p>修改源站配置参数，当 Name 取值为 ModifyOrigin 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -993,18 +859,18 @@ namespace TencentCloud
                     bool ModifyOriginParametersHasBeenSet() const;
 
                     /**
-                     * 获取源站故障转移配置参数，当 Name 取值为 SiteFailover 时，该参数必填。
+                     * 获取<p>源站故障转移配置参数，当 Name 取值为 SiteFailover 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SiteFailoverParameters 源站故障转移配置参数，当 Name 取值为 SiteFailover 时，该参数必填。
+                     * @return SiteFailoverParameters <p>源站故障转移配置参数，当 Name 取值为 SiteFailover 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SiteFailoverParameters GetSiteFailoverParameters() const;
 
                     /**
-                     * 设置源站故障转移配置参数，当 Name 取值为 SiteFailover 时，该参数必填。
+                     * 设置<p>源站故障转移配置参数，当 Name 取值为 SiteFailover 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _siteFailoverParameters 源站故障转移配置参数，当 Name 取值为 SiteFailover 时，该参数必填。
+                     * @param _siteFailoverParameters <p>源站故障转移配置参数，当 Name 取值为 SiteFailover 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1018,18 +884,18 @@ namespace TencentCloud
                     bool SiteFailoverParametersHasBeenSet() const;
 
                     /**
-                     * 获取七层回源超时配置，当 Name 取值为 HTTPUpstreamTimeout 时，该参数必填。
+                     * 获取<p>七层回源超时配置，当 Name 取值为 HTTPUpstreamTimeout 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HTTPUpstreamTimeoutParameters 七层回源超时配置，当 Name 取值为 HTTPUpstreamTimeout 时，该参数必填。
+                     * @return HTTPUpstreamTimeoutParameters <p>七层回源超时配置，当 Name 取值为 HTTPUpstreamTimeout 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     HTTPUpstreamTimeoutParameters GetHTTPUpstreamTimeoutParameters() const;
 
                     /**
-                     * 设置七层回源超时配置，当 Name 取值为 HTTPUpstreamTimeout 时，该参数必填。
+                     * 设置<p>七层回源超时配置，当 Name 取值为 HTTPUpstreamTimeout 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hTTPUpstreamTimeoutParameters 七层回源超时配置，当 Name 取值为 HTTPUpstreamTimeout 时，该参数必填。
+                     * @param _hTTPUpstreamTimeoutParameters <p>七层回源超时配置，当 Name 取值为 HTTPUpstreamTimeout 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1043,18 +909,18 @@ namespace TencentCloud
                     bool HTTPUpstreamTimeoutParametersHasBeenSet() const;
 
                     /**
-                     * 获取HTTP 应答配置参数，当 Name 取值为 HttpResponse 时，该参数必填。
+                     * 获取<p>HTTP 应答配置参数，当 Name 取值为 HttpResponse 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HttpResponseParameters HTTP 应答配置参数，当 Name 取值为 HttpResponse 时，该参数必填。
+                     * @return HttpResponseParameters <p>HTTP 应答配置参数，当 Name 取值为 HttpResponse 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     HTTPResponseParameters GetHttpResponseParameters() const;
 
                     /**
-                     * 设置HTTP 应答配置参数，当 Name 取值为 HttpResponse 时，该参数必填。
+                     * 设置<p>HTTP 应答配置参数，当 Name 取值为 HttpResponse 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _httpResponseParameters HTTP 应答配置参数，当 Name 取值为 HttpResponse 时，该参数必填。
+                     * @param _httpResponseParameters <p>HTTP 应答配置参数，当 Name 取值为 HttpResponse 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1068,18 +934,18 @@ namespace TencentCloud
                     bool HttpResponseParametersHasBeenSet() const;
 
                     /**
-                     * 获取自定义错误页面配置参数，当 Name 取值为 ErrorPage 时，该参数必填。
+                     * 获取<p>自定义错误页面配置参数，当 Name 取值为 ErrorPage 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ErrorPageParameters 自定义错误页面配置参数，当 Name 取值为 ErrorPage 时，该参数必填。
+                     * @return ErrorPageParameters <p>自定义错误页面配置参数，当 Name 取值为 ErrorPage 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ErrorPageParameters GetErrorPageParameters() const;
 
                     /**
-                     * 设置自定义错误页面配置参数，当 Name 取值为 ErrorPage 时，该参数必填。
+                     * 设置<p>自定义错误页面配置参数，当 Name 取值为 ErrorPage 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _errorPageParameters 自定义错误页面配置参数，当 Name 取值为 ErrorPage 时，该参数必填。
+                     * @param _errorPageParameters <p>自定义错误页面配置参数，当 Name 取值为 ErrorPage 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1093,18 +959,18 @@ namespace TencentCloud
                     bool ErrorPageParametersHasBeenSet() const;
 
                     /**
-                     * 获取修改 HTTP 节点响应头配置参数，当 Name 取值为 ModifyResponseHeader 时，该参数必填。
+                     * 获取<p>修改 HTTP 节点响应头配置参数，当 Name 取值为 ModifyResponseHeader 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModifyResponseHeaderParameters 修改 HTTP 节点响应头配置参数，当 Name 取值为 ModifyResponseHeader 时，该参数必填。
+                     * @return ModifyResponseHeaderParameters <p>修改 HTTP 节点响应头配置参数，当 Name 取值为 ModifyResponseHeader 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ModifyResponseHeaderParameters GetModifyResponseHeaderParameters() const;
 
                     /**
-                     * 设置修改 HTTP 节点响应头配置参数，当 Name 取值为 ModifyResponseHeader 时，该参数必填。
+                     * 设置<p>修改 HTTP 节点响应头配置参数，当 Name 取值为 ModifyResponseHeader 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modifyResponseHeaderParameters 修改 HTTP 节点响应头配置参数，当 Name 取值为 ModifyResponseHeader 时，该参数必填。
+                     * @param _modifyResponseHeaderParameters <p>修改 HTTP 节点响应头配置参数，当 Name 取值为 ModifyResponseHeader 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1118,18 +984,18 @@ namespace TencentCloud
                     bool ModifyResponseHeaderParametersHasBeenSet() const;
 
                     /**
-                     * 获取修改 HTTP 节点请求头配置参数，当 Name 取值为 ModifyRequestHeader 时，该参数必填。
+                     * 获取<p>修改 HTTP 节点请求头配置参数，当 Name 取值为 ModifyRequestHeader 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModifyRequestHeaderParameters 修改 HTTP 节点请求头配置参数，当 Name 取值为 ModifyRequestHeader 时，该参数必填。
+                     * @return ModifyRequestHeaderParameters <p>修改 HTTP 节点请求头配置参数，当 Name 取值为 ModifyRequestHeader 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ModifyRequestHeaderParameters GetModifyRequestHeaderParameters() const;
 
                     /**
-                     * 设置修改 HTTP 节点请求头配置参数，当 Name 取值为 ModifyRequestHeader 时，该参数必填。
+                     * 设置<p>修改 HTTP 节点请求头配置参数，当 Name 取值为 ModifyRequestHeader 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modifyRequestHeaderParameters 修改 HTTP 节点请求头配置参数，当 Name 取值为 ModifyRequestHeader 时，该参数必填。
+                     * @param _modifyRequestHeaderParameters <p>修改 HTTP 节点请求头配置参数，当 Name 取值为 ModifyRequestHeader 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1143,18 +1009,18 @@ namespace TencentCloud
                     bool ModifyRequestHeaderParametersHasBeenSet() const;
 
                     /**
-                     * 获取单连接下载限速配置参数，当 Name 取值为 ResponseSpeedLimit 时，该参数必填。
+                     * 获取<p>单连接下载限速配置参数，当 Name 取值为 ResponseSpeedLimit 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResponseSpeedLimitParameters 单连接下载限速配置参数，当 Name 取值为 ResponseSpeedLimit 时，该参数必填。
+                     * @return ResponseSpeedLimitParameters <p>单连接下载限速配置参数，当 Name 取值为 ResponseSpeedLimit 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ResponseSpeedLimitParameters GetResponseSpeedLimitParameters() const;
 
                     /**
-                     * 设置单连接下载限速配置参数，当 Name 取值为 ResponseSpeedLimit 时，该参数必填。
+                     * 设置<p>单连接下载限速配置参数，当 Name 取值为 ResponseSpeedLimit 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _responseSpeedLimitParameters 单连接下载限速配置参数，当 Name 取值为 ResponseSpeedLimit 时，该参数必填。
+                     * @param _responseSpeedLimitParameters <p>单连接下载限速配置参数，当 Name 取值为 ResponseSpeedLimit 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1168,22 +1034,18 @@ namespace TencentCloud
                     bool ResponseSpeedLimitParametersHasBeenSet() const;
 
                     /**
-                     * 获取内容标识配置参数，当 Name 取值为 SetContentIdentifier 时，该参数必填。
-
+                     * 获取<p>内容标识配置参数，当 Name 取值为 SetContentIdentifier 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SetContentIdentifierParameters 内容标识配置参数，当 Name 取值为 SetContentIdentifier 时，该参数必填。
-
+                     * @return SetContentIdentifierParameters <p>内容标识配置参数，当 Name 取值为 SetContentIdentifier 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SetContentIdentifierParameters GetSetContentIdentifierParameters() const;
 
                     /**
-                     * 设置内容标识配置参数，当 Name 取值为 SetContentIdentifier 时，该参数必填。
-
+                     * 设置<p>内容标识配置参数，当 Name 取值为 SetContentIdentifier 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _setContentIdentifierParameters 内容标识配置参数，当 Name 取值为 SetContentIdentifier 时，该参数必填。
-
+                     * @param _setContentIdentifierParameters <p>内容标识配置参数，当 Name 取值为 SetContentIdentifier 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1197,15 +1059,15 @@ namespace TencentCloud
                     bool SetContentIdentifierParametersHasBeenSet() const;
 
                     /**
-                     * 获取Vary 特性配置参数，当 Name 取值为 Vary 时，该参数必填。
-                     * @return VaryParameters Vary 特性配置参数，当 Name 取值为 Vary 时，该参数必填。
+                     * 获取<p>Vary 特性配置参数，当 Name 取值为 Vary 时，该参数必填。</p>
+                     * @return VaryParameters <p>Vary 特性配置参数，当 Name 取值为 Vary 时，该参数必填。</p>
                      * 
                      */
                     VaryParameters GetVaryParameters() const;
 
                     /**
-                     * 设置Vary 特性配置参数，当 Name 取值为 Vary 时，该参数必填。
-                     * @param _varyParameters Vary 特性配置参数，当 Name 取值为 Vary 时，该参数必填。
+                     * 设置<p>Vary 特性配置参数，当 Name 取值为 Vary 时，该参数必填。</p>
+                     * @param _varyParameters <p>Vary 特性配置参数，当 Name 取值为 Vary 时，该参数必填。</p>
                      * 
                      */
                     void SetVaryParameters(const VaryParameters& _varyParameters);
@@ -1218,15 +1080,15 @@ namespace TencentCloud
                     bool VaryParametersHasBeenSet() const;
 
                     /**
-                     * 获取内容压缩配置参数，当 Name 取值为 ContentCompression 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
-                     * @return ContentCompressionParameters 内容压缩配置参数，当 Name 取值为 ContentCompression 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
+                     * 获取<p>内容压缩配置参数，当 Name 取值为 ContentCompression 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。</p>
+                     * @return ContentCompressionParameters <p>内容压缩配置参数，当 Name 取值为 ContentCompression 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。</p>
                      * 
                      */
                     ContentCompressionParameters GetContentCompressionParameters() const;
 
                     /**
-                     * 设置内容压缩配置参数，当 Name 取值为 ContentCompression 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
-                     * @param _contentCompressionParameters 内容压缩配置参数，当 Name 取值为 ContentCompression 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
+                     * 设置<p>内容压缩配置参数，当 Name 取值为 ContentCompression 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。</p>
+                     * @param _contentCompressionParameters <p>内容压缩配置参数，当 Name 取值为 ContentCompression 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。</p>
                      * 
                      */
                     void SetContentCompressionParameters(const ContentCompressionParameters& _contentCompressionParameters);
@@ -1239,15 +1101,15 @@ namespace TencentCloud
                     bool ContentCompressionParametersHasBeenSet() const;
 
                     /**
-                     * 获取回源鉴权配置参数，当 Name 取值为 OriginAuthentication 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
-                     * @return OriginAuthenticationParameters 回源鉴权配置参数，当 Name 取值为 OriginAuthentication 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
+                     * 获取<p>回源鉴权配置参数，当 Name 取值为 OriginAuthentication 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。</p>
+                     * @return OriginAuthenticationParameters <p>回源鉴权配置参数，当 Name 取值为 OriginAuthentication 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。</p>
                      * 
                      */
                     OriginAuthenticationParameters GetOriginAuthenticationParameters() const;
 
                     /**
-                     * 设置回源鉴权配置参数，当 Name 取值为 OriginAuthentication 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
-                     * @param _originAuthenticationParameters 回源鉴权配置参数，当 Name 取值为 OriginAuthentication 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
+                     * 设置<p>回源鉴权配置参数，当 Name 取值为 OriginAuthentication 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。</p>
+                     * @param _originAuthenticationParameters <p>回源鉴权配置参数，当 Name 取值为 OriginAuthentication 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。</p>
                      * 
                      */
                     void SetOriginAuthenticationParameters(const OriginAuthenticationParameters& _originAuthenticationParameters);
@@ -1262,325 +1124,291 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 操作名称。名称需要与参数结构体对应，例如 Name=Cache，则 CacheParameters 必填。
-<li>Cache：节点缓存 TTL；</li>
-<li>CacheKey：自定义 Cache Key；</li>
-<li>CachePrefresh：缓存预刷新；</li>
-<li>AccessURLRedirect：访问 URL 重定向；</li>
-<li>UpstreamURLRewrite：回源 URL 重写；</li>
-<li>QUIC：QUIC；</li>
-<li>WebSocket：WebSocket；</li>
-<li>Authentication：Token 鉴权；</li>
-<li>MaxAge：浏览器缓存 TTL；</li>
-<li>StatusCodeCache：状态码缓存 TTL；</li>
-<li>OfflineCache：离线缓存；</li>
-<li>SmartRouting：智能加速；</li>
-<li>RangeOriginPull：分片回源 ；</li>
-<li>UpstreamHTTP2：HTTP2 回源；</li>
-<li>HostHeader：Host Header 重写；</li>
-<li>ForceRedirectHTTPS：访问协议强制 HTTPS 跳转配置；</li>
-<li>OriginPullProtocol：回源 HTTPS；</li>
-<li>Compression：智能压缩配置；</li>
-<li>HSTS：HSTS；</li>
-<li>ClientIPHeader：存储客户端请求 IP 的头部信息配置；</li>
-<li>OCSPStapling：OCSP 装订；</li>
-<li>HTTP2：HTTP2 接入；</li>
-<li>PostMaxSize：POST 请求上传文件流式传输最大限制配置；</li>
-<li>ClientIPCountry：回源时携带客户端 IP 所属地域信息；</li>
-<li>UpstreamFollowRedirect：回源跟随重定向参数配置；</li>
-<li>UpstreamRequest：回源请求参数；</li>
-<li>Shield：源站卸载配置；</li>
-<li>TLSConfig：SSL/TLS 安全；</li>
-<li>ModifyOrigin：修改源站；</li>
-<li> SiteFailover：源站故障转移；</li>
-<li>HTTPUpstreamTimeout：七层回源超时配置；</li>
-<li>HttpResponse：HTTP 应答；</li>
-<li>ErrorPage：自定义错误页面；</li>
-<li>ModifyResponseHeader：修改 HTTP 节点响应头；</li>
-<li>ModifyRequestHeader：修改 HTTP 节点请求头；</li>
-<li>ResponseSpeedLimit：单连接下载限速；</li>
-<li>SetContentIdentifier：设置内容标识符；</li>
-<li>Vary：Vary 特性配置；</li>
-<li>ContentCompression：内容压缩配置；</li>
-<li>OriginAuthentication：回源鉴权配置。</li>
+                     * <p>操作名称。名称需要与参数结构体对应，例如 Name=Cache，则 CacheParameters 必填。</p><li>Cache：节点缓存 TTL；</li><li>CacheKey：自定义 Cache Key；</li><li>CachePrefresh：缓存预刷新；</li><li>AccessURLRedirect：访问 URL 重定向；</li><li>UpstreamURLRewrite：回源 URL 重写；</li><li>QUIC：QUIC；</li><li>WebSocket：WebSocket；</li><li>Authentication：Token 鉴权；</li><li>MaxAge：浏览器缓存 TTL；</li><li>StatusCodeCache：状态码缓存 TTL；</li><li>OfflineCache：离线缓存；</li><li>SmartRouting：智能加速；</li><li>AdvancedOriginRouting：高级回源优化；</li><li>RangeOriginPull：分片回源 ；</li><li>UpstreamHTTP2：HTTP2 回源；</li><li>HostHeader：Host Header 重写；</li><li>ForceRedirectHTTPS：访问协议强制 HTTPS 跳转配置；</li><li>OriginPullProtocol：回源 HTTPS；</li><li>Compression：智能压缩配置；</li><li>HSTS：HSTS；</li><li>ClientIPHeader：存储客户端请求 IP 的头部信息配置；</li><li>OCSPStapling：OCSP 装订；</li><li>HTTP2：HTTP2 接入；</li><li>PostMaxSize：POST 请求上传文件流式传输最大限制配置；</li><li>ClientIPCountry：回源时携带客户端 IP 所属地域信息；</li><li>UpstreamFollowRedirect：回源跟随重定向参数配置；</li><li>UpstreamRequest：回源请求参数；</li><li>Shield：源站卸载配置；</li><li>TLSConfig：SSL/TLS 安全；</li><li>ModifyOrigin：修改源站；</li><li> SiteFailover：源站故障转移；</li><li>HTTPUpstreamTimeout：七层回源超时配置；</li><li>HttpResponse：HTTP 应答；</li><li>ErrorPage：自定义错误页面；</li><li>ModifyResponseHeader：修改 HTTP 节点响应头；</li><li>ModifyRequestHeader：修改 HTTP 节点请求头；</li><li>ResponseSpeedLimit：单连接下载限速；</li><li>SetContentIdentifier：设置内容标识符；</li><li>Vary：Vary 特性配置；</li><li>ContentCompression：内容压缩配置；</li><li>OriginAuthentication：回源鉴权配置。</li>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 节点缓存 TTL 配置参数，当 Name 取值为 Cache 时，该参数必填。
+                     * <p>节点缓存 TTL 配置参数，当 Name 取值为 Cache 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CacheParameters m_cacheParameters;
                     bool m_cacheParametersHasBeenSet;
 
                     /**
-                     * 自定义 Cache Key 配置参数，当 Name 取值为 CacheKey 时，该参数必填。
+                     * <p>自定义 Cache Key 配置参数，当 Name 取值为 CacheKey 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CacheKeyParameters m_cacheKeyParameters;
                     bool m_cacheKeyParametersHasBeenSet;
 
                     /**
-                     * 缓存预刷新配置参数，当 Name 取值为 CachePrefresh 时，该参数必填。
+                     * <p>缓存预刷新配置参数，当 Name 取值为 CachePrefresh 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CachePrefreshParameters m_cachePrefreshParameters;
                     bool m_cachePrefreshParametersHasBeenSet;
 
                     /**
-                     * 访问 URL 重定向配置参数，当 Name 取值为 AccessURLRedirect 时，该参数必填。
+                     * <p>访问 URL 重定向配置参数，当 Name 取值为 AccessURLRedirect 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AccessURLRedirectParameters m_accessURLRedirectParameters;
                     bool m_accessURLRedirectParametersHasBeenSet;
 
                     /**
-                     * 回源 URL 重写配置参数，当 Name 取值为 UpstreamURLRewrite 时，该参数必填。
+                     * <p>回源 URL 重写配置参数，当 Name 取值为 UpstreamURLRewrite 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     UpstreamURLRewriteParameters m_upstreamURLRewriteParameters;
                     bool m_upstreamURLRewriteParametersHasBeenSet;
 
                     /**
-                     * QUIC 配置参数，当 Name 取值为 QUIC 时，该参数必填。
+                     * <p>QUIC 配置参数，当 Name 取值为 QUIC 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     QUICParameters m_qUICParameters;
                     bool m_qUICParametersHasBeenSet;
 
                     /**
-                     * WebSocket 配置参数，当 Name 取值为 WebSocket 时，该参数必填。
+                     * <p>WebSocket 配置参数，当 Name 取值为 WebSocket 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WebSocketParameters m_webSocketParameters;
                     bool m_webSocketParametersHasBeenSet;
 
                     /**
-                     * Token 鉴权配置参数，当 Name 取值为 Authentication 时，该参数必填。
+                     * <p>Token 鉴权配置参数，当 Name 取值为 Authentication 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AuthenticationParameters m_authenticationParameters;
                     bool m_authenticationParametersHasBeenSet;
 
                     /**
-                     * 浏览器缓存 TTL 配置参数，当 Name 取值为 MaxAge 时，该参数必填。
+                     * <p>浏览器缓存 TTL 配置参数，当 Name 取值为 MaxAge 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MaxAgeParameters m_maxAgeParameters;
                     bool m_maxAgeParametersHasBeenSet;
 
                     /**
-                     * 状态码缓存 TTL 配置参数，当 Name 取值为 StatusCodeCache 时，该参数必填。
+                     * <p>状态码缓存 TTL 配置参数，当 Name 取值为 StatusCodeCache 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     StatusCodeCacheParameters m_statusCodeCacheParameters;
                     bool m_statusCodeCacheParametersHasBeenSet;
 
                     /**
-                     * 离线缓存配置参数，当 Name 取值为 OfflineCache 时，该参数必填。
+                     * <p>离线缓存配置参数，当 Name 取值为 OfflineCache 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OfflineCacheParameters m_offlineCacheParameters;
                     bool m_offlineCacheParametersHasBeenSet;
 
                     /**
-                     * 智能加速配置参数，当 Name 取值为 SmartRouting 时，该参数必填。
+                     * <p>智能加速配置参数，当 Name 取值为 SmartRouting 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SmartRoutingParameters m_smartRoutingParameters;
                     bool m_smartRoutingParametersHasBeenSet;
 
                     /**
-                     * 分片回源配置参数，当 Name 取值为 RangeOriginPull 时，该参数必填。
+                     * <p>高级回源优化配置参数，当 Name 取值为 AdvancedOriginRouting 时，该参数必填。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AdvancedOriginRoutingParameters m_advancedOriginRoutingParameters;
+                    bool m_advancedOriginRoutingParametersHasBeenSet;
+
+                    /**
+                     * <p>分片回源配置参数，当 Name 取值为 RangeOriginPull 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RangeOriginPullParameters m_rangeOriginPullParameters;
                     bool m_rangeOriginPullParametersHasBeenSet;
 
                     /**
-                     * HTTP2 回源配置参数，当 Name 取值为 UpstreamHTTP2 时，该参数必填。
+                     * <p>HTTP2 回源配置参数，当 Name 取值为 UpstreamHTTP2 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     UpstreamHTTP2Parameters m_upstreamHTTP2Parameters;
                     bool m_upstreamHTTP2ParametersHasBeenSet;
 
                     /**
-                     * Host Header 重写配置参数，当 Name 取值为 HostHeader 时，该参数必填。
+                     * <p>Host Header 重写配置参数，当 Name 取值为 HostHeader 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HostHeaderParameters m_hostHeaderParameters;
                     bool m_hostHeaderParametersHasBeenSet;
 
                     /**
-                     * 访问协议强制 HTTPS 跳转配置，当 Name 取值为 ForceRedirectHTTPS 时，该参数必填。
+                     * <p>访问协议强制 HTTPS 跳转配置，当 Name 取值为 ForceRedirectHTTPS 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ForceRedirectHTTPSParameters m_forceRedirectHTTPSParameters;
                     bool m_forceRedirectHTTPSParametersHasBeenSet;
 
                     /**
-                     * 回源 HTTPS 配置参数，当 Name 取值为 OriginPullProtocol 时，该参数必填。
+                     * <p>回源 HTTPS 配置参数，当 Name 取值为 OriginPullProtocol 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OriginPullProtocolParameters m_originPullProtocolParameters;
                     bool m_originPullProtocolParametersHasBeenSet;
 
                     /**
-                     * 智能压缩配置，当 Name 取值为 Compression 时，该参数必填。
+                     * <p>智能压缩配置，当 Name 取值为 Compression 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CompressionParameters m_compressionParameters;
                     bool m_compressionParametersHasBeenSet;
 
                     /**
-                     * HSTS 配置参数，当 Name 取值为 HSTS 时，该参数必填。
+                     * <p>HSTS 配置参数，当 Name 取值为 HSTS 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HSTSParameters m_hSTSParameters;
                     bool m_hSTSParametersHasBeenSet;
 
                     /**
-                     * 存储客户端请求 IP 的头部信息配置，当 Name 取值为 ClientIPHeader 时，该参数必填。
+                     * <p>存储客户端请求 IP 的头部信息配置，当 Name 取值为 ClientIPHeader 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ClientIPHeaderParameters m_clientIPHeaderParameters;
                     bool m_clientIPHeaderParametersHasBeenSet;
 
                     /**
-                     * OCSP 装订配置参数，当 Name 取值为 OCSPStapling 时，该参数必填。
+                     * <p>OCSP 装订配置参数，当 Name 取值为 OCSPStapling 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OCSPStaplingParameters m_oCSPStaplingParameters;
                     bool m_oCSPStaplingParametersHasBeenSet;
 
                     /**
-                     * HTTP2 接入配置参数，当 Name 取值为 HTTP2 时，该参数必填。
+                     * <p>HTTP2 接入配置参数，当 Name 取值为 HTTP2 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HTTP2Parameters m_hTTP2Parameters;
                     bool m_hTTP2ParametersHasBeenSet;
 
                     /**
-                     * POST 请求上传文件流式传输最大限制配置，当 Name 取值为 PostMaxSize 时，该参数必填。
+                     * <p>POST 请求上传文件流式传输最大限制配置，当 Name 取值为 PostMaxSize 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PostMaxSizeParameters m_postMaxSizeParameters;
                     bool m_postMaxSizeParametersHasBeenSet;
 
                     /**
-                     * 回源时携带客户端 IP 所属地域信息配置参数，当 Name 取值为 ClientIPCountry 时，该参数必填。
+                     * <p>回源时携带客户端 IP 所属地域信息配置参数，当 Name 取值为 ClientIPCountry 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ClientIPCountryParameters m_clientIPCountryParameters;
                     bool m_clientIPCountryParametersHasBeenSet;
 
                     /**
-                     * 回源跟随重定向参数配置，当 Name 取值为 UpstreamFollowRedirect 时，该参数必填。
+                     * <p>回源跟随重定向参数配置，当 Name 取值为 UpstreamFollowRedirect 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     UpstreamFollowRedirectParameters m_upstreamFollowRedirectParameters;
                     bool m_upstreamFollowRedirectParametersHasBeenSet;
 
                     /**
-                     * 回源请求参数配置参数，当 Name 取值为 UpstreamRequest 时，该参数必填。
+                     * <p>回源请求参数配置参数，当 Name 取值为 UpstreamRequest 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     UpstreamRequestParameters m_upstreamRequestParameters;
                     bool m_upstreamRequestParametersHasBeenSet;
 
                     /**
-                     * 源站卸载配置参数，当 Name 取值为 Shield 时，该参数必填。
+                     * <p>源站卸载配置参数，当 Name 取值为 Shield 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ShieldParameters m_shieldParameters;
                     bool m_shieldParametersHasBeenSet;
 
                     /**
-                     * SSL/TLS 安全配置参数，当 Name 取值为 TLSConfig 时，该参数必填。
+                     * <p>SSL/TLS 安全配置参数，当 Name 取值为 TLSConfig 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TLSConfigParameters m_tLSConfigParameters;
                     bool m_tLSConfigParametersHasBeenSet;
 
                     /**
-                     * 修改源站配置参数，当 Name 取值为 ModifyOrigin 时，该参数必填。
+                     * <p>修改源站配置参数，当 Name 取值为 ModifyOrigin 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ModifyOriginParameters m_modifyOriginParameters;
                     bool m_modifyOriginParametersHasBeenSet;
 
                     /**
-                     * 源站故障转移配置参数，当 Name 取值为 SiteFailover 时，该参数必填。
+                     * <p>源站故障转移配置参数，当 Name 取值为 SiteFailover 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SiteFailoverParameters m_siteFailoverParameters;
                     bool m_siteFailoverParametersHasBeenSet;
 
                     /**
-                     * 七层回源超时配置，当 Name 取值为 HTTPUpstreamTimeout 时，该参数必填。
+                     * <p>七层回源超时配置，当 Name 取值为 HTTPUpstreamTimeout 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HTTPUpstreamTimeoutParameters m_hTTPUpstreamTimeoutParameters;
                     bool m_hTTPUpstreamTimeoutParametersHasBeenSet;
 
                     /**
-                     * HTTP 应答配置参数，当 Name 取值为 HttpResponse 时，该参数必填。
+                     * <p>HTTP 应答配置参数，当 Name 取值为 HttpResponse 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HTTPResponseParameters m_httpResponseParameters;
                     bool m_httpResponseParametersHasBeenSet;
 
                     /**
-                     * 自定义错误页面配置参数，当 Name 取值为 ErrorPage 时，该参数必填。
+                     * <p>自定义错误页面配置参数，当 Name 取值为 ErrorPage 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ErrorPageParameters m_errorPageParameters;
                     bool m_errorPageParametersHasBeenSet;
 
                     /**
-                     * 修改 HTTP 节点响应头配置参数，当 Name 取值为 ModifyResponseHeader 时，该参数必填。
+                     * <p>修改 HTTP 节点响应头配置参数，当 Name 取值为 ModifyResponseHeader 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ModifyResponseHeaderParameters m_modifyResponseHeaderParameters;
                     bool m_modifyResponseHeaderParametersHasBeenSet;
 
                     /**
-                     * 修改 HTTP 节点请求头配置参数，当 Name 取值为 ModifyRequestHeader 时，该参数必填。
+                     * <p>修改 HTTP 节点请求头配置参数，当 Name 取值为 ModifyRequestHeader 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ModifyRequestHeaderParameters m_modifyRequestHeaderParameters;
                     bool m_modifyRequestHeaderParametersHasBeenSet;
 
                     /**
-                     * 单连接下载限速配置参数，当 Name 取值为 ResponseSpeedLimit 时，该参数必填。
+                     * <p>单连接下载限速配置参数，当 Name 取值为 ResponseSpeedLimit 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ResponseSpeedLimitParameters m_responseSpeedLimitParameters;
                     bool m_responseSpeedLimitParametersHasBeenSet;
 
                     /**
-                     * 内容标识配置参数，当 Name 取值为 SetContentIdentifier 时，该参数必填。
-
+                     * <p>内容标识配置参数，当 Name 取值为 SetContentIdentifier 时，该参数必填。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SetContentIdentifierParameters m_setContentIdentifierParameters;
                     bool m_setContentIdentifierParametersHasBeenSet;
 
                     /**
-                     * Vary 特性配置参数，当 Name 取值为 Vary 时，该参数必填。
+                     * <p>Vary 特性配置参数，当 Name 取值为 Vary 时，该参数必填。</p>
                      */
                     VaryParameters m_varyParameters;
                     bool m_varyParametersHasBeenSet;
 
                     /**
-                     * 内容压缩配置参数，当 Name 取值为 ContentCompression 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
+                     * <p>内容压缩配置参数，当 Name 取值为 ContentCompression 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。</p>
                      */
                     ContentCompressionParameters m_contentCompressionParameters;
                     bool m_contentCompressionParametersHasBeenSet;
 
                     /**
-                     * 回源鉴权配置参数，当 Name 取值为 OriginAuthentication 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
+                     * <p>回源鉴权配置参数，当 Name 取值为 OriginAuthentication 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。</p>
                      */
                     OriginAuthenticationParameters m_originAuthenticationParameters;
                     bool m_originAuthenticationParametersHasBeenSet;

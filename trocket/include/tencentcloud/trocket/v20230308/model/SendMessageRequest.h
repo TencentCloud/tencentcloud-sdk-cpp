@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool MsgTagHasBeenSet() const;
 
+                    /**
+                     * 获取轻量主题
+                     * @return LiteTopic 轻量主题
+                     * 
+                     */
+                    std::string GetLiteTopic() const;
+
+                    /**
+                     * 设置轻量主题
+                     * @param _liteTopic 轻量主题
+                     * 
+                     */
+                    void SetLiteTopic(const std::string& _liteTopic);
+
+                    /**
+                     * 判断参数 LiteTopic 是否已赋值
+                     * @return LiteTopic 是否已赋值
+                     * 
+                     */
+                    bool LiteTopicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::string m_msgTag;
                     bool m_msgTagHasBeenSet;
+
+                    /**
+                     * 轻量主题
+                     */
+                    std::string m_liteTopic;
+                    bool m_liteTopicHasBeenSet;
 
                 };
             }

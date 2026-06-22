@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取队列列表信息
-                     * @return QueueInfoList 队列列表信息
+                     * 获取<p>队列列表信息</p>
+                     * @return QueueInfoList <p>队列列表信息</p>
                      * 
                      */
                     std::vector<RabbitMQQueueListInfo> GetQueueInfoList() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool QueueInfoListHasBeenSet() const;
 
                     /**
-                     * 获取数量
-                     * @return TotalCount 数量
+                     * 获取<p>数量</p>
+                     * @return TotalCount <p>数量</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 队列列表信息
+                     * <p>队列列表信息</p>
                      */
                     std::vector<RabbitMQQueueListInfo> m_queueInfoList;
                     bool m_queueInfoListHasBeenSet;
 
                     /**
-                     * 数量
+                     * <p>数量</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

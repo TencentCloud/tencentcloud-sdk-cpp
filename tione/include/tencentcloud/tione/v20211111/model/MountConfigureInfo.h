@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据源的相对路径，支持<@subaccount>这样的占位符
-                     * @return WorkDir 数据源的相对路径，支持<@subaccount>这样的占位符
+                     * 获取<p>数据源的相对路径，支持&lt;@subaccount&gt;这样的占位符</p>
+                     * @return WorkDir <p>数据源的相对路径，支持&lt;@subaccount&gt;这样的占位符</p>
                      * 
                      */
                     std::string GetWorkDir() const;
 
                     /**
-                     * 设置数据源的相对路径，支持<@subaccount>这样的占位符
-                     * @param _workDir 数据源的相对路径，支持<@subaccount>这样的占位符
+                     * 设置<p>数据源的相对路径，支持&lt;@subaccount&gt;这样的占位符</p>
+                     * @param _workDir <p>数据源的相对路径，支持&lt;@subaccount&gt;这样的占位符</p>
                      * 
                      */
                     void SetWorkDir(const std::string& _workDir);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据源的相对路径，支持<@subaccount>这样的占位符
+                     * <p>数据源的相对路径，支持&lt;@subaccount&gt;这样的占位符</p>
                      */
                     std::string m_workDir;
                     bool m_workDirHasBeenSet;

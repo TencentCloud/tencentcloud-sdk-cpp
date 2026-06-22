@@ -28,7 +28,8 @@ CreateRabbitMQServerlessBindingRequest::CreateRabbitMQServerlessBindingRequest()
     m_sourceHasBeenSet(false),
     m_destinationTypeHasBeenSet(false),
     m_destinationHasBeenSet(false),
-    m_routingKeyHasBeenSet(false)
+    m_routingKeyHasBeenSet(false),
+    m_argumentsHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,21 @@ string CreateRabbitMQServerlessBindingRequest::ToJsonString() const
         string key = "RoutingKey";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_routingKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_argumentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Arguments";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_arguments.begin(); itr != m_arguments.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -189,6 +205,22 @@ void CreateRabbitMQServerlessBindingRequest::SetRoutingKey(const string& _routin
 bool CreateRabbitMQServerlessBindingRequest::RoutingKeyHasBeenSet() const
 {
     return m_routingKeyHasBeenSet;
+}
+
+vector<RabbitMQServerlessKeyValuePair> CreateRabbitMQServerlessBindingRequest::GetArguments() const
+{
+    return m_arguments;
+}
+
+void CreateRabbitMQServerlessBindingRequest::SetArguments(const vector<RabbitMQServerlessKeyValuePair>& _arguments)
+{
+    m_arguments = _arguments;
+    m_argumentsHasBeenSet = true;
+}
+
+bool CreateRabbitMQServerlessBindingRequest::ArgumentsHasBeenSet() const
+{
+    return m_argumentsHasBeenSet;
 }
 
 

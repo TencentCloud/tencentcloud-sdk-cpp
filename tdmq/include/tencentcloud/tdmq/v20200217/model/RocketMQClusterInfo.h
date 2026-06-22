@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取集群名称
-                     * @return ClusterName 集群名称
+                     * 获取<p>集群名称</p>
+                     * @return ClusterName <p>集群名称</p>
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
-                     * 设置集群名称
-                     * @param _clusterName 集群名称
+                     * 设置<p>集群名称</p>
+                     * @param _clusterName <p>集群名称</p>
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取地域信息
-                     * @return Region 地域信息
+                     * 获取<p>地域信息</p>
+                     * @return Region <p>地域信息</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域信息
-                     * @param _region 地域信息
+                     * 设置<p>地域信息</p>
+                     * @param _region <p>地域信息</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，毫秒为单位
-                     * @return CreateTime 创建时间，毫秒为单位
+                     * 获取<p>创建时间，毫秒为单位</p>
+                     * @return CreateTime <p>创建时间，毫秒为单位</p>
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
-                     * 设置创建时间，毫秒为单位
-                     * @param _createTime 创建时间，毫秒为单位
+                     * 设置<p>创建时间，毫秒为单位</p>
+                     * @param _createTime <p>创建时间，毫秒为单位</p>
                      * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -132,18 +132,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取集群说明信息
+                     * 获取<p>集群说明信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Remark 集群说明信息
+                     * @return Remark <p>集群说明信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置集群说明信息
+                     * 设置<p>集群说明信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _remark 集群说明信息
+                     * @param _remark <p>集群说明信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -157,15 +157,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取公网接入地址
-                     * @return PublicEndPoint 公网接入地址
+                     * 获取<p>公网接入地址</p>
+                     * @return PublicEndPoint <p>公网接入地址</p>
                      * 
                      */
                     std::string GetPublicEndPoint() const;
 
                     /**
-                     * 设置公网接入地址
-                     * @param _publicEndPoint 公网接入地址
+                     * 设置<p>公网接入地址</p>
+                     * @param _publicEndPoint <p>公网接入地址</p>
                      * 
                      */
                     void SetPublicEndPoint(const std::string& _publicEndPoint);
@@ -178,15 +178,15 @@ namespace TencentCloud
                     bool PublicEndPointHasBeenSet() const;
 
                     /**
-                     * 获取VPC接入地址
-                     * @return VpcEndPoint VPC接入地址
+                     * 获取<p>VPC接入地址</p>
+                     * @return VpcEndPoint <p>VPC接入地址</p>
                      * 
                      */
                     std::string GetVpcEndPoint() const;
 
                     /**
-                     * 设置VPC接入地址
-                     * @param _vpcEndPoint VPC接入地址
+                     * 设置<p>VPC接入地址</p>
+                     * @param _vpcEndPoint <p>VPC接入地址</p>
                      * 
                      */
                     void SetVpcEndPoint(const std::string& _vpcEndPoint);
@@ -199,18 +199,18 @@ namespace TencentCloud
                     bool VpcEndPointHasBeenSet() const;
 
                     /**
-                     * 获取是否支持命名空间接入点
+                     * 获取<p>是否支持命名空间接入点</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SupportNamespaceEndpoint 是否支持命名空间接入点
+                     * @return SupportNamespaceEndpoint <p>是否支持命名空间接入点</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSupportNamespaceEndpoint() const;
 
                     /**
-                     * 设置是否支持命名空间接入点
+                     * 设置<p>是否支持命名空间接入点</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _supportNamespaceEndpoint 是否支持命名空间接入点
+                     * @param _supportNamespaceEndpoint <p>是否支持命名空间接入点</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -224,18 +224,18 @@ namespace TencentCloud
                     bool SupportNamespaceEndpointHasBeenSet() const;
 
                     /**
-                     * 获取VPC信息
+                     * 获取<p>VPC信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Vpcs VPC信息
+                     * @return Vpcs <p>VPC信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VpcConfig> GetVpcs() const;
 
                     /**
-                     * 设置VPC信息
+                     * 设置<p>VPC信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vpcs VPC信息
+                     * @param _vpcs <p>VPC信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -249,18 +249,18 @@ namespace TencentCloud
                     bool VpcsHasBeenSet() const;
 
                     /**
-                     * 获取是否为专享实例
+                     * 获取<p>是否为专享实例</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsVip 是否为专享实例
+                     * @return IsVip <p>是否为专享实例</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsVip() const;
 
                     /**
-                     * 设置是否为专享实例
+                     * 设置<p>是否为专享实例</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isVip 是否为专享实例
+                     * @param _isVip <p>是否为专享实例</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -274,18 +274,18 @@ namespace TencentCloud
                     bool IsVipHasBeenSet() const;
 
                     /**
-                     * 获取Rocketmq集群标识
+                     * 获取<p>Rocketmq集群标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RocketMQFlag Rocketmq集群标识
+                     * @return RocketMQFlag <p>Rocketmq集群标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetRocketMQFlag() const;
 
                     /**
-                     * 设置Rocketmq集群标识
+                     * 设置<p>Rocketmq集群标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _rocketMQFlag Rocketmq集群标识
+                     * @param _rocketMQFlag <p>Rocketmq集群标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -299,18 +299,18 @@ namespace TencentCloud
                     bool RocketMQFlagHasBeenSet() const;
 
                     /**
-                     * 获取计费状态，1表示正常，2表示已停服，3表示已销毁
+                     * 获取<p>计费状态，1表示正常，2表示已停服，3表示已销毁</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 计费状态，1表示正常，2表示已停服，3表示已销毁
+                     * @return Status <p>计费状态，1表示正常，2表示已停服，3表示已销毁</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置计费状态，1表示正常，2表示已停服，3表示已销毁
+                     * 设置<p>计费状态，1表示正常，2表示已停服，3表示已销毁</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 计费状态，1表示正常，2表示已停服，3表示已销毁
+                     * @param _status <p>计费状态，1表示正常，2表示已停服，3表示已销毁</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -324,18 +324,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取欠费停服时间，毫秒为单位
+                     * 获取<p>欠费停服时间，毫秒为单位</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsolateTime 欠费停服时间，毫秒为单位
+                     * @return IsolateTime <p>欠费停服时间，毫秒为单位</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsolateTime() const;
 
                     /**
-                     * 设置欠费停服时间，毫秒为单位
+                     * 设置<p>欠费停服时间，毫秒为单位</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isolateTime 欠费停服时间，毫秒为单位
+                     * @param _isolateTime <p>欠费停服时间，毫秒为单位</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -349,18 +349,18 @@ namespace TencentCloud
                     bool IsolateTimeHasBeenSet() const;
 
                     /**
-                     * 获取HTTP协议公网接入地址
+                     * 获取<p>HTTP协议公网接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HttpPublicEndpoint HTTP协议公网接入地址
+                     * @return HttpPublicEndpoint <p>HTTP协议公网接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHttpPublicEndpoint() const;
 
                     /**
-                     * 设置HTTP协议公网接入地址
+                     * 设置<p>HTTP协议公网接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _httpPublicEndpoint HTTP协议公网接入地址
+                     * @param _httpPublicEndpoint <p>HTTP协议公网接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -374,18 +374,18 @@ namespace TencentCloud
                     bool HttpPublicEndpointHasBeenSet() const;
 
                     /**
-                     * 获取HTTP协议VPC接入地址
+                     * 获取<p>HTTP协议VPC接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HttpVpcEndpoint HTTP协议VPC接入地址
+                     * @return HttpVpcEndpoint <p>HTTP协议VPC接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHttpVpcEndpoint() const;
 
                     /**
-                     * 设置HTTP协议VPC接入地址
+                     * 设置<p>HTTP协议VPC接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _httpVpcEndpoint HTTP协议VPC接入地址
+                     * @param _httpVpcEndpoint <p>HTTP协议VPC接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -399,18 +399,18 @@ namespace TencentCloud
                     bool HttpVpcEndpointHasBeenSet() const;
 
                     /**
-                     * 获取TCP内部接入地址
+                     * 获取<p>TCP内部接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InternalEndpoint TCP内部接入地址
+                     * @return InternalEndpoint <p>TCP内部接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInternalEndpoint() const;
 
                     /**
-                     * 设置TCP内部接入地址
+                     * 设置<p>TCP内部接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _internalEndpoint TCP内部接入地址
+                     * @param _internalEndpoint <p>TCP内部接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -424,18 +424,18 @@ namespace TencentCloud
                     bool InternalEndpointHasBeenSet() const;
 
                     /**
-                     * 获取HTTP协议内部接入地址
+                     * 获取<p>HTTP协议内部接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HttpInternalEndpoint HTTP协议内部接入地址
+                     * @return HttpInternalEndpoint <p>HTTP协议内部接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHttpInternalEndpoint() const;
 
                     /**
-                     * 设置HTTP协议内部接入地址
+                     * 设置<p>HTTP协议内部接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _httpInternalEndpoint HTTP协议内部接入地址
+                     * @param _httpInternalEndpoint <p>HTTP协议内部接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -449,18 +449,18 @@ namespace TencentCloud
                     bool HttpInternalEndpointHasBeenSet() const;
 
                     /**
-                     * 获取是否开启ACL鉴权，专享实例支持关闭
+                     * 获取<p>是否开启ACL鉴权，专享实例支持关闭</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AclEnabled 是否开启ACL鉴权，专享实例支持关闭
+                     * @return AclEnabled <p>是否开启ACL鉴权，专享实例支持关闭</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAclEnabled() const;
 
                     /**
-                     * 设置是否开启ACL鉴权，专享实例支持关闭
+                     * 设置<p>是否开启ACL鉴权，专享实例支持关闭</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _aclEnabled 是否开启ACL鉴权，专享实例支持关闭
+                     * @param _aclEnabled <p>是否开启ACL鉴权，专享实例支持关闭</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -474,18 +474,18 @@ namespace TencentCloud
                     bool AclEnabledHasBeenSet() const;
 
                     /**
-                     * 获取公网CLB实例ID
+                     * 获取<p>公网CLB实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PublicClbId 公网CLB实例ID
+                     * @return PublicClbId <p>公网CLB实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicClbId() const;
 
                     /**
-                     * 设置公网CLB实例ID
+                     * 设置<p>公网CLB实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _publicClbId 公网CLB实例ID
+                     * @param _publicClbId <p>公网CLB实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -499,18 +499,18 @@ namespace TencentCloud
                     bool PublicClbIdHasBeenSet() const;
 
                     /**
-                     * 获取vip
+                     * 获取<p>vip</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Vip vip
+                     * @return Vip <p>vip</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置vip
+                     * 设置<p>vip</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vip vip
+                     * @param _vip <p>vip</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -524,18 +524,18 @@ namespace TencentCloud
                     bool VipHasBeenSet() const;
 
                     /**
-                     * 获取所属VPC
+                     * 获取<p>所属VPC</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VpcId 所属VPC
+                     * @return VpcId <p>所属VPC</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置所属VPC
+                     * 设置<p>所属VPC</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vpcId 所属VPC
+                     * @param _vpcId <p>所属VPC</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -549,18 +549,18 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取是否支持迁移
+                     * 获取<p>是否支持迁移</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SupportMigration 是否支持迁移
+                     * @return SupportMigration <p>是否支持迁移</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSupportMigration() const;
 
                     /**
-                     * 设置是否支持迁移
+                     * 设置<p>是否支持迁移</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _supportMigration 是否支持迁移
+                     * @param _supportMigration <p>是否支持迁移</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -574,18 +574,18 @@ namespace TencentCloud
                     bool SupportMigrationHasBeenSet() const;
 
                     /**
-                     * 获取实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败，6 - 变配中，7 - 变配失败
+                     * 获取<p>实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败，6 - 变配中，7 - 变配失败</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceStatus 实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败，6 - 变配中，7 - 变配失败
+                     * @return InstanceStatus <p>实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败，6 - 变配中，7 - 变配失败</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInstanceStatus() const;
 
                     /**
-                     * 设置实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败，6 - 变配中，7 - 变配失败
+                     * 设置<p>实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败，6 - 变配中，7 - 变配失败</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceStatus 实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败，6 - 变配中，7 - 变配失败
+                     * @param _instanceStatus <p>实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败，6 - 变配中，7 - 变配失败</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -599,18 +599,18 @@ namespace TencentCloud
                     bool InstanceStatusHasBeenSet() const;
 
                     /**
-                     * 获取集群所属可用区，表明集群归属的可用区
+                     * 获取<p>集群所属可用区，表明集群归属的可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ZoneId 集群所属可用区，表明集群归属的可用区
+                     * @return ZoneId <p>集群所属可用区，表明集群归属的可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
-                     * 设置集群所属可用区，表明集群归属的可用区
+                     * 设置<p>集群所属可用区，表明集群归属的可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _zoneId 集群所属可用区，表明集群归属的可用区
+                     * @param _zoneId <p>集群所属可用区，表明集群归属的可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -624,18 +624,18 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取集群节点所在的可用区，若该集群为跨可用区集群，则包含该集群节点所在的多个可用区。
+                     * 获取<p>集群节点所在的可用区，若该集群为跨可用区集群，则包含该集群节点所在的多个可用区。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ZoneIds 集群节点所在的可用区，若该集群为跨可用区集群，则包含该集群节点所在的多个可用区。
+                     * @return ZoneIds <p>集群节点所在的可用区，若该集群为跨可用区集群，则包含该集群节点所在的多个可用区。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetZoneIds() const;
 
                     /**
-                     * 设置集群节点所在的可用区，若该集群为跨可用区集群，则包含该集群节点所在的多个可用区。
+                     * 设置<p>集群节点所在的可用区，若该集群为跨可用区集群，则包含该集群节点所在的多个可用区。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _zoneIds 集群节点所在的可用区，若该集群为跨可用区集群，则包含该集群节点所在的多个可用区。
+                     * @param _zoneIds <p>集群节点所在的可用区，若该集群为跨可用区集群，则包含该集群节点所在的多个可用区。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -649,15 +649,15 @@ namespace TencentCloud
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
-                     * 获取是否已冻结
-                     * @return IsFrozen 是否已冻结
+                     * 获取<p>是否已冻结</p>
+                     * @return IsFrozen <p>是否已冻结</p>
                      * 
                      */
                     bool GetIsFrozen() const;
 
                     /**
-                     * 设置是否已冻结
-                     * @param _isFrozen 是否已冻结
+                     * 设置<p>是否已冻结</p>
+                     * @param _isFrozen <p>是否已冻结</p>
                      * 
                      */
                     void SetIsFrozen(const bool& _isFrozen);
@@ -670,15 +670,15 @@ namespace TencentCloud
                     bool IsFrozenHasBeenSet() const;
 
                     /**
-                     * 获取是否开启自动创建主题
-                     * @return AutoCreateTopicEnabled 是否开启自动创建主题
+                     * 获取<p>是否开启自动创建主题</p>
+                     * @return AutoCreateTopicEnabled <p>是否开启自动创建主题</p>
                      * 
                      */
                     bool GetAutoCreateTopicEnabled() const;
 
                     /**
-                     * 设置是否开启自动创建主题
-                     * @param _autoCreateTopicEnabled 是否开启自动创建主题
+                     * 设置<p>是否开启自动创建主题</p>
+                     * @param _autoCreateTopicEnabled <p>是否开启自动创建主题</p>
                      * 
                      */
                     void SetAutoCreateTopicEnabled(const bool& _autoCreateTopicEnabled);
@@ -691,15 +691,15 @@ namespace TencentCloud
                     bool AutoCreateTopicEnabledHasBeenSet() const;
 
                     /**
-                     * 获取是否开启集群Admin能力
-                     * @return AdminFeatureEnabled 是否开启集群Admin能力
+                     * 获取<p>是否开启集群Admin能力</p>
+                     * @return AdminFeatureEnabled <p>是否开启集群Admin能力</p>
                      * 
                      */
                     bool GetAdminFeatureEnabled() const;
 
                     /**
-                     * 设置是否开启集群Admin能力
-                     * @param _adminFeatureEnabled 是否开启集群Admin能力
+                     * 设置<p>是否开启集群Admin能力</p>
+                     * @param _adminFeatureEnabled <p>是否开启集群Admin能力</p>
                      * 
                      */
                     void SetAdminFeatureEnabled(const bool& _adminFeatureEnabled);
@@ -712,18 +712,18 @@ namespace TencentCloud
                     bool AdminFeatureEnabledHasBeenSet() const;
 
                     /**
-                     * 获取Admin AK
+                     * 获取<p>Admin AK</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AdminAccessKey Admin AK
+                     * @return AdminAccessKey <p>Admin AK</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdminAccessKey() const;
 
                     /**
-                     * 设置Admin AK
+                     * 设置<p>Admin AK</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _adminAccessKey Admin AK
+                     * @param _adminAccessKey <p>Admin AK</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -737,18 +737,18 @@ namespace TencentCloud
                     bool AdminAccessKeyHasBeenSet() const;
 
                     /**
-                     * 获取Admin SK
+                     * 获取<p>Admin SK</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AdminSecretKey Admin SK
+                     * @return AdminSecretKey <p>Admin SK</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdminSecretKey() const;
 
                     /**
-                     * 设置Admin SK
+                     * 设置<p>Admin SK</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _adminSecretKey Admin SK
+                     * @param _adminSecretKey <p>Admin SK</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -762,15 +762,15 @@ namespace TencentCloud
                     bool AdminSecretKeyHasBeenSet() const;
 
                     /**
-                     * 获取是否开启删除保护
-                     * @return EnableDeletionProtection 是否开启删除保护
+                     * 获取<p>是否开启删除保护</p>
+                     * @return EnableDeletionProtection <p>是否开启删除保护</p>
                      * 
                      */
                     bool GetEnableDeletionProtection() const;
 
                     /**
-                     * 设置是否开启删除保护
-                     * @param _enableDeletionProtection 是否开启删除保护
+                     * 设置<p>是否开启删除保护</p>
+                     * @param _enableDeletionProtection <p>是否开启删除保护</p>
                      * 
                      */
                     void SetEnableDeletionProtection(const bool& _enableDeletionProtection);
@@ -782,214 +782,246 @@ namespace TencentCloud
                      */
                     bool EnableDeletionProtectionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启自动创建消费组</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoCreateConsumeGroupEnabled <p>是否开启自动创建消费组</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetAutoCreateConsumeGroupEnabled() const;
+
+                    /**
+                     * 设置<p>是否开启自动创建消费组</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _autoCreateConsumeGroupEnabled <p>是否开启自动创建消费组</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAutoCreateConsumeGroupEnabled(const bool& _autoCreateConsumeGroupEnabled);
+
+                    /**
+                     * 判断参数 AutoCreateConsumeGroupEnabled 是否已赋值
+                     * @return AutoCreateConsumeGroupEnabled 是否已赋值
+                     * 
+                     */
+                    bool AutoCreateConsumeGroupEnabledHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 集群名称
+                     * <p>集群名称</p>
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 地域信息
+                     * <p>地域信息</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 创建时间，毫秒为单位
+                     * <p>创建时间，毫秒为单位</p>
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 集群说明信息
+                     * <p>集群说明信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 公网接入地址
+                     * <p>公网接入地址</p>
                      */
                     std::string m_publicEndPoint;
                     bool m_publicEndPointHasBeenSet;
 
                     /**
-                     * VPC接入地址
+                     * <p>VPC接入地址</p>
                      */
                     std::string m_vpcEndPoint;
                     bool m_vpcEndPointHasBeenSet;
 
                     /**
-                     * 是否支持命名空间接入点
+                     * <p>是否支持命名空间接入点</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_supportNamespaceEndpoint;
                     bool m_supportNamespaceEndpointHasBeenSet;
 
                     /**
-                     * VPC信息
+                     * <p>VPC信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VpcConfig> m_vpcs;
                     bool m_vpcsHasBeenSet;
 
                     /**
-                     * 是否为专享实例
+                     * <p>是否为专享实例</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isVip;
                     bool m_isVipHasBeenSet;
 
                     /**
-                     * Rocketmq集群标识
+                     * <p>Rocketmq集群标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_rocketMQFlag;
                     bool m_rocketMQFlagHasBeenSet;
 
                     /**
-                     * 计费状态，1表示正常，2表示已停服，3表示已销毁
+                     * <p>计费状态，1表示正常，2表示已停服，3表示已销毁</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 欠费停服时间，毫秒为单位
+                     * <p>欠费停服时间，毫秒为单位</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isolateTime;
                     bool m_isolateTimeHasBeenSet;
 
                     /**
-                     * HTTP协议公网接入地址
+                     * <p>HTTP协议公网接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_httpPublicEndpoint;
                     bool m_httpPublicEndpointHasBeenSet;
 
                     /**
-                     * HTTP协议VPC接入地址
+                     * <p>HTTP协议VPC接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_httpVpcEndpoint;
                     bool m_httpVpcEndpointHasBeenSet;
 
                     /**
-                     * TCP内部接入地址
+                     * <p>TCP内部接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_internalEndpoint;
                     bool m_internalEndpointHasBeenSet;
 
                     /**
-                     * HTTP协议内部接入地址
+                     * <p>HTTP协议内部接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_httpInternalEndpoint;
                     bool m_httpInternalEndpointHasBeenSet;
 
                     /**
-                     * 是否开启ACL鉴权，专享实例支持关闭
+                     * <p>是否开启ACL鉴权，专享实例支持关闭</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_aclEnabled;
                     bool m_aclEnabledHasBeenSet;
 
                     /**
-                     * 公网CLB实例ID
+                     * <p>公网CLB实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicClbId;
                     bool m_publicClbIdHasBeenSet;
 
                     /**
-                     * vip
+                     * <p>vip</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
-                     * 所属VPC
+                     * <p>所属VPC</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 是否支持迁移
+                     * <p>是否支持迁移</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_supportMigration;
                     bool m_supportMigrationHasBeenSet;
 
                     /**
-                     * 实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败，6 - 变配中，7 - 变配失败
+                     * <p>实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败，6 - 变配中，7 - 变配失败</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_instanceStatus;
                     bool m_instanceStatusHasBeenSet;
 
                     /**
-                     * 集群所属可用区，表明集群归属的可用区
+                     * <p>集群所属可用区，表明集群归属的可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 集群节点所在的可用区，若该集群为跨可用区集群，则包含该集群节点所在的多个可用区。
+                     * <p>集群节点所在的可用区，若该集群为跨可用区集群，则包含该集群节点所在的多个可用区。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
 
                     /**
-                     * 是否已冻结
+                     * <p>是否已冻结</p>
                      */
                     bool m_isFrozen;
                     bool m_isFrozenHasBeenSet;
 
                     /**
-                     * 是否开启自动创建主题
+                     * <p>是否开启自动创建主题</p>
                      */
                     bool m_autoCreateTopicEnabled;
                     bool m_autoCreateTopicEnabledHasBeenSet;
 
                     /**
-                     * 是否开启集群Admin能力
+                     * <p>是否开启集群Admin能力</p>
                      */
                     bool m_adminFeatureEnabled;
                     bool m_adminFeatureEnabledHasBeenSet;
 
                     /**
-                     * Admin AK
+                     * <p>Admin AK</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_adminAccessKey;
                     bool m_adminAccessKeyHasBeenSet;
 
                     /**
-                     * Admin SK
+                     * <p>Admin SK</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_adminSecretKey;
                     bool m_adminSecretKeyHasBeenSet;
 
                     /**
-                     * 是否开启删除保护
+                     * <p>是否开启删除保护</p>
                      */
                     bool m_enableDeletionProtection;
                     bool m_enableDeletionProtectionHasBeenSet;
+
+                    /**
+                     * <p>是否开启自动创建消费组</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_autoCreateConsumeGroupEnabled;
+                    bool m_autoCreateConsumeGroupEnabledHasBeenSet;
 
                 };
             }

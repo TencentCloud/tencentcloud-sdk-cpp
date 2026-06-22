@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tione/v20211111/model/ResourceInfo.h>
+#include <tencentcloud/tione/v20211111/model/RepairTaskInfo.h>
 
 
 namespace TencentCloud
@@ -377,6 +378,194 @@ namespace TencentCloud
                      */
                     bool ErrMsgHasBeenSet() const;
 
+                    /**
+                     * 获取<p>节点可用资源</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AvailableResource <p>节点可用资源</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ResourceInfo GetAvailableResource() const;
+
+                    /**
+                     * 设置<p>节点可用资源</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _availableResource <p>节点可用资源</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAvailableResource(const ResourceInfo& _availableResource);
+
+                    /**
+                     * 判断参数 AvailableResource 是否已赋值
+                     * @return AvailableResource 是否已赋值
+                     * 
+                     */
+                    bool AvailableResourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>资源组节点的IP</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceIP <p>资源组节点的IP</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceIP() const;
+
+                    /**
+                     * 设置<p>资源组节点的IP</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceIP <p>资源组节点的IP</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceIP(const std::string& _instanceIP);
+
+                    /**
+                     * 判断参数 InstanceIP 是否已赋值
+                     * @return InstanceIP 是否已赋值
+                     * 
+                     */
+                    bool InstanceIPHasBeenSet() const;
+
+                    /**
+                     * 获取<p>资源组节点的名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceName <p>资源组节点的名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceName() const;
+
+                    /**
+                     * 设置<p>资源组节点的名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceName <p>资源组节点的名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceName(const std::string& _instanceName);
+
+                    /**
+                     * 判断参数 InstanceName 是否已赋值
+                     * @return InstanceName 是否已赋值
+                     * 
+                     */
+                    bool InstanceNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>cvm机型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CvmInstanceType <p>cvm机型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCvmInstanceType() const;
+
+                    /**
+                     * 设置<p>cvm机型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cvmInstanceType <p>cvm机型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCvmInstanceType(const std::string& _cvmInstanceType);
+
+                    /**
+                     * 判断参数 CvmInstanceType 是否已赋值
+                     * @return CvmInstanceType 是否已赋值
+                     * 
+                     */
+                    bool CvmInstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否自动续买</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoRenew <p>是否自动续买</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetAutoRenew() const;
+
+                    /**
+                     * 设置<p>是否自动续买</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _autoRenew <p>是否自动续买</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAutoRenew(const bool& _autoRenew);
+
+                    /**
+                     * 判断参数 AutoRenew 是否已赋值
+                     * @return AutoRenew 是否已赋值
+                     * 
+                     */
+                    bool AutoRenewHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否被隔离</p>
+                     * @return Isolated <p>是否被隔离</p>
+                     * 
+                     */
+                    bool GetIsolated() const;
+
+                    /**
+                     * 设置<p>是否被隔离</p>
+                     * @param _isolated <p>是否被隔离</p>
+                     * 
+                     */
+                    void SetIsolated(const bool& _isolated);
+
+                    /**
+                     * 判断参数 Isolated 是否已赋值
+                     * @return Isolated 是否已赋值
+                     * 
+                     */
+                    bool IsolatedHasBeenSet() const;
+
+                    /**
+                     * 获取<p>维修任务信息</p>
+                     * @return RepairTaskInfo <p>维修任务信息</p>
+                     * 
+                     */
+                    RepairTaskInfo GetRepairTaskInfo() const;
+
+                    /**
+                     * 设置<p>维修任务信息</p>
+                     * @param _repairTaskInfo <p>维修任务信息</p>
+                     * 
+                     */
+                    void SetRepairTaskInfo(const RepairTaskInfo& _repairTaskInfo);
+
+                    /**
+                     * 判断参数 RepairTaskInfo 是否已赋值
+                     * @return RepairTaskInfo 是否已赋值
+                     * 
+                     */
+                    bool RepairTaskInfoHasBeenSet() const;
+
+                    /**
+                     * 获取<p>节点可用区名称</p>
+                     * @return ZoneName <p>节点可用区名称</p>
+                     * 
+                     */
+                    std::string GetZoneName() const;
+
+                    /**
+                     * 设置<p>节点可用区名称</p>
+                     * @param _zoneName <p>节点可用区名称</p>
+                     * 
+                     */
+                    void SetZoneName(const std::string& _zoneName);
+
+                    /**
+                     * 判断参数 ZoneName 是否已赋值
+                     * @return ZoneName 是否已赋值
+                     * 
+                     */
+                    bool ZoneNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -471,6 +660,59 @@ namespace TencentCloud
                      */
                     std::string m_errMsg;
                     bool m_errMsgHasBeenSet;
+
+                    /**
+                     * <p>节点可用资源</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ResourceInfo m_availableResource;
+                    bool m_availableResourceHasBeenSet;
+
+                    /**
+                     * <p>资源组节点的IP</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceIP;
+                    bool m_instanceIPHasBeenSet;
+
+                    /**
+                     * <p>资源组节点的名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceName;
+                    bool m_instanceNameHasBeenSet;
+
+                    /**
+                     * <p>cvm机型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cvmInstanceType;
+                    bool m_cvmInstanceTypeHasBeenSet;
+
+                    /**
+                     * <p>是否自动续买</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_autoRenew;
+                    bool m_autoRenewHasBeenSet;
+
+                    /**
+                     * <p>是否被隔离</p>
+                     */
+                    bool m_isolated;
+                    bool m_isolatedHasBeenSet;
+
+                    /**
+                     * <p>维修任务信息</p>
+                     */
+                    RepairTaskInfo m_repairTaskInfo;
+                    bool m_repairTaskInfoHasBeenSet;
+
+                    /**
+                     * <p>节点可用区名称</p>
+                     */
+                    std::string m_zoneName;
+                    bool m_zoneNameHasBeenSet;
 
                 };
             }

@@ -42,7 +42,9 @@ DescribeSecretResponse::DescribeSecretResponse() :
     m_targetUinHasBeenSet(false),
     m_additionalConfigHasBeenSet(false),
     m_encryptTypeHasBeenSet(false),
-    m_encryptSwitchingHasBeenSet(false)
+    m_encryptSwitchingHasBeenSet(false),
+    m_createUinStringHasBeenSet(false),
+    m_targetUinStringHasBeenSet(false)
 {
 }
 
@@ -273,6 +275,26 @@ CoreInternalOutcome DescribeSecretResponse::Deserialize(const string &payload)
         m_encryptSwitchingHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CreateUinString") && !rsp["CreateUinString"].IsNull())
+    {
+        if (!rsp["CreateUinString"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateUinString` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createUinString = string(rsp["CreateUinString"].GetString());
+        m_createUinStringHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TargetUinString") && !rsp["TargetUinString"].IsNull())
+    {
+        if (!rsp["TargetUinString"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetUinString` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetUinString = string(rsp["TargetUinString"].GetString());
+        m_targetUinStringHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -438,6 +460,22 @@ string DescribeSecretResponse::ToJsonString() const
         string key = "EncryptSwitching";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_encryptSwitching, allocator);
+    }
+
+    if (m_createUinStringHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateUinString";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createUinString.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetUinStringHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetUinString";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetUinString.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -640,6 +678,26 @@ bool DescribeSecretResponse::GetEncryptSwitching() const
 bool DescribeSecretResponse::EncryptSwitchingHasBeenSet() const
 {
     return m_encryptSwitchingHasBeenSet;
+}
+
+string DescribeSecretResponse::GetCreateUinString() const
+{
+    return m_createUinString;
+}
+
+bool DescribeSecretResponse::CreateUinStringHasBeenSet() const
+{
+    return m_createUinStringHasBeenSet;
+}
+
+string DescribeSecretResponse::GetTargetUinString() const
+{
+    return m_targetUinString;
+}
+
+bool DescribeSecretResponse::TargetUinStringHasBeenSet() const
+{
+    return m_targetUinStringHasBeenSet;
 }
 
 

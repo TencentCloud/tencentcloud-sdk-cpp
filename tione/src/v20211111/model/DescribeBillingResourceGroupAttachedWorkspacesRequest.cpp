@@ -23,6 +23,7 @@ using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
 DescribeBillingResourceGroupAttachedWorkspacesRequest::DescribeBillingResourceGroupAttachedWorkspacesRequest() :
+    m_resourceGroupIdHasBeenSet(false),
     m_tiProjectIdHasBeenSet(false)
 {
 }
@@ -33,6 +34,14 @@ string DescribeBillingResourceGroupAttachedWorkspacesRequest::ToJsonString() con
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_resourceGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceGroupId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_tiProjectIdHasBeenSet)
     {
@@ -49,6 +58,22 @@ string DescribeBillingResourceGroupAttachedWorkspacesRequest::ToJsonString() con
     return buffer.GetString();
 }
 
+
+string DescribeBillingResourceGroupAttachedWorkspacesRequest::GetResourceGroupId() const
+{
+    return m_resourceGroupId;
+}
+
+void DescribeBillingResourceGroupAttachedWorkspacesRequest::SetResourceGroupId(const string& _resourceGroupId)
+{
+    m_resourceGroupId = _resourceGroupId;
+    m_resourceGroupIdHasBeenSet = true;
+}
+
+bool DescribeBillingResourceGroupAttachedWorkspacesRequest::ResourceGroupIdHasBeenSet() const
+{
+    return m_resourceGroupIdHasBeenSet;
+}
 
 string DescribeBillingResourceGroupAttachedWorkspacesRequest::GetTiProjectId() const
 {

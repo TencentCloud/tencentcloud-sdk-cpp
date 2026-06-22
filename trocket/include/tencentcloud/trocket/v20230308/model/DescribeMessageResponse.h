@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取消息体
-                     * @return Body 消息体
+                     * 获取<p>消息体</p>
+                     * @return Body <p>消息体</p>
                      * 
                      */
                     std::string GetBody() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool BodyHasBeenSet() const;
 
                     /**
-                     * 获取详情参数
-                     * @return Properties 详情参数
+                     * 获取<p>详情参数</p>
+                     * @return Properties <p>详情参数</p>
                      * 
                      */
                     std::string GetProperties() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool PropertiesHasBeenSet() const;
 
                     /**
-                     * 获取生产时间
-                     * @return ProduceTime 生产时间
+                     * 获取<p>生产时间</p>
+                     * @return ProduceTime <p>生产时间</p>
                      * 
                      */
                     std::string GetProduceTime() const;
@@ -87,9 +87,9 @@ namespace TencentCloud
                     bool ProduceTimeHasBeenSet() const;
 
                     /**
-                     * 获取消息ID
+                     * 获取<p>消息ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MessageId 消息ID
+                     * @return MessageId <p>消息ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -103,8 +103,8 @@ namespace TencentCloud
                     bool MessageIdHasBeenSet() const;
 
                     /**
-                     * 获取生产者地址
-                     * @return ProducerAddr 生产者地址
+                     * 获取<p>生产者地址</p>
+                     * @return ProducerAddr <p>生产者地址</p>
                      * 
                      */
                     std::string GetProducerAddr() const;
@@ -117,9 +117,9 @@ namespace TencentCloud
                     bool ProducerAddrHasBeenSet() const;
 
                     /**
-                     * 获取消息消费情况列表
+                     * 获取<p>消息消费情况列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MessageTracks 消息消费情况列表
+                     * @return MessageTracks <p>消息消费情况列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -133,8 +133,8 @@ namespace TencentCloud
                     bool MessageTracksHasBeenSet() const;
 
                     /**
-                     * 获取主题名称
-                     * @return ShowTopicName 主题名称
+                     * 获取<p>主题名称</p>
+                     * @return ShowTopicName <p>主题名称</p>
                      * 
                      */
                     std::string GetShowTopicName() const;
@@ -147,9 +147,23 @@ namespace TencentCloud
                     bool ShowTopicNameHasBeenSet() const;
 
                     /**
-                     * 获取消息消费情况列表总条数
+                     * 获取<p>轻量主题名称</p>
+                     * @return LiteTopic <p>轻量主题名称</p>
+                     * 
+                     */
+                    std::string GetLiteTopic() const;
+
+                    /**
+                     * 判断参数 LiteTopic 是否已赋值
+                     * @return LiteTopic 是否已赋值
+                     * 
+                     */
+                    bool LiteTopicHasBeenSet() const;
+
+                    /**
+                     * 获取<p>消息消费情况列表总条数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MessageTracksCount 消息消费情况列表总条数
+                     * @return MessageTracksCount <p>消息消费情况列表总条数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -165,51 +179,57 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 消息体
+                     * <p>消息体</p>
                      */
                     std::string m_body;
                     bool m_bodyHasBeenSet;
 
                     /**
-                     * 详情参数
+                     * <p>详情参数</p>
                      */
                     std::string m_properties;
                     bool m_propertiesHasBeenSet;
 
                     /**
-                     * 生产时间
+                     * <p>生产时间</p>
                      */
                     std::string m_produceTime;
                     bool m_produceTimeHasBeenSet;
 
                     /**
-                     * 消息ID
+                     * <p>消息ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_messageId;
                     bool m_messageIdHasBeenSet;
 
                     /**
-                     * 生产者地址
+                     * <p>生产者地址</p>
                      */
                     std::string m_producerAddr;
                     bool m_producerAddrHasBeenSet;
 
                     /**
-                     * 消息消费情况列表
+                     * <p>消息消费情况列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MessageTrackItem> m_messageTracks;
                     bool m_messageTracksHasBeenSet;
 
                     /**
-                     * 主题名称
+                     * <p>主题名称</p>
                      */
                     std::string m_showTopicName;
                     bool m_showTopicNameHasBeenSet;
 
                     /**
-                     * 消息消费情况列表总条数
+                     * <p>轻量主题名称</p>
+                     */
+                    std::string m_liteTopic;
+                    bool m_liteTopicHasBeenSet;
+
+                    /**
+                     * <p>消息消费情况列表总条数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_messageTracksCount;

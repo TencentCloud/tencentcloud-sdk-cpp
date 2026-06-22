@@ -309,6 +309,34 @@ namespace TencentCloud
                      */
                     bool EncryptSwitchingHasBeenSet() const;
 
+                    /**
+                     * 获取<p>创建者 uin 字符串</p>
+                     * @return CreateUinString <p>创建者 uin 字符串</p>
+                     * 
+                     */
+                    std::string GetCreateUinString() const;
+
+                    /**
+                     * 判断参数 CreateUinString 是否已赋值
+                     * @return CreateUinString 是否已赋值
+                     * 
+                     */
+                    bool CreateUinStringHasBeenSet() const;
+
+                    /**
+                     * 获取<p>所属用户UIN 字符串</p>
+                     * @return TargetUinString <p>所属用户UIN 字符串</p>
+                     * 
+                     */
+                    std::string GetTargetUinString() const;
+
+                    /**
+                     * 判断参数 TargetUinString 是否已赋值
+                     * @return TargetUinString 是否已赋值
+                     * 
+                     */
+                    bool TargetUinStringHasBeenSet() const;
+
                 private:
 
                     /**
@@ -424,6 +452,18 @@ namespace TencentCloud
                      */
                     bool m_encryptSwitching;
                     bool m_encryptSwitchingHasBeenSet;
+
+                    /**
+                     * <p>创建者 uin 字符串</p>
+                     */
+                    std::string m_createUinString;
+                    bool m_createUinStringHasBeenSet;
+
+                    /**
+                     * <p>所属用户UIN 字符串</p>
+                     */
+                    std::string m_targetUinString;
+                    bool m_targetUinStringHasBeenSet;
 
                 };
             }

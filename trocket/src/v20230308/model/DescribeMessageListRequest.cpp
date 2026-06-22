@@ -35,7 +35,8 @@ DescribeMessageListRequest::DescribeMessageListRequest() :
     m_msgKeyHasBeenSet(false),
     m_recentMessageNumHasBeenSet(false),
     m_queryDeadLetterMessageHasBeenSet(false),
-    m_tagHasBeenSet(false)
+    m_tagHasBeenSet(false),
+    m_liteTopicHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,14 @@ string DescribeMessageListRequest::ToJsonString() const
         string key = "Tag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_tag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_liteTopicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LiteTopic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_liteTopic.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -364,6 +373,22 @@ void DescribeMessageListRequest::SetTag(const string& _tag)
 bool DescribeMessageListRequest::TagHasBeenSet() const
 {
     return m_tagHasBeenSet;
+}
+
+string DescribeMessageListRequest::GetLiteTopic() const
+{
+    return m_liteTopic;
+}
+
+void DescribeMessageListRequest::SetLiteTopic(const string& _liteTopic)
+{
+    m_liteTopic = _liteTopic;
+    m_liteTopicHasBeenSet = true;
+}
+
+bool DescribeMessageListRequest::LiteTopicHasBeenSet() const
+{
+    return m_liteTopicHasBeenSet;
 }
 
 

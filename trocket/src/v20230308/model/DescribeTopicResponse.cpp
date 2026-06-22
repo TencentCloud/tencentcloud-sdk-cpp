@@ -32,7 +32,9 @@ DescribeTopicResponse::DescribeTopicResponse() :
     m_lastUpdateTimeHasBeenSet(false),
     m_subscriptionCountHasBeenSet(false),
     m_subscriptionDataHasBeenSet(false),
-    m_msgTTLHasBeenSet(false)
+    m_msgTTLHasBeenSet(false),
+    m_autoExpireDeleteHasBeenSet(false),
+    m_autoExpireTimeHasBeenSet(false)
 {
 }
 
@@ -170,6 +172,26 @@ CoreInternalOutcome DescribeTopicResponse::Deserialize(const string &payload)
         m_msgTTLHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AutoExpireDelete") && !rsp["AutoExpireDelete"].IsNull())
+    {
+        if (!rsp["AutoExpireDelete"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoExpireDelete` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoExpireDelete = rsp["AutoExpireDelete"].GetBool();
+        m_autoExpireDeleteHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AutoExpireTime") && !rsp["AutoExpireTime"].IsNull())
+    {
+        if (!rsp["AutoExpireTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoExpireTime = rsp["AutoExpireTime"].GetInt64();
+        m_autoExpireTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -257,6 +279,22 @@ string DescribeTopicResponse::ToJsonString() const
         string key = "MsgTTL";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_msgTTL, allocator);
+    }
+
+    if (m_autoExpireDeleteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoExpireDelete";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoExpireDelete, allocator);
+    }
+
+    if (m_autoExpireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoExpireTime, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -359,6 +397,26 @@ int64_t DescribeTopicResponse::GetMsgTTL() const
 bool DescribeTopicResponse::MsgTTLHasBeenSet() const
 {
     return m_msgTTLHasBeenSet;
+}
+
+bool DescribeTopicResponse::GetAutoExpireDelete() const
+{
+    return m_autoExpireDelete;
+}
+
+bool DescribeTopicResponse::AutoExpireDeleteHasBeenSet() const
+{
+    return m_autoExpireDeleteHasBeenSet;
+}
+
+int64_t DescribeTopicResponse::GetAutoExpireTime() const
+{
+    return m_autoExpireTime;
+}
+
+bool DescribeTopicResponse::AutoExpireTimeHasBeenSet() const
+{
+    return m_autoExpireTimeHasBeenSet;
 }
 
 

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群id
-                     * @return ClusterId 集群id
+                     * 获取<p>集群id</p>
+                     * @return ClusterId <p>集群id</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群id
-                     * @param _clusterId 集群id
+                     * 设置<p>集群id</p>
+                     * @param _clusterId <p>集群id</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取命名空间，4.x 通用集群命名空间固定为: tdmq_default
-                     * @return EnvironmentId 命名空间，4.x 通用集群命名空间固定为: tdmq_default
+                     * 获取<p>命名空间，4.x 通用集群命名空间固定为: tdmq_default</p>
+                     * @return EnvironmentId <p>命名空间，4.x 通用集群命名空间固定为: tdmq_default</p>
                      * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
-                     * 设置命名空间，4.x 通用集群命名空间固定为: tdmq_default
-                     * @param _environmentId 命名空间，4.x 通用集群命名空间固定为: tdmq_default
+                     * 设置<p>命名空间，4.x 通用集群命名空间固定为: tdmq_default</p>
+                     * @param _environmentId <p>命名空间，4.x 通用集群命名空间固定为: tdmq_default</p>
                      * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
-                     * 获取主题，查询死信时传groupId
-                     * @return TopicName 主题，查询死信时传groupId
+                     * 获取<p>主题，查询死信时传groupId</p>
+                     * @return TopicName <p>主题，查询死信时传groupId</p>
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置主题，查询死信时传groupId
-                     * @param _topicName 主题，查询死信时传groupId
+                     * 设置<p>主题，查询死信时传groupId</p>
+                     * @param _topicName <p>主题，查询死信时传groupId</p>
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取消息id
-                     * @return MsgId 消息id
+                     * 获取<p>消息id</p>
+                     * @return MsgId <p>消息id</p>
                      * 
                      */
                     std::string GetMsgId() const;
 
                     /**
-                     * 设置消息id
-                     * @param _msgId 消息id
+                     * 设置<p>消息id</p>
+                     * @param _msgId <p>消息id</p>
                      * 
                      */
                     void SetMsgId(const std::string& _msgId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool MsgIdHasBeenSet() const;
 
                     /**
-                     * 获取pulsar消息id
-                     * @return PulsarMsgId pulsar消息id
+                     * 获取<p>pulsar消息id</p>
+                     * @return PulsarMsgId <p>pulsar消息id</p>
                      * 
                      */
                     std::string GetPulsarMsgId() const;
 
                     /**
-                     * 设置pulsar消息id
-                     * @param _pulsarMsgId pulsar消息id
+                     * 设置<p>pulsar消息id</p>
+                     * @param _pulsarMsgId <p>pulsar消息id</p>
                      * 
                      */
                     void SetPulsarMsgId(const std::string& _pulsarMsgId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool PulsarMsgIdHasBeenSet() const;
 
                     /**
-                     * 获取查询死信时该值为true，只对Rocketmq有效
-                     * @return QueryDlqMsg 查询死信时该值为true，只对Rocketmq有效
+                     * 获取<p>查询死信时该值为true，只对Rocketmq有效</p>
+                     * @return QueryDlqMsg <p>查询死信时该值为true，只对Rocketmq有效</p>
                      * @deprecated
                      */
                     bool GetQueryDlqMsg() const;
 
                     /**
-                     * 设置查询死信时该值为true，只对Rocketmq有效
-                     * @param _queryDlqMsg 查询死信时该值为true，只对Rocketmq有效
+                     * 设置<p>查询死信时该值为true，只对Rocketmq有效</p>
+                     * @param _queryDlqMsg <p>查询死信时该值为true，只对Rocketmq有效</p>
                      * @deprecated
                      */
                     void SetQueryDlqMsg(const bool& _queryDlqMsg);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool QueryDlqMsgHasBeenSet() const;
 
                     /**
-                     * 获取查询死信时该值为true，只对Rocketmq有效
-                     * @return QueryDeadLetterMessage 查询死信时该值为true，只对Rocketmq有效
+                     * 获取<p>查询死信时该值为true，只对Rocketmq有效</p>
+                     * @return QueryDeadLetterMessage <p>查询死信时该值为true，只对Rocketmq有效</p>
                      * 
                      */
                     bool GetQueryDeadLetterMessage() const;
 
                     /**
-                     * 设置查询死信时该值为true，只对Rocketmq有效
-                     * @param _queryDeadLetterMessage 查询死信时该值为true，只对Rocketmq有效
+                     * 设置<p>查询死信时该值为true，只对Rocketmq有效</p>
+                     * @param _queryDeadLetterMessage <p>查询死信时该值为true，只对Rocketmq有效</p>
                      * 
                      */
                     void SetQueryDeadLetterMessage(const bool& _queryDeadLetterMessage);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool QueryDeadLetterMessageHasBeenSet() const;
 
                     /**
-                     * 获取分页Offset
-                     * @return Offset 分页Offset
+                     * 获取<p>分页Offset</p>
+                     * @return Offset <p>分页Offset</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页Offset
-                     * @param _offset 分页Offset
+                     * 设置<p>分页Offset</p>
+                     * @param _offset <p>分页Offset</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页Limit
-                     * @return Limit 分页Limit
+                     * 获取<p>分页Limit</p>
+                     * @return Limit <p>分页Limit</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页Limit
-                     * @param _limit 分页Limit
+                     * 设置<p>分页Limit</p>
+                     * @param _limit <p>分页Limit</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取根据消费组名称过滤消费详情
-                     * @return FilterTrackGroup 根据消费组名称过滤消费详情
+                     * 获取<p>根据消费组名称过滤消费详情</p>
+                     * @return FilterTrackGroup <p>根据消费组名称过滤消费详情</p>
                      * 
                      */
                     std::string GetFilterTrackGroup() const;
 
                     /**
-                     * 设置根据消费组名称过滤消费详情
-                     * @param _filterTrackGroup 根据消费组名称过滤消费详情
+                     * 设置<p>根据消费组名称过滤消费详情</p>
+                     * @param _filterTrackGroup <p>根据消费组名称过滤消费详情</p>
                      * 
                      */
                     void SetFilterTrackGroup(const std::string& _filterTrackGroup);
@@ -252,67 +252,94 @@ namespace TencentCloud
                      */
                     bool FilterTrackGroupHasBeenSet() const;
 
+                    /**
+                     * 获取<p>查询延迟消息或定时消息时，该值为true</p>
+                     * @return QueryDelayMessage <p>查询延迟消息或定时消息时，该值为true</p>
+                     * 
+                     */
+                    bool GetQueryDelayMessage() const;
+
+                    /**
+                     * 设置<p>查询延迟消息或定时消息时，该值为true</p>
+                     * @param _queryDelayMessage <p>查询延迟消息或定时消息时，该值为true</p>
+                     * 
+                     */
+                    void SetQueryDelayMessage(const bool& _queryDelayMessage);
+
+                    /**
+                     * 判断参数 QueryDelayMessage 是否已赋值
+                     * @return QueryDelayMessage 是否已赋值
+                     * 
+                     */
+                    bool QueryDelayMessageHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群id
+                     * <p>集群id</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 命名空间，4.x 通用集群命名空间固定为: tdmq_default
+                     * <p>命名空间，4.x 通用集群命名空间固定为: tdmq_default</p>
                      */
                     std::string m_environmentId;
                     bool m_environmentIdHasBeenSet;
 
                     /**
-                     * 主题，查询死信时传groupId
+                     * <p>主题，查询死信时传groupId</p>
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 消息id
+                     * <p>消息id</p>
                      */
                     std::string m_msgId;
                     bool m_msgIdHasBeenSet;
 
                     /**
-                     * pulsar消息id
+                     * <p>pulsar消息id</p>
                      */
                     std::string m_pulsarMsgId;
                     bool m_pulsarMsgIdHasBeenSet;
 
                     /**
-                     * 查询死信时该值为true，只对Rocketmq有效
+                     * <p>查询死信时该值为true，只对Rocketmq有效</p>
                      */
                     bool m_queryDlqMsg;
                     bool m_queryDlqMsgHasBeenSet;
 
                     /**
-                     * 查询死信时该值为true，只对Rocketmq有效
+                     * <p>查询死信时该值为true，只对Rocketmq有效</p>
                      */
                     bool m_queryDeadLetterMessage;
                     bool m_queryDeadLetterMessageHasBeenSet;
 
                     /**
-                     * 分页Offset
+                     * <p>分页Offset</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页Limit
+                     * <p>分页Limit</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 根据消费组名称过滤消费详情
+                     * <p>根据消费组名称过滤消费详情</p>
                      */
                     std::string m_filterTrackGroup;
                     bool m_filterTrackGroupHasBeenSet;
+
+                    /**
+                     * <p>查询延迟消息或定时消息时，该值为true</p>
+                     */
+                    bool m_queryDelayMessage;
+                    bool m_queryDelayMessageHasBeenSet;
 
                 };
             }

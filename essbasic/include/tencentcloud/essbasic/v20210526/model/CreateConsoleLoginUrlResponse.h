@@ -44,22 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取跳转链接, 链接的有效期根据企业,员工状态和终端等有区别, 可以参考下表
-<table> <thead> <tr> <th>子客企业状态</th> <th>子客企业员工状态</th> <th>Endpoint</th> <th>链接有效期限</th> </tr> </thead>  <tbody> <tr> <td>企业未激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr>  <tr> <td>企业未激活</td> <td>员工未认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr>  <tr> <td>企业已激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr> <tr> <td>企业已激活</td> <td>员工未认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>PC</td> <td>5分钟</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr> </tbody> </table>
-
-注： 
-1. <font color="red">链接仅单次有效</font>，每次登录需要需要重新创建新的链接
-2. 创建的链接应避免被转义，如：&被转义为\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义
-3. <font color="red">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）
-
-                     * @return ConsoleUrl 跳转链接, 链接的有效期根据企业,员工状态和终端等有区别, 可以参考下表
-<table> <thead> <tr> <th>子客企业状态</th> <th>子客企业员工状态</th> <th>Endpoint</th> <th>链接有效期限</th> </tr> </thead>  <tbody> <tr> <td>企业未激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr>  <tr> <td>企业未激活</td> <td>员工未认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr>  <tr> <td>企业已激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr> <tr> <td>企业已激活</td> <td>员工未认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>PC</td> <td>5分钟</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr> </tbody> </table>
-
-注： 
-1. <font color="red">链接仅单次有效</font>，每次登录需要需要重新创建新的链接
-2. 创建的链接应避免被转义，如：&被转义为\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义
-3. <font color="red">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）
-
+                     * 获取<p>跳转链接, 链接的有效期根据企业,员工状态和终端等有区别, 可以参考下表</p><table> <thead> <tr> <th>子客企业状态</th> <th>子客企业员工状态</th> <th>Endpoint</th> <th>链接有效期限</th> </tr> </thead>  <tbody> <tr> <td>企业未激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr>  <tr> <td>企业未激活</td> <td>员工未认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr>  <tr> <td>企业已激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr> <tr> <td>企业已激活</td> <td>员工未认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>PC</td> <td>5分钟</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr> </tbody> </table><p>注： </p><ol><li><font color="red">链接仅单次有效</font>，每次登录需要需要重新创建新的链接</li><li>创建的链接应避免被转义，如：&amp;被转义为\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义</li><li><font color="red">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）</li></ol>
+                     * @return ConsoleUrl <p>跳转链接, 链接的有效期根据企业,员工状态和终端等有区别, 可以参考下表</p><table> <thead> <tr> <th>子客企业状态</th> <th>子客企业员工状态</th> <th>Endpoint</th> <th>链接有效期限</th> </tr> </thead>  <tbody> <tr> <td>企业未激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr>  <tr> <td>企业未激活</td> <td>员工未认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr>  <tr> <td>企业已激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr> <tr> <td>企业已激活</td> <td>员工未认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>PC</td> <td>5分钟</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr> </tbody> </table><p>注： </p><ol><li><font color="red">链接仅单次有效</font>，每次登录需要需要重新创建新的链接</li><li>创建的链接应避免被转义，如：&amp;被转义为\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义</li><li><font color="red">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）</li></ol>
                      * 
                      */
                     std::string GetConsoleUrl() const;
@@ -72,16 +58,8 @@ namespace TencentCloud
                     bool ConsoleUrlHasBeenSet() const;
 
                     /**
-                     * 获取子客企业是否已开通腾讯电子签，
-<ul><li> **true** :已经开通腾讯电子签</li>
-<li> **false** :还未开通腾讯电子签</li></ul>
-
-注：`企业是否实名根据传参Agent.ProxyOrganizationOpenId进行判断，非企业名称或者社会信用代码`
-                     * @return IsActivated 子客企业是否已开通腾讯电子签，
-<ul><li> **true** :已经开通腾讯电子签</li>
-<li> **false** :还未开通腾讯电子签</li></ul>
-
-注：`企业是否实名根据传参Agent.ProxyOrganizationOpenId进行判断，非企业名称或者社会信用代码`
+                     * 获取<p>子客企业是否已开通腾讯电子签，</p><ul><li> **true** :已经开通腾讯电子签</li><li> **false** :还未开通腾讯电子签</li></ul><p>注：<code>企业是否实名根据传参Agent.ProxyOrganizationOpenId进行判断，非企业名称或者社会信用代码</code></p>
+                     * @return IsActivated <p>子客企业是否已开通腾讯电子签，</p><ul><li> **true** :已经开通腾讯电子签</li><li> **false** :还未开通腾讯电子签</li></ul><p>注：<code>企业是否实名根据传参Agent.ProxyOrganizationOpenId进行判断，非企业名称或者社会信用代码</code></p>
                      * 
                      */
                     bool GetIsActivated() const;
@@ -94,14 +72,8 @@ namespace TencentCloud
                     bool IsActivatedHasBeenSet() const;
 
                     /**
-                     * 获取当前经办人是否已认证并加入功能
-<ul><li> **true** : 已经认证加入公司</li>
-<li> **false** : 还未认证加入公司</li></ul>
-注意：**员工是否实名是根据Agent.ProxyOperator.OpenId判断，非经办人姓名**
-                     * @return ProxyOperatorIsVerified 当前经办人是否已认证并加入功能
-<ul><li> **true** : 已经认证加入公司</li>
-<li> **false** : 还未认证加入公司</li></ul>
-注意：**员工是否实名是根据Agent.ProxyOperator.OpenId判断，非经办人姓名**
+                     * 获取<p>当前经办人是否已认证并加入功能</p><ul><li> **true** : 已经认证加入公司</li><li> **false** : 还未认证加入公司</li></ul>注意：**员工是否实名是根据Agent.ProxyOperator.OpenId判断，非经办人姓名**
+                     * @return ProxyOperatorIsVerified <p>当前经办人是否已认证并加入功能</p><ul><li> **true** : 已经认证加入公司</li><li> **false** : 还未认证加入公司</li></ul>注意：**员工是否实名是根据Agent.ProxyOperator.OpenId判断，非经办人姓名**
                      * 
                      */
                     bool GetProxyOperatorIsVerified() const;
@@ -116,33 +88,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 跳转链接, 链接的有效期根据企业,员工状态和终端等有区别, 可以参考下表
-<table> <thead> <tr> <th>子客企业状态</th> <th>子客企业员工状态</th> <th>Endpoint</th> <th>链接有效期限</th> </tr> </thead>  <tbody> <tr> <td>企业未激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr>  <tr> <td>企业未激活</td> <td>员工未认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr>  <tr> <td>企业已激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr> <tr> <td>企业已激活</td> <td>员工未认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>PC</td> <td>5分钟</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr> </tbody> </table>
-
-注： 
-1. <font color="red">链接仅单次有效</font>，每次登录需要需要重新创建新的链接
-2. 创建的链接应避免被转义，如：&被转义为\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义
-3. <font color="red">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）
-
+                     * <p>跳转链接, 链接的有效期根据企业,员工状态和终端等有区别, 可以参考下表</p><table> <thead> <tr> <th>子客企业状态</th> <th>子客企业员工状态</th> <th>Endpoint</th> <th>链接有效期限</th> </tr> </thead>  <tbody> <tr> <td>企业未激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr>  <tr> <td>企业未激活</td> <td>员工未认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr>  <tr> <td>企业已激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr> <tr> <td>企业已激活</td> <td>员工未认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>PC</td> <td>5分钟</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr> </tbody> </table><p>注： </p><ol><li><font color="red">链接仅单次有效</font>，每次登录需要需要重新创建新的链接</li><li>创建的链接应避免被转义，如：&amp;被转义为\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义</li><li><font color="red">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）</li></ol>
                      */
                     std::string m_consoleUrl;
                     bool m_consoleUrlHasBeenSet;
 
                     /**
-                     * 子客企业是否已开通腾讯电子签，
-<ul><li> **true** :已经开通腾讯电子签</li>
-<li> **false** :还未开通腾讯电子签</li></ul>
-
-注：`企业是否实名根据传参Agent.ProxyOrganizationOpenId进行判断，非企业名称或者社会信用代码`
+                     * <p>子客企业是否已开通腾讯电子签，</p><ul><li> **true** :已经开通腾讯电子签</li><li> **false** :还未开通腾讯电子签</li></ul><p>注：<code>企业是否实名根据传参Agent.ProxyOrganizationOpenId进行判断，非企业名称或者社会信用代码</code></p>
                      */
                     bool m_isActivated;
                     bool m_isActivatedHasBeenSet;
 
                     /**
-                     * 当前经办人是否已认证并加入功能
-<ul><li> **true** : 已经认证加入公司</li>
-<li> **false** : 还未认证加入公司</li></ul>
-注意：**员工是否实名是根据Agent.ProxyOperator.OpenId判断，非经办人姓名**
+                     * <p>当前经办人是否已认证并加入功能</p><ul><li> **true** : 已经认证加入公司</li><li> **false** : 还未认证加入公司</li></ul>注意：**员工是否实名是根据Agent.ProxyOperator.OpenId判断，非经办人姓名**
                      */
                     bool m_proxyOperatorIsVerified;
                     bool m_proxyOperatorIsVerifiedHasBeenSet;

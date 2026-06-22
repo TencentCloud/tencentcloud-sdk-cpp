@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TopicHasBeenSet() const;
 
                     /**
-                     * 获取消息 ID，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口返回的 [MessageItem](https://cloud.tencent.com/document/api/1493/96031#MessageItem) 或业务日志中获得。
-                     * @return MsgId 消息 ID，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口返回的 [MessageItem](https://cloud.tencent.com/document/api/1493/96031#MessageItem) 或业务日志中获得。
+                     * 获取<p>消息 ID，从 <a href="https://cloud.tencent.com/document/api/1493/114593">DescribeMessageList</a> 接口返回的 <a href="https://cloud.tencent.com/document/api/1493/96031#MessageItem">MessageItem</a> 或业务日志中获得。</p>
+                     * @return MsgId <p>消息 ID，从 <a href="https://cloud.tencent.com/document/api/1493/114593">DescribeMessageList</a> 接口返回的 <a href="https://cloud.tencent.com/document/api/1493/96031#MessageItem">MessageItem</a> 或业务日志中获得。</p>
                      * 
                      */
                     std::string GetMsgId() const;
 
                     /**
-                     * 设置消息 ID，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口返回的 [MessageItem](https://cloud.tencent.com/document/api/1493/96031#MessageItem) 或业务日志中获得。
-                     * @param _msgId 消息 ID，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口返回的 [MessageItem](https://cloud.tencent.com/document/api/1493/96031#MessageItem) 或业务日志中获得。
+                     * 设置<p>消息 ID，从 <a href="https://cloud.tencent.com/document/api/1493/114593">DescribeMessageList</a> 接口返回的 <a href="https://cloud.tencent.com/document/api/1493/96031#MessageItem">MessageItem</a> 或业务日志中获得。</p>
+                     * @param _msgId <p>消息 ID，从 <a href="https://cloud.tencent.com/document/api/1493/114593">DescribeMessageList</a> 接口返回的 <a href="https://cloud.tencent.com/document/api/1493/96031#MessageItem">MessageItem</a> 或业务日志中获得。</p>
                      * 
                      */
                     void SetMsgId(const std::string& _msgId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool MsgIdHasBeenSet() const;
 
                     /**
-                     * 获取是否是死信消息，默认为false
-                     * @return QueryDeadLetterMessage 是否是死信消息，默认为false
+                     * 获取<p>是否是死信消息，默认为false</p>
+                     * @return QueryDeadLetterMessage <p>是否是死信消息，默认为false</p>
                      * 
                      */
                     bool GetQueryDeadLetterMessage() const;
 
                     /**
-                     * 设置是否是死信消息，默认为false
-                     * @param _queryDeadLetterMessage 是否是死信消息，默认为false
+                     * 设置<p>是否是死信消息，默认为false</p>
+                     * @param _queryDeadLetterMessage <p>是否是死信消息，默认为false</p>
                      * 
                      */
                     void SetQueryDeadLetterMessage(const bool& _queryDeadLetterMessage);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool QueryDeadLetterMessageHasBeenSet() const;
 
                     /**
-                     * 获取是否是延时消息，默认为false
-                     * @return QueryDelayMessage 是否是延时消息，默认为false
+                     * 获取<p>是否是延时消息，默认为false</p>
+                     * @return QueryDelayMessage <p>是否是延时消息，默认为false</p>
                      * 
                      */
                     bool GetQueryDelayMessage() const;
 
                     /**
-                     * 设置是否是延时消息，默认为false
-                     * @param _queryDelayMessage 是否是延时消息，默认为false
+                     * 设置<p>是否是延时消息，默认为false</p>
+                     * @param _queryDelayMessage <p>是否是延时消息，默认为false</p>
                      * 
                      */
                     void SetQueryDelayMessage(const bool& _queryDelayMessage);
@@ -162,19 +162,19 @@ namespace TencentCloud
                     bool m_topicHasBeenSet;
 
                     /**
-                     * 消息 ID，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口返回的 [MessageItem](https://cloud.tencent.com/document/api/1493/96031#MessageItem) 或业务日志中获得。
+                     * <p>消息 ID，从 <a href="https://cloud.tencent.com/document/api/1493/114593">DescribeMessageList</a> 接口返回的 <a href="https://cloud.tencent.com/document/api/1493/96031#MessageItem">MessageItem</a> 或业务日志中获得。</p>
                      */
                     std::string m_msgId;
                     bool m_msgIdHasBeenSet;
 
                     /**
-                     * 是否是死信消息，默认为false
+                     * <p>是否是死信消息，默认为false</p>
                      */
                     bool m_queryDeadLetterMessage;
                     bool m_queryDeadLetterMessageHasBeenSet;
 
                     /**
-                     * 是否是延时消息，默认为false
+                     * <p>是否是延时消息，默认为false</p>
                      */
                     bool m_queryDelayMessage;
                     bool m_queryDelayMessageHasBeenSet;

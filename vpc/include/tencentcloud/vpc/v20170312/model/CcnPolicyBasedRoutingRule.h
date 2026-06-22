@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 查询云联网策略路由匹配规则
+                * 云联网策略路由匹配规则
                 */
                 class CcnPolicyBasedRoutingRule : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略路由下一跳ID
-                     * @return PolicyBasedRoutingNextHopId 策略路由下一跳ID
+                     * 获取<p>策略路由下一跳ID</p>
+                     * @return PolicyBasedRoutingNextHopId <p>策略路由下一跳ID</p>
                      * 
                      */
                     std::string GetPolicyBasedRoutingNextHopId() const;
 
                     /**
-                     * 设置策略路由下一跳ID
-                     * @param _policyBasedRoutingNextHopId 策略路由下一跳ID
+                     * 设置<p>策略路由下一跳ID</p>
+                     * @param _policyBasedRoutingNextHopId <p>策略路由下一跳ID</p>
                      * 
                      */
                     void SetPolicyBasedRoutingNextHopId(const std::string& _policyBasedRoutingNextHopId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool PolicyBasedRoutingNextHopIdHasBeenSet() const;
 
                     /**
-                     * 获取实例类型[VPC,DIRECTCONNECT,VPNGW]
-                     * @return InstanceType 实例类型[VPC,DIRECTCONNECT,VPNGW]
+                     * 获取<p>实例类型[VPC,DIRECTCONNECT,VPNGW]</p>
+                     * @return InstanceType <p>实例类型[VPC,DIRECTCONNECT,VPNGW]</p>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置实例类型[VPC,DIRECTCONNECT,VPNGW]
-                     * @param _instanceType 实例类型[VPC,DIRECTCONNECT,VPNGW]
+                     * 设置<p>实例类型[VPC,DIRECTCONNECT,VPNGW]</p>
+                     * @param _instanceType <p>实例类型[VPC,DIRECTCONNECT,VPNGW]</p>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取源地址CIDR
-                     * @return SourceCidrBlock 源地址CIDR
+                     * 获取<p>源地址CIDR</p>
+                     * @return SourceCidrBlock <p>源地址CIDR</p>
                      * 
                      */
                     std::string GetSourceCidrBlock() const;
 
                     /**
-                     * 设置源地址CIDR
-                     * @param _sourceCidrBlock 源地址CIDR
+                     * 设置<p>源地址CIDR</p>
+                     * @param _sourceCidrBlock <p>源地址CIDR</p>
                      * 
                      */
                     void SetSourceCidrBlock(const std::string& _sourceCidrBlock);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool SourceCidrBlockHasBeenSet() const;
 
                     /**
-                     * 获取目的地址CIDR
-                     * @return DestinationCidrBlock 目的地址CIDR
+                     * 获取<p>目的地址CIDR</p>
+                     * @return DestinationCidrBlock <p>目的地址CIDR</p>
                      * 
                      */
                     std::string GetDestinationCidrBlock() const;
 
                     /**
-                     * 设置目的地址CIDR
-                     * @param _destinationCidrBlock 目的地址CIDR
+                     * 设置<p>目的地址CIDR</p>
+                     * @param _destinationCidrBlock <p>目的地址CIDR</p>
                      * 
                      */
                     void SetDestinationCidrBlock(const std::string& _destinationCidrBlock);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool DestinationCidrBlockHasBeenSet() const;
 
                     /**
-                     * 获取优先级
-                     * @return Priority 优先级
+                     * 获取<p>优先级</p>
+                     * @return Priority <p>优先级</p>
                      * 
                      */
                     int64_t GetPriority() const;
 
                     /**
-                     * 设置优先级
-                     * @param _priority 优先级
+                     * 设置<p>优先级</p>
+                     * @param _priority <p>优先级</p>
                      * 
                      */
                     void SetPriority(const int64_t& _priority);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool PriorityHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
+                     * 获取<p>描述</p>
+                     * @return Description <p>描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
-                     * @param _description 描述
+                     * 设置<p>描述</p>
+                     * @param _description <p>描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取策略路由匹配策略ID
-                     * @return PolicyBasedRoutingRuleId 策略路由匹配策略ID
+                     * 获取<p>策略路由匹配策略ID</p>
+                     * @return PolicyBasedRoutingRuleId <p>策略路由匹配策略ID</p>
                      * 
                      */
                     std::string GetPolicyBasedRoutingRuleId() const;
 
                     /**
-                     * 设置策略路由匹配策略ID
-                     * @param _policyBasedRoutingRuleId 策略路由匹配策略ID
+                     * 设置<p>策略路由匹配策略ID</p>
+                     * @param _policyBasedRoutingRuleId <p>策略路由匹配策略ID</p>
                      * 
                      */
                     void SetPolicyBasedRoutingRuleId(const std::string& _policyBasedRoutingRuleId);
@@ -214,55 +214,109 @@ namespace TencentCloud
                      */
                     bool PolicyBasedRoutingRuleIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>目的端实例ID</p><p>枚举值：</p><ul><li>VPC： 私有网络</li></ul>
+                     * @return DestinationInstanceType <p>目的端实例ID</p><p>枚举值：</p><ul><li>VPC： 私有网络</li></ul>
+                     * 
+                     */
+                    std::string GetDestinationInstanceType() const;
+
+                    /**
+                     * 设置<p>目的端实例ID</p><p>枚举值：</p><ul><li>VPC： 私有网络</li></ul>
+                     * @param _destinationInstanceType <p>目的端实例ID</p><p>枚举值：</p><ul><li>VPC： 私有网络</li></ul>
+                     * 
+                     */
+                    void SetDestinationInstanceType(const std::string& _destinationInstanceType);
+
+                    /**
+                     * 判断参数 DestinationInstanceType 是否已赋值
+                     * @return DestinationInstanceType 是否已赋值
+                     * 
+                     */
+                    bool DestinationInstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>目的端实例ID</p>
+                     * @return DestinationInstanceId <p>目的端实例ID</p>
+                     * 
+                     */
+                    std::string GetDestinationInstanceId() const;
+
+                    /**
+                     * 设置<p>目的端实例ID</p>
+                     * @param _destinationInstanceId <p>目的端实例ID</p>
+                     * 
+                     */
+                    void SetDestinationInstanceId(const std::string& _destinationInstanceId);
+
+                    /**
+                     * 判断参数 DestinationInstanceId 是否已赋值
+                     * @return DestinationInstanceId 是否已赋值
+                     * 
+                     */
+                    bool DestinationInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 策略路由下一跳ID
+                     * <p>策略路由下一跳ID</p>
                      */
                     std::string m_policyBasedRoutingNextHopId;
                     bool m_policyBasedRoutingNextHopIdHasBeenSet;
 
                     /**
-                     * 实例类型[VPC,DIRECTCONNECT,VPNGW]
+                     * <p>实例类型[VPC,DIRECTCONNECT,VPNGW]</p>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 源地址CIDR
+                     * <p>源地址CIDR</p>
                      */
                     std::string m_sourceCidrBlock;
                     bool m_sourceCidrBlockHasBeenSet;
 
                     /**
-                     * 目的地址CIDR
+                     * <p>目的地址CIDR</p>
                      */
                     std::string m_destinationCidrBlock;
                     bool m_destinationCidrBlockHasBeenSet;
 
                     /**
-                     * 优先级
+                     * <p>优先级</p>
                      */
                     int64_t m_priority;
                     bool m_priorityHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 策略路由匹配策略ID
+                     * <p>策略路由匹配策略ID</p>
                      */
                     std::string m_policyBasedRoutingRuleId;
                     bool m_policyBasedRoutingRuleIdHasBeenSet;
+
+                    /**
+                     * <p>目的端实例ID</p><p>枚举值：</p><ul><li>VPC： 私有网络</li></ul>
+                     */
+                    std::string m_destinationInstanceType;
+                    bool m_destinationInstanceTypeHasBeenSet;
+
+                    /**
+                     * <p>目的端实例ID</p>
+                     */
+                    std::string m_destinationInstanceId;
+                    bool m_destinationInstanceIdHasBeenSet;
 
                 };
             }

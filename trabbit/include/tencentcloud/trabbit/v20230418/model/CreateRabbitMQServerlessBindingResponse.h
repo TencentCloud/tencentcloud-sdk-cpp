@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取队列名称
-                     * @return InstanceId 队列名称
+                     * 获取<p>队列名称</p>
+                     * @return InstanceId <p>队列名称</p>
                      * 
                      */
                     std::string GetInstanceId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取vhost参数
-                     * @return VirtualHost vhost参数
+                     * 获取<p>vhost参数</p>
+                     * @return VirtualHost <p>vhost参数</p>
                      * 
                      */
                     std::string GetVirtualHost() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool VirtualHostHasBeenSet() const;
 
                     /**
-                     * 获取路由关系Id
-                     * @return BindingId 路由关系Id
+                     * 获取<p>路由关系Id</p>
+                     * @return BindingId <p>路由关系Id</p>
                      * 
                      */
                     int64_t GetBindingId() const;
@@ -88,19 +88,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 队列名称
+                     * <p>队列名称</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * vhost参数
+                     * <p>vhost参数</p>
                      */
                     std::string m_virtualHost;
                     bool m_virtualHostHasBeenSet;
 
                     /**
-                     * 路由关系Id
+                     * <p>路由关系Id</p>
                      */
                     int64_t m_bindingId;
                     bool m_bindingIdHasBeenSet;

@@ -34,6 +34,7 @@ RuleEngineAction::RuleEngineAction() :
     m_statusCodeCacheParametersHasBeenSet(false),
     m_offlineCacheParametersHasBeenSet(false),
     m_smartRoutingParametersHasBeenSet(false),
+    m_advancedOriginRoutingParametersHasBeenSet(false),
     m_rangeOriginPullParametersHasBeenSet(false),
     m_upstreamHTTP2ParametersHasBeenSet(false),
     m_hostHeaderParametersHasBeenSet(false),
@@ -282,6 +283,23 @@ CoreInternalOutcome RuleEngineAction::Deserialize(const rapidjson::Value &value)
         }
 
         m_smartRoutingParametersHasBeenSet = true;
+    }
+
+    if (value.HasMember("AdvancedOriginRoutingParameters") && !value["AdvancedOriginRoutingParameters"].IsNull())
+    {
+        if (!value["AdvancedOriginRoutingParameters"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleEngineAction.AdvancedOriginRoutingParameters` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_advancedOriginRoutingParameters.Deserialize(value["AdvancedOriginRoutingParameters"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_advancedOriginRoutingParametersHasBeenSet = true;
     }
 
     if (value.HasMember("RangeOriginPullParameters") && !value["RangeOriginPullParameters"].IsNull())
@@ -883,6 +901,15 @@ void RuleEngineAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         m_smartRoutingParameters.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_advancedOriginRoutingParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedOriginRoutingParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_advancedOriginRoutingParameters.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_rangeOriginPullParametersHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -1344,6 +1371,22 @@ void RuleEngineAction::SetSmartRoutingParameters(const SmartRoutingParameters& _
 bool RuleEngineAction::SmartRoutingParametersHasBeenSet() const
 {
     return m_smartRoutingParametersHasBeenSet;
+}
+
+AdvancedOriginRoutingParameters RuleEngineAction::GetAdvancedOriginRoutingParameters() const
+{
+    return m_advancedOriginRoutingParameters;
+}
+
+void RuleEngineAction::SetAdvancedOriginRoutingParameters(const AdvancedOriginRoutingParameters& _advancedOriginRoutingParameters)
+{
+    m_advancedOriginRoutingParameters = _advancedOriginRoutingParameters;
+    m_advancedOriginRoutingParametersHasBeenSet = true;
+}
+
+bool RuleEngineAction::AdvancedOriginRoutingParametersHasBeenSet() const
+{
+    return m_advancedOriginRoutingParametersHasBeenSet;
 }
 
 RangeOriginPullParameters RuleEngineAction::GetRangeOriginPullParameters() const

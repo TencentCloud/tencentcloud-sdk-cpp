@@ -51,7 +51,8 @@ RocketMQClusterInfo::RocketMQClusterInfo() :
     m_adminFeatureEnabledHasBeenSet(false),
     m_adminAccessKeyHasBeenSet(false),
     m_adminSecretKeyHasBeenSet(false),
-    m_enableDeletionProtectionHasBeenSet(false)
+    m_enableDeletionProtectionHasBeenSet(false),
+    m_autoCreateConsumeGroupEnabledHasBeenSet(false)
 {
 }
 
@@ -383,6 +384,16 @@ CoreInternalOutcome RocketMQClusterInfo::Deserialize(const rapidjson::Value &val
         m_enableDeletionProtectionHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoCreateConsumeGroupEnabled") && !value["AutoCreateConsumeGroupEnabled"].IsNull())
+    {
+        if (!value["AutoCreateConsumeGroupEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQClusterInfo.AutoCreateConsumeGroupEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoCreateConsumeGroupEnabled = value["AutoCreateConsumeGroupEnabled"].GetBool();
+        m_autoCreateConsumeGroupEnabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -648,6 +659,14 @@ void RocketMQClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "EnableDeletionProtection";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableDeletionProtection, allocator);
+    }
+
+    if (m_autoCreateConsumeGroupEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoCreateConsumeGroupEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoCreateConsumeGroupEnabled, allocator);
     }
 
 }
@@ -1147,5 +1166,21 @@ void RocketMQClusterInfo::SetEnableDeletionProtection(const bool& _enableDeletio
 bool RocketMQClusterInfo::EnableDeletionProtectionHasBeenSet() const
 {
     return m_enableDeletionProtectionHasBeenSet;
+}
+
+bool RocketMQClusterInfo::GetAutoCreateConsumeGroupEnabled() const
+{
+    return m_autoCreateConsumeGroupEnabled;
+}
+
+void RocketMQClusterInfo::SetAutoCreateConsumeGroupEnabled(const bool& _autoCreateConsumeGroupEnabled)
+{
+    m_autoCreateConsumeGroupEnabled = _autoCreateConsumeGroupEnabled;
+    m_autoCreateConsumeGroupEnabledHasBeenSet = true;
+}
+
+bool RocketMQClusterInfo::AutoCreateConsumeGroupEnabledHasBeenSet() const
+{
+    return m_autoCreateConsumeGroupEnabledHasBeenSet;
 }
 

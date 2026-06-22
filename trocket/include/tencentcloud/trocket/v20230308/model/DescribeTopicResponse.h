@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取主题名称
-                     * @return Topic 主题名称
+                     * 获取<p>主题名称</p>
+                     * @return Topic <p>主题名称</p>
                      * 
                      */
                     std::string GetTopic() const;
@@ -73,18 +73,8 @@ namespace TencentCloud
                     bool TopicHasBeenSet() const;
 
                     /**
-                     * 获取主题类型
-UNSPECIFIED:未指定,
-NORMAL:普通消息,
-FIFO:顺序消息,
-DELAY:延时消息,
-TRANSACTION:事务消息
-                     * @return TopicType 主题类型
-UNSPECIFIED:未指定,
-NORMAL:普通消息,
-FIFO:顺序消息,
-DELAY:延时消息,
-TRANSACTION:事务消息
+                     * 获取<p>主题类型<br>UNSPECIFIED:未指定,<br>NORMAL:普通消息,<br>FIFO:顺序消息,<br>DELAY:延时消息,<br>TRANSACTION:事务消息</p>
+                     * @return TopicType <p>主题类型<br>UNSPECIFIED:未指定,<br>NORMAL:普通消息,<br>FIFO:顺序消息,<br>DELAY:延时消息,<br>TRANSACTION:事务消息</p>
                      * 
                      */
                     std::string GetTopicType() const;
@@ -97,8 +87,8 @@ TRANSACTION:事务消息
                     bool TopicTypeHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Remark 备注
+                     * 获取<p>备注</p>
+                     * @return Remark <p>备注</p>
                      * 
                      */
                     std::string GetRemark() const;
@@ -111,8 +101,8 @@ TRANSACTION:事务消息
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，**Unix时间戳（毫秒）**
-                     * @return CreatedTime 创建时间，**Unix时间戳（毫秒）**
+                     * 获取<p>创建时间，<strong>Unix时间戳（毫秒）</strong></p>
+                     * @return CreatedTime <p>创建时间，<strong>Unix时间戳（毫秒）</strong></p>
                      * 
                      */
                     int64_t GetCreatedTime() const;
@@ -125,8 +115,8 @@ TRANSACTION:事务消息
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取最后写入时间，**Unix时间戳（毫秒）**
-                     * @return LastUpdateTime 最后写入时间，**Unix时间戳（毫秒）**
+                     * 获取<p>最后写入时间，<strong>Unix时间戳（毫秒）</strong></p>
+                     * @return LastUpdateTime <p>最后写入时间，<strong>Unix时间戳（毫秒）</strong></p>
                      * 
                      */
                     int64_t GetLastUpdateTime() const;
@@ -139,8 +129,8 @@ TRANSACTION:事务消息
                     bool LastUpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取订阅数量
-                     * @return SubscriptionCount 订阅数量
+                     * 获取<p>订阅数量</p>
+                     * @return SubscriptionCount <p>订阅数量</p>
                      * 
                      */
                     int64_t GetSubscriptionCount() const;
@@ -153,8 +143,8 @@ TRANSACTION:事务消息
                     bool SubscriptionCountHasBeenSet() const;
 
                     /**
-                     * 获取订阅关系列表
-                     * @return SubscriptionData 订阅关系列表
+                     * 获取<p>订阅关系列表</p>
+                     * @return SubscriptionData <p>订阅关系列表</p>
                      * 
                      */
                     std::vector<SubscriptionData> GetSubscriptionData() const;
@@ -167,8 +157,8 @@ TRANSACTION:事务消息
                     bool SubscriptionDataHasBeenSet() const;
 
                     /**
-                     * 获取消息保留时长，单位：小时
-                     * @return MsgTTL 消息保留时长，单位：小时
+                     * 获取<p>消息保留时长，单位：小时</p>
+                     * @return MsgTTL <p>消息保留时长，单位：小时</p>
                      * 
                      */
                     int64_t GetMsgTTL() const;
@@ -180,66 +170,101 @@ TRANSACTION:事务消息
                      */
                     bool MsgTTLHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否自动删除</p><p>仅适用于轻量主题</p>
+                     * @return AutoExpireDelete <p>是否自动删除</p><p>仅适用于轻量主题</p>
+                     * 
+                     */
+                    bool GetAutoExpireDelete() const;
+
+                    /**
+                     * 判断参数 AutoExpireDelete 是否已赋值
+                     * @return AutoExpireDelete 是否已赋值
+                     * 
+                     */
+                    bool AutoExpireDeleteHasBeenSet() const;
+
+                    /**
+                     * 获取<p>自动过期时间</p><p>单位：分钟</p><p>仅适用于轻量主题</p>
+                     * @return AutoExpireTime <p>自动过期时间</p><p>单位：分钟</p><p>仅适用于轻量主题</p>
+                     * 
+                     */
+                    int64_t GetAutoExpireTime() const;
+
+                    /**
+                     * 判断参数 AutoExpireTime 是否已赋值
+                     * @return AutoExpireTime 是否已赋值
+                     * 
+                     */
+                    bool AutoExpireTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 主题名称
+                     * <p>主题名称</p>
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
 
                     /**
-                     * 主题类型
-UNSPECIFIED:未指定,
-NORMAL:普通消息,
-FIFO:顺序消息,
-DELAY:延时消息,
-TRANSACTION:事务消息
+                     * <p>主题类型<br>UNSPECIFIED:未指定,<br>NORMAL:普通消息,<br>FIFO:顺序消息,<br>DELAY:延时消息,<br>TRANSACTION:事务消息</p>
                      */
                     std::string m_topicType;
                     bool m_topicTypeHasBeenSet;
 
                     /**
-                     * 备注
+                     * <p>备注</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 创建时间，**Unix时间戳（毫秒）**
+                     * <p>创建时间，<strong>Unix时间戳（毫秒）</strong></p>
                      */
                     int64_t m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 最后写入时间，**Unix时间戳（毫秒）**
+                     * <p>最后写入时间，<strong>Unix时间戳（毫秒）</strong></p>
                      */
                     int64_t m_lastUpdateTime;
                     bool m_lastUpdateTimeHasBeenSet;
 
                     /**
-                     * 订阅数量
+                     * <p>订阅数量</p>
                      */
                     int64_t m_subscriptionCount;
                     bool m_subscriptionCountHasBeenSet;
 
                     /**
-                     * 订阅关系列表
+                     * <p>订阅关系列表</p>
                      */
                     std::vector<SubscriptionData> m_subscriptionData;
                     bool m_subscriptionDataHasBeenSet;
 
                     /**
-                     * 消息保留时长，单位：小时
+                     * <p>消息保留时长，单位：小时</p>
                      */
                     int64_t m_msgTTL;
                     bool m_msgTTLHasBeenSet;
+
+                    /**
+                     * <p>是否自动删除</p><p>仅适用于轻量主题</p>
+                     */
+                    bool m_autoExpireDelete;
+                    bool m_autoExpireDeleteHasBeenSet;
+
+                    /**
+                     * <p>自动过期时间</p><p>单位：分钟</p><p>仅适用于轻量主题</p>
+                     */
+                    int64_t m_autoExpireTime;
+                    bool m_autoExpireTimeHasBeenSet;
 
                 };
             }

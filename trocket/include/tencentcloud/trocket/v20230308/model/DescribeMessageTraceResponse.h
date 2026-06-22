@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主题名称
-                     * @return ShowTopicName 主题名称
+                     * 获取<p>主题名称</p>
+                     * @return ShowTopicName <p>主题名称</p>
                      * 
                      */
                     std::string GetShowTopicName() const;
@@ -59,9 +59,23 @@ namespace TencentCloud
                     bool ShowTopicNameHasBeenSet() const;
 
                     /**
-                     * 获取轨迹详情
+                     * 获取<p>轻量主题名称</p>
+                     * @return LiteTopic <p>轻量主题名称</p>
+                     * 
+                     */
+                    std::string GetLiteTopic() const;
+
+                    /**
+                     * 判断参数 LiteTopic 是否已赋值
+                     * @return LiteTopic 是否已赋值
+                     * 
+                     */
+                    bool LiteTopicHasBeenSet() const;
+
+                    /**
+                     * 获取<p>轨迹详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 轨迹详情
+                     * @return Data <p>轨迹详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,13 +91,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 主题名称
+                     * <p>主题名称</p>
                      */
                     std::string m_showTopicName;
                     bool m_showTopicNameHasBeenSet;
 
                     /**
-                     * 轨迹详情
+                     * <p>轻量主题名称</p>
+                     */
+                    std::string m_liteTopic;
+                    bool m_liteTopicHasBeenSet;
+
+                    /**
+                     * <p>轨迹详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MessageTraceItem> m_data;

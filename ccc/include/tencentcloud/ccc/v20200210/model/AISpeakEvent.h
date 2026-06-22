@@ -135,6 +135,27 @@ namespace TencentCloud
                      */
                     bool LatencyMetricsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>节点跳转的原因，仅画布为灵活模式时有值</p>
+                     * @return TraverseReason <p>节点跳转的原因，仅画布为灵活模式时有值</p>
+                     * 
+                     */
+                    std::string GetTraverseReason() const;
+
+                    /**
+                     * 设置<p>节点跳转的原因，仅画布为灵活模式时有值</p>
+                     * @param _traverseReason <p>节点跳转的原因，仅画布为灵活模式时有值</p>
+                     * 
+                     */
+                    void SetTraverseReason(const std::string& _traverseReason);
+
+                    /**
+                     * 判断参数 TraverseReason 是否已赋值
+                     * @return TraverseReason 是否已赋值
+                     * 
+                     */
+                    bool TraverseReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -161,6 +182,12 @@ namespace TencentCloud
                      */
                     AICallLatencyMetrics m_latencyMetrics;
                     bool m_latencyMetricsHasBeenSet;
+
+                    /**
+                     * <p>节点跳转的原因，仅画布为灵活模式时有值</p>
+                     */
+                    std::string m_traverseReason;
+                    bool m_traverseReasonHasBeenSet;
 
                 };
             }

@@ -41,7 +41,9 @@ SecretMetadata::SecretMetadata() :
     m_resourceIDHasBeenSet(false),
     m_rotationBeginTimeHasBeenSet(false),
     m_encryptTypeHasBeenSet(false),
-    m_encryptSwitchingHasBeenSet(false)
+    m_encryptSwitchingHasBeenSet(false),
+    m_createUinStringHasBeenSet(false),
+    m_targetUinStringHasBeenSet(false)
 {
 }
 
@@ -263,6 +265,26 @@ CoreInternalOutcome SecretMetadata::Deserialize(const rapidjson::Value &value)
         m_encryptSwitchingHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateUinString") && !value["CreateUinString"].IsNull())
+    {
+        if (!value["CreateUinString"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecretMetadata.CreateUinString` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createUinString = string(value["CreateUinString"].GetString());
+        m_createUinStringHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetUinString") && !value["TargetUinString"].IsNull())
+    {
+        if (!value["TargetUinString"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecretMetadata.TargetUinString` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetUinString = string(value["TargetUinString"].GetString());
+        m_targetUinStringHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -441,6 +463,22 @@ void SecretMetadata::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "EncryptSwitching";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_encryptSwitching, allocator);
+    }
+
+    if (m_createUinStringHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateUinString";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createUinString.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetUinStringHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetUinString";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetUinString.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -780,5 +818,37 @@ void SecretMetadata::SetEncryptSwitching(const bool& _encryptSwitching)
 bool SecretMetadata::EncryptSwitchingHasBeenSet() const
 {
     return m_encryptSwitchingHasBeenSet;
+}
+
+string SecretMetadata::GetCreateUinString() const
+{
+    return m_createUinString;
+}
+
+void SecretMetadata::SetCreateUinString(const string& _createUinString)
+{
+    m_createUinString = _createUinString;
+    m_createUinStringHasBeenSet = true;
+}
+
+bool SecretMetadata::CreateUinStringHasBeenSet() const
+{
+    return m_createUinStringHasBeenSet;
+}
+
+string SecretMetadata::GetTargetUinString() const
+{
+    return m_targetUinString;
+}
+
+void SecretMetadata::SetTargetUinString(const string& _targetUinString)
+{
+    m_targetUinString = _targetUinString;
+    m_targetUinStringHasBeenSet = true;
+}
+
+bool SecretMetadata::TargetUinStringHasBeenSet() const
+{
+    return m_targetUinStringHasBeenSet;
 }
 

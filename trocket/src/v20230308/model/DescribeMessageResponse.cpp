@@ -31,6 +31,7 @@ DescribeMessageResponse::DescribeMessageResponse() :
     m_producerAddrHasBeenSet(false),
     m_messageTracksHasBeenSet(false),
     m_showTopicNameHasBeenSet(false),
+    m_liteTopicHasBeenSet(false),
     m_messageTracksCountHasBeenSet(false)
 {
 }
@@ -149,6 +150,16 @@ CoreInternalOutcome DescribeMessageResponse::Deserialize(const string &payload)
         m_showTopicNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LiteTopic") && !rsp["LiteTopic"].IsNull())
+    {
+        if (!rsp["LiteTopic"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LiteTopic` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_liteTopic = string(rsp["LiteTopic"].GetString());
+        m_liteTopicHasBeenSet = true;
+    }
+
     if (rsp.HasMember("MessageTracksCount") && !rsp["MessageTracksCount"].IsNull())
     {
         if (!rsp["MessageTracksCount"].IsInt64())
@@ -230,6 +241,14 @@ string DescribeMessageResponse::ToJsonString() const
         string key = "ShowTopicName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_showTopicName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_liteTopicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LiteTopic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_liteTopic.c_str(), allocator).Move(), allocator);
     }
 
     if (m_messageTracksCountHasBeenSet)
@@ -320,6 +339,16 @@ string DescribeMessageResponse::GetShowTopicName() const
 bool DescribeMessageResponse::ShowTopicNameHasBeenSet() const
 {
     return m_showTopicNameHasBeenSet;
+}
+
+string DescribeMessageResponse::GetLiteTopic() const
+{
+    return m_liteTopic;
+}
+
+bool DescribeMessageResponse::LiteTopicHasBeenSet() const
+{
+    return m_liteTopicHasBeenSet;
 }
 
 int64_t DescribeMessageResponse::GetMessageTracksCount() const

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trabbit/v20230418/model/RabbitMQServerlessKeyValuePair.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例Id
-                     * @return InstanceId 实例Id
+                     * 获取<p>实例Id</p>
+                     * @return InstanceId <p>实例Id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例Id
-                     * @param _instanceId 实例Id
+                     * 设置<p>实例Id</p>
+                     * @param _instanceId <p>实例Id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Vhost参数
-                     * @return VirtualHost Vhost参数
+                     * 获取<p>Vhost参数</p>
+                     * @return VirtualHost <p>Vhost参数</p>
                      * 
                      */
                     std::string GetVirtualHost() const;
 
                     /**
-                     * 设置Vhost参数
-                     * @param _virtualHost Vhost参数
+                     * 设置<p>Vhost参数</p>
+                     * @param _virtualHost <p>Vhost参数</p>
                      * 
                      */
                     void SetVirtualHost(const std::string& _virtualHost);
@@ -85,15 +86,15 @@ namespace TencentCloud
                     bool VirtualHostHasBeenSet() const;
 
                     /**
-                     * 获取源exchange
-                     * @return Source 源exchange
+                     * 获取<p>源exchange</p>
+                     * @return Source <p>源exchange</p>
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
-                     * 设置源exchange
-                     * @param _source 源exchange
+                     * 设置<p>源exchange</p>
+                     * @param _source <p>源exchange</p>
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -106,15 +107,15 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取目标类型,取值queue或exchange
-                     * @return DestinationType 目标类型,取值queue或exchange
+                     * 获取<p>目标类型,取值queue或exchange</p>
+                     * @return DestinationType <p>目标类型,取值queue或exchange</p>
                      * 
                      */
                     std::string GetDestinationType() const;
 
                     /**
-                     * 设置目标类型,取值queue或exchange
-                     * @param _destinationType 目标类型,取值queue或exchange
+                     * 设置<p>目标类型,取值queue或exchange</p>
+                     * @param _destinationType <p>目标类型,取值queue或exchange</p>
                      * 
                      */
                     void SetDestinationType(const std::string& _destinationType);
@@ -127,15 +128,15 @@ namespace TencentCloud
                     bool DestinationTypeHasBeenSet() const;
 
                     /**
-                     * 获取目标队列或者交换机
-                     * @return Destination 目标队列或者交换机
+                     * 获取<p>目标队列或者交换机</p>
+                     * @return Destination <p>目标队列或者交换机</p>
                      * 
                      */
                     std::string GetDestination() const;
 
                     /**
-                     * 设置目标队列或者交换机
-                     * @param _destination 目标队列或者交换机
+                     * 设置<p>目标队列或者交换机</p>
+                     * @param _destination <p>目标队列或者交换机</p>
                      * 
                      */
                     void SetDestination(const std::string& _destination);
@@ -148,15 +149,15 @@ namespace TencentCloud
                     bool DestinationHasBeenSet() const;
 
                     /**
-                     * 获取绑定key
-                     * @return RoutingKey 绑定key
+                     * 获取<p>绑定key</p>
+                     * @return RoutingKey <p>绑定key</p>
                      * 
                      */
                     std::string GetRoutingKey() const;
 
                     /**
-                     * 设置绑定key
-                     * @param _routingKey 绑定key
+                     * 设置<p>绑定key</p>
+                     * @param _routingKey <p>绑定key</p>
                      * 
                      */
                     void SetRoutingKey(const std::string& _routingKey);
@@ -168,43 +169,70 @@ namespace TencentCloud
                      */
                     bool RoutingKeyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>创建 Header 类型 Exchange 的 Binding 时，可以传入参数。其它类型 Exchange 无需传入</p>
+                     * @return Arguments <p>创建 Header 类型 Exchange 的 Binding 时，可以传入参数。其它类型 Exchange 无需传入</p>
+                     * 
+                     */
+                    std::vector<RabbitMQServerlessKeyValuePair> GetArguments() const;
+
+                    /**
+                     * 设置<p>创建 Header 类型 Exchange 的 Binding 时，可以传入参数。其它类型 Exchange 无需传入</p>
+                     * @param _arguments <p>创建 Header 类型 Exchange 的 Binding 时，可以传入参数。其它类型 Exchange 无需传入</p>
+                     * 
+                     */
+                    void SetArguments(const std::vector<RabbitMQServerlessKeyValuePair>& _arguments);
+
+                    /**
+                     * 判断参数 Arguments 是否已赋值
+                     * @return Arguments 是否已赋值
+                     * 
+                     */
+                    bool ArgumentsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例Id
+                     * <p>实例Id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Vhost参数
+                     * <p>Vhost参数</p>
                      */
                     std::string m_virtualHost;
                     bool m_virtualHostHasBeenSet;
 
                     /**
-                     * 源exchange
+                     * <p>源exchange</p>
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 目标类型,取值queue或exchange
+                     * <p>目标类型,取值queue或exchange</p>
                      */
                     std::string m_destinationType;
                     bool m_destinationTypeHasBeenSet;
 
                     /**
-                     * 目标队列或者交换机
+                     * <p>目标队列或者交换机</p>
                      */
                     std::string m_destination;
                     bool m_destinationHasBeenSet;
 
                     /**
-                     * 绑定key
+                     * <p>绑定key</p>
                      */
                     std::string m_routingKey;
                     bool m_routingKeyHasBeenSet;
+
+                    /**
+                     * <p>创建 Header 类型 Exchange 的 Binding 时，可以传入参数。其它类型 Exchange 无需传入</p>
+                     */
+                    std::vector<RabbitMQServerlessKeyValuePair> m_arguments;
+                    bool m_argumentsHasBeenSet;
 
                 };
             }

@@ -25,6 +25,7 @@ using namespace std;
 
 DescribeMessageTraceResponse::DescribeMessageTraceResponse() :
     m_showTopicNameHasBeenSet(false),
+    m_liteTopicHasBeenSet(false),
     m_dataHasBeenSet(false)
 {
 }
@@ -73,6 +74,16 @@ CoreInternalOutcome DescribeMessageTraceResponse::Deserialize(const string &payl
         m_showTopicNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LiteTopic") && !rsp["LiteTopic"].IsNull())
+    {
+        if (!rsp["LiteTopic"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LiteTopic` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_liteTopic = string(rsp["LiteTopic"].GetString());
+        m_liteTopicHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
         if (!rsp["Data"].IsArray())
@@ -111,6 +122,14 @@ string DescribeMessageTraceResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_showTopicName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_liteTopicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LiteTopic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_liteTopic.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -146,6 +165,16 @@ string DescribeMessageTraceResponse::GetShowTopicName() const
 bool DescribeMessageTraceResponse::ShowTopicNameHasBeenSet() const
 {
     return m_showTopicNameHasBeenSet;
+}
+
+string DescribeMessageTraceResponse::GetLiteTopic() const
+{
+    return m_liteTopic;
+}
+
+bool DescribeMessageTraceResponse::LiteTopicHasBeenSet() const
+{
+    return m_liteTopicHasBeenSet;
 }
 
 vector<MessageTraceItem> DescribeMessageTraceResponse::GetData() const

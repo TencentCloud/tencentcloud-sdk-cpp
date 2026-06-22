@@ -43,6 +43,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取<p>资源组ID</p>
+                     * @return ResourceGroupId <p>资源组ID</p>
+                     * 
+                     */
+                    std::string GetResourceGroupId() const;
+
+                    /**
+                     * 设置<p>资源组ID</p>
+                     * @param _resourceGroupId <p>资源组ID</p>
+                     * 
+                     */
+                    void SetResourceGroupId(const std::string& _resourceGroupId);
+
+                    /**
+                     * 判断参数 ResourceGroupId 是否已赋值
+                     * @return ResourceGroupId 是否已赋值
+                     * 
+                     */
+                    bool ResourceGroupIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
                      * @return TiProjectId <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
                      * 
@@ -64,6 +85,12 @@ namespace TencentCloud
                     bool TiProjectIdHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * <p>资源组ID</p>
+                     */
+                    std::string m_resourceGroupId;
+                    bool m_resourceGroupIdHasBeenSet;
 
                     /**
                      * <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>

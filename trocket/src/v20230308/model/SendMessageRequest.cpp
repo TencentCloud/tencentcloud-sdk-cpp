@@ -27,7 +27,8 @@ SendMessageRequest::SendMessageRequest() :
     m_topicHasBeenSet(false),
     m_msgBodyHasBeenSet(false),
     m_msgKeyHasBeenSet(false),
-    m_msgTagHasBeenSet(false)
+    m_msgTagHasBeenSet(false),
+    m_liteTopicHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string SendMessageRequest::ToJsonString() const
         string key = "MsgTag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_msgTag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_liteTopicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LiteTopic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_liteTopic.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void SendMessageRequest::SetMsgTag(const string& _msgTag)
 bool SendMessageRequest::MsgTagHasBeenSet() const
 {
     return m_msgTagHasBeenSet;
+}
+
+string SendMessageRequest::GetLiteTopic() const
+{
+    return m_liteTopic;
+}
+
+void SendMessageRequest::SetLiteTopic(const string& _liteTopic)
+{
+    m_liteTopic = _liteTopic;
+    m_liteTopicHasBeenSet = true;
+}
+
+bool SendMessageRequest::LiteTopicHasBeenSet() const
+{
+    return m_liteTopicHasBeenSet;
 }
 
 

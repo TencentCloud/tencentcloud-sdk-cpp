@@ -25,7 +25,9 @@ SystemDisk::SystemDisk() :
     m_diskIdHasBeenSet(false),
     m_diskSizeHasBeenSet(false),
     m_cdcIdHasBeenSet(false),
-    m_diskNameHasBeenSet(false)
+    m_diskNameHasBeenSet(false),
+    m_encryptHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,26 @@ CoreInternalOutcome SystemDisk::Deserialize(const rapidjson::Value &value)
         m_diskNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Encrypt") && !value["Encrypt"].IsNull())
+    {
+        if (!value["Encrypt"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SystemDisk.Encrypt` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_encrypt = value["Encrypt"].GetBool();
+        m_encryptHasBeenSet = true;
+    }
+
+    if (value.HasMember("KmsKeyId") && !value["KmsKeyId"].IsNull())
+    {
+        if (!value["KmsKeyId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SystemDisk.KmsKeyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kmsKeyId = string(value["KmsKeyId"].GetString());
+        m_kmsKeyIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +151,22 @@ void SystemDisk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "DiskName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_diskName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encrypt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_encrypt, allocator);
+    }
+
+    if (m_kmsKeyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KmsKeyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kmsKeyId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +250,37 @@ void SystemDisk::SetDiskName(const string& _diskName)
 bool SystemDisk::DiskNameHasBeenSet() const
 {
     return m_diskNameHasBeenSet;
+}
+
+bool SystemDisk::GetEncrypt() const
+{
+    return m_encrypt;
+}
+
+void SystemDisk::SetEncrypt(const bool& _encrypt)
+{
+    m_encrypt = _encrypt;
+    m_encryptHasBeenSet = true;
+}
+
+bool SystemDisk::EncryptHasBeenSet() const
+{
+    return m_encryptHasBeenSet;
+}
+
+string SystemDisk::GetKmsKeyId() const
+{
+    return m_kmsKeyId;
+}
+
+void SystemDisk::SetKmsKeyId(const string& _kmsKeyId)
+{
+    m_kmsKeyId = _kmsKeyId;
+    m_kmsKeyIdHasBeenSet = true;
+}
+
+bool SystemDisk::KmsKeyIdHasBeenSet() const
+{
+    return m_kmsKeyIdHasBeenSet;
 }
 

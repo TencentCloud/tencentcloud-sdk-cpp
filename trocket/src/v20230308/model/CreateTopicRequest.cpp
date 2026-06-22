@@ -29,7 +29,9 @@ CreateTopicRequest::CreateTopicRequest() :
     m_queueNumHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_msgTTLHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_autoExpireDeleteHasBeenSet(false),
+    m_autoExpireTimeHasBeenSet(false)
 {
 }
 
@@ -101,6 +103,22 @@ string CreateTopicRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_autoExpireDeleteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoExpireDelete";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoExpireDelete, allocator);
+    }
+
+    if (m_autoExpireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoExpireTime, allocator);
     }
 
 
@@ -221,6 +239,38 @@ void CreateTopicRequest::SetTagList(const vector<Tag>& _tagList)
 bool CreateTopicRequest::TagListHasBeenSet() const
 {
     return m_tagListHasBeenSet;
+}
+
+bool CreateTopicRequest::GetAutoExpireDelete() const
+{
+    return m_autoExpireDelete;
+}
+
+void CreateTopicRequest::SetAutoExpireDelete(const bool& _autoExpireDelete)
+{
+    m_autoExpireDelete = _autoExpireDelete;
+    m_autoExpireDeleteHasBeenSet = true;
+}
+
+bool CreateTopicRequest::AutoExpireDeleteHasBeenSet() const
+{
+    return m_autoExpireDeleteHasBeenSet;
+}
+
+int64_t CreateTopicRequest::GetAutoExpireTime() const
+{
+    return m_autoExpireTime;
+}
+
+void CreateTopicRequest::SetAutoExpireTime(const int64_t& _autoExpireTime)
+{
+    m_autoExpireTime = _autoExpireTime;
+    m_autoExpireTimeHasBeenSet = true;
+}
+
+bool CreateTopicRequest::AutoExpireTimeHasBeenSet() const
+{
+    return m_autoExpireTimeHasBeenSet;
 }
 
 
