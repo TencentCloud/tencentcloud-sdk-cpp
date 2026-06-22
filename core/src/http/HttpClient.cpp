@@ -263,7 +263,28 @@ HttpClient::HttpResponseOutcome HttpClient::SendRequest(const HttpRequest &reque
 
         return HttpResponseOutcome(response);
     }
+    case CURLE_COULDNT_RESOLVE_HOST:
+        return HttpResponseOutcome(Core::Error("DnsError", std::string(errbuf)));
+    case CURLE_COULDNT_CONNECT:
+        return HttpResponseOutcome(Core::Error("ConnectionError", std::string(errbuf)));
+    case CURLE_PEER_FAILED_VERIFICATION:
+        // Server certificate verification failed (SAN/CN mismatch, expired,
+        // untrusted CA, etc.). This strongly indicates a server-side issue
+        // and is a high-confidence signal of DNS hijacking when the target
+        // is a TencentCloud domain.
+        return HttpResponseOutcome(Core::Error("SSLError", std::string(errbuf)));
     default:
+        // The following errors fall here and are intentionally not treated
+        // as ConnectionError / SSLError, because they are most likely
+        // caused by the client itself and cannot be fixed by switching
+        // region or TLD:
+        //   - CURLE_OPERATION_TIMEDOUT (28): spans DNS/TCP/TLS/req/resp
+        //     stages, cannot be reliably attributed.
+        //   - CURLE_SSL_CONNECT_ERROR (35): TLS handshake failure due to
+        //     protocol/cipher mismatch, usually a client build issue.
+        //   - CURLE_SSL_CERTPROBLEM (58): local client certificate problem.
+        //   - CURLE_SSL_CIPHER (59): requested cipher not supported by
+        //     the local libcurl/OpenSSL build.
         return HttpResponseOutcome(Core::Error("NetworkError", std::string(errbuf)));
     }
 }
@@ -389,6 +410,10 @@ void HttpClient::AsyncReqHandler()
 
             if (!m_pendingReqs.empty())
             {
+                // Collect failed requests; clean them up after the loop
+                // to avoid modifying m_pendingReqs during iteration.
+                std::vector<AsyncReqContext*> failed_reqs;
+
                 for (const auto& async_req : m_pendingReqs)
                 {
                     err = curl_multi_add_handle(m_curlm, async_req->curl_handle);
@@ -397,9 +422,20 @@ void HttpClient::AsyncReqHandler()
                         std::cerr << "curl_multi_add_handle:" << curl_multi_strerror(err) << std::endl;
                         async_req->completion_handler(
                             HttpResponseOutcome(Core::Error("ClientError", curl_multi_strerror(err))));
+                        failed_reqs.push_back(async_req);
                     }
                 }
                 m_pendingReqs.clear();
+
+                // Release resources for requests that failed to add.
+                // Their curl handles were never added to m_curlm, so
+                // curl_multi_remove_handle is not needed.
+                for (auto* ctx : failed_reqs)
+                {
+                    curl_slist_free_all(ctx->curl_header_buffer);
+                    curl_easy_cleanup(ctx->curl_handle);
+                    delete ctx;
+                }
 
                 int running_handles = 1;
                 err = curl_multi_perform(m_curlm, &running_handles);
@@ -442,7 +478,39 @@ void HttpClient::AsyncReqHandler()
             {
                 AsyncReqContext* ctx;
                 curl_easy_getinfo(msg->easy_handle, CURLINFO_PRIVATE, &ctx);
+                CURLcode result = msg->data.result;
 
+                if (result != CURLE_OK)
+                {
+                    // Classify curl errors the same way as synchronous SendRequest
+                    std::string err_msg(ctx->curl_err_buffer);
+                    switch (result) {
+                    case CURLE_COULDNT_RESOLVE_HOST:
+                        ctx->completion_handler(
+                            HttpResponseOutcome(Core::Error("DnsError", err_msg)));
+                        break;
+                    case CURLE_COULDNT_CONNECT:
+                        ctx->completion_handler(
+                            HttpResponseOutcome(Core::Error("ConnectionError", err_msg)));
+                        break;
+                    case CURLE_PEER_FAILED_VERIFICATION:
+                        // Server certificate verification failed.
+                        // High-confidence signal of DNS hijacking for
+                        // TencentCloud domains.
+                        ctx->completion_handler(
+                            HttpResponseOutcome(Core::Error("SSLError", err_msg)));
+                        break;
+                    default:
+                        // CURLE_OPERATION_TIMEDOUT, CURLE_SSL_CONNECT_ERROR,
+                        // CURLE_SSL_CERTPROBLEM, CURLE_SSL_CIPHER and other
+                        // errors fall here. They are mostly client-side
+                        // issues and cannot be fixed by region/TLD switch.
+                        ctx->completion_handler(
+                            HttpResponseOutcome(Core::Error("NetworkError", err_msg)));
+                        break;
+                    }
+                }
+                else
                 {
                     int64_t response_code = 0;
                     curl_easy_getinfo(msg->easy_handle, CURLINFO_RESPONSE_CODE, &response_code);
@@ -495,7 +563,7 @@ size_t HttpClient::CurlReadHeader(char* ptr, size_t size, size_t nitems, void* u
     if (colon_pos == std::string::npos)
     {
         // invalid format
-        return nitems * size;;
+        return nitems * size;
     }
 
     const auto key = line.substr(0, colon_pos);

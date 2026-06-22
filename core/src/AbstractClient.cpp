@@ -40,12 +40,18 @@ AbstractClient::AbstractClient(const string &endpoint, const string &version, co
     m_sdkVersion(SDK_VERSION_PREFIX + TENCENTCLOUD_VERSION_STR),
     m_apiVersion(version),
     m_httpClient(new HttpClient()),
-    m_service("")
+    m_service(""),
+    m_breakers(nullptr)
 {
+    InitRegionBreakers();
 }
 
 AbstractClient::~AbstractClient()
 {
+    // delete m_httpClient first to join its async worker. Breakers are
+    // held by shared_ptr (in m_breakers and possibly captured by async
+    // callbacks), so they release automatically and safely regardless
+    // of destruction timing.
     delete m_httpClient;
 }
 
@@ -96,6 +102,7 @@ HttpClient::HttpResponseOutcome AbstractClient::MakeRequest(const AbstractModel&
     headers.insert(std::make_pair("Content-Type", "application/json"));
     return DoRequest(actionName, body, headers);
 }
+
 HttpClient::HttpResponseOutcome AbstractClient::MakeRequestJson(const std::string &actionName, const std::string &params)
 {
     std::map<std::string, std::string> headers;
@@ -108,15 +115,117 @@ HttpClient::HttpResponseOutcome AbstractClient::MakeRequestOctetStream(const std
     headers.insert(std::make_pair("Content-Type", "application/octet-stream"));
     return DoRequest(actionName, body, headers);
 }
+
 typedef std::map<std::string, std::string> OctetStreamHeadersMap;
 
-HttpClient::HttpResponseOutcome AbstractClient::DoRequest(const std::string &actionName, const std::string &body, std::map<std::string, std::string> &headers)
+void AbstractClient::InitRegionBreakers()
 {
-    HttpProfile httpProfile = m_clientProfile.GetHttpProfile();
-    string endpoint = httpProfile.GetEndpoint();
-    if (endpoint == "")
-        endpoint = m_endpoint;
+    // Only build the registry when region failover is enabled.
+    // When disabled, m_breakers stays nullptr and SelectEndpoint
+    // early-returns without touching it.
+    if (m_clientProfile.GetDisableRegionBreaker())
+    {
+        return;
+    }
+    m_breakers = std::make_shared<BreakerRegistry>();
+}
 
+std::shared_ptr<CircuitBreaker> AbstractClient::BreakerFor(
+    const std::string &origin, const std::string &host)
+{
+    const std::string key = origin + "\n" + host;
+    std::lock_guard<std::mutex> lock(m_breakers->mutex);
+    std::map<std::string, std::shared_ptr<CircuitBreaker> >::iterator it =
+        m_breakers->map.find(key);
+    if (it != m_breakers->map.end())
+    {
+        return it->second;  // reuse (accumulates state)
+    }
+    std::shared_ptr<CircuitBreaker> breaker = std::make_shared<CircuitBreaker>(
+        m_clientProfile.GetRegionBreakerProfile());
+    m_breakers->map.insert(std::make_pair(key, breaker));  // lazy load
+    return breaker;
+}
+
+AbstractClient::EndpointDecision AbstractClient::SelectEndpoint(
+    const std::string &primary_endpoint)
+{
+    // Bypass: failover disabled / non-TencentCloud endpoint -> send the
+    // primary directly, no breaker, no report.
+    if (!m_breakers ||
+        !DomainFailoverManager::IsTencentCloudDomain(primary_endpoint))
+    {
+        EndpointDecision d;
+        d.host = primary_endpoint;
+        d.breaker = nullptr;
+        return d;
+    }
+
+    RegionBreakerProfile rb_profile = m_clientProfile.GetRegionBreakerProfile();
+    std::string backup_ep = rb_profile.GetBackupEndpoint();
+    std::vector<std::string> candidates =
+        DomainFailoverManager::BuildCandidates(primary_endpoint, backup_ep);
+
+    // The LAST candidate is the bottom fallback: no breaker, force-sent,
+    // not reported (legacy behavior). Only consult breakers for the
+    // candidates before it.
+    const size_t last = candidates.size() - 1;
+    for (size_t i = 0; i < last; ++i)
+    {
+        std::shared_ptr<CircuitBreaker> breaker =
+            BreakerFor(primary_endpoint, candidates[i]);
+        if (breaker->Allow())
+        {
+            EndpointDecision d;
+            d.host = candidates[i];
+            d.breaker = breaker;  // hit -> must Report
+            return d;
+        }
+    }
+    // All front candidates Open (or single-candidate case) -> fall to
+    // the bottom; force-send without reporting.
+    EndpointDecision d;
+    d.host = candidates[last];
+    d.breaker = nullptr;
+    return d;
+}
+
+void AbstractClient::ReportResult(
+    const std::shared_ptr<CircuitBreaker> &breaker, bool success)
+{
+    if (breaker)
+    {
+        breaker->Report(success);
+    }
+}
+
+bool AbstractClient::IsFailoverTriggering(const std::string &error_code)
+{
+    // Only network-level errors that are reliably attributable to the
+    // current endpoint warrant a failover transition:
+    //   DnsError        - CURLE_COULDNT_RESOLVE_HOST
+    //   ConnectionError - CURLE_COULDNT_CONNECT
+    //   SSLError        - CURLE_PEER_FAILED_VERIFICATION (strong hint
+    //                     of DNS hijacking for TencentCloud domains)
+    //
+    // Explicitly NOT triggering failover:
+    //   ServiceNetworkError - any HTTP non-2xx; may come from business
+    //     errors (4xx), server faults (5xx), or throttling, and cannot
+    //     be reliably attributed to a per-endpoint network problem.
+    //     Matches HEAD's original behavior.
+    //   NetworkError - e.g. CURLE_OPERATION_TIMEDOUT spans multiple
+    //     stages; local client cert errors cannot be fixed by switching
+    //     domain.
+    return error_code == "DnsError" ||
+           error_code == "ConnectionError" ||
+           error_code == "SSLError";
+}
+
+HttpClient::HttpResponseOutcome AbstractClient::DoRequestWithEndpoint(
+    const std::string &actionName, const std::string &body,
+    std::map<std::string, std::string> &headers,
+    const std::string &endpoint)
+{
     string::size_type pos = endpoint.find_first_of(".");
     if (pos != string::npos)
         m_service = endpoint.substr(0, pos);
@@ -125,6 +234,8 @@ HttpClient::HttpResponseOutcome AbstractClient::DoRequest(const std::string &act
         m_service = "unknown";
         return HttpClient::HttpResponseOutcome(Core::Error("ClientError", "endpoint `"+ endpoint + "` is not valid"));
     }
+
+    HttpProfile httpProfile = m_clientProfile.GetHttpProfile();
 
     Url url;
     url.SetHost(endpoint);
@@ -150,14 +261,14 @@ HttpClient::HttpResponseOutcome AbstractClient::DoRequest(const std::string &act
         httpRequest.AddHeader("Connection", "Close");
     if (headers.size() > 0)
     {
-        for(std::map<std::string, std::string>::iterator iter = headers.begin(); iter != headers.end(); iter++)
+        for (std::map<std::string, std::string>::iterator iter = headers.begin(); iter != headers.end(); ++iter)
         {
             httpRequest.AddHeader(iter->first, iter->second);
         }
     }
     if (m_headers.size() > 0)
     {
-        for(std::map<std::string, std::string>::iterator iter = m_headers.begin(); iter != m_headers.end(); iter++)
+        for (std::map<std::string, std::string>::iterator iter = m_headers.begin(); iter != m_headers.end(); ++iter)
         {
             httpRequest.AddHeader(iter->first, iter->second);
         }
@@ -172,6 +283,32 @@ HttpClient::HttpResponseOutcome AbstractClient::DoRequest(const std::string &act
     m_httpClient->SetResolveIp(httpProfile.GetResolveIp());
 
     return m_httpClient->SendRequest(httpRequest);
+}
+
+HttpClient::HttpResponseOutcome AbstractClient::DoRequest(const std::string &actionName, const std::string &body, std::map<std::string, std::string> &headers)
+{
+    HttpProfile httpProfile = m_clientProfile.GetHttpProfile();
+    string primary_endpoint = httpProfile.GetEndpoint();
+    if (primary_endpoint == "")
+        primary_endpoint = m_endpoint;
+
+    // Pick an endpoint for this request based on circuit breaker state.
+    // No in-request retry: the breakers make the decision once per
+    // request. The outcome of that single request is then fed back to
+    // the breaker.
+    EndpointDecision decision = SelectEndpoint(primary_endpoint);
+
+    auto outcome = DoRequestWithEndpoint(actionName, body, headers, decision.host);
+
+    // Unified report rule: any Allow()==true request MUST Report() once.
+    // A non-failover error (business 4xx / throttling) counts as a
+    // "success" for the endpoint so the HalfOpen probe slot is released
+    // (fixes P7). decision.breaker == nullptr (bypass / bottom) -> no-op.
+    bool ok = outcome.IsSuccess() ||
+              !IsFailoverTriggering(outcome.GetError().GetErrorCode());
+    ReportResult(decision.breaker, ok);
+
+    return outcome;
 }
 
 void AbstractClient::GenerateSignature(HttpRequest &request)
