@@ -30,6 +30,7 @@
 #include <tencentcloud/emr/v20190103/model/VolumeMount.h>
 #include <tencentcloud/emr/v20190103/model/StorageVolumeDetail.h>
 #include <tencentcloud/emr/v20190103/model/CFSTurboVolume.h>
+#include <tencentcloud/emr/v20190103/model/GooseFSVolume.h>
 
 
 namespace TencentCloud
@@ -199,6 +200,27 @@ namespace TencentCloud
                      */
                     bool CFSTurboVolumesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>goosefs volume挂载信息</p>
+                     * @return GooseFSVolumes <p>goosefs volume挂载信息</p>
+                     * 
+                     */
+                    std::vector<GooseFSVolume> GetGooseFSVolumes() const;
+
+                    /**
+                     * 设置<p>goosefs volume挂载信息</p>
+                     * @param _gooseFSVolumes <p>goosefs volume挂载信息</p>
+                     * 
+                     */
+                    void SetGooseFSVolumes(const std::vector<GooseFSVolume>& _gooseFSVolumes);
+
+                    /**
+                     * 判断参数 GooseFSVolumes 是否已赋值
+                     * @return GooseFSVolumes 是否已赋值
+                     * 
+                     */
+                    bool GooseFSVolumesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -242,6 +264,12 @@ namespace TencentCloud
                      */
                     std::vector<CFSTurboVolume> m_cFSTurboVolumes;
                     bool m_cFSTurboVolumesHasBeenSet;
+
+                    /**
+                     * <p>goosefs volume挂载信息</p>
+                     */
+                    std::vector<GooseFSVolume> m_gooseFSVolumes;
+                    bool m_gooseFSVolumesHasBeenSet;
 
                 };
             }

@@ -2440,56 +2440,6 @@ OcrClient::RecognizeAgentOutcomeCallable OcrClient::RecognizeAgentCallable(const
     return prom->get_future();
 }
 
-OcrClient::RecognizeContainerOCROutcome OcrClient::RecognizeContainerOCR(const RecognizeContainerOCRRequest &request)
-{
-    auto outcome = MakeRequest(request, "RecognizeContainerOCR");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        RecognizeContainerOCRResponse rsp = RecognizeContainerOCRResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return RecognizeContainerOCROutcome(rsp);
-        else
-            return RecognizeContainerOCROutcome(o.GetError());
-    }
-    else
-    {
-        return RecognizeContainerOCROutcome(outcome.GetError());
-    }
-}
-
-void OcrClient::RecognizeContainerOCRAsync(const RecognizeContainerOCRRequest& request, const RecognizeContainerOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const RecognizeContainerOCRRequest&;
-    using Resp = RecognizeContainerOCRResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "RecognizeContainerOCR", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-OcrClient::RecognizeContainerOCROutcomeCallable OcrClient::RecognizeContainerOCRCallable(const RecognizeContainerOCRRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<RecognizeContainerOCROutcome>>();
-    RecognizeContainerOCRAsync(
-    request,
-    [prom](
-        const OcrClient*,
-        const RecognizeContainerOCRRequest&,
-        RecognizeContainerOCROutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 OcrClient::RecognizeEncryptedIDCardOCROutcome OcrClient::RecognizeEncryptedIDCardOCR(const RecognizeEncryptedIDCardOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "RecognizeEncryptedIDCardOCR");

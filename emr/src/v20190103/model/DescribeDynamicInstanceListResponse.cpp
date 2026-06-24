@@ -24,7 +24,8 @@ using namespace TencentCloud::Emr::V20190103::Model;
 using namespace std;
 
 DescribeDynamicInstanceListResponse::DescribeDynamicInstanceListResponse() :
-    m_dynamicInstanceListHasBeenSet(false)
+    m_dynamicInstanceListHasBeenSet(false),
+    m_webUIInfosHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,26 @@ CoreInternalOutcome DescribeDynamicInstanceListResponse::Deserialize(const strin
         m_dynamicInstanceListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("WebUIInfos") && !rsp["WebUIInfos"].IsNull())
+    {
+        if (!rsp["WebUIInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WebUIInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["WebUIInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            WebUIInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_webUIInfos.push_back(item);
+        }
+        m_webUIInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -101,6 +122,21 @@ string DescribeDynamicInstanceListResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_dynamicInstanceList.begin(); itr != m_dynamicInstanceList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_webUIInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebUIInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_webUIInfos.begin(); itr != m_webUIInfos.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -127,6 +163,16 @@ vector<RayCluster> DescribeDynamicInstanceListResponse::GetDynamicInstanceList()
 bool DescribeDynamicInstanceListResponse::DynamicInstanceListHasBeenSet() const
 {
     return m_dynamicInstanceListHasBeenSet;
+}
+
+vector<WebUIInfo> DescribeDynamicInstanceListResponse::GetWebUIInfos() const
+{
+    return m_webUIInfos;
+}
+
+bool DescribeDynamicInstanceListResponse::WebUIInfosHasBeenSet() const
+{
+    return m_webUIInfosHasBeenSet;
 }
 
 

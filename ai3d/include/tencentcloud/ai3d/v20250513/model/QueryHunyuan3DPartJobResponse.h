@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功 示例值：RUN。
-                     * @return Status 任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功 示例值：RUN。
+                     * 获取<p>任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功 示例值：RUN。</p>
+                     * @return Status <p>任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功 示例值：RUN。</p>
                      * 
                      */
                     std::string GetStatus() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取错误码。
-                     * @return ErrorCode 错误码。
+                     * 获取<p>错误码。</p>
+                     * @return ErrorCode <p>错误码。</p>
                      * 
                      */
                     std::string GetErrorCode() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool ErrorCodeHasBeenSet() const;
 
                     /**
-                     * 获取错误信息。
-                     * @return ErrorMessage 错误信息。
+                     * 获取<p>错误信息。</p>
+                     * @return ErrorMessage <p>错误信息。</p>
                      * 
                      */
                     std::string GetErrorMessage() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool ErrorMessageHasBeenSet() const;
 
                     /**
-                     * 获取生成文件的URL地址，有效期1天。
-                     * @return ResultFile3Ds 生成文件的URL地址，有效期1天。
+                     * 获取<p>生成文件的URL地址，有效期1天。</p>
+                     * @return ResultFile3Ds <p>生成文件的URL地址，有效期1天。</p>
                      * 
                      */
                     std::vector<File3D> GetResultFile3Ds() const;
@@ -100,31 +100,51 @@ namespace TencentCloud
                      */
                     bool ResultFile3DsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否分步骤进行组件生成；<br>开启后，输入原始模型后，可生成带分割信息的模型以及分割数据，可对此信息编辑后再传入带有分割信息的模型和分割数据进行编辑后的组件生成；<br>此参数默认关闭。</p>
+                     * @return PartSegmentationInfo <p>是否分步骤进行组件生成；<br>开启后，输入原始模型后，可生成带分割信息的模型以及分割数据，可对此信息编辑后再传入带有分割信息的模型和分割数据进行编辑后的组件生成；<br>此参数默认关闭。</p>
+                     * 
+                     */
+                    std::string GetPartSegmentationInfo() const;
+
+                    /**
+                     * 判断参数 PartSegmentationInfo 是否已赋值
+                     * @return PartSegmentationInfo 是否已赋值
+                     * 
+                     */
+                    bool PartSegmentationInfoHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功 示例值：RUN。
+                     * <p>任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功 示例值：RUN。</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 错误码。
+                     * <p>错误码。</p>
                      */
                     std::string m_errorCode;
                     bool m_errorCodeHasBeenSet;
 
                     /**
-                     * 错误信息。
+                     * <p>错误信息。</p>
                      */
                     std::string m_errorMessage;
                     bool m_errorMessageHasBeenSet;
 
                     /**
-                     * 生成文件的URL地址，有效期1天。
+                     * <p>生成文件的URL地址，有效期1天。</p>
                      */
                     std::vector<File3D> m_resultFile3Ds;
                     bool m_resultFile3DsHasBeenSet;
+
+                    /**
+                     * <p>是否分步骤进行组件生成；<br>开启后，输入原始模型后，可生成带分割信息的模型以及分割数据，可对此信息编辑后再传入带有分割信息的模型和分割数据进行编辑后的组件生成；<br>此参数默认关闭。</p>
+                     */
+                    std::string m_partSegmentationInfo;
+                    bool m_partSegmentationInfoHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ using namespace std;
 ImageTranslateLLMRequest::ImageTranslateLLMRequest() :
     m_dataHasBeenSet(false),
     m_targetHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_modeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string ImageTranslateLLMRequest::ToJsonString() const
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_mode, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void ImageTranslateLLMRequest::SetUrl(const string& _url)
 bool ImageTranslateLLMRequest::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+int64_t ImageTranslateLLMRequest::GetMode() const
+{
+    return m_mode;
+}
+
+void ImageTranslateLLMRequest::SetMode(const int64_t& _mode)
+{
+    m_mode = _mode;
+    m_modeHasBeenSet = true;
+}
+
+bool ImageTranslateLLMRequest::ModeHasBeenSet() const
+{
+    return m_modeHasBeenSet;
 }
 
 

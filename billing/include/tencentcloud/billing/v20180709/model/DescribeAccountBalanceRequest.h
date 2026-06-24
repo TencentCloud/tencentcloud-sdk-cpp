@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否查询临时额度
-                     * @return TempCredit 是否查询临时额度
+                     * 获取<p>是否查询临时额度</p>
+                     * @return TempCredit <p>是否查询临时额度</p>
                      * 
                      */
                     bool GetTempCredit() const;
 
                     /**
-                     * 设置是否查询临时额度
-                     * @param _tempCredit 是否查询临时额度
+                     * 设置<p>是否查询临时额度</p>
+                     * @param _tempCredit <p>是否查询临时额度</p>
                      * 
                      */
                     void SetTempCredit(const bool& _tempCredit);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否查询临时额度
+                     * <p>是否查询临时额度</p>
                      */
                     bool m_tempCredit;
                     bool m_tempCreditHasBeenSet;

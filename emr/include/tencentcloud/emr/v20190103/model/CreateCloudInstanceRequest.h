@@ -28,6 +28,7 @@
 #include <tencentcloud/emr/v20190103/model/LoginSettings.h>
 #include <tencentcloud/emr/v20190103/model/ExternalService.h>
 #include <tencentcloud/emr/v20190103/model/ContainerExtraConf.h>
+#include <tencentcloud/emr/v20190103/model/EnableSparkAppMonitorInfo.h>
 
 
 namespace TencentCloud
@@ -469,6 +470,27 @@ namespace TencentCloud
                      */
                     bool ContainerExtraConfHasBeenSet() const;
 
+                    /**
+                     * 获取<p>spark监控</p>
+                     * @return EnableSparkAppMonitorInfo <p>spark监控</p>
+                     * 
+                     */
+                    EnableSparkAppMonitorInfo GetEnableSparkAppMonitorInfo() const;
+
+                    /**
+                     * 设置<p>spark监控</p>
+                     * @param _enableSparkAppMonitorInfo <p>spark监控</p>
+                     * 
+                     */
+                    void SetEnableSparkAppMonitorInfo(const EnableSparkAppMonitorInfo& _enableSparkAppMonitorInfo);
+
+                    /**
+                     * 判断参数 EnableSparkAppMonitorInfo 是否已赋值
+                     * @return EnableSparkAppMonitorInfo 是否已赋值
+                     * 
+                     */
+                    bool EnableSparkAppMonitorInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -590,6 +612,12 @@ namespace TencentCloud
                      */
                     ContainerExtraConf m_containerExtraConf;
                     bool m_containerExtraConfHasBeenSet;
+
+                    /**
+                     * <p>spark监控</p>
+                     */
+                    EnableSparkAppMonitorInfo m_enableSparkAppMonitorInfo;
+                    bool m_enableSparkAppMonitorInfoHasBeenSet;
 
                 };
             }

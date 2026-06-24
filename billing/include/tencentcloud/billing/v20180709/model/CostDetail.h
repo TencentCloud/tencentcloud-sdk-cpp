@@ -468,6 +468,27 @@ namespace TencentCloud
                      */
                     bool PayTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>产品名称code</p>
+                     * @return BusinessCode <p>产品名称code</p>
+                     * 
+                     */
+                    std::string GetBusinessCode() const;
+
+                    /**
+                     * 设置<p>产品名称code</p>
+                     * @param _businessCode <p>产品名称code</p>
+                     * 
+                     */
+                    void SetBusinessCode(const std::string& _businessCode);
+
+                    /**
+                     * 判断参数 BusinessCode 是否已赋值
+                     * @return BusinessCode 是否已赋值
+                     * 
+                     */
+                    bool BusinessCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -589,6 +610,12 @@ namespace TencentCloud
                      */
                     std::string m_payTime;
                     bool m_payTimeHasBeenSet;
+
+                    /**
+                     * <p>产品名称code</p>
+                     */
+                    std::string m_businessCode;
+                    bool m_businessCodeHasBeenSet;
 
                 };
             }

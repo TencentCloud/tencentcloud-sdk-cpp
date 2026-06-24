@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设备名。若不指定设备，可传"-1"
-                     * @return DeviceName 设备名。若不指定设备，可传"-1"
+                     * 获取<p>设备名。若不指定设备，可传&quot;-1&quot;</p>
+                     * @return DeviceName <p>设备名。若不指定设备，可传&quot;-1&quot;</p>
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
-                     * 设置设备名。若不指定设备，可传"-1"
-                     * @param _deviceName 设备名。若不指定设备，可传"-1"
+                     * 设置<p>设备名。若不指定设备，可传&quot;-1&quot;</p>
+                     * @param _deviceName <p>设备名。若不指定设备，可传&quot;-1&quot;</p>
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取统计开始时间，单位：s
-                     * @return BeginTime 统计开始时间，单位：s
+                     * 获取<p>统计开始时间，单位：s</p>
+                     * @return BeginTime <p>统计开始时间，单位：s</p>
                      * 
                      */
                     int64_t GetBeginTime() const;
 
                     /**
-                     * 设置统计开始时间，单位：s
-                     * @param _beginTime 统计开始时间，单位：s
+                     * 设置<p>统计开始时间，单位：s</p>
+                     * @param _beginTime <p>统计开始时间，单位：s</p>
                      * 
                      */
                     void SetBeginTime(const int64_t& _beginTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取统计结束时间，单位：s
-                     * @return EndTime 统计结束时间，单位：s
+                     * 获取<p>统计结束时间，单位：s</p>
+                     * @return EndTime <p>统计结束时间，单位：s</p>
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置统计结束时间，单位：s
-                     * @param _endTime 统计结束时间，单位：s
+                     * 设置<p>统计结束时间，单位：s</p>
+                     * @param _endTime <p>统计结束时间，单位：s</p>
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -106,23 +106,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取聚合粒度：
-1:按小时统计
-2:按天统计
-                     * @return TimeGranularity 聚合粒度：
-1:按小时统计
-2:按天统计
+                     * 获取<p>时间粒度</p><p>枚举值：</p><ul><li>1： 按小时统计</li><li>2： 按天统计</li><li>3： 按分钟统计</li><li>4： 按5分钟统计</li></ul>
+                     * @return TimeGranularity <p>时间粒度</p><p>枚举值：</p><ul><li>1： 按小时统计</li><li>2： 按天统计</li><li>3： 按分钟统计</li><li>4： 按5分钟统计</li></ul>
                      * 
                      */
                     int64_t GetTimeGranularity() const;
 
                     /**
-                     * 设置聚合粒度：
-1:按小时统计
-2:按天统计
-                     * @param _timeGranularity 聚合粒度：
-1:按小时统计
-2:按天统计
+                     * 设置<p>时间粒度</p><p>枚举值：</p><ul><li>1： 按小时统计</li><li>2： 按天统计</li><li>3： 按分钟统计</li><li>4： 按5分钟统计</li></ul>
+                     * @param _timeGranularity <p>时间粒度</p><p>枚举值：</p><ul><li>1： 按小时统计</li><li>2： 按天统计</li><li>3： 按分钟统计</li><li>4： 按5分钟统计</li></ul>
                      * 
                      */
                     void SetTimeGranularity(const int64_t& _timeGranularity);
@@ -135,15 +127,15 @@ namespace TencentCloud
                     bool TimeGranularityHasBeenSet() const;
 
                     /**
-                     * 获取接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。
-                     * @return AccessRegion 接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。
+                     * 获取<p>接入区域。取值范围：[&#39;MC&#39;,&#39;AP&#39;,&#39;EU&#39;,&#39;AM&#39;] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。</p>
+                     * @return AccessRegion <p>接入区域。取值范围：[&#39;MC&#39;,&#39;AP&#39;,&#39;EU&#39;,&#39;AM&#39;] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。</p>
                      * 
                      */
                     std::string GetAccessRegion() const;
 
                     /**
-                     * 设置接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。
-                     * @param _accessRegion 接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。
+                     * 设置<p>接入区域。取值范围：[&#39;MC&#39;,&#39;AP&#39;,&#39;EU&#39;,&#39;AM&#39;] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。</p>
+                     * @param _accessRegion <p>接入区域。取值范围：[&#39;MC&#39;,&#39;AP&#39;,&#39;EU&#39;,&#39;AM&#39;] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。</p>
                      * 
                      */
                     void SetAccessRegion(const std::string& _accessRegion);
@@ -156,15 +148,15 @@ namespace TencentCloud
                     bool AccessRegionHasBeenSet() const;
 
                     /**
-                     * 获取网关类型。0：公有云网关；1：自有网关。不传默认为0。
-                     * @return GatewayType 网关类型。0：公有云网关；1：自有网关。不传默认为0。
+                     * 获取<p>网关类型。0：公有云网关；1：自有网关。不传默认为0。</p>
+                     * @return GatewayType <p>网关类型。0：公有云网关；1：自有网关。不传默认为0。</p>
                      * 
                      */
                     int64_t GetGatewayType() const;
 
                     /**
-                     * 设置网关类型。0：公有云网关；1：自有网关。不传默认为0。
-                     * @param _gatewayType 网关类型。0：公有云网关；1：自有网关。不传默认为0。
+                     * 设置<p>网关类型。0：公有云网关；1：自有网关。不传默认为0。</p>
+                     * @param _gatewayType <p>网关类型。0：公有云网关；1：自有网关。不传默认为0。</p>
                      * 
                      */
                     void SetGatewayType(const int64_t& _gatewayType);
@@ -177,15 +169,15 @@ namespace TencentCloud
                     bool GatewayTypeHasBeenSet() const;
 
                     /**
-                     * 获取设备名列表，最多10个设备，下载多个设备流量时使用，此时DeviceName可传"-1"
-                     * @return DeviceList 设备名列表，最多10个设备，下载多个设备流量时使用，此时DeviceName可传"-1"
+                     * 获取<p>设备名列表，最多10个设备，下载多个设备流量时使用，此时DeviceName可传&quot;-1&quot;</p>
+                     * @return DeviceList <p>设备名列表，最多10个设备，下载多个设备流量时使用，此时DeviceName可传&quot;-1&quot;</p>
                      * 
                      */
                     std::vector<std::string> GetDeviceList() const;
 
                     /**
-                     * 设置设备名列表，最多10个设备，下载多个设备流量时使用，此时DeviceName可传"-1"
-                     * @param _deviceList 设备名列表，最多10个设备，下载多个设备流量时使用，此时DeviceName可传"-1"
+                     * 设置<p>设备名列表，最多10个设备，下载多个设备流量时使用，此时DeviceName可传&quot;-1&quot;</p>
+                     * @param _deviceList <p>设备名列表，最多10个设备，下载多个设备流量时使用，此时DeviceName可传&quot;-1&quot;</p>
                      * 
                      */
                     void SetDeviceList(const std::vector<std::string>& _deviceList);
@@ -198,15 +190,15 @@ namespace TencentCloud
                     bool DeviceListHasBeenSet() const;
 
                     /**
-                     * 获取设备分组ID，若不指定分组则不传，按分组下载数据时使用
-                     * @return GroupId 设备分组ID，若不指定分组则不传，按分组下载数据时使用
+                     * 获取<p>设备分组ID，若不指定分组则不传，按分组下载数据时使用</p>
+                     * @return GroupId <p>设备分组ID，若不指定分组则不传，按分组下载数据时使用</p>
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置设备分组ID，若不指定分组则不传，按分组下载数据时使用
-                     * @param _groupId 设备分组ID，若不指定分组则不传，按分组下载数据时使用
+                     * 设置<p>设备分组ID，若不指定分组则不传，按分组下载数据时使用</p>
+                     * @param _groupId <p>设备分组ID，若不指定分组则不传，按分组下载数据时使用</p>
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -219,15 +211,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取应用ID，若不指定应用不填，按应用下载数据时使用
-                     * @return MpApplicationId 应用ID，若不指定应用不填，按应用下载数据时使用
+                     * 获取<p>应用ID，若不指定应用不填，按应用下载数据时使用</p>
+                     * @return MpApplicationId <p>应用ID，若不指定应用不填，按应用下载数据时使用</p>
                      * 
                      */
                     std::string GetMpApplicationId() const;
 
                     /**
-                     * 设置应用ID，若不指定应用不填，按应用下载数据时使用
-                     * @param _mpApplicationId 应用ID，若不指定应用不填，按应用下载数据时使用
+                     * 设置<p>应用ID，若不指定应用不填，按应用下载数据时使用</p>
+                     * @param _mpApplicationId <p>应用ID，若不指定应用不填，按应用下载数据时使用</p>
                      * 
                      */
                     void SetMpApplicationId(const std::string& _mpApplicationId);
@@ -242,57 +234,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 设备名。若不指定设备，可传"-1"
+                     * <p>设备名。若不指定设备，可传&quot;-1&quot;</p>
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 统计开始时间，单位：s
+                     * <p>统计开始时间，单位：s</p>
                      */
                     int64_t m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 统计结束时间，单位：s
+                     * <p>统计结束时间，单位：s</p>
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 聚合粒度：
-1:按小时统计
-2:按天统计
+                     * <p>时间粒度</p><p>枚举值：</p><ul><li>1： 按小时统计</li><li>2： 按天统计</li><li>3： 按分钟统计</li><li>4： 按5分钟统计</li></ul>
                      */
                     int64_t m_timeGranularity;
                     bool m_timeGranularityHasBeenSet;
 
                     /**
-                     * 接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。
+                     * <p>接入区域。取值范围：[&#39;MC&#39;,&#39;AP&#39;,&#39;EU&#39;,&#39;AM&#39;] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。</p>
                      */
                     std::string m_accessRegion;
                     bool m_accessRegionHasBeenSet;
 
                     /**
-                     * 网关类型。0：公有云网关；1：自有网关。不传默认为0。
+                     * <p>网关类型。0：公有云网关；1：自有网关。不传默认为0。</p>
                      */
                     int64_t m_gatewayType;
                     bool m_gatewayTypeHasBeenSet;
 
                     /**
-                     * 设备名列表，最多10个设备，下载多个设备流量时使用，此时DeviceName可传"-1"
+                     * <p>设备名列表，最多10个设备，下载多个设备流量时使用，此时DeviceName可传&quot;-1&quot;</p>
                      */
                     std::vector<std::string> m_deviceList;
                     bool m_deviceListHasBeenSet;
 
                     /**
-                     * 设备分组ID，若不指定分组则不传，按分组下载数据时使用
+                     * <p>设备分组ID，若不指定分组则不传，按分组下载数据时使用</p>
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 应用ID，若不指定应用不填，按应用下载数据时使用
+                     * <p>应用ID，若不指定应用不填，按应用下载数据时使用</p>
                      */
                     std::string m_mpApplicationId;
                     bool m_mpApplicationIdHasBeenSet;

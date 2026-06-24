@@ -31,7 +31,8 @@ LLMDetectResult::LLMDetectResult() :
     m_payloadHasBeenSet(false),
     m_imageResultHasBeenSet(false),
     m_msgIDHasBeenSet(false),
-    m_toolCallResultHasBeenSet(false)
+    m_toolCallResultHasBeenSet(false),
+    m_intentDetectResultHasBeenSet(false)
 {
 }
 
@@ -197,6 +198,23 @@ CoreInternalOutcome LLMDetectResult::Deserialize(const rapidjson::Value &value)
         m_toolCallResultHasBeenSet = true;
     }
 
+    if (value.HasMember("IntentDetectResult") && !value["IntentDetectResult"].IsNull())
+    {
+        if (!value["IntentDetectResult"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LLMDetectResult.IntentDetectResult` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_intentDetectResult.Deserialize(value["IntentDetectResult"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_intentDetectResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -318,6 +336,15 @@ void LLMDetectResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_toolCallResult.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_intentDetectResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntentDetectResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_intentDetectResult.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -497,5 +524,21 @@ void LLMDetectResult::SetToolCallResult(const ToolCallResult& _toolCallResult)
 bool LLMDetectResult::ToolCallResultHasBeenSet() const
 {
     return m_toolCallResultHasBeenSet;
+}
+
+IntentDetectResult LLMDetectResult::GetIntentDetectResult() const
+{
+    return m_intentDetectResult;
+}
+
+void LLMDetectResult::SetIntentDetectResult(const IntentDetectResult& _intentDetectResult)
+{
+    m_intentDetectResult = _intentDetectResult;
+    m_intentDetectResultHasBeenSet = true;
+}
+
+bool LLMDetectResult::IntentDetectResultHasBeenSet() const
+{
+    return m_intentDetectResultHasBeenSet;
 }
 

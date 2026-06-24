@@ -27,6 +27,7 @@
 #include <tencentcloud/emr/v20190103/model/RedisInstance.h>
 #include <tencentcloud/emr/v20190103/model/CustomImage.h>
 #include <tencentcloud/emr/v20190103/model/PersistentVolume.h>
+#include <tencentcloud/emr/v20190103/model/ImageInfoV2.h>
 
 
 namespace TencentCloud
@@ -357,6 +358,20 @@ namespace TencentCloud
                      */
                     bool RayClusterYamlHasBeenSet() const;
 
+                    /**
+                     * 获取<p>镜像信息</p>
+                     * @return ImageInfoV2 <p>镜像信息</p>
+                     * 
+                     */
+                    ImageInfoV2 GetImageInfoV2() const;
+
+                    /**
+                     * 判断参数 ImageInfoV2 是否已赋值
+                     * @return ImageInfoV2 是否已赋值
+                     * 
+                     */
+                    bool ImageInfoV2HasBeenSet() const;
+
                 private:
 
                     /**
@@ -490,6 +505,12 @@ namespace TencentCloud
                      */
                     std::string m_rayClusterYaml;
                     bool m_rayClusterYamlHasBeenSet;
+
+                    /**
+                     * <p>镜像信息</p>
+                     */
+                    ImageInfoV2 m_imageInfoV2;
+                    bool m_imageInfoV2HasBeenSet;
 
                 };
             }

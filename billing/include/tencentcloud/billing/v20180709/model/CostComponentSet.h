@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取组件类型名称
-                     * @return ComponentCodeName 组件类型名称
+                     * 获取<p>组件类型名称</p>
+                     * @return ComponentCodeName <p>组件类型名称</p>
                      * 
                      */
                     std::string GetComponentCodeName() const;
 
                     /**
-                     * 设置组件类型名称
-                     * @param _componentCodeName 组件类型名称
+                     * 设置<p>组件类型名称</p>
+                     * @param _componentCodeName <p>组件类型名称</p>
                      * 
                      */
                     void SetComponentCodeName(const std::string& _componentCodeName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ComponentCodeNameHasBeenSet() const;
 
                     /**
-                     * 获取组件名称
-                     * @return ItemCodeName 组件名称
+                     * 获取<p>组件名称</p>
+                     * @return ItemCodeName <p>组件名称</p>
                      * 
                      */
                     std::string GetItemCodeName() const;
 
                     /**
-                     * 设置组件名称
-                     * @param _itemCodeName 组件名称
+                     * 设置<p>组件名称</p>
+                     * @param _itemCodeName <p>组件名称</p>
                      * 
                      */
                     void SetItemCodeName(const std::string& _itemCodeName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ItemCodeNameHasBeenSet() const;
 
                     /**
-                     * 获取刊例价
-                     * @return SinglePrice 刊例价
+                     * 获取<p>刊例价</p>
+                     * @return SinglePrice <p>刊例价</p>
                      * 
                      */
                     std::string GetSinglePrice() const;
 
                     /**
-                     * 设置刊例价
-                     * @param _singlePrice 刊例价
+                     * 设置<p>刊例价</p>
+                     * @param _singlePrice <p>刊例价</p>
                      * 
                      */
                     void SetSinglePrice(const std::string& _singlePrice);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool SinglePriceHasBeenSet() const;
 
                     /**
-                     * 获取刊例价单位
-                     * @return PriceUnit 刊例价单位
+                     * 获取<p>刊例价单位</p>
+                     * @return PriceUnit <p>刊例价单位</p>
                      * 
                      */
                     std::string GetPriceUnit() const;
 
                     /**
-                     * 设置刊例价单位
-                     * @param _priceUnit 刊例价单位
+                     * 设置<p>刊例价单位</p>
+                     * @param _priceUnit <p>刊例价单位</p>
                      * 
                      */
                     void SetPriceUnit(const std::string& _priceUnit);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool PriceUnitHasBeenSet() const;
 
                     /**
-                     * 获取用量
-                     * @return UsedAmount 用量
+                     * 获取<p>用量</p>
+                     * @return UsedAmount <p>用量</p>
                      * 
                      */
                     std::string GetUsedAmount() const;
 
                     /**
-                     * 设置用量
-                     * @param _usedAmount 用量
+                     * 设置<p>用量</p>
+                     * @param _usedAmount <p>用量</p>
                      * 
                      */
                     void SetUsedAmount(const std::string& _usedAmount);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool UsedAmountHasBeenSet() const;
 
                     /**
-                     * 获取用量单位
-                     * @return UsedAmountUnit 用量单位
+                     * 获取<p>用量单位</p>
+                     * @return UsedAmountUnit <p>用量单位</p>
                      * 
                      */
                     std::string GetUsedAmountUnit() const;
 
                     /**
-                     * 设置用量单位
-                     * @param _usedAmountUnit 用量单位
+                     * 设置<p>用量单位</p>
+                     * @param _usedAmountUnit <p>用量单位</p>
                      * 
                      */
                     void SetUsedAmountUnit(const std::string& _usedAmountUnit);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool UsedAmountUnitHasBeenSet() const;
 
                     /**
-                     * 获取原价
-                     * @return Cost 原价
+                     * 获取<p>原价</p>
+                     * @return Cost <p>原价</p>
                      * 
                      */
                     std::string GetCost() const;
 
                     /**
-                     * 设置原价
-                     * @param _cost 原价
+                     * 设置<p>原价</p>
+                     * @param _cost <p>原价</p>
                      * 
                      */
                     void SetCost(const std::string& _cost);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool CostHasBeenSet() const;
 
                     /**
-                     * 获取折扣
-                     * @return Discount 折扣
+                     * 获取<p>折扣</p>
+                     * @return Discount <p>折扣</p>
                      * 
                      */
                     std::string GetDiscount() const;
 
                     /**
-                     * 设置折扣
-                     * @param _discount 折扣
+                     * 设置<p>折扣</p>
+                     * @param _discount <p>折扣</p>
                      * 
                      */
                     void SetDiscount(const std::string& _discount);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool DiscountHasBeenSet() const;
 
                     /**
-                     * 获取折后价
-                     * @return RealCost 折后价
+                     * 获取<p>折后价</p>
+                     * @return RealCost <p>折后价</p>
                      * 
                      */
                     std::string GetRealCost() const;
 
                     /**
-                     * 设置折后价
-                     * @param _realCost 折后价
+                     * 设置<p>折后价</p>
+                     * @param _realCost <p>折后价</p>
                      * 
                      */
                     void SetRealCost(const std::string& _realCost);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool RealCostHasBeenSet() const;
 
                     /**
-                     * 获取代金券支付金额
-                     * @return VoucherPayAmount 代金券支付金额
+                     * 获取<p>代金券支付金额</p>
+                     * @return VoucherPayAmount <p>代金券支付金额</p>
                      * 
                      */
                     std::string GetVoucherPayAmount() const;
 
                     /**
-                     * 设置代金券支付金额
-                     * @param _voucherPayAmount 代金券支付金额
+                     * 设置<p>代金券支付金额</p>
+                     * @param _voucherPayAmount <p>代金券支付金额</p>
                      * 
                      */
                     void SetVoucherPayAmount(const std::string& _voucherPayAmount);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool VoucherPayAmountHasBeenSet() const;
 
                     /**
-                     * 获取现金支付金额
-                     * @return CashPayAmount 现金支付金额
+                     * 获取<p>现金支付金额</p>
+                     * @return CashPayAmount <p>现金支付金额</p>
                      * 
                      */
                     std::string GetCashPayAmount() const;
 
                     /**
-                     * 设置现金支付金额
-                     * @param _cashPayAmount 现金支付金额
+                     * 设置<p>现金支付金额</p>
+                     * @param _cashPayAmount <p>现金支付金额</p>
                      * 
                      */
                     void SetCashPayAmount(const std::string& _cashPayAmount);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool CashPayAmountHasBeenSet() const;
 
                     /**
-                     * 获取赠送金支付金额
-                     * @return IncentivePayAmount 赠送金支付金额
+                     * 获取<p>赠送金支付金额</p>
+                     * @return IncentivePayAmount <p>赠送金支付金额</p>
                      * 
                      */
                     std::string GetIncentivePayAmount() const;
 
                     /**
-                     * 设置赠送金支付金额
-                     * @param _incentivePayAmount 赠送金支付金额
+                     * 设置<p>赠送金支付金额</p>
+                     * @param _incentivePayAmount <p>赠送金支付金额</p>
                      * 
                      */
                     void SetIncentivePayAmount(const std::string& _incentivePayAmount);
@@ -298,79 +298,133 @@ namespace TencentCloud
                      */
                     bool IncentivePayAmountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>组件类型code</p>
+                     * @return ComponentCode <p>组件类型code</p>
+                     * 
+                     */
+                    std::string GetComponentCode() const;
+
+                    /**
+                     * 设置<p>组件类型code</p>
+                     * @param _componentCode <p>组件类型code</p>
+                     * 
+                     */
+                    void SetComponentCode(const std::string& _componentCode);
+
+                    /**
+                     * 判断参数 ComponentCode 是否已赋值
+                     * @return ComponentCode 是否已赋值
+                     * 
+                     */
+                    bool ComponentCodeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>组件名称code</p>
+                     * @return ItemCode <p>组件名称code</p>
+                     * 
+                     */
+                    std::string GetItemCode() const;
+
+                    /**
+                     * 设置<p>组件名称code</p>
+                     * @param _itemCode <p>组件名称code</p>
+                     * 
+                     */
+                    void SetItemCode(const std::string& _itemCode);
+
+                    /**
+                     * 判断参数 ItemCode 是否已赋值
+                     * @return ItemCode 是否已赋值
+                     * 
+                     */
+                    bool ItemCodeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 组件类型名称
+                     * <p>组件类型名称</p>
                      */
                     std::string m_componentCodeName;
                     bool m_componentCodeNameHasBeenSet;
 
                     /**
-                     * 组件名称
+                     * <p>组件名称</p>
                      */
                     std::string m_itemCodeName;
                     bool m_itemCodeNameHasBeenSet;
 
                     /**
-                     * 刊例价
+                     * <p>刊例价</p>
                      */
                     std::string m_singlePrice;
                     bool m_singlePriceHasBeenSet;
 
                     /**
-                     * 刊例价单位
+                     * <p>刊例价单位</p>
                      */
                     std::string m_priceUnit;
                     bool m_priceUnitHasBeenSet;
 
                     /**
-                     * 用量
+                     * <p>用量</p>
                      */
                     std::string m_usedAmount;
                     bool m_usedAmountHasBeenSet;
 
                     /**
-                     * 用量单位
+                     * <p>用量单位</p>
                      */
                     std::string m_usedAmountUnit;
                     bool m_usedAmountUnitHasBeenSet;
 
                     /**
-                     * 原价
+                     * <p>原价</p>
                      */
                     std::string m_cost;
                     bool m_costHasBeenSet;
 
                     /**
-                     * 折扣
+                     * <p>折扣</p>
                      */
                     std::string m_discount;
                     bool m_discountHasBeenSet;
 
                     /**
-                     * 折后价
+                     * <p>折后价</p>
                      */
                     std::string m_realCost;
                     bool m_realCostHasBeenSet;
 
                     /**
-                     * 代金券支付金额
+                     * <p>代金券支付金额</p>
                      */
                     std::string m_voucherPayAmount;
                     bool m_voucherPayAmountHasBeenSet;
 
                     /**
-                     * 现金支付金额
+                     * <p>现金支付金额</p>
                      */
                     std::string m_cashPayAmount;
                     bool m_cashPayAmountHasBeenSet;
 
                     /**
-                     * 赠送金支付金额
+                     * <p>赠送金支付金额</p>
                      */
                     std::string m_incentivePayAmount;
                     bool m_incentivePayAmountHasBeenSet;
+
+                    /**
+                     * <p>组件类型code</p>
+                     */
+                    std::string m_componentCode;
+                    bool m_componentCodeHasBeenSet;
+
+                    /**
+                     * <p>组件名称code</p>
+                     */
+                    std::string m_itemCode;
+                    bool m_itemCodeHasBeenSet;
 
                 };
             }

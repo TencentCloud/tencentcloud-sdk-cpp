@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool UrlHasBeenSet() const;
 
+                    /**
+                     * 获取<p>调用模式。</p><p>枚举值：</p><ul><li>0： 端到端图片翻译大模型pro版</li><li>1： 端到端图片翻译大模型lite版</li></ul><p>默认值：0</p>
+                     * @return Mode <p>调用模式。</p><p>枚举值：</p><ul><li>0： 端到端图片翻译大模型pro版</li><li>1： 端到端图片翻译大模型lite版</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    int64_t GetMode() const;
+
+                    /**
+                     * 设置<p>调用模式。</p><p>枚举值：</p><ul><li>0： 端到端图片翻译大模型pro版</li><li>1： 端到端图片翻译大模型lite版</li></ul><p>默认值：0</p>
+                     * @param _mode <p>调用模式。</p><p>枚举值：</p><ul><li>0： 端到端图片翻译大模型pro版</li><li>1： 端到端图片翻译大模型lite版</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    void SetMode(const int64_t& _mode);
+
+                    /**
+                     * 判断参数 Mode 是否已赋值
+                     * @return Mode 是否已赋值
+                     * 
+                     */
+                    bool ModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
+
+                    /**
+                     * <p>调用模式。</p><p>枚举值：</p><ul><li>0： 端到端图片翻译大模型pro版</li><li>1： 端到端图片翻译大模型lite版</li></ul><p>默认值：0</p>
+                     */
+                    int64_t m_mode;
+                    bool m_modeHasBeenSet;
 
                 };
             }

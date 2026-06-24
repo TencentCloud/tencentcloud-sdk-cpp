@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 用户Hive-MetaDB信息
+                * 用户自定义数据库信息
                 */
                 class CustomMetaDBInfo : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取自定义MetaDB的JDBC连接，示例: jdbc:mysql://10.10.10.10:3306/dbname
-                     * @return MetaDataJdbcUrl 自定义MetaDB的JDBC连接，示例: jdbc:mysql://10.10.10.10:3306/dbname
+                     * 获取<p>自定义MetaDB的JDBC连接，示例: jdbc:mysql://10.10.10.10:3306/dbname</p>
+                     * @return MetaDataJdbcUrl <p>自定义MetaDB的JDBC连接，示例: jdbc:mysql://10.10.10.10:3306/dbname</p>
                      * 
                      */
                     std::string GetMetaDataJdbcUrl() const;
 
                     /**
-                     * 设置自定义MetaDB的JDBC连接，示例: jdbc:mysql://10.10.10.10:3306/dbname
-                     * @param _metaDataJdbcUrl 自定义MetaDB的JDBC连接，示例: jdbc:mysql://10.10.10.10:3306/dbname
+                     * 设置<p>自定义MetaDB的JDBC连接，示例: jdbc:mysql://10.10.10.10:3306/dbname</p>
+                     * @param _metaDataJdbcUrl <p>自定义MetaDB的JDBC连接，示例: jdbc:mysql://10.10.10.10:3306/dbname</p>
                      * 
                      */
                     void SetMetaDataJdbcUrl(const std::string& _metaDataJdbcUrl);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool MetaDataJdbcUrlHasBeenSet() const;
 
                     /**
-                     * 获取自定义MetaDB用户名
-                     * @return MetaDataUser 自定义MetaDB用户名
+                     * 获取<p>自定义MetaDB用户名</p>
+                     * @return MetaDataUser <p>自定义MetaDB用户名</p>
                      * 
                      */
                     std::string GetMetaDataUser() const;
 
                     /**
-                     * 设置自定义MetaDB用户名
-                     * @param _metaDataUser 自定义MetaDB用户名
+                     * 设置<p>自定义MetaDB用户名</p>
+                     * @param _metaDataUser <p>自定义MetaDB用户名</p>
                      * 
                      */
                     void SetMetaDataUser(const std::string& _metaDataUser);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool MetaDataUserHasBeenSet() const;
 
                     /**
-                     * 获取自定义MetaDB密码
-                     * @return MetaDataPass 自定义MetaDB密码
+                     * 获取<p>自定义MetaDB密码</p>
+                     * @return MetaDataPass <p>自定义MetaDB密码</p>
                      * 
                      */
                     std::string GetMetaDataPass() const;
 
                     /**
-                     * 设置自定义MetaDB密码
-                     * @param _metaDataPass 自定义MetaDB密码
+                     * 设置<p>自定义MetaDB密码</p>
+                     * @param _metaDataPass <p>自定义MetaDB密码</p>
                      * 
                      */
                     void SetMetaDataPass(const std::string& _metaDataPass);
@@ -110,27 +110,15 @@ namespace TencentCloud
                     bool MetaDataPassHasBeenSet() const;
 
                     /**
-                     * 获取hive共享元数据库类型。取值范围：
-<li>EMR_DEFAULT_META：表示集群默认创建</li>
-<li>EMR_EXIST_META：表示集群使用指定EMR-MetaDB。</li>
-<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>
-                     * @return MetaType hive共享元数据库类型。取值范围：
-<li>EMR_DEFAULT_META：表示集群默认创建</li>
-<li>EMR_EXIST_META：表示集群使用指定EMR-MetaDB。</li>
-<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>
+                     * 获取<p>hive共享元数据库类型。取值范围：</p><li>EMR_DEFAULT_META：表示集群默认创建</li><li>EMR_EXIST_META：表示集群使用指定EMR-MetaDB。</li><li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>
+                     * @return MetaType <p>hive共享元数据库类型。取值范围：</p><li>EMR_DEFAULT_META：表示集群默认创建</li><li>EMR_EXIST_META：表示集群使用指定EMR-MetaDB。</li><li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>
                      * 
                      */
                     std::string GetMetaType() const;
 
                     /**
-                     * 设置hive共享元数据库类型。取值范围：
-<li>EMR_DEFAULT_META：表示集群默认创建</li>
-<li>EMR_EXIST_META：表示集群使用指定EMR-MetaDB。</li>
-<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>
-                     * @param _metaType hive共享元数据库类型。取值范围：
-<li>EMR_DEFAULT_META：表示集群默认创建</li>
-<li>EMR_EXIST_META：表示集群使用指定EMR-MetaDB。</li>
-<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>
+                     * 设置<p>hive共享元数据库类型。取值范围：</p><li>EMR_DEFAULT_META：表示集群默认创建</li><li>EMR_EXIST_META：表示集群使用指定EMR-MetaDB。</li><li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>
+                     * @param _metaType <p>hive共享元数据库类型。取值范围：</p><li>EMR_DEFAULT_META：表示集群默认创建</li><li>EMR_EXIST_META：表示集群使用指定EMR-MetaDB。</li><li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>
                      * 
                      */
                     void SetMetaType(const std::string& _metaType);
@@ -143,15 +131,15 @@ namespace TencentCloud
                     bool MetaTypeHasBeenSet() const;
 
                     /**
-                     * 获取EMR-MetaDB实例
-                     * @return UnifyMetaInstanceId EMR-MetaDB实例
+                     * 获取<p>EMR-MetaDB实例</p>
+                     * @return UnifyMetaInstanceId <p>EMR-MetaDB实例</p>
                      * 
                      */
                     std::string GetUnifyMetaInstanceId() const;
 
                     /**
-                     * 设置EMR-MetaDB实例
-                     * @param _unifyMetaInstanceId EMR-MetaDB实例
+                     * 设置<p>EMR-MetaDB实例</p>
+                     * @param _unifyMetaInstanceId <p>EMR-MetaDB实例</p>
                      * 
                      */
                     void SetUnifyMetaInstanceId(const std::string& _unifyMetaInstanceId);
@@ -163,40 +151,118 @@ namespace TencentCloud
                      */
                     bool UnifyMetaInstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>组件</p>
+                     * @return Components <p>组件</p>
+                     * 
+                     */
+                    std::vector<std::string> GetComponents() const;
+
+                    /**
+                     * 设置<p>组件</p>
+                     * @param _components <p>组件</p>
+                     * 
+                     */
+                    void SetComponents(const std::vector<std::string>& _components);
+
+                    /**
+                     * 判断参数 Components 是否已赋值
+                     * @return Components 是否已赋值
+                     * 
+                     */
+                    bool ComponentsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>metadb版本</p>
+                     * @return DefaultMetaVersion <p>metadb版本</p>
+                     * 
+                     */
+                    std::string GetDefaultMetaVersion() const;
+
+                    /**
+                     * 设置<p>metadb版本</p>
+                     * @param _defaultMetaVersion <p>metadb版本</p>
+                     * 
+                     */
+                    void SetDefaultMetaVersion(const std::string& _defaultMetaVersion);
+
+                    /**
+                     * 判断参数 DefaultMetaVersion 是否已赋值
+                     * @return DefaultMetaVersion 是否已赋值
+                     * 
+                     */
+                    bool DefaultMetaVersionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>CDBId</p>
+                     * @return LinkInstanceId <p>CDBId</p>
+                     * 
+                     */
+                    std::string GetLinkInstanceId() const;
+
+                    /**
+                     * 设置<p>CDBId</p>
+                     * @param _linkInstanceId <p>CDBId</p>
+                     * 
+                     */
+                    void SetLinkInstanceId(const std::string& _linkInstanceId);
+
+                    /**
+                     * 判断参数 LinkInstanceId 是否已赋值
+                     * @return LinkInstanceId 是否已赋值
+                     * 
+                     */
+                    bool LinkInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 自定义MetaDB的JDBC连接，示例: jdbc:mysql://10.10.10.10:3306/dbname
+                     * <p>自定义MetaDB的JDBC连接，示例: jdbc:mysql://10.10.10.10:3306/dbname</p>
                      */
                     std::string m_metaDataJdbcUrl;
                     bool m_metaDataJdbcUrlHasBeenSet;
 
                     /**
-                     * 自定义MetaDB用户名
+                     * <p>自定义MetaDB用户名</p>
                      */
                     std::string m_metaDataUser;
                     bool m_metaDataUserHasBeenSet;
 
                     /**
-                     * 自定义MetaDB密码
+                     * <p>自定义MetaDB密码</p>
                      */
                     std::string m_metaDataPass;
                     bool m_metaDataPassHasBeenSet;
 
                     /**
-                     * hive共享元数据库类型。取值范围：
-<li>EMR_DEFAULT_META：表示集群默认创建</li>
-<li>EMR_EXIST_META：表示集群使用指定EMR-MetaDB。</li>
-<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>
+                     * <p>hive共享元数据库类型。取值范围：</p><li>EMR_DEFAULT_META：表示集群默认创建</li><li>EMR_EXIST_META：表示集群使用指定EMR-MetaDB。</li><li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>
                      */
                     std::string m_metaType;
                     bool m_metaTypeHasBeenSet;
 
                     /**
-                     * EMR-MetaDB实例
+                     * <p>EMR-MetaDB实例</p>
                      */
                     std::string m_unifyMetaInstanceId;
                     bool m_unifyMetaInstanceIdHasBeenSet;
+
+                    /**
+                     * <p>组件</p>
+                     */
+                    std::vector<std::string> m_components;
+                    bool m_componentsHasBeenSet;
+
+                    /**
+                     * <p>metadb版本</p>
+                     */
+                    std::string m_defaultMetaVersion;
+                    bool m_defaultMetaVersionHasBeenSet;
+
+                    /**
+                     * <p>CDBId</p>
+                     */
+                    std::string m_linkInstanceId;
+                    bool m_linkInstanceIdHasBeenSet;
 
                 };
             }

@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取私有网络 ID。
-                     * @return VpcId 私有网络 ID。
+                     * 获取<p>私有网络 ID。</p>
+                     * @return VpcId <p>私有网络 ID。</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络 ID。
-                     * @param _vpcId 私有网络 ID。
+                     * 设置<p>私有网络 ID。</p>
+                     * @param _vpcId <p>私有网络 ID。</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取私有网络 VPC 的子网 ID。
-                     * @return SubnetId 私有网络 VPC 的子网 ID。
+                     * 获取<p>私有网络 VPC 的子网 ID。</p>
+                     * @return SubnetId <p>私有网络 VPC 的子网 ID。</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置私有网络 VPC 的子网 ID。
-                     * @param _subnetId 私有网络 VPC 的子网 ID。
+                     * 设置<p>私有网络 VPC 的子网 ID。</p>
+                     * @param _subnetId <p>私有网络 VPC 的子网 ID。</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -87,23 +87,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取指定实例计费方式。
-- 0：按量付费。
-- 1：包年包月。
-                     * @return PayMode 指定实例计费方式。
-- 0：按量付费。
-- 1：包年包月。
+                     * 获取<p>指定实例计费方式。</p><ul><li>0：按量付费。</li><li>1：包年包月。</li></ul>
+                     * @return PayMode <p>指定实例计费方式。</p><ul><li>0：按量付费。</li><li>1：包年包月。</li></ul>
                      * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
-                     * 设置指定实例计费方式。
-- 0：按量付费。
-- 1：包年包月。
-                     * @param _payMode 指定实例计费方式。
-- 0：按量付费。
-- 1：包年包月。
+                     * 设置<p>指定实例计费方式。</p><ul><li>0：按量付费。</li><li>1：包年包月。</li></ul>
+                     * @param _payMode <p>指定实例计费方式。</p><ul><li>0：按量付费。</li><li>1：包年包月。</li></ul>
                      * 
                      */
                     void SetPayMode(const int64_t& _payMode);
@@ -116,15 +108,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取设置实例名称。仅支持长度不超过 60 的中文/英文/数字/-/_。
-                     * @return InstanceName 设置实例名称。仅支持长度不超过 60 的中文/英文/数字/-/_。
+                     * 获取<p>设置实例名称。仅支持长度不超过 60 的中文/英文/数字/-/_。</p>
+                     * @return InstanceName <p>设置实例名称。仅支持长度不超过 60 的中文/英文/数字/-/_。</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置设置实例名称。仅支持长度不超过 60 的中文/英文/数字/-/_。
-                     * @param _instanceName 设置实例名称。仅支持长度不超过 60 的中文/英文/数字/-/_。
+                     * 设置<p>设置实例名称。仅支持长度不超过 60 的中文/英文/数字/-/_。</p>
+                     * @param _instanceName <p>设置实例名称。仅支持长度不超过 60 的中文/英文/数字/-/_。</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -137,15 +129,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取安全组 ID。
-                     * @return SecurityGroupIds 安全组 ID。
+                     * 获取<p>安全组 ID。</p>
+                     * @return SecurityGroupIds <p>安全组 ID。</p>
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置安全组 ID。
-                     * @param _securityGroupIds 安全组 ID。
+                     * 设置<p>安全组 ID。</p>
+                     * @param _securityGroupIds <p>安全组 ID。</p>
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -158,23 +150,15 @@ namespace TencentCloud
                     bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取若计费方式为包年包月，指定包年包月续费的时长。
-- 单位：月。
-- 取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。默认为1。
-                     * @return PayPeriod 若计费方式为包年包月，指定包年包月续费的时长。
-- 单位：月。
-- 取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。默认为1。
+                     * 获取<p>若计费方式为包年包月，指定包年包月续费的时长。</p><ul><li>单位：月。</li><li>取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。默认为1。</li></ul>
+                     * @return PayPeriod <p>若计费方式为包年包月，指定包年包月续费的时长。</p><ul><li>单位：月。</li><li>取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。默认为1。</li></ul>
                      * 
                      */
                     int64_t GetPayPeriod() const;
 
                     /**
-                     * 设置若计费方式为包年包月，指定包年包月续费的时长。
-- 单位：月。
-- 取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。默认为1。
-                     * @param _payPeriod 若计费方式为包年包月，指定包年包月续费的时长。
-- 单位：月。
-- 取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。默认为1。
+                     * 设置<p>若计费方式为包年包月，指定包年包月续费的时长。</p><ul><li>单位：月。</li><li>取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。默认为1。</li></ul>
+                     * @param _payPeriod <p>若计费方式为包年包月，指定包年包月续费的时长。</p><ul><li>单位：月。</li><li>取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。默认为1。</li></ul>
                      * 
                      */
                     void SetPayPeriod(const int64_t& _payPeriod);
@@ -187,23 +171,15 @@ namespace TencentCloud
                     bool PayPeriodHasBeenSet() const;
 
                     /**
-                     * 获取若为包年包月计费，需指定是否开启自动续费。
-- 0：不开启自动续费。
-- 1：开启自动续费。
-                     * @return AutoRenew 若为包年包月计费，需指定是否开启自动续费。
-- 0：不开启自动续费。
-- 1：开启自动续费。
+                     * 获取<p>若为包年包月计费，需指定是否开启自动续费。</p><ul><li>0：不开启自动续费。</li><li>1：开启自动续费。</li></ul>
+                     * @return AutoRenew <p>若为包年包月计费，需指定是否开启自动续费。</p><ul><li>0：不开启自动续费。</li><li>1：开启自动续费。</li></ul>
                      * 
                      */
                     int64_t GetAutoRenew() const;
 
                     /**
-                     * 设置若为包年包月计费，需指定是否开启自动续费。
-- 0：不开启自动续费。
-- 1：开启自动续费。
-                     * @param _autoRenew 若为包年包月计费，需指定是否开启自动续费。
-- 0：不开启自动续费。
-- 1：开启自动续费。
+                     * 设置<p>若为包年包月计费，需指定是否开启自动续费。</p><ul><li>0：不开启自动续费。</li><li>1：开启自动续费。</li></ul>
+                     * @param _autoRenew <p>若为包年包月计费，需指定是否开启自动续费。</p><ul><li>0：不开启自动续费。</li><li>1：开启自动续费。</li></ul>
                      * 
                      */
                     void SetAutoRenew(const int64_t& _autoRenew);
@@ -216,15 +192,15 @@ namespace TencentCloud
                     bool AutoRenewHasBeenSet() const;
 
                     /**
-                     * 获取实例额外参数，通过json提交。
-                     * @return Params 实例额外参数，通过json提交。
+                     * 获取<p>实例额外参数，通过json提交。</p>
+                     * @return Params <p>实例额外参数，通过json提交。</p>
                      * 
                      */
                     std::string GetParams() const;
 
                     /**
-                     * 设置实例额外参数，通过json提交。
-                     * @param _params 实例额外参数，通过json提交。
+                     * 设置<p>实例额外参数，通过json提交。</p>
+                     * @param _params <p>实例额外参数，通过json提交。</p>
                      * 
                      */
                     void SetParams(const std::string& _params);
@@ -237,15 +213,15 @@ namespace TencentCloud
                     bool ParamsHasBeenSet() const;
 
                     /**
-                     * 获取以数组形式列出标签信息。
-                     * @return ResourceTags 以数组形式列出标签信息。
+                     * 获取<p>以数组形式列出标签信息。</p>
+                     * @return ResourceTags <p>以数组形式列出标签信息。</p>
                      * 
                      */
                     std::vector<Tag> GetResourceTags() const;
 
                     /**
-                     * 设置以数组形式列出标签信息。
-                     * @param _resourceTags 以数组形式列出标签信息。
+                     * 设置<p>以数组形式列出标签信息。</p>
+                     * @param _resourceTags <p>以数组形式列出标签信息。</p>
                      * 
                      */
                     void SetResourceTags(const std::vector<Tag>& _resourceTags);
@@ -258,15 +234,15 @@ namespace TencentCloud
                     bool ResourceTagsHasBeenSet() const;
 
                     /**
-                     * 获取指定实例所属项目 ID。
-                     * @return Project 指定实例所属项目 ID。
+                     * 获取<p>指定实例所属项目 ID。</p>
+                     * @return Project <p>指定实例所属项目 ID。</p>
                      * @deprecated
                      */
                     std::string GetProject() const;
 
                     /**
-                     * 设置指定实例所属项目 ID。
-                     * @param _project 指定实例所属项目 ID。
+                     * 设置<p>指定实例所属项目 ID。</p>
+                     * @param _project <p>指定实例所属项目 ID。</p>
                      * @deprecated
                      */
                     void SetProject(const std::string& _project);
@@ -279,15 +255,15 @@ namespace TencentCloud
                     bool ProjectHasBeenSet() const;
 
                     /**
-                     * 获取产品版本，0-标准版，1-容量增强版
-                     * @return ProductType 产品版本，0-标准版，1-容量增强版
+                     * 获取<p>产品版本，0-标准版，1-容量增强版</p>
+                     * @return ProductType <p>产品版本，0-标准版，1-容量增强版</p>
                      * 
                      */
                     int64_t GetProductType() const;
 
                     /**
-                     * 设置产品版本，0-标准版，1-容量增强版
-                     * @param _productType 产品版本，0-标准版，1-容量增强版
+                     * 设置<p>产品版本，0-标准版，1-容量增强版</p>
+                     * @param _productType <p>产品版本，0-标准版，1-容量增强版</p>
                      * 
                      */
                     void SetProductType(const int64_t& _productType);
@@ -300,27 +276,15 @@ namespace TencentCloud
                     bool ProductTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例类型。
-- base：免费测试版。
-- single：单机版。
-- cluster：高可用版。
-                     * @return InstanceType 实例类型。
-- base：免费测试版。
-- single：单机版。
-- cluster：高可用版。
+                     * 获取<p>实例类型。</p><ul><li>base：免费测试版。</li><li>single：单机版。</li><li>cluster：高可用版。</li></ul>
+                     * @return InstanceType <p>实例类型。</p><ul><li>base：免费测试版。</li><li>single：单机版。</li><li>cluster：高可用版。</li></ul>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置实例类型。
-- base：免费测试版。
-- single：单机版。
-- cluster：高可用版。
-                     * @param _instanceType 实例类型。
-- base：免费测试版。
-- single：单机版。
-- cluster：高可用版。
+                     * 设置<p>实例类型。</p><ul><li>base：免费测试版。</li><li>single：单机版。</li><li>cluster：高可用版。</li></ul>
+                     * @param _instanceType <p>实例类型。</p><ul><li>base：免费测试版。</li><li>single：单机版。</li><li>cluster：高可用版。</li></ul>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -333,23 +297,15 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例类型为高可用版，需指定可用区选项。
-- two：两可用区。
-- three：三可用区。
-                     * @return Mode 实例类型为高可用版，需指定可用区选项。
-- two：两可用区。
-- three：三可用区。
+                     * 获取<p>实例类型为高可用版，需指定可用区选项。</p><ul><li>two：两可用区。</li><li>three：三可用区。</li></ul>
+                     * @return Mode <p>实例类型为高可用版，需指定可用区选项。</p><ul><li>two：两可用区。</li><li>three：三可用区。</li></ul>
                      * 
                      */
                     std::string GetMode() const;
 
                     /**
-                     * 设置实例类型为高可用版，需指定可用区选项。
-- two：两可用区。
-- three：三可用区。
-                     * @param _mode 实例类型为高可用版，需指定可用区选项。
-- two：两可用区。
-- three：三可用区。
+                     * 设置<p>实例类型为高可用版，需指定可用区选项。</p><ul><li>two：两可用区。</li><li>three：三可用区。</li></ul>
+                     * @param _mode <p>实例类型为高可用版，需指定可用区选项。</p><ul><li>two：两可用区。</li><li>three：三可用区。</li></ul>
                      * 
                      */
                     void SetMode(const std::string& _mode);
@@ -362,15 +318,15 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取购买实例数量。
-                     * @return GoodsNum 购买实例数量。
+                     * 获取<p>购买实例数量。</p>
+                     * @return GoodsNum <p>购买实例数量。</p>
                      * 
                      */
                     int64_t GetGoodsNum() const;
 
                     /**
-                     * 设置购买实例数量。
-                     * @param _goodsNum 购买实例数量。
+                     * 设置<p>购买实例数量。</p>
+                     * @param _goodsNum <p>购买实例数量。</p>
                      * 
                      */
                     void SetGoodsNum(const int64_t& _goodsNum);
@@ -383,19 +339,15 @@ namespace TencentCloud
                     bool GoodsNumHasBeenSet() const;
 
                     /**
-                     * 获取网络类型。
-VPC或TCS
-                     * @return NetworkType 网络类型。
-VPC或TCS
+                     * 获取<p>网络类型。<br>VPC或TCS</p>
+                     * @return NetworkType <p>网络类型。<br>VPC或TCS</p>
                      * @deprecated
                      */
                     std::string GetNetworkType() const;
 
                     /**
-                     * 设置网络类型。
-VPC或TCS
-                     * @param _networkType 网络类型。
-VPC或TCS
+                     * 设置<p>网络类型。<br>VPC或TCS</p>
+                     * @param _networkType <p>网络类型。<br>VPC或TCS</p>
                      * @deprecated
                      */
                     void SetNetworkType(const std::string& _networkType);
@@ -408,15 +360,15 @@ VPC或TCS
                     bool NetworkTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例所应用的参数模板 ID。
-                     * @return TemplateId 实例所应用的参数模板 ID。
+                     * 获取<p>实例所应用的参数模板 ID。</p>
+                     * @return TemplateId <p>实例所应用的参数模板 ID。</p>
                      * @deprecated
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置实例所应用的参数模板 ID。
-                     * @param _templateId 实例所应用的参数模板 ID。
+                     * 设置<p>实例所应用的参数模板 ID。</p>
+                     * @param _templateId <p>实例所应用的参数模板 ID。</p>
                      * @deprecated
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -429,15 +381,15 @@ VPC或TCS
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取组件具体设置列表。
-                     * @return Components 组件具体设置列表。
+                     * 获取<p>组件具体设置列表。</p>
+                     * @return Components <p>组件具体设置列表。</p>
                      * @deprecated
                      */
                     std::vector<CreateInstancesComponent> GetComponents() const;
 
                     /**
-                     * 设置组件具体设置列表。
-                     * @param _components 组件具体设置列表。
+                     * 设置<p>组件具体设置列表。</p>
+                     * @param _components <p>组件具体设置列表。</p>
                      * @deprecated
                      */
                     void SetComponents(const std::vector<CreateInstancesComponent>& _components);
@@ -450,15 +402,15 @@ VPC或TCS
                     bool ComponentsHasBeenSet() const;
 
                     /**
-                     * 获取实例类型为高可用版，通过该参数指定主可用区。
-                     * @return Zone 实例类型为高可用版，通过该参数指定主可用区。
+                     * 获取<p>实例类型为高可用版，通过该参数指定主可用区。</p>
+                     * @return Zone <p>实例类型为高可用版，通过该参数指定主可用区。</p>
                      * @deprecated
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置实例类型为高可用版，通过该参数指定主可用区。
-                     * @param _zone 实例类型为高可用版，通过该参数指定主可用区。
+                     * 设置<p>实例类型为高可用版，通过该参数指定主可用区。</p>
+                     * @param _zone <p>实例类型为高可用版，通过该参数指定主可用区。</p>
                      * @deprecated
                      */
                     void SetZone(const std::string& _zone);
@@ -471,15 +423,15 @@ VPC或TCS
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取实例类型为高可用版，通过该参数指定备可用区。
-                     * @return SlaveZones 实例类型为高可用版，通过该参数指定备可用区。
+                     * 获取<p>实例类型为高可用版，通过该参数指定备可用区。</p>
+                     * @return SlaveZones <p>实例类型为高可用版，通过该参数指定备可用区。</p>
                      * @deprecated
                      */
                     std::vector<std::string> GetSlaveZones() const;
 
                     /**
-                     * 设置实例类型为高可用版，通过该参数指定备可用区。
-                     * @param _slaveZones 实例类型为高可用版，通过该参数指定备可用区。
+                     * 设置<p>实例类型为高可用版，通过该参数指定备可用区。</p>
+                     * @param _slaveZones <p>实例类型为高可用版，通过该参数指定备可用区。</p>
                      * @deprecated
                      */
                     void SetSlaveZones(const std::vector<std::string>& _slaveZones);
@@ -492,15 +444,15 @@ VPC或TCS
                     bool SlaveZonesHasBeenSet() const;
 
                     /**
-                     * 获取是否长期有效
-                     * @return IsNoExpired 是否长期有效
+                     * 获取<p>是否长期有效</p>
+                     * @return IsNoExpired <p>是否长期有效</p>
                      * @deprecated
                      */
                     bool GetIsNoExpired() const;
 
                     /**
-                     * 设置是否长期有效
-                     * @param _isNoExpired 是否长期有效
+                     * 设置<p>是否长期有效</p>
+                     * @param _isNoExpired <p>是否长期有效</p>
                      * @deprecated
                      */
                     void SetIsNoExpired(const bool& _isNoExpired);
@@ -513,15 +465,15 @@ VPC或TCS
                     bool IsNoExpiredHasBeenSet() const;
 
                     /**
-                     * 获取引擎名称，业务自定义。
-                     * @return EngineName 引擎名称，业务自定义。
+                     * 获取<p>引擎名称，业务自定义。</p>
+                     * @return EngineName <p>引擎名称，业务自定义。</p>
                      * @deprecated
                      */
                     std::string GetEngineName() const;
 
                     /**
-                     * 设置引擎名称，业务自定义。
-                     * @param _engineName 引擎名称，业务自定义。
+                     * 设置<p>引擎名称，业务自定义。</p>
+                     * @param _engineName <p>引擎名称，业务自定义。</p>
                      * @deprecated
                      */
                     void SetEngineName(const std::string& _engineName);
@@ -534,15 +486,15 @@ VPC或TCS
                     bool EngineNameHasBeenSet() const;
 
                     /**
-                     * 获取引擎版本，业务自定义。
-                     * @return EngineVersion 引擎版本，业务自定义。
+                     * 获取<p>引擎版本，业务自定义。</p>
+                     * @return EngineVersion <p>引擎版本，业务自定义。</p>
                      * @deprecated
                      */
                     std::string GetEngineVersion() const;
 
                     /**
-                     * 设置引擎版本，业务自定义。
-                     * @param _engineVersion 引擎版本，业务自定义。
+                     * 设置<p>引擎版本，业务自定义。</p>
+                     * @param _engineVersion <p>引擎版本，业务自定义。</p>
                      * @deprecated
                      */
                     void SetEngineVersion(const std::string& _engineVersion);
@@ -555,15 +507,15 @@ VPC或TCS
                     bool EngineVersionHasBeenSet() const;
 
                     /**
-                     * 获取实例描述。
-                     * @return Brief 实例描述。
+                     * 获取<p>实例描述。</p>
+                     * @return Brief <p>实例描述。</p>
                      * @deprecated
                      */
                     std::string GetBrief() const;
 
                     /**
-                     * 设置实例描述。
-                     * @param _brief 实例描述。
+                     * 设置<p>实例描述。</p>
+                     * @param _brief <p>实例描述。</p>
                      * @deprecated
                      */
                     void SetBrief(const std::string& _brief);
@@ -576,15 +528,15 @@ VPC或TCS
                     bool BriefHasBeenSet() const;
 
                     /**
-                     * 获取负责人信息。
-                     * @return Chief 负责人信息。
+                     * 获取<p>负责人信息。</p>
+                     * @return Chief <p>负责人信息。</p>
                      * @deprecated
                      */
                     std::string GetChief() const;
 
                     /**
-                     * 设置负责人信息。
-                     * @param _chief 负责人信息。
+                     * 设置<p>负责人信息。</p>
+                     * @param _chief <p>负责人信息。</p>
                      * @deprecated
                      */
                     void SetChief(const std::string& _chief);
@@ -597,15 +549,15 @@ VPC或TCS
                     bool ChiefHasBeenSet() const;
 
                     /**
-                     * 获取DBA人员信息
-                     * @return DBA DBA人员信息
+                     * 获取<p>DBA人员信息</p>
+                     * @return DBA <p>DBA人员信息</p>
                      * @deprecated
                      */
                     std::string GetDBA() const;
 
                     /**
-                     * 设置DBA人员信息
-                     * @param _dBA DBA人员信息
+                     * 设置<p>DBA人员信息</p>
+                     * @param _dBA <p>DBA人员信息</p>
                      * @deprecated
                      */
                     void SetDBA(const std::string& _dBA);
@@ -618,27 +570,15 @@ VPC或TCS
                     bool DBAHasBeenSet() const;
 
                     /**
-                     * 获取指定实例的节点类型。具体信息，请参见[选择节点类型](https://cloud.tencent.com/document/product/1709/113399)。
-- compute：计费型。
-- normal：标准型。
-- store：存储型。
-                     * @return NodeType 指定实例的节点类型。具体信息，请参见[选择节点类型](https://cloud.tencent.com/document/product/1709/113399)。
-- compute：计费型。
-- normal：标准型。
-- store：存储型。
+                     * 获取<p>指定实例的节点类型。具体信息，请参见<a href="https://cloud.tencent.com/document/product/1709/113399">选择节点类型</a>。</p><ul><li>compute：计费型。</li><li>normal：标准型。</li><li>store：存储型。</li></ul>
+                     * @return NodeType <p>指定实例的节点类型。具体信息，请参见<a href="https://cloud.tencent.com/document/product/1709/113399">选择节点类型</a>。</p><ul><li>compute：计费型。</li><li>normal：标准型。</li><li>store：存储型。</li></ul>
                      * @deprecated
                      */
                     std::string GetNodeType() const;
 
                     /**
-                     * 设置指定实例的节点类型。具体信息，请参见[选择节点类型](https://cloud.tencent.com/document/product/1709/113399)。
-- compute：计费型。
-- normal：标准型。
-- store：存储型。
-                     * @param _nodeType 指定实例的节点类型。具体信息，请参见[选择节点类型](https://cloud.tencent.com/document/product/1709/113399)。
-- compute：计费型。
-- normal：标准型。
-- store：存储型。
+                     * 设置<p>指定实例的节点类型。具体信息，请参见<a href="https://cloud.tencent.com/document/product/1709/113399">选择节点类型</a>。</p><ul><li>compute：计费型。</li><li>normal：标准型。</li><li>store：存储型。</li></ul>
+                     * @param _nodeType <p>指定实例的节点类型。具体信息，请参见<a href="https://cloud.tencent.com/document/product/1709/113399">选择节点类型</a>。</p><ul><li>compute：计费型。</li><li>normal：标准型。</li><li>store：存储型。</li></ul>
                      * @deprecated
                      */
                     void SetNodeType(const std::string& _nodeType);
@@ -651,27 +591,15 @@ VPC或TCS
                     bool NodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取指定实例所需的 CPU 核数。实例类型不同，支持的 CPU 核数存在差异。
-- 计算型： 1、2、4、8、16、24、32。
-- 标准型： 1、2、4、8、12、16。
-- 存储型： 1、2、4、6、8。
-                     * @return Cpu 指定实例所需的 CPU 核数。实例类型不同，支持的 CPU 核数存在差异。
-- 计算型： 1、2、4、8、16、24、32。
-- 标准型： 1、2、4、8、12、16。
-- 存储型： 1、2、4、6、8。
+                     * 获取<p>指定实例所需的 CPU 核数。实例类型不同，支持的 CPU 核数存在差异。</p><ul><li>计算型： 1、2、4、8、16、24、32。</li><li>标准型： 1、2、4、8、12、16。</li><li>存储型： 1、2、4、6、8。</li></ul>
+                     * @return Cpu <p>指定实例所需的 CPU 核数。实例类型不同，支持的 CPU 核数存在差异。</p><ul><li>计算型： 1、2、4、8、16、24、32。</li><li>标准型： 1、2、4、8、12、16。</li><li>存储型： 1、2、4、6、8。</li></ul>
                      * 
                      */
                     uint64_t GetCpu() const;
 
                     /**
-                     * 设置指定实例所需的 CPU 核数。实例类型不同，支持的 CPU 核数存在差异。
-- 计算型： 1、2、4、8、16、24、32。
-- 标准型： 1、2、4、8、12、16。
-- 存储型： 1、2、4、6、8。
-                     * @param _cpu 指定实例所需的 CPU 核数。实例类型不同，支持的 CPU 核数存在差异。
-- 计算型： 1、2、4、8、16、24、32。
-- 标准型： 1、2、4、8、12、16。
-- 存储型： 1、2、4、6、8。
+                     * 设置<p>指定实例所需的 CPU 核数。实例类型不同，支持的 CPU 核数存在差异。</p><ul><li>计算型： 1、2、4、8、16、24、32。</li><li>标准型： 1、2、4、8、12、16。</li><li>存储型： 1、2、4、6、8。</li></ul>
+                     * @param _cpu <p>指定实例所需的 CPU 核数。实例类型不同，支持的 CPU 核数存在差异。</p><ul><li>计算型： 1、2、4、8、16、24、32。</li><li>标准型： 1、2、4、8、12、16。</li><li>存储型： 1、2、4、6、8。</li></ul>
                      * 
                      */
                     void SetCpu(const uint64_t& _cpu);
@@ -684,15 +612,15 @@ VPC或TCS
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取指定实例所需的内存大小。单位：GB。选择具体规格，请参见[配置规格（选型）](https://cloud.tencent.com/document/product/1709/113399)。
-                     * @return Memory 指定实例所需的内存大小。单位：GB。选择具体规格，请参见[配置规格（选型）](https://cloud.tencent.com/document/product/1709/113399)。
+                     * 获取<p>指定实例所需的内存大小。单位：GB。选择具体规格，请参见<a href="https://cloud.tencent.com/document/product/1709/113399">配置规格（选型）</a>。</p>
+                     * @return Memory <p>指定实例所需的内存大小。单位：GB。选择具体规格，请参见<a href="https://cloud.tencent.com/document/product/1709/113399">配置规格（选型）</a>。</p>
                      * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
-                     * 设置指定实例所需的内存大小。单位：GB。选择具体规格，请参见[配置规格（选型）](https://cloud.tencent.com/document/product/1709/113399)。
-                     * @param _memory 指定实例所需的内存大小。单位：GB。选择具体规格，请参见[配置规格（选型）](https://cloud.tencent.com/document/product/1709/113399)。
+                     * 设置<p>指定实例所需的内存大小。单位：GB。选择具体规格，请参见<a href="https://cloud.tencent.com/document/product/1709/113399">配置规格（选型）</a>。</p>
+                     * @param _memory <p>指定实例所需的内存大小。单位：GB。选择具体规格，请参见<a href="https://cloud.tencent.com/document/product/1709/113399">配置规格（选型）</a>。</p>
                      * 
                      */
                     void SetMemory(const uint64_t& _memory);
@@ -705,15 +633,15 @@ VPC或TCS
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取指定实例所需的磁盘大小，单位：GB。选择具体规格，请参见[配置规格（选型）](https://cloud.tencent.com/document/product/1709/113399)。
-                     * @return DiskSize 指定实例所需的磁盘大小，单位：GB。选择具体规格，请参见[配置规格（选型）](https://cloud.tencent.com/document/product/1709/113399)。
+                     * 获取<p>指定实例所需的磁盘大小，单位：GB。选择具体规格，请参见<a href="https://cloud.tencent.com/document/product/1709/113399">配置规格（选型）</a>。</p>
+                     * @return DiskSize <p>指定实例所需的磁盘大小，单位：GB。选择具体规格，请参见<a href="https://cloud.tencent.com/document/product/1709/113399">配置规格（选型）</a>。</p>
                      * 
                      */
                     uint64_t GetDiskSize() const;
 
                     /**
-                     * 设置指定实例所需的磁盘大小，单位：GB。选择具体规格，请参见[配置规格（选型）](https://cloud.tencent.com/document/product/1709/113399)。
-                     * @param _diskSize 指定实例所需的磁盘大小，单位：GB。选择具体规格，请参见[配置规格（选型）](https://cloud.tencent.com/document/product/1709/113399)。
+                     * 设置<p>指定实例所需的磁盘大小，单位：GB。选择具体规格，请参见<a href="https://cloud.tencent.com/document/product/1709/113399">配置规格（选型）</a>。</p>
+                     * @param _diskSize <p>指定实例所需的磁盘大小，单位：GB。选择具体规格，请参见<a href="https://cloud.tencent.com/document/product/1709/113399">配置规格（选型）</a>。</p>
                      * 
                      */
                     void SetDiskSize(const uint64_t& _diskSize);
@@ -726,15 +654,15 @@ VPC或TCS
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取指定实例所需配置的节点数量。选择方法，请参见[配置规格（选型）](https://cloud.tencent.com/document/product/1709/113399)。
-                     * @return WorkerNodeNum 指定实例所需配置的节点数量。选择方法，请参见[配置规格（选型）](https://cloud.tencent.com/document/product/1709/113399)。
+                     * 获取<p>指定实例所需配置的节点数量。选择方法，请参见<a href="https://cloud.tencent.com/document/product/1709/113399">配置规格（选型）</a>。</p>
+                     * @return WorkerNodeNum <p>指定实例所需配置的节点数量。选择方法，请参见<a href="https://cloud.tencent.com/document/product/1709/113399">配置规格（选型）</a>。</p>
                      * 
                      */
                     uint64_t GetWorkerNodeNum() const;
 
                     /**
-                     * 设置指定实例所需配置的节点数量。选择方法，请参见[配置规格（选型）](https://cloud.tencent.com/document/product/1709/113399)。
-                     * @param _workerNodeNum 指定实例所需配置的节点数量。选择方法，请参见[配置规格（选型）](https://cloud.tencent.com/document/product/1709/113399)。
+                     * 设置<p>指定实例所需配置的节点数量。选择方法，请参见<a href="https://cloud.tencent.com/document/product/1709/113399">配置规格（选型）</a>。</p>
+                     * @param _workerNodeNum <p>指定实例所需配置的节点数量。选择方法，请参见<a href="https://cloud.tencent.com/document/product/1709/113399">配置规格（选型）</a>。</p>
                      * 
                      */
                     void SetWorkerNodeNum(const uint64_t& _workerNodeNum);
@@ -746,205 +674,214 @@ VPC或TCS
                      */
                     bool WorkerNodeNumHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启磁盘数据存储加密（仅 CBS 数据盘生效，需落在 VECTORDB_DISK_ENCRYPT_REGION 白名单地域，默认 false 不开启）</p><p>默认值：true</p>
+                     * @return EnableEncryption <p>是否开启磁盘数据存储加密（仅 CBS 数据盘生效，需落在 VECTORDB_DISK_ENCRYPT_REGION 白名单地域，默认 false 不开启）</p><p>默认值：true</p>
+                     * 
+                     */
+                    bool GetEnableEncryption() const;
+
+                    /**
+                     * 设置<p>是否开启磁盘数据存储加密（仅 CBS 数据盘生效，需落在 VECTORDB_DISK_ENCRYPT_REGION 白名单地域，默认 false 不开启）</p><p>默认值：true</p>
+                     * @param _enableEncryption <p>是否开启磁盘数据存储加密（仅 CBS 数据盘生效，需落在 VECTORDB_DISK_ENCRYPT_REGION 白名单地域，默认 false 不开启）</p><p>默认值：true</p>
+                     * 
+                     */
+                    void SetEnableEncryption(const bool& _enableEncryption);
+
+                    /**
+                     * 判断参数 EnableEncryption 是否已赋值
+                     * @return EnableEncryption 是否已赋值
+                     * 
+                     */
+                    bool EnableEncryptionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 私有网络 ID。
+                     * <p>私有网络 ID。</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 私有网络 VPC 的子网 ID。
+                     * <p>私有网络 VPC 的子网 ID。</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 指定实例计费方式。
-- 0：按量付费。
-- 1：包年包月。
+                     * <p>指定实例计费方式。</p><ul><li>0：按量付费。</li><li>1：包年包月。</li></ul>
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 设置实例名称。仅支持长度不超过 60 的中文/英文/数字/-/_。
+                     * <p>设置实例名称。仅支持长度不超过 60 的中文/英文/数字/-/_。</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 安全组 ID。
+                     * <p>安全组 ID。</p>
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
 
                     /**
-                     * 若计费方式为包年包月，指定包年包月续费的时长。
-- 单位：月。
-- 取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。默认为1。
+                     * <p>若计费方式为包年包月，指定包年包月续费的时长。</p><ul><li>单位：月。</li><li>取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。默认为1。</li></ul>
                      */
                     int64_t m_payPeriod;
                     bool m_payPeriodHasBeenSet;
 
                     /**
-                     * 若为包年包月计费，需指定是否开启自动续费。
-- 0：不开启自动续费。
-- 1：开启自动续费。
+                     * <p>若为包年包月计费，需指定是否开启自动续费。</p><ul><li>0：不开启自动续费。</li><li>1：开启自动续费。</li></ul>
                      */
                     int64_t m_autoRenew;
                     bool m_autoRenewHasBeenSet;
 
                     /**
-                     * 实例额外参数，通过json提交。
+                     * <p>实例额外参数，通过json提交。</p>
                      */
                     std::string m_params;
                     bool m_paramsHasBeenSet;
 
                     /**
-                     * 以数组形式列出标签信息。
+                     * <p>以数组形式列出标签信息。</p>
                      */
                     std::vector<Tag> m_resourceTags;
                     bool m_resourceTagsHasBeenSet;
 
                     /**
-                     * 指定实例所属项目 ID。
+                     * <p>指定实例所属项目 ID。</p>
                      */
                     std::string m_project;
                     bool m_projectHasBeenSet;
 
                     /**
-                     * 产品版本，0-标准版，1-容量增强版
+                     * <p>产品版本，0-标准版，1-容量增强版</p>
                      */
                     int64_t m_productType;
                     bool m_productTypeHasBeenSet;
 
                     /**
-                     * 实例类型。
-- base：免费测试版。
-- single：单机版。
-- cluster：高可用版。
+                     * <p>实例类型。</p><ul><li>base：免费测试版。</li><li>single：单机版。</li><li>cluster：高可用版。</li></ul>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 实例类型为高可用版，需指定可用区选项。
-- two：两可用区。
-- three：三可用区。
+                     * <p>实例类型为高可用版，需指定可用区选项。</p><ul><li>two：两可用区。</li><li>three：三可用区。</li></ul>
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 购买实例数量。
+                     * <p>购买实例数量。</p>
                      */
                     int64_t m_goodsNum;
                     bool m_goodsNumHasBeenSet;
 
                     /**
-                     * 网络类型。
-VPC或TCS
+                     * <p>网络类型。<br>VPC或TCS</p>
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;
 
                     /**
-                     * 实例所应用的参数模板 ID。
+                     * <p>实例所应用的参数模板 ID。</p>
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 组件具体设置列表。
+                     * <p>组件具体设置列表。</p>
                      */
                     std::vector<CreateInstancesComponent> m_components;
                     bool m_componentsHasBeenSet;
 
                     /**
-                     * 实例类型为高可用版，通过该参数指定主可用区。
+                     * <p>实例类型为高可用版，通过该参数指定主可用区。</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 实例类型为高可用版，通过该参数指定备可用区。
+                     * <p>实例类型为高可用版，通过该参数指定备可用区。</p>
                      */
                     std::vector<std::string> m_slaveZones;
                     bool m_slaveZonesHasBeenSet;
 
                     /**
-                     * 是否长期有效
+                     * <p>是否长期有效</p>
                      */
                     bool m_isNoExpired;
                     bool m_isNoExpiredHasBeenSet;
 
                     /**
-                     * 引擎名称，业务自定义。
+                     * <p>引擎名称，业务自定义。</p>
                      */
                     std::string m_engineName;
                     bool m_engineNameHasBeenSet;
 
                     /**
-                     * 引擎版本，业务自定义。
+                     * <p>引擎版本，业务自定义。</p>
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;
 
                     /**
-                     * 实例描述。
+                     * <p>实例描述。</p>
                      */
                     std::string m_brief;
                     bool m_briefHasBeenSet;
 
                     /**
-                     * 负责人信息。
+                     * <p>负责人信息。</p>
                      */
                     std::string m_chief;
                     bool m_chiefHasBeenSet;
 
                     /**
-                     * DBA人员信息
+                     * <p>DBA人员信息</p>
                      */
                     std::string m_dBA;
                     bool m_dBAHasBeenSet;
 
                     /**
-                     * 指定实例的节点类型。具体信息，请参见[选择节点类型](https://cloud.tencent.com/document/product/1709/113399)。
-- compute：计费型。
-- normal：标准型。
-- store：存储型。
+                     * <p>指定实例的节点类型。具体信息，请参见<a href="https://cloud.tencent.com/document/product/1709/113399">选择节点类型</a>。</p><ul><li>compute：计费型。</li><li>normal：标准型。</li><li>store：存储型。</li></ul>
                      */
                     std::string m_nodeType;
                     bool m_nodeTypeHasBeenSet;
 
                     /**
-                     * 指定实例所需的 CPU 核数。实例类型不同，支持的 CPU 核数存在差异。
-- 计算型： 1、2、4、8、16、24、32。
-- 标准型： 1、2、4、8、12、16。
-- 存储型： 1、2、4、6、8。
+                     * <p>指定实例所需的 CPU 核数。实例类型不同，支持的 CPU 核数存在差异。</p><ul><li>计算型： 1、2、4、8、16、24、32。</li><li>标准型： 1、2、4、8、12、16。</li><li>存储型： 1、2、4、6、8。</li></ul>
                      */
                     uint64_t m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 指定实例所需的内存大小。单位：GB。选择具体规格，请参见[配置规格（选型）](https://cloud.tencent.com/document/product/1709/113399)。
+                     * <p>指定实例所需的内存大小。单位：GB。选择具体规格，请参见<a href="https://cloud.tencent.com/document/product/1709/113399">配置规格（选型）</a>。</p>
                      */
                     uint64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 指定实例所需的磁盘大小，单位：GB。选择具体规格，请参见[配置规格（选型）](https://cloud.tencent.com/document/product/1709/113399)。
+                     * <p>指定实例所需的磁盘大小，单位：GB。选择具体规格，请参见<a href="https://cloud.tencent.com/document/product/1709/113399">配置规格（选型）</a>。</p>
                      */
                     uint64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 指定实例所需配置的节点数量。选择方法，请参见[配置规格（选型）](https://cloud.tencent.com/document/product/1709/113399)。
+                     * <p>指定实例所需配置的节点数量。选择方法，请参见<a href="https://cloud.tencent.com/document/product/1709/113399">配置规格（选型）</a>。</p>
                      */
                     uint64_t m_workerNodeNum;
                     bool m_workerNodeNumHasBeenSet;
+
+                    /**
+                     * <p>是否开启磁盘数据存储加密（仅 CBS 数据盘生效，需落在 VECTORDB_DISK_ENCRYPT_REGION 白名单地域，默认 false 不开启）</p><p>默认值：true</p>
+                     */
+                    bool m_enableEncryption;
+                    bool m_enableEncryptionHasBeenSet;
 
                 };
             }

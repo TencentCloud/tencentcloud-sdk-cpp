@@ -34,7 +34,10 @@ ModifyDynamicInstanceForm::ModifyDynamicInstanceForm() :
     m_dependServicesHasBeenSet(false),
     m_supportNewTokenHasBeenSet(false),
     m_modifyDynamicInstanceGroupHasBeenSet(false),
-    m_cFSTurboVolumesHasBeenSet(false)
+    m_cFSTurboVolumesHasBeenSet(false),
+    m_customImageHasBeenSet(false),
+    m_imageInfoV2HasBeenSet(false),
+    m_gooseFSVolumesHasBeenSet(false)
 {
 }
 
@@ -287,6 +290,60 @@ CoreInternalOutcome ModifyDynamicInstanceForm::Deserialize(const rapidjson::Valu
         m_cFSTurboVolumesHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomImage") && !value["CustomImage"].IsNull())
+    {
+        if (!value["CustomImage"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyDynamicInstanceForm.CustomImage` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_customImage.Deserialize(value["CustomImage"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_customImageHasBeenSet = true;
+    }
+
+    if (value.HasMember("ImageInfoV2") && !value["ImageInfoV2"].IsNull())
+    {
+        if (!value["ImageInfoV2"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyDynamicInstanceForm.ImageInfoV2` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_imageInfoV2.Deserialize(value["ImageInfoV2"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_imageInfoV2HasBeenSet = true;
+    }
+
+    if (value.HasMember("GooseFSVolumes") && !value["GooseFSVolumes"].IsNull())
+    {
+        if (!value["GooseFSVolumes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ModifyDynamicInstanceForm.GooseFSVolumes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["GooseFSVolumes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            GooseFSVolume item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_gooseFSVolumes.push_back(item);
+        }
+        m_gooseFSVolumesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -465,6 +522,39 @@ void ModifyDynamicInstanceForm::ToJsonObject(rapidjson::Value &value, rapidjson:
 
         int i=0;
         for (auto itr = m_cFSTurboVolumes.begin(); itr != m_cFSTurboVolumes.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_customImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomImage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customImage.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_imageInfoV2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageInfoV2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_imageInfoV2.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_gooseFSVolumesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GooseFSVolumes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_gooseFSVolumes.begin(); itr != m_gooseFSVolumes.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -696,5 +786,53 @@ void ModifyDynamicInstanceForm::SetCFSTurboVolumes(const vector<CFSTurboVolume>&
 bool ModifyDynamicInstanceForm::CFSTurboVolumesHasBeenSet() const
 {
     return m_cFSTurboVolumesHasBeenSet;
+}
+
+CustomImage ModifyDynamicInstanceForm::GetCustomImage() const
+{
+    return m_customImage;
+}
+
+void ModifyDynamicInstanceForm::SetCustomImage(const CustomImage& _customImage)
+{
+    m_customImage = _customImage;
+    m_customImageHasBeenSet = true;
+}
+
+bool ModifyDynamicInstanceForm::CustomImageHasBeenSet() const
+{
+    return m_customImageHasBeenSet;
+}
+
+ImageInfoV2 ModifyDynamicInstanceForm::GetImageInfoV2() const
+{
+    return m_imageInfoV2;
+}
+
+void ModifyDynamicInstanceForm::SetImageInfoV2(const ImageInfoV2& _imageInfoV2)
+{
+    m_imageInfoV2 = _imageInfoV2;
+    m_imageInfoV2HasBeenSet = true;
+}
+
+bool ModifyDynamicInstanceForm::ImageInfoV2HasBeenSet() const
+{
+    return m_imageInfoV2HasBeenSet;
+}
+
+vector<GooseFSVolume> ModifyDynamicInstanceForm::GetGooseFSVolumes() const
+{
+    return m_gooseFSVolumes;
+}
+
+void ModifyDynamicInstanceForm::SetGooseFSVolumes(const vector<GooseFSVolume>& _gooseFSVolumes)
+{
+    m_gooseFSVolumes = _gooseFSVolumes;
+    m_gooseFSVolumesHasBeenSet = true;
+}
+
+bool ModifyDynamicInstanceForm::GooseFSVolumesHasBeenSet() const
+{
+    return m_gooseFSVolumesHasBeenSet;
 }
 

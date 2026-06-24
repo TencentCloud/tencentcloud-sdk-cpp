@@ -2940,6 +2940,56 @@ CamClient::ListAccessKeysOutcomeCallable CamClient::ListAccessKeysCallable(const
     return prom->get_future();
 }
 
+CamClient::ListAccountsOutcome CamClient::ListAccounts(const ListAccountsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAccounts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAccountsResponse rsp = ListAccountsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAccountsOutcome(rsp);
+        else
+            return ListAccountsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAccountsOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::ListAccountsAsync(const ListAccountsRequest& request, const ListAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListAccountsRequest&;
+    using Resp = ListAccountsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CamClient::ListAccountsOutcomeCallable CamClient::ListAccountsCallable(const ListAccountsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListAccountsOutcome>>();
+    ListAccountsAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const ListAccountsRequest&,
+        ListAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CamClient::ListAttachedGroupPoliciesOutcome CamClient::ListAttachedGroupPolicies(const ListAttachedGroupPoliciesRequest &request)
 {
     auto outcome = MakeRequest(request, "ListAttachedGroupPolicies");

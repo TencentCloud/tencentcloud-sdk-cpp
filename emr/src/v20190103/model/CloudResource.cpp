@@ -35,7 +35,9 @@ CloudResource::CloudResource() :
     m_podAntiAffinityHasBeenSet(false),
     m_topologySpreadConstraintsHasBeenSet(false),
     m_podLabelsHasBeenSet(false),
-    m_enableDefaultRayClusterHasBeenSet(false)
+    m_enableDefaultRayClusterHasBeenSet(false),
+    m_imageInfoV2HasBeenSet(false),
+    m_dynamicInstanceFormHasBeenSet(false)
 {
 }
 
@@ -269,6 +271,40 @@ CoreInternalOutcome CloudResource::Deserialize(const rapidjson::Value &value)
         m_enableDefaultRayClusterHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageInfoV2") && !value["ImageInfoV2"].IsNull())
+    {
+        if (!value["ImageInfoV2"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudResource.ImageInfoV2` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_imageInfoV2.Deserialize(value["ImageInfoV2"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_imageInfoV2HasBeenSet = true;
+    }
+
+    if (value.HasMember("DynamicInstanceForm") && !value["DynamicInstanceForm"].IsNull())
+    {
+        if (!value["DynamicInstanceForm"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudResource.DynamicInstanceForm` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dynamicInstanceForm.Deserialize(value["DynamicInstanceForm"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dynamicInstanceFormHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -427,6 +463,24 @@ void CloudResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "EnableDefaultRayCluster";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableDefaultRayCluster, allocator);
+    }
+
+    if (m_imageInfoV2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageInfoV2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_imageInfoV2.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_dynamicInstanceFormHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DynamicInstanceForm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dynamicInstanceForm.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -670,5 +724,37 @@ void CloudResource::SetEnableDefaultRayCluster(const bool& _enableDefaultRayClus
 bool CloudResource::EnableDefaultRayClusterHasBeenSet() const
 {
     return m_enableDefaultRayClusterHasBeenSet;
+}
+
+ImageInfoV2 CloudResource::GetImageInfoV2() const
+{
+    return m_imageInfoV2;
+}
+
+void CloudResource::SetImageInfoV2(const ImageInfoV2& _imageInfoV2)
+{
+    m_imageInfoV2 = _imageInfoV2;
+    m_imageInfoV2HasBeenSet = true;
+}
+
+bool CloudResource::ImageInfoV2HasBeenSet() const
+{
+    return m_imageInfoV2HasBeenSet;
+}
+
+DynamicInstanceForm CloudResource::GetDynamicInstanceForm() const
+{
+    return m_dynamicInstanceForm;
+}
+
+void CloudResource::SetDynamicInstanceForm(const DynamicInstanceForm& _dynamicInstanceForm)
+{
+    m_dynamicInstanceForm = _dynamicInstanceForm;
+    m_dynamicInstanceFormHasBeenSet = true;
+}
+
+bool CloudResource::DynamicInstanceFormHasBeenSet() const
+{
+    return m_dynamicInstanceFormHasBeenSet;
 }
 

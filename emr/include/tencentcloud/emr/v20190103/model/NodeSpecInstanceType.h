@@ -546,6 +546,48 @@ namespace TencentCloud
                      */
                     bool QuotaUnitHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否需要提供高性能计算集群</p>
+                     * @return NeedHpcClusterId <p>是否需要提供高性能计算集群</p>
+                     * 
+                     */
+                    bool GetNeedHpcClusterId() const;
+
+                    /**
+                     * 设置<p>是否需要提供高性能计算集群</p>
+                     * @param _needHpcClusterId <p>是否需要提供高性能计算集群</p>
+                     * 
+                     */
+                    void SetNeedHpcClusterId(const bool& _needHpcClusterId);
+
+                    /**
+                     * 判断参数 NeedHpcClusterId 是否已赋值
+                     * @return NeedHpcClusterId 是否已赋值
+                     * 
+                     */
+                    bool NeedHpcClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否是GPU机型</p>
+                     * @return IsGpuInstance <p>是否是GPU机型</p>
+                     * 
+                     */
+                    bool GetIsGpuInstance() const;
+
+                    /**
+                     * 设置<p>是否是GPU机型</p>
+                     * @param _isGpuInstance <p>是否是GPU机型</p>
+                     * 
+                     */
+                    void SetIsGpuInstance(const bool& _isGpuInstance);
+
+                    /**
+                     * 判断参数 IsGpuInstance 是否已赋值
+                     * @return IsGpuInstance 是否已赋值
+                     * 
+                     */
+                    bool IsGpuInstanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -689,6 +731,18 @@ namespace TencentCloud
                      */
                     std::string m_quotaUnit;
                     bool m_quotaUnitHasBeenSet;
+
+                    /**
+                     * <p>是否需要提供高性能计算集群</p>
+                     */
+                    bool m_needHpcClusterId;
+                    bool m_needHpcClusterIdHasBeenSet;
+
+                    /**
+                     * <p>是否是GPU机型</p>
+                     */
+                    bool m_isGpuInstance;
+                    bool m_isGpuInstanceHasBeenSet;
 
                 };
             }

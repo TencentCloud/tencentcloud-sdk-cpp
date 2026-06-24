@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -65,19 +65,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取集群标签:
-[{"TagKey":"env","TagValue":"dev"}]}]
-                     * @return Tags 集群标签:
-[{"TagKey":"env","TagValue":"dev"}]}]
+                     * 获取<p>集群标签:<br>[{&quot;TagKey&quot;:&quot;env&quot;,&quot;TagValue&quot;:&quot;dev&quot;}]}]</p>
+                     * @return Tags <p>集群标签:<br>[{&quot;TagKey&quot;:&quot;env&quot;,&quot;TagValue&quot;:&quot;dev&quot;}]}]</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置集群标签:
-[{"TagKey":"env","TagValue":"dev"}]}]
-                     * @param _tags 集群标签:
-[{"TagKey":"env","TagValue":"dev"}]}]
+                     * 设置<p>集群标签:<br>[{&quot;TagKey&quot;:&quot;env&quot;,&quot;TagValue&quot;:&quot;dev&quot;}]}]</p>
+                     * @param _tags <p>集群标签:<br>[{&quot;TagKey&quot;:&quot;env&quot;,&quot;TagValue&quot;:&quot;dev&quot;}]}]</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -90,15 +86,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取是否同步集群内子资源标签
-                     * @return SyncSubresource 是否同步集群内子资源标签
+                     * 获取<p>是否同步集群内子资源标签</p>
+                     * @return SyncSubresource <p>是否同步集群内子资源标签</p>
                      * 
                      */
                     bool GetSyncSubresource() const;
 
                     /**
-                     * 设置是否同步集群内子资源标签
-                     * @param _syncSubresource 是否同步集群内子资源标签
+                     * 设置<p>是否同步集群内子资源标签</p>
+                     * @param _syncSubresource <p>是否同步集群内子资源标签</p>
                      * 
                      */
                     void SetSyncSubresource(const bool& _syncSubresource);
@@ -110,26 +106,52 @@ namespace TencentCloud
                      */
                     bool SyncSubresourceHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否同步节点池标签</p>
+                     * @return SyncNodePoolTags <p>是否同步节点池标签</p>
+                     * 
+                     */
+                    bool GetSyncNodePoolTags() const;
+
+                    /**
+                     * 设置<p>是否同步节点池标签</p>
+                     * @param _syncNodePoolTags <p>是否同步节点池标签</p>
+                     * 
+                     */
+                    void SetSyncNodePoolTags(const bool& _syncNodePoolTags);
+
+                    /**
+                     * 判断参数 SyncNodePoolTags 是否已赋值
+                     * @return SyncNodePoolTags 是否已赋值
+                     * 
+                     */
+                    bool SyncNodePoolTagsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 集群标签:
-[{"TagKey":"env","TagValue":"dev"}]}]
+                     * <p>集群标签:<br>[{&quot;TagKey&quot;:&quot;env&quot;,&quot;TagValue&quot;:&quot;dev&quot;}]}]</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 是否同步集群内子资源标签
+                     * <p>是否同步集群内子资源标签</p>
                      */
                     bool m_syncSubresource;
                     bool m_syncSubresourceHasBeenSet;
+
+                    /**
+                     * <p>是否同步节点池标签</p>
+                     */
+                    bool m_syncNodePoolTags;
+                    bool m_syncNodePoolTagsHasBeenSet;
 
                 };
             }

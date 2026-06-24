@@ -29,6 +29,7 @@
 #include <tencentcloud/waf/v20180125/model/PromptDetectResult.h>
 #include <tencentcloud/waf/v20180125/model/ImageResult.h>
 #include <tencentcloud/waf/v20180125/model/ToolCallResult.h>
+#include <tencentcloud/waf/v20180125/model/IntentDetectResult.h>
 
 
 namespace TencentCloud
@@ -282,6 +283,27 @@ namespace TencentCloud
                      */
                     bool ToolCallResultHasBeenSet() const;
 
+                    /**
+                     * 获取<p>意图检测结果</p>
+                     * @return IntentDetectResult <p>意图检测结果</p>
+                     * 
+                     */
+                    IntentDetectResult GetIntentDetectResult() const;
+
+                    /**
+                     * 设置<p>意图检测结果</p>
+                     * @param _intentDetectResult <p>意图检测结果</p>
+                     * 
+                     */
+                    void SetIntentDetectResult(const IntentDetectResult& _intentDetectResult);
+
+                    /**
+                     * 判断参数 IntentDetectResult 是否已赋值
+                     * @return IntentDetectResult 是否已赋值
+                     * 
+                     */
+                    bool IntentDetectResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -349,6 +371,12 @@ namespace TencentCloud
                      */
                     ToolCallResult m_toolCallResult;
                     bool m_toolCallResultHasBeenSet;
+
+                    /**
+                     * <p>意图检测结果</p>
+                     */
+                    IntentDetectResult m_intentDetectResult;
+                    bool m_intentDetectResultHasBeenSet;
 
                 };
             }

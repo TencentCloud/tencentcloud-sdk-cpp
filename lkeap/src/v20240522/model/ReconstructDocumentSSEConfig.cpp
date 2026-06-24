@@ -25,7 +25,8 @@ ReconstructDocumentSSEConfig::ReconstructDocumentSSEConfig() :
     m_markdownImageResponseTypeHasBeenSet(false),
     m_returnPageFormatHasBeenSet(false),
     m_pageFormatHasBeenSet(false),
-    m_ignoreFailedPageHasBeenSet(false)
+    m_ignoreFailedPageHasBeenSet(false),
+    m_resultTypeHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome ReconstructDocumentSSEConfig::Deserialize(const rapidjson::V
         m_ignoreFailedPageHasBeenSet = true;
     }
 
+    if (value.HasMember("ResultType") && !value["ResultType"].IsNull())
+    {
+        if (!value["ResultType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReconstructDocumentSSEConfig.ResultType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resultType = string(value["ResultType"].GetString());
+        m_resultTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void ReconstructDocumentSSEConfig::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "IgnoreFailedPage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ignoreFailedPage, allocator);
+    }
+
+    if (m_resultTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resultType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void ReconstructDocumentSSEConfig::SetIgnoreFailedPage(const bool& _ignoreFailed
 bool ReconstructDocumentSSEConfig::IgnoreFailedPageHasBeenSet() const
 {
     return m_ignoreFailedPageHasBeenSet;
+}
+
+string ReconstructDocumentSSEConfig::GetResultType() const
+{
+    return m_resultType;
+}
+
+void ReconstructDocumentSSEConfig::SetResultType(const string& _resultType)
+{
+    m_resultType = _resultType;
+    m_resultTypeHasBeenSet = true;
+}
+
+bool ReconstructDocumentSSEConfig::ResultTypeHasBeenSet() const
+{
+    return m_resultTypeHasBeenSet;
 }
 

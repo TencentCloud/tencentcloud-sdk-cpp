@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流量详细信息
-                     * @return NetDetails 流量详细信息
+                     * 获取<p>流量详细信息</p>
+                     * @return NetDetails <p>流量详细信息</p>
                      * 
                      */
                     std::vector<NetDetails> GetNetDetails() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool NetDetailsHasBeenSet() const;
 
                     /**
-                     * 获取查找时间段流量使用最大值（单位：byte）
-                     * @return MaxValue 查找时间段流量使用最大值（单位：byte）
+                     * 获取<p>查找时间段流量使用最大值（单位：byte）</p>
+                     * @return MaxValue <p>查找时间段流量使用最大值（单位：byte）</p>
                      * 
                      */
                     double GetMaxValue() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool MaxValueHasBeenSet() const;
 
                     /**
-                     * 获取查找时间段流量使用平均值（单位：byte）
-                     * @return AvgValue 查找时间段流量使用平均值（单位：byte）
+                     * 获取<p>查找时间段流量使用平均值（单位：byte）</p>
+                     * @return AvgValue <p>查找时间段流量使用平均值（单位：byte）</p>
                      * 
                      */
                     double GetAvgValue() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool AvgValueHasBeenSet() const;
 
                     /**
-                     * 获取查找时间段流量使用总量（单位：byte）
-                     * @return TotalValue 查找时间段流量使用总量（单位：byte）
+                     * 获取<p>查找时间段流量使用总量（单位：byte）</p>
+                     * @return TotalValue <p>查找时间段流量使用总量（单位：byte）</p>
                      * 
                      */
                     double GetTotalValue() const;
@@ -103,25 +103,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 流量详细信息
+                     * <p>流量详细信息</p>
                      */
                     std::vector<NetDetails> m_netDetails;
                     bool m_netDetailsHasBeenSet;
 
                     /**
-                     * 查找时间段流量使用最大值（单位：byte）
+                     * <p>查找时间段流量使用最大值（单位：byte）</p>
                      */
                     double m_maxValue;
                     bool m_maxValueHasBeenSet;
 
                     /**
-                     * 查找时间段流量使用平均值（单位：byte）
+                     * <p>查找时间段流量使用平均值（单位：byte）</p>
                      */
                     double m_avgValue;
                     bool m_avgValueHasBeenSet;
 
                     /**
-                     * 查找时间段流量使用总量（单位：byte）
+                     * <p>查找时间段流量使用总量（单位：byte）</p>
                      */
                     double m_totalValue;
                     bool m_totalValueHasBeenSet;

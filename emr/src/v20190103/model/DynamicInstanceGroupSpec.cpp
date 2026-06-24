@@ -36,7 +36,9 @@ DynamicInstanceGroupSpec::DynamicInstanceGroupSpec() :
     m_labelsHasBeenSet(false),
     m_tolerationsHasBeenSet(false),
     m_schedulerHasBeenSet(false),
-    m_persistentVolumeHasBeenSet(false)
+    m_persistentVolumeHasBeenSet(false),
+    m_preStartCommandHasBeenSet(false),
+    m_rayStartParamsHasBeenSet(false)
 {
 }
 
@@ -242,6 +244,26 @@ CoreInternalOutcome DynamicInstanceGroupSpec::Deserialize(const rapidjson::Value
         m_persistentVolumeHasBeenSet = true;
     }
 
+    if (value.HasMember("PreStartCommand") && !value["PreStartCommand"].IsNull())
+    {
+        if (!value["PreStartCommand"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DynamicInstanceGroupSpec.PreStartCommand` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_preStartCommand = string(value["PreStartCommand"].GetString());
+        m_preStartCommandHasBeenSet = true;
+    }
+
+    if (value.HasMember("RayStartParams") && !value["RayStartParams"].IsNull())
+    {
+        if (!value["RayStartParams"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DynamicInstanceGroupSpec.RayStartParams` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rayStartParams = string(value["RayStartParams"].GetString());
+        m_rayStartParamsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -397,6 +419,22 @@ void DynamicInstanceGroupSpec::ToJsonObject(rapidjson::Value &value, rapidjson::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_persistentVolume.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_preStartCommandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreStartCommand";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_preStartCommand.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rayStartParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RayStartParams";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rayStartParams.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -656,5 +694,37 @@ void DynamicInstanceGroupSpec::SetPersistentVolume(const PersistentVolume& _pers
 bool DynamicInstanceGroupSpec::PersistentVolumeHasBeenSet() const
 {
     return m_persistentVolumeHasBeenSet;
+}
+
+string DynamicInstanceGroupSpec::GetPreStartCommand() const
+{
+    return m_preStartCommand;
+}
+
+void DynamicInstanceGroupSpec::SetPreStartCommand(const string& _preStartCommand)
+{
+    m_preStartCommand = _preStartCommand;
+    m_preStartCommandHasBeenSet = true;
+}
+
+bool DynamicInstanceGroupSpec::PreStartCommandHasBeenSet() const
+{
+    return m_preStartCommandHasBeenSet;
+}
+
+string DynamicInstanceGroupSpec::GetRayStartParams() const
+{
+    return m_rayStartParams;
+}
+
+void DynamicInstanceGroupSpec::SetRayStartParams(const string& _rayStartParams)
+{
+    m_rayStartParams = _rayStartParams;
+    m_rayStartParamsHasBeenSet = true;
+}
+
+bool DynamicInstanceGroupSpec::RayStartParamsHasBeenSet() const
+{
+    return m_rayStartParamsHasBeenSet;
 }
 

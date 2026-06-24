@@ -85,6 +85,48 @@ namespace TencentCloud
                      */
                     bool ModelHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否分步骤进行组件生成；<br>开启后，输入原始模型后，可生成带分割信息的模型以及分割数据，可对此信息编辑后再传入带有分割信息的模型和分割数据进行编辑后的组件生成；<br>此参数默认关闭。</p>
+                     * @return PartSegmentationInfo <p>是否分步骤进行组件生成；<br>开启后，输入原始模型后，可生成带分割信息的模型以及分割数据，可对此信息编辑后再传入带有分割信息的模型和分割数据进行编辑后的组件生成；<br>此参数默认关闭。</p>
+                     * 
+                     */
+                    std::string GetPartSegmentationInfo() const;
+
+                    /**
+                     * 设置<p>是否分步骤进行组件生成；<br>开启后，输入原始模型后，可生成带分割信息的模型以及分割数据，可对此信息编辑后再传入带有分割信息的模型和分割数据进行编辑后的组件生成；<br>此参数默认关闭。</p>
+                     * @param _partSegmentationInfo <p>是否分步骤进行组件生成；<br>开启后，输入原始模型后，可生成带分割信息的模型以及分割数据，可对此信息编辑后再传入带有分割信息的模型和分割数据进行编辑后的组件生成；<br>此参数默认关闭。</p>
+                     * 
+                     */
+                    void SetPartSegmentationInfo(const std::string& _partSegmentationInfo);
+
+                    /**
+                     * 判断参数 PartSegmentationInfo 是否已赋值
+                     * @return PartSegmentationInfo 是否已赋值
+                     * 
+                     */
+                    bool PartSegmentationInfoHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启后处理，开启后将只输出一个模型链接，默认关闭。 （开启此接口后，需额外增加20积分）</p>
+                     * @return EnableStagedGeneration <p>是否开启后处理，开启后将只输出一个模型链接，默认关闭。 （开启此接口后，需额外增加20积分）</p>
+                     * 
+                     */
+                    bool GetEnableStagedGeneration() const;
+
+                    /**
+                     * 设置<p>是否开启后处理，开启后将只输出一个模型链接，默认关闭。 （开启此接口后，需额外增加20积分）</p>
+                     * @param _enableStagedGeneration <p>是否开启后处理，开启后将只输出一个模型链接，默认关闭。 （开启此接口后，需额外增加20积分）</p>
+                     * 
+                     */
+                    void SetEnableStagedGeneration(const bool& _enableStagedGeneration);
+
+                    /**
+                     * 判断参数 EnableStagedGeneration 是否已赋值
+                     * @return EnableStagedGeneration 是否已赋值
+                     * 
+                     */
+                    bool EnableStagedGenerationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -98,6 +140,18 @@ namespace TencentCloud
                      */
                     std::string m_model;
                     bool m_modelHasBeenSet;
+
+                    /**
+                     * <p>是否分步骤进行组件生成；<br>开启后，输入原始模型后，可生成带分割信息的模型以及分割数据，可对此信息编辑后再传入带有分割信息的模型和分割数据进行编辑后的组件生成；<br>此参数默认关闭。</p>
+                     */
+                    std::string m_partSegmentationInfo;
+                    bool m_partSegmentationInfoHasBeenSet;
+
+                    /**
+                     * <p>是否开启后处理，开启后将只输出一个模型链接，默认关闭。 （开启此接口后，需额外增加20积分）</p>
+                     */
+                    bool m_enableStagedGeneration;
+                    bool m_enableStagedGenerationHasBeenSet;
 
                 };
             }

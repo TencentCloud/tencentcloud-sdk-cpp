@@ -36,7 +36,9 @@ DynamicInstanceForm::DynamicInstanceForm() :
     m_envsHasBeenSet(false),
     m_dependServicesHasBeenSet(false),
     m_supportTokenHasBeenSet(false),
-    m_cFSTurboVolumesHasBeenSet(false)
+    m_cFSTurboVolumesHasBeenSet(false),
+    m_imageInfoV2HasBeenSet(false),
+    m_gooseFSVolumesHasBeenSet(false)
 {
 }
 
@@ -312,6 +314,43 @@ CoreInternalOutcome DynamicInstanceForm::Deserialize(const rapidjson::Value &val
         m_cFSTurboVolumesHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageInfoV2") && !value["ImageInfoV2"].IsNull())
+    {
+        if (!value["ImageInfoV2"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DynamicInstanceForm.ImageInfoV2` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_imageInfoV2.Deserialize(value["ImageInfoV2"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_imageInfoV2HasBeenSet = true;
+    }
+
+    if (value.HasMember("GooseFSVolumes") && !value["GooseFSVolumes"].IsNull())
+    {
+        if (!value["GooseFSVolumes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DynamicInstanceForm.GooseFSVolumes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["GooseFSVolumes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            GooseFSVolume item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_gooseFSVolumes.push_back(item);
+        }
+        m_gooseFSVolumesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -512,6 +551,30 @@ void DynamicInstanceForm::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
 
         int i=0;
         for (auto itr = m_cFSTurboVolumes.begin(); itr != m_cFSTurboVolumes.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_imageInfoV2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageInfoV2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_imageInfoV2.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_gooseFSVolumesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GooseFSVolumes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_gooseFSVolumes.begin(); itr != m_gooseFSVolumes.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -775,5 +838,37 @@ void DynamicInstanceForm::SetCFSTurboVolumes(const vector<CFSTurboVolume>& _cFST
 bool DynamicInstanceForm::CFSTurboVolumesHasBeenSet() const
 {
     return m_cFSTurboVolumesHasBeenSet;
+}
+
+ImageInfoV2 DynamicInstanceForm::GetImageInfoV2() const
+{
+    return m_imageInfoV2;
+}
+
+void DynamicInstanceForm::SetImageInfoV2(const ImageInfoV2& _imageInfoV2)
+{
+    m_imageInfoV2 = _imageInfoV2;
+    m_imageInfoV2HasBeenSet = true;
+}
+
+bool DynamicInstanceForm::ImageInfoV2HasBeenSet() const
+{
+    return m_imageInfoV2HasBeenSet;
+}
+
+vector<GooseFSVolume> DynamicInstanceForm::GetGooseFSVolumes() const
+{
+    return m_gooseFSVolumes;
+}
+
+void DynamicInstanceForm::SetGooseFSVolumes(const vector<GooseFSVolume>& _gooseFSVolumes)
+{
+    m_gooseFSVolumes = _gooseFSVolumes;
+    m_gooseFSVolumesHasBeenSet = true;
+}
+
+bool DynamicInstanceForm::GooseFSVolumesHasBeenSet() const
+{
+    return m_gooseFSVolumesHasBeenSet;
 }
 

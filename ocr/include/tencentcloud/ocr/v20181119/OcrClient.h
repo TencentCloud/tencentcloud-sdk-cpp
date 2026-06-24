@@ -119,8 +119,6 @@
 #include <tencentcloud/ocr/v20181119/model/QuestionSplitOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeAgentRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeAgentResponse.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeContainerOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeContainerOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeEncryptedIDCardOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeEncryptedIDCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeFormulaOCRRequest.h>
@@ -341,9 +339,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecognizeAgentResponse> RecognizeAgentOutcome;
                 typedef std::future<RecognizeAgentOutcome> RecognizeAgentOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeAgentRequest&, RecognizeAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeAgentAsyncHandler;
-                typedef Outcome<Core::Error, Model::RecognizeContainerOCRResponse> RecognizeContainerOCROutcome;
-                typedef std::future<RecognizeContainerOCROutcome> RecognizeContainerOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::RecognizeContainerOCRRequest&, RecognizeContainerOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeContainerOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeEncryptedIDCardOCRResponse> RecognizeEncryptedIDCardOCROutcome;
                 typedef std::future<RecognizeEncryptedIDCardOCROutcome> RecognizeEncryptedIDCardOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeEncryptedIDCardOCRRequest&, RecognizeEncryptedIDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeEncryptedIDCardOCRAsyncHandler;
@@ -1189,16 +1184,6 @@ namespace TencentCloud
                 RecognizeAgentOutcome RecognizeAgent(const Model::RecognizeAgentRequest &request);
                 void RecognizeAgentAsync(const Model::RecognizeAgentRequest& request, const RecognizeAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecognizeAgentOutcomeCallable RecognizeAgentCallable(const Model::RecognizeAgentRequest& request);
-
-                /**
-                 *本接口支持集装箱箱门信息识别，识别字段包括集装箱箱号、类型、总重量、有效承重、容量、自身重量，具备集装箱箱号、类型不完整或者不清晰的告警功能。
-默认接口请求频率限制：5次/秒。
-                 * @param req RecognizeContainerOCRRequest
-                 * @return RecognizeContainerOCROutcome
-                 */
-                RecognizeContainerOCROutcome RecognizeContainerOCR(const Model::RecognizeContainerOCRRequest &request);
-                void RecognizeContainerOCRAsync(const Model::RecognizeContainerOCRRequest& request, const RecognizeContainerOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RecognizeContainerOCROutcomeCallable RecognizeContainerOCRCallable(const Model::RecognizeContainerOCRRequest& request);
 
                 /**
                  *身份证识别（安全加密版）接口实现了数据加密传输，能够有效防止个人身份证隐私信息不被窃取泄露。

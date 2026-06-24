@@ -32,6 +32,8 @@
 #include <tencentcloud/emr/v20190103/model/PodAffinitySpec.h>
 #include <tencentcloud/emr/v20190103/model/TopologySpreadConstraint.h>
 #include <tencentcloud/emr/v20190103/model/StringMap.h>
+#include <tencentcloud/emr/v20190103/model/ImageInfoV2.h>
+#include <tencentcloud/emr/v20190103/model/DynamicInstanceForm.h>
 
 
 namespace TencentCloud
@@ -389,6 +391,48 @@ namespace TencentCloud
                      */
                     bool EnableDefaultRayClusterHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自定义镜像</p>
+                     * @return ImageInfoV2 <p>自定义镜像</p>
+                     * 
+                     */
+                    ImageInfoV2 GetImageInfoV2() const;
+
+                    /**
+                     * 设置<p>自定义镜像</p>
+                     * @param _imageInfoV2 <p>自定义镜像</p>
+                     * 
+                     */
+                    void SetImageInfoV2(const ImageInfoV2& _imageInfoV2);
+
+                    /**
+                     * 判断参数 ImageInfoV2 是否已赋值
+                     * @return ImageInfoV2 是否已赋值
+                     * 
+                     */
+                    bool ImageInfoV2HasBeenSet() const;
+
+                    /**
+                     * 获取<p>创建动态实例参数</p>
+                     * @return DynamicInstanceForm <p>创建动态实例参数</p>
+                     * 
+                     */
+                    DynamicInstanceForm GetDynamicInstanceForm() const;
+
+                    /**
+                     * 设置<p>创建动态实例参数</p>
+                     * @param _dynamicInstanceForm <p>创建动态实例参数</p>
+                     * 
+                     */
+                    void SetDynamicInstanceForm(const DynamicInstanceForm& _dynamicInstanceForm);
+
+                    /**
+                     * 判断参数 DynamicInstanceForm 是否已赋值
+                     * @return DynamicInstanceForm 是否已赋值
+                     * 
+                     */
+                    bool DynamicInstanceFormHasBeenSet() const;
+
                 private:
 
                     /**
@@ -485,6 +529,18 @@ namespace TencentCloud
                      */
                     bool m_enableDefaultRayCluster;
                     bool m_enableDefaultRayClusterHasBeenSet;
+
+                    /**
+                     * <p>自定义镜像</p>
+                     */
+                    ImageInfoV2 m_imageInfoV2;
+                    bool m_imageInfoV2HasBeenSet;
+
+                    /**
+                     * <p>创建动态实例参数</p>
+                     */
+                    DynamicInstanceForm m_dynamicInstanceForm;
+                    bool m_dynamicInstanceFormHasBeenSet;
 
                 };
             }

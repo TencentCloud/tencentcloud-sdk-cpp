@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/emr/v20190103/model/RayCluster.h>
+#include <tencentcloud/emr/v20190103/model/WebUIInfo.h>
 
 
 namespace TencentCloud
@@ -45,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取RayCluster 集群列表
-                     * @return DynamicInstanceList RayCluster 集群列表
+                     * 获取<p>RayCluster 集群列表</p>
+                     * @return DynamicInstanceList <p>RayCluster 集群列表</p>
                      * 
                      */
                     std::vector<RayCluster> GetDynamicInstanceList() const;
@@ -58,13 +59,33 @@ namespace TencentCloud
                      */
                     bool DynamicInstanceListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>服务访问url</p>
+                     * @return WebUIInfos <p>服务访问url</p>
+                     * 
+                     */
+                    std::vector<WebUIInfo> GetWebUIInfos() const;
+
+                    /**
+                     * 判断参数 WebUIInfos 是否已赋值
+                     * @return WebUIInfos 是否已赋值
+                     * 
+                     */
+                    bool WebUIInfosHasBeenSet() const;
+
                 private:
 
                     /**
-                     * RayCluster 集群列表
+                     * <p>RayCluster 集群列表</p>
                      */
                     std::vector<RayCluster> m_dynamicInstanceList;
                     bool m_dynamicInstanceListHasBeenSet;
+
+                    /**
+                     * <p>服务访问url</p>
+                     */
+                    std::vector<WebUIInfo> m_webUIInfos;
+                    bool m_webUIInfosHasBeenSet;
 
                 };
             }

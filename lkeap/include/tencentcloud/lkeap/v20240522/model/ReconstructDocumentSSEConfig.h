@@ -47,27 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Markdown文件中表格返回的形式
-0，表格以MD形式返回
-1，表格以HTML形式返回
-默认为0
-                     * @return TableResultType Markdown文件中表格返回的形式
-0，表格以MD形式返回
-1，表格以HTML形式返回
-默认为0
+                     * 获取<p>Markdown文件中表格返回的形式<br>0，表格以MD形式返回<br>1，表格以HTML形式返回<br>默认为0</p>
+                     * @return TableResultType <p>Markdown文件中表格返回的形式<br>0，表格以MD形式返回<br>1，表格以HTML形式返回<br>默认为0</p>
                      * 
                      */
                     std::string GetTableResultType() const;
 
                     /**
-                     * 设置Markdown文件中表格返回的形式
-0，表格以MD形式返回
-1，表格以HTML形式返回
-默认为0
-                     * @param _tableResultType Markdown文件中表格返回的形式
-0，表格以MD形式返回
-1，表格以HTML形式返回
-默认为0
+                     * 设置<p>Markdown文件中表格返回的形式<br>0，表格以MD形式返回<br>1，表格以HTML形式返回<br>默认为0</p>
+                     * @param _tableResultType <p>Markdown文件中表格返回的形式<br>0，表格以MD形式返回<br>1，表格以HTML形式返回<br>默认为0</p>
                      * 
                      */
                     void SetTableResultType(const std::string& _tableResultType);
@@ -80,27 +68,15 @@ namespace TencentCloud
                     bool TableResultTypeHasBeenSet() const;
 
                     /**
-                     * 获取Markdown文件中图片返回的形式
-0:markdown中图片以链接形式返回
-1:markdown中图片只返回图片中提取的文本内容
-默认是0
-                     * @return MarkdownImageResponseType Markdown文件中图片返回的形式
-0:markdown中图片以链接形式返回
-1:markdown中图片只返回图片中提取的文本内容
-默认是0
+                     * 获取<p>Markdown文件中图片返回的形式<br>0:markdown中图片以链接形式返回<br>1:markdown中图片只返回图片中提取的文本内容<br>默认是0</p>
+                     * @return MarkdownImageResponseType <p>Markdown文件中图片返回的形式<br>0:markdown中图片以链接形式返回<br>1:markdown中图片只返回图片中提取的文本内容<br>默认是0</p>
                      * 
                      */
                     std::string GetMarkdownImageResponseType() const;
 
                     /**
-                     * 设置Markdown文件中图片返回的形式
-0:markdown中图片以链接形式返回
-1:markdown中图片只返回图片中提取的文本内容
-默认是0
-                     * @param _markdownImageResponseType Markdown文件中图片返回的形式
-0:markdown中图片以链接形式返回
-1:markdown中图片只返回图片中提取的文本内容
-默认是0
+                     * 设置<p>Markdown文件中图片返回的形式<br>0:markdown中图片以链接形式返回<br>1:markdown中图片只返回图片中提取的文本内容<br>默认是0</p>
+                     * @param _markdownImageResponseType <p>Markdown文件中图片返回的形式<br>0:markdown中图片以链接形式返回<br>1:markdown中图片只返回图片中提取的文本内容<br>默认是0</p>
                      * 
                      */
                     void SetMarkdownImageResponseType(const std::string& _markdownImageResponseType);
@@ -113,15 +89,15 @@ namespace TencentCloud
                     bool MarkdownImageResponseTypeHasBeenSet() const;
 
                     /**
-                     * 获取Markdown文件中是否包含页码信息
-                     * @return ReturnPageFormat Markdown文件中是否包含页码信息
+                     * 获取<p>Markdown文件中是否包含页码信息</p>
+                     * @return ReturnPageFormat <p>Markdown文件中是否包含页码信息</p>
                      * 
                      */
                     bool GetReturnPageFormat() const;
 
                     /**
-                     * 设置Markdown文件中是否包含页码信息
-                     * @param _returnPageFormat Markdown文件中是否包含页码信息
+                     * 设置<p>Markdown文件中是否包含页码信息</p>
+                     * @param _returnPageFormat <p>Markdown文件中是否包含页码信息</p>
                      * 
                      */
                     void SetReturnPageFormat(const bool& _returnPageFormat);
@@ -134,15 +110,15 @@ namespace TencentCloud
                     bool ReturnPageFormatHasBeenSet() const;
 
                     /**
-                     * 获取自定义输出页码样式,{{p}}为页码占位符，开启ReturnPageFormat生效。未填默认样式:<page_num>page {{p}}</page_num>
-                     * @return PageFormat 自定义输出页码样式,{{p}}为页码占位符，开启ReturnPageFormat生效。未填默认样式:<page_num>page {{p}}</page_num>
+                     * 获取<p>自定义输出页码样式,{{p}}为页码占位符，开启ReturnPageFormat生效。未填默认样式:<page_num>page {{p}}</page_num></p>
+                     * @return PageFormat <p>自定义输出页码样式,{{p}}为页码占位符，开启ReturnPageFormat生效。未填默认样式:<page_num>page {{p}}</page_num></p>
                      * 
                      */
                     std::string GetPageFormat() const;
 
                     /**
-                     * 设置自定义输出页码样式,{{p}}为页码占位符，开启ReturnPageFormat生效。未填默认样式:<page_num>page {{p}}</page_num>
-                     * @param _pageFormat 自定义输出页码样式,{{p}}为页码占位符，开启ReturnPageFormat生效。未填默认样式:<page_num>page {{p}}</page_num>
+                     * 设置<p>自定义输出页码样式,{{p}}为页码占位符，开启ReturnPageFormat生效。未填默认样式:<page_num>page {{p}}</page_num></p>
+                     * @param _pageFormat <p>自定义输出页码样式,{{p}}为页码占位符，开启ReturnPageFormat生效。未填默认样式:<page_num>page {{p}}</page_num></p>
                      * 
                      */
                     void SetPageFormat(const std::string& _pageFormat);
@@ -155,15 +131,15 @@ namespace TencentCloud
                     bool PageFormatHasBeenSet() const;
 
                     /**
-                     * 获取是否忽略失败页，返回已成功的页数据
-                     * @return IgnoreFailedPage 是否忽略失败页，返回已成功的页数据
+                     * 获取<p>是否忽略失败页，返回已成功的页数据</p>
+                     * @return IgnoreFailedPage <p>是否忽略失败页，返回已成功的页数据</p>
                      * 
                      */
                     bool GetIgnoreFailedPage() const;
 
                     /**
-                     * 设置是否忽略失败页，返回已成功的页数据
-                     * @param _ignoreFailedPage 是否忽略失败页，返回已成功的页数据
+                     * 设置<p>是否忽略失败页，返回已成功的页数据</p>
+                     * @param _ignoreFailedPage <p>是否忽略失败页，返回已成功的页数据</p>
                      * 
                      */
                     void SetIgnoreFailedPage(const bool& _ignoreFailedPage);
@@ -175,43 +151,64 @@ namespace TencentCloud
                      */
                     bool IgnoreFailedPageHasBeenSet() const;
 
+                    /**
+                     * 获取<p>智能文档解析返回结果的格式</p><p>枚举值：</p><ul><li>0： 只返回全文MD</li><li>1： 只返回每一页的OCR原始Json</li><li>2： 只返回每一页的MD</li><li>3： 返回全文MD + 每一页的OCR原始Json</li><li>4： 返回全文MD + 每一页的MD</li><li>5： 返回全文md，每一页ocr原始json，每一页md</li></ul><p>默认值：3</p>
+                     * @return ResultType <p>智能文档解析返回结果的格式</p><p>枚举值：</p><ul><li>0： 只返回全文MD</li><li>1： 只返回每一页的OCR原始Json</li><li>2： 只返回每一页的MD</li><li>3： 返回全文MD + 每一页的OCR原始Json</li><li>4： 返回全文MD + 每一页的MD</li><li>5： 返回全文md，每一页ocr原始json，每一页md</li></ul><p>默认值：3</p>
+                     * 
+                     */
+                    std::string GetResultType() const;
+
+                    /**
+                     * 设置<p>智能文档解析返回结果的格式</p><p>枚举值：</p><ul><li>0： 只返回全文MD</li><li>1： 只返回每一页的OCR原始Json</li><li>2： 只返回每一页的MD</li><li>3： 返回全文MD + 每一页的OCR原始Json</li><li>4： 返回全文MD + 每一页的MD</li><li>5： 返回全文md，每一页ocr原始json，每一页md</li></ul><p>默认值：3</p>
+                     * @param _resultType <p>智能文档解析返回结果的格式</p><p>枚举值：</p><ul><li>0： 只返回全文MD</li><li>1： 只返回每一页的OCR原始Json</li><li>2： 只返回每一页的MD</li><li>3： 返回全文MD + 每一页的OCR原始Json</li><li>4： 返回全文MD + 每一页的MD</li><li>5： 返回全文md，每一页ocr原始json，每一页md</li></ul><p>默认值：3</p>
+                     * 
+                     */
+                    void SetResultType(const std::string& _resultType);
+
+                    /**
+                     * 判断参数 ResultType 是否已赋值
+                     * @return ResultType 是否已赋值
+                     * 
+                     */
+                    bool ResultTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Markdown文件中表格返回的形式
-0，表格以MD形式返回
-1，表格以HTML形式返回
-默认为0
+                     * <p>Markdown文件中表格返回的形式<br>0，表格以MD形式返回<br>1，表格以HTML形式返回<br>默认为0</p>
                      */
                     std::string m_tableResultType;
                     bool m_tableResultTypeHasBeenSet;
 
                     /**
-                     * Markdown文件中图片返回的形式
-0:markdown中图片以链接形式返回
-1:markdown中图片只返回图片中提取的文本内容
-默认是0
+                     * <p>Markdown文件中图片返回的形式<br>0:markdown中图片以链接形式返回<br>1:markdown中图片只返回图片中提取的文本内容<br>默认是0</p>
                      */
                     std::string m_markdownImageResponseType;
                     bool m_markdownImageResponseTypeHasBeenSet;
 
                     /**
-                     * Markdown文件中是否包含页码信息
+                     * <p>Markdown文件中是否包含页码信息</p>
                      */
                     bool m_returnPageFormat;
                     bool m_returnPageFormatHasBeenSet;
 
                     /**
-                     * 自定义输出页码样式,{{p}}为页码占位符，开启ReturnPageFormat生效。未填默认样式:<page_num>page {{p}}</page_num>
+                     * <p>自定义输出页码样式,{{p}}为页码占位符，开启ReturnPageFormat生效。未填默认样式:<page_num>page {{p}}</page_num></p>
                      */
                     std::string m_pageFormat;
                     bool m_pageFormatHasBeenSet;
 
                     /**
-                     * 是否忽略失败页，返回已成功的页数据
+                     * <p>是否忽略失败页，返回已成功的页数据</p>
                      */
                     bool m_ignoreFailedPage;
                     bool m_ignoreFailedPageHasBeenSet;
+
+                    /**
+                     * <p>智能文档解析返回结果的格式</p><p>枚举值：</p><ul><li>0： 只返回全文MD</li><li>1： 只返回每一页的OCR原始Json</li><li>2： 只返回每一页的MD</li><li>3： 返回全文MD + 每一页的OCR原始Json</li><li>4： 返回全文MD + 每一页的MD</li><li>5： 返回全文md，每一页ocr原始json，每一页md</li></ul><p>默认值：3</p>
+                     */
+                    std::string m_resultType;
+                    bool m_resultTypeHasBeenSet;
 
                 };
             }

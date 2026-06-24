@@ -32,7 +32,9 @@ CostComponentSet::CostComponentSet() :
     m_realCostHasBeenSet(false),
     m_voucherPayAmountHasBeenSet(false),
     m_cashPayAmountHasBeenSet(false),
-    m_incentivePayAmountHasBeenSet(false)
+    m_incentivePayAmountHasBeenSet(false),
+    m_componentCodeHasBeenSet(false),
+    m_itemCodeHasBeenSet(false)
 {
 }
 
@@ -161,6 +163,26 @@ CoreInternalOutcome CostComponentSet::Deserialize(const rapidjson::Value &value)
         m_incentivePayAmountHasBeenSet = true;
     }
 
+    if (value.HasMember("ComponentCode") && !value["ComponentCode"].IsNull())
+    {
+        if (!value["ComponentCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CostComponentSet.ComponentCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_componentCode = string(value["ComponentCode"].GetString());
+        m_componentCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ItemCode") && !value["ItemCode"].IsNull())
+    {
+        if (!value["ItemCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CostComponentSet.ItemCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_itemCode = string(value["ItemCode"].GetString());
+        m_itemCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +284,22 @@ void CostComponentSet::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "IncentivePayAmount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_incentivePayAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_componentCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComponentCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_componentCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_itemCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ItemCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_itemCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +495,37 @@ void CostComponentSet::SetIncentivePayAmount(const string& _incentivePayAmount)
 bool CostComponentSet::IncentivePayAmountHasBeenSet() const
 {
     return m_incentivePayAmountHasBeenSet;
+}
+
+string CostComponentSet::GetComponentCode() const
+{
+    return m_componentCode;
+}
+
+void CostComponentSet::SetComponentCode(const string& _componentCode)
+{
+    m_componentCode = _componentCode;
+    m_componentCodeHasBeenSet = true;
+}
+
+bool CostComponentSet::ComponentCodeHasBeenSet() const
+{
+    return m_componentCodeHasBeenSet;
+}
+
+string CostComponentSet::GetItemCode() const
+{
+    return m_itemCode;
+}
+
+void CostComponentSet::SetItemCode(const string& _itemCode)
+{
+    m_itemCode = _itemCode;
+    m_itemCodeHasBeenSet = true;
+}
+
+bool CostComponentSet::ItemCodeHasBeenSet() const
+{
+    return m_itemCodeHasBeenSet;
 }
 

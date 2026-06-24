@@ -40,7 +40,8 @@ CostDetail::CostDetail() :
     m_tagsHasBeenSet(false),
     m_operateUinHasBeenSet(false),
     m_ownerUinHasBeenSet(false),
-    m_payTimeHasBeenSet(false)
+    m_payTimeHasBeenSet(false),
+    m_businessCodeHasBeenSet(false)
 {
 }
 
@@ -269,6 +270,16 @@ CoreInternalOutcome CostDetail::Deserialize(const rapidjson::Value &value)
         m_payTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("BusinessCode") && !value["BusinessCode"].IsNull())
+    {
+        if (!value["BusinessCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CostDetail.BusinessCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_businessCode = string(value["BusinessCode"].GetString());
+        m_businessCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -448,6 +459,14 @@ void CostDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "PayTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_payTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_businessCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_businessCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -771,5 +790,21 @@ void CostDetail::SetPayTime(const string& _payTime)
 bool CostDetail::PayTimeHasBeenSet() const
 {
     return m_payTimeHasBeenSet;
+}
+
+string CostDetail::GetBusinessCode() const
+{
+    return m_businessCode;
+}
+
+void CostDetail::SetBusinessCode(const string& _businessCode)
+{
+    m_businessCode = _businessCode;
+    m_businessCodeHasBeenSet = true;
+}
+
+bool CostDetail::BusinessCodeHasBeenSet() const
+{
+    return m_businessCodeHasBeenSet;
 }
 

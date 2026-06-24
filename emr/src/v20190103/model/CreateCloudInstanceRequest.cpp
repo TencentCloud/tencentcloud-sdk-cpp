@@ -42,7 +42,8 @@ CreateCloudInstanceRequest::CreateCloudInstanceRequest() :
     m_defaultMetaVersionHasBeenSet(false),
     m_needCdbAuditHasBeenSet(false),
     m_sgIPHasBeenSet(false),
-    m_containerExtraConfHasBeenSet(false)
+    m_containerExtraConfHasBeenSet(false),
+    m_enableSparkAppMonitorInfoHasBeenSet(false)
 {
 }
 
@@ -241,6 +242,15 @@ string CreateCloudInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_containerExtraConf.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_enableSparkAppMonitorInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableSparkAppMonitorInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_enableSparkAppMonitorInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -569,6 +579,22 @@ void CreateCloudInstanceRequest::SetContainerExtraConf(const ContainerExtraConf&
 bool CreateCloudInstanceRequest::ContainerExtraConfHasBeenSet() const
 {
     return m_containerExtraConfHasBeenSet;
+}
+
+EnableSparkAppMonitorInfo CreateCloudInstanceRequest::GetEnableSparkAppMonitorInfo() const
+{
+    return m_enableSparkAppMonitorInfo;
+}
+
+void CreateCloudInstanceRequest::SetEnableSparkAppMonitorInfo(const EnableSparkAppMonitorInfo& _enableSparkAppMonitorInfo)
+{
+    m_enableSparkAppMonitorInfo = _enableSparkAppMonitorInfo;
+    m_enableSparkAppMonitorInfoHasBeenSet = true;
+}
+
+bool CreateCloudInstanceRequest::EnableSparkAppMonitorInfoHasBeenSet() const
+{
+    return m_enableSparkAppMonitorInfoHasBeenSet;
 }
 
 

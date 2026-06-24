@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/waf/v20180125/model/IntentContent.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>服务id,使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则</p>
-                     * @return ServiceId <p>服务id,使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则</p>
+                     * 获取<p>服务id，使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则</p>
+                     * @return ServiceId <p>服务id，使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则</p>
                      * 
                      */
                     std::string GetServiceId() const;
 
                     /**
-                     * 设置<p>服务id,使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则</p>
-                     * @param _serviceId <p>服务id,使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则</p>
+                     * 设置<p>服务id，使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则</p>
+                     * @param _serviceId <p>服务id，使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则</p>
                      * 
                      */
                     void SetServiceId(const std::string& _serviceId);
@@ -127,15 +128,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取<p>对话的id</p>
-                     * @return ChatId <p>对话的id</p>
+                     * 获取<p>一问一答的对话的id</p>
+                     * @return ChatId <p>一问一答的对话的id</p>
                      * 
                      */
                     std::string GetChatId() const;
 
                     /**
-                     * 设置<p>对话的id</p>
-                     * @param _chatId <p>对话的id</p>
+                     * 设置<p>一问一答的对话的id</p>
+                     * @param _chatId <p>一问一答的对话的id</p>
                      * 
                      */
                     void SetChatId(const std::string& _chatId);
@@ -252,10 +253,52 @@ namespace TencentCloud
                      */
                     bool ToolArgsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>多轮对话的id</p>
+                     * @return SessionId <p>多轮对话的id</p>
+                     * 
+                     */
+                    std::string GetSessionId() const;
+
+                    /**
+                     * 设置<p>多轮对话的id</p>
+                     * @param _sessionId <p>多轮对话的id</p>
+                     * 
+                     */
+                    void SetSessionId(const std::string& _sessionId);
+
+                    /**
+                     * 判断参数 SessionId 是否已赋值
+                     * @return SessionId 是否已赋值
+                     * 
+                     */
+                    bool SessionIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>意图检测请求内容</p>
+                     * @return IntentContent <p>意图检测请求内容</p>
+                     * 
+                     */
+                    IntentContent GetIntentContent() const;
+
+                    /**
+                     * 设置<p>意图检测请求内容</p>
+                     * @param _intentContent <p>意图检测请求内容</p>
+                     * 
+                     */
+                    void SetIntentContent(const IntentContent& _intentContent);
+
+                    /**
+                     * 判断参数 IntentContent 是否已赋值
+                     * @return IntentContent 是否已赋值
+                     * 
+                     */
+                    bool IntentContentHasBeenSet() const;
+
                 private:
 
                     /**
-                     * <p>服务id,使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则</p>
+                     * <p>服务id，使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则</p>
                      */
                     std::string m_serviceId;
                     bool m_serviceIdHasBeenSet;
@@ -279,7 +322,7 @@ namespace TencentCloud
                     bool m_contentHasBeenSet;
 
                     /**
-                     * <p>对话的id</p>
+                     * <p>一问一答的对话的id</p>
                      */
                     std::string m_chatId;
                     bool m_chatIdHasBeenSet;
@@ -313,6 +356,18 @@ namespace TencentCloud
                      */
                     std::string m_toolArgs;
                     bool m_toolArgsHasBeenSet;
+
+                    /**
+                     * <p>多轮对话的id</p>
+                     */
+                    std::string m_sessionId;
+                    bool m_sessionIdHasBeenSet;
+
+                    /**
+                     * <p>意图检测请求内容</p>
+                     */
+                    IntentContent m_intentContent;
+                    bool m_intentContentHasBeenSet;
 
                 };
             }

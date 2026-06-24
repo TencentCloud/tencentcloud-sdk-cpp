@@ -45,7 +45,8 @@ DescribeDynamicInstanceDetailResponse::DescribeDynamicInstanceDetailResponse() :
     m_totalPodCountHasBeenSet(false),
     m_highAvailabilityHasBeenSet(false),
     m_persistentVolumeHasBeenSet(false),
-    m_rayClusterYamlHasBeenSet(false)
+    m_rayClusterYamlHasBeenSet(false),
+    m_imageInfoV2HasBeenSet(false)
 {
 }
 
@@ -371,6 +372,23 @@ CoreInternalOutcome DescribeDynamicInstanceDetailResponse::Deserialize(const str
         m_rayClusterYamlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ImageInfoV2") && !rsp["ImageInfoV2"].IsNull())
+    {
+        if (!rsp["ImageInfoV2"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageInfoV2` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_imageInfoV2.Deserialize(rsp["ImageInfoV2"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_imageInfoV2HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -587,6 +605,15 @@ string DescribeDynamicInstanceDetailResponse::ToJsonString() const
         string key = "RayClusterYaml";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_rayClusterYaml.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageInfoV2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageInfoV2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_imageInfoV2.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -819,6 +846,16 @@ string DescribeDynamicInstanceDetailResponse::GetRayClusterYaml() const
 bool DescribeDynamicInstanceDetailResponse::RayClusterYamlHasBeenSet() const
 {
     return m_rayClusterYamlHasBeenSet;
+}
+
+ImageInfoV2 DescribeDynamicInstanceDetailResponse::GetImageInfoV2() const
+{
+    return m_imageInfoV2;
+}
+
+bool DescribeDynamicInstanceDetailResponse::ImageInfoV2HasBeenSet() const
+{
+    return m_imageInfoV2HasBeenSet;
 }
 
 

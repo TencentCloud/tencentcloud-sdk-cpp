@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取共用组件名
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceName 共用组件名
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置共用组件名
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceName 共用组件名
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取共用组件集群
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 共用组件集群
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置共用组件集群
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 共用组件集群
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -92,12 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 共用组件名
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
 
                     /**
                      * 共用组件集群
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

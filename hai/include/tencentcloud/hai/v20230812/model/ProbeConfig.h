@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/hai/v20230812/model/HttpConfig.h>
+#include <tencentcloud/hai/v20230812/model/TcpSocketConfig.h>
 
 
 namespace TencentCloud
@@ -173,6 +174,27 @@ namespace TencentCloud
                      */
                     bool FailureThresholdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>TCP Socket请求进行健康检查</p>
+                     * @return TcpSocket <p>TCP Socket请求进行健康检查</p>
+                     * 
+                     */
+                    TcpSocketConfig GetTcpSocket() const;
+
+                    /**
+                     * 设置<p>TCP Socket请求进行健康检查</p>
+                     * @param _tcpSocket <p>TCP Socket请求进行健康检查</p>
+                     * 
+                     */
+                    void SetTcpSocket(const TcpSocketConfig& _tcpSocket);
+
+                    /**
+                     * 判断参数 TcpSocket 是否已赋值
+                     * @return TcpSocket 是否已赋值
+                     * 
+                     */
+                    bool TcpSocketHasBeenSet() const;
+
                 private:
 
                     /**
@@ -210,6 +232,12 @@ namespace TencentCloud
                      */
                     int64_t m_failureThreshold;
                     bool m_failureThresholdHasBeenSet;
+
+                    /**
+                     * <p>TCP Socket请求进行健康检查</p>
+                     */
+                    TcpSocketConfig m_tcpSocket;
+                    bool m_tcpSocketHasBeenSet;
 
                 };
             }

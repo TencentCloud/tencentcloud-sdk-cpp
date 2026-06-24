@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群标签
+                     * 获取<p>集群标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags 集群标签
+                     * @return Tags <p>集群标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群标签
+                     * <p>集群标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;

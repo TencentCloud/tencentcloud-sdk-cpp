@@ -193,6 +193,27 @@ namespace TencentCloud
                      */
                     bool DashboardUrlHasBeenSet() const;
 
+                    /**
+                     * 获取<p>命名空间</p>
+                     * @return Namespace <p>命名空间</p>
+                     * 
+                     */
+                    std::string GetNamespace() const;
+
+                    /**
+                     * 设置<p>命名空间</p>
+                     * @param _namespace <p>命名空间</p>
+                     * 
+                     */
+                    void SetNamespace(const std::string& _namespace);
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     * 
+                     */
+                    bool NamespaceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +257,12 @@ namespace TencentCloud
                      */
                     std::string m_dashboardUrl;
                     bool m_dashboardUrlHasBeenSet;
+
+                    /**
+                     * <p>命名空间</p>
+                     */
+                    std::string m_namespace;
+                    bool m_namespaceHasBeenSet;
 
                 };
             }

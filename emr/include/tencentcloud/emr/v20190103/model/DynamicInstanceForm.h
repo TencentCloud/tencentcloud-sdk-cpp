@@ -35,6 +35,8 @@
 #include <tencentcloud/emr/v20190103/model/NameValue.h>
 #include <tencentcloud/emr/v20190103/model/DependService.h>
 #include <tencentcloud/emr/v20190103/model/CFSTurboVolume.h>
+#include <tencentcloud/emr/v20190103/model/ImageInfoV2.h>
+#include <tencentcloud/emr/v20190103/model/GooseFSVolume.h>
 
 
 namespace TencentCloud
@@ -59,14 +61,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>DynamicInstance名，长度限制1-64字符，只能包含小写字母</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DynamicInstanceName <p>DynamicInstance名，长度限制1-64字符，只能包含小写字母</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDynamicInstanceName() const;
 
                     /**
                      * 设置<p>DynamicInstance名，长度限制1-64字符，只能包含小写字母</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dynamicInstanceName <p>DynamicInstance名，长度限制1-64字符，只能包含小写字母</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDynamicInstanceName(const std::string& _dynamicInstanceName);
@@ -80,14 +86,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>命名空间</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace <p>命名空间</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置<p>命名空间</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespace <p>命名空间</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -101,14 +111,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>是否支持高可用</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportHA <p>是否支持高可用</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSupportHA() const;
 
                     /**
                      * 设置<p>是否支持高可用</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _supportHA <p>是否支持高可用</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSupportHA(const bool& _supportHA);
@@ -122,14 +136,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>自定义镜像信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomImage <p>自定义镜像信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CustomImage GetCustomImage() const;
 
                     /**
                      * 设置<p>自定义镜像信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customImage <p>自定义镜像信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomImage(const CustomImage& _customImage);
@@ -143,14 +161,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>资源组配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DynamicInstanceGroups <p>资源组配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DynamicInstanceGroup> GetDynamicInstanceGroups() const;
 
                     /**
                      * 设置<p>资源组配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dynamicInstanceGroups <p>资源组配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDynamicInstanceGroups(const std::vector<DynamicInstanceGroup>& _dynamicInstanceGroups);
@@ -164,14 +186,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>是否支持存储配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportPV <p>是否支持存储配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSupportPV() const;
 
                     /**
                      * 设置<p>是否支持存储配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _supportPV <p>是否支持存储配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSupportPV(const bool& _supportPV);
@@ -185,14 +211,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>cbs存储卷列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return CBSVolumes <p>cbs存储卷列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CBSVolume> GetCBSVolumes() const;
 
                     /**
                      * 设置<p>cbs存储卷列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cBSVolumes <p>cbs存储卷列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCBSVolumes(const std::vector<CBSVolume>& _cBSVolumes);
@@ -206,14 +236,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>cfs存储卷列表，只包含cfs，不包含cfs turbo</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return CFSVolumes <p>cfs存储卷列表，只包含cfs，不包含cfs turbo</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CFSVolume> GetCFSVolumes() const;
 
                     /**
                      * 设置<p>cfs存储卷列表，只包含cfs，不包含cfs turbo</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cFSVolumes <p>cfs存储卷列表，只包含cfs，不包含cfs turbo</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCFSVolumes(const std::vector<CFSVolume>& _cFSVolumes);
@@ -227,14 +261,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>cos存储卷列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return COSVolumes <p>cos存储卷列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<COSVolume> GetCOSVolumes() const;
 
                     /**
                      * 设置<p>cos存储卷列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cOSVolumes <p>cos存储卷列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCOSVolumes(const std::vector<COSVolume>& _cOSVolumes);
@@ -248,14 +286,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>挂载卷列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return VolumeMounts <p>挂载卷列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VolumeMount> GetVolumeMounts() const;
 
                     /**
                      * 设置<p>挂载卷列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _volumeMounts <p>挂载卷列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVolumeMounts(const std::vector<VolumeMount>& _volumeMounts);
@@ -269,14 +311,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>pod标签</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Labels <p>pod标签</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TkeLabel> GetLabels() const;
 
                     /**
                      * 设置<p>pod标签</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _labels <p>pod标签</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabels(const std::vector<TkeLabel>& _labels);
@@ -290,14 +336,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>Tolerations定义</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tolerations <p>Tolerations定义</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Toleration> GetTolerations() const;
 
                     /**
                      * 设置<p>Tolerations定义</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tolerations <p>Tolerations定义</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTolerations(const std::vector<Toleration>& _tolerations);
@@ -311,14 +361,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>环境变量</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Envs <p>环境变量</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NameValue> GetEnvs() const;
 
                     /**
                      * 设置<p>环境变量</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _envs <p>环境变量</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnvs(const std::vector<NameValue>& _envs);
@@ -332,14 +386,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>依赖外部组件</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DependServices <p>依赖外部组件</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DependService> GetDependServices() const;
 
                     /**
                      * 设置<p>依赖外部组件</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dependServices <p>依赖外部组件</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDependServices(const std::vector<DependService>& _dependServices);
@@ -353,14 +411,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>是否开启token鉴权</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportToken <p>是否开启token鉴权</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSupportToken() const;
 
                     /**
                      * 设置<p>是否开启token鉴权</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _supportToken <p>是否开启token鉴权</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSupportToken(const bool& _supportToken);
@@ -374,14 +436,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>cfs trubo挂载列表，不包含标准版cfs</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return CFSTurboVolumes <p>cfs trubo挂载列表，不包含标准版cfs</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CFSTurboVolume> GetCFSTurboVolumes() const;
 
                     /**
                      * 设置<p>cfs trubo挂载列表，不包含标准版cfs</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cFSTurboVolumes <p>cfs trubo挂载列表，不包含标准版cfs</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCFSTurboVolumes(const std::vector<CFSTurboVolume>& _cFSTurboVolumes);
@@ -393,103 +459,178 @@ namespace TencentCloud
                      */
                     bool CFSTurboVolumesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自定义镜像</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageInfoV2 <p>自定义镜像</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ImageInfoV2 GetImageInfoV2() const;
+
+                    /**
+                     * 设置<p>自定义镜像</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _imageInfoV2 <p>自定义镜像</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetImageInfoV2(const ImageInfoV2& _imageInfoV2);
+
+                    /**
+                     * 判断参数 ImageInfoV2 是否已赋值
+                     * @return ImageInfoV2 是否已赋值
+                     * 
+                     */
+                    bool ImageInfoV2HasBeenSet() const;
+
+                    /**
+                     * 获取<p>GooseFS盘</p>
+                     * @return GooseFSVolumes <p>GooseFS盘</p>
+                     * 
+                     */
+                    std::vector<GooseFSVolume> GetGooseFSVolumes() const;
+
+                    /**
+                     * 设置<p>GooseFS盘</p>
+                     * @param _gooseFSVolumes <p>GooseFS盘</p>
+                     * 
+                     */
+                    void SetGooseFSVolumes(const std::vector<GooseFSVolume>& _gooseFSVolumes);
+
+                    /**
+                     * 判断参数 GooseFSVolumes 是否已赋值
+                     * @return GooseFSVolumes 是否已赋值
+                     * 
+                     */
+                    bool GooseFSVolumesHasBeenSet() const;
+
                 private:
 
                     /**
                      * <p>DynamicInstance名，长度限制1-64字符，只能包含小写字母</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dynamicInstanceName;
                     bool m_dynamicInstanceNameHasBeenSet;
 
                     /**
                      * <p>命名空间</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
                      * <p>是否支持高可用</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_supportHA;
                     bool m_supportHAHasBeenSet;
 
                     /**
                      * <p>自定义镜像信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CustomImage m_customImage;
                     bool m_customImageHasBeenSet;
 
                     /**
                      * <p>资源组配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DynamicInstanceGroup> m_dynamicInstanceGroups;
                     bool m_dynamicInstanceGroupsHasBeenSet;
 
                     /**
                      * <p>是否支持存储配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_supportPV;
                     bool m_supportPVHasBeenSet;
 
                     /**
                      * <p>cbs存储卷列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CBSVolume> m_cBSVolumes;
                     bool m_cBSVolumesHasBeenSet;
 
                     /**
                      * <p>cfs存储卷列表，只包含cfs，不包含cfs turbo</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CFSVolume> m_cFSVolumes;
                     bool m_cFSVolumesHasBeenSet;
 
                     /**
                      * <p>cos存储卷列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<COSVolume> m_cOSVolumes;
                     bool m_cOSVolumesHasBeenSet;
 
                     /**
                      * <p>挂载卷列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VolumeMount> m_volumeMounts;
                     bool m_volumeMountsHasBeenSet;
 
                     /**
                      * <p>pod标签</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TkeLabel> m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
                      * <p>Tolerations定义</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Toleration> m_tolerations;
                     bool m_tolerationsHasBeenSet;
 
                     /**
                      * <p>环境变量</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NameValue> m_envs;
                     bool m_envsHasBeenSet;
 
                     /**
                      * <p>依赖外部组件</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DependService> m_dependServices;
                     bool m_dependServicesHasBeenSet;
 
                     /**
                      * <p>是否开启token鉴权</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_supportToken;
                     bool m_supportTokenHasBeenSet;
 
                     /**
                      * <p>cfs trubo挂载列表，不包含标准版cfs</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CFSTurboVolume> m_cFSTurboVolumes;
                     bool m_cFSTurboVolumesHasBeenSet;
+
+                    /**
+                     * <p>自定义镜像</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ImageInfoV2 m_imageInfoV2;
+                    bool m_imageInfoV2HasBeenSet;
+
+                    /**
+                     * <p>GooseFS盘</p>
+                     */
+                    std::vector<GooseFSVolume> m_gooseFSVolumes;
+                    bool m_gooseFSVolumesHasBeenSet;
 
                 };
             }

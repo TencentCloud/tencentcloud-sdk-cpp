@@ -27,7 +27,8 @@ QueryHunyuan3DPartJobResponse::QueryHunyuan3DPartJobResponse() :
     m_statusHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
-    m_resultFile3DsHasBeenSet(false)
+    m_resultFile3DsHasBeenSet(false),
+    m_partSegmentationInfoHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,16 @@ CoreInternalOutcome QueryHunyuan3DPartJobResponse::Deserialize(const string &pay
         m_resultFile3DsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PartSegmentationInfo") && !rsp["PartSegmentationInfo"].IsNull())
+    {
+        if (!rsp["PartSegmentationInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PartSegmentationInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_partSegmentationInfo = string(rsp["PartSegmentationInfo"].GetString());
+        m_partSegmentationInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -162,6 +173,14 @@ string QueryHunyuan3DPartJobResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_partSegmentationInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PartSegmentationInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_partSegmentationInfo.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -214,6 +233,16 @@ vector<File3D> QueryHunyuan3DPartJobResponse::GetResultFile3Ds() const
 bool QueryHunyuan3DPartJobResponse::ResultFile3DsHasBeenSet() const
 {
     return m_resultFile3DsHasBeenSet;
+}
+
+string QueryHunyuan3DPartJobResponse::GetPartSegmentationInfo() const
+{
+    return m_partSegmentationInfo;
+}
+
+bool QueryHunyuan3DPartJobResponse::PartSegmentationInfoHasBeenSet() const
+{
+    return m_partSegmentationInfoHasBeenSet;
 }
 
 

@@ -25,7 +25,10 @@ CustomMetaDBInfo::CustomMetaDBInfo() :
     m_metaDataUserHasBeenSet(false),
     m_metaDataPassHasBeenSet(false),
     m_metaTypeHasBeenSet(false),
-    m_unifyMetaInstanceIdHasBeenSet(false)
+    m_unifyMetaInstanceIdHasBeenSet(false),
+    m_componentsHasBeenSet(false),
+    m_defaultMetaVersionHasBeenSet(false),
+    m_linkInstanceIdHasBeenSet(false)
 {
 }
 
@@ -84,6 +87,39 @@ CoreInternalOutcome CustomMetaDBInfo::Deserialize(const rapidjson::Value &value)
         m_unifyMetaInstanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Components") && !value["Components"].IsNull())
+    {
+        if (!value["Components"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CustomMetaDBInfo.Components` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Components"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_components.push_back((*itr).GetString());
+        }
+        m_componentsHasBeenSet = true;
+    }
+
+    if (value.HasMember("DefaultMetaVersion") && !value["DefaultMetaVersion"].IsNull())
+    {
+        if (!value["DefaultMetaVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomMetaDBInfo.DefaultMetaVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultMetaVersion = string(value["DefaultMetaVersion"].GetString());
+        m_defaultMetaVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("LinkInstanceId") && !value["LinkInstanceId"].IsNull())
+    {
+        if (!value["LinkInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomMetaDBInfo.LinkInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_linkInstanceId = string(value["LinkInstanceId"].GetString());
+        m_linkInstanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +165,35 @@ void CustomMetaDBInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "UnifyMetaInstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_unifyMetaInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_componentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Components";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_components.begin(); itr != m_components.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_defaultMetaVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultMetaVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_defaultMetaVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_linkInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LinkInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_linkInstanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +277,53 @@ void CustomMetaDBInfo::SetUnifyMetaInstanceId(const string& _unifyMetaInstanceId
 bool CustomMetaDBInfo::UnifyMetaInstanceIdHasBeenSet() const
 {
     return m_unifyMetaInstanceIdHasBeenSet;
+}
+
+vector<string> CustomMetaDBInfo::GetComponents() const
+{
+    return m_components;
+}
+
+void CustomMetaDBInfo::SetComponents(const vector<string>& _components)
+{
+    m_components = _components;
+    m_componentsHasBeenSet = true;
+}
+
+bool CustomMetaDBInfo::ComponentsHasBeenSet() const
+{
+    return m_componentsHasBeenSet;
+}
+
+string CustomMetaDBInfo::GetDefaultMetaVersion() const
+{
+    return m_defaultMetaVersion;
+}
+
+void CustomMetaDBInfo::SetDefaultMetaVersion(const string& _defaultMetaVersion)
+{
+    m_defaultMetaVersion = _defaultMetaVersion;
+    m_defaultMetaVersionHasBeenSet = true;
+}
+
+bool CustomMetaDBInfo::DefaultMetaVersionHasBeenSet() const
+{
+    return m_defaultMetaVersionHasBeenSet;
+}
+
+string CustomMetaDBInfo::GetLinkInstanceId() const
+{
+    return m_linkInstanceId;
+}
+
+void CustomMetaDBInfo::SetLinkInstanceId(const string& _linkInstanceId)
+{
+    m_linkInstanceId = _linkInstanceId;
+    m_linkInstanceIdHasBeenSet = true;
+}
+
+bool CustomMetaDBInfo::LinkInstanceIdHasBeenSet() const
+{
+    return m_linkInstanceIdHasBeenSet;
 }
 

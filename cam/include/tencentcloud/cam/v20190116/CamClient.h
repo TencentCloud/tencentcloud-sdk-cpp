@@ -139,6 +139,8 @@
 #include <tencentcloud/cam/v20190116/model/GetUserPermissionBoundaryResponse.h>
 #include <tencentcloud/cam/v20190116/model/ListAccessKeysRequest.h>
 #include <tencentcloud/cam/v20190116/model/ListAccessKeysResponse.h>
+#include <tencentcloud/cam/v20190116/model/ListAccountsRequest.h>
+#include <tencentcloud/cam/v20190116/model/ListAccountsResponse.h>
 #include <tencentcloud/cam/v20190116/model/ListAttachedGroupPoliciesRequest.h>
 #include <tencentcloud/cam/v20190116/model/ListAttachedGroupPoliciesResponse.h>
 #include <tencentcloud/cam/v20190116/model/ListAttachedRolePoliciesRequest.h>
@@ -399,6 +401,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListAccessKeysResponse> ListAccessKeysOutcome;
                 typedef std::future<ListAccessKeysOutcome> ListAccessKeysOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::ListAccessKeysRequest&, ListAccessKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAccessKeysAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListAccountsResponse> ListAccountsOutcome;
+                typedef std::future<ListAccountsOutcome> ListAccountsOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::ListAccountsRequest&, ListAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAccountsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListAttachedGroupPoliciesResponse> ListAttachedGroupPoliciesOutcome;
                 typedef std::future<ListAttachedGroupPoliciesOutcome> ListAttachedGroupPoliciesOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::ListAttachedGroupPoliciesRequest&, ListAttachedGroupPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAttachedGroupPoliciesAsyncHandler;
@@ -1032,6 +1037,15 @@ namespace TencentCloud
                 ListAccessKeysOutcome ListAccessKeys(const Model::ListAccessKeysRequest &request);
                 void ListAccessKeysAsync(const Model::ListAccessKeysRequest& request, const ListAccessKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListAccessKeysOutcomeCallable ListAccessKeysCallable(const Model::ListAccessKeysRequest& request);
+
+                /**
+                 *查询所有账号列表
+                 * @param req ListAccountsRequest
+                 * @return ListAccountsOutcome
+                 */
+                ListAccountsOutcome ListAccounts(const Model::ListAccountsRequest &request);
+                void ListAccountsAsync(const Model::ListAccountsRequest& request, const ListAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListAccountsOutcomeCallable ListAccountsCallable(const Model::ListAccountsRequest& request);
 
                 /**
                  *本接口（ListAttachedGroupPolicies）可用于查询用户组关联的策略列表。

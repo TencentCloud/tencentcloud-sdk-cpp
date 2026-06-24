@@ -32,7 +32,9 @@ DescribeLLMContentSecCheckRequest::DescribeLLMContentSecCheckRequest() :
     m_tokenUsageHasBeenSet(false),
     m_imageEncodeHasBeenSet(false),
     m_toolNameHasBeenSet(false),
-    m_toolArgsHasBeenSet(false)
+    m_toolArgsHasBeenSet(false),
+    m_sessionIdHasBeenSet(false),
+    m_intentContentHasBeenSet(false)
 {
 }
 
@@ -121,6 +123,23 @@ string DescribeLLMContentSecCheckRequest::ToJsonString() const
         string key = "ToolArgs";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_toolArgs.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_intentContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntentContent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_intentContent.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -289,6 +308,38 @@ void DescribeLLMContentSecCheckRequest::SetToolArgs(const string& _toolArgs)
 bool DescribeLLMContentSecCheckRequest::ToolArgsHasBeenSet() const
 {
     return m_toolArgsHasBeenSet;
+}
+
+string DescribeLLMContentSecCheckRequest::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+void DescribeLLMContentSecCheckRequest::SetSessionId(const string& _sessionId)
+{
+    m_sessionId = _sessionId;
+    m_sessionIdHasBeenSet = true;
+}
+
+bool DescribeLLMContentSecCheckRequest::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
+}
+
+IntentContent DescribeLLMContentSecCheckRequest::GetIntentContent() const
+{
+    return m_intentContent;
+}
+
+void DescribeLLMContentSecCheckRequest::SetIntentContent(const IntentContent& _intentContent)
+{
+    m_intentContent = _intentContent;
+    m_intentContentHasBeenSet = true;
+}
+
+bool DescribeLLMContentSecCheckRequest::IntentContentHasBeenSet() const
+{
+    return m_intentContentHasBeenSet;
 }
 
 

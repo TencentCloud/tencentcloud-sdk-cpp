@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设备名称
-                     * @return DeviceName 设备名称
+                     * 获取<p>设备名称</p>
+                     * @return DeviceName <p>设备名称</p>
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
-                     * 设置设备名称
-                     * @param _deviceName 设备名称
+                     * 设置<p>设备名称</p>
+                     * @param _deviceName <p>设备名称</p>
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取开始查找时间
-                     * @return BeginTime 开始查找时间
+                     * 获取<p>开始查找时间</p>
+                     * @return BeginTime <p>开始查找时间</p>
                      * 
                      */
                     int64_t GetBeginTime() const;
 
                     /**
-                     * 设置开始查找时间
-                     * @param _beginTime 开始查找时间
+                     * 设置<p>开始查找时间</p>
+                     * @param _beginTime <p>开始查找时间</p>
                      * 
                      */
                     void SetBeginTime(const int64_t& _beginTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取截止时间
-                     * @return EndTime 截止时间
+                     * 获取<p>截止时间</p>
+                     * @return EndTime <p>截止时间</p>
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置截止时间
-                     * @param _endTime 截止时间
+                     * 设置<p>截止时间</p>
+                     * @param _endTime <p>截止时间</p>
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取流量种类（1：上行流量，2：下行流量，3：上下行总和）
-                     * @return Type 流量种类（1：上行流量，2：下行流量，3：上下行总和）
+                     * 获取<p>流量种类（1：上行流量，2：下行流量，3：上下行总和）</p>
+                     * @return Type <p>流量种类（1：上行流量，2：下行流量，3：上下行总和）</p>
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置流量种类（1：上行流量，2：下行流量，3：上下行总和）
-                     * @param _type 流量种类（1：上行流量，2：下行流量，3：上下行总和）
+                     * 设置<p>流量种类（1：上行流量，2：下行流量，3：上下行总和）</p>
+                     * @param _type <p>流量种类（1：上行流量，2：下行流量，3：上下行总和）</p>
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取时间粒度（1：按小时统计，2：按天统计）
-                     * @return TimeGranularity 时间粒度（1：按小时统计，2：按天统计）
+                     * 获取<p>时间粒度</p><p>枚举值：</p><ul><li>1： 按小时统计</li><li>2： 按天统计</li><li>3： 按分钟统计</li><li>4： 按5分钟统计</li></ul>
+                     * @return TimeGranularity <p>时间粒度</p><p>枚举值：</p><ul><li>1： 按小时统计</li><li>2： 按天统计</li><li>3： 按分钟统计</li><li>4： 按5分钟统计</li></ul>
                      * 
                      */
                     int64_t GetTimeGranularity() const;
 
                     /**
-                     * 设置时间粒度（1：按小时统计，2：按天统计）
-                     * @param _timeGranularity 时间粒度（1：按小时统计，2：按天统计）
+                     * 设置<p>时间粒度</p><p>枚举值：</p><ul><li>1： 按小时统计</li><li>2： 按天统计</li><li>3： 按分钟统计</li><li>4： 按5分钟统计</li></ul>
+                     * @param _timeGranularity <p>时间粒度</p><p>枚举值：</p><ul><li>1： 按小时统计</li><li>2： 按天统计</li><li>3： 按分钟统计</li><li>4： 按5分钟统计</li></ul>
                      * 
                      */
                     void SetTimeGranularity(const int64_t& _timeGranularity);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool TimeGranularityHasBeenSet() const;
 
                     /**
-                     * 获取接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。
-                     * @return AccessRegion 接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。
+                     * 获取<p>接入区域。取值范围：[&#39;MC&#39;,&#39;AP&#39;,&#39;EU&#39;,&#39;AM&#39;] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。</p>
+                     * @return AccessRegion <p>接入区域。取值范围：[&#39;MC&#39;,&#39;AP&#39;,&#39;EU&#39;,&#39;AM&#39;] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。</p>
                      * 
                      */
                     std::string GetAccessRegion() const;
 
                     /**
-                     * 设置接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。
-                     * @param _accessRegion 接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。
+                     * 设置<p>接入区域。取值范围：[&#39;MC&#39;,&#39;AP&#39;,&#39;EU&#39;,&#39;AM&#39;] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。</p>
+                     * @param _accessRegion <p>接入区域。取值范围：[&#39;MC&#39;,&#39;AP&#39;,&#39;EU&#39;,&#39;AM&#39;] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。</p>
                      * 
                      */
                     void SetAccessRegion(const std::string& _accessRegion);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool AccessRegionHasBeenSet() const;
 
                     /**
-                     * 获取网关类型。0：公有云网关；1：自有网关。不传默认为0。
-                     * @return GatewayType 网关类型。0：公有云网关；1：自有网关。不传默认为0。
+                     * 获取<p>网关类型。0：公有云网关；1：自有网关。不传默认为0。</p>
+                     * @return GatewayType <p>网关类型。0：公有云网关；1：自有网关。不传默认为0。</p>
                      * 
                      */
                     int64_t GetGatewayType() const;
 
                     /**
-                     * 设置网关类型。0：公有云网关；1：自有网关。不传默认为0。
-                     * @param _gatewayType 网关类型。0：公有云网关；1：自有网关。不传默认为0。
+                     * 设置<p>网关类型。0：公有云网关；1：自有网关。不传默认为0。</p>
+                     * @param _gatewayType <p>网关类型。0：公有云网关；1：自有网关。不传默认为0。</p>
                      * 
                      */
                     void SetGatewayType(const int64_t& _gatewayType);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool GatewayTypeHasBeenSet() const;
 
                     /**
-                     * 获取设备名列表，用于查询多设备流量，该字段启用时DeviceId可传"-1"
-                     * @return DeviceList 设备名列表，用于查询多设备流量，该字段启用时DeviceId可传"-1"
+                     * 获取<p>设备名列表，用于查询多设备流量，该字段启用时DeviceId可传&quot;-1&quot;</p>
+                     * @return DeviceList <p>设备名列表，用于查询多设备流量，该字段启用时DeviceId可传&quot;-1&quot;</p>
                      * 
                      */
                     std::vector<std::string> GetDeviceList() const;
 
                     /**
-                     * 设置设备名列表，用于查询多设备流量，该字段启用时DeviceId可传"-1"
-                     * @param _deviceList 设备名列表，用于查询多设备流量，该字段启用时DeviceId可传"-1"
+                     * 设置<p>设备名列表，用于查询多设备流量，该字段启用时DeviceId可传&quot;-1&quot;</p>
+                     * @param _deviceList <p>设备名列表，用于查询多设备流量，该字段启用时DeviceId可传&quot;-1&quot;</p>
                      * 
                      */
                     void SetDeviceList(const std::vector<std::string>& _deviceList);
@@ -213,49 +213,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 设备名称
+                     * <p>设备名称</p>
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 开始查找时间
+                     * <p>开始查找时间</p>
                      */
                     int64_t m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 截止时间
+                     * <p>截止时间</p>
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 流量种类（1：上行流量，2：下行流量，3：上下行总和）
+                     * <p>流量种类（1：上行流量，2：下行流量，3：上下行总和）</p>
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 时间粒度（1：按小时统计，2：按天统计）
+                     * <p>时间粒度</p><p>枚举值：</p><ul><li>1： 按小时统计</li><li>2： 按天统计</li><li>3： 按分钟统计</li><li>4： 按5分钟统计</li></ul>
                      */
                     int64_t m_timeGranularity;
                     bool m_timeGranularityHasBeenSet;
 
                     /**
-                     * 接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。
+                     * <p>接入区域。取值范围：[&#39;MC&#39;,&#39;AP&#39;,&#39;EU&#39;,&#39;AM&#39;] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。</p>
                      */
                     std::string m_accessRegion;
                     bool m_accessRegionHasBeenSet;
 
                     /**
-                     * 网关类型。0：公有云网关；1：自有网关。不传默认为0。
+                     * <p>网关类型。0：公有云网关；1：自有网关。不传默认为0。</p>
                      */
                     int64_t m_gatewayType;
                     bool m_gatewayTypeHasBeenSet;
 
                     /**
-                     * 设备名列表，用于查询多设备流量，该字段启用时DeviceId可传"-1"
+                     * <p>设备名列表，用于查询多设备流量，该字段启用时DeviceId可传&quot;-1&quot;</p>
                      */
                     std::vector<std::string> m_deviceList;
                     bool m_deviceListHasBeenSet;

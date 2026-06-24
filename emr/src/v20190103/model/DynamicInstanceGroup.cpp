@@ -41,7 +41,10 @@ DynamicInstanceGroup::DynamicInstanceGroup() :
     m_schedulingPolicyHasBeenSet(false),
     m_resourceLabelHasBeenSet(false),
     m_podGpuResourceKeyHasBeenSet(false),
-    m_cFSTurboVolumesHasBeenSet(false)
+    m_cFSTurboVolumesHasBeenSet(false),
+    m_gooseFSVolumesHasBeenSet(false),
+    m_preStartCommandHasBeenSet(false),
+    m_rayStartParamsHasBeenSet(false)
 {
 }
 
@@ -340,6 +343,46 @@ CoreInternalOutcome DynamicInstanceGroup::Deserialize(const rapidjson::Value &va
         m_cFSTurboVolumesHasBeenSet = true;
     }
 
+    if (value.HasMember("GooseFSVolumes") && !value["GooseFSVolumes"].IsNull())
+    {
+        if (!value["GooseFSVolumes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DynamicInstanceGroup.GooseFSVolumes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["GooseFSVolumes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            GooseFSVolume item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_gooseFSVolumes.push_back(item);
+        }
+        m_gooseFSVolumesHasBeenSet = true;
+    }
+
+    if (value.HasMember("PreStartCommand") && !value["PreStartCommand"].IsNull())
+    {
+        if (!value["PreStartCommand"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DynamicInstanceGroup.PreStartCommand` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_preStartCommand = string(value["PreStartCommand"].GetString());
+        m_preStartCommandHasBeenSet = true;
+    }
+
+    if (value.HasMember("RayStartParams") && !value["RayStartParams"].IsNull())
+    {
+        if (!value["RayStartParams"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DynamicInstanceGroup.RayStartParams` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rayStartParams = string(value["RayStartParams"].GetString());
+        m_rayStartParamsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -569,6 +612,37 @@ void DynamicInstanceGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_gooseFSVolumesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GooseFSVolumes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_gooseFSVolumes.begin(); itr != m_gooseFSVolumes.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_preStartCommandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreStartCommand";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_preStartCommand.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rayStartParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RayStartParams";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rayStartParams.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -908,5 +982,53 @@ void DynamicInstanceGroup::SetCFSTurboVolumes(const vector<CFSTurboVolume>& _cFS
 bool DynamicInstanceGroup::CFSTurboVolumesHasBeenSet() const
 {
     return m_cFSTurboVolumesHasBeenSet;
+}
+
+vector<GooseFSVolume> DynamicInstanceGroup::GetGooseFSVolumes() const
+{
+    return m_gooseFSVolumes;
+}
+
+void DynamicInstanceGroup::SetGooseFSVolumes(const vector<GooseFSVolume>& _gooseFSVolumes)
+{
+    m_gooseFSVolumes = _gooseFSVolumes;
+    m_gooseFSVolumesHasBeenSet = true;
+}
+
+bool DynamicInstanceGroup::GooseFSVolumesHasBeenSet() const
+{
+    return m_gooseFSVolumesHasBeenSet;
+}
+
+string DynamicInstanceGroup::GetPreStartCommand() const
+{
+    return m_preStartCommand;
+}
+
+void DynamicInstanceGroup::SetPreStartCommand(const string& _preStartCommand)
+{
+    m_preStartCommand = _preStartCommand;
+    m_preStartCommandHasBeenSet = true;
+}
+
+bool DynamicInstanceGroup::PreStartCommandHasBeenSet() const
+{
+    return m_preStartCommandHasBeenSet;
+}
+
+string DynamicInstanceGroup::GetRayStartParams() const
+{
+    return m_rayStartParams;
+}
+
+void DynamicInstanceGroup::SetRayStartParams(const string& _rayStartParams)
+{
+    m_rayStartParams = _rayStartParams;
+    m_rayStartParamsHasBeenSet = true;
+}
+
+bool DynamicInstanceGroup::RayStartParamsHasBeenSet() const
+{
+    return m_rayStartParamsHasBeenSet;
 }
 

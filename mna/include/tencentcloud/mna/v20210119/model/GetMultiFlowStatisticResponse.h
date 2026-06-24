@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取批量设备流量信息
-                     * @return FlowDetails 批量设备流量信息
+                     * 获取<p>批量设备流量信息</p>
+                     * @return FlowDetails <p>批量设备流量信息</p>
                      * 
                      */
                     std::vector<FlowDetails> GetFlowDetails() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 批量设备流量信息
+                     * <p>批量设备流量信息</p>
                      */
                     std::vector<FlowDetails> m_flowDetails;
                     bool m_flowDetailsHasBeenSet;

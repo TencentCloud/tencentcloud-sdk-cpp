@@ -52,7 +52,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
     m_diskSizeHasBeenSet(false),
-    m_workerNodeNumHasBeenSet(false)
+    m_workerNodeNumHasBeenSet(false),
+    m_enableEncryptionHasBeenSet(false)
 {
 }
 
@@ -325,6 +326,14 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "WorkerNodeNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_workerNodeNum, allocator);
+    }
+
+    if (m_enableEncryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableEncryption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableEncryption, allocator);
     }
 
 
@@ -813,6 +822,22 @@ void CreateInstanceRequest::SetWorkerNodeNum(const uint64_t& _workerNodeNum)
 bool CreateInstanceRequest::WorkerNodeNumHasBeenSet() const
 {
     return m_workerNodeNumHasBeenSet;
+}
+
+bool CreateInstanceRequest::GetEnableEncryption() const
+{
+    return m_enableEncryption;
+}
+
+void CreateInstanceRequest::SetEnableEncryption(const bool& _enableEncryption)
+{
+    m_enableEncryption = _enableEncryption;
+    m_enableEncryptionHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::EnableEncryptionHasBeenSet() const
+{
+    return m_enableEncryptionHasBeenSet;
 }
 
 

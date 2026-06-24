@@ -25,7 +25,8 @@ using namespace std;
 ModifyClusterTagsRequest::ModifyClusterTagsRequest() :
     m_clusterIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_syncSubresourceHasBeenSet(false)
+    m_syncSubresourceHasBeenSet(false),
+    m_syncNodePoolTagsHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,14 @@ string ModifyClusterTagsRequest::ToJsonString() const
         string key = "SyncSubresource";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_syncSubresource, allocator);
+    }
+
+    if (m_syncNodePoolTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncNodePoolTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_syncNodePoolTags, allocator);
     }
 
 
@@ -121,6 +130,22 @@ void ModifyClusterTagsRequest::SetSyncSubresource(const bool& _syncSubresource)
 bool ModifyClusterTagsRequest::SyncSubresourceHasBeenSet() const
 {
     return m_syncSubresourceHasBeenSet;
+}
+
+bool ModifyClusterTagsRequest::GetSyncNodePoolTags() const
+{
+    return m_syncNodePoolTags;
+}
+
+void ModifyClusterTagsRequest::SetSyncNodePoolTags(const bool& _syncNodePoolTags)
+{
+    m_syncNodePoolTags = _syncNodePoolTags;
+    m_syncNodePoolTagsHasBeenSet = true;
+}
+
+bool ModifyClusterTagsRequest::SyncNodePoolTagsHasBeenSet() const
+{
+    return m_syncNodePoolTagsHasBeenSet;
 }
 
 

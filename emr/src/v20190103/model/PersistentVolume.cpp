@@ -27,7 +27,8 @@ PersistentVolume::PersistentVolume() :
     m_storageVolumeNameHasBeenSet(false),
     m_volumeMountsHasBeenSet(false),
     m_storageVolumeDetailHasBeenSet(false),
-    m_cFSTurboVolumesHasBeenSet(false)
+    m_cFSTurboVolumesHasBeenSet(false),
+    m_gooseFSVolumesHasBeenSet(false)
 {
 }
 
@@ -169,6 +170,26 @@ CoreInternalOutcome PersistentVolume::Deserialize(const rapidjson::Value &value)
         m_cFSTurboVolumesHasBeenSet = true;
     }
 
+    if (value.HasMember("GooseFSVolumes") && !value["GooseFSVolumes"].IsNull())
+    {
+        if (!value["GooseFSVolumes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PersistentVolume.GooseFSVolumes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["GooseFSVolumes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            GooseFSVolume item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_gooseFSVolumes.push_back(item);
+        }
+        m_gooseFSVolumesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -273,6 +294,21 @@ void PersistentVolume::ToJsonObject(rapidjson::Value &value, rapidjson::Document
 
         int i=0;
         for (auto itr = m_cFSTurboVolumes.begin(); itr != m_cFSTurboVolumes.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_gooseFSVolumesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GooseFSVolumes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_gooseFSVolumes.begin(); itr != m_gooseFSVolumes.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -392,5 +428,21 @@ void PersistentVolume::SetCFSTurboVolumes(const vector<CFSTurboVolume>& _cFSTurb
 bool PersistentVolume::CFSTurboVolumesHasBeenSet() const
 {
     return m_cFSTurboVolumesHasBeenSet;
+}
+
+vector<GooseFSVolume> PersistentVolume::GetGooseFSVolumes() const
+{
+    return m_gooseFSVolumes;
+}
+
+void PersistentVolume::SetGooseFSVolumes(const vector<GooseFSVolume>& _gooseFSVolumes)
+{
+    m_gooseFSVolumes = _gooseFSVolumes;
+    m_gooseFSVolumesHasBeenSet = true;
+}
+
+bool PersistentVolume::GooseFSVolumesHasBeenSet() const
+{
+    return m_gooseFSVolumesHasBeenSet;
 }
 

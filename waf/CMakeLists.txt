@@ -179,6 +179,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DescribeCustomRulesRspRuleListItem.h
   include/tencentcloud/waf/v20180125/model/ModifyAntiInfoLeakRulesResponse.h
   include/tencentcloud/waf/v20180125/model/DeleteBotSceneUCBRuleRequest.h
+  include/tencentcloud/waf/v20180125/model/ModifyObjectRequest.h
   include/tencentcloud/waf/v20180125/model/BotIdConfig.h
   include/tencentcloud/waf/v20180125/model/DeleteHostRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyIpAccessControlRequest.h
@@ -386,6 +387,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/Area.h
   include/tencentcloud/waf/v20180125/model/DescribeUserLevelResponse.h
   include/tencentcloud/waf/v20180125/model/IpAccessControlParam.h
+  include/tencentcloud/waf/v20180125/model/IntentContent.h
   include/tencentcloud/waf/v20180125/model/TokenValidation.h
   include/tencentcloud/waf/v20180125/model/DescribeBotIdRuleRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeCustomRuleListResponse.h
@@ -488,7 +490,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DeleteProtectGroupDomainResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeCCRuleRequest.h
   include/tencentcloud/waf/v20180125/model/BatchOperateUserSignatureRulesRequest.h
-  include/tencentcloud/waf/v20180125/model/ModifyObjectRequest.h
+  include/tencentcloud/waf/v20180125/model/IntentDetectResult.h
   include/tencentcloud/waf/v20180125/model/GetAttackDownloadRecordsResponse.h
   include/tencentcloud/waf/v20180125/model/DeleteProtectGroupResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeAreaBanRuleRequest.h
@@ -841,6 +843,7 @@ set(waf_src
   src/v20180125/model/DescribeCustomRulesRspRuleListItem.cpp
   src/v20180125/model/ModifyAntiInfoLeakRulesResponse.cpp
   src/v20180125/model/DeleteBotSceneUCBRuleRequest.cpp
+  src/v20180125/model/ModifyObjectRequest.cpp
   src/v20180125/model/BotIdConfig.cpp
   src/v20180125/model/DeleteHostRequest.cpp
   src/v20180125/model/ModifyIpAccessControlRequest.cpp
@@ -1048,6 +1051,7 @@ set(waf_src
   src/v20180125/model/Area.cpp
   src/v20180125/model/DescribeUserLevelResponse.cpp
   src/v20180125/model/IpAccessControlParam.cpp
+  src/v20180125/model/IntentContent.cpp
   src/v20180125/model/TokenValidation.cpp
   src/v20180125/model/DescribeBotIdRuleRequest.cpp
   src/v20180125/model/DescribeCustomRuleListResponse.cpp
@@ -1150,7 +1154,7 @@ set(waf_src
   src/v20180125/model/DeleteProtectGroupDomainResponse.cpp
   src/v20180125/model/DescribeCCRuleRequest.cpp
   src/v20180125/model/BatchOperateUserSignatureRulesRequest.cpp
-  src/v20180125/model/ModifyObjectRequest.cpp
+  src/v20180125/model/IntentDetectResult.cpp
   src/v20180125/model/GetAttackDownloadRecordsResponse.cpp
   src/v20180125/model/DeleteProtectGroupResponse.cpp
   src/v20180125/model/DescribeAreaBanRuleRequest.cpp

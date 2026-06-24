@@ -26,7 +26,8 @@ ProbeConfig::ProbeConfig() :
     m_periodSecondsHasBeenSet(false),
     m_timeoutSecondsHasBeenSet(false),
     m_successThresholdHasBeenSet(false),
-    m_failureThresholdHasBeenSet(false)
+    m_failureThresholdHasBeenSet(false),
+    m_tcpSocketHasBeenSet(false)
 {
 }
 
@@ -102,6 +103,23 @@ CoreInternalOutcome ProbeConfig::Deserialize(const rapidjson::Value &value)
         m_failureThresholdHasBeenSet = true;
     }
 
+    if (value.HasMember("TcpSocket") && !value["TcpSocket"].IsNull())
+    {
+        if (!value["TcpSocket"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProbeConfig.TcpSocket` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tcpSocket.Deserialize(value["TcpSocket"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tcpSocketHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +174,15 @@ void ProbeConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "FailureThreshold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_failureThreshold, allocator);
+    }
+
+    if (m_tcpSocketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TcpSocket";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tcpSocket.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -255,5 +282,21 @@ void ProbeConfig::SetFailureThreshold(const int64_t& _failureThreshold)
 bool ProbeConfig::FailureThresholdHasBeenSet() const
 {
     return m_failureThresholdHasBeenSet;
+}
+
+TcpSocketConfig ProbeConfig::GetTcpSocket() const
+{
+    return m_tcpSocket;
+}
+
+void ProbeConfig::SetTcpSocket(const TcpSocketConfig& _tcpSocket)
+{
+    m_tcpSocket = _tcpSocket;
+    m_tcpSocketHasBeenSet = true;
+}
+
+bool ProbeConfig::TcpSocketHasBeenSet() const
+{
+    return m_tcpSocketHasBeenSet;
 }
 

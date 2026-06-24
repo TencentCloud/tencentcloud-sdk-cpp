@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>任务状态.<br>init：未执行<br>running：执行中，finished：已完成<br>,failed：失败<br>,stopping：停止中,stopped：已停止</p>
-                     * @return TaskStatus <p>任务状态.<br>init：未执行<br>running：执行中，finished：已完成<br>,failed：失败<br>,stopping：停止中,stopped：已停止</p>
+                     * 获取<p>任务状态</p><p>枚举值：</p><ul><li>init： 排队中</li><li>running： 执行中</li><li>finished： 已完成</li><li>failed： 失败</li><li>stopping： 停止中</li><li>stopped： 已停止</li></ul>
+                     * @return TaskStatus <p>任务状态</p><p>枚举值：</p><ul><li>init： 排队中</li><li>running： 执行中</li><li>finished： 已完成</li><li>failed： 失败</li><li>stopping： 停止中</li><li>stopped： 已停止</li></ul>
                      * 
                      */
                     std::string GetTaskStatus() const;
 
                     /**
-                     * 设置<p>任务状态.<br>init：未执行<br>running：执行中，finished：已完成<br>,failed：失败<br>,stopping：停止中,stopped：已停止</p>
-                     * @param _taskStatus <p>任务状态.<br>init：未执行<br>running：执行中，finished：已完成<br>,failed：失败<br>,stopping：停止中,stopped：已停止</p>
+                     * 设置<p>任务状态</p><p>枚举值：</p><ul><li>init： 排队中</li><li>running： 执行中</li><li>finished： 已完成</li><li>failed： 失败</li><li>stopping： 停止中</li><li>stopped： 已停止</li></ul>
+                     * @param _taskStatus <p>任务状态</p><p>枚举值：</p><ul><li>init： 排队中</li><li>running： 执行中</li><li>finished： 已完成</li><li>failed： 失败</li><li>stopping： 停止中</li><li>stopped： 已停止</li></ul>
                      * 
                      */
                     void SetTaskStatus(const std::string& _taskStatus);
@@ -475,7 +475,7 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * <p>任务状态.<br>init：未执行<br>running：执行中，finished：已完成<br>,failed：失败<br>,stopping：停止中,stopped：已停止</p>
+                     * <p>任务状态</p><p>枚举值：</p><ul><li>init： 排队中</li><li>running： 执行中</li><li>finished： 已完成</li><li>failed： 失败</li><li>stopping： 停止中</li><li>stopped： 已停止</li></ul>
                      */
                     std::string m_taskStatus;
                     bool m_taskStatusHasBeenSet;

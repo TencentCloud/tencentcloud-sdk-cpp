@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取group 名称
-                     * @return Name group 名称
+                     * 获取<p>group 名称</p>
+                     * @return Name <p>group 名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置group 名称
-                     * @param _name group 名称
+                     * 设置<p>group 名称</p>
+                     * @param _name <p>group 名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取pod 数量
-                     * @return PodCount pod 数量
+                     * 获取<p>pod 数量</p>
+                     * @return PodCount <p>pod 数量</p>
                      * 
                      */
                     int64_t GetPodCount() const;
 
                     /**
-                     * 设置pod 数量
-                     * @param _podCount pod 数量
+                     * 设置<p>pod 数量</p>
+                     * @param _podCount <p>pod 数量</p>
                      * 
                      */
                     void SetPodCount(const int64_t& _podCount);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool PodCountHasBeenSet() const;
 
                     /**
-                     * 获取最小节点数
-                     * @return MinNodes 最小节点数
+                     * 获取<p>最小节点数</p>
+                     * @return MinNodes <p>最小节点数</p>
                      * 
                      */
                     int64_t GetMinNodes() const;
 
                     /**
-                     * 设置最小节点数
-                     * @param _minNodes 最小节点数
+                     * 设置<p>最小节点数</p>
+                     * @param _minNodes <p>最小节点数</p>
                      * 
                      */
                     void SetMinNodes(const int64_t& _minNodes);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool MinNodesHasBeenSet() const;
 
                     /**
-                     * 获取最大节点数
-                     * @return MaxNodes 最大节点数
+                     * 获取<p>最大节点数</p>
+                     * @return MaxNodes <p>最大节点数</p>
                      * 
                      */
                     int64_t GetMaxNodes() const;
 
                     /**
-                     * 设置最大节点数
-                     * @param _maxNodes 最大节点数
+                     * 设置<p>最大节点数</p>
+                     * @param _maxNodes <p>最大节点数</p>
                      * 
                      */
                     void SetMaxNodes(const int64_t& _maxNodes);
@@ -134,15 +134,15 @@ namespace TencentCloud
                     bool MaxNodesHasBeenSet() const;
 
                     /**
-                     * 获取 是否开启存储配置
-                     * @return StorageConfigEnabled  是否开启存储配置
+                     * 获取<p>是否开启存储配置</p>
+                     * @return StorageConfigEnabled <p>是否开启存储配置</p>
                      * 
                      */
                     bool GetStorageConfigEnabled() const;
 
                     /**
-                     * 设置 是否开启存储配置
-                     * @param _storageConfigEnabled  是否开启存储配置
+                     * 设置<p>是否开启存储配置</p>
+                     * @param _storageConfigEnabled <p>是否开启存储配置</p>
                      * 
                      */
                     void SetStorageConfigEnabled(const bool& _storageConfigEnabled);
@@ -155,19 +155,15 @@ namespace TencentCloud
                     bool StorageConfigEnabledHasBeenSet() const;
 
                     /**
-                     * 获取headGroup:head;
-workerGroup:worker
-                     * @return GroupType headGroup:head;
-workerGroup:worker
+                     * 获取<p>headGroup:head;<br>workerGroup:worker</p>
+                     * @return GroupType <p>headGroup:head;<br>workerGroup:worker</p>
                      * 
                      */
                     std::string GetGroupType() const;
 
                     /**
-                     * 设置headGroup:head;
-workerGroup:worker
-                     * @param _groupType headGroup:head;
-workerGroup:worker
+                     * 设置<p>headGroup:head;<br>workerGroup:worker</p>
+                     * @param _groupType <p>headGroup:head;<br>workerGroup:worker</p>
                      * 
                      */
                     void SetGroupType(const std::string& _groupType);
@@ -180,15 +176,15 @@ workerGroup:worker
                     bool GroupTypeHasBeenSet() const;
 
                     /**
-                     * 获取CPU 核数
-                     * @return Cpu CPU 核数
+                     * 获取<p>CPU 核数</p>
+                     * @return Cpu <p>CPU 核数</p>
                      * 
                      */
                     int64_t GetCpu() const;
 
                     /**
-                     * 设置CPU 核数
-                     * @param _cpu CPU 核数
+                     * 设置<p>CPU 核数</p>
+                     * @param _cpu <p>CPU 核数</p>
                      * 
                      */
                     void SetCpu(const int64_t& _cpu);
@@ -201,15 +197,15 @@ workerGroup:worker
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取内存(GB)
-                     * @return MemSize 内存(GB)
+                     * 获取<p>内存(GB)</p>
+                     * @return MemSize <p>内存(GB)</p>
                      * 
                      */
                     int64_t GetMemSize() const;
 
                     /**
-                     * 设置内存(GB)
-                     * @param _memSize 内存(GB)
+                     * 设置<p>内存(GB)</p>
+                     * @param _memSize <p>内存(GB)</p>
                      * 
                      */
                     void SetMemSize(const int64_t& _memSize);
@@ -222,15 +218,15 @@ workerGroup:worker
                     bool MemSizeHasBeenSet() const;
 
                     /**
-                     * 获取GPU类型
-                     * @return GpuType GPU类型
+                     * 获取<p>GPU类型</p>
+                     * @return GpuType <p>GPU类型</p>
                      * 
                      */
                     std::string GetGpuType() const;
 
                     /**
-                     * 设置GPU类型
-                     * @param _gpuType GPU类型
+                     * 设置<p>GPU类型</p>
+                     * @param _gpuType <p>GPU类型</p>
                      * 
                      */
                     void SetGpuType(const std::string& _gpuType);
@@ -243,15 +239,15 @@ workerGroup:worker
                     bool GpuTypeHasBeenSet() const;
 
                     /**
-                     * 获取GPU核数
-                     * @return Gpu GPU核数
+                     * 获取<p>GPU核数</p>
+                     * @return Gpu <p>GPU核数</p>
                      * 
                      */
                     int64_t GetGpu() const;
 
                     /**
-                     * 设置GPU核数
-                     * @param _gpu GPU核数
+                     * 设置<p>GPU核数</p>
+                     * @param _gpu <p>GPU核数</p>
                      * 
                      */
                     void SetGpu(const int64_t& _gpu);
@@ -264,15 +260,15 @@ workerGroup:worker
                     bool GpuHasBeenSet() const;
 
                     /**
-                     * 获取资源标签
-                     * @return ResourceLabels 资源标签
+                     * 获取<p>资源标签</p>
+                     * @return ResourceLabels <p>资源标签</p>
                      * 
                      */
                     std::string GetResourceLabels() const;
 
                     /**
-                     * 设置资源标签
-                     * @param _resourceLabels 资源标签
+                     * 设置<p>资源标签</p>
+                     * @param _resourceLabels <p>资源标签</p>
                      * 
                      */
                     void SetResourceLabels(const std::string& _resourceLabels);
@@ -285,15 +281,15 @@ workerGroup:worker
                     bool ResourceLabelsHasBeenSet() const;
 
                     /**
-                     * 获取环境变量
-                     * @return Env 环境变量
+                     * 获取<p>环境变量</p>
+                     * @return Env <p>环境变量</p>
                      * 
                      */
                     std::vector<NameValue> GetEnv() const;
 
                     /**
-                     * 设置环境变量
-                     * @param _env 环境变量
+                     * 设置<p>环境变量</p>
+                     * @param _env <p>环境变量</p>
                      * 
                      */
                     void SetEnv(const std::vector<NameValue>& _env);
@@ -306,15 +302,15 @@ workerGroup:worker
                     bool EnvHasBeenSet() const;
 
                     /**
-                     * 获取标签
-                     * @return Labels 标签
+                     * 获取<p>标签</p>
+                     * @return Labels <p>标签</p>
                      * 
                      */
                     std::vector<NameValue> GetLabels() const;
 
                     /**
-                     * 设置标签
-                     * @param _labels 标签
+                     * 设置<p>标签</p>
+                     * @param _labels <p>标签</p>
                      * 
                      */
                     void SetLabels(const std::vector<NameValue>& _labels);
@@ -327,15 +323,15 @@ workerGroup:worker
                     bool LabelsHasBeenSet() const;
 
                     /**
-                     * 获取容忍度
-                     * @return Tolerations 容忍度
+                     * 获取<p>容忍度</p>
+                     * @return Tolerations <p>容忍度</p>
                      * 
                      */
                     std::vector<Toleration> GetTolerations() const;
 
                     /**
-                     * 设置容忍度
-                     * @param _tolerations 容忍度
+                     * 设置<p>容忍度</p>
+                     * @param _tolerations <p>容忍度</p>
                      * 
                      */
                     void SetTolerations(const std::vector<Toleration>& _tolerations);
@@ -348,15 +344,15 @@ workerGroup:worker
                     bool TolerationsHasBeenSet() const;
 
                     /**
-                     * 获取调度策略
-                     * @return Scheduler 调度策略
+                     * 获取<p>调度策略</p>
+                     * @return Scheduler <p>调度策略</p>
                      * 
                      */
                     std::string GetScheduler() const;
 
                     /**
-                     * 设置调度策略
-                     * @param _scheduler 调度策略
+                     * 设置<p>调度策略</p>
+                     * @param _scheduler <p>调度策略</p>
                      * 
                      */
                     void SetScheduler(const std::string& _scheduler);
@@ -369,15 +365,15 @@ workerGroup:worker
                     bool SchedulerHasBeenSet() const;
 
                     /**
-                     * 获取卷目录
-                     * @return PersistentVolume 卷目录
+                     * 获取<p>卷目录</p>
+                     * @return PersistentVolume <p>卷目录</p>
                      * 
                      */
                     PersistentVolume GetPersistentVolume() const;
 
                     /**
-                     * 设置卷目录
-                     * @param _persistentVolume 卷目录
+                     * 设置<p>卷目录</p>
+                     * @param _persistentVolume <p>卷目录</p>
                      * 
                      */
                     void SetPersistentVolume(const PersistentVolume& _persistentVolume);
@@ -389,104 +385,157 @@ workerGroup:worker
                      */
                     bool PersistentVolumeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>前置启动命令</p>
+                     * @return PreStartCommand <p>前置启动命令</p>
+                     * 
+                     */
+                    std::string GetPreStartCommand() const;
+
+                    /**
+                     * 设置<p>前置启动命令</p>
+                     * @param _preStartCommand <p>前置启动命令</p>
+                     * 
+                     */
+                    void SetPreStartCommand(const std::string& _preStartCommand);
+
+                    /**
+                     * 判断参数 PreStartCommand 是否已赋值
+                     * @return PreStartCommand 是否已赋值
+                     * 
+                     */
+                    bool PreStartCommandHasBeenSet() const;
+
+                    /**
+                     * 获取<p>RayStart启动参数</p>
+                     * @return RayStartParams <p>RayStart启动参数</p>
+                     * 
+                     */
+                    std::string GetRayStartParams() const;
+
+                    /**
+                     * 设置<p>RayStart启动参数</p>
+                     * @param _rayStartParams <p>RayStart启动参数</p>
+                     * 
+                     */
+                    void SetRayStartParams(const std::string& _rayStartParams);
+
+                    /**
+                     * 判断参数 RayStartParams 是否已赋值
+                     * @return RayStartParams 是否已赋值
+                     * 
+                     */
+                    bool RayStartParamsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * group 名称
+                     * <p>group 名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * pod 数量
+                     * <p>pod 数量</p>
                      */
                     int64_t m_podCount;
                     bool m_podCountHasBeenSet;
 
                     /**
-                     * 最小节点数
+                     * <p>最小节点数</p>
                      */
                     int64_t m_minNodes;
                     bool m_minNodesHasBeenSet;
 
                     /**
-                     * 最大节点数
+                     * <p>最大节点数</p>
                      */
                     int64_t m_maxNodes;
                     bool m_maxNodesHasBeenSet;
 
                     /**
-                     *  是否开启存储配置
+                     * <p>是否开启存储配置</p>
                      */
                     bool m_storageConfigEnabled;
                     bool m_storageConfigEnabledHasBeenSet;
 
                     /**
-                     * headGroup:head;
-workerGroup:worker
+                     * <p>headGroup:head;<br>workerGroup:worker</p>
                      */
                     std::string m_groupType;
                     bool m_groupTypeHasBeenSet;
 
                     /**
-                     * CPU 核数
+                     * <p>CPU 核数</p>
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 内存(GB)
+                     * <p>内存(GB)</p>
                      */
                     int64_t m_memSize;
                     bool m_memSizeHasBeenSet;
 
                     /**
-                     * GPU类型
+                     * <p>GPU类型</p>
                      */
                     std::string m_gpuType;
                     bool m_gpuTypeHasBeenSet;
 
                     /**
-                     * GPU核数
+                     * <p>GPU核数</p>
                      */
                     int64_t m_gpu;
                     bool m_gpuHasBeenSet;
 
                     /**
-                     * 资源标签
+                     * <p>资源标签</p>
                      */
                     std::string m_resourceLabels;
                     bool m_resourceLabelsHasBeenSet;
 
                     /**
-                     * 环境变量
+                     * <p>环境变量</p>
                      */
                     std::vector<NameValue> m_env;
                     bool m_envHasBeenSet;
 
                     /**
-                     * 标签
+                     * <p>标签</p>
                      */
                     std::vector<NameValue> m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
-                     * 容忍度
+                     * <p>容忍度</p>
                      */
                     std::vector<Toleration> m_tolerations;
                     bool m_tolerationsHasBeenSet;
 
                     /**
-                     * 调度策略
+                     * <p>调度策略</p>
                      */
                     std::string m_scheduler;
                     bool m_schedulerHasBeenSet;
 
                     /**
-                     * 卷目录
+                     * <p>卷目录</p>
                      */
                     PersistentVolume m_persistentVolume;
                     bool m_persistentVolumeHasBeenSet;
+
+                    /**
+                     * <p>前置启动命令</p>
+                     */
+                    std::string m_preStartCommand;
+                    bool m_preStartCommandHasBeenSet;
+
+                    /**
+                     * <p>RayStart启动参数</p>
+                     */
+                    std::string m_rayStartParams;
+                    bool m_rayStartParamsHasBeenSet;
 
                 };
             }

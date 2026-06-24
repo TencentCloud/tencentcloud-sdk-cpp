@@ -34,6 +34,9 @@
 #include <tencentcloud/emr/v20190103/model/NameValue.h>
 #include <tencentcloud/emr/v20190103/model/DependService.h>
 #include <tencentcloud/emr/v20190103/model/CFSTurboVolume.h>
+#include <tencentcloud/emr/v20190103/model/CustomImage.h>
+#include <tencentcloud/emr/v20190103/model/ImageInfoV2.h>
+#include <tencentcloud/emr/v20190103/model/GooseFSVolume.h>
 
 
 namespace TencentCloud
@@ -350,6 +353,69 @@ namespace TencentCloud
                      */
                     bool CFSTurboVolumesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自定义镜像</p>
+                     * @return CustomImage <p>自定义镜像</p>
+                     * 
+                     */
+                    CustomImage GetCustomImage() const;
+
+                    /**
+                     * 设置<p>自定义镜像</p>
+                     * @param _customImage <p>自定义镜像</p>
+                     * 
+                     */
+                    void SetCustomImage(const CustomImage& _customImage);
+
+                    /**
+                     * 判断参数 CustomImage 是否已赋值
+                     * @return CustomImage 是否已赋值
+                     * 
+                     */
+                    bool CustomImageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>自定义镜像</p>
+                     * @return ImageInfoV2 <p>自定义镜像</p>
+                     * 
+                     */
+                    ImageInfoV2 GetImageInfoV2() const;
+
+                    /**
+                     * 设置<p>自定义镜像</p>
+                     * @param _imageInfoV2 <p>自定义镜像</p>
+                     * 
+                     */
+                    void SetImageInfoV2(const ImageInfoV2& _imageInfoV2);
+
+                    /**
+                     * 判断参数 ImageInfoV2 是否已赋值
+                     * @return ImageInfoV2 是否已赋值
+                     * 
+                     */
+                    bool ImageInfoV2HasBeenSet() const;
+
+                    /**
+                     * 获取<p>GooseFS盘</p>
+                     * @return GooseFSVolumes <p>GooseFS盘</p>
+                     * 
+                     */
+                    std::vector<GooseFSVolume> GetGooseFSVolumes() const;
+
+                    /**
+                     * 设置<p>GooseFS盘</p>
+                     * @param _gooseFSVolumes <p>GooseFS盘</p>
+                     * 
+                     */
+                    void SetGooseFSVolumes(const std::vector<GooseFSVolume>& _gooseFSVolumes);
+
+                    /**
+                     * 判断参数 GooseFSVolumes 是否已赋值
+                     * @return GooseFSVolumes 是否已赋值
+                     * 
+                     */
+                    bool GooseFSVolumesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -435,6 +501,24 @@ namespace TencentCloud
                      */
                     std::vector<CFSTurboVolume> m_cFSTurboVolumes;
                     bool m_cFSTurboVolumesHasBeenSet;
+
+                    /**
+                     * <p>自定义镜像</p>
+                     */
+                    CustomImage m_customImage;
+                    bool m_customImageHasBeenSet;
+
+                    /**
+                     * <p>自定义镜像</p>
+                     */
+                    ImageInfoV2 m_imageInfoV2;
+                    bool m_imageInfoV2HasBeenSet;
+
+                    /**
+                     * <p>GooseFS盘</p>
+                     */
+                    std::vector<GooseFSVolume> m_gooseFSVolumes;
+                    bool m_gooseFSVolumesHasBeenSet;
 
                 };
             }
