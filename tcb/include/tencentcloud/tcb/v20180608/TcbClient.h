@@ -109,6 +109,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvAccountCircleResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvLimitRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvLimitResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeEnvPlansRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeEnvPlansResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeGatewayVersionsRequest.h>
@@ -352,6 +354,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEnvLimitResponse> DescribeEnvLimitOutcome;
                 typedef std::future<DescribeEnvLimitOutcome> DescribeEnvLimitOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeEnvLimitRequest&, DescribeEnvLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvLimitAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEnvPlansResponse> DescribeEnvPlansOutcome;
+                typedef std::future<DescribeEnvPlansOutcome> DescribeEnvPlansOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeEnvPlansRequest&, DescribeEnvPlansOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvPlansAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEnvsResponse> DescribeEnvsOutcome;
                 typedef std::future<DescribeEnvsOutcome> DescribeEnvsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeEnvsRequest&, DescribeEnvsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvsAsyncHandler;
@@ -976,6 +981,15 @@ namespace TencentCloud
                 DescribeEnvLimitOutcome DescribeEnvLimit(const Model::DescribeEnvLimitRequest &request);
                 void DescribeEnvLimitAsync(const Model::DescribeEnvLimitRequest& request, const DescribeEnvLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEnvLimitOutcomeCallable DescribeEnvLimitCallable(const Model::DescribeEnvLimitRequest& request);
+
+                /**
+                 *获取可售卖的新套餐列表，含详情，如果传了PackageId，则只获取指定套餐详情
+                 * @param req DescribeEnvPlansRequest
+                 * @return DescribeEnvPlansOutcome
+                 */
+                DescribeEnvPlansOutcome DescribeEnvPlans(const Model::DescribeEnvPlansRequest &request);
+                void DescribeEnvPlansAsync(const Model::DescribeEnvPlansRequest& request, const DescribeEnvPlansAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEnvPlansOutcomeCallable DescribeEnvPlansCallable(const Model::DescribeEnvPlansRequest& request);
 
                 /**
                  *获取环境列表，含环境下的各个资源信息。尤其是各资源的唯一标识，是请求各资源的关键参数

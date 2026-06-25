@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取录制任务的唯一Id
-                     * @return TaskId 录制任务的唯一Id
+                     * 获取<p>录制任务的唯一Id</p>
+                     * @return TaskId <p>录制任务的唯一Id</p>
                      * 
                      */
                     std::string GetTaskId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 录制任务的唯一Id
+                     * <p>录制任务的唯一Id</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

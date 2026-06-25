@@ -45,7 +45,8 @@ CreateInstancePreRequest::CreateInstancePreRequest() :
     m_instanceNumHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
     m_elasticBandwidthSwitchHasBeenSet(false),
-    m_customSSLCertIdHasBeenSet(false)
+    m_customSSLCertIdHasBeenSet(false),
+    m_storeQuantityTypeHasBeenSet(false)
 {
 }
 
@@ -250,6 +251,14 @@ string CreateInstancePreRequest::ToJsonString() const
         string key = "CustomSSLCertId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_customSSLCertId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storeQuantityTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StoreQuantityType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_storeQuantityType, allocator);
     }
 
 
@@ -626,6 +635,22 @@ void CreateInstancePreRequest::SetCustomSSLCertId(const string& _customSSLCertId
 bool CreateInstancePreRequest::CustomSSLCertIdHasBeenSet() const
 {
     return m_customSSLCertIdHasBeenSet;
+}
+
+int64_t CreateInstancePreRequest::GetStoreQuantityType() const
+{
+    return m_storeQuantityType;
+}
+
+void CreateInstancePreRequest::SetStoreQuantityType(const int64_t& _storeQuantityType)
+{
+    m_storeQuantityType = _storeQuantityType;
+    m_storeQuantityTypeHasBeenSet = true;
+}
+
+bool CreateInstancePreRequest::StoreQuantityTypeHasBeenSet() const
+{
+    return m_storeQuantityTypeHasBeenSet;
 }
 
 

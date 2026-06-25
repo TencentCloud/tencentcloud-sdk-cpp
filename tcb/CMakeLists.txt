@@ -171,6 +171,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CreateAuthDomainRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateHostingDomainResponse.h
   include/tencentcloud/tcb/v20180608/model/MySQLTaskStatus.h
+  include/tencentcloud/tcb/v20180608/model/DescribeEnvPlansRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCreateMySQLResult.h
   include/tencentcloud/tcb/v20180608/model/ModifyResourcePermissionResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeCreateMySQLResultResponse.h
@@ -270,6 +271,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/PermissionInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribeManagedAIModelListResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeAIModelsResponse.h
+  include/tencentcloud/tcb/v20180608/model/PlanInfo.h
   include/tencentcloud/tcb/v20180608/model/Tag.h
   include/tencentcloud/tcb/v20180608/model/CreateEnvRequest.h
   include/tencentcloud/tcb/v20180608/model/DeleteHTTPServiceRouteRequest.h
@@ -280,6 +282,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeVmSpecResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeAIModelsRequest.h
   include/tencentcloud/tcb/v20180608/model/RunSqlRequest.h
+  include/tencentcloud/tcb/v20180608/model/DescribeEnvPlansResponse.h
   include/tencentcloud/tcb/v20180608/model/MessageLocalized.h
   include/tencentcloud/tcb/v20180608/model/WxGatewayCustomConfig.h
   include/tencentcloud/tcb/v20180608/model/DescribeTableResponse.h
@@ -460,6 +463,7 @@ set(tcb_src
   src/v20180608/model/CreateAuthDomainRequest.cpp
   src/v20180608/model/CreateHostingDomainResponse.cpp
   src/v20180608/model/MySQLTaskStatus.cpp
+  src/v20180608/model/DescribeEnvPlansRequest.cpp
   src/v20180608/model/DescribeCreateMySQLResult.cpp
   src/v20180608/model/ModifyResourcePermissionResponse.cpp
   src/v20180608/model/DescribeCreateMySQLResultResponse.cpp
@@ -559,6 +563,7 @@ set(tcb_src
   src/v20180608/model/PermissionInfo.cpp
   src/v20180608/model/DescribeManagedAIModelListResponse.cpp
   src/v20180608/model/DescribeAIModelsResponse.cpp
+  src/v20180608/model/PlanInfo.cpp
   src/v20180608/model/Tag.cpp
   src/v20180608/model/CreateEnvRequest.cpp
   src/v20180608/model/DeleteHTTPServiceRouteRequest.cpp
@@ -569,6 +574,7 @@ set(tcb_src
   src/v20180608/model/DescribeVmSpecResponse.cpp
   src/v20180608/model/DescribeAIModelsRequest.cpp
   src/v20180608/model/RunSqlRequest.cpp
+  src/v20180608/model/DescribeEnvPlansResponse.cpp
   src/v20180608/model/MessageLocalized.cpp
   src/v20180608/model/WxGatewayCustomConfig.cpp
   src/v20180608/model/DescribeTableResponse.cpp

@@ -23,7 +23,9 @@ using namespace std;
 ItemNames::ItemNames() :
     m_keyNameHasBeenSet(false),
     m_keyTypeHasBeenSet(false),
-    m_keyPromptHasBeenSet(false)
+    m_keyPromptHasBeenSet(false),
+    m_keyExpectedValueHasBeenSet(false),
+    m_keyAuditPromptHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,26 @@ CoreInternalOutcome ItemNames::Deserialize(const rapidjson::Value &value)
         m_keyPromptHasBeenSet = true;
     }
 
+    if (value.HasMember("KeyExpectedValue") && !value["KeyExpectedValue"].IsNull())
+    {
+        if (!value["KeyExpectedValue"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ItemNames.KeyExpectedValue` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_keyExpectedValue = string(value["KeyExpectedValue"].GetString());
+        m_keyExpectedValueHasBeenSet = true;
+    }
+
+    if (value.HasMember("KeyAuditPrompt") && !value["KeyAuditPrompt"].IsNull())
+    {
+        if (!value["KeyAuditPrompt"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ItemNames.KeyAuditPrompt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_keyAuditPrompt = string(value["KeyAuditPrompt"].GetString());
+        m_keyAuditPromptHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +113,22 @@ void ItemNames::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "KeyPrompt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_keyPrompt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keyExpectedValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyExpectedValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keyExpectedValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keyAuditPromptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyAuditPrompt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keyAuditPrompt.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +180,37 @@ void ItemNames::SetKeyPrompt(const string& _keyPrompt)
 bool ItemNames::KeyPromptHasBeenSet() const
 {
     return m_keyPromptHasBeenSet;
+}
+
+string ItemNames::GetKeyExpectedValue() const
+{
+    return m_keyExpectedValue;
+}
+
+void ItemNames::SetKeyExpectedValue(const string& _keyExpectedValue)
+{
+    m_keyExpectedValue = _keyExpectedValue;
+    m_keyExpectedValueHasBeenSet = true;
+}
+
+bool ItemNames::KeyExpectedValueHasBeenSet() const
+{
+    return m_keyExpectedValueHasBeenSet;
+}
+
+string ItemNames::GetKeyAuditPrompt() const
+{
+    return m_keyAuditPrompt;
+}
+
+void ItemNames::SetKeyAuditPrompt(const string& _keyAuditPrompt)
+{
+    m_keyAuditPrompt = _keyAuditPrompt;
+    m_keyAuditPromptHasBeenSet = true;
+}
+
+bool ItemNames::KeyAuditPromptHasBeenSet() const
+{
+    return m_keyAuditPromptHasBeenSet;
 }
 

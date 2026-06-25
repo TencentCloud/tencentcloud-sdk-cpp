@@ -43,7 +43,8 @@ CreatePostPaidInstanceRequest::CreatePostPaidInstanceRequest() :
     m_publicNetworkMonthlyHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_elasticBandwidthSwitchHasBeenSet(false),
-    m_customSSLCertIdHasBeenSet(false)
+    m_customSSLCertIdHasBeenSet(false),
+    m_storeQuantityTypeHasBeenSet(false)
 {
 }
 
@@ -232,6 +233,14 @@ string CreatePostPaidInstanceRequest::ToJsonString() const
         string key = "CustomSSLCertId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_customSSLCertId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storeQuantityTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StoreQuantityType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_storeQuantityType, allocator);
     }
 
 
@@ -576,6 +585,22 @@ void CreatePostPaidInstanceRequest::SetCustomSSLCertId(const string& _customSSLC
 bool CreatePostPaidInstanceRequest::CustomSSLCertIdHasBeenSet() const
 {
     return m_customSSLCertIdHasBeenSet;
+}
+
+int64_t CreatePostPaidInstanceRequest::GetStoreQuantityType() const
+{
+    return m_storeQuantityType;
+}
+
+void CreatePostPaidInstanceRequest::SetStoreQuantityType(const int64_t& _storeQuantityType)
+{
+    m_storeQuantityType = _storeQuantityType;
+    m_storeQuantityTypeHasBeenSet = true;
+}
+
+bool CreatePostPaidInstanceRequest::StoreQuantityTypeHasBeenSet() const
+{
+    return m_storeQuantityTypeHasBeenSet;
 }
 
 

@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>预付费购买时长，例如 "1m",就是一个月,取值范围 1m~36m</p>
-                     * @return Period <p>预付费购买时长，例如 "1m",就是一个月,取值范围 1m~36m</p>
+                     * 获取<p>预付费购买时长，例如 &quot;1m&quot;,就是一个月,取值范围 1m~36m</p>
+                     * @return Period <p>预付费购买时长，例如 &quot;1m&quot;,就是一个月,取值范围 1m~36m</p>
                      * 
                      */
                     std::string GetPeriod() const;
 
                     /**
-                     * 设置<p>预付费购买时长，例如 "1m",就是一个月,取值范围 1m~36m</p>
-                     * @param _period <p>预付费购买时长，例如 "1m",就是一个月,取值范围 1m~36m</p>
+                     * 设置<p>预付费购买时长，例如 &quot;1m&quot;,就是一个月,取值范围 1m~36m</p>
+                     * @param _period <p>预付费购买时长，例如 &quot;1m&quot;,就是一个月,取值范围 1m~36m</p>
                      * 
                      */
                     void SetPeriod(const std::string& _period);
@@ -254,15 +254,15 @@ namespace TencentCloud
                     bool KafkaVersionHasBeenSet() const;
 
                     /**
-                     * 获取<p>实例类型: [标准版实例]填写 "standard" (默认), [专业版实例]填写 "profession",[高级版实例]填写"premium"</p>
-                     * @return SpecificationsType <p>实例类型: [标准版实例]填写 "standard" (默认), [专业版实例]填写 "profession",[高级版实例]填写"premium"</p>
+                     * 获取<p>实例类型: [标准版实例]填写 &quot;standard&quot; (默认), [专业版实例]填写 &quot;profession&quot;,[高级版实例]填写&quot;premium&quot;</p>
+                     * @return SpecificationsType <p>实例类型: [标准版实例]填写 &quot;standard&quot; (默认), [专业版实例]填写 &quot;profession&quot;,[高级版实例]填写&quot;premium&quot;</p>
                      * 
                      */
                     std::string GetSpecificationsType() const;
 
                     /**
-                     * 设置<p>实例类型: [标准版实例]填写 "standard" (默认), [专业版实例]填写 "profession",[高级版实例]填写"premium"</p>
-                     * @param _specificationsType <p>实例类型: [标准版实例]填写 "standard" (默认), [专业版实例]填写 "profession",[高级版实例]填写"premium"</p>
+                     * 设置<p>实例类型: [标准版实例]填写 &quot;standard&quot; (默认), [专业版实例]填写 &quot;profession&quot;,[高级版实例]填写&quot;premium&quot;</p>
+                     * @param _specificationsType <p>实例类型: [标准版实例]填写 &quot;standard&quot; (默认), [专业版实例]填写 &quot;profession&quot;,[高级版实例]填写&quot;premium&quot;</p>
                      * 
                      */
                     void SetSpecificationsType(const std::string& _specificationsType);
@@ -359,15 +359,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取<p>专业版/高级版实例磁盘类型，标准版实例不需要填写。"CLOUD_SSD"：SSD云硬盘；"CLOUD_BASIC"：高性能云硬盘。不传默认为 "CLOUD_BASIC"</p>
-                     * @return DiskType <p>专业版/高级版实例磁盘类型，标准版实例不需要填写。"CLOUD_SSD"：SSD云硬盘；"CLOUD_BASIC"：高性能云硬盘。不传默认为 "CLOUD_BASIC"</p>
+                     * 获取<p>专业版/高级版实例磁盘类型，标准版实例不需要填写。&quot;CLOUD_SSD&quot;：SSD云硬盘；&quot;CLOUD_BASIC&quot;：高性能云硬盘。不传默认为 &quot;CLOUD_BASIC&quot;</p>
+                     * @return DiskType <p>专业版/高级版实例磁盘类型，标准版实例不需要填写。&quot;CLOUD_SSD&quot;：SSD云硬盘；&quot;CLOUD_BASIC&quot;：高性能云硬盘。不传默认为 &quot;CLOUD_BASIC&quot;</p>
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置<p>专业版/高级版实例磁盘类型，标准版实例不需要填写。"CLOUD_SSD"：SSD云硬盘；"CLOUD_BASIC"：高性能云硬盘。不传默认为 "CLOUD_BASIC"</p>
-                     * @param _diskType <p>专业版/高级版实例磁盘类型，标准版实例不需要填写。"CLOUD_SSD"：SSD云硬盘；"CLOUD_BASIC"：高性能云硬盘。不传默认为 "CLOUD_BASIC"</p>
+                     * 设置<p>专业版/高级版实例磁盘类型，标准版实例不需要填写。&quot;CLOUD_SSD&quot;：SSD云硬盘；&quot;CLOUD_BASIC&quot;：高性能云硬盘。不传默认为 &quot;CLOUD_BASIC&quot;</p>
+                     * @param _diskType <p>专业版/高级版实例磁盘类型，标准版实例不需要填写。&quot;CLOUD_SSD&quot;：SSD云硬盘；&quot;CLOUD_BASIC&quot;：高性能云硬盘。不传默认为 &quot;CLOUD_BASIC&quot;</p>
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -526,6 +526,27 @@ namespace TencentCloud
                      */
                     bool CustomSSLCertIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>弹性存储开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值：0</p>
+                     * @return StoreQuantityType <p>弹性存储开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    int64_t GetStoreQuantityType() const;
+
+                    /**
+                     * 设置<p>弹性存储开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值：0</p>
+                     * @param _storeQuantityType <p>弹性存储开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    void SetStoreQuantityType(const int64_t& _storeQuantityType);
+
+                    /**
+                     * 判断参数 StoreQuantityType 是否已赋值
+                     * @return StoreQuantityType 是否已赋值
+                     * 
+                     */
+                    bool StoreQuantityTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -541,7 +562,7 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * <p>预付费购买时长，例如 "1m",就是一个月,取值范围 1m~36m</p>
+                     * <p>预付费购买时长，例如 &quot;1m&quot;,就是一个月,取值范围 1m~36m</p>
                      */
                     std::string m_period;
                     bool m_periodHasBeenSet;
@@ -589,7 +610,7 @@ namespace TencentCloud
                     bool m_kafkaVersionHasBeenSet;
 
                     /**
-                     * <p>实例类型: [标准版实例]填写 "standard" (默认), [专业版实例]填写 "profession",[高级版实例]填写"premium"</p>
+                     * <p>实例类型: [标准版实例]填写 &quot;standard&quot; (默认), [专业版实例]填写 &quot;profession&quot;,[高级版实例]填写&quot;premium&quot;</p>
                      */
                     std::string m_specificationsType;
                     bool m_specificationsTypeHasBeenSet;
@@ -619,7 +640,7 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * <p>专业版/高级版实例磁盘类型，标准版实例不需要填写。"CLOUD_SSD"：SSD云硬盘；"CLOUD_BASIC"：高性能云硬盘。不传默认为 "CLOUD_BASIC"</p>
+                     * <p>专业版/高级版实例磁盘类型，标准版实例不需要填写。&quot;CLOUD_SSD&quot;：SSD云硬盘；&quot;CLOUD_BASIC&quot;：高性能云硬盘。不传默认为 &quot;CLOUD_BASIC&quot;</p>
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
@@ -665,6 +686,12 @@ namespace TencentCloud
                      */
                     std::string m_customSSLCertId;
                     bool m_customSSLCertIdHasBeenSet;
+
+                    /**
+                     * <p>弹性存储开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值：0</p>
+                     */
+                    int64_t m_storeQuantityType;
+                    bool m_storeQuantityTypeHasBeenSet;
 
                 };
             }

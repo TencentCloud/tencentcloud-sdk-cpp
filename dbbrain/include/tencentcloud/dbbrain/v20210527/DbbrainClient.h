@@ -79,6 +79,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeAuditInstanceListResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeAuditLogFilesRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeAuditLogFilesResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeDBAuditLogTopSqlsRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeDBAuditLogTopSqlsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBAutonomyActionRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBAutonomyActionResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBAutonomyActionsRequest.h>
@@ -297,6 +299,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAuditLogFilesResponse> DescribeAuditLogFilesOutcome;
                 typedef std::future<DescribeAuditLogFilesOutcome> DescribeAuditLogFilesOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeAuditLogFilesRequest&, DescribeAuditLogFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBAuditLogTopSqlsResponse> DescribeDBAuditLogTopSqlsOutcome;
+                typedef std::future<DescribeDBAuditLogTopSqlsOutcome> DescribeDBAuditLogTopSqlsOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeDBAuditLogTopSqlsRequest&, DescribeDBAuditLogTopSqlsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBAuditLogTopSqlsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBAutonomyActionResponse> DescribeDBAutonomyActionOutcome;
                 typedef std::future<DescribeDBAutonomyActionOutcome> DescribeDBAutonomyActionOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDBAutonomyActionRequest&, DescribeDBAutonomyActionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBAutonomyActionAsyncHandler;
@@ -731,6 +736,15 @@ namespace TencentCloud
                 DescribeAuditLogFilesOutcome DescribeAuditLogFiles(const Model::DescribeAuditLogFilesRequest &request);
                 void DescribeAuditLogFilesAsync(const Model::DescribeAuditLogFilesRequest& request, const DescribeAuditLogFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAuditLogFilesOutcomeCallable DescribeAuditLogFilesCallable(const Model::DescribeAuditLogFilesRequest& request);
+
+                /**
+                 *按照Sql模板+schema的聚合方式，统计排序指定时间段内的top慢sql。
+                 * @param req DescribeDBAuditLogTopSqlsRequest
+                 * @return DescribeDBAuditLogTopSqlsOutcome
+                 */
+                DescribeDBAuditLogTopSqlsOutcome DescribeDBAuditLogTopSqls(const Model::DescribeDBAuditLogTopSqlsRequest &request);
+                void DescribeDBAuditLogTopSqlsAsync(const Model::DescribeDBAuditLogTopSqlsRequest& request, const DescribeDBAuditLogTopSqlsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBAuditLogTopSqlsOutcomeCallable DescribeDBAuditLogTopSqlsCallable(const Model::DescribeDBAuditLogTopSqlsRequest& request);
 
                 /**
                  *自治中心-查询自治事件任务详情。

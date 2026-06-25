@@ -57,6 +57,7 @@ set(mna_public_header_model
   include/tencentcloud/mna/v20210119/model/UpdateApplicationInfoRequest.h
   include/tencentcloud/mna/v20210119/model/GetPublicKeyRequest.h
   include/tencentcloud/mna/v20210119/model/GetHardwareInfoRequest.h
+  include/tencentcloud/mna/v20210119/model/GatewayInfo.h
   include/tencentcloud/mna/v20210119/model/GetFlowStatisticByGroupResponse.h
   include/tencentcloud/mna/v20210119/model/GetNetMonitorResponse.h
   include/tencentcloud/mna/v20210119/model/GetFlowStatisticByNameResponse.h
@@ -65,6 +66,7 @@ set(mna_public_header_model
   include/tencentcloud/mna/v20210119/model/GetVendorHardwareRequest.h
   include/tencentcloud/mna/v20210119/model/CreateEncryptedKeyRequest.h
   include/tencentcloud/mna/v20210119/model/DeleteDeviceRequest.h
+  include/tencentcloud/mna/v20210119/model/GetGatewayListRequest.h
   include/tencentcloud/mna/v20210119/model/DeleteGroupRequest.h
   include/tencentcloud/mna/v20210119/model/CreateEncryptedKeyResponse.h
   include/tencentcloud/mna/v20210119/model/UpdateL3SwitchResponse.h
@@ -120,6 +122,7 @@ set(mna_public_header_model
   include/tencentcloud/mna/v20210119/model/GetNetMonitorRequest.h
   include/tencentcloud/mna/v20210119/model/GetNetMonitorByNameRequest.h
   include/tencentcloud/mna/v20210119/model/GetGroupListResponse.h
+  include/tencentcloud/mna/v20210119/model/GetGatewayListResponse.h
   include/tencentcloud/mna/v20210119/model/UpdateApplicationInfoResponse.h
   include/tencentcloud/mna/v20210119/model/OrderFlowPackageResponse.h
   include/tencentcloud/mna/v20210119/model/UpdateDeviceResponse.h
@@ -190,6 +193,7 @@ set(mna_src
   src/v20210119/model/UpdateApplicationInfoRequest.cpp
   src/v20210119/model/GetPublicKeyRequest.cpp
   src/v20210119/model/GetHardwareInfoRequest.cpp
+  src/v20210119/model/GatewayInfo.cpp
   src/v20210119/model/GetFlowStatisticByGroupResponse.cpp
   src/v20210119/model/GetNetMonitorResponse.cpp
   src/v20210119/model/GetFlowStatisticByNameResponse.cpp
@@ -198,6 +202,7 @@ set(mna_src
   src/v20210119/model/GetVendorHardwareRequest.cpp
   src/v20210119/model/CreateEncryptedKeyRequest.cpp
   src/v20210119/model/DeleteDeviceRequest.cpp
+  src/v20210119/model/GetGatewayListRequest.cpp
   src/v20210119/model/DeleteGroupRequest.cpp
   src/v20210119/model/CreateEncryptedKeyResponse.cpp
   src/v20210119/model/UpdateL3SwitchResponse.cpp
@@ -253,6 +258,7 @@ set(mna_src
   src/v20210119/model/GetNetMonitorRequest.cpp
   src/v20210119/model/GetNetMonitorByNameRequest.cpp
   src/v20210119/model/GetGroupListResponse.cpp
+  src/v20210119/model/GetGatewayListResponse.cpp
   src/v20210119/model/UpdateApplicationInfoResponse.cpp
   src/v20210119/model/OrderFlowPackageResponse.cpp
   src/v20210119/model/UpdateDeviceResponse.cpp

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取账号名，可输入1 - 32个字符。
-                     * @return User 账号名，可输入1 - 32个字符。
+                     * 获取<p>账号名，可输入1 - 32个字符。</p>
+                     * @return User <p>账号名，可输入1 - 32个字符。</p>
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
-                     * 设置账号名，可输入1 - 32个字符。
-                     * @param _user 账号名，可输入1 - 32个字符。
+                     * 设置<p>账号名，可输入1 - 32个字符。</p>
+                     * @param _user <p>账号名，可输入1 - 32个字符。</p>
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -68,27 +68,15 @@ namespace TencentCloud
                     bool UserHasBeenSet() const;
 
                     /**
-                     * 获取账号的主机。
-说明：
-1. IP 形式，支持填入%。
-2. 多个主机以分隔符分隔，分隔符支持;,|换行符和空格。
-                     * @return Host 账号的主机。
-说明：
-1. IP 形式，支持填入%。
-2. 多个主机以分隔符分隔，分隔符支持;,|换行符和空格。
+                     * 获取<p>账号的主机。</p><p>IP 形式，支持填入%。</p>
+                     * @return Host <p>账号的主机。</p><p>IP 形式，支持填入%。</p>
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置账号的主机。
-说明：
-1. IP 形式，支持填入%。
-2. 多个主机以分隔符分隔，分隔符支持;,|换行符和空格。
-                     * @param _host 账号的主机。
-说明：
-1. IP 形式，支持填入%。
-2. 多个主机以分隔符分隔，分隔符支持;,|换行符和空格。
+                     * 设置<p>账号的主机。</p><p>IP 形式，支持填入%。</p>
+                     * @param _host <p>账号的主机。</p><p>IP 形式，支持填入%。</p>
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -103,16 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 账号名，可输入1 - 32个字符。
+                     * <p>账号名，可输入1 - 32个字符。</p>
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
-                     * 账号的主机。
-说明：
-1. IP 形式，支持填入%。
-2. 多个主机以分隔符分隔，分隔符支持;,|换行符和空格。
+                     * <p>账号的主机。</p><p>IP 形式，支持填入%。</p>
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;

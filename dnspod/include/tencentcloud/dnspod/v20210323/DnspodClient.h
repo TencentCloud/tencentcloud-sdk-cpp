@@ -99,6 +99,8 @@
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainGroupListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainListRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainListResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeDomainLogFilterFileRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeDomainLogFilterFileResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainLogListRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainLogListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainPreviewRequest.h>
@@ -343,6 +345,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainListResponse> DescribeDomainListOutcome;
                 typedef std::future<DescribeDomainListOutcome> DescribeDomainListOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeDomainListRequest&, DescribeDomainListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDomainLogFilterFileResponse> DescribeDomainLogFilterFileOutcome;
+                typedef std::future<DescribeDomainLogFilterFileOutcome> DescribeDomainLogFilterFileOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeDomainLogFilterFileRequest&, DescribeDomainLogFilterFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainLogFilterFileAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDomainLogListResponse> DescribeDomainLogListOutcome;
                 typedef std::future<DescribeDomainLogListOutcome> DescribeDomainLogListOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeDomainLogListRequest&, DescribeDomainLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainLogListAsyncHandler;
@@ -865,6 +870,15 @@ namespace TencentCloud
                 DescribeDomainListOutcome DescribeDomainList(const Model::DescribeDomainListRequest &request);
                 void DescribeDomainListAsync(const Model::DescribeDomainListRequest& request, const DescribeDomainListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDomainListOutcomeCallable DescribeDomainListCallable(const Model::DescribeDomainListRequest& request);
+
+                /**
+                 *获取域名操作日志导出文件下载地址
+                 * @param req DescribeDomainLogFilterFileRequest
+                 * @return DescribeDomainLogFilterFileOutcome
+                 */
+                DescribeDomainLogFilterFileOutcome DescribeDomainLogFilterFile(const Model::DescribeDomainLogFilterFileRequest &request);
+                void DescribeDomainLogFilterFileAsync(const Model::DescribeDomainLogFilterFileRequest& request, const DescribeDomainLogFilterFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDomainLogFilterFileOutcomeCallable DescribeDomainLogFilterFileCallable(const Model::DescribeDomainLogFilterFileRequest& request);
 
                 /**
                  *获取域名日志

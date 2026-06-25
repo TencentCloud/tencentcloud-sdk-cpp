@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取全球加速实例ID。
-                     * @return GlobalAcceleratorId 全球加速实例ID。
+                     * 获取<p>全球加速实例ID。</p>
+                     * @return GlobalAcceleratorId <p>全球加速实例ID。</p>
                      * 
                      */
                     std::string GetGlobalAcceleratorId() const;
 
                     /**
-                     * 设置全球加速实例ID。
-                     * @param _globalAcceleratorId 全球加速实例ID。
+                     * 设置<p>全球加速实例ID。</p>
+                     * @param _globalAcceleratorId <p>全球加速实例ID。</p>
                      * 
                      */
                     void SetGlobalAcceleratorId(const std::string& _globalAcceleratorId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool GlobalAcceleratorIdHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0。
-                     * @return Offset 偏移量，默认为0。
+                     * 获取<p>偏移量，默认为0。</p>
+                     * @return Offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0。
-                     * @param _offset 偏移量，默认为0。
+                     * 设置<p>偏移量，默认为0。</p>
+                     * @param _offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为20，最大值为100。
-                     * @return Limit 返回数量，默认为20，最大值为100。
+                     * 获取<p>返回数量，默认为10，最大值为10。</p>
+                     * @return Limit <p>返回数量，默认为10，最大值为10。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为20，最大值为100。
-                     * @param _limit 返回数量，默认为20，最大值为100。
+                     * 设置<p>返回数量，默认为10，最大值为10。</p>
+                     * @param _limit <p>返回数量，默认为10，最大值为10。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件。  endpoint-group-id- String -（过滤条件）终端节点组实例ID。endpoint-group-type- String -（过滤条件）终端节点组实例类型。
-                     * @return Filters 过滤条件。  endpoint-group-id- String -（过滤条件）终端节点组实例ID。endpoint-group-type- String -（过滤条件）终端节点组实例类型。
+                     * 获取<p>过滤条件。  endpoint-group-id- String -（过滤条件）终端节点组实例ID。endpoint-group-type- String -（过滤条件）终端节点组实例类型。</p>
+                     * @return Filters <p>过滤条件。  endpoint-group-id- String -（过滤条件）终端节点组实例ID。endpoint-group-type- String -（过滤条件）终端节点组实例类型。</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件。  endpoint-group-id- String -（过滤条件）终端节点组实例ID。endpoint-group-type- String -（过滤条件）终端节点组实例类型。
-                     * @param _filters 过滤条件。  endpoint-group-id- String -（过滤条件）终端节点组实例ID。endpoint-group-type- String -（过滤条件）终端节点组实例类型。
+                     * 设置<p>过滤条件。  endpoint-group-id- String -（过滤条件）终端节点组实例ID。endpoint-group-type- String -（过滤条件）终端节点组实例类型。</p>
+                     * @param _filters <p>过滤条件。  endpoint-group-id- String -（过滤条件）终端节点组实例ID。endpoint-group-type- String -（过滤条件）终端节点组实例类型。</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -130,25 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 全球加速实例ID。
+                     * <p>全球加速实例ID。</p>
                      */
                     std::string m_globalAcceleratorId;
                     bool m_globalAcceleratorIdHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0。
+                     * <p>偏移量，默认为0。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，默认为20，最大值为100。
+                     * <p>返回数量，默认为10，最大值为10。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 过滤条件。  endpoint-group-id- String -（过滤条件）终端节点组实例ID。endpoint-group-type- String -（过滤条件）终端节点组实例类型。
+                     * <p>过滤条件。  endpoint-group-id- String -（过滤条件）终端节点组实例ID。endpoint-group-type- String -（过滤条件）终端节点组实例类型。</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

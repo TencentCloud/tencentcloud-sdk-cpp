@@ -49,18 +49,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取key信息组
+                     * 获取<p>key信息组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Key key信息组
+                     * @return Key <p>key信息组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Key GetKey() const;
 
                     /**
-                     * 设置key信息组
+                     * 设置<p>key信息组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _key key信息组
+                     * @param _key <p>key信息组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,18 +74,18 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取Value信息组
+                     * 获取<p>Value信息组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Value Value信息组
+                     * @return Value <p>Value信息组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Value GetValue() const;
 
                     /**
-                     * 设置Value信息组
+                     * 设置<p>Value信息组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _value Value信息组
+                     * @param _value <p>Value信息组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,21 +98,48 @@ namespace TencentCloud
                      */
                     bool ValueHasBeenSet() const;
 
+                    /**
+                     * 获取<p>返回这个字段是否比对审核通过</p><p>默认值：false</p>
+                     * @return AuditResult <p>返回这个字段是否比对审核通过</p><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetAuditResult() const;
+
+                    /**
+                     * 设置<p>返回这个字段是否比对审核通过</p><p>默认值：false</p>
+                     * @param _auditResult <p>返回这个字段是否比对审核通过</p><p>默认值：false</p>
+                     * 
+                     */
+                    void SetAuditResult(const bool& _auditResult);
+
+                    /**
+                     * 判断参数 AuditResult 是否已赋值
+                     * @return AuditResult 是否已赋值
+                     * 
+                     */
+                    bool AuditResultHasBeenSet() const;
+
                 private:
 
                     /**
-                     * key信息组
+                     * <p>key信息组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Key m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * Value信息组
+                     * <p>Value信息组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Value m_value;
                     bool m_valueHasBeenSet;
+
+                    /**
+                     * <p>返回这个字段是否比对审核通过</p><p>默认值：false</p>
+                     */
+                    bool m_auditResult;
+                    bool m_auditResultHasBeenSet;
 
                 };
             }

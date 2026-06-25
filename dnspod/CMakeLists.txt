@@ -38,6 +38,7 @@ set(dnspod_public_header_model
   include/tencentcloud/dnspod/v20210323/model/CreateRecordBatchResponse.h
   include/tencentcloud/dnspod/v20210323/model/DescribeSnapshotListResponse.h
   include/tencentcloud/dnspod/v20210323/model/CreateDomainBatchRecord.h
+  include/tencentcloud/dnspod/v20210323/model/DescribeDomainLogFilterFileRequest.h
   include/tencentcloud/dnspod/v20210323/model/DomainAnalyticsInfo.h
   include/tencentcloud/dnspod/v20210323/model/ModifyRecordGroupRequest.h
   include/tencentcloud/dnspod/v20210323/model/DescribeVASStatisticResponse.h
@@ -181,6 +182,7 @@ set(dnspod_public_header_model
   include/tencentcloud/dnspod/v20210323/model/DescribeVasListRequest.h
   include/tencentcloud/dnspod/v20210323/model/CreateLineGroupCopyResponse.h
   include/tencentcloud/dnspod/v20210323/model/CreateDomainAliasResponse.h
+  include/tencentcloud/dnspod/v20210323/model/DescribeDomainLogFilterFileResponse.h
   include/tencentcloud/dnspod/v20210323/model/DescribeRecordListRequest.h
   include/tencentcloud/dnspod/v20210323/model/PayOrderWithBalanceRequest.h
   include/tencentcloud/dnspod/v20210323/model/CreateTXTRecordRequest.h
@@ -297,6 +299,7 @@ set(dnspod_src
   src/v20210323/model/CreateRecordBatchResponse.cpp
   src/v20210323/model/DescribeSnapshotListResponse.cpp
   src/v20210323/model/CreateDomainBatchRecord.cpp
+  src/v20210323/model/DescribeDomainLogFilterFileRequest.cpp
   src/v20210323/model/DomainAnalyticsInfo.cpp
   src/v20210323/model/ModifyRecordGroupRequest.cpp
   src/v20210323/model/DescribeVASStatisticResponse.cpp
@@ -440,6 +443,7 @@ set(dnspod_src
   src/v20210323/model/DescribeVasListRequest.cpp
   src/v20210323/model/CreateLineGroupCopyResponse.cpp
   src/v20210323/model/CreateDomainAliasResponse.cpp
+  src/v20210323/model/DescribeDomainLogFilterFileResponse.cpp
   src/v20210323/model/DescribeRecordListRequest.cpp
   src/v20210323/model/PayOrderWithBalanceRequest.cpp
   src/v20210323/model/CreateTXTRecordRequest.cpp

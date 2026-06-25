@@ -43,7 +43,10 @@ CloneInstancesRequest::CloneInstancesRequest() :
     m_templateIdHasBeenSet(false),
     m_alarmPolicyListHasBeenSet(false),
     m_cloneTimeHasBeenSet(false),
-    m_encryptPasswordHasBeenSet(false)
+    m_encryptPasswordHasBeenSet(false),
+    m_passwordPolicyHasBeenSet(false),
+    m_enableSSLHasBeenSet(false),
+    m_sSLBindPrivateIPv4HasBeenSet(false)
 {
 }
 
@@ -244,6 +247,31 @@ string CloneInstancesRequest::ToJsonString() const
         string key = "EncryptPassword";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_encryptPassword, allocator);
+    }
+
+    if (m_passwordPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PasswordPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_passwordPolicy.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_enableSSLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableSSL";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableSSL, allocator);
+    }
+
+    if (m_sSLBindPrivateIPv4HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SSLBindPrivateIPv4";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sSLBindPrivateIPv4, allocator);
     }
 
 
@@ -588,6 +616,54 @@ void CloneInstancesRequest::SetEncryptPassword(const bool& _encryptPassword)
 bool CloneInstancesRequest::EncryptPasswordHasBeenSet() const
 {
     return m_encryptPasswordHasBeenSet;
+}
+
+PasswordPolicy CloneInstancesRequest::GetPasswordPolicy() const
+{
+    return m_passwordPolicy;
+}
+
+void CloneInstancesRequest::SetPasswordPolicy(const PasswordPolicy& _passwordPolicy)
+{
+    m_passwordPolicy = _passwordPolicy;
+    m_passwordPolicyHasBeenSet = true;
+}
+
+bool CloneInstancesRequest::PasswordPolicyHasBeenSet() const
+{
+    return m_passwordPolicyHasBeenSet;
+}
+
+bool CloneInstancesRequest::GetEnableSSL() const
+{
+    return m_enableSSL;
+}
+
+void CloneInstancesRequest::SetEnableSSL(const bool& _enableSSL)
+{
+    m_enableSSL = _enableSSL;
+    m_enableSSLHasBeenSet = true;
+}
+
+bool CloneInstancesRequest::EnableSSLHasBeenSet() const
+{
+    return m_enableSSLHasBeenSet;
+}
+
+bool CloneInstancesRequest::GetSSLBindPrivateIPv4() const
+{
+    return m_sSLBindPrivateIPv4;
+}
+
+void CloneInstancesRequest::SetSSLBindPrivateIPv4(const bool& _sSLBindPrivateIPv4)
+{
+    m_sSLBindPrivateIPv4 = _sSLBindPrivateIPv4;
+    m_sSLBindPrivateIPv4HasBeenSet = true;
+}
+
+bool CloneInstancesRequest::SSLBindPrivateIPv4HasBeenSet() const
+{
+    return m_sSLBindPrivateIPv4HasBeenSet;
 }
 
 

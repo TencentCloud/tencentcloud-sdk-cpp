@@ -484,6 +484,27 @@ namespace TencentCloud
                      */
                     bool CustomSSLCertIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>弹性存储开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值：0</p>
+                     * @return StoreQuantityType <p>弹性存储开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    int64_t GetStoreQuantityType() const;
+
+                    /**
+                     * 设置<p>弹性存储开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值：0</p>
+                     * @param _storeQuantityType <p>弹性存储开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    void SetStoreQuantityType(const int64_t& _storeQuantityType);
+
+                    /**
+                     * 判断参数 StoreQuantityType 是否已赋值
+                     * @return StoreQuantityType 是否已赋值
+                     * 
+                     */
+                    bool StoreQuantityTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -611,6 +632,12 @@ namespace TencentCloud
                      */
                     std::string m_customSSLCertId;
                     bool m_customSSLCertIdHasBeenSet;
+
+                    /**
+                     * <p>弹性存储开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值：0</p>
+                     */
+                    int64_t m_storeQuantityType;
+                    bool m_storeQuantityTypeHasBeenSet;
 
                 };
             }

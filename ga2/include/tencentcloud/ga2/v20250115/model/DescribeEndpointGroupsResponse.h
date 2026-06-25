@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合条件的终端节点组。
-                     * @return EndpointGroupConfigurationSet 符合条件的终端节点组。
+                     * 获取<p>符合条件的终端节点组。</p>
+                     * @return EndpointGroupConfigurationSet <p>符合条件的终端节点组。</p>
                      * 
                      */
                     std::vector<EndpointGroupConfigurationSet> GetEndpointGroupConfigurationSet() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool EndpointGroupConfigurationSetHasBeenSet() const;
 
                     /**
-                     * 获取符合条件的实例个数。
-                     * @return TotalCount 符合条件的实例个数。
+                     * 获取<p>符合条件的实例个数。</p>
+                     * @return TotalCount <p>符合条件的实例个数。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合条件的终端节点组。
+                     * <p>符合条件的终端节点组。</p>
                      */
                     std::vector<EndpointGroupConfigurationSet> m_endpointGroupConfigurationSet;
                     bool m_endpointGroupConfigurationSetHasBeenSet;
 
                     /**
-                     * 符合条件的实例个数。
+                     * <p>符合条件的实例个数。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

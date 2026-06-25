@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取【必填】需要录制的网页URL
-                     * @return RecordUrl 【必填】需要录制的网页URL
+                     * 获取<p>【必填】需要录制的网页URL</p>
+                     * @return RecordUrl <p>【必填】需要录制的网页URL</p>
                      * 
                      */
                     std::string GetRecordUrl() const;
 
                     /**
-                     * 设置【必填】需要录制的网页URL
-                     * @param _recordUrl 【必填】需要录制的网页URL
+                     * 设置<p>【必填】需要录制的网页URL</p>
+                     * @param _recordUrl <p>【必填】需要录制的网页URL</p>
                      * 
                      */
                     void SetRecordUrl(const std::string& _recordUrl);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool RecordUrlHasBeenSet() const;
 
                     /**
-                     * 获取【必填】云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储；输出文件的存储格式仅支持hls或mp4
-                     * @return StorageParams 【必填】云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储；输出文件的存储格式仅支持hls或mp4
+                     * 获取<p>【必填】云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储；输出文件的存储格式仅支持hls或mp4</p>
+                     * @return StorageParams <p>【必填】云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储；输出文件的存储格式仅支持hls或mp4</p>
                      * 
                      */
                     StorageParams GetStorageParams() const;
 
                     /**
-                     * 设置【必填】云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储；输出文件的存储格式仅支持hls或mp4
-                     * @param _storageParams 【必填】云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储；输出文件的存储格式仅支持hls或mp4
+                     * 设置<p>【必填】云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储；输出文件的存储格式仅支持hls或mp4</p>
+                     * @param _storageParams <p>【必填】云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储；输出文件的存储格式仅支持hls或mp4</p>
                      * 
                      */
                     void SetStorageParams(const StorageParams& _storageParams);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool StorageParamsHasBeenSet() const;
 
                     /**
-                     * 获取【必填】TRTC的SdkAppId
-                     * @return SdkAppId 【必填】TRTC的SdkAppId
+                     * 获取<p>【必填】TRTC的SdkAppId</p>
+                     * @return SdkAppId <p>【必填】TRTC的SdkAppId</p>
                      * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
-                     * 设置【必填】TRTC的SdkAppId
-                     * @param _sdkAppId 【必填】TRTC的SdkAppId
+                     * 设置<p>【必填】TRTC的SdkAppId</p>
+                     * @param _sdkAppId <p>【必填】TRTC的SdkAppId</p>
                      * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取录制最大时长限制， 单位 s, 合法取值范围[1800, 86400], 默认 86400s(24 小时)
-                     * @return MaxDurationLimit 录制最大时长限制， 单位 s, 合法取值范围[1800, 86400], 默认 86400s(24 小时)
+                     * 获取<p>录制最大时长限制， 单位 s, 合法取值范围[1800, 86400], 默认 86400s(24 小时)</p>
+                     * @return MaxDurationLimit <p>录制最大时长限制， 单位 s, 合法取值范围[1800, 86400], 默认 86400s(24 小时)</p>
                      * 
                      */
                     uint64_t GetMaxDurationLimit() const;
 
                     /**
-                     * 设置录制最大时长限制， 单位 s, 合法取值范围[1800, 86400], 默认 86400s(24 小时)
-                     * @param _maxDurationLimit 录制最大时长限制， 单位 s, 合法取值范围[1800, 86400], 默认 86400s(24 小时)
+                     * 设置<p>录制最大时长限制， 单位 s, 合法取值范围[1800, 86400], 默认 86400s(24 小时)</p>
+                     * @param _maxDurationLimit <p>录制最大时长限制， 单位 s, 合法取值范围[1800, 86400], 默认 86400s(24 小时)</p>
                      * 
                      */
                     void SetMaxDurationLimit(const uint64_t& _maxDurationLimit);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool MaxDurationLimitHasBeenSet() const;
 
                     /**
-                     * 获取页面录制视频参数
-                     * @return WebRecordVideoParams 页面录制视频参数
+                     * 获取<p>页面录制视频参数</p>
+                     * @return WebRecordVideoParams <p>页面录制视频参数</p>
                      * 
                      */
                     WebRecordVideoParams GetWebRecordVideoParams() const;
 
                     /**
-                     * 设置页面录制视频参数
-                     * @param _webRecordVideoParams 页面录制视频参数
+                     * 设置<p>页面录制视频参数</p>
+                     * @param _webRecordVideoParams <p>页面录制视频参数</p>
                      * 
                      */
                     void SetWebRecordVideoParams(const WebRecordVideoParams& _webRecordVideoParams);
@@ -152,19 +152,15 @@ namespace TencentCloud
                     bool WebRecordVideoParamsHasBeenSet() const;
 
                     /**
-                     * 获取当对重复任务敏感时，请关注此值： 为了避免任务在短时间内重复发起，导致任务重复
-传入录制RecordId来标识此次任务， 小于32字节，若携带RecordId发起两次以上的开始录制请求，任务只会启动一个，第二个报错FailedOperation.TaskExist。注意StartWebRecord调用失败时而非FailedOperation.TaskExist错误，请更换RecordId重新发起。
-                     * @return RecordId 当对重复任务敏感时，请关注此值： 为了避免任务在短时间内重复发起，导致任务重复
-传入录制RecordId来标识此次任务， 小于32字节，若携带RecordId发起两次以上的开始录制请求，任务只会启动一个，第二个报错FailedOperation.TaskExist。注意StartWebRecord调用失败时而非FailedOperation.TaskExist错误，请更换RecordId重新发起。
+                     * 获取<p>当对重复任务敏感时，请关注此值： 为了避免任务在短时间内重复发起，导致任务重复<br>传入录制RecordId来标识此次任务， 小于32字节，若携带RecordId发起两次以上的开始录制请求，任务只会启动一个，第二个报错FailedOperation.TaskExist。注意StartWebRecord调用失败时而非FailedOperation.TaskExist错误，请更换RecordId重新发起。</p>
+                     * @return RecordId <p>当对重复任务敏感时，请关注此值： 为了避免任务在短时间内重复发起，导致任务重复<br>传入录制RecordId来标识此次任务， 小于32字节，若携带RecordId发起两次以上的开始录制请求，任务只会启动一个，第二个报错FailedOperation.TaskExist。注意StartWebRecord调用失败时而非FailedOperation.TaskExist错误，请更换RecordId重新发起。</p>
                      * 
                      */
                     std::string GetRecordId() const;
 
                     /**
-                     * 设置当对重复任务敏感时，请关注此值： 为了避免任务在短时间内重复发起，导致任务重复
-传入录制RecordId来标识此次任务， 小于32字节，若携带RecordId发起两次以上的开始录制请求，任务只会启动一个，第二个报错FailedOperation.TaskExist。注意StartWebRecord调用失败时而非FailedOperation.TaskExist错误，请更换RecordId重新发起。
-                     * @param _recordId 当对重复任务敏感时，请关注此值： 为了避免任务在短时间内重复发起，导致任务重复
-传入录制RecordId来标识此次任务， 小于32字节，若携带RecordId发起两次以上的开始录制请求，任务只会启动一个，第二个报错FailedOperation.TaskExist。注意StartWebRecord调用失败时而非FailedOperation.TaskExist错误，请更换RecordId重新发起。
+                     * 设置<p>当对重复任务敏感时，请关注此值： 为了避免任务在短时间内重复发起，导致任务重复<br>传入录制RecordId来标识此次任务， 小于32字节，若携带RecordId发起两次以上的开始录制请求，任务只会启动一个，第二个报错FailedOperation.TaskExist。注意StartWebRecord调用失败时而非FailedOperation.TaskExist错误，请更换RecordId重新发起。</p>
+                     * @param _recordId <p>当对重复任务敏感时，请关注此值： 为了避免任务在短时间内重复发起，导致任务重复<br>传入录制RecordId来标识此次任务， 小于32字节，若携带RecordId发起两次以上的开始录制请求，任务只会启动一个，第二个报错FailedOperation.TaskExist。注意StartWebRecord调用失败时而非FailedOperation.TaskExist错误，请更换RecordId重新发起。</p>
                      * 
                      */
                     void SetRecordId(const std::string& _recordId);
@@ -177,15 +173,15 @@ namespace TencentCloud
                     bool RecordIdHasBeenSet() const;
 
                     /**
-                     * 获取若您想要推流到CDN，可以使用PublishCdnParams.N参数设置，支持最多同时推流到10个CDN地址。若转推地址是腾讯云CDN时，请将IsTencentCdn明确设置为1
-                     * @return PublishCdnParams 若您想要推流到CDN，可以使用PublishCdnParams.N参数设置，支持最多同时推流到10个CDN地址。若转推地址是腾讯云CDN时，请将IsTencentCdn明确设置为1
+                     * 获取<p>若您想要推流到CDN，可以使用PublishCdnParams.N参数设置，支持最多同时推流到10个CDN地址。若转推地址是腾讯云CDN时，请将IsTencentCdn明确设置为1</p>
+                     * @return PublishCdnParams <p>若您想要推流到CDN，可以使用PublishCdnParams.N参数设置，支持最多同时推流到10个CDN地址。若转推地址是腾讯云CDN时，请将IsTencentCdn明确设置为1</p>
                      * 
                      */
                     std::vector<McuPublishCdnParam> GetPublishCdnParams() const;
 
                     /**
-                     * 设置若您想要推流到CDN，可以使用PublishCdnParams.N参数设置，支持最多同时推流到10个CDN地址。若转推地址是腾讯云CDN时，请将IsTencentCdn明确设置为1
-                     * @param _publishCdnParams 若您想要推流到CDN，可以使用PublishCdnParams.N参数设置，支持最多同时推流到10个CDN地址。若转推地址是腾讯云CDN时，请将IsTencentCdn明确设置为1
+                     * 设置<p>若您想要推流到CDN，可以使用PublishCdnParams.N参数设置，支持最多同时推流到10个CDN地址。若转推地址是腾讯云CDN时，请将IsTencentCdn明确设置为1</p>
+                     * @param _publishCdnParams <p>若您想要推流到CDN，可以使用PublishCdnParams.N参数设置，支持最多同时推流到10个CDN地址。若转推地址是腾讯云CDN时，请将IsTencentCdn明确设置为1</p>
                      * 
                      */
                     void SetPublishCdnParams(const std::vector<McuPublishCdnParam>& _publishCdnParams);
@@ -198,15 +194,15 @@ namespace TencentCloud
                     bool PublishCdnParamsHasBeenSet() const;
 
                     /**
-                     * 获取录制页面资源加载的超时时间，单位：秒。默认值为 0 秒，该值需大于等于 0秒，且小于等于 60秒。录制页面未启用页面加载超时检测时，请勿设置此参数。
-                     * @return ReadyTimeout 录制页面资源加载的超时时间，单位：秒。默认值为 0 秒，该值需大于等于 0秒，且小于等于 60秒。录制页面未启用页面加载超时检测时，请勿设置此参数。
+                     * 获取<p>录制页面资源加载的超时时间，单位：秒。默认值为 0 秒，该值需大于等于 0秒，且小于等于 60秒。录制页面未启用页面加载超时检测时，请勿设置此参数。</p>
+                     * @return ReadyTimeout <p>录制页面资源加载的超时时间，单位：秒。默认值为 0 秒，该值需大于等于 0秒，且小于等于 60秒。录制页面未启用页面加载超时检测时，请勿设置此参数。</p>
                      * 
                      */
                     uint64_t GetReadyTimeout() const;
 
                     /**
-                     * 设置录制页面资源加载的超时时间，单位：秒。默认值为 0 秒，该值需大于等于 0秒，且小于等于 60秒。录制页面未启用页面加载超时检测时，请勿设置此参数。
-                     * @param _readyTimeout 录制页面资源加载的超时时间，单位：秒。默认值为 0 秒，该值需大于等于 0秒，且小于等于 60秒。录制页面未启用页面加载超时检测时，请勿设置此参数。
+                     * 设置<p>录制页面资源加载的超时时间，单位：秒。默认值为 0 秒，该值需大于等于 0秒，且小于等于 60秒。录制页面未启用页面加载超时检测时，请勿设置此参数。</p>
+                     * @param _readyTimeout <p>录制页面资源加载的超时时间，单位：秒。默认值为 0 秒，该值需大于等于 0秒，且小于等于 60秒。录制页面未启用页面加载超时检测时，请勿设置此参数。</p>
                      * 
                      */
                     void SetReadyTimeout(const uint64_t& _readyTimeout);
@@ -219,15 +215,15 @@ namespace TencentCloud
                     bool ReadyTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取渲染移动模式参数；不准备渲染移动模式页面时，请勿设置此参数。
-                     * @return EmulateMobileParams 渲染移动模式参数；不准备渲染移动模式页面时，请勿设置此参数。
+                     * 获取<p>渲染移动模式参数；不准备渲染移动模式页面时，请勿设置此参数。</p>
+                     * @return EmulateMobileParams <p>渲染移动模式参数；不准备渲染移动模式页面时，请勿设置此参数。</p>
                      * 
                      */
                     EmulateMobileParams GetEmulateMobileParams() const;
 
                     /**
-                     * 设置渲染移动模式参数；不准备渲染移动模式页面时，请勿设置此参数。
-                     * @param _emulateMobileParams 渲染移动模式参数；不准备渲染移动模式页面时，请勿设置此参数。
+                     * 设置<p>渲染移动模式参数；不准备渲染移动模式页面时，请勿设置此参数。</p>
+                     * @param _emulateMobileParams <p>渲染移动模式参数；不准备渲染移动模式页面时，请勿设置此参数。</p>
                      * 
                      */
                     void SetEmulateMobileParams(const EmulateMobileParams& _emulateMobileParams);
@@ -242,56 +238,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 【必填】需要录制的网页URL
+                     * <p>【必填】需要录制的网页URL</p>
                      */
                     std::string m_recordUrl;
                     bool m_recordUrlHasBeenSet;
 
                     /**
-                     * 【必填】云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储；输出文件的存储格式仅支持hls或mp4
+                     * <p>【必填】云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储；输出文件的存储格式仅支持hls或mp4</p>
                      */
                     StorageParams m_storageParams;
                     bool m_storageParamsHasBeenSet;
 
                     /**
-                     * 【必填】TRTC的SdkAppId
+                     * <p>【必填】TRTC的SdkAppId</p>
                      */
                     int64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 录制最大时长限制， 单位 s, 合法取值范围[1800, 86400], 默认 86400s(24 小时)
+                     * <p>录制最大时长限制， 单位 s, 合法取值范围[1800, 86400], 默认 86400s(24 小时)</p>
                      */
                     uint64_t m_maxDurationLimit;
                     bool m_maxDurationLimitHasBeenSet;
 
                     /**
-                     * 页面录制视频参数
+                     * <p>页面录制视频参数</p>
                      */
                     WebRecordVideoParams m_webRecordVideoParams;
                     bool m_webRecordVideoParamsHasBeenSet;
 
                     /**
-                     * 当对重复任务敏感时，请关注此值： 为了避免任务在短时间内重复发起，导致任务重复
-传入录制RecordId来标识此次任务， 小于32字节，若携带RecordId发起两次以上的开始录制请求，任务只会启动一个，第二个报错FailedOperation.TaskExist。注意StartWebRecord调用失败时而非FailedOperation.TaskExist错误，请更换RecordId重新发起。
+                     * <p>当对重复任务敏感时，请关注此值： 为了避免任务在短时间内重复发起，导致任务重复<br>传入录制RecordId来标识此次任务， 小于32字节，若携带RecordId发起两次以上的开始录制请求，任务只会启动一个，第二个报错FailedOperation.TaskExist。注意StartWebRecord调用失败时而非FailedOperation.TaskExist错误，请更换RecordId重新发起。</p>
                      */
                     std::string m_recordId;
                     bool m_recordIdHasBeenSet;
 
                     /**
-                     * 若您想要推流到CDN，可以使用PublishCdnParams.N参数设置，支持最多同时推流到10个CDN地址。若转推地址是腾讯云CDN时，请将IsTencentCdn明确设置为1
+                     * <p>若您想要推流到CDN，可以使用PublishCdnParams.N参数设置，支持最多同时推流到10个CDN地址。若转推地址是腾讯云CDN时，请将IsTencentCdn明确设置为1</p>
                      */
                     std::vector<McuPublishCdnParam> m_publishCdnParams;
                     bool m_publishCdnParamsHasBeenSet;
 
                     /**
-                     * 录制页面资源加载的超时时间，单位：秒。默认值为 0 秒，该值需大于等于 0秒，且小于等于 60秒。录制页面未启用页面加载超时检测时，请勿设置此参数。
+                     * <p>录制页面资源加载的超时时间，单位：秒。默认值为 0 秒，该值需大于等于 0秒，且小于等于 60秒。录制页面未启用页面加载超时检测时，请勿设置此参数。</p>
                      */
                     uint64_t m_readyTimeout;
                     bool m_readyTimeoutHasBeenSet;
 
                     /**
-                     * 渲染移动模式参数；不准备渲染移动模式页面时，请勿设置此参数。
+                     * <p>渲染移动模式参数；不准备渲染移动模式页面时，请勿设置此参数。</p>
                      */
                     EmulateMobileParams m_emulateMobileParams;
                     bool m_emulateMobileParamsHasBeenSet;

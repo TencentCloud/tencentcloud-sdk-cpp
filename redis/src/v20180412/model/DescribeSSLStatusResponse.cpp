@@ -28,7 +28,9 @@ DescribeSSLStatusResponse::DescribeSSLStatusResponse() :
     m_urlExpiredTimeHasBeenSet(false),
     m_sSLConfigHasBeenSet(false),
     m_featureSupportHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_addressTypeHasBeenSet(false),
+    m_encryptAddressHasBeenSet(false)
 {
 }
 
@@ -116,6 +118,26 @@ CoreInternalOutcome DescribeSSLStatusResponse::Deserialize(const string &payload
         m_statusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AddressType") && !rsp["AddressType"].IsNull())
+    {
+        if (!rsp["AddressType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AddressType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_addressType = rsp["AddressType"].GetInt64();
+        m_addressTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EncryptAddress") && !rsp["EncryptAddress"].IsNull())
+    {
+        if (!rsp["EncryptAddress"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EncryptAddress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptAddress = string(rsp["EncryptAddress"].GetString());
+        m_encryptAddressHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +186,22 @@ string DescribeSSLStatusResponse::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_addressTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddressType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_addressType, allocator);
+    }
+
+    if (m_encryptAddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptAddress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encryptAddress.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -226,6 +264,26 @@ int64_t DescribeSSLStatusResponse::GetStatus() const
 bool DescribeSSLStatusResponse::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+int64_t DescribeSSLStatusResponse::GetAddressType() const
+{
+    return m_addressType;
+}
+
+bool DescribeSSLStatusResponse::AddressTypeHasBeenSet() const
+{
+    return m_addressTypeHasBeenSet;
+}
+
+string DescribeSSLStatusResponse::GetEncryptAddress() const
+{
+    return m_encryptAddress;
+}
+
+bool DescribeSSLStatusResponse::EncryptAddressHasBeenSet() const
+{
+    return m_encryptAddressHasBeenSet;
 }
 
 

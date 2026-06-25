@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/redis/v20180412/model/RedisNodeInfo.h>
 #include <tencentcloud/redis/v20180412/model/ResourceTag.h>
+#include <tencentcloud/redis/v20180412/model/PasswordPolicy.h>
 
 
 namespace TencentCloud
@@ -45,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指定待克隆的源实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
-                     * @return InstanceId 指定待克隆的源实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+                     * 获取<p>指定待克隆的源实例 ID。例如：crs-xjhsdj****。请登录<a href="https://console.cloud.tencent.com/redis">Redis控制台</a>在实例列表复制实例 ID。</p>
+                     * @return InstanceId <p>指定待克隆的源实例 ID。例如：crs-xjhsdj****。请登录<a href="https://console.cloud.tencent.com/redis">Redis控制台</a>在实例列表复制实例 ID。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置指定待克隆的源实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
-                     * @param _instanceId 指定待克隆的源实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+                     * 设置<p>指定待克隆的源实例 ID。例如：crs-xjhsdj****。请登录<a href="https://console.cloud.tencent.com/redis">Redis控制台</a>在实例列表复制实例 ID。</p>
+                     * @param _instanceId <p>指定待克隆的源实例 ID。例如：crs-xjhsdj****。请登录<a href="https://console.cloud.tencent.com/redis">Redis控制台</a>在实例列表复制实例 ID。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -66,23 +67,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取单次克隆实例的数量。
-- 包年包月每次购买最大数量为100。
-- 按量计费每次购买最大数量为30。
-                     * @return GoodsNum 单次克隆实例的数量。
-- 包年包月每次购买最大数量为100。
-- 按量计费每次购买最大数量为30。
+                     * 获取<p>单次克隆实例的数量。</p><ul><li>包年包月每次购买最大数量为100。</li><li>按量计费每次购买最大数量为30。</li></ul>
+                     * @return GoodsNum <p>单次克隆实例的数量。</p><ul><li>包年包月每次购买最大数量为100。</li><li>按量计费每次购买最大数量为30。</li></ul>
                      * 
                      */
                     uint64_t GetGoodsNum() const;
 
                     /**
-                     * 设置单次克隆实例的数量。
-- 包年包月每次购买最大数量为100。
-- 按量计费每次购买最大数量为30。
-                     * @param _goodsNum 单次克隆实例的数量。
-- 包年包月每次购买最大数量为100。
-- 按量计费每次购买最大数量为30。
+                     * 设置<p>单次克隆实例的数量。</p><ul><li>包年包月每次购买最大数量为100。</li><li>按量计费每次购买最大数量为30。</li></ul>
+                     * @param _goodsNum <p>单次克隆实例的数量。</p><ul><li>包年包月每次购买最大数量为100。</li><li>按量计费每次购买最大数量为30。</li></ul>
                      * 
                      */
                     void SetGoodsNum(const uint64_t& _goodsNum);
@@ -95,15 +88,15 @@ namespace TencentCloud
                     bool GoodsNumHasBeenSet() const;
 
                     /**
-                     * 获取克隆实例所属的可用区ID。当前所支持的可用区 ID，请参见[地域和可用区](https://cloud.tencent.com/document/product/239/4106) 。
-                     * @return ZoneId 克隆实例所属的可用区ID。当前所支持的可用区 ID，请参见[地域和可用区](https://cloud.tencent.com/document/product/239/4106) 。
+                     * 获取<p>克隆实例所属的可用区ID。当前所支持的可用区 ID，请参见<a href="https://cloud.tencent.com/document/product/239/4106">地域和可用区</a> 。</p>
+                     * @return ZoneId <p>克隆实例所属的可用区ID。当前所支持的可用区 ID，请参见<a href="https://cloud.tencent.com/document/product/239/4106">地域和可用区</a> 。</p>
                      * 
                      */
                     uint64_t GetZoneId() const;
 
                     /**
-                     * 设置克隆实例所属的可用区ID。当前所支持的可用区 ID，请参见[地域和可用区](https://cloud.tencent.com/document/product/239/4106) 。
-                     * @param _zoneId 克隆实例所属的可用区ID。当前所支持的可用区 ID，请参见[地域和可用区](https://cloud.tencent.com/document/product/239/4106) 。
+                     * 设置<p>克隆实例所属的可用区ID。当前所支持的可用区 ID，请参见<a href="https://cloud.tencent.com/document/product/239/4106">地域和可用区</a> 。</p>
+                     * @param _zoneId <p>克隆实例所属的可用区ID。当前所支持的可用区 ID，请参见<a href="https://cloud.tencent.com/document/product/239/4106">地域和可用区</a> 。</p>
                      * 
                      */
                     void SetZoneId(const uint64_t& _zoneId);
@@ -116,15 +109,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取付费方式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul>
-                     * @return BillingMode 付费方式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul>
+                     * 获取<p>付费方式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul></p>
+                     * @return BillingMode <p>付费方式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul></p>
                      * 
                      */
                     int64_t GetBillingMode() const;
 
                     /**
-                     * 设置付费方式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul>
-                     * @param _billingMode 付费方式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul>
+                     * 设置<p>付费方式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul></p>
+                     * @param _billingMode <p>付费方式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul></p>
                      * 
                      */
                     void SetBillingMode(const int64_t& _billingMode);
@@ -137,15 +130,15 @@ namespace TencentCloud
                     bool BillingModeHasBeenSet() const;
 
                     /**
-                     * 获取购买实例时长。<ul><li>单位：月。</li><li>付费方式选择包年包月计费时，取值范围为[1,2,3,4,5,6,7,8,9,10,11,12,24,36,48,60]。</li><li>付费方式选择按量计费时，设置为1。</li></ul>
-                     * @return Period 购买实例时长。<ul><li>单位：月。</li><li>付费方式选择包年包月计费时，取值范围为[1,2,3,4,5,6,7,8,9,10,11,12,24,36,48,60]。</li><li>付费方式选择按量计费时，设置为1。</li></ul>
+                     * 获取<p>购买实例时长。<ul><li>单位：月。</li><li>付费方式选择包年包月计费时，取值范围为[1,2,3,4,5,6,7,8,9,10,11,12,24,36,48,60]。</li><li>付费方式选择按量计费时，设置为1。</li></ul></p>
+                     * @return Period <p>购买实例时长。<ul><li>单位：月。</li><li>付费方式选择包年包月计费时，取值范围为[1,2,3,4,5,6,7,8,9,10,11,12,24,36,48,60]。</li><li>付费方式选择按量计费时，设置为1。</li></ul></p>
                      * 
                      */
                     uint64_t GetPeriod() const;
 
                     /**
-                     * 设置购买实例时长。<ul><li>单位：月。</li><li>付费方式选择包年包月计费时，取值范围为[1,2,3,4,5,6,7,8,9,10,11,12,24,36,48,60]。</li><li>付费方式选择按量计费时，设置为1。</li></ul>
-                     * @param _period 购买实例时长。<ul><li>单位：月。</li><li>付费方式选择包年包月计费时，取值范围为[1,2,3,4,5,6,7,8,9,10,11,12,24,36,48,60]。</li><li>付费方式选择按量计费时，设置为1。</li></ul>
+                     * 设置<p>购买实例时长。<ul><li>单位：月。</li><li>付费方式选择包年包月计费时，取值范围为[1,2,3,4,5,6,7,8,9,10,11,12,24,36,48,60]。</li><li>付费方式选择按量计费时，设置为1。</li></ul></p>
+                     * @param _period <p>购买实例时长。<ul><li>单位：月。</li><li>付费方式选择包年包月计费时，取值范围为[1,2,3,4,5,6,7,8,9,10,11,12,24,36,48,60]。</li><li>付费方式选择按量计费时，设置为1。</li></ul></p>
                      * 
                      */
                     void SetPeriod(const uint64_t& _period);
@@ -158,15 +151,15 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取安全组ID。请通过 [DescribeInstanceSecurityGroup](https://cloud.tencent.com/document/product/239/34447) 接口获取实例的安全组 ID。
-                     * @return SecurityGroupIdList 安全组ID。请通过 [DescribeInstanceSecurityGroup](https://cloud.tencent.com/document/product/239/34447) 接口获取实例的安全组 ID。
+                     * 获取<p>安全组ID。请通过 <a href="https://cloud.tencent.com/document/product/239/34447">DescribeInstanceSecurityGroup</a> 接口获取实例的安全组 ID。</p>
+                     * @return SecurityGroupIdList <p>安全组ID。请通过 <a href="https://cloud.tencent.com/document/product/239/34447">DescribeInstanceSecurityGroup</a> 接口获取实例的安全组 ID。</p>
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIdList() const;
 
                     /**
-                     * 设置安全组ID。请通过 [DescribeInstanceSecurityGroup](https://cloud.tencent.com/document/product/239/34447) 接口获取实例的安全组 ID。
-                     * @param _securityGroupIdList 安全组ID。请通过 [DescribeInstanceSecurityGroup](https://cloud.tencent.com/document/product/239/34447) 接口获取实例的安全组 ID。
+                     * 设置<p>安全组ID。请通过 <a href="https://cloud.tencent.com/document/product/239/34447">DescribeInstanceSecurityGroup</a> 接口获取实例的安全组 ID。</p>
+                     * @param _securityGroupIdList <p>安全组ID。请通过 <a href="https://cloud.tencent.com/document/product/239/34447">DescribeInstanceSecurityGroup</a> 接口获取实例的安全组 ID。</p>
                      * 
                      */
                     void SetSecurityGroupIdList(const std::vector<std::string>& _securityGroupIdList);
@@ -179,15 +172,15 @@ namespace TencentCloud
                     bool SecurityGroupIdListHasBeenSet() const;
 
                     /**
-                     * 获取克隆实例使用的备份ID。请通过接口[DescribeInstanceBackups](https://cloud.tencent.com/document/product/239/20011)获取备份ID。
-                     * @return BackupId 克隆实例使用的备份ID。请通过接口[DescribeInstanceBackups](https://cloud.tencent.com/document/product/239/20011)获取备份ID。
+                     * 获取<p>克隆实例使用的备份ID。请通过接口<a href="https://cloud.tencent.com/document/product/239/20011">DescribeInstanceBackups</a>获取备份ID。</p>
+                     * @return BackupId <p>克隆实例使用的备份ID。请通过接口<a href="https://cloud.tencent.com/document/product/239/20011">DescribeInstanceBackups</a>获取备份ID。</p>
                      * 
                      */
                     std::string GetBackupId() const;
 
                     /**
-                     * 设置克隆实例使用的备份ID。请通过接口[DescribeInstanceBackups](https://cloud.tencent.com/document/product/239/20011)获取备份ID。
-                     * @param _backupId 克隆实例使用的备份ID。请通过接口[DescribeInstanceBackups](https://cloud.tencent.com/document/product/239/20011)获取备份ID。
+                     * 设置<p>克隆实例使用的备份ID。请通过接口<a href="https://cloud.tencent.com/document/product/239/20011">DescribeInstanceBackups</a>获取备份ID。</p>
+                     * @param _backupId <p>克隆实例使用的备份ID。请通过接口<a href="https://cloud.tencent.com/document/product/239/20011">DescribeInstanceBackups</a>获取备份ID。</p>
                      * 
                      */
                     void SetBackupId(const std::string& _backupId);
@@ -200,15 +193,15 @@ namespace TencentCloud
                     bool BackupIdHasBeenSet() const;
 
                     /**
-                     * 获取配置克隆实例是否支持免密访问。开启 SSL 与外网均不支持免密访问。<ul><li>true：免密实例，</li><li>false：非免密实例。默认为非免密实例。</li></ul>
-                     * @return NoAuth 配置克隆实例是否支持免密访问。开启 SSL 与外网均不支持免密访问。<ul><li>true：免密实例，</li><li>false：非免密实例。默认为非免密实例。</li></ul>
+                     * 获取<p>配置克隆实例是否支持免密访问。开启 SSL 与外网均不支持免密访问。<ul><li>true：免密实例，</li><li>false：非免密实例。默认为非免密实例。</li></ul></p>
+                     * @return NoAuth <p>配置克隆实例是否支持免密访问。开启 SSL 与外网均不支持免密访问。<ul><li>true：免密实例，</li><li>false：非免密实例。默认为非免密实例。</li></ul></p>
                      * 
                      */
                     bool GetNoAuth() const;
 
                     /**
-                     * 设置配置克隆实例是否支持免密访问。开启 SSL 与外网均不支持免密访问。<ul><li>true：免密实例，</li><li>false：非免密实例。默认为非免密实例。</li></ul>
-                     * @param _noAuth 配置克隆实例是否支持免密访问。开启 SSL 与外网均不支持免密访问。<ul><li>true：免密实例，</li><li>false：非免密实例。默认为非免密实例。</li></ul>
+                     * 设置<p>配置克隆实例是否支持免密访问。开启 SSL 与外网均不支持免密访问。<ul><li>true：免密实例，</li><li>false：非免密实例。默认为非免密实例。</li></ul></p>
+                     * @param _noAuth <p>配置克隆实例是否支持免密访问。开启 SSL 与外网均不支持免密访问。<ul><li>true：免密实例，</li><li>false：非免密实例。默认为非免密实例。</li></ul></p>
                      * 
                      */
                     void SetNoAuth(const bool& _noAuth);
@@ -221,15 +214,15 @@ namespace TencentCloud
                     bool NoAuthHasBeenSet() const;
 
                     /**
-                     * 获取配置克隆实例的私有网络ID。如果未配置该参数，默认选择基础网络。
-                     * @return VpcId 配置克隆实例的私有网络ID。如果未配置该参数，默认选择基础网络。
+                     * 获取<p>配置克隆实例的私有网络ID。如果未配置该参数，默认选择基础网络。</p>
+                     * @return VpcId <p>配置克隆实例的私有网络ID。如果未配置该参数，默认选择基础网络。</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置配置克隆实例的私有网络ID。如果未配置该参数，默认选择基础网络。
-                     * @param _vpcId 配置克隆实例的私有网络ID。如果未配置该参数，默认选择基础网络。
+                     * 设置<p>配置克隆实例的私有网络ID。如果未配置该参数，默认选择基础网络。</p>
+                     * @param _vpcId <p>配置克隆实例的私有网络ID。如果未配置该参数，默认选择基础网络。</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -242,15 +235,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取配置克隆实例所属私有网络的子网。基础网络时该参数无需配置。
-                     * @return SubnetId 配置克隆实例所属私有网络的子网。基础网络时该参数无需配置。
+                     * 获取<p>配置克隆实例所属私有网络的子网。基础网络时该参数无需配置。</p>
+                     * @return SubnetId <p>配置克隆实例所属私有网络的子网。基础网络时该参数无需配置。</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置配置克隆实例所属私有网络的子网。基础网络时该参数无需配置。
-                     * @param _subnetId 配置克隆实例所属私有网络的子网。基础网络时该参数无需配置。
+                     * 设置<p>配置克隆实例所属私有网络的子网。基础网络时该参数无需配置。</p>
+                     * @param _subnetId <p>配置克隆实例所属私有网络的子网。基础网络时该参数无需配置。</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -263,15 +256,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取克隆实例的名称。<br>仅支持长度小于60的中文、英文或者数字，短划线"-"、下划线"_"。</br>
-                     * @return InstanceName 克隆实例的名称。<br>仅支持长度小于60的中文、英文或者数字，短划线"-"、下划线"_"。</br>
+                     * 获取<p>克隆实例的名称。<br>仅支持长度小于60的中文、英文或者数字，短划线&quot;-&quot;、下划线&quot;_&quot;。<br></p>
+                     * @return InstanceName <p>克隆实例的名称。<br>仅支持长度小于60的中文、英文或者数字，短划线&quot;-&quot;、下划线&quot;_&quot;。<br></p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置克隆实例的名称。<br>仅支持长度小于60的中文、英文或者数字，短划线"-"、下划线"_"。</br>
-                     * @param _instanceName 克隆实例的名称。<br>仅支持长度小于60的中文、英文或者数字，短划线"-"、下划线"_"。</br>
+                     * 设置<p>克隆实例的名称。<br>仅支持长度小于60的中文、英文或者数字，短划线&quot;-&quot;、下划线&quot;_&quot;。<br></p>
+                     * @param _instanceName <p>克隆实例的名称。<br>仅支持长度小于60的中文、英文或者数字，短划线&quot;-&quot;、下划线&quot;_&quot;。<br></p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -284,15 +277,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取克隆实例的访问密码。<ul><li>当输入参数<b>NoAuth</b>为<b>true</b>时，可不设置该参数。</li><li>当实例为Redis2.8、4.0和5.0时，其密码格式为：8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以"/"开头；</li><li>当实例为CKV 3.2时，其密码格式为：8-30个字符，必须包含字母和数字，且不包含其他字符。</li></ul>
-                     * @return Password 克隆实例的访问密码。<ul><li>当输入参数<b>NoAuth</b>为<b>true</b>时，可不设置该参数。</li><li>当实例为Redis2.8、4.0和5.0时，其密码格式为：8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以"/"开头；</li><li>当实例为CKV 3.2时，其密码格式为：8-30个字符，必须包含字母和数字，且不包含其他字符。</li></ul>
+                     * 获取<p>克隆实例的访问密码。<ul><li>当输入参数<b>NoAuth</b>为<b>true</b>时，可不设置该参数。</li><li>当实例为Redis2.8、4.0和5.0时，其密码格式为：8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&amp;*-+=_|{}[]:;&lt;&gt;,.?/ 中的2种，不能以&quot;/&quot;开头；</li><li>当实例为CKV 3.2时，其密码格式为：8-30个字符，必须包含字母和数字，且不包含其他字符。</li></ul></p>
+                     * @return Password <p>克隆实例的访问密码。<ul><li>当输入参数<b>NoAuth</b>为<b>true</b>时，可不设置该参数。</li><li>当实例为Redis2.8、4.0和5.0时，其密码格式为：8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&amp;*-+=_|{}[]:;&lt;&gt;,.?/ 中的2种，不能以&quot;/&quot;开头；</li><li>当实例为CKV 3.2时，其密码格式为：8-30个字符，必须包含字母和数字，且不包含其他字符。</li></ul></p>
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置克隆实例的访问密码。<ul><li>当输入参数<b>NoAuth</b>为<b>true</b>时，可不设置该参数。</li><li>当实例为Redis2.8、4.0和5.0时，其密码格式为：8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以"/"开头；</li><li>当实例为CKV 3.2时，其密码格式为：8-30个字符，必须包含字母和数字，且不包含其他字符。</li></ul>
-                     * @param _password 克隆实例的访问密码。<ul><li>当输入参数<b>NoAuth</b>为<b>true</b>时，可不设置该参数。</li><li>当实例为Redis2.8、4.0和5.0时，其密码格式为：8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以"/"开头；</li><li>当实例为CKV 3.2时，其密码格式为：8-30个字符，必须包含字母和数字，且不包含其他字符。</li></ul>
+                     * 设置<p>克隆实例的访问密码。<ul><li>当输入参数<b>NoAuth</b>为<b>true</b>时，可不设置该参数。</li><li>当实例为Redis2.8、4.0和5.0时，其密码格式为：8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&amp;*-+=_|{}[]:;&lt;&gt;,.?/ 中的2种，不能以&quot;/&quot;开头；</li><li>当实例为CKV 3.2时，其密码格式为：8-30个字符，必须包含字母和数字，且不包含其他字符。</li></ul></p>
+                     * @param _password <p>克隆实例的访问密码。<ul><li>当输入参数<b>NoAuth</b>为<b>true</b>时，可不设置该参数。</li><li>当实例为Redis2.8、4.0和5.0时，其密码格式为：8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&amp;*-+=_|{}[]:;&lt;&gt;,.?/ 中的2种，不能以&quot;/&quot;开头；</li><li>当实例为CKV 3.2时，其密码格式为：8-30个字符，必须包含字母和数字，且不包含其他字符。</li></ul></p>
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -305,15 +298,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标识。<ul><li>0：默认状态，手动续费。</li><li>1：自动续费。</li><li>2：不自动续费，到期自动隔离。</li></ul>
-                     * @return AutoRenew 自动续费标识。<ul><li>0：默认状态，手动续费。</li><li>1：自动续费。</li><li>2：不自动续费，到期自动隔离。</li></ul>
+                     * 获取<p>自动续费标识。<ul><li>0：默认状态，手动续费。</li><li>1：自动续费。</li><li>2：不自动续费，到期自动隔离。</li></ul></p>
+                     * @return AutoRenew <p>自动续费标识。<ul><li>0：默认状态，手动续费。</li><li>1：自动续费。</li><li>2：不自动续费，到期自动隔离。</li></ul></p>
                      * 
                      */
                     uint64_t GetAutoRenew() const;
 
                     /**
-                     * 设置自动续费标识。<ul><li>0：默认状态，手动续费。</li><li>1：自动续费。</li><li>2：不自动续费，到期自动隔离。</li></ul>
-                     * @param _autoRenew 自动续费标识。<ul><li>0：默认状态，手动续费。</li><li>1：自动续费。</li><li>2：不自动续费，到期自动隔离。</li></ul>
+                     * 设置<p>自动续费标识。<ul><li>0：默认状态，手动续费。</li><li>1：自动续费。</li><li>2：不自动续费，到期自动隔离。</li></ul></p>
+                     * @param _autoRenew <p>自动续费标识。<ul><li>0：默认状态，手动续费。</li><li>1：自动续费。</li><li>2：不自动续费，到期自动隔离。</li></ul></p>
                      * 
                      */
                     void SetAutoRenew(const uint64_t& _autoRenew);
@@ -326,15 +319,15 @@ namespace TencentCloud
                     bool AutoRenewHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义的端口，默认为6379，取值范围[1024,65535]。
-                     * @return VPort 用户自定义的端口，默认为6379，取值范围[1024,65535]。
+                     * 获取<p>用户自定义的端口，默认为6379，取值范围[1024,65535]。</p>
+                     * @return VPort <p>用户自定义的端口，默认为6379，取值范围[1024,65535]。</p>
                      * 
                      */
                     uint64_t GetVPort() const;
 
                     /**
-                     * 设置用户自定义的端口，默认为6379，取值范围[1024,65535]。
-                     * @param _vPort 用户自定义的端口，默认为6379，取值范围[1024,65535]。
+                     * 设置<p>用户自定义的端口，默认为6379，取值范围[1024,65535]。</p>
+                     * @param _vPort <p>用户自定义的端口，默认为6379，取值范围[1024,65535]。</p>
                      * 
                      */
                     void SetVPort(const uint64_t& _vPort);
@@ -347,15 +340,15 @@ namespace TencentCloud
                     bool VPortHasBeenSet() const;
 
                     /**
-                     * 获取实例的节点信息。<ul><li>目前支持配置节点的类型（主节点或者副本节点），及其节点的可用区信息。具体信息，请参见[RedisNodeInfo](https://cloud.tencent.com/document/product/239/20022#RedisNodeInfo)。</li><li>单可用区部署可不配置该参数。</li></ul>
-                     * @return NodeSet 实例的节点信息。<ul><li>目前支持配置节点的类型（主节点或者副本节点），及其节点的可用区信息。具体信息，请参见[RedisNodeInfo](https://cloud.tencent.com/document/product/239/20022#RedisNodeInfo)。</li><li>单可用区部署可不配置该参数。</li></ul>
+                     * 获取<p>实例的节点信息。<ul><li>目前支持配置节点的类型（主节点或者副本节点），及其节点的可用区信息。具体信息，请参见<a href="https://cloud.tencent.com/document/product/239/20022#RedisNodeInfo">RedisNodeInfo</a>。</li><li>单可用区部署可不配置该参数。</li></ul></p>
+                     * @return NodeSet <p>实例的节点信息。<ul><li>目前支持配置节点的类型（主节点或者副本节点），及其节点的可用区信息。具体信息，请参见<a href="https://cloud.tencent.com/document/product/239/20022#RedisNodeInfo">RedisNodeInfo</a>。</li><li>单可用区部署可不配置该参数。</li></ul></p>
                      * 
                      */
                     std::vector<RedisNodeInfo> GetNodeSet() const;
 
                     /**
-                     * 设置实例的节点信息。<ul><li>目前支持配置节点的类型（主节点或者副本节点），及其节点的可用区信息。具体信息，请参见[RedisNodeInfo](https://cloud.tencent.com/document/product/239/20022#RedisNodeInfo)。</li><li>单可用区部署可不配置该参数。</li></ul>
-                     * @param _nodeSet 实例的节点信息。<ul><li>目前支持配置节点的类型（主节点或者副本节点），及其节点的可用区信息。具体信息，请参见[RedisNodeInfo](https://cloud.tencent.com/document/product/239/20022#RedisNodeInfo)。</li><li>单可用区部署可不配置该参数。</li></ul>
+                     * 设置<p>实例的节点信息。<ul><li>目前支持配置节点的类型（主节点或者副本节点），及其节点的可用区信息。具体信息，请参见<a href="https://cloud.tencent.com/document/product/239/20022#RedisNodeInfo">RedisNodeInfo</a>。</li><li>单可用区部署可不配置该参数。</li></ul></p>
+                     * @param _nodeSet <p>实例的节点信息。<ul><li>目前支持配置节点的类型（主节点或者副本节点），及其节点的可用区信息。具体信息，请参见<a href="https://cloud.tencent.com/document/product/239/20022#RedisNodeInfo">RedisNodeInfo</a>。</li><li>单可用区部署可不配置该参数。</li></ul></p>
                      * 
                      */
                     void SetNodeSet(const std::vector<RedisNodeInfo>& _nodeSet);
@@ -368,15 +361,15 @@ namespace TencentCloud
                     bool NodeSetHasBeenSet() const;
 
                     /**
-                     * 获取项目 ID。登录[Redis 控制台](https://console.cloud.tencent.com/redis#/)，可在右上角的<b>账号中心</b> > <b>项目管理</b>中查找项目ID。
-                     * @return ProjectId 项目 ID。登录[Redis 控制台](https://console.cloud.tencent.com/redis#/)，可在右上角的<b>账号中心</b> > <b>项目管理</b>中查找项目ID。
+                     * 获取<p>项目 ID。登录<a href="https://console.cloud.tencent.com/redis#/">Redis 控制台</a>，可在右上角的<b>账号中心</b> &gt; <b>项目管理</b>中查找项目ID。</p>
+                     * @return ProjectId <p>项目 ID。登录<a href="https://console.cloud.tencent.com/redis#/">Redis 控制台</a>，可在右上角的<b>账号中心</b> &gt; <b>项目管理</b>中查找项目ID。</p>
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目 ID。登录[Redis 控制台](https://console.cloud.tencent.com/redis#/)，可在右上角的<b>账号中心</b> > <b>项目管理</b>中查找项目ID。
-                     * @param _projectId 项目 ID。登录[Redis 控制台](https://console.cloud.tencent.com/redis#/)，可在右上角的<b>账号中心</b> > <b>项目管理</b>中查找项目ID。
+                     * 设置<p>项目 ID。登录<a href="https://console.cloud.tencent.com/redis#/">Redis 控制台</a>，可在右上角的<b>账号中心</b> &gt; <b>项目管理</b>中查找项目ID。</p>
+                     * @param _projectId <p>项目 ID。登录<a href="https://console.cloud.tencent.com/redis#/">Redis 控制台</a>，可在右上角的<b>账号中心</b> &gt; <b>项目管理</b>中查找项目ID。</p>
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -389,15 +382,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取克隆实例需绑定的标签。
-                     * @return ResourceTags 克隆实例需绑定的标签。
+                     * 获取<p>克隆实例需绑定的标签。</p>
+                     * @return ResourceTags <p>克隆实例需绑定的标签。</p>
                      * 
                      */
                     std::vector<ResourceTag> GetResourceTags() const;
 
                     /**
-                     * 设置克隆实例需绑定的标签。
-                     * @param _resourceTags 克隆实例需绑定的标签。
+                     * 设置<p>克隆实例需绑定的标签。</p>
+                     * @param _resourceTags <p>克隆实例需绑定的标签。</p>
                      * 
                      */
                     void SetResourceTags(const std::vector<ResourceTag>& _resourceTags);
@@ -410,23 +403,15 @@ namespace TencentCloud
                     bool ResourceTagsHasBeenSet() const;
 
                     /**
-                     * 获取指定克隆实例相关的参数模板 ID。
-- 若不配置该参数，则系统会依据所选择的兼容版本及架构，自动适配对应的默认模板。
-- 请通过[DescribeParamTemplates](https://cloud.tencent.com/document/product/239/58750)接口，查询实例的参数模板列表，获取模板 ID 编号。
-                     * @return TemplateId 指定克隆实例相关的参数模板 ID。
-- 若不配置该参数，则系统会依据所选择的兼容版本及架构，自动适配对应的默认模板。
-- 请通过[DescribeParamTemplates](https://cloud.tencent.com/document/product/239/58750)接口，查询实例的参数模板列表，获取模板 ID 编号。
+                     * 获取<p>指定克隆实例相关的参数模板 ID。</p><ul><li>若不配置该参数，则系统会依据所选择的兼容版本及架构，自动适配对应的默认模板。</li><li>请通过<a href="https://cloud.tencent.com/document/product/239/58750">DescribeParamTemplates</a>接口，查询实例的参数模板列表，获取模板 ID 编号。</li></ul>
+                     * @return TemplateId <p>指定克隆实例相关的参数模板 ID。</p><ul><li>若不配置该参数，则系统会依据所选择的兼容版本及架构，自动适配对应的默认模板。</li><li>请通过<a href="https://cloud.tencent.com/document/product/239/58750">DescribeParamTemplates</a>接口，查询实例的参数模板列表，获取模板 ID 编号。</li></ul>
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置指定克隆实例相关的参数模板 ID。
-- 若不配置该参数，则系统会依据所选择的兼容版本及架构，自动适配对应的默认模板。
-- 请通过[DescribeParamTemplates](https://cloud.tencent.com/document/product/239/58750)接口，查询实例的参数模板列表，获取模板 ID 编号。
-                     * @param _templateId 指定克隆实例相关的参数模板 ID。
-- 若不配置该参数，则系统会依据所选择的兼容版本及架构，自动适配对应的默认模板。
-- 请通过[DescribeParamTemplates](https://cloud.tencent.com/document/product/239/58750)接口，查询实例的参数模板列表，获取模板 ID 编号。
+                     * 设置<p>指定克隆实例相关的参数模板 ID。</p><ul><li>若不配置该参数，则系统会依据所选择的兼容版本及架构，自动适配对应的默认模板。</li><li>请通过<a href="https://cloud.tencent.com/document/product/239/58750">DescribeParamTemplates</a>接口，查询实例的参数模板列表，获取模板 ID 编号。</li></ul>
+                     * @param _templateId <p>指定克隆实例相关的参数模板 ID。</p><ul><li>若不配置该参数，则系统会依据所选择的兼容版本及架构，自动适配对应的默认模板。</li><li>请通过<a href="https://cloud.tencent.com/document/product/239/58750">DescribeParamTemplates</a>接口，查询实例的参数模板列表，获取模板 ID 编号。</li></ul>
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -439,15 +424,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取指定克隆实例的告警策略 ID。请登录[腾讯云可观测平台控制台](https://console.cloud.tencent.com/monitor/alarm2/policy)，在 <b>告警管理</b> > <b>策略管理</b>页面获取策略 ID 信息。
-                     * @return AlarmPolicyList 指定克隆实例的告警策略 ID。请登录[腾讯云可观测平台控制台](https://console.cloud.tencent.com/monitor/alarm2/policy)，在 <b>告警管理</b> > <b>策略管理</b>页面获取策略 ID 信息。
+                     * 获取<p>指定克隆实例的告警策略 ID。请登录<a href="https://console.cloud.tencent.com/monitor/alarm2/policy">腾讯云可观测平台控制台</a>，在 <b>告警管理</b> &gt; <b>策略管理</b>页面获取策略 ID 信息。</p>
+                     * @return AlarmPolicyList <p>指定克隆实例的告警策略 ID。请登录<a href="https://console.cloud.tencent.com/monitor/alarm2/policy">腾讯云可观测平台控制台</a>，在 <b>告警管理</b> &gt; <b>策略管理</b>页面获取策略 ID 信息。</p>
                      * 
                      */
                     std::vector<std::string> GetAlarmPolicyList() const;
 
                     /**
-                     * 设置指定克隆实例的告警策略 ID。请登录[腾讯云可观测平台控制台](https://console.cloud.tencent.com/monitor/alarm2/policy)，在 <b>告警管理</b> > <b>策略管理</b>页面获取策略 ID 信息。
-                     * @param _alarmPolicyList 指定克隆实例的告警策略 ID。请登录[腾讯云可观测平台控制台](https://console.cloud.tencent.com/monitor/alarm2/policy)，在 <b>告警管理</b> > <b>策略管理</b>页面获取策略 ID 信息。
+                     * 设置<p>指定克隆实例的告警策略 ID。请登录<a href="https://console.cloud.tencent.com/monitor/alarm2/policy">腾讯云可观测平台控制台</a>，在 <b>告警管理</b> &gt; <b>策略管理</b>页面获取策略 ID 信息。</p>
+                     * @param _alarmPolicyList <p>指定克隆实例的告警策略 ID。请登录<a href="https://console.cloud.tencent.com/monitor/alarm2/policy">腾讯云可观测平台控制台</a>，在 <b>告警管理</b> &gt; <b>策略管理</b>页面获取策略 ID 信息。</p>
                      * 
                      */
                     void SetAlarmPolicyList(const std::vector<std::string>& _alarmPolicyList);
@@ -460,23 +445,15 @@ namespace TencentCloud
                     bool AlarmPolicyListHasBeenSet() const;
 
                     /**
-                     * 获取克隆指定恢复数据的时间。
-仅支持已开通秒级备份的实例
-
-                     * @return CloneTime 克隆指定恢复数据的时间。
-仅支持已开通秒级备份的实例
-
+                     * 获取<p>克隆指定恢复数据的时间。<br>仅支持已开通秒级备份的实例</p>
+                     * @return CloneTime <p>克隆指定恢复数据的时间。<br>仅支持已开通秒级备份的实例</p>
                      * 
                      */
                     std::string GetCloneTime() const;
 
                     /**
-                     * 设置克隆指定恢复数据的时间。
-仅支持已开通秒级备份的实例
-
-                     * @param _cloneTime 克隆指定恢复数据的时间。
-仅支持已开通秒级备份的实例
-
+                     * 设置<p>克隆指定恢复数据的时间。<br>仅支持已开通秒级备份的实例</p>
+                     * @param _cloneTime <p>克隆指定恢复数据的时间。<br>仅支持已开通秒级备份的实例</p>
                      * 
                      */
                     void SetCloneTime(const std::string& _cloneTime);
@@ -489,15 +466,15 @@ namespace TencentCloud
                     bool CloneTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否加密密码
-                     * @return EncryptPassword 是否加密密码
+                     * 获取<p>是否加密密码</p>
+                     * @return EncryptPassword <p>是否加密密码</p>
                      * 
                      */
                     bool GetEncryptPassword() const;
 
                     /**
-                     * 设置是否加密密码
-                     * @param _encryptPassword 是否加密密码
+                     * 设置<p>是否加密密码</p>
+                     * @param _encryptPassword <p>是否加密密码</p>
                      * 
                      */
                     void SetEncryptPassword(const bool& _encryptPassword);
@@ -509,139 +486,214 @@ namespace TencentCloud
                      */
                     bool EncryptPasswordHasBeenSet() const;
 
+                    /**
+                     * 获取<p>实例密码复杂度策略</p><p>入参限制：未传或 Enabled=false 视为不启用，按默认规则校验</p>
+                     * @return PasswordPolicy <p>实例密码复杂度策略</p><p>入参限制：未传或 Enabled=false 视为不启用，按默认规则校验</p>
+                     * 
+                     */
+                    PasswordPolicy GetPasswordPolicy() const;
+
+                    /**
+                     * 设置<p>实例密码复杂度策略</p><p>入参限制：未传或 Enabled=false 视为不启用，按默认规则校验</p>
+                     * @param _passwordPolicy <p>实例密码复杂度策略</p><p>入参限制：未传或 Enabled=false 视为不启用，按默认规则校验</p>
+                     * 
+                     */
+                    void SetPasswordPolicy(const PasswordPolicy& _passwordPolicy);
+
+                    /**
+                     * 判断参数 PasswordPolicy 是否已赋值
+                     * @return PasswordPolicy 是否已赋值
+                     * 
+                     */
+                    bool PasswordPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启 SSL 加密传输。</p><p>枚举值：</p><ul><li>true： 开启。</li><li>false： 关闭（默认值）。</li></ul><p>默认值：false</p>
+                     * @return EnableSSL <p>是否开启 SSL 加密传输。</p><p>枚举值：</p><ul><li>true： 开启。</li><li>false： 关闭（默认值）。</li></ul><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetEnableSSL() const;
+
+                    /**
+                     * 设置<p>是否开启 SSL 加密传输。</p><p>枚举值：</p><ul><li>true： 开启。</li><li>false： 关闭（默认值）。</li></ul><p>默认值：false</p>
+                     * @param _enableSSL <p>是否开启 SSL 加密传输。</p><p>枚举值：</p><ul><li>true： 开启。</li><li>false： 关闭（默认值）。</li></ul><p>默认值：false</p>
+                     * 
+                     */
+                    void SetEnableSSL(const bool& _enableSSL);
+
+                    /**
+                     * 判断参数 EnableSSL 是否已赋值
+                     * @return EnableSSL 是否已赋值
+                     * 
+                     */
+                    bool EnableSSLHasBeenSet() const;
+
+                    /**
+                     * 获取<p>开启 SSL 时，是否将实例的内网 IPv4 地址写入证书的域名别名（SAN）中。仅在 EnableSSL 为 true 时生效。</p><p>枚举值：</p><ul><li>true： 允许使用内网 IP 进行 SSL 证书校验。</li><li>false： 不添加证书的 SAN 扩展信息。</li></ul><p>默认值：false</p>
+                     * @return SSLBindPrivateIPv4 <p>开启 SSL 时，是否将实例的内网 IPv4 地址写入证书的域名别名（SAN）中。仅在 EnableSSL 为 true 时生效。</p><p>枚举值：</p><ul><li>true： 允许使用内网 IP 进行 SSL 证书校验。</li><li>false： 不添加证书的 SAN 扩展信息。</li></ul><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetSSLBindPrivateIPv4() const;
+
+                    /**
+                     * 设置<p>开启 SSL 时，是否将实例的内网 IPv4 地址写入证书的域名别名（SAN）中。仅在 EnableSSL 为 true 时生效。</p><p>枚举值：</p><ul><li>true： 允许使用内网 IP 进行 SSL 证书校验。</li><li>false： 不添加证书的 SAN 扩展信息。</li></ul><p>默认值：false</p>
+                     * @param _sSLBindPrivateIPv4 <p>开启 SSL 时，是否将实例的内网 IPv4 地址写入证书的域名别名（SAN）中。仅在 EnableSSL 为 true 时生效。</p><p>枚举值：</p><ul><li>true： 允许使用内网 IP 进行 SSL 证书校验。</li><li>false： 不添加证书的 SAN 扩展信息。</li></ul><p>默认值：false</p>
+                     * 
+                     */
+                    void SetSSLBindPrivateIPv4(const bool& _sSLBindPrivateIPv4);
+
+                    /**
+                     * 判断参数 SSLBindPrivateIPv4 是否已赋值
+                     * @return SSLBindPrivateIPv4 是否已赋值
+                     * 
+                     */
+                    bool SSLBindPrivateIPv4HasBeenSet() const;
+
                 private:
 
                     /**
-                     * 指定待克隆的源实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+                     * <p>指定待克隆的源实例 ID。例如：crs-xjhsdj****。请登录<a href="https://console.cloud.tencent.com/redis">Redis控制台</a>在实例列表复制实例 ID。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 单次克隆实例的数量。
-- 包年包月每次购买最大数量为100。
-- 按量计费每次购买最大数量为30。
+                     * <p>单次克隆实例的数量。</p><ul><li>包年包月每次购买最大数量为100。</li><li>按量计费每次购买最大数量为30。</li></ul>
                      */
                     uint64_t m_goodsNum;
                     bool m_goodsNumHasBeenSet;
 
                     /**
-                     * 克隆实例所属的可用区ID。当前所支持的可用区 ID，请参见[地域和可用区](https://cloud.tencent.com/document/product/239/4106) 。
+                     * <p>克隆实例所属的可用区ID。当前所支持的可用区 ID，请参见<a href="https://cloud.tencent.com/document/product/239/4106">地域和可用区</a> 。</p>
                      */
                     uint64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 付费方式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul>
+                     * <p>付费方式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul></p>
                      */
                     int64_t m_billingMode;
                     bool m_billingModeHasBeenSet;
 
                     /**
-                     * 购买实例时长。<ul><li>单位：月。</li><li>付费方式选择包年包月计费时，取值范围为[1,2,3,4,5,6,7,8,9,10,11,12,24,36,48,60]。</li><li>付费方式选择按量计费时，设置为1。</li></ul>
+                     * <p>购买实例时长。<ul><li>单位：月。</li><li>付费方式选择包年包月计费时，取值范围为[1,2,3,4,5,6,7,8,9,10,11,12,24,36,48,60]。</li><li>付费方式选择按量计费时，设置为1。</li></ul></p>
                      */
                     uint64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 安全组ID。请通过 [DescribeInstanceSecurityGroup](https://cloud.tencent.com/document/product/239/34447) 接口获取实例的安全组 ID。
+                     * <p>安全组ID。请通过 <a href="https://cloud.tencent.com/document/product/239/34447">DescribeInstanceSecurityGroup</a> 接口获取实例的安全组 ID。</p>
                      */
                     std::vector<std::string> m_securityGroupIdList;
                     bool m_securityGroupIdListHasBeenSet;
 
                     /**
-                     * 克隆实例使用的备份ID。请通过接口[DescribeInstanceBackups](https://cloud.tencent.com/document/product/239/20011)获取备份ID。
+                     * <p>克隆实例使用的备份ID。请通过接口<a href="https://cloud.tencent.com/document/product/239/20011">DescribeInstanceBackups</a>获取备份ID。</p>
                      */
                     std::string m_backupId;
                     bool m_backupIdHasBeenSet;
 
                     /**
-                     * 配置克隆实例是否支持免密访问。开启 SSL 与外网均不支持免密访问。<ul><li>true：免密实例，</li><li>false：非免密实例。默认为非免密实例。</li></ul>
+                     * <p>配置克隆实例是否支持免密访问。开启 SSL 与外网均不支持免密访问。<ul><li>true：免密实例，</li><li>false：非免密实例。默认为非免密实例。</li></ul></p>
                      */
                     bool m_noAuth;
                     bool m_noAuthHasBeenSet;
 
                     /**
-                     * 配置克隆实例的私有网络ID。如果未配置该参数，默认选择基础网络。
+                     * <p>配置克隆实例的私有网络ID。如果未配置该参数，默认选择基础网络。</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 配置克隆实例所属私有网络的子网。基础网络时该参数无需配置。
+                     * <p>配置克隆实例所属私有网络的子网。基础网络时该参数无需配置。</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 克隆实例的名称。<br>仅支持长度小于60的中文、英文或者数字，短划线"-"、下划线"_"。</br>
+                     * <p>克隆实例的名称。<br>仅支持长度小于60的中文、英文或者数字，短划线&quot;-&quot;、下划线&quot;_&quot;。<br></p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 克隆实例的访问密码。<ul><li>当输入参数<b>NoAuth</b>为<b>true</b>时，可不设置该参数。</li><li>当实例为Redis2.8、4.0和5.0时，其密码格式为：8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以"/"开头；</li><li>当实例为CKV 3.2时，其密码格式为：8-30个字符，必须包含字母和数字，且不包含其他字符。</li></ul>
+                     * <p>克隆实例的访问密码。<ul><li>当输入参数<b>NoAuth</b>为<b>true</b>时，可不设置该参数。</li><li>当实例为Redis2.8、4.0和5.0时，其密码格式为：8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&amp;*-+=_|{}[]:;&lt;&gt;,.?/ 中的2种，不能以&quot;/&quot;开头；</li><li>当实例为CKV 3.2时，其密码格式为：8-30个字符，必须包含字母和数字，且不包含其他字符。</li></ul></p>
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 自动续费标识。<ul><li>0：默认状态，手动续费。</li><li>1：自动续费。</li><li>2：不自动续费，到期自动隔离。</li></ul>
+                     * <p>自动续费标识。<ul><li>0：默认状态，手动续费。</li><li>1：自动续费。</li><li>2：不自动续费，到期自动隔离。</li></ul></p>
                      */
                     uint64_t m_autoRenew;
                     bool m_autoRenewHasBeenSet;
 
                     /**
-                     * 用户自定义的端口，默认为6379，取值范围[1024,65535]。
+                     * <p>用户自定义的端口，默认为6379，取值范围[1024,65535]。</p>
                      */
                     uint64_t m_vPort;
                     bool m_vPortHasBeenSet;
 
                     /**
-                     * 实例的节点信息。<ul><li>目前支持配置节点的类型（主节点或者副本节点），及其节点的可用区信息。具体信息，请参见[RedisNodeInfo](https://cloud.tencent.com/document/product/239/20022#RedisNodeInfo)。</li><li>单可用区部署可不配置该参数。</li></ul>
+                     * <p>实例的节点信息。<ul><li>目前支持配置节点的类型（主节点或者副本节点），及其节点的可用区信息。具体信息，请参见<a href="https://cloud.tencent.com/document/product/239/20022#RedisNodeInfo">RedisNodeInfo</a>。</li><li>单可用区部署可不配置该参数。</li></ul></p>
                      */
                     std::vector<RedisNodeInfo> m_nodeSet;
                     bool m_nodeSetHasBeenSet;
 
                     /**
-                     * 项目 ID。登录[Redis 控制台](https://console.cloud.tencent.com/redis#/)，可在右上角的<b>账号中心</b> > <b>项目管理</b>中查找项目ID。
+                     * <p>项目 ID。登录<a href="https://console.cloud.tencent.com/redis#/">Redis 控制台</a>，可在右上角的<b>账号中心</b> &gt; <b>项目管理</b>中查找项目ID。</p>
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 克隆实例需绑定的标签。
+                     * <p>克隆实例需绑定的标签。</p>
                      */
                     std::vector<ResourceTag> m_resourceTags;
                     bool m_resourceTagsHasBeenSet;
 
                     /**
-                     * 指定克隆实例相关的参数模板 ID。
-- 若不配置该参数，则系统会依据所选择的兼容版本及架构，自动适配对应的默认模板。
-- 请通过[DescribeParamTemplates](https://cloud.tencent.com/document/product/239/58750)接口，查询实例的参数模板列表，获取模板 ID 编号。
+                     * <p>指定克隆实例相关的参数模板 ID。</p><ul><li>若不配置该参数，则系统会依据所选择的兼容版本及架构，自动适配对应的默认模板。</li><li>请通过<a href="https://cloud.tencent.com/document/product/239/58750">DescribeParamTemplates</a>接口，查询实例的参数模板列表，获取模板 ID 编号。</li></ul>
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 指定克隆实例的告警策略 ID。请登录[腾讯云可观测平台控制台](https://console.cloud.tencent.com/monitor/alarm2/policy)，在 <b>告警管理</b> > <b>策略管理</b>页面获取策略 ID 信息。
+                     * <p>指定克隆实例的告警策略 ID。请登录<a href="https://console.cloud.tencent.com/monitor/alarm2/policy">腾讯云可观测平台控制台</a>，在 <b>告警管理</b> &gt; <b>策略管理</b>页面获取策略 ID 信息。</p>
                      */
                     std::vector<std::string> m_alarmPolicyList;
                     bool m_alarmPolicyListHasBeenSet;
 
                     /**
-                     * 克隆指定恢复数据的时间。
-仅支持已开通秒级备份的实例
-
+                     * <p>克隆指定恢复数据的时间。<br>仅支持已开通秒级备份的实例</p>
                      */
                     std::string m_cloneTime;
                     bool m_cloneTimeHasBeenSet;
 
                     /**
-                     * 是否加密密码
+                     * <p>是否加密密码</p>
                      */
                     bool m_encryptPassword;
                     bool m_encryptPasswordHasBeenSet;
+
+                    /**
+                     * <p>实例密码复杂度策略</p><p>入参限制：未传或 Enabled=false 视为不启用，按默认规则校验</p>
+                     */
+                    PasswordPolicy m_passwordPolicy;
+                    bool m_passwordPolicyHasBeenSet;
+
+                    /**
+                     * <p>是否开启 SSL 加密传输。</p><p>枚举值：</p><ul><li>true： 开启。</li><li>false： 关闭（默认值）。</li></ul><p>默认值：false</p>
+                     */
+                    bool m_enableSSL;
+                    bool m_enableSSLHasBeenSet;
+
+                    /**
+                     * <p>开启 SSL 时，是否将实例的内网 IPv4 地址写入证书的域名别名（SAN）中。仅在 EnableSSL 为 true 时生效。</p><p>枚举值：</p><ul><li>true： 允许使用内网 IP 进行 SSL 证书校验。</li><li>false： 不添加证书的 SAN 扩展信息。</li></ul><p>默认值：false</p>
+                     */
+                    bool m_sSLBindPrivateIPv4;
+                    bool m_sSLBindPrivateIPv4HasBeenSet;
 
                 };
             }

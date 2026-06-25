@@ -40,6 +40,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/UpgradeInstanceVersionResponse.h
   include/tencentcloud/redis/v20180412/model/CreateInstancesRequest.h
   include/tencentcloud/redis/v20180412/model/CreateReplicationGroupRequest.h
+  include/tencentcloud/redis/v20180412/model/RemoveReplicationInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/ExportFile.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceSpecBandwidthResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceZoneInfoRequest.h
@@ -297,7 +298,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/CreateInstanceAccountResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeMaintenanceWindowRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceBackupsRequest.h
-  include/tencentcloud/redis/v20180412/model/RemoveReplicationInstanceResponse.h
+  include/tencentcloud/redis/v20180412/model/PasswordPolicy.h
   include/tencentcloud/redis/v20180412/model/DescribeSecondLevelBackupInfoRequest.h
   include/tencentcloud/redis/v20180412/model/SecurityGroupDetail.h
   include/tencentcloud/redis/v20180412/model/InquiryPriceUpgradeInstanceResponse.h
@@ -345,6 +346,7 @@ set(redis_src
   src/v20180412/model/UpgradeInstanceVersionResponse.cpp
   src/v20180412/model/CreateInstancesRequest.cpp
   src/v20180412/model/CreateReplicationGroupRequest.cpp
+  src/v20180412/model/RemoveReplicationInstanceResponse.cpp
   src/v20180412/model/ExportFile.cpp
   src/v20180412/model/DescribeInstanceSpecBandwidthResponse.cpp
   src/v20180412/model/DescribeInstanceZoneInfoRequest.cpp
@@ -602,7 +604,7 @@ set(redis_src
   src/v20180412/model/CreateInstanceAccountResponse.cpp
   src/v20180412/model/DescribeMaintenanceWindowRequest.cpp
   src/v20180412/model/DescribeInstanceBackupsRequest.cpp
-  src/v20180412/model/RemoveReplicationInstanceResponse.cpp
+  src/v20180412/model/PasswordPolicy.cpp
   src/v20180412/model/DescribeSecondLevelBackupInfoRequest.cpp
   src/v20180412/model/SecurityGroupDetail.cpp
   src/v20180412/model/InquiryPriceUpgradeInstanceResponse.cpp

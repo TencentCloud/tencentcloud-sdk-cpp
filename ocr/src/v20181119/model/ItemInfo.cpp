@@ -22,7 +22,8 @@ using namespace std;
 
 ItemInfo::ItemInfo() :
     m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_auditResultHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,16 @@ CoreInternalOutcome ItemInfo::Deserialize(const rapidjson::Value &value)
         m_valueHasBeenSet = true;
     }
 
+    if (value.HasMember("AuditResult") && !value["AuditResult"].IsNull())
+    {
+        if (!value["AuditResult"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ItemInfo.AuditResult` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_auditResult = value["AuditResult"].GetBool();
+        m_auditResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ void ItemInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_value.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_auditResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuditResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_auditResult, allocator);
     }
 
 }
@@ -123,5 +142,21 @@ void ItemInfo::SetValue(const Value& _value)
 bool ItemInfo::ValueHasBeenSet() const
 {
     return m_valueHasBeenSet;
+}
+
+bool ItemInfo::GetAuditResult() const
+{
+    return m_auditResult;
+}
+
+void ItemInfo::SetAuditResult(const bool& _auditResult)
+{
+    m_auditResult = _auditResult;
+    m_auditResultHasBeenSet = true;
+}
+
+bool ItemInfo::AuditResultHasBeenSet() const
+{
+    return m_auditResultHasBeenSet;
 }
 

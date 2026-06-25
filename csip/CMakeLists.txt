@@ -23,15 +23,17 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeCosInvokeUaRequest.h
   include/tencentcloud/csip/v20221121/model/CsipRiskCenterStatistics.h
   include/tencentcloud/csip/v20221121/model/ModifyDspmApproveStatusRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeCWPMachineDetailRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskItemListResponse.h
   include/tencentcloud/csip/v20221121/model/ModifyPolicyStatusRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeCosAssetResponse.h
   include/tencentcloud/csip/v20221121/model/CreateCosAssetSyncTaskResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmSupportedAssetTypeRequest.h
-  include/tencentcloud/csip/v20221121/model/DescribeDspmAssetAccessTopologyResponse.h
+  include/tencentcloud/csip/v20221121/model/DescribeDspmSupportedAssetTypeResponse.h
   include/tencentcloud/csip/v20221121/model/ModifyDspmBackupSettingRequest.h
   include/tencentcloud/csip/v20221121/model/AuditLogInfo.h
   include/tencentcloud/csip/v20221121/model/CreateAccessKeySyncTaskRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeIpInvokeRecordDetailRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskCenterAssetViewWeakPasswordRiskListResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeCosBucketBillingInfoResponse.h
   include/tencentcloud/csip/v20221121/model/RiskRuleInfo.h
@@ -81,6 +83,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeVulRiskListResponse.h
   include/tencentcloud/csip/v20221121/model/CreateRiskCenterScanTaskResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmAssetsRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeCWPMachineDetailResponse.h
   include/tencentcloud/csip/v20221121/model/StopRiskCenterTaskResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeVpcAssetsRequest.h
   include/tencentcloud/csip/v20221121/model/TaskLogURL.h
@@ -91,6 +94,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DeleteDspmApplyOrderRequest.h
   include/tencentcloud/csip/v20221121/model/SubUserInfo.h
   include/tencentcloud/csip/v20221121/model/CloudCountDesc.h
+  include/tencentcloud/csip/v20221121/model/DiskPartitionInfo.h
   include/tencentcloud/csip/v20221121/model/ModifyDspmApproveStatusResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeAIAgentAssetListRequest.h
   include/tencentcloud/csip/v20221121/model/SendDspmAssetLoginSmsCodeResponse.h
@@ -122,7 +126,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeDspmIdentifyInfoListRequest.h
   include/tencentcloud/csip/v20221121/model/VulRiskItem.h
   include/tencentcloud/csip/v20221121/model/DeleteCosAkAssetResponse.h
-  include/tencentcloud/csip/v20221121/model/DescribeIpInvokeRecordDetailRequest.h
+  include/tencentcloud/csip/v20221121/model/AssetTagModifyAssetItem.h
   include/tencentcloud/csip/v20221121/model/DescribeAccessKeyAlarmResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeGatewayAssetsResponse.h
   include/tencentcloud/csip/v20221121/model/CreateCosObjectScanTaskResponse.h
@@ -168,6 +172,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DspmAssetFieldInfo.h
   include/tencentcloud/csip/v20221121/model/ModifyRiskCenterRiskStatusResponse.h
   include/tencentcloud/csip/v20221121/model/RetryDspmExportLogResponse.h
+  include/tencentcloud/csip/v20221121/model/MachineDetail.h
   include/tencentcloud/csip/v20221121/model/DescribeExposuresResponse.h
   include/tencentcloud/csip/v20221121/model/CreateDspmApproveHistoryExportJobRequest.h
   include/tencentcloud/csip/v20221121/model/CreateDspmRiskExportJobResponse.h
@@ -266,6 +271,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/CreateDspmAssetAccessTopologyExportJobRequest.h
   include/tencentcloud/csip/v20221121/model/DeleteDspmApplyOrderResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeCosPolicyRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeCWPMachinesRequest.h
   include/tencentcloud/csip/v20221121/model/DspmAssetAccount.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmIdentifyIdListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeCVMAssetInfoResponse.h
@@ -305,6 +311,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/TaskLogInfo.h
   include/tencentcloud/csip/v20221121/model/DescribeTaskLogURLResponse.h
   include/tencentcloud/csip/v20221121/model/CosAssetFileIdentifyInfo.h
+  include/tencentcloud/csip/v20221121/model/Machine.h
   include/tencentcloud/csip/v20221121/model/UserCallRecord.h
   include/tencentcloud/csip/v20221121/model/DescribeCosAuditDictionaryListResponse.h
   include/tencentcloud/csip/v20221121/model/UebaRule.h
@@ -396,6 +403,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DeleteIaCAccessTokenResponse.h
   include/tencentcloud/csip/v20221121/model/Location.h
   include/tencentcloud/csip/v20221121/model/CosRoleAccessInfo.h
+  include/tencentcloud/csip/v20221121/model/MiniTagItem.h
   include/tencentcloud/csip/v20221121/model/UebaEventContent.h
   include/tencentcloud/csip/v20221121/model/CreateAccessKeySyncTaskResponse.h
   include/tencentcloud/csip/v20221121/model/ModifyIaCTokenPeriodResponse.h
@@ -431,6 +439,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribePublicIpAssetsRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmBackupSettingRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeCVMAssetInfoRequest.h
+  include/tencentcloud/csip/v20221121/model/ModifyMachineRemarkResponse.h
   include/tencentcloud/csip/v20221121/model/WebsiteRisk.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmSyncAssetsStatusResponse.h
   include/tencentcloud/csip/v20221121/model/DspmRiskCount.h
@@ -447,7 +456,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/ModifyDspmIpInfoRequest.h
   include/tencentcloud/csip/v20221121/model/ScanTaskInfo.h
   include/tencentcloud/csip/v20221121/model/TrafficPluginState.h
-  include/tencentcloud/csip/v20221121/model/DescribeDspmAssetTableListResponse.h
+  include/tencentcloud/csip/v20221121/model/DescribeAccessKeyAlarmDetailRequest.h
   include/tencentcloud/csip/v20221121/model/Tags.h
   include/tencentcloud/csip/v20221121/model/ModifyDspmRiskInfoRequest.h
   include/tencentcloud/csip/v20221121/model/PortViewPortRisk.h
@@ -565,7 +574,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeScanReportListResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmWhitelistStrategyResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmAssetAccountIdentifyRequest.h
-  include/tencentcloud/csip/v20221121/model/DescribeDspmSupportedAssetTypeResponse.h
+  include/tencentcloud/csip/v20221121/model/DescribeDspmAssetAccessTopologyResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeSkillScanPayInfoRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeCosInvokeUaResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmApplyHistoryRequest.h
@@ -574,6 +583,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeCosAuditPayInfoResponse.h
   include/tencentcloud/csip/v20221121/model/AssetInfoDetail.h
   include/tencentcloud/csip/v20221121/model/SubnetAsset.h
+  include/tencentcloud/csip/v20221121/model/ContainerEnvInfo.h
   include/tencentcloud/csip/v20221121/model/RiskCenterStatusKey.h
   include/tencentcloud/csip/v20221121/model/TaskAssetObject.h
   include/tencentcloud/csip/v20221121/model/DbAssetInfo.h
@@ -583,7 +593,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/CosIdentifyRuleDetail.h
   include/tencentcloud/csip/v20221121/model/Element.h
   include/tencentcloud/csip/v20221121/model/SyncDspmUsersRequest.h
-  include/tencentcloud/csip/v20221121/model/DescribeAccessKeyAlarmDetailRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeDspmAssetTableListResponse.h
   include/tencentcloud/csip/v20221121/model/ModifyAlarmRiskStatusResponse.h
   include/tencentcloud/csip/v20221121/model/Tag.h
   include/tencentcloud/csip/v20221121/model/DspmIdentifyCategoryDetail.h
@@ -596,6 +606,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/AssetViewWeakPassRisk.h
   include/tencentcloud/csip/v20221121/model/ModifyPolicyStatusResponse.h
   include/tencentcloud/csip/v20221121/model/CFGViewCFGRisk.h
+  include/tencentcloud/csip/v20221121/model/DescribeCWPMachinesResponse.h
   include/tencentcloud/csip/v20221121/model/CreateIaCFileReScanTaskRequest.h
   include/tencentcloud/csip/v20221121/model/CosBucketInfo.h
   include/tencentcloud/csip/v20221121/model/ReportItemKey.h
@@ -616,6 +627,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeDspmAssetDatabaseListResponse.h
   include/tencentcloud/csip/v20221121/model/CreateSkillScanRequest.h
   include/tencentcloud/csip/v20221121/model/ModifyDspmAccessRecordResponse.h
+  include/tencentcloud/csip/v20221121/model/ModifyMachineRemarkRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeVulViewVulRiskListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeCosBucketListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeVulRiskListRequest.h
@@ -660,9 +672,11 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeCSIPRiskStatisticsRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeUebaRuleResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDomainAssetsResponse.h
+  include/tencentcloud/csip/v20221121/model/RegionInfo.h
   include/tencentcloud/csip/v20221121/model/DescribeTaskLogListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeNICAssetsResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskTrendDataRequest.h
+  include/tencentcloud/csip/v20221121/model/NetworkCardInfo.h
   include/tencentcloud/csip/v20221121/model/CosRiskViewInfo.h
   include/tencentcloud/csip/v20221121/model/Filters.h
   include/tencentcloud/csip/v20221121/model/ModifyRiskCenterScanTaskRequest.h
@@ -696,15 +710,17 @@ set(csip_src
   src/v20221121/model/DescribeCosInvokeUaRequest.cpp
   src/v20221121/model/CsipRiskCenterStatistics.cpp
   src/v20221121/model/ModifyDspmApproveStatusRequest.cpp
+  src/v20221121/model/DescribeCWPMachineDetailRequest.cpp
   src/v20221121/model/DescribeRiskItemListResponse.cpp
   src/v20221121/model/ModifyPolicyStatusRequest.cpp
   src/v20221121/model/DescribeCosAssetResponse.cpp
   src/v20221121/model/CreateCosAssetSyncTaskResponse.cpp
   src/v20221121/model/DescribeDspmSupportedAssetTypeRequest.cpp
-  src/v20221121/model/DescribeDspmAssetAccessTopologyResponse.cpp
+  src/v20221121/model/DescribeDspmSupportedAssetTypeResponse.cpp
   src/v20221121/model/ModifyDspmBackupSettingRequest.cpp
   src/v20221121/model/AuditLogInfo.cpp
   src/v20221121/model/CreateAccessKeySyncTaskRequest.cpp
+  src/v20221121/model/DescribeIpInvokeRecordDetailRequest.cpp
   src/v20221121/model/DescribeRiskCenterAssetViewWeakPasswordRiskListResponse.cpp
   src/v20221121/model/DescribeCosBucketBillingInfoResponse.cpp
   src/v20221121/model/RiskRuleInfo.cpp
@@ -754,6 +770,7 @@ set(csip_src
   src/v20221121/model/DescribeVulRiskListResponse.cpp
   src/v20221121/model/CreateRiskCenterScanTaskResponse.cpp
   src/v20221121/model/DescribeDspmAssetsRequest.cpp
+  src/v20221121/model/DescribeCWPMachineDetailResponse.cpp
   src/v20221121/model/StopRiskCenterTaskResponse.cpp
   src/v20221121/model/DescribeVpcAssetsRequest.cpp
   src/v20221121/model/TaskLogURL.cpp
@@ -764,6 +781,7 @@ set(csip_src
   src/v20221121/model/DeleteDspmApplyOrderRequest.cpp
   src/v20221121/model/SubUserInfo.cpp
   src/v20221121/model/CloudCountDesc.cpp
+  src/v20221121/model/DiskPartitionInfo.cpp
   src/v20221121/model/ModifyDspmApproveStatusResponse.cpp
   src/v20221121/model/DescribeAIAgentAssetListRequest.cpp
   src/v20221121/model/SendDspmAssetLoginSmsCodeResponse.cpp
@@ -795,7 +813,7 @@ set(csip_src
   src/v20221121/model/DescribeDspmIdentifyInfoListRequest.cpp
   src/v20221121/model/VulRiskItem.cpp
   src/v20221121/model/DeleteCosAkAssetResponse.cpp
-  src/v20221121/model/DescribeIpInvokeRecordDetailRequest.cpp
+  src/v20221121/model/AssetTagModifyAssetItem.cpp
   src/v20221121/model/DescribeAccessKeyAlarmResponse.cpp
   src/v20221121/model/DescribeGatewayAssetsResponse.cpp
   src/v20221121/model/CreateCosObjectScanTaskResponse.cpp
@@ -841,6 +859,7 @@ set(csip_src
   src/v20221121/model/DspmAssetFieldInfo.cpp
   src/v20221121/model/ModifyRiskCenterRiskStatusResponse.cpp
   src/v20221121/model/RetryDspmExportLogResponse.cpp
+  src/v20221121/model/MachineDetail.cpp
   src/v20221121/model/DescribeExposuresResponse.cpp
   src/v20221121/model/CreateDspmApproveHistoryExportJobRequest.cpp
   src/v20221121/model/CreateDspmRiskExportJobResponse.cpp
@@ -939,6 +958,7 @@ set(csip_src
   src/v20221121/model/CreateDspmAssetAccessTopologyExportJobRequest.cpp
   src/v20221121/model/DeleteDspmApplyOrderResponse.cpp
   src/v20221121/model/DescribeCosPolicyRequest.cpp
+  src/v20221121/model/DescribeCWPMachinesRequest.cpp
   src/v20221121/model/DspmAssetAccount.cpp
   src/v20221121/model/DescribeDspmIdentifyIdListRequest.cpp
   src/v20221121/model/DescribeCVMAssetInfoResponse.cpp
@@ -978,6 +998,7 @@ set(csip_src
   src/v20221121/model/TaskLogInfo.cpp
   src/v20221121/model/DescribeTaskLogURLResponse.cpp
   src/v20221121/model/CosAssetFileIdentifyInfo.cpp
+  src/v20221121/model/Machine.cpp
   src/v20221121/model/UserCallRecord.cpp
   src/v20221121/model/DescribeCosAuditDictionaryListResponse.cpp
   src/v20221121/model/UebaRule.cpp
@@ -1069,6 +1090,7 @@ set(csip_src
   src/v20221121/model/DeleteIaCAccessTokenResponse.cpp
   src/v20221121/model/Location.cpp
   src/v20221121/model/CosRoleAccessInfo.cpp
+  src/v20221121/model/MiniTagItem.cpp
   src/v20221121/model/UebaEventContent.cpp
   src/v20221121/model/CreateAccessKeySyncTaskResponse.cpp
   src/v20221121/model/ModifyIaCTokenPeriodResponse.cpp
@@ -1104,6 +1126,7 @@ set(csip_src
   src/v20221121/model/DescribePublicIpAssetsRequest.cpp
   src/v20221121/model/DescribeDspmBackupSettingRequest.cpp
   src/v20221121/model/DescribeCVMAssetInfoRequest.cpp
+  src/v20221121/model/ModifyMachineRemarkResponse.cpp
   src/v20221121/model/WebsiteRisk.cpp
   src/v20221121/model/DescribeDspmSyncAssetsStatusResponse.cpp
   src/v20221121/model/DspmRiskCount.cpp
@@ -1120,7 +1143,7 @@ set(csip_src
   src/v20221121/model/ModifyDspmIpInfoRequest.cpp
   src/v20221121/model/ScanTaskInfo.cpp
   src/v20221121/model/TrafficPluginState.cpp
-  src/v20221121/model/DescribeDspmAssetTableListResponse.cpp
+  src/v20221121/model/DescribeAccessKeyAlarmDetailRequest.cpp
   src/v20221121/model/Tags.cpp
   src/v20221121/model/ModifyDspmRiskInfoRequest.cpp
   src/v20221121/model/PortViewPortRisk.cpp
@@ -1238,7 +1261,7 @@ set(csip_src
   src/v20221121/model/DescribeScanReportListResponse.cpp
   src/v20221121/model/DescribeDspmWhitelistStrategyResponse.cpp
   src/v20221121/model/DescribeDspmAssetAccountIdentifyRequest.cpp
-  src/v20221121/model/DescribeDspmSupportedAssetTypeResponse.cpp
+  src/v20221121/model/DescribeDspmAssetAccessTopologyResponse.cpp
   src/v20221121/model/DescribeSkillScanPayInfoRequest.cpp
   src/v20221121/model/DescribeCosInvokeUaResponse.cpp
   src/v20221121/model/DescribeDspmApplyHistoryRequest.cpp
@@ -1247,6 +1270,7 @@ set(csip_src
   src/v20221121/model/DescribeCosAuditPayInfoResponse.cpp
   src/v20221121/model/AssetInfoDetail.cpp
   src/v20221121/model/SubnetAsset.cpp
+  src/v20221121/model/ContainerEnvInfo.cpp
   src/v20221121/model/RiskCenterStatusKey.cpp
   src/v20221121/model/TaskAssetObject.cpp
   src/v20221121/model/DbAssetInfo.cpp
@@ -1256,7 +1280,7 @@ set(csip_src
   src/v20221121/model/CosIdentifyRuleDetail.cpp
   src/v20221121/model/Element.cpp
   src/v20221121/model/SyncDspmUsersRequest.cpp
-  src/v20221121/model/DescribeAccessKeyAlarmDetailRequest.cpp
+  src/v20221121/model/DescribeDspmAssetTableListResponse.cpp
   src/v20221121/model/ModifyAlarmRiskStatusResponse.cpp
   src/v20221121/model/Tag.cpp
   src/v20221121/model/DspmIdentifyCategoryDetail.cpp
@@ -1269,6 +1293,7 @@ set(csip_src
   src/v20221121/model/AssetViewWeakPassRisk.cpp
   src/v20221121/model/ModifyPolicyStatusResponse.cpp
   src/v20221121/model/CFGViewCFGRisk.cpp
+  src/v20221121/model/DescribeCWPMachinesResponse.cpp
   src/v20221121/model/CreateIaCFileReScanTaskRequest.cpp
   src/v20221121/model/CosBucketInfo.cpp
   src/v20221121/model/ReportItemKey.cpp
@@ -1289,6 +1314,7 @@ set(csip_src
   src/v20221121/model/DescribeDspmAssetDatabaseListResponse.cpp
   src/v20221121/model/CreateSkillScanRequest.cpp
   src/v20221121/model/ModifyDspmAccessRecordResponse.cpp
+  src/v20221121/model/ModifyMachineRemarkRequest.cpp
   src/v20221121/model/DescribeVulViewVulRiskListRequest.cpp
   src/v20221121/model/DescribeCosBucketListRequest.cpp
   src/v20221121/model/DescribeVulRiskListRequest.cpp
@@ -1333,9 +1359,11 @@ set(csip_src
   src/v20221121/model/DescribeCSIPRiskStatisticsRequest.cpp
   src/v20221121/model/DescribeUebaRuleResponse.cpp
   src/v20221121/model/DescribeDomainAssetsResponse.cpp
+  src/v20221121/model/RegionInfo.cpp
   src/v20221121/model/DescribeTaskLogListRequest.cpp
   src/v20221121/model/DescribeNICAssetsResponse.cpp
   src/v20221121/model/DescribeRiskTrendDataRequest.cpp
+  src/v20221121/model/NetworkCardInfo.cpp
   src/v20221121/model/CosRiskViewInfo.cpp
   src/v20221121/model/Filters.cpp
   src/v20221121/model/ModifyRiskCenterScanTaskRequest.cpp

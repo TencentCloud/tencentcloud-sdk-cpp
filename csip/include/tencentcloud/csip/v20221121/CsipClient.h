@@ -137,6 +137,10 @@
 #include <tencentcloud/csip/v20221121/model/DescribeCVMAssetInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCVMAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCVMAssetsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCWPMachineDetailRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCWPMachineDetailResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCWPMachinesRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCWPMachinesResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCallRecordRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCallRecordResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCheckViewRisksRequest.h>
@@ -449,6 +453,8 @@
 #include <tencentcloud/csip/v20221121/model/ModifyDspmWhitelistStrategyResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyIaCTokenPeriodRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyIaCTokenPeriodResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyMachineRemarkRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyMachineRemarkResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyOrganizationAccountStatusRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyOrganizationAccountStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyPolicyStatusRequest.h>
@@ -666,6 +672,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCVMAssetsResponse> DescribeCVMAssetsOutcome;
                 typedef std::future<DescribeCVMAssetsOutcome> DescribeCVMAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeCVMAssetsRequest&, DescribeCVMAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCVMAssetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCWPMachineDetailResponse> DescribeCWPMachineDetailOutcome;
+                typedef std::future<DescribeCWPMachineDetailOutcome> DescribeCWPMachineDetailOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCWPMachineDetailRequest&, DescribeCWPMachineDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCWPMachineDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCWPMachinesResponse> DescribeCWPMachinesOutcome;
+                typedef std::future<DescribeCWPMachinesOutcome> DescribeCWPMachinesOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCWPMachinesRequest&, DescribeCWPMachinesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCWPMachinesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCallRecordResponse> DescribeCallRecordOutcome;
                 typedef std::future<DescribeCallRecordOutcome> DescribeCallRecordOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeCallRecordRequest&, DescribeCallRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCallRecordAsyncHandler;
@@ -1134,6 +1146,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyIaCTokenPeriodResponse> ModifyIaCTokenPeriodOutcome;
                 typedef std::future<ModifyIaCTokenPeriodOutcome> ModifyIaCTokenPeriodOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyIaCTokenPeriodRequest&, ModifyIaCTokenPeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIaCTokenPeriodAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyMachineRemarkResponse> ModifyMachineRemarkOutcome;
+                typedef std::future<ModifyMachineRemarkOutcome> ModifyMachineRemarkOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyMachineRemarkRequest&, ModifyMachineRemarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMachineRemarkAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyOrganizationAccountStatusResponse> ModifyOrganizationAccountStatusOutcome;
                 typedef std::future<ModifyOrganizationAccountStatusOutcome> ModifyOrganizationAccountStatusOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyOrganizationAccountStatusRequest&, ModifyOrganizationAccountStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOrganizationAccountStatusAsyncHandler;
@@ -1697,6 +1712,24 @@ namespace TencentCloud
                 DescribeCVMAssetsOutcome DescribeCVMAssets(const Model::DescribeCVMAssetsRequest &request);
                 void DescribeCVMAssetsAsync(const Model::DescribeCVMAssetsRequest& request, const DescribeCVMAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCVMAssetsOutcomeCallable DescribeCVMAssetsCallable(const Model::DescribeCVMAssetsRequest& request);
+
+                /**
+                 *主机详情
+                 * @param req DescribeCWPMachineDetailRequest
+                 * @return DescribeCWPMachineDetailOutcome
+                 */
+                DescribeCWPMachineDetailOutcome DescribeCWPMachineDetail(const Model::DescribeCWPMachineDetailRequest &request);
+                void DescribeCWPMachineDetailAsync(const Model::DescribeCWPMachineDetailRequest& request, const DescribeCWPMachineDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCWPMachineDetailOutcomeCallable DescribeCWPMachineDetailCallable(const Model::DescribeCWPMachineDetailRequest& request);
+
+                /**
+                 *主机列表
+                 * @param req DescribeCWPMachinesRequest
+                 * @return DescribeCWPMachinesOutcome
+                 */
+                DescribeCWPMachinesOutcome DescribeCWPMachines(const Model::DescribeCWPMachinesRequest &request);
+                void DescribeCWPMachinesAsync(const Model::DescribeCWPMachinesRequest& request, const DescribeCWPMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCWPMachinesOutcomeCallable DescribeCWPMachinesCallable(const Model::DescribeCWPMachinesRequest& request);
 
                 /**
                  *获取调用记录列表
@@ -3101,6 +3134,15 @@ namespace TencentCloud
                 ModifyIaCTokenPeriodOutcome ModifyIaCTokenPeriod(const Model::ModifyIaCTokenPeriodRequest &request);
                 void ModifyIaCTokenPeriodAsync(const Model::ModifyIaCTokenPeriodRequest& request, const ModifyIaCTokenPeriodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyIaCTokenPeriodOutcomeCallable ModifyIaCTokenPeriodCallable(const Model::ModifyIaCTokenPeriodRequest& request);
+
+                /**
+                 *修改主机资产备注信息
+                 * @param req ModifyMachineRemarkRequest
+                 * @return ModifyMachineRemarkOutcome
+                 */
+                ModifyMachineRemarkOutcome ModifyMachineRemark(const Model::ModifyMachineRemarkRequest &request);
+                void ModifyMachineRemarkAsync(const Model::ModifyMachineRemarkRequest& request, const ModifyMachineRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMachineRemarkOutcomeCallable ModifyMachineRemarkCallable(const Model::ModifyMachineRemarkRequest& request);
 
                 /**
                  *修改集团账号状态

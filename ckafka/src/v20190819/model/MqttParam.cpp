@@ -32,7 +32,8 @@ MqttParam::MqttParam() :
     m_maxTasksHasBeenSet(false),
     m_serviceVipHasBeenSet(false),
     m_uniqVpcIdHasBeenSet(false),
-    m_selfBuiltHasBeenSet(false)
+    m_selfBuiltHasBeenSet(false),
+    m_sqlFilterHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome MqttParam::Deserialize(const rapidjson::Value &value)
         m_selfBuiltHasBeenSet = true;
     }
 
+    if (value.HasMember("SqlFilter") && !value["SqlFilter"].IsNull())
+    {
+        if (!value["SqlFilter"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MqttParam.SqlFilter` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sqlFilter = string(value["SqlFilter"].GetString());
+        m_sqlFilterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void MqttParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "SelfBuilt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_selfBuilt, allocator);
+    }
+
+    if (m_sqlFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SqlFilter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sqlFilter.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void MqttParam::SetSelfBuilt(const bool& _selfBuilt)
 bool MqttParam::SelfBuiltHasBeenSet() const
 {
     return m_selfBuiltHasBeenSet;
+}
+
+string MqttParam::GetSqlFilter() const
+{
+    return m_sqlFilter;
+}
+
+void MqttParam::SetSqlFilter(const string& _sqlFilter)
+{
+    m_sqlFilter = _sqlFilter;
+    m_sqlFilterHasBeenSet = true;
+}
+
+bool MqttParam::SqlFilterHasBeenSet() const
+{
+    return m_sqlFilterHasBeenSet;
 }
 

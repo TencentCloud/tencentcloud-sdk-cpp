@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取SSL 证书下载地址。
-                     * @return CertDownloadUrl SSL 证书下载地址。
+                     * 获取<p>SSL 证书下载地址。</p>
+                     * @return CertDownloadUrl <p>SSL 证书下载地址。</p>
                      * 
                      */
                     std::string GetCertDownloadUrl() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool CertDownloadUrlHasBeenSet() const;
 
                     /**
-                     * 获取证书下载链接到期时间。
-                     * @return UrlExpiredTime 证书下载链接到期时间。
+                     * 获取<p>证书下载链接到期时间。</p>
+                     * @return UrlExpiredTime <p>证书下载链接到期时间。</p>
                      * 
                      */
                     std::string GetUrlExpiredTime() const;
@@ -72,12 +72,8 @@ namespace TencentCloud
                     bool UrlExpiredTimeHasBeenSet() const;
 
                     /**
-                     * 获取标识实例开启 SSL 功能。
-- true：开启 。
-- false：关闭。
-                     * @return SSLConfig 标识实例开启 SSL 功能。
-- true：开启 。
-- false：关闭。
+                     * 获取<p>标识实例开启 SSL 功能。</p><ul><li>true：开启 。</li><li>false：关闭。</li></ul>
+                     * @return SSLConfig <p>标识实例开启 SSL 功能。</p><ul><li>true：开启 。</li><li>false：关闭。</li></ul>
                      * 
                      */
                     bool GetSSLConfig() const;
@@ -90,12 +86,8 @@ namespace TencentCloud
                     bool SSLConfigHasBeenSet() const;
 
                     /**
-                     * 获取标识实例是否支持 SSL特性。
-- true：支持。
-- false：不支持。
-                     * @return FeatureSupport 标识实例是否支持 SSL特性。
-- true：支持。
-- false：不支持。
+                     * 获取<p>标识实例是否支持 SSL特性。</p><ul><li>true：支持。</li><li>false：不支持。</li></ul>
+                     * @return FeatureSupport <p>标识实例是否支持 SSL特性。</p><ul><li>true：支持。</li><li>false：不支持。</li></ul>
                      * 
                      */
                     bool GetFeatureSupport() const;
@@ -108,12 +100,8 @@ namespace TencentCloud
                     bool FeatureSupportHasBeenSet() const;
 
                     /**
-                     * 获取说明配置 SSL 的状态。
-- 1: 配置中。
-- 2：配置成功。
-                     * @return Status 说明配置 SSL 的状态。
-- 1: 配置中。
-- 2：配置成功。
+                     * 获取<p>说明配置 SSL 的状态。</p><ul><li>1: 配置中。</li><li>2：配置成功。</li></ul>
+                     * @return Status <p>说明配置 SSL 的状态。</p><ul><li>1: 配置中。</li><li>2：配置成功。</li></ul>
                      * 
                      */
                     int64_t GetStatus() const;
@@ -125,43 +113,77 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>地址类型</p><p>枚举值：</p><ul><li>0： 不限</li><li>1： 内网IPv4</li><li>2： 内网IPv6</li><li>3： 外网</li><li>-1： 未指定</li></ul>
+                     * @return AddressType <p>地址类型</p><p>枚举值：</p><ul><li>0： 不限</li><li>1： 内网IPv4</li><li>2： 内网IPv6</li><li>3： 外网</li><li>-1： 未指定</li></ul>
+                     * 
+                     */
+                    int64_t GetAddressType() const;
+
+                    /**
+                     * 判断参数 AddressType 是否已赋值
+                     * @return AddressType 是否已赋值
+                     * 
+                     */
+                    bool AddressTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>当前加密连接地址</p>
+                     * @return EncryptAddress <p>当前加密连接地址</p>
+                     * 
+                     */
+                    std::string GetEncryptAddress() const;
+
+                    /**
+                     * 判断参数 EncryptAddress 是否已赋值
+                     * @return EncryptAddress 是否已赋值
+                     * 
+                     */
+                    bool EncryptAddressHasBeenSet() const;
+
                 private:
 
                     /**
-                     * SSL 证书下载地址。
+                     * <p>SSL 证书下载地址。</p>
                      */
                     std::string m_certDownloadUrl;
                     bool m_certDownloadUrlHasBeenSet;
 
                     /**
-                     * 证书下载链接到期时间。
+                     * <p>证书下载链接到期时间。</p>
                      */
                     std::string m_urlExpiredTime;
                     bool m_urlExpiredTimeHasBeenSet;
 
                     /**
-                     * 标识实例开启 SSL 功能。
-- true：开启 。
-- false：关闭。
+                     * <p>标识实例开启 SSL 功能。</p><ul><li>true：开启 。</li><li>false：关闭。</li></ul>
                      */
                     bool m_sSLConfig;
                     bool m_sSLConfigHasBeenSet;
 
                     /**
-                     * 标识实例是否支持 SSL特性。
-- true：支持。
-- false：不支持。
+                     * <p>标识实例是否支持 SSL特性。</p><ul><li>true：支持。</li><li>false：不支持。</li></ul>
                      */
                     bool m_featureSupport;
                     bool m_featureSupportHasBeenSet;
 
                     /**
-                     * 说明配置 SSL 的状态。
-- 1: 配置中。
-- 2：配置成功。
+                     * <p>说明配置 SSL 的状态。</p><ul><li>1: 配置中。</li><li>2：配置成功。</li></ul>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>地址类型</p><p>枚举值：</p><ul><li>0： 不限</li><li>1： 内网IPv4</li><li>2： 内网IPv6</li><li>3： 外网</li><li>-1： 未指定</li></ul>
+                     */
+                    int64_t m_addressType;
+                    bool m_addressTypeHasBeenSet;
+
+                    /**
+                     * <p>当前加密连接地址</p>
+                     */
+                    std::string m_encryptAddress;
+                    bool m_encryptAddressHasBeenSet;
 
                 };
             }

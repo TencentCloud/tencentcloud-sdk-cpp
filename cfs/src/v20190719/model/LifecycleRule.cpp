@@ -30,7 +30,10 @@ LifecycleRule::LifecycleRule() :
     m_policyTypeHasBeenSet(false),
     m_expireThresholdHasBeenSet(false),
     m_targetThresholdHasBeenSet(false),
-    m_isOverwriteHasBeenSet(false)
+    m_isOverwriteHasBeenSet(false),
+    m_isCreateRealTimeSyncHasBeenSet(false),
+    m_isModifyRealTimeSyncHasBeenSet(false),
+    m_isSyncDeleteHasBeenSet(false)
 {
 }
 
@@ -139,6 +142,36 @@ CoreInternalOutcome LifecycleRule::Deserialize(const rapidjson::Value &value)
         m_isOverwriteHasBeenSet = true;
     }
 
+    if (value.HasMember("IsCreateRealTimeSync") && !value["IsCreateRealTimeSync"].IsNull())
+    {
+        if (!value["IsCreateRealTimeSync"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `LifecycleRule.IsCreateRealTimeSync` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCreateRealTimeSync = value["IsCreateRealTimeSync"].GetBool();
+        m_isCreateRealTimeSyncHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsModifyRealTimeSync") && !value["IsModifyRealTimeSync"].IsNull())
+    {
+        if (!value["IsModifyRealTimeSync"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `LifecycleRule.IsModifyRealTimeSync` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isModifyRealTimeSync = value["IsModifyRealTimeSync"].GetBool();
+        m_isModifyRealTimeSyncHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsSyncDelete") && !value["IsSyncDelete"].IsNull())
+    {
+        if (!value["IsSyncDelete"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `LifecycleRule.IsSyncDelete` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSyncDelete = value["IsSyncDelete"].GetBool();
+        m_isSyncDeleteHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +257,30 @@ void LifecycleRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "IsOverwrite";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isOverwrite, allocator);
+    }
+
+    if (m_isCreateRealTimeSyncHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCreateRealTimeSync";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCreateRealTimeSync, allocator);
+    }
+
+    if (m_isModifyRealTimeSyncHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsModifyRealTimeSync";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isModifyRealTimeSync, allocator);
+    }
+
+    if (m_isSyncDeleteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSyncDelete";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSyncDelete, allocator);
     }
 
 }
@@ -387,5 +444,53 @@ void LifecycleRule::SetIsOverwrite(const bool& _isOverwrite)
 bool LifecycleRule::IsOverwriteHasBeenSet() const
 {
     return m_isOverwriteHasBeenSet;
+}
+
+bool LifecycleRule::GetIsCreateRealTimeSync() const
+{
+    return m_isCreateRealTimeSync;
+}
+
+void LifecycleRule::SetIsCreateRealTimeSync(const bool& _isCreateRealTimeSync)
+{
+    m_isCreateRealTimeSync = _isCreateRealTimeSync;
+    m_isCreateRealTimeSyncHasBeenSet = true;
+}
+
+bool LifecycleRule::IsCreateRealTimeSyncHasBeenSet() const
+{
+    return m_isCreateRealTimeSyncHasBeenSet;
+}
+
+bool LifecycleRule::GetIsModifyRealTimeSync() const
+{
+    return m_isModifyRealTimeSync;
+}
+
+void LifecycleRule::SetIsModifyRealTimeSync(const bool& _isModifyRealTimeSync)
+{
+    m_isModifyRealTimeSync = _isModifyRealTimeSync;
+    m_isModifyRealTimeSyncHasBeenSet = true;
+}
+
+bool LifecycleRule::IsModifyRealTimeSyncHasBeenSet() const
+{
+    return m_isModifyRealTimeSyncHasBeenSet;
+}
+
+bool LifecycleRule::GetIsSyncDelete() const
+{
+    return m_isSyncDelete;
+}
+
+void LifecycleRule::SetIsSyncDelete(const bool& _isSyncDelete)
+{
+    m_isSyncDelete = _isSyncDelete;
+    m_isSyncDeleteHasBeenSet = true;
+}
+
+bool LifecycleRule::IsSyncDeleteHasBeenSet() const
+{
+    return m_isSyncDeleteHasBeenSet;
 }
 

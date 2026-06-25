@@ -2890,6 +2890,106 @@ CsipClient::DescribeCVMAssetsOutcomeCallable CsipClient::DescribeCVMAssetsCallab
     return prom->get_future();
 }
 
+CsipClient::DescribeCWPMachineDetailOutcome CsipClient::DescribeCWPMachineDetail(const DescribeCWPMachineDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCWPMachineDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCWPMachineDetailResponse rsp = DescribeCWPMachineDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCWPMachineDetailOutcome(rsp);
+        else
+            return DescribeCWPMachineDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCWPMachineDetailOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeCWPMachineDetailAsync(const DescribeCWPMachineDetailRequest& request, const DescribeCWPMachineDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCWPMachineDetailRequest&;
+    using Resp = DescribeCWPMachineDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCWPMachineDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeCWPMachineDetailOutcomeCallable CsipClient::DescribeCWPMachineDetailCallable(const DescribeCWPMachineDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCWPMachineDetailOutcome>>();
+    DescribeCWPMachineDetailAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeCWPMachineDetailRequest&,
+        DescribeCWPMachineDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeCWPMachinesOutcome CsipClient::DescribeCWPMachines(const DescribeCWPMachinesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCWPMachines");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCWPMachinesResponse rsp = DescribeCWPMachinesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCWPMachinesOutcome(rsp);
+        else
+            return DescribeCWPMachinesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCWPMachinesOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeCWPMachinesAsync(const DescribeCWPMachinesRequest& request, const DescribeCWPMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCWPMachinesRequest&;
+    using Resp = DescribeCWPMachinesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCWPMachines", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeCWPMachinesOutcomeCallable CsipClient::DescribeCWPMachinesCallable(const DescribeCWPMachinesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCWPMachinesOutcome>>();
+    DescribeCWPMachinesAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeCWPMachinesRequest&,
+        DescribeCWPMachinesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::DescribeCallRecordOutcome CsipClient::DescribeCallRecord(const DescribeCallRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCallRecord");
@@ -10682,6 +10782,56 @@ CsipClient::ModifyIaCTokenPeriodOutcomeCallable CsipClient::ModifyIaCTokenPeriod
         const CsipClient*,
         const ModifyIaCTokenPeriodRequest&,
         ModifyIaCTokenPeriodOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::ModifyMachineRemarkOutcome CsipClient::ModifyMachineRemark(const ModifyMachineRemarkRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMachineRemark");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMachineRemarkResponse rsp = ModifyMachineRemarkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMachineRemarkOutcome(rsp);
+        else
+            return ModifyMachineRemarkOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMachineRemarkOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifyMachineRemarkAsync(const ModifyMachineRemarkRequest& request, const ModifyMachineRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyMachineRemarkRequest&;
+    using Resp = ModifyMachineRemarkResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyMachineRemark", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifyMachineRemarkOutcomeCallable CsipClient::ModifyMachineRemarkCallable(const ModifyMachineRemarkRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyMachineRemarkOutcome>>();
+    ModifyMachineRemarkAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifyMachineRemarkRequest&,
+        ModifyMachineRemarkOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

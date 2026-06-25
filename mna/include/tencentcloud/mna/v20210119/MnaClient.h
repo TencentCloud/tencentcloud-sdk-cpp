@@ -73,6 +73,8 @@
 #include <tencentcloud/mna/v20210119/model/GetFlowStatisticByNameResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetFlowStatisticByRegionRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetFlowStatisticByRegionResponse.h>
+#include <tencentcloud/mna/v20210119/model/GetGatewayListRequest.h>
+#include <tencentcloud/mna/v20210119/model/GetGatewayListResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetGroupDetailRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetGroupDetailResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetGroupListRequest.h>
@@ -220,6 +222,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetFlowStatisticByRegionResponse> GetFlowStatisticByRegionOutcome;
                 typedef std::future<GetFlowStatisticByRegionOutcome> GetFlowStatisticByRegionOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetFlowStatisticByRegionRequest&, GetFlowStatisticByRegionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFlowStatisticByRegionAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetGatewayListResponse> GetGatewayListOutcome;
+                typedef std::future<GetGatewayListOutcome> GetGatewayListOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GetGatewayListRequest&, GetGatewayListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetGatewayListAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetGroupDetailResponse> GetGroupDetailOutcome;
                 typedef std::future<GetGroupDetailOutcome> GetGroupDetailOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetGroupDetailRequest&, GetGroupDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetGroupDetailAsyncHandler;
@@ -534,6 +539,15 @@ namespace TencentCloud
                 GetFlowStatisticByRegionOutcome GetFlowStatisticByRegion(const Model::GetFlowStatisticByRegionRequest &request);
                 void GetFlowStatisticByRegionAsync(const Model::GetFlowStatisticByRegionRequest& request, const GetFlowStatisticByRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetFlowStatisticByRegionOutcomeCallable GetFlowStatisticByRegionCallable(const Model::GetFlowStatisticByRegionRequest& request);
+
+                /**
+                 *支持网关列表查询。包含网关名称、创建时间和网关状态（正常/异常）。支持基于网关名称的查询。默认按照创建时间倒序排列。
+                 * @param req GetGatewayListRequest
+                 * @return GetGatewayListOutcome
+                 */
+                GetGatewayListOutcome GetGatewayList(const Model::GetGatewayListRequest &request);
+                void GetGatewayListAsync(const Model::GetGatewayListRequest& request, const GetGatewayListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetGatewayListOutcomeCallable GetGatewayListCallable(const Model::GetGatewayListRequest& request);
 
                 /**
                  *查看分组详细信息

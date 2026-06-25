@@ -15,26 +15,11 @@
 #
 
 set(ims_public_header
-  include/tencentcloud/ims/v20200713/ImsClient.h
   include/tencentcloud/ims/v20201229/ImsClient.h
+  include/tencentcloud/ims/v20200713/ImsClient.h
   )
 
 set(ims_public_header_model
-  include/tencentcloud/ims/v20200713/model/ImageModerationRequest.h
-  include/tencentcloud/ims/v20200713/model/RecognitionResult.h
-  include/tencentcloud/ims/v20200713/model/ObjectResult.h
-  include/tencentcloud/ims/v20200713/model/OcrTextDetail.h
-  include/tencentcloud/ims/v20200713/model/RecognitionTag.h
-  include/tencentcloud/ims/v20200713/model/ObjectDetail.h
-  include/tencentcloud/ims/v20200713/model/OcrResult.h
-  include/tencentcloud/ims/v20200713/model/LibDetail.h
-  include/tencentcloud/ims/v20200713/model/Location.h
-  include/tencentcloud/ims/v20200713/model/LabelResult.h
-  include/tencentcloud/ims/v20200713/model/LabelDetailItem.h
-  include/tencentcloud/ims/v20200713/model/Device.h
-  include/tencentcloud/ims/v20200713/model/LibResult.h
-  include/tencentcloud/ims/v20200713/model/ImageModerationResponse.h
-  include/tencentcloud/ims/v20200713/model/User.h
   include/tencentcloud/ims/v20201229/model/ImageModerationRequest.h
   include/tencentcloud/ims/v20201229/model/RecognitionResult.h
   include/tencentcloud/ims/v20201229/model/OcrHitInfo.h
@@ -54,26 +39,26 @@ set(ims_public_header_model
   include/tencentcloud/ims/v20201229/model/ImageModerationResponse.h
   include/tencentcloud/ims/v20201229/model/Positions.h
   include/tencentcloud/ims/v20201229/model/User.h
+  include/tencentcloud/ims/v20200713/model/ImageModerationRequest.h
+  include/tencentcloud/ims/v20200713/model/RecognitionResult.h
+  include/tencentcloud/ims/v20200713/model/ObjectResult.h
+  include/tencentcloud/ims/v20200713/model/OcrTextDetail.h
+  include/tencentcloud/ims/v20200713/model/RecognitionTag.h
+  include/tencentcloud/ims/v20200713/model/ObjectDetail.h
+  include/tencentcloud/ims/v20200713/model/OcrResult.h
+  include/tencentcloud/ims/v20200713/model/LibDetail.h
+  include/tencentcloud/ims/v20200713/model/Location.h
+  include/tencentcloud/ims/v20200713/model/LabelResult.h
+  include/tencentcloud/ims/v20200713/model/LabelDetailItem.h
+  include/tencentcloud/ims/v20200713/model/Device.h
+  include/tencentcloud/ims/v20200713/model/LibResult.h
+  include/tencentcloud/ims/v20200713/model/ImageModerationResponse.h
+  include/tencentcloud/ims/v20200713/model/User.h
   )
 
 set(ims_src
-  src/v20200713/ImsClient.cpp
   src/v20201229/ImsClient.cpp
-  src/v20200713/model/ImageModerationRequest.cpp
-  src/v20200713/model/RecognitionResult.cpp
-  src/v20200713/model/ObjectResult.cpp
-  src/v20200713/model/OcrTextDetail.cpp
-  src/v20200713/model/RecognitionTag.cpp
-  src/v20200713/model/ObjectDetail.cpp
-  src/v20200713/model/OcrResult.cpp
-  src/v20200713/model/LibDetail.cpp
-  src/v20200713/model/Location.cpp
-  src/v20200713/model/LabelResult.cpp
-  src/v20200713/model/LabelDetailItem.cpp
-  src/v20200713/model/Device.cpp
-  src/v20200713/model/LibResult.cpp
-  src/v20200713/model/ImageModerationResponse.cpp
-  src/v20200713/model/User.cpp
+  src/v20200713/ImsClient.cpp
   src/v20201229/model/ImageModerationRequest.cpp
   src/v20201229/model/RecognitionResult.cpp
   src/v20201229/model/OcrHitInfo.cpp
@@ -93,6 +78,21 @@ set(ims_src
   src/v20201229/model/ImageModerationResponse.cpp
   src/v20201229/model/Positions.cpp
   src/v20201229/model/User.cpp
+  src/v20200713/model/ImageModerationRequest.cpp
+  src/v20200713/model/RecognitionResult.cpp
+  src/v20200713/model/ObjectResult.cpp
+  src/v20200713/model/OcrTextDetail.cpp
+  src/v20200713/model/RecognitionTag.cpp
+  src/v20200713/model/ObjectDetail.cpp
+  src/v20200713/model/OcrResult.cpp
+  src/v20200713/model/LibDetail.cpp
+  src/v20200713/model/Location.cpp
+  src/v20200713/model/LabelResult.cpp
+  src/v20200713/model/LabelDetailItem.cpp
+  src/v20200713/model/Device.cpp
+  src/v20200713/model/LibResult.cpp
+  src/v20200713/model/ImageModerationResponse.cpp
+  src/v20200713/model/User.cpp
   )
 
 set(ims_include
@@ -121,9 +121,9 @@ target_link_libraries(ims
   core)
 
 #install(FILES ${ims_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/ims/v20201229)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/ims/v20200713)
 #install(FILES ${ims_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/ims/v20201229/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/ims/v20200713/model)
 install(DIRECTORY ${ims_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 

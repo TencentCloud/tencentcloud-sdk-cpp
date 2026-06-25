@@ -2190,6 +2190,56 @@ TcbClient::DescribeEnvLimitOutcomeCallable TcbClient::DescribeEnvLimitCallable(c
     return prom->get_future();
 }
 
+TcbClient::DescribeEnvPlansOutcome TcbClient::DescribeEnvPlans(const DescribeEnvPlansRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEnvPlans");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEnvPlansResponse rsp = DescribeEnvPlansResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEnvPlansOutcome(rsp);
+        else
+            return DescribeEnvPlansOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEnvPlansOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeEnvPlansAsync(const DescribeEnvPlansRequest& request, const DescribeEnvPlansAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeEnvPlansRequest&;
+    using Resp = DescribeEnvPlansResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeEnvPlans", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeEnvPlansOutcomeCallable TcbClient::DescribeEnvPlansCallable(const DescribeEnvPlansRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeEnvPlansOutcome>>();
+    DescribeEnvPlansAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeEnvPlansRequest&,
+        DescribeEnvPlansOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::DescribeEnvsOutcome TcbClient::DescribeEnvs(const DescribeEnvsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEnvs");

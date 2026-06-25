@@ -1290,6 +1290,56 @@ MnaClient::GetFlowStatisticByRegionOutcomeCallable MnaClient::GetFlowStatisticBy
     return prom->get_future();
 }
 
+MnaClient::GetGatewayListOutcome MnaClient::GetGatewayList(const GetGatewayListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetGatewayList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetGatewayListResponse rsp = GetGatewayListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetGatewayListOutcome(rsp);
+        else
+            return GetGatewayListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetGatewayListOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::GetGatewayListAsync(const GetGatewayListRequest& request, const GetGatewayListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetGatewayListRequest&;
+    using Resp = GetGatewayListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetGatewayList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MnaClient::GetGatewayListOutcomeCallable MnaClient::GetGatewayListCallable(const GetGatewayListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetGatewayListOutcome>>();
+    GetGatewayListAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const GetGatewayListRequest&,
+        GetGatewayListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MnaClient::GetGroupDetailOutcome MnaClient::GetGroupDetail(const GetGroupDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "GetGroupDetail");

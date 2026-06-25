@@ -1440,6 +1440,56 @@ DbbrainClient::DescribeAuditLogFilesOutcomeCallable DbbrainClient::DescribeAudit
     return prom->get_future();
 }
 
+DbbrainClient::DescribeDBAuditLogTopSqlsOutcome DbbrainClient::DescribeDBAuditLogTopSqls(const DescribeDBAuditLogTopSqlsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBAuditLogTopSqls");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBAuditLogTopSqlsResponse rsp = DescribeDBAuditLogTopSqlsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBAuditLogTopSqlsOutcome(rsp);
+        else
+            return DescribeDBAuditLogTopSqlsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBAuditLogTopSqlsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeDBAuditLogTopSqlsAsync(const DescribeDBAuditLogTopSqlsRequest& request, const DescribeDBAuditLogTopSqlsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBAuditLogTopSqlsRequest&;
+    using Resp = DescribeDBAuditLogTopSqlsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBAuditLogTopSqls", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbbrainClient::DescribeDBAuditLogTopSqlsOutcomeCallable DbbrainClient::DescribeDBAuditLogTopSqlsCallable(const DescribeDBAuditLogTopSqlsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBAuditLogTopSqlsOutcome>>();
+    DescribeDBAuditLogTopSqlsAsync(
+    request,
+    [prom](
+        const DbbrainClient*,
+        const DescribeDBAuditLogTopSqlsRequest&,
+        DescribeDBAuditLogTopSqlsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbbrainClient::DescribeDBAutonomyActionOutcome DbbrainClient::DescribeDBAutonomyAction(const DescribeDBAutonomyActionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBAutonomyAction");

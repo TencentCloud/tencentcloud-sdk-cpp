@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json,debezium
-                     * @return DataType 投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json,debezium
+                     * 获取<p>投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json,debezium</p>
+                     * @return DataType <p>投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json,debezium</p>
                      * 
                      */
                     std::string GetDataType() const;
 
                     /**
-                     * 设置投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json,debezium
-                     * @param _dataType 投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json,debezium
+                     * 设置<p>投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json,debezium</p>
+                     * @param _dataType <p>投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json,debezium</p>
                      * 
                      */
                     void SetDataType(const std::string& _dataType);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool DataTypeHasBeenSet() const;
 
                     /**
-                     * 获取同步topic策略，如Single（集中投递到单topic）,Multi (自定义topic名称)
-                     * @return TopicType 同步topic策略，如Single（集中投递到单topic）,Multi (自定义topic名称)
+                     * 获取<p>同步topic策略，如Single（集中投递到单topic）,Multi (自定义topic名称)</p>
+                     * @return TopicType <p>同步topic策略，如Single（集中投递到单topic）,Multi (自定义topic名称)</p>
                      * 
                      */
                     std::string GetTopicType() const;
 
                     /**
-                     * 设置同步topic策略，如Single（集中投递到单topic）,Multi (自定义topic名称)
-                     * @param _topicType 同步topic策略，如Single（集中投递到单topic）,Multi (自定义topic名称)
+                     * 设置<p>同步topic策略，如Single（集中投递到单topic）,Multi (自定义topic名称)</p>
+                     * @param _topicType <p>同步topic策略，如Single（集中投递到单topic）,Multi (自定义topic名称)</p>
                      * 
                      */
                     void SetTopicType(const std::string& _topicType);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool TopicTypeHasBeenSet() const;
 
                     /**
-                     * 获取用于存储ddl的topic
-                     * @return DDLTopicName 用于存储ddl的topic
+                     * 获取<p>用于存储ddl的topic</p>
+                     * @return DDLTopicName <p>用于存储ddl的topic</p>
                      * 
                      */
                     std::string GetDDLTopicName() const;
 
                     /**
-                     * 设置用于存储ddl的topic
-                     * @param _dDLTopicName 用于存储ddl的topic
+                     * 设置<p>用于存储ddl的topic</p>
+                     * @param _dDLTopicName <p>用于存储ddl的topic</p>
                      * 
                      */
                     void SetDDLTopicName(const std::string& _dDLTopicName);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool DDLTopicNameHasBeenSet() const;
 
                     /**
-                     * 获取单topic和自定义topic的描述
-                     * @return TopicRules 单topic和自定义topic的描述
+                     * 获取<p>单topic和自定义topic的描述</p>
+                     * @return TopicRules <p>单topic和自定义topic的描述</p>
                      * 
                      */
                     std::vector<TopicRule> GetTopicRules() const;
 
                     /**
-                     * 设置单topic和自定义topic的描述
-                     * @param _topicRules 单topic和自定义topic的描述
+                     * 设置<p>单topic和自定义topic的描述</p>
+                     * @param _topicRules <p>单topic和自定义topic的描述</p>
                      * 
                      */
                     void SetTopicRules(const std::vector<TopicRule>& _topicRules);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool TopicRulesHasBeenSet() const;
 
                     /**
-                     * 获取其他附加信息，对于特定数据类型可设置额外参数，比如针对Canal兼容的功能支持："canalOfficialFormat":"on"表示打开Canal兼容功能，默认不带。
-                     * @return DataOption 其他附加信息，对于特定数据类型可设置额外参数，比如针对Canal兼容的功能支持："canalOfficialFormat":"on"表示打开Canal兼容功能，默认不带。
+                     * 获取<p>其他附加信息，对于特定数据类型可设置额外参数。比如针对Canal兼容的功能支持：&quot;canalOfficialFormat&quot;:&quot;on&quot;表示打开Canal兼容功能，默认不带。针对大消息跳过的功能支持：&quot;skipLargeMessage&quot;:&quot;on&quot;表示开启跳过大消息，默认不带；开启时需同时设置&quot;maxMessageSizeMB&quot;为1~100的正整数字符串，表示最大消息大小阈值（MB），超过该大小的消息将被跳过，默认不带。</p>
+                     * @return DataOption <p>其他附加信息，对于特定数据类型可设置额外参数。比如针对Canal兼容的功能支持：&quot;canalOfficialFormat&quot;:&quot;on&quot;表示打开Canal兼容功能，默认不带。针对大消息跳过的功能支持：&quot;skipLargeMessage&quot;:&quot;on&quot;表示开启跳过大消息，默认不带；开启时需同时设置&quot;maxMessageSizeMB&quot;为1~100的正整数字符串，表示最大消息大小阈值（MB），超过该大小的消息将被跳过，默认不带。</p>
                      * 
                      */
                     std::vector<KeyValuePairOption> GetDataOption() const;
 
                     /**
-                     * 设置其他附加信息，对于特定数据类型可设置额外参数，比如针对Canal兼容的功能支持："canalOfficialFormat":"on"表示打开Canal兼容功能，默认不带。
-                     * @param _dataOption 其他附加信息，对于特定数据类型可设置额外参数，比如针对Canal兼容的功能支持："canalOfficialFormat":"on"表示打开Canal兼容功能，默认不带。
+                     * 设置<p>其他附加信息，对于特定数据类型可设置额外参数。比如针对Canal兼容的功能支持：&quot;canalOfficialFormat&quot;:&quot;on&quot;表示打开Canal兼容功能，默认不带。针对大消息跳过的功能支持：&quot;skipLargeMessage&quot;:&quot;on&quot;表示开启跳过大消息，默认不带；开启时需同时设置&quot;maxMessageSizeMB&quot;为1~100的正整数字符串，表示最大消息大小阈值（MB），超过该大小的消息将被跳过，默认不带。</p>
+                     * @param _dataOption <p>其他附加信息，对于特定数据类型可设置额外参数。比如针对Canal兼容的功能支持：&quot;canalOfficialFormat&quot;:&quot;on&quot;表示打开Canal兼容功能，默认不带。针对大消息跳过的功能支持：&quot;skipLargeMessage&quot;:&quot;on&quot;表示开启跳过大消息，默认不带；开启时需同时设置&quot;maxMessageSizeMB&quot;为1~100的正整数字符串，表示最大消息大小阈值（MB），超过该大小的消息将被跳过，默认不带。</p>
                      * 
                      */
                     void SetDataOption(const std::vector<KeyValuePairOption>& _dataOption);
@@ -156,31 +156,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json,debezium
+                     * <p>投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json,debezium</p>
                      */
                     std::string m_dataType;
                     bool m_dataTypeHasBeenSet;
 
                     /**
-                     * 同步topic策略，如Single（集中投递到单topic）,Multi (自定义topic名称)
+                     * <p>同步topic策略，如Single（集中投递到单topic）,Multi (自定义topic名称)</p>
                      */
                     std::string m_topicType;
                     bool m_topicTypeHasBeenSet;
 
                     /**
-                     * 用于存储ddl的topic
+                     * <p>用于存储ddl的topic</p>
                      */
                     std::string m_dDLTopicName;
                     bool m_dDLTopicNameHasBeenSet;
 
                     /**
-                     * 单topic和自定义topic的描述
+                     * <p>单topic和自定义topic的描述</p>
                      */
                     std::vector<TopicRule> m_topicRules;
                     bool m_topicRulesHasBeenSet;
 
                     /**
-                     * 其他附加信息，对于特定数据类型可设置额外参数，比如针对Canal兼容的功能支持："canalOfficialFormat":"on"表示打开Canal兼容功能，默认不带。
+                     * <p>其他附加信息，对于特定数据类型可设置额外参数。比如针对Canal兼容的功能支持：&quot;canalOfficialFormat&quot;:&quot;on&quot;表示打开Canal兼容功能，默认不带。针对大消息跳过的功能支持：&quot;skipLargeMessage&quot;:&quot;on&quot;表示开启跳过大消息，默认不带；开启时需同时设置&quot;maxMessageSizeMB&quot;为1~100的正整数字符串，表示最大消息大小阈值（MB），超过该大小的消息将被跳过，默认不带。</p>
                      */
                     std::vector<KeyValuePairOption> m_dataOption;
                     bool m_dataOptionHasBeenSet;
