@@ -30,6 +30,7 @@
 #include <tencentcloud/tke/v20220501/model/InstanceChargePrepaid.h>
 #include <tencentcloud/tke/v20220501/model/ManagementConfig.h>
 #include <tencentcloud/tke/v20220501/model/LifecycleConfig.h>
+#include <tencentcloud/tke/v20220501/model/GPUConfig.h>
 #include <tencentcloud/tke/v20220501/model/InternetAccessible.h>
 #include <tencentcloud/tke/v20220501/model/DataDisk.h>
 
@@ -412,6 +413,27 @@ namespace TencentCloud
                     bool ReplicasHasBeenSet() const;
 
                     /**
+                     * 获取<p>机型和GPU配置相关信息</p>
+                     * @return GPUConfigs <p>机型和GPU配置相关信息</p>
+                     * 
+                     */
+                    std::vector<GPUConfig> GetGPUConfigs() const;
+
+                    /**
+                     * 设置<p>机型和GPU配置相关信息</p>
+                     * @param _gPUConfigs <p>机型和GPU配置相关信息</p>
+                     * 
+                     */
+                    void SetGPUConfigs(const std::vector<GPUConfig>& _gPUConfigs);
+
+                    /**
+                     * 判断参数 GPUConfigs 是否已赋值
+                     * @return GPUConfigs 是否已赋值
+                     * 
+                     */
+                    bool GPUConfigsHasBeenSet() const;
+
+                    /**
                      * 获取<p>公网带宽设置</p>
                      * @return InternetAccessible <p>公网带宽设置</p>
                      * 
@@ -661,6 +683,12 @@ namespace TencentCloud
                      */
                     int64_t m_replicas;
                     bool m_replicasHasBeenSet;
+
+                    /**
+                     * <p>机型和GPU配置相关信息</p>
+                     */
+                    std::vector<GPUConfig> m_gPUConfigs;
+                    bool m_gPUConfigsHasBeenSet;
 
                     /**
                      * <p>公网带宽设置</p>

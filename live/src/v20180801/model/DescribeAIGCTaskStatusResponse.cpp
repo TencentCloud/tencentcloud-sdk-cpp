@@ -31,7 +31,9 @@ DescribeAIGCTaskStatusResponse::DescribeAIGCTaskStatusResponse() :
     m_scheduledTimeHasBeenSet(false),
     m_finishedTimeHasBeenSet(false),
     m_taskResultCodeHasBeenSet(false),
-    m_taskResultMsgHasBeenSet(false)
+    m_taskResultMsgHasBeenSet(false),
+    m_requestBodyHasBeenSet(false),
+    m_taskTypeHasBeenSet(false)
 {
 }
 
@@ -149,6 +151,26 @@ CoreInternalOutcome DescribeAIGCTaskStatusResponse::Deserialize(const string &pa
         m_taskResultMsgHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RequestBody") && !rsp["RequestBody"].IsNull())
+    {
+        if (!rsp["RequestBody"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RequestBody` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_requestBody = string(rsp["RequestBody"].GetString());
+        m_requestBodyHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TaskType") && !rsp["TaskType"].IsNull())
+    {
+        if (!rsp["TaskType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskType = string(rsp["TaskType"].GetString());
+        m_taskTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +243,22 @@ string DescribeAIGCTaskStatusResponse::ToJsonString() const
         string key = "TaskResultMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskResultMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_requestBodyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestBody";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_requestBody.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskType.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -313,6 +351,26 @@ string DescribeAIGCTaskStatusResponse::GetTaskResultMsg() const
 bool DescribeAIGCTaskStatusResponse::TaskResultMsgHasBeenSet() const
 {
     return m_taskResultMsgHasBeenSet;
+}
+
+string DescribeAIGCTaskStatusResponse::GetRequestBody() const
+{
+    return m_requestBody;
+}
+
+bool DescribeAIGCTaskStatusResponse::RequestBodyHasBeenSet() const
+{
+    return m_requestBodyHasBeenSet;
+}
+
+string DescribeAIGCTaskStatusResponse::GetTaskType() const
+{
+    return m_taskType;
+}
+
+bool DescribeAIGCTaskStatusResponse::TaskTypeHasBeenSet() const
+{
+    return m_taskTypeHasBeenSet;
 }
 
 

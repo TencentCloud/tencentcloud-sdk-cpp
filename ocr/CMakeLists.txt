@@ -104,6 +104,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/FormulaOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/RecognizeGeneralCardWarnRequest.h
   include/tencentcloud/ocr/v20181119/model/Encryption.h
+  include/tencentcloud/ocr/v20181119/model/VinOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/MixedInvoiceItem.h
   include/tencentcloud/ocr/v20181119/model/SmartStructuralOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/ExtractDocMultiProResponse.h
@@ -127,7 +128,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/RecognizeValidIDCardOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/MixedInvoiceOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/ClassifyDetectOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/VinOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/MultimodalDocParseResponse.h
   include/tencentcloud/ocr/v20181119/model/ExtractDocAgentResponse.h
   include/tencentcloud/ocr/v20181119/model/OCRResult.h
   include/tencentcloud/ocr/v20181119/model/VehicleLicenseOCRResponse.h
@@ -135,6 +136,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/ElectronicTollSummaryList.h
   include/tencentcloud/ocr/v20181119/model/ElectronicAirTransport.h
   include/tencentcloud/ocr/v20181119/model/ClassifyDetectOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/MultimodalDocParseRequest.h
   include/tencentcloud/ocr/v20181119/model/LicensePlateOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/ExtractDocBasicRequest.h
   include/tencentcloud/ocr/v20181119/model/ReflectDetailInfo.h
@@ -419,6 +421,7 @@ set(ocr_src
   src/v20181119/model/FormulaOCRResponse.cpp
   src/v20181119/model/RecognizeGeneralCardWarnRequest.cpp
   src/v20181119/model/Encryption.cpp
+  src/v20181119/model/VinOCRRequest.cpp
   src/v20181119/model/MixedInvoiceItem.cpp
   src/v20181119/model/SmartStructuralOCRRequest.cpp
   src/v20181119/model/ExtractDocMultiProResponse.cpp
@@ -442,7 +445,7 @@ set(ocr_src
   src/v20181119/model/RecognizeValidIDCardOCRRequest.cpp
   src/v20181119/model/MixedInvoiceOCRResponse.cpp
   src/v20181119/model/ClassifyDetectOCRResponse.cpp
-  src/v20181119/model/VinOCRRequest.cpp
+  src/v20181119/model/MultimodalDocParseResponse.cpp
   src/v20181119/model/ExtractDocAgentResponse.cpp
   src/v20181119/model/OCRResult.cpp
   src/v20181119/model/VehicleLicenseOCRResponse.cpp
@@ -450,6 +453,7 @@ set(ocr_src
   src/v20181119/model/ElectronicTollSummaryList.cpp
   src/v20181119/model/ElectronicAirTransport.cpp
   src/v20181119/model/ClassifyDetectOCRRequest.cpp
+  src/v20181119/model/MultimodalDocParseRequest.cpp
   src/v20181119/model/LicensePlateOCRResponse.cpp
   src/v20181119/model/ExtractDocBasicRequest.cpp
   src/v20181119/model/ReflectDetailInfo.cpp

@@ -49,6 +49,8 @@
 #include <tencentcloud/tke/v20220501/model/DescribeHealthCheckTemplateResponse.h>
 #include <tencentcloud/tke/v20220501/model/DescribeNodePoolsRequest.h>
 #include <tencentcloud/tke/v20220501/model/DescribeNodePoolsResponse.h>
+#include <tencentcloud/tke/v20220501/model/DescribeNodePoolsElasticityStrengthRequest.h>
+#include <tencentcloud/tke/v20220501/model/DescribeNodePoolsElasticityStrengthResponse.h>
 #include <tencentcloud/tke/v20220501/model/DescribeZoneInstanceConfigInfosRequest.h>
 #include <tencentcloud/tke/v20220501/model/DescribeZoneInstanceConfigInfosResponse.h>
 #include <tencentcloud/tke/v20220501/model/ModifyClusterMachineRequest.h>
@@ -120,6 +122,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNodePoolsResponse> DescribeNodePoolsOutcome;
                 typedef std::future<DescribeNodePoolsOutcome> DescribeNodePoolsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeNodePoolsRequest&, DescribeNodePoolsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodePoolsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNodePoolsElasticityStrengthResponse> DescribeNodePoolsElasticityStrengthOutcome;
+                typedef std::future<DescribeNodePoolsElasticityStrengthOutcome> DescribeNodePoolsElasticityStrengthOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeNodePoolsElasticityStrengthRequest&, DescribeNodePoolsElasticityStrengthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodePoolsElasticityStrengthAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeZoneInstanceConfigInfosResponse> DescribeZoneInstanceConfigInfosOutcome;
                 typedef std::future<DescribeZoneInstanceConfigInfosOutcome> DescribeZoneInstanceConfigInfosOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeZoneInstanceConfigInfosRequest&, DescribeZoneInstanceConfigInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZoneInstanceConfigInfosAsyncHandler;
@@ -266,6 +271,15 @@ namespace TencentCloud
                 DescribeNodePoolsOutcome DescribeNodePools(const Model::DescribeNodePoolsRequest &request);
                 void DescribeNodePoolsAsync(const Model::DescribeNodePoolsRequest& request, const DescribeNodePoolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNodePoolsOutcomeCallable DescribeNodePoolsCallable(const Model::DescribeNodePoolsRequest& request);
+
+                /**
+                 *查询节点池健康度相关信息
+                 * @param req DescribeNodePoolsElasticityStrengthRequest
+                 * @return DescribeNodePoolsElasticityStrengthOutcome
+                 */
+                DescribeNodePoolsElasticityStrengthOutcome DescribeNodePoolsElasticityStrength(const Model::DescribeNodePoolsElasticityStrengthRequest &request);
+                void DescribeNodePoolsElasticityStrengthAsync(const Model::DescribeNodePoolsElasticityStrengthRequest& request, const DescribeNodePoolsElasticityStrengthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNodePoolsElasticityStrengthOutcomeCallable DescribeNodePoolsElasticityStrengthCallable(const Model::DescribeNodePoolsElasticityStrengthRequest& request);
 
                 /**
                  *查询原生节点机型配置

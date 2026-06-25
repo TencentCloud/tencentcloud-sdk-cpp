@@ -25,7 +25,8 @@ IOAUserGroup::IOAUserGroup() :
     m_orgNameHasBeenSet(false),
     m_orgIdPathHasBeenSet(false),
     m_orgNamePathHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+    m_sourceHasBeenSet(false),
+    m_userDirNameHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome IOAUserGroup::Deserialize(const rapidjson::Value &value)
         m_sourceHasBeenSet = true;
     }
 
+    if (value.HasMember("UserDirName") && !value["UserDirName"].IsNull())
+    {
+        if (!value["UserDirName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IOAUserGroup.UserDirName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userDirName = string(value["UserDirName"].GetString());
+        m_userDirNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void IOAUserGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Source";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_source, allocator);
+    }
+
+    if (m_userDirNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserDirName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userDirName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void IOAUserGroup::SetSource(const uint64_t& _source)
 bool IOAUserGroup::SourceHasBeenSet() const
 {
     return m_sourceHasBeenSet;
+}
+
+string IOAUserGroup::GetUserDirName() const
+{
+    return m_userDirName;
+}
+
+void IOAUserGroup::SetUserDirName(const string& _userDirName)
+{
+    m_userDirName = _userDirName;
+    m_userDirNameHasBeenSet = true;
+}
+
+bool IOAUserGroup::UserDirNameHasBeenSet() const
+{
+    return m_userDirNameHasBeenSet;
 }
 

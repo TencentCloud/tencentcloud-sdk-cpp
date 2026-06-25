@@ -25,7 +25,8 @@ UserOrg::UserOrg() :
     m_orgNameHasBeenSet(false),
     m_orgIdPathHasBeenSet(false),
     m_orgNamePathHasBeenSet(false),
-    m_userTotalHasBeenSet(false)
+    m_userTotalHasBeenSet(false),
+    m_bindGroupIdsHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,19 @@ CoreInternalOutcome UserOrg::Deserialize(const rapidjson::Value &value)
         m_userTotalHasBeenSet = true;
     }
 
+    if (value.HasMember("BindGroupIds") && !value["BindGroupIds"].IsNull())
+    {
+        if (!value["BindGroupIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UserOrg.BindGroupIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BindGroupIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_bindGroupIds.push_back((*itr).GetUint64());
+        }
+        m_bindGroupIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +143,19 @@ void UserOrg::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "UserTotal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_userTotal, allocator);
+    }
+
+    if (m_bindGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BindGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_bindGroupIds.begin(); itr != m_bindGroupIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
 }
@@ -212,5 +239,21 @@ void UserOrg::SetUserTotal(const uint64_t& _userTotal)
 bool UserOrg::UserTotalHasBeenSet() const
 {
     return m_userTotalHasBeenSet;
+}
+
+vector<uint64_t> UserOrg::GetBindGroupIds() const
+{
+    return m_bindGroupIds;
+}
+
+void UserOrg::SetBindGroupIds(const vector<uint64_t>& _bindGroupIds)
+{
+    m_bindGroupIds = _bindGroupIds;
+    m_bindGroupIdsHasBeenSet = true;
+}
+
+bool UserOrg::BindGroupIdsHasBeenSet() const
+{
+    return m_bindGroupIdsHasBeenSet;
 }
 

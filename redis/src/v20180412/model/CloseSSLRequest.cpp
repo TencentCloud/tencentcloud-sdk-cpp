@@ -23,7 +23,8 @@ using namespace TencentCloud::Redis::V20180412::Model;
 using namespace std;
 
 CloseSSLRequest::CloseSSLRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_addressTypeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string CloseSSLRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_addressTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddressType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_addressType, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void CloseSSLRequest::SetInstanceId(const string& _instanceId)
 bool CloseSSLRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+int64_t CloseSSLRequest::GetAddressType() const
+{
+    return m_addressType;
+}
+
+void CloseSSLRequest::SetAddressType(const int64_t& _addressType)
+{
+    m_addressType = _addressType;
+    m_addressTypeHasBeenSet = true;
+}
+
+bool CloseSSLRequest::AddressTypeHasBeenSet() const
+{
+    return m_addressTypeHasBeenSet;
 }
 
 

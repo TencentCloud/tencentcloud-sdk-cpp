@@ -40,6 +40,56 @@ ClbClient::ClbClient(const Credential &credential, const string &region, const C
 }
 
 
+ClbClient::AssociateBudgetOutcome ClbClient::AssociateBudget(const AssociateBudgetRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssociateBudget");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssociateBudgetResponse rsp = AssociateBudgetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssociateBudgetOutcome(rsp);
+        else
+            return AssociateBudgetOutcome(o.GetError());
+    }
+    else
+    {
+        return AssociateBudgetOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::AssociateBudgetAsync(const AssociateBudgetRequest& request, const AssociateBudgetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AssociateBudgetRequest&;
+    using Resp = AssociateBudgetResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AssociateBudget", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::AssociateBudgetOutcomeCallable ClbClient::AssociateBudgetCallable(const AssociateBudgetRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AssociateBudgetOutcome>>();
+    AssociateBudgetAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const AssociateBudgetRequest&,
+        AssociateBudgetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClbClient::AssociateCustomizedConfigOutcome ClbClient::AssociateCustomizedConfig(const AssociateCustomizedConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "AssociateCustomizedConfig");
@@ -440,6 +490,56 @@ ClbClient::CloneLoadBalancerOutcomeCallable ClbClient::CloneLoadBalancerCallable
     return prom->get_future();
 }
 
+ClbClient::CreateBudgetOutcome ClbClient::CreateBudget(const CreateBudgetRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBudget");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBudgetResponse rsp = CreateBudgetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBudgetOutcome(rsp);
+        else
+            return CreateBudgetOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBudgetOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::CreateBudgetAsync(const CreateBudgetRequest& request, const CreateBudgetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateBudgetRequest&;
+    using Resp = CreateBudgetResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateBudget", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::CreateBudgetOutcomeCallable ClbClient::CreateBudgetCallable(const CreateBudgetRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateBudgetOutcome>>();
+    CreateBudgetAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const CreateBudgetRequest&,
+        CreateBudgetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClbClient::CreateClsLogSetOutcome ClbClient::CreateClsLogSet(const CreateClsLogSetRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateClsLogSet");
@@ -482,6 +582,106 @@ ClbClient::CreateClsLogSetOutcomeCallable ClbClient::CreateClsLogSetCallable(con
         const ClbClient*,
         const CreateClsLogSetRequest&,
         CreateClsLogSetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::CreateKeyOutcome ClbClient::CreateKey(const CreateKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateKeyResponse rsp = CreateKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateKeyOutcome(rsp);
+        else
+            return CreateKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateKeyOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::CreateKeyAsync(const CreateKeyRequest& request, const CreateKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateKeyRequest&;
+    using Resp = CreateKeyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::CreateKeyOutcomeCallable ClbClient::CreateKeyCallable(const CreateKeyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateKeyOutcome>>();
+    CreateKeyAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const CreateKeyRequest&,
+        CreateKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::CreateKeysOutcome ClbClient::CreateKeys(const CreateKeysRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateKeys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateKeysResponse rsp = CreateKeysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateKeysOutcome(rsp);
+        else
+            return CreateKeysOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateKeysOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::CreateKeysAsync(const CreateKeysRequest& request, const CreateKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateKeysRequest&;
+    using Resp = CreateKeysResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateKeys", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::CreateKeysOutcomeCallable ClbClient::CreateKeysCallable(const CreateKeysRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateKeysOutcome>>();
+    CreateKeysAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const CreateKeysRequest&,
+        CreateKeysOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -640,6 +840,56 @@ ClbClient::CreateLoadBalancerSnatIpsOutcomeCallable ClbClient::CreateLoadBalance
     return prom->get_future();
 }
 
+ClbClient::CreateModelRouterOutcome ClbClient::CreateModelRouter(const CreateModelRouterRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateModelRouter");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateModelRouterResponse rsp = CreateModelRouterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateModelRouterOutcome(rsp);
+        else
+            return CreateModelRouterOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateModelRouterOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::CreateModelRouterAsync(const CreateModelRouterRequest& request, const CreateModelRouterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateModelRouterRequest&;
+    using Resp = CreateModelRouterResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateModelRouter", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::CreateModelRouterOutcomeCallable ClbClient::CreateModelRouterCallable(const CreateModelRouterRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateModelRouterOutcome>>();
+    CreateModelRouterAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const CreateModelRouterRequest&,
+        CreateModelRouterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClbClient::CreateRuleOutcome ClbClient::CreateRule(const CreateRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRule");
@@ -782,6 +1032,156 @@ ClbClient::CreateTopicOutcomeCallable ClbClient::CreateTopicCallable(const Creat
         const ClbClient*,
         const CreateTopicRequest&,
         CreateTopicOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::CreateUserGroupOutcome ClbClient::CreateUserGroup(const CreateUserGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUserGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUserGroupResponse rsp = CreateUserGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUserGroupOutcome(rsp);
+        else
+            return CreateUserGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUserGroupOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::CreateUserGroupAsync(const CreateUserGroupRequest& request, const CreateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateUserGroupRequest&;
+    using Resp = CreateUserGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateUserGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::CreateUserGroupOutcomeCallable ClbClient::CreateUserGroupCallable(const CreateUserGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateUserGroupOutcome>>();
+    CreateUserGroupAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const CreateUserGroupRequest&,
+        CreateUserGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::DeleteBudgetsOutcome ClbClient::DeleteBudgets(const DeleteBudgetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBudgets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBudgetsResponse rsp = DeleteBudgetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBudgetsOutcome(rsp);
+        else
+            return DeleteBudgetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBudgetsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DeleteBudgetsAsync(const DeleteBudgetsRequest& request, const DeleteBudgetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteBudgetsRequest&;
+    using Resp = DeleteBudgetsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteBudgets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DeleteBudgetsOutcomeCallable ClbClient::DeleteBudgetsCallable(const DeleteBudgetsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteBudgetsOutcome>>();
+    DeleteBudgetsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DeleteBudgetsRequest&,
+        DeleteBudgetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::DeleteKeysOutcome ClbClient::DeleteKeys(const DeleteKeysRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteKeys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteKeysResponse rsp = DeleteKeysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteKeysOutcome(rsp);
+        else
+            return DeleteKeysOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteKeysOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DeleteKeysAsync(const DeleteKeysRequest& request, const DeleteKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteKeysRequest&;
+    using Resp = DeleteKeysResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteKeys", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DeleteKeysOutcomeCallable ClbClient::DeleteKeysCallable(const DeleteKeysRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteKeysOutcome>>();
+    DeleteKeysAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DeleteKeysRequest&,
+        DeleteKeysOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -990,6 +1390,56 @@ ClbClient::DeleteLoadBalancerSnatIpsOutcomeCallable ClbClient::DeleteLoadBalance
     return prom->get_future();
 }
 
+ClbClient::DeleteModelRoutersOutcome ClbClient::DeleteModelRouters(const DeleteModelRoutersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteModelRouters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteModelRoutersResponse rsp = DeleteModelRoutersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteModelRoutersOutcome(rsp);
+        else
+            return DeleteModelRoutersOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteModelRoutersOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DeleteModelRoutersAsync(const DeleteModelRoutersRequest& request, const DeleteModelRoutersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteModelRoutersRequest&;
+    using Resp = DeleteModelRoutersResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteModelRouters", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DeleteModelRoutersOutcomeCallable ClbClient::DeleteModelRoutersCallable(const DeleteModelRoutersRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteModelRoutersOutcome>>();
+    DeleteModelRoutersAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DeleteModelRoutersRequest&,
+        DeleteModelRoutersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClbClient::DeleteRewriteOutcome ClbClient::DeleteRewrite(const DeleteRewriteRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteRewrite");
@@ -1132,6 +1582,56 @@ ClbClient::DeleteTargetGroupsOutcomeCallable ClbClient::DeleteTargetGroupsCallab
         const ClbClient*,
         const DeleteTargetGroupsRequest&,
         DeleteTargetGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::DeleteUserGroupsOutcome ClbClient::DeleteUserGroups(const DeleteUserGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteUserGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteUserGroupsResponse rsp = DeleteUserGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteUserGroupsOutcome(rsp);
+        else
+            return DeleteUserGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteUserGroupsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DeleteUserGroupsAsync(const DeleteUserGroupsRequest& request, const DeleteUserGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteUserGroupsRequest&;
+    using Resp = DeleteUserGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteUserGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DeleteUserGroupsOutcomeCallable ClbClient::DeleteUserGroupsCallable(const DeleteUserGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteUserGroupsOutcome>>();
+    DeleteUserGroupsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DeleteUserGroupsRequest&,
+        DeleteUserGroupsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1340,6 +1840,56 @@ ClbClient::DeregisterTargetsFromClassicalLBOutcomeCallable ClbClient::Deregister
     return prom->get_future();
 }
 
+ClbClient::DescribeAsyncJobsOutcome ClbClient::DescribeAsyncJobs(const DescribeAsyncJobsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAsyncJobs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAsyncJobsResponse rsp = DescribeAsyncJobsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAsyncJobsOutcome(rsp);
+        else
+            return DescribeAsyncJobsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAsyncJobsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeAsyncJobsAsync(const DescribeAsyncJobsRequest& request, const DescribeAsyncJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAsyncJobsRequest&;
+    using Resp = DescribeAsyncJobsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAsyncJobs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DescribeAsyncJobsOutcomeCallable ClbClient::DescribeAsyncJobsCallable(const DescribeAsyncJobsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAsyncJobsOutcome>>();
+    DescribeAsyncJobsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeAsyncJobsRequest&,
+        DescribeAsyncJobsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClbClient::DescribeBlockIPListOutcome ClbClient::DescribeBlockIPList(const DescribeBlockIPListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBlockIPList");
@@ -1432,6 +1982,106 @@ ClbClient::DescribeBlockIPTaskOutcomeCallable ClbClient::DescribeBlockIPTaskCall
         const ClbClient*,
         const DescribeBlockIPTaskRequest&,
         DescribeBlockIPTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::DescribeBudgetAssociationsOutcome ClbClient::DescribeBudgetAssociations(const DescribeBudgetAssociationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBudgetAssociations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBudgetAssociationsResponse rsp = DescribeBudgetAssociationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBudgetAssociationsOutcome(rsp);
+        else
+            return DescribeBudgetAssociationsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBudgetAssociationsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeBudgetAssociationsAsync(const DescribeBudgetAssociationsRequest& request, const DescribeBudgetAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBudgetAssociationsRequest&;
+    using Resp = DescribeBudgetAssociationsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBudgetAssociations", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DescribeBudgetAssociationsOutcomeCallable ClbClient::DescribeBudgetAssociationsCallable(const DescribeBudgetAssociationsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBudgetAssociationsOutcome>>();
+    DescribeBudgetAssociationsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeBudgetAssociationsRequest&,
+        DescribeBudgetAssociationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::DescribeBudgetsOutcome ClbClient::DescribeBudgets(const DescribeBudgetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBudgets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBudgetsResponse rsp = DescribeBudgetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBudgetsOutcome(rsp);
+        else
+            return DescribeBudgetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBudgetsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeBudgetsAsync(const DescribeBudgetsRequest& request, const DescribeBudgetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBudgetsRequest&;
+    using Resp = DescribeBudgetsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBudgets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DescribeBudgetsOutcomeCallable ClbClient::DescribeBudgetsCallable(const DescribeBudgetsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBudgetsOutcome>>();
+    DescribeBudgetsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeBudgetsRequest&,
+        DescribeBudgetsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2390,6 +3040,156 @@ ClbClient::DescribeLoadBalancersDetailOutcomeCallable ClbClient::DescribeLoadBal
     return prom->get_future();
 }
 
+ClbClient::DescribeModelRouterDetailOutcome ClbClient::DescribeModelRouterDetail(const DescribeModelRouterDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelRouterDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelRouterDetailResponse rsp = DescribeModelRouterDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelRouterDetailOutcome(rsp);
+        else
+            return DescribeModelRouterDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelRouterDetailOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeModelRouterDetailAsync(const DescribeModelRouterDetailRequest& request, const DescribeModelRouterDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeModelRouterDetailRequest&;
+    using Resp = DescribeModelRouterDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeModelRouterDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DescribeModelRouterDetailOutcomeCallable ClbClient::DescribeModelRouterDetailCallable(const DescribeModelRouterDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeModelRouterDetailOutcome>>();
+    DescribeModelRouterDetailAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeModelRouterDetailRequest&,
+        DescribeModelRouterDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::DescribeModelRouterQuotaOutcome ClbClient::DescribeModelRouterQuota(const DescribeModelRouterQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelRouterQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelRouterQuotaResponse rsp = DescribeModelRouterQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelRouterQuotaOutcome(rsp);
+        else
+            return DescribeModelRouterQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelRouterQuotaOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeModelRouterQuotaAsync(const DescribeModelRouterQuotaRequest& request, const DescribeModelRouterQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeModelRouterQuotaRequest&;
+    using Resp = DescribeModelRouterQuotaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeModelRouterQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DescribeModelRouterQuotaOutcomeCallable ClbClient::DescribeModelRouterQuotaCallable(const DescribeModelRouterQuotaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeModelRouterQuotaOutcome>>();
+    DescribeModelRouterQuotaAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeModelRouterQuotaRequest&,
+        DescribeModelRouterQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::DescribeModelRoutersOutcome ClbClient::DescribeModelRouters(const DescribeModelRoutersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelRouters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelRoutersResponse rsp = DescribeModelRoutersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelRoutersOutcome(rsp);
+        else
+            return DescribeModelRoutersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelRoutersOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeModelRoutersAsync(const DescribeModelRoutersRequest& request, const DescribeModelRoutersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeModelRoutersRequest&;
+    using Resp = DescribeModelRoutersResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeModelRouters", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DescribeModelRoutersOutcomeCallable ClbClient::DescribeModelRoutersCallable(const DescribeModelRoutersRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeModelRoutersOutcome>>();
+    DescribeModelRoutersAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeModelRoutersRequest&,
+        DescribeModelRoutersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClbClient::DescribeQuotaOutcome ClbClient::DescribeQuota(const DescribeQuotaRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeQuota");
@@ -2890,6 +3690,106 @@ ClbClient::DescribeTaskStatusOutcomeCallable ClbClient::DescribeTaskStatusCallab
     return prom->get_future();
 }
 
+ClbClient::DescribeUserGroupsOutcome ClbClient::DescribeUserGroups(const DescribeUserGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserGroupsResponse rsp = DescribeUserGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserGroupsOutcome(rsp);
+        else
+            return DescribeUserGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserGroupsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeUserGroupsAsync(const DescribeUserGroupsRequest& request, const DescribeUserGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeUserGroupsRequest&;
+    using Resp = DescribeUserGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DescribeUserGroupsOutcomeCallable ClbClient::DescribeUserGroupsCallable(const DescribeUserGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeUserGroupsOutcome>>();
+    DescribeUserGroupsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeUserGroupsRequest&,
+        DescribeUserGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::DisassociateBudgetOutcome ClbClient::DisassociateBudget(const DisassociateBudgetRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisassociateBudget");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisassociateBudgetResponse rsp = DisassociateBudgetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisassociateBudgetOutcome(rsp);
+        else
+            return DisassociateBudgetOutcome(o.GetError());
+    }
+    else
+    {
+        return DisassociateBudgetOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DisassociateBudgetAsync(const DisassociateBudgetRequest& request, const DisassociateBudgetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DisassociateBudgetRequest&;
+    using Resp = DisassociateBudgetResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DisassociateBudget", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DisassociateBudgetOutcomeCallable ClbClient::DisassociateBudgetCallable(const DisassociateBudgetRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DisassociateBudgetOutcome>>();
+    DisassociateBudgetAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DisassociateBudgetRequest&,
+        DisassociateBudgetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClbClient::DisassociateCustomizedConfigOutcome ClbClient::DisassociateCustomizedConfig(const DisassociateCustomizedConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DisassociateCustomizedConfig");
@@ -3340,6 +4240,56 @@ ClbClient::ModifyBlockIPListOutcomeCallable ClbClient::ModifyBlockIPListCallable
     return prom->get_future();
 }
 
+ClbClient::ModifyBudgetAttributesOutcome ClbClient::ModifyBudgetAttributes(const ModifyBudgetAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBudgetAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBudgetAttributesResponse rsp = ModifyBudgetAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBudgetAttributesOutcome(rsp);
+        else
+            return ModifyBudgetAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBudgetAttributesOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::ModifyBudgetAttributesAsync(const ModifyBudgetAttributesRequest& request, const ModifyBudgetAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyBudgetAttributesRequest&;
+    using Resp = ModifyBudgetAttributesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyBudgetAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::ModifyBudgetAttributesOutcomeCallable ClbClient::ModifyBudgetAttributesCallable(const ModifyBudgetAttributesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyBudgetAttributesOutcome>>();
+    ModifyBudgetAttributesAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyBudgetAttributesRequest&,
+        ModifyBudgetAttributesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClbClient::ModifyDomainOutcome ClbClient::ModifyDomain(const ModifyDomainRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDomain");
@@ -3482,6 +4432,156 @@ ClbClient::ModifyFunctionTargetsOutcomeCallable ClbClient::ModifyFunctionTargets
         const ClbClient*,
         const ModifyFunctionTargetsRequest&,
         ModifyFunctionTargetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::ModifyKeyAttributesOutcome ClbClient::ModifyKeyAttributes(const ModifyKeyAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyKeyAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyKeyAttributesResponse rsp = ModifyKeyAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyKeyAttributesOutcome(rsp);
+        else
+            return ModifyKeyAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyKeyAttributesOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::ModifyKeyAttributesAsync(const ModifyKeyAttributesRequest& request, const ModifyKeyAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyKeyAttributesRequest&;
+    using Resp = ModifyKeyAttributesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyKeyAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::ModifyKeyAttributesOutcomeCallable ClbClient::ModifyKeyAttributesCallable(const ModifyKeyAttributesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyKeyAttributesOutcome>>();
+    ModifyKeyAttributesAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyKeyAttributesRequest&,
+        ModifyKeyAttributesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::ModifyKeysBlockStatusOutcome ClbClient::ModifyKeysBlockStatus(const ModifyKeysBlockStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyKeysBlockStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyKeysBlockStatusResponse rsp = ModifyKeysBlockStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyKeysBlockStatusOutcome(rsp);
+        else
+            return ModifyKeysBlockStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyKeysBlockStatusOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::ModifyKeysBlockStatusAsync(const ModifyKeysBlockStatusRequest& request, const ModifyKeysBlockStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyKeysBlockStatusRequest&;
+    using Resp = ModifyKeysBlockStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyKeysBlockStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::ModifyKeysBlockStatusOutcomeCallable ClbClient::ModifyKeysBlockStatusCallable(const ModifyKeysBlockStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyKeysBlockStatusOutcome>>();
+    ModifyKeysBlockStatusAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyKeysBlockStatusRequest&,
+        ModifyKeysBlockStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::ModifyKeysUserGroupOutcome ClbClient::ModifyKeysUserGroup(const ModifyKeysUserGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyKeysUserGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyKeysUserGroupResponse rsp = ModifyKeysUserGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyKeysUserGroupOutcome(rsp);
+        else
+            return ModifyKeysUserGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyKeysUserGroupOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::ModifyKeysUserGroupAsync(const ModifyKeysUserGroupRequest& request, const ModifyKeysUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyKeysUserGroupRequest&;
+    using Resp = ModifyKeysUserGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyKeysUserGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::ModifyKeysUserGroupOutcomeCallable ClbClient::ModifyKeysUserGroupCallable(const ModifyKeysUserGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyKeysUserGroupOutcome>>();
+    ModifyKeysUserGroupAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyKeysUserGroupRequest&,
+        ModifyKeysUserGroupOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3732,6 +4832,56 @@ ClbClient::ModifyLoadBalancersProjectOutcomeCallable ClbClient::ModifyLoadBalanc
         const ClbClient*,
         const ModifyLoadBalancersProjectRequest&,
         ModifyLoadBalancersProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::ModifyModelRouterAttributesOutcome ClbClient::ModifyModelRouterAttributes(const ModifyModelRouterAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyModelRouterAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyModelRouterAttributesResponse rsp = ModifyModelRouterAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyModelRouterAttributesOutcome(rsp);
+        else
+            return ModifyModelRouterAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyModelRouterAttributesOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::ModifyModelRouterAttributesAsync(const ModifyModelRouterAttributesRequest& request, const ModifyModelRouterAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyModelRouterAttributesRequest&;
+    using Resp = ModifyModelRouterAttributesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyModelRouterAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::ModifyModelRouterAttributesOutcomeCallable ClbClient::ModifyModelRouterAttributesCallable(const ModifyModelRouterAttributesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyModelRouterAttributesOutcome>>();
+    ModifyModelRouterAttributesAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyModelRouterAttributesRequest&,
+        ModifyModelRouterAttributesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4032,6 +5182,106 @@ ClbClient::ModifyTargetWeightOutcomeCallable ClbClient::ModifyTargetWeightCallab
         const ClbClient*,
         const ModifyTargetWeightRequest&,
         ModifyTargetWeightOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::ModifyUserGroupAttributesOutcome ClbClient::ModifyUserGroupAttributes(const ModifyUserGroupAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserGroupAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserGroupAttributesResponse rsp = ModifyUserGroupAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserGroupAttributesOutcome(rsp);
+        else
+            return ModifyUserGroupAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserGroupAttributesOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::ModifyUserGroupAttributesAsync(const ModifyUserGroupAttributesRequest& request, const ModifyUserGroupAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyUserGroupAttributesRequest&;
+    using Resp = ModifyUserGroupAttributesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyUserGroupAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::ModifyUserGroupAttributesOutcomeCallable ClbClient::ModifyUserGroupAttributesCallable(const ModifyUserGroupAttributesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyUserGroupAttributesOutcome>>();
+    ModifyUserGroupAttributesAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyUserGroupAttributesRequest&,
+        ModifyUserGroupAttributesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::RegenerateKeysOutcome ClbClient::RegenerateKeys(const RegenerateKeysRequest &request)
+{
+    auto outcome = MakeRequest(request, "RegenerateKeys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RegenerateKeysResponse rsp = RegenerateKeysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RegenerateKeysOutcome(rsp);
+        else
+            return RegenerateKeysOutcome(o.GetError());
+    }
+    else
+    {
+        return RegenerateKeysOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::RegenerateKeysAsync(const RegenerateKeysRequest& request, const RegenerateKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RegenerateKeysRequest&;
+    using Resp = RegenerateKeysResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RegenerateKeys", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::RegenerateKeysOutcomeCallable ClbClient::RegenerateKeysCallable(const RegenerateKeysRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RegenerateKeysOutcome>>();
+    RegenerateKeysAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const RegenerateKeysRequest&,
+        RegenerateKeysOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

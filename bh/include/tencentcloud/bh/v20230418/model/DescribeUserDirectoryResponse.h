@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户目录集
-                     * @return UserDirSet 用户目录集
+                     * 获取<p>用户目录集</p>
+                     * @return UserDirSet <p>用户目录集</p>
                      * 
                      */
                     std::vector<UserDirectory> GetUserDirSet() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool UserDirSetHasBeenSet() const;
 
                     /**
-                     * 获取用户目录集总数
-                     * @return TotalCount 用户目录集总数
+                     * 获取<p>用户目录集总数</p>
+                     * @return TotalCount <p>用户目录集总数</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户目录集
+                     * <p>用户目录集</p>
                      */
                     std::vector<UserDirectory> m_userDirSet;
                     bool m_userDirSetHasBeenSet;
 
                     /**
-                     * 用户目录集总数
+                     * <p>用户目录集总数</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

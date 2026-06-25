@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目录id
-                     * @return Id 目录id
+                     * 获取<p>目录id</p>
+                     * @return Id <p>目录id</p>
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置目录id
-                     * @param _id 目录id
+                     * 设置<p>目录id</p>
+                     * @param _id <p>目录id</p>
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取ioa目录id
-                     * @return DirId ioa目录id
+                     * 获取<p>ioa目录id</p>
+                     * @return DirId <p>ioa目录id</p>
                      * 
                      */
                     uint64_t GetDirId() const;
 
                     /**
-                     * 设置ioa目录id
-                     * @param _dirId ioa目录id
+                     * 设置<p>ioa目录id</p>
+                     * @param _dirId <p>ioa目录id</p>
                      * 
                      */
                     void SetDirId(const uint64_t& _dirId);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool DirIdHasBeenSet() const;
 
                     /**
-                     * 获取ioa目录名称
-                     * @return DirName ioa目录名称
+                     * 获取<p>ioa目录名称</p>
+                     * @return DirName <p>ioa目录名称</p>
                      * 
                      */
                     std::string GetDirName() const;
 
                     /**
-                     * 设置ioa目录名称
-                     * @param _dirName ioa目录名称
+                     * 设置<p>ioa目录名称</p>
+                     * @param _dirName <p>ioa目录名称</p>
                      * 
                      */
                     void SetDirName(const std::string& _dirName);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool DirNameHasBeenSet() const;
 
                     /**
-                     * 获取ioa关联用户源类型
-                     * @return Source ioa关联用户源类型
+                     * 获取<p>ioa关联用户源类型</p>
+                     * @return Source <p>ioa关联用户源类型</p>
                      * 
                      */
                     uint64_t GetSource() const;
 
                     /**
-                     * 设置ioa关联用户源类型
-                     * @param _source ioa关联用户源类型
+                     * 设置<p>ioa关联用户源类型</p>
+                     * @param _source <p>ioa关联用户源类型</p>
                      * 
                      */
                     void SetSource(const uint64_t& _source);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取ioa关联用户源名称
-                     * @return SourceName ioa关联用户源名称
+                     * 获取<p>ioa关联用户源名称</p>
+                     * @return SourceName <p>ioa关联用户源名称</p>
                      * 
                      */
                     std::string GetSourceName() const;
 
                     /**
-                     * 设置ioa关联用户源名称
-                     * @param _sourceName ioa关联用户源名称
+                     * 设置<p>ioa关联用户源名称</p>
+                     * @param _sourceName <p>ioa关联用户源名称</p>
                      * 
                      */
                     void SetSourceName(const std::string& _sourceName);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool SourceNameHasBeenSet() const;
 
                     /**
-                     * 获取目录包含用户数
-                     * @return UserTotal 目录包含用户数
+                     * 获取<p>目录包含用户数</p>
+                     * @return UserTotal <p>目录包含用户数</p>
                      * 
                      */
                     uint64_t GetUserTotal() const;
 
                     /**
-                     * 设置目录包含用户数
-                     * @param _userTotal 目录包含用户数
+                     * 设置<p>目录包含用户数</p>
+                     * @param _userTotal <p>目录包含用户数</p>
                      * 
                      */
                     void SetUserTotal(const uint64_t& _userTotal);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool UserTotalHasBeenSet() const;
 
                     /**
-                     * 获取目录接入时间
-                     * @return CreateTime 目录接入时间
+                     * 获取<p>目录接入时间</p>
+                     * @return CreateTime <p>目录接入时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置目录接入时间
-                     * @param _createTime 目录接入时间
+                     * 设置<p>目录接入时间</p>
+                     * @param _createTime <p>目录接入时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取目录下的组织细节信息
-                     * @return UserOrgSet 目录下的组织细节信息
+                     * 获取<p>目录下的组织细节信息</p>
+                     * @return UserOrgSet <p>目录下的组织细节信息</p>
                      * 
                      */
                     std::vector<UserOrg> GetUserOrgSet() const;
 
                     /**
-                     * 设置目录下的组织细节信息
-                     * @param _userOrgSet 目录下的组织细节信息
+                     * 设置<p>目录下的组织细节信息</p>
+                     * @param _userOrgSet <p>目录下的组织细节信息</p>
                      * 
                      */
                     void SetUserOrgSet(const std::vector<UserOrg>& _userOrgSet);
@@ -215,55 +215,136 @@ namespace TencentCloud
                      */
                     bool UserOrgSetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启自动同步</p>
+                     * @return AutoSync <p>是否开启自动同步</p>
+                     * 
+                     */
+                    bool GetAutoSync() const;
+
+                    /**
+                     * 设置<p>是否开启自动同步</p>
+                     * @param _autoSync <p>是否开启自动同步</p>
+                     * 
+                     */
+                    void SetAutoSync(const bool& _autoSync);
+
+                    /**
+                     * 判断参数 AutoSync 是否已赋值
+                     * @return AutoSync 是否已赋值
+                     * 
+                     */
+                    bool AutoSyncHasBeenSet() const;
+
+                    /**
+                     * 获取<p>同步周期（5段式 crontab 表达式）</p>
+                     * @return SyncCron <p>同步周期（5段式 crontab 表达式）</p>
+                     * 
+                     */
+                    std::string GetSyncCron() const;
+
+                    /**
+                     * 设置<p>同步周期（5段式 crontab 表达式）</p>
+                     * @param _syncCron <p>同步周期（5段式 crontab 表达式）</p>
+                     * 
+                     */
+                    void SetSyncCron(const std::string& _syncCron);
+
+                    /**
+                     * 判断参数 SyncCron 是否已赋值
+                     * @return SyncCron 是否已赋值
+                     * 
+                     */
+                    bool SyncCronHasBeenSet() const;
+
+                    /**
+                     * 获取<p>下次同步时间</p><p>参数格式：2026-06-05T11:30:00+08:00</p>
+                     * @return NextSyncTime <p>下次同步时间</p><p>参数格式：2026-06-05T11:30:00+08:00</p>
+                     * 
+                     */
+                    std::string GetNextSyncTime() const;
+
+                    /**
+                     * 设置<p>下次同步时间</p><p>参数格式：2026-06-05T11:30:00+08:00</p>
+                     * @param _nextSyncTime <p>下次同步时间</p><p>参数格式：2026-06-05T11:30:00+08:00</p>
+                     * 
+                     */
+                    void SetNextSyncTime(const std::string& _nextSyncTime);
+
+                    /**
+                     * 判断参数 NextSyncTime 是否已赋值
+                     * @return NextSyncTime 是否已赋值
+                     * 
+                     */
+                    bool NextSyncTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 目录id
+                     * <p>目录id</p>
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * ioa目录id
+                     * <p>ioa目录id</p>
                      */
                     uint64_t m_dirId;
                     bool m_dirIdHasBeenSet;
 
                     /**
-                     * ioa目录名称
+                     * <p>ioa目录名称</p>
                      */
                     std::string m_dirName;
                     bool m_dirNameHasBeenSet;
 
                     /**
-                     * ioa关联用户源类型
+                     * <p>ioa关联用户源类型</p>
                      */
                     uint64_t m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * ioa关联用户源名称
+                     * <p>ioa关联用户源名称</p>
                      */
                     std::string m_sourceName;
                     bool m_sourceNameHasBeenSet;
 
                     /**
-                     * 目录包含用户数
+                     * <p>目录包含用户数</p>
                      */
                     uint64_t m_userTotal;
                     bool m_userTotalHasBeenSet;
 
                     /**
-                     * 目录接入时间
+                     * <p>目录接入时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 目录下的组织细节信息
+                     * <p>目录下的组织细节信息</p>
                      */
                     std::vector<UserOrg> m_userOrgSet;
                     bool m_userOrgSetHasBeenSet;
+
+                    /**
+                     * <p>是否开启自动同步</p>
+                     */
+                    bool m_autoSync;
+                    bool m_autoSyncHasBeenSet;
+
+                    /**
+                     * <p>同步周期（5段式 crontab 表达式）</p>
+                     */
+                    std::string m_syncCron;
+                    bool m_syncCronHasBeenSet;
+
+                    /**
+                     * <p>下次同步时间</p><p>参数格式：2026-06-05T11:30:00+08:00</p>
+                     */
+                    std::string m_nextSyncTime;
+                    bool m_nextSyncTimeHasBeenSet;
 
                 };
             }

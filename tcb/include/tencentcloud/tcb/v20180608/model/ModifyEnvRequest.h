@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境ID
-                     * @return EnvId 环境ID
+                     * 获取<p>环境ID</p>
+                     * @return EnvId <p>环境ID</p>
                      * 
                      */
                     std::string GetEnvId() const;
 
                     /**
-                     * 设置环境ID
-                     * @param _envId 环境ID
+                     * 设置<p>环境ID</p>
+                     * @param _envId <p>环境ID</p>
                      * 
                      */
                     void SetEnvId(const std::string& _envId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool EnvIdHasBeenSet() const;
 
                     /**
-                     * 获取环境备注名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
-                     * @return Alias 环境备注名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
+                     * 获取<p>环境备注名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符</p>
+                     * @return Alias <p>环境备注名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符</p>
                      * 
                      */
                     std::string GetAlias() const;
 
                     /**
-                     * 设置环境备注名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
-                     * @param _alias 环境备注名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
+                     * 设置<p>环境备注名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符</p>
+                     * @param _alias <p>环境备注名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符</p>
                      * 
                      */
                     void SetAlias(const std::string& _alias);
@@ -84,19 +84,46 @@ namespace TencentCloud
                      */
                     bool AliasHasBeenSet() const;
 
+                    /**
+                     * 获取<p>按量计费QPS上限，大于套餐配额时生效。-1表示关闭QPS按量计费。</p>
+                     * @return CustomQps <p>按量计费QPS上限，大于套餐配额时生效。-1表示关闭QPS按量计费。</p>
+                     * 
+                     */
+                    int64_t GetCustomQps() const;
+
+                    /**
+                     * 设置<p>按量计费QPS上限，大于套餐配额时生效。-1表示关闭QPS按量计费。</p>
+                     * @param _customQps <p>按量计费QPS上限，大于套餐配额时生效。-1表示关闭QPS按量计费。</p>
+                     * 
+                     */
+                    void SetCustomQps(const int64_t& _customQps);
+
+                    /**
+                     * 判断参数 CustomQps 是否已赋值
+                     * @return CustomQps 是否已赋值
+                     * 
+                     */
+                    bool CustomQpsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 环境ID
+                     * <p>环境ID</p>
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
 
                     /**
-                     * 环境备注名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
+                     * <p>环境备注名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符</p>
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;
+
+                    /**
+                     * <p>按量计费QPS上限，大于套餐配额时生效。-1表示关闭QPS按量计费。</p>
+                     */
+                    int64_t m_customQps;
+                    bool m_customQpsHasBeenSet;
 
                 };
             }

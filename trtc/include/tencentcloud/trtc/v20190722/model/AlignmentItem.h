@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trtc/v20190722/model/WordItem.h>
 
 
 namespace TencentCloud
@@ -47,15 +48,36 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取字幕对应的时间起点
-                     * @return TimeBeginMs 字幕对应的时间起点
+                     * 获取<p>字幕文本</p>
+                     * @return Text <p>字幕文本</p>
+                     * 
+                     */
+                    std::string GetText() const;
+
+                    /**
+                     * 设置<p>字幕文本</p>
+                     * @param _text <p>字幕文本</p>
+                     * 
+                     */
+                    void SetText(const std::string& _text);
+
+                    /**
+                     * 判断参数 Text 是否已赋值
+                     * @return Text 是否已赋值
+                     * 
+                     */
+                    bool TextHasBeenSet() const;
+
+                    /**
+                     * 获取<p>字幕对应的时间起点</p>
+                     * @return TimeBeginMs <p>字幕对应的时间起点</p>
                      * 
                      */
                     uint64_t GetTimeBeginMs() const;
 
                     /**
-                     * 设置字幕对应的时间起点
-                     * @param _timeBeginMs 字幕对应的时间起点
+                     * 设置<p>字幕对应的时间起点</p>
+                     * @param _timeBeginMs <p>字幕对应的时间起点</p>
                      * 
                      */
                     void SetTimeBeginMs(const uint64_t& _timeBeginMs);
@@ -68,15 +90,15 @@ namespace TencentCloud
                     bool TimeBeginMsHasBeenSet() const;
 
                     /**
-                     * 获取字幕对应的时间尾点
-                     * @return TimeEndMs 字幕对应的时间尾点
+                     * 获取<p>字幕对应的时间尾点</p>
+                     * @return TimeEndMs <p>字幕对应的时间尾点</p>
                      * 
                      */
                     uint64_t GetTimeEndMs() const;
 
                     /**
-                     * 设置字幕对应的时间尾点
-                     * @param _timeEndMs 字幕对应的时间尾点
+                     * 设置<p>字幕对应的时间尾点</p>
+                     * @param _timeEndMs <p>字幕对应的时间尾点</p>
                      * 
                      */
                     void SetTimeEndMs(const uint64_t& _timeEndMs);
@@ -89,15 +111,15 @@ namespace TencentCloud
                     bool TimeEndMsHasBeenSet() const;
 
                     /**
-                     * 获取字幕对应的文本索引起点
-                     * @return TextBegin 字幕对应的文本索引起点
+                     * 获取<p>字幕对应的文本索引起点</p>
+                     * @return TextBegin <p>字幕对应的文本索引起点</p>
                      * 
                      */
                     uint64_t GetTextBegin() const;
 
                     /**
-                     * 设置字幕对应的文本索引起点
-                     * @param _textBegin 字幕对应的文本索引起点
+                     * 设置<p>字幕对应的文本索引起点</p>
+                     * @param _textBegin <p>字幕对应的文本索引起点</p>
                      * 
                      */
                     void SetTextBegin(const uint64_t& _textBegin);
@@ -110,15 +132,15 @@ namespace TencentCloud
                     bool TextBeginHasBeenSet() const;
 
                     /**
-                     * 获取字幕对应的文本索引尾点
-                     * @return TextEnd 字幕对应的文本索引尾点
+                     * 获取<p>字幕对应的文本索引尾点</p>
+                     * @return TextEnd <p>字幕对应的文本索引尾点</p>
                      * 
                      */
                     uint64_t GetTextEnd() const;
 
                     /**
-                     * 设置字幕对应的文本索引尾点
-                     * @param _textEnd 字幕对应的文本索引尾点
+                     * 设置<p>字幕对应的文本索引尾点</p>
+                     * @param _textEnd <p>字幕对应的文本索引尾点</p>
                      * 
                      */
                     void SetTextEnd(const uint64_t& _textEnd);
@@ -130,31 +152,64 @@ namespace TencentCloud
                      */
                     bool TextEndHasBeenSet() const;
 
+                    /**
+                     * 获取<p>词级别时间戳</p>
+                     * @return Words <p>词级别时间戳</p>
+                     * 
+                     */
+                    std::vector<WordItem> GetWords() const;
+
+                    /**
+                     * 设置<p>词级别时间戳</p>
+                     * @param _words <p>词级别时间戳</p>
+                     * 
+                     */
+                    void SetWords(const std::vector<WordItem>& _words);
+
+                    /**
+                     * 判断参数 Words 是否已赋值
+                     * @return Words 是否已赋值
+                     * 
+                     */
+                    bool WordsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 字幕对应的时间起点
+                     * <p>字幕文本</p>
+                     */
+                    std::string m_text;
+                    bool m_textHasBeenSet;
+
+                    /**
+                     * <p>字幕对应的时间起点</p>
                      */
                     uint64_t m_timeBeginMs;
                     bool m_timeBeginMsHasBeenSet;
 
                     /**
-                     * 字幕对应的时间尾点
+                     * <p>字幕对应的时间尾点</p>
                      */
                     uint64_t m_timeEndMs;
                     bool m_timeEndMsHasBeenSet;
 
                     /**
-                     * 字幕对应的文本索引起点
+                     * <p>字幕对应的文本索引起点</p>
                      */
                     uint64_t m_textBegin;
                     bool m_textBeginHasBeenSet;
 
                     /**
-                     * 字幕对应的文本索引尾点
+                     * <p>字幕对应的文本索引尾点</p>
                      */
                     uint64_t m_textEnd;
                     bool m_textEndHasBeenSet;
+
+                    /**
+                     * <p>词级别时间戳</p>
+                     */
+                    std::vector<WordItem> m_words;
+                    bool m_wordsHasBeenSet;
 
                 };
             }

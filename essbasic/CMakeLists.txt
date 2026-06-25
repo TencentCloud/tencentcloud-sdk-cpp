@@ -77,6 +77,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/DownloadFlowInfo.h
   include/tencentcloud/essbasic/v20210526/model/FlowApproverUrlInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateWebThemeConfigRequest.h
+  include/tencentcloud/essbasic/v20210526/model/CancelOrganizationFlowsResponse.h
   include/tencentcloud/essbasic/v20210526/model/TaskInfo.h
   include/tencentcloud/essbasic/v20210526/model/NeedReviewApproverInfo.h
   include/tencentcloud/essbasic/v20210526/model/CreateFlowGroupSignReviewResponse.h
@@ -192,6 +193,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/CreateEmployeeChangeUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelRenewAutoSignLicenseRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreatePreparedPersonalEsignRequest.h
+  include/tencentcloud/essbasic/v20210526/model/CancelOrganizationFlowsRequest.h
   include/tencentcloud/essbasic/v20210526/model/IntentionActionResult.h
   include/tencentcloud/essbasic/v20210526/model/FlowDetailInfo.h
   include/tencentcloud/essbasic/v20210526/model/CreatePersonAuthCertificateImageRequest.h
@@ -497,6 +499,7 @@ set(essbasic_src
   src/v20210526/model/DownloadFlowInfo.cpp
   src/v20210526/model/FlowApproverUrlInfo.cpp
   src/v20210526/model/ChannelCreateWebThemeConfigRequest.cpp
+  src/v20210526/model/CancelOrganizationFlowsResponse.cpp
   src/v20210526/model/TaskInfo.cpp
   src/v20210526/model/NeedReviewApproverInfo.cpp
   src/v20210526/model/CreateFlowGroupSignReviewResponse.cpp
@@ -612,6 +615,7 @@ set(essbasic_src
   src/v20210526/model/CreateEmployeeChangeUrlResponse.cpp
   src/v20210526/model/ChannelRenewAutoSignLicenseRequest.cpp
   src/v20210526/model/ChannelCreatePreparedPersonalEsignRequest.cpp
+  src/v20210526/model/CancelOrganizationFlowsRequest.cpp
   src/v20210526/model/IntentionActionResult.cpp
   src/v20210526/model/FlowDetailInfo.cpp
   src/v20210526/model/CreatePersonAuthCertificateImageRequest.cpp

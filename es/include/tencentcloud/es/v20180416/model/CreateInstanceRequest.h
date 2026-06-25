@@ -764,6 +764,27 @@ namespace TencentCloud
                     bool EnableDiagnoseHasBeenSet() const;
 
                     /**
+                     * 获取<p>是否开启自动备份</p>
+                     * @return EnableCosBackup <p>是否开启自动备份</p>
+                     * 
+                     */
+                    bool GetEnableCosBackup() const;
+
+                    /**
+                     * 设置<p>是否开启自动备份</p>
+                     * @param _enableCosBackup <p>是否开启自动备份</p>
+                     * 
+                     */
+                    void SetEnableCosBackup(const bool& _enableCosBackup);
+
+                    /**
+                     * 判断参数 EnableCosBackup 是否已赋值
+                     * @return EnableCosBackup 是否已赋值
+                     * 
+                     */
+                    bool EnableCosBackupHasBeenSet() const;
+
+                    /**
                      * 获取<p>cdcId，使用cdc子网时传递</p>
                      * @return CdcId <p>cdcId，使用cdc子网时传递</p>
                      * 
@@ -1157,6 +1178,12 @@ namespace TencentCloud
                      */
                     bool m_enableDiagnose;
                     bool m_enableDiagnoseHasBeenSet;
+
+                    /**
+                     * <p>是否开启自动备份</p>
+                     */
+                    bool m_enableCosBackup;
+                    bool m_enableCosBackupHasBeenSet;
 
                     /**
                      * <p>cdcId，使用cdc子网时传递</p>

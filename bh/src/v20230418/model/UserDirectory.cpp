@@ -28,7 +28,10 @@ UserDirectory::UserDirectory() :
     m_sourceNameHasBeenSet(false),
     m_userTotalHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_userOrgSetHasBeenSet(false)
+    m_userOrgSetHasBeenSet(false),
+    m_autoSyncHasBeenSet(false),
+    m_syncCronHasBeenSet(false),
+    m_nextSyncTimeHasBeenSet(false)
 {
 }
 
@@ -127,6 +130,36 @@ CoreInternalOutcome UserDirectory::Deserialize(const rapidjson::Value &value)
         m_userOrgSetHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoSync") && !value["AutoSync"].IsNull())
+    {
+        if (!value["AutoSync"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserDirectory.AutoSync` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoSync = value["AutoSync"].GetBool();
+        m_autoSyncHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncCron") && !value["SyncCron"].IsNull())
+    {
+        if (!value["SyncCron"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserDirectory.SyncCron` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncCron = string(value["SyncCron"].GetString());
+        m_syncCronHasBeenSet = true;
+    }
+
+    if (value.HasMember("NextSyncTime") && !value["NextSyncTime"].IsNull())
+    {
+        if (!value["NextSyncTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserDirectory.NextSyncTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nextSyncTime = string(value["NextSyncTime"].GetString());
+        m_nextSyncTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +236,30 @@ void UserDirectory::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_autoSyncHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoSync";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoSync, allocator);
+    }
+
+    if (m_syncCronHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncCron";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_syncCron.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nextSyncTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NextSyncTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nextSyncTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -334,5 +391,53 @@ void UserDirectory::SetUserOrgSet(const vector<UserOrg>& _userOrgSet)
 bool UserDirectory::UserOrgSetHasBeenSet() const
 {
     return m_userOrgSetHasBeenSet;
+}
+
+bool UserDirectory::GetAutoSync() const
+{
+    return m_autoSync;
+}
+
+void UserDirectory::SetAutoSync(const bool& _autoSync)
+{
+    m_autoSync = _autoSync;
+    m_autoSyncHasBeenSet = true;
+}
+
+bool UserDirectory::AutoSyncHasBeenSet() const
+{
+    return m_autoSyncHasBeenSet;
+}
+
+string UserDirectory::GetSyncCron() const
+{
+    return m_syncCron;
+}
+
+void UserDirectory::SetSyncCron(const string& _syncCron)
+{
+    m_syncCron = _syncCron;
+    m_syncCronHasBeenSet = true;
+}
+
+bool UserDirectory::SyncCronHasBeenSet() const
+{
+    return m_syncCronHasBeenSet;
+}
+
+string UserDirectory::GetNextSyncTime() const
+{
+    return m_nextSyncTime;
+}
+
+void UserDirectory::SetNextSyncTime(const string& _nextSyncTime)
+{
+    m_nextSyncTime = _nextSyncTime;
+    m_nextSyncTimeHasBeenSet = true;
+}
+
+bool UserDirectory::NextSyncTimeHasBeenSet() const
+{
+    return m_nextSyncTimeHasBeenSet;
 }
 

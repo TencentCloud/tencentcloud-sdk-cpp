@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyEnvRequest::ModifyEnvRequest() :
     m_envIdHasBeenSet(false),
-    m_aliasHasBeenSet(false)
+    m_aliasHasBeenSet(false),
+    m_customQpsHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string ModifyEnvRequest::ToJsonString() const
         string key = "Alias";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_alias.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customQpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomQps";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_customQps, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void ModifyEnvRequest::SetAlias(const string& _alias)
 bool ModifyEnvRequest::AliasHasBeenSet() const
 {
     return m_aliasHasBeenSet;
+}
+
+int64_t ModifyEnvRequest::GetCustomQps() const
+{
+    return m_customQps;
+}
+
+void ModifyEnvRequest::SetCustomQps(const int64_t& _customQps)
+{
+    m_customQps = _customQps;
+    m_customQpsHasBeenSet = true;
+}
+
+bool ModifyEnvRequest::CustomQpsHasBeenSet() const
+{
+    return m_customQpsHasBeenSet;
 }
 
 

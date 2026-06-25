@@ -25,7 +25,8 @@ McuLayoutParams::McuLayoutParams() :
     m_pureAudioHoldPlaceModeHasBeenSet(false),
     m_mixLayoutListHasBeenSet(false),
     m_maxVideoUserHasBeenSet(false),
-    m_renderModeHasBeenSet(false)
+    m_renderModeHasBeenSet(false),
+    m_enableStreamSEIHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,16 @@ CoreInternalOutcome McuLayoutParams::Deserialize(const rapidjson::Value &value)
         m_renderModeHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableStreamSEI") && !value["EnableStreamSEI"].IsNull())
+    {
+        if (!value["EnableStreamSEI"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `McuLayoutParams.EnableStreamSEI` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableStreamSEI = value["EnableStreamSEI"].GetUint64();
+        m_enableStreamSEIHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -154,6 +165,14 @@ void McuLayoutParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "RenderMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_renderMode, allocator);
+    }
+
+    if (m_enableStreamSEIHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableStreamSEI";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableStreamSEI, allocator);
     }
 
 }
@@ -237,5 +256,21 @@ void McuLayoutParams::SetRenderMode(const uint64_t& _renderMode)
 bool McuLayoutParams::RenderModeHasBeenSet() const
 {
     return m_renderModeHasBeenSet;
+}
+
+uint64_t McuLayoutParams::GetEnableStreamSEI() const
+{
+    return m_enableStreamSEI;
+}
+
+void McuLayoutParams::SetEnableStreamSEI(const uint64_t& _enableStreamSEI)
+{
+    m_enableStreamSEI = _enableStreamSEI;
+    m_enableStreamSEIHasBeenSet = true;
+}
+
+bool McuLayoutParams::EnableStreamSEIHasBeenSet() const
+{
+    return m_enableStreamSEIHasBeenSet;
 }
 

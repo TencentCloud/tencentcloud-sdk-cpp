@@ -21,10 +21,12 @@ using namespace TencentCloud::Trtc::V20190722::Model;
 using namespace std;
 
 AlignmentItem::AlignmentItem() :
+    m_textHasBeenSet(false),
     m_timeBeginMsHasBeenSet(false),
     m_timeEndMsHasBeenSet(false),
     m_textBeginHasBeenSet(false),
-    m_textEndHasBeenSet(false)
+    m_textEndHasBeenSet(false),
+    m_wordsHasBeenSet(false)
 {
 }
 
@@ -32,6 +34,16 @@ CoreInternalOutcome AlignmentItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("Text") && !value["Text"].IsNull())
+    {
+        if (!value["Text"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlignmentItem.Text` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_text = string(value["Text"].GetString());
+        m_textHasBeenSet = true;
+    }
 
     if (value.HasMember("TimeBeginMs") && !value["TimeBeginMs"].IsNull())
     {
@@ -73,12 +85,40 @@ CoreInternalOutcome AlignmentItem::Deserialize(const rapidjson::Value &value)
         m_textEndHasBeenSet = true;
     }
 
+    if (value.HasMember("Words") && !value["Words"].IsNull())
+    {
+        if (!value["Words"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AlignmentItem.Words` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Words"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            WordItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_words.push_back(item);
+        }
+        m_wordsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void AlignmentItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_textHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Text";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_text.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_timeBeginMsHasBeenSet)
     {
@@ -112,8 +152,39 @@ void AlignmentItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         value.AddMember(iKey, m_textEnd, allocator);
     }
 
+    if (m_wordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Words";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_words.begin(); itr != m_words.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
 }
 
+
+string AlignmentItem::GetText() const
+{
+    return m_text;
+}
+
+void AlignmentItem::SetText(const string& _text)
+{
+    m_text = _text;
+    m_textHasBeenSet = true;
+}
+
+bool AlignmentItem::TextHasBeenSet() const
+{
+    return m_textHasBeenSet;
+}
 
 uint64_t AlignmentItem::GetTimeBeginMs() const
 {
@@ -177,5 +248,21 @@ void AlignmentItem::SetTextEnd(const uint64_t& _textEnd)
 bool AlignmentItem::TextEndHasBeenSet() const
 {
     return m_textEndHasBeenSet;
+}
+
+vector<WordItem> AlignmentItem::GetWords() const
+{
+    return m_words;
+}
+
+void AlignmentItem::SetWords(const vector<WordItem>& _words)
+{
+    m_words = _words;
+    m_wordsHasBeenSet = true;
+}
+
+bool AlignmentItem::WordsHasBeenSet() const
+{
+    return m_wordsHasBeenSet;
 }
 

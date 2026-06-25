@@ -36,6 +36,7 @@ set(tdmysql_public_header_model
   include/tencentcloud/tdmysql/v20211122/model/InstanceFilter.h
   include/tencentcloud/tdmysql/v20211122/model/Explain.h
   include/tencentcloud/tdmysql/v20211122/model/BackupStatisticsModel.h
+  include/tencentcloud/tdmysql/v20211122/model/ResetUsersPasswordRequest.h
   include/tencentcloud/tdmysql/v20211122/model/BackupPolicyModelOutPut.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyInstanceSSLStatusRequest.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyInstanceNameResponse.h
@@ -79,6 +80,7 @@ set(tdmysql_public_header_model
   include/tencentcloud/tdmysql/v20211122/model/ModifyMaintenanceWindowRequest.h
   include/tencentcloud/tdmysql/v20211122/model/DestroyInstancesResponse.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeSaleInfoResponse.h
+  include/tencentcloud/tdmysql/v20211122/model/ResetUserPasswordInfo.h
   include/tencentcloud/tdmysql/v20211122/model/DeleteUsersResponse.h
   include/tencentcloud/tdmysql/v20211122/model/DatabaseTable.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBInstanceDetailRequest.h
@@ -134,6 +136,7 @@ set(tdmysql_public_header_model
   include/tencentcloud/tdmysql/v20211122/model/AutoScalingConfig.h
   include/tencentcloud/tdmysql/v20211122/model/DatabaseProcedure.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyAutoRenewFlagRequest.h
+  include/tencentcloud/tdmysql/v20211122/model/ResetUsersPasswordResponse.h
   include/tencentcloud/tdmysql/v20211122/model/CreateDBSBackupRequest.h
   include/tencentcloud/tdmysql/v20211122/model/DestroyInstancesRequest.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeMaintenanceWindowRequest.h
@@ -177,6 +180,7 @@ set(tdmysql_src
   src/v20211122/model/InstanceFilter.cpp
   src/v20211122/model/Explain.cpp
   src/v20211122/model/BackupStatisticsModel.cpp
+  src/v20211122/model/ResetUsersPasswordRequest.cpp
   src/v20211122/model/BackupPolicyModelOutPut.cpp
   src/v20211122/model/ModifyInstanceSSLStatusRequest.cpp
   src/v20211122/model/ModifyInstanceNameResponse.cpp
@@ -220,6 +224,7 @@ set(tdmysql_src
   src/v20211122/model/ModifyMaintenanceWindowRequest.cpp
   src/v20211122/model/DestroyInstancesResponse.cpp
   src/v20211122/model/DescribeSaleInfoResponse.cpp
+  src/v20211122/model/ResetUserPasswordInfo.cpp
   src/v20211122/model/DeleteUsersResponse.cpp
   src/v20211122/model/DatabaseTable.cpp
   src/v20211122/model/DescribeDBInstanceDetailRequest.cpp
@@ -275,6 +280,7 @@ set(tdmysql_src
   src/v20211122/model/AutoScalingConfig.cpp
   src/v20211122/model/DatabaseProcedure.cpp
   src/v20211122/model/ModifyAutoRenewFlagRequest.cpp
+  src/v20211122/model/ResetUsersPasswordResponse.cpp
   src/v20211122/model/CreateDBSBackupRequest.cpp
   src/v20211122/model/DestroyInstancesRequest.cpp
   src/v20211122/model/DescribeMaintenanceWindowRequest.cpp

@@ -24,7 +24,9 @@ using namespace std;
 
 ModifyUserDirectoryRequest::ModifyUserDirectoryRequest() :
     m_idHasBeenSet(false),
-    m_userOrgSetHasBeenSet(false)
+    m_userOrgSetHasBeenSet(false),
+    m_autoSyncHasBeenSet(false),
+    m_syncCronHasBeenSet(false)
 {
 }
 
@@ -56,6 +58,22 @@ string ModifyUserDirectoryRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_autoSyncHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoSync";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoSync, allocator);
+    }
+
+    if (m_syncCronHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncCron";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_syncCron.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -96,6 +114,38 @@ void ModifyUserDirectoryRequest::SetUserOrgSet(const vector<UserOrg>& _userOrgSe
 bool ModifyUserDirectoryRequest::UserOrgSetHasBeenSet() const
 {
     return m_userOrgSetHasBeenSet;
+}
+
+bool ModifyUserDirectoryRequest::GetAutoSync() const
+{
+    return m_autoSync;
+}
+
+void ModifyUserDirectoryRequest::SetAutoSync(const bool& _autoSync)
+{
+    m_autoSync = _autoSync;
+    m_autoSyncHasBeenSet = true;
+}
+
+bool ModifyUserDirectoryRequest::AutoSyncHasBeenSet() const
+{
+    return m_autoSyncHasBeenSet;
+}
+
+string ModifyUserDirectoryRequest::GetSyncCron() const
+{
+    return m_syncCron;
+}
+
+void ModifyUserDirectoryRequest::SetSyncCron(const string& _syncCron)
+{
+    m_syncCron = _syncCron;
+    m_syncCronHasBeenSet = true;
+}
+
+bool ModifyUserDirectoryRequest::SyncCronHasBeenSet() const
+{
+    return m_syncCronHasBeenSet;
 }
 
 

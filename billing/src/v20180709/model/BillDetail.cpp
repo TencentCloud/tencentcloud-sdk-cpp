@@ -57,7 +57,8 @@ BillDetail::BillDetail() :
     m_reserveDetailHasBeenSet(false),
     m_discountObjectHasBeenSet(false),
     m_discountTypeHasBeenSet(false),
-    m_discountContentHasBeenSet(false)
+    m_discountContentHasBeenSet(false),
+    m_extendFieldHasBeenSet(false)
 {
 }
 
@@ -466,6 +467,16 @@ CoreInternalOutcome BillDetail::Deserialize(const rapidjson::Value &value)
         m_discountContentHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtendField") && !value["ExtendField"].IsNull())
+    {
+        if (!value["ExtendField"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BillDetail.ExtendField` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extendField = string(value["ExtendField"].GetString());
+        m_extendFieldHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -787,6 +798,14 @@ void BillDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "DiscountContent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_discountContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extendFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtendField";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extendField.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1382,5 +1401,21 @@ void BillDetail::SetDiscountContent(const string& _discountContent)
 bool BillDetail::DiscountContentHasBeenSet() const
 {
     return m_discountContentHasBeenSet;
+}
+
+string BillDetail::GetExtendField() const
+{
+    return m_extendField;
+}
+
+void BillDetail::SetExtendField(const string& _extendField)
+{
+    m_extendField = _extendField;
+    m_extendFieldHasBeenSet = true;
+}
+
+bool BillDetail::ExtendFieldHasBeenSet() const
+{
+    return m_extendFieldHasBeenSet;
 }
 

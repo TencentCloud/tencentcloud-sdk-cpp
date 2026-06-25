@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>模型名称。生音乐当前支持的模型: GL、MinimaxMusic。</p>
-                     * @return ModelName <p>模型名称。生音乐当前支持的模型: GL、MinimaxMusic。</p>
+                     * 获取<p>模型名称。生音乐当前支持的模型: GL、MiniMaxMusic。</p>
+                     * @return ModelName <p>模型名称。生音乐当前支持的模型: GL、MiniMaxMusic。</p>
                      * 
                      */
                     std::string GetModelName() const;
 
                     /**
-                     * 设置<p>模型名称。生音乐当前支持的模型: GL、MinimaxMusic。</p>
-                     * @param _modelName <p>模型名称。生音乐当前支持的模型: GL、MinimaxMusic。</p>
+                     * 设置<p>模型名称。生音乐当前支持的模型: GL、MiniMaxMusic。</p>
+                     * @param _modelName <p>模型名称。生音乐当前支持的模型: GL、MiniMaxMusic。</p>
                      * 
                      */
                     void SetModelName(const std::string& _modelName);
@@ -280,7 +280,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>模型名称。生音乐当前支持的模型: GL、MinimaxMusic。</p>
+                     * <p>模型名称。生音乐当前支持的模型: GL、MiniMaxMusic。</p>
                      */
                     std::string m_modelName;
                     bool m_modelNameHasBeenSet;

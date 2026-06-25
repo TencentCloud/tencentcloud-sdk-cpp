@@ -2090,6 +2090,56 @@ OcrClient::MixedInvoiceOCROutcomeCallable OcrClient::MixedInvoiceOCRCallable(con
     return prom->get_future();
 }
 
+OcrClient::MultimodalDocParseOutcome OcrClient::MultimodalDocParse(const MultimodalDocParseRequest &request)
+{
+    auto outcome = MakeRequest(request, "MultimodalDocParse");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        MultimodalDocParseResponse rsp = MultimodalDocParseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return MultimodalDocParseOutcome(rsp);
+        else
+            return MultimodalDocParseOutcome(o.GetError());
+    }
+    else
+    {
+        return MultimodalDocParseOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::MultimodalDocParseAsync(const MultimodalDocParseRequest& request, const MultimodalDocParseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const MultimodalDocParseRequest&;
+    using Resp = MultimodalDocParseResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "MultimodalDocParse", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OcrClient::MultimodalDocParseOutcomeCallable OcrClient::MultimodalDocParseCallable(const MultimodalDocParseRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<MultimodalDocParseOutcome>>();
+    MultimodalDocParseAsync(
+    request,
+    [prom](
+        const OcrClient*,
+        const MultimodalDocParseRequest&,
+        MultimodalDocParseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OcrClient::PassportOCROutcome OcrClient::PassportOCR(const PassportOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "PassportOCR");

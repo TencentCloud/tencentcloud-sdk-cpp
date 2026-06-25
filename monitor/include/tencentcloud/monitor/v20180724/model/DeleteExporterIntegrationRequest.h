@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID
-                     * @return InstanceId 实例 ID
+                     * 获取<p>实例 ID</p>
+                     * @return InstanceId <p>实例 ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param _instanceId 实例 ID
+                     * 设置<p>实例 ID</p>
+                     * @param _instanceId <p>实例 ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取类型(可通过 DescribeExporterIntegrations获取)
-                     * @return Kind 类型(可通过 DescribeExporterIntegrations获取)
+                     * 获取<p>类型(可通过 DescribeExporterIntegrations获取)</p>
+                     * @return Kind <p>类型(可通过 DescribeExporterIntegrations获取)</p>
                      * 
                      */
                     std::string GetKind() const;
 
                     /**
-                     * 设置类型(可通过 DescribeExporterIntegrations获取)
-                     * @param _kind 类型(可通过 DescribeExporterIntegrations获取)
+                     * 设置<p>类型(可通过 DescribeExporterIntegrations获取)</p>
+                     * @param _kind <p>类型(可通过 DescribeExporterIntegrations获取)</p>
                      * 
                      */
                     void SetKind(const std::string& _kind);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool KindHasBeenSet() const;
 
                     /**
-                     * 获取名字
-                     * @return Name 名字
+                     * 获取<p>名字</p>
+                     * @return Name <p>名字</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名字
-                     * @param _name 名字
+                     * 设置<p>名字</p>
+                     * @param _name <p>名字</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -106,27 +106,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Kubernetes 集群类型，取值如下：
-<li> 1= 容器集群(TKE) </li>
-<li> 2=弹性集群(EKS) </li>
-<li> 3= Prometheus管理的弹性集群(MEKS) </li>
-                     * @return KubeType Kubernetes 集群类型，取值如下：
-<li> 1= 容器集群(TKE) </li>
-<li> 2=弹性集群(EKS) </li>
-<li> 3= Prometheus管理的弹性集群(MEKS) </li>
+                     * 获取<p>Kubernetes 集群类型，取值如下：</p><li> 1= 容器集群(TKE) </li><li> 2=弹性集群(EKS) </li><li> 3= Prometheus管理的弹性集群(MEKS) </li>
+                     * @return KubeType <p>Kubernetes 集群类型，取值如下：</p><li> 1= 容器集群(TKE) </li><li> 2=弹性集群(EKS) </li><li> 3= Prometheus管理的弹性集群(MEKS) </li>
                      * 
                      */
                     int64_t GetKubeType() const;
 
                     /**
-                     * 设置Kubernetes 集群类型，取值如下：
-<li> 1= 容器集群(TKE) </li>
-<li> 2=弹性集群(EKS) </li>
-<li> 3= Prometheus管理的弹性集群(MEKS) </li>
-                     * @param _kubeType Kubernetes 集群类型，取值如下：
-<li> 1= 容器集群(TKE) </li>
-<li> 2=弹性集群(EKS) </li>
-<li> 3= Prometheus管理的弹性集群(MEKS) </li>
+                     * 设置<p>Kubernetes 集群类型，取值如下：</p><li> 1= 容器集群(TKE) </li><li> 2=弹性集群(EKS) </li><li> 3= Prometheus管理的弹性集群(MEKS) </li>
+                     * @param _kubeType <p>Kubernetes 集群类型，取值如下：</p><li> 1= 容器集群(TKE) </li><li> 2=弹性集群(EKS) </li><li> 3= Prometheus管理的弹性集群(MEKS) </li>
                      * 
                      */
                     void SetKubeType(const int64_t& _kubeType);
@@ -139,15 +127,15 @@ namespace TencentCloud
                     bool KubeTypeHasBeenSet() const;
 
                     /**
-                     * 获取集群 ID，可不填
-                     * @return ClusterId 集群 ID，可不填
+                     * 获取<p>集群 ID，可不填</p>
+                     * @return ClusterId <p>集群 ID，可不填</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群 ID，可不填
-                     * @param _clusterId 集群 ID，可不填
+                     * 设置<p>集群 ID，可不填</p>
+                     * @param _clusterId <p>集群 ID，可不填</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -162,34 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID
+                     * <p>实例 ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 类型(可通过 DescribeExporterIntegrations获取)
+                     * <p>类型(可通过 DescribeExporterIntegrations获取)</p>
                      */
                     std::string m_kind;
                     bool m_kindHasBeenSet;
 
                     /**
-                     * 名字
+                     * <p>名字</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Kubernetes 集群类型，取值如下：
-<li> 1= 容器集群(TKE) </li>
-<li> 2=弹性集群(EKS) </li>
-<li> 3= Prometheus管理的弹性集群(MEKS) </li>
+                     * <p>Kubernetes 集群类型，取值如下：</p><li> 1= 容器集群(TKE) </li><li> 2=弹性集群(EKS) </li><li> 3= Prometheus管理的弹性集群(MEKS) </li>
                      */
                     int64_t m_kubeType;
                     bool m_kubeTypeHasBeenSet;
 
                     /**
-                     * 集群 ID，可不填
+                     * <p>集群 ID，可不填</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;

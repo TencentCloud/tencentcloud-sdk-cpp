@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/clb/v20180317/model/AssociateBudgetRequest.h>
+#include <tencentcloud/clb/v20180317/model/AssociateBudgetResponse.h>
 #include <tencentcloud/clb/v20180317/model/AssociateCustomizedConfigRequest.h>
 #include <tencentcloud/clb/v20180317/model/AssociateCustomizedConfigResponse.h>
 #include <tencentcloud/clb/v20180317/model/AssociateTargetGroupsRequest.h>
@@ -39,20 +41,34 @@
 #include <tencentcloud/clb/v20180317/model/BatchRegisterTargetsResponse.h>
 #include <tencentcloud/clb/v20180317/model/CloneLoadBalancerRequest.h>
 #include <tencentcloud/clb/v20180317/model/CloneLoadBalancerResponse.h>
+#include <tencentcloud/clb/v20180317/model/CreateBudgetRequest.h>
+#include <tencentcloud/clb/v20180317/model/CreateBudgetResponse.h>
 #include <tencentcloud/clb/v20180317/model/CreateClsLogSetRequest.h>
 #include <tencentcloud/clb/v20180317/model/CreateClsLogSetResponse.h>
+#include <tencentcloud/clb/v20180317/model/CreateKeyRequest.h>
+#include <tencentcloud/clb/v20180317/model/CreateKeyResponse.h>
+#include <tencentcloud/clb/v20180317/model/CreateKeysRequest.h>
+#include <tencentcloud/clb/v20180317/model/CreateKeysResponse.h>
 #include <tencentcloud/clb/v20180317/model/CreateListenerRequest.h>
 #include <tencentcloud/clb/v20180317/model/CreateListenerResponse.h>
 #include <tencentcloud/clb/v20180317/model/CreateLoadBalancerRequest.h>
 #include <tencentcloud/clb/v20180317/model/CreateLoadBalancerResponse.h>
 #include <tencentcloud/clb/v20180317/model/CreateLoadBalancerSnatIpsRequest.h>
 #include <tencentcloud/clb/v20180317/model/CreateLoadBalancerSnatIpsResponse.h>
+#include <tencentcloud/clb/v20180317/model/CreateModelRouterRequest.h>
+#include <tencentcloud/clb/v20180317/model/CreateModelRouterResponse.h>
 #include <tencentcloud/clb/v20180317/model/CreateRuleRequest.h>
 #include <tencentcloud/clb/v20180317/model/CreateRuleResponse.h>
 #include <tencentcloud/clb/v20180317/model/CreateTargetGroupRequest.h>
 #include <tencentcloud/clb/v20180317/model/CreateTargetGroupResponse.h>
 #include <tencentcloud/clb/v20180317/model/CreateTopicRequest.h>
 #include <tencentcloud/clb/v20180317/model/CreateTopicResponse.h>
+#include <tencentcloud/clb/v20180317/model/CreateUserGroupRequest.h>
+#include <tencentcloud/clb/v20180317/model/CreateUserGroupResponse.h>
+#include <tencentcloud/clb/v20180317/model/DeleteBudgetsRequest.h>
+#include <tencentcloud/clb/v20180317/model/DeleteBudgetsResponse.h>
+#include <tencentcloud/clb/v20180317/model/DeleteKeysRequest.h>
+#include <tencentcloud/clb/v20180317/model/DeleteKeysResponse.h>
 #include <tencentcloud/clb/v20180317/model/DeleteListenerRequest.h>
 #include <tencentcloud/clb/v20180317/model/DeleteListenerResponse.h>
 #include <tencentcloud/clb/v20180317/model/DeleteLoadBalancerRequest.h>
@@ -61,12 +77,16 @@
 #include <tencentcloud/clb/v20180317/model/DeleteLoadBalancerListenersResponse.h>
 #include <tencentcloud/clb/v20180317/model/DeleteLoadBalancerSnatIpsRequest.h>
 #include <tencentcloud/clb/v20180317/model/DeleteLoadBalancerSnatIpsResponse.h>
+#include <tencentcloud/clb/v20180317/model/DeleteModelRoutersRequest.h>
+#include <tencentcloud/clb/v20180317/model/DeleteModelRoutersResponse.h>
 #include <tencentcloud/clb/v20180317/model/DeleteRewriteRequest.h>
 #include <tencentcloud/clb/v20180317/model/DeleteRewriteResponse.h>
 #include <tencentcloud/clb/v20180317/model/DeleteRuleRequest.h>
 #include <tencentcloud/clb/v20180317/model/DeleteRuleResponse.h>
 #include <tencentcloud/clb/v20180317/model/DeleteTargetGroupsRequest.h>
 #include <tencentcloud/clb/v20180317/model/DeleteTargetGroupsResponse.h>
+#include <tencentcloud/clb/v20180317/model/DeleteUserGroupsRequest.h>
+#include <tencentcloud/clb/v20180317/model/DeleteUserGroupsResponse.h>
 #include <tencentcloud/clb/v20180317/model/DeregisterFunctionTargetsRequest.h>
 #include <tencentcloud/clb/v20180317/model/DeregisterFunctionTargetsResponse.h>
 #include <tencentcloud/clb/v20180317/model/DeregisterTargetGroupInstancesRequest.h>
@@ -75,10 +95,16 @@
 #include <tencentcloud/clb/v20180317/model/DeregisterTargetsResponse.h>
 #include <tencentcloud/clb/v20180317/model/DeregisterTargetsFromClassicalLBRequest.h>
 #include <tencentcloud/clb/v20180317/model/DeregisterTargetsFromClassicalLBResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeAsyncJobsRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeAsyncJobsResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeBlockIPListRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeBlockIPListResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeBlockIPTaskRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeBlockIPTaskResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeBudgetAssociationsRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeBudgetAssociationsResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeBudgetsRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeBudgetsResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeClassicalLBByInstanceIdRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeClassicalLBByInstanceIdResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeClassicalLBHealthStatusRequest.h>
@@ -117,6 +143,12 @@
 #include <tencentcloud/clb/v20180317/model/DescribeLoadBalancersResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeLoadBalancersDetailRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeLoadBalancersDetailResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeModelRouterDetailRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeModelRouterDetailResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeModelRouterQuotaRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeModelRouterQuotaResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeModelRoutersRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeModelRoutersResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeQuotaRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeQuotaResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeResourcesRequest.h>
@@ -137,6 +169,10 @@
 #include <tencentcloud/clb/v20180317/model/DescribeTargetsResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeTaskStatusRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeTaskStatusResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeUserGroupsRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeUserGroupsResponse.h>
+#include <tencentcloud/clb/v20180317/model/DisassociateBudgetRequest.h>
+#include <tencentcloud/clb/v20180317/model/DisassociateBudgetResponse.h>
 #include <tencentcloud/clb/v20180317/model/DisassociateCustomizedConfigRequest.h>
 #include <tencentcloud/clb/v20180317/model/DisassociateCustomizedConfigResponse.h>
 #include <tencentcloud/clb/v20180317/model/DisassociateTargetGroupsRequest.h>
@@ -155,12 +191,20 @@
 #include <tencentcloud/clb/v20180317/model/MigrateClassicalLoadBalancersResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyBlockIPListRequest.h>
 #include <tencentcloud/clb/v20180317/model/ModifyBlockIPListResponse.h>
+#include <tencentcloud/clb/v20180317/model/ModifyBudgetAttributesRequest.h>
+#include <tencentcloud/clb/v20180317/model/ModifyBudgetAttributesResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyDomainRequest.h>
 #include <tencentcloud/clb/v20180317/model/ModifyDomainResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyDomainAttributesRequest.h>
 #include <tencentcloud/clb/v20180317/model/ModifyDomainAttributesResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyFunctionTargetsRequest.h>
 #include <tencentcloud/clb/v20180317/model/ModifyFunctionTargetsResponse.h>
+#include <tencentcloud/clb/v20180317/model/ModifyKeyAttributesRequest.h>
+#include <tencentcloud/clb/v20180317/model/ModifyKeyAttributesResponse.h>
+#include <tencentcloud/clb/v20180317/model/ModifyKeysBlockStatusRequest.h>
+#include <tencentcloud/clb/v20180317/model/ModifyKeysBlockStatusResponse.h>
+#include <tencentcloud/clb/v20180317/model/ModifyKeysUserGroupRequest.h>
+#include <tencentcloud/clb/v20180317/model/ModifyKeysUserGroupResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyListenerRequest.h>
 #include <tencentcloud/clb/v20180317/model/ModifyListenerResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyLoadBalancerAttributesRequest.h>
@@ -171,6 +215,8 @@
 #include <tencentcloud/clb/v20180317/model/ModifyLoadBalancerSlaResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyLoadBalancersProjectRequest.h>
 #include <tencentcloud/clb/v20180317/model/ModifyLoadBalancersProjectResponse.h>
+#include <tencentcloud/clb/v20180317/model/ModifyModelRouterAttributesRequest.h>
+#include <tencentcloud/clb/v20180317/model/ModifyModelRouterAttributesResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyRuleRequest.h>
 #include <tencentcloud/clb/v20180317/model/ModifyRuleResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyTargetGroupAttributeRequest.h>
@@ -183,6 +229,10 @@
 #include <tencentcloud/clb/v20180317/model/ModifyTargetPortResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyTargetWeightRequest.h>
 #include <tencentcloud/clb/v20180317/model/ModifyTargetWeightResponse.h>
+#include <tencentcloud/clb/v20180317/model/ModifyUserGroupAttributesRequest.h>
+#include <tencentcloud/clb/v20180317/model/ModifyUserGroupAttributesResponse.h>
+#include <tencentcloud/clb/v20180317/model/RegenerateKeysRequest.h>
+#include <tencentcloud/clb/v20180317/model/RegenerateKeysResponse.h>
 #include <tencentcloud/clb/v20180317/model/RegisterFunctionTargetsRequest.h>
 #include <tencentcloud/clb/v20180317/model/RegisterFunctionTargetsResponse.h>
 #include <tencentcloud/clb/v20180317/model/RegisterTargetGroupInstancesRequest.h>
@@ -219,6 +269,9 @@ namespace TencentCloud
                 ClbClient(const Credential &credential, const std::string &region);
                 ClbClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AssociateBudgetResponse> AssociateBudgetOutcome;
+                typedef std::future<AssociateBudgetOutcome> AssociateBudgetOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::AssociateBudgetRequest&, AssociateBudgetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateBudgetAsyncHandler;
                 typedef Outcome<Core::Error, Model::AssociateCustomizedConfigResponse> AssociateCustomizedConfigOutcome;
                 typedef std::future<AssociateCustomizedConfigOutcome> AssociateCustomizedConfigOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::AssociateCustomizedConfigRequest&, AssociateCustomizedConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateCustomizedConfigAsyncHandler;
@@ -243,9 +296,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CloneLoadBalancerResponse> CloneLoadBalancerOutcome;
                 typedef std::future<CloneLoadBalancerOutcome> CloneLoadBalancerOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::CloneLoadBalancerRequest&, CloneLoadBalancerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloneLoadBalancerAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBudgetResponse> CreateBudgetOutcome;
+                typedef std::future<CreateBudgetOutcome> CreateBudgetOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::CreateBudgetRequest&, CreateBudgetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBudgetAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateClsLogSetResponse> CreateClsLogSetOutcome;
                 typedef std::future<CreateClsLogSetOutcome> CreateClsLogSetOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::CreateClsLogSetRequest&, CreateClsLogSetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClsLogSetAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateKeyResponse> CreateKeyOutcome;
+                typedef std::future<CreateKeyOutcome> CreateKeyOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::CreateKeyRequest&, CreateKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateKeysResponse> CreateKeysOutcome;
+                typedef std::future<CreateKeysOutcome> CreateKeysOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::CreateKeysRequest&, CreateKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateKeysAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateListenerResponse> CreateListenerOutcome;
                 typedef std::future<CreateListenerOutcome> CreateListenerOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::CreateListenerRequest&, CreateListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateListenerAsyncHandler;
@@ -255,6 +317,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateLoadBalancerSnatIpsResponse> CreateLoadBalancerSnatIpsOutcome;
                 typedef std::future<CreateLoadBalancerSnatIpsOutcome> CreateLoadBalancerSnatIpsOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::CreateLoadBalancerSnatIpsRequest&, CreateLoadBalancerSnatIpsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLoadBalancerSnatIpsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateModelRouterResponse> CreateModelRouterOutcome;
+                typedef std::future<CreateModelRouterOutcome> CreateModelRouterOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::CreateModelRouterRequest&, CreateModelRouterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateModelRouterAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRuleResponse> CreateRuleOutcome;
                 typedef std::future<CreateRuleOutcome> CreateRuleOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::CreateRuleRequest&, CreateRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRuleAsyncHandler;
@@ -264,6 +329,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTopicResponse> CreateTopicOutcome;
                 typedef std::future<CreateTopicOutcome> CreateTopicOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::CreateTopicRequest&, CreateTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUserGroupResponse> CreateUserGroupOutcome;
+                typedef std::future<CreateUserGroupOutcome> CreateUserGroupOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::CreateUserGroupRequest&, CreateUserGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteBudgetsResponse> DeleteBudgetsOutcome;
+                typedef std::future<DeleteBudgetsOutcome> DeleteBudgetsOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DeleteBudgetsRequest&, DeleteBudgetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBudgetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteKeysResponse> DeleteKeysOutcome;
+                typedef std::future<DeleteKeysOutcome> DeleteKeysOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DeleteKeysRequest&, DeleteKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteKeysAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteListenerResponse> DeleteListenerOutcome;
                 typedef std::future<DeleteListenerOutcome> DeleteListenerOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DeleteListenerRequest&, DeleteListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteListenerAsyncHandler;
@@ -276,6 +350,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteLoadBalancerSnatIpsResponse> DeleteLoadBalancerSnatIpsOutcome;
                 typedef std::future<DeleteLoadBalancerSnatIpsOutcome> DeleteLoadBalancerSnatIpsOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DeleteLoadBalancerSnatIpsRequest&, DeleteLoadBalancerSnatIpsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLoadBalancerSnatIpsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteModelRoutersResponse> DeleteModelRoutersOutcome;
+                typedef std::future<DeleteModelRoutersOutcome> DeleteModelRoutersOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DeleteModelRoutersRequest&, DeleteModelRoutersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteModelRoutersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRewriteResponse> DeleteRewriteOutcome;
                 typedef std::future<DeleteRewriteOutcome> DeleteRewriteOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DeleteRewriteRequest&, DeleteRewriteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRewriteAsyncHandler;
@@ -285,6 +362,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTargetGroupsResponse> DeleteTargetGroupsOutcome;
                 typedef std::future<DeleteTargetGroupsOutcome> DeleteTargetGroupsOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DeleteTargetGroupsRequest&, DeleteTargetGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTargetGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteUserGroupsResponse> DeleteUserGroupsOutcome;
+                typedef std::future<DeleteUserGroupsOutcome> DeleteUserGroupsOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DeleteUserGroupsRequest&, DeleteUserGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeregisterFunctionTargetsResponse> DeregisterFunctionTargetsOutcome;
                 typedef std::future<DeregisterFunctionTargetsOutcome> DeregisterFunctionTargetsOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DeregisterFunctionTargetsRequest&, DeregisterFunctionTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeregisterFunctionTargetsAsyncHandler;
@@ -297,12 +377,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeregisterTargetsFromClassicalLBResponse> DeregisterTargetsFromClassicalLBOutcome;
                 typedef std::future<DeregisterTargetsFromClassicalLBOutcome> DeregisterTargetsFromClassicalLBOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DeregisterTargetsFromClassicalLBRequest&, DeregisterTargetsFromClassicalLBOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeregisterTargetsFromClassicalLBAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAsyncJobsResponse> DescribeAsyncJobsOutcome;
+                typedef std::future<DescribeAsyncJobsOutcome> DescribeAsyncJobsOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeAsyncJobsRequest&, DescribeAsyncJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAsyncJobsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBlockIPListResponse> DescribeBlockIPListOutcome;
                 typedef std::future<DescribeBlockIPListOutcome> DescribeBlockIPListOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeBlockIPListRequest&, DescribeBlockIPListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlockIPListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBlockIPTaskResponse> DescribeBlockIPTaskOutcome;
                 typedef std::future<DescribeBlockIPTaskOutcome> DescribeBlockIPTaskOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeBlockIPTaskRequest&, DescribeBlockIPTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlockIPTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBudgetAssociationsResponse> DescribeBudgetAssociationsOutcome;
+                typedef std::future<DescribeBudgetAssociationsOutcome> DescribeBudgetAssociationsOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeBudgetAssociationsRequest&, DescribeBudgetAssociationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBudgetAssociationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBudgetsResponse> DescribeBudgetsOutcome;
+                typedef std::future<DescribeBudgetsOutcome> DescribeBudgetsOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeBudgetsRequest&, DescribeBudgetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBudgetsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClassicalLBByInstanceIdResponse> DescribeClassicalLBByInstanceIdOutcome;
                 typedef std::future<DescribeClassicalLBByInstanceIdOutcome> DescribeClassicalLBByInstanceIdOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeClassicalLBByInstanceIdRequest&, DescribeClassicalLBByInstanceIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClassicalLBByInstanceIdAsyncHandler;
@@ -360,6 +449,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLoadBalancersDetailResponse> DescribeLoadBalancersDetailOutcome;
                 typedef std::future<DescribeLoadBalancersDetailOutcome> DescribeLoadBalancersDetailOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeLoadBalancersDetailRequest&, DescribeLoadBalancersDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoadBalancersDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeModelRouterDetailResponse> DescribeModelRouterDetailOutcome;
+                typedef std::future<DescribeModelRouterDetailOutcome> DescribeModelRouterDetailOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeModelRouterDetailRequest&, DescribeModelRouterDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelRouterDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeModelRouterQuotaResponse> DescribeModelRouterQuotaOutcome;
+                typedef std::future<DescribeModelRouterQuotaOutcome> DescribeModelRouterQuotaOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeModelRouterQuotaRequest&, DescribeModelRouterQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelRouterQuotaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeModelRoutersResponse> DescribeModelRoutersOutcome;
+                typedef std::future<DescribeModelRoutersOutcome> DescribeModelRoutersOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeModelRoutersRequest&, DescribeModelRoutersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelRoutersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeQuotaResponse> DescribeQuotaOutcome;
                 typedef std::future<DescribeQuotaOutcome> DescribeQuotaOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeQuotaRequest&, DescribeQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQuotaAsyncHandler;
@@ -390,6 +488,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTaskStatusResponse> DescribeTaskStatusOutcome;
                 typedef std::future<DescribeTaskStatusOutcome> DescribeTaskStatusOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeTaskStatusRequest&, DescribeTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserGroupsResponse> DescribeUserGroupsOutcome;
+                typedef std::future<DescribeUserGroupsOutcome> DescribeUserGroupsOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeUserGroupsRequest&, DescribeUserGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisassociateBudgetResponse> DisassociateBudgetOutcome;
+                typedef std::future<DisassociateBudgetOutcome> DisassociateBudgetOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DisassociateBudgetRequest&, DisassociateBudgetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateBudgetAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisassociateCustomizedConfigResponse> DisassociateCustomizedConfigOutcome;
                 typedef std::future<DisassociateCustomizedConfigOutcome> DisassociateCustomizedConfigOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DisassociateCustomizedConfigRequest&, DisassociateCustomizedConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateCustomizedConfigAsyncHandler;
@@ -417,6 +521,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBlockIPListResponse> ModifyBlockIPListOutcome;
                 typedef std::future<ModifyBlockIPListOutcome> ModifyBlockIPListOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ModifyBlockIPListRequest&, ModifyBlockIPListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlockIPListAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBudgetAttributesResponse> ModifyBudgetAttributesOutcome;
+                typedef std::future<ModifyBudgetAttributesOutcome> ModifyBudgetAttributesOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::ModifyBudgetAttributesRequest&, ModifyBudgetAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBudgetAttributesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDomainResponse> ModifyDomainOutcome;
                 typedef std::future<ModifyDomainOutcome> ModifyDomainOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ModifyDomainRequest&, ModifyDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainAsyncHandler;
@@ -426,6 +533,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyFunctionTargetsResponse> ModifyFunctionTargetsOutcome;
                 typedef std::future<ModifyFunctionTargetsOutcome> ModifyFunctionTargetsOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ModifyFunctionTargetsRequest&, ModifyFunctionTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFunctionTargetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyKeyAttributesResponse> ModifyKeyAttributesOutcome;
+                typedef std::future<ModifyKeyAttributesOutcome> ModifyKeyAttributesOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::ModifyKeyAttributesRequest&, ModifyKeyAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyKeyAttributesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyKeysBlockStatusResponse> ModifyKeysBlockStatusOutcome;
+                typedef std::future<ModifyKeysBlockStatusOutcome> ModifyKeysBlockStatusOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::ModifyKeysBlockStatusRequest&, ModifyKeysBlockStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyKeysBlockStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyKeysUserGroupResponse> ModifyKeysUserGroupOutcome;
+                typedef std::future<ModifyKeysUserGroupOutcome> ModifyKeysUserGroupOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::ModifyKeysUserGroupRequest&, ModifyKeysUserGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyKeysUserGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyListenerResponse> ModifyListenerOutcome;
                 typedef std::future<ModifyListenerOutcome> ModifyListenerOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ModifyListenerRequest&, ModifyListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyListenerAsyncHandler;
@@ -441,6 +557,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLoadBalancersProjectResponse> ModifyLoadBalancersProjectOutcome;
                 typedef std::future<ModifyLoadBalancersProjectOutcome> ModifyLoadBalancersProjectOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ModifyLoadBalancersProjectRequest&, ModifyLoadBalancersProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoadBalancersProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyModelRouterAttributesResponse> ModifyModelRouterAttributesOutcome;
+                typedef std::future<ModifyModelRouterAttributesOutcome> ModifyModelRouterAttributesOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::ModifyModelRouterAttributesRequest&, ModifyModelRouterAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModelRouterAttributesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRuleResponse> ModifyRuleOutcome;
                 typedef std::future<ModifyRuleOutcome> ModifyRuleOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ModifyRuleRequest&, ModifyRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRuleAsyncHandler;
@@ -459,6 +578,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTargetWeightResponse> ModifyTargetWeightOutcome;
                 typedef std::future<ModifyTargetWeightOutcome> ModifyTargetWeightOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ModifyTargetWeightRequest&, ModifyTargetWeightOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTargetWeightAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyUserGroupAttributesResponse> ModifyUserGroupAttributesOutcome;
+                typedef std::future<ModifyUserGroupAttributesOutcome> ModifyUserGroupAttributesOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::ModifyUserGroupAttributesRequest&, ModifyUserGroupAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserGroupAttributesAsyncHandler;
+                typedef Outcome<Core::Error, Model::RegenerateKeysResponse> RegenerateKeysOutcome;
+                typedef std::future<RegenerateKeysOutcome> RegenerateKeysOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::RegenerateKeysRequest&, RegenerateKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegenerateKeysAsyncHandler;
                 typedef Outcome<Core::Error, Model::RegisterFunctionTargetsResponse> RegisterFunctionTargetsOutcome;
                 typedef std::future<RegisterFunctionTargetsOutcome> RegisterFunctionTargetsOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::RegisterFunctionTargetsRequest&, RegisterFunctionTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterFunctionTargetsAsyncHandler;
@@ -494,6 +619,15 @@ namespace TencentCloud
                 typedef std::function<void(const ClbClient*, const Model::SetSecurityGroupForLoadbalancersRequest&, SetSecurityGroupForLoadbalancersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetSecurityGroupForLoadbalancersAsyncHandler;
 
 
+
+                /**
+                 *将Budget关联到企业型模型路由实例或企业型实例下的Key。资源已关联其他Budget时，本次请求会替换为新的Budget。
+                 * @param req AssociateBudgetRequest
+                 * @return AssociateBudgetOutcome
+                 */
+                AssociateBudgetOutcome AssociateBudget(const Model::AssociateBudgetRequest &request);
+                void AssociateBudgetAsync(const Model::AssociateBudgetRequest& request, const AssociateBudgetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssociateBudgetOutcomeCallable AssociateBudgetCallable(const Model::AssociateBudgetRequest& request);
 
                 /**
                  *关联配置到server或location，根据配置类型关联到server或location。准备下线，请使用SetCustomizedConfigForLoadBalancer。
@@ -594,6 +728,15 @@ BGP带宽包必须传带宽包id
                 CloneLoadBalancerOutcomeCallable CloneLoadBalancerCallable(const Model::CloneLoadBalancerRequest& request);
 
                 /**
+                 *创建Budget对象。可在创建时通过Resources同时关联已存在的企业型模型路由实例或企业型实例下的Key。创建请求提交后，可通过DescribeBudgets查询状态。
+                 * @param req CreateBudgetRequest
+                 * @return CreateBudgetOutcome
+                 */
+                CreateBudgetOutcome CreateBudget(const Model::CreateBudgetRequest &request);
+                void CreateBudgetAsync(const Model::CreateBudgetRequest& request, const CreateBudgetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBudgetOutcomeCallable CreateBudgetCallable(const Model::CreateBudgetRequest& request);
+
+                /**
                  *创建CLB专有日志集，此日志集用于存储CLB的日志。
                  * @param req CreateClsLogSetRequest
                  * @return CreateClsLogSetOutcome
@@ -601,6 +744,24 @@ BGP带宽包必须传带宽包id
                 CreateClsLogSetOutcome CreateClsLogSet(const Model::CreateClsLogSetRequest &request);
                 void CreateClsLogSetAsync(const Model::CreateClsLogSetRequest& request, const CreateClsLogSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateClsLogSetOutcomeCallable CreateClsLogSetCallable(const Model::CreateClsLogSetRequest& request);
+
+                /**
+                 *创建 API Key
+                 * @param req CreateKeyRequest
+                 * @return CreateKeyOutcome
+                 */
+                CreateKeyOutcome CreateKey(const Model::CreateKeyRequest &request);
+                void CreateKeyAsync(const Model::CreateKeyRequest& request, const CreateKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateKeyOutcomeCallable CreateKeyCallable(const Model::CreateKeyRequest& request);
+
+                /**
+                 *批量创建Key
+                 * @param req CreateKeysRequest
+                 * @return CreateKeysOutcome
+                 */
+                CreateKeysOutcome CreateKeys(const Model::CreateKeysRequest &request);
+                void CreateKeysAsync(const Model::CreateKeysRequest& request, const CreateKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateKeysOutcomeCallable CreateKeysCallable(const Model::CreateKeysRequest& request);
 
                 /**
                  *在一个负载均衡实例下创建监听器。
@@ -634,6 +795,15 @@ BGP带宽包必须传带宽包id
                 CreateLoadBalancerSnatIpsOutcomeCallable CreateLoadBalancerSnatIpsCallable(const Model::CreateLoadBalancerSnatIpsRequest& request);
 
                 /**
+                 *创建模型路由实例
+                 * @param req CreateModelRouterRequest
+                 * @return CreateModelRouterOutcome
+                 */
+                CreateModelRouterOutcome CreateModelRouter(const Model::CreateModelRouterRequest &request);
+                void CreateModelRouterAsync(const Model::CreateModelRouterRequest& request, const CreateModelRouterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateModelRouterOutcomeCallable CreateModelRouterCallable(const Model::CreateModelRouterRequest& request);
+
+                /**
                  *CreateRule 接口用于在一个已存在的负载均衡七层监听器下创建转发规则，七层监听器中，后端服务必须绑定到规则上而非监听器上。
 本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683) 接口查询本次任务是否成功。
                  * @param req CreateRuleRequest
@@ -660,6 +830,33 @@ BGP带宽包必须传带宽包id
                 CreateTopicOutcome CreateTopic(const Model::CreateTopicRequest &request);
                 void CreateTopicAsync(const Model::CreateTopicRequest& request, const CreateTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTopicOutcomeCallable CreateTopicCallable(const Model::CreateTopicRequest& request);
+
+                /**
+                 *在指定模型路由实例下创建一个用户组。用户组是介于模型路由实例与 Key 之间的一层可选分组，可为组内 Key 统一配置模型白名单，并通过关联 Budget 统一管理额度。创建为异步操作，接口会同步返回用户组ID，可凭返回的 RequestId 调用 DescribeAsyncJobs 查询创建进度。
+                 * @param req CreateUserGroupRequest
+                 * @return CreateUserGroupOutcome
+                 */
+                CreateUserGroupOutcome CreateUserGroup(const Model::CreateUserGroupRequest &request);
+                void CreateUserGroupAsync(const Model::CreateUserGroupRequest& request, const CreateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUserGroupOutcomeCallable CreateUserGroupCallable(const Model::CreateUserGroupRequest& request);
+
+                /**
+                 *删除Budget对象。Budget存在任何关联资源时不允许删除，需要先调用DisassociateBudget解除关联。
+                 * @param req DeleteBudgetsRequest
+                 * @return DeleteBudgetsOutcome
+                 */
+                DeleteBudgetsOutcome DeleteBudgets(const Model::DeleteBudgetsRequest &request);
+                void DeleteBudgetsAsync(const Model::DeleteBudgetsRequest& request, const DeleteBudgetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteBudgetsOutcomeCallable DeleteBudgetsCallable(const Model::DeleteBudgetsRequest& request);
+
+                /**
+                 *批量删除 API Key。
+                 * @param req DeleteKeysRequest
+                 * @return DeleteKeysOutcome
+                 */
+                DeleteKeysOutcome DeleteKeys(const Model::DeleteKeysRequest &request);
+                void DeleteKeysAsync(const Model::DeleteKeysRequest& request, const DeleteKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteKeysOutcomeCallable DeleteKeysCallable(const Model::DeleteKeysRequest& request);
 
                 /**
                  *本接口用来删除负载均衡实例下的监听器（四层和七层）。
@@ -702,6 +899,15 @@ BGP带宽包必须传带宽包id
                 DeleteLoadBalancerSnatIpsOutcomeCallable DeleteLoadBalancerSnatIpsCallable(const Model::DeleteLoadBalancerSnatIpsRequest& request);
 
                 /**
+                 *删除模型路由实例
+                 * @param req DeleteModelRoutersRequest
+                 * @return DeleteModelRoutersOutcome
+                 */
+                DeleteModelRoutersOutcome DeleteModelRouters(const Model::DeleteModelRoutersRequest &request);
+                void DeleteModelRoutersAsync(const Model::DeleteModelRoutersRequest& request, const DeleteModelRoutersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteModelRoutersOutcomeCallable DeleteModelRoutersCallable(const Model::DeleteModelRoutersRequest& request);
+
+                /**
                  *DeleteRewrite 接口支持删除指定转发规则之间的重定向关系。
 本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。
                  * @param req DeleteRewriteRequest
@@ -729,6 +935,15 @@ BGP带宽包必须传带宽包id
                 DeleteTargetGroupsOutcome DeleteTargetGroups(const Model::DeleteTargetGroupsRequest &request);
                 void DeleteTargetGroupsAsync(const Model::DeleteTargetGroupsRequest& request, const DeleteTargetGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTargetGroupsOutcomeCallable DeleteTargetGroupsCallable(const Model::DeleteTargetGroupsRequest& request);
+
+                /**
+                 *批量删除用户组。组内若仍存在 Key，将拒绝删除（错误码 ResourceInUse），需先将 Key 移出或迁移到其他组。删除为异步操作，可凭返回的 RequestId 调用 DescribeAsyncJobs 查询进度。
+                 * @param req DeleteUserGroupsRequest
+                 * @return DeleteUserGroupsOutcome
+                 */
+                DeleteUserGroupsOutcome DeleteUserGroups(const Model::DeleteUserGroupsRequest &request);
+                void DeleteUserGroupsAsync(const Model::DeleteUserGroupsRequest& request, const DeleteUserGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteUserGroupsOutcomeCallable DeleteUserGroupsCallable(const Model::DeleteUserGroupsRequest& request);
 
                 /**
                  *DeregisterFunctionTargets 接口用来将一个云函数从负载均衡的转发规则上解绑，对于七层监听器，还需通过 LocationId 或 Domain+Url 指定转发规则。
@@ -780,6 +995,15 @@ BGP带宽包必须传带宽包id
                 DeregisterTargetsFromClassicalLBOutcomeCallable DeregisterTargetsFromClassicalLBCallable(const Model::DeregisterTargetsFromClassicalLBRequest& request);
 
                 /**
+                 *查询异步任务信息
+                 * @param req DescribeAsyncJobsRequest
+                 * @return DescribeAsyncJobsOutcome
+                 */
+                DescribeAsyncJobsOutcome DescribeAsyncJobs(const Model::DescribeAsyncJobsRequest &request);
+                void DescribeAsyncJobsAsync(const Model::DescribeAsyncJobsRequest& request, const DescribeAsyncJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAsyncJobsOutcomeCallable DescribeAsyncJobsCallable(const Model::DescribeAsyncJobsRequest& request);
+
+                /**
                  *查询一个负载均衡所封禁的IP列表（黑名单）。（接口灰度中，如需使用请提工单）
                  * @param req DescribeBlockIPListRequest
                  * @return DescribeBlockIPListOutcome
@@ -796,6 +1020,24 @@ BGP带宽包必须传带宽包id
                 DescribeBlockIPTaskOutcome DescribeBlockIPTask(const Model::DescribeBlockIPTaskRequest &request);
                 void DescribeBlockIPTaskAsync(const Model::DescribeBlockIPTaskRequest& request, const DescribeBlockIPTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBlockIPTaskOutcomeCallable DescribeBlockIPTaskCallable(const Model::DescribeBlockIPTaskRequest& request);
+
+                /**
+                 *查询指定Budget关联的资源列表。支持按资源类型过滤。
+                 * @param req DescribeBudgetAssociationsRequest
+                 * @return DescribeBudgetAssociationsOutcome
+                 */
+                DescribeBudgetAssociationsOutcome DescribeBudgetAssociations(const Model::DescribeBudgetAssociationsRequest &request);
+                void DescribeBudgetAssociationsAsync(const Model::DescribeBudgetAssociationsRequest& request, const DescribeBudgetAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBudgetAssociationsOutcomeCallable DescribeBudgetAssociationsCallable(const Model::DescribeBudgetAssociationsRequest& request);
+
+                /**
+                 *查询Budget列表。
+                 * @param req DescribeBudgetsRequest
+                 * @return DescribeBudgetsOutcome
+                 */
+                DescribeBudgetsOutcome DescribeBudgets(const Model::DescribeBudgetsRequest &request);
+                void DescribeBudgetsAsync(const Model::DescribeBudgetsRequest& request, const DescribeBudgetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBudgetsOutcomeCallable DescribeBudgetsCallable(const Model::DescribeBudgetsRequest& request);
 
                 /**
                  *DescribeClassicalLBByInstanceId用于通过后端实例ID获取传统型负载均衡ID列表。
@@ -969,6 +1211,33 @@ BGP带宽包必须传带宽包id
                 DescribeLoadBalancersDetailOutcomeCallable DescribeLoadBalancersDetailCallable(const Model::DescribeLoadBalancersDetailRequest& request);
 
                 /**
+                 *查询模型路由详细信息
+                 * @param req DescribeModelRouterDetailRequest
+                 * @return DescribeModelRouterDetailOutcome
+                 */
+                DescribeModelRouterDetailOutcome DescribeModelRouterDetail(const Model::DescribeModelRouterDetailRequest &request);
+                void DescribeModelRouterDetailAsync(const Model::DescribeModelRouterDetailRequest& request, const DescribeModelRouterDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeModelRouterDetailOutcomeCallable DescribeModelRouterDetailCallable(const Model::DescribeModelRouterDetailRequest& request);
+
+                /**
+                 *查询用户配额信息
+                 * @param req DescribeModelRouterQuotaRequest
+                 * @return DescribeModelRouterQuotaOutcome
+                 */
+                DescribeModelRouterQuotaOutcome DescribeModelRouterQuota(const Model::DescribeModelRouterQuotaRequest &request);
+                void DescribeModelRouterQuotaAsync(const Model::DescribeModelRouterQuotaRequest& request, const DescribeModelRouterQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeModelRouterQuotaOutcomeCallable DescribeModelRouterQuotaCallable(const Model::DescribeModelRouterQuotaRequest& request);
+
+                /**
+                 *查询模型路由列表页
+                 * @param req DescribeModelRoutersRequest
+                 * @return DescribeModelRoutersOutcome
+                 */
+                DescribeModelRoutersOutcome DescribeModelRouters(const Model::DescribeModelRoutersRequest &request);
+                void DescribeModelRoutersAsync(const Model::DescribeModelRoutersRequest& request, const DescribeModelRoutersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeModelRoutersOutcomeCallable DescribeModelRoutersCallable(const Model::DescribeModelRoutersRequest& request);
+
+                /**
                  *查询用户当前地域下的各项配额
                  * @param req DescribeQuotaRequest
                  * @return DescribeQuotaOutcome
@@ -1059,6 +1328,24 @@ BGP带宽包必须传带宽包id
                 DescribeTaskStatusOutcomeCallable DescribeTaskStatusCallable(const Model::DescribeTaskStatusRequest& request);
 
                 /**
+                 *查询指定模型路由实例下的用户组列表或详情，支持按ID、名称、状态、标签过滤及分页。真实用户组按名称字典序升序返回；返回列表末尾恒追加一个「未分组」虚拟分组（UserGroupId 固定为 ugrp-ungrouped、UserGroupName 固定为 ungrouped），它并非用户真实创建的用户组，而是代表该实例下所有未归属任何用户组的 Key（其 KeyCount 为无组 Key 数，不计入 TotalCount，不可修改或删除）。
+                 * @param req DescribeUserGroupsRequest
+                 * @return DescribeUserGroupsOutcome
+                 */
+                DescribeUserGroupsOutcome DescribeUserGroups(const Model::DescribeUserGroupsRequest &request);
+                void DescribeUserGroupsAsync(const Model::DescribeUserGroupsRequest& request, const DescribeUserGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserGroupsOutcomeCallable DescribeUserGroupsCallable(const Model::DescribeUserGroupsRequest& request);
+
+                /**
+                 *解除Budget与模型路由实例或Key的关联。
+                 * @param req DisassociateBudgetRequest
+                 * @return DisassociateBudgetOutcome
+                 */
+                DisassociateBudgetOutcome DisassociateBudget(const Model::DisassociateBudgetRequest &request);
+                void DisassociateBudgetAsync(const Model::DisassociateBudgetRequest& request, const DisassociateBudgetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisassociateBudgetOutcomeCallable DisassociateBudgetCallable(const Model::DisassociateBudgetRequest& request);
+
+                /**
                  *去关联个性化配置，准备下线，请使用SetCustomizedConfigForLoadBalancer。
                  * @param req DisassociateCustomizedConfigRequest
                  * @return DisassociateCustomizedConfigOutcome
@@ -1145,6 +1432,15 @@ BGP带宽包必须传带宽包id
                 ModifyBlockIPListOutcomeCallable ModifyBlockIPListCallable(const Model::ModifyBlockIPListRequest& request);
 
                 /**
+                 *修改Budget属性。BudgetResetAt不支持作为入参设置。修改请求提交后，可通过DescribeBudgets查询状态。
+                 * @param req ModifyBudgetAttributesRequest
+                 * @return ModifyBudgetAttributesOutcome
+                 */
+                ModifyBudgetAttributesOutcome ModifyBudgetAttributes(const Model::ModifyBudgetAttributesRequest &request);
+                void ModifyBudgetAttributesAsync(const Model::ModifyBudgetAttributesRequest& request, const ModifyBudgetAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBudgetAttributesOutcomeCallable ModifyBudgetAttributesCallable(const Model::ModifyBudgetAttributesRequest& request);
+
+                /**
                  *ModifyDomain接口用来修改负载均衡七层监听器下的域名。
 本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683) 接口查询本次任务是否成功。
                  * @param req ModifyDomainRequest
@@ -1174,6 +1470,33 @@ BGP带宽包必须传带宽包id
                 ModifyFunctionTargetsOutcome ModifyFunctionTargets(const Model::ModifyFunctionTargetsRequest &request);
                 void ModifyFunctionTargetsAsync(const Model::ModifyFunctionTargetsRequest& request, const ModifyFunctionTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyFunctionTargetsOutcomeCallable ModifyFunctionTargetsCallable(const Model::ModifyFunctionTargetsRequest& request);
+
+                /**
+                 *修改 API Key 的属性
+                 * @param req ModifyKeyAttributesRequest
+                 * @return ModifyKeyAttributesOutcome
+                 */
+                ModifyKeyAttributesOutcome ModifyKeyAttributes(const Model::ModifyKeyAttributesRequest &request);
+                void ModifyKeyAttributesAsync(const Model::ModifyKeyAttributesRequest& request, const ModifyKeyAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyKeyAttributesOutcomeCallable ModifyKeyAttributesCallable(const Model::ModifyKeyAttributesRequest& request);
+
+                /**
+                 *禁用/启用Key
+                 * @param req ModifyKeysBlockStatusRequest
+                 * @return ModifyKeysBlockStatusOutcome
+                 */
+                ModifyKeysBlockStatusOutcome ModifyKeysBlockStatus(const Model::ModifyKeysBlockStatusRequest &request);
+                void ModifyKeysBlockStatusAsync(const Model::ModifyKeysBlockStatusRequest& request, const ModifyKeysBlockStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyKeysBlockStatusOutcomeCallable ModifyKeysBlockStatusCallable(const Model::ModifyKeysBlockStatusRequest& request);
+
+                /**
+                 *批量变更 Key 的用户组归属：UserGroupId 传真实用户组ID表示批量入组/跨组移动，传 ugrp-ungrouped 表示批量移出到未分组。变更为异步操作，可凭返回的 RequestId 调用 DescribeAsyncJobs 查询进度。
+                 * @param req ModifyKeysUserGroupRequest
+                 * @return ModifyKeysUserGroupOutcome
+                 */
+                ModifyKeysUserGroupOutcome ModifyKeysUserGroup(const Model::ModifyKeysUserGroupRequest &request);
+                void ModifyKeysUserGroupAsync(const Model::ModifyKeysUserGroupRequest& request, const ModifyKeysUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyKeysUserGroupOutcomeCallable ModifyKeysUserGroupCallable(const Model::ModifyKeysUserGroupRequest& request);
 
                 /**
                  *ModifyListener接口用来修改负载均衡监听器的属性，包括监听器名称、健康检查参数、证书信息、转发策略等。本接口不支持传统型负载均衡。
@@ -1225,6 +1548,15 @@ BGP带宽包必须传带宽包id
                 ModifyLoadBalancersProjectOutcome ModifyLoadBalancersProject(const Model::ModifyLoadBalancersProjectRequest &request);
                 void ModifyLoadBalancersProjectAsync(const Model::ModifyLoadBalancersProjectRequest& request, const ModifyLoadBalancersProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLoadBalancersProjectOutcomeCallable ModifyLoadBalancersProjectCallable(const Model::ModifyLoadBalancersProjectRequest& request);
+
+                /**
+                 *修改模型路由属性。支持修改实例名称、限速配置、路由配置，以及替换企业型实例 HTTPS 服务端点绑定的证书（CertId）。每次调用至少传入一个待修改的属性字段，未传入的字段保持原值不变。其中证书替换在请求内同步完成，成功返回即已生效；其余属性修改异步生效，可通过 DescribeModelRouterDetail 接口查询修改结果。
+                 * @param req ModifyModelRouterAttributesRequest
+                 * @return ModifyModelRouterAttributesOutcome
+                 */
+                ModifyModelRouterAttributesOutcome ModifyModelRouterAttributes(const Model::ModifyModelRouterAttributesRequest &request);
+                void ModifyModelRouterAttributesAsync(const Model::ModifyModelRouterAttributesRequest& request, const ModifyModelRouterAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyModelRouterAttributesOutcomeCallable ModifyModelRouterAttributesCallable(const Model::ModifyModelRouterAttributesRequest& request);
 
                 /**
                  *ModifyRule 接口用来修改负载均衡七层监听器下的转发规则的各项属性，包括转发路径、健康检查属性、转发策略等。
@@ -1284,6 +1616,24 @@ BGP带宽包必须传带宽包id
                 ModifyTargetWeightOutcome ModifyTargetWeight(const Model::ModifyTargetWeightRequest &request);
                 void ModifyTargetWeightAsync(const Model::ModifyTargetWeightRequest& request, const ModifyTargetWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTargetWeightOutcomeCallable ModifyTargetWeightCallable(const Model::ModifyTargetWeightRequest& request);
+
+                /**
+                 *修改用户组的名称、模型白名单或关联预算。仅修改传入的字段；其中数组类字段（Models）传入即整体覆盖。BudgetId 传入即关联/替换该组预算（不支持解绑，解绑用 DisassociateBudget）。修改为异步操作，可凭返回的 RequestId 调用 DescribeAsyncJobs 查询进度。
+                 * @param req ModifyUserGroupAttributesRequest
+                 * @return ModifyUserGroupAttributesOutcome
+                 */
+                ModifyUserGroupAttributesOutcome ModifyUserGroupAttributes(const Model::ModifyUserGroupAttributesRequest &request);
+                void ModifyUserGroupAttributesAsync(const Model::ModifyUserGroupAttributesRequest& request, const ModifyUserGroupAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyUserGroupAttributesOutcomeCallable ModifyUserGroupAttributesCallable(const Model::ModifyUserGroupAttributesRequest& request);
+
+                /**
+                 *批量重新生成Key
+                 * @param req RegenerateKeysRequest
+                 * @return RegenerateKeysOutcome
+                 */
+                RegenerateKeysOutcome RegenerateKeys(const Model::RegenerateKeysRequest &request);
+                void RegenerateKeysAsync(const Model::RegenerateKeysRequest& request, const RegenerateKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RegenerateKeysOutcomeCallable RegenerateKeysCallable(const Model::RegenerateKeysRequest& request);
 
                 /**
                  *RegisterFunctionTargets 接口用来将一个云函数绑定到负载均衡的7层转发规则，在此之前您需要先行创建相关的7层监听器（HTTP、HTTPS）和转发规则。

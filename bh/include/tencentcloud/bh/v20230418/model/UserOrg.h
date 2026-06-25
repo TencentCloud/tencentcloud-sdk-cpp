@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ioa用户组织id
-                     * @return OrgId ioa用户组织id
+                     * 获取<p>ioa用户组织id</p>
+                     * @return OrgId <p>ioa用户组织id</p>
                      * 
                      */
                     uint64_t GetOrgId() const;
 
                     /**
-                     * 设置ioa用户组织id
-                     * @param _orgId ioa用户组织id
+                     * 设置<p>ioa用户组织id</p>
+                     * @param _orgId <p>ioa用户组织id</p>
                      * 
                      */
                     void SetOrgId(const uint64_t& _orgId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool OrgIdHasBeenSet() const;
 
                     /**
-                     * 获取ioa用户组织名称
-                     * @return OrgName ioa用户组织名称
+                     * 获取<p>ioa用户组织名称</p>
+                     * @return OrgName <p>ioa用户组织名称</p>
                      * 
                      */
                     std::string GetOrgName() const;
 
                     /**
-                     * 设置ioa用户组织名称
-                     * @param _orgName ioa用户组织名称
+                     * 设置<p>ioa用户组织名称</p>
+                     * @param _orgName <p>ioa用户组织名称</p>
                      * 
                      */
                     void SetOrgName(const std::string& _orgName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool OrgNameHasBeenSet() const;
 
                     /**
-                     * 获取ioa用户组织id路径
-                     * @return OrgIdPath ioa用户组织id路径
+                     * 获取<p>ioa用户组织id路径</p>
+                     * @return OrgIdPath <p>ioa用户组织id路径</p>
                      * 
                      */
                     std::string GetOrgIdPath() const;
 
                     /**
-                     * 设置ioa用户组织id路径
-                     * @param _orgIdPath ioa用户组织id路径
+                     * 设置<p>ioa用户组织id路径</p>
+                     * @param _orgIdPath <p>ioa用户组织id路径</p>
                      * 
                      */
                     void SetOrgIdPath(const std::string& _orgIdPath);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool OrgIdPathHasBeenSet() const;
 
                     /**
-                     * 获取ioa用户组织名称路径
-                     * @return OrgNamePath ioa用户组织名称路径
+                     * 获取<p>ioa用户组织名称路径</p>
+                     * @return OrgNamePath <p>ioa用户组织名称路径</p>
                      * 
                      */
                     std::string GetOrgNamePath() const;
 
                     /**
-                     * 设置ioa用户组织名称路径
-                     * @param _orgNamePath ioa用户组织名称路径
+                     * 设置<p>ioa用户组织名称路径</p>
+                     * @param _orgNamePath <p>ioa用户组织名称路径</p>
                      * 
                      */
                     void SetOrgNamePath(const std::string& _orgNamePath);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool OrgNamePathHasBeenSet() const;
 
                     /**
-                     * 获取ioa用户组织id下的用户数
-                     * @return UserTotal ioa用户组织id下的用户数
+                     * 获取<p>ioa用户组织id下的用户数</p>
+                     * @return UserTotal <p>ioa用户组织id下的用户数</p>
                      * 
                      */
                     uint64_t GetUserTotal() const;
 
                     /**
-                     * 设置ioa用户组织id下的用户数
-                     * @param _userTotal ioa用户组织id下的用户数
+                     * 设置<p>ioa用户组织id下的用户数</p>
+                     * @param _userTotal <p>ioa用户组织id下的用户数</p>
                      * 
                      */
                     void SetUserTotal(const uint64_t& _userTotal);
@@ -151,37 +151,64 @@ namespace TencentCloud
                      */
                     bool UserTotalHasBeenSet() const;
 
+                    /**
+                     * 获取<p>组织绑定的用户组 id 列表</p>
+                     * @return BindGroupIds <p>组织绑定的用户组 id 列表</p>
+                     * 
+                     */
+                    std::vector<uint64_t> GetBindGroupIds() const;
+
+                    /**
+                     * 设置<p>组织绑定的用户组 id 列表</p>
+                     * @param _bindGroupIds <p>组织绑定的用户组 id 列表</p>
+                     * 
+                     */
+                    void SetBindGroupIds(const std::vector<uint64_t>& _bindGroupIds);
+
+                    /**
+                     * 判断参数 BindGroupIds 是否已赋值
+                     * @return BindGroupIds 是否已赋值
+                     * 
+                     */
+                    bool BindGroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * ioa用户组织id
+                     * <p>ioa用户组织id</p>
                      */
                     uint64_t m_orgId;
                     bool m_orgIdHasBeenSet;
 
                     /**
-                     * ioa用户组织名称
+                     * <p>ioa用户组织名称</p>
                      */
                     std::string m_orgName;
                     bool m_orgNameHasBeenSet;
 
                     /**
-                     * ioa用户组织id路径
+                     * <p>ioa用户组织id路径</p>
                      */
                     std::string m_orgIdPath;
                     bool m_orgIdPathHasBeenSet;
 
                     /**
-                     * ioa用户组织名称路径
+                     * <p>ioa用户组织名称路径</p>
                      */
                     std::string m_orgNamePath;
                     bool m_orgNamePathHasBeenSet;
 
                     /**
-                     * ioa用户组织id下的用户数
+                     * <p>ioa用户组织id下的用户数</p>
                      */
                     uint64_t m_userTotal;
                     bool m_userTotalHasBeenSet;
+
+                    /**
+                     * <p>组织绑定的用户组 id 列表</p>
+                     */
+                    std::vector<uint64_t> m_bindGroupIds;
+                    bool m_bindGroupIdsHasBeenSet;
 
                 };
             }

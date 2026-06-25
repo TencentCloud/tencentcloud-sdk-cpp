@@ -38,6 +38,7 @@ CreateNativeNodePoolParam::CreateNativeNodePoolParam() :
     m_runtimeRootDirHasBeenSet(false),
     m_enableAutoscalingHasBeenSet(false),
     m_replicasHasBeenSet(false),
+    m_gPUConfigsHasBeenSet(false),
     m_internetAccessibleHasBeenSet(false),
     m_dataDisksHasBeenSet(false),
     m_qGPUEnableHasBeenSet(false),
@@ -275,6 +276,26 @@ CoreInternalOutcome CreateNativeNodePoolParam::Deserialize(const rapidjson::Valu
         }
         m_replicas = value["Replicas"].GetInt64();
         m_replicasHasBeenSet = true;
+    }
+
+    if (value.HasMember("GPUConfigs") && !value["GPUConfigs"].IsNull())
+    {
+        if (!value["GPUConfigs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CreateNativeNodePoolParam.GPUConfigs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["GPUConfigs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            GPUConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_gPUConfigs.push_back(item);
+        }
+        m_gPUConfigsHasBeenSet = true;
     }
 
     if (value.HasMember("InternetAccessible") && !value["InternetAccessible"].IsNull())
@@ -534,6 +555,21 @@ void CreateNativeNodePoolParam::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "Replicas";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_replicas, allocator);
+    }
+
+    if (m_gPUConfigsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GPUConfigs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_gPUConfigs.begin(); itr != m_gPUConfigs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_internetAccessibleHasBeenSet)
@@ -878,6 +914,22 @@ void CreateNativeNodePoolParam::SetReplicas(const int64_t& _replicas)
 bool CreateNativeNodePoolParam::ReplicasHasBeenSet() const
 {
     return m_replicasHasBeenSet;
+}
+
+vector<GPUConfig> CreateNativeNodePoolParam::GetGPUConfigs() const
+{
+    return m_gPUConfigs;
+}
+
+void CreateNativeNodePoolParam::SetGPUConfigs(const vector<GPUConfig>& _gPUConfigs)
+{
+    m_gPUConfigs = _gPUConfigs;
+    m_gPUConfigsHasBeenSet = true;
+}
+
+bool CreateNativeNodePoolParam::GPUConfigsHasBeenSet() const
+{
+    return m_gPUConfigsHasBeenSet;
 }
 
 InternetAccessible CreateNativeNodePoolParam::GetInternetAccessible() const

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否创建的成员。true-是、false-否；成员不是创建的成员不允许删除
-                     * @return IsCreateMember 是否创建的成员。true-是、false-否；成员不是创建的成员不允许删除
+                     * 获取<p>是否创建的成员。true-是、false-否；成员不是创建的成员不允许删除</p>
+                     * @return IsCreateMember <p>是否创建的成员。true-是、false-否；成员不是创建的成员不允许删除</p>
                      * 
                      */
                     bool GetIsCreateMember() const;
 
                     /**
-                     * 设置是否创建的成员。true-是、false-否；成员不是创建的成员不允许删除
-                     * @param _isCreateMember 是否创建的成员。true-是、false-否；成员不是创建的成员不允许删除
+                     * 设置<p>是否创建的成员。true-是、false-否；成员不是创建的成员不允许删除</p>
+                     * @param _isCreateMember <p>是否创建的成员。true-是、false-否；成员不是创建的成员不允许删除</p>
                      * 
                      */
                     void SetIsCreateMember(const bool& _isCreateMember);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IsCreateMemberHasBeenSet() const;
 
                     /**
-                     * 获取成员删除许可。true-开启、false-关闭；成员删除许可关闭时不允许删除
-                     * @return DeletionPermission 成员删除许可。true-开启、false-关闭；成员删除许可关闭时不允许删除
+                     * 获取<p>成员删除许可。true-开启、false-关闭；成员删除许可关闭时不允许删除</p>
+                     * @return DeletionPermission <p>成员删除许可。true-开启、false-关闭；成员删除许可关闭时不允许删除</p>
                      * 
                      */
                     bool GetDeletionPermission() const;
 
                     /**
-                     * 设置成员删除许可。true-开启、false-关闭；成员删除许可关闭时不允许删除
-                     * @param _deletionPermission 成员删除许可。true-开启、false-关闭；成员删除许可关闭时不允许删除
+                     * 设置<p>成员删除许可。true-开启、false-关闭；成员删除许可关闭时不允许删除</p>
+                     * @param _deletionPermission <p>成员删除许可。true-开启、false-关闭；成员删除许可关闭时不允许删除</p>
                      * 
                      */
                     void SetDeletionPermission(const bool& _deletionPermission);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DeletionPermissionHasBeenSet() const;
 
                     /**
-                     * 获取是否可信服务委派管理员。true-是、false-否；成员是可信服务委派管理员不允许删除
-                     * @return IsAssignManager 是否可信服务委派管理员。true-是、false-否；成员是可信服务委派管理员不允许删除
+                     * 获取<p>是否可信服务委派管理员。true-是、false-否；成员是可信服务委派管理员不允许删除</p>
+                     * @return IsAssignManager <p>是否可信服务委派管理员。true-是、false-否；成员是可信服务委派管理员不允许删除</p>
                      * 
                      */
                     bool GetIsAssignManager() const;
 
                     /**
-                     * 设置是否可信服务委派管理员。true-是、false-否；成员是可信服务委派管理员不允许删除
-                     * @param _isAssignManager 是否可信服务委派管理员。true-是、false-否；成员是可信服务委派管理员不允许删除
+                     * 设置<p>是否可信服务委派管理员。true-是、false-否；成员是可信服务委派管理员不允许删除</p>
+                     * @param _isAssignManager <p>是否可信服务委派管理员。true-是、false-否；成员是可信服务委派管理员不允许删除</p>
                      * 
                      */
                     void SetIsAssignManager(const bool& _isAssignManager);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool IsAssignManagerHasBeenSet() const;
 
                     /**
-                     * 获取是否主体管理员。true-是、false-否；成员是主体管理员不允许删除
-                     * @return IsAuthManager 是否主体管理员。true-是、false-否；成员是主体管理员不允许删除
+                     * 获取<p>是否主体管理员。true-是、false-否；成员是主体管理员不允许删除</p>
+                     * @return IsAuthManager <p>是否主体管理员。true-是、false-否；成员是主体管理员不允许删除</p>
                      * 
                      */
                     bool GetIsAuthManager() const;
 
                     /**
-                     * 设置是否主体管理员。true-是、false-否；成员是主体管理员不允许删除
-                     * @param _isAuthManager 是否主体管理员。true-是、false-否；成员是主体管理员不允许删除
+                     * 设置<p>是否主体管理员。true-是、false-否；成员是主体管理员不允许删除</p>
+                     * @param _isAuthManager <p>是否主体管理员。true-是、false-否；成员是主体管理员不允许删除</p>
                      * 
                      */
                     void SetIsAuthManager(const bool& _isAuthManager);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool IsAuthManagerHasBeenSet() const;
 
                     /**
-                     * 获取是否共享资源管理员。true-是、false-否；成员是共享资源管理员不允许删除
-                     * @return IsShareManager 是否共享资源管理员。true-是、false-否；成员是共享资源管理员不允许删除
+                     * 获取<p>是否共享资源管理员。true-是、false-否；成员是共享资源管理员不允许删除</p>
+                     * @return IsShareManager <p>是否共享资源管理员。true-是、false-否；成员是共享资源管理员不允许删除</p>
                      * 
                      */
                     bool GetIsShareManager() const;
 
                     /**
-                     * 设置是否共享资源管理员。true-是、false-否；成员是共享资源管理员不允许删除
-                     * @param _isShareManager 是否共享资源管理员。true-是、false-否；成员是共享资源管理员不允许删除
+                     * 设置<p>是否共享资源管理员。true-是、false-否；成员是共享资源管理员不允许删除</p>
+                     * @param _isShareManager <p>是否共享资源管理员。true-是、false-否；成员是共享资源管理员不允许删除</p>
                      * 
                      */
                     void SetIsShareManager(const bool& _isShareManager);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool IsShareManagerHasBeenSet() const;
 
                     /**
-                     * 获取成员是否设置了操作审批。true-是、false-否；成员设置了操作审批时不允许删除
-                     * @return OperateProcess 成员是否设置了操作审批。true-是、false-否；成员设置了操作审批时不允许删除
+                     * 获取<p>成员是否设置了操作审批。true-是、false-否；成员设置了操作审批时不允许删除</p>
+                     * @return OperateProcess <p>成员是否设置了操作审批。true-是、false-否；成员设置了操作审批时不允许删除</p>
                      * 
                      */
                     bool GetOperateProcess() const;
 
                     /**
-                     * 设置成员是否设置了操作审批。true-是、false-否；成员设置了操作审批时不允许删除
-                     * @param _operateProcess 成员是否设置了操作审批。true-是、false-否；成员设置了操作审批时不允许删除
+                     * 设置<p>成员是否设置了操作审批。true-是、false-否；成员设置了操作审批时不允许删除</p>
+                     * @param _operateProcess <p>成员是否设置了操作审批。true-是、false-否；成员设置了操作审批时不允许删除</p>
                      * 
                      */
                     void SetOperateProcess(const bool& _operateProcess);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool OperateProcessHasBeenSet() const;
 
                     /**
-                     * 获取是否允许解除成员财务权限。true-是、false-否；成员不能解除财务权限时不允许删除
-                     * @return BillingPermission 是否允许解除成员财务权限。true-是、false-否；成员不能解除财务权限时不允许删除
+                     * 获取<p>是否允许解除成员财务权限。true-是、false-否；成员不能解除财务权限时不允许删除</p>
+                     * @return BillingPermission <p>是否允许解除成员财务权限。true-是、false-否；成员不能解除财务权限时不允许删除</p>
                      * 
                      */
                     bool GetBillingPermission() const;
 
                     /**
-                     * 设置是否允许解除成员财务权限。true-是、false-否；成员不能解除财务权限时不允许删除
-                     * @param _billingPermission 是否允许解除成员财务权限。true-是、false-否；成员不能解除财务权限时不允许删除
+                     * 设置<p>是否允许解除成员财务权限。true-是、false-否；成员不能解除财务权限时不允许删除</p>
+                     * @param _billingPermission <p>是否允许解除成员财务权限。true-是、false-否；成员不能解除财务权限时不允许删除</p>
                      * 
                      */
                     void SetBillingPermission(const bool& _billingPermission);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool BillingPermissionHasBeenSet() const;
 
                     /**
-                     * 获取存在的资源列表。账号存在资源时不允许删除
-                     * @return ExistResources 存在的资源列表。账号存在资源时不允许删除
+                     * 获取<p>存在的资源列表。账号存在资源时不允许删除</p>
+                     * @return ExistResources <p>存在的资源列表。账号存在资源时不允许删除</p>
                      * 
                      */
                     std::vector<std::string> GetExistResources() const;
 
                     /**
-                     * 设置存在的资源列表。账号存在资源时不允许删除
-                     * @param _existResources 存在的资源列表。账号存在资源时不允许删除
+                     * 设置<p>存在的资源列表。账号存在资源时不允许删除</p>
+                     * @param _existResources <p>存在的资源列表。账号存在资源时不允许删除</p>
                      * 
                      */
                     void SetExistResources(const std::vector<std::string>& _existResources);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool ExistResourcesHasBeenSet() const;
 
                     /**
-                     * 获取检测失败的资源列表。账号有资源检测失败时不允许删除。
-                     * @return DetectFailedResources 检测失败的资源列表。账号有资源检测失败时不允许删除。
+                     * 获取<p>检测失败的资源列表。账号有资源检测失败时不允许删除。</p>
+                     * @return DetectFailedResources <p>检测失败的资源列表。账号有资源检测失败时不允许删除。</p>
                      * 
                      */
                     std::vector<std::string> GetDetectFailedResources() const;
 
                     /**
-                     * 设置检测失败的资源列表。账号有资源检测失败时不允许删除。
-                     * @param _detectFailedResources 检测失败的资源列表。账号有资源检测失败时不允许删除。
+                     * 设置<p>检测失败的资源列表。账号有资源检测失败时不允许删除。</p>
+                     * @param _detectFailedResources <p>检测失败的资源列表。账号有资源检测失败时不允许删除。</p>
                      * 
                      */
                     void SetDetectFailedResources(const std::vector<std::string>& _detectFailedResources);
@@ -235,61 +235,115 @@ namespace TencentCloud
                      */
                     bool DetectFailedResourcesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否部署身份中心权限。部署权限不允许删除</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+                     * @return CICRoleConfig <p>是否部署身份中心权限。部署权限不允许删除</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+                     * 
+                     */
+                    bool GetCICRoleConfig() const;
+
+                    /**
+                     * 设置<p>是否部署身份中心权限。部署权限不允许删除</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+                     * @param _cICRoleConfig <p>是否部署身份中心权限。部署权限不允许删除</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+                     * 
+                     */
+                    void SetCICRoleConfig(const bool& _cICRoleConfig);
+
+                    /**
+                     * 判断参数 CICRoleConfig 是否已赋值
+                     * @return CICRoleConfig 是否已赋值
+                     * 
+                     */
+                    bool CICRoleConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否同步身份中心用户。同步用户不允许删除</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+                     * @return CICUserConfig <p>是否同步身份中心用户。同步用户不允许删除</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+                     * 
+                     */
+                    bool GetCICUserConfig() const;
+
+                    /**
+                     * 设置<p>是否同步身份中心用户。同步用户不允许删除</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+                     * @param _cICUserConfig <p>是否同步身份中心用户。同步用户不允许删除</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+                     * 
+                     */
+                    void SetCICUserConfig(const bool& _cICUserConfig);
+
+                    /**
+                     * 判断参数 CICUserConfig 是否已赋值
+                     * @return CICUserConfig 是否已赋值
+                     * 
+                     */
+                    bool CICUserConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 是否创建的成员。true-是、false-否；成员不是创建的成员不允许删除
+                     * <p>是否创建的成员。true-是、false-否；成员不是创建的成员不允许删除</p>
                      */
                     bool m_isCreateMember;
                     bool m_isCreateMemberHasBeenSet;
 
                     /**
-                     * 成员删除许可。true-开启、false-关闭；成员删除许可关闭时不允许删除
+                     * <p>成员删除许可。true-开启、false-关闭；成员删除许可关闭时不允许删除</p>
                      */
                     bool m_deletionPermission;
                     bool m_deletionPermissionHasBeenSet;
 
                     /**
-                     * 是否可信服务委派管理员。true-是、false-否；成员是可信服务委派管理员不允许删除
+                     * <p>是否可信服务委派管理员。true-是、false-否；成员是可信服务委派管理员不允许删除</p>
                      */
                     bool m_isAssignManager;
                     bool m_isAssignManagerHasBeenSet;
 
                     /**
-                     * 是否主体管理员。true-是、false-否；成员是主体管理员不允许删除
+                     * <p>是否主体管理员。true-是、false-否；成员是主体管理员不允许删除</p>
                      */
                     bool m_isAuthManager;
                     bool m_isAuthManagerHasBeenSet;
 
                     /**
-                     * 是否共享资源管理员。true-是、false-否；成员是共享资源管理员不允许删除
+                     * <p>是否共享资源管理员。true-是、false-否；成员是共享资源管理员不允许删除</p>
                      */
                     bool m_isShareManager;
                     bool m_isShareManagerHasBeenSet;
 
                     /**
-                     * 成员是否设置了操作审批。true-是、false-否；成员设置了操作审批时不允许删除
+                     * <p>成员是否设置了操作审批。true-是、false-否；成员设置了操作审批时不允许删除</p>
                      */
                     bool m_operateProcess;
                     bool m_operateProcessHasBeenSet;
 
                     /**
-                     * 是否允许解除成员财务权限。true-是、false-否；成员不能解除财务权限时不允许删除
+                     * <p>是否允许解除成员财务权限。true-是、false-否；成员不能解除财务权限时不允许删除</p>
                      */
                     bool m_billingPermission;
                     bool m_billingPermissionHasBeenSet;
 
                     /**
-                     * 存在的资源列表。账号存在资源时不允许删除
+                     * <p>存在的资源列表。账号存在资源时不允许删除</p>
                      */
                     std::vector<std::string> m_existResources;
                     bool m_existResourcesHasBeenSet;
 
                     /**
-                     * 检测失败的资源列表。账号有资源检测失败时不允许删除。
+                     * <p>检测失败的资源列表。账号有资源检测失败时不允许删除。</p>
                      */
                     std::vector<std::string> m_detectFailedResources;
                     bool m_detectFailedResourcesHasBeenSet;
+
+                    /**
+                     * <p>是否部署身份中心权限。部署权限不允许删除</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+                     */
+                    bool m_cICRoleConfig;
+                    bool m_cICRoleConfigHasBeenSet;
+
+                    /**
+                     * <p>是否同步身份中心用户。同步用户不允许删除</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+                     */
+                    bool m_cICUserConfig;
+                    bool m_cICUserConfigHasBeenSet;
 
                 };
             }

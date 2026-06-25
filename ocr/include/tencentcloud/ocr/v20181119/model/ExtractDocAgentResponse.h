@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负。
-                     * @return Angle 图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负。
+                     * 获取<p>图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负。</p>
+                     * @return Angle <p>图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负。</p>
                      * 
                      */
                     double GetAngle() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool AngleHasBeenSet() const;
 
                     /**
-                     * 获取配置结构化文本信息。
-                     * @return StructuralList 配置结构化文本信息。
+                     * 获取<p>配置结构化文本信息。</p>
+                     * @return StructuralList <p>配置结构化文本信息。</p>
                      * 
                      */
                     std::vector<GroupInfo> GetStructuralList() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool StructuralListHasBeenSet() const;
 
                     /**
-                     * 获取任务执行错误码。当任务状态不为 FAIL 时，该值为""。
-                     * @return ErrorCode 任务执行错误码。当任务状态不为 FAIL 时，该值为""。
+                     * 获取<p>任务执行错误码。当任务状态不为 FAIL 时，该值为&quot;&quot;。</p>
+                     * @return ErrorCode <p>任务执行错误码。当任务状态不为 FAIL 时，该值为&quot;&quot;。</p>
                      * 
                      */
                     std::string GetErrorCode() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool ErrorCodeHasBeenSet() const;
 
                     /**
-                     * 获取任务执行错误信息。当任务状态不为 FAIL 时，该值为""。
-                     * @return ErrorMessage 任务执行错误信息。当任务状态不为 FAIL 时，该值为""。
+                     * 获取<p>任务执行错误信息。当任务状态不为 FAIL 时，该值为&quot;&quot;。</p>
+                     * @return ErrorMessage <p>任务执行错误信息。当任务状态不为 FAIL 时，该值为&quot;&quot;。</p>
                      * 
                      */
                     std::string GetErrorMessage() const;
@@ -103,25 +103,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负。
+                     * <p>图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负。</p>
                      */
                     double m_angle;
                     bool m_angleHasBeenSet;
 
                     /**
-                     * 配置结构化文本信息。
+                     * <p>配置结构化文本信息。</p>
                      */
                     std::vector<GroupInfo> m_structuralList;
                     bool m_structuralListHasBeenSet;
 
                     /**
-                     * 任务执行错误码。当任务状态不为 FAIL 时，该值为""。
+                     * <p>任务执行错误码。当任务状态不为 FAIL 时，该值为&quot;&quot;。</p>
                      */
                     std::string m_errorCode;
                     bool m_errorCodeHasBeenSet;
 
                     /**
-                     * 任务执行错误信息。当任务状态不为 FAIL 时，该值为""。
+                     * <p>任务执行错误信息。当任务状态不为 FAIL 时，该值为&quot;&quot;。</p>
                      */
                     std::string m_errorMessage;
                     bool m_errorMessageHasBeenSet;

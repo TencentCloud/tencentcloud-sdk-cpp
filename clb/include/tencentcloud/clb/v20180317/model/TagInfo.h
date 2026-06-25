@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 负载均衡的标签信息
+                * 模型路由实例的标签信息
                 */
                 class TagInfo : public AbstractModel
                 {

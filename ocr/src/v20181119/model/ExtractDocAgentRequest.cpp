@@ -26,7 +26,9 @@ ExtractDocAgentRequest::ExtractDocAgentRequest() :
     m_imageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false),
     m_itemNamesHasBeenSet(false),
-    m_pdfPageNumberHasBeenSet(false)
+    m_pdfPageNumberHasBeenSet(false),
+    m_enableCoordHasBeenSet(false),
+    m_enableAuditHasBeenSet(false)
 {
 }
 
@@ -74,6 +76,22 @@ string ExtractDocAgentRequest::ToJsonString() const
         string key = "PdfPageNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pdfPageNumber, allocator);
+    }
+
+    if (m_enableCoordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableCoord";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableCoord, allocator);
+    }
+
+    if (m_enableAuditHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableAudit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableAudit, allocator);
     }
 
 
@@ -146,6 +164,38 @@ void ExtractDocAgentRequest::SetPdfPageNumber(const int64_t& _pdfPageNumber)
 bool ExtractDocAgentRequest::PdfPageNumberHasBeenSet() const
 {
     return m_pdfPageNumberHasBeenSet;
+}
+
+bool ExtractDocAgentRequest::GetEnableCoord() const
+{
+    return m_enableCoord;
+}
+
+void ExtractDocAgentRequest::SetEnableCoord(const bool& _enableCoord)
+{
+    m_enableCoord = _enableCoord;
+    m_enableCoordHasBeenSet = true;
+}
+
+bool ExtractDocAgentRequest::EnableCoordHasBeenSet() const
+{
+    return m_enableCoordHasBeenSet;
+}
+
+bool ExtractDocAgentRequest::GetEnableAudit() const
+{
+    return m_enableAudit;
+}
+
+void ExtractDocAgentRequest::SetEnableAudit(const bool& _enableAudit)
+{
+    m_enableAudit = _enableAudit;
+    m_enableAuditHasBeenSet = true;
+}
+
+bool ExtractDocAgentRequest::EnableAuditHasBeenSet() const
+{
+    return m_enableAuditHasBeenSet;
 }
 
 

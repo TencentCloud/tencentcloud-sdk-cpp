@@ -157,6 +157,34 @@ namespace TencentCloud
                      */
                     bool TaskResultMsgHasBeenSet() const;
 
+                    /**
+                     * 获取<p>请求参数</p>
+                     * @return RequestBody <p>请求参数</p>
+                     * 
+                     */
+                    std::string GetRequestBody() const;
+
+                    /**
+                     * 判断参数 RequestBody 是否已赋值
+                     * @return RequestBody 是否已赋值
+                     * 
+                     */
+                    bool RequestBodyHasBeenSet() const;
+
+                    /**
+                     * 获取<p>任务类型</p>
+                     * @return TaskType <p>任务类型</p>
+                     * 
+                     */
+                    std::string GetTaskType() const;
+
+                    /**
+                     * 判断参数 TaskType 是否已赋值
+                     * @return TaskType 是否已赋值
+                     * 
+                     */
+                    bool TaskTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +235,18 @@ namespace TencentCloud
                      */
                     std::string m_taskResultMsg;
                     bool m_taskResultMsgHasBeenSet;
+
+                    /**
+                     * <p>请求参数</p>
+                     */
+                    std::string m_requestBody;
+                    bool m_requestBodyHasBeenSet;
+
+                    /**
+                     * <p>任务类型</p>
+                     */
+                    std::string m_taskType;
+                    bool m_taskTypeHasBeenSet;
 
                 };
             }

@@ -28,7 +28,9 @@ CreateUserDirectoryRequest::CreateUserDirectoryRequest() :
     m_userOrgSetHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_sourceNameHasBeenSet(false),
-    m_userCountHasBeenSet(false)
+    m_userCountHasBeenSet(false),
+    m_autoSyncHasBeenSet(false),
+    m_syncCronHasBeenSet(false)
 {
 }
 
@@ -92,6 +94,22 @@ string CreateUserDirectoryRequest::ToJsonString() const
         string key = "UserCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_userCount, allocator);
+    }
+
+    if (m_autoSyncHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoSync";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoSync, allocator);
+    }
+
+    if (m_syncCronHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncCron";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_syncCron.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -196,6 +214,38 @@ void CreateUserDirectoryRequest::SetUserCount(const uint64_t& _userCount)
 bool CreateUserDirectoryRequest::UserCountHasBeenSet() const
 {
     return m_userCountHasBeenSet;
+}
+
+bool CreateUserDirectoryRequest::GetAutoSync() const
+{
+    return m_autoSync;
+}
+
+void CreateUserDirectoryRequest::SetAutoSync(const bool& _autoSync)
+{
+    m_autoSync = _autoSync;
+    m_autoSyncHasBeenSet = true;
+}
+
+bool CreateUserDirectoryRequest::AutoSyncHasBeenSet() const
+{
+    return m_autoSyncHasBeenSet;
+}
+
+string CreateUserDirectoryRequest::GetSyncCron() const
+{
+    return m_syncCron;
+}
+
+void CreateUserDirectoryRequest::SetSyncCron(const string& _syncCron)
+{
+    m_syncCron = _syncCron;
+    m_syncCronHasBeenSet = true;
+}
+
+bool CreateUserDirectoryRequest::SyncCronHasBeenSet() const
+{
+    return m_syncCronHasBeenSet;
 }
 
 

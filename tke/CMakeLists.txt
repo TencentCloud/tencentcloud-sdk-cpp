@@ -59,7 +59,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20220501/model/NativeNodePoolInfo.h
   include/tencentcloud/tke/v20220501/model/Disk.h
   include/tencentcloud/tke/v20220501/model/DescribeHealthCheckTemplateRequest.h
-  include/tencentcloud/tke/v20220501/model/InstanceExtraArgs.h
+  include/tencentcloud/tke/v20220501/model/TagSpecification.h
   include/tencentcloud/tke/v20220501/model/DescribeClustersResponse.h
   include/tencentcloud/tke/v20220501/model/SortBy.h
   include/tencentcloud/tke/v20220501/model/DataDisk.h
@@ -70,7 +70,8 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20220501/model/MachineSetScaling.h
   include/tencentcloud/tke/v20220501/model/StartMachinesResponse.h
   include/tencentcloud/tke/v20220501/model/RegularNodePoolInfo.h
-  include/tencentcloud/tke/v20220501/model/TagSpecification.h
+  include/tencentcloud/tke/v20220501/model/InstanceExtraArgs.h
+  include/tencentcloud/tke/v20220501/model/DescribeNodePoolsElasticityStrengthResponse.h
   include/tencentcloud/tke/v20220501/model/DeleteClusterMachinesResponse.h
   include/tencentcloud/tke/v20220501/model/DeleteNodePoolResponse.h
   include/tencentcloud/tke/v20220501/model/DescribeClusterInstancesRequest.h
@@ -84,6 +85,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20220501/model/RuntimeConfig.h
   include/tencentcloud/tke/v20220501/model/DescribeZoneInstanceConfigInfosRequest.h
   include/tencentcloud/tke/v20220501/model/Cluster.h
+  include/tencentcloud/tke/v20220501/model/DescribeNodePoolsElasticityStrengthRequest.h
   include/tencentcloud/tke/v20220501/model/ExternalNodePoolInfo.h
   include/tencentcloud/tke/v20220501/model/DescribeClusterMachinesRequest.h
   include/tencentcloud/tke/v20220501/model/DeleteHealthCheckPolicyRequest.h
@@ -903,7 +905,7 @@ set(tke_src
   src/v20220501/model/NativeNodePoolInfo.cpp
   src/v20220501/model/Disk.cpp
   src/v20220501/model/DescribeHealthCheckTemplateRequest.cpp
-  src/v20220501/model/InstanceExtraArgs.cpp
+  src/v20220501/model/TagSpecification.cpp
   src/v20220501/model/DescribeClustersResponse.cpp
   src/v20220501/model/SortBy.cpp
   src/v20220501/model/DataDisk.cpp
@@ -914,7 +916,8 @@ set(tke_src
   src/v20220501/model/MachineSetScaling.cpp
   src/v20220501/model/StartMachinesResponse.cpp
   src/v20220501/model/RegularNodePoolInfo.cpp
-  src/v20220501/model/TagSpecification.cpp
+  src/v20220501/model/InstanceExtraArgs.cpp
+  src/v20220501/model/DescribeNodePoolsElasticityStrengthResponse.cpp
   src/v20220501/model/DeleteClusterMachinesResponse.cpp
   src/v20220501/model/DeleteNodePoolResponse.cpp
   src/v20220501/model/DescribeClusterInstancesRequest.cpp
@@ -928,6 +931,7 @@ set(tke_src
   src/v20220501/model/RuntimeConfig.cpp
   src/v20220501/model/DescribeZoneInstanceConfigInfosRequest.cpp
   src/v20220501/model/Cluster.cpp
+  src/v20220501/model/DescribeNodePoolsElasticityStrengthRequest.cpp
   src/v20220501/model/ExternalNodePoolInfo.cpp
   src/v20220501/model/DescribeClusterMachinesRequest.cpp
   src/v20220501/model/DeleteHealthCheckPolicyRequest.cpp

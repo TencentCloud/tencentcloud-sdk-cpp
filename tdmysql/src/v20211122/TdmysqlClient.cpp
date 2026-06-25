@@ -2190,6 +2190,56 @@ TdmysqlClient::ResetUserPasswordOutcomeCallable TdmysqlClient::ResetUserPassword
     return prom->get_future();
 }
 
+TdmysqlClient::ResetUsersPasswordOutcome TdmysqlClient::ResetUsersPassword(const ResetUsersPasswordRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetUsersPassword");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetUsersPasswordResponse rsp = ResetUsersPasswordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetUsersPasswordOutcome(rsp);
+        else
+            return ResetUsersPasswordOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetUsersPasswordOutcome(outcome.GetError());
+    }
+}
+
+void TdmysqlClient::ResetUsersPasswordAsync(const ResetUsersPasswordRequest& request, const ResetUsersPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ResetUsersPasswordRequest&;
+    using Resp = ResetUsersPasswordResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ResetUsersPassword", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmysqlClient::ResetUsersPasswordOutcomeCallable TdmysqlClient::ResetUsersPasswordCallable(const ResetUsersPasswordRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ResetUsersPasswordOutcome>>();
+    ResetUsersPasswordAsync(
+    request,
+    [prom](
+        const TdmysqlClient*,
+        const ResetUsersPasswordRequest&,
+        ResetUsersPasswordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TdmysqlClient::RestartDBInstancesOutcome TdmysqlClient::RestartDBInstances(const RestartDBInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "RestartDBInstances");

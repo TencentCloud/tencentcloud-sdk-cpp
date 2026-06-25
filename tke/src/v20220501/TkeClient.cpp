@@ -690,6 +690,56 @@ TkeClient::DescribeNodePoolsOutcomeCallable TkeClient::DescribeNodePoolsCallable
     return prom->get_future();
 }
 
+TkeClient::DescribeNodePoolsElasticityStrengthOutcome TkeClient::DescribeNodePoolsElasticityStrength(const DescribeNodePoolsElasticityStrengthRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNodePoolsElasticityStrength");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNodePoolsElasticityStrengthResponse rsp = DescribeNodePoolsElasticityStrengthResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNodePoolsElasticityStrengthOutcome(rsp);
+        else
+            return DescribeNodePoolsElasticityStrengthOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNodePoolsElasticityStrengthOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeNodePoolsElasticityStrengthAsync(const DescribeNodePoolsElasticityStrengthRequest& request, const DescribeNodePoolsElasticityStrengthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeNodePoolsElasticityStrengthRequest&;
+    using Resp = DescribeNodePoolsElasticityStrengthResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeNodePoolsElasticityStrength", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DescribeNodePoolsElasticityStrengthOutcomeCallable TkeClient::DescribeNodePoolsElasticityStrengthCallable(const DescribeNodePoolsElasticityStrengthRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeNodePoolsElasticityStrengthOutcome>>();
+    DescribeNodePoolsElasticityStrengthAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeNodePoolsElasticityStrengthRequest&,
+        DescribeNodePoolsElasticityStrengthOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TkeClient::DescribeZoneInstanceConfigInfosOutcome TkeClient::DescribeZoneInstanceConfigInfos(const DescribeZoneInstanceConfigInfosRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeZoneInstanceConfigInfos");

@@ -81,6 +81,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/SuccessDeleteStaffData.h
   include/tencentcloud/ess/v20201111/model/DescribeUserVerifyStatusRequest.h
   include/tencentcloud/ess/v20201111/model/FillError.h
+  include/tencentcloud/ess/v20201111/model/CancelOrganizationFlowsRequest.h
   include/tencentcloud/ess/v20201111/model/CreateStaffResult.h
   include/tencentcloud/ess/v20201111/model/Recipient.h
   include/tencentcloud/ess/v20201111/model/VerifyPdfRequest.h
@@ -267,6 +268,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/ArchiveDynamicApproverData.h
   include/tencentcloud/ess/v20201111/model/CreateOrganizationAuthUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationRoleRequest.h
+  include/tencentcloud/ess/v20201111/model/CancelOrganizationFlowsResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationRolesRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowGroupSignReviewResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowRemindsResponse.h
@@ -539,6 +541,7 @@ set(ess_src
   src/v20201111/model/SuccessDeleteStaffData.cpp
   src/v20201111/model/DescribeUserVerifyStatusRequest.cpp
   src/v20201111/model/FillError.cpp
+  src/v20201111/model/CancelOrganizationFlowsRequest.cpp
   src/v20201111/model/CreateStaffResult.cpp
   src/v20201111/model/Recipient.cpp
   src/v20201111/model/VerifyPdfRequest.cpp
@@ -725,6 +728,7 @@ set(ess_src
   src/v20201111/model/ArchiveDynamicApproverData.cpp
   src/v20201111/model/CreateOrganizationAuthUrlRequest.cpp
   src/v20201111/model/CreateIntegrationRoleRequest.cpp
+  src/v20201111/model/CancelOrganizationFlowsResponse.cpp
   src/v20201111/model/DescribeIntegrationRolesRequest.cpp
   src/v20201111/model/CreateFlowGroupSignReviewResponse.cpp
   src/v20201111/model/CreateFlowRemindsResponse.cpp

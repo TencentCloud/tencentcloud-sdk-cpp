@@ -29,7 +29,9 @@ NotAllowReason::NotAllowReason() :
     m_operateProcessHasBeenSet(false),
     m_billingPermissionHasBeenSet(false),
     m_existResourcesHasBeenSet(false),
-    m_detectFailedResourcesHasBeenSet(false)
+    m_detectFailedResourcesHasBeenSet(false),
+    m_cICRoleConfigHasBeenSet(false),
+    m_cICUserConfigHasBeenSet(false)
 {
 }
 
@@ -134,6 +136,26 @@ CoreInternalOutcome NotAllowReason::Deserialize(const rapidjson::Value &value)
         m_detectFailedResourcesHasBeenSet = true;
     }
 
+    if (value.HasMember("CICRoleConfig") && !value["CICRoleConfig"].IsNull())
+    {
+        if (!value["CICRoleConfig"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotAllowReason.CICRoleConfig` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_cICRoleConfig = value["CICRoleConfig"].GetBool();
+        m_cICRoleConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("CICUserConfig") && !value["CICUserConfig"].IsNull())
+    {
+        if (!value["CICUserConfig"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotAllowReason.CICUserConfig` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_cICUserConfig = value["CICUserConfig"].GetBool();
+        m_cICUserConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +243,22 @@ void NotAllowReason::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_cICRoleConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CICRoleConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cICRoleConfig, allocator);
+    }
+
+    if (m_cICUserConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CICUserConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cICUserConfig, allocator);
     }
 
 }
@@ -368,5 +406,37 @@ void NotAllowReason::SetDetectFailedResources(const vector<string>& _detectFaile
 bool NotAllowReason::DetectFailedResourcesHasBeenSet() const
 {
     return m_detectFailedResourcesHasBeenSet;
+}
+
+bool NotAllowReason::GetCICRoleConfig() const
+{
+    return m_cICRoleConfig;
+}
+
+void NotAllowReason::SetCICRoleConfig(const bool& _cICRoleConfig)
+{
+    m_cICRoleConfig = _cICRoleConfig;
+    m_cICRoleConfigHasBeenSet = true;
+}
+
+bool NotAllowReason::CICRoleConfigHasBeenSet() const
+{
+    return m_cICRoleConfigHasBeenSet;
+}
+
+bool NotAllowReason::GetCICUserConfig() const
+{
+    return m_cICUserConfig;
+}
+
+void NotAllowReason::SetCICUserConfig(const bool& _cICUserConfig)
+{
+    m_cICUserConfig = _cICUserConfig;
+    m_cICUserConfigHasBeenSet = true;
+}
+
+bool NotAllowReason::CICUserConfigHasBeenSet() const
+{
+    return m_cICUserConfigHasBeenSet;
 }
 

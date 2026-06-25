@@ -1640,56 +1640,6 @@ ApigatewayClient::DescribeApiOutcomeCallable ApigatewayClient::DescribeApiCallab
     return prom->get_future();
 }
 
-ApigatewayClient::DescribeApiAppOutcome ApigatewayClient::DescribeApiApp(const DescribeApiAppRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeApiApp");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeApiAppResponse rsp = DescribeApiAppResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeApiAppOutcome(rsp);
-        else
-            return DescribeApiAppOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeApiAppOutcome(outcome.GetError());
-    }
-}
-
-void ApigatewayClient::DescribeApiAppAsync(const DescribeApiAppRequest& request, const DescribeApiAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DescribeApiAppRequest&;
-    using Resp = DescribeApiAppResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DescribeApiApp", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-ApigatewayClient::DescribeApiAppOutcomeCallable ApigatewayClient::DescribeApiAppCallable(const DescribeApiAppRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DescribeApiAppOutcome>>();
-    DescribeApiAppAsync(
-    request,
-    [prom](
-        const ApigatewayClient*,
-        const DescribeApiAppRequest&,
-        DescribeApiAppOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 ApigatewayClient::DescribeApiAppBindApisStatusOutcome ApigatewayClient::DescribeApiAppBindApisStatus(const DescribeApiAppBindApisStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeApiAppBindApisStatus");

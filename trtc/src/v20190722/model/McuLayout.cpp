@@ -34,7 +34,8 @@ McuLayout::McuLayout() :
     m_backgroundRenderModeHasBeenSet(false),
     m_transparentUrlHasBeenSet(false),
     m_backgroundCustomRenderHasBeenSet(false),
-    m_backGroundColorModeHasBeenSet(false)
+    m_backGroundColorModeHasBeenSet(false),
+    m_enableStreamSEIHasBeenSet(false)
 {
 }
 
@@ -204,6 +205,16 @@ CoreInternalOutcome McuLayout::Deserialize(const rapidjson::Value &value)
         m_backGroundColorModeHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableStreamSEI") && !value["EnableStreamSEI"].IsNull())
+    {
+        if (!value["EnableStreamSEI"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `McuLayout.EnableStreamSEI` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableStreamSEI = value["EnableStreamSEI"].GetUint64();
+        m_enableStreamSEIHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -324,6 +335,14 @@ void McuLayout::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "BackGroundColorMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_backGroundColorMode, allocator);
+    }
+
+    if (m_enableStreamSEIHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableStreamSEI";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableStreamSEI, allocator);
     }
 
 }
@@ -551,5 +570,21 @@ void McuLayout::SetBackGroundColorMode(const uint64_t& _backGroundColorMode)
 bool McuLayout::BackGroundColorModeHasBeenSet() const
 {
     return m_backGroundColorModeHasBeenSet;
+}
+
+uint64_t McuLayout::GetEnableStreamSEI() const
+{
+    return m_enableStreamSEI;
+}
+
+void McuLayout::SetEnableStreamSEI(const uint64_t& _enableStreamSEI)
+{
+    m_enableStreamSEI = _enableStreamSEI;
+    m_enableStreamSEIHasBeenSet = true;
+}
+
+bool McuLayout::EnableStreamSEIHasBeenSet() const
+{
+    return m_enableStreamSEIHasBeenSet;
 }
 

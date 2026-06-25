@@ -105,6 +105,8 @@
 #include <tencentcloud/ocr/v20181119/model/MixedInvoiceDetectResponse.h>
 #include <tencentcloud/ocr/v20181119/model/MixedInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/MixedInvoiceOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/MultimodalDocParseRequest.h>
+#include <tencentcloud/ocr/v20181119/model/MultimodalDocParseResponse.h>
 #include <tencentcloud/ocr/v20181119/model/PassportOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/PassportOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/PermitOCRRequest.h>
@@ -318,6 +320,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::MixedInvoiceOCRResponse> MixedInvoiceOCROutcome;
                 typedef std::future<MixedInvoiceOCROutcome> MixedInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::MixedInvoiceOCRRequest&, MixedInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> MixedInvoiceOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::MultimodalDocParseResponse> MultimodalDocParseOutcome;
+                typedef std::future<MultimodalDocParseOutcome> MultimodalDocParseOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::MultimodalDocParseRequest&, MultimodalDocParseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MultimodalDocParseAsyncHandler;
                 typedef Outcome<Core::Error, Model::PassportOCRResponse> PassportOCROutcome;
                 typedef std::future<PassportOCROutcome> PassportOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::PassportOCRRequest&, PassportOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> PassportOCRAsyncHandler;
@@ -1107,6 +1112,19 @@ namespace TencentCloud
                 MixedInvoiceOCROutcome MixedInvoiceOCR(const Model::MixedInvoiceOCRRequest &request);
                 void MixedInvoiceOCRAsync(const Model::MixedInvoiceOCRRequest& request, const MixedInvoiceOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 MixedInvoiceOCROutcomeCallable MixedInvoiceOCRCallable(const Model::MixedInvoiceOCRRequest& request);
+
+                /**
+                 *本接口支持解析多种类型的文档文件（PDF、Word、PPT、Excel、Markdown、TXT、图片、WPS），返回解析后的结果文件下载地址（zip压缩包，包含markdown、json和图片）。
+
+支持的文件大小：PDF/Word/PPT支持150M且300页以内、Excel支持10M以内、TXT支持10M以内、图片文件支持70M以内。
+
+默认接口请求频率限制：5 并发。
+                 * @param req MultimodalDocParseRequest
+                 * @return MultimodalDocParseOutcome
+                 */
+                MultimodalDocParseOutcome MultimodalDocParse(const Model::MultimodalDocParseRequest &request);
+                void MultimodalDocParseAsync(const Model::MultimodalDocParseRequest& request, const MultimodalDocParseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                MultimodalDocParseOutcomeCallable MultimodalDocParseCallable(const Model::MultimodalDocParseRequest& request);
 
                 /**
                  *<b>此接口为护照识别（中国大陆地区护照）的旧版本服务，不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href="https://cloud.tencent.com/document/product/866/37657">护照识别（多国多地区护照）</a>。</b>

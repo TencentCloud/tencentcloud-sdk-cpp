@@ -57,6 +57,7 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_enableHybridStorageHasBeenSet(false),
     m_diskEnhanceHasBeenSet(false),
     m_enableDiagnoseHasBeenSet(false),
+    m_enableCosBackupHasBeenSet(false),
     m_cdcIdHasBeenSet(false),
     m_disasterRecoverGroupAffinityHasBeenSet(false),
     m_subProductCodeHasBeenSet(false),
@@ -374,6 +375,14 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "EnableDiagnose";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableDiagnose, allocator);
+    }
+
+    if (m_enableCosBackupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableCosBackup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableCosBackup, allocator);
     }
 
     if (m_cdcIdHasBeenSet)
@@ -1011,6 +1020,22 @@ void CreateInstanceRequest::SetEnableDiagnose(const bool& _enableDiagnose)
 bool CreateInstanceRequest::EnableDiagnoseHasBeenSet() const
 {
     return m_enableDiagnoseHasBeenSet;
+}
+
+bool CreateInstanceRequest::GetEnableCosBackup() const
+{
+    return m_enableCosBackup;
+}
+
+void CreateInstanceRequest::SetEnableCosBackup(const bool& _enableCosBackup)
+{
+    m_enableCosBackup = _enableCosBackup;
+    m_enableCosBackupHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::EnableCosBackupHasBeenSet() const
+{
+    return m_enableCosBackupHasBeenSet;
 }
 
 string CreateInstanceRequest::GetCdcId() const

@@ -27,7 +27,8 @@ SetCustomizedConfigForLoadBalancerRequest::SetCustomizedConfigForLoadBalancerReq
     m_uconfigIdHasBeenSet(false),
     m_configContentHasBeenSet(false),
     m_configNameHasBeenSet(false),
-    m_loadBalancerIdsHasBeenSet(false)
+    m_loadBalancerIdsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,21 @@ string SetCustomizedConfigForLoadBalancerRequest::ToJsonString() const
         for (auto itr = m_loadBalancerIds.begin(); itr != m_loadBalancerIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -169,6 +185,22 @@ void SetCustomizedConfigForLoadBalancerRequest::SetLoadBalancerIds(const vector<
 bool SetCustomizedConfigForLoadBalancerRequest::LoadBalancerIdsHasBeenSet() const
 {
     return m_loadBalancerIdsHasBeenSet;
+}
+
+vector<TagInfo> SetCustomizedConfigForLoadBalancerRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void SetCustomizedConfigForLoadBalancerRequest::SetTags(const vector<TagInfo>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool SetCustomizedConfigForLoadBalancerRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

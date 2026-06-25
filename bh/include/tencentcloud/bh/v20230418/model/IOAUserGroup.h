@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ioa用户组织id
-                     * @return OrgId ioa用户组织id
+                     * 获取<p>ioa用户组织id</p>
+                     * @return OrgId <p>ioa用户组织id</p>
                      * 
                      */
                     uint64_t GetOrgId() const;
 
                     /**
-                     * 设置ioa用户组织id
-                     * @param _orgId ioa用户组织id
+                     * 设置<p>ioa用户组织id</p>
+                     * @param _orgId <p>ioa用户组织id</p>
                      * 
                      */
                     void SetOrgId(const uint64_t& _orgId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool OrgIdHasBeenSet() const;
 
                     /**
-                     * 获取ioa用户组织名称
-                     * @return OrgName ioa用户组织名称
+                     * 获取<p>ioa用户组织名称</p>
+                     * @return OrgName <p>ioa用户组织名称</p>
                      * 
                      */
                     std::string GetOrgName() const;
 
                     /**
-                     * 设置ioa用户组织名称
-                     * @param _orgName ioa用户组织名称
+                     * 设置<p>ioa用户组织名称</p>
+                     * @param _orgName <p>ioa用户组织名称</p>
                      * 
                      */
                     void SetOrgName(const std::string& _orgName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool OrgNameHasBeenSet() const;
 
                     /**
-                     * 获取ioa用户组织id路径	
-                     * @return OrgIdPath ioa用户组织id路径	
+                     * 获取<p>ioa用户组织id路径</p>
+                     * @return OrgIdPath <p>ioa用户组织id路径</p>
                      * 
                      */
                     std::string GetOrgIdPath() const;
 
                     /**
-                     * 设置ioa用户组织id路径	
-                     * @param _orgIdPath ioa用户组织id路径	
+                     * 设置<p>ioa用户组织id路径</p>
+                     * @param _orgIdPath <p>ioa用户组织id路径</p>
                      * 
                      */
                     void SetOrgIdPath(const std::string& _orgIdPath);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool OrgIdPathHasBeenSet() const;
 
                     /**
-                     * 获取ioa用户组织名称路径	
-                     * @return OrgNamePath ioa用户组织名称路径	
+                     * 获取<p>ioa用户组织名称路径</p>
+                     * @return OrgNamePath <p>ioa用户组织名称路径</p>
                      * 
                      */
                     std::string GetOrgNamePath() const;
 
                     /**
-                     * 设置ioa用户组织名称路径	
-                     * @param _orgNamePath ioa用户组织名称路径	
+                     * 设置<p>ioa用户组织名称路径</p>
+                     * @param _orgNamePath <p>ioa用户组织名称路径</p>
                      * 
                      */
                     void SetOrgNamePath(const std::string& _orgNamePath);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool OrgNamePathHasBeenSet() const;
 
                     /**
-                     * 获取ioa关联用户源类型
-                     * @return Source ioa关联用户源类型
+                     * 获取<p>ioa关联用户源类型</p>
+                     * @return Source <p>ioa关联用户源类型</p>
                      * 
                      */
                     uint64_t GetSource() const;
 
                     /**
-                     * 设置ioa关联用户源类型
-                     * @param _source ioa关联用户源类型
+                     * 设置<p>ioa关联用户源类型</p>
+                     * @param _source <p>ioa关联用户源类型</p>
                      * 
                      */
                     void SetSource(const uint64_t& _source);
@@ -151,37 +151,64 @@ namespace TencentCloud
                      */
                     bool SourceHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户所属目录</p>
+                     * @return UserDirName <p>用户所属目录</p>
+                     * 
+                     */
+                    std::string GetUserDirName() const;
+
+                    /**
+                     * 设置<p>用户所属目录</p>
+                     * @param _userDirName <p>用户所属目录</p>
+                     * 
+                     */
+                    void SetUserDirName(const std::string& _userDirName);
+
+                    /**
+                     * 判断参数 UserDirName 是否已赋值
+                     * @return UserDirName 是否已赋值
+                     * 
+                     */
+                    bool UserDirNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * ioa用户组织id
+                     * <p>ioa用户组织id</p>
                      */
                     uint64_t m_orgId;
                     bool m_orgIdHasBeenSet;
 
                     /**
-                     * ioa用户组织名称
+                     * <p>ioa用户组织名称</p>
                      */
                     std::string m_orgName;
                     bool m_orgNameHasBeenSet;
 
                     /**
-                     * ioa用户组织id路径	
+                     * <p>ioa用户组织id路径</p>
                      */
                     std::string m_orgIdPath;
                     bool m_orgIdPathHasBeenSet;
 
                     /**
-                     * ioa用户组织名称路径	
+                     * <p>ioa用户组织名称路径</p>
                      */
                     std::string m_orgNamePath;
                     bool m_orgNamePathHasBeenSet;
 
                     /**
-                     * ioa关联用户源类型
+                     * <p>ioa关联用户源类型</p>
                      */
                     uint64_t m_source;
                     bool m_sourceHasBeenSet;
+
+                    /**
+                     * <p>用户所属目录</p>
+                     */
+                    std::string m_userDirName;
+                    bool m_userDirNameHasBeenSet;
 
                 };
             }

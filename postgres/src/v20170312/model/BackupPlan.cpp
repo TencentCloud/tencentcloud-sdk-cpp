@@ -25,6 +25,7 @@ BackupPlan::BackupPlan() :
     m_baseBackupRetentionPeriodHasBeenSet(false),
     m_minBackupStartTimeHasBeenSet(false),
     m_maxBackupStartTimeHasBeenSet(false),
+    m_backupMethodHasBeenSet(false),
     m_planIdHasBeenSet(false),
     m_planNameHasBeenSet(false),
     m_logBackupRetentionPeriodHasBeenSet(false),
@@ -78,6 +79,16 @@ CoreInternalOutcome BackupPlan::Deserialize(const rapidjson::Value &value)
         }
         m_maxBackupStartTime = string(value["MaxBackupStartTime"].GetString());
         m_maxBackupStartTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("BackupMethod") && !value["BackupMethod"].IsNull())
+    {
+        if (!value["BackupMethod"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupPlan.BackupMethod` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupMethod = string(value["BackupMethod"].GetString());
+        m_backupMethodHasBeenSet = true;
     }
 
     if (value.HasMember("PlanId") && !value["PlanId"].IsNull())
@@ -187,6 +198,14 @@ void BackupPlan::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "MaxBackupStartTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_maxBackupStartTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupMethod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backupMethod.c_str(), allocator).Move(), allocator);
     }
 
     if (m_planIdHasBeenSet)
@@ -310,6 +329,22 @@ void BackupPlan::SetMaxBackupStartTime(const string& _maxBackupStartTime)
 bool BackupPlan::MaxBackupStartTimeHasBeenSet() const
 {
     return m_maxBackupStartTimeHasBeenSet;
+}
+
+string BackupPlan::GetBackupMethod() const
+{
+    return m_backupMethod;
+}
+
+void BackupPlan::SetBackupMethod(const string& _backupMethod)
+{
+    m_backupMethod = _backupMethod;
+    m_backupMethodHasBeenSet = true;
+}
+
+bool BackupPlan::BackupMethodHasBeenSet() const
+{
+    return m_backupMethodHasBeenSet;
 }
 
 string BackupPlan::GetPlanId() const

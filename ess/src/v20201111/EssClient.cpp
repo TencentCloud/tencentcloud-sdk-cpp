@@ -240,6 +240,56 @@ EssClient::CancelMultiFlowSignQRCodeOutcomeCallable EssClient::CancelMultiFlowSi
     return prom->get_future();
 }
 
+EssClient::CancelOrganizationFlowsOutcome EssClient::CancelOrganizationFlows(const CancelOrganizationFlowsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelOrganizationFlows");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelOrganizationFlowsResponse rsp = CancelOrganizationFlowsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelOrganizationFlowsOutcome(rsp);
+        else
+            return CancelOrganizationFlowsOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelOrganizationFlowsOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CancelOrganizationFlowsAsync(const CancelOrganizationFlowsRequest& request, const CancelOrganizationFlowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CancelOrganizationFlowsRequest&;
+    using Resp = CancelOrganizationFlowsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CancelOrganizationFlows", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssClient::CancelOrganizationFlowsOutcomeCallable EssClient::CancelOrganizationFlowsCallable(const CancelOrganizationFlowsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CancelOrganizationFlowsOutcome>>();
+    CancelOrganizationFlowsAsync(
+    request,
+    [prom](
+        const EssClient*,
+        const CancelOrganizationFlowsRequest&,
+        CancelOrganizationFlowsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EssClient::CancelUserAutoSignEnableUrlOutcome EssClient::CancelUserAutoSignEnableUrl(const CancelUserAutoSignEnableUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "CancelUserAutoSignEnableUrl");

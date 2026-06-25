@@ -154,6 +154,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/WaterMark.h
   include/tencentcloud/trtc/v20190722/model/McuStorageParams.h
   include/tencentcloud/trtc/v20190722/model/DescribeScaleInfoResponse.h
+  include/tencentcloud/trtc/v20190722/model/WordItem.h
   include/tencentcloud/trtc/v20190722/model/MixLayoutParams.h
   include/tencentcloud/trtc/v20190722/model/ModifyCloudSliceTaskRequest.h
   include/tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeResponse.h
@@ -421,6 +422,7 @@ set(trtc_src
   src/v20190722/model/WaterMark.cpp
   src/v20190722/model/McuStorageParams.cpp
   src/v20190722/model/DescribeScaleInfoResponse.cpp
+  src/v20190722/model/WordItem.cpp
   src/v20190722/model/MixLayoutParams.cpp
   src/v20190722/model/ModifyCloudSliceTaskRequest.cpp
   src/v20190722/model/StopMCUMixTranscodeResponse.cpp

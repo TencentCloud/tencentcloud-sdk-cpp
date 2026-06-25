@@ -214,15 +214,15 @@ namespace TencentCloud
                     bool PronunciationDictHasBeenSet() const;
 
                     /**
-                     * 获取<p>默认为0，0表示不生成字幕，1表示生成字幕</p>
-                     * @return AlignmentMode <p>默认为0，0表示不生成字幕，1表示生成字幕</p>
+                     * 获取<p>字幕级别</p><p>枚举值：</p><ul><li>0： 无字幕</li><li>1： 句子级别字幕</li><li>2： 词级别字幕，目前只有flow_01_ex支持</li></ul><p>默认值：0</p>
+                     * @return AlignmentMode <p>字幕级别</p><p>枚举值：</p><ul><li>0： 无字幕</li><li>1： 句子级别字幕</li><li>2： 词级别字幕，目前只有flow_01_ex支持</li></ul><p>默认值：0</p>
                      * 
                      */
                     uint64_t GetAlignmentMode() const;
 
                     /**
-                     * 设置<p>默认为0，0表示不生成字幕，1表示生成字幕</p>
-                     * @param _alignmentMode <p>默认为0，0表示不生成字幕，1表示生成字幕</p>
+                     * 设置<p>字幕级别</p><p>枚举值：</p><ul><li>0： 无字幕</li><li>1： 句子级别字幕</li><li>2： 词级别字幕，目前只有flow_01_ex支持</li></ul><p>默认值：0</p>
+                     * @param _alignmentMode <p>字幕级别</p><p>枚举值：</p><ul><li>0： 无字幕</li><li>1： 句子级别字幕</li><li>2： 词级别字幕，目前只有flow_01_ex支持</li></ul><p>默认值：0</p>
                      * 
                      */
                     void SetAlignmentMode(const uint64_t& _alignmentMode);
@@ -306,7 +306,7 @@ namespace TencentCloud
                     bool m_pronunciationDictHasBeenSet;
 
                     /**
-                     * <p>默认为0，0表示不生成字幕，1表示生成字幕</p>
+                     * <p>字幕级别</p><p>枚举值：</p><ul><li>0： 无字幕</li><li>1： 句子级别字幕</li><li>2： 词级别字幕，目前只有flow_01_ex支持</li></ul><p>默认值：0</p>
                      */
                     uint64_t m_alignmentMode;
                     bool m_alignmentModeHasBeenSet;
