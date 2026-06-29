@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TDMYSQL_V20211122_MODEL_RESETUSERPASSWORDRESPONSE_H_
-#define TENCENTCLOUD_TDMYSQL_V20211122_MODEL_RESETUSERPASSWORDRESPONSE_H_
+#ifndef TENCENTCLOUD_CWP_V20180228_MODEL_ADDVULIGNORERULERESPONSE_H_
+#define TENCENTCLOUD_CWP_V20180228_MODEL_ADDVULIGNORERULERESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,20 @@
 
 namespace TencentCloud
 {
-    namespace Tdmysql
+    namespace Cwp
     {
-        namespace V20211122
+        namespace V20180228
         {
             namespace Model
             {
                 /**
-                * ResetUserPassword返回参数结构体
+                * AddVulIgnoreRule返回参数结构体
                 */
-                class ResetUserPasswordResponse : public AbstractModel
+                class AddVulIgnoreRuleResponse : public AbstractModel
                 {
                 public:
-                    ResetUserPasswordResponse();
-                    ~ResetUserPasswordResponse() = default;
+                    AddVulIgnoreRuleResponse();
+                    ~AddVulIgnoreRuleResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
@@ -51,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TDMYSQL_V20211122_MODEL_RESETUSERPASSWORDRESPONSE_H_
+#endif // !TENCENTCLOUD_CWP_V20180228_MODEL_ADDVULIGNORERULERESPONSE_H_

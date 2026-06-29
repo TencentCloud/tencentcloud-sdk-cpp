@@ -50,78 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取API插件支持对外调用的工具URL
-                     * @return ExternalApiUrl API插件支持对外调用的工具URL
-                     * 
-                     */
-                    std::string GetExternalApiUrl() const;
-
-                    /**
-                     * 设置API插件支持对外调用的工具URL
-                     * @param _externalApiUrl API插件支持对外调用的工具URL
-                     * 
-                     */
-                    void SetExternalApiUrl(const std::string& _externalApiUrl);
-
-                    /**
-                     * 判断参数 ExternalApiUrl 是否已赋值
-                     * @return ExternalApiUrl 是否已赋值
-                     * 
-                     */
-                    bool ExternalApiUrlHasBeenSet() const;
-
-                    /**
-                     * 获取请求method
-                     * @return Method 请求method
-                     * 
-                     */
-                    std::string GetMethod() const;
-
-                    /**
-                     * 设置请求method
-                     * @param _method 请求method
-                     * 
-                     */
-                    void SetMethod(const std::string& _method);
-
-                    /**
-                     * 判断参数 Method 是否已赋值
-                     * @return Method 是否已赋值
-                     * 
-                     */
-                    bool MethodHasBeenSet() const;
-
-                    /**
-                     * 获取请求的url
-                     * @return Url 请求的url
-                     * 
-                     */
-                    std::string GetUrl() const;
-
-                    /**
-                     * 设置请求的url
-                     * @param _url 请求的url
-                     * 
-                     */
-                    void SetUrl(const std::string& _url);
-
-                    /**
-                     * 判断参数 Url 是否已赋值
-                     * @return Url 是否已赋值
-                     * 
-                     */
-                    bool UrlHasBeenSet() const;
-
-                    /**
-                     * 获取body参数
-                     * @return Body body参数
+                     * 获取<p>请求体参数</p>
+                     * @return Body <p>请求体参数</p>
                      * 
                      */
                     std::vector<RequestParam> GetBody() const;
 
                     /**
-                     * 设置body参数
-                     * @param _body body参数
+                     * 设置<p>请求体参数</p>
+                     * @param _body <p>请求体参数</p>
                      * 
                      */
                     void SetBody(const std::vector<RequestParam>& _body);
@@ -134,15 +71,15 @@ namespace TencentCloud
                     bool BodyHasBeenSet() const;
 
                     /**
-                     * 获取示例
-                     * @return Example 示例
+                     * 获取<p>示例</p>
+                     * @return Example <p>示例</p>
                      * 
                      */
                     ToolExample GetExample() const;
 
                     /**
-                     * 设置示例
-                     * @param _example 示例
+                     * 设置<p>示例</p>
+                     * @param _example <p>示例</p>
                      * 
                      */
                     void SetExample(const ToolExample& _example);
@@ -155,15 +92,36 @@ namespace TencentCloud
                     bool ExampleHasBeenSet() const;
 
                     /**
-                     * 获取Header信息
-                     * @return Header Header信息
+                     * 获取<p>API插件外部调用地址</p>
+                     * @return ExternalApiUrl <p>API插件外部调用地址</p>
+                     * 
+                     */
+                    std::string GetExternalApiUrl() const;
+
+                    /**
+                     * 设置<p>API插件外部调用地址</p>
+                     * @param _externalApiUrl <p>API插件外部调用地址</p>
+                     * 
+                     */
+                    void SetExternalApiUrl(const std::string& _externalApiUrl);
+
+                    /**
+                     * 判断参数 ExternalApiUrl 是否已赋值
+                     * @return ExternalApiUrl 是否已赋值
+                     * 
+                     */
+                    bool ExternalApiUrlHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Header</p>
+                     * @return Header <p>Header</p>
                      * 
                      */
                     std::vector<RequestParam> GetHeader() const;
 
                     /**
-                     * 设置Header信息
-                     * @param _header Header信息
+                     * 设置<p>Header</p>
+                     * @param _header <p>Header</p>
                      * 
                      */
                     void SetHeader(const std::vector<RequestParam>& _header);
@@ -176,15 +134,36 @@ namespace TencentCloud
                     bool HeaderHasBeenSet() const;
 
                     /**
-                     * 获取输出参数
-                     * @return Outputs 输出参数
+                     * 获取<p>请求方式</p>
+                     * @return Method <p>请求方式</p>
+                     * 
+                     */
+                    std::string GetMethod() const;
+
+                    /**
+                     * 设置<p>请求方式</p>
+                     * @param _method <p>请求方式</p>
+                     * 
+                     */
+                    void SetMethod(const std::string& _method);
+
+                    /**
+                     * 判断参数 Method 是否已赋值
+                     * @return Method 是否已赋值
+                     * 
+                     */
+                    bool MethodHasBeenSet() const;
+
+                    /**
+                     * 获取<p>输出</p>
+                     * @return Outputs <p>输出</p>
                      * 
                      */
                     std::vector<ResponseParam> GetOutputs() const;
 
                     /**
-                     * 设置输出参数
-                     * @param _outputs 输出参数
+                     * 设置<p>输出</p>
+                     * @param _outputs <p>输出</p>
                      * 
                      */
                     void SetOutputs(const std::vector<ResponseParam>& _outputs);
@@ -197,15 +176,15 @@ namespace TencentCloud
                     bool OutputsHasBeenSet() const;
 
                     /**
-                     * 获取query参数
-                     * @return Query query参数
+                     * 获取<p>查询参数</p>
+                     * @return Query <p>查询参数</p>
                      * 
                      */
                     std::vector<RequestParam> GetQuery() const;
 
                     /**
-                     * 设置query参数
-                     * @param _query query参数
+                     * 设置<p>查询参数</p>
+                     * @param _query <p>查询参数</p>
                      * 
                      */
                     void SetQuery(const std::vector<RequestParam>& _query);
@@ -218,35 +197,15 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取流式模式
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 非流式 |
-| 1 | 流式 |
-                     * @return StreamMode 流式模式
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 非流式 |
-| 1 | 流式 |
+                     * 获取<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>STREAM_MODE_UNARY</td><td>0</td><td>非流式</td></tr><tr><td>STREAM_MODE_STREAMING</td><td>1</td><td>流式</td></tr></tbody></table>
+                     * @return StreamMode <table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>STREAM_MODE_UNARY</td><td>0</td><td>非流式</td></tr><tr><td>STREAM_MODE_STREAMING</td><td>1</td><td>流式</td></tr></tbody></table>
                      * 
                      */
                     int64_t GetStreamMode() const;
 
                     /**
-                     * 设置流式模式
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 非流式 |
-| 1 | 流式 |
-                     * @param _streamMode 流式模式
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 非流式 |
-| 1 | 流式 |
+                     * 设置<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>STREAM_MODE_UNARY</td><td>0</td><td>非流式</td></tr><tr><td>STREAM_MODE_STREAMING</td><td>1</td><td>流式</td></tr></tbody></table>
+                     * @param _streamMode <table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>STREAM_MODE_UNARY</td><td>0</td><td>非流式</td></tr><tr><td>STREAM_MODE_STREAMING</td><td>1</td><td>流式</td></tr></tbody></table>
                      * 
                      */
                     void SetStreamMode(const int64_t& _streamMode);
@@ -258,66 +217,82 @@ namespace TencentCloud
                      */
                     bool StreamModeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>地址</p>
+                     * @return Url <p>地址</p>
+                     * 
+                     */
+                    std::string GetUrl() const;
+
+                    /**
+                     * 设置<p>地址</p>
+                     * @param _url <p>地址</p>
+                     * 
+                     */
+                    void SetUrl(const std::string& _url);
+
+                    /**
+                     * 判断参数 Url 是否已赋值
+                     * @return Url 是否已赋值
+                     * 
+                     */
+                    bool UrlHasBeenSet() const;
+
                 private:
 
                     /**
-                     * API插件支持对外调用的工具URL
-                     */
-                    std::string m_externalApiUrl;
-                    bool m_externalApiUrlHasBeenSet;
-
-                    /**
-                     * 请求method
-                     */
-                    std::string m_method;
-                    bool m_methodHasBeenSet;
-
-                    /**
-                     * 请求的url
-                     */
-                    std::string m_url;
-                    bool m_urlHasBeenSet;
-
-                    /**
-                     * body参数
+                     * <p>请求体参数</p>
                      */
                     std::vector<RequestParam> m_body;
                     bool m_bodyHasBeenSet;
 
                     /**
-                     * 示例
+                     * <p>示例</p>
                      */
                     ToolExample m_example;
                     bool m_exampleHasBeenSet;
 
                     /**
-                     * Header信息
+                     * <p>API插件外部调用地址</p>
+                     */
+                    std::string m_externalApiUrl;
+                    bool m_externalApiUrlHasBeenSet;
+
+                    /**
+                     * <p>Header</p>
                      */
                     std::vector<RequestParam> m_header;
                     bool m_headerHasBeenSet;
 
                     /**
-                     * 输出参数
+                     * <p>请求方式</p>
+                     */
+                    std::string m_method;
+                    bool m_methodHasBeenSet;
+
+                    /**
+                     * <p>输出</p>
                      */
                     std::vector<ResponseParam> m_outputs;
                     bool m_outputsHasBeenSet;
 
                     /**
-                     * query参数
+                     * <p>查询参数</p>
                      */
                     std::vector<RequestParam> m_query;
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 流式模式
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 非流式 |
-| 1 | 流式 |
+                     * <table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>STREAM_MODE_UNARY</td><td>0</td><td>非流式</td></tr><tr><td>STREAM_MODE_STREAMING</td><td>1</td><td>流式</td></tr></tbody></table>
                      */
                     int64_t m_streamMode;
                     bool m_streamModeHasBeenSet;
+
+                    /**
+                     * <p>地址</p>
+                     */
+                    std::string m_url;
+                    bool m_urlHasBeenSet;
 
                 };
             }

@@ -81,7 +81,10 @@ ModifyApmApplicationConfigRequest::ModifyApmApplicationConfigRequest() :
     m_enableThresholdConfigHasBeenSet(false),
     m_errRateThresholdHasBeenSet(false),
     m_responseDurationWarningThresholdHasBeenSet(false),
-    m_useDefaultFuseConfigHasBeenSet(false)
+    m_useDefaultFuseConfigHasBeenSet(false),
+    m_enableHeadSamplerHasBeenSet(false),
+    m_headSamplerTypeHasBeenSet(false),
+    m_headSamplerArgHasBeenSet(false)
 {
 }
 
@@ -578,6 +581,30 @@ string ModifyApmApplicationConfigRequest::ToJsonString() const
         string key = "UseDefaultFuseConfig";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_useDefaultFuseConfig, allocator);
+    }
+
+    if (m_enableHeadSamplerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableHeadSampler";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableHeadSampler, allocator);
+    }
+
+    if (m_headSamplerTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HeadSamplerType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_headSamplerType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_headSamplerArgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HeadSamplerArg";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_headSamplerArg, allocator);
     }
 
 
@@ -1530,6 +1557,54 @@ void ModifyApmApplicationConfigRequest::SetUseDefaultFuseConfig(const bool& _use
 bool ModifyApmApplicationConfigRequest::UseDefaultFuseConfigHasBeenSet() const
 {
     return m_useDefaultFuseConfigHasBeenSet;
+}
+
+bool ModifyApmApplicationConfigRequest::GetEnableHeadSampler() const
+{
+    return m_enableHeadSampler;
+}
+
+void ModifyApmApplicationConfigRequest::SetEnableHeadSampler(const bool& _enableHeadSampler)
+{
+    m_enableHeadSampler = _enableHeadSampler;
+    m_enableHeadSamplerHasBeenSet = true;
+}
+
+bool ModifyApmApplicationConfigRequest::EnableHeadSamplerHasBeenSet() const
+{
+    return m_enableHeadSamplerHasBeenSet;
+}
+
+string ModifyApmApplicationConfigRequest::GetHeadSamplerType() const
+{
+    return m_headSamplerType;
+}
+
+void ModifyApmApplicationConfigRequest::SetHeadSamplerType(const string& _headSamplerType)
+{
+    m_headSamplerType = _headSamplerType;
+    m_headSamplerTypeHasBeenSet = true;
+}
+
+bool ModifyApmApplicationConfigRequest::HeadSamplerTypeHasBeenSet() const
+{
+    return m_headSamplerTypeHasBeenSet;
+}
+
+int64_t ModifyApmApplicationConfigRequest::GetHeadSamplerArg() const
+{
+    return m_headSamplerArg;
+}
+
+void ModifyApmApplicationConfigRequest::SetHeadSamplerArg(const int64_t& _headSamplerArg)
+{
+    m_headSamplerArg = _headSamplerArg;
+    m_headSamplerArgHasBeenSet = true;
+}
+
+bool ModifyApmApplicationConfigRequest::HeadSamplerArgHasBeenSet() const
+{
+    return m_headSamplerArgHasBeenSet;
 }
 
 

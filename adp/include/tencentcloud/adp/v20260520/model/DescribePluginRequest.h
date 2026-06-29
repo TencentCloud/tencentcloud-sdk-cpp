@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/adp/v20260520/model/FieldMask.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取插件id
-                     * @return PluginId 插件id
+                     * 获取<p>插件id</p>
+                     * @return PluginId <p>插件id</p>
                      * 
                      */
                     std::string GetPluginId() const;
 
                     /**
-                     * 设置插件id
-                     * @param _pluginId 插件id
+                     * 设置<p>插件id</p>
+                     * @param _pluginId <p>插件id</p>
                      * 
                      */
                     void SetPluginId(const std::string& _pluginId);
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool PluginIdHasBeenSet() const;
 
                     /**
-                     * 获取当前空间id
-                     * @return SpaceId 当前空间id
+                     * 获取<p>当前空间id</p>
+                     * @return SpaceId <p>当前空间id</p>
                      * 
                      */
                     std::string GetSpaceId() const;
 
                     /**
-                     * 设置当前空间id
-                     * @param _spaceId 当前空间id
+                     * 设置<p>当前空间id</p>
+                     * @param _spaceId <p>当前空间id</p>
                      * 
                      */
                     void SetSpaceId(const std::string& _spaceId);
@@ -84,19 +85,46 @@ namespace TencentCloud
                      */
                     bool SpaceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>获取指定字段</p>
+                     * @return FieldMask <p>获取指定字段</p>
+                     * 
+                     */
+                    FieldMask GetFieldMask() const;
+
+                    /**
+                     * 设置<p>获取指定字段</p>
+                     * @param _fieldMask <p>获取指定字段</p>
+                     * 
+                     */
+                    void SetFieldMask(const FieldMask& _fieldMask);
+
+                    /**
+                     * 判断参数 FieldMask 是否已赋值
+                     * @return FieldMask 是否已赋值
+                     * 
+                     */
+                    bool FieldMaskHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 插件id
+                     * <p>插件id</p>
                      */
                     std::string m_pluginId;
                     bool m_pluginIdHasBeenSet;
 
                     /**
-                     * 当前空间id
+                     * <p>当前空间id</p>
                      */
                     std::string m_spaceId;
                     bool m_spaceIdHasBeenSet;
+
+                    /**
+                     * <p>获取指定字段</p>
+                     */
+                    FieldMask m_fieldMask;
+                    bool m_fieldMaskHasBeenSet;
 
                 };
             }

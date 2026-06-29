@@ -50,6 +50,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/AiReviewTaskProhibitedAsrResult.h
   include/tencentcloud/mps/v20190612/model/AdaptiveDynamicStreamingTemplate.h
   include/tencentcloud/mps/v20190612/model/MediaProcessTaskImageSpriteResult.h
+  include/tencentcloud/mps/v20190612/model/CustomVariable.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskReelOutput.h
   include/tencentcloud/mps/v20190612/model/MediaAiAnalysisDescriptionItem.h
   include/tencentcloud/mps/v20190612/model/SegmentSpecificInfo.h
@@ -592,6 +593,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/DeleteSubtitleEmbedTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskObjectResultInput.h
   include/tencentcloud/mps/v20190612/model/PlaybackInfoReq.h
+  include/tencentcloud/mps/v20190612/model/RecipeItem.h
   include/tencentcloud/mps/v20190612/model/AiReviewTaskTerrorismResult.h
   include/tencentcloud/mps/v20190612/model/DescribeOutput.h
   include/tencentcloud/mps/v20190612/model/LiveStreamAiReviewVoicePornResult.h
@@ -1011,6 +1013,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/SubtitleEmbedTemplateItem.h
   include/tencentcloud/mps/v20190612/model/DescribeHLSPullSourceAddress.h
   include/tencentcloud/mps/v20190612/model/DeleteStreamPackageLinearAssemblyProgramResponse.h
+  include/tencentcloud/mps/v20190612/model/AiPosterSuiteConfig.h
   include/tencentcloud/mps/v20190612/model/AudioEnhanceConfig.h
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskFaceResultItem.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskDescriptionInput.h
@@ -1084,6 +1087,7 @@ set(mps_src
   src/v20190612/model/AiReviewTaskProhibitedAsrResult.cpp
   src/v20190612/model/AdaptiveDynamicStreamingTemplate.cpp
   src/v20190612/model/MediaProcessTaskImageSpriteResult.cpp
+  src/v20190612/model/CustomVariable.cpp
   src/v20190612/model/AiAnalysisTaskReelOutput.cpp
   src/v20190612/model/MediaAiAnalysisDescriptionItem.cpp
   src/v20190612/model/SegmentSpecificInfo.cpp
@@ -1626,6 +1630,7 @@ set(mps_src
   src/v20190612/model/DeleteSubtitleEmbedTemplateRequest.cpp
   src/v20190612/model/AiRecognitionTaskObjectResultInput.cpp
   src/v20190612/model/PlaybackInfoReq.cpp
+  src/v20190612/model/RecipeItem.cpp
   src/v20190612/model/AiReviewTaskTerrorismResult.cpp
   src/v20190612/model/DescribeOutput.cpp
   src/v20190612/model/LiveStreamAiReviewVoicePornResult.cpp
@@ -2045,6 +2050,7 @@ set(mps_src
   src/v20190612/model/SubtitleEmbedTemplateItem.cpp
   src/v20190612/model/DescribeHLSPullSourceAddress.cpp
   src/v20190612/model/DeleteStreamPackageLinearAssemblyProgramResponse.cpp
+  src/v20190612/model/AiPosterSuiteConfig.cpp
   src/v20190612/model/AudioEnhanceConfig.cpp
   src/v20190612/model/AiRecognitionTaskFaceResultItem.cpp
   src/v20190612/model/AiAnalysisTaskDescriptionInput.cpp

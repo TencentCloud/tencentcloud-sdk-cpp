@@ -4990,6 +4990,56 @@ MonitorClient::DescribePrometheusConfigOutcomeCallable MonitorClient::DescribePr
     return prom->get_future();
 }
 
+MonitorClient::DescribePrometheusCreateInstanceQuotaOutcome MonitorClient::DescribePrometheusCreateInstanceQuota(const DescribePrometheusCreateInstanceQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrometheusCreateInstanceQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrometheusCreateInstanceQuotaResponse rsp = DescribePrometheusCreateInstanceQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrometheusCreateInstanceQuotaOutcome(rsp);
+        else
+            return DescribePrometheusCreateInstanceQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrometheusCreateInstanceQuotaOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribePrometheusCreateInstanceQuotaAsync(const DescribePrometheusCreateInstanceQuotaRequest& request, const DescribePrometheusCreateInstanceQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePrometheusCreateInstanceQuotaRequest&;
+    using Resp = DescribePrometheusCreateInstanceQuotaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePrometheusCreateInstanceQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DescribePrometheusCreateInstanceQuotaOutcomeCallable MonitorClient::DescribePrometheusCreateInstanceQuotaCallable(const DescribePrometheusCreateInstanceQuotaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePrometheusCreateInstanceQuotaOutcome>>();
+    DescribePrometheusCreateInstanceQuotaAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DescribePrometheusCreateInstanceQuotaRequest&,
+        DescribePrometheusCreateInstanceQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MonitorClient::DescribePrometheusGlobalConfigOutcome MonitorClient::DescribePrometheusGlobalConfig(const DescribePrometheusGlobalConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePrometheusGlobalConfig");

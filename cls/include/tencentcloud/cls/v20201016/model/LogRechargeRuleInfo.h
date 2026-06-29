@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cls/v20201016/model/JsonExpandInfo.h>
 
 
 namespace TencentCloud
@@ -47,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取导入类型，支持json_log：json格式日志，minimalist_log: 单行全文，fullregex_log: 单行完全正则
-                     * @return RechargeType 导入类型，支持json_log：json格式日志，minimalist_log: 单行全文，fullregex_log: 单行完全正则
+                     * 获取<p>导入类型，支持json_log：json格式日志，minimalist_log: 单行全文，fullregex_log: 单行完全正则</p>
+                     * @return RechargeType <p>导入类型，支持json_log：json格式日志，minimalist_log: 单行全文，fullregex_log: 单行完全正则</p>
                      * 
                      */
                     std::string GetRechargeType() const;
 
                     /**
-                     * 设置导入类型，支持json_log：json格式日志，minimalist_log: 单行全文，fullregex_log: 单行完全正则
-                     * @param _rechargeType 导入类型，支持json_log：json格式日志，minimalist_log: 单行全文，fullregex_log: 单行完全正则
+                     * 设置<p>导入类型，支持json_log：json格式日志，minimalist_log: 单行全文，fullregex_log: 单行完全正则</p>
+                     * @param _rechargeType <p>导入类型，支持json_log：json格式日志，minimalist_log: 单行全文，fullregex_log: 单行完全正则</p>
                      * 
                      */
                     void SetRechargeType(const std::string& _rechargeType);
@@ -68,15 +69,15 @@ namespace TencentCloud
                     bool RechargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取解析编码格式，0: UTF-8（默认值），1: GBK
-                     * @return EncodingFormat 解析编码格式，0: UTF-8（默认值），1: GBK
+                     * 获取<p>解析编码格式，0: UTF-8（默认值），1: GBK</p>
+                     * @return EncodingFormat <p>解析编码格式，0: UTF-8（默认值），1: GBK</p>
                      * 
                      */
                     uint64_t GetEncodingFormat() const;
 
                     /**
-                     * 设置解析编码格式，0: UTF-8（默认值），1: GBK
-                     * @param _encodingFormat 解析编码格式，0: UTF-8（默认值），1: GBK
+                     * 设置<p>解析编码格式，0: UTF-8（默认值），1: GBK</p>
+                     * @param _encodingFormat <p>解析编码格式，0: UTF-8（默认值），1: GBK</p>
                      * 
                      */
                     void SetEncodingFormat(const uint64_t& _encodingFormat);
@@ -89,15 +90,15 @@ namespace TencentCloud
                     bool EncodingFormatHasBeenSet() const;
 
                     /**
-                     * 获取使用默认时间状态。true：开启后将使用系统当前时间或 Kafka 消息时间戳作为日志时间戳；false：关闭将使用日志中的时间字段作为日志时间戳。 默认：true
-                     * @return DefaultTimeSwitch 使用默认时间状态。true：开启后将使用系统当前时间或 Kafka 消息时间戳作为日志时间戳；false：关闭将使用日志中的时间字段作为日志时间戳。 默认：true
+                     * 获取<p>使用默认时间状态。true：开启后将使用系统当前时间或 Kafka 消息时间戳作为日志时间戳；false：关闭将使用日志中的时间字段作为日志时间戳。 默认：true</p>
+                     * @return DefaultTimeSwitch <p>使用默认时间状态。true：开启后将使用系统当前时间或 Kafka 消息时间戳作为日志时间戳；false：关闭将使用日志中的时间字段作为日志时间戳。 默认：true</p>
                      * 
                      */
                     bool GetDefaultTimeSwitch() const;
 
                     /**
-                     * 设置使用默认时间状态。true：开启后将使用系统当前时间或 Kafka 消息时间戳作为日志时间戳；false：关闭将使用日志中的时间字段作为日志时间戳。 默认：true
-                     * @param _defaultTimeSwitch 使用默认时间状态。true：开启后将使用系统当前时间或 Kafka 消息时间戳作为日志时间戳；false：关闭将使用日志中的时间字段作为日志时间戳。 默认：true
+                     * 设置<p>使用默认时间状态。true：开启后将使用系统当前时间或 Kafka 消息时间戳作为日志时间戳；false：关闭将使用日志中的时间字段作为日志时间戳。 默认：true</p>
+                     * @param _defaultTimeSwitch <p>使用默认时间状态。true：开启后将使用系统当前时间或 Kafka 消息时间戳作为日志时间戳；false：关闭将使用日志中的时间字段作为日志时间戳。 默认：true</p>
                      * 
                      */
                     void SetDefaultTimeSwitch(const bool& _defaultTimeSwitch);
@@ -110,15 +111,15 @@ namespace TencentCloud
                     bool DefaultTimeSwitchHasBeenSet() const;
 
                     /**
-                     * 获取整条日志匹配规则，只有RechargeType为fullregex_log时有效
-                     * @return LogRegex 整条日志匹配规则，只有RechargeType为fullregex_log时有效
+                     * 获取<p>整条日志匹配规则，只有RechargeType为fullregex_log时有效</p>
+                     * @return LogRegex <p>整条日志匹配规则，只有RechargeType为fullregex_log时有效</p>
                      * 
                      */
                     std::string GetLogRegex() const;
 
                     /**
-                     * 设置整条日志匹配规则，只有RechargeType为fullregex_log时有效
-                     * @param _logRegex 整条日志匹配规则，只有RechargeType为fullregex_log时有效
+                     * 设置<p>整条日志匹配规则，只有RechargeType为fullregex_log时有效</p>
+                     * @param _logRegex <p>整条日志匹配规则，只有RechargeType为fullregex_log时有效</p>
                      * 
                      */
                     void SetLogRegex(const std::string& _logRegex);
@@ -131,15 +132,15 @@ namespace TencentCloud
                     bool LogRegexHasBeenSet() const;
 
                     /**
-                     * 获取解析失败日志是否上传，true表示上传，false表示不上传
-                     * @return UnMatchLogSwitch 解析失败日志是否上传，true表示上传，false表示不上传
+                     * 获取<p>解析失败日志是否上传，true表示上传，false表示不上传</p>
+                     * @return UnMatchLogSwitch <p>解析失败日志是否上传，true表示上传，false表示不上传</p>
                      * 
                      */
                     bool GetUnMatchLogSwitch() const;
 
                     /**
-                     * 设置解析失败日志是否上传，true表示上传，false表示不上传
-                     * @param _unMatchLogSwitch 解析失败日志是否上传，true表示上传，false表示不上传
+                     * 设置<p>解析失败日志是否上传，true表示上传，false表示不上传</p>
+                     * @param _unMatchLogSwitch <p>解析失败日志是否上传，true表示上传，false表示不上传</p>
                      * 
                      */
                     void SetUnMatchLogSwitch(const bool& _unMatchLogSwitch);
@@ -152,15 +153,15 @@ namespace TencentCloud
                     bool UnMatchLogSwitchHasBeenSet() const;
 
                     /**
-                     * 获取解析失败日志的键名称
-                     * @return UnMatchLogKey 解析失败日志的键名称
+                     * 获取<p>解析失败日志的键名称</p>
+                     * @return UnMatchLogKey <p>解析失败日志的键名称</p>
                      * 
                      */
                     std::string GetUnMatchLogKey() const;
 
                     /**
-                     * 设置解析失败日志的键名称
-                     * @param _unMatchLogKey 解析失败日志的键名称
+                     * 设置<p>解析失败日志的键名称</p>
+                     * @param _unMatchLogKey <p>解析失败日志的键名称</p>
                      * 
                      */
                     void SetUnMatchLogKey(const std::string& _unMatchLogKey);
@@ -173,15 +174,15 @@ namespace TencentCloud
                     bool UnMatchLogKeyHasBeenSet() const;
 
                     /**
-                     * 获取解析失败日志时间来源，0: 系统当前时间，1: Kafka消息时间戳
-                     * @return UnMatchLogTimeSrc 解析失败日志时间来源，0: 系统当前时间，1: Kafka消息时间戳
+                     * 获取<p>解析失败日志时间来源，0: 系统当前时间，1: Kafka消息时间戳</p>
+                     * @return UnMatchLogTimeSrc <p>解析失败日志时间来源，0: 系统当前时间，1: Kafka消息时间戳</p>
                      * 
                      */
                     uint64_t GetUnMatchLogTimeSrc() const;
 
                     /**
-                     * 设置解析失败日志时间来源，0: 系统当前时间，1: Kafka消息时间戳
-                     * @param _unMatchLogTimeSrc 解析失败日志时间来源，0: 系统当前时间，1: Kafka消息时间戳
+                     * 设置<p>解析失败日志时间来源，0: 系统当前时间，1: Kafka消息时间戳</p>
+                     * @param _unMatchLogTimeSrc <p>解析失败日志时间来源，0: 系统当前时间，1: Kafka消息时间戳</p>
                      * 
                      */
                     void SetUnMatchLogTimeSrc(const uint64_t& _unMatchLogTimeSrc);
@@ -194,15 +195,15 @@ namespace TencentCloud
                     bool UnMatchLogTimeSrcHasBeenSet() const;
 
                     /**
-                     * 获取默认时间来源，0: 系统当前时间，1: Kafka消息时间戳
-                     * @return DefaultTimeSrc 默认时间来源，0: 系统当前时间，1: Kafka消息时间戳
+                     * 获取<p>默认时间来源，0: 系统当前时间，1: Kafka消息时间戳</p>
+                     * @return DefaultTimeSrc <p>默认时间来源，0: 系统当前时间，1: Kafka消息时间戳</p>
                      * 
                      */
                     uint64_t GetDefaultTimeSrc() const;
 
                     /**
-                     * 设置默认时间来源，0: 系统当前时间，1: Kafka消息时间戳
-                     * @param _defaultTimeSrc 默认时间来源，0: 系统当前时间，1: Kafka消息时间戳
+                     * 设置<p>默认时间来源，0: 系统当前时间，1: Kafka消息时间戳</p>
+                     * @param _defaultTimeSrc <p>默认时间来源，0: 系统当前时间，1: Kafka消息时间戳</p>
                      * 
                      */
                     void SetDefaultTimeSrc(const uint64_t& _defaultTimeSrc);
@@ -215,23 +216,15 @@ namespace TencentCloud
                     bool DefaultTimeSrcHasBeenSet() const;
 
                     /**
-                     * 获取时间字段，日志中代表时间的字段名。
-
-- 当DefaultTimeSwitch为false，且RechargeType数据提取模式为 `json_log` JSON-文件日志 或 `fullregex_log` 单行完全正则-文件日志时， TimeKey不能为空。
-                     * @return TimeKey 时间字段，日志中代表时间的字段名。
-
-- 当DefaultTimeSwitch为false，且RechargeType数据提取模式为 `json_log` JSON-文件日志 或 `fullregex_log` 单行完全正则-文件日志时， TimeKey不能为空。
+                     * 获取<p>时间字段，日志中代表时间的字段名。</p><ul><li>当DefaultTimeSwitch为false，且RechargeType数据提取模式为 <code>json_log</code> JSON-文件日志 或 <code>fullregex_log</code> 单行完全正则-文件日志时， TimeKey不能为空。</li></ul>
+                     * @return TimeKey <p>时间字段，日志中代表时间的字段名。</p><ul><li>当DefaultTimeSwitch为false，且RechargeType数据提取模式为 <code>json_log</code> JSON-文件日志 或 <code>fullregex_log</code> 单行完全正则-文件日志时， TimeKey不能为空。</li></ul>
                      * 
                      */
                     std::string GetTimeKey() const;
 
                     /**
-                     * 设置时间字段，日志中代表时间的字段名。
-
-- 当DefaultTimeSwitch为false，且RechargeType数据提取模式为 `json_log` JSON-文件日志 或 `fullregex_log` 单行完全正则-文件日志时， TimeKey不能为空。
-                     * @param _timeKey 时间字段，日志中代表时间的字段名。
-
-- 当DefaultTimeSwitch为false，且RechargeType数据提取模式为 `json_log` JSON-文件日志 或 `fullregex_log` 单行完全正则-文件日志时， TimeKey不能为空。
+                     * 设置<p>时间字段，日志中代表时间的字段名。</p><ul><li>当DefaultTimeSwitch为false，且RechargeType数据提取模式为 <code>json_log</code> JSON-文件日志 或 <code>fullregex_log</code> 单行完全正则-文件日志时， TimeKey不能为空。</li></ul>
+                     * @param _timeKey <p>时间字段，日志中代表时间的字段名。</p><ul><li>当DefaultTimeSwitch为false，且RechargeType数据提取模式为 <code>json_log</code> JSON-文件日志 或 <code>fullregex_log</code> 单行完全正则-文件日志时， TimeKey不能为空。</li></ul>
                      * 
                      */
                     void SetTimeKey(const std::string& _timeKey);
@@ -244,31 +237,15 @@ namespace TencentCloud
                     bool TimeKeyHasBeenSet() const;
 
                     /**
-                     * 获取时间提取正则表达式。
-- 当DefaultTimeSwitch为false，且RechargeType数据提取模式为 `minimalist_log` 单行全文-文件日志时， TimeRegex不能为空。
-- 仅需输入日志中代表时间的字段的正则表达式即可；若匹配到多个字段，将使用第一个。
-   例：日志原文为：message with time 2022-08-08 14:20:20，则您可以设置提取时间正则为\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d
-
-                     * @return TimeRegex 时间提取正则表达式。
-- 当DefaultTimeSwitch为false，且RechargeType数据提取模式为 `minimalist_log` 单行全文-文件日志时， TimeRegex不能为空。
-- 仅需输入日志中代表时间的字段的正则表达式即可；若匹配到多个字段，将使用第一个。
-   例：日志原文为：message with time 2022-08-08 14:20:20，则您可以设置提取时间正则为\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d
-
+                     * 获取<p>时间提取正则表达式。</p><ul><li>当DefaultTimeSwitch为false，且RechargeType数据提取模式为 <code>minimalist_log</code> 单行全文-文件日志时， TimeRegex不能为空。</li><li>仅需输入日志中代表时间的字段的正则表达式即可；若匹配到多个字段，将使用第一个。<br> 例：日志原文为：message with time 2022-08-08 14:20:20，则您可以设置提取时间正则为\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d</li></ul>
+                     * @return TimeRegex <p>时间提取正则表达式。</p><ul><li>当DefaultTimeSwitch为false，且RechargeType数据提取模式为 <code>minimalist_log</code> 单行全文-文件日志时， TimeRegex不能为空。</li><li>仅需输入日志中代表时间的字段的正则表达式即可；若匹配到多个字段，将使用第一个。<br> 例：日志原文为：message with time 2022-08-08 14:20:20，则您可以设置提取时间正则为\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d</li></ul>
                      * 
                      */
                     std::string GetTimeRegex() const;
 
                     /**
-                     * 设置时间提取正则表达式。
-- 当DefaultTimeSwitch为false，且RechargeType数据提取模式为 `minimalist_log` 单行全文-文件日志时， TimeRegex不能为空。
-- 仅需输入日志中代表时间的字段的正则表达式即可；若匹配到多个字段，将使用第一个。
-   例：日志原文为：message with time 2022-08-08 14:20:20，则您可以设置提取时间正则为\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d
-
-                     * @param _timeRegex 时间提取正则表达式。
-- 当DefaultTimeSwitch为false，且RechargeType数据提取模式为 `minimalist_log` 单行全文-文件日志时， TimeRegex不能为空。
-- 仅需输入日志中代表时间的字段的正则表达式即可；若匹配到多个字段，将使用第一个。
-   例：日志原文为：message with time 2022-08-08 14:20:20，则您可以设置提取时间正则为\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d
-
+                     * 设置<p>时间提取正则表达式。</p><ul><li>当DefaultTimeSwitch为false，且RechargeType数据提取模式为 <code>minimalist_log</code> 单行全文-文件日志时， TimeRegex不能为空。</li><li>仅需输入日志中代表时间的字段的正则表达式即可；若匹配到多个字段，将使用第一个。<br> 例：日志原文为：message with time 2022-08-08 14:20:20，则您可以设置提取时间正则为\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d</li></ul>
+                     * @param _timeRegex <p>时间提取正则表达式。</p><ul><li>当DefaultTimeSwitch为false，且RechargeType数据提取模式为 <code>minimalist_log</code> 单行全文-文件日志时， TimeRegex不能为空。</li><li>仅需输入日志中代表时间的字段的正则表达式即可；若匹配到多个字段，将使用第一个。<br> 例：日志原文为：message with time 2022-08-08 14:20:20，则您可以设置提取时间正则为\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d</li></ul>
                      * 
                      */
                     void SetTimeRegex(const std::string& _timeRegex);
@@ -281,19 +258,15 @@ namespace TencentCloud
                     bool TimeRegexHasBeenSet() const;
 
                     /**
-                     * 获取时间字段格式。
-- 当DefaultTimeSwitch为false时， TimeFormat不能为空。
-                     * @return TimeFormat 时间字段格式。
-- 当DefaultTimeSwitch为false时， TimeFormat不能为空。
+                     * 获取<p>时间字段格式。</p><ul><li>当DefaultTimeSwitch为false时， TimeFormat不能为空。</li></ul>
+                     * @return TimeFormat <p>时间字段格式。</p><ul><li>当DefaultTimeSwitch为false时， TimeFormat不能为空。</li></ul>
                      * 
                      */
                     std::string GetTimeFormat() const;
 
                     /**
-                     * 设置时间字段格式。
-- 当DefaultTimeSwitch为false时， TimeFormat不能为空。
-                     * @param _timeFormat 时间字段格式。
-- 当DefaultTimeSwitch为false时， TimeFormat不能为空。
+                     * 设置<p>时间字段格式。</p><ul><li>当DefaultTimeSwitch为false时， TimeFormat不能为空。</li></ul>
+                     * @param _timeFormat <p>时间字段格式。</p><ul><li>当DefaultTimeSwitch为false时， TimeFormat不能为空。</li></ul>
                      * 
                      */
                     void SetTimeFormat(const std::string& _timeFormat);
@@ -306,339 +279,15 @@ namespace TencentCloud
                     bool TimeFormatHasBeenSet() const;
 
                     /**
-                     * 获取时间字段时区。
-- 当DefaultTimeSwitch为false时， TimeZone不能为空。
-- 时区格式规则
-​前缀​：使用 GMT 或 UTC 作为时区基准
-​偏移量​：
-    - `-` 表示西时区（比基准时间晚）
-    - `+` 表示东时区（比基准时间早）
-    -  格式为 ±HH:MM（小时:分钟）
-
-- 当前支持：
-```
-"GMT-12:00" 
-"GMT-11:00" 
-"GMT-10:00" 
-"GMT-09:30" 
-"GMT-09:00" 
-"GMT-08:00" 
-"GMT-07:00" 
-"GMT-06:00" 
-"GMT-05:00" 
-"GMT-04:00" 
-"GMT-03:30" 
-"GMT-03:00" 
-"GMT-02:00" 
-"GMT-01:00" 
-"GMT+00:00"
-"GMT+01:00"
-"GMT+02:00"
-"GMT+03:30"
-"GMT+04:00"
-"GMT+04:30"
-"GMT+05:00"
-"GMT+05:30"
-"GMT+05:45"
-"GMT+06:00"
-"GMT+06:30"
-"GMT+07:00"
-"GMT+08:00"
-"GMT+09:00"
-"GMT+09:30"
-"GMT+10:00"
-"GMT+10:30"
-"GMT+11:00"
-"GMT+11:30"
-"GMT+12:00"
-"GMT+12:45"
-"GMT+13:00"
-"GMT+14:00"
-"UTC-11:00"
-"UTC-10:00"
-"UTC-09:00"
-"UTC-08:00"
-"UTC-12:00"
-"UTC-07:00"
-"UTC-06:00"
-"UTC-05:00"
-"UTC-04:30"
-"UTC-04:00"
-"UTC-03:30"
-"UTC-03:00"
-"UTC-02:00"
-"UTC-01:00"
-"UTC+00:00"
-"UTC+01:00"
-"UTC+02:00"
-"UTC+03:00"
-"UTC+03:30"
-"UTC+04:00"
-"UTC+04:30"
-"UTC+05:00"
-"UTC+05:45"
-"UTC+06:00"
-"UTC+06:30"
-"UTC+07:00"
-"UTC+08:00"
-"UTC+09:00"
-"UTC+09:30"
-"UTC+10:00"
-"UTC+11:00"
-"UTC+12:00"
-"UTC+13:00"
-```
-                     * @return TimeZone 时间字段时区。
-- 当DefaultTimeSwitch为false时， TimeZone不能为空。
-- 时区格式规则
-​前缀​：使用 GMT 或 UTC 作为时区基准
-​偏移量​：
-    - `-` 表示西时区（比基准时间晚）
-    - `+` 表示东时区（比基准时间早）
-    -  格式为 ±HH:MM（小时:分钟）
-
-- 当前支持：
-```
-"GMT-12:00" 
-"GMT-11:00" 
-"GMT-10:00" 
-"GMT-09:30" 
-"GMT-09:00" 
-"GMT-08:00" 
-"GMT-07:00" 
-"GMT-06:00" 
-"GMT-05:00" 
-"GMT-04:00" 
-"GMT-03:30" 
-"GMT-03:00" 
-"GMT-02:00" 
-"GMT-01:00" 
-"GMT+00:00"
-"GMT+01:00"
-"GMT+02:00"
-"GMT+03:30"
-"GMT+04:00"
-"GMT+04:30"
-"GMT+05:00"
-"GMT+05:30"
-"GMT+05:45"
-"GMT+06:00"
-"GMT+06:30"
-"GMT+07:00"
-"GMT+08:00"
-"GMT+09:00"
-"GMT+09:30"
-"GMT+10:00"
-"GMT+10:30"
-"GMT+11:00"
-"GMT+11:30"
-"GMT+12:00"
-"GMT+12:45"
-"GMT+13:00"
-"GMT+14:00"
-"UTC-11:00"
-"UTC-10:00"
-"UTC-09:00"
-"UTC-08:00"
-"UTC-12:00"
-"UTC-07:00"
-"UTC-06:00"
-"UTC-05:00"
-"UTC-04:30"
-"UTC-04:00"
-"UTC-03:30"
-"UTC-03:00"
-"UTC-02:00"
-"UTC-01:00"
-"UTC+00:00"
-"UTC+01:00"
-"UTC+02:00"
-"UTC+03:00"
-"UTC+03:30"
-"UTC+04:00"
-"UTC+04:30"
-"UTC+05:00"
-"UTC+05:45"
-"UTC+06:00"
-"UTC+06:30"
-"UTC+07:00"
-"UTC+08:00"
-"UTC+09:00"
-"UTC+09:30"
-"UTC+10:00"
-"UTC+11:00"
-"UTC+12:00"
-"UTC+13:00"
-```
+                     * 获取<p>时间字段时区。</p><ul><li><p>当DefaultTimeSwitch为false时， TimeZone不能为空。</p></li><li><p>时区格式规则<br>前缀：使用 GMT 或 UTC 作为时区基准<br>偏移量：</p><ul><li><code>-</code> 表示西时区（比基准时间晚）</li><li><code>+</code> 表示东时区（比基准时间早）</li><li>格式为 ±HH:MM（小时:分钟）</li></ul></li><li><p>当前支持：<br><pre><code>&quot;GMT-12:00&quot; &quot;GMT-11:00&quot; &quot;GMT-10:00&quot; &quot;GMT-09:30&quot; &quot;GMT-09:00&quot; &quot;GMT-08:00&quot; &quot;GMT-07:00&quot; &quot;GMT-06:00&quot; &quot;GMT-05:00&quot; &quot;GMT-04:00&quot; &quot;GMT-03:30&quot; &quot;GMT-03:00&quot; &quot;GMT-02:00&quot; &quot;GMT-01:00&quot; &quot;GMT+00:00&quot;&quot;GMT+01:00&quot;&quot;GMT+02:00&quot;&quot;GMT+03:30&quot;&quot;GMT+04:00&quot;&quot;GMT+04:30&quot;&quot;GMT+05:00&quot;&quot;GMT+05:30&quot;&quot;GMT+05:45&quot;&quot;GMT+06:00&quot;&quot;GMT+06:30&quot;&quot;GMT+07:00&quot;&quot;GMT+08:00&quot;&quot;GMT+09:00&quot;&quot;GMT+09:30&quot;&quot;GMT+10:00&quot;&quot;GMT+10:30&quot;&quot;GMT+11:00&quot;&quot;GMT+11:30&quot;&quot;GMT+12:00&quot;&quot;GMT+12:45&quot;&quot;GMT+13:00&quot;&quot;GMT+14:00&quot;&quot;UTC-11:00&quot;&quot;UTC-10:00&quot;&quot;UTC-09:00&quot;&quot;UTC-08:00&quot;&quot;UTC-12:00&quot;&quot;UTC-07:00&quot;&quot;UTC-06:00&quot;&quot;UTC-05:00&quot;&quot;UTC-04:30&quot;&quot;UTC-04:00&quot;&quot;UTC-03:30&quot;&quot;UTC-03:00&quot;&quot;UTC-02:00&quot;&quot;UTC-01:00&quot;&quot;UTC+00:00&quot;&quot;UTC+01:00&quot;&quot;UTC+02:00&quot;&quot;UTC+03:00&quot;&quot;UTC+03:30&quot;&quot;UTC+04:00&quot;&quot;UTC+04:30&quot;&quot;UTC+05:00&quot;&quot;UTC+05:45&quot;&quot;UTC+06:00&quot;&quot;UTC+06:30&quot;&quot;UTC+07:00&quot;&quot;UTC+08:00&quot;&quot;UTC+09:00&quot;&quot;UTC+09:30&quot;&quot;UTC+10:00&quot;&quot;UTC+11:00&quot;&quot;UTC+12:00&quot;&quot;UTC+13:00&quot;</code></pre></p></li></ul>
+                     * @return TimeZone <p>时间字段时区。</p><ul><li><p>当DefaultTimeSwitch为false时， TimeZone不能为空。</p></li><li><p>时区格式规则<br>前缀：使用 GMT 或 UTC 作为时区基准<br>偏移量：</p><ul><li><code>-</code> 表示西时区（比基准时间晚）</li><li><code>+</code> 表示东时区（比基准时间早）</li><li>格式为 ±HH:MM（小时:分钟）</li></ul></li><li><p>当前支持：<br><pre><code>&quot;GMT-12:00&quot; &quot;GMT-11:00&quot; &quot;GMT-10:00&quot; &quot;GMT-09:30&quot; &quot;GMT-09:00&quot; &quot;GMT-08:00&quot; &quot;GMT-07:00&quot; &quot;GMT-06:00&quot; &quot;GMT-05:00&quot; &quot;GMT-04:00&quot; &quot;GMT-03:30&quot; &quot;GMT-03:00&quot; &quot;GMT-02:00&quot; &quot;GMT-01:00&quot; &quot;GMT+00:00&quot;&quot;GMT+01:00&quot;&quot;GMT+02:00&quot;&quot;GMT+03:30&quot;&quot;GMT+04:00&quot;&quot;GMT+04:30&quot;&quot;GMT+05:00&quot;&quot;GMT+05:30&quot;&quot;GMT+05:45&quot;&quot;GMT+06:00&quot;&quot;GMT+06:30&quot;&quot;GMT+07:00&quot;&quot;GMT+08:00&quot;&quot;GMT+09:00&quot;&quot;GMT+09:30&quot;&quot;GMT+10:00&quot;&quot;GMT+10:30&quot;&quot;GMT+11:00&quot;&quot;GMT+11:30&quot;&quot;GMT+12:00&quot;&quot;GMT+12:45&quot;&quot;GMT+13:00&quot;&quot;GMT+14:00&quot;&quot;UTC-11:00&quot;&quot;UTC-10:00&quot;&quot;UTC-09:00&quot;&quot;UTC-08:00&quot;&quot;UTC-12:00&quot;&quot;UTC-07:00&quot;&quot;UTC-06:00&quot;&quot;UTC-05:00&quot;&quot;UTC-04:30&quot;&quot;UTC-04:00&quot;&quot;UTC-03:30&quot;&quot;UTC-03:00&quot;&quot;UTC-02:00&quot;&quot;UTC-01:00&quot;&quot;UTC+00:00&quot;&quot;UTC+01:00&quot;&quot;UTC+02:00&quot;&quot;UTC+03:00&quot;&quot;UTC+03:30&quot;&quot;UTC+04:00&quot;&quot;UTC+04:30&quot;&quot;UTC+05:00&quot;&quot;UTC+05:45&quot;&quot;UTC+06:00&quot;&quot;UTC+06:30&quot;&quot;UTC+07:00&quot;&quot;UTC+08:00&quot;&quot;UTC+09:00&quot;&quot;UTC+09:30&quot;&quot;UTC+10:00&quot;&quot;UTC+11:00&quot;&quot;UTC+12:00&quot;&quot;UTC+13:00&quot;</code></pre></p></li></ul>
                      * 
                      */
                     std::string GetTimeZone() const;
 
                     /**
-                     * 设置时间字段时区。
-- 当DefaultTimeSwitch为false时， TimeZone不能为空。
-- 时区格式规则
-​前缀​：使用 GMT 或 UTC 作为时区基准
-​偏移量​：
-    - `-` 表示西时区（比基准时间晚）
-    - `+` 表示东时区（比基准时间早）
-    -  格式为 ±HH:MM（小时:分钟）
-
-- 当前支持：
-```
-"GMT-12:00" 
-"GMT-11:00" 
-"GMT-10:00" 
-"GMT-09:30" 
-"GMT-09:00" 
-"GMT-08:00" 
-"GMT-07:00" 
-"GMT-06:00" 
-"GMT-05:00" 
-"GMT-04:00" 
-"GMT-03:30" 
-"GMT-03:00" 
-"GMT-02:00" 
-"GMT-01:00" 
-"GMT+00:00"
-"GMT+01:00"
-"GMT+02:00"
-"GMT+03:30"
-"GMT+04:00"
-"GMT+04:30"
-"GMT+05:00"
-"GMT+05:30"
-"GMT+05:45"
-"GMT+06:00"
-"GMT+06:30"
-"GMT+07:00"
-"GMT+08:00"
-"GMT+09:00"
-"GMT+09:30"
-"GMT+10:00"
-"GMT+10:30"
-"GMT+11:00"
-"GMT+11:30"
-"GMT+12:00"
-"GMT+12:45"
-"GMT+13:00"
-"GMT+14:00"
-"UTC-11:00"
-"UTC-10:00"
-"UTC-09:00"
-"UTC-08:00"
-"UTC-12:00"
-"UTC-07:00"
-"UTC-06:00"
-"UTC-05:00"
-"UTC-04:30"
-"UTC-04:00"
-"UTC-03:30"
-"UTC-03:00"
-"UTC-02:00"
-"UTC-01:00"
-"UTC+00:00"
-"UTC+01:00"
-"UTC+02:00"
-"UTC+03:00"
-"UTC+03:30"
-"UTC+04:00"
-"UTC+04:30"
-"UTC+05:00"
-"UTC+05:45"
-"UTC+06:00"
-"UTC+06:30"
-"UTC+07:00"
-"UTC+08:00"
-"UTC+09:00"
-"UTC+09:30"
-"UTC+10:00"
-"UTC+11:00"
-"UTC+12:00"
-"UTC+13:00"
-```
-                     * @param _timeZone 时间字段时区。
-- 当DefaultTimeSwitch为false时， TimeZone不能为空。
-- 时区格式规则
-​前缀​：使用 GMT 或 UTC 作为时区基准
-​偏移量​：
-    - `-` 表示西时区（比基准时间晚）
-    - `+` 表示东时区（比基准时间早）
-    -  格式为 ±HH:MM（小时:分钟）
-
-- 当前支持：
-```
-"GMT-12:00" 
-"GMT-11:00" 
-"GMT-10:00" 
-"GMT-09:30" 
-"GMT-09:00" 
-"GMT-08:00" 
-"GMT-07:00" 
-"GMT-06:00" 
-"GMT-05:00" 
-"GMT-04:00" 
-"GMT-03:30" 
-"GMT-03:00" 
-"GMT-02:00" 
-"GMT-01:00" 
-"GMT+00:00"
-"GMT+01:00"
-"GMT+02:00"
-"GMT+03:30"
-"GMT+04:00"
-"GMT+04:30"
-"GMT+05:00"
-"GMT+05:30"
-"GMT+05:45"
-"GMT+06:00"
-"GMT+06:30"
-"GMT+07:00"
-"GMT+08:00"
-"GMT+09:00"
-"GMT+09:30"
-"GMT+10:00"
-"GMT+10:30"
-"GMT+11:00"
-"GMT+11:30"
-"GMT+12:00"
-"GMT+12:45"
-"GMT+13:00"
-"GMT+14:00"
-"UTC-11:00"
-"UTC-10:00"
-"UTC-09:00"
-"UTC-08:00"
-"UTC-12:00"
-"UTC-07:00"
-"UTC-06:00"
-"UTC-05:00"
-"UTC-04:30"
-"UTC-04:00"
-"UTC-03:30"
-"UTC-03:00"
-"UTC-02:00"
-"UTC-01:00"
-"UTC+00:00"
-"UTC+01:00"
-"UTC+02:00"
-"UTC+03:00"
-"UTC+03:30"
-"UTC+04:00"
-"UTC+04:30"
-"UTC+05:00"
-"UTC+05:45"
-"UTC+06:00"
-"UTC+06:30"
-"UTC+07:00"
-"UTC+08:00"
-"UTC+09:00"
-"UTC+09:30"
-"UTC+10:00"
-"UTC+11:00"
-"UTC+12:00"
-"UTC+13:00"
-```
+                     * 设置<p>时间字段时区。</p><ul><li><p>当DefaultTimeSwitch为false时， TimeZone不能为空。</p></li><li><p>时区格式规则<br>前缀：使用 GMT 或 UTC 作为时区基准<br>偏移量：</p><ul><li><code>-</code> 表示西时区（比基准时间晚）</li><li><code>+</code> 表示东时区（比基准时间早）</li><li>格式为 ±HH:MM（小时:分钟）</li></ul></li><li><p>当前支持：<br><pre><code>&quot;GMT-12:00&quot; &quot;GMT-11:00&quot; &quot;GMT-10:00&quot; &quot;GMT-09:30&quot; &quot;GMT-09:00&quot; &quot;GMT-08:00&quot; &quot;GMT-07:00&quot; &quot;GMT-06:00&quot; &quot;GMT-05:00&quot; &quot;GMT-04:00&quot; &quot;GMT-03:30&quot; &quot;GMT-03:00&quot; &quot;GMT-02:00&quot; &quot;GMT-01:00&quot; &quot;GMT+00:00&quot;&quot;GMT+01:00&quot;&quot;GMT+02:00&quot;&quot;GMT+03:30&quot;&quot;GMT+04:00&quot;&quot;GMT+04:30&quot;&quot;GMT+05:00&quot;&quot;GMT+05:30&quot;&quot;GMT+05:45&quot;&quot;GMT+06:00&quot;&quot;GMT+06:30&quot;&quot;GMT+07:00&quot;&quot;GMT+08:00&quot;&quot;GMT+09:00&quot;&quot;GMT+09:30&quot;&quot;GMT+10:00&quot;&quot;GMT+10:30&quot;&quot;GMT+11:00&quot;&quot;GMT+11:30&quot;&quot;GMT+12:00&quot;&quot;GMT+12:45&quot;&quot;GMT+13:00&quot;&quot;GMT+14:00&quot;&quot;UTC-11:00&quot;&quot;UTC-10:00&quot;&quot;UTC-09:00&quot;&quot;UTC-08:00&quot;&quot;UTC-12:00&quot;&quot;UTC-07:00&quot;&quot;UTC-06:00&quot;&quot;UTC-05:00&quot;&quot;UTC-04:30&quot;&quot;UTC-04:00&quot;&quot;UTC-03:30&quot;&quot;UTC-03:00&quot;&quot;UTC-02:00&quot;&quot;UTC-01:00&quot;&quot;UTC+00:00&quot;&quot;UTC+01:00&quot;&quot;UTC+02:00&quot;&quot;UTC+03:00&quot;&quot;UTC+03:30&quot;&quot;UTC+04:00&quot;&quot;UTC+04:30&quot;&quot;UTC+05:00&quot;&quot;UTC+05:45&quot;&quot;UTC+06:00&quot;&quot;UTC+06:30&quot;&quot;UTC+07:00&quot;&quot;UTC+08:00&quot;&quot;UTC+09:00&quot;&quot;UTC+09:30&quot;&quot;UTC+10:00&quot;&quot;UTC+11:00&quot;&quot;UTC+12:00&quot;&quot;UTC+13:00&quot;</code></pre></p></li></ul>
+                     * @param _timeZone <p>时间字段时区。</p><ul><li><p>当DefaultTimeSwitch为false时， TimeZone不能为空。</p></li><li><p>时区格式规则<br>前缀：使用 GMT 或 UTC 作为时区基准<br>偏移量：</p><ul><li><code>-</code> 表示西时区（比基准时间晚）</li><li><code>+</code> 表示东时区（比基准时间早）</li><li>格式为 ±HH:MM（小时:分钟）</li></ul></li><li><p>当前支持：<br><pre><code>&quot;GMT-12:00&quot; &quot;GMT-11:00&quot; &quot;GMT-10:00&quot; &quot;GMT-09:30&quot; &quot;GMT-09:00&quot; &quot;GMT-08:00&quot; &quot;GMT-07:00&quot; &quot;GMT-06:00&quot; &quot;GMT-05:00&quot; &quot;GMT-04:00&quot; &quot;GMT-03:30&quot; &quot;GMT-03:00&quot; &quot;GMT-02:00&quot; &quot;GMT-01:00&quot; &quot;GMT+00:00&quot;&quot;GMT+01:00&quot;&quot;GMT+02:00&quot;&quot;GMT+03:30&quot;&quot;GMT+04:00&quot;&quot;GMT+04:30&quot;&quot;GMT+05:00&quot;&quot;GMT+05:30&quot;&quot;GMT+05:45&quot;&quot;GMT+06:00&quot;&quot;GMT+06:30&quot;&quot;GMT+07:00&quot;&quot;GMT+08:00&quot;&quot;GMT+09:00&quot;&quot;GMT+09:30&quot;&quot;GMT+10:00&quot;&quot;GMT+10:30&quot;&quot;GMT+11:00&quot;&quot;GMT+11:30&quot;&quot;GMT+12:00&quot;&quot;GMT+12:45&quot;&quot;GMT+13:00&quot;&quot;GMT+14:00&quot;&quot;UTC-11:00&quot;&quot;UTC-10:00&quot;&quot;UTC-09:00&quot;&quot;UTC-08:00&quot;&quot;UTC-12:00&quot;&quot;UTC-07:00&quot;&quot;UTC-06:00&quot;&quot;UTC-05:00&quot;&quot;UTC-04:30&quot;&quot;UTC-04:00&quot;&quot;UTC-03:30&quot;&quot;UTC-03:00&quot;&quot;UTC-02:00&quot;&quot;UTC-01:00&quot;&quot;UTC+00:00&quot;&quot;UTC+01:00&quot;&quot;UTC+02:00&quot;&quot;UTC+03:00&quot;&quot;UTC+03:30&quot;&quot;UTC+04:00&quot;&quot;UTC+04:30&quot;&quot;UTC+05:00&quot;&quot;UTC+05:45&quot;&quot;UTC+06:00&quot;&quot;UTC+06:30&quot;&quot;UTC+07:00&quot;&quot;UTC+08:00&quot;&quot;UTC+09:00&quot;&quot;UTC+09:30&quot;&quot;UTC+10:00&quot;&quot;UTC+11:00&quot;&quot;UTC+12:00&quot;&quot;UTC+13:00&quot;</code></pre></p></li></ul>
                      * 
                      */
                     void SetTimeZone(const std::string& _timeZone);
@@ -651,15 +300,15 @@ namespace TencentCloud
                     bool TimeZoneHasBeenSet() const;
 
                     /**
-                     * 获取元数据信息，Kafka导入支持kafka_topic,kafka_partition,kafka_offset,kafka_timestamp
-                     * @return Metadata 元数据信息，Kafka导入支持kafka_topic,kafka_partition,kafka_offset,kafka_timestamp
+                     * 获取<p>元数据信息，Kafka导入支持kafka_topic,kafka_partition,kafka_offset,kafka_timestamp</p>
+                     * @return Metadata <p>元数据信息，Kafka导入支持kafka_topic,kafka_partition,kafka_offset,kafka_timestamp</p>
                      * 
                      */
                     std::vector<std::string> GetMetadata() const;
 
                     /**
-                     * 设置元数据信息，Kafka导入支持kafka_topic,kafka_partition,kafka_offset,kafka_timestamp
-                     * @param _metadata 元数据信息，Kafka导入支持kafka_topic,kafka_partition,kafka_offset,kafka_timestamp
+                     * 设置<p>元数据信息，Kafka导入支持kafka_topic,kafka_partition,kafka_offset,kafka_timestamp</p>
+                     * @param _metadata <p>元数据信息，Kafka导入支持kafka_topic,kafka_partition,kafka_offset,kafka_timestamp</p>
                      * 
                      */
                     void SetMetadata(const std::vector<std::string>& _metadata);
@@ -672,15 +321,15 @@ namespace TencentCloud
                     bool MetadataHasBeenSet() const;
 
                     /**
-                     * 获取日志Key列表，RechargeType为full_regex_log、delimiter_log时必填
-                     * @return Keys 日志Key列表，RechargeType为full_regex_log、delimiter_log时必填
+                     * 获取<p>日志Key列表，RechargeType为full_regex_log、delimiter_log时必填</p>
+                     * @return Keys <p>日志Key列表，RechargeType为full_regex_log、delimiter_log时必填</p>
                      * 
                      */
                     std::vector<std::string> GetKeys() const;
 
                     /**
-                     * 设置日志Key列表，RechargeType为full_regex_log、delimiter_log时必填
-                     * @param _keys 日志Key列表，RechargeType为full_regex_log、delimiter_log时必填
+                     * 设置<p>日志Key列表，RechargeType为full_regex_log、delimiter_log时必填</p>
+                     * @param _keys <p>日志Key列表，RechargeType为full_regex_log、delimiter_log时必填</p>
                      * 
                      */
                     void SetKeys(const std::vector<std::string>& _keys);
@@ -693,15 +342,15 @@ namespace TencentCloud
                     bool KeysHasBeenSet() const;
 
                     /**
-                     * 获取json解析模式，开启首层数据解析
-                     * @return ParseArray json解析模式，开启首层数据解析
+                     * 获取<p>json解析模式，开启首层数据解析</p>
+                     * @return ParseArray <p>json解析模式，开启首层数据解析</p>
                      * 
                      */
                     bool GetParseArray() const;
 
                     /**
-                     * 设置json解析模式，开启首层数据解析
-                     * @param _parseArray json解析模式，开启首层数据解析
+                     * 设置<p>json解析模式，开启首层数据解析</p>
+                     * @param _parseArray <p>json解析模式，开启首层数据解析</p>
                      * 
                      */
                     void SetParseArray(const bool& _parseArray);
@@ -714,19 +363,15 @@ namespace TencentCloud
                     bool ParseArrayHasBeenSet() const;
 
                     /**
-                     * 获取分隔符解析模式-分隔符
-当解析格式为分隔符提取时，该字段必填
-                     * @return Delimiter 分隔符解析模式-分隔符
-当解析格式为分隔符提取时，该字段必填
+                     * 获取<p>分隔符解析模式-分隔符<br>当解析格式为分隔符提取时，该字段必填</p>
+                     * @return Delimiter <p>分隔符解析模式-分隔符<br>当解析格式为分隔符提取时，该字段必填</p>
                      * 
                      */
                     std::string GetDelimiter() const;
 
                     /**
-                     * 设置分隔符解析模式-分隔符
-当解析格式为分隔符提取时，该字段必填
-                     * @param _delimiter 分隔符解析模式-分隔符
-当解析格式为分隔符提取时，该字段必填
+                     * 设置<p>分隔符解析模式-分隔符<br>当解析格式为分隔符提取时，该字段必填</p>
+                     * @param _delimiter <p>分隔符解析模式-分隔符<br>当解析格式为分隔符提取时，该字段必填</p>
                      * 
                      */
                     void SetDelimiter(const std::string& _delimiter);
@@ -738,192 +383,130 @@ namespace TencentCloud
                      */
                     bool DelimiterHasBeenSet() const;
 
+                    /**
+                     * 获取<p>JSON嵌套展开配置。仅RechargeType为json_log时生效，不传表示不开启。</p>
+                     * @return JsonExpand <p>JSON嵌套展开配置。仅RechargeType为json_log时生效，不传表示不开启。</p>
+                     * 
+                     */
+                    JsonExpandInfo GetJsonExpand() const;
+
+                    /**
+                     * 设置<p>JSON嵌套展开配置。仅RechargeType为json_log时生效，不传表示不开启。</p>
+                     * @param _jsonExpand <p>JSON嵌套展开配置。仅RechargeType为json_log时生效，不传表示不开启。</p>
+                     * 
+                     */
+                    void SetJsonExpand(const JsonExpandInfo& _jsonExpand);
+
+                    /**
+                     * 判断参数 JsonExpand 是否已赋值
+                     * @return JsonExpand 是否已赋值
+                     * 
+                     */
+                    bool JsonExpandHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 导入类型，支持json_log：json格式日志，minimalist_log: 单行全文，fullregex_log: 单行完全正则
+                     * <p>导入类型，支持json_log：json格式日志，minimalist_log: 单行全文，fullregex_log: 单行完全正则</p>
                      */
                     std::string m_rechargeType;
                     bool m_rechargeTypeHasBeenSet;
 
                     /**
-                     * 解析编码格式，0: UTF-8（默认值），1: GBK
+                     * <p>解析编码格式，0: UTF-8（默认值），1: GBK</p>
                      */
                     uint64_t m_encodingFormat;
                     bool m_encodingFormatHasBeenSet;
 
                     /**
-                     * 使用默认时间状态。true：开启后将使用系统当前时间或 Kafka 消息时间戳作为日志时间戳；false：关闭将使用日志中的时间字段作为日志时间戳。 默认：true
+                     * <p>使用默认时间状态。true：开启后将使用系统当前时间或 Kafka 消息时间戳作为日志时间戳；false：关闭将使用日志中的时间字段作为日志时间戳。 默认：true</p>
                      */
                     bool m_defaultTimeSwitch;
                     bool m_defaultTimeSwitchHasBeenSet;
 
                     /**
-                     * 整条日志匹配规则，只有RechargeType为fullregex_log时有效
+                     * <p>整条日志匹配规则，只有RechargeType为fullregex_log时有效</p>
                      */
                     std::string m_logRegex;
                     bool m_logRegexHasBeenSet;
 
                     /**
-                     * 解析失败日志是否上传，true表示上传，false表示不上传
+                     * <p>解析失败日志是否上传，true表示上传，false表示不上传</p>
                      */
                     bool m_unMatchLogSwitch;
                     bool m_unMatchLogSwitchHasBeenSet;
 
                     /**
-                     * 解析失败日志的键名称
+                     * <p>解析失败日志的键名称</p>
                      */
                     std::string m_unMatchLogKey;
                     bool m_unMatchLogKeyHasBeenSet;
 
                     /**
-                     * 解析失败日志时间来源，0: 系统当前时间，1: Kafka消息时间戳
+                     * <p>解析失败日志时间来源，0: 系统当前时间，1: Kafka消息时间戳</p>
                      */
                     uint64_t m_unMatchLogTimeSrc;
                     bool m_unMatchLogTimeSrcHasBeenSet;
 
                     /**
-                     * 默认时间来源，0: 系统当前时间，1: Kafka消息时间戳
+                     * <p>默认时间来源，0: 系统当前时间，1: Kafka消息时间戳</p>
                      */
                     uint64_t m_defaultTimeSrc;
                     bool m_defaultTimeSrcHasBeenSet;
 
                     /**
-                     * 时间字段，日志中代表时间的字段名。
-
-- 当DefaultTimeSwitch为false，且RechargeType数据提取模式为 `json_log` JSON-文件日志 或 `fullregex_log` 单行完全正则-文件日志时， TimeKey不能为空。
+                     * <p>时间字段，日志中代表时间的字段名。</p><ul><li>当DefaultTimeSwitch为false，且RechargeType数据提取模式为 <code>json_log</code> JSON-文件日志 或 <code>fullregex_log</code> 单行完全正则-文件日志时， TimeKey不能为空。</li></ul>
                      */
                     std::string m_timeKey;
                     bool m_timeKeyHasBeenSet;
 
                     /**
-                     * 时间提取正则表达式。
-- 当DefaultTimeSwitch为false，且RechargeType数据提取模式为 `minimalist_log` 单行全文-文件日志时， TimeRegex不能为空。
-- 仅需输入日志中代表时间的字段的正则表达式即可；若匹配到多个字段，将使用第一个。
-   例：日志原文为：message with time 2022-08-08 14:20:20，则您可以设置提取时间正则为\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d
-
+                     * <p>时间提取正则表达式。</p><ul><li>当DefaultTimeSwitch为false，且RechargeType数据提取模式为 <code>minimalist_log</code> 单行全文-文件日志时， TimeRegex不能为空。</li><li>仅需输入日志中代表时间的字段的正则表达式即可；若匹配到多个字段，将使用第一个。<br> 例：日志原文为：message with time 2022-08-08 14:20:20，则您可以设置提取时间正则为\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d</li></ul>
                      */
                     std::string m_timeRegex;
                     bool m_timeRegexHasBeenSet;
 
                     /**
-                     * 时间字段格式。
-- 当DefaultTimeSwitch为false时， TimeFormat不能为空。
+                     * <p>时间字段格式。</p><ul><li>当DefaultTimeSwitch为false时， TimeFormat不能为空。</li></ul>
                      */
                     std::string m_timeFormat;
                     bool m_timeFormatHasBeenSet;
 
                     /**
-                     * 时间字段时区。
-- 当DefaultTimeSwitch为false时， TimeZone不能为空。
-- 时区格式规则
-​前缀​：使用 GMT 或 UTC 作为时区基准
-​偏移量​：
-    - `-` 表示西时区（比基准时间晚）
-    - `+` 表示东时区（比基准时间早）
-    -  格式为 ±HH:MM（小时:分钟）
-
-- 当前支持：
-```
-"GMT-12:00" 
-"GMT-11:00" 
-"GMT-10:00" 
-"GMT-09:30" 
-"GMT-09:00" 
-"GMT-08:00" 
-"GMT-07:00" 
-"GMT-06:00" 
-"GMT-05:00" 
-"GMT-04:00" 
-"GMT-03:30" 
-"GMT-03:00" 
-"GMT-02:00" 
-"GMT-01:00" 
-"GMT+00:00"
-"GMT+01:00"
-"GMT+02:00"
-"GMT+03:30"
-"GMT+04:00"
-"GMT+04:30"
-"GMT+05:00"
-"GMT+05:30"
-"GMT+05:45"
-"GMT+06:00"
-"GMT+06:30"
-"GMT+07:00"
-"GMT+08:00"
-"GMT+09:00"
-"GMT+09:30"
-"GMT+10:00"
-"GMT+10:30"
-"GMT+11:00"
-"GMT+11:30"
-"GMT+12:00"
-"GMT+12:45"
-"GMT+13:00"
-"GMT+14:00"
-"UTC-11:00"
-"UTC-10:00"
-"UTC-09:00"
-"UTC-08:00"
-"UTC-12:00"
-"UTC-07:00"
-"UTC-06:00"
-"UTC-05:00"
-"UTC-04:30"
-"UTC-04:00"
-"UTC-03:30"
-"UTC-03:00"
-"UTC-02:00"
-"UTC-01:00"
-"UTC+00:00"
-"UTC+01:00"
-"UTC+02:00"
-"UTC+03:00"
-"UTC+03:30"
-"UTC+04:00"
-"UTC+04:30"
-"UTC+05:00"
-"UTC+05:45"
-"UTC+06:00"
-"UTC+06:30"
-"UTC+07:00"
-"UTC+08:00"
-"UTC+09:00"
-"UTC+09:30"
-"UTC+10:00"
-"UTC+11:00"
-"UTC+12:00"
-"UTC+13:00"
-```
+                     * <p>时间字段时区。</p><ul><li><p>当DefaultTimeSwitch为false时， TimeZone不能为空。</p></li><li><p>时区格式规则<br>前缀：使用 GMT 或 UTC 作为时区基准<br>偏移量：</p><ul><li><code>-</code> 表示西时区（比基准时间晚）</li><li><code>+</code> 表示东时区（比基准时间早）</li><li>格式为 ±HH:MM（小时:分钟）</li></ul></li><li><p>当前支持：<br><pre><code>&quot;GMT-12:00&quot; &quot;GMT-11:00&quot; &quot;GMT-10:00&quot; &quot;GMT-09:30&quot; &quot;GMT-09:00&quot; &quot;GMT-08:00&quot; &quot;GMT-07:00&quot; &quot;GMT-06:00&quot; &quot;GMT-05:00&quot; &quot;GMT-04:00&quot; &quot;GMT-03:30&quot; &quot;GMT-03:00&quot; &quot;GMT-02:00&quot; &quot;GMT-01:00&quot; &quot;GMT+00:00&quot;&quot;GMT+01:00&quot;&quot;GMT+02:00&quot;&quot;GMT+03:30&quot;&quot;GMT+04:00&quot;&quot;GMT+04:30&quot;&quot;GMT+05:00&quot;&quot;GMT+05:30&quot;&quot;GMT+05:45&quot;&quot;GMT+06:00&quot;&quot;GMT+06:30&quot;&quot;GMT+07:00&quot;&quot;GMT+08:00&quot;&quot;GMT+09:00&quot;&quot;GMT+09:30&quot;&quot;GMT+10:00&quot;&quot;GMT+10:30&quot;&quot;GMT+11:00&quot;&quot;GMT+11:30&quot;&quot;GMT+12:00&quot;&quot;GMT+12:45&quot;&quot;GMT+13:00&quot;&quot;GMT+14:00&quot;&quot;UTC-11:00&quot;&quot;UTC-10:00&quot;&quot;UTC-09:00&quot;&quot;UTC-08:00&quot;&quot;UTC-12:00&quot;&quot;UTC-07:00&quot;&quot;UTC-06:00&quot;&quot;UTC-05:00&quot;&quot;UTC-04:30&quot;&quot;UTC-04:00&quot;&quot;UTC-03:30&quot;&quot;UTC-03:00&quot;&quot;UTC-02:00&quot;&quot;UTC-01:00&quot;&quot;UTC+00:00&quot;&quot;UTC+01:00&quot;&quot;UTC+02:00&quot;&quot;UTC+03:00&quot;&quot;UTC+03:30&quot;&quot;UTC+04:00&quot;&quot;UTC+04:30&quot;&quot;UTC+05:00&quot;&quot;UTC+05:45&quot;&quot;UTC+06:00&quot;&quot;UTC+06:30&quot;&quot;UTC+07:00&quot;&quot;UTC+08:00&quot;&quot;UTC+09:00&quot;&quot;UTC+09:30&quot;&quot;UTC+10:00&quot;&quot;UTC+11:00&quot;&quot;UTC+12:00&quot;&quot;UTC+13:00&quot;</code></pre></p></li></ul>
                      */
                     std::string m_timeZone;
                     bool m_timeZoneHasBeenSet;
 
                     /**
-                     * 元数据信息，Kafka导入支持kafka_topic,kafka_partition,kafka_offset,kafka_timestamp
+                     * <p>元数据信息，Kafka导入支持kafka_topic,kafka_partition,kafka_offset,kafka_timestamp</p>
                      */
                     std::vector<std::string> m_metadata;
                     bool m_metadataHasBeenSet;
 
                     /**
-                     * 日志Key列表，RechargeType为full_regex_log、delimiter_log时必填
+                     * <p>日志Key列表，RechargeType为full_regex_log、delimiter_log时必填</p>
                      */
                     std::vector<std::string> m_keys;
                     bool m_keysHasBeenSet;
 
                     /**
-                     * json解析模式，开启首层数据解析
+                     * <p>json解析模式，开启首层数据解析</p>
                      */
                     bool m_parseArray;
                     bool m_parseArrayHasBeenSet;
 
                     /**
-                     * 分隔符解析模式-分隔符
-当解析格式为分隔符提取时，该字段必填
+                     * <p>分隔符解析模式-分隔符<br>当解析格式为分隔符提取时，该字段必填</p>
                      */
                     std::string m_delimiter;
                     bool m_delimiterHasBeenSet;
+
+                    /**
+                     * <p>JSON嵌套展开配置。仅RechargeType为json_log时生效，不传表示不开启。</p>
+                     */
+                    JsonExpandInfo m_jsonExpand;
+                    bool m_jsonExpandHasBeenSet;
 
                 };
             }

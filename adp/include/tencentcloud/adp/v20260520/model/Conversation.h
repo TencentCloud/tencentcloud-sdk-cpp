@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取会话标题
-                     * @return Title 会话标题
+                     * 获取<p>会话标题</p>
+                     * @return Title <p>会话标题</p>
                      * 
                      */
                     std::string GetTitle() const;
 
                     /**
-                     * 设置会话标题
-                     * @param _title 会话标题
+                     * 设置<p>会话标题</p>
+                     * @param _title <p>会话标题</p>
                      * 
                      */
                     void SetTitle(const std::string& _title);
@@ -171,6 +171,27 @@ namespace TencentCloud
                      * 
                      */
                     bool TitleHasBeenSet() const;
+
+                    /**
+                     * 获取<p>会话使用的用户端 AgentId</p>
+                     * @return AgentId <p>会话使用的用户端 AgentId</p>
+                     * 
+                     */
+                    std::string GetAgentId() const;
+
+                    /**
+                     * 设置<p>会话使用的用户端 AgentId</p>
+                     * @param _agentId <p>会话使用的用户端 AgentId</p>
+                     * 
+                     */
+                    void SetAgentId(const std::string& _agentId);
+
+                    /**
+                     * 判断参数 AgentId 是否已赋值
+                     * @return AgentId 是否已赋值
+                     * 
+                     */
+                    bool AgentIdHasBeenSet() const;
 
                 private:
 
@@ -205,10 +226,16 @@ namespace TencentCloud
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 会话标题
+                     * <p>会话标题</p>
                      */
                     std::string m_title;
                     bool m_titleHasBeenSet;
+
+                    /**
+                     * <p>会话使用的用户端 AgentId</p>
+                     */
+                    std::string m_agentId;
+                    bool m_agentIdHasBeenSet;
 
                 };
             }

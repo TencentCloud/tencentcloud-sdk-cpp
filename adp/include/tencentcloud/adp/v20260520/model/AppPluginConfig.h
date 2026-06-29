@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_ADP_V20260520_MODEL_TEMPLATEPUBLISHINFO_H_
-#define TENCENTCLOUD_ADP_V20260520_MODEL_TEMPLATEPUBLISHINFO_H_
+#ifndef TENCENTCLOUD_ADP_V20260520_MODEL_APPPLUGINCONFIG_H_
+#define TENCENTCLOUD_ADP_V20260520_MODEL_APPPLUGINCONFIG_H_
 
 #include <string>
 #include <vector>
@@ -35,45 +35,45 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 模版中心同步信息(私有化独有 - 公有云/SaaS 版本忽略此字段)
+                * 应用插件配置信息
                 */
-                class TemplatePublishInfo : public AbstractModel
+                class AppPluginConfig : public AbstractModel
                 {
                 public:
-                    TemplatePublishInfo();
-                    ~TemplatePublishInfo() = default;
+                    AppPluginConfig();
+                    ~AppPluginConfig() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取是否已同步到模版中心
-                     * @return IsPublished 是否已同步到模版中心
+                     * 获取基于发布应用创建插件的应用ID
+                     * @return AppId 基于发布应用创建插件的应用ID
                      * 
                      */
-                    bool GetIsPublished() const;
+                    std::string GetAppId() const;
 
                     /**
-                     * 设置是否已同步到模版中心
-                     * @param _isPublished 是否已同步到模版中心
+                     * 设置基于发布应用创建插件的应用ID
+                     * @param _appId 基于发布应用创建插件的应用ID
                      * 
                      */
-                    void SetIsPublished(const bool& _isPublished);
+                    void SetAppId(const std::string& _appId);
 
                     /**
-                     * 判断参数 IsPublished 是否已赋值
-                     * @return IsPublished 是否已赋值
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
                      * 
                      */
-                    bool IsPublishedHasBeenSet() const;
+                    bool AppIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 是否已同步到模版中心
+                     * 基于发布应用创建插件的应用ID
                      */
-                    bool m_isPublished;
-                    bool m_isPublishedHasBeenSet;
+                    std::string m_appId;
+                    bool m_appIdHasBeenSet;
 
                 };
             }
@@ -81,4 +81,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_ADP_V20260520_MODEL_TEMPLATEPUBLISHINFO_H_
+#endif // !TENCENTCLOUD_ADP_V20260520_MODEL_APPPLUGINCONFIG_H_

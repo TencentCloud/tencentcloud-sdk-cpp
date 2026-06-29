@@ -28,6 +28,7 @@
 #include <tencentcloud/adp/v20260520/model/PluginProfile.h>
 #include <tencentcloud/adp/v20260520/model/PluginStatistics.h>
 #include <tencentcloud/adp/v20260520/model/PluginUserState.h>
+#include <tencentcloud/adp/v20260520/model/PluginConfig.h>
 
 
 namespace TencentCloud
@@ -51,15 +52,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取插件运营管理信息
-                     * @return Operation 插件运营管理信息
+                     * 获取<p>插件运营管理信息</p>
+                     * @return Operation <p>插件运营管理信息</p>
                      * 
                      */
                     PluginOperation GetOperation() const;
 
                     /**
-                     * 设置插件运营管理信息
-                     * @param _operation 插件运营管理信息
+                     * 设置<p>插件运营管理信息</p>
+                     * @param _operation <p>插件运营管理信息</p>
                      * 
                      */
                     void SetOperation(const PluginOperation& _operation);
@@ -72,15 +73,15 @@ namespace TencentCloud
                     bool OperationHasBeenSet() const;
 
                     /**
-                     * 获取插件id
-                     * @return PluginId 插件id
+                     * 获取<p>插件id</p>
+                     * @return PluginId <p>插件id</p>
                      * 
                      */
                     std::string GetPluginId() const;
 
                     /**
-                     * 设置插件id
-                     * @param _pluginId 插件id
+                     * 设置<p>插件id</p>
+                     * @param _pluginId <p>插件id</p>
                      * 
                      */
                     void SetPluginId(const std::string& _pluginId);
@@ -93,15 +94,15 @@ namespace TencentCloud
                     bool PluginIdHasBeenSet() const;
 
                     /**
-                     * 获取插件基础信息
-                     * @return Profile 插件基础信息
+                     * 获取<p>插件基础信息</p>
+                     * @return Profile <p>插件基础信息</p>
                      * 
                      */
                     PluginProfile GetProfile() const;
 
                     /**
-                     * 设置插件基础信息
-                     * @param _profile 插件基础信息
+                     * 设置<p>插件基础信息</p>
+                     * @param _profile <p>插件基础信息</p>
                      * 
                      */
                     void SetProfile(const PluginProfile& _profile);
@@ -114,15 +115,15 @@ namespace TencentCloud
                     bool ProfileHasBeenSet() const;
 
                     /**
-                     * 获取插件统计信息
-                     * @return Statistics 插件统计信息
+                     * 获取<p>插件统计信息</p>
+                     * @return Statistics <p>插件统计信息</p>
                      * 
                      */
                     PluginStatistics GetStatistics() const;
 
                     /**
-                     * 设置插件统计信息
-                     * @param _statistics 插件统计信息
+                     * 设置<p>插件统计信息</p>
+                     * @param _statistics <p>插件统计信息</p>
                      * 
                      */
                     void SetStatistics(const PluginStatistics& _statistics);
@@ -156,15 +157,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取用户维度的插件状态信息
-                     * @return UserState 用户维度的插件状态信息
+                     * 获取<p>用户维度的插件状态信息</p>
+                     * @return UserState <p>用户维度的插件状态信息</p>
                      * 
                      */
                     PluginUserState GetUserState() const;
 
                     /**
-                     * 设置用户维度的插件状态信息
-                     * @param _userState 用户维度的插件状态信息
+                     * 设置<p>用户维度的插件状态信息</p>
+                     * @param _userState <p>用户维度的插件状态信息</p>
                      * 
                      */
                     void SetUserState(const PluginUserState& _userState);
@@ -176,28 +177,49 @@ namespace TencentCloud
                      */
                     bool UserStateHasBeenSet() const;
 
+                    /**
+                     * 获取<p>插件配置信息</p>
+                     * @return Config <p>插件配置信息</p>
+                     * 
+                     */
+                    PluginConfig GetConfig() const;
+
+                    /**
+                     * 设置<p>插件配置信息</p>
+                     * @param _config <p>插件配置信息</p>
+                     * 
+                     */
+                    void SetConfig(const PluginConfig& _config);
+
+                    /**
+                     * 判断参数 Config 是否已赋值
+                     * @return Config 是否已赋值
+                     * 
+                     */
+                    bool ConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 插件运营管理信息
+                     * <p>插件运营管理信息</p>
                      */
                     PluginOperation m_operation;
                     bool m_operationHasBeenSet;
 
                     /**
-                     * 插件id
+                     * <p>插件id</p>
                      */
                     std::string m_pluginId;
                     bool m_pluginIdHasBeenSet;
 
                     /**
-                     * 插件基础信息
+                     * <p>插件基础信息</p>
                      */
                     PluginProfile m_profile;
                     bool m_profileHasBeenSet;
 
                     /**
-                     * 插件统计信息
+                     * <p>插件统计信息</p>
                      */
                     PluginStatistics m_statistics;
                     bool m_statisticsHasBeenSet;
@@ -209,10 +231,16 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 用户维度的插件状态信息
+                     * <p>用户维度的插件状态信息</p>
                      */
                     PluginUserState m_userState;
                     bool m_userStateHasBeenSet;
+
+                    /**
+                     * <p>插件配置信息</p>
+                     */
+                    PluginConfig m_config;
+                    bool m_configHasBeenSet;
 
                 };
             }

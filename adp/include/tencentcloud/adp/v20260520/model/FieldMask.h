@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取paths
-                     * @return Paths paths
+                     * 获取<p>参数名称</p><p>参数格式：需要获取的指定字段路径</p>
+                     * @return Paths <p>参数名称</p><p>参数格式：需要获取的指定字段路径</p>
                      * 
                      */
                     std::vector<std::string> GetPaths() const;
 
                     /**
-                     * 设置paths
-                     * @param _paths paths
+                     * 设置<p>参数名称</p><p>参数格式：需要获取的指定字段路径</p>
+                     * @param _paths <p>参数名称</p><p>参数格式：需要获取的指定字段路径</p>
                      * 
                      */
                     void SetPaths(const std::vector<std::string>& _paths);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * paths
+                     * <p>参数名称</p><p>参数格式：需要获取的指定字段路径</p>
                      */
                     std::vector<std::string> m_paths;
                     bool m_pathsHasBeenSet;

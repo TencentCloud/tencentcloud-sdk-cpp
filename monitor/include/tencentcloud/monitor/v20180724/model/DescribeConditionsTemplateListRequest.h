@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取固定值，为"monitor"
-                     * @return Module 固定值，为"monitor"
+                     * 获取<p>固定值，为&quot;monitor&quot;</p>
+                     * @return Module <p>固定值，为&quot;monitor&quot;</p>
                      * 
                      */
                     std::string GetModule() const;
 
                     /**
-                     * 设置固定值，为"monitor"
-                     * @param _module 固定值，为"monitor"
+                     * 设置<p>固定值，为&quot;monitor&quot;</p>
+                     * @param _module <p>固定值，为&quot;monitor&quot;</p>
                      * 
                      */
                     void SetModule(const std::string& _module);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取视图名，由 [DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device
-                     * @return ViewName 视图名，由 [DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device
+                     * 获取<p>视图名，由 <a href="https://cloud.tencent.com/document/product/248/48683">DescribeAllNamespaces</a> 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device</p>
+                     * @return ViewName <p>视图名，由 <a href="https://cloud.tencent.com/document/product/248/48683">DescribeAllNamespaces</a> 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device</p>
                      * 
                      */
                     std::string GetViewName() const;
 
                     /**
-                     * 设置视图名，由 [DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device
-                     * @param _viewName 视图名，由 [DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device
+                     * 设置<p>视图名，由 <a href="https://cloud.tencent.com/document/product/248/48683">DescribeAllNamespaces</a> 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device</p>
+                     * @param _viewName <p>视图名，由 <a href="https://cloud.tencent.com/document/product/248/48683">DescribeAllNamespaces</a> 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device</p>
                      * 
                      */
                     void SetViewName(const std::string& _viewName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ViewNameHasBeenSet() const;
 
                     /**
-                     * 获取根据触发条件模板名称过滤查询
-                     * @return GroupName 根据触发条件模板名称过滤查询
+                     * 获取<p>根据触发条件模板名称过滤查询</p>
+                     * @return GroupName <p>根据触发条件模板名称过滤查询</p>
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置根据触发条件模板名称过滤查询
-                     * @param _groupName 根据触发条件模板名称过滤查询
+                     * 设置<p>根据触发条件模板名称过滤查询</p>
+                     * @param _groupName <p>根据触发条件模板名称过滤查询</p>
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取根据触发条件模板ID过滤查询
-                     * @return GroupID 根据触发条件模板ID过滤查询
+                     * 获取<p>根据触发条件模板ID过滤查询</p>
+                     * @return GroupID <p>根据触发条件模板ID过滤查询</p>
                      * 
                      */
                     std::string GetGroupID() const;
 
                     /**
-                     * 设置根据触发条件模板ID过滤查询
-                     * @param _groupID 根据触发条件模板ID过滤查询
+                     * 设置<p>根据触发条件模板ID过滤查询</p>
+                     * @param _groupID <p>根据触发条件模板ID过滤查询</p>
                      * 
                      */
                     void SetGroupID(const std::string& _groupID);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool GroupIDHasBeenSet() const;
 
                     /**
-                     * 获取分页参数，每页返回的数量，取值1~100，默认20
-                     * @return Limit 分页参数，每页返回的数量，取值1~100，默认20
+                     * 获取<p>分页参数，每页返回的数量，取值1~100，默认20</p>
+                     * @return Limit <p>分页参数，每页返回的数量，取值1~100，默认20</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页参数，每页返回的数量，取值1~100，默认20
-                     * @param _limit 分页参数，每页返回的数量，取值1~100，默认20
+                     * 设置<p>分页参数，每页返回的数量，取值1~100，默认20</p>
+                     * @param _limit <p>分页参数，每页返回的数量，取值1~100，默认20</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页参数，页偏移量，从0开始计数，默认0
-                     * @return Offset 分页参数，页偏移量，从0开始计数，默认0
+                     * 获取<p>分页参数，页偏移量，从0开始计数，默认0</p>
+                     * @return Offset <p>分页参数，页偏移量，从0开始计数，默认0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页参数，页偏移量，从0开始计数，默认0
-                     * @param _offset 分页参数，页偏移量，从0开始计数，默认0
+                     * 设置<p>分页参数，页偏移量，从0开始计数，默认0</p>
+                     * @param _offset <p>分页参数，页偏移量，从0开始计数，默认0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取指定按更新时间的排序方式，asc=升序, desc=降序
-                     * @return UpdateTimeOrder 指定按更新时间的排序方式，asc=升序, desc=降序
+                     * 获取<p>指定按更新时间的排序方式，asc=升序, desc=降序</p>
+                     * @return UpdateTimeOrder <p>指定按更新时间的排序方式，asc=升序, desc=降序</p>
                      * 
                      */
                     std::string GetUpdateTimeOrder() const;
 
                     /**
-                     * 设置指定按更新时间的排序方式，asc=升序, desc=降序
-                     * @param _updateTimeOrder 指定按更新时间的排序方式，asc=升序, desc=降序
+                     * 设置<p>指定按更新时间的排序方式，asc=升序, desc=降序</p>
+                     * @param _updateTimeOrder <p>指定按更新时间的排序方式，asc=升序, desc=降序</p>
                      * 
                      */
                     void SetUpdateTimeOrder(const std::string& _updateTimeOrder);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool UpdateTimeOrderHasBeenSet() const;
 
                     /**
-                     * 获取指定按绑定策略数目的排序方式，asc=升序, desc=降序
-                     * @return PolicyCountOrder 指定按绑定策略数目的排序方式，asc=升序, desc=降序
+                     * 获取<p>指定按绑定策略数目的排序方式，asc=升序, desc=降序</p>
+                     * @return PolicyCountOrder <p>指定按绑定策略数目的排序方式，asc=升序, desc=降序</p>
                      * 
                      */
                     std::string GetPolicyCountOrder() const;
 
                     /**
-                     * 设置指定按绑定策略数目的排序方式，asc=升序, desc=降序
-                     * @param _policyCountOrder 指定按绑定策略数目的排序方式，asc=升序, desc=降序
+                     * 设置<p>指定按绑定策略数目的排序方式，asc=升序, desc=降序</p>
+                     * @param _policyCountOrder <p>指定按绑定策略数目的排序方式，asc=升序, desc=降序</p>
                      * 
                      */
                     void SetPolicyCountOrder(const std::string& _policyCountOrder);
@@ -213,49 +213,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 固定值，为"monitor"
+                     * <p>固定值，为&quot;monitor&quot;</p>
                      */
                     std::string m_module;
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 视图名，由 [DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device
+                     * <p>视图名，由 <a href="https://cloud.tencent.com/document/product/248/48683">DescribeAllNamespaces</a> 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device</p>
                      */
                     std::string m_viewName;
                     bool m_viewNameHasBeenSet;
 
                     /**
-                     * 根据触发条件模板名称过滤查询
+                     * <p>根据触发条件模板名称过滤查询</p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 根据触发条件模板ID过滤查询
+                     * <p>根据触发条件模板ID过滤查询</p>
                      */
                     std::string m_groupID;
                     bool m_groupIDHasBeenSet;
 
                     /**
-                     * 分页参数，每页返回的数量，取值1~100，默认20
+                     * <p>分页参数，每页返回的数量，取值1~100，默认20</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页参数，页偏移量，从0开始计数，默认0
+                     * <p>分页参数，页偏移量，从0开始计数，默认0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 指定按更新时间的排序方式，asc=升序, desc=降序
+                     * <p>指定按更新时间的排序方式，asc=升序, desc=降序</p>
                      */
                     std::string m_updateTimeOrder;
                     bool m_updateTimeOrderHasBeenSet;
 
                     /**
-                     * 指定按绑定策略数目的排序方式，asc=升序, desc=降序
+                     * <p>指定按绑定策略数目的排序方式，asc=升序, desc=降序</p>
                      */
                     std::string m_policyCountOrder;
                     bool m_policyCountOrderHasBeenSet;

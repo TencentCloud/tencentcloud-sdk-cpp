@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取回填请求的统计维度。
-                     * @return Dimension 回填请求的统计维度。
+                     * 获取<p>回填请求的统计维度。</p>
+                     * @return Dimension <p>回填请求的统计维度。</p>
                      * 
                      */
                     std::string GetDimension() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool DimensionHasBeenSet() const;
 
                     /**
-                     * 获取回填请求的指标族（本期固定为 tokens）。前端按本字段切换图表渲染逻辑。
-                     * @return MetricType 回填请求的指标族（本期固定为 tokens）。前端按本字段切换图表渲染逻辑。
+                     * 获取<p>回填请求的指标族：tokens / search 。</p>
+                     * @return MetricType <p>回填请求的指标族：tokens / search 。</p>
                      * 
                      */
                     std::string GetMetricType() const;
@@ -74,8 +74,8 @@ namespace TencentCloud
                     bool MetricTypeHasBeenSet() const;
 
                     /**
-                     * 获取本次响应中 Stats / Series / PageStats / TotalStats 实际包含的 metric key 列表，顺序固定为 [Total, Input, Output]。本期为 [TotalToken, InputTotalToken, OutputTotalToken]。前端可遍历此列表渲染图表，无需硬编码 key 名。
-                     * @return MetricKeys 本次响应中 Stats / Series / PageStats / TotalStats 实际包含的 metric key 列表，顺序固定为 [Total, Input, Output]。本期为 [TotalToken, InputTotalToken, OutputTotalToken]。前端可遍历此列表渲染图表，无需硬编码 key 名。
+                     * 获取<p>本次响应中 Stats / Series / PageStats / TotalStats 实际包含的 metric key 列表，按MetricType 区分：tokens=[Total,Input,Output,Cache]、search=[SearchRequestCount,SearchCount]</p>
+                     * @return MetricKeys <p>本次响应中 Stats / Series / PageStats / TotalStats 实际包含的 metric key 列表，按MetricType 区分：tokens=[Total,Input,Output,Cache]、search=[SearchRequestCount,SearchCount]</p>
                      * 
                      */
                     std::vector<std::string> GetMetricKeys() const;
@@ -88,8 +88,8 @@ namespace TencentCloud
                     bool MetricKeysHasBeenSet() const;
 
                     /**
-                     * 获取视图（数据来源）
-                     * @return ViewName 视图（数据来源）
+                     * 获取<p>视图（数据来源）</p>
+                     * @return ViewName <p>视图（数据来源）</p>
                      * 
                      */
                     std::string GetViewName() const;
@@ -102,8 +102,8 @@ namespace TencentCloud
                     bool ViewNameHasBeenSet() const;
 
                     /**
-                     * 获取回填请求的统计粒度（秒）。ShowAll=true 时为 0。
-                     * @return Period 回填请求的统计粒度（秒）。ShowAll=true 时为 0。
+                     * 获取<p>回填请求的统计粒度（秒）。ShowAll=true 时为 0。</p>
+                     * @return Period <p>回填请求的统计粒度（秒）。ShowAll=true 时为 0。</p>
                      * 
                      */
                     int64_t GetPeriod() const;
@@ -116,8 +116,8 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取回填请求的起始时间。
-                     * @return StartTime 回填请求的起始时间。
+                     * 获取<p>回填请求的起始时间。</p>
+                     * @return StartTime <p>回填请求的起始时间。</p>
                      * 
                      */
                     std::string GetStartTime() const;
@@ -130,8 +130,8 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取回填请求的结束时间。
-                     * @return EndTime 回填请求的结束时间。
+                     * 获取<p>回填请求的结束时间。</p>
+                     * @return EndTime <p>回填请求的结束时间。</p>
                      * 
                      */
                     std::string GetEndTime() const;
@@ -144,8 +144,8 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取全量对象数。
-                     * @return Total 全量对象数。
+                     * 获取<p>全量对象数。</p>
+                     * @return Total <p>全量对象数。</p>
                      * 
                      */
                     int64_t GetTotal() const;
@@ -158,8 +158,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取回填请求的翻页起点。ShowAll=true 时为 0。
-                     * @return Offset 回填请求的翻页起点。ShowAll=true 时为 0。
+                     * 获取<p>回填请求的翻页起点。ShowAll=true 时为 0。</p>
+                     * @return Offset <p>回填请求的翻页起点。ShowAll=true 时为 0。</p>
                      * 
                      */
                     int64_t GetOffset() const;
@@ -172,8 +172,8 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取页大小，恒为 10。ShowAll=true 时为 Total。
-                     * @return Limit 页大小，恒为 10。ShowAll=true 时为 Total。
+                     * 获取<p>页大小，恒为 10。ShowAll=true 时为 Total。</p>
+                     * @return Limit <p>页大小，恒为 10。ShowAll=true 时为 Total。</p>
                      * 
                      */
                     int64_t GetLimit() const;
@@ -186,8 +186,8 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取Series 数组对应的时间戳序列（Unix 秒）。ShowAll=true 时为空数组。
-                     * @return Timestamps Series 数组对应的时间戳序列（Unix 秒）。ShowAll=true 时为空数组。
+                     * 获取<p>Series 数组对应的时间戳序列（Unix 秒）。ShowAll=true 时为空数组。</p>
+                     * @return Timestamps <p>Series 数组对应的时间戳序列（Unix 秒）。ShowAll=true 时为空数组。</p>
                      * 
                      */
                     std::vector<int64_t> GetTimestamps() const;
@@ -200,8 +200,8 @@ namespace TencentCloud
                     bool TimestampsHasBeenSet() const;
 
                     /**
-                     * 获取对象排行列表，按主指标（`MetricKeys[0]`，本期为 TotalToken）降序排序。ShowAll=false 时为当前页 10 个对象（含 Series）；ShowAll=true 时为全量对象（不含 Series，用于 CSV 导出）。
-                     * @return TopList 对象排行列表，按主指标（`MetricKeys[0]`，本期为 TotalToken）降序排序。ShowAll=false 时为当前页 10 个对象（含 Series）；ShowAll=true 时为全量对象（不含 Series，用于 CSV 导出）。
+                     * 获取<p>对象排行列表，按<code>MetricKeys[0]</code>降序排序。ShowAll=false 时为当前页 10 个对象（含 Series）；ShowAll=true 时为全量对象（不含 Series，用于 CSV 导出）。</p>
+                     * @return TopList <p>对象排行列表，按<code>MetricKeys[0]</code>降序排序。ShowAll=false 时为当前页 10 个对象（含 Series）；ShowAll=true 时为全量对象（不含 Series，用于 CSV 导出）。</p>
                      * 
                      */
                     std::vector<UsageRankItem> GetTopList() const;
@@ -214,8 +214,8 @@ namespace TencentCloud
                     bool TopListHasBeenSet() const;
 
                     /**
-                     * 获取分页统计结果
-                     * @return PageStats 分页统计结果
+                     * 获取<p>分页统计结果</p>
+                     * @return PageStats <p>分页统计结果</p>
                      * 
                      */
                     UsageStats GetPageStats() const;
@@ -228,8 +228,8 @@ namespace TencentCloud
                     bool PageStatsHasBeenSet() const;
 
                     /**
-                     * 获取总统计结果
-                     * @return TotalStats 总统计结果
+                     * 获取<p>总统计结果</p>
+                     * @return TotalStats <p>总统计结果</p>
                      * 
                      */
                     UsageStats GetTotalStats() const;
@@ -244,85 +244,85 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 回填请求的统计维度。
+                     * <p>回填请求的统计维度。</p>
                      */
                     std::string m_dimension;
                     bool m_dimensionHasBeenSet;
 
                     /**
-                     * 回填请求的指标族（本期固定为 tokens）。前端按本字段切换图表渲染逻辑。
+                     * <p>回填请求的指标族：tokens / search 。</p>
                      */
                     std::string m_metricType;
                     bool m_metricTypeHasBeenSet;
 
                     /**
-                     * 本次响应中 Stats / Series / PageStats / TotalStats 实际包含的 metric key 列表，顺序固定为 [Total, Input, Output]。本期为 [TotalToken, InputTotalToken, OutputTotalToken]。前端可遍历此列表渲染图表，无需硬编码 key 名。
+                     * <p>本次响应中 Stats / Series / PageStats / TotalStats 实际包含的 metric key 列表，按MetricType 区分：tokens=[Total,Input,Output,Cache]、search=[SearchRequestCount,SearchCount]</p>
                      */
                     std::vector<std::string> m_metricKeys;
                     bool m_metricKeysHasBeenSet;
 
                     /**
-                     * 视图（数据来源）
+                     * <p>视图（数据来源）</p>
                      */
                     std::string m_viewName;
                     bool m_viewNameHasBeenSet;
 
                     /**
-                     * 回填请求的统计粒度（秒）。ShowAll=true 时为 0。
+                     * <p>回填请求的统计粒度（秒）。ShowAll=true 时为 0。</p>
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 回填请求的起始时间。
+                     * <p>回填请求的起始时间。</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 回填请求的结束时间。
+                     * <p>回填请求的结束时间。</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 全量对象数。
+                     * <p>全量对象数。</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 回填请求的翻页起点。ShowAll=true 时为 0。
+                     * <p>回填请求的翻页起点。ShowAll=true 时为 0。</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 页大小，恒为 10。ShowAll=true 时为 Total。
+                     * <p>页大小，恒为 10。ShowAll=true 时为 Total。</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * Series 数组对应的时间戳序列（Unix 秒）。ShowAll=true 时为空数组。
+                     * <p>Series 数组对应的时间戳序列（Unix 秒）。ShowAll=true 时为空数组。</p>
                      */
                     std::vector<int64_t> m_timestamps;
                     bool m_timestampsHasBeenSet;
 
                     /**
-                     * 对象排行列表，按主指标（`MetricKeys[0]`，本期为 TotalToken）降序排序。ShowAll=false 时为当前页 10 个对象（含 Series）；ShowAll=true 时为全量对象（不含 Series，用于 CSV 导出）。
+                     * <p>对象排行列表，按<code>MetricKeys[0]</code>降序排序。ShowAll=false 时为当前页 10 个对象（含 Series）；ShowAll=true 时为全量对象（不含 Series，用于 CSV 导出）。</p>
                      */
                     std::vector<UsageRankItem> m_topList;
                     bool m_topListHasBeenSet;
 
                     /**
-                     * 分页统计结果
+                     * <p>分页统计结果</p>
                      */
                     UsageStats m_pageStats;
                     bool m_pageStatsHasBeenSet;
 
                     /**
-                     * 总统计结果
+                     * <p>总统计结果</p>
                      */
                     UsageStats m_totalStats;
                     bool m_totalStatsHasBeenSet;

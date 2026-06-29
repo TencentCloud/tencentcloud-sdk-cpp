@@ -22,12 +22,12 @@ using namespace std;
 
 ModelParams::ModelParams() :
     m_deepThinkingHasBeenSet(false),
-    m_reasoningEffortHasBeenSet(false),
-    m_replyFormatHasBeenSet(false),
     m_frequencyPenaltyHasBeenSet(false),
     m_maxTokensHasBeenSet(false),
     m_presencePenaltyHasBeenSet(false),
+    m_reasoningEffortHasBeenSet(false),
     m_repetitionPenaltyHasBeenSet(false),
+    m_replyFormatHasBeenSet(false),
     m_seedHasBeenSet(false),
     m_stopSequenceListHasBeenSet(false),
     m_temperatureHasBeenSet(false),
@@ -48,26 +48,6 @@ CoreInternalOutcome ModelParams::Deserialize(const rapidjson::Value &value)
         }
         m_deepThinking = string(value["DeepThinking"].GetString());
         m_deepThinkingHasBeenSet = true;
-    }
-
-    if (value.HasMember("ReasoningEffort") && !value["ReasoningEffort"].IsNull())
-    {
-        if (!value["ReasoningEffort"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ModelParams.ReasoningEffort` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_reasoningEffort = string(value["ReasoningEffort"].GetString());
-        m_reasoningEffortHasBeenSet = true;
-    }
-
-    if (value.HasMember("ReplyFormat") && !value["ReplyFormat"].IsNull())
-    {
-        if (!value["ReplyFormat"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ModelParams.ReplyFormat` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_replyFormat = string(value["ReplyFormat"].GetString());
-        m_replyFormatHasBeenSet = true;
     }
 
     if (value.HasMember("FrequencyPenalty") && !value["FrequencyPenalty"].IsNull())
@@ -100,6 +80,16 @@ CoreInternalOutcome ModelParams::Deserialize(const rapidjson::Value &value)
         m_presencePenaltyHasBeenSet = true;
     }
 
+    if (value.HasMember("ReasoningEffort") && !value["ReasoningEffort"].IsNull())
+    {
+        if (!value["ReasoningEffort"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelParams.ReasoningEffort` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reasoningEffort = string(value["ReasoningEffort"].GetString());
+        m_reasoningEffortHasBeenSet = true;
+    }
+
     if (value.HasMember("RepetitionPenalty") && !value["RepetitionPenalty"].IsNull())
     {
         if (!value["RepetitionPenalty"].IsLosslessDouble())
@@ -108,6 +98,16 @@ CoreInternalOutcome ModelParams::Deserialize(const rapidjson::Value &value)
         }
         m_repetitionPenalty = value["RepetitionPenalty"].GetDouble();
         m_repetitionPenaltyHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReplyFormat") && !value["ReplyFormat"].IsNull())
+    {
+        if (!value["ReplyFormat"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelParams.ReplyFormat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_replyFormat = string(value["ReplyFormat"].GetString());
+        m_replyFormatHasBeenSet = true;
     }
 
     if (value.HasMember("Seed") && !value["Seed"].IsNull())
@@ -168,22 +168,6 @@ void ModelParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_deepThinking.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_reasoningEffortHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ReasoningEffort";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_reasoningEffort.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_replyFormatHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ReplyFormat";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_replyFormat.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_frequencyPenaltyHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -208,12 +192,28 @@ void ModelParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, m_presencePenalty, allocator);
     }
 
+    if (m_reasoningEffortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReasoningEffort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reasoningEffort.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_repetitionPenaltyHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RepetitionPenalty";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_repetitionPenalty, allocator);
+    }
+
+    if (m_replyFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReplyFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_replyFormat.c_str(), allocator).Move(), allocator);
     }
 
     if (m_seedHasBeenSet)
@@ -272,38 +272,6 @@ bool ModelParams::DeepThinkingHasBeenSet() const
     return m_deepThinkingHasBeenSet;
 }
 
-string ModelParams::GetReasoningEffort() const
-{
-    return m_reasoningEffort;
-}
-
-void ModelParams::SetReasoningEffort(const string& _reasoningEffort)
-{
-    m_reasoningEffort = _reasoningEffort;
-    m_reasoningEffortHasBeenSet = true;
-}
-
-bool ModelParams::ReasoningEffortHasBeenSet() const
-{
-    return m_reasoningEffortHasBeenSet;
-}
-
-string ModelParams::GetReplyFormat() const
-{
-    return m_replyFormat;
-}
-
-void ModelParams::SetReplyFormat(const string& _replyFormat)
-{
-    m_replyFormat = _replyFormat;
-    m_replyFormatHasBeenSet = true;
-}
-
-bool ModelParams::ReplyFormatHasBeenSet() const
-{
-    return m_replyFormatHasBeenSet;
-}
-
 double ModelParams::GetFrequencyPenalty() const
 {
     return m_frequencyPenalty;
@@ -352,6 +320,22 @@ bool ModelParams::PresencePenaltyHasBeenSet() const
     return m_presencePenaltyHasBeenSet;
 }
 
+string ModelParams::GetReasoningEffort() const
+{
+    return m_reasoningEffort;
+}
+
+void ModelParams::SetReasoningEffort(const string& _reasoningEffort)
+{
+    m_reasoningEffort = _reasoningEffort;
+    m_reasoningEffortHasBeenSet = true;
+}
+
+bool ModelParams::ReasoningEffortHasBeenSet() const
+{
+    return m_reasoningEffortHasBeenSet;
+}
+
 double ModelParams::GetRepetitionPenalty() const
 {
     return m_repetitionPenalty;
@@ -366,6 +350,22 @@ void ModelParams::SetRepetitionPenalty(const double& _repetitionPenalty)
 bool ModelParams::RepetitionPenaltyHasBeenSet() const
 {
     return m_repetitionPenaltyHasBeenSet;
+}
+
+string ModelParams::GetReplyFormat() const
+{
+    return m_replyFormat;
+}
+
+void ModelParams::SetReplyFormat(const string& _replyFormat)
+{
+    m_replyFormat = _replyFormat;
+    m_replyFormatHasBeenSet = true;
+}
+
+bool ModelParams::ReplyFormatHasBeenSet() const
+{
+    return m_replyFormatHasBeenSet;
 }
 
 int64_t ModelParams::GetSeed() const

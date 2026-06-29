@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取请求示例，json字符串
-                     * @return Request 请求示例，json字符串
+                     * 获取<p>请求参数</p>
+                     * @return Request <p>请求参数</p>
                      * 
                      */
                     std::string GetRequest() const;
 
                     /**
-                     * 设置请求示例，json字符串
-                     * @param _request 请求示例，json字符串
+                     * 设置<p>请求参数</p>
+                     * @param _request <p>请求参数</p>
                      * 
                      */
                     void SetRequest(const std::string& _request);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool RequestHasBeenSet() const;
 
                     /**
-                     * 获取回复示例，json字符串
-                     * @return Response 回复示例，json字符串
+                     * 获取<p>响应参数</p>
+                     * @return Response <p>响应参数</p>
                      * 
                      */
                     std::string GetResponse() const;
 
                     /**
-                     * 设置回复示例，json字符串
-                     * @param _response 回复示例，json字符串
+                     * 设置<p>响应参数</p>
+                     * @param _response <p>响应参数</p>
                      * 
                      */
                     void SetResponse(const std::string& _response);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 请求示例，json字符串
+                     * <p>请求参数</p>
                      */
                     std::string m_request;
                     bool m_requestHasBeenSet;
 
                     /**
-                     * 回复示例，json字符串
+                     * <p>响应参数</p>
                      */
                     std::string m_response;
                     bool m_responseHasBeenSet;

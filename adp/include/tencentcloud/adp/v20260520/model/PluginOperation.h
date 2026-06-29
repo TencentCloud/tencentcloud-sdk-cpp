@@ -68,39 +68,15 @@ namespace TencentCloud
                     bool AllowExternalAccessHasBeenSet() const;
 
                     /**
-                     * 获取计费类型
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 免费 |
-| 1 | 限时免费 |
-| 2 | 官方收费 |
-                     * @return BillingType 计费类型
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 免费 |
-| 1 | 限时免费 |
-| 2 | 官方收费 |
+                     * 获取<p>计费类型。</p><p>枚举值：</p><ul><li>0：免费</li><li>1：公测</li><li>2：官方收费</li></ul>
+                     * @return BillingType <p>计费类型。</p><p>枚举值：</p><ul><li>0：免费</li><li>1：公测</li><li>2：官方收费</li></ul>
                      * 
                      */
                     int64_t GetBillingType() const;
 
                     /**
-                     * 设置计费类型
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 免费 |
-| 1 | 限时免费 |
-| 2 | 官方收费 |
-                     * @param _billingType 计费类型
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 免费 |
-| 1 | 限时免费 |
-| 2 | 官方收费 |
+                     * 设置<p>计费类型。</p><p>枚举值：</p><ul><li>0：免费</li><li>1：公测</li><li>2：官方收费</li></ul>
+                     * @param _billingType <p>计费类型。</p><p>枚举值：</p><ul><li>0：免费</li><li>1：公测</li><li>2：官方收费</li></ul>
                      * 
                      */
                     void SetBillingType(const int64_t& _billingType);
@@ -184,13 +160,7 @@ namespace TencentCloud
                     bool m_allowExternalAccessHasBeenSet;
 
                     /**
-                     * 计费类型
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 免费 |
-| 1 | 限时免费 |
-| 2 | 官方收费 |
+                     * <p>计费类型。</p><p>枚举值：</p><ul><li>0：免费</li><li>1：公测</li><li>2：官方收费</li></ul>
                      */
                     int64_t m_billingType;
                     bool m_billingTypeHasBeenSet;

@@ -25,7 +25,8 @@ using namespace std;
 DescribeReleaseFilesRequest::DescribeReleaseFilesRequest() :
     m_projectIDHasBeenSet(false),
     m_fileVersionHasBeenSet(false),
-    m_fileNameHasBeenSet(false)
+    m_fileNameHasBeenSet(false),
+    m_ignoreDefaultTimeRangeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeReleaseFilesRequest::ToJsonString() const
         string key = "FileName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ignoreDefaultTimeRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IgnoreDefaultTimeRange";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ignoreDefaultTimeRange, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeReleaseFilesRequest::SetFileName(const string& _fileName)
 bool DescribeReleaseFilesRequest::FileNameHasBeenSet() const
 {
     return m_fileNameHasBeenSet;
+}
+
+bool DescribeReleaseFilesRequest::GetIgnoreDefaultTimeRange() const
+{
+    return m_ignoreDefaultTimeRange;
+}
+
+void DescribeReleaseFilesRequest::SetIgnoreDefaultTimeRange(const bool& _ignoreDefaultTimeRange)
+{
+    m_ignoreDefaultTimeRange = _ignoreDefaultTimeRange;
+    m_ignoreDefaultTimeRangeHasBeenSet = true;
+}
+
+bool DescribeReleaseFilesRequest::IgnoreDefaultTimeRangeHasBeenSet() const
+{
+    return m_ignoreDefaultTimeRangeHasBeenSet;
 }
 
 

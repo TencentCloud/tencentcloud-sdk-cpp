@@ -201,6 +201,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/LLMComprehendFaceRecognitionForUpdate.h
   include/tencentcloud/vod/v20180717/model/DescribeEventConfigRequest.h
   include/tencentcloud/vod/v20180717/model/MediaContentReviewOcrTextSegmentItem.h
+  include/tencentcloud/vod/v20180717/model/OutputAudioStream.h
   include/tencentcloud/vod/v20180717/model/ModifyLLMComprehendTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/DescribeAigcFaceInfoAsyncInput.h
   include/tencentcloud/vod/v20180717/model/AiAnalysisTaskClassificationOutput.h
@@ -452,6 +453,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/CustomVoiceInfo.h
   include/tencentcloud/vod/v20180717/model/CreateAigcAudioCloneOutput.h
   include/tencentcloud/vod/v20180717/model/ModifyEnhanceMediaTemplateResponse.h
+  include/tencentcloud/vod/v20180717/model/KnowledgeAnalysisInfo.h
   include/tencentcloud/vod/v20180717/model/ModifyWatermarkTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/EnhanceMediaByTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/CreateJustInTimeTranscodeTemplateRequest.h
@@ -747,7 +749,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/TerrorismConfigureInfo.h
   include/tencentcloud/vod/v20180717/model/ExtractTraceWatermarkTaskInput.h
   include/tencentcloud/vod/v20180717/model/AiReviewPoliticalAsrTaskOutput.h
-  include/tencentcloud/vod/v20180717/model/OutputAudioStream.h
+  include/tencentcloud/vod/v20180717/model/KnowledgeAnalysisResult.h
   include/tencentcloud/vod/v20180717/model/ModifyClassRequest.h
   include/tencentcloud/vod/v20180717/model/QRCodeConfigureInfoForUpdate.h
   include/tencentcloud/vod/v20180717/model/SceneAigcImageTaskInputFileInfo.h
@@ -1287,6 +1289,7 @@ set(vod_src
   src/v20180717/model/LLMComprehendFaceRecognitionForUpdate.cpp
   src/v20180717/model/DescribeEventConfigRequest.cpp
   src/v20180717/model/MediaContentReviewOcrTextSegmentItem.cpp
+  src/v20180717/model/OutputAudioStream.cpp
   src/v20180717/model/ModifyLLMComprehendTemplateResponse.cpp
   src/v20180717/model/DescribeAigcFaceInfoAsyncInput.cpp
   src/v20180717/model/AiAnalysisTaskClassificationOutput.cpp
@@ -1538,6 +1541,7 @@ set(vod_src
   src/v20180717/model/CustomVoiceInfo.cpp
   src/v20180717/model/CreateAigcAudioCloneOutput.cpp
   src/v20180717/model/ModifyEnhanceMediaTemplateResponse.cpp
+  src/v20180717/model/KnowledgeAnalysisInfo.cpp
   src/v20180717/model/ModifyWatermarkTemplateResponse.cpp
   src/v20180717/model/EnhanceMediaByTemplateResponse.cpp
   src/v20180717/model/CreateJustInTimeTranscodeTemplateRequest.cpp
@@ -1833,7 +1837,7 @@ set(vod_src
   src/v20180717/model/TerrorismConfigureInfo.cpp
   src/v20180717/model/ExtractTraceWatermarkTaskInput.cpp
   src/v20180717/model/AiReviewPoliticalAsrTaskOutput.cpp
-  src/v20180717/model/OutputAudioStream.cpp
+  src/v20180717/model/KnowledgeAnalysisResult.cpp
   src/v20180717/model/ModifyClassRequest.cpp
   src/v20180717/model/QRCodeConfigureInfoForUpdate.cpp
   src/v20180717/model/SceneAigcImageTaskInputFileInfo.cpp

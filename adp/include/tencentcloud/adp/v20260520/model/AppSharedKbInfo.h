@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_ADP_V20260520_MODEL_APPSHAREDKNOWLEDGEINFO_H_
-#define TENCENTCLOUD_ADP_V20260520_MODEL_APPSHAREDKNOWLEDGEINFO_H_
+#ifndef TENCENTCLOUD_ADP_V20260520_MODEL_APPSHAREDKBINFO_H_
+#define TENCENTCLOUD_ADP_V20260520_MODEL_APPSHAREDKBINFO_H_
 
 #include <string>
 #include <vector>
@@ -37,70 +37,70 @@ namespace TencentCloud
                 /**
                 * 应用引用的共享知识库简要信息(查询时仅返回ID和名称)
                 */
-                class AppSharedKnowledgeInfo : public AbstractModel
+                class AppSharedKbInfo : public AbstractModel
                 {
                 public:
-                    AppSharedKnowledgeInfo();
-                    ~AppSharedKnowledgeInfo() = default;
+                    AppSharedKbInfo();
+                    ~AppSharedKbInfo() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
                      * 获取共享知识库ID
-                     * @return KnowledgeId 共享知识库ID
+                     * @return KbId 共享知识库ID
                      * 
                      */
-                    std::string GetKnowledgeId() const;
+                    std::string GetKbId() const;
 
                     /**
                      * 设置共享知识库ID
-                     * @param _knowledgeId 共享知识库ID
+                     * @param _kbId 共享知识库ID
                      * 
                      */
-                    void SetKnowledgeId(const std::string& _knowledgeId);
+                    void SetKbId(const std::string& _kbId);
 
                     /**
-                     * 判断参数 KnowledgeId 是否已赋值
-                     * @return KnowledgeId 是否已赋值
+                     * 判断参数 KbId 是否已赋值
+                     * @return KbId 是否已赋值
                      * 
                      */
-                    bool KnowledgeIdHasBeenSet() const;
+                    bool KbIdHasBeenSet() const;
 
                     /**
                      * 获取共享知识库名称
-                     * @return KnowledgeName 共享知识库名称
+                     * @return KbName 共享知识库名称
                      * 
                      */
-                    std::string GetKnowledgeName() const;
+                    std::string GetKbName() const;
 
                     /**
                      * 设置共享知识库名称
-                     * @param _knowledgeName 共享知识库名称
+                     * @param _kbName 共享知识库名称
                      * 
                      */
-                    void SetKnowledgeName(const std::string& _knowledgeName);
+                    void SetKbName(const std::string& _kbName);
 
                     /**
-                     * 判断参数 KnowledgeName 是否已赋值
-                     * @return KnowledgeName 是否已赋值
+                     * 判断参数 KbName 是否已赋值
+                     * @return KbName 是否已赋值
                      * 
                      */
-                    bool KnowledgeNameHasBeenSet() const;
+                    bool KbNameHasBeenSet() const;
 
                 private:
 
                     /**
                      * 共享知识库ID
                      */
-                    std::string m_knowledgeId;
-                    bool m_knowledgeIdHasBeenSet;
+                    std::string m_kbId;
+                    bool m_kbIdHasBeenSet;
 
                     /**
                      * 共享知识库名称
                      */
-                    std::string m_knowledgeName;
-                    bool m_knowledgeNameHasBeenSet;
+                    std::string m_kbName;
+                    bool m_kbNameHasBeenSet;
 
                 };
             }
@@ -108,4 +108,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_ADP_V20260520_MODEL_APPSHAREDKNOWLEDGEINFO_H_
+#endif // !TENCENTCLOUD_ADP_V20260520_MODEL_APPSHAREDKBINFO_H_

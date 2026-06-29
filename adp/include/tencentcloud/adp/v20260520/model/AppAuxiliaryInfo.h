@@ -28,7 +28,6 @@
 #include <tencentcloud/adp/v20260520/model/SearchResourceStatusInfo.h>
 #include <tencentcloud/adp/v20260520/model/SpecialStatusInfo.h>
 #include <tencentcloud/adp/v20260520/model/AppSubStatusInfo.h>
-#include <tencentcloud/adp/v20260520/model/TemplatePublishInfo.h>
 
 
 namespace TencentCloud
@@ -151,31 +150,6 @@ namespace TencentCloud
                      */
                     bool SubStatusHasBeenSet() const;
 
-                    /**
-                     * 获取模版中心同步信息(私有化独有)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TemplatePublish 模版中心同步信息(私有化独有)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    TemplatePublishInfo GetTemplatePublish() const;
-
-                    /**
-                     * 设置模版中心同步信息(私有化独有)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _templatePublish 模版中心同步信息(私有化独有)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetTemplatePublish(const TemplatePublishInfo& _templatePublish);
-
-                    /**
-                     * 判断参数 TemplatePublish 是否已赋值
-                     * @return TemplatePublish 是否已赋值
-                     * 
-                     */
-                    bool TemplatePublishHasBeenSet() const;
-
                 private:
 
                     /**
@@ -205,13 +179,6 @@ namespace TencentCloud
                      */
                     AppSubStatusInfo m_subStatus;
                     bool m_subStatusHasBeenSet;
-
-                    /**
-                     * 模版中心同步信息(私有化独有)
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    TemplatePublishInfo m_templatePublish;
-                    bool m_templatePublishHasBeenSet;
 
                 };
             }

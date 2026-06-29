@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则 ID
-                     * @return RuleId 规则 ID
+                     * 获取<p>规则 ID</p>
+                     * @return RuleId <p>规则 ID</p>
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置规则 ID
-                     * @param _ruleId 规则 ID
+                     * 设置<p>规则 ID</p>
+                     * @param _ruleId <p>规则 ID</p>
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取规则状态码
-                     * @return RuleState 规则状态码
+                     * 获取<p>规则状态码</p>
+                     * @return RuleState <p>规则状态码</p>
                      * 
                      */
                     int64_t GetRuleState() const;
 
                     /**
-                     * 设置规则状态码
-                     * @param _ruleState 规则状态码
+                     * 设置<p>规则状态码</p>
+                     * @param _ruleState <p>规则状态码</p>
                      * 
                      */
                     void SetRuleState(const int64_t& _ruleState);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool RuleStateHasBeenSet() const;
 
                     /**
-                     * 获取分组名称
-                     * @return Name 分组名称
+                     * 获取<p>分组名称</p>
+                     * @return Name <p>分组名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置分组名称
-                     * @param _name 分组名称
+                     * 设置<p>分组名称</p>
+                     * @param _name <p>分组名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取规则内容组
-                     * @return Group 规则内容组
+                     * 获取<p>规则内容组</p>
+                     * @return Group <p>规则内容组</p>
                      * 
                      */
                     std::string GetGroup() const;
 
                     /**
-                     * 设置规则内容组
-                     * @param _group 规则内容组
+                     * 设置<p>规则内容组</p>
+                     * @param _group <p>规则内容组</p>
                      * 
                      */
                     void SetGroup(const std::string& _group);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool GroupHasBeenSet() const;
 
                     /**
-                     * 获取规则数量
-                     * @return Total 规则数量
+                     * 获取<p>规则数量</p>
+                     * @return Total <p>规则数量</p>
                      * 
                      */
                     int64_t GetTotal() const;
 
                     /**
-                     * 设置规则数量
-                     * @param _total 规则数量
+                     * 设置<p>规则数量</p>
+                     * @param _total <p>规则数量</p>
                      * 
                      */
                     void SetTotal(const int64_t& _total);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取规则创建时间
-                     * @return CreatedAt 规则创建时间
+                     * 获取<p>规则创建时间</p>
+                     * @return CreatedAt <p>规则创建时间</p>
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
-                     * 设置规则创建时间
-                     * @param _createdAt 规则创建时间
+                     * 设置<p>规则创建时间</p>
+                     * @param _createdAt <p>规则创建时间</p>
                      * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool CreatedAtHasBeenSet() const;
 
                     /**
-                     * 获取规则最近更新时间
-                     * @return UpdatedAt 规则最近更新时间
+                     * 获取<p>规则最近更新时间</p>
+                     * @return UpdatedAt <p>规则最近更新时间</p>
                      * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
-                     * 设置规则最近更新时间
-                     * @param _updatedAt 规则最近更新时间
+                     * 设置<p>规则最近更新时间</p>
+                     * @param _updatedAt <p>规则最近更新时间</p>
                      * 
                      */
                     void SetUpdatedAt(const std::string& _updatedAt);
@@ -194,18 +194,18 @@ namespace TencentCloud
                     bool UpdatedAtHasBeenSet() const;
 
                     /**
-                     * 获取规则名称
+                     * 获取<p>规则名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleName 规则名称
+                     * @return RuleName <p>规则名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
-                     * 设置规则名称
+                     * 设置<p>规则名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ruleName 规则名称
+                     * @param _ruleName <p>规则名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -221,49 +221,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 规则 ID
+                     * <p>规则 ID</p>
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * 规则状态码
+                     * <p>规则状态码</p>
                      */
                     int64_t m_ruleState;
                     bool m_ruleStateHasBeenSet;
 
                     /**
-                     * 分组名称
+                     * <p>分组名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 规则内容组
+                     * <p>规则内容组</p>
                      */
                     std::string m_group;
                     bool m_groupHasBeenSet;
 
                     /**
-                     * 规则数量
+                     * <p>规则数量</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 规则创建时间
+                     * <p>规则创建时间</p>
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
-                     * 规则最近更新时间
+                     * <p>规则最近更新时间</p>
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;
 
                     /**
-                     * 规则名称
+                     * <p>规则名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleName;

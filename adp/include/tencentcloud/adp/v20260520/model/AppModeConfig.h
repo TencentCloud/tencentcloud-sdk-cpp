@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/adp/v20260520/model/MultiAgentConfig.h>
 #include <tencentcloud/adp/v20260520/model/SingleWorkflowConfig.h>
+#include <tencentcloud/adp/v20260520/model/ClawAgentConfig.h>
 
 
 namespace TencentCloud
@@ -98,6 +99,31 @@ namespace TencentCloud
                      */
                     bool SingleWorkflowConfigHasBeenSet() const;
 
+                    /**
+                     * 获取ClawAgent配置(ClawAgent模式)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClawAgentConfig ClawAgent配置(ClawAgent模式)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ClawAgentConfig GetClawAgentConfig() const;
+
+                    /**
+                     * 设置ClawAgent配置(ClawAgent模式)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clawAgentConfig ClawAgent配置(ClawAgent模式)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClawAgentConfig(const ClawAgentConfig& _clawAgentConfig);
+
+                    /**
+                     * 判断参数 ClawAgentConfig 是否已赋值
+                     * @return ClawAgentConfig 是否已赋值
+                     * 
+                     */
+                    bool ClawAgentConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -113,6 +139,13 @@ namespace TencentCloud
                      */
                     SingleWorkflowConfig m_singleWorkflowConfig;
                     bool m_singleWorkflowConfigHasBeenSet;
+
+                    /**
+                     * ClawAgent配置(ClawAgent模式)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ClawAgentConfig m_clawAgentConfig;
+                    bool m_clawAgentConfigHasBeenSet;
 
                 };
             }

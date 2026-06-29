@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取HTTP 状态码
-                     * @return StatusCode HTTP 状态码
+                     * 获取<p>HTTP 状态码</p>
+                     * @return StatusCode <p>HTTP 状态码</p>
                      * 
                      */
                     int64_t GetStatusCode() const;
 
                     /**
-                     * 设置HTTP 状态码
-                     * @param _statusCode HTTP 状态码
+                     * 设置<p>HTTP 状态码</p>
+                     * @param _statusCode <p>HTTP 状态码</p>
                      * 
                      */
                     void SetStatusCode(const int64_t& _statusCode);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool StatusCodeHasBeenSet() const;
 
                     /**
-                     * 获取HTTP 响应体
-                     * @return ResponseBody HTTP 响应体
+                     * 获取<p>HTTP 响应体</p>
+                     * @return ResponseBody <p>HTTP 响应体</p>
                      * 
                      */
                     std::string GetResponseBody() const;
 
                     /**
-                     * 设置HTTP 响应体
-                     * @param _responseBody HTTP 响应体
+                     * 设置<p>HTTP 响应体</p>
+                     * @param _responseBody <p>HTTP 响应体</p>
                      * 
                      */
                     void SetResponseBody(const std::string& _responseBody);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * HTTP 状态码
+                     * <p>HTTP 状态码</p>
                      */
                     int64_t m_statusCode;
                     bool m_statusCodeHasBeenSet;
 
                     /**
-                     * HTTP 响应体
+                     * <p>HTTP 响应体</p>
                      */
                     std::string m_responseBody;
                     bool m_responseBodyHasBeenSet;

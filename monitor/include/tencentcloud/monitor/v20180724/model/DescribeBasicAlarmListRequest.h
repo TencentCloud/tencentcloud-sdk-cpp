@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取接口模块名，当前取值monitor
-                     * @return Module 接口模块名，当前取值monitor
+                     * 获取<p>接口模块名，当前取值monitor</p>
+                     * @return Module <p>接口模块名，当前取值monitor</p>
                      * 
                      */
                     std::string GetModule() const;
 
                     /**
-                     * 设置接口模块名，当前取值monitor
-                     * @param _module 接口模块名，当前取值monitor
+                     * 设置<p>接口模块名，当前取值monitor</p>
+                     * @param _module <p>接口模块名，当前取值monitor</p>
                      * 
                      */
                     void SetModule(const std::string& _module);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取起始时间，默认一天前的时间戳
-                     * @return StartTime 起始时间，默认一天前的时间戳
+                     * 获取<p>起始时间，默认一天前的时间戳</p>
+                     * @return StartTime <p>起始时间，默认一天前的时间戳</p>
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置起始时间，默认一天前的时间戳
-                     * @param _startTime 起始时间，默认一天前的时间戳
+                     * 设置<p>起始时间，默认一天前的时间戳</p>
+                     * @param _startTime <p>起始时间，默认一天前的时间戳</p>
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间，默认当前时间戳
-                     * @return EndTime 结束时间，默认当前时间戳
+                     * 获取<p>结束时间，默认当前时间戳</p>
+                     * @return EndTime <p>结束时间，默认当前时间戳</p>
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间，默认当前时间戳
-                     * @param _endTime 结束时间，默认当前时间戳
+                     * 设置<p>结束时间，默认当前时间戳</p>
+                     * @param _endTime <p>结束时间，默认当前时间戳</p>
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取分页参数，每页返回的数量，取值1~100，默认20
-                     * @return Limit 分页参数，每页返回的数量，取值1~100，默认20
+                     * 获取<p>分页参数，每页返回的数量，取值1~100，默认20</p>
+                     * @return Limit <p>分页参数，每页返回的数量，取值1~100，默认20</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页参数，每页返回的数量，取值1~100，默认20
-                     * @param _limit 分页参数，每页返回的数量，取值1~100，默认20
+                     * 设置<p>分页参数，每页返回的数量，取值1~100，默认20</p>
+                     * @param _limit <p>分页参数，每页返回的数量，取值1~100，默认20</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页参数，页偏移量，从0开始计数，默认0
-                     * @return Offset 分页参数，页偏移量，从0开始计数，默认0
+                     * 获取<p>分页参数，页偏移量，从0开始计数，默认0</p>
+                     * @return Offset <p>分页参数，页偏移量，从0开始计数，默认0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页参数，页偏移量，从0开始计数，默认0
-                     * @param _offset 分页参数，页偏移量，从0开始计数，默认0
+                     * 设置<p>分页参数，页偏移量，从0开始计数，默认0</p>
+                     * @param _offset <p>分页参数，页偏移量，从0开始计数，默认0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取根据发生时间排序，取值ASC或DESC
-                     * @return OccurTimeOrder 根据发生时间排序，取值ASC或DESC
+                     * 获取<p>根据发生时间排序，取值ASC或DESC</p>
+                     * @return OccurTimeOrder <p>根据发生时间排序，取值ASC或DESC</p>
                      * 
                      */
                     std::string GetOccurTimeOrder() const;
 
                     /**
-                     * 设置根据发生时间排序，取值ASC或DESC
-                     * @param _occurTimeOrder 根据发生时间排序，取值ASC或DESC
+                     * 设置<p>根据发生时间排序，取值ASC或DESC</p>
+                     * @param _occurTimeOrder <p>根据发生时间排序，取值ASC或DESC</p>
                      * 
                      */
                     void SetOccurTimeOrder(const std::string& _occurTimeOrder);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool OccurTimeOrderHasBeenSet() const;
 
                     /**
-                     * 获取根据项目ID过滤
-                     * @return ProjectIds 根据项目ID过滤
+                     * 获取<p>根据项目ID过滤</p>
+                     * @return ProjectIds <p>根据项目ID过滤</p>
                      * 
                      */
                     std::vector<int64_t> GetProjectIds() const;
 
                     /**
-                     * 设置根据项目ID过滤
-                     * @param _projectIds 根据项目ID过滤
+                     * 设置<p>根据项目ID过滤</p>
+                     * @param _projectIds <p>根据项目ID过滤</p>
                      * 
                      */
                     void SetProjectIds(const std::vector<int64_t>& _projectIds);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool ProjectIdsHasBeenSet() const;
 
                     /**
-                     * 获取根据策略类型过滤
-                     * @return ViewNames 根据策略类型过滤
+                     * 获取<p>根据策略类型过滤</p>
+                     * @return ViewNames <p>根据策略类型过滤</p>
                      * 
                      */
                     std::vector<std::string> GetViewNames() const;
 
                     /**
-                     * 设置根据策略类型过滤
-                     * @param _viewNames 根据策略类型过滤
+                     * 设置<p>根据策略类型过滤</p>
+                     * @param _viewNames <p>根据策略类型过滤</p>
                      * 
                      */
                     void SetViewNames(const std::vector<std::string>& _viewNames);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool ViewNamesHasBeenSet() const;
 
                     /**
-                     * 获取根据告警状态过滤
-                     * @return AlarmStatus 根据告警状态过滤
+                     * 获取<p>根据告警状态过滤</p>
+                     * @return AlarmStatus <p>根据告警状态过滤</p>
                      * 
                      */
                     std::vector<int64_t> GetAlarmStatus() const;
 
                     /**
-                     * 设置根据告警状态过滤
-                     * @param _alarmStatus 根据告警状态过滤
+                     * 设置<p>根据告警状态过滤</p>
+                     * @param _alarmStatus <p>根据告警状态过滤</p>
                      * 
                      */
                     void SetAlarmStatus(const std::vector<int64_t>& _alarmStatus);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool AlarmStatusHasBeenSet() const;
 
                     /**
-                     * 获取根据告警对象过滤
-                     * @return ObjLike 根据告警对象过滤
+                     * 获取<p>根据告警对象过滤</p>
+                     * @return ObjLike <p>根据告警对象过滤</p>
                      * 
                      */
                     std::string GetObjLike() const;
 
                     /**
-                     * 设置根据告警对象过滤
-                     * @param _objLike 根据告警对象过滤
+                     * 设置<p>根据告警对象过滤</p>
+                     * @param _objLike <p>根据告警对象过滤</p>
                      * 
                      */
                     void SetObjLike(const std::string& _objLike);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool ObjLikeHasBeenSet() const;
 
                     /**
-                     * 获取根据实例组ID过滤
-                     * @return InstanceGroupIds 根据实例组ID过滤
+                     * 获取<p>根据实例组ID过滤</p>
+                     * @return InstanceGroupIds <p>根据实例组ID过滤</p>
                      * 
                      */
                     std::vector<int64_t> GetInstanceGroupIds() const;
 
                     /**
-                     * 设置根据实例组ID过滤
-                     * @param _instanceGroupIds 根据实例组ID过滤
+                     * 设置<p>根据实例组ID过滤</p>
+                     * @param _instanceGroupIds <p>根据实例组ID过滤</p>
                      * 
                      */
                     void SetInstanceGroupIds(const std::vector<int64_t>& _instanceGroupIds);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool InstanceGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取根据指标名过滤
-                     * @return MetricNames 根据指标名过滤
+                     * 获取<p>根据指标名过滤</p>
+                     * @return MetricNames <p>根据指标名过滤</p>
                      * 
                      */
                     std::vector<std::string> GetMetricNames() const;
 
                     /**
-                     * 设置根据指标名过滤
-                     * @param _metricNames 根据指标名过滤
+                     * 设置<p>根据指标名过滤</p>
+                     * @param _metricNames <p>根据指标名过滤</p>
                      * 
                      */
                     void SetMetricNames(const std::vector<std::string>& _metricNames);
@@ -297,73 +297,73 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 接口模块名，当前取值monitor
+                     * <p>接口模块名，当前取值monitor</p>
                      */
                     std::string m_module;
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 起始时间，默认一天前的时间戳
+                     * <p>起始时间，默认一天前的时间戳</p>
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间，默认当前时间戳
+                     * <p>结束时间，默认当前时间戳</p>
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 分页参数，每页返回的数量，取值1~100，默认20
+                     * <p>分页参数，每页返回的数量，取值1~100，默认20</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页参数，页偏移量，从0开始计数，默认0
+                     * <p>分页参数，页偏移量，从0开始计数，默认0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 根据发生时间排序，取值ASC或DESC
+                     * <p>根据发生时间排序，取值ASC或DESC</p>
                      */
                     std::string m_occurTimeOrder;
                     bool m_occurTimeOrderHasBeenSet;
 
                     /**
-                     * 根据项目ID过滤
+                     * <p>根据项目ID过滤</p>
                      */
                     std::vector<int64_t> m_projectIds;
                     bool m_projectIdsHasBeenSet;
 
                     /**
-                     * 根据策略类型过滤
+                     * <p>根据策略类型过滤</p>
                      */
                     std::vector<std::string> m_viewNames;
                     bool m_viewNamesHasBeenSet;
 
                     /**
-                     * 根据告警状态过滤
+                     * <p>根据告警状态过滤</p>
                      */
                     std::vector<int64_t> m_alarmStatus;
                     bool m_alarmStatusHasBeenSet;
 
                     /**
-                     * 根据告警对象过滤
+                     * <p>根据告警对象过滤</p>
                      */
                     std::string m_objLike;
                     bool m_objLikeHasBeenSet;
 
                     /**
-                     * 根据实例组ID过滤
+                     * <p>根据实例组ID过滤</p>
                      */
                     std::vector<int64_t> m_instanceGroupIds;
                     bool m_instanceGroupIdsHasBeenSet;
 
                     /**
-                     * 根据指标名过滤
+                     * <p>根据指标名过滤</p>
                      */
                     std::vector<std::string> m_metricNames;
                     bool m_metricNamesHasBeenSet;

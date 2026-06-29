@@ -21,14 +21,14 @@ using namespace TencentCloud::Adp::V20260520::Model;
 using namespace std;
 
 Tool::Tool() :
+    m_billingHasBeenSet(false),
+    m_callCountHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_pluginIdHasBeenSet(false),
-    m_toolIdHasBeenSet(false),
-    m_billingHasBeenSet(false),
-    m_callCountHasBeenSet(false),
     m_toolAccessModeHasBeenSet(false),
-    m_toolConfigHasBeenSet(false)
+    m_toolConfigHasBeenSet(false),
+    m_toolIdHasBeenSet(false)
 {
 }
 
@@ -36,6 +36,33 @@ CoreInternalOutcome Tool::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("Billing") && !value["Billing"].IsNull())
+    {
+        if (!value["Billing"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Tool.Billing` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_billing.Deserialize(value["Billing"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_billingHasBeenSet = true;
+    }
+
+    if (value.HasMember("CallCount") && !value["CallCount"].IsNull())
+    {
+        if (!value["CallCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Tool.CallCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_callCount = value["CallCount"].GetUint64();
+        m_callCountHasBeenSet = true;
+    }
 
     if (value.HasMember("Description") && !value["Description"].IsNull())
     {
@@ -67,43 +94,6 @@ CoreInternalOutcome Tool::Deserialize(const rapidjson::Value &value)
         m_pluginIdHasBeenSet = true;
     }
 
-    if (value.HasMember("ToolId") && !value["ToolId"].IsNull())
-    {
-        if (!value["ToolId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Tool.ToolId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_toolId = string(value["ToolId"].GetString());
-        m_toolIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("Billing") && !value["Billing"].IsNull())
-    {
-        if (!value["Billing"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `Tool.Billing` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_billing.Deserialize(value["Billing"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_billingHasBeenSet = true;
-    }
-
-    if (value.HasMember("CallCount") && !value["CallCount"].IsNull())
-    {
-        if (!value["CallCount"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Tool.CallCount` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_callCount = value["CallCount"].GetUint64();
-        m_callCountHasBeenSet = true;
-    }
-
     if (value.HasMember("ToolAccessMode") && !value["ToolAccessMode"].IsNull())
     {
         if (!value["ToolAccessMode"].IsInt64())
@@ -131,12 +121,39 @@ CoreInternalOutcome Tool::Deserialize(const rapidjson::Value &value)
         m_toolConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("ToolId") && !value["ToolId"].IsNull())
+    {
+        if (!value["ToolId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Tool.ToolId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_toolId = string(value["ToolId"].GetString());
+        m_toolIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void Tool::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_billingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Billing";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_billing.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_callCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_callCount, allocator);
+    }
 
     if (m_descriptionHasBeenSet)
     {
@@ -162,31 +179,6 @@ void Tool::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         value.AddMember(iKey, rapidjson::Value(m_pluginId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_toolIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ToolId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_toolId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_billingHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Billing";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_billing.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_callCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CallCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_callCount, allocator);
-    }
-
     if (m_toolAccessModeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -204,8 +196,48 @@ void Tool::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         m_toolConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_toolIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToolId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_toolId.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
+
+ToolBilling Tool::GetBilling() const
+{
+    return m_billing;
+}
+
+void Tool::SetBilling(const ToolBilling& _billing)
+{
+    m_billing = _billing;
+    m_billingHasBeenSet = true;
+}
+
+bool Tool::BillingHasBeenSet() const
+{
+    return m_billingHasBeenSet;
+}
+
+uint64_t Tool::GetCallCount() const
+{
+    return m_callCount;
+}
+
+void Tool::SetCallCount(const uint64_t& _callCount)
+{
+    m_callCount = _callCount;
+    m_callCountHasBeenSet = true;
+}
+
+bool Tool::CallCountHasBeenSet() const
+{
+    return m_callCountHasBeenSet;
+}
 
 string Tool::GetDescription() const
 {
@@ -255,54 +287,6 @@ bool Tool::PluginIdHasBeenSet() const
     return m_pluginIdHasBeenSet;
 }
 
-string Tool::GetToolId() const
-{
-    return m_toolId;
-}
-
-void Tool::SetToolId(const string& _toolId)
-{
-    m_toolId = _toolId;
-    m_toolIdHasBeenSet = true;
-}
-
-bool Tool::ToolIdHasBeenSet() const
-{
-    return m_toolIdHasBeenSet;
-}
-
-ToolBilling Tool::GetBilling() const
-{
-    return m_billing;
-}
-
-void Tool::SetBilling(const ToolBilling& _billing)
-{
-    m_billing = _billing;
-    m_billingHasBeenSet = true;
-}
-
-bool Tool::BillingHasBeenSet() const
-{
-    return m_billingHasBeenSet;
-}
-
-uint64_t Tool::GetCallCount() const
-{
-    return m_callCount;
-}
-
-void Tool::SetCallCount(const uint64_t& _callCount)
-{
-    m_callCount = _callCount;
-    m_callCountHasBeenSet = true;
-}
-
-bool Tool::CallCountHasBeenSet() const
-{
-    return m_callCountHasBeenSet;
-}
-
 int64_t Tool::GetToolAccessMode() const
 {
     return m_toolAccessMode;
@@ -333,5 +317,21 @@ void Tool::SetToolConfig(const ToolConfig& _toolConfig)
 bool Tool::ToolConfigHasBeenSet() const
 {
     return m_toolConfigHasBeenSet;
+}
+
+string Tool::GetToolId() const
+{
+    return m_toolId;
+}
+
+void Tool::SetToolId(const string& _toolId)
+{
+    m_toolId = _toolId;
+    m_toolIdHasBeenSet = true;
+}
+
+bool Tool::ToolIdHasBeenSet() const
+{
+    return m_toolIdHasBeenSet;
 }
 

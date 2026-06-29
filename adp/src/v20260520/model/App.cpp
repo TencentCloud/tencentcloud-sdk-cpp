@@ -27,7 +27,7 @@ App::App() :
     m_secretInfoHasBeenSet(false),
     m_shareUrlInfoHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_sharedKnowledgeListHasBeenSet(false)
+    m_sharedKbListHasBeenSet(false)
 {
 }
 
@@ -138,24 +138,24 @@ CoreInternalOutcome App::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
-    if (value.HasMember("SharedKnowledgeList") && !value["SharedKnowledgeList"].IsNull())
+    if (value.HasMember("SharedKbList") && !value["SharedKbList"].IsNull())
     {
-        if (!value["SharedKnowledgeList"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `App.SharedKnowledgeList` is not array type"));
+        if (!value["SharedKbList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `App.SharedKbList` is not array type"));
 
-        const rapidjson::Value &tmpValue = value["SharedKnowledgeList"];
+        const rapidjson::Value &tmpValue = value["SharedKbList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            AppSharedKnowledgeInfo item;
+            AppSharedKbInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_sharedKnowledgeList.push_back(item);
+            m_sharedKbList.push_back(item);
         }
-        m_sharedKnowledgeListHasBeenSet = true;
+        m_sharedKbListHasBeenSet = true;
     }
 
 
@@ -219,15 +219,15 @@ void App::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         m_status.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_sharedKnowledgeListHasBeenSet)
+    if (m_sharedKbListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SharedKnowledgeList";
+        string key = "SharedKbList";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_sharedKnowledgeList.begin(); itr != m_sharedKnowledgeList.end(); ++itr, ++i)
+        for (auto itr = m_sharedKbList.begin(); itr != m_sharedKbList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -333,19 +333,19 @@ bool App::StatusHasBeenSet() const
     return m_statusHasBeenSet;
 }
 
-vector<AppSharedKnowledgeInfo> App::GetSharedKnowledgeList() const
+vector<AppSharedKbInfo> App::GetSharedKbList() const
 {
-    return m_sharedKnowledgeList;
+    return m_sharedKbList;
 }
 
-void App::SetSharedKnowledgeList(const vector<AppSharedKnowledgeInfo>& _sharedKnowledgeList)
+void App::SetSharedKbList(const vector<AppSharedKbInfo>& _sharedKbList)
 {
-    m_sharedKnowledgeList = _sharedKnowledgeList;
-    m_sharedKnowledgeListHasBeenSet = true;
+    m_sharedKbList = _sharedKbList;
+    m_sharedKbListHasBeenSet = true;
 }
 
-bool App::SharedKnowledgeListHasBeenSet() const
+bool App::SharedKbListHasBeenSet() const
 {
-    return m_sharedKnowledgeListHasBeenSet;
+    return m_sharedKbListHasBeenSet;
 }
 

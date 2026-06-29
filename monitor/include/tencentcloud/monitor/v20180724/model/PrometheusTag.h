@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标签的健值
-                     * @return Key 标签的健值
+                     * 获取<p>标签的健值</p>
+                     * @return Key <p>标签的健值</p>
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置标签的健值
-                     * @param _key 标签的健值
+                     * 设置<p>标签的健值</p>
+                     * @param _key <p>标签的健值</p>
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -68,18 +68,18 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取标签对应的值
+                     * 获取<p>标签对应的值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Value 标签对应的值
+                     * @return Value <p>标签对应的值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置标签对应的值
+                     * 设置<p>标签对应的值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _value 标签对应的值
+                     * @param _value <p>标签对应的值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -95,13 +95,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 标签的健值
+                     * <p>标签的健值</p>
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 标签对应的值
+                     * <p>标签对应的值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;

@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool HistoryLimitHasBeenSet() const;
 
                     /**
-                     * 获取模型唯一ID
-                     * @return ModelId 模型唯一ID
+                     * 获取模型唯一 ID
+                     * @return ModelId 模型唯一 ID
                      * 
                      */
                     std::string GetModelId() const;
 
                     /**
-                     * 设置模型唯一ID
-                     * @param _modelId 模型唯一ID
+                     * 设置模型唯一 ID
+                     * @param _modelId 模型唯一 ID
                      * 
                      */
                     void SetModelId(const std::string& _modelId);
@@ -150,7 +150,7 @@ namespace TencentCloud
                     bool m_historyLimitHasBeenSet;
 
                     /**
-                     * 模型唯一ID
+                     * 模型唯一 ID
                      */
                     std::string m_modelId;
                     bool m_modelIdHasBeenSet;

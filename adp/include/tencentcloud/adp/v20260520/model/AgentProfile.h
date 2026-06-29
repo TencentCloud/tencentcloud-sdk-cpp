@@ -88,6 +88,111 @@ namespace TencentCloud
                      */
                     bool IconUrlHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Agent 角色：0=主 / 1=子</p>
+                     * @return Role <p>Agent 角色：0=主 / 1=子</p>
+                     * 
+                     */
+                    int64_t GetRole() const;
+
+                    /**
+                     * 设置<p>Agent 角色：0=主 / 1=子</p>
+                     * @param _role <p>Agent 角色：0=主 / 1=子</p>
+                     * 
+                     */
+                    void SetRole(const int64_t& _role);
+
+                    /**
+                     * 判断参数 Role 是否已赋值
+                     * @return Role 是否已赋值
+                     * 
+                     */
+                    bool RoleHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Agent 描述</p>
+                     * @return Description <p>Agent 描述</p>
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置<p>Agent 描述</p>
+                     * @param _description <p>Agent 描述</p>
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>应用名称</p>
+                     * @return AppName <p>应用名称</p>
+                     * 
+                     */
+                    std::string GetAppName() const;
+
+                    /**
+                     * 设置<p>应用名称</p>
+                     * @param _appName <p>应用名称</p>
+                     * 
+                     */
+                    void SetAppName(const std::string& _appName);
+
+                    /**
+                     * 判断参数 AppName 是否已赋值
+                     * @return AppName 是否已赋值
+                     * 
+                     */
+                    bool AppNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>开发者</p>
+                     * @return Developer <p>开发者</p>
+                     * 
+                     */
+                    std::string GetDeveloper() const;
+
+                    /**
+                     * 设置<p>开发者</p>
+                     * @param _developer <p>开发者</p>
+                     * 
+                     */
+                    void SetDeveloper(const std::string& _developer);
+
+                    /**
+                     * 判断参数 Developer 是否已赋值
+                     * @return Developer 是否已赋值
+                     * 
+                     */
+                    bool DeveloperHasBeenSet() const;
+
+                    /**
+                     * 获取<p>主AgentId，只读，不可通过修改接口进行变更</p>
+                     * @return ParentAgentId <p>主AgentId，只读，不可通过修改接口进行变更</p>
+                     * 
+                     */
+                    std::string GetParentAgentId() const;
+
+                    /**
+                     * 设置<p>主AgentId，只读，不可通过修改接口进行变更</p>
+                     * @param _parentAgentId <p>主AgentId，只读，不可通过修改接口进行变更</p>
+                     * 
+                     */
+                    void SetParentAgentId(const std::string& _parentAgentId);
+
+                    /**
+                     * 判断参数 ParentAgentId 是否已赋值
+                     * @return ParentAgentId 是否已赋值
+                     * 
+                     */
+                    bool ParentAgentIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +206,36 @@ namespace TencentCloud
                      */
                     std::string m_iconUrl;
                     bool m_iconUrlHasBeenSet;
+
+                    /**
+                     * <p>Agent 角色：0=主 / 1=子</p>
+                     */
+                    int64_t m_role;
+                    bool m_roleHasBeenSet;
+
+                    /**
+                     * <p>Agent 描述</p>
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
+
+                    /**
+                     * <p>应用名称</p>
+                     */
+                    std::string m_appName;
+                    bool m_appNameHasBeenSet;
+
+                    /**
+                     * <p>开发者</p>
+                     */
+                    std::string m_developer;
+                    bool m_developerHasBeenSet;
+
+                    /**
+                     * <p>主AgentId，只读，不可通过修改接口进行变更</p>
+                     */
+                    std::string m_parentAgentId;
+                    bool m_parentAgentIdHasBeenSet;
 
                 };
             }

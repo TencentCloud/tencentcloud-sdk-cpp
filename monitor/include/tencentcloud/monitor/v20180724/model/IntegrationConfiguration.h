@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取名字
-                     * @return Name 名字
+                     * 获取<p>名字</p>
+                     * @return Name <p>名字</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名字
-                     * @param _name 名字
+                     * 设置<p>名字</p>
+                     * @param _name <p>名字</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取类型
-                     * @return Kind 类型
+                     * 获取<p>类型</p>
+                     * @return Kind <p>类型</p>
                      * 
                      */
                     std::string GetKind() const;
 
                     /**
-                     * 设置类型
-                     * @param _kind 类型
+                     * 设置<p>类型</p>
+                     * @param _kind <p>类型</p>
                      * 
                      */
                     void SetKind(const std::string& _kind);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool KindHasBeenSet() const;
 
                     /**
-                     * 获取内容
-                     * @return Content 内容
+                     * 获取<p>内容</p>
+                     * @return Content <p>内容</p>
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置内容
-                     * @param _content 内容
+                     * 设置<p>内容</p>
+                     * @param _content <p>内容</p>
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return Status 状态
+                     * 获取<p>状态</p>
+                     * @return Status <p>状态</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态
-                     * @param _status 状态
+                     * 设置<p>状态</p>
+                     * @param _status <p>状态</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取实例类型
-                     * @return Category 实例类型
+                     * 获取<p>实例类型</p>
+                     * @return Category <p>实例类型</p>
                      * 
                      */
                     std::string GetCategory() const;
 
                     /**
-                     * 设置实例类型
-                     * @param _category 实例类型
+                     * 设置<p>实例类型</p>
+                     * @param _category <p>实例类型</p>
                      * 
                      */
                     void SetCategory(const std::string& _category);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool CategoryHasBeenSet() const;
 
                     /**
-                     * 获取实例描述
-                     * @return InstanceDesc 实例描述
+                     * 获取<p>实例描述</p>
+                     * @return InstanceDesc <p>实例描述</p>
                      * 
                      */
                     std::string GetInstanceDesc() const;
 
                     /**
-                     * 设置实例描述
-                     * @param _instanceDesc 实例描述
+                     * 设置<p>实例描述</p>
+                     * @param _instanceDesc <p>实例描述</p>
                      * 
                      */
                     void SetInstanceDesc(const std::string& _instanceDesc);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool InstanceDescHasBeenSet() const;
 
                     /**
-                     * 获取dashboard 的 URL
-                     * @return GrafanaDashboardURL dashboard 的 URL
+                     * 获取<p>dashboard 的 URL</p>
+                     * @return GrafanaDashboardURL <p>dashboard 的 URL</p>
                      * 
                      */
                     std::string GetGrafanaDashboardURL() const;
 
                     /**
-                     * 设置dashboard 的 URL
-                     * @param _grafanaDashboardURL dashboard 的 URL
+                     * 设置<p>dashboard 的 URL</p>
+                     * @param _grafanaDashboardURL <p>dashboard 的 URL</p>
                      * 
                      */
                     void SetGrafanaDashboardURL(const std::string& _grafanaDashboardURL);
@@ -196,43 +196,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 名字
+                     * <p>名字</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 类型
+                     * <p>类型</p>
                      */
                     std::string m_kind;
                     bool m_kindHasBeenSet;
 
                     /**
-                     * 内容
+                     * <p>内容</p>
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 状态
+                     * <p>状态</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 实例类型
+                     * <p>实例类型</p>
                      */
                     std::string m_category;
                     bool m_categoryHasBeenSet;
 
                     /**
-                     * 实例描述
+                     * <p>实例描述</p>
                      */
                     std::string m_instanceDesc;
                     bool m_instanceDescHasBeenSet;
 
                     /**
-                     * dashboard 的 URL
+                     * <p>dashboard 的 URL</p>
                      */
                     std::string m_grafanaDashboardURL;
                     bool m_grafanaDashboardURLHasBeenSet;

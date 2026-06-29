@@ -46,9 +46,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取绑定的对象实例列表
+                     * 获取<p>绑定的对象实例列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return List 绑定的对象实例列表
+                     * @return List <p>绑定的对象实例列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -62,8 +62,8 @@ namespace TencentCloud
                     bool ListHasBeenSet() const;
 
                     /**
-                     * 获取绑定的对象实例总数
-                     * @return Total 绑定的对象实例总数
+                     * 获取<p>绑定的对象实例总数</p>
+                     * @return Total <p>绑定的对象实例总数</p>
                      * 
                      */
                     int64_t GetTotal() const;
@@ -76,8 +76,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取未屏蔽的对象实例数
-                     * @return NoShieldedSum 未屏蔽的对象实例数
+                     * 获取<p>未屏蔽的对象实例数</p>
+                     * @return NoShieldedSum <p>未屏蔽的对象实例数</p>
                      * 
                      */
                     int64_t GetNoShieldedSum() const;
@@ -90,9 +90,9 @@ namespace TencentCloud
                     bool NoShieldedSumHasBeenSet() const;
 
                     /**
-                     * 获取绑定的实例分组信息，没有绑定实例分组则为空
+                     * 获取<p>绑定的实例分组信息，没有绑定实例分组则为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceGroup 绑定的实例分组信息，没有绑定实例分组则为空
+                     * @return InstanceGroup <p>绑定的实例分组信息，没有绑定实例分组则为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -108,26 +108,26 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 绑定的对象实例列表
+                     * <p>绑定的对象实例列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DescribeBindingPolicyObjectListInstance> m_list;
                     bool m_listHasBeenSet;
 
                     /**
-                     * 绑定的对象实例总数
+                     * <p>绑定的对象实例总数</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 未屏蔽的对象实例数
+                     * <p>未屏蔽的对象实例数</p>
                      */
                     int64_t m_noShieldedSum;
                     bool m_noShieldedSumHasBeenSet;
 
                     /**
-                     * 绑定的实例分组信息，没有绑定实例分组则为空
+                     * <p>绑定的实例分组信息，没有绑定实例分组则为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeBindingPolicyObjectListInstanceGroup m_instanceGroup;

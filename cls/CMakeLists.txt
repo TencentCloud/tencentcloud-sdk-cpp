@@ -136,6 +136,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/KeyValueInfo.h
   include/tencentcloud/cls/v20201016/model/DataTransformSqlDataSource.h
   include/tencentcloud/cls/v20201016/model/ModifyMachineGroupRequest.h
+  include/tencentcloud/cls/v20201016/model/JsonExpandInfo.h
   include/tencentcloud/cls/v20201016/model/AnonymousInfo.h
   include/tencentcloud/cls/v20201016/model/DescribeHostMetricConfigsResponse.h
   include/tencentcloud/cls/v20201016/model/CreateNoticeContentRequest.h
@@ -692,6 +693,7 @@ set(cls_src
   src/v20201016/model/KeyValueInfo.cpp
   src/v20201016/model/DataTransformSqlDataSource.cpp
   src/v20201016/model/ModifyMachineGroupRequest.cpp
+  src/v20201016/model/JsonExpandInfo.cpp
   src/v20201016/model/AnonymousInfo.cpp
   src/v20201016/model/DescribeHostMetricConfigsResponse.cpp
   src/v20201016/model/CreateNoticeContentRequest.cpp

@@ -30,7 +30,7 @@ ModifyAppRequest::ModifyAppRequest() :
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_shareConfigHasBeenSet(false),
-    m_sharedKnowledgeIdListHasBeenSet(false),
+    m_sharedKbIdListHasBeenSet(false),
     m_updateMaskHasBeenSet(false)
 {
 }
@@ -100,14 +100,14 @@ string ModifyAppRequest::ToJsonString() const
         m_shareConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_sharedKnowledgeIdListHasBeenSet)
+    if (m_sharedKbIdListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SharedKnowledgeIdList";
+        string key = "SharedKbIdList";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-        for (auto itr = m_sharedKnowledgeIdList.begin(); itr != m_sharedKnowledgeIdList.end(); ++itr)
+        for (auto itr = m_sharedKbIdList.begin(); itr != m_sharedKbIdList.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -242,20 +242,20 @@ bool ModifyAppRequest::ShareConfigHasBeenSet() const
     return m_shareConfigHasBeenSet;
 }
 
-vector<string> ModifyAppRequest::GetSharedKnowledgeIdList() const
+vector<string> ModifyAppRequest::GetSharedKbIdList() const
 {
-    return m_sharedKnowledgeIdList;
+    return m_sharedKbIdList;
 }
 
-void ModifyAppRequest::SetSharedKnowledgeIdList(const vector<string>& _sharedKnowledgeIdList)
+void ModifyAppRequest::SetSharedKbIdList(const vector<string>& _sharedKbIdList)
 {
-    m_sharedKnowledgeIdList = _sharedKnowledgeIdList;
-    m_sharedKnowledgeIdListHasBeenSet = true;
+    m_sharedKbIdList = _sharedKbIdList;
+    m_sharedKbIdListHasBeenSet = true;
 }
 
-bool ModifyAppRequest::SharedKnowledgeIdListHasBeenSet() const
+bool ModifyAppRequest::SharedKbIdListHasBeenSet() const
 {
-    return m_sharedKnowledgeIdListHasBeenSet;
+    return m_sharedKbIdListHasBeenSet;
 }
 
 FieldMask ModifyAppRequest::GetUpdateMask() const

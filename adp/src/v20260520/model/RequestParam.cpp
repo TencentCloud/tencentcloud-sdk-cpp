@@ -21,15 +21,15 @@ using namespace TencentCloud::Adp::V20260520::Model;
 using namespace std;
 
 RequestParam::RequestParam() :
+    m_anyOfHasBeenSet(false),
     m_defaultValueHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_isGlobalHiddenHasBeenSet(false),
     m_isRequiredHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_anyOfHasBeenSet(false),
     m_oneOfHasBeenSet(false),
-    m_subParamsHasBeenSet(false)
+    m_subParamsHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -37,6 +37,26 @@ CoreInternalOutcome RequestParam::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("AnyOf") && !value["AnyOf"].IsNull())
+    {
+        if (!value["AnyOf"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RequestParam.AnyOf` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AnyOf"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RequestParam item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_anyOf.push_back(item);
+        }
+        m_anyOfHasBeenSet = true;
+    }
 
     if (value.HasMember("DefaultValue") && !value["DefaultValue"].IsNull())
     {
@@ -88,36 +108,6 @@ CoreInternalOutcome RequestParam::Deserialize(const rapidjson::Value &value)
         m_nameHasBeenSet = true;
     }
 
-    if (value.HasMember("Type") && !value["Type"].IsNull())
-    {
-        if (!value["Type"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `RequestParam.Type` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_type = value["Type"].GetInt64();
-        m_typeHasBeenSet = true;
-    }
-
-    if (value.HasMember("AnyOf") && !value["AnyOf"].IsNull())
-    {
-        if (!value["AnyOf"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `RequestParam.AnyOf` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["AnyOf"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            RequestParam item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_anyOf.push_back(item);
-        }
-        m_anyOfHasBeenSet = true;
-    }
-
     if (value.HasMember("OneOf") && !value["OneOf"].IsNull())
     {
         if (!value["OneOf"].IsArray())
@@ -158,12 +148,37 @@ CoreInternalOutcome RequestParam::Deserialize(const rapidjson::Value &value)
         m_subParamsHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RequestParam.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = value["Type"].GetInt64();
+        m_typeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void RequestParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_anyOfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnyOf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_anyOf.begin(); itr != m_anyOf.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     if (m_defaultValueHasBeenSet)
     {
@@ -205,29 +220,6 @@ void RequestParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_typeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Type";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_type, allocator);
-    }
-
-    if (m_anyOfHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AnyOf";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_anyOf.begin(); itr != m_anyOf.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
     if (m_oneOfHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -258,8 +250,32 @@ void RequestParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         }
     }
 
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_type, allocator);
+    }
+
 }
 
+
+vector<RequestParam> RequestParam::GetAnyOf() const
+{
+    return m_anyOf;
+}
+
+void RequestParam::SetAnyOf(const vector<RequestParam>& _anyOf)
+{
+    m_anyOf = _anyOf;
+    m_anyOfHasBeenSet = true;
+}
+
+bool RequestParam::AnyOfHasBeenSet() const
+{
+    return m_anyOfHasBeenSet;
+}
 
 string RequestParam::GetDefaultValue() const
 {
@@ -341,38 +357,6 @@ bool RequestParam::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
-int64_t RequestParam::GetType() const
-{
-    return m_type;
-}
-
-void RequestParam::SetType(const int64_t& _type)
-{
-    m_type = _type;
-    m_typeHasBeenSet = true;
-}
-
-bool RequestParam::TypeHasBeenSet() const
-{
-    return m_typeHasBeenSet;
-}
-
-vector<RequestParam> RequestParam::GetAnyOf() const
-{
-    return m_anyOf;
-}
-
-void RequestParam::SetAnyOf(const vector<RequestParam>& _anyOf)
-{
-    m_anyOf = _anyOf;
-    m_anyOfHasBeenSet = true;
-}
-
-bool RequestParam::AnyOfHasBeenSet() const
-{
-    return m_anyOfHasBeenSet;
-}
-
 vector<RequestParam> RequestParam::GetOneOf() const
 {
     return m_oneOf;
@@ -403,5 +387,21 @@ void RequestParam::SetSubParams(const vector<RequestParam>& _subParams)
 bool RequestParam::SubParamsHasBeenSet() const
 {
     return m_subParamsHasBeenSet;
+}
+
+int64_t RequestParam::GetType() const
+{
+    return m_type;
+}
+
+void RequestParam::SetType(const int64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool RequestParam::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 

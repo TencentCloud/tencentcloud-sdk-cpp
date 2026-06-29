@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cwp/v20180228/model/AddLoginWhiteListsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/AddLoginWhiteListsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/AddVulIgnoreRuleRequest.h>
+#include <tencentcloud/cwp/v20180228/model/AddVulIgnoreRuleResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ChangeRuleEventsIgnoreStatusRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ChangeRuleEventsIgnoreStatusResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ChangeStrategyEnableStatusRequest.h>
@@ -1104,6 +1106,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddLoginWhiteListsResponse> AddLoginWhiteListsOutcome;
                 typedef std::future<AddLoginWhiteListsOutcome> AddLoginWhiteListsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::AddLoginWhiteListsRequest&, AddLoginWhiteListsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddLoginWhiteListsAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddVulIgnoreRuleResponse> AddVulIgnoreRuleOutcome;
+                typedef std::future<AddVulIgnoreRuleOutcome> AddVulIgnoreRuleOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::AddVulIgnoreRuleRequest&, AddVulIgnoreRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddVulIgnoreRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChangeRuleEventsIgnoreStatusResponse> ChangeRuleEventsIgnoreStatusOutcome;
                 typedef std::future<ChangeRuleEventsIgnoreStatusOutcome> ChangeRuleEventsIgnoreStatusOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ChangeRuleEventsIgnoreStatusRequest&, ChangeRuleEventsIgnoreStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChangeRuleEventsIgnoreStatusAsyncHandler;
@@ -2708,6 +2713,15 @@ namespace TencentCloud
                 AddLoginWhiteListsOutcome AddLoginWhiteLists(const Model::AddLoginWhiteListsRequest &request);
                 void AddLoginWhiteListsAsync(const Model::AddLoginWhiteListsRequest& request, const AddLoginWhiteListsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddLoginWhiteListsOutcomeCallable AddLoginWhiteListsCallable(const Model::AddLoginWhiteListsRequest& request);
+
+                /**
+                 *添加漏洞忽略规则
+                 * @param req AddVulIgnoreRuleRequest
+                 * @return AddVulIgnoreRuleOutcome
+                 */
+                AddVulIgnoreRuleOutcome AddVulIgnoreRule(const Model::AddVulIgnoreRuleRequest &request);
+                void AddVulIgnoreRuleAsync(const Model::AddVulIgnoreRuleRequest& request, const AddVulIgnoreRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddVulIgnoreRuleOutcomeCallable AddVulIgnoreRuleCallable(const Model::AddVulIgnoreRuleRequest& request);
 
                 /**
                  *根据检测项id或事件id批量忽略事件或取消忽略

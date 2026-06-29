@@ -28,7 +28,8 @@ Model::Model() :
     m_propertyListHasBeenSet(false),
     m_providerInfoHasBeenSet(false),
     m_statusInfoHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_developerInfoHasBeenSet(false)
 {
 }
 
@@ -178,6 +179,23 @@ CoreInternalOutcome Model::Deserialize(const rapidjson::Value &value)
         m_tagListHasBeenSet = true;
     }
 
+    if (value.HasMember("DeveloperInfo") && !value["DeveloperInfo"].IsNull())
+    {
+        if (!value["DeveloperInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Model.DeveloperInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_developerInfo.Deserialize(value["DeveloperInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_developerInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -277,6 +295,15 @@ void Model::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_developerInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeveloperInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_developerInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -408,5 +435,21 @@ void Model::SetTagList(const vector<string>& _tagList)
 bool Model::TagListHasBeenSet() const
 {
     return m_tagListHasBeenSet;
+}
+
+ModelDeveloperBasic Model::GetDeveloperInfo() const
+{
+    return m_developerInfo;
+}
+
+void Model::SetDeveloperInfo(const ModelDeveloperBasic& _developerInfo)
+{
+    m_developerInfo = _developerInfo;
+    m_developerInfoHasBeenSet = true;
+}
+
+bool Model::DeveloperInfoHasBeenSet() const
+{
+    return m_developerInfoHasBeenSet;
 }
 

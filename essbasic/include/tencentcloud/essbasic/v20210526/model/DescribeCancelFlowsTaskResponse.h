@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取批量撤销任务编号，为32位字符串。
-                     * @return TaskId 批量撤销任务编号，为32位字符串。
+                     * 获取<p>批量撤销任务编号，为32位字符串。</p>
+                     * @return TaskId <p>批量撤销任务编号，为32位字符串。</p>
                      * 
                      */
                     std::string GetTaskId() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务状态，需要关注的状态<ul><li>**PROCESSING**  - 任务执行中</li><li>**END** - 任务处理完成</li><li>**TIMEOUT** 任务超时未处理完成，用户未在批量撤销链接有效期内操作</li></ul>
-                     * @return TaskStatus 任务状态，需要关注的状态<ul><li>**PROCESSING**  - 任务执行中</li><li>**END** - 任务处理完成</li><li>**TIMEOUT** 任务超时未处理完成，用户未在批量撤销链接有效期内操作</li></ul>
+                     * 获取<p>任务状态，需要关注的状态<ul><li><strong>PROCESSING</strong>  - 任务执行中</li><li><strong>END</strong> - 任务处理完成</li><li><strong>TIMEOUT</strong> 任务超时未处理完成，用户未在批量撤销链接有效期内操作</li></ul></p>
+                     * @return TaskStatus <p>任务状态，需要关注的状态<ul><li><strong>PROCESSING</strong>  - 任务执行中</li><li><strong>END</strong> - 任务处理完成</li><li><strong>TIMEOUT</strong> 任务超时未处理完成，用户未在批量撤销链接有效期内操作</li></ul></p>
                      * 
                      */
                     std::string GetTaskStatus() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool TaskStatusHasBeenSet() const;
 
                     /**
-                     * 获取批量撤销成功的签署流程编号
-                     * @return SuccessFlowIds 批量撤销成功的签署流程编号
+                     * 获取<p>批量撤销成功的签署流程编号</p>
+                     * @return SuccessFlowIds <p>批量撤销成功的签署流程编号</p>
                      * 
                      */
                     std::vector<std::string> GetSuccessFlowIds() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool SuccessFlowIdsHasBeenSet() const;
 
                     /**
-                     * 获取批量撤销失败的签署流程信息
-                     * @return FailureFlows 批量撤销失败的签署流程信息
+                     * 获取<p>批量撤销失败的签署流程信息</p>
+                     * @return FailureFlows <p>批量撤销失败的签署流程信息</p>
                      * 
                      */
                     std::vector<CancelFailureFlow> GetFailureFlows() const;
@@ -103,25 +103,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 批量撤销任务编号，为32位字符串。
+                     * <p>批量撤销任务编号，为32位字符串。</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务状态，需要关注的状态<ul><li>**PROCESSING**  - 任务执行中</li><li>**END** - 任务处理完成</li><li>**TIMEOUT** 任务超时未处理完成，用户未在批量撤销链接有效期内操作</li></ul>
+                     * <p>任务状态，需要关注的状态<ul><li><strong>PROCESSING</strong>  - 任务执行中</li><li><strong>END</strong> - 任务处理完成</li><li><strong>TIMEOUT</strong> 任务超时未处理完成，用户未在批量撤销链接有效期内操作</li></ul></p>
                      */
                     std::string m_taskStatus;
                     bool m_taskStatusHasBeenSet;
 
                     /**
-                     * 批量撤销成功的签署流程编号
+                     * <p>批量撤销成功的签署流程编号</p>
                      */
                     std::vector<std::string> m_successFlowIds;
                     bool m_successFlowIdsHasBeenSet;
 
                     /**
-                     * 批量撤销失败的签署流程信息
+                     * <p>批量撤销失败的签署流程信息</p>
                      */
                     std::vector<CancelFailureFlow> m_failureFlows;
                     bool m_failureFlowsHasBeenSet;

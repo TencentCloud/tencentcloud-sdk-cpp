@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合同流程ID，为32位字符串。
-                     * @return FlowId 合同流程ID，为32位字符串。
+                     * 获取<p>合同流程ID，为32位字符串。</p>
+                     * @return FlowId <p>合同流程ID，为32位字符串。</p>
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
-                     * 设置合同流程ID，为32位字符串。
-                     * @param _flowId 合同流程ID，为32位字符串。
+                     * 设置<p>合同流程ID，为32位字符串。</p>
+                     * @param _flowId <p>合同流程ID，为32位字符串。</p>
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取撤销失败原因
-                     * @return Reason 撤销失败原因
+                     * 获取<p>撤销失败原因</p>
+                     * @return Reason <p>撤销失败原因</p>
                      * 
                      */
                     std::string GetReason() const;
 
                     /**
-                     * 设置撤销失败原因
-                     * @param _reason 撤销失败原因
+                     * 设置<p>撤销失败原因</p>
+                     * @param _reason <p>撤销失败原因</p>
                      * 
                      */
                     void SetReason(const std::string& _reason);
@@ -88,19 +88,46 @@ namespace TencentCloud
                      */
                     bool ReasonHasBeenSet() const;
 
+                    /**
+                     * 获取<p>合同流程名称</p>
+                     * @return FlowName <p>合同流程名称</p>
+                     * 
+                     */
+                    std::string GetFlowName() const;
+
+                    /**
+                     * 设置<p>合同流程名称</p>
+                     * @param _flowName <p>合同流程名称</p>
+                     * 
+                     */
+                    void SetFlowName(const std::string& _flowName);
+
+                    /**
+                     * 判断参数 FlowName 是否已赋值
+                     * @return FlowName 是否已赋值
+                     * 
+                     */
+                    bool FlowNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 合同流程ID，为32位字符串。
+                     * <p>合同流程ID，为32位字符串。</p>
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 撤销失败原因
+                     * <p>撤销失败原因</p>
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;
+
+                    /**
+                     * <p>合同流程名称</p>
+                     */
+                    std::string m_flowName;
+                    bool m_flowNameHasBeenSet;
 
                 };
             }

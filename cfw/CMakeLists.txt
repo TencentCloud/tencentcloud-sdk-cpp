@@ -70,6 +70,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DescribeAssetSyncRequest.h
   include/tencentcloud/cfw/v20190904/model/DeleteVpcFwGroupRequest.h
   include/tencentcloud/cfw/v20190904/model/RuleInfoData.h
+  include/tencentcloud/cfw/v20190904/model/DescribeNDRAssetIdentificationCursorListResponse.h
   include/tencentcloud/cfw/v20190904/model/ModifySequenceAclRulesResponse.h
   include/tencentcloud/cfw/v20190904/model/CreateBlockIgnoreRuleNewResponse.h
   include/tencentcloud/cfw/v20190904/model/ScanResultInfo.h
@@ -153,6 +154,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/AddVpcAcRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/EdgeIpInfoSimple.h
   include/tencentcloud/cfw/v20190904/model/ModifyResourceGroupRequest.h
+  include/tencentcloud/cfw/v20190904/model/DescribeNDRAssetIdentificationCursorListRequest.h
   include/tencentcloud/cfw/v20190904/model/UpdateClusterVpcFwResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeCcnAssociatedInstancesRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyVpcAcRuleRequest.h
@@ -450,6 +452,7 @@ set(cfw_src
   src/v20190904/model/DescribeAssetSyncRequest.cpp
   src/v20190904/model/DeleteVpcFwGroupRequest.cpp
   src/v20190904/model/RuleInfoData.cpp
+  src/v20190904/model/DescribeNDRAssetIdentificationCursorListResponse.cpp
   src/v20190904/model/ModifySequenceAclRulesResponse.cpp
   src/v20190904/model/CreateBlockIgnoreRuleNewResponse.cpp
   src/v20190904/model/ScanResultInfo.cpp
@@ -533,6 +536,7 @@ set(cfw_src
   src/v20190904/model/AddVpcAcRuleRequest.cpp
   src/v20190904/model/EdgeIpInfoSimple.cpp
   src/v20190904/model/ModifyResourceGroupRequest.cpp
+  src/v20190904/model/DescribeNDRAssetIdentificationCursorListRequest.cpp
   src/v20190904/model/UpdateClusterVpcFwResponse.cpp
   src/v20190904/model/DescribeCcnAssociatedInstancesRequest.cpp
   src/v20190904/model/ModifyVpcAcRuleRequest.cpp

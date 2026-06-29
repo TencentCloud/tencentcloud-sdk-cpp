@@ -24,8 +24,7 @@ AppAuxiliaryInfo::AppAuxiliaryInfo() :
     m_appealHasBeenSet(false),
     m_searchResourceStatusHasBeenSet(false),
     m_specialStatusInfoHasBeenSet(false),
-    m_subStatusHasBeenSet(false),
-    m_templatePublishHasBeenSet(false)
+    m_subStatusHasBeenSet(false)
 {
 }
 
@@ -102,23 +101,6 @@ CoreInternalOutcome AppAuxiliaryInfo::Deserialize(const rapidjson::Value &value)
         m_subStatusHasBeenSet = true;
     }
 
-    if (value.HasMember("TemplatePublish") && !value["TemplatePublish"].IsNull())
-    {
-        if (!value["TemplatePublish"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `AppAuxiliaryInfo.TemplatePublish` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_templatePublish.Deserialize(value["TemplatePublish"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_templatePublishHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -160,15 +142,6 @@ void AppAuxiliaryInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_subStatus.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_templatePublishHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TemplatePublish";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_templatePublish.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -236,21 +209,5 @@ void AppAuxiliaryInfo::SetSubStatus(const AppSubStatusInfo& _subStatus)
 bool AppAuxiliaryInfo::SubStatusHasBeenSet() const
 {
     return m_subStatusHasBeenSet;
-}
-
-TemplatePublishInfo AppAuxiliaryInfo::GetTemplatePublish() const
-{
-    return m_templatePublish;
-}
-
-void AppAuxiliaryInfo::SetTemplatePublish(const TemplatePublishInfo& _templatePublish)
-{
-    m_templatePublish = _templatePublish;
-    m_templatePublishHasBeenSet = true;
-}
-
-bool AppAuxiliaryInfo::TemplatePublishHasBeenSet() const
-{
-    return m_templatePublishHasBeenSet;
 }
 

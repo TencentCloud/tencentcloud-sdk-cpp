@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警列表
+                     * 获取<p>告警列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Alarms 告警列表
+                     * @return Alarms <p>告警列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool AlarmsHasBeenSet() const;
 
                     /**
-                     * 获取总数
+                     * 获取<p>总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Total 总数
+                     * @return Total <p>总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,9 +77,9 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取备注信息
+                     * 获取<p>备注信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Warning 备注信息
+                     * @return Warning <p>备注信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -95,21 +95,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 告警列表
+                     * <p>告警列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DescribeBasicAlarmListAlarms> m_alarms;
                     bool m_alarmsHasBeenSet;
 
                     /**
-                     * 总数
+                     * <p>总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 备注信息
+                     * <p>备注信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_warning;

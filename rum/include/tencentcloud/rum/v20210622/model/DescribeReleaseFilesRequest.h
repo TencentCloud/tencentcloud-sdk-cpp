@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目 id
-                     * @return ProjectID 项目 id
+                     * 获取<p>项目 id</p>
+                     * @return ProjectID <p>项目 id</p>
                      * 
                      */
                     int64_t GetProjectID() const;
 
                     /**
-                     * 设置项目 id
-                     * @param _projectID 项目 id
+                     * 设置<p>项目 id</p>
+                     * @param _projectID <p>项目 id</p>
                      * 
                      */
                     void SetProjectID(const int64_t& _projectID);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIDHasBeenSet() const;
 
                     /**
-                     * 获取文件版本
-                     * @return FileVersion 文件版本
+                     * 获取<p>文件版本</p>
+                     * @return FileVersion <p>文件版本</p>
                      * 
                      */
                     std::string GetFileVersion() const;
 
                     /**
-                     * 设置文件版本
-                     * @param _fileVersion 文件版本
+                     * 设置<p>文件版本</p>
+                     * @param _fileVersion <p>文件版本</p>
                      * 
                      */
                     void SetFileVersion(const std::string& _fileVersion);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool FileVersionHasBeenSet() const;
 
                     /**
-                     * 获取查询过滤条件（根据sourcemap的文件名模糊匹配）
-                     * @return FileName 查询过滤条件（根据sourcemap的文件名模糊匹配）
+                     * 获取<p>查询过滤条件（根据sourcemap的文件名模糊匹配）</p>
+                     * @return FileName <p>查询过滤条件（根据sourcemap的文件名模糊匹配）</p>
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
-                     * 设置查询过滤条件（根据sourcemap的文件名模糊匹配）
-                     * @param _fileName 查询过滤条件（根据sourcemap的文件名模糊匹配）
+                     * 设置<p>查询过滤条件（根据sourcemap的文件名模糊匹配）</p>
+                     * @param _fileName <p>查询过滤条件（根据sourcemap的文件名模糊匹配）</p>
                      * 
                      */
                     void SetFileName(const std::string& _fileName);
@@ -105,25 +105,52 @@ namespace TencentCloud
                      */
                     bool FileNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>false/不传=保留「最近 3 个月」约束（旧行为）；true=绕过时间窗口</p>
+                     * @return IgnoreDefaultTimeRange <p>false/不传=保留「最近 3 个月」约束（旧行为）；true=绕过时间窗口</p>
+                     * 
+                     */
+                    bool GetIgnoreDefaultTimeRange() const;
+
+                    /**
+                     * 设置<p>false/不传=保留「最近 3 个月」约束（旧行为）；true=绕过时间窗口</p>
+                     * @param _ignoreDefaultTimeRange <p>false/不传=保留「最近 3 个月」约束（旧行为）；true=绕过时间窗口</p>
+                     * 
+                     */
+                    void SetIgnoreDefaultTimeRange(const bool& _ignoreDefaultTimeRange);
+
+                    /**
+                     * 判断参数 IgnoreDefaultTimeRange 是否已赋值
+                     * @return IgnoreDefaultTimeRange 是否已赋值
+                     * 
+                     */
+                    bool IgnoreDefaultTimeRangeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 项目 id
+                     * <p>项目 id</p>
                      */
                     int64_t m_projectID;
                     bool m_projectIDHasBeenSet;
 
                     /**
-                     * 文件版本
+                     * <p>文件版本</p>
                      */
                     std::string m_fileVersion;
                     bool m_fileVersionHasBeenSet;
 
                     /**
-                     * 查询过滤条件（根据sourcemap的文件名模糊匹配）
+                     * <p>查询过滤条件（根据sourcemap的文件名模糊匹配）</p>
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
+
+                    /**
+                     * <p>false/不传=保留「最近 3 个月」约束（旧行为）；true=绕过时间窗口</p>
+                     */
+                    bool m_ignoreDefaultTimeRange;
+                    bool m_ignoreDefaultTimeRangeHasBeenSet;
 
                 };
             }

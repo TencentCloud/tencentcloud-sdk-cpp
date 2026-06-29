@@ -131,6 +131,10 @@
 #include <tencentcloud/csip/v20221121/model/DescribeBucketInvokeIpListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCFWAssetStatisticsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCFWAssetStatisticsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCLSLogIndexV3Request.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCLSLogIndexV3Response.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCLSLogListV3Request.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCLSLogListV3Response.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCSIPRiskStatisticsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCSIPRiskStatisticsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCVMAssetInfoRequest.h>
@@ -663,6 +667,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCFWAssetStatisticsResponse> DescribeCFWAssetStatisticsOutcome;
                 typedef std::future<DescribeCFWAssetStatisticsOutcome> DescribeCFWAssetStatisticsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeCFWAssetStatisticsRequest&, DescribeCFWAssetStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCFWAssetStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCLSLogIndexV3Response> DescribeCLSLogIndexV3Outcome;
+                typedef std::future<DescribeCLSLogIndexV3Outcome> DescribeCLSLogIndexV3OutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCLSLogIndexV3Request&, DescribeCLSLogIndexV3Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCLSLogIndexV3AsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCLSLogListV3Response> DescribeCLSLogListV3Outcome;
+                typedef std::future<DescribeCLSLogListV3Outcome> DescribeCLSLogListV3OutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCLSLogListV3Request&, DescribeCLSLogListV3Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCLSLogListV3AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCSIPRiskStatisticsResponse> DescribeCSIPRiskStatisticsOutcome;
                 typedef std::future<DescribeCSIPRiskStatisticsOutcome> DescribeCSIPRiskStatisticsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeCSIPRiskStatisticsRequest&, DescribeCSIPRiskStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCSIPRiskStatisticsAsyncHandler;
@@ -1685,6 +1695,24 @@ namespace TencentCloud
                 DescribeCFWAssetStatisticsOutcome DescribeCFWAssetStatistics(const Model::DescribeCFWAssetStatisticsRequest &request);
                 void DescribeCFWAssetStatisticsAsync(const Model::DescribeCFWAssetStatisticsRequest& request, const DescribeCFWAssetStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCFWAssetStatisticsOutcomeCallable DescribeCFWAssetStatisticsCallable(const Model::DescribeCFWAssetStatisticsRequest& request);
+
+                /**
+                 *获取日志索引信息
+                 * @param req DescribeCLSLogIndexV3Request
+                 * @return DescribeCLSLogIndexV3Outcome
+                 */
+                DescribeCLSLogIndexV3Outcome DescribeCLSLogIndexV3(const Model::DescribeCLSLogIndexV3Request &request);
+                void DescribeCLSLogIndexV3Async(const Model::DescribeCLSLogIndexV3Request& request, const DescribeCLSLogIndexV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCLSLogIndexV3OutcomeCallable DescribeCLSLogIndexV3Callable(const Model::DescribeCLSLogIndexV3Request& request);
+
+                /**
+                 *日志分析检索接口v3
+                 * @param req DescribeCLSLogListV3Request
+                 * @return DescribeCLSLogListV3Outcome
+                 */
+                DescribeCLSLogListV3Outcome DescribeCLSLogListV3(const Model::DescribeCLSLogListV3Request &request);
+                void DescribeCLSLogListV3Async(const Model::DescribeCLSLogListV3Request& request, const DescribeCLSLogListV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCLSLogListV3OutcomeCallable DescribeCLSLogListV3Callable(const Model::DescribeCLSLogListV3Request& request);
 
                 /**
                  *获取风险中心风险概况示例

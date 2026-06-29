@@ -21,7 +21,8 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 KnowledgeBasesInfo::KnowledgeBasesInfo() :
-    m_basesHasBeenSet(false)
+    m_basesHasBeenSet(false),
+    m_knowledgeAnalysisInfosHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,26 @@ CoreInternalOutcome KnowledgeBasesInfo::Deserialize(const rapidjson::Value &valu
             m_bases.push_back((*itr).GetString());
         }
         m_basesHasBeenSet = true;
+    }
+
+    if (value.HasMember("KnowledgeAnalysisInfos") && !value["KnowledgeAnalysisInfos"].IsNull())
+    {
+        if (!value["KnowledgeAnalysisInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `KnowledgeBasesInfo.KnowledgeAnalysisInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["KnowledgeAnalysisInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KnowledgeAnalysisInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_knowledgeAnalysisInfos.push_back(item);
+        }
+        m_knowledgeAnalysisInfosHasBeenSet = true;
     }
 
 
@@ -63,6 +84,21 @@ void KnowledgeBasesInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         }
     }
 
+    if (m_knowledgeAnalysisInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeAnalysisInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_knowledgeAnalysisInfos.begin(); itr != m_knowledgeAnalysisInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
 }
 
 
@@ -80,5 +116,21 @@ void KnowledgeBasesInfo::SetBases(const vector<string>& _bases)
 bool KnowledgeBasesInfo::BasesHasBeenSet() const
 {
     return m_basesHasBeenSet;
+}
+
+vector<KnowledgeAnalysisInfo> KnowledgeBasesInfo::GetKnowledgeAnalysisInfos() const
+{
+    return m_knowledgeAnalysisInfos;
+}
+
+void KnowledgeBasesInfo::SetKnowledgeAnalysisInfos(const vector<KnowledgeAnalysisInfo>& _knowledgeAnalysisInfos)
+{
+    m_knowledgeAnalysisInfos = _knowledgeAnalysisInfos;
+    m_knowledgeAnalysisInfosHasBeenSet = true;
+}
+
+bool KnowledgeBasesInfo::KnowledgeAnalysisInfosHasBeenSet() const
+{
+    return m_knowledgeAnalysisInfosHasBeenSet;
 }
 

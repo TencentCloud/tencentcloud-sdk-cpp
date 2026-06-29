@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取插件详情
-                     * @return Plugin 插件详情
+                     * 获取<p>插件详情</p>
+                     * @return Plugin <p>插件详情</p>
                      * 
                      */
                     Plugin GetPlugin() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 插件详情
+                     * <p>插件详情</p>
                      */
                     Plugin m_plugin;
                     bool m_pluginHasBeenSet;

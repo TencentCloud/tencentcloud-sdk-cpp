@@ -221,6 +221,8 @@
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusClusterAgentsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusConfigRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusConfigResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusCreateInstanceQuotaRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusCreateInstanceQuotaResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusGlobalConfigRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusGlobalConfigResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusGlobalNotificationRequest.h>
@@ -688,6 +690,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePrometheusConfigResponse> DescribePrometheusConfigOutcome;
                 typedef std::future<DescribePrometheusConfigOutcome> DescribePrometheusConfigOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusConfigRequest&, DescribePrometheusConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrometheusCreateInstanceQuotaResponse> DescribePrometheusCreateInstanceQuotaOutcome;
+                typedef std::future<DescribePrometheusCreateInstanceQuotaOutcome> DescribePrometheusCreateInstanceQuotaOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusCreateInstanceQuotaRequest&, DescribePrometheusCreateInstanceQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusCreateInstanceQuotaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePrometheusGlobalConfigResponse> DescribePrometheusGlobalConfigOutcome;
                 typedef std::future<DescribePrometheusGlobalConfigOutcome> DescribePrometheusGlobalConfigOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusGlobalConfigRequest&, DescribePrometheusGlobalConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusGlobalConfigAsyncHandler;
@@ -1828,6 +1833,17 @@ namespace TencentCloud
                 DescribePrometheusConfigOutcome DescribePrometheusConfig(const Model::DescribePrometheusConfigRequest &request);
                 void DescribePrometheusConfigAsync(const Model::DescribePrometheusConfigRequest& request, const DescribePrometheusConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePrometheusConfigOutcomeCallable DescribePrometheusConfigCallable(const Model::DescribePrometheusConfigRequest& request);
+
+                /**
+                 *查询Prometheus实例创建配额
+
+配额不分地域，可从任意支持地域请求
+                 * @param req DescribePrometheusCreateInstanceQuotaRequest
+                 * @return DescribePrometheusCreateInstanceQuotaOutcome
+                 */
+                DescribePrometheusCreateInstanceQuotaOutcome DescribePrometheusCreateInstanceQuota(const Model::DescribePrometheusCreateInstanceQuotaRequest &request);
+                void DescribePrometheusCreateInstanceQuotaAsync(const Model::DescribePrometheusCreateInstanceQuotaRequest& request, const DescribePrometheusCreateInstanceQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusCreateInstanceQuotaOutcomeCallable DescribePrometheusCreateInstanceQuotaCallable(const Model::DescribePrometheusCreateInstanceQuotaRequest& request);
 
                 /**
                  *获得实例级别抓取配置

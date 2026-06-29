@@ -131,8 +131,8 @@ namespace TencentCloud
                     bool WorkspaceHasBeenSet() const;
 
                     /**
-                     * 获取会话标题
-                     * @return Title 会话标题
+                     * 获取<p>会话标题</p>
+                     * @return Title <p>会话标题</p>
                      * 
                      */
                     std::string GetTitle() const;
@@ -143,6 +143,20 @@ namespace TencentCloud
                      * 
                      */
                     bool TitleHasBeenSet() const;
+
+                    /**
+                     * 获取<p>会话使用的用户端 AgentId</p>
+                     * @return AgentId <p>会话使用的用户端 AgentId</p>
+                     * 
+                     */
+                    std::string GetAgentId() const;
+
+                    /**
+                     * 判断参数 AgentId 是否已赋值
+                     * @return AgentId 是否已赋值
+                     * 
+                     */
+                    bool AgentIdHasBeenSet() const;
 
                 private:
 
@@ -184,10 +198,16 @@ namespace TencentCloud
                     bool m_workspaceHasBeenSet;
 
                     /**
-                     * 会话标题
+                     * <p>会话标题</p>
                      */
                     std::string m_title;
                     bool m_titleHasBeenSet;
+
+                    /**
+                     * <p>会话使用的用户端 AgentId</p>
+                     */
+                    std::string m_agentId;
+                    bool m_agentIdHasBeenSet;
 
                 };
             }

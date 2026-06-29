@@ -29,7 +29,8 @@ CreateConversationRequest::CreateConversationRequest() :
     m_loginSubAccountUinHasBeenSet(false),
     m_loginUinHasBeenSet(false),
     m_shareCodeHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_agentIdHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string CreateConversationRequest::ToJsonString() const
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_agentId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void CreateConversationRequest::SetUserId(const string& _userId)
 bool CreateConversationRequest::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+string CreateConversationRequest::GetAgentId() const
+{
+    return m_agentId;
+}
+
+void CreateConversationRequest::SetAgentId(const string& _agentId)
+{
+    m_agentId = _agentId;
+    m_agentIdHasBeenSet = true;
+}
+
+bool CreateConversationRequest::AgentIdHasBeenSet() const
+{
+    return m_agentIdHasBeenSet;
 }
 
 

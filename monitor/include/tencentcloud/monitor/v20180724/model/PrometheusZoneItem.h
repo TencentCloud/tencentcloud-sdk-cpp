@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可用区
-                     * @return Zone 可用区
+                     * 获取<p>可用区</p>
+                     * @return Zone <p>可用区</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区
-                     * @param _zone 可用区
+                     * 设置<p>可用区</p>
+                     * @param _zone <p>可用区</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取可用区 ID
-                     * @return ZoneId 可用区 ID
+                     * 获取<p>可用区 ID</p>
+                     * @return ZoneId <p>可用区 ID</p>
                      * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
-                     * 设置可用区 ID
-                     * @param _zoneId 可用区 ID
+                     * 设置<p>可用区 ID</p>
+                     * @param _zoneId <p>可用区 ID</p>
                      * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取可用区状态( 0: 不可用；1: 可用)
-                     * @return ZoneState 可用区状态( 0: 不可用；1: 可用)
+                     * 获取<p>可用区状态( 0: 不可用；1: 可用)</p>
+                     * @return ZoneState <p>可用区状态( 0: 不可用；1: 可用)</p>
                      * 
                      */
                     int64_t GetZoneState() const;
 
                     /**
-                     * 设置可用区状态( 0: 不可用；1: 可用)
-                     * @param _zoneState 可用区状态( 0: 不可用；1: 可用)
+                     * 设置<p>可用区状态( 0: 不可用；1: 可用)</p>
+                     * @param _zoneState <p>可用区状态( 0: 不可用；1: 可用)</p>
                      * 
                      */
                     void SetZoneState(const int64_t& _zoneState);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ZoneStateHasBeenSet() const;
 
                     /**
-                     * 获取地域 ID
-                     * @return RegionId 地域 ID
+                     * 获取<p>地域 ID</p>
+                     * @return RegionId <p>地域 ID</p>
                      * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
-                     * 设置地域 ID
-                     * @param _regionId 地域 ID
+                     * 设置<p>地域 ID</p>
+                     * @param _regionId <p>地域 ID</p>
                      * 
                      */
                     void SetRegionId(const int64_t& _regionId);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取可用区名（目前为中文）
-                     * @return ZoneName 可用区名（目前为中文）
+                     * 获取<p>可用区名（目前为中文）</p>
+                     * @return ZoneName <p>可用区名（目前为中文）</p>
                      * 
                      */
                     std::string GetZoneName() const;
 
                     /**
-                     * 设置可用区名（目前为中文）
-                     * @param _zoneName 可用区名（目前为中文）
+                     * 设置<p>可用区名（目前为中文）</p>
+                     * @param _zoneName <p>可用区名（目前为中文）</p>
                      * 
                      */
                     void SetZoneName(const std::string& _zoneName);
@@ -152,18 +152,18 @@ namespace TencentCloud
                     bool ZoneNameHasBeenSet() const;
 
                     /**
-                     * 获取可用区资源状态(0:资源不足，不可使用；1:资源足够)
+                     * 获取<p>可用区资源状态(0:资源不足，不可使用；1:资源足够)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ZoneResourceState 可用区资源状态(0:资源不足，不可使用；1:资源足够)
+                     * @return ZoneResourceState <p>可用区资源状态(0:资源不足，不可使用；1:资源足够)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetZoneResourceState() const;
 
                     /**
-                     * 设置可用区资源状态(0:资源不足，不可使用；1:资源足够)
+                     * 设置<p>可用区资源状态(0:资源不足，不可使用；1:资源足够)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _zoneResourceState 可用区资源状态(0:资源不足，不可使用；1:资源足够)
+                     * @param _zoneResourceState <p>可用区资源状态(0:资源不足，不可使用；1:资源足够)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -179,37 +179,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 可用区
+                     * <p>可用区</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 可用区 ID
+                     * <p>可用区 ID</p>
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 可用区状态( 0: 不可用；1: 可用)
+                     * <p>可用区状态( 0: 不可用；1: 可用)</p>
                      */
                     int64_t m_zoneState;
                     bool m_zoneStateHasBeenSet;
 
                     /**
-                     * 地域 ID
+                     * <p>地域 ID</p>
                      */
                     int64_t m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 可用区名（目前为中文）
+                     * <p>可用区名（目前为中文）</p>
                      */
                     std::string m_zoneName;
                     bool m_zoneNameHasBeenSet;
 
                     /**
-                     * 可用区资源状态(0:资源不足，不可使用；1:资源足够)
+                     * <p>可用区资源状态(0:资源不足，不可使用；1:资源足够)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_zoneResourceState;

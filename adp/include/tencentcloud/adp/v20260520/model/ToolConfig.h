@@ -51,19 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取API插件工具配置
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApiToolConfig API插件工具配置
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取<p>API工具配置信息</p>
+                     * @return ApiToolConfig <p>API工具配置信息</p>
                      * 
                      */
                     ApiToolConfig GetApiToolConfig() const;
 
                     /**
-                     * 设置API插件工具配置
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _apiToolConfig API插件工具配置
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置<p>API工具配置信息</p>
+                     * @param _apiToolConfig <p>API工具配置信息</p>
                      * 
                      */
                     void SetApiToolConfig(const ApiToolConfig& _apiToolConfig);
@@ -76,19 +72,15 @@ namespace TencentCloud
                     bool ApiToolConfigHasBeenSet() const;
 
                     /**
-                     * 获取应用插件工具配置
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AppToolConfig 应用插件工具配置
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取<p>应用配置信息</p>
+                     * @return AppToolConfig <p>应用配置信息</p>
                      * 
                      */
                     AppToolConfig GetAppToolConfig() const;
 
                     /**
-                     * 设置应用插件工具配置
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _appToolConfig 应用插件工具配置
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置<p>应用配置信息</p>
+                     * @param _appToolConfig <p>应用配置信息</p>
                      * 
                      */
                     void SetAppToolConfig(const AppToolConfig& _appToolConfig);
@@ -101,19 +93,15 @@ namespace TencentCloud
                     bool AppToolConfigHasBeenSet() const;
 
                     /**
-                     * 获取代码插件工具配置
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CodeToolConfig 代码插件工具配置
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取<p>代码工具配置信息</p>
+                     * @return CodeToolConfig <p>代码工具配置信息</p>
                      * 
                      */
                     CodeToolConfig GetCodeToolConfig() const;
 
                     /**
-                     * 设置代码插件工具配置
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _codeToolConfig 代码插件工具配置
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置<p>代码工具配置信息</p>
+                     * @param _codeToolConfig <p>代码工具配置信息</p>
                      * 
                      */
                     void SetCodeToolConfig(const CodeToolConfig& _codeToolConfig);
@@ -126,19 +114,15 @@ namespace TencentCloud
                     bool CodeToolConfigHasBeenSet() const;
 
                     /**
-                     * 获取mcp插件工具配置
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MCPToolConfig mcp插件工具配置
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取<p>MCP工具配置信息</p>
+                     * @return MCPToolConfig <p>MCP工具配置信息</p>
                      * 
                      */
                     MCPToolConfig GetMCPToolConfig() const;
 
                     /**
-                     * 设置mcp插件工具配置
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mCPToolConfig mcp插件工具配置
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置<p>MCP工具配置信息</p>
+                     * @param _mCPToolConfig <p>MCP工具配置信息</p>
                      * 
                      */
                     void SetMCPToolConfig(const MCPToolConfig& _mCPToolConfig);
@@ -153,29 +137,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * API插件工具配置
-注意：此字段可能返回 null，表示取不到有效值。
+                     * <p>API工具配置信息</p>
                      */
                     ApiToolConfig m_apiToolConfig;
                     bool m_apiToolConfigHasBeenSet;
 
                     /**
-                     * 应用插件工具配置
-注意：此字段可能返回 null，表示取不到有效值。
+                     * <p>应用配置信息</p>
                      */
                     AppToolConfig m_appToolConfig;
                     bool m_appToolConfigHasBeenSet;
 
                     /**
-                     * 代码插件工具配置
-注意：此字段可能返回 null，表示取不到有效值。
+                     * <p>代码工具配置信息</p>
                      */
                     CodeToolConfig m_codeToolConfig;
                     bool m_codeToolConfigHasBeenSet;
 
                     /**
-                     * mcp插件工具配置
-注意：此字段可能返回 null，表示取不到有效值。
+                     * <p>MCP工具配置信息</p>
                      */
                     MCPToolConfig m_mCPToolConfig;
                     bool m_mCPToolConfigHasBeenSet;

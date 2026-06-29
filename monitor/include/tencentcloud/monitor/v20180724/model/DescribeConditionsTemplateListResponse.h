@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板总数
-                     * @return Total 模板总数
+                     * 获取<p>模板总数</p>
+                     * @return Total <p>模板总数</p>
                      * 
                      */
                     int64_t GetTotal() const;
@@ -59,9 +59,9 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取模板列表
+                     * 获取<p>模板列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TemplateGroupList 模板列表
+                     * @return TemplateGroupList <p>模板列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,13 +77,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板总数
+                     * <p>模板总数</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 模板列表
+                     * <p>模板列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TemplateGroup> m_templateGroupList;

@@ -133,14 +133,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>模型参数</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelParameters <p>模型参数</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ModelParams GetModelParameters() const;
 
                     /**
                      * 设置<p>模型参数</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modelParameters <p>模型参数</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModelParameters(const ModelParams& _modelParameters);
@@ -180,6 +184,7 @@ namespace TencentCloud
 
                     /**
                      * <p>模型参数</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ModelParams m_modelParameters;
                     bool m_modelParametersHasBeenSet;

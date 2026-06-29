@@ -26,7 +26,8 @@ Conversation::Conversation() :
     m_createTimeHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_titleHasBeenSet(false)
+    m_titleHasBeenSet(false),
+    m_agentIdHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome Conversation::Deserialize(const rapidjson::Value &value)
         m_titleHasBeenSet = true;
     }
 
+    if (value.HasMember("AgentId") && !value["AgentId"].IsNull())
+    {
+        if (!value["AgentId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Conversation.AgentId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentId = string(value["AgentId"].GetString());
+        m_agentIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void Conversation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Title";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_title.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_agentId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void Conversation::SetTitle(const string& _title)
 bool Conversation::TitleHasBeenSet() const
 {
     return m_titleHasBeenSet;
+}
+
+string Conversation::GetAgentId() const
+{
+    return m_agentId;
+}
+
+void Conversation::SetAgentId(const string& _agentId)
+{
+    m_agentId = _agentId;
+    m_agentIdHasBeenSet = true;
+}
+
+bool Conversation::AgentIdHasBeenSet() const
+{
+    return m_agentIdHasBeenSet;
 }
 

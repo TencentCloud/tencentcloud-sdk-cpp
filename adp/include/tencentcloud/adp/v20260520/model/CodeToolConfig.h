@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取代码
-                     * @return Code 代码
+                     * 获取<p>代码</p>
+                     * @return Code <p>代码</p>
                      * 
                      */
                     std::string GetCode() const;
 
                     /**
-                     * 设置代码
-                     * @param _code 代码
+                     * 设置<p>代码</p>
+                     * @param _code <p>代码</p>
                      * 
                      */
                     void SetCode(const std::string& _code);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
-                     * 获取示例
-                     * @return Example 示例
+                     * 获取<p>示例</p>
+                     * @return Example <p>示例</p>
                      * 
                      */
                     ToolExample GetExample() const;
 
                     /**
-                     * 设置示例
-                     * @param _example 示例
+                     * 设置<p>示例</p>
+                     * @param _example <p>示例</p>
                      * 
                      */
                     void SetExample(const ToolExample& _example);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool ExampleHasBeenSet() const;
 
                     /**
-                     * 获取输入参数
-                     * @return Inputs 输入参数
+                     * 获取<p>输入参数</p>
+                     * @return Inputs <p>输入参数</p>
                      * 
                      */
                     std::vector<RequestParam> GetInputs() const;
 
                     /**
-                     * 设置输入参数
-                     * @param _inputs 输入参数
+                     * 设置<p>输入参数</p>
+                     * @param _inputs <p>输入参数</p>
                      * 
                      */
                     void SetInputs(const std::vector<RequestParam>& _inputs);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool InputsHasBeenSet() const;
 
                     /**
-                     * 获取输出参数
-                     * @return Outputs 输出参数
+                     * 获取<p>输出参数</p>
+                     * @return Outputs <p>输出参数</p>
                      * 
                      */
                     std::vector<ResponseParam> GetOutputs() const;
 
                     /**
-                     * 设置输出参数
-                     * @param _outputs 输出参数
+                     * 设置<p>输出参数</p>
+                     * @param _outputs <p>输出参数</p>
                      * 
                      */
                     void SetOutputs(const std::vector<ResponseParam>& _outputs);
@@ -136,25 +136,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 代码
+                     * <p>代码</p>
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
 
                     /**
-                     * 示例
+                     * <p>示例</p>
                      */
                     ToolExample m_example;
                     bool m_exampleHasBeenSet;
 
                     /**
-                     * 输入参数
+                     * <p>输入参数</p>
                      */
                     std::vector<RequestParam> m_inputs;
                     bool m_inputsHasBeenSet;
 
                     /**
-                     * 输出参数
+                     * <p>输出参数</p>
                      */
                     std::vector<ResponseParam> m_outputs;
                     bool m_outputsHasBeenSet;

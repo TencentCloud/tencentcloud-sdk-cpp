@@ -1285,6 +1285,69 @@ namespace TencentCloud
                      */
                     bool UseDefaultFuseConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启探针头采样</p>
+                     * @return EnableHeadSampler <p>是否开启探针头采样</p>
+                     * 
+                     */
+                    bool GetEnableHeadSampler() const;
+
+                    /**
+                     * 设置<p>是否开启探针头采样</p>
+                     * @param _enableHeadSampler <p>是否开启探针头采样</p>
+                     * 
+                     */
+                    void SetEnableHeadSampler(const bool& _enableHeadSampler);
+
+                    /**
+                     * 判断参数 EnableHeadSampler 是否已赋值
+                     * @return EnableHeadSampler 是否已赋值
+                     * 
+                     */
+                    bool EnableHeadSamplerHasBeenSet() const;
+
+                    /**
+                     * 获取<p>头采样类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 跟随parent</li></ul>
+                     * @return HeadSamplerType <p>头采样类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 跟随parent</li></ul>
+                     * 
+                     */
+                    std::string GetHeadSamplerType() const;
+
+                    /**
+                     * 设置<p>头采样类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 跟随parent</li></ul>
+                     * @param _headSamplerType <p>头采样类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 跟随parent</li></ul>
+                     * 
+                     */
+                    void SetHeadSamplerType(const std::string& _headSamplerType);
+
+                    /**
+                     * 判断参数 HeadSamplerType 是否已赋值
+                     * @return HeadSamplerType 是否已赋值
+                     * 
+                     */
+                    bool HeadSamplerTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>采样率</p><p>取值范围：[0, 100]</p><p>默认值：100</p>
+                     * @return HeadSamplerArg <p>采样率</p><p>取值范围：[0, 100]</p><p>默认值：100</p>
+                     * 
+                     */
+                    int64_t GetHeadSamplerArg() const;
+
+                    /**
+                     * 设置<p>采样率</p><p>取值范围：[0, 100]</p><p>默认值：100</p>
+                     * @param _headSamplerArg <p>采样率</p><p>取值范围：[0, 100]</p><p>默认值：100</p>
+                     * 
+                     */
+                    void SetHeadSamplerArg(const int64_t& _headSamplerArg);
+
+                    /**
+                     * 判断参数 HeadSamplerArg 是否已赋值
+                     * @return HeadSamplerArg 是否已赋值
+                     * 
+                     */
+                    bool HeadSamplerArgHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1640,6 +1703,24 @@ namespace TencentCloud
                      */
                     bool m_useDefaultFuseConfig;
                     bool m_useDefaultFuseConfigHasBeenSet;
+
+                    /**
+                     * <p>是否开启探针头采样</p>
+                     */
+                    bool m_enableHeadSampler;
+                    bool m_enableHeadSamplerHasBeenSet;
+
+                    /**
+                     * <p>头采样类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 跟随parent</li></ul>
+                     */
+                    std::string m_headSamplerType;
+                    bool m_headSamplerTypeHasBeenSet;
+
+                    /**
+                     * <p>采样率</p><p>取值范围：[0, 100]</p><p>默认值：100</p>
+                     */
+                    int64_t m_headSamplerArg;
+                    bool m_headSamplerArgHasBeenSet;
 
                 };
             }

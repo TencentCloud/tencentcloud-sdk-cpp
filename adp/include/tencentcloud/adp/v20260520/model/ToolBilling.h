@@ -24,6 +24,9 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/adp/v20260520/model/BasicBilling.h>
+#include <tencentcloud/adp/v20260520/model/ComplexBilling.h>
+#include <tencentcloud/adp/v20260520/model/DuplexBilling.h>
 
 
 namespace TencentCloud
@@ -47,43 +50,36 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取计费类型
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 免费 |
-| 1 | 限时免费 |
-| 2 | 官方收费 |
-| 3 | 官方收费(存量老用户限时免费) |
-                     * @return BillingType 计费类型
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 免费 |
-| 1 | 限时免费 |
-| 2 | 官方收费 |
-| 3 | 官方收费(存量老用户限时免费) |
+                     * 获取<p>基础计费信息</p>
+                     * @return BasicBilling <p>基础计费信息</p>
+                     * 
+                     */
+                    BasicBilling GetBasicBilling() const;
+
+                    /**
+                     * 设置<p>基础计费信息</p>
+                     * @param _basicBilling <p>基础计费信息</p>
+                     * 
+                     */
+                    void SetBasicBilling(const BasicBilling& _basicBilling);
+
+                    /**
+                     * 判断参数 BasicBilling 是否已赋值
+                     * @return BasicBilling 是否已赋值
+                     * 
+                     */
+                    bool BasicBillingHasBeenSet() const;
+
+                    /**
+                     * 获取<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>BILLING_TYPE_FREE</td><td>0</td><td>免费</td></tr><tr><td>BILLING_TYPE_LIMITED_FREE</td><td>1</td><td>限时免费</td></tr><tr><td>BILLING_TYPE_OFFICIAL_PAID</td><td>2</td><td>官方收费</td></tr><tr><td>BILLING_TYPE_OFFICIAL_PAID_OLD_FREE</td><td>3</td><td>官方收费（新/升级用户收费，存量老用户限时免费）</td></tr></tbody></table>
+                     * @return BillingType <table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>BILLING_TYPE_FREE</td><td>0</td><td>免费</td></tr><tr><td>BILLING_TYPE_LIMITED_FREE</td><td>1</td><td>限时免费</td></tr><tr><td>BILLING_TYPE_OFFICIAL_PAID</td><td>2</td><td>官方收费</td></tr><tr><td>BILLING_TYPE_OFFICIAL_PAID_OLD_FREE</td><td>3</td><td>官方收费（新/升级用户收费，存量老用户限时免费）</td></tr></tbody></table>
                      * 
                      */
                     int64_t GetBillingType() const;
 
                     /**
-                     * 设置计费类型
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 免费 |
-| 1 | 限时免费 |
-| 2 | 官方收费 |
-| 3 | 官方收费(存量老用户限时免费) |
-                     * @param _billingType 计费类型
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 免费 |
-| 1 | 限时免费 |
-| 2 | 官方收费 |
-| 3 | 官方收费(存量老用户限时免费) |
+                     * 设置<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>BILLING_TYPE_FREE</td><td>0</td><td>免费</td></tr><tr><td>BILLING_TYPE_LIMITED_FREE</td><td>1</td><td>限时免费</td></tr><tr><td>BILLING_TYPE_OFFICIAL_PAID</td><td>2</td><td>官方收费</td></tr><tr><td>BILLING_TYPE_OFFICIAL_PAID_OLD_FREE</td><td>3</td><td>官方收费（新/升级用户收费，存量老用户限时免费）</td></tr></tbody></table>
+                     * @param _billingType <table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>BILLING_TYPE_FREE</td><td>0</td><td>免费</td></tr><tr><td>BILLING_TYPE_LIMITED_FREE</td><td>1</td><td>限时免费</td></tr><tr><td>BILLING_TYPE_OFFICIAL_PAID</td><td>2</td><td>官方收费</td></tr><tr><td>BILLING_TYPE_OFFICIAL_PAID_OLD_FREE</td><td>3</td><td>官方收费（新/升级用户收费，存量老用户限时免费）</td></tr></tbody></table>
                      * 
                      */
                     void SetBillingType(const int64_t& _billingType);
@@ -95,20 +91,73 @@ namespace TencentCloud
                      */
                     bool BillingTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>复合类型计费信息</p>
+                     * @return ComplexBilling <p>复合类型计费信息</p>
+                     * 
+                     */
+                    ComplexBilling GetComplexBilling() const;
+
+                    /**
+                     * 设置<p>复合类型计费信息</p>
+                     * @param _complexBilling <p>复合类型计费信息</p>
+                     * 
+                     */
+                    void SetComplexBilling(const ComplexBilling& _complexBilling);
+
+                    /**
+                     * 判断参数 ComplexBilling 是否已赋值
+                     * @return ComplexBilling 是否已赋值
+                     * 
+                     */
+                    bool ComplexBillingHasBeenSet() const;
+
+                    /**
+                     * 获取<p>双向计费信息</p>
+                     * @return DuplexBilling <p>双向计费信息</p>
+                     * 
+                     */
+                    DuplexBilling GetDuplexBilling() const;
+
+                    /**
+                     * 设置<p>双向计费信息</p>
+                     * @param _duplexBilling <p>双向计费信息</p>
+                     * 
+                     */
+                    void SetDuplexBilling(const DuplexBilling& _duplexBilling);
+
+                    /**
+                     * 判断参数 DuplexBilling 是否已赋值
+                     * @return DuplexBilling 是否已赋值
+                     * 
+                     */
+                    bool DuplexBillingHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 计费类型
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 免费 |
-| 1 | 限时免费 |
-| 2 | 官方收费 |
-| 3 | 官方收费(存量老用户限时免费) |
+                     * <p>基础计费信息</p>
+                     */
+                    BasicBilling m_basicBilling;
+                    bool m_basicBillingHasBeenSet;
+
+                    /**
+                     * <table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>BILLING_TYPE_FREE</td><td>0</td><td>免费</td></tr><tr><td>BILLING_TYPE_LIMITED_FREE</td><td>1</td><td>限时免费</td></tr><tr><td>BILLING_TYPE_OFFICIAL_PAID</td><td>2</td><td>官方收费</td></tr><tr><td>BILLING_TYPE_OFFICIAL_PAID_OLD_FREE</td><td>3</td><td>官方收费（新/升级用户收费，存量老用户限时免费）</td></tr></tbody></table>
                      */
                     int64_t m_billingType;
                     bool m_billingTypeHasBeenSet;
+
+                    /**
+                     * <p>复合类型计费信息</p>
+                     */
+                    ComplexBilling m_complexBilling;
+                    bool m_complexBillingHasBeenSet;
+
+                    /**
+                     * <p>双向计费信息</p>
+                     */
+                    DuplexBilling m_duplexBilling;
+                    bool m_duplexBillingHasBeenSet;
 
                 };
             }

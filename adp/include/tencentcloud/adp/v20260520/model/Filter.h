@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Filter
+                * 列表通用过滤条件（多个 Filter 之间为 AND 关系，同一 Filter 的多个 value_list 为 OR 关系）
                 */
                 class Filter : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取检索名称
-                     * @return Name 检索名称
+                     * 获取过滤字段名
+                     * @return Name 过滤字段名
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置检索名称
-                     * @param _name 检索名称
+                     * 设置过滤字段名
+                     * @param _name 过滤字段名
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,15 +68,36 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取检索值
-                     * @return ValueList 检索值
+                     * 获取操作符，默认 IN（向后兼容）<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>FILTER_OPERATOR_IN</td><td>0</td><td>属于 value_list（默认值，向后兼容；value_list 不可为空）</td></tr><tr><td>FILTER_OPERATOR_NOT_IN</td><td>1</td><td>不属于 value_list（value_list 不可为空）</td></tr></table>
+                     * @return Operator 操作符，默认 IN（向后兼容）<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>FILTER_OPERATOR_IN</td><td>0</td><td>属于 value_list（默认值，向后兼容；value_list 不可为空）</td></tr><tr><td>FILTER_OPERATOR_NOT_IN</td><td>1</td><td>不属于 value_list（value_list 不可为空）</td></tr></table>
+                     * 
+                     */
+                    int64_t GetOperator() const;
+
+                    /**
+                     * 设置操作符，默认 IN（向后兼容）<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>FILTER_OPERATOR_IN</td><td>0</td><td>属于 value_list（默认值，向后兼容；value_list 不可为空）</td></tr><tr><td>FILTER_OPERATOR_NOT_IN</td><td>1</td><td>不属于 value_list（value_list 不可为空）</td></tr></table>
+                     * @param _operator 操作符，默认 IN（向后兼容）<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>FILTER_OPERATOR_IN</td><td>0</td><td>属于 value_list（默认值，向后兼容；value_list 不可为空）</td></tr><tr><td>FILTER_OPERATOR_NOT_IN</td><td>1</td><td>不属于 value_list（value_list 不可为空）</td></tr></table>
+                     * 
+                     */
+                    void SetOperator(const int64_t& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     * 
+                     */
+                    bool OperatorHasBeenSet() const;
+
+                    /**
+                     * 获取过滤值数组
+                     * @return ValueList 过滤值数组
                      * 
                      */
                     std::vector<std::string> GetValueList() const;
 
                     /**
-                     * 设置检索值
-                     * @param _valueList 检索值
+                     * 设置过滤值数组
+                     * @param _valueList 过滤值数组
                      * 
                      */
                     void SetValueList(const std::vector<std::string>& _valueList);
@@ -91,13 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 检索名称
+                     * 过滤字段名
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 检索值
+                     * 操作符，默认 IN（向后兼容）<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>FILTER_OPERATOR_IN</td><td>0</td><td>属于 value_list（默认值，向后兼容；value_list 不可为空）</td></tr><tr><td>FILTER_OPERATOR_NOT_IN</td><td>1</td><td>不属于 value_list（value_list 不可为空）</td></tr></table>
+                     */
+                    int64_t m_operator;
+                    bool m_operatorHasBeenSet;
+
+                    /**
+                     * 过滤值数组
                      */
                     std::vector<std::string> m_valueList;
                     bool m_valueListHasBeenSet;

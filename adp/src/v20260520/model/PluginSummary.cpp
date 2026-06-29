@@ -26,7 +26,8 @@ PluginSummary::PluginSummary() :
     m_profileHasBeenSet(false),
     m_statisticsHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_userStateHasBeenSet(false)
+    m_userStateHasBeenSet(false),
+    m_configHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,23 @@ CoreInternalOutcome PluginSummary::Deserialize(const rapidjson::Value &value)
         m_userStateHasBeenSet = true;
     }
 
+    if (value.HasMember("Config") && !value["Config"].IsNull())
+    {
+        if (!value["Config"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `PluginSummary.Config` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_config.Deserialize(value["Config"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_configHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -180,6 +198,15 @@ void PluginSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_userState.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_configHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Config";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_config.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -279,5 +306,21 @@ void PluginSummary::SetUserState(const PluginUserState& _userState)
 bool PluginSummary::UserStateHasBeenSet() const
 {
     return m_userStateHasBeenSet;
+}
+
+PluginConfig PluginSummary::GetConfig() const
+{
+    return m_config;
+}
+
+void PluginSummary::SetConfig(const PluginConfig& _config)
+{
+    m_config = _config;
+    m_configHasBeenSet = true;
+}
+
+bool PluginSummary::ConfigHasBeenSet() const
+{
+    return m_configHasBeenSet;
 }
 

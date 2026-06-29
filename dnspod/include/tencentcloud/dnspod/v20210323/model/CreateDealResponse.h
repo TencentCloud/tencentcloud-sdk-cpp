@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取大订单号，一个大订单号下可以有多个子订单，说明是同一次下单
-                     * @return BigDealId 大订单号，一个大订单号下可以有多个子订单，说明是同一次下单
+                     * 获取<p>大订单号，一个大订单号下可以有多个子订单，说明是同一次下单</p>
+                     * @return BigDealId <p>大订单号，一个大订单号下可以有多个子订单，说明是同一次下单</p>
                      * 
                      */
                     std::string GetBigDealId() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool BigDealIdHasBeenSet() const;
 
                     /**
-                     * 获取子订单列表
-                     * @return DealList 子订单列表
+                     * 获取<p>子订单列表</p>
+                     * @return DealList <p>子订单列表</p>
                      * 
                      */
                     std::vector<Deals> GetDealList() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 大订单号，一个大订单号下可以有多个子订单，说明是同一次下单
+                     * <p>大订单号，一个大订单号下可以有多个子订单，说明是同一次下单</p>
                      */
                     std::string m_bigDealId;
                     bool m_bigDealIdHasBeenSet;
 
                     /**
-                     * 子订单列表
+                     * <p>子订单列表</p>
                      */
                     std::vector<Deals> m_dealList;
                     bool m_dealListHasBeenSet;

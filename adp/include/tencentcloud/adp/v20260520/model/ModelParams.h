@@ -68,48 +68,6 @@ namespace TencentCloud
                     bool DeepThinkingHasBeenSet() const;
 
                     /**
-                     * 获取深度思考效果
-                     * @return ReasoningEffort 深度思考效果
-                     * 
-                     */
-                    std::string GetReasoningEffort() const;
-
-                    /**
-                     * 设置深度思考效果
-                     * @param _reasoningEffort 深度思考效果
-                     * 
-                     */
-                    void SetReasoningEffort(const std::string& _reasoningEffort);
-
-                    /**
-                     * 判断参数 ReasoningEffort 是否已赋值
-                     * @return ReasoningEffort 是否已赋值
-                     * 
-                     */
-                    bool ReasoningEffortHasBeenSet() const;
-
-                    /**
-                     * 获取输出格式  text、json_object
-                     * @return ReplyFormat 输出格式  text、json_object
-                     * 
-                     */
-                    std::string GetReplyFormat() const;
-
-                    /**
-                     * 设置输出格式  text、json_object
-                     * @param _replyFormat 输出格式  text、json_object
-                     * 
-                     */
-                    void SetReplyFormat(const std::string& _replyFormat);
-
-                    /**
-                     * 判断参数 ReplyFormat 是否已赋值
-                     * @return ReplyFormat 是否已赋值
-                     * 
-                     */
-                    bool ReplyFormatHasBeenSet() const;
-
-                    /**
                      * 获取频率惩罚
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FrequencyPenalty 频率惩罚
@@ -185,6 +143,27 @@ namespace TencentCloud
                     bool PresencePenaltyHasBeenSet() const;
 
                     /**
+                     * 获取深度思考效果
+                     * @return ReasoningEffort 深度思考效果
+                     * 
+                     */
+                    std::string GetReasoningEffort() const;
+
+                    /**
+                     * 设置深度思考效果
+                     * @param _reasoningEffort 深度思考效果
+                     * 
+                     */
+                    void SetReasoningEffort(const std::string& _reasoningEffort);
+
+                    /**
+                     * 判断参数 ReasoningEffort 是否已赋值
+                     * @return ReasoningEffort 是否已赋值
+                     * 
+                     */
+                    bool ReasoningEffortHasBeenSet() const;
+
+                    /**
                      * 获取重复惩罚
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepetitionPenalty 重复惩罚
@@ -208,6 +187,27 @@ namespace TencentCloud
                      * 
                      */
                     bool RepetitionPenaltyHasBeenSet() const;
+
+                    /**
+                     * 获取输出格式（text、json_object）
+                     * @return ReplyFormat 输出格式（text、json_object）
+                     * 
+                     */
+                    std::string GetReplyFormat() const;
+
+                    /**
+                     * 设置输出格式（text、json_object）
+                     * @param _replyFormat 输出格式（text、json_object）
+                     * 
+                     */
+                    void SetReplyFormat(const std::string& _replyFormat);
+
+                    /**
+                     * 判断参数 ReplyFormat 是否已赋值
+                     * @return ReplyFormat 是否已赋值
+                     * 
+                     */
+                    bool ReplyFormatHasBeenSet() const;
 
                     /**
                      * 获取seed 随机种子
@@ -314,18 +314,6 @@ namespace TencentCloud
                     bool m_deepThinkingHasBeenSet;
 
                     /**
-                     * 深度思考效果
-                     */
-                    std::string m_reasoningEffort;
-                    bool m_reasoningEffortHasBeenSet;
-
-                    /**
-                     * 输出格式  text、json_object
-                     */
-                    std::string m_replyFormat;
-                    bool m_replyFormatHasBeenSet;
-
-                    /**
                      * 频率惩罚
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -347,11 +335,23 @@ namespace TencentCloud
                     bool m_presencePenaltyHasBeenSet;
 
                     /**
+                     * 深度思考效果
+                     */
+                    std::string m_reasoningEffort;
+                    bool m_reasoningEffortHasBeenSet;
+
+                    /**
                      * 重复惩罚
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_repetitionPenalty;
                     bool m_repetitionPenaltyHasBeenSet;
+
+                    /**
+                     * 输出格式（text、json_object）
+                     */
+                    std::string m_replyFormat;
+                    bool m_replyFormatHasBeenSet;
 
                     /**
                      * seed 随机种子

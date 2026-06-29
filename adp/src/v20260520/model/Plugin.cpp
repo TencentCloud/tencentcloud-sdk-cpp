@@ -21,6 +21,7 @@ using namespace TencentCloud::Adp::V20260520::Model;
 using namespace std;
 
 Plugin::Plugin() :
+    m_configHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_operationHasBeenSet(false),
     m_pluginIdHasBeenSet(false),
@@ -38,6 +39,23 @@ CoreInternalOutcome Plugin::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("Config") && !value["Config"].IsNull())
+    {
+        if (!value["Config"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Plugin.Config` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_config.Deserialize(value["Config"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_configHasBeenSet = true;
+    }
 
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
     {
@@ -184,6 +202,15 @@ CoreInternalOutcome Plugin::Deserialize(const rapidjson::Value &value)
 void Plugin::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_configHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Config";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_config.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_createTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -277,6 +304,22 @@ void Plugin::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
 
 }
 
+
+PluginConfig Plugin::GetConfig() const
+{
+    return m_config;
+}
+
+void Plugin::SetConfig(const PluginConfig& _config)
+{
+    m_config = _config;
+    m_configHasBeenSet = true;
+}
+
+bool Plugin::ConfigHasBeenSet() const
+{
+    return m_configHasBeenSet;
+}
 
 string Plugin::GetCreateTime() const
 {

@@ -107,8 +107,6 @@
 #include <tencentcloud/tdmysql/v20211122/model/ModifyMaintenanceWindowResponse.h>
 #include <tencentcloud/tdmysql/v20211122/model/ModifyUserPrivilegesRequest.h>
 #include <tencentcloud/tdmysql/v20211122/model/ModifyUserPrivilegesResponse.h>
-#include <tencentcloud/tdmysql/v20211122/model/ResetUserPasswordRequest.h>
-#include <tencentcloud/tdmysql/v20211122/model/ResetUserPasswordResponse.h>
 #include <tencentcloud/tdmysql/v20211122/model/ResetUsersPasswordRequest.h>
 #include <tencentcloud/tdmysql/v20211122/model/ResetUsersPasswordResponse.h>
 #include <tencentcloud/tdmysql/v20211122/model/RestartDBInstancesRequest.h>
@@ -255,9 +253,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyUserPrivilegesResponse> ModifyUserPrivilegesOutcome;
                 typedef std::future<ModifyUserPrivilegesOutcome> ModifyUserPrivilegesOutcomeCallable;
                 typedef std::function<void(const TdmysqlClient*, const Model::ModifyUserPrivilegesRequest&, ModifyUserPrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserPrivilegesAsyncHandler;
-                typedef Outcome<Core::Error, Model::ResetUserPasswordResponse> ResetUserPasswordOutcome;
-                typedef std::future<ResetUserPasswordOutcome> ResetUserPasswordOutcomeCallable;
-                typedef std::function<void(const TdmysqlClient*, const Model::ResetUserPasswordRequest&, ResetUserPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetUserPasswordAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetUsersPasswordResponse> ResetUsersPasswordOutcome;
                 typedef std::future<ResetUsersPasswordOutcome> ResetUsersPasswordOutcomeCallable;
                 typedef std::function<void(const TdmysqlClient*, const Model::ResetUsersPasswordRequest&, ResetUsersPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetUsersPasswordAsyncHandler;
@@ -647,15 +642,6 @@ namespace TencentCloud
                 ModifyUserPrivilegesOutcome ModifyUserPrivileges(const Model::ModifyUserPrivilegesRequest &request);
                 void ModifyUserPrivilegesAsync(const Model::ModifyUserPrivilegesRequest& request, const ModifyUserPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyUserPrivilegesOutcomeCallable ModifyUserPrivilegesCallable(const Model::ModifyUserPrivilegesRequest& request);
-
-                /**
-                 *本接口（ResetUserPassword）提供重置用户密码功能
-                 * @param req ResetUserPasswordRequest
-                 * @return ResetUserPasswordOutcome
-                 */
-                ResetUserPasswordOutcome ResetUserPassword(const Model::ResetUserPasswordRequest &request);
-                void ResetUserPasswordAsync(const Model::ResetUserPasswordRequest& request, const ResetUserPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ResetUserPasswordOutcomeCallable ResetUserPasswordCallable(const Model::ResetUserPasswordRequest& request);
 
                 /**
                  *本接口（ResetUsersPassword）用于批量重置用户密码

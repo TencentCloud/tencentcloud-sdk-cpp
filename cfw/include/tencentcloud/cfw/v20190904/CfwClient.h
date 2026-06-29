@@ -139,6 +139,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeLogStorageStatisticResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeLogsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeLogsResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNDRAssetIdentificationCursorListRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNDRAssetIdentificationCursorListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNDRAssetIdentificationListRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNDRAssetIdentificationListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatAcRuleRequest.h>
@@ -483,6 +485,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLogsResponse> DescribeLogsOutcome;
                 typedef std::future<DescribeLogsOutcome> DescribeLogsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeLogsRequest&, DescribeLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNDRAssetIdentificationCursorListResponse> DescribeNDRAssetIdentificationCursorListOutcome;
+                typedef std::future<DescribeNDRAssetIdentificationCursorListOutcome> DescribeNDRAssetIdentificationCursorListOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeNDRAssetIdentificationCursorListRequest&, DescribeNDRAssetIdentificationCursorListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNDRAssetIdentificationCursorListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNDRAssetIdentificationListResponse> DescribeNDRAssetIdentificationListOutcome;
                 typedef std::future<DescribeNDRAssetIdentificationListOutcome> DescribeNDRAssetIdentificationListOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeNDRAssetIdentificationListRequest&, DescribeNDRAssetIdentificationListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNDRAssetIdentificationListAsyncHandler;
@@ -1243,6 +1248,15 @@ namespace TencentCloud
                 DescribeLogsOutcome DescribeLogs(const Model::DescribeLogsRequest &request);
                 void DescribeLogsAsync(const Model::DescribeLogsRequest& request, const DescribeLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLogsOutcomeCallable DescribeLogsCallable(const Model::DescribeLogsRequest& request);
+
+                /**
+                 *DescribeNDRAssetIdentificationCursorList - 游标获取NDR资产识别结果列表
+                 * @param req DescribeNDRAssetIdentificationCursorListRequest
+                 * @return DescribeNDRAssetIdentificationCursorListOutcome
+                 */
+                DescribeNDRAssetIdentificationCursorListOutcome DescribeNDRAssetIdentificationCursorList(const Model::DescribeNDRAssetIdentificationCursorListRequest &request);
+                void DescribeNDRAssetIdentificationCursorListAsync(const Model::DescribeNDRAssetIdentificationCursorListRequest& request, const DescribeNDRAssetIdentificationCursorListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNDRAssetIdentificationCursorListOutcomeCallable DescribeNDRAssetIdentificationCursorListCallable(const Model::DescribeNDRAssetIdentificationCursorListRequest& request);
 
                 /**
                  *DescribeNDRAssetIdentificationList - 获取NDR资产识别结果列表

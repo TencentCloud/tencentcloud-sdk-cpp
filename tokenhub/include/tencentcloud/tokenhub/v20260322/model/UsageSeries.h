@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总 token 数用量时间周期内的 JSON 字符串形式，如 `"[12,null,15]"`。
-                     * @return TotalToken 总 token 数用量时间周期内的 JSON 字符串形式，如 `"[12,null,15]"`。
+                     * 获取<p>[tokens 族]总 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>
+                     * @return TotalToken <p>[tokens 族]总 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>
                      * 
                      */
                     std::string GetTotalToken() const;
 
                     /**
-                     * 设置总 token 数用量时间周期内的 JSON 字符串形式，如 `"[12,null,15]"`。
-                     * @param _totalToken 总 token 数用量时间周期内的 JSON 字符串形式，如 `"[12,null,15]"`。
+                     * 设置<p>[tokens 族]总 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>
+                     * @param _totalToken <p>[tokens 族]总 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>
                      * 
                      */
                     void SetTotalToken(const std::string& _totalToken);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TotalTokenHasBeenSet() const;
 
                     /**
-                     * 获取输入 token 数用量时间周期内的 JSON 字符串形式，如 `"[7,null,9]"`。
-                     * @return InputTotalToken 输入 token 数用量时间周期内的 JSON 字符串形式，如 `"[7,null,9]"`。
+                     * 获取<p>[tokens 族]输入 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[7,null,9]&quot;</code>。</p>
+                     * @return InputTotalToken <p>[tokens 族]输入 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[7,null,9]&quot;</code>。</p>
                      * 
                      */
                     std::string GetInputTotalToken() const;
 
                     /**
-                     * 设置输入 token 数用量时间周期内的 JSON 字符串形式，如 `"[7,null,9]"`。
-                     * @param _inputTotalToken 输入 token 数用量时间周期内的 JSON 字符串形式，如 `"[7,null,9]"`。
+                     * 设置<p>[tokens 族]输入 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[7,null,9]&quot;</code>。</p>
+                     * @param _inputTotalToken <p>[tokens 族]输入 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[7,null,9]&quot;</code>。</p>
                      * 
                      */
                     void SetInputTotalToken(const std::string& _inputTotalToken);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool InputTotalTokenHasBeenSet() const;
 
                     /**
-                     * 获取输出 token 数用量时间周期内的 JSON 字符串形式，如 `"[5,null,6]"`。
-                     * @return OutputTotalToken 输出 token 数用量时间周期内的 JSON 字符串形式，如 `"[5,null,6]"`。
+                     * 获取<p>[tokens 族]输出 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[5,null,6]&quot;</code>。</p>
+                     * @return OutputTotalToken <p>[tokens 族]输出 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[5,null,6]&quot;</code>。</p>
                      * 
                      */
                     std::string GetOutputTotalToken() const;
 
                     /**
-                     * 设置输出 token 数用量时间周期内的 JSON 字符串形式，如 `"[5,null,6]"`。
-                     * @param _outputTotalToken 输出 token 数用量时间周期内的 JSON 字符串形式，如 `"[5,null,6]"`。
+                     * 设置<p>[tokens 族]输出 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[5,null,6]&quot;</code>。</p>
+                     * @param _outputTotalToken <p>[tokens 族]输出 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[5,null,6]&quot;</code>。</p>
                      * 
                      */
                     void SetOutputTotalToken(const std::string& _outputTotalToken);
@@ -109,25 +109,106 @@ namespace TencentCloud
                      */
                     bool OutputTotalTokenHasBeenSet() const;
 
+                    /**
+                     * 获取<p>[tokens 族]读缓存 token 数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
+                     * @return CacheTotalToken <p>[tokens 族]读缓存 token 数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
+                     * 
+                     */
+                    std::string GetCacheTotalToken() const;
+
+                    /**
+                     * 设置<p>[tokens 族]读缓存 token 数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
+                     * @param _cacheTotalToken <p>[tokens 族]读缓存 token 数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
+                     * 
+                     */
+                    void SetCacheTotalToken(const std::string& _cacheTotalToken);
+
+                    /**
+                     * 判断参数 CacheTotalToken 是否已赋值
+                     * @return CacheTotalToken 是否已赋值
+                     * 
+                     */
+                    bool CacheTotalTokenHasBeenSet() const;
+
+                    /**
+                     * 获取<p>[search 族] 搜索请求数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
+                     * @return SearchRequestCount <p>[search 族] 搜索请求数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
+                     * 
+                     */
+                    std::string GetSearchRequestCount() const;
+
+                    /**
+                     * 设置<p>[search 族] 搜索请求数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
+                     * @param _searchRequestCount <p>[search 族] 搜索请求数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
+                     * 
+                     */
+                    void SetSearchRequestCount(const std::string& _searchRequestCount);
+
+                    /**
+                     * 判断参数 SearchRequestCount 是否已赋值
+                     * @return SearchRequestCount 是否已赋值
+                     * 
+                     */
+                    bool SearchRequestCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>[search 族] 搜索引擎调用次数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
+                     * @return SearchCount <p>[search 族] 搜索引擎调用次数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
+                     * 
+                     */
+                    std::string GetSearchCount() const;
+
+                    /**
+                     * 设置<p>[search 族] 搜索引擎调用次数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
+                     * @param _searchCount <p>[search 族] 搜索引擎调用次数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
+                     * 
+                     */
+                    void SetSearchCount(const std::string& _searchCount);
+
+                    /**
+                     * 判断参数 SearchCount 是否已赋值
+                     * @return SearchCount 是否已赋值
+                     * 
+                     */
+                    bool SearchCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 总 token 数用量时间周期内的 JSON 字符串形式，如 `"[12,null,15]"`。
+                     * <p>[tokens 族]总 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>
                      */
                     std::string m_totalToken;
                     bool m_totalTokenHasBeenSet;
 
                     /**
-                     * 输入 token 数用量时间周期内的 JSON 字符串形式，如 `"[7,null,9]"`。
+                     * <p>[tokens 族]输入 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[7,null,9]&quot;</code>。</p>
                      */
                     std::string m_inputTotalToken;
                     bool m_inputTotalTokenHasBeenSet;
 
                     /**
-                     * 输出 token 数用量时间周期内的 JSON 字符串形式，如 `"[5,null,6]"`。
+                     * <p>[tokens 族]输出 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[5,null,6]&quot;</code>。</p>
                      */
                     std::string m_outputTotalToken;
                     bool m_outputTotalTokenHasBeenSet;
+
+                    /**
+                     * <p>[tokens 族]读缓存 token 数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
+                     */
+                    std::string m_cacheTotalToken;
+                    bool m_cacheTotalTokenHasBeenSet;
+
+                    /**
+                     * <p>[search 族] 搜索请求数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
+                     */
+                    std::string m_searchRequestCount;
+                    bool m_searchRequestCountHasBeenSet;
+
+                    /**
+                     * <p>[search 族] 搜索引擎调用次数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
+                     */
+                    std::string m_searchCount;
+                    bool m_searchCountHasBeenSet;
 
                 };
             }

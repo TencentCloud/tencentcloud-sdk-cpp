@@ -31,6 +31,7 @@
 #include <tencentcloud/mps/v20190612/model/BeautyConfig.h>
 #include <tencentcloud/mps/v20190612/model/ImageTransformConfig.h>
 #include <tencentcloud/mps/v20190612/model/AiTryOnConfig.h>
+#include <tencentcloud/mps/v20190612/model/AiPosterSuiteConfig.h>
 
 
 namespace TencentCloud
@@ -216,6 +217,27 @@ namespace TencentCloud
                      */
                     bool AiTryOnConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Ai套图配置。</p>
+                     * @return AiPosterSuiteConfig <p>Ai套图配置。</p>
+                     * 
+                     */
+                    AiPosterSuiteConfig GetAiPosterSuiteConfig() const;
+
+                    /**
+                     * 设置<p>Ai套图配置。</p>
+                     * @param _aiPosterSuiteConfig <p>Ai套图配置。</p>
+                     * 
+                     */
+                    void SetAiPosterSuiteConfig(const AiPosterSuiteConfig& _aiPosterSuiteConfig);
+
+                    /**
+                     * 判断参数 AiPosterSuiteConfig 是否已赋值
+                     * @return AiPosterSuiteConfig 是否已赋值
+                     * 
+                     */
+                    bool AiPosterSuiteConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +285,12 @@ namespace TencentCloud
                      */
                     AiTryOnConfig m_aiTryOnConfig;
                     bool m_aiTryOnConfigHasBeenSet;
+
+                    /**
+                     * <p>Ai套图配置。</p>
+                     */
+                    AiPosterSuiteConfig m_aiPosterSuiteConfig;
+                    bool m_aiPosterSuiteConfigHasBeenSet;
 
                 };
             }

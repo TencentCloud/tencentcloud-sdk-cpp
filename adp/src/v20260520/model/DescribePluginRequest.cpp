@@ -24,7 +24,8 @@ using namespace std;
 
 DescribePluginRequest::DescribePluginRequest() :
     m_pluginIdHasBeenSet(false),
-    m_spaceIdHasBeenSet(false)
+    m_spaceIdHasBeenSet(false),
+    m_fieldMaskHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,15 @@ string DescribePluginRequest::ToJsonString() const
         string key = "SpaceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_spaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fieldMaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FieldMask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fieldMask.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -89,6 +99,22 @@ void DescribePluginRequest::SetSpaceId(const string& _spaceId)
 bool DescribePluginRequest::SpaceIdHasBeenSet() const
 {
     return m_spaceIdHasBeenSet;
+}
+
+FieldMask DescribePluginRequest::GetFieldMask() const
+{
+    return m_fieldMask;
+}
+
+void DescribePluginRequest::SetFieldMask(const FieldMask& _fieldMask)
+{
+    m_fieldMask = _fieldMask;
+    m_fieldMaskHasBeenSet = true;
+}
+
+bool DescribePluginRequest::FieldMaskHasBeenSet() const
+{
+    return m_fieldMaskHasBeenSet;
 }
 
 

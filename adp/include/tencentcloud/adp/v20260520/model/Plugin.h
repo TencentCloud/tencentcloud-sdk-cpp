@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/adp/v20260520/model/PluginConfig.h>
 #include <tencentcloud/adp/v20260520/model/PluginOperation.h>
 #include <tencentcloud/adp/v20260520/model/PluginProfile.h>
 #include <tencentcloud/adp/v20260520/model/PluginStatistics.h>
@@ -50,6 +51,31 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
+
+                    /**
+                     * 获取插件配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Config 插件配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    PluginConfig GetConfig() const;
+
+                    /**
+                     * 设置插件配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _config 插件配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConfig(const PluginConfig& _config);
+
+                    /**
+                     * 判断参数 Config 是否已赋值
+                     * @return Config 是否已赋值
+                     * 
+                     */
+                    bool ConfigHasBeenSet() const;
 
                     /**
                      * 获取创建时间，unix时间戳
@@ -262,6 +288,13 @@ namespace TencentCloud
                     bool UserStateHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 插件配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PluginConfig m_config;
+                    bool m_configHasBeenSet;
 
                     /**
                      * 创建时间，unix时间戳

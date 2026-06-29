@@ -22,7 +22,8 @@ using namespace std;
 
 AppModeConfig::AppModeConfig() :
     m_multiAgentConfigHasBeenSet(false),
-    m_singleWorkflowConfigHasBeenSet(false)
+    m_singleWorkflowConfigHasBeenSet(false),
+    m_clawAgentConfigHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,23 @@ CoreInternalOutcome AppModeConfig::Deserialize(const rapidjson::Value &value)
         m_singleWorkflowConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("ClawAgentConfig") && !value["ClawAgentConfig"].IsNull())
+    {
+        if (!value["ClawAgentConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppModeConfig.ClawAgentConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_clawAgentConfig.Deserialize(value["ClawAgentConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_clawAgentConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +106,15 @@ void AppModeConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_singleWorkflowConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_clawAgentConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClawAgentConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_clawAgentConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -123,5 +150,21 @@ void AppModeConfig::SetSingleWorkflowConfig(const SingleWorkflowConfig& _singleW
 bool AppModeConfig::SingleWorkflowConfigHasBeenSet() const
 {
     return m_singleWorkflowConfigHasBeenSet;
+}
+
+ClawAgentConfig AppModeConfig::GetClawAgentConfig() const
+{
+    return m_clawAgentConfig;
+}
+
+void AppModeConfig::SetClawAgentConfig(const ClawAgentConfig& _clawAgentConfig)
+{
+    m_clawAgentConfig = _clawAgentConfig;
+    m_clawAgentConfigHasBeenSet = true;
+}
+
+bool AppModeConfig::ClawAgentConfigHasBeenSet() const
+{
+    return m_clawAgentConfigHasBeenSet;
 }
 

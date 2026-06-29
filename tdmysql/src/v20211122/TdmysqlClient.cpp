@@ -2140,56 +2140,6 @@ TdmysqlClient::ModifyUserPrivilegesOutcomeCallable TdmysqlClient::ModifyUserPriv
     return prom->get_future();
 }
 
-TdmysqlClient::ResetUserPasswordOutcome TdmysqlClient::ResetUserPassword(const ResetUserPasswordRequest &request)
-{
-    auto outcome = MakeRequest(request, "ResetUserPassword");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ResetUserPasswordResponse rsp = ResetUserPasswordResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ResetUserPasswordOutcome(rsp);
-        else
-            return ResetUserPasswordOutcome(o.GetError());
-    }
-    else
-    {
-        return ResetUserPasswordOutcome(outcome.GetError());
-    }
-}
-
-void TdmysqlClient::ResetUserPasswordAsync(const ResetUserPasswordRequest& request, const ResetUserPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const ResetUserPasswordRequest&;
-    using Resp = ResetUserPasswordResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "ResetUserPassword", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TdmysqlClient::ResetUserPasswordOutcomeCallable TdmysqlClient::ResetUserPasswordCallable(const ResetUserPasswordRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<ResetUserPasswordOutcome>>();
-    ResetUserPasswordAsync(
-    request,
-    [prom](
-        const TdmysqlClient*,
-        const ResetUserPasswordRequest&,
-        ResetUserPasswordOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 TdmysqlClient::ResetUsersPasswordOutcome TdmysqlClient::ResetUsersPassword(const ResetUsersPasswordRequest &request)
 {
     auto outcome = MakeRequest(request, "ResetUsersPassword");

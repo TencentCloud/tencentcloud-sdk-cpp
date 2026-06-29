@@ -21,15 +21,15 @@ using namespace TencentCloud::Adp::V20260520::Model;
 using namespace std;
 
 ApiToolConfig::ApiToolConfig() :
-    m_externalApiUrlHasBeenSet(false),
-    m_methodHasBeenSet(false),
-    m_urlHasBeenSet(false),
     m_bodyHasBeenSet(false),
     m_exampleHasBeenSet(false),
+    m_externalApiUrlHasBeenSet(false),
     m_headerHasBeenSet(false),
+    m_methodHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_queryHasBeenSet(false),
-    m_streamModeHasBeenSet(false)
+    m_streamModeHasBeenSet(false),
+    m_urlHasBeenSet(false)
 {
 }
 
@@ -37,36 +37,6 @@ CoreInternalOutcome ApiToolConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("ExternalApiUrl") && !value["ExternalApiUrl"].IsNull())
-    {
-        if (!value["ExternalApiUrl"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ApiToolConfig.ExternalApiUrl` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_externalApiUrl = string(value["ExternalApiUrl"].GetString());
-        m_externalApiUrlHasBeenSet = true;
-    }
-
-    if (value.HasMember("Method") && !value["Method"].IsNull())
-    {
-        if (!value["Method"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ApiToolConfig.Method` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_method = string(value["Method"].GetString());
-        m_methodHasBeenSet = true;
-    }
-
-    if (value.HasMember("Url") && !value["Url"].IsNull())
-    {
-        if (!value["Url"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ApiToolConfig.Url` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_url = string(value["Url"].GetString());
-        m_urlHasBeenSet = true;
-    }
 
     if (value.HasMember("Body") && !value["Body"].IsNull())
     {
@@ -105,6 +75,16 @@ CoreInternalOutcome ApiToolConfig::Deserialize(const rapidjson::Value &value)
         m_exampleHasBeenSet = true;
     }
 
+    if (value.HasMember("ExternalApiUrl") && !value["ExternalApiUrl"].IsNull())
+    {
+        if (!value["ExternalApiUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApiToolConfig.ExternalApiUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_externalApiUrl = string(value["ExternalApiUrl"].GetString());
+        m_externalApiUrlHasBeenSet = true;
+    }
+
     if (value.HasMember("Header") && !value["Header"].IsNull())
     {
         if (!value["Header"].IsArray())
@@ -123,6 +103,16 @@ CoreInternalOutcome ApiToolConfig::Deserialize(const rapidjson::Value &value)
             m_header.push_back(item);
         }
         m_headerHasBeenSet = true;
+    }
+
+    if (value.HasMember("Method") && !value["Method"].IsNull())
+    {
+        if (!value["Method"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApiToolConfig.Method` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_method = string(value["Method"].GetString());
+        m_methodHasBeenSet = true;
     }
 
     if (value.HasMember("Outputs") && !value["Outputs"].IsNull())
@@ -175,36 +165,22 @@ CoreInternalOutcome ApiToolConfig::Deserialize(const rapidjson::Value &value)
         m_streamModeHasBeenSet = true;
     }
 
+    if (value.HasMember("Url") && !value["Url"].IsNull())
+    {
+        if (!value["Url"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApiToolConfig.Url` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_url = string(value["Url"].GetString());
+        m_urlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void ApiToolConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_externalApiUrlHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ExternalApiUrl";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_externalApiUrl.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_methodHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Method";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_method.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_urlHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Url";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_bodyHasBeenSet)
     {
@@ -230,6 +206,14 @@ void ApiToolConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         m_example.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_externalApiUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalApiUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalApiUrl.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_headerHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -243,6 +227,14 @@ void ApiToolConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_methodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Method";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_method.c_str(), allocator).Move(), allocator);
     }
 
     if (m_outputsHasBeenSet)
@@ -283,56 +275,16 @@ void ApiToolConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         value.AddMember(iKey, m_streamMode, allocator);
     }
 
+    if (m_urlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Url";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string ApiToolConfig::GetExternalApiUrl() const
-{
-    return m_externalApiUrl;
-}
-
-void ApiToolConfig::SetExternalApiUrl(const string& _externalApiUrl)
-{
-    m_externalApiUrl = _externalApiUrl;
-    m_externalApiUrlHasBeenSet = true;
-}
-
-bool ApiToolConfig::ExternalApiUrlHasBeenSet() const
-{
-    return m_externalApiUrlHasBeenSet;
-}
-
-string ApiToolConfig::GetMethod() const
-{
-    return m_method;
-}
-
-void ApiToolConfig::SetMethod(const string& _method)
-{
-    m_method = _method;
-    m_methodHasBeenSet = true;
-}
-
-bool ApiToolConfig::MethodHasBeenSet() const
-{
-    return m_methodHasBeenSet;
-}
-
-string ApiToolConfig::GetUrl() const
-{
-    return m_url;
-}
-
-void ApiToolConfig::SetUrl(const string& _url)
-{
-    m_url = _url;
-    m_urlHasBeenSet = true;
-}
-
-bool ApiToolConfig::UrlHasBeenSet() const
-{
-    return m_urlHasBeenSet;
-}
 
 vector<RequestParam> ApiToolConfig::GetBody() const
 {
@@ -366,6 +318,22 @@ bool ApiToolConfig::ExampleHasBeenSet() const
     return m_exampleHasBeenSet;
 }
 
+string ApiToolConfig::GetExternalApiUrl() const
+{
+    return m_externalApiUrl;
+}
+
+void ApiToolConfig::SetExternalApiUrl(const string& _externalApiUrl)
+{
+    m_externalApiUrl = _externalApiUrl;
+    m_externalApiUrlHasBeenSet = true;
+}
+
+bool ApiToolConfig::ExternalApiUrlHasBeenSet() const
+{
+    return m_externalApiUrlHasBeenSet;
+}
+
 vector<RequestParam> ApiToolConfig::GetHeader() const
 {
     return m_header;
@@ -380,6 +348,22 @@ void ApiToolConfig::SetHeader(const vector<RequestParam>& _header)
 bool ApiToolConfig::HeaderHasBeenSet() const
 {
     return m_headerHasBeenSet;
+}
+
+string ApiToolConfig::GetMethod() const
+{
+    return m_method;
+}
+
+void ApiToolConfig::SetMethod(const string& _method)
+{
+    m_method = _method;
+    m_methodHasBeenSet = true;
+}
+
+bool ApiToolConfig::MethodHasBeenSet() const
+{
+    return m_methodHasBeenSet;
 }
 
 vector<ResponseParam> ApiToolConfig::GetOutputs() const
@@ -428,5 +412,21 @@ void ApiToolConfig::SetStreamMode(const int64_t& _streamMode)
 bool ApiToolConfig::StreamModeHasBeenSet() const
 {
     return m_streamModeHasBeenSet;
+}
+
+string ApiToolConfig::GetUrl() const
+{
+    return m_url;
+}
+
+void ApiToolConfig::SetUrl(const string& _url)
+{
+    m_url = _url;
+    m_urlHasBeenSet = true;
+}
+
+bool ApiToolConfig::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
 }
 

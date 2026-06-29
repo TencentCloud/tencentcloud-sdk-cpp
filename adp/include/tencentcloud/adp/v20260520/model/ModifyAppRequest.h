@@ -194,28 +194,28 @@ namespace TencentCloud
 
                     /**
                      * 获取引用的共享知识库ID列表(全量覆盖)
-                     * @return SharedKnowledgeIdList 引用的共享知识库ID列表(全量覆盖)
+                     * @return SharedKbIdList 引用的共享知识库ID列表(全量覆盖)
                      * 
                      */
-                    std::vector<std::string> GetSharedKnowledgeIdList() const;
+                    std::vector<std::string> GetSharedKbIdList() const;
 
                     /**
                      * 设置引用的共享知识库ID列表(全量覆盖)
-                     * @param _sharedKnowledgeIdList 引用的共享知识库ID列表(全量覆盖)
+                     * @param _sharedKbIdList 引用的共享知识库ID列表(全量覆盖)
                      * 
                      */
-                    void SetSharedKnowledgeIdList(const std::vector<std::string>& _sharedKnowledgeIdList);
+                    void SetSharedKbIdList(const std::vector<std::string>& _sharedKbIdList);
 
                     /**
-                     * 判断参数 SharedKnowledgeIdList 是否已赋值
-                     * @return SharedKnowledgeIdList 是否已赋值
+                     * 判断参数 SharedKbIdList 是否已赋值
+                     * @return SharedKbIdList 是否已赋值
                      * 
                      */
-                    bool SharedKnowledgeIdListHasBeenSet() const;
+                    bool SharedKbIdListHasBeenSet() const;
 
                     /**
                      * 获取字段掩码，指定需要更新的字段(Paths为空则不更新任何字段)。Paths枚举值：
-【顶层】Name, Avatar, Description, AppMode, ShareConfig, SharedKnowledgeIdList
+【顶层】Name, Avatar, Description, AppMode, ShareConfig, SharedKbIdList
 【Greeting】Config.Greeting, Config.Greeting.Greeting, Config.Greeting.OpeningQuestionList
 【Model】Config.Model, Config.Model.ThinkModel, Config.Model.GenerateModel, Config.Model.AiOptimizeModel, Config.Model.FileParseModel, Config.Model.PromptRewriteModel, Config.Model.MultiModalQaModel, Config.Model.MultiModalUnderstandingModel
 【WebSearch】Config.WebSearch
@@ -226,7 +226,7 @@ namespace TencentCloud
 【Experience.Conversation.AiCall】Config.Experience.Conversation.AiCall.VoiceInteract, Config.Experience.Conversation.AiCall.VoiceCall, Config.Experience.Conversation.AiCall.DigitalHuman
 【Experience.Advanced】Config.Experience.Advanced.ContextRewrite, Config.Experience.Advanced.ImageTextRetrieval, Config.Experience.Advanced.IntentAchievement, Config.Experience.Advanced.ReplyFlexibility
                      * @return UpdateMask 字段掩码，指定需要更新的字段(Paths为空则不更新任何字段)。Paths枚举值：
-【顶层】Name, Avatar, Description, AppMode, ShareConfig, SharedKnowledgeIdList
+【顶层】Name, Avatar, Description, AppMode, ShareConfig, SharedKbIdList
 【Greeting】Config.Greeting, Config.Greeting.Greeting, Config.Greeting.OpeningQuestionList
 【Model】Config.Model, Config.Model.ThinkModel, Config.Model.GenerateModel, Config.Model.AiOptimizeModel, Config.Model.FileParseModel, Config.Model.PromptRewriteModel, Config.Model.MultiModalQaModel, Config.Model.MultiModalUnderstandingModel
 【WebSearch】Config.WebSearch
@@ -242,7 +242,7 @@ namespace TencentCloud
 
                     /**
                      * 设置字段掩码，指定需要更新的字段(Paths为空则不更新任何字段)。Paths枚举值：
-【顶层】Name, Avatar, Description, AppMode, ShareConfig, SharedKnowledgeIdList
+【顶层】Name, Avatar, Description, AppMode, ShareConfig, SharedKbIdList
 【Greeting】Config.Greeting, Config.Greeting.Greeting, Config.Greeting.OpeningQuestionList
 【Model】Config.Model, Config.Model.ThinkModel, Config.Model.GenerateModel, Config.Model.AiOptimizeModel, Config.Model.FileParseModel, Config.Model.PromptRewriteModel, Config.Model.MultiModalQaModel, Config.Model.MultiModalUnderstandingModel
 【WebSearch】Config.WebSearch
@@ -253,7 +253,7 @@ namespace TencentCloud
 【Experience.Conversation.AiCall】Config.Experience.Conversation.AiCall.VoiceInteract, Config.Experience.Conversation.AiCall.VoiceCall, Config.Experience.Conversation.AiCall.DigitalHuman
 【Experience.Advanced】Config.Experience.Advanced.ContextRewrite, Config.Experience.Advanced.ImageTextRetrieval, Config.Experience.Advanced.IntentAchievement, Config.Experience.Advanced.ReplyFlexibility
                      * @param _updateMask 字段掩码，指定需要更新的字段(Paths为空则不更新任何字段)。Paths枚举值：
-【顶层】Name, Avatar, Description, AppMode, ShareConfig, SharedKnowledgeIdList
+【顶层】Name, Avatar, Description, AppMode, ShareConfig, SharedKbIdList
 【Greeting】Config.Greeting, Config.Greeting.Greeting, Config.Greeting.OpeningQuestionList
 【Model】Config.Model, Config.Model.ThinkModel, Config.Model.GenerateModel, Config.Model.AiOptimizeModel, Config.Model.FileParseModel, Config.Model.PromptRewriteModel, Config.Model.MultiModalQaModel, Config.Model.MultiModalUnderstandingModel
 【WebSearch】Config.WebSearch
@@ -321,12 +321,12 @@ namespace TencentCloud
                     /**
                      * 引用的共享知识库ID列表(全量覆盖)
                      */
-                    std::vector<std::string> m_sharedKnowledgeIdList;
-                    bool m_sharedKnowledgeIdListHasBeenSet;
+                    std::vector<std::string> m_sharedKbIdList;
+                    bool m_sharedKbIdListHasBeenSet;
 
                     /**
                      * 字段掩码，指定需要更新的字段(Paths为空则不更新任何字段)。Paths枚举值：
-【顶层】Name, Avatar, Description, AppMode, ShareConfig, SharedKnowledgeIdList
+【顶层】Name, Avatar, Description, AppMode, ShareConfig, SharedKbIdList
 【Greeting】Config.Greeting, Config.Greeting.Greeting, Config.Greeting.OpeningQuestionList
 【Model】Config.Model, Config.Model.ThinkModel, Config.Model.GenerateModel, Config.Model.AiOptimizeModel, Config.Model.FileParseModel, Config.Model.PromptRewriteModel, Config.Model.MultiModalQaModel, Config.Model.MultiModalUnderstandingModel
 【WebSearch】Config.WebSearch

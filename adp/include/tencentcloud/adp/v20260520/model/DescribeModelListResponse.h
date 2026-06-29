@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模型列表
-                     * @return ModelList 模型列表
+                     * 获取<p>模型列表</p>
+                     * @return ModelList <p>模型列表</p>
                      * 
                      */
                     std::vector<Model> GetModelList() const;
@@ -58,13 +58,33 @@ namespace TencentCloud
                      */
                     bool ModelListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>模型总数</p>
+                     * @return TotalCount <p>模型总数</p>
+                     * 
+                     */
+                    uint64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 模型列表
+                     * <p>模型列表</p>
                      */
                     std::vector<Model> m_modelList;
                     bool m_modelListHasBeenSet;
+
+                    /**
+                     * <p>模型总数</p>
+                     */
+                    uint64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

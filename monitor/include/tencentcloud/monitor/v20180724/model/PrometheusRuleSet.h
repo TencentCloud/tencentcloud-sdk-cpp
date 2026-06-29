@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则 ID
-                     * @return RuleId 规则 ID
+                     * 获取<p>规则 ID</p>
+                     * @return RuleId <p>规则 ID</p>
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置规则 ID
-                     * @param _ruleId 规则 ID
+                     * 设置<p>规则 ID</p>
+                     * @param _ruleId <p>规则 ID</p>
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取规则名称
-                     * @return RuleName 规则名称
+                     * 获取<p>规则名称</p>
+                     * @return RuleName <p>规则名称</p>
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
-                     * 设置规则名称
-                     * @param _ruleName 规则名称
+                     * 设置<p>规则名称</p>
+                     * @param _ruleName <p>规则名称</p>
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取规则状态码
-                     * @return RuleState 规则状态码
+                     * 获取<p>规则状态码</p>
+                     * @return RuleState <p>规则状态码</p>
                      * 
                      */
                     int64_t GetRuleState() const;
 
                     /**
-                     * 设置规则状态码
-                     * @param _ruleState 规则状态码
+                     * 设置<p>规则状态码</p>
+                     * @param _ruleState <p>规则状态码</p>
                      * 
                      */
                     void SetRuleState(const int64_t& _ruleState);
@@ -111,18 +111,18 @@ namespace TencentCloud
                     bool RuleStateHasBeenSet() const;
 
                     /**
-                     * 获取规则类别
+                     * 获取<p>规则类别</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 规则类别
+                     * @return Type <p>规则类别</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置规则类别
+                     * 设置<p>规则类别</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type 规则类别
+                     * @param _type <p>规则类别</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -136,18 +136,18 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取规则标签列表
+                     * 获取<p>规则标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Labels 规则标签列表
+                     * @return Labels <p>规则标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PrometheusRuleKV> GetLabels() const;
 
                     /**
-                     * 设置规则标签列表
+                     * 设置<p>规则标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _labels 规则标签列表
+                     * @param _labels <p>规则标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -161,18 +161,18 @@ namespace TencentCloud
                     bool LabelsHasBeenSet() const;
 
                     /**
-                     * 获取规则注释列表
+                     * 获取<p>规则注释列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Annotations 规则注释列表
+                     * @return Annotations <p>规则注释列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PrometheusRuleKV> GetAnnotations() const;
 
                     /**
-                     * 设置规则注释列表
+                     * 设置<p>规则注释列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _annotations 规则注释列表
+                     * @param _annotations <p>规则注释列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -186,18 +186,18 @@ namespace TencentCloud
                     bool AnnotationsHasBeenSet() const;
 
                     /**
-                     * 获取规则表达式
+                     * 获取<p>规则表达式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Expr 规则表达式
+                     * @return Expr <p>规则表达式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpr() const;
 
                     /**
-                     * 设置规则表达式
+                     * 设置<p>规则表达式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _expr 规则表达式
+                     * @param _expr <p>规则表达式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -211,18 +211,18 @@ namespace TencentCloud
                     bool ExprHasBeenSet() const;
 
                     /**
-                     * 获取规则报警持续时间
+                     * 获取<p>规则报警持续时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Duration 规则报警持续时间
+                     * @return Duration <p>规则报警持续时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDuration() const;
 
                     /**
-                     * 设置规则报警持续时间
+                     * 设置<p>规则报警持续时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _duration 规则报警持续时间
+                     * @param _duration <p>规则报警持续时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -236,18 +236,18 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取报警接收组列表
+                     * 获取<p>报警接收组列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Receivers 报警接收组列表
+                     * @return Receivers <p>报警接收组列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetReceivers() const;
 
                     /**
-                     * 设置报警接收组列表
+                     * 设置<p>报警接收组列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _receivers 报警接收组列表
+                     * @param _receivers <p>报警接收组列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -261,31 +261,15 @@ namespace TencentCloud
                     bool ReceiversHasBeenSet() const;
 
                     /**
-                     * 获取规则运行健康状态，取值如下：
-<li>unknown 未知状态</li>
-<li>pending 加载中</li>
-<li>ok 运行正常</li>
-<li>err 运行错误</li>
-                     * @return Health 规则运行健康状态，取值如下：
-<li>unknown 未知状态</li>
-<li>pending 加载中</li>
-<li>ok 运行正常</li>
-<li>err 运行错误</li>
+                     * 获取<p>规则运行健康状态，取值如下：</p><li>unknown 未知状态</li><li>pending 加载中</li><li>ok 运行正常</li><li>err 运行错误</li>
+                     * @return Health <p>规则运行健康状态，取值如下：</p><li>unknown 未知状态</li><li>pending 加载中</li><li>ok 运行正常</li><li>err 运行错误</li>
                      * 
                      */
                     std::string GetHealth() const;
 
                     /**
-                     * 设置规则运行健康状态，取值如下：
-<li>unknown 未知状态</li>
-<li>pending 加载中</li>
-<li>ok 运行正常</li>
-<li>err 运行错误</li>
-                     * @param _health 规则运行健康状态，取值如下：
-<li>unknown 未知状态</li>
-<li>pending 加载中</li>
-<li>ok 运行正常</li>
-<li>err 运行错误</li>
+                     * 设置<p>规则运行健康状态，取值如下：</p><li>unknown 未知状态</li><li>pending 加载中</li><li>ok 运行正常</li><li>err 运行错误</li>
+                     * @param _health <p>规则运行健康状态，取值如下：</p><li>unknown 未知状态</li><li>pending 加载中</li><li>ok 运行正常</li><li>err 运行错误</li>
                      * 
                      */
                     void SetHealth(const std::string& _health);
@@ -298,18 +282,18 @@ namespace TencentCloud
                     bool HealthHasBeenSet() const;
 
                     /**
-                     * 获取规则创建时间
+                     * 获取<p>规则创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreatedAt 规则创建时间
+                     * @return CreatedAt <p>规则创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
-                     * 设置规则创建时间
+                     * 设置<p>规则创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createdAt 规则创建时间
+                     * @param _createdAt <p>规则创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -323,18 +307,18 @@ namespace TencentCloud
                     bool CreatedAtHasBeenSet() const;
 
                     /**
-                     * 获取规则更新时间
+                     * 获取<p>规则更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdatedAt 规则更新时间
+                     * @return UpdatedAt <p>规则更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
-                     * 设置规则更新时间
+                     * 设置<p>规则更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updatedAt 规则更新时间
+                     * @param _updatedAt <p>规则更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -350,84 +334,80 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 规则 ID
+                     * <p>规则 ID</p>
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * 规则名称
+                     * <p>规则名称</p>
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * 规则状态码
+                     * <p>规则状态码</p>
                      */
                     int64_t m_ruleState;
                     bool m_ruleStateHasBeenSet;
 
                     /**
-                     * 规则类别
+                     * <p>规则类别</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 规则标签列表
+                     * <p>规则标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PrometheusRuleKV> m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
-                     * 规则注释列表
+                     * <p>规则注释列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PrometheusRuleKV> m_annotations;
                     bool m_annotationsHasBeenSet;
 
                     /**
-                     * 规则表达式
+                     * <p>规则表达式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expr;
                     bool m_exprHasBeenSet;
 
                     /**
-                     * 规则报警持续时间
+                     * <p>规则报警持续时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 报警接收组列表
+                     * <p>报警接收组列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_receivers;
                     bool m_receiversHasBeenSet;
 
                     /**
-                     * 规则运行健康状态，取值如下：
-<li>unknown 未知状态</li>
-<li>pending 加载中</li>
-<li>ok 运行正常</li>
-<li>err 运行错误</li>
+                     * <p>规则运行健康状态，取值如下：</p><li>unknown 未知状态</li><li>pending 加载中</li><li>ok 运行正常</li><li>err 运行错误</li>
                      */
                     std::string m_health;
                     bool m_healthHasBeenSet;
 
                     /**
-                     * 规则创建时间
+                     * <p>规则创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
-                     * 规则更新时间
+                     * <p>规则更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedAt;

@@ -85,6 +85,27 @@ namespace TencentCloud
                      */
                     bool AgentHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Agent 类型，区分 B 端配置态 Agent 与 C 端用户态 Agent</p><p>枚举值：</p><ul><li>0： 配置端Agent</li><li>1： 用户态 Agent</li></ul>
+                     * @return Kind <p>Agent 类型，区分 B 端配置态 Agent 与 C 端用户态 Agent</p><p>枚举值：</p><ul><li>0： 配置端Agent</li><li>1： 用户态 Agent</li></ul>
+                     * 
+                     */
+                    int64_t GetKind() const;
+
+                    /**
+                     * 设置<p>Agent 类型，区分 B 端配置态 Agent 与 C 端用户态 Agent</p><p>枚举值：</p><ul><li>0： 配置端Agent</li><li>1： 用户态 Agent</li></ul>
+                     * @param _kind <p>Agent 类型，区分 B 端配置态 Agent 与 C 端用户态 Agent</p><p>枚举值：</p><ul><li>0： 配置端Agent</li><li>1： 用户态 Agent</li></ul>
+                     * 
+                     */
+                    void SetKind(const int64_t& _kind);
+
+                    /**
+                     * 判断参数 Kind 是否已赋值
+                     * @return Kind 是否已赋值
+                     * 
+                     */
+                    bool KindHasBeenSet() const;
+
                 private:
 
                     /**
@@ -98,6 +119,12 @@ namespace TencentCloud
                      */
                     AgentSpec m_agent;
                     bool m_agentHasBeenSet;
+
+                    /**
+                     * <p>Agent 类型，区分 B 端配置态 Agent 与 C 端用户态 Agent</p><p>枚举值：</p><ul><li>0： 配置端Agent</li><li>1： 用户态 Agent</li></ul>
+                     */
+                    int64_t m_kind;
+                    bool m_kindHasBeenSet;
 
                 };
             }

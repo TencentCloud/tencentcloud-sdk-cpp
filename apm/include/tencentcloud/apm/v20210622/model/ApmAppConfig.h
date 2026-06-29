@@ -1444,6 +1444,90 @@ namespace TencentCloud
                      */
                     bool UseDefaultFuseConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启自动分析</p>
+                     * @return AnalysisAutoEnable <p>是否开启自动分析</p>
+                     * 
+                     */
+                    bool GetAnalysisAutoEnable() const;
+
+                    /**
+                     * 设置<p>是否开启自动分析</p>
+                     * @param _analysisAutoEnable <p>是否开启自动分析</p>
+                     * 
+                     */
+                    void SetAnalysisAutoEnable(const bool& _analysisAutoEnable);
+
+                    /**
+                     * 判断参数 AnalysisAutoEnable 是否已赋值
+                     * @return AnalysisAutoEnable 是否已赋值
+                     * 
+                     */
+                    bool AnalysisAutoEnableHasBeenSet() const;
+
+                    /**
+                     * 获取<p>头采样开关</p>
+                     * @return EnableHeadSampler <p>头采样开关</p>
+                     * 
+                     */
+                    bool GetEnableHeadSampler() const;
+
+                    /**
+                     * 设置<p>头采样开关</p>
+                     * @param _enableHeadSampler <p>头采样开关</p>
+                     * 
+                     */
+                    void SetEnableHeadSampler(const bool& _enableHeadSampler);
+
+                    /**
+                     * 判断参数 EnableHeadSampler 是否已赋值
+                     * @return EnableHeadSampler 是否已赋值
+                     * 
+                     */
+                    bool EnableHeadSamplerHasBeenSet() const;
+
+                    /**
+                     * 获取<p>头采样类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 跟随父类型</li></ul>
+                     * @return HeadSamplerType <p>头采样类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 跟随父类型</li></ul>
+                     * 
+                     */
+                    std::string GetHeadSamplerType() const;
+
+                    /**
+                     * 设置<p>头采样类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 跟随父类型</li></ul>
+                     * @param _headSamplerType <p>头采样类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 跟随父类型</li></ul>
+                     * 
+                     */
+                    void SetHeadSamplerType(const std::string& _headSamplerType);
+
+                    /**
+                     * 判断参数 HeadSamplerType 是否已赋值
+                     * @return HeadSamplerType 是否已赋值
+                     * 
+                     */
+                    bool HeadSamplerTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>采样阈值，100等于关闭采样，0表示全采样</p>
+                     * @return HeadSamplerArg <p>采样阈值，100等于关闭采样，0表示全采样</p>
+                     * 
+                     */
+                    int64_t GetHeadSamplerArg() const;
+
+                    /**
+                     * 设置<p>采样阈值，100等于关闭采样，0表示全采样</p>
+                     * @param _headSamplerArg <p>采样阈值，100等于关闭采样，0表示全采样</p>
+                     * 
+                     */
+                    void SetHeadSamplerArg(const int64_t& _headSamplerArg);
+
+                    /**
+                     * 判断参数 HeadSamplerArg 是否已赋值
+                     * @return HeadSamplerArg 是否已赋值
+                     * 
+                     */
+                    bool HeadSamplerArgHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1840,6 +1924,30 @@ namespace TencentCloud
                      */
                     bool m_useDefaultFuseConfig;
                     bool m_useDefaultFuseConfigHasBeenSet;
+
+                    /**
+                     * <p>是否开启自动分析</p>
+                     */
+                    bool m_analysisAutoEnable;
+                    bool m_analysisAutoEnableHasBeenSet;
+
+                    /**
+                     * <p>头采样开关</p>
+                     */
+                    bool m_enableHeadSampler;
+                    bool m_enableHeadSamplerHasBeenSet;
+
+                    /**
+                     * <p>头采样类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 跟随父类型</li></ul>
+                     */
+                    std::string m_headSamplerType;
+                    bool m_headSamplerTypeHasBeenSet;
+
+                    /**
+                     * <p>采样阈值，100等于关闭采样，0表示全采样</p>
+                     */
+                    int64_t m_headSamplerArg;
+                    bool m_headSamplerArgHasBeenSet;
 
                 };
             }

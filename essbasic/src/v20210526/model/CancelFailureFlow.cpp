@@ -22,7 +22,8 @@ using namespace std;
 
 CancelFailureFlow::CancelFailureFlow() :
     m_flowIdHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_flowNameHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome CancelFailureFlow::Deserialize(const rapidjson::Value &value
         m_reasonHasBeenSet = true;
     }
 
+    if (value.HasMember("FlowName") && !value["FlowName"].IsNull())
+    {
+        if (!value["FlowName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CancelFailureFlow.FlowName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowName = string(value["FlowName"].GetString());
+        m_flowNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void CancelFailureFlow::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Reason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_reason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flowName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void CancelFailureFlow::SetReason(const string& _reason)
 bool CancelFailureFlow::ReasonHasBeenSet() const
 {
     return m_reasonHasBeenSet;
+}
+
+string CancelFailureFlow::GetFlowName() const
+{
+    return m_flowName;
+}
+
+void CancelFailureFlow::SetFlowName(const string& _flowName)
+{
+    m_flowName = _flowName;
+    m_flowNameHasBeenSet = true;
+}
+
+bool CancelFailureFlow::FlowNameHasBeenSet() const
+{
+    return m_flowNameHasBeenSet;
 }
 

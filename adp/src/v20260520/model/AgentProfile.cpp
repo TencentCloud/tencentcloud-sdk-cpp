@@ -22,7 +22,12 @@ using namespace std;
 
 AgentProfile::AgentProfile() :
     m_nameHasBeenSet(false),
-    m_iconUrlHasBeenSet(false)
+    m_iconUrlHasBeenSet(false),
+    m_roleHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_appNameHasBeenSet(false),
+    m_developerHasBeenSet(false),
+    m_parentAgentIdHasBeenSet(false)
 {
 }
 
@@ -51,6 +56,56 @@ CoreInternalOutcome AgentProfile::Deserialize(const rapidjson::Value &value)
         m_iconUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("Role") && !value["Role"].IsNull())
+    {
+        if (!value["Role"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentProfile.Role` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_role = value["Role"].GetInt64();
+        m_roleHasBeenSet = true;
+    }
+
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentProfile.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppName") && !value["AppName"].IsNull())
+    {
+        if (!value["AppName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentProfile.AppName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appName = string(value["AppName"].GetString());
+        m_appNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Developer") && !value["Developer"].IsNull())
+    {
+        if (!value["Developer"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentProfile.Developer` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_developer = string(value["Developer"].GetString());
+        m_developerHasBeenSet = true;
+    }
+
+    if (value.HasMember("ParentAgentId") && !value["ParentAgentId"].IsNull())
+    {
+        if (!value["ParentAgentId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentProfile.ParentAgentId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parentAgentId = string(value["ParentAgentId"].GetString());
+        m_parentAgentIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +127,46 @@ void AgentProfile::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "IconUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_iconUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Role";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_role, allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_developerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Developer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_developer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parentAgentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentAgentId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentAgentId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +202,85 @@ void AgentProfile::SetIconUrl(const string& _iconUrl)
 bool AgentProfile::IconUrlHasBeenSet() const
 {
     return m_iconUrlHasBeenSet;
+}
+
+int64_t AgentProfile::GetRole() const
+{
+    return m_role;
+}
+
+void AgentProfile::SetRole(const int64_t& _role)
+{
+    m_role = _role;
+    m_roleHasBeenSet = true;
+}
+
+bool AgentProfile::RoleHasBeenSet() const
+{
+    return m_roleHasBeenSet;
+}
+
+string AgentProfile::GetDescription() const
+{
+    return m_description;
+}
+
+void AgentProfile::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool AgentProfile::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
+}
+
+string AgentProfile::GetAppName() const
+{
+    return m_appName;
+}
+
+void AgentProfile::SetAppName(const string& _appName)
+{
+    m_appName = _appName;
+    m_appNameHasBeenSet = true;
+}
+
+bool AgentProfile::AppNameHasBeenSet() const
+{
+    return m_appNameHasBeenSet;
+}
+
+string AgentProfile::GetDeveloper() const
+{
+    return m_developer;
+}
+
+void AgentProfile::SetDeveloper(const string& _developer)
+{
+    m_developer = _developer;
+    m_developerHasBeenSet = true;
+}
+
+bool AgentProfile::DeveloperHasBeenSet() const
+{
+    return m_developerHasBeenSet;
+}
+
+string AgentProfile::GetParentAgentId() const
+{
+    return m_parentAgentId;
+}
+
+void AgentProfile::SetParentAgentId(const string& _parentAgentId)
+{
+    m_parentAgentId = _parentAgentId;
+    m_parentAgentIdHasBeenSet = true;
+}
+
+bool AgentProfile::ParentAgentIdHasBeenSet() const
+{
+    return m_parentAgentIdHasBeenSet;
 }
 

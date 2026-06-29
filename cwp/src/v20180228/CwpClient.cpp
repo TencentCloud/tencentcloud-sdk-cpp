@@ -90,6 +90,56 @@ CwpClient::AddLoginWhiteListsOutcomeCallable CwpClient::AddLoginWhiteListsCallab
     return prom->get_future();
 }
 
+CwpClient::AddVulIgnoreRuleOutcome CwpClient::AddVulIgnoreRule(const AddVulIgnoreRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddVulIgnoreRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddVulIgnoreRuleResponse rsp = AddVulIgnoreRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddVulIgnoreRuleOutcome(rsp);
+        else
+            return AddVulIgnoreRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return AddVulIgnoreRuleOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::AddVulIgnoreRuleAsync(const AddVulIgnoreRuleRequest& request, const AddVulIgnoreRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AddVulIgnoreRuleRequest&;
+    using Resp = AddVulIgnoreRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AddVulIgnoreRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::AddVulIgnoreRuleOutcomeCallable CwpClient::AddVulIgnoreRuleCallable(const AddVulIgnoreRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AddVulIgnoreRuleOutcome>>();
+    AddVulIgnoreRuleAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const AddVulIgnoreRuleRequest&,
+        AddVulIgnoreRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CwpClient::ChangeRuleEventsIgnoreStatusOutcome CwpClient::ChangeRuleEventsIgnoreStatus(const ChangeRuleEventsIgnoreStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ChangeRuleEventsIgnoreStatus");

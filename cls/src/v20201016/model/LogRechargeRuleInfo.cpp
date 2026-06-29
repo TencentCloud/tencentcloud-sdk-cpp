@@ -36,7 +36,8 @@ LogRechargeRuleInfo::LogRechargeRuleInfo() :
     m_metadataHasBeenSet(false),
     m_keysHasBeenSet(false),
     m_parseArrayHasBeenSet(false),
-    m_delimiterHasBeenSet(false)
+    m_delimiterHasBeenSet(false),
+    m_jsonExpandHasBeenSet(false)
 {
 }
 
@@ -211,6 +212,23 @@ CoreInternalOutcome LogRechargeRuleInfo::Deserialize(const rapidjson::Value &val
         m_delimiterHasBeenSet = true;
     }
 
+    if (value.HasMember("JsonExpand") && !value["JsonExpand"].IsNull())
+    {
+        if (!value["JsonExpand"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogRechargeRuleInfo.JsonExpand` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_jsonExpand.Deserialize(value["JsonExpand"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_jsonExpandHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -354,6 +372,15 @@ void LogRechargeRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Delimiter";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_delimiter.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jsonExpandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JsonExpand";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_jsonExpand.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -613,5 +640,21 @@ void LogRechargeRuleInfo::SetDelimiter(const string& _delimiter)
 bool LogRechargeRuleInfo::DelimiterHasBeenSet() const
 {
     return m_delimiterHasBeenSet;
+}
+
+JsonExpandInfo LogRechargeRuleInfo::GetJsonExpand() const
+{
+    return m_jsonExpand;
+}
+
+void LogRechargeRuleInfo::SetJsonExpand(const JsonExpandInfo& _jsonExpand)
+{
+    m_jsonExpand = _jsonExpand;
+    m_jsonExpandHasBeenSet = true;
+}
+
+bool LogRechargeRuleInfo::JsonExpandHasBeenSet() const
+{
+    return m_jsonExpandHasBeenSet;
 }
 

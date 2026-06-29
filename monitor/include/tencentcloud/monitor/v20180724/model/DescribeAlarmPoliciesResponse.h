@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略总数
-                     * @return TotalCount 策略总数
+                     * 获取<p>策略总数</p>
+                     * @return TotalCount <p>策略总数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取策略数组
-                     * @return Policies 策略数组
+                     * 获取<p>策略数组</p>
+                     * @return Policies <p>策略数组</p>
                      * 
                      */
                     std::vector<AlarmPolicy> GetPolicies() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略总数
+                     * <p>策略总数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 策略数组
+                     * <p>策略数组</p>
                      */
                     std::vector<AlarmPolicy> m_policies;
                     bool m_policiesHasBeenSet;

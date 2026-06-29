@@ -24,7 +24,11 @@ using namespace std;
 
 DescribeModelListRequest::DescribeModelListRequest() :
     m_modelSceneHasBeenSet(false),
-    m_spaceIdHasBeenSet(false)
+    m_spaceIdHasBeenSet(false),
+    m_queryHasBeenSet(false),
+    m_pageNumberHasBeenSet(false),
+    m_pageSizeHasBeenSet(false),
+    m_filterListHasBeenSet(false)
 {
 }
 
@@ -49,6 +53,45 @@ string DescribeModelListRequest::ToJsonString() const
         string key = "SpaceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_spaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Query";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_query.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pageNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageNumber, allocator);
+    }
+
+    if (m_pageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_filterListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filterList.begin(); itr != m_filterList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -89,6 +132,70 @@ void DescribeModelListRequest::SetSpaceId(const string& _spaceId)
 bool DescribeModelListRequest::SpaceIdHasBeenSet() const
 {
     return m_spaceIdHasBeenSet;
+}
+
+string DescribeModelListRequest::GetQuery() const
+{
+    return m_query;
+}
+
+void DescribeModelListRequest::SetQuery(const string& _query)
+{
+    m_query = _query;
+    m_queryHasBeenSet = true;
+}
+
+bool DescribeModelListRequest::QueryHasBeenSet() const
+{
+    return m_queryHasBeenSet;
+}
+
+uint64_t DescribeModelListRequest::GetPageNumber() const
+{
+    return m_pageNumber;
+}
+
+void DescribeModelListRequest::SetPageNumber(const uint64_t& _pageNumber)
+{
+    m_pageNumber = _pageNumber;
+    m_pageNumberHasBeenSet = true;
+}
+
+bool DescribeModelListRequest::PageNumberHasBeenSet() const
+{
+    return m_pageNumberHasBeenSet;
+}
+
+uint64_t DescribeModelListRequest::GetPageSize() const
+{
+    return m_pageSize;
+}
+
+void DescribeModelListRequest::SetPageSize(const uint64_t& _pageSize)
+{
+    m_pageSize = _pageSize;
+    m_pageSizeHasBeenSet = true;
+}
+
+bool DescribeModelListRequest::PageSizeHasBeenSet() const
+{
+    return m_pageSizeHasBeenSet;
+}
+
+vector<Filter> DescribeModelListRequest::GetFilterList() const
+{
+    return m_filterList;
+}
+
+void DescribeModelListRequest::SetFilterList(const vector<Filter>& _filterList)
+{
+    m_filterList = _filterList;
+    m_filterListHasBeenSet = true;
+}
+
+bool DescribeModelListRequest::FilterListHasBeenSet() const
+{
+    return m_filterListHasBeenSet;
 }
 
 

@@ -333,6 +333,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/AssetUserDetail.h
   include/tencentcloud/cwp/v20180228/model/ModifyOrderAttributeResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeAssetPortCountRequest.h
+  include/tencentcloud/cwp/v20180228/model/AddVulIgnoreRuleRequest.h
   include/tencentcloud/cwp/v20180228/model/ModifyWebHookPolicyResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeFileTamperEventsResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeVulLabelsResponse.h
@@ -969,6 +970,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeVulDefencePluginStatusResponse.h
   include/tencentcloud/cwp/v20180228/model/BaselineFix.h
   include/tencentcloud/cwp/v20180228/model/ExportAssetWebLocationListRequest.h
+  include/tencentcloud/cwp/v20180228/model/VulIgnoreRule.h
   include/tencentcloud/cwp/v20180228/model/DescribeRansomDefenseEventsListResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeVulEffectModulesRequest.h
   include/tencentcloud/cwp/v20180228/model/ModifyRiskDnsPolicyStatusRequest.h
@@ -1252,6 +1254,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/JavaMemShellDetail.h
   include/tencentcloud/cwp/v20180228/model/WarningObject.h
   include/tencentcloud/cwp/v20180228/model/DescribeBaselineHostDetectListResponse.h
+  include/tencentcloud/cwp/v20180228/model/AddVulIgnoreRuleResponse.h
   include/tencentcloud/cwp/v20180228/model/AssetWebLocationPath.h
   include/tencentcloud/cwp/v20180228/model/DescribeAssetProcessInfoListResponse.h
   include/tencentcloud/cwp/v20180228/model/ChangeStrategyEnableStatusRequest.h
@@ -1676,6 +1679,7 @@ set(cwp_src
   src/v20180228/model/AssetUserDetail.cpp
   src/v20180228/model/ModifyOrderAttributeResponse.cpp
   src/v20180228/model/DescribeAssetPortCountRequest.cpp
+  src/v20180228/model/AddVulIgnoreRuleRequest.cpp
   src/v20180228/model/ModifyWebHookPolicyResponse.cpp
   src/v20180228/model/DescribeFileTamperEventsResponse.cpp
   src/v20180228/model/DescribeVulLabelsResponse.cpp
@@ -2312,6 +2316,7 @@ set(cwp_src
   src/v20180228/model/DescribeVulDefencePluginStatusResponse.cpp
   src/v20180228/model/BaselineFix.cpp
   src/v20180228/model/ExportAssetWebLocationListRequest.cpp
+  src/v20180228/model/VulIgnoreRule.cpp
   src/v20180228/model/DescribeRansomDefenseEventsListResponse.cpp
   src/v20180228/model/DescribeVulEffectModulesRequest.cpp
   src/v20180228/model/ModifyRiskDnsPolicyStatusRequest.cpp
@@ -2595,6 +2600,7 @@ set(cwp_src
   src/v20180228/model/JavaMemShellDetail.cpp
   src/v20180228/model/WarningObject.cpp
   src/v20180228/model/DescribeBaselineHostDetectListResponse.cpp
+  src/v20180228/model/AddVulIgnoreRuleResponse.cpp
   src/v20180228/model/AssetWebLocationPath.cpp
   src/v20180228/model/DescribeAssetProcessInfoListResponse.cpp
   src/v20180228/model/ChangeStrategyEnableStatusRequest.cpp

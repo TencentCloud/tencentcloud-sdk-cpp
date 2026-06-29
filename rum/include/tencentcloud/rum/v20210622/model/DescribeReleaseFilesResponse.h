@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件信息列表
-                     * @return Files 文件信息列表
+                     * 获取<p>文件信息列表</p>
+                     * @return Files <p>文件信息列表</p>
                      * 
                      */
                     std::vector<ReleaseFile> GetFiles() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件信息列表
+                     * <p>文件信息列表</p>
                      */
                     std::vector<ReleaseFile> m_files;
                     bool m_filesHasBeenSet;

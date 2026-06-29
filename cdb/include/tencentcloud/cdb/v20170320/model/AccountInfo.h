@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取账号备注信息
-                     * @return Notes 账号备注信息
+                     * 获取<p>账号备注信息</p>
+                     * @return Notes <p>账号备注信息</p>
                      * 
                      */
                     std::string GetNotes() const;
 
                     /**
-                     * 设置账号备注信息
-                     * @param _notes 账号备注信息
+                     * 设置<p>账号备注信息</p>
+                     * @param _notes <p>账号备注信息</p>
                      * 
                      */
                     void SetNotes(const std::string& _notes);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NotesHasBeenSet() const;
 
                     /**
-                     * 获取账号的域名
-                     * @return Host 账号的域名
+                     * 获取<p>账号的域名</p>
+                     * @return Host <p>账号的域名</p>
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置账号的域名
-                     * @param _host 账号的域名
+                     * 设置<p>账号的域名</p>
+                     * @param _host <p>账号的域名</p>
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool HostHasBeenSet() const;
 
                     /**
-                     * 获取账号的名称
-                     * @return User 账号的名称
+                     * 获取<p>账号的名称</p>
+                     * @return User <p>账号的名称</p>
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
-                     * 设置账号的名称
-                     * @param _user 账号的名称
+                     * 设置<p>账号的名称</p>
+                     * @param _user <p>账号的名称</p>
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool UserHasBeenSet() const;
 
                     /**
-                     * 获取账号信息修改时间
-                     * @return ModifyTime 账号信息修改时间
+                     * 获取<p>账号信息修改时间</p>
+                     * @return ModifyTime <p>账号信息修改时间</p>
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
-                     * 设置账号信息修改时间
-                     * @param _modifyTime 账号信息修改时间
+                     * 设置<p>账号信息修改时间</p>
+                     * @param _modifyTime <p>账号信息修改时间</p>
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取修改密码的时间
-                     * @return ModifyPasswordTime 修改密码的时间
+                     * 获取<p>修改密码的时间</p>
+                     * @return ModifyPasswordTime <p>修改密码的时间</p>
                      * 
                      */
                     std::string GetModifyPasswordTime() const;
 
                     /**
-                     * 设置修改密码的时间
-                     * @param _modifyPasswordTime 修改密码的时间
+                     * 设置<p>修改密码的时间</p>
+                     * @param _modifyPasswordTime <p>修改密码的时间</p>
                      * 
                      */
                     void SetModifyPasswordTime(const std::string& _modifyPasswordTime);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ModifyPasswordTimeHasBeenSet() const;
 
                     /**
-                     * 获取该值已废弃
-                     * @return CreateTime 该值已废弃
+                     * 获取<p>该值已废弃</p>
+                     * @return CreateTime <p>该值已废弃</p>
                      * @deprecated
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置该值已废弃
-                     * @param _createTime 该值已废弃
+                     * 设置<p>该值已废弃</p>
+                     * @param _createTime <p>该值已废弃</p>
                      * @deprecated
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取用户最大可用实例连接数
-                     * @return MaxUserConnections 用户最大可用实例连接数
+                     * 获取<p>用户最大可用实例连接数</p>
+                     * @return MaxUserConnections <p>用户最大可用实例连接数</p>
                      * 
                      */
                     int64_t GetMaxUserConnections() const;
 
                     /**
-                     * 设置用户最大可用实例连接数
-                     * @param _maxUserConnections 用户最大可用实例连接数
+                     * 设置<p>用户最大可用实例连接数</p>
+                     * @param _maxUserConnections <p>用户最大可用实例连接数</p>
                      * 
                      */
                     void SetMaxUserConnections(const int64_t& _maxUserConnections);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool MaxUserConnectionsHasBeenSet() const;
 
                     /**
-                     * 获取用户账号是否开启了密码轮转
-                     * @return OpenCam 用户账号是否开启了密码轮转
+                     * 获取<p>用户账号是否开启了密码轮转</p>
+                     * @return OpenCam <p>用户账号是否开启了密码轮转</p>
                      * 
                      */
                     bool GetOpenCam() const;
 
                     /**
-                     * 设置用户账号是否开启了密码轮转
-                     * @param _openCam 用户账号是否开启了密码轮转
+                     * 设置<p>用户账号是否开启了密码轮转</p>
+                     * @param _openCam <p>用户账号是否开启了密码轮转</p>
                      * 
                      */
                     void SetOpenCam(const bool& _openCam);
@@ -217,49 +217,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 账号备注信息
+                     * <p>账号备注信息</p>
                      */
                     std::string m_notes;
                     bool m_notesHasBeenSet;
 
                     /**
-                     * 账号的域名
+                     * <p>账号的域名</p>
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
 
                     /**
-                     * 账号的名称
+                     * <p>账号的名称</p>
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
-                     * 账号信息修改时间
+                     * <p>账号信息修改时间</p>
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * 修改密码的时间
+                     * <p>修改密码的时间</p>
                      */
                     std::string m_modifyPasswordTime;
                     bool m_modifyPasswordTimeHasBeenSet;
 
                     /**
-                     * 该值已废弃
+                     * <p>该值已废弃</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 用户最大可用实例连接数
+                     * <p>用户最大可用实例连接数</p>
                      */
                     int64_t m_maxUserConnections;
                     bool m_maxUserConnectionsHasBeenSet;
 
                     /**
-                     * 用户账号是否开启了密码轮转
+                     * <p>用户账号是否开启了密码轮转</p>
                      */
                     bool m_openCam;
                     bool m_openCamHasBeenSet;

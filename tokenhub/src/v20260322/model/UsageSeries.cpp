@@ -23,7 +23,10 @@ using namespace std;
 UsageSeries::UsageSeries() :
     m_totalTokenHasBeenSet(false),
     m_inputTotalTokenHasBeenSet(false),
-    m_outputTotalTokenHasBeenSet(false)
+    m_outputTotalTokenHasBeenSet(false),
+    m_cacheTotalTokenHasBeenSet(false),
+    m_searchRequestCountHasBeenSet(false),
+    m_searchCountHasBeenSet(false)
 {
 }
 
@@ -62,6 +65,36 @@ CoreInternalOutcome UsageSeries::Deserialize(const rapidjson::Value &value)
         m_outputTotalTokenHasBeenSet = true;
     }
 
+    if (value.HasMember("CacheTotalToken") && !value["CacheTotalToken"].IsNull())
+    {
+        if (!value["CacheTotalToken"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsageSeries.CacheTotalToken` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cacheTotalToken = string(value["CacheTotalToken"].GetString());
+        m_cacheTotalTokenHasBeenSet = true;
+    }
+
+    if (value.HasMember("SearchRequestCount") && !value["SearchRequestCount"].IsNull())
+    {
+        if (!value["SearchRequestCount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsageSeries.SearchRequestCount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_searchRequestCount = string(value["SearchRequestCount"].GetString());
+        m_searchRequestCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("SearchCount") && !value["SearchCount"].IsNull())
+    {
+        if (!value["SearchCount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsageSeries.SearchCount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_searchCount = string(value["SearchCount"].GetString());
+        m_searchCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +124,30 @@ void UsageSeries::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "OutputTotalToken";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_outputTotalToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cacheTotalTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CacheTotalToken";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cacheTotalToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_searchRequestCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchRequestCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_searchRequestCount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_searchCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_searchCount.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +199,53 @@ void UsageSeries::SetOutputTotalToken(const string& _outputTotalToken)
 bool UsageSeries::OutputTotalTokenHasBeenSet() const
 {
     return m_outputTotalTokenHasBeenSet;
+}
+
+string UsageSeries::GetCacheTotalToken() const
+{
+    return m_cacheTotalToken;
+}
+
+void UsageSeries::SetCacheTotalToken(const string& _cacheTotalToken)
+{
+    m_cacheTotalToken = _cacheTotalToken;
+    m_cacheTotalTokenHasBeenSet = true;
+}
+
+bool UsageSeries::CacheTotalTokenHasBeenSet() const
+{
+    return m_cacheTotalTokenHasBeenSet;
+}
+
+string UsageSeries::GetSearchRequestCount() const
+{
+    return m_searchRequestCount;
+}
+
+void UsageSeries::SetSearchRequestCount(const string& _searchRequestCount)
+{
+    m_searchRequestCount = _searchRequestCount;
+    m_searchRequestCountHasBeenSet = true;
+}
+
+bool UsageSeries::SearchRequestCountHasBeenSet() const
+{
+    return m_searchRequestCountHasBeenSet;
+}
+
+string UsageSeries::GetSearchCount() const
+{
+    return m_searchCount;
+}
+
+void UsageSeries::SetSearchCount(const string& _searchCount)
+{
+    m_searchCount = _searchCount;
+    m_searchCountHasBeenSet = true;
+}
+
+bool UsageSeries::SearchCountHasBeenSet() const
+{
+    return m_searchCountHasBeenSet;
 }
 

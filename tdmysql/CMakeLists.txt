@@ -44,7 +44,6 @@ set(tdmysql_public_header_model
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBParametersResponse.h
   include/tencentcloud/tdmysql/v20211122/model/StorageNodeSpec.h
   include/tencentcloud/tdmysql/v20211122/model/IsolateDBInstanceResponse.h
-  include/tencentcloud/tdmysql/v20211122/model/ResetUserPasswordResponse.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeInstanceSSLStatusResponse.h
   include/tencentcloud/tdmysql/v20211122/model/DeleteDBSBackupSetsResponse.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeFlowResponse.h
@@ -148,7 +147,6 @@ set(tdmysql_public_header_model
   include/tencentcloud/tdmysql/v20211122/model/ConstraintRange.h
   include/tencentcloud/tdmysql/v20211122/model/UserInfo.h
   include/tencentcloud/tdmysql/v20211122/model/RestartDBInstancesRequest.h
-  include/tencentcloud/tdmysql/v20211122/model/ResetUserPasswordRequest.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBSAvailableRecoveryTimeResponse.h
   include/tencentcloud/tdmysql/v20211122/model/TablePrivileges.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeUserPrivilegesRequest.h
@@ -188,7 +186,6 @@ set(tdmysql_src
   src/v20211122/model/DescribeDBParametersResponse.cpp
   src/v20211122/model/StorageNodeSpec.cpp
   src/v20211122/model/IsolateDBInstanceResponse.cpp
-  src/v20211122/model/ResetUserPasswordResponse.cpp
   src/v20211122/model/DescribeInstanceSSLStatusResponse.cpp
   src/v20211122/model/DeleteDBSBackupSetsResponse.cpp
   src/v20211122/model/DescribeFlowResponse.cpp
@@ -292,7 +289,6 @@ set(tdmysql_src
   src/v20211122/model/ConstraintRange.cpp
   src/v20211122/model/UserInfo.cpp
   src/v20211122/model/RestartDBInstancesRequest.cpp
-  src/v20211122/model/ResetUserPasswordRequest.cpp
   src/v20211122/model/DescribeDBSAvailableRecoveryTimeResponse.cpp
   src/v20211122/model/TablePrivileges.cpp
   src/v20211122/model/DescribeUserPrivilegesRequest.cpp

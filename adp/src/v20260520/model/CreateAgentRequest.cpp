@@ -24,7 +24,8 @@ using namespace std;
 
 CreateAgentRequest::CreateAgentRequest() :
     m_appIdHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_agentHasBeenSet(false),
+    m_kindHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string CreateAgentRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_kindHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Kind";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_kind, allocator);
     }
 
 
@@ -90,6 +99,22 @@ void CreateAgentRequest::SetAgent(const AgentSpec& _agent)
 bool CreateAgentRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+int64_t CreateAgentRequest::GetKind() const
+{
+    return m_kind;
+}
+
+void CreateAgentRequest::SetKind(const int64_t& _kind)
+{
+    m_kind = _kind;
+    m_kindHasBeenSet = true;
+}
+
+bool CreateAgentRequest::KindHasBeenSet() const
+{
+    return m_kindHasBeenSet;
 }
 
 

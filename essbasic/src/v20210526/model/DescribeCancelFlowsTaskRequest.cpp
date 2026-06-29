@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeCancelFlowsTaskRequest::DescribeCancelFlowsTaskRequest() :
     m_agentHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_cancelTypeHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string DescribeCancelFlowsTaskRequest::ToJsonString() const
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cancelTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CancelType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cancelType, allocator);
     }
 
 
@@ -90,6 +99,22 @@ void DescribeCancelFlowsTaskRequest::SetTaskId(const string& _taskId)
 bool DescribeCancelFlowsTaskRequest::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+uint64_t DescribeCancelFlowsTaskRequest::GetCancelType() const
+{
+    return m_cancelType;
+}
+
+void DescribeCancelFlowsTaskRequest::SetCancelType(const uint64_t& _cancelType)
+{
+    m_cancelType = _cancelType;
+    m_cancelTypeHasBeenSet = true;
+}
+
+bool DescribeCancelFlowsTaskRequest::CancelTypeHasBeenSet() const
+{
+    return m_cancelTypeHasBeenSet;
 }
 
 

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取报警规则数量
-                     * @return TotalCount 报警规则数量
+                     * 获取<p>报警规则数量</p>
+                     * @return TotalCount <p>报警规则数量</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,9 +59,9 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取报警规则详情
+                     * 获取<p>报警规则详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlertRuleSet 报警规则详情
+                     * @return AlertRuleSet <p>报警规则详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,13 +77,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 报警规则数量
+                     * <p>报警规则数量</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 报警规则详情
+                     * <p>报警规则详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PrometheusRuleSet> m_alertRuleSet;

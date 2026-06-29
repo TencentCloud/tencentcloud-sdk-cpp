@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取固定值，为"monitor"
-                     * @return Module 固定值，为"monitor"
+                     * 获取<p>固定值，为&quot;monitor&quot;</p>
+                     * @return Module <p>固定值，为&quot;monitor&quot;</p>
                      * 
                      */
                     std::string GetModule() const;
 
                     /**
-                     * 设置固定值，为"monitor"
-                     * @param _module 固定值，为"monitor"
+                     * 设置<p>固定值，为&quot;monitor&quot;</p>
+                     * @param _module <p>固定值，为&quot;monitor&quot;</p>
                      * 
                      */
                     void SetModule(const std::string& _module);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取策略组id，如果有形如 policy-xxxx 的 id，请填到 PolicyId 字段中，本字段填 0
-                     * @return GroupId 策略组id，如果有形如 policy-xxxx 的 id，请填到 PolicyId 字段中，本字段填 0
+                     * 获取<p>策略组id，如果有形如 policy-xxxx 的 id，请填到 PolicyId 字段中，本字段填 0</p>
+                     * @return GroupId <p>策略组id，如果有形如 policy-xxxx 的 id，请填到 PolicyId 字段中，本字段填 0</p>
                      * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
-                     * 设置策略组id，如果有形如 policy-xxxx 的 id，请填到 PolicyId 字段中，本字段填 0
-                     * @param _groupId 策略组id，如果有形如 policy-xxxx 的 id，请填到 PolicyId 字段中，本字段填 0
+                     * 设置<p>策略组id，如果有形如 policy-xxxx 的 id，请填到 PolicyId 字段中，本字段填 0</p>
+                     * @param _groupId <p>策略组id，如果有形如 policy-xxxx 的 id，请填到 PolicyId 字段中，本字段填 0</p>
                      * 
                      */
                     void SetGroupId(const int64_t& _groupId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取告警策略id，形如 policy-xxxx，如果填入，则GroupId可以填0
-                     * @return PolicyId 告警策略id，形如 policy-xxxx，如果填入，则GroupId可以填0
+                     * 获取<p>告警策略id，形如 policy-xxxx，如果填入，则GroupId可以填0</p>
+                     * @return PolicyId <p>告警策略id，形如 policy-xxxx，如果填入，则GroupId可以填0</p>
                      * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
-                     * 设置告警策略id，形如 policy-xxxx，如果填入，则GroupId可以填0
-                     * @param _policyId 告警策略id，形如 policy-xxxx，如果填入，则GroupId可以填0
+                     * 设置<p>告警策略id，形如 policy-xxxx，如果填入，则GroupId可以填0</p>
+                     * @param _policyId <p>告警策略id，形如 policy-xxxx，如果填入，则GroupId可以填0</p>
                      * 
                      */
                     void SetPolicyId(const std::string& _policyId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool PolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取每次返回的数量，取值1~100，默认20
-                     * @return Limit 每次返回的数量，取值1~100，默认20
+                     * 获取<p>每次返回的数量，取值1~100，默认20</p>
+                     * @return Limit <p>每次返回的数量，取值1~100，默认20</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每次返回的数量，取值1~100，默认20
-                     * @param _limit 每次返回的数量，取值1~100，默认20
+                     * 设置<p>每次返回的数量，取值1~100，默认20</p>
+                     * @param _limit <p>每次返回的数量，取值1~100，默认20</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，从0开始计数，默认0。举例来说，参数 Offset=0&Limit=20 返回第 0 到 19 项，Offset=20&Limit=20 返回第 20 到 39 项，以此类推
-                     * @return Offset 偏移量，从0开始计数，默认0。举例来说，参数 Offset=0&Limit=20 返回第 0 到 19 项，Offset=20&Limit=20 返回第 20 到 39 项，以此类推
+                     * 获取<p>偏移量，从0开始计数，默认0。举例来说，参数 Offset=0&amp;Limit=20 返回第 0 到 19 项，Offset=20&amp;Limit=20 返回第 20 到 39 项，以此类推</p>
+                     * @return Offset <p>偏移量，从0开始计数，默认0。举例来说，参数 Offset=0&amp;Limit=20 返回第 0 到 19 项，Offset=20&amp;Limit=20 返回第 20 到 39 项，以此类推</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，从0开始计数，默认0。举例来说，参数 Offset=0&Limit=20 返回第 0 到 19 项，Offset=20&Limit=20 返回第 20 到 39 项，以此类推
-                     * @param _offset 偏移量，从0开始计数，默认0。举例来说，参数 Offset=0&Limit=20 返回第 0 到 19 项，Offset=20&Limit=20 返回第 20 到 39 项，以此类推
+                     * 设置<p>偏移量，从0开始计数，默认0。举例来说，参数 Offset=0&amp;Limit=20 返回第 0 到 19 项，Offset=20&amp;Limit=20 返回第 20 到 39 项，以此类推</p>
+                     * @param _offset <p>偏移量，从0开始计数，默认0。举例来说，参数 Offset=0&amp;Limit=20 返回第 0 到 19 项，Offset=20&amp;Limit=20 返回第 20 到 39 项，以此类推</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取筛选对象的维度信息
-                     * @return Dimensions 筛选对象的维度信息
+                     * 获取<p>筛选对象的维度信息</p>
+                     * @return Dimensions <p>筛选对象的维度信息</p>
                      * 
                      */
                     std::vector<DescribeBindingPolicyObjectListDimension> GetDimensions() const;
 
                     /**
-                     * 设置筛选对象的维度信息
-                     * @param _dimensions 筛选对象的维度信息
+                     * 设置<p>筛选对象的维度信息</p>
+                     * @param _dimensions <p>筛选对象的维度信息</p>
                      * 
                      */
                     void SetDimensions(const std::vector<DescribeBindingPolicyObjectListDimension>& _dimensions);
@@ -172,37 +172,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 固定值，为"monitor"
+                     * <p>固定值，为&quot;monitor&quot;</p>
                      */
                     std::string m_module;
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 策略组id，如果有形如 policy-xxxx 的 id，请填到 PolicyId 字段中，本字段填 0
+                     * <p>策略组id，如果有形如 policy-xxxx 的 id，请填到 PolicyId 字段中，本字段填 0</p>
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 告警策略id，形如 policy-xxxx，如果填入，则GroupId可以填0
+                     * <p>告警策略id，形如 policy-xxxx，如果填入，则GroupId可以填0</p>
                      */
                     std::string m_policyId;
                     bool m_policyIdHasBeenSet;
 
                     /**
-                     * 每次返回的数量，取值1~100，默认20
+                     * <p>每次返回的数量，取值1~100，默认20</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，从0开始计数，默认0。举例来说，参数 Offset=0&Limit=20 返回第 0 到 19 项，Offset=20&Limit=20 返回第 20 到 39 项，以此类推
+                     * <p>偏移量，从0开始计数，默认0。举例来说，参数 Offset=0&amp;Limit=20 返回第 0 到 19 项，Offset=20&amp;Limit=20 返回第 20 到 39 项，以此类推</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 筛选对象的维度信息
+                     * <p>筛选对象的维度信息</p>
                      */
                     std::vector<DescribeBindingPolicyObjectListDimension> m_dimensions;
                     bool m_dimensionsHasBeenSet;

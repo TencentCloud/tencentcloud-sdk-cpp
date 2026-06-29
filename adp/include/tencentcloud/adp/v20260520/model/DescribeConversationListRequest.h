@@ -252,6 +252,27 @@ namespace TencentCloud
                      */
                     bool UserIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户端 AgentId，当需要查询基于用户端 AgentId 创建的会话时使用</p>
+                     * @return AgentId <p>用户端 AgentId，当需要查询基于用户端 AgentId 创建的会话时使用</p>
+                     * 
+                     */
+                    std::string GetAgentId() const;
+
+                    /**
+                     * 设置<p>用户端 AgentId，当需要查询基于用户端 AgentId 创建的会话时使用</p>
+                     * @param _agentId <p>用户端 AgentId，当需要查询基于用户端 AgentId 创建的会话时使用</p>
+                     * 
+                     */
+                    void SetAgentId(const std::string& _agentId);
+
+                    /**
+                     * 判断参数 AgentId 是否已赋值
+                     * @return AgentId 是否已赋值
+                     * 
+                     */
+                    bool AgentIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +334,12 @@ namespace TencentCloud
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
+
+                    /**
+                     * <p>用户端 AgentId，当需要查询基于用户端 AgentId 创建的会话时使用</p>
+                     */
+                    std::string m_agentId;
+                    bool m_agentIdHasBeenSet;
 
                 };
             }

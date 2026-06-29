@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tdmysql/v20211122/model/ResetUserPasswordResponse.h>
+#include <tencentcloud/cwp/v20180228/model/AddVulIgnoreRuleResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tdmysql::V20211122::Model;
+using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
-ResetUserPasswordResponse::ResetUserPasswordResponse()
+AddVulIgnoreRuleResponse::AddVulIgnoreRuleResponse()
 {
 }
 
-CoreInternalOutcome ResetUserPasswordResponse::Deserialize(const string &payload)
+CoreInternalOutcome AddVulIgnoreRuleResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -65,7 +65,7 @@ CoreInternalOutcome ResetUserPasswordResponse::Deserialize(const string &payload
     return CoreInternalOutcome(true);
 }
 
-string ResetUserPasswordResponse::ToJsonString() const
+string AddVulIgnoreRuleResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();

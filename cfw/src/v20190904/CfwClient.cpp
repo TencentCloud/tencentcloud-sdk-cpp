@@ -2940,6 +2940,56 @@ CfwClient::DescribeLogsOutcomeCallable CfwClient::DescribeLogsCallable(const Des
     return prom->get_future();
 }
 
+CfwClient::DescribeNDRAssetIdentificationCursorListOutcome CfwClient::DescribeNDRAssetIdentificationCursorList(const DescribeNDRAssetIdentificationCursorListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNDRAssetIdentificationCursorList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNDRAssetIdentificationCursorListResponse rsp = DescribeNDRAssetIdentificationCursorListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNDRAssetIdentificationCursorListOutcome(rsp);
+        else
+            return DescribeNDRAssetIdentificationCursorListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNDRAssetIdentificationCursorListOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeNDRAssetIdentificationCursorListAsync(const DescribeNDRAssetIdentificationCursorListRequest& request, const DescribeNDRAssetIdentificationCursorListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeNDRAssetIdentificationCursorListRequest&;
+    using Resp = DescribeNDRAssetIdentificationCursorListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeNDRAssetIdentificationCursorList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeNDRAssetIdentificationCursorListOutcomeCallable CfwClient::DescribeNDRAssetIdentificationCursorListCallable(const DescribeNDRAssetIdentificationCursorListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeNDRAssetIdentificationCursorListOutcome>>();
+    DescribeNDRAssetIdentificationCursorListAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeNDRAssetIdentificationCursorListRequest&,
+        DescribeNDRAssetIdentificationCursorListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfwClient::DescribeNDRAssetIdentificationListOutcome CfwClient::DescribeNDRAssetIdentificationList(const DescribeNDRAssetIdentificationListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNDRAssetIdentificationList");

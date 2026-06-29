@@ -31,6 +31,7 @@
 #include <tencentcloud/adp/v20260520/model/ModelProperty.h>
 #include <tencentcloud/adp/v20260520/model/ModelProviderBasic.h>
 #include <tencentcloud/adp/v20260520/model/ModelStatus.h>
+#include <tencentcloud/adp/v20260520/model/ModelDeveloperBasic.h>
 
 
 namespace TencentCloud
@@ -54,15 +55,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模型徽章列表
-                     * @return BadgeList 模型徽章列表
+                     * 获取<p>模型徽章列表</p>
+                     * @return BadgeList <p>模型徽章列表</p>
                      * 
                      */
                     std::vector<ModelBadge> GetBadgeList() const;
 
                     /**
-                     * 设置模型徽章列表
-                     * @param _badgeList 模型徽章列表
+                     * 设置<p>模型徽章列表</p>
+                     * @param _badgeList <p>模型徽章列表</p>
                      * 
                      */
                     void SetBadgeList(const std::vector<ModelBadge>& _badgeList);
@@ -75,18 +76,18 @@ namespace TencentCloud
                     bool BadgeListHasBeenSet() const;
 
                     /**
-                     * 获取模型限制信息
+                     * 获取<p>模型限制信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LimitInfo 模型限制信息
+                     * @return LimitInfo <p>模型限制信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ModelLimit GetLimitInfo() const;
 
                     /**
-                     * 设置模型限制信息
+                     * 设置<p>模型限制信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _limitInfo 模型限制信息
+                     * @param _limitInfo <p>模型限制信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -100,18 +101,18 @@ namespace TencentCloud
                     bool LimitInfoHasBeenSet() const;
 
                     /**
-                     * 获取模型基本信息
+                     * 获取<p>模型基本信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModelBasic 模型基本信息
+                     * @return ModelBasic <p>模型基本信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ModelBasic GetModelBasic() const;
 
                     /**
-                     * 设置模型基本信息
+                     * 设置<p>模型基本信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modelBasic 模型基本信息
+                     * @param _modelBasic <p>模型基本信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -125,15 +126,15 @@ namespace TencentCloud
                     bool ModelBasicHasBeenSet() const;
 
                     /**
-                     * 获取模型超参配置
-                     * @return ParameterList 模型超参配置
+                     * 获取<p>模型超参配置</p>
+                     * @return ParameterList <p>模型超参配置</p>
                      * 
                      */
                     std::vector<ModelParameter> GetParameterList() const;
 
                     /**
-                     * 设置模型超参配置
-                     * @param _parameterList 模型超参配置
+                     * 设置<p>模型超参配置</p>
+                     * @param _parameterList <p>模型超参配置</p>
                      * 
                      */
                     void SetParameterList(const std::vector<ModelParameter>& _parameterList);
@@ -146,15 +147,15 @@ namespace TencentCloud
                     bool ParameterListHasBeenSet() const;
 
                     /**
-                     * 获取模型属性配置
-                     * @return PropertyList 模型属性配置
+                     * 获取<p>模型属性配置</p>
+                     * @return PropertyList <p>模型属性配置</p>
                      * 
                      */
                     std::vector<ModelProperty> GetPropertyList() const;
 
                     /**
-                     * 设置模型属性配置
-                     * @param _propertyList 模型属性配置
+                     * 设置<p>模型属性配置</p>
+                     * @param _propertyList <p>模型属性配置</p>
                      * 
                      */
                     void SetPropertyList(const std::vector<ModelProperty>& _propertyList);
@@ -167,18 +168,18 @@ namespace TencentCloud
                     bool PropertyListHasBeenSet() const;
 
                     /**
-                     * 获取模型提供商信息
+                     * 获取<p>模型提供商信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProviderInfo 模型提供商信息
+                     * @return ProviderInfo <p>模型提供商信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ModelProviderBasic GetProviderInfo() const;
 
                     /**
-                     * 设置模型提供商信息
+                     * 设置<p>模型提供商信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _providerInfo 模型提供商信息
+                     * @param _providerInfo <p>模型提供商信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -192,18 +193,18 @@ namespace TencentCloud
                     bool ProviderInfoHasBeenSet() const;
 
                     /**
-                     * 获取模型状态信息
+                     * 获取<p>模型状态信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StatusInfo 模型状态信息
+                     * @return StatusInfo <p>模型状态信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ModelStatus GetStatusInfo() const;
 
                     /**
-                     * 设置模型状态信息
+                     * 设置<p>模型状态信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _statusInfo 模型状态信息
+                     * @param _statusInfo <p>模型状态信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -217,15 +218,15 @@ namespace TencentCloud
                     bool StatusInfoHasBeenSet() const;
 
                     /**
-                     * 获取模型标签列表
-                     * @return TagList 模型标签列表
+                     * 获取<p>模型标签列表</p>
+                     * @return TagList <p>模型标签列表</p>
                      * 
                      */
                     std::vector<std::string> GetTagList() const;
 
                     /**
-                     * 设置模型标签列表
-                     * @param _tagList 模型标签列表
+                     * 设置<p>模型标签列表</p>
+                     * @param _tagList <p>模型标签列表</p>
                      * 
                      */
                     void SetTagList(const std::vector<std::string>& _tagList);
@@ -237,59 +238,86 @@ namespace TencentCloud
                      */
                     bool TagListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>模型作者信息</p>
+                     * @return DeveloperInfo <p>模型作者信息</p>
+                     * 
+                     */
+                    ModelDeveloperBasic GetDeveloperInfo() const;
+
+                    /**
+                     * 设置<p>模型作者信息</p>
+                     * @param _developerInfo <p>模型作者信息</p>
+                     * 
+                     */
+                    void SetDeveloperInfo(const ModelDeveloperBasic& _developerInfo);
+
+                    /**
+                     * 判断参数 DeveloperInfo 是否已赋值
+                     * @return DeveloperInfo 是否已赋值
+                     * 
+                     */
+                    bool DeveloperInfoHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 模型徽章列表
+                     * <p>模型徽章列表</p>
                      */
                     std::vector<ModelBadge> m_badgeList;
                     bool m_badgeListHasBeenSet;
 
                     /**
-                     * 模型限制信息
+                     * <p>模型限制信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ModelLimit m_limitInfo;
                     bool m_limitInfoHasBeenSet;
 
                     /**
-                     * 模型基本信息
+                     * <p>模型基本信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ModelBasic m_modelBasic;
                     bool m_modelBasicHasBeenSet;
 
                     /**
-                     * 模型超参配置
+                     * <p>模型超参配置</p>
                      */
                     std::vector<ModelParameter> m_parameterList;
                     bool m_parameterListHasBeenSet;
 
                     /**
-                     * 模型属性配置
+                     * <p>模型属性配置</p>
                      */
                     std::vector<ModelProperty> m_propertyList;
                     bool m_propertyListHasBeenSet;
 
                     /**
-                     * 模型提供商信息
+                     * <p>模型提供商信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ModelProviderBasic m_providerInfo;
                     bool m_providerInfoHasBeenSet;
 
                     /**
-                     * 模型状态信息
+                     * <p>模型状态信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ModelStatus m_statusInfo;
                     bool m_statusInfoHasBeenSet;
 
                     /**
-                     * 模型标签列表
+                     * <p>模型标签列表</p>
                      */
                     std::vector<std::string> m_tagList;
                     bool m_tagListHasBeenSet;
+
+                    /**
+                     * <p>模型作者信息</p>
+                     */
+                    ModelDeveloperBasic m_developerInfo;
+                    bool m_developerInfoHasBeenSet;
 
                 };
             }

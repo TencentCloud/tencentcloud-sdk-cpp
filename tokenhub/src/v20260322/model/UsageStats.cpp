@@ -23,7 +23,10 @@ using namespace std;
 UsageStats::UsageStats() :
     m_totalTokenHasBeenSet(false),
     m_inputTotalTokenHasBeenSet(false),
-    m_outputTotalTokenHasBeenSet(false)
+    m_outputTotalTokenHasBeenSet(false),
+    m_cacheTotalTokenHasBeenSet(false),
+    m_searchRequestCountHasBeenSet(false),
+    m_searchCountHasBeenSet(false)
 {
 }
 
@@ -62,6 +65,36 @@ CoreInternalOutcome UsageStats::Deserialize(const rapidjson::Value &value)
         m_outputTotalTokenHasBeenSet = true;
     }
 
+    if (value.HasMember("CacheTotalToken") && !value["CacheTotalToken"].IsNull())
+    {
+        if (!value["CacheTotalToken"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsageStats.CacheTotalToken` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cacheTotalToken = value["CacheTotalToken"].GetInt64();
+        m_cacheTotalTokenHasBeenSet = true;
+    }
+
+    if (value.HasMember("SearchRequestCount") && !value["SearchRequestCount"].IsNull())
+    {
+        if (!value["SearchRequestCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsageStats.SearchRequestCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_searchRequestCount = value["SearchRequestCount"].GetInt64();
+        m_searchRequestCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("SearchCount") && !value["SearchCount"].IsNull())
+    {
+        if (!value["SearchCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsageStats.SearchCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_searchCount = value["SearchCount"].GetInt64();
+        m_searchCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +124,30 @@ void UsageStats::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "OutputTotalToken";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_outputTotalToken, allocator);
+    }
+
+    if (m_cacheTotalTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CacheTotalToken";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cacheTotalToken, allocator);
+    }
+
+    if (m_searchRequestCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchRequestCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_searchRequestCount, allocator);
+    }
+
+    if (m_searchCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_searchCount, allocator);
     }
 
 }
@@ -142,5 +199,53 @@ void UsageStats::SetOutputTotalToken(const int64_t& _outputTotalToken)
 bool UsageStats::OutputTotalTokenHasBeenSet() const
 {
     return m_outputTotalTokenHasBeenSet;
+}
+
+int64_t UsageStats::GetCacheTotalToken() const
+{
+    return m_cacheTotalToken;
+}
+
+void UsageStats::SetCacheTotalToken(const int64_t& _cacheTotalToken)
+{
+    m_cacheTotalToken = _cacheTotalToken;
+    m_cacheTotalTokenHasBeenSet = true;
+}
+
+bool UsageStats::CacheTotalTokenHasBeenSet() const
+{
+    return m_cacheTotalTokenHasBeenSet;
+}
+
+int64_t UsageStats::GetSearchRequestCount() const
+{
+    return m_searchRequestCount;
+}
+
+void UsageStats::SetSearchRequestCount(const int64_t& _searchRequestCount)
+{
+    m_searchRequestCount = _searchRequestCount;
+    m_searchRequestCountHasBeenSet = true;
+}
+
+bool UsageStats::SearchRequestCountHasBeenSet() const
+{
+    return m_searchRequestCountHasBeenSet;
+}
+
+int64_t UsageStats::GetSearchCount() const
+{
+    return m_searchCount;
+}
+
+void UsageStats::SetSearchCount(const int64_t& _searchCount)
+{
+    m_searchCount = _searchCount;
+    m_searchCountHasBeenSet = true;
+}
+
+bool UsageStats::SearchCountHasBeenSet() const
+{
+    return m_searchCountHasBeenSet;
 }
 

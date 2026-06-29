@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取固定值，为"monitor"
-                     * @return Module 固定值，为"monitor"
+                     * 获取<p>固定值，为&quot;monitor&quot;</p>
+                     * @return Module <p>固定值，为&quot;monitor&quot;</p>
                      * 
                      */
                     std::string GetModule() const;
 
                     /**
-                     * 设置固定值，为"monitor"
-                     * @param _module 固定值，为"monitor"
+                     * 设置<p>固定值，为&quot;monitor&quot;</p>
+                     * @param _module <p>固定值，为&quot;monitor&quot;</p>
                      * 
                      */
                     void SetModule(const std::string& _module);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取页数，从 1 开始计数，默认 1
-                     * @return PageNumber 页数，从 1 开始计数，默认 1
+                     * 获取<p>页数，从 1 开始计数，默认 1</p>
+                     * @return PageNumber <p>页数，从 1 开始计数，默认 1</p>
                      * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
-                     * 设置页数，从 1 开始计数，默认 1
-                     * @param _pageNumber 页数，从 1 开始计数，默认 1
+                     * 设置<p>页数，从 1 开始计数，默认 1</p>
+                     * @param _pageNumber <p>页数，从 1 开始计数，默认 1</p>
                      * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取每页的数量，取值1~100，默认20
-                     * @return PageSize 每页的数量，取值1~100，默认20
+                     * 获取<p>每页的数量，取值1~100，默认20</p>
+                     * @return PageSize <p>每页的数量，取值1~100，默认20</p>
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置每页的数量，取值1~100，默认20
-                     * @param _pageSize 每页的数量，取值1~100，默认20
+                     * 设置<p>每页的数量，取值1~100，默认20</p>
+                     * @param _pageSize <p>每页的数量，取值1~100，默认20</p>
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取按策略名称模糊搜索
-                     * @return PolicyName 按策略名称模糊搜索
+                     * 获取<p>按策略名称模糊搜索</p>
+                     * @return PolicyName <p>按策略名称模糊搜索</p>
                      * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
-                     * 设置按策略名称模糊搜索
-                     * @param _policyName 按策略名称模糊搜索
+                     * 设置<p>按策略名称模糊搜索</p>
+                     * @param _policyName <p>按策略名称模糊搜索</p>
                      * 
                      */
                     void SetPolicyName(const std::string& _policyName);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool PolicyNameHasBeenSet() const;
 
                     /**
-                     * 获取根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控,当Dimension不为空时，该项为必填项
-                     * @return MonitorTypes 根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控,当Dimension不为空时，该项为必填项
+                     * 获取<p>根据监控类型过滤 不选默认查所有类型 &quot;MT_QCE&quot;=云产品监控,当Dimension不为空时，该项为必填项</p>
+                     * @return MonitorTypes <p>根据监控类型过滤 不选默认查所有类型 &quot;MT_QCE&quot;=云产品监控,当Dimension不为空时，该项为必填项</p>
                      * 
                      */
                     std::vector<std::string> GetMonitorTypes() const;
 
                     /**
-                     * 设置根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控,当Dimension不为空时，该项为必填项
-                     * @param _monitorTypes 根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控,当Dimension不为空时，该项为必填项
+                     * 设置<p>根据监控类型过滤 不选默认查所有类型 &quot;MT_QCE&quot;=云产品监控,当Dimension不为空时，该项为必填项</p>
+                     * @param _monitorTypes <p>根据监控类型过滤 不选默认查所有类型 &quot;MT_QCE&quot;=云产品监控,当Dimension不为空时，该项为必填项</p>
                      * 
                      */
                     void SetMonitorTypes(const std::vector<std::string>& _monitorTypes);
@@ -150,19 +150,15 @@ namespace TencentCloud
                     bool MonitorTypesHasBeenSet() const;
 
                     /**
-                     * 获取根据命名空间过滤，不同策略类型的值详见
-[策略类型列表](https://cloud.tencent.com/document/product/248/50397)当Dimension不为空时，该项为必填项
-                     * @return Namespaces 根据命名空间过滤，不同策略类型的值详见
-[策略类型列表](https://cloud.tencent.com/document/product/248/50397)当Dimension不为空时，该项为必填项
+                     * 获取<p>根据命名空间过滤，不同策略类型的值详见<br><a href="https://cloud.tencent.com/document/product/248/50397">策略类型列表</a>当Dimension不为空时，该项为必填项</p>
+                     * @return Namespaces <p>根据命名空间过滤，不同策略类型的值详见<br><a href="https://cloud.tencent.com/document/product/248/50397">策略类型列表</a>当Dimension不为空时，该项为必填项</p>
                      * 
                      */
                     std::vector<std::string> GetNamespaces() const;
 
                     /**
-                     * 设置根据命名空间过滤，不同策略类型的值详见
-[策略类型列表](https://cloud.tencent.com/document/product/248/50397)当Dimension不为空时，该项为必填项
-                     * @param _namespaces 根据命名空间过滤，不同策略类型的值详见
-[策略类型列表](https://cloud.tencent.com/document/product/248/50397)当Dimension不为空时，该项为必填项
+                     * 设置<p>根据命名空间过滤，不同策略类型的值详见<br><a href="https://cloud.tencent.com/document/product/248/50397">策略类型列表</a>当Dimension不为空时，该项为必填项</p>
+                     * @param _namespaces <p>根据命名空间过滤，不同策略类型的值详见<br><a href="https://cloud.tencent.com/document/product/248/50397">策略类型列表</a>当Dimension不为空时，该项为必填项</p>
                      * 
                      */
                     void SetNamespaces(const std::vector<std::string>& _namespaces);
@@ -175,15 +171,15 @@ namespace TencentCloud
                     bool NamespacesHasBeenSet() const;
 
                     /**
-                     * 获取告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：`[[{"name":"unInstanceId","value":"ins-qr888845g"}]]`具体也可以参考下方的示例 2。不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时
-                     * @return Dimensions 告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：`[[{"name":"unInstanceId","value":"ins-qr888845g"}]]`具体也可以参考下方的示例 2。不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时
+                     * 获取<p>告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：<code>[[{&quot;name&quot;:&quot;unInstanceId&quot;,&quot;value&quot;:&quot;ins-qr888845g&quot;}]]</code>具体也可以参考下方的示例 2。不同云产品参数示例详见 <a href="https://cloud.tencent.com/document/product/248/50397">维度信息Dimensions列表</a>注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时</p>
+                     * @return Dimensions <p>告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：<code>[[{&quot;name&quot;:&quot;unInstanceId&quot;,&quot;value&quot;:&quot;ins-qr888845g&quot;}]]</code>具体也可以参考下方的示例 2。不同云产品参数示例详见 <a href="https://cloud.tencent.com/document/product/248/50397">维度信息Dimensions列表</a>注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时</p>
                      * 
                      */
                     std::string GetDimensions() const;
 
                     /**
-                     * 设置告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：`[[{"name":"unInstanceId","value":"ins-qr888845g"}]]`具体也可以参考下方的示例 2。不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时
-                     * @param _dimensions 告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：`[[{"name":"unInstanceId","value":"ins-qr888845g"}]]`具体也可以参考下方的示例 2。不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时
+                     * 设置<p>告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：<code>[[{&quot;name&quot;:&quot;unInstanceId&quot;,&quot;value&quot;:&quot;ins-qr888845g&quot;}]]</code>具体也可以参考下方的示例 2。不同云产品参数示例详见 <a href="https://cloud.tencent.com/document/product/248/50397">维度信息Dimensions列表</a>注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时</p>
+                     * @param _dimensions <p>告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：<code>[[{&quot;name&quot;:&quot;unInstanceId&quot;,&quot;value&quot;:&quot;ins-qr888845g&quot;}]]</code>具体也可以参考下方的示例 2。不同云产品参数示例详见 <a href="https://cloud.tencent.com/document/product/248/50397">维度信息Dimensions列表</a>注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时</p>
                      * 
                      */
                     void SetDimensions(const std::string& _dimensions);
@@ -196,15 +192,15 @@ namespace TencentCloud
                     bool DimensionsHasBeenSet() const;
 
                     /**
-                     * 获取根据接收人搜索，可以使用“访问管理”的 [拉取子用户 ListUsers](https://cloud.tencent.com/document/product/598/34587) 接口获取用户列表 或 [查询子用户 GetUser](https://cloud.tencent.com/document/product/598/34590) 接口查询子用户详情，此处填入返回结果中的 `Uid` 字段
-                     * @return ReceiverUids 根据接收人搜索，可以使用“访问管理”的 [拉取子用户 ListUsers](https://cloud.tencent.com/document/product/598/34587) 接口获取用户列表 或 [查询子用户 GetUser](https://cloud.tencent.com/document/product/598/34590) 接口查询子用户详情，此处填入返回结果中的 `Uid` 字段
+                     * 获取<p>根据接收人搜索，可以使用“访问管理”的 <a href="https://cloud.tencent.com/document/product/598/34587">拉取子用户 ListUsers</a> 接口获取用户列表 或 <a href="https://cloud.tencent.com/document/product/598/34590">查询子用户 GetUser</a> 接口查询子用户详情，此处填入返回结果中的 <code>Uid</code> 字段</p>
+                     * @return ReceiverUids <p>根据接收人搜索，可以使用“访问管理”的 <a href="https://cloud.tencent.com/document/product/598/34587">拉取子用户 ListUsers</a> 接口获取用户列表 或 <a href="https://cloud.tencent.com/document/product/598/34590">查询子用户 GetUser</a> 接口查询子用户详情，此处填入返回结果中的 <code>Uid</code> 字段</p>
                      * 
                      */
                     std::vector<int64_t> GetReceiverUids() const;
 
                     /**
-                     * 设置根据接收人搜索，可以使用“访问管理”的 [拉取子用户 ListUsers](https://cloud.tencent.com/document/product/598/34587) 接口获取用户列表 或 [查询子用户 GetUser](https://cloud.tencent.com/document/product/598/34590) 接口查询子用户详情，此处填入返回结果中的 `Uid` 字段
-                     * @param _receiverUids 根据接收人搜索，可以使用“访问管理”的 [拉取子用户 ListUsers](https://cloud.tencent.com/document/product/598/34587) 接口获取用户列表 或 [查询子用户 GetUser](https://cloud.tencent.com/document/product/598/34590) 接口查询子用户详情，此处填入返回结果中的 `Uid` 字段
+                     * 设置<p>根据接收人搜索，可以使用“访问管理”的 <a href="https://cloud.tencent.com/document/product/598/34587">拉取子用户 ListUsers</a> 接口获取用户列表 或 <a href="https://cloud.tencent.com/document/product/598/34590">查询子用户 GetUser</a> 接口查询子用户详情，此处填入返回结果中的 <code>Uid</code> 字段</p>
+                     * @param _receiverUids <p>根据接收人搜索，可以使用“访问管理”的 <a href="https://cloud.tencent.com/document/product/598/34587">拉取子用户 ListUsers</a> 接口获取用户列表 或 <a href="https://cloud.tencent.com/document/product/598/34590">查询子用户 GetUser</a> 接口查询子用户详情，此处填入返回结果中的 <code>Uid</code> 字段</p>
                      * 
                      */
                     void SetReceiverUids(const std::vector<int64_t>& _receiverUids);
@@ -217,15 +213,15 @@ namespace TencentCloud
                     bool ReceiverUidsHasBeenSet() const;
 
                     /**
-                     * 获取根据接收组搜索，可以使用“访问管理”的 [查询用户组列表 ListGroups](https://cloud.tencent.com/document/product/598/34589) 接口获取用户组列表 或 [列出用户关联的用户组 ListGroupsForUser](https://cloud.tencent.com/document/product/598/34588) 查询某个子用户所在的用户组列表 ，此处填入返回结果中的 `GroupId ` 字段
-                     * @return ReceiverGroups 根据接收组搜索，可以使用“访问管理”的 [查询用户组列表 ListGroups](https://cloud.tencent.com/document/product/598/34589) 接口获取用户组列表 或 [列出用户关联的用户组 ListGroupsForUser](https://cloud.tencent.com/document/product/598/34588) 查询某个子用户所在的用户组列表 ，此处填入返回结果中的 `GroupId ` 字段
+                     * 获取<p>根据接收组搜索，可以使用“访问管理”的 <a href="https://cloud.tencent.com/document/product/598/34589">查询用户组列表 ListGroups</a> 接口获取用户组列表 或 <a href="https://cloud.tencent.com/document/product/598/34588">列出用户关联的用户组 ListGroupsForUser</a> 查询某个子用户所在的用户组列表 ，此处填入返回结果中的 <code>GroupId</code> 字段</p>
+                     * @return ReceiverGroups <p>根据接收组搜索，可以使用“访问管理”的 <a href="https://cloud.tencent.com/document/product/598/34589">查询用户组列表 ListGroups</a> 接口获取用户组列表 或 <a href="https://cloud.tencent.com/document/product/598/34588">列出用户关联的用户组 ListGroupsForUser</a> 查询某个子用户所在的用户组列表 ，此处填入返回结果中的 <code>GroupId</code> 字段</p>
                      * 
                      */
                     std::vector<int64_t> GetReceiverGroups() const;
 
                     /**
-                     * 设置根据接收组搜索，可以使用“访问管理”的 [查询用户组列表 ListGroups](https://cloud.tencent.com/document/product/598/34589) 接口获取用户组列表 或 [列出用户关联的用户组 ListGroupsForUser](https://cloud.tencent.com/document/product/598/34588) 查询某个子用户所在的用户组列表 ，此处填入返回结果中的 `GroupId ` 字段
-                     * @param _receiverGroups 根据接收组搜索，可以使用“访问管理”的 [查询用户组列表 ListGroups](https://cloud.tencent.com/document/product/598/34589) 接口获取用户组列表 或 [列出用户关联的用户组 ListGroupsForUser](https://cloud.tencent.com/document/product/598/34588) 查询某个子用户所在的用户组列表 ，此处填入返回结果中的 `GroupId ` 字段
+                     * 设置<p>根据接收组搜索，可以使用“访问管理”的 <a href="https://cloud.tencent.com/document/product/598/34589">查询用户组列表 ListGroups</a> 接口获取用户组列表 或 <a href="https://cloud.tencent.com/document/product/598/34588">列出用户关联的用户组 ListGroupsForUser</a> 查询某个子用户所在的用户组列表 ，此处填入返回结果中的 <code>GroupId</code> 字段</p>
+                     * @param _receiverGroups <p>根据接收组搜索，可以使用“访问管理”的 <a href="https://cloud.tencent.com/document/product/598/34589">查询用户组列表 ListGroups</a> 接口获取用户组列表 或 <a href="https://cloud.tencent.com/document/product/598/34588">列出用户关联的用户组 ListGroupsForUser</a> 查询某个子用户所在的用户组列表 ，此处填入返回结果中的 <code>GroupId</code> 字段</p>
                      * 
                      */
                     void SetReceiverGroups(const std::vector<int64_t>& _receiverGroups);
@@ -238,15 +234,15 @@ namespace TencentCloud
                     bool ReceiverGroupsHasBeenSet() const;
 
                     /**
-                     * 获取根据默认策略筛选 不传展示全部策略 DEFAULT=展示默认策略 NOT_DEFAULT=展示非默认策略
-                     * @return PolicyType 根据默认策略筛选 不传展示全部策略 DEFAULT=展示默认策略 NOT_DEFAULT=展示非默认策略
+                     * 获取<p>根据默认策略筛选 不传展示全部策略 DEFAULT=展示默认策略 NOT_DEFAULT=展示非默认策略</p>
+                     * @return PolicyType <p>根据默认策略筛选 不传展示全部策略 DEFAULT=展示默认策略 NOT_DEFAULT=展示非默认策略</p>
                      * 
                      */
                     std::vector<std::string> GetPolicyType() const;
 
                     /**
-                     * 设置根据默认策略筛选 不传展示全部策略 DEFAULT=展示默认策略 NOT_DEFAULT=展示非默认策略
-                     * @param _policyType 根据默认策略筛选 不传展示全部策略 DEFAULT=展示默认策略 NOT_DEFAULT=展示非默认策略
+                     * 设置<p>根据默认策略筛选 不传展示全部策略 DEFAULT=展示默认策略 NOT_DEFAULT=展示非默认策略</p>
+                     * @param _policyType <p>根据默认策略筛选 不传展示全部策略 DEFAULT=展示默认策略 NOT_DEFAULT=展示非默认策略</p>
                      * 
                      */
                     void SetPolicyType(const std::vector<std::string>& _policyType);
@@ -259,15 +255,15 @@ namespace TencentCloud
                     bool PolicyTypeHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，例如按照最后修改时间排序，Field: "UpdateTime"
-                     * @return Field 排序字段，例如按照最后修改时间排序，Field: "UpdateTime"
+                     * 获取<p>排序字段，例如按照最后修改时间排序，Field: &quot;UpdateTime&quot;</p>
+                     * @return Field <p>排序字段，例如按照最后修改时间排序，Field: &quot;UpdateTime&quot;</p>
                      * 
                      */
                     std::string GetField() const;
 
                     /**
-                     * 设置排序字段，例如按照最后修改时间排序，Field: "UpdateTime"
-                     * @param _field 排序字段，例如按照最后修改时间排序，Field: "UpdateTime"
+                     * 设置<p>排序字段，例如按照最后修改时间排序，Field: &quot;UpdateTime&quot;</p>
+                     * @param _field <p>排序字段，例如按照最后修改时间排序，Field: &quot;UpdateTime&quot;</p>
                      * 
                      */
                     void SetField(const std::string& _field);
@@ -280,15 +276,15 @@ namespace TencentCloud
                     bool FieldHasBeenSet() const;
 
                     /**
-                     * 获取排序顺序：升序：ASC  降序：DESC
-                     * @return Order 排序顺序：升序：ASC  降序：DESC
+                     * 获取<p>排序顺序：升序：ASC  降序：DESC</p>
+                     * @return Order <p>排序顺序：升序：ASC  降序：DESC</p>
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置排序顺序：升序：ASC  降序：DESC
-                     * @param _order 排序顺序：升序：ASC  降序：DESC
+                     * 设置<p>排序顺序：升序：ASC  降序：DESC</p>
+                     * @param _order <p>排序顺序：升序：ASC  降序：DESC</p>
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -301,19 +297,15 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取策略所属项目的id数组，可在此页面查看
-[项目管理](https://console.cloud.tencent.com/project)
-                     * @return ProjectIds 策略所属项目的id数组，可在此页面查看
-[项目管理](https://console.cloud.tencent.com/project)
+                     * 获取<p>策略所属项目的id数组，可在此页面查看<br><a href="https://console.cloud.tencent.com/project">项目管理</a></p>
+                     * @return ProjectIds <p>策略所属项目的id数组，可在此页面查看<br><a href="https://console.cloud.tencent.com/project">项目管理</a></p>
                      * 
                      */
                     std::vector<int64_t> GetProjectIds() const;
 
                     /**
-                     * 设置策略所属项目的id数组，可在此页面查看
-[项目管理](https://console.cloud.tencent.com/project)
-                     * @param _projectIds 策略所属项目的id数组，可在此页面查看
-[项目管理](https://console.cloud.tencent.com/project)
+                     * 设置<p>策略所属项目的id数组，可在此页面查看<br><a href="https://console.cloud.tencent.com/project">项目管理</a></p>
+                     * @param _projectIds <p>策略所属项目的id数组，可在此页面查看<br><a href="https://console.cloud.tencent.com/project">项目管理</a></p>
                      * 
                      */
                     void SetProjectIds(const std::vector<int64_t>& _projectIds);
@@ -326,19 +318,15 @@ namespace TencentCloud
                     bool ProjectIdsHasBeenSet() const;
 
                     /**
-                     * 获取通知模板的id列表，可查询通知模板列表获取。
-可使用 [查询通知模板列表](https://cloud.tencent.com/document/product/248/51280) 接口查询。
-                     * @return NoticeIds 通知模板的id列表，可查询通知模板列表获取。
-可使用 [查询通知模板列表](https://cloud.tencent.com/document/product/248/51280) 接口查询。
+                     * 获取<p>通知模板的id列表，可查询通知模板列表获取。<br>可使用 <a href="https://cloud.tencent.com/document/product/248/51280">查询通知模板列表</a> 接口查询。</p>
+                     * @return NoticeIds <p>通知模板的id列表，可查询通知模板列表获取。<br>可使用 <a href="https://cloud.tencent.com/document/product/248/51280">查询通知模板列表</a> 接口查询。</p>
                      * 
                      */
                     std::vector<std::string> GetNoticeIds() const;
 
                     /**
-                     * 设置通知模板的id列表，可查询通知模板列表获取。
-可使用 [查询通知模板列表](https://cloud.tencent.com/document/product/248/51280) 接口查询。
-                     * @param _noticeIds 通知模板的id列表，可查询通知模板列表获取。
-可使用 [查询通知模板列表](https://cloud.tencent.com/document/product/248/51280) 接口查询。
+                     * 设置<p>通知模板的id列表，可查询通知模板列表获取。<br>可使用 <a href="https://cloud.tencent.com/document/product/248/51280">查询通知模板列表</a> 接口查询。</p>
+                     * @param _noticeIds <p>通知模板的id列表，可查询通知模板列表获取。<br>可使用 <a href="https://cloud.tencent.com/document/product/248/51280">查询通知模板列表</a> 接口查询。</p>
                      * 
                      */
                     void SetNoticeIds(const std::vector<std::string>& _noticeIds);
@@ -351,15 +339,15 @@ namespace TencentCloud
                     bool NoticeIdsHasBeenSet() const;
 
                     /**
-                     * 获取根据触发条件筛选 不传展示全部策略 STATIC=展示静态阈值策略 DYNAMIC=展示动态阈值策略
-                     * @return RuleTypes 根据触发条件筛选 不传展示全部策略 STATIC=展示静态阈值策略 DYNAMIC=展示动态阈值策略
+                     * 获取<p>根据触发条件筛选 不传展示全部策略 STATIC=展示静态阈值策略 DYNAMIC=展示动态阈值策略</p>
+                     * @return RuleTypes <p>根据触发条件筛选 不传展示全部策略 STATIC=展示静态阈值策略 DYNAMIC=展示动态阈值策略</p>
                      * 
                      */
                     std::vector<std::string> GetRuleTypes() const;
 
                     /**
-                     * 设置根据触发条件筛选 不传展示全部策略 STATIC=展示静态阈值策略 DYNAMIC=展示动态阈值策略
-                     * @param _ruleTypes 根据触发条件筛选 不传展示全部策略 STATIC=展示静态阈值策略 DYNAMIC=展示动态阈值策略
+                     * 设置<p>根据触发条件筛选 不传展示全部策略 STATIC=展示静态阈值策略 DYNAMIC=展示动态阈值策略</p>
+                     * @param _ruleTypes <p>根据触发条件筛选 不传展示全部策略 STATIC=展示静态阈值策略 DYNAMIC=展示动态阈值策略</p>
                      * 
                      */
                     void SetRuleTypes(const std::vector<std::string>& _ruleTypes);
@@ -372,15 +360,15 @@ namespace TencentCloud
                     bool RuleTypesHasBeenSet() const;
 
                     /**
-                     * 获取告警启停筛选，[1]：启用   [0]：停止，全部[0, 1]
-                     * @return Enable 告警启停筛选，[1]：启用   [0]：停止，全部[0, 1]
+                     * 获取<p>告警启停筛选，[1]：启用   [0]：停止，全部[0, 1]</p>
+                     * @return Enable <p>告警启停筛选，[1]：启用   [0]：停止，全部[0, 1]</p>
                      * 
                      */
                     std::vector<int64_t> GetEnable() const;
 
                     /**
-                     * 设置告警启停筛选，[1]：启用   [0]：停止，全部[0, 1]
-                     * @param _enable 告警启停筛选，[1]：启用   [0]：停止，全部[0, 1]
+                     * 设置<p>告警启停筛选，[1]：启用   [0]：停止，全部[0, 1]</p>
+                     * @param _enable <p>告警启停筛选，[1]：启用   [0]：停止，全部[0, 1]</p>
                      * 
                      */
                     void SetEnable(const std::vector<int64_t>& _enable);
@@ -393,15 +381,15 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取传 1 查询未配置通知规则的告警策略；不传或传其他数值，查询所有策略。
-                     * @return NotBindingNoticeRule 传 1 查询未配置通知规则的告警策略；不传或传其他数值，查询所有策略。
+                     * 获取<p>传 1 查询未配置通知规则的告警策略；不传或传其他数值，查询所有策略。</p>
+                     * @return NotBindingNoticeRule <p>传 1 查询未配置通知规则的告警策略；不传或传其他数值，查询所有策略。</p>
                      * 
                      */
                     int64_t GetNotBindingNoticeRule() const;
 
                     /**
-                     * 设置传 1 查询未配置通知规则的告警策略；不传或传其他数值，查询所有策略。
-                     * @param _notBindingNoticeRule 传 1 查询未配置通知规则的告警策略；不传或传其他数值，查询所有策略。
+                     * 设置<p>传 1 查询未配置通知规则的告警策略；不传或传其他数值，查询所有策略。</p>
+                     * @param _notBindingNoticeRule <p>传 1 查询未配置通知规则的告警策略；不传或传其他数值，查询所有策略。</p>
                      * 
                      */
                     void SetNotBindingNoticeRule(const int64_t& _notBindingNoticeRule);
@@ -414,15 +402,15 @@ namespace TencentCloud
                     bool NotBindingNoticeRuleHasBeenSet() const;
 
                     /**
-                     * 获取实例分组id
-                     * @return InstanceGroupId 实例分组id
+                     * 获取<p>实例分组id</p>
+                     * @return InstanceGroupId <p>实例分组id</p>
                      * 
                      */
                     int64_t GetInstanceGroupId() const;
 
                     /**
-                     * 设置实例分组id
-                     * @param _instanceGroupId 实例分组id
+                     * 设置<p>实例分组id</p>
+                     * @param _instanceGroupId <p>实例分组id</p>
                      * 
                      */
                     void SetInstanceGroupId(const int64_t& _instanceGroupId);
@@ -435,15 +423,15 @@ namespace TencentCloud
                     bool InstanceGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取是否需要策略与入参过滤维度参数的对应关系，1：是  0：否，默认为0
-                     * @return NeedCorrespondence 是否需要策略与入参过滤维度参数的对应关系，1：是  0：否，默认为0
+                     * 获取<p>是否需要策略与入参过滤维度参数的对应关系，1：是  0：否，默认为0</p>
+                     * @return NeedCorrespondence <p>是否需要策略与入参过滤维度参数的对应关系，1：是  0：否，默认为0</p>
                      * 
                      */
                     int64_t GetNeedCorrespondence() const;
 
                     /**
-                     * 设置是否需要策略与入参过滤维度参数的对应关系，1：是  0：否，默认为0
-                     * @param _needCorrespondence 是否需要策略与入参过滤维度参数的对应关系，1：是  0：否，默认为0
+                     * 设置<p>是否需要策略与入参过滤维度参数的对应关系，1：是  0：否，默认为0</p>
+                     * @param _needCorrespondence <p>是否需要策略与入参过滤维度参数的对应关系，1：是  0：否，默认为0</p>
                      * 
                      */
                     void SetNeedCorrespondence(const int64_t& _needCorrespondence);
@@ -456,15 +444,15 @@ namespace TencentCloud
                     bool NeedCorrespondenceHasBeenSet() const;
 
                     /**
-                     * 获取按照触发任务（例如弹性伸缩）过滤策略。最多10个
-                     * @return TriggerTasks 按照触发任务（例如弹性伸缩）过滤策略。最多10个
+                     * 获取<p>按照触发任务（例如弹性伸缩）过滤策略。最多10个</p>
+                     * @return TriggerTasks <p>按照触发任务（例如弹性伸缩）过滤策略。最多10个</p>
                      * 
                      */
                     std::vector<AlarmPolicyTriggerTask> GetTriggerTasks() const;
 
                     /**
-                     * 设置按照触发任务（例如弹性伸缩）过滤策略。最多10个
-                     * @param _triggerTasks 按照触发任务（例如弹性伸缩）过滤策略。最多10个
+                     * 设置<p>按照触发任务（例如弹性伸缩）过滤策略。最多10个</p>
+                     * @param _triggerTasks <p>按照触发任务（例如弹性伸缩）过滤策略。最多10个</p>
                      * 
                      */
                     void SetTriggerTasks(const std::vector<AlarmPolicyTriggerTask>& _triggerTasks);
@@ -477,15 +465,15 @@ namespace TencentCloud
                     bool TriggerTasksHasBeenSet() const;
 
                     /**
-                     * 获取根据一键告警策略筛选 不传展示全部策略 ONECLICK=展示一键告警策略 NOT_ONECLICK=展示非一键告警策略
-                     * @return OneClickPolicyType 根据一键告警策略筛选 不传展示全部策略 ONECLICK=展示一键告警策略 NOT_ONECLICK=展示非一键告警策略
+                     * 获取<p>根据一键告警策略筛选 不传展示全部策略 ONECLICK=展示一键告警策略 NOT_ONECLICK=展示非一键告警策略</p>
+                     * @return OneClickPolicyType <p>根据一键告警策略筛选 不传展示全部策略 ONECLICK=展示一键告警策略 NOT_ONECLICK=展示非一键告警策略</p>
                      * 
                      */
                     std::vector<std::string> GetOneClickPolicyType() const;
 
                     /**
-                     * 设置根据一键告警策略筛选 不传展示全部策略 ONECLICK=展示一键告警策略 NOT_ONECLICK=展示非一键告警策略
-                     * @param _oneClickPolicyType 根据一键告警策略筛选 不传展示全部策略 ONECLICK=展示一键告警策略 NOT_ONECLICK=展示非一键告警策略
+                     * 设置<p>根据一键告警策略筛选 不传展示全部策略 ONECLICK=展示一键告警策略 NOT_ONECLICK=展示非一键告警策略</p>
+                     * @param _oneClickPolicyType <p>根据一键告警策略筛选 不传展示全部策略 ONECLICK=展示一键告警策略 NOT_ONECLICK=展示非一键告警策略</p>
                      * 
                      */
                     void SetOneClickPolicyType(const std::vector<std::string>& _oneClickPolicyType);
@@ -498,15 +486,15 @@ namespace TencentCloud
                     bool OneClickPolicyTypeHasBeenSet() const;
 
                     /**
-                     * 获取返回结果过滤掉绑定全部对象的策略，1代表需要过滤，0则无需过滤
-                     * @return NotBindAll 返回结果过滤掉绑定全部对象的策略，1代表需要过滤，0则无需过滤
+                     * 获取<p>返回结果过滤掉绑定全部对象的策略，1代表需要过滤，0则无需过滤</p>
+                     * @return NotBindAll <p>返回结果过滤掉绑定全部对象的策略，1代表需要过滤，0则无需过滤</p>
                      * 
                      */
                     int64_t GetNotBindAll() const;
 
                     /**
-                     * 设置返回结果过滤掉绑定全部对象的策略，1代表需要过滤，0则无需过滤
-                     * @param _notBindAll 返回结果过滤掉绑定全部对象的策略，1代表需要过滤，0则无需过滤
+                     * 设置<p>返回结果过滤掉绑定全部对象的策略，1代表需要过滤，0则无需过滤</p>
+                     * @param _notBindAll <p>返回结果过滤掉绑定全部对象的策略，1代表需要过滤，0则无需过滤</p>
                      * 
                      */
                     void SetNotBindAll(const int64_t& _notBindAll);
@@ -519,15 +507,15 @@ namespace TencentCloud
                     bool NotBindAllHasBeenSet() const;
 
                     /**
-                     * 获取返回结果过滤掉关联实例为实例分组的策略，1代表需要过滤，0则无需过滤
-                     * @return NotInstanceGroup 返回结果过滤掉关联实例为实例分组的策略，1代表需要过滤，0则无需过滤
+                     * 获取<p>返回结果过滤掉关联实例为实例分组的策略，1代表需要过滤，0则无需过滤</p>
+                     * @return NotInstanceGroup <p>返回结果过滤掉关联实例为实例分组的策略，1代表需要过滤，0则无需过滤</p>
                      * 
                      */
                     int64_t GetNotInstanceGroup() const;
 
                     /**
-                     * 设置返回结果过滤掉关联实例为实例分组的策略，1代表需要过滤，0则无需过滤
-                     * @param _notInstanceGroup 返回结果过滤掉关联实例为实例分组的策略，1代表需要过滤，0则无需过滤
+                     * 设置<p>返回结果过滤掉关联实例为实例分组的策略，1代表需要过滤，0则无需过滤</p>
+                     * @param _notInstanceGroup <p>返回结果过滤掉关联实例为实例分组的策略，1代表需要过滤，0则无需过滤</p>
                      * 
                      */
                     void SetNotInstanceGroup(const int64_t& _notInstanceGroup);
@@ -540,15 +528,15 @@ namespace TencentCloud
                     bool NotInstanceGroupHasBeenSet() const;
 
                     /**
-                     * 获取策略根据标签过滤
-                     * @return Tags 策略根据标签过滤
+                     * 获取<p>策略根据标签过滤</p>
+                     * @return Tags <p>策略根据标签过滤</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置策略根据标签过滤
-                     * @param _tags 策略根据标签过滤
+                     * 设置<p>策略根据标签过滤</p>
+                     * @param _tags <p>策略根据标签过滤</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -561,15 +549,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取prom实例id，自定义指标策略时会用到
-                     * @return PromInsId prom实例id，自定义指标策略时会用到
+                     * 获取<p>prom实例id，自定义指标策略时会用到</p>
+                     * @return PromInsId <p>prom实例id，自定义指标策略时会用到</p>
                      * 
                      */
                     std::string GetPromInsId() const;
 
                     /**
-                     * 设置prom实例id，自定义指标策略时会用到
-                     * @param _promInsId prom实例id，自定义指标策略时会用到
+                     * 设置<p>prom实例id，自定义指标策略时会用到</p>
+                     * @param _promInsId <p>prom实例id，自定义指标策略时会用到</p>
                      * 
                      */
                     void SetPromInsId(const std::string& _promInsId);
@@ -582,15 +570,15 @@ namespace TencentCloud
                     bool PromInsIdHasBeenSet() const;
 
                     /**
-                     * 获取根据排班表搜索
-                     * @return ReceiverOnCallFormIDs 根据排班表搜索
+                     * 获取<p>根据排班表搜索</p>
+                     * @return ReceiverOnCallFormIDs <p>根据排班表搜索</p>
                      * 
                      */
                     std::vector<std::string> GetReceiverOnCallFormIDs() const;
 
                     /**
-                     * 设置根据排班表搜索
-                     * @param _receiverOnCallFormIDs 根据排班表搜索
+                     * 设置<p>根据排班表搜索</p>
+                     * @param _receiverOnCallFormIDs <p>根据排班表搜索</p>
                      * 
                      */
                     void SetReceiverOnCallFormIDs(const std::vector<std::string>& _receiverOnCallFormIDs);
@@ -603,15 +591,15 @@ namespace TencentCloud
                     bool ReceiverOnCallFormIDsHasBeenSet() const;
 
                     /**
-                     * 获取通知内容模板ID筛选
-                     * @return NoticeContentTmplIDs 通知内容模板ID筛选
+                     * 获取<p>通知内容模板ID筛选</p>
+                     * @return NoticeContentTmplIDs <p>通知内容模板ID筛选</p>
                      * 
                      */
                     std::vector<std::string> GetNoticeContentTmplIDs() const;
 
                     /**
-                     * 设置通知内容模板ID筛选
-                     * @param _noticeContentTmplIDs 通知内容模板ID筛选
+                     * 设置<p>通知内容模板ID筛选</p>
+                     * @param _noticeContentTmplIDs <p>通知内容模板ID筛选</p>
                      * 
                      */
                     void SetNoticeContentTmplIDs(const std::vector<std::string>& _noticeContentTmplIDs);
@@ -624,15 +612,15 @@ namespace TencentCloud
                     bool NoticeContentTmplIDsHasBeenSet() const;
 
                     /**
-                     * 获取是否为预设策略，1是，0否
-                     * @return IsPredefined 是否为预设策略，1是，0否
+                     * 获取<p>是否为预设策略，1是，0否</p>
+                     * @return IsPredefined <p>是否为预设策略，1是，0否</p>
                      * 
                      */
                     int64_t GetIsPredefined() const;
 
                     /**
-                     * 设置是否为预设策略，1是，0否
-                     * @param _isPredefined 是否为预设策略，1是，0否
+                     * 设置<p>是否为预设策略，1是，0否</p>
+                     * @param _isPredefined <p>是否为预设策略，1是，0否</p>
                      * 
                      */
                     void SetIsPredefined(const int64_t& _isPredefined);
@@ -647,172 +635,169 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 固定值，为"monitor"
+                     * <p>固定值，为&quot;monitor&quot;</p>
                      */
                     std::string m_module;
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 页数，从 1 开始计数，默认 1
+                     * <p>页数，从 1 开始计数，默认 1</p>
                      */
                     int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 每页的数量，取值1~100，默认20
+                     * <p>每页的数量，取值1~100，默认20</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 按策略名称模糊搜索
+                     * <p>按策略名称模糊搜索</p>
                      */
                     std::string m_policyName;
                     bool m_policyNameHasBeenSet;
 
                     /**
-                     * 根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控,当Dimension不为空时，该项为必填项
+                     * <p>根据监控类型过滤 不选默认查所有类型 &quot;MT_QCE&quot;=云产品监控,当Dimension不为空时，该项为必填项</p>
                      */
                     std::vector<std::string> m_monitorTypes;
                     bool m_monitorTypesHasBeenSet;
 
                     /**
-                     * 根据命名空间过滤，不同策略类型的值详见
-[策略类型列表](https://cloud.tencent.com/document/product/248/50397)当Dimension不为空时，该项为必填项
+                     * <p>根据命名空间过滤，不同策略类型的值详见<br><a href="https://cloud.tencent.com/document/product/248/50397">策略类型列表</a>当Dimension不为空时，该项为必填项</p>
                      */
                     std::vector<std::string> m_namespaces;
                     bool m_namespacesHasBeenSet;
 
                     /**
-                     * 告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：`[[{"name":"unInstanceId","value":"ins-qr888845g"}]]`具体也可以参考下方的示例 2。不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时
+                     * <p>告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：<code>[[{&quot;name&quot;:&quot;unInstanceId&quot;,&quot;value&quot;:&quot;ins-qr888845g&quot;}]]</code>具体也可以参考下方的示例 2。不同云产品参数示例详见 <a href="https://cloud.tencent.com/document/product/248/50397">维度信息Dimensions列表</a>注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时</p>
                      */
                     std::string m_dimensions;
                     bool m_dimensionsHasBeenSet;
 
                     /**
-                     * 根据接收人搜索，可以使用“访问管理”的 [拉取子用户 ListUsers](https://cloud.tencent.com/document/product/598/34587) 接口获取用户列表 或 [查询子用户 GetUser](https://cloud.tencent.com/document/product/598/34590) 接口查询子用户详情，此处填入返回结果中的 `Uid` 字段
+                     * <p>根据接收人搜索，可以使用“访问管理”的 <a href="https://cloud.tencent.com/document/product/598/34587">拉取子用户 ListUsers</a> 接口获取用户列表 或 <a href="https://cloud.tencent.com/document/product/598/34590">查询子用户 GetUser</a> 接口查询子用户详情，此处填入返回结果中的 <code>Uid</code> 字段</p>
                      */
                     std::vector<int64_t> m_receiverUids;
                     bool m_receiverUidsHasBeenSet;
 
                     /**
-                     * 根据接收组搜索，可以使用“访问管理”的 [查询用户组列表 ListGroups](https://cloud.tencent.com/document/product/598/34589) 接口获取用户组列表 或 [列出用户关联的用户组 ListGroupsForUser](https://cloud.tencent.com/document/product/598/34588) 查询某个子用户所在的用户组列表 ，此处填入返回结果中的 `GroupId ` 字段
+                     * <p>根据接收组搜索，可以使用“访问管理”的 <a href="https://cloud.tencent.com/document/product/598/34589">查询用户组列表 ListGroups</a> 接口获取用户组列表 或 <a href="https://cloud.tencent.com/document/product/598/34588">列出用户关联的用户组 ListGroupsForUser</a> 查询某个子用户所在的用户组列表 ，此处填入返回结果中的 <code>GroupId</code> 字段</p>
                      */
                     std::vector<int64_t> m_receiverGroups;
                     bool m_receiverGroupsHasBeenSet;
 
                     /**
-                     * 根据默认策略筛选 不传展示全部策略 DEFAULT=展示默认策略 NOT_DEFAULT=展示非默认策略
+                     * <p>根据默认策略筛选 不传展示全部策略 DEFAULT=展示默认策略 NOT_DEFAULT=展示非默认策略</p>
                      */
                     std::vector<std::string> m_policyType;
                     bool m_policyTypeHasBeenSet;
 
                     /**
-                     * 排序字段，例如按照最后修改时间排序，Field: "UpdateTime"
+                     * <p>排序字段，例如按照最后修改时间排序，Field: &quot;UpdateTime&quot;</p>
                      */
                     std::string m_field;
                     bool m_fieldHasBeenSet;
 
                     /**
-                     * 排序顺序：升序：ASC  降序：DESC
+                     * <p>排序顺序：升序：ASC  降序：DESC</p>
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 策略所属项目的id数组，可在此页面查看
-[项目管理](https://console.cloud.tencent.com/project)
+                     * <p>策略所属项目的id数组，可在此页面查看<br><a href="https://console.cloud.tencent.com/project">项目管理</a></p>
                      */
                     std::vector<int64_t> m_projectIds;
                     bool m_projectIdsHasBeenSet;
 
                     /**
-                     * 通知模板的id列表，可查询通知模板列表获取。
-可使用 [查询通知模板列表](https://cloud.tencent.com/document/product/248/51280) 接口查询。
+                     * <p>通知模板的id列表，可查询通知模板列表获取。<br>可使用 <a href="https://cloud.tencent.com/document/product/248/51280">查询通知模板列表</a> 接口查询。</p>
                      */
                     std::vector<std::string> m_noticeIds;
                     bool m_noticeIdsHasBeenSet;
 
                     /**
-                     * 根据触发条件筛选 不传展示全部策略 STATIC=展示静态阈值策略 DYNAMIC=展示动态阈值策略
+                     * <p>根据触发条件筛选 不传展示全部策略 STATIC=展示静态阈值策略 DYNAMIC=展示动态阈值策略</p>
                      */
                     std::vector<std::string> m_ruleTypes;
                     bool m_ruleTypesHasBeenSet;
 
                     /**
-                     * 告警启停筛选，[1]：启用   [0]：停止，全部[0, 1]
+                     * <p>告警启停筛选，[1]：启用   [0]：停止，全部[0, 1]</p>
                      */
                     std::vector<int64_t> m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 传 1 查询未配置通知规则的告警策略；不传或传其他数值，查询所有策略。
+                     * <p>传 1 查询未配置通知规则的告警策略；不传或传其他数值，查询所有策略。</p>
                      */
                     int64_t m_notBindingNoticeRule;
                     bool m_notBindingNoticeRuleHasBeenSet;
 
                     /**
-                     * 实例分组id
+                     * <p>实例分组id</p>
                      */
                     int64_t m_instanceGroupId;
                     bool m_instanceGroupIdHasBeenSet;
 
                     /**
-                     * 是否需要策略与入参过滤维度参数的对应关系，1：是  0：否，默认为0
+                     * <p>是否需要策略与入参过滤维度参数的对应关系，1：是  0：否，默认为0</p>
                      */
                     int64_t m_needCorrespondence;
                     bool m_needCorrespondenceHasBeenSet;
 
                     /**
-                     * 按照触发任务（例如弹性伸缩）过滤策略。最多10个
+                     * <p>按照触发任务（例如弹性伸缩）过滤策略。最多10个</p>
                      */
                     std::vector<AlarmPolicyTriggerTask> m_triggerTasks;
                     bool m_triggerTasksHasBeenSet;
 
                     /**
-                     * 根据一键告警策略筛选 不传展示全部策略 ONECLICK=展示一键告警策略 NOT_ONECLICK=展示非一键告警策略
+                     * <p>根据一键告警策略筛选 不传展示全部策略 ONECLICK=展示一键告警策略 NOT_ONECLICK=展示非一键告警策略</p>
                      */
                     std::vector<std::string> m_oneClickPolicyType;
                     bool m_oneClickPolicyTypeHasBeenSet;
 
                     /**
-                     * 返回结果过滤掉绑定全部对象的策略，1代表需要过滤，0则无需过滤
+                     * <p>返回结果过滤掉绑定全部对象的策略，1代表需要过滤，0则无需过滤</p>
                      */
                     int64_t m_notBindAll;
                     bool m_notBindAllHasBeenSet;
 
                     /**
-                     * 返回结果过滤掉关联实例为实例分组的策略，1代表需要过滤，0则无需过滤
+                     * <p>返回结果过滤掉关联实例为实例分组的策略，1代表需要过滤，0则无需过滤</p>
                      */
                     int64_t m_notInstanceGroup;
                     bool m_notInstanceGroupHasBeenSet;
 
                     /**
-                     * 策略根据标签过滤
+                     * <p>策略根据标签过滤</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * prom实例id，自定义指标策略时会用到
+                     * <p>prom实例id，自定义指标策略时会用到</p>
                      */
                     std::string m_promInsId;
                     bool m_promInsIdHasBeenSet;
 
                     /**
-                     * 根据排班表搜索
+                     * <p>根据排班表搜索</p>
                      */
                     std::vector<std::string> m_receiverOnCallFormIDs;
                     bool m_receiverOnCallFormIDsHasBeenSet;
 
                     /**
-                     * 通知内容模板ID筛选
+                     * <p>通知内容模板ID筛选</p>
                      */
                     std::vector<std::string> m_noticeContentTmplIDs;
                     bool m_noticeContentTmplIDsHasBeenSet;
 
                     /**
-                     * 是否为预设策略，1是，0否
+                     * <p>是否为预设策略，1是，0否</p>
                      */
                     int64_t m_isPredefined;
                     bool m_isPredefinedHasBeenSet;

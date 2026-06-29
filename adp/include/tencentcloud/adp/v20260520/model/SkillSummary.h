@@ -27,6 +27,7 @@
 #include <tencentcloud/adp/v20260520/model/SkillClassification.h>
 #include <tencentcloud/adp/v20260520/model/SkillVersion.h>
 #include <tencentcloud/adp/v20260520/model/SkillProfile.h>
+#include <tencentcloud/adp/v20260520/model/SkillNotice.h>
 #include <tencentcloud/adp/v20260520/model/SkillShare.h>
 
 
@@ -168,6 +169,48 @@ namespace TencentCloud
                     bool SkillIdHasBeenSet() const;
 
                     /**
+                     * 获取Skill 异常通知列表
+                     * @return NoticeList Skill 异常通知列表
+                     * 
+                     */
+                    std::vector<SkillNotice> GetNoticeList() const;
+
+                    /**
+                     * 设置Skill 异常通知列表
+                     * @param _noticeList Skill 异常通知列表
+                     * 
+                     */
+                    void SetNoticeList(const std::vector<SkillNotice>& _noticeList);
+
+                    /**
+                     * 判断参数 NoticeList 是否已赋值
+                     * @return NoticeList 是否已赋值
+                     * 
+                     */
+                    bool NoticeListHasBeenSet() const;
+
+                    /**
+                     * 获取当前用户对该 Skill 的资源操作权限位列表；内置/共享 Skill 固定为空数组
+                     * @return PermissionIdList 当前用户对该 Skill 的资源操作权限位列表；内置/共享 Skill 固定为空数组
+                     * 
+                     */
+                    std::vector<std::string> GetPermissionIdList() const;
+
+                    /**
+                     * 设置当前用户对该 Skill 的资源操作权限位列表；内置/共享 Skill 固定为空数组
+                     * @param _permissionIdList 当前用户对该 Skill 的资源操作权限位列表；内置/共享 Skill 固定为空数组
+                     * 
+                     */
+                    void SetPermissionIdList(const std::vector<std::string>& _permissionIdList);
+
+                    /**
+                     * 判断参数 PermissionIdList 是否已赋值
+                     * @return PermissionIdList 是否已赋值
+                     * 
+                     */
+                    bool PermissionIdListHasBeenSet() const;
+
+                    /**
                      * 获取共享信息；可能有两条，一条是已共享的，一条是审核中的
                      * @return ShareList 共享信息；可能有两条，一条是已共享的，一条是审核中的
                      * 
@@ -187,6 +230,59 @@ namespace TencentCloud
                      * 
                      */
                     bool ShareListHasBeenSet() const;
+
+                    /**
+                     * 获取Skill状态 
+
+枚举值:
+| uint | 描述 |
+| --- | --- |
+| 0 | 初始化（无任何已发布版本，且最新版本处于 INITIALIZED/UNRELEASED） |
+| 1 | 安全检测中（无任何已发布版本，且最新版本处于 AUDITING） |
+| 2 | 待发布（无任何已发布版本，且最新版本处于 PENDING_RELEASE） |
+| 3 | 已发布（存在任一 RELEASED 版本，吸收态） |
+                     * @return SkillStatus Skill状态 
+
+枚举值:
+| uint | 描述 |
+| --- | --- |
+| 0 | 初始化（无任何已发布版本，且最新版本处于 INITIALIZED/UNRELEASED） |
+| 1 | 安全检测中（无任何已发布版本，且最新版本处于 AUDITING） |
+| 2 | 待发布（无任何已发布版本，且最新版本处于 PENDING_RELEASE） |
+| 3 | 已发布（存在任一 RELEASED 版本，吸收态） |
+                     * 
+                     */
+                    int64_t GetSkillStatus() const;
+
+                    /**
+                     * 设置Skill状态 
+
+枚举值:
+| uint | 描述 |
+| --- | --- |
+| 0 | 初始化（无任何已发布版本，且最新版本处于 INITIALIZED/UNRELEASED） |
+| 1 | 安全检测中（无任何已发布版本，且最新版本处于 AUDITING） |
+| 2 | 待发布（无任何已发布版本，且最新版本处于 PENDING_RELEASE） |
+| 3 | 已发布（存在任一 RELEASED 版本，吸收态） |
+                     * @param _skillStatus Skill状态 
+
+枚举值:
+| uint | 描述 |
+| --- | --- |
+| 0 | 初始化（无任何已发布版本，且最新版本处于 INITIALIZED/UNRELEASED） |
+| 1 | 安全检测中（无任何已发布版本，且最新版本处于 AUDITING） |
+| 2 | 待发布（无任何已发布版本，且最新版本处于 PENDING_RELEASE） |
+| 3 | 已发布（存在任一 RELEASED 版本，吸收态） |
+                     * 
+                     */
+                    void SetSkillStatus(const int64_t& _skillStatus);
+
+                    /**
+                     * 判断参数 SkillStatus 是否已赋值
+                     * @return SkillStatus 是否已赋值
+                     * 
+                     */
+                    bool SkillStatusHasBeenSet() const;
 
                 private:
 
@@ -224,10 +320,36 @@ namespace TencentCloud
                     bool m_skillIdHasBeenSet;
 
                     /**
+                     * Skill 异常通知列表
+                     */
+                    std::vector<SkillNotice> m_noticeList;
+                    bool m_noticeListHasBeenSet;
+
+                    /**
+                     * 当前用户对该 Skill 的资源操作权限位列表；内置/共享 Skill 固定为空数组
+                     */
+                    std::vector<std::string> m_permissionIdList;
+                    bool m_permissionIdListHasBeenSet;
+
+                    /**
                      * 共享信息；可能有两条，一条是已共享的，一条是审核中的
                      */
                     std::vector<SkillShare> m_shareList;
                     bool m_shareListHasBeenSet;
+
+                    /**
+                     * Skill状态 
+
+枚举值:
+| uint | 描述 |
+| --- | --- |
+| 0 | 初始化（无任何已发布版本，且最新版本处于 INITIALIZED/UNRELEASED） |
+| 1 | 安全检测中（无任何已发布版本，且最新版本处于 AUDITING） |
+| 2 | 待发布（无任何已发布版本，且最新版本处于 PENDING_RELEASE） |
+| 3 | 已发布（存在任一 RELEASED 版本，吸收态） |
+                     */
+                    int64_t m_skillStatus;
+                    bool m_skillStatusHasBeenSet;
 
                 };
             }

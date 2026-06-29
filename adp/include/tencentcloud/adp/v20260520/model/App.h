@@ -30,7 +30,7 @@
 #include <tencentcloud/adp/v20260520/model/AppSecretInfo.h>
 #include <tencentcloud/adp/v20260520/model/AppShareURLInfo.h>
 #include <tencentcloud/adp/v20260520/model/AppStatusInfo.h>
-#include <tencentcloud/adp/v20260520/model/AppSharedKnowledgeInfo.h>
+#include <tencentcloud/adp/v20260520/model/AppSharedKbInfo.h>
 
 
 namespace TencentCloud
@@ -205,24 +205,24 @@ namespace TencentCloud
 
                     /**
                      * 获取应用引用的共享知识库列表
-                     * @return SharedKnowledgeList 应用引用的共享知识库列表
+                     * @return SharedKbList 应用引用的共享知识库列表
                      * 
                      */
-                    std::vector<AppSharedKnowledgeInfo> GetSharedKnowledgeList() const;
+                    std::vector<AppSharedKbInfo> GetSharedKbList() const;
 
                     /**
                      * 设置应用引用的共享知识库列表
-                     * @param _sharedKnowledgeList 应用引用的共享知识库列表
+                     * @param _sharedKbList 应用引用的共享知识库列表
                      * 
                      */
-                    void SetSharedKnowledgeList(const std::vector<AppSharedKnowledgeInfo>& _sharedKnowledgeList);
+                    void SetSharedKbList(const std::vector<AppSharedKbInfo>& _sharedKbList);
 
                     /**
-                     * 判断参数 SharedKnowledgeList 是否已赋值
-                     * @return SharedKnowledgeList 是否已赋值
+                     * 判断参数 SharedKbList 是否已赋值
+                     * @return SharedKbList 是否已赋值
                      * 
                      */
-                    bool SharedKnowledgeListHasBeenSet() const;
+                    bool SharedKbListHasBeenSet() const;
 
                 private:
 
@@ -271,8 +271,8 @@ namespace TencentCloud
                     /**
                      * 应用引用的共享知识库列表
                      */
-                    std::vector<AppSharedKnowledgeInfo> m_sharedKnowledgeList;
-                    bool m_sharedKnowledgeListHasBeenSet;
+                    std::vector<AppSharedKbInfo> m_sharedKbList;
+                    bool m_sharedKbListHasBeenSet;
 
                 };
             }

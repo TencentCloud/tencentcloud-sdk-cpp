@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否启用
-                     * @return Enabled 是否启用
+                     * 获取<p>是否启用</p>
+                     * @return Enabled <p>是否启用</p>
                      * 
                      */
                     bool GetEnabled() const;
 
                     /**
-                     * 设置是否启用
-                     * @param _enabled 是否启用
+                     * 设置<p>是否启用</p>
+                     * @param _enabled <p>是否启用</p>
                      * 
                      */
                     void SetEnabled(const bool& _enabled);
@@ -69,27 +69,15 @@ namespace TencentCloud
                     bool EnabledHasBeenSet() const;
 
                     /**
-                     * 获取通道类型，默认为amp，支持以下
-amp
-webhook
-alertmanager
-                     * @return Type 通道类型，默认为amp，支持以下
-amp
-webhook
-alertmanager
+                     * 获取<p>通道类型，默认为amp，支持以下<br>amp<br>webhook<br>alertmanager</p>
+                     * @return Type <p>通道类型，默认为amp，支持以下<br>amp<br>webhook<br>alertmanager</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置通道类型，默认为amp，支持以下
-amp
-webhook
-alertmanager
-                     * @param _type 通道类型，默认为amp，支持以下
-amp
-webhook
-alertmanager
+                     * 设置<p>通道类型，默认为amp，支持以下<br>amp<br>webhook<br>alertmanager</p>
+                     * @param _type <p>通道类型，默认为amp，支持以下<br>amp<br>webhook<br>alertmanager</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -102,18 +90,18 @@ alertmanager
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取如果Type为webhook, 则该字段为必填项
+                     * 获取<p>如果Type为webhook, 则该字段为必填项</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WebHook 如果Type为webhook, 则该字段为必填项
+                     * @return WebHook <p>如果Type为webhook, 则该字段为必填项</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWebHook() const;
 
                     /**
-                     * 设置如果Type为webhook, 则该字段为必填项
+                     * 设置<p>如果Type为webhook, 则该字段为必填项</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _webHook 如果Type为webhook, 则该字段为必填项
+                     * @param _webHook <p>如果Type为webhook, 则该字段为必填项</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -127,18 +115,18 @@ alertmanager
                     bool WebHookHasBeenSet() const;
 
                     /**
-                     * 获取如果Type为alertmanager, 则该字段为必填项
+                     * 获取<p>如果Type为alertmanager, 则该字段为必填项</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlertManager 如果Type为alertmanager, 则该字段为必填项
+                     * @return AlertManager <p>如果Type为alertmanager, 则该字段为必填项</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PrometheusAlertManagerConfig GetAlertManager() const;
 
                     /**
-                     * 设置如果Type为alertmanager, 则该字段为必填项
+                     * 设置<p>如果Type为alertmanager, 则该字段为必填项</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _alertManager 如果Type为alertmanager, 则该字段为必填项
+                     * @param _alertManager <p>如果Type为alertmanager, 则该字段为必填项</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -152,15 +140,15 @@ alertmanager
                     bool AlertManagerHasBeenSet() const;
 
                     /**
-                     * 获取收敛时间
-                     * @return RepeatInterval 收敛时间
+                     * 获取<p>收敛时间</p>
+                     * @return RepeatInterval <p>收敛时间</p>
                      * 
                      */
                     std::string GetRepeatInterval() const;
 
                     /**
-                     * 设置收敛时间
-                     * @param _repeatInterval 收敛时间
+                     * 设置<p>收敛时间</p>
+                     * @param _repeatInterval <p>收敛时间</p>
                      * 
                      */
                     void SetRepeatInterval(const std::string& _repeatInterval);
@@ -173,15 +161,15 @@ alertmanager
                     bool RepeatIntervalHasBeenSet() const;
 
                     /**
-                     * 获取生效起始时间
-                     * @return TimeRangeStart 生效起始时间
+                     * 获取<p>生效起始时间</p>
+                     * @return TimeRangeStart <p>生效起始时间</p>
                      * 
                      */
                     std::string GetTimeRangeStart() const;
 
                     /**
-                     * 设置生效起始时间
-                     * @param _timeRangeStart 生效起始时间
+                     * 设置<p>生效起始时间</p>
+                     * @param _timeRangeStart <p>生效起始时间</p>
                      * 
                      */
                     void SetTimeRangeStart(const std::string& _timeRangeStart);
@@ -194,15 +182,15 @@ alertmanager
                     bool TimeRangeStartHasBeenSet() const;
 
                     /**
-                     * 获取生效结束时间
-                     * @return TimeRangeEnd 生效结束时间
+                     * 获取<p>生效结束时间</p>
+                     * @return TimeRangeEnd <p>生效结束时间</p>
                      * 
                      */
                     std::string GetTimeRangeEnd() const;
 
                     /**
-                     * 设置生效结束时间
-                     * @param _timeRangeEnd 生效结束时间
+                     * 设置<p>生效结束时间</p>
+                     * @param _timeRangeEnd <p>生效结束时间</p>
                      * 
                      */
                     void SetTimeRangeEnd(const std::string& _timeRangeEnd);
@@ -215,18 +203,18 @@ alertmanager
                     bool TimeRangeEndHasBeenSet() const;
 
                     /**
-                     * 获取告警通知方式。目前有SMS、EMAIL、CALL、WECHAT方式。
+                     * 获取<p>告警通知方式。目前有SMS、EMAIL、CALL、WECHAT方式。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NotifyWay 告警通知方式。目前有SMS、EMAIL、CALL、WECHAT方式。
+                     * @return NotifyWay <p>告警通知方式。目前有SMS、EMAIL、CALL、WECHAT方式。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetNotifyWay() const;
 
                     /**
-                     * 设置告警通知方式。目前有SMS、EMAIL、CALL、WECHAT方式。
+                     * 设置<p>告警通知方式。目前有SMS、EMAIL、CALL、WECHAT方式。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _notifyWay 告警通知方式。目前有SMS、EMAIL、CALL、WECHAT方式。
+                     * @param _notifyWay <p>告警通知方式。目前有SMS、EMAIL、CALL、WECHAT方式。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -240,18 +228,18 @@ alertmanager
                     bool NotifyWayHasBeenSet() const;
 
                     /**
-                     * 获取告警接收组（用户组）
+                     * 获取<p>告警接收组（用户组）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReceiverGroups 告警接收组（用户组）
+                     * @return ReceiverGroups <p>告警接收组（用户组）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetReceiverGroups() const;
 
                     /**
-                     * 设置告警接收组（用户组）
+                     * 设置<p>告警接收组（用户组）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _receiverGroups 告警接收组（用户组）
+                     * @param _receiverGroups <p>告警接收组（用户组）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -265,22 +253,18 @@ alertmanager
                     bool ReceiverGroupsHasBeenSet() const;
 
                     /**
-                     * 获取电话告警顺序。
-注：NotifyWay选择CALL，采用该参数。
+                     * 获取<p>电话告警顺序。<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PhoneNotifyOrder 电话告警顺序。
-注：NotifyWay选择CALL，采用该参数。
+                     * @return PhoneNotifyOrder <p>电话告警顺序。<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetPhoneNotifyOrder() const;
 
                     /**
-                     * 设置电话告警顺序。
-注：NotifyWay选择CALL，采用该参数。
+                     * 设置<p>电话告警顺序。<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _phoneNotifyOrder 电话告警顺序。
-注：NotifyWay选择CALL，采用该参数。
+                     * @param _phoneNotifyOrder <p>电话告警顺序。<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -294,22 +278,18 @@ alertmanager
                     bool PhoneNotifyOrderHasBeenSet() const;
 
                     /**
-                     * 获取电话告警次数。
-注：NotifyWay选择CALL，采用该参数。
+                     * 获取<p>电话告警次数。<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PhoneCircleTimes 电话告警次数。
-注：NotifyWay选择CALL，采用该参数。
+                     * @return PhoneCircleTimes <p>电话告警次数。<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPhoneCircleTimes() const;
 
                     /**
-                     * 设置电话告警次数。
-注：NotifyWay选择CALL，采用该参数。
+                     * 设置<p>电话告警次数。<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _phoneCircleTimes 电话告警次数。
-注：NotifyWay选择CALL，采用该参数。
+                     * @param _phoneCircleTimes <p>电话告警次数。<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -323,22 +303,18 @@ alertmanager
                     bool PhoneCircleTimesHasBeenSet() const;
 
                     /**
-                     * 获取电话告警轮内间隔。单位：秒
-注：NotifyWay选择CALL，采用该参数。
+                     * 获取<p>电话告警轮内间隔。单位：秒<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PhoneInnerInterval 电话告警轮内间隔。单位：秒
-注：NotifyWay选择CALL，采用该参数。
+                     * @return PhoneInnerInterval <p>电话告警轮内间隔。单位：秒<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPhoneInnerInterval() const;
 
                     /**
-                     * 设置电话告警轮内间隔。单位：秒
-注：NotifyWay选择CALL，采用该参数。
+                     * 设置<p>电话告警轮内间隔。单位：秒<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _phoneInnerInterval 电话告警轮内间隔。单位：秒
-注：NotifyWay选择CALL，采用该参数。
+                     * @param _phoneInnerInterval <p>电话告警轮内间隔。单位：秒<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -352,22 +328,18 @@ alertmanager
                     bool PhoneInnerIntervalHasBeenSet() const;
 
                     /**
-                     * 获取电话告警轮外间隔。单位：秒
-注：NotifyWay选择CALL，采用该参数。
+                     * 获取<p>电话告警轮外间隔。单位：秒<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PhoneCircleInterval 电话告警轮外间隔。单位：秒
-注：NotifyWay选择CALL，采用该参数。
+                     * @return PhoneCircleInterval <p>电话告警轮外间隔。单位：秒<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPhoneCircleInterval() const;
 
                     /**
-                     * 设置电话告警轮外间隔。单位：秒
-注：NotifyWay选择CALL，采用该参数。
+                     * 设置<p>电话告警轮外间隔。单位：秒<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _phoneCircleInterval 电话告警轮外间隔。单位：秒
-注：NotifyWay选择CALL，采用该参数。
+                     * @param _phoneCircleInterval <p>电话告警轮外间隔。单位：秒<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -381,22 +353,18 @@ alertmanager
                     bool PhoneCircleIntervalHasBeenSet() const;
 
                     /**
-                     * 获取电话告警触达通知
-注：NotifyWay选择CALL，采用该参数。
+                     * 获取<p>电话告警触达通知<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PhoneArriveNotice 电话告警触达通知
-注：NotifyWay选择CALL，采用该参数。
+                     * @return PhoneArriveNotice <p>电话告警触达通知<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetPhoneArriveNotice() const;
 
                     /**
-                     * 设置电话告警触达通知
-注：NotifyWay选择CALL，采用该参数。
+                     * 设置<p>电话告警触达通知<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _phoneArriveNotice 电话告警触达通知
-注：NotifyWay选择CALL，采用该参数。
+                     * @param _phoneArriveNotice <p>电话告警触达通知<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -412,101 +380,93 @@ alertmanager
                 private:
 
                     /**
-                     * 是否启用
+                     * <p>是否启用</p>
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;
 
                     /**
-                     * 通道类型，默认为amp，支持以下
-amp
-webhook
-alertmanager
+                     * <p>通道类型，默认为amp，支持以下<br>amp<br>webhook<br>alertmanager</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 如果Type为webhook, 则该字段为必填项
+                     * <p>如果Type为webhook, 则该字段为必填项</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_webHook;
                     bool m_webHookHasBeenSet;
 
                     /**
-                     * 如果Type为alertmanager, 则该字段为必填项
+                     * <p>如果Type为alertmanager, 则该字段为必填项</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PrometheusAlertManagerConfig m_alertManager;
                     bool m_alertManagerHasBeenSet;
 
                     /**
-                     * 收敛时间
+                     * <p>收敛时间</p>
                      */
                     std::string m_repeatInterval;
                     bool m_repeatIntervalHasBeenSet;
 
                     /**
-                     * 生效起始时间
+                     * <p>生效起始时间</p>
                      */
                     std::string m_timeRangeStart;
                     bool m_timeRangeStartHasBeenSet;
 
                     /**
-                     * 生效结束时间
+                     * <p>生效结束时间</p>
                      */
                     std::string m_timeRangeEnd;
                     bool m_timeRangeEndHasBeenSet;
 
                     /**
-                     * 告警通知方式。目前有SMS、EMAIL、CALL、WECHAT方式。
+                     * <p>告警通知方式。目前有SMS、EMAIL、CALL、WECHAT方式。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_notifyWay;
                     bool m_notifyWayHasBeenSet;
 
                     /**
-                     * 告警接收组（用户组）
+                     * <p>告警接收组（用户组）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_receiverGroups;
                     bool m_receiverGroupsHasBeenSet;
 
                     /**
-                     * 电话告警顺序。
-注：NotifyWay选择CALL，采用该参数。
+                     * <p>电话告警顺序。<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_phoneNotifyOrder;
                     bool m_phoneNotifyOrderHasBeenSet;
 
                     /**
-                     * 电话告警次数。
-注：NotifyWay选择CALL，采用该参数。
+                     * <p>电话告警次数。<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_phoneCircleTimes;
                     bool m_phoneCircleTimesHasBeenSet;
 
                     /**
-                     * 电话告警轮内间隔。单位：秒
-注：NotifyWay选择CALL，采用该参数。
+                     * <p>电话告警轮内间隔。单位：秒<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_phoneInnerInterval;
                     bool m_phoneInnerIntervalHasBeenSet;
 
                     /**
-                     * 电话告警轮外间隔。单位：秒
-注：NotifyWay选择CALL，采用该参数。
+                     * <p>电话告警轮外间隔。单位：秒<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_phoneCircleInterval;
                     bool m_phoneCircleIntervalHasBeenSet;
 
                     /**
-                     * 电话告警触达通知
-注：NotifyWay选择CALL，采用该参数。
+                     * <p>电话告警触达通知<br>注：NotifyWay选择CALL，采用该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_phoneArriveNotice;

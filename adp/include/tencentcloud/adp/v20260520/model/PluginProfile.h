@@ -131,35 +131,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取插件产品分类
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 普通插件 |
-| 1 | 连接器类插件 |
-                     * @return PluginClass 插件产品分类
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 普通插件 |
-| 1 | 连接器类插件 |
+                     * 获取<p>插件产品分类</p><p>枚举值：</p><ul><li>0：普通插件</li><li>1：连接器类插件</li></ul>
+                     * @return PluginClass <p>插件产品分类</p><p>枚举值：</p><ul><li>0：普通插件</li><li>1：连接器类插件</li></ul>
                      * 
                      */
                     int64_t GetPluginClass() const;
 
                     /**
-                     * 设置插件产品分类
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 普通插件 |
-| 1 | 连接器类插件 |
-                     * @param _pluginClass 插件产品分类
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 普通插件 |
-| 1 | 连接器类插件 |
+                     * 设置<p>插件产品分类</p><p>枚举值：</p><ul><li>0：普通插件</li><li>1：连接器类插件</li></ul>
+                     * @param _pluginClass <p>插件产品分类</p><p>枚举值：</p><ul><li>0：普通插件</li><li>1：连接器类插件</li></ul>
                      * 
                      */
                     void SetPluginClass(const int64_t& _pluginClass);
@@ -172,43 +152,15 @@ namespace TencentCloud
                     bool PluginClassHasBeenSet() const;
 
                     /**
-                     * 获取插件类型
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | API接口 |
-| 1 | 代码 |
-| 2 | MCP |
-| 3 | 应用 |
-                     * @return PluginKind 插件类型
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | API接口 |
-| 1 | 代码 |
-| 2 | MCP |
-| 3 | 应用 |
+                     * 获取<p>插件类型</p><p>枚举值：</p><ul><li>0：API接口</li><li>1：代码</li><li>2：MCP</li><li>3：应用</li></ul>
+                     * @return PluginKind <p>插件类型</p><p>枚举值：</p><ul><li>0：API接口</li><li>1：代码</li><li>2：MCP</li><li>3：应用</li></ul>
                      * 
                      */
                     int64_t GetPluginKind() const;
 
                     /**
-                     * 设置插件类型
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | API接口 |
-| 1 | 代码 |
-| 2 | MCP |
-| 3 | 应用 |
-                     * @param _pluginKind 插件类型
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | API接口 |
-| 1 | 代码 |
-| 2 | MCP |
-| 3 | 应用 |
+                     * 设置<p>插件类型</p><p>枚举值：</p><ul><li>0：API接口</li><li>1：代码</li><li>2：MCP</li><li>3：应用</li></ul>
+                     * @param _pluginKind <p>插件类型</p><p>枚举值：</p><ul><li>0：API接口</li><li>1：代码</li><li>2：MCP</li><li>3：应用</li></ul>
                      * 
                      */
                     void SetPluginKind(const int64_t& _pluginKind);
@@ -221,39 +173,15 @@ namespace TencentCloud
                     bool PluginKindHasBeenSet() const;
 
                     /**
-                     * 获取插件来源
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 自定义插件 |
-| 1 | 官方插件 |
-| 2 | 第三方插件 |
-                     * @return PluginSource 插件来源
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 自定义插件 |
-| 1 | 官方插件 |
-| 2 | 第三方插件 |
+                     * 获取<p>插件来源</p><p>枚举值：</p><ul><li>0：自定义插件</li><li>1：官方插件</li><li>2：第三方插件</li></ul>
+                     * @return PluginSource <p>插件来源</p><p>枚举值：</p><ul><li>0：自定义插件</li><li>1：官方插件</li><li>2：第三方插件</li></ul>
                      * 
                      */
                     int64_t GetPluginSource() const;
 
                     /**
-                     * 设置插件来源
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 自定义插件 |
-| 1 | 官方插件 |
-| 2 | 第三方插件 |
-                     * @param _pluginSource 插件来源
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 自定义插件 |
-| 1 | 官方插件 |
-| 2 | 第三方插件 |
+                     * 设置<p>插件来源</p><p>枚举值：</p><ul><li>0：自定义插件</li><li>1：官方插件</li><li>2：第三方插件</li></ul>
+                     * @param _pluginSource <p>插件来源</p><p>枚举值：</p><ul><li>0：自定义插件</li><li>1：官方插件</li><li>2：第三方插件</li></ul>
                      * 
                      */
                     void SetPluginSource(const int64_t& _pluginSource);
@@ -292,37 +220,19 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 插件产品分类
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 普通插件 |
-| 1 | 连接器类插件 |
+                     * <p>插件产品分类</p><p>枚举值：</p><ul><li>0：普通插件</li><li>1：连接器类插件</li></ul>
                      */
                     int64_t m_pluginClass;
                     bool m_pluginClassHasBeenSet;
 
                     /**
-                     * 插件类型
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | API接口 |
-| 1 | 代码 |
-| 2 | MCP |
-| 3 | 应用 |
+                     * <p>插件类型</p><p>枚举值：</p><ul><li>0：API接口</li><li>1：代码</li><li>2：MCP</li><li>3：应用</li></ul>
                      */
                     int64_t m_pluginKind;
                     bool m_pluginKindHasBeenSet;
 
                     /**
-                     * 插件来源
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 自定义插件 |
-| 1 | 官方插件 |
-| 2 | 第三方插件 |
+                     * <p>插件来源</p><p>枚举值：</p><ul><li>0：自定义插件</li><li>1：官方插件</li><li>2：第三方插件</li></ul>
                      */
                     int64_t m_pluginSource;
                     bool m_pluginSourceHasBeenSet;

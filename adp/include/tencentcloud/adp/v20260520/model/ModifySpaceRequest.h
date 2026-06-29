@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool SpaceIdHasBeenSet() const;
 
                     /**
-                     * 获取指定需要更新的字段，支持name和description
-                     * @return FieldMask 指定需要更新的字段，支持name和description
+                     * 获取指定需要更新的字段，支持Name和Description
+                     * @return FieldMask 指定需要更新的字段，支持Name和Description
                      * 
                      */
                     FieldMask GetFieldMask() const;
 
                     /**
-                     * 设置指定需要更新的字段，支持name和description
-                     * @param _fieldMask 指定需要更新的字段，支持name和description
+                     * 设置指定需要更新的字段，支持Name和Description
+                     * @param _fieldMask 指定需要更新的字段，支持Name和Description
                      * 
                      */
                     void SetFieldMask(const FieldMask& _fieldMask);
@@ -148,7 +148,7 @@ namespace TencentCloud
                     bool m_spaceIdHasBeenSet;
 
                     /**
-                     * 指定需要更新的字段，支持name和description
+                     * 指定需要更新的字段，支持Name和Description
                      */
                     FieldMask m_fieldMask;
                     bool m_fieldMaskHasBeenSet;

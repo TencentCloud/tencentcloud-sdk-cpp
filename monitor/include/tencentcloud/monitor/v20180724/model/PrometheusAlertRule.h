@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则名称
-                     * @return Name 规则名称
+                     * 获取<p>规则名称</p>
+                     * @return Name <p>规则名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置规则名称
-                     * @param _name 规则名称
+                     * 设置<p>规则名称</p>
+                     * @param _name <p>规则名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取prometheus语句
-                     * @return Rule prometheus语句
+                     * 获取<p>prometheus语句</p>
+                     * @return Rule <p>prometheus语句</p>
                      * 
                      */
                     std::string GetRule() const;
 
                     /**
-                     * 设置prometheus语句
-                     * @param _rule prometheus语句
+                     * 设置<p>prometheus语句</p>
+                     * @param _rule <p>prometheus语句</p>
                      * 
                      */
                     void SetRule(const std::string& _rule);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool RuleHasBeenSet() const;
 
                     /**
-                     * 获取额外标签
-                     * @return Labels 额外标签
+                     * 获取<p>额外标签</p>
+                     * @return Labels <p>额外标签</p>
                      * 
                      */
                     std::vector<Label> GetLabels() const;
 
                     /**
-                     * 设置额外标签
-                     * @param _labels 额外标签
+                     * 设置<p>额外标签</p>
+                     * @param _labels <p>额外标签</p>
                      * 
                      */
                     void SetLabels(const std::vector<Label>& _labels);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool LabelsHasBeenSet() const;
 
                     /**
-                     * 获取告警发送模板
-                     * @return Template 告警发送模板
+                     * 获取<p>告警发送模板</p>
+                     * @return Template <p>告警发送模板</p>
                      * 
                      */
                     std::string GetTemplate() const;
 
                     /**
-                     * 设置告警发送模板
-                     * @param _template 告警发送模板
+                     * 设置<p>告警发送模板</p>
+                     * @param _template <p>告警发送模板</p>
                      * 
                      */
                     void SetTemplate(const std::string& _template);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool TemplateHasBeenSet() const;
 
                     /**
-                     * 获取持续时间
-                     * @return For 持续时间
+                     * 获取<p>持续时间</p>
+                     * @return For <p>持续时间</p>
                      * 
                      */
                     std::string GetFor() const;
 
                     /**
-                     * 设置持续时间
-                     * @param _for 持续时间
+                     * 设置<p>持续时间</p>
+                     * @param _for <p>持续时间</p>
                      * 
                      */
                     void SetFor(const std::string& _for);
@@ -153,18 +153,18 @@ namespace TencentCloud
                     bool ForHasBeenSet() const;
 
                     /**
-                     * 获取该条规则的描述信息
+                     * 获取<p>该条规则的描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Describe 该条规则的描述信息
+                     * @return Describe <p>该条规则的描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescribe() const;
 
                     /**
-                     * 设置该条规则的描述信息
+                     * 设置<p>该条规则的描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _describe 该条规则的描述信息
+                     * @param _describe <p>该条规则的描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -178,18 +178,18 @@ namespace TencentCloud
                     bool DescribeHasBeenSet() const;
 
                     /**
-                     * 获取参考prometheus rule中的annotations
+                     * 获取<p>参考prometheus rule中的annotations</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Annotations 参考prometheus rule中的annotations
+                     * @return Annotations <p>参考prometheus rule中的annotations</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Label> GetAnnotations() const;
 
                     /**
-                     * 设置参考prometheus rule中的annotations
+                     * 设置<p>参考prometheus rule中的annotations</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _annotations 参考prometheus rule中的annotations
+                     * @param _annotations <p>参考prometheus rule中的annotations</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -203,18 +203,18 @@ namespace TencentCloud
                     bool AnnotationsHasBeenSet() const;
 
                     /**
-                     * 获取告警规则状态
+                     * 获取<p>告警规则状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleState 告警规则状态
+                     * @return RuleState <p>告警规则状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRuleState() const;
 
                     /**
-                     * 设置告警规则状态
+                     * 设置<p>告警规则状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ruleState 告警规则状态
+                     * @param _ruleState <p>告警规则状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -230,51 +230,51 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 规则名称
+                     * <p>规则名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * prometheus语句
+                     * <p>prometheus语句</p>
                      */
                     std::string m_rule;
                     bool m_ruleHasBeenSet;
 
                     /**
-                     * 额外标签
+                     * <p>额外标签</p>
                      */
                     std::vector<Label> m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
-                     * 告警发送模板
+                     * <p>告警发送模板</p>
                      */
                     std::string m_template;
                     bool m_templateHasBeenSet;
 
                     /**
-                     * 持续时间
+                     * <p>持续时间</p>
                      */
                     std::string m_for;
                     bool m_forHasBeenSet;
 
                     /**
-                     * 该条规则的描述信息
+                     * <p>该条规则的描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_describe;
                     bool m_describeHasBeenSet;
 
                     /**
-                     * 参考prometheus rule中的annotations
+                     * <p>参考prometheus rule中的annotations</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Label> m_annotations;
                     bool m_annotationsHasBeenSet;
 
                     /**
-                     * 告警规则状态
+                     * <p>告警规则状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleState;

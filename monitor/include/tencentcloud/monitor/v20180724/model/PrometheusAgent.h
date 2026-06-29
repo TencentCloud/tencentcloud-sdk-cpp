@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Agent 名
+                     * 获取<p>Agent 名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name Agent 名
+                     * @return Name <p>Agent 名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置Agent 名
+                     * 设置<p>Agent 名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name Agent 名
+                     * @param _name <p>Agent 名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Agent ID
-                     * @return AgentId Agent ID
+                     * 获取<p>Agent ID</p>
+                     * @return AgentId <p>Agent ID</p>
                      * 
                      */
                     std::string GetAgentId() const;
 
                     /**
-                     * 设置Agent ID
-                     * @param _agentId Agent ID
+                     * 设置<p>Agent ID</p>
+                     * @param _agentId <p>Agent ID</p>
                      * 
                      */
                     void SetAgentId(const std::string& _agentId);
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool AgentIdHasBeenSet() const;
 
                     /**
-                     * 获取实例 ID
-                     * @return InstanceId 实例 ID
+                     * 获取<p>实例 ID</p>
+                     * @return InstanceId <p>实例 ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param _instanceId 实例 ID
+                     * 设置<p>实例 ID</p>
+                     * @param _instanceId <p>实例 ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -114,18 +114,18 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Agent IP
+                     * 获取<p>Agent IP</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Ipv4 Agent IP
+                     * @return Ipv4 <p>Agent IP</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIpv4() const;
 
                     /**
-                     * 设置Agent IP
+                     * 设置<p>Agent IP</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ipv4 Agent IP
+                     * @param _ipv4 <p>Agent IP</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -139,18 +139,18 @@ namespace TencentCloud
                     bool Ipv4HasBeenSet() const;
 
                     /**
-                     * 获取心跳时间
+                     * 获取<p>心跳时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HeartbeatTime 心跳时间
+                     * @return HeartbeatTime <p>心跳时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHeartbeatTime() const;
 
                     /**
-                     * 设置心跳时间
+                     * 设置<p>心跳时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _heartbeatTime 心跳时间
+                     * @param _heartbeatTime <p>心跳时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -164,18 +164,18 @@ namespace TencentCloud
                     bool HeartbeatTimeHasBeenSet() const;
 
                     /**
-                     * 获取最近一次错误
+                     * 获取<p>最近一次错误</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastError 最近一次错误
+                     * @return LastError <p>最近一次错误</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastError() const;
 
                     /**
-                     * 设置最近一次错误
+                     * 设置<p>最近一次错误</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lastError 最近一次错误
+                     * @param _lastError <p>最近一次错误</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -189,18 +189,18 @@ namespace TencentCloud
                     bool LastErrorHasBeenSet() const;
 
                     /**
-                     * 获取Agent 版本
+                     * 获取<p>Agent 版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AgentVersion Agent 版本
+                     * @return AgentVersion <p>Agent 版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAgentVersion() const;
 
                     /**
-                     * 设置Agent 版本
+                     * 设置<p>Agent 版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _agentVersion Agent 版本
+                     * @param _agentVersion <p>Agent 版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -214,15 +214,15 @@ namespace TencentCloud
                     bool AgentVersionHasBeenSet() const;
 
                     /**
-                     * 获取Agent 状态
-                     * @return Status Agent 状态
+                     * 获取<p>Agent 状态</p>
+                     * @return Status <p>Agent 状态</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置Agent 状态
-                     * @param _status Agent 状态
+                     * 设置<p>Agent 状态</p>
+                     * @param _status <p>Agent 状态</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -237,54 +237,54 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Agent 名
+                     * <p>Agent 名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Agent ID
+                     * <p>Agent ID</p>
                      */
                     std::string m_agentId;
                     bool m_agentIdHasBeenSet;
 
                     /**
-                     * 实例 ID
+                     * <p>实例 ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Agent IP
+                     * <p>Agent IP</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ipv4;
                     bool m_ipv4HasBeenSet;
 
                     /**
-                     * 心跳时间
+                     * <p>心跳时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_heartbeatTime;
                     bool m_heartbeatTimeHasBeenSet;
 
                     /**
-                     * 最近一次错误
+                     * <p>最近一次错误</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastError;
                     bool m_lastErrorHasBeenSet;
 
                     /**
-                     * Agent 版本
+                     * <p>Agent 版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_agentVersion;
                     bool m_agentVersionHasBeenSet;
 
                     /**
-                     * Agent 状态
+                     * <p>Agent 状态</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标所在地域
-                     * @return Region 目标所在地域
+                     * 获取<p>目标所在地域</p>
+                     * @return Region <p>目标所在地域</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置目标所在地域
-                     * @param _region 目标所在地域
+                     * 设置<p>目标所在地域</p>
+                     * @param _region <p>目标所在地域</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取目标实例
-                     * @return InstanceId 目标实例
+                     * 获取<p>目标实例</p>
+                     * @return InstanceId <p>目标实例</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置目标实例
-                     * @param _instanceId 目标实例
+                     * 设置<p>目标实例</p>
+                     * @param _instanceId <p>目标实例</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -89,18 +89,18 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取集群id，只有当采集模板的Level为cluster的时候需要
+                     * 获取<p>集群id，只有当采集模板的Level为cluster的时候需要</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterId 集群id，只有当采集模板的Level为cluster的时候需要
+                     * @return ClusterId <p>集群id，只有当采集模板的Level为cluster的时候需要</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群id，只有当采集模板的Level为cluster的时候需要
+                     * 设置<p>集群id，只有当采集模板的Level为cluster的时候需要</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clusterId 集群id，只有当采集模板的Level为cluster的时候需要
+                     * @param _clusterId <p>集群id，只有当采集模板的Level为cluster的时候需要</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -114,18 +114,18 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取最后一次同步时间， 用于出参
+                     * 获取<p>最后一次同步时间， 用于出参</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SyncTime 最后一次同步时间， 用于出参
+                     * @return SyncTime <p>最后一次同步时间， 用于出参</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSyncTime() const;
 
                     /**
-                     * 设置最后一次同步时间， 用于出参
+                     * 设置<p>最后一次同步时间， 用于出参</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _syncTime 最后一次同步时间， 用于出参
+                     * @param _syncTime <p>最后一次同步时间， 用于出参</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -139,18 +139,18 @@ namespace TencentCloud
                     bool SyncTimeHasBeenSet() const;
 
                     /**
-                     * 获取当前使用的模板版本，用于出参
+                     * 获取<p>当前使用的模板版本，用于出参</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Version 当前使用的模板版本，用于出参
+                     * @return Version <p>当前使用的模板版本，用于出参</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
-                     * 设置当前使用的模板版本，用于出参
+                     * 设置<p>当前使用的模板版本，用于出参</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _version 当前使用的模板版本，用于出参
+                     * @param _version <p>当前使用的模板版本，用于出参</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -164,18 +164,18 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取集群类型，只有当采集模板的Level为cluster的时候需要
+                     * 获取<p>集群类型，只有当采集模板的Level为cluster的时候需要</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterType 集群类型，只有当采集模板的Level为cluster的时候需要
+                     * @return ClusterType <p>集群类型，只有当采集模板的Level为cluster的时候需要</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置集群类型，只有当采集模板的Level为cluster的时候需要
+                     * 设置<p>集群类型，只有当采集模板的Level为cluster的时候需要</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clusterType 集群类型，只有当采集模板的Level为cluster的时候需要
+                     * @param _clusterType <p>集群类型，只有当采集模板的Level为cluster的时候需要</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -189,18 +189,18 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取用于出参，实例名称
+                     * 获取<p>用于出参，实例名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceName 用于出参，实例名称
+                     * @return InstanceName <p>用于出参，实例名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置用于出参，实例名称
+                     * 设置<p>用于出参，实例名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceName 用于出参，实例名称
+                     * @param _instanceName <p>用于出参，实例名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -214,18 +214,18 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取用于出参，集群名称
+                     * 获取<p>用于出参，集群名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterName 用于出参，集群名称
+                     * @return ClusterName <p>用于出参，集群名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
-                     * 设置用于出参，集群名称
+                     * 设置<p>用于出参，集群名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clusterName 用于出参，集群名称
+                     * @param _clusterName <p>用于出参，集群名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -241,54 +241,54 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目标所在地域
+                     * <p>目标所在地域</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 目标实例
+                     * <p>目标实例</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 集群id，只有当采集模板的Level为cluster的时候需要
+                     * <p>集群id，只有当采集模板的Level为cluster的时候需要</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 最后一次同步时间， 用于出参
+                     * <p>最后一次同步时间， 用于出参</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_syncTime;
                     bool m_syncTimeHasBeenSet;
 
                     /**
-                     * 当前使用的模板版本，用于出参
+                     * <p>当前使用的模板版本，用于出参</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 集群类型，只有当采集模板的Level为cluster的时候需要
+                     * <p>集群类型，只有当采集模板的Level为cluster的时候需要</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 用于出参，实例名称
+                     * <p>用于出参，实例名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 用于出参，集群名称
+                     * <p>用于出参，集群名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterName;

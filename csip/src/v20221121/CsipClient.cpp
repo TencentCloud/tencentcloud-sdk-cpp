@@ -2740,6 +2740,106 @@ CsipClient::DescribeCFWAssetStatisticsOutcomeCallable CsipClient::DescribeCFWAss
     return prom->get_future();
 }
 
+CsipClient::DescribeCLSLogIndexV3Outcome CsipClient::DescribeCLSLogIndexV3(const DescribeCLSLogIndexV3Request &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCLSLogIndexV3");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCLSLogIndexV3Response rsp = DescribeCLSLogIndexV3Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCLSLogIndexV3Outcome(rsp);
+        else
+            return DescribeCLSLogIndexV3Outcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCLSLogIndexV3Outcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeCLSLogIndexV3Async(const DescribeCLSLogIndexV3Request& request, const DescribeCLSLogIndexV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCLSLogIndexV3Request&;
+    using Resp = DescribeCLSLogIndexV3Response;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCLSLogIndexV3", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeCLSLogIndexV3OutcomeCallable CsipClient::DescribeCLSLogIndexV3Callable(const DescribeCLSLogIndexV3Request &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCLSLogIndexV3Outcome>>();
+    DescribeCLSLogIndexV3Async(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeCLSLogIndexV3Request&,
+        DescribeCLSLogIndexV3Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeCLSLogListV3Outcome CsipClient::DescribeCLSLogListV3(const DescribeCLSLogListV3Request &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCLSLogListV3");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCLSLogListV3Response rsp = DescribeCLSLogListV3Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCLSLogListV3Outcome(rsp);
+        else
+            return DescribeCLSLogListV3Outcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCLSLogListV3Outcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeCLSLogListV3Async(const DescribeCLSLogListV3Request& request, const DescribeCLSLogListV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCLSLogListV3Request&;
+    using Resp = DescribeCLSLogListV3Response;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCLSLogListV3", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeCLSLogListV3OutcomeCallable CsipClient::DescribeCLSLogListV3Callable(const DescribeCLSLogListV3Request &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCLSLogListV3Outcome>>();
+    DescribeCLSLogListV3Async(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeCLSLogListV3Request&,
+        DescribeCLSLogListV3Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::DescribeCSIPRiskStatisticsOutcome CsipClient::DescribeCSIPRiskStatistics(const DescribeCSIPRiskStatisticsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCSIPRiskStatistics");

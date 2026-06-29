@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DefaultValueHasBeenSet() const;
 
                     /**
-                     * 获取枚举值列表（仅枚举类型有效）
-                     * @return EnumValueList 枚举值列表（仅枚举类型有效）
+                     * 获取可选值列表
+                     * @return EnumValueList 可选值列表
                      * 
                      */
                     std::vector<std::string> GetEnumValueList() const;
 
                     /**
-                     * 设置枚举值列表（仅枚举类型有效）
-                     * @param _enumValueList 枚举值列表（仅枚举类型有效）
+                     * 设置可选值列表
+                     * @param _enumValueList 可选值列表
                      * 
                      */
                     void SetEnumValueList(const std::vector<std::string>& _enumValueList);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取超参类型。1-浮点数, 2-整数, 3-字符串, 4-枚举
-                     * @return Type 超参类型。1-浮点数, 2-整数, 3-字符串, 4-枚举
+                     * 获取超参类型。1-浮点数, 2-整数, 3-字符串
+                     * @return Type 超参类型。1-浮点数, 2-整数, 3-字符串
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置超参类型。1-浮点数, 2-整数, 3-字符串, 4-枚举
-                     * @param _type 超参类型。1-浮点数, 2-整数, 3-字符串, 4-枚举
+                     * 设置超参类型。1-浮点数, 2-整数, 3-字符串
+                     * @param _type 超参类型。1-浮点数, 2-整数, 3-字符串
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -181,7 +181,7 @@ namespace TencentCloud
                     bool m_defaultValueHasBeenSet;
 
                     /**
-                     * 枚举值列表（仅枚举类型有效）
+                     * 可选值列表
                      */
                     std::vector<std::string> m_enumValueList;
                     bool m_enumValueListHasBeenSet;
@@ -205,7 +205,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 超参类型。1-浮点数, 2-整数, 3-字符串, 4-枚举
+                     * 超参类型。1-浮点数, 2-整数, 3-字符串
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;

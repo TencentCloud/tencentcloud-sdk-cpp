@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取固定值，monitor
-                     * @return Module 固定值，monitor
+                     * 获取<p>固定值，monitor</p>
+                     * @return Module <p>固定值，monitor</p>
                      * 
                      */
                     std::string GetModule() const;
 
                     /**
-                     * 设置固定值，monitor
-                     * @param _module 固定值，monitor
+                     * 设置<p>固定值，monitor</p>
+                     * @param _module <p>固定值，monitor</p>
                      * 
                      */
                     void SetModule(const std::string& _module);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取视图名
-                     * @return ViewName 视图名
+                     * 获取<p>视图名</p>
+                     * @return ViewName <p>视图名</p>
                      * 
                      */
                     std::string GetViewName() const;
 
                     /**
-                     * 设置视图名
-                     * @param _viewName 视图名
+                     * 设置<p>视图名</p>
+                     * @param _viewName <p>视图名</p>
                      * 
                      */
                     void SetViewName(const std::string& _viewName);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool ViewNameHasBeenSet() const;
 
                     /**
-                     * 获取组名
-                     * @return GroupName 组名
+                     * 获取<p>组名</p>
+                     * @return GroupName <p>组名</p>
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置组名
-                     * @param _groupName 组名
+                     * 设置<p>组名</p>
+                     * @param _groupName <p>组名</p>
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取是否为与关系
-                     * @return IsUnionRule 是否为与关系
+                     * 获取<p>是否为与关系</p>
+                     * @return IsUnionRule <p>是否为与关系</p>
                      * 
                      */
                     int64_t GetIsUnionRule() const;
 
                     /**
-                     * 设置是否为与关系
-                     * @param _isUnionRule 是否为与关系
+                     * 设置<p>是否为与关系</p>
+                     * @param _isUnionRule <p>是否为与关系</p>
                      * 
                      */
                     void SetIsUnionRule(const int64_t& _isUnionRule);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool IsUnionRuleHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Remark 备注
+                     * 获取<p>备注</p>
+                     * @return Remark <p>备注</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注
-                     * @param _remark 备注
+                     * 设置<p>备注</p>
+                     * @param _remark <p>备注</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取父ID
-                     * @return ParentGroupID 父ID
+                     * 获取<p>父ID</p>
+                     * @return ParentGroupID <p>父ID</p>
                      * 
                      */
                     int64_t GetParentGroupID() const;
 
                     /**
-                     * 设置父ID
-                     * @param _parentGroupID 父ID
+                     * 设置<p>父ID</p>
+                     * @param _parentGroupID <p>父ID</p>
                      * 
                      */
                     void SetParentGroupID(const int64_t& _parentGroupID);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool ParentGroupIDHasBeenSet() const;
 
                     /**
-                     * 获取是否屏蔽
-                     * @return IsShielded 是否屏蔽
+                     * 获取<p>是否屏蔽</p>
+                     * @return IsShielded <p>是否屏蔽</p>
                      * 
                      */
                     int64_t GetIsShielded() const;
 
                     /**
-                     * 设置是否屏蔽
-                     * @param _isShielded 是否屏蔽
+                     * 设置<p>是否屏蔽</p>
+                     * @param _isShielded <p>是否屏蔽</p>
                      * 
                      */
                     void SetIsShielded(const int64_t& _isShielded);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool IsShieldedHasBeenSet() const;
 
                     /**
-                     * 获取复合告警表达式
-                     * @return ComplexExpression 复合告警表达式
+                     * 获取<p>复合告警表达式</p>
+                     * @return ComplexExpression <p>复合告警表达式</p>
                      * 
                      */
                     std::string GetComplexExpression() const;
 
                     /**
-                     * 设置复合告警表达式
-                     * @param _complexExpression 复合告警表达式
+                     * 设置<p>复合告警表达式</p>
+                     * @param _complexExpression <p>复合告警表达式</p>
                      * 
                      */
                     void SetComplexExpression(const std::string& _complexExpression);
@@ -213,15 +213,15 @@ namespace TencentCloud
                     bool ComplexExpressionHasBeenSet() const;
 
                     /**
-                     * 获取指标告警条件
-                     * @return Conditions 指标告警条件
+                     * 获取<p>指标告警条件</p>
+                     * @return Conditions <p>指标告警条件</p>
                      * 
                      */
                     std::vector<ModifyConditionsTemplateRequestCondition> GetConditions() const;
 
                     /**
-                     * 设置指标告警条件
-                     * @param _conditions 指标告警条件
+                     * 设置<p>指标告警条件</p>
+                     * @param _conditions <p>指标告警条件</p>
                      * 
                      */
                     void SetConditions(const std::vector<ModifyConditionsTemplateRequestCondition>& _conditions);
@@ -234,15 +234,15 @@ namespace TencentCloud
                     bool ConditionsHasBeenSet() const;
 
                     /**
-                     * 获取事件告警条件
-                     * @return EventConditions 事件告警条件
+                     * 获取<p>事件告警条件</p>
+                     * @return EventConditions <p>事件告警条件</p>
                      * 
                      */
                     std::vector<ModifyConditionsTemplateRequestEventCondition> GetEventConditions() const;
 
                     /**
-                     * 设置事件告警条件
-                     * @param _eventConditions 事件告警条件
+                     * 设置<p>事件告警条件</p>
+                     * @param _eventConditions <p>事件告警条件</p>
                      * 
                      */
                     void SetEventConditions(const std::vector<ModifyConditionsTemplateRequestEventCondition>& _eventConditions);
@@ -257,61 +257,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 固定值，monitor
+                     * <p>固定值，monitor</p>
                      */
                     std::string m_module;
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 视图名
+                     * <p>视图名</p>
                      */
                     std::string m_viewName;
                     bool m_viewNameHasBeenSet;
 
                     /**
-                     * 组名
+                     * <p>组名</p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 是否为与关系
+                     * <p>是否为与关系</p>
                      */
                     int64_t m_isUnionRule;
                     bool m_isUnionRuleHasBeenSet;
 
                     /**
-                     * 备注
+                     * <p>备注</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 父ID
+                     * <p>父ID</p>
                      */
                     int64_t m_parentGroupID;
                     bool m_parentGroupIDHasBeenSet;
 
                     /**
-                     * 是否屏蔽
+                     * <p>是否屏蔽</p>
                      */
                     int64_t m_isShielded;
                     bool m_isShieldedHasBeenSet;
 
                     /**
-                     * 复合告警表达式
+                     * <p>复合告警表达式</p>
                      */
                     std::string m_complexExpression;
                     bool m_complexExpressionHasBeenSet;
 
                     /**
-                     * 指标告警条件
+                     * <p>指标告警条件</p>
                      */
                     std::vector<ModifyConditionsTemplateRequestCondition> m_conditions;
                     bool m_conditionsHasBeenSet;
 
                     /**
-                     * 事件告警条件
+                     * <p>事件告警条件</p>
                      */
                     std::vector<ModifyConditionsTemplateRequestEventCondition> m_eventConditions;
                     bool m_eventConditionsHasBeenSet;

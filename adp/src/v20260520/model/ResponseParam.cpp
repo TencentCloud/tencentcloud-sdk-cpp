@@ -23,9 +23,9 @@ using namespace std;
 ResponseParam::ResponseParam() :
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
     m_renderModeHasBeenSet(false),
-    m_subParamsHasBeenSet(false)
+    m_subParamsHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -52,16 +52,6 @@ CoreInternalOutcome ResponseParam::Deserialize(const rapidjson::Value &value)
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
-    }
-
-    if (value.HasMember("Type") && !value["Type"].IsNull())
-    {
-        if (!value["Type"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `ResponseParam.Type` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_type = value["Type"].GetInt64();
-        m_typeHasBeenSet = true;
     }
 
     if (value.HasMember("RenderMode") && !value["RenderMode"].IsNull())
@@ -94,6 +84,16 @@ CoreInternalOutcome ResponseParam::Deserialize(const rapidjson::Value &value)
         m_subParamsHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResponseParam.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = value["Type"].GetInt64();
+        m_typeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -117,14 +117,6 @@ void ResponseParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_typeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Type";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_type, allocator);
-    }
-
     if (m_renderModeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -146,6 +138,14 @@ void ResponseParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_type, allocator);
     }
 
 }
@@ -183,22 +183,6 @@ bool ResponseParam::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
-int64_t ResponseParam::GetType() const
-{
-    return m_type;
-}
-
-void ResponseParam::SetType(const int64_t& _type)
-{
-    m_type = _type;
-    m_typeHasBeenSet = true;
-}
-
-bool ResponseParam::TypeHasBeenSet() const
-{
-    return m_typeHasBeenSet;
-}
-
 int64_t ResponseParam::GetRenderMode() const
 {
     return m_renderMode;
@@ -229,5 +213,21 @@ void ResponseParam::SetSubParams(const vector<ResponseParam>& _subParams)
 bool ResponseParam::SubParamsHasBeenSet() const
 {
     return m_subParamsHasBeenSet;
+}
+
+int64_t ResponseParam::GetType() const
+{
+    return m_type;
+}
+
+void ResponseParam::SetType(const int64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool ResponseParam::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
