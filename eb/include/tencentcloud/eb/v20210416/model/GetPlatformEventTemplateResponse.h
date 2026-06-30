@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取平台产品事件模板
-                     * @return EventTemplate 平台产品事件模板
+                     * 获取<p>平台产品事件模板</p>
+                     * @return EventTemplate <p>平台产品事件模板</p>
                      * 
                      */
                     std::string GetEventTemplate() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 平台产品事件模板
+                     * <p>平台产品事件模板</p>
                      */
                     std::string m_eventTemplate;
                     bool m_eventTemplateHasBeenSet;

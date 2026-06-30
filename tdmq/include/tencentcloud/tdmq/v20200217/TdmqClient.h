@@ -1637,7 +1637,9 @@ namespace TencentCloud
                 DescribeRocketMQGroupsOutcomeCallable DescribeRocketMQGroupsCallable(const Model::DescribeRocketMQGroupsRequest& request);
 
                 /**
-                 *查询Topic迁移状态列表，源集群和目标集群客户端数量信息需要配合DescribeRocketMQSmoothMigrationTaskTopicInsNum接口查询
+                 *历史接口，对应接口已迁移到trocket
+
+查询Topic迁移状态列表，源集群和目标集群客户端数量信息需要配合DescribeRocketMQSmoothMigrationTaskTopicInsNum接口查询
                  * @param req DescribeRocketMQMigratingTopicListRequest
                  * @return DescribeRocketMQMigratingTopicListOutcome
                  */
@@ -1716,7 +1718,9 @@ namespace TencentCloud
                 DescribeRocketMQRolesOutcomeCallable DescribeRocketMQRolesCallable(const Model::DescribeRocketMQRolesRequest& request);
 
                 /**
-                 *用于获取RocketMQ平滑迁移任务详情
+                 *历史接口，对应接口已迁移到trocket
+
+用于获取RocketMQ平滑迁移任务详情
                  * @param req DescribeRocketMQSmoothMigrationTaskRequest
                  * @return DescribeRocketMQSmoothMigrationTaskOutcome
                  */
@@ -1877,7 +1881,9 @@ namespace TencentCloud
                 GetTopicListOutcomeCallable GetTopicListCallable(const Model::GetTopicListRequest& request);
 
                 /**
-                 *输入迁移任务id和要导入的Group，导入后台
+                 *历史接口，对应接口已迁移到trocket
+
+输入迁移任务id和要导入的Group，导入后台
                  * @param req ImportRocketMQConsumerGroupsRequest
                  * @return ImportRocketMQConsumerGroupsOutcome
                  */
@@ -1886,7 +1892,9 @@ namespace TencentCloud
                 ImportRocketMQConsumerGroupsOutcomeCallable ImportRocketMQConsumerGroupsCallable(const Model::ImportRocketMQConsumerGroupsRequest& request);
 
                 /**
-                 *导入topic列表
+                 *历史接口，对应接口已迁移到trocket
+
+导入topic列表
                  * @param req ImportRocketMQTopicsRequest
                  * @return ImportRocketMQTopicsOutcome
                  */

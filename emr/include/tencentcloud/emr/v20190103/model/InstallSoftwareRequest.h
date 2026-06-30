@@ -321,6 +321,27 @@ namespace TencentCloud
                      */
                     bool ContainerExtraConfHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否强制检查自定义组件的合理性，目前仅提供给tf侧使用</p>
+                     * @return CheckServiceDeployInfo <p>是否强制检查自定义组件的合理性，目前仅提供给tf侧使用</p>
+                     * 
+                     */
+                    bool GetCheckServiceDeployInfo() const;
+
+                    /**
+                     * 设置<p>是否强制检查自定义组件的合理性，目前仅提供给tf侧使用</p>
+                     * @param _checkServiceDeployInfo <p>是否强制检查自定义组件的合理性，目前仅提供给tf侧使用</p>
+                     * 
+                     */
+                    void SetCheckServiceDeployInfo(const bool& _checkServiceDeployInfo);
+
+                    /**
+                     * 判断参数 CheckServiceDeployInfo 是否已赋值
+                     * @return CheckServiceDeployInfo 是否已赋值
+                     * 
+                     */
+                    bool CheckServiceDeployInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -400,6 +421,12 @@ namespace TencentCloud
                      */
                     ContainerExtraConf m_containerExtraConf;
                     bool m_containerExtraConfHasBeenSet;
+
+                    /**
+                     * <p>是否强制检查自定义组件的合理性，目前仅提供给tf侧使用</p>
+                     */
+                    bool m_checkServiceDeployInfo;
+                    bool m_checkServiceDeployInfoHasBeenSet;
 
                 };
             }

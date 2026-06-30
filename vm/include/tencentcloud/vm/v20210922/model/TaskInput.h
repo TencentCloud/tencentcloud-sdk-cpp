@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vm/v20210922/model/StorageInfo.h>
+#include <tencentcloud/vm/v20210922/model/DecodeParams.h>
 
 
 namespace TencentCloud
@@ -48,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据ID
-                     * @return DataId 数据ID
+                     * 获取<p>数据ID</p>
+                     * @return DataId <p>数据ID</p>
                      * 
                      */
                     std::string GetDataId() const;
 
                     /**
-                     * 设置数据ID
-                     * @param _dataId 数据ID
+                     * 设置<p>数据ID</p>
+                     * @param _dataId <p>数据ID</p>
                      * 
                      */
                     void SetDataId(const std::string& _dataId);
@@ -69,15 +70,15 @@ namespace TencentCloud
                     bool DataIdHasBeenSet() const;
 
                     /**
-                     * 获取任务名
-                     * @return Name 任务名
+                     * 获取<p>任务名</p>
+                     * @return Name <p>任务名</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置任务名
-                     * @param _name 任务名
+                     * 设置<p>任务名</p>
+                     * @param _name <p>任务名</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -90,15 +91,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取任务输入
-                     * @return Input 任务输入
+                     * 获取<p>任务输入</p>
+                     * @return Input <p>任务输入</p>
                      * 
                      */
                     StorageInfo GetInput() const;
 
                     /**
-                     * 设置任务输入
-                     * @param _input 任务输入
+                     * 设置<p>任务输入</p>
+                     * @param _input <p>任务输入</p>
                      * 
                      */
                     void SetInput(const StorageInfo& _input);
@@ -110,25 +111,52 @@ namespace TencentCloud
                      */
                     bool InputHasBeenSet() const;
 
+                    /**
+                     * 获取<p>视频解码参数</p>
+                     * @return DecodeParams <p>视频解码参数</p>
+                     * 
+                     */
+                    DecodeParams GetDecodeParams() const;
+
+                    /**
+                     * 设置<p>视频解码参数</p>
+                     * @param _decodeParams <p>视频解码参数</p>
+                     * 
+                     */
+                    void SetDecodeParams(const DecodeParams& _decodeParams);
+
+                    /**
+                     * 判断参数 DecodeParams 是否已赋值
+                     * @return DecodeParams 是否已赋值
+                     * 
+                     */
+                    bool DecodeParamsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 数据ID
+                     * <p>数据ID</p>
                      */
                     std::string m_dataId;
                     bool m_dataIdHasBeenSet;
 
                     /**
-                     * 任务名
+                     * <p>任务名</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 任务输入
+                     * <p>任务输入</p>
                      */
                     StorageInfo m_input;
                     bool m_inputHasBeenSet;
+
+                    /**
+                     * <p>视频解码参数</p>
+                     */
+                    DecodeParams m_decodeParams;
+                    bool m_decodeParamsHasBeenSet;
 
                 };
             }

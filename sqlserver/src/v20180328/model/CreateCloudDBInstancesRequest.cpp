@@ -48,7 +48,9 @@ CreateCloudDBInstancesRequest::CreateCloudDBInstancesRequest() :
     m_timeZoneHasBeenSet(false),
     m_multiNodesHasBeenSet(false),
     m_drZonesHasBeenSet(false),
-    m_diskEncryptFlagHasBeenSet(false)
+    m_diskEncryptFlagHasBeenSet(false),
+    m_throughputPerformanceHasBeenSet(false),
+    m_availabilityStrategyHasBeenSet(false)
 {
 }
 
@@ -292,6 +294,22 @@ string CreateCloudDBInstancesRequest::ToJsonString() const
         string key = "DiskEncryptFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_diskEncryptFlag, allocator);
+    }
+
+    if (m_throughputPerformanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ThroughputPerformance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_throughputPerformance, allocator);
+    }
+
+    if (m_availabilityStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailabilityStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_availabilityStrategy.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -716,6 +734,38 @@ void CreateCloudDBInstancesRequest::SetDiskEncryptFlag(const int64_t& _diskEncry
 bool CreateCloudDBInstancesRequest::DiskEncryptFlagHasBeenSet() const
 {
     return m_diskEncryptFlagHasBeenSet;
+}
+
+uint64_t CreateCloudDBInstancesRequest::GetThroughputPerformance() const
+{
+    return m_throughputPerformance;
+}
+
+void CreateCloudDBInstancesRequest::SetThroughputPerformance(const uint64_t& _throughputPerformance)
+{
+    m_throughputPerformance = _throughputPerformance;
+    m_throughputPerformanceHasBeenSet = true;
+}
+
+bool CreateCloudDBInstancesRequest::ThroughputPerformanceHasBeenSet() const
+{
+    return m_throughputPerformanceHasBeenSet;
+}
+
+string CreateCloudDBInstancesRequest::GetAvailabilityStrategy() const
+{
+    return m_availabilityStrategy;
+}
+
+void CreateCloudDBInstancesRequest::SetAvailabilityStrategy(const string& _availabilityStrategy)
+{
+    m_availabilityStrategy = _availabilityStrategy;
+    m_availabilityStrategyHasBeenSet = true;
+}
+
+bool CreateCloudDBInstancesRequest::AvailabilityStrategyHasBeenSet() const
+{
+    return m_availabilityStrategyHasBeenSet;
 }
 
 

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取事件id
-                     * @return EventId 事件id
+                     * 获取<p>事件id</p>
+                     * @return EventId <p>事件id</p>
                      * 
                      */
                     int64_t GetEventId() const;
 
                     /**
-                     * 设置事件id
-                     * @param _eventId 事件id
+                     * 设置<p>事件id</p>
+                     * @param _eventId <p>事件id</p>
                      * 
                      */
                     void SetEventId(const int64_t& _eventId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool EventIdHasBeenSet() const;
 
                     /**
-                     * 获取告警发送收敛类型。0连续告警，1指数告警
-                     * @return AlarmNotifyType 告警发送收敛类型。0连续告警，1指数告警
+                     * 获取<p>告警发送收敛类型。0连续告警，1指数告警</p>
+                     * @return AlarmNotifyType <p>告警发送收敛类型。0连续告警，1指数告警</p>
                      * 
                      */
                     int64_t GetAlarmNotifyType() const;
 
                     /**
-                     * 设置告警发送收敛类型。0连续告警，1指数告警
-                     * @param _alarmNotifyType 告警发送收敛类型。0连续告警，1指数告警
+                     * 设置<p>告警发送收敛类型。0连续告警，1指数告警</p>
+                     * @param _alarmNotifyType <p>告警发送收敛类型。0连续告警，1指数告警</p>
                      * 
                      */
                     void SetAlarmNotifyType(const int64_t& _alarmNotifyType);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool AlarmNotifyTypeHasBeenSet() const;
 
                     /**
-                     * 获取告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次
-                     * @return AlarmNotifyPeriod 告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次
+                     * 获取<p>告警发送周期单位秒。&lt;0 不触发, 0 只触发一次, &gt;0 每隔triggerTime秒触发一次</p>
+                     * @return AlarmNotifyPeriod <p>告警发送周期单位秒。&lt;0 不触发, 0 只触发一次, &gt;0 每隔triggerTime秒触发一次</p>
                      * 
                      */
                     int64_t GetAlarmNotifyPeriod() const;
 
                     /**
-                     * 设置告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次
-                     * @param _alarmNotifyPeriod 告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次
+                     * 设置<p>告警发送周期单位秒。&lt;0 不触发, 0 只触发一次, &gt;0 每隔triggerTime秒触发一次</p>
+                     * @param _alarmNotifyPeriod <p>告警发送周期单位秒。&lt;0 不触发, 0 只触发一次, &gt;0 每隔triggerTime秒触发一次</p>
                      * 
                      */
                     void SetAlarmNotifyPeriod(const int64_t& _alarmNotifyPeriod);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool AlarmNotifyPeriodHasBeenSet() const;
 
                     /**
-                     * 获取规则id，不填表示新增，填写了ruleId表示在已存在的规则基础上进行修改
-                     * @return RuleId 规则id，不填表示新增，填写了ruleId表示在已存在的规则基础上进行修改
+                     * 获取<p>规则id，不填表示新增，填写了ruleId表示在已存在的规则基础上进行修改</p>
+                     * @return RuleId <p>规则id，不填表示新增，填写了ruleId表示在已存在的规则基础上进行修改</p>
                      * 
                      */
                     int64_t GetRuleId() const;
 
                     /**
-                     * 设置规则id，不填表示新增，填写了ruleId表示在已存在的规则基础上进行修改
-                     * @param _ruleId 规则id，不填表示新增，填写了ruleId表示在已存在的规则基础上进行修改
+                     * 设置<p>规则id，不填表示新增，填写了ruleId表示在已存在的规则基础上进行修改</p>
+                     * @param _ruleId <p>规则id，不填表示新增，填写了ruleId表示在已存在的规则基础上进行修改</p>
                      * 
                      */
                     void SetRuleId(const int64_t& _ruleId);
@@ -133,25 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 事件id
+                     * <p>事件id</p>
                      */
                     int64_t m_eventId;
                     bool m_eventIdHasBeenSet;
 
                     /**
-                     * 告警发送收敛类型。0连续告警，1指数告警
+                     * <p>告警发送收敛类型。0连续告警，1指数告警</p>
                      */
                     int64_t m_alarmNotifyType;
                     bool m_alarmNotifyTypeHasBeenSet;
 
                     /**
-                     * 告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次
+                     * <p>告警发送周期单位秒。&lt;0 不触发, 0 只触发一次, &gt;0 每隔triggerTime秒触发一次</p>
                      */
                     int64_t m_alarmNotifyPeriod;
                     bool m_alarmNotifyPeriodHasBeenSet;
 
                     /**
-                     * 规则id，不填表示新增，填写了ruleId表示在已存在的规则基础上进行修改
+                     * <p>规则id，不填表示新增，填写了ruleId表示在已存在的规则基础上进行修改</p>
                      */
                     int64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;

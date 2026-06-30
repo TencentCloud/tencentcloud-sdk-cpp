@@ -1240,6 +1240,56 @@ DtsClient::DescribeMigrateDBInstancesOutcomeCallable DtsClient::DescribeMigrateD
     return prom->get_future();
 }
 
+DtsClient::DescribeMigrateGtidCompareReportOutcome DtsClient::DescribeMigrateGtidCompareReport(const DescribeMigrateGtidCompareReportRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMigrateGtidCompareReport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMigrateGtidCompareReportResponse rsp = DescribeMigrateGtidCompareReportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMigrateGtidCompareReportOutcome(rsp);
+        else
+            return DescribeMigrateGtidCompareReportOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMigrateGtidCompareReportOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::DescribeMigrateGtidCompareReportAsync(const DescribeMigrateGtidCompareReportRequest& request, const DescribeMigrateGtidCompareReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMigrateGtidCompareReportRequest&;
+    using Resp = DescribeMigrateGtidCompareReportResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMigrateGtidCompareReport", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DtsClient::DescribeMigrateGtidCompareReportOutcomeCallable DtsClient::DescribeMigrateGtidCompareReportCallable(const DescribeMigrateGtidCompareReportRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMigrateGtidCompareReportOutcome>>();
+    DescribeMigrateGtidCompareReportAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DescribeMigrateGtidCompareReportRequest&,
+        DescribeMigrateGtidCompareReportOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DtsClient::DescribeMigrationCheckJobOutcome DtsClient::DescribeMigrationCheckJob(const DescribeMigrationCheckJobRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMigrationCheckJob");
@@ -1832,6 +1882,56 @@ DtsClient::DescribeSyncCompareTasksOutcomeCallable DtsClient::DescribeSyncCompar
         const DtsClient*,
         const DescribeSyncCompareTasksRequest&,
         DescribeSyncCompareTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DtsClient::DescribeSyncGtidCompareReportOutcome DtsClient::DescribeSyncGtidCompareReport(const DescribeSyncGtidCompareReportRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSyncGtidCompareReport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSyncGtidCompareReportResponse rsp = DescribeSyncGtidCompareReportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSyncGtidCompareReportOutcome(rsp);
+        else
+            return DescribeSyncGtidCompareReportOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSyncGtidCompareReportOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::DescribeSyncGtidCompareReportAsync(const DescribeSyncGtidCompareReportRequest& request, const DescribeSyncGtidCompareReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSyncGtidCompareReportRequest&;
+    using Resp = DescribeSyncGtidCompareReportResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSyncGtidCompareReport", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DtsClient::DescribeSyncGtidCompareReportOutcomeCallable DtsClient::DescribeSyncGtidCompareReportCallable(const DescribeSyncGtidCompareReportRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSyncGtidCompareReportOutcome>>();
+    DescribeSyncGtidCompareReportAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DescribeSyncGtidCompareReportRequest&,
+        DescribeSyncGtidCompareReportOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

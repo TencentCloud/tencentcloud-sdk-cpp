@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取平台产品名称
-                     * @return ProductName 平台产品名称
+                     * 获取<p>平台产品名称</p>
+                     * @return ProductName <p>平台产品名称</p>
                      * 
                      */
                     std::string GetProductName() const;
 
                     /**
-                     * 设置平台产品名称
-                     * @param _productName 平台产品名称
+                     * 设置<p>平台产品名称</p>
+                     * @param _productName <p>平台产品名称</p>
                      * 
                      */
                     void SetProductName(const std::string& _productName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ProductNameHasBeenSet() const;
 
                     /**
-                     * 获取平台产品类型
-                     * @return ProductType 平台产品类型
+                     * 获取<p>平台产品类型</p>
+                     * @return ProductType <p>平台产品类型</p>
                      * 
                      */
                     std::string GetProductType() const;
 
                     /**
-                     * 设置平台产品类型
-                     * @param _productType 平台产品类型
+                     * 设置<p>平台产品类型</p>
+                     * @param _productType <p>平台产品类型</p>
                      * 
                      */
                     void SetProductType(const std::string& _productType);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 平台产品名称
+                     * <p>平台产品名称</p>
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
-                     * 平台产品类型
+                     * <p>平台产品类型</p>
                      */
                     std::string m_productType;
                     bool m_productTypeHasBeenSet;

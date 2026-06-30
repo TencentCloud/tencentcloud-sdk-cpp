@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例组 Id
-                     * @return Id 实例组 Id
+                     * 获取<p>实例组 Id</p>
+                     * @return Id <p>实例组 Id</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置实例组 Id
-                     * @param _id 实例组 Id
+                     * 设置<p>实例组 Id</p>
+                     * @param _id <p>实例组 Id</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取实例组名称
-                     * @return Name 实例组名称
+                     * 获取<p>实例组名称</p>
+                     * @return Name <p>实例组名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置实例组名称
-                     * @param _name 实例组名称
+                     * 设置<p>实例组名称</p>
+                     * @param _name <p>实例组名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例组 Id
+                     * <p>实例组 Id</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 实例组名称
+                     * <p>实例组名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

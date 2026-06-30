@@ -30,7 +30,8 @@ BatchCreateTaskVersionAsyncRequest::BatchCreateTaskVersionAsyncRequest() :
     m_alarmRecipientTypesHasBeenSet(false),
     m_needCheckParentSubmittedHasBeenSet(false),
     m_enableMakeUpHasBeenSet(false),
-    m_assignApprovalListHasBeenSet(false)
+    m_assignApprovalListHasBeenSet(false),
+    m_perTaskMissingInstanceStrategyHasBeenSet(false)
 {
 }
 
@@ -114,6 +115,21 @@ string BatchCreateTaskVersionAsyncRequest::ToJsonString() const
         for (auto itr = m_assignApprovalList.begin(); itr != m_assignApprovalList.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_perTaskMissingInstanceStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PerTaskMissingInstanceStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_perTaskMissingInstanceStrategy.begin(); itr != m_perTaskMissingInstanceStrategy.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -251,6 +267,22 @@ void BatchCreateTaskVersionAsyncRequest::SetAssignApprovalList(const vector<stri
 bool BatchCreateTaskVersionAsyncRequest::AssignApprovalListHasBeenSet() const
 {
     return m_assignApprovalListHasBeenSet;
+}
+
+vector<TaskMissingInstanceStrategy> BatchCreateTaskVersionAsyncRequest::GetPerTaskMissingInstanceStrategy() const
+{
+    return m_perTaskMissingInstanceStrategy;
+}
+
+void BatchCreateTaskVersionAsyncRequest::SetPerTaskMissingInstanceStrategy(const vector<TaskMissingInstanceStrategy>& _perTaskMissingInstanceStrategy)
+{
+    m_perTaskMissingInstanceStrategy = _perTaskMissingInstanceStrategy;
+    m_perTaskMissingInstanceStrategyHasBeenSet = true;
+}
+
+bool BatchCreateTaskVersionAsyncRequest::PerTaskMissingInstanceStrategyHasBeenSet() const
+{
+    return m_perTaskMissingInstanceStrategyHasBeenSet;
 }
 
 

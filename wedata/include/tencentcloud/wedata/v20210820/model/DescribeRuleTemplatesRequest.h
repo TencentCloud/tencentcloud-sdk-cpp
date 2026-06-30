@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板类型 1.系统模板 2.自定义模板
-                     * @return Type 模板类型 1.系统模板 2.自定义模板
+                     * 获取模版类型：1-系统模版，2-用户自定义模版
+                     * @return Type 模版类型：1-系统模版，2-用户自定义模版
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置模板类型 1.系统模板 2.自定义模板
-                     * @param _type 模板类型 1.系统模板 2.自定义模板
+                     * 设置模版类型：1-系统模版，2-用户自定义模版
+                     * @param _type 模版类型：1-系统模版，2-用户自定义模版
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取1.常量 2.离线表级 2.离线字段级
-                     * @return SourceObjectType 1.常量 2.离线表级 2.离线字段级
+                     * 获取源数据对象类型：1-常量，2-离线表级，3-离线字段级别
+                     * @return SourceObjectType 源数据对象类型：1-常量，2-离线表级，3-离线字段级别
                      * 
                      */
                     uint64_t GetSourceObjectType() const;
 
                     /**
-                     * 设置1.常量 2.离线表级 2.离线字段级
-                     * @param _sourceObjectType 1.常量 2.离线表级 2.离线字段级
+                     * 设置源数据对象类型：1-常量，2-离线表级，3-离线字段级别
+                     * @param _sourceObjectType 源数据对象类型：1-常量，2-离线表级，3-离线字段级别
                      * 
                      */
                     void SetSourceObjectType(const uint64_t& _sourceObjectType);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取源端对应的引擎类型
-                     * @return SourceEngineTypes 源端对应的引擎类型
+                     * 获取执行引擎多选（位运算数组）：2-HIVE，4-SPARK，8-LIVY，16-DLC，64-TCHouse-P，128-DORIS，256-TCHouse-D，512-EMR-StarRocks，1024-TCHouse-X
+                     * @return SourceEngineTypes 执行引擎多选（位运算数组）：2-HIVE，4-SPARK，8-LIVY，16-DLC，64-TCHouse-P，128-DORIS，256-TCHouse-D，512-EMR-StarRocks，1024-TCHouse-X
                      * 
                      */
                     std::vector<uint64_t> GetSourceEngineTypes() const;
 
                     /**
-                     * 设置源端对应的引擎类型
-                     * @param _sourceEngineTypes 源端对应的引擎类型
+                     * 设置执行引擎多选（位运算数组）：2-HIVE，4-SPARK，8-LIVY，16-DLC，64-TCHouse-P，128-DORIS，256-TCHouse-D，512-EMR-StarRocks，1024-TCHouse-X
+                     * @param _sourceEngineTypes 执行引擎多选（位运算数组）：2-HIVE，4-SPARK，8-LIVY，16-DLC，64-TCHouse-P，128-DORIS，256-TCHouse-D，512-EMR-StarRocks，1024-TCHouse-X
                      * 
                      */
                     void SetSourceEngineTypes(const std::vector<uint64_t>& _sourceEngineTypes);
@@ -129,13 +129,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板类型 1.系统模板 2.自定义模板
+                     * 模版类型：1-系统模版，2-用户自定义模版
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 1.常量 2.离线表级 2.离线字段级
+                     * 源数据对象类型：1-常量，2-离线表级，3-离线字段级别
                      */
                     uint64_t m_sourceObjectType;
                     bool m_sourceObjectTypeHasBeenSet;
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 源端对应的引擎类型
+                     * 执行引擎多选（位运算数组）：2-HIVE，4-SPARK，8-LIVY，16-DLC，64-TCHouse-P，128-DORIS，256-TCHouse-D，512-EMR-StarRocks，1024-TCHouse-X
                      */
                     std::vector<uint64_t> m_sourceEngineTypes;
                     bool m_sourceEngineTypesHasBeenSet;

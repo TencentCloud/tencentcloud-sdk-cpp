@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否是全量
+                     * 获取<p>是否是全量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ListOver 是否是全量
+                     * @return ListOver <p>是否是全量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool ListOverHasBeenSet() const;
 
                     /**
-                     * 获取日志集合
+                     * 获取<p>日志集合</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LogContentList 日志集合
+                     * @return LogContentList <p>日志集合</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -79,14 +79,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否是全量
+                     * <p>是否是全量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_listOver;
                     bool m_listOverHasBeenSet;
 
                     /**
-                     * 日志集合
+                     * <p>日志集合</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LogContentInfo> m_logContentList;

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取起始时间unix 毫秒时间戳
-                     * @return StartTime 起始时间unix 毫秒时间戳
+                     * 获取<p>起始时间unix 毫秒时间戳</p>
+                     * @return StartTime <p>起始时间unix 毫秒时间戳</p>
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置起始时间unix 毫秒时间戳
-                     * @param _startTime 起始时间unix 毫秒时间戳
+                     * 设置<p>起始时间unix 毫秒时间戳</p>
+                     * @param _startTime <p>起始时间unix 毫秒时间戳</p>
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间unix 毫秒时间戳
-                     * @return EndTime 结束时间unix 毫秒时间戳
+                     * 获取<p>结束时间unix 毫秒时间戳</p>
+                     * @return EndTime <p>结束时间unix 毫秒时间戳</p>
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间unix 毫秒时间戳
-                     * @param _endTime 结束时间unix 毫秒时间戳
+                     * 设置<p>结束时间unix 毫秒时间戳</p>
+                     * @param _endTime <p>结束时间unix 毫秒时间戳</p>
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取事件集ID
-                     * @return EventBusId 事件集ID
+                     * 获取<p>事件集ID</p>
+                     * @return EventBusId <p>事件集ID</p>
                      * 
                      */
                     std::string GetEventBusId() const;
 
                     /**
-                     * 设置事件集ID
-                     * @param _eventBusId 事件集ID
+                     * 设置<p>事件集ID</p>
+                     * @param _eventBusId <p>事件集ID</p>
                      * 
                      */
                     void SetEventBusId(const std::string& _eventBusId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool EventBusIdHasBeenSet() const;
 
                     /**
-                     * 获取页码
-                     * @return Page 页码
+                     * 获取<p>页码</p>
+                     * @return Page <p>页码</p>
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
-                     * 设置页码
-                     * @param _page 页码
+                     * 设置<p>页码</p>
+                     * @param _page <p>页码</p>
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool PageHasBeenSet() const;
 
                     /**
-                     * 获取每页数据大小
-                     * @return Limit 每页数据大小
+                     * 获取<p>每页数据大小</p>
+                     * @return Limit <p>每页数据大小</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每页数据大小
-                     * @param _limit 每页数据大小
+                     * 设置<p>每页数据大小</p>
+                     * @param _limit <p>每页数据大小</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取事件查询筛选条件；示例如下：[{"key":"host","operator":"eq","value":"106.53.106.243"},{"type":"AND","filters":[{"key":"region","operator":"like","value":"*guangzhou*"},{"key":"type","operator":"eq","value":"cvm:ErrorEvent:GuestReboot"}]},{"type":"OR","filters":[{"key":"field1","operator":"like","value":"*access*"},{"key":"field2","operator":"eq","value":"custorm"}]}]
-                     * @return Filter 事件查询筛选条件；示例如下：[{"key":"host","operator":"eq","value":"106.53.106.243"},{"type":"AND","filters":[{"key":"region","operator":"like","value":"*guangzhou*"},{"key":"type","operator":"eq","value":"cvm:ErrorEvent:GuestReboot"}]},{"type":"OR","filters":[{"key":"field1","operator":"like","value":"*access*"},{"key":"field2","operator":"eq","value":"custorm"}]}]
+                     * 获取<p>事件查询筛选条件；示例如下：[{&quot;key&quot;:&quot;host&quot;,&quot;operator&quot;:&quot;eq&quot;,&quot;value&quot;:&quot;106.53.106.243&quot;},{&quot;type&quot;:&quot;AND&quot;,&quot;filters&quot;:[{&quot;key&quot;:&quot;region&quot;,&quot;operator&quot;:&quot;like&quot;,&quot;value&quot;:&quot;<em>guangzhou</em>&quot;},{&quot;key&quot;:&quot;type&quot;,&quot;operator&quot;:&quot;eq&quot;,&quot;value&quot;:&quot;cvm:ErrorEvent:GuestReboot&quot;}]},{&quot;type&quot;:&quot;OR&quot;,&quot;filters&quot;:[{&quot;key&quot;:&quot;field1&quot;,&quot;operator&quot;:&quot;like&quot;,&quot;value&quot;:&quot;<em>access</em>&quot;},{&quot;key&quot;:&quot;field2&quot;,&quot;operator&quot;:&quot;eq&quot;,&quot;value&quot;:&quot;custom&quot;}]}]</p>
+                     * @return Filter <p>事件查询筛选条件；示例如下：[{&quot;key&quot;:&quot;host&quot;,&quot;operator&quot;:&quot;eq&quot;,&quot;value&quot;:&quot;106.53.106.243&quot;},{&quot;type&quot;:&quot;AND&quot;,&quot;filters&quot;:[{&quot;key&quot;:&quot;region&quot;,&quot;operator&quot;:&quot;like&quot;,&quot;value&quot;:&quot;<em>guangzhou</em>&quot;},{&quot;key&quot;:&quot;type&quot;,&quot;operator&quot;:&quot;eq&quot;,&quot;value&quot;:&quot;cvm:ErrorEvent:GuestReboot&quot;}]},{&quot;type&quot;:&quot;OR&quot;,&quot;filters&quot;:[{&quot;key&quot;:&quot;field1&quot;,&quot;operator&quot;:&quot;like&quot;,&quot;value&quot;:&quot;<em>access</em>&quot;},{&quot;key&quot;:&quot;field2&quot;,&quot;operator&quot;:&quot;eq&quot;,&quot;value&quot;:&quot;custom&quot;}]}]</p>
                      * 
                      */
                     std::vector<LogFilter> GetFilter() const;
 
                     /**
-                     * 设置事件查询筛选条件；示例如下：[{"key":"host","operator":"eq","value":"106.53.106.243"},{"type":"AND","filters":[{"key":"region","operator":"like","value":"*guangzhou*"},{"key":"type","operator":"eq","value":"cvm:ErrorEvent:GuestReboot"}]},{"type":"OR","filters":[{"key":"field1","operator":"like","value":"*access*"},{"key":"field2","operator":"eq","value":"custorm"}]}]
-                     * @param _filter 事件查询筛选条件；示例如下：[{"key":"host","operator":"eq","value":"106.53.106.243"},{"type":"AND","filters":[{"key":"region","operator":"like","value":"*guangzhou*"},{"key":"type","operator":"eq","value":"cvm:ErrorEvent:GuestReboot"}]},{"type":"OR","filters":[{"key":"field1","operator":"like","value":"*access*"},{"key":"field2","operator":"eq","value":"custorm"}]}]
+                     * 设置<p>事件查询筛选条件；示例如下：[{&quot;key&quot;:&quot;host&quot;,&quot;operator&quot;:&quot;eq&quot;,&quot;value&quot;:&quot;106.53.106.243&quot;},{&quot;type&quot;:&quot;AND&quot;,&quot;filters&quot;:[{&quot;key&quot;:&quot;region&quot;,&quot;operator&quot;:&quot;like&quot;,&quot;value&quot;:&quot;<em>guangzhou</em>&quot;},{&quot;key&quot;:&quot;type&quot;,&quot;operator&quot;:&quot;eq&quot;,&quot;value&quot;:&quot;cvm:ErrorEvent:GuestReboot&quot;}]},{&quot;type&quot;:&quot;OR&quot;,&quot;filters&quot;:[{&quot;key&quot;:&quot;field1&quot;,&quot;operator&quot;:&quot;like&quot;,&quot;value&quot;:&quot;<em>access</em>&quot;},{&quot;key&quot;:&quot;field2&quot;,&quot;operator&quot;:&quot;eq&quot;,&quot;value&quot;:&quot;custom&quot;}]}]</p>
+                     * @param _filter <p>事件查询筛选条件；示例如下：[{&quot;key&quot;:&quot;host&quot;,&quot;operator&quot;:&quot;eq&quot;,&quot;value&quot;:&quot;106.53.106.243&quot;},{&quot;type&quot;:&quot;AND&quot;,&quot;filters&quot;:[{&quot;key&quot;:&quot;region&quot;,&quot;operator&quot;:&quot;like&quot;,&quot;value&quot;:&quot;<em>guangzhou</em>&quot;},{&quot;key&quot;:&quot;type&quot;,&quot;operator&quot;:&quot;eq&quot;,&quot;value&quot;:&quot;cvm:ErrorEvent:GuestReboot&quot;}]},{&quot;type&quot;:&quot;OR&quot;,&quot;filters&quot;:[{&quot;key&quot;:&quot;field1&quot;,&quot;operator&quot;:&quot;like&quot;,&quot;value&quot;:&quot;<em>access</em>&quot;},{&quot;key&quot;:&quot;field2&quot;,&quot;operator&quot;:&quot;eq&quot;,&quot;value&quot;:&quot;custom&quot;}]}]</p>
                      * 
                      */
                     void SetFilter(const std::vector<LogFilter>& _filter);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool FilterHasBeenSet() const;
 
                     /**
-                     * 获取事件查询结果排序，["timestamp","subject"]
-                     * @return OrderFields 事件查询结果排序，["timestamp","subject"]
+                     * 获取<p>事件查询结果排序，[&quot;timestamp&quot;,&quot;subject&quot;]</p>
+                     * @return OrderFields <p>事件查询结果排序，[&quot;timestamp&quot;,&quot;subject&quot;]</p>
                      * 
                      */
                     std::vector<std::string> GetOrderFields() const;
 
                     /**
-                     * 设置事件查询结果排序，["timestamp","subject"]
-                     * @param _orderFields 事件查询结果排序，["timestamp","subject"]
+                     * 设置<p>事件查询结果排序，[&quot;timestamp&quot;,&quot;subject&quot;]</p>
+                     * @param _orderFields <p>事件查询结果排序，[&quot;timestamp&quot;,&quot;subject&quot;]</p>
                      * 
                      */
                     void SetOrderFields(const std::vector<std::string>& _orderFields);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool OrderFieldsHasBeenSet() const;
 
                     /**
-                     * 获取排序方式，asc 从旧到新，desc 从新到旧
-                     * @return OrderBy 排序方式，asc 从旧到新，desc 从新到旧
+                     * 获取<p>排序方式，asc 从旧到新，desc 从新到旧</p>
+                     * @return OrderBy <p>排序方式，asc 从旧到新，desc 从新到旧</p>
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序方式，asc 从旧到新，desc 从新到旧
-                     * @param _orderBy 排序方式，asc 从旧到新，desc 从新到旧
+                     * 设置<p>排序方式，asc 从旧到新，desc 从新到旧</p>
+                     * @param _orderBy <p>排序方式，asc 从旧到新，desc 从新到旧</p>
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -214,49 +214,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 起始时间unix 毫秒时间戳
+                     * <p>起始时间unix 毫秒时间戳</p>
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间unix 毫秒时间戳
+                     * <p>结束时间unix 毫秒时间戳</p>
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 事件集ID
+                     * <p>事件集ID</p>
                      */
                     std::string m_eventBusId;
                     bool m_eventBusIdHasBeenSet;
 
                     /**
-                     * 页码
+                     * <p>页码</p>
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;
 
                     /**
-                     * 每页数据大小
+                     * <p>每页数据大小</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 事件查询筛选条件；示例如下：[{"key":"host","operator":"eq","value":"106.53.106.243"},{"type":"AND","filters":[{"key":"region","operator":"like","value":"*guangzhou*"},{"key":"type","operator":"eq","value":"cvm:ErrorEvent:GuestReboot"}]},{"type":"OR","filters":[{"key":"field1","operator":"like","value":"*access*"},{"key":"field2","operator":"eq","value":"custorm"}]}]
+                     * <p>事件查询筛选条件；示例如下：[{&quot;key&quot;:&quot;host&quot;,&quot;operator&quot;:&quot;eq&quot;,&quot;value&quot;:&quot;106.53.106.243&quot;},{&quot;type&quot;:&quot;AND&quot;,&quot;filters&quot;:[{&quot;key&quot;:&quot;region&quot;,&quot;operator&quot;:&quot;like&quot;,&quot;value&quot;:&quot;<em>guangzhou</em>&quot;},{&quot;key&quot;:&quot;type&quot;,&quot;operator&quot;:&quot;eq&quot;,&quot;value&quot;:&quot;cvm:ErrorEvent:GuestReboot&quot;}]},{&quot;type&quot;:&quot;OR&quot;,&quot;filters&quot;:[{&quot;key&quot;:&quot;field1&quot;,&quot;operator&quot;:&quot;like&quot;,&quot;value&quot;:&quot;<em>access</em>&quot;},{&quot;key&quot;:&quot;field2&quot;,&quot;operator&quot;:&quot;eq&quot;,&quot;value&quot;:&quot;custom&quot;}]}]</p>
                      */
                     std::vector<LogFilter> m_filter;
                     bool m_filterHasBeenSet;
 
                     /**
-                     * 事件查询结果排序，["timestamp","subject"]
+                     * <p>事件查询结果排序，[&quot;timestamp&quot;,&quot;subject&quot;]</p>
                      */
                     std::vector<std::string> m_orderFields;
                     bool m_orderFieldsHasBeenSet;
 
                     /**
-                     * 排序方式，asc 从旧到新，desc 从新到旧
+                     * <p>排序方式，asc 从旧到新，desc 从新到旧</p>
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;

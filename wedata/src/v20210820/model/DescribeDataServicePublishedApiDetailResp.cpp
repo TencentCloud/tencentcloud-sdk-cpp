@@ -38,7 +38,8 @@ DescribeDataServicePublishedApiDetailResp::DescribeDataServicePublishedApiDetail
     m_apiIdHasBeenSet(false),
     m_authTypeHasBeenSet(false),
     m_gatewayApiUrlHasBeenSet(false),
-    m_apiStatusHasBeenSet(false)
+    m_apiStatusHasBeenSet(false),
+    m_enablePageHasBeenSet(false)
 {
 }
 
@@ -247,6 +248,16 @@ CoreInternalOutcome DescribeDataServicePublishedApiDetailResp::Deserialize(const
         m_apiStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("EnablePage") && !value["EnablePage"].IsNull())
+    {
+        if (!value["EnablePage"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeDataServicePublishedApiDetailResp.EnablePage` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enablePage = value["EnablePage"].GetInt64();
+        m_enablePageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -410,6 +421,14 @@ void DescribeDataServicePublishedApiDetailResp::ToJsonObject(rapidjson::Value &v
         string key = "ApiStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_apiStatus, allocator);
+    }
+
+    if (m_enablePageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnablePage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enablePage, allocator);
     }
 
 }
@@ -701,5 +720,21 @@ void DescribeDataServicePublishedApiDetailResp::SetApiStatus(const uint64_t& _ap
 bool DescribeDataServicePublishedApiDetailResp::ApiStatusHasBeenSet() const
 {
     return m_apiStatusHasBeenSet;
+}
+
+int64_t DescribeDataServicePublishedApiDetailResp::GetEnablePage() const
+{
+    return m_enablePage;
+}
+
+void DescribeDataServicePublishedApiDetailResp::SetEnablePage(const int64_t& _enablePage)
+{
+    m_enablePage = _enablePage;
+    m_enablePageHasBeenSet = true;
+}
+
+bool DescribeDataServicePublishedApiDetailResp::EnablePageHasBeenSet() const
+{
+    return m_enablePageHasBeenSet;
 }
 

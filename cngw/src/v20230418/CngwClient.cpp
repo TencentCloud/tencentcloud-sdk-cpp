@@ -90,6 +90,106 @@ CngwClient::AddCloudNativeAPIGatewayConsumerGroupAuthOutcomeCallable CngwClient:
     return prom->get_future();
 }
 
+CngwClient::AddCloudNativeAPIGatewayConsumerInGroupOutcome CngwClient::AddCloudNativeAPIGatewayConsumerInGroup(const AddCloudNativeAPIGatewayConsumerInGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddCloudNativeAPIGatewayConsumerInGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddCloudNativeAPIGatewayConsumerInGroupResponse rsp = AddCloudNativeAPIGatewayConsumerInGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddCloudNativeAPIGatewayConsumerInGroupOutcome(rsp);
+        else
+            return AddCloudNativeAPIGatewayConsumerInGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return AddCloudNativeAPIGatewayConsumerInGroupOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::AddCloudNativeAPIGatewayConsumerInGroupAsync(const AddCloudNativeAPIGatewayConsumerInGroupRequest& request, const AddCloudNativeAPIGatewayConsumerInGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AddCloudNativeAPIGatewayConsumerInGroupRequest&;
+    using Resp = AddCloudNativeAPIGatewayConsumerInGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AddCloudNativeAPIGatewayConsumerInGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::AddCloudNativeAPIGatewayConsumerInGroupOutcomeCallable CngwClient::AddCloudNativeAPIGatewayConsumerInGroupCallable(const AddCloudNativeAPIGatewayConsumerInGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AddCloudNativeAPIGatewayConsumerInGroupOutcome>>();
+    AddCloudNativeAPIGatewayConsumerInGroupAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const AddCloudNativeAPIGatewayConsumerInGroupRequest&,
+        AddCloudNativeAPIGatewayConsumerInGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::BindCloudNativeAPIGatewaySecretKeyOutcome CngwClient::BindCloudNativeAPIGatewaySecretKey(const BindCloudNativeAPIGatewaySecretKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindCloudNativeAPIGatewaySecretKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindCloudNativeAPIGatewaySecretKeyResponse rsp = BindCloudNativeAPIGatewaySecretKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindCloudNativeAPIGatewaySecretKeyOutcome(rsp);
+        else
+            return BindCloudNativeAPIGatewaySecretKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return BindCloudNativeAPIGatewaySecretKeyOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::BindCloudNativeAPIGatewaySecretKeyAsync(const BindCloudNativeAPIGatewaySecretKeyRequest& request, const BindCloudNativeAPIGatewaySecretKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const BindCloudNativeAPIGatewaySecretKeyRequest&;
+    using Resp = BindCloudNativeAPIGatewaySecretKeyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "BindCloudNativeAPIGatewaySecretKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::BindCloudNativeAPIGatewaySecretKeyOutcomeCallable CngwClient::BindCloudNativeAPIGatewaySecretKeyCallable(const BindCloudNativeAPIGatewaySecretKeyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<BindCloudNativeAPIGatewaySecretKeyOutcome>>();
+    BindCloudNativeAPIGatewaySecretKeyAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const BindCloudNativeAPIGatewaySecretKeyRequest&,
+        BindCloudNativeAPIGatewaySecretKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CngwClient::CreateCloudNativeAPIGatewayConsumerOutcome CngwClient::CreateCloudNativeAPIGatewayConsumer(const CreateCloudNativeAPIGatewayConsumerRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCloudNativeAPIGatewayConsumer");
@@ -2282,6 +2382,106 @@ CngwClient::RemoveCloudNativeAPIGatewayConsumerGroupAuthOutcomeCallable CngwClie
         const CngwClient*,
         const RemoveCloudNativeAPIGatewayConsumerGroupAuthRequest&,
         RemoveCloudNativeAPIGatewayConsumerGroupAuthOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::RemoveCloudNativeAPIGatewayConsumerInGroupOutcome CngwClient::RemoveCloudNativeAPIGatewayConsumerInGroup(const RemoveCloudNativeAPIGatewayConsumerInGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveCloudNativeAPIGatewayConsumerInGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveCloudNativeAPIGatewayConsumerInGroupResponse rsp = RemoveCloudNativeAPIGatewayConsumerInGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveCloudNativeAPIGatewayConsumerInGroupOutcome(rsp);
+        else
+            return RemoveCloudNativeAPIGatewayConsumerInGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveCloudNativeAPIGatewayConsumerInGroupOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::RemoveCloudNativeAPIGatewayConsumerInGroupAsync(const RemoveCloudNativeAPIGatewayConsumerInGroupRequest& request, const RemoveCloudNativeAPIGatewayConsumerInGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RemoveCloudNativeAPIGatewayConsumerInGroupRequest&;
+    using Resp = RemoveCloudNativeAPIGatewayConsumerInGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RemoveCloudNativeAPIGatewayConsumerInGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::RemoveCloudNativeAPIGatewayConsumerInGroupOutcomeCallable CngwClient::RemoveCloudNativeAPIGatewayConsumerInGroupCallable(const RemoveCloudNativeAPIGatewayConsumerInGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RemoveCloudNativeAPIGatewayConsumerInGroupOutcome>>();
+    RemoveCloudNativeAPIGatewayConsumerInGroupAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const RemoveCloudNativeAPIGatewayConsumerInGroupRequest&,
+        RemoveCloudNativeAPIGatewayConsumerInGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::UnbindCloudNativeAPIGatewaySecretKeyOutcome CngwClient::UnbindCloudNativeAPIGatewaySecretKey(const UnbindCloudNativeAPIGatewaySecretKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnbindCloudNativeAPIGatewaySecretKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnbindCloudNativeAPIGatewaySecretKeyResponse rsp = UnbindCloudNativeAPIGatewaySecretKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnbindCloudNativeAPIGatewaySecretKeyOutcome(rsp);
+        else
+            return UnbindCloudNativeAPIGatewaySecretKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return UnbindCloudNativeAPIGatewaySecretKeyOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::UnbindCloudNativeAPIGatewaySecretKeyAsync(const UnbindCloudNativeAPIGatewaySecretKeyRequest& request, const UnbindCloudNativeAPIGatewaySecretKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UnbindCloudNativeAPIGatewaySecretKeyRequest&;
+    using Resp = UnbindCloudNativeAPIGatewaySecretKeyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UnbindCloudNativeAPIGatewaySecretKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::UnbindCloudNativeAPIGatewaySecretKeyOutcomeCallable CngwClient::UnbindCloudNativeAPIGatewaySecretKeyCallable(const UnbindCloudNativeAPIGatewaySecretKeyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UnbindCloudNativeAPIGatewaySecretKeyOutcome>>();
+    UnbindCloudNativeAPIGatewaySecretKeyAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const UnbindCloudNativeAPIGatewaySecretKeyRequest&,
+        UnbindCloudNativeAPIGatewaySecretKeyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RuleGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取该规则运行的执行引擎，不传时会请求该数据源下默认的执行引擎
-                     * @return EngineType 该规则运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+                     * 获取执行引擎类型，可选值：MYSQL, HIVE, SPARK, LIVY, DLC, GBASE, CDW_PG, TCHouse-P, DORIS, TCHouse-D
+                     * @return EngineType 执行引擎类型，可选值：MYSQL, HIVE, SPARK, LIVY, DLC, GBASE, CDW_PG, TCHouse-P, DORIS, TCHouse-D
                      * 
                      */
                     std::string GetEngineType() const;
 
                     /**
-                     * 设置该规则运行的执行引擎，不传时会请求该数据源下默认的执行引擎
-                     * @param _engineType 该规则运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+                     * 设置执行引擎类型，可选值：MYSQL, HIVE, SPARK, LIVY, DLC, GBASE, CDW_PG, TCHouse-P, DORIS, TCHouse-D
+                     * @param _engineType 执行引擎类型，可选值：MYSQL, HIVE, SPARK, LIVY, DLC, GBASE, CDW_PG, TCHouse-P, DORIS, TCHouse-D
                      * 
                      */
                     void SetEngineType(const std::string& _engineType);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_ruleGroupIdHasBeenSet;
 
                     /**
-                     * 该规则运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+                     * 执行引擎类型，可选值：MYSQL, HIVE, SPARK, LIVY, DLC, GBASE, CDW_PG, TCHouse-P, DORIS, TCHouse-D
                      */
                     std::string m_engineType;
                     bool m_engineTypeHasBeenSet;

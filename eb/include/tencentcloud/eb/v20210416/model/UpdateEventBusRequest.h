@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取事件集ID
-                     * @return EventBusId 事件集ID
+                     * 获取<p>事件集ID</p>
+                     * @return EventBusId <p>事件集ID</p>
                      * 
                      */
                     std::string GetEventBusId() const;
 
                     /**
-                     * 设置事件集ID
-                     * @param _eventBusId 事件集ID
+                     * 设置<p>事件集ID</p>
+                     * @param _eventBusId <p>事件集ID</p>
                      * 
                      */
                     void SetEventBusId(const std::string& _eventBusId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool EventBusIdHasBeenSet() const;
 
                     /**
-                     * 获取事件集描述，不限字符类型，200字符描述以内
-                     * @return Description 事件集描述，不限字符类型，200字符描述以内
+                     * 获取<p>事件集描述，不限字符类型，200字符描述以内</p>
+                     * @return Description <p>事件集描述，不限字符类型，200字符描述以内</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置事件集描述，不限字符类型，200字符描述以内
-                     * @param _description 事件集描述，不限字符类型，200字符描述以内
+                     * 设置<p>事件集描述，不限字符类型，200字符描述以内</p>
+                     * @param _description <p>事件集描述，不限字符类型，200字符描述以内</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符
-                     * @return EventBusName 事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符
+                     * 获取<p>事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符</p>
+                     * @return EventBusName <p>事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符</p>
                      * 
                      */
                     std::string GetEventBusName() const;
 
                     /**
-                     * 设置事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符
-                     * @param _eventBusName 事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符
+                     * 设置<p>事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符</p>
+                     * @param _eventBusName <p>事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符</p>
                      * 
                      */
                     void SetEventBusName(const std::string& _eventBusName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EventBusNameHasBeenSet() const;
 
                     /**
-                     * 获取EB日志存储时长
-                     * @return SaveDays EB日志存储时长
+                     * 获取<p>事件存储时长</p><p>单位：day</p>
+                     * @return SaveDays <p>事件存储时长</p><p>单位：day</p>
                      * 
                      */
                     int64_t GetSaveDays() const;
 
                     /**
-                     * 设置EB日志存储时长
-                     * @param _saveDays EB日志存储时长
+                     * 设置<p>事件存储时长</p><p>单位：day</p>
+                     * @param _saveDays <p>事件存储时长</p><p>单位：day</p>
                      * 
                      */
                     void SetSaveDays(const int64_t& _saveDays);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool SaveDaysHasBeenSet() const;
 
                     /**
-                     * 获取EB日志主题ID
-                     * @return LogTopicId EB日志主题ID
+                     * 获取<p>事件存储主题ID</p>
+                     * @return LogTopicId <p>事件存储主题ID</p>
                      * 
                      */
                     std::string GetLogTopicId() const;
 
                     /**
-                     * 设置EB日志主题ID
-                     * @param _logTopicId EB日志主题ID
+                     * 设置<p>事件存储主题ID</p>
+                     * @param _logTopicId <p>事件存储主题ID</p>
                      * 
                      */
                     void SetLogTopicId(const std::string& _logTopicId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool LogTopicIdHasBeenSet() const;
 
                     /**
-                     * 获取是否开启存储
-                     * @return EnableStore 是否开启存储
+                     * 获取<p>是否开启存储</p>
+                     * @return EnableStore <p>是否开启存储</p>
                      * 
                      */
                     bool GetEnableStore() const;
 
                     /**
-                     * 设置是否开启存储
-                     * @param _enableStore 是否开启存储
+                     * 设置<p>是否开启存储</p>
+                     * @param _enableStore <p>是否开启存储</p>
                      * 
                      */
                     void SetEnableStore(const bool& _enableStore);
@@ -171,37 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 事件集ID
+                     * <p>事件集ID</p>
                      */
                     std::string m_eventBusId;
                     bool m_eventBusIdHasBeenSet;
 
                     /**
-                     * 事件集描述，不限字符类型，200字符描述以内
+                     * <p>事件集描述，不限字符类型，200字符描述以内</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符
+                     * <p>事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符</p>
                      */
                     std::string m_eventBusName;
                     bool m_eventBusNameHasBeenSet;
 
                     /**
-                     * EB日志存储时长
+                     * <p>事件存储时长</p><p>单位：day</p>
                      */
                     int64_t m_saveDays;
                     bool m_saveDaysHasBeenSet;
 
                     /**
-                     * EB日志主题ID
+                     * <p>事件存储主题ID</p>
                      */
                     std::string m_logTopicId;
                     bool m_logTopicIdHasBeenSet;
 
                     /**
-                     * 是否开启存储
+                     * <p>是否开启存储</p>
                      */
                     bool m_enableStore;
                     bool m_enableStoreHasBeenSet;

@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取平台事件名称
+                     * 获取<p>平台事件名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EventName 平台事件名称
+                     * @return EventName <p>平台事件名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEventName() const;
 
                     /**
-                     * 设置平台事件名称
+                     * 设置<p>平台事件名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _eventName 平台事件名称
+                     * @param _eventName <p>平台事件名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool EventNameHasBeenSet() const;
 
                     /**
-                     * 获取平台事件匹配规则
+                     * 获取<p>平台事件匹配规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EventPattern 平台事件匹配规则
+                     * @return EventPattern <p>平台事件匹配规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEventPattern() const;
 
                     /**
-                     * 设置平台事件匹配规则
+                     * 设置<p>平台事件匹配规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _eventPattern 平台事件匹配规则
+                     * @param _eventPattern <p>平台事件匹配规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,14 +99,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 平台事件名称
+                     * <p>平台事件名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eventName;
                     bool m_eventNameHasBeenSet;
 
                     /**
-                     * 平台事件匹配规则
+                     * <p>平台事件匹配规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eventPattern;

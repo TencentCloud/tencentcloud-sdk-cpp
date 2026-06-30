@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略组id
-                     * @return GroupId 策略组id
+                     * 获取<p>策略组id</p>
+                     * @return GroupId <p>策略组id</p>
                      * 
                      */
                     int64_t GetGroupId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略组id
+                     * <p>策略组id</p>
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;

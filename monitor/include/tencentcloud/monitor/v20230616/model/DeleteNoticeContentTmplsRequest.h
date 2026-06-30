@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要删除的模板id
-                     * @return TmplIDs 要删除的模板id
+                     * 获取<p>要删除的模板id</p>
+                     * @return TmplIDs <p>要删除的模板id</p>
                      * 
                      */
                     std::vector<std::string> GetTmplIDs() const;
 
                     /**
-                     * 设置要删除的模板id
-                     * @param _tmplIDs 要删除的模板id
+                     * 设置<p>要删除的模板id</p>
+                     * @param _tmplIDs <p>要删除的模板id</p>
                      * 
                      */
                     void SetTmplIDs(const std::vector<std::string>& _tmplIDs);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要删除的模板id
+                     * <p>要删除的模板id</p>
                      */
                     std::vector<std::string> m_tmplIDs;
                     bool m_tmplIDsHasBeenSet;

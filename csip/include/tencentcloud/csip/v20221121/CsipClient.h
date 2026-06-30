@@ -331,6 +331,12 @@
 #include <tencentcloud/csip/v20221121/model/DescribeListenerListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeNICAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeNICAssetsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeNotifyAssetConfigRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeNotifyAssetConfigResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeNotifySettingRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeNotifySettingResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeNotifySettingAlertRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeNotifySettingAlertResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeOrganizationInfoRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeOrganizationInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeOrganizationUserInfoRequest.h>
@@ -459,6 +465,12 @@
 #include <tencentcloud/csip/v20221121/model/ModifyIaCTokenPeriodResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyMachineRemarkRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyMachineRemarkResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyNotifyAssetConfigRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyNotifyAssetConfigResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyNotifySettingRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyNotifySettingResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyNotifySettingAlertRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyNotifySettingAlertResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyOrganizationAccountStatusRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyOrganizationAccountStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyPolicyStatusRequest.h>
@@ -967,6 +979,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNICAssetsResponse> DescribeNICAssetsOutcome;
                 typedef std::future<DescribeNICAssetsOutcome> DescribeNICAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeNICAssetsRequest&, DescribeNICAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNICAssetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNotifyAssetConfigResponse> DescribeNotifyAssetConfigOutcome;
+                typedef std::future<DescribeNotifyAssetConfigOutcome> DescribeNotifyAssetConfigOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeNotifyAssetConfigRequest&, DescribeNotifyAssetConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotifyAssetConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNotifySettingResponse> DescribeNotifySettingOutcome;
+                typedef std::future<DescribeNotifySettingOutcome> DescribeNotifySettingOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeNotifySettingRequest&, DescribeNotifySettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotifySettingAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNotifySettingAlertResponse> DescribeNotifySettingAlertOutcome;
+                typedef std::future<DescribeNotifySettingAlertOutcome> DescribeNotifySettingAlertOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeNotifySettingAlertRequest&, DescribeNotifySettingAlertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotifySettingAlertAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOrganizationInfoResponse> DescribeOrganizationInfoOutcome;
                 typedef std::future<DescribeOrganizationInfoOutcome> DescribeOrganizationInfoOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeOrganizationInfoRequest&, DescribeOrganizationInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationInfoAsyncHandler;
@@ -1159,6 +1180,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyMachineRemarkResponse> ModifyMachineRemarkOutcome;
                 typedef std::future<ModifyMachineRemarkOutcome> ModifyMachineRemarkOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyMachineRemarkRequest&, ModifyMachineRemarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMachineRemarkAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyNotifyAssetConfigResponse> ModifyNotifyAssetConfigOutcome;
+                typedef std::future<ModifyNotifyAssetConfigOutcome> ModifyNotifyAssetConfigOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyNotifyAssetConfigRequest&, ModifyNotifyAssetConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNotifyAssetConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyNotifySettingResponse> ModifyNotifySettingOutcome;
+                typedef std::future<ModifyNotifySettingOutcome> ModifyNotifySettingOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyNotifySettingRequest&, ModifyNotifySettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNotifySettingAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyNotifySettingAlertResponse> ModifyNotifySettingAlertOutcome;
+                typedef std::future<ModifyNotifySettingAlertOutcome> ModifyNotifySettingAlertOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyNotifySettingAlertRequest&, ModifyNotifySettingAlertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNotifySettingAlertAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyOrganizationAccountStatusResponse> ModifyOrganizationAccountStatusOutcome;
                 typedef std::future<ModifyOrganizationAccountStatusOutcome> ModifyOrganizationAccountStatusOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyOrganizationAccountStatusRequest&, ModifyOrganizationAccountStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOrganizationAccountStatusAsyncHandler;
@@ -2597,6 +2627,33 @@ namespace TencentCloud
                 DescribeNICAssetsOutcomeCallable DescribeNICAssetsCallable(const Model::DescribeNICAssetsRequest& request);
 
                 /**
+                 *获取通知资产范围配置
+                 * @param req DescribeNotifyAssetConfigRequest
+                 * @return DescribeNotifyAssetConfigOutcome
+                 */
+                DescribeNotifyAssetConfigOutcome DescribeNotifyAssetConfig(const Model::DescribeNotifyAssetConfigRequest &request);
+                void DescribeNotifyAssetConfigAsync(const Model::DescribeNotifyAssetConfigRequest& request, const DescribeNotifyAssetConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNotifyAssetConfigOutcomeCallable DescribeNotifyAssetConfigCallable(const Model::DescribeNotifyAssetConfigRequest& request);
+
+                /**
+                 *获取通知设置
+                 * @param req DescribeNotifySettingRequest
+                 * @return DescribeNotifySettingOutcome
+                 */
+                DescribeNotifySettingOutcome DescribeNotifySetting(const Model::DescribeNotifySettingRequest &request);
+                void DescribeNotifySettingAsync(const Model::DescribeNotifySettingRequest& request, const DescribeNotifySettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNotifySettingOutcomeCallable DescribeNotifySettingCallable(const Model::DescribeNotifySettingRequest& request);
+
+                /**
+                 *获取告警中心通知高级配置
+                 * @param req DescribeNotifySettingAlertRequest
+                 * @return DescribeNotifySettingAlertOutcome
+                 */
+                DescribeNotifySettingAlertOutcome DescribeNotifySettingAlert(const Model::DescribeNotifySettingAlertRequest &request);
+                void DescribeNotifySettingAlertAsync(const Model::DescribeNotifySettingAlertRequest& request, const DescribeNotifySettingAlertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNotifySettingAlertOutcomeCallable DescribeNotifySettingAlertCallable(const Model::DescribeNotifySettingAlertRequest& request);
+
+                /**
                  *查询集团账号详情
                  * @param req DescribeOrganizationInfoRequest
                  * @return DescribeOrganizationInfoOutcome
@@ -3171,6 +3228,33 @@ namespace TencentCloud
                 ModifyMachineRemarkOutcome ModifyMachineRemark(const Model::ModifyMachineRemarkRequest &request);
                 void ModifyMachineRemarkAsync(const Model::ModifyMachineRemarkRequest& request, const ModifyMachineRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyMachineRemarkOutcomeCallable ModifyMachineRemarkCallable(const Model::ModifyMachineRemarkRequest& request);
+
+                /**
+                 *修改通知资产范围配置
+                 * @param req ModifyNotifyAssetConfigRequest
+                 * @return ModifyNotifyAssetConfigOutcome
+                 */
+                ModifyNotifyAssetConfigOutcome ModifyNotifyAssetConfig(const Model::ModifyNotifyAssetConfigRequest &request);
+                void ModifyNotifyAssetConfigAsync(const Model::ModifyNotifyAssetConfigRequest& request, const ModifyNotifyAssetConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNotifyAssetConfigOutcomeCallable ModifyNotifyAssetConfigCallable(const Model::ModifyNotifyAssetConfigRequest& request);
+
+                /**
+                 *修改通知设置
+                 * @param req ModifyNotifySettingRequest
+                 * @return ModifyNotifySettingOutcome
+                 */
+                ModifyNotifySettingOutcome ModifyNotifySetting(const Model::ModifyNotifySettingRequest &request);
+                void ModifyNotifySettingAsync(const Model::ModifyNotifySettingRequest& request, const ModifyNotifySettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNotifySettingOutcomeCallable ModifyNotifySettingCallable(const Model::ModifyNotifySettingRequest& request);
+
+                /**
+                 *修改告警中心通知高级配置
+                 * @param req ModifyNotifySettingAlertRequest
+                 * @return ModifyNotifySettingAlertOutcome
+                 */
+                ModifyNotifySettingAlertOutcome ModifyNotifySettingAlert(const Model::ModifyNotifySettingAlertRequest &request);
+                void ModifyNotifySettingAlertAsync(const Model::ModifyNotifySettingAlertRequest& request, const ModifyNotifySettingAlertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNotifySettingAlertOutcomeCallable ModifyNotifySettingAlertCallable(const Model::ModifyNotifySettingAlertRequest& request);
 
                 /**
                  *修改集团账号状态

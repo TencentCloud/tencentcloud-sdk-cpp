@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取事件集id
-                     * @return EventBusId 事件集id
+                     * 获取<p>事件集id</p>
+                     * @return EventBusId <p>事件集id</p>
                      * 
                      */
                     std::string GetEventBusId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool EventBusIdHasBeenSet() const;
 
                     /**
-                     * 获取事件规则id
-                     * @return RuleId 事件规则id
+                     * 获取<p>事件规则id</p>
+                     * @return RuleId <p>事件规则id</p>
                      * 
                      */
                     std::string GetRuleId() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取事件规则名称
-                     * @return RuleName 事件规则名称
+                     * 获取<p>事件规则名称</p>
+                     * @return RuleName <p>事件规则名称</p>
                      * 
                      */
                     std::string GetRuleName() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取事件规则状态
-                     * @return Status 事件规则状态
+                     * 获取<p>事件规则状态</p>
+                     * @return Status <p>事件规则状态</p>
                      * 
                      */
                     std::string GetStatus() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取使能开关
-                     * @return Enable 使能开关
+                     * 获取<p>使能开关</p>
+                     * @return Enable <p>使能开关</p>
                      * 
                      */
                     bool GetEnable() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取事件规则描述
-                     * @return Description 事件规则描述
+                     * 获取<p>事件规则描述</p>
+                     * @return Description <p>事件规则描述</p>
                      * 
                      */
                     std::string GetDescription() const;
@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取事件模式
-                     * @return EventPattern 事件模式
+                     * 获取<p>事件模式</p>
+                     * @return EventPattern <p>事件模式</p>
                      * 
                      */
                     std::string GetEventPattern() const;
@@ -142,8 +142,8 @@ namespace TencentCloud
                     bool EventPatternHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return AddTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return AddTime <p>创建时间</p>
                      * 
                      */
                     std::string GetAddTime() const;
@@ -156,8 +156,8 @@ namespace TencentCloud
                     bool AddTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return ModTime 更新时间
+                     * 获取<p>更新时间</p>
+                     * @return ModTime <p>更新时间</p>
                      * 
                      */
                     std::string GetModTime() const;
@@ -172,55 +172,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 事件集id
+                     * <p>事件集id</p>
                      */
                     std::string m_eventBusId;
                     bool m_eventBusIdHasBeenSet;
 
                     /**
-                     * 事件规则id
+                     * <p>事件规则id</p>
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * 事件规则名称
+                     * <p>事件规则名称</p>
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * 事件规则状态
+                     * <p>事件规则状态</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 使能开关
+                     * <p>使能开关</p>
                      */
                     bool m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 事件规则描述
+                     * <p>事件规则描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 事件模式
+                     * <p>事件模式</p>
                      */
                     std::string m_eventPattern;
                     bool m_eventPatternHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_addTime;
                     bool m_addTimeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
                      */
                     std::string m_modTime;
                     bool m_modTimeHasBeenSet;

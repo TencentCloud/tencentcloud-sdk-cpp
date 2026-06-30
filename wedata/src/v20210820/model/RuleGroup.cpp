@@ -53,7 +53,9 @@ RuleGroup::RuleGroup() :
     m_createUserNameHasBeenSet(false),
     m_groupTypeHasBeenSet(false),
     m_aspectTaskIdHasBeenSet(false),
-    m_catalogNameHasBeenSet(false)
+    m_catalogNameHasBeenSet(false),
+    m_inChargeIdHasBeenSet(false),
+    m_inChargeNameHasBeenSet(false)
 {
 }
 
@@ -406,6 +408,26 @@ CoreInternalOutcome RuleGroup::Deserialize(const rapidjson::Value &value)
         m_catalogNameHasBeenSet = true;
     }
 
+    if (value.HasMember("InChargeId") && !value["InChargeId"].IsNull())
+    {
+        if (!value["InChargeId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.InChargeId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inChargeId = string(value["InChargeId"].GetString());
+        m_inChargeIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("InChargeName") && !value["InChargeName"].IsNull())
+    {
+        if (!value["InChargeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.InChargeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inChargeName = string(value["InChargeName"].GetString());
+        m_inChargeNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -677,6 +699,22 @@ void RuleGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "CatalogName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_catalogName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inChargeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InChargeId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inChargeId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inChargeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InChargeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inChargeName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1208,5 +1246,37 @@ void RuleGroup::SetCatalogName(const string& _catalogName)
 bool RuleGroup::CatalogNameHasBeenSet() const
 {
     return m_catalogNameHasBeenSet;
+}
+
+string RuleGroup::GetInChargeId() const
+{
+    return m_inChargeId;
+}
+
+void RuleGroup::SetInChargeId(const string& _inChargeId)
+{
+    m_inChargeId = _inChargeId;
+    m_inChargeIdHasBeenSet = true;
+}
+
+bool RuleGroup::InChargeIdHasBeenSet() const
+{
+    return m_inChargeIdHasBeenSet;
+}
+
+string RuleGroup::GetInChargeName() const
+{
+    return m_inChargeName;
+}
+
+void RuleGroup::SetInChargeName(const string& _inChargeName)
+{
+    m_inChargeName = _inChargeName;
+    m_inChargeNameHasBeenSet = true;
+}
+
+bool RuleGroup::InChargeNameHasBeenSet() const
+{
+    return m_inChargeNameHasBeenSet;
 }
 

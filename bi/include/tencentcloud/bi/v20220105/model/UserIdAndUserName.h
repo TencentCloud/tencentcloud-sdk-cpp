@@ -613,6 +613,106 @@ namespace TencentCloud
                      */
                     bool IdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>飞书应用ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LarkAppId <p>飞书应用ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLarkAppId() const;
+
+                    /**
+                     * 设置<p>飞书应用ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _larkAppId <p>飞书应用ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLarkAppId(const std::string& _larkAppId);
+
+                    /**
+                     * 判断参数 LarkAppId 是否已赋值
+                     * @return LarkAppId 是否已赋值
+                     * 
+                     */
+                    bool LarkAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>飞书UserId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LarkUserId <p>飞书UserId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLarkUserId() const;
+
+                    /**
+                     * 设置<p>飞书UserId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _larkUserId <p>飞书UserId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLarkUserId(const std::string& _larkUserId);
+
+                    /**
+                     * 判断参数 LarkUserId 是否已赋值
+                     * @return LarkUserId 是否已赋值
+                     * 
+                     */
+                    bool LarkUserIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>飞书OpenId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LarkOpenId <p>飞书OpenId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLarkOpenId() const;
+
+                    /**
+                     * 设置<p>飞书OpenId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _larkOpenId <p>飞书OpenId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLarkOpenId(const std::string& _larkOpenId);
+
+                    /**
+                     * 判断参数 LarkOpenId 是否已赋值
+                     * @return LarkOpenId 是否已赋值
+                     * 
+                     */
+                    bool LarkOpenIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>飞书UserName</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LarkUserName <p>飞书UserName</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLarkUserName() const;
+
+                    /**
+                     * 设置<p>飞书UserName</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _larkUserName <p>飞书UserName</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLarkUserName(const std::string& _larkUserName);
+
+                    /**
+                     * 判断参数 LarkUserName 是否已赋值
+                     * @return LarkUserName 是否已赋值
+                     * 
+                     */
+                    bool LarkUserNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -773,6 +873,34 @@ namespace TencentCloud
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * <p>飞书应用ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_larkAppId;
+                    bool m_larkAppIdHasBeenSet;
+
+                    /**
+                     * <p>飞书UserId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_larkUserId;
+                    bool m_larkUserIdHasBeenSet;
+
+                    /**
+                     * <p>飞书OpenId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_larkOpenId;
+                    bool m_larkOpenIdHasBeenSet;
+
+                    /**
+                     * <p>飞书UserName</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_larkUserName;
+                    bool m_larkUserNameHasBeenSet;
 
                 };
             }

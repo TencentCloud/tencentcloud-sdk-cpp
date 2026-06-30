@@ -26,7 +26,8 @@ InquiryPriceUpgradeDBInstanceRequest::InquiryPriceUpgradeDBInstanceRequest() :
     m_instanceIdHasBeenSet(false),
     m_memoryHasBeenSet(false),
     m_storageHasBeenSet(false),
-    m_cpuHasBeenSet(false)
+    m_cpuHasBeenSet(false),
+    m_throughputPerformanceHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string InquiryPriceUpgradeDBInstanceRequest::ToJsonString() const
         string key = "Cpu";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_cpu, allocator);
+    }
+
+    if (m_throughputPerformanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ThroughputPerformance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_throughputPerformance, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void InquiryPriceUpgradeDBInstanceRequest::SetCpu(const int64_t& _cpu)
 bool InquiryPriceUpgradeDBInstanceRequest::CpuHasBeenSet() const
 {
     return m_cpuHasBeenSet;
+}
+
+uint64_t InquiryPriceUpgradeDBInstanceRequest::GetThroughputPerformance() const
+{
+    return m_throughputPerformance;
+}
+
+void InquiryPriceUpgradeDBInstanceRequest::SetThroughputPerformance(const uint64_t& _throughputPerformance)
+{
+    m_throughputPerformance = _throughputPerformance;
+    m_throughputPerformanceHasBeenSet = true;
+}
+
+bool InquiryPriceUpgradeDBInstanceRequest::ThroughputPerformanceHasBeenSet() const
+{
+    return m_throughputPerformanceHasBeenSet;
 }
 
 

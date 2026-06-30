@@ -47,15 +47,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标签Key
-                     * @return Key 标签Key
+                     * 获取<p>标签Key</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Key <p>标签Key</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置标签Key
-                     * @param _key 标签Key
+                     * 设置<p>标签Key</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _key <p>标签Key</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -68,15 +72,19 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取标签Value
-                     * @return Value 标签Value
+                     * 获取<p>标签Value</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Value <p>标签Value</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置标签Value
-                     * @param _value 标签Value
+                     * 设置<p>标签Value</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _value <p>标签Value</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -91,13 +99,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 标签Key
+                     * <p>标签Key</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 标签Value
+                     * <p>标签Value</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

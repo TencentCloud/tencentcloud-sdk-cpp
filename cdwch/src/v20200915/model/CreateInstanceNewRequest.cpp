@@ -39,7 +39,8 @@ CreateInstanceNewRequest::CreateInstanceNewRequest() :
     m_commonSpecHasBeenSet(false),
     m_tagItemsHasBeenSet(false),
     m_secondaryZoneInfoHasBeenSet(false),
-    m_ckDefaultUserPwdHasBeenSet(false)
+    m_ckDefaultUserPwdHasBeenSet(false),
+    m_clusterTypeHasBeenSet(false)
 {
 }
 
@@ -202,6 +203,14 @@ string CreateInstanceNewRequest::ToJsonString() const
         string key = "CkDefaultUserPwd";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_ckDefaultUserPwd.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -482,6 +491,22 @@ void CreateInstanceNewRequest::SetCkDefaultUserPwd(const string& _ckDefaultUserP
 bool CreateInstanceNewRequest::CkDefaultUserPwdHasBeenSet() const
 {
     return m_ckDefaultUserPwdHasBeenSet;
+}
+
+string CreateInstanceNewRequest::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void CreateInstanceNewRequest::SetClusterType(const string& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool CreateInstanceNewRequest::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
 }
 
 

@@ -57,7 +57,8 @@ DescribeModelServiceResponseVO::DescribeModelServiceResponseVO() :
     m_hostKeyHeaderNameHasBeenSet(false),
     m_fallbackStatusHasBeenSet(false),
     m_fallbackModelsHasBeenSet(false),
-    m_modelProtocolHasBeenSet(false)
+    m_modelProtocolHasBeenSet(false),
+    m_rawCustomModelProtocolConfigHasBeenSet(false)
 {
 }
 
@@ -510,6 +511,16 @@ CoreInternalOutcome DescribeModelServiceResponseVO::Deserialize(const rapidjson:
         m_modelProtocolHasBeenSet = true;
     }
 
+    if (value.HasMember("RawCustomModelProtocolConfig") && !value["RawCustomModelProtocolConfig"].IsNull())
+    {
+        if (!value["RawCustomModelProtocolConfig"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeModelServiceResponseVO.RawCustomModelProtocolConfig` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rawCustomModelProtocolConfig = string(value["RawCustomModelProtocolConfig"].GetString());
+        m_rawCustomModelProtocolConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -852,6 +863,14 @@ void DescribeModelServiceResponseVO::ToJsonObject(rapidjson::Value &value, rapid
         string key = "ModelProtocol";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modelProtocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rawCustomModelProtocolConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RawCustomModelProtocolConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rawCustomModelProtocolConfig.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1447,5 +1466,21 @@ void DescribeModelServiceResponseVO::SetModelProtocol(const string& _modelProtoc
 bool DescribeModelServiceResponseVO::ModelProtocolHasBeenSet() const
 {
     return m_modelProtocolHasBeenSet;
+}
+
+string DescribeModelServiceResponseVO::GetRawCustomModelProtocolConfig() const
+{
+    return m_rawCustomModelProtocolConfig;
+}
+
+void DescribeModelServiceResponseVO::SetRawCustomModelProtocolConfig(const string& _rawCustomModelProtocolConfig)
+{
+    m_rawCustomModelProtocolConfig = _rawCustomModelProtocolConfig;
+    m_rawCustomModelProtocolConfigHasBeenSet = true;
+}
+
+bool DescribeModelServiceResponseVO::RawCustomModelProtocolConfigHasBeenSet() const
+{
+    return m_rawCustomModelProtocolConfigHasBeenSet;
 }
 

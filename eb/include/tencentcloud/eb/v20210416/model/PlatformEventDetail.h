@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取事件名称
+                     * 获取<p>事件名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EventName 事件名称
+                     * @return EventName <p>事件名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEventName() const;
 
                     /**
-                     * 设置事件名称
+                     * 设置<p>事件名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _eventName 事件名称
+                     * @param _eventName <p>事件名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool EventNameHasBeenSet() const;
 
                     /**
-                     * 获取事件类型
+                     * 获取<p>事件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EventType 事件类型
+                     * @return EventType <p>事件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEventType() const;
 
                     /**
-                     * 设置事件类型
+                     * 设置<p>事件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _eventType 事件类型
+                     * @param _eventType <p>事件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,14 +99,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 事件名称
+                     * <p>事件名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eventName;
                     bool m_eventNameHasBeenSet;
 
                     /**
-                     * 事件类型
+                     * <p>事件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eventType;

@@ -30,7 +30,8 @@ DescribeUpgradeInstanceCheckRequest::DescribeUpgradeInstanceCheckRequest() :
     m_dBVersionHasBeenSet(false),
     m_hATypeHasBeenSet(false),
     m_multiZonesHasBeenSet(false),
-    m_drZonesHasBeenSet(false)
+    m_drZonesHasBeenSet(false),
+    m_throughputPerformanceHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,14 @@ string DescribeUpgradeInstanceCheckRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_throughputPerformanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ThroughputPerformance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_throughputPerformance, allocator);
     }
 
 
@@ -246,6 +255,22 @@ void DescribeUpgradeInstanceCheckRequest::SetDrZones(const vector<DrZoneInfo>& _
 bool DescribeUpgradeInstanceCheckRequest::DrZonesHasBeenSet() const
 {
     return m_drZonesHasBeenSet;
+}
+
+int64_t DescribeUpgradeInstanceCheckRequest::GetThroughputPerformance() const
+{
+    return m_throughputPerformance;
+}
+
+void DescribeUpgradeInstanceCheckRequest::SetThroughputPerformance(const int64_t& _throughputPerformance)
+{
+    m_throughputPerformance = _throughputPerformance;
+    m_throughputPerformanceHasBeenSet = true;
+}
+
+bool DescribeUpgradeInstanceCheckRequest::ThroughputPerformanceHasBeenSet() const
+{
+    return m_throughputPerformanceHasBeenSet;
 }
 
 

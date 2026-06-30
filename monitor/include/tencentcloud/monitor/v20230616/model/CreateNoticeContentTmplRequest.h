@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板名称
-                     * @return TmplName 模板名称
+                     * 获取<p>模板名称</p>
+                     * @return TmplName <p>模板名称</p>
                      * 
                      */
                     std::string GetTmplName() const;
 
                     /**
-                     * 设置模板名称
-                     * @param _tmplName 模板名称
+                     * 设置<p>模板名称</p>
+                     * @param _tmplName <p>模板名称</p>
                      * 
                      */
                     void SetTmplName(const std::string& _tmplName);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TmplNameHasBeenSet() const;
 
                     /**
-                     * 获取监控类型
-                     * @return MonitorType 监控类型
+                     * 获取<p>监控类型</p>
+                     * @return MonitorType <p>监控类型</p>
                      * 
                      */
                     std::string GetMonitorType() const;
 
                     /**
-                     * 设置监控类型
-                     * @param _monitorType 监控类型
+                     * 设置<p>监控类型</p>
+                     * @param _monitorType <p>监控类型</p>
                      * 
                      */
                     void SetMonitorType(const std::string& _monitorType);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool MonitorTypeHasBeenSet() const;
 
                     /**
-                     * 获取模板内容
-                     * @return TmplContents 模板内容
+                     * 获取<p>模板内容</p>
+                     * @return TmplContents <p>模板内容</p>
                      * 
                      */
                     NoticeContentTmplItem GetTmplContents() const;
 
                     /**
-                     * 设置模板内容
-                     * @param _tmplContents 模板内容
+                     * 设置<p>模板内容</p>
+                     * @param _tmplContents <p>模板内容</p>
                      * 
                      */
                     void SetTmplContents(const NoticeContentTmplItem& _tmplContents);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool TmplContentsHasBeenSet() const;
 
                     /**
-                     * 获取模板语言 en/zh
-                     * @return TmplLanguage 模板语言 en/zh
+                     * 获取<p>模板语言 en/zh</p>
+                     * @return TmplLanguage <p>模板语言 en/zh</p>
                      * 
                      */
                     std::string GetTmplLanguage() const;
 
                     /**
-                     * 设置模板语言 en/zh
-                     * @param _tmplLanguage 模板语言 en/zh
+                     * 设置<p>模板语言 en/zh</p>
+                     * @param _tmplLanguage <p>模板语言 en/zh</p>
                      * 
                      */
                     void SetTmplLanguage(const std::string& _tmplLanguage);
@@ -130,25 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板名称
+                     * <p>模板名称</p>
                      */
                     std::string m_tmplName;
                     bool m_tmplNameHasBeenSet;
 
                     /**
-                     * 监控类型
+                     * <p>监控类型</p>
                      */
                     std::string m_monitorType;
                     bool m_monitorTypeHasBeenSet;
 
                     /**
-                     * 模板内容
+                     * <p>模板内容</p>
                      */
                     NoticeContentTmplItem m_tmplContents;
                     bool m_tmplContentsHasBeenSet;
 
                     /**
-                     * 模板语言 en/zh
+                     * <p>模板语言 en/zh</p>
                      */
                     std::string m_tmplLanguage;
                     bool m_tmplLanguageHasBeenSet;

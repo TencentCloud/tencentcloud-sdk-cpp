@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务Api名称
-                     * @return ApiName 服务Api名称
+                     * 获取<p>服务Api名称</p>
+                     * @return ApiName <p>服务Api名称</p>
                      * 
                      */
                     std::string GetApiName() const;
 
                     /**
-                     * 设置服务Api名称
-                     * @param _apiName 服务Api名称
+                     * 设置<p>服务Api名称</p>
+                     * @param _apiName <p>服务Api名称</p>
                      * 
                      */
                     void SetApiName(const std::string& _apiName);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool ApiNameHasBeenSet() const;
 
                     /**
-                     * 获取服务请求Path
-                     * @return PathUrl 服务请求Path
+                     * 获取<p>服务请求Path</p>
+                     * @return PathUrl <p>服务请求Path</p>
                      * 
                      */
                     std::string GetPathUrl() const;
 
                     /**
-                     * 设置服务请求Path
-                     * @param _pathUrl 服务请求Path
+                     * 设置<p>服务请求Path</p>
+                     * @param _pathUrl <p>服务请求Path</p>
                      * 
                      */
                     void SetPathUrl(const std::string& _pathUrl);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool PathUrlHasBeenSet() const;
 
                     /**
-                     * 获取服务责任人名称
-                     * @return OwnerName 服务责任人名称
+                     * 获取<p>服务责任人名称</p>
+                     * @return OwnerName <p>服务责任人名称</p>
                      * 
                      */
                     std::string GetOwnerName() const;
 
                     /**
-                     * 设置服务责任人名称
-                     * @param _ownerName 服务责任人名称
+                     * 设置<p>服务责任人名称</p>
+                     * @param _ownerName <p>服务责任人名称</p>
                      * 
                      */
                     void SetOwnerName(const std::string& _ownerName);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool OwnerNameHasBeenSet() const;
 
                     /**
-                     * 获取服务请求方式
-                     * @return RequestType 服务请求方式
+                     * 获取<p>服务请求方式</p>
+                     * @return RequestType <p>服务请求方式</p>
                      * 
                      */
                     std::string GetRequestType() const;
 
                     /**
-                     * 设置服务请求方式
-                     * @param _requestType 服务请求方式
+                     * 设置<p>服务请求方式</p>
+                     * @param _requestType <p>服务请求方式</p>
                      * 
                      */
                     void SetRequestType(const std::string& _requestType);
@@ -133,18 +133,18 @@ namespace TencentCloud
                     bool RequestTypeHasBeenSet() const;
 
                     /**
-                     * 获取服务标签名称集合
+                     * 获取<p>服务标签名称集合</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApiTagNames 服务标签名称集合
+                     * @return ApiTagNames <p>服务标签名称集合</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApiTagNames() const;
 
                     /**
-                     * 设置服务标签名称集合
+                     * 设置<p>服务标签名称集合</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _apiTagNames 服务标签名称集合
+                     * @param _apiTagNames <p>服务标签名称集合</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -158,18 +158,18 @@ namespace TencentCloud
                     bool ApiTagNamesHasBeenSet() const;
 
                     /**
-                     * 获取服务描述
+                     * 获取<p>服务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApiDescription 服务描述
+                     * @return ApiDescription <p>服务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApiDescription() const;
 
                     /**
-                     * 设置服务描述
+                     * 设置<p>服务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _apiDescription 服务描述
+                     * @param _apiDescription <p>服务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -183,18 +183,18 @@ namespace TencentCloud
                     bool ApiDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取服务请求返回示例
+                     * 获取<p>服务请求返回示例</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RequestExample 服务请求返回示例
+                     * @return RequestExample <p>服务请求返回示例</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRequestExample() const;
 
                     /**
-                     * 设置服务请求返回示例
+                     * 设置<p>服务请求返回示例</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _requestExample 服务请求返回示例
+                     * @param _requestExample <p>服务请求返回示例</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -208,18 +208,18 @@ namespace TencentCloud
                     bool RequestExampleHasBeenSet() const;
 
                     /**
-                     * 获取服务请求成功返回示例
+                     * 获取<p>服务请求成功返回示例</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RequestSuccess 服务请求成功返回示例
+                     * @return RequestSuccess <p>服务请求成功返回示例</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRequestSuccess() const;
 
                     /**
-                     * 设置服务请求成功返回示例
+                     * 设置<p>服务请求成功返回示例</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _requestSuccess 服务请求成功返回示例
+                     * @param _requestSuccess <p>服务请求成功返回示例</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -233,18 +233,18 @@ namespace TencentCloud
                     bool RequestSuccessHasBeenSet() const;
 
                     /**
-                     * 获取服务请求失败返回示例
+                     * 获取<p>服务请求失败返回示例</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RequestError 服务请求失败返回示例
+                     * @return RequestError <p>服务请求失败返回示例</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRequestError() const;
 
                     /**
-                     * 设置服务请求失败返回示例
+                     * 设置<p>服务请求失败返回示例</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _requestError 服务请求失败返回示例
+                     * @param _requestError <p>服务请求失败返回示例</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -258,18 +258,18 @@ namespace TencentCloud
                     bool RequestErrorHasBeenSet() const;
 
                     /**
-                     * 获取服务请求参数列表
+                     * 获取<p>服务请求参数列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RequestParam 服务请求参数列表
+                     * @return RequestParam <p>服务请求参数列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DataServiceRequestParam> GetRequestParam() const;
 
                     /**
-                     * 设置服务请求参数列表
+                     * 设置<p>服务请求参数列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _requestParam 服务请求参数列表
+                     * @param _requestParam <p>服务请求参数列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -283,18 +283,18 @@ namespace TencentCloud
                     bool RequestParamHasBeenSet() const;
 
                     /**
-                     * 获取服务响应参数列表
+                     * 获取<p>服务响应参数列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResponseParam 服务响应参数列表
+                     * @return ResponseParam <p>服务响应参数列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DataServiceResponseParam> GetResponseParam() const;
 
                     /**
-                     * 设置服务响应参数列表
+                     * 设置<p>服务响应参数列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _responseParam 服务响应参数列表
+                     * @param _responseParam <p>服务响应参数列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -308,15 +308,15 @@ namespace TencentCloud
                     bool ResponseParamHasBeenSet() const;
 
                     /**
-                     * 获取最大qps
-                     * @return MaxAllowQps 最大qps
+                     * 获取<p>最大qps</p>
+                     * @return MaxAllowQps <p>最大qps</p>
                      * 
                      */
                     int64_t GetMaxAllowQps() const;
 
                     /**
-                     * 设置最大qps
-                     * @param _maxAllowQps 最大qps
+                     * 设置<p>最大qps</p>
+                     * @param _maxAllowQps <p>最大qps</p>
                      * 
                      */
                     void SetMaxAllowQps(const int64_t& _maxAllowQps);
@@ -329,15 +329,15 @@ namespace TencentCloud
                     bool MaxAllowQpsHasBeenSet() const;
 
                     /**
-                     * 获取最大记录数
-                     * @return MaxAllowPageSize 最大记录数
+                     * 获取<p>最大记录数</p>
+                     * @return MaxAllowPageSize <p>最大记录数</p>
                      * 
                      */
                     int64_t GetMaxAllowPageSize() const;
 
                     /**
-                     * 设置最大记录数
-                     * @param _maxAllowPageSize 最大记录数
+                     * 设置<p>最大记录数</p>
+                     * @param _maxAllowPageSize <p>最大记录数</p>
                      * 
                      */
                     void SetMaxAllowPageSize(const int64_t& _maxAllowPageSize);
@@ -350,15 +350,15 @@ namespace TencentCloud
                     bool MaxAllowPageSizeHasBeenSet() const;
 
                     /**
-                     * 获取超时时间，单位ms
-                     * @return TimeoutPeriod 超时时间，单位ms
+                     * 获取<p>超时时间，单位ms</p>
+                     * @return TimeoutPeriod <p>超时时间，单位ms</p>
                      * 
                      */
                     uint64_t GetTimeoutPeriod() const;
 
                     /**
-                     * 设置超时时间，单位ms
-                     * @param _timeoutPeriod 超时时间，单位ms
+                     * 设置<p>超时时间，单位ms</p>
+                     * @param _timeoutPeriod <p>超时时间，单位ms</p>
                      * 
                      */
                     void SetTimeoutPeriod(const uint64_t& _timeoutPeriod);
@@ -371,18 +371,18 @@ namespace TencentCloud
                     bool TimeoutPeriodHasBeenSet() const;
 
                     /**
-                     * 获取ApiId
+                     * 获取<p>ApiId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApiId ApiId
+                     * @return ApiId <p>ApiId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApiId() const;
 
                     /**
-                     * 设置ApiId
+                     * 设置<p>ApiId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _apiId ApiId
+                     * @param _apiId <p>ApiId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -396,15 +396,15 @@ namespace TencentCloud
                     bool ApiIdHasBeenSet() const;
 
                     /**
-                     * 获取0:免认证 1:应用认证
-                     * @return AuthType 0:免认证 1:应用认证
+                     * 获取<p>认证方式</p><p>枚举值：</p><ul><li>0： 免认证</li><li>1： 应用认证</li><li>2： OAuth2.0认证</li></ul>
+                     * @return AuthType <p>认证方式</p><p>枚举值：</p><ul><li>0： 免认证</li><li>1： 应用认证</li><li>2： OAuth2.0认证</li></ul>
                      * 
                      */
                     uint64_t GetAuthType() const;
 
                     /**
-                     * 设置0:免认证 1:应用认证
-                     * @param _authType 0:免认证 1:应用认证
+                     * 设置<p>认证方式</p><p>枚举值：</p><ul><li>0： 免认证</li><li>1： 应用认证</li><li>2： OAuth2.0认证</li></ul>
+                     * @param _authType <p>认证方式</p><p>枚举值：</p><ul><li>0： 免认证</li><li>1： 应用认证</li><li>2： OAuth2.0认证</li></ul>
                      * 
                      */
                     void SetAuthType(const uint64_t& _authType);
@@ -417,18 +417,18 @@ namespace TencentCloud
                     bool AuthTypeHasBeenSet() const;
 
                     /**
-                     * 获取请求地址
+                     * 获取<p>请求地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GatewayApiUrl 请求地址
+                     * @return GatewayApiUrl <p>请求地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayApiUrl() const;
 
                     /**
-                     * 设置请求地址
+                     * 设置<p>请求地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _gatewayApiUrl 请求地址
+                     * @param _gatewayApiUrl <p>请求地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -442,18 +442,18 @@ namespace TencentCloud
                     bool GatewayApiUrlHasBeenSet() const;
 
                     /**
-                     * 获取服务Api状态 1:已上线  3:已下线
+                     * 获取<p>服务Api状态 1:已上线  3:已下线</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApiStatus 服务Api状态 1:已上线  3:已下线
+                     * @return ApiStatus <p>服务Api状态 1:已上线  3:已下线</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetApiStatus() const;
 
                     /**
-                     * 设置服务Api状态 1:已上线  3:已下线
+                     * 设置<p>服务Api状态 1:已上线  3:已下线</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _apiStatus 服务Api状态 1:已上线  3:已下线
+                     * @param _apiStatus <p>服务Api状态 1:已上线  3:已下线</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -466,125 +466,157 @@ namespace TencentCloud
                      */
                     bool ApiStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启分页</p><p>枚举值：</p><ul><li>0： 开启分页</li><li>1： 未开启</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnablePage <p>是否开启分页</p><p>枚举值：</p><ul><li>0： 开启分页</li><li>1： 未开启</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetEnablePage() const;
+
+                    /**
+                     * 设置<p>是否开启分页</p><p>枚举值：</p><ul><li>0： 开启分页</li><li>1： 未开启</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _enablePage <p>是否开启分页</p><p>枚举值：</p><ul><li>0： 开启分页</li><li>1： 未开启</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnablePage(const int64_t& _enablePage);
+
+                    /**
+                     * 判断参数 EnablePage 是否已赋值
+                     * @return EnablePage 是否已赋值
+                     * 
+                     */
+                    bool EnablePageHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 服务Api名称
+                     * <p>服务Api名称</p>
                      */
                     std::string m_apiName;
                     bool m_apiNameHasBeenSet;
 
                     /**
-                     * 服务请求Path
+                     * <p>服务请求Path</p>
                      */
                     std::string m_pathUrl;
                     bool m_pathUrlHasBeenSet;
 
                     /**
-                     * 服务责任人名称
+                     * <p>服务责任人名称</p>
                      */
                     std::string m_ownerName;
                     bool m_ownerNameHasBeenSet;
 
                     /**
-                     * 服务请求方式
+                     * <p>服务请求方式</p>
                      */
                     std::string m_requestType;
                     bool m_requestTypeHasBeenSet;
 
                     /**
-                     * 服务标签名称集合
+                     * <p>服务标签名称集合</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_apiTagNames;
                     bool m_apiTagNamesHasBeenSet;
 
                     /**
-                     * 服务描述
+                     * <p>服务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_apiDescription;
                     bool m_apiDescriptionHasBeenSet;
 
                     /**
-                     * 服务请求返回示例
+                     * <p>服务请求返回示例</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_requestExample;
                     bool m_requestExampleHasBeenSet;
 
                     /**
-                     * 服务请求成功返回示例
+                     * <p>服务请求成功返回示例</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_requestSuccess;
                     bool m_requestSuccessHasBeenSet;
 
                     /**
-                     * 服务请求失败返回示例
+                     * <p>服务请求失败返回示例</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_requestError;
                     bool m_requestErrorHasBeenSet;
 
                     /**
-                     * 服务请求参数列表
+                     * <p>服务请求参数列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DataServiceRequestParam> m_requestParam;
                     bool m_requestParamHasBeenSet;
 
                     /**
-                     * 服务响应参数列表
+                     * <p>服务响应参数列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DataServiceResponseParam> m_responseParam;
                     bool m_responseParamHasBeenSet;
 
                     /**
-                     * 最大qps
+                     * <p>最大qps</p>
                      */
                     int64_t m_maxAllowQps;
                     bool m_maxAllowQpsHasBeenSet;
 
                     /**
-                     * 最大记录数
+                     * <p>最大记录数</p>
                      */
                     int64_t m_maxAllowPageSize;
                     bool m_maxAllowPageSizeHasBeenSet;
 
                     /**
-                     * 超时时间，单位ms
+                     * <p>超时时间，单位ms</p>
                      */
                     uint64_t m_timeoutPeriod;
                     bool m_timeoutPeriodHasBeenSet;
 
                     /**
-                     * ApiId
+                     * <p>ApiId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_apiId;
                     bool m_apiIdHasBeenSet;
 
                     /**
-                     * 0:免认证 1:应用认证
+                     * <p>认证方式</p><p>枚举值：</p><ul><li>0： 免认证</li><li>1： 应用认证</li><li>2： OAuth2.0认证</li></ul>
                      */
                     uint64_t m_authType;
                     bool m_authTypeHasBeenSet;
 
                     /**
-                     * 请求地址
+                     * <p>请求地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayApiUrl;
                     bool m_gatewayApiUrlHasBeenSet;
 
                     /**
-                     * 服务Api状态 1:已上线  3:已下线
+                     * <p>服务Api状态 1:已上线  3:已下线</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_apiStatus;
                     bool m_apiStatusHasBeenSet;
+
+                    /**
+                     * <p>是否开启分页</p><p>枚举值：</p><ul><li>0： 开启分页</li><li>1： 未开启</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_enablePage;
+                    bool m_enablePageHasBeenSet;
 
                 };
             }

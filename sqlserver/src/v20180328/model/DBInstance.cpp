@@ -75,7 +75,8 @@ DBInstance::DBInstance() :
     m_slaveZonesHasBeenSet(false),
     m_architectureHasBeenSet(false),
     m_styleHasBeenSet(false),
-    m_multiSlaveZonesHasBeenSet(false)
+    m_multiSlaveZonesHasBeenSet(false),
+    m_throughputPerformanceHasBeenSet(false)
 {
 }
 
@@ -667,6 +668,16 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
         m_multiSlaveZonesHasBeenSet = true;
     }
 
+    if (value.HasMember("ThroughputPerformance") && !value["ThroughputPerformance"].IsNull())
+    {
+        if (!value["ThroughputPerformance"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstance.ThroughputPerformance` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_throughputPerformance = value["ThroughputPerformance"].GetInt64();
+        m_throughputPerformanceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1137,6 +1148,14 @@ void DBInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_throughputPerformanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ThroughputPerformance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_throughputPerformance, allocator);
     }
 
 }
@@ -2020,5 +2039,21 @@ void DBInstance::SetMultiSlaveZones(const vector<SlaveZones>& _multiSlaveZones)
 bool DBInstance::MultiSlaveZonesHasBeenSet() const
 {
     return m_multiSlaveZonesHasBeenSet;
+}
+
+int64_t DBInstance::GetThroughputPerformance() const
+{
+    return m_throughputPerformance;
+}
+
+void DBInstance::SetThroughputPerformance(const int64_t& _throughputPerformance)
+{
+    m_throughputPerformance = _throughputPerformance;
+    m_throughputPerformanceHasBeenSet = true;
+}
+
+bool DBInstance::ThroughputPerformanceHasBeenSet() const
+{
+    return m_throughputPerformanceHasBeenSet;
 }
 

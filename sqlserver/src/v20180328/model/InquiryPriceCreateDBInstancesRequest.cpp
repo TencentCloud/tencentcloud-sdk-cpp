@@ -33,7 +33,8 @@ InquiryPriceCreateDBInstancesRequest::InquiryPriceCreateDBInstancesRequest() :
     m_cpuHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_machineTypeHasBeenSet(false),
-    m_drZonesHasBeenSet(false)
+    m_drZonesHasBeenSet(false),
+    m_throughputPerformanceHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,14 @@ string InquiryPriceCreateDBInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_throughputPerformanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ThroughputPerformance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_throughputPerformance, allocator);
     }
 
 
@@ -319,6 +328,22 @@ void InquiryPriceCreateDBInstancesRequest::SetDrZones(const vector<string>& _drZ
 bool InquiryPriceCreateDBInstancesRequest::DrZonesHasBeenSet() const
 {
     return m_drZonesHasBeenSet;
+}
+
+uint64_t InquiryPriceCreateDBInstancesRequest::GetThroughputPerformance() const
+{
+    return m_throughputPerformance;
+}
+
+void InquiryPriceCreateDBInstancesRequest::SetThroughputPerformance(const uint64_t& _throughputPerformance)
+{
+    m_throughputPerformance = _throughputPerformance;
+    m_throughputPerformanceHasBeenSet = true;
+}
+
+bool InquiryPriceCreateDBInstancesRequest::ThroughputPerformanceHasBeenSet() const
+{
+    return m_throughputPerformanceHasBeenSet;
 }
 
 

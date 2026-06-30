@@ -63,6 +63,8 @@
 #include <tencentcloud/omics/v20221128/model/GetInputTemplateFileResponse.h>
 #include <tencentcloud/omics/v20221128/model/GetRunCallsRequest.h>
 #include <tencentcloud/omics/v20221128/model/GetRunCallsResponse.h>
+#include <tencentcloud/omics/v20221128/model/GetRunJobLogRequest.h>
+#include <tencentcloud/omics/v20221128/model/GetRunJobLogResponse.h>
 #include <tencentcloud/omics/v20221128/model/GetRunMetadataFileRequest.h>
 #include <tencentcloud/omics/v20221128/model/GetRunMetadataFileResponse.h>
 #include <tencentcloud/omics/v20221128/model/GetRunStatusRequest.h>
@@ -157,6 +159,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetRunCallsResponse> GetRunCallsOutcome;
                 typedef std::future<GetRunCallsOutcome> GetRunCallsOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::GetRunCallsRequest&, GetRunCallsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRunCallsAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetRunJobLogResponse> GetRunJobLogOutcome;
+                typedef std::future<GetRunJobLogOutcome> GetRunJobLogOutcomeCallable;
+                typedef std::function<void(const OmicsClient*, const Model::GetRunJobLogRequest&, GetRunJobLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRunJobLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetRunMetadataFileResponse> GetRunMetadataFileOutcome;
                 typedef std::future<GetRunMetadataFileOutcome> GetRunMetadataFileOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::GetRunMetadataFileRequest&, GetRunMetadataFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRunMetadataFileAsyncHandler;
@@ -369,6 +374,15 @@ namespace TencentCloud
                 GetRunCallsOutcome GetRunCalls(const Model::GetRunCallsRequest &request);
                 void GetRunCallsAsync(const Model::GetRunCallsRequest& request, const GetRunCallsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetRunCallsOutcomeCallable GetRunCallsCallable(const Model::GetRunCallsRequest& request);
+
+                /**
+                 *获取任务详情文件。
+                 * @param req GetRunJobLogRequest
+                 * @return GetRunJobLogOutcome
+                 */
+                GetRunJobLogOutcome GetRunJobLog(const Model::GetRunJobLogRequest &request);
+                void GetRunJobLogAsync(const Model::GetRunJobLogRequest& request, const GetRunJobLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetRunJobLogOutcomeCallable GetRunJobLogCallable(const Model::GetRunJobLogRequest& request);
 
                 /**
                  *获取任务详情文件。

@@ -99,18 +99,18 @@ namespace TencentCloud
                     bool ReceiversHasBeenSet() const;
 
                     /**
-                     * 获取订阅方式 1.邮件email  2.短信sms
+                     * 获取订阅方式：1-邮件，2-短信，3-微信，4-语音，5-企微，6-HTTP连接，7-飞书群，8-钉钉群
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubscribeType 订阅方式 1.邮件email  2.短信sms
+                     * @return SubscribeType 订阅方式：1-邮件，2-短信，3-微信，4-语音，5-企微，6-HTTP连接，7-飞书群，8-钉钉群
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetSubscribeType() const;
 
                     /**
-                     * 设置订阅方式 1.邮件email  2.短信sms
+                     * 设置订阅方式：1-邮件，2-短信，3-微信，4-语音，5-企微，6-HTTP连接，7-飞书群，8-钉钉群
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subscribeType 订阅方式 1.邮件email  2.短信sms
+                     * @param _subscribeType 订阅方式：1-邮件，2-短信，3-微信，4-语音，5-企微，6-HTTP连接，7-飞书群，8-钉钉群
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -240,7 +240,7 @@ namespace TencentCloud
                     bool m_receiversHasBeenSet;
 
                     /**
-                     * 订阅方式 1.邮件email  2.短信sms
+                     * 订阅方式：1-邮件，2-短信，3-微信，4-语音，5-企微，6-HTTP连接，7-飞书群，8-钉钉群
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_subscribeType;

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警策略条件列表
-                     * @return Conditions 告警策略条件列表
+                     * 获取<p>告警策略条件列表</p>
+                     * @return Conditions <p>告警策略条件列表</p>
                      * 
                      */
                     std::vector<DescribePolicyConditionListCondition> GetConditions() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 告警策略条件列表
+                     * <p>告警策略条件列表</p>
                      */
                     std::vector<DescribePolicyConditionListCondition> m_conditions;
                     bool m_conditionsHasBeenSet;

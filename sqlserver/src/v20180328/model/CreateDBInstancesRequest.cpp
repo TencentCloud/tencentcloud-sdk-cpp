@@ -46,7 +46,8 @@ CreateDBInstancesRequest::CreateDBInstancesRequest() :
     m_collationHasBeenSet(false),
     m_timeZoneHasBeenSet(false),
     m_multiNodesHasBeenSet(false),
-    m_drZonesHasBeenSet(false)
+    m_drZonesHasBeenSet(false),
+    m_availabilityStrategyHasBeenSet(false)
 {
 }
 
@@ -274,6 +275,14 @@ string CreateDBInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_availabilityStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailabilityStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_availabilityStrategy.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -666,6 +675,22 @@ void CreateDBInstancesRequest::SetDrZones(const vector<string>& _drZones)
 bool CreateDBInstancesRequest::DrZonesHasBeenSet() const
 {
     return m_drZonesHasBeenSet;
+}
+
+string CreateDBInstancesRequest::GetAvailabilityStrategy() const
+{
+    return m_availabilityStrategy;
+}
+
+void CreateDBInstancesRequest::SetAvailabilityStrategy(const string& _availabilityStrategy)
+{
+    m_availabilityStrategy = _availabilityStrategy;
+    m_availabilityStrategyHasBeenSet = true;
+}
+
+bool CreateDBInstancesRequest::AvailabilityStrategyHasBeenSet() const
+{
+    return m_availabilityStrategyHasBeenSet;
 }
 
 

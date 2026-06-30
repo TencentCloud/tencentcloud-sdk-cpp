@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取自定义通知内容模板id，唯一id
+                     * 获取<p>自定义通知内容模板id，唯一id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TmplID 自定义通知内容模板id，唯一id
+                     * @return TmplID <p>自定义通知内容模板id，唯一id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTmplID() const;
 
                     /**
-                     * 设置自定义通知内容模板id，唯一id
+                     * 设置<p>自定义通知内容模板id，唯一id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tmplID 自定义通知内容模板id，唯一id
+                     * @param _tmplID <p>自定义通知内容模板id，唯一id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool TmplIDHasBeenSet() const;
 
                     /**
-                     * 获取自定义通知内容模板名
+                     * 获取<p>自定义通知内容模板名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TmplName 自定义通知内容模板名
+                     * @return TmplName <p>自定义通知内容模板名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTmplName() const;
 
                     /**
-                     * 设置自定义通知内容模板名
+                     * 设置<p>自定义通知内容模板名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tmplName 自定义通知内容模板名
+                     * @param _tmplName <p>自定义通知内容模板名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool TmplNameHasBeenSet() const;
 
                     /**
-                     * 获取通知内容
+                     * 获取<p>通知内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TmplContents 通知内容
+                     * @return TmplContents <p>通知内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     NoticeContentTmplItem GetTmplContents() const;
 
                     /**
-                     * 设置通知内容
+                     * 设置<p>通知内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tmplContents 通知内容
+                     * @param _tmplContents <p>通知内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,18 +123,18 @@ namespace TencentCloud
                     bool TmplContentsHasBeenSet() const;
 
                     /**
-                     * 获取Unix时间戳，秒
+                     * 获取<p>Unix时间戳，秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime Unix时间戳，秒
+                     * @return CreateTime <p>Unix时间戳，秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
-                     * 设置Unix时间戳，秒
+                     * 设置<p>Unix时间戳，秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime Unix时间戳，秒
+                     * @param _createTime <p>Unix时间戳，秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -148,18 +148,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取Unix时间戳，秒
+                     * 获取<p>Unix时间戳，秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime Unix时间戳，秒
+                     * @return UpdateTime <p>Unix时间戳，秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
-                     * 设置Unix时间戳，秒
+                     * 设置<p>Unix时间戳，秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime Unix时间戳，秒
+                     * @param _updateTime <p>Unix时间戳，秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -173,18 +173,18 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取最后修改人
+                     * 获取<p>最后修改人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastModifier 最后修改人
+                     * @return LastModifier <p>最后修改人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastModifier() const;
 
                     /**
-                     * 设置最后修改人
+                     * 设置<p>最后修改人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lastModifier 最后修改人
+                     * @param _lastModifier <p>最后修改人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -198,18 +198,18 @@ namespace TencentCloud
                     bool LastModifierHasBeenSet() const;
 
                     /**
-                     * 获取创建人
+                     * 获取<p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Creator 创建人
+                     * @return Creator <p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreator() const;
 
                     /**
-                     * 设置创建人
+                     * 设置<p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _creator 创建人
+                     * @param _creator <p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -223,15 +223,15 @@ namespace TencentCloud
                     bool CreatorHasBeenSet() const;
 
                     /**
-                     * 获取监控类型
-                     * @return MonitorType 监控类型
+                     * 获取<p>监控类型</p>
+                     * @return MonitorType <p>监控类型</p>
                      * 
                      */
                     std::string GetMonitorType() const;
 
                     /**
-                     * 设置监控类型
-                     * @param _monitorType 监控类型
+                     * 设置<p>监控类型</p>
+                     * @param _monitorType <p>监控类型</p>
                      * 
                      */
                     void SetMonitorType(const std::string& _monitorType);
@@ -244,15 +244,15 @@ namespace TencentCloud
                     bool MonitorTypeHasBeenSet() const;
 
                     /**
-                     * 获取模板语言 en/zh
-                     * @return TmplLanguage 模板语言 en/zh
+                     * 获取<p>模板语言 en/zh</p>
+                     * @return TmplLanguage <p>模板语言 en/zh</p>
                      * 
                      */
                     std::string GetTmplLanguage() const;
 
                     /**
-                     * 设置模板语言 en/zh
-                     * @param _tmplLanguage 模板语言 en/zh
+                     * 设置<p>模板语言 en/zh</p>
+                     * @param _tmplLanguage <p>模板语言 en/zh</p>
                      * 
                      */
                     void SetTmplLanguage(const std::string& _tmplLanguage);
@@ -267,62 +267,62 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 自定义通知内容模板id，唯一id
+                     * <p>自定义通知内容模板id，唯一id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tmplID;
                     bool m_tmplIDHasBeenSet;
 
                     /**
-                     * 自定义通知内容模板名
+                     * <p>自定义通知内容模板名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tmplName;
                     bool m_tmplNameHasBeenSet;
 
                     /**
-                     * 通知内容
+                     * <p>通知内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     NoticeContentTmplItem m_tmplContents;
                     bool m_tmplContentsHasBeenSet;
 
                     /**
-                     * Unix时间戳，秒
+                     * <p>Unix时间戳，秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * Unix时间戳，秒
+                     * <p>Unix时间戳，秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 最后修改人
+                     * <p>最后修改人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastModifier;
                     bool m_lastModifierHasBeenSet;
 
                     /**
-                     * 创建人
+                     * <p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
 
                     /**
-                     * 监控类型
+                     * <p>监控类型</p>
                      */
                     std::string m_monitorType;
                     bool m_monitorTypeHasBeenSet;
 
                     /**
-                     * 模板语言 en/zh
+                     * <p>模板语言 en/zh</p>
                      */
                     std::string m_tmplLanguage;
                     bool m_tmplLanguageHasBeenSet;

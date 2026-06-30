@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取更新时间
-                     * @return ModTime 更新时间
+                     * 获取<p>更新时间</p>
+                     * @return ModTime <p>更新时间</p>
                      * 
                      */
                     std::string GetModTime() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool ModTimeHasBeenSet() const;
 
                     /**
-                     * 获取事件集描述
-                     * @return Description 事件集描述
+                     * 获取<p>事件集描述</p>
+                     * @return Description <p>事件集描述</p>
                      * 
                      */
                     std::string GetDescription() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取日志主题ID
-                     * @return ClsTopicId 日志主题ID
+                     * 获取<p>日志主题ID</p>
+                     * @return ClsTopicId <p>日志主题ID</p>
                      * 
                      */
                     std::string GetClsTopicId() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool ClsTopicIdHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return AddTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return AddTime <p>创建时间</p>
                      * 
                      */
                     std::string GetAddTime() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool AddTimeHasBeenSet() const;
 
                     /**
-                     * 获取日志集ID
-                     * @return ClsLogsetId 日志集ID
+                     * 获取<p>日志集ID</p>
+                     * @return ClsLogsetId <p>日志集ID</p>
                      * 
                      */
                     std::string GetClsLogsetId() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool ClsLogsetIdHasBeenSet() const;
 
                     /**
-                     * 获取事件集名称
-                     * @return EventBusName 事件集名称
+                     * 获取<p>事件集名称</p>
+                     * @return EventBusName <p>事件集名称</p>
                      * 
                      */
                     std::string GetEventBusName() const;
@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool EventBusNameHasBeenSet() const;
 
                     /**
-                     * 获取事件集ID
-                     * @return EventBusId 事件集ID
+                     * 获取<p>事件集ID</p>
+                     * @return EventBusId <p>事件集ID</p>
                      * 
                      */
                     std::string GetEventBusId() const;
@@ -142,8 +142,8 @@ namespace TencentCloud
                     bool EventBusIdHasBeenSet() const;
 
                     /**
-                     * 获取（已废弃）事件集类型
-                     * @return Type （已废弃）事件集类型
+                     * 获取<p>事件集类型</p><p>枚举值：</p><ul><li>Cloud： 云服务事件集</li><li>Platform： 平台事件集</li><li>Custom： 自定义事件集</li></ul>
+                     * @return Type <p>事件集类型</p><p>枚举值：</p><ul><li>Cloud： 云服务事件集</li><li>Platform： 平台事件集</li><li>Custom： 自定义事件集</li></ul>
                      * 
                      */
                     std::string GetType() const;
@@ -156,8 +156,8 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取计费模式
-                     * @return PayMode 计费模式
+                     * 获取<p>计费模式</p>
+                     * @return PayMode <p>计费模式</p>
                      * 
                      */
                     std::string GetPayMode() const;
@@ -170,9 +170,9 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取EB日志存储时长
+                     * 获取<p>EB日志存储时长</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SaveDays EB日志存储时长
+                     * @return SaveDays <p>EB日志存储时长</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -186,9 +186,9 @@ namespace TencentCloud
                     bool SaveDaysHasBeenSet() const;
 
                     /**
-                     * 获取EB日志主题ID
+                     * 获取<p>EB日志主题ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LogTopicId EB日志主题ID
+                     * @return LogTopicId <p>EB日志主题ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -202,9 +202,9 @@ namespace TencentCloud
                     bool LogTopicIdHasBeenSet() const;
 
                     /**
-                     * 获取是否开启存储
+                     * 获取<p>是否开启存储</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EnableStore 是否开启存储
+                     * @return EnableStore <p>是否开启存储</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -218,9 +218,9 @@ namespace TencentCloud
                     bool EnableStoreHasBeenSet() const;
 
                     /**
-                     * 获取消息序列，是否有序
+                     * 获取<p>消息序列，是否有序</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LinkMode 消息序列，是否有序
+                     * @return LinkMode <p>消息序列，是否有序</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -236,82 +236,82 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
                      */
                     std::string m_modTime;
                     bool m_modTimeHasBeenSet;
 
                     /**
-                     * 事件集描述
+                     * <p>事件集描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 日志主题ID
+                     * <p>日志主题ID</p>
                      */
                     std::string m_clsTopicId;
                     bool m_clsTopicIdHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_addTime;
                     bool m_addTimeHasBeenSet;
 
                     /**
-                     * 日志集ID
+                     * <p>日志集ID</p>
                      */
                     std::string m_clsLogsetId;
                     bool m_clsLogsetIdHasBeenSet;
 
                     /**
-                     * 事件集名称
+                     * <p>事件集名称</p>
                      */
                     std::string m_eventBusName;
                     bool m_eventBusNameHasBeenSet;
 
                     /**
-                     * 事件集ID
+                     * <p>事件集ID</p>
                      */
                     std::string m_eventBusId;
                     bool m_eventBusIdHasBeenSet;
 
                     /**
-                     * （已废弃）事件集类型
+                     * <p>事件集类型</p><p>枚举值：</p><ul><li>Cloud： 云服务事件集</li><li>Platform： 平台事件集</li><li>Custom： 自定义事件集</li></ul>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 计费模式
+                     * <p>计费模式</p>
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * EB日志存储时长
+                     * <p>EB日志存储时长</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_saveDays;
                     bool m_saveDaysHasBeenSet;
 
                     /**
-                     * EB日志主题ID
+                     * <p>EB日志主题ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logTopicId;
                     bool m_logTopicIdHasBeenSet;
 
                     /**
-                     * 是否开启存储
+                     * <p>是否开启存储</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableStore;
                     bool m_enableStoreHasBeenSet;
 
                     /**
-                     * 消息序列，是否有序
+                     * <p>消息序列，是否有序</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_linkMode;

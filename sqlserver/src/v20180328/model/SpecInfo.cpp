@@ -36,7 +36,14 @@ SpecInfo::SpecInfo() :
     m_postPidHasBeenSet(false),
     m_payModeStatusHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
-    m_multiZonesStatusHasBeenSet(false)
+    m_multiZonesStatusHasBeenSet(false),
+    m_minBaselineIOPSHasBeenSet(false),
+    m_maxBaselineIOPSHasBeenSet(false),
+    m_minBaselineThroughputHasBeenSet(false),
+    m_maxBaselineThroughputHasBeenSet(false),
+    m_extraIOSupportedHasBeenSet(false),
+    m_maxExtraThroughputHasBeenSet(false),
+    m_minDiskSizeForExtraIOHasBeenSet(false)
 {
 }
 
@@ -208,6 +215,76 @@ CoreInternalOutcome SpecInfo::Deserialize(const rapidjson::Value &value)
         m_multiZonesStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("MinBaselineIOPS") && !value["MinBaselineIOPS"].IsNull())
+    {
+        if (!value["MinBaselineIOPS"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.MinBaselineIOPS` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_minBaselineIOPS = value["MinBaselineIOPS"].GetUint64();
+        m_minBaselineIOPSHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxBaselineIOPS") && !value["MaxBaselineIOPS"].IsNull())
+    {
+        if (!value["MaxBaselineIOPS"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.MaxBaselineIOPS` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxBaselineIOPS = value["MaxBaselineIOPS"].GetUint64();
+        m_maxBaselineIOPSHasBeenSet = true;
+    }
+
+    if (value.HasMember("MinBaselineThroughput") && !value["MinBaselineThroughput"].IsNull())
+    {
+        if (!value["MinBaselineThroughput"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.MinBaselineThroughput` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_minBaselineThroughput = value["MinBaselineThroughput"].GetUint64();
+        m_minBaselineThroughputHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxBaselineThroughput") && !value["MaxBaselineThroughput"].IsNull())
+    {
+        if (!value["MaxBaselineThroughput"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.MaxBaselineThroughput` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxBaselineThroughput = value["MaxBaselineThroughput"].GetUint64();
+        m_maxBaselineThroughputHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExtraIOSupported") && !value["ExtraIOSupported"].IsNull())
+    {
+        if (!value["ExtraIOSupported"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.ExtraIOSupported` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_extraIOSupported = value["ExtraIOSupported"].GetBool();
+        m_extraIOSupportedHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxExtraThroughput") && !value["MaxExtraThroughput"].IsNull())
+    {
+        if (!value["MaxExtraThroughput"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.MaxExtraThroughput` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxExtraThroughput = value["MaxExtraThroughput"].GetUint64();
+        m_maxExtraThroughputHasBeenSet = true;
+    }
+
+    if (value.HasMember("MinDiskSizeForExtraIO") && !value["MinDiskSizeForExtraIO"].IsNull())
+    {
+        if (!value["MinDiskSizeForExtraIO"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.MinDiskSizeForExtraIO` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_minDiskSizeForExtraIO = value["MinDiskSizeForExtraIO"].GetUint64();
+        m_minDiskSizeForExtraIOHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -346,6 +423,62 @@ void SpecInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "MultiZonesStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_multiZonesStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_minBaselineIOPSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinBaselineIOPS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_minBaselineIOPS, allocator);
+    }
+
+    if (m_maxBaselineIOPSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxBaselineIOPS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxBaselineIOPS, allocator);
+    }
+
+    if (m_minBaselineThroughputHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinBaselineThroughput";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_minBaselineThroughput, allocator);
+    }
+
+    if (m_maxBaselineThroughputHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxBaselineThroughput";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxBaselineThroughput, allocator);
+    }
+
+    if (m_extraIOSupportedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraIOSupported";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_extraIOSupported, allocator);
+    }
+
+    if (m_maxExtraThroughputHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxExtraThroughput";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxExtraThroughput, allocator);
+    }
+
+    if (m_minDiskSizeForExtraIOHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinDiskSizeForExtraIO";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_minDiskSizeForExtraIO, allocator);
     }
 
 }
@@ -605,5 +738,117 @@ void SpecInfo::SetMultiZonesStatus(const string& _multiZonesStatus)
 bool SpecInfo::MultiZonesStatusHasBeenSet() const
 {
     return m_multiZonesStatusHasBeenSet;
+}
+
+uint64_t SpecInfo::GetMinBaselineIOPS() const
+{
+    return m_minBaselineIOPS;
+}
+
+void SpecInfo::SetMinBaselineIOPS(const uint64_t& _minBaselineIOPS)
+{
+    m_minBaselineIOPS = _minBaselineIOPS;
+    m_minBaselineIOPSHasBeenSet = true;
+}
+
+bool SpecInfo::MinBaselineIOPSHasBeenSet() const
+{
+    return m_minBaselineIOPSHasBeenSet;
+}
+
+uint64_t SpecInfo::GetMaxBaselineIOPS() const
+{
+    return m_maxBaselineIOPS;
+}
+
+void SpecInfo::SetMaxBaselineIOPS(const uint64_t& _maxBaselineIOPS)
+{
+    m_maxBaselineIOPS = _maxBaselineIOPS;
+    m_maxBaselineIOPSHasBeenSet = true;
+}
+
+bool SpecInfo::MaxBaselineIOPSHasBeenSet() const
+{
+    return m_maxBaselineIOPSHasBeenSet;
+}
+
+uint64_t SpecInfo::GetMinBaselineThroughput() const
+{
+    return m_minBaselineThroughput;
+}
+
+void SpecInfo::SetMinBaselineThroughput(const uint64_t& _minBaselineThroughput)
+{
+    m_minBaselineThroughput = _minBaselineThroughput;
+    m_minBaselineThroughputHasBeenSet = true;
+}
+
+bool SpecInfo::MinBaselineThroughputHasBeenSet() const
+{
+    return m_minBaselineThroughputHasBeenSet;
+}
+
+uint64_t SpecInfo::GetMaxBaselineThroughput() const
+{
+    return m_maxBaselineThroughput;
+}
+
+void SpecInfo::SetMaxBaselineThroughput(const uint64_t& _maxBaselineThroughput)
+{
+    m_maxBaselineThroughput = _maxBaselineThroughput;
+    m_maxBaselineThroughputHasBeenSet = true;
+}
+
+bool SpecInfo::MaxBaselineThroughputHasBeenSet() const
+{
+    return m_maxBaselineThroughputHasBeenSet;
+}
+
+bool SpecInfo::GetExtraIOSupported() const
+{
+    return m_extraIOSupported;
+}
+
+void SpecInfo::SetExtraIOSupported(const bool& _extraIOSupported)
+{
+    m_extraIOSupported = _extraIOSupported;
+    m_extraIOSupportedHasBeenSet = true;
+}
+
+bool SpecInfo::ExtraIOSupportedHasBeenSet() const
+{
+    return m_extraIOSupportedHasBeenSet;
+}
+
+uint64_t SpecInfo::GetMaxExtraThroughput() const
+{
+    return m_maxExtraThroughput;
+}
+
+void SpecInfo::SetMaxExtraThroughput(const uint64_t& _maxExtraThroughput)
+{
+    m_maxExtraThroughput = _maxExtraThroughput;
+    m_maxExtraThroughputHasBeenSet = true;
+}
+
+bool SpecInfo::MaxExtraThroughputHasBeenSet() const
+{
+    return m_maxExtraThroughputHasBeenSet;
+}
+
+uint64_t SpecInfo::GetMinDiskSizeForExtraIO() const
+{
+    return m_minDiskSizeForExtraIO;
+}
+
+void SpecInfo::SetMinDiskSizeForExtraIO(const uint64_t& _minDiskSizeForExtraIO)
+{
+    m_minDiskSizeForExtraIO = _minDiskSizeForExtraIO;
+    m_minDiskSizeForExtraIOHasBeenSet = true;
+}
+
+bool SpecInfo::MinDiskSizeForExtraIOHasBeenSet() const
+{
+    return m_minDiskSizeForExtraIOHasBeenSet;
 }
 

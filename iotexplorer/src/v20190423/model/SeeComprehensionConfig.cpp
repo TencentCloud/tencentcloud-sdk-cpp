@@ -26,7 +26,9 @@ SeeComprehensionConfig::SeeComprehensionConfig() :
     m_outputLangHasBeenSet(false),
     m_alternativeOutputLangHasBeenSet(false),
     m_multiCameraLayoutHasBeenSet(false),
-    m_maxDurationHasBeenSet(false)
+    m_customDetectQueriesHasBeenSet(false),
+    m_maxDurationHasBeenSet(false),
+    m_enableKeywordsHasBeenSet(false)
 {
 }
 
@@ -88,6 +90,26 @@ CoreInternalOutcome SeeComprehensionConfig::Deserialize(const rapidjson::Value &
         m_multiCameraLayoutHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomDetectQueries") && !value["CustomDetectQueries"].IsNull())
+    {
+        if (!value["CustomDetectQueries"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SeeComprehensionConfig.CustomDetectQueries` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CustomDetectQueries"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VisionCustomDetectQuery item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_customDetectQueries.push_back(item);
+        }
+        m_customDetectQueriesHasBeenSet = true;
+    }
+
     if (value.HasMember("MaxDuration") && !value["MaxDuration"].IsNull())
     {
         if (!value["MaxDuration"].IsInt64())
@@ -96,6 +118,16 @@ CoreInternalOutcome SeeComprehensionConfig::Deserialize(const rapidjson::Value &
         }
         m_maxDuration = value["MaxDuration"].GetInt64();
         m_maxDurationHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableKeywords") && !value["EnableKeywords"].IsNull())
+    {
+        if (!value["EnableKeywords"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SeeComprehensionConfig.EnableKeywords` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableKeywords = value["EnableKeywords"].GetBool();
+        m_enableKeywordsHasBeenSet = true;
     }
 
 
@@ -150,12 +182,35 @@ void SeeComprehensionConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         value.AddMember(iKey, rapidjson::Value(m_multiCameraLayout.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_customDetectQueriesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomDetectQueries";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_customDetectQueries.begin(); itr != m_customDetectQueries.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_maxDurationHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxDuration, allocator);
+    }
+
+    if (m_enableKeywordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableKeywords";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableKeywords, allocator);
     }
 
 }
@@ -241,6 +296,22 @@ bool SeeComprehensionConfig::MultiCameraLayoutHasBeenSet() const
     return m_multiCameraLayoutHasBeenSet;
 }
 
+vector<VisionCustomDetectQuery> SeeComprehensionConfig::GetCustomDetectQueries() const
+{
+    return m_customDetectQueries;
+}
+
+void SeeComprehensionConfig::SetCustomDetectQueries(const vector<VisionCustomDetectQuery>& _customDetectQueries)
+{
+    m_customDetectQueries = _customDetectQueries;
+    m_customDetectQueriesHasBeenSet = true;
+}
+
+bool SeeComprehensionConfig::CustomDetectQueriesHasBeenSet() const
+{
+    return m_customDetectQueriesHasBeenSet;
+}
+
 int64_t SeeComprehensionConfig::GetMaxDuration() const
 {
     return m_maxDuration;
@@ -255,5 +326,21 @@ void SeeComprehensionConfig::SetMaxDuration(const int64_t& _maxDuration)
 bool SeeComprehensionConfig::MaxDurationHasBeenSet() const
 {
     return m_maxDurationHasBeenSet;
+}
+
+bool SeeComprehensionConfig::GetEnableKeywords() const
+{
+    return m_enableKeywords;
+}
+
+void SeeComprehensionConfig::SetEnableKeywords(const bool& _enableKeywords)
+{
+    m_enableKeywords = _enableKeywords;
+    m_enableKeywordsHasBeenSet = true;
+}
+
+bool SeeComprehensionConfig::EnableKeywordsHasBeenSet() const
+{
+    return m_enableKeywordsHasBeenSet;
 }
 

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取电话流水总数
-                     * @return Count 电话流水总数
+                     * 获取<p>电话流水总数</p>
+                     * @return Count <p>电话流水总数</p>
                      * 
                      */
                     int64_t GetCount() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 电话流水总数
+                     * <p>电话流水总数</p>
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;

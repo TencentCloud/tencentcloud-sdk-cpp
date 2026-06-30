@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可用区
-                     * @return Zone 可用区
+                     * 获取<p>可用区</p>
+                     * @return Zone <p>可用区</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区
-                     * @param _zone 可用区
+                     * 设置<p>可用区</p>
+                     * @param _zone <p>可用区</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取是否高可用
-                     * @return HaFlag 是否高可用
+                     * 获取<p>是否高可用</p>
+                     * @return HaFlag <p>是否高可用</p>
                      * 
                      */
                     bool GetHaFlag() const;
 
                     /**
-                     * 设置是否高可用
-                     * @param _haFlag 是否高可用
+                     * 设置<p>是否高可用</p>
+                     * @param _haFlag <p>是否高可用</p>
                      * 
                      */
                     void SetHaFlag(const bool& _haFlag);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool HaFlagHasBeenSet() const;
 
                     /**
-                     * 获取私有网络
-                     * @return UserVPCId 私有网络
+                     * 获取<p>私有网络</p>
+                     * @return UserVPCId <p>私有网络</p>
                      * 
                      */
                     std::string GetUserVPCId() const;
 
                     /**
-                     * 设置私有网络
-                     * @param _userVPCId 私有网络
+                     * 设置<p>私有网络</p>
+                     * @param _userVPCId <p>私有网络</p>
                      * 
                      */
                     void SetUserVPCId(const std::string& _userVPCId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool UserVPCIdHasBeenSet() const;
 
                     /**
-                     * 获取子网
-                     * @return UserSubnetId 子网
+                     * 获取<p>子网</p>
+                     * @return UserSubnetId <p>子网</p>
                      * 
                      */
                     std::string GetUserSubnetId() const;
 
                     /**
-                     * 设置子网
-                     * @param _userSubnetId 子网
+                     * 设置<p>子网</p>
+                     * @param _userSubnetId <p>子网</p>
                      * 
                      */
                     void SetUserSubnetId(const std::string& _userSubnetId);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool UserSubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取系统版本
-                     * @return ProductVersion 系统版本
+                     * 获取<p>系统版本</p>
+                     * @return ProductVersion <p>系统版本</p>
                      * 
                      */
                     std::string GetProductVersion() const;
 
                     /**
-                     * 设置系统版本
-                     * @param _productVersion 系统版本
+                     * 设置<p>系统版本</p>
+                     * @param _productVersion <p>系统版本</p>
                      * 
                      */
                     void SetProductVersion(const std::string& _productVersion);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ProductVersionHasBeenSet() const;
 
                     /**
-                     * 获取计费方式
-                     * @return ChargeProperties 计费方式
+                     * 获取<p>计费方式</p>
+                     * @return ChargeProperties <p>计费方式</p>
                      * 
                      */
                     Charge GetChargeProperties() const;
 
                     /**
-                     * 设置计费方式
-                     * @param _chargeProperties 计费方式
+                     * 设置<p>计费方式</p>
+                     * @param _chargeProperties <p>计费方式</p>
                      * 
                      */
                     void SetChargeProperties(const Charge& _chargeProperties);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool ChargePropertiesHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取<p>实例名称</p>
+                     * @return InstanceName <p>实例名称</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _instanceName 实例名称
+                     * 设置<p>实例名称</p>
+                     * @param _instanceName <p>实例名称</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -194,19 +194,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取数据节点
-SpecName从DescribeSpec接口中返回的DataSpec.Name获取
-                     * @return DataSpec 数据节点
-SpecName从DescribeSpec接口中返回的DataSpec.Name获取
+                     * 获取<p>数据节点<br>SpecName从DescribeSpec接口中返回的DataSpec.Name获取</p>
+                     * @return DataSpec <p>数据节点<br>SpecName从DescribeSpec接口中返回的DataSpec.Name获取</p>
                      * 
                      */
                     NodeSpec GetDataSpec() const;
 
                     /**
-                     * 设置数据节点
-SpecName从DescribeSpec接口中返回的DataSpec.Name获取
-                     * @param _dataSpec 数据节点
-SpecName从DescribeSpec接口中返回的DataSpec.Name获取
+                     * 设置<p>数据节点<br>SpecName从DescribeSpec接口中返回的DataSpec.Name获取</p>
+                     * @param _dataSpec <p>数据节点<br>SpecName从DescribeSpec接口中返回的DataSpec.Name获取</p>
                      * 
                      */
                     void SetDataSpec(const NodeSpec& _dataSpec);
@@ -219,15 +215,15 @@ SpecName从DescribeSpec接口中返回的DataSpec.Name获取
                     bool DataSpecHasBeenSet() const;
 
                     /**
-                     * 获取标签列表（废弃）
-                     * @return Tags 标签列表（废弃）
+                     * 获取<p>标签列表（废弃）</p>
+                     * @return Tags <p>标签列表（废弃）</p>
                      * @deprecated
                      */
                     Tag GetTags() const;
 
                     /**
-                     * 设置标签列表（废弃）
-                     * @param _tags 标签列表（废弃）
+                     * 设置<p>标签列表（废弃）</p>
+                     * @param _tags <p>标签列表（废弃）</p>
                      * @deprecated
                      */
                     void SetTags(const Tag& _tags);
@@ -240,15 +236,15 @@ SpecName从DescribeSpec接口中返回的DataSpec.Name获取
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取日志主题ID
-                     * @return ClsLogSetId 日志主题ID
+                     * 获取<p>日志主题ID</p>
+                     * @return ClsLogSetId <p>日志主题ID</p>
                      * 
                      */
                     std::string GetClsLogSetId() const;
 
                     /**
-                     * 设置日志主题ID
-                     * @param _clsLogSetId 日志主题ID
+                     * 设置<p>日志主题ID</p>
+                     * @param _clsLogSetId <p>日志主题ID</p>
                      * 
                      */
                     void SetClsLogSetId(const std::string& _clsLogSetId);
@@ -261,15 +257,15 @@ SpecName从DescribeSpec接口中返回的DataSpec.Name获取
                     bool ClsLogSetIdHasBeenSet() const;
 
                     /**
-                     * 获取COS桶名称
-                     * @return CosBucketName COS桶名称
+                     * 获取<p>COS桶名称</p>
+                     * @return CosBucketName <p>COS桶名称</p>
                      * 
                      */
                     std::string GetCosBucketName() const;
 
                     /**
-                     * 设置COS桶名称
-                     * @param _cosBucketName COS桶名称
+                     * 设置<p>COS桶名称</p>
+                     * @param _cosBucketName <p>COS桶名称</p>
                      * 
                      */
                     void SetCosBucketName(const std::string& _cosBucketName);
@@ -282,15 +278,15 @@ SpecName从DescribeSpec接口中返回的DataSpec.Name获取
                     bool CosBucketNameHasBeenSet() const;
 
                     /**
-                     * 获取是否是裸盘挂载，默认值 0 为 未挂载，1 为挂载。
-                     * @return MountDiskType 是否是裸盘挂载，默认值 0 为 未挂载，1 为挂载。
+                     * 获取<p>是否是裸盘挂载，默认值 0 为 未挂载，1 为挂载。</p>
+                     * @return MountDiskType <p>是否是裸盘挂载，默认值 0 为 未挂载，1 为挂载。</p>
                      * 
                      */
                     int64_t GetMountDiskType() const;
 
                     /**
-                     * 设置是否是裸盘挂载，默认值 0 为 未挂载，1 为挂载。
-                     * @param _mountDiskType 是否是裸盘挂载，默认值 0 为 未挂载，1 为挂载。
+                     * 设置<p>是否是裸盘挂载，默认值 0 为 未挂载，1 为挂载。</p>
+                     * @param _mountDiskType <p>是否是裸盘挂载，默认值 0 为 未挂载，1 为挂载。</p>
                      * 
                      */
                     void SetMountDiskType(const int64_t& _mountDiskType);
@@ -303,15 +299,15 @@ SpecName从DescribeSpec接口中返回的DataSpec.Name获取
                     bool MountDiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否是ZK高可用
-                     * @return HAZk 是否是ZK高可用
+                     * 获取<p>是否是ZK高可用</p>
+                     * @return HAZk <p>是否是ZK高可用</p>
                      * 
                      */
                     bool GetHAZk() const;
 
                     /**
-                     * 设置是否是ZK高可用
-                     * @param _hAZk 是否是ZK高可用
+                     * 设置<p>是否是ZK高可用</p>
+                     * @param _hAZk <p>是否是ZK高可用</p>
                      * 
                      */
                     void SetHAZk(const bool& _hAZk);
@@ -324,15 +320,15 @@ SpecName从DescribeSpec接口中返回的DataSpec.Name获取
                     bool HAZkHasBeenSet() const;
 
                     /**
-                     * 获取ZK节点SpecName从DescribeSpec接口中返回的CommonSpec结构体的Name（ZK节点）获取
-                     * @return CommonSpec ZK节点SpecName从DescribeSpec接口中返回的CommonSpec结构体的Name（ZK节点）获取
+                     * 获取<p>ZK节点SpecName从DescribeSpec接口中返回的CommonSpec结构体的Name（ZK节点）获取</p>
+                     * @return CommonSpec <p>ZK节点SpecName从DescribeSpec接口中返回的CommonSpec结构体的Name（ZK节点）获取</p>
                      * 
                      */
                     NodeSpec GetCommonSpec() const;
 
                     /**
-                     * 设置ZK节点SpecName从DescribeSpec接口中返回的CommonSpec结构体的Name（ZK节点）获取
-                     * @param _commonSpec ZK节点SpecName从DescribeSpec接口中返回的CommonSpec结构体的Name（ZK节点）获取
+                     * 设置<p>ZK节点SpecName从DescribeSpec接口中返回的CommonSpec结构体的Name（ZK节点）获取</p>
+                     * @param _commonSpec <p>ZK节点SpecName从DescribeSpec接口中返回的CommonSpec结构体的Name（ZK节点）获取</p>
                      * 
                      */
                     void SetCommonSpec(const NodeSpec& _commonSpec);
@@ -345,15 +341,15 @@ SpecName从DescribeSpec接口中返回的DataSpec.Name获取
                     bool CommonSpecHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
-                     * @return TagItems 标签列表
+                     * 获取<p>标签列表</p>
+                     * @return TagItems <p>标签列表</p>
                      * 
                      */
                     std::vector<Tag> GetTagItems() const;
 
                     /**
-                     * 设置标签列表
-                     * @param _tagItems 标签列表
+                     * 设置<p>标签列表</p>
+                     * @param _tagItems <p>标签列表</p>
                      * 
                      */
                     void SetTagItems(const std::vector<Tag>& _tagItems);
@@ -366,15 +362,15 @@ SpecName从DescribeSpec接口中返回的DataSpec.Name获取
                     bool TagItemsHasBeenSet() const;
 
                     /**
-                     * 获取副可用区信息
-                     * @return SecondaryZoneInfo 副可用区信息
+                     * 获取<p>副可用区信息</p>
+                     * @return SecondaryZoneInfo <p>副可用区信息</p>
                      * 
                      */
                     std::vector<SecondaryZoneInfo> GetSecondaryZoneInfo() const;
 
                     /**
-                     * 设置副可用区信息
-                     * @param _secondaryZoneInfo 副可用区信息
+                     * 设置<p>副可用区信息</p>
+                     * @param _secondaryZoneInfo <p>副可用区信息</p>
                      * 
                      */
                     void SetSecondaryZoneInfo(const std::vector<SecondaryZoneInfo>& _secondaryZoneInfo);
@@ -387,15 +383,15 @@ SpecName从DescribeSpec接口中返回的DataSpec.Name获取
                     bool SecondaryZoneInfoHasBeenSet() const;
 
                     /**
-                     * 获取default账号登陆实例的密码。8-16个字符，至少包含大写字母、小写字母、数字和特殊字符!@#%^*中的三种，第一个字符不能为特殊字符
-                     * @return CkDefaultUserPwd default账号登陆实例的密码。8-16个字符，至少包含大写字母、小写字母、数字和特殊字符!@#%^*中的三种，第一个字符不能为特殊字符
+                     * 获取<p>default账号登录实例的密码。8-16个字符，至少包含大写字母、小写字母、数字和特殊字符!@#%^*中的三种，第一个字符不能为特殊字符</p>
+                     * @return CkDefaultUserPwd <p>default账号登录实例的密码。8-16个字符，至少包含大写字母、小写字母、数字和特殊字符!@#%^*中的三种，第一个字符不能为特殊字符</p>
                      * 
                      */
                     std::string GetCkDefaultUserPwd() const;
 
                     /**
-                     * 设置default账号登陆实例的密码。8-16个字符，至少包含大写字母、小写字母、数字和特殊字符!@#%^*中的三种，第一个字符不能为特殊字符
-                     * @param _ckDefaultUserPwd default账号登陆实例的密码。8-16个字符，至少包含大写字母、小写字母、数字和特殊字符!@#%^*中的三种，第一个字符不能为特殊字符
+                     * 设置<p>default账号登录实例的密码。8-16个字符，至少包含大写字母、小写字母、数字和特殊字符!@#%^*中的三种，第一个字符不能为特殊字符</p>
+                     * @param _ckDefaultUserPwd <p>default账号登录实例的密码。8-16个字符，至少包含大写字母、小写字母、数字和特殊字符!@#%^*中的三种，第一个字符不能为特殊字符</p>
                      * 
                      */
                     void SetCkDefaultUserPwd(const std::string& _ckDefaultUserPwd);
@@ -407,110 +403,136 @@ SpecName从DescribeSpec接口中返回的DataSpec.Name获取
                      */
                     bool CkDefaultUserPwdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>集群类型</p>
+                     * @return ClusterType <p>集群类型</p>
+                     * 
+                     */
+                    std::string GetClusterType() const;
+
+                    /**
+                     * 设置<p>集群类型</p>
+                     * @param _clusterType <p>集群类型</p>
+                     * 
+                     */
+                    void SetClusterType(const std::string& _clusterType);
+
+                    /**
+                     * 判断参数 ClusterType 是否已赋值
+                     * @return ClusterType 是否已赋值
+                     * 
+                     */
+                    bool ClusterTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 可用区
+                     * <p>可用区</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 是否高可用
+                     * <p>是否高可用</p>
                      */
                     bool m_haFlag;
                     bool m_haFlagHasBeenSet;
 
                     /**
-                     * 私有网络
+                     * <p>私有网络</p>
                      */
                     std::string m_userVPCId;
                     bool m_userVPCIdHasBeenSet;
 
                     /**
-                     * 子网
+                     * <p>子网</p>
                      */
                     std::string m_userSubnetId;
                     bool m_userSubnetIdHasBeenSet;
 
                     /**
-                     * 系统版本
+                     * <p>系统版本</p>
                      */
                     std::string m_productVersion;
                     bool m_productVersionHasBeenSet;
 
                     /**
-                     * 计费方式
+                     * <p>计费方式</p>
                      */
                     Charge m_chargeProperties;
                     bool m_chargePropertiesHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * <p>实例名称</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 数据节点
-SpecName从DescribeSpec接口中返回的DataSpec.Name获取
+                     * <p>数据节点<br>SpecName从DescribeSpec接口中返回的DataSpec.Name获取</p>
                      */
                     NodeSpec m_dataSpec;
                     bool m_dataSpecHasBeenSet;
 
                     /**
-                     * 标签列表（废弃）
+                     * <p>标签列表（废弃）</p>
                      */
                     Tag m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 日志主题ID
+                     * <p>日志主题ID</p>
                      */
                     std::string m_clsLogSetId;
                     bool m_clsLogSetIdHasBeenSet;
 
                     /**
-                     * COS桶名称
+                     * <p>COS桶名称</p>
                      */
                     std::string m_cosBucketName;
                     bool m_cosBucketNameHasBeenSet;
 
                     /**
-                     * 是否是裸盘挂载，默认值 0 为 未挂载，1 为挂载。
+                     * <p>是否是裸盘挂载，默认值 0 为 未挂载，1 为挂载。</p>
                      */
                     int64_t m_mountDiskType;
                     bool m_mountDiskTypeHasBeenSet;
 
                     /**
-                     * 是否是ZK高可用
+                     * <p>是否是ZK高可用</p>
                      */
                     bool m_hAZk;
                     bool m_hAZkHasBeenSet;
 
                     /**
-                     * ZK节点SpecName从DescribeSpec接口中返回的CommonSpec结构体的Name（ZK节点）获取
+                     * <p>ZK节点SpecName从DescribeSpec接口中返回的CommonSpec结构体的Name（ZK节点）获取</p>
                      */
                     NodeSpec m_commonSpec;
                     bool m_commonSpecHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * <p>标签列表</p>
                      */
                     std::vector<Tag> m_tagItems;
                     bool m_tagItemsHasBeenSet;
 
                     /**
-                     * 副可用区信息
+                     * <p>副可用区信息</p>
                      */
                     std::vector<SecondaryZoneInfo> m_secondaryZoneInfo;
                     bool m_secondaryZoneInfoHasBeenSet;
 
                     /**
-                     * default账号登陆实例的密码。8-16个字符，至少包含大写字母、小写字母、数字和特殊字符!@#%^*中的三种，第一个字符不能为特殊字符
+                     * <p>default账号登录实例的密码。8-16个字符，至少包含大写字母、小写字母、数字和特殊字符!@#%^*中的三种，第一个字符不能为特殊字符</p>
                      */
                     std::string m_ckDefaultUserPwd;
                     bool m_ckDefaultUserPwdHasBeenSet;
+
+                    /**
+                     * <p>集群类型</p>
+                     */
+                    std::string m_clusterType;
+                    bool m_clusterTypeHasBeenSet;
 
                 };
             }

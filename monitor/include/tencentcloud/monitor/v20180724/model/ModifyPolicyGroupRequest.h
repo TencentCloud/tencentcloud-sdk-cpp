@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取固定值，为"monitor"
-                     * @return Module 固定值，为"monitor"
+                     * 获取<p>固定值，为&quot;monitor&quot;</p>
+                     * @return Module <p>固定值，为&quot;monitor&quot;</p>
                      * 
                      */
                     std::string GetModule() const;
 
                     /**
-                     * 设置固定值，为"monitor"
-                     * @param _module 固定值，为"monitor"
+                     * 设置<p>固定值，为&quot;monitor&quot;</p>
+                     * @param _module <p>固定值，为&quot;monitor&quot;</p>
                      * 
                      */
                     void SetModule(const std::string& _module);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取策略组id
-                     * @return GroupId 策略组id
+                     * 获取<p>策略组id</p>
+                     * @return GroupId <p>策略组id</p>
                      * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
-                     * 设置策略组id
-                     * @param _groupId 策略组id
+                     * 设置<p>策略组id</p>
+                     * @param _groupId <p>策略组id</p>
                      * 
                      */
                     void SetGroupId(const int64_t& _groupId);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取告警类型
-                     * @return ViewName 告警类型
+                     * 获取<p>告警类型</p>
+                     * @return ViewName <p>告警类型</p>
                      * 
                      */
                     std::string GetViewName() const;
 
                     /**
-                     * 设置告警类型
-                     * @param _viewName 告警类型
+                     * 设置<p>告警类型</p>
+                     * @param _viewName <p>告警类型</p>
                      * 
                      */
                     void SetViewName(const std::string& _viewName);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool ViewNameHasBeenSet() const;
 
                     /**
-                     * 获取策略组名称
-                     * @return GroupName 策略组名称
+                     * 获取<p>策略组名称</p>
+                     * @return GroupName <p>策略组名称</p>
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置策略组名称
-                     * @param _groupName 策略组名称
+                     * 设置<p>策略组名称</p>
+                     * @param _groupName <p>策略组名称</p>
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取指标告警条件的且或关系，1表示且告警，所有指标告警条件都达到才告警，0表示或告警，任意指标告警条件达到都告警
-                     * @return IsUnionRule 指标告警条件的且或关系，1表示且告警，所有指标告警条件都达到才告警，0表示或告警，任意指标告警条件达到都告警
+                     * 获取<p>是否复合告警</p><p>枚举值：</p><ul><li>1： 所有指标告警条件都达到才告警</li><li>0： 任意指标告警条件达到都告警</li></ul>
+                     * @return IsUnionRule <p>是否复合告警</p><p>枚举值：</p><ul><li>1： 所有指标告警条件都达到才告警</li><li>0： 任意指标告警条件达到都告警</li></ul>
                      * 
                      */
                     int64_t GetIsUnionRule() const;
 
                     /**
-                     * 设置指标告警条件的且或关系，1表示且告警，所有指标告警条件都达到才告警，0表示或告警，任意指标告警条件达到都告警
-                     * @param _isUnionRule 指标告警条件的且或关系，1表示且告警，所有指标告警条件都达到才告警，0表示或告警，任意指标告警条件达到都告警
+                     * 设置<p>是否复合告警</p><p>枚举值：</p><ul><li>1： 所有指标告警条件都达到才告警</li><li>0： 任意指标告警条件达到都告警</li></ul>
+                     * @param _isUnionRule <p>是否复合告警</p><p>枚举值：</p><ul><li>1： 所有指标告警条件都达到才告警</li><li>0： 任意指标告警条件达到都告警</li></ul>
                      * 
                      */
                     void SetIsUnionRule(const int64_t& _isUnionRule);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool IsUnionRuleHasBeenSet() const;
 
                     /**
-                     * 获取指标告警条件规则，不填表示删除已有的所有指标告警条件规则
-                     * @return Conditions 指标告警条件规则，不填表示删除已有的所有指标告警条件规则
+                     * 获取<p>指标告警条件规则，不填表示删除已有的所有指标告警条件规则</p>
+                     * @return Conditions <p>指标告警条件规则，不填表示删除已有的所有指标告警条件规则</p>
                      * 
                      */
                     std::vector<ModifyPolicyGroupCondition> GetConditions() const;
 
                     /**
-                     * 设置指标告警条件规则，不填表示删除已有的所有指标告警条件规则
-                     * @param _conditions 指标告警条件规则，不填表示删除已有的所有指标告警条件规则
+                     * 设置<p>指标告警条件规则，不填表示删除已有的所有指标告警条件规则</p>
+                     * @param _conditions <p>指标告警条件规则，不填表示删除已有的所有指标告警条件规则</p>
                      * 
                      */
                     void SetConditions(const std::vector<ModifyPolicyGroupCondition>& _conditions);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool ConditionsHasBeenSet() const;
 
                     /**
-                     * 获取事件告警条件，不填表示删除已有的事件告警条件
-                     * @return EventConditions 事件告警条件，不填表示删除已有的事件告警条件
+                     * 获取<p>事件告警条件，不填表示删除已有的事件告警条件</p>
+                     * @return EventConditions <p>事件告警条件，不填表示删除已有的事件告警条件</p>
                      * 
                      */
                     std::vector<ModifyPolicyGroupEventCondition> GetEventConditions() const;
 
                     /**
-                     * 设置事件告警条件，不填表示删除已有的事件告警条件
-                     * @param _eventConditions 事件告警条件，不填表示删除已有的事件告警条件
+                     * 设置<p>事件告警条件，不填表示删除已有的事件告警条件</p>
+                     * @param _eventConditions <p>事件告警条件，不填表示删除已有的事件告警条件</p>
                      * 
                      */
                     void SetEventConditions(const std::vector<ModifyPolicyGroupEventCondition>& _eventConditions);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool EventConditionsHasBeenSet() const;
 
                     /**
-                     * 获取模板策略组id
-                     * @return ConditionTempGroupId 模板策略组id
+                     * 获取<p>模板策略组id</p>
+                     * @return ConditionTempGroupId <p>模板策略组id</p>
                      * 
                      */
                     int64_t GetConditionTempGroupId() const;
 
                     /**
-                     * 设置模板策略组id
-                     * @param _conditionTempGroupId 模板策略组id
+                     * 设置<p>模板策略组id</p>
+                     * @param _conditionTempGroupId <p>模板策略组id</p>
                      * 
                      */
                     void SetConditionTempGroupId(const int64_t& _conditionTempGroupId);
@@ -215,49 +215,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 固定值，为"monitor"
+                     * <p>固定值，为&quot;monitor&quot;</p>
                      */
                     std::string m_module;
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 策略组id
+                     * <p>策略组id</p>
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 告警类型
+                     * <p>告警类型</p>
                      */
                     std::string m_viewName;
                     bool m_viewNameHasBeenSet;
 
                     /**
-                     * 策略组名称
+                     * <p>策略组名称</p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 指标告警条件的且或关系，1表示且告警，所有指标告警条件都达到才告警，0表示或告警，任意指标告警条件达到都告警
+                     * <p>是否复合告警</p><p>枚举值：</p><ul><li>1： 所有指标告警条件都达到才告警</li><li>0： 任意指标告警条件达到都告警</li></ul>
                      */
                     int64_t m_isUnionRule;
                     bool m_isUnionRuleHasBeenSet;
 
                     /**
-                     * 指标告警条件规则，不填表示删除已有的所有指标告警条件规则
+                     * <p>指标告警条件规则，不填表示删除已有的所有指标告警条件规则</p>
                      */
                     std::vector<ModifyPolicyGroupCondition> m_conditions;
                     bool m_conditionsHasBeenSet;
 
                     /**
-                     * 事件告警条件，不填表示删除已有的事件告警条件
+                     * <p>事件告警条件，不填表示删除已有的事件告警条件</p>
                      */
                     std::vector<ModifyPolicyGroupEventCondition> m_eventConditions;
                     bool m_eventConditionsHasBeenSet;
 
                     /**
-                     * 模板策略组id
+                     * <p>模板策略组id</p>
                      */
                     int64_t m_conditionTempGroupId;
                     bool m_conditionTempGroupIdHasBeenSet;

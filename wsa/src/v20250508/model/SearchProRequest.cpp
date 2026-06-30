@@ -29,7 +29,9 @@ SearchProRequest::SearchProRequest() :
     m_fromTimeHasBeenSet(false),
     m_toTimeHasBeenSet(false),
     m_cntHasBeenSet(false),
-    m_industryHasBeenSet(false)
+    m_industryHasBeenSet(false),
+    m_freshnessHasBeenSet(false),
+    m_deeplinksHasBeenSet(false)
 {
 }
 
@@ -94,6 +96,22 @@ string SearchProRequest::ToJsonString() const
         string key = "Industry";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_industry.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_freshnessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Freshness";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_freshness.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deeplinksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Deeplinks";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deeplinks, allocator);
     }
 
 
@@ -214,6 +232,38 @@ void SearchProRequest::SetIndustry(const string& _industry)
 bool SearchProRequest::IndustryHasBeenSet() const
 {
     return m_industryHasBeenSet;
+}
+
+string SearchProRequest::GetFreshness() const
+{
+    return m_freshness;
+}
+
+void SearchProRequest::SetFreshness(const string& _freshness)
+{
+    m_freshness = _freshness;
+    m_freshnessHasBeenSet = true;
+}
+
+bool SearchProRequest::FreshnessHasBeenSet() const
+{
+    return m_freshnessHasBeenSet;
+}
+
+bool SearchProRequest::GetDeeplinks() const
+{
+    return m_deeplinks;
+}
+
+void SearchProRequest::SetDeeplinks(const bool& _deeplinks)
+{
+    m_deeplinks = _deeplinks;
+    m_deeplinksHasBeenSet = true;
+}
+
+bool SearchProRequest::DeeplinksHasBeenSet() const
+{
+    return m_deeplinksHasBeenSet;
 }
 
 

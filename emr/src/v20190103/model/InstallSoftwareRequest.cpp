@@ -35,7 +35,8 @@ InstallSoftwareRequest::InstallSoftwareRequest() :
     m_serviceDeployInfoListHasBeenSet(false),
     m_defaultMetaVersionHasBeenSet(false),
     m_needCdbAuditHasBeenSet(false),
-    m_containerExtraConfHasBeenSet(false)
+    m_containerExtraConfHasBeenSet(false),
+    m_checkServiceDeployInfoHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,14 @@ string InstallSoftwareRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_containerExtraConf.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_checkServiceDeployInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckServiceDeployInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_checkServiceDeployInfo, allocator);
     }
 
 
@@ -399,6 +408,22 @@ void InstallSoftwareRequest::SetContainerExtraConf(const ContainerExtraConf& _co
 bool InstallSoftwareRequest::ContainerExtraConfHasBeenSet() const
 {
     return m_containerExtraConfHasBeenSet;
+}
+
+bool InstallSoftwareRequest::GetCheckServiceDeployInfo() const
+{
+    return m_checkServiceDeployInfo;
+}
+
+void InstallSoftwareRequest::SetCheckServiceDeployInfo(const bool& _checkServiceDeployInfo)
+{
+    m_checkServiceDeployInfo = _checkServiceDeployInfo;
+    m_checkServiceDeployInfoHasBeenSet = true;
+}
+
+bool InstallSoftwareRequest::CheckServiceDeployInfoHasBeenSet() const
+{
+    return m_checkServiceDeployInfoHasBeenSet;
 }
 
 

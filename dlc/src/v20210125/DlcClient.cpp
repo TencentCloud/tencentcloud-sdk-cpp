@@ -5890,6 +5890,56 @@ DlcClient::DescribeTablesNameOutcomeCallable DlcClient::DescribeTablesNameCallab
     return prom->get_future();
 }
 
+DlcClient::DescribeTaskDetailOutcome DlcClient::DescribeTaskDetail(const DescribeTaskDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTaskDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTaskDetailResponse rsp = DescribeTaskDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTaskDetailOutcome(rsp);
+        else
+            return DescribeTaskDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTaskDetailOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeTaskDetailAsync(const DescribeTaskDetailRequest& request, const DescribeTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTaskDetailRequest&;
+    using Resp = DescribeTaskDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTaskDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeTaskDetailOutcomeCallable DlcClient::DescribeTaskDetailCallable(const DescribeTaskDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTaskDetailOutcome>>();
+    DescribeTaskDetailAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeTaskDetailRequest&,
+        DescribeTaskDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::DescribeTaskListOutcome DlcClient::DescribeTaskList(const DescribeTaskListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTaskList");

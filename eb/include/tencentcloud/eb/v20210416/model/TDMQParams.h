@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群类型
+                     * 获取<p>集群类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterType 集群类型
+                     * @return ClusterType <p>集群类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置集群类型
+                     * 设置<p>集群类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clusterType 集群类型
+                     * @param _clusterType <p>集群类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取集群支撑网接入点
+                     * 获取<p>集群支撑网接入点</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterEndPoint 集群支撑网接入点
+                     * @return ClusterEndPoint <p>集群支撑网接入点</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterEndPoint() const;
 
                     /**
-                     * 设置集群支撑网接入点
+                     * 设置<p>集群支撑网接入点</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clusterEndPoint 集群支撑网接入点
+                     * @param _clusterEndPoint <p>集群支撑网接入点</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,14 +99,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群类型
+                     * <p>集群类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 集群支撑网接入点
+                     * <p>集群支撑网接入点</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterEndPoint;

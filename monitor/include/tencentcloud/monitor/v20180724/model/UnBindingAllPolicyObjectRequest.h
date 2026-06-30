@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取固定值，为"monitor"
-                     * @return Module 固定值，为"monitor"
+                     * 获取<p>固定值，为&quot;monitor&quot;</p>
+                     * @return Module <p>固定值，为&quot;monitor&quot;</p>
                      * 
                      */
                     std::string GetModule() const;
 
                     /**
-                     * 设置固定值，为"monitor"
-                     * @param _module 固定值，为"monitor"
+                     * 设置<p>固定值，为&quot;monitor&quot;</p>
+                     * @param _module <p>固定值，为&quot;monitor&quot;</p>
                      * 
                      */
                     void SetModule(const std::string& _module);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取策略组id，如传入 PolicyId 则该字段被忽略可传入任意值如 0
-                     * @return GroupId 策略组id，如传入 PolicyId 则该字段被忽略可传入任意值如 0
+                     * 获取<p>策略组id，如传入 PolicyId 则该字段被忽略可传入任意值如 0</p>
+                     * @return GroupId <p>策略组id，如传入 PolicyId 则该字段被忽略可传入任意值如 0</p>
                      * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
-                     * 设置策略组id，如传入 PolicyId 则该字段被忽略可传入任意值如 0
-                     * @param _groupId 策略组id，如传入 PolicyId 则该字段被忽略可传入任意值如 0
+                     * 设置<p>策略组id，如传入 PolicyId 则该字段被忽略可传入任意值如 0</p>
+                     * @param _groupId <p>策略组id，如传入 PolicyId 则该字段被忽略可传入任意值如 0</p>
                      * 
                      */
                     void SetGroupId(const int64_t& _groupId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取告警策略ID，使用此字段时 GroupId 会被忽略
-                     * @return PolicyId 告警策略ID，使用此字段时 GroupId 会被忽略
+                     * 获取<p>告警策略ID，使用此字段时 GroupId 会被忽略</p>
+                     * @return PolicyId <p>告警策略ID，使用此字段时 GroupId 会被忽略</p>
                      * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
-                     * 设置告警策略ID，使用此字段时 GroupId 会被忽略
-                     * @param _policyId 告警策略ID，使用此字段时 GroupId 会被忽略
+                     * 设置<p>告警策略ID，使用此字段时 GroupId 会被忽略</p>
+                     * @param _policyId <p>告警策略ID，使用此字段时 GroupId 会被忽略</p>
                      * 
                      */
                     void SetPolicyId(const std::string& _policyId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取事件配置的告警
-                     * @return EbSubject 事件配置的告警
+                     * 获取<p>事件配置的告警</p>
+                     * @return EbSubject <p>事件配置的告警</p>
                      * 
                      */
                     std::string GetEbSubject() const;
 
                     /**
-                     * 设置事件配置的告警
-                     * @param _ebSubject 事件配置的告警
+                     * 设置<p>事件配置的告警</p>
+                     * @param _ebSubject <p>事件配置的告警</p>
                      * 
                      */
                     void SetEbSubject(const std::string& _ebSubject);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool EbSubjectHasBeenSet() const;
 
                     /**
-                     * 获取是否配置了事件告警
-                     * @return EbEventFlag 是否配置了事件告警
+                     * 获取<p>是否配置了事件告警</p>
+                     * @return EbEventFlag <p>是否配置了事件告警</p>
                      * 
                      */
                     int64_t GetEbEventFlag() const;
 
                     /**
-                     * 设置是否配置了事件告警
-                     * @param _ebEventFlag 是否配置了事件告警
+                     * 设置<p>是否配置了事件告警</p>
+                     * @param _ebEventFlag <p>是否配置了事件告警</p>
                      * 
                      */
                     void SetEbEventFlag(const int64_t& _ebEventFlag);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 固定值，为"monitor"
+                     * <p>固定值，为&quot;monitor&quot;</p>
                      */
                     std::string m_module;
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 策略组id，如传入 PolicyId 则该字段被忽略可传入任意值如 0
+                     * <p>策略组id，如传入 PolicyId 则该字段被忽略可传入任意值如 0</p>
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 告警策略ID，使用此字段时 GroupId 会被忽略
+                     * <p>告警策略ID，使用此字段时 GroupId 会被忽略</p>
                      */
                     std::string m_policyId;
                     bool m_policyIdHasBeenSet;
 
                     /**
-                     * 事件配置的告警
+                     * <p>事件配置的告警</p>
                      */
                     std::string m_ebSubject;
                     bool m_ebSubjectHasBeenSet;
 
                     /**
-                     * 是否配置了事件告警
+                     * <p>是否配置了事件告警</p>
                      */
                     int64_t m_ebEventFlag;
                     bool m_ebEventFlagHasBeenSet;

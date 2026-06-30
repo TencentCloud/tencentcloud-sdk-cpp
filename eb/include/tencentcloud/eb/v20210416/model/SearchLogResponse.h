@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取事件总数
+                     * 获取<p>事件总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Total 事件总数
+                     * @return Total <p>事件总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取每页事件条数
+                     * 获取<p>每页事件条数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Limit 每页事件条数
+                     * @return Limit <p>每页事件条数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,9 +77,9 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取页码
+                     * 获取<p>页码</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Page 页码
+                     * @return Page <p>页码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -93,9 +93,9 @@ namespace TencentCloud
                     bool PageHasBeenSet() const;
 
                     /**
-                     * 获取事件查询结果
+                     * 获取<p>事件查询结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Results 事件查询结果
+                     * @return Results <p>事件查询结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -111,28 +111,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 事件总数
+                     * <p>事件总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 每页事件条数
+                     * <p>每页事件条数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 页码
+                     * <p>页码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;
 
                     /**
-                     * 事件查询结果
+                     * <p>事件查询结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SearchLogResult> m_results;

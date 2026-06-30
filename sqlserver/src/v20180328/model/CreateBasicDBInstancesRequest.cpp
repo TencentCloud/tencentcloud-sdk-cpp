@@ -45,7 +45,8 @@ CreateBasicDBInstancesRequest::CreateBasicDBInstancesRequest() :
     m_resourceTagsHasBeenSet(false),
     m_collationHasBeenSet(false),
     m_timeZoneHasBeenSet(false),
-    m_diskEncryptFlagHasBeenSet(false)
+    m_diskEncryptFlagHasBeenSet(false),
+    m_throughputPerformanceHasBeenSet(false)
 {
 }
 
@@ -260,6 +261,14 @@ string CreateBasicDBInstancesRequest::ToJsonString() const
         string key = "DiskEncryptFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_diskEncryptFlag, allocator);
+    }
+
+    if (m_throughputPerformanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ThroughputPerformance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_throughputPerformance, allocator);
     }
 
 
@@ -636,6 +645,22 @@ void CreateBasicDBInstancesRequest::SetDiskEncryptFlag(const int64_t& _diskEncry
 bool CreateBasicDBInstancesRequest::DiskEncryptFlagHasBeenSet() const
 {
     return m_diskEncryptFlagHasBeenSet;
+}
+
+uint64_t CreateBasicDBInstancesRequest::GetThroughputPerformance() const
+{
+    return m_throughputPerformance;
+}
+
+void CreateBasicDBInstancesRequest::SetThroughputPerformance(const uint64_t& _throughputPerformance)
+{
+    m_throughputPerformance = _throughputPerformance;
+    m_throughputPerformanceHasBeenSet = true;
+}
+
+bool CreateBasicDBInstancesRequest::ThroughputPerformanceHasBeenSet() const
+{
+    return m_throughputPerformanceHasBeenSet;
 }
 
 

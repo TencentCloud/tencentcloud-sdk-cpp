@@ -25,7 +25,8 @@ SeeComprehensionResult::SeeComprehensionResult() :
     m_summaryHasBeenSet(false),
     m_alternativeSummaryHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
-    m_errorMsgHasBeenSet(false)
+    m_errorMsgHasBeenSet(false),
+    m_keywordsHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,19 @@ CoreInternalOutcome SeeComprehensionResult::Deserialize(const rapidjson::Value &
         m_errorMsgHasBeenSet = true;
     }
 
+    if (value.HasMember("Keywords") && !value["Keywords"].IsNull())
+    {
+        if (!value["Keywords"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SeeComprehensionResult.Keywords` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Keywords"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_keywords.push_back((*itr).GetString());
+        }
+        m_keywordsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +151,19 @@ void SeeComprehensionResult::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "ErrorMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_errorMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keywordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Keywords";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_keywords.begin(); itr != m_keywords.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -220,5 +247,21 @@ void SeeComprehensionResult::SetErrorMsg(const string& _errorMsg)
 bool SeeComprehensionResult::ErrorMsgHasBeenSet() const
 {
     return m_errorMsgHasBeenSet;
+}
+
+vector<string> SeeComprehensionResult::GetKeywords() const
+{
+    return m_keywords;
+}
+
+void SeeComprehensionResult::SetKeywords(const vector<string>& _keywords)
+{
+    m_keywords = _keywords;
+    m_keywordsHasBeenSet = true;
+}
+
+bool SeeComprehensionResult::KeywordsHasBeenSet() const
+{
+    return m_keywordsHasBeenSet;
 }
 

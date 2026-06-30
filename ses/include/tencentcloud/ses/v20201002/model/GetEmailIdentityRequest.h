@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取发信域名
-                     * @return EmailIdentity 发信域名
+                     * 获取<p>发信域名</p>
+                     * @return EmailIdentity <p>发信域名</p>
                      * 
                      */
                     std::string GetEmailIdentity() const;
 
                     /**
-                     * 设置发信域名
-                     * @param _emailIdentity 发信域名
+                     * 设置<p>发信域名</p>
+                     * @param _emailIdentity <p>发信域名</p>
                      * 
                      */
                     void SetEmailIdentity(const std::string& _emailIdentity);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 发信域名
+                     * <p>发信域名</p>
                      */
                     std::string m_emailIdentity;
                     bool m_emailIdentityHasBeenSet;

@@ -33,9 +33,10 @@ set(vm_public_header_model
   include/tencentcloud/vm/v20210922/model/TaskResult.h
   include/tencentcloud/vm/v20210922/model/TaskLabel.h
   include/tencentcloud/vm/v20210922/model/CancelTaskRequest.h
-  include/tencentcloud/vm/v20210922/model/DescribeTaskDetailResponse.h
+  include/tencentcloud/vm/v20210922/model/DecodeParams.h
   include/tencentcloud/vm/v20210922/model/VideoSegmentResult.h
   include/tencentcloud/vm/v20210922/model/DescribeTasksRequest.h
+  include/tencentcloud/vm/v20210922/model/DescribeTaskDetailResponse.h
   include/tencentcloud/vm/v20210922/model/TaskInput.h
   include/tencentcloud/vm/v20210922/model/DescribeTaskDetailRequest.h
   include/tencentcloud/vm/v20210922/model/User.h
@@ -149,9 +150,10 @@ set(vm_src
   src/v20210922/model/TaskResult.cpp
   src/v20210922/model/TaskLabel.cpp
   src/v20210922/model/CancelTaskRequest.cpp
-  src/v20210922/model/DescribeTaskDetailResponse.cpp
+  src/v20210922/model/DecodeParams.cpp
   src/v20210922/model/VideoSegmentResult.cpp
   src/v20210922/model/DescribeTasksRequest.cpp
+  src/v20210922/model/DescribeTaskDetailResponse.cpp
   src/v20210922/model/TaskInput.cpp
   src/v20210922/model/DescribeTaskDetailRequest.cpp
   src/v20210922/model/User.cpp

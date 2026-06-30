@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取固定值，为"monitor"
-                     * @return Module 固定值，为"monitor"
+                     * 获取<p>固定值，为&quot;monitor&quot;</p>
+                     * @return Module <p>固定值，为&quot;monitor&quot;</p>
                      * 
                      */
                     std::string GetModule() const;
 
                     /**
-                     * 设置固定值，为"monitor"
-                     * @param _module 固定值，为"monitor"
+                     * 设置<p>固定值，为&quot;monitor&quot;</p>
+                     * @param _module <p>固定值，为&quot;monitor&quot;</p>
                      * 
                      */
                     void SetModule(const std::string& _module);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取分页参数，每页返回的数量，取值1~100
-                     * @return Limit 分页参数，每页返回的数量，取值1~100
+                     * 获取<p>分页参数，每页返回的数量，取值1~100</p>
+                     * @return Limit <p>分页参数，每页返回的数量，取值1~100</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页参数，每页返回的数量，取值1~100
-                     * @param _limit 分页参数，每页返回的数量，取值1~100
+                     * 设置<p>分页参数，每页返回的数量，取值1~100</p>
+                     * @param _limit <p>分页参数，每页返回的数量，取值1~100</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页参数，页偏移量，从0开始计数
-                     * @return Offset 分页参数，页偏移量，从0开始计数
+                     * 获取<p>分页参数，页偏移量，从0开始计数</p>
+                     * @return Offset <p>分页参数，页偏移量，从0开始计数</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页参数，页偏移量，从0开始计数
-                     * @param _offset 分页参数，页偏移量，从0开始计数
+                     * 设置<p>分页参数，页偏移量，从0开始计数</p>
+                     * @param _offset <p>分页参数，页偏移量，从0开始计数</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取按策略名搜索
-                     * @return Like 按策略名搜索
+                     * 获取<p>按策略名搜索</p>
+                     * @return Like <p>按策略名搜索</p>
                      * 
                      */
                     std::string GetLike() const;
 
                     /**
-                     * 设置按策略名搜索
-                     * @param _like 按策略名搜索
+                     * 设置<p>按策略名搜索</p>
+                     * @param _like <p>按策略名搜索</p>
                      * 
                      */
                     void SetLike(const std::string& _like);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool LikeHasBeenSet() const;
 
                     /**
-                     * 获取实例分组id
-                     * @return InstanceGroupId 实例分组id
+                     * 获取<p>实例分组id</p>
+                     * @return InstanceGroupId <p>实例分组id</p>
                      * 
                      */
                     int64_t GetInstanceGroupId() const;
 
                     /**
-                     * 设置实例分组id
-                     * @param _instanceGroupId 实例分组id
+                     * 设置<p>实例分组id</p>
+                     * @param _instanceGroupId <p>实例分组id</p>
                      * 
                      */
                     void SetInstanceGroupId(const int64_t& _instanceGroupId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool InstanceGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取按更新时间排序, asc 或者 desc
-                     * @return UpdateTimeOrder 按更新时间排序, asc 或者 desc
+                     * 获取<p>按更新时间排序, asc 或者 desc</p>
+                     * @return UpdateTimeOrder <p>按更新时间排序, asc 或者 desc</p>
                      * 
                      */
                     std::string GetUpdateTimeOrder() const;
 
                     /**
-                     * 设置按更新时间排序, asc 或者 desc
-                     * @param _updateTimeOrder 按更新时间排序, asc 或者 desc
+                     * 设置<p>按更新时间排序, asc 或者 desc</p>
+                     * @param _updateTimeOrder <p>按更新时间排序, asc 或者 desc</p>
                      * 
                      */
                     void SetUpdateTimeOrder(const std::string& _updateTimeOrder);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool UpdateTimeOrderHasBeenSet() const;
 
                     /**
-                     * 获取项目id列表
-                     * @return ProjectIds 项目id列表
+                     * 获取<p>项目id列表</p>
+                     * @return ProjectIds <p>项目id列表</p>
                      * 
                      */
                     std::vector<int64_t> GetProjectIds() const;
 
                     /**
-                     * 设置项目id列表
-                     * @param _projectIds 项目id列表
+                     * 设置<p>项目id列表</p>
+                     * @param _projectIds <p>项目id列表</p>
                      * 
                      */
                     void SetProjectIds(const std::vector<int64_t>& _projectIds);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool ProjectIdsHasBeenSet() const;
 
                     /**
-                     * 获取告警策略类型列表
-                     * @return ViewNames 告警策略类型列表
+                     * 获取<p>告警策略类型列表</p>
+                     * @return ViewNames <p>告警策略类型列表</p>
                      * 
                      */
                     std::vector<std::string> GetViewNames() const;
 
                     /**
-                     * 设置告警策略类型列表
-                     * @param _viewNames 告警策略类型列表
+                     * 设置<p>告警策略类型列表</p>
+                     * @param _viewNames <p>告警策略类型列表</p>
                      * 
                      */
                     void SetViewNames(const std::vector<std::string>& _viewNames);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool ViewNamesHasBeenSet() const;
 
                     /**
-                     * 获取是否过滤无接收人策略组, 1表示过滤, 0表示不过滤
-                     * @return FilterUnuseReceiver 是否过滤无接收人策略组, 1表示过滤, 0表示不过滤
+                     * 获取<p>是否过滤无接收人策略组, 1表示过滤, 0表示不过滤</p>
+                     * @return FilterUnuseReceiver <p>是否过滤无接收人策略组, 1表示过滤, 0表示不过滤</p>
                      * 
                      */
                     int64_t GetFilterUnuseReceiver() const;
 
                     /**
-                     * 设置是否过滤无接收人策略组, 1表示过滤, 0表示不过滤
-                     * @param _filterUnuseReceiver 是否过滤无接收人策略组, 1表示过滤, 0表示不过滤
+                     * 设置<p>是否过滤无接收人策略组, 1表示过滤, 0表示不过滤</p>
+                     * @param _filterUnuseReceiver <p>是否过滤无接收人策略组, 1表示过滤, 0表示不过滤</p>
                      * 
                      */
                     void SetFilterUnuseReceiver(const int64_t& _filterUnuseReceiver);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool FilterUnuseReceiverHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件, 接收组列表
-                     * @return Receivers 过滤条件, 接收组列表
+                     * 获取<p>过滤条件, 接收组列表</p>
+                     * @return Receivers <p>过滤条件, 接收组列表</p>
                      * 
                      */
                     std::vector<std::string> GetReceivers() const;
 
                     /**
-                     * 设置过滤条件, 接收组列表
-                     * @param _receivers 过滤条件, 接收组列表
+                     * 设置<p>过滤条件, 接收组列表</p>
+                     * @param _receivers <p>过滤条件, 接收组列表</p>
                      * 
                      */
                     void SetReceivers(const std::vector<std::string>& _receivers);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool ReceiversHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件, 接收人列表
-                     * @return ReceiverUserList 过滤条件, 接收人列表
+                     * 获取<p>过滤条件, 接收人列表</p>
+                     * @return ReceiverUserList <p>过滤条件, 接收人列表</p>
                      * 
                      */
                     std::vector<std::string> GetReceiverUserList() const;
 
                     /**
-                     * 设置过滤条件, 接收人列表
-                     * @param _receiverUserList 过滤条件, 接收人列表
+                     * 设置<p>过滤条件, 接收人列表</p>
+                     * @param _receiverUserList <p>过滤条件, 接收人列表</p>
                      * 
                      */
                     void SetReceiverUserList(const std::vector<std::string>& _receiverUserList);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool ReceiverUserListHasBeenSet() const;
 
                     /**
-                     * 获取维度组合字段(json字符串), 例如[[{"name":"unInstanceId","value":"ins-6e4b2aaa"}]]
-                     * @return Dimensions 维度组合字段(json字符串), 例如[[{"name":"unInstanceId","value":"ins-6e4b2aaa"}]]
+                     * 获取<p>维度组合字段(json字符串), 例如[[{&quot;name&quot;:&quot;unInstanceId&quot;,&quot;value&quot;:&quot;ins-6e4b2aaa&quot;}]]</p>
+                     * @return Dimensions <p>维度组合字段(json字符串), 例如[[{&quot;name&quot;:&quot;unInstanceId&quot;,&quot;value&quot;:&quot;ins-6e4b2aaa&quot;}]]</p>
                      * 
                      */
                     std::string GetDimensions() const;
 
                     /**
-                     * 设置维度组合字段(json字符串), 例如[[{"name":"unInstanceId","value":"ins-6e4b2aaa"}]]
-                     * @param _dimensions 维度组合字段(json字符串), 例如[[{"name":"unInstanceId","value":"ins-6e4b2aaa"}]]
+                     * 设置<p>维度组合字段(json字符串), 例如[[{&quot;name&quot;:&quot;unInstanceId&quot;,&quot;value&quot;:&quot;ins-6e4b2aaa&quot;}]]</p>
+                     * @param _dimensions <p>维度组合字段(json字符串), 例如[[{&quot;name&quot;:&quot;unInstanceId&quot;,&quot;value&quot;:&quot;ins-6e4b2aaa&quot;}]]</p>
                      * 
                      */
                     void SetDimensions(const std::string& _dimensions);
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool DimensionsHasBeenSet() const;
 
                     /**
-                     * 获取模板策略组id, 多个id用逗号分隔
-                     * @return ConditionTempGroupId 模板策略组id, 多个id用逗号分隔
+                     * 获取<p>模板策略组id, 多个id用逗号分隔</p>
+                     * @return ConditionTempGroupId <p>模板策略组id, 多个id用逗号分隔</p>
                      * 
                      */
                     std::string GetConditionTempGroupId() const;
 
                     /**
-                     * 设置模板策略组id, 多个id用逗号分隔
-                     * @param _conditionTempGroupId 模板策略组id, 多个id用逗号分隔
+                     * 设置<p>模板策略组id, 多个id用逗号分隔</p>
+                     * @param _conditionTempGroupId <p>模板策略组id, 多个id用逗号分隔</p>
                      * 
                      */
                     void SetConditionTempGroupId(const std::string& _conditionTempGroupId);
@@ -316,15 +316,15 @@ namespace TencentCloud
                     bool ConditionTempGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件, 接收人或者接收组, user表示接收人, group表示接收组
-                     * @return ReceiverType 过滤条件, 接收人或者接收组, user表示接收人, group表示接收组
+                     * 获取<p>过滤条件, 接收人或者接收组, user表示接收人, group表示接收组</p>
+                     * @return ReceiverType <p>过滤条件, 接收人或者接收组, user表示接收人, group表示接收组</p>
                      * 
                      */
                     std::string GetReceiverType() const;
 
                     /**
-                     * 设置过滤条件, 接收人或者接收组, user表示接收人, group表示接收组
-                     * @param _receiverType 过滤条件, 接收人或者接收组, user表示接收人, group表示接收组
+                     * 设置<p>过滤条件, 接收人或者接收组, user表示接收人, group表示接收组</p>
+                     * @param _receiverType <p>过滤条件, 接收人或者接收组, user表示接收人, group表示接收组</p>
                      * 
                      */
                     void SetReceiverType(const std::string& _receiverType);
@@ -337,15 +337,15 @@ namespace TencentCloud
                     bool ReceiverTypeHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，告警策略是否已启动或停止
-                     * @return IsOpen 过滤条件，告警策略是否已启动或停止
+                     * 获取<p>过滤条件，告警策略是否已启动或停止</p>
+                     * @return IsOpen <p>过滤条件，告警策略是否已启动或停止</p>
                      * 
                      */
                     bool GetIsOpen() const;
 
                     /**
-                     * 设置过滤条件，告警策略是否已启动或停止
-                     * @param _isOpen 过滤条件，告警策略是否已启动或停止
+                     * 设置<p>过滤条件，告警策略是否已启动或停止</p>
+                     * @param _isOpen <p>过滤条件，告警策略是否已启动或停止</p>
                      * 
                      */
                     void SetIsOpen(const bool& _isOpen);
@@ -360,91 +360,91 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 固定值，为"monitor"
+                     * <p>固定值，为&quot;monitor&quot;</p>
                      */
                     std::string m_module;
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 分页参数，每页返回的数量，取值1~100
+                     * <p>分页参数，每页返回的数量，取值1~100</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页参数，页偏移量，从0开始计数
+                     * <p>分页参数，页偏移量，从0开始计数</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 按策略名搜索
+                     * <p>按策略名搜索</p>
                      */
                     std::string m_like;
                     bool m_likeHasBeenSet;
 
                     /**
-                     * 实例分组id
+                     * <p>实例分组id</p>
                      */
                     int64_t m_instanceGroupId;
                     bool m_instanceGroupIdHasBeenSet;
 
                     /**
-                     * 按更新时间排序, asc 或者 desc
+                     * <p>按更新时间排序, asc 或者 desc</p>
                      */
                     std::string m_updateTimeOrder;
                     bool m_updateTimeOrderHasBeenSet;
 
                     /**
-                     * 项目id列表
+                     * <p>项目id列表</p>
                      */
                     std::vector<int64_t> m_projectIds;
                     bool m_projectIdsHasBeenSet;
 
                     /**
-                     * 告警策略类型列表
+                     * <p>告警策略类型列表</p>
                      */
                     std::vector<std::string> m_viewNames;
                     bool m_viewNamesHasBeenSet;
 
                     /**
-                     * 是否过滤无接收人策略组, 1表示过滤, 0表示不过滤
+                     * <p>是否过滤无接收人策略组, 1表示过滤, 0表示不过滤</p>
                      */
                     int64_t m_filterUnuseReceiver;
                     bool m_filterUnuseReceiverHasBeenSet;
 
                     /**
-                     * 过滤条件, 接收组列表
+                     * <p>过滤条件, 接收组列表</p>
                      */
                     std::vector<std::string> m_receivers;
                     bool m_receiversHasBeenSet;
 
                     /**
-                     * 过滤条件, 接收人列表
+                     * <p>过滤条件, 接收人列表</p>
                      */
                     std::vector<std::string> m_receiverUserList;
                     bool m_receiverUserListHasBeenSet;
 
                     /**
-                     * 维度组合字段(json字符串), 例如[[{"name":"unInstanceId","value":"ins-6e4b2aaa"}]]
+                     * <p>维度组合字段(json字符串), 例如[[{&quot;name&quot;:&quot;unInstanceId&quot;,&quot;value&quot;:&quot;ins-6e4b2aaa&quot;}]]</p>
                      */
                     std::string m_dimensions;
                     bool m_dimensionsHasBeenSet;
 
                     /**
-                     * 模板策略组id, 多个id用逗号分隔
+                     * <p>模板策略组id, 多个id用逗号分隔</p>
                      */
                     std::string m_conditionTempGroupId;
                     bool m_conditionTempGroupIdHasBeenSet;
 
                     /**
-                     * 过滤条件, 接收人或者接收组, user表示接收人, group表示接收组
+                     * <p>过滤条件, 接收人或者接收组, user表示接收人, group表示接收组</p>
                      */
                     std::string m_receiverType;
                     bool m_receiverTypeHasBeenSet;
 
                     /**
-                     * 过滤条件，告警策略是否已启动或停止
+                     * <p>过滤条件，告警策略是否已启动或停止</p>
                      */
                     bool m_isOpen;
                     bool m_isOpenHasBeenSet;

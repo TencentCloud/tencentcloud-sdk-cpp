@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警通知模板详细信息
-                     * @return Notice 告警通知模板详细信息
+                     * 获取<p>告警通知模板详细信息</p>
+                     * @return Notice <p>告警通知模板详细信息</p>
                      * 
                      */
                     AlarmNotice GetNotice() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 告警通知模板详细信息
+                     * <p>告警通知模板详细信息</p>
                      */
                     AlarmNotice m_notice;
                     bool m_noticeHasBeenSet;

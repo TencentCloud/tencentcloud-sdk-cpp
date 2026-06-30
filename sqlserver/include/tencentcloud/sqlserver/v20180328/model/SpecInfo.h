@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例规格ID，利用DescribeZones返回的SpecId，结合DescribeProductConfig返回的可售卖规格信息，可获悉某个可用区下可购买什么规格的实例
-                     * @return SpecId 实例规格ID，利用DescribeZones返回的SpecId，结合DescribeProductConfig返回的可售卖规格信息，可获悉某个可用区下可购买什么规格的实例
+                     * 获取<p>实例规格ID，利用DescribeZones返回的SpecId，结合DescribeProductConfig返回的可售卖规格信息，可获悉某个可用区下可购买什么规格的实例</p>
+                     * @return SpecId <p>实例规格ID，利用DescribeZones返回的SpecId，结合DescribeProductConfig返回的可售卖规格信息，可获悉某个可用区下可购买什么规格的实例</p>
                      * 
                      */
                     int64_t GetSpecId() const;
 
                     /**
-                     * 设置实例规格ID，利用DescribeZones返回的SpecId，结合DescribeProductConfig返回的可售卖规格信息，可获悉某个可用区下可购买什么规格的实例
-                     * @param _specId 实例规格ID，利用DescribeZones返回的SpecId，结合DescribeProductConfig返回的可售卖规格信息，可获悉某个可用区下可购买什么规格的实例
+                     * 设置<p>实例规格ID，利用DescribeZones返回的SpecId，结合DescribeProductConfig返回的可售卖规格信息，可获悉某个可用区下可购买什么规格的实例</p>
+                     * @param _specId <p>实例规格ID，利用DescribeZones返回的SpecId，结合DescribeProductConfig返回的可售卖规格信息，可获悉某个可用区下可购买什么规格的实例</p>
                      * 
                      */
                     void SetSpecId(const int64_t& _specId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool SpecIdHasBeenSet() const;
 
                     /**
-                     * 获取机型ID
-                     * @return MachineType 机型ID
+                     * 获取<p>机型ID</p>
+                     * @return MachineType <p>机型ID</p>
                      * 
                      */
                     std::string GetMachineType() const;
 
                     /**
-                     * 设置机型ID
-                     * @param _machineType 机型ID
+                     * 设置<p>机型ID</p>
+                     * @param _machineType <p>机型ID</p>
                      * 
                      */
                     void SetMachineType(const std::string& _machineType);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool MachineTypeHasBeenSet() const;
 
                     /**
-                     * 获取机型中文名称
-                     * @return MachineTypeName 机型中文名称
+                     * 获取<p>机型中文名称</p>
+                     * @return MachineTypeName <p>机型中文名称</p>
                      * 
                      */
                     std::string GetMachineTypeName() const;
 
                     /**
-                     * 设置机型中文名称
-                     * @param _machineTypeName 机型中文名称
+                     * 设置<p>机型中文名称</p>
+                     * @param _machineTypeName <p>机型中文名称</p>
                      * 
                      */
                     void SetMachineTypeName(const std::string& _machineTypeName);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool MachineTypeNameHasBeenSet() const;
 
                     /**
-                     * 获取数据库版本信息。取值为2008R2（表示SQL Server 2008 R2），2012SP3（表示SQL Server 2012），2016SP1（表示SQL Server 2016 SP1）
-                     * @return Version 数据库版本信息。取值为2008R2（表示SQL Server 2008 R2），2012SP3（表示SQL Server 2012），2016SP1（表示SQL Server 2016 SP1）
+                     * 获取<p>数据库版本信息。取值为2008R2（表示SQL Server 2008 R2），2012SP3（表示SQL Server 2012），2016SP1（表示SQL Server 2016 SP1）</p>
+                     * @return Version <p>数据库版本信息。取值为2008R2（表示SQL Server 2008 R2），2012SP3（表示SQL Server 2012），2016SP1（表示SQL Server 2016 SP1）</p>
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
-                     * 设置数据库版本信息。取值为2008R2（表示SQL Server 2008 R2），2012SP3（表示SQL Server 2012），2016SP1（表示SQL Server 2016 SP1）
-                     * @param _version 数据库版本信息。取值为2008R2（表示SQL Server 2008 R2），2012SP3（表示SQL Server 2012），2016SP1（表示SQL Server 2016 SP1）
+                     * 设置<p>数据库版本信息。取值为2008R2（表示SQL Server 2008 R2），2012SP3（表示SQL Server 2012），2016SP1（表示SQL Server 2016 SP1）</p>
+                     * @param _version <p>数据库版本信息。取值为2008R2（表示SQL Server 2008 R2），2012SP3（表示SQL Server 2012），2016SP1（表示SQL Server 2016 SP1）</p>
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取Version字段对应的版本名称
-                     * @return VersionName Version字段对应的版本名称
+                     * 获取<p>Version字段对应的版本名称</p>
+                     * @return VersionName <p>Version字段对应的版本名称</p>
                      * 
                      */
                     std::string GetVersionName() const;
 
                     /**
-                     * 设置Version字段对应的版本名称
-                     * @param _versionName Version字段对应的版本名称
+                     * 设置<p>Version字段对应的版本名称</p>
+                     * @param _versionName <p>Version字段对应的版本名称</p>
                      * 
                      */
                     void SetVersionName(const std::string& _versionName);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool VersionNameHasBeenSet() const;
 
                     /**
-                     * 获取内存大小，单位GB
-                     * @return Memory 内存大小，单位GB
+                     * 获取<p>内存大小，单位GB</p>
+                     * @return Memory <p>内存大小，单位GB</p>
                      * 
                      */
                     int64_t GetMemory() const;
 
                     /**
-                     * 设置内存大小，单位GB
-                     * @param _memory 内存大小，单位GB
+                     * 设置<p>内存大小，单位GB</p>
+                     * @param _memory <p>内存大小，单位GB</p>
                      * 
                      */
                     void SetMemory(const int64_t& _memory);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取CPU核数
-                     * @return CPU CPU核数
+                     * 获取<p>CPU核数</p>
+                     * @return CPU <p>CPU核数</p>
                      * 
                      */
                     int64_t GetCPU() const;
 
                     /**
-                     * 设置CPU核数
-                     * @param _cPU CPU核数
+                     * 设置<p>CPU核数</p>
+                     * @param _cPU <p>CPU核数</p>
                      * 
                      */
                     void SetCPU(const int64_t& _cPU);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool CPUHasBeenSet() const;
 
                     /**
-                     * 获取此规格下最小的磁盘大小，单位GB
-                     * @return MinStorage 此规格下最小的磁盘大小，单位GB
+                     * 获取<p>此规格下最小的磁盘大小，单位GB</p>
+                     * @return MinStorage <p>此规格下最小的磁盘大小，单位GB</p>
                      * 
                      */
                     int64_t GetMinStorage() const;
 
                     /**
-                     * 设置此规格下最小的磁盘大小，单位GB
-                     * @param _minStorage 此规格下最小的磁盘大小，单位GB
+                     * 设置<p>此规格下最小的磁盘大小，单位GB</p>
+                     * @param _minStorage <p>此规格下最小的磁盘大小，单位GB</p>
                      * 
                      */
                     void SetMinStorage(const int64_t& _minStorage);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool MinStorageHasBeenSet() const;
 
                     /**
-                     * 获取此规格下最大的磁盘大小，单位GB
-                     * @return MaxStorage 此规格下最大的磁盘大小，单位GB
+                     * 获取<p>此规格下最大的磁盘大小，单位GB</p>
+                     * @return MaxStorage <p>此规格下最大的磁盘大小，单位GB</p>
                      * 
                      */
                     int64_t GetMaxStorage() const;
 
                     /**
-                     * 设置此规格下最大的磁盘大小，单位GB
-                     * @param _maxStorage 此规格下最大的磁盘大小，单位GB
+                     * 设置<p>此规格下最大的磁盘大小，单位GB</p>
+                     * @param _maxStorage <p>此规格下最大的磁盘大小，单位GB</p>
                      * 
                      */
                     void SetMaxStorage(const int64_t& _maxStorage);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool MaxStorageHasBeenSet() const;
 
                     /**
-                     * 获取此规格对应的QPS大小
-                     * @return QPS 此规格对应的QPS大小
+                     * 获取<p>此规格对应的QPS大小</p>
+                     * @return QPS <p>此规格对应的QPS大小</p>
                      * 
                      */
                     int64_t GetQPS() const;
 
                     /**
-                     * 设置此规格对应的QPS大小
-                     * @param _qPS 此规格对应的QPS大小
+                     * 设置<p>此规格对应的QPS大小</p>
+                     * @param _qPS <p>此规格对应的QPS大小</p>
                      * 
                      */
                     void SetQPS(const int64_t& _qPS);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool QPSHasBeenSet() const;
 
                     /**
-                     * 获取此规格的中文描述信息
-                     * @return SuitInfo 此规格的中文描述信息
+                     * 获取<p>此规格的中文描述信息</p>
+                     * @return SuitInfo <p>此规格的中文描述信息</p>
                      * 
                      */
                     std::string GetSuitInfo() const;
 
                     /**
-                     * 设置此规格的中文描述信息
-                     * @param _suitInfo 此规格的中文描述信息
+                     * 设置<p>此规格的中文描述信息</p>
+                     * @param _suitInfo <p>此规格的中文描述信息</p>
                      * 
                      */
                     void SetSuitInfo(const std::string& _suitInfo);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool SuitInfoHasBeenSet() const;
 
                     /**
-                     * 获取此规格对应的包年包月Pid
-                     * @return Pid 此规格对应的包年包月Pid
+                     * 获取<p>此规格对应的包年包月Pid</p>
+                     * @return Pid <p>此规格对应的包年包月Pid</p>
                      * 
                      */
                     int64_t GetPid() const;
 
                     /**
-                     * 设置此规格对应的包年包月Pid
-                     * @param _pid 此规格对应的包年包月Pid
+                     * 设置<p>此规格对应的包年包月Pid</p>
+                     * @param _pid <p>此规格对应的包年包月Pid</p>
                      * 
                      */
                     void SetPid(const int64_t& _pid);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool PidHasBeenSet() const;
 
                     /**
-                     * 获取此规格对应的按量计费Pid列表
-                     * @return PostPid 此规格对应的按量计费Pid列表
+                     * 获取<p>此规格对应的按量计费Pid列表</p>
+                     * @return PostPid <p>此规格对应的按量计费Pid列表</p>
                      * 
                      */
                     std::vector<int64_t> GetPostPid() const;
 
                     /**
-                     * 设置此规格对应的按量计费Pid列表
-                     * @param _postPid 此规格对应的按量计费Pid列表
+                     * 设置<p>此规格对应的按量计费Pid列表</p>
+                     * @param _postPid <p>此规格对应的按量计费Pid列表</p>
                      * 
                      */
                     void SetPostPid(const std::vector<int64_t>& _postPid);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool PostPidHasBeenSet() const;
 
                     /**
-                     * 获取此规格下支持的付费模式，POST-仅支持按量计费 PRE-仅支持包年包月 ALL-支持所有
-                     * @return PayModeStatus 此规格下支持的付费模式，POST-仅支持按量计费 PRE-仅支持包年包月 ALL-支持所有
+                     * 获取<p>此规格下支持的付费模式，POST-仅支持按量计费 PRE-仅支持包年包月 ALL-支持所有</p>
+                     * @return PayModeStatus <p>此规格下支持的付费模式，POST-仅支持按量计费 PRE-仅支持包年包月 ALL-支持所有</p>
                      * 
                      */
                     std::string GetPayModeStatus() const;
 
                     /**
-                     * 设置此规格下支持的付费模式，POST-仅支持按量计费 PRE-仅支持包年包月 ALL-支持所有
-                     * @param _payModeStatus 此规格下支持的付费模式，POST-仅支持按量计费 PRE-仅支持包年包月 ALL-支持所有
+                     * 设置<p>此规格下支持的付费模式，POST-仅支持按量计费 PRE-仅支持包年包月 ALL-支持所有</p>
+                     * @param _payModeStatus <p>此规格下支持的付费模式，POST-仅支持按量计费 PRE-仅支持包年包月 ALL-支持所有</p>
                      * 
                      */
                     void SetPayModeStatus(const std::string& _payModeStatus);
@@ -341,19 +341,15 @@ namespace TencentCloud
                     bool PayModeStatusHasBeenSet() const;
 
                     /**
-                     * 获取购买实例的类型 HA-本地盘高可用(包括双机高可用，alwaysOn集群)，RO-本地盘只读副本，SI-云盘版单节点,BI-商业智能服务，cvmHA-云盘版高可用，cvmRO-云盘版只读副本，MultiHA-多节点，cvmMultiHA-云盘多节点
-示例值：HA
-                     * @return InstanceType 购买实例的类型 HA-本地盘高可用(包括双机高可用，alwaysOn集群)，RO-本地盘只读副本，SI-云盘版单节点,BI-商业智能服务，cvmHA-云盘版高可用，cvmRO-云盘版只读副本，MultiHA-多节点，cvmMultiHA-云盘多节点
-示例值：HA
+                     * 获取<p>购买实例的类型 HA-本地盘高可用(包括双机高可用，alwaysOn集群)，RO-本地盘只读副本，SI-云盘版单节点,BI-商业智能服务，cvmHA-云盘版高可用，cvmRO-云盘版只读副本，MultiHA-多节点，cvmMultiHA-云盘多节点<br>示例值：HA</p>
+                     * @return InstanceType <p>购买实例的类型 HA-本地盘高可用(包括双机高可用，alwaysOn集群)，RO-本地盘只读副本，SI-云盘版单节点,BI-商业智能服务，cvmHA-云盘版高可用，cvmRO-云盘版只读副本，MultiHA-多节点，cvmMultiHA-云盘多节点<br>示例值：HA</p>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置购买实例的类型 HA-本地盘高可用(包括双机高可用，alwaysOn集群)，RO-本地盘只读副本，SI-云盘版单节点,BI-商业智能服务，cvmHA-云盘版高可用，cvmRO-云盘版只读副本，MultiHA-多节点，cvmMultiHA-云盘多节点
-示例值：HA
-                     * @param _instanceType 购买实例的类型 HA-本地盘高可用(包括双机高可用，alwaysOn集群)，RO-本地盘只读副本，SI-云盘版单节点,BI-商业智能服务，cvmHA-云盘版高可用，cvmRO-云盘版只读副本，MultiHA-多节点，cvmMultiHA-云盘多节点
-示例值：HA
+                     * 设置<p>购买实例的类型 HA-本地盘高可用(包括双机高可用，alwaysOn集群)，RO-本地盘只读副本，SI-云盘版单节点,BI-商业智能服务，cvmHA-云盘版高可用，cvmRO-云盘版只读副本，MultiHA-多节点，cvmMultiHA-云盘多节点<br>示例值：HA</p>
+                     * @param _instanceType <p>购买实例的类型 HA-本地盘高可用(包括双机高可用，alwaysOn集群)，RO-本地盘只读副本，SI-云盘版单节点,BI-商业智能服务，cvmHA-云盘版高可用，cvmRO-云盘版只读副本，MultiHA-多节点，cvmMultiHA-云盘多节点<br>示例值：HA</p>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -366,15 +362,15 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取跨可用区类型，MultiZones-只支持跨可用区，SameZones-只支持同可用区，ALL-支持所有
-                     * @return MultiZonesStatus 跨可用区类型，MultiZones-只支持跨可用区，SameZones-只支持同可用区，ALL-支持所有
+                     * 获取<p>跨可用区类型，MultiZones-只支持跨可用区，SameZones-只支持同可用区，ALL-支持所有</p>
+                     * @return MultiZonesStatus <p>跨可用区类型，MultiZones-只支持跨可用区，SameZones-只支持同可用区，ALL-支持所有</p>
                      * 
                      */
                     std::string GetMultiZonesStatus() const;
 
                     /**
-                     * 设置跨可用区类型，MultiZones-只支持跨可用区，SameZones-只支持同可用区，ALL-支持所有
-                     * @param _multiZonesStatus 跨可用区类型，MultiZones-只支持跨可用区，SameZones-只支持同可用区，ALL-支持所有
+                     * 设置<p>跨可用区类型，MultiZones-只支持跨可用区，SameZones-只支持同可用区，ALL-支持所有</p>
+                     * @param _multiZonesStatus <p>跨可用区类型，MultiZones-只支持跨可用区，SameZones-只支持同可用区，ALL-支持所有</p>
                      * 
                      */
                     void SetMultiZonesStatus(const std::string& _multiZonesStatus);
@@ -386,104 +382,292 @@ namespace TencentCloud
                      */
                     bool MultiZonesStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>最小磁盘容量时的基准</p><p>单位：IOPS</p>
+                     * @return MinBaselineIOPS <p>最小磁盘容量时的基准</p><p>单位：IOPS</p>
+                     * 
+                     */
+                    uint64_t GetMinBaselineIOPS() const;
+
+                    /**
+                     * 设置<p>最小磁盘容量时的基准</p><p>单位：IOPS</p>
+                     * @param _minBaselineIOPS <p>最小磁盘容量时的基准</p><p>单位：IOPS</p>
+                     * 
+                     */
+                    void SetMinBaselineIOPS(const uint64_t& _minBaselineIOPS);
+
+                    /**
+                     * 判断参数 MinBaselineIOPS 是否已赋值
+                     * @return MinBaselineIOPS 是否已赋值
+                     * 
+                     */
+                    bool MinBaselineIOPSHasBeenSet() const;
+
+                    /**
+                     * 获取<p>最大磁盘容量时的基准</p><p>单位：IOPS</p>
+                     * @return MaxBaselineIOPS <p>最大磁盘容量时的基准</p><p>单位：IOPS</p>
+                     * 
+                     */
+                    uint64_t GetMaxBaselineIOPS() const;
+
+                    /**
+                     * 设置<p>最大磁盘容量时的基准</p><p>单位：IOPS</p>
+                     * @param _maxBaselineIOPS <p>最大磁盘容量时的基准</p><p>单位：IOPS</p>
+                     * 
+                     */
+                    void SetMaxBaselineIOPS(const uint64_t& _maxBaselineIOPS);
+
+                    /**
+                     * 判断参数 MaxBaselineIOPS 是否已赋值
+                     * @return MaxBaselineIOPS 是否已赋值
+                     * 
+                     */
+                    bool MaxBaselineIOPSHasBeenSet() const;
+
+                    /**
+                     * 获取<p>最小磁盘容量时的基准吞吐量</p><p>单位：MB/s</p>
+                     * @return MinBaselineThroughput <p>最小磁盘容量时的基准吞吐量</p><p>单位：MB/s</p>
+                     * 
+                     */
+                    uint64_t GetMinBaselineThroughput() const;
+
+                    /**
+                     * 设置<p>最小磁盘容量时的基准吞吐量</p><p>单位：MB/s</p>
+                     * @param _minBaselineThroughput <p>最小磁盘容量时的基准吞吐量</p><p>单位：MB/s</p>
+                     * 
+                     */
+                    void SetMinBaselineThroughput(const uint64_t& _minBaselineThroughput);
+
+                    /**
+                     * 判断参数 MinBaselineThroughput 是否已赋值
+                     * @return MinBaselineThroughput 是否已赋值
+                     * 
+                     */
+                    bool MinBaselineThroughputHasBeenSet() const;
+
+                    /**
+                     * 获取<p>最大磁盘容量时的基准吞吐量</p><p>单位：MB/s</p>
+                     * @return MaxBaselineThroughput <p>最大磁盘容量时的基准吞吐量</p><p>单位：MB/s</p>
+                     * 
+                     */
+                    uint64_t GetMaxBaselineThroughput() const;
+
+                    /**
+                     * 设置<p>最大磁盘容量时的基准吞吐量</p><p>单位：MB/s</p>
+                     * @param _maxBaselineThroughput <p>最大磁盘容量时的基准吞吐量</p><p>单位：MB/s</p>
+                     * 
+                     */
+                    void SetMaxBaselineThroughput(const uint64_t& _maxBaselineThroughput);
+
+                    /**
+                     * 判断参数 MaxBaselineThroughput 是否已赋值
+                     * @return MaxBaselineThroughput 是否已赋值
+                     * 
+                     */
+                    bool MaxBaselineThroughputHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否支持额外 IO 性能</p><p>枚举值：</p><ul><li>TRUE： 支持额外 IO 性能</li><li>FALSE： 不支持额外 IO 性能</li></ul>
+                     * @return ExtraIOSupported <p>是否支持额外 IO 性能</p><p>枚举值：</p><ul><li>TRUE： 支持额外 IO 性能</li><li>FALSE： 不支持额外 IO 性能</li></ul>
+                     * 
+                     */
+                    bool GetExtraIOSupported() const;
+
+                    /**
+                     * 设置<p>是否支持额外 IO 性能</p><p>枚举值：</p><ul><li>TRUE： 支持额外 IO 性能</li><li>FALSE： 不支持额外 IO 性能</li></ul>
+                     * @param _extraIOSupported <p>是否支持额外 IO 性能</p><p>枚举值：</p><ul><li>TRUE： 支持额外 IO 性能</li><li>FALSE： 不支持额外 IO 性能</li></ul>
+                     * 
+                     */
+                    void SetExtraIOSupported(const bool& _extraIOSupported);
+
+                    /**
+                     * 判断参数 ExtraIOSupported 是否已赋值
+                     * @return ExtraIOSupported 是否已赋值
+                     * 
+                     */
+                    bool ExtraIOSupportedHasBeenSet() const;
+
+                    /**
+                     * 获取<p>额外 IO 最大吞吐量</p><p>单位：MB/s</p>
+                     * @return MaxExtraThroughput <p>额外 IO 最大吞吐量</p><p>单位：MB/s</p>
+                     * 
+                     */
+                    uint64_t GetMaxExtraThroughput() const;
+
+                    /**
+                     * 设置<p>额外 IO 最大吞吐量</p><p>单位：MB/s</p>
+                     * @param _maxExtraThroughput <p>额外 IO 最大吞吐量</p><p>单位：MB/s</p>
+                     * 
+                     */
+                    void SetMaxExtraThroughput(const uint64_t& _maxExtraThroughput);
+
+                    /**
+                     * 判断参数 MaxExtraThroughput 是否已赋值
+                     * @return MaxExtraThroughput 是否已赋值
+                     * 
+                     */
+                    bool MaxExtraThroughputHasBeenSet() const;
+
+                    /**
+                     * 获取<p>支持额外 IO 的最小磁盘容量</p><p>单位： GB</p><p>默认值：460</p>
+                     * @return MinDiskSizeForExtraIO <p>支持额外 IO 的最小磁盘容量</p><p>单位： GB</p><p>默认值：460</p>
+                     * 
+                     */
+                    uint64_t GetMinDiskSizeForExtraIO() const;
+
+                    /**
+                     * 设置<p>支持额外 IO 的最小磁盘容量</p><p>单位： GB</p><p>默认值：460</p>
+                     * @param _minDiskSizeForExtraIO <p>支持额外 IO 的最小磁盘容量</p><p>单位： GB</p><p>默认值：460</p>
+                     * 
+                     */
+                    void SetMinDiskSizeForExtraIO(const uint64_t& _minDiskSizeForExtraIO);
+
+                    /**
+                     * 判断参数 MinDiskSizeForExtraIO 是否已赋值
+                     * @return MinDiskSizeForExtraIO 是否已赋值
+                     * 
+                     */
+                    bool MinDiskSizeForExtraIOHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例规格ID，利用DescribeZones返回的SpecId，结合DescribeProductConfig返回的可售卖规格信息，可获悉某个可用区下可购买什么规格的实例
+                     * <p>实例规格ID，利用DescribeZones返回的SpecId，结合DescribeProductConfig返回的可售卖规格信息，可获悉某个可用区下可购买什么规格的实例</p>
                      */
                     int64_t m_specId;
                     bool m_specIdHasBeenSet;
 
                     /**
-                     * 机型ID
+                     * <p>机型ID</p>
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;
 
                     /**
-                     * 机型中文名称
+                     * <p>机型中文名称</p>
                      */
                     std::string m_machineTypeName;
                     bool m_machineTypeNameHasBeenSet;
 
                     /**
-                     * 数据库版本信息。取值为2008R2（表示SQL Server 2008 R2），2012SP3（表示SQL Server 2012），2016SP1（表示SQL Server 2016 SP1）
+                     * <p>数据库版本信息。取值为2008R2（表示SQL Server 2008 R2），2012SP3（表示SQL Server 2012），2016SP1（表示SQL Server 2016 SP1）</p>
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
-                     * Version字段对应的版本名称
+                     * <p>Version字段对应的版本名称</p>
                      */
                     std::string m_versionName;
                     bool m_versionNameHasBeenSet;
 
                     /**
-                     * 内存大小，单位GB
+                     * <p>内存大小，单位GB</p>
                      */
                     int64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * CPU核数
+                     * <p>CPU核数</p>
                      */
                     int64_t m_cPU;
                     bool m_cPUHasBeenSet;
 
                     /**
-                     * 此规格下最小的磁盘大小，单位GB
+                     * <p>此规格下最小的磁盘大小，单位GB</p>
                      */
                     int64_t m_minStorage;
                     bool m_minStorageHasBeenSet;
 
                     /**
-                     * 此规格下最大的磁盘大小，单位GB
+                     * <p>此规格下最大的磁盘大小，单位GB</p>
                      */
                     int64_t m_maxStorage;
                     bool m_maxStorageHasBeenSet;
 
                     /**
-                     * 此规格对应的QPS大小
+                     * <p>此规格对应的QPS大小</p>
                      */
                     int64_t m_qPS;
                     bool m_qPSHasBeenSet;
 
                     /**
-                     * 此规格的中文描述信息
+                     * <p>此规格的中文描述信息</p>
                      */
                     std::string m_suitInfo;
                     bool m_suitInfoHasBeenSet;
 
                     /**
-                     * 此规格对应的包年包月Pid
+                     * <p>此规格对应的包年包月Pid</p>
                      */
                     int64_t m_pid;
                     bool m_pidHasBeenSet;
 
                     /**
-                     * 此规格对应的按量计费Pid列表
+                     * <p>此规格对应的按量计费Pid列表</p>
                      */
                     std::vector<int64_t> m_postPid;
                     bool m_postPidHasBeenSet;
 
                     /**
-                     * 此规格下支持的付费模式，POST-仅支持按量计费 PRE-仅支持包年包月 ALL-支持所有
+                     * <p>此规格下支持的付费模式，POST-仅支持按量计费 PRE-仅支持包年包月 ALL-支持所有</p>
                      */
                     std::string m_payModeStatus;
                     bool m_payModeStatusHasBeenSet;
 
                     /**
-                     * 购买实例的类型 HA-本地盘高可用(包括双机高可用，alwaysOn集群)，RO-本地盘只读副本，SI-云盘版单节点,BI-商业智能服务，cvmHA-云盘版高可用，cvmRO-云盘版只读副本，MultiHA-多节点，cvmMultiHA-云盘多节点
-示例值：HA
+                     * <p>购买实例的类型 HA-本地盘高可用(包括双机高可用，alwaysOn集群)，RO-本地盘只读副本，SI-云盘版单节点,BI-商业智能服务，cvmHA-云盘版高可用，cvmRO-云盘版只读副本，MultiHA-多节点，cvmMultiHA-云盘多节点<br>示例值：HA</p>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 跨可用区类型，MultiZones-只支持跨可用区，SameZones-只支持同可用区，ALL-支持所有
+                     * <p>跨可用区类型，MultiZones-只支持跨可用区，SameZones-只支持同可用区，ALL-支持所有</p>
                      */
                     std::string m_multiZonesStatus;
                     bool m_multiZonesStatusHasBeenSet;
+
+                    /**
+                     * <p>最小磁盘容量时的基准</p><p>单位：IOPS</p>
+                     */
+                    uint64_t m_minBaselineIOPS;
+                    bool m_minBaselineIOPSHasBeenSet;
+
+                    /**
+                     * <p>最大磁盘容量时的基准</p><p>单位：IOPS</p>
+                     */
+                    uint64_t m_maxBaselineIOPS;
+                    bool m_maxBaselineIOPSHasBeenSet;
+
+                    /**
+                     * <p>最小磁盘容量时的基准吞吐量</p><p>单位：MB/s</p>
+                     */
+                    uint64_t m_minBaselineThroughput;
+                    bool m_minBaselineThroughputHasBeenSet;
+
+                    /**
+                     * <p>最大磁盘容量时的基准吞吐量</p><p>单位：MB/s</p>
+                     */
+                    uint64_t m_maxBaselineThroughput;
+                    bool m_maxBaselineThroughputHasBeenSet;
+
+                    /**
+                     * <p>是否支持额外 IO 性能</p><p>枚举值：</p><ul><li>TRUE： 支持额外 IO 性能</li><li>FALSE： 不支持额外 IO 性能</li></ul>
+                     */
+                    bool m_extraIOSupported;
+                    bool m_extraIOSupportedHasBeenSet;
+
+                    /**
+                     * <p>额外 IO 最大吞吐量</p><p>单位：MB/s</p>
+                     */
+                    uint64_t m_maxExtraThroughput;
+                    bool m_maxExtraThroughputHasBeenSet;
+
+                    /**
+                     * <p>支持额外 IO 的最小磁盘容量</p><p>单位： GB</p><p>默认值：460</p>
+                     */
+                    uint64_t m_minDiskSizeForExtraIO;
+                    bool m_minDiskSizeForExtraIOHasBeenSet;
 
                 };
             }

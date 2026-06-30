@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模块名，这里填“monitor”
-                     * @return Module 模块名，这里填“monitor”
+                     * 获取<p>模块名，这里填“monitor”</p>
+                     * @return Module <p>模块名，这里填“monitor”</p>
                      * 
                      */
                     std::string GetModule() const;
 
                     /**
-                     * 设置模块名，这里填“monitor”
-                     * @param _module 模块名，这里填“monitor”
+                     * 设置<p>模块名，这里填“monitor”</p>
+                     * @param _module <p>模块名，这里填“monitor”</p>
                      * 
                      */
                     void SetModule(const std::string& _module);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取告警通知模板 id
-                     * @return NoticeId 告警通知模板 id
+                     * 获取<p>告警通知模板 id</p>
+                     * @return NoticeId <p>告警通知模板 id</p>
                      * 
                      */
                     std::string GetNoticeId() const;
 
                     /**
-                     * 设置告警通知模板 id
-                     * @param _noticeId 告警通知模板 id
+                     * 设置<p>告警通知模板 id</p>
+                     * @param _noticeId <p>告警通知模板 id</p>
                      * 
                      */
                     void SetNoticeId(const std::string& _noticeId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模块名，这里填“monitor”
+                     * <p>模块名，这里填“monitor”</p>
                      */
                     std::string m_module;
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 告警通知模板 id
+                     * <p>告警通知模板 id</p>
                      */
                     std::string m_noticeId;
                     bool m_noticeIdHasBeenSet;

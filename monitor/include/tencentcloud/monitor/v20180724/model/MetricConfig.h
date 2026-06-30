@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取允许使用的运算符
-                     * @return Operator 允许使用的运算符
+                     * 获取<p>允许使用的运算符</p>
+                     * @return Operator <p>允许使用的运算符</p>
                      * 
                      */
                     std::vector<std::string> GetOperator() const;
 
                     /**
-                     * 设置允许使用的运算符
-                     * @param _operator 允许使用的运算符
+                     * 设置<p>允许使用的运算符</p>
+                     * @param _operator <p>允许使用的运算符</p>
                      * 
                      */
                     void SetOperator(const std::vector<std::string>& _operator);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取允许配置的数据周期，以秒为单位
-                     * @return Period 允许配置的数据周期，以秒为单位
+                     * 获取<p>允许配置的数据周期，以秒为单位</p>
+                     * @return Period <p>允许配置的数据周期，以秒为单位</p>
                      * 
                      */
                     std::vector<int64_t> GetPeriod() const;
 
                     /**
-                     * 设置允许配置的数据周期，以秒为单位
-                     * @param _period 允许配置的数据周期，以秒为单位
+                     * 设置<p>允许配置的数据周期，以秒为单位</p>
+                     * @param _period <p>允许配置的数据周期，以秒为单位</p>
                      * 
                      */
                     void SetPeriod(const std::vector<int64_t>& _period);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取允许配置的持续周期个数
-                     * @return ContinuePeriod 允许配置的持续周期个数
+                     * 获取<p>允许配置的持续周期个数</p>
+                     * @return ContinuePeriod <p>允许配置的持续周期个数</p>
                      * 
                      */
                     std::vector<int64_t> GetContinuePeriod() const;
 
                     /**
-                     * 设置允许配置的持续周期个数
-                     * @param _continuePeriod 允许配置的持续周期个数
+                     * 设置<p>允许配置的持续周期个数</p>
+                     * @param _continuePeriod <p>允许配置的持续周期个数</p>
                      * 
                      */
                     void SetContinuePeriod(const std::vector<int64_t>& _continuePeriod);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 允许使用的运算符
+                     * <p>允许使用的运算符</p>
                      */
                     std::vector<std::string> m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 允许配置的数据周期，以秒为单位
+                     * <p>允许配置的数据周期，以秒为单位</p>
                      */
                     std::vector<int64_t> m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 允许配置的持续周期个数
+                     * <p>允许配置的持续周期个数</p>
                      */
                     std::vector<int64_t> m_continuePeriod;
                     bool m_continuePeriodHasBeenSet;

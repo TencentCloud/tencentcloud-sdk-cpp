@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略详情
-                     * @return Policy 策略详情
+                     * 获取<p>策略详情</p>
+                     * @return Policy <p>策略详情</p>
                      * 
                      */
                     AlarmPolicy GetPolicy() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略详情
+                     * <p>策略详情</p>
                      */
                     AlarmPolicy m_policy;
                     bool m_policyHasBeenSet;

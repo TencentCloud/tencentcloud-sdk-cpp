@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略组列表
+                     * 获取<p>策略组列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupList 策略组列表
+                     * @return GroupList <p>策略组列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,8 +61,8 @@ namespace TencentCloud
                     bool GroupListHasBeenSet() const;
 
                     /**
-                     * 获取策略组总数
-                     * @return Total 策略组总数
+                     * 获取<p>策略组总数</p>
+                     * @return Total <p>策略组总数</p>
                      * 
                      */
                     int64_t GetTotal() const;
@@ -75,9 +75,9 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取备注信息
+                     * 获取<p>备注信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Warning 备注信息
+                     * @return Warning <p>备注信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -93,20 +93,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略组列表
+                     * <p>策略组列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DescribePolicyGroupListGroup> m_groupList;
                     bool m_groupListHasBeenSet;
 
                     /**
-                     * 策略组总数
+                     * <p>策略组总数</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 备注信息
+                     * <p>备注信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_warning;

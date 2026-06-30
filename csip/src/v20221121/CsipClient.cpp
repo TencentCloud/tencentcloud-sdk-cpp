@@ -7740,6 +7740,156 @@ CsipClient::DescribeNICAssetsOutcomeCallable CsipClient::DescribeNICAssetsCallab
     return prom->get_future();
 }
 
+CsipClient::DescribeNotifyAssetConfigOutcome CsipClient::DescribeNotifyAssetConfig(const DescribeNotifyAssetConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNotifyAssetConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNotifyAssetConfigResponse rsp = DescribeNotifyAssetConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNotifyAssetConfigOutcome(rsp);
+        else
+            return DescribeNotifyAssetConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNotifyAssetConfigOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeNotifyAssetConfigAsync(const DescribeNotifyAssetConfigRequest& request, const DescribeNotifyAssetConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeNotifyAssetConfigRequest&;
+    using Resp = DescribeNotifyAssetConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeNotifyAssetConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeNotifyAssetConfigOutcomeCallable CsipClient::DescribeNotifyAssetConfigCallable(const DescribeNotifyAssetConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeNotifyAssetConfigOutcome>>();
+    DescribeNotifyAssetConfigAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeNotifyAssetConfigRequest&,
+        DescribeNotifyAssetConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeNotifySettingOutcome CsipClient::DescribeNotifySetting(const DescribeNotifySettingRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNotifySetting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNotifySettingResponse rsp = DescribeNotifySettingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNotifySettingOutcome(rsp);
+        else
+            return DescribeNotifySettingOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNotifySettingOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeNotifySettingAsync(const DescribeNotifySettingRequest& request, const DescribeNotifySettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeNotifySettingRequest&;
+    using Resp = DescribeNotifySettingResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeNotifySetting", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeNotifySettingOutcomeCallable CsipClient::DescribeNotifySettingCallable(const DescribeNotifySettingRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeNotifySettingOutcome>>();
+    DescribeNotifySettingAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeNotifySettingRequest&,
+        DescribeNotifySettingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeNotifySettingAlertOutcome CsipClient::DescribeNotifySettingAlert(const DescribeNotifySettingAlertRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNotifySettingAlert");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNotifySettingAlertResponse rsp = DescribeNotifySettingAlertResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNotifySettingAlertOutcome(rsp);
+        else
+            return DescribeNotifySettingAlertOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNotifySettingAlertOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeNotifySettingAlertAsync(const DescribeNotifySettingAlertRequest& request, const DescribeNotifySettingAlertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeNotifySettingAlertRequest&;
+    using Resp = DescribeNotifySettingAlertResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeNotifySettingAlert", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeNotifySettingAlertOutcomeCallable CsipClient::DescribeNotifySettingAlertCallable(const DescribeNotifySettingAlertRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeNotifySettingAlertOutcome>>();
+    DescribeNotifySettingAlertAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeNotifySettingAlertRequest&,
+        DescribeNotifySettingAlertOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::DescribeOrganizationInfoOutcome CsipClient::DescribeOrganizationInfo(const DescribeOrganizationInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOrganizationInfo");
@@ -10932,6 +11082,156 @@ CsipClient::ModifyMachineRemarkOutcomeCallable CsipClient::ModifyMachineRemarkCa
         const CsipClient*,
         const ModifyMachineRemarkRequest&,
         ModifyMachineRemarkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::ModifyNotifyAssetConfigOutcome CsipClient::ModifyNotifyAssetConfig(const ModifyNotifyAssetConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNotifyAssetConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNotifyAssetConfigResponse rsp = ModifyNotifyAssetConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNotifyAssetConfigOutcome(rsp);
+        else
+            return ModifyNotifyAssetConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNotifyAssetConfigOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifyNotifyAssetConfigAsync(const ModifyNotifyAssetConfigRequest& request, const ModifyNotifyAssetConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyNotifyAssetConfigRequest&;
+    using Resp = ModifyNotifyAssetConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyNotifyAssetConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifyNotifyAssetConfigOutcomeCallable CsipClient::ModifyNotifyAssetConfigCallable(const ModifyNotifyAssetConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyNotifyAssetConfigOutcome>>();
+    ModifyNotifyAssetConfigAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifyNotifyAssetConfigRequest&,
+        ModifyNotifyAssetConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::ModifyNotifySettingOutcome CsipClient::ModifyNotifySetting(const ModifyNotifySettingRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNotifySetting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNotifySettingResponse rsp = ModifyNotifySettingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNotifySettingOutcome(rsp);
+        else
+            return ModifyNotifySettingOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNotifySettingOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifyNotifySettingAsync(const ModifyNotifySettingRequest& request, const ModifyNotifySettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyNotifySettingRequest&;
+    using Resp = ModifyNotifySettingResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyNotifySetting", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifyNotifySettingOutcomeCallable CsipClient::ModifyNotifySettingCallable(const ModifyNotifySettingRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyNotifySettingOutcome>>();
+    ModifyNotifySettingAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifyNotifySettingRequest&,
+        ModifyNotifySettingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::ModifyNotifySettingAlertOutcome CsipClient::ModifyNotifySettingAlert(const ModifyNotifySettingAlertRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNotifySettingAlert");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNotifySettingAlertResponse rsp = ModifyNotifySettingAlertResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNotifySettingAlertOutcome(rsp);
+        else
+            return ModifyNotifySettingAlertOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNotifySettingAlertOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifyNotifySettingAlertAsync(const ModifyNotifySettingAlertRequest& request, const ModifyNotifySettingAlertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyNotifySettingAlertRequest&;
+    using Resp = ModifyNotifySettingAlertResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyNotifySettingAlert", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifyNotifySettingAlertOutcomeCallable CsipClient::ModifyNotifySettingAlertCallable(const ModifyNotifySettingAlertRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyNotifySettingAlertOutcome>>();
+    ModifyNotifySettingAlertAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifyNotifySettingAlertRequest&,
+        ModifyNotifySettingAlertOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

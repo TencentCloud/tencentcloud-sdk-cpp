@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取请求验证的域名
-                     * @return EmailIdentity 请求验证的域名
+                     * 获取<p>请求验证的域名</p>
+                     * @return EmailIdentity <p>请求验证的域名</p>
                      * 
                      */
                     std::string GetEmailIdentity() const;
 
                     /**
-                     * 设置请求验证的域名
-                     * @param _emailIdentity 请求验证的域名
+                     * 设置<p>请求验证的域名</p>
+                     * @param _emailIdentity <p>请求验证的域名</p>
                      * 
                      */
                     void SetEmailIdentity(const std::string& _emailIdentity);
@@ -63,13 +63,67 @@ namespace TencentCloud
                      */
                     bool EmailIdentityHasBeenSet() const;
 
+                    /**
+                     * 获取<p>匹分控制台新老API</p>
+                     * @return NewAPI <p>匹分控制台新老API</p>
+                     * 
+                     */
+                    bool GetNewAPI() const;
+
+                    /**
+                     * 设置<p>匹分控制台新老API</p>
+                     * @param _newAPI <p>匹分控制台新老API</p>
+                     * 
+                     */
+                    void SetNewAPI(const bool& _newAPI);
+
+                    /**
+                     * 判断参数 NewAPI 是否已赋值
+                     * @return NewAPI 是否已赋值
+                     * 
+                     */
+                    bool NewAPIHasBeenSet() const;
+
+                    /**
+                     * 获取<p>dkim位数</p><p>枚举值：</p><ul><li>0： 1024</li><li>1： 2048</li><li>2： 双签</li></ul>
+                     * @return DKIMOption <p>dkim位数</p><p>枚举值：</p><ul><li>0： 1024</li><li>1： 2048</li><li>2： 双签</li></ul>
+                     * 
+                     */
+                    uint64_t GetDKIMOption() const;
+
+                    /**
+                     * 设置<p>dkim位数</p><p>枚举值：</p><ul><li>0： 1024</li><li>1： 2048</li><li>2： 双签</li></ul>
+                     * @param _dKIMOption <p>dkim位数</p><p>枚举值：</p><ul><li>0： 1024</li><li>1： 2048</li><li>2： 双签</li></ul>
+                     * 
+                     */
+                    void SetDKIMOption(const uint64_t& _dKIMOption);
+
+                    /**
+                     * 判断参数 DKIMOption 是否已赋值
+                     * @return DKIMOption 是否已赋值
+                     * 
+                     */
+                    bool DKIMOptionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 请求验证的域名
+                     * <p>请求验证的域名</p>
                      */
                     std::string m_emailIdentity;
                     bool m_emailIdentityHasBeenSet;
+
+                    /**
+                     * <p>匹分控制台新老API</p>
+                     */
+                    bool m_newAPI;
+                    bool m_newAPIHasBeenSet;
+
+                    /**
+                     * <p>dkim位数</p><p>枚举值：</p><ul><li>0： 1024</li><li>1： 2048</li><li>2： 双签</li></ul>
+                     */
+                    uint64_t m_dKIMOption;
+                    bool m_dKIMOptionHasBeenSet;
 
                 };
             }

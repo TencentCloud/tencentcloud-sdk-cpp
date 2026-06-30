@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取平台产品事件类型
-                     * @return EventType 平台产品事件类型
+                     * 获取<p>平台产品事件类型</p>
+                     * @return EventType <p>平台产品事件类型</p>
                      * 
                      */
                     std::string GetEventType() const;
 
                     /**
-                     * 设置平台产品事件类型
-                     * @param _eventType 平台产品事件类型
+                     * 设置<p>平台产品事件类型</p>
+                     * @param _eventType <p>平台产品事件类型</p>
                      * 
                      */
                     void SetEventType(const std::string& _eventType);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 平台产品事件类型
+                     * <p>平台产品事件类型</p>
                      */
                     std::string m_eventType;
                     bool m_eventTypeHasBeenSet;

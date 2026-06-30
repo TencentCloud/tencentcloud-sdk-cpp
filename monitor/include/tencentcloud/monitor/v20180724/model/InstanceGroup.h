@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例组ID
+                     * 获取<p>实例组ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceGroupId 实例组ID
+                     * @return InstanceGroupId <p>实例组ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInstanceGroupId() const;
 
                     /**
-                     * 设置实例组ID
+                     * 设置<p>实例组ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceGroupId 实例组ID
+                     * @param _instanceGroupId <p>实例组ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool InstanceGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取实例组名
+                     * 获取<p>实例组名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceGroupName 实例组名
+                     * @return InstanceGroupName <p>实例组名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceGroupName() const;
 
                     /**
-                     * 设置实例组名
+                     * 设置<p>实例组名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceGroupName 实例组名
+                     * @param _instanceGroupName <p>实例组名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,14 +99,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例组ID
+                     * <p>实例组ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_instanceGroupId;
                     bool m_instanceGroupIdHasBeenSet;
 
                     /**
-                     * 实例组名
+                     * <p>实例组名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceGroupName;

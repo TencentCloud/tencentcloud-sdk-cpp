@@ -25,7 +25,7 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/RebootHPCNodesRequest.h
   include/tencentcloud/omics/v20221128/model/CreateVolumeRequest.h
   include/tencentcloud/omics/v20221128/model/LimitRange.h
-  include/tencentcloud/omics/v20221128/model/DescribeTablesResponse.h
+  include/tencentcloud/omics/v20221128/model/GetRunJobLogResponse.h
   include/tencentcloud/omics/v20221128/model/RetryRunsRequest.h
   include/tencentcloud/omics/v20221128/model/HPCDisk.h
   include/tencentcloud/omics/v20221128/model/ClusterOption.h
@@ -36,6 +36,7 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/RunGroup.h
   include/tencentcloud/omics/v20221128/model/Project.h
   include/tencentcloud/omics/v20221128/model/DescribeApplicationVersionsRequest.h
+  include/tencentcloud/omics/v20221128/model/GetRunJobLogRequest.h
   include/tencentcloud/omics/v20221128/model/InputTemplate.h
   include/tencentcloud/omics/v20221128/model/ImportCommonApplicationResponse.h
   include/tencentcloud/omics/v20221128/model/GetRunStatusRequest.h
@@ -77,6 +78,7 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/TableColumn.h
   include/tencentcloud/omics/v20221128/model/DescribeHPCNodesRequest.h
   include/tencentcloud/omics/v20221128/model/DescribeEnvironmentsResponse.h
+  include/tencentcloud/omics/v20221128/model/DescribeTablesResponse.h
   include/tencentcloud/omics/v20221128/model/RunApplicationResponse.h
   include/tencentcloud/omics/v20221128/model/DescribeInputTemplatesResponse.h
   include/tencentcloud/omics/v20221128/model/DescribeHPCClustersResponse.h
@@ -138,7 +140,7 @@ set(omics_src
   src/v20221128/model/RebootHPCNodesRequest.cpp
   src/v20221128/model/CreateVolumeRequest.cpp
   src/v20221128/model/LimitRange.cpp
-  src/v20221128/model/DescribeTablesResponse.cpp
+  src/v20221128/model/GetRunJobLogResponse.cpp
   src/v20221128/model/RetryRunsRequest.cpp
   src/v20221128/model/HPCDisk.cpp
   src/v20221128/model/ClusterOption.cpp
@@ -149,6 +151,7 @@ set(omics_src
   src/v20221128/model/RunGroup.cpp
   src/v20221128/model/Project.cpp
   src/v20221128/model/DescribeApplicationVersionsRequest.cpp
+  src/v20221128/model/GetRunJobLogRequest.cpp
   src/v20221128/model/InputTemplate.cpp
   src/v20221128/model/ImportCommonApplicationResponse.cpp
   src/v20221128/model/GetRunStatusRequest.cpp
@@ -190,6 +193,7 @@ set(omics_src
   src/v20221128/model/TableColumn.cpp
   src/v20221128/model/DescribeHPCNodesRequest.cpp
   src/v20221128/model/DescribeEnvironmentsResponse.cpp
+  src/v20221128/model/DescribeTablesResponse.cpp
   src/v20221128/model/RunApplicationResponse.cpp
   src/v20221128/model/DescribeInputTemplatesResponse.cpp
   src/v20221128/model/DescribeHPCClustersResponse.cpp

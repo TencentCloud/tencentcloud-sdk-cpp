@@ -25,7 +25,8 @@ StorageInfo::StorageInfo() :
     m_urlHasBeenSet(false),
     m_bucketInfoHasBeenSet(false),
     m_imageUrlListHasBeenSet(false),
-    m_textContentHasBeenSet(false)
+    m_textContentHasBeenSet(false),
+    m_titleHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome StorageInfo::Deserialize(const rapidjson::Value &value)
         m_textContentHasBeenSet = true;
     }
 
+    if (value.HasMember("Title") && !value["Title"].IsNull())
+    {
+        if (!value["Title"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StorageInfo.Title` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_title = string(value["Title"].GetString());
+        m_titleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +156,14 @@ void StorageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "TextContent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_textContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_titleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Title";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_title.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -228,5 +247,21 @@ void StorageInfo::SetTextContent(const string& _textContent)
 bool StorageInfo::TextContentHasBeenSet() const
 {
     return m_textContentHasBeenSet;
+}
+
+string StorageInfo::GetTitle() const
+{
+    return m_title;
+}
+
+void StorageInfo::SetTitle(const string& _title)
+{
+    m_title = _title;
+    m_titleHasBeenSet = true;
+}
+
+bool StorageInfo::TitleHasBeenSet() const
+{
+    return m_titleHasBeenSet;
 }
 

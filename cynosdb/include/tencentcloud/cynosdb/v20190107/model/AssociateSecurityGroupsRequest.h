@@ -91,21 +91,21 @@ namespace TencentCloud
                     /**
                      * 获取可用区
                      * @return Zone 可用区
-                     * 
+                     * @deprecated
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
                      * @param _zone 可用区
-                     * 
+                     * @deprecated
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ZoneHasBeenSet() const;
 

@@ -243,6 +243,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeRuleTemplateResponse.h
   include/tencentcloud/wedata/v20210820/model/CreateDataModelResponse.h
   include/tencentcloud/wedata/v20210820/model/PageTaskTemplateInfo.h
+  include/tencentcloud/wedata/v20210820/model/TaskMissingInstanceStrategy.h
   include/tencentcloud/wedata/v20210820/model/DescribeDependTaskListsRequest.h
   include/tencentcloud/wedata/v20210820/model/DatabaseMeta.h
   include/tencentcloud/wedata/v20210820/model/DescribeAllByFolderNewRequest.h
@@ -1887,6 +1888,7 @@ set(wedata_src
   src/v20210820/model/DescribeRuleTemplateResponse.cpp
   src/v20210820/model/CreateDataModelResponse.cpp
   src/v20210820/model/PageTaskTemplateInfo.cpp
+  src/v20210820/model/TaskMissingInstanceStrategy.cpp
   src/v20210820/model/DescribeDependTaskListsRequest.cpp
   src/v20210820/model/DatabaseMeta.cpp
   src/v20210820/model/DescribeAllByFolderNewRequest.cpp

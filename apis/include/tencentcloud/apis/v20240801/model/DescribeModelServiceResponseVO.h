@@ -890,6 +890,27 @@ namespace TencentCloud
                      */
                     bool ModelProtocolHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自定义模型协议配置</p>
+                     * @return RawCustomModelProtocolConfig <p>自定义模型协议配置</p>
+                     * 
+                     */
+                    std::string GetRawCustomModelProtocolConfig() const;
+
+                    /**
+                     * 设置<p>自定义模型协议配置</p>
+                     * @param _rawCustomModelProtocolConfig <p>自定义模型协议配置</p>
+                     * 
+                     */
+                    void SetRawCustomModelProtocolConfig(const std::string& _rawCustomModelProtocolConfig);
+
+                    /**
+                     * 判断参数 RawCustomModelProtocolConfig 是否已赋值
+                     * @return RawCustomModelProtocolConfig 是否已赋值
+                     * 
+                     */
+                    bool RawCustomModelProtocolConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1128,6 +1149,12 @@ namespace TencentCloud
                      */
                     std::string m_modelProtocol;
                     bool m_modelProtocolHasBeenSet;
+
+                    /**
+                     * <p>自定义模型协议配置</p>
+                     */
+                    std::string m_rawCustomModelProtocolConfig;
+                    bool m_rawCustomModelProtocolConfigHasBeenSet;
 
                 };
             }

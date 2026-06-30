@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取地域
-                     * @return Region 地域
+                     * 获取<p>地域</p>
+                     * @return Region <p>地域</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域
-                     * @param _region 地域
+                     * 设置<p>地域</p>
+                     * @param _region <p>地域</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取绑定的实例数量
-                     * @return Count 绑定的实例数量
+                     * 获取<p>绑定的实例数量</p>
+                     * @return Count <p>绑定的实例数量</p>
                      * 
                      */
                     int64_t GetCount() const;
 
                     /**
-                     * 设置绑定的实例数量
-                     * @param _count 绑定的实例数量
+                     * 设置<p>绑定的实例数量</p>
+                     * @param _count <p>绑定的实例数量</p>
                      * 
                      */
                     void SetCount(const int64_t& _count);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 地域
+                     * <p>地域</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 绑定的实例数量
+                     * <p>绑定的实例数量</p>
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;

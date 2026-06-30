@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool RuleGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取监控类型 1.未配置, 2.关联生产调度, 3.离线周期检测
-                     * @return MonitorType 监控类型 1.未配置, 2.关联生产调度, 3.离线周期检测
+                     * 获取监控类型：1-未配置，2-关联生产调度，3-离线周期检测
+                     * @return MonitorType 监控类型：1-未配置，2-关联生产调度，3-离线周期检测
                      * 
                      */
                     uint64_t GetMonitorType() const;
 
                     /**
-                     * 设置监控类型 1.未配置, 2.关联生产调度, 3.离线周期检测
-                     * @param _monitorType 监控类型 1.未配置, 2.关联生产调度, 3.离线周期检测
+                     * 设置监控类型：1-未配置，2-关联生产调度，3-离线周期检测
+                     * @param _monitorType 监控类型：1-未配置，2-关联生产调度，3-离线周期检测
                      * 
                      */
                     void SetMonitorType(const uint64_t& _monitorType);
@@ -233,35 +233,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取离线周期模式下,调度周期 
-MINUTE_CYCLE:I,
-HOUR_CYCLE:H,
-DAY_CYCLE:D,
-WEEK_CYCLE:W,
-MONTH_CYCLE:M
-                     * @return CycleType 离线周期模式下,调度周期 
-MINUTE_CYCLE:I,
-HOUR_CYCLE:H,
-DAY_CYCLE:D,
-WEEK_CYCLE:W,
-MONTH_CYCLE:M
+                     * 获取周期类型：MINUTE-分钟，HOUR-小时，DAY-天，WEEK-周，MONTH-月，YEAR-年
+                     * @return CycleType 周期类型：MINUTE-分钟，HOUR-小时，DAY-天，WEEK-周，MONTH-月，YEAR-年
                      * 
                      */
                     std::string GetCycleType() const;
 
                     /**
-                     * 设置离线周期模式下,调度周期 
-MINUTE_CYCLE:I,
-HOUR_CYCLE:H,
-DAY_CYCLE:D,
-WEEK_CYCLE:W,
-MONTH_CYCLE:M
-                     * @param _cycleType 离线周期模式下,调度周期 
-MINUTE_CYCLE:I,
-HOUR_CYCLE:H,
-DAY_CYCLE:D,
-WEEK_CYCLE:W,
-MONTH_CYCLE:M
+                     * 设置周期类型：MINUTE-分钟，HOUR-小时，DAY-天，WEEK-周，MONTH-月，YEAR-年
+                     * @param _cycleType 周期类型：MINUTE-分钟，HOUR-小时，DAY-天，WEEK-周，MONTH-月，YEAR-年
                      * 
                      */
                     void SetCycleType(const std::string& _cycleType);
@@ -400,15 +380,15 @@ MONTH_CYCLE:M
                     bool TableIdHasBeenSet() const;
 
                     /**
-                     * 获取运行的执行引擎，不传时会请求该数据源下默认的执行引擎
-                     * @return ExecEngineType 运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+                     * 获取执行引擎类型，可选值：MYSQL, HIVE, SPARK, LIVY, DLC, GBASE, CDW_PG, TCHouse-P, DORIS, TCHouse-D
+                     * @return ExecEngineType 执行引擎类型，可选值：MYSQL, HIVE, SPARK, LIVY, DLC, GBASE, CDW_PG, TCHouse-P, DORIS, TCHouse-D
                      * 
                      */
                     std::string GetExecEngineType() const;
 
                     /**
-                     * 设置运行的执行引擎，不传时会请求该数据源下默认的执行引擎
-                     * @param _execEngineType 运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+                     * 设置执行引擎类型，可选值：MYSQL, HIVE, SPARK, LIVY, DLC, GBASE, CDW_PG, TCHouse-P, DORIS, TCHouse-D
+                     * @param _execEngineType 执行引擎类型，可选值：MYSQL, HIVE, SPARK, LIVY, DLC, GBASE, CDW_PG, TCHouse-P, DORIS, TCHouse-D
                      * 
                      */
                     void SetExecEngineType(const std::string& _execEngineType);
@@ -421,15 +401,15 @@ MONTH_CYCLE:M
                     bool ExecEngineTypeHasBeenSet() const;
 
                     /**
-                     * 获取触发场景
-                     * @return TriggerTypes 触发场景
+                     * 获取触发类型数组：1-手动触发，2-调度事件触发，3-周期调度触发
+                     * @return TriggerTypes 触发类型数组：1-手动触发，2-调度事件触发，3-周期调度触发
                      * 
                      */
                     std::vector<std::string> GetTriggerTypes() const;
 
                     /**
-                     * 设置触发场景
-                     * @param _triggerTypes 触发场景
+                     * 设置触发类型数组：1-手动触发，2-调度事件触发，3-周期调度触发
+                     * @param _triggerTypes 触发类型数组：1-手动触发，2-调度事件触发，3-周期调度触发
                      * 
                      */
                     void SetTriggerTypes(const std::vector<std::string>& _triggerTypes);
@@ -450,7 +430,7 @@ MONTH_CYCLE:M
                     bool m_ruleGroupIdHasBeenSet;
 
                     /**
-                     * 监控类型 1.未配置, 2.关联生产调度, 3.离线周期检测
+                     * 监控类型：1-未配置，2-关联生产调度，3-离线周期检测
                      */
                     uint64_t m_monitorType;
                     bool m_monitorTypeHasBeenSet;
@@ -498,12 +478,7 @@ MONTH_CYCLE:M
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 离线周期模式下,调度周期 
-MINUTE_CYCLE:I,
-HOUR_CYCLE:H,
-DAY_CYCLE:D,
-WEEK_CYCLE:W,
-MONTH_CYCLE:M
+                     * 周期类型：MINUTE-分钟，HOUR-小时，DAY-天，WEEK-周，MONTH-月，YEAR-年
                      */
                     std::string m_cycleType;
                     bool m_cycleTypeHasBeenSet;
@@ -545,13 +520,13 @@ MONTH_CYCLE:M
                     bool m_tableIdHasBeenSet;
 
                     /**
-                     * 运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+                     * 执行引擎类型，可选值：MYSQL, HIVE, SPARK, LIVY, DLC, GBASE, CDW_PG, TCHouse-P, DORIS, TCHouse-D
                      */
                     std::string m_execEngineType;
                     bool m_execEngineTypeHasBeenSet;
 
                     /**
-                     * 触发场景
+                     * 触发类型数组：1-手动触发，2-调度事件触发，3-周期调度触发
                      */
                     std::vector<std::string> m_triggerTypes;
                     bool m_triggerTypesHasBeenSet;

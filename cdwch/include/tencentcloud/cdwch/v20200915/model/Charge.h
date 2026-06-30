@@ -36,7 +36,6 @@ namespace TencentCloud
             {
                 /**
                 * 集群计费相关信息
-
                 */
                 class Charge : public AbstractModel
                 {
@@ -69,15 +68,15 @@ namespace TencentCloud
                     bool ChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取PREPAID需要传递，是否自动续费，1表示自动续费开启
-                     * @return RenewFlag PREPAID需要传递，是否自动续费，1表示自动续费开启
+                     * 获取ChargeType为PREPAID时，必传，表示是否自动续费，1表示自动续费开启
+                     * @return RenewFlag ChargeType为PREPAID时，必传，表示是否自动续费，1表示自动续费开启
                      * 
                      */
                     int64_t GetRenewFlag() const;
 
                     /**
-                     * 设置PREPAID需要传递，是否自动续费，1表示自动续费开启
-                     * @param _renewFlag PREPAID需要传递，是否自动续费，1表示自动续费开启
+                     * 设置ChargeType为PREPAID时，必传，表示是否自动续费，1表示自动续费开启
+                     * @param _renewFlag ChargeType为PREPAID时，必传，表示是否自动续费，1表示自动续费开启
                      * 
                      */
                     void SetRenewFlag(const int64_t& _renewFlag);
@@ -90,15 +89,15 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取预付费需要传递，计费时间长度，多少个月
-                     * @return TimeSpan 预付费需要传递，计费时间长度，多少个月
+                     * 获取ChargeType为PREPAID时，必传，表示计费时间长度，多少个月
+                     * @return TimeSpan ChargeType为PREPAID时，必传，表示计费时间长度，多少个月
                      * 
                      */
                     int64_t GetTimeSpan() const;
 
                     /**
-                     * 设置预付费需要传递，计费时间长度，多少个月
-                     * @param _timeSpan 预付费需要传递，计费时间长度，多少个月
+                     * 设置ChargeType为PREPAID时，必传，表示计费时间长度，多少个月
+                     * @param _timeSpan ChargeType为PREPAID时，必传，表示计费时间长度，多少个月
                      * 
                      */
                     void SetTimeSpan(const int64_t& _timeSpan);
@@ -119,13 +118,13 @@ namespace TencentCloud
                     bool m_chargeTypeHasBeenSet;
 
                     /**
-                     * PREPAID需要传递，是否自动续费，1表示自动续费开启
+                     * ChargeType为PREPAID时，必传，表示是否自动续费，1表示自动续费开启
                      */
                     int64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 预付费需要传递，计费时间长度，多少个月
+                     * ChargeType为PREPAID时，必传，表示计费时间长度，多少个月
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取
-                     * @return Zone 实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取
+                     * 获取<p>实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取</p>
+                     * @return Zone <p>实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取
-                     * @param _zone 实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取
+                     * 设置<p>实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取</p>
+                     * @param _zone <p>实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取实例内存大小，单位GB
-                     * @return Memory 实例内存大小，单位GB
+                     * 获取<p>实例内存大小，单位GB</p>
+                     * @return Memory <p>实例内存大小，单位GB</p>
                      * 
                      */
                     int64_t GetMemory() const;
 
                     /**
-                     * 设置实例内存大小，单位GB
-                     * @param _memory 实例内存大小，单位GB
+                     * 设置<p>实例内存大小，单位GB</p>
+                     * @param _memory <p>实例内存大小，单位GB</p>
                      * 
                      */
                     void SetMemory(const int64_t& _memory);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取实例磁盘大小，单位GB
-                     * @return Storage 实例磁盘大小，单位GB
+                     * 获取<p>实例磁盘大小，单位GB</p>
+                     * @return Storage <p>实例磁盘大小，单位GB</p>
                      * 
                      */
                     int64_t GetStorage() const;
 
                     /**
-                     * 设置实例磁盘大小，单位GB
-                     * @param _storage 实例磁盘大小，单位GB
+                     * 设置<p>实例磁盘大小，单位GB</p>
+                     * @param _storage <p>实例磁盘大小，单位GB</p>
                      * 
                      */
                     void SetStorage(const int64_t& _storage);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool StorageHasBeenSet() const;
 
                     /**
-                     * 获取付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。
-                     * @return InstanceChargeType 付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。
+                     * 获取<p>付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。</p>
+                     * @return InstanceChargeType <p>付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。</p>
                      * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
-                     * 设置付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。
-                     * @param _instanceChargeType 付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。
+                     * 设置<p>付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。</p>
+                     * @param _instanceChargeType <p>付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。</p>
                      * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return ProjectId <p>项目ID</p>
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _projectId <p>项目ID</p>
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取本次购买几个实例，默认值为1。取值不超过10
-                     * @return GoodsNum 本次购买几个实例，默认值为1。取值不超过10
+                     * 获取<p>本次购买几个实例，默认值为1。取值不超过10</p>
+                     * @return GoodsNum <p>本次购买几个实例，默认值为1。取值不超过10</p>
                      * 
                      */
                     int64_t GetGoodsNum() const;
 
                     /**
-                     * 设置本次购买几个实例，默认值为1。取值不超过10
-                     * @param _goodsNum 本次购买几个实例，默认值为1。取值不超过10
+                     * 设置<p>本次购买几个实例，默认值为1。取值不超过10</p>
+                     * @param _goodsNum <p>本次购买几个实例，默认值为1。取值不超过10</p>
                      * 
                      */
                     void SetGoodsNum(const int64_t& _goodsNum);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool GoodsNumHasBeenSet() const;
 
                     /**
-                     * 获取VPC子网ID，形如subnet-bdoe83fa；SubnetId和VpcId需同时设置或者同时不设置
-                     * @return SubnetId VPC子网ID，形如subnet-bdoe83fa；SubnetId和VpcId需同时设置或者同时不设置
+                     * 获取<p>VPC子网ID，形如subnet-bdoe83fa；SubnetId和VpcId需同时设置或者同时不设置</p>
+                     * @return SubnetId <p>VPC子网ID，形如subnet-bdoe83fa；SubnetId和VpcId需同时设置或者同时不设置</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置VPC子网ID，形如subnet-bdoe83fa；SubnetId和VpcId需同时设置或者同时不设置
-                     * @param _subnetId VPC子网ID，形如subnet-bdoe83fa；SubnetId和VpcId需同时设置或者同时不设置
+                     * 设置<p>VPC子网ID，形如subnet-bdoe83fa；SubnetId和VpcId需同时设置或者同时不设置</p>
+                     * @param _subnetId <p>VPC子网ID，形如subnet-bdoe83fa；SubnetId和VpcId需同时设置或者同时不设置</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取VPC网络ID，形如vpc-dsp338hz；SubnetId和VpcId需同时设置或者同时不设置
-                     * @return VpcId VPC网络ID，形如vpc-dsp338hz；SubnetId和VpcId需同时设置或者同时不设置
+                     * 获取<p>VPC网络ID，形如vpc-dsp338hz；SubnetId和VpcId需同时设置或者同时不设置</p>
+                     * @return VpcId <p>VPC网络ID，形如vpc-dsp338hz；SubnetId和VpcId需同时设置或者同时不设置</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC网络ID，形如vpc-dsp338hz；SubnetId和VpcId需同时设置或者同时不设置
-                     * @param _vpcId VPC网络ID，形如vpc-dsp338hz；SubnetId和VpcId需同时设置或者同时不设置
+                     * 设置<p>VPC网络ID，形如vpc-dsp338hz；SubnetId和VpcId需同时设置或者同时不设置</p>
+                     * @param _vpcId <p>VPC网络ID，形如vpc-dsp338hz；SubnetId和VpcId需同时设置或者同时不设置</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取购买实例周期，默认取值为1，表示一个月。取值不超过48
-                     * @return Period 购买实例周期，默认取值为1，表示一个月。取值不超过48
+                     * 获取<p>购买实例周期，默认取值为1，表示一个月。取值不超过48</p>
+                     * @return Period <p>购买实例周期，默认取值为1，表示一个月。取值不超过48</p>
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置购买实例周期，默认取值为1，表示一个月。取值不超过48
-                     * @param _period 购买实例周期，默认取值为1，表示一个月。取值不超过48
+                     * 设置<p>购买实例周期，默认取值为1，表示一个月。取值不超过48</p>
+                     * @param _period <p>购买实例周期，默认取值为1，表示一个月。取值不超过48</p>
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -233,15 +233,15 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取是否自动使用代金券；1 - 是，0 - 否，默认不使用
-                     * @return AutoVoucher 是否自动使用代金券；1 - 是，0 - 否，默认不使用
+                     * 获取<p>是否自动使用代金券；1 - 是，0 - 否，默认不使用</p>
+                     * @return AutoVoucher <p>是否自动使用代金券；1 - 是，0 - 否，默认不使用</p>
                      * 
                      */
                     int64_t GetAutoVoucher() const;
 
                     /**
-                     * 设置是否自动使用代金券；1 - 是，0 - 否，默认不使用
-                     * @param _autoVoucher 是否自动使用代金券；1 - 是，0 - 否，默认不使用
+                     * 设置<p>是否自动使用代金券；1 - 是，0 - 否，默认不使用</p>
+                     * @param _autoVoucher <p>是否自动使用代金券；1 - 是，0 - 否，默认不使用</p>
                      * 
                      */
                     void SetAutoVoucher(const int64_t& _autoVoucher);
@@ -254,15 +254,15 @@ namespace TencentCloud
                     bool AutoVoucherHasBeenSet() const;
 
                     /**
-                     * 获取代金券ID数组，目前单个订单只能使用一张
-                     * @return VoucherIds 代金券ID数组，目前单个订单只能使用一张
+                     * 获取<p>代金券ID数组，目前单个订单只能使用一张</p>
+                     * @return VoucherIds <p>代金券ID数组，目前单个订单只能使用一张</p>
                      * 
                      */
                     std::vector<std::string> GetVoucherIds() const;
 
                     /**
-                     * 设置代金券ID数组，目前单个订单只能使用一张
-                     * @param _voucherIds 代金券ID数组，目前单个订单只能使用一张
+                     * 设置<p>代金券ID数组，目前单个订单只能使用一张</p>
+                     * @param _voucherIds <p>代金券ID数组，目前单个订单只能使用一张</p>
                      * 
                      */
                     void SetVoucherIds(const std::vector<std::string>& _voucherIds);
@@ -275,15 +275,15 @@ namespace TencentCloud
                     bool VoucherIdsHasBeenSet() const;
 
                     /**
-                     * 获取sqlserver版本，目前所有支持的版本有：2008R2 (SQL Server 2008 R2 Enterprise)，2012SP3 (SQL Server 2012 Enterprise)，201202 (SQL Server 2012 Standard)，2014SP2 (SQL Server 2014 Enterprise)，201402 (SQL Server 2014 Standard)，2016SP1 (SQL Server 2016 Enterprise)，201602 (SQL Server 2016 Standard)，2017 (SQL Server 2017 Enterprise)，201702 (SQL Server 2017 Standard)，2019 (SQL Server 2019 Enterprise)，201902 (SQL Server 2019 Standard)。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。
-                     * @return DBVersion sqlserver版本，目前所有支持的版本有：2008R2 (SQL Server 2008 R2 Enterprise)，2012SP3 (SQL Server 2012 Enterprise)，201202 (SQL Server 2012 Standard)，2014SP2 (SQL Server 2014 Enterprise)，201402 (SQL Server 2014 Standard)，2016SP1 (SQL Server 2016 Enterprise)，201602 (SQL Server 2016 Standard)，2017 (SQL Server 2017 Enterprise)，201702 (SQL Server 2017 Standard)，2019 (SQL Server 2019 Enterprise)，201902 (SQL Server 2019 Standard)。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。
+                     * 获取<p>sqlserver版本，目前所有支持的版本有：2008R2 (SQL Server 2008 R2 Enterprise)，2012SP3 (SQL Server 2012 Enterprise)，201202 (SQL Server 2012 Standard)，2014SP2 (SQL Server 2014 Enterprise)，201402 (SQL Server 2014 Standard)，2016SP1 (SQL Server 2016 Enterprise)，201602 (SQL Server 2016 Standard)，2017 (SQL Server 2017 Enterprise)，201702 (SQL Server 2017 Standard)，2019 (SQL Server 2019 Enterprise)，201902 (SQL Server 2019 Standard)。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。</p>
+                     * @return DBVersion <p>sqlserver版本，目前所有支持的版本有：2008R2 (SQL Server 2008 R2 Enterprise)，2012SP3 (SQL Server 2012 Enterprise)，201202 (SQL Server 2012 Standard)，2014SP2 (SQL Server 2014 Enterprise)，201402 (SQL Server 2014 Standard)，2016SP1 (SQL Server 2016 Enterprise)，201602 (SQL Server 2016 Standard)，2017 (SQL Server 2017 Enterprise)，201702 (SQL Server 2017 Standard)，2019 (SQL Server 2019 Enterprise)，201902 (SQL Server 2019 Standard)。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。</p>
                      * 
                      */
                     std::string GetDBVersion() const;
 
                     /**
-                     * 设置sqlserver版本，目前所有支持的版本有：2008R2 (SQL Server 2008 R2 Enterprise)，2012SP3 (SQL Server 2012 Enterprise)，201202 (SQL Server 2012 Standard)，2014SP2 (SQL Server 2014 Enterprise)，201402 (SQL Server 2014 Standard)，2016SP1 (SQL Server 2016 Enterprise)，201602 (SQL Server 2016 Standard)，2017 (SQL Server 2017 Enterprise)，201702 (SQL Server 2017 Standard)，2019 (SQL Server 2019 Enterprise)，201902 (SQL Server 2019 Standard)。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。
-                     * @param _dBVersion sqlserver版本，目前所有支持的版本有：2008R2 (SQL Server 2008 R2 Enterprise)，2012SP3 (SQL Server 2012 Enterprise)，201202 (SQL Server 2012 Standard)，2014SP2 (SQL Server 2014 Enterprise)，201402 (SQL Server 2014 Standard)，2016SP1 (SQL Server 2016 Enterprise)，201602 (SQL Server 2016 Standard)，2017 (SQL Server 2017 Enterprise)，201702 (SQL Server 2017 Standard)，2019 (SQL Server 2019 Enterprise)，201902 (SQL Server 2019 Standard)。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。
+                     * 设置<p>sqlserver版本，目前所有支持的版本有：2008R2 (SQL Server 2008 R2 Enterprise)，2012SP3 (SQL Server 2012 Enterprise)，201202 (SQL Server 2012 Standard)，2014SP2 (SQL Server 2014 Enterprise)，201402 (SQL Server 2014 Standard)，2016SP1 (SQL Server 2016 Enterprise)，201602 (SQL Server 2016 Standard)，2017 (SQL Server 2017 Enterprise)，201702 (SQL Server 2017 Standard)，2019 (SQL Server 2019 Enterprise)，201902 (SQL Server 2019 Standard)。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。</p>
+                     * @param _dBVersion <p>sqlserver版本，目前所有支持的版本有：2008R2 (SQL Server 2008 R2 Enterprise)，2012SP3 (SQL Server 2012 Enterprise)，201202 (SQL Server 2012 Standard)，2014SP2 (SQL Server 2014 Enterprise)，201402 (SQL Server 2014 Standard)，2016SP1 (SQL Server 2016 Enterprise)，201602 (SQL Server 2016 Standard)，2017 (SQL Server 2017 Enterprise)，201702 (SQL Server 2017 Standard)，2019 (SQL Server 2019 Enterprise)，201902 (SQL Server 2019 Standard)。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。</p>
                      * 
                      */
                     void SetDBVersion(const std::string& _dBVersion);
@@ -296,15 +296,15 @@ namespace TencentCloud
                     bool DBVersionHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标志：0-正常续费  1-自动续费，默认为1自动续费。只在购买预付费实例时有效。
-                     * @return AutoRenewFlag 自动续费标志：0-正常续费  1-自动续费，默认为1自动续费。只在购买预付费实例时有效。
+                     * 获取<p>自动续费标志：0-正常续费  1-自动续费，默认为1自动续费。只在购买预付费实例时有效。</p>
+                     * @return AutoRenewFlag <p>自动续费标志：0-正常续费  1-自动续费，默认为1自动续费。只在购买预付费实例时有效。</p>
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置自动续费标志：0-正常续费  1-自动续费，默认为1自动续费。只在购买预付费实例时有效。
-                     * @param _autoRenewFlag 自动续费标志：0-正常续费  1-自动续费，默认为1自动续费。只在购买预付费实例时有效。
+                     * 设置<p>自动续费标志：0-正常续费  1-自动续费，默认为1自动续费。只在购买预付费实例时有效。</p>
+                     * @param _autoRenewFlag <p>自动续费标志：0-正常续费  1-自动续费，默认为1自动续费。只在购买预付费实例时有效。</p>
                      * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
@@ -317,15 +317,15 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取安全组列表，填写形如sg-xxx的安全组ID
-                     * @return SecurityGroupList 安全组列表，填写形如sg-xxx的安全组ID
+                     * 获取<p>安全组列表，填写形如sg-xxx的安全组ID</p>
+                     * @return SecurityGroupList <p>安全组列表，填写形如sg-xxx的安全组ID</p>
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupList() const;
 
                     /**
-                     * 设置安全组列表，填写形如sg-xxx的安全组ID
-                     * @param _securityGroupList 安全组列表，填写形如sg-xxx的安全组ID
+                     * 设置<p>安全组列表，填写形如sg-xxx的安全组ID</p>
+                     * @param _securityGroupList <p>安全组列表，填写形如sg-xxx的安全组ID</p>
                      * 
                      */
                     void SetSecurityGroupList(const std::vector<std::string>& _securityGroupList);
@@ -338,15 +338,15 @@ namespace TencentCloud
                     bool SecurityGroupListHasBeenSet() const;
 
                     /**
-                     * 获取可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末
-                     * @return Weekly 可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末
+                     * 获取<p>可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末</p>
+                     * @return Weekly <p>可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末</p>
                      * 
                      */
                     std::vector<int64_t> GetWeekly() const;
 
                     /**
-                     * 设置可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末
-                     * @param _weekly 可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末
+                     * 设置<p>可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末</p>
+                     * @param _weekly <p>可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末</p>
                      * 
                      */
                     void SetWeekly(const std::vector<int64_t>& _weekly);
@@ -359,15 +359,15 @@ namespace TencentCloud
                     bool WeeklyHasBeenSet() const;
 
                     /**
-                     * 获取可维护时间窗配置，每天可维护的开始时间
-                     * @return StartTime 可维护时间窗配置，每天可维护的开始时间
+                     * 获取<p>可维护时间窗配置，每天可维护的开始时间</p>
+                     * @return StartTime <p>可维护时间窗配置，每天可维护的开始时间</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置可维护时间窗配置，每天可维护的开始时间
-                     * @param _startTime 可维护时间窗配置，每天可维护的开始时间
+                     * 设置<p>可维护时间窗配置，每天可维护的开始时间</p>
+                     * @param _startTime <p>可维护时间窗配置，每天可维护的开始时间</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -380,15 +380,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取可维护时间窗配置，持续时间，单位：小时
-                     * @return Span 可维护时间窗配置，持续时间，单位：小时
+                     * 获取<p>可维护时间窗配置，持续时间，单位：小时</p>
+                     * @return Span <p>可维护时间窗配置，持续时间，单位：小时</p>
                      * 
                      */
                     int64_t GetSpan() const;
 
                     /**
-                     * 设置可维护时间窗配置，持续时间，单位：小时
-                     * @param _span 可维护时间窗配置，持续时间，单位：小时
+                     * 设置<p>可维护时间窗配置，持续时间，单位：小时</p>
+                     * @param _span <p>可维护时间窗配置，持续时间，单位：小时</p>
                      * 
                      */
                     void SetSpan(const int64_t& _span);
@@ -401,15 +401,15 @@ namespace TencentCloud
                     bool SpanHasBeenSet() const;
 
                     /**
-                     * 获取购买高可用实例的类型：DUAL-双机高可用  CLUSTER-集群，默认值为DUAL
-                     * @return HAType 购买高可用实例的类型：DUAL-双机高可用  CLUSTER-集群，默认值为DUAL
+                     * 获取<p>购买高可用实例的类型：DUAL-双机高可用  CLUSTER-集群，默认值为DUAL</p>
+                     * @return HAType <p>购买高可用实例的类型：DUAL-双机高可用  CLUSTER-集群，默认值为DUAL</p>
                      * 
                      */
                     std::string GetHAType() const;
 
                     /**
-                     * 设置购买高可用实例的类型：DUAL-双机高可用  CLUSTER-集群，默认值为DUAL
-                     * @param _hAType 购买高可用实例的类型：DUAL-双机高可用  CLUSTER-集群，默认值为DUAL
+                     * 设置<p>购买高可用实例的类型：DUAL-双机高可用  CLUSTER-集群，默认值为DUAL</p>
+                     * @param _hAType <p>购买高可用实例的类型：DUAL-双机高可用  CLUSTER-集群，默认值为DUAL</p>
                      * 
                      */
                     void SetHAType(const std::string& _hAType);
@@ -422,15 +422,15 @@ namespace TencentCloud
                     bool HATypeHasBeenSet() const;
 
                     /**
-                     * 获取是否跨可用区部署，默认值为false
-                     * @return MultiZones 是否跨可用区部署，默认值为false
+                     * 获取<p>是否跨可用区部署，默认值为false</p>
+                     * @return MultiZones <p>是否跨可用区部署，默认值为false</p>
                      * 
                      */
                     bool GetMultiZones() const;
 
                     /**
-                     * 设置是否跨可用区部署，默认值为false
-                     * @param _multiZones 是否跨可用区部署，默认值为false
+                     * 设置<p>是否跨可用区部署，默认值为false</p>
+                     * @param _multiZones <p>是否跨可用区部署，默认值为false</p>
                      * 
                      */
                     void SetMultiZones(const bool& _multiZones);
@@ -443,15 +443,15 @@ namespace TencentCloud
                     bool MultiZonesHasBeenSet() const;
 
                     /**
-                     * 获取新建实例绑定的标签集合
-                     * @return ResourceTags 新建实例绑定的标签集合
+                     * 获取<p>新建实例绑定的标签集合</p>
+                     * @return ResourceTags <p>新建实例绑定的标签集合</p>
                      * 
                      */
                     std::vector<ResourceTag> GetResourceTags() const;
 
                     /**
-                     * 设置新建实例绑定的标签集合
-                     * @param _resourceTags 新建实例绑定的标签集合
+                     * 设置<p>新建实例绑定的标签集合</p>
+                     * @param _resourceTags <p>新建实例绑定的标签集合</p>
                      * 
                      */
                     void SetResourceTags(const std::vector<ResourceTag>& _resourceTags);
@@ -464,15 +464,15 @@ namespace TencentCloud
                     bool ResourceTagsHasBeenSet() const;
 
                     /**
-                     * 获取系统字符集排序规则，默认：Chinese_PRC_CI_AS
-                     * @return Collation 系统字符集排序规则，默认：Chinese_PRC_CI_AS
+                     * 获取<p>系统字符集排序规则，默认：Chinese_PRC_CI_AS</p>
+                     * @return Collation <p>系统字符集排序规则，默认：Chinese_PRC_CI_AS</p>
                      * 
                      */
                     std::string GetCollation() const;
 
                     /**
-                     * 设置系统字符集排序规则，默认：Chinese_PRC_CI_AS
-                     * @param _collation 系统字符集排序规则，默认：Chinese_PRC_CI_AS
+                     * 设置<p>系统字符集排序规则，默认：Chinese_PRC_CI_AS</p>
+                     * @param _collation <p>系统字符集排序规则，默认：Chinese_PRC_CI_AS</p>
                      * 
                      */
                     void SetCollation(const std::string& _collation);
@@ -485,15 +485,15 @@ namespace TencentCloud
                     bool CollationHasBeenSet() const;
 
                     /**
-                     * 获取系统时区，默认：China Standard Time
-                     * @return TimeZone 系统时区，默认：China Standard Time
+                     * 获取<p>系统时区，默认：China Standard Time</p>
+                     * @return TimeZone <p>系统时区，默认：China Standard Time</p>
                      * 
                      */
                     std::string GetTimeZone() const;
 
                     /**
-                     * 设置系统时区，默认：China Standard Time
-                     * @param _timeZone 系统时区，默认：China Standard Time
+                     * 设置<p>系统时区，默认：China Standard Time</p>
+                     * @param _timeZone <p>系统时区，默认：China Standard Time</p>
                      * 
                      */
                     void SetTimeZone(const std::string& _timeZone);
@@ -506,15 +506,15 @@ namespace TencentCloud
                     bool TimeZoneHasBeenSet() const;
 
                     /**
-                     * 获取是否多节点架构实例，默认值为false。当MultiNodes = true时，参数MultiZones必须取值为true。
-                     * @return MultiNodes 是否多节点架构实例，默认值为false。当MultiNodes = true时，参数MultiZones必须取值为true。
+                     * 获取<p>是否多节点架构实例，默认值为false。当MultiNodes = true时，参数MultiZones必须取值为true。</p>
+                     * @return MultiNodes <p>是否多节点架构实例，默认值为false。当MultiNodes = true时，参数MultiZones必须取值为true。</p>
                      * 
                      */
                     bool GetMultiNodes() const;
 
                     /**
-                     * 设置是否多节点架构实例，默认值为false。当MultiNodes = true时，参数MultiZones必须取值为true。
-                     * @param _multiNodes 是否多节点架构实例，默认值为false。当MultiNodes = true时，参数MultiZones必须取值为true。
+                     * 设置<p>是否多节点架构实例，默认值为false。当MultiNodes = true时，参数MultiZones必须取值为true。</p>
+                     * @param _multiNodes <p>是否多节点架构实例，默认值为false。当MultiNodes = true时，参数MultiZones必须取值为true。</p>
                      * 
                      */
                     void SetMultiNodes(const bool& _multiNodes);
@@ -527,15 +527,15 @@ namespace TencentCloud
                     bool MultiNodesHasBeenSet() const;
 
                     /**
-                     * 获取备节点可用区，默认为空。当MultiNodes = true时，主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。
-                     * @return DrZones 备节点可用区，默认为空。当MultiNodes = true时，主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。
+                     * 获取<p>备节点可用区，默认为空。当MultiNodes = true时，主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。</p>
+                     * @return DrZones <p>备节点可用区，默认为空。当MultiNodes = true时，主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。</p>
                      * 
                      */
                     std::vector<std::string> GetDrZones() const;
 
                     /**
-                     * 设置备节点可用区，默认为空。当MultiNodes = true时，主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。
-                     * @param _drZones 备节点可用区，默认为空。当MultiNodes = true时，主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。
+                     * 设置<p>备节点可用区，默认为空。当MultiNodes = true时，主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。</p>
+                     * @param _drZones <p>备节点可用区，默认为空。当MultiNodes = true时，主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。</p>
                      * 
                      */
                     void SetDrZones(const std::vector<std::string>& _drZones);
@@ -547,151 +547,178 @@ namespace TencentCloud
                      */
                     bool DrZonesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>可用性策略</p><p>枚举值：</p><ul><li>Async： 可用性优先（异步传输）</li><li>Sync： 可靠性优先（同步传输）</li></ul><p>默认值：Async</p><p>仅 AlwaysOn 双节点架构生效，单节点/多节点/MIRROR 架构忽略此参数</p>
+                     * @return AvailabilityStrategy <p>可用性策略</p><p>枚举值：</p><ul><li>Async： 可用性优先（异步传输）</li><li>Sync： 可靠性优先（同步传输）</li></ul><p>默认值：Async</p><p>仅 AlwaysOn 双节点架构生效，单节点/多节点/MIRROR 架构忽略此参数</p>
+                     * 
+                     */
+                    std::string GetAvailabilityStrategy() const;
+
+                    /**
+                     * 设置<p>可用性策略</p><p>枚举值：</p><ul><li>Async： 可用性优先（异步传输）</li><li>Sync： 可靠性优先（同步传输）</li></ul><p>默认值：Async</p><p>仅 AlwaysOn 双节点架构生效，单节点/多节点/MIRROR 架构忽略此参数</p>
+                     * @param _availabilityStrategy <p>可用性策略</p><p>枚举值：</p><ul><li>Async： 可用性优先（异步传输）</li><li>Sync： 可靠性优先（同步传输）</li></ul><p>默认值：Async</p><p>仅 AlwaysOn 双节点架构生效，单节点/多节点/MIRROR 架构忽略此参数</p>
+                     * 
+                     */
+                    void SetAvailabilityStrategy(const std::string& _availabilityStrategy);
+
+                    /**
+                     * 判断参数 AvailabilityStrategy 是否已赋值
+                     * @return AvailabilityStrategy 是否已赋值
+                     * 
+                     */
+                    bool AvailabilityStrategyHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取
+                     * <p>实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 实例内存大小，单位GB
+                     * <p>实例内存大小，单位GB</p>
                      */
                     int64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 实例磁盘大小，单位GB
+                     * <p>实例磁盘大小，单位GB</p>
                      */
                     int64_t m_storage;
                     bool m_storageHasBeenSet;
 
                     /**
-                     * 付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。
+                     * <p>付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。</p>
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 本次购买几个实例，默认值为1。取值不超过10
+                     * <p>本次购买几个实例，默认值为1。取值不超过10</p>
                      */
                     int64_t m_goodsNum;
                     bool m_goodsNumHasBeenSet;
 
                     /**
-                     * VPC子网ID，形如subnet-bdoe83fa；SubnetId和VpcId需同时设置或者同时不设置
+                     * <p>VPC子网ID，形如subnet-bdoe83fa；SubnetId和VpcId需同时设置或者同时不设置</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * VPC网络ID，形如vpc-dsp338hz；SubnetId和VpcId需同时设置或者同时不设置
+                     * <p>VPC网络ID，形如vpc-dsp338hz；SubnetId和VpcId需同时设置或者同时不设置</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 购买实例周期，默认取值为1，表示一个月。取值不超过48
+                     * <p>购买实例周期，默认取值为1，表示一个月。取值不超过48</p>
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 是否自动使用代金券；1 - 是，0 - 否，默认不使用
+                     * <p>是否自动使用代金券；1 - 是，0 - 否，默认不使用</p>
                      */
                     int64_t m_autoVoucher;
                     bool m_autoVoucherHasBeenSet;
 
                     /**
-                     * 代金券ID数组，目前单个订单只能使用一张
+                     * <p>代金券ID数组，目前单个订单只能使用一张</p>
                      */
                     std::vector<std::string> m_voucherIds;
                     bool m_voucherIdsHasBeenSet;
 
                     /**
-                     * sqlserver版本，目前所有支持的版本有：2008R2 (SQL Server 2008 R2 Enterprise)，2012SP3 (SQL Server 2012 Enterprise)，201202 (SQL Server 2012 Standard)，2014SP2 (SQL Server 2014 Enterprise)，201402 (SQL Server 2014 Standard)，2016SP1 (SQL Server 2016 Enterprise)，201602 (SQL Server 2016 Standard)，2017 (SQL Server 2017 Enterprise)，201702 (SQL Server 2017 Standard)，2019 (SQL Server 2019 Enterprise)，201902 (SQL Server 2019 Standard)。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。
+                     * <p>sqlserver版本，目前所有支持的版本有：2008R2 (SQL Server 2008 R2 Enterprise)，2012SP3 (SQL Server 2012 Enterprise)，201202 (SQL Server 2012 Standard)，2014SP2 (SQL Server 2014 Enterprise)，201402 (SQL Server 2014 Standard)，2016SP1 (SQL Server 2016 Enterprise)，201602 (SQL Server 2016 Standard)，2017 (SQL Server 2017 Enterprise)，201702 (SQL Server 2017 Standard)，2019 (SQL Server 2019 Enterprise)，201902 (SQL Server 2019 Standard)。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。</p>
                      */
                     std::string m_dBVersion;
                     bool m_dBVersionHasBeenSet;
 
                     /**
-                     * 自动续费标志：0-正常续费  1-自动续费，默认为1自动续费。只在购买预付费实例时有效。
+                     * <p>自动续费标志：0-正常续费  1-自动续费，默认为1自动续费。只在购买预付费实例时有效。</p>
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 安全组列表，填写形如sg-xxx的安全组ID
+                     * <p>安全组列表，填写形如sg-xxx的安全组ID</p>
                      */
                     std::vector<std::string> m_securityGroupList;
                     bool m_securityGroupListHasBeenSet;
 
                     /**
-                     * 可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末
+                     * <p>可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末</p>
                      */
                     std::vector<int64_t> m_weekly;
                     bool m_weeklyHasBeenSet;
 
                     /**
-                     * 可维护时间窗配置，每天可维护的开始时间
+                     * <p>可维护时间窗配置，每天可维护的开始时间</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 可维护时间窗配置，持续时间，单位：小时
+                     * <p>可维护时间窗配置，持续时间，单位：小时</p>
                      */
                     int64_t m_span;
                     bool m_spanHasBeenSet;
 
                     /**
-                     * 购买高可用实例的类型：DUAL-双机高可用  CLUSTER-集群，默认值为DUAL
+                     * <p>购买高可用实例的类型：DUAL-双机高可用  CLUSTER-集群，默认值为DUAL</p>
                      */
                     std::string m_hAType;
                     bool m_hATypeHasBeenSet;
 
                     /**
-                     * 是否跨可用区部署，默认值为false
+                     * <p>是否跨可用区部署，默认值为false</p>
                      */
                     bool m_multiZones;
                     bool m_multiZonesHasBeenSet;
 
                     /**
-                     * 新建实例绑定的标签集合
+                     * <p>新建实例绑定的标签集合</p>
                      */
                     std::vector<ResourceTag> m_resourceTags;
                     bool m_resourceTagsHasBeenSet;
 
                     /**
-                     * 系统字符集排序规则，默认：Chinese_PRC_CI_AS
+                     * <p>系统字符集排序规则，默认：Chinese_PRC_CI_AS</p>
                      */
                     std::string m_collation;
                     bool m_collationHasBeenSet;
 
                     /**
-                     * 系统时区，默认：China Standard Time
+                     * <p>系统时区，默认：China Standard Time</p>
                      */
                     std::string m_timeZone;
                     bool m_timeZoneHasBeenSet;
 
                     /**
-                     * 是否多节点架构实例，默认值为false。当MultiNodes = true时，参数MultiZones必须取值为true。
+                     * <p>是否多节点架构实例，默认值为false。当MultiNodes = true时，参数MultiZones必须取值为true。</p>
                      */
                     bool m_multiNodes;
                     bool m_multiNodesHasBeenSet;
 
                     /**
-                     * 备节点可用区，默认为空。当MultiNodes = true时，主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。
+                     * <p>备节点可用区，默认为空。当MultiNodes = true时，主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。</p>
                      */
                     std::vector<std::string> m_drZones;
                     bool m_drZonesHasBeenSet;
+
+                    /**
+                     * <p>可用性策略</p><p>枚举值：</p><ul><li>Async： 可用性优先（异步传输）</li><li>Sync： 可靠性优先（同步传输）</li></ul><p>默认值：Async</p><p>仅 AlwaysOn 双节点架构生效，单节点/多节点/MIRROR 架构忽略此参数</p>
+                     */
+                    std::string m_availabilityStrategy;
+                    bool m_availabilityStrategyHasBeenSet;
 
                 };
             }

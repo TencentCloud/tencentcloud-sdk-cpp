@@ -158,6 +158,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CreateStoreLocationResponse.h
   include/tencentcloud/dlc/v20210125/model/BatchSQLCostInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeTablesNameRequest.h
+  include/tencentcloud/dlc/v20210125/model/DescribeTaskDetailRequest.h
   include/tencentcloud/dlc/v20210125/model/WorkGroupInfo.h
   include/tencentcloud/dlc/v20210125/model/SwitchDataEngineRequest.h
   include/tencentcloud/dlc/v20210125/model/DLCCatalogAccess.h
@@ -343,7 +344,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/AddUsersToWorkGroupResponse.h
   include/tencentcloud/dlc/v20210125/model/LaunchStandardEngineResourceGroupsResponse.h
   include/tencentcloud/dlc/v20210125/model/UpdateNetworkConnectionResponse.h
-  include/tencentcloud/dlc/v20210125/model/GenerateCreateMangedTableSqlResponse.h
+  include/tencentcloud/dlc/v20210125/model/CreateSparkAppTaskResponse.h
   include/tencentcloud/dlc/v20210125/model/DatasourceConnectionInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeDataEngineImageVersionsRequest.h
   include/tencentcloud/dlc/v20210125/model/BindWorkGroupsToUserResponse.h
@@ -418,6 +419,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/WorkGroupMessage.h
   include/tencentcloud/dlc/v20210125/model/DescribeUserDataEngineConfigResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeSparkAppJobRequest.h
+  include/tencentcloud/dlc/v20210125/model/DescribeTaskDetailResponse.h
   include/tencentcloud/dlc/v20210125/model/TCHouseD.h
   include/tencentcloud/dlc/v20210125/model/CreateResultDownloadResponse.h
   include/tencentcloud/dlc/v20210125/model/RestartDataEngineRequest.h
@@ -454,7 +456,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/KVPair.h
   include/tencentcloud/dlc/v20210125/model/TableBaseInfo.h
   include/tencentcloud/dlc/v20210125/model/UnlockMetaDataRequest.h
-  include/tencentcloud/dlc/v20210125/model/CreateSparkAppTaskResponse.h
+  include/tencentcloud/dlc/v20210125/model/GenerateCreateMangedTableSqlResponse.h
   include/tencentcloud/dlc/v20210125/model/ListTaskJobLogDetailRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeNativeSparkSessionsRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeSessionImageVersionRequest.h
@@ -689,6 +691,7 @@ set(dlc_src
   src/v20210125/model/CreateStoreLocationResponse.cpp
   src/v20210125/model/BatchSQLCostInfo.cpp
   src/v20210125/model/DescribeTablesNameRequest.cpp
+  src/v20210125/model/DescribeTaskDetailRequest.cpp
   src/v20210125/model/WorkGroupInfo.cpp
   src/v20210125/model/SwitchDataEngineRequest.cpp
   src/v20210125/model/DLCCatalogAccess.cpp
@@ -874,7 +877,7 @@ set(dlc_src
   src/v20210125/model/AddUsersToWorkGroupResponse.cpp
   src/v20210125/model/LaunchStandardEngineResourceGroupsResponse.cpp
   src/v20210125/model/UpdateNetworkConnectionResponse.cpp
-  src/v20210125/model/GenerateCreateMangedTableSqlResponse.cpp
+  src/v20210125/model/CreateSparkAppTaskResponse.cpp
   src/v20210125/model/DatasourceConnectionInfo.cpp
   src/v20210125/model/DescribeDataEngineImageVersionsRequest.cpp
   src/v20210125/model/BindWorkGroupsToUserResponse.cpp
@@ -949,6 +952,7 @@ set(dlc_src
   src/v20210125/model/WorkGroupMessage.cpp
   src/v20210125/model/DescribeUserDataEngineConfigResponse.cpp
   src/v20210125/model/DescribeSparkAppJobRequest.cpp
+  src/v20210125/model/DescribeTaskDetailResponse.cpp
   src/v20210125/model/TCHouseD.cpp
   src/v20210125/model/CreateResultDownloadResponse.cpp
   src/v20210125/model/RestartDataEngineRequest.cpp
@@ -985,7 +989,7 @@ set(dlc_src
   src/v20210125/model/KVPair.cpp
   src/v20210125/model/TableBaseInfo.cpp
   src/v20210125/model/UnlockMetaDataRequest.cpp
-  src/v20210125/model/CreateSparkAppTaskResponse.cpp
+  src/v20210125/model/GenerateCreateMangedTableSqlResponse.cpp
   src/v20210125/model/ListTaskJobLogDetailRequest.cpp
   src/v20210125/model/DescribeNativeSparkSessionsRequest.cpp
   src/v20210125/model/DescribeSessionImageVersionRequest.cpp

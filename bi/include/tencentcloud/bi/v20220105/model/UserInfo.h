@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户ID
-                     * @return UserId 用户ID
+                     * 获取<p>用户ID</p>
+                     * @return UserId <p>用户ID</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户ID
-                     * @param _userId 用户ID
+                     * 设置<p>用户ID</p>
+                     * @param _userId <p>用户ID</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取用户名
-                     * @return UserName 用户名
+                     * 获取<p>用户名</p>
+                     * @return UserName <p>用户名</p>
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置用户名
-                     * @param _userName 用户名
+                     * 设置<p>用户名</p>
+                     * @param _userName <p>用户名</p>
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -89,18 +89,18 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取邮箱
+                     * 获取<p>邮箱</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Email 邮箱
+                     * @return Email <p>邮箱</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEmail() const;
 
                     /**
-                     * 设置邮箱
+                     * 设置<p>邮箱</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _email 邮箱
+                     * @param _email <p>邮箱</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -114,18 +114,18 @@ namespace TencentCloud
                     bool EmailHasBeenSet() const;
 
                     /**
-                     * 获取手机号
+                     * 获取<p>手机号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PhoneNumber 手机号
+                     * @return PhoneNumber <p>手机号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPhoneNumber() const;
 
                     /**
-                     * 设置手机号
+                     * 设置<p>手机号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _phoneNumber 手机号
+                     * @param _phoneNumber <p>手机号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -139,18 +139,18 @@ namespace TencentCloud
                     bool PhoneNumberHasBeenSet() const;
 
                     /**
-                     * 获取手机号区号
+                     * 获取<p>手机号区号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AreaCode 手机号区号
+                     * @return AreaCode <p>手机号区号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAreaCode() const;
 
                     /**
-                     * 设置手机号区号
+                     * 设置<p>手机号区号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _areaCode 手机号区号
+                     * @param _areaCode <p>手机号区号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -164,18 +164,18 @@ namespace TencentCloud
                     bool AreaCodeHasBeenSet() const;
 
                     /**
-                     * 获取企微账号id
+                     * 获取<p>企微账号id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AppUserId 企微账号id
+                     * @return AppUserId <p>企微账号id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppUserId() const;
 
                     /**
-                     * 设置企微账号id
+                     * 设置<p>企微账号id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _appUserId 企微账号id
+                     * @param _appUserId <p>企微账号id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -189,18 +189,18 @@ namespace TencentCloud
                     bool AppUserIdHasBeenSet() const;
 
                     /**
-                     * 获取企微账号名称
+                     * 获取<p>企微账号名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AppUserName 企微账号名称
+                     * @return AppUserName <p>企微账号名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppUserName() const;
 
                     /**
-                     * 设置企微账号名称
+                     * 设置<p>企微账号名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _appUserName 企微账号名称
+                     * @param _appUserName <p>企微账号名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -213,54 +213,86 @@ namespace TencentCloud
                      */
                     bool AppUserNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>飞书OpenId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LarkOpenId <p>飞书OpenId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLarkOpenId() const;
+
+                    /**
+                     * 设置<p>飞书OpenId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _larkOpenId <p>飞书OpenId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLarkOpenId(const std::string& _larkOpenId);
+
+                    /**
+                     * 判断参数 LarkOpenId 是否已赋值
+                     * @return LarkOpenId 是否已赋值
+                     * 
+                     */
+                    bool LarkOpenIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 用户ID
+                     * <p>用户ID</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 用户名
+                     * <p>用户名</p>
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 邮箱
+                     * <p>邮箱</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_email;
                     bool m_emailHasBeenSet;
 
                     /**
-                     * 手机号
+                     * <p>手机号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_phoneNumber;
                     bool m_phoneNumberHasBeenSet;
 
                     /**
-                     * 手机号区号
+                     * <p>手机号区号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_areaCode;
                     bool m_areaCodeHasBeenSet;
 
                     /**
-                     * 企微账号id
+                     * <p>企微账号id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appUserId;
                     bool m_appUserIdHasBeenSet;
 
                     /**
-                     * 企微账号名称
+                     * <p>企微账号名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appUserName;
                     bool m_appUserNameHasBeenSet;
+
+                    /**
+                     * <p>飞书OpenId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_larkOpenId;
+                    bool m_larkOpenIdHasBeenSet;
 
                 };
             }

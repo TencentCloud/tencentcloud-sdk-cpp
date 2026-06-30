@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网络连接类型
+                     * 获取<p>网络连接类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NetMode 网络连接类型
+                     * @return NetMode <p>网络连接类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNetMode() const;
 
                     /**
-                     * 设置网络连接类型
+                     * 设置<p>网络连接类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _netMode 网络连接类型
+                     * @param _netMode <p>网络连接类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool NetModeHasBeenSet() const;
 
                     /**
-                     * 获取索引前缀
+                     * 获取<p>索引前缀</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IndexPrefix 索引前缀
+                     * @return IndexPrefix <p>索引前缀</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIndexPrefix() const;
 
                     /**
-                     * 设置索引前缀
+                     * 设置<p>索引前缀</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _indexPrefix 索引前缀
+                     * @param _indexPrefix <p>索引前缀</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool IndexPrefixHasBeenSet() const;
 
                     /**
-                     * 获取es日志轮换粒度
+                     * 获取<p>es日志轮换粒度</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RotationInterval es日志轮换粒度
+                     * @return RotationInterval <p>es日志轮换粒度</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRotationInterval() const;
 
                     /**
-                     * 设置es日志轮换粒度
+                     * 设置<p>es日志轮换粒度</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _rotationInterval es日志轮换粒度
+                     * @param _rotationInterval <p>es日志轮换粒度</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool RotationIntervalHasBeenSet() const;
 
                     /**
-                     * 获取DTS事件配置
+                     * 获取<p>DTS事件配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OutputMode DTS事件配置
+                     * @return OutputMode <p>DTS事件配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutputMode() const;
 
                     /**
-                     * 设置DTS事件配置
+                     * 设置<p>DTS事件配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _outputMode DTS事件配置
+                     * @param _outputMode <p>DTS事件配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool OutputModeHasBeenSet() const;
 
                     /**
-                     * 获取DTS索引配置
+                     * 获取<p>DTS索引配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IndexSuffixMode DTS索引配置
+                     * @return IndexSuffixMode <p>DTS索引配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIndexSuffixMode() const;
 
                     /**
-                     * 设置DTS索引配置
+                     * 设置<p>DTS索引配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _indexSuffixMode DTS索引配置
+                     * @param _indexSuffixMode <p>DTS索引配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool IndexSuffixModeHasBeenSet() const;
 
                     /**
-                     * 获取es模版类型
+                     * 获取<p>es模版类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IndexTemplateType es模版类型
+                     * @return IndexTemplateType <p>es模版类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIndexTemplateType() const;
 
                     /**
-                     * 设置es模版类型
+                     * 设置<p>es模版类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _indexTemplateType es模版类型
+                     * @param _indexTemplateType <p>es模版类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -199,42 +199,42 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 网络连接类型
+                     * <p>网络连接类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_netMode;
                     bool m_netModeHasBeenSet;
 
                     /**
-                     * 索引前缀
+                     * <p>索引前缀</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_indexPrefix;
                     bool m_indexPrefixHasBeenSet;
 
                     /**
-                     * es日志轮换粒度
+                     * <p>es日志轮换粒度</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rotationInterval;
                     bool m_rotationIntervalHasBeenSet;
 
                     /**
-                     * DTS事件配置
+                     * <p>DTS事件配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_outputMode;
                     bool m_outputModeHasBeenSet;
 
                     /**
-                     * DTS索引配置
+                     * <p>DTS索引配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_indexSuffixMode;
                     bool m_indexSuffixModeHasBeenSet;
 
                     /**
-                     * es模版类型
+                     * <p>es模版类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_indexTemplateType;

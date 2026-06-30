@@ -43,7 +43,11 @@ UserIdAndUserName::UserIdAndUserName() :
     m_appUserNameHasBeenSet(false),
     m_inValidateAppRangeHasBeenSet(false),
     m_emailActivationStatusHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_larkAppIdHasBeenSet(false),
+    m_larkUserIdHasBeenSet(false),
+    m_larkOpenIdHasBeenSet(false),
+    m_larkUserNameHasBeenSet(false)
 {
 }
 
@@ -282,6 +286,46 @@ CoreInternalOutcome UserIdAndUserName::Deserialize(const rapidjson::Value &value
         m_idHasBeenSet = true;
     }
 
+    if (value.HasMember("LarkAppId") && !value["LarkAppId"].IsNull())
+    {
+        if (!value["LarkAppId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserIdAndUserName.LarkAppId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_larkAppId = string(value["LarkAppId"].GetString());
+        m_larkAppIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("LarkUserId") && !value["LarkUserId"].IsNull())
+    {
+        if (!value["LarkUserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserIdAndUserName.LarkUserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_larkUserId = string(value["LarkUserId"].GetString());
+        m_larkUserIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("LarkOpenId") && !value["LarkOpenId"].IsNull())
+    {
+        if (!value["LarkOpenId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserIdAndUserName.LarkOpenId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_larkOpenId = string(value["LarkOpenId"].GetString());
+        m_larkOpenIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("LarkUserName") && !value["LarkUserName"].IsNull())
+    {
+        if (!value["LarkUserName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserIdAndUserName.LarkUserName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_larkUserName = string(value["LarkUserName"].GetString());
+        m_larkUserNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -471,6 +515,38 @@ void UserIdAndUserName::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
+    }
+
+    if (m_larkAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LarkAppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_larkAppId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_larkUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LarkUserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_larkUserId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_larkOpenIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LarkOpenId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_larkOpenId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_larkUserNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LarkUserName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_larkUserName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -842,5 +918,69 @@ void UserIdAndUserName::SetId(const uint64_t& _id)
 bool UserIdAndUserName::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+string UserIdAndUserName::GetLarkAppId() const
+{
+    return m_larkAppId;
+}
+
+void UserIdAndUserName::SetLarkAppId(const string& _larkAppId)
+{
+    m_larkAppId = _larkAppId;
+    m_larkAppIdHasBeenSet = true;
+}
+
+bool UserIdAndUserName::LarkAppIdHasBeenSet() const
+{
+    return m_larkAppIdHasBeenSet;
+}
+
+string UserIdAndUserName::GetLarkUserId() const
+{
+    return m_larkUserId;
+}
+
+void UserIdAndUserName::SetLarkUserId(const string& _larkUserId)
+{
+    m_larkUserId = _larkUserId;
+    m_larkUserIdHasBeenSet = true;
+}
+
+bool UserIdAndUserName::LarkUserIdHasBeenSet() const
+{
+    return m_larkUserIdHasBeenSet;
+}
+
+string UserIdAndUserName::GetLarkOpenId() const
+{
+    return m_larkOpenId;
+}
+
+void UserIdAndUserName::SetLarkOpenId(const string& _larkOpenId)
+{
+    m_larkOpenId = _larkOpenId;
+    m_larkOpenIdHasBeenSet = true;
+}
+
+bool UserIdAndUserName::LarkOpenIdHasBeenSet() const
+{
+    return m_larkOpenIdHasBeenSet;
+}
+
+string UserIdAndUserName::GetLarkUserName() const
+{
+    return m_larkUserName;
+}
+
+void UserIdAndUserName::SetLarkUserName(const string& _larkUserName)
+{
+    m_larkUserName = _larkUserName;
+    m_larkUserNameHasBeenSet = true;
+}
+
+bool UserIdAndUserName::LarkUserNameHasBeenSet() const
+{
+    return m_larkUserNameHasBeenSet;
 }
 

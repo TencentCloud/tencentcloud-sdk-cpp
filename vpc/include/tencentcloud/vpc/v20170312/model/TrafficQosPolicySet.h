@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取CCN实例ID。形如：ccn-f49l6u0z。
-                     * @return CcnId CCN实例ID。形如：ccn-f49l6u0z。
+                     * 获取<p>CCN实例ID。形如：ccn-f49l6u0z。</p>
+                     * @return CcnId <p>CCN实例ID。形如：ccn-f49l6u0z。</p>
                      * 
                      */
                     std::string GetCcnId() const;
 
                     /**
-                     * 设置CCN实例ID。形如：ccn-f49l6u0z。
-                     * @param _ccnId CCN实例ID。形如：ccn-f49l6u0z。
+                     * 设置<p>CCN实例ID。形如：ccn-f49l6u0z。</p>
+                     * @param _ccnId <p>CCN实例ID。形如：ccn-f49l6u0z。</p>
                      * 
                      */
                     void SetCcnId(const std::string& _ccnId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CcnIdHasBeenSet() const;
 
                     /**
-                     * 获取qos id。
-                     * @return QosId qos id。
+                     * 获取<p>qos id。</p>
+                     * @return QosId <p>qos id。</p>
                      * 
                      */
                     uint64_t GetQosId() const;
 
                     /**
-                     * 设置qos id。
-                     * @param _qosId qos id。
+                     * 设置<p>qos id。</p>
+                     * @param _qosId <p>qos id。</p>
                      * 
                      */
                     void SetQosId(const uint64_t& _qosId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool QosIdHasBeenSet() const;
 
                     /**
-                     * 获取描述。
-                     * @return QosPolicyDescription 描述。
+                     * 获取<p>描述。</p>
+                     * @return QosPolicyDescription <p>描述。</p>
                      * 
                      */
                     std::string GetQosPolicyDescription() const;
 
                     /**
-                     * 设置描述。
-                     * @param _qosPolicyDescription 描述。
+                     * 设置<p>描述。</p>
+                     * @param _qosPolicyDescription <p>描述。</p>
                      * 
                      */
                     void SetQosPolicyDescription(const std::string& _qosPolicyDescription);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool QosPolicyDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取名称。
-                     * @return QosPolicyName 名称。
+                     * 获取<p>名称。</p>
+                     * @return QosPolicyName <p>名称。</p>
                      * 
                      */
                     std::string GetQosPolicyName() const;
 
                     /**
-                     * 设置名称。
-                     * @param _qosPolicyName 名称。
+                     * 设置<p>名称。</p>
+                     * @param _qosPolicyName <p>名称。</p>
                      * 
                      */
                     void SetQosPolicyName(const std::string& _qosPolicyName);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool QosPolicyNameHasBeenSet() const;
 
                     /**
-                     * 获取带宽。
-                     * @return Bandwidth 带宽。
+                     * 获取<p>带宽。</p>
+                     * @return Bandwidth <p>带宽。</p>
                      * 
                      */
                     uint64_t GetBandwidth() const;
 
                     /**
-                     * 设置带宽。
-                     * @param _bandwidth 带宽。
+                     * 设置<p>带宽。</p>
+                     * @param _bandwidth <p>带宽。</p>
                      * 
                      */
                     void SetBandwidth(const uint64_t& _bandwidth);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取流量调度策略ID。
-                     * @return QosPolicyId 流量调度策略ID。
+                     * 获取<p>流量调度策略ID。</p>
+                     * @return QosPolicyId <p>流量调度策略ID。</p>
                      * 
                      */
                     std::string GetQosPolicyId() const;
 
                     /**
-                     * 设置流量调度策略ID。
-                     * @param _qosPolicyId 流量调度策略ID。
+                     * 设置<p>流量调度策略ID。</p>
+                     * @param _qosPolicyId <p>流量调度策略ID。</p>
                      * 
                      */
                     void SetQosPolicyId(const std::string& _qosPolicyId);
@@ -172,43 +172,205 @@ namespace TencentCloud
                      */
                     bool QosPolicyIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>服务等级信息</p>
+                     * @return QosLevel <p>服务等级信息</p>
+                     * 
+                     */
+                    std::string GetQosLevel() const;
+
+                    /**
+                     * 设置<p>服务等级信息</p>
+                     * @param _qosLevel <p>服务等级信息</p>
+                     * 
+                     */
+                    void SetQosLevel(const std::string& _qosLevel);
+
+                    /**
+                     * 判断参数 QosLevel 是否已赋值
+                     * @return QosLevel 是否已赋值
+                     * 
+                     */
+                    bool QosLevelHasBeenSet() const;
+
+                    /**
+                     * 获取<p>服务等级信息</p>
+                     * @return ServiceLevel <p>服务等级信息</p>
+                     * 
+                     */
+                    std::string GetServiceLevel() const;
+
+                    /**
+                     * 设置<p>服务等级信息</p>
+                     * @param _serviceLevel <p>服务等级信息</p>
+                     * 
+                     */
+                    void SetServiceLevel(const std::string& _serviceLevel);
+
+                    /**
+                     * 判断参数 ServiceLevel 是否已赋值
+                     * @return ServiceLevel 是否已赋值
+                     * 
+                     */
+                    bool ServiceLevelHasBeenSet() const;
+
+                    /**
+                     * 获取<p>带宽ID</p><p>参数格式：fcr-xxx</p>
+                     * @return RegionFlowControlId <p>带宽ID</p><p>参数格式：fcr-xxx</p>
+                     * 
+                     */
+                    std::string GetRegionFlowControlId() const;
+
+                    /**
+                     * 设置<p>带宽ID</p><p>参数格式：fcr-xxx</p>
+                     * @param _regionFlowControlId <p>带宽ID</p><p>参数格式：fcr-xxx</p>
+                     * 
+                     */
+                    void SetRegionFlowControlId(const std::string& _regionFlowControlId);
+
+                    /**
+                     * 判断参数 RegionFlowControlId 是否已赋值
+                     * @return RegionFlowControlId 是否已赋值
+                     * 
+                     */
+                    bool RegionFlowControlIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>源地域</p><p>参数格式：ap-xxx</p>
+                     * @return LocalRegion <p>源地域</p><p>参数格式：ap-xxx</p>
+                     * 
+                     */
+                    std::string GetLocalRegion() const;
+
+                    /**
+                     * 设置<p>源地域</p><p>参数格式：ap-xxx</p>
+                     * @param _localRegion <p>源地域</p><p>参数格式：ap-xxx</p>
+                     * 
+                     */
+                    void SetLocalRegion(const std::string& _localRegion);
+
+                    /**
+                     * 判断参数 LocalRegion 是否已赋值
+                     * @return LocalRegion 是否已赋值
+                     * 
+                     */
+                    bool LocalRegionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>目的地域</p><p>参数格式：ap-xxx</p>
+                     * @return RemoteRegion <p>目的地域</p><p>参数格式：ap-xxx</p>
+                     * 
+                     */
+                    std::string GetRemoteRegion() const;
+
+                    /**
+                     * 设置<p>目的地域</p><p>参数格式：ap-xxx</p>
+                     * @param _remoteRegion <p>目的地域</p><p>参数格式：ap-xxx</p>
+                     * 
+                     */
+                    void SetRemoteRegion(const std::string& _remoteRegion);
+
+                    /**
+                     * 判断参数 RemoteRegion 是否已赋值
+                     * @return RemoteRegion 是否已赋值
+                     * 
+                     */
+                    bool RemoteRegionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>流量匹配策略ID</p>
+                     * @return TrafficMatchPolicyId <p>流量匹配策略ID</p>
+                     * 
+                     */
+                    std::string GetTrafficMatchPolicyId() const;
+
+                    /**
+                     * 设置<p>流量匹配策略ID</p>
+                     * @param _trafficMatchPolicyId <p>流量匹配策略ID</p>
+                     * 
+                     */
+                    void SetTrafficMatchPolicyId(const std::string& _trafficMatchPolicyId);
+
+                    /**
+                     * 判断参数 TrafficMatchPolicyId 是否已赋值
+                     * @return TrafficMatchPolicyId 是否已赋值
+                     * 
+                     */
+                    bool TrafficMatchPolicyIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * CCN实例ID。形如：ccn-f49l6u0z。
+                     * <p>CCN实例ID。形如：ccn-f49l6u0z。</p>
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;
 
                     /**
-                     * qos id。
+                     * <p>qos id。</p>
                      */
                     uint64_t m_qosId;
                     bool m_qosIdHasBeenSet;
 
                     /**
-                     * 描述。
+                     * <p>描述。</p>
                      */
                     std::string m_qosPolicyDescription;
                     bool m_qosPolicyDescriptionHasBeenSet;
 
                     /**
-                     * 名称。
+                     * <p>名称。</p>
                      */
                     std::string m_qosPolicyName;
                     bool m_qosPolicyNameHasBeenSet;
 
                     /**
-                     * 带宽。
+                     * <p>带宽。</p>
                      */
                     uint64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * 流量调度策略ID。
+                     * <p>流量调度策略ID。</p>
                      */
                     std::string m_qosPolicyId;
                     bool m_qosPolicyIdHasBeenSet;
+
+                    /**
+                     * <p>服务等级信息</p>
+                     */
+                    std::string m_qosLevel;
+                    bool m_qosLevelHasBeenSet;
+
+                    /**
+                     * <p>服务等级信息</p>
+                     */
+                    std::string m_serviceLevel;
+                    bool m_serviceLevelHasBeenSet;
+
+                    /**
+                     * <p>带宽ID</p><p>参数格式：fcr-xxx</p>
+                     */
+                    std::string m_regionFlowControlId;
+                    bool m_regionFlowControlIdHasBeenSet;
+
+                    /**
+                     * <p>源地域</p><p>参数格式：ap-xxx</p>
+                     */
+                    std::string m_localRegion;
+                    bool m_localRegionHasBeenSet;
+
+                    /**
+                     * <p>目的地域</p><p>参数格式：ap-xxx</p>
+                     */
+                    std::string m_remoteRegion;
+                    bool m_remoteRegionHasBeenSet;
+
+                    /**
+                     * <p>流量匹配策略ID</p>
+                     */
+                    std::string m_trafficMatchPolicyId;
+                    bool m_trafficMatchPolicyIdHasBeenSet;
 
                 };
             }

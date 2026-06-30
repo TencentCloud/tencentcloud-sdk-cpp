@@ -48,7 +48,8 @@ RuleGroupExecStrategy::RuleGroupExecStrategy() :
     m_scheduleTimeZoneHasBeenSet(false),
     m_groupConfigHasBeenSet(false),
     m_engineParamHasBeenSet(false),
-    m_catalogNameHasBeenSet(false)
+    m_catalogNameHasBeenSet(false),
+    m_execFailBlockHasBeenSet(false)
 {
 }
 
@@ -357,6 +358,16 @@ CoreInternalOutcome RuleGroupExecStrategy::Deserialize(const rapidjson::Value &v
         m_catalogNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ExecFailBlock") && !value["ExecFailBlock"].IsNull())
+    {
+        if (!value["ExecFailBlock"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecStrategy.ExecFailBlock` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_execFailBlock = value["ExecFailBlock"].GetUint64();
+        m_execFailBlockHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -599,6 +610,14 @@ void RuleGroupExecStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "CatalogName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_catalogName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_execFailBlockHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecFailBlock";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_execFailBlock, allocator);
     }
 
 }
@@ -1050,5 +1069,21 @@ void RuleGroupExecStrategy::SetCatalogName(const string& _catalogName)
 bool RuleGroupExecStrategy::CatalogNameHasBeenSet() const
 {
     return m_catalogNameHasBeenSet;
+}
+
+uint64_t RuleGroupExecStrategy::GetExecFailBlock() const
+{
+    return m_execFailBlock;
+}
+
+void RuleGroupExecStrategy::SetExecFailBlock(const uint64_t& _execFailBlock)
+{
+    m_execFailBlock = _execFailBlock;
+    m_execFailBlockHasBeenSet = true;
+}
+
+bool RuleGroupExecStrategy::ExecFailBlockHasBeenSet() const
+{
+    return m_execFailBlockHasBeenSet;
 }
 

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取验证类型。固定值：DOMAIN
-                     * @return IdentityType 验证类型。固定值：DOMAIN
+                     * 获取<p>验证类型。固定值：DOMAIN</p>
+                     * @return IdentityType <p>验证类型。固定值：DOMAIN</p>
                      * 
                      */
                     std::string GetIdentityType() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool IdentityTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否已通过验证
-                     * @return VerifiedForSendingStatus 是否已通过验证
+                     * 获取<p>是否已通过验证</p>
+                     * @return VerifiedForSendingStatus <p>是否已通过验证</p>
                      * 
                      */
                     bool GetVerifiedForSendingStatus() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool VerifiedForSendingStatusHasBeenSet() const;
 
                     /**
-                     * 获取DNS配置详情
-                     * @return Attributes DNS配置详情
+                     * 获取<p>DNS配置详情</p>
+                     * @return Attributes <p>DNS配置详情</p>
                      * 
                      */
                     std::vector<DNSAttributes> GetAttributes() const;
@@ -86,25 +86,45 @@ namespace TencentCloud
                      */
                     bool AttributesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>dkim密钥长度</p><p>枚举值：</p><ul><li>0： 1024</li><li>1： 2048</li><li>2： both</li></ul>
+                     * @return DKIMOption <p>dkim密钥长度</p><p>枚举值：</p><ul><li>0： 1024</li><li>1： 2048</li><li>2： both</li></ul>
+                     * 
+                     */
+                    uint64_t GetDKIMOption() const;
+
+                    /**
+                     * 判断参数 DKIMOption 是否已赋值
+                     * @return DKIMOption 是否已赋值
+                     * 
+                     */
+                    bool DKIMOptionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 验证类型。固定值：DOMAIN
+                     * <p>验证类型。固定值：DOMAIN</p>
                      */
                     std::string m_identityType;
                     bool m_identityTypeHasBeenSet;
 
                     /**
-                     * 是否已通过验证
+                     * <p>是否已通过验证</p>
                      */
                     bool m_verifiedForSendingStatus;
                     bool m_verifiedForSendingStatusHasBeenSet;
 
                     /**
-                     * DNS配置详情
+                     * <p>DNS配置详情</p>
                      */
                     std::vector<DNSAttributes> m_attributes;
                     bool m_attributesHasBeenSet;
+
+                    /**
+                     * <p>dkim密钥长度</p><p>枚举值：</p><ul><li>0： 1024</li><li>1： 2048</li><li>2： both</li></ul>
+                     */
+                    uint64_t m_dKIMOption;
+                    bool m_dKIMOptionHasBeenSet;
 
                 };
             }

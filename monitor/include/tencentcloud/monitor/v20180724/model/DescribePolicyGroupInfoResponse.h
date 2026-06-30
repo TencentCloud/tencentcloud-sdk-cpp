@@ -49,8 +49,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略组名称
-                     * @return GroupName 策略组名称
+                     * 获取<p>策略组名称</p>
+                     * @return GroupName <p>策略组名称</p>
                      * 
                      */
                     std::string GetGroupName() const;
@@ -63,8 +63,8 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取策略组所属的项目id
-                     * @return ProjectId 策略组所属的项目id
+                     * 获取<p>策略组所属的项目id</p>
+                     * @return ProjectId <p>策略组所属的项目id</p>
                      * 
                      */
                     int64_t GetProjectId() const;
@@ -77,8 +77,8 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取是否为默认策略，0表示非默认策略，1表示默认策略
-                     * @return IsDefault 是否为默认策略，0表示非默认策略，1表示默认策略
+                     * 获取<p>是否为默认策略，0表示非默认策略，1表示默认策略</p>
+                     * @return IsDefault <p>是否为默认策略，0表示非默认策略，1表示默认策略</p>
                      * 
                      */
                     int64_t GetIsDefault() const;
@@ -91,8 +91,8 @@ namespace TencentCloud
                     bool IsDefaultHasBeenSet() const;
 
                     /**
-                     * 获取策略类型
-                     * @return ViewName 策略类型
+                     * 获取<p>策略类型</p>
+                     * @return ViewName <p>策略类型</p>
                      * 
                      */
                     std::string GetViewName() const;
@@ -105,8 +105,8 @@ namespace TencentCloud
                     bool ViewNameHasBeenSet() const;
 
                     /**
-                     * 获取策略说明
-                     * @return Remark 策略说明
+                     * 获取<p>策略说明</p>
+                     * @return Remark <p>策略说明</p>
                      * 
                      */
                     std::string GetRemark() const;
@@ -119,8 +119,8 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取策略类型名称
-                     * @return ShowName 策略类型名称
+                     * 获取<p>策略类型名称</p>
+                     * @return ShowName <p>策略类型名称</p>
                      * 
                      */
                     std::string GetShowName() const;
@@ -133,8 +133,8 @@ namespace TencentCloud
                     bool ShowNameHasBeenSet() const;
 
                     /**
-                     * 获取最近编辑的用户uin
-                     * @return LastEditUin 最近编辑的用户uin
+                     * 获取<p>最近编辑的用户uin</p>
+                     * @return LastEditUin <p>最近编辑的用户uin</p>
                      * 
                      */
                     std::string GetLastEditUin() const;
@@ -147,8 +147,8 @@ namespace TencentCloud
                     bool LastEditUinHasBeenSet() const;
 
                     /**
-                     * 获取最近编辑时间
-                     * @return UpdateTime 最近编辑时间
+                     * 获取<p>最近编辑时间</p>
+                     * @return UpdateTime <p>最近编辑时间</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
@@ -161,8 +161,8 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取该策略支持的地域
-                     * @return Region 该策略支持的地域
+                     * 获取<p>该策略支持的地域</p>
+                     * @return Region <p>该策略支持的地域</p>
                      * 
                      */
                     std::vector<std::string> GetRegion() const;
@@ -175,8 +175,8 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取策略类型的维度列表
-                     * @return DimensionGroup 策略类型的维度列表
+                     * 获取<p>策略类型的维度列表</p>
+                     * @return DimensionGroup <p>策略类型的维度列表</p>
                      * 
                      */
                     std::vector<std::string> GetDimensionGroup() const;
@@ -189,9 +189,9 @@ namespace TencentCloud
                     bool DimensionGroupHasBeenSet() const;
 
                     /**
-                     * 获取阈值规则列表
+                     * 获取<p>阈值规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ConditionsConfig 阈值规则列表
+                     * @return ConditionsConfig <p>阈值规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -205,9 +205,9 @@ namespace TencentCloud
                     bool ConditionsConfigHasBeenSet() const;
 
                     /**
-                     * 获取产品事件规则列表
+                     * 获取<p>产品事件规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EventConfig 产品事件规则列表
+                     * @return EventConfig <p>产品事件规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -221,9 +221,9 @@ namespace TencentCloud
                     bool EventConfigHasBeenSet() const;
 
                     /**
-                     * 获取用户接收人列表
+                     * 获取<p>用户接收人列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReceiverInfos 用户接收人列表
+                     * @return ReceiverInfos <p>用户接收人列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -237,9 +237,9 @@ namespace TencentCloud
                     bool ReceiverInfosHasBeenSet() const;
 
                     /**
-                     * 获取用户回调信息
+                     * 获取<p>用户回调信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Callback 用户回调信息
+                     * @return Callback <p>用户回调信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -253,9 +253,9 @@ namespace TencentCloud
                     bool CallbackHasBeenSet() const;
 
                     /**
-                     * 获取模板策略组
+                     * 获取<p>模板策略组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ConditionsTemp 模板策略组
+                     * @return ConditionsTemp <p>模板策略组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -269,8 +269,8 @@ namespace TencentCloud
                     bool ConditionsTempHasBeenSet() const;
 
                     /**
-                     * 获取是否可以设置成默认策略
-                     * @return CanSetDefault 是否可以设置成默认策略
+                     * 获取<p>是否可以设置成默认策略</p>
+                     * @return CanSetDefault <p>是否可以设置成默认策略</p>
                      * 
                      */
                     bool GetCanSetDefault() const;
@@ -283,9 +283,9 @@ namespace TencentCloud
                     bool CanSetDefaultHasBeenSet() const;
 
                     /**
-                     * 获取是否且规则
+                     * 获取<p>是否且规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsUnionRule 是否且规则
+                     * @return IsUnionRule <p>是否且规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -301,108 +301,108 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略组名称
+                     * <p>策略组名称</p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 策略组所属的项目id
+                     * <p>策略组所属的项目id</p>
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 是否为默认策略，0表示非默认策略，1表示默认策略
+                     * <p>是否为默认策略，0表示非默认策略，1表示默认策略</p>
                      */
                     int64_t m_isDefault;
                     bool m_isDefaultHasBeenSet;
 
                     /**
-                     * 策略类型
+                     * <p>策略类型</p>
                      */
                     std::string m_viewName;
                     bool m_viewNameHasBeenSet;
 
                     /**
-                     * 策略说明
+                     * <p>策略说明</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 策略类型名称
+                     * <p>策略类型名称</p>
                      */
                     std::string m_showName;
                     bool m_showNameHasBeenSet;
 
                     /**
-                     * 最近编辑的用户uin
+                     * <p>最近编辑的用户uin</p>
                      */
                     std::string m_lastEditUin;
                     bool m_lastEditUinHasBeenSet;
 
                     /**
-                     * 最近编辑时间
+                     * <p>最近编辑时间</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 该策略支持的地域
+                     * <p>该策略支持的地域</p>
                      */
                     std::vector<std::string> m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 策略类型的维度列表
+                     * <p>策略类型的维度列表</p>
                      */
                     std::vector<std::string> m_dimensionGroup;
                     bool m_dimensionGroupHasBeenSet;
 
                     /**
-                     * 阈值规则列表
+                     * <p>阈值规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DescribePolicyGroupInfoCondition> m_conditionsConfig;
                     bool m_conditionsConfigHasBeenSet;
 
                     /**
-                     * 产品事件规则列表
+                     * <p>产品事件规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DescribePolicyGroupInfoEventCondition> m_eventConfig;
                     bool m_eventConfigHasBeenSet;
 
                     /**
-                     * 用户接收人列表
+                     * <p>用户接收人列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DescribePolicyGroupInfoReceiverInfo> m_receiverInfos;
                     bool m_receiverInfosHasBeenSet;
 
                     /**
-                     * 用户回调信息
+                     * <p>用户回调信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribePolicyGroupInfoCallback m_callback;
                     bool m_callbackHasBeenSet;
 
                     /**
-                     * 模板策略组
+                     * <p>模板策略组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribePolicyGroupInfoConditionTpl m_conditionsTemp;
                     bool m_conditionsTempHasBeenSet;
 
                     /**
-                     * 是否可以设置成默认策略
+                     * <p>是否可以设置成默认策略</p>
                      */
                     bool m_canSetDefault;
                     bool m_canSetDefaultHasBeenSet;
 
                     /**
-                     * 是否且规则
+                     * <p>是否且规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isUnionRule;

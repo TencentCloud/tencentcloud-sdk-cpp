@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool RuleGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取执行触发类型（1：手动触发， 2：调度事中触发，3：周期调度触发）
+                     * 获取触发类型：1-手动触发，2-调度事件触发，3-周期调度触发
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TriggerType 执行触发类型（1：手动触发， 2：调度事中触发，3：周期调度触发）
+                     * @return TriggerType 触发类型：1-手动触发，2-调度事件触发，3-周期调度触发
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTriggerType() const;
 
                     /**
-                     * 设置执行触发类型（1：手动触发， 2：调度事中触发，3：周期调度触发）
+                     * 设置触发类型：1-手动触发，2-调度事件触发，3-周期调度触发
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _triggerType 执行触发类型（1：手动触发， 2：调度事中触发，3：周期调度触发）
+                     * @param _triggerType 触发类型：1-手动触发，2-调度事件触发，3-周期调度触发
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -398,18 +398,18 @@ namespace TencentCloud
                     bool ExecDetailHasBeenSet() const;
 
                     /**
-                     * 获取实际执行引擎
+                     * 获取执行引擎类型，可选值：MYSQL, HIVE, SPARK, LIVY, DLC, GBASE, CDW_PG, TCHouse-P, DORIS, TCHouse-D
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EngineType 实际执行引擎
+                     * @return EngineType 执行引擎类型，可选值：MYSQL, HIVE, SPARK, LIVY, DLC, GBASE, CDW_PG, TCHouse-P, DORIS, TCHouse-D
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineType() const;
 
                     /**
-                     * 设置实际执行引擎
+                     * 设置执行引擎类型，可选值：MYSQL, HIVE, SPARK, LIVY, DLC, GBASE, CDW_PG, TCHouse-P, DORIS, TCHouse-D
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _engineType 实际执行引擎
+                     * @param _engineType 执行引擎类型，可选值：MYSQL, HIVE, SPARK, LIVY, DLC, GBASE, CDW_PG, TCHouse-P, DORIS, TCHouse-D
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -764,7 +764,7 @@ namespace TencentCloud
                     bool m_ruleGroupIdHasBeenSet;
 
                     /**
-                     * 执行触发类型（1：手动触发， 2：调度事中触发，3：周期调度触发）
+                     * 触发类型：1-手动触发，2-调度事件触发，3-周期调度触发
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_triggerType;
@@ -848,7 +848,7 @@ namespace TencentCloud
                     bool m_execDetailHasBeenSet;
 
                     /**
-                     * 实际执行引擎
+                     * 执行引擎类型，可选值：MYSQL, HIVE, SPARK, LIVY, DLC, GBASE, CDW_PG, TCHouse-P, DORIS, TCHouse-D
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineType;

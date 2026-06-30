@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取发信域名
-                     * @return IdentityName 发信域名
+                     * 获取<p>发信域名</p>
+                     * @return IdentityName <p>发信域名</p>
                      * 
                      */
                     std::string GetIdentityName() const;
 
                     /**
-                     * 设置发信域名
-                     * @param _identityName 发信域名
+                     * 设置<p>发信域名</p>
+                     * @param _identityName <p>发信域名</p>
                      * 
                      */
                     void SetIdentityName(const std::string& _identityName);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool IdentityNameHasBeenSet() const;
 
                     /**
-                     * 获取验证类型，固定为DOMAIN
-                     * @return IdentityType 验证类型，固定为DOMAIN
+                     * 获取<p>验证类型，固定为DOMAIN</p>
+                     * @return IdentityType <p>验证类型，固定为DOMAIN</p>
                      * 
                      */
                     std::string GetIdentityType() const;
 
                     /**
-                     * 设置验证类型，固定为DOMAIN
-                     * @param _identityType 验证类型，固定为DOMAIN
+                     * 设置<p>验证类型，固定为DOMAIN</p>
+                     * @param _identityType <p>验证类型，固定为DOMAIN</p>
                      * 
                      */
                     void SetIdentityType(const std::string& _identityType);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool IdentityTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否已通过验证
-                     * @return SendingEnabled 是否已通过验证
+                     * 获取<p>是否已通过验证</p>
+                     * @return SendingEnabled <p>是否已通过验证</p>
                      * 
                      */
                     bool GetSendingEnabled() const;
 
                     /**
-                     * 设置是否已通过验证
-                     * @param _sendingEnabled 是否已通过验证
+                     * 设置<p>是否已通过验证</p>
+                     * @param _sendingEnabled <p>是否已通过验证</p>
                      * 
                      */
                     void SetSendingEnabled(const bool& _sendingEnabled);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool SendingEnabledHasBeenSet() const;
 
                     /**
-                     * 获取当前信誉等级
-                     * @return CurrentReputationLevel 当前信誉等级
+                     * 获取<p>当前信誉等级</p>
+                     * @return CurrentReputationLevel <p>当前信誉等级</p>
                      * 
                      */
                     uint64_t GetCurrentReputationLevel() const;
 
                     /**
-                     * 设置当前信誉等级
-                     * @param _currentReputationLevel 当前信誉等级
+                     * 设置<p>当前信誉等级</p>
+                     * @param _currentReputationLevel <p>当前信誉等级</p>
                      * 
                      */
                     void SetCurrentReputationLevel(const uint64_t& _currentReputationLevel);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool CurrentReputationLevelHasBeenSet() const;
 
                     /**
-                     * 获取当日最高发信量
-                     * @return DailyQuota 当日最高发信量
+                     * 获取<p>当日最高发信量</p>
+                     * @return DailyQuota <p>当日最高发信量</p>
                      * 
                      */
                     uint64_t GetDailyQuota() const;
 
                     /**
-                     * 设置当日最高发信量
-                     * @param _dailyQuota 当日最高发信量
+                     * 设置<p>当日最高发信量</p>
+                     * @param _dailyQuota <p>当日最高发信量</p>
                      * 
                      */
                     void SetDailyQuota(const uint64_t& _dailyQuota);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool DailyQuotaHasBeenSet() const;
 
                     /**
-                     * 获取域名配置的独立ip
-                     * @return SendIp 域名配置的独立ip
+                     * 获取<p>域名配置的独立ip</p>
+                     * @return SendIp <p>域名配置的独立ip</p>
                      * 
                      */
                     std::vector<std::string> GetSendIp() const;
 
                     /**
-                     * 设置域名配置的独立ip
-                     * @param _sendIp 域名配置的独立ip
+                     * 设置<p>域名配置的独立ip</p>
+                     * @param _sendIp <p>域名配置的独立ip</p>
                      * 
                      */
                     void SetSendIp(const std::vector<std::string>& _sendIp);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool SendIpHasBeenSet() const;
 
                     /**
-                     * 获取tag 标签
-                     * @return TagList tag 标签
+                     * 获取<p>tag 标签</p>
+                     * @return TagList <p>tag 标签</p>
                      * 
                      */
                     std::vector<TagList> GetTagList() const;
 
                     /**
-                     * 设置tag 标签
-                     * @param _tagList tag 标签
+                     * 设置<p>tag 标签</p>
+                     * @param _tagList <p>tag 标签</p>
                      * 
                      */
                     void SetTagList(const std::vector<TagList>& _tagList);
@@ -194,49 +194,76 @@ namespace TencentCloud
                      */
                     bool TagListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>dkim位数</p><p>枚举值：</p><ul><li>0： 1024</li><li>1： 2048</li><li>2： 双签</li></ul><p>默认值：0</p>
+                     * @return DKIMOption <p>dkim位数</p><p>枚举值：</p><ul><li>0： 1024</li><li>1： 2048</li><li>2： 双签</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    uint64_t GetDKIMOption() const;
+
+                    /**
+                     * 设置<p>dkim位数</p><p>枚举值：</p><ul><li>0： 1024</li><li>1： 2048</li><li>2： 双签</li></ul><p>默认值：0</p>
+                     * @param _dKIMOption <p>dkim位数</p><p>枚举值：</p><ul><li>0： 1024</li><li>1： 2048</li><li>2： 双签</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    void SetDKIMOption(const uint64_t& _dKIMOption);
+
+                    /**
+                     * 判断参数 DKIMOption 是否已赋值
+                     * @return DKIMOption 是否已赋值
+                     * 
+                     */
+                    bool DKIMOptionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 发信域名
+                     * <p>发信域名</p>
                      */
                     std::string m_identityName;
                     bool m_identityNameHasBeenSet;
 
                     /**
-                     * 验证类型，固定为DOMAIN
+                     * <p>验证类型，固定为DOMAIN</p>
                      */
                     std::string m_identityType;
                     bool m_identityTypeHasBeenSet;
 
                     /**
-                     * 是否已通过验证
+                     * <p>是否已通过验证</p>
                      */
                     bool m_sendingEnabled;
                     bool m_sendingEnabledHasBeenSet;
 
                     /**
-                     * 当前信誉等级
+                     * <p>当前信誉等级</p>
                      */
                     uint64_t m_currentReputationLevel;
                     bool m_currentReputationLevelHasBeenSet;
 
                     /**
-                     * 当日最高发信量
+                     * <p>当日最高发信量</p>
                      */
                     uint64_t m_dailyQuota;
                     bool m_dailyQuotaHasBeenSet;
 
                     /**
-                     * 域名配置的独立ip
+                     * <p>域名配置的独立ip</p>
                      */
                     std::vector<std::string> m_sendIp;
                     bool m_sendIpHasBeenSet;
 
                     /**
-                     * tag 标签
+                     * <p>tag 标签</p>
                      */
                     std::vector<TagList> m_tagList;
                     bool m_tagListHasBeenSet;
+
+                    /**
+                     * <p>dkim位数</p><p>枚举值：</p><ul><li>0： 1024</li><li>1： 2048</li><li>2： 双签</li></ul><p>默认值：0</p>
+                     */
+                    uint64_t m_dKIMOption;
+                    bool m_dKIMOptionHasBeenSet;
 
                 };
             }

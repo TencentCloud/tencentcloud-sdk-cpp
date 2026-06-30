@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模块名，这里填“monitor”
-                     * @return Module 模块名，这里填“monitor”
+                     * 获取<p>模块名，这里填“monitor”</p>
+                     * @return Module <p>模块名，这里填“monitor”</p>
                      * 
                      */
                     std::string GetModule() const;
 
                     /**
-                     * 设置模块名，这里填“monitor”
-                     * @param _module 模块名，这里填“monitor”
+                     * 设置<p>模块名，这里填“monitor”</p>
+                     * @param _module <p>模块名，这里填“monitor”</p>
                      * 
                      */
                     void SetModule(const std::string& _module);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取屏蔽策略Id列表
-                     * @return Shields 屏蔽策略Id列表
+                     * 获取<p>屏蔽策略Id列表</p>
+                     * @return Shields <p>屏蔽策略Id列表</p>
                      * 
                      */
                     std::vector<std::string> GetShields() const;
 
                     /**
-                     * 设置屏蔽策略Id列表
-                     * @param _shields 屏蔽策略Id列表
+                     * 设置<p>屏蔽策略Id列表</p>
+                     * @param _shields <p>屏蔽策略Id列表</p>
                      * 
                      */
                     void SetShields(const std::vector<std::string>& _shields);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模块名，这里填“monitor”
+                     * <p>模块名，这里填“monitor”</p>
                      */
                     std::string m_module;
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 屏蔽策略Id列表
+                     * <p>屏蔽策略Id列表</p>
                      */
                     std::vector<std::string> m_shields;
                     bool m_shieldsHasBeenSet;

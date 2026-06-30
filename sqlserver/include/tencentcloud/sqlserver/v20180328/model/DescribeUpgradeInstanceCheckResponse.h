@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取本变配是否对实例有影响，0-没有影响 1-有影响
-                     * @return IsAffect 本变配是否对实例有影响，0-没有影响 1-有影响
+                     * 获取<p>本变配是否对实例有影响，0-没有影响 1-有影响</p>
+                     * @return IsAffect <p>本变配是否对实例有影响，0-没有影响 1-有影响</p>
                      * 
                      */
                     int64_t GetIsAffect() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool IsAffectHasBeenSet() const;
 
                     /**
-                     * 获取本变配是否可以执行 0-不通过，不能变配 1-通过，可以变配
-                     * @return Passed 本变配是否可以执行 0-不通过，不能变配 1-通过，可以变配
+                     * 获取<p>本变配是否可以执行 0-不通过，不能变配 1-通过，可以变配</p>
+                     * @return Passed <p>本变配是否可以执行 0-不通过，不能变配 1-通过，可以变配</p>
                      * 
                      */
                     int64_t GetPassed() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool PassedHasBeenSet() const;
 
                     /**
-                     * 获取本变配是升配还是降配，down-降配 up-升配
-                     * @return ModifyMode 本变配是升配还是降配，down-降配 up-升配
+                     * 获取<p>本变配是升配还是降配，down-降配 up-升配</p>
+                     * @return ModifyMode <p>本变配是升配还是降配，down-降配 up-升配</p>
                      * 
                      */
                     std::string GetModifyMode() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool ModifyModeHasBeenSet() const;
 
                     /**
-                     * 获取检查项列表
-                     * @return CheckItems 检查项列表
+                     * 获取<p>检查项列表</p>
+                     * @return CheckItems <p>检查项列表</p>
                      * 
                      */
                     std::vector<CheckItem> GetCheckItems() const;
@@ -103,25 +103,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 本变配是否对实例有影响，0-没有影响 1-有影响
+                     * <p>本变配是否对实例有影响，0-没有影响 1-有影响</p>
                      */
                     int64_t m_isAffect;
                     bool m_isAffectHasBeenSet;
 
                     /**
-                     * 本变配是否可以执行 0-不通过，不能变配 1-通过，可以变配
+                     * <p>本变配是否可以执行 0-不通过，不能变配 1-通过，可以变配</p>
                      */
                     int64_t m_passed;
                     bool m_passedHasBeenSet;
 
                     /**
-                     * 本变配是升配还是降配，down-降配 up-升配
+                     * <p>本变配是升配还是降配，down-降配 up-升配</p>
                      */
                     std::string m_modifyMode;
                     bool m_modifyModeHasBeenSet;
 
                     /**
-                     * 检查项列表
+                     * <p>检查项列表</p>
                      */
                     std::vector<CheckItem> m_checkItems;
                     bool m_checkItemsHasBeenSet;

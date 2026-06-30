@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取单条日志上报时间
+                     * 获取<p>单条日志上报时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Timestamp 单条日志上报时间
+                     * @return Timestamp <p>单条日志上报时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimestamp() const;
 
                     /**
-                     * 设置单条日志上报时间
+                     * 设置<p>单条日志上报时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _timestamp 单条日志上报时间
+                     * @param _timestamp <p>单条日志上报时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool TimestampHasBeenSet() const;
 
                     /**
-                     * 获取日志内容详情
+                     * 获取<p>日志内容详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Message 日志内容详情
+                     * @return Message <p>日志内容详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置日志内容详情
+                     * 设置<p>日志内容详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _message 日志内容详情
+                     * @param _message <p>日志内容详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取事件来源
+                     * 获取<p>事件来源</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Source 事件来源
+                     * @return Source <p>事件来源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
-                     * 设置事件来源
+                     * 设置<p>事件来源</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _source 事件来源
+                     * @param _source <p>事件来源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取事件类型
+                     * 获取<p>事件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 事件类型
+                     * @return Type <p>事件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置事件类型
+                     * 设置<p>事件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type 事件类型
+                     * @param _type <p>事件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取事件匹配规则
+                     * 获取<p>事件匹配规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleIds 事件匹配规则
+                     * @return RuleIds <p>事件匹配规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleIds() const;
 
                     /**
-                     * 设置事件匹配规则
+                     * 设置<p>事件匹配规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ruleIds 事件匹配规则
+                     * @param _ruleIds <p>事件匹配规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool RuleIdsHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
+                     * 获取<p>实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Subject 实例ID
+                     * @return Subject <p>实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubject() const;
 
                     /**
-                     * 设置实例ID
+                     * 设置<p>实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subject 实例ID
+                     * @param _subject <p>实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool SubjectHasBeenSet() const;
 
                     /**
-                     * 获取地域
+                     * 获取<p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Region 地域
+                     * @return Region <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域
+                     * 设置<p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _region 地域
+                     * @param _region <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取事件状态
+                     * 获取<p>事件状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 事件状态
+                     * @return Status <p>事件状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置事件状态
+                     * 设置<p>事件状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 事件状态
+                     * @param _status <p>事件状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -249,56 +249,56 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 单条日志上报时间
+                     * <p>单条日志上报时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timestamp;
                     bool m_timestampHasBeenSet;
 
                     /**
-                     * 日志内容详情
+                     * <p>日志内容详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 事件来源
+                     * <p>事件来源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 事件类型
+                     * <p>事件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 事件匹配规则
+                     * <p>事件匹配规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleIds;
                     bool m_ruleIdsHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subject;
                     bool m_subjectHasBeenSet;
 
                     /**
-                     * 地域
+                     * <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 事件状态
+                     * <p>事件状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;

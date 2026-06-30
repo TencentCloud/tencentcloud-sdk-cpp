@@ -273,18 +273,18 @@ namespace TencentCloud
                     bool TableOwnerUserIdHasBeenSet() const;
 
                     /**
-                     * 获取2.HIVE 3.DLC
+                     * 获取数据源类型：2-HIVE(EMR-Hive)，3-DLC，5-TCHouse-P，6-ICEBERG(EMR-Iceberg)，7-DORIS，8-TCHouse-D，9-EMR-StarRocks，11-TCHouse-X
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DatasourceType 2.HIVE 3.DLC
+                     * @return DatasourceType 数据源类型：2-HIVE(EMR-Hive)，3-DLC，5-TCHouse-P，6-ICEBERG(EMR-Iceberg)，7-DORIS，8-TCHouse-D，9-EMR-StarRocks，11-TCHouse-X
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDatasourceType() const;
 
                     /**
-                     * 设置2.HIVE 3.DLC
+                     * 设置数据源类型：2-HIVE(EMR-Hive)，3-DLC，5-TCHouse-P，6-ICEBERG(EMR-Iceberg)，7-DORIS，8-TCHouse-D，9-EMR-StarRocks，11-TCHouse-X
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _datasourceType 2.HIVE 3.DLC
+                     * @param _datasourceType 数据源类型：2-HIVE(EMR-Hive)，3-DLC，5-TCHouse-P，6-ICEBERG(EMR-Iceberg)，7-DORIS，8-TCHouse-D，9-EMR-StarRocks，11-TCHouse-X
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -388,7 +388,7 @@ namespace TencentCloud
                     bool m_tableOwnerUserIdHasBeenSet;
 
                     /**
-                     * 2.HIVE 3.DLC
+                     * 数据源类型：2-HIVE(EMR-Hive)，3-DLC，5-TCHouse-P，6-ICEBERG(EMR-Iceberg)，7-DORIS，8-TCHouse-D，9-EMR-StarRocks，11-TCHouse-X
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_datasourceType;

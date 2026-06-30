@@ -49,7 +49,8 @@ CreateModelServiceRequest::CreateModelServiceRequest() :
     m_hostKeyHeaderNameHasBeenSet(false),
     m_fallbackStatusHasBeenSet(false),
     m_fallbackModelsHasBeenSet(false),
-    m_modelProtocolHasBeenSet(false)
+    m_modelProtocolHasBeenSet(false),
+    m_rawCustomModelProtocolConfigHasBeenSet(false)
 {
 }
 
@@ -310,6 +311,14 @@ string CreateModelServiceRequest::ToJsonString() const
         string key = "ModelProtocol";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_modelProtocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rawCustomModelProtocolConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RawCustomModelProtocolConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_rawCustomModelProtocolConfig.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -750,6 +759,22 @@ void CreateModelServiceRequest::SetModelProtocol(const string& _modelProtocol)
 bool CreateModelServiceRequest::ModelProtocolHasBeenSet() const
 {
     return m_modelProtocolHasBeenSet;
+}
+
+string CreateModelServiceRequest::GetRawCustomModelProtocolConfig() const
+{
+    return m_rawCustomModelProtocolConfig;
+}
+
+void CreateModelServiceRequest::SetRawCustomModelProtocolConfig(const string& _rawCustomModelProtocolConfig)
+{
+    m_rawCustomModelProtocolConfig = _rawCustomModelProtocolConfig;
+    m_rawCustomModelProtocolConfigHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::RawCustomModelProtocolConfigHasBeenSet() const
+{
+    return m_rawCustomModelProtocolConfigHasBeenSet;
 }
 
 

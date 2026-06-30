@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool RuleTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取规则类型 1.系统模版, 2.自定义模版, 3.自定义SQL
-                     * @return Type 规则类型 1.系统模版, 2.自定义模版, 3.自定义SQL
+                     * 获取规则类型：1-系统模版，2-自定义模版，3-自定义SQL
+                     * @return Type 规则类型：1-系统模版，2-自定义模版，3-自定义SQL
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置规则类型 1.系统模版, 2.自定义模版, 3.自定义SQL
-                     * @param _type 规则类型 1.系统模版, 2.自定义模版, 3.自定义SQL
+                     * 设置规则类型：1-系统模版，2-自定义模版，3-自定义SQL
+                     * @param _type 规则类型：1-系统模版，2-自定义模版，3-自定义SQL
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取规则所属质量维度（1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性）
-                     * @return QualityDim 规则所属质量维度（1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性）
+                     * 获取质量维度：1-准确性，2-唯一性，3-完整性，4-一致性，5-及时性，6-有效性
+                     * @return QualityDim 质量维度：1-准确性，2-唯一性，3-完整性，4-一致性，5-及时性，6-有效性
                      * 
                      */
                     uint64_t GetQualityDim() const;
 
                     /**
-                     * 设置规则所属质量维度（1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性）
-                     * @param _qualityDim 规则所属质量维度（1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性）
+                     * 设置质量维度：1-准确性，2-唯一性，3-完整性，4-一致性，5-及时性，6-有效性
+                     * @param _qualityDim 质量维度：1-准确性，2-唯一性，3-完整性，4-一致性，5-及时性，6-有效性
                      * 
                      */
                     void SetQualityDim(const uint64_t& _qualityDim);
@@ -255,15 +255,15 @@ namespace TencentCloud
                     bool SourceObjectValueHasBeenSet() const;
 
                     /**
-                     * 获取检测范围 1.全表   2.条件扫描
-                     * @return ConditionType 检测范围 1.全表   2.条件扫描
+                     * 获取检测范围类型：1-全表，2-条件扫描
+                     * @return ConditionType 检测范围类型：1-全表，2-条件扫描
                      * 
                      */
                     uint64_t GetConditionType() const;
 
                     /**
-                     * 设置检测范围 1.全表   2.条件扫描
-                     * @param _conditionType 检测范围 1.全表   2.条件扫描
+                     * 设置检测范围类型：1-全表，2-条件扫描
+                     * @param _conditionType 检测范围类型：1-全表，2-条件扫描
                      * 
                      */
                     void SetConditionType(const uint64_t& _conditionType);
@@ -339,15 +339,15 @@ namespace TencentCloud
                     bool CompareRuleHasBeenSet() const;
 
                     /**
-                     * 获取报警触发级别 1.低, 2.中, 3.高
-                     * @return AlarmLevel 报警触发级别 1.低, 2.中, 3.高
+                     * 获取告警级别：1-低，2-中，3-高
+                     * @return AlarmLevel 告警级别：1-低，2-中，3-高
                      * 
                      */
                     uint64_t GetAlarmLevel() const;
 
                     /**
-                     * 设置报警触发级别 1.低, 2.中, 3.高
-                     * @param _alarmLevel 报警触发级别 1.低, 2.中, 3.高
+                     * 设置告警级别：1-低，2-中，3-高
+                     * @param _alarmLevel 告警级别：1-低，2-中，3-高
                      * 
                      */
                     void SetAlarmLevel(const uint64_t& _alarmLevel);
@@ -507,15 +507,15 @@ namespace TencentCloud
                     bool TargetObjectValueHasBeenSet() const;
 
                     /**
-                     * 获取该规则适配的执行引擎
-                     * @return SourceEngineTypes 该规则适配的执行引擎
+                     * 获取执行引擎多选（位运算数组）：2-HIVE，4-SPARK，8-LIVY，16-DLC，64-TCHouse-P，128-DORIS，256-TCHouse-D，512-EMR-StarRocks，1024-TCHouse-X
+                     * @return SourceEngineTypes 执行引擎多选（位运算数组）：2-HIVE，4-SPARK，8-LIVY，16-DLC，64-TCHouse-P，128-DORIS，256-TCHouse-D，512-EMR-StarRocks，1024-TCHouse-X
                      * 
                      */
                     std::vector<uint64_t> GetSourceEngineTypes() const;
 
                     /**
-                     * 设置该规则适配的执行引擎
-                     * @param _sourceEngineTypes 该规则适配的执行引擎
+                     * 设置执行引擎多选（位运算数组）：2-HIVE，4-SPARK，8-LIVY，16-DLC，64-TCHouse-P，128-DORIS，256-TCHouse-D，512-EMR-StarRocks，1024-TCHouse-X
+                     * @param _sourceEngineTypes 执行引擎多选（位运算数组）：2-HIVE，4-SPARK，8-LIVY，16-DLC，64-TCHouse-P，128-DORIS，256-TCHouse-D，512-EMR-StarRocks，1024-TCHouse-X
                      * 
                      */
                     void SetSourceEngineTypes(const std::vector<uint64_t>& _sourceEngineTypes);
@@ -671,13 +671,13 @@ namespace TencentCloud
                     bool m_ruleTemplateIdHasBeenSet;
 
                     /**
-                     * 规则类型 1.系统模版, 2.自定义模版, 3.自定义SQL
+                     * 规则类型：1-系统模版，2-自定义模版，3-自定义SQL
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 规则所属质量维度（1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性）
+                     * 质量维度：1-准确性，2-唯一性，3-完整性，4-一致性，5-及时性，6-有效性
                      */
                     uint64_t m_qualityDim;
                     bool m_qualityDimHasBeenSet;
@@ -695,7 +695,7 @@ namespace TencentCloud
                     bool m_sourceObjectValueHasBeenSet;
 
                     /**
-                     * 检测范围 1.全表   2.条件扫描
+                     * 检测范围类型：1-全表，2-条件扫描
                      */
                     uint64_t m_conditionType;
                     bool m_conditionTypeHasBeenSet;
@@ -719,7 +719,7 @@ namespace TencentCloud
                     bool m_compareRuleHasBeenSet;
 
                     /**
-                     * 报警触发级别 1.低, 2.中, 3.高
+                     * 告警级别：1-低，2-中，3-高
                      */
                     uint64_t m_alarmLevel;
                     bool m_alarmLevelHasBeenSet;
@@ -767,7 +767,7 @@ namespace TencentCloud
                     bool m_targetObjectValueHasBeenSet;
 
                     /**
-                     * 该规则适配的执行引擎
+                     * 执行引擎多选（位运算数组）：2-HIVE，4-SPARK，8-LIVY，16-DLC，64-TCHouse-P，128-DORIS，256-TCHouse-D，512-EMR-StarRocks，1024-TCHouse-X
                      */
                     std::vector<uint64_t> m_sourceEngineTypes;
                     bool m_sourceEngineTypesHasBeenSet;

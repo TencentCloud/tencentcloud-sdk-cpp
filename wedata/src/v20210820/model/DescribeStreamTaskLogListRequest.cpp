@@ -32,7 +32,8 @@ DescribeStreamTaskLogListRequest::DescribeStreamTaskLogListRequest() :
     m_limitHasBeenSet(false),
     m_orderTypeHasBeenSet(false),
     m_runningOrderIdHasBeenSet(false),
-    m_keywordHasBeenSet(false)
+    m_keywordHasBeenSet(false),
+    m_jobTypeHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string DescribeStreamTaskLogListRequest::ToJsonString() const
         string key = "Keyword";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_keyword.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jobType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -289,6 +298,22 @@ void DescribeStreamTaskLogListRequest::SetKeyword(const string& _keyword)
 bool DescribeStreamTaskLogListRequest::KeywordHasBeenSet() const
 {
     return m_keywordHasBeenSet;
+}
+
+string DescribeStreamTaskLogListRequest::GetJobType() const
+{
+    return m_jobType;
+}
+
+void DescribeStreamTaskLogListRequest::SetJobType(const string& _jobType)
+{
+    m_jobType = _jobType;
+    m_jobTypeHasBeenSet = true;
+}
+
+bool DescribeStreamTaskLogListRequest::JobTypeHasBeenSet() const
+{
+    return m_jobTypeHasBeenSet;
 }
 
 

@@ -25,6 +25,10 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cngw/v20230418/model/AddCloudNativeAPIGatewayConsumerGroupAuthRequest.h>
 #include <tencentcloud/cngw/v20230418/model/AddCloudNativeAPIGatewayConsumerGroupAuthResponse.h>
+#include <tencentcloud/cngw/v20230418/model/AddCloudNativeAPIGatewayConsumerInGroupRequest.h>
+#include <tencentcloud/cngw/v20230418/model/AddCloudNativeAPIGatewayConsumerInGroupResponse.h>
+#include <tencentcloud/cngw/v20230418/model/BindCloudNativeAPIGatewaySecretKeyRequest.h>
+#include <tencentcloud/cngw/v20230418/model/BindCloudNativeAPIGatewaySecretKeyResponse.h>
 #include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayConsumerRequest.h>
 #include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayConsumerResponse.h>
 #include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayConsumerGroupRequest.h>
@@ -113,6 +117,10 @@
 #include <tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewaySecretKeyResponse.h>
 #include <tencentcloud/cngw/v20230418/model/RemoveCloudNativeAPIGatewayConsumerGroupAuthRequest.h>
 #include <tencentcloud/cngw/v20230418/model/RemoveCloudNativeAPIGatewayConsumerGroupAuthResponse.h>
+#include <tencentcloud/cngw/v20230418/model/RemoveCloudNativeAPIGatewayConsumerInGroupRequest.h>
+#include <tencentcloud/cngw/v20230418/model/RemoveCloudNativeAPIGatewayConsumerInGroupResponse.h>
+#include <tencentcloud/cngw/v20230418/model/UnbindCloudNativeAPIGatewaySecretKeyRequest.h>
+#include <tencentcloud/cngw/v20230418/model/UnbindCloudNativeAPIGatewaySecretKeyResponse.h>
 
 
 namespace TencentCloud
@@ -130,6 +138,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddCloudNativeAPIGatewayConsumerGroupAuthResponse> AddCloudNativeAPIGatewayConsumerGroupAuthOutcome;
                 typedef std::future<AddCloudNativeAPIGatewayConsumerGroupAuthOutcome> AddCloudNativeAPIGatewayConsumerGroupAuthOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::AddCloudNativeAPIGatewayConsumerGroupAuthRequest&, AddCloudNativeAPIGatewayConsumerGroupAuthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddCloudNativeAPIGatewayConsumerGroupAuthAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddCloudNativeAPIGatewayConsumerInGroupResponse> AddCloudNativeAPIGatewayConsumerInGroupOutcome;
+                typedef std::future<AddCloudNativeAPIGatewayConsumerInGroupOutcome> AddCloudNativeAPIGatewayConsumerInGroupOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::AddCloudNativeAPIGatewayConsumerInGroupRequest&, AddCloudNativeAPIGatewayConsumerInGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddCloudNativeAPIGatewayConsumerInGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::BindCloudNativeAPIGatewaySecretKeyResponse> BindCloudNativeAPIGatewaySecretKeyOutcome;
+                typedef std::future<BindCloudNativeAPIGatewaySecretKeyOutcome> BindCloudNativeAPIGatewaySecretKeyOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::BindCloudNativeAPIGatewaySecretKeyRequest&, BindCloudNativeAPIGatewaySecretKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindCloudNativeAPIGatewaySecretKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCloudNativeAPIGatewayConsumerResponse> CreateCloudNativeAPIGatewayConsumerOutcome;
                 typedef std::future<CreateCloudNativeAPIGatewayConsumerOutcome> CreateCloudNativeAPIGatewayConsumerOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::CreateCloudNativeAPIGatewayConsumerRequest&, CreateCloudNativeAPIGatewayConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudNativeAPIGatewayConsumerAsyncHandler;
@@ -262,6 +276,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RemoveCloudNativeAPIGatewayConsumerGroupAuthResponse> RemoveCloudNativeAPIGatewayConsumerGroupAuthOutcome;
                 typedef std::future<RemoveCloudNativeAPIGatewayConsumerGroupAuthOutcome> RemoveCloudNativeAPIGatewayConsumerGroupAuthOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::RemoveCloudNativeAPIGatewayConsumerGroupAuthRequest&, RemoveCloudNativeAPIGatewayConsumerGroupAuthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveCloudNativeAPIGatewayConsumerGroupAuthAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveCloudNativeAPIGatewayConsumerInGroupResponse> RemoveCloudNativeAPIGatewayConsumerInGroupOutcome;
+                typedef std::future<RemoveCloudNativeAPIGatewayConsumerInGroupOutcome> RemoveCloudNativeAPIGatewayConsumerInGroupOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::RemoveCloudNativeAPIGatewayConsumerInGroupRequest&, RemoveCloudNativeAPIGatewayConsumerInGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveCloudNativeAPIGatewayConsumerInGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnbindCloudNativeAPIGatewaySecretKeyResponse> UnbindCloudNativeAPIGatewaySecretKeyOutcome;
+                typedef std::future<UnbindCloudNativeAPIGatewaySecretKeyOutcome> UnbindCloudNativeAPIGatewaySecretKeyOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::UnbindCloudNativeAPIGatewaySecretKeyRequest&, UnbindCloudNativeAPIGatewaySecretKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindCloudNativeAPIGatewaySecretKeyAsyncHandler;
 
 
 
@@ -273,6 +293,24 @@ namespace TencentCloud
                 AddCloudNativeAPIGatewayConsumerGroupAuthOutcome AddCloudNativeAPIGatewayConsumerGroupAuth(const Model::AddCloudNativeAPIGatewayConsumerGroupAuthRequest &request);
                 void AddCloudNativeAPIGatewayConsumerGroupAuthAsync(const Model::AddCloudNativeAPIGatewayConsumerGroupAuthRequest& request, const AddCloudNativeAPIGatewayConsumerGroupAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddCloudNativeAPIGatewayConsumerGroupAuthOutcomeCallable AddCloudNativeAPIGatewayConsumerGroupAuthCallable(const Model::AddCloudNativeAPIGatewayConsumerGroupAuthRequest& request);
+
+                /**
+                 *将消费者添加到消费者组。
+                 * @param req AddCloudNativeAPIGatewayConsumerInGroupRequest
+                 * @return AddCloudNativeAPIGatewayConsumerInGroupOutcome
+                 */
+                AddCloudNativeAPIGatewayConsumerInGroupOutcome AddCloudNativeAPIGatewayConsumerInGroup(const Model::AddCloudNativeAPIGatewayConsumerInGroupRequest &request);
+                void AddCloudNativeAPIGatewayConsumerInGroupAsync(const Model::AddCloudNativeAPIGatewayConsumerInGroupRequest& request, const AddCloudNativeAPIGatewayConsumerInGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddCloudNativeAPIGatewayConsumerInGroupOutcomeCallable AddCloudNativeAPIGatewayConsumerInGroupCallable(const Model::AddCloudNativeAPIGatewayConsumerInGroupRequest& request);
+
+                /**
+                 *添加密钥与资源的引用关系接口
+                 * @param req BindCloudNativeAPIGatewaySecretKeyRequest
+                 * @return BindCloudNativeAPIGatewaySecretKeyOutcome
+                 */
+                BindCloudNativeAPIGatewaySecretKeyOutcome BindCloudNativeAPIGatewaySecretKey(const Model::BindCloudNativeAPIGatewaySecretKeyRequest &request);
+                void BindCloudNativeAPIGatewaySecretKeyAsync(const Model::BindCloudNativeAPIGatewaySecretKeyRequest& request, const BindCloudNativeAPIGatewaySecretKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindCloudNativeAPIGatewaySecretKeyOutcomeCallable BindCloudNativeAPIGatewaySecretKeyCallable(const Model::BindCloudNativeAPIGatewaySecretKeyRequest& request);
 
                 /**
                  *创建AI网关消费者。
@@ -669,6 +707,24 @@ namespace TencentCloud
                 RemoveCloudNativeAPIGatewayConsumerGroupAuthOutcome RemoveCloudNativeAPIGatewayConsumerGroupAuth(const Model::RemoveCloudNativeAPIGatewayConsumerGroupAuthRequest &request);
                 void RemoveCloudNativeAPIGatewayConsumerGroupAuthAsync(const Model::RemoveCloudNativeAPIGatewayConsumerGroupAuthRequest& request, const RemoveCloudNativeAPIGatewayConsumerGroupAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RemoveCloudNativeAPIGatewayConsumerGroupAuthOutcomeCallable RemoveCloudNativeAPIGatewayConsumerGroupAuthCallable(const Model::RemoveCloudNativeAPIGatewayConsumerGroupAuthRequest& request);
+
+                /**
+                 *将消费者从消费者组移除。
+                 * @param req RemoveCloudNativeAPIGatewayConsumerInGroupRequest
+                 * @return RemoveCloudNativeAPIGatewayConsumerInGroupOutcome
+                 */
+                RemoveCloudNativeAPIGatewayConsumerInGroupOutcome RemoveCloudNativeAPIGatewayConsumerInGroup(const Model::RemoveCloudNativeAPIGatewayConsumerInGroupRequest &request);
+                void RemoveCloudNativeAPIGatewayConsumerInGroupAsync(const Model::RemoveCloudNativeAPIGatewayConsumerInGroupRequest& request, const RemoveCloudNativeAPIGatewayConsumerInGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveCloudNativeAPIGatewayConsumerInGroupOutcomeCallable RemoveCloudNativeAPIGatewayConsumerInGroupCallable(const Model::RemoveCloudNativeAPIGatewayConsumerInGroupRequest& request);
+
+                /**
+                 *解绑密钥
+                 * @param req UnbindCloudNativeAPIGatewaySecretKeyRequest
+                 * @return UnbindCloudNativeAPIGatewaySecretKeyOutcome
+                 */
+                UnbindCloudNativeAPIGatewaySecretKeyOutcome UnbindCloudNativeAPIGatewaySecretKey(const Model::UnbindCloudNativeAPIGatewaySecretKeyRequest &request);
+                void UnbindCloudNativeAPIGatewaySecretKeyAsync(const Model::UnbindCloudNativeAPIGatewaySecretKeyRequest& request, const UnbindCloudNativeAPIGatewaySecretKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnbindCloudNativeAPIGatewaySecretKeyOutcomeCallable UnbindCloudNativeAPIGatewaySecretKeyCallable(const Model::UnbindCloudNativeAPIGatewaySecretKeyRequest& request);
 
             };
         }

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取该监控数据点生成的时间点
-                     * @return Timestamp 该监控数据点生成的时间点
+                     * 获取<p>该监控数据点生成的时间点</p>
+                     * @return Timestamp <p>该监控数据点生成的时间点</p>
                      * 
                      */
                     uint64_t GetTimestamp() const;
 
                     /**
-                     * 设置该监控数据点生成的时间点
-                     * @param _timestamp 该监控数据点生成的时间点
+                     * 设置<p>该监控数据点生成的时间点</p>
+                     * @param _timestamp <p>该监控数据点生成的时间点</p>
                      * 
                      */
                     void SetTimestamp(const uint64_t& _timestamp);
@@ -68,18 +68,18 @@ namespace TencentCloud
                     bool TimestampHasBeenSet() const;
 
                     /**
-                     * 获取监控数据点的值
+                     * 获取<p>监控数据点的值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Value 监控数据点的值
+                     * @return Value <p>监控数据点的值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetValue() const;
 
                     /**
-                     * 设置监控数据点的值
+                     * 设置<p>监控数据点的值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _value 监控数据点的值
+                     * @param _value <p>监控数据点的值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -95,13 +95,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 该监控数据点生成的时间点
+                     * <p>该监控数据点生成的时间点</p>
                      */
                     uint64_t m_timestamp;
                     bool m_timestampHasBeenSet;
 
                     /**
-                     * 监控数据点的值
+                     * <p>监控数据点的值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_value;

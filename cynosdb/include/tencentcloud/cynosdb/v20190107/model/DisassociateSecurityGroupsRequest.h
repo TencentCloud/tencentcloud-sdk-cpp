@@ -93,7 +93,7 @@ namespace TencentCloud
 说明：请正确输入集群所在的主可用区，若输入非集群所在的主可用区可能显示调用成功，但实际执行会失败。
                      * @return Zone 可用区。
 说明：请正确输入集群所在的主可用区，若输入非集群所在的主可用区可能显示调用成功，但实际执行会失败。
-                     * 
+                     * @deprecated
                      */
                     std::string GetZone() const;
 
@@ -102,14 +102,14 @@ namespace TencentCloud
 说明：请正确输入集群所在的主可用区，若输入非集群所在的主可用区可能显示调用成功，但实际执行会失败。
                      * @param _zone 可用区。
 说明：请正确输入集群所在的主可用区，若输入非集群所在的主可用区可能显示调用成功，但实际执行会失败。
-                     * 
+                     * @deprecated
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ZoneHasBeenSet() const;
 

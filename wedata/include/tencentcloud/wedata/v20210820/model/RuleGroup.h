@@ -49,18 +49,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则组Id
+                     * 获取<p>规则组Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleGroupId 规则组Id
+                     * @return RuleGroupId <p>规则组Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRuleGroupId() const;
 
                     /**
-                     * 设置规则组Id
+                     * 设置<p>规则组Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ruleGroupId 规则组Id
+                     * @param _ruleGroupId <p>规则组Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,18 +74,18 @@ namespace TencentCloud
                     bool RuleGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取数据源Id
+                     * 获取<p>数据源Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DatasourceId 数据源Id
+                     * @return DatasourceId <p>数据源Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatasourceId() const;
 
                     /**
-                     * 设置数据源Id
+                     * 设置<p>数据源Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _datasourceId 数据源Id
+                     * @param _datasourceId <p>数据源Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,18 +99,18 @@ namespace TencentCloud
                     bool DatasourceIdHasBeenSet() const;
 
                     /**
-                     * 获取数据源名称
+                     * 获取<p>数据源名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DatasourceName 数据源名称
+                     * @return DatasourceName <p>数据源名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatasourceName() const;
 
                     /**
-                     * 设置数据源名称
+                     * 设置<p>数据源名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _datasourceName 数据源名称
+                     * @param _datasourceName <p>数据源名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,18 +124,18 @@ namespace TencentCloud
                     bool DatasourceNameHasBeenSet() const;
 
                     /**
-                     * 获取数据源类型
+                     * 获取<p>数据源类型：2-HIVE(EMR-Hive)，3-DLC，5-TCHouse-P，6-ICEBERG(EMR-Iceberg)，7-DORIS，8-TCHouse-D，9-EMR-StarRocks，11-TCHouse-X</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DatasourceType 数据源类型
+                     * @return DatasourceType <p>数据源类型：2-HIVE(EMR-Hive)，3-DLC，5-TCHouse-P，6-ICEBERG(EMR-Iceberg)，7-DORIS，8-TCHouse-D，9-EMR-StarRocks，11-TCHouse-X</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDatasourceType() const;
 
                     /**
-                     * 设置数据源类型
+                     * 设置<p>数据源类型：2-HIVE(EMR-Hive)，3-DLC，5-TCHouse-P，6-ICEBERG(EMR-Iceberg)，7-DORIS，8-TCHouse-D，9-EMR-StarRocks，11-TCHouse-X</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _datasourceType 数据源类型
+                     * @param _datasourceType <p>数据源类型：2-HIVE(EMR-Hive)，3-DLC，5-TCHouse-P，6-ICEBERG(EMR-Iceberg)，7-DORIS，8-TCHouse-D，9-EMR-StarRocks，11-TCHouse-X</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -149,18 +149,18 @@ namespace TencentCloud
                     bool DatasourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取监控类型 1.未配置, 2.关联生产调度, 3.离线周期检测
+                     * 获取<p>监控类型：1-未配置，2-关联生产调度，3-离线周期检测</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MonitorType 监控类型 1.未配置, 2.关联生产调度, 3.离线周期检测
+                     * @return MonitorType <p>监控类型：1-未配置，2-关联生产调度，3-离线周期检测</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMonitorType() const;
 
                     /**
-                     * 设置监控类型 1.未配置, 2.关联生产调度, 3.离线周期检测
+                     * 设置<p>监控类型：1-未配置，2-关联生产调度，3-离线周期检测</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _monitorType 监控类型 1.未配置, 2.关联生产调度, 3.离线周期检测
+                     * @param _monitorType <p>监控类型：1-未配置，2-关联生产调度，3-离线周期检测</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -174,18 +174,18 @@ namespace TencentCloud
                     bool MonitorTypeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
+                     * 获取<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 更新时间
+                     * @return UpdateTime <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
+                     * 设置<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime 更新时间
+                     * @param _updateTime <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -199,18 +199,18 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取关联数据表名称
+                     * 获取<p>关联数据表名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TableName 关联数据表名称
+                     * @return TableName <p>关联数据表名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableName() const;
 
                     /**
-                     * 设置关联数据表名称
+                     * 设置<p>关联数据表名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tableName 关联数据表名称
+                     * @param _tableName <p>关联数据表名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -224,18 +224,18 @@ namespace TencentCloud
                     bool TableNameHasBeenSet() const;
 
                     /**
-                     * 获取关联数据表Id
+                     * 获取<p>关联数据表Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TableId 关联数据表Id
+                     * @return TableId <p>关联数据表Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableId() const;
 
                     /**
-                     * 设置关联数据表Id
+                     * 设置<p>关联数据表Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tableId 关联数据表Id
+                     * @param _tableId <p>关联数据表Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -249,18 +249,18 @@ namespace TencentCloud
                     bool TableIdHasBeenSet() const;
 
                     /**
-                     * 获取关联数据表负责人
+                     * 获取<p>关联数据表负责人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TableOwnerName 关联数据表负责人
+                     * @return TableOwnerName <p>关联数据表负责人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableOwnerName() const;
 
                     /**
-                     * 设置关联数据表负责人
+                     * 设置<p>关联数据表负责人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tableOwnerName 关联数据表负责人
+                     * @param _tableOwnerName <p>关联数据表负责人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -274,18 +274,18 @@ namespace TencentCloud
                     bool TableOwnerNameHasBeenSet() const;
 
                     /**
-                     * 获取执行策略
+                     * 获取<p>执行策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExecStrategy 执行策略
+                     * @return ExecStrategy <p>执行策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RuleGroupExecStrategy GetExecStrategy() const;
 
                     /**
-                     * 设置执行策略
+                     * 设置<p>执行策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _execStrategy 执行策略
+                     * @param _execStrategy <p>执行策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -299,18 +299,18 @@ namespace TencentCloud
                     bool ExecStrategyHasBeenSet() const;
 
                     /**
-                     * 获取执行策略
+                     * 获取<p>执行策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Subscription 执行策略
+                     * @return Subscription <p>执行策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RuleGroupSubscribe GetSubscription() const;
 
                     /**
-                     * 设置执行策略
+                     * 设置<p>执行策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subscription 执行策略
+                     * @param _subscription <p>执行策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -324,18 +324,18 @@ namespace TencentCloud
                     bool SubscriptionHasBeenSet() const;
 
                     /**
-                     * 获取数据库id
+                     * 获取<p>数据库id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DatabaseId 数据库id
+                     * @return DatabaseId <p>数据库id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatabaseId() const;
 
                     /**
-                     * 设置数据库id
+                     * 设置<p>数据库id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _databaseId 数据库id
+                     * @param _databaseId <p>数据库id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -349,18 +349,18 @@ namespace TencentCloud
                     bool DatabaseIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库名称
+                     * 获取<p>数据库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DatabaseName 数据库名称
+                     * @return DatabaseName <p>数据库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
-                     * 设置数据库名称
+                     * 设置<p>数据库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _databaseName 数据库名称
+                     * @param _databaseName <p>数据库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -374,18 +374,18 @@ namespace TencentCloud
                     bool DatabaseNameHasBeenSet() const;
 
                     /**
-                     * 获取模式名称
+                     * 获取<p>模式名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SchemaName 模式名称
+                     * @return SchemaName <p>模式名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSchemaName() const;
 
                     /**
-                     * 设置模式名称
+                     * 设置<p>模式名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _schemaName 模式名称
+                     * @param _schemaName <p>模式名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -399,18 +399,18 @@ namespace TencentCloud
                     bool SchemaNameHasBeenSet() const;
 
                     /**
-                     * 获取是否有权限
+                     * 获取<p>是否有权限</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Permission 是否有权限
+                     * @return Permission <p>是否有权限</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetPermission() const;
 
                     /**
-                     * 设置是否有权限
+                     * 设置<p>是否有权限</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _permission 是否有权限
+                     * @param _permission <p>是否有权限</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -424,18 +424,18 @@ namespace TencentCloud
                     bool PermissionHasBeenSet() const;
 
                     /**
-                     * 获取已经配置的规则数量
+                     * 获取<p>已经配置的规则数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleCount 已经配置的规则数量
+                     * @return RuleCount <p>已经配置的规则数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRuleCount() const;
 
                     /**
-                     * 设置已经配置的规则数量
+                     * 设置<p>已经配置的规则数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ruleCount 已经配置的规则数量
+                     * @param _ruleCount <p>已经配置的规则数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -449,18 +449,18 @@ namespace TencentCloud
                     bool RuleCountHasBeenSet() const;
 
                     /**
-                     * 获取监控状态
+                     * 获取<p>监控是否开启：0-关闭，1-开启</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MonitorStatus 监控状态
+                     * @return MonitorStatus <p>监控是否开启：0-关闭，1-开启</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetMonitorStatus() const;
 
                     /**
-                     * 设置监控状态
+                     * 设置<p>监控是否开启：0-关闭，1-开启</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _monitorStatus 监控状态
+                     * @param _monitorStatus <p>监控是否开启：0-关闭，1-开启</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -474,18 +474,18 @@ namespace TencentCloud
                     bool MonitorStatusHasBeenSet() const;
 
                     /**
-                     * 获取表负责人UserId
+                     * 获取<p>表负责人UserId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TableOwnerUserId 表负责人UserId
+                     * @return TableOwnerUserId <p>表负责人UserId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTableOwnerUserId() const;
 
                     /**
-                     * 设置表负责人UserId
+                     * 设置<p>表负责人UserId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tableOwnerUserId 表负责人UserId
+                     * @param _tableOwnerUserId <p>表负责人UserId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -499,18 +499,18 @@ namespace TencentCloud
                     bool TableOwnerUserIdHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
+                     * 获取<p>实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceId 实例ID
+                     * @return InstanceId <p>实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
+                     * 设置<p>实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceId 实例ID
+                     * @param _instanceId <p>实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -524,18 +524,18 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
+                     * 获取<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 创建时间
+                     * @return CreateTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
+                     * 设置<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 创建时间
+                     * @param _createTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -549,18 +549,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否已配置执行策略
+                     * 获取<p>是否已配置执行策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StrategyConfig 是否已配置执行策略
+                     * @return StrategyConfig <p>是否已配置执行策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetStrategyConfig() const;
 
                     /**
-                     * 设置是否已配置执行策略
+                     * 设置<p>是否已配置执行策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _strategyConfig 是否已配置执行策略
+                     * @param _strategyConfig <p>是否已配置执行策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -574,18 +574,18 @@ namespace TencentCloud
                     bool StrategyConfigHasBeenSet() const;
 
                     /**
-                     * 获取是否已配置执行策略
+                     * 获取<p>是否已配置执行策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubscribeConfig 是否已配置执行策略
+                     * @return SubscribeConfig <p>是否已配置执行策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSubscribeConfig() const;
 
                     /**
-                     * 设置是否已配置执行策略
+                     * 设置<p>是否已配置执行策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subscribeConfig 是否已配置执行策略
+                     * @param _subscribeConfig <p>是否已配置执行策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -599,18 +599,18 @@ namespace TencentCloud
                     bool SubscribeConfigHasBeenSet() const;
 
                     /**
-                     * 获取数据源环境：0或者未返回.未定义，1.生产 2.开发
+                     * 获取<p>数据源环境：0或者未返回.未定义，1.生产 2.开发</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DsEnvType 数据源环境：0或者未返回.未定义，1.生产 2.开发
+                     * @return DsEnvType <p>数据源环境：0或者未返回.未定义，1.生产 2.开发</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDsEnvType() const;
 
                     /**
-                     * 设置数据源环境：0或者未返回.未定义，1.生产 2.开发
+                     * 设置<p>数据源环境：0或者未返回.未定义，1.生产 2.开发</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dsEnvType 数据源环境：0或者未返回.未定义，1.生产 2.开发
+                     * @param _dsEnvType <p>数据源环境：0或者未返回.未定义，1.生产 2.开发</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -624,18 +624,18 @@ namespace TencentCloud
                     bool DsEnvTypeHasBeenSet() const;
 
                     /**
-                     * 获取EMR集群部署方式：CVM/TKE
+                     * 获取<p>EMR集群部署方式：CVM/TKE</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterDeployType EMR集群部署方式：CVM/TKE
+                     * @return ClusterDeployType <p>EMR集群部署方式：CVM/TKE</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterDeployType() const;
 
                     /**
-                     * 设置EMR集群部署方式：CVM/TKE
+                     * 设置<p>EMR集群部署方式：CVM/TKE</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clusterDeployType EMR集群部署方式：CVM/TKE
+                     * @param _clusterDeployType <p>EMR集群部署方式：CVM/TKE</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -649,18 +649,18 @@ namespace TencentCloud
                     bool ClusterDeployTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务名称
+                     * 获取<p>任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 任务名称
+                     * @return Name <p>任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置任务名称
+                     * 设置<p>任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 任务名称
+                     * @param _name <p>任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -674,18 +674,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取执行详情
+                     * 获取<p>执行详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExecDetail 执行详情
+                     * @return ExecDetail <p>执行详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecDetail() const;
 
                     /**
-                     * 设置执行详情
+                     * 设置<p>执行详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _execDetail 执行详情
+                     * @param _execDetail <p>执行详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -699,18 +699,18 @@ namespace TencentCloud
                     bool ExecDetailHasBeenSet() const;
 
                     /**
-                     * 获取事中关联任务数量
+                     * 获取<p>事中关联任务数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PipelineTaskCount 事中关联任务数量
+                     * @return PipelineTaskCount <p>事中关联任务数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPipelineTaskCount() const;
 
                     /**
-                     * 设置事中关联任务数量
+                     * 设置<p>事中关联任务数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _pipelineTaskCount 事中关联任务数量
+                     * @param _pipelineTaskCount <p>事中关联任务数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -724,18 +724,18 @@ namespace TencentCloud
                     bool PipelineTaskCountHasBeenSet() const;
 
                     /**
-                     * 获取有效规则数
+                     * 获取<p>有效规则数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EnableRuleCount 有效规则数
+                     * @return EnableRuleCount <p>有效规则数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEnableRuleCount() const;
 
                     /**
-                     * 设置有效规则数
+                     * 设置<p>有效规则数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _enableRuleCount 有效规则数
+                     * @param _enableRuleCount <p>有效规则数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -749,18 +749,18 @@ namespace TencentCloud
                     bool EnableRuleCountHasBeenSet() const;
 
                     /**
-                     * 获取任务描述
+                     * 获取<p>任务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 任务描述
+                     * @return Description <p>任务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置任务描述
+                     * 设置<p>任务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 任务描述
+                     * @param _description <p>任务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -774,18 +774,18 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取监控创建人
+                     * 获取<p>监控创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateUserName 监控创建人
+                     * @return CreateUserName <p>监控创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateUserName() const;
 
                     /**
-                     * 设置监控创建人
+                     * 设置<p>监控创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createUserName 监控创建人
+                     * @param _createUserName <p>监控创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -799,18 +799,18 @@ namespace TencentCloud
                     bool CreateUserNameHasBeenSet() const;
 
                     /**
-                     * 获取任务类型
+                     * 获取<p>任务类型（同MonitorType）：1-未配置，2-关联生产调度，3-离线周期检测</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupType 任务类型
+                     * @return GroupType <p>任务类型（同MonitorType）：1-未配置，2-关联生产调度，3-离线周期检测</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupType() const;
 
                     /**
-                     * 设置任务类型
+                     * 设置<p>任务类型（同MonitorType）：1-未配置，2-关联生产调度，3-离线周期检测</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _groupType 任务类型
+                     * @param _groupType <p>任务类型（同MonitorType）：1-未配置，2-关联生产调度，3-离线周期检测</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -824,18 +824,18 @@ namespace TencentCloud
                     bool GroupTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务id
+                     * 获取<p>任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AspectTaskId 任务id
+                     * @return AspectTaskId <p>任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAspectTaskId() const;
 
                     /**
-                     * 设置任务id
+                     * 设置<p>任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _aspectTaskId 任务id
+                     * @param _aspectTaskId <p>任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -849,18 +849,18 @@ namespace TencentCloud
                     bool AspectTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取catalog名称
+                     * 获取<p>catalog名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CatalogName catalog名称
+                     * @return CatalogName <p>catalog名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCatalogName() const;
 
                     /**
-                     * 设置catalog名称
+                     * 设置<p>catalog名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _catalogName catalog名称
+                     * @param _catalogName <p>catalog名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -873,238 +873,302 @@ namespace TencentCloud
                      */
                     bool CatalogNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>负责人ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InChargeId <p>负责人ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInChargeId() const;
+
+                    /**
+                     * 设置<p>负责人ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _inChargeId <p>负责人ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInChargeId(const std::string& _inChargeId);
+
+                    /**
+                     * 判断参数 InChargeId 是否已赋值
+                     * @return InChargeId 是否已赋值
+                     * 
+                     */
+                    bool InChargeIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>负责人名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InChargeName <p>负责人名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInChargeName() const;
+
+                    /**
+                     * 设置<p>负责人名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _inChargeName <p>负责人名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInChargeName(const std::string& _inChargeName);
+
+                    /**
+                     * 判断参数 InChargeName 是否已赋值
+                     * @return InChargeName 是否已赋值
+                     * 
+                     */
+                    bool InChargeNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 规则组Id
+                     * <p>规则组Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ruleGroupId;
                     bool m_ruleGroupIdHasBeenSet;
 
                     /**
-                     * 数据源Id
+                     * <p>数据源Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_datasourceId;
                     bool m_datasourceIdHasBeenSet;
 
                     /**
-                     * 数据源名称
+                     * <p>数据源名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_datasourceName;
                     bool m_datasourceNameHasBeenSet;
 
                     /**
-                     * 数据源类型
+                     * <p>数据源类型：2-HIVE(EMR-Hive)，3-DLC，5-TCHouse-P，6-ICEBERG(EMR-Iceberg)，7-DORIS，8-TCHouse-D，9-EMR-StarRocks，11-TCHouse-X</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_datasourceType;
                     bool m_datasourceTypeHasBeenSet;
 
                     /**
-                     * 监控类型 1.未配置, 2.关联生产调度, 3.离线周期检测
+                     * <p>监控类型：1-未配置，2-关联生产调度，3-离线周期检测</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_monitorType;
                     bool m_monitorTypeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 关联数据表名称
+                     * <p>关联数据表名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;
 
                     /**
-                     * 关联数据表Id
+                     * <p>关联数据表Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableId;
                     bool m_tableIdHasBeenSet;
 
                     /**
-                     * 关联数据表负责人
+                     * <p>关联数据表负责人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableOwnerName;
                     bool m_tableOwnerNameHasBeenSet;
 
                     /**
-                     * 执行策略
+                     * <p>执行策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RuleGroupExecStrategy m_execStrategy;
                     bool m_execStrategyHasBeenSet;
 
                     /**
-                     * 执行策略
+                     * <p>执行策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RuleGroupSubscribe m_subscription;
                     bool m_subscriptionHasBeenSet;
 
                     /**
-                     * 数据库id
+                     * <p>数据库id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_databaseId;
                     bool m_databaseIdHasBeenSet;
 
                     /**
-                     * 数据库名称
+                     * <p>数据库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_databaseName;
                     bool m_databaseNameHasBeenSet;
 
                     /**
-                     * 模式名称
+                     * <p>模式名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_schemaName;
                     bool m_schemaNameHasBeenSet;
 
                     /**
-                     * 是否有权限
+                     * <p>是否有权限</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_permission;
                     bool m_permissionHasBeenSet;
 
                     /**
-                     * 已经配置的规则数量
+                     * <p>已经配置的规则数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ruleCount;
                     bool m_ruleCountHasBeenSet;
 
                     /**
-                     * 监控状态
+                     * <p>监控是否开启：0-关闭，1-开启</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_monitorStatus;
                     bool m_monitorStatusHasBeenSet;
 
                     /**
-                     * 表负责人UserId
+                     * <p>表负责人UserId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_tableOwnerUserId;
                     bool m_tableOwnerUserIdHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 是否已配置执行策略
+                     * <p>是否已配置执行策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_strategyConfig;
                     bool m_strategyConfigHasBeenSet;
 
                     /**
-                     * 是否已配置执行策略
+                     * <p>是否已配置执行策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_subscribeConfig;
                     bool m_subscribeConfigHasBeenSet;
 
                     /**
-                     * 数据源环境：0或者未返回.未定义，1.生产 2.开发
+                     * <p>数据源环境：0或者未返回.未定义，1.生产 2.开发</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dsEnvType;
                     bool m_dsEnvTypeHasBeenSet;
 
                     /**
-                     * EMR集群部署方式：CVM/TKE
+                     * <p>EMR集群部署方式：CVM/TKE</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterDeployType;
                     bool m_clusterDeployTypeHasBeenSet;
 
                     /**
-                     * 任务名称
+                     * <p>任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 执行详情
+                     * <p>执行详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_execDetail;
                     bool m_execDetailHasBeenSet;
 
                     /**
-                     * 事中关联任务数量
+                     * <p>事中关联任务数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pipelineTaskCount;
                     bool m_pipelineTaskCountHasBeenSet;
 
                     /**
-                     * 有效规则数
+                     * <p>有效规则数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_enableRuleCount;
                     bool m_enableRuleCountHasBeenSet;
 
                     /**
-                     * 任务描述
+                     * <p>任务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 监控创建人
+                     * <p>监控创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createUserName;
                     bool m_createUserNameHasBeenSet;
 
                     /**
-                     * 任务类型
+                     * <p>任务类型（同MonitorType）：1-未配置，2-关联生产调度，3-离线周期检测</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupType;
                     bool m_groupTypeHasBeenSet;
 
                     /**
-                     * 任务id
+                     * <p>任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_aspectTaskId;
                     bool m_aspectTaskIdHasBeenSet;
 
                     /**
-                     * catalog名称
+                     * <p>catalog名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_catalogName;
                     bool m_catalogNameHasBeenSet;
+
+                    /**
+                     * <p>负责人ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_inChargeId;
+                    bool m_inChargeIdHasBeenSet;
+
+                    /**
+                     * <p>负责人名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_inChargeName;
+                    bool m_inChargeNameHasBeenSet;
 
                 };
             }

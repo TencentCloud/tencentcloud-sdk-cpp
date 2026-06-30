@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标类型
-                     * @return Type 目标类型
+                     * 获取<p>目标类型</p>
+                     * @return Type <p>目标类型</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置目标类型
-                     * @param _type 目标类型
+                     * 设置<p>目标类型</p>
+                     * @param _type <p>目标类型</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取事件集ID
-                     * @return EventBusId 事件集ID
+                     * 获取<p>事件集ID</p>
+                     * @return EventBusId <p>事件集ID</p>
                      * 
                      */
                     std::string GetEventBusId() const;
 
                     /**
-                     * 设置事件集ID
-                     * @param _eventBusId 事件集ID
+                     * 设置<p>事件集ID</p>
+                     * @param _eventBusId <p>事件集ID</p>
                      * 
                      */
                     void SetEventBusId(const std::string& _eventBusId);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool EventBusIdHasBeenSet() const;
 
                     /**
-                     * 获取目标ID
-                     * @return TargetId 目标ID
+                     * 获取<p>目标ID</p>
+                     * @return TargetId <p>目标ID</p>
                      * 
                      */
                     std::string GetTargetId() const;
 
                     /**
-                     * 设置目标ID
-                     * @param _targetId 目标ID
+                     * 设置<p>目标ID</p>
+                     * @param _targetId <p>目标ID</p>
                      * 
                      */
                     void SetTargetId(const std::string& _targetId);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool TargetIdHasBeenSet() const;
 
                     /**
-                     * 获取目标描述
-                     * @return TargetDescription 目标描述
+                     * 获取<p>目标描述</p>
+                     * @return TargetDescription <p>目标描述</p>
                      * 
                      */
                     TargetDescription GetTargetDescription() const;
 
                     /**
-                     * 设置目标描述
-                     * @param _targetDescription 目标描述
+                     * 设置<p>目标描述</p>
+                     * @param _targetDescription <p>目标描述</p>
                      * 
                      */
                     void SetTargetDescription(const TargetDescription& _targetDescription);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool TargetDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取事件规则ID
-                     * @return RuleId 事件规则ID
+                     * 获取<p>事件规则ID</p>
+                     * @return RuleId <p>事件规则ID</p>
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置事件规则ID
-                     * @param _ruleId 事件规则ID
+                     * 设置<p>事件规则ID</p>
+                     * @param _ruleId <p>事件规则ID</p>
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -153,18 +153,18 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取开启批量投递使能
+                     * 获取<p>开启批量投递使能</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EnableBatchDelivery 开启批量投递使能
+                     * @return EnableBatchDelivery <p>开启批量投递使能</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableBatchDelivery() const;
 
                     /**
-                     * 设置开启批量投递使能
+                     * 设置<p>开启批量投递使能</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _enableBatchDelivery 开启批量投递使能
+                     * @param _enableBatchDelivery <p>开启批量投递使能</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -178,18 +178,18 @@ namespace TencentCloud
                     bool EnableBatchDeliveryHasBeenSet() const;
 
                     /**
-                     * 获取批量投递最长等待时间
+                     * 获取<p>批量投递最长等待时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BatchTimeout 批量投递最长等待时间
+                     * @return BatchTimeout <p>批量投递最长等待时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBatchTimeout() const;
 
                     /**
-                     * 设置批量投递最长等待时间
+                     * 设置<p>批量投递最长等待时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _batchTimeout 批量投递最长等待时间
+                     * @param _batchTimeout <p>批量投递最长等待时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -203,18 +203,18 @@ namespace TencentCloud
                     bool BatchTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取批量投递最大事件条数
+                     * 获取<p>批量投递最大事件条数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BatchEventCount 批量投递最大事件条数
+                     * @return BatchEventCount <p>批量投递最大事件条数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBatchEventCount() const;
 
                     /**
-                     * 设置批量投递最大事件条数
+                     * 设置<p>批量投递最大事件条数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _batchEventCount 批量投递最大事件条数
+                     * @param _batchEventCount <p>批量投递最大事件条数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -230,51 +230,51 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目标类型
+                     * <p>目标类型</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 事件集ID
+                     * <p>事件集ID</p>
                      */
                     std::string m_eventBusId;
                     bool m_eventBusIdHasBeenSet;
 
                     /**
-                     * 目标ID
+                     * <p>目标ID</p>
                      */
                     std::string m_targetId;
                     bool m_targetIdHasBeenSet;
 
                     /**
-                     * 目标描述
+                     * <p>目标描述</p>
                      */
                     TargetDescription m_targetDescription;
                     bool m_targetDescriptionHasBeenSet;
 
                     /**
-                     * 事件规则ID
+                     * <p>事件规则ID</p>
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * 开启批量投递使能
+                     * <p>开启批量投递使能</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableBatchDelivery;
                     bool m_enableBatchDeliveryHasBeenSet;
 
                     /**
-                     * 批量投递最长等待时间
+                     * <p>批量投递最长等待时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_batchTimeout;
                     bool m_batchTimeoutHasBeenSet;
 
                     /**
-                     * 批量投递最大事件条数
+                     * <p>批量投递最大事件条数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_batchEventCount;

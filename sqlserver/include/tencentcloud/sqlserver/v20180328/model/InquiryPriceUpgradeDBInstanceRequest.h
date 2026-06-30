@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，形如mssql-njj2mtpl
-                     * @return InstanceId 实例ID，形如mssql-njj2mtpl
+                     * 获取<p>实例ID，形如mssql-njj2mtpl</p>
+                     * @return InstanceId <p>实例ID，形如mssql-njj2mtpl</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID，形如mssql-njj2mtpl
-                     * @param _instanceId 实例ID，形如mssql-njj2mtpl
+                     * 设置<p>实例ID，形如mssql-njj2mtpl</p>
+                     * @param _instanceId <p>实例ID，形如mssql-njj2mtpl</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例升级后的内存大小，单位GB，其值不能比当前实例内存小
-                     * @return Memory 实例升级后的内存大小，单位GB，其值不能比当前实例内存小
+                     * 获取<p>实例升级后的内存大小，单位GB，其值不能比当前实例内存小</p>
+                     * @return Memory <p>实例升级后的内存大小，单位GB，其值不能比当前实例内存小</p>
                      * 
                      */
                     int64_t GetMemory() const;
 
                     /**
-                     * 设置实例升级后的内存大小，单位GB，其值不能比当前实例内存小
-                     * @param _memory 实例升级后的内存大小，单位GB，其值不能比当前实例内存小
+                     * 设置<p>实例升级后的内存大小，单位GB，其值不能比当前实例内存小</p>
+                     * @param _memory <p>实例升级后的内存大小，单位GB，其值不能比当前实例内存小</p>
                      * 
                      */
                     void SetMemory(const int64_t& _memory);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取实例升级后的磁盘大小，单位GB，其值不能比当前实例磁盘小
-                     * @return Storage 实例升级后的磁盘大小，单位GB，其值不能比当前实例磁盘小
+                     * 获取<p>实例升级后的磁盘大小，单位GB，其值不能比当前实例磁盘小</p>
+                     * @return Storage <p>实例升级后的磁盘大小，单位GB，其值不能比当前实例磁盘小</p>
                      * 
                      */
                     int64_t GetStorage() const;
 
                     /**
-                     * 设置实例升级后的磁盘大小，单位GB，其值不能比当前实例磁盘小
-                     * @param _storage 实例升级后的磁盘大小，单位GB，其值不能比当前实例磁盘小
+                     * 设置<p>实例升级后的磁盘大小，单位GB，其值不能比当前实例磁盘小</p>
+                     * @param _storage <p>实例升级后的磁盘大小，单位GB，其值不能比当前实例磁盘小</p>
                      * 
                      */
                     void SetStorage(const int64_t& _storage);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool StorageHasBeenSet() const;
 
                     /**
-                     * 获取实例升级后的CPU核心数，其值不能比当前实例CPU小
-                     * @return Cpu 实例升级后的CPU核心数，其值不能比当前实例CPU小
+                     * 获取<p>实例升级后的CPU核心数，其值不能比当前实例CPU小</p>
+                     * @return Cpu <p>实例升级后的CPU核心数，其值不能比当前实例CPU小</p>
                      * 
                      */
                     int64_t GetCpu() const;
 
                     /**
-                     * 设置实例升级后的CPU核心数，其值不能比当前实例CPU小
-                     * @param _cpu 实例升级后的CPU核心数，其值不能比当前实例CPU小
+                     * 设置<p>实例升级后的CPU核心数，其值不能比当前实例CPU小</p>
+                     * @param _cpu <p>实例升级后的CPU核心数，其值不能比当前实例CPU小</p>
                      * 
                      */
                     void SetCpu(const int64_t& _cpu);
@@ -126,31 +126,58 @@ namespace TencentCloud
                      */
                     bool CpuHasBeenSet() const;
 
+                    /**
+                     * 获取<p>额外磁盘 IO 吞吐量</p><p>取值范围：[0, 650]</p><p>单位：MB/s</p>
+                     * @return ThroughputPerformance <p>额外磁盘 IO 吞吐量</p><p>取值范围：[0, 650]</p><p>单位：MB/s</p>
+                     * 
+                     */
+                    uint64_t GetThroughputPerformance() const;
+
+                    /**
+                     * 设置<p>额外磁盘 IO 吞吐量</p><p>取值范围：[0, 650]</p><p>单位：MB/s</p>
+                     * @param _throughputPerformance <p>额外磁盘 IO 吞吐量</p><p>取值范围：[0, 650]</p><p>单位：MB/s</p>
+                     * 
+                     */
+                    void SetThroughputPerformance(const uint64_t& _throughputPerformance);
+
+                    /**
+                     * 判断参数 ThroughputPerformance 是否已赋值
+                     * @return ThroughputPerformance 是否已赋值
+                     * 
+                     */
+                    bool ThroughputPerformanceHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID，形如mssql-njj2mtpl
+                     * <p>实例ID，形如mssql-njj2mtpl</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例升级后的内存大小，单位GB，其值不能比当前实例内存小
+                     * <p>实例升级后的内存大小，单位GB，其值不能比当前实例内存小</p>
                      */
                     int64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 实例升级后的磁盘大小，单位GB，其值不能比当前实例磁盘小
+                     * <p>实例升级后的磁盘大小，单位GB，其值不能比当前实例磁盘小</p>
                      */
                     int64_t m_storage;
                     bool m_storageHasBeenSet;
 
                     /**
-                     * 实例升级后的CPU核心数，其值不能比当前实例CPU小
+                     * <p>实例升级后的CPU核心数，其值不能比当前实例CPU小</p>
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
+
+                    /**
+                     * <p>额外磁盘 IO 吞吐量</p><p>取值范围：[0, 650]</p><p>单位：MB/s</p>
+                     */
+                    uint64_t m_throughputPerformance;
+                    bool m_throughputPerformanceHasBeenSet;
 
                 };
             }

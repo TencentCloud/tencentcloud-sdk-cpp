@@ -26,7 +26,13 @@ TrafficQosPolicySet::TrafficQosPolicySet() :
     m_qosPolicyDescriptionHasBeenSet(false),
     m_qosPolicyNameHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
-    m_qosPolicyIdHasBeenSet(false)
+    m_qosPolicyIdHasBeenSet(false),
+    m_qosLevelHasBeenSet(false),
+    m_serviceLevelHasBeenSet(false),
+    m_regionFlowControlIdHasBeenSet(false),
+    m_localRegionHasBeenSet(false),
+    m_remoteRegionHasBeenSet(false),
+    m_trafficMatchPolicyIdHasBeenSet(false)
 {
 }
 
@@ -95,6 +101,66 @@ CoreInternalOutcome TrafficQosPolicySet::Deserialize(const rapidjson::Value &val
         m_qosPolicyIdHasBeenSet = true;
     }
 
+    if (value.HasMember("QosLevel") && !value["QosLevel"].IsNull())
+    {
+        if (!value["QosLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrafficQosPolicySet.QosLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_qosLevel = string(value["QosLevel"].GetString());
+        m_qosLevelHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServiceLevel") && !value["ServiceLevel"].IsNull())
+    {
+        if (!value["ServiceLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrafficQosPolicySet.ServiceLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceLevel = string(value["ServiceLevel"].GetString());
+        m_serviceLevelHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegionFlowControlId") && !value["RegionFlowControlId"].IsNull())
+    {
+        if (!value["RegionFlowControlId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrafficQosPolicySet.RegionFlowControlId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionFlowControlId = string(value["RegionFlowControlId"].GetString());
+        m_regionFlowControlIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("LocalRegion") && !value["LocalRegion"].IsNull())
+    {
+        if (!value["LocalRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrafficQosPolicySet.LocalRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_localRegion = string(value["LocalRegion"].GetString());
+        m_localRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("RemoteRegion") && !value["RemoteRegion"].IsNull())
+    {
+        if (!value["RemoteRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrafficQosPolicySet.RemoteRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remoteRegion = string(value["RemoteRegion"].GetString());
+        m_remoteRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("TrafficMatchPolicyId") && !value["TrafficMatchPolicyId"].IsNull())
+    {
+        if (!value["TrafficMatchPolicyId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrafficQosPolicySet.TrafficMatchPolicyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_trafficMatchPolicyId = string(value["TrafficMatchPolicyId"].GetString());
+        m_trafficMatchPolicyIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +214,54 @@ void TrafficQosPolicySet::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "QosPolicyId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_qosPolicyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_qosLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QosLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_qosLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionFlowControlIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionFlowControlId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionFlowControlId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_localRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LocalRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_localRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remoteRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoteRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remoteRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_trafficMatchPolicyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrafficMatchPolicyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_trafficMatchPolicyId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +361,101 @@ void TrafficQosPolicySet::SetQosPolicyId(const string& _qosPolicyId)
 bool TrafficQosPolicySet::QosPolicyIdHasBeenSet() const
 {
     return m_qosPolicyIdHasBeenSet;
+}
+
+string TrafficQosPolicySet::GetQosLevel() const
+{
+    return m_qosLevel;
+}
+
+void TrafficQosPolicySet::SetQosLevel(const string& _qosLevel)
+{
+    m_qosLevel = _qosLevel;
+    m_qosLevelHasBeenSet = true;
+}
+
+bool TrafficQosPolicySet::QosLevelHasBeenSet() const
+{
+    return m_qosLevelHasBeenSet;
+}
+
+string TrafficQosPolicySet::GetServiceLevel() const
+{
+    return m_serviceLevel;
+}
+
+void TrafficQosPolicySet::SetServiceLevel(const string& _serviceLevel)
+{
+    m_serviceLevel = _serviceLevel;
+    m_serviceLevelHasBeenSet = true;
+}
+
+bool TrafficQosPolicySet::ServiceLevelHasBeenSet() const
+{
+    return m_serviceLevelHasBeenSet;
+}
+
+string TrafficQosPolicySet::GetRegionFlowControlId() const
+{
+    return m_regionFlowControlId;
+}
+
+void TrafficQosPolicySet::SetRegionFlowControlId(const string& _regionFlowControlId)
+{
+    m_regionFlowControlId = _regionFlowControlId;
+    m_regionFlowControlIdHasBeenSet = true;
+}
+
+bool TrafficQosPolicySet::RegionFlowControlIdHasBeenSet() const
+{
+    return m_regionFlowControlIdHasBeenSet;
+}
+
+string TrafficQosPolicySet::GetLocalRegion() const
+{
+    return m_localRegion;
+}
+
+void TrafficQosPolicySet::SetLocalRegion(const string& _localRegion)
+{
+    m_localRegion = _localRegion;
+    m_localRegionHasBeenSet = true;
+}
+
+bool TrafficQosPolicySet::LocalRegionHasBeenSet() const
+{
+    return m_localRegionHasBeenSet;
+}
+
+string TrafficQosPolicySet::GetRemoteRegion() const
+{
+    return m_remoteRegion;
+}
+
+void TrafficQosPolicySet::SetRemoteRegion(const string& _remoteRegion)
+{
+    m_remoteRegion = _remoteRegion;
+    m_remoteRegionHasBeenSet = true;
+}
+
+bool TrafficQosPolicySet::RemoteRegionHasBeenSet() const
+{
+    return m_remoteRegionHasBeenSet;
+}
+
+string TrafficQosPolicySet::GetTrafficMatchPolicyId() const
+{
+    return m_trafficMatchPolicyId;
+}
+
+void TrafficQosPolicySet::SetTrafficMatchPolicyId(const string& _trafficMatchPolicyId)
+{
+    m_trafficMatchPolicyId = _trafficMatchPolicyId;
+    m_trafficMatchPolicyIdHasBeenSet = true;
+}
+
+bool TrafficQosPolicySet::TrafficMatchPolicyIdHasBeenSet() const
+{
+    return m_trafficMatchPolicyIdHasBeenSet;
 }
 

@@ -27,7 +27,8 @@ UserInfo::UserInfo() :
     m_phoneNumberHasBeenSet(false),
     m_areaCodeHasBeenSet(false),
     m_appUserIdHasBeenSet(false),
-    m_appUserNameHasBeenSet(false)
+    m_appUserNameHasBeenSet(false),
+    m_larkOpenIdHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
         m_appUserNameHasBeenSet = true;
     }
 
+    if (value.HasMember("LarkOpenId") && !value["LarkOpenId"].IsNull())
+    {
+        if (!value["LarkOpenId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserInfo.LarkOpenId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_larkOpenId = string(value["LarkOpenId"].GetString());
+        m_larkOpenIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void UserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "AppUserName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_appUserName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_larkOpenIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LarkOpenId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_larkOpenId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void UserInfo::SetAppUserName(const string& _appUserName)
 bool UserInfo::AppUserNameHasBeenSet() const
 {
     return m_appUserNameHasBeenSet;
+}
+
+string UserInfo::GetLarkOpenId() const
+{
+    return m_larkOpenId;
+}
+
+void UserInfo::SetLarkOpenId(const string& _larkOpenId)
+{
+    m_larkOpenId = _larkOpenId;
+    m_larkOpenIdHasBeenSet = true;
+}
+
+bool UserInfo::LarkOpenIdHasBeenSet() const
+{
+    return m_larkOpenIdHasBeenSet;
 }
 

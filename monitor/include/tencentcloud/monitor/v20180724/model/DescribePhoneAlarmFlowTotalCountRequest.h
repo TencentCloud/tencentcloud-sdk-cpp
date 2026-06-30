@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取默认monitor
-                     * @return Module 默认monitor
+                     * 获取<p>默认monitor</p>
+                     * @return Module <p>默认monitor</p>
                      * 
                      */
                     std::string GetModule() const;
 
                     /**
-                     * 设置默认monitor
-                     * @param _module 默认monitor
+                     * 设置<p>默认monitor</p>
+                     * @param _module <p>默认monitor</p>
                      * 
                      */
                     void SetModule(const std::string& _module);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取unix时间戳，单位：s
-                     * @return QueryTime unix时间戳，单位：s
+                     * 获取<p>unix时间戳，单位：s</p>
+                     * @return QueryTime <p>unix时间戳，单位：s</p>
                      * 
                      */
                     int64_t GetQueryTime() const;
 
                     /**
-                     * 设置unix时间戳，单位：s
-                     * @param _queryTime unix时间戳，单位：s
+                     * 设置<p>unix时间戳，单位：s</p>
+                     * @param _queryTime <p>unix时间戳，单位：s</p>
                      * 
                      */
                     void SetQueryTime(const int64_t& _queryTime);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 默认monitor
+                     * <p>默认monitor</p>
                      */
                     std::string m_module;
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * unix时间戳，单位：s
+                     * <p>unix时间戳，单位：s</p>
                      */
                     int64_t m_queryTime;
                     bool m_queryTimeHasBeenSet;

@@ -1040,6 +1040,56 @@ OmicsClient::GetRunCallsOutcomeCallable OmicsClient::GetRunCallsCallable(const G
     return prom->get_future();
 }
 
+OmicsClient::GetRunJobLogOutcome OmicsClient::GetRunJobLog(const GetRunJobLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetRunJobLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetRunJobLogResponse rsp = GetRunJobLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetRunJobLogOutcome(rsp);
+        else
+            return GetRunJobLogOutcome(o.GetError());
+    }
+    else
+    {
+        return GetRunJobLogOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::GetRunJobLogAsync(const GetRunJobLogRequest& request, const GetRunJobLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetRunJobLogRequest&;
+    using Resp = GetRunJobLogResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetRunJobLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OmicsClient::GetRunJobLogOutcomeCallable OmicsClient::GetRunJobLogCallable(const GetRunJobLogRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetRunJobLogOutcome>>();
+    GetRunJobLogAsync(
+    request,
+    [prom](
+        const OmicsClient*,
+        const GetRunJobLogRequest&,
+        GetRunJobLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OmicsClient::GetRunMetadataFileOutcome OmicsClient::GetRunMetadataFile(const GetRunMetadataFileRequest &request)
 {
     auto outcome = MakeRequest(request, "GetRunMetadataFile");

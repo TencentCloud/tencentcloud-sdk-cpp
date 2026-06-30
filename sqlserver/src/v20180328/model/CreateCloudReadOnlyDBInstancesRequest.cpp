@@ -47,7 +47,8 @@ CreateCloudReadOnlyDBInstancesRequest::CreateCloudReadOnlyDBInstancesRequest() :
     m_resourceTagsHasBeenSet(false),
     m_collationHasBeenSet(false),
     m_timeZoneHasBeenSet(false),
-    m_diskEncryptFlagHasBeenSet(false)
+    m_diskEncryptFlagHasBeenSet(false),
+    m_throughputPerformanceHasBeenSet(false)
 {
 }
 
@@ -273,6 +274,14 @@ string CreateCloudReadOnlyDBInstancesRequest::ToJsonString() const
         string key = "DiskEncryptFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_diskEncryptFlag, allocator);
+    }
+
+    if (m_throughputPerformanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ThroughputPerformance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_throughputPerformance, allocator);
     }
 
 
@@ -681,6 +690,22 @@ void CreateCloudReadOnlyDBInstancesRequest::SetDiskEncryptFlag(const int64_t& _d
 bool CreateCloudReadOnlyDBInstancesRequest::DiskEncryptFlagHasBeenSet() const
 {
     return m_diskEncryptFlagHasBeenSet;
+}
+
+uint64_t CreateCloudReadOnlyDBInstancesRequest::GetThroughputPerformance() const
+{
+    return m_throughputPerformance;
+}
+
+void CreateCloudReadOnlyDBInstancesRequest::SetThroughputPerformance(const uint64_t& _throughputPerformance)
+{
+    m_throughputPerformance = _throughputPerformance;
+    m_throughputPerformanceHasBeenSet = true;
+}
+
+bool CreateCloudReadOnlyDBInstancesRequest::ThroughputPerformanceHasBeenSet() const
+{
+    return m_throughputPerformanceHasBeenSet;
 }
 
 

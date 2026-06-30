@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取事件集名称，只能包含字母、中文、数字、下划线、连字符，以字母/中文开头，以数字、字母或中文结尾，2~60个字符
-                     * @return EventBusName 事件集名称，只能包含字母、中文、数字、下划线、连字符，以字母/中文开头，以数字、字母或中文结尾，2~60个字符
+                     * 获取<p>事件集名称，只能包含字母、中文、数字、下划线、连字符，以字母/中文开头，以数字、字母或中文结尾，2~60个字符</p>
+                     * @return EventBusName <p>事件集名称，只能包含字母、中文、数字、下划线、连字符，以字母/中文开头，以数字、字母或中文结尾，2~60个字符</p>
                      * 
                      */
                     std::string GetEventBusName() const;
 
                     /**
-                     * 设置事件集名称，只能包含字母、中文、数字、下划线、连字符，以字母/中文开头，以数字、字母或中文结尾，2~60个字符
-                     * @param _eventBusName 事件集名称，只能包含字母、中文、数字、下划线、连字符，以字母/中文开头，以数字、字母或中文结尾，2~60个字符
+                     * 设置<p>事件集名称，只能包含字母、中文、数字、下划线、连字符，以字母/中文开头，以数字、字母或中文结尾，2~60个字符</p>
+                     * @param _eventBusName <p>事件集名称，只能包含字母、中文、数字、下划线、连字符，以字母/中文开头，以数字、字母或中文结尾，2~60个字符</p>
                      * 
                      */
                     void SetEventBusName(const std::string& _eventBusName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool EventBusNameHasBeenSet() const;
 
                     /**
-                     * 获取事件集描述，只能包含数字、中英文及常用标点符号，不超过200个字符
-                     * @return Description 事件集描述，只能包含数字、中英文及常用标点符号，不超过200个字符
+                     * 获取<p>事件集描述，只能包含数字、中英文及常用标点符号，不超过200个字符</p>
+                     * @return Description <p>事件集描述，只能包含数字、中英文及常用标点符号，不超过200个字符</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置事件集描述，只能包含数字、中英文及常用标点符号，不超过200个字符
-                     * @param _description 事件集描述，只能包含数字、中英文及常用标点符号，不超过200个字符
+                     * 设置<p>事件集描述，只能包含数字、中英文及常用标点符号，不超过200个字符</p>
+                     * @param _description <p>事件集描述，只能包含数字、中英文及常用标点符号，不超过200个字符</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取EB存储时长
-                     * @return SaveDays EB存储时长
+                     * 获取<p>事件存储时长</p><p>单位：day</p>
+                     * @return SaveDays <p>事件存储时长</p><p>单位：day</p>
                      * 
                      */
                     int64_t GetSaveDays() const;
 
                     /**
-                     * 设置EB存储时长
-                     * @param _saveDays EB存储时长
+                     * 设置<p>事件存储时长</p><p>单位：day</p>
+                     * @param _saveDays <p>事件存储时长</p><p>单位：day</p>
                      * 
                      */
                     void SetSaveDays(const int64_t& _saveDays);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool SaveDaysHasBeenSet() const;
 
                     /**
-                     * 获取EB是否开启存储
-                     * @return EnableStore EB是否开启存储
+                     * 获取<p>是否开启事件存储</p>
+                     * @return EnableStore <p>是否开启事件存储</p>
                      * 
                      */
                     bool GetEnableStore() const;
 
                     /**
-                     * 设置EB是否开启存储
-                     * @param _enableStore EB是否开启存储
+                     * 设置<p>是否开启事件存储</p>
+                     * @param _enableStore <p>是否开启事件存储</p>
                      * 
                      */
                     void SetEnableStore(const bool& _enableStore);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 事件集名称，只能包含字母、中文、数字、下划线、连字符，以字母/中文开头，以数字、字母或中文结尾，2~60个字符
+                     * <p>事件集名称，只能包含字母、中文、数字、下划线、连字符，以字母/中文开头，以数字、字母或中文结尾，2~60个字符</p>
                      */
                     std::string m_eventBusName;
                     bool m_eventBusNameHasBeenSet;
 
                     /**
-                     * 事件集描述，只能包含数字、中英文及常用标点符号，不超过200个字符
+                     * <p>事件集描述，只能包含数字、中英文及常用标点符号，不超过200个字符</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * EB存储时长
+                     * <p>事件存储时长</p><p>单位：day</p>
                      */
                     int64_t m_saveDays;
                     bool m_saveDaysHasBeenSet;
 
                     /**
-                     * EB是否开启存储
+                     * <p>是否开启事件存储</p>
                      */
                     bool m_enableStore;
                     bool m_enableStoreHasBeenSet;

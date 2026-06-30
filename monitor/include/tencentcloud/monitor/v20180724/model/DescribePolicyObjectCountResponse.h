@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否为多地域
+                     * 获取<p>是否为多地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsMultiRegion 是否为多地域
+                     * @return IsMultiRegion <p>是否为多地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool IsMultiRegionHasBeenSet() const;
 
                     /**
-                     * 获取地域统计列表
+                     * 获取<p>地域统计列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RegionList 地域统计列表
+                     * @return RegionList <p>地域统计列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -79,14 +79,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否为多地域
+                     * <p>是否为多地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isMultiRegion;
                     bool m_isMultiRegionHasBeenSet;
 
                     /**
-                     * 地域统计列表
+                     * <p>地域统计列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RegionPolicyObjectCount> m_regionList;

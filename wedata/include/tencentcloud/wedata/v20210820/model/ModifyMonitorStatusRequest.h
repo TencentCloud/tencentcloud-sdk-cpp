@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RuleGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取监控开关状态
-                     * @return MonitorStatus 监控开关状态
+                     * 获取监控是否开启：0-关闭，1-开启
+                     * @return MonitorStatus 监控是否开启：0-关闭，1-开启
                      * 
                      */
                     bool GetMonitorStatus() const;
 
                     /**
-                     * 设置监控开关状态
-                     * @param _monitorStatus 监控开关状态
+                     * 设置监控是否开启：0-关闭，1-开启
+                     * @param _monitorStatus 监控是否开启：0-关闭，1-开启
                      * 
                      */
                     void SetMonitorStatus(const bool& _monitorStatus);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_ruleGroupIdHasBeenSet;
 
                     /**
-                     * 监控开关状态
+                     * 监控是否开启：0-关闭，1-开启
                      */
                     bool m_monitorStatus;
                     bool m_monitorStatusHasBeenSet;

@@ -71,6 +71,8 @@
 #include <tencentcloud/dts/v20211206/model/DescribeConsumerGroupsResponse.h>
 #include <tencentcloud/dts/v20211206/model/DescribeMigrateDBInstancesRequest.h>
 #include <tencentcloud/dts/v20211206/model/DescribeMigrateDBInstancesResponse.h>
+#include <tencentcloud/dts/v20211206/model/DescribeMigrateGtidCompareReportRequest.h>
+#include <tencentcloud/dts/v20211206/model/DescribeMigrateGtidCompareReportResponse.h>
 #include <tencentcloud/dts/v20211206/model/DescribeMigrationCheckJobRequest.h>
 #include <tencentcloud/dts/v20211206/model/DescribeMigrationCheckJobResponse.h>
 #include <tencentcloud/dts/v20211206/model/DescribeMigrationDetailRequest.h>
@@ -95,6 +97,8 @@
 #include <tencentcloud/dts/v20211206/model/DescribeSyncCompareReportResponse.h>
 #include <tencentcloud/dts/v20211206/model/DescribeSyncCompareTasksRequest.h>
 #include <tencentcloud/dts/v20211206/model/DescribeSyncCompareTasksResponse.h>
+#include <tencentcloud/dts/v20211206/model/DescribeSyncGtidCompareReportRequest.h>
+#include <tencentcloud/dts/v20211206/model/DescribeSyncGtidCompareReportResponse.h>
 #include <tencentcloud/dts/v20211206/model/DescribeSyncJobsRequest.h>
 #include <tencentcloud/dts/v20211206/model/DescribeSyncJobsResponse.h>
 #include <tencentcloud/dts/v20211206/model/DestroyIsolatedSubscribeRequest.h>
@@ -273,6 +277,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMigrateDBInstancesResponse> DescribeMigrateDBInstancesOutcome;
                 typedef std::future<DescribeMigrateDBInstancesOutcome> DescribeMigrateDBInstancesOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::DescribeMigrateDBInstancesRequest&, DescribeMigrateDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMigrateDBInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMigrateGtidCompareReportResponse> DescribeMigrateGtidCompareReportOutcome;
+                typedef std::future<DescribeMigrateGtidCompareReportOutcome> DescribeMigrateGtidCompareReportOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::DescribeMigrateGtidCompareReportRequest&, DescribeMigrateGtidCompareReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMigrateGtidCompareReportAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMigrationCheckJobResponse> DescribeMigrationCheckJobOutcome;
                 typedef std::future<DescribeMigrationCheckJobOutcome> DescribeMigrationCheckJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::DescribeMigrationCheckJobRequest&, DescribeMigrationCheckJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMigrationCheckJobAsyncHandler;
@@ -309,6 +316,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSyncCompareTasksResponse> DescribeSyncCompareTasksOutcome;
                 typedef std::future<DescribeSyncCompareTasksOutcome> DescribeSyncCompareTasksOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::DescribeSyncCompareTasksRequest&, DescribeSyncCompareTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSyncCompareTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSyncGtidCompareReportResponse> DescribeSyncGtidCompareReportOutcome;
+                typedef std::future<DescribeSyncGtidCompareReportOutcome> DescribeSyncGtidCompareReportOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::DescribeSyncGtidCompareReportRequest&, DescribeSyncGtidCompareReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSyncGtidCompareReportAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSyncJobsResponse> DescribeSyncJobsOutcome;
                 typedef std::future<DescribeSyncJobsOutcome> DescribeSyncJobsOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::DescribeSyncJobsRequest&, DescribeSyncJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSyncJobsAsyncHandler;
@@ -672,6 +682,15 @@ namespace TencentCloud
                 DescribeMigrateDBInstancesOutcomeCallable DescribeMigrateDBInstancesCallable(const Model::DescribeMigrateDBInstancesRequest& request);
 
                 /**
+                 *gtid校验
+                 * @param req DescribeMigrateGtidCompareReportRequest
+                 * @return DescribeMigrateGtidCompareReportOutcome
+                 */
+                DescribeMigrateGtidCompareReportOutcome DescribeMigrateGtidCompareReport(const Model::DescribeMigrateGtidCompareReportRequest &request);
+                void DescribeMigrateGtidCompareReportAsync(const Model::DescribeMigrateGtidCompareReportRequest& request, const DescribeMigrateGtidCompareReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMigrateGtidCompareReportOutcomeCallable DescribeMigrateGtidCompareReportCallable(const Model::DescribeMigrateGtidCompareReportRequest& request);
+
+                /**
                  *本接口用于创建校验后,获取校验的结果. 能查询到当前校验的状态和进度. 
 若通过校验, 则可调用'StartMigrateJob' 开始迁移.
 若未通过校验, 则能查询到校验失败的原因. 请按照报错, 通过'ModifyMigrationJob'修改迁移配置或是调整源/目标实例的相关参数.
@@ -784,6 +803,15 @@ namespace TencentCloud
                 DescribeSyncCompareTasksOutcome DescribeSyncCompareTasks(const Model::DescribeSyncCompareTasksRequest &request);
                 void DescribeSyncCompareTasksAsync(const Model::DescribeSyncCompareTasksRequest& request, const DescribeSyncCompareTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSyncCompareTasksOutcomeCallable DescribeSyncCompareTasksCallable(const Model::DescribeSyncCompareTasksRequest& request);
+
+                /**
+                 *gtid校验
+                 * @param req DescribeSyncGtidCompareReportRequest
+                 * @return DescribeSyncGtidCompareReportOutcome
+                 */
+                DescribeSyncGtidCompareReportOutcome DescribeSyncGtidCompareReport(const Model::DescribeSyncGtidCompareReportRequest &request);
+                void DescribeSyncGtidCompareReportAsync(const Model::DescribeSyncGtidCompareReportRequest& request, const DescribeSyncGtidCompareReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSyncGtidCompareReportOutcomeCallable DescribeSyncGtidCompareReportCallable(const Model::DescribeSyncGtidCompareReportRequest& request);
 
                 /**
                  *查询同步任务信息

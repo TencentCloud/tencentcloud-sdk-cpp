@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取TRTC监控数据出参
+                     * 获取<p>TRTC监控数据出参</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data TRTC监控数据出参
+                     * @return Data <p>TRTC监控数据出参</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * TRTC监控数据出参
+                     * <p>TRTC监控数据出参</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TRTCDataResult m_data;

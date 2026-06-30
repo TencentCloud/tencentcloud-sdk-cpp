@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取自定义内容模板ID
-                     * @return TmplID 自定义内容模板ID
+                     * 获取<p>自定义内容模板ID</p>
+                     * @return TmplID <p>自定义内容模板ID</p>
                      * 
                      */
                     std::string GetTmplID() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 自定义内容模板ID
+                     * <p>自定义内容模板ID</p>
                      */
                     std::string m_tmplID;
                     bool m_tmplIDHasBeenSet;

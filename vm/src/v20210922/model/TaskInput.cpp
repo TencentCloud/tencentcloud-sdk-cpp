@@ -23,7 +23,8 @@ using namespace std;
 TaskInput::TaskInput() :
     m_dataIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_inputHasBeenSet(false)
+    m_inputHasBeenSet(false),
+    m_decodeParamsHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,23 @@ CoreInternalOutcome TaskInput::Deserialize(const rapidjson::Value &value)
         m_inputHasBeenSet = true;
     }
 
+    if (value.HasMember("DecodeParams") && !value["DecodeParams"].IsNull())
+    {
+        if (!value["DecodeParams"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskInput.DecodeParams` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_decodeParams.Deserialize(value["DecodeParams"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_decodeParamsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +117,15 @@ void TaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_input.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_decodeParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DecodeParams";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_decodeParams.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -150,5 +177,21 @@ void TaskInput::SetInput(const StorageInfo& _input)
 bool TaskInput::InputHasBeenSet() const
 {
     return m_inputHasBeenSet;
+}
+
+DecodeParams TaskInput::GetDecodeParams() const
+{
+    return m_decodeParams;
+}
+
+void TaskInput::SetDecodeParams(const DecodeParams& _decodeParams)
+{
+    m_decodeParams = _decodeParams;
+    m_decodeParamsHasBeenSet = true;
+}
+
+bool TaskInput::DecodeParamsHasBeenSet() const
+{
+    return m_decodeParamsHasBeenSet;
 }
 

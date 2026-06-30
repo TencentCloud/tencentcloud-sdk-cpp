@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取模版类型（1：系统模版，2：自定义）
-                     * @return Type 模版类型（1：系统模版，2：自定义）
+                     * 获取模版类型：1-系统模版，2-用户自定义模版
+                     * @return Type 模版类型：1-系统模版，2-用户自定义模版
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置模版类型（1：系统模版，2：自定义）
-                     * @param _type 模版类型（1：系统模版，2：自定义）
+                     * 设置模版类型：1-系统模版，2-用户自定义模版
+                     * @param _type 模版类型：1-系统模版，2-用户自定义模版
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取规则适用的源数据对象类型（1：常量，2：离线表级，3：离线字段级别）
-                     * @return SourceObjectType 规则适用的源数据对象类型（1：常量，2：离线表级，3：离线字段级别）
+                     * 获取源数据对象类型：1-常量，2-离线表级，3-离线字段级别
+                     * @return SourceObjectType 源数据对象类型：1-常量，2-离线表级，3-离线字段级别
                      * 
                      */
                     uint64_t GetSourceObjectType() const;
 
                     /**
-                     * 设置规则适用的源数据对象类型（1：常量，2：离线表级，3：离线字段级别）
-                     * @param _sourceObjectType 规则适用的源数据对象类型（1：常量，2：离线表级，3：离线字段级别）
+                     * 设置源数据对象类型：1-常量，2-离线表级，3-离线字段级别
+                     * @param _sourceObjectType 源数据对象类型：1-常量，2-离线表级，3-离线字段级别
                      * 
                      */
                     void SetSourceObjectType(const uint64_t& _sourceObjectType);
@@ -199,18 +199,18 @@ namespace TencentCloud
                     bool SourceContentHasBeenSet() const;
 
                     /**
-                     * 获取源数据适用类型
+                     * 获取执行引擎多选（位运算数组）：2-HIVE，4-SPARK，8-LIVY，16-DLC，64-TCHouse-P，128-DORIS，256-TCHouse-D，512-EMR-StarRocks，1024-TCHouse-X
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SourceEngineTypes 源数据适用类型
+                     * @return SourceEngineTypes 执行引擎多选（位运算数组）：2-HIVE，4-SPARK，8-LIVY，16-DLC，64-TCHouse-P，128-DORIS，256-TCHouse-D，512-EMR-StarRocks，1024-TCHouse-X
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetSourceEngineTypes() const;
 
                     /**
-                     * 设置源数据适用类型
+                     * 设置执行引擎多选（位运算数组）：2-HIVE，4-SPARK，8-LIVY，16-DLC，64-TCHouse-P，128-DORIS，256-TCHouse-D，512-EMR-StarRocks，1024-TCHouse-X
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sourceEngineTypes 源数据适用类型
+                     * @param _sourceEngineTypes 执行引擎多选（位运算数组）：2-HIVE，4-SPARK，8-LIVY，16-DLC，64-TCHouse-P，128-DORIS，256-TCHouse-D，512-EMR-StarRocks，1024-TCHouse-X
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -224,18 +224,18 @@ namespace TencentCloud
                     bool SourceEngineTypesHasBeenSet() const;
 
                     /**
-                     * 获取规则所属质量维度（1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性）
+                     * 获取质量维度：1-准确性，2-唯一性，3-完整性，4-一致性，5-及时性，6-有效性
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QualityDim 规则所属质量维度（1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性）
+                     * @return QualityDim 质量维度：1-准确性，2-唯一性，3-完整性，4-一致性，5-及时性，6-有效性
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetQualityDim() const;
 
                     /**
-                     * 设置规则所属质量维度（1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性）
+                     * 设置质量维度：1-准确性，2-唯一性，3-完整性，4-一致性，5-及时性，6-有效性
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _qualityDim 规则所属质量维度（1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性）
+                     * @param _qualityDim 质量维度：1-准确性，2-唯一性，3-完整性，4-一致性，5-及时性，6-有效性
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -569,13 +569,13 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 模版类型（1：系统模版，2：自定义）
+                     * 模版类型：1-系统模版，2-用户自定义模版
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 规则适用的源数据对象类型（1：常量，2：离线表级，3：离线字段级别）
+                     * 源数据对象类型：1-常量，2-离线表级，3-离线字段级别
                      */
                     uint64_t m_sourceObjectType;
                     bool m_sourceObjectTypeHasBeenSet;
@@ -594,14 +594,14 @@ namespace TencentCloud
                     bool m_sourceContentHasBeenSet;
 
                     /**
-                     * 源数据适用类型
+                     * 执行引擎多选（位运算数组）：2-HIVE，4-SPARK，8-LIVY，16-DLC，64-TCHouse-P，128-DORIS，256-TCHouse-D，512-EMR-StarRocks，1024-TCHouse-X
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_sourceEngineTypes;
                     bool m_sourceEngineTypesHasBeenSet;
 
                     /**
-                     * 规则所属质量维度（1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性）
+                     * 质量维度：1-准确性，2-唯一性，3-完整性，4-一致性，5-及时性，6-有效性
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_qualityDim;

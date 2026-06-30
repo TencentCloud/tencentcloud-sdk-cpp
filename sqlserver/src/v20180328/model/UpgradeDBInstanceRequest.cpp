@@ -34,7 +34,8 @@ UpgradeDBInstanceRequest::UpgradeDBInstanceRequest() :
     m_multiZonesHasBeenSet(false),
     m_waitSwitchHasBeenSet(false),
     m_drZonesHasBeenSet(false),
-    m_upgradeCompatLevelHasBeenSet(false)
+    m_upgradeCompatLevelHasBeenSet(false),
+    m_throughputPerformanceHasBeenSet(false)
 {
 }
 
@@ -151,6 +152,14 @@ string UpgradeDBInstanceRequest::ToJsonString() const
         string key = "UpgradeCompatLevel";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_upgradeCompatLevel, allocator);
+    }
+
+    if (m_throughputPerformanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ThroughputPerformance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_throughputPerformance, allocator);
     }
 
 
@@ -351,6 +360,22 @@ void UpgradeDBInstanceRequest::SetUpgradeCompatLevel(const int64_t& _upgradeComp
 bool UpgradeDBInstanceRequest::UpgradeCompatLevelHasBeenSet() const
 {
     return m_upgradeCompatLevelHasBeenSet;
+}
+
+uint64_t UpgradeDBInstanceRequest::GetThroughputPerformance() const
+{
+    return m_throughputPerformance;
+}
+
+void UpgradeDBInstanceRequest::SetThroughputPerformance(const uint64_t& _throughputPerformance)
+{
+    m_throughputPerformance = _throughputPerformance;
+    m_throughputPerformanceHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceRequest::ThroughputPerformanceHasBeenSet() const
+{
+    return m_throughputPerformanceHasBeenSet;
 }
 
 

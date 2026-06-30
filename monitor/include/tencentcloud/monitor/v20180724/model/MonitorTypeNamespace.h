@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取监控类型
-                     * @return MonitorType 监控类型
+                     * 获取<p>监控类型</p>
+                     * @return MonitorType <p>监控类型</p>
                      * 
                      */
                     std::string GetMonitorType() const;
 
                     /**
-                     * 设置监控类型
-                     * @param _monitorType 监控类型
+                     * 设置<p>监控类型</p>
+                     * @param _monitorType <p>监控类型</p>
                      * 
                      */
                     void SetMonitorType(const std::string& _monitorType);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool MonitorTypeHasBeenSet() const;
 
                     /**
-                     * 获取策略类型值
-                     * @return Namespace 策略类型值
+                     * 获取<p>策略类型值</p>
+                     * @return Namespace <p>策略类型值</p>
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
-                     * 设置策略类型值
-                     * @param _namespace 策略类型值
+                     * 设置<p>策略类型值</p>
+                     * @param _namespace <p>策略类型值</p>
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 监控类型
+                     * <p>监控类型</p>
                      */
                     std::string m_monitorType;
                     bool m_monitorTypeHasBeenSet;
 
                     /**
-                     * 策略类型值
+                     * <p>策略类型值</p>
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取配额总数
-                     * @return Total 配额总数
+                     * 获取<p>配额总数</p>
+                     * @return Total <p>配额总数</p>
                      * 
                      */
                     int64_t GetTotal() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取总使用量
-                     * @return Used 总使用量
+                     * 获取<p>总使用量</p>
+                     * @return Used <p>总使用量</p>
                      * 
                      */
                     int64_t GetUsed() const;
@@ -73,9 +73,9 @@ namespace TencentCloud
                     bool UsedHasBeenSet() const;
 
                     /**
-                     * 获取短信配额信息列表
+                     * 获取<p>短信配额信息列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QuotaList 短信配额信息列表
+                     * @return QuotaList <p>短信配额信息列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -91,19 +91,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 配额总数
+                     * <p>配额总数</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 总使用量
+                     * <p>总使用量</p>
                      */
                     int64_t m_used;
                     bool m_usedHasBeenSet;
 
                     /**
-                     * 短信配额信息列表
+                     * <p>短信配额信息列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DescribeAlarmSmsQuotaQuota> m_quotaList;

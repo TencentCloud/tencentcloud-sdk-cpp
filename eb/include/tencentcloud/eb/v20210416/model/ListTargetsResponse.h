@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标总数
-                     * @return TotalCount 目标总数
+                     * 获取<p>目标总数</p>
+                     * @return TotalCount <p>目标总数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取目标信息
-                     * @return Targets 目标信息
+                     * 获取<p>目标信息</p>
+                     * @return Targets <p>目标信息</p>
                      * 
                      */
                     std::vector<Target> GetTargets() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目标总数
+                     * <p>目标总数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 目标信息
+                     * <p>目标信息</p>
                      */
                     std::vector<Target> m_targets;
                     bool m_targetsHasBeenSet;

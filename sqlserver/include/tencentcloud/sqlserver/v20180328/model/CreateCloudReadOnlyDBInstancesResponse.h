@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订单名称数组
-                     * @return DealNames 订单名称数组
+                     * 获取<p>订单名称数组</p>
+                     * @return DealNames <p>订单名称数组</p>
                      * 
                      */
                     std::vector<std::string> GetDealNames() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订单名称数组
+                     * <p>订单名称数组</p>
                      */
                     std::vector<std::string> m_dealNames;
                     bool m_dealNamesHasBeenSet;

@@ -26,7 +26,8 @@ using namespace std;
 GetEmailIdentityResponse::GetEmailIdentityResponse() :
     m_identityTypeHasBeenSet(false),
     m_verifiedForSendingStatusHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+    m_attributesHasBeenSet(false),
+    m_dKIMOptionHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome GetEmailIdentityResponse::Deserialize(const string &payload)
         m_attributesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DKIMOption") && !rsp["DKIMOption"].IsNull())
+    {
+        if (!rsp["DKIMOption"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DKIMOption` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dKIMOption = rsp["DKIMOption"].GetUint64();
+        m_dKIMOptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +154,14 @@ string GetEmailIdentityResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_dKIMOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DKIMOption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dKIMOption, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -185,6 +204,16 @@ vector<DNSAttributes> GetEmailIdentityResponse::GetAttributes() const
 bool GetEmailIdentityResponse::AttributesHasBeenSet() const
 {
     return m_attributesHasBeenSet;
+}
+
+uint64_t GetEmailIdentityResponse::GetDKIMOption() const
+{
+    return m_dKIMOption;
+}
+
+bool GetEmailIdentityResponse::DKIMOptionHasBeenSet() const
+{
+    return m_dKIMOptionHasBeenSet;
 }
 
 

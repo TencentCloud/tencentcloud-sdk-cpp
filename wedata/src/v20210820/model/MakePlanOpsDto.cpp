@@ -58,7 +58,11 @@ MakePlanOpsDto::MakePlanOpsDto() :
     m_failurePercentHasBeenSet(false),
     m_alarmRuleHasBeenSet(false),
     m_runTypeHasBeenSet(false),
-    m_runDateTimeHasBeenSet(false)
+    m_runDateTimeHasBeenSet(false),
+    m_runScheduleTimeZoneHasBeenSet(false),
+    m_runScheduleRangeStartTimeHasBeenSet(false),
+    m_runScheduleRangeEndTimeHasBeenSet(false),
+    m_runScheduleRangeWeekDaysHasBeenSet(false)
 {
 }
 
@@ -487,6 +491,49 @@ CoreInternalOutcome MakePlanOpsDto::Deserialize(const rapidjson::Value &value)
         m_runDateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("RunScheduleTimeZone") && !value["RunScheduleTimeZone"].IsNull())
+    {
+        if (!value["RunScheduleTimeZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MakePlanOpsDto.RunScheduleTimeZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_runScheduleTimeZone = string(value["RunScheduleTimeZone"].GetString());
+        m_runScheduleTimeZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunScheduleRangeStartTime") && !value["RunScheduleRangeStartTime"].IsNull())
+    {
+        if (!value["RunScheduleRangeStartTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MakePlanOpsDto.RunScheduleRangeStartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_runScheduleRangeStartTime = string(value["RunScheduleRangeStartTime"].GetString());
+        m_runScheduleRangeStartTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunScheduleRangeEndTime") && !value["RunScheduleRangeEndTime"].IsNull())
+    {
+        if (!value["RunScheduleRangeEndTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MakePlanOpsDto.RunScheduleRangeEndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_runScheduleRangeEndTime = string(value["RunScheduleRangeEndTime"].GetString());
+        m_runScheduleRangeEndTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunScheduleRangeWeekDays") && !value["RunScheduleRangeWeekDays"].IsNull())
+    {
+        if (!value["RunScheduleRangeWeekDays"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MakePlanOpsDto.RunScheduleRangeWeekDays` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RunScheduleRangeWeekDays"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_runScheduleRangeWeekDays.push_back((*itr).GetInt64());
+        }
+        m_runScheduleRangeWeekDaysHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -823,6 +870,43 @@ void MakePlanOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "RunDateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_runDateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runScheduleTimeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunScheduleTimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_runScheduleTimeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runScheduleRangeStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunScheduleRangeStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_runScheduleRangeStartTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runScheduleRangeEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunScheduleRangeEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_runScheduleRangeEndTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runScheduleRangeWeekDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunScheduleRangeWeekDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_runScheduleRangeWeekDays.begin(); itr != m_runScheduleRangeWeekDays.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 }
@@ -1434,5 +1518,69 @@ void MakePlanOpsDto::SetRunDateTime(const string& _runDateTime)
 bool MakePlanOpsDto::RunDateTimeHasBeenSet() const
 {
     return m_runDateTimeHasBeenSet;
+}
+
+string MakePlanOpsDto::GetRunScheduleTimeZone() const
+{
+    return m_runScheduleTimeZone;
+}
+
+void MakePlanOpsDto::SetRunScheduleTimeZone(const string& _runScheduleTimeZone)
+{
+    m_runScheduleTimeZone = _runScheduleTimeZone;
+    m_runScheduleTimeZoneHasBeenSet = true;
+}
+
+bool MakePlanOpsDto::RunScheduleTimeZoneHasBeenSet() const
+{
+    return m_runScheduleTimeZoneHasBeenSet;
+}
+
+string MakePlanOpsDto::GetRunScheduleRangeStartTime() const
+{
+    return m_runScheduleRangeStartTime;
+}
+
+void MakePlanOpsDto::SetRunScheduleRangeStartTime(const string& _runScheduleRangeStartTime)
+{
+    m_runScheduleRangeStartTime = _runScheduleRangeStartTime;
+    m_runScheduleRangeStartTimeHasBeenSet = true;
+}
+
+bool MakePlanOpsDto::RunScheduleRangeStartTimeHasBeenSet() const
+{
+    return m_runScheduleRangeStartTimeHasBeenSet;
+}
+
+string MakePlanOpsDto::GetRunScheduleRangeEndTime() const
+{
+    return m_runScheduleRangeEndTime;
+}
+
+void MakePlanOpsDto::SetRunScheduleRangeEndTime(const string& _runScheduleRangeEndTime)
+{
+    m_runScheduleRangeEndTime = _runScheduleRangeEndTime;
+    m_runScheduleRangeEndTimeHasBeenSet = true;
+}
+
+bool MakePlanOpsDto::RunScheduleRangeEndTimeHasBeenSet() const
+{
+    return m_runScheduleRangeEndTimeHasBeenSet;
+}
+
+vector<int64_t> MakePlanOpsDto::GetRunScheduleRangeWeekDays() const
+{
+    return m_runScheduleRangeWeekDays;
+}
+
+void MakePlanOpsDto::SetRunScheduleRangeWeekDays(const vector<int64_t>& _runScheduleRangeWeekDays)
+{
+    m_runScheduleRangeWeekDays = _runScheduleRangeWeekDays;
+    m_runScheduleRangeWeekDaysHasBeenSet = true;
+}
+
+bool MakePlanOpsDto::RunScheduleRangeWeekDaysHasBeenSet() const
+{
+    return m_runScheduleRangeWeekDaysHasBeenSet;
 }
 

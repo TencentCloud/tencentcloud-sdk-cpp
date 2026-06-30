@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取仓库名
-                     * @return Name 仓库名
+                     * 获取<p>仓库名</p>
+                     * @return Name <p>仓库名</p>
                      * 
                      */
                     std::string GetName() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取用户名
-                     * @return Username 用户名
+                     * 获取<p>用户名</p>
+                     * @return Username <p>用户名</p>
                      * 
                      */
                     std::string GetUsername() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool UsernameHasBeenSet() const;
 
                     /**
-                     * 获取密码
-                     * @return Password 密码
+                     * 获取<p>密码</p>
+                     * @return Password <p>密码</p>
                      * 
                      */
                     std::string GetPassword() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取仓库url
-                     * @return Url 仓库url
+                     * 获取<p>仓库url</p>
+                     * @return Url <p>仓库url</p>
                      * 
                      */
                     std::string GetUrl() const;
@@ -101,8 +101,8 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取仓库类型，列表：harbor
-                     * @return RegistryType 仓库类型，列表：harbor
+                     * 获取<p>仓库类型，列表：harbor</p>
+                     * @return RegistryType <p>仓库类型，列表：harbor</p>
                      * 
                      */
                     std::string GetRegistryType() const;
@@ -115,8 +115,8 @@ namespace TencentCloud
                     bool RegistryTypeHasBeenSet() const;
 
                     /**
-                     * 获取仓库版本
-                     * @return RegistryVersion 仓库版本
+                     * 获取<p>仓库版本</p>
+                     * @return RegistryVersion <p>仓库版本</p>
                      * 
                      */
                     std::string GetRegistryVersion() const;
@@ -129,8 +129,8 @@ namespace TencentCloud
                     bool RegistryVersionHasBeenSet() const;
 
                     /**
-                     * 获取网络类型，列表：public（公网）,private（私网）
-                     * @return NetType 网络类型，列表：public（公网）,private（私网）
+                     * 获取<p>网络类型，列表：public（公网）,private（私网）</p>
+                     * @return NetType <p>网络类型，列表：public（公网）,private（私网）</p>
                      * 
                      */
                     std::string GetNetType() const;
@@ -143,8 +143,8 @@ namespace TencentCloud
                     bool NetTypeHasBeenSet() const;
 
                     /**
-                     * 获取区域，列表:default（默认）
-                     * @return RegistryRegion 区域，列表:default（默认）
+                     * 获取<p>区域，列表:default（默认）</p>
+                     * @return RegistryRegion <p>区域，列表:default（默认）</p>
                      * 
                      */
                     std::string GetRegistryRegion() const;
@@ -157,8 +157,8 @@ namespace TencentCloud
                     bool RegistryRegionHasBeenSet() const;
 
                     /**
-                     * 获取限速
-                     * @return SpeedLimit 限速
+                     * 获取<p>限速</p>
+                     * @return SpeedLimit <p>限速</p>
                      * 
                      */
                     uint64_t GetSpeedLimit() const;
@@ -171,8 +171,8 @@ namespace TencentCloud
                     bool SpeedLimitHasBeenSet() const;
 
                     /**
-                     * 获取安全模式（证书校验）：0（默认） 非安全模式（跳过证书校验）：1
-                     * @return Insecure 安全模式（证书校验）：0（默认） 非安全模式（跳过证书校验）：1
+                     * 获取<p>安全模式（证书校验）：0（默认） 非安全模式（跳过证书校验）：1</p>
+                     * @return Insecure <p>安全模式（证书校验）：0（默认） 非安全模式（跳过证书校验）：1</p>
                      * 
                      */
                     uint64_t GetInsecure() const;
@@ -185,8 +185,8 @@ namespace TencentCloud
                     bool InsecureHasBeenSet() const;
 
                     /**
-                     * 获取联通性检测结果详情
-                     * @return ConnDetectDetail 联通性检测结果详情
+                     * 获取<p>联通性检测结果详情</p>
+                     * @return ConnDetectDetail <p>联通性检测结果详情</p>
                      * 
                      */
                     std::vector<RegistryConnDetectResult> GetConnDetectDetail() const;
@@ -199,8 +199,8 @@ namespace TencentCloud
                     bool ConnDetectDetailHasBeenSet() const;
 
                     /**
-                     * 获取tcr情况下instance_id
-                     * @return InstanceID tcr情况下instance_id
+                     * 获取<p>tcr情况下instance_id</p>
+                     * @return InstanceID <p>tcr情况下instance_id</p>
                      * 
                      */
                     std::string GetInstanceID() const;
@@ -213,8 +213,8 @@ namespace TencentCloud
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取同步方式，0全量同步，1增量同步
-                     * @return SyncMode 同步方式，0全量同步，1增量同步
+                     * 获取<p>同步方式，0全量同步，1增量同步</p>
+                     * @return SyncMode <p>同步方式，0全量同步，1增量同步</p>
                      * 
                      */
                     uint64_t GetSyncMode() const;
@@ -227,8 +227,8 @@ namespace TencentCloud
                     bool SyncModeHasBeenSet() const;
 
                     /**
-                     * 获取是否自动授权&扫描，选择全量同步时只针对最新版本镜像，增量同步时则包含所有新增镜像
-                     * @return NeedScan 是否自动授权&扫描，选择全量同步时只针对最新版本镜像，增量同步时则包含所有新增镜像
+                     * 获取<p>是否自动授权&amp;扫描，选择全量同步时只针对最新版本镜像，增量同步时则包含所有新增镜像</p>
+                     * @return NeedScan <p>是否自动授权&amp;扫描，选择全量同步时只针对最新版本镜像，增量同步时则包含所有新增镜像</p>
                      * 
                      */
                     bool GetNeedScan() const;
@@ -241,8 +241,8 @@ namespace TencentCloud
                     bool NeedScanHasBeenSet() const;
 
                     /**
-                     * 获取webhook接入地址
-                     * @return WebhookUrl webhook接入地址
+                     * 获取<p>webhook接入地址</p>
+                     * @return WebhookUrl <p>webhook接入地址</p>
                      * 
                      */
                     std::string GetWebhookUrl() const;
@@ -255,8 +255,8 @@ namespace TencentCloud
                     bool WebhookUrlHasBeenSet() const;
 
                     /**
-                     * 获取webhook接入token	
-                     * @return WebhookToken webhook接入token	
+                     * 获取<p>webhook接入token</p>
+                     * @return WebhookToken <p>webhook接入token</p>
                      * 
                      */
                     std::string GetWebhookToken() const;
@@ -271,97 +271,97 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 仓库名
+                     * <p>仓库名</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 用户名
+                     * <p>用户名</p>
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
 
                     /**
-                     * 密码
+                     * <p>密码</p>
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 仓库url
+                     * <p>仓库url</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 仓库类型，列表：harbor
+                     * <p>仓库类型，列表：harbor</p>
                      */
                     std::string m_registryType;
                     bool m_registryTypeHasBeenSet;
 
                     /**
-                     * 仓库版本
+                     * <p>仓库版本</p>
                      */
                     std::string m_registryVersion;
                     bool m_registryVersionHasBeenSet;
 
                     /**
-                     * 网络类型，列表：public（公网）,private（私网）
+                     * <p>网络类型，列表：public（公网）,private（私网）</p>
                      */
                     std::string m_netType;
                     bool m_netTypeHasBeenSet;
 
                     /**
-                     * 区域，列表:default（默认）
+                     * <p>区域，列表:default（默认）</p>
                      */
                     std::string m_registryRegion;
                     bool m_registryRegionHasBeenSet;
 
                     /**
-                     * 限速
+                     * <p>限速</p>
                      */
                     uint64_t m_speedLimit;
                     bool m_speedLimitHasBeenSet;
 
                     /**
-                     * 安全模式（证书校验）：0（默认） 非安全模式（跳过证书校验）：1
+                     * <p>安全模式（证书校验）：0（默认） 非安全模式（跳过证书校验）：1</p>
                      */
                     uint64_t m_insecure;
                     bool m_insecureHasBeenSet;
 
                     /**
-                     * 联通性检测结果详情
+                     * <p>联通性检测结果详情</p>
                      */
                     std::vector<RegistryConnDetectResult> m_connDetectDetail;
                     bool m_connDetectDetailHasBeenSet;
 
                     /**
-                     * tcr情况下instance_id
+                     * <p>tcr情况下instance_id</p>
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * 同步方式，0全量同步，1增量同步
+                     * <p>同步方式，0全量同步，1增量同步</p>
                      */
                     uint64_t m_syncMode;
                     bool m_syncModeHasBeenSet;
 
                     /**
-                     * 是否自动授权&扫描，选择全量同步时只针对最新版本镜像，增量同步时则包含所有新增镜像
+                     * <p>是否自动授权&amp;扫描，选择全量同步时只针对最新版本镜像，增量同步时则包含所有新增镜像</p>
                      */
                     bool m_needScan;
                     bool m_needScanHasBeenSet;
 
                     /**
-                     * webhook接入地址
+                     * <p>webhook接入地址</p>
                      */
                     std::string m_webhookUrl;
                     bool m_webhookUrlHasBeenSet;
 
                     /**
-                     * webhook接入token	
+                     * <p>webhook接入token</p>
                      */
                     std::string m_webhookToken;
                     bool m_webhookTokenHasBeenSet;

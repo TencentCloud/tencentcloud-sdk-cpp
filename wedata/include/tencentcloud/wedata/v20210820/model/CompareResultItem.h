@@ -148,18 +148,18 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取比较类型
+                     * 获取比较类型：1-固定值, 2-波动值, 3-数值范围比较, 4-枚举范围比较, 5-不用比较, 6-字段数据相关性, 7-公平性
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CompareType 比较类型
+                     * @return CompareType 比较类型：1-固定值, 2-波动值, 3-数值范围比较, 4-枚举范围比较, 5-不用比较, 6-字段数据相关性, 7-公平性
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCompareType() const;
 
                     /**
-                     * 设置比较类型
+                     * 设置比较类型：1-固定值, 2-波动值, 3-数值范围比较, 4-枚举范围比较, 5-不用比较, 6-字段数据相关性, 7-公平性
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _compareType 比较类型
+                     * @param _compareType 比较类型：1-固定值, 2-波动值, 3-数值范围比较, 4-枚举范围比较, 5-不用比较, 6-字段数据相关性, 7-公平性
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -173,18 +173,18 @@ namespace TencentCloud
                     bool CompareTypeHasBeenSet() const;
 
                     /**
-                     * 获取值比较类型
+                     * 获取值比较类型：1-绝对值, 2-上升, 3-下降, 4-范围内, 5-范围外, 6-公平率, 7-公平差
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ValueComputeType 值比较类型
+                     * @return ValueComputeType 值比较类型：1-绝对值, 2-上升, 3-下降, 4-范围内, 5-范围外, 6-公平率, 7-公平差
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetValueComputeType() const;
 
                     /**
-                     * 设置值比较类型
+                     * 设置值比较类型：1-绝对值, 2-上升, 3-下降, 4-范围内, 5-范围外, 6-公平率, 7-公平差
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _valueComputeType 值比较类型
+                     * @param _valueComputeType 值比较类型：1-绝对值, 2-上升, 3-下降, 4-范围内, 5-范围外, 6-公平率, 7-公平差
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -228,14 +228,14 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 比较类型
+                     * 比较类型：1-固定值, 2-波动值, 3-数值范围比较, 4-枚举范围比较, 5-不用比较, 6-字段数据相关性, 7-公平性
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_compareType;
                     bool m_compareTypeHasBeenSet;
 
                     /**
-                     * 值比较类型
+                     * 值比较类型：1-绝对值, 2-上升, 3-下降, 4-范围内, 5-范围外, 6-公平率, 7-公平差
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_valueComputeType;

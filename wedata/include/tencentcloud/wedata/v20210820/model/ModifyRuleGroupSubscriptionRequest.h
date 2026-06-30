@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool ReceiversHasBeenSet() const;
 
                     /**
-                     * 获取订阅类型
-                     * @return SubscribeType 订阅类型
+                     * 获取订阅方式：1-邮件，2-短信，3-微信，4-语音，5-企微，6-HTTP连接，7-飞书群，8-钉钉群
+                     * @return SubscribeType 订阅方式：1-邮件，2-短信，3-微信，4-语音，5-企微，6-HTTP连接，7-飞书群，8-钉钉群
                      * 
                      */
                     std::vector<uint64_t> GetSubscribeType() const;
 
                     /**
-                     * 设置订阅类型
-                     * @param _subscribeType 订阅类型
+                     * 设置订阅方式：1-邮件，2-短信，3-微信，4-语音，5-企微，6-HTTP连接，7-飞书群，8-钉钉群
+                     * @param _subscribeType 订阅方式：1-邮件，2-短信，3-微信，4-语音，5-企微，6-HTTP连接，7-飞书群，8-钉钉群
                      * 
                      */
                     void SetSubscribeType(const std::vector<uint64_t>& _subscribeType);
@@ -227,7 +227,7 @@ namespace TencentCloud
                     bool m_receiversHasBeenSet;
 
                     /**
-                     * 订阅类型
+                     * 订阅方式：1-邮件，2-短信，3-微信，4-语音，5-企微，6-HTTP连接，7-飞书群，8-钉钉群
                      */
                     std::vector<uint64_t> m_subscribeType;
                     bool m_subscribeTypeHasBeenSet;

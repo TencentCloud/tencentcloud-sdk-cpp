@@ -27,7 +27,8 @@ EmailIdentity::EmailIdentity() :
     m_currentReputationLevelHasBeenSet(false),
     m_dailyQuotaHasBeenSet(false),
     m_sendIpHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_dKIMOptionHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,16 @@ CoreInternalOutcome EmailIdentity::Deserialize(const rapidjson::Value &value)
         m_tagListHasBeenSet = true;
     }
 
+    if (value.HasMember("DKIMOption") && !value["DKIMOption"].IsNull())
+    {
+        if (!value["DKIMOption"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmailIdentity.DKIMOption` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dKIMOption = value["DKIMOption"].GetUint64();
+        m_dKIMOptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -192,6 +203,14 @@ void EmailIdentity::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_dKIMOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DKIMOption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dKIMOption, allocator);
     }
 
 }
@@ -307,5 +326,21 @@ void EmailIdentity::SetTagList(const vector<TagList>& _tagList)
 bool EmailIdentity::TagListHasBeenSet() const
 {
     return m_tagListHasBeenSet;
+}
+
+uint64_t EmailIdentity::GetDKIMOption() const
+{
+    return m_dKIMOption;
+}
+
+void EmailIdentity::SetDKIMOption(const uint64_t& _dKIMOption)
+{
+    m_dKIMOption = _dKIMOption;
+    m_dKIMOptionHasBeenSet = true;
+}
+
+bool EmailIdentity::DKIMOptionHasBeenSet() const
+{
+    return m_dKIMOptionHasBeenSet;
 }
 

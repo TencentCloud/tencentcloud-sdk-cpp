@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警通知模板总数
-                     * @return TotalCount 告警通知模板总数
+                     * 获取<p>告警通知模板总数</p>
+                     * @return TotalCount <p>告警通知模板总数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取告警通知模板列表
-                     * @return Notices 告警通知模板列表
+                     * 获取<p>告警通知模板列表</p>
+                     * @return Notices <p>告警通知模板列表</p>
                      * 
                      */
                     std::vector<AlarmNotice> GetNotices() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 告警通知模板总数
+                     * <p>告警通知模板总数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 告警通知模板列表
+                     * <p>告警通知模板列表</p>
                      */
                     std::vector<AlarmNotice> m_notices;
                     bool m_noticesHasBeenSet;

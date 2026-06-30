@@ -151,18 +151,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取规则类型 1.系统模版, 2.自定义模版, 3.自定义SQL
+                     * 获取规则类型：1-系统模版，2-自定义模版，3-自定义SQL
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 规则类型 1.系统模版, 2.自定义模版, 3.自定义SQL
+                     * @return Type 规则类型：1-系统模版，2-自定义模版，3-自定义SQL
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置规则类型 1.系统模版, 2.自定义模版, 3.自定义SQL
+                     * 设置规则类型：1-系统模版，2-自定义模版，3-自定义SQL
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type 规则类型 1.系统模版, 2.自定义模版, 3.自定义SQL
+                     * @param _type 规则类型：1-系统模版，2-自定义模版，3-自定义SQL
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -226,18 +226,18 @@ namespace TencentCloud
                     bool RuleTemplateContentHasBeenSet() const;
 
                     /**
-                     * 获取规则所属质量维度 1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
+                     * 获取质量维度：1-准确性，2-唯一性，3-完整性，4-一致性，5-及时性，6-有效性
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QualityDim 规则所属质量维度 1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
+                     * @return QualityDim 质量维度：1-准确性，2-唯一性，3-完整性，4-一致性，5-及时性，6-有效性
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetQualityDim() const;
 
                     /**
-                     * 设置规则所属质量维度 1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
+                     * 设置质量维度：1-准确性，2-唯一性，3-完整性，4-一致性，5-及时性，6-有效性
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _qualityDim 规则所属质量维度 1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
+                     * @param _qualityDim 质量维度：1-准确性，2-唯一性，3-完整性，4-一致性，5-及时性，6-有效性
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -251,18 +251,18 @@ namespace TencentCloud
                     bool QualityDimHasBeenSet() const;
 
                     /**
-                     * 获取规则适用的源数据对象类型（1：常量，2：离线表级，3：离线字段级别）
+                     * 获取源数据对象类型：1-常量，2-离线表级，3-离线字段级别
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SourceObjectType 规则适用的源数据对象类型（1：常量，2：离线表级，3：离线字段级别）
+                     * @return SourceObjectType 源数据对象类型：1-常量，2-离线表级，3-离线字段级别
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSourceObjectType() const;
 
                     /**
-                     * 设置规则适用的源数据对象类型（1：常量，2：离线表级，3：离线字段级别）
+                     * 设置源数据对象类型：1-常量，2-离线表级，3-离线字段级别
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sourceObjectType 规则适用的源数据对象类型（1：常量，2：离线表级，3：离线字段级别）
+                     * @param _sourceObjectType 源数据对象类型：1-常量，2-离线表级，3-离线字段级别
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -351,18 +351,18 @@ namespace TencentCloud
                     bool SourceObjectValueHasBeenSet() const;
 
                     /**
-                     * 获取检测范围 1.全表, 2.条件扫描
+                     * 获取检测范围类型：1-全表，2-条件扫描
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ConditionType 检测范围 1.全表, 2.条件扫描
+                     * @return ConditionType 检测范围类型：1-全表，2-条件扫描
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetConditionType() const;
 
                     /**
-                     * 设置检测范围 1.全表, 2.条件扫描
+                     * 设置检测范围类型：1-全表，2-条件扫描
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _conditionType 检测范围 1.全表, 2.条件扫描
+                     * @param _conditionType 检测范围类型：1-全表，2-条件扫描
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -451,18 +451,18 @@ namespace TencentCloud
                     bool CompareRuleHasBeenSet() const;
 
                     /**
-                     * 获取报警触发级别 1.低, 2.中, 3.高
+                     * 获取告警级别：1-低，2-中，3-高
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlarmLevel 报警触发级别 1.低, 2.中, 3.高
+                     * @return AlarmLevel 告警级别：1-低，2-中，3-高
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAlarmLevel() const;
 
                     /**
-                     * 设置报警触发级别 1.低, 2.中, 3.高
+                     * 设置告警级别：1-低，2-中，3-高
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _alarmLevel 报警触发级别 1.低, 2.中, 3.高
+                     * @param _alarmLevel 告警级别：1-低，2-中，3-高
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -801,18 +801,18 @@ namespace TencentCloud
                     bool SubQualityDimHasBeenSet() const;
 
                     /**
-                     * 获取规则适用的目标数据对象类型（1：常量，2：离线表级，3：离线字段级别）
+                     * 获取目标数据对象类型：1-常量，2-离线表级，3-离线字段级别
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TargetObjectType 规则适用的目标数据对象类型（1：常量，2：离线表级，3：离线字段级别）
+                     * @return TargetObjectType 目标数据对象类型：1-常量，2-离线表级，3-离线字段级别
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTargetObjectType() const;
 
                     /**
-                     * 设置规则适用的目标数据对象类型（1：常量，2：离线表级，3：离线字段级别）
+                     * 设置目标数据对象类型：1-常量，2-离线表级，3-离线字段级别
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _targetObjectType 规则适用的目标数据对象类型（1：常量，2：离线表级，3：离线字段级别）
+                     * @param _targetObjectType 目标数据对象类型：1-常量，2-离线表级，3-离线字段级别
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -826,18 +826,18 @@ namespace TencentCloud
                     bool TargetObjectTypeHasBeenSet() const;
 
                     /**
-                     * 获取规则适用的目标数据对象类型（1：数值，2：字符串）
+                     * 获取目标字段数据类型：1-数值，2-字符串
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TargetObjectDataType 规则适用的目标数据对象类型（1：数值，2：字符串）
+                     * @return TargetObjectDataType 目标字段数据类型：1-数值，2-字符串
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTargetObjectDataType() const;
 
                     /**
-                     * 设置规则适用的目标数据对象类型（1：数值，2：字符串）
+                     * 设置目标字段数据类型：1-数值，2-字符串
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _targetObjectDataType 规则适用的目标数据对象类型（1：数值，2：字符串）
+                     * @param _targetObjectDataType 目标字段数据类型：1-数值，2-字符串
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -901,18 +901,18 @@ namespace TencentCloud
                     bool TargetObjectValueHasBeenSet() const;
 
                     /**
-                     * 获取源端对应的引擎类型
+                     * 获取执行引擎多选（位运算数组）：2-HIVE，4-SPARK，8-LIVY，16-DLC，64-TCHouse-P，128-DORIS，256-TCHouse-D，512-EMR-StarRocks，1024-TCHouse-X
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SourceEngineTypes 源端对应的引擎类型
+                     * @return SourceEngineTypes 执行引擎多选（位运算数组）：2-HIVE，4-SPARK，8-LIVY，16-DLC，64-TCHouse-P，128-DORIS，256-TCHouse-D，512-EMR-StarRocks，1024-TCHouse-X
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetSourceEngineTypes() const;
 
                     /**
-                     * 设置源端对应的引擎类型
+                     * 设置执行引擎多选（位运算数组）：2-HIVE，4-SPARK，8-LIVY，16-DLC，64-TCHouse-P，128-DORIS，256-TCHouse-D，512-EMR-StarRocks，1024-TCHouse-X
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sourceEngineTypes 源端对应的引擎类型
+                     * @param _sourceEngineTypes 执行引擎多选（位运算数组）：2-HIVE，4-SPARK，8-LIVY，16-DLC，64-TCHouse-P，128-DORIS，256-TCHouse-D，512-EMR-StarRocks，1024-TCHouse-X
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1101,18 +1101,18 @@ namespace TencentCloud
                     bool DatabaseIdHasBeenSet() const;
 
                     /**
-                     * 获取监控是否开启.0false,1true
+                     * 获取监控是否开启：0-关闭，1-开启
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MonitorStatus 监控是否开启.0false,1true
+                     * @return MonitorStatus 监控是否开启：0-关闭，1-开启
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMonitorStatus() const;
 
                     /**
-                     * 设置监控是否开启.0false,1true
+                     * 设置监控是否开启：0-关闭，1-开启
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _monitorStatus 监控是否开启.0false,1true
+                     * @param _monitorStatus 监控是否开启：0-关闭，1-开启
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1176,18 +1176,18 @@ namespace TencentCloud
                     bool DsEnvTypeHasBeenSet() const;
 
                     /**
-                     * 获取数据源类型
+                     * 获取数据源类型：2-HIVE(EMR-Hive)，3-DLC，5-TCHouse-P，6-ICEBERG(EMR-Iceberg)，7-DORIS，8-TCHouse-D，9-EMR-StarRocks，11-TCHouse-X
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DatasourceType 数据源类型
+                     * @return DatasourceType 数据源类型：2-HIVE(EMR-Hive)，3-DLC，5-TCHouse-P，6-ICEBERG(EMR-Iceberg)，7-DORIS，8-TCHouse-D，9-EMR-StarRocks，11-TCHouse-X
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDatasourceType() const;
 
                     /**
-                     * 设置数据源类型
+                     * 设置数据源类型：2-HIVE(EMR-Hive)，3-DLC，5-TCHouse-P，6-ICEBERG(EMR-Iceberg)，7-DORIS，8-TCHouse-D，9-EMR-StarRocks，11-TCHouse-X
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _datasourceType 数据源类型
+                     * @param _datasourceType 数据源类型：2-HIVE(EMR-Hive)，3-DLC，5-TCHouse-P，6-ICEBERG(EMR-Iceberg)，7-DORIS，8-TCHouse-D，9-EMR-StarRocks，11-TCHouse-X
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1401,18 +1401,18 @@ namespace TencentCloud
                     bool FailMsgHasBeenSet() const;
 
                     /**
-                     * 获取任务类型
+                     * 获取任务类型（同MonitorType）：1-未配置，2-关联生产调度，3-离线周期检测
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupType 任务类型
+                     * @return GroupType 任务类型（同MonitorType）：1-未配置，2-关联生产调度，3-离线周期检测
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupType() const;
 
                     /**
-                     * 设置任务类型
+                     * 设置任务类型（同MonitorType）：1-未配置，2-关联生产调度，3-离线周期检测
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _groupType 任务类型
+                     * @param _groupType 任务类型（同MonitorType）：1-未配置，2-关联生产调度，3-离线周期检测
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1531,7 +1531,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 规则类型 1.系统模版, 2.自定义模版, 3.自定义SQL
+                     * 规则类型：1-系统模版，2-自定义模版，3-自定义SQL
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_type;
@@ -1552,14 +1552,14 @@ namespace TencentCloud
                     bool m_ruleTemplateContentHasBeenSet;
 
                     /**
-                     * 规则所属质量维度 1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
+                     * 质量维度：1-准确性，2-唯一性，3-完整性，4-一致性，5-及时性，6-有效性
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_qualityDim;
                     bool m_qualityDimHasBeenSet;
 
                     /**
-                     * 规则适用的源数据对象类型（1：常量，2：离线表级，3：离线字段级别）
+                     * 源数据对象类型：1-常量，2-离线表级，3-离线字段级别
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_sourceObjectType;
@@ -1587,7 +1587,7 @@ namespace TencentCloud
                     bool m_sourceObjectValueHasBeenSet;
 
                     /**
-                     * 检测范围 1.全表, 2.条件扫描
+                     * 检测范围类型：1-全表，2-条件扫描
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_conditionType;
@@ -1615,7 +1615,7 @@ namespace TencentCloud
                     bool m_compareRuleHasBeenSet;
 
                     /**
-                     * 报警触发级别 1.低, 2.中, 3.高
+                     * 告警级别：1-低，2-中，3-高
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_alarmLevel;
@@ -1713,14 +1713,14 @@ namespace TencentCloud
                     bool m_subQualityDimHasBeenSet;
 
                     /**
-                     * 规则适用的目标数据对象类型（1：常量，2：离线表级，3：离线字段级别）
+                     * 目标数据对象类型：1-常量，2-离线表级，3-离线字段级别
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_targetObjectType;
                     bool m_targetObjectTypeHasBeenSet;
 
                     /**
-                     * 规则适用的目标数据对象类型（1：数值，2：字符串）
+                     * 目标字段数据类型：1-数值，2-字符串
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_targetObjectDataType;
@@ -1741,7 +1741,7 @@ namespace TencentCloud
                     bool m_targetObjectValueHasBeenSet;
 
                     /**
-                     * 源端对应的引擎类型
+                     * 执行引擎多选（位运算数组）：2-HIVE，4-SPARK，8-LIVY，16-DLC，64-TCHouse-P，128-DORIS，256-TCHouse-D，512-EMR-StarRocks，1024-TCHouse-X
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_sourceEngineTypes;
@@ -1797,7 +1797,7 @@ namespace TencentCloud
                     bool m_databaseIdHasBeenSet;
 
                     /**
-                     * 监控是否开启.0false,1true
+                     * 监控是否开启：0-关闭，1-开启
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_monitorStatus;
@@ -1818,7 +1818,7 @@ namespace TencentCloud
                     bool m_dsEnvTypeHasBeenSet;
 
                     /**
-                     * 数据源类型
+                     * 数据源类型：2-HIVE(EMR-Hive)，3-DLC，5-TCHouse-P，6-ICEBERG(EMR-Iceberg)，7-DORIS，8-TCHouse-D，9-EMR-StarRocks，11-TCHouse-X
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_datasourceType;
@@ -1881,7 +1881,7 @@ namespace TencentCloud
                     bool m_failMsgHasBeenSet;
 
                     /**
-                     * 任务类型
+                     * 任务类型（同MonitorType）：1-未配置，2-关联生产调度，3-离线周期检测
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupType;

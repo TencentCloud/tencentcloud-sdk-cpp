@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取批量操作返回
+                     * 获取<p>批量操作返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 批量操作返回
+                     * @return Data <p>批量操作返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 批量操作返回
+                     * <p>批量操作返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BatchTaskOperateNew m_data;

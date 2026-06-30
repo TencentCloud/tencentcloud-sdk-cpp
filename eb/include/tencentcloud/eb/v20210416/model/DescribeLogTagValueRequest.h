@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取起始时间
-                     * @return StartTime 起始时间
+                     * 获取<p>起始时间</p>
+                     * @return StartTime <p>起始时间</p>
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置起始时间
-                     * @param _startTime 起始时间
+                     * 设置<p>起始时间</p>
+                     * @param _startTime <p>起始时间</p>
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取<p>结束时间</p>
+                     * @return EndTime <p>结束时间</p>
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置<p>结束时间</p>
+                     * @param _endTime <p>结束时间</p>
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取事件集ID
-                     * @return EventBusId 事件集ID
+                     * 获取<p>事件集ID</p>
+                     * @return EventBusId <p>事件集ID</p>
                      * 
                      */
                     std::string GetEventBusId() const;
 
                     /**
-                     * 设置事件集ID
-                     * @param _eventBusId 事件集ID
+                     * 设置<p>事件集ID</p>
+                     * @param _eventBusId <p>事件集ID</p>
                      * 
                      */
                     void SetEventBusId(const std::string& _eventBusId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool EventBusIdHasBeenSet() const;
 
                     /**
-                     * 获取聚合字段,取值范围如下：Source(事件源),RuleIds(命中规则),Subject(实例ID),Region(地域)
-                     * @return GroupField 聚合字段,取值范围如下：Source(事件源),RuleIds(命中规则),Subject(实例ID),Region(地域)
+                     * 获取<p>聚合字段,取值范围如下：Source(事件源),RuleIds(命中规则),Subject(实例ID),Region(地域)</p>
+                     * @return GroupField <p>聚合字段,取值范围如下：Source(事件源),RuleIds(命中规则),Subject(实例ID),Region(地域)</p>
                      * 
                      */
                     std::string GetGroupField() const;
 
                     /**
-                     * 设置聚合字段,取值范围如下：Source(事件源),RuleIds(命中规则),Subject(实例ID),Region(地域)
-                     * @param _groupField 聚合字段,取值范围如下：Source(事件源),RuleIds(命中规则),Subject(实例ID),Region(地域)
+                     * 设置<p>聚合字段,取值范围如下：Source(事件源),RuleIds(命中规则),Subject(实例ID),Region(地域)</p>
+                     * @param _groupField <p>聚合字段,取值范围如下：Source(事件源),RuleIds(命中规则),Subject(实例ID),Region(地域)</p>
                      * 
                      */
                     void SetGroupField(const std::string& _groupField);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool GroupFieldHasBeenSet() const;
 
                     /**
-                     * 获取页数
-                     * @return Page 页数
+                     * 获取<p>页数</p>
+                     * @return Page <p>页数</p>
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
-                     * 设置页数
-                     * @param _page 页数
+                     * 设置<p>页数</p>
+                     * @param _page <p>页数</p>
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool PageHasBeenSet() const;
 
                     /**
-                     * 获取每页数据大小
-                     * @return Limit 每页数据大小
+                     * 获取<p>每页数据大小</p>
+                     * @return Limit <p>每页数据大小</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每页数据大小
-                     * @param _limit 每页数据大小
+                     * 设置<p>每页数据大小</p>
+                     * @param _limit <p>每页数据大小</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取筛选条件
-                     * @return Filter 筛选条件
+                     * 获取<p>筛选条件</p>
+                     * @return Filter <p>筛选条件</p>
                      * 
                      */
                     std::vector<LogFilter> GetFilter() const;
 
                     /**
-                     * 设置筛选条件
-                     * @param _filter 筛选条件
+                     * 设置<p>筛选条件</p>
+                     * @param _filter <p>筛选条件</p>
                      * 
                      */
                     void SetFilter(const std::vector<LogFilter>& _filter);
@@ -193,43 +193,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 起始时间
+                     * <p>起始时间</p>
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * <p>结束时间</p>
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 事件集ID
+                     * <p>事件集ID</p>
                      */
                     std::string m_eventBusId;
                     bool m_eventBusIdHasBeenSet;
 
                     /**
-                     * 聚合字段,取值范围如下：Source(事件源),RuleIds(命中规则),Subject(实例ID),Region(地域)
+                     * <p>聚合字段,取值范围如下：Source(事件源),RuleIds(命中规则),Subject(实例ID),Region(地域)</p>
                      */
                     std::string m_groupField;
                     bool m_groupFieldHasBeenSet;
 
                     /**
-                     * 页数
+                     * <p>页数</p>
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;
 
                     /**
-                     * 每页数据大小
+                     * <p>每页数据大小</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 筛选条件
+                     * <p>筛选条件</p>
                      */
                     std::vector<LogFilter> m_filter;
                     bool m_filterHasBeenSet;

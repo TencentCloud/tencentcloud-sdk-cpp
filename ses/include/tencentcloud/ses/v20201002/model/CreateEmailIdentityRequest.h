@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取您的发信域名，建议使用三级以上域名。例如：mail.qcloud.com。
-                     * @return EmailIdentity 您的发信域名，建议使用三级以上域名。例如：mail.qcloud.com。
+                     * 获取<p>您的发信域名，建议使用三级以上域名。例如：mail.qcloud.com。</p>
+                     * @return EmailIdentity <p>您的发信域名，建议使用三级以上域名。例如：mail.qcloud.com。</p>
                      * 
                      */
                     std::string GetEmailIdentity() const;
 
                     /**
-                     * 设置您的发信域名，建议使用三级以上域名。例如：mail.qcloud.com。
-                     * @param _emailIdentity 您的发信域名，建议使用三级以上域名。例如：mail.qcloud.com。
+                     * 设置<p>您的发信域名，建议使用三级以上域名。例如：mail.qcloud.com。</p>
+                     * @param _emailIdentity <p>您的发信域名，建议使用三级以上域名。例如：mail.qcloud.com。</p>
                      * 
                      */
                     void SetEmailIdentity(const std::string& _emailIdentity);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool EmailIdentityHasBeenSet() const;
 
                     /**
-                     * 获取生成的dkim密钥长度。0:1024，1:2048
-                     * @return DKIMOption 生成的dkim密钥长度。0:1024，1:2048
+                     * 获取<p>生成的dkim密钥长度。0:1024，1:2048</p>
+                     * @return DKIMOption <p>生成的dkim密钥长度。0:1024，1:2048</p>
                      * 
                      */
                     uint64_t GetDKIMOption() const;
 
                     /**
-                     * 设置生成的dkim密钥长度。0:1024，1:2048
-                     * @param _dKIMOption 生成的dkim密钥长度。0:1024，1:2048
+                     * 设置<p>生成的dkim密钥长度。0:1024，1:2048</p>
+                     * @param _dKIMOption <p>生成的dkim密钥长度。0:1024，1:2048</p>
                      * 
                      */
                     void SetDKIMOption(const uint64_t& _dKIMOption);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool DKIMOptionHasBeenSet() const;
 
                     /**
-                     * 获取tag 标签
-                     * @return TagList tag 标签
+                     * 获取<p>tag 标签</p>
+                     * @return TagList <p>tag 标签</p>
                      * 
                      */
                     std::vector<TagList> GetTagList() const;
 
                     /**
-                     * 设置tag 标签
-                     * @param _tagList tag 标签
+                     * 设置<p>tag 标签</p>
+                     * @param _tagList <p>tag 标签</p>
                      * 
                      */
                     void SetTagList(const std::vector<TagList>& _tagList);
@@ -109,19 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 您的发信域名，建议使用三级以上域名。例如：mail.qcloud.com。
+                     * <p>您的发信域名，建议使用三级以上域名。例如：mail.qcloud.com。</p>
                      */
                     std::string m_emailIdentity;
                     bool m_emailIdentityHasBeenSet;
 
                     /**
-                     * 生成的dkim密钥长度。0:1024，1:2048
+                     * <p>生成的dkim密钥长度。0:1024，1:2048</p>
                      */
                     uint64_t m_dKIMOption;
                     bool m_dKIMOptionHasBeenSet;
 
                     /**
-                     * tag 标签
+                     * <p>tag 标签</p>
                      */
                     std::vector<TagList> m_tagList;
                     bool m_tagListHasBeenSet;

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警通知模板 ID
-                     * @return NoticeId 告警通知模板 ID
+                     * 获取<p>告警通知模板 ID</p>
+                     * @return NoticeId <p>告警通知模板 ID</p>
                      * 
                      */
                     std::string GetNoticeId() const;
 
                     /**
-                     * 设置告警通知模板 ID
-                     * @param _noticeId 告警通知模板 ID
+                     * 设置<p>告警通知模板 ID</p>
+                     * @param _noticeId <p>告警通知模板 ID</p>
                      * 
                      */
                     void SetNoticeId(const std::string& _noticeId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NoticeIdHasBeenSet() const;
 
                     /**
-                     * 获取告警通知模板绑定的告警策略ID列表
-                     * @return PolicyIds 告警通知模板绑定的告警策略ID列表
+                     * 获取<p>告警通知模板绑定的告警策略ID列表</p>
+                     * @return PolicyIds <p>告警通知模板绑定的告警策略ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetPolicyIds() const;
 
                     /**
-                     * 设置告警通知模板绑定的告警策略ID列表
-                     * @param _policyIds 告警通知模板绑定的告警策略ID列表
+                     * 设置<p>告警通知模板绑定的告警策略ID列表</p>
+                     * @param _policyIds <p>告警通知模板绑定的告警策略ID列表</p>
                      * 
                      */
                     void SetPolicyIds(const std::vector<std::string>& _policyIds);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 告警通知模板 ID
+                     * <p>告警通知模板 ID</p>
                      */
                     std::string m_noticeId;
                     bool m_noticeIdHasBeenSet;
 
                     /**
-                     * 告警通知模板绑定的告警策略ID列表
+                     * <p>告警通知模板绑定的告警策略ID列表</p>
                      */
                     std::vector<std::string> m_policyIds;
                     bool m_policyIdsHasBeenSet;

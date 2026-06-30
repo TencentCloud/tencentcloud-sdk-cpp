@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取未打折的原价，其值除以100表示最终的价格。例如10094表示100.94元
-                     * @return OriginalPrice 未打折的原价，其值除以100表示最终的价格。例如10094表示100.94元
+                     * 获取<p>未打折的原价，其值除以100表示最终的价格。例如10094表示100.94元</p>
+                     * @return OriginalPrice <p>未打折的原价，其值除以100表示最终的价格。例如10094表示100.94元</p>
                      * 
                      */
                     int64_t GetOriginalPrice() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool OriginalPriceHasBeenSet() const;
 
                     /**
-                     * 获取实际需要支付价格，其值除以100表示最终的价格。例如10094表示100.94元
-                     * @return Price 实际需要支付价格，其值除以100表示最终的价格。例如10094表示100.94元
+                     * 获取<p>实际需要支付价格，其值除以100表示最终的价格。例如10094表示100.94元</p>
+                     * @return Price <p>实际需要支付价格，其值除以100表示最终的价格。例如10094表示100.94元</p>
                      * 
                      */
                     int64_t GetPrice() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 未打折的原价，其值除以100表示最终的价格。例如10094表示100.94元
+                     * <p>未打折的原价，其值除以100表示最终的价格。例如10094表示100.94元</p>
                      */
                     int64_t m_originalPrice;
                     bool m_originalPriceHasBeenSet;
 
                     /**
-                     * 实际需要支付价格，其值除以100表示最终的价格。例如10094表示100.94元
+                     * <p>实际需要支付价格，其值除以100表示最终的价格。例如10094表示100.94元</p>
                      */
                     int64_t m_price;
                     bool m_priceHasBeenSet;
