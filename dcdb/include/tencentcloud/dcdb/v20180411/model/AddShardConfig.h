@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dcdb/v20180411/model/DcnInsShardConfig.h>
 
 
 namespace TencentCloud
@@ -47,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取新增分片的数量
-                     * @return ShardCount 新增分片的数量
+                     * 获取<p>新增分片的数量</p>
+                     * @return ShardCount <p>新增分片的数量</p>
                      * 
                      */
                     int64_t GetShardCount() const;
 
                     /**
-                     * 设置新增分片的数量
-                     * @param _shardCount 新增分片的数量
+                     * 设置<p>新增分片的数量</p>
+                     * @param _shardCount <p>新增分片的数量</p>
                      * 
                      */
                     void SetShardCount(const int64_t& _shardCount);
@@ -68,15 +69,15 @@ namespace TencentCloud
                     bool ShardCountHasBeenSet() const;
 
                     /**
-                     * 获取分片内存大小，单位 GB
-                     * @return ShardMemory 分片内存大小，单位 GB
+                     * 获取<p>分片内存大小，单位 GB</p>
+                     * @return ShardMemory <p>分片内存大小，单位 GB</p>
                      * 
                      */
                     int64_t GetShardMemory() const;
 
                     /**
-                     * 设置分片内存大小，单位 GB
-                     * @param _shardMemory 分片内存大小，单位 GB
+                     * 设置<p>分片内存大小，单位 GB</p>
+                     * @param _shardMemory <p>分片内存大小，单位 GB</p>
                      * 
                      */
                     void SetShardMemory(const int64_t& _shardMemory);
@@ -89,15 +90,15 @@ namespace TencentCloud
                     bool ShardMemoryHasBeenSet() const;
 
                     /**
-                     * 获取分片存储大小，单位 GB
-                     * @return ShardStorage 分片存储大小，单位 GB
+                     * 获取<p>分片存储大小，单位 GB</p>
+                     * @return ShardStorage <p>分片存储大小，单位 GB</p>
                      * 
                      */
                     int64_t GetShardStorage() const;
 
                     /**
-                     * 设置分片存储大小，单位 GB
-                     * @param _shardStorage 分片存储大小，单位 GB
+                     * 设置<p>分片存储大小，单位 GB</p>
+                     * @param _shardStorage <p>分片存储大小，单位 GB</p>
                      * 
                      */
                     void SetShardStorage(const int64_t& _shardStorage);
@@ -109,25 +110,52 @@ namespace TencentCloud
                      */
                     bool ShardStorageHasBeenSet() const;
 
+                    /**
+                     * 获取<p>DCN实例的规格</p>
+                     * @return DcnInsShardConfigs <p>DCN实例的规格</p>
+                     * 
+                     */
+                    std::vector<DcnInsShardConfig> GetDcnInsShardConfigs() const;
+
+                    /**
+                     * 设置<p>DCN实例的规格</p>
+                     * @param _dcnInsShardConfigs <p>DCN实例的规格</p>
+                     * 
+                     */
+                    void SetDcnInsShardConfigs(const std::vector<DcnInsShardConfig>& _dcnInsShardConfigs);
+
+                    /**
+                     * 判断参数 DcnInsShardConfigs 是否已赋值
+                     * @return DcnInsShardConfigs 是否已赋值
+                     * 
+                     */
+                    bool DcnInsShardConfigsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 新增分片的数量
+                     * <p>新增分片的数量</p>
                      */
                     int64_t m_shardCount;
                     bool m_shardCountHasBeenSet;
 
                     /**
-                     * 分片内存大小，单位 GB
+                     * <p>分片内存大小，单位 GB</p>
                      */
                     int64_t m_shardMemory;
                     bool m_shardMemoryHasBeenSet;
 
                     /**
-                     * 分片存储大小，单位 GB
+                     * <p>分片存储大小，单位 GB</p>
                      */
                     int64_t m_shardStorage;
                     bool m_shardStorageHasBeenSet;
+
+                    /**
+                     * <p>DCN实例的规格</p>
+                     */
+                    std::vector<DcnInsShardConfig> m_dcnInsShardConfigs;
+                    bool m_dcnInsShardConfigsHasBeenSet;
 
                 };
             }

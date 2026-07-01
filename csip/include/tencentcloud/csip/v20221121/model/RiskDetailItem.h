@@ -361,6 +361,27 @@ namespace TencentCloud
                      */
                     bool AssetTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>风险忽略原因</p>
+                     * @return Reason <p>风险忽略原因</p>
+                     * 
+                     */
+                    std::string GetReason() const;
+
+                    /**
+                     * 设置<p>风险忽略原因</p>
+                     * @param _reason <p>风险忽略原因</p>
+                     * 
+                     */
+                    void SetReason(const std::string& _reason);
+
+                    /**
+                     * 判断参数 Reason 是否已赋值
+                     * @return Reason 是否已赋值
+                     * 
+                     */
+                    bool ReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -452,6 +473,12 @@ namespace TencentCloud
                      */
                     std::string m_assetType;
                     bool m_assetTypeHasBeenSet;
+
+                    /**
+                     * <p>风险忽略原因</p>
+                     */
+                    std::string m_reason;
+                    bool m_reasonHasBeenSet;
 
                 };
             }

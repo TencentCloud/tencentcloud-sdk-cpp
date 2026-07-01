@@ -27,7 +27,8 @@ UpdateOIDCConfigRequest::UpdateOIDCConfigRequest() :
     m_clientIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_identityKeyHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_autoRotateKeyHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,14 @@ string UpdateOIDCConfigRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoRotateKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRotateKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoRotateKey, allocator);
     }
 
 
@@ -169,6 +178,22 @@ void UpdateOIDCConfigRequest::SetDescription(const string& _description)
 bool UpdateOIDCConfigRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+uint64_t UpdateOIDCConfigRequest::GetAutoRotateKey() const
+{
+    return m_autoRotateKey;
+}
+
+void UpdateOIDCConfigRequest::SetAutoRotateKey(const uint64_t& _autoRotateKey)
+{
+    m_autoRotateKey = _autoRotateKey;
+    m_autoRotateKeyHasBeenSet = true;
+}
+
+bool UpdateOIDCConfigRequest::AutoRotateKeyHasBeenSet() const
+{
+    return m_autoRotateKeyHasBeenSet;
 }
 
 

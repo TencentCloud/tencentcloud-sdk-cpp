@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
-DescribeProVersionStatusResponse::DescribeProVersionStatusResponse()
+DescribeProVersionStatusResponse::DescribeProVersionStatusResponse() :
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome DescribeProVersionStatusResponse::Deserialize(const string &
     }
 
 
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    {
+        if (!rsp["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(rsp["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string DescribeProVersionStatusResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string DescribeProVersionStatusResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeProVersionStatusResponse::GetStatus() const
+{
+    return m_status;
+}
+
+bool DescribeProVersionStatusResponse::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
 
 

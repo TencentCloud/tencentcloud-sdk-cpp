@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ToolNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>沙箱工具类型，目前支持：browser、code-interpreter、custom</p>
-                     * @return ToolType <p>沙箱工具类型，目前支持：browser、code-interpreter、custom</p>
+                     * 获取<p>沙箱工具类型，目前支持：browser、code-interpreter、custom等</p><p>枚举值：</p><ul><li>browser： browser</li><li>code-interpreter： code-interpreter</li><li>mobile： mobile</li><li>osworld： osworld</li><li>custom： custom</li><li>swebench： swebench</li><li>aio： aio</li><li>android-world： android-world</li><li>waa： waa</li></ul>
+                     * @return ToolType <p>沙箱工具类型，目前支持：browser、code-interpreter、custom等</p><p>枚举值：</p><ul><li>browser： browser</li><li>code-interpreter： code-interpreter</li><li>mobile： mobile</li><li>osworld： osworld</li><li>custom： custom</li><li>swebench： swebench</li><li>aio： aio</li><li>android-world： android-world</li><li>waa： waa</li></ul>
                      * 
                      */
                     std::string GetToolType() const;
 
                     /**
-                     * 设置<p>沙箱工具类型，目前支持：browser、code-interpreter、custom</p>
-                     * @param _toolType <p>沙箱工具类型，目前支持：browser、code-interpreter、custom</p>
+                     * 设置<p>沙箱工具类型，目前支持：browser、code-interpreter、custom等</p><p>枚举值：</p><ul><li>browser： browser</li><li>code-interpreter： code-interpreter</li><li>mobile： mobile</li><li>osworld： osworld</li><li>custom： custom</li><li>swebench： swebench</li><li>aio： aio</li><li>android-world： android-world</li><li>waa： waa</li></ul>
+                     * @param _toolType <p>沙箱工具类型，目前支持：browser、code-interpreter、custom等</p><p>枚举值：</p><ul><li>browser： browser</li><li>code-interpreter： code-interpreter</li><li>mobile： mobile</li><li>osworld： osworld</li><li>custom： custom</li><li>swebench： swebench</li><li>aio： aio</li><li>android-world： android-world</li><li>waa： waa</li></ul>
                      * 
                      */
                     void SetToolType(const std::string& _toolType);
@@ -308,7 +308,7 @@ namespace TencentCloud
                     bool m_toolNameHasBeenSet;
 
                     /**
-                     * <p>沙箱工具类型，目前支持：browser、code-interpreter、custom</p>
+                     * <p>沙箱工具类型，目前支持：browser、code-interpreter、custom等</p><p>枚举值：</p><ul><li>browser： browser</li><li>code-interpreter： code-interpreter</li><li>mobile： mobile</li><li>osworld： osworld</li><li>custom： custom</li><li>swebench： swebench</li><li>aio： aio</li><li>android-world： android-world</li><li>waa： waa</li></ul>
                      */
                     std::string m_toolType;
                     bool m_toolTypeHasBeenSet;

@@ -25,7 +25,8 @@ SingleWorkflowConfig::SingleWorkflowConfig() :
     m_statusHasBeenSet(false),
     m_workflowDescriptionHasBeenSet(false),
     m_workflowIdHasBeenSet(false),
-    m_workflowNameHasBeenSet(false)
+    m_workflowNameHasBeenSet(false),
+    m_enabledHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome SingleWorkflowConfig::Deserialize(const rapidjson::Value &va
         m_workflowNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Enabled") && !value["Enabled"].IsNull())
+    {
+        if (!value["Enabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SingleWorkflowConfig.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enabled = value["Enabled"].GetBool();
+        m_enabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void SingleWorkflowConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "WorkflowName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_workflowName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Enabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enabled, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void SingleWorkflowConfig::SetWorkflowName(const string& _workflowName)
 bool SingleWorkflowConfig::WorkflowNameHasBeenSet() const
 {
     return m_workflowNameHasBeenSet;
+}
+
+bool SingleWorkflowConfig::GetEnabled() const
+{
+    return m_enabled;
+}
+
+void SingleWorkflowConfig::SetEnabled(const bool& _enabled)
+{
+    m_enabled = _enabled;
+    m_enabledHasBeenSet = true;
+}
+
+bool SingleWorkflowConfig::EnabledHasBeenSet() const
+{
+    return m_enabledHasBeenSet;
 }
 

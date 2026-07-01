@@ -440,6 +440,106 @@ DataagentClient::DeleteSceneOutcomeCallable DataagentClient::DeleteSceneCallable
     return prom->get_future();
 }
 
+DataagentClient::ExecuteAgentApiOutcome DataagentClient::ExecuteAgentApi(const ExecuteAgentApiRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExecuteAgentApi");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExecuteAgentApiResponse rsp = ExecuteAgentApiResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExecuteAgentApiOutcome(rsp);
+        else
+            return ExecuteAgentApiOutcome(o.GetError());
+    }
+    else
+    {
+        return ExecuteAgentApiOutcome(outcome.GetError());
+    }
+}
+
+void DataagentClient::ExecuteAgentApiAsync(const ExecuteAgentApiRequest& request, const ExecuteAgentApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ExecuteAgentApiRequest&;
+    using Resp = ExecuteAgentApiResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ExecuteAgentApi", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DataagentClient::ExecuteAgentApiOutcomeCallable DataagentClient::ExecuteAgentApiCallable(const ExecuteAgentApiRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ExecuteAgentApiOutcome>>();
+    ExecuteAgentApiAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const ExecuteAgentApiRequest&,
+        ExecuteAgentApiOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DataagentClient::ExecuteAgentApiV1Outcome DataagentClient::ExecuteAgentApiV1(const ExecuteAgentApiV1Request &request)
+{
+    auto outcome = MakeRequest(request, "ExecuteAgentApiV1");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExecuteAgentApiV1Response rsp = ExecuteAgentApiV1Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExecuteAgentApiV1Outcome(rsp);
+        else
+            return ExecuteAgentApiV1Outcome(o.GetError());
+    }
+    else
+    {
+        return ExecuteAgentApiV1Outcome(outcome.GetError());
+    }
+}
+
+void DataagentClient::ExecuteAgentApiV1Async(const ExecuteAgentApiV1Request& request, const ExecuteAgentApiV1AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ExecuteAgentApiV1Request&;
+    using Resp = ExecuteAgentApiV1Response;
+
+    DoRequestAsync<Req, Resp>(
+        "ExecuteAgentApiV1", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DataagentClient::ExecuteAgentApiV1OutcomeCallable DataagentClient::ExecuteAgentApiV1Callable(const ExecuteAgentApiV1Request &request)
+{
+    const auto prom = std::make_shared<std::promise<ExecuteAgentApiV1Outcome>>();
+    ExecuteAgentApiV1Async(
+    request,
+    [prom](
+        const DataagentClient*,
+        const ExecuteAgentApiV1Request&,
+        ExecuteAgentApiV1Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DataagentClient::GetJobsByKnowledgeBaseIdOutcome DataagentClient::GetJobsByKnowledgeBaseId(const GetJobsByKnowledgeBaseIdRequest &request)
 {
     auto outcome = MakeRequest(request, "GetJobsByKnowledgeBaseId");

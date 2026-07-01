@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>推荐购买数</p>
+                     * @return Number <p>推荐购买数</p>
+                     * 
+                     */
+                    int64_t GetNumber() const;
+
+                    /**
+                     * 判断参数 Number 是否已赋值
+                     * @return Number 是否已赋值
+                     * 
+                     */
+                    bool NumberHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>推荐购买数</p>
+                     */
+                    int64_t m_number;
+                    bool m_numberHasBeenSet;
 
                 };
             }

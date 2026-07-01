@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据库代理节点ID
-                     * @return ProxyNodeId 数据库代理节点ID
+                     * 获取<p>数据库代理节点ID</p>
+                     * @return ProxyNodeId <p>数据库代理节点ID</p>
                      * 
                      */
                     std::string GetProxyNodeId() const;
 
                     /**
-                     * 设置数据库代理节点ID
-                     * @param _proxyNodeId 数据库代理节点ID
+                     * 设置<p>数据库代理节点ID</p>
+                     * @param _proxyNodeId <p>数据库代理节点ID</p>
                      * 
                      */
                     void SetProxyNodeId(const std::string& _proxyNodeId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ProxyNodeIdHasBeenSet() const;
 
                     /**
-                     * 获取节点当前连接数, DescribeProxyNodes接口此字段值不返回
-                     * @return ProxyNodeConnections 节点当前连接数, DescribeProxyNodes接口此字段值不返回
+                     * 获取<p>节点当前连接数, DescribeProxyNodes接口此字段值不返回</p>
+                     * @return ProxyNodeConnections <p>节点当前连接数, DescribeProxyNodes接口此字段值不返回</p>
                      * 
                      */
                     int64_t GetProxyNodeConnections() const;
 
                     /**
-                     * 设置节点当前连接数, DescribeProxyNodes接口此字段值不返回
-                     * @param _proxyNodeConnections 节点当前连接数, DescribeProxyNodes接口此字段值不返回
+                     * 设置<p>节点当前连接数, DescribeProxyNodes接口此字段值不返回</p>
+                     * @param _proxyNodeConnections <p>节点当前连接数, DescribeProxyNodes接口此字段值不返回</p>
                      * 
                      */
                     void SetProxyNodeConnections(const int64_t& _proxyNodeConnections);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ProxyNodeConnectionsHasBeenSet() const;
 
                     /**
-                     * 获取数据库代理节点cpu
-                     * @return Cpu 数据库代理节点cpu
+                     * 获取<p>数据库代理节点cpu</p>
+                     * @return Cpu <p>数据库代理节点cpu</p>
                      * 
                      */
                     int64_t GetCpu() const;
 
                     /**
-                     * 设置数据库代理节点cpu
-                     * @param _cpu 数据库代理节点cpu
+                     * 设置<p>数据库代理节点cpu</p>
+                     * @param _cpu <p>数据库代理节点cpu</p>
                      * 
                      */
                     void SetCpu(const int64_t& _cpu);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取数据库代理节点内存
-                     * @return Mem 数据库代理节点内存
+                     * 获取<p>数据库代理节点内存</p>
+                     * @return Mem <p>数据库代理节点内存</p>
                      * 
                      */
                     int64_t GetMem() const;
 
                     /**
-                     * 设置数据库代理节点内存
-                     * @param _mem 数据库代理节点内存
+                     * 设置<p>数据库代理节点内存</p>
+                     * @param _mem <p>数据库代理节点内存</p>
                      * 
                      */
                     void SetMem(const int64_t& _mem);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool MemHasBeenSet() const;
 
                     /**
-                     * 获取数据库代理节点状态
-                     * @return Status 数据库代理节点状态
+                     * 获取<p>数据库代理节点状态</p>
+                     * @return Status <p>数据库代理节点状态</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置数据库代理节点状态
-                     * @param _status 数据库代理节点状态
+                     * 设置<p>数据库代理节点状态</p>
+                     * @param _status <p>数据库代理节点状态</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取数据库代理组ID
-                     * @return ProxyGroupId 数据库代理组ID
+                     * 获取<p>数据库代理组ID</p>
+                     * @return ProxyGroupId <p>数据库代理组ID</p>
                      * 
                      */
                     std::string GetProxyGroupId() const;
 
                     /**
-                     * 设置数据库代理组ID
-                     * @param _proxyGroupId 数据库代理组ID
+                     * 设置<p>数据库代理组ID</p>
+                     * @param _proxyGroupId <p>数据库代理组ID</p>
                      * 
                      */
                     void SetProxyGroupId(const std::string& _proxyGroupId);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool ProxyGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取用户AppID
-                     * @return AppId 用户AppID
+                     * 获取<p>用户AppID</p>
+                     * @return AppId <p>用户AppID</p>
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
-                     * 设置用户AppID
-                     * @param _appId 用户AppID
+                     * 设置<p>用户AppID</p>
+                     * @param _appId <p>用户AppID</p>
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取地域
-                     * @return Region 地域
+                     * 获取<p>地域</p>
+                     * @return Region <p>地域</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域
-                     * @param _region 地域
+                     * 设置<p>地域</p>
+                     * @param _region <p>地域</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取可用区
-                     * @return Zone 可用区
+                     * 获取<p>可用区</p>
+                     * @return Zone <p>可用区</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区
-                     * @param _zone 可用区
+                     * 设置<p>可用区</p>
+                     * @param _zone <p>可用区</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取数据库代理节点名字
-                     * @return OssProxyNodeName 数据库代理节点名字
+                     * 获取<p>数据库代理节点名字</p>
+                     * @return OssProxyNodeName <p>数据库代理节点名字</p>
                      * 
                      */
                     std::string GetOssProxyNodeName() const;
 
                     /**
-                     * 设置数据库代理节点名字
-                     * @param _ossProxyNodeName 数据库代理节点名字
+                     * 设置<p>数据库代理节点名字</p>
+                     * @param _ossProxyNodeName <p>数据库代理节点名字</p>
                      * 
                      */
                     void SetOssProxyNodeName(const std::string& _ossProxyNodeName);
@@ -277,73 +277,127 @@ namespace TencentCloud
                      */
                     bool OssProxyNodeNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>更新时间</p>
+                     * @return UpdateTime <p>更新时间</p>
+                     * 
+                     */
+                    std::string GetUpdateTime() const;
+
+                    /**
+                     * 设置<p>更新时间</p>
+                     * @param _updateTime <p>更新时间</p>
+                     * 
+                     */
+                    void SetUpdateTime(const std::string& _updateTime);
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     * 
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 数据库代理节点ID
+                     * <p>数据库代理节点ID</p>
                      */
                     std::string m_proxyNodeId;
                     bool m_proxyNodeIdHasBeenSet;
 
                     /**
-                     * 节点当前连接数, DescribeProxyNodes接口此字段值不返回
+                     * <p>节点当前连接数, DescribeProxyNodes接口此字段值不返回</p>
                      */
                     int64_t m_proxyNodeConnections;
                     bool m_proxyNodeConnectionsHasBeenSet;
 
                     /**
-                     * 数据库代理节点cpu
+                     * <p>数据库代理节点cpu</p>
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 数据库代理节点内存
+                     * <p>数据库代理节点内存</p>
                      */
                     int64_t m_mem;
                     bool m_memHasBeenSet;
 
                     /**
-                     * 数据库代理节点状态
+                     * <p>数据库代理节点状态</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 数据库代理组ID
+                     * <p>数据库代理组ID</p>
                      */
                     std::string m_proxyGroupId;
                     bool m_proxyGroupIdHasBeenSet;
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 用户AppID
+                     * <p>用户AppID</p>
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 地域
+                     * <p>地域</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 可用区
+                     * <p>可用区</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 数据库代理节点名字
+                     * <p>数据库代理节点名字</p>
                      */
                     std::string m_ossProxyNodeName;
                     bool m_ossProxyNodeNameHasBeenSet;
+
+                    /**
+                     * <p>创建时间</p>
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * <p>更新时间</p>
+                     */
+                    std::string m_updateTime;
+                    bool m_updateTimeHasBeenSet;
 
                 };
             }

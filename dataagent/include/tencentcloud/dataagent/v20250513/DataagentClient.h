@@ -39,6 +39,10 @@
 #include <tencentcloud/dataagent/v20250513/model/DeleteDataAgentSessionResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/DeleteSceneRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/DeleteSceneResponse.h>
+#include <tencentcloud/dataagent/v20250513/model/ExecuteAgentApiRequest.h>
+#include <tencentcloud/dataagent/v20250513/model/ExecuteAgentApiResponse.h>
+#include <tencentcloud/dataagent/v20250513/model/ExecuteAgentApiV1Request.h>
+#include <tencentcloud/dataagent/v20250513/model/ExecuteAgentApiV1Response.h>
 #include <tencentcloud/dataagent/v20250513/model/GetJobsByKnowledgeBaseIdRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/GetJobsByKnowledgeBaseIdResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/GetKnowledgeBaseFileListRequest.h>
@@ -109,6 +113,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSceneResponse> DeleteSceneOutcome;
                 typedef std::future<DeleteSceneOutcome> DeleteSceneOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::DeleteSceneRequest&, DeleteSceneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSceneAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExecuteAgentApiResponse> ExecuteAgentApiOutcome;
+                typedef std::future<ExecuteAgentApiOutcome> ExecuteAgentApiOutcomeCallable;
+                typedef std::function<void(const DataagentClient*, const Model::ExecuteAgentApiRequest&, ExecuteAgentApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteAgentApiAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExecuteAgentApiV1Response> ExecuteAgentApiV1Outcome;
+                typedef std::future<ExecuteAgentApiV1Outcome> ExecuteAgentApiV1OutcomeCallable;
+                typedef std::function<void(const DataagentClient*, const Model::ExecuteAgentApiV1Request&, ExecuteAgentApiV1Outcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteAgentApiV1AsyncHandler;
                 typedef Outcome<Core::Error, Model::GetJobsByKnowledgeBaseIdResponse> GetJobsByKnowledgeBaseIdOutcome;
                 typedef std::future<GetJobsByKnowledgeBaseIdOutcome> GetJobsByKnowledgeBaseIdOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::GetJobsByKnowledgeBaseIdRequest&, GetJobsByKnowledgeBaseIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetJobsByKnowledgeBaseIdAsyncHandler;
@@ -231,6 +241,24 @@ namespace TencentCloud
                 DeleteSceneOutcome DeleteScene(const Model::DeleteSceneRequest &request);
                 void DeleteSceneAsync(const Model::DeleteSceneRequest& request, const DeleteSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSceneOutcomeCallable DeleteSceneCallable(const Model::DeleteSceneRequest& request);
+
+                /**
+                 *执行datateam相关的命令行请求
+                 * @param req ExecuteAgentApiRequest
+                 * @return ExecuteAgentApiOutcome
+                 */
+                ExecuteAgentApiOutcome ExecuteAgentApi(const Model::ExecuteAgentApiRequest &request);
+                void ExecuteAgentApiAsync(const Model::ExecuteAgentApiRequest& request, const ExecuteAgentApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExecuteAgentApiOutcomeCallable ExecuteAgentApiCallable(const Model::ExecuteAgentApiRequest& request);
+
+                /**
+                 *执行datateam相关的命令行请求
+                 * @param req ExecuteAgentApiV1Request
+                 * @return ExecuteAgentApiV1Outcome
+                 */
+                ExecuteAgentApiV1Outcome ExecuteAgentApiV1(const Model::ExecuteAgentApiV1Request &request);
+                void ExecuteAgentApiV1Async(const Model::ExecuteAgentApiV1Request& request, const ExecuteAgentApiV1AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExecuteAgentApiV1OutcomeCallable ExecuteAgentApiV1Callable(const Model::ExecuteAgentApiV1Request& request);
 
                 /**
                  *根据知识库id查询jobs 列表

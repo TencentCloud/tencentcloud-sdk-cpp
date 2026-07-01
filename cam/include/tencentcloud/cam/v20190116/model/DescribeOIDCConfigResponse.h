@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取身份提供商类型 11角色身份提供商
-                     * @return ProviderType 身份提供商类型 11角色身份提供商
+                     * 获取<p>身份提供商类型 11角色身份提供商</p>
+                     * @return ProviderType <p>身份提供商类型 11角色身份提供商</p>
                      * 
                      */
                     uint64_t GetProviderType() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool ProviderTypeHasBeenSet() const;
 
                     /**
-                     * 获取身份提供商URL
-                     * @return IdentityUrl 身份提供商URL
+                     * 获取<p>身份提供商URL</p>
+                     * @return IdentityUrl <p>身份提供商URL</p>
                      * 
                      */
                     std::string GetIdentityUrl() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool IdentityUrlHasBeenSet() const;
 
                     /**
-                     * 获取签名公钥
-                     * @return IdentityKey 签名公钥
+                     * 获取<p>签名公钥</p>
+                     * @return IdentityKey <p>签名公钥</p>
                      * 
                      */
                     std::string GetIdentityKey() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool IdentityKeyHasBeenSet() const;
 
                     /**
-                     * 获取客户端id
-                     * @return ClientId 客户端id
+                     * 获取<p>客户端id</p>
+                     * @return ClientId <p>客户端id</p>
                      * 
                      */
                     std::vector<std::string> GetClientId() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool ClientIdHasBeenSet() const;
 
                     /**
-                     * 获取状态：0:未设置，11:已开启，2:已禁用
-                     * @return Status 状态：0:未设置，11:已开启，2:已禁用
+                     * 获取<p>状态：0:未设置，11:已开启，2:已禁用</p>
+                     * @return Status <p>状态：0:未设置，11:已开启，2:已禁用</p>
                      * 
                      */
                     uint64_t GetStatus() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
+                     * 获取<p>描述</p>
+                     * @return Description <p>描述</p>
                      * 
                      */
                     std::string GetDescription() const;
@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取名称
-                     * @return Name 名称
+                     * 获取<p>名称</p>
+                     * @return Name <p>名称</p>
                      * 
                      */
                     std::string GetName() const;
@@ -141,49 +141,69 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>OIDC公钥自动轮转开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值：0</p>
+                     * @return AutoRotateKey <p>OIDC公钥自动轮转开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    uint64_t GetAutoRotateKey() const;
+
+                    /**
+                     * 判断参数 AutoRotateKey 是否已赋值
+                     * @return AutoRotateKey 是否已赋值
+                     * 
+                     */
+                    bool AutoRotateKeyHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 身份提供商类型 11角色身份提供商
+                     * <p>身份提供商类型 11角色身份提供商</p>
                      */
                     uint64_t m_providerType;
                     bool m_providerTypeHasBeenSet;
 
                     /**
-                     * 身份提供商URL
+                     * <p>身份提供商URL</p>
                      */
                     std::string m_identityUrl;
                     bool m_identityUrlHasBeenSet;
 
                     /**
-                     * 签名公钥
+                     * <p>签名公钥</p>
                      */
                     std::string m_identityKey;
                     bool m_identityKeyHasBeenSet;
 
                     /**
-                     * 客户端id
+                     * <p>客户端id</p>
                      */
                     std::vector<std::string> m_clientId;
                     bool m_clientIdHasBeenSet;
 
                     /**
-                     * 状态：0:未设置，11:已开启，2:已禁用
+                     * <p>状态：0:未设置，11:已开启，2:已禁用</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 名称
+                     * <p>名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * <p>OIDC公钥自动轮转开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值：0</p>
+                     */
+                    uint64_t m_autoRotateKey;
+                    bool m_autoRotateKeyHasBeenSet;
 
                 };
             }

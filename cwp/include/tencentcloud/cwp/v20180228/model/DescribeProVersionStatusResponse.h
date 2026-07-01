@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>开通状态。</p><li>UNOPENED：未开通专业版</li><li>OPENED：已开通专业版</li>
+                     * @return Status <p>开通状态。</p><li>UNOPENED：未开通专业版</li><li>OPENED：已开通专业版</li>
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>开通状态。</p><li>UNOPENED：未开通专业版</li><li>OPENED：已开通专业版</li>
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

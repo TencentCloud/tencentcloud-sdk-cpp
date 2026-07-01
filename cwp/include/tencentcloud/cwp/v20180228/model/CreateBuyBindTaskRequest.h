@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订单号
-                     * @return DealName 订单号
+                     * 获取<p>订单号</p>
+                     * @return DealName <p>订单号</p>
                      * 
                      */
                     std::string GetDealName() const;
 
                     /**
-                     * 设置订单号
-                     * @param _dealName 订单号
+                     * 设置<p>订单号</p>
+                     * @param _dealName <p>订单号</p>
                      * 
                      */
                     void SetDealName(const std::string& _dealName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DealNameHasBeenSet() const;
 
                     /**
-                     * 获取可选参数: 1专业版-包年包月 , 2 旗舰版-包年包月
-                     * @return LicenseType 可选参数: 1专业版-包年包月 , 2 旗舰版-包年包月
+                     * 获取<p>授权类型</p><p>枚举值：</p><ul><li>1： 专业版-包年包月</li><li>2： 旗舰版-包年包月</li></ul>
+                     * @return LicenseType <p>授权类型</p><p>枚举值：</p><ul><li>1： 专业版-包年包月</li><li>2： 旗舰版-包年包月</li></ul>
                      * 
                      */
                     uint64_t GetLicenseType() const;
 
                     /**
-                     * 设置可选参数: 1专业版-包年包月 , 2 旗舰版-包年包月
-                     * @param _licenseType 可选参数: 1专业版-包年包月 , 2 旗舰版-包年包月
+                     * 设置<p>授权类型</p><p>枚举值：</p><ul><li>1： 专业版-包年包月</li><li>2： 旗舰版-包年包月</li></ul>
+                     * @param _licenseType <p>授权类型</p><p>枚举值：</p><ul><li>1： 专业版-包年包月</li><li>2： 旗舰版-包年包月</li></ul>
                      * 
                      */
                     void SetLicenseType(const uint64_t& _licenseType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LicenseTypeHasBeenSet() const;
 
                     /**
-                     * 获取机器列表
-                     * @return QuuidList 机器列表
+                     * 获取<p>机器列表</p>
+                     * @return QuuidList <p>机器列表</p>
                      * 
                      */
                     std::vector<std::string> GetQuuidList() const;
 
                     /**
-                     * 设置机器列表
-                     * @param _quuidList 机器列表
+                     * 设置<p>机器列表</p>
+                     * @param _quuidList <p>机器列表</p>
                      * 
                      */
                     void SetQuuidList(const std::vector<std::string>& _quuidList);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool QuuidListHasBeenSet() const;
 
                     /**
-                     * 获取是否全选机器
-                     * @return IsAll 是否全选机器
+                     * 获取<p>是否全选机器</p>
+                     * @return IsAll <p>是否全选机器</p>
                      * 
                      */
                     bool GetIsAll() const;
 
                     /**
-                     * 设置是否全选机器
-                     * @param _isAll 是否全选机器
+                     * 设置<p>是否全选机器</p>
+                     * @param _isAll <p>是否全选机器</p>
                      * 
                      */
                     void SetIsAll(const bool& _isAll);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订单号
+                     * <p>订单号</p>
                      */
                     std::string m_dealName;
                     bool m_dealNameHasBeenSet;
 
                     /**
-                     * 可选参数: 1专业版-包年包月 , 2 旗舰版-包年包月
+                     * <p>授权类型</p><p>枚举值：</p><ul><li>1： 专业版-包年包月</li><li>2： 旗舰版-包年包月</li></ul>
                      */
                     uint64_t m_licenseType;
                     bool m_licenseTypeHasBeenSet;
 
                     /**
-                     * 机器列表
+                     * <p>机器列表</p>
                      */
                     std::vector<std::string> m_quuidList;
                     bool m_quuidListHasBeenSet;
 
                     /**
-                     * 是否全选机器
+                     * <p>是否全选机器</p>
                      */
                     bool m_isAll;
                     bool m_isAllHasBeenSet;

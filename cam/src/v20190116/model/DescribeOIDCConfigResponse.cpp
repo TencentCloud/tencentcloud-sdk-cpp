@@ -30,7 +30,8 @@ DescribeOIDCConfigResponse::DescribeOIDCConfigResponse() :
     m_clientIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_autoRotateKeyHasBeenSet(false)
 {
 }
 
@@ -141,6 +142,16 @@ CoreInternalOutcome DescribeOIDCConfigResponse::Deserialize(const string &payloa
         m_nameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AutoRotateKey") && !rsp["AutoRotateKey"].IsNull())
+    {
+        if (!rsp["AutoRotateKey"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoRotateKey` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRotateKey = rsp["AutoRotateKey"].GetUint64();
+        m_autoRotateKeyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -210,6 +221,14 @@ string DescribeOIDCConfigResponse::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoRotateKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRotateKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRotateKey, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -292,6 +311,16 @@ string DescribeOIDCConfigResponse::GetName() const
 bool DescribeOIDCConfigResponse::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+uint64_t DescribeOIDCConfigResponse::GetAutoRotateKey() const
+{
+    return m_autoRotateKey;
+}
+
+bool DescribeOIDCConfigResponse::AutoRotateKeyHasBeenSet() const
+{
+    return m_autoRotateKeyHasBeenSet;
 }
 
 

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图片的 Base64 值。要求图片经Base64编码后不超过 10M，支持PNG、JPG、JPEG格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
-                     * @return ImageBase64 图片的 Base64 值。要求图片经Base64编码后不超过 10M，支持PNG、JPG、JPEG格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 获取<p>图片的 Base64 值。要求图片经Base64编码后不超过 10M，支持PNG、JPG、JPEG、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>
+                     * @return ImageBase64 <p>图片的 Base64 值。要求图片经Base64编码后不超过 10M，支持PNG、JPG、JPEG、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>
                      * 
                      */
                     std::string GetImageBase64() const;
 
                     /**
-                     * 设置图片的 Base64 值。要求图片经Base64编码后不超过 10M，支持PNG、JPG、JPEG格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
-                     * @param _imageBase64 图片的 Base64 值。要求图片经Base64编码后不超过 10M，支持PNG、JPG、JPEG格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 设置<p>图片的 Base64 值。要求图片经Base64编码后不超过 10M，支持PNG、JPG、JPEG、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>
+                     * @param _imageBase64 <p>图片的 Base64 值。要求图片经Base64编码后不超过 10M，支持PNG、JPG、JPEG、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>
                      * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ImageBase64HasBeenSet() const;
 
                     /**
-                     * 获取图片的 Url 地址。要求图片经Base64编码后不超过 10M，支持PNG、JPG、JPEG格式。建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
-                     * @return ImageUrl 图片的 Url 地址。要求图片经Base64编码后不超过 10M，支持PNG、JPG、JPEG格式。建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
+                     * 获取<p>图片的 Url 地址。要求图片经Base64编码后不超过 10M，支持PNG、JPG、JPEG、PDF格式。建议图片存储于腾讯云，可保障更高的下载速度和稳定性。</p>
+                     * @return ImageUrl <p>图片的 Url 地址。要求图片经Base64编码后不超过 10M，支持PNG、JPG、JPEG、PDF格式。建议图片存储于腾讯云，可保障更高的下载速度和稳定性。</p>
                      * 
                      */
                     std::string GetImageUrl() const;
 
                     /**
-                     * 设置图片的 Url 地址。要求图片经Base64编码后不超过 10M，支持PNG、JPG、JPEG格式。建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
-                     * @param _imageUrl 图片的 Url 地址。要求图片经Base64编码后不超过 10M，支持PNG、JPG、JPEG格式。建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
+                     * 设置<p>图片的 Url 地址。要求图片经Base64编码后不超过 10M，支持PNG、JPG、JPEG、PDF格式。建议图片存储于腾讯云，可保障更高的下载速度和稳定性。</p>
+                     * @param _imageUrl <p>图片的 Url 地址。要求图片经Base64编码后不超过 10M，支持PNG、JPG、JPEG、PDF格式。建议图片存储于腾讯云，可保障更高的下载速度和稳定性。</p>
                      * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 图片的 Base64 值。要求图片经Base64编码后不超过 10M，支持PNG、JPG、JPEG格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * <p>图片的 Base64 值。要求图片经Base64编码后不超过 10M，支持PNG、JPG、JPEG、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>
                      */
                     std::string m_imageBase64;
                     bool m_imageBase64HasBeenSet;
 
                     /**
-                     * 图片的 Url 地址。要求图片经Base64编码后不超过 10M，支持PNG、JPG、JPEG格式。建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
+                     * <p>图片的 Url 地址。要求图片经Base64编码后不超过 10M，支持PNG、JPG、JPEG、PDF格式。建议图片存储于腾讯云，可保障更高的下载速度和稳定性。</p>
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;

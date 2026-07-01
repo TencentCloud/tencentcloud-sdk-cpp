@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取身份提供商URL
-                     * @return IdentityUrl 身份提供商URL
+                     * 获取<p>身份提供商URL</p>
+                     * @return IdentityUrl <p>身份提供商URL</p>
                      * 
                      */
                     std::string GetIdentityUrl() const;
 
                     /**
-                     * 设置身份提供商URL
-                     * @param _identityUrl 身份提供商URL
+                     * 设置<p>身份提供商URL</p>
+                     * @param _identityUrl <p>身份提供商URL</p>
                      * 
                      */
                     void SetIdentityUrl(const std::string& _identityUrl);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool IdentityUrlHasBeenSet() const;
 
                     /**
-                     * 获取客户端ID
-                     * @return ClientId 客户端ID
+                     * 获取<p>客户端ID</p>
+                     * @return ClientId <p>客户端ID</p>
                      * 
                      */
                     std::vector<std::string> GetClientId() const;
 
                     /**
-                     * 设置客户端ID
-                     * @param _clientId 客户端ID
+                     * 设置<p>客户端ID</p>
+                     * @param _clientId <p>客户端ID</p>
                      * 
                      */
                     void SetClientId(const std::vector<std::string>& _clientId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ClientIdHasBeenSet() const;
 
                     /**
-                     * 获取名称
-                     * @return Name 名称
+                     * 获取<p>名称</p>
+                     * @return Name <p>名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称
-                     * @param _name 名称
+                     * 设置<p>名称</p>
+                     * @param _name <p>名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取签名公钥，需要base64
-                     * @return IdentityKey 签名公钥，需要base64
+                     * 获取<p>签名公钥，需要base64</p>
+                     * @return IdentityKey <p>签名公钥，需要base64</p>
                      * 
                      */
                     std::string GetIdentityKey() const;
 
                     /**
-                     * 设置签名公钥，需要base64
-                     * @param _identityKey 签名公钥，需要base64
+                     * 设置<p>签名公钥，需要base64</p>
+                     * @param _identityKey <p>签名公钥，需要base64</p>
                      * 
                      */
                     void SetIdentityKey(const std::string& _identityKey);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool IdentityKeyHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
+                     * 获取<p>描述</p>
+                     * @return Description <p>描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
-                     * @param _description 描述
+                     * 设置<p>描述</p>
+                     * @param _description <p>描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -147,37 +147,64 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>OIDC公钥自动轮转开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值：0</p>
+                     * @return AutoRotateKey <p>OIDC公钥自动轮转开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    uint64_t GetAutoRotateKey() const;
+
+                    /**
+                     * 设置<p>OIDC公钥自动轮转开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值：0</p>
+                     * @param _autoRotateKey <p>OIDC公钥自动轮转开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    void SetAutoRotateKey(const uint64_t& _autoRotateKey);
+
+                    /**
+                     * 判断参数 AutoRotateKey 是否已赋值
+                     * @return AutoRotateKey 是否已赋值
+                     * 
+                     */
+                    bool AutoRotateKeyHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 身份提供商URL
+                     * <p>身份提供商URL</p>
                      */
                     std::string m_identityUrl;
                     bool m_identityUrlHasBeenSet;
 
                     /**
-                     * 客户端ID
+                     * <p>客户端ID</p>
                      */
                     std::vector<std::string> m_clientId;
                     bool m_clientIdHasBeenSet;
 
                     /**
-                     * 名称
+                     * <p>名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 签名公钥，需要base64
+                     * <p>签名公钥，需要base64</p>
                      */
                     std::string m_identityKey;
                     bool m_identityKeyHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * <p>OIDC公钥自动轮转开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值：0</p>
+                     */
+                    uint64_t m_autoRotateKey;
+                    bool m_autoRotateKeyHasBeenSet;
 
                 };
             }

@@ -35,7 +35,8 @@ RiskDetailItem::RiskDetailItem() :
     m_riskRuleIdHasBeenSet(false),
     m_checkStatusHasBeenSet(false),
     m_appIDHasBeenSet(false),
-    m_assetTypeHasBeenSet(false)
+    m_assetTypeHasBeenSet(false),
+    m_reasonHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome RiskDetailItem::Deserialize(const rapidjson::Value &value)
         m_assetTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Reason") && !value["Reason"].IsNull())
+    {
+        if (!value["Reason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskDetailItem.Reason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reason = string(value["Reason"].GetString());
+        m_reasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void RiskDetailItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "AssetType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_assetType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Reason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reason.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +581,21 @@ void RiskDetailItem::SetAssetType(const string& _assetType)
 bool RiskDetailItem::AssetTypeHasBeenSet() const
 {
     return m_assetTypeHasBeenSet;
+}
+
+string RiskDetailItem::GetReason() const
+{
+    return m_reason;
+}
+
+void RiskDetailItem::SetReason(const string& _reason)
+{
+    m_reason = _reason;
+    m_reasonHasBeenSet = true;
+}
+
+bool RiskDetailItem::ReasonHasBeenSet() const
+{
+    return m_reasonHasBeenSet;
 }
 

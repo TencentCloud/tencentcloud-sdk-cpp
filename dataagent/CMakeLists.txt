@@ -53,6 +53,7 @@ set(dataagent_public_header_model
   include/tencentcloud/dataagent/v20250513/model/GetUploadJobDetailsResponse.h
   include/tencentcloud/dataagent/v20250513/model/UploadAndCommitFileResponse.h
   include/tencentcloud/dataagent/v20250513/model/QueryKnowledgeTaskResponse.h
+  include/tencentcloud/dataagent/v20250513/model/ExecuteAgentApiRequest.h
   include/tencentcloud/dataagent/v20250513/model/ModifyChunkResponse.h
   include/tencentcloud/dataagent/v20250513/model/DeleteDataAgentSessionResponse.h
   include/tencentcloud/dataagent/v20250513/model/AddSceneResponse.h
@@ -64,12 +65,14 @@ set(dataagent_public_header_model
   include/tencentcloud/dataagent/v20250513/model/FileInfo.h
   include/tencentcloud/dataagent/v20250513/model/GetKnowledgeBaseFileListRequest.h
   include/tencentcloud/dataagent/v20250513/model/AppendKnowledgeTaskResponse.h
+  include/tencentcloud/dataagent/v20250513/model/ExecuteAgentApiResponse.h
   include/tencentcloud/dataagent/v20250513/model/GetUploadJobDetailsRequest.h
+  include/tencentcloud/dataagent/v20250513/model/StepInfo.h
   include/tencentcloud/dataagent/v20250513/model/FileTaskStatus.h
   include/tencentcloud/dataagent/v20250513/model/StopChatAIResponse.h
   include/tencentcloud/dataagent/v20250513/model/ModifyUserAuthorityResponse.h
   include/tencentcloud/dataagent/v20250513/model/AddChunkResponse.h
-  include/tencentcloud/dataagent/v20250513/model/StepInfo.h
+  include/tencentcloud/dataagent/v20250513/model/ExecuteAgentApiV1Request.h
   include/tencentcloud/dataagent/v20250513/model/Chunk.h
   include/tencentcloud/dataagent/v20250513/model/UpdateSceneResponse.h
   include/tencentcloud/dataagent/v20250513/model/Scene.h
@@ -81,6 +84,7 @@ set(dataagent_public_header_model
   include/tencentcloud/dataagent/v20250513/model/DeleteSceneRequest.h
   include/tencentcloud/dataagent/v20250513/model/Task.h
   include/tencentcloud/dataagent/v20250513/model/DeleteDataAgentSessionRequest.h
+  include/tencentcloud/dataagent/v20250513/model/ExecuteAgentApiV1Response.h
   include/tencentcloud/dataagent/v20250513/model/ColumnInfo.h
   include/tencentcloud/dataagent/v20250513/model/GetKnowledgeBaseListResponse.h
   include/tencentcloud/dataagent/v20250513/model/AppendDocument.h
@@ -122,6 +126,7 @@ set(dataagent_src
   src/v20250513/model/GetUploadJobDetailsResponse.cpp
   src/v20250513/model/UploadAndCommitFileResponse.cpp
   src/v20250513/model/QueryKnowledgeTaskResponse.cpp
+  src/v20250513/model/ExecuteAgentApiRequest.cpp
   src/v20250513/model/ModifyChunkResponse.cpp
   src/v20250513/model/DeleteDataAgentSessionResponse.cpp
   src/v20250513/model/AddSceneResponse.cpp
@@ -133,12 +138,14 @@ set(dataagent_src
   src/v20250513/model/FileInfo.cpp
   src/v20250513/model/GetKnowledgeBaseFileListRequest.cpp
   src/v20250513/model/AppendKnowledgeTaskResponse.cpp
+  src/v20250513/model/ExecuteAgentApiResponse.cpp
   src/v20250513/model/GetUploadJobDetailsRequest.cpp
+  src/v20250513/model/StepInfo.cpp
   src/v20250513/model/FileTaskStatus.cpp
   src/v20250513/model/StopChatAIResponse.cpp
   src/v20250513/model/ModifyUserAuthorityResponse.cpp
   src/v20250513/model/AddChunkResponse.cpp
-  src/v20250513/model/StepInfo.cpp
+  src/v20250513/model/ExecuteAgentApiV1Request.cpp
   src/v20250513/model/Chunk.cpp
   src/v20250513/model/UpdateSceneResponse.cpp
   src/v20250513/model/Scene.cpp
@@ -150,6 +157,7 @@ set(dataagent_src
   src/v20250513/model/DeleteSceneRequest.cpp
   src/v20250513/model/Task.cpp
   src/v20250513/model/DeleteDataAgentSessionRequest.cpp
+  src/v20250513/model/ExecuteAgentApiV1Response.cpp
   src/v20250513/model/ColumnInfo.cpp
   src/v20250513/model/GetKnowledgeBaseListResponse.cpp
   src/v20250513/model/AppendDocument.cpp

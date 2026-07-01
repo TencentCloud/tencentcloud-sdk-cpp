@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启异步工作流
-                     * @return AsyncWorkflow 是否开启异步工作流
+                     * 获取<p>是否开启异步工作流</p>
+                     * @return AsyncWorkflow <p>是否开启异步工作流</p>
                      * 
                      */
                     bool GetAsyncWorkflow() const;
 
                     /**
-                     * 设置是否开启异步工作流
-                     * @param _asyncWorkflow 是否开启异步工作流
+                     * 设置<p>是否开启异步工作流</p>
+                     * @param _asyncWorkflow <p>是否开启异步工作流</p>
                      * 
                      */
                     void SetAsyncWorkflow(const bool& _asyncWorkflow);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AsyncWorkflowHasBeenSet() const;
 
                     /**
-                     * 获取状态 发布状态(UNPUBLISHED: 待发布 PUBLISHING: 发布中 PUBLISHED: 已发布 PUBLISHED_FAIL:发布失败；DRAFT：待调试)
-                     * @return Status 状态 发布状态(UNPUBLISHED: 待发布 PUBLISHING: 发布中 PUBLISHED: 已发布 PUBLISHED_FAIL:发布失败；DRAFT：待调试)
+                     * 获取<p>状态 发布状态(UNPUBLISHED: 待发布 PUBLISHING: 发布中 PUBLISHED: 已发布 PUBLISHED_FAIL:发布失败；DRAFT：待调试)</p>
+                     * @return Status <p>状态 发布状态(UNPUBLISHED: 待发布 PUBLISHING: 发布中 PUBLISHED: 已发布 PUBLISHED_FAIL:发布失败；DRAFT：待调试)</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态 发布状态(UNPUBLISHED: 待发布 PUBLISHING: 发布中 PUBLISHED: 已发布 PUBLISHED_FAIL:发布失败；DRAFT：待调试)
-                     * @param _status 状态 发布状态(UNPUBLISHED: 待发布 PUBLISHING: 发布中 PUBLISHED: 已发布 PUBLISHED_FAIL:发布失败；DRAFT：待调试)
+                     * 设置<p>状态 发布状态(UNPUBLISHED: 待发布 PUBLISHING: 发布中 PUBLISHED: 已发布 PUBLISHED_FAIL:发布失败；DRAFT：待调试)</p>
+                     * @param _status <p>状态 发布状态(UNPUBLISHED: 待发布 PUBLISHING: 发布中 PUBLISHED: 已发布 PUBLISHED_FAIL:发布失败；DRAFT：待调试)</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取工作流描述
-                     * @return WorkflowDescription 工作流描述
+                     * 获取<p>工作流描述</p>
+                     * @return WorkflowDescription <p>工作流描述</p>
                      * 
                      */
                     std::string GetWorkflowDescription() const;
 
                     /**
-                     * 设置工作流描述
-                     * @param _workflowDescription 工作流描述
+                     * 设置<p>工作流描述</p>
+                     * @param _workflowDescription <p>工作流描述</p>
                      * 
                      */
                     void SetWorkflowDescription(const std::string& _workflowDescription);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool WorkflowDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取工作流Id
-                     * @return WorkflowId 工作流Id
+                     * 获取<p>工作流Id</p>
+                     * @return WorkflowId <p>工作流Id</p>
                      * 
                      */
                     std::string GetWorkflowId() const;
 
                     /**
-                     * 设置工作流Id
-                     * @param _workflowId 工作流Id
+                     * 设置<p>工作流Id</p>
+                     * @param _workflowId <p>工作流Id</p>
                      * 
                      */
                     void SetWorkflowId(const std::string& _workflowId);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool WorkflowIdHasBeenSet() const;
 
                     /**
-                     * 获取工作流名称
-                     * @return WorkflowName 工作流名称
+                     * 获取<p>工作流名称</p>
+                     * @return WorkflowName <p>工作流名称</p>
                      * 
                      */
                     std::string GetWorkflowName() const;
 
                     /**
-                     * 设置工作流名称
-                     * @param _workflowName 工作流名称
+                     * 设置<p>工作流名称</p>
+                     * @param _workflowName <p>工作流名称</p>
                      * 
                      */
                     void SetWorkflowName(const std::string& _workflowName);
@@ -151,37 +151,64 @@ namespace TencentCloud
                      */
                     bool WorkflowNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>工作流是否启用</p>
+                     * @return Enabled <p>工作流是否启用</p>
+                     * 
+                     */
+                    bool GetEnabled() const;
+
+                    /**
+                     * 设置<p>工作流是否启用</p>
+                     * @param _enabled <p>工作流是否启用</p>
+                     * 
+                     */
+                    void SetEnabled(const bool& _enabled);
+
+                    /**
+                     * 判断参数 Enabled 是否已赋值
+                     * @return Enabled 是否已赋值
+                     * 
+                     */
+                    bool EnabledHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 是否开启异步工作流
+                     * <p>是否开启异步工作流</p>
                      */
                     bool m_asyncWorkflow;
                     bool m_asyncWorkflowHasBeenSet;
 
                     /**
-                     * 状态 发布状态(UNPUBLISHED: 待发布 PUBLISHING: 发布中 PUBLISHED: 已发布 PUBLISHED_FAIL:发布失败；DRAFT：待调试)
+                     * <p>状态 发布状态(UNPUBLISHED: 待发布 PUBLISHING: 发布中 PUBLISHED: 已发布 PUBLISHED_FAIL:发布失败；DRAFT：待调试)</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 工作流描述
+                     * <p>工作流描述</p>
                      */
                     std::string m_workflowDescription;
                     bool m_workflowDescriptionHasBeenSet;
 
                     /**
-                     * 工作流Id
+                     * <p>工作流Id</p>
                      */
                     std::string m_workflowId;
                     bool m_workflowIdHasBeenSet;
 
                     /**
-                     * 工作流名称
+                     * <p>工作流名称</p>
                      */
                     std::string m_workflowName;
                     bool m_workflowNameHasBeenSet;
+
+                    /**
+                     * <p>工作流是否启用</p>
+                     */
+                    bool m_enabled;
+                    bool m_enabledHasBeenSet;
 
                 };
             }

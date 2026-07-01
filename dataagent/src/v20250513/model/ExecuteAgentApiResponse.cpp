@@ -14,21 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cwp/v20180228/model/DescribeRecommendedProtectCpuResponse.h>
+#include <tencentcloud/dataagent/v20250513/model/ExecuteAgentApiResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cwp::V20180228::Model;
+using namespace TencentCloud::Dataagent::V20250513::Model;
 using namespace std;
 
-DescribeRecommendedProtectCpuResponse::DescribeRecommendedProtectCpuResponse() :
-    m_numberHasBeenSet(false)
+ExecuteAgentApiResponse::ExecuteAgentApiResponse() :
+    m_requestPathHasBeenSet(false),
+    m_agentDataHasBeenSet(false),
+    m_errorMsgHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeRecommendedProtectCpuResponse::Deserialize(const string &payload)
+CoreInternalOutcome ExecuteAgentApiResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +64,68 @@ CoreInternalOutcome DescribeRecommendedProtectCpuResponse::Deserialize(const str
     }
 
 
-    if (rsp.HasMember("Number") && !rsp["Number"].IsNull())
+    if (rsp.HasMember("RequestPath") && !rsp["RequestPath"].IsNull())
     {
-        if (!rsp["Number"].IsInt64())
+        if (!rsp["RequestPath"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `Number` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RequestPath` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_number = rsp["Number"].GetInt64();
-        m_numberHasBeenSet = true;
+        m_requestPath = string(rsp["RequestPath"].GetString());
+        m_requestPathHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AgentData") && !rsp["AgentData"].IsNull())
+    {
+        if (!rsp["AgentData"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentData` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentData = string(rsp["AgentData"].GetString());
+        m_agentDataHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ErrorMsg") && !rsp["ErrorMsg"].IsNull())
+    {
+        if (!rsp["ErrorMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorMsg = string(rsp["ErrorMsg"].GetString());
+        m_errorMsgHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeRecommendedProtectCpuResponse::ToJsonString() const
+string ExecuteAgentApiResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_numberHasBeenSet)
+    if (m_requestPathHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Number";
+        string key = "RequestPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_number, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_requestPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_agentData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errorMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorMsg.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +140,34 @@ string DescribeRecommendedProtectCpuResponse::ToJsonString() const
 }
 
 
-int64_t DescribeRecommendedProtectCpuResponse::GetNumber() const
+string ExecuteAgentApiResponse::GetRequestPath() const
 {
-    return m_number;
+    return m_requestPath;
 }
 
-bool DescribeRecommendedProtectCpuResponse::NumberHasBeenSet() const
+bool ExecuteAgentApiResponse::RequestPathHasBeenSet() const
 {
-    return m_numberHasBeenSet;
+    return m_requestPathHasBeenSet;
+}
+
+string ExecuteAgentApiResponse::GetAgentData() const
+{
+    return m_agentData;
+}
+
+bool ExecuteAgentApiResponse::AgentDataHasBeenSet() const
+{
+    return m_agentDataHasBeenSet;
+}
+
+string ExecuteAgentApiResponse::GetErrorMsg() const
+{
+    return m_errorMsg;
+}
+
+bool ExecuteAgentApiResponse::ErrorMsgHasBeenSet() const
+{
+    return m_errorMsgHasBeenSet;
 }
 
 

@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cwp/v20180228/model/DescribeRecommendedProtectCpuResponse.h>
+#include <tencentcloud/dataagent/v20250513/model/ExecuteAgentApiV1Response.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cwp::V20180228::Model;
+using namespace TencentCloud::Dataagent::V20250513::Model;
 using namespace std;
 
-DescribeRecommendedProtectCpuResponse::DescribeRecommendedProtectCpuResponse() :
-    m_numberHasBeenSet(false)
+ExecuteAgentApiV1Response::ExecuteAgentApiV1Response()
 {
 }
 
-CoreInternalOutcome DescribeRecommendedProtectCpuResponse::Deserialize(const string &payload)
+CoreInternalOutcome ExecuteAgentApiV1Response::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,33 +61,15 @@ CoreInternalOutcome DescribeRecommendedProtectCpuResponse::Deserialize(const str
     }
 
 
-    if (rsp.HasMember("Number") && !rsp["Number"].IsNull())
-    {
-        if (!rsp["Number"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Number` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_number = rsp["Number"].GetInt64();
-        m_numberHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeRecommendedProtectCpuResponse::ToJsonString() const
+string ExecuteAgentApiV1Response::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_numberHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Number";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_number, allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -101,15 +82,5 @@ string DescribeRecommendedProtectCpuResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-int64_t DescribeRecommendedProtectCpuResponse::GetNumber() const
-{
-    return m_number;
-}
-
-bool DescribeRecommendedProtectCpuResponse::NumberHasBeenSet() const
-{
-    return m_numberHasBeenSet;
-}
 
 

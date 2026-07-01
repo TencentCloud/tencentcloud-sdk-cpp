@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取二维码/条形码识别结果信息，具体内容请点击左侧链接。
-                     * @return CodeResults 二维码/条形码识别结果信息，具体内容请点击左侧链接。
+                     * 获取<p>二维码/条形码识别结果信息，具体内容请点击左侧链接。</p>
+                     * @return CodeResults <p>二维码/条形码识别结果信息，具体内容请点击左侧链接。</p>
                      * 
                      */
                     std::vector<QrcodeResultsInfo> GetCodeResults() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool CodeResultsHasBeenSet() const;
 
                     /**
-                     * 获取图片大小，具体内容请点击左侧链接。
-                     * @return ImgSize 图片大小，具体内容请点击左侧链接。
+                     * 获取<p>图片大小，具体内容请点击左侧链接。</p>
+                     * @return ImgSize <p>图片大小，具体内容请点击左侧链接。</p>
                      * 
                      */
                     QrcodeImgSize GetImgSize() const;
@@ -76,13 +76,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 二维码/条形码识别结果信息，具体内容请点击左侧链接。
+                     * <p>二维码/条形码识别结果信息，具体内容请点击左侧链接。</p>
                      */
                     std::vector<QrcodeResultsInfo> m_codeResults;
                     bool m_codeResultsHasBeenSet;
 
                     /**
-                     * 图片大小，具体内容请点击左侧链接。
+                     * <p>图片大小，具体内容请点击左侧链接。</p>
                      */
                     QrcodeImgSize m_imgSize;
                     bool m_imgSizeHasBeenSet;

@@ -420,6 +420,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/DescribeLiveCloudEffectListRequest.h
   include/tencentcloud/live/v20180801/model/DescribeLiveStreamStateRequest.h
   include/tencentcloud/live/v20180801/model/CreateLiveRecordTemplateResponse.h
+  include/tencentcloud/live/v20180801/model/VideoRedrawTaskInfo.h
   include/tencentcloud/live/v20180801/model/AddCasterMarkWordInfoRequest.h
   include/tencentcloud/live/v20180801/model/DescribeLiveAvatarTimbreListRequest.h
   include/tencentcloud/live/v20180801/model/ModifyLivePlayAuthKeyResponse.h
@@ -1007,6 +1008,7 @@ set(live_src
   src/v20180801/model/DescribeLiveCloudEffectListRequest.cpp
   src/v20180801/model/DescribeLiveStreamStateRequest.cpp
   src/v20180801/model/CreateLiveRecordTemplateResponse.cpp
+  src/v20180801/model/VideoRedrawTaskInfo.cpp
   src/v20180801/model/AddCasterMarkWordInfoRequest.cpp
   src/v20180801/model/DescribeLiveAvatarTimbreListRequest.cpp
   src/v20180801/model/ModifyLivePlayAuthKeyResponse.cpp

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源ID
-                     * @return ResourceId 资源ID
+                     * 获取<p>资源ID</p>
+                     * @return ResourceId <p>资源ID</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源ID
-                     * @param _resourceId 资源ID
+                     * 设置<p>资源ID</p>
+                     * @param _resourceId <p>资源ID</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -64,31 +64,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取授权类型
-- 0 按量付费-专业版
-- 1 包年包月-专业版
-- 2 包年包月-旗舰版
-- 3 包年包月-轻量版
-                     * @return LicenseType 授权类型
-- 0 按量付费-专业版
-- 1 包年包月-专业版
-- 2 包年包月-旗舰版
-- 3 包年包月-轻量版
+                     * 获取<p>授权类型</p><p>枚举值：</p><ul><li>1： 专业版-包年包月</li><li>2： 旗舰版-包年包月</li></ul>
+                     * @return LicenseType <p>授权类型</p><p>枚举值：</p><ul><li>1： 专业版-包年包月</li><li>2： 旗舰版-包年包月</li></ul>
                      * 
                      */
                     uint64_t GetLicenseType() const;
 
                     /**
-                     * 设置授权类型
-- 0 按量付费-专业版
-- 1 包年包月-专业版
-- 2 包年包月-旗舰版
-- 3 包年包月-轻量版
-                     * @param _licenseType 授权类型
-- 0 按量付费-专业版
-- 1 包年包月-专业版
-- 2 包年包月-旗舰版
-- 3 包年包月-轻量版
+                     * 设置<p>授权类型</p><p>枚举值：</p><ul><li>1： 专业版-包年包月</li><li>2： 旗舰版-包年包月</li></ul>
+                     * @param _licenseType <p>授权类型</p><p>枚举值：</p><ul><li>1： 专业版-包年包月</li><li>2： 旗舰版-包年包月</li></ul>
                      * 
                      */
                     void SetLicenseType(const uint64_t& _licenseType);
@@ -101,15 +85,15 @@ namespace TencentCloud
                     bool LicenseTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否全部机器(当全部机器数大于当前订单可用授权数时,多余机器会被跳过)
-                     * @return IsAll 是否全部机器(当全部机器数大于当前订单可用授权数时,多余机器会被跳过)
+                     * 获取<p>是否全部机器(当全部机器数大于当前订单可用授权数时,多余机器会被跳过)</p>
+                     * @return IsAll <p>是否全部机器(当全部机器数大于当前订单可用授权数时,多余机器会被跳过)</p>
                      * 
                      */
                     bool GetIsAll() const;
 
                     /**
-                     * 设置是否全部机器(当全部机器数大于当前订单可用授权数时,多余机器会被跳过)
-                     * @param _isAll 是否全部机器(当全部机器数大于当前订单可用授权数时,多余机器会被跳过)
+                     * 设置<p>是否全部机器(当全部机器数大于当前订单可用授权数时,多余机器会被跳过)</p>
+                     * @param _isAll <p>是否全部机器(当全部机器数大于当前订单可用授权数时,多余机器会被跳过)</p>
                      * 
                      */
                     void SetIsAll(const bool& _isAll);
@@ -122,19 +106,15 @@ namespace TencentCloud
                     bool IsAllHasBeenSet() const;
 
                     /**
-                     * 获取需要绑定的机器quuid列表, 当IsAll = false 时必填,反之忽略该参数.
-最大长度=100
-                     * @return QuuidList 需要绑定的机器quuid列表, 当IsAll = false 时必填,反之忽略该参数.
-最大长度=100
+                     * 获取<p>需要绑定的机器quuid列表, 当IsAll = false 时必填,反之忽略该参数.<br>最大长度=100</p>
+                     * @return QuuidList <p>需要绑定的机器quuid列表, 当IsAll = false 时必填,反之忽略该参数.<br>最大长度=100</p>
                      * 
                      */
                     std::vector<std::string> GetQuuidList() const;
 
                     /**
-                     * 设置需要绑定的机器quuid列表, 当IsAll = false 时必填,反之忽略该参数.
-最大长度=100
-                     * @param _quuidList 需要绑定的机器quuid列表, 当IsAll = false 时必填,反之忽略该参数.
-最大长度=100
+                     * 设置<p>需要绑定的机器quuid列表, 当IsAll = false 时必填,反之忽略该参数.<br>最大长度=100</p>
+                     * @param _quuidList <p>需要绑定的机器quuid列表, 当IsAll = false 时必填,反之忽略该参数.<br>最大长度=100</p>
                      * 
                      */
                     void SetQuuidList(const std::vector<std::string>& _quuidList);
@@ -149,30 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源ID
+                     * <p>资源ID</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 授权类型
-- 0 按量付费-专业版
-- 1 包年包月-专业版
-- 2 包年包月-旗舰版
-- 3 包年包月-轻量版
+                     * <p>授权类型</p><p>枚举值：</p><ul><li>1： 专业版-包年包月</li><li>2： 旗舰版-包年包月</li></ul>
                      */
                     uint64_t m_licenseType;
                     bool m_licenseTypeHasBeenSet;
 
                     /**
-                     * 是否全部机器(当全部机器数大于当前订单可用授权数时,多余机器会被跳过)
+                     * <p>是否全部机器(当全部机器数大于当前订单可用授权数时,多余机器会被跳过)</p>
                      */
                     bool m_isAll;
                     bool m_isAllHasBeenSet;
 
                     /**
-                     * 需要绑定的机器quuid列表, 当IsAll = false 时必填,反之忽略该参数.
-最大长度=100
+                     * <p>需要绑定的机器quuid列表, 当IsAll = false 时必填,反之忽略该参数.<br>最大长度=100</p>
                      */
                     std::vector<std::string> m_quuidList;
                     bool m_quuidListHasBeenSet;

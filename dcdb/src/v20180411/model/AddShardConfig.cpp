@@ -23,7 +23,8 @@ using namespace std;
 AddShardConfig::AddShardConfig() :
     m_shardCountHasBeenSet(false),
     m_shardMemoryHasBeenSet(false),
-    m_shardStorageHasBeenSet(false)
+    m_shardStorageHasBeenSet(false),
+    m_dcnInsShardConfigsHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,26 @@ CoreInternalOutcome AddShardConfig::Deserialize(const rapidjson::Value &value)
         m_shardStorageHasBeenSet = true;
     }
 
+    if (value.HasMember("DcnInsShardConfigs") && !value["DcnInsShardConfigs"].IsNull())
+    {
+        if (!value["DcnInsShardConfigs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AddShardConfig.DcnInsShardConfigs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DcnInsShardConfigs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DcnInsShardConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dcnInsShardConfigs.push_back(item);
+        }
+        m_dcnInsShardConfigsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +112,21 @@ void AddShardConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ShardStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shardStorage, allocator);
+    }
+
+    if (m_dcnInsShardConfigsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DcnInsShardConfigs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dcnInsShardConfigs.begin(); itr != m_dcnInsShardConfigs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -142,5 +178,21 @@ void AddShardConfig::SetShardStorage(const int64_t& _shardStorage)
 bool AddShardConfig::ShardStorageHasBeenSet() const
 {
     return m_shardStorageHasBeenSet;
+}
+
+vector<DcnInsShardConfig> AddShardConfig::GetDcnInsShardConfigs() const
+{
+    return m_dcnInsShardConfigs;
+}
+
+void AddShardConfig::SetDcnInsShardConfigs(const vector<DcnInsShardConfig>& _dcnInsShardConfigs)
+{
+    m_dcnInsShardConfigs = _dcnInsShardConfigs;
+    m_dcnInsShardConfigsHasBeenSet = true;
+}
+
+bool AddShardConfig::DcnInsShardConfigsHasBeenSet() const
+{
+    return m_dcnInsShardConfigsHasBeenSet;
 }
 
