@@ -48,7 +48,8 @@ QualityRuleGroupExecStrategy::QualityRuleGroupExecStrategy() :
     m_scheduleTimeZoneHasBeenSet(false),
     m_groupConfigHasBeenSet(false),
     m_engineParamHasBeenSet(false),
-    m_catalogNameHasBeenSet(false)
+    m_catalogNameHasBeenSet(false),
+    m_execFailBlockHasBeenSet(false)
 {
 }
 
@@ -357,6 +358,16 @@ CoreInternalOutcome QualityRuleGroupExecStrategy::Deserialize(const rapidjson::V
         m_catalogNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ExecFailBlock") && !value["ExecFailBlock"].IsNull())
+    {
+        if (!value["ExecFailBlock"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRuleGroupExecStrategy.ExecFailBlock` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_execFailBlock = value["ExecFailBlock"].GetInt64();
+        m_execFailBlockHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -599,6 +610,14 @@ void QualityRuleGroupExecStrategy::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "CatalogName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_catalogName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_execFailBlockHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecFailBlock";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_execFailBlock, allocator);
     }
 
 }
@@ -1050,5 +1069,21 @@ void QualityRuleGroupExecStrategy::SetCatalogName(const string& _catalogName)
 bool QualityRuleGroupExecStrategy::CatalogNameHasBeenSet() const
 {
     return m_catalogNameHasBeenSet;
+}
+
+int64_t QualityRuleGroupExecStrategy::GetExecFailBlock() const
+{
+    return m_execFailBlock;
+}
+
+void QualityRuleGroupExecStrategy::SetExecFailBlock(const int64_t& _execFailBlock)
+{
+    m_execFailBlock = _execFailBlock;
+    m_execFailBlockHasBeenSet = true;
+}
+
+bool QualityRuleGroupExecStrategy::ExecFailBlockHasBeenSet() const
+{
+    return m_execFailBlockHasBeenSet;
 }
 

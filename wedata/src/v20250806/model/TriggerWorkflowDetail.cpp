@@ -32,7 +32,8 @@ TriggerWorkflowDetail::TriggerWorkflowDetail() :
     m_bundleInfoHasBeenSet(false),
     m_generalTaskParamsHasBeenSet(false),
     m_schedulerStatusHasBeenSet(false),
-    m_triggerWorkflowRunConfigurationHasBeenSet(false)
+    m_triggerWorkflowRunConfigurationHasBeenSet(false),
+    m_triggerModeHasBeenSet(false)
 {
 }
 
@@ -198,6 +199,16 @@ CoreInternalOutcome TriggerWorkflowDetail::Deserialize(const rapidjson::Value &v
         m_triggerWorkflowRunConfigurationHasBeenSet = true;
     }
 
+    if (value.HasMember("TriggerMode") && !value["TriggerMode"].IsNull())
+    {
+        if (!value["TriggerMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerWorkflowDetail.TriggerMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_triggerMode = string(value["TriggerMode"].GetString());
+        m_triggerModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -321,6 +332,14 @@ void TriggerWorkflowDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_triggerWorkflowRunConfiguration.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_triggerModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_triggerMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -516,5 +535,21 @@ void TriggerWorkflowDetail::SetTriggerWorkflowRunConfiguration(const WorkflowRun
 bool TriggerWorkflowDetail::TriggerWorkflowRunConfigurationHasBeenSet() const
 {
     return m_triggerWorkflowRunConfigurationHasBeenSet;
+}
+
+string TriggerWorkflowDetail::GetTriggerMode() const
+{
+    return m_triggerMode;
+}
+
+void TriggerWorkflowDetail::SetTriggerMode(const string& _triggerMode)
+{
+    m_triggerMode = _triggerMode;
+    m_triggerModeHasBeenSet = true;
+}
+
+bool TriggerWorkflowDetail::TriggerModeHasBeenSet() const
+{
+    return m_triggerModeHasBeenSet;
 }
 

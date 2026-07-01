@@ -48,7 +48,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/Plugin.h
   include/tencentcloud/adp/v20260520/model/ApiKeyAuthConfig.h
   include/tencentcloud/adp/v20260520/model/CreateConversationResponse.h
-  include/tencentcloud/adp/v20260520/model/DescribePluginResponse.h
+  include/tencentcloud/adp/v20260520/model/CopyAgentFromAppRequest.h
   include/tencentcloud/adp/v20260520/model/DescribeConversationRequest.h
   include/tencentcloud/adp/v20260520/model/Variable.h
   include/tencentcloud/adp/v20260520/model/Conversation.h
@@ -143,6 +143,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/PluginSummary.h
   include/tencentcloud/adp/v20260520/model/AgentProfile.h
   include/tencentcloud/adp/v20260520/model/OAuthConfig.h
+  include/tencentcloud/adp/v20260520/model/CopyAgentFromAppResponse.h
   include/tencentcloud/adp/v20260520/model/CreateWorkspaceCredentialResponse.h
   include/tencentcloud/adp/v20260520/model/ModelParams.h
   include/tencentcloud/adp/v20260520/model/RetryReleaseResponse.h
@@ -208,7 +209,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/PluginProfile.h
   include/tencentcloud/adp/v20260520/model/DeleteSpaceRequest.h
   include/tencentcloud/adp/v20260520/model/SkillCategory.h
-  include/tencentcloud/adp/v20260520/model/FieldMask.h
+  include/tencentcloud/adp/v20260520/model/DescribePluginResponse.h
   include/tencentcloud/adp/v20260520/model/DescribeReleaseListResponse.h
   include/tencentcloud/adp/v20260520/model/ComplexBillingItem.h
   include/tencentcloud/adp/v20260520/model/BackgroundImage.h
@@ -221,6 +222,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/ModelProviderBasic.h
   include/tencentcloud/adp/v20260520/model/ConversationMessage.h
   include/tencentcloud/adp/v20260520/model/DescribeConversationResponse.h
+  include/tencentcloud/adp/v20260520/model/FieldMask.h
   include/tencentcloud/adp/v20260520/model/AppAdvancedConf.h
   include/tencentcloud/adp/v20260520/model/DescribeSpaceListRequest.h
   include/tencentcloud/adp/v20260520/model/SkillVersion.h
@@ -261,7 +263,7 @@ set(adp_src
   src/v20260520/model/Plugin.cpp
   src/v20260520/model/ApiKeyAuthConfig.cpp
   src/v20260520/model/CreateConversationResponse.cpp
-  src/v20260520/model/DescribePluginResponse.cpp
+  src/v20260520/model/CopyAgentFromAppRequest.cpp
   src/v20260520/model/DescribeConversationRequest.cpp
   src/v20260520/model/Variable.cpp
   src/v20260520/model/Conversation.cpp
@@ -356,6 +358,7 @@ set(adp_src
   src/v20260520/model/PluginSummary.cpp
   src/v20260520/model/AgentProfile.cpp
   src/v20260520/model/OAuthConfig.cpp
+  src/v20260520/model/CopyAgentFromAppResponse.cpp
   src/v20260520/model/CreateWorkspaceCredentialResponse.cpp
   src/v20260520/model/ModelParams.cpp
   src/v20260520/model/RetryReleaseResponse.cpp
@@ -421,7 +424,7 @@ set(adp_src
   src/v20260520/model/PluginProfile.cpp
   src/v20260520/model/DeleteSpaceRequest.cpp
   src/v20260520/model/SkillCategory.cpp
-  src/v20260520/model/FieldMask.cpp
+  src/v20260520/model/DescribePluginResponse.cpp
   src/v20260520/model/DescribeReleaseListResponse.cpp
   src/v20260520/model/ComplexBillingItem.cpp
   src/v20260520/model/BackgroundImage.cpp
@@ -434,6 +437,7 @@ set(adp_src
   src/v20260520/model/ModelProviderBasic.cpp
   src/v20260520/model/ConversationMessage.cpp
   src/v20260520/model/DescribeConversationResponse.cpp
+  src/v20260520/model/FieldMask.cpp
   src/v20260520/model/AppAdvancedConf.cpp
   src/v20260520/model/DescribeSpaceListRequest.cpp
   src/v20260520/model/SkillVersion.cpp

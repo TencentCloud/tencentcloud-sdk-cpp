@@ -63,6 +63,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/CreateLoRaFrequencyRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ChangeP2PRouteResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/UpdateDeviceTWeCallAuthorizeStatusRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeDirectUploadCredentialResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateProjectResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteProjectResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CallDeviceActionAsyncRequest.h
@@ -107,6 +108,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/GetDeviceListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataHistoryRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeStudioProductRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeDirectUploadCredentialRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/TalkAIBotInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageThumbnailListResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DeletePositionFenceRequest.h
@@ -634,6 +636,7 @@ set(iotexplorer_src
   src/v20190423/model/CreateLoRaFrequencyRequest.cpp
   src/v20190423/model/ChangeP2PRouteResponse.cpp
   src/v20190423/model/UpdateDeviceTWeCallAuthorizeStatusRequest.cpp
+  src/v20190423/model/CreateTWeSeeDirectUploadCredentialResponse.cpp
   src/v20190423/model/CreateProjectResponse.cpp
   src/v20190423/model/DeleteProjectResponse.cpp
   src/v20190423/model/CallDeviceActionAsyncRequest.cpp
@@ -678,6 +681,7 @@ set(iotexplorer_src
   src/v20190423/model/GetDeviceListRequest.cpp
   src/v20190423/model/DescribeDeviceDataHistoryRequest.cpp
   src/v20190423/model/DescribeStudioProductRequest.cpp
+  src/v20190423/model/CreateTWeSeeDirectUploadCredentialRequest.cpp
   src/v20190423/model/TalkAIBotInfo.cpp
   src/v20190423/model/DescribeCloudStorageThumbnailListResponse.cpp
   src/v20190423/model/DeletePositionFenceRequest.cpp

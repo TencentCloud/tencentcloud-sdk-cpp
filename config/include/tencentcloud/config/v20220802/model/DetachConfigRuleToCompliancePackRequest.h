@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合规包ID
-                     * @return CompliancePackId 合规包ID
+                     * 获取<p>合规包ID</p>
+                     * @return CompliancePackId <p>合规包ID</p>
                      * 
                      */
                     std::string GetCompliancePackId() const;
 
                     /**
-                     * 设置合规包ID
-                     * @param _compliancePackId 合规包ID
+                     * 设置<p>合规包ID</p>
+                     * @param _compliancePackId <p>合规包ID</p>
                      * 
                      */
                     void SetCompliancePackId(const std::string& _compliancePackId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool CompliancePackIdHasBeenSet() const;
 
                     /**
-                     * 获取规则ID
-                     * @return ConfigRuleId 规则ID
+                     * 获取<p>规则ID</p>
+                     * @return ConfigRuleId <p>规则ID</p>
                      * 
                      */
                     std::string GetConfigRuleId() const;
 
                     /**
-                     * 设置规则ID
-                     * @param _configRuleId 规则ID
+                     * 设置<p>规则ID</p>
+                     * @param _configRuleId <p>规则ID</p>
                      * 
                      */
                     void SetConfigRuleId(const std::string& _configRuleId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合规包ID
+                     * <p>合规包ID</p>
                      */
                     std::string m_compliancePackId;
                     bool m_compliancePackIdHasBeenSet;
 
                     /**
-                     * 规则ID
+                     * <p>规则ID</p>
                      */
                     std::string m_configRuleId;
                     bool m_configRuleIdHasBeenSet;

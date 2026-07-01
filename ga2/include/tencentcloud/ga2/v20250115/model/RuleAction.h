@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取七层转发规则行为类型
+                     * 获取<p>七层转发规则行为类型</p><p>枚举值：</p><ul><li>ForwardGroup： 转发策略为转发至终端节点组。</li><li>Drop： 转发策略为丢弃。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleActionType 七层转发规则行为类型
+                     * @return RuleActionType <p>七层转发规则行为类型</p><p>枚举值：</p><ul><li>ForwardGroup： 转发策略为转发至终端节点组。</li><li>Drop： 转发策略为丢弃。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleActionType() const;
 
                     /**
-                     * 设置七层转发规则行为类型
+                     * 设置<p>七层转发规则行为类型</p><p>枚举值：</p><ul><li>ForwardGroup： 转发策略为转发至终端节点组。</li><li>Drop： 转发策略为丢弃。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ruleActionType 七层转发规则行为类型
+                     * @param _ruleActionType <p>七层转发规则行为类型</p><p>枚举值：</p><ul><li>ForwardGroup： 转发策略为转发至终端节点组。</li><li>Drop： 转发策略为丢弃。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool RuleActionTypeHasBeenSet() const;
 
                     /**
-                     * 获取七层转发规则行为值
+                     * 获取<p>七层转发规则行为值</p><p>当RuleActionType是Drop时，此字段不用传；当RuleActionType是ForwardGroup时，此字段必传，需要填写的是自定义终端节点组ID， 不支持配置默认终端节点组。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleActionValue 七层转发规则行为值
+                     * @return RuleActionValue <p>七层转发规则行为值</p><p>当RuleActionType是Drop时，此字段不用传；当RuleActionType是ForwardGroup时，此字段必传，需要填写的是自定义终端节点组ID， 不支持配置默认终端节点组。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleActionValue() const;
 
                     /**
-                     * 设置七层转发规则行为值
+                     * 设置<p>七层转发规则行为值</p><p>当RuleActionType是Drop时，此字段不用传；当RuleActionType是ForwardGroup时，此字段必传，需要填写的是自定义终端节点组ID， 不支持配置默认终端节点组。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ruleActionValue 七层转发规则行为值
+                     * @param _ruleActionValue <p>七层转发规则行为值</p><p>当RuleActionType是Drop时，此字段不用传；当RuleActionType是ForwardGroup时，此字段必传，需要填写的是自定义终端节点组ID， 不支持配置默认终端节点组。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,14 +99,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 七层转发规则行为类型
+                     * <p>七层转发规则行为类型</p><p>枚举值：</p><ul><li>ForwardGroup： 转发策略为转发至终端节点组。</li><li>Drop： 转发策略为丢弃。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleActionType;
                     bool m_ruleActionTypeHasBeenSet;
 
                     /**
-                     * 七层转发规则行为值
+                     * <p>七层转发规则行为值</p><p>当RuleActionType是Drop时，此字段不用传；当RuleActionType是ForwardGroup时，此字段必传，需要填写的是自定义终端节点组ID， 不支持配置默认终端节点组。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleActionValue;

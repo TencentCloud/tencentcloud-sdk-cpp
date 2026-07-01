@@ -62,7 +62,9 @@ JobConfig::JobConfig() :
     m_jobConfigItemHasBeenSet(false),
     m_checkpointTimeoutSecondHasBeenSet(false),
     m_checkpointIntervalSecondHasBeenSet(false),
-    m_variableReplaceModeHasBeenSet(false)
+    m_variableReplaceModeHasBeenSet(false),
+    m_stateCOSBucketHasBeenSet(false),
+    m_logCOSBucketHasBeenSet(false)
 {
 }
 
@@ -549,6 +551,26 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
         m_variableReplaceModeHasBeenSet = true;
     }
 
+    if (value.HasMember("StateCOSBucket") && !value["StateCOSBucket"].IsNull())
+    {
+        if (!value["StateCOSBucket"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.StateCOSBucket` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_stateCOSBucket = string(value["StateCOSBucket"].GetString());
+        m_stateCOSBucketHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogCOSBucket") && !value["LogCOSBucket"].IsNull())
+    {
+        if (!value["LogCOSBucket"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.LogCOSBucket` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logCOSBucket = string(value["LogCOSBucket"].GetString());
+        m_logCOSBucketHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -915,6 +937,22 @@ void JobConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "VariableReplaceMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_variableReplaceMode, allocator);
+    }
+
+    if (m_stateCOSBucketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StateCOSBucket";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stateCOSBucket.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logCOSBucketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogCOSBucket";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logCOSBucket.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1590,5 +1628,37 @@ void JobConfig::SetVariableReplaceMode(const int64_t& _variableReplaceMode)
 bool JobConfig::VariableReplaceModeHasBeenSet() const
 {
     return m_variableReplaceModeHasBeenSet;
+}
+
+string JobConfig::GetStateCOSBucket() const
+{
+    return m_stateCOSBucket;
+}
+
+void JobConfig::SetStateCOSBucket(const string& _stateCOSBucket)
+{
+    m_stateCOSBucket = _stateCOSBucket;
+    m_stateCOSBucketHasBeenSet = true;
+}
+
+bool JobConfig::StateCOSBucketHasBeenSet() const
+{
+    return m_stateCOSBucketHasBeenSet;
+}
+
+string JobConfig::GetLogCOSBucket() const
+{
+    return m_logCOSBucket;
+}
+
+void JobConfig::SetLogCOSBucket(const string& _logCOSBucket)
+{
+    m_logCOSBucket = _logCOSBucket;
+    m_logCOSBucketHasBeenSet = true;
+}
+
+bool JobConfig::LogCOSBucketHasBeenSet() const
+{
+    return m_logCOSBucketHasBeenSet;
 }
 

@@ -29,7 +29,8 @@ AddPermissionPolicyToRoleConfigurationRequest::AddPermissionPolicyToRoleConfigur
     m_rolePolicyNamesHasBeenSet(false),
     m_rolePoliciesHasBeenSet(false),
     m_customPolicyDocumentHasBeenSet(false),
-    m_customPolicyDocumentsHasBeenSet(false)
+    m_customPolicyDocumentsHasBeenSet(false),
+    m_policyTypeHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,14 @@ string AddPermissionPolicyToRoleConfigurationRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_policyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_policyType, allocator);
     }
 
 
@@ -231,6 +240,22 @@ void AddPermissionPolicyToRoleConfigurationRequest::SetCustomPolicyDocuments(con
 bool AddPermissionPolicyToRoleConfigurationRequest::CustomPolicyDocumentsHasBeenSet() const
 {
     return m_customPolicyDocumentsHasBeenSet;
+}
+
+int64_t AddPermissionPolicyToRoleConfigurationRequest::GetPolicyType() const
+{
+    return m_policyType;
+}
+
+void AddPermissionPolicyToRoleConfigurationRequest::SetPolicyType(const int64_t& _policyType)
+{
+    m_policyType = _policyType;
+    m_policyTypeHasBeenSet = true;
+}
+
+bool AddPermissionPolicyToRoleConfigurationRequest::PolicyTypeHasBeenSet() const
+{
+    return m_policyTypeHasBeenSet;
 }
 
 

@@ -38,6 +38,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/TriggerJobSavepointRequest.h
   include/tencentcloud/oceanus/v20190422/model/LogContent.h
   include/tencentcloud/oceanus/v20190422/model/JobRuntimeInfo.h
+  include/tencentcloud/oceanus/v20190422/model/ClusterBucketInfo.h
   include/tencentcloud/oceanus/v20190422/model/JobEventInfo.h
   include/tencentcloud/oceanus/v20190422/model/DescribeWorkSpaceUsersResponse.h
   include/tencentcloud/oceanus/v20190422/model/NodeConfig.h
@@ -200,6 +201,7 @@ set(oceanus_src
   src/v20190422/model/TriggerJobSavepointRequest.cpp
   src/v20190422/model/LogContent.cpp
   src/v20190422/model/JobRuntimeInfo.cpp
+  src/v20190422/model/ClusterBucketInfo.cpp
   src/v20190422/model/JobEventInfo.cpp
   src/v20190422/model/DescribeWorkSpaceUsersResponse.cpp
   src/v20190422/model/NodeConfig.cpp

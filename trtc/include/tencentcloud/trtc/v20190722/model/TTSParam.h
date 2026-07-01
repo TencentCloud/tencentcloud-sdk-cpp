@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>tts模型</p>
-                     * @return Model <p>tts模型</p>
+                     * 获取<p>tts模型参数，仅支持填写&quot;flow_02_turbo&quot;。</p>
+                     * @return Model <p>tts模型参数，仅支持填写&quot;flow_02_turbo&quot;。</p>
                      * 
                      */
                     std::string GetModel() const;
 
                     /**
-                     * 设置<p>tts模型</p>
-                     * @param _model <p>tts模型</p>
+                     * 设置<p>tts模型参数，仅支持填写&quot;flow_02_turbo&quot;。</p>
+                     * @param _model <p>tts模型参数，仅支持填写&quot;flow_02_turbo&quot;。</p>
                      * 
                      */
                     void SetModel(const std::string& _model);
@@ -156,7 +156,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>tts模型</p>
+                     * <p>tts模型参数，仅支持填写&quot;flow_02_turbo&quot;。</p>
                      */
                     std::string m_model;
                     bool m_modelHasBeenSet;

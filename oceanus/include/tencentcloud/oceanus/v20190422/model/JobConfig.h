@@ -1013,15 +1013,15 @@ namespace TencentCloud
                     bool JobConfigItemHasBeenSet() const;
 
                     /**
-                     * 获取<p>checkpoint 超时时间</p>
-                     * @return CheckpointTimeoutSecond <p>checkpoint 超时时间</p>
+                     * 获取<p>checkpoint 超时时间</p><p>单位：秒</p>
+                     * @return CheckpointTimeoutSecond <p>checkpoint 超时时间</p><p>单位：秒</p>
                      * 
                      */
                     int64_t GetCheckpointTimeoutSecond() const;
 
                     /**
-                     * 设置<p>checkpoint 超时时间</p>
-                     * @param _checkpointTimeoutSecond <p>checkpoint 超时时间</p>
+                     * 设置<p>checkpoint 超时时间</p><p>单位：秒</p>
+                     * @param _checkpointTimeoutSecond <p>checkpoint 超时时间</p><p>单位：秒</p>
                      * 
                      */
                     void SetCheckpointTimeoutSecond(const int64_t& _checkpointTimeoutSecond);
@@ -1034,15 +1034,15 @@ namespace TencentCloud
                     bool CheckpointTimeoutSecondHasBeenSet() const;
 
                     /**
-                     * 获取<p>checkpoint 间隔时间</p>
-                     * @return CheckpointIntervalSecond <p>checkpoint 间隔时间</p>
+                     * 获取<p>checkpoint 间隔时间</p><p>单位：秒</p>
+                     * @return CheckpointIntervalSecond <p>checkpoint 间隔时间</p><p>单位：秒</p>
                      * 
                      */
                     int64_t GetCheckpointIntervalSecond() const;
 
                     /**
-                     * 设置<p>checkpoint 间隔时间</p>
-                     * @param _checkpointIntervalSecond <p>checkpoint 间隔时间</p>
+                     * 设置<p>checkpoint 间隔时间</p><p>单位：秒</p>
+                     * @param _checkpointIntervalSecond <p>checkpoint 间隔时间</p><p>单位：秒</p>
                      * 
                      */
                     void SetCheckpointIntervalSecond(const int64_t& _checkpointIntervalSecond);
@@ -1074,6 +1074,56 @@ namespace TencentCloud
                      * 
                      */
                     bool VariableReplaceModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>快照桶</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StateCOSBucket <p>快照桶</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStateCOSBucket() const;
+
+                    /**
+                     * 设置<p>快照桶</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _stateCOSBucket <p>快照桶</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStateCOSBucket(const std::string& _stateCOSBucket);
+
+                    /**
+                     * 判断参数 StateCOSBucket 是否已赋值
+                     * @return StateCOSBucket 是否已赋值
+                     * 
+                     */
+                    bool StateCOSBucketHasBeenSet() const;
+
+                    /**
+                     * 获取<p>日志桶</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogCOSBucket <p>日志桶</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLogCOSBucket() const;
+
+                    /**
+                     * 设置<p>日志桶</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _logCOSBucket <p>日志桶</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLogCOSBucket(const std::string& _logCOSBucket);
+
+                    /**
+                     * 判断参数 LogCOSBucket 是否已赋值
+                     * @return LogCOSBucket 是否已赋值
+                     * 
+                     */
+                    bool LogCOSBucketHasBeenSet() const;
 
                 private:
 
@@ -1347,13 +1397,13 @@ namespace TencentCloud
                     bool m_jobConfigItemHasBeenSet;
 
                     /**
-                     * <p>checkpoint 超时时间</p>
+                     * <p>checkpoint 超时时间</p><p>单位：秒</p>
                      */
                     int64_t m_checkpointTimeoutSecond;
                     bool m_checkpointTimeoutSecondHasBeenSet;
 
                     /**
-                     * <p>checkpoint 间隔时间</p>
+                     * <p>checkpoint 间隔时间</p><p>单位：秒</p>
                      */
                     int64_t m_checkpointIntervalSecond;
                     bool m_checkpointIntervalSecondHasBeenSet;
@@ -1363,6 +1413,20 @@ namespace TencentCloud
                      */
                     int64_t m_variableReplaceMode;
                     bool m_variableReplaceModeHasBeenSet;
+
+                    /**
+                     * <p>快照桶</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_stateCOSBucket;
+                    bool m_stateCOSBucketHasBeenSet;
+
+                    /**
+                     * <p>日志桶</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logCOSBucket;
+                    bool m_logCOSBucketHasBeenSet;
 
                 };
             }

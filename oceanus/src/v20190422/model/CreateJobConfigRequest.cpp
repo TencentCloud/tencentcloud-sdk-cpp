@@ -61,7 +61,10 @@ CreateJobConfigRequest::CreateJobConfigRequest() :
     m_programArgsAfterGzipHasBeenSet(false),
     m_checkpointTimeoutSecondHasBeenSet(false),
     m_checkpointIntervalSecondHasBeenSet(false),
-    m_variableReplaceModeHasBeenSet(false)
+    m_variableReplaceModeHasBeenSet(false),
+    m_operatorNameHasBeenSet(false),
+    m_configScopeHasBeenSet(false),
+    m_stateCOSBucketHasBeenSet(false)
 {
 }
 
@@ -406,6 +409,30 @@ string CreateJobConfigRequest::ToJsonString() const
         string key = "VariableReplaceMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_variableReplaceMode, allocator);
+    }
+
+    if (m_operatorNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperatorName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operatorName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigScope";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_configScope, allocator);
+    }
+
+    if (m_stateCOSBucketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StateCOSBucket";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_stateCOSBucket.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1038,6 +1065,54 @@ void CreateJobConfigRequest::SetVariableReplaceMode(const int64_t& _variableRepl
 bool CreateJobConfigRequest::VariableReplaceModeHasBeenSet() const
 {
     return m_variableReplaceModeHasBeenSet;
+}
+
+string CreateJobConfigRequest::GetOperatorName() const
+{
+    return m_operatorName;
+}
+
+void CreateJobConfigRequest::SetOperatorName(const string& _operatorName)
+{
+    m_operatorName = _operatorName;
+    m_operatorNameHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::OperatorNameHasBeenSet() const
+{
+    return m_operatorNameHasBeenSet;
+}
+
+int64_t CreateJobConfigRequest::GetConfigScope() const
+{
+    return m_configScope;
+}
+
+void CreateJobConfigRequest::SetConfigScope(const int64_t& _configScope)
+{
+    m_configScope = _configScope;
+    m_configScopeHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::ConfigScopeHasBeenSet() const
+{
+    return m_configScopeHasBeenSet;
+}
+
+string CreateJobConfigRequest::GetStateCOSBucket() const
+{
+    return m_stateCOSBucket;
+}
+
+void CreateJobConfigRequest::SetStateCOSBucket(const string& _stateCOSBucket)
+{
+    m_stateCOSBucket = _stateCOSBucket;
+    m_stateCOSBucketHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::StateCOSBucketHasBeenSet() const
+{
+    return m_stateCOSBucketHasBeenSet;
 }
 
 

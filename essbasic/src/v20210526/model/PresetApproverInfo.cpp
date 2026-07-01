@@ -24,7 +24,8 @@ PresetApproverInfo::PresetApproverInfo() :
     m_nameHasBeenSet(false),
     m_mobileHasBeenSet(false),
     m_idCardNumberHasBeenSet(false),
-    m_idCardTypeHasBeenSet(false)
+    m_idCardTypeHasBeenSet(false),
+    m_organizationNameHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome PresetApproverInfo::Deserialize(const rapidjson::Value &valu
         m_idCardTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("OrganizationName") && !value["OrganizationName"].IsNull())
+    {
+        if (!value["OrganizationName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PresetApproverInfo.OrganizationName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_organizationName = string(value["OrganizationName"].GetString());
+        m_organizationNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void PresetApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "IdCardType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_idCardType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_organizationNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrganizationName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_organizationName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void PresetApproverInfo::SetIdCardType(const string& _idCardType)
 bool PresetApproverInfo::IdCardTypeHasBeenSet() const
 {
     return m_idCardTypeHasBeenSet;
+}
+
+string PresetApproverInfo::GetOrganizationName() const
+{
+    return m_organizationName;
+}
+
+void PresetApproverInfo::SetOrganizationName(const string& _organizationName)
+{
+    m_organizationName = _organizationName;
+    m_organizationNameHasBeenSet = true;
+}
+
+bool PresetApproverInfo::OrganizationNameHasBeenSet() const
+{
+    return m_organizationNameHasBeenSet;
 }
 

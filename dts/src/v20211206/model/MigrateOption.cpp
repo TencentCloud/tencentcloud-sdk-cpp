@@ -28,7 +28,8 @@ MigrateOption::MigrateOption() :
     m_isOverrideRootHasBeenSet(false),
     m_isDstReadOnlyHasBeenSet(false),
     m_extraAttrHasBeenSet(false),
-    m_migrateWayHasBeenSet(false)
+    m_migrateWayHasBeenSet(false),
+    m_rateLimitHasBeenSet(false)
 {
 }
 
@@ -141,6 +142,23 @@ CoreInternalOutcome MigrateOption::Deserialize(const rapidjson::Value &value)
         m_migrateWayHasBeenSet = true;
     }
 
+    if (value.HasMember("RateLimit") && !value["RateLimit"].IsNull())
+    {
+        if (!value["RateLimit"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MigrateOption.RateLimit` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rateLimit.Deserialize(value["RateLimit"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rateLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -219,6 +237,15 @@ void MigrateOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "MigrateWay";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_migrateWay.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rateLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RateLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rateLimit.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -350,5 +377,21 @@ void MigrateOption::SetMigrateWay(const string& _migrateWay)
 bool MigrateOption::MigrateWayHasBeenSet() const
 {
     return m_migrateWayHasBeenSet;
+}
+
+RateLimit MigrateOption::GetRateLimit() const
+{
+    return m_rateLimit;
+}
+
+void MigrateOption::SetRateLimit(const RateLimit& _rateLimit)
+{
+    m_rateLimit = _rateLimit;
+    m_rateLimitHasBeenSet = true;
+}
+
+bool MigrateOption::RateLimitHasBeenSet() const
+{
+    return m_rateLimitHasBeenSet;
 }
 

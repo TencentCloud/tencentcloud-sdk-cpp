@@ -25,7 +25,8 @@ using namespace std;
 
 ListAggregateDiscoveredResourcesResponse::ListAggregateDiscoveredResourcesResponse() :
     m_itemsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_countHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome ListAggregateDiscoveredResourcesResponse::Deserialize(const 
         m_nextTokenHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Count") && !rsp["Count"].IsNull())
+    {
+        if (!rsp["Count"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Count` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_count = rsp["Count"].GetInt64();
+        m_countHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string ListAggregateDiscoveredResourcesResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_nextToken.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_countHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Count";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_count, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ string ListAggregateDiscoveredResourcesResponse::GetNextToken() const
 bool ListAggregateDiscoveredResourcesResponse::NextTokenHasBeenSet() const
 {
     return m_nextTokenHasBeenSet;
+}
+
+int64_t ListAggregateDiscoveredResourcesResponse::GetCount() const
+{
+    return m_count;
+}
+
+bool ListAggregateDiscoveredResourcesResponse::CountHasBeenSet() const
+{
+    return m_countHasBeenSet;
 }
 
 

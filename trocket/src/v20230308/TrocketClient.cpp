@@ -1740,6 +1740,56 @@ TrocketClient::DescribeTopicListByGroupOutcomeCallable TrocketClient::DescribeTo
     return prom->get_future();
 }
 
+TrocketClient::DescribeTopicStatsOutcome TrocketClient::DescribeTopicStats(const DescribeTopicStatsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTopicStats");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTopicStatsResponse rsp = DescribeTopicStatsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTopicStatsOutcome(rsp);
+        else
+            return DescribeTopicStatsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTopicStatsOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeTopicStatsAsync(const DescribeTopicStatsRequest& request, const DescribeTopicStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTopicStatsRequest&;
+    using Resp = DescribeTopicStatsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTopicStats", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrocketClient::DescribeTopicStatsOutcomeCallable TrocketClient::DescribeTopicStatsCallable(const DescribeTopicStatsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTopicStatsOutcome>>();
+    DescribeTopicStatsAsync(
+    request,
+    [prom](
+        const TrocketClient*,
+        const DescribeTopicStatsRequest&,
+        DescribeTopicStatsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TrocketClient::DoHealthCheckOnMigratingTopicOutcome TrocketClient::DoHealthCheckOnMigratingTopic(const DoHealthCheckOnMigratingTopicRequest &request)
 {
     auto outcome = MakeRequest(request, "DoHealthCheckOnMigratingTopic");

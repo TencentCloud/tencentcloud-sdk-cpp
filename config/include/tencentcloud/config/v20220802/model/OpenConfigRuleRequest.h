@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则ID
-                     * @return RuleId 规则ID
+                     * 获取<p>规则ID</p>
+                     * @return RuleId <p>规则ID</p>
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置规则ID
-                     * @param _ruleId 规则ID
+                     * 设置<p>规则ID</p>
+                     * @param _ruleId <p>规则ID</p>
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 规则ID
+                     * <p>规则ID</p>
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;

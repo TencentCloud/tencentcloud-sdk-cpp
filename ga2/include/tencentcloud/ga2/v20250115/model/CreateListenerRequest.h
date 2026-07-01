@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取<p>监听类型，默认为智能路由。</p>
-                     * @return ListenerType <p>监听类型，默认为智能路由。</p>
+                     * 获取<p>监听类型，默认为智能路由。</p><p>枚举值：</p><ul><li>Standard： 智能路由。</li></ul>
+                     * @return ListenerType <p>监听类型，默认为智能路由。</p><p>枚举值：</p><ul><li>Standard： 智能路由。</li></ul>
                      * 
                      */
                     std::string GetListenerType() const;
 
                     /**
-                     * 设置<p>监听类型，默认为智能路由。</p>
-                     * @param _listenerType <p>监听类型，默认为智能路由。</p>
+                     * 设置<p>监听类型，默认为智能路由。</p><p>枚举值：</p><ul><li>Standard： 智能路由。</li></ul>
+                     * @param _listenerType <p>监听类型，默认为智能路由。</p><p>枚举值：</p><ul><li>Standard： 智能路由。</li></ul>
                      * 
                      */
                     void SetListenerType(const std::string& _listenerType);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool ListenerTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>协议，默认为TCP。</p>
-                     * @return Protocol <p>协议，默认为TCP。</p>
+                     * 获取<p>协议，默认为TCP。支持配置&#39;TCP&#39;, &#39;UDP&#39;, &#39;HTTP&#39;, &#39;HTTPS&#39;。</p>
+                     * @return Protocol <p>协议，默认为TCP。支持配置&#39;TCP&#39;, &#39;UDP&#39;, &#39;HTTP&#39;, &#39;HTTPS&#39;。</p>
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置<p>协议，默认为TCP。</p>
-                     * @param _protocol <p>协议，默认为TCP。</p>
+                     * 设置<p>协议，默认为TCP。支持配置&#39;TCP&#39;, &#39;UDP&#39;, &#39;HTTP&#39;, &#39;HTTPS&#39;。</p>
+                     * @param _protocol <p>协议，默认为TCP。支持配置&#39;TCP&#39;, &#39;UDP&#39;, &#39;HTTP&#39;, &#39;HTTPS&#39;。</p>
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取<p>连接空闲等待时间。</p>
-                     * @return IdleTimeout <p>连接空闲等待时间。</p>
+                     * 获取<p>连接空闲等待时间。</p><p>1、HTTP/HTTPS监听器，默认值为15，支持范围为1-60；<br>2、TCP监听器，默认值为900，支持范围为10-900；<br>3、UDP监听器，默认值为20，支持范围为10-20；</p>
+                     * @return IdleTimeout <p>连接空闲等待时间。</p><p>1、HTTP/HTTPS监听器，默认值为15，支持范围为1-60；<br>2、TCP监听器，默认值为900，支持范围为10-900；<br>3、UDP监听器，默认值为20，支持范围为10-20；</p>
                      * 
                      */
                     uint64_t GetIdleTimeout() const;
 
                     /**
-                     * 设置<p>连接空闲等待时间。</p>
-                     * @param _idleTimeout <p>连接空闲等待时间。</p>
+                     * 设置<p>连接空闲等待时间。</p><p>1、HTTP/HTTPS监听器，默认值为15，支持范围为1-60；<br>2、TCP监听器，默认值为900，支持范围为10-900；<br>3、UDP监听器，默认值为20，支持范围为10-20；</p>
+                     * @param _idleTimeout <p>连接空闲等待时间。</p><p>1、HTTP/HTTPS监听器，默认值为15，支持范围为1-60；<br>2、TCP监听器，默认值为900，支持范围为10-900；<br>3、UDP监听器，默认值为20，支持范围为10-20；</p>
                      * 
                      */
                     void SetIdleTimeout(const uint64_t& _idleTimeout);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool IdleTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取<p>四层获取源IP方式，支持&#39;TOA&#39;, &#39;ProxyProtocol&#39;。</p>
-                     * @return GetRealIpType <p>四层获取源IP方式，支持&#39;TOA&#39;, &#39;ProxyProtocol&#39;。</p>
+                     * 获取<p>四层获取源IP方式，支持&#39;TOA&#39;, &#39;ProxyProtocol&#39;, &#39;ProxyProtocolV2&#39;。</p><p>需要开启四层获取源IP方式，才填写此参数。</p>
+                     * @return GetRealIpType <p>四层获取源IP方式，支持&#39;TOA&#39;, &#39;ProxyProtocol&#39;, &#39;ProxyProtocolV2&#39;。</p><p>需要开启四层获取源IP方式，才填写此参数。</p>
                      * 
                      */
                     std::string GetGetRealIpType() const;
 
                     /**
-                     * 设置<p>四层获取源IP方式，支持&#39;TOA&#39;, &#39;ProxyProtocol&#39;。</p>
-                     * @param _getRealIpType <p>四层获取源IP方式，支持&#39;TOA&#39;, &#39;ProxyProtocol&#39;。</p>
+                     * 设置<p>四层获取源IP方式，支持&#39;TOA&#39;, &#39;ProxyProtocol&#39;, &#39;ProxyProtocolV2&#39;。</p><p>需要开启四层获取源IP方式，才填写此参数。</p>
+                     * @param _getRealIpType <p>四层获取源IP方式，支持&#39;TOA&#39;, &#39;ProxyProtocol&#39;, &#39;ProxyProtocolV2&#39;。</p><p>需要开启四层获取源IP方式，才填写此参数。</p>
                      * 
                      */
                     void SetGetRealIpType(const std::string& _getRealIpType);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool GetRealIpTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>是否开启会话保持。</p>
-                     * @return ClientAffinity <p>是否开启会话保持。</p>
+                     * 获取<p>是否开启会话保持。支持配置&#39;Open&#39;, &#39;Close&#39;。</p><p>枚举值：</p><ul><li>Open： 开启。</li><li>Close： 关闭。</li></ul>
+                     * @return ClientAffinity <p>是否开启会话保持。支持配置&#39;Open&#39;, &#39;Close&#39;。</p><p>枚举值：</p><ul><li>Open： 开启。</li><li>Close： 关闭。</li></ul>
                      * 
                      */
                     std::string GetClientAffinity() const;
 
                     /**
-                     * 设置<p>是否开启会话保持。</p>
-                     * @param _clientAffinity <p>是否开启会话保持。</p>
+                     * 设置<p>是否开启会话保持。支持配置&#39;Open&#39;, &#39;Close&#39;。</p><p>枚举值：</p><ul><li>Open： 开启。</li><li>Close： 关闭。</li></ul>
+                     * @param _clientAffinity <p>是否开启会话保持。支持配置&#39;Open&#39;, &#39;Close&#39;。</p><p>枚举值：</p><ul><li>Open： 开启。</li><li>Close： 关闭。</li></ul>
                      * 
                      */
                     void SetClientAffinity(const std::string& _clientAffinity);
@@ -233,15 +233,15 @@ namespace TencentCloud
                     bool ClientAffinityHasBeenSet() const;
 
                     /**
-                     * 获取<p>请求超时时间。</p>
-                     * @return RequestTimeout <p>请求超时时间。</p>
+                     * 获取<p>请求超时时间。</p><p>取值范围：[1, 180]</p><p>默认值：60</p><p>当HTTPS监听器时才可配置此参数。</p>
+                     * @return RequestTimeout <p>请求超时时间。</p><p>取值范围：[1, 180]</p><p>默认值：60</p><p>当HTTPS监听器时才可配置此参数。</p>
                      * 
                      */
                     uint64_t GetRequestTimeout() const;
 
                     /**
-                     * 设置<p>请求超时时间。</p>
-                     * @param _requestTimeout <p>请求超时时间。</p>
+                     * 设置<p>请求超时时间。</p><p>取值范围：[1, 180]</p><p>默认值：60</p><p>当HTTPS监听器时才可配置此参数。</p>
+                     * @param _requestTimeout <p>请求超时时间。</p><p>取值范围：[1, 180]</p><p>默认值：60</p><p>当HTTPS监听器时才可配置此参数。</p>
                      * 
                      */
                     void SetRequestTimeout(const uint64_t& _requestTimeout);
@@ -275,15 +275,15 @@ namespace TencentCloud
                     bool XForwardedForRealIpHasBeenSet() const;
 
                     /**
-                     * 获取<p>解析方式。UNIDIRECTIONAL：双向。MUTUAL：单向。</p>
-                     * @return CertificationType <p>解析方式。UNIDIRECTIONAL：双向。MUTUAL：单向。</p>
+                     * 获取<p>解析方式。</p><p>枚举值：</p><ul><li>UNIDIRECTIONAL： 双向。</li><li>U： 单向。</li></ul><p>HTTPS监听器，此字段必传。</p>
+                     * @return CertificationType <p>解析方式。</p><p>枚举值：</p><ul><li>UNIDIRECTIONAL： 双向。</li><li>U： 单向。</li></ul><p>HTTPS监听器，此字段必传。</p>
                      * 
                      */
                     std::string GetCertificationType() const;
 
                     /**
-                     * 设置<p>解析方式。UNIDIRECTIONAL：双向。MUTUAL：单向。</p>
-                     * @param _certificationType <p>解析方式。UNIDIRECTIONAL：双向。MUTUAL：单向。</p>
+                     * 设置<p>解析方式。</p><p>枚举值：</p><ul><li>UNIDIRECTIONAL： 双向。</li><li>U： 单向。</li></ul><p>HTTPS监听器，此字段必传。</p>
+                     * @param _certificationType <p>解析方式。</p><p>枚举值：</p><ul><li>UNIDIRECTIONAL： 双向。</li><li>U： 单向。</li></ul><p>HTTPS监听器，此字段必传。</p>
                      * 
                      */
                     void SetCertificationType(const std::string& _certificationType);
@@ -296,15 +296,15 @@ namespace TencentCloud
                     bool CertificationTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>加密算法套件。</p>
-                     * @return CipherPolicyId <p>加密算法套件。</p>
+                     * 获取<p>加密算法套件。支持配置&#39;tls_policy_1.0-2&#39;, &#39;tls_policy_1.1-2&#39;, &#39;tls_policy_1.2&#39;, &#39;tls_policy_1.2_strict&#39;, &#39;tls_policy_1.2_strict-1.3&#39;。</p>
+                     * @return CipherPolicyId <p>加密算法套件。支持配置&#39;tls_policy_1.0-2&#39;, &#39;tls_policy_1.1-2&#39;, &#39;tls_policy_1.2&#39;, &#39;tls_policy_1.2_strict&#39;, &#39;tls_policy_1.2_strict-1.3&#39;。</p>
                      * 
                      */
                     std::string GetCipherPolicyId() const;
 
                     /**
-                     * 设置<p>加密算法套件。</p>
-                     * @param _cipherPolicyId <p>加密算法套件。</p>
+                     * 设置<p>加密算法套件。支持配置&#39;tls_policy_1.0-2&#39;, &#39;tls_policy_1.1-2&#39;, &#39;tls_policy_1.2&#39;, &#39;tls_policy_1.2_strict&#39;, &#39;tls_policy_1.2_strict-1.3&#39;。</p>
+                     * @param _cipherPolicyId <p>加密算法套件。支持配置&#39;tls_policy_1.0-2&#39;, &#39;tls_policy_1.1-2&#39;, &#39;tls_policy_1.2&#39;, &#39;tls_policy_1.2_strict&#39;, &#39;tls_policy_1.2_strict-1.3&#39;。</p>
                      * 
                      */
                     void SetCipherPolicyId(const std::string& _cipherPolicyId);
@@ -317,15 +317,15 @@ namespace TencentCloud
                     bool CipherPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>服务器证书。</p>
-                     * @return ServerCertificates <p>服务器证书。</p>
+                     * 获取<p>服务器证书。</p><p>当是HTTPS监听器时，此字段必传。</p>
+                     * @return ServerCertificates <p>服务器证书。</p><p>当是HTTPS监听器时，此字段必传。</p>
                      * 
                      */
                     std::vector<std::string> GetServerCertificates() const;
 
                     /**
-                     * 设置<p>服务器证书。</p>
-                     * @param _serverCertificates <p>服务器证书。</p>
+                     * 设置<p>服务器证书。</p><p>当是HTTPS监听器时，此字段必传。</p>
+                     * @param _serverCertificates <p>服务器证书。</p><p>当是HTTPS监听器时，此字段必传。</p>
                      * 
                      */
                     void SetServerCertificates(const std::vector<std::string>& _serverCertificates);
@@ -338,15 +338,15 @@ namespace TencentCloud
                     bool ServerCertificatesHasBeenSet() const;
 
                     /**
-                     * 获取<p>客户端证书。</p>
-                     * @return ClientCaCertificates <p>客户端证书。</p>
+                     * 获取<p>客户端证书。</p><p>当时HTTPS监听器且开启双向认证时，此字段必传。</p>
+                     * @return ClientCaCertificates <p>客户端证书。</p><p>当时HTTPS监听器且开启双向认证时，此字段必传。</p>
                      * 
                      */
                     std::vector<std::string> GetClientCaCertificates() const;
 
                     /**
-                     * 设置<p>客户端证书。</p>
-                     * @param _clientCaCertificates <p>客户端证书。</p>
+                     * 设置<p>客户端证书。</p><p>当时HTTPS监听器且开启双向认证时，此字段必传。</p>
+                     * @param _clientCaCertificates <p>客户端证书。</p><p>当时HTTPS监听器且开启双向认证时，此字段必传。</p>
                      * 
                      */
                     void SetClientCaCertificates(const std::vector<std::string>& _clientCaCertificates);
@@ -406,37 +406,37 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * <p>监听类型，默认为智能路由。</p>
+                     * <p>监听类型，默认为智能路由。</p><p>枚举值：</p><ul><li>Standard： 智能路由。</li></ul>
                      */
                     std::string m_listenerType;
                     bool m_listenerTypeHasBeenSet;
 
                     /**
-                     * <p>协议，默认为TCP。</p>
+                     * <p>协议，默认为TCP。支持配置&#39;TCP&#39;, &#39;UDP&#39;, &#39;HTTP&#39;, &#39;HTTPS&#39;。</p>
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * <p>连接空闲等待时间。</p>
+                     * <p>连接空闲等待时间。</p><p>1、HTTP/HTTPS监听器，默认值为15，支持范围为1-60；<br>2、TCP监听器，默认值为900，支持范围为10-900；<br>3、UDP监听器，默认值为20，支持范围为10-20；</p>
                      */
                     uint64_t m_idleTimeout;
                     bool m_idleTimeoutHasBeenSet;
 
                     /**
-                     * <p>四层获取源IP方式，支持&#39;TOA&#39;, &#39;ProxyProtocol&#39;。</p>
+                     * <p>四层获取源IP方式，支持&#39;TOA&#39;, &#39;ProxyProtocol&#39;, &#39;ProxyProtocolV2&#39;。</p><p>需要开启四层获取源IP方式，才填写此参数。</p>
                      */
                     std::string m_getRealIpType;
                     bool m_getRealIpTypeHasBeenSet;
 
                     /**
-                     * <p>是否开启会话保持。</p>
+                     * <p>是否开启会话保持。支持配置&#39;Open&#39;, &#39;Close&#39;。</p><p>枚举值：</p><ul><li>Open： 开启。</li><li>Close： 关闭。</li></ul>
                      */
                     std::string m_clientAffinity;
                     bool m_clientAffinityHasBeenSet;
 
                     /**
-                     * <p>请求超时时间。</p>
+                     * <p>请求超时时间。</p><p>取值范围：[1, 180]</p><p>默认值：60</p><p>当HTTPS监听器时才可配置此参数。</p>
                      */
                     uint64_t m_requestTimeout;
                     bool m_requestTimeoutHasBeenSet;
@@ -448,25 +448,25 @@ namespace TencentCloud
                     bool m_xForwardedForRealIpHasBeenSet;
 
                     /**
-                     * <p>解析方式。UNIDIRECTIONAL：双向。MUTUAL：单向。</p>
+                     * <p>解析方式。</p><p>枚举值：</p><ul><li>UNIDIRECTIONAL： 双向。</li><li>U： 单向。</li></ul><p>HTTPS监听器，此字段必传。</p>
                      */
                     std::string m_certificationType;
                     bool m_certificationTypeHasBeenSet;
 
                     /**
-                     * <p>加密算法套件。</p>
+                     * <p>加密算法套件。支持配置&#39;tls_policy_1.0-2&#39;, &#39;tls_policy_1.1-2&#39;, &#39;tls_policy_1.2&#39;, &#39;tls_policy_1.2_strict&#39;, &#39;tls_policy_1.2_strict-1.3&#39;。</p>
                      */
                     std::string m_cipherPolicyId;
                     bool m_cipherPolicyIdHasBeenSet;
 
                     /**
-                     * <p>服务器证书。</p>
+                     * <p>服务器证书。</p><p>当是HTTPS监听器时，此字段必传。</p>
                      */
                     std::vector<std::string> m_serverCertificates;
                     bool m_serverCertificatesHasBeenSet;
 
                     /**
-                     * <p>客户端证书。</p>
+                     * <p>客户端证书。</p><p>当时HTTPS监听器且开启双向认证时，此字段必传。</p>
                      */
                     std::vector<std::string> m_clientCaCertificates;
                     bool m_clientCaCertificatesHasBeenSet;

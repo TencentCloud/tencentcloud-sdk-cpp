@@ -91,6 +91,8 @@
 #include <tencentcloud/trocket/v20230308/model/DescribeTopicListResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeTopicListByGroupRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeTopicListByGroupResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeTopicStatsRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeTopicStatsResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DoHealthCheckOnMigratingTopicRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DoHealthCheckOnMigratingTopicResponse.h>
 #include <tencentcloud/trocket/v20230308/model/ImportSourceClusterConsumerGroupsRequest.h>
@@ -235,6 +237,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTopicListByGroupResponse> DescribeTopicListByGroupOutcome;
                 typedef std::future<DescribeTopicListByGroupOutcome> DescribeTopicListByGroupOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeTopicListByGroupRequest&, DescribeTopicListByGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicListByGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTopicStatsResponse> DescribeTopicStatsOutcome;
+                typedef std::future<DescribeTopicStatsOutcome> DescribeTopicStatsOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeTopicStatsRequest&, DescribeTopicStatsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicStatsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DoHealthCheckOnMigratingTopicResponse> DoHealthCheckOnMigratingTopicOutcome;
                 typedef std::future<DoHealthCheckOnMigratingTopicOutcome> DoHealthCheckOnMigratingTopicOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DoHealthCheckOnMigratingTopicRequest&, DoHealthCheckOnMigratingTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DoHealthCheckOnMigratingTopicAsyncHandler;
@@ -711,6 +716,16 @@ Filters示例：
                 DescribeTopicListByGroupOutcome DescribeTopicListByGroup(const Model::DescribeTopicListByGroupRequest &request);
                 void DescribeTopicListByGroupAsync(const Model::DescribeTopicListByGroupRequest& request, const DescribeTopicListByGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopicListByGroupOutcomeCallable DescribeTopicListByGroupCallable(const Model::DescribeTopicListByGroupRequest& request);
+
+                /**
+                 *获取主题队列级别的消费详情
+当前 API 适用集群：5.x 铂金版集群
+                 * @param req DescribeTopicStatsRequest
+                 * @return DescribeTopicStatsOutcome
+                 */
+                DescribeTopicStatsOutcome DescribeTopicStats(const Model::DescribeTopicStatsRequest &request);
+                void DescribeTopicStatsAsync(const Model::DescribeTopicStatsRequest& request, const DescribeTopicStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTopicStatsOutcomeCallable DescribeTopicStatsCallable(const Model::DescribeTopicStatsRequest& request);
 
                 /**
                  *检查迁移中的主题是否处于正常状态，只有处于正常状态的主题，才可以进入下一个迁移阶段

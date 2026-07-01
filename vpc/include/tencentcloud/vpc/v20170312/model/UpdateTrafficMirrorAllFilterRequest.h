@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流量镜像实例ID
-                     * @return TrafficMirrorId 流量镜像实例ID
+                     * 获取<p>流量镜像实例ID</p>
+                     * @return TrafficMirrorId <p>流量镜像实例ID</p>
                      * 
                      */
                     std::string GetTrafficMirrorId() const;
 
                     /**
-                     * 设置流量镜像实例ID
-                     * @param _trafficMirrorId 流量镜像实例ID
+                     * 设置<p>流量镜像实例ID</p>
+                     * @param _trafficMirrorId <p>流量镜像实例ID</p>
                      * 
                      */
                     void SetTrafficMirrorId(const std::string& _trafficMirrorId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TrafficMirrorIdHasBeenSet() const;
 
                     /**
-                     * 获取流量镜像采集方向
-                     * @return Direction 流量镜像采集方向
+                     * 获取<p>流量镜像采集方向</p>
+                     * @return Direction <p>流量镜像采集方向</p>
                      * 
                      */
                     std::string GetDirection() const;
 
                     /**
-                     * 设置流量镜像采集方向
-                     * @param _direction 流量镜像采集方向
+                     * 设置<p>流量镜像采集方向</p>
+                     * @param _direction <p>流量镜像采集方向</p>
                      * 
                      */
                     void SetDirection(const std::string& _direction);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool DirectionHasBeenSet() const;
 
                     /**
-                     * 获取流量镜像采集对象
-                     * @return CollectorSrcs 流量镜像采集对象
+                     * 获取<p>流量镜像采集对象</p>
+                     * @return CollectorSrcs <p>流量镜像采集对象</p>
                      * 
                      */
                     std::vector<std::string> GetCollectorSrcs() const;
 
                     /**
-                     * 设置流量镜像采集对象
-                     * @param _collectorSrcs 流量镜像采集对象
+                     * 设置<p>流量镜像采集对象</p>
+                     * @param _collectorSrcs <p>流量镜像采集对象</p>
                      * 
                      */
                     void SetCollectorSrcs(const std::vector<std::string>& _collectorSrcs);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool CollectorSrcsHasBeenSet() const;
 
                     /**
-                     * 获取流量镜像需要过滤的natgw实例
-                     * @return NatId 流量镜像需要过滤的natgw实例
+                     * 获取<p>流量镜像需要过滤的natgw实例</p>
+                     * @return NatId <p>流量镜像需要过滤的natgw实例</p>
                      * 
                      */
                     std::string GetNatId() const;
 
                     /**
-                     * 设置流量镜像需要过滤的natgw实例
-                     * @param _natId 流量镜像需要过滤的natgw实例
+                     * 设置<p>流量镜像需要过滤的natgw实例</p>
+                     * @param _natId <p>流量镜像需要过滤的natgw实例</p>
                      * 
                      */
                     void SetNatId(const std::string& _natId);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool NatIdHasBeenSet() const;
 
                     /**
-                     * 获取流量镜像需要过滤的五元组规则
-                     * @return CollectorNormalFilters 流量镜像需要过滤的五元组规则
+                     * 获取<p>流量镜像需要过滤的五元组规则</p>
+                     * @return CollectorNormalFilters <p>流量镜像需要过滤的五元组规则</p>
                      * 
                      */
                     std::vector<TrafficMirrorFilter> GetCollectorNormalFilters() const;
 
                     /**
-                     * 设置流量镜像需要过滤的五元组规则
-                     * @param _collectorNormalFilters 流量镜像需要过滤的五元组规则
+                     * 设置<p>流量镜像需要过滤的五元组规则</p>
+                     * @param _collectorNormalFilters <p>流量镜像需要过滤的五元组规则</p>
                      * 
                      */
                     void SetCollectorNormalFilters(const std::vector<TrafficMirrorFilter>& _collectorNormalFilters);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool CollectorNormalFiltersHasBeenSet() const;
 
                     /**
-                     * 获取流量镜像入站过滤规则。
-                     * @return IngressFilterRules 流量镜像入站过滤规则。
+                     * 获取<p>流量镜像入站过滤规则。</p>
+                     * @return IngressFilterRules <p>流量镜像入站过滤规则。</p>
                      * 
                      */
                     std::vector<TrafficMirrorFilter> GetIngressFilterRules() const;
 
                     /**
-                     * 设置流量镜像入站过滤规则。
-                     * @param _ingressFilterRules 流量镜像入站过滤规则。
+                     * 设置<p>流量镜像入站过滤规则。</p>
+                     * @param _ingressFilterRules <p>流量镜像入站过滤规则。</p>
                      * 
                      */
                     void SetIngressFilterRules(const std::vector<TrafficMirrorFilter>& _ingressFilterRules);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool IngressFilterRulesHasBeenSet() const;
 
                     /**
-                     * 获取流量镜像出站过滤规则。
-                     * @return EgressFilterRules 流量镜像出站过滤规则。
+                     * 获取<p>流量镜像出站过滤规则。</p>
+                     * @return EgressFilterRules <p>流量镜像出站过滤规则。</p>
                      * 
                      */
                     std::vector<TrafficMirrorFilter> GetEgressFilterRules() const;
 
                     /**
-                     * 设置流量镜像出站过滤规则。
-                     * @param _egressFilterRules 流量镜像出站过滤规则。
+                     * 设置<p>流量镜像出站过滤规则。</p>
+                     * @param _egressFilterRules <p>流量镜像出站过滤规则。</p>
                      * 
                      */
                     void SetEgressFilterRules(const std::vector<TrafficMirrorFilter>& _egressFilterRules);
@@ -193,43 +193,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 流量镜像实例ID
+                     * <p>流量镜像实例ID</p>
                      */
                     std::string m_trafficMirrorId;
                     bool m_trafficMirrorIdHasBeenSet;
 
                     /**
-                     * 流量镜像采集方向
+                     * <p>流量镜像采集方向</p>
                      */
                     std::string m_direction;
                     bool m_directionHasBeenSet;
 
                     /**
-                     * 流量镜像采集对象
+                     * <p>流量镜像采集对象</p>
                      */
                     std::vector<std::string> m_collectorSrcs;
                     bool m_collectorSrcsHasBeenSet;
 
                     /**
-                     * 流量镜像需要过滤的natgw实例
+                     * <p>流量镜像需要过滤的natgw实例</p>
                      */
                     std::string m_natId;
                     bool m_natIdHasBeenSet;
 
                     /**
-                     * 流量镜像需要过滤的五元组规则
+                     * <p>流量镜像需要过滤的五元组规则</p>
                      */
                     std::vector<TrafficMirrorFilter> m_collectorNormalFilters;
                     bool m_collectorNormalFiltersHasBeenSet;
 
                     /**
-                     * 流量镜像入站过滤规则。
+                     * <p>流量镜像入站过滤规则。</p>
                      */
                     std::vector<TrafficMirrorFilter> m_ingressFilterRules;
                     bool m_ingressFilterRulesHasBeenSet;
 
                     /**
-                     * 流量镜像出站过滤规则。
+                     * <p>流量镜像出站过滤规则。</p>
                      */
                     std::vector<TrafficMirrorFilter> m_egressFilterRules;
                     bool m_egressFilterRulesHasBeenSet;

@@ -49,18 +49,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取作业ID
+                     * 获取<p>作业ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return JobId 作业ID
+                     * @return JobId <p>作业ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置作业ID
+                     * 设置<p>作业ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _jobId 作业ID
+                     * @param _jobId <p>作业ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,18 +74,18 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取地域
+                     * 获取<p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Region 地域
+                     * @return Region <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域
+                     * 设置<p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _region 地域
+                     * @param _region <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,18 +99,18 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取可用区
+                     * 获取<p>可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Zone 可用区
+                     * @return Zone <p>可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区
+                     * 设置<p>可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _zone 可用区
+                     * @param _zone <p>可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,18 +124,18 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取用户AppId
+                     * 获取<p>用户AppId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AppId 用户AppId
+                     * @return AppId <p>用户AppId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
-                     * 设置用户AppId
+                     * 设置<p>用户AppId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _appId 用户AppId
+                     * @param _appId <p>用户AppId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -149,18 +149,18 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取用户UIN
+                     * 获取<p>用户UIN</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OwnerUin 用户UIN
+                     * @return OwnerUin <p>用户UIN</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOwnerUin() const;
 
                     /**
-                     * 设置用户UIN
+                     * 设置<p>用户UIN</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ownerUin 用户UIN
+                     * @param _ownerUin <p>用户UIN</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -174,18 +174,18 @@ namespace TencentCloud
                     bool OwnerUinHasBeenSet() const;
 
                     /**
-                     * 获取创建者UIN
+                     * 获取<p>创建者UIN</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreatorUin 创建者UIN
+                     * @return CreatorUin <p>创建者UIN</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatorUin() const;
 
                     /**
-                     * 设置创建者UIN
+                     * 设置<p>创建者UIN</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _creatorUin 创建者UIN
+                     * @param _creatorUin <p>创建者UIN</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -199,18 +199,18 @@ namespace TencentCloud
                     bool CreatorUinHasBeenSet() const;
 
                     /**
-                     * 获取作业名字
+                     * 获取<p>作业名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 作业名字
+                     * @return Name <p>作业名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置作业名字
+                     * 设置<p>作业名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 作业名字
+                     * @param _name <p>作业名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -224,18 +224,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取作业类型，1：sql作业，2：Jar作业
+                     * 获取<p>作业类型，1：sql作业，2：Jar作业</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return JobType 作业类型，1：sql作业，2：Jar作业
+                     * @return JobType <p>作业类型，1：sql作业，2：Jar作业</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetJobType() const;
 
                     /**
-                     * 设置作业类型，1：sql作业，2：Jar作业
+                     * 设置<p>作业类型，1：sql作业，2：Jar作业</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _jobType 作业类型，1：sql作业，2：Jar作业
+                     * @param _jobType <p>作业类型，1：sql作业，2：Jar作业</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -249,18 +249,18 @@ namespace TencentCloud
                     bool JobTypeHasBeenSet() const;
 
                     /**
-                     * 获取作业状态，1：未初始化，2：未发布，3：操作中，4：运行中，5：停止，6：暂停，-1：故障
+                     * 获取<p>作业状态，1：未初始化，2：未发布，3：操作中，4：运行中，5：停止，6：暂停，-1：故障</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 作业状态，1：未初始化，2：未发布，3：操作中，4：运行中，5：停止，6：暂停，-1：故障
+                     * @return Status <p>作业状态，1：未初始化，2：未发布，3：操作中，4：运行中，5：停止，6：暂停，-1：故障</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置作业状态，1：未初始化，2：未发布，3：操作中，4：运行中，5：停止，6：暂停，-1：故障
+                     * 设置<p>作业状态，1：未初始化，2：未发布，3：操作中，4：运行中，5：停止，6：暂停，-1：故障</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 作业状态，1：未初始化，2：未发布，3：操作中，4：运行中，5：停止，6：暂停，-1：故障
+                     * @param _status <p>作业状态，1：未初始化，2：未发布，3：操作中，4：运行中，5：停止，6：暂停，-1：故障</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -274,18 +274,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取作业创建时间
+                     * 获取<p>作业创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 作业创建时间
+                     * @return CreateTime <p>作业创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置作业创建时间
+                     * 设置<p>作业创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 作业创建时间
+                     * @param _createTime <p>作业创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -299,18 +299,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取作业启动时间
+                     * 获取<p>作业启动时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StartTime 作业启动时间
+                     * @return StartTime <p>作业启动时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置作业启动时间
+                     * 设置<p>作业启动时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _startTime 作业启动时间
+                     * @param _startTime <p>作业启动时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -324,18 +324,18 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取作业停止时间
+                     * 获取<p>作业停止时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StopTime 作业停止时间
+                     * @return StopTime <p>作业停止时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStopTime() const;
 
                     /**
-                     * 设置作业停止时间
+                     * 设置<p>作业停止时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _stopTime 作业停止时间
+                     * @param _stopTime <p>作业停止时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -349,18 +349,18 @@ namespace TencentCloud
                     bool StopTimeHasBeenSet() const;
 
                     /**
-                     * 获取作业更新时间
+                     * 获取<p>作业更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 作业更新时间
+                     * @return UpdateTime <p>作业更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置作业更新时间
+                     * 设置<p>作业更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime 作业更新时间
+                     * @param _updateTime <p>作业更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -374,18 +374,18 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取作业累计运行时间
+                     * 获取<p>作业累计运行时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalRunMillis 作业累计运行时间
+                     * @return TotalRunMillis <p>作业累计运行时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalRunMillis() const;
 
                     /**
-                     * 设置作业累计运行时间
+                     * 设置<p>作业累计运行时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _totalRunMillis 作业累计运行时间
+                     * @param _totalRunMillis <p>作业累计运行时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -399,18 +399,18 @@ namespace TencentCloud
                     bool TotalRunMillisHasBeenSet() const;
 
                     /**
-                     * 获取备注信息
+                     * 获取<p>备注信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Remark 备注信息
+                     * @return Remark <p>备注信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注信息
+                     * 设置<p>备注信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _remark 备注信息
+                     * @param _remark <p>备注信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -424,18 +424,18 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取操作错误提示信息
+                     * 获取<p>操作错误提示信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastOpResult 操作错误提示信息
+                     * @return LastOpResult <p>操作错误提示信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastOpResult() const;
 
                     /**
-                     * 设置操作错误提示信息
+                     * 设置<p>操作错误提示信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lastOpResult 操作错误提示信息
+                     * @param _lastOpResult <p>操作错误提示信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -449,18 +449,18 @@ namespace TencentCloud
                     bool LastOpResultHasBeenSet() const;
 
                     /**
-                     * 获取集群名字
+                     * 获取<p>集群名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterName 集群名字
+                     * @return ClusterName <p>集群名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
-                     * 设置集群名字
+                     * 设置<p>集群名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clusterName 集群名字
+                     * @param _clusterName <p>集群名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -474,18 +474,18 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取最新配置版本号，包括已经删除的版本
+                     * 获取<p>最新配置版本号，包括已经删除的版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LatestJobConfigVersion 最新配置版本号，包括已经删除的版本
+                     * @return LatestJobConfigVersion <p>最新配置版本号，包括已经删除的版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLatestJobConfigVersion() const;
 
                     /**
-                     * 设置最新配置版本号，包括已经删除的版本
+                     * 设置<p>最新配置版本号，包括已经删除的版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _latestJobConfigVersion 最新配置版本号，包括已经删除的版本
+                     * @param _latestJobConfigVersion <p>最新配置版本号，包括已经删除的版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -499,15 +499,15 @@ namespace TencentCloud
                     bool LatestJobConfigVersionHasBeenSet() const;
 
                     /**
-                     * 获取最新的版本号，不包括已经删除的版本号
-                     * @return LatestValidJobConfigVersion 最新的版本号，不包括已经删除的版本号
+                     * 获取<p>最新的版本号，不包括已经删除的版本号</p>
+                     * @return LatestValidJobConfigVersion <p>最新的版本号，不包括已经删除的版本号</p>
                      * 
                      */
                     int64_t GetLatestValidJobConfigVersion() const;
 
                     /**
-                     * 设置最新的版本号，不包括已经删除的版本号
-                     * @param _latestValidJobConfigVersion 最新的版本号，不包括已经删除的版本号
+                     * 设置<p>最新的版本号，不包括已经删除的版本号</p>
+                     * @param _latestValidJobConfigVersion <p>最新的版本号，不包括已经删除的版本号</p>
                      * 
                      */
                     void SetLatestValidJobConfigVersion(const int64_t& _latestValidJobConfigVersion);
@@ -520,18 +520,18 @@ namespace TencentCloud
                     bool LatestValidJobConfigVersionHasBeenSet() const;
 
                     /**
-                     * 获取已发布的配置版本
+                     * 获取<p>已发布的配置版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PublishedJobConfigVersion 已发布的配置版本
+                     * @return PublishedJobConfigVersion <p>已发布的配置版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPublishedJobConfigVersion() const;
 
                     /**
-                     * 设置已发布的配置版本
+                     * 设置<p>已发布的配置版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _publishedJobConfigVersion 已发布的配置版本
+                     * @param _publishedJobConfigVersion <p>已发布的配置版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -545,18 +545,18 @@ namespace TencentCloud
                     bool PublishedJobConfigVersionHasBeenSet() const;
 
                     /**
-                     * 获取运行的CU数量
+                     * 获取<p>运行的CU数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RunningCuNum 运行的CU数量
+                     * @return RunningCuNum <p>运行的CU数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRunningCuNum() const;
 
                     /**
-                     * 设置运行的CU数量
+                     * 设置<p>运行的CU数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _runningCuNum 运行的CU数量
+                     * @param _runningCuNum <p>运行的CU数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -570,18 +570,18 @@ namespace TencentCloud
                     bool RunningCuNumHasBeenSet() const;
 
                     /**
-                     * 获取作业内存规格
+                     * 获取<p>作业内存规格</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CuMem 作业内存规格
+                     * @return CuMem <p>作业内存规格</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCuMem() const;
 
                     /**
-                     * 设置作业内存规格
+                     * 设置<p>作业内存规格</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cuMem 作业内存规格
+                     * @param _cuMem <p>作业内存规格</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -595,18 +595,18 @@ namespace TencentCloud
                     bool CuMemHasBeenSet() const;
 
                     /**
-                     * 获取作业状态描述
+                     * 获取<p>作业状态描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StatusDesc 作业状态描述
+                     * @return StatusDesc <p>作业状态描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatusDesc() const;
 
                     /**
-                     * 设置作业状态描述
+                     * 设置<p>作业状态描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _statusDesc 作业状态描述
+                     * @param _statusDesc <p>作业状态描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -620,18 +620,18 @@ namespace TencentCloud
                     bool StatusDescHasBeenSet() const;
 
                     /**
-                     * 获取运行状态时表示单次运行时间
+                     * 获取<p>运行状态时表示单次运行时间</p><p>单位：毫秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CurrentRunMillis 运行状态时表示单次运行时间
+                     * @return CurrentRunMillis <p>运行状态时表示单次运行时间</p><p>单位：毫秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCurrentRunMillis() const;
 
                     /**
-                     * 设置运行状态时表示单次运行时间
+                     * 设置<p>运行状态时表示单次运行时间</p><p>单位：毫秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _currentRunMillis 运行状态时表示单次运行时间
+                     * @param _currentRunMillis <p>运行状态时表示单次运行时间</p><p>单位：毫秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -645,18 +645,18 @@ namespace TencentCloud
                     bool CurrentRunMillisHasBeenSet() const;
 
                     /**
-                     * 获取作业所在的集群ID
+                     * 获取<p>作业所在的集群ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterId 作业所在的集群ID
+                     * @return ClusterId <p>作业所在的集群ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置作业所在的集群ID
+                     * 设置<p>作业所在的集群ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clusterId 作业所在的集群ID
+                     * @param _clusterId <p>作业所在的集群ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -670,18 +670,18 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取作业管理WEB UI 入口
+                     * 获取<p>作业管理WEB UI 入口</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WebUIUrl 作业管理WEB UI 入口
+                     * @return WebUIUrl <p>作业管理WEB UI 入口</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWebUIUrl() const;
 
                     /**
-                     * 设置作业管理WEB UI 入口
+                     * 设置<p>作业管理WEB UI 入口</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _webUIUrl 作业管理WEB UI 入口
+                     * @param _webUIUrl <p>作业管理WEB UI 入口</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -695,18 +695,18 @@ namespace TencentCloud
                     bool WebUIUrlHasBeenSet() const;
 
                     /**
-                     * 获取作业所在集群类型
+                     * 获取<p>作业所在集群类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SchedulerType 作业所在集群类型
+                     * @return SchedulerType <p>作业所在集群类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSchedulerType() const;
 
                     /**
-                     * 设置作业所在集群类型
+                     * 设置<p>作业所在集群类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _schedulerType 作业所在集群类型
+                     * @param _schedulerType <p>作业所在集群类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -720,18 +720,18 @@ namespace TencentCloud
                     bool SchedulerTypeHasBeenSet() const;
 
                     /**
-                     * 获取作业所在集群状态
+                     * 获取<p>作业所在集群状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterStatus 作业所在集群状态
+                     * @return ClusterStatus <p>作业所在集群状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetClusterStatus() const;
 
                     /**
-                     * 设置作业所在集群状态
+                     * 设置<p>作业所在集群状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clusterStatus 作业所在集群状态
+                     * @param _clusterStatus <p>作业所在集群状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -745,18 +745,18 @@ namespace TencentCloud
                     bool ClusterStatusHasBeenSet() const;
 
                     /**
-                     * 获取细粒度下的运行的CU数量
+                     * 获取<p>细粒度下的运行的CU数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RunningCu 细粒度下的运行的CU数量
+                     * @return RunningCu <p>细粒度下的运行的CU数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetRunningCu() const;
 
                     /**
-                     * 设置细粒度下的运行的CU数量
+                     * 设置<p>细粒度下的运行的CU数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _runningCu 细粒度下的运行的CU数量
+                     * @param _runningCu <p>细粒度下的运行的CU数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -770,18 +770,18 @@ namespace TencentCloud
                     bool RunningCuHasBeenSet() const;
 
                     /**
-                     * 获取作业运行的 Flink 版本
+                     * 获取<p>作业运行的 Flink 版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FlinkVersion 作业运行的 Flink 版本
+                     * @return FlinkVersion <p>作业运行的 Flink 版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlinkVersion() const;
 
                     /**
-                     * 设置作业运行的 Flink 版本
+                     * 设置<p>作业运行的 Flink 版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _flinkVersion 作业运行的 Flink 版本
+                     * @param _flinkVersion <p>作业运行的 Flink 版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -795,18 +795,18 @@ namespace TencentCloud
                     bool FlinkVersionHasBeenSet() const;
 
                     /**
-                     * 获取工作空间 SerialId
+                     * 获取<p>工作空间 SerialId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkSpaceId 工作空间 SerialId
+                     * @return WorkSpaceId <p>工作空间 SerialId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
-                     * 设置工作空间 SerialId
+                     * 设置<p>工作空间 SerialId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _workSpaceId 工作空间 SerialId
+                     * @param _workSpaceId <p>工作空间 SerialId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -820,18 +820,18 @@ namespace TencentCloud
                     bool WorkSpaceIdHasBeenSet() const;
 
                     /**
-                     * 获取工作空间名称
+                     * 获取<p>工作空间名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkSpaceName 工作空间名称
+                     * @return WorkSpaceName <p>工作空间名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkSpaceName() const;
 
                     /**
-                     * 设置工作空间名称
+                     * 设置<p>工作空间名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _workSpaceName 工作空间名称
+                     * @param _workSpaceName <p>工作空间名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -845,18 +845,18 @@ namespace TencentCloud
                     bool WorkSpaceNameHasBeenSet() const;
 
                     /**
-                     * 获取作业标签
+                     * 获取<p>作业标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags 作业标签
+                     * @return Tags <p>作业标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置作业标签
+                     * 设置<p>作业标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tags 作业标签
+                     * @param _tags <p>作业标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -870,18 +870,18 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取作业异常事件信息	
+                     * 获取<p>作业异常事件信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EventInfo 作业异常事件信息	
+                     * @return EventInfo <p>作业异常事件信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     JobEventInfo GetEventInfo() const;
 
                     /**
-                     * 设置作业异常事件信息	
+                     * 设置<p>作业异常事件信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _eventInfo 作业异常事件信息	
+                     * @param _eventInfo <p>作业异常事件信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -895,18 +895,18 @@ namespace TencentCloud
                     bool EventInfoHasBeenSet() const;
 
                     /**
-                     * 获取描述信息
+                     * 获取<p>描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 描述信息
+                     * @return Description <p>描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述信息
+                     * 设置<p>描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 描述信息
+                     * @param _description <p>描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -920,22 +920,18 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取0:代表没开启调优任务，1:开启智能调优，2:代表定时调优
-
+                     * 获取<p>0:代表没开启调优任务，1:开启智能调优，2:代表定时调优</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScalingType 0:代表没开启调优任务，1:开启智能调优，2:代表定时调优
-
+                     * @return ScalingType <p>0:代表没开启调优任务，1:开启智能调优，2:代表定时调优</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScalingType() const;
 
                     /**
-                     * 设置0:代表没开启调优任务，1:开启智能调优，2:代表定时调优
-
+                     * 设置<p>0:代表没开启调优任务，1:开启智能调优，2:代表定时调优</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scalingType 0:代表没开启调优任务，1:开启智能调优，2:代表定时调优
-
+                     * @param _scalingType <p>0:代表没开启调优任务，1:开启智能调优，2:代表定时调优</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -949,18 +945,18 @@ namespace TencentCloud
                     bool ScalingTypeHasBeenSet() const;
 
                     /**
-                     * 获取使用CPU数目
+                     * 获取<p>使用CPU数目</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RunningCpu 使用CPU数目
+                     * @return RunningCpu <p>使用CPU数目</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetRunningCpu() const;
 
                     /**
-                     * 设置使用CPU数目
+                     * 设置<p>使用CPU数目</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _runningCpu 使用CPU数目
+                     * @param _runningCpu <p>使用CPU数目</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -974,18 +970,18 @@ namespace TencentCloud
                     bool RunningCpuHasBeenSet() const;
 
                     /**
-                     * 获取使用内存数量
+                     * 获取<p>使用内存数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RunningMem 使用内存数量
+                     * @return RunningMem <p>使用内存数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetRunningMem() const;
 
                     /**
-                     * 设置使用内存数量
+                     * 设置<p>使用内存数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _runningMem 使用内存数量
+                     * @param _runningMem <p>使用内存数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -999,18 +995,18 @@ namespace TencentCloud
                     bool RunningMemHasBeenSet() const;
 
                     /**
-                     * 获取是否开了默认告警
+                     * 获取<p>是否开了默认告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OpenJobDefaultAlarm 是否开了默认告警
+                     * @return OpenJobDefaultAlarm <p>是否开了默认告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOpenJobDefaultAlarm() const;
 
                     /**
-                     * 设置是否开了默认告警
+                     * 设置<p>是否开了默认告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _openJobDefaultAlarm 是否开了默认告警
+                     * @param _openJobDefaultAlarm <p>是否开了默认告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1024,18 +1020,18 @@ namespace TencentCloud
                     bool OpenJobDefaultAlarmHasBeenSet() const;
 
                     /**
-                     * 获取操作中描述
+                     * 获取<p>操作中描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProgressDesc 操作中描述
+                     * @return ProgressDesc <p>操作中描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProgressDesc() const;
 
                     /**
-                     * 设置操作中描述
+                     * 设置<p>操作中描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _progressDesc 操作中描述
+                     * @param _progressDesc <p>操作中描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1049,15 +1045,15 @@ namespace TencentCloud
                     bool ProgressDescHasBeenSet() const;
 
                     /**
-                     * 获取停止持续告警
-                     * @return ContinueAlarm 停止持续告警
+                     * 获取<p>停止持续告警</p>
+                     * @return ContinueAlarm <p>停止持续告警</p>
                      * 
                      */
                     int64_t GetContinueAlarm() const;
 
                     /**
-                     * 设置停止持续告警
-                     * @param _continueAlarm 停止持续告警
+                     * 设置<p>停止持续告警</p>
+                     * @param _continueAlarm <p>停止持续告警</p>
                      * 
                      */
                     void SetContinueAlarm(const int64_t& _continueAlarm);
@@ -1070,15 +1066,15 @@ namespace TencentCloud
                     bool ContinueAlarmHasBeenSet() const;
 
                     /**
-                     * 获取作业重启次数
-                     * @return RestartCount 作业重启次数
+                     * 获取<p>作业重启次数</p>
+                     * @return RestartCount <p>作业重启次数</p>
                      * 
                      */
                     int64_t GetRestartCount() const;
 
                     /**
-                     * 设置作业重启次数
-                     * @param _restartCount 作业重启次数
+                     * 设置<p>作业重启次数</p>
+                     * @param _restartCount <p>作业重启次数</p>
                      * 
                      */
                     void SetRestartCount(const int64_t& _restartCount);
@@ -1091,15 +1087,15 @@ namespace TencentCloud
                     bool RestartCountHasBeenSet() const;
 
                     /**
-                     * 获取期望是开启默认告警
-                     * @return ExpectJobDefaultAlarmStatus 期望是开启默认告警
+                     * 获取<p>期望是开启默认告警</p>
+                     * @return ExpectJobDefaultAlarmStatus <p>期望是开启默认告警</p>
                      * 
                      */
                     int64_t GetExpectJobDefaultAlarmStatus() const;
 
                     /**
-                     * 设置期望是开启默认告警
-                     * @param _expectJobDefaultAlarmStatus 期望是开启默认告警
+                     * 设置<p>期望是开启默认告警</p>
+                     * @param _expectJobDefaultAlarmStatus <p>期望是开启默认告警</p>
                      * 
                      */
                     void SetExpectJobDefaultAlarmStatus(const int64_t& _expectJobDefaultAlarmStatus);
@@ -1112,15 +1108,15 @@ namespace TencentCloud
                     bool ExpectJobDefaultAlarmStatusHasBeenSet() const;
 
                     /**
-                     * 获取jdk版本
-                     * @return JdkVersion jdk版本
+                     * 获取<p>jdk版本</p>
+                     * @return JdkVersion <p>jdk版本</p>
                      * 
                      */
                     std::string GetJdkVersion() const;
 
                     /**
-                     * 设置jdk版本
-                     * @param _jdkVersion jdk版本
+                     * 设置<p>jdk版本</p>
+                     * @param _jdkVersion <p>jdk版本</p>
                      * 
                      */
                     void SetJdkVersion(const std::string& _jdkVersion);
@@ -1132,311 +1128,438 @@ namespace TencentCloud
                      */
                     bool JdkVersionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>状态桶名字</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StateCOSBucket <p>状态桶名字</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStateCOSBucket() const;
+
+                    /**
+                     * 设置<p>状态桶名字</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _stateCOSBucket <p>状态桶名字</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStateCOSBucket(const std::string& _stateCOSBucket);
+
+                    /**
+                     * 判断参数 StateCOSBucket 是否已赋值
+                     * @return StateCOSBucket 是否已赋值
+                     * 
+                     */
+                    bool StateCOSBucketHasBeenSet() const;
+
+                    /**
+                     * 获取<p>新的状态桶名字</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NewStateCOSBucket <p>新的状态桶名字</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNewStateCOSBucket() const;
+
+                    /**
+                     * 设置<p>新的状态桶名字</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _newStateCOSBucket <p>新的状态桶名字</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNewStateCOSBucket(const std::string& _newStateCOSBucket);
+
+                    /**
+                     * 判断参数 NewStateCOSBucket 是否已赋值
+                     * @return NewStateCOSBucket 是否已赋值
+                     * 
+                     */
+                    bool NewStateCOSBucketHasBeenSet() const;
+
+                    /**
+                     * 获取<p>同类型</p><p>枚举值：</p><ul><li>0： 普通桶</li><li>1： 加速桶</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StateCOSBucketType <p>同类型</p><p>枚举值：</p><ul><li>0： 普通桶</li><li>1： 加速桶</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetStateCOSBucketType() const;
+
+                    /**
+                     * 设置<p>同类型</p><p>枚举值：</p><ul><li>0： 普通桶</li><li>1： 加速桶</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _stateCOSBucketType <p>同类型</p><p>枚举值：</p><ul><li>0： 普通桶</li><li>1： 加速桶</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStateCOSBucketType(const int64_t& _stateCOSBucketType);
+
+                    /**
+                     * 判断参数 StateCOSBucketType 是否已赋值
+                     * @return StateCOSBucketType 是否已赋值
+                     * 
+                     */
+                    bool StateCOSBucketTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>新的桶类型</p><p>枚举值：</p><ul><li>0： 普通桶</li><li>1： 加速桶</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NewStateCOSBucketType <p>新的桶类型</p><p>枚举值：</p><ul><li>0： 普通桶</li><li>1： 加速桶</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetNewStateCOSBucketType() const;
+
+                    /**
+                     * 设置<p>新的桶类型</p><p>枚举值：</p><ul><li>0： 普通桶</li><li>1： 加速桶</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _newStateCOSBucketType <p>新的桶类型</p><p>枚举值：</p><ul><li>0： 普通桶</li><li>1： 加速桶</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNewStateCOSBucketType(const int64_t& _newStateCOSBucketType);
+
+                    /**
+                     * 判断参数 NewStateCOSBucketType 是否已赋值
+                     * @return NewStateCOSBucketType 是否已赋值
+                     * 
+                     */
+                    bool NewStateCOSBucketTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 作业ID
+                     * <p>作业ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 地域
+                     * <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 可用区
+                     * <p>可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 用户AppId
+                     * <p>用户AppId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 用户UIN
+                     * <p>用户UIN</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ownerUin;
                     bool m_ownerUinHasBeenSet;
 
                     /**
-                     * 创建者UIN
+                     * <p>创建者UIN</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creatorUin;
                     bool m_creatorUinHasBeenSet;
 
                     /**
-                     * 作业名字
+                     * <p>作业名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 作业类型，1：sql作业，2：Jar作业
+                     * <p>作业类型，1：sql作业，2：Jar作业</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_jobType;
                     bool m_jobTypeHasBeenSet;
 
                     /**
-                     * 作业状态，1：未初始化，2：未发布，3：操作中，4：运行中，5：停止，6：暂停，-1：故障
+                     * <p>作业状态，1：未初始化，2：未发布，3：操作中，4：运行中，5：停止，6：暂停，-1：故障</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 作业创建时间
+                     * <p>作业创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 作业启动时间
+                     * <p>作业启动时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 作业停止时间
+                     * <p>作业停止时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stopTime;
                     bool m_stopTimeHasBeenSet;
 
                     /**
-                     * 作业更新时间
+                     * <p>作业更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 作业累计运行时间
+                     * <p>作业累计运行时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalRunMillis;
                     bool m_totalRunMillisHasBeenSet;
 
                     /**
-                     * 备注信息
+                     * <p>备注信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 操作错误提示信息
+                     * <p>操作错误提示信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastOpResult;
                     bool m_lastOpResultHasBeenSet;
 
                     /**
-                     * 集群名字
+                     * <p>集群名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 最新配置版本号，包括已经删除的版本
+                     * <p>最新配置版本号，包括已经删除的版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_latestJobConfigVersion;
                     bool m_latestJobConfigVersionHasBeenSet;
 
                     /**
-                     * 最新的版本号，不包括已经删除的版本号
+                     * <p>最新的版本号，不包括已经删除的版本号</p>
                      */
                     int64_t m_latestValidJobConfigVersion;
                     bool m_latestValidJobConfigVersionHasBeenSet;
 
                     /**
-                     * 已发布的配置版本
+                     * <p>已发布的配置版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_publishedJobConfigVersion;
                     bool m_publishedJobConfigVersionHasBeenSet;
 
                     /**
-                     * 运行的CU数量
+                     * <p>运行的CU数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_runningCuNum;
                     bool m_runningCuNumHasBeenSet;
 
                     /**
-                     * 作业内存规格
+                     * <p>作业内存规格</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cuMem;
                     bool m_cuMemHasBeenSet;
 
                     /**
-                     * 作业状态描述
+                     * <p>作业状态描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_statusDesc;
                     bool m_statusDescHasBeenSet;
 
                     /**
-                     * 运行状态时表示单次运行时间
+                     * <p>运行状态时表示单次运行时间</p><p>单位：毫秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_currentRunMillis;
                     bool m_currentRunMillisHasBeenSet;
 
                     /**
-                     * 作业所在的集群ID
+                     * <p>作业所在的集群ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 作业管理WEB UI 入口
+                     * <p>作业管理WEB UI 入口</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_webUIUrl;
                     bool m_webUIUrlHasBeenSet;
 
                     /**
-                     * 作业所在集群类型
+                     * <p>作业所在集群类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_schedulerType;
                     bool m_schedulerTypeHasBeenSet;
 
                     /**
-                     * 作业所在集群状态
+                     * <p>作业所在集群状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_clusterStatus;
                     bool m_clusterStatusHasBeenSet;
 
                     /**
-                     * 细粒度下的运行的CU数量
+                     * <p>细粒度下的运行的CU数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_runningCu;
                     bool m_runningCuHasBeenSet;
 
                     /**
-                     * 作业运行的 Flink 版本
+                     * <p>作业运行的 Flink 版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flinkVersion;
                     bool m_flinkVersionHasBeenSet;
 
                     /**
-                     * 工作空间 SerialId
+                     * <p>工作空间 SerialId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workSpaceId;
                     bool m_workSpaceIdHasBeenSet;
 
                     /**
-                     * 工作空间名称
+                     * <p>工作空间名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workSpaceName;
                     bool m_workSpaceNameHasBeenSet;
 
                     /**
-                     * 作业标签
+                     * <p>作业标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 作业异常事件信息	
+                     * <p>作业异常事件信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     JobEventInfo m_eventInfo;
                     bool m_eventInfoHasBeenSet;
 
                     /**
-                     * 描述信息
+                     * <p>描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 0:代表没开启调优任务，1:开启智能调优，2:代表定时调优
-
+                     * <p>0:代表没开启调优任务，1:开启智能调优，2:代表定时调优</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scalingType;
                     bool m_scalingTypeHasBeenSet;
 
                     /**
-                     * 使用CPU数目
+                     * <p>使用CPU数目</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_runningCpu;
                     bool m_runningCpuHasBeenSet;
 
                     /**
-                     * 使用内存数量
+                     * <p>使用内存数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_runningMem;
                     bool m_runningMemHasBeenSet;
 
                     /**
-                     * 是否开了默认告警
+                     * <p>是否开了默认告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_openJobDefaultAlarm;
                     bool m_openJobDefaultAlarmHasBeenSet;
 
                     /**
-                     * 操作中描述
+                     * <p>操作中描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_progressDesc;
                     bool m_progressDescHasBeenSet;
 
                     /**
-                     * 停止持续告警
+                     * <p>停止持续告警</p>
                      */
                     int64_t m_continueAlarm;
                     bool m_continueAlarmHasBeenSet;
 
                     /**
-                     * 作业重启次数
+                     * <p>作业重启次数</p>
                      */
                     int64_t m_restartCount;
                     bool m_restartCountHasBeenSet;
 
                     /**
-                     * 期望是开启默认告警
+                     * <p>期望是开启默认告警</p>
                      */
                     int64_t m_expectJobDefaultAlarmStatus;
                     bool m_expectJobDefaultAlarmStatusHasBeenSet;
 
                     /**
-                     * jdk版本
+                     * <p>jdk版本</p>
                      */
                     std::string m_jdkVersion;
                     bool m_jdkVersionHasBeenSet;
+
+                    /**
+                     * <p>状态桶名字</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_stateCOSBucket;
+                    bool m_stateCOSBucketHasBeenSet;
+
+                    /**
+                     * <p>新的状态桶名字</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_newStateCOSBucket;
+                    bool m_newStateCOSBucketHasBeenSet;
+
+                    /**
+                     * <p>同类型</p><p>枚举值：</p><ul><li>0： 普通桶</li><li>1： 加速桶</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_stateCOSBucketType;
+                    bool m_stateCOSBucketTypeHasBeenSet;
+
+                    /**
+                     * <p>新的桶类型</p><p>枚举值：</p><ul><li>0： 普通桶</li><li>1： 加速桶</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_newStateCOSBucketType;
+                    bool m_newStateCOSBucketTypeHasBeenSet;
 
                 };
             }

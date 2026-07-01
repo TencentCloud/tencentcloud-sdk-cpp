@@ -59,7 +59,10 @@ DescribeInstanceResponse::DescribeInstanceResponse() :
     m_messageRateHasBeenSet(false),
     m_transportLayerSecurityHasBeenSet(false),
     m_messageEnrichmentRuleLimitHasBeenSet(false),
-    m_blockRuleLimitHasBeenSet(false)
+    m_blockRuleLimitHasBeenSet(false),
+    m_deleteProtectHasBeenSet(false),
+    m_eventDialectHasBeenSet(false),
+    m_hashMessagePolicyHasBeenSet(false)
 {
 }
 
@@ -457,6 +460,36 @@ CoreInternalOutcome DescribeInstanceResponse::Deserialize(const string &payload)
         m_blockRuleLimitHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DeleteProtect") && !rsp["DeleteProtect"].IsNull())
+    {
+        if (!rsp["DeleteProtect"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeleteProtect` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_deleteProtect = rsp["DeleteProtect"].GetBool();
+        m_deleteProtectHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EventDialect") && !rsp["EventDialect"].IsNull())
+    {
+        if (!rsp["EventDialect"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventDialect` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eventDialect = string(rsp["EventDialect"].GetString());
+        m_eventDialectHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("HashMessagePolicy") && !rsp["HashMessagePolicy"].IsNull())
+    {
+        if (!rsp["HashMessagePolicy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HashMessagePolicy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hashMessagePolicy = string(rsp["HashMessagePolicy"].GetString());
+        m_hashMessagePolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -753,6 +786,30 @@ string DescribeInstanceResponse::ToJsonString() const
         string key = "BlockRuleLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_blockRuleLimit, allocator);
+    }
+
+    if (m_deleteProtectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteProtect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deleteProtect, allocator);
+    }
+
+    if (m_eventDialectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventDialect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventDialect.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hashMessagePolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HashMessagePolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hashMessagePolicy.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1125,6 +1182,36 @@ int64_t DescribeInstanceResponse::GetBlockRuleLimit() const
 bool DescribeInstanceResponse::BlockRuleLimitHasBeenSet() const
 {
     return m_blockRuleLimitHasBeenSet;
+}
+
+bool DescribeInstanceResponse::GetDeleteProtect() const
+{
+    return m_deleteProtect;
+}
+
+bool DescribeInstanceResponse::DeleteProtectHasBeenSet() const
+{
+    return m_deleteProtectHasBeenSet;
+}
+
+string DescribeInstanceResponse::GetEventDialect() const
+{
+    return m_eventDialect;
+}
+
+bool DescribeInstanceResponse::EventDialectHasBeenSet() const
+{
+    return m_eventDialectHasBeenSet;
+}
+
+string DescribeInstanceResponse::GetHashMessagePolicy() const
+{
+    return m_hashMessagePolicy;
+}
+
+bool DescribeInstanceResponse::HashMessagePolicyHasBeenSet() const
+{
+    return m_hashMessagePolicyHasBeenSet;
 }
 
 

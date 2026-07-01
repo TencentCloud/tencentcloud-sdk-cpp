@@ -496,6 +496,27 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取<p>集群隔离时间，0为7天，1为15天</p>
+                     * @return IsolationPolicyVersion <p>集群隔离时间，0为7天，1为15天</p>
+                     * 
+                     */
+                    int64_t GetIsolationPolicyVersion() const;
+
+                    /**
+                     * 设置<p>集群隔离时间，0为7天，1为15天</p>
+                     * @param _isolationPolicyVersion <p>集群隔离时间，0为7天，1为15天</p>
+                     * 
+                     */
+                    void SetIsolationPolicyVersion(const int64_t& _isolationPolicyVersion);
+
+                    /**
+                     * 判断参数 IsolationPolicyVersion 是否已赋值
+                     * @return IsolationPolicyVersion 是否已赋值
+                     * 
+                     */
+                    bool IsolationPolicyVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -623,6 +644,12 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * <p>集群隔离时间，0为7天，1为15天</p>
+                     */
+                    int64_t m_isolationPolicyVersion;
+                    bool m_isolationPolicyVersionHasBeenSet;
 
                 };
             }

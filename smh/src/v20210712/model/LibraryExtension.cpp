@@ -39,7 +39,9 @@ LibraryExtension::LibraryExtension() :
     m_allowVideoHasBeenSet(false),
     m_allowVideoExtNameHasBeenSet(false),
     m_allowFileExtNameHasBeenSet(false),
-    m_recognizeSensitiveContentHasBeenSet(false)
+    m_recognizeSensitiveContentHasBeenSet(false),
+    m_enableQuotaHasBeenSet(false),
+    m_libraryQuotaHasBeenSet(false)
 {
 }
 
@@ -247,6 +249,26 @@ CoreInternalOutcome LibraryExtension::Deserialize(const rapidjson::Value &value)
         m_recognizeSensitiveContentHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableQuota") && !value["EnableQuota"].IsNull())
+    {
+        if (!value["EnableQuota"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `LibraryExtension.EnableQuota` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableQuota = value["EnableQuota"].GetBool();
+        m_enableQuotaHasBeenSet = true;
+    }
+
+    if (value.HasMember("LibraryQuota") && !value["LibraryQuota"].IsNull())
+    {
+        if (!value["LibraryQuota"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LibraryExtension.LibraryQuota` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_libraryQuota = value["LibraryQuota"].GetUint64();
+        m_libraryQuotaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -419,6 +441,22 @@ void LibraryExtension::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "RecognizeSensitiveContent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_recognizeSensitiveContent, allocator);
+    }
+
+    if (m_enableQuotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableQuota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableQuota, allocator);
+    }
+
+    if (m_libraryQuotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LibraryQuota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_libraryQuota, allocator);
     }
 
 }
@@ -726,5 +764,37 @@ void LibraryExtension::SetRecognizeSensitiveContent(const bool& _recognizeSensit
 bool LibraryExtension::RecognizeSensitiveContentHasBeenSet() const
 {
     return m_recognizeSensitiveContentHasBeenSet;
+}
+
+bool LibraryExtension::GetEnableQuota() const
+{
+    return m_enableQuota;
+}
+
+void LibraryExtension::SetEnableQuota(const bool& _enableQuota)
+{
+    m_enableQuota = _enableQuota;
+    m_enableQuotaHasBeenSet = true;
+}
+
+bool LibraryExtension::EnableQuotaHasBeenSet() const
+{
+    return m_enableQuotaHasBeenSet;
+}
+
+uint64_t LibraryExtension::GetLibraryQuota() const
+{
+    return m_libraryQuota;
+}
+
+void LibraryExtension::SetLibraryQuota(const uint64_t& _libraryQuota)
+{
+    m_libraryQuota = _libraryQuota;
+    m_libraryQuotaHasBeenSet = true;
+}
+
+bool LibraryExtension::LibraryQuotaHasBeenSet() const
+{
+    return m_libraryQuotaHasBeenSet;
 }
 

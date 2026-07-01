@@ -805,15 +805,15 @@ namespace TencentCloud
                     bool ProgramArgsAfterGzipHasBeenSet() const;
 
                     /**
-                     * 获取<p>checkpoint 超时时间</p>
-                     * @return CheckpointTimeoutSecond <p>checkpoint 超时时间</p>
+                     * 获取<p>checkpoint 超时时间</p><p>单位：秒</p>
+                     * @return CheckpointTimeoutSecond <p>checkpoint 超时时间</p><p>单位：秒</p>
                      * 
                      */
                     int64_t GetCheckpointTimeoutSecond() const;
 
                     /**
-                     * 设置<p>checkpoint 超时时间</p>
-                     * @param _checkpointTimeoutSecond <p>checkpoint 超时时间</p>
+                     * 设置<p>checkpoint 超时时间</p><p>单位：秒</p>
+                     * @param _checkpointTimeoutSecond <p>checkpoint 超时时间</p><p>单位：秒</p>
                      * 
                      */
                     void SetCheckpointTimeoutSecond(const int64_t& _checkpointTimeoutSecond);
@@ -826,15 +826,15 @@ namespace TencentCloud
                     bool CheckpointTimeoutSecondHasBeenSet() const;
 
                     /**
-                     * 获取<p>checkpoint 间隔时间</p>
-                     * @return CheckpointIntervalSecond <p>checkpoint 间隔时间</p>
+                     * 获取<p>checkpoint 间隔时间</p><p>单位：秒</p>
+                     * @return CheckpointIntervalSecond <p>checkpoint 间隔时间</p><p>单位：秒</p>
                      * 
                      */
                     int64_t GetCheckpointIntervalSecond() const;
 
                     /**
-                     * 设置<p>checkpoint 间隔时间</p>
-                     * @param _checkpointIntervalSecond <p>checkpoint 间隔时间</p>
+                     * 设置<p>checkpoint 间隔时间</p><p>单位：秒</p>
+                     * @param _checkpointIntervalSecond <p>checkpoint 间隔时间</p><p>单位：秒</p>
                      * 
                      */
                     void SetCheckpointIntervalSecond(const int64_t& _checkpointIntervalSecond);
@@ -866,6 +866,69 @@ namespace TencentCloud
                      * 
                      */
                     bool VariableReplaceModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>user</p>
+                     * @return OperatorName <p>user</p>
+                     * 
+                     */
+                    std::string GetOperatorName() const;
+
+                    /**
+                     * 设置<p>user</p>
+                     * @param _operatorName <p>user</p>
+                     * 
+                     */
+                    void SetOperatorName(const std::string& _operatorName);
+
+                    /**
+                     * 判断参数 OperatorName 是否已赋值
+                     * @return OperatorName 是否已赋值
+                     * 
+                     */
+                    bool OperatorNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>配置更新范围 0=全量(默认) 1=仅开发 2=仅运维</p>
+                     * @return ConfigScope <p>配置更新范围 0=全量(默认) 1=仅开发 2=仅运维</p>
+                     * 
+                     */
+                    int64_t GetConfigScope() const;
+
+                    /**
+                     * 设置<p>配置更新范围 0=全量(默认) 1=仅开发 2=仅运维</p>
+                     * @param _configScope <p>配置更新范围 0=全量(默认) 1=仅开发 2=仅运维</p>
+                     * 
+                     */
+                    void SetConfigScope(const int64_t& _configScope);
+
+                    /**
+                     * 判断参数 ConfigScope 是否已赋值
+                     * @return ConfigScope 是否已赋值
+                     * 
+                     */
+                    bool ConfigScopeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>状态桶名字</p>
+                     * @return StateCOSBucket <p>状态桶名字</p>
+                     * 
+                     */
+                    std::string GetStateCOSBucket() const;
+
+                    /**
+                     * 设置<p>状态桶名字</p>
+                     * @param _stateCOSBucket <p>状态桶名字</p>
+                     * 
+                     */
+                    void SetStateCOSBucket(const std::string& _stateCOSBucket);
+
+                    /**
+                     * 判断参数 StateCOSBucket 是否已赋值
+                     * @return StateCOSBucket 是否已赋值
+                     * 
+                     */
+                    bool StateCOSBucketHasBeenSet() const;
 
                 private:
 
@@ -1086,13 +1149,13 @@ namespace TencentCloud
                     bool m_programArgsAfterGzipHasBeenSet;
 
                     /**
-                     * <p>checkpoint 超时时间</p>
+                     * <p>checkpoint 超时时间</p><p>单位：秒</p>
                      */
                     int64_t m_checkpointTimeoutSecond;
                     bool m_checkpointTimeoutSecondHasBeenSet;
 
                     /**
-                     * <p>checkpoint 间隔时间</p>
+                     * <p>checkpoint 间隔时间</p><p>单位：秒</p>
                      */
                     int64_t m_checkpointIntervalSecond;
                     bool m_checkpointIntervalSecondHasBeenSet;
@@ -1102,6 +1165,24 @@ namespace TencentCloud
                      */
                     int64_t m_variableReplaceMode;
                     bool m_variableReplaceModeHasBeenSet;
+
+                    /**
+                     * <p>user</p>
+                     */
+                    std::string m_operatorName;
+                    bool m_operatorNameHasBeenSet;
+
+                    /**
+                     * <p>配置更新范围 0=全量(默认) 1=仅开发 2=仅运维</p>
+                     */
+                    int64_t m_configScope;
+                    bool m_configScopeHasBeenSet;
+
+                    /**
+                     * <p>状态桶名字</p>
+                     */
+                    std::string m_stateCOSBucket;
+                    bool m_stateCOSBucketHasBeenSet;
 
                 };
             }

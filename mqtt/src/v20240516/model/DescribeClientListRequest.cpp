@@ -25,7 +25,9 @@ using namespace std;
 DescribeClientListRequest::DescribeClientListRequest() :
     m_instanceIdHasBeenSet(false),
     m_clientIdHasBeenSet(false),
-    m_numberHasBeenSet(false)
+    m_numberHasBeenSet(false),
+    m_onlineStatusHasBeenSet(false),
+    m_maxTimestampHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string DescribeClientListRequest::ToJsonString() const
         string key = "Number";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_number.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_onlineStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OnlineStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_onlineStatus, allocator);
+    }
+
+    if (m_maxTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxTimestamp, allocator);
     }
 
 
@@ -114,6 +132,38 @@ void DescribeClientListRequest::SetNumber(const string& _number)
 bool DescribeClientListRequest::NumberHasBeenSet() const
 {
     return m_numberHasBeenSet;
+}
+
+int64_t DescribeClientListRequest::GetOnlineStatus() const
+{
+    return m_onlineStatus;
+}
+
+void DescribeClientListRequest::SetOnlineStatus(const int64_t& _onlineStatus)
+{
+    m_onlineStatus = _onlineStatus;
+    m_onlineStatusHasBeenSet = true;
+}
+
+bool DescribeClientListRequest::OnlineStatusHasBeenSet() const
+{
+    return m_onlineStatusHasBeenSet;
+}
+
+int64_t DescribeClientListRequest::GetMaxTimestamp() const
+{
+    return m_maxTimestamp;
+}
+
+void DescribeClientListRequest::SetMaxTimestamp(const int64_t& _maxTimestamp)
+{
+    m_maxTimestamp = _maxTimestamp;
+    m_maxTimestampHasBeenSet = true;
+}
+
+bool DescribeClientListRequest::MaxTimestampHasBeenSet() const
+{
+    return m_maxTimestampHasBeenSet;
 }
 
 

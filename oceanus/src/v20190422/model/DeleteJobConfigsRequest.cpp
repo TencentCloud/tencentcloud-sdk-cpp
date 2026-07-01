@@ -25,7 +25,8 @@ using namespace std;
 DeleteJobConfigsRequest::DeleteJobConfigsRequest() :
     m_jobIdHasBeenSet(false),
     m_jobConfigVersionsHasBeenSet(false),
-    m_workSpaceIdHasBeenSet(false)
+    m_workSpaceIdHasBeenSet(false),
+    m_configScopeHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string DeleteJobConfigsRequest::ToJsonString() const
         string key = "WorkSpaceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigScope";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_configScope, allocator);
     }
 
 
@@ -119,6 +128,22 @@ void DeleteJobConfigsRequest::SetWorkSpaceId(const string& _workSpaceId)
 bool DeleteJobConfigsRequest::WorkSpaceIdHasBeenSet() const
 {
     return m_workSpaceIdHasBeenSet;
+}
+
+int64_t DeleteJobConfigsRequest::GetConfigScope() const
+{
+    return m_configScope;
+}
+
+void DeleteJobConfigsRequest::SetConfigScope(const int64_t& _configScope)
+{
+    m_configScope = _configScope;
+    m_configScopeHasBeenSet = true;
+}
+
+bool DeleteJobConfigsRequest::ConfigScopeHasBeenSet() const
+{
+    return m_configScopeHasBeenSet;
 }
 
 

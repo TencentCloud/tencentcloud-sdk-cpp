@@ -93,6 +93,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTRTCSignaturesWithRoomIdResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeCallbackRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeCallbackResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeDirectUploadCredentialRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeDirectUploadCredentialResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeePostPaidServiceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeePostPaidServiceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeRecognitionTaskRequest.h>
@@ -598,6 +600,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTWeSeeCallbackResponse> CreateTWeSeeCallbackOutcome;
                 typedef std::future<CreateTWeSeeCallbackOutcome> CreateTWeSeeCallbackOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateTWeSeeCallbackRequest&, CreateTWeSeeCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTWeSeeCallbackAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTWeSeeDirectUploadCredentialResponse> CreateTWeSeeDirectUploadCredentialOutcome;
+                typedef std::future<CreateTWeSeeDirectUploadCredentialOutcome> CreateTWeSeeDirectUploadCredentialOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateTWeSeeDirectUploadCredentialRequest&, CreateTWeSeeDirectUploadCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTWeSeeDirectUploadCredentialAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTWeSeePostPaidServiceResponse> CreateTWeSeePostPaidServiceOutcome;
                 typedef std::future<CreateTWeSeePostPaidServiceOutcome> CreateTWeSeePostPaidServiceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateTWeSeePostPaidServiceRequest&, CreateTWeSeePostPaidServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTWeSeePostPaidServiceAsyncHandler;
@@ -1494,6 +1499,15 @@ namespace TencentCloud
                 CreateTWeSeeCallbackOutcome CreateTWeSeeCallback(const Model::CreateTWeSeeCallbackRequest &request);
                 void CreateTWeSeeCallbackAsync(const Model::CreateTWeSeeCallbackRequest& request, const CreateTWeSeeCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTWeSeeCallbackOutcomeCallable CreateTWeSeeCallbackCallable(const Model::CreateTWeSeeCallbackRequest& request);
+
+                /**
+                 *创建 TWeSee COS 直传凭据。调用方获取临时密钥后，可将视频 / 图片上传到返回的 StoragePath 前缀下；对象上传成功后由 COS 事件触发 TWeSee 任务创建。
+                 * @param req CreateTWeSeeDirectUploadCredentialRequest
+                 * @return CreateTWeSeeDirectUploadCredentialOutcome
+                 */
+                CreateTWeSeeDirectUploadCredentialOutcome CreateTWeSeeDirectUploadCredential(const Model::CreateTWeSeeDirectUploadCredentialRequest &request);
+                void CreateTWeSeeDirectUploadCredentialAsync(const Model::CreateTWeSeeDirectUploadCredentialRequest& request, const CreateTWeSeeDirectUploadCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTWeSeeDirectUploadCredentialOutcomeCallable CreateTWeSeeDirectUploadCredentialCallable(const Model::CreateTWeSeeDirectUploadCredentialRequest& request);
 
                 /**
                  *开通 TWeSee 后付费服务

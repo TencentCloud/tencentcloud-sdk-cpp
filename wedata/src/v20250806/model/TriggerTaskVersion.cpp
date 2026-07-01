@@ -28,7 +28,8 @@ TriggerTaskVersion::TriggerTaskVersion() :
     m_versionRemarkHasBeenSet(false),
     m_approveStatusHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_approveUserUinHasBeenSet(false)
+    m_approveUserUinHasBeenSet(false),
+    m_usedVersionHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome TriggerTaskVersion::Deserialize(const rapidjson::Value &valu
         m_approveUserUinHasBeenSet = true;
     }
 
+    if (value.HasMember("UsedVersion") && !value["UsedVersion"].IsNull())
+    {
+        if (!value["UsedVersion"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerTaskVersion.UsedVersion` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_usedVersion = value["UsedVersion"].GetBool();
+        m_usedVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void TriggerTaskVersion::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "ApproveUserUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_approveUserUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_usedVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsedVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_usedVersion, allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void TriggerTaskVersion::SetApproveUserUin(const string& _approveUserUin)
 bool TriggerTaskVersion::ApproveUserUinHasBeenSet() const
 {
     return m_approveUserUinHasBeenSet;
+}
+
+bool TriggerTaskVersion::GetUsedVersion() const
+{
+    return m_usedVersion;
+}
+
+void TriggerTaskVersion::SetUsedVersion(const bool& _usedVersion)
+{
+    m_usedVersion = _usedVersion;
+    m_usedVersionHasBeenSet = true;
+}
+
+bool TriggerTaskVersion::UsedVersionHasBeenSet() const
+{
+    return m_usedVersionHasBeenSet;
 }
 

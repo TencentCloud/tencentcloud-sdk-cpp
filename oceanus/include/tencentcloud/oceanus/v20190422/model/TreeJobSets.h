@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取作业Id
+                     * 获取<p>作业Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return JobId 作业Id
+                     * @return JobId <p>作业Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置作业Id
+                     * 设置<p>作业Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _jobId 作业Id
+                     * @param _jobId <p>作业Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取作业名
+                     * 获取<p>作业名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 作业名
+                     * @return Name <p>作业名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置作业名
+                     * 设置<p>作业名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 作业名
+                     * @param _name <p>作业名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取作业类型
+                     * 获取<p>作业类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return JobType 作业类型
+                     * @return JobType <p>作业类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetJobType() const;
 
                     /**
-                     * 设置作业类型
+                     * 设置<p>作业类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _jobType 作业类型
+                     * @param _jobType <p>作业类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool JobTypeHasBeenSet() const;
 
                     /**
-                     * 获取作业占用资源
+                     * 获取<p>作业占用资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RunningCu 作业占用资源
+                     * @return RunningCu <p>作业占用资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetRunningCu() const;
 
                     /**
-                     * 设置作业占用资源
+                     * 设置<p>作业占用资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _runningCu 作业占用资源
+                     * @param _runningCu <p>作业占用资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool RunningCuHasBeenSet() const;
 
                     /**
-                     * 获取作业状态 启动或者停止或者暂停
+                     * 获取<p>作业状态 启动或者停止或者暂停</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 作业状态 启动或者停止或者暂停
+                     * @return Status <p>作业状态 启动或者停止或者暂停</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置作业状态 启动或者停止或者暂停
+                     * 设置<p>作业状态 启动或者停止或者暂停</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 作业状态 启动或者停止或者暂停
+                     * @param _status <p>作业状态 启动或者停止或者暂停</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,22 +172,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取0:代表没开启调优任务，1:开启智能调优，2:代表定时调优
-
+                     * 获取<p>0:代表没开启调优任务，1:开启智能调优，2:代表定时调优</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScalingType 0:代表没开启调优任务，1:开启智能调优，2:代表定时调优
-
+                     * @return ScalingType <p>0:代表没开启调优任务，1:开启智能调优，2:代表定时调优</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScalingType() const;
 
                     /**
-                     * 设置0:代表没开启调优任务，1:开启智能调优，2:代表定时调优
-
+                     * 设置<p>0:代表没开启调优任务，1:开启智能调优，2:代表定时调优</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scalingType 0:代表没开启调优任务，1:开启智能调优，2:代表定时调优
-
+                     * @param _scalingType <p>0:代表没开启调优任务，1:开启智能调优，2:代表定时调优</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -201,18 +197,18 @@ namespace TencentCloud
                     bool ScalingTypeHasBeenSet() const;
 
                     /**
-                     * 获取RunningCpu
+                     * 获取<p>RunningCpu</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RunningCpu RunningCpu
+                     * @return RunningCpu <p>RunningCpu</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetRunningCpu() const;
 
                     /**
-                     * 设置RunningCpu
+                     * 设置<p>RunningCpu</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _runningCpu RunningCpu
+                     * @param _runningCpu <p>RunningCpu</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -226,18 +222,18 @@ namespace TencentCloud
                     bool RunningCpuHasBeenSet() const;
 
                     /**
-                     * 获取RunningMem
+                     * 获取<p>RunningMem</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RunningMem RunningMem
+                     * @return RunningMem <p>RunningMem</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetRunningMem() const;
 
                     /**
-                     * 设置RunningMem
+                     * 设置<p>RunningMem</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _runningMem RunningMem
+                     * @param _runningMem <p>RunningMem</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -251,18 +247,18 @@ namespace TencentCloud
                     bool RunningMemHasBeenSet() const;
 
                     /**
-                     * 获取sql
+                     * 获取<p>sql</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DecodeSqlCode sql
+                     * @return DecodeSqlCode <p>sql</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDecodeSqlCode() const;
 
                     /**
-                     * 设置sql
+                     * 设置<p>sql</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _decodeSqlCode sql
+                     * @param _decodeSqlCode <p>sql</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -276,15 +272,15 @@ namespace TencentCloud
                     bool DecodeSqlCodeHasBeenSet() const;
 
                     /**
-                     * 获取发布版本配置id
-                     * @return PublishedJobConfigId 发布版本配置id
+                     * 获取<p>发布版本配置id</p>
+                     * @return PublishedJobConfigId <p>发布版本配置id</p>
                      * 
                      */
                     int64_t GetPublishedJobConfigId() const;
 
                     /**
-                     * 设置发布版本配置id
-                     * @param _publishedJobConfigId 发布版本配置id
+                     * 设置<p>发布版本配置id</p>
+                     * @param _publishedJobConfigId <p>发布版本配置id</p>
                      * 
                      */
                     void SetPublishedJobConfigId(const int64_t& _publishedJobConfigId);
@@ -296,77 +292,103 @@ namespace TencentCloud
                      */
                     bool PublishedJobConfigIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>完整的文件夹路径，仅在平铺模式下返回</p>
+                     * @return FolderPath <p>完整的文件夹路径，仅在平铺模式下返回</p>
+                     * 
+                     */
+                    std::string GetFolderPath() const;
+
+                    /**
+                     * 设置<p>完整的文件夹路径，仅在平铺模式下返回</p>
+                     * @param _folderPath <p>完整的文件夹路径，仅在平铺模式下返回</p>
+                     * 
+                     */
+                    void SetFolderPath(const std::string& _folderPath);
+
+                    /**
+                     * 判断参数 FolderPath 是否已赋值
+                     * @return FolderPath 是否已赋值
+                     * 
+                     */
+                    bool FolderPathHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 作业Id
+                     * <p>作业Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 作业名
+                     * <p>作业名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 作业类型
+                     * <p>作业类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_jobType;
                     bool m_jobTypeHasBeenSet;
 
                     /**
-                     * 作业占用资源
+                     * <p>作业占用资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_runningCu;
                     bool m_runningCuHasBeenSet;
 
                     /**
-                     * 作业状态 启动或者停止或者暂停
+                     * <p>作业状态 启动或者停止或者暂停</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 0:代表没开启调优任务，1:开启智能调优，2:代表定时调优
-
+                     * <p>0:代表没开启调优任务，1:开启智能调优，2:代表定时调优</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scalingType;
                     bool m_scalingTypeHasBeenSet;
 
                     /**
-                     * RunningCpu
+                     * <p>RunningCpu</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_runningCpu;
                     bool m_runningCpuHasBeenSet;
 
                     /**
-                     * RunningMem
+                     * <p>RunningMem</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_runningMem;
                     bool m_runningMemHasBeenSet;
 
                     /**
-                     * sql
+                     * <p>sql</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_decodeSqlCode;
                     bool m_decodeSqlCodeHasBeenSet;
 
                     /**
-                     * 发布版本配置id
+                     * <p>发布版本配置id</p>
                      */
                     int64_t m_publishedJobConfigId;
                     bool m_publishedJobConfigIdHasBeenSet;
+
+                    /**
+                     * <p>完整的文件夹路径，仅在平铺模式下返回</p>
+                     */
+                    std::string m_folderPath;
+                    bool m_folderPathHasBeenSet;
 
                 };
             }

@@ -30,7 +30,8 @@ TreeJobSets::TreeJobSets() :
     m_runningCpuHasBeenSet(false),
     m_runningMemHasBeenSet(false),
     m_decodeSqlCodeHasBeenSet(false),
-    m_publishedJobConfigIdHasBeenSet(false)
+    m_publishedJobConfigIdHasBeenSet(false),
+    m_folderPathHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome TreeJobSets::Deserialize(const rapidjson::Value &value)
         m_publishedJobConfigIdHasBeenSet = true;
     }
 
+    if (value.HasMember("FolderPath") && !value["FolderPath"].IsNull())
+    {
+        if (!value["FolderPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TreeJobSets.FolderPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_folderPath = string(value["FolderPath"].GetString());
+        m_folderPathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void TreeJobSets::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "PublishedJobConfigId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_publishedJobConfigId, allocator);
+    }
+
+    if (m_folderPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FolderPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_folderPath.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void TreeJobSets::SetPublishedJobConfigId(const int64_t& _publishedJobConfigId)
 bool TreeJobSets::PublishedJobConfigIdHasBeenSet() const
 {
     return m_publishedJobConfigIdHasBeenSet;
+}
+
+string TreeJobSets::GetFolderPath() const
+{
+    return m_folderPath;
+}
+
+void TreeJobSets::SetFolderPath(const string& _folderPath)
+{
+    m_folderPath = _folderPath;
+    m_folderPathHasBeenSet = true;
+}
+
+bool TreeJobSets::FolderPathHasBeenSet() const
+{
+    return m_folderPathHasBeenSet;
 }
 

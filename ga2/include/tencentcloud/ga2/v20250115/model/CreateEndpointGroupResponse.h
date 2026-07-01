@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务ID。
-                     * @return TaskId 任务ID。
+                     * 获取<p>任务ID。</p>
+                     * @return TaskId <p>任务ID。</p>
                      * 
                      */
                     std::string GetTaskId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取终端节点组实例ID。
-                     * @return EndpointGroupId 终端节点组实例ID。
+                     * 获取<p>终端节点组实例ID。</p>
+                     * @return EndpointGroupId <p>终端节点组实例ID。</p>
                      * 
                      */
                     std::string GetEndpointGroupId() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务ID。
+                     * <p>任务ID。</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 终端节点组实例ID。
+                     * <p>终端节点组实例ID。</p>
                      */
                     std::string m_endpointGroupId;
                     bool m_endpointGroupIdHasBeenSet;

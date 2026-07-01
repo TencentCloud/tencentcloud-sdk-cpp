@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合规包ID
-                     * @return CompliancePackId 合规包ID
+                     * 获取<p>合规包ID</p>
+                     * @return CompliancePackId <p>合规包ID</p>
                      * 
                      */
                     std::string GetCompliancePackId() const;
 
                     /**
-                     * 设置合规包ID
-                     * @param _compliancePackId 合规包ID
+                     * 设置<p>合规包ID</p>
+                     * @param _compliancePackId <p>合规包ID</p>
                      * 
                      */
                     void SetCompliancePackId(const std::string& _compliancePackId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合规包ID
+                     * <p>合规包ID</p>
                      */
                     std::string m_compliancePackId;
                     bool m_compliancePackIdHasBeenSet;

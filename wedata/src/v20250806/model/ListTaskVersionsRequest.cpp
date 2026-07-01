@@ -27,7 +27,8 @@ ListTaskVersionsRequest::ListTaskVersionsRequest() :
     m_taskIdHasBeenSet(false),
     m_taskVersionTypeHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_usedVersionHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string ListTaskVersionsRequest::ToJsonString() const
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_usedVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsedVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_usedVersion, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void ListTaskVersionsRequest::SetPageSize(const uint64_t& _pageSize)
 bool ListTaskVersionsRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+bool ListTaskVersionsRequest::GetUsedVersion() const
+{
+    return m_usedVersion;
+}
+
+void ListTaskVersionsRequest::SetUsedVersion(const bool& _usedVersion)
+{
+    m_usedVersion = _usedVersion;
+    m_usedVersionHasBeenSet = true;
+}
+
+bool ListTaskVersionsRequest::UsedVersionHasBeenSet() const
+{
+    return m_usedVersionHasBeenSet;
 }
 
 

@@ -26,7 +26,8 @@ UpdateCodeFileRequest::UpdateCodeFileRequest() :
     m_projectIdHasBeenSet(false),
     m_codeFileIdHasBeenSet(false),
     m_codeFileConfigHasBeenSet(false),
-    m_codeFileContentHasBeenSet(false)
+    m_codeFileContentHasBeenSet(false),
+    m_submitActionHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string UpdateCodeFileRequest::ToJsonString() const
         string key = "CodeFileContent";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_codeFileContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_submitActionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubmitAction";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_submitAction, allocator);
     }
 
 
@@ -140,6 +149,22 @@ void UpdateCodeFileRequest::SetCodeFileContent(const string& _codeFileContent)
 bool UpdateCodeFileRequest::CodeFileContentHasBeenSet() const
 {
     return m_codeFileContentHasBeenSet;
+}
+
+bool UpdateCodeFileRequest::GetSubmitAction() const
+{
+    return m_submitAction;
+}
+
+void UpdateCodeFileRequest::SetSubmitAction(const bool& _submitAction)
+{
+    m_submitAction = _submitAction;
+    m_submitActionHasBeenSet = true;
+}
+
+bool UpdateCodeFileRequest::SubmitActionHasBeenSet() const
+{
+    return m_submitActionHasBeenSet;
 }
 
 

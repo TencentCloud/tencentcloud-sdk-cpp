@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图片处理相关的prompt。
-                     * @return Prompt 图片处理相关的prompt。
+                     * 获取<p>图片处理相关的prompt。</p>
+                     * @return Prompt <p>图片处理相关的prompt。</p>
                      * 
                      */
                     std::string GetPrompt() const;
 
                     /**
-                     * 设置图片处理相关的prompt。
-                     * @param _prompt 图片处理相关的prompt。
+                     * 设置<p>图片处理相关的prompt。</p>
+                     * @param _prompt <p>图片处理相关的prompt。</p>
                      * 
                      */
                     void SetPrompt(const std::string& _prompt);
@@ -67,13 +67,40 @@ namespace TencentCloud
                      */
                     bool PromptHasBeenSet() const;
 
+                    /**
+                     * 获取<p>prompt 对应的 role。</p>
+                     * @return Role <p>prompt 对应的 role。</p>
+                     * 
+                     */
+                    std::string GetRole() const;
+
+                    /**
+                     * 设置<p>prompt 对应的 role。</p>
+                     * @param _role <p>prompt 对应的 role。</p>
+                     * 
+                     */
+                    void SetRole(const std::string& _role);
+
+                    /**
+                     * 判断参数 Role 是否已赋值
+                     * @return Role 是否已赋值
+                     * 
+                     */
+                    bool RoleHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 图片处理相关的prompt。
+                     * <p>图片处理相关的prompt。</p>
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;
+
+                    /**
+                     * <p>prompt 对应的 role。</p>
+                     */
+                    std::string m_role;
+                    bool m_roleHasBeenSet;
 
                 };
             }

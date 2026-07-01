@@ -83,7 +83,9 @@ Cluster::Cluster() :
     m_maxCuPerJobHasBeenSet(false),
     m_hiveMetastoreHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
-    m_netEniTypeHasBeenSet(false)
+    m_netEniTypeHasBeenSet(false),
+    m_clusterBucketsHasBeenSet(false),
+    m_isolationPolicyVersionHasBeenSet(false)
 {
 }
 
@@ -833,6 +835,36 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_netEniTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterBuckets") && !value["ClusterBuckets"].IsNull())
+    {
+        if (!value["ClusterBuckets"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Cluster.ClusterBuckets` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ClusterBuckets"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ClusterBucketInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_clusterBuckets.push_back(item);
+        }
+        m_clusterBucketsHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsolationPolicyVersion") && !value["IsolationPolicyVersion"].IsNull())
+    {
+        if (!value["IsolationPolicyVersion"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.IsolationPolicyVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolationPolicyVersion = value["IsolationPolicyVersion"].GetInt64();
+        m_isolationPolicyVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1407,6 +1439,29 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "NetEniType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_netEniType, allocator);
+    }
+
+    if (m_clusterBucketsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterBuckets";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_clusterBuckets.begin(); itr != m_clusterBuckets.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_isolationPolicyVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolationPolicyVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isolationPolicyVersion, allocator);
     }
 
 }
@@ -2418,5 +2473,37 @@ void Cluster::SetNetEniType(const int64_t& _netEniType)
 bool Cluster::NetEniTypeHasBeenSet() const
 {
     return m_netEniTypeHasBeenSet;
+}
+
+vector<ClusterBucketInfo> Cluster::GetClusterBuckets() const
+{
+    return m_clusterBuckets;
+}
+
+void Cluster::SetClusterBuckets(const vector<ClusterBucketInfo>& _clusterBuckets)
+{
+    m_clusterBuckets = _clusterBuckets;
+    m_clusterBucketsHasBeenSet = true;
+}
+
+bool Cluster::ClusterBucketsHasBeenSet() const
+{
+    return m_clusterBucketsHasBeenSet;
+}
+
+int64_t Cluster::GetIsolationPolicyVersion() const
+{
+    return m_isolationPolicyVersion;
+}
+
+void Cluster::SetIsolationPolicyVersion(const int64_t& _isolationPolicyVersion)
+{
+    m_isolationPolicyVersion = _isolationPolicyVersion;
+    m_isolationPolicyVersionHasBeenSet = true;
+}
+
+bool Cluster::IsolationPolicyVersionHasBeenSet() const
+{
+    return m_isolationPolicyVersionHasBeenSet;
 }
 

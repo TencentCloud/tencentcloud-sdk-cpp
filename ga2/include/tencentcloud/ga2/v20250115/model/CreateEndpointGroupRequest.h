@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取全球加速实例ID。
-                     * @return GlobalAcceleratorId 全球加速实例ID。
+                     * 获取<p>全球加速实例ID。</p>
+                     * @return GlobalAcceleratorId <p>全球加速实例ID。</p>
                      * 
                      */
                     std::string GetGlobalAcceleratorId() const;
 
                     /**
-                     * 设置全球加速实例ID。
-                     * @param _globalAcceleratorId 全球加速实例ID。
+                     * 设置<p>全球加速实例ID。</p>
+                     * @param _globalAcceleratorId <p>全球加速实例ID。</p>
                      * 
                      */
                     void SetGlobalAcceleratorId(const std::string& _globalAcceleratorId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool GlobalAcceleratorIdHasBeenSet() const;
 
                     /**
-                     * 获取监听器ID。
-                     * @return ListenerId 监听器ID。
+                     * 获取<p>监听器ID。</p>
+                     * @return ListenerId <p>监听器ID。</p>
                      * 
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置监听器ID。
-                     * @param _listenerId 监听器ID。
+                     * 设置<p>监听器ID。</p>
+                     * @param _listenerId <p>监听器ID。</p>
                      * 
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取终端节点组类型。支持VIRTUAL，DEFAULT。
-                     * @return EndpointGroupType 终端节点组类型。支持VIRTUAL，DEFAULT。
+                     * 获取<p>终端节点组类型。</p><p>枚举值：</p><ul><li>VIRTUAL： 自定义终端节点组</li><li>DEFAULT： 默认终端节点组</li></ul>
+                     * @return EndpointGroupType <p>终端节点组类型。</p><p>枚举值：</p><ul><li>VIRTUAL： 自定义终端节点组</li><li>DEFAULT： 默认终端节点组</li></ul>
                      * 
                      */
                     std::string GetEndpointGroupType() const;
 
                     /**
-                     * 设置终端节点组类型。支持VIRTUAL，DEFAULT。
-                     * @param _endpointGroupType 终端节点组类型。支持VIRTUAL，DEFAULT。
+                     * 设置<p>终端节点组类型。</p><p>枚举值：</p><ul><li>VIRTUAL： 自定义终端节点组</li><li>DEFAULT： 默认终端节点组</li></ul>
+                     * @param _endpointGroupType <p>终端节点组类型。</p><p>枚举值：</p><ul><li>VIRTUAL： 自定义终端节点组</li><li>DEFAULT： 默认终端节点组</li></ul>
                      * 
                      */
                     void SetEndpointGroupType(const std::string& _endpointGroupType);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool EndpointGroupTypeHasBeenSet() const;
 
                     /**
-                     * 获取终端节点组配置。
-                     * @return EndpointGroupConfiguration 终端节点组配置。
+                     * 获取<p>终端节点组配置。</p>
+                     * @return EndpointGroupConfiguration <p>终端节点组配置。</p>
                      * 
                      */
                     EndpointGroupConfiguration GetEndpointGroupConfiguration() const;
 
                     /**
-                     * 设置终端节点组配置。
-                     * @param _endpointGroupConfiguration 终端节点组配置。
+                     * 设置<p>终端节点组配置。</p>
+                     * @param _endpointGroupConfiguration <p>终端节点组配置。</p>
                      * 
                      */
                     void SetEndpointGroupConfiguration(const EndpointGroupConfiguration& _endpointGroupConfiguration);
@@ -130,25 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 全球加速实例ID。
+                     * <p>全球加速实例ID。</p>
                      */
                     std::string m_globalAcceleratorId;
                     bool m_globalAcceleratorIdHasBeenSet;
 
                     /**
-                     * 监听器ID。
+                     * <p>监听器ID。</p>
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 终端节点组类型。支持VIRTUAL，DEFAULT。
+                     * <p>终端节点组类型。</p><p>枚举值：</p><ul><li>VIRTUAL： 自定义终端节点组</li><li>DEFAULT： 默认终端节点组</li></ul>
                      */
                     std::string m_endpointGroupType;
                     bool m_endpointGroupTypeHasBeenSet;
 
                     /**
-                     * 终端节点组配置。
+                     * <p>终端节点组配置。</p>
                      */
                     EndpointGroupConfiguration m_endpointGroupConfiguration;
                     bool m_endpointGroupConfigurationHasBeenSet;

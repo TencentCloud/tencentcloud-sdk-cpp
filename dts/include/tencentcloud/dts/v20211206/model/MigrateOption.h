@@ -27,6 +27,7 @@
 #include <tencentcloud/dts/v20211206/model/DatabaseTableObject.h>
 #include <tencentcloud/dts/v20211206/model/ConsistencyOption.h>
 #include <tencentcloud/dts/v20211206/model/KeyValuePairOption.h>
+#include <tencentcloud/dts/v20211206/model/RateLimit.h>
 
 
 namespace TencentCloud
@@ -221,6 +222,27 @@ namespace TencentCloud
                      */
                     bool MigrateWayHasBeenSet() const;
 
+                    /**
+                     * 获取<p>迁移配置阶段限速相关参数</p>
+                     * @return RateLimit <p>迁移配置阶段限速相关参数</p>
+                     * 
+                     */
+                    RateLimit GetRateLimit() const;
+
+                    /**
+                     * 设置<p>迁移配置阶段限速相关参数</p>
+                     * @param _rateLimit <p>迁移配置阶段限速相关参数</p>
+                     * 
+                     */
+                    void SetRateLimit(const RateLimit& _rateLimit);
+
+                    /**
+                     * 判断参数 RateLimit 是否已赋值
+                     * @return RateLimit 是否已赋值
+                     * 
+                     */
+                    bool RateLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -271,6 +293,12 @@ namespace TencentCloud
                      */
                     std::string m_migrateWay;
                     bool m_migrateWayHasBeenSet;
+
+                    /**
+                     * <p>迁移配置阶段限速相关参数</p>
+                     */
+                    RateLimit m_rateLimit;
+                    bool m_rateLimitHasBeenSet;
 
                 };
             }

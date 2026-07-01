@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取业务响应数据
-                     * @return Data 业务响应数据
+                     * 获取<p>业务响应数据</p>
+                     * @return Data <p>业务响应数据</p>
                      * 
                      */
                     DescribeSoftwareInformationPageData GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 业务响应数据
+                     * <p>业务响应数据</p>
                      */
                     DescribeSoftwareInformationPageData m_data;
                     bool m_dataHasBeenSet;

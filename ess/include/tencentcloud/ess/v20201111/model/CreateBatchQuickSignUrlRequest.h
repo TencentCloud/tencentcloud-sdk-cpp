@@ -343,15 +343,15 @@ namespace TencentCloud
                     bool CanBatchRejectHasBeenSet() const;
 
                     /**
-                     * 获取<p>预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。</p>
-                     * @return PresetApproverInfo <p>预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。</p>
+                     * 获取<p>预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。若为个人动态签署方，支持预设姓名、证件、手机号。若为企业员工动态签署方，仅支持预设企业名称。</p>
+                     * @return PresetApproverInfo <p>预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。若为个人动态签署方，支持预设姓名、证件、手机号。若为企业员工动态签署方，仅支持预设企业名称。</p>
                      * 
                      */
                     PresetApproverInfo GetPresetApproverInfo() const;
 
                     /**
-                     * 设置<p>预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。</p>
-                     * @param _presetApproverInfo <p>预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。</p>
+                     * 设置<p>预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。若为个人动态签署方，支持预设姓名、证件、手机号。若为企业员工动态签署方，仅支持预设企业名称。</p>
+                     * @param _presetApproverInfo <p>预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。若为个人动态签署方，支持预设姓名、证件、手机号。若为企业员工动态签署方，仅支持预设企业名称。</p>
                      * 
                      */
                     void SetPresetApproverInfo(const PresetApproverInfo& _presetApproverInfo);
@@ -492,7 +492,7 @@ namespace TencentCloud
                     bool m_canBatchRejectHasBeenSet;
 
                     /**
-                     * <p>预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。</p>
+                     * <p>预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。若为个人动态签署方，支持预设姓名、证件、手机号。若为企业员工动态签署方，仅支持预设企业名称。</p>
                      */
                     PresetApproverInfo m_presetApproverInfo;
                     bool m_presetApproverInfoHasBeenSet;

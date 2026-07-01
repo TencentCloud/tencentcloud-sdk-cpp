@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据补录计划创建结果
-                     * @return Data 数据补录计划创建结果
+                     * 获取<p>数据补录计划创建结果</p>
+                     * @return Data <p>数据补录计划创建结果</p>
                      * 
                      */
                     CreateDataReplenishmentPlan GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据补录计划创建结果
+                     * <p>数据补录计划创建结果</p>
                      */
                     CreateDataReplenishmentPlan m_data;
                     bool m_dataHasBeenSet;

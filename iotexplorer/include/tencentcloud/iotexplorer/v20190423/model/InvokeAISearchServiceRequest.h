@@ -336,6 +336,27 @@ namespace TencentCloud
                      */
                     bool OrderHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否输出原始任务信息</p>
+                     * @return WithTaskInfo <p>是否输出原始任务信息</p>
+                     * 
+                     */
+                    bool GetWithTaskInfo() const;
+
+                    /**
+                     * 设置<p>是否输出原始任务信息</p>
+                     * @param _withTaskInfo <p>是否输出原始任务信息</p>
+                     * 
+                     */
+                    void SetWithTaskInfo(const bool& _withTaskInfo);
+
+                    /**
+                     * 判断参数 WithTaskInfo 是否已赋值
+                     * @return WithTaskInfo 是否已赋值
+                     * 
+                     */
+                    bool WithTaskInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -421,6 +442,12 @@ namespace TencentCloud
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
+
+                    /**
+                     * <p>是否输出原始任务信息</p>
+                     */
+                    bool m_withTaskInfo;
+                    bool m_withTaskInfoHasBeenSet;
 
                 };
             }

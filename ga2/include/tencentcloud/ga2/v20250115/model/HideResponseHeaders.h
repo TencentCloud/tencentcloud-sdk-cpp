@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>key</p>
-                     * @return Key <p>key</p>
+                     * 获取<p>key</p><p>入参限制：长度不能超过128</p><p>如果字符串包含$，那仅能配置&#39;$remote_addr&#39;, &#39;$remote_port&#39;，否则不支持。</p>
+                     * @return Key <p>key</p><p>入参限制：长度不能超过128</p><p>如果字符串包含$，那仅能配置&#39;$remote_addr&#39;, &#39;$remote_port&#39;，否则不支持。</p>
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置<p>key</p>
-                     * @param _key <p>key</p>
+                     * 设置<p>key</p><p>入参限制：长度不能超过128</p><p>如果字符串包含$，那仅能配置&#39;$remote_addr&#39;, &#39;$remote_port&#39;，否则不支持。</p>
+                     * @param _key <p>key</p><p>入参限制：长度不能超过128</p><p>如果字符串包含$，那仅能配置&#39;$remote_addr&#39;, &#39;$remote_port&#39;，否则不支持。</p>
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取<p>value</p>
-                     * @return Value <p>value</p>
+                     * 获取<p>value</p><p>当前传&#39;&#39;值即可。</p>
+                     * @return Value <p>value</p><p>当前传&#39;&#39;值即可。</p>
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置<p>value</p>
-                     * @param _value <p>value</p>
+                     * 设置<p>value</p><p>当前传&#39;&#39;值即可。</p>
+                     * @param _value <p>value</p><p>当前传&#39;&#39;值即可。</p>
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>key</p>
+                     * <p>key</p><p>入参限制：长度不能超过128</p><p>如果字符串包含$，那仅能配置&#39;$remote_addr&#39;, &#39;$remote_port&#39;，否则不支持。</p>
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * <p>value</p>
+                     * <p>value</p><p>当前传&#39;&#39;值即可。</p>
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

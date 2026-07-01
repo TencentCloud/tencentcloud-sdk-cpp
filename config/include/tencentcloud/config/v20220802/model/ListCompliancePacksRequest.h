@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数量
-                     * @return Limit 数量
+                     * 获取<p>数量</p>
+                     * @return Limit <p>数量</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置数量
-                     * @param _limit 数量
+                     * 设置<p>数量</p>
+                     * @param _limit <p>数量</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取<p>偏移量</p>
+                     * @return Offset <p>偏移量</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offset 偏移量
+                     * 设置<p>偏移量</p>
+                     * @param _offset <p>偏移量</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取合规包名称
-                     * @return CompliancePackName 合规包名称
+                     * 获取<p>合规包名称</p>
+                     * @return CompliancePackName <p>合规包名称</p>
                      * 
                      */
                     std::string GetCompliancePackName() const;
 
                     /**
-                     * 设置合规包名称
-                     * @param _compliancePackName 合规包名称
+                     * 设置<p>合规包名称</p>
+                     * @param _compliancePackName <p>合规包名称</p>
                      * 
                      */
                     void SetCompliancePackName(const std::string& _compliancePackName);
@@ -106,27 +106,15 @@ namespace TencentCloud
                     bool CompliancePackNameHasBeenSet() const;
 
                     /**
-                     * 获取风险等级
-1：高风险。
-2：中风险。
-3：低风险。
-                     * @return RiskLevel 风险等级
-1：高风险。
-2：中风险。
-3：低风险。
+                     * 获取<p>风险等级<br>1：高风险。<br>2：中风险。<br>3：低风险。</p>
+                     * @return RiskLevel <p>风险等级<br>1：高风险。<br>2：中风险。<br>3：低风险。</p>
                      * 
                      */
                     std::vector<uint64_t> GetRiskLevel() const;
 
                     /**
-                     * 设置风险等级
-1：高风险。
-2：中风险。
-3：低风险。
-                     * @param _riskLevel 风险等级
-1：高风险。
-2：中风险。
-3：低风险。
+                     * 设置<p>风险等级<br>1：高风险。<br>2：中风险。<br>3：低风险。</p>
+                     * @param _riskLevel <p>风险等级<br>1：高风险。<br>2：中风险。<br>3：低风险。</p>
                      * 
                      */
                     void SetRiskLevel(const std::vector<uint64_t>& _riskLevel);
@@ -139,15 +127,15 @@ namespace TencentCloud
                     bool RiskLevelHasBeenSet() const;
 
                     /**
-                     * 获取合规包状态 ACTIVE、NO_ACTIVE
-                     * @return Status 合规包状态 ACTIVE、NO_ACTIVE
+                     * 获取<p>合规包状态 ACTIVE、NO_ACTIVE</p>
+                     * @return Status <p>合规包状态 ACTIVE、NO_ACTIVE</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置合规包状态 ACTIVE、NO_ACTIVE
-                     * @param _status 合规包状态 ACTIVE、NO_ACTIVE
+                     * 设置<p>合规包状态 ACTIVE、NO_ACTIVE</p>
+                     * @param _status <p>合规包状态 ACTIVE、NO_ACTIVE</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -160,19 +148,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取评估状态合规： 'COMPLIANT'
-不合规： 'NON_COMPLIANT'
-                     * @return ComplianceResult 评估状态合规： 'COMPLIANT'
-不合规： 'NON_COMPLIANT'
+                     * 获取<p>评估状态合规： &#39;COMPLIANT&#39;<br>不合规： &#39;NON_COMPLIANT&#39;</p>
+                     * @return ComplianceResult <p>评估状态合规： &#39;COMPLIANT&#39;<br>不合规： &#39;NON_COMPLIANT&#39;</p>
                      * 
                      */
                     std::vector<std::string> GetComplianceResult() const;
 
                     /**
-                     * 设置评估状态合规： 'COMPLIANT'
-不合规： 'NON_COMPLIANT'
-                     * @param _complianceResult 评估状态合规： 'COMPLIANT'
-不合规： 'NON_COMPLIANT'
+                     * 设置<p>评估状态合规： &#39;COMPLIANT&#39;<br>不合规： &#39;NON_COMPLIANT&#39;</p>
+                     * @param _complianceResult <p>评估状态合规： &#39;COMPLIANT&#39;<br>不合规： &#39;NON_COMPLIANT&#39;</p>
                      * 
                      */
                     void SetComplianceResult(const std::vector<std::string>& _complianceResult);
@@ -185,15 +169,15 @@ namespace TencentCloud
                     bool ComplianceResultHasBeenSet() const;
 
                     /**
-                     * 获取排序类型, 倒序：desc，顺序：asc
-                     * @return OrderType 排序类型, 倒序：desc，顺序：asc
+                     * 获取<p>排序类型, 倒序：desc，顺序：asc</p>
+                     * @return OrderType <p>排序类型, 倒序：desc，顺序：asc</p>
                      * 
                      */
                     std::string GetOrderType() const;
 
                     /**
-                     * 设置排序类型, 倒序：desc，顺序：asc
-                     * @param _orderType 排序类型, 倒序：desc，顺序：asc
+                     * 设置<p>排序类型, 倒序：desc，顺序：asc</p>
+                     * @param _orderType <p>排序类型, 倒序：desc，顺序：asc</p>
                      * 
                      */
                     void SetOrderType(const std::string& _orderType);
@@ -205,53 +189,76 @@ namespace TencentCloud
                      */
                     bool OrderTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>包含合规包规则统计信息</p><p>枚举值：</p><ul><li>1： 是</li></ul>
+                     * @return IncludeCompliancePackRuleResult <p>包含合规包规则统计信息</p><p>枚举值：</p><ul><li>1： 是</li></ul>
+                     * 
+                     */
+                    std::string GetIncludeCompliancePackRuleResult() const;
+
+                    /**
+                     * 设置<p>包含合规包规则统计信息</p><p>枚举值：</p><ul><li>1： 是</li></ul>
+                     * @param _includeCompliancePackRuleResult <p>包含合规包规则统计信息</p><p>枚举值：</p><ul><li>1： 是</li></ul>
+                     * 
+                     */
+                    void SetIncludeCompliancePackRuleResult(const std::string& _includeCompliancePackRuleResult);
+
+                    /**
+                     * 判断参数 IncludeCompliancePackRuleResult 是否已赋值
+                     * @return IncludeCompliancePackRuleResult 是否已赋值
+                     * 
+                     */
+                    bool IncludeCompliancePackRuleResultHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 数量
+                     * <p>数量</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * <p>偏移量</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 合规包名称
+                     * <p>合规包名称</p>
                      */
                     std::string m_compliancePackName;
                     bool m_compliancePackNameHasBeenSet;
 
                     /**
-                     * 风险等级
-1：高风险。
-2：中风险。
-3：低风险。
+                     * <p>风险等级<br>1：高风险。<br>2：中风险。<br>3：低风险。</p>
                      */
                     std::vector<uint64_t> m_riskLevel;
                     bool m_riskLevelHasBeenSet;
 
                     /**
-                     * 合规包状态 ACTIVE、NO_ACTIVE
+                     * <p>合规包状态 ACTIVE、NO_ACTIVE</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 评估状态合规： 'COMPLIANT'
-不合规： 'NON_COMPLIANT'
+                     * <p>评估状态合规： &#39;COMPLIANT&#39;<br>不合规： &#39;NON_COMPLIANT&#39;</p>
                      */
                     std::vector<std::string> m_complianceResult;
                     bool m_complianceResultHasBeenSet;
 
                     /**
-                     * 排序类型, 倒序：desc，顺序：asc
+                     * <p>排序类型, 倒序：desc，顺序：asc</p>
                      */
                     std::string m_orderType;
                     bool m_orderTypeHasBeenSet;
+
+                    /**
+                     * <p>包含合规包规则统计信息</p><p>枚举值：</p><ul><li>1： 是</li></ul>
+                     */
+                    std::string m_includeCompliancePackRuleResult;
+                    bool m_includeCompliancePackRuleResultHasBeenSet;
 
                 };
             }

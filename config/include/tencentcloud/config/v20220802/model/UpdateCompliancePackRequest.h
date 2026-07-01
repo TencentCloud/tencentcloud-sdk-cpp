@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合规包名称
-                     * @return CompliancePackName 合规包名称
+                     * 获取<p>合规包名称</p>
+                     * @return CompliancePackName <p>合规包名称</p>
                      * 
                      */
                     std::string GetCompliancePackName() const;
 
                     /**
-                     * 设置合规包名称
-                     * @param _compliancePackName 合规包名称
+                     * 设置<p>合规包名称</p>
+                     * @param _compliancePackName <p>合规包名称</p>
                      * 
                      */
                     void SetCompliancePackName(const std::string& _compliancePackName);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool CompliancePackNameHasBeenSet() const;
 
                     /**
-                     * 获取风险等级
-                     * @return RiskLevel 风险等级
+                     * 获取<p>风险等级</p>
+                     * @return RiskLevel <p>风险等级</p>
                      * 
                      */
                     uint64_t GetRiskLevel() const;
 
                     /**
-                     * 设置风险等级
-                     * @param _riskLevel 风险等级
+                     * 设置<p>风险等级</p>
+                     * @param _riskLevel <p>风险等级</p>
                      * 
                      */
                     void SetRiskLevel(const uint64_t& _riskLevel);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool RiskLevelHasBeenSet() const;
 
                     /**
-                     * 获取合规包ID
-                     * @return CompliancePackId 合规包ID
+                     * 获取<p>合规包ID</p>
+                     * @return CompliancePackId <p>合规包ID</p>
                      * 
                      */
                     std::string GetCompliancePackId() const;
 
                     /**
-                     * 设置合规包ID
-                     * @param _compliancePackId 合规包ID
+                     * 设置<p>合规包ID</p>
+                     * @param _compliancePackId <p>合规包ID</p>
                      * 
                      */
                     void SetCompliancePackId(const std::string& _compliancePackId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool CompliancePackIdHasBeenSet() const;
 
                     /**
-                     * 获取合规包规则
-                     * @return ConfigRules 合规包规则
+                     * 获取<p>合规包规则</p>
+                     * @return ConfigRules <p>合规包规则</p>
                      * 
                      */
                     std::vector<CompliancePackRule> GetConfigRules() const;
 
                     /**
-                     * 设置合规包规则
-                     * @param _configRules 合规包规则
+                     * 设置<p>合规包规则</p>
+                     * @param _configRules <p>合规包规则</p>
                      * 
                      */
                     void SetConfigRules(const std::vector<CompliancePackRule>& _configRules);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool ConfigRulesHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
+                     * 获取<p>描述</p>
+                     * @return Description <p>描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
-                     * @param _description 描述
+                     * 设置<p>描述</p>
+                     * @param _description <p>描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -151,31 +151,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合规包名称
+                     * <p>合规包名称</p>
                      */
                     std::string m_compliancePackName;
                     bool m_compliancePackNameHasBeenSet;
 
                     /**
-                     * 风险等级
+                     * <p>风险等级</p>
                      */
                     uint64_t m_riskLevel;
                     bool m_riskLevelHasBeenSet;
 
                     /**
-                     * 合规包ID
+                     * <p>合规包ID</p>
                      */
                     std::string m_compliancePackId;
                     bool m_compliancePackIdHasBeenSet;
 
                     /**
-                     * 合规包规则
+                     * <p>合规包规则</p>
                      */
                     std::vector<CompliancePackRule> m_configRules;
                     bool m_configRulesHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

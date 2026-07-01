@@ -790,6 +790,56 @@ VodClient::CreateAigcImageTaskOutcomeCallable VodClient::CreateAigcImageTaskCall
     return prom->get_future();
 }
 
+VodClient::CreateAigcQuotaOutcome VodClient::CreateAigcQuota(const CreateAigcQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcQuotaResponse rsp = CreateAigcQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcQuotaOutcome(rsp);
+        else
+            return CreateAigcQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcQuotaOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateAigcQuotaAsync(const CreateAigcQuotaRequest& request, const CreateAigcQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcQuotaRequest&;
+    using Resp = CreateAigcQuotaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateAigcQuotaOutcomeCallable VodClient::CreateAigcQuotaCallable(const CreateAigcQuotaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcQuotaOutcome>>();
+    CreateAigcQuotaAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAigcQuotaRequest&,
+        CreateAigcQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VodClient::CreateAigcSubjectOutcome VodClient::CreateAigcSubject(const CreateAigcSubjectRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAigcSubject");
@@ -2840,6 +2890,56 @@ VodClient::DeleteAigcApiTokenOutcomeCallable VodClient::DeleteAigcApiTokenCallab
     return prom->get_future();
 }
 
+VodClient::DeleteAigcQuotaOutcome VodClient::DeleteAigcQuota(const DeleteAigcQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAigcQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAigcQuotaResponse rsp = DeleteAigcQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAigcQuotaOutcome(rsp);
+        else
+            return DeleteAigcQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAigcQuotaOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteAigcQuotaAsync(const DeleteAigcQuotaRequest& request, const DeleteAigcQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAigcQuotaRequest&;
+    using Resp = DeleteAigcQuotaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAigcQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DeleteAigcQuotaOutcomeCallable VodClient::DeleteAigcQuotaCallable(const DeleteAigcQuotaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAigcQuotaOutcome>>();
+    DeleteAigcQuotaAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteAigcQuotaRequest&,
+        DeleteAigcQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VodClient::DeleteAnimatedGraphicsTemplateOutcome VodClient::DeleteAnimatedGraphicsTemplate(const DeleteAnimatedGraphicsTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAnimatedGraphicsTemplate");
@@ -4532,6 +4632,56 @@ VodClient::DescribeAigcFaceInfoAsyncOutcomeCallable VodClient::DescribeAigcFaceI
         const VodClient*,
         const DescribeAigcFaceInfoAsyncRequest&,
         DescribeAigcFaceInfoAsyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::DescribeAigcQuotasOutcome VodClient::DescribeAigcQuotas(const DescribeAigcQuotasRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAigcQuotas");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAigcQuotasResponse rsp = DescribeAigcQuotasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAigcQuotasOutcome(rsp);
+        else
+            return DescribeAigcQuotasOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAigcQuotasOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeAigcQuotasAsync(const DescribeAigcQuotasRequest& request, const DescribeAigcQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAigcQuotasRequest&;
+    using Resp = DescribeAigcQuotasResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAigcQuotas", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeAigcQuotasOutcomeCallable VodClient::DescribeAigcQuotasCallable(const DescribeAigcQuotasRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAigcQuotasOutcome>>();
+    DescribeAigcQuotasAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeAigcQuotasRequest&,
+        DescribeAigcQuotasOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -8232,6 +8382,56 @@ VodClient::ModifyAdaptiveDynamicStreamingTemplateOutcomeCallable VodClient::Modi
         const VodClient*,
         const ModifyAdaptiveDynamicStreamingTemplateRequest&,
         ModifyAdaptiveDynamicStreamingTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::ModifyAigcQuotaOutcome VodClient::ModifyAigcQuota(const ModifyAigcQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAigcQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAigcQuotaResponse rsp = ModifyAigcQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAigcQuotaOutcome(rsp);
+        else
+            return ModifyAigcQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAigcQuotaOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifyAigcQuotaAsync(const ModifyAigcQuotaRequest& request, const ModifyAigcQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyAigcQuotaRequest&;
+    using Resp = ModifyAigcQuotaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyAigcQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::ModifyAigcQuotaOutcomeCallable VodClient::ModifyAigcQuotaCallable(const ModifyAigcQuotaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyAigcQuotaOutcome>>();
+    ModifyAigcQuotaAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyAigcQuotaRequest&,
+        ModifyAigcQuotaOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

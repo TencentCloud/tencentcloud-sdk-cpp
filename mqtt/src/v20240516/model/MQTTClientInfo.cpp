@@ -29,7 +29,9 @@ MQTTClientInfo::MQTTClientInfo() :
     m_createTimeHasBeenSet(false),
     m_connectTimeHasBeenSet(false),
     m_disconnectTimeHasBeenSet(false),
-    m_mQTTClientSubscriptionsHasBeenSet(false)
+    m_mQTTClientSubscriptionsHasBeenSet(false),
+    m_cleanSessionHasBeenSet(false),
+    m_expireIntervalInSecondsHasBeenSet(false)
 {
 }
 
@@ -138,6 +140,26 @@ CoreInternalOutcome MQTTClientInfo::Deserialize(const rapidjson::Value &value)
         m_mQTTClientSubscriptionsHasBeenSet = true;
     }
 
+    if (value.HasMember("CleanSession") && !value["CleanSession"].IsNull())
+    {
+        if (!value["CleanSession"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `MQTTClientInfo.CleanSession` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_cleanSession = value["CleanSession"].GetBool();
+        m_cleanSessionHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpireIntervalInSeconds") && !value["ExpireIntervalInSeconds"].IsNull())
+    {
+        if (!value["ExpireIntervalInSeconds"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MQTTClientInfo.ExpireIntervalInSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireIntervalInSeconds = value["ExpireIntervalInSeconds"].GetInt64();
+        m_expireIntervalInSecondsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +244,22 @@ void MQTTClientInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_cleanSessionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CleanSession";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cleanSession, allocator);
+    }
+
+    if (m_expireIntervalInSecondsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireIntervalInSeconds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expireIntervalInSeconds, allocator);
     }
 
 }
@@ -369,5 +407,37 @@ void MQTTClientInfo::SetMQTTClientSubscriptions(const vector<MQTTClientSubscript
 bool MQTTClientInfo::MQTTClientSubscriptionsHasBeenSet() const
 {
     return m_mQTTClientSubscriptionsHasBeenSet;
+}
+
+bool MQTTClientInfo::GetCleanSession() const
+{
+    return m_cleanSession;
+}
+
+void MQTTClientInfo::SetCleanSession(const bool& _cleanSession)
+{
+    m_cleanSession = _cleanSession;
+    m_cleanSessionHasBeenSet = true;
+}
+
+bool MQTTClientInfo::CleanSessionHasBeenSet() const
+{
+    return m_cleanSessionHasBeenSet;
+}
+
+int64_t MQTTClientInfo::GetExpireIntervalInSeconds() const
+{
+    return m_expireIntervalInSeconds;
+}
+
+void MQTTClientInfo::SetExpireIntervalInSeconds(const int64_t& _expireIntervalInSeconds)
+{
+    m_expireIntervalInSeconds = _expireIntervalInSeconds;
+    m_expireIntervalInSecondsHasBeenSet = true;
+}
+
+bool MQTTClientInfo::ExpireIntervalInSecondsHasBeenSet() const
+{
+    return m_expireIntervalInSecondsHasBeenSet;
 }
 

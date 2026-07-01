@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取详情
-                     * @return Items 详情
+                     * 获取<p>详情</p>
+                     * @return Items <p>详情</p>
                      * 
                      */
                     std::vector<ResourceListInfo> GetItems() const;
@@ -59,9 +59,9 @@ namespace TencentCloud
                     bool ItemsHasBeenSet() const;
 
                     /**
-                     * 获取下一页
+                     * 获取<p>下一页</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NextToken 下一页
+                     * @return NextToken <p>下一页</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,20 +74,40 @@ namespace TencentCloud
                      */
                     bool NextTokenHasBeenSet() const;
 
+                    /**
+                     * 获取<p>总数</p>
+                     * @return Count <p>总数</p>
+                     * 
+                     */
+                    int64_t GetCount() const;
+
+                    /**
+                     * 判断参数 Count 是否已赋值
+                     * @return Count 是否已赋值
+                     * 
+                     */
+                    bool CountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 详情
+                     * <p>详情</p>
                      */
                     std::vector<ResourceListInfo> m_items;
                     bool m_itemsHasBeenSet;
 
                     /**
-                     * 下一页
+                     * <p>下一页</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nextToken;
                     bool m_nextTokenHasBeenSet;
+
+                    /**
+                     * <p>总数</p>
+                     */
+                    int64_t m_count;
+                    bool m_countHasBeenSet;
 
                 };
             }

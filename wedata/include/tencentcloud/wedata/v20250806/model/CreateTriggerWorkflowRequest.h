@@ -277,6 +277,48 @@ namespace TencentCloud
                      */
                     bool TriggerWorkflowRunConfigurationHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Trigger 状态 启动ACTIVE，暂停PAUSED。配置完之后，内部的Trigger状态可不配置，如果配置，内容会被该值覆盖</p><p>枚举值：</p><ul><li>ACTIVE： 启动</li><li>PAUSED： 暂停</li></ul>
+                     * @return SchedulerStatus <p>Trigger 状态 启动ACTIVE，暂停PAUSED。配置完之后，内部的Trigger状态可不配置，如果配置，内容会被该值覆盖</p><p>枚举值：</p><ul><li>ACTIVE： 启动</li><li>PAUSED： 暂停</li></ul>
+                     * 
+                     */
+                    std::string GetSchedulerStatus() const;
+
+                    /**
+                     * 设置<p>Trigger 状态 启动ACTIVE，暂停PAUSED。配置完之后，内部的Trigger状态可不配置，如果配置，内容会被该值覆盖</p><p>枚举值：</p><ul><li>ACTIVE： 启动</li><li>PAUSED： 暂停</li></ul>
+                     * @param _schedulerStatus <p>Trigger 状态 启动ACTIVE，暂停PAUSED。配置完之后，内部的Trigger状态可不配置，如果配置，内容会被该值覆盖</p><p>枚举值：</p><ul><li>ACTIVE： 启动</li><li>PAUSED： 暂停</li></ul>
+                     * 
+                     */
+                    void SetSchedulerStatus(const std::string& _schedulerStatus);
+
+                    /**
+                     * 判断参数 SchedulerStatus 是否已赋值
+                     * @return SchedulerStatus 是否已赋值
+                     * 
+                     */
+                    bool SchedulerStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>触发方式：定时触发：TIME_TRIGGER 。配置完之后，内部的TriggerMode状态可不配置，如果配置，内容会被该值覆盖。</p><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li></ul>
+                     * @return TriggerMode <p>触发方式：定时触发：TIME_TRIGGER 。配置完之后，内部的TriggerMode状态可不配置，如果配置，内容会被该值覆盖。</p><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li></ul>
+                     * 
+                     */
+                    std::string GetTriggerMode() const;
+
+                    /**
+                     * 设置<p>触发方式：定时触发：TIME_TRIGGER 。配置完之后，内部的TriggerMode状态可不配置，如果配置，内容会被该值覆盖。</p><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li></ul>
+                     * @param _triggerMode <p>触发方式：定时触发：TIME_TRIGGER 。配置完之后，内部的TriggerMode状态可不配置，如果配置，内容会被该值覆盖。</p><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li></ul>
+                     * 
+                     */
+                    void SetTriggerMode(const std::string& _triggerMode);
+
+                    /**
+                     * 判断参数 TriggerMode 是否已赋值
+                     * @return TriggerMode 是否已赋值
+                     * 
+                     */
+                    bool TriggerModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -344,6 +386,18 @@ namespace TencentCloud
                      */
                     WorkflowRunConfig m_triggerWorkflowRunConfiguration;
                     bool m_triggerWorkflowRunConfigurationHasBeenSet;
+
+                    /**
+                     * <p>Trigger 状态 启动ACTIVE，暂停PAUSED。配置完之后，内部的Trigger状态可不配置，如果配置，内容会被该值覆盖</p><p>枚举值：</p><ul><li>ACTIVE： 启动</li><li>PAUSED： 暂停</li></ul>
+                     */
+                    std::string m_schedulerStatus;
+                    bool m_schedulerStatusHasBeenSet;
+
+                    /**
+                     * <p>触发方式：定时触发：TIME_TRIGGER 。配置完之后，内部的TriggerMode状态可不配置，如果配置，内容会被该值覆盖。</p><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li></ul>
+                     */
+                    std::string m_triggerMode;
+                    bool m_triggerModeHasBeenSet;
 
                 };
             }

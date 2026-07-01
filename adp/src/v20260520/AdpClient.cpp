@@ -40,6 +40,56 @@ AdpClient::AdpClient(const Credential &credential, const string &region, const C
 }
 
 
+AdpClient::CopyAgentFromAppOutcome AdpClient::CopyAgentFromApp(const CopyAgentFromAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "CopyAgentFromApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CopyAgentFromAppResponse rsp = CopyAgentFromAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CopyAgentFromAppOutcome(rsp);
+        else
+            return CopyAgentFromAppOutcome(o.GetError());
+    }
+    else
+    {
+        return CopyAgentFromAppOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::CopyAgentFromAppAsync(const CopyAgentFromAppRequest& request, const CopyAgentFromAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CopyAgentFromAppRequest&;
+    using Resp = CopyAgentFromAppResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CopyAgentFromApp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::CopyAgentFromAppOutcomeCallable AdpClient::CopyAgentFromAppCallable(const CopyAgentFromAppRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CopyAgentFromAppOutcome>>();
+    CopyAgentFromAppAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const CopyAgentFromAppRequest&,
+        CopyAgentFromAppOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::CopyAppOutcome AdpClient::CopyApp(const CopyAppRequest &request)
 {
     auto outcome = MakeRequest(request, "CopyApp");

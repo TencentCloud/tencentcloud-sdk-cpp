@@ -39,7 +39,8 @@ Setats::Setats() :
     m_imageVersionHasBeenSet(false),
     m_webUITypeHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_isolationPolicyVersionHasBeenSet(false)
 {
 }
 
@@ -269,6 +270,16 @@ CoreInternalOutcome Setats::Deserialize(const rapidjson::Value &value)
         m_remarkHasBeenSet = true;
     }
 
+    if (value.HasMember("IsolationPolicyVersion") && !value["IsolationPolicyVersion"].IsNull())
+    {
+        if (!value["IsolationPolicyVersion"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Setats.IsolationPolicyVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolationPolicyVersion = value["IsolationPolicyVersion"].GetInt64();
+        m_isolationPolicyVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -436,6 +447,14 @@ void Setats::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isolationPolicyVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolationPolicyVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isolationPolicyVersion, allocator);
     }
 
 }
@@ -743,5 +762,21 @@ void Setats::SetRemark(const string& _remark)
 bool Setats::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+int64_t Setats::GetIsolationPolicyVersion() const
+{
+    return m_isolationPolicyVersion;
+}
+
+void Setats::SetIsolationPolicyVersion(const int64_t& _isolationPolicyVersion)
+{
+    m_isolationPolicyVersion = _isolationPolicyVersion;
+    m_isolationPolicyVersionHasBeenSet = true;
+}
+
+bool Setats::IsolationPolicyVersionHasBeenSet() const
+{
+    return m_isolationPolicyVersionHasBeenSet;
 }
 

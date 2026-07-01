@@ -105,6 +105,60 @@ namespace TencentCloud
                      */
                     bool NumberHasBeenSet() const;
 
+                    /**
+                     * 获取0:查询在线和离线客户端（默认值）
+1:查询在线客户端
+2:查询离线客户端
+                     * @return OnlineStatus 0:查询在线和离线客户端（默认值）
+1:查询在线客户端
+2:查询离线客户端
+                     * 
+                     */
+                    int64_t GetOnlineStatus() const;
+
+                    /**
+                     * 设置0:查询在线和离线客户端（默认值）
+1:查询在线客户端
+2:查询离线客户端
+                     * @param _onlineStatus 0:查询在线和离线客户端（默认值）
+1:查询在线客户端
+2:查询离线客户端
+                     * 
+                     */
+                    void SetOnlineStatus(const int64_t& _onlineStatus);
+
+                    /**
+                     * 判断参数 OnlineStatus 是否已赋值
+                     * @return OnlineStatus 是否已赋值
+                     * 
+                     */
+                    bool OnlineStatusHasBeenSet() const;
+
+                    /**
+                     * 获取在线连接：表示最后的连接时间
+离线连接：表示最后的断开连接时间
+                     * @return MaxTimestamp 在线连接：表示最后的连接时间
+离线连接：表示最后的断开连接时间
+                     * 
+                     */
+                    int64_t GetMaxTimestamp() const;
+
+                    /**
+                     * 设置在线连接：表示最后的连接时间
+离线连接：表示最后的断开连接时间
+                     * @param _maxTimestamp 在线连接：表示最后的连接时间
+离线连接：表示最后的断开连接时间
+                     * 
+                     */
+                    void SetMaxTimestamp(const int64_t& _maxTimestamp);
+
+                    /**
+                     * 判断参数 MaxTimestamp 是否已赋值
+                     * @return MaxTimestamp 是否已赋值
+                     * 
+                     */
+                    bool MaxTimestampHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +178,21 @@ namespace TencentCloud
                      */
                     std::string m_number;
                     bool m_numberHasBeenSet;
+
+                    /**
+                     * 0:查询在线和离线客户端（默认值）
+1:查询在线客户端
+2:查询离线客户端
+                     */
+                    int64_t m_onlineStatus;
+                    bool m_onlineStatusHasBeenSet;
+
+                    /**
+                     * 在线连接：表示最后的连接时间
+离线连接：表示最后的断开连接时间
+                     */
+                    int64_t m_maxTimestamp;
+                    bool m_maxTimestampHasBeenSet;
 
                 };
             }

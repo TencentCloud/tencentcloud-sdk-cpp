@@ -64,7 +64,11 @@ JobV1::JobV1() :
     m_continueAlarmHasBeenSet(false),
     m_restartCountHasBeenSet(false),
     m_expectJobDefaultAlarmStatusHasBeenSet(false),
-    m_jdkVersionHasBeenSet(false)
+    m_jdkVersionHasBeenSet(false),
+    m_stateCOSBucketHasBeenSet(false),
+    m_newStateCOSBucketHasBeenSet(false),
+    m_stateCOSBucketTypeHasBeenSet(false),
+    m_newStateCOSBucketTypeHasBeenSet(false)
 {
 }
 
@@ -530,6 +534,46 @@ CoreInternalOutcome JobV1::Deserialize(const rapidjson::Value &value)
         m_jdkVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("StateCOSBucket") && !value["StateCOSBucket"].IsNull())
+    {
+        if (!value["StateCOSBucket"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobV1.StateCOSBucket` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_stateCOSBucket = string(value["StateCOSBucket"].GetString());
+        m_stateCOSBucketHasBeenSet = true;
+    }
+
+    if (value.HasMember("NewStateCOSBucket") && !value["NewStateCOSBucket"].IsNull())
+    {
+        if (!value["NewStateCOSBucket"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobV1.NewStateCOSBucket` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_newStateCOSBucket = string(value["NewStateCOSBucket"].GetString());
+        m_newStateCOSBucketHasBeenSet = true;
+    }
+
+    if (value.HasMember("StateCOSBucketType") && !value["StateCOSBucketType"].IsNull())
+    {
+        if (!value["StateCOSBucketType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobV1.StateCOSBucketType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_stateCOSBucketType = value["StateCOSBucketType"].GetInt64();
+        m_stateCOSBucketTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("NewStateCOSBucketType") && !value["NewStateCOSBucketType"].IsNull())
+    {
+        if (!value["NewStateCOSBucketType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobV1.NewStateCOSBucketType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_newStateCOSBucketType = value["NewStateCOSBucketType"].GetInt64();
+        m_newStateCOSBucketTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -895,6 +939,38 @@ void JobV1::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "JdkVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_jdkVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stateCOSBucketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StateCOSBucket";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stateCOSBucket.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_newStateCOSBucketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewStateCOSBucket";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_newStateCOSBucket.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stateCOSBucketTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StateCOSBucketType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_stateCOSBucketType, allocator);
+    }
+
+    if (m_newStateCOSBucketTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewStateCOSBucketType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_newStateCOSBucketType, allocator);
     }
 
 }
@@ -1602,5 +1678,69 @@ void JobV1::SetJdkVersion(const string& _jdkVersion)
 bool JobV1::JdkVersionHasBeenSet() const
 {
     return m_jdkVersionHasBeenSet;
+}
+
+string JobV1::GetStateCOSBucket() const
+{
+    return m_stateCOSBucket;
+}
+
+void JobV1::SetStateCOSBucket(const string& _stateCOSBucket)
+{
+    m_stateCOSBucket = _stateCOSBucket;
+    m_stateCOSBucketHasBeenSet = true;
+}
+
+bool JobV1::StateCOSBucketHasBeenSet() const
+{
+    return m_stateCOSBucketHasBeenSet;
+}
+
+string JobV1::GetNewStateCOSBucket() const
+{
+    return m_newStateCOSBucket;
+}
+
+void JobV1::SetNewStateCOSBucket(const string& _newStateCOSBucket)
+{
+    m_newStateCOSBucket = _newStateCOSBucket;
+    m_newStateCOSBucketHasBeenSet = true;
+}
+
+bool JobV1::NewStateCOSBucketHasBeenSet() const
+{
+    return m_newStateCOSBucketHasBeenSet;
+}
+
+int64_t JobV1::GetStateCOSBucketType() const
+{
+    return m_stateCOSBucketType;
+}
+
+void JobV1::SetStateCOSBucketType(const int64_t& _stateCOSBucketType)
+{
+    m_stateCOSBucketType = _stateCOSBucketType;
+    m_stateCOSBucketTypeHasBeenSet = true;
+}
+
+bool JobV1::StateCOSBucketTypeHasBeenSet() const
+{
+    return m_stateCOSBucketTypeHasBeenSet;
+}
+
+int64_t JobV1::GetNewStateCOSBucketType() const
+{
+    return m_newStateCOSBucketType;
+}
+
+void JobV1::SetNewStateCOSBucketType(const int64_t& _newStateCOSBucketType)
+{
+    m_newStateCOSBucketType = _newStateCOSBucketType;
+    m_newStateCOSBucketTypeHasBeenSet = true;
+}
+
+bool JobV1::NewStateCOSBucketTypeHasBeenSet() const
+{
+    return m_newStateCOSBucketTypeHasBeenSet;
 }
 

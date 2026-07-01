@@ -85,7 +85,8 @@ DeployContainerApplicationRequest::DeployContainerApplicationRequest() :
     m_podManagementPolicyTypeHasBeenSet(false),
     m_partitionHasBeenSet(false),
     m_incrementalDeploymentHasBeenSet(false),
-    m_doNotStartHasBeenSet(false)
+    m_doNotStartHasBeenSet(false),
+    m_imagePullSecretListHasBeenSet(false)
 {
 }
 
@@ -660,6 +661,19 @@ string DeployContainerApplicationRequest::ToJsonString() const
         string key = "DoNotStart";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_doNotStart, allocator);
+    }
+
+    if (m_imagePullSecretListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImagePullSecretList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_imagePullSecretList.begin(); itr != m_imagePullSecretList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -1676,6 +1690,22 @@ void DeployContainerApplicationRequest::SetDoNotStart(const bool& _doNotStart)
 bool DeployContainerApplicationRequest::DoNotStartHasBeenSet() const
 {
     return m_doNotStartHasBeenSet;
+}
+
+vector<string> DeployContainerApplicationRequest::GetImagePullSecretList() const
+{
+    return m_imagePullSecretList;
+}
+
+void DeployContainerApplicationRequest::SetImagePullSecretList(const vector<string>& _imagePullSecretList)
+{
+    m_imagePullSecretList = _imagePullSecretList;
+    m_imagePullSecretListHasBeenSet = true;
+}
+
+bool DeployContainerApplicationRequest::ImagePullSecretListHasBeenSet() const
+{
+    return m_imagePullSecretListHasBeenSet;
 }
 
 

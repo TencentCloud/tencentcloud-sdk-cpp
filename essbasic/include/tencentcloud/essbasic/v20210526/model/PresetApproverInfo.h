@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取预设参与方姓名。
-                     * @return Name 预设参与方姓名。
+                     * 获取<p>预设参与方姓名。</p>
+                     * @return Name <p>预设参与方姓名。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置预设参与方姓名。
-                     * @param _name 预设参与方姓名。
+                     * 设置<p>预设参与方姓名。</p>
+                     * @param _name <p>预设参与方姓名。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取预设参与方手机号。
-                     * @return Mobile 预设参与方手机号。
+                     * 获取<p>预设参与方手机号。</p>
+                     * @return Mobile <p>预设参与方手机号。</p>
                      * 
                      */
                     std::string GetMobile() const;
 
                     /**
-                     * 设置预设参与方手机号。
-                     * @param _mobile 预设参与方手机号。
+                     * 设置<p>预设参与方手机号。</p>
+                     * @param _mobile <p>预设参与方手机号。</p>
                      * 
                      */
                     void SetMobile(const std::string& _mobile);
@@ -89,27 +89,15 @@ namespace TencentCloud
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取预设参与方证件号，需要和IdCardType同时传入。
-
-证件号码，应符合以下规则
-<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li></ul>
-                     * @return IdCardNumber 预设参与方证件号，需要和IdCardType同时传入。
-
-证件号码，应符合以下规则
-<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li></ul>
+                     * 获取<p>预设参与方证件号，需要和IdCardType同时传入。</p><p>证件号码，应符合以下规则</p><ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li></ul>
+                     * @return IdCardNumber <p>预设参与方证件号，需要和IdCardType同时传入。</p><p>证件号码，应符合以下规则</p><ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li></ul>
                      * 
                      */
                     std::string GetIdCardNumber() const;
 
                     /**
-                     * 设置预设参与方证件号，需要和IdCardType同时传入。
-
-证件号码，应符合以下规则
-<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li></ul>
-                     * @param _idCardNumber 预设参与方证件号，需要和IdCardType同时传入。
-
-证件号码，应符合以下规则
-<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li></ul>
+                     * 设置<p>预设参与方证件号，需要和IdCardType同时传入。</p><p>证件号码，应符合以下规则</p><ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li></ul>
+                     * @param _idCardNumber <p>预设参与方证件号，需要和IdCardType同时传入。</p><p>证件号码，应符合以下规则</p><ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li></ul>
                      * 
                      */
                     void SetIdCardNumber(const std::string& _idCardNumber);
@@ -122,27 +110,15 @@ namespace TencentCloud
                     bool IdCardNumberHasBeenSet() const;
 
                     /**
-                     * 获取预设参与方的证件类型，需要与IdCardNumber同时传入。
-
-证件类型，支持以下类型
-<ul><li><b>ID_CARD</b>: 居民身份证</li></ul>
-                     * @return IdCardType 预设参与方的证件类型，需要与IdCardNumber同时传入。
-
-证件类型，支持以下类型
-<ul><li><b>ID_CARD</b>: 居民身份证</li></ul>
+                     * 获取<p>预设参与方的证件类型，需要与IdCardNumber同时传入。</p><p>证件类型，支持以下类型</p><ul><li><b>ID_CARD</b>: 居民身份证</li></ul>
+                     * @return IdCardType <p>预设参与方的证件类型，需要与IdCardNumber同时传入。</p><p>证件类型，支持以下类型</p><ul><li><b>ID_CARD</b>: 居民身份证</li></ul>
                      * 
                      */
                     std::string GetIdCardType() const;
 
                     /**
-                     * 设置预设参与方的证件类型，需要与IdCardNumber同时传入。
-
-证件类型，支持以下类型
-<ul><li><b>ID_CARD</b>: 居民身份证</li></ul>
-                     * @param _idCardType 预设参与方的证件类型，需要与IdCardNumber同时传入。
-
-证件类型，支持以下类型
-<ul><li><b>ID_CARD</b>: 居民身份证</li></ul>
+                     * 设置<p>预设参与方的证件类型，需要与IdCardNumber同时传入。</p><p>证件类型，支持以下类型</p><ul><li><b>ID_CARD</b>: 居民身份证</li></ul>
+                     * @param _idCardType <p>预设参与方的证件类型，需要与IdCardNumber同时传入。</p><p>证件类型，支持以下类型</p><ul><li><b>ID_CARD</b>: 居民身份证</li></ul>
                      * 
                      */
                     void SetIdCardType(const std::string& _idCardType);
@@ -154,37 +130,58 @@ namespace TencentCloud
                      */
                     bool IdCardTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>企业用户动态签署方场景指定预设企业名称。<code>注意：1. 若为企业动态签署方场景，此参数必须要指定。2. 企业动态签署方场景暂不支持指定姓名证件手机号等参数，仅支持指定企业名称。3. 暂不支持指定子客企业，此处预设的企业仅支持SaaS企业。</code></p>
+                     * @return OrganizationName <p>企业用户动态签署方场景指定预设企业名称。<code>注意：1. 若为企业动态签署方场景，此参数必须要指定。2. 企业动态签署方场景暂不支持指定姓名证件手机号等参数，仅支持指定企业名称。3. 暂不支持指定子客企业，此处预设的企业仅支持SaaS企业。</code></p>
+                     * 
+                     */
+                    std::string GetOrganizationName() const;
+
+                    /**
+                     * 设置<p>企业用户动态签署方场景指定预设企业名称。<code>注意：1. 若为企业动态签署方场景，此参数必须要指定。2. 企业动态签署方场景暂不支持指定姓名证件手机号等参数，仅支持指定企业名称。3. 暂不支持指定子客企业，此处预设的企业仅支持SaaS企业。</code></p>
+                     * @param _organizationName <p>企业用户动态签署方场景指定预设企业名称。<code>注意：1. 若为企业动态签署方场景，此参数必须要指定。2. 企业动态签署方场景暂不支持指定姓名证件手机号等参数，仅支持指定企业名称。3. 暂不支持指定子客企业，此处预设的企业仅支持SaaS企业。</code></p>
+                     * 
+                     */
+                    void SetOrganizationName(const std::string& _organizationName);
+
+                    /**
+                     * 判断参数 OrganizationName 是否已赋值
+                     * @return OrganizationName 是否已赋值
+                     * 
+                     */
+                    bool OrganizationNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 预设参与方姓名。
+                     * <p>预设参与方姓名。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 预设参与方手机号。
+                     * <p>预设参与方手机号。</p>
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 预设参与方证件号，需要和IdCardType同时传入。
-
-证件号码，应符合以下规则
-<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li></ul>
+                     * <p>预设参与方证件号，需要和IdCardType同时传入。</p><p>证件号码，应符合以下规则</p><ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li></ul>
                      */
                     std::string m_idCardNumber;
                     bool m_idCardNumberHasBeenSet;
 
                     /**
-                     * 预设参与方的证件类型，需要与IdCardNumber同时传入。
-
-证件类型，支持以下类型
-<ul><li><b>ID_CARD</b>: 居民身份证</li></ul>
+                     * <p>预设参与方的证件类型，需要与IdCardNumber同时传入。</p><p>证件类型，支持以下类型</p><ul><li><b>ID_CARD</b>: 居民身份证</li></ul>
                      */
                     std::string m_idCardType;
                     bool m_idCardTypeHasBeenSet;
+
+                    /**
+                     * <p>企业用户动态签署方场景指定预设企业名称。<code>注意：1. 若为企业动态签署方场景，此参数必须要指定。2. 企业动态签署方场景暂不支持指定姓名证件手机号等参数，仅支持指定企业名称。3. 暂不支持指定子客企业，此处预设的企业仅支持SaaS企业。</code></p>
+                     */
+                    std::string m_organizationName;
+                    bool m_organizationNameHasBeenSet;
 
                 };
             }

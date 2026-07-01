@@ -1493,7 +1493,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/GetOpsAsyncJobResponse.h
   include/tencentcloud/wedata/v20250806/model/DeleteSQLFolderRequest.h
   include/tencentcloud/wedata/v20250806/model/CreateTriggerWorkflowRequest.h
-  include/tencentcloud/wedata/v20250806/model/Project.h
+  include/tencentcloud/wedata/v20250806/model/ComputeConfigMapping.h
   include/tencentcloud/wedata/v20250806/model/ListDatabasePage.h
   include/tencentcloud/wedata/v20250806/model/ListResourceGroupsRequest.h
   include/tencentcloud/wedata/v20250806/model/GetResourceFolderResponse.h
@@ -1574,6 +1574,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/DeleteOpsAlarmRuleRequest.h
   include/tencentcloud/wedata/v20250806/model/GetTaskCodeResponse.h
   include/tencentcloud/wedata/v20250806/model/ModifyQualityRuleGroupResponse.h
+  include/tencentcloud/wedata/v20250806/model/Project.h
   include/tencentcloud/wedata/v20250806/model/CreateCodePermissionsRequest.h
   include/tencentcloud/wedata/v20250806/model/SQLContentActionResult.h
   include/tencentcloud/wedata/v20250806/model/DeleteTriggerWorkflowRequest.h
@@ -3138,7 +3139,7 @@ set(wedata_src
   src/v20250806/model/GetOpsAsyncJobResponse.cpp
   src/v20250806/model/DeleteSQLFolderRequest.cpp
   src/v20250806/model/CreateTriggerWorkflowRequest.cpp
-  src/v20250806/model/Project.cpp
+  src/v20250806/model/ComputeConfigMapping.cpp
   src/v20250806/model/ListDatabasePage.cpp
   src/v20250806/model/ListResourceGroupsRequest.cpp
   src/v20250806/model/GetResourceFolderResponse.cpp
@@ -3219,6 +3220,7 @@ set(wedata_src
   src/v20250806/model/DeleteOpsAlarmRuleRequest.cpp
   src/v20250806/model/GetTaskCodeResponse.cpp
   src/v20250806/model/ModifyQualityRuleGroupResponse.cpp
+  src/v20250806/model/Project.cpp
   src/v20250806/model/CreateCodePermissionsRequest.cpp
   src/v20250806/model/SQLContentActionResult.cpp
   src/v20250806/model/DeleteTriggerWorkflowRequest.cpp

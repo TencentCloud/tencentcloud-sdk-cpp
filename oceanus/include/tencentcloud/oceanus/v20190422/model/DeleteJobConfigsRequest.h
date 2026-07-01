@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取作业ID
-                     * @return JobId 作业ID
+                     * 获取<p>作业ID</p>
+                     * @return JobId <p>作业ID</p>
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置作业ID
-                     * @param _jobId 作业ID
+                     * 设置<p>作业ID</p>
+                     * @param _jobId <p>作业ID</p>
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取作业配置版本数组
-                     * @return JobConfigVersions 作业配置版本数组
+                     * 获取<p>作业配置版本数组</p>
+                     * @return JobConfigVersions <p>作业配置版本数组</p>
                      * 
                      */
                     std::vector<int64_t> GetJobConfigVersions() const;
 
                     /**
-                     * 设置作业配置版本数组
-                     * @param _jobConfigVersions 作业配置版本数组
+                     * 设置<p>作业配置版本数组</p>
+                     * @param _jobConfigVersions <p>作业配置版本数组</p>
                      * 
                      */
                     void SetJobConfigVersions(const std::vector<int64_t>& _jobConfigVersions);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool JobConfigVersionsHasBeenSet() const;
 
                     /**
-                     * 获取工作空间 SerialId
-                     * @return WorkSpaceId 工作空间 SerialId
+                     * 获取<p>工作空间 SerialId</p>
+                     * @return WorkSpaceId <p>工作空间 SerialId</p>
                      * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
-                     * 设置工作空间 SerialId
-                     * @param _workSpaceId 工作空间 SerialId
+                     * 设置<p>工作空间 SerialId</p>
+                     * @param _workSpaceId <p>工作空间 SerialId</p>
                      * 
                      */
                     void SetWorkSpaceId(const std::string& _workSpaceId);
@@ -105,25 +105,52 @@ namespace TencentCloud
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>配置更新范围 0=全量(默认) 1=仅开发 2=仅运维</p><p>取值范围：[0, 2]</p>
+                     * @return ConfigScope <p>配置更新范围 0=全量(默认) 1=仅开发 2=仅运维</p><p>取值范围：[0, 2]</p>
+                     * 
+                     */
+                    int64_t GetConfigScope() const;
+
+                    /**
+                     * 设置<p>配置更新范围 0=全量(默认) 1=仅开发 2=仅运维</p><p>取值范围：[0, 2]</p>
+                     * @param _configScope <p>配置更新范围 0=全量(默认) 1=仅开发 2=仅运维</p><p>取值范围：[0, 2]</p>
+                     * 
+                     */
+                    void SetConfigScope(const int64_t& _configScope);
+
+                    /**
+                     * 判断参数 ConfigScope 是否已赋值
+                     * @return ConfigScope 是否已赋值
+                     * 
+                     */
+                    bool ConfigScopeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 作业ID
+                     * <p>作业ID</p>
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 作业配置版本数组
+                     * <p>作业配置版本数组</p>
                      */
                     std::vector<int64_t> m_jobConfigVersions;
                     bool m_jobConfigVersionsHasBeenSet;
 
                     /**
-                     * 工作空间 SerialId
+                     * <p>工作空间 SerialId</p>
                      */
                     std::string m_workSpaceId;
                     bool m_workSpaceIdHasBeenSet;
+
+                    /**
+                     * <p>配置更新范围 0=全量(默认) 1=仅开发 2=仅运维</p><p>取值范围：[0, 2]</p>
+                     */
+                    int64_t m_configScope;
+                    bool m_configScopeHasBeenSet;
 
                 };
             }

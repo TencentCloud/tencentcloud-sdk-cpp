@@ -546,21 +546,21 @@ DELETING，删除中
                     /**
                      * 获取单个共享订阅组TopicFilter数限制
                      * @return MaxTopicFilterPerSharedSubscriptionGroup 单个共享订阅组TopicFilter数限制
-                     * 
+                     * @deprecated
                      */
                     int64_t GetMaxTopicFilterPerSharedSubscriptionGroup() const;
 
                     /**
                      * 设置单个共享订阅组TopicFilter数限制
                      * @param _maxTopicFilterPerSharedSubscriptionGroup 单个共享订阅组TopicFilter数限制
-                     * 
+                     * @deprecated
                      */
                     void SetMaxTopicFilterPerSharedSubscriptionGroup(const int64_t& _maxTopicFilterPerSharedSubscriptionGroup);
 
                     /**
                      * 判断参数 MaxTopicFilterPerSharedSubscriptionGroup 是否已赋值
                      * @return MaxTopicFilterPerSharedSubscriptionGroup 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool MaxTopicFilterPerSharedSubscriptionGroupHasBeenSet() const;
 
@@ -605,6 +605,27 @@ DELETING，删除中
                      * 
                      */
                     bool MaxTopicFilterPerAutoSubscriptionPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取集群删除保护开关
+                     * @return DeleteProtect 集群删除保护开关
+                     * 
+                     */
+                    bool GetDeleteProtect() const;
+
+                    /**
+                     * 设置集群删除保护开关
+                     * @param _deleteProtect 集群删除保护开关
+                     * 
+                     */
+                    void SetDeleteProtect(const bool& _deleteProtect);
+
+                    /**
+                     * 判断参数 DeleteProtect 是否已赋值
+                     * @return DeleteProtect 是否已赋值
+                     * 
+                     */
+                    bool DeleteProtectHasBeenSet() const;
 
                 private:
 
@@ -765,6 +786,12 @@ DELETING，删除中
                      */
                     int64_t m_maxTopicFilterPerAutoSubscriptionPolicy;
                     bool m_maxTopicFilterPerAutoSubscriptionPolicyHasBeenSet;
+
+                    /**
+                     * 集群删除保护开关
+                     */
+                    bool m_deleteProtect;
+                    bool m_deleteProtectHasBeenSet;
 
                 };
             }

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取异步任务ID。
-                     * @return TaskId 异步任务ID。
+                     * 获取<p>异步任务ID。</p>
+                     * @return TaskId <p>异步任务ID。</p>
                      * 
                      */
                     std::string GetTaskId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取七层转发策略ID。
-                     * @return ForwardingPolicyId 七层转发策略ID。
+                     * 获取<p>七层转发策略ID。</p>
+                     * @return ForwardingPolicyId <p>七层转发策略ID。</p>
                      * 
                      */
                     std::string GetForwardingPolicyId() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 异步任务ID。
+                     * <p>异步任务ID。</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 七层转发策略ID。
+                     * <p>七层转发策略ID。</p>
                      */
                     std::string m_forwardingPolicyId;
                     bool m_forwardingPolicyIdHasBeenSet;

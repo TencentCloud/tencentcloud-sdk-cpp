@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合规包ID
-                     * @return CompliancePackId 合规包ID
+                     * 获取<p>合规包ID</p>
+                     * @return CompliancePackId <p>合规包ID</p>
                      * 
                      */
                     std::string GetCompliancePackId() const;
 
                     /**
-                     * 设置合规包ID
-                     * @param _compliancePackId 合规包ID
+                     * 设置<p>合规包ID</p>
+                     * @param _compliancePackId <p>合规包ID</p>
                      * 
                      */
                     void SetCompliancePackId(const std::string& _compliancePackId);
@@ -64,19 +64,15 @@ namespace TencentCloud
                     bool CompliancePackIdHasBeenSet() const;
 
                     /**
-                     * 获取ACTIVE：启用
-UN_ACTIVE ：停用
-                     * @return Status ACTIVE：启用
-UN_ACTIVE ：停用
+                     * 获取<p>ACTIVE：启用<br>UN_ACTIVE ：停用</p>
+                     * @return Status <p>ACTIVE：启用<br>UN_ACTIVE ：停用</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置ACTIVE：启用
-UN_ACTIVE ：停用
-                     * @param _status ACTIVE：启用
-UN_ACTIVE ：停用
+                     * 设置<p>ACTIVE：启用<br>UN_ACTIVE ：停用</p>
+                     * @param _status <p>ACTIVE：启用<br>UN_ACTIVE ：停用</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -91,14 +87,13 @@ UN_ACTIVE ：停用
                 private:
 
                     /**
-                     * 合规包ID
+                     * <p>合规包ID</p>
                      */
                     std::string m_compliancePackId;
                     bool m_compliancePackIdHasBeenSet;
 
                     /**
-                     * ACTIVE：启用
-UN_ACTIVE ：停用
+                     * <p>ACTIVE：启用<br>UN_ACTIVE ：停用</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

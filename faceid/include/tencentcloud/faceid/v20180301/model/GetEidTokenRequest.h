@@ -45,27 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取EID商户ID。
-- 商户ID通过人脸核身控制台[自助接入](https://console.cloud.tencent.com/faceid/access)申请。
-- 商户ID与您通过腾讯云人脸核身控制台完成自助接入时所使用的腾讯云账号绑定。
-- 必须使用申请该商户ID时登录的腾讯云账号所对应的腾讯云API密钥调用该接口。
-                     * @return MerchantId EID商户ID。
-- 商户ID通过人脸核身控制台[自助接入](https://console.cloud.tencent.com/faceid/access)申请。
-- 商户ID与您通过腾讯云人脸核身控制台完成自助接入时所使用的腾讯云账号绑定。
-- 必须使用申请该商户ID时登录的腾讯云账号所对应的腾讯云API密钥调用该接口。
+                     * 获取<p>EID商户ID。</p><ul><li>商户ID通过人脸核身控制台<a href="https://console.cloud.tencent.com/faceid/access">自助接入</a>申请。</li><li>商户ID与您通过腾讯云人脸核身控制台完成自助接入时所使用的腾讯云账号绑定。</li><li>必须使用申请该商户ID时登录的腾讯云账号所对应的腾讯云API密钥调用该接口。</li></ul>
+                     * @return MerchantId <p>EID商户ID。</p><ul><li>商户ID通过人脸核身控制台<a href="https://console.cloud.tencent.com/faceid/access">自助接入</a>申请。</li><li>商户ID与您通过腾讯云人脸核身控制台完成自助接入时所使用的腾讯云账号绑定。</li><li>必须使用申请该商户ID时登录的腾讯云账号所对应的腾讯云API密钥调用该接口。</li></ul>
                      * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
-                     * 设置EID商户ID。
-- 商户ID通过人脸核身控制台[自助接入](https://console.cloud.tencent.com/faceid/access)申请。
-- 商户ID与您通过腾讯云人脸核身控制台完成自助接入时所使用的腾讯云账号绑定。
-- 必须使用申请该商户ID时登录的腾讯云账号所对应的腾讯云API密钥调用该接口。
-                     * @param _merchantId EID商户ID。
-- 商户ID通过人脸核身控制台[自助接入](https://console.cloud.tencent.com/faceid/access)申请。
-- 商户ID与您通过腾讯云人脸核身控制台完成自助接入时所使用的腾讯云账号绑定。
-- 必须使用申请该商户ID时登录的腾讯云账号所对应的腾讯云API密钥调用该接口。
+                     * 设置<p>EID商户ID。</p><ul><li>商户ID通过人脸核身控制台<a href="https://console.cloud.tencent.com/faceid/access">自助接入</a>申请。</li><li>商户ID与您通过腾讯云人脸核身控制台完成自助接入时所使用的腾讯云账号绑定。</li><li>必须使用申请该商户ID时登录的腾讯云账号所对应的腾讯云API密钥调用该接口。</li></ul>
+                     * @param _merchantId <p>EID商户ID。</p><ul><li>商户ID通过人脸核身控制台<a href="https://console.cloud.tencent.com/faceid/access">自助接入</a>申请。</li><li>商户ID与您通过腾讯云人脸核身控制台完成自助接入时所使用的腾讯云账号绑定。</li><li>必须使用申请该商户ID时登录的腾讯云账号所对应的腾讯云API密钥调用该接口。</li></ul>
                      * 
                      */
                     void SetMerchantId(const std::string& _merchantId);
@@ -78,27 +66,15 @@ namespace TencentCloud
                     bool MerchantIdHasBeenSet() const;
 
                     /**
-                     * 获取身份标识。
-- 未使用OCR服务时，必须传入。
-- 规则：a-z，A-Z，0-9组合。
-- 最长长度32位。
-                     * @return IdCard 身份标识。
-- 未使用OCR服务时，必须传入。
-- 规则：a-z，A-Z，0-9组合。
-- 最长长度32位。
+                     * 获取<p>身份标识。</p><ul><li>未使用OCR服务时，必须传入。</li><li>规则：a-z，A-Z，0-9组合。</li><li>最长长度32位。</li></ul>
+                     * @return IdCard <p>身份标识。</p><ul><li>未使用OCR服务时，必须传入。</li><li>规则：a-z，A-Z，0-9组合。</li><li>最长长度32位。</li></ul>
                      * 
                      */
                     std::string GetIdCard() const;
 
                     /**
-                     * 设置身份标识。
-- 未使用OCR服务时，必须传入。
-- 规则：a-z，A-Z，0-9组合。
-- 最长长度32位。
-                     * @param _idCard 身份标识。
-- 未使用OCR服务时，必须传入。
-- 规则：a-z，A-Z，0-9组合。
-- 最长长度32位。
+                     * 设置<p>身份标识。</p><ul><li>未使用OCR服务时，必须传入。</li><li>规则：a-z，A-Z，0-9组合。</li><li>最长长度32位。</li></ul>
+                     * @param _idCard <p>身份标识。</p><ul><li>未使用OCR服务时，必须传入。</li><li>规则：a-z，A-Z，0-9组合。</li><li>最长长度32位。</li></ul>
                      * 
                      */
                     void SetIdCard(const std::string& _idCard);
@@ -111,27 +87,15 @@ namespace TencentCloud
                     bool IdCardHasBeenSet() const;
 
                     /**
-                     * 获取姓名。
-- 未使用OCR服务时，必须传入。
-- 最长长度32位。
-- 中文请使用UTF-8编码。
-                     * @return Name 姓名。
-- 未使用OCR服务时，必须传入。
-- 最长长度32位。
-- 中文请使用UTF-8编码。
+                     * 获取<p>姓名。</p><ul><li>未使用OCR服务时，必须传入。</li><li>最长长度32位。</li><li>中文请使用UTF-8编码。</li></ul>
+                     * @return Name <p>姓名。</p><ul><li>未使用OCR服务时，必须传入。</li><li>最长长度32位。</li><li>中文请使用UTF-8编码。</li></ul>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置姓名。
-- 未使用OCR服务时，必须传入。
-- 最长长度32位。
-- 中文请使用UTF-8编码。
-                     * @param _name 姓名。
-- 未使用OCR服务时，必须传入。
-- 最长长度32位。
-- 中文请使用UTF-8编码。
+                     * 设置<p>姓名。</p><ul><li>未使用OCR服务时，必须传入。</li><li>最长长度32位。</li><li>中文请使用UTF-8编码。</li></ul>
+                     * @param _name <p>姓名。</p><ul><li>未使用OCR服务时，必须传入。</li><li>最长长度32位。</li><li>中文请使用UTF-8编码。</li></ul>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -144,19 +108,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取透传字段，在获取验证结果时返回。
-- 最长长度1024位。
-                     * @return Extra 透传字段，在获取验证结果时返回。
-- 最长长度1024位。
+                     * 获取<p>透传字段，在获取验证结果时返回。</p><ul><li>最长长度1024位。</li></ul>
+                     * @return Extra <p>透传字段，在获取验证结果时返回。</p><ul><li>最长长度1024位。</li></ul>
                      * 
                      */
                     std::string GetExtra() const;
 
                     /**
-                     * 设置透传字段，在获取验证结果时返回。
-- 最长长度1024位。
-                     * @param _extra 透传字段，在获取验证结果时返回。
-- 最长长度1024位。
+                     * 设置<p>透传字段，在获取验证结果时返回。</p><ul><li>最长长度1024位。</li></ul>
+                     * @param _extra <p>透传字段，在获取验证结果时返回。</p><ul><li>最长长度1024位。</li></ul>
                      * 
                      */
                     void SetExtra(const std::string& _extra);
@@ -169,15 +129,15 @@ namespace TencentCloud
                     bool ExtraHasBeenSet() const;
 
                     /**
-                     * 获取小程序模式配置，包括如何传入姓名身份证的配置，以及是否使用意愿核身。
-                     * @return Config 小程序模式配置，包括如何传入姓名身份证的配置，以及是否使用意愿核身。
+                     * 获取<p>小程序模式配置，包括如何传入姓名身份证的配置，以及是否使用意愿核身。</p>
+                     * @return Config <p>小程序模式配置，包括如何传入姓名身份证的配置，以及是否使用意愿核身。</p>
                      * 
                      */
                     GetEidTokenConfig GetConfig() const;
 
                     /**
-                     * 设置小程序模式配置，包括如何传入姓名身份证的配置，以及是否使用意愿核身。
-                     * @param _config 小程序模式配置，包括如何传入姓名身份证的配置，以及是否使用意愿核身。
+                     * 设置<p>小程序模式配置，包括如何传入姓名身份证的配置，以及是否使用意愿核身。</p>
+                     * @param _config <p>小程序模式配置，包括如何传入姓名身份证的配置，以及是否使用意愿核身。</p>
                      * 
                      */
                     void SetConfig(const GetEidTokenConfig& _config);
@@ -190,23 +150,15 @@ namespace TencentCloud
                     bool ConfigHasBeenSet() const;
 
                     /**
-                     * 获取用户从Url中进入核身认证结束后重定向的回调链接地址。
-- 最长长度1024位。
-- EidToken会在该链接的query参数中。
-                     * @return RedirectUrl 用户从Url中进入核身认证结束后重定向的回调链接地址。
-- 最长长度1024位。
-- EidToken会在该链接的query参数中。
+                     * 获取<p>用户从Url中进入核身认证结束后重定向的回调链接地址。</p><ul><li>最长长度1024位。</li><li>EidToken会在该链接的query参数中。</li></ul>
+                     * @return RedirectUrl <p>用户从Url中进入核身认证结束后重定向的回调链接地址。</p><ul><li>最长长度1024位。</li><li>EidToken会在该链接的query参数中。</li></ul>
                      * 
                      */
                     std::string GetRedirectUrl() const;
 
                     /**
-                     * 设置用户从Url中进入核身认证结束后重定向的回调链接地址。
-- 最长长度1024位。
-- EidToken会在该链接的query参数中。
-                     * @param _redirectUrl 用户从Url中进入核身认证结束后重定向的回调链接地址。
-- 最长长度1024位。
-- EidToken会在该链接的query参数中。
+                     * 设置<p>用户从Url中进入核身认证结束后重定向的回调链接地址。</p><ul><li>最长长度1024位。</li><li>EidToken会在该链接的query参数中。</li></ul>
+                     * @param _redirectUrl <p>用户从Url中进入核身认证结束后重定向的回调链接地址。</p><ul><li>最长长度1024位。</li><li>EidToken会在该链接的query参数中。</li></ul>
                      * 
                      */
                     void SetRedirectUrl(const std::string& _redirectUrl);
@@ -219,19 +171,15 @@ namespace TencentCloud
                     bool RedirectUrlHasBeenSet() const;
 
                     /**
-                     * 获取敏感数据加密信息。
-- 对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
-                     * @return Encryption 敏感数据加密信息。
-- 对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 获取<p>敏感数据加密信息。</p><ul><li>对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。</li></ul>
+                     * @return Encryption <p>敏感数据加密信息。</p><ul><li>对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。</li></ul>
                      * 
                      */
                     Encryption GetEncryption() const;
 
                     /**
-                     * 设置敏感数据加密信息。
-- 对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
-                     * @param _encryption 敏感数据加密信息。
-- 对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 设置<p>敏感数据加密信息。</p><ul><li>对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。</li></ul>
+                     * @param _encryption <p>敏感数据加密信息。</p><ul><li>对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。</li></ul>
                      * 
                      */
                     void SetEncryption(const Encryption& _encryption);
@@ -246,56 +194,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * EID商户ID。
-- 商户ID通过人脸核身控制台[自助接入](https://console.cloud.tencent.com/faceid/access)申请。
-- 商户ID与您通过腾讯云人脸核身控制台完成自助接入时所使用的腾讯云账号绑定。
-- 必须使用申请该商户ID时登录的腾讯云账号所对应的腾讯云API密钥调用该接口。
+                     * <p>EID商户ID。</p><ul><li>商户ID通过人脸核身控制台<a href="https://console.cloud.tencent.com/faceid/access">自助接入</a>申请。</li><li>商户ID与您通过腾讯云人脸核身控制台完成自助接入时所使用的腾讯云账号绑定。</li><li>必须使用申请该商户ID时登录的腾讯云账号所对应的腾讯云API密钥调用该接口。</li></ul>
                      */
                     std::string m_merchantId;
                     bool m_merchantIdHasBeenSet;
 
                     /**
-                     * 身份标识。
-- 未使用OCR服务时，必须传入。
-- 规则：a-z，A-Z，0-9组合。
-- 最长长度32位。
+                     * <p>身份标识。</p><ul><li>未使用OCR服务时，必须传入。</li><li>规则：a-z，A-Z，0-9组合。</li><li>最长长度32位。</li></ul>
                      */
                     std::string m_idCard;
                     bool m_idCardHasBeenSet;
 
                     /**
-                     * 姓名。
-- 未使用OCR服务时，必须传入。
-- 最长长度32位。
-- 中文请使用UTF-8编码。
+                     * <p>姓名。</p><ul><li>未使用OCR服务时，必须传入。</li><li>最长长度32位。</li><li>中文请使用UTF-8编码。</li></ul>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 透传字段，在获取验证结果时返回。
-- 最长长度1024位。
+                     * <p>透传字段，在获取验证结果时返回。</p><ul><li>最长长度1024位。</li></ul>
                      */
                     std::string m_extra;
                     bool m_extraHasBeenSet;
 
                     /**
-                     * 小程序模式配置，包括如何传入姓名身份证的配置，以及是否使用意愿核身。
+                     * <p>小程序模式配置，包括如何传入姓名身份证的配置，以及是否使用意愿核身。</p>
                      */
                     GetEidTokenConfig m_config;
                     bool m_configHasBeenSet;
 
                     /**
-                     * 用户从Url中进入核身认证结束后重定向的回调链接地址。
-- 最长长度1024位。
-- EidToken会在该链接的query参数中。
+                     * <p>用户从Url中进入核身认证结束后重定向的回调链接地址。</p><ul><li>最长长度1024位。</li><li>EidToken会在该链接的query参数中。</li></ul>
                      */
                     std::string m_redirectUrl;
                     bool m_redirectUrlHasBeenSet;
 
                     /**
-                     * 敏感数据加密信息。
-- 对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * <p>敏感数据加密信息。</p><ul><li>对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。</li></ul>
                      */
                     Encryption m_encryption;
                     bool m_encryptionHasBeenSet;

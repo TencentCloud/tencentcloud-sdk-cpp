@@ -56,6 +56,7 @@ Instance::Instance() :
     m_rdmaIpAddressesHasBeenSet(false),
     m_dedicatedClusterIdHasBeenSet(false),
     m_isolatedSourceHasBeenSet(false),
+    m_disasterRecoverGroupIdsHasBeenSet(false),
     m_gPUInfoHasBeenSet(false),
     m_licenseTypeHasBeenSet(false),
     m_disableApiTerminationHasBeenSet(false),
@@ -491,6 +492,19 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         }
         m_isolatedSource = string(value["IsolatedSource"].GetString());
         m_isolatedSourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("DisasterRecoverGroupIds") && !value["DisasterRecoverGroupIds"].IsNull())
+    {
+        if (!value["DisasterRecoverGroupIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Instance.DisasterRecoverGroupIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DisasterRecoverGroupIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_disasterRecoverGroupIds.push_back((*itr).GetString());
+        }
+        m_disasterRecoverGroupIdsHasBeenSet = true;
     }
 
     if (value.HasMember("GPUInfo") && !value["GPUInfo"].IsNull())
@@ -936,6 +950,19 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "IsolatedSource";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_isolatedSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_disasterRecoverGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisasterRecoverGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_disasterRecoverGroupIds.begin(); itr != m_disasterRecoverGroupIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_gPUInfoHasBeenSet)
@@ -1579,6 +1606,22 @@ void Instance::SetIsolatedSource(const string& _isolatedSource)
 bool Instance::IsolatedSourceHasBeenSet() const
 {
     return m_isolatedSourceHasBeenSet;
+}
+
+vector<string> Instance::GetDisasterRecoverGroupIds() const
+{
+    return m_disasterRecoverGroupIds;
+}
+
+void Instance::SetDisasterRecoverGroupIds(const vector<string>& _disasterRecoverGroupIds)
+{
+    m_disasterRecoverGroupIds = _disasterRecoverGroupIds;
+    m_disasterRecoverGroupIdsHasBeenSet = true;
+}
+
+bool Instance::DisasterRecoverGroupIdsHasBeenSet() const
+{
+    return m_disasterRecoverGroupIdsHasBeenSet;
 }
 
 GPUInfo Instance::GetGPUInfo() const

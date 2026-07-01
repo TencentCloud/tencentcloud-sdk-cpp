@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/adp/v20260520/model/CopyAgentFromAppRequest.h>
+#include <tencentcloud/adp/v20260520/model/CopyAgentFromAppResponse.h>
 #include <tencentcloud/adp/v20260520/model/CopyAppRequest.h>
 #include <tencentcloud/adp/v20260520/model/CopyAppResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateAgentRequest.h>
@@ -117,6 +119,9 @@ namespace TencentCloud
                 AdpClient(const Credential &credential, const std::string &region);
                 AdpClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CopyAgentFromAppResponse> CopyAgentFromAppOutcome;
+                typedef std::future<CopyAgentFromAppOutcome> CopyAgentFromAppOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::CopyAgentFromAppRequest&, CopyAgentFromAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CopyAgentFromAppAsyncHandler;
                 typedef Outcome<Core::Error, Model::CopyAppResponse> CopyAppOutcome;
                 typedef std::future<CopyAppOutcome> CopyAppOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::CopyAppRequest&, CopyAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CopyAppAsyncHandler;
@@ -239,6 +244,15 @@ namespace TencentCloud
                 typedef std::function<void(const AdpClient*, const Model::RollbackReleaseRequest&, RollbackReleaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollbackReleaseAsyncHandler;
 
 
+
+                /**
+                 *创建Agent
+                 * @param req CopyAgentFromAppRequest
+                 * @return CopyAgentFromAppOutcome
+                 */
+                CopyAgentFromAppOutcome CopyAgentFromApp(const Model::CopyAgentFromAppRequest &request);
+                void CopyAgentFromAppAsync(const Model::CopyAgentFromAppRequest& request, const CopyAgentFromAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CopyAgentFromAppOutcomeCallable CopyAgentFromAppCallable(const Model::CopyAgentFromAppRequest& request);
 
                 /**
                  *复制应用

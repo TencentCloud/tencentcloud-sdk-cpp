@@ -53,6 +53,8 @@
 #include <tencentcloud/vod/v20180717/model/CreateAigcCustomVoiceResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcImageTaskRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcImageTaskResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcQuotaRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcQuotaResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcSubjectRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcSubjectResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcVideoRedrawTaskRequest.h>
@@ -135,6 +137,8 @@
 #include <tencentcloud/vod/v20180717/model/DeleteAigcAdvancedCustomElementResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteAigcApiTokenRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteAigcApiTokenResponse.h>
+#include <tencentcloud/vod/v20180717/model/DeleteAigcQuotaRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteAigcQuotaResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteAnimatedGraphicsTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteAnimatedGraphicsTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteBlindWatermarkTemplateRequest.h>
@@ -203,6 +207,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeAigcFaceInfoResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAigcFaceInfoAsyncRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAigcFaceInfoAsyncResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcQuotasRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcQuotasResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAigcUsageDataRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAigcUsageDataResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAllClassRequest.h>
@@ -351,6 +357,8 @@
 #include <tencentcloud/vod/v20180717/model/ModifyAIRecognitionTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyAdaptiveDynamicStreamingTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyAdaptiveDynamicStreamingTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/ModifyAigcQuotaRequest.h>
+#include <tencentcloud/vod/v20180717/model/ModifyAigcQuotaResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyAnimatedGraphicsTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyAnimatedGraphicsTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyBlindWatermarkTemplateRequest.h>
@@ -526,6 +534,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAigcImageTaskResponse> CreateAigcImageTaskOutcome;
                 typedef std::future<CreateAigcImageTaskOutcome> CreateAigcImageTaskOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateAigcImageTaskRequest&, CreateAigcImageTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcImageTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAigcQuotaResponse> CreateAigcQuotaOutcome;
+                typedef std::future<CreateAigcQuotaOutcome> CreateAigcQuotaOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateAigcQuotaRequest&, CreateAigcQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcQuotaAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAigcSubjectResponse> CreateAigcSubjectOutcome;
                 typedef std::future<CreateAigcSubjectOutcome> CreateAigcSubjectOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateAigcSubjectRequest&, CreateAigcSubjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcSubjectAsyncHandler;
@@ -649,6 +660,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAigcApiTokenResponse> DeleteAigcApiTokenOutcome;
                 typedef std::future<DeleteAigcApiTokenOutcome> DeleteAigcApiTokenOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteAigcApiTokenRequest&, DeleteAigcApiTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAigcApiTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAigcQuotaResponse> DeleteAigcQuotaOutcome;
+                typedef std::future<DeleteAigcQuotaOutcome> DeleteAigcQuotaOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DeleteAigcQuotaRequest&, DeleteAigcQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAigcQuotaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAnimatedGraphicsTemplateResponse> DeleteAnimatedGraphicsTemplateOutcome;
                 typedef std::future<DeleteAnimatedGraphicsTemplateOutcome> DeleteAnimatedGraphicsTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteAnimatedGraphicsTemplateRequest&, DeleteAnimatedGraphicsTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAnimatedGraphicsTemplateAsyncHandler;
@@ -751,6 +765,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAigcFaceInfoAsyncResponse> DescribeAigcFaceInfoAsyncOutcome;
                 typedef std::future<DescribeAigcFaceInfoAsyncOutcome> DescribeAigcFaceInfoAsyncOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeAigcFaceInfoAsyncRequest&, DescribeAigcFaceInfoAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcFaceInfoAsyncAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAigcQuotasResponse> DescribeAigcQuotasOutcome;
+                typedef std::future<DescribeAigcQuotasOutcome> DescribeAigcQuotasOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeAigcQuotasRequest&, DescribeAigcQuotasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcQuotasAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAigcUsageDataResponse> DescribeAigcUsageDataOutcome;
                 typedef std::future<DescribeAigcUsageDataOutcome> DescribeAigcUsageDataOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeAigcUsageDataRequest&, DescribeAigcUsageDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcUsageDataAsyncHandler;
@@ -973,6 +990,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAdaptiveDynamicStreamingTemplateResponse> ModifyAdaptiveDynamicStreamingTemplateOutcome;
                 typedef std::future<ModifyAdaptiveDynamicStreamingTemplateOutcome> ModifyAdaptiveDynamicStreamingTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyAdaptiveDynamicStreamingTemplateRequest&, ModifyAdaptiveDynamicStreamingTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAdaptiveDynamicStreamingTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAigcQuotaResponse> ModifyAigcQuotaOutcome;
+                typedef std::future<ModifyAigcQuotaOutcome> ModifyAigcQuotaOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ModifyAigcQuotaRequest&, ModifyAigcQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAigcQuotaAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAnimatedGraphicsTemplateResponse> ModifyAnimatedGraphicsTemplateOutcome;
                 typedef std::future<ModifyAnimatedGraphicsTemplateOutcome> ModifyAnimatedGraphicsTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyAnimatedGraphicsTemplateRequest&, ModifyAnimatedGraphicsTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAnimatedGraphicsTemplateAsyncHandler;
@@ -1299,6 +1319,19 @@ namespace TencentCloud
                 CreateAigcImageTaskOutcome CreateAigcImageTask(const Model::CreateAigcImageTaskRequest &request);
                 void CreateAigcImageTaskAsync(const Model::CreateAigcImageTaskRequest& request, const CreateAigcImageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAigcImageTaskOutcomeCallable CreateAigcImageTaskCallable(const Model::CreateAigcImageTaskRequest& request);
+
+                /**
+                 *用于创建并启用 AIGC 配额配置，配额用量从启用配额功能时开始累计，达到限额后将无法继续使用 AIGC 功能。
+
+如果删除配额后重新启用，用量将清零并重新计算。
+
+由于AGC内客生成为异步任务，无法获取实时用量数据，因此配额限制存在一定误差，无法实现与设置额度完全精准的控制。
+                 * @param req CreateAigcQuotaRequest
+                 * @return CreateAigcQuotaOutcome
+                 */
+                CreateAigcQuotaOutcome CreateAigcQuota(const Model::CreateAigcQuotaRequest &request);
+                void CreateAigcQuotaAsync(const Model::CreateAigcQuotaRequest& request, const CreateAigcQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAigcQuotaOutcomeCallable CreateAigcQuotaCallable(const Model::CreateAigcQuotaRequest& request);
 
                 /**
                  *该接口用于创建 AIGC 自定义主体（Vidu）。注意，调用本接口会产生费用，请参考[计费文档](https://cloud.tencent.com/document/product/266/95125#96b3b59a-f9e1-49e9-966a-bedb70a4bf12)。
@@ -1705,6 +1738,17 @@ namespace TencentCloud
                 DeleteAigcApiTokenOutcomeCallable DeleteAigcApiTokenCallable(const Model::DeleteAigcApiTokenRequest& request);
 
                 /**
+                 *用于删除 AIGC 配额配置，删除后，将不再限制 AIGC 任务的发起。
+
+如果删除配额后重新启用，用量将清零并重新计算。
+                 * @param req DeleteAigcQuotaRequest
+                 * @return DeleteAigcQuotaOutcome
+                 */
+                DeleteAigcQuotaOutcome DeleteAigcQuota(const Model::DeleteAigcQuotaRequest &request);
+                void DeleteAigcQuotaAsync(const Model::DeleteAigcQuotaRequest& request, const DeleteAigcQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAigcQuotaOutcomeCallable DeleteAigcQuotaCallable(const Model::DeleteAigcQuotaRequest& request);
+
+                /**
                  *删除用户自定义转动图模板。
                  * @param req DeleteAnimatedGraphicsTemplateRequest
                  * @return DeleteAnimatedGraphicsTemplateOutcome
@@ -2023,6 +2067,15 @@ namespace TencentCloud
                 DescribeAigcFaceInfoAsyncOutcome DescribeAigcFaceInfoAsync(const Model::DescribeAigcFaceInfoAsyncRequest &request);
                 void DescribeAigcFaceInfoAsyncAsync(const Model::DescribeAigcFaceInfoAsyncRequest& request, const DescribeAigcFaceInfoAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAigcFaceInfoAsyncOutcomeCallable DescribeAigcFaceInfoAsyncCallable(const Model::DescribeAigcFaceInfoAsyncRequest& request);
+
+                /**
+                 *用于查询 AIGC 配额配置。
+                 * @param req DescribeAigcQuotasRequest
+                 * @return DescribeAigcQuotasOutcome
+                 */
+                DescribeAigcQuotasOutcome DescribeAigcQuotas(const Model::DescribeAigcQuotasRequest &request);
+                void DescribeAigcQuotasAsync(const Model::DescribeAigcQuotasRequest& request, const DescribeAigcQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAigcQuotasOutcomeCallable DescribeAigcQuotasCallable(const Model::DescribeAigcQuotasRequest& request);
 
                 /**
                  *该接口返回查询时间范围内AIGC的统计信息。
@@ -2829,6 +2882,17 @@ namespace TencentCloud
                 ModifyAdaptiveDynamicStreamingTemplateOutcome ModifyAdaptiveDynamicStreamingTemplate(const Model::ModifyAdaptiveDynamicStreamingTemplateRequest &request);
                 void ModifyAdaptiveDynamicStreamingTemplateAsync(const Model::ModifyAdaptiveDynamicStreamingTemplateRequest& request, const ModifyAdaptiveDynamicStreamingTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAdaptiveDynamicStreamingTemplateOutcomeCallable ModifyAdaptiveDynamicStreamingTemplateCallable(const Model::ModifyAdaptiveDynamicStreamingTemplateRequest& request);
+
+                /**
+                 *用于编辑 AIGC 配额配置，配额用量从启用配额功能时开始累计，达到限额后将无法继续使用 AIGC 功能。
+
+由于AGC内客生成为异步任务，无法获取实时用量数据，因此配额限制存在一定误差，无法实现与设置额度完全精准的控制。
+                 * @param req ModifyAigcQuotaRequest
+                 * @return ModifyAigcQuotaOutcome
+                 */
+                ModifyAigcQuotaOutcome ModifyAigcQuota(const Model::ModifyAigcQuotaRequest &request);
+                void ModifyAigcQuotaAsync(const Model::ModifyAigcQuotaRequest& request, const ModifyAigcQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAigcQuotaOutcomeCallable ModifyAigcQuotaCallable(const Model::ModifyAigcQuotaRequest& request);
 
                 /**
                  *修改用户自定义转动图模板。

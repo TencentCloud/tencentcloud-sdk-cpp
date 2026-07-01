@@ -36,7 +36,8 @@ InvokeAISearchServiceRequest::InvokeAISearchServiceRequest() :
     m_limitHasBeenSet(false),
     m_vectorSearchRadiusHasBeenSet(false),
     m_vectorSearchTopKHasBeenSet(false),
-    m_orderHasBeenSet(false)
+    m_orderHasBeenSet(false),
+    m_withTaskInfoHasBeenSet(false)
 {
 }
 
@@ -157,6 +158,14 @@ string InvokeAISearchServiceRequest::ToJsonString() const
         string key = "Order";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_withTaskInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WithTaskInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_withTaskInfo, allocator);
     }
 
 
@@ -389,6 +398,22 @@ void InvokeAISearchServiceRequest::SetOrder(const string& _order)
 bool InvokeAISearchServiceRequest::OrderHasBeenSet() const
 {
     return m_orderHasBeenSet;
+}
+
+bool InvokeAISearchServiceRequest::GetWithTaskInfo() const
+{
+    return m_withTaskInfo;
+}
+
+void InvokeAISearchServiceRequest::SetWithTaskInfo(const bool& _withTaskInfo)
+{
+    m_withTaskInfo = _withTaskInfo;
+    m_withTaskInfoHasBeenSet = true;
+}
+
+bool InvokeAISearchServiceRequest::WithTaskInfoHasBeenSet() const
+{
+    return m_withTaskInfoHasBeenSet;
 }
 
 

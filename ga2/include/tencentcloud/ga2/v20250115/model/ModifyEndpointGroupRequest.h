@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool EndpointConfigurationsHasBeenSet() const;
 
                     /**
-                     * 获取<p>名称，最大长度不能超过60个字节。</p>
-                     * @return Name <p>名称，最大长度不能超过60个字节。</p>
+                     * 获取<p>名称。</p><p>入参限制：最大长度不能超过128个字节。</p><p>以大小写字母或中文开头。</p>
+                     * @return Name <p>名称。</p><p>入参限制：最大长度不能超过128个字节。</p><p>以大小写字母或中文开头。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置<p>名称，最大长度不能超过60个字节。</p>
-                     * @param _name <p>名称，最大长度不能超过60个字节。</p>
+                     * 设置<p>名称。</p><p>入参限制：最大长度不能超过128个字节。</p><p>以大小写字母或中文开头。</p>
+                     * @param _name <p>名称。</p><p>入参限制：最大长度不能超过128个字节。</p><p>以大小写字母或中文开头。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取<p>描述信息，最大长度不能超过100个字节。</p>
-                     * @return Description <p>描述信息，最大长度不能超过100个字节。</p>
+                     * 获取<p>描述信息。</p><p>入参限制：最大长度不能超过100个字节。</p>
+                     * @return Description <p>描述信息。</p><p>入参限制：最大长度不能超过100个字节。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置<p>描述信息，最大长度不能超过100个字节。</p>
-                     * @param _description <p>描述信息，最大长度不能超过100个字节。</p>
+                     * 设置<p>描述信息。</p><p>入参限制：最大长度不能超过100个字节。</p>
+                     * @param _description <p>描述信息。</p><p>入参限制：最大长度不能超过100个字节。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool EnableHealthCheckHasBeenSet() const;
 
                     /**
-                     * 获取<p>响应超时时间。</p>
-                     * @return ConnectTimeout <p>响应超时时间。</p>
+                     * 获取<p>响应超时时间。</p><p>取值范围：[1, 100]</p><p>当开启健康检查时候，此参数必传。</p>
+                     * @return ConnectTimeout <p>响应超时时间。</p><p>取值范围：[1, 100]</p><p>当开启健康检查时候，此参数必传。</p>
                      * 
                      */
                     uint64_t GetConnectTimeout() const;
 
                     /**
-                     * 设置<p>响应超时时间。</p>
-                     * @param _connectTimeout <p>响应超时时间。</p>
+                     * 设置<p>响应超时时间。</p><p>取值范围：[1, 100]</p><p>当开启健康检查时候，此参数必传。</p>
+                     * @param _connectTimeout <p>响应超时时间。</p><p>取值范围：[1, 100]</p><p>当开启健康检查时候，此参数必传。</p>
                      * 
                      */
                     void SetConnectTimeout(const uint64_t& _connectTimeout);
@@ -213,15 +213,15 @@ namespace TencentCloud
                     bool ConnectTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取<p>健康检查间隔。</p>
-                     * @return HealthCheckInterval <p>健康检查间隔。</p>
+                     * 获取<p>健康检查间隔。</p><p>取值范围：[5, 300]</p><p>当开启健康检查时，此参数必传。</p>
+                     * @return HealthCheckInterval <p>健康检查间隔。</p><p>取值范围：[5, 300]</p><p>当开启健康检查时，此参数必传。</p>
                      * 
                      */
                     uint64_t GetHealthCheckInterval() const;
 
                     /**
-                     * 设置<p>健康检查间隔。</p>
-                     * @param _healthCheckInterval <p>健康检查间隔。</p>
+                     * 设置<p>健康检查间隔。</p><p>取值范围：[5, 300]</p><p>当开启健康检查时，此参数必传。</p>
+                     * @param _healthCheckInterval <p>健康检查间隔。</p><p>取值范围：[5, 300]</p><p>当开启健康检查时，此参数必传。</p>
                      * 
                      */
                     void SetHealthCheckInterval(const uint64_t& _healthCheckInterval);
@@ -234,15 +234,15 @@ namespace TencentCloud
                     bool HealthCheckIntervalHasBeenSet() const;
 
                     /**
-                     * 获取<p>不健康阀值。</p>
-                     * @return UnhealthyThreshold <p>不健康阀值。</p>
+                     * 获取<p>不健康阀值。</p><p>取值范围：[1, 10]</p><p>当开启健康检查时，此字段必传。</p>
+                     * @return UnhealthyThreshold <p>不健康阀值。</p><p>取值范围：[1, 10]</p><p>当开启健康检查时，此字段必传。</p>
                      * 
                      */
                     uint64_t GetUnhealthyThreshold() const;
 
                     /**
-                     * 设置<p>不健康阀值。</p>
-                     * @param _unhealthyThreshold <p>不健康阀值。</p>
+                     * 设置<p>不健康阀值。</p><p>取值范围：[1, 10]</p><p>当开启健康检查时，此字段必传。</p>
+                     * @param _unhealthyThreshold <p>不健康阀值。</p><p>取值范围：[1, 10]</p><p>当开启健康检查时，此字段必传。</p>
                      * 
                      */
                     void SetUnhealthyThreshold(const uint64_t& _unhealthyThreshold);
@@ -255,15 +255,15 @@ namespace TencentCloud
                     bool UnhealthyThresholdHasBeenSet() const;
 
                     /**
-                     * 获取<p>健康阀值。</p>
-                     * @return HealthyThreshold <p>健康阀值。</p>
+                     * 获取<p>健康阀值。</p><p>取值范围：[1, 10]</p><p>当开启健康检查时，此字段必传。</p>
+                     * @return HealthyThreshold <p>健康阀值。</p><p>取值范围：[1, 10]</p><p>当开启健康检查时，此字段必传。</p>
                      * 
                      */
                     uint64_t GetHealthyThreshold() const;
 
                     /**
-                     * 设置<p>健康阀值。</p>
-                     * @param _healthyThreshold <p>健康阀值。</p>
+                     * 设置<p>健康阀值。</p><p>取值范围：[1, 10]</p><p>当开启健康检查时，此字段必传。</p>
+                     * @param _healthyThreshold <p>健康阀值。</p><p>取值范围：[1, 10]</p><p>当开启健康检查时，此字段必传。</p>
                      * 
                      */
                     void SetHealthyThreshold(const uint64_t& _healthyThreshold);
@@ -276,15 +276,15 @@ namespace TencentCloud
                     bool HealthyThresholdHasBeenSet() const;
 
                     /**
-                     * 获取<p>检查协议。</p>
-                     * @return CheckType <p>检查协议。</p>
+                     * 获取<p>检查协议。</p><p>入参限制：支持填写：&#39;TCP&#39;, &#39;HTTP&#39;, &#39;PING&#39;, &#39;CUSTOM&#39;。</p><p>1、当监听器是TCP时，可以选CUSTOM+TCP。<br>2、当监听器是UDP时，可以选PING+CUSTOM。<br>3、当监听器是HTTP或HTTPS时，可以选HTTP。</p>
+                     * @return CheckType <p>检查协议。</p><p>入参限制：支持填写：&#39;TCP&#39;, &#39;HTTP&#39;, &#39;PING&#39;, &#39;CUSTOM&#39;。</p><p>1、当监听器是TCP时，可以选CUSTOM+TCP。<br>2、当监听器是UDP时，可以选PING+CUSTOM。<br>3、当监听器是HTTP或HTTPS时，可以选HTTP。</p>
                      * 
                      */
                     std::string GetCheckType() const;
 
                     /**
-                     * 设置<p>检查协议。</p>
-                     * @param _checkType <p>检查协议。</p>
+                     * 设置<p>检查协议。</p><p>入参限制：支持填写：&#39;TCP&#39;, &#39;HTTP&#39;, &#39;PING&#39;, &#39;CUSTOM&#39;。</p><p>1、当监听器是TCP时，可以选CUSTOM+TCP。<br>2、当监听器是UDP时，可以选PING+CUSTOM。<br>3、当监听器是HTTP或HTTPS时，可以选HTTP。</p>
+                     * @param _checkType <p>检查协议。</p><p>入参限制：支持填写：&#39;TCP&#39;, &#39;HTTP&#39;, &#39;PING&#39;, &#39;CUSTOM&#39;。</p><p>1、当监听器是TCP时，可以选CUSTOM+TCP。<br>2、当监听器是UDP时，可以选PING+CUSTOM。<br>3、当监听器是HTTP或HTTPS时，可以选HTTP。</p>
                      * 
                      */
                     void SetCheckType(const std::string& _checkType);
@@ -297,15 +297,15 @@ namespace TencentCloud
                     bool CheckTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>检查端口。</p>
-                     * @return CheckPort <p>检查端口。</p>
+                     * 获取<p>检查端口。</p><p>取值范围：[1, 65535]</p><p>当CheckType是CUSTOM时，此字段必传。</p>
+                     * @return CheckPort <p>检查端口。</p><p>取值范围：[1, 65535]</p><p>当CheckType是CUSTOM时，此字段必传。</p>
                      * 
                      */
                     uint64_t GetCheckPort() const;
 
                     /**
-                     * 设置<p>检查端口。</p>
-                     * @param _checkPort <p>检查端口。</p>
+                     * 设置<p>检查端口。</p><p>取值范围：[1, 65535]</p><p>当CheckType是CUSTOM时，此字段必传。</p>
+                     * @param _checkPort <p>检查端口。</p><p>取值范围：[1, 65535]</p><p>当CheckType是CUSTOM时，此字段必传。</p>
                      * 
                      */
                     void SetCheckPort(const uint64_t& _checkPort);
@@ -318,15 +318,15 @@ namespace TencentCloud
                     bool CheckPortHasBeenSet() const;
 
                     /**
-                     * 获取<p>检查内容。</p>
-                     * @return ContextType <p>检查内容。</p>
+                     * 获取<p>检查内容。</p><p>入参限制：仅支持TEXT。</p><p>当CheckType是CUSTOM时，此字段必传。</p>
+                     * @return ContextType <p>检查内容。</p><p>入参限制：仅支持TEXT。</p><p>当CheckType是CUSTOM时，此字段必传。</p>
                      * 
                      */
                     std::string GetContextType() const;
 
                     /**
-                     * 设置<p>检查内容。</p>
-                     * @param _contextType <p>检查内容。</p>
+                     * 设置<p>检查内容。</p><p>入参限制：仅支持TEXT。</p><p>当CheckType是CUSTOM时，此字段必传。</p>
+                     * @param _contextType <p>检查内容。</p><p>入参限制：仅支持TEXT。</p><p>当CheckType是CUSTOM时，此字段必传。</p>
                      * 
                      */
                     void SetContextType(const std::string& _contextType);
@@ -339,15 +339,15 @@ namespace TencentCloud
                     bool ContextTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>检查请求。</p>
-                     * @return CheckSendContext <p>检查请求。</p>
+                     * 获取<p>检查请求。</p><p>入参限制：长度范围在1-500。</p><p>当CheckType是CUSTOM时，此字段必传。</p>
+                     * @return CheckSendContext <p>检查请求。</p><p>入参限制：长度范围在1-500。</p><p>当CheckType是CUSTOM时，此字段必传。</p>
                      * 
                      */
                     std::string GetCheckSendContext() const;
 
                     /**
-                     * 设置<p>检查请求。</p>
-                     * @param _checkSendContext <p>检查请求。</p>
+                     * 设置<p>检查请求。</p><p>入参限制：长度范围在1-500。</p><p>当CheckType是CUSTOM时，此字段必传。</p>
+                     * @param _checkSendContext <p>检查请求。</p><p>入参限制：长度范围在1-500。</p><p>当CheckType是CUSTOM时，此字段必传。</p>
                      * 
                      */
                     void SetCheckSendContext(const std::string& _checkSendContext);
@@ -360,15 +360,15 @@ namespace TencentCloud
                     bool CheckSendContextHasBeenSet() const;
 
                     /**
-                     * 获取<p>检查返回结果。</p>
-                     * @return CheckRecvContext <p>检查返回结果。</p>
+                     * 获取<p>检查返回结果。</p><p>入参限制：长度范围在1-500。</p><p>当CheckType是CUSTOM时，此字段必传。</p>
+                     * @return CheckRecvContext <p>检查返回结果。</p><p>入参限制：长度范围在1-500。</p><p>当CheckType是CUSTOM时，此字段必传。</p>
                      * 
                      */
                     std::string GetCheckRecvContext() const;
 
                     /**
-                     * 设置<p>检查返回结果。</p>
-                     * @param _checkRecvContext <p>检查返回结果。</p>
+                     * 设置<p>检查返回结果。</p><p>入参限制：长度范围在1-500。</p><p>当CheckType是CUSTOM时，此字段必传。</p>
+                     * @param _checkRecvContext <p>检查返回结果。</p><p>入参限制：长度范围在1-500。</p><p>当CheckType是CUSTOM时，此字段必传。</p>
                      * 
                      */
                     void SetCheckRecvContext(const std::string& _checkRecvContext);
@@ -381,15 +381,15 @@ namespace TencentCloud
                     bool CheckRecvContextHasBeenSet() const;
 
                     /**
-                     * 获取<p>检查域名。</p>
-                     * @return CheckDomain <p>检查域名。</p>
+                     * 获取<p>检查域名。</p><p>入参限制：长度范围在3-80。</p><p>当CheckType是HTTP时，此字段必传。</p>
+                     * @return CheckDomain <p>检查域名。</p><p>入参限制：长度范围在3-80。</p><p>当CheckType是HTTP时，此字段必传。</p>
                      * 
                      */
                     std::string GetCheckDomain() const;
 
                     /**
-                     * 设置<p>检查域名。</p>
-                     * @param _checkDomain <p>检查域名。</p>
+                     * 设置<p>检查域名。</p><p>入参限制：长度范围在3-80。</p><p>当CheckType是HTTP时，此字段必传。</p>
+                     * @param _checkDomain <p>检查域名。</p><p>入参限制：长度范围在3-80。</p><p>当CheckType是HTTP时，此字段必传。</p>
                      * 
                      */
                     void SetCheckDomain(const std::string& _checkDomain);
@@ -402,15 +402,15 @@ namespace TencentCloud
                     bool CheckDomainHasBeenSet() const;
 
                     /**
-                     * 获取<p>检查URL。</p>
-                     * @return CheckPath <p>检查URL。</p>
+                     * 获取<p>检查URL。</p><p>入参限制：长度范围在3-80。</p><p>当CheckType是HTTP时，此字段必传。</p>
+                     * @return CheckPath <p>检查URL。</p><p>入参限制：长度范围在3-80。</p><p>当CheckType是HTTP时，此字段必传。</p>
                      * 
                      */
                     std::string GetCheckPath() const;
 
                     /**
-                     * 设置<p>检查URL。</p>
-                     * @param _checkPath <p>检查URL。</p>
+                     * 设置<p>检查URL。</p><p>入参限制：长度范围在3-80。</p><p>当CheckType是HTTP时，此字段必传。</p>
+                     * @param _checkPath <p>检查URL。</p><p>入参限制：长度范围在3-80。</p><p>当CheckType是HTTP时，此字段必传。</p>
                      * 
                      */
                     void SetCheckPath(const std::string& _checkPath);
@@ -423,15 +423,15 @@ namespace TencentCloud
                     bool CheckPathHasBeenSet() const;
 
                     /**
-                     * 获取<p>请求方式。</p>
-                     * @return CheckMethod <p>请求方式。</p>
+                     * 获取<p>请求方式。</p><p>入参限制：支持填写 &#39;GET&#39;, &#39;HEAD&#39;。</p><p>当CheckType是HTTP时，此字段必传。</p>
+                     * @return CheckMethod <p>请求方式。</p><p>入参限制：支持填写 &#39;GET&#39;, &#39;HEAD&#39;。</p><p>当CheckType是HTTP时，此字段必传。</p>
                      * 
                      */
                     std::string GetCheckMethod() const;
 
                     /**
-                     * 设置<p>请求方式。</p>
-                     * @param _checkMethod <p>请求方式。</p>
+                     * 设置<p>请求方式。</p><p>入参限制：支持填写 &#39;GET&#39;, &#39;HEAD&#39;。</p><p>当CheckType是HTTP时，此字段必传。</p>
+                     * @param _checkMethod <p>请求方式。</p><p>入参限制：支持填写 &#39;GET&#39;, &#39;HEAD&#39;。</p><p>当CheckType是HTTP时，此字段必传。</p>
                      * 
                      */
                     void SetCheckMethod(const std::string& _checkMethod);
@@ -444,15 +444,15 @@ namespace TencentCloud
                     bool CheckMethodHasBeenSet() const;
 
                     /**
-                     * 获取<p>状态检测码。</p>
-                     * @return StatusMask <p>状态检测码。</p>
+                     * 获取<p>状态检测码。</p><p>入参限制：支持选择&#39;http_2xx&#39;, &#39;http_3xx&#39;, &#39;http_4xx&#39;, &#39;http_5xx&#39;。</p><p>当CheckType是HTTP时，此字段必传。</p>
+                     * @return StatusMask <p>状态检测码。</p><p>入参限制：支持选择&#39;http_2xx&#39;, &#39;http_3xx&#39;, &#39;http_4xx&#39;, &#39;http_5xx&#39;。</p><p>当CheckType是HTTP时，此字段必传。</p>
                      * 
                      */
                     std::vector<std::string> GetStatusMask() const;
 
                     /**
-                     * 设置<p>状态检测码。</p>
-                     * @param _statusMask <p>状态检测码。</p>
+                     * 设置<p>状态检测码。</p><p>入参限制：支持选择&#39;http_2xx&#39;, &#39;http_3xx&#39;, &#39;http_4xx&#39;, &#39;http_5xx&#39;。</p><p>当CheckType是HTTP时，此字段必传。</p>
+                     * @param _statusMask <p>状态检测码。</p><p>入参限制：支持选择&#39;http_2xx&#39;, &#39;http_3xx&#39;, &#39;http_4xx&#39;, &#39;http_5xx&#39;。</p><p>当CheckType是HTTP时，此字段必传。</p>
                      * 
                      */
                     void SetStatusMask(const std::vector<std::string>& _statusMask);
@@ -465,15 +465,15 @@ namespace TencentCloud
                     bool StatusMaskHasBeenSet() const;
 
                     /**
-                     * 获取<p>回源协议。</p>
-                     * @return ForwardProtocol <p>回源协议。</p>
+                     * 获取<p>回源协议。</p><p>入参限制：支持选择：&#39;HTTP&#39;, &#39;HTTPS&#39;。</p><p>当监听器协议是HTTP时只能配置HTTP，是HTTPS时能配HTTP或HTTPS。</p>
+                     * @return ForwardProtocol <p>回源协议。</p><p>入参限制：支持选择：&#39;HTTP&#39;, &#39;HTTPS&#39;。</p><p>当监听器协议是HTTP时只能配置HTTP，是HTTPS时能配HTTP或HTTPS。</p>
                      * 
                      */
                     std::string GetForwardProtocol() const;
 
                     /**
-                     * 设置<p>回源协议。</p>
-                     * @param _forwardProtocol <p>回源协议。</p>
+                     * 设置<p>回源协议。</p><p>入参限制：支持选择：&#39;HTTP&#39;, &#39;HTTPS&#39;。</p><p>当监听器协议是HTTP时只能配置HTTP，是HTTPS时能配HTTP或HTTPS。</p>
+                     * @param _forwardProtocol <p>回源协议。</p><p>入参限制：支持选择：&#39;HTTP&#39;, &#39;HTTPS&#39;。</p><p>当监听器协议是HTTP时只能配置HTTP，是HTTPS时能配HTTP或HTTPS。</p>
                      * 
                      */
                     void SetForwardProtocol(const std::string& _forwardProtocol);
@@ -486,15 +486,15 @@ namespace TencentCloud
                     bool ForwardProtocolHasBeenSet() const;
 
                     /**
-                     * 获取<p>端口映射。</p>
-                     * @return PortOverrides <p>端口映射。</p>
+                     * 获取<p>端口映射。</p><p>当监听器协议是HTTP或HTTPS支持配置一对。当监听器协议是UDP或TCP支持配置最多30对。</p>
+                     * @return PortOverrides <p>端口映射。</p><p>当监听器协议是HTTP或HTTPS支持配置一对。当监听器协议是UDP或TCP支持配置最多30对。</p>
                      * 
                      */
                     std::vector<PortOverride> GetPortOverrides() const;
 
                     /**
-                     * 设置<p>端口映射。</p>
-                     * @param _portOverrides <p>端口映射。</p>
+                     * 设置<p>端口映射。</p><p>当监听器协议是HTTP或HTTPS支持配置一对。当监听器协议是UDP或TCP支持配置最多30对。</p>
+                     * @param _portOverrides <p>端口映射。</p><p>当监听器协议是HTTP或HTTPS支持配置一对。当监听器协议是UDP或TCP支持配置最多30对。</p>
                      * 
                      */
                     void SetPortOverrides(const std::vector<PortOverride>& _portOverrides);
@@ -507,15 +507,15 @@ namespace TencentCloud
                     bool PortOverridesHasBeenSet() const;
 
                     /**
-                     * 获取<p>HPPTS加密算法套件</p>
-                     * @return CipherPolicyId <p>HPPTS加密算法套件</p>
+                     * 获取<p>HPPTS加密算法套件</p><p>入参限制：支持选择&#39;tls_policy_1.0-2&#39;, &#39;tls_policy_1.1-2&#39;, &#39;tls_policy_1.2&#39;, &#39;tls_policy_1.2_strict&#39;, &#39;tls_policy_1.2_strict-1.3&#39;。</p><p>当监听器协议是HTTPS时，才支持修改此参数。</p>
+                     * @return CipherPolicyId <p>HPPTS加密算法套件</p><p>入参限制：支持选择&#39;tls_policy_1.0-2&#39;, &#39;tls_policy_1.1-2&#39;, &#39;tls_policy_1.2&#39;, &#39;tls_policy_1.2_strict&#39;, &#39;tls_policy_1.2_strict-1.3&#39;。</p><p>当监听器协议是HTTPS时，才支持修改此参数。</p>
                      * 
                      */
                     std::string GetCipherPolicyId() const;
 
                     /**
-                     * 设置<p>HPPTS加密算法套件</p>
-                     * @param _cipherPolicyId <p>HPPTS加密算法套件</p>
+                     * 设置<p>HPPTS加密算法套件</p><p>入参限制：支持选择&#39;tls_policy_1.0-2&#39;, &#39;tls_policy_1.1-2&#39;, &#39;tls_policy_1.2&#39;, &#39;tls_policy_1.2_strict&#39;, &#39;tls_policy_1.2_strict-1.3&#39;。</p><p>当监听器协议是HTTPS时，才支持修改此参数。</p>
+                     * @param _cipherPolicyId <p>HPPTS加密算法套件</p><p>入参限制：支持选择&#39;tls_policy_1.0-2&#39;, &#39;tls_policy_1.1-2&#39;, &#39;tls_policy_1.2&#39;, &#39;tls_policy_1.2_strict&#39;, &#39;tls_policy_1.2_strict-1.3&#39;。</p><p>当监听器协议是HTTPS时，才支持修改此参数。</p>
                      * 
                      */
                     void SetCipherPolicyId(const std::string& _cipherPolicyId);
@@ -575,13 +575,13 @@ namespace TencentCloud
                     bool m_endpointConfigurationsHasBeenSet;
 
                     /**
-                     * <p>名称，最大长度不能超过60个字节。</p>
+                     * <p>名称。</p><p>入参限制：最大长度不能超过128个字节。</p><p>以大小写字母或中文开头。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * <p>描述信息，最大长度不能超过100个字节。</p>
+                     * <p>描述信息。</p><p>入参限制：最大长度不能超过100个字节。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -593,97 +593,97 @@ namespace TencentCloud
                     bool m_enableHealthCheckHasBeenSet;
 
                     /**
-                     * <p>响应超时时间。</p>
+                     * <p>响应超时时间。</p><p>取值范围：[1, 100]</p><p>当开启健康检查时候，此参数必传。</p>
                      */
                     uint64_t m_connectTimeout;
                     bool m_connectTimeoutHasBeenSet;
 
                     /**
-                     * <p>健康检查间隔。</p>
+                     * <p>健康检查间隔。</p><p>取值范围：[5, 300]</p><p>当开启健康检查时，此参数必传。</p>
                      */
                     uint64_t m_healthCheckInterval;
                     bool m_healthCheckIntervalHasBeenSet;
 
                     /**
-                     * <p>不健康阀值。</p>
+                     * <p>不健康阀值。</p><p>取值范围：[1, 10]</p><p>当开启健康检查时，此字段必传。</p>
                      */
                     uint64_t m_unhealthyThreshold;
                     bool m_unhealthyThresholdHasBeenSet;
 
                     /**
-                     * <p>健康阀值。</p>
+                     * <p>健康阀值。</p><p>取值范围：[1, 10]</p><p>当开启健康检查时，此字段必传。</p>
                      */
                     uint64_t m_healthyThreshold;
                     bool m_healthyThresholdHasBeenSet;
 
                     /**
-                     * <p>检查协议。</p>
+                     * <p>检查协议。</p><p>入参限制：支持填写：&#39;TCP&#39;, &#39;HTTP&#39;, &#39;PING&#39;, &#39;CUSTOM&#39;。</p><p>1、当监听器是TCP时，可以选CUSTOM+TCP。<br>2、当监听器是UDP时，可以选PING+CUSTOM。<br>3、当监听器是HTTP或HTTPS时，可以选HTTP。</p>
                      */
                     std::string m_checkType;
                     bool m_checkTypeHasBeenSet;
 
                     /**
-                     * <p>检查端口。</p>
+                     * <p>检查端口。</p><p>取值范围：[1, 65535]</p><p>当CheckType是CUSTOM时，此字段必传。</p>
                      */
                     uint64_t m_checkPort;
                     bool m_checkPortHasBeenSet;
 
                     /**
-                     * <p>检查内容。</p>
+                     * <p>检查内容。</p><p>入参限制：仅支持TEXT。</p><p>当CheckType是CUSTOM时，此字段必传。</p>
                      */
                     std::string m_contextType;
                     bool m_contextTypeHasBeenSet;
 
                     /**
-                     * <p>检查请求。</p>
+                     * <p>检查请求。</p><p>入参限制：长度范围在1-500。</p><p>当CheckType是CUSTOM时，此字段必传。</p>
                      */
                     std::string m_checkSendContext;
                     bool m_checkSendContextHasBeenSet;
 
                     /**
-                     * <p>检查返回结果。</p>
+                     * <p>检查返回结果。</p><p>入参限制：长度范围在1-500。</p><p>当CheckType是CUSTOM时，此字段必传。</p>
                      */
                     std::string m_checkRecvContext;
                     bool m_checkRecvContextHasBeenSet;
 
                     /**
-                     * <p>检查域名。</p>
+                     * <p>检查域名。</p><p>入参限制：长度范围在3-80。</p><p>当CheckType是HTTP时，此字段必传。</p>
                      */
                     std::string m_checkDomain;
                     bool m_checkDomainHasBeenSet;
 
                     /**
-                     * <p>检查URL。</p>
+                     * <p>检查URL。</p><p>入参限制：长度范围在3-80。</p><p>当CheckType是HTTP时，此字段必传。</p>
                      */
                     std::string m_checkPath;
                     bool m_checkPathHasBeenSet;
 
                     /**
-                     * <p>请求方式。</p>
+                     * <p>请求方式。</p><p>入参限制：支持填写 &#39;GET&#39;, &#39;HEAD&#39;。</p><p>当CheckType是HTTP时，此字段必传。</p>
                      */
                     std::string m_checkMethod;
                     bool m_checkMethodHasBeenSet;
 
                     /**
-                     * <p>状态检测码。</p>
+                     * <p>状态检测码。</p><p>入参限制：支持选择&#39;http_2xx&#39;, &#39;http_3xx&#39;, &#39;http_4xx&#39;, &#39;http_5xx&#39;。</p><p>当CheckType是HTTP时，此字段必传。</p>
                      */
                     std::vector<std::string> m_statusMask;
                     bool m_statusMaskHasBeenSet;
 
                     /**
-                     * <p>回源协议。</p>
+                     * <p>回源协议。</p><p>入参限制：支持选择：&#39;HTTP&#39;, &#39;HTTPS&#39;。</p><p>当监听器协议是HTTP时只能配置HTTP，是HTTPS时能配HTTP或HTTPS。</p>
                      */
                     std::string m_forwardProtocol;
                     bool m_forwardProtocolHasBeenSet;
 
                     /**
-                     * <p>端口映射。</p>
+                     * <p>端口映射。</p><p>当监听器协议是HTTP或HTTPS支持配置一对。当监听器协议是UDP或TCP支持配置最多30对。</p>
                      */
                     std::vector<PortOverride> m_portOverrides;
                     bool m_portOverridesHasBeenSet;
 
                     /**
-                     * <p>HPPTS加密算法套件</p>
+                     * <p>HPPTS加密算法套件</p><p>入参限制：支持选择&#39;tls_policy_1.0-2&#39;, &#39;tls_policy_1.1-2&#39;, &#39;tls_policy_1.2&#39;, &#39;tls_policy_1.2_strict&#39;, &#39;tls_policy_1.2_strict-1.3&#39;。</p><p>当监听器协议是HTTPS时，才支持修改此参数。</p>
                      */
                     std::string m_cipherPolicyId;
                     bool m_cipherPolicyIdHasBeenSet;

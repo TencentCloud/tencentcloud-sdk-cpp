@@ -44,7 +44,8 @@ MQTTInstanceItem::MQTTInstanceItem() :
     m_sharedSubscriptionGroupLimitHasBeenSet(false),
     m_maxTopicFilterPerSharedSubscriptionGroupHasBeenSet(false),
     m_autoSubscriptionPolicyLimitHasBeenSet(false),
-    m_maxTopicFilterPerAutoSubscriptionPolicyHasBeenSet(false)
+    m_maxTopicFilterPerAutoSubscriptionPolicyHasBeenSet(false),
+    m_deleteProtectHasBeenSet(false)
 {
 }
 
@@ -293,6 +294,16 @@ CoreInternalOutcome MQTTInstanceItem::Deserialize(const rapidjson::Value &value)
         m_maxTopicFilterPerAutoSubscriptionPolicyHasBeenSet = true;
     }
 
+    if (value.HasMember("DeleteProtect") && !value["DeleteProtect"].IsNull())
+    {
+        if (!value["DeleteProtect"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `MQTTInstanceItem.DeleteProtect` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_deleteProtect = value["DeleteProtect"].GetBool();
+        m_deleteProtectHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -490,6 +501,14 @@ void MQTTInstanceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "MaxTopicFilterPerAutoSubscriptionPolicy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxTopicFilterPerAutoSubscriptionPolicy, allocator);
+    }
+
+    if (m_deleteProtectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteProtect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deleteProtect, allocator);
     }
 
 }
@@ -877,5 +896,21 @@ void MQTTInstanceItem::SetMaxTopicFilterPerAutoSubscriptionPolicy(const int64_t&
 bool MQTTInstanceItem::MaxTopicFilterPerAutoSubscriptionPolicyHasBeenSet() const
 {
     return m_maxTopicFilterPerAutoSubscriptionPolicyHasBeenSet;
+}
+
+bool MQTTInstanceItem::GetDeleteProtect() const
+{
+    return m_deleteProtect;
+}
+
+void MQTTInstanceItem::SetDeleteProtect(const bool& _deleteProtect)
+{
+    m_deleteProtect = _deleteProtect;
+    m_deleteProtectHasBeenSet = true;
+}
+
+bool MQTTInstanceItem::DeleteProtectHasBeenSet() const
+{
+    return m_deleteProtectHasBeenSet;
 }
 

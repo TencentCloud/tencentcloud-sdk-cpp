@@ -948,6 +948,31 @@ namespace TencentCloud
                      */
                     bool CatalogNameHasBeenSet() const;
 
+                    /**
+                     * 获取规则执行状态（0：初始状态，1：运行中，2：运行成功，3：运行失败，4：被杀死）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleExecStatus 规则执行状态（0：初始状态，1：运行中，2：运行成功，3：运行失败，4：被杀死）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRuleExecStatus() const;
+
+                    /**
+                     * 设置规则执行状态（0：初始状态，1：运行中，2：运行成功，3：运行失败，4：被杀死）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleExecStatus 规则执行状态（0：初始状态，1：运行中，2：运行成功，3：运行失败，4：被杀死）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleExecStatus(const int64_t& _ruleExecStatus);
+
+                    /**
+                     * 判断参数 RuleExecStatus 是否已赋值
+                     * @return RuleExecStatus 是否已赋值
+                     * 
+                     */
+                    bool RuleExecStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1201,6 +1226,13 @@ namespace TencentCloud
                      */
                     std::string m_catalogName;
                     bool m_catalogNameHasBeenSet;
+
+                    /**
+                     * 规则执行状态（0：初始状态，1：运行中，2：运行成功，3：运行失败，4：被杀死）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_ruleExecStatus;
+                    bool m_ruleExecStatusHasBeenSet;
 
                 };
             }

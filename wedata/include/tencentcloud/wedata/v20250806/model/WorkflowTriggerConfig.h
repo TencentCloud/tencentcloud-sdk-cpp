@@ -47,46 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取触发方式，
-- 定时触发：TIME_TRIGGER
-- 持续运行：CONTINUE_RUN
-- 文件到达：FILE_ARRIVAL
-
-注意：
-- TIME_TRIGGER 和 CONTINUE_RUN 模式下，SchedulerStatus、SchedulerTimeZone、StartTime、EndTime、ConfigMode、CycleType、CrontabExpression 必填；
-- FILE_ARRIVAL 模式下，FileArrivalPath、TriggerMinimumIntervalSecond、TriggerWaitTimeSecond 必填；
+                     * 获取<p>触发方式，非必填，外部结构的TriggerMode字段优先级比当前字段高</p><ul><li>定时触发：TIME_TRIGGER</li><li>持续运行：CONTINUE_RUN（暂不支持）</li><li>文件到达：FILE_ARRIVAL（暂不支持）</li></ul><p>注意：</p><ul><li>TIME_TRIGGER 和 CONTINUE_RUN 模式下，SchedulerStatus、SchedulerTimeZone、StartTime、EndTime、ConfigMode、CycleType、CrontabExpression 必填；</li><li>FILE_ARRIVAL 模式下，FileArrivalPath、TriggerMinimumIntervalSecond、TriggerWaitTimeSecond 必填；</li></ul><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TriggerMode 触发方式，
-- 定时触发：TIME_TRIGGER
-- 持续运行：CONTINUE_RUN
-- 文件到达：FILE_ARRIVAL
-
-注意：
-- TIME_TRIGGER 和 CONTINUE_RUN 模式下，SchedulerStatus、SchedulerTimeZone、StartTime、EndTime、ConfigMode、CycleType、CrontabExpression 必填；
-- FILE_ARRIVAL 模式下，FileArrivalPath、TriggerMinimumIntervalSecond、TriggerWaitTimeSecond 必填；
+                     * @return TriggerMode <p>触发方式，非必填，外部结构的TriggerMode字段优先级比当前字段高</p><ul><li>定时触发：TIME_TRIGGER</li><li>持续运行：CONTINUE_RUN（暂不支持）</li><li>文件到达：FILE_ARRIVAL（暂不支持）</li></ul><p>注意：</p><ul><li>TIME_TRIGGER 和 CONTINUE_RUN 模式下，SchedulerStatus、SchedulerTimeZone、StartTime、EndTime、ConfigMode、CycleType、CrontabExpression 必填；</li><li>FILE_ARRIVAL 模式下，FileArrivalPath、TriggerMinimumIntervalSecond、TriggerWaitTimeSecond 必填；</li></ul><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTriggerMode() const;
 
                     /**
-                     * 设置触发方式，
-- 定时触发：TIME_TRIGGER
-- 持续运行：CONTINUE_RUN
-- 文件到达：FILE_ARRIVAL
-
-注意：
-- TIME_TRIGGER 和 CONTINUE_RUN 模式下，SchedulerStatus、SchedulerTimeZone、StartTime、EndTime、ConfigMode、CycleType、CrontabExpression 必填；
-- FILE_ARRIVAL 模式下，FileArrivalPath、TriggerMinimumIntervalSecond、TriggerWaitTimeSecond 必填；
+                     * 设置<p>触发方式，非必填，外部结构的TriggerMode字段优先级比当前字段高</p><ul><li>定时触发：TIME_TRIGGER</li><li>持续运行：CONTINUE_RUN（暂不支持）</li><li>文件到达：FILE_ARRIVAL（暂不支持）</li></ul><p>注意：</p><ul><li>TIME_TRIGGER 和 CONTINUE_RUN 模式下，SchedulerStatus、SchedulerTimeZone、StartTime、EndTime、ConfigMode、CycleType、CrontabExpression 必填；</li><li>FILE_ARRIVAL 模式下，FileArrivalPath、TriggerMinimumIntervalSecond、TriggerWaitTimeSecond 必填；</li></ul><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _triggerMode 触发方式，
-- 定时触发：TIME_TRIGGER
-- 持续运行：CONTINUE_RUN
-- 文件到达：FILE_ARRIVAL
-
-注意：
-- TIME_TRIGGER 和 CONTINUE_RUN 模式下，SchedulerStatus、SchedulerTimeZone、StartTime、EndTime、ConfigMode、CycleType、CrontabExpression 必填；
-- FILE_ARRIVAL 模式下，FileArrivalPath、TriggerMinimumIntervalSecond、TriggerWaitTimeSecond 必填；
+                     * @param _triggerMode <p>触发方式，非必填，外部结构的TriggerMode字段优先级比当前字段高</p><ul><li>定时触发：TIME_TRIGGER</li><li>持续运行：CONTINUE_RUN（暂不支持）</li><li>文件到达：FILE_ARRIVAL（暂不支持）</li></ul><p>注意：</p><ul><li>TIME_TRIGGER 和 CONTINUE_RUN 模式下，SchedulerStatus、SchedulerTimeZone、StartTime、EndTime、ConfigMode、CycleType、CrontabExpression 必填；</li><li>FILE_ARRIVAL 模式下，FileArrivalPath、TriggerMinimumIntervalSecond、TriggerWaitTimeSecond 必填；</li></ul><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -100,18 +72,18 @@ namespace TencentCloud
                     bool TriggerModeHasBeenSet() const;
 
                     /**
-                     * 获取WorkflowTriggerConfig转换成Json格式，对账使用
+                     * 获取<p>WorkflowTriggerConfig转换成Json格式，对账使用</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExtraInfo WorkflowTriggerConfig转换成Json格式，对账使用
+                     * @return ExtraInfo <p>WorkflowTriggerConfig转换成Json格式，对账使用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExtraInfo() const;
 
                     /**
-                     * 设置WorkflowTriggerConfig转换成Json格式，对账使用
+                     * 设置<p>WorkflowTriggerConfig转换成Json格式，对账使用</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _extraInfo WorkflowTriggerConfig转换成Json格式，对账使用
+                     * @param _extraInfo <p>WorkflowTriggerConfig转换成Json格式，对账使用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -125,18 +97,18 @@ namespace TencentCloud
                     bool ExtraInfoHasBeenSet() const;
 
                     /**
-                     * 获取调度时区
+                     * 获取<p>调度时区</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScheduleTimeZone 调度时区
+                     * @return ScheduleTimeZone <p>调度时区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScheduleTimeZone() const;
 
                     /**
-                     * 设置调度时区
+                     * 设置<p>调度时区</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scheduleTimeZone 调度时区
+                     * @param _scheduleTimeZone <p>调度时区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -150,18 +122,18 @@ namespace TencentCloud
                     bool ScheduleTimeZoneHasBeenSet() const;
 
                     /**
-                     * 获取调度生效时间
+                     * 获取<p>调度生效时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StartTime 调度生效时间
+                     * @return StartTime <p>调度生效时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置调度生效时间
+                     * 设置<p>调度生效时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _startTime 调度生效时间
+                     * @param _startTime <p>调度生效时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -175,18 +147,18 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取调度结束时间
+                     * 获取<p>调度结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EndTime 调度结束时间
+                     * @return EndTime <p>调度结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置调度结束时间
+                     * 设置<p>调度结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _endTime 调度结束时间
+                     * @param _endTime <p>调度结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -200,18 +172,18 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取配置方式，常规：COMMON，CRON表达式：CRON_EXPRESSION
+                     * 获取<p>配置方式，常规：COMMON，CRON表达式：CRON_EXPRESSION</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ConfigMode 配置方式，常规：COMMON，CRON表达式：CRON_EXPRESSION
+                     * @return ConfigMode <p>配置方式，常规：COMMON，CRON表达式：CRON_EXPRESSION</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigMode() const;
 
                     /**
-                     * 设置配置方式，常规：COMMON，CRON表达式：CRON_EXPRESSION
+                     * 设置<p>配置方式，常规：COMMON，CRON表达式：CRON_EXPRESSION</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _configMode 配置方式，常规：COMMON，CRON表达式：CRON_EXPRESSION
+                     * @param _configMode <p>配置方式，常规：COMMON，CRON表达式：CRON_EXPRESSION</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -225,50 +197,18 @@ namespace TencentCloud
                     bool ConfigModeHasBeenSet() const;
 
                     /**
-                     * 获取周期类型：支持的类型为
-ONEOFF_CYCLE: 一次性
-YEAR_CYCLE: 年
-MONTH_CYCLE: 月
-WEEK_CYCLE: 周
-DAY_CYCLE: 天
-HOUR_CYCLE: 小时
-MINUTE_CYCLE: 分钟
-CRONTAB_CYCLE: crontab表达式类型
+                     * 获取<p>周期类型：支持的类型为<br>ONEOFF_CYCLE: 一次性<br>YEAR_CYCLE: 年<br>MONTH_CYCLE: 月<br>WEEK_CYCLE: 周<br>DAY_CYCLE: 天<br>HOUR_CYCLE: 小时<br>MINUTE_CYCLE: 分钟<br>CRONTAB_CYCLE: crontab表达式类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CycleType 周期类型：支持的类型为
-ONEOFF_CYCLE: 一次性
-YEAR_CYCLE: 年
-MONTH_CYCLE: 月
-WEEK_CYCLE: 周
-DAY_CYCLE: 天
-HOUR_CYCLE: 小时
-MINUTE_CYCLE: 分钟
-CRONTAB_CYCLE: crontab表达式类型
+                     * @return CycleType <p>周期类型：支持的类型为<br>ONEOFF_CYCLE: 一次性<br>YEAR_CYCLE: 年<br>MONTH_CYCLE: 月<br>WEEK_CYCLE: 周<br>DAY_CYCLE: 天<br>HOUR_CYCLE: 小时<br>MINUTE_CYCLE: 分钟<br>CRONTAB_CYCLE: crontab表达式类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCycleType() const;
 
                     /**
-                     * 设置周期类型：支持的类型为
-ONEOFF_CYCLE: 一次性
-YEAR_CYCLE: 年
-MONTH_CYCLE: 月
-WEEK_CYCLE: 周
-DAY_CYCLE: 天
-HOUR_CYCLE: 小时
-MINUTE_CYCLE: 分钟
-CRONTAB_CYCLE: crontab表达式类型
+                     * 设置<p>周期类型：支持的类型为<br>ONEOFF_CYCLE: 一次性<br>YEAR_CYCLE: 年<br>MONTH_CYCLE: 月<br>WEEK_CYCLE: 周<br>DAY_CYCLE: 天<br>HOUR_CYCLE: 小时<br>MINUTE_CYCLE: 分钟<br>CRONTAB_CYCLE: crontab表达式类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cycleType 周期类型：支持的类型为
-ONEOFF_CYCLE: 一次性
-YEAR_CYCLE: 年
-MONTH_CYCLE: 月
-WEEK_CYCLE: 周
-DAY_CYCLE: 天
-HOUR_CYCLE: 小时
-MINUTE_CYCLE: 分钟
-CRONTAB_CYCLE: crontab表达式类型
+                     * @param _cycleType <p>周期类型：支持的类型为<br>ONEOFF_CYCLE: 一次性<br>YEAR_CYCLE: 年<br>MONTH_CYCLE: 月<br>WEEK_CYCLE: 周<br>DAY_CYCLE: 天<br>HOUR_CYCLE: 小时<br>MINUTE_CYCLE: 分钟<br>CRONTAB_CYCLE: crontab表达式类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -282,18 +222,18 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool CycleTypeHasBeenSet() const;
 
                     /**
-                     * 获取cron表达式
+                     * 获取<p>cron表达式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CrontabExpression cron表达式
+                     * @return CrontabExpression <p>cron表达式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCrontabExpression() const;
 
                     /**
-                     * 设置cron表达式
+                     * 设置<p>cron表达式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _crontabExpression cron表达式
+                     * @param _crontabExpression <p>cron表达式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -307,18 +247,18 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool CrontabExpressionHasBeenSet() const;
 
                     /**
-                     * 获取triggerId, uuid
+                     * 获取<p>triggerId, uuid</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TriggerId triggerId, uuid
+                     * @return TriggerId <p>triggerId, uuid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTriggerId() const;
 
                     /**
-                     * 设置triggerId, uuid
+                     * 设置<p>triggerId, uuid</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _triggerId triggerId, uuid
+                     * @param _triggerId <p>triggerId, uuid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -332,18 +272,18 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool TriggerIdHasBeenSet() const;
 
                     /**
-                     * 获取文件到达模式下	存储系统中的监听路径
+                     * 获取<p>文件到达模式下    存储系统中的监听路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FileArrivalPath 文件到达模式下	存储系统中的监听路径
+                     * @return FileArrivalPath <p>文件到达模式下    存储系统中的监听路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileArrivalPath() const;
 
                     /**
-                     * 设置文件到达模式下	存储系统中的监听路径
+                     * 设置<p>文件到达模式下    存储系统中的监听路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fileArrivalPath 文件到达模式下	存储系统中的监听路径
+                     * @param _fileArrivalPath <p>文件到达模式下    存储系统中的监听路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -357,18 +297,18 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool FileArrivalPathHasBeenSet() const;
 
                     /**
-                     * 获取文件到达模式下	触发最短间隔时间（单位：秒）
+                     * 获取<p>文件到达模式下    触发最短间隔时间（单位：秒）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TriggerMinimumIntervalSecond 文件到达模式下	触发最短间隔时间（单位：秒）
+                     * @return TriggerMinimumIntervalSecond <p>文件到达模式下    触发最短间隔时间（单位：秒）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTriggerMinimumIntervalSecond() const;
 
                     /**
-                     * 设置文件到达模式下	触发最短间隔时间（单位：秒）
+                     * 设置<p>文件到达模式下    触发最短间隔时间（单位：秒）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _triggerMinimumIntervalSecond 文件到达模式下	触发最短间隔时间（单位：秒）
+                     * @param _triggerMinimumIntervalSecond <p>文件到达模式下    触发最短间隔时间（单位：秒）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -382,18 +322,18 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool TriggerMinimumIntervalSecondHasBeenSet() const;
 
                     /**
-                     * 获取文件到达模式下	触发等待时间（单位：秒）
+                     * 获取<p>文件到达模式下    触发等待时间（单位：秒）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TriggerWaitTimeSecond 文件到达模式下	触发等待时间（单位：秒）
+                     * @return TriggerWaitTimeSecond <p>文件到达模式下    触发等待时间（单位：秒）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTriggerWaitTimeSecond() const;
 
                     /**
-                     * 设置文件到达模式下	触发等待时间（单位：秒）
+                     * 设置<p>文件到达模式下    触发等待时间（单位：秒）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _triggerWaitTimeSecond 文件到达模式下	触发等待时间（单位：秒）
+                     * @param _triggerWaitTimeSecond <p>文件到达模式下    触发等待时间（单位：秒）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -407,18 +347,18 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool TriggerWaitTimeSecondHasBeenSet() const;
 
                     /**
-                     * 获取Trigger 状态 启动ACTIVE，暂停PAUSED
+                     * 获取<p>Trigger 状态 启动ACTIVE，暂停PAUSED。外部的TriggerStatus优先级大于当前值</p><p>枚举值：</p><ul><li>ACTIVE： 启动</li><li>PAUSED： 暂停</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SchedulerStatus Trigger 状态 启动ACTIVE，暂停PAUSED
+                     * @return SchedulerStatus <p>Trigger 状态 启动ACTIVE，暂停PAUSED。外部的TriggerStatus优先级大于当前值</p><p>枚举值：</p><ul><li>ACTIVE： 启动</li><li>PAUSED： 暂停</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSchedulerStatus() const;
 
                     /**
-                     * 设置Trigger 状态 启动ACTIVE，暂停PAUSED
+                     * 设置<p>Trigger 状态 启动ACTIVE，暂停PAUSED。外部的TriggerStatus优先级大于当前值</p><p>枚举值：</p><ul><li>ACTIVE： 启动</li><li>PAUSED： 暂停</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _schedulerStatus Trigger 状态 启动ACTIVE，暂停PAUSED
+                     * @param _schedulerStatus <p>Trigger 状态 启动ACTIVE，暂停PAUSED。外部的TriggerStatus优先级大于当前值</p><p>枚举值：</p><ul><li>ACTIVE： 启动</li><li>PAUSED： 暂停</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -434,106 +374,91 @@ CRONTAB_CYCLE: crontab表达式类型
                 private:
 
                     /**
-                     * 触发方式，
-- 定时触发：TIME_TRIGGER
-- 持续运行：CONTINUE_RUN
-- 文件到达：FILE_ARRIVAL
-
-注意：
-- TIME_TRIGGER 和 CONTINUE_RUN 模式下，SchedulerStatus、SchedulerTimeZone、StartTime、EndTime、ConfigMode、CycleType、CrontabExpression 必填；
-- FILE_ARRIVAL 模式下，FileArrivalPath、TriggerMinimumIntervalSecond、TriggerWaitTimeSecond 必填；
+                     * <p>触发方式，非必填，外部结构的TriggerMode字段优先级比当前字段高</p><ul><li>定时触发：TIME_TRIGGER</li><li>持续运行：CONTINUE_RUN（暂不支持）</li><li>文件到达：FILE_ARRIVAL（暂不支持）</li></ul><p>注意：</p><ul><li>TIME_TRIGGER 和 CONTINUE_RUN 模式下，SchedulerStatus、SchedulerTimeZone、StartTime、EndTime、ConfigMode、CycleType、CrontabExpression 必填；</li><li>FILE_ARRIVAL 模式下，FileArrivalPath、TriggerMinimumIntervalSecond、TriggerWaitTimeSecond 必填；</li></ul><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_triggerMode;
                     bool m_triggerModeHasBeenSet;
 
                     /**
-                     * WorkflowTriggerConfig转换成Json格式，对账使用
+                     * <p>WorkflowTriggerConfig转换成Json格式，对账使用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_extraInfo;
                     bool m_extraInfoHasBeenSet;
 
                     /**
-                     * 调度时区
+                     * <p>调度时区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scheduleTimeZone;
                     bool m_scheduleTimeZoneHasBeenSet;
 
                     /**
-                     * 调度生效时间
+                     * <p>调度生效时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 调度结束时间
+                     * <p>调度结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 配置方式，常规：COMMON，CRON表达式：CRON_EXPRESSION
+                     * <p>配置方式，常规：COMMON，CRON表达式：CRON_EXPRESSION</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configMode;
                     bool m_configModeHasBeenSet;
 
                     /**
-                     * 周期类型：支持的类型为
-ONEOFF_CYCLE: 一次性
-YEAR_CYCLE: 年
-MONTH_CYCLE: 月
-WEEK_CYCLE: 周
-DAY_CYCLE: 天
-HOUR_CYCLE: 小时
-MINUTE_CYCLE: 分钟
-CRONTAB_CYCLE: crontab表达式类型
+                     * <p>周期类型：支持的类型为<br>ONEOFF_CYCLE: 一次性<br>YEAR_CYCLE: 年<br>MONTH_CYCLE: 月<br>WEEK_CYCLE: 周<br>DAY_CYCLE: 天<br>HOUR_CYCLE: 小时<br>MINUTE_CYCLE: 分钟<br>CRONTAB_CYCLE: crontab表达式类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cycleType;
                     bool m_cycleTypeHasBeenSet;
 
                     /**
-                     * cron表达式
+                     * <p>cron表达式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_crontabExpression;
                     bool m_crontabExpressionHasBeenSet;
 
                     /**
-                     * triggerId, uuid
+                     * <p>triggerId, uuid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_triggerId;
                     bool m_triggerIdHasBeenSet;
 
                     /**
-                     * 文件到达模式下	存储系统中的监听路径
+                     * <p>文件到达模式下    存储系统中的监听路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileArrivalPath;
                     bool m_fileArrivalPathHasBeenSet;
 
                     /**
-                     * 文件到达模式下	触发最短间隔时间（单位：秒）
+                     * <p>文件到达模式下    触发最短间隔时间（单位：秒）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_triggerMinimumIntervalSecond;
                     bool m_triggerMinimumIntervalSecondHasBeenSet;
 
                     /**
-                     * 文件到达模式下	触发等待时间（单位：秒）
+                     * <p>文件到达模式下    触发等待时间（单位：秒）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_triggerWaitTimeSecond;
                     bool m_triggerWaitTimeSecondHasBeenSet;
 
                     /**
-                     * Trigger 状态 启动ACTIVE，暂停PAUSED
+                     * <p>Trigger 状态 启动ACTIVE，暂停PAUSED。外部的TriggerStatus优先级大于当前值</p><p>枚举值：</p><ul><li>ACTIVE： 启动</li><li>PAUSED： 暂停</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_schedulerStatus;

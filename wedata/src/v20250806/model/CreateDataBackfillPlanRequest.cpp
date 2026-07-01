@@ -36,7 +36,8 @@ CreateDataBackfillPlanRequest::CreateDataBackfillPlanRequest() :
     m_integrationResourceGroupIdHasBeenSet(false),
     m_redefineParamListHasBeenSet(false),
     m_dataTimeOrderHasBeenSet(false),
-    m_redefineCycleTypeHasBeenSet(false)
+    m_redefineCycleTypeHasBeenSet(false),
+    m_computeConfigMappingsHasBeenSet(false)
 {
 }
 
@@ -176,6 +177,21 @@ string CreateDataBackfillPlanRequest::ToJsonString() const
         string key = "RedefineCycleType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_redefineCycleType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_computeConfigMappingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeConfigMappings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_computeConfigMappings.begin(); itr != m_computeConfigMappings.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -408,6 +424,22 @@ void CreateDataBackfillPlanRequest::SetRedefineCycleType(const string& _redefine
 bool CreateDataBackfillPlanRequest::RedefineCycleTypeHasBeenSet() const
 {
     return m_redefineCycleTypeHasBeenSet;
+}
+
+vector<ComputeConfigMapping> CreateDataBackfillPlanRequest::GetComputeConfigMappings() const
+{
+    return m_computeConfigMappings;
+}
+
+void CreateDataBackfillPlanRequest::SetComputeConfigMappings(const vector<ComputeConfigMapping>& _computeConfigMappings)
+{
+    m_computeConfigMappings = _computeConfigMappings;
+    m_computeConfigMappingsHasBeenSet = true;
+}
+
+bool CreateDataBackfillPlanRequest::ComputeConfigMappingsHasBeenSet() const
+{
+    return m_computeConfigMappingsHasBeenSet;
 }
 
 

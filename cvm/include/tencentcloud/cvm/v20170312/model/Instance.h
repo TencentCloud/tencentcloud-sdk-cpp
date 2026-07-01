@@ -663,21 +663,21 @@ namespace TencentCloud
                     /**
                      * 获取<p>分散置放群组ID。</p>
                      * @return DisasterRecoverGroupId <p>分散置放群组ID。</p>
-                     * 
+                     * @deprecated
                      */
                     std::string GetDisasterRecoverGroupId() const;
 
                     /**
                      * 设置<p>分散置放群组ID。</p>
                      * @param _disasterRecoverGroupId <p>分散置放群组ID。</p>
-                     * 
+                     * @deprecated
                      */
                     void SetDisasterRecoverGroupId(const std::string& _disasterRecoverGroupId);
 
                     /**
                      * 判断参数 DisasterRecoverGroupId 是否已赋值
                      * @return DisasterRecoverGroupId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DisasterRecoverGroupIdHasBeenSet() const;
 
@@ -818,6 +818,27 @@ namespace TencentCloud
                      * 
                      */
                     bool IsolatedSourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>置放群组列表(目前仅支持一个)</p>
+                     * @return DisasterRecoverGroupIds <p>置放群组列表(目前仅支持一个)</p>
+                     * 
+                     */
+                    std::vector<std::string> GetDisasterRecoverGroupIds() const;
+
+                    /**
+                     * 设置<p>置放群组列表(目前仅支持一个)</p>
+                     * @param _disasterRecoverGroupIds <p>置放群组列表(目前仅支持一个)</p>
+                     * 
+                     */
+                    void SetDisasterRecoverGroupIds(const std::vector<std::string>& _disasterRecoverGroupIds);
+
+                    /**
+                     * 判断参数 DisasterRecoverGroupIds 是否已赋值
+                     * @return DisasterRecoverGroupIds 是否已赋值
+                     * 
+                     */
+                    bool DisasterRecoverGroupIdsHasBeenSet() const;
 
                     /**
                      * 获取<p>GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。</p>
@@ -1230,6 +1251,12 @@ namespace TencentCloud
                      */
                     std::string m_isolatedSource;
                     bool m_isolatedSourceHasBeenSet;
+
+                    /**
+                     * <p>置放群组列表(目前仅支持一个)</p>
+                     */
+                    std::vector<std::string> m_disasterRecoverGroupIds;
+                    bool m_disasterRecoverGroupIdsHasBeenSet;
 
                     /**
                      * <p>GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。</p>

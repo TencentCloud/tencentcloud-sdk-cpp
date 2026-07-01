@@ -32,7 +32,10 @@ CreateHttpAuthenticatorRequest::CreateHttpAuthenticatorRequest() :
     m_connectTimeoutHasBeenSet(false),
     m_readTimeoutHasBeenSet(false),
     m_headerHasBeenSet(false),
-    m_bodyHasBeenSet(false)
+    m_bodyHasBeenSet(false),
+    m_includingUserPropertiesHasBeenSet(false),
+    m_vpcSvcIdHasBeenSet(false),
+    m_networkTypeHasBeenSet(false)
 {
 }
 
@@ -135,6 +138,30 @@ string CreateHttpAuthenticatorRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_includingUserPropertiesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncludingUserProperties";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_includingUserProperties, allocator);
+    }
+
+    if (m_vpcSvcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcSvcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vpcSvcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_networkType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -303,6 +330,54 @@ void CreateHttpAuthenticatorRequest::SetBody(const vector<BodyItem>& _body)
 bool CreateHttpAuthenticatorRequest::BodyHasBeenSet() const
 {
     return m_bodyHasBeenSet;
+}
+
+bool CreateHttpAuthenticatorRequest::GetIncludingUserProperties() const
+{
+    return m_includingUserProperties;
+}
+
+void CreateHttpAuthenticatorRequest::SetIncludingUserProperties(const bool& _includingUserProperties)
+{
+    m_includingUserProperties = _includingUserProperties;
+    m_includingUserPropertiesHasBeenSet = true;
+}
+
+bool CreateHttpAuthenticatorRequest::IncludingUserPropertiesHasBeenSet() const
+{
+    return m_includingUserPropertiesHasBeenSet;
+}
+
+string CreateHttpAuthenticatorRequest::GetVpcSvcId() const
+{
+    return m_vpcSvcId;
+}
+
+void CreateHttpAuthenticatorRequest::SetVpcSvcId(const string& _vpcSvcId)
+{
+    m_vpcSvcId = _vpcSvcId;
+    m_vpcSvcIdHasBeenSet = true;
+}
+
+bool CreateHttpAuthenticatorRequest::VpcSvcIdHasBeenSet() const
+{
+    return m_vpcSvcIdHasBeenSet;
+}
+
+string CreateHttpAuthenticatorRequest::GetNetworkType() const
+{
+    return m_networkType;
+}
+
+void CreateHttpAuthenticatorRequest::SetNetworkType(const string& _networkType)
+{
+    m_networkType = _networkType;
+    m_networkTypeHasBeenSet = true;
+}
+
+bool CreateHttpAuthenticatorRequest::NetworkTypeHasBeenSet() const
+{
+    return m_networkTypeHasBeenSet;
 }
 
 

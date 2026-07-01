@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取脚本ID
+                     * 获取<p>脚本ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CodeFileId 脚本ID
+                     * @return CodeFileId <p>脚本ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCodeFileId() const;
 
                     /**
-                     * 设置脚本ID
+                     * 设置<p>脚本ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _codeFileId 脚本ID
+                     * @param _codeFileId <p>脚本ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool CodeFileIdHasBeenSet() const;
 
                     /**
-                     * 获取脚本名称
+                     * 获取<p>脚本名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CodeFileName 脚本名称
+                     * @return CodeFileName <p>脚本名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCodeFileName() const;
 
                     /**
-                     * 设置脚本名称
+                     * 设置<p>脚本名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _codeFileName 脚本名称
+                     * @param _codeFileName <p>脚本名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool CodeFileNameHasBeenSet() const;
 
                     /**
-                     * 获取脚本所有者 uin
+                     * 获取<p>脚本所有者 uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OwnerUin 脚本所有者 uin
+                     * @return OwnerUin <p>脚本所有者 uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOwnerUin() const;
 
                     /**
-                     * 设置脚本所有者 uin
+                     * 设置<p>脚本所有者 uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ownerUin 脚本所有者 uin
+                     * @param _ownerUin <p>脚本所有者 uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,18 +123,18 @@ namespace TencentCloud
                     bool OwnerUinHasBeenSet() const;
 
                     /**
-                     * 获取脚本配置
+                     * 获取<p>脚本配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CodeFileConfig 脚本配置
+                     * @return CodeFileConfig <p>脚本配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CodeFileConfig GetCodeFileConfig() const;
 
                     /**
-                     * 设置脚本配置
+                     * 设置<p>脚本配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _codeFileConfig 脚本配置
+                     * @param _codeFileConfig <p>脚本配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -148,18 +148,18 @@ namespace TencentCloud
                     bool CodeFileConfigHasBeenSet() const;
 
                     /**
-                     * 获取脚本内容
+                     * 获取<p>脚本内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CodeFileContent 脚本内容
+                     * @return CodeFileContent <p>脚本内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCodeFileContent() const;
 
                     /**
-                     * 设置脚本内容
+                     * 设置<p>脚本内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _codeFileContent 脚本内容
+                     * @param _codeFileContent <p>脚本内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -173,18 +173,18 @@ namespace TencentCloud
                     bool CodeFileContentHasBeenSet() const;
 
                     /**
-                     * 获取最近一次操作人
+                     * 获取<p>最近一次操作人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateUserUin 最近一次操作人
+                     * @return UpdateUserUin <p>最近一次操作人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateUserUin() const;
 
                     /**
-                     * 设置最近一次操作人
+                     * 设置<p>最近一次操作人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateUserUin 最近一次操作人
+                     * @param _updateUserUin <p>最近一次操作人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -198,18 +198,18 @@ namespace TencentCloud
                     bool UpdateUserUinHasBeenSet() const;
 
                     /**
-                     * 获取项目ID
+                     * 获取<p>项目ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProjectId 项目ID
+                     * @return ProjectId <p>项目ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目ID
+                     * 设置<p>项目ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _projectId 项目ID
+                     * @param _projectId <p>项目ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -223,18 +223,18 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取更新时间 yyyy-MM-dd hh:mm:ss
+                     * 获取<p>更新时间 yyyy-MM-dd hh:mm:ss</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 更新时间 yyyy-MM-dd hh:mm:ss
+                     * @return UpdateTime <p>更新时间 yyyy-MM-dd hh:mm:ss</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间 yyyy-MM-dd hh:mm:ss
+                     * 设置<p>更新时间 yyyy-MM-dd hh:mm:ss</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime 更新时间 yyyy-MM-dd hh:mm:ss
+                     * @param _updateTime <p>更新时间 yyyy-MM-dd hh:mm:ss</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -248,18 +248,18 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间 yyyy-MM-dd hh:mm:ss
+                     * 获取<p>创建时间 yyyy-MM-dd hh:mm:ss</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 创建时间 yyyy-MM-dd hh:mm:ss
+                     * @return CreateTime <p>创建时间 yyyy-MM-dd hh:mm:ss</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间 yyyy-MM-dd hh:mm:ss
+                     * 设置<p>创建时间 yyyy-MM-dd hh:mm:ss</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 创建时间 yyyy-MM-dd hh:mm:ss
+                     * @param _createTime <p>创建时间 yyyy-MM-dd hh:mm:ss</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -273,18 +273,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取权限范围：SHARED, PRIVATE
+                     * 获取<p>权限范围：SHARED, PRIVATE</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AccessScope 权限范围：SHARED, PRIVATE
+                     * @return AccessScope <p>权限范围：SHARED, PRIVATE</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessScope() const;
 
                     /**
-                     * 设置权限范围：SHARED, PRIVATE
+                     * 设置<p>权限范围：SHARED, PRIVATE</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _accessScope 权限范围：SHARED, PRIVATE
+                     * @param _accessScope <p>权限范围：SHARED, PRIVATE</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -298,18 +298,18 @@ namespace TencentCloud
                     bool AccessScopeHasBeenSet() const;
 
                     /**
-                     * 获取节点全路径，/aaa/bbb/ccc.ipynb，由各个节点的名称组成
+                     * 获取<p>节点全路径，/aaa/bbb/ccc.ipynb，由各个节点的名称组成</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Path 节点全路径，/aaa/bbb/ccc.ipynb，由各个节点的名称组成
+                     * @return Path <p>节点全路径，/aaa/bbb/ccc.ipynb，由各个节点的名称组成</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置节点全路径，/aaa/bbb/ccc.ipynb，由各个节点的名称组成
+                     * 设置<p>节点全路径，/aaa/bbb/ccc.ipynb，由各个节点的名称组成</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _path 节点全路径，/aaa/bbb/ccc.ipynb，由各个节点的名称组成
+                     * @param _path <p>节点全路径，/aaa/bbb/ccc.ipynb，由各个节点的名称组成</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -323,18 +323,18 @@ namespace TencentCloud
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取父文件夹路径
+                     * 获取<p>父文件夹路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ParentFolderPath 父文件夹路径
+                     * @return ParentFolderPath <p>父文件夹路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParentFolderPath() const;
 
                     /**
-                     * 设置父文件夹路径
+                     * 设置<p>父文件夹路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _parentFolderPath 父文件夹路径
+                     * @param _parentFolderPath <p>父文件夹路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -347,91 +347,123 @@ namespace TencentCloud
                      */
                     bool ParentFolderPathHasBeenSet() const;
 
+                    /**
+                     * 获取<p>返回保存后的versionId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VersionId <p>返回保存后的versionId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVersionId() const;
+
+                    /**
+                     * 设置<p>返回保存后的versionId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _versionId <p>返回保存后的versionId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVersionId(const std::string& _versionId);
+
+                    /**
+                     * 判断参数 VersionId 是否已赋值
+                     * @return VersionId 是否已赋值
+                     * 
+                     */
+                    bool VersionIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 脚本ID
+                     * <p>脚本ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_codeFileId;
                     bool m_codeFileIdHasBeenSet;
 
                     /**
-                     * 脚本名称
+                     * <p>脚本名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_codeFileName;
                     bool m_codeFileNameHasBeenSet;
 
                     /**
-                     * 脚本所有者 uin
+                     * <p>脚本所有者 uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ownerUin;
                     bool m_ownerUinHasBeenSet;
 
                     /**
-                     * 脚本配置
+                     * <p>脚本配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CodeFileConfig m_codeFileConfig;
                     bool m_codeFileConfigHasBeenSet;
 
                     /**
-                     * 脚本内容
+                     * <p>脚本内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_codeFileContent;
                     bool m_codeFileContentHasBeenSet;
 
                     /**
-                     * 最近一次操作人
+                     * <p>最近一次操作人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateUserUin;
                     bool m_updateUserUinHasBeenSet;
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 更新时间 yyyy-MM-dd hh:mm:ss
+                     * <p>更新时间 yyyy-MM-dd hh:mm:ss</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 创建时间 yyyy-MM-dd hh:mm:ss
+                     * <p>创建时间 yyyy-MM-dd hh:mm:ss</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 权限范围：SHARED, PRIVATE
+                     * <p>权限范围：SHARED, PRIVATE</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessScope;
                     bool m_accessScopeHasBeenSet;
 
                     /**
-                     * 节点全路径，/aaa/bbb/ccc.ipynb，由各个节点的名称组成
+                     * <p>节点全路径，/aaa/bbb/ccc.ipynb，由各个节点的名称组成</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
-                     * 父文件夹路径
+                     * <p>父文件夹路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parentFolderPath;
                     bool m_parentFolderPathHasBeenSet;
+
+                    /**
+                     * <p>返回保存后的versionId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_versionId;
+                    bool m_versionIdHasBeenSet;
 
                 };
             }

@@ -99,6 +99,8 @@
 #include <tencentcloud/csip/v20221121/model/DeleteRiskScanTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAIAgentAssetListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAIAgentAssetListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeAILinkSettingRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeAILinkSettingResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAKAnalysisDetailRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAKAnalysisDetailResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAbnormalCallRecordRequest.h>
@@ -301,6 +303,12 @@
 #include <tencentcloud/csip/v20221121/model/DescribeDspmSyncUsersStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmWhitelistStrategyRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmWhitelistStrategyResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeEDRRuleListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeEDRRuleListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeEdrAlertInfoRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeEdrAlertInfoResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeEdrAlertListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeEdrAlertListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeExposeAssetCategoryRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeExposeAssetCategoryResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeExposePathRequest.h>
@@ -425,6 +433,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeVulViewVulRiskListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DownloadDspmExportLogRequest.h>
 #include <tencentcloud/csip/v20221121/model/DownloadDspmExportLogResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyAILinkSettingRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyAILinkSettingResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyAlarmRiskStatusRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyAlarmRiskStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyCosAuditMonitorAccountRequest.h>
@@ -461,6 +471,10 @@
 #include <tencentcloud/csip/v20221121/model/ModifyDspmRiskStrategyResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmWhitelistStrategyRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmWhitelistStrategyResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyEDRRuleRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyEDRRuleResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyEdrAlertPermanentIgnoreRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyEdrAlertPermanentIgnoreResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyIaCTokenPeriodRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyIaCTokenPeriodResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyMachineRemarkRequest.h>
@@ -631,6 +645,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAIAgentAssetListResponse> DescribeAIAgentAssetListOutcome;
                 typedef std::future<DescribeAIAgentAssetListOutcome> DescribeAIAgentAssetListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeAIAgentAssetListRequest&, DescribeAIAgentAssetListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIAgentAssetListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAILinkSettingResponse> DescribeAILinkSettingOutcome;
+                typedef std::future<DescribeAILinkSettingOutcome> DescribeAILinkSettingOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeAILinkSettingRequest&, DescribeAILinkSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAILinkSettingAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAKAnalysisDetailResponse> DescribeAKAnalysisDetailOutcome;
                 typedef std::future<DescribeAKAnalysisDetailOutcome> DescribeAKAnalysisDetailOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeAKAnalysisDetailRequest&, DescribeAKAnalysisDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAKAnalysisDetailAsyncHandler;
@@ -934,6 +951,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDspmWhitelistStrategyResponse> DescribeDspmWhitelistStrategyOutcome;
                 typedef std::future<DescribeDspmWhitelistStrategyOutcome> DescribeDspmWhitelistStrategyOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDspmWhitelistStrategyRequest&, DescribeDspmWhitelistStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmWhitelistStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEDRRuleListResponse> DescribeEDRRuleListOutcome;
+                typedef std::future<DescribeEDRRuleListOutcome> DescribeEDRRuleListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeEDRRuleListRequest&, DescribeEDRRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEDRRuleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEdrAlertInfoResponse> DescribeEdrAlertInfoOutcome;
+                typedef std::future<DescribeEdrAlertInfoOutcome> DescribeEdrAlertInfoOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeEdrAlertInfoRequest&, DescribeEdrAlertInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdrAlertInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEdrAlertListResponse> DescribeEdrAlertListOutcome;
+                typedef std::future<DescribeEdrAlertListOutcome> DescribeEdrAlertListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeEdrAlertListRequest&, DescribeEdrAlertListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdrAlertListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeExposeAssetCategoryResponse> DescribeExposeAssetCategoryOutcome;
                 typedef std::future<DescribeExposeAssetCategoryOutcome> DescribeExposeAssetCategoryOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeExposeAssetCategoryRequest&, DescribeExposeAssetCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExposeAssetCategoryAsyncHandler;
@@ -1120,6 +1146,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DownloadDspmExportLogResponse> DownloadDspmExportLogOutcome;
                 typedef std::future<DownloadDspmExportLogOutcome> DownloadDspmExportLogOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DownloadDspmExportLogRequest&, DownloadDspmExportLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadDspmExportLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAILinkSettingResponse> ModifyAILinkSettingOutcome;
+                typedef std::future<ModifyAILinkSettingOutcome> ModifyAILinkSettingOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyAILinkSettingRequest&, ModifyAILinkSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAILinkSettingAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAlarmRiskStatusResponse> ModifyAlarmRiskStatusOutcome;
                 typedef std::future<ModifyAlarmRiskStatusOutcome> ModifyAlarmRiskStatusOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyAlarmRiskStatusRequest&, ModifyAlarmRiskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlarmRiskStatusAsyncHandler;
@@ -1174,6 +1203,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDspmWhitelistStrategyResponse> ModifyDspmWhitelistStrategyOutcome;
                 typedef std::future<ModifyDspmWhitelistStrategyOutcome> ModifyDspmWhitelistStrategyOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyDspmWhitelistStrategyRequest&, ModifyDspmWhitelistStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmWhitelistStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyEDRRuleResponse> ModifyEDRRuleOutcome;
+                typedef std::future<ModifyEDRRuleOutcome> ModifyEDRRuleOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyEDRRuleRequest&, ModifyEDRRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEDRRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyEdrAlertPermanentIgnoreResponse> ModifyEdrAlertPermanentIgnoreOutcome;
+                typedef std::future<ModifyEdrAlertPermanentIgnoreOutcome> ModifyEdrAlertPermanentIgnoreOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyEdrAlertPermanentIgnoreRequest&, ModifyEdrAlertPermanentIgnoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEdrAlertPermanentIgnoreAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyIaCTokenPeriodResponse> ModifyIaCTokenPeriodOutcome;
                 typedef std::future<ModifyIaCTokenPeriodOutcome> ModifyIaCTokenPeriodOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyIaCTokenPeriodRequest&, ModifyIaCTokenPeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIaCTokenPeriodAsyncHandler;
@@ -1581,6 +1616,15 @@ namespace TencentCloud
                 DescribeAIAgentAssetListOutcome DescribeAIAgentAssetList(const Model::DescribeAIAgentAssetListRequest &request);
                 void DescribeAIAgentAssetListAsync(const Model::DescribeAIAgentAssetListRequest& request, const DescribeAIAgentAssetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAIAgentAssetListOutcomeCallable DescribeAIAgentAssetListCallable(const Model::DescribeAIAgentAssetListRequest& request);
+
+                /**
+                 *查询AI-Link智链引擎配置
+                 * @param req DescribeAILinkSettingRequest
+                 * @return DescribeAILinkSettingOutcome
+                 */
+                DescribeAILinkSettingOutcome DescribeAILinkSetting(const Model::DescribeAILinkSettingRequest &request);
+                void DescribeAILinkSettingAsync(const Model::DescribeAILinkSettingRequest& request, const DescribeAILinkSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAILinkSettingOutcomeCallable DescribeAILinkSettingCallable(const Model::DescribeAILinkSettingRequest& request);
 
                 /**
                  *访问密钥告警记录AI分析结果详情
@@ -2492,6 +2536,33 @@ namespace TencentCloud
                 DescribeDspmWhitelistStrategyOutcomeCallable DescribeDspmWhitelistStrategyCallable(const Model::DescribeDspmWhitelistStrategyRequest& request);
 
                 /**
+                 *获取EDR策略列表
+                 * @param req DescribeEDRRuleListRequest
+                 * @return DescribeEDRRuleListOutcome
+                 */
+                DescribeEDRRuleListOutcome DescribeEDRRuleList(const Model::DescribeEDRRuleListRequest &request);
+                void DescribeEDRRuleListAsync(const Model::DescribeEDRRuleListRequest& request, const DescribeEDRRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEDRRuleListOutcomeCallable DescribeEDRRuleListCallable(const Model::DescribeEDRRuleListRequest& request);
+
+                /**
+                 *获取EDR告警详情，包含告警内容JSON、资产富化、情报富化等完整信息
+                 * @param req DescribeEdrAlertInfoRequest
+                 * @return DescribeEdrAlertInfoOutcome
+                 */
+                DescribeEdrAlertInfoOutcome DescribeEdrAlertInfo(const Model::DescribeEdrAlertInfoRequest &request);
+                void DescribeEdrAlertInfoAsync(const Model::DescribeEdrAlertInfoRequest& request, const DescribeEdrAlertInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEdrAlertInfoOutcomeCallable DescribeEdrAlertInfoCallable(const Model::DescribeEdrAlertInfoRequest& request);
+
+                /**
+                 *获取EDR告警列表
+                 * @param req DescribeEdrAlertListRequest
+                 * @return DescribeEdrAlertListOutcome
+                 */
+                DescribeEdrAlertListOutcome DescribeEdrAlertList(const Model::DescribeEdrAlertListRequest &request);
+                void DescribeEdrAlertListAsync(const Model::DescribeEdrAlertListRequest& request, const DescribeEdrAlertListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEdrAlertListOutcomeCallable DescribeEdrAlertListCallable(const Model::DescribeEdrAlertListRequest& request);
+
+                /**
                  *云边界分析资产分类
                  * @param req DescribeExposeAssetCategoryRequest
                  * @return DescribeExposeAssetCategoryOutcome
@@ -3050,6 +3121,15 @@ namespace TencentCloud
                 DownloadDspmExportLogOutcomeCallable DownloadDspmExportLogCallable(const Model::DownloadDspmExportLogRequest& request);
 
                 /**
+                 *修改AI-Link智链引擎配置
+                 * @param req ModifyAILinkSettingRequest
+                 * @return ModifyAILinkSettingOutcome
+                 */
+                ModifyAILinkSettingOutcome ModifyAILinkSetting(const Model::ModifyAILinkSettingRequest &request);
+                void ModifyAILinkSettingAsync(const Model::ModifyAILinkSettingRequest& request, const ModifyAILinkSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAILinkSettingOutcomeCallable ModifyAILinkSettingCallable(const Model::ModifyAILinkSettingRequest& request);
+
+                /**
                  *修改或者更改处置状态
                  * @param req ModifyAlarmRiskStatusRequest
                  * @return ModifyAlarmRiskStatusOutcome
@@ -3210,6 +3290,24 @@ namespace TencentCloud
                 ModifyDspmWhitelistStrategyOutcome ModifyDspmWhitelistStrategy(const Model::ModifyDspmWhitelistStrategyRequest &request);
                 void ModifyDspmWhitelistStrategyAsync(const Model::ModifyDspmWhitelistStrategyRequest& request, const ModifyDspmWhitelistStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDspmWhitelistStrategyOutcomeCallable ModifyDspmWhitelistStrategyCallable(const Model::ModifyDspmWhitelistStrategyRequest& request);
+
+                /**
+                 *编辑或者创建EDR策略
+                 * @param req ModifyEDRRuleRequest
+                 * @return ModifyEDRRuleOutcome
+                 */
+                ModifyEDRRuleOutcome ModifyEDRRule(const Model::ModifyEDRRuleRequest &request);
+                void ModifyEDRRuleAsync(const Model::ModifyEDRRuleRequest& request, const ModifyEDRRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyEDRRuleOutcomeCallable ModifyEDRRuleCallable(const Model::ModifyEDRRuleRequest& request);
+
+                /**
+                 *永久忽略EDR多行为告警，将告警对应的主机+规则加入AI-Link永久忽略白名单，后续同类告警将自动丢弃
+                 * @param req ModifyEdrAlertPermanentIgnoreRequest
+                 * @return ModifyEdrAlertPermanentIgnoreOutcome
+                 */
+                ModifyEdrAlertPermanentIgnoreOutcome ModifyEdrAlertPermanentIgnore(const Model::ModifyEdrAlertPermanentIgnoreRequest &request);
+                void ModifyEdrAlertPermanentIgnoreAsync(const Model::ModifyEdrAlertPermanentIgnoreRequest& request, const ModifyEdrAlertPermanentIgnoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyEdrAlertPermanentIgnoreOutcomeCallable ModifyEdrAlertPermanentIgnoreCallable(const Model::ModifyEdrAlertPermanentIgnoreRequest& request);
 
                 /**
                  *修改IaC检测接入Token存储周期

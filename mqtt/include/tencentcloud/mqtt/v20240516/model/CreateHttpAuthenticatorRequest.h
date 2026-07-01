@@ -254,6 +254,85 @@ namespace TencentCloud
                      */
                     bool BodyHasBeenSet() const;
 
+                    /**
+                     * 获取连接UserProperty作为Header转发，默认false
+                     * @return IncludingUserProperties 连接UserProperty作为Header转发，默认false
+                     * 
+                     */
+                    bool GetIncludingUserProperties() const;
+
+                    /**
+                     * 设置连接UserProperty作为Header转发，默认false
+                     * @param _includingUserProperties 连接UserProperty作为Header转发，默认false
+                     * 
+                     */
+                    void SetIncludingUserProperties(const bool& _includingUserProperties);
+
+                    /**
+                     * 判断参数 IncludingUserProperties 是否已赋值
+                     * @return IncludingUserProperties 是否已赋值
+                     * 
+                     */
+                    bool IncludingUserPropertiesHasBeenSet() const;
+
+                    /**
+                     * 获取vpcsvcId
+HTTP认证需要通过vpc网络访问时需要配置
+                     * @return VpcSvcId vpcsvcId
+HTTP认证需要通过vpc网络访问时需要配置
+                     * 
+                     */
+                    std::string GetVpcSvcId() const;
+
+                    /**
+                     * 设置vpcsvcId
+HTTP认证需要通过vpc网络访问时需要配置
+                     * @param _vpcSvcId vpcsvcId
+HTTP认证需要通过vpc网络访问时需要配置
+                     * 
+                     */
+                    void SetVpcSvcId(const std::string& _vpcSvcId);
+
+                    /**
+                     * 判断参数 VpcSvcId 是否已赋值
+                     * @return VpcSvcId 是否已赋值
+                     * 
+                     */
+                    bool VpcSvcIdHasBeenSet() const;
+
+                    /**
+                     * 获取网络连接类型
+vpc：vpc网络
+public：公网
+通过vpc网络连接需要设置VpcSvcId参数
+                     * @return NetworkType 网络连接类型
+vpc：vpc网络
+public：公网
+通过vpc网络连接需要设置VpcSvcId参数
+                     * 
+                     */
+                    std::string GetNetworkType() const;
+
+                    /**
+                     * 设置网络连接类型
+vpc：vpc网络
+public：公网
+通过vpc网络连接需要设置VpcSvcId参数
+                     * @param _networkType 网络连接类型
+vpc：vpc网络
+public：公网
+通过vpc网络连接需要设置VpcSvcId参数
+                     * 
+                     */
+                    void SetNetworkType(const std::string& _networkType);
+
+                    /**
+                     * 判断参数 NetworkType 是否已赋值
+                     * @return NetworkType 是否已赋值
+                     * 
+                     */
+                    bool NetworkTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -315,6 +394,28 @@ namespace TencentCloud
                      */
                     std::vector<BodyItem> m_body;
                     bool m_bodyHasBeenSet;
+
+                    /**
+                     * 连接UserProperty作为Header转发，默认false
+                     */
+                    bool m_includingUserProperties;
+                    bool m_includingUserPropertiesHasBeenSet;
+
+                    /**
+                     * vpcsvcId
+HTTP认证需要通过vpc网络访问时需要配置
+                     */
+                    std::string m_vpcSvcId;
+                    bool m_vpcSvcIdHasBeenSet;
+
+                    /**
+                     * 网络连接类型
+vpc：vpc网络
+public：公网
+通过vpc网络连接需要设置VpcSvcId参数
+                     */
+                    std::string m_networkType;
+                    bool m_networkTypeHasBeenSet;
 
                 };
             }

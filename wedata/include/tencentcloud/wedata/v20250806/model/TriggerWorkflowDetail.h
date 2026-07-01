@@ -350,6 +350,31 @@ namespace TencentCloud
                      */
                     bool TriggerWorkflowRunConfigurationHasBeenSet() const;
 
+                    /**
+                     * 获取<p>触发方式：定时触发：TIME_TRIGGER 。这里配置之后，内部的触发方式可不填，否则需要保持一致</p><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TriggerMode <p>触发方式：定时触发：TIME_TRIGGER 。这里配置之后，内部的触发方式可不填，否则需要保持一致</p><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTriggerMode() const;
+
+                    /**
+                     * 设置<p>触发方式：定时触发：TIME_TRIGGER 。这里配置之后，内部的触发方式可不填，否则需要保持一致</p><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _triggerMode <p>触发方式：定时触发：TIME_TRIGGER 。这里配置之后，内部的触发方式可不填，否则需要保持一致</p><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTriggerMode(const std::string& _triggerMode);
+
+                    /**
+                     * 判断参数 TriggerMode 是否已赋值
+                     * @return TriggerMode 是否已赋值
+                     * 
+                     */
+                    bool TriggerModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -435,6 +460,13 @@ namespace TencentCloud
                      */
                     WorkflowRunConfig m_triggerWorkflowRunConfiguration;
                     bool m_triggerWorkflowRunConfigurationHasBeenSet;
+
+                    /**
+                     * <p>触发方式：定时触发：TIME_TRIGGER 。这里配置之后，内部的触发方式可不填，否则需要保持一致</p><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_triggerMode;
+                    bool m_triggerModeHasBeenSet;
 
                 };
             }

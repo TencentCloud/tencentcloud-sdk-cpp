@@ -29,7 +29,9 @@ UpdateTriggerWorkflowPartially::UpdateTriggerWorkflowPartially() :
     m_bundleIdHasBeenSet(false),
     m_bundleInfoHasBeenSet(false),
     m_generalTaskParamsHasBeenSet(false),
-    m_triggerWorkflowRunConfigurationHasBeenSet(false)
+    m_triggerWorkflowRunConfigurationHasBeenSet(false),
+    m_schedulerStatusHasBeenSet(false),
+    m_triggerModeHasBeenSet(false)
 {
 }
 
@@ -165,6 +167,26 @@ CoreInternalOutcome UpdateTriggerWorkflowPartially::Deserialize(const rapidjson:
         m_triggerWorkflowRunConfigurationHasBeenSet = true;
     }
 
+    if (value.HasMember("SchedulerStatus") && !value["SchedulerStatus"].IsNull())
+    {
+        if (!value["SchedulerStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateTriggerWorkflowPartially.SchedulerStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_schedulerStatus = string(value["SchedulerStatus"].GetString());
+        m_schedulerStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("TriggerMode") && !value["TriggerMode"].IsNull())
+    {
+        if (!value["TriggerMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateTriggerWorkflowPartially.TriggerMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_triggerMode = string(value["TriggerMode"].GetString());
+        m_triggerModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -264,6 +286,22 @@ void UpdateTriggerWorkflowPartially::ToJsonObject(rapidjson::Value &value, rapid
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_triggerWorkflowRunConfiguration.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_schedulerStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchedulerStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schedulerStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_triggerModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_triggerMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -411,5 +449,37 @@ void UpdateTriggerWorkflowPartially::SetTriggerWorkflowRunConfiguration(const Wo
 bool UpdateTriggerWorkflowPartially::TriggerWorkflowRunConfigurationHasBeenSet() const
 {
     return m_triggerWorkflowRunConfigurationHasBeenSet;
+}
+
+string UpdateTriggerWorkflowPartially::GetSchedulerStatus() const
+{
+    return m_schedulerStatus;
+}
+
+void UpdateTriggerWorkflowPartially::SetSchedulerStatus(const string& _schedulerStatus)
+{
+    m_schedulerStatus = _schedulerStatus;
+    m_schedulerStatusHasBeenSet = true;
+}
+
+bool UpdateTriggerWorkflowPartially::SchedulerStatusHasBeenSet() const
+{
+    return m_schedulerStatusHasBeenSet;
+}
+
+string UpdateTriggerWorkflowPartially::GetTriggerMode() const
+{
+    return m_triggerMode;
+}
+
+void UpdateTriggerWorkflowPartially::SetTriggerMode(const string& _triggerMode)
+{
+    m_triggerMode = _triggerMode;
+    m_triggerModeHasBeenSet = true;
+}
+
+bool UpdateTriggerWorkflowPartially::TriggerModeHasBeenSet() const
+{
+    return m_triggerModeHasBeenSet;
 }
 

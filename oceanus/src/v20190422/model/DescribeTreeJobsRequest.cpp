@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeTreeJobsRequest::DescribeTreeJobsRequest() :
     m_filtersHasBeenSet(false),
-    m_workSpaceIdHasBeenSet(false)
+    m_workSpaceIdHasBeenSet(false),
+    m_flatModeHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,14 @@ string DescribeTreeJobsRequest::ToJsonString() const
         string key = "WorkSpaceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flatModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlatMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_flatMode, allocator);
     }
 
 
@@ -96,6 +105,22 @@ void DescribeTreeJobsRequest::SetWorkSpaceId(const string& _workSpaceId)
 bool DescribeTreeJobsRequest::WorkSpaceIdHasBeenSet() const
 {
     return m_workSpaceIdHasBeenSet;
+}
+
+int64_t DescribeTreeJobsRequest::GetFlatMode() const
+{
+    return m_flatMode;
+}
+
+void DescribeTreeJobsRequest::SetFlatMode(const int64_t& _flatMode)
+{
+    m_flatMode = _flatMode;
+    m_flatModeHasBeenSet = true;
+}
+
+bool DescribeTreeJobsRequest::FlatModeHasBeenSet() const
+{
+    return m_flatModeHasBeenSet;
 }
 
 

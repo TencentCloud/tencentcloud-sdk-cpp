@@ -1790,6 +1790,56 @@ IotexplorerClient::CreateTWeSeeCallbackOutcomeCallable IotexplorerClient::Create
     return prom->get_future();
 }
 
+IotexplorerClient::CreateTWeSeeDirectUploadCredentialOutcome IotexplorerClient::CreateTWeSeeDirectUploadCredential(const CreateTWeSeeDirectUploadCredentialRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTWeSeeDirectUploadCredential");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTWeSeeDirectUploadCredentialResponse rsp = CreateTWeSeeDirectUploadCredentialResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTWeSeeDirectUploadCredentialOutcome(rsp);
+        else
+            return CreateTWeSeeDirectUploadCredentialOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTWeSeeDirectUploadCredentialOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateTWeSeeDirectUploadCredentialAsync(const CreateTWeSeeDirectUploadCredentialRequest& request, const CreateTWeSeeDirectUploadCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateTWeSeeDirectUploadCredentialRequest&;
+    using Resp = CreateTWeSeeDirectUploadCredentialResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateTWeSeeDirectUploadCredential", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::CreateTWeSeeDirectUploadCredentialOutcomeCallable IotexplorerClient::CreateTWeSeeDirectUploadCredentialCallable(const CreateTWeSeeDirectUploadCredentialRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateTWeSeeDirectUploadCredentialOutcome>>();
+    CreateTWeSeeDirectUploadCredentialAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const CreateTWeSeeDirectUploadCredentialRequest&,
+        CreateTWeSeeDirectUploadCredentialOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::CreateTWeSeePostPaidServiceOutcome IotexplorerClient::CreateTWeSeePostPaidService(const CreateTWeSeePostPaidServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTWeSeePostPaidService");

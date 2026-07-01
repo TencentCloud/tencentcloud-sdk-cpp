@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20250806/model/DataBackfillRange.h>
 #include <tencentcloud/wedata/v20250806/model/KVPair.h>
+#include <tencentcloud/wedata/v20250806/model/ComputeConfigMapping.h>
 
 
 namespace TencentCloud
@@ -45,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取所属项目Id
-                     * @return ProjectId 所属项目Id
+                     * 获取<p>所属项目Id</p>
+                     * @return ProjectId <p>所属项目Id</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置所属项目Id
-                     * @param _projectId 所属项目Id
+                     * 设置<p>所属项目Id</p>
+                     * @param _projectId <p>所属项目Id</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -66,15 +67,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取补录任务集合
-                     * @return TaskIds 补录任务集合
+                     * 获取<p>补录任务集合</p>
+                     * @return TaskIds <p>补录任务集合</p>
                      * 
                      */
                     std::vector<std::string> GetTaskIds() const;
 
                     /**
-                     * 设置补录任务集合
-                     * @param _taskIds 补录任务集合
+                     * 设置<p>补录任务集合</p>
+                     * @param _taskIds <p>补录任务集合</p>
                      * 
                      */
                     void SetTaskIds(const std::vector<std::string>& _taskIds);
@@ -87,15 +88,15 @@ namespace TencentCloud
                     bool TaskIdsHasBeenSet() const;
 
                     /**
-                     * 获取补录任务的数据时间配置
-                     * @return DataBackfillRangeList 补录任务的数据时间配置
+                     * 获取<p>补录任务的数据时间配置</p>
+                     * @return DataBackfillRangeList <p>补录任务的数据时间配置</p>
                      * 
                      */
                     std::vector<DataBackfillRange> GetDataBackfillRangeList() const;
 
                     /**
-                     * 设置补录任务的数据时间配置
-                     * @param _dataBackfillRangeList 补录任务的数据时间配置
+                     * 设置<p>补录任务的数据时间配置</p>
+                     * @param _dataBackfillRangeList <p>补录任务的数据时间配置</p>
                      * 
                      */
                     void SetDataBackfillRangeList(const std::vector<DataBackfillRange>& _dataBackfillRangeList);
@@ -108,15 +109,15 @@ namespace TencentCloud
                     bool DataBackfillRangeListHasBeenSet() const;
 
                     /**
-                     * 获取时区，默认UTC+8
-                     * @return TimeZone 时区，默认UTC+8
+                     * 获取<p>时区，默认UTC+8</p>
+                     * @return TimeZone <p>时区，默认UTC+8</p>
                      * 
                      */
                     std::string GetTimeZone() const;
 
                     /**
-                     * 设置时区，默认UTC+8
-                     * @param _timeZone 时区，默认UTC+8
+                     * 设置<p>时区，默认UTC+8</p>
+                     * @param _timeZone <p>时区，默认UTC+8</p>
                      * 
                      */
                     void SetTimeZone(const std::string& _timeZone);
@@ -129,15 +130,15 @@ namespace TencentCloud
                     bool TimeZoneHasBeenSet() const;
 
                     /**
-                     * 获取数据补录计划名称，不填则由系统随机生成一串字符
-                     * @return DataBackfillPlanName 数据补录计划名称，不填则由系统随机生成一串字符
+                     * 获取<p>数据补录计划名称，不填则由系统随机生成一串字符</p>
+                     * @return DataBackfillPlanName <p>数据补录计划名称，不填则由系统随机生成一串字符</p>
                      * 
                      */
                     std::string GetDataBackfillPlanName() const;
 
                     /**
-                     * 设置数据补录计划名称，不填则由系统随机生成一串字符
-                     * @param _dataBackfillPlanName 数据补录计划名称，不填则由系统随机生成一串字符
+                     * 设置<p>数据补录计划名称，不填则由系统随机生成一串字符</p>
+                     * @param _dataBackfillPlanName <p>数据补录计划名称，不填则由系统随机生成一串字符</p>
                      * 
                      */
                     void SetDataBackfillPlanName(const std::string& _dataBackfillPlanName);
@@ -150,15 +151,15 @@ namespace TencentCloud
                     bool DataBackfillPlanNameHasBeenSet() const;
 
                     /**
-                     * 获取检查父任务类型，取值范围：- NONE-全部不检查- ALL-检查全部上游父任务- MAKE_SCOPE-只在（当前补录计划）选中任务中检查,默认NONE不检查
-                     * @return CheckParentType 检查父任务类型，取值范围：- NONE-全部不检查- ALL-检查全部上游父任务- MAKE_SCOPE-只在（当前补录计划）选中任务中检查,默认NONE不检查
+                     * 获取<p>检查父任务类型，取值范围：- NONE-全部不检查- ALL-检查全部上游父任务- MAKE_SCOPE-只在（当前补录计划）选中任务中检查,默认NONE不检查</p>
+                     * @return CheckParentType <p>检查父任务类型，取值范围：- NONE-全部不检查- ALL-检查全部上游父任务- MAKE_SCOPE-只在（当前补录计划）选中任务中检查,默认NONE不检查</p>
                      * 
                      */
                     std::string GetCheckParentType() const;
 
                     /**
-                     * 设置检查父任务类型，取值范围：- NONE-全部不检查- ALL-检查全部上游父任务- MAKE_SCOPE-只在（当前补录计划）选中任务中检查,默认NONE不检查
-                     * @param _checkParentType 检查父任务类型，取值范围：- NONE-全部不检查- ALL-检查全部上游父任务- MAKE_SCOPE-只在（当前补录计划）选中任务中检查,默认NONE不检查
+                     * 设置<p>检查父任务类型，取值范围：- NONE-全部不检查- ALL-检查全部上游父任务- MAKE_SCOPE-只在（当前补录计划）选中任务中检查,默认NONE不检查</p>
+                     * @param _checkParentType <p>检查父任务类型，取值范围：- NONE-全部不检查- ALL-检查全部上游父任务- MAKE_SCOPE-只在（当前补录计划）选中任务中检查,默认NONE不检查</p>
                      * 
                      */
                     void SetCheckParentType(const std::string& _checkParentType);
@@ -171,15 +172,15 @@ namespace TencentCloud
                     bool CheckParentTypeHasBeenSet() const;
 
                     /**
-                     * 获取补录是否忽略事件依赖,默认true
-                     * @return SkipEventListening 补录是否忽略事件依赖,默认true
+                     * 获取<p>补录是否忽略事件依赖,默认true</p>
+                     * @return SkipEventListening <p>补录是否忽略事件依赖,默认true</p>
                      * 
                      */
                     bool GetSkipEventListening() const;
 
                     /**
-                     * 设置补录是否忽略事件依赖,默认true
-                     * @param _skipEventListening 补录是否忽略事件依赖,默认true
+                     * 设置<p>补录是否忽略事件依赖,默认true</p>
+                     * @param _skipEventListening <p>补录是否忽略事件依赖,默认true</p>
                      * 
                      */
                     void SetSkipEventListening(const bool& _skipEventListening);
@@ -192,15 +193,15 @@ namespace TencentCloud
                     bool SkipEventListeningHasBeenSet() const;
 
                     /**
-                     * 获取自定义的工作流自依赖，yes或者no；如果不配置，则使用工作流原有自依赖
-                     * @return RedefineSelfWorkflowDependency 自定义的工作流自依赖，yes或者no；如果不配置，则使用工作流原有自依赖
+                     * 获取<p>自定义的工作流自依赖，yes或者no；如果不配置，则使用工作流原有自依赖</p>
+                     * @return RedefineSelfWorkflowDependency <p>自定义的工作流自依赖，yes或者no；如果不配置，则使用工作流原有自依赖</p>
                      * 
                      */
                     std::string GetRedefineSelfWorkflowDependency() const;
 
                     /**
-                     * 设置自定义的工作流自依赖，yes或者no；如果不配置，则使用工作流原有自依赖
-                     * @param _redefineSelfWorkflowDependency 自定义的工作流自依赖，yes或者no；如果不配置，则使用工作流原有自依赖
+                     * 设置<p>自定义的工作流自依赖，yes或者no；如果不配置，则使用工作流原有自依赖</p>
+                     * @param _redefineSelfWorkflowDependency <p>自定义的工作流自依赖，yes或者no；如果不配置，则使用工作流原有自依赖</p>
                      * 
                      */
                     void SetRedefineSelfWorkflowDependency(const std::string& _redefineSelfWorkflowDependency);
@@ -213,15 +214,15 @@ namespace TencentCloud
                     bool RedefineSelfWorkflowDependencyHasBeenSet() const;
 
                     /**
-                     * 获取自定义实例运行并发度, 如果不配置，则使用任务原有自依赖
-                     * @return RedefineParallelNum 自定义实例运行并发度, 如果不配置，则使用任务原有自依赖
+                     * 获取<p>自定义实例运行并发度, 如果不配置，则使用任务原有自依赖</p>
+                     * @return RedefineParallelNum <p>自定义实例运行并发度, 如果不配置，则使用任务原有自依赖</p>
                      * 
                      */
                     uint64_t GetRedefineParallelNum() const;
 
                     /**
-                     * 设置自定义实例运行并发度, 如果不配置，则使用任务原有自依赖
-                     * @param _redefineParallelNum 自定义实例运行并发度, 如果不配置，则使用任务原有自依赖
+                     * 设置<p>自定义实例运行并发度, 如果不配置，则使用任务原有自依赖</p>
+                     * @param _redefineParallelNum <p>自定义实例运行并发度, 如果不配置，则使用任务原有自依赖</p>
                      * 
                      */
                     void SetRedefineParallelNum(const uint64_t& _redefineParallelNum);
@@ -234,15 +235,15 @@ namespace TencentCloud
                     bool RedefineParallelNumHasBeenSet() const;
 
                     /**
-                     * 获取调度资源组id，为空则表示使用任务原有调度执行资源组
-                     * @return SchedulerResourceGroupId 调度资源组id，为空则表示使用任务原有调度执行资源组
+                     * 获取<p>调度资源组id，为空则表示使用任务原有调度执行资源组</p>
+                     * @return SchedulerResourceGroupId <p>调度资源组id，为空则表示使用任务原有调度执行资源组</p>
                      * 
                      */
                     std::string GetSchedulerResourceGroupId() const;
 
                     /**
-                     * 设置调度资源组id，为空则表示使用任务原有调度执行资源组
-                     * @param _schedulerResourceGroupId 调度资源组id，为空则表示使用任务原有调度执行资源组
+                     * 设置<p>调度资源组id，为空则表示使用任务原有调度执行资源组</p>
+                     * @param _schedulerResourceGroupId <p>调度资源组id，为空则表示使用任务原有调度执行资源组</p>
                      * 
                      */
                     void SetSchedulerResourceGroupId(const std::string& _schedulerResourceGroupId);
@@ -255,15 +256,15 @@ namespace TencentCloud
                     bool SchedulerResourceGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取集成任务资源组id，为空则表示使用任务原有调度执行资源组
-                     * @return IntegrationResourceGroupId 集成任务资源组id，为空则表示使用任务原有调度执行资源组
+                     * 获取<p>集成任务资源组id，为空则表示使用任务原有调度执行资源组</p>
+                     * @return IntegrationResourceGroupId <p>集成任务资源组id，为空则表示使用任务原有调度执行资源组</p>
                      * 
                      */
                     std::string GetIntegrationResourceGroupId() const;
 
                     /**
-                     * 设置集成任务资源组id，为空则表示使用任务原有调度执行资源组
-                     * @param _integrationResourceGroupId 集成任务资源组id，为空则表示使用任务原有调度执行资源组
+                     * 设置<p>集成任务资源组id，为空则表示使用任务原有调度执行资源组</p>
+                     * @param _integrationResourceGroupId <p>集成任务资源组id，为空则表示使用任务原有调度执行资源组</p>
                      * 
                      */
                     void SetIntegrationResourceGroupId(const std::string& _integrationResourceGroupId);
@@ -276,15 +277,15 @@ namespace TencentCloud
                     bool IntegrationResourceGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取自定义参数，可以重新指定任务的参数，方便补录实例执行新的逻辑
-                     * @return RedefineParamList 自定义参数，可以重新指定任务的参数，方便补录实例执行新的逻辑
+                     * 获取<p>自定义参数，可以重新指定任务的参数，方便补录实例执行新的逻辑</p>
+                     * @return RedefineParamList <p>自定义参数，可以重新指定任务的参数，方便补录实例执行新的逻辑</p>
                      * 
                      */
                     std::vector<KVPair> GetRedefineParamList() const;
 
                     /**
-                     * 设置自定义参数，可以重新指定任务的参数，方便补录实例执行新的逻辑
-                     * @param _redefineParamList 自定义参数，可以重新指定任务的参数，方便补录实例执行新的逻辑
+                     * 设置<p>自定义参数，可以重新指定任务的参数，方便补录实例执行新的逻辑</p>
+                     * @param _redefineParamList <p>自定义参数，可以重新指定任务的参数，方便补录实例执行新的逻辑</p>
                      * 
                      */
                     void SetRedefineParamList(const std::vector<KVPair>& _redefineParamList);
@@ -297,47 +298,15 @@ namespace TencentCloud
                     bool RedefineParamListHasBeenSet() const;
 
                     /**
-                     * 获取补录是实例数据时间顺序，生效必须满足2个条件:
-1. 必须同周期任务
-2. 优先按依赖关系执行，无依赖关系影响的情况下按配置执行顺序执行
- 
-可选值
-- NORMAL: 不设置
-- ORDER: 顺序
-- REVERSE: 逆序
-不设置默认为NORMAL
-                     * @return DataTimeOrder 补录是实例数据时间顺序，生效必须满足2个条件:
-1. 必须同周期任务
-2. 优先按依赖关系执行，无依赖关系影响的情况下按配置执行顺序执行
- 
-可选值
-- NORMAL: 不设置
-- ORDER: 顺序
-- REVERSE: 逆序
-不设置默认为NORMAL
+                     * 获取<p>补录是实例数据时间顺序，生效必须满足2个条件:</p><ol><li>必须同周期任务</li><li>优先按依赖关系执行，无依赖关系影响的情况下按配置执行顺序执行</li></ol><p>可选值</p><ul><li>NORMAL: 不设置</li><li>ORDER: 顺序</li><li>REVERSE: 逆序<br>不设置默认为NORMAL</li></ul>
+                     * @return DataTimeOrder <p>补录是实例数据时间顺序，生效必须满足2个条件:</p><ol><li>必须同周期任务</li><li>优先按依赖关系执行，无依赖关系影响的情况下按配置执行顺序执行</li></ol><p>可选值</p><ul><li>NORMAL: 不设置</li><li>ORDER: 顺序</li><li>REVERSE: 逆序<br>不设置默认为NORMAL</li></ul>
                      * 
                      */
                     std::string GetDataTimeOrder() const;
 
                     /**
-                     * 设置补录是实例数据时间顺序，生效必须满足2个条件:
-1. 必须同周期任务
-2. 优先按依赖关系执行，无依赖关系影响的情况下按配置执行顺序执行
- 
-可选值
-- NORMAL: 不设置
-- ORDER: 顺序
-- REVERSE: 逆序
-不设置默认为NORMAL
-                     * @param _dataTimeOrder 补录是实例数据时间顺序，生效必须满足2个条件:
-1. 必须同周期任务
-2. 优先按依赖关系执行，无依赖关系影响的情况下按配置执行顺序执行
- 
-可选值
-- NORMAL: 不设置
-- ORDER: 顺序
-- REVERSE: 逆序
-不设置默认为NORMAL
+                     * 设置<p>补录是实例数据时间顺序，生效必须满足2个条件:</p><ol><li>必须同周期任务</li><li>优先按依赖关系执行，无依赖关系影响的情况下按配置执行顺序执行</li></ol><p>可选值</p><ul><li>NORMAL: 不设置</li><li>ORDER: 顺序</li><li>REVERSE: 逆序<br>不设置默认为NORMAL</li></ul>
+                     * @param _dataTimeOrder <p>补录是实例数据时间顺序，生效必须满足2个条件:</p><ol><li>必须同周期任务</li><li>优先按依赖关系执行，无依赖关系影响的情况下按配置执行顺序执行</li></ol><p>可选值</p><ul><li>NORMAL: 不设置</li><li>ORDER: 顺序</li><li>REVERSE: 逆序<br>不设置默认为NORMAL</li></ul>
                      * 
                      */
                     void SetDataTimeOrder(const std::string& _dataTimeOrder);
@@ -350,19 +319,15 @@ namespace TencentCloud
                     bool DataTimeOrderHasBeenSet() const;
 
                     /**
-                     * 获取补录实例重新生成周期，如果设置会重新指定补录任务实例的生成周期，目前只会将天实例转换成每月1号生成的实例
-* MONTH_CYCLE: 月
-                     * @return RedefineCycleType 补录实例重新生成周期，如果设置会重新指定补录任务实例的生成周期，目前只会将天实例转换成每月1号生成的实例
-* MONTH_CYCLE: 月
+                     * 获取<p>补录实例重新生成周期，如果设置会重新指定补录任务实例的生成周期，目前只会将天实例转换成每月1号生成的实例</p><ul><li>MONTH_CYCLE: 月</li></ul>
+                     * @return RedefineCycleType <p>补录实例重新生成周期，如果设置会重新指定补录任务实例的生成周期，目前只会将天实例转换成每月1号生成的实例</p><ul><li>MONTH_CYCLE: 月</li></ul>
                      * 
                      */
                     std::string GetRedefineCycleType() const;
 
                     /**
-                     * 设置补录实例重新生成周期，如果设置会重新指定补录任务实例的生成周期，目前只会将天实例转换成每月1号生成的实例
-* MONTH_CYCLE: 月
-                     * @param _redefineCycleType 补录实例重新生成周期，如果设置会重新指定补录任务实例的生成周期，目前只会将天实例转换成每月1号生成的实例
-* MONTH_CYCLE: 月
+                     * 设置<p>补录实例重新生成周期，如果设置会重新指定补录任务实例的生成周期，目前只会将天实例转换成每月1号生成的实例</p><ul><li>MONTH_CYCLE: 月</li></ul>
+                     * @param _redefineCycleType <p>补录实例重新生成周期，如果设置会重新指定补录任务实例的生成周期，目前只会将天实例转换成每月1号生成的实例</p><ul><li>MONTH_CYCLE: 月</li></ul>
                      * 
                      */
                     void SetRedefineCycleType(const std::string& _redefineCycleType);
@@ -374,100 +339,118 @@ namespace TencentCloud
                      */
                     bool RedefineCycleTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>存算配置映射列表，对应页面“存算引擎配置”</p>
+                     * @return ComputeConfigMappings <p>存算配置映射列表，对应页面“存算引擎配置”</p>
+                     * 
+                     */
+                    std::vector<ComputeConfigMapping> GetComputeConfigMappings() const;
+
+                    /**
+                     * 设置<p>存算配置映射列表，对应页面“存算引擎配置”</p>
+                     * @param _computeConfigMappings <p>存算配置映射列表，对应页面“存算引擎配置”</p>
+                     * 
+                     */
+                    void SetComputeConfigMappings(const std::vector<ComputeConfigMapping>& _computeConfigMappings);
+
+                    /**
+                     * 判断参数 ComputeConfigMappings 是否已赋值
+                     * @return ComputeConfigMappings 是否已赋值
+                     * 
+                     */
+                    bool ComputeConfigMappingsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 所属项目Id
+                     * <p>所属项目Id</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 补录任务集合
+                     * <p>补录任务集合</p>
                      */
                     std::vector<std::string> m_taskIds;
                     bool m_taskIdsHasBeenSet;
 
                     /**
-                     * 补录任务的数据时间配置
+                     * <p>补录任务的数据时间配置</p>
                      */
                     std::vector<DataBackfillRange> m_dataBackfillRangeList;
                     bool m_dataBackfillRangeListHasBeenSet;
 
                     /**
-                     * 时区，默认UTC+8
+                     * <p>时区，默认UTC+8</p>
                      */
                     std::string m_timeZone;
                     bool m_timeZoneHasBeenSet;
 
                     /**
-                     * 数据补录计划名称，不填则由系统随机生成一串字符
+                     * <p>数据补录计划名称，不填则由系统随机生成一串字符</p>
                      */
                     std::string m_dataBackfillPlanName;
                     bool m_dataBackfillPlanNameHasBeenSet;
 
                     /**
-                     * 检查父任务类型，取值范围：- NONE-全部不检查- ALL-检查全部上游父任务- MAKE_SCOPE-只在（当前补录计划）选中任务中检查,默认NONE不检查
+                     * <p>检查父任务类型，取值范围：- NONE-全部不检查- ALL-检查全部上游父任务- MAKE_SCOPE-只在（当前补录计划）选中任务中检查,默认NONE不检查</p>
                      */
                     std::string m_checkParentType;
                     bool m_checkParentTypeHasBeenSet;
 
                     /**
-                     * 补录是否忽略事件依赖,默认true
+                     * <p>补录是否忽略事件依赖,默认true</p>
                      */
                     bool m_skipEventListening;
                     bool m_skipEventListeningHasBeenSet;
 
                     /**
-                     * 自定义的工作流自依赖，yes或者no；如果不配置，则使用工作流原有自依赖
+                     * <p>自定义的工作流自依赖，yes或者no；如果不配置，则使用工作流原有自依赖</p>
                      */
                     std::string m_redefineSelfWorkflowDependency;
                     bool m_redefineSelfWorkflowDependencyHasBeenSet;
 
                     /**
-                     * 自定义实例运行并发度, 如果不配置，则使用任务原有自依赖
+                     * <p>自定义实例运行并发度, 如果不配置，则使用任务原有自依赖</p>
                      */
                     uint64_t m_redefineParallelNum;
                     bool m_redefineParallelNumHasBeenSet;
 
                     /**
-                     * 调度资源组id，为空则表示使用任务原有调度执行资源组
+                     * <p>调度资源组id，为空则表示使用任务原有调度执行资源组</p>
                      */
                     std::string m_schedulerResourceGroupId;
                     bool m_schedulerResourceGroupIdHasBeenSet;
 
                     /**
-                     * 集成任务资源组id，为空则表示使用任务原有调度执行资源组
+                     * <p>集成任务资源组id，为空则表示使用任务原有调度执行资源组</p>
                      */
                     std::string m_integrationResourceGroupId;
                     bool m_integrationResourceGroupIdHasBeenSet;
 
                     /**
-                     * 自定义参数，可以重新指定任务的参数，方便补录实例执行新的逻辑
+                     * <p>自定义参数，可以重新指定任务的参数，方便补录实例执行新的逻辑</p>
                      */
                     std::vector<KVPair> m_redefineParamList;
                     bool m_redefineParamListHasBeenSet;
 
                     /**
-                     * 补录是实例数据时间顺序，生效必须满足2个条件:
-1. 必须同周期任务
-2. 优先按依赖关系执行，无依赖关系影响的情况下按配置执行顺序执行
- 
-可选值
-- NORMAL: 不设置
-- ORDER: 顺序
-- REVERSE: 逆序
-不设置默认为NORMAL
+                     * <p>补录是实例数据时间顺序，生效必须满足2个条件:</p><ol><li>必须同周期任务</li><li>优先按依赖关系执行，无依赖关系影响的情况下按配置执行顺序执行</li></ol><p>可选值</p><ul><li>NORMAL: 不设置</li><li>ORDER: 顺序</li><li>REVERSE: 逆序<br>不设置默认为NORMAL</li></ul>
                      */
                     std::string m_dataTimeOrder;
                     bool m_dataTimeOrderHasBeenSet;
 
                     /**
-                     * 补录实例重新生成周期，如果设置会重新指定补录任务实例的生成周期，目前只会将天实例转换成每月1号生成的实例
-* MONTH_CYCLE: 月
+                     * <p>补录实例重新生成周期，如果设置会重新指定补录任务实例的生成周期，目前只会将天实例转换成每月1号生成的实例</p><ul><li>MONTH_CYCLE: 月</li></ul>
                      */
                     std::string m_redefineCycleType;
                     bool m_redefineCycleTypeHasBeenSet;
+
+                    /**
+                     * <p>存算配置映射列表，对应页面“存算引擎配置”</p>
+                     */
+                    std::vector<ComputeConfigMapping> m_computeConfigMappings;
+                    bool m_computeConfigMappingsHasBeenSet;
 
                 };
             }

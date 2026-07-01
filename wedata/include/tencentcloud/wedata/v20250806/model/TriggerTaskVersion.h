@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取保存时间
+                     * 获取<p>保存时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 保存时间
+                     * @return CreateTime <p>保存时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置保存时间
+                     * 设置<p>保存时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 保存时间
+                     * @param _createTime <p>保存时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取版本号
+                     * 获取<p>版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VersionNum 版本号
+                     * @return VersionNum <p>版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersionNum() const;
 
                     /**
-                     * 设置版本号
+                     * 设置<p>版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _versionNum 版本号
+                     * @param _versionNum <p>版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool VersionNumHasBeenSet() const;
 
                     /**
-                     * 获取创建人
+                     * 获取<p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateUserUin 创建人
+                     * @return CreateUserUin <p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateUserUin() const;
 
                     /**
-                     * 设置创建人
+                     * 设置<p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createUserUin 创建人
+                     * @param _createUserUin <p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool CreateUserUinHasBeenSet() const;
 
                     /**
-                     * 获取保存版本id
+                     * 获取<p>保存版本id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VersionId 保存版本id
+                     * @return VersionId <p>保存版本id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersionId() const;
 
                     /**
-                     * 设置保存版本id
+                     * 设置<p>保存版本id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _versionId 保存版本id
+                     * @param _versionId <p>保存版本id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool VersionIdHasBeenSet() const;
 
                     /**
-                     * 获取版本描述信息
+                     * 获取<p>版本描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VersionRemark 版本描述信息
+                     * @return VersionRemark <p>版本描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersionRemark() const;
 
                     /**
-                     * 设置版本描述信息
+                     * 设置<p>版本描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _versionRemark 版本描述信息
+                     * @param _versionRemark <p>版本描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool VersionRemarkHasBeenSet() const;
 
                     /**
-                     * 获取审批状态（只有提交版本有）
+                     * 获取<p>审批状态（只有提交版本有）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApproveStatus 审批状态（只有提交版本有）
+                     * @return ApproveStatus <p>审批状态（只有提交版本有）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApproveStatus() const;
 
                     /**
-                     * 设置审批状态（只有提交版本有）
+                     * 设置<p>审批状态（只有提交版本有）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _approveStatus 审批状态（只有提交版本有）
+                     * @param _approveStatus <p>审批状态（只有提交版本有）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool ApproveStatusHasBeenSet() const;
 
                     /**
-                     * 获取生产状态（只有提交版本有）
+                     * 获取<p>生产状态（只有提交版本有）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 生产状态（只有提交版本有）
+                     * @return Status <p>生产状态（只有提交版本有）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置生产状态（只有提交版本有）
+                     * 设置<p>生产状态（只有提交版本有）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 生产状态（只有提交版本有）
+                     * @param _status <p>生产状态（只有提交版本有）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取审批人（只有提交版本有）
+                     * 获取<p>审批人（只有提交版本有）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApproveUserUin 审批人（只有提交版本有）
+                     * @return ApproveUserUin <p>审批人（只有提交版本有）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApproveUserUin() const;
 
                     /**
-                     * 设置审批人（只有提交版本有）
+                     * 设置<p>审批人（只有提交版本有）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _approveUserUin 审批人（只有提交版本有）
+                     * @param _approveUserUin <p>审批人（只有提交版本有）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -246,63 +246,95 @@ namespace TencentCloud
                      */
                     bool ApproveUserUinHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否生产态使用版本，保存版本没有该字段</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UsedVersion <p>是否生产态使用版本，保存版本没有该字段</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetUsedVersion() const;
+
+                    /**
+                     * 设置<p>是否生产态使用版本，保存版本没有该字段</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _usedVersion <p>是否生产态使用版本，保存版本没有该字段</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUsedVersion(const bool& _usedVersion);
+
+                    /**
+                     * 判断参数 UsedVersion 是否已赋值
+                     * @return UsedVersion 是否已赋值
+                     * 
+                     */
+                    bool UsedVersionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 保存时间
+                     * <p>保存时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 版本号
+                     * <p>版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_versionNum;
                     bool m_versionNumHasBeenSet;
 
                     /**
-                     * 创建人
+                     * <p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createUserUin;
                     bool m_createUserUinHasBeenSet;
 
                     /**
-                     * 保存版本id
+                     * <p>保存版本id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_versionId;
                     bool m_versionIdHasBeenSet;
 
                     /**
-                     * 版本描述信息
+                     * <p>版本描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_versionRemark;
                     bool m_versionRemarkHasBeenSet;
 
                     /**
-                     * 审批状态（只有提交版本有）
+                     * <p>审批状态（只有提交版本有）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_approveStatus;
                     bool m_approveStatusHasBeenSet;
 
                     /**
-                     * 生产状态（只有提交版本有）
+                     * <p>生产状态（只有提交版本有）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 审批人（只有提交版本有）
+                     * <p>审批人（只有提交版本有）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_approveUserUin;
                     bool m_approveUserUinHasBeenSet;
+
+                    /**
+                     * <p>是否生产态使用版本，保存版本没有该字段</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_usedVersion;
+                    bool m_usedVersionHasBeenSet;
 
                 };
             }

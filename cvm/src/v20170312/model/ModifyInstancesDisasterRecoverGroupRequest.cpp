@@ -25,7 +25,9 @@ using namespace std;
 ModifyInstancesDisasterRecoverGroupRequest::ModifyInstancesDisasterRecoverGroupRequest() :
     m_instanceIdsHasBeenSet(false),
     m_disasterRecoverGroupIdHasBeenSet(false),
-    m_forceHasBeenSet(false)
+    m_forceHasBeenSet(false),
+    m_disasterRecoverGroupIdsHasBeenSet(false),
+    m_partitionNumberHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,27 @@ string ModifyInstancesDisasterRecoverGroupRequest::ToJsonString() const
         string key = "Force";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_force, allocator);
+    }
+
+    if (m_disasterRecoverGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisasterRecoverGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_disasterRecoverGroupIds.begin(); itr != m_disasterRecoverGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_partitionNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PartitionNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_partitionNumber, allocator);
     }
 
 
@@ -119,6 +142,38 @@ void ModifyInstancesDisasterRecoverGroupRequest::SetForce(const bool& _force)
 bool ModifyInstancesDisasterRecoverGroupRequest::ForceHasBeenSet() const
 {
     return m_forceHasBeenSet;
+}
+
+vector<string> ModifyInstancesDisasterRecoverGroupRequest::GetDisasterRecoverGroupIds() const
+{
+    return m_disasterRecoverGroupIds;
+}
+
+void ModifyInstancesDisasterRecoverGroupRequest::SetDisasterRecoverGroupIds(const vector<string>& _disasterRecoverGroupIds)
+{
+    m_disasterRecoverGroupIds = _disasterRecoverGroupIds;
+    m_disasterRecoverGroupIdsHasBeenSet = true;
+}
+
+bool ModifyInstancesDisasterRecoverGroupRequest::DisasterRecoverGroupIdsHasBeenSet() const
+{
+    return m_disasterRecoverGroupIdsHasBeenSet;
+}
+
+int64_t ModifyInstancesDisasterRecoverGroupRequest::GetPartitionNumber() const
+{
+    return m_partitionNumber;
+}
+
+void ModifyInstancesDisasterRecoverGroupRequest::SetPartitionNumber(const int64_t& _partitionNumber)
+{
+    m_partitionNumber = _partitionNumber;
+    m_partitionNumberHasBeenSet = true;
+}
+
+bool ModifyInstancesDisasterRecoverGroupRequest::PartitionNumberHasBeenSet() const
+{
+    return m_partitionNumberHasBeenSet;
 }
 
 

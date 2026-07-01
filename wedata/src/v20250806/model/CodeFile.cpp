@@ -32,7 +32,8 @@ CodeFile::CodeFile() :
     m_createTimeHasBeenSet(false),
     m_accessScopeHasBeenSet(false),
     m_pathHasBeenSet(false),
-    m_parentFolderPathHasBeenSet(false)
+    m_parentFolderPathHasBeenSet(false),
+    m_versionIdHasBeenSet(false)
 {
 }
 
@@ -168,6 +169,16 @@ CoreInternalOutcome CodeFile::Deserialize(const rapidjson::Value &value)
         m_parentFolderPathHasBeenSet = true;
     }
 
+    if (value.HasMember("VersionId") && !value["VersionId"].IsNull())
+    {
+        if (!value["VersionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CodeFile.VersionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_versionId = string(value["VersionId"].GetString());
+        m_versionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +281,14 @@ void CodeFile::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ParentFolderPath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_parentFolderPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_versionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VersionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_versionId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -465,5 +484,21 @@ void CodeFile::SetParentFolderPath(const string& _parentFolderPath)
 bool CodeFile::ParentFolderPathHasBeenSet() const
 {
     return m_parentFolderPathHasBeenSet;
+}
+
+string CodeFile::GetVersionId() const
+{
+    return m_versionId;
+}
+
+void CodeFile::SetVersionId(const string& _versionId)
+{
+    m_versionId = _versionId;
+    m_versionIdHasBeenSet = true;
+}
+
+bool CodeFile::VersionIdHasBeenSet() const
+{
+    return m_versionIdHasBeenSet;
 }
 

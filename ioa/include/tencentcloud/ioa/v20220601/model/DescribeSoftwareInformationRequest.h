@@ -44,15 +44,36 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取终端唯一标识Mid
-                     * @return Mid 终端唯一标识Mid
+                     * 获取管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     * @return DomainInstanceId 管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     * 
+                     */
+                    std::string GetDomainInstanceId() const;
+
+                    /**
+                     * 设置管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     * @param _domainInstanceId 管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     * 
+                     */
+                    void SetDomainInstanceId(const std::string& _domainInstanceId);
+
+                    /**
+                     * 判断参数 DomainInstanceId 是否已赋值
+                     * @return DomainInstanceId 是否已赋值
+                     * 
+                     */
+                    bool DomainInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>终端唯一标识Mid</p>
+                     * @return Mid <p>终端唯一标识Mid</p>
                      * 
                      */
                     std::string GetMid() const;
 
                     /**
-                     * 设置终端唯一标识Mid
-                     * @param _mid 终端唯一标识Mid
+                     * 设置<p>终端唯一标识Mid</p>
+                     * @param _mid <p>终端唯一标识Mid</p>
                      * 
                      */
                     void SetMid(const std::string& _mid);
@@ -65,19 +86,15 @@ namespace TencentCloud
                     bool MidHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件、分页参数
-<li>Name - String - 过滤支持：是 - 操作符:eq,like - 排序支持：是 。</li>
-                     * @return Condition 过滤条件、分页参数
-<li>Name - String - 过滤支持：是 - 操作符:eq,like - 排序支持：是 。</li>
+                     * 获取<p>过滤条件、分页参数</p><li>Name - String - 过滤支持：是 - 操作符:eq,like - 排序支持：是 。</li>
+                     * @return Condition <p>过滤条件、分页参数</p><li>Name - String - 过滤支持：是 - 操作符:eq,like - 排序支持：是 。</li>
                      * 
                      */
                     Condition GetCondition() const;
 
                     /**
-                     * 设置过滤条件、分页参数
-<li>Name - String - 过滤支持：是 - 操作符:eq,like - 排序支持：是 。</li>
-                     * @param _condition 过滤条件、分页参数
-<li>Name - String - 过滤支持：是 - 操作符:eq,like - 排序支持：是 。</li>
+                     * 设置<p>过滤条件、分页参数</p><li>Name - String - 过滤支持：是 - 操作符:eq,like - 排序支持：是 。</li>
+                     * @param _condition <p>过滤条件、分页参数</p><li>Name - String - 过滤支持：是 - 操作符:eq,like - 排序支持：是 。</li>
                      * 
                      */
                     void SetCondition(const Condition& _condition);
@@ -90,15 +107,15 @@ namespace TencentCloud
                     bool ConditionHasBeenSet() const;
 
                     /**
-                     * 获取0:win 2:mac
-                     * @return OsType 0:win 2:mac
+                     * 获取<p>0:win 2:mac</p>
+                     * @return OsType <p>0:win 2:mac</p>
                      * 
                      */
                     int64_t GetOsType() const;
 
                     /**
-                     * 设置0:win 2:mac
-                     * @param _osType 0:win 2:mac
+                     * 设置<p>0:win 2:mac</p>
+                     * @param _osType <p>0:win 2:mac</p>
                      * 
                      */
                     void SetOsType(const int64_t& _osType);
@@ -113,20 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 终端唯一标识Mid
+                     * 管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     */
+                    std::string m_domainInstanceId;
+                    bool m_domainInstanceIdHasBeenSet;
+
+                    /**
+                     * <p>终端唯一标识Mid</p>
                      */
                     std::string m_mid;
                     bool m_midHasBeenSet;
 
                     /**
-                     * 过滤条件、分页参数
-<li>Name - String - 过滤支持：是 - 操作符:eq,like - 排序支持：是 。</li>
+                     * <p>过滤条件、分页参数</p><li>Name - String - 过滤支持：是 - 操作符:eq,like - 排序支持：是 。</li>
                      */
                     Condition m_condition;
                     bool m_conditionHasBeenSet;
 
                     /**
-                     * 0:win 2:mac
+                     * <p>0:win 2:mac</p>
                      */
                     int64_t m_osType;
                     bool m_osTypeHasBeenSet;

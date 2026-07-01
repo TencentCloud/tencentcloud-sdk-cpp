@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取获取云原生API网关实例列表响应结果。
-                     * @return Result 获取云原生API网关实例列表响应结果。
+                     * 获取<p>获取云原生API网关实例列表响应结果。</p>
+                     * @return Result <p>获取云原生API网关实例列表响应结果。</p>
                      * 
                      */
                     ListCloudNativeAPIGatewayResult GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 获取云原生API网关实例列表响应结果。
+                     * <p>获取云原生API网关实例列表响应结果。</p>
                      */
                     ListCloudNativeAPIGatewayResult m_result;
                     bool m_resultHasBeenSet;

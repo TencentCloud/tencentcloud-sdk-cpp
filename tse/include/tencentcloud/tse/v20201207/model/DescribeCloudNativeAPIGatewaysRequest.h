@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回数量，默认为 20，最大值为 100。
-                     * @return Limit 返回数量，默认为 20，最大值为 100。
+                     * 获取<p>返回数量，默认为 20，最大值为 100。</p>
+                     * @return Limit <p>返回数量，默认为 20，最大值为 100。</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为 20，最大值为 100。
-                     * @param _limit 返回数量，默认为 20，最大值为 100。
+                     * 设置<p>返回数量，默认为 20，最大值为 100。</p>
+                     * @param _limit <p>返回数量，默认为 20，最大值为 100。</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为 0。
-                     * @return Offset 偏移量，默认为 0。
+                     * 获取<p>偏移量，默认为 0。</p>
+                     * @return Offset <p>偏移量，默认为 0。</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为 0。
-                     * @param _offset 偏移量，默认为 0。
+                     * 设置<p>偏移量，默认为 0。</p>
+                     * @param _offset <p>偏移量，默认为 0。</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取请求过滤参数，支持按照实例名称、ID和标签键值（Name、GatewayId、Tag）筛选
-                     * @return Filters 请求过滤参数，支持按照实例名称、ID和标签键值（Name、GatewayId、Tag）筛选
+                     * 获取<p>请求过滤参数，支持按照实例名称、ID和标签键值（Name、GatewayId、Tag）筛选</p>
+                     * @return Filters <p>请求过滤参数，支持按照实例名称、ID和标签键值（Name、GatewayId、Tag）筛选</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置请求过滤参数，支持按照实例名称、ID和标签键值（Name、GatewayId、Tag）筛选
-                     * @param _filters 请求过滤参数，支持按照实例名称、ID和标签键值（Name、GatewayId、Tag）筛选
+                     * 设置<p>请求过滤参数，支持按照实例名称、ID和标签键值（Name、GatewayId、Tag）筛选</p>
+                     * @param _filters <p>请求过滤参数，支持按照实例名称、ID和标签键值（Name、GatewayId、Tag）筛选</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -109,19 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回数量，默认为 20，最大值为 100。
+                     * <p>返回数量，默认为 20，最大值为 100。</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，默认为 0。
+                     * <p>偏移量，默认为 0。</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 请求过滤参数，支持按照实例名称、ID和标签键值（Name、GatewayId、Tag）筛选
+                     * <p>请求过滤参数，支持按照实例名称、ID和标签键值（Name、GatewayId、Tag）筛选</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

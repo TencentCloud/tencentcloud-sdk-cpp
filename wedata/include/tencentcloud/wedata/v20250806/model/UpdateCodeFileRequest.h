@@ -127,6 +127,27 @@ namespace TencentCloud
                      */
                     bool CodeFileContentHasBeenSet() const;
 
+                    /**
+                     * 获取
+                     * @return SubmitAction 
+                     * 
+                     */
+                    bool GetSubmitAction() const;
+
+                    /**
+                     * 设置
+                     * @param _submitAction 
+                     * 
+                     */
+                    void SetSubmitAction(const bool& _submitAction);
+
+                    /**
+                     * 判断参数 SubmitAction 是否已赋值
+                     * @return SubmitAction 是否已赋值
+                     * 
+                     */
+                    bool SubmitActionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +173,12 @@ namespace TencentCloud
                      */
                     std::string m_codeFileContent;
                     bool m_codeFileContentHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    bool m_submitAction;
+                    bool m_submitActionHasBeenSet;
 
                 };
             }

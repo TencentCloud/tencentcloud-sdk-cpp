@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool ForwardingPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>七层转发规则条件信息。</p>
-                     * @return RuleConditions <p>七层转发规则条件信息。</p>
+                     * 获取<p>七层转发规则条件信息。</p><p>数组长度最大不能超过1。</p>
+                     * @return RuleConditions <p>七层转发规则条件信息。</p><p>数组长度最大不能超过1。</p>
                      * 
                      */
                     std::vector<RuleCondition> GetRuleConditions() const;
 
                     /**
-                     * 设置<p>七层转发规则条件信息。</p>
-                     * @param _ruleConditions <p>七层转发规则条件信息。</p>
+                     * 设置<p>七层转发规则条件信息。</p><p>数组长度最大不能超过1。</p>
+                     * @param _ruleConditions <p>七层转发规则条件信息。</p><p>数组长度最大不能超过1。</p>
                      * 
                      */
                     void SetRuleConditions(const std::vector<RuleCondition>& _ruleConditions);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool RuleConditionsHasBeenSet() const;
 
                     /**
-                     * 获取<p>七层转发规则行为信息。</p>
-                     * @return RuleActions <p>七层转发规则行为信息。</p>
+                     * 获取<p>七层转发规则行为信息。</p><p>数组长度最大不能超过1。</p>
+                     * @return RuleActions <p>七层转发规则行为信息。</p><p>数组长度最大不能超过1。</p>
                      * 
                      */
                     std::vector<RuleAction> GetRuleActions() const;
 
                     /**
-                     * 设置<p>七层转发规则行为信息。</p>
-                     * @param _ruleActions <p>七层转发规则行为信息。</p>
+                     * 设置<p>七层转发规则行为信息。</p><p>数组长度最大不能超过1。</p>
+                     * @param _ruleActions <p>七层转发规则行为信息。</p><p>数组长度最大不能超过1。</p>
                      * 
                      */
                     void SetRuleActions(const std::vector<RuleAction>& _ruleActions);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool RuleActionsHasBeenSet() const;
 
                     /**
-                     * 获取<p>回源Header信息。</p>
-                     * @return OriginHeaders <p>回源Header信息。</p>
+                     * 获取<p>回源Header信息。</p><p>数组长度最大不能超过5。当RuleActions.RuleActionType是ForwardGroup时，此字段必传。</p>
+                     * @return OriginHeaders <p>回源Header信息。</p><p>数组长度最大不能超过5。当RuleActions.RuleActionType是ForwardGroup时，此字段必传。</p>
                      * 
                      */
                     std::vector<OriginHeader> GetOriginHeaders() const;
 
                     /**
-                     * 设置<p>回源Header信息。</p>
-                     * @param _originHeaders <p>回源Header信息。</p>
+                     * 设置<p>回源Header信息。</p><p>数组长度最大不能超过5。当RuleActions.RuleActionType是ForwardGroup时，此字段必传。</p>
+                     * @param _originHeaders <p>回源Header信息。</p><p>数组长度最大不能超过5。当RuleActions.RuleActionType是ForwardGroup时，此字段必传。</p>
                      * 
                      */
                     void SetOriginHeaders(const std::vector<OriginHeader>& _originHeaders);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool OriginHeadersHasBeenSet() const;
 
                     /**
-                     * 获取<p>是否开启回源sni。</p>
-                     * @return EnableOriginSni <p>是否开启回源sni。</p>
+                     * 获取<p>是否开启回源sni。</p><p>默认值：False</p><p>当RuleActions.RuleActionType是ForwardGroup时，此字段必传。</p>
+                     * @return EnableOriginSni <p>是否开启回源sni。</p><p>默认值：False</p><p>当RuleActions.RuleActionType是ForwardGroup时，此字段必传。</p>
                      * 
                      */
                     bool GetEnableOriginSni() const;
 
                     /**
-                     * 设置<p>是否开启回源sni。</p>
-                     * @param _enableOriginSni <p>是否开启回源sni。</p>
+                     * 设置<p>是否开启回源sni。</p><p>默认值：False</p><p>当RuleActions.RuleActionType是ForwardGroup时，此字段必传。</p>
+                     * @param _enableOriginSni <p>是否开启回源sni。</p><p>默认值：False</p><p>当RuleActions.RuleActionType是ForwardGroup时，此字段必传。</p>
                      * 
                      */
                     void SetEnableOriginSni(const bool& _enableOriginSni);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool EnableOriginSniHasBeenSet() const;
 
                     /**
-                     * 获取<p>回源sni。</p>
-                     * @return OriginSni <p>回源sni。</p>
+                     * 获取<p>回源sni。</p><p>入参限制：长度不能超过80。</p><p>当EnableOriginSni为True时，此字段必传。当RuleActions.RuleActionType是ForwardGroup时，此字段必传。</p>
+                     * @return OriginSni <p>回源sni。</p><p>入参限制：长度不能超过80。</p><p>当EnableOriginSni为True时，此字段必传。当RuleActions.RuleActionType是ForwardGroup时，此字段必传。</p>
                      * 
                      */
                     std::string GetOriginSni() const;
 
                     /**
-                     * 设置<p>回源sni。</p>
-                     * @param _originSni <p>回源sni。</p>
+                     * 设置<p>回源sni。</p><p>入参限制：长度不能超过80。</p><p>当EnableOriginSni为True时，此字段必传。当RuleActions.RuleActionType是ForwardGroup时，此字段必传。</p>
+                     * @param _originSni <p>回源sni。</p><p>入参限制：长度不能超过80。</p><p>当EnableOriginSni为True时，此字段必传。当RuleActions.RuleActionType是ForwardGroup时，此字段必传。</p>
                      * 
                      */
                     void SetOriginSni(const std::string& _originSni);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool OriginSniHasBeenSet() const;
 
                     /**
-                     * 获取<p>回源host。</p>
-                     * @return OriginHost <p>回源host。</p>
+                     * 获取<p>回源host。</p><p>入参限制：长度不超过80。</p><p>当RuleActions.RuleActionType是ForwardGroup时，此字段必传。</p>
+                     * @return OriginHost <p>回源host。</p><p>入参限制：长度不超过80。</p><p>当RuleActions.RuleActionType是ForwardGroup时，此字段必传。</p>
                      * 
                      */
                     std::string GetOriginHost() const;
 
                     /**
-                     * 设置<p>回源host。</p>
-                     * @param _originHost <p>回源host。</p>
+                     * 设置<p>回源host。</p><p>入参限制：长度不超过80。</p><p>当RuleActions.RuleActionType是ForwardGroup时，此字段必传。</p>
+                     * @param _originHost <p>回源host。</p><p>入参限制：长度不超过80。</p><p>当RuleActions.RuleActionType是ForwardGroup时，此字段必传。</p>
                      * 
                      */
                     void SetOriginHost(const std::string& _originHost);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool OriginHostHasBeenSet() const;
 
                     /**
-                     * 获取<p>源站响应头</p>
-                     * @return ResponseHeaders <p>源站响应头</p>
+                     * 获取<p>源站响应头</p><p>数组长度不超过5。可以传空数组，代表清空配置。</p>
+                     * @return ResponseHeaders <p>源站响应头</p><p>数组长度不超过5。可以传空数组，代表清空配置。</p>
                      * 
                      */
                     std::vector<ResponseHeaders> GetResponseHeaders() const;
 
                     /**
-                     * 设置<p>源站响应头</p>
-                     * @param _responseHeaders <p>源站响应头</p>
+                     * 设置<p>源站响应头</p><p>数组长度不超过5。可以传空数组，代表清空配置。</p>
+                     * @param _responseHeaders <p>源站响应头</p><p>数组长度不超过5。可以传空数组，代表清空配置。</p>
                      * 
                      */
                     void SetResponseHeaders(const std::vector<ResponseHeaders>& _responseHeaders);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool ResponseHeadersHasBeenSet() const;
 
                     /**
-                     * 获取<p>删除源站响应头</p>
-                     * @return HideResponseHeaders <p>删除源站响应头</p>
+                     * 获取<p>删除源站响应头</p><p>数组长度不超过5。可以传空数组，代表清空配置。</p>
+                     * @return HideResponseHeaders <p>删除源站响应头</p><p>数组长度不超过5。可以传空数组，代表清空配置。</p>
                      * 
                      */
                     std::vector<HideResponseHeaders> GetHideResponseHeaders() const;
 
                     /**
-                     * 设置<p>删除源站响应头</p>
-                     * @param _hideResponseHeaders <p>删除源站响应头</p>
+                     * 设置<p>删除源站响应头</p><p>数组长度不超过5。可以传空数组，代表清空配置。</p>
+                     * @param _hideResponseHeaders <p>删除源站响应头</p><p>数组长度不超过5。可以传空数组，代表清空配置。</p>
                      * 
                      */
                     void SetHideResponseHeaders(const std::vector<HideResponseHeaders>& _hideResponseHeaders);
@@ -299,49 +299,49 @@ namespace TencentCloud
                     bool m_forwardingPolicyIdHasBeenSet;
 
                     /**
-                     * <p>七层转发规则条件信息。</p>
+                     * <p>七层转发规则条件信息。</p><p>数组长度最大不能超过1。</p>
                      */
                     std::vector<RuleCondition> m_ruleConditions;
                     bool m_ruleConditionsHasBeenSet;
 
                     /**
-                     * <p>七层转发规则行为信息。</p>
+                     * <p>七层转发规则行为信息。</p><p>数组长度最大不能超过1。</p>
                      */
                     std::vector<RuleAction> m_ruleActions;
                     bool m_ruleActionsHasBeenSet;
 
                     /**
-                     * <p>回源Header信息。</p>
+                     * <p>回源Header信息。</p><p>数组长度最大不能超过5。当RuleActions.RuleActionType是ForwardGroup时，此字段必传。</p>
                      */
                     std::vector<OriginHeader> m_originHeaders;
                     bool m_originHeadersHasBeenSet;
 
                     /**
-                     * <p>是否开启回源sni。</p>
+                     * <p>是否开启回源sni。</p><p>默认值：False</p><p>当RuleActions.RuleActionType是ForwardGroup时，此字段必传。</p>
                      */
                     bool m_enableOriginSni;
                     bool m_enableOriginSniHasBeenSet;
 
                     /**
-                     * <p>回源sni。</p>
+                     * <p>回源sni。</p><p>入参限制：长度不能超过80。</p><p>当EnableOriginSni为True时，此字段必传。当RuleActions.RuleActionType是ForwardGroup时，此字段必传。</p>
                      */
                     std::string m_originSni;
                     bool m_originSniHasBeenSet;
 
                     /**
-                     * <p>回源host。</p>
+                     * <p>回源host。</p><p>入参限制：长度不超过80。</p><p>当RuleActions.RuleActionType是ForwardGroup时，此字段必传。</p>
                      */
                     std::string m_originHost;
                     bool m_originHostHasBeenSet;
 
                     /**
-                     * <p>源站响应头</p>
+                     * <p>源站响应头</p><p>数组长度不超过5。可以传空数组，代表清空配置。</p>
                      */
                     std::vector<ResponseHeaders> m_responseHeaders;
                     bool m_responseHeadersHasBeenSet;
 
                     /**
-                     * <p>删除源站响应头</p>
+                     * <p>删除源站响应头</p><p>数组长度不超过5。可以传空数组，代表清空配置。</p>
                      */
                     std::vector<HideResponseHeaders> m_hideResponseHeaders;
                     bool m_hideResponseHeadersHasBeenSet;

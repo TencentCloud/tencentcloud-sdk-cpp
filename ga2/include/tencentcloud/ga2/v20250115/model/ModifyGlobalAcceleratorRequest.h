@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取全球加速实例ID。
-                     * @return GlobalAcceleratorId 全球加速实例ID。
+                     * 获取<p>全球加速实例ID。</p>
+                     * @return GlobalAcceleratorId <p>全球加速实例ID。</p>
                      * 
                      */
                     std::string GetGlobalAcceleratorId() const;
 
                     /**
-                     * 设置全球加速实例ID。
-                     * @param _globalAcceleratorId 全球加速实例ID。
+                     * 设置<p>全球加速实例ID。</p>
+                     * @param _globalAcceleratorId <p>全球加速实例ID。</p>
                      * 
                      */
                     void SetGlobalAcceleratorId(const std::string& _globalAcceleratorId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GlobalAcceleratorIdHasBeenSet() const;
 
                     /**
-                     * 获取名称，最大长度不能超过60个字节。
-                     * @return Name 名称，最大长度不能超过60个字节。
+                     * 获取<p>名称，最大长度不能超过60个字节。</p>
+                     * @return Name <p>名称，最大长度不能超过60个字节。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称，最大长度不能超过60个字节。
-                     * @param _name 名称，最大长度不能超过60个字节。
+                     * 设置<p>名称，最大长度不能超过60个字节。</p>
+                     * @param _name <p>名称，最大长度不能超过60个字节。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取描述信息，最大长度不能超过100个字节。
-                     * @return Description 描述信息，最大长度不能超过100个字节。
+                     * 获取<p>描述信息，最大长度不能超过100个字节。</p>
+                     * @return Description <p>描述信息，最大长度不能超过100个字节。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述信息，最大长度不能超过100个字节。
-                     * @param _description 描述信息，最大长度不能超过100个字节。
+                     * 设置<p>描述信息，最大长度不能超过100个字节。</p>
+                     * @param _description <p>描述信息，最大长度不能超过100个字节。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取跨境类型。
-                     * @return CrossBorderType 跨境类型。
+                     * 获取<p>跨境类型。</p><p>枚举值：</p><ul><li>HighQuality： 精品跨境。</li><li>Unicom： 联通跨境。</li></ul>
+                     * @return CrossBorderType <p>跨境类型。</p><p>枚举值：</p><ul><li>HighQuality： 精品跨境。</li><li>Unicom： 联通跨境。</li></ul>
                      * 
                      */
                     std::string GetCrossBorderType() const;
 
                     /**
-                     * 设置跨境类型。
-                     * @param _crossBorderType 跨境类型。
+                     * 设置<p>跨境类型。</p><p>枚举值：</p><ul><li>HighQuality： 精品跨境。</li><li>Unicom： 联通跨境。</li></ul>
+                     * @param _crossBorderType <p>跨境类型。</p><p>枚举值：</p><ul><li>HighQuality： 精品跨境。</li><li>Unicom： 联通跨境。</li></ul>
                      * 
                      */
                     void SetCrossBorderType(const std::string& _crossBorderType);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool CrossBorderTypeHasBeenSet() const;
 
                     /**
-                     * 获取代表是否跨境服务承诺。
-                     * @return CrossBorderPromiseFlag 代表是否跨境服务承诺。
+                     * 获取<p>代表是否填写跨境服务承诺书。</p><p>当CrossBorderType传入时，此字段必须填ture，代表填写跨境承诺书。</p>
+                     * @return CrossBorderPromiseFlag <p>代表是否填写跨境服务承诺书。</p><p>当CrossBorderType传入时，此字段必须填ture，代表填写跨境承诺书。</p>
                      * 
                      */
                     bool GetCrossBorderPromiseFlag() const;
 
                     /**
-                     * 设置代表是否跨境服务承诺。
-                     * @param _crossBorderPromiseFlag 代表是否跨境服务承诺。
+                     * 设置<p>代表是否填写跨境服务承诺书。</p><p>当CrossBorderType传入时，此字段必须填ture，代表填写跨境承诺书。</p>
+                     * @param _crossBorderPromiseFlag <p>代表是否填写跨境服务承诺书。</p><p>当CrossBorderType传入时，此字段必须填ture，代表填写跨境承诺书。</p>
                      * 
                      */
                     void SetCrossBorderPromiseFlag(const bool& _crossBorderPromiseFlag);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 全球加速实例ID。
+                     * <p>全球加速实例ID。</p>
                      */
                     std::string m_globalAcceleratorId;
                     bool m_globalAcceleratorIdHasBeenSet;
 
                     /**
-                     * 名称，最大长度不能超过60个字节。
+                     * <p>名称，最大长度不能超过60个字节。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 描述信息，最大长度不能超过100个字节。
+                     * <p>描述信息，最大长度不能超过100个字节。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 跨境类型。
+                     * <p>跨境类型。</p><p>枚举值：</p><ul><li>HighQuality： 精品跨境。</li><li>Unicom： 联通跨境。</li></ul>
                      */
                     std::string m_crossBorderType;
                     bool m_crossBorderTypeHasBeenSet;
 
                     /**
-                     * 代表是否跨境服务承诺。
+                     * <p>代表是否填写跨境服务承诺书。</p><p>当CrossBorderType传入时，此字段必须填ture，代表填写跨境承诺书。</p>
                      */
                     bool m_crossBorderPromiseFlag;
                     bool m_crossBorderPromiseFlagHasBeenSet;

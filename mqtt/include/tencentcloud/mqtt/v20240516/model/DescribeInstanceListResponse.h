@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询总数
-                     * @return TotalCount 查询总数
+                     * 获取<p>查询总数</p>
+                     * @return TotalCount <p>查询总数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取实例列表
-                     * @return Data 实例列表
+                     * 获取<p>实例列表</p>
+                     * @return Data <p>实例列表</p>
                      * 
                      */
                     std::vector<MQTTInstanceItem> GetData() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询总数
+                     * <p>查询总数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 实例列表
+                     * <p>实例列表</p>
                      */
                     std::vector<MQTTInstanceItem> m_data;
                     bool m_dataHasBeenSet;

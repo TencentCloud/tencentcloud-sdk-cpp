@@ -85,6 +85,27 @@ namespace TencentCloud
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>返回形式</p><p>枚举值：</p><ul><li>0： 树形结构</li><li>1： 平铺结构</li></ul>
+                     * @return FlatMode <p>返回形式</p><p>枚举值：</p><ul><li>0： 树形结构</li><li>1： 平铺结构</li></ul>
+                     * 
+                     */
+                    int64_t GetFlatMode() const;
+
+                    /**
+                     * 设置<p>返回形式</p><p>枚举值：</p><ul><li>0： 树形结构</li><li>1： 平铺结构</li></ul>
+                     * @param _flatMode <p>返回形式</p><p>枚举值：</p><ul><li>0： 树形结构</li><li>1： 平铺结构</li></ul>
+                     * 
+                     */
+                    void SetFlatMode(const int64_t& _flatMode);
+
+                    /**
+                     * 判断参数 FlatMode 是否已赋值
+                     * @return FlatMode 是否已赋值
+                     * 
+                     */
+                    bool FlatModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -98,6 +119,12 @@ namespace TencentCloud
                      */
                     std::string m_workSpaceId;
                     bool m_workSpaceIdHasBeenSet;
+
+                    /**
+                     * <p>返回形式</p><p>枚举值：</p><ul><li>0： 树形结构</li><li>1： 平铺结构</li></ul>
+                     */
+                    int64_t m_flatMode;
+                    bool m_flatModeHasBeenSet;
 
                 };
             }

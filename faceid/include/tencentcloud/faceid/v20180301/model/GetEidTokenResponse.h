@@ -44,12 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取一次核身流程的标识。
-- 有效时间为600秒。
-- 完成核身后，可用该标识获取验证结果信息。
-                     * @return EidToken 一次核身流程的标识。
-- 有效时间为600秒。
-- 完成核身后，可用该标识获取验证结果信息。
+                     * 获取<p>一次核身流程的标识。</p><ul><li>有效时间为600秒。</li><li>完成核身后，可用该标识获取验证结果信息。</li></ul>
+                     * @return EidToken <p>一次核身流程的标识。</p><ul><li>有效时间为600秒。</li><li>完成核身后，可用该标识获取验证结果信息。</li></ul>
                      * 
                      */
                     std::string GetEidToken() const;
@@ -62,10 +58,8 @@ namespace TencentCloud
                     bool EidTokenHasBeenSet() const;
 
                     /**
-                     * 获取发起核身流程的URL。
-- 用于H5场景核身。
-                     * @return Url 发起核身流程的URL。
-- 用于H5场景核身。
+                     * 获取<p>发起核身流程的URL。</p><ul><li>用于H5场景核身。</li></ul>
+                     * @return Url <p>发起核身流程的URL。</p><ul><li>用于H5场景核身。</li></ul>
                      * 
                      */
                     std::string GetUrl() const;
@@ -80,16 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 一次核身流程的标识。
-- 有效时间为600秒。
-- 完成核身后，可用该标识获取验证结果信息。
+                     * <p>一次核身流程的标识。</p><ul><li>有效时间为600秒。</li><li>完成核身后，可用该标识获取验证结果信息。</li></ul>
                      */
                     std::string m_eidToken;
                     bool m_eidTokenHasBeenSet;
 
                     /**
-                     * 发起核身流程的URL。
-- 用于H5场景核身。
+                     * <p>发起核身流程的URL。</p><ul><li>用于H5场景核身。</li></ul>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

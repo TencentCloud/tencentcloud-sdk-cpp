@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取每页显示数量
-                     * @return MaxResults 每页显示数量
+                     * 获取<p>每页显示数量</p>
+                     * @return MaxResults <p>每页显示数量</p>
                      * 
                      */
                     uint64_t GetMaxResults() const;
 
                     /**
-                     * 设置每页显示数量
-                     * @param _maxResults 每页显示数量
+                     * 设置<p>每页显示数量</p>
+                     * @param _maxResults <p>每页显示数量</p>
                      * 
                      */
                     void SetMaxResults(const uint64_t& _maxResults);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool MaxResultsHasBeenSet() const;
 
                     /**
-                     * 获取账号组ID
-                     * @return AccountGroupId 账号组ID
+                     * 获取<p>账号组ID</p>
+                     * @return AccountGroupId <p>账号组ID</p>
                      * 
                      */
                     std::string GetAccountGroupId() const;
 
                     /**
-                     * 设置账号组ID
-                     * @param _accountGroupId 账号组ID
+                     * 设置<p>账号组ID</p>
+                     * @param _accountGroupId <p>账号组ID</p>
                      * 
                      */
                     void SetAccountGroupId(const std::string& _accountGroupId);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool AccountGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取resourceName：资源名  resourceId ：资源ID resourceType：资源类型
-                     * @return Filters resourceName：资源名  resourceId ：资源ID resourceType：资源类型
+                     * 获取<p>resourceName：资源名  resourceId ：资源ID resourceType：资源类型</p>
+                     * @return Filters <p>resourceName：资源名  resourceId ：资源ID resourceType：资源类型</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置resourceName：资源名  resourceId ：资源ID resourceType：资源类型
-                     * @param _filters resourceName：资源名  resourceId ：资源ID resourceType：资源类型
+                     * 设置<p>resourceName：资源名  resourceId ：资源ID resourceType：资源类型</p>
+                     * @param _filters <p>resourceName：资源名  resourceId ：资源ID resourceType：资源类型</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取标签
-                     * @return Tags 标签
+                     * 获取<p>标签</p>
+                     * @return Tags <p>标签</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置标签
-                     * @param _tags 标签
+                     * 设置<p>标签</p>
+                     * @param _tags <p>标签</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取下一页token
-                     * @return NextToken 下一页token
+                     * 获取<p>下一页token</p>
+                     * @return NextToken <p>下一页token</p>
                      * 
                      */
                     std::string GetNextToken() const;
 
                     /**
-                     * 设置下一页token
-                     * @param _nextToken 下一页token
+                     * 设置<p>下一页token</p>
+                     * @param _nextToken <p>下一页token</p>
                      * 
                      */
                     void SetNextToken(const std::string& _nextToken);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool NextTokenHasBeenSet() const;
 
                     /**
-                     * 获取排序方式 asc、desc
-                     * @return OrderType 排序方式 asc、desc
+                     * 获取<p>排序方式 asc、desc</p>
+                     * @return OrderType <p>排序方式 asc、desc</p>
                      * 
                      */
                     std::string GetOrderType() const;
 
                     /**
-                     * 设置排序方式 asc、desc
-                     * @param _orderType 排序方式 asc、desc
+                     * 设置<p>排序方式 asc、desc</p>
+                     * @param _orderType <p>排序方式 asc、desc</p>
                      * 
                      */
                     void SetOrderType(const std::string& _orderType);
@@ -173,37 +173,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 每页显示数量
+                     * <p>每页显示数量</p>
                      */
                     uint64_t m_maxResults;
                     bool m_maxResultsHasBeenSet;
 
                     /**
-                     * 账号组ID
+                     * <p>账号组ID</p>
                      */
                     std::string m_accountGroupId;
                     bool m_accountGroupIdHasBeenSet;
 
                     /**
-                     * resourceName：资源名  resourceId ：资源ID resourceType：资源类型
+                     * <p>resourceName：资源名  resourceId ：资源ID resourceType：资源类型</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 标签
+                     * <p>标签</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 下一页token
+                     * <p>下一页token</p>
                      */
                     std::string m_nextToken;
                     bool m_nextTokenHasBeenSet;
 
                     /**
-                     * 排序方式 asc、desc
+                     * <p>排序方式 asc、desc</p>
                      */
                     std::string m_orderType;
                     bool m_orderTypeHasBeenSet;

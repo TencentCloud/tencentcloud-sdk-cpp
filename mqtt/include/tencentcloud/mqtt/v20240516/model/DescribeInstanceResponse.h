@@ -547,6 +547,48 @@ namespace TencentCloud
                      */
                     bool BlockRuleLimitHasBeenSet() const;
 
+                    /**
+                     * 获取<p>删除保护开关</p>
+                     * @return DeleteProtect <p>删除保护开关</p>
+                     * 
+                     */
+                    bool GetDeleteProtect() const;
+
+                    /**
+                     * 判断参数 DeleteProtect 是否已赋值
+                     * @return DeleteProtect 是否已赋值
+                     * 
+                     */
+                    bool DeleteProtectHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集群客户端事件格式</p><p>枚举值：</p><ul><li>V1： 详见官网文档</li><li>V2： 详见官网文档</li><li>V3： 详见官网文档</li></ul><p>默认值：V3</p>
+                     * @return EventDialect <p>集群客户端事件格式</p><p>枚举值：</p><ul><li>V1： 详见官网文档</li><li>V2： 详见官网文档</li><li>V3： 详见官网文档</li></ul><p>默认值：V3</p>
+                     * 
+                     */
+                    std::string GetEventDialect() const;
+
+                    /**
+                     * 判断参数 EventDialect 是否已赋值
+                     * @return EventDialect 是否已赋值
+                     * 
+                     */
+                    bool EventDialectHasBeenSet() const;
+
+                    /**
+                     * 获取<p>消息HASH策略</p><p>枚举值：</p><ul><li>TOPIC_NAME： 按主题名</li><li>CLIENT_ID： 按客户端ID</li></ul><p>默认值：TOPIC_NAME</p>
+                     * @return HashMessagePolicy <p>消息HASH策略</p><p>枚举值：</p><ul><li>TOPIC_NAME： 按主题名</li><li>CLIENT_ID： 按客户端ID</li></ul><p>默认值：TOPIC_NAME</p>
+                     * 
+                     */
+                    std::string GetHashMessagePolicy() const;
+
+                    /**
+                     * 判断参数 HashMessagePolicy 是否已赋值
+                     * @return HashMessagePolicy 是否已赋值
+                     * 
+                     */
+                    bool HashMessagePolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -764,6 +806,24 @@ namespace TencentCloud
                      */
                     int64_t m_blockRuleLimit;
                     bool m_blockRuleLimitHasBeenSet;
+
+                    /**
+                     * <p>删除保护开关</p>
+                     */
+                    bool m_deleteProtect;
+                    bool m_deleteProtectHasBeenSet;
+
+                    /**
+                     * <p>集群客户端事件格式</p><p>枚举值：</p><ul><li>V1： 详见官网文档</li><li>V2： 详见官网文档</li><li>V3： 详见官网文档</li></ul><p>默认值：V3</p>
+                     */
+                    std::string m_eventDialect;
+                    bool m_eventDialectHasBeenSet;
+
+                    /**
+                     * <p>消息HASH策略</p><p>枚举值：</p><ul><li>TOPIC_NAME： 按主题名</li><li>CLIENT_ID： 按客户端ID</li></ul><p>默认值：TOPIC_NAME</p>
+                     */
+                    std::string m_hashMessagePolicy;
+                    bool m_hashMessagePolicyHasBeenSet;
 
                 };
             }

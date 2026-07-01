@@ -29,6 +29,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/CreateInstanceResponse.h
   include/tencentcloud/trocket/v20230308/model/SourceClusterTopicConfig.h
   include/tencentcloud/trocket/v20230308/model/ConsumeGroupItem.h
+  include/tencentcloud/trocket/v20230308/model/TopicStatsDetail.h
   include/tencentcloud/trocket/v20230308/model/DescribeMessageListRequest.h
   include/tencentcloud/trocket/v20230308/model/RetryPolicy.h
   include/tencentcloud/trocket/v20230308/model/ModifyInstanceRequest.h
@@ -38,6 +39,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DescribeConsumerGroupResponse.h
   include/tencentcloud/trocket/v20230308/model/ImportSourceClusterConsumerGroupsResponse.h
   include/tencentcloud/trocket/v20230308/model/DeleteTopicRequest.h
+  include/tencentcloud/trocket/v20230308/model/DescribeTopicStatsRequest.h
   include/tencentcloud/trocket/v20230308/model/DescribeSmoothMigrationTaskListResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMigrationTaskListResponse.h
   include/tencentcloud/trocket/v20230308/model/VpcInfo.h
@@ -69,6 +71,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DescribeTopicResponse.h
   include/tencentcloud/trocket/v20230308/model/SmoothMigrationTaskItem.h
   include/tencentcloud/trocket/v20230308/model/ModifyRoleRequest.h
+  include/tencentcloud/trocket/v20230308/model/DescribeTopicStatsResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeFusionInstanceListResponse.h
   include/tencentcloud/trocket/v20230308/model/CreateTopicRequest.h
   include/tencentcloud/trocket/v20230308/model/DescribeMessageRequest.h
@@ -160,6 +163,7 @@ set(trocket_src
   src/v20230308/model/CreateInstanceResponse.cpp
   src/v20230308/model/SourceClusterTopicConfig.cpp
   src/v20230308/model/ConsumeGroupItem.cpp
+  src/v20230308/model/TopicStatsDetail.cpp
   src/v20230308/model/DescribeMessageListRequest.cpp
   src/v20230308/model/RetryPolicy.cpp
   src/v20230308/model/ModifyInstanceRequest.cpp
@@ -169,6 +173,7 @@ set(trocket_src
   src/v20230308/model/DescribeConsumerGroupResponse.cpp
   src/v20230308/model/ImportSourceClusterConsumerGroupsResponse.cpp
   src/v20230308/model/DeleteTopicRequest.cpp
+  src/v20230308/model/DescribeTopicStatsRequest.cpp
   src/v20230308/model/DescribeSmoothMigrationTaskListResponse.cpp
   src/v20230308/model/DescribeMigrationTaskListResponse.cpp
   src/v20230308/model/VpcInfo.cpp
@@ -200,6 +205,7 @@ set(trocket_src
   src/v20230308/model/DescribeTopicResponse.cpp
   src/v20230308/model/SmoothMigrationTaskItem.cpp
   src/v20230308/model/ModifyRoleRequest.cpp
+  src/v20230308/model/DescribeTopicStatsResponse.cpp
   src/v20230308/model/DescribeFusionInstanceListResponse.cpp
   src/v20230308/model/CreateTopicRequest.cpp
   src/v20230308/model/DescribeMessageRequest.cpp

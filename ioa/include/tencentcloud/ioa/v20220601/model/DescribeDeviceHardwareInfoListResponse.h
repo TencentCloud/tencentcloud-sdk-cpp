@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分页的data数据
-                     * @return Data 分页的data数据
+                     * 获取<p>分页的data数据</p>
+                     * @return Data <p>分页的data数据</p>
                      * 
                      */
                     DescribeDeviceHardwareInfoListRspData GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分页的data数据
+                     * <p>分页的data数据</p>
                      */
                     DescribeDeviceHardwareInfoListRspData m_data;
                     bool m_dataHasBeenSet;

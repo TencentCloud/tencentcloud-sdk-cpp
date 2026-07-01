@@ -248,6 +248,48 @@ namespace TencentCloud
                      */
                     bool MQTTClientSubscriptionsHasBeenSet() const;
 
+                    /**
+                     * 获取clean-session标志，在客户端使用mqtt5协议时，该字段即clean-start
+                     * @return CleanSession clean-session标志，在客户端使用mqtt5协议时，该字段即clean-start
+                     * 
+                     */
+                    bool GetCleanSession() const;
+
+                    /**
+                     * 设置clean-session标志，在客户端使用mqtt5协议时，该字段即clean-start
+                     * @param _cleanSession clean-session标志，在客户端使用mqtt5协议时，该字段即clean-start
+                     * 
+                     */
+                    void SetCleanSession(const bool& _cleanSession);
+
+                    /**
+                     * 判断参数 CleanSession 是否已赋值
+                     * @return CleanSession 是否已赋值
+                     * 
+                     */
+                    bool CleanSessionHasBeenSet() const;
+
+                    /**
+                     * 获取MQTT5协议：expireIntervalInSeconds
+                     * @return ExpireIntervalInSeconds MQTT5协议：expireIntervalInSeconds
+                     * 
+                     */
+                    int64_t GetExpireIntervalInSeconds() const;
+
+                    /**
+                     * 设置MQTT5协议：expireIntervalInSeconds
+                     * @param _expireIntervalInSeconds MQTT5协议：expireIntervalInSeconds
+                     * 
+                     */
+                    void SetExpireIntervalInSeconds(const int64_t& _expireIntervalInSeconds);
+
+                    /**
+                     * 判断参数 ExpireIntervalInSeconds 是否已赋值
+                     * @return ExpireIntervalInSeconds 是否已赋值
+                     * 
+                     */
+                    bool ExpireIntervalInSecondsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -306,6 +348,18 @@ namespace TencentCloud
                      */
                     std::vector<MQTTClientSubscription> m_mQTTClientSubscriptions;
                     bool m_mQTTClientSubscriptionsHasBeenSet;
+
+                    /**
+                     * clean-session标志，在客户端使用mqtt5协议时，该字段即clean-start
+                     */
+                    bool m_cleanSession;
+                    bool m_cleanSessionHasBeenSet;
+
+                    /**
+                     * MQTT5协议：expireIntervalInSeconds
+                     */
+                    int64_t m_expireIntervalInSeconds;
+                    bool m_expireIntervalInSecondsHasBeenSet;
 
                 };
             }

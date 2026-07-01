@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取七层转发规则条件类型
+                     * 获取<p>七层转发规则条件类型</p><p>枚举值：</p><ul><li>Path： Path</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleConditionType 七层转发规则条件类型
+                     * @return RuleConditionType <p>七层转发规则条件类型</p><p>枚举值：</p><ul><li>Path： Path</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleConditionType() const;
 
                     /**
-                     * 设置七层转发规则条件类型
+                     * 设置<p>七层转发规则条件类型</p><p>枚举值：</p><ul><li>Path： Path</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ruleConditionType 七层转发规则条件类型
+                     * @param _ruleConditionType <p>七层转发规则条件类型</p><p>枚举值：</p><ul><li>Path： Path</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool RuleConditionTypeHasBeenSet() const;
 
                     /**
-                     * 获取七层转发规则条件值
+                     * 获取<p>七层转发规则条件值</p><p>参数格式：格式必须满足正则表达：^[a-zA-Z0-9_.-/]{1,80}$</p><p>数组长度不能超过1。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleConditionValue 七层转发规则条件值
+                     * @return RuleConditionValue <p>七层转发规则条件值</p><p>参数格式：格式必须满足正则表达：^[a-zA-Z0-9_.-/]{1,80}$</p><p>数组长度不能超过1。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetRuleConditionValue() const;
 
                     /**
-                     * 设置七层转发规则条件值
+                     * 设置<p>七层转发规则条件值</p><p>参数格式：格式必须满足正则表达：^[a-zA-Z0-9_.-/]{1,80}$</p><p>数组长度不能超过1。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ruleConditionValue 七层转发规则条件值
+                     * @param _ruleConditionValue <p>七层转发规则条件值</p><p>参数格式：格式必须满足正则表达：^[a-zA-Z0-9_.-/]{1,80}$</p><p>数组长度不能超过1。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,14 +99,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 七层转发规则条件类型
+                     * <p>七层转发规则条件类型</p><p>枚举值：</p><ul><li>Path： Path</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleConditionType;
                     bool m_ruleConditionTypeHasBeenSet;
 
                     /**
-                     * 七层转发规则条件值
+                     * <p>七层转发规则条件值</p><p>参数格式：格式必须满足正则表达：^[a-zA-Z0-9_.-/]{1,80}$</p><p>数组长度不能超过1。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_ruleConditionValue;

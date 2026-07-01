@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取空间 ID
-                     * @return ZoneId 空间 ID
+                     * 获取<p>空间 ID</p>
+                     * @return ZoneId <p>空间 ID</p>
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置空间 ID
-                     * @param _zoneId 空间 ID
+                     * 设置<p>空间 ID</p>
+                     * @param _zoneId <p>空间 ID</p>
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取权限配置 ID
-                     * @return RoleConfigurationId 权限配置 ID
+                     * 获取<p>权限配置 ID</p>
+                     * @return RoleConfigurationId <p>权限配置 ID</p>
                      * 
                      */
                     std::string GetRoleConfigurationId() const;
 
                     /**
-                     * 设置权限配置 ID
-                     * @param _roleConfigurationId 权限配置 ID
+                     * 设置<p>权限配置 ID</p>
+                     * @param _roleConfigurationId <p>权限配置 ID</p>
                      * 
                      */
                     void SetRoleConfigurationId(const std::string& _roleConfigurationId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool RoleConfigurationIdHasBeenSet() const;
 
                     /**
-                     * 获取权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。 
-                     * @return RolePolicyType 权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。 
+                     * 获取<p>权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。</p>
+                     * @return RolePolicyType <p>权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。</p>
                      * 
                      */
                     std::string GetRolePolicyType() const;
 
                     /**
-                     * 设置权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。 
-                     * @param _rolePolicyType 权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。 
+                     * 设置<p>权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。</p>
+                     * @param _rolePolicyType <p>权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。</p>
                      * 
                      */
                     void SetRolePolicyType(const std::string& _rolePolicyType);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool RolePolicyTypeHasBeenSet() const;
 
                     /**
-                     * 获取权限策略名称，长度最大为 20策略，每个策略长度最大32个字符。如果要添加系统策略，建议使用RolePolicies参数。自定义策略时，数组长度最大为1。
-                     * @return RolePolicyNames 权限策略名称，长度最大为 20策略，每个策略长度最大32个字符。如果要添加系统策略，建议使用RolePolicies参数。自定义策略时，数组长度最大为1。
+                     * 获取<p>权限策略名称，长度最大为 20策略，每个策略长度最大32个字符。如果要添加系统策略，建议使用RolePolicies参数。自定义策略时，数组长度最大为1。</p>
+                     * @return RolePolicyNames <p>权限策略名称，长度最大为 20策略，每个策略长度最大32个字符。如果要添加系统策略，建议使用RolePolicies参数。自定义策略时，数组长度最大为1。</p>
                      * 
                      */
                     std::vector<std::string> GetRolePolicyNames() const;
 
                     /**
-                     * 设置权限策略名称，长度最大为 20策略，每个策略长度最大32个字符。如果要添加系统策略，建议使用RolePolicies参数。自定义策略时，数组长度最大为1。
-                     * @param _rolePolicyNames 权限策略名称，长度最大为 20策略，每个策略长度最大32个字符。如果要添加系统策略，建议使用RolePolicies参数。自定义策略时，数组长度最大为1。
+                     * 设置<p>权限策略名称，长度最大为 20策略，每个策略长度最大32个字符。如果要添加系统策略，建议使用RolePolicies参数。自定义策略时，数组长度最大为1。</p>
+                     * @param _rolePolicyNames <p>权限策略名称，长度最大为 20策略，每个策略长度最大32个字符。如果要添加系统策略，建议使用RolePolicies参数。自定义策略时，数组长度最大为1。</p>
                      * 
                      */
                     void SetRolePolicyNames(const std::vector<std::string>& _rolePolicyNames);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool RolePolicyNamesHasBeenSet() const;
 
                     /**
-                     * 获取添加的系统策略详情。
-                     * @return RolePolicies 添加的系统策略详情。
+                     * 获取<p>添加的系统策略详情。</p>
+                     * @return RolePolicies <p>添加的系统策略详情。</p>
                      * 
                      */
                     std::vector<PolicyDetail> GetRolePolicies() const;
 
                     /**
-                     * 设置添加的系统策略详情。
-                     * @param _rolePolicies 添加的系统策略详情。
+                     * 设置<p>添加的系统策略详情。</p>
+                     * @param _rolePolicies <p>添加的系统策略详情。</p>
                      * 
                      */
                     void SetRolePolicies(const std::vector<PolicyDetail>& _rolePolicies);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool RolePoliciesHasBeenSet() const;
 
                     /**
-                     * 获取自定义策略内容。长度：最大 4096 个字符。当RolePolicyType为Inline时，该参数必须配置。关于权限策略的语法和结构，请参见权限策略语法和结构。
-                     * @return CustomPolicyDocument 自定义策略内容。长度：最大 4096 个字符。当RolePolicyType为Inline时，该参数必须配置。关于权限策略的语法和结构，请参见权限策略语法和结构。
+                     * 获取<p>自定义策略内容。长度：最大 4096 个字符。当RolePolicyType为Inline时，该参数必须配置。关于权限策略的语法和结构，请参见权限策略语法和结构。</p>
+                     * @return CustomPolicyDocument <p>自定义策略内容。长度：最大 4096 个字符。当RolePolicyType为Inline时，该参数必须配置。关于权限策略的语法和结构，请参见权限策略语法和结构。</p>
                      * 
                      */
                     std::string GetCustomPolicyDocument() const;
 
                     /**
-                     * 设置自定义策略内容。长度：最大 4096 个字符。当RolePolicyType为Inline时，该参数必须配置。关于权限策略的语法和结构，请参见权限策略语法和结构。
-                     * @param _customPolicyDocument 自定义策略内容。长度：最大 4096 个字符。当RolePolicyType为Inline时，该参数必须配置。关于权限策略的语法和结构，请参见权限策略语法和结构。
+                     * 设置<p>自定义策略内容。长度：最大 4096 个字符。当RolePolicyType为Inline时，该参数必须配置。关于权限策略的语法和结构，请参见权限策略语法和结构。</p>
+                     * @param _customPolicyDocument <p>自定义策略内容。长度：最大 4096 个字符。当RolePolicyType为Inline时，该参数必须配置。关于权限策略的语法和结构，请参见权限策略语法和结构。</p>
                      * 
                      */
                     void SetCustomPolicyDocument(const std::string& _customPolicyDocument);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool CustomPolicyDocumentHasBeenSet() const;
 
                     /**
-                     * 获取自定义策略内容列表（跟RolePolicyNames一一对应）
-                     * @return CustomPolicyDocuments 自定义策略内容列表（跟RolePolicyNames一一对应）
+                     * 获取<p>自定义策略内容列表（跟RolePolicyNames一一对应）</p>
+                     * @return CustomPolicyDocuments <p>自定义策略内容列表（跟RolePolicyNames一一对应）</p>
                      * 
                      */
                     std::vector<std::string> GetCustomPolicyDocuments() const;
 
                     /**
-                     * 设置自定义策略内容列表（跟RolePolicyNames一一对应）
-                     * @param _customPolicyDocuments 自定义策略内容列表（跟RolePolicyNames一一对应）
+                     * 设置<p>自定义策略内容列表（跟RolePolicyNames一一对应）</p>
+                     * @param _customPolicyDocuments <p>自定义策略内容列表（跟RolePolicyNames一一对应）</p>
                      * 
                      */
                     void SetCustomPolicyDocuments(const std::vector<std::string>& _customPolicyDocuments);
@@ -190,49 +190,76 @@ namespace TencentCloud
                      */
                     bool CustomPolicyDocumentsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否公共策略</p><p>枚举值：</p><ul><li>1： 是</li><li>0： 不是</li></ul><p>默认值：1</p>
+                     * @return PolicyType <p>是否公共策略</p><p>枚举值：</p><ul><li>1： 是</li><li>0： 不是</li></ul><p>默认值：1</p>
+                     * 
+                     */
+                    int64_t GetPolicyType() const;
+
+                    /**
+                     * 设置<p>是否公共策略</p><p>枚举值：</p><ul><li>1： 是</li><li>0： 不是</li></ul><p>默认值：1</p>
+                     * @param _policyType <p>是否公共策略</p><p>枚举值：</p><ul><li>1： 是</li><li>0： 不是</li></ul><p>默认值：1</p>
+                     * 
+                     */
+                    void SetPolicyType(const int64_t& _policyType);
+
+                    /**
+                     * 判断参数 PolicyType 是否已赋值
+                     * @return PolicyType 是否已赋值
+                     * 
+                     */
+                    bool PolicyTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 空间 ID
+                     * <p>空间 ID</p>
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 权限配置 ID
+                     * <p>权限配置 ID</p>
                      */
                     std::string m_roleConfigurationId;
                     bool m_roleConfigurationIdHasBeenSet;
 
                     /**
-                     * 权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。 
+                     * <p>权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。</p>
                      */
                     std::string m_rolePolicyType;
                     bool m_rolePolicyTypeHasBeenSet;
 
                     /**
-                     * 权限策略名称，长度最大为 20策略，每个策略长度最大32个字符。如果要添加系统策略，建议使用RolePolicies参数。自定义策略时，数组长度最大为1。
+                     * <p>权限策略名称，长度最大为 20策略，每个策略长度最大32个字符。如果要添加系统策略，建议使用RolePolicies参数。自定义策略时，数组长度最大为1。</p>
                      */
                     std::vector<std::string> m_rolePolicyNames;
                     bool m_rolePolicyNamesHasBeenSet;
 
                     /**
-                     * 添加的系统策略详情。
+                     * <p>添加的系统策略详情。</p>
                      */
                     std::vector<PolicyDetail> m_rolePolicies;
                     bool m_rolePoliciesHasBeenSet;
 
                     /**
-                     * 自定义策略内容。长度：最大 4096 个字符。当RolePolicyType为Inline时，该参数必须配置。关于权限策略的语法和结构，请参见权限策略语法和结构。
+                     * <p>自定义策略内容。长度：最大 4096 个字符。当RolePolicyType为Inline时，该参数必须配置。关于权限策略的语法和结构，请参见权限策略语法和结构。</p>
                      */
                     std::string m_customPolicyDocument;
                     bool m_customPolicyDocumentHasBeenSet;
 
                     /**
-                     * 自定义策略内容列表（跟RolePolicyNames一一对应）
+                     * <p>自定义策略内容列表（跟RolePolicyNames一一对应）</p>
                      */
                     std::vector<std::string> m_customPolicyDocuments;
                     bool m_customPolicyDocumentsHasBeenSet;
+
+                    /**
+                     * <p>是否公共策略</p><p>枚举值：</p><ul><li>1： 是</li><li>0： 不是</li></ul><p>默认值：1</p>
+                     */
+                    int64_t m_policyType;
+                    bool m_policyTypeHasBeenSet;
 
                 };
             }

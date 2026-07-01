@@ -1379,6 +1379,27 @@ namespace TencentCloud
                      */
                     bool DoNotStartHasBeenSet() const;
 
+                    /**
+                     * 获取<p>镜像Secret列表</p>
+                     * @return ImagePullSecretList <p>镜像Secret列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetImagePullSecretList() const;
+
+                    /**
+                     * 设置<p>镜像Secret列表</p>
+                     * @param _imagePullSecretList <p>镜像Secret列表</p>
+                     * 
+                     */
+                    void SetImagePullSecretList(const std::vector<std::string>& _imagePullSecretList);
+
+                    /**
+                     * 判断参数 ImagePullSecretList 是否已赋值
+                     * @return ImagePullSecretList 是否已赋值
+                     * 
+                     */
+                    bool ImagePullSecretListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1758,6 +1779,12 @@ namespace TencentCloud
                      */
                     bool m_doNotStart;
                     bool m_doNotStartHasBeenSet;
+
+                    /**
+                     * <p>镜像Secret列表</p>
+                     */
+                    std::vector<std::string> m_imagePullSecretList;
+                    bool m_imagePullSecretListHasBeenSet;
 
                 };
             }

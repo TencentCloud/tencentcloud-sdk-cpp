@@ -34,7 +34,10 @@ Savepoint::Savepoint() :
     m_timeoutHasBeenSet(false),
     m_serialIdHasBeenSet(false),
     m_timeConsumingHasBeenSet(false),
-    m_pathStatusHasBeenSet(false)
+    m_pathStatusHasBeenSet(false),
+    m_flinkVersionHasBeenSet(false),
+    m_isIncrementalHasBeenSet(false),
+    m_checkpointSizeHasBeenSet(false)
 {
 }
 
@@ -183,6 +186,36 @@ CoreInternalOutcome Savepoint::Deserialize(const rapidjson::Value &value)
         m_pathStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("FlinkVersion") && !value["FlinkVersion"].IsNull())
+    {
+        if (!value["FlinkVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Savepoint.FlinkVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_flinkVersion = string(value["FlinkVersion"].GetString());
+        m_flinkVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsIncremental") && !value["IsIncremental"].IsNull())
+    {
+        if (!value["IsIncremental"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Savepoint.IsIncremental` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isIncremental = string(value["IsIncremental"].GetString());
+        m_isIncrementalHasBeenSet = true;
+    }
+
+    if (value.HasMember("CheckpointSize") && !value["CheckpointSize"].IsNull())
+    {
+        if (!value["CheckpointSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Savepoint.CheckpointSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkpointSize = value["CheckpointSize"].GetInt64();
+        m_checkpointSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +333,30 @@ void Savepoint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "PathStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pathStatus, allocator);
+    }
+
+    if (m_flinkVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlinkVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flinkVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isIncrementalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsIncremental";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isIncremental.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_checkpointSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckpointSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_checkpointSize, allocator);
     }
 
 }
@@ -527,5 +584,53 @@ void Savepoint::SetPathStatus(const int64_t& _pathStatus)
 bool Savepoint::PathStatusHasBeenSet() const
 {
     return m_pathStatusHasBeenSet;
+}
+
+string Savepoint::GetFlinkVersion() const
+{
+    return m_flinkVersion;
+}
+
+void Savepoint::SetFlinkVersion(const string& _flinkVersion)
+{
+    m_flinkVersion = _flinkVersion;
+    m_flinkVersionHasBeenSet = true;
+}
+
+bool Savepoint::FlinkVersionHasBeenSet() const
+{
+    return m_flinkVersionHasBeenSet;
+}
+
+string Savepoint::GetIsIncremental() const
+{
+    return m_isIncremental;
+}
+
+void Savepoint::SetIsIncremental(const string& _isIncremental)
+{
+    m_isIncremental = _isIncremental;
+    m_isIncrementalHasBeenSet = true;
+}
+
+bool Savepoint::IsIncrementalHasBeenSet() const
+{
+    return m_isIncrementalHasBeenSet;
+}
+
+int64_t Savepoint::GetCheckpointSize() const
+{
+    return m_checkpointSize;
+}
+
+void Savepoint::SetCheckpointSize(const int64_t& _checkpointSize)
+{
+    m_checkpointSize = _checkpointSize;
+    m_checkpointSizeHasBeenSet = true;
+}
+
+bool Savepoint::CheckpointSizeHasBeenSet() const
+{
+    return m_checkpointSizeHasBeenSet;
 }
 

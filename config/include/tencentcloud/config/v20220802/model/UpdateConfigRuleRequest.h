@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取触发类型，最多支持两种
-                     * @return TriggerType 触发类型，最多支持两种
+                     * 获取<p>触发类型，最多支持两种</p>
+                     * @return TriggerType <p>触发类型，最多支持两种</p>
                      * 
                      */
                     std::vector<TriggerType> GetTriggerType() const;
 
                     /**
-                     * 设置触发类型，最多支持两种
-                     * @param _triggerType 触发类型，最多支持两种
+                     * 设置<p>触发类型，最多支持两种</p>
+                     * @param _triggerType <p>触发类型，最多支持两种</p>
                      * 
                      */
                     void SetTriggerType(const std::vector<TriggerType>& _triggerType);
@@ -67,27 +67,15 @@ namespace TencentCloud
                     bool TriggerTypeHasBeenSet() const;
 
                     /**
-                     * 获取风险等级
-1：高风险。
-2：中风险。
-3：低风险。
-                     * @return RiskLevel 风险等级
-1：高风险。
-2：中风险。
-3：低风险。
+                     * 获取<p>风险等级<br>1：高风险。<br>2：中风险。<br>3：低风险。</p>
+                     * @return RiskLevel <p>风险等级<br>1：高风险。<br>2：中风险。<br>3：低风险。</p>
                      * 
                      */
                     uint64_t GetRiskLevel() const;
 
                     /**
-                     * 设置风险等级
-1：高风险。
-2：中风险。
-3：低风险。
-                     * @param _riskLevel 风险等级
-1：高风险。
-2：中风险。
-3：低风险。
+                     * 设置<p>风险等级<br>1：高风险。<br>2：中风险。<br>3：低风险。</p>
+                     * @param _riskLevel <p>风险等级<br>1：高风险。<br>2：中风险。<br>3：低风险。</p>
                      * 
                      */
                     void SetRiskLevel(const uint64_t& _riskLevel);
@@ -100,15 +88,15 @@ namespace TencentCloud
                     bool RiskLevelHasBeenSet() const;
 
                     /**
-                     * 获取规则ID
-                     * @return RuleId 规则ID
+                     * 获取<p>规则ID</p>
+                     * @return RuleId <p>规则ID</p>
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置规则ID
-                     * @param _ruleId 规则ID
+                     * 设置<p>规则ID</p>
+                     * @param _ruleId <p>规则ID</p>
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -121,15 +109,15 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取规则名称
-                     * @return RuleName 规则名称
+                     * 获取<p>规则名称</p>
+                     * @return RuleName <p>规则名称</p>
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
-                     * 设置规则名称
-                     * @param _ruleName 规则名称
+                     * 设置<p>规则名称</p>
+                     * @param _ruleName <p>规则名称</p>
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -142,15 +130,15 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取入参
-                     * @return InputParameter 入参
+                     * 获取<p>入参</p>
+                     * @return InputParameter <p>入参</p>
                      * 
                      */
                     std::vector<InputParameter> GetInputParameter() const;
 
                     /**
-                     * 设置入参
-                     * @param _inputParameter 入参
+                     * 设置<p>入参</p>
+                     * @param _inputParameter <p>入参</p>
                      * 
                      */
                     void SetInputParameter(const std::vector<InputParameter>& _inputParameter);
@@ -163,15 +151,15 @@ namespace TencentCloud
                     bool InputParameterHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
+                     * 获取<p>描述</p>
+                     * @return Description <p>描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
-                     * @param _description 描述
+                     * 设置<p>描述</p>
+                     * @param _description <p>描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -184,19 +172,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取规则评估地域范围，规则仅对指定地域中的资源生效。
-支持的地域范围config:ListResourceRegions返回的地域
-                     * @return RegionsScope 规则评估地域范围，规则仅对指定地域中的资源生效。
-支持的地域范围config:ListResourceRegions返回的地域
+                     * 获取<p>规则评估地域范围，规则仅对指定地域中的资源生效。<br>支持的地域范围config:ListResourceRegions返回的地域</p>
+                     * @return RegionsScope <p>规则评估地域范围，规则仅对指定地域中的资源生效。<br>支持的地域范围config:ListResourceRegions返回的地域</p>
                      * 
                      */
                     std::vector<std::string> GetRegionsScope() const;
 
                     /**
-                     * 设置规则评估地域范围，规则仅对指定地域中的资源生效。
-支持的地域范围config:ListResourceRegions返回的地域
-                     * @param _regionsScope 规则评估地域范围，规则仅对指定地域中的资源生效。
-支持的地域范围config:ListResourceRegions返回的地域
+                     * 设置<p>规则评估地域范围，规则仅对指定地域中的资源生效。<br>支持的地域范围config:ListResourceRegions返回的地域</p>
+                     * @param _regionsScope <p>规则评估地域范围，规则仅对指定地域中的资源生效。<br>支持的地域范围config:ListResourceRegions返回的地域</p>
                      * 
                      */
                     void SetRegionsScope(const std::vector<std::string>& _regionsScope);
@@ -209,15 +193,15 @@ namespace TencentCloud
                     bool RegionsScopeHasBeenSet() const;
 
                     /**
-                     * 获取规则评估标签范围，规则仅对绑定指定标签的资源生效。
-                     * @return TagsScope 规则评估标签范围，规则仅对绑定指定标签的资源生效。
+                     * 获取<p>规则评估标签范围，规则仅对绑定指定标签的资源生效。</p>
+                     * @return TagsScope <p>规则评估标签范围，规则仅对绑定指定标签的资源生效。</p>
                      * 
                      */
                     std::vector<Tag> GetTagsScope() const;
 
                     /**
-                     * 设置规则评估标签范围，规则仅对绑定指定标签的资源生效。
-                     * @param _tagsScope 规则评估标签范围，规则仅对绑定指定标签的资源生效。
+                     * 设置<p>规则评估标签范围，规则仅对绑定指定标签的资源生效。</p>
+                     * @param _tagsScope <p>规则评估标签范围，规则仅对绑定指定标签的资源生效。</p>
                      * 
                      */
                     void SetTagsScope(const std::vector<Tag>& _tagsScope);
@@ -230,15 +214,15 @@ namespace TencentCloud
                     bool TagsScopeHasBeenSet() const;
 
                     /**
-                     * 获取规则对指定资源ID无效，即不对该资源执行评估。
-                     * @return ExcludeResourceIdsScope 规则对指定资源ID无效，即不对该资源执行评估。
+                     * 获取<p>规则对指定资源ID无效，即不对该资源执行评估。</p>
+                     * @return ExcludeResourceIdsScope <p>规则对指定资源ID无效，即不对该资源执行评估。</p>
                      * 
                      */
                     std::vector<std::string> GetExcludeResourceIdsScope() const;
 
                     /**
-                     * 设置规则对指定资源ID无效，即不对该资源执行评估。
-                     * @param _excludeResourceIdsScope 规则对指定资源ID无效，即不对该资源执行评估。
+                     * 设置<p>规则对指定资源ID无效，即不对该资源执行评估。</p>
+                     * @param _excludeResourceIdsScope <p>规则对指定资源ID无效，即不对该资源执行评估。</p>
                      * 
                      */
                     void SetExcludeResourceIdsScope(const std::vector<std::string>& _excludeResourceIdsScope);
@@ -253,59 +237,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 触发类型，最多支持两种
+                     * <p>触发类型，最多支持两种</p>
                      */
                     std::vector<TriggerType> m_triggerType;
                     bool m_triggerTypeHasBeenSet;
 
                     /**
-                     * 风险等级
-1：高风险。
-2：中风险。
-3：低风险。
+                     * <p>风险等级<br>1：高风险。<br>2：中风险。<br>3：低风险。</p>
                      */
                     uint64_t m_riskLevel;
                     bool m_riskLevelHasBeenSet;
 
                     /**
-                     * 规则ID
+                     * <p>规则ID</p>
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * 规则名称
+                     * <p>规则名称</p>
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * 入参
+                     * <p>入参</p>
                      */
                     std::vector<InputParameter> m_inputParameter;
                     bool m_inputParameterHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 规则评估地域范围，规则仅对指定地域中的资源生效。
-支持的地域范围config:ListResourceRegions返回的地域
+                     * <p>规则评估地域范围，规则仅对指定地域中的资源生效。<br>支持的地域范围config:ListResourceRegions返回的地域</p>
                      */
                     std::vector<std::string> m_regionsScope;
                     bool m_regionsScopeHasBeenSet;
 
                     /**
-                     * 规则评估标签范围，规则仅对绑定指定标签的资源生效。
+                     * <p>规则评估标签范围，规则仅对绑定指定标签的资源生效。</p>
                      */
                     std::vector<Tag> m_tagsScope;
                     bool m_tagsScopeHasBeenSet;
 
                     /**
-                     * 规则对指定资源ID无效，即不对该资源执行评估。
+                     * <p>规则对指定资源ID无效，即不对该资源执行评估。</p>
                      */
                     std::vector<std::string> m_excludeResourceIdsScope;
                     bool m_excludeResourceIdsScopeHasBeenSet;

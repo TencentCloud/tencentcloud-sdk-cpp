@@ -21,7 +21,8 @@ using namespace TencentCloud::Mps::V20190612::Model;
 using namespace std;
 
 ImageProcessPrompt::ImageProcessPrompt() :
-    m_promptHasBeenSet(false)
+    m_promptHasBeenSet(false),
+    m_roleHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome ImageProcessPrompt::Deserialize(const rapidjson::Value &valu
         m_promptHasBeenSet = true;
     }
 
+    if (value.HasMember("Role") && !value["Role"].IsNull())
+    {
+        if (!value["Role"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageProcessPrompt.Role` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_role = string(value["Role"].GetString());
+        m_roleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void ImageProcessPrompt::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Prompt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_prompt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Role";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_role.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void ImageProcessPrompt::SetPrompt(const string& _prompt)
 bool ImageProcessPrompt::PromptHasBeenSet() const
 {
     return m_promptHasBeenSet;
+}
+
+string ImageProcessPrompt::GetRole() const
+{
+    return m_role;
+}
+
+void ImageProcessPrompt::SetRole(const string& _role)
+{
+    m_role = _role;
+    m_roleHasBeenSet = true;
+}
+
+bool ImageProcessPrompt::RoleHasBeenSet() const
+{
+    return m_roleHasBeenSet;
 }
 

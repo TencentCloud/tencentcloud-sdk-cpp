@@ -45,31 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询条件列表,支持以下字段
-InstanceName：集群名模糊搜索
-InstanceId：集群id精确搜索
-InstanceStatus：集群状态搜索（RUNNING-运行中，CREATING-创建中，MODIFYING-变配中，DELETING-删除中）
-注意：配置TagFilters时该查询条件不生效。
-                     * @return Filters 查询条件列表,支持以下字段
-InstanceName：集群名模糊搜索
-InstanceId：集群id精确搜索
-InstanceStatus：集群状态搜索（RUNNING-运行中，CREATING-创建中，MODIFYING-变配中，DELETING-删除中）
-注意：配置TagFilters时该查询条件不生效。
+                     * 获取<p>查询条件列表,支持以下字段<br>InstanceName：集群名模糊搜索<br>InstanceId：集群id精确搜索<br>InstanceStatus：集群状态搜索（RUNNING-运行中，CREATING-创建中，MODIFYING-变配中，DELETING-删除中）<br>PayMode：付费模式搜索（PREPAID-包年包月，POSTPAID-按小时计费）<br>ExpiredBefore：按过期时间过滤：仅筛选包年包月（PREPAID）集群<br>注意：配置TagFilters时该查询条件不生效。</p>
+                     * @return Filters <p>查询条件列表,支持以下字段<br>InstanceName：集群名模糊搜索<br>InstanceId：集群id精确搜索<br>InstanceStatus：集群状态搜索（RUNNING-运行中，CREATING-创建中，MODIFYING-变配中，DELETING-删除中）<br>PayMode：付费模式搜索（PREPAID-包年包月，POSTPAID-按小时计费）<br>ExpiredBefore：按过期时间过滤：仅筛选包年包月（PREPAID）集群<br>注意：配置TagFilters时该查询条件不生效。</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置查询条件列表,支持以下字段
-InstanceName：集群名模糊搜索
-InstanceId：集群id精确搜索
-InstanceStatus：集群状态搜索（RUNNING-运行中，CREATING-创建中，MODIFYING-变配中，DELETING-删除中）
-注意：配置TagFilters时该查询条件不生效。
-                     * @param _filters 查询条件列表,支持以下字段
-InstanceName：集群名模糊搜索
-InstanceId：集群id精确搜索
-InstanceStatus：集群状态搜索（RUNNING-运行中，CREATING-创建中，MODIFYING-变配中，DELETING-删除中）
-注意：配置TagFilters时该查询条件不生效。
+                     * 设置<p>查询条件列表,支持以下字段<br>InstanceName：集群名模糊搜索<br>InstanceId：集群id精确搜索<br>InstanceStatus：集群状态搜索（RUNNING-运行中，CREATING-创建中，MODIFYING-变配中，DELETING-删除中）<br>PayMode：付费模式搜索（PREPAID-包年包月，POSTPAID-按小时计费）<br>ExpiredBefore：按过期时间过滤：仅筛选包年包月（PREPAID）集群<br>注意：配置TagFilters时该查询条件不生效。</p>
+                     * @param _filters <p>查询条件列表,支持以下字段<br>InstanceName：集群名模糊搜索<br>InstanceId：集群id精确搜索<br>InstanceStatus：集群状态搜索（RUNNING-运行中，CREATING-创建中，MODIFYING-变配中，DELETING-删除中）<br>PayMode：付费模式搜索（PREPAID-包年包月，POSTPAID-按小时计费）<br>ExpiredBefore：按过期时间过滤：仅筛选包年包月（PREPAID）集群<br>注意：配置TagFilters时该查询条件不生效。</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -82,15 +66,15 @@ InstanceStatus：集群状态搜索（RUNNING-运行中，CREATING-创建中，M
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取查询起始位置，默认0
-                     * @return Offset 查询起始位置，默认0
+                     * 获取<p>查询起始位置，默认0</p>
+                     * @return Offset <p>查询起始位置，默认0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置查询起始位置，默认0
-                     * @param _offset 查询起始位置，默认0
+                     * 设置<p>查询起始位置，默认0</p>
+                     * @param _offset <p>查询起始位置，默认0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -103,15 +87,15 @@ InstanceStatus：集群状态搜索（RUNNING-运行中，CREATING-创建中，M
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取查询结果限制数量，默认20，最大100
-                     * @return Limit 查询结果限制数量，默认20，最大100
+                     * 获取<p>查询结果限制数量，默认20，最大100</p>
+                     * @return Limit <p>查询结果限制数量，默认20，最大100</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置查询结果限制数量，默认20，最大100
-                     * @param _limit 查询结果限制数量，默认20，最大100
+                     * 设置<p>查询结果限制数量，默认20，最大100</p>
+                     * @param _limit <p>查询结果限制数量，默认20，最大100</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -124,15 +108,15 @@ InstanceStatus：集群状态搜索（RUNNING-运行中，CREATING-创建中，M
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取标签过滤器
-                     * @return TagFilters 标签过滤器
+                     * 获取<p>标签过滤器</p>
+                     * @return TagFilters <p>标签过滤器</p>
                      * 
                      */
                     std::vector<TagFilter> GetTagFilters() const;
 
                     /**
-                     * 设置标签过滤器
-                     * @param _tagFilters 标签过滤器
+                     * 设置<p>标签过滤器</p>
+                     * @param _tagFilters <p>标签过滤器</p>
                      * 
                      */
                     void SetTagFilters(const std::vector<TagFilter>& _tagFilters);
@@ -147,29 +131,25 @@ InstanceStatus：集群状态搜索（RUNNING-运行中，CREATING-创建中，M
                 private:
 
                     /**
-                     * 查询条件列表,支持以下字段
-InstanceName：集群名模糊搜索
-InstanceId：集群id精确搜索
-InstanceStatus：集群状态搜索（RUNNING-运行中，CREATING-创建中，MODIFYING-变配中，DELETING-删除中）
-注意：配置TagFilters时该查询条件不生效。
+                     * <p>查询条件列表,支持以下字段<br>InstanceName：集群名模糊搜索<br>InstanceId：集群id精确搜索<br>InstanceStatus：集群状态搜索（RUNNING-运行中，CREATING-创建中，MODIFYING-变配中，DELETING-删除中）<br>PayMode：付费模式搜索（PREPAID-包年包月，POSTPAID-按小时计费）<br>ExpiredBefore：按过期时间过滤：仅筛选包年包月（PREPAID）集群<br>注意：配置TagFilters时该查询条件不生效。</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 查询起始位置，默认0
+                     * <p>查询起始位置，默认0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 查询结果限制数量，默认20，最大100
+                     * <p>查询结果限制数量，默认20，最大100</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 标签过滤器
+                     * <p>标签过滤器</p>
                      */
                     std::vector<TagFilter> m_tagFilters;
                     bool m_tagFiltersHasBeenSet;

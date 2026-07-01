@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取版本列表
+                     * 获取<p>版本列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 版本列表
+                     * @return Data <p>版本列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 版本列表
+                     * <p>版本列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ListTaskVersions m_data;

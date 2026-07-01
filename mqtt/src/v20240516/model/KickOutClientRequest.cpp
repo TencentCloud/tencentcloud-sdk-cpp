@@ -24,7 +24,8 @@ using namespace std;
 
 KickOutClientRequest::KickOutClientRequest() :
     m_instanceIdHasBeenSet(false),
-    m_clientIdHasBeenSet(false)
+    m_clientIdHasBeenSet(false),
+    m_deleteSessionHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string KickOutClientRequest::ToJsonString() const
         string key = "ClientId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clientId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deleteSessionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteSession";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deleteSession, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void KickOutClientRequest::SetClientId(const string& _clientId)
 bool KickOutClientRequest::ClientIdHasBeenSet() const
 {
     return m_clientIdHasBeenSet;
+}
+
+bool KickOutClientRequest::GetDeleteSession() const
+{
+    return m_deleteSession;
+}
+
+void KickOutClientRequest::SetDeleteSession(const bool& _deleteSession)
+{
+    m_deleteSession = _deleteSession;
+    m_deleteSessionHasBeenSet = true;
+}
+
+bool KickOutClientRequest::DeleteSessionHasBeenSet() const
+{
+    return m_deleteSessionHasBeenSet;
 }
 
 

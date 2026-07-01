@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return ProjectId <p>项目ID</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _projectId <p>项目ID</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取任务ID
-                     * @return TaskId 任务ID
+                     * 获取<p>任务ID</p>
+                     * @return TaskId <p>任务ID</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务ID
-                     * @param _taskId 任务ID
+                     * 设置<p>任务ID</p>
+                     * @param _taskId <p>任务ID</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -85,23 +85,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取保存版本：SAVE
-提交版本：SUBMIT
-默认为SAVE
-                     * @return TaskVersionType 保存版本：SAVE
-提交版本：SUBMIT
-默认为SAVE
+                     * 获取<p>保存版本：SAVE<br>提交版本：SUBMIT<br>默认为SAVE</p>
+                     * @return TaskVersionType <p>保存版本：SAVE<br>提交版本：SUBMIT<br>默认为SAVE</p>
                      * 
                      */
                     std::string GetTaskVersionType() const;
 
                     /**
-                     * 设置保存版本：SAVE
-提交版本：SUBMIT
-默认为SAVE
-                     * @param _taskVersionType 保存版本：SAVE
-提交版本：SUBMIT
-默认为SAVE
+                     * 设置<p>保存版本：SAVE<br>提交版本：SUBMIT<br>默认为SAVE</p>
+                     * @param _taskVersionType <p>保存版本：SAVE<br>提交版本：SUBMIT<br>默认为SAVE</p>
                      * 
                      */
                     void SetTaskVersionType(const std::string& _taskVersionType);
@@ -114,15 +106,15 @@ namespace TencentCloud
                     bool TaskVersionTypeHasBeenSet() const;
 
                     /**
-                     * 获取请求的数据页数。默认值为1，取值大于等于1。
-                     * @return PageNumber 请求的数据页数。默认值为1，取值大于等于1。
+                     * 获取<p>请求的数据页数。默认值为1，取值大于等于1。</p>
+                     * @return PageNumber <p>请求的数据页数。默认值为1，取值大于等于1。</p>
                      * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
-                     * 设置请求的数据页数。默认值为1，取值大于等于1。
-                     * @param _pageNumber 请求的数据页数。默认值为1，取值大于等于1。
+                     * 设置<p>请求的数据页数。默认值为1，取值大于等于1。</p>
+                     * @param _pageNumber <p>请求的数据页数。默认值为1，取值大于等于1。</p>
                      * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
@@ -135,15 +127,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取每页显示的数据条数。默认值为10 ，最小值为10，最大值为200。
-                     * @return PageSize 每页显示的数据条数。默认值为10 ，最小值为10，最大值为200。
+                     * 获取<p>每页显示的数据条数。默认值为10 ，最小值为10，最大值为200。</p>
+                     * @return PageSize <p>每页显示的数据条数。默认值为10 ，最小值为10，最大值为200。</p>
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置每页显示的数据条数。默认值为10 ，最小值为10，最大值为200。
-                     * @param _pageSize 每页显示的数据条数。默认值为10 ，最小值为10，最大值为200。
+                     * 设置<p>每页显示的数据条数。默认值为10 ，最小值为10，最大值为200。</p>
+                     * @param _pageSize <p>每页显示的数据条数。默认值为10 ，最小值为10，最大值为200。</p>
                      * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
@@ -155,39 +147,64 @@ namespace TencentCloud
                      */
                     bool PageSizeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否为使用版本</p>
+                     * @return UsedVersion <p>是否为使用版本</p>
+                     * 
+                     */
+                    bool GetUsedVersion() const;
+
+                    /**
+                     * 设置<p>是否为使用版本</p>
+                     * @param _usedVersion <p>是否为使用版本</p>
+                     * 
+                     */
+                    void SetUsedVersion(const bool& _usedVersion);
+
+                    /**
+                     * 判断参数 UsedVersion 是否已赋值
+                     * @return UsedVersion 是否已赋值
+                     * 
+                     */
+                    bool UsedVersionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 任务ID
+                     * <p>任务ID</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 保存版本：SAVE
-提交版本：SUBMIT
-默认为SAVE
+                     * <p>保存版本：SAVE<br>提交版本：SUBMIT<br>默认为SAVE</p>
                      */
                     std::string m_taskVersionType;
                     bool m_taskVersionTypeHasBeenSet;
 
                     /**
-                     * 请求的数据页数。默认值为1，取值大于等于1。
+                     * <p>请求的数据页数。默认值为1，取值大于等于1。</p>
                      */
                     uint64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 每页显示的数据条数。默认值为10 ，最小值为10，最大值为200。
+                     * <p>每页显示的数据条数。默认值为10 ，最小值为10，最大值为200。</p>
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * <p>是否为使用版本</p>
+                     */
+                    bool m_usedVersion;
+                    bool m_usedVersionHasBeenSet;
 
                 };
             }

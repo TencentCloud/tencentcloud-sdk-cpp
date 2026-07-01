@@ -36,6 +36,7 @@
 #include <tencentcloud/oceanus/v20190422/model/HadoopYarnItem.h>
 #include <tencentcloud/oceanus/v20190422/model/SlaveZone.h>
 #include <tencentcloud/oceanus/v20190422/model/HiveMetastoreInfo.h>
+#include <tencentcloud/oceanus/v20190422/model/ClusterBucketInfo.h>
 
 
 namespace TencentCloud
@@ -1533,6 +1534,56 @@ namespace TencentCloud
                      */
                     bool NetEniTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>桶列表信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterBuckets <p>桶列表信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ClusterBucketInfo> GetClusterBuckets() const;
+
+                    /**
+                     * 设置<p>桶列表信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clusterBuckets <p>桶列表信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClusterBuckets(const std::vector<ClusterBucketInfo>& _clusterBuckets);
+
+                    /**
+                     * 判断参数 ClusterBuckets 是否已赋值
+                     * @return ClusterBuckets 是否已赋值
+                     * 
+                     */
+                    bool ClusterBucketsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集群隔离时间，0为7天，1为15天</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsolationPolicyVersion <p>集群隔离时间，0为7天，1为15天</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIsolationPolicyVersion() const;
+
+                    /**
+                     * 设置<p>集群隔离时间，0为7天，1为15天</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isolationPolicyVersion <p>集群隔离时间，0为7天，1为15天</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsolationPolicyVersion(const int64_t& _isolationPolicyVersion);
+
+                    /**
+                     * 判断参数 IsolationPolicyVersion 是否已赋值
+                     * @return IsolationPolicyVersion 是否已赋值
+                     * 
+                     */
+                    bool IsolationPolicyVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1950,6 +2001,20 @@ namespace TencentCloud
                      */
                     int64_t m_netEniType;
                     bool m_netEniTypeHasBeenSet;
+
+                    /**
+                     * <p>桶列表信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ClusterBucketInfo> m_clusterBuckets;
+                    bool m_clusterBucketsHasBeenSet;
+
+                    /**
+                     * <p>集群隔离时间，0为7天，1为15天</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isolationPolicyVersion;
+                    bool m_isolationPolicyVersionHasBeenSet;
 
                 };
             }

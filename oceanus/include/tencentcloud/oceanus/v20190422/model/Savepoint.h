@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主键
+                     * 获取<p>主键</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Id 主键
+                     * @return Id <p>主键</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置主键
+                     * 设置<p>主键</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _id 主键
+                     * @param _id <p>主键</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取版本号
+                     * 获取<p>版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VersionId 版本号
+                     * @return VersionId <p>版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVersionId() const;
 
                     /**
-                     * 设置版本号
+                     * 设置<p>版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _versionId 版本号
+                     * @param _versionId <p>版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool VersionIdHasBeenSet() const;
 
                     /**
-                     * 获取状态 1: Active; 2: Expired; 3: InProgress; 4: Failed; 5: Timeout
+                     * 获取<p>状态 1: Active; 2: Expired; 3: InProgress; 4: Failed; 5: Timeout</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 状态 1: Active; 2: Expired; 3: InProgress; 4: Failed; 5: Timeout
+                     * @return Status <p>状态 1: Active; 2: Expired; 3: InProgress; 4: Failed; 5: Timeout</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态 1: Active; 2: Expired; 3: InProgress; 4: Failed; 5: Timeout
+                     * 设置<p>状态 1: Active; 2: Expired; 3: InProgress; 4: Failed; 5: Timeout</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 状态 1: Active; 2: Expired; 3: InProgress; 4: Failed; 5: Timeout
+                     * @param _status <p>状态 1: Active; 2: Expired; 3: InProgress; 4: Failed; 5: Timeout</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
+                     * 获取<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 创建时间
+                     * @return CreateTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
+                     * 设置<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 创建时间
+                     * @param _createTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
+                     * 获取<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 更新时间
+                     * @return UpdateTime <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
+                     * 设置<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime 更新时间
+                     * @param _updateTime <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取路径
+                     * 获取<p>路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Path 路径
+                     * @return Path <p>路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置路径
+                     * 设置<p>路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _path 路径
+                     * @param _path <p>路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取大小
+                     * 获取<p>大小</p><p>单位：Byte</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Size 大小
+                     * @return Size <p>大小</p><p>单位：Byte</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSize() const;
 
                     /**
-                     * 设置大小
+                     * 设置<p>大小</p><p>单位：Byte</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _size 大小
+                     * @param _size <p>大小</p><p>单位：Byte</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool SizeHasBeenSet() const;
 
                     /**
-                     * 获取快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint
+                     * 获取<p>快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RecordType 快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint
+                     * @return RecordType <p>快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRecordType() const;
 
                     /**
-                     * 设置快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint
+                     * 设置<p>快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _recordType 快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint
+                     * @param _recordType <p>快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -247,18 +247,18 @@ namespace TencentCloud
                     bool RecordTypeHasBeenSet() const;
 
                     /**
-                     * 获取运行作业实例的顺序 ID
+                     * 获取<p>运行作业实例的顺序 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return JobRuntimeId 运行作业实例的顺序 ID
+                     * @return JobRuntimeId <p>运行作业实例的顺序 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetJobRuntimeId() const;
 
                     /**
-                     * 设置运行作业实例的顺序 ID
+                     * 设置<p>运行作业实例的顺序 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _jobRuntimeId 运行作业实例的顺序 ID
+                     * @param _jobRuntimeId <p>运行作业实例的顺序 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -272,18 +272,18 @@ namespace TencentCloud
                     bool JobRuntimeIdHasBeenSet() const;
 
                     /**
-                     * 获取描述
+                     * 获取<p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 描述
+                     * @return Description <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
+                     * 设置<p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 描述
+                     * @param _description <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -297,18 +297,18 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取固定超时时间
+                     * 获取<p>固定超时时间</p><p>单位：毫秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Timeout 固定超时时间
+                     * @return Timeout <p>固定超时时间</p><p>单位：毫秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTimeout() const;
 
                     /**
-                     * 设置固定超时时间
+                     * 设置<p>固定超时时间</p><p>单位：毫秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _timeout 固定超时时间
+                     * @param _timeout <p>固定超时时间</p><p>单位：毫秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -322,18 +322,18 @@ namespace TencentCloud
                     bool TimeoutHasBeenSet() const;
 
                     /**
-                     * 获取快照 serialId
+                     * 获取<p>快照 serialId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SerialId 快照 serialId
+                     * @return SerialId <p>快照 serialId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSerialId() const;
 
                     /**
-                     * 设置快照 serialId
+                     * 设置<p>快照 serialId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _serialId 快照 serialId
+                     * @param _serialId <p>快照 serialId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -347,18 +347,18 @@ namespace TencentCloud
                     bool SerialIdHasBeenSet() const;
 
                     /**
-                     * 获取耗时
+                     * 获取<p>耗时</p><p>单位：毫秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TimeConsuming 耗时
+                     * @return TimeConsuming <p>耗时</p><p>单位：毫秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTimeConsuming() const;
 
                     /**
-                     * 设置耗时
+                     * 设置<p>耗时</p><p>单位：毫秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _timeConsuming 耗时
+                     * @param _timeConsuming <p>耗时</p><p>单位：毫秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -372,18 +372,18 @@ namespace TencentCloud
                     bool TimeConsumingHasBeenSet() const;
 
                     /**
-                     * 获取快照路径状态 1：可用；2：不可用；
+                     * 获取<p>快照路径状态 1：可用；2：不可用；</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PathStatus 快照路径状态 1：可用；2：不可用；
+                     * @return PathStatus <p>快照路径状态 1：可用；2：不可用；</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPathStatus() const;
 
                     /**
-                     * 设置快照路径状态 1：可用；2：不可用；
+                     * 设置<p>快照路径状态 1：可用；2：不可用；</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _pathStatus 快照路径状态 1：可用；2：不可用；
+                     * @param _pathStatus <p>快照路径状态 1：可用；2：不可用；</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -396,105 +396,196 @@ namespace TencentCloud
                      */
                     bool PathStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Flink版本</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FlinkVersion <p>Flink版本</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFlinkVersion() const;
+
+                    /**
+                     * 设置<p>Flink版本</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _flinkVersion <p>Flink版本</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFlinkVersion(const std::string& _flinkVersion);
+
+                    /**
+                     * 判断参数 FlinkVersion 是否已赋值
+                     * @return FlinkVersion 是否已赋值
+                     * 
+                     */
+                    bool FlinkVersionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>CheckPoint是否增量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsIncremental <p>CheckPoint是否增量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIsIncremental() const;
+
+                    /**
+                     * 设置<p>CheckPoint是否增量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isIncremental <p>CheckPoint是否增量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsIncremental(const std::string& _isIncremental);
+
+                    /**
+                     * 判断参数 IsIncremental 是否已赋值
+                     * @return IsIncremental 是否已赋值
+                     * 
+                     */
+                    bool IsIncrementalHasBeenSet() const;
+
+                    /**
+                     * 获取<p>checkpoint 大小</p><p>单位：Byte</p>
+                     * @return CheckpointSize <p>checkpoint 大小</p><p>单位：Byte</p>
+                     * 
+                     */
+                    int64_t GetCheckpointSize() const;
+
+                    /**
+                     * 设置<p>checkpoint 大小</p><p>单位：Byte</p>
+                     * @param _checkpointSize <p>checkpoint 大小</p><p>单位：Byte</p>
+                     * 
+                     */
+                    void SetCheckpointSize(const int64_t& _checkpointSize);
+
+                    /**
+                     * 判断参数 CheckpointSize 是否已赋值
+                     * @return CheckpointSize 是否已赋值
+                     * 
+                     */
+                    bool CheckpointSizeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 主键
+                     * <p>主键</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 版本号
+                     * <p>版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_versionId;
                     bool m_versionIdHasBeenSet;
 
                     /**
-                     * 状态 1: Active; 2: Expired; 3: InProgress; 4: Failed; 5: Timeout
+                     * <p>状态 1: Active; 2: Expired; 3: InProgress; 4: Failed; 5: Timeout</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 路径
+                     * <p>路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
-                     * 大小
+                     * <p>大小</p><p>单位：Byte</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
-                     * 快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint
+                     * <p>快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_recordType;
                     bool m_recordTypeHasBeenSet;
 
                     /**
-                     * 运行作业实例的顺序 ID
+                     * <p>运行作业实例的顺序 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_jobRuntimeId;
                     bool m_jobRuntimeIdHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 固定超时时间
+                     * <p>固定超时时间</p><p>单位：毫秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timeout;
                     bool m_timeoutHasBeenSet;
 
                     /**
-                     * 快照 serialId
+                     * <p>快照 serialId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serialId;
                     bool m_serialIdHasBeenSet;
 
                     /**
-                     * 耗时
+                     * <p>耗时</p><p>单位：毫秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timeConsuming;
                     bool m_timeConsumingHasBeenSet;
 
                     /**
-                     * 快照路径状态 1：可用；2：不可用；
+                     * <p>快照路径状态 1：可用；2：不可用；</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pathStatus;
                     bool m_pathStatusHasBeenSet;
+
+                    /**
+                     * <p>Flink版本</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_flinkVersion;
+                    bool m_flinkVersionHasBeenSet;
+
+                    /**
+                     * <p>CheckPoint是否增量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_isIncremental;
+                    bool m_isIncrementalHasBeenSet;
+
+                    /**
+                     * <p>checkpoint 大小</p><p>单位：Byte</p>
+                     */
+                    int64_t m_checkpointSize;
+                    bool m_checkpointSizeHasBeenSet;
 
                 };
             }

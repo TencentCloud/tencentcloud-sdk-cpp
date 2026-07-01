@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取<p>开始时间</p>
+                     * @return StartTime <p>开始时间</p>
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
+                     * 设置<p>开始时间</p>
+                     * @param _startTime <p>开始时间</p>
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取allcount：性能视图，day：14天数据，vp：性能，ckuv：uv，ckpv：pv，condition：条件列表，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等
-                     * @return Type allcount：性能视图，day：14天数据，vp：性能，ckuv：uv，ckpv：pv，condition：条件列表，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等
+                     * 获取<p>allcount：性能视图，day：14天数据，vp：性能，ckuv：uv，ckpv：pv，condition：条件列表，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等</p>
+                     * @return Type <p>allcount：性能视图，day：14天数据，vp：性能，ckuv：uv，ckpv：pv，condition：条件列表，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置allcount：性能视图，day：14天数据，vp：性能，ckuv：uv，ckpv：pv，condition：条件列表，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等
-                     * @param _type allcount：性能视图，day：14天数据，vp：性能，ckuv：uv，ckpv：pv，condition：条件列表，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等
+                     * 设置<p>allcount：性能视图，day：14天数据，vp：性能，ckuv：uv，ckpv：pv，condition：条件列表，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等</p>
+                     * @param _type <p>allcount：性能视图，day：14天数据，vp：性能，ckuv：uv，ckpv：pv，condition：条件列表，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取<p>结束时间</p>
+                     * @return EndTime <p>结束时间</p>
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置<p>结束时间</p>
+                     * @param _endTime <p>结束时间</p>
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取项目ID
-                     * @return ID 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return ID <p>项目ID</p>
                      * 
                      */
                     int64_t GetID() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _iD 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _iD <p>项目ID</p>
                      * 
                      */
                     void SetID(const int64_t& _iD);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取自定义2
-                     * @return ExtSecond 自定义2
+                     * 获取<p>自定义2</p>
+                     * @return ExtSecond <p>自定义2</p>
                      * 
                      */
                     std::string GetExtSecond() const;
 
                     /**
-                     * 设置自定义2
-                     * @param _extSecond 自定义2
+                     * 设置<p>自定义2</p>
+                     * @param _extSecond <p>自定义2</p>
                      * 
                      */
                     void SetExtSecond(const std::string& _extSecond);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ExtSecondHasBeenSet() const;
 
                     /**
-                     * 获取浏览器引擎
-                     * @return Engine 浏览器引擎
+                     * 获取<p>浏览器引擎</p>
+                     * @return Engine <p>浏览器引擎</p>
                      * 
                      */
                     std::string GetEngine() const;
 
                     /**
-                     * 设置浏览器引擎
-                     * @param _engine 浏览器引擎
+                     * 设置<p>浏览器引擎</p>
+                     * @param _engine <p>浏览器引擎</p>
                      * 
                      */
                     void SetEngine(const std::string& _engine);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool EngineHasBeenSet() const;
 
                     /**
-                     * 获取运营商
-                     * @return Isp 运营商
+                     * 获取<p>运营商</p>
+                     * @return Isp <p>运营商</p>
                      * 
                      */
                     std::string GetIsp() const;
 
                     /**
-                     * 设置运营商
-                     * @param _isp 运营商
+                     * 设置<p>运营商</p>
+                     * @param _isp <p>运营商</p>
                      * 
                      */
                     void SetIsp(const std::string& _isp);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool IspHasBeenSet() const;
 
                     /**
-                     * 获取来源页面
-                     * @return From 来源页面
+                     * 获取<p>来源页面， 可多选，用 “,” 隔开的 String</p>
+                     * @return From <p>来源页面， 可多选，用 “,” 隔开的 String</p>
                      * 
                      */
                     std::string GetFrom() const;
 
                     /**
-                     * 设置来源页面
-                     * @param _from 来源页面
+                     * 设置<p>来源页面， 可多选，用 “,” 隔开的 String</p>
+                     * @param _from <p>来源页面， 可多选，用 “,” 隔开的 String</p>
                      * 
                      */
                     void SetFrom(const std::string& _from);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool FromHasBeenSet() const;
 
                     /**
-                     * 获取日志等级
-                     * @return Level 日志等级
+                     * 获取<p>日志等级</p>
+                     * @return Level <p>日志等级</p>
                      * 
                      */
                     std::string GetLevel() const;
 
                     /**
-                     * 设置日志等级
-                     * @param _level 日志等级
+                     * 设置<p>日志等级</p>
+                     * @param _level <p>日志等级</p>
                      * 
                      */
                     void SetLevel(const std::string& _level);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool LevelHasBeenSet() const;
 
                     /**
-                     * 获取品牌
-                     * @return Brand 品牌
+                     * 获取<p>品牌</p>
+                     * @return Brand <p>品牌</p>
                      * 
                      */
                     std::string GetBrand() const;
 
                     /**
-                     * 设置品牌
-                     * @param _brand 品牌
+                     * 设置<p>品牌</p>
+                     * @param _brand <p>品牌</p>
                      * 
                      */
                     void SetBrand(const std::string& _brand);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool BrandHasBeenSet() const;
 
                     /**
-                     * 获取地区
-                     * @return Area 地区
+                     * 获取<p>地区</p>
+                     * @return Area <p>地区</p>
                      * 
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置地区
-                     * @param _area 地区
+                     * 设置<p>地区</p>
+                     * @param _area <p>地区</p>
                      * 
                      */
                     void SetArea(const std::string& _area);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取版本
-                     * @return VersionNum 版本
+                     * 获取<p>版本</p>
+                     * @return VersionNum <p>版本</p>
                      * 
                      */
                     std::string GetVersionNum() const;
 
                     /**
-                     * 设置版本
-                     * @param _versionNum 版本
+                     * 设置<p>版本</p>
+                     * @param _versionNum <p>版本</p>
                      * 
                      */
                     void SetVersionNum(const std::string& _versionNum);
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool VersionNumHasBeenSet() const;
 
                     /**
-                     * 获取平台
-                     * @return Platform 平台
+                     * 获取<p>平台</p>
+                     * @return Platform <p>平台</p>
                      * 
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置平台
-                     * @param _platform 平台
+                     * 设置<p>平台</p>
+                     * @param _platform <p>平台</p>
                      * 
                      */
                     void SetPlatform(const std::string& _platform);
@@ -316,15 +316,15 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取自定义3
-                     * @return ExtThird 自定义3
+                     * 获取<p>自定义3</p>
+                     * @return ExtThird <p>自定义3</p>
                      * 
                      */
                     std::string GetExtThird() const;
 
                     /**
-                     * 设置自定义3
-                     * @param _extThird 自定义3
+                     * 设置<p>自定义3</p>
+                     * @param _extThird <p>自定义3</p>
                      * 
                      */
                     void SetExtThird(const std::string& _extThird);
@@ -337,15 +337,15 @@ namespace TencentCloud
                     bool ExtThirdHasBeenSet() const;
 
                     /**
-                     * 获取自定义1
-                     * @return ExtFirst 自定义1
+                     * 获取<p>自定义1</p>
+                     * @return ExtFirst <p>自定义1</p>
                      * 
                      */
                     std::string GetExtFirst() const;
 
                     /**
-                     * 设置自定义1
-                     * @param _extFirst 自定义1
+                     * 设置<p>自定义1</p>
+                     * @param _extFirst <p>自定义1</p>
                      * 
                      */
                     void SetExtFirst(const std::string& _extFirst);
@@ -358,15 +358,15 @@ namespace TencentCloud
                     bool ExtFirstHasBeenSet() const;
 
                     /**
-                     * 获取网络类型（1,2,3,4,5,100），1表示WIFI, 2表示2G, 3表示3G, 4表示4G, 5表示5G, 6表示6G, 100表示未知
-                     * @return NetType 网络类型（1,2,3,4,5,100），1表示WIFI, 2表示2G, 3表示3G, 4表示4G, 5表示5G, 6表示6G, 100表示未知
+                     * 获取<p>网络类型（1,2,3,4,5,100），1表示WIFI, 2表示2G, 3表示3G, 4表示4G, 5表示5G, 6表示6G, 100表示未知</p>
+                     * @return NetType <p>网络类型（1,2,3,4,5,100），1表示WIFI, 2表示2G, 3表示3G, 4表示4G, 5表示5G, 6表示6G, 100表示未知</p>
                      * 
                      */
                     std::string GetNetType() const;
 
                     /**
-                     * 设置网络类型（1,2,3,4,5,100），1表示WIFI, 2表示2G, 3表示3G, 4表示4G, 5表示5G, 6表示6G, 100表示未知
-                     * @param _netType 网络类型（1,2,3,4,5,100），1表示WIFI, 2表示2G, 3表示3G, 4表示4G, 5表示5G, 6表示6G, 100表示未知
+                     * 设置<p>网络类型（1,2,3,4,5,100），1表示WIFI, 2表示2G, 3表示3G, 4表示4G, 5表示5G, 6表示6G, 100表示未知</p>
+                     * @param _netType <p>网络类型（1,2,3,4,5,100），1表示WIFI, 2表示2G, 3表示3G, 4表示4G, 5表示5G, 6表示6G, 100表示未知</p>
                      * 
                      */
                     void SetNetType(const std::string& _netType);
@@ -379,15 +379,15 @@ namespace TencentCloud
                     bool NetTypeHasBeenSet() const;
 
                     /**
-                     * 获取机型
-                     * @return Device 机型
+                     * 获取<p>机型</p>
+                     * @return Device <p>机型</p>
                      * 
                      */
                     std::string GetDevice() const;
 
                     /**
-                     * 设置机型
-                     * @param _device 机型
+                     * 设置<p>机型</p>
+                     * @param _device <p>机型</p>
                      * 
                      */
                     void SetDevice(const std::string& _device);
@@ -400,15 +400,15 @@ namespace TencentCloud
                     bool DeviceHasBeenSet() const;
 
                     /**
-                     * 获取显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。
-                     * @return IsAbroad 显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。
+                     * 获取<p>显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。</p>
+                     * @return IsAbroad <p>显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。</p>
                      * 
                      */
                     std::string GetIsAbroad() const;
 
                     /**
-                     * 设置显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。
-                     * @param _isAbroad 显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。
+                     * 设置<p>显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。</p>
+                     * @param _isAbroad <p>显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。</p>
                      * 
                      */
                     void SetIsAbroad(const std::string& _isAbroad);
@@ -421,15 +421,15 @@ namespace TencentCloud
                     bool IsAbroadHasBeenSet() const;
 
                     /**
-                     * 获取操作系统
-                     * @return Os 操作系统
+                     * 获取<p>操作系统</p>
+                     * @return Os <p>操作系统</p>
                      * 
                      */
                     std::string GetOs() const;
 
                     /**
-                     * 设置操作系统
-                     * @param _os 操作系统
+                     * 设置<p>操作系统</p>
+                     * @param _os <p>操作系统</p>
                      * 
                      */
                     void SetOs(const std::string& _os);
@@ -442,15 +442,15 @@ namespace TencentCloud
                     bool OsHasBeenSet() const;
 
                     /**
-                     * 获取浏览器
-                     * @return Browser 浏览器
+                     * 获取<p>浏览器</p>
+                     * @return Browser <p>浏览器</p>
                      * 
                      */
                     std::string GetBrowser() const;
 
                     /**
-                     * 设置浏览器
-                     * @param _browser 浏览器
+                     * 设置<p>浏览器</p>
+                     * @param _browser <p>浏览器</p>
                      * 
                      */
                     void SetBrowser(const std::string& _browser);
@@ -463,15 +463,15 @@ namespace TencentCloud
                     bool BrowserHasBeenSet() const;
 
                     /**
-                     * 获取环境
-                     * @return Env 环境
+                     * 获取<p>环境</p>
+                     * @return Env <p>环境</p>
                      * 
                      */
                     std::string GetEnv() const;
 
                     /**
-                     * 设置环境
-                     * @param _env 环境
+                     * 设置<p>环境</p>
+                     * @param _env <p>环境</p>
                      * 
                      */
                     void SetEnv(const std::string& _env);
@@ -484,19 +484,15 @@ namespace TencentCloud
                     bool EnvHasBeenSet() const;
 
                     /**
-                     * 获取group by 参数值枚举1:1m  2:5m  3:30m  4:1h 
- 5:1d
-                     * @return GroupByType group by 参数值枚举1:1m  2:5m  3:30m  4:1h 
- 5:1d
+                     * 获取<p>group by 参数值枚举1:1m  2:5m  3:30m  4:1h<br> 5:1d</p>
+                     * @return GroupByType <p>group by 参数值枚举1:1m  2:5m  3:30m  4:1h<br> 5:1d</p>
                      * 
                      */
                     int64_t GetGroupByType() const;
 
                     /**
-                     * 设置group by 参数值枚举1:1m  2:5m  3:30m  4:1h 
- 5:1d
-                     * @param _groupByType group by 参数值枚举1:1m  2:5m  3:30m  4:1h 
- 5:1d
+                     * 设置<p>group by 参数值枚举1:1m  2:5m  3:30m  4:1h<br> 5:1d</p>
+                     * @param _groupByType <p>group by 参数值枚举1:1m  2:5m  3:30m  4:1h<br> 5:1d</p>
                      * 
                      */
                     void SetGroupByType(const int64_t& _groupByType);
@@ -509,19 +505,15 @@ namespace TencentCloud
                     bool GroupByTypeHasBeenSet() const;
 
                     /**
-                     * 获取1: 查询智研
-0: 走旧逻辑，已下线，勿使用
-                     * @return IsNewData 1: 查询智研
-0: 走旧逻辑，已下线，勿使用
+                     * 获取<p>1: 查询智研<br>0: 走旧逻辑，已下线，勿使用</p>
+                     * @return IsNewData <p>1: 查询智研<br>0: 走旧逻辑，已下线，勿使用</p>
                      * 
                      */
                     int64_t GetIsNewData() const;
 
                     /**
-                     * 设置1: 查询智研
-0: 走旧逻辑，已下线，勿使用
-                     * @param _isNewData 1: 查询智研
-0: 走旧逻辑，已下线，勿使用
+                     * 设置<p>1: 查询智研<br>0: 走旧逻辑，已下线，勿使用</p>
+                     * @param _isNewData <p>1: 查询智研<br>0: 走旧逻辑，已下线，勿使用</p>
                      * 
                      */
                     void SetIsNewData(const int64_t& _isNewData);
@@ -534,15 +526,15 @@ namespace TencentCloud
                     bool IsNewDataHasBeenSet() const;
 
                     /**
-                     * 获取自定义4
-                     * @return ExtFourth 自定义4
+                     * 获取<p>自定义4</p>
+                     * @return ExtFourth <p>自定义4</p>
                      * 
                      */
                     std::string GetExtFourth() const;
 
                     /**
-                     * 设置自定义4
-                     * @param _extFourth 自定义4
+                     * 设置<p>自定义4</p>
+                     * @param _extFourth <p>自定义4</p>
                      * 
                      */
                     void SetExtFourth(const std::string& _extFourth);
@@ -555,15 +547,15 @@ namespace TencentCloud
                     bool ExtFourthHasBeenSet() const;
 
                     /**
-                     * 获取自定义5
-                     * @return ExtFifth 自定义5
+                     * 获取<p>自定义5</p>
+                     * @return ExtFifth <p>自定义5</p>
                      * 
                      */
                     std::string GetExtFifth() const;
 
                     /**
-                     * 设置自定义5
-                     * @param _extFifth 自定义5
+                     * 设置<p>自定义5</p>
+                     * @param _extFifth <p>自定义5</p>
                      * 
                      */
                     void SetExtFifth(const std::string& _extFifth);
@@ -576,15 +568,15 @@ namespace TencentCloud
                     bool ExtFifthHasBeenSet() const;
 
                     /**
-                     * 获取自定义6
-                     * @return ExtSixth 自定义6
+                     * 获取<p>自定义6</p>
+                     * @return ExtSixth <p>自定义6</p>
                      * 
                      */
                     std::string GetExtSixth() const;
 
                     /**
-                     * 设置自定义6
-                     * @param _extSixth 自定义6
+                     * 设置<p>自定义6</p>
+                     * @param _extSixth <p>自定义6</p>
                      * 
                      */
                     void SetExtSixth(const std::string& _extSixth);
@@ -597,15 +589,15 @@ namespace TencentCloud
                     bool ExtSixthHasBeenSet() const;
 
                     /**
-                     * 获取自定义7
-                     * @return ExtSeventh 自定义7
+                     * 获取<p>自定义7</p>
+                     * @return ExtSeventh <p>自定义7</p>
                      * 
                      */
                     std::string GetExtSeventh() const;
 
                     /**
-                     * 设置自定义7
-                     * @param _extSeventh 自定义7
+                     * 设置<p>自定义7</p>
+                     * @param _extSeventh <p>自定义7</p>
                      * 
                      */
                     void SetExtSeventh(const std::string& _extSeventh);
@@ -618,15 +610,15 @@ namespace TencentCloud
                     bool ExtSeventhHasBeenSet() const;
 
                     /**
-                     * 获取自定义8
-                     * @return ExtEighth 自定义8
+                     * 获取<p>自定义8</p>
+                     * @return ExtEighth <p>自定义8</p>
                      * 
                      */
                     std::string GetExtEighth() const;
 
                     /**
-                     * 设置自定义8
-                     * @param _extEighth 自定义8
+                     * 设置<p>自定义8</p>
+                     * @param _extEighth <p>自定义8</p>
                      * 
                      */
                     void SetExtEighth(const std::string& _extEighth);
@@ -639,15 +631,15 @@ namespace TencentCloud
                     bool ExtEighthHasBeenSet() const;
 
                     /**
-                     * 获取自定义9
-                     * @return ExtNinth 自定义9
+                     * 获取<p>自定义9</p>
+                     * @return ExtNinth <p>自定义9</p>
                      * 
                      */
                     std::string GetExtNinth() const;
 
                     /**
-                     * 设置自定义9
-                     * @param _extNinth 自定义9
+                     * 设置<p>自定义9</p>
+                     * @param _extNinth <p>自定义9</p>
                      * 
                      */
                     void SetExtNinth(const std::string& _extNinth);
@@ -660,15 +652,15 @@ namespace TencentCloud
                     bool ExtNinthHasBeenSet() const;
 
                     /**
-                     * 获取自定义10
-                     * @return ExtTenth 自定义10
+                     * 获取<p>自定义10</p>
+                     * @return ExtTenth <p>自定义10</p>
                      * 
                      */
                     std::string GetExtTenth() const;
 
                     /**
-                     * 设置自定义10
-                     * @param _extTenth 自定义10
+                     * 设置<p>自定义10</p>
+                     * @param _extTenth <p>自定义10</p>
                      * 
                      */
                     void SetExtTenth(const std::string& _extTenth);
@@ -681,15 +673,15 @@ namespace TencentCloud
                     bool ExtTenthHasBeenSet() const;
 
                     /**
-                     * 获取时间段
-                     * @return Granularity 时间段
+                     * 获取<p>时间段</p>
+                     * @return Granularity <p>时间段</p>
                      * 
                      */
                     std::string GetGranularity() const;
 
                     /**
-                     * 设置时间段
-                     * @param _granularity 时间段
+                     * 设置<p>时间段</p>
+                     * @param _granularity <p>时间段</p>
                      * 
                      */
                     void SetGranularity(const std::string& _granularity);
@@ -704,189 +696,187 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开始时间
+                     * <p>开始时间</p>
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * allcount：性能视图，day：14天数据，vp：性能，ckuv：uv，ckpv：pv，condition：条件列表，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等
+                     * <p>allcount：性能视图，day：14天数据，vp：性能，ckuv：uv，ckpv：pv，condition：条件列表，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * <p>结束时间</p>
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     int64_t m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 自定义2
+                     * <p>自定义2</p>
                      */
                     std::string m_extSecond;
                     bool m_extSecondHasBeenSet;
 
                     /**
-                     * 浏览器引擎
+                     * <p>浏览器引擎</p>
                      */
                     std::string m_engine;
                     bool m_engineHasBeenSet;
 
                     /**
-                     * 运营商
+                     * <p>运营商</p>
                      */
                     std::string m_isp;
                     bool m_ispHasBeenSet;
 
                     /**
-                     * 来源页面
+                     * <p>来源页面， 可多选，用 “,” 隔开的 String</p>
                      */
                     std::string m_from;
                     bool m_fromHasBeenSet;
 
                     /**
-                     * 日志等级
+                     * <p>日志等级</p>
                      */
                     std::string m_level;
                     bool m_levelHasBeenSet;
 
                     /**
-                     * 品牌
+                     * <p>品牌</p>
                      */
                     std::string m_brand;
                     bool m_brandHasBeenSet;
 
                     /**
-                     * 地区
+                     * <p>地区</p>
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
 
                     /**
-                     * 版本
+                     * <p>版本</p>
                      */
                     std::string m_versionNum;
                     bool m_versionNumHasBeenSet;
 
                     /**
-                     * 平台
+                     * <p>平台</p>
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 自定义3
+                     * <p>自定义3</p>
                      */
                     std::string m_extThird;
                     bool m_extThirdHasBeenSet;
 
                     /**
-                     * 自定义1
+                     * <p>自定义1</p>
                      */
                     std::string m_extFirst;
                     bool m_extFirstHasBeenSet;
 
                     /**
-                     * 网络类型（1,2,3,4,5,100），1表示WIFI, 2表示2G, 3表示3G, 4表示4G, 5表示5G, 6表示6G, 100表示未知
+                     * <p>网络类型（1,2,3,4,5,100），1表示WIFI, 2表示2G, 3表示3G, 4表示4G, 5表示5G, 6表示6G, 100表示未知</p>
                      */
                     std::string m_netType;
                     bool m_netTypeHasBeenSet;
 
                     /**
-                     * 机型
+                     * <p>机型</p>
                      */
                     std::string m_device;
                     bool m_deviceHasBeenSet;
 
                     /**
-                     * 显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。
+                     * <p>显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。</p>
                      */
                     std::string m_isAbroad;
                     bool m_isAbroadHasBeenSet;
 
                     /**
-                     * 操作系统
+                     * <p>操作系统</p>
                      */
                     std::string m_os;
                     bool m_osHasBeenSet;
 
                     /**
-                     * 浏览器
+                     * <p>浏览器</p>
                      */
                     std::string m_browser;
                     bool m_browserHasBeenSet;
 
                     /**
-                     * 环境
+                     * <p>环境</p>
                      */
                     std::string m_env;
                     bool m_envHasBeenSet;
 
                     /**
-                     * group by 参数值枚举1:1m  2:5m  3:30m  4:1h 
- 5:1d
+                     * <p>group by 参数值枚举1:1m  2:5m  3:30m  4:1h<br> 5:1d</p>
                      */
                     int64_t m_groupByType;
                     bool m_groupByTypeHasBeenSet;
 
                     /**
-                     * 1: 查询智研
-0: 走旧逻辑，已下线，勿使用
+                     * <p>1: 查询智研<br>0: 走旧逻辑，已下线，勿使用</p>
                      */
                     int64_t m_isNewData;
                     bool m_isNewDataHasBeenSet;
 
                     /**
-                     * 自定义4
+                     * <p>自定义4</p>
                      */
                     std::string m_extFourth;
                     bool m_extFourthHasBeenSet;
 
                     /**
-                     * 自定义5
+                     * <p>自定义5</p>
                      */
                     std::string m_extFifth;
                     bool m_extFifthHasBeenSet;
 
                     /**
-                     * 自定义6
+                     * <p>自定义6</p>
                      */
                     std::string m_extSixth;
                     bool m_extSixthHasBeenSet;
 
                     /**
-                     * 自定义7
+                     * <p>自定义7</p>
                      */
                     std::string m_extSeventh;
                     bool m_extSeventhHasBeenSet;
 
                     /**
-                     * 自定义8
+                     * <p>自定义8</p>
                      */
                     std::string m_extEighth;
                     bool m_extEighthHasBeenSet;
 
                     /**
-                     * 自定义9
+                     * <p>自定义9</p>
                      */
                     std::string m_extNinth;
                     bool m_extNinthHasBeenSet;
 
                     /**
-                     * 自定义10
+                     * <p>自定义10</p>
                      */
                     std::string m_extTenth;
                     bool m_extTenthHasBeenSet;
 
                     /**
-                     * 时间段
+                     * <p>时间段</p>
                      */
                     std::string m_granularity;
                     bool m_granularityHasBeenSet;

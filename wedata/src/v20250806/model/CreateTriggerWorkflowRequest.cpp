@@ -33,7 +33,9 @@ CreateTriggerWorkflowRequest::CreateTriggerWorkflowRequest() :
     m_bundleIdHasBeenSet(false),
     m_bundleInfoHasBeenSet(false),
     m_generalTaskParamsHasBeenSet(false),
-    m_triggerWorkflowRunConfigurationHasBeenSet(false)
+    m_triggerWorkflowRunConfigurationHasBeenSet(false),
+    m_schedulerStatusHasBeenSet(false),
+    m_triggerModeHasBeenSet(false)
 {
 }
 
@@ -152,6 +154,22 @@ string CreateTriggerWorkflowRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_triggerWorkflowRunConfiguration.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_schedulerStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchedulerStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_schedulerStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_triggerModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_triggerMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -336,6 +354,38 @@ void CreateTriggerWorkflowRequest::SetTriggerWorkflowRunConfiguration(const Work
 bool CreateTriggerWorkflowRequest::TriggerWorkflowRunConfigurationHasBeenSet() const
 {
     return m_triggerWorkflowRunConfigurationHasBeenSet;
+}
+
+string CreateTriggerWorkflowRequest::GetSchedulerStatus() const
+{
+    return m_schedulerStatus;
+}
+
+void CreateTriggerWorkflowRequest::SetSchedulerStatus(const string& _schedulerStatus)
+{
+    m_schedulerStatus = _schedulerStatus;
+    m_schedulerStatusHasBeenSet = true;
+}
+
+bool CreateTriggerWorkflowRequest::SchedulerStatusHasBeenSet() const
+{
+    return m_schedulerStatusHasBeenSet;
+}
+
+string CreateTriggerWorkflowRequest::GetTriggerMode() const
+{
+    return m_triggerMode;
+}
+
+void CreateTriggerWorkflowRequest::SetTriggerMode(const string& _triggerMode)
+{
+    m_triggerMode = _triggerMode;
+    m_triggerModeHasBeenSet = true;
+}
+
+bool CreateTriggerWorkflowRequest::TriggerModeHasBeenSet() const
+{
+    return m_triggerModeHasBeenSet;
 }
 
 

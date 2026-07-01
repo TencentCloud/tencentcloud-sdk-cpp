@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool ClientIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否清理session，默认false
+                     * @return DeleteSession 是否清理session，默认false
+                     * 
+                     */
+                    bool GetDeleteSession() const;
+
+                    /**
+                     * 设置是否清理session，默认false
+                     * @param _deleteSession 是否清理session，默认false
+                     * 
+                     */
+                    void SetDeleteSession(const bool& _deleteSession);
+
+                    /**
+                     * 判断参数 DeleteSession 是否已赋值
+                     * @return DeleteSession 是否已赋值
+                     * 
+                     */
+                    bool DeleteSessionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_clientId;
                     bool m_clientIdHasBeenSet;
+
+                    /**
+                     * 是否清理session，默认false
+                     */
+                    bool m_deleteSession;
+                    bool m_deleteSessionHasBeenSet;
 
                 };
             }
