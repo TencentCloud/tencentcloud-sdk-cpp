@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool EnableDateVerifyHasBeenSet() const;
 
                     /**
-                     * 获取<p>Basic：使用基础卡证告警能力（含基础PS告警）； Advanced：开启进阶PS告警能力，PS告警效果更佳但需要更长耗时；建议测试对比后选用，默认值为 Basic</p>
-                     * @return CardWarnType <p>Basic：使用基础卡证告警能力（含基础PS告警）； Advanced：开启进阶PS告警能力，PS告警效果更佳但需要更长耗时；建议测试对比后选用，默认值为 Basic</p>
+                     * 获取<p>告警类型</p><p>枚举值：</p><ul><li>Basic： 使用基础卡证告警能力（含基础PS告警）</li><li>Advanced： 开启进阶PS告警能力，PS告警效果更佳但需要更长耗时</li></ul><p>默认值：Basic</p>
+                     * @return CardWarnType <p>告警类型</p><p>枚举值：</p><ul><li>Basic： 使用基础卡证告警能力（含基础PS告警）</li><li>Advanced： 开启进阶PS告警能力，PS告警效果更佳但需要更长耗时</li></ul><p>默认值：Basic</p>
                      * 
                      */
                     std::string GetCardWarnType() const;
 
                     /**
-                     * 设置<p>Basic：使用基础卡证告警能力（含基础PS告警）； Advanced：开启进阶PS告警能力，PS告警效果更佳但需要更长耗时；建议测试对比后选用，默认值为 Basic</p>
-                     * @param _cardWarnType <p>Basic：使用基础卡证告警能力（含基础PS告警）； Advanced：开启进阶PS告警能力，PS告警效果更佳但需要更长耗时；建议测试对比后选用，默认值为 Basic</p>
+                     * 设置<p>告警类型</p><p>枚举值：</p><ul><li>Basic： 使用基础卡证告警能力（含基础PS告警）</li><li>Advanced： 开启进阶PS告警能力，PS告警效果更佳但需要更长耗时</li></ul><p>默认值：Basic</p>
+                     * @param _cardWarnType <p>告警类型</p><p>枚举值：</p><ul><li>Basic： 使用基础卡证告警能力（含基础PS告警）</li><li>Advanced： 开启进阶PS告警能力，PS告警效果更佳但需要更长耗时</li></ul><p>默认值：Basic</p>
                      * 
                      */
                     void SetCardWarnType(const std::string& _cardWarnType);
@@ -255,7 +255,7 @@ namespace TencentCloud
                     bool m_enableDateVerifyHasBeenSet;
 
                     /**
-                     * <p>Basic：使用基础卡证告警能力（含基础PS告警）； Advanced：开启进阶PS告警能力，PS告警效果更佳但需要更长耗时；建议测试对比后选用，默认值为 Basic</p>
+                     * <p>告警类型</p><p>枚举值：</p><ul><li>Basic： 使用基础卡证告警能力（含基础PS告警）</li><li>Advanced： 开启进阶PS告警能力，PS告警效果更佳但需要更长耗时</li></ul><p>默认值：Basic</p>
                      */
                     std::string m_cardWarnType;
                     bool m_cardWarnTypeHasBeenSet;

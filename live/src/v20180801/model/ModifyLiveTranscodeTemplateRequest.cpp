@@ -45,7 +45,9 @@ ModifyLiveTranscodeTemplateRequest::ModifyLiveTranscodeTemplateRequest() :
     m_dRMTypeHasBeenSet(false),
     m_dRMTracksHasBeenSet(false),
     m_isAdaptiveBitRateHasBeenSet(false),
-    m_adaptiveChildrenHasBeenSet(false)
+    m_adaptiveChildrenHasBeenSet(false),
+    m_audienceDrivenTranscodeHasBeenSet(false),
+    m_audienceThresholdHasBeenSet(false)
 {
 }
 
@@ -245,6 +247,22 @@ string ModifyLiveTranscodeTemplateRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_audienceDrivenTranscodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudienceDrivenTranscode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_audienceDrivenTranscode, allocator);
+    }
+
+    if (m_audienceThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudienceThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_audienceThreshold, allocator);
     }
 
 
@@ -621,6 +639,38 @@ void ModifyLiveTranscodeTemplateRequest::SetAdaptiveChildren(const vector<ChildT
 bool ModifyLiveTranscodeTemplateRequest::AdaptiveChildrenHasBeenSet() const
 {
     return m_adaptiveChildrenHasBeenSet;
+}
+
+int64_t ModifyLiveTranscodeTemplateRequest::GetAudienceDrivenTranscode() const
+{
+    return m_audienceDrivenTranscode;
+}
+
+void ModifyLiveTranscodeTemplateRequest::SetAudienceDrivenTranscode(const int64_t& _audienceDrivenTranscode)
+{
+    m_audienceDrivenTranscode = _audienceDrivenTranscode;
+    m_audienceDrivenTranscodeHasBeenSet = true;
+}
+
+bool ModifyLiveTranscodeTemplateRequest::AudienceDrivenTranscodeHasBeenSet() const
+{
+    return m_audienceDrivenTranscodeHasBeenSet;
+}
+
+int64_t ModifyLiveTranscodeTemplateRequest::GetAudienceThreshold() const
+{
+    return m_audienceThreshold;
+}
+
+void ModifyLiveTranscodeTemplateRequest::SetAudienceThreshold(const int64_t& _audienceThreshold)
+{
+    m_audienceThreshold = _audienceThreshold;
+    m_audienceThresholdHasBeenSet = true;
+}
+
+bool ModifyLiveTranscodeTemplateRequest::AudienceThresholdHasBeenSet() const
+{
+    return m_audienceThresholdHasBeenSet;
 }
 
 

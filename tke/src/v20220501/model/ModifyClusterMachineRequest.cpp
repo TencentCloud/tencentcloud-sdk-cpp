@@ -28,7 +28,9 @@ ModifyClusterMachineRequest::ModifyClusterMachineRequest() :
     m_displayNameHasBeenSet(false),
     m_systemDiskHasBeenSet(false),
     m_securityGroupIDsHasBeenSet(false),
-    m_instanceChargePrepaidHasBeenSet(false)
+    m_instanceChargePrepaidHasBeenSet(false),
+    m_instanceChargeTypeHasBeenSet(false),
+    m_modifyPortableDataDiskHasBeenSet(false)
 {
 }
 
@@ -97,6 +99,22 @@ string ModifyClusterMachineRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_instanceChargePrepaid.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_instanceChargeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceChargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifyPortableDataDiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyPortableDataDisk";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_modifyPortableDataDisk, allocator);
     }
 
 
@@ -201,6 +219,38 @@ void ModifyClusterMachineRequest::SetInstanceChargePrepaid(const InstanceChargeP
 bool ModifyClusterMachineRequest::InstanceChargePrepaidHasBeenSet() const
 {
     return m_instanceChargePrepaidHasBeenSet;
+}
+
+string ModifyClusterMachineRequest::GetInstanceChargeType() const
+{
+    return m_instanceChargeType;
+}
+
+void ModifyClusterMachineRequest::SetInstanceChargeType(const string& _instanceChargeType)
+{
+    m_instanceChargeType = _instanceChargeType;
+    m_instanceChargeTypeHasBeenSet = true;
+}
+
+bool ModifyClusterMachineRequest::InstanceChargeTypeHasBeenSet() const
+{
+    return m_instanceChargeTypeHasBeenSet;
+}
+
+bool ModifyClusterMachineRequest::GetModifyPortableDataDisk() const
+{
+    return m_modifyPortableDataDisk;
+}
+
+void ModifyClusterMachineRequest::SetModifyPortableDataDisk(const bool& _modifyPortableDataDisk)
+{
+    m_modifyPortableDataDisk = _modifyPortableDataDisk;
+    m_modifyPortableDataDiskHasBeenSet = true;
+}
+
+bool ModifyClusterMachineRequest::ModifyPortableDataDiskHasBeenSet() const
+{
+    return m_modifyPortableDataDiskHasBeenSet;
 }
 
 

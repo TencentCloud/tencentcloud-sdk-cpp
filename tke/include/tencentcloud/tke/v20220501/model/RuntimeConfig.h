@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取运行时类型
+                     * 获取<p>运行时类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuntimeType 运行时类型
+                     * @return RuntimeType <p>运行时类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuntimeType() const;
 
                     /**
-                     * 设置运行时类型
+                     * 设置<p>运行时类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _runtimeType 运行时类型
+                     * @param _runtimeType <p>运行时类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool RuntimeTypeHasBeenSet() const;
 
                     /**
-                     * 获取运行时版本
+                     * 获取<p>运行时版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuntimeVersion 运行时版本
+                     * @return RuntimeVersion <p>运行时版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuntimeVersion() const;
 
                     /**
-                     * 设置运行时版本
+                     * 设置<p>运行时版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _runtimeVersion 运行时版本
+                     * @param _runtimeVersion <p>运行时版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool RuntimeVersionHasBeenSet() const;
 
                     /**
-                     * 获取运行时根目录
+                     * 获取<p>运行时根目录</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuntimeRootDir 运行时根目录
+                     * @return RuntimeRootDir <p>运行时根目录</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuntimeRootDir() const;
 
                     /**
-                     * 设置运行时根目录
+                     * 设置<p>运行时根目录</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _runtimeRootDir 运行时根目录
+                     * @param _runtimeRootDir <p>运行时根目录</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,21 +124,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 运行时类型
+                     * <p>运行时类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runtimeType;
                     bool m_runtimeTypeHasBeenSet;
 
                     /**
-                     * 运行时版本
+                     * <p>运行时版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runtimeVersion;
                     bool m_runtimeVersionHasBeenSet;
 
                     /**
-                     * 运行时根目录
+                     * <p>运行时根目录</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runtimeRootDir;

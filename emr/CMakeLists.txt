@@ -172,6 +172,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/DescribeHiveQueriesResponse.h
   include/tencentcloud/emr/v20190103/model/CreateDynamicInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeInstanceRenewNodesResponse.h
+  include/tencentcloud/emr/v20190103/model/DiskHealthIssue.h
   include/tencentcloud/emr/v20190103/model/StringMap.h
   include/tencentcloud/emr/v20190103/model/CreateClusterRequest.h
   include/tencentcloud/emr/v20190103/model/CreateSLInstanceResponse.h
@@ -595,6 +596,7 @@ set(emr_src
   src/v20190103/model/DescribeHiveQueriesResponse.cpp
   src/v20190103/model/CreateDynamicInstanceRequest.cpp
   src/v20190103/model/DescribeInstanceRenewNodesResponse.cpp
+  src/v20190103/model/DiskHealthIssue.cpp
   src/v20190103/model/StringMap.cpp
   src/v20190103/model/CreateClusterRequest.cpp
   src/v20190103/model/CreateSLInstanceResponse.cpp

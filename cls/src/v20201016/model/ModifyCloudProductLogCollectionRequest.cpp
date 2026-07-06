@@ -27,7 +27,8 @@ ModifyCloudProductLogCollectionRequest::ModifyCloudProductLogCollectionRequest()
     m_assumerNameHasBeenSet(false),
     m_logTypeHasBeenSet(false),
     m_cloudProductRegionHasBeenSet(false),
-    m_extendHasBeenSet(false)
+    m_extendHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,21 @@ string ModifyCloudProductLogCollectionRequest::ToJsonString() const
         string key = "Extend";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_extend.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -164,6 +180,22 @@ void ModifyCloudProductLogCollectionRequest::SetExtend(const string& _extend)
 bool ModifyCloudProductLogCollectionRequest::ExtendHasBeenSet() const
 {
     return m_extendHasBeenSet;
+}
+
+vector<Tag> ModifyCloudProductLogCollectionRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void ModifyCloudProductLogCollectionRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool ModifyCloudProductLogCollectionRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

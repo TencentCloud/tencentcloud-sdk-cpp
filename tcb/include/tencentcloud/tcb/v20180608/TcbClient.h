@@ -197,8 +197,6 @@
 #include <tencentcloud/tcb/v20180608/model/RenewEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/RepairPGUserMigrationHistoryRequest.h>
 #include <tencentcloud/tcb/v20180608/model/RepairPGUserMigrationHistoryResponse.h>
-#include <tencentcloud/tcb/v20180608/model/RollbackPGUserMigrationsRequest.h>
-#include <tencentcloud/tcb/v20180608/model/RollbackPGUserMigrationsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/RunCommandsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/RunCommandsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/RunSqlRequest.h>
@@ -486,9 +484,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RepairPGUserMigrationHistoryResponse> RepairPGUserMigrationHistoryOutcome;
                 typedef std::future<RepairPGUserMigrationHistoryOutcome> RepairPGUserMigrationHistoryOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::RepairPGUserMigrationHistoryRequest&, RepairPGUserMigrationHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RepairPGUserMigrationHistoryAsyncHandler;
-                typedef Outcome<Core::Error, Model::RollbackPGUserMigrationsResponse> RollbackPGUserMigrationsOutcome;
-                typedef std::future<RollbackPGUserMigrationsOutcome> RollbackPGUserMigrationsOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::RollbackPGUserMigrationsRequest&, RollbackPGUserMigrationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollbackPGUserMigrationsAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunCommandsResponse> RunCommandsOutcome;
                 typedef std::future<RunCommandsOutcome> RunCommandsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::RunCommandsRequest&, RunCommandsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunCommandsAsyncHandler;
@@ -1419,15 +1414,6 @@ Id、Secret、CreatedAt、Meta 等字段在该接口中不可修改，当客户�
                 RepairPGUserMigrationHistoryOutcome RepairPGUserMigrationHistory(const Model::RepairPGUserMigrationHistoryRequest &request);
                 void RepairPGUserMigrationHistoryAsync(const Model::RepairPGUserMigrationHistoryRequest& request, const RepairPGUserMigrationHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RepairPGUserMigrationHistoryOutcomeCallable RepairPGUserMigrationHistoryCallable(const Model::RepairPGUserMigrationHistoryRequest& request);
-
-                /**
-                 *本接口（RollbackPGUserMigrations）用于按最近 N 条已应用 migration 倒序执行 rollback。
-                 * @param req RollbackPGUserMigrationsRequest
-                 * @return RollbackPGUserMigrationsOutcome
-                 */
-                RollbackPGUserMigrationsOutcome RollbackPGUserMigrations(const Model::RollbackPGUserMigrationsRequest &request);
-                void RollbackPGUserMigrationsAsync(const Model::RollbackPGUserMigrationsRequest& request, const RollbackPGUserMigrationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RollbackPGUserMigrationsOutcomeCallable RollbackPGUserMigrationsCallable(const Model::RollbackPGUserMigrationsRequest& request);
 
                 /**
                  *本接口（RunCommands）用于执行文档型数据库命令。

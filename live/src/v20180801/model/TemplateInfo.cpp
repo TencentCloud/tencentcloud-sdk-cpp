@@ -45,7 +45,9 @@ TemplateInfo::TemplateInfo() :
     m_dRMTypeHasBeenSet(false),
     m_dRMTracksHasBeenSet(false),
     m_isAdaptiveBitRateHasBeenSet(false),
-    m_adaptiveChildrenHasBeenSet(false)
+    m_adaptiveChildrenHasBeenSet(false),
+    m_audienceDrivenTranscodeHasBeenSet(false),
+    m_audienceThresholdHasBeenSet(false)
 {
 }
 
@@ -314,6 +316,26 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
         m_adaptiveChildrenHasBeenSet = true;
     }
 
+    if (value.HasMember("AudienceDrivenTranscode") && !value["AudienceDrivenTranscode"].IsNull())
+    {
+        if (!value["AudienceDrivenTranscode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.AudienceDrivenTranscode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_audienceDrivenTranscode = value["AudienceDrivenTranscode"].GetInt64();
+        m_audienceDrivenTranscodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AudienceThreshold") && !value["AudienceThreshold"].IsNull())
+    {
+        if (!value["AudienceThreshold"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.AudienceThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_audienceThreshold = value["AudienceThreshold"].GetInt64();
+        m_audienceThresholdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -526,6 +548,22 @@ void TemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_audienceDrivenTranscodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudienceDrivenTranscode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_audienceDrivenTranscode, allocator);
+    }
+
+    if (m_audienceThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudienceThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_audienceThreshold, allocator);
     }
 
 }
@@ -929,5 +967,37 @@ void TemplateInfo::SetAdaptiveChildren(const vector<ChildTemplateInfo>& _adaptiv
 bool TemplateInfo::AdaptiveChildrenHasBeenSet() const
 {
     return m_adaptiveChildrenHasBeenSet;
+}
+
+int64_t TemplateInfo::GetAudienceDrivenTranscode() const
+{
+    return m_audienceDrivenTranscode;
+}
+
+void TemplateInfo::SetAudienceDrivenTranscode(const int64_t& _audienceDrivenTranscode)
+{
+    m_audienceDrivenTranscode = _audienceDrivenTranscode;
+    m_audienceDrivenTranscodeHasBeenSet = true;
+}
+
+bool TemplateInfo::AudienceDrivenTranscodeHasBeenSet() const
+{
+    return m_audienceDrivenTranscodeHasBeenSet;
+}
+
+int64_t TemplateInfo::GetAudienceThreshold() const
+{
+    return m_audienceThreshold;
+}
+
+void TemplateInfo::SetAudienceThreshold(const int64_t& _audienceThreshold)
+{
+    m_audienceThreshold = _audienceThreshold;
+    m_audienceThresholdHasBeenSet = true;
+}
+
+bool TemplateInfo::AudienceThresholdHasBeenSet() const
+{
+    return m_audienceThresholdHasBeenSet;
 }
 

@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>额外信息。如修改topic、logset标签失败。</p>
+                     * @return Message <p>额外信息。如修改topic、logset标签失败。</p>
+                     * 
+                     */
+                    std::string GetMessage() const;
+
+                    /**
+                     * 判断参数 Message 是否已赋值
+                     * @return Message 是否已赋值
+                     * 
+                     */
+                    bool MessageHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>额外信息。如修改topic、logset标签失败。</p>
+                     */
+                    std::string m_message;
+                    bool m_messageHasBeenSet;
 
                 };
             }

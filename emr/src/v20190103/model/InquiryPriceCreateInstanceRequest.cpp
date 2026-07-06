@@ -41,7 +41,8 @@ InquiryPriceCreateInstanceRequest::InquiryPriceCreateInstanceRequest() :
     m_versionIDHasBeenSet(false),
     m_multiZoneSettingsHasBeenSet(false),
     m_defaultMetaVersionHasBeenSet(false),
-    m_needCdbAuditHasBeenSet(false)
+    m_needCdbAuditHasBeenSet(false),
+    m_metaDBGroupInfoHasBeenSet(false)
 {
 }
 
@@ -225,6 +226,21 @@ string InquiryPriceCreateInstanceRequest::ToJsonString() const
         string key = "NeedCdbAudit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needCdbAudit, allocator);
+    }
+
+    if (m_metaDBGroupInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetaDBGroupInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_metaDBGroupInfo.begin(); itr != m_metaDBGroupInfo.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -537,6 +553,22 @@ void InquiryPriceCreateInstanceRequest::SetNeedCdbAudit(const int64_t& _needCdbA
 bool InquiryPriceCreateInstanceRequest::NeedCdbAuditHasBeenSet() const
 {
     return m_needCdbAuditHasBeenSet;
+}
+
+vector<CustomMetaDBInfo> InquiryPriceCreateInstanceRequest::GetMetaDBGroupInfo() const
+{
+    return m_metaDBGroupInfo;
+}
+
+void InquiryPriceCreateInstanceRequest::SetMetaDBGroupInfo(const vector<CustomMetaDBInfo>& _metaDBGroupInfo)
+{
+    m_metaDBGroupInfo = _metaDBGroupInfo;
+    m_metaDBGroupInfoHasBeenSet = true;
+}
+
+bool InquiryPriceCreateInstanceRequest::MetaDBGroupInfoHasBeenSet() const
+{
+    return m_metaDBGroupInfoHasBeenSet;
 }
 
 

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取扩缩容规则名。
-                     * @return StrategyName 扩缩容规则名。
+                     * 获取<p>扩缩容规则名。</p>
+                     * @return StrategyName <p>扩缩容规则名。</p>
                      * 
                      */
                     std::string GetStrategyName() const;
 
                     /**
-                     * 设置扩缩容规则名。
-                     * @param _strategyName 扩缩容规则名。
+                     * 设置<p>扩缩容规则名。</p>
+                     * @param _strategyName <p>扩缩容规则名。</p>
                      * 
                      */
                     void SetStrategyName(const std::string& _strategyName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool StrategyNameHasBeenSet() const;
 
                     /**
-                     * 获取"SCALE_OUT"和"SCALE_IN"，分别表示扩容和缩容。
-                     * @return ScaleAction "SCALE_OUT"和"SCALE_IN"，分别表示扩容和缩容。
+                     * 获取<p>&quot;SCALE_OUT&quot;和&quot;SCALE_IN&quot;，分别表示扩容和缩容。</p>
+                     * @return ScaleAction <p>&quot;SCALE_OUT&quot;和&quot;SCALE_IN&quot;，分别表示扩容和缩容。</p>
                      * 
                      */
                     std::string GetScaleAction() const;
 
                     /**
-                     * 设置"SCALE_OUT"和"SCALE_IN"，分别表示扩容和缩容。
-                     * @param _scaleAction "SCALE_OUT"和"SCALE_IN"，分别表示扩容和缩容。
+                     * 设置<p>&quot;SCALE_OUT&quot;和&quot;SCALE_IN&quot;，分别表示扩容和缩容。</p>
+                     * @param _scaleAction <p>&quot;SCALE_OUT&quot;和&quot;SCALE_IN&quot;，分别表示扩容和缩容。</p>
                      * 
                      */
                     void SetScaleAction(const std::string& _scaleAction);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ScaleActionHasBeenSet() const;
 
                     /**
-                     * 获取取值为"SUCCESS","FAILED","PART_SUCCESS","IN_PROCESS"，分别表示成功、失败、部分成功和流程中。
-                     * @return ActionStatus 取值为"SUCCESS","FAILED","PART_SUCCESS","IN_PROCESS"，分别表示成功、失败、部分成功和流程中。
+                     * 获取<p>取值为&quot;SUCCESS&quot;,&quot;FAILED&quot;,&quot;PART_SUCCESS&quot;,&quot;IN_PROCESS&quot;，分别表示成功、失败、部分成功和流程中。</p>
+                     * @return ActionStatus <p>取值为&quot;SUCCESS&quot;,&quot;FAILED&quot;,&quot;PART_SUCCESS&quot;,&quot;IN_PROCESS&quot;，分别表示成功、失败、部分成功和流程中。</p>
                      * 
                      */
                     std::string GetActionStatus() const;
 
                     /**
-                     * 设置取值为"SUCCESS","FAILED","PART_SUCCESS","IN_PROCESS"，分别表示成功、失败、部分成功和流程中。
-                     * @param _actionStatus 取值为"SUCCESS","FAILED","PART_SUCCESS","IN_PROCESS"，分别表示成功、失败、部分成功和流程中。
+                     * 设置<p>取值为&quot;SUCCESS&quot;,&quot;FAILED&quot;,&quot;PART_SUCCESS&quot;,&quot;IN_PROCESS&quot;，分别表示成功、失败、部分成功和流程中。</p>
+                     * @param _actionStatus <p>取值为&quot;SUCCESS&quot;,&quot;FAILED&quot;,&quot;PART_SUCCESS&quot;,&quot;IN_PROCESS&quot;，分别表示成功、失败、部分成功和流程中。</p>
                      * 
                      */
                     void SetActionStatus(const std::string& _actionStatus);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ActionStatusHasBeenSet() const;
 
                     /**
-                     * 获取流程触发时间。
-                     * @return ActionTime 流程触发时间。
+                     * 获取<p>流程触发时间。</p>
+                     * @return ActionTime <p>流程触发时间。</p>
                      * 
                      */
                     std::string GetActionTime() const;
 
                     /**
-                     * 设置流程触发时间。
-                     * @param _actionTime 流程触发时间。
+                     * 设置<p>流程触发时间。</p>
+                     * @param _actionTime <p>流程触发时间。</p>
                      * 
                      */
                     void SetActionTime(const std::string& _actionTime);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ActionTimeHasBeenSet() const;
 
                     /**
-                     * 获取扩缩容相关描述信息。
-                     * @return ScaleInfo 扩缩容相关描述信息。
+                     * 获取<p>扩缩容相关描述信息。</p>
+                     * @return ScaleInfo <p>扩缩容相关描述信息。</p>
                      * 
                      */
                     std::string GetScaleInfo() const;
 
                     /**
-                     * 设置扩缩容相关描述信息。
-                     * @param _scaleInfo 扩缩容相关描述信息。
+                     * 设置<p>扩缩容相关描述信息。</p>
+                     * @param _scaleInfo <p>扩缩容相关描述信息。</p>
                      * 
                      */
                     void SetScaleInfo(const std::string& _scaleInfo);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ScaleInfoHasBeenSet() const;
 
                     /**
-                     * 获取只在ScaleAction为SCALE_OUT时有效。
-                     * @return ExpectScaleNum 只在ScaleAction为SCALE_OUT时有效。
+                     * 获取<p>只在ScaleAction为SCALE_OUT时有效。</p>
+                     * @return ExpectScaleNum <p>只在ScaleAction为SCALE_OUT时有效。</p>
                      * 
                      */
                     int64_t GetExpectScaleNum() const;
 
                     /**
-                     * 设置只在ScaleAction为SCALE_OUT时有效。
-                     * @param _expectScaleNum 只在ScaleAction为SCALE_OUT时有效。
+                     * 设置<p>只在ScaleAction为SCALE_OUT时有效。</p>
+                     * @param _expectScaleNum <p>只在ScaleAction为SCALE_OUT时有效。</p>
                      * 
                      */
                     void SetExpectScaleNum(const int64_t& _expectScaleNum);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool ExpectScaleNumHasBeenSet() const;
 
                     /**
-                     * 获取流程结束时间。
-                     * @return EndTime 流程结束时间。
+                     * 获取<p>流程结束时间。</p>
+                     * @return EndTime <p>流程结束时间。</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置流程结束时间。
-                     * @param _endTime 流程结束时间。
+                     * 设置<p>流程结束时间。</p>
+                     * @param _endTime <p>流程结束时间。</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取策略类型，按负载或者按时间，1表示负载伸缩，2表示时间伸缩
-                     * @return StrategyType 策略类型，按负载或者按时间，1表示负载伸缩，2表示时间伸缩
+                     * 获取<p>策略类型，按负载或者按时间，1表示负载伸缩，2表示时间伸缩</p>
+                     * @return StrategyType <p>策略类型，按负载或者按时间，1表示负载伸缩，2表示时间伸缩</p>
                      * 
                      */
                     int64_t GetStrategyType() const;
 
                     /**
-                     * 设置策略类型，按负载或者按时间，1表示负载伸缩，2表示时间伸缩
-                     * @param _strategyType 策略类型，按负载或者按时间，1表示负载伸缩，2表示时间伸缩
+                     * 设置<p>策略类型，按负载或者按时间，1表示负载伸缩，2表示时间伸缩</p>
+                     * @param _strategyType <p>策略类型，按负载或者按时间，1表示负载伸缩，2表示时间伸缩</p>
                      * 
                      */
                     void SetStrategyType(const int64_t& _strategyType);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool StrategyTypeHasBeenSet() const;
 
                     /**
-                     * 获取扩容时所使用规格信息。
-                     * @return SpecInfo 扩容时所使用规格信息。
+                     * 获取<p>扩容时所使用规格信息。</p>
+                     * @return SpecInfo <p>扩容时所使用规格信息。</p>
                      * 
                      */
                     std::string GetSpecInfo() const;
 
                     /**
-                     * 设置扩容时所使用规格信息。
-                     * @param _specInfo 扩容时所使用规格信息。
+                     * 设置<p>扩容时所使用规格信息。</p>
+                     * @param _specInfo <p>扩容时所使用规格信息。</p>
                      * 
                      */
                     void SetSpecInfo(const std::string& _specInfo);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool SpecInfoHasBeenSet() const;
 
                     /**
-                     * 获取补偿扩容，0表示不开启，1表示开启
-                     * @return CompensateFlag 补偿扩容，0表示不开启，1表示开启
+                     * 获取<p>补偿扩容，0表示不开启，1表示开启</p>
+                     * @return CompensateFlag <p>补偿扩容，0表示不开启，1表示开启</p>
                      * 
                      */
                     int64_t GetCompensateFlag() const;
 
                     /**
-                     * 设置补偿扩容，0表示不开启，1表示开启
-                     * @param _compensateFlag 补偿扩容，0表示不开启，1表示开启
+                     * 设置<p>补偿扩容，0表示不开启，1表示开启</p>
+                     * @param _compensateFlag <p>补偿扩容，0表示不开启，1表示开启</p>
                      * 
                      */
                     void SetCompensateFlag(const int64_t& _compensateFlag);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool CompensateFlagHasBeenSet() const;
 
                     /**
-                     * 获取补偿次数
-                     * @return CompensateCount 补偿次数
+                     * 获取<p>补偿次数</p>
+                     * @return CompensateCount <p>补偿次数</p>
                      * 
                      */
                     int64_t GetCompensateCount() const;
 
                     /**
-                     * 设置补偿次数
-                     * @param _compensateCount 补偿次数
+                     * 设置<p>补偿次数</p>
+                     * @param _compensateCount <p>补偿次数</p>
                      * 
                      */
                     void SetCompensateCount(const int64_t& _compensateCount);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool CompensateCountHasBeenSet() const;
 
                     /**
-                     * 获取重试次数
-                     * @return RetryCount 重试次数
+                     * 获取<p>重试次数</p>
+                     * @return RetryCount <p>重试次数</p>
                      * 
                      */
                     uint64_t GetRetryCount() const;
 
                     /**
-                     * 设置重试次数
-                     * @param _retryCount 重试次数
+                     * 设置<p>重试次数</p>
+                     * @param _retryCount <p>重试次数</p>
                      * 
                      */
                     void SetRetryCount(const uint64_t& _retryCount);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool RetryCountHasBeenSet() const;
 
                     /**
-                     * 获取重试信息
-                     * @return RetryInfo 重试信息
+                     * 获取<p>重试信息</p>
+                     * @return RetryInfo <p>重试信息</p>
                      * 
                      */
                     std::string GetRetryInfo() const;
 
                     /**
-                     * 设置重试信息
-                     * @param _retryInfo 重试信息
+                     * 设置<p>重试信息</p>
+                     * @param _retryInfo <p>重试信息</p>
                      * 
                      */
                     void SetRetryInfo(const std::string& _retryInfo);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool RetryInfoHasBeenSet() const;
 
                     /**
-                     * 获取重试英文描述
-                     * @return RetryEnReason 重试英文描述
+                     * 获取<p>重试英文描述</p>
+                     * @return RetryEnReason <p>重试英文描述</p>
                      * 
                      */
                     std::string GetRetryEnReason() const;
 
                     /**
-                     * 设置重试英文描述
-                     * @param _retryEnReason 重试英文描述
+                     * 设置<p>重试英文描述</p>
+                     * @param _retryEnReason <p>重试英文描述</p>
                      * 
                      */
                     void SetRetryEnReason(const std::string& _retryEnReason);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool RetryEnReasonHasBeenSet() const;
 
                     /**
-                     * 获取重试描述
-                     * @return RetryReason 重试描述
+                     * 获取<p>重试描述</p>
+                     * @return RetryReason <p>重试描述</p>
                      * 
                      */
                     std::string GetRetryReason() const;
 
                     /**
-                     * 设置重试描述
-                     * @param _retryReason 重试描述
+                     * 设置<p>重试描述</p>
+                     * @param _retryReason <p>重试描述</p>
                      * 
                      */
                     void SetRetryReason(const std::string& _retryReason);
@@ -361,97 +361,124 @@ namespace TencentCloud
                      */
                     bool RetryReasonHasBeenSet() const;
 
+                    /**
+                     * 获取<p>缺失分类</p>
+                     * @return ShortageClass <p>缺失分类</p>
+                     * 
+                     */
+                    int64_t GetShortageClass() const;
+
+                    /**
+                     * 设置<p>缺失分类</p>
+                     * @param _shortageClass <p>缺失分类</p>
+                     * 
+                     */
+                    void SetShortageClass(const int64_t& _shortageClass);
+
+                    /**
+                     * 判断参数 ShortageClass 是否已赋值
+                     * @return ShortageClass 是否已赋值
+                     * 
+                     */
+                    bool ShortageClassHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 扩缩容规则名。
+                     * <p>扩缩容规则名。</p>
                      */
                     std::string m_strategyName;
                     bool m_strategyNameHasBeenSet;
 
                     /**
-                     * "SCALE_OUT"和"SCALE_IN"，分别表示扩容和缩容。
+                     * <p>&quot;SCALE_OUT&quot;和&quot;SCALE_IN&quot;，分别表示扩容和缩容。</p>
                      */
                     std::string m_scaleAction;
                     bool m_scaleActionHasBeenSet;
 
                     /**
-                     * 取值为"SUCCESS","FAILED","PART_SUCCESS","IN_PROCESS"，分别表示成功、失败、部分成功和流程中。
+                     * <p>取值为&quot;SUCCESS&quot;,&quot;FAILED&quot;,&quot;PART_SUCCESS&quot;,&quot;IN_PROCESS&quot;，分别表示成功、失败、部分成功和流程中。</p>
                      */
                     std::string m_actionStatus;
                     bool m_actionStatusHasBeenSet;
 
                     /**
-                     * 流程触发时间。
+                     * <p>流程触发时间。</p>
                      */
                     std::string m_actionTime;
                     bool m_actionTimeHasBeenSet;
 
                     /**
-                     * 扩缩容相关描述信息。
+                     * <p>扩缩容相关描述信息。</p>
                      */
                     std::string m_scaleInfo;
                     bool m_scaleInfoHasBeenSet;
 
                     /**
-                     * 只在ScaleAction为SCALE_OUT时有效。
+                     * <p>只在ScaleAction为SCALE_OUT时有效。</p>
                      */
                     int64_t m_expectScaleNum;
                     bool m_expectScaleNumHasBeenSet;
 
                     /**
-                     * 流程结束时间。
+                     * <p>流程结束时间。</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 策略类型，按负载或者按时间，1表示负载伸缩，2表示时间伸缩
+                     * <p>策略类型，按负载或者按时间，1表示负载伸缩，2表示时间伸缩</p>
                      */
                     int64_t m_strategyType;
                     bool m_strategyTypeHasBeenSet;
 
                     /**
-                     * 扩容时所使用规格信息。
+                     * <p>扩容时所使用规格信息。</p>
                      */
                     std::string m_specInfo;
                     bool m_specInfoHasBeenSet;
 
                     /**
-                     * 补偿扩容，0表示不开启，1表示开启
+                     * <p>补偿扩容，0表示不开启，1表示开启</p>
                      */
                     int64_t m_compensateFlag;
                     bool m_compensateFlagHasBeenSet;
 
                     /**
-                     * 补偿次数
+                     * <p>补偿次数</p>
                      */
                     int64_t m_compensateCount;
                     bool m_compensateCountHasBeenSet;
 
                     /**
-                     * 重试次数
+                     * <p>重试次数</p>
                      */
                     uint64_t m_retryCount;
                     bool m_retryCountHasBeenSet;
 
                     /**
-                     * 重试信息
+                     * <p>重试信息</p>
                      */
                     std::string m_retryInfo;
                     bool m_retryInfoHasBeenSet;
 
                     /**
-                     * 重试英文描述
+                     * <p>重试英文描述</p>
                      */
                     std::string m_retryEnReason;
                     bool m_retryEnReasonHasBeenSet;
 
                     /**
-                     * 重试描述
+                     * <p>重试描述</p>
                      */
                     std::string m_retryReason;
                     bool m_retryReasonHasBeenSet;
+
+                    /**
+                     * <p>缺失分类</p>
+                     */
+                    int64_t m_shortageClass;
+                    bool m_shortageClassHasBeenSet;
 
                 };
             }

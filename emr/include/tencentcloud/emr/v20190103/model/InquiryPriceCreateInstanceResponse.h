@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取原价，单位为元。
-                     * @return OriginalCost 原价，单位为元。
+                     * 获取<p>原价，单位为元。</p>
+                     * @return OriginalCost <p>原价，单位为元。</p>
                      * 
                      */
                     double GetOriginalCost() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool OriginalCostHasBeenSet() const;
 
                     /**
-                     * 获取折扣价，单位为元。
-                     * @return DiscountCost 折扣价，单位为元。
+                     * 获取<p>折扣价，单位为元。</p>
+                     * @return DiscountCost <p>折扣价，单位为元。</p>
                      * 
                      */
                     double GetDiscountCost() const;
@@ -73,12 +73,8 @@ namespace TencentCloud
                     bool DiscountCostHasBeenSet() const;
 
                     /**
-                     * 获取购买实例的时间单位。取值范围：
-<li>s：表示秒。</li>
-<li>m：表示月份。</li>
-                     * @return TimeUnit 购买实例的时间单位。取值范围：
-<li>s：表示秒。</li>
-<li>m：表示月份。</li>
+                     * 获取<p>购买实例的时间单位。取值范围：</p><li>s：表示秒。</li><li>m：表示月份。</li>
+                     * @return TimeUnit <p>购买实例的时间单位。取值范围：</p><li>s：表示秒。</li><li>m：表示月份。</li>
                      * 
                      */
                     std::string GetTimeUnit() const;
@@ -91,8 +87,8 @@ namespace TencentCloud
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取购买实例的时长。
-                     * @return TimeSpan 购买实例的时长。
+                     * 获取<p>购买实例的时长。</p>
+                     * @return TimeSpan <p>购买实例的时长。</p>
                      * 
                      */
                     int64_t GetTimeSpan() const;
@@ -105,9 +101,9 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取价格清单
+                     * 获取<p>价格清单</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PriceList 价格清单
+                     * @return PriceList <p>价格清单</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,33 +119,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 原价，单位为元。
+                     * <p>原价，单位为元。</p>
                      */
                     double m_originalCost;
                     bool m_originalCostHasBeenSet;
 
                     /**
-                     * 折扣价，单位为元。
+                     * <p>折扣价，单位为元。</p>
                      */
                     double m_discountCost;
                     bool m_discountCostHasBeenSet;
 
                     /**
-                     * 购买实例的时间单位。取值范围：
-<li>s：表示秒。</li>
-<li>m：表示月份。</li>
+                     * <p>购买实例的时间单位。取值范围：</p><li>s：表示秒。</li><li>m：表示月份。</li>
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * 购买实例的时长。
+                     * <p>购买实例的时长。</p>
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 价格清单
+                     * <p>价格清单</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ZoneDetailPriceResult> m_priceList;

@@ -72,6 +72,20 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>额外信息。如查询topic、logset标签信息错误</p>
+                     * @return Message <p>额外信息。如查询topic、logset标签信息错误</p>
+                     * 
+                     */
+                    std::string GetMessage() const;
+
+                    /**
+                     * 判断参数 Message 是否已赋值
+                     * @return Message 是否已赋值
+                     * 
+                     */
+                    bool MessageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -85,6 +99,12 @@ namespace TencentCloud
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * <p>额外信息。如查询topic、logset标签信息错误</p>
+                     */
+                    std::string m_message;
+                    bool m_messageHasBeenSet;
 
                 };
             }

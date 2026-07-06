@@ -290,6 +290,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/Filter.h
   include/tencentcloud/cls/v20201016/model/SearchViewInfo.h
   include/tencentcloud/cls/v20201016/model/ModifyLogsetResponse.h
+  include/tencentcloud/cls/v20201016/model/DlcFailHandle.h
   include/tencentcloud/cls/v20201016/model/CollectConfig.h
   include/tencentcloud/cls/v20201016/model/CreateDashboardResponse.h
   include/tencentcloud/cls/v20201016/model/GetMetricLabelValuesRequest.h
@@ -321,6 +322,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/CreateEsRechargeRequest.h
   include/tencentcloud/cls/v20201016/model/ConsumerGroup.h
   include/tencentcloud/cls/v20201016/model/ConsoleSharingConfig.h
+  include/tencentcloud/cls/v20201016/model/DlcFailTableInfo.h
   include/tencentcloud/cls/v20201016/model/DescribeDashboardsRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteNoticeContentResponse.h
   include/tencentcloud/cls/v20201016/model/ContainerStdoutInfo.h
@@ -847,6 +849,7 @@ set(cls_src
   src/v20201016/model/Filter.cpp
   src/v20201016/model/SearchViewInfo.cpp
   src/v20201016/model/ModifyLogsetResponse.cpp
+  src/v20201016/model/DlcFailHandle.cpp
   src/v20201016/model/CollectConfig.cpp
   src/v20201016/model/CreateDashboardResponse.cpp
   src/v20201016/model/GetMetricLabelValuesRequest.cpp
@@ -878,6 +881,7 @@ set(cls_src
   src/v20201016/model/CreateEsRechargeRequest.cpp
   src/v20201016/model/ConsumerGroup.cpp
   src/v20201016/model/ConsoleSharingConfig.cpp
+  src/v20201016/model/DlcFailTableInfo.cpp
   src/v20201016/model/DescribeDashboardsRequest.cpp
   src/v20201016/model/DeleteNoticeContentResponse.cpp
   src/v20201016/model/ContainerStdoutInfo.cpp

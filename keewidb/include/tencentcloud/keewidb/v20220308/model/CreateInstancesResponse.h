@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取<p>订单号。    </p>
-                     * @return DealName <p>订单号。    </p>
+                     * 获取<p>订单号。</p>
+                     * @return DealName <p>订单号。</p>
                      * 
                      */
                     std::string GetDealName() const;
@@ -100,7 +100,7 @@ namespace TencentCloud
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * <p>订单号。    </p>
+                     * <p>订单号。</p>
                      */
                     std::string m_dealName;
                     bool m_dealNameHasBeenSet;

@@ -35,7 +35,8 @@ AutoScaleRecord::AutoScaleRecord() :
     m_retryCountHasBeenSet(false),
     m_retryInfoHasBeenSet(false),
     m_retryEnReasonHasBeenSet(false),
-    m_retryReasonHasBeenSet(false)
+    m_retryReasonHasBeenSet(false),
+    m_shortageClassHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome AutoScaleRecord::Deserialize(const rapidjson::Value &value)
         m_retryReasonHasBeenSet = true;
     }
 
+    if (value.HasMember("ShortageClass") && !value["ShortageClass"].IsNull())
+    {
+        if (!value["ShortageClass"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScaleRecord.ShortageClass` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_shortageClass = value["ShortageClass"].GetInt64();
+        m_shortageClassHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void AutoScaleRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "RetryReason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_retryReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_shortageClassHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShortageClass";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_shortageClass, allocator);
     }
 
 }
@@ -562,5 +581,21 @@ void AutoScaleRecord::SetRetryReason(const string& _retryReason)
 bool AutoScaleRecord::RetryReasonHasBeenSet() const
 {
     return m_retryReasonHasBeenSet;
+}
+
+int64_t AutoScaleRecord::GetShortageClass() const
+{
+    return m_shortageClass;
+}
+
+void AutoScaleRecord::SetShortageClass(const int64_t& _shortageClass)
+{
+    m_shortageClass = _shortageClass;
+    m_shortageClassHasBeenSet = true;
+}
+
+bool AutoScaleRecord::ShortageClassHasBeenSet() const
+{
+    return m_shortageClassHasBeenSet;
 }
 

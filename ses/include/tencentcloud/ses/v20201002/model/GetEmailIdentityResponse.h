@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ses/v20201002/model/DNSAttributes.h>
+#include <tencentcloud/ses/v20201002/model/TagList.h>
 
 
 namespace TencentCloud
@@ -100,6 +101,20 @@ namespace TencentCloud
                      */
                     bool DKIMOptionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>tag 标签</p>
+                     * @return TagList <p>tag 标签</p>
+                     * 
+                     */
+                    std::vector<TagList> GetTagList() const;
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     * 
+                     */
+                    bool TagListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +140,12 @@ namespace TencentCloud
                      */
                     uint64_t m_dKIMOption;
                     bool m_dKIMOptionHasBeenSet;
+
+                    /**
+                     * <p>tag 标签</p>
+                     */
+                    std::vector<TagList> m_tagList;
+                    bool m_tagListHasBeenSet;
 
                 };
             }

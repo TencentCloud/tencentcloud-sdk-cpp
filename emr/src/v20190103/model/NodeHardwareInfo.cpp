@@ -80,7 +80,8 @@ NodeHardwareInfo::NodeHardwareInfo() :
     m_configurableServicesHasBeenSet(false),
     m_nodeMarkHasBeenSet(false),
     m_underwriteSetAutoRenewHasBeenSet(false),
-    m_gpuDescHasBeenSet(false)
+    m_gpuDescHasBeenSet(false),
+    m_diskHealthIssuesHasBeenSet(false)
 {
 }
 
@@ -726,6 +727,26 @@ CoreInternalOutcome NodeHardwareInfo::Deserialize(const rapidjson::Value &value)
         m_gpuDescHasBeenSet = true;
     }
 
+    if (value.HasMember("DiskHealthIssues") && !value["DiskHealthIssues"].IsNull())
+    {
+        if (!value["DiskHealthIssues"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.DiskHealthIssues` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DiskHealthIssues"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DiskHealthIssue item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_diskHealthIssues.push_back(item);
+        }
+        m_diskHealthIssuesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1232,6 +1253,21 @@ void NodeHardwareInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "GpuDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_gpuDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_diskHealthIssuesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskHealthIssues";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_diskHealthIssues.begin(); itr != m_diskHealthIssues.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -2195,5 +2231,21 @@ void NodeHardwareInfo::SetGpuDesc(const string& _gpuDesc)
 bool NodeHardwareInfo::GpuDescHasBeenSet() const
 {
     return m_gpuDescHasBeenSet;
+}
+
+vector<DiskHealthIssue> NodeHardwareInfo::GetDiskHealthIssues() const
+{
+    return m_diskHealthIssues;
+}
+
+void NodeHardwareInfo::SetDiskHealthIssues(const vector<DiskHealthIssue>& _diskHealthIssues)
+{
+    m_diskHealthIssues = _diskHealthIssues;
+    m_diskHealthIssuesHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::DiskHealthIssuesHasBeenSet() const
+{
+    return m_diskHealthIssuesHasBeenSet;
 }
 

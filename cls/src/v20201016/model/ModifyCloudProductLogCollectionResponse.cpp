@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cls::V20201016::Model;
 using namespace std;
 
-ModifyCloudProductLogCollectionResponse::ModifyCloudProductLogCollectionResponse()
+ModifyCloudProductLogCollectionResponse::ModifyCloudProductLogCollectionResponse() :
+    m_messageHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome ModifyCloudProductLogCollectionResponse::Deserialize(const s
     }
 
 
+    if (rsp.HasMember("Message") && !rsp["Message"].IsNull())
+    {
+        if (!rsp["Message"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Message` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_message = string(rsp["Message"].GetString());
+        m_messageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string ModifyCloudProductLogCollectionResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_messageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Message";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string ModifyCloudProductLogCollectionResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string ModifyCloudProductLogCollectionResponse::GetMessage() const
+{
+    return m_message;
+}
+
+bool ModifyCloudProductLogCollectionResponse::MessageHasBeenSet() const
+{
+    return m_messageHasBeenSet;
+}
 
 

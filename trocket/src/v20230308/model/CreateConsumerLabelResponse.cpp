@@ -1,0 +1,173 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/trocket/v20230308/model/CreateConsumerLabelResponse.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Trocket::V20230308::Model;
+using namespace std;
+
+CreateConsumerLabelResponse::CreateConsumerLabelResponse() :
+    m_instanceIdHasBeenSet(false),
+    m_groupHasBeenSet(false),
+    m_labelHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome CreateConsumerLabelResponse::Deserialize(const string &payload)
+{
+    rapidjson::Document d;
+    d.Parse(payload.c_str());
+    if (d.HasParseError() || !d.IsObject())
+    {
+        return CoreInternalOutcome(Core::Error("response not json format"));
+    }
+    if (!d.HasMember("Response") || !d["Response"].IsObject())
+    {
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
+    }
+    rapidjson::Value &rsp = d["Response"];
+    if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
+    {
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
+    }
+    string requestId(rsp["RequestId"].GetString());
+    SetRequestId(requestId);
+
+    if (rsp.HasMember("Error"))
+    {
+        if (!rsp["Error"].IsObject() ||
+            !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
+            !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
+        }
+        string errorCode(rsp["Error"]["Code"].GetString());
+        string errorMsg(rsp["Error"]["Message"].GetString());
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
+    }
+
+
+    if (rsp.HasMember("InstanceId") && !rsp["InstanceId"].IsNull())
+    {
+        if (!rsp["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(rsp["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Group") && !rsp["Group"].IsNull())
+    {
+        if (!rsp["Group"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Group` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_group = string(rsp["Group"].GetString());
+        m_groupHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Label") && !rsp["Label"].IsNull())
+    {
+        if (!rsp["Label"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Label` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_label = string(rsp["Label"].GetString());
+        m_labelHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+string CreateConsumerLabelResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Group";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_group.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_labelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Label";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
+
+string CreateConsumerLabelResponse::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+bool CreateConsumerLabelResponse::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string CreateConsumerLabelResponse::GetGroup() const
+{
+    return m_group;
+}
+
+bool CreateConsumerLabelResponse::GroupHasBeenSet() const
+{
+    return m_groupHasBeenSet;
+}
+
+string CreateConsumerLabelResponse::GetLabel() const
+{
+    return m_label;
+}
+
+bool CreateConsumerLabelResponse::LabelHasBeenSet() const
+{
+    return m_labelHasBeenSet;
+}
+
+

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取每页输出的实例列表的大小，即每页输出的实例数量，默认值20，取值范围为[1,1000]。
-                     * @return Limit 每页输出的实例列表的大小，即每页输出的实例数量，默认值20，取值范围为[1,1000]。
+                     * 获取<p>每页输出的实例列表的大小，即每页输出的实例数量，默认值20，取值范围为[1,1000]。</p>
+                     * @return Limit <p>每页输出的实例列表的大小，即每页输出的实例数量，默认值20，取值范围为[1,1000]。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页输出的实例列表的大小，即每页输出的实例数量，默认值20，取值范围为[1,1000]。
-                     * @param _limit 每页输出的实例列表的大小，即每页输出的实例数量，默认值20，取值范围为[1,1000]。
+                     * 设置<p>每页输出的实例列表的大小，即每页输出的实例数量，默认值20，取值范围为[1,1000]。</p>
+                     * @param _limit <p>每页输出的实例列表的大小，即每页输出的实例数量，默认值20，取值范围为[1,1000]。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -65,19 +65,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量，取Limit整数倍。
-计算公式为offset=limit*(页码-1)。例如 limit=10，第1页offset就为0，第2页offset就为10，依次类推。
-                     * @return Offset 分页偏移量，取Limit整数倍。
-计算公式为offset=limit*(页码-1)。例如 limit=10，第1页offset就为0，第2页offset就为10，依次类推。
+                     * 获取<p>分页偏移量，取Limit整数倍。<br>计算公式为offset=limit*(页码-1)。例如 limit=10，第1页offset就为0，第2页offset就为10，依次类推。</p>
+                     * @return Offset <p>分页偏移量，取Limit整数倍。<br>计算公式为offset=limit*(页码-1)。例如 limit=10，第1页offset就为0，第2页offset就为10，依次类推。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量，取Limit整数倍。
-计算公式为offset=limit*(页码-1)。例如 limit=10，第1页offset就为0，第2页offset就为10，依次类推。
-                     * @param _offset 分页偏移量，取Limit整数倍。
-计算公式为offset=limit*(页码-1)。例如 limit=10，第1页offset就为0，第2页offset就为10，依次类推。
+                     * 设置<p>分页偏移量，取Limit整数倍。<br>计算公式为offset=limit*(页码-1)。例如 limit=10，第1页offset就为0，第2页offset就为10，依次类推。</p>
+                     * @param _offset <p>分页偏移量，取Limit整数倍。<br>计算公式为offset=limit*(页码-1)。例如 limit=10，第1页offset就为0，第2页offset就为10，依次类推。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -90,15 +86,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取实例 ID，如：kee-6ubh****。
-                     * @return InstanceId 实例 ID，如：kee-6ubh****。
+                     * 获取<p>实例 ID，如：kee-6ubh****。</p>
+                     * @return InstanceId <p>实例 ID，如：kee-6ubh****。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID，如：kee-6ubh****。
-                     * @param _instanceId 实例 ID，如：kee-6ubh****。
+                     * 设置<p>实例 ID，如：kee-6ubh****。</p>
+                     * @param _instanceId <p>实例 ID，如：kee-6ubh****。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -111,15 +107,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取排序依据。枚举范围如下所示。 <ul><li>projectId：实例按照项目ID排序。</li><li>createtime：实例按照创建时间排序。</li><li>instancename：实例按照实例名称排序。</li><li>type：实例按照类型排序。</li><li>curDeadline：实例按照到期时间排序。</li></ul>
-                     * @return OrderBy 排序依据。枚举范围如下所示。 <ul><li>projectId：实例按照项目ID排序。</li><li>createtime：实例按照创建时间排序。</li><li>instancename：实例按照实例名称排序。</li><li>type：实例按照类型排序。</li><li>curDeadline：实例按照到期时间排序。</li></ul>
+                     * 获取<p>排序依据。枚举范围如下所示。 <ul><li>projectId：实例按照项目ID排序。</li><li>createtime：实例按照创建时间排序。</li><li>instancename：实例按照实例名称排序。</li><li>type：实例按照类型排序。</li><li>curDeadline：实例按照到期时间排序。</li></ul></p>
+                     * @return OrderBy <p>排序依据。枚举范围如下所示。 <ul><li>projectId：实例按照项目ID排序。</li><li>createtime：实例按照创建时间排序。</li><li>instancename：实例按照实例名称排序。</li><li>type：实例按照类型排序。</li><li>curDeadline：实例按照到期时间排序。</li></ul></p>
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序依据。枚举范围如下所示。 <ul><li>projectId：实例按照项目ID排序。</li><li>createtime：实例按照创建时间排序。</li><li>instancename：实例按照实例名称排序。</li><li>type：实例按照类型排序。</li><li>curDeadline：实例按照到期时间排序。</li></ul>
-                     * @param _orderBy 排序依据。枚举范围如下所示。 <ul><li>projectId：实例按照项目ID排序。</li><li>createtime：实例按照创建时间排序。</li><li>instancename：实例按照实例名称排序。</li><li>type：实例按照类型排序。</li><li>curDeadline：实例按照到期时间排序。</li></ul>
+                     * 设置<p>排序依据。枚举范围如下所示。 <ul><li>projectId：实例按照项目ID排序。</li><li>createtime：实例按照创建时间排序。</li><li>instancename：实例按照实例名称排序。</li><li>type：实例按照类型排序。</li><li>curDeadline：实例按照到期时间排序。</li></ul></p>
+                     * @param _orderBy <p>排序依据。枚举范围如下所示。 <ul><li>projectId：实例按照项目ID排序。</li><li>createtime：实例按照创建时间排序。</li><li>instancename：实例按照实例名称排序。</li><li>type：实例按照类型排序。</li><li>curDeadline：实例按照到期时间排序。</li></ul></p>
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -132,15 +128,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取排序方式。<ul><li>1：倒序。默认为倒序。</li><li>0：顺序。</li></ul>
-                     * @return OrderType 排序方式。<ul><li>1：倒序。默认为倒序。</li><li>0：顺序。</li></ul>
+                     * 获取<p>排序方式。<ul><li>1：倒序。默认为倒序。</li><li>0：顺序。</li></ul></p>
+                     * @return OrderType <p>排序方式。<ul><li>1：倒序。默认为倒序。</li><li>0：顺序。</li></ul></p>
                      * 
                      */
                     int64_t GetOrderType() const;
 
                     /**
-                     * 设置排序方式。<ul><li>1：倒序。默认为倒序。</li><li>0：顺序。</li></ul>
-                     * @param _orderType 排序方式。<ul><li>1：倒序。默认为倒序。</li><li>0：顺序。</li></ul>
+                     * 设置<p>排序方式。<ul><li>1：倒序。默认为倒序。</li><li>0：顺序。</li></ul></p>
+                     * @param _orderType <p>排序方式。<ul><li>1：倒序。默认为倒序。</li><li>0：顺序。</li></ul></p>
                      * 
                      */
                     void SetOrderType(const int64_t& _orderType);
@@ -153,15 +149,15 @@ namespace TencentCloud
                     bool OrderTypeHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ID数组。数组下标从0开始，如果不传则默认选择基础网络，如：47525
-                     * @return VpcIds 私有网络ID数组。数组下标从0开始，如果不传则默认选择基础网络，如：47525
+                     * 获取<p>私有网络ID数组。数组下标从0开始，如果不传则默认选择基础网络，如：47525</p>
+                     * @return VpcIds <p>私有网络ID数组。数组下标从0开始，如果不传则默认选择基础网络，如：47525</p>
                      * 
                      */
                     std::vector<std::string> GetVpcIds() const;
 
                     /**
-                     * 设置私有网络ID数组。数组下标从0开始，如果不传则默认选择基础网络，如：47525
-                     * @param _vpcIds 私有网络ID数组。数组下标从0开始，如果不传则默认选择基础网络，如：47525
+                     * 设置<p>私有网络ID数组。数组下标从0开始，如果不传则默认选择基础网络，如：47525</p>
+                     * @param _vpcIds <p>私有网络ID数组。数组下标从0开始，如果不传则默认选择基础网络，如：47525</p>
                      * 
                      */
                     void SetVpcIds(const std::vector<std::string>& _vpcIds);
@@ -174,15 +170,15 @@ namespace TencentCloud
                     bool VpcIdsHasBeenSet() const;
 
                     /**
-                     * 获取子网ID数组，数组下标从0开始，如：56854
-                     * @return SubnetIds 子网ID数组，数组下标从0开始，如：56854
+                     * 获取<p>子网ID数组，数组下标从0开始，如：56854</p>
+                     * @return SubnetIds <p>子网ID数组，数组下标从0开始，如：56854</p>
                      * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
-                     * 设置子网ID数组，数组下标从0开始，如：56854
-                     * @param _subnetIds 子网ID数组，数组下标从0开始，如：56854
+                     * 设置<p>子网ID数组，数组下标从0开始，如：56854</p>
+                     * @param _subnetIds <p>子网ID数组，数组下标从0开始，如：56854</p>
                      * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
@@ -195,15 +191,15 @@ namespace TencentCloud
                     bool SubnetIdsHasBeenSet() const;
 
                     /**
-                     * 获取项目ID 组成的数组，数组下标从0开始
-                     * @return ProjectIds 项目ID 组成的数组，数组下标从0开始
+                     * 获取<p>项目ID 组成的数组，数组下标从0开始</p>
+                     * @return ProjectIds <p>项目ID 组成的数组，数组下标从0开始</p>
                      * 
                      */
                     std::vector<int64_t> GetProjectIds() const;
 
                     /**
-                     * 设置项目ID 组成的数组，数组下标从0开始
-                     * @param _projectIds 项目ID 组成的数组，数组下标从0开始
+                     * 设置<p>项目ID 组成的数组，数组下标从0开始</p>
+                     * @param _projectIds <p>项目ID 组成的数组，数组下标从0开始</p>
                      * 
                      */
                     void SetProjectIds(const std::vector<int64_t>& _projectIds);
@@ -216,15 +212,15 @@ namespace TencentCloud
                     bool ProjectIdsHasBeenSet() const;
 
                     /**
-                     * 获取查找关键字，可输入实例的ID或者实例名称。
-                     * @return SearchKey 查找关键字，可输入实例的ID或者实例名称。
+                     * 获取<p>查找关键字，可输入实例的ID或者实例名称。</p>
+                     * @return SearchKey <p>查找关键字，可输入实例的ID或者实例名称。</p>
                      * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
-                     * 设置查找关键字，可输入实例的ID或者实例名称。
-                     * @param _searchKey 查找关键字，可输入实例的ID或者实例名称。
+                     * 设置<p>查找关键字，可输入实例的ID或者实例名称。</p>
+                     * @param _searchKey <p>查找关键字，可输入实例的ID或者实例名称。</p>
                      * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
@@ -237,15 +233,15 @@ namespace TencentCloud
                     bool SearchKeyHasBeenSet() const;
 
                     /**
-                     * 获取实例名称。
-                     * @return InstanceName 实例名称。
+                     * 获取<p>实例名称。</p>
+                     * @return InstanceName <p>实例名称。</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称。
-                     * @param _instanceName 实例名称。
+                     * 设置<p>实例名称。</p>
+                     * @param _instanceName <p>实例名称。</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -258,15 +254,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：vpc-sad23jfdfk
-                     * @return UniqVpcIds 私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：vpc-sad23jfdfk
+                     * 获取<p>私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：vpc-sad23jfdfk</p>
+                     * @return UniqVpcIds <p>私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：vpc-sad23jfdfk</p>
                      * 
                      */
                     std::vector<std::string> GetUniqVpcIds() const;
 
                     /**
-                     * 设置私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：vpc-sad23jfdfk
-                     * @param _uniqVpcIds 私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：vpc-sad23jfdfk
+                     * 设置<p>私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：vpc-sad23jfdfk</p>
+                     * @param _uniqVpcIds <p>私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：vpc-sad23jfdfk</p>
                      * 
                      */
                     void SetUniqVpcIds(const std::vector<std::string>& _uniqVpcIds);
@@ -279,15 +275,15 @@ namespace TencentCloud
                     bool UniqVpcIdsHasBeenSet() const;
 
                     /**
-                     * 获取子网ID数组，数组下标从0开始，如：subnet-fdj24n34j2
-                     * @return UniqSubnetIds 子网ID数组，数组下标从0开始，如：subnet-fdj24n34j2
+                     * 获取<p>子网ID数组，数组下标从0开始，如：subnet-fdj24n34j2</p>
+                     * @return UniqSubnetIds <p>子网ID数组，数组下标从0开始，如：subnet-fdj24n34j2</p>
                      * 
                      */
                     std::vector<std::string> GetUniqSubnetIds() const;
 
                     /**
-                     * 设置子网ID数组，数组下标从0开始，如：subnet-fdj24n34j2
-                     * @param _uniqSubnetIds 子网ID数组，数组下标从0开始，如：subnet-fdj24n34j2
+                     * 设置<p>子网ID数组，数组下标从0开始，如：subnet-fdj24n34j2</p>
+                     * @param _uniqSubnetIds <p>子网ID数组，数组下标从0开始，如：subnet-fdj24n34j2</p>
                      * 
                      */
                     void SetUniqSubnetIds(const std::vector<std::string>& _uniqSubnetIds);
@@ -300,15 +296,15 @@ namespace TencentCloud
                     bool UniqSubnetIdsHasBeenSet() const;
 
                     /**
-                     * 获取实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul>
-                     * @return Status 实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul>
+                     * 获取<p>实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul></p>
+                     * @return Status <p>实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul></p>
                      * 
                      */
                     std::vector<int64_t> GetStatus() const;
 
                     /**
-                     * 设置实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul>
-                     * @param _status 实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul>
+                     * 设置<p>实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul></p>
+                     * @param _status <p>实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul></p>
                      * 
                      */
                     void SetStatus(const std::vector<int64_t>& _status);
@@ -321,15 +317,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取续费模式。- 0：手动续费。- 1：自动续费。- 2：到期不再续费。
-                     * @return AutoRenew 续费模式。- 0：手动续费。- 1：自动续费。- 2：到期不再续费。
+                     * 获取<p>续费模式。- 0：手动续费。- 1：自动续费。- 2：到期不再续费。</p>
+                     * @return AutoRenew <p>续费模式。- 0：手动续费。- 1：自动续费。- 2：到期不再续费。</p>
                      * 
                      */
                     std::vector<int64_t> GetAutoRenew() const;
 
                     /**
-                     * 设置续费模式。- 0：手动续费。- 1：自动续费。- 2：到期不再续费。
-                     * @param _autoRenew 续费模式。- 0：手动续费。- 1：自动续费。- 2：到期不再续费。
+                     * 设置<p>续费模式。- 0：手动续费。- 1：自动续费。- 2：到期不再续费。</p>
+                     * @param _autoRenew <p>续费模式。- 0：手动续费。- 1：自动续费。- 2：到期不再续费。</p>
                      * 
                      */
                     void SetAutoRenew(const std::vector<int64_t>& _autoRenew);
@@ -342,15 +338,15 @@ namespace TencentCloud
                     bool AutoRenewHasBeenSet() const;
 
                     /**
-                     * 获取计费模式。<ul><li>postpaid：按量计费。</li><li>prepaid：包年包月。</li></ul>
-                     * @return BillingMode 计费模式。<ul><li>postpaid：按量计费。</li><li>prepaid：包年包月。</li></ul>
+                     * 获取<p>计费模式。<ul><li>postpaid：按量计费。</li><li>prepaid：包年包月。</li></ul></p>
+                     * @return BillingMode <p>计费模式。<ul><li>postpaid：按量计费。</li><li>prepaid：包年包月。</li></ul></p>
                      * 
                      */
                     std::string GetBillingMode() const;
 
                     /**
-                     * 设置计费模式。<ul><li>postpaid：按量计费。</li><li>prepaid：包年包月。</li></ul>
-                     * @param _billingMode 计费模式。<ul><li>postpaid：按量计费。</li><li>prepaid：包年包月。</li></ul>
+                     * 设置<p>计费模式。<ul><li>postpaid：按量计费。</li><li>prepaid：包年包月。</li></ul></p>
+                     * @param _billingMode <p>计费模式。<ul><li>postpaid：按量计费。</li><li>prepaid：包年包月。</li></ul></p>
                      * 
                      */
                     void SetBillingMode(const std::string& _billingMode);
@@ -363,15 +359,15 @@ namespace TencentCloud
                     bool BillingModeHasBeenSet() const;
 
                     /**
-                     * 获取实例类型。<ul><li>13：标准版。</li><li>14：集群版。</li></ul>
-                     * @return Type 实例类型。<ul><li>13：标准版。</li><li>14：集群版。</li></ul>
+                     * 获取<p>实例类型。</p><p>枚举值：</p><ul><li>11： 存储版标准架构。</li><li>12： 存储版集群架构。</li><li>13： 极速版标准架构。</li><li>14： 极速版集群架构。</li></ul>
+                     * @return Type <p>实例类型。</p><p>枚举值：</p><ul><li>11： 存储版标准架构。</li><li>12： 存储版集群架构。</li><li>13： 极速版标准架构。</li><li>14： 极速版集群架构。</li></ul>
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置实例类型。<ul><li>13：标准版。</li><li>14：集群版。</li></ul>
-                     * @param _type 实例类型。<ul><li>13：标准版。</li><li>14：集群版。</li></ul>
+                     * 设置<p>实例类型。</p><p>枚举值：</p><ul><li>11： 存储版标准架构。</li><li>12： 存储版集群架构。</li><li>13： 极速版标准架构。</li><li>14： 极速版集群架构。</li></ul>
+                     * @param _type <p>实例类型。</p><p>枚举值：</p><ul><li>11： 存储版标准架构。</li><li>12： 存储版集群架构。</li><li>13： 极速版标准架构。</li><li>14： 极速版集群架构。</li></ul>
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -384,15 +380,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取搜索关键词：支持实例 ID、实例名称、私有网络IP地址。
-                     * @return SearchKeys 搜索关键词：支持实例 ID、实例名称、私有网络IP地址。
+                     * 获取<p>搜索关键词：支持实例 ID、实例名称、私有网络IP地址。</p>
+                     * @return SearchKeys <p>搜索关键词：支持实例 ID、实例名称、私有网络IP地址。</p>
                      * 
                      */
                     std::vector<std::string> GetSearchKeys() const;
 
                     /**
-                     * 设置搜索关键词：支持实例 ID、实例名称、私有网络IP地址。
-                     * @param _searchKeys 搜索关键词：支持实例 ID、实例名称、私有网络IP地址。
+                     * 设置<p>搜索关键词：支持实例 ID、实例名称、私有网络IP地址。</p>
+                     * @param _searchKeys <p>搜索关键词：支持实例 ID、实例名称、私有网络IP地址。</p>
                      * 
                      */
                     void SetSearchKeys(const std::vector<std::string>& _searchKeys);
@@ -405,15 +401,15 @@ namespace TencentCloud
                     bool SearchKeysHasBeenSet() const;
 
                     /**
-                     * 获取内部参数，用户可忽略。
-                     * @return TypeList 内部参数，用户可忽略。
+                     * 获取<p>内部参数，用户可忽略。</p>
+                     * @return TypeList <p>内部参数，用户可忽略。</p>
                      * 
                      */
                     std::vector<int64_t> GetTypeList() const;
 
                     /**
-                     * 设置内部参数，用户可忽略。
-                     * @param _typeList 内部参数，用户可忽略。
+                     * 设置<p>内部参数，用户可忽略。</p>
+                     * @param _typeList <p>内部参数，用户可忽略。</p>
                      * 
                      */
                     void SetTypeList(const std::vector<int64_t>& _typeList);
@@ -426,15 +422,15 @@ namespace TencentCloud
                     bool TypeListHasBeenSet() const;
 
                     /**
-                     * 获取内部参数，用户可忽略。
-                     * @return MonitorVersion 内部参数，用户可忽略。
+                     * 获取<p>内部参数，用户可忽略。</p>
+                     * @return MonitorVersion <p>内部参数，用户可忽略。</p>
                      * 
                      */
                     std::string GetMonitorVersion() const;
 
                     /**
-                     * 设置内部参数，用户可忽略。
-                     * @param _monitorVersion 内部参数，用户可忽略。
+                     * 设置<p>内部参数，用户可忽略。</p>
+                     * @param _monitorVersion <p>内部参数，用户可忽略。</p>
                      * 
                      */
                     void SetMonitorVersion(const std::string& _monitorVersion);
@@ -447,15 +443,15 @@ namespace TencentCloud
                     bool MonitorVersionHasBeenSet() const;
 
                     /**
-                     * 获取废弃字段。请使用TagList传参。
-                     * @return InstanceTags 废弃字段。请使用TagList传参。
+                     * 获取<p>废弃字段。请使用TagList传参。</p>
+                     * @return InstanceTags <p>废弃字段。请使用TagList传参。</p>
                      * @deprecated
                      */
                     InstanceTagInfo GetInstanceTags() const;
 
                     /**
-                     * 设置废弃字段。请使用TagList传参。
-                     * @param _instanceTags 废弃字段。请使用TagList传参。
+                     * 设置<p>废弃字段。请使用TagList传参。</p>
+                     * @param _instanceTags <p>废弃字段。请使用TagList传参。</p>
                      * @deprecated
                      */
                     void SetInstanceTags(const InstanceTagInfo& _instanceTags);
@@ -468,15 +464,15 @@ namespace TencentCloud
                     bool InstanceTagsHasBeenSet() const;
 
                     /**
-                     * 获取根据标签的 Key 筛选资源，该参数不配置或者数组设置为空值，则不根据标签Key进行过滤。
-                     * @return TagKeys 根据标签的 Key 筛选资源，该参数不配置或者数组设置为空值，则不根据标签Key进行过滤。
+                     * 获取<p>根据标签的 Key 筛选资源，该参数不配置或者数组设置为空值，则不根据标签Key进行过滤。</p>
+                     * @return TagKeys <p>根据标签的 Key 筛选资源，该参数不配置或者数组设置为空值，则不根据标签Key进行过滤。</p>
                      * 
                      */
                     std::vector<std::string> GetTagKeys() const;
 
                     /**
-                     * 设置根据标签的 Key 筛选资源，该参数不配置或者数组设置为空值，则不根据标签Key进行过滤。
-                     * @param _tagKeys 根据标签的 Key 筛选资源，该参数不配置或者数组设置为空值，则不根据标签Key进行过滤。
+                     * 设置<p>根据标签的 Key 筛选资源，该参数不配置或者数组设置为空值，则不根据标签Key进行过滤。</p>
+                     * @param _tagKeys <p>根据标签的 Key 筛选资源，该参数不配置或者数组设置为空值，则不根据标签Key进行过滤。</p>
                      * 
                      */
                     void SetTagKeys(const std::vector<std::string>& _tagKeys);
@@ -489,15 +485,15 @@ namespace TencentCloud
                     bool TagKeysHasBeenSet() const;
 
                     /**
-                     * 获取根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
-                     * @return TagList 根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
+                     * 获取<p>根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。</p>
+                     * @return TagList <p>根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。</p>
                      * 
                      */
                     std::vector<InstanceTagInfo> GetTagList() const;
 
                     /**
-                     * 设置根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
-                     * @param _tagList 根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
+                     * 设置<p>根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。</p>
+                     * @param _tagList <p>根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。</p>
                      * 
                      */
                     void SetTagList(const std::vector<InstanceTagInfo>& _tagList);
@@ -512,134 +508,133 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 每页输出的实例列表的大小，即每页输出的实例数量，默认值20，取值范围为[1,1000]。
+                     * <p>每页输出的实例列表的大小，即每页输出的实例数量，默认值20，取值范围为[1,1000]。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页偏移量，取Limit整数倍。
-计算公式为offset=limit*(页码-1)。例如 limit=10，第1页offset就为0，第2页offset就为10，依次类推。
+                     * <p>分页偏移量，取Limit整数倍。<br>计算公式为offset=limit*(页码-1)。例如 limit=10，第1页offset就为0，第2页offset就为10，依次类推。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 实例 ID，如：kee-6ubh****。
+                     * <p>实例 ID，如：kee-6ubh****。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 排序依据。枚举范围如下所示。 <ul><li>projectId：实例按照项目ID排序。</li><li>createtime：实例按照创建时间排序。</li><li>instancename：实例按照实例名称排序。</li><li>type：实例按照类型排序。</li><li>curDeadline：实例按照到期时间排序。</li></ul>
+                     * <p>排序依据。枚举范围如下所示。 <ul><li>projectId：实例按照项目ID排序。</li><li>createtime：实例按照创建时间排序。</li><li>instancename：实例按照实例名称排序。</li><li>type：实例按照类型排序。</li><li>curDeadline：实例按照到期时间排序。</li></ul></p>
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 排序方式。<ul><li>1：倒序。默认为倒序。</li><li>0：顺序。</li></ul>
+                     * <p>排序方式。<ul><li>1：倒序。默认为倒序。</li><li>0：顺序。</li></ul></p>
                      */
                     int64_t m_orderType;
                     bool m_orderTypeHasBeenSet;
 
                     /**
-                     * 私有网络ID数组。数组下标从0开始，如果不传则默认选择基础网络，如：47525
+                     * <p>私有网络ID数组。数组下标从0开始，如果不传则默认选择基础网络，如：47525</p>
                      */
                     std::vector<std::string> m_vpcIds;
                     bool m_vpcIdsHasBeenSet;
 
                     /**
-                     * 子网ID数组，数组下标从0开始，如：56854
+                     * <p>子网ID数组，数组下标从0开始，如：56854</p>
                      */
                     std::vector<std::string> m_subnetIds;
                     bool m_subnetIdsHasBeenSet;
 
                     /**
-                     * 项目ID 组成的数组，数组下标从0开始
+                     * <p>项目ID 组成的数组，数组下标从0开始</p>
                      */
                     std::vector<int64_t> m_projectIds;
                     bool m_projectIdsHasBeenSet;
 
                     /**
-                     * 查找关键字，可输入实例的ID或者实例名称。
+                     * <p>查找关键字，可输入实例的ID或者实例名称。</p>
                      */
                     std::string m_searchKey;
                     bool m_searchKeyHasBeenSet;
 
                     /**
-                     * 实例名称。
+                     * <p>实例名称。</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：vpc-sad23jfdfk
+                     * <p>私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：vpc-sad23jfdfk</p>
                      */
                     std::vector<std::string> m_uniqVpcIds;
                     bool m_uniqVpcIdsHasBeenSet;
 
                     /**
-                     * 子网ID数组，数组下标从0开始，如：subnet-fdj24n34j2
+                     * <p>子网ID数组，数组下标从0开始，如：subnet-fdj24n34j2</p>
                      */
                     std::vector<std::string> m_uniqSubnetIds;
                     bool m_uniqSubnetIdsHasBeenSet;
 
                     /**
-                     * 实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul>
+                     * <p>实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul></p>
                      */
                     std::vector<int64_t> m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 续费模式。- 0：手动续费。- 1：自动续费。- 2：到期不再续费。
+                     * <p>续费模式。- 0：手动续费。- 1：自动续费。- 2：到期不再续费。</p>
                      */
                     std::vector<int64_t> m_autoRenew;
                     bool m_autoRenewHasBeenSet;
 
                     /**
-                     * 计费模式。<ul><li>postpaid：按量计费。</li><li>prepaid：包年包月。</li></ul>
+                     * <p>计费模式。<ul><li>postpaid：按量计费。</li><li>prepaid：包年包月。</li></ul></p>
                      */
                     std::string m_billingMode;
                     bool m_billingModeHasBeenSet;
 
                     /**
-                     * 实例类型。<ul><li>13：标准版。</li><li>14：集群版。</li></ul>
+                     * <p>实例类型。</p><p>枚举值：</p><ul><li>11： 存储版标准架构。</li><li>12： 存储版集群架构。</li><li>13： 极速版标准架构。</li><li>14： 极速版集群架构。</li></ul>
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 搜索关键词：支持实例 ID、实例名称、私有网络IP地址。
+                     * <p>搜索关键词：支持实例 ID、实例名称、私有网络IP地址。</p>
                      */
                     std::vector<std::string> m_searchKeys;
                     bool m_searchKeysHasBeenSet;
 
                     /**
-                     * 内部参数，用户可忽略。
+                     * <p>内部参数，用户可忽略。</p>
                      */
                     std::vector<int64_t> m_typeList;
                     bool m_typeListHasBeenSet;
 
                     /**
-                     * 内部参数，用户可忽略。
+                     * <p>内部参数，用户可忽略。</p>
                      */
                     std::string m_monitorVersion;
                     bool m_monitorVersionHasBeenSet;
 
                     /**
-                     * 废弃字段。请使用TagList传参。
+                     * <p>废弃字段。请使用TagList传参。</p>
                      */
                     InstanceTagInfo m_instanceTags;
                     bool m_instanceTagsHasBeenSet;
 
                     /**
-                     * 根据标签的 Key 筛选资源，该参数不配置或者数组设置为空值，则不根据标签Key进行过滤。
+                     * <p>根据标签的 Key 筛选资源，该参数不配置或者数组设置为空值，则不根据标签Key进行过滤。</p>
                      */
                     std::vector<std::string> m_tagKeys;
                     bool m_tagKeysHasBeenSet;
 
                     /**
-                     * 根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。
+                     * <p>根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。</p>
                      */
                     std::vector<InstanceTagInfo> m_tagList;
                     bool m_tagListHasBeenSet;

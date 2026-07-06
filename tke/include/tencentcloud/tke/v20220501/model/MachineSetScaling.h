@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点池最小副本数
-                     * @return MinReplicas 节点池最小副本数
+                     * 获取<p>节点池最小副本数</p>
+                     * @return MinReplicas <p>节点池最小副本数</p>
                      * 
                      */
                     int64_t GetMinReplicas() const;
 
                     /**
-                     * 设置节点池最小副本数
-                     * @param _minReplicas 节点池最小副本数
+                     * 设置<p>节点池最小副本数</p>
+                     * @param _minReplicas <p>节点池最小副本数</p>
                      * 
                      */
                     void SetMinReplicas(const int64_t& _minReplicas);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool MinReplicasHasBeenSet() const;
 
                     /**
-                     * 获取节点池最大副本数
-                     * @return MaxReplicas 节点池最大副本数
+                     * 获取<p>节点池最大副本数</p>
+                     * @return MaxReplicas <p>节点池最大副本数</p>
                      * 
                      */
                     int64_t GetMaxReplicas() const;
 
                     /**
-                     * 设置节点池最大副本数
-                     * @param _maxReplicas 节点池最大副本数
+                     * 设置<p>节点池最大副本数</p>
+                     * @param _maxReplicas <p>节点池最大副本数</p>
                      * 
                      */
                     void SetMaxReplicas(const int64_t& _maxReplicas);
@@ -89,18 +89,18 @@ namespace TencentCloud
                     bool MaxReplicasHasBeenSet() const;
 
                     /**
-                     * 获取节点池扩容策略。ZoneEquality：多可用区打散；ZonePriority：首选可用区优先；
+                     * 获取<p>节点池扩容策略。ZoneEquality：多可用区打散；ZonePriority：首选可用区优先；</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreatePolicy 节点池扩容策略。ZoneEquality：多可用区打散；ZonePriority：首选可用区优先；
+                     * @return CreatePolicy <p>节点池扩容策略。ZoneEquality：多可用区打散；ZonePriority：首选可用区优先；</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatePolicy() const;
 
                     /**
-                     * 设置节点池扩容策略。ZoneEquality：多可用区打散；ZonePriority：首选可用区优先；
+                     * 设置<p>节点池扩容策略。ZoneEquality：多可用区打散；ZonePriority：首选可用区优先；</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createPolicy 节点池扩容策略。ZoneEquality：多可用区打散；ZonePriority：首选可用区优先；
+                     * @param _createPolicy <p>节点池扩容策略。ZoneEquality：多可用区打散；ZonePriority：首选可用区优先；</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -113,26 +113,53 @@ namespace TencentCloud
                      */
                     bool CreatePolicyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>扩缩容模式</p><p>枚举值：</p><ul><li>ShutdownAndDelete： 释放模式，默认</li><li>Shutdown： 停机模式，关机不计费</li></ul><p>默认值：ShutdownAndDelete</p>
+                     * @return ScaleDownMode <p>扩缩容模式</p><p>枚举值：</p><ul><li>ShutdownAndDelete： 释放模式，默认</li><li>Shutdown： 停机模式，关机不计费</li></ul><p>默认值：ShutdownAndDelete</p>
+                     * 
+                     */
+                    std::string GetScaleDownMode() const;
+
+                    /**
+                     * 设置<p>扩缩容模式</p><p>枚举值：</p><ul><li>ShutdownAndDelete： 释放模式，默认</li><li>Shutdown： 停机模式，关机不计费</li></ul><p>默认值：ShutdownAndDelete</p>
+                     * @param _scaleDownMode <p>扩缩容模式</p><p>枚举值：</p><ul><li>ShutdownAndDelete： 释放模式，默认</li><li>Shutdown： 停机模式，关机不计费</li></ul><p>默认值：ShutdownAndDelete</p>
+                     * 
+                     */
+                    void SetScaleDownMode(const std::string& _scaleDownMode);
+
+                    /**
+                     * 判断参数 ScaleDownMode 是否已赋值
+                     * @return ScaleDownMode 是否已赋值
+                     * 
+                     */
+                    bool ScaleDownModeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 节点池最小副本数
+                     * <p>节点池最小副本数</p>
                      */
                     int64_t m_minReplicas;
                     bool m_minReplicasHasBeenSet;
 
                     /**
-                     * 节点池最大副本数
+                     * <p>节点池最大副本数</p>
                      */
                     int64_t m_maxReplicas;
                     bool m_maxReplicasHasBeenSet;
 
                     /**
-                     * 节点池扩容策略。ZoneEquality：多可用区打散；ZonePriority：首选可用区优先；
+                     * <p>节点池扩容策略。ZoneEquality：多可用区打散；ZonePriority：首选可用区优先；</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createPolicy;
                     bool m_createPolicyHasBeenSet;
+
+                    /**
+                     * <p>扩缩容模式</p><p>枚举值：</p><ul><li>ShutdownAndDelete： 释放模式，默认</li><li>Shutdown： 停机模式，关机不计费</li></ul><p>默认值：ShutdownAndDelete</p>
+                     */
+                    std::string m_scaleDownMode;
+                    bool m_scaleDownModeHasBeenSet;
 
                 };
             }

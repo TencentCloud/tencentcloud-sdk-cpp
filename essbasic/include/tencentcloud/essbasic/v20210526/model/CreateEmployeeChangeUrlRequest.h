@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool OpenIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>待修改的员工手机号，支持海外格式</p>
-                     * @return NewMobile <p>待修改的员工手机号，支持海外格式</p>
+                     * 获取<p>待修改的员工手机号，支持海外格式</p><p>参数格式：<br><br>国内：+86 1825195xxxx 或者 1825195xxxx <br><br>海外：+12 12345xxx</p>
+                     * @return NewMobile <p>待修改的员工手机号，支持海外格式</p><p>参数格式：<br><br>国内：+86 1825195xxxx 或者 1825195xxxx <br><br>海外：+12 12345xxx</p>
                      * 
                      */
                     std::string GetNewMobile() const;
 
                     /**
-                     * 设置<p>待修改的员工手机号，支持海外格式</p>
-                     * @param _newMobile <p>待修改的员工手机号，支持海外格式</p>
+                     * 设置<p>待修改的员工手机号，支持海外格式</p><p>参数格式：<br><br>国内：+86 1825195xxxx 或者 1825195xxxx <br><br>海外：+12 12345xxx</p>
+                     * @param _newMobile <p>待修改的员工手机号，支持海外格式</p><p>参数格式：<br><br>国内：+86 1825195xxxx 或者 1825195xxxx <br><br>海外：+12 12345xxx</p>
                      * 
                      */
                     void SetNewMobile(const std::string& _newMobile);
@@ -121,7 +121,7 @@ namespace TencentCloud
                     bool m_openIdHasBeenSet;
 
                     /**
-                     * <p>待修改的员工手机号，支持海外格式</p>
+                     * <p>待修改的员工手机号，支持海外格式</p><p>参数格式：<br><br>国内：+86 1825195xxxx 或者 1825195xxxx <br><br>海外：+12 12345xxx</p>
                      */
                     std::string m_newMobile;
                     bool m_newMobileHasBeenSet;

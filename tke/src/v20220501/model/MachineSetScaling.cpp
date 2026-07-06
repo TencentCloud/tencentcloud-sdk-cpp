@@ -23,7 +23,8 @@ using namespace std;
 MachineSetScaling::MachineSetScaling() :
     m_minReplicasHasBeenSet(false),
     m_maxReplicasHasBeenSet(false),
-    m_createPolicyHasBeenSet(false)
+    m_createPolicyHasBeenSet(false),
+    m_scaleDownModeHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome MachineSetScaling::Deserialize(const rapidjson::Value &value
         m_createPolicyHasBeenSet = true;
     }
 
+    if (value.HasMember("ScaleDownMode") && !value["ScaleDownMode"].IsNull())
+    {
+        if (!value["ScaleDownMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MachineSetScaling.ScaleDownMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scaleDownMode = string(value["ScaleDownMode"].GetString());
+        m_scaleDownModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void MachineSetScaling::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "CreatePolicy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createPolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scaleDownModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScaleDownMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scaleDownMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void MachineSetScaling::SetCreatePolicy(const string& _createPolicy)
 bool MachineSetScaling::CreatePolicyHasBeenSet() const
 {
     return m_createPolicyHasBeenSet;
+}
+
+string MachineSetScaling::GetScaleDownMode() const
+{
+    return m_scaleDownMode;
+}
+
+void MachineSetScaling::SetScaleDownMode(const string& _scaleDownMode)
+{
+    m_scaleDownMode = _scaleDownMode;
+    m_scaleDownModeHasBeenSet = true;
+}
+
+bool MachineSetScaling::ScaleDownModeHasBeenSet() const
+{
+    return m_scaleDownModeHasBeenSet;
 }
 

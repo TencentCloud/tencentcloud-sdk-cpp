@@ -28,6 +28,7 @@
 #include <tencentcloud/emr/v20190103/model/CdbInfo.h>
 #include <tencentcloud/emr/v20190103/model/Tag.h>
 #include <tencentcloud/emr/v20190103/model/SubnetInfo.h>
+#include <tencentcloud/emr/v20190103/model/DiskHealthIssue.h>
 
 
 namespace TencentCloud
@@ -51,15 +52,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户APPID
-                     * @return AppId 用户APPID
+                     * 获取<p>用户APPID</p>
+                     * @return AppId <p>用户APPID</p>
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
-                     * 设置用户APPID
-                     * @param _appId 用户APPID
+                     * 设置<p>用户APPID</p>
+                     * @param _appId <p>用户APPID</p>
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -72,15 +73,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取序列号
-                     * @return SerialNo 序列号
+                     * 获取<p>序列号</p>
+                     * @return SerialNo <p>序列号</p>
                      * 
                      */
                     std::string GetSerialNo() const;
 
                     /**
-                     * 设置序列号
-                     * @param _serialNo 序列号
+                     * 设置<p>序列号</p>
+                     * @param _serialNo <p>序列号</p>
                      * 
                      */
                     void SetSerialNo(const std::string& _serialNo);
@@ -93,15 +94,15 @@ namespace TencentCloud
                     bool SerialNoHasBeenSet() const;
 
                     /**
-                     * 获取机器实例ID
-                     * @return OrderNo 机器实例ID
+                     * 获取<p>机器实例ID</p>
+                     * @return OrderNo <p>机器实例ID</p>
                      * 
                      */
                     std::string GetOrderNo() const;
 
                     /**
-                     * 设置机器实例ID
-                     * @param _orderNo 机器实例ID
+                     * 设置<p>机器实例ID</p>
+                     * @param _orderNo <p>机器实例ID</p>
                      * 
                      */
                     void SetOrderNo(const std::string& _orderNo);
@@ -114,15 +115,15 @@ namespace TencentCloud
                     bool OrderNoHasBeenSet() const;
 
                     /**
-                     * 获取master节点绑定外网IP
-                     * @return WanIp master节点绑定外网IP
+                     * 获取<p>master节点绑定外网IP</p>
+                     * @return WanIp <p>master节点绑定外网IP</p>
                      * 
                      */
                     std::string GetWanIp() const;
 
                     /**
-                     * 设置master节点绑定外网IP
-                     * @param _wanIp master节点绑定外网IP
+                     * 设置<p>master节点绑定外网IP</p>
+                     * @param _wanIp <p>master节点绑定外网IP</p>
                      * 
                      */
                     void SetWanIp(const std::string& _wanIp);
@@ -135,19 +136,15 @@ namespace TencentCloud
                     bool WanIpHasBeenSet() const;
 
                     /**
-                     * 获取节点类型。0:common节点；1:master节点
-；2:core节点；3:task节点
-                     * @return Flag 节点类型。0:common节点；1:master节点
-；2:core节点；3:task节点
+                     * 获取<p>节点类型。0:common节点；1:master节点<br>；2:core节点；3:task节点</p>
+                     * @return Flag <p>节点类型。0:common节点；1:master节点<br>；2:core节点；3:task节点</p>
                      * 
                      */
                     int64_t GetFlag() const;
 
                     /**
-                     * 设置节点类型。0:common节点；1:master节点
-；2:core节点；3:task节点
-                     * @param _flag 节点类型。0:common节点；1:master节点
-；2:core节点；3:task节点
+                     * 设置<p>节点类型。0:common节点；1:master节点<br>；2:core节点；3:task节点</p>
+                     * @param _flag <p>节点类型。0:common节点；1:master节点<br>；2:core节点；3:task节点</p>
                      * 
                      */
                     void SetFlag(const int64_t& _flag);
@@ -160,15 +157,15 @@ namespace TencentCloud
                     bool FlagHasBeenSet() const;
 
                     /**
-                     * 获取节点规格
-                     * @return Spec 节点规格
+                     * 获取<p>节点规格</p>
+                     * @return Spec <p>节点规格</p>
                      * 
                      */
                     std::string GetSpec() const;
 
                     /**
-                     * 设置节点规格
-                     * @param _spec 节点规格
+                     * 设置<p>节点规格</p>
+                     * @param _spec <p>节点规格</p>
                      * 
                      */
                     void SetSpec(const std::string& _spec);
@@ -181,15 +178,15 @@ namespace TencentCloud
                     bool SpecHasBeenSet() const;
 
                     /**
-                     * 获取节点核数
-                     * @return CpuNum 节点核数
+                     * 获取<p>节点核数</p>
+                     * @return CpuNum <p>节点核数</p>
                      * 
                      */
                     int64_t GetCpuNum() const;
 
                     /**
-                     * 设置节点核数
-                     * @param _cpuNum 节点核数
+                     * 设置<p>节点核数</p>
+                     * @param _cpuNum <p>节点核数</p>
                      * 
                      */
                     void SetCpuNum(const int64_t& _cpuNum);
@@ -202,15 +199,15 @@ namespace TencentCloud
                     bool CpuNumHasBeenSet() const;
 
                     /**
-                     * 获取节点内存,单位b
-                     * @return MemSize 节点内存,单位b
+                     * 获取<p>节点内存,单位b</p>
+                     * @return MemSize <p>节点内存,单位b</p>
                      * 
                      */
                     int64_t GetMemSize() const;
 
                     /**
-                     * 设置节点内存,单位b
-                     * @param _memSize 节点内存,单位b
+                     * 设置<p>节点内存,单位b</p>
+                     * @param _memSize <p>节点内存,单位b</p>
                      * 
                      */
                     void SetMemSize(const int64_t& _memSize);
@@ -223,15 +220,15 @@ namespace TencentCloud
                     bool MemSizeHasBeenSet() const;
 
                     /**
-                     * 获取节点内存描述，单位GB
-                     * @return MemDesc 节点内存描述，单位GB
+                     * 获取<p>节点内存描述，单位GB</p>
+                     * @return MemDesc <p>节点内存描述，单位GB</p>
                      * 
                      */
                     std::string GetMemDesc() const;
 
                     /**
-                     * 设置节点内存描述，单位GB
-                     * @param _memDesc 节点内存描述，单位GB
+                     * 设置<p>节点内存描述，单位GB</p>
+                     * @param _memDesc <p>节点内存描述，单位GB</p>
                      * 
                      */
                     void SetMemDesc(const std::string& _memDesc);
@@ -244,15 +241,15 @@ namespace TencentCloud
                     bool MemDescHasBeenSet() const;
 
                     /**
-                     * 获取节点所在region
-                     * @return RegionId 节点所在region
+                     * 获取<p>节点所在region</p>
+                     * @return RegionId <p>节点所在region</p>
                      * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
-                     * 设置节点所在region
-                     * @param _regionId 节点所在region
+                     * 设置<p>节点所在region</p>
+                     * @param _regionId <p>节点所在region</p>
                      * 
                      */
                     void SetRegionId(const int64_t& _regionId);
@@ -265,15 +262,15 @@ namespace TencentCloud
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取节点所在Zone
-                     * @return ZoneId 节点所在Zone
+                     * 获取<p>节点所在Zone</p>
+                     * @return ZoneId <p>节点所在Zone</p>
                      * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
-                     * 设置节点所在Zone
-                     * @param _zoneId 节点所在Zone
+                     * 设置<p>节点所在Zone</p>
+                     * @param _zoneId <p>节点所在Zone</p>
                      * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
@@ -286,15 +283,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取申请时间
-                     * @return ApplyTime 申请时间
+                     * 获取<p>申请时间</p>
+                     * @return ApplyTime <p>申请时间</p>
                      * 
                      */
                     std::string GetApplyTime() const;
 
                     /**
-                     * 设置申请时间
-                     * @param _applyTime 申请时间
+                     * 设置<p>申请时间</p>
+                     * @param _applyTime <p>申请时间</p>
                      * 
                      */
                     void SetApplyTime(const std::string& _applyTime);
@@ -307,15 +304,15 @@ namespace TencentCloud
                     bool ApplyTimeHasBeenSet() const;
 
                     /**
-                     * 获取释放时间
-                     * @return FreeTime 释放时间
+                     * 获取<p>释放时间</p>
+                     * @return FreeTime <p>释放时间</p>
                      * 
                      */
                     std::string GetFreeTime() const;
 
                     /**
-                     * 设置释放时间
-                     * @param _freeTime 释放时间
+                     * 设置<p>释放时间</p>
+                     * @param _freeTime <p>释放时间</p>
                      * 
                      */
                     void SetFreeTime(const std::string& _freeTime);
@@ -328,15 +325,15 @@ namespace TencentCloud
                     bool FreeTimeHasBeenSet() const;
 
                     /**
-                     * 获取硬盘大小
-                     * @return DiskSize 硬盘大小
+                     * 获取<p>硬盘大小</p>
+                     * @return DiskSize <p>硬盘大小</p>
                      * 
                      */
                     std::string GetDiskSize() const;
 
                     /**
-                     * 设置硬盘大小
-                     * @param _diskSize 硬盘大小
+                     * 设置<p>硬盘大小</p>
+                     * @param _diskSize <p>硬盘大小</p>
                      * 
                      */
                     void SetDiskSize(const std::string& _diskSize);
@@ -349,15 +346,15 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取节点描述
-                     * @return NameTag 节点描述
+                     * 获取<p>节点描述</p>
+                     * @return NameTag <p>节点描述</p>
                      * 
                      */
                     std::string GetNameTag() const;
 
                     /**
-                     * 设置节点描述
-                     * @param _nameTag 节点描述
+                     * 设置<p>节点描述</p>
+                     * @param _nameTag <p>节点描述</p>
                      * 
                      */
                     void SetNameTag(const std::string& _nameTag);
@@ -370,15 +367,15 @@ namespace TencentCloud
                     bool NameTagHasBeenSet() const;
 
                     /**
-                     * 获取节点部署服务
-                     * @return Services 节点部署服务
+                     * 获取<p>节点部署服务</p>
+                     * @return Services <p>节点部署服务</p>
                      * 
                      */
                     std::string GetServices() const;
 
                     /**
-                     * 设置节点部署服务
-                     * @param _services 节点部署服务
+                     * 设置<p>节点部署服务</p>
+                     * @param _services <p>节点部署服务</p>
                      * 
                      */
                     void SetServices(const std::string& _services);
@@ -391,19 +388,15 @@ namespace TencentCloud
                     bool ServicesHasBeenSet() const;
 
                     /**
-                     * 获取磁盘类型，1 :本地盘 2 :云硬盘 3 : 本地SSD 4 : 云SSD 5 : 高效云盘 6 : 增强型SSD云硬盘 11 : 吞吐型云硬盘 12 : 极速型SSD云硬盘 13 : 通用型SSD云硬盘 14 : 大数据型云硬盘 15 : 高IO型云硬盘 16 : 远端SSD盘
-
-                     * @return StorageType 磁盘类型，1 :本地盘 2 :云硬盘 3 : 本地SSD 4 : 云SSD 5 : 高效云盘 6 : 增强型SSD云硬盘 11 : 吞吐型云硬盘 12 : 极速型SSD云硬盘 13 : 通用型SSD云硬盘 14 : 大数据型云硬盘 15 : 高IO型云硬盘 16 : 远端SSD盘
-
+                     * 获取<p>磁盘类型，1 :本地盘 2 :云硬盘 3 : 本地SSD 4 : 云SSD 5 : 高效云盘 6 : 增强型SSD云硬盘 11 : 吞吐型云硬盘 12 : 极速型SSD云硬盘 13 : 通用型SSD云硬盘 14 : 大数据型云硬盘 15 : 高IO型云硬盘 16 : 远端SSD盘</p>
+                     * @return StorageType <p>磁盘类型，1 :本地盘 2 :云硬盘 3 : 本地SSD 4 : 云SSD 5 : 高效云盘 6 : 增强型SSD云硬盘 11 : 吞吐型云硬盘 12 : 极速型SSD云硬盘 13 : 通用型SSD云硬盘 14 : 大数据型云硬盘 15 : 高IO型云硬盘 16 : 远端SSD盘</p>
                      * 
                      */
                     int64_t GetStorageType() const;
 
                     /**
-                     * 设置磁盘类型，1 :本地盘 2 :云硬盘 3 : 本地SSD 4 : 云SSD 5 : 高效云盘 6 : 增强型SSD云硬盘 11 : 吞吐型云硬盘 12 : 极速型SSD云硬盘 13 : 通用型SSD云硬盘 14 : 大数据型云硬盘 15 : 高IO型云硬盘 16 : 远端SSD盘
-
-                     * @param _storageType 磁盘类型，1 :本地盘 2 :云硬盘 3 : 本地SSD 4 : 云SSD 5 : 高效云盘 6 : 增强型SSD云硬盘 11 : 吞吐型云硬盘 12 : 极速型SSD云硬盘 13 : 通用型SSD云硬盘 14 : 大数据型云硬盘 15 : 高IO型云硬盘 16 : 远端SSD盘
-
+                     * 设置<p>磁盘类型，1 :本地盘 2 :云硬盘 3 : 本地SSD 4 : 云SSD 5 : 高效云盘 6 : 增强型SSD云硬盘 11 : 吞吐型云硬盘 12 : 极速型SSD云硬盘 13 : 通用型SSD云硬盘 14 : 大数据型云硬盘 15 : 高IO型云硬盘 16 : 远端SSD盘</p>
+                     * @param _storageType <p>磁盘类型，1 :本地盘 2 :云硬盘 3 : 本地SSD 4 : 云SSD 5 : 高效云盘 6 : 增强型SSD云硬盘 11 : 吞吐型云硬盘 12 : 极速型SSD云硬盘 13 : 通用型SSD云硬盘 14 : 大数据型云硬盘 15 : 高IO型云硬盘 16 : 远端SSD盘</p>
                      * 
                      */
                     void SetStorageType(const int64_t& _storageType);
@@ -416,15 +409,15 @@ namespace TencentCloud
                     bool StorageTypeHasBeenSet() const;
 
                     /**
-                     * 获取系统盘大小，单位GB
-                     * @return RootSize 系统盘大小，单位GB
+                     * 获取<p>系统盘大小，单位GB</p>
+                     * @return RootSize <p>系统盘大小，单位GB</p>
                      * 
                      */
                     int64_t GetRootSize() const;
 
                     /**
-                     * 设置系统盘大小，单位GB
-                     * @param _rootSize 系统盘大小，单位GB
+                     * 设置<p>系统盘大小，单位GB</p>
+                     * @param _rootSize <p>系统盘大小，单位GB</p>
                      * 
                      */
                     void SetRootSize(const int64_t& _rootSize);
@@ -437,15 +430,15 @@ namespace TencentCloud
                     bool RootSizeHasBeenSet() const;
 
                     /**
-                     * 获取付费类型，0：按量计费；1：包年包月
-                     * @return ChargeType 付费类型，0：按量计费；1：包年包月
+                     * 获取<p>付费类型，0：按量计费；1：包年包月</p>
+                     * @return ChargeType <p>付费类型，0：按量计费；1：包年包月</p>
                      * 
                      */
                     int64_t GetChargeType() const;
 
                     /**
-                     * 设置付费类型，0：按量计费；1：包年包月
-                     * @param _chargeType 付费类型，0：按量计费；1：包年包月
+                     * 设置<p>付费类型，0：按量计费；1：包年包月</p>
+                     * @param _chargeType <p>付费类型，0：按量计费；1：包年包月</p>
                      * 
                      */
                     void SetChargeType(const int64_t& _chargeType);
@@ -458,15 +451,15 @@ namespace TencentCloud
                     bool ChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取数据库IP
-                     * @return CdbIp 数据库IP
+                     * 获取<p>数据库IP</p>
+                     * @return CdbIp <p>数据库IP</p>
                      * 
                      */
                     std::string GetCdbIp() const;
 
                     /**
-                     * 设置数据库IP
-                     * @param _cdbIp 数据库IP
+                     * 设置<p>数据库IP</p>
+                     * @param _cdbIp <p>数据库IP</p>
                      * 
                      */
                     void SetCdbIp(const std::string& _cdbIp);
@@ -479,15 +472,15 @@ namespace TencentCloud
                     bool CdbIpHasBeenSet() const;
 
                     /**
-                     * 获取数据库端口
-                     * @return CdbPort 数据库端口
+                     * 获取<p>数据库端口</p>
+                     * @return CdbPort <p>数据库端口</p>
                      * 
                      */
                     int64_t GetCdbPort() const;
 
                     /**
-                     * 设置数据库端口
-                     * @param _cdbPort 数据库端口
+                     * 设置<p>数据库端口</p>
+                     * @param _cdbPort <p>数据库端口</p>
                      * 
                      */
                     void SetCdbPort(const int64_t& _cdbPort);
@@ -500,15 +493,15 @@ namespace TencentCloud
                     bool CdbPortHasBeenSet() const;
 
                     /**
-                     * 获取硬盘容量,单位b
-                     * @return HwDiskSize 硬盘容量,单位b
+                     * 获取<p>硬盘容量,单位b</p>
+                     * @return HwDiskSize <p>硬盘容量,单位b</p>
                      * 
                      */
                     int64_t GetHwDiskSize() const;
 
                     /**
-                     * 设置硬盘容量,单位b
-                     * @param _hwDiskSize 硬盘容量,单位b
+                     * 设置<p>硬盘容量,单位b</p>
+                     * @param _hwDiskSize <p>硬盘容量,单位b</p>
                      * 
                      */
                     void SetHwDiskSize(const int64_t& _hwDiskSize);
@@ -521,15 +514,15 @@ namespace TencentCloud
                     bool HwDiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取硬盘容量描述
-                     * @return HwDiskSizeDesc 硬盘容量描述
+                     * 获取<p>硬盘容量描述</p>
+                     * @return HwDiskSizeDesc <p>硬盘容量描述</p>
                      * 
                      */
                     std::string GetHwDiskSizeDesc() const;
 
                     /**
-                     * 设置硬盘容量描述
-                     * @param _hwDiskSizeDesc 硬盘容量描述
+                     * 设置<p>硬盘容量描述</p>
+                     * @param _hwDiskSizeDesc <p>硬盘容量描述</p>
                      * 
                      */
                     void SetHwDiskSizeDesc(const std::string& _hwDiskSizeDesc);
@@ -542,15 +535,15 @@ namespace TencentCloud
                     bool HwDiskSizeDescHasBeenSet() const;
 
                     /**
-                     * 获取内存容量，单位b
-                     * @return HwMemSize 内存容量，单位b
+                     * 获取<p>内存容量，单位b</p>
+                     * @return HwMemSize <p>内存容量，单位b</p>
                      * 
                      */
                     int64_t GetHwMemSize() const;
 
                     /**
-                     * 设置内存容量，单位b
-                     * @param _hwMemSize 内存容量，单位b
+                     * 设置<p>内存容量，单位b</p>
+                     * @param _hwMemSize <p>内存容量，单位b</p>
                      * 
                      */
                     void SetHwMemSize(const int64_t& _hwMemSize);
@@ -563,15 +556,15 @@ namespace TencentCloud
                     bool HwMemSizeHasBeenSet() const;
 
                     /**
-                     * 获取内存容量描述
-                     * @return HwMemSizeDesc 内存容量描述
+                     * 获取<p>内存容量描述</p>
+                     * @return HwMemSizeDesc <p>内存容量描述</p>
                      * 
                      */
                     std::string GetHwMemSizeDesc() const;
 
                     /**
-                     * 设置内存容量描述
-                     * @param _hwMemSizeDesc 内存容量描述
+                     * 设置<p>内存容量描述</p>
+                     * @param _hwMemSizeDesc <p>内存容量描述</p>
                      * 
                      */
                     void SetHwMemSizeDesc(const std::string& _hwMemSizeDesc);
@@ -584,15 +577,15 @@ namespace TencentCloud
                     bool HwMemSizeDescHasBeenSet() const;
 
                     /**
-                     * 获取过期时间
-                     * @return ExpireTime 过期时间
+                     * 获取<p>过期时间</p>
+                     * @return ExpireTime <p>过期时间</p>
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置过期时间
-                     * @param _expireTime 过期时间
+                     * 设置<p>过期时间</p>
+                     * @param _expireTime <p>过期时间</p>
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -605,15 +598,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取节点资源ID
-                     * @return EmrResourceId 节点资源ID
+                     * 获取<p>节点资源ID</p>
+                     * @return EmrResourceId <p>节点资源ID</p>
                      * 
                      */
                     std::string GetEmrResourceId() const;
 
                     /**
-                     * 设置节点资源ID
-                     * @param _emrResourceId 节点资源ID
+                     * 设置<p>节点资源ID</p>
+                     * @param _emrResourceId <p>节点资源ID</p>
                      * 
                      */
                     void SetEmrResourceId(const std::string& _emrResourceId);
@@ -626,15 +619,15 @@ namespace TencentCloud
                     bool EmrResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取续费标志
-                     * @return IsAutoRenew 续费标志
+                     * 获取<p>续费标志</p>
+                     * @return IsAutoRenew <p>续费标志</p>
                      * 
                      */
                     int64_t GetIsAutoRenew() const;
 
                     /**
-                     * 设置续费标志
-                     * @param _isAutoRenew 续费标志
+                     * 设置<p>续费标志</p>
+                     * @param _isAutoRenew <p>续费标志</p>
                      * 
                      */
                     void SetIsAutoRenew(const int64_t& _isAutoRenew);
@@ -647,15 +640,15 @@ namespace TencentCloud
                     bool IsAutoRenewHasBeenSet() const;
 
                     /**
-                     * 获取设备标识
-                     * @return DeviceClass 设备标识
+                     * 获取<p>设备标识</p>
+                     * @return DeviceClass <p>设备标识</p>
                      * 
                      */
                     std::string GetDeviceClass() const;
 
                     /**
-                     * 设置设备标识
-                     * @param _deviceClass 设备标识
+                     * 设置<p>设备标识</p>
+                     * @param _deviceClass <p>设备标识</p>
                      * 
                      */
                     void SetDeviceClass(const std::string& _deviceClass);
@@ -668,15 +661,15 @@ namespace TencentCloud
                     bool DeviceClassHasBeenSet() const;
 
                     /**
-                     * 获取支持变配
-                     * @return Mutable 支持变配
+                     * 获取<p>支持变配</p>
+                     * @return Mutable <p>支持变配</p>
                      * 
                      */
                     int64_t GetMutable() const;
 
                     /**
-                     * 设置支持变配
-                     * @param _mutable 支持变配
+                     * 设置<p>支持变配</p>
+                     * @param _mutable <p>支持变配</p>
                      * 
                      */
                     void SetMutable(const int64_t& _mutable);
@@ -689,18 +682,18 @@ namespace TencentCloud
                     bool MutableHasBeenSet() const;
 
                     /**
-                     * 获取多云盘
+                     * 获取<p>多云盘</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MCMultiDisk 多云盘
+                     * @return MCMultiDisk <p>多云盘</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MultiDiskMC> GetMCMultiDisk() const;
 
                     /**
-                     * 设置多云盘
+                     * 设置<p>多云盘</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mCMultiDisk 多云盘
+                     * @param _mCMultiDisk <p>多云盘</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -714,18 +707,18 @@ namespace TencentCloud
                     bool MCMultiDiskHasBeenSet() const;
 
                     /**
-                     * 获取数据库信息
+                     * 获取<p>数据库信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CdbNodeInfo 数据库信息
+                     * @return CdbNodeInfo <p>数据库信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CdbInfo GetCdbNodeInfo() const;
 
                     /**
-                     * 设置数据库信息
+                     * 设置<p>数据库信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cdbNodeInfo 数据库信息
+                     * @param _cdbNodeInfo <p>数据库信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -739,15 +732,15 @@ namespace TencentCloud
                     bool CdbNodeInfoHasBeenSet() const;
 
                     /**
-                     * 获取内网IP
-                     * @return Ip 内网IP
+                     * 获取<p>内网IP</p>
+                     * @return Ip <p>内网IP</p>
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置内网IP
-                     * @param _ip 内网IP
+                     * 设置<p>内网IP</p>
+                     * @param _ip <p>内网IP</p>
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -760,15 +753,15 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取此节点是否可销毁，1可销毁，0不可销毁
-                     * @return Destroyable 此节点是否可销毁，1可销毁，0不可销毁
+                     * 获取<p>此节点是否可销毁，1可销毁，0不可销毁</p>
+                     * @return Destroyable <p>此节点是否可销毁，1可销毁，0不可销毁</p>
                      * 
                      */
                     int64_t GetDestroyable() const;
 
                     /**
-                     * 设置此节点是否可销毁，1可销毁，0不可销毁
-                     * @param _destroyable 此节点是否可销毁，1可销毁，0不可销毁
+                     * 设置<p>此节点是否可销毁，1可销毁，0不可销毁</p>
+                     * @param _destroyable <p>此节点是否可销毁，1可销毁，0不可销毁</p>
                      * 
                      */
                     void SetDestroyable(const int64_t& _destroyable);
@@ -781,18 +774,18 @@ namespace TencentCloud
                     bool DestroyableHasBeenSet() const;
 
                     /**
-                     * 获取节点绑定的标签
+                     * 获取<p>节点绑定的标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags 节点绑定的标签
+                     * @return Tags <p>节点绑定的标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置节点绑定的标签
+                     * 设置<p>节点绑定的标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tags 节点绑定的标签
+                     * @param _tags <p>节点绑定的标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -806,15 +799,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取是否是自动扩缩容节点，0为普通节点，1为自动扩缩容节点。
-                     * @return AutoFlag 是否是自动扩缩容节点，0为普通节点，1为自动扩缩容节点。
+                     * 获取<p>是否是自动扩缩容节点，0为普通节点，1为自动扩缩容节点。</p>
+                     * @return AutoFlag <p>是否是自动扩缩容节点，0为普通节点，1为自动扩缩容节点。</p>
                      * 
                      */
                     int64_t GetAutoFlag() const;
 
                     /**
-                     * 设置是否是自动扩缩容节点，0为普通节点，1为自动扩缩容节点。
-                     * @param _autoFlag 是否是自动扩缩容节点，0为普通节点，1为自动扩缩容节点。
+                     * 设置<p>是否是自动扩缩容节点，0为普通节点，1为自动扩缩容节点。</p>
+                     * @param _autoFlag <p>是否是自动扩缩容节点，0为普通节点，1为自动扩缩容节点。</p>
                      * 
                      */
                     void SetAutoFlag(const int64_t& _autoFlag);
@@ -827,15 +820,15 @@ namespace TencentCloud
                     bool AutoFlagHasBeenSet() const;
 
                     /**
-                     * 获取资源类型, host/pod
-                     * @return HardwareResourceType 资源类型, host/pod
+                     * 获取<p>资源类型, host/pod</p>
+                     * @return HardwareResourceType <p>资源类型, host/pod</p>
                      * 
                      */
                     std::string GetHardwareResourceType() const;
 
                     /**
-                     * 设置资源类型, host/pod
-                     * @param _hardwareResourceType 资源类型, host/pod
+                     * 设置<p>资源类型, host/pod</p>
+                     * @param _hardwareResourceType <p>资源类型, host/pod</p>
                      * 
                      */
                     void SetHardwareResourceType(const std::string& _hardwareResourceType);
@@ -848,15 +841,15 @@ namespace TencentCloud
                     bool HardwareResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否浮动规格，1是，0否
-                     * @return IsDynamicSpec 是否浮动规格，1是，0否
+                     * 获取<p>是否浮动规格，1是，0否</p>
+                     * @return IsDynamicSpec <p>是否浮动规格，1是，0否</p>
                      * 
                      */
                     int64_t GetIsDynamicSpec() const;
 
                     /**
-                     * 设置是否浮动规格，1是，0否
-                     * @param _isDynamicSpec 是否浮动规格，1是，0否
+                     * 设置<p>是否浮动规格，1是，0否</p>
+                     * @param _isDynamicSpec <p>是否浮动规格，1是，0否</p>
                      * 
                      */
                     void SetIsDynamicSpec(const int64_t& _isDynamicSpec);
@@ -869,15 +862,15 @@ namespace TencentCloud
                     bool IsDynamicSpecHasBeenSet() const;
 
                     /**
-                     * 获取浮动规格值json字符串
-                     * @return DynamicPodSpec 浮动规格值json字符串
+                     * 获取<p>浮动规格值json字符串</p>
+                     * @return DynamicPodSpec <p>浮动规格值json字符串</p>
                      * 
                      */
                     std::string GetDynamicPodSpec() const;
 
                     /**
-                     * 设置浮动规格值json字符串
-                     * @param _dynamicPodSpec 浮动规格值json字符串
+                     * 设置<p>浮动规格值json字符串</p>
+                     * @param _dynamicPodSpec <p>浮动规格值json字符串</p>
                      * 
                      */
                     void SetDynamicPodSpec(const std::string& _dynamicPodSpec);
@@ -890,15 +883,15 @@ namespace TencentCloud
                     bool DynamicPodSpecHasBeenSet() const;
 
                     /**
-                     * 获取是否支持变更计费类型 1是，0否
-                     * @return SupportModifyPayMode 是否支持变更计费类型 1是，0否
+                     * 获取<p>是否支持变更计费类型 1是，0否</p>
+                     * @return SupportModifyPayMode <p>是否支持变更计费类型 1是，0否</p>
                      * 
                      */
                     int64_t GetSupportModifyPayMode() const;
 
                     /**
-                     * 设置是否支持变更计费类型 1是，0否
-                     * @param _supportModifyPayMode 是否支持变更计费类型 1是，0否
+                     * 设置<p>是否支持变更计费类型 1是，0否</p>
+                     * @param _supportModifyPayMode <p>是否支持变更计费类型 1是，0否</p>
                      * 
                      */
                     void SetSupportModifyPayMode(const int64_t& _supportModifyPayMode);
@@ -911,19 +904,15 @@ namespace TencentCloud
                     bool SupportModifyPayModeHasBeenSet() const;
 
                     /**
-                     * 获取系统盘类型，1 :本地盘 2 :云硬盘 3 : 本地SSD 4 : 云SSD 5 : 高效云盘 6 : 增强型SSD云硬盘 11 : 吞吐型云硬盘 12 : 极速型SSD云硬盘 13 : 通用型SSD云硬盘 14 : 大数据型云硬盘 15 : 高IO型云硬盘 16 : 远端SSD盘
-
-                     * @return RootStorageType 系统盘类型，1 :本地盘 2 :云硬盘 3 : 本地SSD 4 : 云SSD 5 : 高效云盘 6 : 增强型SSD云硬盘 11 : 吞吐型云硬盘 12 : 极速型SSD云硬盘 13 : 通用型SSD云硬盘 14 : 大数据型云硬盘 15 : 高IO型云硬盘 16 : 远端SSD盘
-
+                     * 获取<p>系统盘类型，1 :本地盘 2 :云硬盘 3 : 本地SSD 4 : 云SSD 5 : 高效云盘 6 : 增强型SSD云硬盘 11 : 吞吐型云硬盘 12 : 极速型SSD云硬盘 13 : 通用型SSD云硬盘 14 : 大数据型云硬盘 15 : 高IO型云硬盘 16 : 远端SSD盘</p>
+                     * @return RootStorageType <p>系统盘类型，1 :本地盘 2 :云硬盘 3 : 本地SSD 4 : 云SSD 5 : 高效云盘 6 : 增强型SSD云硬盘 11 : 吞吐型云硬盘 12 : 极速型SSD云硬盘 13 : 通用型SSD云硬盘 14 : 大数据型云硬盘 15 : 高IO型云硬盘 16 : 远端SSD盘</p>
                      * 
                      */
                     int64_t GetRootStorageType() const;
 
                     /**
-                     * 设置系统盘类型，1 :本地盘 2 :云硬盘 3 : 本地SSD 4 : 云SSD 5 : 高效云盘 6 : 增强型SSD云硬盘 11 : 吞吐型云硬盘 12 : 极速型SSD云硬盘 13 : 通用型SSD云硬盘 14 : 大数据型云硬盘 15 : 高IO型云硬盘 16 : 远端SSD盘
-
-                     * @param _rootStorageType 系统盘类型，1 :本地盘 2 :云硬盘 3 : 本地SSD 4 : 云SSD 5 : 高效云盘 6 : 增强型SSD云硬盘 11 : 吞吐型云硬盘 12 : 极速型SSD云硬盘 13 : 通用型SSD云硬盘 14 : 大数据型云硬盘 15 : 高IO型云硬盘 16 : 远端SSD盘
-
+                     * 设置<p>系统盘类型，1 :本地盘 2 :云硬盘 3 : 本地SSD 4 : 云SSD 5 : 高效云盘 6 : 增强型SSD云硬盘 11 : 吞吐型云硬盘 12 : 极速型SSD云硬盘 13 : 通用型SSD云硬盘 14 : 大数据型云硬盘 15 : 高IO型云硬盘 16 : 远端SSD盘</p>
+                     * @param _rootStorageType <p>系统盘类型，1 :本地盘 2 :云硬盘 3 : 本地SSD 4 : 云SSD 5 : 高效云盘 6 : 增强型SSD云硬盘 11 : 吞吐型云硬盘 12 : 极速型SSD云硬盘 13 : 通用型SSD云硬盘 14 : 大数据型云硬盘 15 : 高IO型云硬盘 16 : 远端SSD盘</p>
                      * 
                      */
                     void SetRootStorageType(const int64_t& _rootStorageType);
@@ -936,15 +925,15 @@ namespace TencentCloud
                     bool RootStorageTypeHasBeenSet() const;
 
                     /**
-                     * 获取可用区信息
-                     * @return Zone 可用区信息
+                     * 获取<p>可用区信息</p>
+                     * @return Zone <p>可用区信息</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区信息
-                     * @param _zone 可用区信息
+                     * 设置<p>可用区信息</p>
+                     * @param _zone <p>可用区信息</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -957,18 +946,18 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取子网
+                     * 获取<p>子网</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubnetInfo 子网
+                     * @return SubnetInfo <p>子网</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SubnetInfo GetSubnetInfo() const;
 
                     /**
-                     * 设置子网
+                     * 设置<p>子网</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subnetInfo 子网
+                     * @param _subnetInfo <p>子网</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -982,15 +971,15 @@ namespace TencentCloud
                     bool SubnetInfoHasBeenSet() const;
 
                     /**
-                     * 获取客户端
-                     * @return Clients 客户端
+                     * 获取<p>客户端</p>
+                     * @return Clients <p>客户端</p>
                      * 
                      */
                     std::string GetClients() const;
 
                     /**
-                     * 设置客户端
-                     * @param _clients 客户端
+                     * 设置<p>客户端</p>
+                     * @param _clients <p>客户端</p>
                      * 
                      */
                     void SetClients(const std::string& _clients);
@@ -1003,15 +992,15 @@ namespace TencentCloud
                     bool ClientsHasBeenSet() const;
 
                     /**
-                     * 获取系统当前时间
-                     * @return CurrentTime 系统当前时间
+                     * 获取<p>系统当前时间</p>
+                     * @return CurrentTime <p>系统当前时间</p>
                      * 
                      */
                     std::string GetCurrentTime() const;
 
                     /**
-                     * 设置系统当前时间
-                     * @param _currentTime 系统当前时间
+                     * 设置<p>系统当前时间</p>
+                     * @param _currentTime <p>系统当前时间</p>
                      * 
                      */
                     void SetCurrentTime(const std::string& _currentTime);
@@ -1024,15 +1013,15 @@ namespace TencentCloud
                     bool CurrentTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否用于联邦 ,1是，0否
-                     * @return IsFederation 是否用于联邦 ,1是，0否
+                     * 获取<p>是否用于联邦 ,1是，0否</p>
+                     * @return IsFederation <p>是否用于联邦 ,1是，0否</p>
                      * 
                      */
                     int64_t GetIsFederation() const;
 
                     /**
-                     * 设置是否用于联邦 ,1是，0否
-                     * @param _isFederation 是否用于联邦 ,1是，0否
+                     * 设置<p>是否用于联邦 ,1是，0否</p>
+                     * @param _isFederation <p>是否用于联邦 ,1是，0否</p>
                      * 
                      */
                     void SetIsFederation(const int64_t& _isFederation);
@@ -1045,15 +1034,15 @@ namespace TencentCloud
                     bool IsFederationHasBeenSet() const;
 
                     /**
-                     * 获取设备名称
-                     * @return DeviceName 设备名称
+                     * 获取<p>设备名称</p>
+                     * @return DeviceName <p>设备名称</p>
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
-                     * 设置设备名称
-                     * @param _deviceName 设备名称
+                     * 设置<p>设备名称</p>
+                     * @param _deviceName <p>设备名称</p>
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -1066,15 +1055,15 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取服务
-                     * @return ServiceClient 服务
+                     * 获取<p>服务</p>
+                     * @return ServiceClient <p>服务</p>
                      * 
                      */
                     std::string GetServiceClient() const;
 
                     /**
-                     * 设置服务
-                     * @param _serviceClient 服务
+                     * 设置<p>服务</p>
+                     * @param _serviceClient <p>服务</p>
                      * 
                      */
                     void SetServiceClient(const std::string& _serviceClient);
@@ -1087,15 +1076,15 @@ namespace TencentCloud
                     bool ServiceClientHasBeenSet() const;
 
                     /**
-                     * 获取该实例是否开启实例保护，true为开启 false为关闭
-                     * @return DisableApiTermination 该实例是否开启实例保护，true为开启 false为关闭
+                     * 获取<p>该实例是否开启实例保护，true为开启 false为关闭</p>
+                     * @return DisableApiTermination <p>该实例是否开启实例保护，true为开启 false为关闭</p>
                      * 
                      */
                     bool GetDisableApiTermination() const;
 
                     /**
-                     * 设置该实例是否开启实例保护，true为开启 false为关闭
-                     * @param _disableApiTermination 该实例是否开启实例保护，true为开启 false为关闭
+                     * 设置<p>该实例是否开启实例保护，true为开启 false为关闭</p>
+                     * @param _disableApiTermination <p>该实例是否开启实例保护，true为开启 false为关闭</p>
                      * 
                      */
                     void SetDisableApiTermination(const bool& _disableApiTermination);
@@ -1108,15 +1097,15 @@ namespace TencentCloud
                     bool DisableApiTerminationHasBeenSet() const;
 
                     /**
-                     * 获取0表示老计费，1表示新计费
-                     * @return TradeVersion 0表示老计费，1表示新计费
+                     * 获取<p>0表示老计费，1表示新计费</p>
+                     * @return TradeVersion <p>0表示老计费，1表示新计费</p>
                      * 
                      */
                     int64_t GetTradeVersion() const;
 
                     /**
-                     * 设置0表示老计费，1表示新计费
-                     * @param _tradeVersion 0表示老计费，1表示新计费
+                     * 设置<p>0表示老计费，1表示新计费</p>
+                     * @param _tradeVersion <p>0表示老计费，1表示新计费</p>
                      * 
                      */
                     void SetTradeVersion(const int64_t& _tradeVersion);
@@ -1129,15 +1118,15 @@ namespace TencentCloud
                     bool TradeVersionHasBeenSet() const;
 
                     /**
-                     * 获取各组件状态，Zookeeper:STARTED,ResourceManager:STARTED，STARTED已启动，STOPED已停止
-                     * @return ServicesStatus 各组件状态，Zookeeper:STARTED,ResourceManager:STARTED，STARTED已启动，STOPED已停止
+                     * 获取<p>各组件状态，Zookeeper:STARTED,ResourceManager:STARTED，STARTED已启动，STOPED已停止</p>
+                     * @return ServicesStatus <p>各组件状态，Zookeeper:STARTED,ResourceManager:STARTED，STARTED已启动，STOPED已停止</p>
                      * 
                      */
                     std::string GetServicesStatus() const;
 
                     /**
-                     * 设置各组件状态，Zookeeper:STARTED,ResourceManager:STARTED，STARTED已启动，STOPED已停止
-                     * @param _servicesStatus 各组件状态，Zookeeper:STARTED,ResourceManager:STARTED，STARTED已启动，STOPED已停止
+                     * 设置<p>各组件状态，Zookeeper:STARTED,ResourceManager:STARTED，STARTED已启动，STOPED已停止</p>
+                     * @param _servicesStatus <p>各组件状态，Zookeeper:STARTED,ResourceManager:STARTED，STARTED已启动，STOPED已停止</p>
                      * 
                      */
                     void SetServicesStatus(const std::string& _servicesStatus);
@@ -1150,15 +1139,15 @@ namespace TencentCloud
                     bool ServicesStatusHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Remark 备注
+                     * 获取<p>备注</p>
+                     * @return Remark <p>备注</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注
-                     * @param _remark 备注
+                     * 设置<p>备注</p>
+                     * @param _remark <p>备注</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -1171,15 +1160,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取共享集群id
-                     * @return SharedClusterId 共享集群id
+                     * 获取<p>共享集群id</p>
+                     * @return SharedClusterId <p>共享集群id</p>
                      * 
                      */
                     std::string GetSharedClusterId() const;
 
                     /**
-                     * 设置共享集群id
-                     * @param _sharedClusterId 共享集群id
+                     * 设置<p>共享集群id</p>
+                     * @param _sharedClusterId <p>共享集群id</p>
                      * 
                      */
                     void SetSharedClusterId(const std::string& _sharedClusterId);
@@ -1192,15 +1181,15 @@ namespace TencentCloud
                     bool SharedClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取共享集群id描述
-                     * @return SharedClusterIdDesc 共享集群id描述
+                     * 获取<p>共享集群id描述</p>
+                     * @return SharedClusterIdDesc <p>共享集群id描述</p>
                      * 
                      */
                     std::string GetSharedClusterIdDesc() const;
 
                     /**
-                     * 设置共享集群id描述
-                     * @param _sharedClusterIdDesc 共享集群id描述
+                     * 设置<p>共享集群id描述</p>
+                     * @param _sharedClusterIdDesc <p>共享集群id描述</p>
                      * 
                      */
                     void SetSharedClusterIdDesc(const std::string& _sharedClusterIdDesc);
@@ -1213,15 +1202,15 @@ namespace TencentCloud
                     bool SharedClusterIdDescHasBeenSet() const;
 
                     /**
-                     * 获取是否是定时销毁资源
-                     * @return TimingResource 是否是定时销毁资源
+                     * 获取<p>是否是定时销毁资源</p>
+                     * @return TimingResource <p>是否是定时销毁资源</p>
                      * 
                      */
                     bool GetTimingResource() const;
 
                     /**
-                     * 设置是否是定时销毁资源
-                     * @param _timingResource 是否是定时销毁资源
+                     * 设置<p>是否是定时销毁资源</p>
+                     * @param _timingResource <p>是否是定时销毁资源</p>
                      * 
                      */
                     void SetTimingResource(const bool& _timingResource);
@@ -1234,15 +1223,15 @@ namespace TencentCloud
                     bool TimingResourceHasBeenSet() const;
 
                     /**
-                     * 获取资源类型（HardwareResourceType）为pod时，对应的TKE集群id
-                     * @return TkeClusterId 资源类型（HardwareResourceType）为pod时，对应的TKE集群id
+                     * 获取<p>资源类型（HardwareResourceType）为pod时，对应的TKE集群id</p>
+                     * @return TkeClusterId <p>资源类型（HardwareResourceType）为pod时，对应的TKE集群id</p>
                      * 
                      */
                     std::string GetTkeClusterId() const;
 
                     /**
-                     * 设置资源类型（HardwareResourceType）为pod时，对应的TKE集群id
-                     * @param _tkeClusterId 资源类型（HardwareResourceType）为pod时，对应的TKE集群id
+                     * 设置<p>资源类型（HardwareResourceType）为pod时，对应的TKE集群id</p>
+                     * @param _tkeClusterId <p>资源类型（HardwareResourceType）为pod时，对应的TKE集群id</p>
                      * 
                      */
                     void SetTkeClusterId(const std::string& _tkeClusterId);
@@ -1255,15 +1244,15 @@ namespace TencentCloud
                     bool TkeClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取新挂磁盘时可支持配置的服务名称列表
-                     * @return ConfigurableServices 新挂磁盘时可支持配置的服务名称列表
+                     * 获取<p>新挂磁盘时可支持配置的服务名称列表</p>
+                     * @return ConfigurableServices <p>新挂磁盘时可支持配置的服务名称列表</p>
                      * 
                      */
                     std::vector<std::string> GetConfigurableServices() const;
 
                     /**
-                     * 设置新挂磁盘时可支持配置的服务名称列表
-                     * @param _configurableServices 新挂磁盘时可支持配置的服务名称列表
+                     * 设置<p>新挂磁盘时可支持配置的服务名称列表</p>
+                     * @param _configurableServices <p>新挂磁盘时可支持配置的服务名称列表</p>
                      * 
                      */
                     void SetConfigurableServices(const std::vector<std::string>& _configurableServices);
@@ -1276,15 +1265,15 @@ namespace TencentCloud
                     bool ConfigurableServicesHasBeenSet() const;
 
                     /**
-                     * 获取节点标注信息，目前只提供给tf平台使用
-                     * @return NodeMark 节点标注信息，目前只提供给tf平台使用
+                     * 获取<p>节点标注信息，目前只提供给tf平台使用</p>
+                     * @return NodeMark <p>节点标注信息，目前只提供给tf平台使用</p>
                      * 
                      */
                     std::string GetNodeMark() const;
 
                     /**
-                     * 设置节点标注信息，目前只提供给tf平台使用
-                     * @param _nodeMark 节点标注信息，目前只提供给tf平台使用
+                     * 设置<p>节点标注信息，目前只提供给tf平台使用</p>
+                     * @param _nodeMark <p>节点标注信息，目前只提供给tf平台使用</p>
                      * 
                      */
                     void SetNodeMark(const std::string& _nodeMark);
@@ -1297,15 +1286,15 @@ namespace TencentCloud
                     bool NodeMarkHasBeenSet() const;
 
                     /**
-                     * 获取包销资源是否支持设置自动续费
-                     * @return UnderwriteSetAutoRenew 包销资源是否支持设置自动续费
+                     * 获取<p>包销资源是否支持设置自动续费</p>
+                     * @return UnderwriteSetAutoRenew <p>包销资源是否支持设置自动续费</p>
                      * 
                      */
                     bool GetUnderwriteSetAutoRenew() const;
 
                     /**
-                     * 设置包销资源是否支持设置自动续费
-                     * @param _underwriteSetAutoRenew 包销资源是否支持设置自动续费
+                     * 设置<p>包销资源是否支持设置自动续费</p>
+                     * @param _underwriteSetAutoRenew <p>包销资源是否支持设置自动续费</p>
                      * 
                      */
                     void SetUnderwriteSetAutoRenew(const bool& _underwriteSetAutoRenew);
@@ -1318,15 +1307,15 @@ namespace TencentCloud
                     bool UnderwriteSetAutoRenewHasBeenSet() const;
 
                     /**
-                     * 获取Gpu信息
-                     * @return GpuDesc Gpu信息
+                     * 获取<p>Gpu信息</p>
+                     * @return GpuDesc <p>Gpu信息</p>
                      * 
                      */
                     std::string GetGpuDesc() const;
 
                     /**
-                     * 设置Gpu信息
-                     * @param _gpuDesc Gpu信息
+                     * 设置<p>Gpu信息</p>
+                     * @param _gpuDesc <p>Gpu信息</p>
                      * 
                      */
                     void SetGpuDesc(const std::string& _gpuDesc);
@@ -1338,374 +1327,398 @@ namespace TencentCloud
                      */
                     bool GpuDescHasBeenSet() const;
 
+                    /**
+                     * 获取<p>磁盘问题描述</p>
+                     * @return DiskHealthIssues <p>磁盘问题描述</p>
+                     * 
+                     */
+                    std::vector<DiskHealthIssue> GetDiskHealthIssues() const;
+
+                    /**
+                     * 设置<p>磁盘问题描述</p>
+                     * @param _diskHealthIssues <p>磁盘问题描述</p>
+                     * 
+                     */
+                    void SetDiskHealthIssues(const std::vector<DiskHealthIssue>& _diskHealthIssues);
+
+                    /**
+                     * 判断参数 DiskHealthIssues 是否已赋值
+                     * @return DiskHealthIssues 是否已赋值
+                     * 
+                     */
+                    bool DiskHealthIssuesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 用户APPID
+                     * <p>用户APPID</p>
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 序列号
+                     * <p>序列号</p>
                      */
                     std::string m_serialNo;
                     bool m_serialNoHasBeenSet;
 
                     /**
-                     * 机器实例ID
+                     * <p>机器实例ID</p>
                      */
                     std::string m_orderNo;
                     bool m_orderNoHasBeenSet;
 
                     /**
-                     * master节点绑定外网IP
+                     * <p>master节点绑定外网IP</p>
                      */
                     std::string m_wanIp;
                     bool m_wanIpHasBeenSet;
 
                     /**
-                     * 节点类型。0:common节点；1:master节点
-；2:core节点；3:task节点
+                     * <p>节点类型。0:common节点；1:master节点<br>；2:core节点；3:task节点</p>
                      */
                     int64_t m_flag;
                     bool m_flagHasBeenSet;
 
                     /**
-                     * 节点规格
+                     * <p>节点规格</p>
                      */
                     std::string m_spec;
                     bool m_specHasBeenSet;
 
                     /**
-                     * 节点核数
+                     * <p>节点核数</p>
                      */
                     int64_t m_cpuNum;
                     bool m_cpuNumHasBeenSet;
 
                     /**
-                     * 节点内存,单位b
+                     * <p>节点内存,单位b</p>
                      */
                     int64_t m_memSize;
                     bool m_memSizeHasBeenSet;
 
                     /**
-                     * 节点内存描述，单位GB
+                     * <p>节点内存描述，单位GB</p>
                      */
                     std::string m_memDesc;
                     bool m_memDescHasBeenSet;
 
                     /**
-                     * 节点所在region
+                     * <p>节点所在region</p>
                      */
                     int64_t m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 节点所在Zone
+                     * <p>节点所在Zone</p>
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 申请时间
+                     * <p>申请时间</p>
                      */
                     std::string m_applyTime;
                     bool m_applyTimeHasBeenSet;
 
                     /**
-                     * 释放时间
+                     * <p>释放时间</p>
                      */
                     std::string m_freeTime;
                     bool m_freeTimeHasBeenSet;
 
                     /**
-                     * 硬盘大小
+                     * <p>硬盘大小</p>
                      */
                     std::string m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 节点描述
+                     * <p>节点描述</p>
                      */
                     std::string m_nameTag;
                     bool m_nameTagHasBeenSet;
 
                     /**
-                     * 节点部署服务
+                     * <p>节点部署服务</p>
                      */
                     std::string m_services;
                     bool m_servicesHasBeenSet;
 
                     /**
-                     * 磁盘类型，1 :本地盘 2 :云硬盘 3 : 本地SSD 4 : 云SSD 5 : 高效云盘 6 : 增强型SSD云硬盘 11 : 吞吐型云硬盘 12 : 极速型SSD云硬盘 13 : 通用型SSD云硬盘 14 : 大数据型云硬盘 15 : 高IO型云硬盘 16 : 远端SSD盘
-
+                     * <p>磁盘类型，1 :本地盘 2 :云硬盘 3 : 本地SSD 4 : 云SSD 5 : 高效云盘 6 : 增强型SSD云硬盘 11 : 吞吐型云硬盘 12 : 极速型SSD云硬盘 13 : 通用型SSD云硬盘 14 : 大数据型云硬盘 15 : 高IO型云硬盘 16 : 远端SSD盘</p>
                      */
                     int64_t m_storageType;
                     bool m_storageTypeHasBeenSet;
 
                     /**
-                     * 系统盘大小，单位GB
+                     * <p>系统盘大小，单位GB</p>
                      */
                     int64_t m_rootSize;
                     bool m_rootSizeHasBeenSet;
 
                     /**
-                     * 付费类型，0：按量计费；1：包年包月
+                     * <p>付费类型，0：按量计费；1：包年包月</p>
                      */
                     int64_t m_chargeType;
                     bool m_chargeTypeHasBeenSet;
 
                     /**
-                     * 数据库IP
+                     * <p>数据库IP</p>
                      */
                     std::string m_cdbIp;
                     bool m_cdbIpHasBeenSet;
 
                     /**
-                     * 数据库端口
+                     * <p>数据库端口</p>
                      */
                     int64_t m_cdbPort;
                     bool m_cdbPortHasBeenSet;
 
                     /**
-                     * 硬盘容量,单位b
+                     * <p>硬盘容量,单位b</p>
                      */
                     int64_t m_hwDiskSize;
                     bool m_hwDiskSizeHasBeenSet;
 
                     /**
-                     * 硬盘容量描述
+                     * <p>硬盘容量描述</p>
                      */
                     std::string m_hwDiskSizeDesc;
                     bool m_hwDiskSizeDescHasBeenSet;
 
                     /**
-                     * 内存容量，单位b
+                     * <p>内存容量，单位b</p>
                      */
                     int64_t m_hwMemSize;
                     bool m_hwMemSizeHasBeenSet;
 
                     /**
-                     * 内存容量描述
+                     * <p>内存容量描述</p>
                      */
                     std::string m_hwMemSizeDesc;
                     bool m_hwMemSizeDescHasBeenSet;
 
                     /**
-                     * 过期时间
+                     * <p>过期时间</p>
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 节点资源ID
+                     * <p>节点资源ID</p>
                      */
                     std::string m_emrResourceId;
                     bool m_emrResourceIdHasBeenSet;
 
                     /**
-                     * 续费标志
+                     * <p>续费标志</p>
                      */
                     int64_t m_isAutoRenew;
                     bool m_isAutoRenewHasBeenSet;
 
                     /**
-                     * 设备标识
+                     * <p>设备标识</p>
                      */
                     std::string m_deviceClass;
                     bool m_deviceClassHasBeenSet;
 
                     /**
-                     * 支持变配
+                     * <p>支持变配</p>
                      */
                     int64_t m_mutable;
                     bool m_mutableHasBeenSet;
 
                     /**
-                     * 多云盘
+                     * <p>多云盘</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MultiDiskMC> m_mCMultiDisk;
                     bool m_mCMultiDiskHasBeenSet;
 
                     /**
-                     * 数据库信息
+                     * <p>数据库信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CdbInfo m_cdbNodeInfo;
                     bool m_cdbNodeInfoHasBeenSet;
 
                     /**
-                     * 内网IP
+                     * <p>内网IP</p>
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 此节点是否可销毁，1可销毁，0不可销毁
+                     * <p>此节点是否可销毁，1可销毁，0不可销毁</p>
                      */
                     int64_t m_destroyable;
                     bool m_destroyableHasBeenSet;
 
                     /**
-                     * 节点绑定的标签
+                     * <p>节点绑定的标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 是否是自动扩缩容节点，0为普通节点，1为自动扩缩容节点。
+                     * <p>是否是自动扩缩容节点，0为普通节点，1为自动扩缩容节点。</p>
                      */
                     int64_t m_autoFlag;
                     bool m_autoFlagHasBeenSet;
 
                     /**
-                     * 资源类型, host/pod
+                     * <p>资源类型, host/pod</p>
                      */
                     std::string m_hardwareResourceType;
                     bool m_hardwareResourceTypeHasBeenSet;
 
                     /**
-                     * 是否浮动规格，1是，0否
+                     * <p>是否浮动规格，1是，0否</p>
                      */
                     int64_t m_isDynamicSpec;
                     bool m_isDynamicSpecHasBeenSet;
 
                     /**
-                     * 浮动规格值json字符串
+                     * <p>浮动规格值json字符串</p>
                      */
                     std::string m_dynamicPodSpec;
                     bool m_dynamicPodSpecHasBeenSet;
 
                     /**
-                     * 是否支持变更计费类型 1是，0否
+                     * <p>是否支持变更计费类型 1是，0否</p>
                      */
                     int64_t m_supportModifyPayMode;
                     bool m_supportModifyPayModeHasBeenSet;
 
                     /**
-                     * 系统盘类型，1 :本地盘 2 :云硬盘 3 : 本地SSD 4 : 云SSD 5 : 高效云盘 6 : 增强型SSD云硬盘 11 : 吞吐型云硬盘 12 : 极速型SSD云硬盘 13 : 通用型SSD云硬盘 14 : 大数据型云硬盘 15 : 高IO型云硬盘 16 : 远端SSD盘
-
+                     * <p>系统盘类型，1 :本地盘 2 :云硬盘 3 : 本地SSD 4 : 云SSD 5 : 高效云盘 6 : 增强型SSD云硬盘 11 : 吞吐型云硬盘 12 : 极速型SSD云硬盘 13 : 通用型SSD云硬盘 14 : 大数据型云硬盘 15 : 高IO型云硬盘 16 : 远端SSD盘</p>
                      */
                     int64_t m_rootStorageType;
                     bool m_rootStorageTypeHasBeenSet;
 
                     /**
-                     * 可用区信息
+                     * <p>可用区信息</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 子网
+                     * <p>子网</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SubnetInfo m_subnetInfo;
                     bool m_subnetInfoHasBeenSet;
 
                     /**
-                     * 客户端
+                     * <p>客户端</p>
                      */
                     std::string m_clients;
                     bool m_clientsHasBeenSet;
 
                     /**
-                     * 系统当前时间
+                     * <p>系统当前时间</p>
                      */
                     std::string m_currentTime;
                     bool m_currentTimeHasBeenSet;
 
                     /**
-                     * 是否用于联邦 ,1是，0否
+                     * <p>是否用于联邦 ,1是，0否</p>
                      */
                     int64_t m_isFederation;
                     bool m_isFederationHasBeenSet;
 
                     /**
-                     * 设备名称
+                     * <p>设备名称</p>
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 服务
+                     * <p>服务</p>
                      */
                     std::string m_serviceClient;
                     bool m_serviceClientHasBeenSet;
 
                     /**
-                     * 该实例是否开启实例保护，true为开启 false为关闭
+                     * <p>该实例是否开启实例保护，true为开启 false为关闭</p>
                      */
                     bool m_disableApiTermination;
                     bool m_disableApiTerminationHasBeenSet;
 
                     /**
-                     * 0表示老计费，1表示新计费
+                     * <p>0表示老计费，1表示新计费</p>
                      */
                     int64_t m_tradeVersion;
                     bool m_tradeVersionHasBeenSet;
 
                     /**
-                     * 各组件状态，Zookeeper:STARTED,ResourceManager:STARTED，STARTED已启动，STOPED已停止
+                     * <p>各组件状态，Zookeeper:STARTED,ResourceManager:STARTED，STARTED已启动，STOPED已停止</p>
                      */
                     std::string m_servicesStatus;
                     bool m_servicesStatusHasBeenSet;
 
                     /**
-                     * 备注
+                     * <p>备注</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 共享集群id
+                     * <p>共享集群id</p>
                      */
                     std::string m_sharedClusterId;
                     bool m_sharedClusterIdHasBeenSet;
 
                     /**
-                     * 共享集群id描述
+                     * <p>共享集群id描述</p>
                      */
                     std::string m_sharedClusterIdDesc;
                     bool m_sharedClusterIdDescHasBeenSet;
 
                     /**
-                     * 是否是定时销毁资源
+                     * <p>是否是定时销毁资源</p>
                      */
                     bool m_timingResource;
                     bool m_timingResourceHasBeenSet;
 
                     /**
-                     * 资源类型（HardwareResourceType）为pod时，对应的TKE集群id
+                     * <p>资源类型（HardwareResourceType）为pod时，对应的TKE集群id</p>
                      */
                     std::string m_tkeClusterId;
                     bool m_tkeClusterIdHasBeenSet;
 
                     /**
-                     * 新挂磁盘时可支持配置的服务名称列表
+                     * <p>新挂磁盘时可支持配置的服务名称列表</p>
                      */
                     std::vector<std::string> m_configurableServices;
                     bool m_configurableServicesHasBeenSet;
 
                     /**
-                     * 节点标注信息，目前只提供给tf平台使用
+                     * <p>节点标注信息，目前只提供给tf平台使用</p>
                      */
                     std::string m_nodeMark;
                     bool m_nodeMarkHasBeenSet;
 
                     /**
-                     * 包销资源是否支持设置自动续费
+                     * <p>包销资源是否支持设置自动续费</p>
                      */
                     bool m_underwriteSetAutoRenew;
                     bool m_underwriteSetAutoRenewHasBeenSet;
 
                     /**
-                     * Gpu信息
+                     * <p>Gpu信息</p>
                      */
                     std::string m_gpuDesc;
                     bool m_gpuDescHasBeenSet;
+
+                    /**
+                     * <p>磁盘问题描述</p>
+                     */
+                    std::vector<DiskHealthIssue> m_diskHealthIssues;
+                    bool m_diskHealthIssuesHasBeenSet;
 
                 };
             }

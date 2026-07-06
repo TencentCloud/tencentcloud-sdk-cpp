@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeCloudProductLogTasksResponse::DescribeCloudProductLogTasksResponse() :
     m_tasksHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome DescribeCloudProductLogTasksResponse::Deserialize(const stri
         m_totalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Message") && !rsp["Message"].IsNull())
+    {
+        if (!rsp["Message"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Message` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_message = string(rsp["Message"].GetString());
+        m_messageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribeCloudProductLogTasksResponse::ToJsonString() const
         value.AddMember(iKey, m_totalCount, allocator);
     }
 
+    if (m_messageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Message";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ uint64_t DescribeCloudProductLogTasksResponse::GetTotalCount() const
 bool DescribeCloudProductLogTasksResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+string DescribeCloudProductLogTasksResponse::GetMessage() const
+{
+    return m_message;
+}
+
+bool DescribeCloudProductLogTasksResponse::MessageHasBeenSet() const
+{
+    return m_messageHasBeenSet;
 }
 
 

@@ -170,6 +170,48 @@ namespace TencentCloud
                      */
                     bool InstanceChargePrepaidHasBeenSet() const;
 
+                    /**
+                     * 获取<p>节点计费类型变更</p><p>枚举值：</p><ul><li>POSTPAID_BY_HOUR： 目标计费类型为按量计费</li><li>PREPAID： 目标计费类型为包年包月计费</li></ul>
+                     * @return InstanceChargeType <p>节点计费类型变更</p><p>枚举值：</p><ul><li>POSTPAID_BY_HOUR： 目标计费类型为按量计费</li><li>PREPAID： 目标计费类型为包年包月计费</li></ul>
+                     * 
+                     */
+                    std::string GetInstanceChargeType() const;
+
+                    /**
+                     * 设置<p>节点计费类型变更</p><p>枚举值：</p><ul><li>POSTPAID_BY_HOUR： 目标计费类型为按量计费</li><li>PREPAID： 目标计费类型为包年包月计费</li></ul>
+                     * @param _instanceChargeType <p>节点计费类型变更</p><p>枚举值：</p><ul><li>POSTPAID_BY_HOUR： 目标计费类型为按量计费</li><li>PREPAID： 目标计费类型为包年包月计费</li></ul>
+                     * 
+                     */
+                    void SetInstanceChargeType(const std::string& _instanceChargeType);
+
+                    /**
+                     * 判断参数 InstanceChargeType 是否已赋值
+                     * @return InstanceChargeType 是否已赋值
+                     * 
+                     */
+                    bool InstanceChargeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否同时切换弹性数据云盘计费模式。取值范围：  true：表示切换弹性数据云盘计费模式 false：表示不切换弹性数据云盘计费模式 默认取值：true。</p><p>默认值：true</p>
+                     * @return ModifyPortableDataDisk <p>是否同时切换弹性数据云盘计费模式。取值范围：  true：表示切换弹性数据云盘计费模式 false：表示不切换弹性数据云盘计费模式 默认取值：true。</p><p>默认值：true</p>
+                     * 
+                     */
+                    bool GetModifyPortableDataDisk() const;
+
+                    /**
+                     * 设置<p>是否同时切换弹性数据云盘计费模式。取值范围：  true：表示切换弹性数据云盘计费模式 false：表示不切换弹性数据云盘计费模式 默认取值：true。</p><p>默认值：true</p>
+                     * @param _modifyPortableDataDisk <p>是否同时切换弹性数据云盘计费模式。取值范围：  true：表示切换弹性数据云盘计费模式 false：表示不切换弹性数据云盘计费模式 默认取值：true。</p><p>默认值：true</p>
+                     * 
+                     */
+                    void SetModifyPortableDataDisk(const bool& _modifyPortableDataDisk);
+
+                    /**
+                     * 判断参数 ModifyPortableDataDisk 是否已赋值
+                     * @return ModifyPortableDataDisk 是否已赋值
+                     * 
+                     */
+                    bool ModifyPortableDataDiskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +249,18 @@ namespace TencentCloud
                      */
                     InstanceChargePrepaid m_instanceChargePrepaid;
                     bool m_instanceChargePrepaidHasBeenSet;
+
+                    /**
+                     * <p>节点计费类型变更</p><p>枚举值：</p><ul><li>POSTPAID_BY_HOUR： 目标计费类型为按量计费</li><li>PREPAID： 目标计费类型为包年包月计费</li></ul>
+                     */
+                    std::string m_instanceChargeType;
+                    bool m_instanceChargeTypeHasBeenSet;
+
+                    /**
+                     * <p>是否同时切换弹性数据云盘计费模式。取值范围：  true：表示切换弹性数据云盘计费模式 false：表示不切换弹性数据云盘计费模式 默认取值：true。</p><p>默认值：true</p>
+                     */
+                    bool m_modifyPortableDataDisk;
+                    bool m_modifyPortableDataDiskHasBeenSet;
 
                 };
             }

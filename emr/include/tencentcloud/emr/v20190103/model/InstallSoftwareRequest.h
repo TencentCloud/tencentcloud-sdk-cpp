@@ -27,6 +27,7 @@
 #include <tencentcloud/emr/v20190103/model/CloudResource.h>
 #include <tencentcloud/emr/v20190103/model/ServiceDeployInfo.h>
 #include <tencentcloud/emr/v20190103/model/ContainerExtraConf.h>
+#include <tencentcloud/emr/v20190103/model/CustomMetaDBInfo.h>
 
 
 namespace TencentCloud
@@ -342,6 +343,27 @@ namespace TencentCloud
                      */
                     bool CheckServiceDeployInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自定义metadb信息</p>
+                     * @return MetaDBGroupInfo <p>自定义metadb信息</p>
+                     * 
+                     */
+                    std::vector<CustomMetaDBInfo> GetMetaDBGroupInfo() const;
+
+                    /**
+                     * 设置<p>自定义metadb信息</p>
+                     * @param _metaDBGroupInfo <p>自定义metadb信息</p>
+                     * 
+                     */
+                    void SetMetaDBGroupInfo(const std::vector<CustomMetaDBInfo>& _metaDBGroupInfo);
+
+                    /**
+                     * 判断参数 MetaDBGroupInfo 是否已赋值
+                     * @return MetaDBGroupInfo 是否已赋值
+                     * 
+                     */
+                    bool MetaDBGroupInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -427,6 +449,12 @@ namespace TencentCloud
                      */
                     bool m_checkServiceDeployInfo;
                     bool m_checkServiceDeployInfoHasBeenSet;
+
+                    /**
+                     * <p>自定义metadb信息</p>
+                     */
+                    std::vector<CustomMetaDBInfo> m_metaDBGroupInfo;
+                    bool m_metaDBGroupInfoHasBeenSet;
 
                 };
             }

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/DlcInfo.h>
+#include <tencentcloud/cls/v20201016/model/DlcFailHandle.h>
 
 
 namespace TencentCloud
@@ -48,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务id。
-                     * @return TaskId 任务id。
+                     * 获取<p>任务id。</p>
+                     * @return TaskId <p>任务id。</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务id。
-                     * @param _taskId 任务id。
+                     * 设置<p>任务id。</p>
+                     * @param _taskId <p>任务id。</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -69,15 +70,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取账号id。
-                     * @return Uin 账号id。
+                     * 获取<p>账号id。</p>
+                     * @return Uin <p>账号id。</p>
                      * 
                      */
                     uint64_t GetUin() const;
 
                     /**
-                     * 设置账号id。
-                     * @param _uin 账号id。
+                     * 设置<p>账号id。</p>
+                     * @param _uin <p>账号id。</p>
                      * 
                      */
                     void SetUin(const uint64_t& _uin);
@@ -90,15 +91,15 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取日志主题id。
-                     * @return TopicId 日志主题id。
+                     * 获取<p>日志主题id。</p>
+                     * @return TopicId <p>日志主题id。</p>
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题id。
-                     * @param _topicId 日志主题id。
+                     * 设置<p>日志主题id。</p>
+                     * @param _topicId <p>日志主题id。</p>
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -111,15 +112,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取任务名称。
-                     * @return Name 任务名称。
+                     * 获取<p>任务名称。</p>
+                     * @return Name <p>任务名称。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置任务名称。
-                     * @param _name 任务名称。
+                     * 设置<p>任务名称。</p>
+                     * @param _name <p>任务名称。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -132,15 +133,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取投递类型，0：实时投递，1：历史投递
-                     * @return DeliverType 投递类型，0：实时投递，1：历史投递
+                     * 获取<p>投递类型，0：实时投递，1：历史投递</p>
+                     * @return DeliverType <p>投递类型，0：实时投递，1：历史投递</p>
                      * 
                      */
                     uint64_t GetDeliverType() const;
 
                     /**
-                     * 设置投递类型，0：实时投递，1：历史投递
-                     * @param _deliverType 投递类型，0：实时投递，1：历史投递
+                     * 设置<p>投递类型，0：实时投递，1：历史投递</p>
+                     * @param _deliverType <p>投递类型，0：实时投递，1：历史投递</p>
                      * 
                      */
                     void SetDeliverType(const uint64_t& _deliverType);
@@ -153,15 +154,15 @@ namespace TencentCloud
                     bool DeliverTypeHasBeenSet() const;
 
                     /**
-                     * 获取投递文件大小，单位MB
-                     * @return MaxSize 投递文件大小，单位MB
+                     * 获取<p>投递文件大小，单位MB</p>
+                     * @return MaxSize <p>投递文件大小，单位MB</p>
                      * 
                      */
                     uint64_t GetMaxSize() const;
 
                     /**
-                     * 设置投递文件大小，单位MB
-                     * @param _maxSize 投递文件大小，单位MB
+                     * 设置<p>投递文件大小，单位MB</p>
+                     * @param _maxSize <p>投递文件大小，单位MB</p>
                      * 
                      */
                     void SetMaxSize(const uint64_t& _maxSize);
@@ -174,15 +175,15 @@ namespace TencentCloud
                     bool MaxSizeHasBeenSet() const;
 
                     /**
-                     * 获取投递间隔 单位秒
-                     * @return Interval 投递间隔 单位秒
+                     * 获取<p>投递间隔 单位秒</p>
+                     * @return Interval <p>投递间隔 单位秒</p>
                      * 
                      */
                     uint64_t GetInterval() const;
 
                     /**
-                     * 设置投递间隔 单位秒
-                     * @param _interval 投递间隔 单位秒
+                     * 设置<p>投递间隔 单位秒</p>
+                     * @param _interval <p>投递间隔 单位秒</p>
                      * 
                      */
                     void SetInterval(const uint64_t& _interval);
@@ -195,15 +196,15 @@ namespace TencentCloud
                     bool IntervalHasBeenSet() const;
 
                     /**
-                     * 获取投递时间范围的开始时间
-                     * @return StartTime 投递时间范围的开始时间
+                     * 获取<p>投递时间范围的开始时间</p>
+                     * @return StartTime <p>投递时间范围的开始时间</p>
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置投递时间范围的开始时间
-                     * @param _startTime 投递时间范围的开始时间
+                     * 设置<p>投递时间范围的开始时间</p>
+                     * @param _startTime <p>投递时间范围的开始时间</p>
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -216,15 +217,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取投递时间范围的结束时间
-                     * @return EndTime 投递时间范围的结束时间
+                     * 获取<p>投递时间范围的结束时间</p>
+                     * @return EndTime <p>投递时间范围的结束时间</p>
                      * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置投递时间范围的结束时间
-                     * @param _endTime 投递时间范围的结束时间
+                     * 设置<p>投递时间范围的结束时间</p>
+                     * @param _endTime <p>投递时间范围的结束时间</p>
                      * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
@@ -237,15 +238,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取dlc配置信息
-                     * @return DlcInfo dlc配置信息
+                     * 获取<p>dlc配置信息</p>
+                     * @return DlcInfo <p>dlc配置信息</p>
                      * 
                      */
                     DlcInfo GetDlcInfo() const;
 
                     /**
-                     * 设置dlc配置信息
-                     * @param _dlcInfo dlc配置信息
+                     * 设置<p>dlc配置信息</p>
+                     * @param _dlcInfo <p>dlc配置信息</p>
                      * 
                      */
                     void SetDlcInfo(const DlcInfo& _dlcInfo);
@@ -258,15 +259,15 @@ namespace TencentCloud
                     bool DlcInfoHasBeenSet() const;
 
                     /**
-                     * 获取是否开启投递服务日志。1关闭，2开启
-                     * @return HasServicesLog 是否开启投递服务日志。1关闭，2开启
+                     * 获取<p>是否开启投递服务日志。1关闭，2开启</p>
+                     * @return HasServicesLog <p>是否开启投递服务日志。1关闭，2开启</p>
                      * 
                      */
                     uint64_t GetHasServicesLog() const;
 
                     /**
-                     * 设置是否开启投递服务日志。1关闭，2开启
-                     * @param _hasServicesLog 是否开启投递服务日志。1关闭，2开启
+                     * 设置<p>是否开启投递服务日志。1关闭，2开启</p>
+                     * @param _hasServicesLog <p>是否开启投递服务日志。1关闭，2开启</p>
                      * 
                      */
                     void SetHasServicesLog(const uint64_t& _hasServicesLog);
@@ -279,15 +280,15 @@ namespace TencentCloud
                     bool HasServicesLogHasBeenSet() const;
 
                     /**
-                     * 获取任务状态。
-                     * @return Status 任务状态。
+                     * 获取<p>任务状态。</p>
+                     * @return Status <p>任务状态。</p>
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置任务状态。
-                     * @param _status 任务状态。
+                     * 设置<p>任务状态。</p>
+                     * @param _status <p>任务状态。</p>
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -300,15 +301,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取任务进度。历史投递任务生效。
-                     * @return Progress 任务进度。历史投递任务生效。
+                     * 获取<p>任务进度。历史投递任务生效。</p>
+                     * @return Progress <p>任务进度。历史投递任务生效。</p>
                      * 
                      */
                     uint64_t GetProgress() const;
 
                     /**
-                     * 设置任务进度。历史投递任务生效。
-                     * @param _progress 任务进度。历史投递任务生效。
+                     * 设置<p>任务进度。历史投递任务生效。</p>
+                     * @param _progress <p>任务进度。历史投递任务生效。</p>
                      * 
                      */
                     void SetProgress(const uint64_t& _progress);
@@ -321,15 +322,15 @@ namespace TencentCloud
                     bool ProgressHasBeenSet() const;
 
                     /**
-                     * 获取日志主题类型。0:标准主题，1:指标主题
-                     * @return BizType 日志主题类型。0:标准主题，1:指标主题
+                     * 获取<p>日志主题类型。0:标准主题，1:指标主题</p>
+                     * @return BizType <p>日志主题类型。0:标准主题，1:指标主题</p>
                      * 
                      */
                     uint64_t GetBizType() const;
 
                     /**
-                     * 设置日志主题类型。0:标准主题，1:指标主题
-                     * @param _bizType 日志主题类型。0:标准主题，1:指标主题
+                     * 设置<p>日志主题类型。0:标准主题，1:指标主题</p>
+                     * @param _bizType <p>日志主题类型。0:标准主题，1:指标主题</p>
                      * 
                      */
                     void SetBizType(const uint64_t& _bizType);
@@ -342,15 +343,15 @@ namespace TencentCloud
                     bool BizTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务创建时间。
-                     * @return CreateTime 任务创建时间。
+                     * 获取<p>任务创建时间。</p>
+                     * @return CreateTime <p>任务创建时间。</p>
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
-                     * 设置任务创建时间。
-                     * @param _createTime 任务创建时间。
+                     * 设置<p>任务创建时间。</p>
+                     * @param _createTime <p>任务创建时间。</p>
                      * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -363,15 +364,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务修改时间。
-                     * @return UpdateTime 任务修改时间。
+                     * 获取<p>任务修改时间。</p>
+                     * @return UpdateTime <p>任务修改时间。</p>
                      * 
                      */
                     uint64_t GetUpdateTime() const;
 
                     /**
-                     * 设置任务修改时间。
-                     * @param _updateTime 任务修改时间。
+                     * 设置<p>任务修改时间。</p>
+                     * @param _updateTime <p>任务修改时间。</p>
                      * 
                      */
                     void SetUpdateTime(const uint64_t& _updateTime);
@@ -383,103 +384,184 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自动创建dlc字段</p><p>默认值：false</p><p>当您的日志中有新增字段时，系统自动将其投递至DLC</p>
+                     * @return AutoCreateField <p>自动创建dlc字段</p><p>默认值：false</p><p>当您的日志中有新增字段时，系统自动将其投递至DLC</p>
+                     * 
+                     */
+                    bool GetAutoCreateField() const;
+
+                    /**
+                     * 设置<p>自动创建dlc字段</p><p>默认值：false</p><p>当您的日志中有新增字段时，系统自动将其投递至DLC</p>
+                     * @param _autoCreateField <p>自动创建dlc字段</p><p>默认值：false</p><p>当您的日志中有新增字段时，系统自动将其投递至DLC</p>
+                     * 
+                     */
+                    void SetAutoCreateField(const bool& _autoCreateField);
+
+                    /**
+                     * 判断参数 AutoCreateField 是否已赋值
+                     * @return AutoCreateField 是否已赋值
+                     * 
+                     */
+                    bool AutoCreateFieldHasBeenSet() const;
+
+                    /**
+                     * 获取<p>将投递失败的日志存储至DLC表</p>
+                     * @return DlcFailHandle <p>将投递失败的日志存储至DLC表</p>
+                     * 
+                     */
+                    DlcFailHandle GetDlcFailHandle() const;
+
+                    /**
+                     * 设置<p>将投递失败的日志存储至DLC表</p>
+                     * @param _dlcFailHandle <p>将投递失败的日志存储至DLC表</p>
+                     * 
+                     */
+                    void SetDlcFailHandle(const DlcFailHandle& _dlcFailHandle);
+
+                    /**
+                     * 判断参数 DlcFailHandle 是否已赋值
+                     * @return DlcFailHandle 是否已赋值
+                     * 
+                     */
+                    bool DlcFailHandleHasBeenSet() const;
+
+                    /**
+                     * 获取<p>日志预过滤-数据写入 Splunk 的原始数据进行预过滤处理</p>
+                     * @return DSLFilter <p>日志预过滤-数据写入 Splunk 的原始数据进行预过滤处理</p>
+                     * 
+                     */
+                    std::string GetDSLFilter() const;
+
+                    /**
+                     * 设置<p>日志预过滤-数据写入 Splunk 的原始数据进行预过滤处理</p>
+                     * @param _dSLFilter <p>日志预过滤-数据写入 Splunk 的原始数据进行预过滤处理</p>
+                     * 
+                     */
+                    void SetDSLFilter(const std::string& _dSLFilter);
+
+                    /**
+                     * 判断参数 DSLFilter 是否已赋值
+                     * @return DSLFilter 是否已赋值
+                     * 
+                     */
+                    bool DSLFilterHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务id。
+                     * <p>任务id。</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 账号id。
+                     * <p>账号id。</p>
                      */
                     uint64_t m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 日志主题id。
+                     * <p>日志主题id。</p>
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 任务名称。
+                     * <p>任务名称。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 投递类型，0：实时投递，1：历史投递
+                     * <p>投递类型，0：实时投递，1：历史投递</p>
                      */
                     uint64_t m_deliverType;
                     bool m_deliverTypeHasBeenSet;
 
                     /**
-                     * 投递文件大小，单位MB
+                     * <p>投递文件大小，单位MB</p>
                      */
                     uint64_t m_maxSize;
                     bool m_maxSizeHasBeenSet;
 
                     /**
-                     * 投递间隔 单位秒
+                     * <p>投递间隔 单位秒</p>
                      */
                     uint64_t m_interval;
                     bool m_intervalHasBeenSet;
 
                     /**
-                     * 投递时间范围的开始时间
+                     * <p>投递时间范围的开始时间</p>
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 投递时间范围的结束时间
+                     * <p>投递时间范围的结束时间</p>
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * dlc配置信息
+                     * <p>dlc配置信息</p>
                      */
                     DlcInfo m_dlcInfo;
                     bool m_dlcInfoHasBeenSet;
 
                     /**
-                     * 是否开启投递服务日志。1关闭，2开启
+                     * <p>是否开启投递服务日志。1关闭，2开启</p>
                      */
                     uint64_t m_hasServicesLog;
                     bool m_hasServicesLogHasBeenSet;
 
                     /**
-                     * 任务状态。
+                     * <p>任务状态。</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 任务进度。历史投递任务生效。
+                     * <p>任务进度。历史投递任务生效。</p>
                      */
                     uint64_t m_progress;
                     bool m_progressHasBeenSet;
 
                     /**
-                     * 日志主题类型。0:标准主题，1:指标主题
+                     * <p>日志主题类型。0:标准主题，1:指标主题</p>
                      */
                     uint64_t m_bizType;
                     bool m_bizTypeHasBeenSet;
 
                     /**
-                     * 任务创建时间。
+                     * <p>任务创建时间。</p>
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 任务修改时间。
+                     * <p>任务修改时间。</p>
                      */
                     uint64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * <p>自动创建dlc字段</p><p>默认值：false</p><p>当您的日志中有新增字段时，系统自动将其投递至DLC</p>
+                     */
+                    bool m_autoCreateField;
+                    bool m_autoCreateFieldHasBeenSet;
+
+                    /**
+                     * <p>将投递失败的日志存储至DLC表</p>
+                     */
+                    DlcFailHandle m_dlcFailHandle;
+                    bool m_dlcFailHandleHasBeenSet;
+
+                    /**
+                     * <p>日志预过滤-数据写入 Splunk 的原始数据进行预过滤处理</p>
+                     */
+                    std::string m_dSLFilter;
+                    bool m_dSLFilterHasBeenSet;
 
                 };
             }

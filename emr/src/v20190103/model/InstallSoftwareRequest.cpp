@@ -36,7 +36,8 @@ InstallSoftwareRequest::InstallSoftwareRequest() :
     m_defaultMetaVersionHasBeenSet(false),
     m_needCdbAuditHasBeenSet(false),
     m_containerExtraConfHasBeenSet(false),
-    m_checkServiceDeployInfoHasBeenSet(false)
+    m_checkServiceDeployInfoHasBeenSet(false),
+    m_metaDBGroupInfoHasBeenSet(false)
 {
 }
 
@@ -192,6 +193,21 @@ string InstallSoftwareRequest::ToJsonString() const
         string key = "CheckServiceDeployInfo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_checkServiceDeployInfo, allocator);
+    }
+
+    if (m_metaDBGroupInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetaDBGroupInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_metaDBGroupInfo.begin(); itr != m_metaDBGroupInfo.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -424,6 +440,22 @@ void InstallSoftwareRequest::SetCheckServiceDeployInfo(const bool& _checkService
 bool InstallSoftwareRequest::CheckServiceDeployInfoHasBeenSet() const
 {
     return m_checkServiceDeployInfoHasBeenSet;
+}
+
+vector<CustomMetaDBInfo> InstallSoftwareRequest::GetMetaDBGroupInfo() const
+{
+    return m_metaDBGroupInfo;
+}
+
+void InstallSoftwareRequest::SetMetaDBGroupInfo(const vector<CustomMetaDBInfo>& _metaDBGroupInfo)
+{
+    m_metaDBGroupInfo = _metaDBGroupInfo;
+    m_metaDBGroupInfoHasBeenSet = true;
+}
+
+bool InstallSoftwareRequest::MetaDBGroupInfoHasBeenSet() const
+{
+    return m_metaDBGroupInfoHasBeenSet;
 }
 
 

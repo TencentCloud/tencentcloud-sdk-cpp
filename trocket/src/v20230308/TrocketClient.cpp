@@ -140,6 +140,56 @@ TrocketClient::CreateConsumerGroupOutcomeCallable TrocketClient::CreateConsumerG
     return prom->get_future();
 }
 
+TrocketClient::CreateConsumerLabelOutcome TrocketClient::CreateConsumerLabel(const CreateConsumerLabelRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateConsumerLabel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateConsumerLabelResponse rsp = CreateConsumerLabelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateConsumerLabelOutcome(rsp);
+        else
+            return CreateConsumerLabelOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateConsumerLabelOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::CreateConsumerLabelAsync(const CreateConsumerLabelRequest& request, const CreateConsumerLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateConsumerLabelRequest&;
+    using Resp = CreateConsumerLabelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateConsumerLabel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrocketClient::CreateConsumerLabelOutcomeCallable TrocketClient::CreateConsumerLabelCallable(const CreateConsumerLabelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateConsumerLabelOutcome>>();
+    CreateConsumerLabelAsync(
+    request,
+    [prom](
+        const TrocketClient*,
+        const CreateConsumerLabelRequest&,
+        CreateConsumerLabelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TrocketClient::CreateInstanceOutcome TrocketClient::CreateInstance(const CreateInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateInstance");
@@ -382,6 +432,106 @@ TrocketClient::DeleteConsumerGroupOutcomeCallable TrocketClient::DeleteConsumerG
         const TrocketClient*,
         const DeleteConsumerGroupRequest&,
         DeleteConsumerGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrocketClient::DeleteConsumerLabelOutcome TrocketClient::DeleteConsumerLabel(const DeleteConsumerLabelRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteConsumerLabel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteConsumerLabelResponse rsp = DeleteConsumerLabelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteConsumerLabelOutcome(rsp);
+        else
+            return DeleteConsumerLabelOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteConsumerLabelOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DeleteConsumerLabelAsync(const DeleteConsumerLabelRequest& request, const DeleteConsumerLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteConsumerLabelRequest&;
+    using Resp = DeleteConsumerLabelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteConsumerLabel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrocketClient::DeleteConsumerLabelOutcomeCallable TrocketClient::DeleteConsumerLabelCallable(const DeleteConsumerLabelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteConsumerLabelOutcome>>();
+    DeleteConsumerLabelAsync(
+    request,
+    [prom](
+        const TrocketClient*,
+        const DeleteConsumerLabelRequest&,
+        DeleteConsumerLabelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrocketClient::DeleteConsumerRouteConfigOutcome TrocketClient::DeleteConsumerRouteConfig(const DeleteConsumerRouteConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteConsumerRouteConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteConsumerRouteConfigResponse rsp = DeleteConsumerRouteConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteConsumerRouteConfigOutcome(rsp);
+        else
+            return DeleteConsumerRouteConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteConsumerRouteConfigOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DeleteConsumerRouteConfigAsync(const DeleteConsumerRouteConfigRequest& request, const DeleteConsumerRouteConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteConsumerRouteConfigRequest&;
+    using Resp = DeleteConsumerRouteConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteConsumerRouteConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrocketClient::DeleteConsumerRouteConfigOutcomeCallable TrocketClient::DeleteConsumerRouteConfigCallable(const DeleteConsumerRouteConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteConsumerRouteConfigOutcome>>();
+    DeleteConsumerRouteConfigAsync(
+    request,
+    [prom](
+        const TrocketClient*,
+        const DeleteConsumerRouteConfigRequest&,
+        DeleteConsumerRouteConfigOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -790,6 +940,106 @@ TrocketClient::DescribeConsumerGroupListOutcomeCallable TrocketClient::DescribeC
     return prom->get_future();
 }
 
+TrocketClient::DescribeConsumerLabelOutcome TrocketClient::DescribeConsumerLabel(const DescribeConsumerLabelRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConsumerLabel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConsumerLabelResponse rsp = DescribeConsumerLabelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConsumerLabelOutcome(rsp);
+        else
+            return DescribeConsumerLabelOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConsumerLabelOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeConsumerLabelAsync(const DescribeConsumerLabelRequest& request, const DescribeConsumerLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeConsumerLabelRequest&;
+    using Resp = DescribeConsumerLabelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeConsumerLabel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrocketClient::DescribeConsumerLabelOutcomeCallable TrocketClient::DescribeConsumerLabelCallable(const DescribeConsumerLabelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeConsumerLabelOutcome>>();
+    DescribeConsumerLabelAsync(
+    request,
+    [prom](
+        const TrocketClient*,
+        const DescribeConsumerLabelRequest&,
+        DescribeConsumerLabelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrocketClient::DescribeConsumerLabelListOutcome TrocketClient::DescribeConsumerLabelList(const DescribeConsumerLabelListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConsumerLabelList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConsumerLabelListResponse rsp = DescribeConsumerLabelListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConsumerLabelListOutcome(rsp);
+        else
+            return DescribeConsumerLabelListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConsumerLabelListOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeConsumerLabelListAsync(const DescribeConsumerLabelListRequest& request, const DescribeConsumerLabelListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeConsumerLabelListRequest&;
+    using Resp = DescribeConsumerLabelListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeConsumerLabelList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrocketClient::DescribeConsumerLabelListOutcomeCallable TrocketClient::DescribeConsumerLabelListCallable(const DescribeConsumerLabelListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeConsumerLabelListOutcome>>();
+    DescribeConsumerLabelListAsync(
+    request,
+    [prom](
+        const TrocketClient*,
+        const DescribeConsumerLabelListRequest&,
+        DescribeConsumerLabelListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TrocketClient::DescribeConsumerLagOutcome TrocketClient::DescribeConsumerLag(const DescribeConsumerLagRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeConsumerLag");
@@ -832,6 +1082,106 @@ TrocketClient::DescribeConsumerLagOutcomeCallable TrocketClient::DescribeConsume
         const TrocketClient*,
         const DescribeConsumerLagRequest&,
         DescribeConsumerLagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrocketClient::DescribeConsumerRouteConfigOutcome TrocketClient::DescribeConsumerRouteConfig(const DescribeConsumerRouteConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConsumerRouteConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConsumerRouteConfigResponse rsp = DescribeConsumerRouteConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConsumerRouteConfigOutcome(rsp);
+        else
+            return DescribeConsumerRouteConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConsumerRouteConfigOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeConsumerRouteConfigAsync(const DescribeConsumerRouteConfigRequest& request, const DescribeConsumerRouteConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeConsumerRouteConfigRequest&;
+    using Resp = DescribeConsumerRouteConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeConsumerRouteConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrocketClient::DescribeConsumerRouteConfigOutcomeCallable TrocketClient::DescribeConsumerRouteConfigCallable(const DescribeConsumerRouteConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeConsumerRouteConfigOutcome>>();
+    DescribeConsumerRouteConfigAsync(
+    request,
+    [prom](
+        const TrocketClient*,
+        const DescribeConsumerRouteConfigRequest&,
+        DescribeConsumerRouteConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrocketClient::DescribeConsumerRouteVersionListOutcome TrocketClient::DescribeConsumerRouteVersionList(const DescribeConsumerRouteVersionListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConsumerRouteVersionList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConsumerRouteVersionListResponse rsp = DescribeConsumerRouteVersionListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConsumerRouteVersionListOutcome(rsp);
+        else
+            return DescribeConsumerRouteVersionListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConsumerRouteVersionListOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeConsumerRouteVersionListAsync(const DescribeConsumerRouteVersionListRequest& request, const DescribeConsumerRouteVersionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeConsumerRouteVersionListRequest&;
+    using Resp = DescribeConsumerRouteVersionListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeConsumerRouteVersionList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrocketClient::DescribeConsumerRouteVersionListOutcomeCallable TrocketClient::DescribeConsumerRouteVersionListCallable(const DescribeConsumerRouteVersionListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeConsumerRouteVersionListOutcome>>();
+    DescribeConsumerRouteVersionListAsync(
+    request,
+    [prom](
+        const TrocketClient*,
+        const DescribeConsumerRouteVersionListRequest&,
+        DescribeConsumerRouteVersionListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2182,6 +2532,56 @@ TrocketClient::ModifyTopicOutcomeCallable TrocketClient::ModifyTopicCallable(con
         const TrocketClient*,
         const ModifyTopicRequest&,
         ModifyTopicOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrocketClient::PutConsumerRouteConfigOutcome TrocketClient::PutConsumerRouteConfig(const PutConsumerRouteConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "PutConsumerRouteConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PutConsumerRouteConfigResponse rsp = PutConsumerRouteConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PutConsumerRouteConfigOutcome(rsp);
+        else
+            return PutConsumerRouteConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return PutConsumerRouteConfigOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::PutConsumerRouteConfigAsync(const PutConsumerRouteConfigRequest& request, const PutConsumerRouteConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const PutConsumerRouteConfigRequest&;
+    using Resp = PutConsumerRouteConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "PutConsumerRouteConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrocketClient::PutConsumerRouteConfigOutcomeCallable TrocketClient::PutConsumerRouteConfigCallable(const PutConsumerRouteConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<PutConsumerRouteConfigOutcome>>();
+    PutConsumerRouteConfigAsync(
+    request,
+    [prom](
+        const TrocketClient*,
+        const PutConsumerRouteConfigRequest&,
+        PutConsumerRouteConfigOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

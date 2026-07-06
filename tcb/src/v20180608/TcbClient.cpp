@@ -4390,56 +4390,6 @@ TcbClient::RepairPGUserMigrationHistoryOutcomeCallable TcbClient::RepairPGUserMi
     return prom->get_future();
 }
 
-TcbClient::RollbackPGUserMigrationsOutcome TcbClient::RollbackPGUserMigrations(const RollbackPGUserMigrationsRequest &request)
-{
-    auto outcome = MakeRequest(request, "RollbackPGUserMigrations");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        RollbackPGUserMigrationsResponse rsp = RollbackPGUserMigrationsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return RollbackPGUserMigrationsOutcome(rsp);
-        else
-            return RollbackPGUserMigrationsOutcome(o.GetError());
-    }
-    else
-    {
-        return RollbackPGUserMigrationsOutcome(outcome.GetError());
-    }
-}
-
-void TcbClient::RollbackPGUserMigrationsAsync(const RollbackPGUserMigrationsRequest& request, const RollbackPGUserMigrationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const RollbackPGUserMigrationsRequest&;
-    using Resp = RollbackPGUserMigrationsResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "RollbackPGUserMigrations", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TcbClient::RollbackPGUserMigrationsOutcomeCallable TcbClient::RollbackPGUserMigrationsCallable(const RollbackPGUserMigrationsRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<RollbackPGUserMigrationsOutcome>>();
-    RollbackPGUserMigrationsAsync(
-    request,
-    [prom](
-        const TcbClient*,
-        const RollbackPGUserMigrationsRequest&,
-        RollbackPGUserMigrationsOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 TcbClient::RunCommandsOutcome TcbClient::RunCommands(const RunCommandsRequest &request)
 {
     auto outcome = MakeRequest(request, "RunCommands");

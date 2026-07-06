@@ -27,7 +27,9 @@ CloudProductLogTaskInfo::CloudProductLogTaskInfo() :
     m_topicIdHasBeenSet(false),
     m_extendHasBeenSet(false),
     m_logTypeHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_topicTagsHasBeenSet(false),
+    m_logsetTagsHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,46 @@ CoreInternalOutcome CloudProductLogTaskInfo::Deserialize(const rapidjson::Value 
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("TopicTags") && !value["TopicTags"].IsNull())
+    {
+        if (!value["TopicTags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CloudProductLogTaskInfo.TopicTags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TopicTags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_topicTags.push_back(item);
+        }
+        m_topicTagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogsetTags") && !value["LogsetTags"].IsNull())
+    {
+        if (!value["LogsetTags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CloudProductLogTaskInfo.LogsetTags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["LogsetTags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_logsetTags.push_back(item);
+        }
+        m_logsetTagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +209,36 @@ void CloudProductLogTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_topicTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicTags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_topicTags.begin(); itr != m_topicTags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_logsetTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogsetTags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_logsetTags.begin(); itr != m_logsetTags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -282,5 +354,37 @@ void CloudProductLogTaskInfo::SetStatus(const int64_t& _status)
 bool CloudProductLogTaskInfo::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+vector<Tag> CloudProductLogTaskInfo::GetTopicTags() const
+{
+    return m_topicTags;
+}
+
+void CloudProductLogTaskInfo::SetTopicTags(const vector<Tag>& _topicTags)
+{
+    m_topicTags = _topicTags;
+    m_topicTagsHasBeenSet = true;
+}
+
+bool CloudProductLogTaskInfo::TopicTagsHasBeenSet() const
+{
+    return m_topicTagsHasBeenSet;
+}
+
+vector<Tag> CloudProductLogTaskInfo::GetLogsetTags() const
+{
+    return m_logsetTags;
+}
+
+void CloudProductLogTaskInfo::SetLogsetTags(const vector<Tag>& _logsetTags)
+{
+    m_logsetTags = _logsetTags;
+    m_logsetTagsHasBeenSet = true;
+}
+
+bool CloudProductLogTaskInfo::LogsetTagsHasBeenSet() const
+{
+    return m_logsetTagsHasBeenSet;
 }
 

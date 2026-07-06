@@ -193,6 +193,27 @@ namespace TencentCloud
                     bool ImageInfosHasBeenSet() const;
 
                     /**
+                     * 获取<p>指定图片输出张数。目前默认支持输出 1 张。</p>
+                     * @return OutputImageCount <p>指定图片输出张数。目前默认支持输出 1 张。</p>
+                     * 
+                     */
+                    int64_t GetOutputImageCount() const;
+
+                    /**
+                     * 设置<p>指定图片输出张数。目前默认支持输出 1 张。</p>
+                     * @param _outputImageCount <p>指定图片输出张数。目前默认支持输出 1 张。</p>
+                     * 
+                     */
+                    void SetOutputImageCount(const int64_t& _outputImageCount);
+
+                    /**
+                     * 判断参数 OutputImageCount 是否已赋值
+                     * @return OutputImageCount 是否已赋值
+                     * 
+                     */
+                    bool OutputImageCountHasBeenSet() const;
+
+                    /**
                      * 获取<p>用于传入模型要求的额外参数。</p>
                      * @return ExtraParameters <p>用于传入模型要求的额外参数。</p>
                      * 
@@ -319,6 +340,12 @@ namespace TencentCloud
                      */
                     std::vector<AigcImageInfo> m_imageInfos;
                     bool m_imageInfosHasBeenSet;
+
+                    /**
+                     * <p>指定图片输出张数。目前默认支持输出 1 张。</p>
+                     */
+                    int64_t m_outputImageCount;
+                    bool m_outputImageCountHasBeenSet;
 
                     /**
                      * <p>用于传入模型要求的额外参数。</p>

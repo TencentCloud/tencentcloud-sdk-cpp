@@ -21,7 +21,8 @@ using namespace TencentCloud::Keewidb::V20220308::Model;
 using namespace std;
 
 ProxyNodeInfo::ProxyNodeInfo() :
-    m_nodeIdHasBeenSet(false)
+    m_nodeIdHasBeenSet(false),
+    m_zoneIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome ProxyNodeInfo::Deserialize(const rapidjson::Value &value)
         m_nodeIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ZoneId") && !value["ZoneId"].IsNull())
+    {
+        if (!value["ZoneId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyNodeInfo.ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneId = value["ZoneId"].GetInt64();
+        m_zoneIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void ProxyNodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "NodeId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_nodeId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_zoneId, allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void ProxyNodeInfo::SetNodeId(const string& _nodeId)
 bool ProxyNodeInfo::NodeIdHasBeenSet() const
 {
     return m_nodeIdHasBeenSet;
+}
+
+int64_t ProxyNodeInfo::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void ProxyNodeInfo::SetZoneId(const int64_t& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool ProxyNodeInfo::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
 }
 

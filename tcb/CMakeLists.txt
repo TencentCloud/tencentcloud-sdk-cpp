@@ -241,14 +241,12 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeVmInstancesResponse.h
   include/tencentcloud/tcb/v20180608/model/ApiKeyToken.h
   include/tencentcloud/tcb/v20180608/model/StorageInfo.h
-  include/tencentcloud/tcb/v20180608/model/RollbackPGUserMigrationsResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyUserResp.h
   include/tencentcloud/tcb/v20180608/model/ModifySafeRuleResponse.h
   include/tencentcloud/tcb/v20180608/model/MigrationSummary.h
   include/tencentcloud/tcb/v20180608/model/ModifyClientResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeTableRequest.h
   include/tencentcloud/tcb/v20180608/model/UpdateTableRequest.h
-  include/tencentcloud/tcb/v20180608/model/RollbackPGUserMigrationsRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCreditsUsageDetailRequest.h
   include/tencentcloud/tcb/v20180608/model/AuthDomain.h
   include/tencentcloud/tcb/v20180608/model/RunSqlResponse.h
@@ -533,14 +531,12 @@ set(tcb_src
   src/v20180608/model/DescribeVmInstancesResponse.cpp
   src/v20180608/model/ApiKeyToken.cpp
   src/v20180608/model/StorageInfo.cpp
-  src/v20180608/model/RollbackPGUserMigrationsResponse.cpp
   src/v20180608/model/ModifyUserResp.cpp
   src/v20180608/model/ModifySafeRuleResponse.cpp
   src/v20180608/model/MigrationSummary.cpp
   src/v20180608/model/ModifyClientResponse.cpp
   src/v20180608/model/DescribeTableRequest.cpp
   src/v20180608/model/UpdateTableRequest.cpp
-  src/v20180608/model/RollbackPGUserMigrationsRequest.cpp
   src/v20180608/model/DescribeCreditsUsageDetailRequest.cpp
   src/v20180608/model/AuthDomain.cpp
   src/v20180608/model/RunSqlResponse.cpp

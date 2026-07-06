@@ -30,6 +30,7 @@ CreateAigcImageTaskRequest::CreateAigcImageTaskRequest() :
     m_negativePromptHasBeenSet(false),
     m_enhancePromptHasBeenSet(false),
     m_imageInfosHasBeenSet(false),
+    m_outputImageCountHasBeenSet(false),
     m_extraParametersHasBeenSet(false),
     m_additionalParametersHasBeenSet(false),
     m_storeCosParamHasBeenSet(false),
@@ -105,6 +106,14 @@ string CreateAigcImageTaskRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_outputImageCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputImageCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_outputImageCount, allocator);
     }
 
     if (m_extraParametersHasBeenSet)
@@ -259,6 +268,22 @@ void CreateAigcImageTaskRequest::SetImageInfos(const vector<AigcImageInfo>& _ima
 bool CreateAigcImageTaskRequest::ImageInfosHasBeenSet() const
 {
     return m_imageInfosHasBeenSet;
+}
+
+int64_t CreateAigcImageTaskRequest::GetOutputImageCount() const
+{
+    return m_outputImageCount;
+}
+
+void CreateAigcImageTaskRequest::SetOutputImageCount(const int64_t& _outputImageCount)
+{
+    m_outputImageCount = _outputImageCount;
+    m_outputImageCountHasBeenSet = true;
+}
+
+bool CreateAigcImageTaskRequest::OutputImageCountHasBeenSet() const
+{
+    return m_outputImageCountHasBeenSet;
 }
 
 AigcImageExtraParam CreateAigcImageTaskRequest::GetExtraParameters() const

@@ -19,13 +19,17 @@ set(trocket_public_header
   )
 
 set(trocket_public_header_model
+  include/tencentcloud/trocket/v20230308/model/ProductSKU.h
   include/tencentcloud/trocket/v20230308/model/DetailedRolePerm.h
   include/tencentcloud/trocket/v20230308/model/DescribeProductSKUsRequest.h
   include/tencentcloud/trocket/v20230308/model/CreateMigrationTaskRequest.h
   include/tencentcloud/trocket/v20230308/model/ResetConsumerGroupOffsetResponse.h
+  include/tencentcloud/trocket/v20230308/model/RouteRuleVersion.h
   include/tencentcloud/trocket/v20230308/model/DescribeSmoothMigrationTaskListRequest.h
-  include/tencentcloud/trocket/v20230308/model/ProductSKU.h
+  include/tencentcloud/trocket/v20230308/model/DescribeConsumerRouteVersionListResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeRoleListResponse.h
+  include/tencentcloud/trocket/v20230308/model/CreateConsumerLabelResponse.h
+  include/tencentcloud/trocket/v20230308/model/DescribeConsumerRouteConfigRequest.h
   include/tencentcloud/trocket/v20230308/model/CreateInstanceResponse.h
   include/tencentcloud/trocket/v20230308/model/SourceClusterTopicConfig.h
   include/tencentcloud/trocket/v20230308/model/ConsumeGroupItem.h
@@ -40,9 +44,11 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/ImportSourceClusterConsumerGroupsResponse.h
   include/tencentcloud/trocket/v20230308/model/DeleteTopicRequest.h
   include/tencentcloud/trocket/v20230308/model/DescribeTopicStatsRequest.h
+  include/tencentcloud/trocket/v20230308/model/MigratingTopic.h
   include/tencentcloud/trocket/v20230308/model/DescribeSmoothMigrationTaskListResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMigrationTaskListResponse.h
   include/tencentcloud/trocket/v20230308/model/VpcInfo.h
+  include/tencentcloud/trocket/v20230308/model/DeleteConsumerRouteConfigResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeRoleListRequest.h
   include/tencentcloud/trocket/v20230308/model/DescribeMigratingTopicStatsResponse.h
   include/tencentcloud/trocket/v20230308/model/ImportSourceClusterConsumerGroupsRequest.h
@@ -56,16 +62,18 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DescribeInstanceListResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeConsumerClientListResponse.h
   include/tencentcloud/trocket/v20230308/model/ModifyInstanceResponse.h
+  include/tencentcloud/trocket/v20230308/model/ConsumerLabel.h
   include/tencentcloud/trocket/v20230308/model/CreateConsumerGroupRequest.h
   include/tencentcloud/trocket/v20230308/model/ClientSubscriptionInfo.h
   include/tencentcloud/trocket/v20230308/model/ChangeMigratingTopicToNextStageResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeSourceClusterGroupListRequest.h
-  include/tencentcloud/trocket/v20230308/model/DescribeInstanceListRequest.h
+  include/tencentcloud/trocket/v20230308/model/DescribeConsumerRouteConfigResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMigrationTaskListRequest.h
   include/tencentcloud/trocket/v20230308/model/VerifyMessageConsumptionResponse.h
   include/tencentcloud/trocket/v20230308/model/ModifyRoleResponse.h
   include/tencentcloud/trocket/v20230308/model/TopicStageChangeResult.h
   include/tencentcloud/trocket/v20230308/model/ImportSourceClusterTopicsRequest.h
+  include/tencentcloud/trocket/v20230308/model/DescribeFusionInstanceListRequest.h
   include/tencentcloud/trocket/v20230308/model/SourceClusterGroupConfig.h
   include/tencentcloud/trocket/v20230308/model/DeleteInstanceResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeTopicResponse.h
@@ -100,6 +108,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/ZoneScheduledItem.h
   include/tencentcloud/trocket/v20230308/model/ImportSourceClusterTopicsResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeTopicListRequest.h
+  include/tencentcloud/trocket/v20230308/model/DescribeConsumerLabelListRequest.h
   include/tencentcloud/trocket/v20230308/model/ModifyConsumerGroupRequest.h
   include/tencentcloud/trocket/v20230308/model/DescribeConsumerGroupRequest.h
   include/tencentcloud/trocket/v20230308/model/DescribeConsumerGroupListRequest.h
@@ -108,13 +117,14 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/CreateInstanceRequest.h
   include/tencentcloud/trocket/v20230308/model/ConsumerClient.h
   include/tencentcloud/trocket/v20230308/model/MessageTraceItem.h
-  include/tencentcloud/trocket/v20230308/model/DescribeConsumerClientRequest.h
+  include/tencentcloud/trocket/v20230308/model/DescribeProducerListResponse.h
   include/tencentcloud/trocket/v20230308/model/ModifyTopicResponse.h
   include/tencentcloud/trocket/v20230308/model/SendMessageResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeConsumerLagResponse.h
   include/tencentcloud/trocket/v20230308/model/ChangeMigratingTopicToNextStageRequest.h
   include/tencentcloud/trocket/v20230308/model/DeleteRoleResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeTopicListByGroupRequest.h
+  include/tencentcloud/trocket/v20230308/model/DescribeConsumerLabelResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMigratingTopicListRequest.h
   include/tencentcloud/trocket/v20230308/model/Filter.h
   include/tencentcloud/trocket/v20230308/model/ModifyTopicRequest.h
@@ -122,25 +132,33 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DescribeConsumerClientResponse.h
   include/tencentcloud/trocket/v20230308/model/DeleteInstanceRequest.h
   include/tencentcloud/trocket/v20230308/model/MessageTrackItem.h
-  include/tencentcloud/trocket/v20230308/model/DescribeProducerListResponse.h
+  include/tencentcloud/trocket/v20230308/model/DescribeConsumerClientRequest.h
+  include/tencentcloud/trocket/v20230308/model/RouteRule.h
   include/tencentcloud/trocket/v20230308/model/ResendDeadLetterMessageRequest.h
+  include/tencentcloud/trocket/v20230308/model/DescribeConsumerLabelListResponse.h
   include/tencentcloud/trocket/v20230308/model/RollbackMigratingTopicStageResponse.h
-  include/tencentcloud/trocket/v20230308/model/DescribeFusionInstanceListRequest.h
-  include/tencentcloud/trocket/v20230308/model/DoHealthCheckOnMigratingTopicResponse.h
   include/tencentcloud/trocket/v20230308/model/CreateRoleResponse.h
+  include/tencentcloud/trocket/v20230308/model/DoHealthCheckOnMigratingTopicResponse.h
+  include/tencentcloud/trocket/v20230308/model/DeleteConsumerRouteConfigRequest.h
+  include/tencentcloud/trocket/v20230308/model/DeleteConsumerLabelResponse.h
   include/tencentcloud/trocket/v20230308/model/ModifyInstanceEndpointRequest.h
   include/tencentcloud/trocket/v20230308/model/CreateMigrationTaskResponse.h
+  include/tencentcloud/trocket/v20230308/model/CreateConsumerLabelRequest.h
   include/tencentcloud/trocket/v20230308/model/DescribeTopicListResponse.h
+  include/tencentcloud/trocket/v20230308/model/PutConsumerRouteConfigResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeConsumerClientListRequest.h
-  include/tencentcloud/trocket/v20230308/model/MigratingTopic.h
+  include/tencentcloud/trocket/v20230308/model/DescribeInstanceListRequest.h
   include/tencentcloud/trocket/v20230308/model/CreateRoleRequest.h
   include/tencentcloud/trocket/v20230308/model/DeleteConsumerGroupResponse.h
+  include/tencentcloud/trocket/v20230308/model/DescribeConsumerLabelRequest.h
   include/tencentcloud/trocket/v20230308/model/Endpoint.h
+  include/tencentcloud/trocket/v20230308/model/DescribeConsumerRouteVersionListRequest.h
   include/tencentcloud/trocket/v20230308/model/MessageItem.h
   include/tencentcloud/trocket/v20230308/model/RoleItem.h
   include/tencentcloud/trocket/v20230308/model/TagFilter.h
   include/tencentcloud/trocket/v20230308/model/DescribeConsumerGroupListResponse.h
   include/tencentcloud/trocket/v20230308/model/PriceTag.h
+  include/tencentcloud/trocket/v20230308/model/PutConsumerRouteConfigRequest.h
   include/tencentcloud/trocket/v20230308/model/ProducerInfo.h
   include/tencentcloud/trocket/v20230308/model/DeleteTopicResponse.h
   include/tencentcloud/trocket/v20230308/model/ModifyInstanceEndpointResponse.h
@@ -148,18 +166,23 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DescribeProductSKUsResponse.h
   include/tencentcloud/trocket/v20230308/model/RemoveMigratingTopicResponse.h
   include/tencentcloud/trocket/v20230308/model/IpRule.h
+  include/tencentcloud/trocket/v20230308/model/DeleteConsumerLabelRequest.h
   include/tencentcloud/trocket/v20230308/model/ResetConsumerGroupOffsetRequest.h
   )
 
 set(trocket_src
   src/v20230308/TrocketClient.cpp
+  src/v20230308/model/ProductSKU.cpp
   src/v20230308/model/DetailedRolePerm.cpp
   src/v20230308/model/DescribeProductSKUsRequest.cpp
   src/v20230308/model/CreateMigrationTaskRequest.cpp
   src/v20230308/model/ResetConsumerGroupOffsetResponse.cpp
+  src/v20230308/model/RouteRuleVersion.cpp
   src/v20230308/model/DescribeSmoothMigrationTaskListRequest.cpp
-  src/v20230308/model/ProductSKU.cpp
+  src/v20230308/model/DescribeConsumerRouteVersionListResponse.cpp
   src/v20230308/model/DescribeRoleListResponse.cpp
+  src/v20230308/model/CreateConsumerLabelResponse.cpp
+  src/v20230308/model/DescribeConsumerRouteConfigRequest.cpp
   src/v20230308/model/CreateInstanceResponse.cpp
   src/v20230308/model/SourceClusterTopicConfig.cpp
   src/v20230308/model/ConsumeGroupItem.cpp
@@ -174,9 +197,11 @@ set(trocket_src
   src/v20230308/model/ImportSourceClusterConsumerGroupsResponse.cpp
   src/v20230308/model/DeleteTopicRequest.cpp
   src/v20230308/model/DescribeTopicStatsRequest.cpp
+  src/v20230308/model/MigratingTopic.cpp
   src/v20230308/model/DescribeSmoothMigrationTaskListResponse.cpp
   src/v20230308/model/DescribeMigrationTaskListResponse.cpp
   src/v20230308/model/VpcInfo.cpp
+  src/v20230308/model/DeleteConsumerRouteConfigResponse.cpp
   src/v20230308/model/DescribeRoleListRequest.cpp
   src/v20230308/model/DescribeMigratingTopicStatsResponse.cpp
   src/v20230308/model/ImportSourceClusterConsumerGroupsRequest.cpp
@@ -190,16 +215,18 @@ set(trocket_src
   src/v20230308/model/DescribeInstanceListResponse.cpp
   src/v20230308/model/DescribeConsumerClientListResponse.cpp
   src/v20230308/model/ModifyInstanceResponse.cpp
+  src/v20230308/model/ConsumerLabel.cpp
   src/v20230308/model/CreateConsumerGroupRequest.cpp
   src/v20230308/model/ClientSubscriptionInfo.cpp
   src/v20230308/model/ChangeMigratingTopicToNextStageResponse.cpp
   src/v20230308/model/DescribeSourceClusterGroupListRequest.cpp
-  src/v20230308/model/DescribeInstanceListRequest.cpp
+  src/v20230308/model/DescribeConsumerRouteConfigResponse.cpp
   src/v20230308/model/DescribeMigrationTaskListRequest.cpp
   src/v20230308/model/VerifyMessageConsumptionResponse.cpp
   src/v20230308/model/ModifyRoleResponse.cpp
   src/v20230308/model/TopicStageChangeResult.cpp
   src/v20230308/model/ImportSourceClusterTopicsRequest.cpp
+  src/v20230308/model/DescribeFusionInstanceListRequest.cpp
   src/v20230308/model/SourceClusterGroupConfig.cpp
   src/v20230308/model/DeleteInstanceResponse.cpp
   src/v20230308/model/DescribeTopicResponse.cpp
@@ -234,6 +261,7 @@ set(trocket_src
   src/v20230308/model/ZoneScheduledItem.cpp
   src/v20230308/model/ImportSourceClusterTopicsResponse.cpp
   src/v20230308/model/DescribeTopicListRequest.cpp
+  src/v20230308/model/DescribeConsumerLabelListRequest.cpp
   src/v20230308/model/ModifyConsumerGroupRequest.cpp
   src/v20230308/model/DescribeConsumerGroupRequest.cpp
   src/v20230308/model/DescribeConsumerGroupListRequest.cpp
@@ -242,13 +270,14 @@ set(trocket_src
   src/v20230308/model/CreateInstanceRequest.cpp
   src/v20230308/model/ConsumerClient.cpp
   src/v20230308/model/MessageTraceItem.cpp
-  src/v20230308/model/DescribeConsumerClientRequest.cpp
+  src/v20230308/model/DescribeProducerListResponse.cpp
   src/v20230308/model/ModifyTopicResponse.cpp
   src/v20230308/model/SendMessageResponse.cpp
   src/v20230308/model/DescribeConsumerLagResponse.cpp
   src/v20230308/model/ChangeMigratingTopicToNextStageRequest.cpp
   src/v20230308/model/DeleteRoleResponse.cpp
   src/v20230308/model/DescribeTopicListByGroupRequest.cpp
+  src/v20230308/model/DescribeConsumerLabelResponse.cpp
   src/v20230308/model/DescribeMigratingTopicListRequest.cpp
   src/v20230308/model/Filter.cpp
   src/v20230308/model/ModifyTopicRequest.cpp
@@ -256,25 +285,33 @@ set(trocket_src
   src/v20230308/model/DescribeConsumerClientResponse.cpp
   src/v20230308/model/DeleteInstanceRequest.cpp
   src/v20230308/model/MessageTrackItem.cpp
-  src/v20230308/model/DescribeProducerListResponse.cpp
+  src/v20230308/model/DescribeConsumerClientRequest.cpp
+  src/v20230308/model/RouteRule.cpp
   src/v20230308/model/ResendDeadLetterMessageRequest.cpp
+  src/v20230308/model/DescribeConsumerLabelListResponse.cpp
   src/v20230308/model/RollbackMigratingTopicStageResponse.cpp
-  src/v20230308/model/DescribeFusionInstanceListRequest.cpp
-  src/v20230308/model/DoHealthCheckOnMigratingTopicResponse.cpp
   src/v20230308/model/CreateRoleResponse.cpp
+  src/v20230308/model/DoHealthCheckOnMigratingTopicResponse.cpp
+  src/v20230308/model/DeleteConsumerRouteConfigRequest.cpp
+  src/v20230308/model/DeleteConsumerLabelResponse.cpp
   src/v20230308/model/ModifyInstanceEndpointRequest.cpp
   src/v20230308/model/CreateMigrationTaskResponse.cpp
+  src/v20230308/model/CreateConsumerLabelRequest.cpp
   src/v20230308/model/DescribeTopicListResponse.cpp
+  src/v20230308/model/PutConsumerRouteConfigResponse.cpp
   src/v20230308/model/DescribeConsumerClientListRequest.cpp
-  src/v20230308/model/MigratingTopic.cpp
+  src/v20230308/model/DescribeInstanceListRequest.cpp
   src/v20230308/model/CreateRoleRequest.cpp
   src/v20230308/model/DeleteConsumerGroupResponse.cpp
+  src/v20230308/model/DescribeConsumerLabelRequest.cpp
   src/v20230308/model/Endpoint.cpp
+  src/v20230308/model/DescribeConsumerRouteVersionListRequest.cpp
   src/v20230308/model/MessageItem.cpp
   src/v20230308/model/RoleItem.cpp
   src/v20230308/model/TagFilter.cpp
   src/v20230308/model/DescribeConsumerGroupListResponse.cpp
   src/v20230308/model/PriceTag.cpp
+  src/v20230308/model/PutConsumerRouteConfigRequest.cpp
   src/v20230308/model/ProducerInfo.cpp
   src/v20230308/model/DeleteTopicResponse.cpp
   src/v20230308/model/ModifyInstanceEndpointResponse.cpp
@@ -282,6 +319,7 @@ set(trocket_src
   src/v20230308/model/DescribeProductSKUsResponse.cpp
   src/v20230308/model/RemoveMigratingTopicResponse.cpp
   src/v20230308/model/IpRule.cpp
+  src/v20230308/model/DeleteConsumerLabelRequest.cpp
   src/v20230308/model/ResetConsumerGroupOffsetRequest.cpp
   )
 

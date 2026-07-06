@@ -25,7 +25,8 @@ using namespace std;
 DescribeCloudProductLogTasksRequest::DescribeCloudProductLogTasksRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_withTagsHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,14 @@ string DescribeCloudProductLogTasksRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_withTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WithTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_withTags, allocator);
     }
 
 
@@ -121,6 +130,22 @@ void DescribeCloudProductLogTasksRequest::SetFilters(const vector<Filter>& _filt
 bool DescribeCloudProductLogTasksRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+bool DescribeCloudProductLogTasksRequest::GetWithTags() const
+{
+    return m_withTags;
+}
+
+void DescribeCloudProductLogTasksRequest::SetWithTags(const bool& _withTags)
+{
+    m_withTags = _withTags;
+    m_withTagsHasBeenSet = true;
+}
+
+bool DescribeCloudProductLogTasksRequest::WithTagsHasBeenSet() const
+{
+    return m_withTagsHasBeenSet;
 }
 
 

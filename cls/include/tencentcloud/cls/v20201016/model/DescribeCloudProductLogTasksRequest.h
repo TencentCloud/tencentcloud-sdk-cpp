@@ -106,6 +106,27 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否携带topic和logset的标签信息</p>
+                     * @return WithTags <p>是否携带topic和logset的标签信息</p>
+                     * 
+                     */
+                    bool GetWithTags() const;
+
+                    /**
+                     * 设置<p>是否携带topic和logset的标签信息</p>
+                     * @param _withTags <p>是否携带topic和logset的标签信息</p>
+                     * 
+                     */
+                    void SetWithTags(const bool& _withTags);
+
+                    /**
+                     * 判断参数 WithTags 是否已赋值
+                     * @return WithTags 是否已赋值
+                     * 
+                     */
+                    bool WithTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +146,12 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * <p>是否携带topic和logset的标签信息</p>
+                     */
+                    bool m_withTags;
+                    bool m_withTagsHasBeenSet;
 
                 };
             }

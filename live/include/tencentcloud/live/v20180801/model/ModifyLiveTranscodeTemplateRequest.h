@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板 Id。
-                     * @return TemplateId 模板 Id。
+                     * 获取<p>模板 Id。</p>
+                     * @return TemplateId <p>模板 Id。</p>
                      * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
-                     * 设置模板 Id。
-                     * @param _templateId 模板 Id。
+                     * 设置<p>模板 Id。</p>
+                     * @param _templateId <p>模板 Id。</p>
                      * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
@@ -65,23 +65,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取视频编码：h264/h265/origin，默认origin。
-
-origin: 保持原始编码格式
-                     * @return Vcodec 视频编码：h264/h265/origin，默认origin。
-
-origin: 保持原始编码格式
+                     * 获取<p>视频编码：h264/h265/origin，默认origin。</p><p>origin: 保持原始编码格式</p>
+                     * @return Vcodec <p>视频编码：h264/h265/origin，默认origin。</p><p>origin: 保持原始编码格式</p>
                      * 
                      */
                     std::string GetVcodec() const;
 
                     /**
-                     * 设置视频编码：h264/h265/origin，默认origin。
-
-origin: 保持原始编码格式
-                     * @param _vcodec 视频编码：h264/h265/origin，默认origin。
-
-origin: 保持原始编码格式
+                     * 设置<p>视频编码：h264/h265/origin，默认origin。</p><p>origin: 保持原始编码格式</p>
+                     * @param _vcodec <p>视频编码：h264/h265/origin，默认origin。</p><p>origin: 保持原始编码格式</p>
                      * 
                      */
                     void SetVcodec(const std::string& _vcodec);
@@ -94,19 +86,15 @@ origin: 保持原始编码格式
                     bool VcodecHasBeenSet() const;
 
                     /**
-                     * 获取音频编码：aac，默认aac。
-注意：当前该参数未生效，待后续支持！
-                     * @return Acodec 音频编码：aac，默认aac。
-注意：当前该参数未生效，待后续支持！
+                     * 获取<p>音频编码：aac，默认aac。<br>注意：当前该参数未生效，待后续支持！</p>
+                     * @return Acodec <p>音频编码：aac，默认aac。<br>注意：当前该参数未生效，待后续支持！</p>
                      * 
                      */
                     std::string GetAcodec() const;
 
                     /**
-                     * 设置音频编码：aac，默认aac。
-注意：当前该参数未生效，待后续支持！
-                     * @param _acodec 音频编码：aac，默认aac。
-注意：当前该参数未生效，待后续支持！
+                     * 设置<p>音频编码：aac，默认aac。<br>注意：当前该参数未生效，待后续支持！</p>
+                     * @param _acodec <p>音频编码：aac，默认aac。<br>注意：当前该参数未生效，待后续支持！</p>
                      * 
                      */
                     void SetAcodec(const std::string& _acodec);
@@ -119,19 +107,15 @@ origin: 保持原始编码格式
                     bool AcodecHasBeenSet() const;
 
                     /**
-                     * 获取音频码率，默认0。
-范围：0-500。
-                     * @return AudioBitrate 音频码率，默认0。
-范围：0-500。
+                     * 获取<p>音频码率，默认0。<br>范围：0-500。</p>
+                     * @return AudioBitrate <p>音频码率，默认0。<br>范围：0-500。</p>
                      * 
                      */
                     int64_t GetAudioBitrate() const;
 
                     /**
-                     * 设置音频码率，默认0。
-范围：0-500。
-                     * @param _audioBitrate 音频码率，默认0。
-范围：0-500。
+                     * 设置<p>音频码率，默认0。<br>范围：0-500。</p>
+                     * @param _audioBitrate <p>音频码率，默认0。<br>范围：0-500。</p>
                      * 
                      */
                     void SetAudioBitrate(const int64_t& _audioBitrate);
@@ -144,15 +128,15 @@ origin: 保持原始编码格式
                     bool AudioBitrateHasBeenSet() const;
 
                     /**
-                     * 获取模板描述。
-                     * @return Description 模板描述。
+                     * 获取<p>模板描述。</p>
+                     * @return Description <p>模板描述。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置模板描述。
-                     * @param _description 模板描述。
+                     * 设置<p>模板描述。</p>
+                     * @param _description <p>模板描述。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -165,23 +149,15 @@ origin: 保持原始编码格式
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取视频码率。范围：0kbps - 8000kbps。
-0为保持原始码率。
-注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。
-                     * @return VideoBitrate 视频码率。范围：0kbps - 8000kbps。
-0为保持原始码率。
-注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。
+                     * 获取<p>视频码率。范围：0kbps - 8000kbps。<br>0为保持原始码率。<br>注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。</p>
+                     * @return VideoBitrate <p>视频码率。范围：0kbps - 8000kbps。<br>0为保持原始码率。<br>注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。</p>
                      * 
                      */
                     int64_t GetVideoBitrate() const;
 
                     /**
-                     * 设置视频码率。范围：0kbps - 8000kbps。
-0为保持原始码率。
-注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。
-                     * @param _videoBitrate 视频码率。范围：0kbps - 8000kbps。
-0为保持原始码率。
-注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。
+                     * 设置<p>视频码率。范围：0kbps - 8000kbps。<br>0为保持原始码率。<br>注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。</p>
+                     * @param _videoBitrate <p>视频码率。范围：0kbps - 8000kbps。<br>0为保持原始码率。<br>注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。</p>
                      * 
                      */
                     void SetVideoBitrate(const int64_t& _videoBitrate);
@@ -194,19 +170,15 @@ origin: 保持原始编码格式
                     bool VideoBitrateHasBeenSet() const;
 
                     /**
-                     * 获取宽。0-3000。
-数值必须是2的倍数，0是原始宽度
-                     * @return Width 宽。0-3000。
-数值必须是2的倍数，0是原始宽度
+                     * 获取<p>宽。0-3000。<br>数值必须是2的倍数，0是原始宽度</p>
+                     * @return Width <p>宽。0-3000。<br>数值必须是2的倍数，0是原始宽度</p>
                      * 
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置宽。0-3000。
-数值必须是2的倍数，0是原始宽度
-                     * @param _width 宽。0-3000。
-数值必须是2的倍数，0是原始宽度
+                     * 设置<p>宽。0-3000。<br>数值必须是2的倍数，0是原始宽度</p>
+                     * @param _width <p>宽。0-3000。<br>数值必须是2的倍数，0是原始宽度</p>
                      * 
                      */
                     void SetWidth(const int64_t& _width);
@@ -219,15 +191,15 @@ origin: 保持原始编码格式
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取是否保留视频，0：否，1：是。默认1。
-                     * @return NeedVideo 是否保留视频，0：否，1：是。默认1。
+                     * 获取<p>是否保留视频，0：否，1：是。默认1。</p>
+                     * @return NeedVideo <p>是否保留视频，0：否，1：是。默认1。</p>
                      * 
                      */
                     int64_t GetNeedVideo() const;
 
                     /**
-                     * 设置是否保留视频，0：否，1：是。默认1。
-                     * @param _needVideo 是否保留视频，0：否，1：是。默认1。
+                     * 设置<p>是否保留视频，0：否，1：是。默认1。</p>
+                     * @param _needVideo <p>是否保留视频，0：否，1：是。默认1。</p>
                      * 
                      */
                     void SetNeedVideo(const int64_t& _needVideo);
@@ -240,15 +212,15 @@ origin: 保持原始编码格式
                     bool NeedVideoHasBeenSet() const;
 
                     /**
-                     * 获取是否保留音频，0：否，1：是。默认1。
-                     * @return NeedAudio 是否保留音频，0：否，1：是。默认1。
+                     * 获取<p>是否保留音频，0：否，1：是。默认1。</p>
+                     * @return NeedAudio <p>是否保留音频，0：否，1：是。默认1。</p>
                      * 
                      */
                     int64_t GetNeedAudio() const;
 
                     /**
-                     * 设置是否保留音频，0：否，1：是。默认1。
-                     * @param _needAudio 是否保留音频，0：否，1：是。默认1。
+                     * 设置<p>是否保留音频，0：否，1：是。默认1。</p>
+                     * @param _needAudio <p>是否保留音频，0：否，1：是。默认1。</p>
                      * 
                      */
                     void SetNeedAudio(const int64_t& _needAudio);
@@ -261,19 +233,15 @@ origin: 保持原始编码格式
                     bool NeedAudioHasBeenSet() const;
 
                     /**
-                     * 获取高。0-3000。
-数值必须是2的倍数，0是原始宽度
-                     * @return Height 高。0-3000。
-数值必须是2的倍数，0是原始宽度
+                     * 获取<p>高。0-3000。<br>数值必须是2的倍数，0是原始宽度</p>
+                     * @return Height <p>高。0-3000。<br>数值必须是2的倍数，0是原始宽度</p>
                      * 
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置高。0-3000。
-数值必须是2的倍数，0是原始宽度
-                     * @param _height 高。0-3000。
-数值必须是2的倍数，0是原始宽度
+                     * 设置<p>高。0-3000。<br>数值必须是2的倍数，0是原始宽度</p>
+                     * @param _height <p>高。0-3000。<br>数值必须是2的倍数，0是原始宽度</p>
                      * 
                      */
                     void SetHeight(const int64_t& _height);
@@ -286,19 +254,15 @@ origin: 保持原始编码格式
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取帧率，默认0。
-范围0-60
-                     * @return Fps 帧率，默认0。
-范围0-60
+                     * 获取<p>帧率，默认0。<br>范围0-60</p>
+                     * @return Fps <p>帧率，默认0。<br>范围0-60</p>
                      * 
                      */
                     int64_t GetFps() const;
 
                     /**
-                     * 设置帧率，默认0。
-范围0-60
-                     * @param _fps 帧率，默认0。
-范围0-60
+                     * 设置<p>帧率，默认0。<br>范围0-60</p>
+                     * @param _fps <p>帧率，默认0。<br>范围0-60</p>
                      * 
                      */
                     void SetFps(const int64_t& _fps);
@@ -311,19 +275,15 @@ origin: 保持原始编码格式
                     bool FpsHasBeenSet() const;
 
                     /**
-                     * 获取关键帧间隔，单位：秒。
-范围2-6
-                     * @return Gop 关键帧间隔，单位：秒。
-范围2-6
+                     * 获取<p>关键帧间隔，单位：秒。<br>范围2-6</p>
+                     * @return Gop <p>关键帧间隔，单位：秒。<br>范围2-6</p>
                      * 
                      */
                     int64_t GetGop() const;
 
                     /**
-                     * 设置关键帧间隔，单位：秒。
-范围2-6
-                     * @param _gop 关键帧间隔，单位：秒。
-范围2-6
+                     * 设置<p>关键帧间隔，单位：秒。<br>范围2-6</p>
+                     * @param _gop <p>关键帧间隔，单位：秒。<br>范围2-6</p>
                      * 
                      */
                     void SetGop(const int64_t& _gop);
@@ -336,19 +296,15 @@ origin: 保持原始编码格式
                     bool GopHasBeenSet() const;
 
                     /**
-                     * 获取旋转角度，默认0。
-可取值：0，90，180，270
-                     * @return Rotate 旋转角度，默认0。
-可取值：0，90，180，270
+                     * 获取<p>旋转角度，默认0。<br>可取值：0，90，180，270</p>
+                     * @return Rotate <p>旋转角度，默认0。<br>可取值：0，90，180，270</p>
                      * 
                      */
                     int64_t GetRotate() const;
 
                     /**
-                     * 设置旋转角度，默认0。
-可取值：0，90，180，270
-                     * @param _rotate 旋转角度，默认0。
-可取值：0，90，180，270
+                     * 设置<p>旋转角度，默认0。<br>可取值：0，90，180，270</p>
+                     * @param _rotate <p>旋转角度，默认0。<br>可取值：0，90，180，270</p>
                      * 
                      */
                     void SetRotate(const int64_t& _rotate);
@@ -361,19 +317,15 @@ origin: 保持原始编码格式
                     bool RotateHasBeenSet() const;
 
                     /**
-                     * 获取编码质量：
-baseline/main/high。
-                     * @return Profile 编码质量：
-baseline/main/high。
+                     * 获取<p>编码质量：<br>baseline/main/high。</p>
+                     * @return Profile <p>编码质量：<br>baseline/main/high。</p>
                      * 
                      */
                     std::string GetProfile() const;
 
                     /**
-                     * 设置编码质量：
-baseline/main/high。
-                     * @param _profile 编码质量：
-baseline/main/high。
+                     * 设置<p>编码质量：<br>baseline/main/high。</p>
+                     * @param _profile <p>编码质量：<br>baseline/main/high。</p>
                      * 
                      */
                     void SetProfile(const std::string& _profile);
@@ -386,23 +338,15 @@ baseline/main/high。
                     bool ProfileHasBeenSet() const;
 
                     /**
-                     * 获取当设置的码率>原始码率时，是否以原始码率为准。
-0：否， 1：是
-默认 0。
-                     * @return BitrateToOrig 当设置的码率>原始码率时，是否以原始码率为准。
-0：否， 1：是
-默认 0。
+                     * 获取<p>当设置的码率&gt;原始码率时，是否以原始码率为准。<br>0：否， 1：是<br>默认 0。</p>
+                     * @return BitrateToOrig <p>当设置的码率&gt;原始码率时，是否以原始码率为准。<br>0：否， 1：是<br>默认 0。</p>
                      * 
                      */
                     int64_t GetBitrateToOrig() const;
 
                     /**
-                     * 设置当设置的码率>原始码率时，是否以原始码率为准。
-0：否， 1：是
-默认 0。
-                     * @param _bitrateToOrig 当设置的码率>原始码率时，是否以原始码率为准。
-0：否， 1：是
-默认 0。
+                     * 设置<p>当设置的码率&gt;原始码率时，是否以原始码率为准。<br>0：否， 1：是<br>默认 0。</p>
+                     * @param _bitrateToOrig <p>当设置的码率&gt;原始码率时，是否以原始码率为准。<br>0：否， 1：是<br>默认 0。</p>
                      * 
                      */
                     void SetBitrateToOrig(const int64_t& _bitrateToOrig);
@@ -415,23 +359,15 @@ baseline/main/high。
                     bool BitrateToOrigHasBeenSet() const;
 
                     /**
-                     * 获取当设置的高度>原始高度时，是否以原始高度为准。
-0：否， 1：是
-默认 0。
-                     * @return HeightToOrig 当设置的高度>原始高度时，是否以原始高度为准。
-0：否， 1：是
-默认 0。
+                     * 获取<p>当设置的高度&gt;原始高度时，是否以原始高度为准。<br>0：否， 1：是<br>默认 0。</p>
+                     * @return HeightToOrig <p>当设置的高度&gt;原始高度时，是否以原始高度为准。<br>0：否， 1：是<br>默认 0。</p>
                      * 
                      */
                     int64_t GetHeightToOrig() const;
 
                     /**
-                     * 设置当设置的高度>原始高度时，是否以原始高度为准。
-0：否， 1：是
-默认 0。
-                     * @param _heightToOrig 当设置的高度>原始高度时，是否以原始高度为准。
-0：否， 1：是
-默认 0。
+                     * 设置<p>当设置的高度&gt;原始高度时，是否以原始高度为准。<br>0：否， 1：是<br>默认 0。</p>
+                     * @param _heightToOrig <p>当设置的高度&gt;原始高度时，是否以原始高度为准。<br>0：否， 1：是<br>默认 0。</p>
                      * 
                      */
                     void SetHeightToOrig(const int64_t& _heightToOrig);
@@ -444,23 +380,15 @@ baseline/main/high。
                     bool HeightToOrigHasBeenSet() const;
 
                     /**
-                     * 获取当设置的帧率>原始帧率时，是否以原始帧率为准。
-0：否， 1：是
-默认 0。
-                     * @return FpsToOrig 当设置的帧率>原始帧率时，是否以原始帧率为准。
-0：否， 1：是
-默认 0。
+                     * 获取<p>当设置的帧率&gt;原始帧率时，是否以原始帧率为准。<br>0：否， 1：是<br>默认 0。</p>
+                     * @return FpsToOrig <p>当设置的帧率&gt;原始帧率时，是否以原始帧率为准。<br>0：否， 1：是<br>默认 0。</p>
                      * 
                      */
                     int64_t GetFpsToOrig() const;
 
                     /**
-                     * 设置当设置的帧率>原始帧率时，是否以原始帧率为准。
-0：否， 1：是
-默认 0。
-                     * @param _fpsToOrig 当设置的帧率>原始帧率时，是否以原始帧率为准。
-0：否， 1：是
-默认 0。
+                     * 设置<p>当设置的帧率&gt;原始帧率时，是否以原始帧率为准。<br>0：否， 1：是<br>默认 0。</p>
+                     * @param _fpsToOrig <p>当设置的帧率&gt;原始帧率时，是否以原始帧率为准。<br>0：否， 1：是<br>默认 0。</p>
                      * 
                      */
                     void SetFpsToOrig(const int64_t& _fpsToOrig);
@@ -473,27 +401,15 @@ baseline/main/high。
                     bool FpsToOrigHasBeenSet() const;
 
                     /**
-                     * 获取极速高清视频码率压缩比。
-极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)
-
-取值范围：0.0到0.5
-                     * @return AdaptBitratePercent 极速高清视频码率压缩比。
-极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)
-
-取值范围：0.0到0.5
+                     * 获取<p>极速高清视频码率压缩比。<br>极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)</p><p>取值范围：0.0 到 0.5<br>智能降码：0.5 到 0.9</p>
+                     * @return AdaptBitratePercent <p>极速高清视频码率压缩比。<br>极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)</p><p>取值范围：0.0 到 0.5<br>智能降码：0.5 到 0.9</p>
                      * 
                      */
                     double GetAdaptBitratePercent() const;
 
                     /**
-                     * 设置极速高清视频码率压缩比。
-极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)
-
-取值范围：0.0到0.5
-                     * @param _adaptBitratePercent 极速高清视频码率压缩比。
-极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)
-
-取值范围：0.0到0.5
+                     * 设置<p>极速高清视频码率压缩比。<br>极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)</p><p>取值范围：0.0 到 0.5<br>智能降码：0.5 到 0.9</p>
+                     * @param _adaptBitratePercent <p>极速高清视频码率压缩比。<br>极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)</p><p>取值范围：0.0 到 0.5<br>智能降码：0.5 到 0.9</p>
                      * 
                      */
                     void SetAdaptBitratePercent(const double& _adaptBitratePercent);
@@ -506,15 +422,15 @@ baseline/main/high。
                     bool AdaptBitratePercentHasBeenSet() const;
 
                     /**
-                     * 获取是否以短边作为高度，0：否，1：是。默认0。
-                     * @return ShortEdgeAsHeight 是否以短边作为高度，0：否，1：是。默认0。
+                     * 获取<p>是否以短边作为高度，0：否，1：是。默认0。</p>
+                     * @return ShortEdgeAsHeight <p>是否以短边作为高度，0：否，1：是。默认0。</p>
                      * 
                      */
                     int64_t GetShortEdgeAsHeight() const;
 
                     /**
-                     * 设置是否以短边作为高度，0：否，1：是。默认0。
-                     * @param _shortEdgeAsHeight 是否以短边作为高度，0：否，1：是。默认0。
+                     * 设置<p>是否以短边作为高度，0：否，1：是。默认0。</p>
+                     * @param _shortEdgeAsHeight <p>是否以短边作为高度，0：否，1：是。默认0。</p>
                      * 
                      */
                     void SetShortEdgeAsHeight(const int64_t& _shortEdgeAsHeight);
@@ -527,19 +443,15 @@ baseline/main/high。
                     bool ShortEdgeAsHeightHasBeenSet() const;
 
                     /**
-                     * 获取DRM 加密类型，可选值：fairplay、normalaes、widevine。
-不传递或者为空字符串，清空之前的DRM配置。
-                     * @return DRMType DRM 加密类型，可选值：fairplay、normalaes、widevine。
-不传递或者为空字符串，清空之前的DRM配置。
+                     * 获取<p>DRM 加密类型，可选值：fairplay、normalaes、widevine。<br>不传递或者为空字符串，清空之前的DRM配置。</p>
+                     * @return DRMType <p>DRM 加密类型，可选值：fairplay、normalaes、widevine。<br>不传递或者为空字符串，清空之前的DRM配置。</p>
                      * 
                      */
                     std::string GetDRMType() const;
 
                     /**
-                     * 设置DRM 加密类型，可选值：fairplay、normalaes、widevine。
-不传递或者为空字符串，清空之前的DRM配置。
-                     * @param _dRMType DRM 加密类型，可选值：fairplay、normalaes、widevine。
-不传递或者为空字符串，清空之前的DRM配置。
+                     * 设置<p>DRM 加密类型，可选值：fairplay、normalaes、widevine。<br>不传递或者为空字符串，清空之前的DRM配置。</p>
+                     * @param _dRMType <p>DRM 加密类型，可选值：fairplay、normalaes、widevine。<br>不传递或者为空字符串，清空之前的DRM配置。</p>
                      * 
                      */
                     void SetDRMType(const std::string& _dRMType);
@@ -552,19 +464,15 @@ baseline/main/high。
                     bool DRMTypeHasBeenSet() const;
 
                     /**
-                     * 获取DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。
-不传递或者为空字符串，清空之前的DRM配置。
-                     * @return DRMTracks DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。
-不传递或者为空字符串，清空之前的DRM配置。
+                     * 获取<p>DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。<br>不传递或者为空字符串，清空之前的DRM配置。</p>
+                     * @return DRMTracks <p>DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。<br>不传递或者为空字符串，清空之前的DRM配置。</p>
                      * 
                      */
                     std::string GetDRMTracks() const;
 
                     /**
-                     * 设置DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。
-不传递或者为空字符串，清空之前的DRM配置。
-                     * @param _dRMTracks DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。
-不传递或者为空字符串，清空之前的DRM配置。
+                     * 设置<p>DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。<br>不传递或者为空字符串，清空之前的DRM配置。</p>
+                     * @param _dRMTracks <p>DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。<br>不传递或者为空字符串，清空之前的DRM配置。</p>
                      * 
                      */
                     void SetDRMTracks(const std::string& _dRMTracks);
@@ -577,23 +485,15 @@ baseline/main/high。
                     bool DRMTracksHasBeenSet() const;
 
                     /**
-                     * 获取是否创建自适应码率，默认值 0。
-0：否。
-1：是。
-                     * @return IsAdaptiveBitRate 是否创建自适应码率，默认值 0。
-0：否。
-1：是。
+                     * 获取<p>是否创建自适应码率，默认值 0。<br>0：否。<br>1：是。</p>
+                     * @return IsAdaptiveBitRate <p>是否创建自适应码率，默认值 0。<br>0：否。<br>1：是。</p>
                      * 
                      */
                     int64_t GetIsAdaptiveBitRate() const;
 
                     /**
-                     * 设置是否创建自适应码率，默认值 0。
-0：否。
-1：是。
-                     * @param _isAdaptiveBitRate 是否创建自适应码率，默认值 0。
-0：否。
-1：是。
+                     * 设置<p>是否创建自适应码率，默认值 0。<br>0：否。<br>1：是。</p>
+                     * @param _isAdaptiveBitRate <p>是否创建自适应码率，默认值 0。<br>0：否。<br>1：是。</p>
                      * 
                      */
                     void SetIsAdaptiveBitRate(const int64_t& _isAdaptiveBitRate);
@@ -606,15 +506,15 @@ baseline/main/high。
                     bool IsAdaptiveBitRateHasBeenSet() const;
 
                     /**
-                     * 获取自适应码率，子转码模板信息，当 IsAdaptiveBitRate 为 1 时有效。
-                     * @return AdaptiveChildren 自适应码率，子转码模板信息，当 IsAdaptiveBitRate 为 1 时有效。
+                     * 获取<p>自适应码率，子转码模板信息，当 IsAdaptiveBitRate 为 1 时有效。</p>
+                     * @return AdaptiveChildren <p>自适应码率，子转码模板信息，当 IsAdaptiveBitRate 为 1 时有效。</p>
                      * 
                      */
                     std::vector<ChildTemplateInfo> GetAdaptiveChildren() const;
 
                     /**
-                     * 设置自适应码率，子转码模板信息，当 IsAdaptiveBitRate 为 1 时有效。
-                     * @param _adaptiveChildren 自适应码率，子转码模板信息，当 IsAdaptiveBitRate 为 1 时有效。
+                     * 设置<p>自适应码率，子转码模板信息，当 IsAdaptiveBitRate 为 1 时有效。</p>
+                     * @param _adaptiveChildren <p>自适应码率，子转码模板信息，当 IsAdaptiveBitRate 为 1 时有效。</p>
                      * 
                      */
                     void SetAdaptiveChildren(const std::vector<ChildTemplateInfo>& _adaptiveChildren);
@@ -626,170 +526,199 @@ baseline/main/high。
                      */
                     bool AdaptiveChildrenHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否智能降码，1 表示智能降码。</p>
+                     * @return AudienceDrivenTranscode <p>是否智能降码，1 表示智能降码。</p>
+                     * 
+                     */
+                    int64_t GetAudienceDrivenTranscode() const;
+
+                    /**
+                     * 设置<p>是否智能降码，1 表示智能降码。</p>
+                     * @param _audienceDrivenTranscode <p>是否智能降码，1 表示智能降码。</p>
+                     * 
+                     */
+                    void SetAudienceDrivenTranscode(const int64_t& _audienceDrivenTranscode);
+
+                    /**
+                     * 判断参数 AudienceDrivenTranscode 是否已赋值
+                     * @return AudienceDrivenTranscode 是否已赋值
+                     * 
+                     */
+                    bool AudienceDrivenTranscodeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>智能降码人数阈值，当 AudienceDrivenTranscode = 1 时生效。  取值范围：[100, 1000000]。</p>
+                     * @return AudienceThreshold <p>智能降码人数阈值，当 AudienceDrivenTranscode = 1 时生效。  取值范围：[100, 1000000]。</p>
+                     * 
+                     */
+                    int64_t GetAudienceThreshold() const;
+
+                    /**
+                     * 设置<p>智能降码人数阈值，当 AudienceDrivenTranscode = 1 时生效。  取值范围：[100, 1000000]。</p>
+                     * @param _audienceThreshold <p>智能降码人数阈值，当 AudienceDrivenTranscode = 1 时生效。  取值范围：[100, 1000000]。</p>
+                     * 
+                     */
+                    void SetAudienceThreshold(const int64_t& _audienceThreshold);
+
+                    /**
+                     * 判断参数 AudienceThreshold 是否已赋值
+                     * @return AudienceThreshold 是否已赋值
+                     * 
+                     */
+                    bool AudienceThresholdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 模板 Id。
+                     * <p>模板 Id。</p>
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 视频编码：h264/h265/origin，默认origin。
-
-origin: 保持原始编码格式
+                     * <p>视频编码：h264/h265/origin，默认origin。</p><p>origin: 保持原始编码格式</p>
                      */
                     std::string m_vcodec;
                     bool m_vcodecHasBeenSet;
 
                     /**
-                     * 音频编码：aac，默认aac。
-注意：当前该参数未生效，待后续支持！
+                     * <p>音频编码：aac，默认aac。<br>注意：当前该参数未生效，待后续支持！</p>
                      */
                     std::string m_acodec;
                     bool m_acodecHasBeenSet;
 
                     /**
-                     * 音频码率，默认0。
-范围：0-500。
+                     * <p>音频码率，默认0。<br>范围：0-500。</p>
                      */
                     int64_t m_audioBitrate;
                     bool m_audioBitrateHasBeenSet;
 
                     /**
-                     * 模板描述。
+                     * <p>模板描述。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 视频码率。范围：0kbps - 8000kbps。
-0为保持原始码率。
-注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。
+                     * <p>视频码率。范围：0kbps - 8000kbps。<br>0为保持原始码率。<br>注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。</p>
                      */
                     int64_t m_videoBitrate;
                     bool m_videoBitrateHasBeenSet;
 
                     /**
-                     * 宽。0-3000。
-数值必须是2的倍数，0是原始宽度
+                     * <p>宽。0-3000。<br>数值必须是2的倍数，0是原始宽度</p>
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 是否保留视频，0：否，1：是。默认1。
+                     * <p>是否保留视频，0：否，1：是。默认1。</p>
                      */
                     int64_t m_needVideo;
                     bool m_needVideoHasBeenSet;
 
                     /**
-                     * 是否保留音频，0：否，1：是。默认1。
+                     * <p>是否保留音频，0：否，1：是。默认1。</p>
                      */
                     int64_t m_needAudio;
                     bool m_needAudioHasBeenSet;
 
                     /**
-                     * 高。0-3000。
-数值必须是2的倍数，0是原始宽度
+                     * <p>高。0-3000。<br>数值必须是2的倍数，0是原始宽度</p>
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * 帧率，默认0。
-范围0-60
+                     * <p>帧率，默认0。<br>范围0-60</p>
                      */
                     int64_t m_fps;
                     bool m_fpsHasBeenSet;
 
                     /**
-                     * 关键帧间隔，单位：秒。
-范围2-6
+                     * <p>关键帧间隔，单位：秒。<br>范围2-6</p>
                      */
                     int64_t m_gop;
                     bool m_gopHasBeenSet;
 
                     /**
-                     * 旋转角度，默认0。
-可取值：0，90，180，270
+                     * <p>旋转角度，默认0。<br>可取值：0，90，180，270</p>
                      */
                     int64_t m_rotate;
                     bool m_rotateHasBeenSet;
 
                     /**
-                     * 编码质量：
-baseline/main/high。
+                     * <p>编码质量：<br>baseline/main/high。</p>
                      */
                     std::string m_profile;
                     bool m_profileHasBeenSet;
 
                     /**
-                     * 当设置的码率>原始码率时，是否以原始码率为准。
-0：否， 1：是
-默认 0。
+                     * <p>当设置的码率&gt;原始码率时，是否以原始码率为准。<br>0：否， 1：是<br>默认 0。</p>
                      */
                     int64_t m_bitrateToOrig;
                     bool m_bitrateToOrigHasBeenSet;
 
                     /**
-                     * 当设置的高度>原始高度时，是否以原始高度为准。
-0：否， 1：是
-默认 0。
+                     * <p>当设置的高度&gt;原始高度时，是否以原始高度为准。<br>0：否， 1：是<br>默认 0。</p>
                      */
                     int64_t m_heightToOrig;
                     bool m_heightToOrigHasBeenSet;
 
                     /**
-                     * 当设置的帧率>原始帧率时，是否以原始帧率为准。
-0：否， 1：是
-默认 0。
+                     * <p>当设置的帧率&gt;原始帧率时，是否以原始帧率为准。<br>0：否， 1：是<br>默认 0。</p>
                      */
                     int64_t m_fpsToOrig;
                     bool m_fpsToOrigHasBeenSet;
 
                     /**
-                     * 极速高清视频码率压缩比。
-极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)
-
-取值范围：0.0到0.5
+                     * <p>极速高清视频码率压缩比。<br>极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)</p><p>取值范围：0.0 到 0.5<br>智能降码：0.5 到 0.9</p>
                      */
                     double m_adaptBitratePercent;
                     bool m_adaptBitratePercentHasBeenSet;
 
                     /**
-                     * 是否以短边作为高度，0：否，1：是。默认0。
+                     * <p>是否以短边作为高度，0：否，1：是。默认0。</p>
                      */
                     int64_t m_shortEdgeAsHeight;
                     bool m_shortEdgeAsHeightHasBeenSet;
 
                     /**
-                     * DRM 加密类型，可选值：fairplay、normalaes、widevine。
-不传递或者为空字符串，清空之前的DRM配置。
+                     * <p>DRM 加密类型，可选值：fairplay、normalaes、widevine。<br>不传递或者为空字符串，清空之前的DRM配置。</p>
                      */
                     std::string m_dRMType;
                     bool m_dRMTypeHasBeenSet;
 
                     /**
-                     * DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。
-不传递或者为空字符串，清空之前的DRM配置。
+                     * <p>DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。<br>不传递或者为空字符串，清空之前的DRM配置。</p>
                      */
                     std::string m_dRMTracks;
                     bool m_dRMTracksHasBeenSet;
 
                     /**
-                     * 是否创建自适应码率，默认值 0。
-0：否。
-1：是。
+                     * <p>是否创建自适应码率，默认值 0。<br>0：否。<br>1：是。</p>
                      */
                     int64_t m_isAdaptiveBitRate;
                     bool m_isAdaptiveBitRateHasBeenSet;
 
                     /**
-                     * 自适应码率，子转码模板信息，当 IsAdaptiveBitRate 为 1 时有效。
+                     * <p>自适应码率，子转码模板信息，当 IsAdaptiveBitRate 为 1 时有效。</p>
                      */
                     std::vector<ChildTemplateInfo> m_adaptiveChildren;
                     bool m_adaptiveChildrenHasBeenSet;
+
+                    /**
+                     * <p>是否智能降码，1 表示智能降码。</p>
+                     */
+                    int64_t m_audienceDrivenTranscode;
+                    bool m_audienceDrivenTranscodeHasBeenSet;
+
+                    /**
+                     * <p>智能降码人数阈值，当 AudienceDrivenTranscode = 1 时生效。  取值范围：[100, 1000000]。</p>
+                     */
+                    int64_t m_audienceThreshold;
+                    bool m_audienceThresholdHasBeenSet;
 
                 };
             }
