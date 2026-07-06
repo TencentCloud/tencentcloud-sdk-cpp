@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cfw/v20190904/model/AttachInsInfo.h>
 #include <tencentcloud/cfw/v20190904/model/EndpointInfo.h>
+#include <tencentcloud/cfw/v20190904/model/ClusterFwPreAccessCheckResult.h>
 
 
 namespace TencentCloud
@@ -476,6 +477,27 @@ namespace TencentCloud
                      */
                     bool ProgressHasBeenSet() const;
 
+                    /**
+                     * 获取<p>预检查项的结果</p>
+                     * @return CheckResult <p>预检查项的结果</p>
+                     * 
+                     */
+                    ClusterFwPreAccessCheckResult GetCheckResult() const;
+
+                    /**
+                     * 设置<p>预检查项的结果</p>
+                     * @param _checkResult <p>预检查项的结果</p>
+                     * 
+                     */
+                    void SetCheckResult(const ClusterFwPreAccessCheckResult& _checkResult);
+
+                    /**
+                     * 判断参数 CheckResult 是否已赋值
+                     * @return CheckResult 是否已赋值
+                     * 
+                     */
+                    bool CheckResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -599,6 +621,12 @@ namespace TencentCloud
                      */
                     std::string m_progress;
                     bool m_progressHasBeenSet;
+
+                    /**
+                     * <p>预检查项的结果</p>
+                     */
+                    ClusterFwPreAccessCheckResult m_checkResult;
+                    bool m_checkResultHasBeenSet;
 
                 };
             }

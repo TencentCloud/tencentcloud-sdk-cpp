@@ -26,7 +26,9 @@ JobEvent::JobEvent() :
     m_timestampHasBeenSet(false),
     m_runningOrderIdHasBeenSet(false),
     m_messageHasBeenSet(false),
-    m_solutionLinkHasBeenSet(false)
+    m_solutionLinkHasBeenSet(false),
+    m_causeAnalysisHasBeenSet(false),
+    m_solutionHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome JobEvent::Deserialize(const rapidjson::Value &value)
         m_solutionLinkHasBeenSet = true;
     }
 
+    if (value.HasMember("CauseAnalysis") && !value["CauseAnalysis"].IsNull())
+    {
+        if (!value["CauseAnalysis"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobEvent.CauseAnalysis` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_causeAnalysis = string(value["CauseAnalysis"].GetString());
+        m_causeAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("Solution") && !value["Solution"].IsNull())
+    {
+        if (!value["Solution"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobEvent.Solution` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_solution = string(value["Solution"].GetString());
+        m_solutionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void JobEvent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "SolutionLink";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_solutionLink.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_causeAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CauseAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_causeAnalysis.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_solutionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Solution";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_solution.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void JobEvent::SetSolutionLink(const string& _solutionLink)
 bool JobEvent::SolutionLinkHasBeenSet() const
 {
     return m_solutionLinkHasBeenSet;
+}
+
+string JobEvent::GetCauseAnalysis() const
+{
+    return m_causeAnalysis;
+}
+
+void JobEvent::SetCauseAnalysis(const string& _causeAnalysis)
+{
+    m_causeAnalysis = _causeAnalysis;
+    m_causeAnalysisHasBeenSet = true;
+}
+
+bool JobEvent::CauseAnalysisHasBeenSet() const
+{
+    return m_causeAnalysisHasBeenSet;
+}
+
+string JobEvent::GetSolution() const
+{
+    return m_solution;
+}
+
+void JobEvent::SetSolution(const string& _solution)
+{
+    m_solution = _solution;
+    m_solutionHasBeenSet = true;
+}
+
+bool JobEvent::SolutionHasBeenSet() const
+{
+    return m_solutionHasBeenSet;
 }
 

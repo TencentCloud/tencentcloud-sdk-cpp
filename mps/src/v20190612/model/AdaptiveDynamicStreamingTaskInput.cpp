@@ -33,7 +33,8 @@ AdaptiveDynamicStreamingTaskInput::AdaptiveDynamicStreamingTaskInput() :
     m_definitionTypeHasBeenSet(false),
     m_subtitleTemplateHasBeenSet(false),
     m_stdExtInfoHasBeenSet(false),
-    m_keyPTSListHasBeenSet(false)
+    m_keyPTSListHasBeenSet(false),
+    m_addOnAudiosHasBeenSet(false)
 {
 }
 
@@ -223,6 +224,26 @@ CoreInternalOutcome AdaptiveDynamicStreamingTaskInput::Deserialize(const rapidjs
         m_keyPTSListHasBeenSet = true;
     }
 
+    if (value.HasMember("AddOnAudios") && !value["AddOnAudios"].IsNull())
+    {
+        if (!value["AddOnAudios"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.AddOnAudios` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AddOnAudios"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AddOnAudio item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_addOnAudios.push_back(item);
+        }
+        m_addOnAudiosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -354,6 +375,21 @@ void AdaptiveDynamicStreamingTaskInput::ToJsonObject(rapidjson::Value &value, ra
         for (auto itr = m_keyPTSList.begin(); itr != m_keyPTSList.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_addOnAudiosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddOnAudios";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_addOnAudios.begin(); itr != m_addOnAudios.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -566,5 +602,21 @@ void AdaptiveDynamicStreamingTaskInput::SetKeyPTSList(const vector<int64_t>& _ke
 bool AdaptiveDynamicStreamingTaskInput::KeyPTSListHasBeenSet() const
 {
     return m_keyPTSListHasBeenSet;
+}
+
+vector<AddOnAudio> AdaptiveDynamicStreamingTaskInput::GetAddOnAudios() const
+{
+    return m_addOnAudios;
+}
+
+void AdaptiveDynamicStreamingTaskInput::SetAddOnAudios(const vector<AddOnAudio>& _addOnAudios)
+{
+    m_addOnAudios = _addOnAudios;
+    m_addOnAudiosHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTaskInput::AddOnAudiosHasBeenSet() const
+{
+    return m_addOnAudiosHasBeenSet;
 }
 

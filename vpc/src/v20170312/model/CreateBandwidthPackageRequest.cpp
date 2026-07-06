@@ -31,7 +31,8 @@ CreateBandwidthPackageRequest::CreateBandwidthPackageRequest() :
     m_tagsHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_timeSpanHasBeenSet(false),
-    m_egressHasBeenSet(false)
+    m_egressHasBeenSet(false),
+    m_designatedZoneHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,14 @@ string CreateBandwidthPackageRequest::ToJsonString() const
         string key = "Egress";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_egress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_designatedZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DesignatedZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_designatedZone.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -271,6 +280,22 @@ void CreateBandwidthPackageRequest::SetEgress(const string& _egress)
 bool CreateBandwidthPackageRequest::EgressHasBeenSet() const
 {
     return m_egressHasBeenSet;
+}
+
+string CreateBandwidthPackageRequest::GetDesignatedZone() const
+{
+    return m_designatedZone;
+}
+
+void CreateBandwidthPackageRequest::SetDesignatedZone(const string& _designatedZone)
+{
+    m_designatedZone = _designatedZone;
+    m_designatedZoneHasBeenSet = true;
+}
+
+bool CreateBandwidthPackageRequest::DesignatedZoneHasBeenSet() const
+{
+    return m_designatedZoneHasBeenSet;
 }
 
 

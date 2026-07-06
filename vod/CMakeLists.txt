@@ -352,7 +352,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/DescribeAdaptiveDynamicStreamingTemplatesResponse.h
   include/tencentcloud/vod/v20180717/model/MediaMiniProgramReviewInfo.h
   include/tencentcloud/vod/v20180717/model/ForbidMediaDistributionResponse.h
-  include/tencentcloud/vod/v20180717/model/AiAnalysisTaskHighlightOutput.h
+  include/tencentcloud/vod/v20180717/model/DeleteBlindWatermarkTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/ExtractBlindWatermarkResponse.h
   include/tencentcloud/vod/v20180717/model/DescribeAdaptiveDynamicStreamingTemplatesRequest.h
   include/tencentcloud/vod/v20180717/model/CreateAigcAdvancedCustomElementInput.h
@@ -431,7 +431,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/AiAnalysisTaskTagOutput.h
   include/tencentcloud/vod/v20180717/model/MosaicConfigureInfo.h
   include/tencentcloud/vod/v20180717/model/DescribeTranscodeTemplatesResponse.h
-  include/tencentcloud/vod/v20180717/model/DeleteBlindWatermarkTemplateResponse.h
+  include/tencentcloud/vod/v20180717/model/AiAnalysisTaskHighlightOutput.h
   include/tencentcloud/vod/v20180717/model/DescribeRebuildMediaTemplatesRequest.h
   include/tencentcloud/vod/v20180717/model/ReviewImageSegmentItem.h
   include/tencentcloud/vod/v20180717/model/CreateCLSTopicResponse.h
@@ -964,6 +964,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/VideoDenoiseInfo.h
   include/tencentcloud/vod/v20180717/model/DescribeLicenseUsageDataRequest.h
   include/tencentcloud/vod/v20180717/model/DeleteTranscodeTemplateResponse.h
+  include/tencentcloud/vod/v20180717/model/AigcTextDetail.h
   include/tencentcloud/vod/v20180717/model/RebuildVideoInfo.h
   include/tencentcloud/vod/v20180717/model/MediaTranscodeItem.h
   include/tencentcloud/vod/v20180717/model/CLSLogsetInfo.h
@@ -1011,6 +1012,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/PornImgReviewTemplateInfo.h
   include/tencentcloud/vod/v20180717/model/QualityInspectTemplateItem.h
   include/tencentcloud/vod/v20180717/model/AiReviewPoliticalOcrTaskOutput.h
+  include/tencentcloud/vod/v20180717/model/AigcTextDetailData.h
   include/tencentcloud/vod/v20180717/model/FileDeleteResultItem.h
   include/tencentcloud/vod/v20180717/model/CommitUploadRequest.h
   include/tencentcloud/vod/v20180717/model/WatermarkCycleConfigForUpdate.h
@@ -1449,7 +1451,7 @@ set(vod_src
   src/v20180717/model/DescribeAdaptiveDynamicStreamingTemplatesResponse.cpp
   src/v20180717/model/MediaMiniProgramReviewInfo.cpp
   src/v20180717/model/ForbidMediaDistributionResponse.cpp
-  src/v20180717/model/AiAnalysisTaskHighlightOutput.cpp
+  src/v20180717/model/DeleteBlindWatermarkTemplateResponse.cpp
   src/v20180717/model/ExtractBlindWatermarkResponse.cpp
   src/v20180717/model/DescribeAdaptiveDynamicStreamingTemplatesRequest.cpp
   src/v20180717/model/CreateAigcAdvancedCustomElementInput.cpp
@@ -1528,7 +1530,7 @@ set(vod_src
   src/v20180717/model/AiAnalysisTaskTagOutput.cpp
   src/v20180717/model/MosaicConfigureInfo.cpp
   src/v20180717/model/DescribeTranscodeTemplatesResponse.cpp
-  src/v20180717/model/DeleteBlindWatermarkTemplateResponse.cpp
+  src/v20180717/model/AiAnalysisTaskHighlightOutput.cpp
   src/v20180717/model/DescribeRebuildMediaTemplatesRequest.cpp
   src/v20180717/model/ReviewImageSegmentItem.cpp
   src/v20180717/model/CreateCLSTopicResponse.cpp
@@ -2061,6 +2063,7 @@ set(vod_src
   src/v20180717/model/VideoDenoiseInfo.cpp
   src/v20180717/model/DescribeLicenseUsageDataRequest.cpp
   src/v20180717/model/DeleteTranscodeTemplateResponse.cpp
+  src/v20180717/model/AigcTextDetail.cpp
   src/v20180717/model/RebuildVideoInfo.cpp
   src/v20180717/model/MediaTranscodeItem.cpp
   src/v20180717/model/CLSLogsetInfo.cpp
@@ -2108,6 +2111,7 @@ set(vod_src
   src/v20180717/model/PornImgReviewTemplateInfo.cpp
   src/v20180717/model/QualityInspectTemplateItem.cpp
   src/v20180717/model/AiReviewPoliticalOcrTaskOutput.cpp
+  src/v20180717/model/AigcTextDetailData.cpp
   src/v20180717/model/FileDeleteResultItem.cpp
   src/v20180717/model/CommitUploadRequest.cpp
   src/v20180717/model/WatermarkCycleConfigForUpdate.cpp

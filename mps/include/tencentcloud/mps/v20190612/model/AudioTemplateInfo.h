@@ -156,6 +156,69 @@ namespace TencentCloud
                      */
                     bool TrackChannelInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<p>音频轨道语言，比如：chi、eng  注意：（1）遵循 ISO 639-2；（2）仅适用于自适应码流模板；（3）值为 source 表示保留源language</p>
+                     * @return AudioLanguage <p>音频轨道语言，比如：chi、eng  注意：（1）遵循 ISO 639-2；（2）仅适用于自适应码流模板；（3）值为 source 表示保留源language</p>
+                     * 
+                     */
+                    std::string GetAudioLanguage() const;
+
+                    /**
+                     * 设置<p>音频轨道语言，比如：chi、eng  注意：（1）遵循 ISO 639-2；（2）仅适用于自适应码流模板；（3）值为 source 表示保留源language</p>
+                     * @param _audioLanguage <p>音频轨道语言，比如：chi、eng  注意：（1）遵循 ISO 639-2；（2）仅适用于自适应码流模板；（3）值为 source 表示保留源language</p>
+                     * 
+                     */
+                    void SetAudioLanguage(const std::string& _audioLanguage);
+
+                    /**
+                     * 判断参数 AudioLanguage 是否已赋值
+                     * @return AudioLanguage 是否已赋值
+                     * 
+                     */
+                    bool AudioLanguageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>音频轨道名称，比如：中文、English  注意：（1）仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符；（2）仅适用于自适应码流模板；（3）值为source表示保留源name</p>
+                     * @return AudioName <p>音频轨道名称，比如：中文、English  注意：（1）仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符；（2）仅适用于自适应码流模板；（3）值为source表示保留源name</p>
+                     * 
+                     */
+                    std::string GetAudioName() const;
+
+                    /**
+                     * 设置<p>音频轨道名称，比如：中文、English  注意：（1）仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符；（2）仅适用于自适应码流模板；（3）值为source表示保留源name</p>
+                     * @param _audioName <p>音频轨道名称，比如：中文、English  注意：（1）仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符；（2）仅适用于自适应码流模板；（3）值为source表示保留源name</p>
+                     * 
+                     */
+                    void SetAudioName(const std::string& _audioName);
+
+                    /**
+                     * 判断参数 AudioName 是否已赋值
+                     * @return AudioName 是否已赋值
+                     * 
+                     */
+                    bool AudioNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>默认音频轨道。为true时指定当前音轨为默认音轨轨道，最多可指定1条默认轨道。  </p><p>默认值：false</p>
+                     * @return DefaultTrack <p>默认音频轨道。为true时指定当前音轨为默认音轨轨道，最多可指定1条默认轨道。  </p><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetDefaultTrack() const;
+
+                    /**
+                     * 设置<p>默认音频轨道。为true时指定当前音轨为默认音轨轨道，最多可指定1条默认轨道。  </p><p>默认值：false</p>
+                     * @param _defaultTrack <p>默认音频轨道。为true时指定当前音轨为默认音轨轨道，最多可指定1条默认轨道。  </p><p>默认值：false</p>
+                     * 
+                     */
+                    void SetDefaultTrack(const bool& _defaultTrack);
+
+                    /**
+                     * 判断参数 DefaultTrack 是否已赋值
+                     * @return DefaultTrack 是否已赋值
+                     * 
+                     */
+                    bool DefaultTrackHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +251,24 @@ namespace TencentCloud
                      */
                     AudioTrackChannelInfo m_trackChannelInfo;
                     bool m_trackChannelInfoHasBeenSet;
+
+                    /**
+                     * <p>音频轨道语言，比如：chi、eng  注意：（1）遵循 ISO 639-2；（2）仅适用于自适应码流模板；（3）值为 source 表示保留源language</p>
+                     */
+                    std::string m_audioLanguage;
+                    bool m_audioLanguageHasBeenSet;
+
+                    /**
+                     * <p>音频轨道名称，比如：中文、English  注意：（1）仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符；（2）仅适用于自适应码流模板；（3）值为source表示保留源name</p>
+                     */
+                    std::string m_audioName;
+                    bool m_audioNameHasBeenSet;
+
+                    /**
+                     * <p>默认音频轨道。为true时指定当前音轨为默认音轨轨道，最多可指定1条默认轨道。  </p><p>默认值：false</p>
+                     */
+                    bool m_defaultTrack;
+                    bool m_defaultTrackHasBeenSet;
 
                 };
             }

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模块名，这里填“monitor”
-                     * @return Module 模块名，这里填“monitor”
+                     * 获取<p>模块名，这里填“monitor”</p>
+                     * @return Module <p>模块名，这里填“monitor”</p>
                      * 
                      */
                     std::string GetModule() const;
 
                     /**
-                     * 设置模块名，这里填“monitor”
-                     * @param _module 模块名，这里填“monitor”
+                     * 设置<p>模块名，这里填“monitor”</p>
+                     * @param _module <p>模块名，这里填“monitor”</p>
                      * 
                      */
                     void SetModule(const std::string& _module);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取屏蔽策略名称
-                     * @return Name 屏蔽策略名称
+                     * 获取<p>屏蔽策略名称</p>
+                     * @return Name <p>屏蔽策略名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置屏蔽策略名称
-                     * @param _name 屏蔽策略名称
+                     * 设置<p>屏蔽策略名称</p>
+                     * @param _name <p>屏蔽策略名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取监控类型
-                     * @return MonitorType 监控类型
+                     * 获取<p>监控类型</p>
+                     * @return MonitorType <p>监控类型</p>
                      * 
                      */
                     std::string GetMonitorType() const;
 
                     /**
-                     * 设置监控类型
-                     * @param _monitorType 监控类型
+                     * 设置<p>监控类型</p>
+                     * @param _monitorType <p>监控类型</p>
                      * 
                      */
                     void SetMonitorType(const std::string& _monitorType);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool MonitorTypeHasBeenSet() const;
 
                     /**
-                     * 获取命名空间即策略类型
-                     * @return NameSpace 命名空间即策略类型
+                     * 获取<p>命名空间即策略类型</p>
+                     * @return NameSpace <p>命名空间即策略类型</p>
                      * 
                      */
                     std::string GetNameSpace() const;
 
                     /**
-                     * 设置命名空间即策略类型
-                     * @param _nameSpace 命名空间即策略类型
+                     * 设置<p>命名空间即策略类型</p>
+                     * @param _nameSpace <p>命名空间即策略类型</p>
                      * 
                      */
                     void SetNameSpace(const std::string& _nameSpace);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool NameSpaceHasBeenSet() const;
 
                     /**
-                     * 获取屏蔽时间类型 FOREVER_SHIELD:永久屏蔽 PERIOD_SHIELD:绝对时间范围屏蔽 LOOP_SHIELD:相对时间范围屏蔽
-                     * @return ShieldTimeType 屏蔽时间类型 FOREVER_SHIELD:永久屏蔽 PERIOD_SHIELD:绝对时间范围屏蔽 LOOP_SHIELD:相对时间范围屏蔽
+                     * 获取<p>屏蔽时间类型 FOREVER_SHIELD:永久屏蔽 PERIOD_SHIELD:绝对时间范围屏蔽 LOOP_SHIELD:相对时间范围屏蔽</p>
+                     * @return ShieldTimeType <p>屏蔽时间类型 FOREVER_SHIELD:永久屏蔽 PERIOD_SHIELD:绝对时间范围屏蔽 LOOP_SHIELD:相对时间范围屏蔽</p>
                      * 
                      */
                     std::string GetShieldTimeType() const;
 
                     /**
-                     * 设置屏蔽时间类型 FOREVER_SHIELD:永久屏蔽 PERIOD_SHIELD:绝对时间范围屏蔽 LOOP_SHIELD:相对时间范围屏蔽
-                     * @param _shieldTimeType 屏蔽时间类型 FOREVER_SHIELD:永久屏蔽 PERIOD_SHIELD:绝对时间范围屏蔽 LOOP_SHIELD:相对时间范围屏蔽
+                     * 设置<p>屏蔽时间类型 FOREVER_SHIELD:永久屏蔽 PERIOD_SHIELD:绝对时间范围屏蔽 LOOP_SHIELD:相对时间范围屏蔽</p>
+                     * @param _shieldTimeType <p>屏蔽时间类型 FOREVER_SHIELD:永久屏蔽 PERIOD_SHIELD:绝对时间范围屏蔽 LOOP_SHIELD:相对时间范围屏蔽</p>
                      * 
                      */
                     void SetShieldTimeType(const std::string& _shieldTimeType);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ShieldTimeTypeHasBeenSet() const;
 
                     /**
-                     * 获取屏蔽对象
-                     * @return ShieldObject 屏蔽对象
+                     * 获取<p>屏蔽对象</p>
+                     * @return ShieldObject <p>屏蔽对象</p>
                      * 
                      */
                     std::vector<std::string> GetShieldObject() const;
 
                     /**
-                     * 设置屏蔽对象
-                     * @param _shieldObject 屏蔽对象
+                     * 设置<p>屏蔽对象</p>
+                     * @param _shieldObject <p>屏蔽对象</p>
                      * 
                      */
                     void SetShieldObject(const std::vector<std::string>& _shieldObject);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool ShieldObjectHasBeenSet() const;
 
                     /**
-                     * 获取屏蔽指标 为空则为全部指标
-                     * @return ShieldMetric 屏蔽指标 为空则为全部指标
+                     * 获取<p>屏蔽指标 为空则为全部指标</p>
+                     * @return ShieldMetric <p>屏蔽指标 为空则为全部指标</p>
                      * 
                      */
                     std::vector<std::string> GetShieldMetric() const;
 
                     /**
-                     * 设置屏蔽指标 为空则为全部指标
-                     * @param _shieldMetric 屏蔽指标 为空则为全部指标
+                     * 设置<p>屏蔽指标 为空则为全部指标</p>
+                     * @param _shieldMetric <p>屏蔽指标 为空则为全部指标</p>
                      * 
                      */
                     void SetShieldMetric(const std::vector<std::string>& _shieldMetric);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool ShieldMetricHasBeenSet() const;
 
                     /**
-                     * 获取开始时间 相对时间范围:36000 绝对时间范围:1648742400 缺省:0
-                     * @return StartTime 开始时间 相对时间范围:36000 绝对时间范围:1648742400 缺省:0
+                     * 获取<p>开始时间 相对时间范围:36000 绝对时间范围:1648742400 缺省:0</p>
+                     * @return StartTime <p>开始时间 相对时间范围:36000 绝对时间范围:1648742400 缺省:0</p>
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置开始时间 相对时间范围:36000 绝对时间范围:1648742400 缺省:0
-                     * @param _startTime 开始时间 相对时间范围:36000 绝对时间范围:1648742400 缺省:0
+                     * 设置<p>开始时间 相对时间范围:36000 绝对时间范围:1648742400 缺省:0</p>
+                     * @param _startTime <p>开始时间 相对时间范围:36000 绝对时间范围:1648742400 缺省:0</p>
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间 相对时间范围:72000 绝对时间范围:1649088000 缺省:0
-                     * @return EndTime 结束时间 相对时间范围:72000 绝对时间范围:1649088000 缺省:0
+                     * 获取<p>结束时间 相对时间范围:72000 绝对时间范围:1649088000 缺省:0</p>
+                     * @return EndTime <p>结束时间 相对时间范围:72000 绝对时间范围:1649088000 缺省:0</p>
                      * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间 相对时间范围:72000 绝对时间范围:1649088000 缺省:0
-                     * @param _endTime 结束时间 相对时间范围:72000 绝对时间范围:1649088000 缺省:0
+                     * 设置<p>结束时间 相对时间范围:72000 绝对时间范围:1649088000 缺省:0</p>
+                     * @param _endTime <p>结束时间 相对时间范围:72000 绝对时间范围:1649088000 缺省:0</p>
                      * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取循环开始日期 2022/04/01 缺省:0
-                     * @return LoopStartDate 循环开始日期 2022/04/01 缺省:0
+                     * 获取<p>循环开始日期 2022/04/01 缺省:0</p>
+                     * @return LoopStartDate <p>循环开始日期 2022/04/01 缺省:0</p>
                      * 
                      */
                     uint64_t GetLoopStartDate() const;
 
                     /**
-                     * 设置循环开始日期 2022/04/01 缺省:0
-                     * @param _loopStartDate 循环开始日期 2022/04/01 缺省:0
+                     * 设置<p>循环开始日期 2022/04/01 缺省:0</p>
+                     * @param _loopStartDate <p>循环开始日期 2022/04/01 缺省:0</p>
                      * 
                      */
                     void SetLoopStartDate(const uint64_t& _loopStartDate);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool LoopStartDateHasBeenSet() const;
 
                     /**
-                     * 获取循环结束日期 2022/04/05 缺省:0
-                     * @return LoopEndDate 循环结束日期 2022/04/05 缺省:0
+                     * 获取<p>循环结束日期 2022/04/05 缺省:0</p>
+                     * @return LoopEndDate <p>循环结束日期 2022/04/05 缺省:0</p>
                      * 
                      */
                     uint64_t GetLoopEndDate() const;
 
                     /**
-                     * 设置循环结束日期 2022/04/05 缺省:0
-                     * @param _loopEndDate 循环结束日期 2022/04/05 缺省:0
+                     * 设置<p>循环结束日期 2022/04/05 缺省:0</p>
+                     * @param _loopEndDate <p>循环结束日期 2022/04/05 缺省:0</p>
                      * 
                      */
                     void SetLoopEndDate(const uint64_t& _loopEndDate);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool LoopEndDateHasBeenSet() const;
 
                     /**
-                     * 获取需要屏蔽的策略ID
-                     * @return ShieldPolicyId 需要屏蔽的策略ID
+                     * 获取<p>需要屏蔽的策略ID</p>
+                     * @return ShieldPolicyId <p>需要屏蔽的策略ID</p>
                      * 
                      */
                     std::string GetShieldPolicyId() const;
 
                     /**
-                     * 设置需要屏蔽的策略ID
-                     * @param _shieldPolicyId 需要屏蔽的策略ID
+                     * 设置<p>需要屏蔽的策略ID</p>
+                     * @param _shieldPolicyId <p>需要屏蔽的策略ID</p>
                      * 
                      */
                     void SetShieldPolicyId(const std::string& _shieldPolicyId);
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool ShieldPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取需要屏蔽的告警等级，取值范围Warn,Remind,Serious
-                     * @return ShieldAlarmLevel 需要屏蔽的告警等级，取值范围Warn,Remind,Serious
+                     * 获取<p>需要屏蔽的告警等级，取值范围Warn,Remind,Serious</p>
+                     * @return ShieldAlarmLevel <p>需要屏蔽的告警等级，取值范围Warn,Remind,Serious</p>
                      * 
                      */
                     std::vector<std::string> GetShieldAlarmLevel() const;
 
                     /**
-                     * 设置需要屏蔽的告警等级，取值范围Warn,Remind,Serious
-                     * @param _shieldAlarmLevel 需要屏蔽的告警等级，取值范围Warn,Remind,Serious
+                     * 设置<p>需要屏蔽的告警等级，取值范围Warn,Remind,Serious</p>
+                     * @param _shieldAlarmLevel <p>需要屏蔽的告警等级，取值范围Warn,Remind,Serious</p>
                      * 
                      */
                     void SetShieldAlarmLevel(const std::vector<std::string>& _shieldAlarmLevel);
@@ -316,15 +316,15 @@ namespace TencentCloud
                     bool ShieldAlarmLevelHasBeenSet() const;
 
                     /**
-                     * 获取屏蔽类型，为OBJNAME是老版本实例名屏蔽，为POLICY是新版本维度匹配
-                     * @return VersionTag 屏蔽类型，为OBJNAME是老版本实例名屏蔽，为POLICY是新版本维度匹配
+                     * 获取<p>屏蔽类型，为OBJNAME是实例屏蔽，为POLICY是策略屏蔽</p>
+                     * @return VersionTag <p>屏蔽类型，为OBJNAME是实例屏蔽，为POLICY是策略屏蔽</p>
                      * 
                      */
                     std::string GetVersionTag() const;
 
                     /**
-                     * 设置屏蔽类型，为OBJNAME是老版本实例名屏蔽，为POLICY是新版本维度匹配
-                     * @param _versionTag 屏蔽类型，为OBJNAME是老版本实例名屏蔽，为POLICY是新版本维度匹配
+                     * 设置<p>屏蔽类型，为OBJNAME是实例屏蔽，为POLICY是策略屏蔽</p>
+                     * @param _versionTag <p>屏蔽类型，为OBJNAME是实例屏蔽，为POLICY是策略屏蔽</p>
                      * 
                      */
                     void SetVersionTag(const std::string& _versionTag);
@@ -337,15 +337,15 @@ namespace TencentCloud
                     bool VersionTagHasBeenSet() const;
 
                     /**
-                     * 获取屏蔽规则的描述
-                     * @return Description 屏蔽规则的描述
+                     * 获取<p>屏蔽规则的描述</p>
+                     * @return Description <p>屏蔽规则的描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置屏蔽规则的描述
-                     * @param _description 屏蔽规则的描述
+                     * 设置<p>屏蔽规则的描述</p>
+                     * @param _description <p>屏蔽规则的描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -358,19 +358,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取 时区，东八区+8，西八区减8，以此类推
-
-                     * @return TimeZone  时区，东八区+8，西八区减8，以此类推
-
+                     * 获取<p>时区，东八区+8，西八区减8，以此类推</p>
+                     * @return TimeZone <p>时区，东八区+8，西八区减8，以此类推</p>
                      * 
                      */
                     double GetTimeZone() const;
 
                     /**
-                     * 设置 时区，东八区+8，西八区减8，以此类推
-
-                     * @param _timeZone  时区，东八区+8，西八区减8，以此类推
-
+                     * 设置<p>时区，东八区+8，西八区减8，以此类推</p>
+                     * @param _timeZone <p>时区，东八区+8，西八区减8，以此类推</p>
                      * 
                      */
                     void SetTimeZone(const double& _timeZone);
@@ -383,15 +379,15 @@ namespace TencentCloud
                     bool TimeZoneHasBeenSet() const;
 
                     /**
-                     * 获取屏蔽事件 为空则为全部指标
-                     * @return ShieldEvent 屏蔽事件 为空则为全部指标
+                     * 获取<p>屏蔽事件 为空则为全部指标</p>
+                     * @return ShieldEvent <p>屏蔽事件 为空则为全部指标</p>
                      * 
                      */
                     std::vector<std::string> GetShieldEvent() const;
 
                     /**
-                     * 设置屏蔽事件 为空则为全部指标
-                     * @param _shieldEvent 屏蔽事件 为空则为全部指标
+                     * 设置<p>屏蔽事件 为空则为全部指标</p>
+                     * @param _shieldEvent <p>屏蔽事件 为空则为全部指标</p>
                      * 
                      */
                     void SetShieldEvent(const std::vector<std::string>& _shieldEvent);
@@ -404,15 +400,15 @@ namespace TencentCloud
                     bool ShieldEventHasBeenSet() const;
 
                     /**
-                     * 获取是否对指标屏蔽 1=是 0=否
-                     * @return ShieldMetricFlag 是否对指标屏蔽 1=是 0=否
+                     * 获取<p>是否对指标屏蔽 1=是 0=否</p>
+                     * @return ShieldMetricFlag <p>是否对指标屏蔽 1=是 0=否</p>
                      * 
                      */
                     int64_t GetShieldMetricFlag() const;
 
                     /**
-                     * 设置是否对指标屏蔽 1=是 0=否
-                     * @param _shieldMetricFlag 是否对指标屏蔽 1=是 0=否
+                     * 设置<p>是否对指标屏蔽 1=是 0=否</p>
+                     * @param _shieldMetricFlag <p>是否对指标屏蔽 1=是 0=否</p>
                      * 
                      */
                     void SetShieldMetricFlag(const int64_t& _shieldMetricFlag);
@@ -425,15 +421,15 @@ namespace TencentCloud
                     bool ShieldMetricFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否对事件屏蔽 1=是 0=否
-                     * @return ShieldEventFlag 是否对事件屏蔽 1=是 0=否
+                     * 获取<p>是否对事件屏蔽 1=是 0=否</p>
+                     * @return ShieldEventFlag <p>是否对事件屏蔽 1=是 0=否</p>
                      * 
                      */
                     int64_t GetShieldEventFlag() const;
 
                     /**
-                     * 设置是否对事件屏蔽 1=是 0=否
-                     * @param _shieldEventFlag 是否对事件屏蔽 1=是 0=否
+                     * 设置<p>是否对事件屏蔽 1=是 0=否</p>
+                     * @param _shieldEventFlag <p>是否对事件屏蔽 1=是 0=否</p>
                      * 
                      */
                     void SetShieldEventFlag(const int64_t& _shieldEventFlag);
@@ -448,116 +444,115 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模块名，这里填“monitor”
+                     * <p>模块名，这里填“monitor”</p>
                      */
                     std::string m_module;
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 屏蔽策略名称
+                     * <p>屏蔽策略名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 监控类型
+                     * <p>监控类型</p>
                      */
                     std::string m_monitorType;
                     bool m_monitorTypeHasBeenSet;
 
                     /**
-                     * 命名空间即策略类型
+                     * <p>命名空间即策略类型</p>
                      */
                     std::string m_nameSpace;
                     bool m_nameSpaceHasBeenSet;
 
                     /**
-                     * 屏蔽时间类型 FOREVER_SHIELD:永久屏蔽 PERIOD_SHIELD:绝对时间范围屏蔽 LOOP_SHIELD:相对时间范围屏蔽
+                     * <p>屏蔽时间类型 FOREVER_SHIELD:永久屏蔽 PERIOD_SHIELD:绝对时间范围屏蔽 LOOP_SHIELD:相对时间范围屏蔽</p>
                      */
                     std::string m_shieldTimeType;
                     bool m_shieldTimeTypeHasBeenSet;
 
                     /**
-                     * 屏蔽对象
+                     * <p>屏蔽对象</p>
                      */
                     std::vector<std::string> m_shieldObject;
                     bool m_shieldObjectHasBeenSet;
 
                     /**
-                     * 屏蔽指标 为空则为全部指标
+                     * <p>屏蔽指标 为空则为全部指标</p>
                      */
                     std::vector<std::string> m_shieldMetric;
                     bool m_shieldMetricHasBeenSet;
 
                     /**
-                     * 开始时间 相对时间范围:36000 绝对时间范围:1648742400 缺省:0
+                     * <p>开始时间 相对时间范围:36000 绝对时间范围:1648742400 缺省:0</p>
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间 相对时间范围:72000 绝对时间范围:1649088000 缺省:0
+                     * <p>结束时间 相对时间范围:72000 绝对时间范围:1649088000 缺省:0</p>
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 循环开始日期 2022/04/01 缺省:0
+                     * <p>循环开始日期 2022/04/01 缺省:0</p>
                      */
                     uint64_t m_loopStartDate;
                     bool m_loopStartDateHasBeenSet;
 
                     /**
-                     * 循环结束日期 2022/04/05 缺省:0
+                     * <p>循环结束日期 2022/04/05 缺省:0</p>
                      */
                     uint64_t m_loopEndDate;
                     bool m_loopEndDateHasBeenSet;
 
                     /**
-                     * 需要屏蔽的策略ID
+                     * <p>需要屏蔽的策略ID</p>
                      */
                     std::string m_shieldPolicyId;
                     bool m_shieldPolicyIdHasBeenSet;
 
                     /**
-                     * 需要屏蔽的告警等级，取值范围Warn,Remind,Serious
+                     * <p>需要屏蔽的告警等级，取值范围Warn,Remind,Serious</p>
                      */
                     std::vector<std::string> m_shieldAlarmLevel;
                     bool m_shieldAlarmLevelHasBeenSet;
 
                     /**
-                     * 屏蔽类型，为OBJNAME是老版本实例名屏蔽，为POLICY是新版本维度匹配
+                     * <p>屏蔽类型，为OBJNAME是实例屏蔽，为POLICY是策略屏蔽</p>
                      */
                     std::string m_versionTag;
                     bool m_versionTagHasBeenSet;
 
                     /**
-                     * 屏蔽规则的描述
+                     * <p>屏蔽规则的描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     *  时区，东八区+8，西八区减8，以此类推
-
+                     * <p>时区，东八区+8，西八区减8，以此类推</p>
                      */
                     double m_timeZone;
                     bool m_timeZoneHasBeenSet;
 
                     /**
-                     * 屏蔽事件 为空则为全部指标
+                     * <p>屏蔽事件 为空则为全部指标</p>
                      */
                     std::vector<std::string> m_shieldEvent;
                     bool m_shieldEventHasBeenSet;
 
                     /**
-                     * 是否对指标屏蔽 1=是 0=否
+                     * <p>是否对指标屏蔽 1=是 0=否</p>
                      */
                     int64_t m_shieldMetricFlag;
                     bool m_shieldMetricFlagHasBeenSet;
 
                     /**
-                     * 是否对事件屏蔽 1=是 0=否
+                     * <p>是否对事件屏蔽 1=是 0=否</p>
                      */
                     int64_t m_shieldEventFlag;
                     bool m_shieldEventFlagHasBeenSet;

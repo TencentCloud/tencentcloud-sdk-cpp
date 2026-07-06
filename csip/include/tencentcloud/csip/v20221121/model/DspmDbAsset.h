@@ -767,6 +767,27 @@ None 暂无异常
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
+                     * 获取集群类型（MongoDB），与云接口 DescribeDBInstances 的 ClusterType 一致：0-副本集 1-分片；非 MongoDB 资产固定 0
+                     * @return ClusterType 集群类型（MongoDB），与云接口 DescribeDBInstances 的 ClusterType 一致：0-副本集 1-分片；非 MongoDB 资产固定 0
+                     * 
+                     */
+                    int64_t GetClusterType() const;
+
+                    /**
+                     * 设置集群类型（MongoDB），与云接口 DescribeDBInstances 的 ClusterType 一致：0-副本集 1-分片；非 MongoDB 资产固定 0
+                     * @param _clusterType 集群类型（MongoDB），与云接口 DescribeDBInstances 的 ClusterType 一致：0-副本集 1-分片；非 MongoDB 资产固定 0
+                     * 
+                     */
+                    void SetClusterType(const int64_t& _clusterType);
+
+                    /**
+                     * 判断参数 ClusterType 是否已赋值
+                     * @return ClusterType 是否已赋值
+                     * 
+                     */
+                    bool ClusterTypeHasBeenSet() const;
+
+                    /**
                      * 获取是否支持敏感数据识别。0 不支持；1 支持
                      * @return IdentifyScanSupported 是否支持敏感数据识别。0 不支持；1 支持
                      * 
@@ -992,6 +1013,12 @@ None 暂无异常
                      */
                     int64_t m_instanceType;
                     bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 集群类型（MongoDB），与云接口 DescribeDBInstances 的 ClusterType 一致：0-副本集 1-分片；非 MongoDB 资产固定 0
+                     */
+                    int64_t m_clusterType;
+                    bool m_clusterTypeHasBeenSet;
 
                     /**
                      * 是否支持敏感数据识别。0 不支持；1 支持

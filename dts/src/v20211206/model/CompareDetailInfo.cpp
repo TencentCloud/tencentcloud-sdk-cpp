@@ -27,7 +27,9 @@ CompareDetailInfo::CompareDetailInfo() :
     m_differenceDataHasBeenSet(false),
     m_differenceRowHasBeenSet(false),
     m_differenceSchemaHasBeenSet(false),
-    m_differenceOwnerHasBeenSet(false)
+    m_differenceOwnerHasBeenSet(false),
+    m_fullProgressHasBeenSet(false),
+    m_incDifferenceHasBeenSet(false)
 {
 }
 
@@ -155,6 +157,40 @@ CoreInternalOutcome CompareDetailInfo::Deserialize(const rapidjson::Value &value
         m_differenceOwnerHasBeenSet = true;
     }
 
+    if (value.HasMember("FullProgress") && !value["FullProgress"].IsNull())
+    {
+        if (!value["FullProgress"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompareDetailInfo.FullProgress` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_fullProgress.Deserialize(value["FullProgress"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_fullProgressHasBeenSet = true;
+    }
+
+    if (value.HasMember("IncDifference") && !value["IncDifference"].IsNull())
+    {
+        if (!value["IncDifference"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompareDetailInfo.IncDifference` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_incDifference.Deserialize(value["IncDifference"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_incDifferenceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -223,6 +259,24 @@ void CompareDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_differenceOwner.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_fullProgressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FullProgress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fullProgress.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_incDifferenceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncDifference";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_incDifference.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -338,5 +392,37 @@ void CompareDetailInfo::SetDifferenceOwner(const DifferenceOwnerDetail& _differe
 bool CompareDetailInfo::DifferenceOwnerHasBeenSet() const
 {
     return m_differenceOwnerHasBeenSet;
+}
+
+CompareTableInfo CompareDetailInfo::GetFullProgress() const
+{
+    return m_fullProgress;
+}
+
+void CompareDetailInfo::SetFullProgress(const CompareTableInfo& _fullProgress)
+{
+    m_fullProgress = _fullProgress;
+    m_fullProgressHasBeenSet = true;
+}
+
+bool CompareDetailInfo::FullProgressHasBeenSet() const
+{
+    return m_fullProgressHasBeenSet;
+}
+
+CompareTableInfo CompareDetailInfo::GetIncDifference() const
+{
+    return m_incDifference;
+}
+
+void CompareDetailInfo::SetIncDifference(const CompareTableInfo& _incDifference)
+{
+    m_incDifference = _incDifference;
+    m_incDifferenceHasBeenSet = true;
+}
+
+bool CompareDetailInfo::IncDifferenceHasBeenSet() const
+{
+    return m_incDifferenceHasBeenSet;
 }
 

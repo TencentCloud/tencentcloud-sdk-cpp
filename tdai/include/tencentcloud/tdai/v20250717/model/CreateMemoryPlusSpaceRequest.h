@@ -127,6 +127,69 @@ namespace TencentCloud
                      */
                     bool GoodsNumHasBeenSet() const;
 
+                    /**
+                     * 获取<p>计费模式。</p><p>枚举值：</p><ul><li>0： 按量计费。</li><li>1： 包年包月。</li></ul>
+                     * @return PayMode <p>计费模式。</p><p>枚举值：</p><ul><li>0： 按量计费。</li><li>1： 包年包月。</li></ul>
+                     * 
+                     */
+                    int64_t GetPayMode() const;
+
+                    /**
+                     * 设置<p>计费模式。</p><p>枚举值：</p><ul><li>0： 按量计费。</li><li>1： 包年包月。</li></ul>
+                     * @param _payMode <p>计费模式。</p><p>枚举值：</p><ul><li>0： 按量计费。</li><li>1： 包年包月。</li></ul>
+                     * 
+                     */
+                    void SetPayMode(const int64_t& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     * 
+                     */
+                    bool PayModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>包年包月周期</p>
+                     * @return PayPeriod <p>包年包月周期</p>
+                     * 
+                     */
+                    int64_t GetPayPeriod() const;
+
+                    /**
+                     * 设置<p>包年包月周期</p>
+                     * @param _payPeriod <p>包年包月周期</p>
+                     * 
+                     */
+                    void SetPayPeriod(const int64_t& _payPeriod);
+
+                    /**
+                     * 判断参数 PayPeriod 是否已赋值
+                     * @return PayPeriod 是否已赋值
+                     * 
+                     */
+                    bool PayPeriodHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否自动续费</p>
+                     * @return AutoRenew <p>是否自动续费</p>
+                     * 
+                     */
+                    int64_t GetAutoRenew() const;
+
+                    /**
+                     * 设置<p>是否自动续费</p>
+                     * @param _autoRenew <p>是否自动续费</p>
+                     * 
+                     */
+                    void SetAutoRenew(const int64_t& _autoRenew);
+
+                    /**
+                     * 判断参数 AutoRenew 是否已赋值
+                     * @return AutoRenew 是否已赋值
+                     * 
+                     */
+                    bool AutoRenewHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +215,24 @@ namespace TencentCloud
                      */
                     int64_t m_goodsNum;
                     bool m_goodsNumHasBeenSet;
+
+                    /**
+                     * <p>计费模式。</p><p>枚举值：</p><ul><li>0： 按量计费。</li><li>1： 包年包月。</li></ul>
+                     */
+                    int64_t m_payMode;
+                    bool m_payModeHasBeenSet;
+
+                    /**
+                     * <p>包年包月周期</p>
+                     */
+                    int64_t m_payPeriod;
+                    bool m_payPeriodHasBeenSet;
+
+                    /**
+                     * <p>是否自动续费</p>
+                     */
+                    int64_t m_autoRenew;
+                    bool m_autoRenewHasBeenSet;
 
                 };
             }

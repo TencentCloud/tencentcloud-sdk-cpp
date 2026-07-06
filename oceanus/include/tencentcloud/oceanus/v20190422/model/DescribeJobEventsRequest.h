@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取作业的 ID
-                     * @return JobId 作业的 ID
+                     * 获取<p>作业的 ID</p>
+                     * @return JobId <p>作业的 ID</p>
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置作业的 ID
-                     * @param _jobId 作业的 ID
+                     * 设置<p>作业的 ID</p>
+                     * @param _jobId <p>作业的 ID</p>
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取筛选条件：起始 Unix 时间戳（秒）
-                     * @return StartTimestamp 筛选条件：起始 Unix 时间戳（秒）
+                     * 获取<p>筛选条件：起始 Unix 时间戳（秒）</p>
+                     * @return StartTimestamp <p>筛选条件：起始 Unix 时间戳（秒）</p>
                      * 
                      */
                     uint64_t GetStartTimestamp() const;
 
                     /**
-                     * 设置筛选条件：起始 Unix 时间戳（秒）
-                     * @param _startTimestamp 筛选条件：起始 Unix 时间戳（秒）
+                     * 设置<p>筛选条件：起始 Unix 时间戳（秒）</p>
+                     * @param _startTimestamp <p>筛选条件：起始 Unix 时间戳（秒）</p>
                      * 
                      */
                     void SetStartTimestamp(const uint64_t& _startTimestamp);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartTimestampHasBeenSet() const;
 
                     /**
-                     * 获取筛选条件：结束 Unix 时间戳（秒）
-                     * @return EndTimestamp 筛选条件：结束 Unix 时间戳（秒）
+                     * 获取<p>筛选条件：结束 Unix 时间戳（秒）</p>
+                     * @return EndTimestamp <p>筛选条件：结束 Unix 时间戳（秒）</p>
                      * 
                      */
                     uint64_t GetEndTimestamp() const;
 
                     /**
-                     * 设置筛选条件：结束 Unix 时间戳（秒）
-                     * @param _endTimestamp 筛选条件：结束 Unix 时间戳（秒）
+                     * 设置<p>筛选条件：结束 Unix 时间戳（秒）</p>
+                     * @param _endTimestamp <p>筛选条件：结束 Unix 时间戳（秒）</p>
                      * 
                      */
                     void SetEndTimestamp(const uint64_t& _endTimestamp);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndTimestampHasBeenSet() const;
 
                     /**
-                     * 获取事件类型。如果不传则返回所有类型的数据
-                     * @return Types 事件类型。如果不传则返回所有类型的数据
+                     * 获取<p>事件类型。如果不传则返回所有类型的数据</p>
+                     * @return Types <p>事件类型。如果不传则返回所有类型的数据</p>
                      * 
                      */
                     std::vector<std::string> GetTypes() const;
 
                     /**
-                     * 设置事件类型。如果不传则返回所有类型的数据
-                     * @param _types 事件类型。如果不传则返回所有类型的数据
+                     * 设置<p>事件类型。如果不传则返回所有类型的数据</p>
+                     * @param _types <p>事件类型。如果不传则返回所有类型的数据</p>
                      * 
                      */
                     void SetTypes(const std::vector<std::string>& _types);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool TypesHasBeenSet() const;
 
                     /**
-                     * 获取运行实例 ID 数组
-                     * @return RunningOrderIds 运行实例 ID 数组
+                     * 获取<p>运行实例 ID 数组</p>
+                     * @return RunningOrderIds <p>运行实例 ID 数组</p>
                      * 
                      */
                     std::vector<uint64_t> GetRunningOrderIds() const;
 
                     /**
-                     * 设置运行实例 ID 数组
-                     * @param _runningOrderIds 运行实例 ID 数组
+                     * 设置<p>运行实例 ID 数组</p>
+                     * @param _runningOrderIds <p>运行实例 ID 数组</p>
                      * 
                      */
                     void SetRunningOrderIds(const std::vector<uint64_t>& _runningOrderIds);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool RunningOrderIdsHasBeenSet() const;
 
                     /**
-                     * 获取工作空间 SerialId
-                     * @return WorkSpaceId 工作空间 SerialId
+                     * 获取<p>工作空间 SerialId</p>
+                     * @return WorkSpaceId <p>工作空间 SerialId</p>
                      * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
-                     * 设置工作空间 SerialId
-                     * @param _workSpaceId 工作空间 SerialId
+                     * 设置<p>工作空间 SerialId</p>
+                     * @param _workSpaceId <p>工作空间 SerialId</p>
                      * 
                      */
                     void SetWorkSpaceId(const std::string& _workSpaceId);
@@ -168,43 +168,97 @@ namespace TencentCloud
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>返回条数</p>
+                     * @return Limit <p>返回条数</p>
+                     * 
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置<p>返回条数</p>
+                     * @param _limit <p>返回条数</p>
+                     * 
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取<p>起始偏移个数</p>
+                     * @return Offset <p>起始偏移个数</p>
+                     * 
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置<p>起始偏移个数</p>
+                     * @param _offset <p>起始偏移个数</p>
+                     * 
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 作业的 ID
+                     * <p>作业的 ID</p>
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 筛选条件：起始 Unix 时间戳（秒）
+                     * <p>筛选条件：起始 Unix 时间戳（秒）</p>
                      */
                     uint64_t m_startTimestamp;
                     bool m_startTimestampHasBeenSet;
 
                     /**
-                     * 筛选条件：结束 Unix 时间戳（秒）
+                     * <p>筛选条件：结束 Unix 时间戳（秒）</p>
                      */
                     uint64_t m_endTimestamp;
                     bool m_endTimestampHasBeenSet;
 
                     /**
-                     * 事件类型。如果不传则返回所有类型的数据
+                     * <p>事件类型。如果不传则返回所有类型的数据</p>
                      */
                     std::vector<std::string> m_types;
                     bool m_typesHasBeenSet;
 
                     /**
-                     * 运行实例 ID 数组
+                     * <p>运行实例 ID 数组</p>
                      */
                     std::vector<uint64_t> m_runningOrderIds;
                     bool m_runningOrderIdsHasBeenSet;
 
                     /**
-                     * 工作空间 SerialId
+                     * <p>工作空间 SerialId</p>
                      */
                     std::string m_workSpaceId;
                     bool m_workSpaceIdHasBeenSet;
+
+                    /**
+                     * <p>返回条数</p>
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * <p>起始偏移个数</p>
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                 };
             }

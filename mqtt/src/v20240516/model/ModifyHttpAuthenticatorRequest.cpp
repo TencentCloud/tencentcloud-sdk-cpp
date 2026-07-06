@@ -32,7 +32,8 @@ ModifyHttpAuthenticatorRequest::ModifyHttpAuthenticatorRequest() :
     m_remarkHasBeenSet(false),
     m_methodHasBeenSet(false),
     m_headerHasBeenSet(false),
-    m_bodyHasBeenSet(false)
+    m_bodyHasBeenSet(false),
+    m_includingUserPropertiesHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,14 @@ string ModifyHttpAuthenticatorRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_includingUserPropertiesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncludingUserProperties";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_includingUserProperties, allocator);
     }
 
 
@@ -303,6 +312,22 @@ void ModifyHttpAuthenticatorRequest::SetBody(const vector<BodyItem>& _body)
 bool ModifyHttpAuthenticatorRequest::BodyHasBeenSet() const
 {
     return m_bodyHasBeenSet;
+}
+
+bool ModifyHttpAuthenticatorRequest::GetIncludingUserProperties() const
+{
+    return m_includingUserProperties;
+}
+
+void ModifyHttpAuthenticatorRequest::SetIncludingUserProperties(const bool& _includingUserProperties)
+{
+    m_includingUserProperties = _includingUserProperties;
+    m_includingUserPropertiesHasBeenSet = true;
+}
+
+bool ModifyHttpAuthenticatorRequest::IncludingUserPropertiesHasBeenSet() const
+{
+    return m_includingUserPropertiesHasBeenSet;
 }
 
 

@@ -254,6 +254,27 @@ namespace TencentCloud
                      */
                     bool BodyHasBeenSet() const;
 
+                    /**
+                     * 获取连接UserProperty作为Header转发，默认false
+                     * @return IncludingUserProperties 连接UserProperty作为Header转发，默认false
+                     * 
+                     */
+                    bool GetIncludingUserProperties() const;
+
+                    /**
+                     * 设置连接UserProperty作为Header转发，默认false
+                     * @param _includingUserProperties 连接UserProperty作为Header转发，默认false
+                     * 
+                     */
+                    void SetIncludingUserProperties(const bool& _includingUserProperties);
+
+                    /**
+                     * 判断参数 IncludingUserProperties 是否已赋值
+                     * @return IncludingUserProperties 是否已赋值
+                     * 
+                     */
+                    bool IncludingUserPropertiesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -315,6 +336,12 @@ namespace TencentCloud
                      */
                     std::vector<BodyItem> m_body;
                     bool m_bodyHasBeenSet;
+
+                    /**
+                     * 连接UserProperty作为Header转发，默认false
+                     */
+                    bool m_includingUserProperties;
+                    bool m_includingUserPropertiesHasBeenSet;
 
                 };
             }

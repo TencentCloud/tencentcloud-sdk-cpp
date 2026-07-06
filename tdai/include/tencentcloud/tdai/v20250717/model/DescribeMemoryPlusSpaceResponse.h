@@ -157,6 +157,20 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
+                     * 获取<p>是否自动续费</p><p>枚举值：</p><ul><li>0： 不自动续费</li><li>1： 自动续费</li></ul>
+                     * @return AutoRenew <p>是否自动续费</p><p>枚举值：</p><ul><li>0： 不自动续费</li><li>1： 自动续费</li></ul>
+                     * 
+                     */
+                    int64_t GetAutoRenew() const;
+
+                    /**
+                     * 判断参数 AutoRenew 是否已赋值
+                     * @return AutoRenew 是否已赋值
+                     * 
+                     */
+                    bool AutoRenewHasBeenSet() const;
+
+                    /**
                      * 获取<p>Memory 版本信息：v1。</p>
                      * @return Version <p>Memory 版本信息：v1。</p>
                      * 
@@ -359,6 +373,12 @@ namespace TencentCloud
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
+
+                    /**
+                     * <p>是否自动续费</p><p>枚举值：</p><ul><li>0： 不自动续费</li><li>1： 自动续费</li></ul>
+                     */
+                    int64_t m_autoRenew;
+                    bool m_autoRenewHasBeenSet;
 
                     /**
                      * <p>Memory 版本信息：v1。</p>

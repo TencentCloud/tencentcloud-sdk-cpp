@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取屏蔽规则的Id
-                     * @return ShieldId 屏蔽规则的Id
+                     * 获取<p>屏蔽规则的Id</p>
+                     * @return ShieldId <p>屏蔽规则的Id</p>
                      * 
                      */
                     std::string GetShieldId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 屏蔽规则的Id
+                     * <p>屏蔽规则的Id</p>
                      */
                     std::string m_shieldId;
                     bool m_shieldIdHasBeenSet;

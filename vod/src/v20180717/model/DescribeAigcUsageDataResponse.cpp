@@ -24,7 +24,8 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 DescribeAigcUsageDataResponse::DescribeAigcUsageDataResponse() :
-    m_aigcUsageDataSetHasBeenSet(false)
+    m_aigcUsageDataSetHasBeenSet(false),
+    m_aigcTextDetailsHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,23 @@ CoreInternalOutcome DescribeAigcUsageDataResponse::Deserialize(const string &pay
         m_aigcUsageDataSetHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AigcTextDetails") && !rsp["AigcTextDetails"].IsNull())
+    {
+        if (!rsp["AigcTextDetails"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcTextDetails` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aigcTextDetails.Deserialize(rsp["AigcTextDetails"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aigcTextDetailsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +125,15 @@ string DescribeAigcUsageDataResponse::ToJsonString() const
         }
     }
 
+    if (m_aigcTextDetailsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AigcTextDetails";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aigcTextDetails.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +154,16 @@ vector<AigcUsageDataItem> DescribeAigcUsageDataResponse::GetAigcUsageDataSet() c
 bool DescribeAigcUsageDataResponse::AigcUsageDataSetHasBeenSet() const
 {
     return m_aigcUsageDataSetHasBeenSet;
+}
+
+AigcTextDetail DescribeAigcUsageDataResponse::GetAigcTextDetails() const
+{
+    return m_aigcTextDetails;
+}
+
+bool DescribeAigcUsageDataResponse::AigcTextDetailsHasBeenSet() const
+{
+    return m_aigcTextDetailsHasBeenSet;
 }
 
 

@@ -26,7 +26,8 @@ EnableClusterAuditRequest::EnableClusterAuditRequest() :
     m_clusterIdHasBeenSet(false),
     m_logsetIdHasBeenSet(false),
     m_topicIdHasBeenSet(false),
-    m_topicRegionHasBeenSet(false)
+    m_topicRegionHasBeenSet(false),
+    m_clusterTypeHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string EnableClusterAuditRequest::ToJsonString() const
         string key = "TopicRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_topicRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void EnableClusterAuditRequest::SetTopicRegion(const string& _topicRegion)
 bool EnableClusterAuditRequest::TopicRegionHasBeenSet() const
 {
     return m_topicRegionHasBeenSet;
+}
+
+string EnableClusterAuditRequest::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void EnableClusterAuditRequest::SetClusterType(const string& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool EnableClusterAuditRequest::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
 }
 
 

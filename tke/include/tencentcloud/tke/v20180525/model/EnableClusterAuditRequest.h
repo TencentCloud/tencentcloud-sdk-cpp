@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取CLS日志集ID，可以通过cls接口或者控制台获取
-                     * @return LogsetId CLS日志集ID，可以通过cls接口或者控制台获取
+                     * 获取<p>CLS日志集ID，可以通过cls接口或者控制台获取</p>
+                     * @return LogsetId <p>CLS日志集ID，可以通过cls接口或者控制台获取</p>
                      * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
-                     * 设置CLS日志集ID，可以通过cls接口或者控制台获取
-                     * @param _logsetId CLS日志集ID，可以通过cls接口或者控制台获取
+                     * 设置<p>CLS日志集ID，可以通过cls接口或者控制台获取</p>
+                     * @param _logsetId <p>CLS日志集ID，可以通过cls接口或者控制台获取</p>
                      * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LogsetIdHasBeenSet() const;
 
                     /**
-                     * 获取CLS日志主题ID，可以通过cls接口或者控制台获取
-                     * @return TopicId CLS日志主题ID，可以通过cls接口或者控制台获取
+                     * 获取<p>CLS日志主题ID，可以通过cls接口或者控制台获取</p>
+                     * @return TopicId <p>CLS日志主题ID，可以通过cls接口或者控制台获取</p>
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置CLS日志主题ID，可以通过cls接口或者控制台获取
-                     * @param _topicId CLS日志主题ID，可以通过cls接口或者控制台获取
+                     * 设置<p>CLS日志主题ID，可以通过cls接口或者控制台获取</p>
+                     * @param _topicId <p>CLS日志主题ID，可以通过cls接口或者控制台获取</p>
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取topic所在region，默认为集群当前region
-                     * @return TopicRegion topic所在region，默认为集群当前region
+                     * 获取<p>topic所在region，默认为集群当前region</p>
+                     * @return TopicRegion <p>topic所在region，默认为集群当前region</p>
                      * 
                      */
                     std::string GetTopicRegion() const;
 
                     /**
-                     * 设置topic所在region，默认为集群当前region
-                     * @param _topicRegion topic所在region，默认为集群当前region
+                     * 设置<p>topic所在region，默认为集群当前region</p>
+                     * @param _topicRegion <p>topic所在region，默认为集群当前region</p>
                      * 
                      */
                     void SetTopicRegion(const std::string& _topicRegion);
@@ -126,31 +126,58 @@ namespace TencentCloud
                      */
                     bool TopicRegionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>集群类型 tke/eks</p><p>默认值：tke</p>
+                     * @return ClusterType <p>集群类型 tke/eks</p><p>默认值：tke</p>
+                     * 
+                     */
+                    std::string GetClusterType() const;
+
+                    /**
+                     * 设置<p>集群类型 tke/eks</p><p>默认值：tke</p>
+                     * @param _clusterType <p>集群类型 tke/eks</p><p>默认值：tke</p>
+                     * 
+                     */
+                    void SetClusterType(const std::string& _clusterType);
+
+                    /**
+                     * 判断参数 ClusterType 是否已赋值
+                     * @return ClusterType 是否已赋值
+                     * 
+                     */
+                    bool ClusterTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * CLS日志集ID，可以通过cls接口或者控制台获取
+                     * <p>CLS日志集ID，可以通过cls接口或者控制台获取</p>
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;
 
                     /**
-                     * CLS日志主题ID，可以通过cls接口或者控制台获取
+                     * <p>CLS日志主题ID，可以通过cls接口或者控制台获取</p>
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * topic所在region，默认为集群当前region
+                     * <p>topic所在region，默认为集群当前region</p>
                      */
                     std::string m_topicRegion;
                     bool m_topicRegionHasBeenSet;
+
+                    /**
+                     * <p>集群类型 tke/eks</p><p>默认值：tke</p>
+                     */
+                    std::string m_clusterType;
+                    bool m_clusterTypeHasBeenSet;
 
                 };
             }

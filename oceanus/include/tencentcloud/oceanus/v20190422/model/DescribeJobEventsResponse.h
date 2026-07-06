@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取该作业指定范围内的事件列表
+                     * 获取<p>该作业指定范围内的事件列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Events 该作业指定范围内的事件列表
+                     * @return Events <p>该作业指定范围内的事件列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool EventsHasBeenSet() const;
 
                     /**
-                     * 获取该作业指定范围内运行实例 ID 数组，仅当入参没有传入 RunningOrderIds 参数时才会返回。倒序输出
+                     * 获取<p>该作业指定范围内运行实例 ID 数组，仅当入参没有传入 RunningOrderIds 参数时才会返回。倒序输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RunningOrderIds 该作业指定范围内运行实例 ID 数组，仅当入参没有传入 RunningOrderIds 参数时才会返回。倒序输出
+                     * @return RunningOrderIds <p>该作业指定范围内运行实例 ID 数组，仅当入参没有传入 RunningOrderIds 参数时才会返回。倒序输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,9 +77,9 @@ namespace TencentCloud
                     bool RunningOrderIdsHasBeenSet() const;
 
                     /**
-                     * 获取事件的总数
+                     * 获取<p>事件的总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCount 事件的总数
+                     * @return TotalCount <p>事件的总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -93,9 +93,9 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取实例对应的版本
+                     * 获取<p>实例对应的版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Versions 实例对应的版本
+                     * @return Versions <p>实例对应的版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -111,28 +111,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 该作业指定范围内的事件列表
+                     * <p>该作业指定范围内的事件列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<JobEvent> m_events;
                     bool m_eventsHasBeenSet;
 
                     /**
-                     * 该作业指定范围内运行实例 ID 数组，仅当入参没有传入 RunningOrderIds 参数时才会返回。倒序输出
+                     * <p>该作业指定范围内运行实例 ID 数组，仅当入参没有传入 RunningOrderIds 参数时才会返回。倒序输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_runningOrderIds;
                     bool m_runningOrderIdsHasBeenSet;
 
                     /**
-                     * 事件的总数
+                     * <p>事件的总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 实例对应的版本
+                     * <p>实例对应的版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_versions;

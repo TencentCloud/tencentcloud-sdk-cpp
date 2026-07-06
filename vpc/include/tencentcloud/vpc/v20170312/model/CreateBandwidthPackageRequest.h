@@ -284,6 +284,27 @@ namespace TencentCloud
                      */
                     bool EgressHasBeenSet() const;
 
+                    /**
+                     * 获取仅用于申请特殊可用区带宽包，如：TEZ/EZ边缘可用区，CDZ专属可用区。具体可选可用区信息，请参考[DescribeDesignatedZones](https://cloud.tencent.com/document/product/215/128830)接口查询结果。
+                     * @return DesignatedZone 仅用于申请特殊可用区带宽包，如：TEZ/EZ边缘可用区，CDZ专属可用区。具体可选可用区信息，请参考[DescribeDesignatedZones](https://cloud.tencent.com/document/product/215/128830)接口查询结果。
+                     * 
+                     */
+                    std::string GetDesignatedZone() const;
+
+                    /**
+                     * 设置仅用于申请特殊可用区带宽包，如：TEZ/EZ边缘可用区，CDZ专属可用区。具体可选可用区信息，请参考[DescribeDesignatedZones](https://cloud.tencent.com/document/product/215/128830)接口查询结果。
+                     * @param _designatedZone 仅用于申请特殊可用区带宽包，如：TEZ/EZ边缘可用区，CDZ专属可用区。具体可选可用区信息，请参考[DescribeDesignatedZones](https://cloud.tencent.com/document/product/215/128830)接口查询结果。
+                     * 
+                     */
+                    void SetDesignatedZone(const std::string& _designatedZone);
+
+                    /**
+                     * 判断参数 DesignatedZone 是否已赋值
+                     * @return DesignatedZone 是否已赋值
+                     * 
+                     */
+                    bool DesignatedZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -352,6 +373,12 @@ namespace TencentCloud
                      */
                     std::string m_egress;
                     bool m_egressHasBeenSet;
+
+                    /**
+                     * 仅用于申请特殊可用区带宽包，如：TEZ/EZ边缘可用区，CDZ专属可用区。具体可选可用区信息，请参考[DescribeDesignatedZones](https://cloud.tencent.com/document/product/215/128830)接口查询结果。
+                     */
+                    std::string m_designatedZone;
+                    bool m_designatedZoneHasBeenSet;
 
                 };
             }

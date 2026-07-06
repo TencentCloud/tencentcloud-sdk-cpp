@@ -23,7 +23,9 @@ using namespace std;
 ManageIPPortraitRiskValueOutput::ManageIPPortraitRiskValueOutput() :
     m_userIpHasBeenSet(false),
     m_riskScoreHasBeenSet(false),
-    m_riskTypeHasBeenSet(false)
+    m_riskTypeHasBeenSet(false),
+    m_ipLocationHasBeenSet(false),
+    m_ipNetworkHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,40 @@ CoreInternalOutcome ManageIPPortraitRiskValueOutput::Deserialize(const rapidjson
         m_riskTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("IpLocation") && !value["IpLocation"].IsNull())
+    {
+        if (!value["IpLocation"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ManageIPPortraitRiskValueOutput.IpLocation` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ipLocation.Deserialize(value["IpLocation"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ipLocationHasBeenSet = true;
+    }
+
+    if (value.HasMember("IpNetwork") && !value["IpNetwork"].IsNull())
+    {
+        if (!value["IpNetwork"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ManageIPPortraitRiskValueOutput.IpNetwork` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ipNetwork.Deserialize(value["IpNetwork"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ipNetworkHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +135,24 @@ void ManageIPPortraitRiskValueOutput::ToJsonObject(rapidjson::Value &value, rapi
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_ipLocationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpLocation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ipLocation.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_ipNetworkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpNetwork";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ipNetwork.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -150,5 +204,37 @@ void ManageIPPortraitRiskValueOutput::SetRiskType(const vector<int64_t>& _riskTy
 bool ManageIPPortraitRiskValueOutput::RiskTypeHasBeenSet() const
 {
     return m_riskTypeHasBeenSet;
+}
+
+IpLocationInfo ManageIPPortraitRiskValueOutput::GetIpLocation() const
+{
+    return m_ipLocation;
+}
+
+void ManageIPPortraitRiskValueOutput::SetIpLocation(const IpLocationInfo& _ipLocation)
+{
+    m_ipLocation = _ipLocation;
+    m_ipLocationHasBeenSet = true;
+}
+
+bool ManageIPPortraitRiskValueOutput::IpLocationHasBeenSet() const
+{
+    return m_ipLocationHasBeenSet;
+}
+
+IpNetworkInfo ManageIPPortraitRiskValueOutput::GetIpNetwork() const
+{
+    return m_ipNetwork;
+}
+
+void ManageIPPortraitRiskValueOutput::SetIpNetwork(const IpNetworkInfo& _ipNetwork)
+{
+    m_ipNetwork = _ipNetwork;
+    m_ipNetworkHasBeenSet = true;
+}
+
+bool ManageIPPortraitRiskValueOutput::IpNetworkHasBeenSet() const
+{
+    return m_ipNetworkHasBeenSet;
 }
 

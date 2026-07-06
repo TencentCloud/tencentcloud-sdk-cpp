@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取内网保留 IP返回信息。
-                     * @return ReserveIpAddressSet 内网保留 IP返回信息。
+                     * 获取<p>内网保留 IP返回信息。</p>
+                     * @return ReserveIpAddressSet <p>内网保留 IP返回信息。</p>
                      * 
                      */
                     std::vector<ReserveIpAddressInfo> GetReserveIpAddressSet() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool ReserveIpAddressSetHasBeenSet() const;
 
                     /**
-                     * 获取返回内网保留IP的个数。
-                     * @return TotalCount 返回内网保留IP的个数。
+                     * 获取<p>返回内网保留IP的个数。</p>
+                     * @return TotalCount <p>返回内网保留IP的个数。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 内网保留 IP返回信息。
+                     * <p>内网保留 IP返回信息。</p>
                      */
                     std::vector<ReserveIpAddressInfo> m_reserveIpAddressSet;
                     bool m_reserveIpAddressSetHasBeenSet;
 
                     /**
-                     * 返回内网保留IP的个数。
+                     * <p>返回内网保留IP的个数。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

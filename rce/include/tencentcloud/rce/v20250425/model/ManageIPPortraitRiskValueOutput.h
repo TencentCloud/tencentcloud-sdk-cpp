@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/rce/v20250425/model/IpLocationInfo.h>
+#include <tencentcloud/rce/v20250425/model/IpNetworkInfo.h>
 
 
 namespace TencentCloud
@@ -109,6 +111,48 @@ namespace TencentCloud
                      */
                     bool RiskTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>IP地理位置信息</p>
+                     * @return IpLocation <p>IP地理位置信息</p>
+                     * 
+                     */
+                    IpLocationInfo GetIpLocation() const;
+
+                    /**
+                     * 设置<p>IP地理位置信息</p>
+                     * @param _ipLocation <p>IP地理位置信息</p>
+                     * 
+                     */
+                    void SetIpLocation(const IpLocationInfo& _ipLocation);
+
+                    /**
+                     * 判断参数 IpLocation 是否已赋值
+                     * @return IpLocation 是否已赋值
+                     * 
+                     */
+                    bool IpLocationHasBeenSet() const;
+
+                    /**
+                     * 获取<p>IP基础网络信息</p>
+                     * @return IpNetwork <p>IP基础网络信息</p>
+                     * 
+                     */
+                    IpNetworkInfo GetIpNetwork() const;
+
+                    /**
+                     * 设置<p>IP基础网络信息</p>
+                     * @param _ipNetwork <p>IP基础网络信息</p>
+                     * 
+                     */
+                    void SetIpNetwork(const IpNetworkInfo& _ipNetwork);
+
+                    /**
+                     * 判断参数 IpNetwork 是否已赋值
+                     * @return IpNetwork 是否已赋值
+                     * 
+                     */
+                    bool IpNetworkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +172,18 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_riskType;
                     bool m_riskTypeHasBeenSet;
+
+                    /**
+                     * <p>IP地理位置信息</p>
+                     */
+                    IpLocationInfo m_ipLocation;
+                    bool m_ipLocationHasBeenSet;
+
+                    /**
+                     * <p>IP基础网络信息</p>
+                     */
+                    IpNetworkInfo m_ipNetwork;
+                    bool m_ipNetworkHasBeenSet;
 
                 };
             }

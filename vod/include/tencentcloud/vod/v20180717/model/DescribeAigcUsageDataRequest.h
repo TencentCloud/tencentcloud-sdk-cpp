@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取<p>AIGC类型。</p><p>枚举值：</p><ul><li>Video： 视频</li><li>Image： 图片</li><li>Text： 文本</li><li>Audio： 音频</li><li>SceneAigcVideo： 场景化视频处理</li><li>SceneAigcImage： 场景化图片处理</li><li>SceneAigcTime： 场景化处理次数</li></ul>
-                     * @return AigcType <p>AIGC类型。</p><p>枚举值：</p><ul><li>Video： 视频</li><li>Image： 图片</li><li>Text： 文本</li><li>Audio： 音频</li><li>SceneAigcVideo： 场景化视频处理</li><li>SceneAigcImage： 场景化图片处理</li><li>SceneAigcTime： 场景化处理次数</li></ul>
+                     * 获取<p>AIGC类型。</p><p>枚举值：</p><ul><li>Video： 视频</li><li>Image： 图片</li><li>Text： 文本</li><li>Audio： 音频</li><li>SceneAigcVideo： 场景化视频处理</li><li>SceneAigcImage： 场景化图片处理</li><li>SceneAigcTime： 场景化处理次数</li><li>TextDetail： 文本详细记录</li></ul>
+                     * @return AigcType <p>AIGC类型。</p><p>枚举值：</p><ul><li>Video： 视频</li><li>Image： 图片</li><li>Text： 文本</li><li>Audio： 音频</li><li>SceneAigcVideo： 场景化视频处理</li><li>SceneAigcImage： 场景化图片处理</li><li>SceneAigcTime： 场景化处理次数</li><li>TextDetail： 文本详细记录</li></ul>
                      * 
                      */
                     std::string GetAigcType() const;
 
                     /**
-                     * 设置<p>AIGC类型。</p><p>枚举值：</p><ul><li>Video： 视频</li><li>Image： 图片</li><li>Text： 文本</li><li>Audio： 音频</li><li>SceneAigcVideo： 场景化视频处理</li><li>SceneAigcImage： 场景化图片处理</li><li>SceneAigcTime： 场景化处理次数</li></ul>
-                     * @param _aigcType <p>AIGC类型。</p><p>枚举值：</p><ul><li>Video： 视频</li><li>Image： 图片</li><li>Text： 文本</li><li>Audio： 音频</li><li>SceneAigcVideo： 场景化视频处理</li><li>SceneAigcImage： 场景化图片处理</li><li>SceneAigcTime： 场景化处理次数</li></ul>
+                     * 设置<p>AIGC类型。</p><p>枚举值：</p><ul><li>Video： 视频</li><li>Image： 图片</li><li>Text： 文本</li><li>Audio： 音频</li><li>SceneAigcVideo： 场景化视频处理</li><li>SceneAigcImage： 场景化图片处理</li><li>SceneAigcTime： 场景化处理次数</li><li>TextDetail： 文本详细记录</li></ul>
+                     * @param _aigcType <p>AIGC类型。</p><p>枚举值：</p><ul><li>Video： 视频</li><li>Image： 图片</li><li>Text： 文本</li><li>Audio： 音频</li><li>SceneAigcVideo： 场景化视频处理</li><li>SceneAigcImage： 场景化图片处理</li><li>SceneAigcTime： 场景化处理次数</li><li>TextDetail： 文本详细记录</li></ul>
                      * 
                      */
                     void SetAigcType(const std::string& _aigcType);
@@ -168,6 +168,69 @@ namespace TencentCloud
                      */
                     bool APIKeysHasBeenSet() const;
 
+                    /**
+                     * 获取<p>查询游标</p>
+                     * @return ScrollToken <p>查询游标</p>
+                     * 
+                     */
+                    std::string GetScrollToken() const;
+
+                    /**
+                     * 设置<p>查询游标</p>
+                     * @param _scrollToken <p>查询游标</p>
+                     * 
+                     */
+                    void SetScrollToken(const std::string& _scrollToken);
+
+                    /**
+                     * 判断参数 ScrollToken 是否已赋值
+                     * @return ScrollToken 是否已赋值
+                     * 
+                     */
+                    bool ScrollTokenHasBeenSet() const;
+
+                    /**
+                     * 获取<p>每页大小，最大 200，超出会被截断为 200</p>
+                     * @return PageSize <p>每页大小，最大 200，超出会被截断为 200</p>
+                     * 
+                     */
+                    uint64_t GetPageSize() const;
+
+                    /**
+                     * 设置<p>每页大小，最大 200，超出会被截断为 200</p>
+                     * @param _pageSize <p>每页大小，最大 200，超出会被截断为 200</p>
+                     * 
+                     */
+                    void SetPageSize(const uint64_t& _pageSize);
+
+                    /**
+                     * 判断参数 PageSize 是否已赋值
+                     * @return PageSize 是否已赋值
+                     * 
+                     */
+                    bool PageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>生文RequestId，当AigcType为TextDetail时有效。</p>
+                     * @return ReqId <p>生文RequestId，当AigcType为TextDetail时有效。</p>
+                     * 
+                     */
+                    std::string GetReqId() const;
+
+                    /**
+                     * 设置<p>生文RequestId，当AigcType为TextDetail时有效。</p>
+                     * @param _reqId <p>生文RequestId，当AigcType为TextDetail时有效。</p>
+                     * 
+                     */
+                    void SetReqId(const std::string& _reqId);
+
+                    /**
+                     * 判断参数 ReqId 是否已赋值
+                     * @return ReqId 是否已赋值
+                     * 
+                     */
+                    bool ReqIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -183,7 +246,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * <p>AIGC类型。</p><p>枚举值：</p><ul><li>Video： 视频</li><li>Image： 图片</li><li>Text： 文本</li><li>Audio： 音频</li><li>SceneAigcVideo： 场景化视频处理</li><li>SceneAigcImage： 场景化图片处理</li><li>SceneAigcTime： 场景化处理次数</li></ul>
+                     * <p>AIGC类型。</p><p>枚举值：</p><ul><li>Video： 视频</li><li>Image： 图片</li><li>Text： 文本</li><li>Audio： 音频</li><li>SceneAigcVideo： 场景化视频处理</li><li>SceneAigcImage： 场景化图片处理</li><li>SceneAigcTime： 场景化处理次数</li><li>TextDetail： 文本详细记录</li></ul>
                      */
                     std::string m_aigcType;
                     bool m_aigcTypeHasBeenSet;
@@ -205,6 +268,24 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_aPIKeys;
                     bool m_aPIKeysHasBeenSet;
+
+                    /**
+                     * <p>查询游标</p>
+                     */
+                    std::string m_scrollToken;
+                    bool m_scrollTokenHasBeenSet;
+
+                    /**
+                     * <p>每页大小，最大 200，超出会被截断为 200</p>
+                     */
+                    uint64_t m_pageSize;
+                    bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * <p>生文RequestId，当AigcType为TextDetail时有效。</p>
+                     */
+                    std::string m_reqId;
+                    bool m_reqIdHasBeenSet;
 
                 };
             }

@@ -24,7 +24,9 @@ using namespace std;
 
 AllocateEnvRequest::AllocateEnvRequest() :
     m_allocateIdHasBeenSet(false),
-    m_externalAppIdHasBeenSet(false)
+    m_externalAppIdHasBeenSet(false),
+    m_externalTagHasBeenSet(false),
+    m_requireFunctionHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string AllocateEnvRequest::ToJsonString() const
         string key = "ExternalAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_externalAppId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalTag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_externalTag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_requireFunctionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequireFunction";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_requireFunction, allocator);
     }
 
 
@@ -89,6 +107,38 @@ void AllocateEnvRequest::SetExternalAppId(const string& _externalAppId)
 bool AllocateEnvRequest::ExternalAppIdHasBeenSet() const
 {
     return m_externalAppIdHasBeenSet;
+}
+
+string AllocateEnvRequest::GetExternalTag() const
+{
+    return m_externalTag;
+}
+
+void AllocateEnvRequest::SetExternalTag(const string& _externalTag)
+{
+    m_externalTag = _externalTag;
+    m_externalTagHasBeenSet = true;
+}
+
+bool AllocateEnvRequest::ExternalTagHasBeenSet() const
+{
+    return m_externalTagHasBeenSet;
+}
+
+bool AllocateEnvRequest::GetRequireFunction() const
+{
+    return m_requireFunction;
+}
+
+void AllocateEnvRequest::SetRequireFunction(const bool& _requireFunction)
+{
+    m_requireFunction = _requireFunction;
+    m_requireFunctionHasBeenSet = true;
+}
+
+bool AllocateEnvRequest::RequireFunctionHasBeenSet() const
+{
+    return m_requireFunctionHasBeenSet;
 }
 
 

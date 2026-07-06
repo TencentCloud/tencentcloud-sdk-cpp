@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tokenhub::V20260322::Model;
 using namespace std;
 
-DescribeModelListResponse::DescribeModelListResponse()
+DescribeModelListResponse::DescribeModelListResponse() :
+    m_modelSetHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome DescribeModelListResponse::Deserialize(const string &payload
     }
 
 
+    if (rsp.HasMember("ModelSet") && !rsp["ModelSet"].IsNull())
+    {
+        if (!rsp["ModelSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ModelSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ModelSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Model item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_modelSet.push_back(item);
+        }
+        m_modelSetHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string DescribeModelListResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_modelSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_modelSet.begin(); itr != m_modelSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string DescribeModelListResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<Model> DescribeModelListResponse::GetModelSet() const
+{
+    return m_modelSet;
+}
+
+bool DescribeModelListResponse::ModelSetHasBeenSet() const
+{
+    return m_modelSetHasBeenSet;
+}
+
+int64_t DescribeModelListResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeModelListResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
 
 

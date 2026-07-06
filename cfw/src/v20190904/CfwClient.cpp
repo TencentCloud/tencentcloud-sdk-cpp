@@ -3540,6 +3540,106 @@ CfwClient::DescribeNatFwVpcDnsLstOutcomeCallable CfwClient::DescribeNatFwVpcDnsL
     return prom->get_future();
 }
 
+CfwClient::DescribeOfflineExportTaskOutcome CfwClient::DescribeOfflineExportTask(const DescribeOfflineExportTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOfflineExportTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOfflineExportTaskResponse rsp = DescribeOfflineExportTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOfflineExportTaskOutcome(rsp);
+        else
+            return DescribeOfflineExportTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOfflineExportTaskOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeOfflineExportTaskAsync(const DescribeOfflineExportTaskRequest& request, const DescribeOfflineExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeOfflineExportTaskRequest&;
+    using Resp = DescribeOfflineExportTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeOfflineExportTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeOfflineExportTaskOutcomeCallable CfwClient::DescribeOfflineExportTaskCallable(const DescribeOfflineExportTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeOfflineExportTaskOutcome>>();
+    DescribeOfflineExportTaskAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeOfflineExportTaskRequest&,
+        DescribeOfflineExportTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::DescribeOfflineExportTemporaryCredentialsOutcome CfwClient::DescribeOfflineExportTemporaryCredentials(const DescribeOfflineExportTemporaryCredentialsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOfflineExportTemporaryCredentials");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOfflineExportTemporaryCredentialsResponse rsp = DescribeOfflineExportTemporaryCredentialsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOfflineExportTemporaryCredentialsOutcome(rsp);
+        else
+            return DescribeOfflineExportTemporaryCredentialsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOfflineExportTemporaryCredentialsOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeOfflineExportTemporaryCredentialsAsync(const DescribeOfflineExportTemporaryCredentialsRequest& request, const DescribeOfflineExportTemporaryCredentialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeOfflineExportTemporaryCredentialsRequest&;
+    using Resp = DescribeOfflineExportTemporaryCredentialsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeOfflineExportTemporaryCredentials", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeOfflineExportTemporaryCredentialsOutcomeCallable CfwClient::DescribeOfflineExportTemporaryCredentialsCallable(const DescribeOfflineExportTemporaryCredentialsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeOfflineExportTemporaryCredentialsOutcome>>();
+    DescribeOfflineExportTemporaryCredentialsAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeOfflineExportTemporaryCredentialsRequest&,
+        DescribeOfflineExportTemporaryCredentialsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfwClient::DescribeResourceGroupOutcome CfwClient::DescribeResourceGroup(const DescribeResourceGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeResourceGroup");
@@ -4332,6 +4432,56 @@ CfwClient::ExpandCfwVerticalOutcomeCallable CfwClient::ExpandCfwVerticalCallable
         const CfwClient*,
         const ExpandCfwVerticalRequest&,
         ExpandCfwVerticalOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::ExportLogsOfflineOutcome CfwClient::ExportLogsOffline(const ExportLogsOfflineRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportLogsOffline");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportLogsOfflineResponse rsp = ExportLogsOfflineResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportLogsOfflineOutcome(rsp);
+        else
+            return ExportLogsOfflineOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportLogsOfflineOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::ExportLogsOfflineAsync(const ExportLogsOfflineRequest& request, const ExportLogsOfflineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ExportLogsOfflineRequest&;
+    using Resp = ExportLogsOfflineResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ExportLogsOffline", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::ExportLogsOfflineOutcomeCallable CfwClient::ExportLogsOfflineCallable(const ExportLogsOfflineRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ExportLogsOfflineOutcome>>();
+    ExportLogsOfflineAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const ExportLogsOfflineRequest&,
+        ExportLogsOfflineOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -6482,6 +6632,56 @@ CfwClient::RemoveNatAcRuleOutcomeCallable CfwClient::RemoveNatAcRuleCallable(con
         const CfwClient*,
         const RemoveNatAcRuleRequest&,
         RemoveNatAcRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::RemoveOfflineExportTaskOutcome CfwClient::RemoveOfflineExportTask(const RemoveOfflineExportTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveOfflineExportTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveOfflineExportTaskResponse rsp = RemoveOfflineExportTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveOfflineExportTaskOutcome(rsp);
+        else
+            return RemoveOfflineExportTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveOfflineExportTaskOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::RemoveOfflineExportTaskAsync(const RemoveOfflineExportTaskRequest& request, const RemoveOfflineExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RemoveOfflineExportTaskRequest&;
+    using Resp = RemoveOfflineExportTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RemoveOfflineExportTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::RemoveOfflineExportTaskOutcomeCallable CfwClient::RemoveOfflineExportTaskCallable(const RemoveOfflineExportTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RemoveOfflineExportTaskOutcome>>();
+    RemoveOfflineExportTaskAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const RemoveOfflineExportTaskRequest&,
+        RemoveOfflineExportTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

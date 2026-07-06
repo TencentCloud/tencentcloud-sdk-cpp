@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool SpaceIdsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>包年包月续费周期</p><p>单位：月</p>
+                     * @return PayPeriod <p>包年包月续费周期</p><p>单位：月</p>
+                     * 
+                     */
+                    int64_t GetPayPeriod() const;
+
+                    /**
+                     * 设置<p>包年包月续费周期</p><p>单位：月</p>
+                     * @param _payPeriod <p>包年包月续费周期</p><p>单位：月</p>
+                     * 
+                     */
+                    void SetPayPeriod(const int64_t& _payPeriod);
+
+                    /**
+                     * 判断参数 PayPeriod 是否已赋值
+                     * @return PayPeriod 是否已赋值
+                     * 
+                     */
+                    bool PayPeriodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_spaceIds;
                     bool m_spaceIdsHasBeenSet;
+
+                    /**
+                     * <p>包年包月续费周期</p><p>单位：月</p>
+                     */
+                    int64_t m_payPeriod;
+                    bool m_payPeriodHasBeenSet;
 
                 };
             }

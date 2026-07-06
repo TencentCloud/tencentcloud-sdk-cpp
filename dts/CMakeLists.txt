@@ -41,6 +41,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/OffsetTimeMap.h
   include/tencentcloud/dts/v20211206/model/SkipCheckItemResponse.h
   include/tencentcloud/dts/v20211206/model/ResumeSyncJobRequest.h
+  include/tencentcloud/dts/v20211206/model/ModifySubscribeObjectsRequest.h
   include/tencentcloud/dts/v20211206/model/PartitionAssignment.h
   include/tencentcloud/dts/v20211206/model/RowsCountDifference.h
   include/tencentcloud/dts/v20211206/model/DifferenceOwnerDetail.h
@@ -53,6 +54,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/CreateModifyCheckSyncJobRequest.h
   include/tencentcloud/dts/v20211206/model/IsolateSyncJobRequest.h
   include/tencentcloud/dts/v20211206/model/PauseMigrateJobRequest.h
+  include/tencentcloud/dts/v20211206/model/CompareTableResult.h
   include/tencentcloud/dts/v20211206/model/ContinueMigrateJobRequest.h
   include/tencentcloud/dts/v20211206/model/DescribeMigrateGtidCompareReportRequest.h
   include/tencentcloud/dts/v20211206/model/ResetConsumerGroupOffsetRequest.h
@@ -208,8 +210,8 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/SubscribeObject.h
   include/tencentcloud/dts/v20211206/model/ResumeMigrateJobRequest.h
   include/tencentcloud/dts/v20211206/model/PauseSyncJobResponse.h
+  include/tencentcloud/dts/v20211206/model/CompareTableInfo.h
   include/tencentcloud/dts/v20211206/model/DescribeSubscribeCheckJobRequest.h
-  include/tencentcloud/dts/v20211206/model/ModifySubscribeObjectsRequest.h
   include/tencentcloud/dts/v20211206/model/View.h
   include/tencentcloud/dts/v20211206/model/MonitorInfo.h
   include/tencentcloud/dts/v20211206/model/DescribeOffsetByTimeRequest.h
@@ -360,6 +362,7 @@ set(dts_src
   src/v20211206/model/OffsetTimeMap.cpp
   src/v20211206/model/SkipCheckItemResponse.cpp
   src/v20211206/model/ResumeSyncJobRequest.cpp
+  src/v20211206/model/ModifySubscribeObjectsRequest.cpp
   src/v20211206/model/PartitionAssignment.cpp
   src/v20211206/model/RowsCountDifference.cpp
   src/v20211206/model/DifferenceOwnerDetail.cpp
@@ -372,6 +375,7 @@ set(dts_src
   src/v20211206/model/CreateModifyCheckSyncJobRequest.cpp
   src/v20211206/model/IsolateSyncJobRequest.cpp
   src/v20211206/model/PauseMigrateJobRequest.cpp
+  src/v20211206/model/CompareTableResult.cpp
   src/v20211206/model/ContinueMigrateJobRequest.cpp
   src/v20211206/model/DescribeMigrateGtidCompareReportRequest.cpp
   src/v20211206/model/ResetConsumerGroupOffsetRequest.cpp
@@ -527,8 +531,8 @@ set(dts_src
   src/v20211206/model/SubscribeObject.cpp
   src/v20211206/model/ResumeMigrateJobRequest.cpp
   src/v20211206/model/PauseSyncJobResponse.cpp
+  src/v20211206/model/CompareTableInfo.cpp
   src/v20211206/model/DescribeSubscribeCheckJobRequest.cpp
-  src/v20211206/model/ModifySubscribeObjectsRequest.cpp
   src/v20211206/model/View.cpp
   src/v20211206/model/MonitorInfo.cpp
   src/v20211206/model/DescribeOffsetByTimeRequest.cpp

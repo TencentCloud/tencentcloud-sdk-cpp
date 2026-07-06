@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资产实例id
-                     * @return AssetId 资产实例id
+                     * 获取<p>资产实例id</p>
+                     * @return AssetId <p>资产实例id</p>
                      * 
                      */
                     std::string GetAssetId() const;
 
                     /**
-                     * 设置资产实例id
-                     * @param _assetId 资产实例id
+                     * 设置<p>资产实例id</p>
+                     * @param _assetId <p>资产实例id</p>
                      * 
                      */
                     void SetAssetId(const std::string& _assetId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool AssetIdHasBeenSet() const;
 
                     /**
-                     * 获取集团账号的成员id
-                     * @return MemberId 集团账号的成员id
+                     * 获取<p>集团账号的成员id</p>
+                     * @return MemberId <p>集团账号的成员id</p>
                      * 
                      */
                     std::vector<std::string> GetMemberId() const;
 
                     /**
-                     * 设置集团账号的成员id
-                     * @param _memberId 集团账号的成员id
+                     * 设置<p>集团账号的成员id</p>
+                     * @param _memberId <p>集团账号的成员id</p>
                      * 
                      */
                     void SetMemberId(const std::vector<std::string>& _memberId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool MemberIdHasBeenSet() const;
 
                     /**
-                     * 获取筛选项
-                     * @return Filter 筛选项
+                     * 获取<p>筛选项</p>
+                     * @return Filter <p>筛选项</p>
                      * 
                      */
                     Filter GetFilter() const;
 
                     /**
-                     * 设置筛选项
-                     * @param _filter 筛选项
+                     * 设置<p>筛选项</p>
+                     * @param _filter <p>筛选项</p>
                      * 
                      */
                     void SetFilter(const Filter& _filter);
@@ -109,19 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资产实例id
+                     * <p>资产实例id</p>
                      */
                     std::string m_assetId;
                     bool m_assetIdHasBeenSet;
 
                     /**
-                     * 集团账号的成员id
+                     * <p>集团账号的成员id</p>
                      */
                     std::vector<std::string> m_memberId;
                     bool m_memberIdHasBeenSet;
 
                     /**
-                     * 筛选项
+                     * <p>筛选项</p>
                      */
                     Filter m_filter;
                     bool m_filterHasBeenSet;

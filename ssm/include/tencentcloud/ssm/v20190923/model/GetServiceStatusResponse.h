@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取true表示服务已开通，false 表示服务尚未开通。
-                     * @return ServiceEnabled true表示服务已开通，false 表示服务尚未开通。
+                     * 获取<p>true表示服务已开通，false 表示服务尚未开通。</p>
+                     * @return ServiceEnabled <p>true表示服务已开通，false 表示服务尚未开通。</p>
                      * 
                      */
                     bool GetServiceEnabled() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool ServiceEnabledHasBeenSet() const;
 
                     /**
-                     * 获取服务不可用类型： 0-未购买，1-正常， 2-欠费停服， 3-资源释放。
-                     * @return InvalidType 服务不可用类型： 0-未购买，1-正常， 2-欠费停服， 3-资源释放。
+                     * 获取<p>服务不可用类型： 0-未购买，1-正常， 2-欠费停服， 3-资源释放。</p>
+                     * @return InvalidType <p>服务不可用类型： 0-未购买，1-正常， 2-欠费停服， 3-资源释放。</p>
                      * 
                      */
                     int64_t GetInvalidType() const;
@@ -72,10 +72,8 @@ namespace TencentCloud
                     bool InvalidTypeHasBeenSet() const;
 
                     /**
-                     * 获取true表示用户已经可以使用密钥安全托管功能，
-false表示用户暂时不能使用密钥安全托管功能。
-                     * @return AccessKeyEscrowEnabled true表示用户已经可以使用密钥安全托管功能，
-false表示用户暂时不能使用密钥安全托管功能。
+                     * 获取<p>true表示用户已经可以使用密钥安全托管功能，<br>false表示用户暂时不能使用密钥安全托管功能。</p>
+                     * @return AccessKeyEscrowEnabled <p>true表示用户已经可以使用密钥安全托管功能，<br>false表示用户暂时不能使用密钥安全托管功能。</p>
                      * 
                      */
                     bool GetAccessKeyEscrowEnabled() const;
@@ -88,8 +86,8 @@ false表示用户暂时不能使用密钥安全托管功能。
                     bool AccessKeyEscrowEnabledHasBeenSet() const;
 
                     /**
-                     * 获取过期时间
-                     * @return ExpireTime 过期时间
+                     * 获取<p>过期时间</p>
+                     * @return ExpireTime <p>过期时间</p>
                      * 
                      */
                     std::string GetExpireTime() const;
@@ -102,8 +100,8 @@ false表示用户暂时不能使用密钥安全托管功能。
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取计算性能限制
-                     * @return QPSLimit 计算性能限制
+                     * 获取<p>计算性能限制</p>
+                     * @return QPSLimit <p>计算性能限制</p>
                      * 
                      */
                     int64_t GetQPSLimit() const;
@@ -116,8 +114,8 @@ false表示用户暂时不能使用密钥安全托管功能。
                     bool QPSLimitHasBeenSet() const;
 
                     /**
-                     * 获取凭据个数限制
-                     * @return SecretLimit 凭据个数限制
+                     * 获取<p>凭据个数限制</p>
+                     * @return SecretLimit <p>凭据个数限制</p>
                      * 
                      */
                     int64_t GetSecretLimit() const;
@@ -130,8 +128,8 @@ false表示用户暂时不能使用密钥安全托管功能。
                     bool SecretLimitHasBeenSet() const;
 
                     /**
-                     * 获取付费模式
-                     * @return PayModel 付费模式
+                     * 获取<p>付费模式</p>
+                     * @return PayModel <p>付费模式</p>
                      * 
                      */
                     std::string GetPayModel() const;
@@ -144,8 +142,8 @@ false表示用户暂时不能使用密钥安全托管功能。
                     bool PayModelHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标识，0:手动续费 1:自动续费 2:到期不续
-                     * @return RenewFlag 自动续费标识，0:手动续费 1:自动续费 2:到期不续
+                     * 获取<p>自动续费标识，0:手动续费 1:自动续费 2:到期不续</p>
+                     * @return RenewFlag <p>自动续费标识，0:手动续费 1:自动续费 2:到期不续</p>
                      * 
                      */
                     int64_t GetRenewFlag() const;
@@ -158,8 +156,8 @@ false表示用户暂时不能使用密钥安全托管功能。
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取资源id
-                     * @return ResourceId 资源id
+                     * 获取<p>资源id</p>
+                     * @return ResourceId <p>资源id</p>
                      * 
                      */
                     std::string GetResourceId() const;
@@ -172,8 +170,8 @@ false表示用户暂时不能使用密钥安全托管功能。
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取已托管凭据个数
-                     * @return TotalCount 已托管凭据个数
+                     * 获取<p>已托管凭据个数</p>
+                     * @return TotalCount <p>已托管凭据个数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -185,68 +183,87 @@ false表示用户暂时不能使用密钥安全托管功能。
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>预付费购买 SSM 资源的地域 ID</p>
+                     * @return ResourceRegion <p>预付费购买 SSM 资源的地域 ID</p>
+                     * 
+                     */
+                    int64_t GetResourceRegion() const;
+
+                    /**
+                     * 判断参数 ResourceRegion 是否已赋值
+                     * @return ResourceRegion 是否已赋值
+                     * 
+                     */
+                    bool ResourceRegionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * true表示服务已开通，false 表示服务尚未开通。
+                     * <p>true表示服务已开通，false 表示服务尚未开通。</p>
                      */
                     bool m_serviceEnabled;
                     bool m_serviceEnabledHasBeenSet;
 
                     /**
-                     * 服务不可用类型： 0-未购买，1-正常， 2-欠费停服， 3-资源释放。
+                     * <p>服务不可用类型： 0-未购买，1-正常， 2-欠费停服， 3-资源释放。</p>
                      */
                     int64_t m_invalidType;
                     bool m_invalidTypeHasBeenSet;
 
                     /**
-                     * true表示用户已经可以使用密钥安全托管功能，
-false表示用户暂时不能使用密钥安全托管功能。
+                     * <p>true表示用户已经可以使用密钥安全托管功能，<br>false表示用户暂时不能使用密钥安全托管功能。</p>
                      */
                     bool m_accessKeyEscrowEnabled;
                     bool m_accessKeyEscrowEnabledHasBeenSet;
 
                     /**
-                     * 过期时间
+                     * <p>过期时间</p>
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 计算性能限制
+                     * <p>计算性能限制</p>
                      */
                     int64_t m_qPSLimit;
                     bool m_qPSLimitHasBeenSet;
 
                     /**
-                     * 凭据个数限制
+                     * <p>凭据个数限制</p>
                      */
                     int64_t m_secretLimit;
                     bool m_secretLimitHasBeenSet;
 
                     /**
-                     * 付费模式
+                     * <p>付费模式</p>
                      */
                     std::string m_payModel;
                     bool m_payModelHasBeenSet;
 
                     /**
-                     * 自动续费标识，0:手动续费 1:自动续费 2:到期不续
+                     * <p>自动续费标识，0:手动续费 1:自动续费 2:到期不续</p>
                      */
                     int64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 资源id
+                     * <p>资源id</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 已托管凭据个数
+                     * <p>已托管凭据个数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * <p>预付费购买 SSM 资源的地域 ID</p>
+                     */
+                    int64_t m_resourceRegion;
+                    bool m_resourceRegionHasBeenSet;
 
                 };
             }

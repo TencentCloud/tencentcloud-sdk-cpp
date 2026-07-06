@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取取值为true代表关闭集群审计时删除默认创建的日志集和主题，false代表不删除
-                     * @return DeleteLogSetAndTopic 取值为true代表关闭集群审计时删除默认创建的日志集和主题，false代表不删除
+                     * 获取<p>取值为true代表关闭集群审计时删除默认创建的日志集和主题，false代表不删除</p>
+                     * @return DeleteLogSetAndTopic <p>取值为true代表关闭集群审计时删除默认创建的日志集和主题，false代表不删除</p>
                      * 
                      */
                     bool GetDeleteLogSetAndTopic() const;
 
                     /**
-                     * 设置取值为true代表关闭集群审计时删除默认创建的日志集和主题，false代表不删除
-                     * @param _deleteLogSetAndTopic 取值为true代表关闭集群审计时删除默认创建的日志集和主题，false代表不删除
+                     * 设置<p>取值为true代表关闭集群审计时删除默认创建的日志集和主题，false代表不删除</p>
+                     * @param _deleteLogSetAndTopic <p>取值为true代表关闭集群审计时删除默认创建的日志集和主题，false代表不删除</p>
                      * 
                      */
                     void SetDeleteLogSetAndTopic(const bool& _deleteLogSetAndTopic);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 取值为true代表关闭集群审计时删除默认创建的日志集和主题，false代表不删除
+                     * <p>取值为true代表关闭集群审计时删除默认创建的日志集和主题，false代表不删除</p>
                      */
                     bool m_deleteLogSetAndTopic;
                     bool m_deleteLogSetAndTopicHasBeenSet;

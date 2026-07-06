@@ -27,7 +27,8 @@ ModifyBlockIgnoreListRequest::ModifyBlockIgnoreListRequest() :
     m_iOCHasBeenSet(false),
     m_iocActionHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_isFromWeChatHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,14 @@ string ModifyBlockIgnoreListRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isFromWeChatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsFromWeChat";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isFromWeChat, allocator);
     }
 
 
@@ -171,6 +180,22 @@ void ModifyBlockIgnoreListRequest::SetEndTime(const string& _endTime)
 bool ModifyBlockIgnoreListRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+int64_t ModifyBlockIgnoreListRequest::GetIsFromWeChat() const
+{
+    return m_isFromWeChat;
+}
+
+void ModifyBlockIgnoreListRequest::SetIsFromWeChat(const int64_t& _isFromWeChat)
+{
+    m_isFromWeChat = _isFromWeChat;
+    m_isFromWeChatHasBeenSet = true;
+}
+
+bool ModifyBlockIgnoreListRequest::IsFromWeChatHasBeenSet() const
+{
+    return m_isFromWeChatHasBeenSet;
 }
 
 

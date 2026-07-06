@@ -28,7 +28,10 @@ DescribeAigcUsageDataRequest::DescribeAigcUsageDataRequest() :
     m_aigcTypeHasBeenSet(false),
     m_subAppIdHasBeenSet(false),
     m_aPIKeyHasBeenSet(false),
-    m_aPIKeysHasBeenSet(false)
+    m_aPIKeysHasBeenSet(false),
+    m_scrollTokenHasBeenSet(false),
+    m_pageSizeHasBeenSet(false),
+    m_reqIdHasBeenSet(false)
 {
 }
 
@@ -90,6 +93,30 @@ string DescribeAigcUsageDataRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_scrollTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScrollToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scrollToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_reqIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReqId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_reqId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -194,6 +221,54 @@ void DescribeAigcUsageDataRequest::SetAPIKeys(const vector<string>& _aPIKeys)
 bool DescribeAigcUsageDataRequest::APIKeysHasBeenSet() const
 {
     return m_aPIKeysHasBeenSet;
+}
+
+string DescribeAigcUsageDataRequest::GetScrollToken() const
+{
+    return m_scrollToken;
+}
+
+void DescribeAigcUsageDataRequest::SetScrollToken(const string& _scrollToken)
+{
+    m_scrollToken = _scrollToken;
+    m_scrollTokenHasBeenSet = true;
+}
+
+bool DescribeAigcUsageDataRequest::ScrollTokenHasBeenSet() const
+{
+    return m_scrollTokenHasBeenSet;
+}
+
+uint64_t DescribeAigcUsageDataRequest::GetPageSize() const
+{
+    return m_pageSize;
+}
+
+void DescribeAigcUsageDataRequest::SetPageSize(const uint64_t& _pageSize)
+{
+    m_pageSize = _pageSize;
+    m_pageSizeHasBeenSet = true;
+}
+
+bool DescribeAigcUsageDataRequest::PageSizeHasBeenSet() const
+{
+    return m_pageSizeHasBeenSet;
+}
+
+string DescribeAigcUsageDataRequest::GetReqId() const
+{
+    return m_reqId;
+}
+
+void DescribeAigcUsageDataRequest::SetReqId(const string& _reqId)
+{
+    m_reqId = _reqId;
+    m_reqIdHasBeenSet = true;
+}
+
+bool DescribeAigcUsageDataRequest::ReqIdHasBeenSet() const
+{
+    return m_reqIdHasBeenSet;
 }
 
 

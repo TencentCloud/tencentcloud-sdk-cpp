@@ -28,7 +28,9 @@ DescribeJobEventsRequest::DescribeJobEventsRequest() :
     m_endTimestampHasBeenSet(false),
     m_typesHasBeenSet(false),
     m_runningOrderIdsHasBeenSet(false),
-    m_workSpaceIdHasBeenSet(false)
+    m_workSpaceIdHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,22 @@ string DescribeJobEventsRequest::ToJsonString() const
         string key = "WorkSpaceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
 
@@ -199,6 +217,38 @@ void DescribeJobEventsRequest::SetWorkSpaceId(const string& _workSpaceId)
 bool DescribeJobEventsRequest::WorkSpaceIdHasBeenSet() const
 {
     return m_workSpaceIdHasBeenSet;
+}
+
+uint64_t DescribeJobEventsRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeJobEventsRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeJobEventsRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+uint64_t DescribeJobEventsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeJobEventsRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeJobEventsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 

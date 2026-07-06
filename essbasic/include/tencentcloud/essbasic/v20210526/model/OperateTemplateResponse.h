@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板ID，为32位字符串，模板复制新建时返回
-                     * @return TemplateId 模板ID，为32位字符串，模板复制新建时返回
+                     * 获取<p>模板ID，为32位字符串，模板复制新建时返回</p>
+                     * @return TemplateId <p>模板ID，为32位字符串，模板复制新建时返回</p>
                      * 
                      */
                     std::string GetTemplateId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取模板名称，模板复制新建时返回
-                     * @return TemplateName 模板名称，模板复制新建时返回
+                     * 获取<p>模板名称，模板复制新建时返回</p>
+                     * @return TemplateName <p>模板名称，模板复制新建时返回</p>
                      * 
                      */
                     std::string GetTemplateName() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板ID，为32位字符串，模板复制新建时返回
+                     * <p>模板ID，为32位字符串，模板复制新建时返回</p>
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 模板名称，模板复制新建时返回
+                     * <p>模板名称，模板复制新建时返回</p>
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;

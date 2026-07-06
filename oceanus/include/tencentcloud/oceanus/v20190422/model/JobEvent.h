@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取内部定义的事件类型
-                     * @return Type 内部定义的事件类型
+                     * 获取<p>内部定义的事件类型</p>
+                     * @return Type <p>内部定义的事件类型</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置内部定义的事件类型
-                     * @param _type 内部定义的事件类型
+                     * 设置<p>内部定义的事件类型</p>
+                     * @param _type <p>内部定义的事件类型</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取事件类型的说明文字
-                     * @return Description 事件类型的说明文字
+                     * 获取<p>事件类型的说明文字</p>
+                     * @return Description <p>事件类型的说明文字</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置事件类型的说明文字
-                     * @param _description 事件类型的说明文字
+                     * 设置<p>事件类型的说明文字</p>
+                     * @param _description <p>事件类型的说明文字</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取事件发生的 Unix 时间戳（秒）
-                     * @return Timestamp 事件发生的 Unix 时间戳（秒）
+                     * 获取<p>事件发生的 Unix 时间戳（秒）</p>
+                     * @return Timestamp <p>事件发生的 Unix 时间戳（秒）</p>
                      * 
                      */
                     uint64_t GetTimestamp() const;
 
                     /**
-                     * 设置事件发生的 Unix 时间戳（秒）
-                     * @param _timestamp 事件发生的 Unix 时间戳（秒）
+                     * 设置<p>事件发生的 Unix 时间戳（秒）</p>
+                     * @param _timestamp <p>事件发生的 Unix 时间戳（秒）</p>
                      * 
                      */
                     void SetTimestamp(const uint64_t& _timestamp);
@@ -110,18 +110,18 @@ namespace TencentCloud
                     bool TimestampHasBeenSet() const;
 
                     /**
-                     * 获取事件发生时的运行 ID
+                     * 获取<p>事件发生时的运行 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RunningOrderId 事件发生时的运行 ID
+                     * @return RunningOrderId <p>事件发生时的运行 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRunningOrderId() const;
 
                     /**
-                     * 设置事件发生时的运行 ID
+                     * 设置<p>事件发生时的运行 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _runningOrderId 事件发生时的运行 ID
+                     * @param _runningOrderId <p>事件发生时的运行 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -135,18 +135,18 @@ namespace TencentCloud
                     bool RunningOrderIdHasBeenSet() const;
 
                     /**
-                     * 获取事件的一些可选说明
+                     * 获取<p>事件的一些可选说明</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Message 事件的一些可选说明
+                     * @return Message <p>事件的一些可选说明</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置事件的一些可选说明
+                     * 设置<p>事件的一些可选说明</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _message 事件的一些可选说明
+                     * @param _message <p>事件的一些可选说明</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -160,18 +160,18 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取异常事件的排查手册链接
+                     * 获取<p>异常事件的排查手册链接</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SolutionLink 异常事件的排查手册链接
+                     * @return SolutionLink <p>异常事件的排查手册链接</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSolutionLink() const;
 
                     /**
-                     * 设置异常事件的排查手册链接
+                     * 设置<p>异常事件的排查手册链接</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _solutionLink 异常事件的排查手册链接
+                     * @param _solutionLink <p>异常事件的排查手册链接</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -184,46 +184,100 @@ namespace TencentCloud
                      */
                     bool SolutionLinkHasBeenSet() const;
 
+                    /**
+                     * 获取<p>异常事件原因分析</p>
+                     * @return CauseAnalysis <p>异常事件原因分析</p>
+                     * 
+                     */
+                    std::string GetCauseAnalysis() const;
+
+                    /**
+                     * 设置<p>异常事件原因分析</p>
+                     * @param _causeAnalysis <p>异常事件原因分析</p>
+                     * 
+                     */
+                    void SetCauseAnalysis(const std::string& _causeAnalysis);
+
+                    /**
+                     * 判断参数 CauseAnalysis 是否已赋值
+                     * @return CauseAnalysis 是否已赋值
+                     * 
+                     */
+                    bool CauseAnalysisHasBeenSet() const;
+
+                    /**
+                     * 获取<p>异常事件处理的参考方案</p>
+                     * @return Solution <p>异常事件处理的参考方案</p>
+                     * 
+                     */
+                    std::string GetSolution() const;
+
+                    /**
+                     * 设置<p>异常事件处理的参考方案</p>
+                     * @param _solution <p>异常事件处理的参考方案</p>
+                     * 
+                     */
+                    void SetSolution(const std::string& _solution);
+
+                    /**
+                     * 判断参数 Solution 是否已赋值
+                     * @return Solution 是否已赋值
+                     * 
+                     */
+                    bool SolutionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 内部定义的事件类型
+                     * <p>内部定义的事件类型</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 事件类型的说明文字
+                     * <p>事件类型的说明文字</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 事件发生的 Unix 时间戳（秒）
+                     * <p>事件发生的 Unix 时间戳（秒）</p>
                      */
                     uint64_t m_timestamp;
                     bool m_timestampHasBeenSet;
 
                     /**
-                     * 事件发生时的运行 ID
+                     * <p>事件发生时的运行 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_runningOrderId;
                     bool m_runningOrderIdHasBeenSet;
 
                     /**
-                     * 事件的一些可选说明
+                     * <p>事件的一些可选说明</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 异常事件的排查手册链接
+                     * <p>异常事件的排查手册链接</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_solutionLink;
                     bool m_solutionLinkHasBeenSet;
+
+                    /**
+                     * <p>异常事件原因分析</p>
+                     */
+                    std::string m_causeAnalysis;
+                    bool m_causeAnalysisHasBeenSet;
+
+                    /**
+                     * <p>异常事件处理的参考方案</p>
+                     */
+                    std::string m_solution;
+                    bool m_solutionHasBeenSet;
 
                 };
             }

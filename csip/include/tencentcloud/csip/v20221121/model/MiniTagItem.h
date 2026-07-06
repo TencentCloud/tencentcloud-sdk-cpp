@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 简要的资产标签元素
+                * 简要的资产标签元素，CSIP 内部使用。
                 */
                 class MiniTagItem : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>标签颜色</p>
-                     * @return Color <p>标签颜色</p>
+                     * 获取标签展示颜色。
+                     * @return Color 标签展示颜色。
                      * 
                      */
                     std::string GetColor() const;
 
                     /**
-                     * 设置<p>标签颜色</p>
-                     * @param _color <p>标签颜色</p>
+                     * 设置标签展示颜色。
+                     * @param _color 标签展示颜色。
                      * 
                      */
                     void SetColor(const std::string& _color);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ColorHasBeenSet() const;
 
                     /**
-                     * 获取<p>描述</p>
-                     * @return Description <p>描述</p>
+                     * 获取标签描述。
+                     * @return Description 标签描述。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置<p>描述</p>
-                     * @param _description <p>描述</p>
+                     * 设置标签描述。
+                     * @param _description 标签描述。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取<p>标签ID</p>
-                     * @return ID <p>标签ID</p>
+                     * 获取标签 ID。
+                     * @return ID 标签 ID。
                      * 
                      */
                     uint64_t GetID() const;
 
                     /**
-                     * 设置<p>标签ID</p>
-                     * @param _iD <p>标签ID</p>
+                     * 设置标签 ID。
+                     * @param _iD 标签 ID。
                      * 
                      */
                     void SetID(const uint64_t& _iD);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取<p>标签键</p>
-                     * @return TagKey <p>标签键</p>
+                     * 获取标签键（中文）。
+                     * @return TagKey 标签键（中文）。
                      * 
                      */
                     std::string GetTagKey() const;
 
                     /**
-                     * 设置<p>标签键</p>
-                     * @param _tagKey <p>标签键</p>
+                     * 设置标签键（中文）。
+                     * @param _tagKey 标签键（中文）。
                      * 
                      */
                     void SetTagKey(const std::string& _tagKey);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool TagKeyHasBeenSet() const;
 
                     /**
-                     * 获取<p>标签值</p>
-                     * @return TagValue <p>标签值</p>
+                     * 获取标签值（中文）。
+                     * @return TagValue 标签值（中文）。
                      * 
                      */
                     std::string GetTagValue() const;
 
                     /**
-                     * 设置<p>标签值</p>
-                     * @param _tagValue <p>标签值</p>
+                     * 设置标签值（中文）。
+                     * @param _tagValue 标签值（中文）。
                      * 
                      */
                     void SetTagValue(const std::string& _tagValue);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool TagValueHasBeenSet() const;
 
                     /**
-                     * 获取<p>标签键英文</p>
-                     * @return TagKeyEn <p>标签键英文</p>
+                     * 获取标签键（英文）。
+                     * @return TagKeyEn 标签键（英文）。
                      * 
                      */
                     std::string GetTagKeyEn() const;
 
                     /**
-                     * 设置<p>标签键英文</p>
-                     * @param _tagKeyEn <p>标签键英文</p>
+                     * 设置标签键（英文）。
+                     * @param _tagKeyEn 标签键（英文）。
                      * 
                      */
                     void SetTagKeyEn(const std::string& _tagKeyEn);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool TagKeyEnHasBeenSet() const;
 
                     /**
-                     * 获取<p>标签值英文</p>
-                     * @return TagValueEn <p>标签值英文</p>
+                     * 获取标签值（英文）。
+                     * @return TagValueEn 标签值（英文）。
                      * 
                      */
                     std::string GetTagValueEn() const;
 
                     /**
-                     * 设置<p>标签值英文</p>
-                     * @param _tagValueEn <p>标签值英文</p>
+                     * 设置标签值（英文）。
+                     * @param _tagValueEn 标签值（英文）。
                      * 
                      */
                     void SetTagValueEn(const std::string& _tagValueEn);
@@ -196,43 +196,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>标签颜色</p>
+                     * 标签展示颜色。
                      */
                     std::string m_color;
                     bool m_colorHasBeenSet;
 
                     /**
-                     * <p>描述</p>
+                     * 标签描述。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * <p>标签ID</p>
+                     * 标签 ID。
                      */
                     uint64_t m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * <p>标签键</p>
+                     * 标签键（中文）。
                      */
                     std::string m_tagKey;
                     bool m_tagKeyHasBeenSet;
 
                     /**
-                     * <p>标签值</p>
+                     * 标签值（中文）。
                      */
                     std::string m_tagValue;
                     bool m_tagValueHasBeenSet;
 
                     /**
-                     * <p>标签键英文</p>
+                     * 标签键（英文）。
                      */
                     std::string m_tagKeyEn;
                     bool m_tagKeyEnHasBeenSet;
 
                     /**
-                     * <p>标签值英文</p>
+                     * 标签值（英文）。
                      */
                     std::string m_tagValueEn;
                     bool m_tagValueEnHasBeenSet;

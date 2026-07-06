@@ -180,6 +180,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/SwitchClusterEndpointRequest.h
   include/tencentcloud/tke/v20180525/model/CreateEdgeLogConfigRequest.h
   include/tencentcloud/tke/v20180525/model/CreatePrometheusDashboardResponse.h
+  include/tencentcloud/tke/v20180525/model/RotateClusterTokenRequest.h
   include/tencentcloud/tke/v20180525/model/CancelClusterReleaseRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeTKEEdgeClusterStatusResponse.h
   include/tencentcloud/tke/v20180525/model/DeleteUserPermissionsResponse.h
@@ -442,6 +443,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DeleteReservedInstancesResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeLogSwitchesResponse.h
   include/tencentcloud/tke/v20180525/model/ModifyClusterVirtualNodePoolResponse.h
+  include/tencentcloud/tke/v20180525/model/RotateClusterTokenResponse.h
   include/tencentcloud/tke/v20180525/model/SuperNodeResource.h
   include/tencentcloud/tke/v20180525/model/InstanceUpgradeClusterStatus.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterRoutesRequest.h
@@ -1026,6 +1028,7 @@ set(tke_src
   src/v20180525/model/SwitchClusterEndpointRequest.cpp
   src/v20180525/model/CreateEdgeLogConfigRequest.cpp
   src/v20180525/model/CreatePrometheusDashboardResponse.cpp
+  src/v20180525/model/RotateClusterTokenRequest.cpp
   src/v20180525/model/CancelClusterReleaseRequest.cpp
   src/v20180525/model/DescribeTKEEdgeClusterStatusResponse.cpp
   src/v20180525/model/DeleteUserPermissionsResponse.cpp
@@ -1288,6 +1291,7 @@ set(tke_src
   src/v20180525/model/DeleteReservedInstancesResponse.cpp
   src/v20180525/model/DescribeLogSwitchesResponse.cpp
   src/v20180525/model/ModifyClusterVirtualNodePoolResponse.cpp
+  src/v20180525/model/RotateClusterTokenResponse.cpp
   src/v20180525/model/SuperNodeResource.cpp
   src/v20180525/model/InstanceUpgradeClusterStatus.cpp
   src/v20180525/model/DescribeClusterRoutesRequest.cpp

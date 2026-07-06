@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 标签
+                * 云上原生标签键值对。
                 */
                 class Tag : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标签名称
-                     * @return Name 标签名称
+                     * 获取标签键。
+                     * @return Name 标签键。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置标签名称
-                     * @param _name 标签名称
+                     * 设置标签键。
+                     * @param _name 标签键。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取标签内容
-                     * @return Value 标签内容
+                     * 获取标签值。
+                     * @return Value 标签值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置标签内容
-                     * @param _value 标签内容
+                     * 设置标签值。
+                     * @param _value 标签值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 标签名称
+                     * 标签键。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 标签内容
+                     * 标签值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

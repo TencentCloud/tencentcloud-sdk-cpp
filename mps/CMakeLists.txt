@@ -176,6 +176,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/TextWatermarkTemplateInputForUpdate.h
   include/tencentcloud/mps/v20190612/model/SubtitleTransResultItem.h
   include/tencentcloud/mps/v20190612/model/AiReviewTerrorismOcrTaskInput.h
+  include/tencentcloud/mps/v20190612/model/AddOnAudio.h
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskOcrWordsResultInput.h
   include/tencentcloud/mps/v20190612/model/SlateInfo.h
   include/tencentcloud/mps/v20190612/model/CreateQualityControlTemplateResponse.h
@@ -1213,6 +1214,7 @@ set(mps_src
   src/v20190612/model/TextWatermarkTemplateInputForUpdate.cpp
   src/v20190612/model/SubtitleTransResultItem.cpp
   src/v20190612/model/AiReviewTerrorismOcrTaskInput.cpp
+  src/v20190612/model/AddOnAudio.cpp
   src/v20190612/model/AiRecognitionTaskOcrWordsResultInput.cpp
   src/v20190612/model/SlateInfo.cpp
   src/v20190612/model/CreateQualityControlTemplateResponse.cpp

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取1封禁列表 2 放通列表
-                     * @return RuleType 1封禁列表 2 放通列表
+                     * 获取<p>1封禁列表 2 放通列表</p>
+                     * @return RuleType <p>1封禁列表 2 放通列表</p>
                      * 
                      */
                     int64_t GetRuleType() const;
 
                     /**
-                     * 设置1封禁列表 2 放通列表
-                     * @param _ruleType 1封禁列表 2 放通列表
+                     * 设置<p>1封禁列表 2 放通列表</p>
+                     * @param _ruleType <p>1封禁列表 2 放通列表</p>
                      * 
                      */
                     void SetRuleType(const int64_t& _ruleType);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool RuleTypeHasBeenSet() const;
 
                     /**
-                     * 获取IP、Domain二选一（注：封禁列表，只能填写IP），不能同时为空
-                     * @return IOC IP、Domain二选一（注：封禁列表，只能填写IP），不能同时为空
+                     * 获取<p>IP、Domain二选一（注：封禁列表，只能填写IP），不能同时为空</p>
+                     * @return IOC <p>IP、Domain二选一（注：封禁列表，只能填写IP），不能同时为空</p>
                      * 
                      */
                     std::vector<IocListData> GetIOC() const;
 
                     /**
-                     * 设置IP、Domain二选一（注：封禁列表，只能填写IP），不能同时为空
-                     * @param _iOC IP、Domain二选一（注：封禁列表，只能填写IP），不能同时为空
+                     * 设置<p>IP、Domain二选一（注：封禁列表，只能填写IP），不能同时为空</p>
+                     * @param _iOC <p>IP、Domain二选一（注：封禁列表，只能填写IP），不能同时为空</p>
                      * 
                      */
                     void SetIOC(const std::vector<IocListData>& _iOC);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool IOCHasBeenSet() const;
 
                     /**
-                     * 获取可选值：delete（删除）、edit（编辑）、add（添加）  其他值无效
-                     * @return IocAction 可选值：delete（删除）、edit（编辑）、add（添加）  其他值无效
+                     * 获取<p>可选值：delete（删除）、edit（编辑）、add（添加）  其他值无效</p>
+                     * @return IocAction <p>可选值：delete（删除）、edit（编辑）、add（添加）  其他值无效</p>
                      * 
                      */
                     std::string GetIocAction() const;
 
                     /**
-                     * 设置可选值：delete（删除）、edit（编辑）、add（添加）  其他值无效
-                     * @param _iocAction 可选值：delete（删除）、edit（编辑）、add（添加）  其他值无效
+                     * 设置<p>可选值：delete（删除）、edit（编辑）、add（添加）  其他值无效</p>
+                     * @param _iocAction <p>可选值：delete（删除）、edit（编辑）、add（添加）  其他值无效</p>
                      * 
                      */
                     void SetIocAction(const std::string& _iocAction);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool IocActionHasBeenSet() const;
 
                     /**
-                     * 获取时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
-                     * @return StartTime 时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
+                     * 获取<p>时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填</p>
+                     * @return StartTime <p>时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
-                     * @param _startTime 时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
+                     * 设置<p>时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填</p>
+                     * @param _startTime <p>时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填，必须大于当前时间且大于StartTime
-                     * @return EndTime 时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填，必须大于当前时间且大于StartTime
+                     * 获取<p>时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填，必须大于当前时间且大于StartTime</p>
+                     * @return EndTime <p>时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填，必须大于当前时间且大于StartTime</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填，必须大于当前时间且大于StartTime
-                     * @param _endTime 时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填，必须大于当前时间且大于StartTime
+                     * 设置<p>时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填，必须大于当前时间且大于StartTime</p>
+                     * @param _endTime <p>时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填，必须大于当前时间且大于StartTime</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -148,37 +148,64 @@ namespace TencentCloud
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否来自微信</p><p>取值范围：[0, 1]</p>
+                     * @return IsFromWeChat <p>是否来自微信</p><p>取值范围：[0, 1]</p>
+                     * 
+                     */
+                    int64_t GetIsFromWeChat() const;
+
+                    /**
+                     * 设置<p>是否来自微信</p><p>取值范围：[0, 1]</p>
+                     * @param _isFromWeChat <p>是否来自微信</p><p>取值范围：[0, 1]</p>
+                     * 
+                     */
+                    void SetIsFromWeChat(const int64_t& _isFromWeChat);
+
+                    /**
+                     * 判断参数 IsFromWeChat 是否已赋值
+                     * @return IsFromWeChat 是否已赋值
+                     * 
+                     */
+                    bool IsFromWeChatHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 1封禁列表 2 放通列表
+                     * <p>1封禁列表 2 放通列表</p>
                      */
                     int64_t m_ruleType;
                     bool m_ruleTypeHasBeenSet;
 
                     /**
-                     * IP、Domain二选一（注：封禁列表，只能填写IP），不能同时为空
+                     * <p>IP、Domain二选一（注：封禁列表，只能填写IP），不能同时为空</p>
                      */
                     std::vector<IocListData> m_iOC;
                     bool m_iOCHasBeenSet;
 
                     /**
-                     * 可选值：delete（删除）、edit（编辑）、add（添加）  其他值无效
+                     * <p>可选值：delete（删除）、edit（编辑）、add（添加）  其他值无效</p>
                      */
                     std::string m_iocAction;
                     bool m_iocActionHasBeenSet;
 
                     /**
-                     * 时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
+                     * <p>时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填，必须大于当前时间且大于StartTime
+                     * <p>时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填，必须大于当前时间且大于StartTime</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * <p>是否来自微信</p><p>取值范围：[0, 1]</p>
+                     */
+                    int64_t m_isFromWeChat;
+                    bool m_isFromWeChatHasBeenSet;
 
                 };
             }

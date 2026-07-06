@@ -30,7 +30,8 @@ DspmAssetDataScanDetail::DspmAssetDataScanDetail() :
     m_categoryIdsHasBeenSet(false),
     m_categoryNamesHasBeenSet(false),
     m_taskConfigHasBeenSet(false),
-    m_categoryDetailsHasBeenSet(false)
+    m_categoryDetailsHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,16 @@ CoreInternalOutcome DspmAssetDataScanDetail::Deserialize(const rapidjson::Value 
         m_categoryDetailsHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskId") && !value["TaskId"].IsNull())
+    {
+        if (!value["TaskId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspmAssetDataScanDetail.TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = value["TaskId"].GetUint64();
+        m_taskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -265,6 +276,14 @@ void DspmAssetDataScanDetail::ToJsonObject(rapidjson::Value &value, rapidjson::D
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskId, allocator);
     }
 
 }
@@ -428,5 +447,21 @@ void DspmAssetDataScanDetail::SetCategoryDetails(const vector<DspmIdentifyCatego
 bool DspmAssetDataScanDetail::CategoryDetailsHasBeenSet() const
 {
     return m_categoryDetailsHasBeenSet;
+}
+
+uint64_t DspmAssetDataScanDetail::GetTaskId() const
+{
+    return m_taskId;
+}
+
+void DspmAssetDataScanDetail::SetTaskId(const uint64_t& _taskId)
+{
+    m_taskId = _taskId;
+    m_taskIdHasBeenSet = true;
+}
+
+bool DspmAssetDataScanDetail::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
 }
 

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ccn防火墙开关配置信息
-                     * @return CcnSwitch ccn防火墙开关配置信息
+                     * 获取<p>ccn防火墙开关配置信息</p>
+                     * @return CcnSwitch <p>ccn防火墙开关配置信息</p>
                      * 
                      */
                     CcnSwitchInfo GetCcnSwitch() const;
 
                     /**
-                     * 设置ccn防火墙开关配置信息
-                     * @param _ccnSwitch ccn防火墙开关配置信息
+                     * 设置<p>ccn防火墙开关配置信息</p>
+                     * @param _ccnSwitch <p>ccn防火墙开关配置信息</p>
                      * 
                      */
                     void SetCcnSwitch(const CcnSwitchInfo& _ccnSwitch);
@@ -67,7 +67,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ccn防火墙开关配置信息
+                     * <p>ccn防火墙开关配置信息</p>
                      */
                     CcnSwitchInfo m_ccnSwitch;
                     bool m_ccnSwitchHasBeenSet;

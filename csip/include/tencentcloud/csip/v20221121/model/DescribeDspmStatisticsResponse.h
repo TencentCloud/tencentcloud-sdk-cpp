@@ -49,8 +49,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资产统计信息
-                     * @return AssetCount 资产统计信息
+                     * 获取<p>资产统计信息</p>
+                     * @return AssetCount <p>资产统计信息</p>
                      * 
                      */
                     DspmAssetCount GetAssetCount() const;
@@ -63,8 +63,8 @@ namespace TencentCloud
                     bool AssetCountHasBeenSet() const;
 
                     /**
-                     * 获取访问Ip统计信息
-                     * @return IpCount 访问Ip统计信息
+                     * 获取<p>访问Ip统计信息</p>
+                     * @return IpCount <p>访问Ip统计信息</p>
                      * 
                      */
                     DspmIpCount GetIpCount() const;
@@ -77,8 +77,8 @@ namespace TencentCloud
                     bool IpCountHasBeenSet() const;
 
                     /**
-                     * 获取用户账号统计信息
-                     * @return UserCount 用户账号统计信息
+                     * 获取<p>用户账号统计信息</p>
+                     * @return UserCount <p>用户账号统计信息</p>
                      * 
                      */
                     DspmAccountCount GetUserCount() const;
@@ -91,8 +91,8 @@ namespace TencentCloud
                     bool UserCountHasBeenSet() const;
 
                     /**
-                     * 获取风险统计信息
-                     * @return RiskCount 风险统计信息
+                     * 获取<p>风险统计信息</p>
+                     * @return RiskCount <p>风险统计信息</p>
                      * 
                      */
                     DspmRiskCount GetRiskCount() const;
@@ -105,8 +105,8 @@ namespace TencentCloud
                     bool RiskCountHasBeenSet() const;
 
                     /**
-                     * 获取资产安全分析统计信息
-                     * @return AnalyseAssetStatusCount 资产安全分析统计信息
+                     * 获取<p>资产安全分析统计信息</p>
+                     * @return AnalyseAssetStatusCount <p>资产安全分析统计信息</p>
                      * 
                      */
                     DspmSecurityAnalyseStatusCount GetAnalyseAssetStatusCount() const;
@@ -121,31 +121,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资产统计信息
+                     * <p>资产统计信息</p>
                      */
                     DspmAssetCount m_assetCount;
                     bool m_assetCountHasBeenSet;
 
                     /**
-                     * 访问Ip统计信息
+                     * <p>访问Ip统计信息</p>
                      */
                     DspmIpCount m_ipCount;
                     bool m_ipCountHasBeenSet;
 
                     /**
-                     * 用户账号统计信息
+                     * <p>用户账号统计信息</p>
                      */
                     DspmAccountCount m_userCount;
                     bool m_userCountHasBeenSet;
 
                     /**
-                     * 风险统计信息
+                     * <p>风险统计信息</p>
                      */
                     DspmRiskCount m_riskCount;
                     bool m_riskCountHasBeenSet;
 
                     /**
-                     * 资产安全分析统计信息
+                     * <p>资产安全分析统计信息</p>
                      */
                     DspmSecurityAnalyseStatusCount m_analyseAssetStatusCount;
                     bool m_analyseAssetStatusCountHasBeenSet;

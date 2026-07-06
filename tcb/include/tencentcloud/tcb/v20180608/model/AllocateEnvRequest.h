@@ -84,6 +84,48 @@ namespace TencentCloud
                      */
                     bool ExternalAppIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自定义标签</p><p>参数格式：逗号分隔的 key=value 对，key/value 仅允许字母、数字、下划线。k1=v1,k2=v2</p>
+                     * @return ExternalTag <p>自定义标签</p><p>参数格式：逗号分隔的 key=value 对，key/value 仅允许字母、数字、下划线。k1=v1,k2=v2</p>
+                     * 
+                     */
+                    std::string GetExternalTag() const;
+
+                    /**
+                     * 设置<p>自定义标签</p><p>参数格式：逗号分隔的 key=value 对，key/value 仅允许字母、数字、下划线。k1=v1,k2=v2</p>
+                     * @param _externalTag <p>自定义标签</p><p>参数格式：逗号分隔的 key=value 对，key/value 仅允许字母、数字、下划线。k1=v1,k2=v2</p>
+                     * 
+                     */
+                    void SetExternalTag(const std::string& _externalTag);
+
+                    /**
+                     * 判断参数 ExternalTag 是否已赋值
+                     * @return ExternalTag 是否已赋值
+                     * 
+                     */
+                    bool ExternalTagHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否需要云函数</p><p>默认值：false</p>
+                     * @return RequireFunction <p>是否需要云函数</p><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetRequireFunction() const;
+
+                    /**
+                     * 设置<p>是否需要云函数</p><p>默认值：false</p>
+                     * @param _requireFunction <p>是否需要云函数</p><p>默认值：false</p>
+                     * 
+                     */
+                    void SetRequireFunction(const bool& _requireFunction);
+
+                    /**
+                     * 判断参数 RequireFunction 是否已赋值
+                     * @return RequireFunction 是否已赋值
+                     * 
+                     */
+                    bool RequireFunctionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +139,18 @@ namespace TencentCloud
                      */
                     std::string m_externalAppId;
                     bool m_externalAppIdHasBeenSet;
+
+                    /**
+                     * <p>自定义标签</p><p>参数格式：逗号分隔的 key=value 对，key/value 仅允许字母、数字、下划线。k1=v1,k2=v2</p>
+                     */
+                    std::string m_externalTag;
+                    bool m_externalTagHasBeenSet;
+
+                    /**
+                     * <p>是否需要云函数</p><p>默认值：false</p>
+                     */
+                    bool m_requireFunction;
+                    bool m_requireFunctionHasBeenSet;
 
                 };
             }

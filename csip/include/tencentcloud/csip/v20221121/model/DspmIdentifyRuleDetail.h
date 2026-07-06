@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据项id
-                     * @return RuleId 数据项id
+                     * 获取<p>数据项id</p>
+                     * @return RuleId <p>数据项id</p>
                      * 
                      */
                     uint64_t GetRuleId() const;
 
                     /**
-                     * 设置数据项id
-                     * @param _ruleId 数据项id
+                     * 设置<p>数据项id</p>
+                     * @param _ruleId <p>数据项id</p>
                      * 
                      */
                     void SetRuleId(const uint64_t& _ruleId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取数据项名称
-                     * @return RuleName 数据项名称
+                     * 获取<p>数据项名称</p>
+                     * @return RuleName <p>数据项名称</p>
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
-                     * 设置数据项名称
-                     * @param _ruleName 数据项名称
+                     * 设置<p>数据项名称</p>
+                     * @param _ruleName <p>数据项名称</p>
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取敏感级别id
-                     * @return LevelId 敏感级别id
+                     * 获取<p>敏感级别id</p>
+                     * @return LevelId <p>敏感级别id</p>
                      * 
                      */
                     uint64_t GetLevelId() const;
 
                     /**
-                     * 设置敏感级别id
-                     * @param _levelId 敏感级别id
+                     * 设置<p>敏感级别id</p>
+                     * @param _levelId <p>敏感级别id</p>
                      * 
                      */
                     void SetLevelId(const uint64_t& _levelId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool LevelIdHasBeenSet() const;
 
                     /**
-                     * 获取敏感级别名称
-                     * @return LevelName 敏感级别名称
+                     * 获取<p>敏感级别名称</p>
+                     * @return LevelName <p>敏感级别名称</p>
                      * 
                      */
                     std::string GetLevelName() const;
 
                     /**
-                     * 设置敏感级别名称
-                     * @param _levelName 敏感级别名称
+                     * 设置<p>敏感级别名称</p>
+                     * @param _levelName <p>敏感级别名称</p>
                      * 
                      */
                     void SetLevelName(const std::string& _levelName);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool LevelNameHasBeenSet() const;
 
                     /**
-                     * 获取敏感程度
-                     * @return LevelScore 敏感程度
+                     * 获取<p>敏感程度</p>
+                     * @return LevelScore <p>敏感程度</p>
                      * 
                      */
                     uint64_t GetLevelScore() const;
 
                     /**
-                     * 设置敏感程度
-                     * @param _levelScore 敏感程度
+                     * 设置<p>敏感程度</p>
+                     * @param _levelScore <p>敏感程度</p>
                      * 
                      */
                     void SetLevelScore(const uint64_t& _levelScore);
@@ -154,31 +154,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据项id
+                     * <p>数据项id</p>
                      */
                     uint64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * 数据项名称
+                     * <p>数据项名称</p>
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * 敏感级别id
+                     * <p>敏感级别id</p>
                      */
                     uint64_t m_levelId;
                     bool m_levelIdHasBeenSet;
 
                     /**
-                     * 敏感级别名称
+                     * <p>敏感级别名称</p>
                      */
                     std::string m_levelName;
                     bool m_levelNameHasBeenSet;
 
                     /**
-                     * 敏感程度
+                     * <p>敏感程度</p>
                      */
                     uint64_t m_levelScore;
                     bool m_levelScoreHasBeenSet;

@@ -44,10 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取导入生成的印章ID，为32位字符串。
-建议开发者保存此印章ID，开头实名认证后，通过此 ID查询导入的印章。
-                     * @return SealId 导入生成的印章ID，为32位字符串。
-建议开发者保存此印章ID，开头实名认证后，通过此 ID查询导入的印章。
+                     * 获取<p>导入生成的印章ID，为32位字符串。<br>建议开发者保存此印章ID，开头实名认证后，通过此 ID查询导入的印章。</p>
+                     * @return SealId <p>导入生成的印章ID，为32位字符串。<br>建议开发者保存此印章ID，开头实名认证后，通过此 ID查询导入的印章。</p>
                      * 
                      */
                     std::string GetSealId() const;
@@ -62,8 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 导入生成的印章ID，为32位字符串。
-建议开发者保存此印章ID，开头实名认证后，通过此 ID查询导入的印章。
+                     * <p>导入生成的印章ID，为32位字符串。<br>建议开发者保存此印章ID，开头实名认证后，通过此 ID查询导入的印章。</p>
                      */
                     std::string m_sealId;
                     bool m_sealIdHasBeenSet;

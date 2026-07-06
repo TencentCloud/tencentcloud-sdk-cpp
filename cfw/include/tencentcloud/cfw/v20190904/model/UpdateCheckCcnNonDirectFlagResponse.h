@@ -44,12 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取检测更新状态
-"Checked"：重新检测完成
-"Checking": 正在重新检测中，请稍后刷新状态查看
-                     * @return Message 检测更新状态
-"Checked"：重新检测完成
-"Checking": 正在重新检测中，请稍后刷新状态查看
+                     * 获取<p>检测更新状态<br>&quot;Checked&quot;：重新检测完成<br>&quot;Checking&quot;: 正在重新检测中，请稍后刷新状态查看</p>
+                     * @return Message <p>检测更新状态<br>&quot;Checked&quot;：重新检测完成<br>&quot;Checking&quot;: 正在重新检测中，请稍后刷新状态查看</p>
                      * 
                      */
                     std::string GetMessage() const;
@@ -64,9 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 检测更新状态
-"Checked"：重新检测完成
-"Checking": 正在重新检测中，请稍后刷新状态查看
+                     * <p>检测更新状态<br>&quot;Checked&quot;：重新检测完成<br>&quot;Checking&quot;: 正在重新检测中，请稍后刷新状态查看</p>
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;

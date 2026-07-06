@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取内网保留IP唯一ID 列表
-                     * @return ReserveIpIds 内网保留IP唯一ID 列表
+                     * 获取<p>内网保留IP唯一ID 列表</p>
+                     * @return ReserveIpIds <p>内网保留IP唯一ID 列表</p>
                      * 
                      */
                     std::vector<std::string> GetReserveIpIds() const;
 
                     /**
-                     * 设置内网保留IP唯一ID 列表
-                     * @param _reserveIpIds 内网保留IP唯一ID 列表
+                     * 设置<p>内网保留IP唯一ID 列表</p>
+                     * @param _reserveIpIds <p>内网保留IP唯一ID 列表</p>
                      * 
                      */
                     void SetReserveIpIds(const std::vector<std::string>& _reserveIpIds);
@@ -65,63 +65,15 @@ namespace TencentCloud
                     bool ReserveIpIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，参数不支持同时指定ReserveIpIds和Filters。
-
-reserve-ip-id  - String - （过滤条件）内网保留 IP唯一 ID，形如：rsvip-pvqgv9vi。
-vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。
-subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。
-address-ip - String - （过滤条件）内网保留 IP 地址，形如：192.168.0.10。
-ip-type - String - （过滤条件）业务类型 ipType，0。
-name - String - （过滤条件）名称。
-state - String - （过滤条件）状态，可选值：Bind， UnBind。
-resource-id - String - （过滤条件）绑定的实例资源，形如：eni-059qmnif。
-tag-key - String -（过滤条件）按照标签键进行过滤。
-tag:tag-key - String - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。
-
-                     * @return Filters 过滤条件，参数不支持同时指定ReserveIpIds和Filters。
-
-reserve-ip-id  - String - （过滤条件）内网保留 IP唯一 ID，形如：rsvip-pvqgv9vi。
-vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。
-subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。
-address-ip - String - （过滤条件）内网保留 IP 地址，形如：192.168.0.10。
-ip-type - String - （过滤条件）业务类型 ipType，0。
-name - String - （过滤条件）名称。
-state - String - （过滤条件）状态，可选值：Bind， UnBind。
-resource-id - String - （过滤条件）绑定的实例资源，形如：eni-059qmnif。
-tag-key - String -（过滤条件）按照标签键进行过滤。
-tag:tag-key - String - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。
-
+                     * 获取<p>过滤条件，参数不支持同时指定ReserveIpIds和Filters。</p><p>reserve-ip-id  - String - （过滤条件）内网保留 IP唯一 ID，形如：rsvip-pvqgv9vi。<br>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。<br>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。<br>reserve-address-ip - String - （过滤条件）内网保留 IP 地址，形如：192.168.0.10。<br>ip-type - String - （过滤条件）业务类型 ipType，0。<br>name - String - （过滤条件）名称。<br>state - String - （过滤条件）状态，可选值：Bind， UnBind。<br>resource-id - String - （过滤条件）绑定的实例资源，形如：eni-059qmnif。<br>tag-key - String -（过滤条件）按照标签键进行过滤。<br>tag:tag-key - String - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</p>
+                     * @return Filters <p>过滤条件，参数不支持同时指定ReserveIpIds和Filters。</p><p>reserve-ip-id  - String - （过滤条件）内网保留 IP唯一 ID，形如：rsvip-pvqgv9vi。<br>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。<br>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。<br>reserve-address-ip - String - （过滤条件）内网保留 IP 地址，形如：192.168.0.10。<br>ip-type - String - （过滤条件）业务类型 ipType，0。<br>name - String - （过滤条件）名称。<br>state - String - （过滤条件）状态，可选值：Bind， UnBind。<br>resource-id - String - （过滤条件）绑定的实例资源，形如：eni-059qmnif。<br>tag-key - String -（过滤条件）按照标签键进行过滤。<br>tag:tag-key - String - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，参数不支持同时指定ReserveIpIds和Filters。
-
-reserve-ip-id  - String - （过滤条件）内网保留 IP唯一 ID，形如：rsvip-pvqgv9vi。
-vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。
-subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。
-address-ip - String - （过滤条件）内网保留 IP 地址，形如：192.168.0.10。
-ip-type - String - （过滤条件）业务类型 ipType，0。
-name - String - （过滤条件）名称。
-state - String - （过滤条件）状态，可选值：Bind， UnBind。
-resource-id - String - （过滤条件）绑定的实例资源，形如：eni-059qmnif。
-tag-key - String -（过滤条件）按照标签键进行过滤。
-tag:tag-key - String - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。
-
-                     * @param _filters 过滤条件，参数不支持同时指定ReserveIpIds和Filters。
-
-reserve-ip-id  - String - （过滤条件）内网保留 IP唯一 ID，形如：rsvip-pvqgv9vi。
-vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。
-subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。
-address-ip - String - （过滤条件）内网保留 IP 地址，形如：192.168.0.10。
-ip-type - String - （过滤条件）业务类型 ipType，0。
-name - String - （过滤条件）名称。
-state - String - （过滤条件）状态，可选值：Bind， UnBind。
-resource-id - String - （过滤条件）绑定的实例资源，形如：eni-059qmnif。
-tag-key - String -（过滤条件）按照标签键进行过滤。
-tag:tag-key - String - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。
-
+                     * 设置<p>过滤条件，参数不支持同时指定ReserveIpIds和Filters。</p><p>reserve-ip-id  - String - （过滤条件）内网保留 IP唯一 ID，形如：rsvip-pvqgv9vi。<br>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。<br>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。<br>reserve-address-ip - String - （过滤条件）内网保留 IP 地址，形如：192.168.0.10。<br>ip-type - String - （过滤条件）业务类型 ipType，0。<br>name - String - （过滤条件）名称。<br>state - String - （过滤条件）状态，可选值：Bind， UnBind。<br>resource-id - String - （过滤条件）绑定的实例资源，形如：eni-059qmnif。<br>tag-key - String -（过滤条件）按照标签键进行过滤。<br>tag:tag-key - String - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</p>
+                     * @param _filters <p>过滤条件，参数不支持同时指定ReserveIpIds和Filters。</p><p>reserve-ip-id  - String - （过滤条件）内网保留 IP唯一 ID，形如：rsvip-pvqgv9vi。<br>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。<br>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。<br>reserve-address-ip - String - （过滤条件）内网保留 IP 地址，形如：192.168.0.10。<br>ip-type - String - （过滤条件）业务类型 ipType，0。<br>name - String - （过滤条件）名称。<br>state - String - （过滤条件）状态，可选值：Bind， UnBind。<br>resource-id - String - （过滤条件）绑定的实例资源，形如：eni-059qmnif。<br>tag-key - String -（过滤条件）按照标签键进行过滤。<br>tag:tag-key - String - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -134,15 +86,15 @@ tag:tag-key - String - （过滤条件）按照标签键值对进行过滤。 ta
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取偏移量。
-                     * @return Offset 偏移量。
+                     * 获取<p>偏移量。</p>
+                     * @return Offset <p>偏移量。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量。
-                     * @param _offset 偏移量。
+                     * 设置<p>偏移量。</p>
+                     * @param _offset <p>偏移量。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -155,15 +107,15 @@ tag:tag-key - String - （过滤条件）按照标签键值对进行过滤。 ta
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取请求对象个数。
-                     * @return Limit 请求对象个数。
+                     * 获取<p>请求对象个数。</p>
+                     * @return Limit <p>请求对象个数。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置请求对象个数。
-                     * @param _limit 请求对象个数。
+                     * 设置<p>请求对象个数。</p>
+                     * @param _limit <p>请求对象个数。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -178,37 +130,25 @@ tag:tag-key - String - （过滤条件）按照标签键值对进行过滤。 ta
                 private:
 
                     /**
-                     * 内网保留IP唯一ID 列表
+                     * <p>内网保留IP唯一ID 列表</p>
                      */
                     std::vector<std::string> m_reserveIpIds;
                     bool m_reserveIpIdsHasBeenSet;
 
                     /**
-                     * 过滤条件，参数不支持同时指定ReserveIpIds和Filters。
-
-reserve-ip-id  - String - （过滤条件）内网保留 IP唯一 ID，形如：rsvip-pvqgv9vi。
-vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。
-subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。
-address-ip - String - （过滤条件）内网保留 IP 地址，形如：192.168.0.10。
-ip-type - String - （过滤条件）业务类型 ipType，0。
-name - String - （过滤条件）名称。
-state - String - （过滤条件）状态，可选值：Bind， UnBind。
-resource-id - String - （过滤条件）绑定的实例资源，形如：eni-059qmnif。
-tag-key - String -（过滤条件）按照标签键进行过滤。
-tag:tag-key - String - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。
-
+                     * <p>过滤条件，参数不支持同时指定ReserveIpIds和Filters。</p><p>reserve-ip-id  - String - （过滤条件）内网保留 IP唯一 ID，形如：rsvip-pvqgv9vi。<br>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。<br>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。<br>reserve-address-ip - String - （过滤条件）内网保留 IP 地址，形如：192.168.0.10。<br>ip-type - String - （过滤条件）业务类型 ipType，0。<br>name - String - （过滤条件）名称。<br>state - String - （过滤条件）状态，可选值：Bind， UnBind。<br>resource-id - String - （过滤条件）绑定的实例资源，形如：eni-059qmnif。<br>tag-key - String -（过滤条件）按照标签键进行过滤。<br>tag:tag-key - String - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 偏移量。
+                     * <p>偏移量。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 请求对象个数。
+                     * <p>请求对象个数。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

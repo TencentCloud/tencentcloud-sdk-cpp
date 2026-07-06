@@ -44,7 +44,8 @@ DescribePurchaseStateInfoResponse::DescribePurchaseStateInfoResponse() :
     m_flexibleCoresLimitHasBeenSet(false),
     m_defendClusterCoresCntHasBeenSet(false),
     m_defendHostCoresCntHasBeenSet(false),
-    m_trialCoresCntHasBeenSet(false)
+    m_trialCoresCntHasBeenSet(false),
+    m_noContainerCoresCntHasBeenSet(false)
 {
 }
 
@@ -292,6 +293,16 @@ CoreInternalOutcome DescribePurchaseStateInfoResponse::Deserialize(const string 
         m_trialCoresCntHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NoContainerCoresCnt") && !rsp["NoContainerCoresCnt"].IsNull())
+    {
+        if (!rsp["NoContainerCoresCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NoContainerCoresCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_noContainerCoresCnt = rsp["NoContainerCoresCnt"].GetUint64();
+        m_noContainerCoresCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -468,6 +479,14 @@ string DescribePurchaseStateInfoResponse::ToJsonString() const
         string key = "TrialCoresCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_trialCoresCnt, allocator);
+    }
+
+    if (m_noContainerCoresCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NoContainerCoresCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_noContainerCoresCnt, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -690,6 +709,16 @@ uint64_t DescribePurchaseStateInfoResponse::GetTrialCoresCnt() const
 bool DescribePurchaseStateInfoResponse::TrialCoresCntHasBeenSet() const
 {
     return m_trialCoresCntHasBeenSet;
+}
+
+uint64_t DescribePurchaseStateInfoResponse::GetNoContainerCoresCnt() const
+{
+    return m_noContainerCoresCnt;
+}
+
+bool DescribePurchaseStateInfoResponse::NoContainerCoresCntHasBeenSet() const
+{
+    return m_noContainerCoresCntHasBeenSet;
 }
 
 

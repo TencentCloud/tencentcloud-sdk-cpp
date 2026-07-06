@@ -24,7 +24,8 @@ using namespace std;
 
 DisableEventPersistenceRequest::DisableEventPersistenceRequest() :
     m_clusterIdHasBeenSet(false),
-    m_deleteLogSetAndTopicHasBeenSet(false)
+    m_deleteLogSetAndTopicHasBeenSet(false),
+    m_clusterTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DisableEventPersistenceRequest::ToJsonString() const
         string key = "DeleteLogSetAndTopic";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deleteLogSetAndTopic, allocator);
+    }
+
+    if (m_clusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DisableEventPersistenceRequest::SetDeleteLogSetAndTopic(const bool& _delete
 bool DisableEventPersistenceRequest::DeleteLogSetAndTopicHasBeenSet() const
 {
     return m_deleteLogSetAndTopicHasBeenSet;
+}
+
+string DisableEventPersistenceRequest::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void DisableEventPersistenceRequest::SetClusterType(const string& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool DisableEventPersistenceRequest::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
 }
 
 

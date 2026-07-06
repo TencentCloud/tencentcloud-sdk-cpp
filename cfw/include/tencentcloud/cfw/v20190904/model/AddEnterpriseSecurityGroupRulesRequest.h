@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建规则数据
-                     * @return Data 创建规则数据
+                     * 获取<p>创建规则数据</p>
+                     * @return Data <p>创建规则数据</p>
                      * 
                      */
                     std::vector<SecurityGroupRule> GetData() const;
 
                     /**
-                     * 设置创建规则数据
-                     * @param _data 创建规则数据
+                     * 设置<p>创建规则数据</p>
+                     * @param _data <p>创建规则数据</p>
                      * 
                      */
                     void SetData(const std::vector<SecurityGroupRule>& _data);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取添加类型，0：添加到最后，1：添加到最前；2：中间插入；默认0添加到最后
-                     * @return Type 添加类型，0：添加到最后，1：添加到最前；2：中间插入；默认0添加到最后
+                     * 获取<p>添加类型，0：添加到最后，1：添加到最前；2：中间插入；默认0添加到最后</p>
+                     * @return Type <p>添加类型，0：添加到最后，1：添加到最前；2：中间插入；默认0添加到最后</p>
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置添加类型，0：添加到最后，1：添加到最前；2：中间插入；默认0添加到最后
-                     * @param _type 添加类型，0：添加到最后，1：添加到最前；2：中间插入；默认0添加到最后
+                     * 设置<p>添加类型，0：添加到最后，1：添加到最前；2：中间插入；默认0添加到最后</p>
+                     * @param _type <p>添加类型，0：添加到最后，1：添加到最前；2：中间插入；默认0添加到最后</p>
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符，且不能超过64个字符。
-                     * @return ClientToken 保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符，且不能超过64个字符。
+                     * 获取<p>保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符，且不能超过64个字符。</p>
+                     * @return ClientToken <p>保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符，且不能超过64个字符。</p>
                      * 
                      */
                     std::string GetClientToken() const;
 
                     /**
-                     * 设置保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符，且不能超过64个字符。
-                     * @param _clientToken 保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符，且不能超过64个字符。
+                     * 设置<p>保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符，且不能超过64个字符。</p>
+                     * @param _clientToken <p>保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符，且不能超过64个字符。</p>
                      * 
                      */
                     void SetClientToken(const std::string& _clientToken);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool ClientTokenHasBeenSet() const;
 
                     /**
-                     * 获取（IsDelay为老版参数，新版无需输入）是否延迟下发，1则延迟下发，否则立即下发
-                     * @return IsDelay （IsDelay为老版参数，新版无需输入）是否延迟下发，1则延迟下发，否则立即下发
+                     * 获取<p>（IsDelay为老版参数，新版无需输入）是否延迟下发，1则延迟下发，否则立即下发</p>
+                     * @return IsDelay <p>（IsDelay为老版参数，新版无需输入）是否延迟下发，1则延迟下发，否则立即下发</p>
                      * 
                      */
                     uint64_t GetIsDelay() const;
 
                     /**
-                     * 设置（IsDelay为老版参数，新版无需输入）是否延迟下发，1则延迟下发，否则立即下发
-                     * @param _isDelay （IsDelay为老版参数，新版无需输入）是否延迟下发，1则延迟下发，否则立即下发
+                     * 设置<p>（IsDelay为老版参数，新版无需输入）是否延迟下发，1则延迟下发，否则立即下发</p>
+                     * @param _isDelay <p>（IsDelay为老版参数，新版无需输入）是否延迟下发，1则延迟下发，否则立即下发</p>
                      * 
                      */
                     void SetIsDelay(const uint64_t& _isDelay);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool IsDelayHasBeenSet() const;
 
                     /**
-                     * 获取来源 默认空 覆盖导入是 batch_import_cover
-                     * @return From 来源 默认空 覆盖导入是 batch_import_cover
+                     * 获取<p>来源 默认空 覆盖导入是 batch_import_cover</p>
+                     * @return From <p>来源 默认空 覆盖导入是 batch_import_cover</p>
                      * 
                      */
                     std::string GetFrom() const;
 
                     /**
-                     * 设置来源 默认空 覆盖导入是 batch_import_cover
-                     * @param _from 来源 默认空 覆盖导入是 batch_import_cover
+                     * 设置<p>来源 默认空 覆盖导入是 batch_import_cover</p>
+                     * @param _from <p>来源 默认空 覆盖导入是 batch_import_cover</p>
                      * 
                      */
                     void SetFrom(const std::string& _from);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool FromHasBeenSet() const;
 
                     /**
-                     * 获取是否复用rule id，1为是，默认不需要
-                     * @return IsUseId 是否复用rule id，1为是，默认不需要
+                     * 获取<p>是否复用rule id，1为是，默认不需要</p>
+                     * @return IsUseId <p>是否复用rule id，1为是，默认不需要</p>
                      * 
                      */
                     int64_t GetIsUseId() const;
 
                     /**
-                     * 设置是否复用rule id，1为是，默认不需要
-                     * @param _isUseId 是否复用rule id，1为是，默认不需要
+                     * 设置<p>是否复用rule id，1为是，默认不需要</p>
+                     * @param _isUseId <p>是否复用rule id，1为是，默认不需要</p>
                      * 
                      */
                     void SetIsUseId(const int64_t& _isUseId);
@@ -172,37 +172,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建规则数据
+                     * <p>创建规则数据</p>
                      */
                     std::vector<SecurityGroupRule> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 添加类型，0：添加到最后，1：添加到最前；2：中间插入；默认0添加到最后
+                     * <p>添加类型，0：添加到最后，1：添加到最前；2：中间插入；默认0添加到最后</p>
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符，且不能超过64个字符。
+                     * <p>保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符，且不能超过64个字符。</p>
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
 
                     /**
-                     * （IsDelay为老版参数，新版无需输入）是否延迟下发，1则延迟下发，否则立即下发
+                     * <p>（IsDelay为老版参数，新版无需输入）是否延迟下发，1则延迟下发，否则立即下发</p>
                      */
                     uint64_t m_isDelay;
                     bool m_isDelayHasBeenSet;
 
                     /**
-                     * 来源 默认空 覆盖导入是 batch_import_cover
+                     * <p>来源 默认空 覆盖导入是 batch_import_cover</p>
                      */
                     std::string m_from;
                     bool m_fromHasBeenSet;
 
                     /**
-                     * 是否复用rule id，1为是，默认不需要
+                     * <p>是否复用rule id，1为是，默认不需要</p>
                      */
                     int64_t m_isUseId;
                     bool m_isUseIdHasBeenSet;

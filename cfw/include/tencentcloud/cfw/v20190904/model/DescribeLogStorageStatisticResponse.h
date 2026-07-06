@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回状态码 0 成功 非0不成功
-                     * @return ReturnCode 返回状态码 0 成功 非0不成功
+                     * 获取<p>返回状态码 0 成功 非0不成功</p>
+                     * @return ReturnCode <p>返回状态码 0 成功 非0不成功</p>
                      * 
                      */
                     int64_t GetReturnCode() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool ReturnCodeHasBeenSet() const;
 
                     /**
-                     * 获取返回信息  success 成功 其他 不成功
-                     * @return ReturnMsg 返回信息  success 成功 其他 不成功
+                     * 获取<p>返回信息  success 成功 其他 不成功</p>
+                     * @return ReturnMsg <p>返回信息  success 成功 其他 不成功</p>
                      * 
                      */
                     std::string GetReturnMsg() const;
@@ -74,8 +74,8 @@ namespace TencentCloud
                     bool ReturnMsgHasBeenSet() const;
 
                     /**
-                     * 获取已使用存储量，单位B
-                     * @return UsedSize 已使用存储量，单位B
+                     * 获取<p>已使用存储量，单位B</p>
+                     * @return UsedSize <p>已使用存储量，单位B</p>
                      * 
                      */
                     int64_t GetUsedSize() const;
@@ -88,8 +88,8 @@ namespace TencentCloud
                     bool UsedSizeHasBeenSet() const;
 
                     /**
-                     * 获取配额存储总量，单位B
-                     * @return TotalSize 配额存储总量，单位B
+                     * 获取<p>配额存储总量，单位B</p>
+                     * @return TotalSize <p>配额存储总量，单位B</p>
                      * 
                      */
                     int64_t GetTotalSize() const;
@@ -102,8 +102,8 @@ namespace TencentCloud
                     bool TotalSizeHasBeenSet() const;
 
                     /**
-                     * 获取存储天数
-                     * @return StorageDay 存储天数
+                     * 获取<p>存储天数</p>
+                     * @return StorageDay <p>存储天数</p>
                      * 
                      */
                     int64_t GetStorageDay() const;
@@ -116,8 +116,8 @@ namespace TencentCloud
                     bool StorageDayHasBeenSet() const;
 
                     /**
-                     * 获取访问控制日志存储量，单位B
-                     * @return AclSize 访问控制日志存储量，单位B
+                     * 获取<p>访问控制日志存储量，单位B</p>
+                     * @return AclSize <p>访问控制日志存储量，单位B</p>
                      * 
                      */
                     int64_t GetAclSize() const;
@@ -130,8 +130,8 @@ namespace TencentCloud
                     bool AclSizeHasBeenSet() const;
 
                     /**
-                     * 获取入侵防御日志存储量，单位B
-                     * @return IdsSize 入侵防御日志存储量，单位B
+                     * 获取<p>入侵防御日志存储量，单位B</p>
+                     * @return IdsSize <p>入侵防御日志存储量，单位B</p>
                      * 
                      */
                     int64_t GetIdsSize() const;
@@ -144,8 +144,8 @@ namespace TencentCloud
                     bool IdsSizeHasBeenSet() const;
 
                     /**
-                     * 获取流量日志存储量，单位B
-                     * @return NetFlowSize 流量日志存储量，单位B
+                     * 获取<p>流量日志存储量，单位B</p>
+                     * @return NetFlowSize <p>流量日志存储量，单位B</p>
                      * 
                      */
                     int64_t GetNetFlowSize() const;
@@ -158,8 +158,8 @@ namespace TencentCloud
                     bool NetFlowSizeHasBeenSet() const;
 
                     /**
-                     * 获取操作日志存储量，单位B
-                     * @return OperateSize 操作日志存储量，单位B
+                     * 获取<p>操作日志存储量，单位B</p>
+                     * @return OperateSize <p>操作日志存储量，单位B</p>
                      * 
                      */
                     int64_t GetOperateSize() const;
@@ -172,8 +172,8 @@ namespace TencentCloud
                     bool OperateSizeHasBeenSet() const;
 
                     /**
-                     * 获取剩余存储量，单位B
-                     * @return LeftSize 剩余存储量，单位B
+                     * 获取<p>剩余存储量，单位B</p>
+                     * @return LeftSize <p>剩余存储量，单位B</p>
                      * 
                      */
                     int64_t GetLeftSize() const;
@@ -186,8 +186,8 @@ namespace TencentCloud
                     bool LeftSizeHasBeenSet() const;
 
                     /**
-                     * 获取计费模式，0后付费，1预付费
-                     * @return PayMode 计费模式，0后付费，1预付费
+                     * 获取<p>计费模式，0后付费，1预付费</p>
+                     * @return PayMode <p>计费模式，0后付费，1预付费</p>
                      * 
                      */
                     int64_t GetPayMode() const;
@@ -200,8 +200,8 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取每日增加日志存储量柱状图
-                     * @return TimeHistogram 每日增加日志存储量柱状图
+                     * 获取<p>每日增加日志存储量柱状图</p>
+                     * @return TimeHistogram <p>每日增加日志存储量柱状图</p>
                      * 
                      */
                     std::vector<StorageHistogram> GetTimeHistogram() const;
@@ -214,8 +214,8 @@ namespace TencentCloud
                     bool TimeHistogramHasBeenSet() const;
 
                     /**
-                     * 获取柱形图格式数据
-                     * @return TimeHistogramShow 柱形图格式数据
+                     * 获取<p>柱形图格式数据</p>
+                     * @return TimeHistogramShow <p>柱形图格式数据</p>
                      * 
                      */
                     StorageHistogramShow GetTimeHistogramShow() const;
@@ -228,8 +228,8 @@ namespace TencentCloud
                     bool TimeHistogramShowHasBeenSet() const;
 
                     /**
-                     * 获取后付费模式存储状态，0正常，1欠费停止写入
-                     * @return ArrearsStopWriting 后付费模式存储状态，0正常，1欠费停止写入
+                     * 获取<p>后付费模式存储状态，0正常，1欠费停止写入</p>
+                     * @return ArrearsStopWriting <p>后付费模式存储状态，0正常，1欠费停止写入</p>
                      * 
                      */
                     int64_t GetArrearsStopWriting() const;
@@ -242,8 +242,8 @@ namespace TencentCloud
                     bool ArrearsStopWritingHasBeenSet() const;
 
                     /**
-                     * 获取NDR流量日志存储量，单位B
-                     * @return NDRNetFlowSize NDR流量日志存储量，单位B
+                     * 获取<p>NDR流量日志存储量，单位B</p>
+                     * @return NDRNetFlowSize <p>NDR流量日志存储量，单位B</p>
                      * 
                      */
                     int64_t GetNDRNetFlowSize() const;
@@ -256,8 +256,8 @@ namespace TencentCloud
                     bool NDRNetFlowSizeHasBeenSet() const;
 
                     /**
-                     * 获取NDR风险日志存储量，单位B
-                     * @return NDRRiskSize NDR风险日志存储量，单位B
+                     * 获取<p>NDR风险日志存储量，单位B</p>
+                     * @return NDRRiskSize <p>NDR风险日志存储量，单位B</p>
                      * 
                      */
                     int64_t GetNDRRiskSize() const;
@@ -270,8 +270,8 @@ namespace TencentCloud
                     bool NDRRiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取NDR日志存储天数
-                     * @return NDRStorageDay NDR日志存储天数
+                     * 获取<p>NDR日志存储天数</p>
+                     * @return NDRStorageDay <p>NDR日志存储天数</p>
                      * 
                      */
                     int64_t GetNDRStorageDay() const;
@@ -286,103 +286,103 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回状态码 0 成功 非0不成功
+                     * <p>返回状态码 0 成功 非0不成功</p>
                      */
                     int64_t m_returnCode;
                     bool m_returnCodeHasBeenSet;
 
                     /**
-                     * 返回信息  success 成功 其他 不成功
+                     * <p>返回信息  success 成功 其他 不成功</p>
                      */
                     std::string m_returnMsg;
                     bool m_returnMsgHasBeenSet;
 
                     /**
-                     * 已使用存储量，单位B
+                     * <p>已使用存储量，单位B</p>
                      */
                     int64_t m_usedSize;
                     bool m_usedSizeHasBeenSet;
 
                     /**
-                     * 配额存储总量，单位B
+                     * <p>配额存储总量，单位B</p>
                      */
                     int64_t m_totalSize;
                     bool m_totalSizeHasBeenSet;
 
                     /**
-                     * 存储天数
+                     * <p>存储天数</p>
                      */
                     int64_t m_storageDay;
                     bool m_storageDayHasBeenSet;
 
                     /**
-                     * 访问控制日志存储量，单位B
+                     * <p>访问控制日志存储量，单位B</p>
                      */
                     int64_t m_aclSize;
                     bool m_aclSizeHasBeenSet;
 
                     /**
-                     * 入侵防御日志存储量，单位B
+                     * <p>入侵防御日志存储量，单位B</p>
                      */
                     int64_t m_idsSize;
                     bool m_idsSizeHasBeenSet;
 
                     /**
-                     * 流量日志存储量，单位B
+                     * <p>流量日志存储量，单位B</p>
                      */
                     int64_t m_netFlowSize;
                     bool m_netFlowSizeHasBeenSet;
 
                     /**
-                     * 操作日志存储量，单位B
+                     * <p>操作日志存储量，单位B</p>
                      */
                     int64_t m_operateSize;
                     bool m_operateSizeHasBeenSet;
 
                     /**
-                     * 剩余存储量，单位B
+                     * <p>剩余存储量，单位B</p>
                      */
                     int64_t m_leftSize;
                     bool m_leftSizeHasBeenSet;
 
                     /**
-                     * 计费模式，0后付费，1预付费
+                     * <p>计费模式，0后付费，1预付费</p>
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 每日增加日志存储量柱状图
+                     * <p>每日增加日志存储量柱状图</p>
                      */
                     std::vector<StorageHistogram> m_timeHistogram;
                     bool m_timeHistogramHasBeenSet;
 
                     /**
-                     * 柱形图格式数据
+                     * <p>柱形图格式数据</p>
                      */
                     StorageHistogramShow m_timeHistogramShow;
                     bool m_timeHistogramShowHasBeenSet;
 
                     /**
-                     * 后付费模式存储状态，0正常，1欠费停止写入
+                     * <p>后付费模式存储状态，0正常，1欠费停止写入</p>
                      */
                     int64_t m_arrearsStopWriting;
                     bool m_arrearsStopWritingHasBeenSet;
 
                     /**
-                     * NDR流量日志存储量，单位B
+                     * <p>NDR流量日志存储量，单位B</p>
                      */
                     int64_t m_nDRNetFlowSize;
                     bool m_nDRNetFlowSizeHasBeenSet;
 
                     /**
-                     * NDR风险日志存储量，单位B
+                     * <p>NDR风险日志存储量，单位B</p>
                      */
                     int64_t m_nDRRiskSize;
                     bool m_nDRRiskSizeHasBeenSet;
 
                     /**
-                     * NDR日志存储天数
+                     * <p>NDR日志存储天数</p>
                      */
                     int64_t m_nDRStorageDay;
                     bool m_nDRStorageDayHasBeenSet;

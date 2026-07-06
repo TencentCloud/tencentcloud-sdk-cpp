@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总数
-                     * @return TotalCount 总数
+                     * 获取<p>总数</p>
+                     * @return TotalCount <p>总数</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取结果集
-                     * @return DataSet 结果集
+                     * 获取<p>结果集</p>
+                     * @return DataSet <p>结果集</p>
                      * 
                      */
                     std::vector<DspmAssetDatabaseInfo> GetDataSet() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总数
+                     * <p>总数</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 结果集
+                     * <p>结果集</p>
                      */
                     std::vector<DspmAssetDatabaseInfo> m_dataSet;
                     bool m_dataSetHasBeenSet;

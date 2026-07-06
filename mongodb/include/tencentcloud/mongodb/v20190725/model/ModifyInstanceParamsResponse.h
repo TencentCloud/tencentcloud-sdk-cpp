@@ -44,14 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取修改参数配置是否生效。
-- true：参数修改后的值已生效。
-- false：执行失败。
-
-                     * @return Changed 修改参数配置是否生效。
-- true：参数修改后的值已生效。
-- false：执行失败。
-
+                     * 获取<p>修改参数配置是否生效。</p><ul><li>true：参数修改后的值已生效。</li><li>false：执行失败。</li></ul>
+                     * @return Changed <p>修改参数配置是否生效。</p><ul><li>true：参数修改后的值已生效。</li><li>false：执行失败。</li></ul>
                      * 
                      */
                     bool GetChanged() const;
@@ -64,8 +58,8 @@ namespace TencentCloud
                     bool ChangedHasBeenSet() const;
 
                     /**
-                     * 获取该参数暂时无意义(兼容前端保留)。
-                     * @return TaskId 该参数暂时无意义(兼容前端保留)。
+                     * 获取<p>该参数暂时无意义(兼容前端保留)。</p>
+                     * @return TaskId <p>该参数暂时无意义(兼容前端保留)。</p>
                      * 
                      */
                     uint64_t GetTaskId() const;
@@ -80,16 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 修改参数配置是否生效。
-- true：参数修改后的值已生效。
-- false：执行失败。
-
+                     * <p>修改参数配置是否生效。</p><ul><li>true：参数修改后的值已生效。</li><li>false：执行失败。</li></ul>
                      */
                     bool m_changed;
                     bool m_changedHasBeenSet;
 
                     /**
-                     * 该参数暂时无意义(兼容前端保留)。
+                     * <p>该参数暂时无意义(兼容前端保留)。</p>
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;

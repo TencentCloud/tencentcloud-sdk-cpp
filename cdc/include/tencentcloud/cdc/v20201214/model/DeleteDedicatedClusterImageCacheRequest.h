@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群id
-                     * @return DedicatedClusterId 集群id
+                     * 获取<p>集群id</p>
+                     * @return DedicatedClusterId <p>集群id</p>
                      * 
                      */
                     std::string GetDedicatedClusterId() const;
 
                     /**
-                     * 设置集群id
-                     * @param _dedicatedClusterId 集群id
+                     * 设置<p>集群id</p>
+                     * @param _dedicatedClusterId <p>集群id</p>
                      * 
                      */
                     void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DedicatedClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取镜像id
-                     * @return ImageId 镜像id
+                     * 获取<p>镜像id</p>
+                     * @return ImageId <p>镜像id</p>
                      * 
                      */
                     std::string GetImageId() const;
 
                     /**
-                     * 设置镜像id
-                     * @param _imageId 镜像id
+                     * 设置<p>镜像id</p>
+                     * @param _imageId <p>镜像id</p>
                      * 
                      */
                     void SetImageId(const std::string& _imageId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群id
+                     * <p>集群id</p>
                      */
                     std::string m_dedicatedClusterId;
                     bool m_dedicatedClusterIdHasBeenSet;
 
                     /**
-                     * 镜像id
+                     * <p>镜像id</p>
                      */
                     std::string m_imageId;
                     bool m_imageIdHasBeenSet;

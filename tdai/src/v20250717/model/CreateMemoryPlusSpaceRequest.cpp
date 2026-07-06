@@ -26,7 +26,10 @@ CreateMemoryPlusSpaceRequest::CreateMemoryPlusSpaceRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
-    m_goodsNumHasBeenSet(false)
+    m_goodsNumHasBeenSet(false),
+    m_payModeHasBeenSet(false),
+    m_payPeriodHasBeenSet(false),
+    m_autoRenewHasBeenSet(false)
 {
 }
 
@@ -74,6 +77,30 @@ string CreateMemoryPlusSpaceRequest::ToJsonString() const
         string key = "GoodsNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_goodsNum, allocator);
+    }
+
+    if (m_payModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_payMode, allocator);
+    }
+
+    if (m_payPeriodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayPeriod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_payPeriod, allocator);
+    }
+
+    if (m_autoRenewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenew";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoRenew, allocator);
     }
 
 
@@ -146,6 +173,54 @@ void CreateMemoryPlusSpaceRequest::SetGoodsNum(const int64_t& _goodsNum)
 bool CreateMemoryPlusSpaceRequest::GoodsNumHasBeenSet() const
 {
     return m_goodsNumHasBeenSet;
+}
+
+int64_t CreateMemoryPlusSpaceRequest::GetPayMode() const
+{
+    return m_payMode;
+}
+
+void CreateMemoryPlusSpaceRequest::SetPayMode(const int64_t& _payMode)
+{
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
+}
+
+bool CreateMemoryPlusSpaceRequest::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
+}
+
+int64_t CreateMemoryPlusSpaceRequest::GetPayPeriod() const
+{
+    return m_payPeriod;
+}
+
+void CreateMemoryPlusSpaceRequest::SetPayPeriod(const int64_t& _payPeriod)
+{
+    m_payPeriod = _payPeriod;
+    m_payPeriodHasBeenSet = true;
+}
+
+bool CreateMemoryPlusSpaceRequest::PayPeriodHasBeenSet() const
+{
+    return m_payPeriodHasBeenSet;
+}
+
+int64_t CreateMemoryPlusSpaceRequest::GetAutoRenew() const
+{
+    return m_autoRenew;
+}
+
+void CreateMemoryPlusSpaceRequest::SetAutoRenew(const int64_t& _autoRenew)
+{
+    m_autoRenew = _autoRenew;
+    m_autoRenewHasBeenSet = true;
+}
+
+bool CreateMemoryPlusSpaceRequest::AutoRenewHasBeenSet() const
+{
+    return m_autoRenewHasBeenSet;
 }
 
 

@@ -33,7 +33,9 @@ ModifyScheduledSqlRequest::ModifyScheduledSqlRequest() :
     m_processDelayHasBeenSet(false),
     m_srcTopicRegionHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_syntaxRuleHasBeenSet(false)
+    m_syntaxRuleHasBeenSet(false),
+    m_hasServicesLogHasBeenSet(false),
+    m_fullQueryHasBeenSet(false)
 {
 }
 
@@ -131,6 +133,22 @@ string ModifyScheduledSqlRequest::ToJsonString() const
         string key = "SyntaxRule";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_syntaxRule, allocator);
+    }
+
+    if (m_hasServicesLogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasServicesLog";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_hasServicesLog, allocator);
+    }
+
+    if (m_fullQueryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FullQuery";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_fullQuery, allocator);
     }
 
 
@@ -315,6 +333,38 @@ void ModifyScheduledSqlRequest::SetSyntaxRule(const uint64_t& _syntaxRule)
 bool ModifyScheduledSqlRequest::SyntaxRuleHasBeenSet() const
 {
     return m_syntaxRuleHasBeenSet;
+}
+
+uint64_t ModifyScheduledSqlRequest::GetHasServicesLog() const
+{
+    return m_hasServicesLog;
+}
+
+void ModifyScheduledSqlRequest::SetHasServicesLog(const uint64_t& _hasServicesLog)
+{
+    m_hasServicesLog = _hasServicesLog;
+    m_hasServicesLogHasBeenSet = true;
+}
+
+bool ModifyScheduledSqlRequest::HasServicesLogHasBeenSet() const
+{
+    return m_hasServicesLogHasBeenSet;
+}
+
+uint64_t ModifyScheduledSqlRequest::GetFullQuery() const
+{
+    return m_fullQuery;
+}
+
+void ModifyScheduledSqlRequest::SetFullQuery(const uint64_t& _fullQuery)
+{
+    m_fullQuery = _fullQuery;
+    m_fullQueryHasBeenSet = true;
+}
+
+bool ModifyScheduledSqlRequest::FullQueryHasBeenSet() const
+{
+    return m_fullQueryHasBeenSet;
 }
 
 

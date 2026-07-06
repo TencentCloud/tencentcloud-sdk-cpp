@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取0：可申请试用可购买；1：只可购买(含试用审核不通过和试用过期)；2：试用生效中；3：专业版生效中；4：专业版过期
-                     * @return State 0：可申请试用可购买；1：只可购买(含试用审核不通过和试用过期)；2：试用生效中；3：专业版生效中；4：专业版过期
+                     * 获取<p>0：可申请试用可购买；1：只可购买(含试用审核不通过和试用过期)；2：试用生效中；3：专业版生效中；4：专业版过期</p>
+                     * @return State <p>0：可申请试用可购买；1：只可购买(含试用审核不通过和试用过期)；2：试用生效中；3：专业版生效中；4：专业版过期</p>
                      * 
                      */
                     int64_t GetState() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取总资源核数 = 总防护核数 + 未防护核数
-                     * @return AllCoresCnt 总资源核数 = 总防护核数 + 未防护核数
+                     * 获取<p>总资源核数 = 总防护核数 + 未防护核数</p>
+                     * @return AllCoresCnt <p>总资源核数 = 总防护核数 + 未防护核数</p>
                      * 
                      */
                     uint64_t GetAllCoresCnt() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool AllCoresCntHasBeenSet() const;
 
                     /**
-                     * 获取总防护核数 =已购核数+ 试用赠送核数 +弹性计费核数
-                     * @return CoresCnt 总防护核数 =已购核数+ 试用赠送核数 +弹性计费核数
+                     * 获取<p>总防护核数 =已购核数+ 试用赠送核数 +弹性计费核数</p>
+                     * @return CoresCnt <p>总防护核数 =已购核数+ 试用赠送核数 +弹性计费核数</p>
                      * 
                      */
                     uint64_t GetCoresCnt() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool CoresCntHasBeenSet() const;
 
                     /**
-                     * 获取未防护核数(未开启防护资源核数)
-                     * @return UndefendCoresCnt 未防护核数(未开启防护资源核数)
+                     * 获取<p>未防护核数(未开启防护资源核数)</p>
+                     * @return UndefendCoresCnt <p>未防护核数(未开启防护资源核数)</p>
                      * 
                      */
                     uint64_t GetUndefendCoresCnt() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool UndefendCoresCntHasBeenSet() const;
 
                     /**
-                     * 获取已购买核数
-                     * @return AuthorizedCoresCnt 已购买核数
+                     * 获取<p>已购买核数</p>
+                     * @return AuthorizedCoresCnt <p>已购买核数</p>
                      * 
                      */
                     uint64_t GetAuthorizedCoresCnt() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool AuthorizedCoresCntHasBeenSet() const;
 
                     /**
-                     * 获取试用赠送专业版核心数
-                     * @return GivenAuthorizedCoresCnt 试用赠送专业版核心数
+                     * 获取<p>试用赠送专业版核心数</p>
+                     * @return GivenAuthorizedCoresCnt <p>试用赠送专业版核心数</p>
                      * 
                      */
                     int64_t GetGivenAuthorizedCoresCnt() const;
@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool GivenAuthorizedCoresCntHasBeenSet() const;
 
                     /**
-                     * 获取当前弹性计费核数数量
-                     * @return CurrentFlexibleCoresCnt 当前弹性计费核数数量
+                     * 获取<p>当前弹性计费核数数量</p>
+                     * @return CurrentFlexibleCoresCnt <p>当前弹性计费核数数量</p>
                      * 
                      */
                     uint64_t GetCurrentFlexibleCoresCnt() const;
@@ -142,8 +142,8 @@ namespace TencentCloud
                     bool CurrentFlexibleCoresCntHasBeenSet() const;
 
                     /**
-                     * 获取镜像数
-                     * @return ImageCnt 镜像数
+                     * 获取<p>镜像数</p>
+                     * @return ImageCnt <p>镜像数</p>
                      * 
                      */
                     uint64_t GetImageCnt() const;
@@ -156,8 +156,8 @@ namespace TencentCloud
                     bool ImageCntHasBeenSet() const;
 
                     /**
-                     * 获取已授权镜像数
-                     * @return AuthorizedImageCnt 已授权镜像数
+                     * 获取<p>已授权镜像数</p>
+                     * @return AuthorizedImageCnt <p>已授权镜像数</p>
                      * 
                      */
                     uint64_t GetAuthorizedImageCnt() const;
@@ -170,8 +170,8 @@ namespace TencentCloud
                     bool AuthorizedImageCntHasBeenSet() const;
 
                     /**
-                     * 获取过期时间
-                     * @return ExpirationTime 过期时间
+                     * 获取<p>过期时间</p>
+                     * @return ExpirationTime <p>过期时间</p>
                      * 
                      */
                     std::string GetExpirationTime() const;
@@ -184,8 +184,8 @@ namespace TencentCloud
                     bool ExpirationTimeHasBeenSet() const;
 
                     /**
-                     * 获取已购买镜像授权数
-                     * @return PurchasedAuthorizedCnt 已购买镜像授权数
+                     * 获取<p>已购买镜像授权数</p>
+                     * @return PurchasedAuthorizedCnt <p>已购买镜像授权数</p>
                      * 
                      */
                     uint64_t GetPurchasedAuthorizedCnt() const;
@@ -198,8 +198,8 @@ namespace TencentCloud
                     bool PurchasedAuthorizedCntHasBeenSet() const;
 
                     /**
-                     * 获取0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)
-                     * @return AutomaticRenewal 0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)
+                     * 获取<p>0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)</p>
+                     * @return AutomaticRenewal <p>0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)</p>
                      * 
                      */
                     int64_t GetAutomaticRenewal() const;
@@ -212,8 +212,8 @@ namespace TencentCloud
                     bool AutomaticRenewalHasBeenSet() const;
 
                     /**
-                     * 获取试用期间赠送镜像授权数，可能会过期
-                     * @return GivenAuthorizedCnt 试用期间赠送镜像授权数，可能会过期
+                     * 获取<p>试用期间赠送镜像授权数，可能会过期</p>
+                     * @return GivenAuthorizedCnt <p>试用期间赠送镜像授权数，可能会过期</p>
                      * 
                      */
                     uint64_t GetGivenAuthorizedCnt() const;
@@ -226,8 +226,8 @@ namespace TencentCloud
                     bool GivenAuthorizedCntHasBeenSet() const;
 
                     /**
-                     * 获取起始时间
-                     * @return BeginTime 起始时间
+                     * 获取<p>起始时间</p>
+                     * @return BeginTime <p>起始时间</p>
                      * 
                      */
                     std::string GetBeginTime() const;
@@ -240,10 +240,8 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取子状态(具体意义依据State字段而定)
-State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
-                     * @return SubState 子状态(具体意义依据State字段而定)
-State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
+                     * 获取<p>子状态(具体意义依据State字段而定)<br>State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)</p>
+                     * @return SubState <p>子状态(具体意义依据State字段而定)<br>State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)</p>
                      * 
                      */
                     std::string GetSubState() const;
@@ -256,8 +254,8 @@ State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
                     bool SubStateHasBeenSet() const;
 
                     /**
-                     * 获取计费key
-                     * @return InquireKey 计费key
+                     * 获取<p>计费key</p>
+                     * @return InquireKey <p>计费key</p>
                      * 
                      */
                     std::string GetInquireKey() const;
@@ -270,8 +268,8 @@ State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
                     bool InquireKeyHasBeenSet() const;
 
                     /**
-                     * 获取防护策略
-                     * @return DefendPolicy 防护策略
+                     * 获取<p>防护策略</p>
+                     * @return DefendPolicy <p>防护策略</p>
                      * 
                      */
                     std::string GetDefendPolicy() const;
@@ -284,8 +282,8 @@ State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
                     bool DefendPolicyHasBeenSet() const;
 
                     /**
-                     * 获取弹性计费核数上限
-                     * @return FlexibleCoresLimit 弹性计费核数上限
+                     * 获取<p>弹性计费核数上限</p>
+                     * @return FlexibleCoresLimit <p>弹性计费核数上限</p>
                      * 
                      */
                     uint64_t GetFlexibleCoresLimit() const;
@@ -298,8 +296,8 @@ State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
                     bool FlexibleCoresLimitHasBeenSet() const;
 
                     /**
-                     * 获取已防护集群核数
-                     * @return DefendClusterCoresCnt 已防护集群核数
+                     * 获取<p>已防护集群核数</p>
+                     * @return DefendClusterCoresCnt <p>已防护集群核数</p>
                      * 
                      */
                     uint64_t GetDefendClusterCoresCnt() const;
@@ -312,8 +310,8 @@ State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
                     bool DefendClusterCoresCntHasBeenSet() const;
 
                     /**
-                     * 获取已防护主机核数
-                     * @return DefendHostCoresCnt 已防护主机核数
+                     * 获取<p>已防护主机核数</p>
+                     * @return DefendHostCoresCnt <p>已防护主机核数</p>
                      * 
                      */
                     uint64_t GetDefendHostCoresCnt() const;
@@ -326,8 +324,8 @@ State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
                     bool DefendHostCoresCntHasBeenSet() const;
 
                     /**
-                     * 获取试用的专业版核数
-                     * @return TrialCoresCnt 试用的专业版核数
+                     * 获取<p>试用的专业版核数</p>
+                     * @return TrialCoresCnt <p>试用的专业版核数</p>
                      * 
                      */
                     uint64_t GetTrialCoresCnt() const;
@@ -339,134 +337,153 @@ State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
                      */
                     bool TrialCoresCntHasBeenSet() const;
 
+                    /**
+                     * 获取<p>无容器核数</p>
+                     * @return NoContainerCoresCnt <p>无容器核数</p>
+                     * 
+                     */
+                    uint64_t GetNoContainerCoresCnt() const;
+
+                    /**
+                     * 判断参数 NoContainerCoresCnt 是否已赋值
+                     * @return NoContainerCoresCnt 是否已赋值
+                     * 
+                     */
+                    bool NoContainerCoresCntHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 0：可申请试用可购买；1：只可购买(含试用审核不通过和试用过期)；2：试用生效中；3：专业版生效中；4：专业版过期
+                     * <p>0：可申请试用可购买；1：只可购买(含试用审核不通过和试用过期)；2：试用生效中；3：专业版生效中；4：专业版过期</p>
                      */
                     int64_t m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 总资源核数 = 总防护核数 + 未防护核数
+                     * <p>总资源核数 = 总防护核数 + 未防护核数</p>
                      */
                     uint64_t m_allCoresCnt;
                     bool m_allCoresCntHasBeenSet;
 
                     /**
-                     * 总防护核数 =已购核数+ 试用赠送核数 +弹性计费核数
+                     * <p>总防护核数 =已购核数+ 试用赠送核数 +弹性计费核数</p>
                      */
                     uint64_t m_coresCnt;
                     bool m_coresCntHasBeenSet;
 
                     /**
-                     * 未防护核数(未开启防护资源核数)
+                     * <p>未防护核数(未开启防护资源核数)</p>
                      */
                     uint64_t m_undefendCoresCnt;
                     bool m_undefendCoresCntHasBeenSet;
 
                     /**
-                     * 已购买核数
+                     * <p>已购买核数</p>
                      */
                     uint64_t m_authorizedCoresCnt;
                     bool m_authorizedCoresCntHasBeenSet;
 
                     /**
-                     * 试用赠送专业版核心数
+                     * <p>试用赠送专业版核心数</p>
                      */
                     int64_t m_givenAuthorizedCoresCnt;
                     bool m_givenAuthorizedCoresCntHasBeenSet;
 
                     /**
-                     * 当前弹性计费核数数量
+                     * <p>当前弹性计费核数数量</p>
                      */
                     uint64_t m_currentFlexibleCoresCnt;
                     bool m_currentFlexibleCoresCntHasBeenSet;
 
                     /**
-                     * 镜像数
+                     * <p>镜像数</p>
                      */
                     uint64_t m_imageCnt;
                     bool m_imageCntHasBeenSet;
 
                     /**
-                     * 已授权镜像数
+                     * <p>已授权镜像数</p>
                      */
                     uint64_t m_authorizedImageCnt;
                     bool m_authorizedImageCntHasBeenSet;
 
                     /**
-                     * 过期时间
+                     * <p>过期时间</p>
                      */
                     std::string m_expirationTime;
                     bool m_expirationTimeHasBeenSet;
 
                     /**
-                     * 已购买镜像授权数
+                     * <p>已购买镜像授权数</p>
                      */
                     uint64_t m_purchasedAuthorizedCnt;
                     bool m_purchasedAuthorizedCntHasBeenSet;
 
                     /**
-                     * 0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)
+                     * <p>0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)</p>
                      */
                     int64_t m_automaticRenewal;
                     bool m_automaticRenewalHasBeenSet;
 
                     /**
-                     * 试用期间赠送镜像授权数，可能会过期
+                     * <p>试用期间赠送镜像授权数，可能会过期</p>
                      */
                     uint64_t m_givenAuthorizedCnt;
                     bool m_givenAuthorizedCntHasBeenSet;
 
                     /**
-                     * 起始时间
+                     * <p>起始时间</p>
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 子状态(具体意义依据State字段而定)
-State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
+                     * <p>子状态(具体意义依据State字段而定)<br>State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)</p>
                      */
                     std::string m_subState;
                     bool m_subStateHasBeenSet;
 
                     /**
-                     * 计费key
+                     * <p>计费key</p>
                      */
                     std::string m_inquireKey;
                     bool m_inquireKeyHasBeenSet;
 
                     /**
-                     * 防护策略
+                     * <p>防护策略</p>
                      */
                     std::string m_defendPolicy;
                     bool m_defendPolicyHasBeenSet;
 
                     /**
-                     * 弹性计费核数上限
+                     * <p>弹性计费核数上限</p>
                      */
                     uint64_t m_flexibleCoresLimit;
                     bool m_flexibleCoresLimitHasBeenSet;
 
                     /**
-                     * 已防护集群核数
+                     * <p>已防护集群核数</p>
                      */
                     uint64_t m_defendClusterCoresCnt;
                     bool m_defendClusterCoresCntHasBeenSet;
 
                     /**
-                     * 已防护主机核数
+                     * <p>已防护主机核数</p>
                      */
                     uint64_t m_defendHostCoresCnt;
                     bool m_defendHostCoresCntHasBeenSet;
 
                     /**
-                     * 试用的专业版核数
+                     * <p>试用的专业版核数</p>
                      */
                     uint64_t m_trialCoresCnt;
                     bool m_trialCoresCntHasBeenSet;
+
+                    /**
+                     * <p>无容器核数</p>
+                     */
+                    uint64_t m_noContainerCoresCnt;
+                    bool m_noContainerCoresCntHasBeenSet;
 
                 };
             }

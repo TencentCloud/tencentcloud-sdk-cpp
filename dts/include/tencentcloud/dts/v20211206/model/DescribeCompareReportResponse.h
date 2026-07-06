@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取一致性校验摘要信息
-                     * @return Abstract 一致性校验摘要信息
+                     * 获取<p>一致性校验摘要信息</p>
+                     * @return Abstract <p>一致性校验摘要信息</p>
                      * 
                      */
                     CompareAbstractInfo GetAbstract() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool AbstractHasBeenSet() const;
 
                     /**
-                     * 获取一致性校验详细信息
-                     * @return Detail 一致性校验详细信息
+                     * 获取<p>一致性校验详细信息</p>
+                     * @return Detail <p>一致性校验详细信息</p>
                      * 
                      */
                     CompareDetailInfo GetDetail() const;
@@ -76,13 +76,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 一致性校验摘要信息
+                     * <p>一致性校验摘要信息</p>
                      */
                     CompareAbstractInfo m_abstract;
                     bool m_abstractHasBeenSet;
 
                     /**
-                     * 一致性校验详细信息
+                     * <p>一致性校验详细信息</p>
                      */
                     CompareDetailInfo m_detail;
                     bool m_detailHasBeenSet;

@@ -40,7 +40,8 @@ NatFwSwitchDetailS::NatFwSwitchDetailS() :
     m_natVpcNameHasBeenSet(false),
     m_attachInsHasBeenSet(false),
     m_endpointsHasBeenSet(false),
-    m_progressHasBeenSet(false)
+    m_progressHasBeenSet(false),
+    m_checkResultHasBeenSet(false)
 {
 }
 
@@ -269,6 +270,23 @@ CoreInternalOutcome NatFwSwitchDetailS::Deserialize(const rapidjson::Value &valu
         m_progressHasBeenSet = true;
     }
 
+    if (value.HasMember("CheckResult") && !value["CheckResult"].IsNull())
+    {
+        if (!value["CheckResult"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatFwSwitchDetailS.CheckResult` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_checkResult.Deserialize(value["CheckResult"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_checkResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -448,6 +466,15 @@ void NatFwSwitchDetailS::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Progress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_progress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_checkResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_checkResult.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -771,5 +798,21 @@ void NatFwSwitchDetailS::SetProgress(const string& _progress)
 bool NatFwSwitchDetailS::ProgressHasBeenSet() const
 {
     return m_progressHasBeenSet;
+}
+
+ClusterFwPreAccessCheckResult NatFwSwitchDetailS::GetCheckResult() const
+{
+    return m_checkResult;
+}
+
+void NatFwSwitchDetailS::SetCheckResult(const ClusterFwPreAccessCheckResult& _checkResult)
+{
+    m_checkResult = _checkResult;
+    m_checkResultHasBeenSet = true;
+}
+
+bool NatFwSwitchDetailS::CheckResultHasBeenSet() const
+{
+    return m_checkResultHasBeenSet;
 }
 

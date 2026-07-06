@@ -33,7 +33,8 @@ GetServiceStatusResponse::GetServiceStatusResponse() :
     m_payModelHasBeenSet(false),
     m_renewFlagHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_resourceRegionHasBeenSet(false)
 {
 }
 
@@ -171,6 +172,16 @@ CoreInternalOutcome GetServiceStatusResponse::Deserialize(const string &payload)
         m_totalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ResourceRegion") && !rsp["ResourceRegion"].IsNull())
+    {
+        if (!rsp["ResourceRegion"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceRegion` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceRegion = rsp["ResourceRegion"].GetInt64();
+        m_resourceRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +270,14 @@ string GetServiceStatusResponse::ToJsonString() const
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_resourceRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_resourceRegion, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -371,6 +390,16 @@ int64_t GetServiceStatusResponse::GetTotalCount() const
 bool GetServiceStatusResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+int64_t GetServiceStatusResponse::GetResourceRegion() const
+{
+    return m_resourceRegion;
+}
+
+bool GetServiceStatusResponse::ResourceRegionHasBeenSet() const
+{
+    return m_resourceRegionHasBeenSet;
 }
 
 

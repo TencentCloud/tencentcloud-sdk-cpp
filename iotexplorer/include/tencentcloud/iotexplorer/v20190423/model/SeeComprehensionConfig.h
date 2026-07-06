@@ -215,6 +215,27 @@ namespace TencentCloud
                      */
                     bool EnableKeywordsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自定义摘要提示词</p>
+                     * @return SummaryPrompt <p>自定义摘要提示词</p>
+                     * 
+                     */
+                    std::string GetSummaryPrompt() const;
+
+                    /**
+                     * 设置<p>自定义摘要提示词</p>
+                     * @param _summaryPrompt <p>自定义摘要提示词</p>
+                     * 
+                     */
+                    void SetSummaryPrompt(const std::string& _summaryPrompt);
+
+                    /**
+                     * 判断参数 SummaryPrompt 是否已赋值
+                     * @return SummaryPrompt 是否已赋值
+                     * 
+                     */
+                    bool SummaryPromptHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +285,12 @@ namespace TencentCloud
                      */
                     bool m_enableKeywords;
                     bool m_enableKeywordsHasBeenSet;
+
+                    /**
+                     * <p>自定义摘要提示词</p>
+                     */
+                    std::string m_summaryPrompt;
+                    bool m_summaryPromptHasBeenSet;
 
                 };
             }

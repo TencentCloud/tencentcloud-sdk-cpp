@@ -56,6 +56,7 @@ InstanceInfo::InstanceInfo() :
     m_allowCosBackupHasBeenSet(false),
     m_tagListHasBeenSet(false),
     m_licenseTypeHasBeenSet(false),
+    m_realLicenseTypeHasBeenSet(false),
     m_enableHotWarmModeHasBeenSet(false),
     m_warmNodeTypeHasBeenSet(false),
     m_warmNodeNumHasBeenSet(false),
@@ -121,7 +122,10 @@ InstanceInfo::InstanceInfo() :
     m_isInRecycleBinHasBeenSet(false),
     m_recycleLockEnabledHasBeenSet(false),
     m_mayDestroyPointHasBeenSet(false),
-    m_delayDestroyIntervalHasBeenSet(false)
+    m_delayDestroyIntervalHasBeenSet(false),
+    m_enableAutoReplaceHasBeenSet(false),
+    m_openMTLSHasBeenSet(false),
+    m_serverCertSourceHasBeenSet(false)
 {
 }
 
@@ -516,6 +520,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         }
         m_licenseType = string(value["LicenseType"].GetString());
         m_licenseTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RealLicenseType") && !value["RealLicenseType"].IsNull())
+    {
+        if (!value["RealLicenseType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.RealLicenseType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_realLicenseType = string(value["RealLicenseType"].GetString());
+        m_realLicenseTypeHasBeenSet = true;
     }
 
     if (value.HasMember("EnableHotWarmMode") && !value["EnableHotWarmMode"].IsNull())
@@ -1266,6 +1280,36 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_delayDestroyIntervalHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableAutoReplace") && !value["EnableAutoReplace"].IsNull())
+    {
+        if (!value["EnableAutoReplace"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.EnableAutoReplace` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableAutoReplace = value["EnableAutoReplace"].GetInt64();
+        m_enableAutoReplaceHasBeenSet = true;
+    }
+
+    if (value.HasMember("OpenMTLS") && !value["OpenMTLS"].IsNull())
+    {
+        if (!value["OpenMTLS"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.OpenMTLS` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_openMTLS = value["OpenMTLS"].GetUint64();
+        m_openMTLSHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServerCertSource") && !value["ServerCertSource"].IsNull())
+    {
+        if (!value["ServerCertSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.ServerCertSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serverCertSource = string(value["ServerCertSource"].GetString());
+        m_serverCertSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1562,6 +1606,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "LicenseType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_licenseType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_realLicenseTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealLicenseType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realLicenseType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_enableHotWarmModeHasBeenSet)
@@ -2137,6 +2189,30 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, m_delayDestroyInterval, allocator);
     }
 
+    if (m_enableAutoReplaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableAutoReplace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableAutoReplace, allocator);
+    }
+
+    if (m_openMTLSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenMTLS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_openMTLS, allocator);
+    }
+
+    if (m_serverCertSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerCertSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serverCertSource.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -2698,6 +2774,22 @@ void InstanceInfo::SetLicenseType(const string& _licenseType)
 bool InstanceInfo::LicenseTypeHasBeenSet() const
 {
     return m_licenseTypeHasBeenSet;
+}
+
+string InstanceInfo::GetRealLicenseType() const
+{
+    return m_realLicenseType;
+}
+
+void InstanceInfo::SetRealLicenseType(const string& _realLicenseType)
+{
+    m_realLicenseType = _realLicenseType;
+    m_realLicenseTypeHasBeenSet = true;
+}
+
+bool InstanceInfo::RealLicenseTypeHasBeenSet() const
+{
+    return m_realLicenseTypeHasBeenSet;
 }
 
 bool InstanceInfo::GetEnableHotWarmMode() const
@@ -3754,5 +3846,53 @@ void InstanceInfo::SetDelayDestroyInterval(const int64_t& _delayDestroyInterval)
 bool InstanceInfo::DelayDestroyIntervalHasBeenSet() const
 {
     return m_delayDestroyIntervalHasBeenSet;
+}
+
+int64_t InstanceInfo::GetEnableAutoReplace() const
+{
+    return m_enableAutoReplace;
+}
+
+void InstanceInfo::SetEnableAutoReplace(const int64_t& _enableAutoReplace)
+{
+    m_enableAutoReplace = _enableAutoReplace;
+    m_enableAutoReplaceHasBeenSet = true;
+}
+
+bool InstanceInfo::EnableAutoReplaceHasBeenSet() const
+{
+    return m_enableAutoReplaceHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetOpenMTLS() const
+{
+    return m_openMTLS;
+}
+
+void InstanceInfo::SetOpenMTLS(const uint64_t& _openMTLS)
+{
+    m_openMTLS = _openMTLS;
+    m_openMTLSHasBeenSet = true;
+}
+
+bool InstanceInfo::OpenMTLSHasBeenSet() const
+{
+    return m_openMTLSHasBeenSet;
+}
+
+string InstanceInfo::GetServerCertSource() const
+{
+    return m_serverCertSource;
+}
+
+void InstanceInfo::SetServerCertSource(const string& _serverCertSource)
+{
+    m_serverCertSource = _serverCertSource;
+    m_serverCertSourceHasBeenSet = true;
+}
+
+bool InstanceInfo::ServerCertSourceHasBeenSet() const
+{
+    return m_serverCertSourceHasBeenSet;
 }
 

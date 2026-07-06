@@ -25,6 +25,8 @@ using namespace std;
 
 CreateEmployeeChangeUrlResponse::CreateEmployeeChangeUrlResponse() :
     m_miniAppPathHasBeenSet(false),
+    m_longUrlHasBeenSet(false),
+    m_shortUrlHasBeenSet(false),
     m_expireTimeHasBeenSet(false)
 {
 }
@@ -73,6 +75,26 @@ CoreInternalOutcome CreateEmployeeChangeUrlResponse::Deserialize(const string &p
         m_miniAppPathHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LongUrl") && !rsp["LongUrl"].IsNull())
+    {
+        if (!rsp["LongUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LongUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_longUrl = string(rsp["LongUrl"].GetString());
+        m_longUrlHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ShortUrl") && !rsp["ShortUrl"].IsNull())
+    {
+        if (!rsp["ShortUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ShortUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_shortUrl = string(rsp["ShortUrl"].GetString());
+        m_shortUrlHasBeenSet = true;
+    }
+
     if (rsp.HasMember("ExpireTime") && !rsp["ExpireTime"].IsNull())
     {
         if (!rsp["ExpireTime"].IsInt64())
@@ -99,6 +121,22 @@ string CreateEmployeeChangeUrlResponse::ToJsonString() const
         string key = "MiniAppPath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_miniAppPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_longUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LongUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_longUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_shortUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShortUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shortUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_expireTimeHasBeenSet)
@@ -129,6 +167,26 @@ string CreateEmployeeChangeUrlResponse::GetMiniAppPath() const
 bool CreateEmployeeChangeUrlResponse::MiniAppPathHasBeenSet() const
 {
     return m_miniAppPathHasBeenSet;
+}
+
+string CreateEmployeeChangeUrlResponse::GetLongUrl() const
+{
+    return m_longUrl;
+}
+
+bool CreateEmployeeChangeUrlResponse::LongUrlHasBeenSet() const
+{
+    return m_longUrlHasBeenSet;
+}
+
+string CreateEmployeeChangeUrlResponse::GetShortUrl() const
+{
+    return m_shortUrl;
+}
+
+bool CreateEmployeeChangeUrlResponse::ShortUrlHasBeenSet() const
+{
+    return m_shortUrlHasBeenSet;
 }
 
 int64_t CreateEmployeeChangeUrlResponse::GetExpireTime() const

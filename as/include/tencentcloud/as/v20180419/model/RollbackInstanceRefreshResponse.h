@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取刷新活动 ID。
-                     * @return RefreshActivityId 刷新活动 ID。
+                     * 获取<p>刷新活动 ID。</p>
+                     * @return RefreshActivityId <p>刷新活动 ID。</p>
                      * 
                      */
                     std::string GetRefreshActivityId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 刷新活动 ID。
+                     * <p>刷新活动 ID。</p>
                      */
                     std::string m_refreshActivityId;
                     bool m_refreshActivityIdHasBeenSet;

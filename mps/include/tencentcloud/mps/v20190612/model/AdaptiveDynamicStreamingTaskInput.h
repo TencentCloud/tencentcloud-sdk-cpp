@@ -30,6 +30,7 @@
 #include <tencentcloud/mps/v20190612/model/AddOnSubtitle.h>
 #include <tencentcloud/mps/v20190612/model/DrmInfo.h>
 #include <tencentcloud/mps/v20190612/model/SubtitleTemplate.h>
+#include <tencentcloud/mps/v20190612/model/AddOnAudio.h>
 
 
 namespace TencentCloud
@@ -53,15 +54,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取转自适应码流模板 ID。
-                     * @return Definition 转自适应码流模板 ID。
+                     * 获取<p>转自适应码流模板 ID。</p>
+                     * @return Definition <p>转自适应码流模板 ID。</p>
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置转自适应码流模板 ID。
-                     * @param _definition 转自适应码流模板 ID。
+                     * 设置<p>转自适应码流模板 ID。</p>
+                     * @param _definition <p>转自适应码流模板 ID。</p>
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -74,15 +75,15 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取水印列表，支持多张图片或文字水印，最大可支持 10 张。
-                     * @return WatermarkSet 水印列表，支持多张图片或文字水印，最大可支持 10 张。
+                     * 获取<p>水印列表，支持多张图片或文字水印，最大可支持 10 张。</p>
+                     * @return WatermarkSet <p>水印列表，支持多张图片或文字水印，最大可支持 10 张。</p>
                      * 
                      */
                     std::vector<WatermarkInput> GetWatermarkSet() const;
 
                     /**
-                     * 设置水印列表，支持多张图片或文字水印，最大可支持 10 张。
-                     * @param _watermarkSet 水印列表，支持多张图片或文字水印，最大可支持 10 张。
+                     * 设置<p>水印列表，支持多张图片或文字水印，最大可支持 10 张。</p>
+                     * @param _watermarkSet <p>水印列表，支持多张图片或文字水印，最大可支持 10 张。</p>
                      * 
                      */
                     void SetWatermarkSet(const std::vector<WatermarkInput>& _watermarkSet);
@@ -95,18 +96,18 @@ namespace TencentCloud
                     bool WatermarkSetHasBeenSet() const;
 
                     /**
-                     * 获取数字水印参数	
+                     * 获取<p>数字水印参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BlindWatermark 数字水印参数	
+                     * @return BlindWatermark <p>数字水印参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlindWatermarkInput GetBlindWatermark() const;
 
                     /**
-                     * 设置数字水印参数	
+                     * 设置<p>数字水印参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _blindWatermark 数字水印参数	
+                     * @param _blindWatermark <p>数字水印参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -120,18 +121,18 @@ namespace TencentCloud
                     bool BlindWatermarkHasBeenSet() const;
 
                     /**
-                     * 获取转自适应码流后文件的目标存储，不填则继承上层的 OutputStorage 值。
+                     * 获取<p>转自适应码流后文件的目标存储，不填则继承上层的 OutputStorage 值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OutputStorage 转自适应码流后文件的目标存储，不填则继承上层的 OutputStorage 值。
+                     * @return OutputStorage <p>转自适应码流后文件的目标存储，不填则继承上层的 OutputStorage 值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
-                     * 设置转自适应码流后文件的目标存储，不填则继承上层的 OutputStorage 值。
+                     * 设置<p>转自适应码流后文件的目标存储，不填则继承上层的 OutputStorage 值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _outputStorage 转自适应码流后文件的目标存储，不填则继承上层的 OutputStorage 值。
+                     * @param _outputStorage <p>转自适应码流后文件的目标存储，不填则继承上层的 OutputStorage 值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -145,43 +146,15 @@ namespace TencentCloud
                     bool OutputStorageHasBeenSet() const;
 
                     /**
-                     * 获取转自适应码流后，manifest 文件的输出路径，可以为相对路径或者绝对路径。
-若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。
-相对路径示例：
-<li>文件名_{变量名}.{format}</li>
-<li>文件名.{format}</li>
-绝对路径示例：
-<li>/自定义路径/文件名_{变量名}.{format}</li>
-如果不填，则默认为相对路径：{inputName}_adaptiveDynamicStreaming_{definition}.{format}。
-                     * @return OutputObjectPath 转自适应码流后，manifest 文件的输出路径，可以为相对路径或者绝对路径。
-若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。
-相对路径示例：
-<li>文件名_{变量名}.{format}</li>
-<li>文件名.{format}</li>
-绝对路径示例：
-<li>/自定义路径/文件名_{变量名}.{format}</li>
-如果不填，则默认为相对路径：{inputName}_adaptiveDynamicStreaming_{definition}.{format}。
+                     * 获取<p>转自适应码流后，manifest 文件的输出路径，可以为相对路径或者绝对路径。<br>若需定义输出路径，路径需以<code>.{format}</code>结尾。变量名请参考 <a href="https://cloud.tencent.com/document/product/862/37039">文件名变量说明</a>。<br>相对路径示例：</p><li>文件名_{变量名}.{format}</li><li>文件名.{format}</li>绝对路径示例：<li>/自定义路径/文件名_{变量名}.{format}</li>如果不填，则默认为相对路径：{inputName}_adaptiveDynamicStreaming_{definition}.{format}。
+                     * @return OutputObjectPath <p>转自适应码流后，manifest 文件的输出路径，可以为相对路径或者绝对路径。<br>若需定义输出路径，路径需以<code>.{format}</code>结尾。变量名请参考 <a href="https://cloud.tencent.com/document/product/862/37039">文件名变量说明</a>。<br>相对路径示例：</p><li>文件名_{变量名}.{format}</li><li>文件名.{format}</li>绝对路径示例：<li>/自定义路径/文件名_{变量名}.{format}</li>如果不填，则默认为相对路径：{inputName}_adaptiveDynamicStreaming_{definition}.{format}。
                      * 
                      */
                     std::string GetOutputObjectPath() const;
 
                     /**
-                     * 设置转自适应码流后，manifest 文件的输出路径，可以为相对路径或者绝对路径。
-若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。
-相对路径示例：
-<li>文件名_{变量名}.{format}</li>
-<li>文件名.{format}</li>
-绝对路径示例：
-<li>/自定义路径/文件名_{变量名}.{format}</li>
-如果不填，则默认为相对路径：{inputName}_adaptiveDynamicStreaming_{definition}.{format}。
-                     * @param _outputObjectPath 转自适应码流后，manifest 文件的输出路径，可以为相对路径或者绝对路径。
-若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。
-相对路径示例：
-<li>文件名_{变量名}.{format}</li>
-<li>文件名.{format}</li>
-绝对路径示例：
-<li>/自定义路径/文件名_{变量名}.{format}</li>
-如果不填，则默认为相对路径：{inputName}_adaptiveDynamicStreaming_{definition}.{format}。
+                     * 设置<p>转自适应码流后，manifest 文件的输出路径，可以为相对路径或者绝对路径。<br>若需定义输出路径，路径需以<code>.{format}</code>结尾。变量名请参考 <a href="https://cloud.tencent.com/document/product/862/37039">文件名变量说明</a>。<br>相对路径示例：</p><li>文件名_{变量名}.{format}</li><li>文件名.{format}</li>绝对路径示例：<li>/自定义路径/文件名_{变量名}.{format}</li>如果不填，则默认为相对路径：{inputName}_adaptiveDynamicStreaming_{definition}.{format}。
+                     * @param _outputObjectPath <p>转自适应码流后，manifest 文件的输出路径，可以为相对路径或者绝对路径。<br>若需定义输出路径，路径需以<code>.{format}</code>结尾。变量名请参考 <a href="https://cloud.tencent.com/document/product/862/37039">文件名变量说明</a>。<br>相对路径示例：</p><li>文件名_{变量名}.{format}</li><li>文件名.{format}</li>绝对路径示例：<li>/自定义路径/文件名_{变量名}.{format}</li>如果不填，则默认为相对路径：{inputName}_adaptiveDynamicStreaming_{definition}.{format}。
                      * 
                      */
                     void SetOutputObjectPath(const std::string& _outputObjectPath);
@@ -194,15 +167,15 @@ namespace TencentCloud
                     bool OutputObjectPathHasBeenSet() const;
 
                     /**
-                     * 获取转自适应码流后，子流文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}.{format}`。
-                     * @return SubStreamObjectName 转自适应码流后，子流文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}.{format}`。
+                     * 获取<p>转自适应码流后，子流文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：<code>{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}.{format}</code>。</p>
+                     * @return SubStreamObjectName <p>转自适应码流后，子流文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：<code>{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}.{format}</code>。</p>
                      * 
                      */
                     std::string GetSubStreamObjectName() const;
 
                     /**
-                     * 设置转自适应码流后，子流文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}.{format}`。
-                     * @param _subStreamObjectName 转自适应码流后，子流文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}.{format}`。
+                     * 设置<p>转自适应码流后，子流文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：<code>{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}.{format}</code>。</p>
+                     * @param _subStreamObjectName <p>转自适应码流后，子流文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：<code>{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}.{format}</code>。</p>
                      * 
                      */
                     void SetSubStreamObjectName(const std::string& _subStreamObjectName);
@@ -215,15 +188,15 @@ namespace TencentCloud
                     bool SubStreamObjectNameHasBeenSet() const;
 
                     /**
-                     * 获取转自适应码流（仅 HLS）后，分片文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}_{segmentNumber}.{format}`。
-                     * @return SegmentObjectName 转自适应码流（仅 HLS）后，分片文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}_{segmentNumber}.{format}`。
+                     * 获取<p>转自适应码流（仅 HLS）后，分片文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：<code>{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}_{segmentNumber}.{format}</code>。</p>
+                     * @return SegmentObjectName <p>转自适应码流（仅 HLS）后，分片文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：<code>{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}_{segmentNumber}.{format}</code>。</p>
                      * 
                      */
                     std::string GetSegmentObjectName() const;
 
                     /**
-                     * 设置转自适应码流（仅 HLS）后，分片文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}_{segmentNumber}.{format}`。
-                     * @param _segmentObjectName 转自适应码流（仅 HLS）后，分片文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}_{segmentNumber}.{format}`。
+                     * 设置<p>转自适应码流（仅 HLS）后，分片文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：<code>{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}_{segmentNumber}.{format}</code>。</p>
+                     * @param _segmentObjectName <p>转自适应码流（仅 HLS）后，分片文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：<code>{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}_{segmentNumber}.{format}</code>。</p>
                      * 
                      */
                     void SetSegmentObjectName(const std::string& _segmentObjectName);
@@ -236,18 +209,18 @@ namespace TencentCloud
                     bool SegmentObjectNameHasBeenSet() const;
 
                     /**
-                     * 获取外挂字幕功能，指定要插入的字幕文件。
+                     * 获取<p>外挂字幕功能，指定要插入的字幕文件。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AddOnSubtitles 外挂字幕功能，指定要插入的字幕文件。
+                     * @return AddOnSubtitles <p>外挂字幕功能，指定要插入的字幕文件。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AddOnSubtitle> GetAddOnSubtitles() const;
 
                     /**
-                     * 设置外挂字幕功能，指定要插入的字幕文件。
+                     * 设置<p>外挂字幕功能，指定要插入的字幕文件。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _addOnSubtitles 外挂字幕功能，指定要插入的字幕文件。
+                     * @param _addOnSubtitles <p>外挂字幕功能，指定要插入的字幕文件。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -261,18 +234,18 @@ namespace TencentCloud
                     bool AddOnSubtitlesHasBeenSet() const;
 
                     /**
-                     * 获取Drm信息。
+                     * 获取<p>Drm信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DrmInfo Drm信息。
+                     * @return DrmInfo <p>Drm信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DrmInfo GetDrmInfo() const;
 
                     /**
-                     * 设置Drm信息。
+                     * 设置<p>Drm信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _drmInfo Drm信息。
+                     * @param _drmInfo <p>Drm信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -286,23 +259,15 @@ namespace TencentCloud
                     bool DrmInfoHasBeenSet() const;
 
                     /**
-                     * 获取自适应转码模板类型：
-Common：音视频类型
-PureAudio：纯音频类型
-                     * @return DefinitionType 自适应转码模板类型：
-Common：音视频类型
-PureAudio：纯音频类型
+                     * 获取<p>自适应转码模板类型：<br>Common：音视频类型<br>PureAudio：纯音频类型</p>
+                     * @return DefinitionType <p>自适应转码模板类型：<br>Common：音视频类型<br>PureAudio：纯音频类型</p>
                      * 
                      */
                     std::string GetDefinitionType() const;
 
                     /**
-                     * 设置自适应转码模板类型：
-Common：音视频类型
-PureAudio：纯音频类型
-                     * @param _definitionType 自适应转码模板类型：
-Common：音视频类型
-PureAudio：纯音频类型
+                     * 设置<p>自适应转码模板类型：<br>Common：音视频类型<br>PureAudio：纯音频类型</p>
+                     * @param _definitionType <p>自适应转码模板类型：<br>Common：音视频类型<br>PureAudio：纯音频类型</p>
                      * 
                      */
                     void SetDefinitionType(const std::string& _definitionType);
@@ -315,18 +280,18 @@ PureAudio：纯音频类型
                     bool DefinitionTypeHasBeenSet() const;
 
                     /**
-                     * 获取硬字幕（压制字幕）功能，指定字幕来源、字体大小、位置等字幕参数。
+                     * 获取<p>硬字幕（压制字幕）功能，指定字幕来源、字体大小、位置等字幕参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubtitleTemplate 硬字幕（压制字幕）功能，指定字幕来源、字体大小、位置等字幕参数。
+                     * @return SubtitleTemplate <p>硬字幕（压制字幕）功能，指定字幕来源、字体大小、位置等字幕参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SubtitleTemplate GetSubtitleTemplate() const;
 
                     /**
-                     * 设置硬字幕（压制字幕）功能，指定字幕来源、字体大小、位置等字幕参数。
+                     * 设置<p>硬字幕（压制字幕）功能，指定字幕来源、字体大小、位置等字幕参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subtitleTemplate 硬字幕（压制字幕）功能，指定字幕来源、字体大小、位置等字幕参数。
+                     * @param _subtitleTemplate <p>硬字幕（压制字幕）功能，指定字幕来源、字体大小、位置等字幕参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -340,15 +305,15 @@ PureAudio：纯音频类型
                     bool SubtitleTemplateHasBeenSet() const;
 
                     /**
-                     * 获取转码参数扩展字段
-                     * @return StdExtInfo 转码参数扩展字段
+                     * 获取<p>转码参数扩展字段</p>
+                     * @return StdExtInfo <p>转码参数扩展字段</p>
                      * 
                      */
                     std::string GetStdExtInfo() const;
 
                     /**
-                     * 设置转码参数扩展字段
-                     * @param _stdExtInfo 转码参数扩展字段
+                     * 设置<p>转码参数扩展字段</p>
+                     * @param _stdExtInfo <p>转码参数扩展字段</p>
                      * 
                      */
                     void SetStdExtInfo(const std::string& _stdExtInfo);
@@ -361,18 +326,18 @@ PureAudio：纯音频类型
                     bool StdExtInfoHasBeenSet() const;
 
                     /**
-                     * 获取指定pts时间的帧设为关键帧，并切片。单位毫秒（允许相对偏差<=1ms）。当同时指定gop和切片时长时，会共同作用。注意需开启RawPts，保持帧率随源，并确保传入的pts时间在源中是有对应帧的。
+                     * 获取<p>指定pts时间的帧设为关键帧，并切片。单位毫秒（允许相对偏差&lt;=1ms）。当同时指定gop和切片时长时，会共同作用。注意需开启RawPts，保持帧率随源，并确保传入的pts时间在源中是有对应帧的。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KeyPTSList 指定pts时间的帧设为关键帧，并切片。单位毫秒（允许相对偏差<=1ms）。当同时指定gop和切片时长时，会共同作用。注意需开启RawPts，保持帧率随源，并确保传入的pts时间在源中是有对应帧的。
+                     * @return KeyPTSList <p>指定pts时间的帧设为关键帧，并切片。单位毫秒（允许相对偏差&lt;=1ms）。当同时指定gop和切片时长时，会共同作用。注意需开启RawPts，保持帧率随源，并确保传入的pts时间在源中是有对应帧的。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetKeyPTSList() const;
 
                     /**
-                     * 设置指定pts时间的帧设为关键帧，并切片。单位毫秒（允许相对偏差<=1ms）。当同时指定gop和切片时长时，会共同作用。注意需开启RawPts，保持帧率随源，并确保传入的pts时间在源中是有对应帧的。
+                     * 设置<p>指定pts时间的帧设为关键帧，并切片。单位毫秒（允许相对偏差&lt;=1ms）。当同时指定gop和切片时长时，会共同作用。注意需开启RawPts，保持帧率随源，并确保传入的pts时间在源中是有对应帧的。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _keyPTSList 指定pts时间的帧设为关键帧，并切片。单位毫秒（允许相对偏差<=1ms）。当同时指定gop和切片时长时，会共同作用。注意需开启RawPts，保持帧率随源，并确保传入的pts时间在源中是有对应帧的。
+                     * @param _keyPTSList <p>指定pts时间的帧设为关键帧，并切片。单位毫秒（允许相对偏差&lt;=1ms）。当同时指定gop和切片时长时，会共同作用。注意需开启RawPts，保持帧率随源，并确保传入的pts时间在源中是有对应帧的。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -385,100 +350,118 @@ PureAudio：纯音频类型
                      */
                     bool KeyPTSListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>外挂音频功能，指定要插入的音频文件。</p>
+                     * @return AddOnAudios <p>外挂音频功能，指定要插入的音频文件。</p>
+                     * 
+                     */
+                    std::vector<AddOnAudio> GetAddOnAudios() const;
+
+                    /**
+                     * 设置<p>外挂音频功能，指定要插入的音频文件。</p>
+                     * @param _addOnAudios <p>外挂音频功能，指定要插入的音频文件。</p>
+                     * 
+                     */
+                    void SetAddOnAudios(const std::vector<AddOnAudio>& _addOnAudios);
+
+                    /**
+                     * 判断参数 AddOnAudios 是否已赋值
+                     * @return AddOnAudios 是否已赋值
+                     * 
+                     */
+                    bool AddOnAudiosHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 转自适应码流模板 ID。
+                     * <p>转自适应码流模板 ID。</p>
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * 水印列表，支持多张图片或文字水印，最大可支持 10 张。
+                     * <p>水印列表，支持多张图片或文字水印，最大可支持 10 张。</p>
                      */
                     std::vector<WatermarkInput> m_watermarkSet;
                     bool m_watermarkSetHasBeenSet;
 
                     /**
-                     * 数字水印参数	
+                     * <p>数字水印参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlindWatermarkInput m_blindWatermark;
                     bool m_blindWatermarkHasBeenSet;
 
                     /**
-                     * 转自适应码流后文件的目标存储，不填则继承上层的 OutputStorage 值。
+                     * <p>转自适应码流后文件的目标存储，不填则继承上层的 OutputStorage 值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TaskOutputStorage m_outputStorage;
                     bool m_outputStorageHasBeenSet;
 
                     /**
-                     * 转自适应码流后，manifest 文件的输出路径，可以为相对路径或者绝对路径。
-若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。
-相对路径示例：
-<li>文件名_{变量名}.{format}</li>
-<li>文件名.{format}</li>
-绝对路径示例：
-<li>/自定义路径/文件名_{变量名}.{format}</li>
-如果不填，则默认为相对路径：{inputName}_adaptiveDynamicStreaming_{definition}.{format}。
+                     * <p>转自适应码流后，manifest 文件的输出路径，可以为相对路径或者绝对路径。<br>若需定义输出路径，路径需以<code>.{format}</code>结尾。变量名请参考 <a href="https://cloud.tencent.com/document/product/862/37039">文件名变量说明</a>。<br>相对路径示例：</p><li>文件名_{变量名}.{format}</li><li>文件名.{format}</li>绝对路径示例：<li>/自定义路径/文件名_{变量名}.{format}</li>如果不填，则默认为相对路径：{inputName}_adaptiveDynamicStreaming_{definition}.{format}。
                      */
                     std::string m_outputObjectPath;
                     bool m_outputObjectPathHasBeenSet;
 
                     /**
-                     * 转自适应码流后，子流文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}.{format}`。
+                     * <p>转自适应码流后，子流文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：<code>{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}.{format}</code>。</p>
                      */
                     std::string m_subStreamObjectName;
                     bool m_subStreamObjectNameHasBeenSet;
 
                     /**
-                     * 转自适应码流（仅 HLS）后，分片文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}_{segmentNumber}.{format}`。
+                     * <p>转自适应码流（仅 HLS）后，分片文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：<code>{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}_{segmentNumber}.{format}</code>。</p>
                      */
                     std::string m_segmentObjectName;
                     bool m_segmentObjectNameHasBeenSet;
 
                     /**
-                     * 外挂字幕功能，指定要插入的字幕文件。
+                     * <p>外挂字幕功能，指定要插入的字幕文件。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AddOnSubtitle> m_addOnSubtitles;
                     bool m_addOnSubtitlesHasBeenSet;
 
                     /**
-                     * Drm信息。
+                     * <p>Drm信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DrmInfo m_drmInfo;
                     bool m_drmInfoHasBeenSet;
 
                     /**
-                     * 自适应转码模板类型：
-Common：音视频类型
-PureAudio：纯音频类型
+                     * <p>自适应转码模板类型：<br>Common：音视频类型<br>PureAudio：纯音频类型</p>
                      */
                     std::string m_definitionType;
                     bool m_definitionTypeHasBeenSet;
 
                     /**
-                     * 硬字幕（压制字幕）功能，指定字幕来源、字体大小、位置等字幕参数。
+                     * <p>硬字幕（压制字幕）功能，指定字幕来源、字体大小、位置等字幕参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SubtitleTemplate m_subtitleTemplate;
                     bool m_subtitleTemplateHasBeenSet;
 
                     /**
-                     * 转码参数扩展字段
+                     * <p>转码参数扩展字段</p>
                      */
                     std::string m_stdExtInfo;
                     bool m_stdExtInfoHasBeenSet;
 
                     /**
-                     * 指定pts时间的帧设为关键帧，并切片。单位毫秒（允许相对偏差<=1ms）。当同时指定gop和切片时长时，会共同作用。注意需开启RawPts，保持帧率随源，并确保传入的pts时间在源中是有对应帧的。
+                     * <p>指定pts时间的帧设为关键帧，并切片。单位毫秒（允许相对偏差&lt;=1ms）。当同时指定gop和切片时长时，会共同作用。注意需开启RawPts，保持帧率随源，并确保传入的pts时间在源中是有对应帧的。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_keyPTSList;
                     bool m_keyPTSListHasBeenSet;
+
+                    /**
+                     * <p>外挂音频功能，指定要插入的音频文件。</p>
+                     */
+                    std::vector<AddOnAudio> m_addOnAudios;
+                    bool m_addOnAudiosHasBeenSet;
 
                 };
             }

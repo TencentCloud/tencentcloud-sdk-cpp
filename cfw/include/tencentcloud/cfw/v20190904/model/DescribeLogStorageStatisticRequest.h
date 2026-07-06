@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>开始时间</p><p>参数格式：2026-07-01 15:02:01</p>
+                     * @return StartTime <p>开始时间</p><p>参数格式：2026-07-01 15:02:01</p>
+                     * 
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置<p>开始时间</p><p>参数格式：2026-07-01 15:02:01</p>
+                     * @param _startTime <p>开始时间</p><p>参数格式：2026-07-01 15:02:01</p>
+                     * 
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>结束时间</p><p>参数格式：2026-07-01 15:02:01</p>
+                     * @return EndTime <p>结束时间</p><p>参数格式：2026-07-01 15:02:01</p>
+                     * 
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置<p>结束时间</p><p>参数格式：2026-07-01 15:02:01</p>
+                     * @param _endTime <p>结束时间</p><p>参数格式：2026-07-01 15:02:01</p>
+                     * 
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>开始时间</p><p>参数格式：2026-07-01 15:02:01</p>
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * <p>结束时间</p><p>参数格式：2026-07-01 15:02:01</p>
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
 
                 };
             }

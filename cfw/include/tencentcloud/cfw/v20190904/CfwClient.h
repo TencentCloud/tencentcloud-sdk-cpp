@@ -163,6 +163,10 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwSwitchResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwVpcDnsLstRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwVpcDnsLstResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeOfflineExportTaskRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeOfflineExportTaskResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeOfflineExportTemporaryCredentialsRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeOfflineExportTemporaryCredentialsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeResourceGroupRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeResourceGroupResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeResourceGroupNewRequest.h>
@@ -195,6 +199,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeVpcFwGroupSwitchResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ExpandCfwVerticalRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ExpandCfwVerticalResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ExportLogsOfflineRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ExportLogsOfflineResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAcRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAcRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAclRuleRequest.h>
@@ -281,6 +287,8 @@
 #include <tencentcloud/cfw/v20190904/model/RemoveEnterpriseSecurityGroupRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/RemoveNatAcRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/RemoveNatAcRuleResponse.h>
+#include <tencentcloud/cfw/v20190904/model/RemoveOfflineExportTaskRequest.h>
+#include <tencentcloud/cfw/v20190904/model/RemoveOfflineExportTaskResponse.h>
 #include <tencentcloud/cfw/v20190904/model/RemoveVpcAcRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/RemoveVpcAcRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/SearchLogRequest.h>
@@ -521,6 +529,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNatFwVpcDnsLstResponse> DescribeNatFwVpcDnsLstOutcome;
                 typedef std::future<DescribeNatFwVpcDnsLstOutcome> DescribeNatFwVpcDnsLstOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeNatFwVpcDnsLstRequest&, DescribeNatFwVpcDnsLstOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatFwVpcDnsLstAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOfflineExportTaskResponse> DescribeOfflineExportTaskOutcome;
+                typedef std::future<DescribeOfflineExportTaskOutcome> DescribeOfflineExportTaskOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeOfflineExportTaskRequest&, DescribeOfflineExportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOfflineExportTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOfflineExportTemporaryCredentialsResponse> DescribeOfflineExportTemporaryCredentialsOutcome;
+                typedef std::future<DescribeOfflineExportTemporaryCredentialsOutcome> DescribeOfflineExportTemporaryCredentialsOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeOfflineExportTemporaryCredentialsRequest&, DescribeOfflineExportTemporaryCredentialsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOfflineExportTemporaryCredentialsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeResourceGroupResponse> DescribeResourceGroupOutcome;
                 typedef std::future<DescribeResourceGroupOutcome> DescribeResourceGroupOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeResourceGroupRequest&, DescribeResourceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceGroupAsyncHandler;
@@ -569,6 +583,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ExpandCfwVerticalResponse> ExpandCfwVerticalOutcome;
                 typedef std::future<ExpandCfwVerticalOutcome> ExpandCfwVerticalOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ExpandCfwVerticalRequest&, ExpandCfwVerticalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExpandCfwVerticalAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportLogsOfflineResponse> ExportLogsOfflineOutcome;
+                typedef std::future<ExportLogsOfflineOutcome> ExportLogsOfflineOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ExportLogsOfflineRequest&, ExportLogsOfflineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportLogsOfflineAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAcRuleResponse> ModifyAcRuleOutcome;
                 typedef std::future<ModifyAcRuleOutcome> ModifyAcRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyAcRuleRequest&, ModifyAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAcRuleAsyncHandler;
@@ -698,6 +715,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RemoveNatAcRuleResponse> RemoveNatAcRuleOutcome;
                 typedef std::future<RemoveNatAcRuleOutcome> RemoveNatAcRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::RemoveNatAcRuleRequest&, RemoveNatAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveNatAcRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveOfflineExportTaskResponse> RemoveOfflineExportTaskOutcome;
+                typedef std::future<RemoveOfflineExportTaskOutcome> RemoveOfflineExportTaskOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::RemoveOfflineExportTaskRequest&, RemoveOfflineExportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveOfflineExportTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::RemoveVpcAcRuleResponse> RemoveVpcAcRuleOutcome;
                 typedef std::future<RemoveVpcAcRuleOutcome> RemoveVpcAcRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::RemoveVpcAcRuleRequest&, RemoveVpcAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveVpcAcRuleAsyncHandler;
@@ -1241,7 +1261,7 @@ namespace TencentCloud
                 DescribeLogStorageStatisticOutcomeCallable DescribeLogStorageStatisticCallable(const Model::DescribeLogStorageStatisticRequest& request);
 
                 /**
-                 *日志审计日志查询
+                 *请使用 [日志分析SearchLog接口](https://cloud.tencent.com/document/product/1132/118363)
                  * @param req DescribeLogsRequest
                  * @return DescribeLogsOutcome
                  */
@@ -1356,6 +1376,24 @@ namespace TencentCloud
                 DescribeNatFwVpcDnsLstOutcome DescribeNatFwVpcDnsLst(const Model::DescribeNatFwVpcDnsLstRequest &request);
                 void DescribeNatFwVpcDnsLstAsync(const Model::DescribeNatFwVpcDnsLstRequest& request, const DescribeNatFwVpcDnsLstAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNatFwVpcDnsLstOutcomeCallable DescribeNatFwVpcDnsLstCallable(const Model::DescribeNatFwVpcDnsLstRequest& request);
+
+                /**
+                 *获取日志离线导出任务列表
+                 * @param req DescribeOfflineExportTaskRequest
+                 * @return DescribeOfflineExportTaskOutcome
+                 */
+                DescribeOfflineExportTaskOutcome DescribeOfflineExportTask(const Model::DescribeOfflineExportTaskRequest &request);
+                void DescribeOfflineExportTaskAsync(const Model::DescribeOfflineExportTaskRequest& request, const DescribeOfflineExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOfflineExportTaskOutcomeCallable DescribeOfflineExportTaskCallable(const Model::DescribeOfflineExportTaskRequest& request);
+
+                /**
+                 *获取日志离线导出任务文件下载临时凭证
+                 * @param req DescribeOfflineExportTemporaryCredentialsRequest
+                 * @return DescribeOfflineExportTemporaryCredentialsOutcome
+                 */
+                DescribeOfflineExportTemporaryCredentialsOutcome DescribeOfflineExportTemporaryCredentials(const Model::DescribeOfflineExportTemporaryCredentialsRequest &request);
+                void DescribeOfflineExportTemporaryCredentialsAsync(const Model::DescribeOfflineExportTemporaryCredentialsRequest& request, const DescribeOfflineExportTemporaryCredentialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOfflineExportTemporaryCredentialsOutcomeCallable DescribeOfflineExportTemporaryCredentialsCallable(const Model::DescribeOfflineExportTemporaryCredentialsRequest& request);
 
                 /**
                  *DescribeResourceGroup资产中心资产树信息
@@ -1500,6 +1538,15 @@ namespace TencentCloud
                 ExpandCfwVerticalOutcome ExpandCfwVertical(const Model::ExpandCfwVerticalRequest &request);
                 void ExpandCfwVerticalAsync(const Model::ExpandCfwVerticalRequest& request, const ExpandCfwVerticalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ExpandCfwVerticalOutcomeCallable ExpandCfwVerticalCallable(const Model::ExpandCfwVerticalRequest& request);
+
+                /**
+                 *日志审计日志离线导出
+                 * @param req ExportLogsOfflineRequest
+                 * @return ExportLogsOfflineOutcome
+                 */
+                ExportLogsOfflineOutcome ExportLogsOffline(const Model::ExportLogsOfflineRequest &request);
+                void ExportLogsOfflineAsync(const Model::ExportLogsOfflineRequest& request, const ExportLogsOfflineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportLogsOfflineOutcomeCallable ExportLogsOfflineCallable(const Model::ExportLogsOfflineRequest& request);
 
                 /**
                  *修改规则
@@ -1891,6 +1938,15 @@ VPC间规则需指定EdgeId。Nat边界规则需指定地域Region与Direction�
                 RemoveNatAcRuleOutcome RemoveNatAcRule(const Model::RemoveNatAcRuleRequest &request);
                 void RemoveNatAcRuleAsync(const Model::RemoveNatAcRuleRequest& request, const RemoveNatAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RemoveNatAcRuleOutcomeCallable RemoveNatAcRuleCallable(const Model::RemoveNatAcRuleRequest& request);
+
+                /**
+                 *删除日志离线导出任务
+                 * @param req RemoveOfflineExportTaskRequest
+                 * @return RemoveOfflineExportTaskOutcome
+                 */
+                RemoveOfflineExportTaskOutcome RemoveOfflineExportTask(const Model::RemoveOfflineExportTaskRequest &request);
+                void RemoveOfflineExportTaskAsync(const Model::RemoveOfflineExportTaskRequest& request, const RemoveOfflineExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveOfflineExportTaskOutcomeCallable RemoveOfflineExportTaskCallable(const Model::RemoveOfflineExportTaskRequest& request);
 
                 /**
                  *删除VPC间规则

@@ -25,7 +25,10 @@ AudioTemplateInfo::AudioTemplateInfo() :
     m_bitrateHasBeenSet(false),
     m_sampleRateHasBeenSet(false),
     m_audioChannelHasBeenSet(false),
-    m_trackChannelInfoHasBeenSet(false)
+    m_trackChannelInfoHasBeenSet(false),
+    m_audioLanguageHasBeenSet(false),
+    m_audioNameHasBeenSet(false),
+    m_defaultTrackHasBeenSet(false)
 {
 }
 
@@ -91,6 +94,36 @@ CoreInternalOutcome AudioTemplateInfo::Deserialize(const rapidjson::Value &value
         m_trackChannelInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("AudioLanguage") && !value["AudioLanguage"].IsNull())
+    {
+        if (!value["AudioLanguage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioTemplateInfo.AudioLanguage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_audioLanguage = string(value["AudioLanguage"].GetString());
+        m_audioLanguageHasBeenSet = true;
+    }
+
+    if (value.HasMember("AudioName") && !value["AudioName"].IsNull())
+    {
+        if (!value["AudioName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioTemplateInfo.AudioName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_audioName = string(value["AudioName"].GetString());
+        m_audioNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DefaultTrack") && !value["DefaultTrack"].IsNull())
+    {
+        if (!value["DefaultTrack"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioTemplateInfo.DefaultTrack` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultTrack = value["DefaultTrack"].GetBool();
+        m_defaultTrackHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +170,30 @@ void AudioTemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_trackChannelInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_audioLanguageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_audioLanguage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_audioNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_audioName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_defaultTrackHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultTrack";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defaultTrack, allocator);
     }
 
 }
@@ -220,5 +277,53 @@ void AudioTemplateInfo::SetTrackChannelInfo(const AudioTrackChannelInfo& _trackC
 bool AudioTemplateInfo::TrackChannelInfoHasBeenSet() const
 {
     return m_trackChannelInfoHasBeenSet;
+}
+
+string AudioTemplateInfo::GetAudioLanguage() const
+{
+    return m_audioLanguage;
+}
+
+void AudioTemplateInfo::SetAudioLanguage(const string& _audioLanguage)
+{
+    m_audioLanguage = _audioLanguage;
+    m_audioLanguageHasBeenSet = true;
+}
+
+bool AudioTemplateInfo::AudioLanguageHasBeenSet() const
+{
+    return m_audioLanguageHasBeenSet;
+}
+
+string AudioTemplateInfo::GetAudioName() const
+{
+    return m_audioName;
+}
+
+void AudioTemplateInfo::SetAudioName(const string& _audioName)
+{
+    m_audioName = _audioName;
+    m_audioNameHasBeenSet = true;
+}
+
+bool AudioTemplateInfo::AudioNameHasBeenSet() const
+{
+    return m_audioNameHasBeenSet;
+}
+
+bool AudioTemplateInfo::GetDefaultTrack() const
+{
+    return m_defaultTrack;
+}
+
+void AudioTemplateInfo::SetDefaultTrack(const bool& _defaultTrack)
+{
+    m_defaultTrack = _defaultTrack;
+    m_defaultTrackHasBeenSet = true;
+}
+
+bool AudioTemplateInfo::DefaultTrackHasBeenSet() const
+{
+    return m_defaultTrackHasBeenSet;
 }
 

@@ -28,10 +28,13 @@ CreateDataRepositoryTaskRequest::CreateDataRepositoryTaskRequest() :
     m_fileSystemIdHasBeenSet(false),
     m_taskPathHasBeenSet(false),
     m_taskNameHasBeenSet(false),
+    m_isTaskPathAbsoluteHasBeenSet(false),
     m_repositoryTypeHasBeenSet(false),
     m_textLocationHasBeenSet(false),
     m_enableDataFlowSubPathHasBeenSet(false),
-    m_dataFlowSubPathHasBeenSet(false)
+    m_dataFlowSubPathHasBeenSet(false),
+    m_enableCustomDestPathHasBeenSet(false),
+    m_customDestPathHasBeenSet(false)
 {
 }
 
@@ -82,6 +85,14 @@ string CreateDataRepositoryTaskRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_taskName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_isTaskPathAbsoluteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsTaskPathAbsolute";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isTaskPathAbsolute, allocator);
+    }
+
     if (m_repositoryTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -112,6 +123,22 @@ string CreateDataRepositoryTaskRequest::ToJsonString() const
         string key = "DataFlowSubPath";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dataFlowSubPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableCustomDestPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableCustomDestPath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableCustomDestPath, allocator);
+    }
+
+    if (m_customDestPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomDestPath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_customDestPath.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -202,6 +229,22 @@ bool CreateDataRepositoryTaskRequest::TaskNameHasBeenSet() const
     return m_taskNameHasBeenSet;
 }
 
+bool CreateDataRepositoryTaskRequest::GetIsTaskPathAbsolute() const
+{
+    return m_isTaskPathAbsolute;
+}
+
+void CreateDataRepositoryTaskRequest::SetIsTaskPathAbsolute(const bool& _isTaskPathAbsolute)
+{
+    m_isTaskPathAbsolute = _isTaskPathAbsolute;
+    m_isTaskPathAbsoluteHasBeenSet = true;
+}
+
+bool CreateDataRepositoryTaskRequest::IsTaskPathAbsoluteHasBeenSet() const
+{
+    return m_isTaskPathAbsoluteHasBeenSet;
+}
+
 string CreateDataRepositoryTaskRequest::GetRepositoryType() const
 {
     return m_repositoryType;
@@ -264,6 +307,38 @@ void CreateDataRepositoryTaskRequest::SetDataFlowSubPath(const string& _dataFlow
 bool CreateDataRepositoryTaskRequest::DataFlowSubPathHasBeenSet() const
 {
     return m_dataFlowSubPathHasBeenSet;
+}
+
+bool CreateDataRepositoryTaskRequest::GetEnableCustomDestPath() const
+{
+    return m_enableCustomDestPath;
+}
+
+void CreateDataRepositoryTaskRequest::SetEnableCustomDestPath(const bool& _enableCustomDestPath)
+{
+    m_enableCustomDestPath = _enableCustomDestPath;
+    m_enableCustomDestPathHasBeenSet = true;
+}
+
+bool CreateDataRepositoryTaskRequest::EnableCustomDestPathHasBeenSet() const
+{
+    return m_enableCustomDestPathHasBeenSet;
+}
+
+string CreateDataRepositoryTaskRequest::GetCustomDestPath() const
+{
+    return m_customDestPath;
+}
+
+void CreateDataRepositoryTaskRequest::SetCustomDestPath(const string& _customDestPath)
+{
+    m_customDestPath = _customDestPath;
+    m_customDestPathHasBeenSet = true;
+}
+
+bool CreateDataRepositoryTaskRequest::CustomDestPathHasBeenSet() const
+{
+    return m_customDestPathHasBeenSet;
 }
 
 

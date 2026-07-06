@@ -27,6 +27,8 @@ CreateDisasterRecoverGroupRequest::CreateDisasterRecoverGroupRequest() :
     m_typeHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_affinityHasBeenSet(false),
+    m_strategyHasBeenSet(false),
+    m_partitionCountHasBeenSet(false),
     m_tagSpecificationHasBeenSet(false)
 {
 }
@@ -68,6 +70,22 @@ string CreateDisasterRecoverGroupRequest::ToJsonString() const
         string key = "Affinity";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_affinity, allocator);
+    }
+
+    if (m_strategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Strategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_strategy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_partitionCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PartitionCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_partitionCount, allocator);
     }
 
     if (m_tagSpecificationHasBeenSet)
@@ -155,6 +173,38 @@ void CreateDisasterRecoverGroupRequest::SetAffinity(const int64_t& _affinity)
 bool CreateDisasterRecoverGroupRequest::AffinityHasBeenSet() const
 {
     return m_affinityHasBeenSet;
+}
+
+string CreateDisasterRecoverGroupRequest::GetStrategy() const
+{
+    return m_strategy;
+}
+
+void CreateDisasterRecoverGroupRequest::SetStrategy(const string& _strategy)
+{
+    m_strategy = _strategy;
+    m_strategyHasBeenSet = true;
+}
+
+bool CreateDisasterRecoverGroupRequest::StrategyHasBeenSet() const
+{
+    return m_strategyHasBeenSet;
+}
+
+int64_t CreateDisasterRecoverGroupRequest::GetPartitionCount() const
+{
+    return m_partitionCount;
+}
+
+void CreateDisasterRecoverGroupRequest::SetPartitionCount(const int64_t& _partitionCount)
+{
+    m_partitionCount = _partitionCount;
+    m_partitionCountHasBeenSet = true;
+}
+
+bool CreateDisasterRecoverGroupRequest::PartitionCountHasBeenSet() const
+{
+    return m_partitionCountHasBeenSet;
 }
 
 vector<TagSpecification> CreateDisasterRecoverGroupRequest::GetTagSpecification() const

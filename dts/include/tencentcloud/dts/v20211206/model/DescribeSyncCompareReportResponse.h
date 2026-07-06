@@ -47,9 +47,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取一致性校验摘要信息
+                     * 获取<p>一致性校验摘要信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Abstract 一致性校验摘要信息
+                     * @return Abstract <p>一致性校验摘要信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,9 +63,9 @@ namespace TencentCloud
                     bool AbstractHasBeenSet() const;
 
                     /**
-                     * 获取一致性校验详细信息
+                     * 获取<p>一致性校验详细信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Detail 一致性校验详细信息
+                     * @return Detail <p>一致性校验详细信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -79,8 +79,8 @@ namespace TencentCloud
                     bool DetailHasBeenSet() const;
 
                     /**
-                     * 获取增量校验阶段的摘要
-                     * @return IncAbstract 增量校验阶段的摘要
+                     * 获取<p>增量校验阶段的摘要</p>
+                     * @return IncAbstract <p>增量校验阶段的摘要</p>
                      * 
                      */
                     IncCompareAbstractInfo GetIncAbstract() const;
@@ -95,21 +95,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 一致性校验摘要信息
+                     * <p>一致性校验摘要信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CompareAbstractInfo m_abstract;
                     bool m_abstractHasBeenSet;
 
                     /**
-                     * 一致性校验详细信息
+                     * <p>一致性校验详细信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CompareDetailInfo m_detail;
                     bool m_detailHasBeenSet;
 
                     /**
-                     * 增量校验阶段的摘要
+                     * <p>增量校验阶段的摘要</p>
                      */
                     IncCompareAbstractInfo m_incAbstract;
                     bool m_incAbstractHasBeenSet;

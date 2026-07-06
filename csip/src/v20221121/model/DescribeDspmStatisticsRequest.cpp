@@ -23,7 +23,8 @@ using namespace TencentCloud::Csip::V20221121::Model;
 using namespace std;
 
 DescribeDspmStatisticsRequest::DescribeDspmStatisticsRequest() :
-    m_memberIdHasBeenSet(false)
+    m_memberIdHasBeenSet(false),
+    m_assetTypeHasBeenSet(false)
 {
 }
 
@@ -42,6 +43,19 @@ string DescribeDspmStatisticsRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_memberId.begin(); itr != m_memberId.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_assetTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_assetType.begin(); itr != m_assetType.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -69,6 +83,22 @@ void DescribeDspmStatisticsRequest::SetMemberId(const vector<string>& _memberId)
 bool DescribeDspmStatisticsRequest::MemberIdHasBeenSet() const
 {
     return m_memberIdHasBeenSet;
+}
+
+vector<string> DescribeDspmStatisticsRequest::GetAssetType() const
+{
+    return m_assetType;
+}
+
+void DescribeDspmStatisticsRequest::SetAssetType(const vector<string>& _assetType)
+{
+    m_assetType = _assetType;
+    m_assetTypeHasBeenSet = true;
+}
+
+bool DescribeDspmStatisticsRequest::AssetTypeHasBeenSet() const
+{
+    return m_assetTypeHasBeenSet;
 }
 
 

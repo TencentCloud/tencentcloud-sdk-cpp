@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取接口返回信息
-                     * @return ReturnMsg 接口返回信息
+                     * 获取<p>接口返回信息</p>
+                     * @return ReturnMsg <p>接口返回信息</p>
                      * 
                      */
                     std::string GetReturnMsg() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool ReturnMsgHasBeenSet() const;
 
                     /**
-                     * 获取接口返回错误码，0请求成功  非0失败
-                     * @return ReturnCode 接口返回错误码，0请求成功  非0失败
+                     * 获取<p>接口返回错误码，0请求成功  非0失败</p>
+                     * @return ReturnCode <p>接口返回错误码，0请求成功  非0失败</p>
                      * 
                      */
                     uint64_t GetReturnCode() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 接口返回信息
+                     * <p>接口返回信息</p>
                      */
                     std::string m_returnMsg;
                     bool m_returnMsgHasBeenSet;
 
                     /**
-                     * 接口返回错误码，0请求成功  非0失败
+                     * <p>接口返回错误码，0请求成功  非0失败</p>
                      */
                     uint64_t m_returnCode;
                     bool m_returnCodeHasBeenSet;

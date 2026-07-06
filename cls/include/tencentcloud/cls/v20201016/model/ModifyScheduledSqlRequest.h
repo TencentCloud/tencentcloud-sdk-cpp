@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务ID，通过[获取定时SQL分析任务列表](https://cloud.tencent.com/document/product/614/95519)获取
-                     * @return TaskId 任务ID，通过[获取定时SQL分析任务列表](https://cloud.tencent.com/document/product/614/95519)获取
+                     * 获取<p>任务ID，通过<a href="https://cloud.tencent.com/document/product/614/95519">获取定时SQL分析任务列表</a>获取</p>
+                     * @return TaskId <p>任务ID，通过<a href="https://cloud.tencent.com/document/product/614/95519">获取定时SQL分析任务列表</a>获取</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务ID，通过[获取定时SQL分析任务列表](https://cloud.tencent.com/document/product/614/95519)获取
-                     * @param _taskId 任务ID，通过[获取定时SQL分析任务列表](https://cloud.tencent.com/document/product/614/95519)获取
+                     * 设置<p>任务ID，通过<a href="https://cloud.tencent.com/document/product/614/95519">获取定时SQL分析任务列表</a>获取</p>
+                     * @param _taskId <p>任务ID，通过<a href="https://cloud.tencent.com/document/product/614/95519">获取定时SQL分析任务列表</a>获取</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取源日志主题，通过[获取定时SQL分析任务列表](https://cloud.tencent.com/document/product/614/95519)获取
-                     * @return SrcTopicId 源日志主题，通过[获取定时SQL分析任务列表](https://cloud.tencent.com/document/product/614/95519)获取
+                     * 获取<p>源日志主题，通过<a href="https://cloud.tencent.com/document/product/614/95519">获取定时SQL分析任务列表</a>获取</p>
+                     * @return SrcTopicId <p>源日志主题，通过<a href="https://cloud.tencent.com/document/product/614/95519">获取定时SQL分析任务列表</a>获取</p>
                      * 
                      */
                     std::string GetSrcTopicId() const;
 
                     /**
-                     * 设置源日志主题，通过[获取定时SQL分析任务列表](https://cloud.tencent.com/document/product/614/95519)获取
-                     * @param _srcTopicId 源日志主题，通过[获取定时SQL分析任务列表](https://cloud.tencent.com/document/product/614/95519)获取
+                     * 设置<p>源日志主题，通过<a href="https://cloud.tencent.com/document/product/614/95519">获取定时SQL分析任务列表</a>获取</p>
+                     * @param _srcTopicId <p>源日志主题，通过<a href="https://cloud.tencent.com/document/product/614/95519">获取定时SQL分析任务列表</a>获取</p>
                      * 
                      */
                     void SetSrcTopicId(const std::string& _srcTopicId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool SrcTopicIdHasBeenSet() const;
 
                     /**
-                     * 获取任务启动状态.   1开启,  2关闭
-                     * @return EnableFlag 任务启动状态.   1开启,  2关闭
+                     * 获取<p>任务启动状态.   1开启,  2关闭</p>
+                     * @return EnableFlag <p>任务启动状态.   1开启,  2关闭</p>
                      * 
                      */
                     int64_t GetEnableFlag() const;
 
                     /**
-                     * 设置任务启动状态.   1开启,  2关闭
-                     * @param _enableFlag 任务启动状态.   1开启,  2关闭
+                     * 设置<p>任务启动状态.   1开启,  2关闭</p>
+                     * @param _enableFlag <p>任务启动状态.   1开启,  2关闭</p>
                      * 
                      */
                     void SetEnableFlag(const int64_t& _enableFlag);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool EnableFlagHasBeenSet() const;
 
                     /**
-                     * 获取定时SQL分析的目标日志主题
-                     * @return DstResource 定时SQL分析的目标日志主题
+                     * 获取<p>定时SQL分析的目标日志主题</p>
+                     * @return DstResource <p>定时SQL分析的目标日志主题</p>
                      * 
                      */
                     ScheduledSqlResouceInfo GetDstResource() const;
 
                     /**
-                     * 设置定时SQL分析的目标日志主题
-                     * @param _dstResource 定时SQL分析的目标日志主题
+                     * 设置<p>定时SQL分析的目标日志主题</p>
+                     * @param _dstResource <p>定时SQL分析的目标日志主题</p>
                      * 
                      */
                     void SetDstResource(const ScheduledSqlResouceInfo& _dstResource);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool DstResourceHasBeenSet() const;
 
                     /**
-                     * 获取查询语句
-                     * @return ScheduledSqlContent 查询语句
+                     * 获取<p>查询语句</p>
+                     * @return ScheduledSqlContent <p>查询语句</p>
                      * 
                      */
                     std::string GetScheduledSqlContent() const;
 
                     /**
-                     * 设置查询语句
-                     * @param _scheduledSqlContent 查询语句
+                     * 设置<p>查询语句</p>
+                     * @param _scheduledSqlContent <p>查询语句</p>
                      * 
                      */
                     void SetScheduledSqlContent(const std::string& _scheduledSqlContent);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool ScheduledSqlContentHasBeenSet() const;
 
                     /**
-                     * 获取调度周期(分钟)，1~1440分钟
-                     * @return ProcessPeriod 调度周期(分钟)，1~1440分钟
+                     * 获取<p>调度周期(分钟)，1~1440分钟</p>
+                     * @return ProcessPeriod <p>调度周期(分钟)，1~1440分钟</p>
                      * 
                      */
                     int64_t GetProcessPeriod() const;
 
                     /**
-                     * 设置调度周期(分钟)，1~1440分钟
-                     * @param _processPeriod 调度周期(分钟)，1~1440分钟
+                     * 设置<p>调度周期(分钟)，1~1440分钟</p>
+                     * @param _processPeriod <p>调度周期(分钟)，1~1440分钟</p>
                      * 
                      */
                     void SetProcessPeriod(const int64_t& _processPeriod);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool ProcessPeriodHasBeenSet() const;
 
                     /**
-                     * 获取单次查询的时间窗口. 例子中为近15分钟
-                     * @return ProcessTimeWindow 单次查询的时间窗口. 例子中为近15分钟
+                     * 获取<p>单次查询的时间窗口. 例子中为近15分钟</p>
+                     * @return ProcessTimeWindow <p>单次查询的时间窗口. 例子中为近15分钟</p>
                      * 
                      */
                     std::string GetProcessTimeWindow() const;
 
                     /**
-                     * 设置单次查询的时间窗口. 例子中为近15分钟
-                     * @param _processTimeWindow 单次查询的时间窗口. 例子中为近15分钟
+                     * 设置<p>单次查询的时间窗口. 例子中为近15分钟</p>
+                     * @param _processTimeWindow <p>单次查询的时间窗口. 例子中为近15分钟</p>
                      * 
                      */
                     void SetProcessTimeWindow(const std::string& _processTimeWindow);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool ProcessTimeWindowHasBeenSet() const;
 
                     /**
-                     * 获取执行延迟(秒)，0~120秒，默认60秒
-                     * @return ProcessDelay 执行延迟(秒)，0~120秒，默认60秒
+                     * 获取<p>执行延迟(秒)，0~120秒，默认60秒</p>
+                     * @return ProcessDelay <p>执行延迟(秒)，0~120秒，默认60秒</p>
                      * 
                      */
                     int64_t GetProcessDelay() const;
 
                     /**
-                     * 设置执行延迟(秒)，0~120秒，默认60秒
-                     * @param _processDelay 执行延迟(秒)，0~120秒，默认60秒
+                     * 设置<p>执行延迟(秒)，0~120秒，默认60秒</p>
+                     * @param _processDelay <p>执行延迟(秒)，0~120秒，默认60秒</p>
                      * 
                      */
                     void SetProcessDelay(const int64_t& _processDelay);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool ProcessDelayHasBeenSet() const;
 
                     /**
-                     * 获取源topicId的地域信息,支持地域见 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档
-                     * @return SrcTopicRegion 源topicId的地域信息,支持地域见 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档
+                     * 获取<p>源topicId的地域信息,支持地域见 <a href="https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8">地域列表</a> 文档</p>
+                     * @return SrcTopicRegion <p>源topicId的地域信息,支持地域见 <a href="https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8">地域列表</a> 文档</p>
                      * 
                      */
                     std::string GetSrcTopicRegion() const;
 
                     /**
-                     * 设置源topicId的地域信息,支持地域见 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档
-                     * @param _srcTopicRegion 源topicId的地域信息,支持地域见 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档
+                     * 设置<p>源topicId的地域信息,支持地域见 <a href="https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8">地域列表</a> 文档</p>
+                     * @param _srcTopicRegion <p>源topicId的地域信息,支持地域见 <a href="https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8">地域列表</a> 文档</p>
                      * 
                      */
                     void SetSrcTopicRegion(const std::string& _srcTopicRegion);
@@ -233,15 +233,15 @@ namespace TencentCloud
                     bool SrcTopicRegionHasBeenSet() const;
 
                     /**
-                     * 获取任务名称，0~255字符
-                     * @return Name 任务名称，0~255字符
+                     * 获取<p>任务名称，0~255字符</p>
+                     * @return Name <p>任务名称，0~255字符</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置任务名称，0~255字符
-                     * @param _name 任务名称，0~255字符
+                     * 设置<p>任务名称，0~255字符</p>
+                     * @param _name <p>任务名称，0~255字符</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -254,15 +254,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取语法规则。 默认值为0。 0：Lucene语法，1：CQL语法
-                     * @return SyntaxRule 语法规则。 默认值为0。 0：Lucene语法，1：CQL语法
+                     * 获取<p>语法规则。 默认值为0。 0：Lucene语法，1：CQL语法</p>
+                     * @return SyntaxRule <p>语法规则。 默认值为0。 0：Lucene语法，1：CQL语法</p>
                      * 
                      */
                     uint64_t GetSyntaxRule() const;
 
                     /**
-                     * 设置语法规则。 默认值为0。 0：Lucene语法，1：CQL语法
-                     * @param _syntaxRule 语法规则。 默认值为0。 0：Lucene语法，1：CQL语法
+                     * 设置<p>语法规则。 默认值为0。 0：Lucene语法，1：CQL语法</p>
+                     * @param _syntaxRule <p>语法规则。 默认值为0。 0：Lucene语法，1：CQL语法</p>
                      * 
                      */
                     void SetSyntaxRule(const uint64_t& _syntaxRule);
@@ -274,73 +274,127 @@ namespace TencentCloud
                      */
                     bool SyntaxRuleHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启投递服务日志。1：关闭，2：开启。</p>
+                     * @return HasServicesLog <p>是否开启投递服务日志。1：关闭，2：开启。</p>
+                     * 
+                     */
+                    uint64_t GetHasServicesLog() const;
+
+                    /**
+                     * 设置<p>是否开启投递服务日志。1：关闭，2：开启。</p>
+                     * @param _hasServicesLog <p>是否开启投递服务日志。1：关闭，2：开启。</p>
+                     * 
+                     */
+                    void SetHasServicesLog(const uint64_t& _hasServicesLog);
+
+                    /**
+                     * 判断参数 HasServicesLog 是否已赋值
+                     * @return HasServicesLog 是否已赋值
+                     * 
+                     */
+                    bool HasServicesLogHasBeenSet() const;
+
+                    /**
+                     * 获取<p>全文检索查询标记。1：关闭，2：打开。</p>
+                     * @return FullQuery <p>全文检索查询标记。1：关闭，2：打开。</p>
+                     * 
+                     */
+                    uint64_t GetFullQuery() const;
+
+                    /**
+                     * 设置<p>全文检索查询标记。1：关闭，2：打开。</p>
+                     * @param _fullQuery <p>全文检索查询标记。1：关闭，2：打开。</p>
+                     * 
+                     */
+                    void SetFullQuery(const uint64_t& _fullQuery);
+
+                    /**
+                     * 判断参数 FullQuery 是否已赋值
+                     * @return FullQuery 是否已赋值
+                     * 
+                     */
+                    bool FullQueryHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务ID，通过[获取定时SQL分析任务列表](https://cloud.tencent.com/document/product/614/95519)获取
+                     * <p>任务ID，通过<a href="https://cloud.tencent.com/document/product/614/95519">获取定时SQL分析任务列表</a>获取</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 源日志主题，通过[获取定时SQL分析任务列表](https://cloud.tencent.com/document/product/614/95519)获取
+                     * <p>源日志主题，通过<a href="https://cloud.tencent.com/document/product/614/95519">获取定时SQL分析任务列表</a>获取</p>
                      */
                     std::string m_srcTopicId;
                     bool m_srcTopicIdHasBeenSet;
 
                     /**
-                     * 任务启动状态.   1开启,  2关闭
+                     * <p>任务启动状态.   1开启,  2关闭</p>
                      */
                     int64_t m_enableFlag;
                     bool m_enableFlagHasBeenSet;
 
                     /**
-                     * 定时SQL分析的目标日志主题
+                     * <p>定时SQL分析的目标日志主题</p>
                      */
                     ScheduledSqlResouceInfo m_dstResource;
                     bool m_dstResourceHasBeenSet;
 
                     /**
-                     * 查询语句
+                     * <p>查询语句</p>
                      */
                     std::string m_scheduledSqlContent;
                     bool m_scheduledSqlContentHasBeenSet;
 
                     /**
-                     * 调度周期(分钟)，1~1440分钟
+                     * <p>调度周期(分钟)，1~1440分钟</p>
                      */
                     int64_t m_processPeriod;
                     bool m_processPeriodHasBeenSet;
 
                     /**
-                     * 单次查询的时间窗口. 例子中为近15分钟
+                     * <p>单次查询的时间窗口. 例子中为近15分钟</p>
                      */
                     std::string m_processTimeWindow;
                     bool m_processTimeWindowHasBeenSet;
 
                     /**
-                     * 执行延迟(秒)，0~120秒，默认60秒
+                     * <p>执行延迟(秒)，0~120秒，默认60秒</p>
                      */
                     int64_t m_processDelay;
                     bool m_processDelayHasBeenSet;
 
                     /**
-                     * 源topicId的地域信息,支持地域见 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档
+                     * <p>源topicId的地域信息,支持地域见 <a href="https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8">地域列表</a> 文档</p>
                      */
                     std::string m_srcTopicRegion;
                     bool m_srcTopicRegionHasBeenSet;
 
                     /**
-                     * 任务名称，0~255字符
+                     * <p>任务名称，0~255字符</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 语法规则。 默认值为0。 0：Lucene语法，1：CQL语法
+                     * <p>语法规则。 默认值为0。 0：Lucene语法，1：CQL语法</p>
                      */
                     uint64_t m_syntaxRule;
                     bool m_syntaxRuleHasBeenSet;
+
+                    /**
+                     * <p>是否开启投递服务日志。1：关闭，2：开启。</p>
+                     */
+                    uint64_t m_hasServicesLog;
+                    bool m_hasServicesLogHasBeenSet;
+
+                    /**
+                     * <p>全文检索查询标记。1：关闭，2：打开。</p>
+                     */
+                    uint64_t m_fullQuery;
+                    bool m_fullQueryHasBeenSet;
 
                 };
             }

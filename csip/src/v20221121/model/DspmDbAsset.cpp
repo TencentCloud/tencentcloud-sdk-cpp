@@ -54,6 +54,7 @@ DspmDbAsset::DspmDbAsset() :
     m_operationErrorMsgHasBeenSet(false),
     m_accountOptSupportedHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
+    m_clusterTypeHasBeenSet(false),
     m_identifyScanSupportedHasBeenSet(false)
 {
 }
@@ -417,6 +418,16 @@ CoreInternalOutcome DspmDbAsset::Deserialize(const rapidjson::Value &value)
         m_instanceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterType") && !value["ClusterType"].IsNull())
+    {
+        if (!value["ClusterType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspmDbAsset.ClusterType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterType = value["ClusterType"].GetInt64();
+        m_clusterTypeHasBeenSet = true;
+    }
+
     if (value.HasMember("IdentifyScanSupported") && !value["IdentifyScanSupported"].IsNull())
     {
         if (!value["IdentifyScanSupported"].IsInt64())
@@ -705,6 +716,14 @@ void DspmDbAsset::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "InstanceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceType, allocator);
+    }
+
+    if (m_clusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clusterType, allocator);
     }
 
     if (m_identifyScanSupportedHasBeenSet)
@@ -1244,6 +1263,22 @@ void DspmDbAsset::SetInstanceType(const int64_t& _instanceType)
 bool DspmDbAsset::InstanceTypeHasBeenSet() const
 {
     return m_instanceTypeHasBeenSet;
+}
+
+int64_t DspmDbAsset::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void DspmDbAsset::SetClusterType(const int64_t& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool DspmDbAsset::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
 }
 
 int64_t DspmDbAsset::GetIdentifyScanSupported() const

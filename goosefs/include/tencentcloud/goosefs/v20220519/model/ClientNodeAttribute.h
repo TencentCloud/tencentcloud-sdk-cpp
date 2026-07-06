@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取客户端节点IP
-                     * @return ClientNodeIp 客户端节点IP
+                     * 获取<p>客户端节点IP</p>
+                     * @return ClientNodeIp <p>客户端节点IP</p>
                      * 
                      */
                     std::string GetClientNodeIp() const;
 
                     /**
-                     * 设置客户端节点IP
-                     * @param _clientNodeIp 客户端节点IP
+                     * 设置<p>客户端节点IP</p>
+                     * @param _clientNodeIp <p>客户端节点IP</p>
                      * 
                      */
                     void SetClientNodeIp(const std::string& _clientNodeIp);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ClientNodeIpHasBeenSet() const;
 
                     /**
-                     * 获取客户端节点服务状态, Active(运行中), Adding(添加中), Destroying(销毁中), Down(已停止)
-                     * @return Status 客户端节点服务状态, Active(运行中), Adding(添加中), Destroying(销毁中), Down(已停止)
+                     * 获取<p>客户端节点服务状态, Active(运行中), Adding(添加中), Destroying(销毁中), Down(已停止)</p>
+                     * @return Status <p>客户端节点服务状态, Active(运行中), Adding(添加中), Destroying(销毁中), Down(已停止)</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置客户端节点服务状态, Active(运行中), Adding(添加中), Destroying(销毁中), Down(已停止)
-                     * @param _status 客户端节点服务状态, Active(运行中), Adding(添加中), Destroying(销毁中), Down(已停止)
+                     * 设置<p>客户端节点服务状态, Active(运行中), Adding(添加中), Destroying(销毁中), Down(已停止)</p>
+                     * @param _status <p>客户端节点服务状态, Active(运行中), Adding(添加中), Destroying(销毁中), Down(已停止)</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取客户端节点类型，extend(扩展节点)，manager(管理节点)
-                     * @return ClientType 客户端节点类型，extend(扩展节点)，manager(管理节点)
+                     * 获取<p>客户端节点类型，extend(扩展节点)，manager(管理节点)</p>
+                     * @return ClientType <p>客户端节点类型，extend(扩展节点)，manager(管理节点)</p>
                      * 
                      */
                     std::string GetClientType() const;
 
                     /**
-                     * 设置客户端节点类型，extend(扩展节点)，manager(管理节点)
-                     * @param _clientType 客户端节点类型，extend(扩展节点)，manager(管理节点)
+                     * 设置<p>客户端节点类型，extend(扩展节点)，manager(管理节点)</p>
+                     * @param _clientType <p>客户端节点类型，extend(扩展节点)，manager(管理节点)</p>
                      * 
                      */
                     void SetClientType(const std::string& _clientType);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ClientTypeHasBeenSet() const;
 
                     /**
-                     * 获取节点所属vpcid	
-                     * @return VpcId 节点所属vpcid	
+                     * 获取<p>节点所属vpcid</p>
+                     * @return VpcId <p>节点所属vpcid</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置节点所属vpcid	
-                     * @param _vpcId 节点所属vpcid	
+                     * 设置<p>节点所属vpcid</p>
+                     * @param _vpcId <p>节点所属vpcid</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取节点所属子网id
-                     * @return SubnetId 节点所属子网id
+                     * 获取<p>节点所属子网id</p>
+                     * @return SubnetId <p>节点所属子网id</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置节点所属子网id
-                     * @param _subnetId 节点所属子网id
+                     * 设置<p>节点所属子网id</p>
+                     * @param _subnetId <p>节点所属子网id</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取cvmId
-                     * @return InstanceId cvmId
+                     * 获取<p>cvmId</p>
+                     * @return InstanceId <p>cvmId</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置cvmId
-                     * @param _instanceId cvmId
+                     * 设置<p>cvmId</p>
+                     * @param _instanceId <p>cvmId</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取自定义挂载点
-                     * @return MountPoint 自定义挂载点
+                     * 获取<p>自定义挂载点</p>
+                     * @return MountPoint <p>自定义挂载点</p>
                      * 
                      */
                     std::string GetMountPoint() const;
 
                     /**
-                     * 设置自定义挂载点
-                     * @param _mountPoint 自定义挂载点
+                     * 设置<p>自定义挂载点</p>
+                     * @param _mountPoint <p>自定义挂载点</p>
                      * 
                      */
                     void SetMountPoint(const std::string& _mountPoint);
@@ -193,49 +193,76 @@ namespace TencentCloud
                      */
                     bool MountPointHasBeenSet() const;
 
+                    /**
+                     * 获取<p>客户端集群id</p>
+                     * @return ClusterId <p>客户端集群id</p>
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置<p>客户端集群id</p>
+                     * @param _clusterId <p>客户端集群id</p>
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 客户端节点IP
+                     * <p>客户端节点IP</p>
                      */
                     std::string m_clientNodeIp;
                     bool m_clientNodeIpHasBeenSet;
 
                     /**
-                     * 客户端节点服务状态, Active(运行中), Adding(添加中), Destroying(销毁中), Down(已停止)
+                     * <p>客户端节点服务状态, Active(运行中), Adding(添加中), Destroying(销毁中), Down(已停止)</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 客户端节点类型，extend(扩展节点)，manager(管理节点)
+                     * <p>客户端节点类型，extend(扩展节点)，manager(管理节点)</p>
                      */
                     std::string m_clientType;
                     bool m_clientTypeHasBeenSet;
 
                     /**
-                     * 节点所属vpcid	
+                     * <p>节点所属vpcid</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 节点所属子网id
+                     * <p>节点所属子网id</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * cvmId
+                     * <p>cvmId</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 自定义挂载点
+                     * <p>自定义挂载点</p>
                      */
                     std::string m_mountPoint;
                     bool m_mountPointHasBeenSet;
+
+                    /**
+                     * <p>客户端集群id</p>
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                 };
             }

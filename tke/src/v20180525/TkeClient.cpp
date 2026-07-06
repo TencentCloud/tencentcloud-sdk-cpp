@@ -12590,6 +12590,56 @@ TkeClient::RollbackClusterReleaseOutcomeCallable TkeClient::RollbackClusterRelea
     return prom->get_future();
 }
 
+TkeClient::RotateClusterTokenOutcome TkeClient::RotateClusterToken(const RotateClusterTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "RotateClusterToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RotateClusterTokenResponse rsp = RotateClusterTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RotateClusterTokenOutcome(rsp);
+        else
+            return RotateClusterTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return RotateClusterTokenOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::RotateClusterTokenAsync(const RotateClusterTokenRequest& request, const RotateClusterTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RotateClusterTokenRequest&;
+    using Resp = RotateClusterTokenResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RotateClusterToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::RotateClusterTokenOutcomeCallable TkeClient::RotateClusterTokenCallable(const RotateClusterTokenRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RotateClusterTokenOutcome>>();
+    RotateClusterTokenAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const RotateClusterTokenRequest&,
+        RotateClusterTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TkeClient::RunPrometheusInstanceOutcome TkeClient::RunPrometheusInstance(const RunPrometheusInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "RunPrometheusInstance");

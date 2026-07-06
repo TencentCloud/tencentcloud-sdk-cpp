@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败
-                     * @return Status 识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败
+                     * 获取<p>识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败</p>
+                     * @return Status <p>识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败</p>
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败
-                     * @param _status 识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败
+                     * 设置<p>识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败</p>
+                     * @param _status <p>识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败</p>
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败
-                     * @return StatusInfo 识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败
+                     * 获取<p>识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败</p>
+                     * @return StatusInfo <p>识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败</p>
                      * 
                      */
                     std::string GetStatusInfo() const;
 
                     /**
-                     * 设置识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败
-                     * @param _statusInfo 识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败
+                     * 设置<p>识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败</p>
+                     * @param _statusInfo <p>识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败</p>
                      * 
                      */
                     void SetStatusInfo(const std::string& _statusInfo);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool StatusInfoHasBeenSet() const;
 
                     /**
-                     * 获取识别进度
-                     * @return Progress 识别进度
+                     * 获取<p>识别进度</p>
+                     * @return Progress <p>识别进度</p>
                      * 
                      */
                     double GetProgress() const;
 
                     /**
-                     * 设置识别进度
-                     * @param _progress 识别进度
+                     * 设置<p>识别进度</p>
+                     * @param _progress <p>识别进度</p>
                      * 
                      */
                     void SetProgress(const double& _progress);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool ProgressHasBeenSet() const;
 
                     /**
-                     * 获取最近扫描时间
-                     * @return LatestScanTime 最近扫描时间
+                     * 获取<p>最近扫描时间</p>
+                     * @return LatestScanTime <p>最近扫描时间</p>
                      * 
                      */
                     std::string GetLatestScanTime() const;
 
                     /**
-                     * 设置最近扫描时间
-                     * @param _latestScanTime 最近扫描时间
+                     * 设置<p>最近扫描时间</p>
+                     * @param _latestScanTime <p>最近扫描时间</p>
                      * 
                      */
                     void SetLatestScanTime(const std::string& _latestScanTime);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool LatestScanTimeHasBeenSet() const;
 
                     /**
-                     * 获取识别失败信息
-                     * @return ErrorInfo 识别失败信息
+                     * 获取<p>识别失败信息</p>
+                     * @return ErrorInfo <p>识别失败信息</p>
                      * 
                      */
                     std::string GetErrorInfo() const;
 
                     /**
-                     * 设置识别失败信息
-                     * @param _errorInfo 识别失败信息
+                     * 设置<p>识别失败信息</p>
+                     * @param _errorInfo <p>识别失败信息</p>
                      * 
                      */
                     void SetErrorInfo(const std::string& _errorInfo);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool ErrorInfoHasBeenSet() const;
 
                     /**
-                     * 获取数据库数量
-                     * @return DbCount 数据库数量
+                     * 获取<p>数据库数量</p>
+                     * @return DbCount <p>数据库数量</p>
                      * 
                      */
                     uint64_t GetDbCount() const;
 
                     /**
-                     * 设置数据库数量
-                     * @param _dbCount 数据库数量
+                     * 设置<p>数据库数量</p>
+                     * @param _dbCount <p>数据库数量</p>
                      * 
                      */
                     void SetDbCount(const uint64_t& _dbCount);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool DbCountHasBeenSet() const;
 
                     /**
-                     * 获取分类id集合
-                     * @return CategoryIds 分类id集合
+                     * 获取<p>分类id集合</p>
+                     * @return CategoryIds <p>分类id集合</p>
                      * 
                      */
                     std::vector<uint64_t> GetCategoryIds() const;
 
                     /**
-                     * 设置分类id集合
-                     * @param _categoryIds 分类id集合
+                     * 设置<p>分类id集合</p>
+                     * @param _categoryIds <p>分类id集合</p>
                      * 
                      */
                     void SetCategoryIds(const std::vector<uint64_t>& _categoryIds);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool CategoryIdsHasBeenSet() const;
 
                     /**
-                     * 获取分类名称集合
-                     * @return CategoryNames 分类名称集合
+                     * 获取<p>分类名称集合</p>
+                     * @return CategoryNames <p>分类名称集合</p>
                      * 
                      */
                     std::vector<std::string> GetCategoryNames() const;
 
                     /**
-                     * 设置分类名称集合
-                     * @param _categoryNames 分类名称集合
+                     * 设置<p>分类名称集合</p>
+                     * @param _categoryNames <p>分类名称集合</p>
                      * 
                      */
                     void SetCategoryNames(const std::vector<std::string>& _categoryNames);
@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool CategoryNamesHasBeenSet() const;
 
                     /**
-                     * 获取扫描任务配置
-                     * @return TaskConfig 扫描任务配置
+                     * 获取<p>扫描任务配置</p>
+                     * @return TaskConfig <p>扫描任务配置</p>
                      * 
                      */
                     DspmSensitiveScanTaskConfig GetTaskConfig() const;
 
                     /**
-                     * 设置扫描任务配置
-                     * @param _taskConfig 扫描任务配置
+                     * 设置<p>扫描任务配置</p>
+                     * @param _taskConfig <p>扫描任务配置</p>
                      * 
                      */
                     void SetTaskConfig(const DspmSensitiveScanTaskConfig& _taskConfig);
@@ -238,15 +238,15 @@ namespace TencentCloud
                     bool TaskConfigHasBeenSet() const;
 
                     /**
-                     * 获取识别结果分类详情
-                     * @return CategoryDetails 识别结果分类详情
+                     * 获取<p>识别结果分类详情</p>
+                     * @return CategoryDetails <p>识别结果分类详情</p>
                      * 
                      */
                     std::vector<DspmIdentifyCategoryDetail> GetCategoryDetails() const;
 
                     /**
-                     * 设置识别结果分类详情
-                     * @param _categoryDetails 识别结果分类详情
+                     * 设置<p>识别结果分类详情</p>
+                     * @param _categoryDetails <p>识别结果分类详情</p>
                      * 
                      */
                     void SetCategoryDetails(const std::vector<DspmIdentifyCategoryDetail>& _categoryDetails);
@@ -258,67 +258,94 @@ namespace TencentCloud
                      */
                     bool CategoryDetailsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>任务ID</p>
+                     * @return TaskId <p>任务ID</p>
+                     * 
+                     */
+                    uint64_t GetTaskId() const;
+
+                    /**
+                     * 设置<p>任务ID</p>
+                     * @param _taskId <p>任务ID</p>
+                     * 
+                     */
+                    void SetTaskId(const uint64_t& _taskId);
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     * 
+                     */
+                    bool TaskIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败
+                     * <p>识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败
+                     * <p>识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败</p>
                      */
                     std::string m_statusInfo;
                     bool m_statusInfoHasBeenSet;
 
                     /**
-                     * 识别进度
+                     * <p>识别进度</p>
                      */
                     double m_progress;
                     bool m_progressHasBeenSet;
 
                     /**
-                     * 最近扫描时间
+                     * <p>最近扫描时间</p>
                      */
                     std::string m_latestScanTime;
                     bool m_latestScanTimeHasBeenSet;
 
                     /**
-                     * 识别失败信息
+                     * <p>识别失败信息</p>
                      */
                     std::string m_errorInfo;
                     bool m_errorInfoHasBeenSet;
 
                     /**
-                     * 数据库数量
+                     * <p>数据库数量</p>
                      */
                     uint64_t m_dbCount;
                     bool m_dbCountHasBeenSet;
 
                     /**
-                     * 分类id集合
+                     * <p>分类id集合</p>
                      */
                     std::vector<uint64_t> m_categoryIds;
                     bool m_categoryIdsHasBeenSet;
 
                     /**
-                     * 分类名称集合
+                     * <p>分类名称集合</p>
                      */
                     std::vector<std::string> m_categoryNames;
                     bool m_categoryNamesHasBeenSet;
 
                     /**
-                     * 扫描任务配置
+                     * <p>扫描任务配置</p>
                      */
                     DspmSensitiveScanTaskConfig m_taskConfig;
                     bool m_taskConfigHasBeenSet;
 
                     /**
-                     * 识别结果分类详情
+                     * <p>识别结果分类详情</p>
                      */
                     std::vector<DspmIdentifyCategoryDetail> m_categoryDetails;
                     bool m_categoryDetailsHasBeenSet;
+
+                    /**
+                     * <p>任务ID</p>
+                     */
+                    uint64_t m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }

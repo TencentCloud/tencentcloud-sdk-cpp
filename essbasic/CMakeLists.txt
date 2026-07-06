@@ -46,12 +46,14 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelCancelFlowResponse.h
   include/tencentcloud/essbasic/v20210526/model/ModifyExtendedServiceRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsRequest.h
+  include/tencentcloud/essbasic/v20210526/model/CreateFileConvertTaskRequest.h
   include/tencentcloud/essbasic/v20210526/model/IntentionQuestionResult.h
   include/tencentcloud/essbasic/v20210526/model/AuthInfoDetail.h
   include/tencentcloud/essbasic/v20210526/model/CreateChannelOrganizationInfoChangeUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/RemindFlowRecords.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/HasAuthUser.h
+  include/tencentcloud/essbasic/v20210526/model/DescribeFileConvertTaskResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateBatchSignUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreatePrepareFlowResponse.h
   include/tencentcloud/essbasic/v20210526/model/CreateBatchInitOrganizationUrlResponse.h
@@ -90,6 +92,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/FlowApproverDetail.h
   include/tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByFilesRequest.h
+  include/tencentcloud/essbasic/v20210526/model/DescribeFileConvertTaskRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateOrganizationModifyQrCodeRequest.h
   include/tencentcloud/essbasic/v20210526/model/CreateChannelSubOrganizationActiveRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelRenewAutoSignLicenseResponse.h
@@ -306,6 +309,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeBillUsageDetailRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowRemindsRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeExtendedServiceAuthInfoResponse.h
+  include/tencentcloud/essbasic/v20210526/model/CreateFileConvertTaskResponse.h
   include/tencentcloud/essbasic/v20210526/model/OrganizationInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateEmbedWebUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/CcInfo.h
@@ -468,12 +472,14 @@ set(essbasic_src
   src/v20210526/model/ChannelCancelFlowResponse.cpp
   src/v20210526/model/ModifyExtendedServiceRequest.cpp
   src/v20210526/model/DescribeResourceUrlsByFlowsRequest.cpp
+  src/v20210526/model/CreateFileConvertTaskRequest.cpp
   src/v20210526/model/IntentionQuestionResult.cpp
   src/v20210526/model/AuthInfoDetail.cpp
   src/v20210526/model/CreateChannelOrganizationInfoChangeUrlResponse.cpp
   src/v20210526/model/RemindFlowRecords.cpp
   src/v20210526/model/ChannelCreateFlowSignUrlResponse.cpp
   src/v20210526/model/HasAuthUser.cpp
+  src/v20210526/model/DescribeFileConvertTaskResponse.cpp
   src/v20210526/model/ChannelCreateBatchSignUrlResponse.cpp
   src/v20210526/model/ChannelCreatePrepareFlowResponse.cpp
   src/v20210526/model/CreateBatchInitOrganizationUrlResponse.cpp
@@ -512,6 +518,7 @@ set(essbasic_src
   src/v20210526/model/FlowApproverDetail.cpp
   src/v20210526/model/DescribeResourceUrlsByFlowsResponse.cpp
   src/v20210526/model/ChannelCreateFlowGroupByFilesRequest.cpp
+  src/v20210526/model/DescribeFileConvertTaskRequest.cpp
   src/v20210526/model/ChannelCreateOrganizationModifyQrCodeRequest.cpp
   src/v20210526/model/CreateChannelSubOrganizationActiveRequest.cpp
   src/v20210526/model/ChannelRenewAutoSignLicenseResponse.cpp
@@ -728,6 +735,7 @@ set(essbasic_src
   src/v20210526/model/ChannelDescribeBillUsageDetailRequest.cpp
   src/v20210526/model/ChannelCreateFlowRemindsRequest.cpp
   src/v20210526/model/DescribeExtendedServiceAuthInfoResponse.cpp
+  src/v20210526/model/CreateFileConvertTaskResponse.cpp
   src/v20210526/model/OrganizationInfo.cpp
   src/v20210526/model/ChannelCreateEmbedWebUrlRequest.cpp
   src/v20210526/model/CcInfo.cpp

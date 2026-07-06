@@ -24,6 +24,7 @@ using namespace std;
 
 DescribeDspmDictionaryListRequest::DescribeDspmDictionaryListRequest() :
     m_dictTypeHasBeenSet(false),
+    m_memberIdHasBeenSet(false),
     m_filtersHasBeenSet(false)
 {
 }
@@ -41,6 +42,19 @@ string DescribeDspmDictionaryListRequest::ToJsonString() const
         string key = "DictType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dictType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_memberIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_memberId.begin(); itr != m_memberId.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_filtersHasBeenSet)
@@ -80,6 +94,22 @@ void DescribeDspmDictionaryListRequest::SetDictType(const string& _dictType)
 bool DescribeDspmDictionaryListRequest::DictTypeHasBeenSet() const
 {
     return m_dictTypeHasBeenSet;
+}
+
+vector<string> DescribeDspmDictionaryListRequest::GetMemberId() const
+{
+    return m_memberId;
+}
+
+void DescribeDspmDictionaryListRequest::SetMemberId(const vector<string>& _memberId)
+{
+    m_memberId = _memberId;
+    m_memberIdHasBeenSet = true;
+}
+
+bool DescribeDspmDictionaryListRequest::MemberIdHasBeenSet() const
+{
+    return m_memberIdHasBeenSet;
 }
 
 vector<WhereFilter> DescribeDspmDictionaryListRequest::GetFilters() const

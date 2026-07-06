@@ -23,7 +23,8 @@ using namespace TencentCloud::Tdai::V20250717::Model;
 using namespace std;
 
 RecoverMemoryPlusSpaceRequest::RecoverMemoryPlusSpaceRequest() :
-    m_spaceIdsHasBeenSet(false)
+    m_spaceIdsHasBeenSet(false),
+    m_payPeriodHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,14 @@ string RecoverMemoryPlusSpaceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_payPeriodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayPeriod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_payPeriod, allocator);
     }
 
 
@@ -69,6 +78,22 @@ void RecoverMemoryPlusSpaceRequest::SetSpaceIds(const vector<string>& _spaceIds)
 bool RecoverMemoryPlusSpaceRequest::SpaceIdsHasBeenSet() const
 {
     return m_spaceIdsHasBeenSet;
+}
+
+int64_t RecoverMemoryPlusSpaceRequest::GetPayPeriod() const
+{
+    return m_payPeriod;
+}
+
+void RecoverMemoryPlusSpaceRequest::SetPayPeriod(const int64_t& _payPeriod)
+{
+    m_payPeriod = _payPeriod;
+    m_payPeriodHasBeenSet = true;
+}
+
+bool RecoverMemoryPlusSpaceRequest::PayPeriodHasBeenSet() const
+{
+    return m_payPeriodHasBeenSet;
 }
 
 

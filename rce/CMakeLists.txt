@@ -21,10 +21,12 @@ set(rce_public_header
 
 set(rce_public_header_model
   include/tencentcloud/rce/v20250425/model/ManageIPPortraitRiskOutput.h
-  include/tencentcloud/rce/v20250425/model/ManageIPPortraitRiskInput.h
   include/tencentcloud/rce/v20250425/model/ManageIPPortraitRiskResponse.h
   include/tencentcloud/rce/v20250425/model/ManageIPPortraitRiskRequest.h
+  include/tencentcloud/rce/v20250425/model/IpLocationInfo.h
+  include/tencentcloud/rce/v20250425/model/ManageIPPortraitRiskInput.h
   include/tencentcloud/rce/v20250425/model/ManageIPPortraitRiskValueOutput.h
+  include/tencentcloud/rce/v20250425/model/IpNetworkInfo.h
   include/tencentcloud/rce/v20201103/model/DataContentInfo.h
   include/tencentcloud/rce/v20201103/model/OutputDescribeNameListFrontFix.h
   include/tencentcloud/rce/v20201103/model/DescribeNameListResponse.h
@@ -92,10 +94,12 @@ set(rce_src
   src/v20250425/RceClient.cpp
   src/v20201103/RceClient.cpp
   src/v20250425/model/ManageIPPortraitRiskOutput.cpp
-  src/v20250425/model/ManageIPPortraitRiskInput.cpp
   src/v20250425/model/ManageIPPortraitRiskResponse.cpp
   src/v20250425/model/ManageIPPortraitRiskRequest.cpp
+  src/v20250425/model/IpLocationInfo.cpp
+  src/v20250425/model/ManageIPPortraitRiskInput.cpp
   src/v20250425/model/ManageIPPortraitRiskValueOutput.cpp
+  src/v20250425/model/IpNetworkInfo.cpp
   src/v20201103/model/DataContentInfo.cpp
   src/v20201103/model/OutputDescribeNameListFrontFix.cpp
   src/v20201103/model/DescribeNameListResponse.cpp

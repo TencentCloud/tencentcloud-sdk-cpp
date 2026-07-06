@@ -525,6 +525,8 @@
 #include <tencentcloud/tke/v20180525/model/RestartEKSContainerInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/RollbackClusterReleaseRequest.h>
 #include <tencentcloud/tke/v20180525/model/RollbackClusterReleaseResponse.h>
+#include <tencentcloud/tke/v20180525/model/RotateClusterTokenRequest.h>
+#include <tencentcloud/tke/v20180525/model/RotateClusterTokenResponse.h>
 #include <tencentcloud/tke/v20180525/model/RunPrometheusInstanceRequest.h>
 #include <tencentcloud/tke/v20180525/model/RunPrometheusInstanceResponse.h>
 #include <tencentcloud/tke/v20180525/model/ScaleInClusterMasterRequest.h>
@@ -1332,6 +1334,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RollbackClusterReleaseResponse> RollbackClusterReleaseOutcome;
                 typedef std::future<RollbackClusterReleaseOutcome> RollbackClusterReleaseOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::RollbackClusterReleaseRequest&, RollbackClusterReleaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollbackClusterReleaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::RotateClusterTokenResponse> RotateClusterTokenOutcome;
+                typedef std::future<RotateClusterTokenOutcome> RotateClusterTokenOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::RotateClusterTokenRequest&, RotateClusterTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RotateClusterTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunPrometheusInstanceResponse> RunPrometheusInstanceOutcome;
                 typedef std::future<RunPrometheusInstanceOutcome> RunPrometheusInstanceOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::RunPrometheusInstanceRequest&, RunPrometheusInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunPrometheusInstanceAsyncHandler;
@@ -3661,6 +3666,15 @@ namespace TencentCloud
                 RollbackClusterReleaseOutcome RollbackClusterRelease(const Model::RollbackClusterReleaseRequest &request);
                 void RollbackClusterReleaseAsync(const Model::RollbackClusterReleaseRequest& request, const RollbackClusterReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RollbackClusterReleaseOutcomeCallable RollbackClusterReleaseCallable(const Model::RollbackClusterReleaseRequest& request);
+
+                /**
+                 *轮转集群的token
+                 * @param req RotateClusterTokenRequest
+                 * @return RotateClusterTokenOutcome
+                 */
+                RotateClusterTokenOutcome RotateClusterToken(const Model::RotateClusterTokenRequest &request);
+                void RotateClusterTokenAsync(const Model::RotateClusterTokenRequest& request, const RotateClusterTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RotateClusterTokenOutcomeCallable RotateClusterTokenCallable(const Model::RotateClusterTokenRequest& request);
 
                 /**
                  *初始化TMP实例，开启集成中心时调用

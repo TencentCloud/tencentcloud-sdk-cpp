@@ -3040,6 +3040,56 @@ EssbasicClient::CreateEmployeeQualificationSealQrCodeOutcomeCallable EssbasicCli
     return prom->get_future();
 }
 
+EssbasicClient::CreateFileConvertTaskOutcome EssbasicClient::CreateFileConvertTask(const CreateFileConvertTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFileConvertTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFileConvertTaskResponse rsp = CreateFileConvertTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFileConvertTaskOutcome(rsp);
+        else
+            return CreateFileConvertTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFileConvertTaskOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::CreateFileConvertTaskAsync(const CreateFileConvertTaskRequest& request, const CreateFileConvertTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateFileConvertTaskRequest&;
+    using Resp = CreateFileConvertTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateFileConvertTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssbasicClient::CreateFileConvertTaskOutcomeCallable EssbasicClient::CreateFileConvertTaskCallable(const CreateFileConvertTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateFileConvertTaskOutcome>>();
+    CreateFileConvertTaskAsync(
+    request,
+    [prom](
+        const EssbasicClient*,
+        const CreateFileConvertTaskRequest&,
+        CreateFileConvertTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EssbasicClient::CreateFlowBlockchainEvidenceUrlOutcome EssbasicClient::CreateFlowBlockchainEvidenceUrl(const CreateFlowBlockchainEvidenceUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFlowBlockchainEvidenceUrl");
@@ -4032,6 +4082,56 @@ EssbasicClient::DescribeExtendedServiceAuthInfoOutcomeCallable EssbasicClient::D
         const EssbasicClient*,
         const DescribeExtendedServiceAuthInfoRequest&,
         DescribeExtendedServiceAuthInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EssbasicClient::DescribeFileConvertTaskOutcome EssbasicClient::DescribeFileConvertTask(const DescribeFileConvertTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFileConvertTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFileConvertTaskResponse rsp = DescribeFileConvertTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFileConvertTaskOutcome(rsp);
+        else
+            return DescribeFileConvertTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFileConvertTaskOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::DescribeFileConvertTaskAsync(const DescribeFileConvertTaskRequest& request, const DescribeFileConvertTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeFileConvertTaskRequest&;
+    using Resp = DescribeFileConvertTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeFileConvertTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssbasicClient::DescribeFileConvertTaskOutcomeCallable EssbasicClient::DescribeFileConvertTaskCallable(const DescribeFileConvertTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeFileConvertTaskOutcome>>();
+    DescribeFileConvertTaskAsync(
+    request,
+    [prom](
+        const EssbasicClient*,
+        const DescribeFileConvertTaskRequest&,
+        DescribeFileConvertTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -40,7 +40,8 @@ ClusterSwitchDetail::ClusterSwitchDetail() :
     m_peerAppidHasBeenSet(false),
     m_peerStatusHasBeenSet(false),
     m_bypassHasBeenSet(false),
-    m_progressHasBeenSet(false)
+    m_progressHasBeenSet(false),
+    m_checkResultHasBeenSet(false)
 {
 }
 
@@ -269,6 +270,23 @@ CoreInternalOutcome ClusterSwitchDetail::Deserialize(const rapidjson::Value &val
         m_progressHasBeenSet = true;
     }
 
+    if (value.HasMember("CheckResult") && !value["CheckResult"].IsNull())
+    {
+        if (!value["CheckResult"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterSwitchDetail.CheckResult` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_checkResult.Deserialize(value["CheckResult"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_checkResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -448,6 +466,15 @@ void ClusterSwitchDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Progress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_progress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_checkResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_checkResult.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -771,5 +798,21 @@ void ClusterSwitchDetail::SetProgress(const string& _progress)
 bool ClusterSwitchDetail::ProgressHasBeenSet() const
 {
     return m_progressHasBeenSet;
+}
+
+ClusterFwPreAccessCheckResult ClusterSwitchDetail::GetCheckResult() const
+{
+    return m_checkResult;
+}
+
+void ClusterSwitchDetail::SetCheckResult(const ClusterFwPreAccessCheckResult& _checkResult)
+{
+    m_checkResult = _checkResult;
+    m_checkResultHasBeenSet = true;
+}
+
+bool ClusterSwitchDetail::CheckResultHasBeenSet() const
+{
+    return m_checkResultHasBeenSet;
 }
 

@@ -48,30 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取插入形式，可选值：
-<li>subtitle-stream：插入字幕轨道</li>
-<li>close-caption-708：CEA-708字幕编码到SEI帧</li>
-<li>close-caption-608：CEA-608字幕编码到SEI帧</li>
+                     * 获取<p>插入形式，可选值：</p><li>subtitle-stream：插入字幕轨道</li><li>close-caption-708：CEA-708字幕编码到SEI帧</li><li>close-caption-608：CEA-608字幕编码到SEI帧</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 插入形式，可选值：
-<li>subtitle-stream：插入字幕轨道</li>
-<li>close-caption-708：CEA-708字幕编码到SEI帧</li>
-<li>close-caption-608：CEA-608字幕编码到SEI帧</li>
+                     * @return Type <p>插入形式，可选值：</p><li>subtitle-stream：插入字幕轨道</li><li>close-caption-708：CEA-708字幕编码到SEI帧</li><li>close-caption-608：CEA-608字幕编码到SEI帧</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置插入形式，可选值：
-<li>subtitle-stream：插入字幕轨道</li>
-<li>close-caption-708：CEA-708字幕编码到SEI帧</li>
-<li>close-caption-608：CEA-608字幕编码到SEI帧</li>
+                     * 设置<p>插入形式，可选值：</p><li>subtitle-stream：插入字幕轨道</li><li>close-caption-708：CEA-708字幕编码到SEI帧</li><li>close-caption-608：CEA-608字幕编码到SEI帧</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type 插入形式，可选值：
-<li>subtitle-stream：插入字幕轨道</li>
-<li>close-caption-708：CEA-708字幕编码到SEI帧</li>
-<li>close-caption-608：CEA-608字幕编码到SEI帧</li>
+                     * @param _type <p>插入形式，可选值：</p><li>subtitle-stream：插入字幕轨道</li><li>close-caption-708：CEA-708字幕编码到SEI帧</li><li>close-caption-608：CEA-608字幕编码到SEI帧</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -85,18 +73,18 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取字幕文件。
+                     * 获取<p>字幕文件。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Subtitle 字幕文件。
+                     * @return Subtitle <p>字幕文件。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaInputInfo GetSubtitle() const;
 
                     /**
-                     * 设置字幕文件。
+                     * 设置<p>字幕文件。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subtitle 字幕文件。
+                     * @param _subtitle <p>字幕文件。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -110,22 +98,18 @@ namespace TencentCloud
                     bool SubtitleHasBeenSet() const;
 
                     /**
-                     * 获取字幕名称	。
-注意：仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符。
+                     * 获取<p>字幕名称    。<br>注意：仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubtitleName 字幕名称	。
-注意：仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符。
+                     * @return SubtitleName <p>字幕名称    。<br>注意：仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubtitleName() const;
 
                     /**
-                     * 设置字幕名称	。
-注意：仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符。
+                     * 设置<p>字幕名称    。<br>注意：仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subtitleName 字幕名称	。
-注意：仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符。
+                     * @param _subtitleName <p>字幕名称    。<br>注意：仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -139,19 +123,36 @@ namespace TencentCloud
                     bool SubtitleNameHasBeenSet() const;
 
                     /**
-                     * 获取字幕输出格式。取值{"WebVTT","TTML"}。
-默认值："WebVTT"
-                     * @return OutputFormat 字幕输出格式。取值{"WebVTT","TTML"}。
-默认值："WebVTT"
+                     * 获取<p>字幕语言，比如：eng</p>
+                     * @return SubtitleLanguage <p>字幕语言，比如：eng</p>
+                     * 
+                     */
+                    std::string GetSubtitleLanguage() const;
+
+                    /**
+                     * 设置<p>字幕语言，比如：eng</p>
+                     * @param _subtitleLanguage <p>字幕语言，比如：eng</p>
+                     * 
+                     */
+                    void SetSubtitleLanguage(const std::string& _subtitleLanguage);
+
+                    /**
+                     * 判断参数 SubtitleLanguage 是否已赋值
+                     * @return SubtitleLanguage 是否已赋值
+                     * 
+                     */
+                    bool SubtitleLanguageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>字幕输出格式。取值{&quot;WebVTT&quot;,&quot;TTML&quot;}。<br>默认值：&quot;WebVTT&quot;</p>
+                     * @return OutputFormat <p>字幕输出格式。取值{&quot;WebVTT&quot;,&quot;TTML&quot;}。<br>默认值：&quot;WebVTT&quot;</p>
                      * 
                      */
                     std::string GetOutputFormat() const;
 
                     /**
-                     * 设置字幕输出格式。取值{"WebVTT","TTML"}。
-默认值："WebVTT"
-                     * @param _outputFormat 字幕输出格式。取值{"WebVTT","TTML"}。
-默认值："WebVTT"
+                     * 设置<p>字幕输出格式。取值{&quot;WebVTT&quot;,&quot;TTML&quot;}。<br>默认值：&quot;WebVTT&quot;</p>
+                     * @param _outputFormat <p>字幕输出格式。取值{&quot;WebVTT&quot;,&quot;TTML&quot;}。<br>默认值：&quot;WebVTT&quot;</p>
                      * 
                      */
                     void SetOutputFormat(const std::string& _outputFormat);
@@ -164,19 +165,15 @@ namespace TencentCloud
                     bool OutputFormatHasBeenSet() const;
 
                     /**
-                     * 获取默认字幕轨道。为true时指定当前字幕为默认字幕轨道，最多可指定1条默认字幕轨道。
-默认值：false
-                     * @return DefaultTrack 默认字幕轨道。为true时指定当前字幕为默认字幕轨道，最多可指定1条默认字幕轨道。
-默认值：false
+                     * 获取<p>默认字幕轨道。为true时指定当前字幕为默认字幕轨道，最多可指定1条默认字幕轨道。<br>默认值：false</p>
+                     * @return DefaultTrack <p>默认字幕轨道。为true时指定当前字幕为默认字幕轨道，最多可指定1条默认字幕轨道。<br>默认值：false</p>
                      * 
                      */
                     bool GetDefaultTrack() const;
 
                     /**
-                     * 设置默认字幕轨道。为true时指定当前字幕为默认字幕轨道，最多可指定1条默认字幕轨道。
-默认值：false
-                     * @param _defaultTrack 默认字幕轨道。为true时指定当前字幕为默认字幕轨道，最多可指定1条默认字幕轨道。
-默认值：false
+                     * 设置<p>默认字幕轨道。为true时指定当前字幕为默认字幕轨道，最多可指定1条默认字幕轨道。<br>默认值：false</p>
+                     * @param _defaultTrack <p>默认字幕轨道。为true时指定当前字幕为默认字幕轨道，最多可指定1条默认字幕轨道。<br>默认值：false</p>
                      * 
                      */
                     void SetDefaultTrack(const bool& _defaultTrack);
@@ -191,40 +188,40 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 插入形式，可选值：
-<li>subtitle-stream：插入字幕轨道</li>
-<li>close-caption-708：CEA-708字幕编码到SEI帧</li>
-<li>close-caption-608：CEA-608字幕编码到SEI帧</li>
+                     * <p>插入形式，可选值：</p><li>subtitle-stream：插入字幕轨道</li><li>close-caption-708：CEA-708字幕编码到SEI帧</li><li>close-caption-608：CEA-608字幕编码到SEI帧</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 字幕文件。
+                     * <p>字幕文件。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaInputInfo m_subtitle;
                     bool m_subtitleHasBeenSet;
 
                     /**
-                     * 字幕名称	。
-注意：仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符。
+                     * <p>字幕名称    。<br>注意：仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subtitleName;
                     bool m_subtitleNameHasBeenSet;
 
                     /**
-                     * 字幕输出格式。取值{"WebVTT","TTML"}。
-默认值："WebVTT"
+                     * <p>字幕语言，比如：eng</p>
+                     */
+                    std::string m_subtitleLanguage;
+                    bool m_subtitleLanguageHasBeenSet;
+
+                    /**
+                     * <p>字幕输出格式。取值{&quot;WebVTT&quot;,&quot;TTML&quot;}。<br>默认值：&quot;WebVTT&quot;</p>
                      */
                     std::string m_outputFormat;
                     bool m_outputFormatHasBeenSet;
 
                     /**
-                     * 默认字幕轨道。为true时指定当前字幕为默认字幕轨道，最多可指定1条默认字幕轨道。
-默认值：false
+                     * <p>默认字幕轨道。为true时指定当前字幕为默认字幕轨道，最多可指定1条默认字幕轨道。<br>默认值：false</p>
                      */
                     bool m_defaultTrack;
                     bool m_defaultTrackHasBeenSet;

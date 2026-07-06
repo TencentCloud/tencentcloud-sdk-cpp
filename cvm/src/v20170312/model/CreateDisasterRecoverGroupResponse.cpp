@@ -29,7 +29,9 @@ CreateDisasterRecoverGroupResponse::CreateDisasterRecoverGroupResponse() :
     m_nameHasBeenSet(false),
     m_cvmQuotaTotalHasBeenSet(false),
     m_currentNumHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_strategyHasBeenSet(false),
+    m_partitionCountHasBeenSet(false)
 {
 }
 
@@ -127,6 +129,26 @@ CoreInternalOutcome CreateDisasterRecoverGroupResponse::Deserialize(const string
         m_createTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Strategy") && !rsp["Strategy"].IsNull())
+    {
+        if (!rsp["Strategy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Strategy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_strategy = string(rsp["Strategy"].GetString());
+        m_strategyHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PartitionCount") && !rsp["PartitionCount"].IsNull())
+    {
+        if (!rsp["PartitionCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PartitionCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_partitionCount = rsp["PartitionCount"].GetInt64();
+        m_partitionCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +205,22 @@ string CreateDisasterRecoverGroupResponse::ToJsonString() const
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_strategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Strategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_strategy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_partitionCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PartitionCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_partitionCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -255,6 +293,26 @@ string CreateDisasterRecoverGroupResponse::GetCreateTime() const
 bool CreateDisasterRecoverGroupResponse::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string CreateDisasterRecoverGroupResponse::GetStrategy() const
+{
+    return m_strategy;
+}
+
+bool CreateDisasterRecoverGroupResponse::StrategyHasBeenSet() const
+{
+    return m_strategyHasBeenSet;
+}
+
+int64_t CreateDisasterRecoverGroupResponse::GetPartitionCount() const
+{
+    return m_partitionCount;
+}
+
+bool CreateDisasterRecoverGroupResponse::PartitionCountHasBeenSet() const
+{
+    return m_partitionCountHasBeenSet;
 }
 
 

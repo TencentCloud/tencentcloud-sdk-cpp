@@ -24,6 +24,7 @@ AddOnSubtitle::AddOnSubtitle() :
     m_typeHasBeenSet(false),
     m_subtitleHasBeenSet(false),
     m_subtitleNameHasBeenSet(false),
+    m_subtitleLanguageHasBeenSet(false),
     m_outputFormatHasBeenSet(false),
     m_defaultTrackHasBeenSet(false)
 {
@@ -69,6 +70,16 @@ CoreInternalOutcome AddOnSubtitle::Deserialize(const rapidjson::Value &value)
         }
         m_subtitleName = string(value["SubtitleName"].GetString());
         m_subtitleNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubtitleLanguage") && !value["SubtitleLanguage"].IsNull())
+    {
+        if (!value["SubtitleLanguage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AddOnSubtitle.SubtitleLanguage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subtitleLanguage = string(value["SubtitleLanguage"].GetString());
+        m_subtitleLanguageHasBeenSet = true;
     }
 
     if (value.HasMember("OutputFormat") && !value["OutputFormat"].IsNull())
@@ -121,6 +132,14 @@ void AddOnSubtitle::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "SubtitleName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subtitleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subtitleLanguageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subtitleLanguage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_outputFormatHasBeenSet)
@@ -188,6 +207,22 @@ void AddOnSubtitle::SetSubtitleName(const string& _subtitleName)
 bool AddOnSubtitle::SubtitleNameHasBeenSet() const
 {
     return m_subtitleNameHasBeenSet;
+}
+
+string AddOnSubtitle::GetSubtitleLanguage() const
+{
+    return m_subtitleLanguage;
+}
+
+void AddOnSubtitle::SetSubtitleLanguage(const string& _subtitleLanguage)
+{
+    m_subtitleLanguage = _subtitleLanguage;
+    m_subtitleLanguageHasBeenSet = true;
+}
+
+bool AddOnSubtitle::SubtitleLanguageHasBeenSet() const
+{
+    return m_subtitleLanguageHasBeenSet;
 }
 
 string AddOnSubtitle::GetOutputFormat() const

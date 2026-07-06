@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取串行地域带宽分配
+                     * 获取<p>串行地域带宽分配</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SerialRegionLst 串行地域带宽分配
+                     * @return SerialRegionLst <p>串行地域带宽分配</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool SerialRegionLstHasBeenSet() const;
 
                     /**
-                     * 获取剩余可分配通用带宽 单位M
+                     * 获取<p>剩余可分配通用带宽 单位M</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UnUsedWidth 剩余可分配通用带宽 单位M
+                     * @return UnUsedWidth <p>剩余可分配通用带宽 单位M</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,9 +77,9 @@ namespace TencentCloud
                     bool UnUsedWidthHasBeenSet() const;
 
                     /**
-                     * 获取可配置实例个数
+                     * 获取<p>可配置实例个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UnUsedQuota 可配置实例个数
+                     * @return UnUsedQuota <p>可配置实例个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -93,9 +93,9 @@ namespace TencentCloud
                     bool UnUsedQuotaHasBeenSet() const;
 
                     /**
-                     * 获取旁路带宽数据
+                     * 获取<p>旁路带宽数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BypassWidth 旁路带宽数据
+                     * @return BypassWidth <p>旁路带宽数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -109,9 +109,9 @@ namespace TencentCloud
                     bool BypassWidthHasBeenSet() const;
 
                     /**
-                     * 获取赠送的旁路带宽数据
+                     * 获取<p>赠送的旁路带宽数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SendBypassWidth 赠送的旁路带宽数据
+                     * @return SendBypassWidth <p>赠送的旁路带宽数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,42 +124,142 @@ namespace TencentCloud
                      */
                     bool SendBypassWidthHasBeenSet() const;
 
+                    /**
+                     * 获取<p>互联网边界防火墙总带宽</p>
+                     * @return EdgeWidth <p>互联网边界防火墙总带宽</p>
+                     * 
+                     */
+                    int64_t GetEdgeWidth() const;
+
+                    /**
+                     * 判断参数 EdgeWidth 是否已赋值
+                     * @return EdgeWidth 是否已赋值
+                     * 
+                     */
+                    bool EdgeWidthHasBeenSet() const;
+
+                    /**
+                     * 获取<p>互联网边界弹性开关</p>
+                     * @return EdgeElasticSwitch <p>互联网边界弹性开关</p>
+                     * 
+                     */
+                    int64_t GetEdgeElasticSwitch() const;
+
+                    /**
+                     * 判断参数 EdgeElasticSwitch 是否已赋值
+                     * @return EdgeElasticSwitch 是否已赋值
+                     * 
+                     */
+                    bool EdgeElasticSwitchHasBeenSet() const;
+
+                    /**
+                     * 获取<p>互联网边界弹性带宽值</p>
+                     * @return EdgeElasticBandwidth <p>互联网边界弹性带宽值</p>
+                     * 
+                     */
+                    int64_t GetEdgeElasticBandwidth() const;
+
+                    /**
+                     * 判断参数 EdgeElasticBandwidth 是否已赋值
+                     * @return EdgeElasticBandwidth 是否已赋值
+                     * 
+                     */
+                    bool EdgeElasticBandwidthHasBeenSet() const;
+
+                    /**
+                     * 获取<p>互联网边界弹性带宽上限</p>
+                     * @return EdgeElasticBandwidthLimit <p>互联网边界弹性带宽上限</p>
+                     * 
+                     */
+                    int64_t GetEdgeElasticBandwidthLimit() const;
+
+                    /**
+                     * 判断参数 EdgeElasticBandwidthLimit 是否已赋值
+                     * @return EdgeElasticBandwidthLimit 是否已赋值
+                     * 
+                     */
+                    bool EdgeElasticBandwidthLimitHasBeenSet() const;
+
+                    /**
+                     * 获取<p>互联网边界防火墙计量开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 打开</li></ul>
+                     * @return EdgeElasticTrafficSwitch <p>互联网边界防火墙计量开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 打开</li></ul>
+                     * 
+                     */
+                    int64_t GetEdgeElasticTrafficSwitch() const;
+
+                    /**
+                     * 判断参数 EdgeElasticTrafficSwitch 是否已赋值
+                     * @return EdgeElasticTrafficSwitch 是否已赋值
+                     * 
+                     */
+                    bool EdgeElasticTrafficSwitchHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 串行地域带宽分配
+                     * <p>串行地域带宽分配</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SerialRegionInfo> m_serialRegionLst;
                     bool m_serialRegionLstHasBeenSet;
 
                     /**
-                     * 剩余可分配通用带宽 单位M
+                     * <p>剩余可分配通用带宽 单位M</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_unUsedWidth;
                     bool m_unUsedWidthHasBeenSet;
 
                     /**
-                     * 可配置实例个数
+                     * <p>可配置实例个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_unUsedQuota;
                     bool m_unUsedQuotaHasBeenSet;
 
                     /**
-                     * 旁路带宽数据
+                     * <p>旁路带宽数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_bypassWidth;
                     bool m_bypassWidthHasBeenSet;
 
                     /**
-                     * 赠送的旁路带宽数据
+                     * <p>赠送的旁路带宽数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sendBypassWidth;
                     bool m_sendBypassWidthHasBeenSet;
+
+                    /**
+                     * <p>互联网边界防火墙总带宽</p>
+                     */
+                    int64_t m_edgeWidth;
+                    bool m_edgeWidthHasBeenSet;
+
+                    /**
+                     * <p>互联网边界弹性开关</p>
+                     */
+                    int64_t m_edgeElasticSwitch;
+                    bool m_edgeElasticSwitchHasBeenSet;
+
+                    /**
+                     * <p>互联网边界弹性带宽值</p>
+                     */
+                    int64_t m_edgeElasticBandwidth;
+                    bool m_edgeElasticBandwidthHasBeenSet;
+
+                    /**
+                     * <p>互联网边界弹性带宽上限</p>
+                     */
+                    int64_t m_edgeElasticBandwidthLimit;
+                    bool m_edgeElasticBandwidthLimitHasBeenSet;
+
+                    /**
+                     * <p>互联网边界防火墙计量开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 打开</li></ul>
+                     */
+                    int64_t m_edgeElasticTrafficSwitch;
+                    bool m_edgeElasticTrafficSwitchHasBeenSet;
 
                 };
             }

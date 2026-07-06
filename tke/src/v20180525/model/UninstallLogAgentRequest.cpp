@@ -23,7 +23,8 @@ using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
 UninstallLogAgentRequest::UninstallLogAgentRequest() :
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_clusterTypeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string UninstallLogAgentRequest::ToJsonString() const
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void UninstallLogAgentRequest::SetClusterId(const string& _clusterId)
 bool UninstallLogAgentRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+string UninstallLogAgentRequest::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void UninstallLogAgentRequest::SetClusterType(const string& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool UninstallLogAgentRequest::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
 }
 
 

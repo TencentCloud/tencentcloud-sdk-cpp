@@ -31,6 +31,7 @@
 #include <tencentcloud/dts/v20211206/model/DifferenceRowDetail.h>
 #include <tencentcloud/dts/v20211206/model/DifferenceSchemaDetail.h>
 #include <tencentcloud/dts/v20211206/model/DifferenceOwnerDetail.h>
+#include <tencentcloud/dts/v20211206/model/CompareTableInfo.h>
 
 
 namespace TencentCloud
@@ -54,15 +55,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据不一致的表详情
-                     * @return Difference 数据不一致的表详情
+                     * 获取<p>数据不一致的表详情</p>
+                     * @return Difference <p>数据不一致的表详情</p>
                      * 
                      */
                     DifferenceDetail GetDifference() const;
 
                     /**
-                     * 设置数据不一致的表详情
-                     * @param _difference 数据不一致的表详情
+                     * 设置<p>数据不一致的表详情</p>
+                     * @param _difference <p>数据不一致的表详情</p>
                      * 
                      */
                     void SetDifference(const DifferenceDetail& _difference);
@@ -75,15 +76,15 @@ namespace TencentCloud
                     bool DifferenceHasBeenSet() const;
 
                     /**
-                     * 获取跳过校验的表详情
-                     * @return Skipped 跳过校验的表详情
+                     * 获取<p>跳过校验的表详情</p>
+                     * @return Skipped <p>跳过校验的表详情</p>
                      * 
                      */
                     SkippedDetail GetSkipped() const;
 
                     /**
-                     * 设置跳过校验的表详情
-                     * @param _skipped 跳过校验的表详情
+                     * 设置<p>跳过校验的表详情</p>
+                     * @param _skipped <p>跳过校验的表详情</p>
                      * 
                      */
                     void SetSkipped(const SkippedDetail& _skipped);
@@ -96,15 +97,15 @@ namespace TencentCloud
                     bool SkippedHasBeenSet() const;
 
                     /**
-                     * 获取数据库不一致的详情，mongodb业务用到
-                     * @return DifferenceAdvancedObjects 数据库不一致的详情，mongodb业务用到
+                     * 获取<p>数据库不一致的详情，mongodb业务用到</p>
+                     * @return DifferenceAdvancedObjects <p>数据库不一致的详情，mongodb业务用到</p>
                      * 
                      */
                     DifferenceAdvancedObjectsDetail GetDifferenceAdvancedObjects() const;
 
                     /**
-                     * 设置数据库不一致的详情，mongodb业务用到
-                     * @param _differenceAdvancedObjects 数据库不一致的详情，mongodb业务用到
+                     * 设置<p>数据库不一致的详情，mongodb业务用到</p>
+                     * @param _differenceAdvancedObjects <p>数据库不一致的详情，mongodb业务用到</p>
                      * 
                      */
                     void SetDifferenceAdvancedObjects(const DifferenceAdvancedObjectsDetail& _differenceAdvancedObjects);
@@ -117,15 +118,15 @@ namespace TencentCloud
                     bool DifferenceAdvancedObjectsHasBeenSet() const;
 
                     /**
-                     * 获取数据不一致的详情，mongodb业务用到
-                     * @return DifferenceData 数据不一致的详情，mongodb业务用到
+                     * 获取<p>数据不一致的详情，mongodb业务用到</p>
+                     * @return DifferenceData <p>数据不一致的详情，mongodb业务用到</p>
                      * 
                      */
                     DifferenceDataDetail GetDifferenceData() const;
 
                     /**
-                     * 设置数据不一致的详情，mongodb业务用到
-                     * @param _differenceData 数据不一致的详情，mongodb业务用到
+                     * 设置<p>数据不一致的详情，mongodb业务用到</p>
+                     * @param _differenceData <p>数据不一致的详情，mongodb业务用到</p>
                      * 
                      */
                     void SetDifferenceData(const DifferenceDataDetail& _differenceData);
@@ -138,15 +139,15 @@ namespace TencentCloud
                     bool DifferenceDataHasBeenSet() const;
 
                     /**
-                     * 获取数据行不一致的详情，mongodb业务用到
-                     * @return DifferenceRow 数据行不一致的详情，mongodb业务用到
+                     * 获取<p>数据行不一致的详情，mongodb业务用到</p>
+                     * @return DifferenceRow <p>数据行不一致的详情，mongodb业务用到</p>
                      * 
                      */
                     DifferenceRowDetail GetDifferenceRow() const;
 
                     /**
-                     * 设置数据行不一致的详情，mongodb业务用到
-                     * @param _differenceRow 数据行不一致的详情，mongodb业务用到
+                     * 设置<p>数据行不一致的详情，mongodb业务用到</p>
+                     * @param _differenceRow <p>数据行不一致的详情，mongodb业务用到</p>
                      * 
                      */
                     void SetDifferenceRow(const DifferenceRowDetail& _differenceRow);
@@ -159,15 +160,15 @@ namespace TencentCloud
                     bool DifferenceRowHasBeenSet() const;
 
                     /**
-                     * 获取表结构不一致详情，pg用
-                     * @return DifferenceSchema 表结构不一致详情，pg用
+                     * 获取<p>表结构不一致详情，pg用</p>
+                     * @return DifferenceSchema <p>表结构不一致详情，pg用</p>
                      * 
                      */
                     DifferenceSchemaDetail GetDifferenceSchema() const;
 
                     /**
-                     * 设置表结构不一致详情，pg用
-                     * @param _differenceSchema 表结构不一致详情，pg用
+                     * 设置<p>表结构不一致详情，pg用</p>
+                     * @param _differenceSchema <p>表结构不一致详情，pg用</p>
                      * 
                      */
                     void SetDifferenceSchema(const DifferenceSchemaDetail& _differenceSchema);
@@ -180,15 +181,15 @@ namespace TencentCloud
                     bool DifferenceSchemaHasBeenSet() const;
 
                     /**
-                     * 获取对象owner不一致详情，pg用
-                     * @return DifferenceOwner 对象owner不一致详情，pg用
+                     * 获取<p>对象owner不一致详情，pg用</p>
+                     * @return DifferenceOwner <p>对象owner不一致详情，pg用</p>
                      * 
                      */
                     DifferenceOwnerDetail GetDifferenceOwner() const;
 
                     /**
-                     * 设置对象owner不一致详情，pg用
-                     * @param _differenceOwner 对象owner不一致详情，pg用
+                     * 设置<p>对象owner不一致详情，pg用</p>
+                     * @param _differenceOwner <p>对象owner不一致详情，pg用</p>
                      * 
                      */
                     void SetDifferenceOwner(const DifferenceOwnerDetail& _differenceOwner);
@@ -200,49 +201,103 @@ namespace TencentCloud
                      */
                     bool DifferenceOwnerHasBeenSet() const;
 
+                    /**
+                     * 获取<p>全量阶段表的校验进度。该字段后续逐步取代Difference</p>
+                     * @return FullProgress <p>全量阶段表的校验进度。该字段后续逐步取代Difference</p>
+                     * 
+                     */
+                    CompareTableInfo GetFullProgress() const;
+
+                    /**
+                     * 设置<p>全量阶段表的校验进度。该字段后续逐步取代Difference</p>
+                     * @param _fullProgress <p>全量阶段表的校验进度。该字段后续逐步取代Difference</p>
+                     * 
+                     */
+                    void SetFullProgress(const CompareTableInfo& _fullProgress);
+
+                    /**
+                     * 判断参数 FullProgress 是否已赋值
+                     * @return FullProgress 是否已赋值
+                     * 
+                     */
+                    bool FullProgressHasBeenSet() const;
+
+                    /**
+                     * 获取<p>增量阶段表的校验进度</p>
+                     * @return IncDifference <p>增量阶段表的校验进度</p>
+                     * 
+                     */
+                    CompareTableInfo GetIncDifference() const;
+
+                    /**
+                     * 设置<p>增量阶段表的校验进度</p>
+                     * @param _incDifference <p>增量阶段表的校验进度</p>
+                     * 
+                     */
+                    void SetIncDifference(const CompareTableInfo& _incDifference);
+
+                    /**
+                     * 判断参数 IncDifference 是否已赋值
+                     * @return IncDifference 是否已赋值
+                     * 
+                     */
+                    bool IncDifferenceHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 数据不一致的表详情
+                     * <p>数据不一致的表详情</p>
                      */
                     DifferenceDetail m_difference;
                     bool m_differenceHasBeenSet;
 
                     /**
-                     * 跳过校验的表详情
+                     * <p>跳过校验的表详情</p>
                      */
                     SkippedDetail m_skipped;
                     bool m_skippedHasBeenSet;
 
                     /**
-                     * 数据库不一致的详情，mongodb业务用到
+                     * <p>数据库不一致的详情，mongodb业务用到</p>
                      */
                     DifferenceAdvancedObjectsDetail m_differenceAdvancedObjects;
                     bool m_differenceAdvancedObjectsHasBeenSet;
 
                     /**
-                     * 数据不一致的详情，mongodb业务用到
+                     * <p>数据不一致的详情，mongodb业务用到</p>
                      */
                     DifferenceDataDetail m_differenceData;
                     bool m_differenceDataHasBeenSet;
 
                     /**
-                     * 数据行不一致的详情，mongodb业务用到
+                     * <p>数据行不一致的详情，mongodb业务用到</p>
                      */
                     DifferenceRowDetail m_differenceRow;
                     bool m_differenceRowHasBeenSet;
 
                     /**
-                     * 表结构不一致详情，pg用
+                     * <p>表结构不一致详情，pg用</p>
                      */
                     DifferenceSchemaDetail m_differenceSchema;
                     bool m_differenceSchemaHasBeenSet;
 
                     /**
-                     * 对象owner不一致详情，pg用
+                     * <p>对象owner不一致详情，pg用</p>
                      */
                     DifferenceOwnerDetail m_differenceOwner;
                     bool m_differenceOwnerHasBeenSet;
+
+                    /**
+                     * <p>全量阶段表的校验进度。该字段后续逐步取代Difference</p>
+                     */
+                    CompareTableInfo m_fullProgress;
+                    bool m_fullProgressHasBeenSet;
+
+                    /**
+                     * <p>增量阶段表的校验进度</p>
+                     */
+                    CompareTableInfo m_incDifference;
+                    bool m_incDifferenceHasBeenSet;
 
                 };
             }

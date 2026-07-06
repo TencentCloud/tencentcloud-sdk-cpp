@@ -44,19 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指定实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
-
-                     * @return InstanceId 指定实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
-
+                     * 获取<p>指定实例 ID。例如：cmgo-p8vn****。请登录 <a href="https://console.cloud.tencent.com/mongodb">MongoDB 控制台</a>在实例列表复制实例 ID。</p>
+                     * @return InstanceId <p>指定实例 ID。例如：cmgo-p8vn****。请登录 <a href="https://console.cloud.tencent.com/mongodb">MongoDB 控制台</a>在实例列表复制实例 ID。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置指定实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
-
-                     * @param _instanceId 指定实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
-
+                     * 设置<p>指定实例 ID。例如：cmgo-p8vn****。请登录 <a href="https://console.cloud.tencent.com/mongodb">MongoDB 控制台</a>在实例列表复制实例 ID。</p>
+                     * @param _instanceId <p>指定实例 ID。例如：cmgo-p8vn****。请登录 <a href="https://console.cloud.tencent.com/mongodb">MongoDB 控制台</a>在实例列表复制实例 ID。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -69,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取指定需修改的参数名及值。当前所支持的参数名及对应取值范围，请通过 [DescribeInstanceParams ](https://cloud.tencent.com/document/product/240/65903)获取。
-                     * @return InstanceParams 指定需修改的参数名及值。当前所支持的参数名及对应取值范围，请通过 [DescribeInstanceParams ](https://cloud.tencent.com/document/product/240/65903)获取。
+                     * 获取<p>指定需修改的参数名及值。当前所支持的参数名及对应取值范围，请通过 <a href="https://cloud.tencent.com/document/product/240/65903">DescribeInstanceParams </a>获取。</p>
+                     * @return InstanceParams <p>指定需修改的参数名及值。当前所支持的参数名及对应取值范围，请通过 <a href="https://cloud.tencent.com/document/product/240/65903">DescribeInstanceParams </a>获取。</p>
                      * 
                      */
                     std::vector<ModifyMongoDBParamType> GetInstanceParams() const;
 
                     /**
-                     * 设置指定需修改的参数名及值。当前所支持的参数名及对应取值范围，请通过 [DescribeInstanceParams ](https://cloud.tencent.com/document/product/240/65903)获取。
-                     * @param _instanceParams 指定需修改的参数名及值。当前所支持的参数名及对应取值范围，请通过 [DescribeInstanceParams ](https://cloud.tencent.com/document/product/240/65903)获取。
+                     * 设置<p>指定需修改的参数名及值。当前所支持的参数名及对应取值范围，请通过 <a href="https://cloud.tencent.com/document/product/240/65903">DescribeInstanceParams </a>获取。</p>
+                     * @param _instanceParams <p>指定需修改的参数名及值。当前所支持的参数名及对应取值范围，请通过 <a href="https://cloud.tencent.com/document/product/240/65903">DescribeInstanceParams </a>获取。</p>
                      * 
                      */
                     void SetInstanceParams(const std::vector<ModifyMongoDBParamType>& _instanceParams);
@@ -90,23 +86,15 @@ namespace TencentCloud
                     bool InstanceParamsHasBeenSet() const;
 
                     /**
-                     * 获取操作类型，包括：
-- IMMEDIATELY：立即调整。
-- DELAY：延迟调整。可选字段，不配置该参数则默认为立即调整。
-                     * @return ModifyType 操作类型，包括：
-- IMMEDIATELY：立即调整。
-- DELAY：延迟调整。可选字段，不配置该参数则默认为立即调整。
+                     * 获取<p>操作类型，包括：</p><ul><li>IMMEDIATELY：立即调整。</li><li>DELAY：延迟调整。可选字段，不配置该参数则默认为立即调整。</li></ul>
+                     * @return ModifyType <p>操作类型，包括：</p><ul><li>IMMEDIATELY：立即调整。</li><li>DELAY：延迟调整。可选字段，不配置该参数则默认为立即调整。</li></ul>
                      * 
                      */
                     std::string GetModifyType() const;
 
                     /**
-                     * 设置操作类型，包括：
-- IMMEDIATELY：立即调整。
-- DELAY：延迟调整。可选字段，不配置该参数则默认为立即调整。
-                     * @param _modifyType 操作类型，包括：
-- IMMEDIATELY：立即调整。
-- DELAY：延迟调整。可选字段，不配置该参数则默认为立即调整。
+                     * 设置<p>操作类型，包括：</p><ul><li>IMMEDIATELY：立即调整。</li><li>DELAY：延迟调整。可选字段，不配置该参数则默认为立即调整。</li></ul>
+                     * @param _modifyType <p>操作类型，包括：</p><ul><li>IMMEDIATELY：立即调整。</li><li>DELAY：延迟调整。可选字段，不配置该参数则默认为立即调整。</li></ul>
                      * 
                      */
                     void SetModifyType(const std::string& _modifyType);
@@ -121,22 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 指定实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
-
+                     * <p>指定实例 ID。例如：cmgo-p8vn****。请登录 <a href="https://console.cloud.tencent.com/mongodb">MongoDB 控制台</a>在实例列表复制实例 ID。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 指定需修改的参数名及值。当前所支持的参数名及对应取值范围，请通过 [DescribeInstanceParams ](https://cloud.tencent.com/document/product/240/65903)获取。
+                     * <p>指定需修改的参数名及值。当前所支持的参数名及对应取值范围，请通过 <a href="https://cloud.tencent.com/document/product/240/65903">DescribeInstanceParams </a>获取。</p>
                      */
                     std::vector<ModifyMongoDBParamType> m_instanceParams;
                     bool m_instanceParamsHasBeenSet;
 
                     /**
-                     * 操作类型，包括：
-- IMMEDIATELY：立即调整。
-- DELAY：延迟调整。可选字段，不配置该参数则默认为立即调整。
+                     * <p>操作类型，包括：</p><ul><li>IMMEDIATELY：立即调整。</li><li>DELAY：延迟调整。可选字段，不配置该参数则默认为立即调整。</li></ul>
                      */
                     std::string m_modifyType;
                     bool m_modifyTypeHasBeenSet;

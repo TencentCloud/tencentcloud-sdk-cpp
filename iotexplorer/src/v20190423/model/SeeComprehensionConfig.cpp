@@ -28,7 +28,8 @@ SeeComprehensionConfig::SeeComprehensionConfig() :
     m_multiCameraLayoutHasBeenSet(false),
     m_customDetectQueriesHasBeenSet(false),
     m_maxDurationHasBeenSet(false),
-    m_enableKeywordsHasBeenSet(false)
+    m_enableKeywordsHasBeenSet(false),
+    m_summaryPromptHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,16 @@ CoreInternalOutcome SeeComprehensionConfig::Deserialize(const rapidjson::Value &
         m_enableKeywordsHasBeenSet = true;
     }
 
+    if (value.HasMember("SummaryPrompt") && !value["SummaryPrompt"].IsNull())
+    {
+        if (!value["SummaryPrompt"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SeeComprehensionConfig.SummaryPrompt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_summaryPrompt = string(value["SummaryPrompt"].GetString());
+        m_summaryPromptHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -211,6 +222,14 @@ void SeeComprehensionConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "EnableKeywords";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableKeywords, allocator);
+    }
+
+    if (m_summaryPromptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SummaryPrompt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_summaryPrompt.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -342,5 +361,21 @@ void SeeComprehensionConfig::SetEnableKeywords(const bool& _enableKeywords)
 bool SeeComprehensionConfig::EnableKeywordsHasBeenSet() const
 {
     return m_enableKeywordsHasBeenSet;
+}
+
+string SeeComprehensionConfig::GetSummaryPrompt() const
+{
+    return m_summaryPrompt;
+}
+
+void SeeComprehensionConfig::SetSummaryPrompt(const string& _summaryPrompt)
+{
+    m_summaryPrompt = _summaryPrompt;
+    m_summaryPromptHasBeenSet = true;
+}
+
+bool SeeComprehensionConfig::SummaryPromptHasBeenSet() const
+{
+    return m_summaryPromptHasBeenSet;
 }
 

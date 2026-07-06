@@ -32,6 +32,7 @@ DescribeMemoryPlusSpaceResponse::DescribeMemoryPlusSpaceResponse() :
     m_resourceTagsHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_payModeHasBeenSet(false),
+    m_autoRenewHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_memoryUsageHasBeenSet(false),
     m_memoryLimitHasBeenSet(false),
@@ -168,6 +169,16 @@ CoreInternalOutcome DescribeMemoryPlusSpaceResponse::Deserialize(const string &p
         }
         m_payMode = rsp["PayMode"].GetInt64();
         m_payModeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AutoRenew") && !rsp["AutoRenew"].IsNull())
+    {
+        if (!rsp["AutoRenew"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoRenew` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRenew = rsp["AutoRenew"].GetInt64();
+        m_autoRenewHasBeenSet = true;
     }
 
     if (rsp.HasMember("Version") && !rsp["Version"].IsNull())
@@ -361,6 +372,14 @@ string DescribeMemoryPlusSpaceResponse::ToJsonString() const
         value.AddMember(iKey, m_payMode, allocator);
     }
 
+    if (m_autoRenewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenew";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRenew, allocator);
+    }
+
     if (m_versionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -539,6 +558,16 @@ int64_t DescribeMemoryPlusSpaceResponse::GetPayMode() const
 bool DescribeMemoryPlusSpaceResponse::PayModeHasBeenSet() const
 {
     return m_payModeHasBeenSet;
+}
+
+int64_t DescribeMemoryPlusSpaceResponse::GetAutoRenew() const
+{
+    return m_autoRenew;
+}
+
+bool DescribeMemoryPlusSpaceResponse::AutoRenewHasBeenSet() const
+{
+    return m_autoRenewHasBeenSet;
 }
 
 string DescribeMemoryPlusSpaceResponse::GetVersion() const

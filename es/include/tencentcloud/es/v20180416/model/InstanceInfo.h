@@ -796,6 +796,31 @@ namespace TencentCloud
                     bool LicenseTypeHasBeenSet() const;
 
                     /**
+                     * 获取<p>License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li><li>enterprise：企业版</li>默认值platinum</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RealLicenseType <p>License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li><li>enterprise：企业版</li>默认值platinum</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRealLicenseType() const;
+
+                    /**
+                     * 设置<p>License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li><li>enterprise：企业版</li>默认值platinum</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _realLicenseType <p>License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li><li>enterprise：企业版</li>默认值platinum</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRealLicenseType(const std::string& _realLicenseType);
+
+                    /**
+                     * 判断参数 RealLicenseType 是否已赋值
+                     * @return RealLicenseType 是否已赋值
+                     * 
+                     */
+                    bool RealLicenseTypeHasBeenSet() const;
+
+                    /**
                      * 获取<p>是否为冷热集群<li>true: 冷热集群</li><li>false: 非冷热集群</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableHotWarmMode <p>是否为冷热集群<li>true: 冷热集群</li><li>false: 非冷热集群</li></p>
@@ -2117,18 +2142,18 @@ namespace TencentCloud
                     bool DisasterRecoverGroupAffinityHasBeenSet() const;
 
                     /**
-                     * 获取<p>子产品ID枚举值： 开源版：&quot;sp_es_io2&quot;， 基础版：&quot;sp_es_basic&quot;，白金版：&quot;sp_es_platinum&quot;，企业版：&quot;sp_es_enterprise&quot;，CDC白金版：&quot;sp_es_cdc_platinum&quot;，日志增强版：&quot;sp_es_enlogging&quot;，tsearch：&quot;sp_tsearch_io2&quot;，logstash：&quot;sp_es_logstash&quot; ，可以为空，为空的时候后台取LicenseType映射该字段</p>
+                     * 获取<p>子产品ID枚举值： 开源版：&quot;sp_es_io2&quot;， 基础版：&quot;sp_es_basic&quot;，白金版：&quot;sp_es_platinum&quot;，AI搜索增强版：&quot;sp_es_aisearch&quot;，企业版：&quot;sp_es_enterprise&quot;，CDC白金版：&quot;sp_es_cdc_platinum&quot;，日志增强版：&quot;sp_es_enlogging&quot;，tsearch：&quot;sp_tsearch_io2&quot;，logstash：&quot;sp_es_logstash&quot; ，可以为空，为空的时候后台取LicenseType映射该字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubProductCode <p>子产品ID枚举值： 开源版：&quot;sp_es_io2&quot;， 基础版：&quot;sp_es_basic&quot;，白金版：&quot;sp_es_platinum&quot;，企业版：&quot;sp_es_enterprise&quot;，CDC白金版：&quot;sp_es_cdc_platinum&quot;，日志增强版：&quot;sp_es_enlogging&quot;，tsearch：&quot;sp_tsearch_io2&quot;，logstash：&quot;sp_es_logstash&quot; ，可以为空，为空的时候后台取LicenseType映射该字段</p>
+                     * @return SubProductCode <p>子产品ID枚举值： 开源版：&quot;sp_es_io2&quot;， 基础版：&quot;sp_es_basic&quot;，白金版：&quot;sp_es_platinum&quot;，AI搜索增强版：&quot;sp_es_aisearch&quot;，企业版：&quot;sp_es_enterprise&quot;，CDC白金版：&quot;sp_es_cdc_platinum&quot;，日志增强版：&quot;sp_es_enlogging&quot;，tsearch：&quot;sp_tsearch_io2&quot;，logstash：&quot;sp_es_logstash&quot; ，可以为空，为空的时候后台取LicenseType映射该字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubProductCode() const;
 
                     /**
-                     * 设置<p>子产品ID枚举值： 开源版：&quot;sp_es_io2&quot;， 基础版：&quot;sp_es_basic&quot;，白金版：&quot;sp_es_platinum&quot;，企业版：&quot;sp_es_enterprise&quot;，CDC白金版：&quot;sp_es_cdc_platinum&quot;，日志增强版：&quot;sp_es_enlogging&quot;，tsearch：&quot;sp_tsearch_io2&quot;，logstash：&quot;sp_es_logstash&quot; ，可以为空，为空的时候后台取LicenseType映射该字段</p>
+                     * 设置<p>子产品ID枚举值： 开源版：&quot;sp_es_io2&quot;， 基础版：&quot;sp_es_basic&quot;，白金版：&quot;sp_es_platinum&quot;，AI搜索增强版：&quot;sp_es_aisearch&quot;，企业版：&quot;sp_es_enterprise&quot;，CDC白金版：&quot;sp_es_cdc_platinum&quot;，日志增强版：&quot;sp_es_enlogging&quot;，tsearch：&quot;sp_tsearch_io2&quot;，logstash：&quot;sp_es_logstash&quot; ，可以为空，为空的时候后台取LicenseType映射该字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subProductCode <p>子产品ID枚举值： 开源版：&quot;sp_es_io2&quot;， 基础版：&quot;sp_es_basic&quot;，白金版：&quot;sp_es_platinum&quot;，企业版：&quot;sp_es_enterprise&quot;，CDC白金版：&quot;sp_es_cdc_platinum&quot;，日志增强版：&quot;sp_es_enlogging&quot;，tsearch：&quot;sp_tsearch_io2&quot;，logstash：&quot;sp_es_logstash&quot; ，可以为空，为空的时候后台取LicenseType映射该字段</p>
+                     * @param _subProductCode <p>子产品ID枚举值： 开源版：&quot;sp_es_io2&quot;， 基础版：&quot;sp_es_basic&quot;，白金版：&quot;sp_es_platinum&quot;，AI搜索增强版：&quot;sp_es_aisearch&quot;，企业版：&quot;sp_es_enterprise&quot;，CDC白金版：&quot;sp_es_cdc_platinum&quot;，日志增强版：&quot;sp_es_enlogging&quot;，tsearch：&quot;sp_tsearch_io2&quot;，logstash：&quot;sp_es_logstash&quot; ，可以为空，为空的时候后台取LicenseType映射该字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -2413,6 +2438,69 @@ namespace TencentCloud
                      */
                     bool DelayDestroyIntervalHasBeenSet() const;
 
+                    /**
+                     * 获取<p>开启异常节点自动替换，0关闭，1开启</p>
+                     * @return EnableAutoReplace <p>开启异常节点自动替换，0关闭，1开启</p>
+                     * 
+                     */
+                    int64_t GetEnableAutoReplace() const;
+
+                    /**
+                     * 设置<p>开启异常节点自动替换，0关闭，1开启</p>
+                     * @param _enableAutoReplace <p>开启异常节点自动替换，0关闭，1开启</p>
+                     * 
+                     */
+                    void SetEnableAutoReplace(const int64_t& _enableAutoReplace);
+
+                    /**
+                     * 判断参数 EnableAutoReplace 是否已赋值
+                     * @return EnableAutoReplace 是否已赋值
+                     * 
+                     */
+                    bool EnableAutoReplaceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>开启mtls，0关闭，1开启</p>
+                     * @return OpenMTLS <p>开启mtls，0关闭，1开启</p>
+                     * 
+                     */
+                    uint64_t GetOpenMTLS() const;
+
+                    /**
+                     * 设置<p>开启mtls，0关闭，1开启</p>
+                     * @param _openMTLS <p>开启mtls，0关闭，1开启</p>
+                     * 
+                     */
+                    void SetOpenMTLS(const uint64_t& _openMTLS);
+
+                    /**
+                     * 判断参数 OpenMTLS 是否已赋值
+                     * @return OpenMTLS 是否已赋值
+                     * 
+                     */
+                    bool OpenMTLSHasBeenSet() const;
+
+                    /**
+                     * 获取<p>证书类型</p>
+                     * @return ServerCertSource <p>证书类型</p>
+                     * 
+                     */
+                    std::string GetServerCertSource() const;
+
+                    /**
+                     * 设置<p>证书类型</p>
+                     * @param _serverCertSource <p>证书类型</p>
+                     * 
+                     */
+                    void SetServerCertSource(const std::string& _serverCertSource);
+
+                    /**
+                     * 判断参数 ServerCertSource 是否已赋值
+                     * @return ServerCertSource 是否已赋值
+                     * 
+                     */
+                    bool ServerCertSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2624,6 +2712,13 @@ namespace TencentCloud
                      */
                     std::string m_licenseType;
                     bool m_licenseTypeHasBeenSet;
+
+                    /**
+                     * <p>License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li><li>enterprise：企业版</li>默认值platinum</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_realLicenseType;
+                    bool m_realLicenseTypeHasBeenSet;
 
                     /**
                      * <p>是否为冷热集群<li>true: 冷热集群</li><li>false: 非冷热集群</li></p>
@@ -2996,7 +3091,7 @@ namespace TencentCloud
                     bool m_disasterRecoverGroupAffinityHasBeenSet;
 
                     /**
-                     * <p>子产品ID枚举值： 开源版：&quot;sp_es_io2&quot;， 基础版：&quot;sp_es_basic&quot;，白金版：&quot;sp_es_platinum&quot;，企业版：&quot;sp_es_enterprise&quot;，CDC白金版：&quot;sp_es_cdc_platinum&quot;，日志增强版：&quot;sp_es_enlogging&quot;，tsearch：&quot;sp_tsearch_io2&quot;，logstash：&quot;sp_es_logstash&quot; ，可以为空，为空的时候后台取LicenseType映射该字段</p>
+                     * <p>子产品ID枚举值： 开源版：&quot;sp_es_io2&quot;， 基础版：&quot;sp_es_basic&quot;，白金版：&quot;sp_es_platinum&quot;，AI搜索增强版：&quot;sp_es_aisearch&quot;，企业版：&quot;sp_es_enterprise&quot;，CDC白金版：&quot;sp_es_cdc_platinum&quot;，日志增强版：&quot;sp_es_enlogging&quot;，tsearch：&quot;sp_tsearch_io2&quot;，logstash：&quot;sp_es_logstash&quot; ，可以为空，为空的时候后台取LicenseType映射该字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subProductCode;
@@ -3078,6 +3173,24 @@ namespace TencentCloud
                      */
                     int64_t m_delayDestroyInterval;
                     bool m_delayDestroyIntervalHasBeenSet;
+
+                    /**
+                     * <p>开启异常节点自动替换，0关闭，1开启</p>
+                     */
+                    int64_t m_enableAutoReplace;
+                    bool m_enableAutoReplaceHasBeenSet;
+
+                    /**
+                     * <p>开启mtls，0关闭，1开启</p>
+                     */
+                    uint64_t m_openMTLS;
+                    bool m_openMTLSHasBeenSet;
+
+                    /**
+                     * <p>证书类型</p>
+                     */
+                    std::string m_serverCertSource;
+                    bool m_serverCertSourceHasBeenSet;
 
                 };
             }

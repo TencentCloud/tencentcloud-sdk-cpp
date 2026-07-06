@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取字典类型（RootCategory：一级分类，IdentifyRule:敏感识别数据项）
-                     * @return DictType 字典类型（RootCategory：一级分类，IdentifyRule:敏感识别数据项）
+                     * 获取<p>字典类型（RootCategory：一级分类，IdentifyRule:敏感识别数据项）</p>
+                     * @return DictType <p>字典类型（RootCategory：一级分类，IdentifyRule:敏感识别数据项）</p>
                      * 
                      */
                     std::string GetDictType() const;
 
                     /**
-                     * 设置字典类型（RootCategory：一级分类，IdentifyRule:敏感识别数据项）
-                     * @param _dictType 字典类型（RootCategory：一级分类，IdentifyRule:敏感识别数据项）
+                     * 设置<p>字典类型（RootCategory：一级分类，IdentifyRule:敏感识别数据项）</p>
+                     * @param _dictType <p>字典类型（RootCategory：一级分类，IdentifyRule:敏感识别数据项）</p>
                      * 
                      */
                     void SetDictType(const std::string& _dictType);
@@ -65,15 +65,36 @@ namespace TencentCloud
                     bool DictTypeHasBeenSet() const;
 
                     /**
-                     * 获取筛选条件
-                     * @return Filters 筛选条件
+                     * 获取<p>集团账号的成员id</p>
+                     * @return MemberId <p>集团账号的成员id</p>
+                     * 
+                     */
+                    std::vector<std::string> GetMemberId() const;
+
+                    /**
+                     * 设置<p>集团账号的成员id</p>
+                     * @param _memberId <p>集团账号的成员id</p>
+                     * 
+                     */
+                    void SetMemberId(const std::vector<std::string>& _memberId);
+
+                    /**
+                     * 判断参数 MemberId 是否已赋值
+                     * @return MemberId 是否已赋值
+                     * 
+                     */
+                    bool MemberIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>筛选条件</p>
+                     * @return Filters <p>筛选条件</p>
                      * 
                      */
                     std::vector<WhereFilter> GetFilters() const;
 
                     /**
-                     * 设置筛选条件
-                     * @param _filters 筛选条件
+                     * 设置<p>筛选条件</p>
+                     * @param _filters <p>筛选条件</p>
                      * 
                      */
                     void SetFilters(const std::vector<WhereFilter>& _filters);
@@ -88,13 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 字典类型（RootCategory：一级分类，IdentifyRule:敏感识别数据项）
+                     * <p>字典类型（RootCategory：一级分类，IdentifyRule:敏感识别数据项）</p>
                      */
                     std::string m_dictType;
                     bool m_dictTypeHasBeenSet;
 
                     /**
-                     * 筛选条件
+                     * <p>集团账号的成员id</p>
+                     */
+                    std::vector<std::string> m_memberId;
+                    bool m_memberIdHasBeenSet;
+
+                    /**
+                     * <p>筛选条件</p>
                      */
                     std::vector<WhereFilter> m_filters;
                     bool m_filtersHasBeenSet;

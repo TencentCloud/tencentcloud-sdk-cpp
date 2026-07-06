@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取请求时间戳。
+                     * 获取<p>请求时间戳。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReqTime 请求时间戳。
+                     * @return ReqTime <p>请求时间戳。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReqTime() const;
 
                     /**
-                     * 设置请求时间戳。
+                     * 设置<p>请求时间戳。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _reqTime 请求时间戳。
+                     * @param _reqTime <p>请求时间戳。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool ReqTimeHasBeenSet() const;
 
                     /**
-                     * 获取本次活体一比一请求的唯一标记。
+                     * 获取<p>本次活体一比一请求的唯一标记。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Seq 本次活体一比一请求的唯一标记。
+                     * @return Seq <p>本次活体一比一请求的唯一标记。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSeq() const;
 
                     /**
-                     * 设置本次活体一比一请求的唯一标记。
+                     * 设置<p>本次活体一比一请求的唯一标记。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _seq 本次活体一比一请求的唯一标记。
+                     * @param _seq <p>本次活体一比一请求的唯一标记。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool SeqHasBeenSet() const;
 
                     /**
-                     * 获取参与本次活体一比一的身份证号。
+                     * 获取<p>参与本次活体一比一的身份证号。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Idcard 参与本次活体一比一的身份证号。
+                     * @return Idcard <p>参与本次活体一比一的身份证号。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdcard() const;
 
                     /**
-                     * 设置参与本次活体一比一的身份证号。
+                     * 设置<p>参与本次活体一比一的身份证号。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _idcard 参与本次活体一比一的身份证号。
+                     * @param _idcard <p>参与本次活体一比一的身份证号。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool IdcardHasBeenSet() const;
 
                     /**
-                     * 获取参与本次活体一比一的姓名。
+                     * 获取<p>参与本次活体一比一的姓名。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 参与本次活体一比一的姓名。
+                     * @return Name <p>参与本次活体一比一的姓名。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置参与本次活体一比一的姓名。
+                     * 设置<p>参与本次活体一比一的姓名。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 参与本次活体一比一的姓名。
+                     * @param _name <p>参与本次活体一比一的姓名。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取本次活体一比一的相似度。
+                     * 获取<p>本次活体一比一的相似度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Sim 本次活体一比一的相似度。
+                     * @return Sim <p>本次活体一比一的相似度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSim() const;
 
                     /**
-                     * 设置本次活体一比一的相似度。
+                     * 设置<p>本次活体一比一的相似度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sim 本次活体一比一的相似度。
+                     * @param _sim <p>本次活体一比一的相似度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool SimHasBeenSet() const;
 
                     /**
-                     * 获取本次活体一比一是否收费
+                     * 获取<p>本次活体一比一是否收费</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsNeedCharge 本次活体一比一是否收费
+                     * @return IsNeedCharge <p>本次活体一比一是否收费</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsNeedCharge() const;
 
                     /**
-                     * 设置本次活体一比一是否收费
+                     * 设置<p>本次活体一比一是否收费</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isNeedCharge 本次活体一比一是否收费
+                     * @param _isNeedCharge <p>本次活体一比一是否收费</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool IsNeedChargeHasBeenSet() const;
 
                     /**
-                     * 获取本次活体一比一最终结果。0为成功
+                     * 获取<p>本次活体一比一最终结果。0为成功</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Errcode 本次活体一比一最终结果。0为成功
+                     * @return Errcode <p>本次活体一比一最终结果。0为成功</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetErrcode() const;
 
                     /**
-                     * 设置本次活体一比一最终结果。0为成功
+                     * 设置<p>本次活体一比一最终结果。0为成功</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _errcode 本次活体一比一最终结果。0为成功
+                     * @param _errcode <p>本次活体一比一最终结果。0为成功</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool ErrcodeHasBeenSet() const;
 
                     /**
-                     * 获取本次活体一比一最终结果描述。（仅描述用，文案更新时不会通知。）
+                     * 获取<p>本次活体一比一最终结果描述。（仅描述用，文案更新时不会通知。）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Errmsg 本次活体一比一最终结果描述。（仅描述用，文案更新时不会通知。）
+                     * @return Errmsg <p>本次活体一比一最终结果描述。（仅描述用，文案更新时不会通知。）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrmsg() const;
 
                     /**
-                     * 设置本次活体一比一最终结果描述。（仅描述用，文案更新时不会通知。）
+                     * 设置<p>本次活体一比一最终结果描述。（仅描述用，文案更新时不会通知。）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _errmsg 本次活体一比一最终结果描述。（仅描述用，文案更新时不会通知。）
+                     * @param _errmsg <p>本次活体一比一最终结果描述。（仅描述用，文案更新时不会通知。）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -247,18 +247,18 @@ namespace TencentCloud
                     bool ErrmsgHasBeenSet() const;
 
                     /**
-                     * 获取本次活体结果。0为成功
+                     * 获取<p>本次活体结果。0为成功</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Livestatus 本次活体结果。0为成功
+                     * @return Livestatus <p>本次活体结果。0为成功</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLivestatus() const;
 
                     /**
-                     * 设置本次活体结果。0为成功
+                     * 设置<p>本次活体结果。0为成功</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _livestatus 本次活体结果。0为成功
+                     * @param _livestatus <p>本次活体结果。0为成功</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -272,18 +272,18 @@ namespace TencentCloud
                     bool LivestatusHasBeenSet() const;
 
                     /**
-                     * 获取本次活体结果描述。（仅描述用，文案更新时不会通知。）
+                     * 获取<p>本次活体结果描述。（仅描述用，文案更新时不会通知。）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Livemsg 本次活体结果描述。（仅描述用，文案更新时不会通知。）
+                     * @return Livemsg <p>本次活体结果描述。（仅描述用，文案更新时不会通知。）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLivemsg() const;
 
                     /**
-                     * 设置本次活体结果描述。（仅描述用，文案更新时不会通知。）
+                     * 设置<p>本次活体结果描述。（仅描述用，文案更新时不会通知。）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _livemsg 本次活体结果描述。（仅描述用，文案更新时不会通知。）
+                     * @param _livemsg <p>本次活体结果描述。（仅描述用，文案更新时不会通知。）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -297,18 +297,18 @@ namespace TencentCloud
                     bool LivemsgHasBeenSet() const;
 
                     /**
-                     * 获取本次一比一结果。0为成功
+                     * 获取<p>本次一比一结果。0为成功</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Comparestatus 本次一比一结果。0为成功
+                     * @return Comparestatus <p>本次一比一结果。0为成功</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetComparestatus() const;
 
                     /**
-                     * 设置本次一比一结果。0为成功
+                     * 设置<p>本次一比一结果。0为成功</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _comparestatus 本次一比一结果。0为成功
+                     * @param _comparestatus <p>本次一比一结果。0为成功</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -322,18 +322,18 @@ namespace TencentCloud
                     bool ComparestatusHasBeenSet() const;
 
                     /**
-                     * 获取本次一比一结果描述。（仅描述用，文案更新时不会通知。）
+                     * 获取<p>本次一比一结果描述。（仅描述用，文案更新时不会通知。）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Comparemsg 本次一比一结果描述。（仅描述用，文案更新时不会通知。）
+                     * @return Comparemsg <p>本次一比一结果描述。（仅描述用，文案更新时不会通知。）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComparemsg() const;
 
                     /**
-                     * 设置本次一比一结果描述。（仅描述用，文案更新时不会通知。）
+                     * 设置<p>本次一比一结果描述。（仅描述用，文案更新时不会通知。）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _comparemsg 本次一比一结果描述。（仅描述用，文案更新时不会通知。）
+                     * @param _comparemsg <p>本次一比一结果描述。（仅描述用，文案更新时不会通知。）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -347,34 +347,18 @@ namespace TencentCloud
                     bool ComparemsgHasBeenSet() const;
 
                     /**
-                     * 获取比对库源类型。包括：
-公安商业库；
-业务方自有库（用户上传照片、客户的混合库、混合部署库）；
-二次验证库；
-人工审核库；
+                     * 获取<p>比对库源类型。包括：商业库；业务方自有库（用户上传照片、客户的混合库、混合部署库）；二次验证库；人工审核库；</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CompareLibType 比对库源类型。包括：
-公安商业库；
-业务方自有库（用户上传照片、客户的混合库、混合部署库）；
-二次验证库；
-人工审核库；
+                     * @return CompareLibType <p>比对库源类型。包括：商业库；业务方自有库（用户上传照片、客户的混合库、混合部署库）；二次验证库；人工审核库；</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCompareLibType() const;
 
                     /**
-                     * 设置比对库源类型。包括：
-公安商业库；
-业务方自有库（用户上传照片、客户的混合库、混合部署库）；
-二次验证库；
-人工审核库；
+                     * 设置<p>比对库源类型。包括：商业库；业务方自有库（用户上传照片、客户的混合库、混合部署库）；二次验证库；人工审核库；</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _compareLibType 比对库源类型。包括：
-公安商业库；
-业务方自有库（用户上传照片、客户的混合库、混合部署库）；
-二次验证库；
-人工审核库；
+                     * @param _compareLibType <p>比对库源类型。包括：商业库；业务方自有库（用户上传照片、客户的混合库、混合部署库）；二次验证库；人工审核库；</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -388,38 +372,18 @@ namespace TencentCloud
                     bool CompareLibTypeHasBeenSet() const;
 
                     /**
-                     * 获取枚举活体检测类型：
-0：未知
-1：数字活体
-2：动作活体
-3：静默活体
-4：一闪活体（动作+光线）
+                     * 获取<p>枚举活体检测类型：<br>0：未知<br>1：数字活体<br>2：动作活体<br>3：静默活体<br>4：一闪活体（动作+光线）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LivenessMode 枚举活体检测类型：
-0：未知
-1：数字活体
-2：动作活体
-3：静默活体
-4：一闪活体（动作+光线）
+                     * @return LivenessMode <p>枚举活体检测类型：<br>0：未知<br>1：数字活体<br>2：动作活体<br>3：静默活体<br>4：一闪活体（动作+光线）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLivenessMode() const;
 
                     /**
-                     * 设置枚举活体检测类型：
-0：未知
-1：数字活体
-2：动作活体
-3：静默活体
-4：一闪活体（动作+光线）
+                     * 设置<p>枚举活体检测类型：<br>0：未知<br>1：数字活体<br>2：动作活体<br>3：静默活体<br>4：一闪活体（动作+光线）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _livenessMode 枚举活体检测类型：
-0：未知
-1：数字活体
-2：动作活体
-3：静默活体
-4：一闪活体（动作+光线）
+                     * @param _livenessMode <p>枚举活体检测类型：<br>0：未知<br>1：数字活体<br>2：动作活体<br>3：静默活体<br>4：一闪活体（动作+光线）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -435,107 +399,98 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 请求时间戳。
+                     * <p>请求时间戳。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reqTime;
                     bool m_reqTimeHasBeenSet;
 
                     /**
-                     * 本次活体一比一请求的唯一标记。
+                     * <p>本次活体一比一请求的唯一标记。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_seq;
                     bool m_seqHasBeenSet;
 
                     /**
-                     * 参与本次活体一比一的身份证号。
+                     * <p>参与本次活体一比一的身份证号。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_idcard;
                     bool m_idcardHasBeenSet;
 
                     /**
-                     * 参与本次活体一比一的姓名。
+                     * <p>参与本次活体一比一的姓名。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 本次活体一比一的相似度。
+                     * <p>本次活体一比一的相似度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sim;
                     bool m_simHasBeenSet;
 
                     /**
-                     * 本次活体一比一是否收费
+                     * <p>本次活体一比一是否收费</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isNeedCharge;
                     bool m_isNeedChargeHasBeenSet;
 
                     /**
-                     * 本次活体一比一最终结果。0为成功
+                     * <p>本次活体一比一最终结果。0为成功</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_errcode;
                     bool m_errcodeHasBeenSet;
 
                     /**
-                     * 本次活体一比一最终结果描述。（仅描述用，文案更新时不会通知。）
+                     * <p>本次活体一比一最终结果描述。（仅描述用，文案更新时不会通知。）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errmsg;
                     bool m_errmsgHasBeenSet;
 
                     /**
-                     * 本次活体结果。0为成功
+                     * <p>本次活体结果。0为成功</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_livestatus;
                     bool m_livestatusHasBeenSet;
 
                     /**
-                     * 本次活体结果描述。（仅描述用，文案更新时不会通知。）
+                     * <p>本次活体结果描述。（仅描述用，文案更新时不会通知。）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_livemsg;
                     bool m_livemsgHasBeenSet;
 
                     /**
-                     * 本次一比一结果。0为成功
+                     * <p>本次一比一结果。0为成功</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_comparestatus;
                     bool m_comparestatusHasBeenSet;
 
                     /**
-                     * 本次一比一结果描述。（仅描述用，文案更新时不会通知。）
+                     * <p>本次一比一结果描述。（仅描述用，文案更新时不会通知。）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_comparemsg;
                     bool m_comparemsgHasBeenSet;
 
                     /**
-                     * 比对库源类型。包括：
-公安商业库；
-业务方自有库（用户上传照片、客户的混合库、混合部署库）；
-二次验证库；
-人工审核库；
+                     * <p>比对库源类型。包括：商业库；业务方自有库（用户上传照片、客户的混合库、混合部署库）；二次验证库；人工审核库；</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_compareLibType;
                     bool m_compareLibTypeHasBeenSet;
 
                     /**
-                     * 枚举活体检测类型：
-0：未知
-1：数字活体
-2：动作活体
-3：静默活体
-4：一闪活体（动作+光线）
+                     * <p>枚举活体检测类型：<br>0：未知<br>1：数字活体<br>2：动作活体<br>3：静默活体<br>4：一闪活体（动作+光线）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_livenessMode;

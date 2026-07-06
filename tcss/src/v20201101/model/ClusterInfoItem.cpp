@@ -22,6 +22,7 @@ using namespace std;
 
 ClusterInfoItem::ClusterInfoItem() :
     m_clusterIdHasBeenSet(false),
+    m_clusterCAMD5HasBeenSet(false),
     m_clusterNameHasBeenSet(false),
     m_clusterVersionHasBeenSet(false),
     m_clusterOsHasBeenSet(false),
@@ -70,6 +71,16 @@ CoreInternalOutcome ClusterInfoItem::Deserialize(const rapidjson::Value &value)
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterCAMD5") && !value["ClusterCAMD5"].IsNull())
+    {
+        if (!value["ClusterCAMD5"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInfoItem.ClusterCAMD5` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterCAMD5 = string(value["ClusterCAMD5"].GetString());
+        m_clusterCAMD5HasBeenSet = true;
     }
 
     if (value.HasMember("ClusterName") && !value["ClusterName"].IsNull())
@@ -410,6 +421,14 @@ void ClusterInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_clusterCAMD5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterCAMD5";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterCAMD5.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_clusterNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -688,6 +707,22 @@ void ClusterInfoItem::SetClusterId(const string& _clusterId)
 bool ClusterInfoItem::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+string ClusterInfoItem::GetClusterCAMD5() const
+{
+    return m_clusterCAMD5;
+}
+
+void ClusterInfoItem::SetClusterCAMD5(const string& _clusterCAMD5)
+{
+    m_clusterCAMD5 = _clusterCAMD5;
+    m_clusterCAMD5HasBeenSet = true;
+}
+
+bool ClusterInfoItem::ClusterCAMD5HasBeenSet() const
+{
+    return m_clusterCAMD5HasBeenSet;
 }
 
 string ClusterInfoItem::GetClusterName() const

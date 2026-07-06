@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取迁移任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
-                     * @return JobId 迁移任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
+                     * 获取<p>迁移任务 Id，可通过<a href="https://cloud.tencent.com/document/product/571/82084">DescribeMigrationJobs</a>接口获取。</p>
+                     * @return JobId <p>迁移任务 Id，可通过<a href="https://cloud.tencent.com/document/product/571/82084">DescribeMigrationJobs</a>接口获取。</p>
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置迁移任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
-                     * @param _jobId 迁移任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
+                     * 设置<p>迁移任务 Id，可通过<a href="https://cloud.tencent.com/document/product/571/82084">DescribeMigrationJobs</a>接口获取。</p>
+                     * @param _jobId <p>迁移任务 Id，可通过<a href="https://cloud.tencent.com/document/product/571/82084">DescribeMigrationJobs</a>接口获取。</p>
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取校验任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
-                     * @return CompareTaskId 校验任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
+                     * 获取<p>校验任务 Id，可通过<a href="https://cloud.tencent.com/document/product/571/82084">DescribeMigrationJobs</a>接口获取。</p>
+                     * @return CompareTaskId <p>校验任务 Id，可通过<a href="https://cloud.tencent.com/document/product/571/82084">DescribeMigrationJobs</a>接口获取。</p>
                      * 
                      */
                     std::string GetCompareTaskId() const;
 
                     /**
-                     * 设置校验任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
-                     * @param _compareTaskId 校验任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
+                     * 设置<p>校验任务 Id，可通过<a href="https://cloud.tencent.com/document/product/571/82084">DescribeMigrationJobs</a>接口获取。</p>
+                     * @param _compareTaskId <p>校验任务 Id，可通过<a href="https://cloud.tencent.com/document/product/571/82084">DescribeMigrationJobs</a>接口获取。</p>
                      * 
                      */
                     void SetCompareTaskId(const std::string& _compareTaskId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool CompareTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取校验不一致结果的 limit
-                     * @return DifferenceLimit 校验不一致结果的 limit
+                     * 获取<p>校验不一致结果的 limit</p>
+                     * @return DifferenceLimit <p>校验不一致结果的 limit</p>
                      * 
                      */
                     uint64_t GetDifferenceLimit() const;
 
                     /**
-                     * 设置校验不一致结果的 limit
-                     * @param _differenceLimit 校验不一致结果的 limit
+                     * 设置<p>校验不一致结果的 limit</p>
+                     * @param _differenceLimit <p>校验不一致结果的 limit</p>
                      * 
                      */
                     void SetDifferenceLimit(const uint64_t& _differenceLimit);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DifferenceLimitHasBeenSet() const;
 
                     /**
-                     * 获取不一致的 Offset
-                     * @return DifferenceOffset 不一致的 Offset
+                     * 获取<p>不一致的 Offset</p>
+                     * @return DifferenceOffset <p>不一致的 Offset</p>
                      * 
                      */
                     uint64_t GetDifferenceOffset() const;
 
                     /**
-                     * 设置不一致的 Offset
-                     * @param _differenceOffset 不一致的 Offset
+                     * 设置<p>不一致的 Offset</p>
+                     * @param _differenceOffset <p>不一致的 Offset</p>
                      * 
                      */
                     void SetDifferenceOffset(const uint64_t& _differenceOffset);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DifferenceOffsetHasBeenSet() const;
 
                     /**
-                     * 获取搜索条件，不一致的库名
-                     * @return DifferenceDB 搜索条件，不一致的库名
+                     * 获取<p>搜索条件，不一致的库名</p>
+                     * @return DifferenceDB <p>搜索条件，不一致的库名</p>
                      * 
                      */
                     std::string GetDifferenceDB() const;
 
                     /**
-                     * 设置搜索条件，不一致的库名
-                     * @param _differenceDB 搜索条件，不一致的库名
+                     * 设置<p>搜索条件，不一致的库名</p>
+                     * @param _differenceDB <p>搜索条件，不一致的库名</p>
                      * 
                      */
                     void SetDifferenceDB(const std::string& _differenceDB);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool DifferenceDBHasBeenSet() const;
 
                     /**
-                     * 获取搜索条件，不一致的表名
-                     * @return DifferenceTable 搜索条件，不一致的表名
+                     * 获取<p>搜索条件，不一致的表名</p>
+                     * @return DifferenceTable <p>搜索条件，不一致的表名</p>
                      * 
                      */
                     std::string GetDifferenceTable() const;
 
                     /**
-                     * 设置搜索条件，不一致的表名
-                     * @param _differenceTable 搜索条件，不一致的表名
+                     * 设置<p>搜索条件，不一致的表名</p>
+                     * @param _differenceTable <p>搜索条件，不一致的表名</p>
                      * 
                      */
                     void SetDifferenceTable(const std::string& _differenceTable);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool DifferenceTableHasBeenSet() const;
 
                     /**
-                     * 获取未校验的 Limit
-                     * @return SkippedLimit 未校验的 Limit
+                     * 获取<p>未校验的 Limit</p>
+                     * @return SkippedLimit <p>未校验的 Limit</p>
                      * 
                      */
                     uint64_t GetSkippedLimit() const;
 
                     /**
-                     * 设置未校验的 Limit
-                     * @param _skippedLimit 未校验的 Limit
+                     * 设置<p>未校验的 Limit</p>
+                     * @param _skippedLimit <p>未校验的 Limit</p>
                      * 
                      */
                     void SetSkippedLimit(const uint64_t& _skippedLimit);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool SkippedLimitHasBeenSet() const;
 
                     /**
-                     * 获取未校验的 Offset
-                     * @return SkippedOffset 未校验的 Offset
+                     * 获取<p>未校验的 Offset</p>
+                     * @return SkippedOffset <p>未校验的 Offset</p>
                      * 
                      */
                     uint64_t GetSkippedOffset() const;
 
                     /**
-                     * 设置未校验的 Offset
-                     * @param _skippedOffset 未校验的 Offset
+                     * 设置<p>未校验的 Offset</p>
+                     * @param _skippedOffset <p>未校验的 Offset</p>
                      * 
                      */
                     void SetSkippedOffset(const uint64_t& _skippedOffset);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool SkippedOffsetHasBeenSet() const;
 
                     /**
-                     * 获取搜索条件，未校验的库名
-                     * @return SkippedDB 搜索条件，未校验的库名
+                     * 获取<p>搜索条件，未校验的库名</p>
+                     * @return SkippedDB <p>搜索条件，未校验的库名</p>
                      * 
                      */
                     std::string GetSkippedDB() const;
 
                     /**
-                     * 设置搜索条件，未校验的库名
-                     * @param _skippedDB 搜索条件，未校验的库名
+                     * 设置<p>搜索条件，未校验的库名</p>
+                     * @param _skippedDB <p>搜索条件，未校验的库名</p>
                      * 
                      */
                     void SetSkippedDB(const std::string& _skippedDB);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool SkippedDBHasBeenSet() const;
 
                     /**
-                     * 获取搜索条件，未校验的表名
-                     * @return SkippedTable 搜索条件，未校验的表名
+                     * 获取<p>搜索条件，未校验的表名</p>
+                     * @return SkippedTable <p>搜索条件，未校验的表名</p>
                      * 
                      */
                     std::string GetSkippedTable() const;
 
                     /**
-                     * 设置搜索条件，未校验的表名
-                     * @param _skippedTable 搜索条件，未校验的表名
+                     * 设置<p>搜索条件，未校验的表名</p>
+                     * @param _skippedTable <p>搜索条件，未校验的表名</p>
                      * 
                      */
                     void SetSkippedTable(const std::string& _skippedTable);
@@ -255,61 +255,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 迁移任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
+                     * <p>迁移任务 Id，可通过<a href="https://cloud.tencent.com/document/product/571/82084">DescribeMigrationJobs</a>接口获取。</p>
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 校验任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
+                     * <p>校验任务 Id，可通过<a href="https://cloud.tencent.com/document/product/571/82084">DescribeMigrationJobs</a>接口获取。</p>
                      */
                     std::string m_compareTaskId;
                     bool m_compareTaskIdHasBeenSet;
 
                     /**
-                     * 校验不一致结果的 limit
+                     * <p>校验不一致结果的 limit</p>
                      */
                     uint64_t m_differenceLimit;
                     bool m_differenceLimitHasBeenSet;
 
                     /**
-                     * 不一致的 Offset
+                     * <p>不一致的 Offset</p>
                      */
                     uint64_t m_differenceOffset;
                     bool m_differenceOffsetHasBeenSet;
 
                     /**
-                     * 搜索条件，不一致的库名
+                     * <p>搜索条件，不一致的库名</p>
                      */
                     std::string m_differenceDB;
                     bool m_differenceDBHasBeenSet;
 
                     /**
-                     * 搜索条件，不一致的表名
+                     * <p>搜索条件，不一致的表名</p>
                      */
                     std::string m_differenceTable;
                     bool m_differenceTableHasBeenSet;
 
                     /**
-                     * 未校验的 Limit
+                     * <p>未校验的 Limit</p>
                      */
                     uint64_t m_skippedLimit;
                     bool m_skippedLimitHasBeenSet;
 
                     /**
-                     * 未校验的 Offset
+                     * <p>未校验的 Offset</p>
                      */
                     uint64_t m_skippedOffset;
                     bool m_skippedOffsetHasBeenSet;
 
                     /**
-                     * 搜索条件，未校验的库名
+                     * <p>搜索条件，未校验的库名</p>
                      */
                     std::string m_skippedDB;
                     bool m_skippedDBHasBeenSet;
 
                     /**
-                     * 搜索条件，未校验的表名
+                     * <p>搜索条件，未校验的表名</p>
                      */
                     std::string m_skippedTable;
                     bool m_skippedTableHasBeenSet;

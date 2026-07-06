@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者COS_TO_FS(COS Bucket到文件系统)
-                     * @return TaskType 数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者COS_TO_FS(COS Bucket到文件系统)
+                     * 获取<p>数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者COS_TO_FS(COS Bucket到文件系统)</p>
+                     * @return TaskType <p>数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者COS_TO_FS(COS Bucket到文件系统)</p>
                      * 
                      */
                     std::string GetTaskType() const;
 
                     /**
-                     * 设置数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者COS_TO_FS(COS Bucket到文件系统)
-                     * @param _taskType 数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者COS_TO_FS(COS Bucket到文件系统)
+                     * 设置<p>数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者COS_TO_FS(COS Bucket到文件系统)</p>
+                     * @param _taskType <p>数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者COS_TO_FS(COS Bucket到文件系统)</p>
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取COS存储桶名
-                     * @return Bucket COS存储桶名
+                     * 获取<p>COS存储桶名</p>
+                     * @return Bucket <p>COS存储桶名</p>
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
-                     * 设置COS存储桶名
-                     * @param _bucket COS存储桶名
+                     * 设置<p>COS存储桶名</p>
+                     * @param _bucket <p>COS存储桶名</p>
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool BucketHasBeenSet() const;
 
                     /**
-                     * 获取文件系统ID
-                     * @return FileSystemId 文件系统ID
+                     * 获取<p>文件系统ID</p>
+                     * @return FileSystemId <p>文件系统ID</p>
                      * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
-                     * 设置文件系统ID
-                     * @param _fileSystemId 文件系统ID
+                     * 设置<p>文件系统ID</p>
+                     * @param _fileSystemId <p>文件系统ID</p>
                      * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置为空, 则表示全部数据
-                     * @return TaskPath 对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置为空, 则表示全部数据
+                     * 获取<p>对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置为空, 则表示全部数据</p>
+                     * @return TaskPath <p>对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置为空, 则表示全部数据</p>
                      * 
                      */
                     std::string GetTaskPath() const;
 
                     /**
-                     * 设置对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置为空, 则表示全部数据
-                     * @param _taskPath 对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置为空, 则表示全部数据
+                     * 设置<p>对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置为空, 则表示全部数据</p>
+                     * @param _taskPath <p>对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置为空, 则表示全部数据</p>
                      * 
                      */
                     void SetTaskPath(const std::string& _taskPath);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool TaskPathHasBeenSet() const;
 
                     /**
-                     * 获取任务名称
-                     * @return TaskName 任务名称
+                     * 获取<p>任务名称</p>
+                     * @return TaskName <p>任务名称</p>
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
-                     * 设置任务名称
-                     * @param _taskName 任务名称
+                     * 设置<p>任务名称</p>
+                     * @param _taskName <p>任务名称</p>
                      * 
                      */
                     void SetTaskName(const std::string& _taskName);
@@ -148,15 +148,36 @@ namespace TencentCloud
                     bool TaskNameHasBeenSet() const;
 
                     /**
-                     * 获取数据流通方式 MSP_AFM 手动加载  RAW_AFM 按需加载
-                     * @return RepositoryType 数据流通方式 MSP_AFM 手动加载  RAW_AFM 按需加载
+                     * 获取<p>任务路径是否表示绝对路径（暂时仅支持沉降使用）</p>
+                     * @return IsTaskPathAbsolute <p>任务路径是否表示绝对路径（暂时仅支持沉降使用）</p>
+                     * 
+                     */
+                    bool GetIsTaskPathAbsolute() const;
+
+                    /**
+                     * 设置<p>任务路径是否表示绝对路径（暂时仅支持沉降使用）</p>
+                     * @param _isTaskPathAbsolute <p>任务路径是否表示绝对路径（暂时仅支持沉降使用）</p>
+                     * 
+                     */
+                    void SetIsTaskPathAbsolute(const bool& _isTaskPathAbsolute);
+
+                    /**
+                     * 判断参数 IsTaskPathAbsolute 是否已赋值
+                     * @return IsTaskPathAbsolute 是否已赋值
+                     * 
+                     */
+                    bool IsTaskPathAbsoluteHasBeenSet() const;
+
+                    /**
+                     * 获取<p>数据流通方式 MSP_AFM 手动加载  RAW_AFM 按需加载</p>
+                     * @return RepositoryType <p>数据流通方式 MSP_AFM 手动加载  RAW_AFM 按需加载</p>
                      * 
                      */
                     std::string GetRepositoryType() const;
 
                     /**
-                     * 设置数据流通方式 MSP_AFM 手动加载  RAW_AFM 按需加载
-                     * @param _repositoryType 数据流通方式 MSP_AFM 手动加载  RAW_AFM 按需加载
+                     * 设置<p>数据流通方式 MSP_AFM 手动加载  RAW_AFM 按需加载</p>
+                     * @param _repositoryType <p>数据流通方式 MSP_AFM 手动加载  RAW_AFM 按需加载</p>
                      * 
                      */
                     void SetRepositoryType(const std::string& _repositoryType);
@@ -169,15 +190,15 @@ namespace TencentCloud
                     bool RepositoryTypeHasBeenSet() const;
 
                     /**
-                     * 获取文件列表下载地址，以http开头
-                     * @return TextLocation 文件列表下载地址，以http开头
+                     * 获取<p>文件列表下载地址，以http开头</p>
+                     * @return TextLocation <p>文件列表下载地址，以http开头</p>
                      * 
                      */
                     std::string GetTextLocation() const;
 
                     /**
-                     * 设置文件列表下载地址，以http开头
-                     * @param _textLocation 文件列表下载地址，以http开头
+                     * 设置<p>文件列表下载地址，以http开头</p>
+                     * @param _textLocation <p>文件列表下载地址，以http开头</p>
                      * 
                      */
                     void SetTextLocation(const std::string& _textLocation);
@@ -190,102 +211,162 @@ namespace TencentCloud
                     bool TextLocationHasBeenSet() const;
 
                     /**
-                     * 获取是否开启自定义路径(暂时仅供预热使用)
-                     * @return EnableDataFlowSubPath 是否开启自定义路径(暂时仅供预热使用)
-                     * 
+                     * 获取<p>是否开启自定义路径(暂时仅供预热使用)</p>
+                     * @return EnableDataFlowSubPath <p>是否开启自定义路径(暂时仅供预热使用)</p>
+                     * @deprecated
                      */
                     bool GetEnableDataFlowSubPath() const;
 
                     /**
-                     * 设置是否开启自定义路径(暂时仅供预热使用)
-                     * @param _enableDataFlowSubPath 是否开启自定义路径(暂时仅供预热使用)
-                     * 
+                     * 设置<p>是否开启自定义路径(暂时仅供预热使用)</p>
+                     * @param _enableDataFlowSubPath <p>是否开启自定义路径(暂时仅供预热使用)</p>
+                     * @deprecated
                      */
                     void SetEnableDataFlowSubPath(const bool& _enableDataFlowSubPath);
 
                     /**
                      * 判断参数 EnableDataFlowSubPath 是否已赋值
                      * @return EnableDataFlowSubPath 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool EnableDataFlowSubPathHasBeenSet() const;
 
                     /**
-                     * 获取自定义路径(暂时仅供预热使用)
-                     * @return DataFlowSubPath 自定义路径(暂时仅供预热使用)
-                     * 
+                     * 获取<p>自定义路径(暂时仅供预热使用)</p>
+                     * @return DataFlowSubPath <p>自定义路径(暂时仅供预热使用)</p>
+                     * @deprecated
                      */
                     std::string GetDataFlowSubPath() const;
 
                     /**
-                     * 设置自定义路径(暂时仅供预热使用)
-                     * @param _dataFlowSubPath 自定义路径(暂时仅供预热使用)
-                     * 
+                     * 设置<p>自定义路径(暂时仅供预热使用)</p>
+                     * @param _dataFlowSubPath <p>自定义路径(暂时仅供预热使用)</p>
+                     * @deprecated
                      */
                     void SetDataFlowSubPath(const std::string& _dataFlowSubPath);
 
                     /**
                      * 判断参数 DataFlowSubPath 是否已赋值
                      * @return DataFlowSubPath 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DataFlowSubPathHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启自定义目的路径（预热任务表示本地路径，沉降任务表示COS桶前缀）</p>
+                     * @return EnableCustomDestPath <p>是否开启自定义目的路径（预热任务表示本地路径，沉降任务表示COS桶前缀）</p>
+                     * 
+                     */
+                    bool GetEnableCustomDestPath() const;
+
+                    /**
+                     * 设置<p>是否开启自定义目的路径（预热任务表示本地路径，沉降任务表示COS桶前缀）</p>
+                     * @param _enableCustomDestPath <p>是否开启自定义目的路径（预热任务表示本地路径，沉降任务表示COS桶前缀）</p>
+                     * 
+                     */
+                    void SetEnableCustomDestPath(const bool& _enableCustomDestPath);
+
+                    /**
+                     * 判断参数 EnableCustomDestPath 是否已赋值
+                     * @return EnableCustomDestPath 是否已赋值
+                     * 
+                     */
+                    bool EnableCustomDestPathHasBeenSet() const;
+
+                    /**
+                     * 获取<p>自定义目的路径（预热任务表示本地路径，沉降任务表示COS桶前缀）</p>
+                     * @return CustomDestPath <p>自定义目的路径（预热任务表示本地路径，沉降任务表示COS桶前缀）</p>
+                     * 
+                     */
+                    std::string GetCustomDestPath() const;
+
+                    /**
+                     * 设置<p>自定义目的路径（预热任务表示本地路径，沉降任务表示COS桶前缀）</p>
+                     * @param _customDestPath <p>自定义目的路径（预热任务表示本地路径，沉降任务表示COS桶前缀）</p>
+                     * 
+                     */
+                    void SetCustomDestPath(const std::string& _customDestPath);
+
+                    /**
+                     * 判断参数 CustomDestPath 是否已赋值
+                     * @return CustomDestPath 是否已赋值
+                     * 
+                     */
+                    bool CustomDestPathHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者COS_TO_FS(COS Bucket到文件系统)
+                     * <p>数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者COS_TO_FS(COS Bucket到文件系统)</p>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * COS存储桶名
+                     * <p>COS存储桶名</p>
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
 
                     /**
-                     * 文件系统ID
+                     * <p>文件系统ID</p>
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置为空, 则表示全部数据
+                     * <p>对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置为空, 则表示全部数据</p>
                      */
                     std::string m_taskPath;
                     bool m_taskPathHasBeenSet;
 
                     /**
-                     * 任务名称
+                     * <p>任务名称</p>
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
 
                     /**
-                     * 数据流通方式 MSP_AFM 手动加载  RAW_AFM 按需加载
+                     * <p>任务路径是否表示绝对路径（暂时仅支持沉降使用）</p>
+                     */
+                    bool m_isTaskPathAbsolute;
+                    bool m_isTaskPathAbsoluteHasBeenSet;
+
+                    /**
+                     * <p>数据流通方式 MSP_AFM 手动加载  RAW_AFM 按需加载</p>
                      */
                     std::string m_repositoryType;
                     bool m_repositoryTypeHasBeenSet;
 
                     /**
-                     * 文件列表下载地址，以http开头
+                     * <p>文件列表下载地址，以http开头</p>
                      */
                     std::string m_textLocation;
                     bool m_textLocationHasBeenSet;
 
                     /**
-                     * 是否开启自定义路径(暂时仅供预热使用)
+                     * <p>是否开启自定义路径(暂时仅供预热使用)</p>
                      */
                     bool m_enableDataFlowSubPath;
                     bool m_enableDataFlowSubPathHasBeenSet;
 
                     /**
-                     * 自定义路径(暂时仅供预热使用)
+                     * <p>自定义路径(暂时仅供预热使用)</p>
                      */
                     std::string m_dataFlowSubPath;
                     bool m_dataFlowSubPathHasBeenSet;
+
+                    /**
+                     * <p>是否开启自定义目的路径（预热任务表示本地路径，沉降任务表示COS桶前缀）</p>
+                     */
+                    bool m_enableCustomDestPath;
+                    bool m_enableCustomDestPathHasBeenSet;
+
+                    /**
+                     * <p>自定义目的路径（预热任务表示本地路径，沉降任务表示COS桶前缀）</p>
+                     */
+                    std::string m_customDestPath;
+                    bool m_customDestPathHasBeenSet;
 
                 };
             }

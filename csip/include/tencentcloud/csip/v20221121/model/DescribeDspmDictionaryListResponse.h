@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取结果集
-                     * @return DataSet 结果集
+                     * 获取<p>结果集</p>
+                     * @return DataSet <p>结果集</p>
                      * 
                      */
                     std::vector<DspmDictionary> GetDataSet() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 结果集
+                     * <p>结果集</p>
                      */
                     std::vector<DspmDictionary> m_dataSet;
                     bool m_dataSetHasBeenSet;

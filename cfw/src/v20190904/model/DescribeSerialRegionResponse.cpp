@@ -28,7 +28,12 @@ DescribeSerialRegionResponse::DescribeSerialRegionResponse() :
     m_unUsedWidthHasBeenSet(false),
     m_unUsedQuotaHasBeenSet(false),
     m_bypassWidthHasBeenSet(false),
-    m_sendBypassWidthHasBeenSet(false)
+    m_sendBypassWidthHasBeenSet(false),
+    m_edgeWidthHasBeenSet(false),
+    m_edgeElasticSwitchHasBeenSet(false),
+    m_edgeElasticBandwidthHasBeenSet(false),
+    m_edgeElasticBandwidthLimitHasBeenSet(false),
+    m_edgeElasticTrafficSwitchHasBeenSet(false)
 {
 }
 
@@ -126,6 +131,56 @@ CoreInternalOutcome DescribeSerialRegionResponse::Deserialize(const string &payl
         m_sendBypassWidthHasBeenSet = true;
     }
 
+    if (rsp.HasMember("EdgeWidth") && !rsp["EdgeWidth"].IsNull())
+    {
+        if (!rsp["EdgeWidth"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdgeWidth` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_edgeWidth = rsp["EdgeWidth"].GetInt64();
+        m_edgeWidthHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EdgeElasticSwitch") && !rsp["EdgeElasticSwitch"].IsNull())
+    {
+        if (!rsp["EdgeElasticSwitch"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdgeElasticSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_edgeElasticSwitch = rsp["EdgeElasticSwitch"].GetInt64();
+        m_edgeElasticSwitchHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EdgeElasticBandwidth") && !rsp["EdgeElasticBandwidth"].IsNull())
+    {
+        if (!rsp["EdgeElasticBandwidth"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdgeElasticBandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_edgeElasticBandwidth = rsp["EdgeElasticBandwidth"].GetInt64();
+        m_edgeElasticBandwidthHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EdgeElasticBandwidthLimit") && !rsp["EdgeElasticBandwidthLimit"].IsNull())
+    {
+        if (!rsp["EdgeElasticBandwidthLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdgeElasticBandwidthLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_edgeElasticBandwidthLimit = rsp["EdgeElasticBandwidthLimit"].GetInt64();
+        m_edgeElasticBandwidthLimitHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EdgeElasticTrafficSwitch") && !rsp["EdgeElasticTrafficSwitch"].IsNull())
+    {
+        if (!rsp["EdgeElasticTrafficSwitch"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdgeElasticTrafficSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_edgeElasticTrafficSwitch = rsp["EdgeElasticTrafficSwitch"].GetInt64();
+        m_edgeElasticTrafficSwitchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -181,6 +236,46 @@ string DescribeSerialRegionResponse::ToJsonString() const
         string key = "SendBypassWidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sendBypassWidth, allocator);
+    }
+
+    if (m_edgeWidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EdgeWidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_edgeWidth, allocator);
+    }
+
+    if (m_edgeElasticSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EdgeElasticSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_edgeElasticSwitch, allocator);
+    }
+
+    if (m_edgeElasticBandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EdgeElasticBandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_edgeElasticBandwidth, allocator);
+    }
+
+    if (m_edgeElasticBandwidthLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EdgeElasticBandwidthLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_edgeElasticBandwidthLimit, allocator);
+    }
+
+    if (m_edgeElasticTrafficSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EdgeElasticTrafficSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_edgeElasticTrafficSwitch, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -243,6 +338,56 @@ int64_t DescribeSerialRegionResponse::GetSendBypassWidth() const
 bool DescribeSerialRegionResponse::SendBypassWidthHasBeenSet() const
 {
     return m_sendBypassWidthHasBeenSet;
+}
+
+int64_t DescribeSerialRegionResponse::GetEdgeWidth() const
+{
+    return m_edgeWidth;
+}
+
+bool DescribeSerialRegionResponse::EdgeWidthHasBeenSet() const
+{
+    return m_edgeWidthHasBeenSet;
+}
+
+int64_t DescribeSerialRegionResponse::GetEdgeElasticSwitch() const
+{
+    return m_edgeElasticSwitch;
+}
+
+bool DescribeSerialRegionResponse::EdgeElasticSwitchHasBeenSet() const
+{
+    return m_edgeElasticSwitchHasBeenSet;
+}
+
+int64_t DescribeSerialRegionResponse::GetEdgeElasticBandwidth() const
+{
+    return m_edgeElasticBandwidth;
+}
+
+bool DescribeSerialRegionResponse::EdgeElasticBandwidthHasBeenSet() const
+{
+    return m_edgeElasticBandwidthHasBeenSet;
+}
+
+int64_t DescribeSerialRegionResponse::GetEdgeElasticBandwidthLimit() const
+{
+    return m_edgeElasticBandwidthLimit;
+}
+
+bool DescribeSerialRegionResponse::EdgeElasticBandwidthLimitHasBeenSet() const
+{
+    return m_edgeElasticBandwidthLimitHasBeenSet;
+}
+
+int64_t DescribeSerialRegionResponse::GetEdgeElasticTrafficSwitch() const
+{
+    return m_edgeElasticTrafficSwitch;
+}
+
+bool DescribeSerialRegionResponse::EdgeElasticTrafficSwitchHasBeenSet() const
+{
+    return m_edgeElasticTrafficSwitchHasBeenSet;
 }
 
 
