@@ -151,6 +151,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBackupListResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBackupListByVaultRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBackupListByVaultResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeBackupOverviewRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeBackupOverviewResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBinlogConfigRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBinlogConfigResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBinlogDownloadUrlRequest.h>
@@ -701,6 +703,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBackupListByVaultResponse> DescribeBackupListByVaultOutcome;
                 typedef std::future<DescribeBackupListByVaultOutcome> DescribeBackupListByVaultOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeBackupListByVaultRequest&, DescribeBackupListByVaultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupListByVaultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackupOverviewResponse> DescribeBackupOverviewOutcome;
+                typedef std::future<DescribeBackupOverviewOutcome> DescribeBackupOverviewOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeBackupOverviewRequest&, DescribeBackupOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupOverviewAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBinlogConfigResponse> DescribeBinlogConfigOutcome;
                 typedef std::future<DescribeBinlogConfigOutcome> DescribeBinlogConfigOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeBinlogConfigRequest&, DescribeBinlogConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBinlogConfigAsyncHandler;
@@ -1795,6 +1800,15 @@ namespace TencentCloud
                 DescribeBackupListByVaultOutcome DescribeBackupListByVault(const Model::DescribeBackupListByVaultRequest &request);
                 void DescribeBackupListByVaultAsync(const Model::DescribeBackupListByVaultRequest& request, const DescribeBackupListByVaultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBackupListByVaultOutcomeCallable DescribeBackupListByVaultCallable(const Model::DescribeBackupListByVaultRequest& request);
+
+                /**
+                 *本接口（DescribeBackupOverview）用于查询备份用量总览。
+                 * @param req DescribeBackupOverviewRequest
+                 * @return DescribeBackupOverviewOutcome
+                 */
+                DescribeBackupOverviewOutcome DescribeBackupOverview(const Model::DescribeBackupOverviewRequest &request);
+                void DescribeBackupOverviewAsync(const Model::DescribeBackupOverviewRequest& request, const DescribeBackupOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackupOverviewOutcomeCallable DescribeBackupOverviewCallable(const Model::DescribeBackupOverviewRequest& request);
 
                 /**
                  *该接口（DescribeBinlogConfig）用于查询binlog配置

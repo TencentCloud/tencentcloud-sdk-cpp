@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool BudgetIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>预算配置数组。</p><p>数组长度最大为1。BudgetResetAt不支持作为入参设置。</p>
-                     * @return BudgetConfigs <p>预算配置数组。</p><p>数组长度最大为1。BudgetResetAt不支持作为入参设置。</p>
+                     * 获取<p>预算配置数组。</p><p>数组长度最大为3，最多可同时配置1d、7d、30d三个刷新周期，且每种刷新周期只能出现一次。BudgetResetAt不支持作为入参设置，系统会按配置的刷新周期自动维护刷新时间。</p>
+                     * @return BudgetConfigs <p>预算配置数组。</p><p>数组长度最大为3，最多可同时配置1d、7d、30d三个刷新周期，且每种刷新周期只能出现一次。BudgetResetAt不支持作为入参设置，系统会按配置的刷新周期自动维护刷新时间。</p>
                      * 
                      */
                     std::vector<BudgetConfigInput> GetBudgetConfigs() const;
 
                     /**
-                     * 设置<p>预算配置数组。</p><p>数组长度最大为1。BudgetResetAt不支持作为入参设置。</p>
-                     * @param _budgetConfigs <p>预算配置数组。</p><p>数组长度最大为1。BudgetResetAt不支持作为入参设置。</p>
+                     * 设置<p>预算配置数组。</p><p>数组长度最大为3，最多可同时配置1d、7d、30d三个刷新周期，且每种刷新周期只能出现一次。BudgetResetAt不支持作为入参设置，系统会按配置的刷新周期自动维护刷新时间。</p>
+                     * @param _budgetConfigs <p>预算配置数组。</p><p>数组长度最大为3，最多可同时配置1d、7d、30d三个刷新周期，且每种刷新周期只能出现一次。BudgetResetAt不支持作为入参设置，系统会按配置的刷新周期自动维护刷新时间。</p>
                      * 
                      */
                     void SetBudgetConfigs(const std::vector<BudgetConfigInput>& _budgetConfigs);
@@ -137,7 +137,7 @@ namespace TencentCloud
                     bool m_budgetIdHasBeenSet;
 
                     /**
-                     * <p>预算配置数组。</p><p>数组长度最大为1。BudgetResetAt不支持作为入参设置。</p>
+                     * <p>预算配置数组。</p><p>数组长度最大为3，最多可同时配置1d、7d、30d三个刷新周期，且每种刷新周期只能出现一次。BudgetResetAt不支持作为入参设置，系统会按配置的刷新周期自动维护刷新时间。</p>
                      */
                     std::vector<BudgetConfigInput> m_budgetConfigs;
                     bool m_budgetConfigsHasBeenSet;

@@ -21,9 +21,9 @@ using namespace TencentCloud::Clb::V20180317::Model;
 using namespace std;
 
 RouterSettingWithFallBack::RouterSettingWithFallBack() :
+    m_crossModelGroupRoutingStrategyHasBeenSet(false),
     m_fallBackHasBeenSet(false),
-    m_routingStrategyHasBeenSet(false),
-    m_crossModelGroupRoutingStrategyHasBeenSet(false)
+    m_routingStrategyHasBeenSet(false)
 {
 }
 
@@ -31,6 +31,16 @@ CoreInternalOutcome RouterSettingWithFallBack::Deserialize(const rapidjson::Valu
 {
     string requestId = "";
 
+
+    if (value.HasMember("CrossModelGroupRoutingStrategy") && !value["CrossModelGroupRoutingStrategy"].IsNull())
+    {
+        if (!value["CrossModelGroupRoutingStrategy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RouterSettingWithFallBack.CrossModelGroupRoutingStrategy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_crossModelGroupRoutingStrategy = string(value["CrossModelGroupRoutingStrategy"].GetString());
+        m_crossModelGroupRoutingStrategyHasBeenSet = true;
+    }
 
     if (value.HasMember("FallBack") && !value["FallBack"].IsNull())
     {
@@ -59,22 +69,20 @@ CoreInternalOutcome RouterSettingWithFallBack::Deserialize(const rapidjson::Valu
         m_routingStrategyHasBeenSet = true;
     }
 
-    if (value.HasMember("CrossModelGroupRoutingStrategy") && !value["CrossModelGroupRoutingStrategy"].IsNull())
-    {
-        if (!value["CrossModelGroupRoutingStrategy"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `RouterSettingWithFallBack.CrossModelGroupRoutingStrategy` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_crossModelGroupRoutingStrategy = string(value["CrossModelGroupRoutingStrategy"].GetString());
-        m_crossModelGroupRoutingStrategyHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
 void RouterSettingWithFallBack::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_crossModelGroupRoutingStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CrossModelGroupRoutingStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_crossModelGroupRoutingStrategy.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_fallBackHasBeenSet)
     {
@@ -93,16 +101,24 @@ void RouterSettingWithFallBack::ToJsonObject(rapidjson::Value &value, rapidjson:
         value.AddMember(iKey, rapidjson::Value(m_routingStrategy.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_crossModelGroupRoutingStrategyHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CrossModelGroupRoutingStrategy";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_crossModelGroupRoutingStrategy.c_str(), allocator).Move(), allocator);
-    }
-
 }
 
+
+string RouterSettingWithFallBack::GetCrossModelGroupRoutingStrategy() const
+{
+    return m_crossModelGroupRoutingStrategy;
+}
+
+void RouterSettingWithFallBack::SetCrossModelGroupRoutingStrategy(const string& _crossModelGroupRoutingStrategy)
+{
+    m_crossModelGroupRoutingStrategy = _crossModelGroupRoutingStrategy;
+    m_crossModelGroupRoutingStrategyHasBeenSet = true;
+}
+
+bool RouterSettingWithFallBack::CrossModelGroupRoutingStrategyHasBeenSet() const
+{
+    return m_crossModelGroupRoutingStrategyHasBeenSet;
+}
 
 FallBackItem RouterSettingWithFallBack::GetFallBack() const
 {
@@ -134,21 +150,5 @@ void RouterSettingWithFallBack::SetRoutingStrategy(const string& _routingStrateg
 bool RouterSettingWithFallBack::RoutingStrategyHasBeenSet() const
 {
     return m_routingStrategyHasBeenSet;
-}
-
-string RouterSettingWithFallBack::GetCrossModelGroupRoutingStrategy() const
-{
-    return m_crossModelGroupRoutingStrategy;
-}
-
-void RouterSettingWithFallBack::SetCrossModelGroupRoutingStrategy(const string& _crossModelGroupRoutingStrategy)
-{
-    m_crossModelGroupRoutingStrategy = _crossModelGroupRoutingStrategy;
-    m_crossModelGroupRoutingStrategyHasBeenSet = true;
-}
-
-bool RouterSettingWithFallBack::CrossModelGroupRoutingStrategyHasBeenSet() const
-{
-    return m_crossModelGroupRoutingStrategyHasBeenSet;
 }
 

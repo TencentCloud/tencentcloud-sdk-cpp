@@ -40,6 +40,106 @@ ClbClient::ClbClient(const Credential &credential, const string &region, const C
 }
 
 
+ClbClient::AddModelKeyOutcome ClbClient::AddModelKey(const AddModelKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddModelKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddModelKeyResponse rsp = AddModelKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddModelKeyOutcome(rsp);
+        else
+            return AddModelKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return AddModelKeyOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::AddModelKeyAsync(const AddModelKeyRequest& request, const AddModelKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AddModelKeyRequest&;
+    using Resp = AddModelKeyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AddModelKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::AddModelKeyOutcomeCallable ClbClient::AddModelKeyCallable(const AddModelKeyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AddModelKeyOutcome>>();
+    AddModelKeyAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const AddModelKeyRequest&,
+        AddModelKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::AddModelRewriteOutcome ClbClient::AddModelRewrite(const AddModelRewriteRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddModelRewrite");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddModelRewriteResponse rsp = AddModelRewriteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddModelRewriteOutcome(rsp);
+        else
+            return AddModelRewriteOutcome(o.GetError());
+    }
+    else
+    {
+        return AddModelRewriteOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::AddModelRewriteAsync(const AddModelRewriteRequest& request, const AddModelRewriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AddModelRewriteRequest&;
+    using Resp = AddModelRewriteResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AddModelRewrite", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::AddModelRewriteOutcomeCallable ClbClient::AddModelRewriteCallable(const AddModelRewriteRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AddModelRewriteOutcome>>();
+    AddModelRewriteAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const AddModelRewriteRequest&,
+        AddModelRewriteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClbClient::AssociateBudgetOutcome ClbClient::AssociateBudget(const AssociateBudgetRequest &request)
 {
     auto outcome = MakeRequest(request, "AssociateBudget");
@@ -132,6 +232,106 @@ ClbClient::AssociateCustomizedConfigOutcomeCallable ClbClient::AssociateCustomiz
         const ClbClient*,
         const AssociateCustomizedConfigRequest&,
         AssociateCustomizedConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::AssociateModelRouterGuardrailsOutcome ClbClient::AssociateModelRouterGuardrails(const AssociateModelRouterGuardrailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssociateModelRouterGuardrails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssociateModelRouterGuardrailsResponse rsp = AssociateModelRouterGuardrailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssociateModelRouterGuardrailsOutcome(rsp);
+        else
+            return AssociateModelRouterGuardrailsOutcome(o.GetError());
+    }
+    else
+    {
+        return AssociateModelRouterGuardrailsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::AssociateModelRouterGuardrailsAsync(const AssociateModelRouterGuardrailsRequest& request, const AssociateModelRouterGuardrailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AssociateModelRouterGuardrailsRequest&;
+    using Resp = AssociateModelRouterGuardrailsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AssociateModelRouterGuardrails", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::AssociateModelRouterGuardrailsOutcomeCallable ClbClient::AssociateModelRouterGuardrailsCallable(const AssociateModelRouterGuardrailsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AssociateModelRouterGuardrailsOutcome>>();
+    AssociateModelRouterGuardrailsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const AssociateModelRouterGuardrailsRequest&,
+        AssociateModelRouterGuardrailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::AssociateModelsToModelRouterOutcome ClbClient::AssociateModelsToModelRouter(const AssociateModelsToModelRouterRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssociateModelsToModelRouter");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssociateModelsToModelRouterResponse rsp = AssociateModelsToModelRouterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssociateModelsToModelRouterOutcome(rsp);
+        else
+            return AssociateModelsToModelRouterOutcome(o.GetError());
+    }
+    else
+    {
+        return AssociateModelsToModelRouterOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::AssociateModelsToModelRouterAsync(const AssociateModelsToModelRouterRequest& request, const AssociateModelsToModelRouterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AssociateModelsToModelRouterRequest&;
+    using Resp = AssociateModelsToModelRouterResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AssociateModelsToModelRouter", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::AssociateModelsToModelRouterOutcomeCallable ClbClient::AssociateModelsToModelRouterCallable(const AssociateModelsToModelRouterRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AssociateModelsToModelRouterOutcome>>();
+    AssociateModelsToModelRouterAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const AssociateModelsToModelRouterRequest&,
+        AssociateModelsToModelRouterOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -440,6 +640,56 @@ ClbClient::BatchRegisterTargetsOutcomeCallable ClbClient::BatchRegisterTargetsCa
     return prom->get_future();
 }
 
+ClbClient::ChatCompletionsOutcome ClbClient::ChatCompletions(const ChatCompletionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChatCompletions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChatCompletionsResponse rsp = ChatCompletionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChatCompletionsOutcome(rsp);
+        else
+            return ChatCompletionsOutcome(o.GetError());
+    }
+    else
+    {
+        return ChatCompletionsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::ChatCompletionsAsync(const ChatCompletionsRequest& request, const ChatCompletionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ChatCompletionsRequest&;
+    using Resp = ChatCompletionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ChatCompletions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::ChatCompletionsOutcomeCallable ClbClient::ChatCompletionsCallable(const ChatCompletionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ChatCompletionsOutcome>>();
+    ChatCompletionsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ChatCompletionsRequest&,
+        ChatCompletionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClbClient::CloneLoadBalancerOutcome ClbClient::CloneLoadBalancer(const CloneLoadBalancerRequest &request)
 {
     auto outcome = MakeRequest(request, "CloneLoadBalancer");
@@ -482,6 +732,56 @@ ClbClient::CloneLoadBalancerOutcomeCallable ClbClient::CloneLoadBalancerCallable
         const ClbClient*,
         const CloneLoadBalancerRequest&,
         CloneLoadBalancerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::CreateBYOKNetworkOutcome ClbClient::CreateBYOKNetwork(const CreateBYOKNetworkRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBYOKNetwork");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBYOKNetworkResponse rsp = CreateBYOKNetworkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBYOKNetworkOutcome(rsp);
+        else
+            return CreateBYOKNetworkOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBYOKNetworkOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::CreateBYOKNetworkAsync(const CreateBYOKNetworkRequest& request, const CreateBYOKNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateBYOKNetworkRequest&;
+    using Resp = CreateBYOKNetworkResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateBYOKNetwork", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::CreateBYOKNetworkOutcomeCallable ClbClient::CreateBYOKNetworkCallable(const CreateBYOKNetworkRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateBYOKNetworkOutcome>>();
+    CreateBYOKNetworkAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const CreateBYOKNetworkRequest&,
+        CreateBYOKNetworkOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -582,6 +882,56 @@ ClbClient::CreateClsLogSetOutcomeCallable ClbClient::CreateClsLogSetCallable(con
         const ClbClient*,
         const CreateClsLogSetRequest&,
         CreateClsLogSetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::CreateIntentRouterOutcome ClbClient::CreateIntentRouter(const CreateIntentRouterRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateIntentRouter");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateIntentRouterResponse rsp = CreateIntentRouterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateIntentRouterOutcome(rsp);
+        else
+            return CreateIntentRouterOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateIntentRouterOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::CreateIntentRouterAsync(const CreateIntentRouterRequest& request, const CreateIntentRouterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateIntentRouterRequest&;
+    using Resp = CreateIntentRouterResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateIntentRouter", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::CreateIntentRouterOutcomeCallable ClbClient::CreateIntentRouterCallable(const CreateIntentRouterRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateIntentRouterOutcome>>();
+    CreateIntentRouterAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const CreateIntentRouterRequest&,
+        CreateIntentRouterOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -840,6 +1190,56 @@ ClbClient::CreateLoadBalancerSnatIpsOutcomeCallable ClbClient::CreateLoadBalance
     return prom->get_future();
 }
 
+ClbClient::CreateModelOutcome ClbClient::CreateModel(const CreateModelRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateModel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateModelResponse rsp = CreateModelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateModelOutcome(rsp);
+        else
+            return CreateModelOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateModelOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::CreateModelAsync(const CreateModelRequest& request, const CreateModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateModelRequest&;
+    using Resp = CreateModelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateModel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::CreateModelOutcomeCallable ClbClient::CreateModelCallable(const CreateModelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateModelOutcome>>();
+    CreateModelAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const CreateModelRequest&,
+        CreateModelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClbClient::CreateModelRouterOutcome ClbClient::CreateModelRouter(const CreateModelRouterRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateModelRouter");
@@ -882,6 +1282,56 @@ ClbClient::CreateModelRouterOutcomeCallable ClbClient::CreateModelRouterCallable
         const ClbClient*,
         const CreateModelRouterRequest&,
         CreateModelRouterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::CreateModelRouterResourcePackageOutcome ClbClient::CreateModelRouterResourcePackage(const CreateModelRouterResourcePackageRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateModelRouterResourcePackage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateModelRouterResourcePackageResponse rsp = CreateModelRouterResourcePackageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateModelRouterResourcePackageOutcome(rsp);
+        else
+            return CreateModelRouterResourcePackageOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateModelRouterResourcePackageOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::CreateModelRouterResourcePackageAsync(const CreateModelRouterResourcePackageRequest& request, const CreateModelRouterResourcePackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateModelRouterResourcePackageRequest&;
+    using Resp = CreateModelRouterResourcePackageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateModelRouterResourcePackage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::CreateModelRouterResourcePackageOutcomeCallable ClbClient::CreateModelRouterResourcePackageCallable(const CreateModelRouterResourcePackageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateModelRouterResourcePackageOutcome>>();
+    CreateModelRouterResourcePackageAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const CreateModelRouterResourcePackageRequest&,
+        CreateModelRouterResourcePackageOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1140,6 +1590,56 @@ ClbClient::DeleteBudgetsOutcomeCallable ClbClient::DeleteBudgetsCallable(const D
     return prom->get_future();
 }
 
+ClbClient::DeleteIntentRouterOutcome ClbClient::DeleteIntentRouter(const DeleteIntentRouterRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteIntentRouter");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteIntentRouterResponse rsp = DeleteIntentRouterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteIntentRouterOutcome(rsp);
+        else
+            return DeleteIntentRouterOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteIntentRouterOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DeleteIntentRouterAsync(const DeleteIntentRouterRequest& request, const DeleteIntentRouterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteIntentRouterRequest&;
+    using Resp = DeleteIntentRouterResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteIntentRouter", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DeleteIntentRouterOutcomeCallable ClbClient::DeleteIntentRouterCallable(const DeleteIntentRouterRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteIntentRouterOutcome>>();
+    DeleteIntentRouterAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DeleteIntentRouterRequest&,
+        DeleteIntentRouterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClbClient::DeleteKeysOutcome ClbClient::DeleteKeys(const DeleteKeysRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteKeys");
@@ -1382,6 +1882,56 @@ ClbClient::DeleteLoadBalancerSnatIpsOutcomeCallable ClbClient::DeleteLoadBalance
         const ClbClient*,
         const DeleteLoadBalancerSnatIpsRequest&,
         DeleteLoadBalancerSnatIpsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::DeleteModelOutcome ClbClient::DeleteModel(const DeleteModelRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteModel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteModelResponse rsp = DeleteModelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteModelOutcome(rsp);
+        else
+            return DeleteModelOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteModelOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DeleteModelAsync(const DeleteModelRequest& request, const DeleteModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteModelRequest&;
+    using Resp = DeleteModelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteModel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DeleteModelOutcomeCallable ClbClient::DeleteModelCallable(const DeleteModelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteModelOutcome>>();
+    DeleteModelAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DeleteModelRequest&,
+        DeleteModelOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1690,6 +2240,56 @@ ClbClient::DeregisterFunctionTargetsOutcomeCallable ClbClient::DeregisterFunctio
     return prom->get_future();
 }
 
+ClbClient::DeregisterModelsFromServiceProviderOutcome ClbClient::DeregisterModelsFromServiceProvider(const DeregisterModelsFromServiceProviderRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeregisterModelsFromServiceProvider");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeregisterModelsFromServiceProviderResponse rsp = DeregisterModelsFromServiceProviderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeregisterModelsFromServiceProviderOutcome(rsp);
+        else
+            return DeregisterModelsFromServiceProviderOutcome(o.GetError());
+    }
+    else
+    {
+        return DeregisterModelsFromServiceProviderOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DeregisterModelsFromServiceProviderAsync(const DeregisterModelsFromServiceProviderRequest& request, const DeregisterModelsFromServiceProviderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeregisterModelsFromServiceProviderRequest&;
+    using Resp = DeregisterModelsFromServiceProviderResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeregisterModelsFromServiceProvider", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DeregisterModelsFromServiceProviderOutcomeCallable ClbClient::DeregisterModelsFromServiceProviderCallable(const DeregisterModelsFromServiceProviderRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeregisterModelsFromServiceProviderOutcome>>();
+    DeregisterModelsFromServiceProviderAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DeregisterModelsFromServiceProviderRequest&,
+        DeregisterModelsFromServiceProviderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClbClient::DeregisterTargetGroupInstancesOutcome ClbClient::DeregisterTargetGroupInstances(const DeregisterTargetGroupInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DeregisterTargetGroupInstances");
@@ -1832,6 +2432,56 @@ ClbClient::DeregisterTargetsFromClassicalLBOutcomeCallable ClbClient::Deregister
         const ClbClient*,
         const DeregisterTargetsFromClassicalLBRequest&,
         DeregisterTargetsFromClassicalLBOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::DescribeAssociatedModelAvailabilityOutcome ClbClient::DescribeAssociatedModelAvailability(const DescribeAssociatedModelAvailabilityRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssociatedModelAvailability");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssociatedModelAvailabilityResponse rsp = DescribeAssociatedModelAvailabilityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssociatedModelAvailabilityOutcome(rsp);
+        else
+            return DescribeAssociatedModelAvailabilityOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssociatedModelAvailabilityOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeAssociatedModelAvailabilityAsync(const DescribeAssociatedModelAvailabilityRequest& request, const DescribeAssociatedModelAvailabilityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAssociatedModelAvailabilityRequest&;
+    using Resp = DescribeAssociatedModelAvailabilityResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssociatedModelAvailability", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DescribeAssociatedModelAvailabilityOutcomeCallable ClbClient::DescribeAssociatedModelAvailabilityCallable(const DescribeAssociatedModelAvailabilityRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAssociatedModelAvailabilityOutcome>>();
+    DescribeAssociatedModelAvailabilityAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeAssociatedModelAvailabilityRequest&,
+        DescribeAssociatedModelAvailabilityOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2640,6 +3290,156 @@ ClbClient::DescribeIdleLoadBalancersOutcomeCallable ClbClient::DescribeIdleLoadB
     return prom->get_future();
 }
 
+ClbClient::DescribeIntentRouterTiersOutcome ClbClient::DescribeIntentRouterTiers(const DescribeIntentRouterTiersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIntentRouterTiers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIntentRouterTiersResponse rsp = DescribeIntentRouterTiersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIntentRouterTiersOutcome(rsp);
+        else
+            return DescribeIntentRouterTiersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIntentRouterTiersOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeIntentRouterTiersAsync(const DescribeIntentRouterTiersRequest& request, const DescribeIntentRouterTiersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeIntentRouterTiersRequest&;
+    using Resp = DescribeIntentRouterTiersResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeIntentRouterTiers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DescribeIntentRouterTiersOutcomeCallable ClbClient::DescribeIntentRouterTiersCallable(const DescribeIntentRouterTiersRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeIntentRouterTiersOutcome>>();
+    DescribeIntentRouterTiersAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeIntentRouterTiersRequest&,
+        DescribeIntentRouterTiersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::DescribeIntentRoutersOutcome ClbClient::DescribeIntentRouters(const DescribeIntentRoutersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIntentRouters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIntentRoutersResponse rsp = DescribeIntentRoutersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIntentRoutersOutcome(rsp);
+        else
+            return DescribeIntentRoutersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIntentRoutersOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeIntentRoutersAsync(const DescribeIntentRoutersRequest& request, const DescribeIntentRoutersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeIntentRoutersRequest&;
+    using Resp = DescribeIntentRoutersResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeIntentRouters", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DescribeIntentRoutersOutcomeCallable ClbClient::DescribeIntentRoutersCallable(const DescribeIntentRoutersRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeIntentRoutersOutcome>>();
+    DescribeIntentRoutersAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeIntentRoutersRequest&,
+        DescribeIntentRoutersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::DescribeKeysOutcome ClbClient::DescribeKeys(const DescribeKeysRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKeys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKeysResponse rsp = DescribeKeysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKeysOutcome(rsp);
+        else
+            return DescribeKeysOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKeysOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeKeysAsync(const DescribeKeysRequest& request, const DescribeKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeKeysRequest&;
+    using Resp = DescribeKeysResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeKeys", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DescribeKeysOutcomeCallable ClbClient::DescribeKeysCallable(const DescribeKeysRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeKeysOutcome>>();
+    DescribeKeysAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeKeysRequest&,
+        DescribeKeysOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClbClient::DescribeLBListenersOutcome ClbClient::DescribeLBListeners(const DescribeLBListenersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLBListeners");
@@ -3040,6 +3840,256 @@ ClbClient::DescribeLoadBalancersDetailOutcomeCallable ClbClient::DescribeLoadBal
     return prom->get_future();
 }
 
+ClbClient::DescribeModelAliasesOutcome ClbClient::DescribeModelAliases(const DescribeModelAliasesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelAliases");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelAliasesResponse rsp = DescribeModelAliasesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelAliasesOutcome(rsp);
+        else
+            return DescribeModelAliasesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelAliasesOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeModelAliasesAsync(const DescribeModelAliasesRequest& request, const DescribeModelAliasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeModelAliasesRequest&;
+    using Resp = DescribeModelAliasesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeModelAliases", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DescribeModelAliasesOutcomeCallable ClbClient::DescribeModelAliasesCallable(const DescribeModelAliasesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeModelAliasesOutcome>>();
+    DescribeModelAliasesAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeModelAliasesRequest&,
+        DescribeModelAliasesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::DescribeModelAssociationsOutcome ClbClient::DescribeModelAssociations(const DescribeModelAssociationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelAssociations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelAssociationsResponse rsp = DescribeModelAssociationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelAssociationsOutcome(rsp);
+        else
+            return DescribeModelAssociationsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelAssociationsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeModelAssociationsAsync(const DescribeModelAssociationsRequest& request, const DescribeModelAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeModelAssociationsRequest&;
+    using Resp = DescribeModelAssociationsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeModelAssociations", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DescribeModelAssociationsOutcomeCallable ClbClient::DescribeModelAssociationsCallable(const DescribeModelAssociationsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeModelAssociationsOutcome>>();
+    DescribeModelAssociationsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeModelAssociationsRequest&,
+        DescribeModelAssociationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::DescribeModelKeysOutcome ClbClient::DescribeModelKeys(const DescribeModelKeysRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelKeys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelKeysResponse rsp = DescribeModelKeysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelKeysOutcome(rsp);
+        else
+            return DescribeModelKeysOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelKeysOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeModelKeysAsync(const DescribeModelKeysRequest& request, const DescribeModelKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeModelKeysRequest&;
+    using Resp = DescribeModelKeysResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeModelKeys", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DescribeModelKeysOutcomeCallable ClbClient::DescribeModelKeysCallable(const DescribeModelKeysRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeModelKeysOutcome>>();
+    DescribeModelKeysAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeModelKeysRequest&,
+        DescribeModelKeysOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::DescribeModelNamesOutcome ClbClient::DescribeModelNames(const DescribeModelNamesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelNames");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelNamesResponse rsp = DescribeModelNamesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelNamesOutcome(rsp);
+        else
+            return DescribeModelNamesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelNamesOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeModelNamesAsync(const DescribeModelNamesRequest& request, const DescribeModelNamesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeModelNamesRequest&;
+    using Resp = DescribeModelNamesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeModelNames", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DescribeModelNamesOutcomeCallable ClbClient::DescribeModelNamesCallable(const DescribeModelNamesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeModelNamesOutcome>>();
+    DescribeModelNamesAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeModelNamesRequest&,
+        DescribeModelNamesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::DescribeModelRewriteOutcome ClbClient::DescribeModelRewrite(const DescribeModelRewriteRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelRewrite");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelRewriteResponse rsp = DescribeModelRewriteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelRewriteOutcome(rsp);
+        else
+            return DescribeModelRewriteOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelRewriteOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeModelRewriteAsync(const DescribeModelRewriteRequest& request, const DescribeModelRewriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeModelRewriteRequest&;
+    using Resp = DescribeModelRewriteResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeModelRewrite", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DescribeModelRewriteOutcomeCallable ClbClient::DescribeModelRewriteCallable(const DescribeModelRewriteRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeModelRewriteOutcome>>();
+    DescribeModelRewriteAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeModelRewriteRequest&,
+        DescribeModelRewriteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClbClient::DescribeModelRouterDetailOutcome ClbClient::DescribeModelRouterDetail(const DescribeModelRouterDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeModelRouterDetail");
@@ -3090,6 +4140,106 @@ ClbClient::DescribeModelRouterDetailOutcomeCallable ClbClient::DescribeModelRout
     return prom->get_future();
 }
 
+ClbClient::DescribeModelRouterGuardrailsOutcome ClbClient::DescribeModelRouterGuardrails(const DescribeModelRouterGuardrailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelRouterGuardrails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelRouterGuardrailsResponse rsp = DescribeModelRouterGuardrailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelRouterGuardrailsOutcome(rsp);
+        else
+            return DescribeModelRouterGuardrailsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelRouterGuardrailsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeModelRouterGuardrailsAsync(const DescribeModelRouterGuardrailsRequest& request, const DescribeModelRouterGuardrailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeModelRouterGuardrailsRequest&;
+    using Resp = DescribeModelRouterGuardrailsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeModelRouterGuardrails", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DescribeModelRouterGuardrailsOutcomeCallable ClbClient::DescribeModelRouterGuardrailsCallable(const DescribeModelRouterGuardrailsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeModelRouterGuardrailsOutcome>>();
+    DescribeModelRouterGuardrailsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeModelRouterGuardrailsRequest&,
+        DescribeModelRouterGuardrailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::DescribeModelRouterLogsOutcome ClbClient::DescribeModelRouterLogs(const DescribeModelRouterLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelRouterLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelRouterLogsResponse rsp = DescribeModelRouterLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelRouterLogsOutcome(rsp);
+        else
+            return DescribeModelRouterLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelRouterLogsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeModelRouterLogsAsync(const DescribeModelRouterLogsRequest& request, const DescribeModelRouterLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeModelRouterLogsRequest&;
+    using Resp = DescribeModelRouterLogsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeModelRouterLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DescribeModelRouterLogsOutcomeCallable ClbClient::DescribeModelRouterLogsCallable(const DescribeModelRouterLogsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeModelRouterLogsOutcome>>();
+    DescribeModelRouterLogsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeModelRouterLogsRequest&,
+        DescribeModelRouterLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClbClient::DescribeModelRouterQuotaOutcome ClbClient::DescribeModelRouterQuota(const DescribeModelRouterQuotaRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeModelRouterQuota");
@@ -3132,6 +4282,106 @@ ClbClient::DescribeModelRouterQuotaOutcomeCallable ClbClient::DescribeModelRoute
         const ClbClient*,
         const DescribeModelRouterQuotaRequest&,
         DescribeModelRouterQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::DescribeModelRouterResourcePackageDeductionOutcome ClbClient::DescribeModelRouterResourcePackageDeduction(const DescribeModelRouterResourcePackageDeductionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelRouterResourcePackageDeduction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelRouterResourcePackageDeductionResponse rsp = DescribeModelRouterResourcePackageDeductionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelRouterResourcePackageDeductionOutcome(rsp);
+        else
+            return DescribeModelRouterResourcePackageDeductionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelRouterResourcePackageDeductionOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeModelRouterResourcePackageDeductionAsync(const DescribeModelRouterResourcePackageDeductionRequest& request, const DescribeModelRouterResourcePackageDeductionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeModelRouterResourcePackageDeductionRequest&;
+    using Resp = DescribeModelRouterResourcePackageDeductionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeModelRouterResourcePackageDeduction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DescribeModelRouterResourcePackageDeductionOutcomeCallable ClbClient::DescribeModelRouterResourcePackageDeductionCallable(const DescribeModelRouterResourcePackageDeductionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeModelRouterResourcePackageDeductionOutcome>>();
+    DescribeModelRouterResourcePackageDeductionAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeModelRouterResourcePackageDeductionRequest&,
+        DescribeModelRouterResourcePackageDeductionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::DescribeModelRouterResourcePackagesOutcome ClbClient::DescribeModelRouterResourcePackages(const DescribeModelRouterResourcePackagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelRouterResourcePackages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelRouterResourcePackagesResponse rsp = DescribeModelRouterResourcePackagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelRouterResourcePackagesOutcome(rsp);
+        else
+            return DescribeModelRouterResourcePackagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelRouterResourcePackagesOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeModelRouterResourcePackagesAsync(const DescribeModelRouterResourcePackagesRequest& request, const DescribeModelRouterResourcePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeModelRouterResourcePackagesRequest&;
+    using Resp = DescribeModelRouterResourcePackagesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeModelRouterResourcePackages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DescribeModelRouterResourcePackagesOutcomeCallable ClbClient::DescribeModelRouterResourcePackagesCallable(const DescribeModelRouterResourcePackagesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeModelRouterResourcePackagesOutcome>>();
+    DescribeModelRouterResourcePackagesAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeModelRouterResourcePackagesRequest&,
+        DescribeModelRouterResourcePackagesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3332,6 +4582,106 @@ ClbClient::DescribeRewriteOutcomeCallable ClbClient::DescribeRewriteCallable(con
         const ClbClient*,
         const DescribeRewriteRequest&,
         DescribeRewriteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::DescribeServiceProviderHealthStatusOutcome ClbClient::DescribeServiceProviderHealthStatus(const DescribeServiceProviderHealthStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeServiceProviderHealthStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServiceProviderHealthStatusResponse rsp = DescribeServiceProviderHealthStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServiceProviderHealthStatusOutcome(rsp);
+        else
+            return DescribeServiceProviderHealthStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServiceProviderHealthStatusOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeServiceProviderHealthStatusAsync(const DescribeServiceProviderHealthStatusRequest& request, const DescribeServiceProviderHealthStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeServiceProviderHealthStatusRequest&;
+    using Resp = DescribeServiceProviderHealthStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeServiceProviderHealthStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DescribeServiceProviderHealthStatusOutcomeCallable ClbClient::DescribeServiceProviderHealthStatusCallable(const DescribeServiceProviderHealthStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeServiceProviderHealthStatusOutcome>>();
+    DescribeServiceProviderHealthStatusAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeServiceProviderHealthStatusRequest&,
+        DescribeServiceProviderHealthStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::DescribeSupportedProvidersOutcome ClbClient::DescribeSupportedProviders(const DescribeSupportedProvidersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSupportedProviders");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSupportedProvidersResponse rsp = DescribeSupportedProvidersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSupportedProvidersOutcome(rsp);
+        else
+            return DescribeSupportedProvidersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSupportedProvidersOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeSupportedProvidersAsync(const DescribeSupportedProvidersRequest& request, const DescribeSupportedProvidersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSupportedProvidersRequest&;
+    using Resp = DescribeSupportedProvidersResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSupportedProviders", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DescribeSupportedProvidersOutcomeCallable ClbClient::DescribeSupportedProvidersCallable(const DescribeSupportedProvidersRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSupportedProvidersOutcome>>();
+    DescribeSupportedProvidersAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeSupportedProvidersRequest&,
+        DescribeSupportedProvidersOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3690,6 +5040,56 @@ ClbClient::DescribeTaskStatusOutcomeCallable ClbClient::DescribeTaskStatusCallab
     return prom->get_future();
 }
 
+ClbClient::DescribeUpperModelsOutcome ClbClient::DescribeUpperModels(const DescribeUpperModelsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUpperModels");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUpperModelsResponse rsp = DescribeUpperModelsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUpperModelsOutcome(rsp);
+        else
+            return DescribeUpperModelsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUpperModelsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeUpperModelsAsync(const DescribeUpperModelsRequest& request, const DescribeUpperModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeUpperModelsRequest&;
+    using Resp = DescribeUpperModelsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeUpperModels", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DescribeUpperModelsOutcomeCallable ClbClient::DescribeUpperModelsCallable(const DescribeUpperModelsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeUpperModelsOutcome>>();
+    DescribeUpperModelsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeUpperModelsRequest&,
+        DescribeUpperModelsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClbClient::DescribeUserGroupsOutcome ClbClient::DescribeUserGroups(const DescribeUserGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserGroups");
@@ -3840,6 +5240,106 @@ ClbClient::DisassociateCustomizedConfigOutcomeCallable ClbClient::DisassociateCu
     return prom->get_future();
 }
 
+ClbClient::DisassociateModelRouterGuardrailsOutcome ClbClient::DisassociateModelRouterGuardrails(const DisassociateModelRouterGuardrailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisassociateModelRouterGuardrails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisassociateModelRouterGuardrailsResponse rsp = DisassociateModelRouterGuardrailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisassociateModelRouterGuardrailsOutcome(rsp);
+        else
+            return DisassociateModelRouterGuardrailsOutcome(o.GetError());
+    }
+    else
+    {
+        return DisassociateModelRouterGuardrailsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DisassociateModelRouterGuardrailsAsync(const DisassociateModelRouterGuardrailsRequest& request, const DisassociateModelRouterGuardrailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DisassociateModelRouterGuardrailsRequest&;
+    using Resp = DisassociateModelRouterGuardrailsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DisassociateModelRouterGuardrails", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DisassociateModelRouterGuardrailsOutcomeCallable ClbClient::DisassociateModelRouterGuardrailsCallable(const DisassociateModelRouterGuardrailsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DisassociateModelRouterGuardrailsOutcome>>();
+    DisassociateModelRouterGuardrailsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DisassociateModelRouterGuardrailsRequest&,
+        DisassociateModelRouterGuardrailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::DisassociateModelsFromModelRouterOutcome ClbClient::DisassociateModelsFromModelRouter(const DisassociateModelsFromModelRouterRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisassociateModelsFromModelRouter");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisassociateModelsFromModelRouterResponse rsp = DisassociateModelsFromModelRouterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisassociateModelsFromModelRouterOutcome(rsp);
+        else
+            return DisassociateModelsFromModelRouterOutcome(o.GetError());
+    }
+    else
+    {
+        return DisassociateModelsFromModelRouterOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DisassociateModelsFromModelRouterAsync(const DisassociateModelsFromModelRouterRequest& request, const DisassociateModelsFromModelRouterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DisassociateModelsFromModelRouterRequest&;
+    using Resp = DisassociateModelsFromModelRouterResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DisassociateModelsFromModelRouter", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::DisassociateModelsFromModelRouterOutcomeCallable ClbClient::DisassociateModelsFromModelRouterCallable(const DisassociateModelsFromModelRouterRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DisassociateModelsFromModelRouterOutcome>>();
+    DisassociateModelsFromModelRouterAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DisassociateModelsFromModelRouterRequest&,
+        DisassociateModelsFromModelRouterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClbClient::DisassociateTargetGroupsOutcome ClbClient::DisassociateTargetGroups(const DisassociateTargetGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DisassociateTargetGroups");
@@ -3882,6 +5382,106 @@ ClbClient::DisassociateTargetGroupsOutcomeCallable ClbClient::DisassociateTarget
         const ClbClient*,
         const DisassociateTargetGroupsRequest&,
         DisassociateTargetGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::InquirePriceCreateModelRouterResourcePackageOutcome ClbClient::InquirePriceCreateModelRouterResourcePackage(const InquirePriceCreateModelRouterResourcePackageRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquirePriceCreateModelRouterResourcePackage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquirePriceCreateModelRouterResourcePackageResponse rsp = InquirePriceCreateModelRouterResourcePackageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquirePriceCreateModelRouterResourcePackageOutcome(rsp);
+        else
+            return InquirePriceCreateModelRouterResourcePackageOutcome(o.GetError());
+    }
+    else
+    {
+        return InquirePriceCreateModelRouterResourcePackageOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::InquirePriceCreateModelRouterResourcePackageAsync(const InquirePriceCreateModelRouterResourcePackageRequest& request, const InquirePriceCreateModelRouterResourcePackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const InquirePriceCreateModelRouterResourcePackageRequest&;
+    using Resp = InquirePriceCreateModelRouterResourcePackageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "InquirePriceCreateModelRouterResourcePackage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::InquirePriceCreateModelRouterResourcePackageOutcomeCallable ClbClient::InquirePriceCreateModelRouterResourcePackageCallable(const InquirePriceCreateModelRouterResourcePackageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<InquirePriceCreateModelRouterResourcePackageOutcome>>();
+    InquirePriceCreateModelRouterResourcePackageAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const InquirePriceCreateModelRouterResourcePackageRequest&,
+        InquirePriceCreateModelRouterResourcePackageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::InquirePriceRefundModelRouterResourcePackageOutcome ClbClient::InquirePriceRefundModelRouterResourcePackage(const InquirePriceRefundModelRouterResourcePackageRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquirePriceRefundModelRouterResourcePackage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquirePriceRefundModelRouterResourcePackageResponse rsp = InquirePriceRefundModelRouterResourcePackageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquirePriceRefundModelRouterResourcePackageOutcome(rsp);
+        else
+            return InquirePriceRefundModelRouterResourcePackageOutcome(o.GetError());
+    }
+    else
+    {
+        return InquirePriceRefundModelRouterResourcePackageOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::InquirePriceRefundModelRouterResourcePackageAsync(const InquirePriceRefundModelRouterResourcePackageRequest& request, const InquirePriceRefundModelRouterResourcePackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const InquirePriceRefundModelRouterResourcePackageRequest&;
+    using Resp = InquirePriceRefundModelRouterResourcePackageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "InquirePriceRefundModelRouterResourcePackage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::InquirePriceRefundModelRouterResourcePackageOutcomeCallable ClbClient::InquirePriceRefundModelRouterResourcePackageCallable(const InquirePriceRefundModelRouterResourcePackageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<InquirePriceRefundModelRouterResourcePackageOutcome>>();
+    InquirePriceRefundModelRouterResourcePackageAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const InquirePriceRefundModelRouterResourcePackageRequest&,
+        InquirePriceRefundModelRouterResourcePackageOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4440,6 +6040,56 @@ ClbClient::ModifyFunctionTargetsOutcomeCallable ClbClient::ModifyFunctionTargets
     return prom->get_future();
 }
 
+ClbClient::ModifyIntentRouterAttributeOutcome ClbClient::ModifyIntentRouterAttribute(const ModifyIntentRouterAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyIntentRouterAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyIntentRouterAttributeResponse rsp = ModifyIntentRouterAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyIntentRouterAttributeOutcome(rsp);
+        else
+            return ModifyIntentRouterAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyIntentRouterAttributeOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::ModifyIntentRouterAttributeAsync(const ModifyIntentRouterAttributeRequest& request, const ModifyIntentRouterAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyIntentRouterAttributeRequest&;
+    using Resp = ModifyIntentRouterAttributeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyIntentRouterAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::ModifyIntentRouterAttributeOutcomeCallable ClbClient::ModifyIntentRouterAttributeCallable(const ModifyIntentRouterAttributeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyIntentRouterAttributeOutcome>>();
+    ModifyIntentRouterAttributeAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyIntentRouterAttributeRequest&,
+        ModifyIntentRouterAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClbClient::ModifyKeyAttributesOutcome ClbClient::ModifyKeyAttributes(const ModifyKeyAttributesRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyKeyAttributes");
@@ -4840,6 +6490,106 @@ ClbClient::ModifyLoadBalancersProjectOutcomeCallable ClbClient::ModifyLoadBalanc
     return prom->get_future();
 }
 
+ClbClient::ModifyModelAliasAttributesOutcome ClbClient::ModifyModelAliasAttributes(const ModifyModelAliasAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyModelAliasAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyModelAliasAttributesResponse rsp = ModifyModelAliasAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyModelAliasAttributesOutcome(rsp);
+        else
+            return ModifyModelAliasAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyModelAliasAttributesOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::ModifyModelAliasAttributesAsync(const ModifyModelAliasAttributesRequest& request, const ModifyModelAliasAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyModelAliasAttributesRequest&;
+    using Resp = ModifyModelAliasAttributesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyModelAliasAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::ModifyModelAliasAttributesOutcomeCallable ClbClient::ModifyModelAliasAttributesCallable(const ModifyModelAliasAttributesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyModelAliasAttributesOutcome>>();
+    ModifyModelAliasAttributesAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyModelAliasAttributesRequest&,
+        ModifyModelAliasAttributesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::ModifyModelAttributesOutcome ClbClient::ModifyModelAttributes(const ModifyModelAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyModelAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyModelAttributesResponse rsp = ModifyModelAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyModelAttributesOutcome(rsp);
+        else
+            return ModifyModelAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyModelAttributesOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::ModifyModelAttributesAsync(const ModifyModelAttributesRequest& request, const ModifyModelAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyModelAttributesRequest&;
+    using Resp = ModifyModelAttributesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyModelAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::ModifyModelAttributesOutcomeCallable ClbClient::ModifyModelAttributesCallable(const ModifyModelAttributesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyModelAttributesOutcome>>();
+    ModifyModelAttributesAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyModelAttributesRequest&,
+        ModifyModelAttributesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClbClient::ModifyModelRouterAttributesOutcome ClbClient::ModifyModelRouterAttributes(const ModifyModelRouterAttributesRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyModelRouterAttributes");
@@ -4890,6 +6640,106 @@ ClbClient::ModifyModelRouterAttributesOutcomeCallable ClbClient::ModifyModelRout
     return prom->get_future();
 }
 
+ClbClient::ModifyModelRouterGuardrailsOutcome ClbClient::ModifyModelRouterGuardrails(const ModifyModelRouterGuardrailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyModelRouterGuardrails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyModelRouterGuardrailsResponse rsp = ModifyModelRouterGuardrailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyModelRouterGuardrailsOutcome(rsp);
+        else
+            return ModifyModelRouterGuardrailsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyModelRouterGuardrailsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::ModifyModelRouterGuardrailsAsync(const ModifyModelRouterGuardrailsRequest& request, const ModifyModelRouterGuardrailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyModelRouterGuardrailsRequest&;
+    using Resp = ModifyModelRouterGuardrailsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyModelRouterGuardrails", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::ModifyModelRouterGuardrailsOutcomeCallable ClbClient::ModifyModelRouterGuardrailsCallable(const ModifyModelRouterGuardrailsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyModelRouterGuardrailsOutcome>>();
+    ModifyModelRouterGuardrailsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyModelRouterGuardrailsRequest&,
+        ModifyModelRouterGuardrailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::ModifyModelRouterSecurityGroupsOutcome ClbClient::ModifyModelRouterSecurityGroups(const ModifyModelRouterSecurityGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyModelRouterSecurityGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyModelRouterSecurityGroupsResponse rsp = ModifyModelRouterSecurityGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyModelRouterSecurityGroupsOutcome(rsp);
+        else
+            return ModifyModelRouterSecurityGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyModelRouterSecurityGroupsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::ModifyModelRouterSecurityGroupsAsync(const ModifyModelRouterSecurityGroupsRequest& request, const ModifyModelRouterSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyModelRouterSecurityGroupsRequest&;
+    using Resp = ModifyModelRouterSecurityGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyModelRouterSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::ModifyModelRouterSecurityGroupsOutcomeCallable ClbClient::ModifyModelRouterSecurityGroupsCallable(const ModifyModelRouterSecurityGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyModelRouterSecurityGroupsOutcome>>();
+    ModifyModelRouterSecurityGroupsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyModelRouterSecurityGroupsRequest&,
+        ModifyModelRouterSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClbClient::ModifyRuleOutcome ClbClient::ModifyRule(const ModifyRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyRule");
@@ -4932,6 +6782,56 @@ ClbClient::ModifyRuleOutcomeCallable ClbClient::ModifyRuleCallable(const ModifyR
         const ClbClient*,
         const ModifyRuleRequest&,
         ModifyRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::ModifyServiceProviderModelAttributesOutcome ClbClient::ModifyServiceProviderModelAttributes(const ModifyServiceProviderModelAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyServiceProviderModelAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyServiceProviderModelAttributesResponse rsp = ModifyServiceProviderModelAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyServiceProviderModelAttributesOutcome(rsp);
+        else
+            return ModifyServiceProviderModelAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyServiceProviderModelAttributesOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::ModifyServiceProviderModelAttributesAsync(const ModifyServiceProviderModelAttributesRequest& request, const ModifyServiceProviderModelAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyServiceProviderModelAttributesRequest&;
+    using Resp = ModifyServiceProviderModelAttributesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyServiceProviderModelAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::ModifyServiceProviderModelAttributesOutcomeCallable ClbClient::ModifyServiceProviderModelAttributesCallable(const ModifyServiceProviderModelAttributesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyServiceProviderModelAttributesOutcome>>();
+    ModifyServiceProviderModelAttributesAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyServiceProviderModelAttributesRequest&,
+        ModifyServiceProviderModelAttributesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -5240,6 +7140,56 @@ ClbClient::ModifyUserGroupAttributesOutcomeCallable ClbClient::ModifyUserGroupAt
     return prom->get_future();
 }
 
+ClbClient::RefundModelRouterResourcePackageOutcome ClbClient::RefundModelRouterResourcePackage(const RefundModelRouterResourcePackageRequest &request)
+{
+    auto outcome = MakeRequest(request, "RefundModelRouterResourcePackage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RefundModelRouterResourcePackageResponse rsp = RefundModelRouterResourcePackageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RefundModelRouterResourcePackageOutcome(rsp);
+        else
+            return RefundModelRouterResourcePackageOutcome(o.GetError());
+    }
+    else
+    {
+        return RefundModelRouterResourcePackageOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::RefundModelRouterResourcePackageAsync(const RefundModelRouterResourcePackageRequest& request, const RefundModelRouterResourcePackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RefundModelRouterResourcePackageRequest&;
+    using Resp = RefundModelRouterResourcePackageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RefundModelRouterResourcePackage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::RefundModelRouterResourcePackageOutcomeCallable ClbClient::RefundModelRouterResourcePackageCallable(const RefundModelRouterResourcePackageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RefundModelRouterResourcePackageOutcome>>();
+    RefundModelRouterResourcePackageAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const RefundModelRouterResourcePackageRequest&,
+        RefundModelRouterResourcePackageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClbClient::RegenerateKeysOutcome ClbClient::RegenerateKeys(const RegenerateKeysRequest &request)
 {
     auto outcome = MakeRequest(request, "RegenerateKeys");
@@ -5332,6 +7282,56 @@ ClbClient::RegisterFunctionTargetsOutcomeCallable ClbClient::RegisterFunctionTar
         const ClbClient*,
         const RegisterFunctionTargetsRequest&,
         RegisterFunctionTargetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::RegisterModelsToServiceProviderOutcome ClbClient::RegisterModelsToServiceProvider(const RegisterModelsToServiceProviderRequest &request)
+{
+    auto outcome = MakeRequest(request, "RegisterModelsToServiceProvider");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RegisterModelsToServiceProviderResponse rsp = RegisterModelsToServiceProviderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RegisterModelsToServiceProviderOutcome(rsp);
+        else
+            return RegisterModelsToServiceProviderOutcome(o.GetError());
+    }
+    else
+    {
+        return RegisterModelsToServiceProviderOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::RegisterModelsToServiceProviderAsync(const RegisterModelsToServiceProviderRequest& request, const RegisterModelsToServiceProviderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RegisterModelsToServiceProviderRequest&;
+    using Resp = RegisterModelsToServiceProviderResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RegisterModelsToServiceProvider", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::RegisterModelsToServiceProviderOutcomeCallable ClbClient::RegisterModelsToServiceProviderCallable(const RegisterModelsToServiceProviderRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RegisterModelsToServiceProviderOutcome>>();
+    RegisterModelsToServiceProviderAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const RegisterModelsToServiceProviderRequest&,
+        RegisterModelsToServiceProviderOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -5482,6 +7482,106 @@ ClbClient::RegisterTargetsWithClassicalLBOutcomeCallable ClbClient::RegisterTarg
         const ClbClient*,
         const RegisterTargetsWithClassicalLBRequest&,
         RegisterTargetsWithClassicalLBOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::RemoveModelKeyOutcome ClbClient::RemoveModelKey(const RemoveModelKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveModelKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveModelKeyResponse rsp = RemoveModelKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveModelKeyOutcome(rsp);
+        else
+            return RemoveModelKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveModelKeyOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::RemoveModelKeyAsync(const RemoveModelKeyRequest& request, const RemoveModelKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RemoveModelKeyRequest&;
+    using Resp = RemoveModelKeyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RemoveModelKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::RemoveModelKeyOutcomeCallable ClbClient::RemoveModelKeyCallable(const RemoveModelKeyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RemoveModelKeyOutcome>>();
+    RemoveModelKeyAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const RemoveModelKeyRequest&,
+        RemoveModelKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::RemoveModelRewriteOutcome ClbClient::RemoveModelRewrite(const RemoveModelRewriteRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveModelRewrite");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveModelRewriteResponse rsp = RemoveModelRewriteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveModelRewriteOutcome(rsp);
+        else
+            return RemoveModelRewriteOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveModelRewriteOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::RemoveModelRewriteAsync(const RemoveModelRewriteRequest& request, const RemoveModelRewriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RemoveModelRewriteRequest&;
+    using Resp = RemoveModelRewriteResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RemoveModelRewrite", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::RemoveModelRewriteOutcomeCallable ClbClient::RemoveModelRewriteCallable(const RemoveModelRewriteRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RemoveModelRewriteOutcome>>();
+    RemoveModelRewriteAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const RemoveModelRewriteRequest&,
+        RemoveModelRewriteOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -5832,6 +7932,106 @@ ClbClient::SetSecurityGroupForLoadbalancersOutcomeCallable ClbClient::SetSecurit
         const ClbClient*,
         const SetSecurityGroupForLoadbalancersRequest&,
         SetSecurityGroupForLoadbalancersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::TestModelInputModalitiesOutcome ClbClient::TestModelInputModalities(const TestModelInputModalitiesRequest &request)
+{
+    auto outcome = MakeRequest(request, "TestModelInputModalities");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TestModelInputModalitiesResponse rsp = TestModelInputModalitiesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TestModelInputModalitiesOutcome(rsp);
+        else
+            return TestModelInputModalitiesOutcome(o.GetError());
+    }
+    else
+    {
+        return TestModelInputModalitiesOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::TestModelInputModalitiesAsync(const TestModelInputModalitiesRequest& request, const TestModelInputModalitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const TestModelInputModalitiesRequest&;
+    using Resp = TestModelInputModalitiesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "TestModelInputModalities", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::TestModelInputModalitiesOutcomeCallable ClbClient::TestModelInputModalitiesCallable(const TestModelInputModalitiesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<TestModelInputModalitiesOutcome>>();
+    TestModelInputModalitiesAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const TestModelInputModalitiesRequest&,
+        TestModelInputModalitiesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClbClient::TestServiceProviderConnectionOutcome ClbClient::TestServiceProviderConnection(const TestServiceProviderConnectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "TestServiceProviderConnection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TestServiceProviderConnectionResponse rsp = TestServiceProviderConnectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TestServiceProviderConnectionOutcome(rsp);
+        else
+            return TestServiceProviderConnectionOutcome(o.GetError());
+    }
+    else
+    {
+        return TestServiceProviderConnectionOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::TestServiceProviderConnectionAsync(const TestServiceProviderConnectionRequest& request, const TestServiceProviderConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const TestServiceProviderConnectionRequest&;
+    using Resp = TestServiceProviderConnectionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "TestServiceProviderConnection", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClbClient::TestServiceProviderConnectionOutcomeCallable ClbClient::TestServiceProviderConnectionCallable(const TestServiceProviderConnectionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<TestServiceProviderConnectionOutcome>>();
+    TestServiceProviderConnectionAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const TestServiceProviderConnectionRequest&,
+        TestServiceProviderConnectionOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

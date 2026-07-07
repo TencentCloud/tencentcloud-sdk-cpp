@@ -47,27 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>Key的ID</p>
-                     * @return KeyId <p>Key的ID</p>
-                     * 
-                     */
-                    std::string GetKeyId() const;
-
-                    /**
-                     * 设置<p>Key的ID</p>
-                     * @param _keyId <p>Key的ID</p>
-                     * 
-                     */
-                    void SetKeyId(const std::string& _keyId);
-
-                    /**
-                     * 判断参数 KeyId 是否已赋值
-                     * @return KeyId 是否已赋值
-                     * 
-                     */
-                    bool KeyIdHasBeenSet() const;
-
-                    /**
                      * 获取<p>重新生成的明文Key</p>
                      * @return Key <p>重新生成的明文Key</p>
                      * 
@@ -88,19 +67,40 @@ namespace TencentCloud
                      */
                     bool KeyHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取<p>Key的ID</p>
+                     * @return KeyId <p>Key的ID</p>
+                     * 
+                     */
+                    std::string GetKeyId() const;
 
                     /**
-                     * <p>Key的ID</p>
+                     * 设置<p>Key的ID</p>
+                     * @param _keyId <p>Key的ID</p>
+                     * 
                      */
-                    std::string m_keyId;
-                    bool m_keyIdHasBeenSet;
+                    void SetKeyId(const std::string& _keyId);
+
+                    /**
+                     * 判断参数 KeyId 是否已赋值
+                     * @return KeyId 是否已赋值
+                     * 
+                     */
+                    bool KeyIdHasBeenSet() const;
+
+                private:
 
                     /**
                      * <p>重新生成的明文Key</p>
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
+
+                    /**
+                     * <p>Key的ID</p>
+                     */
+                    std::string m_keyId;
+                    bool m_keyIdHasBeenSet;
 
                 };
             }

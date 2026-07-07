@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取腾讯电子签小程序的AppId，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用。
-                     * @return AppId 腾讯电子签小程序的AppId，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用。
+                     * 获取<p>腾讯电子签小程序的AppId，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用。</p>
+                     * @return AppId <p>腾讯电子签小程序的AppId，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用。</p>
                      * 
                      */
                     std::string GetAppId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取腾讯电子签小程序的原始Id，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用。
-                     * @return AppOriginalId 腾讯电子签小程序的原始Id，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用。
+                     * 获取<p>腾讯电子签小程序的原始Id，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用。</p>
+                     * @return AppOriginalId <p>腾讯电子签小程序的原始Id，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用。</p>
                      * 
                      */
                     std::string GetAppOriginalId() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool AppOriginalIdHasBeenSet() const;
 
                     /**
-                     * 获取个人用户自动签的开通链接, 短链形式。过期时间受 `ExpiredTime` 参数控制。
-                     * @return Url 个人用户自动签的开通链接, 短链形式。过期时间受 `ExpiredTime` 参数控制。
+                     * 获取<p>个人用户自动签的开通链接, 短链或者长链接形式。过期时间受 <code>ExpiredTime</code> 参数控制。</p>
+                     * @return Url <p>个人用户自动签的开通链接, 短链或者长链接形式。过期时间受 <code>ExpiredTime</code> 参数控制。</p>
                      * 
                      */
                     std::string GetUrl() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取腾讯电子签小程序的跳转路径，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用。
-                     * @return Path 腾讯电子签小程序的跳转路径，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用。
+                     * 获取<p>腾讯电子签小程序的跳转路径，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用。</p>
+                     * @return Path <p>腾讯电子签小程序的跳转路径，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用。</p>
                      * 
                      */
                     std::string GetPath() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取base64格式的跳转二维码图片，可通过微信扫描后跳转到腾讯电子签小程序的开通界面。
-                     * @return QrCode base64格式的跳转二维码图片，可通过微信扫描后跳转到腾讯电子签小程序的开通界面。
+                     * 获取<p>base64格式的跳转二维码图片，可通过微信扫描后跳转到腾讯电子签小程序的开通界面。</p>
+                     * @return QrCode <p>base64格式的跳转二维码图片，可通过微信扫描后跳转到腾讯电子签小程序的开通界面。</p>
                      * 
                      */
                     std::string GetQrCode() const;
@@ -116,31 +116,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 腾讯电子签小程序的AppId，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用。
+                     * <p>腾讯电子签小程序的AppId，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用。</p>
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 腾讯电子签小程序的原始Id，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用。
+                     * <p>腾讯电子签小程序的原始Id，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用。</p>
                      */
                     std::string m_appOriginalId;
                     bool m_appOriginalIdHasBeenSet;
 
                     /**
-                     * 个人用户自动签的开通链接, 短链形式。过期时间受 `ExpiredTime` 参数控制。
+                     * <p>个人用户自动签的开通链接, 短链或者长链接形式。过期时间受 <code>ExpiredTime</code> 参数控制。</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 腾讯电子签小程序的跳转路径，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用。
+                     * <p>腾讯电子签小程序的跳转路径，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用。</p>
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
-                     * base64格式的跳转二维码图片，可通过微信扫描后跳转到腾讯电子签小程序的开通界面。
+                     * <p>base64格式的跳转二维码图片，可通过微信扫描后跳转到腾讯电子签小程序的开通界面。</p>
                      */
                     std::string m_qrCode;
                     bool m_qrCodeHasBeenSet;

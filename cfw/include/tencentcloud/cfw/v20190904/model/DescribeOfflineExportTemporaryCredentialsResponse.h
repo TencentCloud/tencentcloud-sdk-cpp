@@ -71,6 +71,20 @@ namespace TencentCloud
                      */
                     bool ReturnMsgHasBeenSet() const;
 
+                    /**
+                     * 获取<p>临时下载链接</p>
+                     * @return Link <p>临时下载链接</p>
+                     * 
+                     */
+                    std::string GetLink() const;
+
+                    /**
+                     * 判断参数 Link 是否已赋值
+                     * @return Link 是否已赋值
+                     * 
+                     */
+                    bool LinkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -84,6 +98,12 @@ namespace TencentCloud
                      */
                     std::string m_returnMsg;
                     bool m_returnMsgHasBeenSet;
+
+                    /**
+                     * <p>临时下载链接</p>
+                     */
+                    std::string m_link;
+                    bool m_linkHasBeenSet;
 
                 };
             }

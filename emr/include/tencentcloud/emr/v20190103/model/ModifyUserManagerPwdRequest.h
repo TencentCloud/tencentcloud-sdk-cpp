@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群实例ID
-                     * @return InstanceId 集群实例ID
+                     * 获取<p>集群实例ID</p>
+                     * @return InstanceId <p>集群实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群实例ID
-                     * @param _instanceId 集群实例ID
+                     * 设置<p>集群实例ID</p>
+                     * @param _instanceId <p>集群实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取用户名
-                     * @return UserName 用户名
+                     * 获取<p>用户名</p>
+                     * @return UserName <p>用户名</p>
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置用户名
-                     * @param _userName 用户名
+                     * 设置<p>用户名</p>
+                     * @param _userName <p>用户名</p>
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取密码
-                     * @return PassWord 密码
+                     * 获取<p>密码</p>
+                     * @return PassWord <p>密码</p>
                      * 
                      */
                     std::string GetPassWord() const;
 
                     /**
-                     * 设置密码
-                     * @param _passWord 密码
+                     * 设置<p>密码</p>
+                     * @param _passWord <p>密码</p>
                      * 
                      */
                     void SetPassWord(const std::string& _passWord);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PassWordHasBeenSet() const;
 
                     /**
-                     * 获取是否同步密码
-                     * @return SyncPwd 是否同步密码
+                     * 获取<p>是否同步密码</p>
+                     * @return SyncPwd <p>是否同步密码</p>
                      * 
                      */
                     bool GetSyncPwd() const;
 
                     /**
-                     * 设置是否同步密码
-                     * @param _syncPwd 是否同步密码
+                     * 设置<p>是否同步密码</p>
+                     * @param _syncPwd <p>是否同步密码</p>
                      * 
                      */
                     void SetSyncPwd(const bool& _syncPwd);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群实例ID
+                     * <p>集群实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 用户名
+                     * <p>用户名</p>
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 密码
+                     * <p>密码</p>
                      */
                     std::string m_passWord;
                     bool m_passWordHasBeenSet;
 
                     /**
-                     * 是否同步密码
+                     * <p>是否同步密码</p>
                      */
                     bool m_syncPwd;
                     bool m_syncPwdHasBeenSet;

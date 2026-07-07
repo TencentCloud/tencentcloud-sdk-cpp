@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取IP地址。
-                     * @return IpAddress IP地址。
+                     * 获取<p>IP地址。</p>
+                     * @return IpAddress <p>IP地址。</p>
                      * 
                      */
                     std::string GetIpAddress() const;
 
                     /**
-                     * 设置IP地址。
-                     * @param _ipAddress IP地址。
+                     * 设置<p>IP地址。</p>
+                     * @param _ipAddress <p>IP地址。</p>
                      * 
                      */
                     void SetIpAddress(const std::string& _ipAddress);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IpAddressHasBeenSet() const;
 
                     /**
-                     * 获取IP类型。
-                     * @return IspType IP类型。
+                     * 获取<p>IP类型。</p>
+                     * @return IspType <p>IP类型。</p>
                      * 
                      */
                     std::string GetIspType() const;
 
                     /**
-                     * 设置IP类型。
-                     * @param _ispType IP类型。
+                     * 设置<p>IP类型。</p>
+                     * @param _ispType <p>IP类型。</p>
                      * 
                      */
                     void SetIspType(const std::string& _ispType);
@@ -88,19 +88,46 @@ namespace TencentCloud
                      */
                     bool IspTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Ddos类型</p>
+                     * @return DdosProtectionType <p>Ddos类型</p>
+                     * 
+                     */
+                    std::string GetDdosProtectionType() const;
+
+                    /**
+                     * 设置<p>Ddos类型</p>
+                     * @param _ddosProtectionType <p>Ddos类型</p>
+                     * 
+                     */
+                    void SetDdosProtectionType(const std::string& _ddosProtectionType);
+
+                    /**
+                     * 判断参数 DdosProtectionType 是否已赋值
+                     * @return DdosProtectionType 是否已赋值
+                     * 
+                     */
+                    bool DdosProtectionTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * IP地址。
+                     * <p>IP地址。</p>
                      */
                     std::string m_ipAddress;
                     bool m_ipAddressHasBeenSet;
 
                     /**
-                     * IP类型。
+                     * <p>IP类型。</p>
                      */
                     std::string m_ispType;
                     bool m_ispTypeHasBeenSet;
+
+                    /**
+                     * <p>Ddos类型</p>
+                     */
+                    std::string m_ddosProtectionType;
+                    bool m_ddosProtectionTypeHasBeenSet;
 
                 };
             }

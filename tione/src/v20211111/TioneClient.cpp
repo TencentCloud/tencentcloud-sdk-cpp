@@ -2540,6 +2540,56 @@ TioneClient::DescribePlatformImagesOutcomeCallable TioneClient::DescribePlatform
     return prom->get_future();
 }
 
+TioneClient::DescribePresetImageListOutcome TioneClient::DescribePresetImageList(const DescribePresetImageListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePresetImageList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePresetImageListResponse rsp = DescribePresetImageListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePresetImageListOutcome(rsp);
+        else
+            return DescribePresetImageListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePresetImageListOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribePresetImageListAsync(const DescribePresetImageListRequest& request, const DescribePresetImageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePresetImageListRequest&;
+    using Resp = DescribePresetImageListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePresetImageList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::DescribePresetImageListOutcomeCallable TioneClient::DescribePresetImageListCallable(const DescribePresetImageListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePresetImageListOutcome>>();
+    DescribePresetImageListAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const DescribePresetImageListRequest&,
+        DescribePresetImageListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TioneClient::DescribePublicAlgoVersionListOutcome TioneClient::DescribePublicAlgoVersionList(const DescribePublicAlgoVersionListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePublicAlgoVersionList");

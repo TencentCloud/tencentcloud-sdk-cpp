@@ -21,7 +21,11 @@ using namespace TencentCloud::Clb::V20180317::Model;
 using namespace std;
 
 ModelRouterDetail::ModelRouterDetail() :
+    m_budgetIdHasBeenSet(false),
+    m_budgetNameHasBeenSet(false),
+    m_clusterInfoHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
+    m_creditUsageSetHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_modelRouterIdHasBeenSet(false),
     m_modelRouterNameHasBeenSet(false),
@@ -30,6 +34,7 @@ ModelRouterDetail::ModelRouterDetail() :
     m_networkTypeHasBeenSet(false),
     m_rateLimitConfigHasBeenSet(false),
     m_routerSettingHasBeenSet(false),
+    m_securityGroupsHasBeenSet(false),
     m_securityStatusHasBeenSet(false),
     m_serviceEndPointsHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -37,13 +42,7 @@ ModelRouterDetail::ModelRouterDetail() :
     m_tagsHasBeenSet(false),
     m_tradeStatusHasBeenSet(false),
     m_vipHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_budgetIdHasBeenSet(false),
-    m_budgetNameHasBeenSet(false),
-    m_creditUsageHasBeenSet(false),
-    m_creditUsageSetHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_clusterInfoHasBeenSet(false)
+    m_vpcIdHasBeenSet(false)
 {
 }
 
@@ -51,6 +50,43 @@ CoreInternalOutcome ModelRouterDetail::Deserialize(const rapidjson::Value &value
 {
     string requestId = "";
 
+
+    if (value.HasMember("BudgetId") && !value["BudgetId"].IsNull())
+    {
+        if (!value["BudgetId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelRouterDetail.BudgetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_budgetId = string(value["BudgetId"].GetString());
+        m_budgetIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("BudgetName") && !value["BudgetName"].IsNull())
+    {
+        if (!value["BudgetName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelRouterDetail.BudgetName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_budgetName = string(value["BudgetName"].GetString());
+        m_budgetNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterInfo") && !value["ClusterInfo"].IsNull())
+    {
+        if (!value["ClusterInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelRouterDetail.ClusterInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_clusterInfo.Deserialize(value["ClusterInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_clusterInfoHasBeenSet = true;
+    }
 
     if (value.HasMember("CreatedTime") && !value["CreatedTime"].IsNull())
     {
@@ -60,6 +96,26 @@ CoreInternalOutcome ModelRouterDetail::Deserialize(const rapidjson::Value &value
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreditUsageSet") && !value["CreditUsageSet"].IsNull())
+    {
+        if (!value["CreditUsageSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ModelRouterDetail.CreditUsageSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CreditUsageSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CreditUsage item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_creditUsageSet.push_back(item);
+        }
+        m_creditUsageSetHasBeenSet = true;
     }
 
     if (value.HasMember("Domain") && !value["Domain"].IsNull())
@@ -154,6 +210,19 @@ CoreInternalOutcome ModelRouterDetail::Deserialize(const rapidjson::Value &value
         }
 
         m_routerSettingHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecurityGroups") && !value["SecurityGroups"].IsNull())
+    {
+        if (!value["SecurityGroups"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ModelRouterDetail.SecurityGroups` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SecurityGroups"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_securityGroups.push_back((*itr).GetString());
+        }
+        m_securityGroupsHasBeenSet = true;
     }
 
     if (value.HasMember("SecurityStatus") && !value["SecurityStatus"].IsNull())
@@ -256,93 +325,6 @@ CoreInternalOutcome ModelRouterDetail::Deserialize(const rapidjson::Value &value
         m_vpcIdHasBeenSet = true;
     }
 
-    if (value.HasMember("BudgetId") && !value["BudgetId"].IsNull())
-    {
-        if (!value["BudgetId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ModelRouterDetail.BudgetId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_budgetId = string(value["BudgetId"].GetString());
-        m_budgetIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("BudgetName") && !value["BudgetName"].IsNull())
-    {
-        if (!value["BudgetName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ModelRouterDetail.BudgetName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_budgetName = string(value["BudgetName"].GetString());
-        m_budgetNameHasBeenSet = true;
-    }
-
-    if (value.HasMember("CreditUsage") && !value["CreditUsage"].IsNull())
-    {
-        if (!value["CreditUsage"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `ModelRouterDetail.CreditUsage` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_creditUsage.Deserialize(value["CreditUsage"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_creditUsageHasBeenSet = true;
-    }
-
-    if (value.HasMember("CreditUsageSet") && !value["CreditUsageSet"].IsNull())
-    {
-        if (!value["CreditUsageSet"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ModelRouterDetail.CreditUsageSet` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["CreditUsageSet"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            CreditUsage item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_creditUsageSet.push_back(item);
-        }
-        m_creditUsageSetHasBeenSet = true;
-    }
-
-    if (value.HasMember("SecurityGroups") && !value["SecurityGroups"].IsNull())
-    {
-        if (!value["SecurityGroups"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ModelRouterDetail.SecurityGroups` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["SecurityGroups"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            m_securityGroups.push_back((*itr).GetString());
-        }
-        m_securityGroupsHasBeenSet = true;
-    }
-
-    if (value.HasMember("ClusterInfo") && !value["ClusterInfo"].IsNull())
-    {
-        if (!value["ClusterInfo"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `ModelRouterDetail.ClusterInfo` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_clusterInfo.Deserialize(value["ClusterInfo"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_clusterInfoHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -350,12 +332,52 @@ CoreInternalOutcome ModelRouterDetail::Deserialize(const rapidjson::Value &value
 void ModelRouterDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_budgetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BudgetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_budgetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_budgetNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BudgetName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_budgetName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_clusterInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_createdTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_creditUsageSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreditUsageSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_creditUsageSet.begin(); itr != m_creditUsageSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_domainHasBeenSet)
@@ -422,6 +444,19 @@ void ModelRouterDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_routerSetting.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_securityGroupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroups";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroups.begin(); itr != m_securityGroups.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_securityStatusHasBeenSet)
@@ -502,70 +537,56 @@ void ModelRouterDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_budgetIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BudgetId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_budgetId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_budgetNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BudgetName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_budgetName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_creditUsageHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CreditUsage";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_creditUsage.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_creditUsageSetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CreditUsageSet";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_creditUsageSet.begin(); itr != m_creditUsageSet.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
-    if (m_securityGroupsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SecurityGroups";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_securityGroups.begin(); itr != m_securityGroups.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
-    if (m_clusterInfoHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClusterInfo";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_clusterInfo.ToJsonObject(value[key.c_str()], allocator);
-    }
-
 }
 
+
+string ModelRouterDetail::GetBudgetId() const
+{
+    return m_budgetId;
+}
+
+void ModelRouterDetail::SetBudgetId(const string& _budgetId)
+{
+    m_budgetId = _budgetId;
+    m_budgetIdHasBeenSet = true;
+}
+
+bool ModelRouterDetail::BudgetIdHasBeenSet() const
+{
+    return m_budgetIdHasBeenSet;
+}
+
+string ModelRouterDetail::GetBudgetName() const
+{
+    return m_budgetName;
+}
+
+void ModelRouterDetail::SetBudgetName(const string& _budgetName)
+{
+    m_budgetName = _budgetName;
+    m_budgetNameHasBeenSet = true;
+}
+
+bool ModelRouterDetail::BudgetNameHasBeenSet() const
+{
+    return m_budgetNameHasBeenSet;
+}
+
+ClusterInfo ModelRouterDetail::GetClusterInfo() const
+{
+    return m_clusterInfo;
+}
+
+void ModelRouterDetail::SetClusterInfo(const ClusterInfo& _clusterInfo)
+{
+    m_clusterInfo = _clusterInfo;
+    m_clusterInfoHasBeenSet = true;
+}
+
+bool ModelRouterDetail::ClusterInfoHasBeenSet() const
+{
+    return m_clusterInfoHasBeenSet;
+}
 
 string ModelRouterDetail::GetCreatedTime() const
 {
@@ -581,6 +602,22 @@ void ModelRouterDetail::SetCreatedTime(const string& _createdTime)
 bool ModelRouterDetail::CreatedTimeHasBeenSet() const
 {
     return m_createdTimeHasBeenSet;
+}
+
+vector<CreditUsage> ModelRouterDetail::GetCreditUsageSet() const
+{
+    return m_creditUsageSet;
+}
+
+void ModelRouterDetail::SetCreditUsageSet(const vector<CreditUsage>& _creditUsageSet)
+{
+    m_creditUsageSet = _creditUsageSet;
+    m_creditUsageSetHasBeenSet = true;
+}
+
+bool ModelRouterDetail::CreditUsageSetHasBeenSet() const
+{
+    return m_creditUsageSetHasBeenSet;
 }
 
 string ModelRouterDetail::GetDomain() const
@@ -711,6 +748,22 @@ bool ModelRouterDetail::RouterSettingHasBeenSet() const
     return m_routerSettingHasBeenSet;
 }
 
+vector<string> ModelRouterDetail::GetSecurityGroups() const
+{
+    return m_securityGroups;
+}
+
+void ModelRouterDetail::SetSecurityGroups(const vector<string>& _securityGroups)
+{
+    m_securityGroups = _securityGroups;
+    m_securityGroupsHasBeenSet = true;
+}
+
+bool ModelRouterDetail::SecurityGroupsHasBeenSet() const
+{
+    return m_securityGroupsHasBeenSet;
+}
+
 string ModelRouterDetail::GetSecurityStatus() const
 {
     return m_securityStatus;
@@ -837,101 +890,5 @@ void ModelRouterDetail::SetVpcId(const string& _vpcId)
 bool ModelRouterDetail::VpcIdHasBeenSet() const
 {
     return m_vpcIdHasBeenSet;
-}
-
-string ModelRouterDetail::GetBudgetId() const
-{
-    return m_budgetId;
-}
-
-void ModelRouterDetail::SetBudgetId(const string& _budgetId)
-{
-    m_budgetId = _budgetId;
-    m_budgetIdHasBeenSet = true;
-}
-
-bool ModelRouterDetail::BudgetIdHasBeenSet() const
-{
-    return m_budgetIdHasBeenSet;
-}
-
-string ModelRouterDetail::GetBudgetName() const
-{
-    return m_budgetName;
-}
-
-void ModelRouterDetail::SetBudgetName(const string& _budgetName)
-{
-    m_budgetName = _budgetName;
-    m_budgetNameHasBeenSet = true;
-}
-
-bool ModelRouterDetail::BudgetNameHasBeenSet() const
-{
-    return m_budgetNameHasBeenSet;
-}
-
-CreditUsage ModelRouterDetail::GetCreditUsage() const
-{
-    return m_creditUsage;
-}
-
-void ModelRouterDetail::SetCreditUsage(const CreditUsage& _creditUsage)
-{
-    m_creditUsage = _creditUsage;
-    m_creditUsageHasBeenSet = true;
-}
-
-bool ModelRouterDetail::CreditUsageHasBeenSet() const
-{
-    return m_creditUsageHasBeenSet;
-}
-
-vector<CreditUsage> ModelRouterDetail::GetCreditUsageSet() const
-{
-    return m_creditUsageSet;
-}
-
-void ModelRouterDetail::SetCreditUsageSet(const vector<CreditUsage>& _creditUsageSet)
-{
-    m_creditUsageSet = _creditUsageSet;
-    m_creditUsageSetHasBeenSet = true;
-}
-
-bool ModelRouterDetail::CreditUsageSetHasBeenSet() const
-{
-    return m_creditUsageSetHasBeenSet;
-}
-
-vector<string> ModelRouterDetail::GetSecurityGroups() const
-{
-    return m_securityGroups;
-}
-
-void ModelRouterDetail::SetSecurityGroups(const vector<string>& _securityGroups)
-{
-    m_securityGroups = _securityGroups;
-    m_securityGroupsHasBeenSet = true;
-}
-
-bool ModelRouterDetail::SecurityGroupsHasBeenSet() const
-{
-    return m_securityGroupsHasBeenSet;
-}
-
-ClusterInfo ModelRouterDetail::GetClusterInfo() const
-{
-    return m_clusterInfo;
-}
-
-void ModelRouterDetail::SetClusterInfo(const ClusterInfo& _clusterInfo)
-{
-    m_clusterInfo = _clusterInfo;
-    m_clusterInfoHasBeenSet = true;
-}
-
-bool ModelRouterDetail::ClusterInfoHasBeenSet() const
-{
-    return m_clusterInfoHasBeenSet;
 }
 

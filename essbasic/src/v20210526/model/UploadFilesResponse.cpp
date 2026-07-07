@@ -26,7 +26,8 @@ using namespace std;
 UploadFilesResponse::UploadFilesResponse() :
     m_totalCountHasBeenSet(false),
     m_fileIdsHasBeenSet(false),
-    m_fileUrlsHasBeenSet(false)
+    m_fileUrlsHasBeenSet(false),
+    m_deadlineHasBeenSet(false)
 {
 }
 
@@ -100,6 +101,16 @@ CoreInternalOutcome UploadFilesResponse::Deserialize(const string &payload)
         m_fileUrlsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Deadline") && !rsp["Deadline"].IsNull())
+    {
+        if (!rsp["Deadline"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Deadline` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deadline = rsp["Deadline"].GetInt64();
+        m_deadlineHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -144,6 +155,14 @@ string UploadFilesResponse::ToJsonString() const
         }
     }
 
+    if (m_deadlineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Deadline";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deadline, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -184,6 +203,16 @@ vector<string> UploadFilesResponse::GetFileUrls() const
 bool UploadFilesResponse::FileUrlsHasBeenSet() const
 {
     return m_fileUrlsHasBeenSet;
+}
+
+int64_t UploadFilesResponse::GetDeadline() const
+{
+    return m_deadline;
+}
+
+bool UploadFilesResponse::DeadlineHasBeenSet() const
+{
+    return m_deadlineHasBeenSet;
 }
 
 

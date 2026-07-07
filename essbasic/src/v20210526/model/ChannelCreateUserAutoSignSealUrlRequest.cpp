@@ -27,7 +27,8 @@ ChannelCreateUserAutoSignSealUrlRequest::ChannelCreateUserAutoSignSealUrlRequest
     m_sceneKeyHasBeenSet(false),
     m_userInfoHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_expiredTimeHasBeenSet(false)
+    m_expiredTimeHasBeenSet(false),
+    m_endPointHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,14 @@ string ChannelCreateUserAutoSignSealUrlRequest::ToJsonString() const
         string key = "ExpiredTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_expiredTime, allocator);
+    }
+
+    if (m_endPointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndPoint";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endPoint.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -167,6 +176,22 @@ void ChannelCreateUserAutoSignSealUrlRequest::SetExpiredTime(const int64_t& _exp
 bool ChannelCreateUserAutoSignSealUrlRequest::ExpiredTimeHasBeenSet() const
 {
     return m_expiredTimeHasBeenSet;
+}
+
+string ChannelCreateUserAutoSignSealUrlRequest::GetEndPoint() const
+{
+    return m_endPoint;
+}
+
+void ChannelCreateUserAutoSignSealUrlRequest::SetEndPoint(const string& _endPoint)
+{
+    m_endPoint = _endPoint;
+    m_endPointHasBeenSet = true;
+}
+
+bool ChannelCreateUserAutoSignSealUrlRequest::EndPointHasBeenSet() const
+{
+    return m_endPointHasBeenSet;
 }
 
 

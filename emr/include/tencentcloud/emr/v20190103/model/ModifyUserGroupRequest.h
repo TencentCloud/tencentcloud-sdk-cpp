@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群字符串ID
-                     * @return InstanceId 集群字符串ID
+                     * 获取<p>集群字符串ID</p>
+                     * @return InstanceId <p>集群字符串ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群字符串ID
-                     * @param _instanceId 集群字符串ID
+                     * 设置<p>集群字符串ID</p>
+                     * @param _instanceId <p>集群字符串ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取用户信息列表
-                     * @return Users 用户信息列表
+                     * 获取<p>用户信息列表</p>
+                     * @return Users <p>用户信息列表</p>
                      * 
                      */
                     std::vector<std::string> GetUsers() const;
 
                     /**
-                     * 设置用户信息列表
-                     * @param _users 用户信息列表
+                     * 设置<p>用户信息列表</p>
+                     * @param _users <p>用户信息列表</p>
                      * 
                      */
                     void SetUsers(const std::vector<std::string>& _users);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool UsersHasBeenSet() const;
 
                     /**
-                     * 获取用户主组，cvm集群为必填参数，tke集群选填
-                     * @return UserGroup 用户主组，cvm集群为必填参数，tke集群选填
+                     * 获取<p>用户主组，cvm集群为必填参数，tke集群选填</p>
+                     * @return UserGroup <p>用户主组，cvm集群为必填参数，tke集群选填</p>
                      * 
                      */
                     std::string GetUserGroup() const;
 
                     /**
-                     * 设置用户主组，cvm集群为必填参数，tke集群选填
-                     * @param _userGroup 用户主组，cvm集群为必填参数，tke集群选填
+                     * 设置<p>用户主组，cvm集群为必填参数，tke集群选填</p>
+                     * @param _userGroup <p>用户主组，cvm集群为必填参数，tke集群选填</p>
                      * 
                      */
                     void SetUserGroup(const std::string& _userGroup);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool UserGroupHasBeenSet() const;
 
                     /**
-                     * 获取用户副组
-                     * @return Groups 用户副组
+                     * 获取<p>用户副组</p>
+                     * @return Groups <p>用户副组</p>
                      * 
                      */
                     std::vector<std::string> GetGroups() const;
 
                     /**
-                     * 设置用户副组
-                     * @param _groups 用户副组
+                     * 设置<p>用户副组</p>
+                     * @param _groups <p>用户副组</p>
                      * 
                      */
                     void SetGroups(const std::vector<std::string>& _groups);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool GroupsHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Remark 备注
+                     * 获取<p>备注</p>
+                     * @return Remark <p>备注</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注
-                     * @param _remark 备注
+                     * 设置<p>备注</p>
+                     * @param _remark <p>备注</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群字符串ID
+                     * <p>集群字符串ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 用户信息列表
+                     * <p>用户信息列表</p>
                      */
                     std::vector<std::string> m_users;
                     bool m_usersHasBeenSet;
 
                     /**
-                     * 用户主组，cvm集群为必填参数，tke集群选填
+                     * <p>用户主组，cvm集群为必填参数，tke集群选填</p>
                      */
                     std::string m_userGroup;
                     bool m_userGroupHasBeenSet;
 
                     /**
-                     * 用户副组
+                     * <p>用户副组</p>
                      */
                     std::vector<std::string> m_groups;
                     bool m_groupsHasBeenSet;
 
                     /**
-                     * 备注
+                     * <p>备注</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

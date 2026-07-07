@@ -64,25 +64,25 @@ namespace TencentCloud
                     bool BudgetIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>资源类型。</p><p>枚举值：</p><ul><li>ModelRouter：模型路由实例</li><li>Key：模型路由Key</li></ul><p>不传时返回全部资源类型。</p>
-                     * @return Type <p>资源类型。</p><p>枚举值：</p><ul><li>ModelRouter：模型路由实例</li><li>Key：模型路由Key</li></ul><p>不传时返回全部资源类型。</p>
+                     * 获取<p>本次查询限制的数量</p>
+                     * @return Limit <p>本次查询限制的数量</p>
                      * 
                      */
-                    std::string GetType() const;
+                    uint64_t GetLimit() const;
 
                     /**
-                     * 设置<p>资源类型。</p><p>枚举值：</p><ul><li>ModelRouter：模型路由实例</li><li>Key：模型路由Key</li></ul><p>不传时返回全部资源类型。</p>
-                     * @param _type <p>资源类型。</p><p>枚举值：</p><ul><li>ModelRouter：模型路由实例</li><li>Key：模型路由Key</li></ul><p>不传时返回全部资源类型。</p>
+                     * 设置<p>本次查询限制的数量</p>
+                     * @param _limit <p>本次查询限制的数量</p>
                      * 
                      */
-                    void SetType(const std::string& _type);
+                    void SetLimit(const uint64_t& _limit);
 
                     /**
-                     * 判断参数 Type 是否已赋值
-                     * @return Type 是否已赋值
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
                      * 
                      */
-                    bool TypeHasBeenSet() const;
+                    bool LimitHasBeenSet() const;
 
                     /**
                      * 获取<p>本次查询偏移量</p>
@@ -106,25 +106,25 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取<p>本次查询限制的数量</p>
-                     * @return Limit <p>本次查询限制的数量</p>
+                     * 获取<p>资源类型。</p><p>枚举值：</p><ul><li>ModelRouter：模型路由实例</li><li>Key：模型路由Key</li></ul><p>不传时返回全部资源类型。</p>
+                     * @return Type <p>资源类型。</p><p>枚举值：</p><ul><li>ModelRouter：模型路由实例</li><li>Key：模型路由Key</li></ul><p>不传时返回全部资源类型。</p>
                      * 
                      */
-                    uint64_t GetLimit() const;
+                    std::string GetType() const;
 
                     /**
-                     * 设置<p>本次查询限制的数量</p>
-                     * @param _limit <p>本次查询限制的数量</p>
+                     * 设置<p>资源类型。</p><p>枚举值：</p><ul><li>ModelRouter：模型路由实例</li><li>Key：模型路由Key</li></ul><p>不传时返回全部资源类型。</p>
+                     * @param _type <p>资源类型。</p><p>枚举值：</p><ul><li>ModelRouter：模型路由实例</li><li>Key：模型路由Key</li></ul><p>不传时返回全部资源类型。</p>
                      * 
                      */
-                    void SetLimit(const uint64_t& _limit);
+                    void SetType(const std::string& _type);
 
                     /**
-                     * 判断参数 Limit 是否已赋值
-                     * @return Limit 是否已赋值
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
                      * 
                      */
-                    bool LimitHasBeenSet() const;
+                    bool TypeHasBeenSet() const;
 
                 private:
 
@@ -135,10 +135,10 @@ namespace TencentCloud
                     bool m_budgetIdHasBeenSet;
 
                     /**
-                     * <p>资源类型。</p><p>枚举值：</p><ul><li>ModelRouter：模型路由实例</li><li>Key：模型路由Key</li></ul><p>不传时返回全部资源类型。</p>
+                     * <p>本次查询限制的数量</p>
                      */
-                    std::string m_type;
-                    bool m_typeHasBeenSet;
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
 
                     /**
                      * <p>本次查询偏移量</p>
@@ -147,10 +147,10 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * <p>本次查询限制的数量</p>
+                     * <p>资源类型。</p><p>枚举值：</p><ul><li>ModelRouter：模型路由实例</li><li>Key：模型路由Key</li></ul><p>不传时返回全部资源类型。</p>
                      */
-                    uint64_t m_limit;
-                    bool m_limitHasBeenSet;
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

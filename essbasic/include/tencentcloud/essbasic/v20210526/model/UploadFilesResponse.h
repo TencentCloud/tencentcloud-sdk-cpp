@@ -85,6 +85,20 @@ namespace TencentCloud
                      */
                     bool FileUrlsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>文件的截止有效期，如果超过截止有效期则文件Id会失效，无法再进行使用</p><p>默认过期时间是上传时间加10分钟</p>
+                     * @return Deadline <p>文件的截止有效期，如果超过截止有效期则文件Id会失效，无法再进行使用</p><p>默认过期时间是上传时间加10分钟</p>
+                     * 
+                     */
+                    int64_t GetDeadline() const;
+
+                    /**
+                     * 判断参数 Deadline 是否已赋值
+                     * @return Deadline 是否已赋值
+                     * 
+                     */
+                    bool DeadlineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -104,6 +118,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_fileUrls;
                     bool m_fileUrlsHasBeenSet;
+
+                    /**
+                     * <p>文件的截止有效期，如果超过截止有效期则文件Id会失效，无法再进行使用</p><p>默认过期时间是上传时间加10分钟</p>
+                     */
+                    int64_t m_deadline;
+                    bool m_deadlineHasBeenSet;
 
                 };
             }

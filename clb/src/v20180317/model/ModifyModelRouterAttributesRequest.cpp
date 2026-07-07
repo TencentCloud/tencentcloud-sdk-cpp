@@ -24,10 +24,10 @@ using namespace std;
 
 ModifyModelRouterAttributesRequest::ModifyModelRouterAttributesRequest() :
     m_modelRouterIdHasBeenSet(false),
+    m_certIdHasBeenSet(false),
     m_modelRouterNameHasBeenSet(false),
     m_rateLimitConfigHasBeenSet(false),
-    m_routerSettingHasBeenSet(false),
-    m_certIdHasBeenSet(false)
+    m_routerSettingHasBeenSet(false)
 {
 }
 
@@ -44,6 +44,14 @@ string ModifyModelRouterAttributesRequest::ToJsonString() const
         string key = "ModelRouterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_modelRouterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_certId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_modelRouterNameHasBeenSet)
@@ -72,14 +80,6 @@ string ModifyModelRouterAttributesRequest::ToJsonString() const
         m_routerSetting.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_certIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CertId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_certId.c_str(), allocator).Move(), allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -102,6 +102,22 @@ void ModifyModelRouterAttributesRequest::SetModelRouterId(const string& _modelRo
 bool ModifyModelRouterAttributesRequest::ModelRouterIdHasBeenSet() const
 {
     return m_modelRouterIdHasBeenSet;
+}
+
+string ModifyModelRouterAttributesRequest::GetCertId() const
+{
+    return m_certId;
+}
+
+void ModifyModelRouterAttributesRequest::SetCertId(const string& _certId)
+{
+    m_certId = _certId;
+    m_certIdHasBeenSet = true;
+}
+
+bool ModifyModelRouterAttributesRequest::CertIdHasBeenSet() const
+{
+    return m_certIdHasBeenSet;
 }
 
 string ModifyModelRouterAttributesRequest::GetModelRouterName() const
@@ -150,22 +166,6 @@ void ModifyModelRouterAttributesRequest::SetRouterSetting(const RouterSettingWit
 bool ModifyModelRouterAttributesRequest::RouterSettingHasBeenSet() const
 {
     return m_routerSettingHasBeenSet;
-}
-
-string ModifyModelRouterAttributesRequest::GetCertId() const
-{
-    return m_certId;
-}
-
-void ModifyModelRouterAttributesRequest::SetCertId(const string& _certId)
-{
-    m_certId = _certId;
-    m_certIdHasBeenSet = true;
-}
-
-bool ModifyModelRouterAttributesRequest::CertIdHasBeenSet() const
-{
-    return m_certIdHasBeenSet;
 }
 
 

@@ -36,7 +36,8 @@ StrategyInfo::StrategyInfo() :
     m_attachEntityCountHasBeenSet(false),
     m_attachEntityBoundaryCountHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_permissionLevelHasBeenSet(false)
 {
 }
 
@@ -218,6 +219,16 @@ CoreInternalOutcome StrategyInfo::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("PermissionLevel") && !value["PermissionLevel"].IsNull())
+    {
+        if (!value["PermissionLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StrategyInfo.PermissionLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_permissionLevel = string(value["PermissionLevel"].GetString());
+        m_permissionLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -363,6 +374,14 @@ void StrategyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_permissionLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PermissionLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_permissionLevel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -622,5 +641,21 @@ void StrategyInfo::SetTags(const vector<Tag>& _tags)
 bool StrategyInfo::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string StrategyInfo::GetPermissionLevel() const
+{
+    return m_permissionLevel;
+}
+
+void StrategyInfo::SetPermissionLevel(const string& _permissionLevel)
+{
+    m_permissionLevel = _permissionLevel;
+    m_permissionLevelHasBeenSet = true;
+}
+
+bool StrategyInfo::PermissionLevelHasBeenSet() const
+{
+    return m_permissionLevelHasBeenSet;
 }
 

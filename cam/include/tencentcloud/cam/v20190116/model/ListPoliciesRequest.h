@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取每页数量，默认值是 20，必须大于 0 且小于或等于 200
-                     * @return Rp 每页数量，默认值是 20，必须大于 0 且小于或等于 200
+                     * 获取<p>每页数量，默认值是 20，必须大于 0 且小于或等于 200</p>
+                     * @return Rp <p>每页数量，默认值是 20，必须大于 0 且小于或等于 200</p>
                      * 
                      */
                     uint64_t GetRp() const;
 
                     /**
-                     * 设置每页数量，默认值是 20，必须大于 0 且小于或等于 200
-                     * @param _rp 每页数量，默认值是 20，必须大于 0 且小于或等于 200
+                     * 设置<p>每页数量，默认值是 20，必须大于 0 且小于或等于 200</p>
+                     * @param _rp <p>每页数量，默认值是 20，必须大于 0 且小于或等于 200</p>
                      * 
                      */
                     void SetRp(const uint64_t& _rp);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool RpHasBeenSet() const;
 
                     /**
-                     * 获取页码，默认值是 1，从 1开始，不能大于 200
-                     * @return Page 页码，默认值是 1，从 1开始，不能大于 200
+                     * 获取<p>页码，默认值是 1，从 1开始，不能大于 200</p>
+                     * @return Page <p>页码，默认值是 1，从 1开始，不能大于 200</p>
                      * 
                      */
                     uint64_t GetPage() const;
 
                     /**
-                     * 设置页码，默认值是 1，从 1开始，不能大于 200
-                     * @param _page 页码，默认值是 1，从 1开始，不能大于 200
+                     * 设置<p>页码，默认值是 1，从 1开始，不能大于 200</p>
+                     * @param _page <p>页码，默认值是 1，从 1开始，不能大于 200</p>
                      * 
                      */
                     void SetPage(const uint64_t& _page);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PageHasBeenSet() const;
 
                     /**
-                     * 获取可取值 'All'、'QCS' 和 'Local'，'All' 获取所有策略，'QCS' 只获取预设策略，'Local' 只获取自定义策略，默认取 'All'
-                     * @return Scope 可取值 'All'、'QCS' 和 'Local'，'All' 获取所有策略，'QCS' 只获取预设策略，'Local' 只获取自定义策略，默认取 'All'
+                     * 获取<p>可取值 &#39;All&#39;、&#39;QCS&#39; 和 &#39;Local&#39;，&#39;All&#39; 获取所有策略，&#39;QCS&#39; 只获取预设策略，&#39;Local&#39; 只获取自定义策略，默认取 &#39;All&#39;</p>
+                     * @return Scope <p>可取值 &#39;All&#39;、&#39;QCS&#39; 和 &#39;Local&#39;，&#39;All&#39; 获取所有策略，&#39;QCS&#39; 只获取预设策略，&#39;Local&#39; 只获取自定义策略，默认取 &#39;All&#39;</p>
                      * 
                      */
                     std::string GetScope() const;
 
                     /**
-                     * 设置可取值 'All'、'QCS' 和 'Local'，'All' 获取所有策略，'QCS' 只获取预设策略，'Local' 只获取自定义策略，默认取 'All'
-                     * @param _scope 可取值 'All'、'QCS' 和 'Local'，'All' 获取所有策略，'QCS' 只获取预设策略，'Local' 只获取自定义策略，默认取 'All'
+                     * 设置<p>可取值 &#39;All&#39;、&#39;QCS&#39; 和 &#39;Local&#39;，&#39;All&#39; 获取所有策略，&#39;QCS&#39; 只获取预设策略，&#39;Local&#39; 只获取自定义策略，默认取 &#39;All&#39;</p>
+                     * @param _scope <p>可取值 &#39;All&#39;、&#39;QCS&#39; 和 &#39;Local&#39;，&#39;All&#39; 获取所有策略，&#39;QCS&#39; 只获取预设策略，&#39;Local&#39; 只获取自定义策略，默认取 &#39;All&#39;</p>
                      * 
                      */
                     void SetScope(const std::string& _scope);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ScopeHasBeenSet() const;
 
                     /**
-                     * 获取按策略名匹配
-                     * @return Keyword 按策略名匹配
+                     * 获取<p>按策略名匹配</p>
+                     * @return Keyword <p>按策略名匹配</p>
                      * 
                      */
                     std::string GetKeyword() const;
 
                     /**
-                     * 设置按策略名匹配
-                     * @param _keyword 按策略名匹配
+                     * 设置<p>按策略名匹配</p>
+                     * @param _keyword <p>按策略名匹配</p>
                      * 
                      */
                     void SetKeyword(const std::string& _keyword);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 每页数量，默认值是 20，必须大于 0 且小于或等于 200
+                     * <p>每页数量，默认值是 20，必须大于 0 且小于或等于 200</p>
                      */
                     uint64_t m_rp;
                     bool m_rpHasBeenSet;
 
                     /**
-                     * 页码，默认值是 1，从 1开始，不能大于 200
+                     * <p>页码，默认值是 1，从 1开始，不能大于 200</p>
                      */
                     uint64_t m_page;
                     bool m_pageHasBeenSet;
 
                     /**
-                     * 可取值 'All'、'QCS' 和 'Local'，'All' 获取所有策略，'QCS' 只获取预设策略，'Local' 只获取自定义策略，默认取 'All'
+                     * <p>可取值 &#39;All&#39;、&#39;QCS&#39; 和 &#39;Local&#39;，&#39;All&#39; 获取所有策略，&#39;QCS&#39; 只获取预设策略，&#39;Local&#39; 只获取自定义策略，默认取 &#39;All&#39;</p>
                      */
                     std::string m_scope;
                     bool m_scopeHasBeenSet;
 
                     /**
-                     * 按策略名匹配
+                     * <p>按策略名匹配</p>
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;

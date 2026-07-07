@@ -49,12 +49,28 @@
 #include <tencentcloud/csip/v20221121/model/CreateDspmApproveHistoryExportJobResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmAssetAccessTopologyExportJobRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmAssetAccessTopologyExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmAssetIdentifyInfoExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmAssetIdentifyInfoExportJobResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmAssetsExportJobRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmAssetsExportJobResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmExportTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmExportTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmIdentifyCategoryRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmIdentifyCategoryResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmIdentifyComplianceCategoryRelationRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmIdentifyComplianceCategoryRelationResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmIdentifyComplianceGroupRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmIdentifyComplianceGroupResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmIdentifyComplianceGroupCopyRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmIdentifyComplianceGroupCopyResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmIdentifyComplianceRuleRelationRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmIdentifyComplianceRuleRelationResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmIdentifyInfoListExportJobRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmIdentifyInfoListExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmIdentifyLevelGroupRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmIdentifyLevelGroupResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmIdentifyRuleRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmIdentifyRuleResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmPersonalIdentifyRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmPersonalIdentifyResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmRiskExportJobRequest.h>
@@ -85,6 +101,18 @@
 #include <tencentcloud/csip/v20221121/model/DeleteDspmBackupLogListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDspmExportTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDspmExportTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmIdentifyCategoryRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmIdentifyCategoryResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmIdentifyComplianceCategoryRelationRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmIdentifyComplianceCategoryRelationResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmIdentifyComplianceGroupRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmIdentifyComplianceGroupResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmIdentifyComplianceRuleRelationRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmIdentifyComplianceRuleRelationResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmIdentifyLevelGroupRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmIdentifyLevelGroupResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmIdentifyRuleRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmIdentifyRuleResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDspmPersonalIdentifyRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDspmPersonalIdentifyResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDspmRestoreLogListRequest.h>
@@ -195,6 +223,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeCosIpInvokeLogResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCosIpInvokeRecordFileRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCosIpInvokeRecordFileResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosObjectScanTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosObjectScanTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCosOverviewRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCosOverviewResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCosPolicyRequest.h>
@@ -249,6 +279,10 @@
 #include <tencentcloud/csip/v20221121/model/DescribeDspmAssetDatabasesResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmAssetFieldListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmAssetFieldListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetFieldSamplesRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetFieldSamplesResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetIdentifyInfoListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetIdentifyInfoListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmAssetIdsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmAssetIdsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmAssetLoginCredentialRequest.h>
@@ -269,12 +303,30 @@
 #include <tencentcloud/csip/v20221121/model/DescribeDspmDictionaryListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmExportTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmExportTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyCategoryListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyCategoryListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyComplianceCategoryRuleListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyComplianceCategoryRuleListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyComplianceGroupDetailRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyComplianceGroupDetailResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyComplianceGroupListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyComplianceGroupListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyDistributionStatisticsRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyDistributionStatisticsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyIdListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyIdListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyInfoRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyInfoListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyInfoListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyLevelGroupListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyLevelGroupListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyRuleDetailRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyRuleDetailResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyRuleListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyRuleListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyRuleTestResultRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyRuleTestResultResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmLogListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmLogListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmPayInfoRequest.h>
@@ -439,10 +491,16 @@
 #include <tencentcloud/csip/v20221121/model/ModifyAlarmRiskStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyCosAuditMonitorAccountRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyCosAuditMonitorAccountResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyCosAuditObjectIdentifyStatusRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyCosAuditObjectIdentifyStatusResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyCosAuditObjectSampleRateRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyCosAuditObjectSampleRateResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyCosMarkInfoRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyCosMarkInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmAccessRecordRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmAccessRecordResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmApplyingIdentifyComplianceGroupRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmApplyingIdentifyComplianceGroupResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmApproveStatusRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmApproveStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmAssetAccountRequest.h>
@@ -451,14 +509,32 @@
 #include <tencentcloud/csip/v20221121/model/ModifyDspmAssetAccountPrivilegesResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmAssetDataScanTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmAssetDataScanTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmAssetDataScanTaskStatusRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmAssetDataScanTaskStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmAssetLogDeliverySwitchRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmAssetLogDeliverySwitchResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmAssetSecurityAnalysisSwitchRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmAssetSecurityAnalysisSwitchResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmBackupSettingRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmBackupSettingResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmIdentifyCategoryRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmIdentifyCategoryResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmIdentifyComplianceGroupRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmIdentifyComplianceGroupResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmIdentifyComplianceGroupStatusRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmIdentifyComplianceGroupStatusResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmIdentifyComplianceRuleLevelInfoRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmIdentifyComplianceRuleLevelInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmIdentifyInfoRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmIdentifyInfoResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmIdentifyLevelGroupRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmIdentifyLevelGroupResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmIdentifyLevelItemRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmIdentifyLevelItemResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmIdentifyRuleRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmIdentifyRuleResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmIdentifyRuleStatusRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmIdentifyRuleStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmIpInfoRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmIpInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmPersonalIdentifyRequest.h>
@@ -570,15 +646,39 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDspmAssetAccessTopologyExportJobResponse> CreateDspmAssetAccessTopologyExportJobOutcome;
                 typedef std::future<CreateDspmAssetAccessTopologyExportJobOutcome> CreateDspmAssetAccessTopologyExportJobOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateDspmAssetAccessTopologyExportJobRequest&, CreateDspmAssetAccessTopologyExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmAssetAccessTopologyExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDspmAssetIdentifyInfoExportJobResponse> CreateDspmAssetIdentifyInfoExportJobOutcome;
+                typedef std::future<CreateDspmAssetIdentifyInfoExportJobOutcome> CreateDspmAssetIdentifyInfoExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateDspmAssetIdentifyInfoExportJobRequest&, CreateDspmAssetIdentifyInfoExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmAssetIdentifyInfoExportJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDspmAssetsExportJobResponse> CreateDspmAssetsExportJobOutcome;
                 typedef std::future<CreateDspmAssetsExportJobOutcome> CreateDspmAssetsExportJobOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateDspmAssetsExportJobRequest&, CreateDspmAssetsExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmAssetsExportJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDspmExportTaskResponse> CreateDspmExportTaskOutcome;
                 typedef std::future<CreateDspmExportTaskOutcome> CreateDspmExportTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateDspmExportTaskRequest&, CreateDspmExportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmExportTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDspmIdentifyCategoryResponse> CreateDspmIdentifyCategoryOutcome;
+                typedef std::future<CreateDspmIdentifyCategoryOutcome> CreateDspmIdentifyCategoryOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateDspmIdentifyCategoryRequest&, CreateDspmIdentifyCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmIdentifyCategoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDspmIdentifyComplianceCategoryRelationResponse> CreateDspmIdentifyComplianceCategoryRelationOutcome;
+                typedef std::future<CreateDspmIdentifyComplianceCategoryRelationOutcome> CreateDspmIdentifyComplianceCategoryRelationOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateDspmIdentifyComplianceCategoryRelationRequest&, CreateDspmIdentifyComplianceCategoryRelationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmIdentifyComplianceCategoryRelationAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDspmIdentifyComplianceGroupResponse> CreateDspmIdentifyComplianceGroupOutcome;
+                typedef std::future<CreateDspmIdentifyComplianceGroupOutcome> CreateDspmIdentifyComplianceGroupOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateDspmIdentifyComplianceGroupRequest&, CreateDspmIdentifyComplianceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmIdentifyComplianceGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDspmIdentifyComplianceGroupCopyResponse> CreateDspmIdentifyComplianceGroupCopyOutcome;
+                typedef std::future<CreateDspmIdentifyComplianceGroupCopyOutcome> CreateDspmIdentifyComplianceGroupCopyOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateDspmIdentifyComplianceGroupCopyRequest&, CreateDspmIdentifyComplianceGroupCopyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmIdentifyComplianceGroupCopyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDspmIdentifyComplianceRuleRelationResponse> CreateDspmIdentifyComplianceRuleRelationOutcome;
+                typedef std::future<CreateDspmIdentifyComplianceRuleRelationOutcome> CreateDspmIdentifyComplianceRuleRelationOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateDspmIdentifyComplianceRuleRelationRequest&, CreateDspmIdentifyComplianceRuleRelationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmIdentifyComplianceRuleRelationAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDspmIdentifyInfoListExportJobResponse> CreateDspmIdentifyInfoListExportJobOutcome;
                 typedef std::future<CreateDspmIdentifyInfoListExportJobOutcome> CreateDspmIdentifyInfoListExportJobOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateDspmIdentifyInfoListExportJobRequest&, CreateDspmIdentifyInfoListExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmIdentifyInfoListExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDspmIdentifyLevelGroupResponse> CreateDspmIdentifyLevelGroupOutcome;
+                typedef std::future<CreateDspmIdentifyLevelGroupOutcome> CreateDspmIdentifyLevelGroupOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateDspmIdentifyLevelGroupRequest&, CreateDspmIdentifyLevelGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmIdentifyLevelGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDspmIdentifyRuleResponse> CreateDspmIdentifyRuleOutcome;
+                typedef std::future<CreateDspmIdentifyRuleOutcome> CreateDspmIdentifyRuleOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateDspmIdentifyRuleRequest&, CreateDspmIdentifyRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmIdentifyRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDspmPersonalIdentifyResponse> CreateDspmPersonalIdentifyOutcome;
                 typedef std::future<CreateDspmPersonalIdentifyOutcome> CreateDspmPersonalIdentifyOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateDspmPersonalIdentifyRequest&, CreateDspmPersonalIdentifyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmPersonalIdentifyAsyncHandler;
@@ -624,6 +724,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDspmExportTaskResponse> DeleteDspmExportTaskOutcome;
                 typedef std::future<DeleteDspmExportTaskOutcome> DeleteDspmExportTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteDspmExportTaskRequest&, DeleteDspmExportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmExportTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDspmIdentifyCategoryResponse> DeleteDspmIdentifyCategoryOutcome;
+                typedef std::future<DeleteDspmIdentifyCategoryOutcome> DeleteDspmIdentifyCategoryOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteDspmIdentifyCategoryRequest&, DeleteDspmIdentifyCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmIdentifyCategoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDspmIdentifyComplianceCategoryRelationResponse> DeleteDspmIdentifyComplianceCategoryRelationOutcome;
+                typedef std::future<DeleteDspmIdentifyComplianceCategoryRelationOutcome> DeleteDspmIdentifyComplianceCategoryRelationOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteDspmIdentifyComplianceCategoryRelationRequest&, DeleteDspmIdentifyComplianceCategoryRelationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmIdentifyComplianceCategoryRelationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDspmIdentifyComplianceGroupResponse> DeleteDspmIdentifyComplianceGroupOutcome;
+                typedef std::future<DeleteDspmIdentifyComplianceGroupOutcome> DeleteDspmIdentifyComplianceGroupOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteDspmIdentifyComplianceGroupRequest&, DeleteDspmIdentifyComplianceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmIdentifyComplianceGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDspmIdentifyComplianceRuleRelationResponse> DeleteDspmIdentifyComplianceRuleRelationOutcome;
+                typedef std::future<DeleteDspmIdentifyComplianceRuleRelationOutcome> DeleteDspmIdentifyComplianceRuleRelationOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteDspmIdentifyComplianceRuleRelationRequest&, DeleteDspmIdentifyComplianceRuleRelationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmIdentifyComplianceRuleRelationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDspmIdentifyLevelGroupResponse> DeleteDspmIdentifyLevelGroupOutcome;
+                typedef std::future<DeleteDspmIdentifyLevelGroupOutcome> DeleteDspmIdentifyLevelGroupOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteDspmIdentifyLevelGroupRequest&, DeleteDspmIdentifyLevelGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmIdentifyLevelGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDspmIdentifyRuleResponse> DeleteDspmIdentifyRuleOutcome;
+                typedef std::future<DeleteDspmIdentifyRuleOutcome> DeleteDspmIdentifyRuleOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteDspmIdentifyRuleRequest&, DeleteDspmIdentifyRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmIdentifyRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDspmPersonalIdentifyResponse> DeleteDspmPersonalIdentifyOutcome;
                 typedef std::future<DeleteDspmPersonalIdentifyOutcome> DeleteDspmPersonalIdentifyOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteDspmPersonalIdentifyRequest&, DeleteDspmPersonalIdentifyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmPersonalIdentifyAsyncHandler;
@@ -789,6 +907,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCosIpInvokeRecordFileResponse> DescribeCosIpInvokeRecordFileOutcome;
                 typedef std::future<DescribeCosIpInvokeRecordFileOutcome> DescribeCosIpInvokeRecordFileOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeCosIpInvokeRecordFileRequest&, DescribeCosIpInvokeRecordFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosIpInvokeRecordFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosObjectScanTaskResponse> DescribeCosObjectScanTaskOutcome;
+                typedef std::future<DescribeCosObjectScanTaskOutcome> DescribeCosObjectScanTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosObjectScanTaskRequest&, DescribeCosObjectScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosObjectScanTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCosOverviewResponse> DescribeCosOverviewOutcome;
                 typedef std::future<DescribeCosOverviewOutcome> DescribeCosOverviewOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeCosOverviewRequest&, DescribeCosOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosOverviewAsyncHandler;
@@ -870,6 +991,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDspmAssetFieldListResponse> DescribeDspmAssetFieldListOutcome;
                 typedef std::future<DescribeDspmAssetFieldListOutcome> DescribeDspmAssetFieldListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDspmAssetFieldListRequest&, DescribeDspmAssetFieldListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAssetFieldListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmAssetFieldSamplesResponse> DescribeDspmAssetFieldSamplesOutcome;
+                typedef std::future<DescribeDspmAssetFieldSamplesOutcome> DescribeDspmAssetFieldSamplesOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmAssetFieldSamplesRequest&, DescribeDspmAssetFieldSamplesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAssetFieldSamplesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmAssetIdentifyInfoListResponse> DescribeDspmAssetIdentifyInfoListOutcome;
+                typedef std::future<DescribeDspmAssetIdentifyInfoListOutcome> DescribeDspmAssetIdentifyInfoListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmAssetIdentifyInfoListRequest&, DescribeDspmAssetIdentifyInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAssetIdentifyInfoListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDspmAssetIdsResponse> DescribeDspmAssetIdsOutcome;
                 typedef std::future<DescribeDspmAssetIdsOutcome> DescribeDspmAssetIdsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDspmAssetIdsRequest&, DescribeDspmAssetIdsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAssetIdsAsyncHandler;
@@ -900,6 +1027,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDspmExportTaskResponse> DescribeDspmExportTaskOutcome;
                 typedef std::future<DescribeDspmExportTaskOutcome> DescribeDspmExportTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDspmExportTaskRequest&, DescribeDspmExportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmExportTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmIdentifyCategoryListResponse> DescribeDspmIdentifyCategoryListOutcome;
+                typedef std::future<DescribeDspmIdentifyCategoryListOutcome> DescribeDspmIdentifyCategoryListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmIdentifyCategoryListRequest&, DescribeDspmIdentifyCategoryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmIdentifyCategoryListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmIdentifyComplianceCategoryRuleListResponse> DescribeDspmIdentifyComplianceCategoryRuleListOutcome;
+                typedef std::future<DescribeDspmIdentifyComplianceCategoryRuleListOutcome> DescribeDspmIdentifyComplianceCategoryRuleListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmIdentifyComplianceCategoryRuleListRequest&, DescribeDspmIdentifyComplianceCategoryRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmIdentifyComplianceCategoryRuleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmIdentifyComplianceGroupDetailResponse> DescribeDspmIdentifyComplianceGroupDetailOutcome;
+                typedef std::future<DescribeDspmIdentifyComplianceGroupDetailOutcome> DescribeDspmIdentifyComplianceGroupDetailOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmIdentifyComplianceGroupDetailRequest&, DescribeDspmIdentifyComplianceGroupDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmIdentifyComplianceGroupDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmIdentifyComplianceGroupListResponse> DescribeDspmIdentifyComplianceGroupListOutcome;
+                typedef std::future<DescribeDspmIdentifyComplianceGroupListOutcome> DescribeDspmIdentifyComplianceGroupListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmIdentifyComplianceGroupListRequest&, DescribeDspmIdentifyComplianceGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmIdentifyComplianceGroupListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmIdentifyDistributionStatisticsResponse> DescribeDspmIdentifyDistributionStatisticsOutcome;
+                typedef std::future<DescribeDspmIdentifyDistributionStatisticsOutcome> DescribeDspmIdentifyDistributionStatisticsOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmIdentifyDistributionStatisticsRequest&, DescribeDspmIdentifyDistributionStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmIdentifyDistributionStatisticsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDspmIdentifyIdListResponse> DescribeDspmIdentifyIdListOutcome;
                 typedef std::future<DescribeDspmIdentifyIdListOutcome> DescribeDspmIdentifyIdListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDspmIdentifyIdListRequest&, DescribeDspmIdentifyIdListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmIdentifyIdListAsyncHandler;
@@ -909,6 +1051,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDspmIdentifyInfoListResponse> DescribeDspmIdentifyInfoListOutcome;
                 typedef std::future<DescribeDspmIdentifyInfoListOutcome> DescribeDspmIdentifyInfoListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDspmIdentifyInfoListRequest&, DescribeDspmIdentifyInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmIdentifyInfoListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmIdentifyLevelGroupListResponse> DescribeDspmIdentifyLevelGroupListOutcome;
+                typedef std::future<DescribeDspmIdentifyLevelGroupListOutcome> DescribeDspmIdentifyLevelGroupListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmIdentifyLevelGroupListRequest&, DescribeDspmIdentifyLevelGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmIdentifyLevelGroupListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmIdentifyRuleDetailResponse> DescribeDspmIdentifyRuleDetailOutcome;
+                typedef std::future<DescribeDspmIdentifyRuleDetailOutcome> DescribeDspmIdentifyRuleDetailOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmIdentifyRuleDetailRequest&, DescribeDspmIdentifyRuleDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmIdentifyRuleDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmIdentifyRuleListResponse> DescribeDspmIdentifyRuleListOutcome;
+                typedef std::future<DescribeDspmIdentifyRuleListOutcome> DescribeDspmIdentifyRuleListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmIdentifyRuleListRequest&, DescribeDspmIdentifyRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmIdentifyRuleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmIdentifyRuleTestResultResponse> DescribeDspmIdentifyRuleTestResultOutcome;
+                typedef std::future<DescribeDspmIdentifyRuleTestResultOutcome> DescribeDspmIdentifyRuleTestResultOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmIdentifyRuleTestResultRequest&, DescribeDspmIdentifyRuleTestResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmIdentifyRuleTestResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDspmLogListResponse> DescribeDspmLogListOutcome;
                 typedef std::future<DescribeDspmLogListOutcome> DescribeDspmLogListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDspmLogListRequest&, DescribeDspmLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmLogListAsyncHandler;
@@ -1155,12 +1309,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCosAuditMonitorAccountResponse> ModifyCosAuditMonitorAccountOutcome;
                 typedef std::future<ModifyCosAuditMonitorAccountOutcome> ModifyCosAuditMonitorAccountOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyCosAuditMonitorAccountRequest&, ModifyCosAuditMonitorAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCosAuditMonitorAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCosAuditObjectIdentifyStatusResponse> ModifyCosAuditObjectIdentifyStatusOutcome;
+                typedef std::future<ModifyCosAuditObjectIdentifyStatusOutcome> ModifyCosAuditObjectIdentifyStatusOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyCosAuditObjectIdentifyStatusRequest&, ModifyCosAuditObjectIdentifyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCosAuditObjectIdentifyStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCosAuditObjectSampleRateResponse> ModifyCosAuditObjectSampleRateOutcome;
+                typedef std::future<ModifyCosAuditObjectSampleRateOutcome> ModifyCosAuditObjectSampleRateOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyCosAuditObjectSampleRateRequest&, ModifyCosAuditObjectSampleRateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCosAuditObjectSampleRateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCosMarkInfoResponse> ModifyCosMarkInfoOutcome;
                 typedef std::future<ModifyCosMarkInfoOutcome> ModifyCosMarkInfoOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyCosMarkInfoRequest&, ModifyCosMarkInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCosMarkInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDspmAccessRecordResponse> ModifyDspmAccessRecordOutcome;
                 typedef std::future<ModifyDspmAccessRecordOutcome> ModifyDspmAccessRecordOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyDspmAccessRecordRequest&, ModifyDspmAccessRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmAccessRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmApplyingIdentifyComplianceGroupResponse> ModifyDspmApplyingIdentifyComplianceGroupOutcome;
+                typedef std::future<ModifyDspmApplyingIdentifyComplianceGroupOutcome> ModifyDspmApplyingIdentifyComplianceGroupOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmApplyingIdentifyComplianceGroupRequest&, ModifyDspmApplyingIdentifyComplianceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmApplyingIdentifyComplianceGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDspmApproveStatusResponse> ModifyDspmApproveStatusOutcome;
                 typedef std::future<ModifyDspmApproveStatusOutcome> ModifyDspmApproveStatusOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyDspmApproveStatusRequest&, ModifyDspmApproveStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmApproveStatusAsyncHandler;
@@ -1173,6 +1336,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDspmAssetDataScanTaskResponse> ModifyDspmAssetDataScanTaskOutcome;
                 typedef std::future<ModifyDspmAssetDataScanTaskOutcome> ModifyDspmAssetDataScanTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyDspmAssetDataScanTaskRequest&, ModifyDspmAssetDataScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmAssetDataScanTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmAssetDataScanTaskStatusResponse> ModifyDspmAssetDataScanTaskStatusOutcome;
+                typedef std::future<ModifyDspmAssetDataScanTaskStatusOutcome> ModifyDspmAssetDataScanTaskStatusOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmAssetDataScanTaskStatusRequest&, ModifyDspmAssetDataScanTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmAssetDataScanTaskStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDspmAssetLogDeliverySwitchResponse> ModifyDspmAssetLogDeliverySwitchOutcome;
                 typedef std::future<ModifyDspmAssetLogDeliverySwitchOutcome> ModifyDspmAssetLogDeliverySwitchOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyDspmAssetLogDeliverySwitchRequest&, ModifyDspmAssetLogDeliverySwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmAssetLogDeliverySwitchAsyncHandler;
@@ -1182,9 +1348,33 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDspmBackupSettingResponse> ModifyDspmBackupSettingOutcome;
                 typedef std::future<ModifyDspmBackupSettingOutcome> ModifyDspmBackupSettingOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyDspmBackupSettingRequest&, ModifyDspmBackupSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmBackupSettingAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmIdentifyCategoryResponse> ModifyDspmIdentifyCategoryOutcome;
+                typedef std::future<ModifyDspmIdentifyCategoryOutcome> ModifyDspmIdentifyCategoryOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmIdentifyCategoryRequest&, ModifyDspmIdentifyCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmIdentifyCategoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmIdentifyComplianceGroupResponse> ModifyDspmIdentifyComplianceGroupOutcome;
+                typedef std::future<ModifyDspmIdentifyComplianceGroupOutcome> ModifyDspmIdentifyComplianceGroupOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmIdentifyComplianceGroupRequest&, ModifyDspmIdentifyComplianceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmIdentifyComplianceGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmIdentifyComplianceGroupStatusResponse> ModifyDspmIdentifyComplianceGroupStatusOutcome;
+                typedef std::future<ModifyDspmIdentifyComplianceGroupStatusOutcome> ModifyDspmIdentifyComplianceGroupStatusOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmIdentifyComplianceGroupStatusRequest&, ModifyDspmIdentifyComplianceGroupStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmIdentifyComplianceGroupStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmIdentifyComplianceRuleLevelInfoResponse> ModifyDspmIdentifyComplianceRuleLevelInfoOutcome;
+                typedef std::future<ModifyDspmIdentifyComplianceRuleLevelInfoOutcome> ModifyDspmIdentifyComplianceRuleLevelInfoOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmIdentifyComplianceRuleLevelInfoRequest&, ModifyDspmIdentifyComplianceRuleLevelInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmIdentifyComplianceRuleLevelInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDspmIdentifyInfoResponse> ModifyDspmIdentifyInfoOutcome;
                 typedef std::future<ModifyDspmIdentifyInfoOutcome> ModifyDspmIdentifyInfoOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyDspmIdentifyInfoRequest&, ModifyDspmIdentifyInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmIdentifyInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmIdentifyLevelGroupResponse> ModifyDspmIdentifyLevelGroupOutcome;
+                typedef std::future<ModifyDspmIdentifyLevelGroupOutcome> ModifyDspmIdentifyLevelGroupOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmIdentifyLevelGroupRequest&, ModifyDspmIdentifyLevelGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmIdentifyLevelGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmIdentifyLevelItemResponse> ModifyDspmIdentifyLevelItemOutcome;
+                typedef std::future<ModifyDspmIdentifyLevelItemOutcome> ModifyDspmIdentifyLevelItemOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmIdentifyLevelItemRequest&, ModifyDspmIdentifyLevelItemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmIdentifyLevelItemAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmIdentifyRuleResponse> ModifyDspmIdentifyRuleOutcome;
+                typedef std::future<ModifyDspmIdentifyRuleOutcome> ModifyDspmIdentifyRuleOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmIdentifyRuleRequest&, ModifyDspmIdentifyRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmIdentifyRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmIdentifyRuleStatusResponse> ModifyDspmIdentifyRuleStatusOutcome;
+                typedef std::future<ModifyDspmIdentifyRuleStatusOutcome> ModifyDspmIdentifyRuleStatusOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmIdentifyRuleStatusRequest&, ModifyDspmIdentifyRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmIdentifyRuleStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDspmIpInfoResponse> ModifyDspmIpInfoOutcome;
                 typedef std::future<ModifyDspmIpInfoOutcome> ModifyDspmIpInfoOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyDspmIpInfoRequest&, ModifyDspmIpInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmIpInfoAsyncHandler;
@@ -1394,6 +1584,15 @@ namespace TencentCloud
 
                 /**
                  *创建Dspm资产列表导出任务
+                 * @param req CreateDspmAssetIdentifyInfoExportJobRequest
+                 * @return CreateDspmAssetIdentifyInfoExportJobOutcome
+                 */
+                CreateDspmAssetIdentifyInfoExportJobOutcome CreateDspmAssetIdentifyInfoExportJob(const Model::CreateDspmAssetIdentifyInfoExportJobRequest &request);
+                void CreateDspmAssetIdentifyInfoExportJobAsync(const Model::CreateDspmAssetIdentifyInfoExportJobRequest& request, const CreateDspmAssetIdentifyInfoExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDspmAssetIdentifyInfoExportJobOutcomeCallable CreateDspmAssetIdentifyInfoExportJobCallable(const Model::CreateDspmAssetIdentifyInfoExportJobRequest& request);
+
+                /**
+                 *创建Dspm资产列表导出任务
                  * @param req CreateDspmAssetsExportJobRequest
                  * @return CreateDspmAssetsExportJobOutcome
                  */
@@ -1411,6 +1610,51 @@ namespace TencentCloud
                 CreateDspmExportTaskOutcomeCallable CreateDspmExportTaskCallable(const Model::CreateDspmExportTaskRequest& request);
 
                 /**
+                 *创建dspm数据识别分类
+                 * @param req CreateDspmIdentifyCategoryRequest
+                 * @return CreateDspmIdentifyCategoryOutcome
+                 */
+                CreateDspmIdentifyCategoryOutcome CreateDspmIdentifyCategory(const Model::CreateDspmIdentifyCategoryRequest &request);
+                void CreateDspmIdentifyCategoryAsync(const Model::CreateDspmIdentifyCategoryRequest& request, const CreateDspmIdentifyCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDspmIdentifyCategoryOutcomeCallable CreateDspmIdentifyCategoryCallable(const Model::CreateDspmIdentifyCategoryRequest& request);
+
+                /**
+                 *创建dspm数据识别模板分类关联
+                 * @param req CreateDspmIdentifyComplianceCategoryRelationRequest
+                 * @return CreateDspmIdentifyComplianceCategoryRelationOutcome
+                 */
+                CreateDspmIdentifyComplianceCategoryRelationOutcome CreateDspmIdentifyComplianceCategoryRelation(const Model::CreateDspmIdentifyComplianceCategoryRelationRequest &request);
+                void CreateDspmIdentifyComplianceCategoryRelationAsync(const Model::CreateDspmIdentifyComplianceCategoryRelationRequest& request, const CreateDspmIdentifyComplianceCategoryRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDspmIdentifyComplianceCategoryRelationOutcomeCallable CreateDspmIdentifyComplianceCategoryRelationCallable(const Model::CreateDspmIdentifyComplianceCategoryRelationRequest& request);
+
+                /**
+                 *创建dspm数据识别模板
+                 * @param req CreateDspmIdentifyComplianceGroupRequest
+                 * @return CreateDspmIdentifyComplianceGroupOutcome
+                 */
+                CreateDspmIdentifyComplianceGroupOutcome CreateDspmIdentifyComplianceGroup(const Model::CreateDspmIdentifyComplianceGroupRequest &request);
+                void CreateDspmIdentifyComplianceGroupAsync(const Model::CreateDspmIdentifyComplianceGroupRequest& request, const CreateDspmIdentifyComplianceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDspmIdentifyComplianceGroupOutcomeCallable CreateDspmIdentifyComplianceGroupCallable(const Model::CreateDspmIdentifyComplianceGroupRequest& request);
+
+                /**
+                 *复制dspm数据识别模板
+                 * @param req CreateDspmIdentifyComplianceGroupCopyRequest
+                 * @return CreateDspmIdentifyComplianceGroupCopyOutcome
+                 */
+                CreateDspmIdentifyComplianceGroupCopyOutcome CreateDspmIdentifyComplianceGroupCopy(const Model::CreateDspmIdentifyComplianceGroupCopyRequest &request);
+                void CreateDspmIdentifyComplianceGroupCopyAsync(const Model::CreateDspmIdentifyComplianceGroupCopyRequest& request, const CreateDspmIdentifyComplianceGroupCopyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDspmIdentifyComplianceGroupCopyOutcomeCallable CreateDspmIdentifyComplianceGroupCopyCallable(const Model::CreateDspmIdentifyComplianceGroupCopyRequest& request);
+
+                /**
+                 *创建dspm数据识别模板数据项关联
+                 * @param req CreateDspmIdentifyComplianceRuleRelationRequest
+                 * @return CreateDspmIdentifyComplianceRuleRelationOutcome
+                 */
+                CreateDspmIdentifyComplianceRuleRelationOutcome CreateDspmIdentifyComplianceRuleRelation(const Model::CreateDspmIdentifyComplianceRuleRelationRequest &request);
+                void CreateDspmIdentifyComplianceRuleRelationAsync(const Model::CreateDspmIdentifyComplianceRuleRelationRequest& request, const CreateDspmIdentifyComplianceRuleRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDspmIdentifyComplianceRuleRelationOutcomeCallable CreateDspmIdentifyComplianceRuleRelationCallable(const Model::CreateDspmIdentifyComplianceRuleRelationRequest& request);
+
+                /**
                  *创建Dspm身份列表导出任务
                  * @param req CreateDspmIdentifyInfoListExportJobRequest
                  * @return CreateDspmIdentifyInfoListExportJobOutcome
@@ -1418,6 +1662,24 @@ namespace TencentCloud
                 CreateDspmIdentifyInfoListExportJobOutcome CreateDspmIdentifyInfoListExportJob(const Model::CreateDspmIdentifyInfoListExportJobRequest &request);
                 void CreateDspmIdentifyInfoListExportJobAsync(const Model::CreateDspmIdentifyInfoListExportJobRequest& request, const CreateDspmIdentifyInfoListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDspmIdentifyInfoListExportJobOutcomeCallable CreateDspmIdentifyInfoListExportJobCallable(const Model::CreateDspmIdentifyInfoListExportJobRequest& request);
+
+                /**
+                 *创建dspm数据识别分级组
+                 * @param req CreateDspmIdentifyLevelGroupRequest
+                 * @return CreateDspmIdentifyLevelGroupOutcome
+                 */
+                CreateDspmIdentifyLevelGroupOutcome CreateDspmIdentifyLevelGroup(const Model::CreateDspmIdentifyLevelGroupRequest &request);
+                void CreateDspmIdentifyLevelGroupAsync(const Model::CreateDspmIdentifyLevelGroupRequest& request, const CreateDspmIdentifyLevelGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDspmIdentifyLevelGroupOutcomeCallable CreateDspmIdentifyLevelGroupCallable(const Model::CreateDspmIdentifyLevelGroupRequest& request);
+
+                /**
+                 *创建dspm数据识别数据项
+                 * @param req CreateDspmIdentifyRuleRequest
+                 * @return CreateDspmIdentifyRuleOutcome
+                 */
+                CreateDspmIdentifyRuleOutcome CreateDspmIdentifyRule(const Model::CreateDspmIdentifyRuleRequest &request);
+                void CreateDspmIdentifyRuleAsync(const Model::CreateDspmIdentifyRuleRequest& request, const CreateDspmIdentifyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDspmIdentifyRuleOutcomeCallable CreateDspmIdentifyRuleCallable(const Model::CreateDspmIdentifyRuleRequest& request);
 
                 /**
                  *创建Dspm个人身份id
@@ -1553,6 +1815,60 @@ namespace TencentCloud
                 DeleteDspmExportTaskOutcome DeleteDspmExportTask(const Model::DeleteDspmExportTaskRequest &request);
                 void DeleteDspmExportTaskAsync(const Model::DeleteDspmExportTaskRequest& request, const DeleteDspmExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDspmExportTaskOutcomeCallable DeleteDspmExportTaskCallable(const Model::DeleteDspmExportTaskRequest& request);
+
+                /**
+                 *删除dspm数据识别分类
+                 * @param req DeleteDspmIdentifyCategoryRequest
+                 * @return DeleteDspmIdentifyCategoryOutcome
+                 */
+                DeleteDspmIdentifyCategoryOutcome DeleteDspmIdentifyCategory(const Model::DeleteDspmIdentifyCategoryRequest &request);
+                void DeleteDspmIdentifyCategoryAsync(const Model::DeleteDspmIdentifyCategoryRequest& request, const DeleteDspmIdentifyCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDspmIdentifyCategoryOutcomeCallable DeleteDspmIdentifyCategoryCallable(const Model::DeleteDspmIdentifyCategoryRequest& request);
+
+                /**
+                 *删除dspm数据识别模板分类关联
+                 * @param req DeleteDspmIdentifyComplianceCategoryRelationRequest
+                 * @return DeleteDspmIdentifyComplianceCategoryRelationOutcome
+                 */
+                DeleteDspmIdentifyComplianceCategoryRelationOutcome DeleteDspmIdentifyComplianceCategoryRelation(const Model::DeleteDspmIdentifyComplianceCategoryRelationRequest &request);
+                void DeleteDspmIdentifyComplianceCategoryRelationAsync(const Model::DeleteDspmIdentifyComplianceCategoryRelationRequest& request, const DeleteDspmIdentifyComplianceCategoryRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDspmIdentifyComplianceCategoryRelationOutcomeCallable DeleteDspmIdentifyComplianceCategoryRelationCallable(const Model::DeleteDspmIdentifyComplianceCategoryRelationRequest& request);
+
+                /**
+                 *删除dspm数据识别模板
+                 * @param req DeleteDspmIdentifyComplianceGroupRequest
+                 * @return DeleteDspmIdentifyComplianceGroupOutcome
+                 */
+                DeleteDspmIdentifyComplianceGroupOutcome DeleteDspmIdentifyComplianceGroup(const Model::DeleteDspmIdentifyComplianceGroupRequest &request);
+                void DeleteDspmIdentifyComplianceGroupAsync(const Model::DeleteDspmIdentifyComplianceGroupRequest& request, const DeleteDspmIdentifyComplianceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDspmIdentifyComplianceGroupOutcomeCallable DeleteDspmIdentifyComplianceGroupCallable(const Model::DeleteDspmIdentifyComplianceGroupRequest& request);
+
+                /**
+                 *删除dspm数据识别模板数据项关联
+                 * @param req DeleteDspmIdentifyComplianceRuleRelationRequest
+                 * @return DeleteDspmIdentifyComplianceRuleRelationOutcome
+                 */
+                DeleteDspmIdentifyComplianceRuleRelationOutcome DeleteDspmIdentifyComplianceRuleRelation(const Model::DeleteDspmIdentifyComplianceRuleRelationRequest &request);
+                void DeleteDspmIdentifyComplianceRuleRelationAsync(const Model::DeleteDspmIdentifyComplianceRuleRelationRequest& request, const DeleteDspmIdentifyComplianceRuleRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDspmIdentifyComplianceRuleRelationOutcomeCallable DeleteDspmIdentifyComplianceRuleRelationCallable(const Model::DeleteDspmIdentifyComplianceRuleRelationRequest& request);
+
+                /**
+                 *删除dspm数据识别分级组
+                 * @param req DeleteDspmIdentifyLevelGroupRequest
+                 * @return DeleteDspmIdentifyLevelGroupOutcome
+                 */
+                DeleteDspmIdentifyLevelGroupOutcome DeleteDspmIdentifyLevelGroup(const Model::DeleteDspmIdentifyLevelGroupRequest &request);
+                void DeleteDspmIdentifyLevelGroupAsync(const Model::DeleteDspmIdentifyLevelGroupRequest& request, const DeleteDspmIdentifyLevelGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDspmIdentifyLevelGroupOutcomeCallable DeleteDspmIdentifyLevelGroupCallable(const Model::DeleteDspmIdentifyLevelGroupRequest& request);
+
+                /**
+                 *删除dspm数据识别数据项
+                 * @param req DeleteDspmIdentifyRuleRequest
+                 * @return DeleteDspmIdentifyRuleOutcome
+                 */
+                DeleteDspmIdentifyRuleOutcome DeleteDspmIdentifyRule(const Model::DeleteDspmIdentifyRuleRequest &request);
+                void DeleteDspmIdentifyRuleAsync(const Model::DeleteDspmIdentifyRuleRequest& request, const DeleteDspmIdentifyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDspmIdentifyRuleOutcomeCallable DeleteDspmIdentifyRuleCallable(const Model::DeleteDspmIdentifyRuleRequest& request);
 
                 /**
                  *删除Dspm个人身份id
@@ -2050,6 +2366,15 @@ namespace TencentCloud
                 DescribeCosIpInvokeRecordFileOutcomeCallable DescribeCosIpInvokeRecordFileCallable(const Model::DescribeCosIpInvokeRecordFileRequest& request);
 
                 /**
+                 *查询cos风险文件扫描任务
+                 * @param req DescribeCosObjectScanTaskRequest
+                 * @return DescribeCosObjectScanTaskOutcome
+                 */
+                DescribeCosObjectScanTaskOutcome DescribeCosObjectScanTask(const Model::DescribeCosObjectScanTaskRequest &request);
+                void DescribeCosObjectScanTaskAsync(const Model::DescribeCosObjectScanTaskRequest& request, const DescribeCosObjectScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosObjectScanTaskOutcomeCallable DescribeCosObjectScanTaskCallable(const Model::DescribeCosObjectScanTaskRequest& request);
+
+                /**
                  *cos概览信息
                  * @param req DescribeCosOverviewRequest
                  * @return DescribeCosOverviewOutcome
@@ -2293,6 +2618,24 @@ namespace TencentCloud
                 DescribeDspmAssetFieldListOutcomeCallable DescribeDspmAssetFieldListCallable(const Model::DescribeDspmAssetFieldListRequest& request);
 
                 /**
+                 *查询dspm资产字段样本值
+                 * @param req DescribeDspmAssetFieldSamplesRequest
+                 * @return DescribeDspmAssetFieldSamplesOutcome
+                 */
+                DescribeDspmAssetFieldSamplesOutcome DescribeDspmAssetFieldSamples(const Model::DescribeDspmAssetFieldSamplesRequest &request);
+                void DescribeDspmAssetFieldSamplesAsync(const Model::DescribeDspmAssetFieldSamplesRequest& request, const DescribeDspmAssetFieldSamplesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmAssetFieldSamplesOutcomeCallable DescribeDspmAssetFieldSamplesCallable(const Model::DescribeDspmAssetFieldSamplesRequest& request);
+
+                /**
+                 *查询dspm资产数据识别信息列表
+                 * @param req DescribeDspmAssetIdentifyInfoListRequest
+                 * @return DescribeDspmAssetIdentifyInfoListOutcome
+                 */
+                DescribeDspmAssetIdentifyInfoListOutcome DescribeDspmAssetIdentifyInfoList(const Model::DescribeDspmAssetIdentifyInfoListRequest &request);
+                void DescribeDspmAssetIdentifyInfoListAsync(const Model::DescribeDspmAssetIdentifyInfoListRequest& request, const DescribeDspmAssetIdentifyInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmAssetIdentifyInfoListOutcomeCallable DescribeDspmAssetIdentifyInfoListCallable(const Model::DescribeDspmAssetIdentifyInfoListRequest& request);
+
+                /**
                  *查询Dspm资产id列表
                  * @param req DescribeDspmAssetIdsRequest
                  * @return DescribeDspmAssetIdsOutcome
@@ -2383,6 +2726,51 @@ namespace TencentCloud
                 DescribeDspmExportTaskOutcomeCallable DescribeDspmExportTaskCallable(const Model::DescribeDspmExportTaskRequest& request);
 
                 /**
+                 *查询dspm数据识别分类列表
+                 * @param req DescribeDspmIdentifyCategoryListRequest
+                 * @return DescribeDspmIdentifyCategoryListOutcome
+                 */
+                DescribeDspmIdentifyCategoryListOutcome DescribeDspmIdentifyCategoryList(const Model::DescribeDspmIdentifyCategoryListRequest &request);
+                void DescribeDspmIdentifyCategoryListAsync(const Model::DescribeDspmIdentifyCategoryListRequest& request, const DescribeDspmIdentifyCategoryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmIdentifyCategoryListOutcomeCallable DescribeDspmIdentifyCategoryListCallable(const Model::DescribeDspmIdentifyCategoryListRequest& request);
+
+                /**
+                 *查询dspm数据识别模板分类关联数据项列表
+                 * @param req DescribeDspmIdentifyComplianceCategoryRuleListRequest
+                 * @return DescribeDspmIdentifyComplianceCategoryRuleListOutcome
+                 */
+                DescribeDspmIdentifyComplianceCategoryRuleListOutcome DescribeDspmIdentifyComplianceCategoryRuleList(const Model::DescribeDspmIdentifyComplianceCategoryRuleListRequest &request);
+                void DescribeDspmIdentifyComplianceCategoryRuleListAsync(const Model::DescribeDspmIdentifyComplianceCategoryRuleListRequest& request, const DescribeDspmIdentifyComplianceCategoryRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmIdentifyComplianceCategoryRuleListOutcomeCallable DescribeDspmIdentifyComplianceCategoryRuleListCallable(const Model::DescribeDspmIdentifyComplianceCategoryRuleListRequest& request);
+
+                /**
+                 *查询dspm识别模板详情
+                 * @param req DescribeDspmIdentifyComplianceGroupDetailRequest
+                 * @return DescribeDspmIdentifyComplianceGroupDetailOutcome
+                 */
+                DescribeDspmIdentifyComplianceGroupDetailOutcome DescribeDspmIdentifyComplianceGroupDetail(const Model::DescribeDspmIdentifyComplianceGroupDetailRequest &request);
+                void DescribeDspmIdentifyComplianceGroupDetailAsync(const Model::DescribeDspmIdentifyComplianceGroupDetailRequest& request, const DescribeDspmIdentifyComplianceGroupDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmIdentifyComplianceGroupDetailOutcomeCallable DescribeDspmIdentifyComplianceGroupDetailCallable(const Model::DescribeDspmIdentifyComplianceGroupDetailRequest& request);
+
+                /**
+                 *查询dspm数据识别模板列表
+                 * @param req DescribeDspmIdentifyComplianceGroupListRequest
+                 * @return DescribeDspmIdentifyComplianceGroupListOutcome
+                 */
+                DescribeDspmIdentifyComplianceGroupListOutcome DescribeDspmIdentifyComplianceGroupList(const Model::DescribeDspmIdentifyComplianceGroupListRequest &request);
+                void DescribeDspmIdentifyComplianceGroupListAsync(const Model::DescribeDspmIdentifyComplianceGroupListRequest& request, const DescribeDspmIdentifyComplianceGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmIdentifyComplianceGroupListOutcomeCallable DescribeDspmIdentifyComplianceGroupListCallable(const Model::DescribeDspmIdentifyComplianceGroupListRequest& request);
+
+                /**
+                 *查询dspm数据识别分布统计
+                 * @param req DescribeDspmIdentifyDistributionStatisticsRequest
+                 * @return DescribeDspmIdentifyDistributionStatisticsOutcome
+                 */
+                DescribeDspmIdentifyDistributionStatisticsOutcome DescribeDspmIdentifyDistributionStatistics(const Model::DescribeDspmIdentifyDistributionStatisticsRequest &request);
+                void DescribeDspmIdentifyDistributionStatisticsAsync(const Model::DescribeDspmIdentifyDistributionStatisticsRequest& request, const DescribeDspmIdentifyDistributionStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmIdentifyDistributionStatisticsOutcomeCallable DescribeDspmIdentifyDistributionStatisticsCallable(const Model::DescribeDspmIdentifyDistributionStatisticsRequest& request);
+
+                /**
                  *查询Dspm身份id列表
                  * @param req DescribeDspmIdentifyIdListRequest
                  * @return DescribeDspmIdentifyIdListOutcome
@@ -2408,6 +2796,42 @@ namespace TencentCloud
                 DescribeDspmIdentifyInfoListOutcome DescribeDspmIdentifyInfoList(const Model::DescribeDspmIdentifyInfoListRequest &request);
                 void DescribeDspmIdentifyInfoListAsync(const Model::DescribeDspmIdentifyInfoListRequest& request, const DescribeDspmIdentifyInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDspmIdentifyInfoListOutcomeCallable DescribeDspmIdentifyInfoListCallable(const Model::DescribeDspmIdentifyInfoListRequest& request);
+
+                /**
+                 *查询dspm数据识别分级组列表
+                 * @param req DescribeDspmIdentifyLevelGroupListRequest
+                 * @return DescribeDspmIdentifyLevelGroupListOutcome
+                 */
+                DescribeDspmIdentifyLevelGroupListOutcome DescribeDspmIdentifyLevelGroupList(const Model::DescribeDspmIdentifyLevelGroupListRequest &request);
+                void DescribeDspmIdentifyLevelGroupListAsync(const Model::DescribeDspmIdentifyLevelGroupListRequest& request, const DescribeDspmIdentifyLevelGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmIdentifyLevelGroupListOutcomeCallable DescribeDspmIdentifyLevelGroupListCallable(const Model::DescribeDspmIdentifyLevelGroupListRequest& request);
+
+                /**
+                 *查询dspm数据识别数据项详情
+                 * @param req DescribeDspmIdentifyRuleDetailRequest
+                 * @return DescribeDspmIdentifyRuleDetailOutcome
+                 */
+                DescribeDspmIdentifyRuleDetailOutcome DescribeDspmIdentifyRuleDetail(const Model::DescribeDspmIdentifyRuleDetailRequest &request);
+                void DescribeDspmIdentifyRuleDetailAsync(const Model::DescribeDspmIdentifyRuleDetailRequest& request, const DescribeDspmIdentifyRuleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmIdentifyRuleDetailOutcomeCallable DescribeDspmIdentifyRuleDetailCallable(const Model::DescribeDspmIdentifyRuleDetailRequest& request);
+
+                /**
+                 *查询dspm数据识别数据项列表
+                 * @param req DescribeDspmIdentifyRuleListRequest
+                 * @return DescribeDspmIdentifyRuleListOutcome
+                 */
+                DescribeDspmIdentifyRuleListOutcome DescribeDspmIdentifyRuleList(const Model::DescribeDspmIdentifyRuleListRequest &request);
+                void DescribeDspmIdentifyRuleListAsync(const Model::DescribeDspmIdentifyRuleListRequest& request, const DescribeDspmIdentifyRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmIdentifyRuleListOutcomeCallable DescribeDspmIdentifyRuleListCallable(const Model::DescribeDspmIdentifyRuleListRequest& request);
+
+                /**
+                 *查询dspm数据识别数据项验证结果
+                 * @param req DescribeDspmIdentifyRuleTestResultRequest
+                 * @return DescribeDspmIdentifyRuleTestResultOutcome
+                 */
+                DescribeDspmIdentifyRuleTestResultOutcome DescribeDspmIdentifyRuleTestResult(const Model::DescribeDspmIdentifyRuleTestResultRequest &request);
+                void DescribeDspmIdentifyRuleTestResultAsync(const Model::DescribeDspmIdentifyRuleTestResultRequest& request, const DescribeDspmIdentifyRuleTestResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmIdentifyRuleTestResultOutcomeCallable DescribeDspmIdentifyRuleTestResultCallable(const Model::DescribeDspmIdentifyRuleTestResultRequest& request);
 
                 /**
                  *查询日志列表信息
@@ -3148,6 +3572,24 @@ namespace TencentCloud
                 ModifyCosAuditMonitorAccountOutcomeCallable ModifyCosAuditMonitorAccountCallable(const Model::ModifyCosAuditMonitorAccountRequest& request);
 
                 /**
+                 *修改对象存储识别开关
+                 * @param req ModifyCosAuditObjectIdentifyStatusRequest
+                 * @return ModifyCosAuditObjectIdentifyStatusOutcome
+                 */
+                ModifyCosAuditObjectIdentifyStatusOutcome ModifyCosAuditObjectIdentifyStatus(const Model::ModifyCosAuditObjectIdentifyStatusRequest &request);
+                void ModifyCosAuditObjectIdentifyStatusAsync(const Model::ModifyCosAuditObjectIdentifyStatusRequest& request, const ModifyCosAuditObjectIdentifyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCosAuditObjectIdentifyStatusOutcomeCallable ModifyCosAuditObjectIdentifyStatusCallable(const Model::ModifyCosAuditObjectIdentifyStatusRequest& request);
+
+                /**
+                 *设置对象存储扫描采样率
+                 * @param req ModifyCosAuditObjectSampleRateRequest
+                 * @return ModifyCosAuditObjectSampleRateOutcome
+                 */
+                ModifyCosAuditObjectSampleRateOutcome ModifyCosAuditObjectSampleRate(const Model::ModifyCosAuditObjectSampleRateRequest &request);
+                void ModifyCosAuditObjectSampleRateAsync(const Model::ModifyCosAuditObjectSampleRateRequest& request, const ModifyCosAuditObjectSampleRateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCosAuditObjectSampleRateOutcomeCallable ModifyCosAuditObjectSampleRateCallable(const Model::ModifyCosAuditObjectSampleRateRequest& request);
+
+                /**
                  *修改对象存储备注
                  * @param req ModifyCosMarkInfoRequest
                  * @return ModifyCosMarkInfoOutcome
@@ -3164,6 +3606,15 @@ namespace TencentCloud
                 ModifyDspmAccessRecordOutcome ModifyDspmAccessRecord(const Model::ModifyDspmAccessRecordRequest &request);
                 void ModifyDspmAccessRecordAsync(const Model::ModifyDspmAccessRecordRequest& request, const ModifyDspmAccessRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDspmAccessRecordOutcomeCallable ModifyDspmAccessRecordCallable(const Model::ModifyDspmAccessRecordRequest& request);
+
+                /**
+                 *修改dspm当前应用的数据识别模板
+                 * @param req ModifyDspmApplyingIdentifyComplianceGroupRequest
+                 * @return ModifyDspmApplyingIdentifyComplianceGroupOutcome
+                 */
+                ModifyDspmApplyingIdentifyComplianceGroupOutcome ModifyDspmApplyingIdentifyComplianceGroup(const Model::ModifyDspmApplyingIdentifyComplianceGroupRequest &request);
+                void ModifyDspmApplyingIdentifyComplianceGroupAsync(const Model::ModifyDspmApplyingIdentifyComplianceGroupRequest& request, const ModifyDspmApplyingIdentifyComplianceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmApplyingIdentifyComplianceGroupOutcomeCallable ModifyDspmApplyingIdentifyComplianceGroupCallable(const Model::ModifyDspmApplyingIdentifyComplianceGroupRequest& request);
 
                 /**
                  *修改Dspm审批单状态
@@ -3202,6 +3653,15 @@ namespace TencentCloud
                 ModifyDspmAssetDataScanTaskOutcomeCallable ModifyDspmAssetDataScanTaskCallable(const Model::ModifyDspmAssetDataScanTaskRequest& request);
 
                 /**
+                 *修改Dspm资产数据扫描任务状态
+                 * @param req ModifyDspmAssetDataScanTaskStatusRequest
+                 * @return ModifyDspmAssetDataScanTaskStatusOutcome
+                 */
+                ModifyDspmAssetDataScanTaskStatusOutcome ModifyDspmAssetDataScanTaskStatus(const Model::ModifyDspmAssetDataScanTaskStatusRequest &request);
+                void ModifyDspmAssetDataScanTaskStatusAsync(const Model::ModifyDspmAssetDataScanTaskStatusRequest& request, const ModifyDspmAssetDataScanTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmAssetDataScanTaskStatusOutcomeCallable ModifyDspmAssetDataScanTaskStatusCallable(const Model::ModifyDspmAssetDataScanTaskStatusRequest& request);
+
+                /**
                  *修改Dspm资产日志投递开关
                  * @param req ModifyDspmAssetLogDeliverySwitchRequest
                  * @return ModifyDspmAssetLogDeliverySwitchOutcome
@@ -3229,6 +3689,42 @@ namespace TencentCloud
                 ModifyDspmBackupSettingOutcomeCallable ModifyDspmBackupSettingCallable(const Model::ModifyDspmBackupSettingRequest& request);
 
                 /**
+                 *修改dspm数据识别分类
+                 * @param req ModifyDspmIdentifyCategoryRequest
+                 * @return ModifyDspmIdentifyCategoryOutcome
+                 */
+                ModifyDspmIdentifyCategoryOutcome ModifyDspmIdentifyCategory(const Model::ModifyDspmIdentifyCategoryRequest &request);
+                void ModifyDspmIdentifyCategoryAsync(const Model::ModifyDspmIdentifyCategoryRequest& request, const ModifyDspmIdentifyCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmIdentifyCategoryOutcomeCallable ModifyDspmIdentifyCategoryCallable(const Model::ModifyDspmIdentifyCategoryRequest& request);
+
+                /**
+                 *修改dspm数据识别模板
+                 * @param req ModifyDspmIdentifyComplianceGroupRequest
+                 * @return ModifyDspmIdentifyComplianceGroupOutcome
+                 */
+                ModifyDspmIdentifyComplianceGroupOutcome ModifyDspmIdentifyComplianceGroup(const Model::ModifyDspmIdentifyComplianceGroupRequest &request);
+                void ModifyDspmIdentifyComplianceGroupAsync(const Model::ModifyDspmIdentifyComplianceGroupRequest& request, const ModifyDspmIdentifyComplianceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmIdentifyComplianceGroupOutcomeCallable ModifyDspmIdentifyComplianceGroupCallable(const Model::ModifyDspmIdentifyComplianceGroupRequest& request);
+
+                /**
+                 *修改dspm数据识别模板状态
+                 * @param req ModifyDspmIdentifyComplianceGroupStatusRequest
+                 * @return ModifyDspmIdentifyComplianceGroupStatusOutcome
+                 */
+                ModifyDspmIdentifyComplianceGroupStatusOutcome ModifyDspmIdentifyComplianceGroupStatus(const Model::ModifyDspmIdentifyComplianceGroupStatusRequest &request);
+                void ModifyDspmIdentifyComplianceGroupStatusAsync(const Model::ModifyDspmIdentifyComplianceGroupStatusRequest& request, const ModifyDspmIdentifyComplianceGroupStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmIdentifyComplianceGroupStatusOutcomeCallable ModifyDspmIdentifyComplianceGroupStatusCallable(const Model::ModifyDspmIdentifyComplianceGroupStatusRequest& request);
+
+                /**
+                 *修改dspm数据识别模板数据项关联级别信息
+                 * @param req ModifyDspmIdentifyComplianceRuleLevelInfoRequest
+                 * @return ModifyDspmIdentifyComplianceRuleLevelInfoOutcome
+                 */
+                ModifyDspmIdentifyComplianceRuleLevelInfoOutcome ModifyDspmIdentifyComplianceRuleLevelInfo(const Model::ModifyDspmIdentifyComplianceRuleLevelInfoRequest &request);
+                void ModifyDspmIdentifyComplianceRuleLevelInfoAsync(const Model::ModifyDspmIdentifyComplianceRuleLevelInfoRequest& request, const ModifyDspmIdentifyComplianceRuleLevelInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmIdentifyComplianceRuleLevelInfoOutcomeCallable ModifyDspmIdentifyComplianceRuleLevelInfoCallable(const Model::ModifyDspmIdentifyComplianceRuleLevelInfoRequest& request);
+
+                /**
                  *修改Dspm身份信息
                  * @param req ModifyDspmIdentifyInfoRequest
                  * @return ModifyDspmIdentifyInfoOutcome
@@ -3236,6 +3732,42 @@ namespace TencentCloud
                 ModifyDspmIdentifyInfoOutcome ModifyDspmIdentifyInfo(const Model::ModifyDspmIdentifyInfoRequest &request);
                 void ModifyDspmIdentifyInfoAsync(const Model::ModifyDspmIdentifyInfoRequest& request, const ModifyDspmIdentifyInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDspmIdentifyInfoOutcomeCallable ModifyDspmIdentifyInfoCallable(const Model::ModifyDspmIdentifyInfoRequest& request);
+
+                /**
+                 *修改dspm数据识别分级组
+                 * @param req ModifyDspmIdentifyLevelGroupRequest
+                 * @return ModifyDspmIdentifyLevelGroupOutcome
+                 */
+                ModifyDspmIdentifyLevelGroupOutcome ModifyDspmIdentifyLevelGroup(const Model::ModifyDspmIdentifyLevelGroupRequest &request);
+                void ModifyDspmIdentifyLevelGroupAsync(const Model::ModifyDspmIdentifyLevelGroupRequest& request, const ModifyDspmIdentifyLevelGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmIdentifyLevelGroupOutcomeCallable ModifyDspmIdentifyLevelGroupCallable(const Model::ModifyDspmIdentifyLevelGroupRequest& request);
+
+                /**
+                 *修改dspm数据识别分级信息
+                 * @param req ModifyDspmIdentifyLevelItemRequest
+                 * @return ModifyDspmIdentifyLevelItemOutcome
+                 */
+                ModifyDspmIdentifyLevelItemOutcome ModifyDspmIdentifyLevelItem(const Model::ModifyDspmIdentifyLevelItemRequest &request);
+                void ModifyDspmIdentifyLevelItemAsync(const Model::ModifyDspmIdentifyLevelItemRequest& request, const ModifyDspmIdentifyLevelItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmIdentifyLevelItemOutcomeCallable ModifyDspmIdentifyLevelItemCallable(const Model::ModifyDspmIdentifyLevelItemRequest& request);
+
+                /**
+                 *修改dspm数据识别数据项
+                 * @param req ModifyDspmIdentifyRuleRequest
+                 * @return ModifyDspmIdentifyRuleOutcome
+                 */
+                ModifyDspmIdentifyRuleOutcome ModifyDspmIdentifyRule(const Model::ModifyDspmIdentifyRuleRequest &request);
+                void ModifyDspmIdentifyRuleAsync(const Model::ModifyDspmIdentifyRuleRequest& request, const ModifyDspmIdentifyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmIdentifyRuleOutcomeCallable ModifyDspmIdentifyRuleCallable(const Model::ModifyDspmIdentifyRuleRequest& request);
+
+                /**
+                 *修改dspm数据识别数据项状态
+                 * @param req ModifyDspmIdentifyRuleStatusRequest
+                 * @return ModifyDspmIdentifyRuleStatusOutcome
+                 */
+                ModifyDspmIdentifyRuleStatusOutcome ModifyDspmIdentifyRuleStatus(const Model::ModifyDspmIdentifyRuleStatusRequest &request);
+                void ModifyDspmIdentifyRuleStatusAsync(const Model::ModifyDspmIdentifyRuleStatusRequest& request, const ModifyDspmIdentifyRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmIdentifyRuleStatusOutcomeCallable ModifyDspmIdentifyRuleStatusCallable(const Model::ModifyDspmIdentifyRuleStatusRequest& request);
 
                 /**
                  *修改DspmIp信息

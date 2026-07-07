@@ -135,25 +135,25 @@ namespace TencentCloud
                     bool ModelRouterIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>关联资源类型。</p><p>枚举值：</p><ul><li>ModelRouter：模型路由实例</li><li>Key：模型路由Key</li></ul>
-                     * @return Type <p>关联资源类型。</p><p>枚举值：</p><ul><li>ModelRouter：模型路由实例</li><li>Key：模型路由Key</li></ul>
+                     * 获取<p>资源对象的名称。</p>
+                     * @return ResourceName <p>资源对象的名称。</p>
                      * 
                      */
-                    std::string GetType() const;
+                    std::string GetResourceName() const;
 
                     /**
-                     * 设置<p>关联资源类型。</p><p>枚举值：</p><ul><li>ModelRouter：模型路由实例</li><li>Key：模型路由Key</li></ul>
-                     * @param _type <p>关联资源类型。</p><p>枚举值：</p><ul><li>ModelRouter：模型路由实例</li><li>Key：模型路由Key</li></ul>
+                     * 设置<p>资源对象的名称。</p>
+                     * @param _resourceName <p>资源对象的名称。</p>
                      * 
                      */
-                    void SetType(const std::string& _type);
+                    void SetResourceName(const std::string& _resourceName);
 
                     /**
-                     * 判断参数 Type 是否已赋值
-                     * @return Type 是否已赋值
+                     * 判断参数 ResourceName 是否已赋值
+                     * @return ResourceName 是否已赋值
                      * 
                      */
-                    bool TypeHasBeenSet() const;
+                    bool ResourceNameHasBeenSet() const;
 
                     /**
                      * 获取<p>关联关系的状态</p><p>枚举值：</p><ul><li>Active： 已生效</li><li>Configuring： 配置中</li><li>ConfigureFailed： 配置失败</li></ul>
@@ -175,6 +175,48 @@ namespace TencentCloud
                      * 
                      */
                     bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>关联资源类型。</p><p>枚举值：</p><ul><li>ModelRouter：模型路由实例</li><li>Key：模型路由Key</li><li>UserGroup：用户组</li></ul>
+                     * @return Type <p>关联资源类型。</p><p>枚举值：</p><ul><li>ModelRouter：模型路由实例</li><li>Key：模型路由Key</li><li>UserGroup：用户组</li></ul>
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置<p>关联资源类型。</p><p>枚举值：</p><ul><li>ModelRouter：模型路由实例</li><li>Key：模型路由Key</li><li>UserGroup：用户组</li></ul>
+                     * @param _type <p>关联资源类型。</p><p>枚举值：</p><ul><li>ModelRouter：模型路由实例</li><li>Key：模型路由Key</li><li>UserGroup：用户组</li></ul>
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>关联的用户组id</p>
+                     * @return UserGroupId <p>关联的用户组id</p>
+                     * 
+                     */
+                    std::string GetUserGroupId() const;
+
+                    /**
+                     * 设置<p>关联的用户组id</p>
+                     * @param _userGroupId <p>关联的用户组id</p>
+                     * 
+                     */
+                    void SetUserGroupId(const std::string& _userGroupId);
+
+                    /**
+                     * 判断参数 UserGroupId 是否已赋值
+                     * @return UserGroupId 是否已赋值
+                     * 
+                     */
+                    bool UserGroupIdHasBeenSet() const;
 
                 private:
 
@@ -204,16 +246,28 @@ namespace TencentCloud
                     bool m_modelRouterIdHasBeenSet;
 
                     /**
-                     * <p>关联资源类型。</p><p>枚举值：</p><ul><li>ModelRouter：模型路由实例</li><li>Key：模型路由Key</li></ul>
+                     * <p>资源对象的名称。</p>
                      */
-                    std::string m_type;
-                    bool m_typeHasBeenSet;
+                    std::string m_resourceName;
+                    bool m_resourceNameHasBeenSet;
 
                     /**
                      * <p>关联关系的状态</p><p>枚举值：</p><ul><li>Active： 已生效</li><li>Configuring： 配置中</li><li>ConfigureFailed： 配置失败</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>关联资源类型。</p><p>枚举值：</p><ul><li>ModelRouter：模型路由实例</li><li>Key：模型路由Key</li><li>UserGroup：用户组</li></ul>
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * <p>关联的用户组id</p>
+                     */
+                    std::string m_userGroupId;
+                    bool m_userGroupIdHasBeenSet;
 
                 };
             }

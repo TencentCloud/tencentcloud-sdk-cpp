@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取当通过本接口来创建实例时会返回该参数，表示一个或多个实例`ID`。返回实例`ID`列表并不代表实例创建成功，可根据 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询返回的InstancesSet中对应实例的`ID`的状态来判断创建是否完成；如果实例状态由“PENDING(创建中)”变为“RUNNING(运行中)”，则为创建成功。
-                     * @return InstanceIdSet 当通过本接口来创建实例时会返回该参数，表示一个或多个实例`ID`。返回实例`ID`列表并不代表实例创建成功，可根据 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询返回的InstancesSet中对应实例的`ID`的状态来判断创建是否完成；如果实例状态由“PENDING(创建中)”变为“RUNNING(运行中)”，则为创建成功。
+                     * 获取<p>当通过本接口来创建实例时会返回该参数，表示一个或多个实例<code>ID</code>。返回实例<code>ID</code>列表并不代表实例创建成功，可根据 <a href="https://cloud.tencent.com/document/api/213/15728">DescribeInstances</a> 接口查询返回的InstancesSet中对应实例的<code>ID</code>的状态来判断创建是否完成；如果实例状态由“PENDING(创建中)”变为“RUNNING(运行中)”，则为创建成功。</p>
+                     * @return InstanceIdSet <p>当通过本接口来创建实例时会返回该参数，表示一个或多个实例<code>ID</code>。返回实例<code>ID</code>列表并不代表实例创建成功，可根据 <a href="https://cloud.tencent.com/document/api/213/15728">DescribeInstances</a> 接口查询返回的InstancesSet中对应实例的<code>ID</code>的状态来判断创建是否完成；如果实例状态由“PENDING(创建中)”变为“RUNNING(运行中)”，则为创建成功。</p>
                      * 
                      */
                     std::vector<std::string> GetInstanceIdSet() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 当通过本接口来创建实例时会返回该参数，表示一个或多个实例`ID`。返回实例`ID`列表并不代表实例创建成功，可根据 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询返回的InstancesSet中对应实例的`ID`的状态来判断创建是否完成；如果实例状态由“PENDING(创建中)”变为“RUNNING(运行中)”，则为创建成功。
+                     * <p>当通过本接口来创建实例时会返回该参数，表示一个或多个实例<code>ID</code>。返回实例<code>ID</code>列表并不代表实例创建成功，可根据 <a href="https://cloud.tencent.com/document/api/213/15728">DescribeInstances</a> 接口查询返回的InstancesSet中对应实例的<code>ID</code>的状态来判断创建是否完成；如果实例状态由“PENDING(创建中)”变为“RUNNING(运行中)”，则为创建成功。</p>
                      */
                     std::vector<std::string> m_instanceIdSet;
                     bool m_instanceIdSetHasBeenSet;

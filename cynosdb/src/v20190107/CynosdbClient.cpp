@@ -3240,6 +3240,56 @@ CynosdbClient::DescribeBackupListByVaultOutcomeCallable CynosdbClient::DescribeB
     return prom->get_future();
 }
 
+CynosdbClient::DescribeBackupOverviewOutcome CynosdbClient::DescribeBackupOverview(const DescribeBackupOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupOverviewResponse rsp = DescribeBackupOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupOverviewOutcome(rsp);
+        else
+            return DescribeBackupOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupOverviewOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeBackupOverviewAsync(const DescribeBackupOverviewRequest& request, const DescribeBackupOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBackupOverviewRequest&;
+    using Resp = DescribeBackupOverviewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackupOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::DescribeBackupOverviewOutcomeCallable CynosdbClient::DescribeBackupOverviewCallable(const DescribeBackupOverviewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBackupOverviewOutcome>>();
+    DescribeBackupOverviewAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeBackupOverviewRequest&,
+        DescribeBackupOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CynosdbClient::DescribeBinlogConfigOutcome CynosdbClient::DescribeBinlogConfig(const DescribeBinlogConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBinlogConfig");

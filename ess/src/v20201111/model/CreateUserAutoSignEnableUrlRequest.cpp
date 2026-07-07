@@ -31,7 +31,8 @@ CreateUserAutoSignEnableUrlRequest::CreateUserAutoSignEnableUrlRequest() :
     m_notifyAddressHasBeenSet(false),
     m_expiredTimeHasBeenSet(false),
     m_agentHasBeenSet(false),
-    m_userDataHasBeenSet(false)
+    m_userDataHasBeenSet(false),
+    m_endPointHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,14 @@ string CreateUserAutoSignEnableUrlRequest::ToJsonString() const
         string key = "UserData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endPointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndPoint";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endPoint.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -267,6 +276,22 @@ void CreateUserAutoSignEnableUrlRequest::SetUserData(const string& _userData)
 bool CreateUserAutoSignEnableUrlRequest::UserDataHasBeenSet() const
 {
     return m_userDataHasBeenSet;
+}
+
+string CreateUserAutoSignEnableUrlRequest::GetEndPoint() const
+{
+    return m_endPoint;
+}
+
+void CreateUserAutoSignEnableUrlRequest::SetEndPoint(const string& _endPoint)
+{
+    m_endPoint = _endPoint;
+    m_endPointHasBeenSet = true;
+}
+
+bool CreateUserAutoSignEnableUrlRequest::EndPointHasBeenSet() const
+{
+    return m_endPointHasBeenSet;
 }
 
 

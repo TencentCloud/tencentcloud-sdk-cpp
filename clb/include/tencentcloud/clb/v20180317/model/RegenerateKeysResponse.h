@@ -45,20 +45,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>重新生成后的Key的信息</p>
-                     * @return RegeneratedKeys <p>重新生成后的Key的信息</p>
-                     * 
-                     */
-                    std::vector<RegeneratedKey> GetRegeneratedKeys() const;
-
-                    /**
-                     * 判断参数 RegeneratedKeys 是否已赋值
-                     * @return RegeneratedKeys 是否已赋值
-                     * 
-                     */
-                    bool RegeneratedKeysHasBeenSet() const;
-
-                    /**
                      * 获取<p>重新生成失败的Key的ID列表</p>
                      * @return FailedKeyIds <p>重新生成失败的Key的ID列表</p>
                      * 
@@ -72,19 +58,33 @@ namespace TencentCloud
                      */
                     bool FailedKeyIdsHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取<p>重新生成后的Key的信息</p>
+                     * @return RegeneratedKeys <p>重新生成后的Key的信息</p>
+                     * 
+                     */
+                    std::vector<RegeneratedKey> GetRegeneratedKeys() const;
 
                     /**
-                     * <p>重新生成后的Key的信息</p>
+                     * 判断参数 RegeneratedKeys 是否已赋值
+                     * @return RegeneratedKeys 是否已赋值
+                     * 
                      */
-                    std::vector<RegeneratedKey> m_regeneratedKeys;
-                    bool m_regeneratedKeysHasBeenSet;
+                    bool RegeneratedKeysHasBeenSet() const;
+
+                private:
 
                     /**
                      * <p>重新生成失败的Key的ID列表</p>
                      */
                     std::vector<std::string> m_failedKeyIds;
                     bool m_failedKeyIdsHasBeenSet;
+
+                    /**
+                     * <p>重新生成后的Key的信息</p>
+                     */
+                    std::vector<RegeneratedKey> m_regeneratedKeys;
+                    bool m_regeneratedKeysHasBeenSet;
 
                 };
             }

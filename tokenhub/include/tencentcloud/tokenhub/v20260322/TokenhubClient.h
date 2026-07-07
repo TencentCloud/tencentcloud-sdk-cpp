@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tokenhub/v20260322/model/CreateApiKeyRequest.h>
+#include <tencentcloud/tokenhub/v20260322/model/CreateApiKeyResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/CreateGlossaryRequest.h>
 #include <tencentcloud/tokenhub/v20260322/model/CreateGlossaryResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/CreateGlossaryEntriesRequest.h>
@@ -31,6 +33,8 @@
 #include <tencentcloud/tokenhub/v20260322/model/CreateTokenPlanApiKeysResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/CreateTokenPlanTeamOrderAndBuyRequest.h>
 #include <tencentcloud/tokenhub/v20260322/model/CreateTokenPlanTeamOrderAndBuyResponse.h>
+#include <tencentcloud/tokenhub/v20260322/model/DeleteApiKeyRequest.h>
+#include <tencentcloud/tokenhub/v20260322/model/DeleteApiKeyResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/DeleteGlossaryRequest.h>
 #include <tencentcloud/tokenhub/v20260322/model/DeleteGlossaryResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/DeleteGlossaryEntriesRequest.h>
@@ -61,6 +65,10 @@
 #include <tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanListResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeUsageRankListRequest.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeUsageRankListResponse.h>
+#include <tencentcloud/tokenhub/v20260322/model/ModifyApiKeyInfoRequest.h>
+#include <tencentcloud/tokenhub/v20260322/model/ModifyApiKeyInfoResponse.h>
+#include <tencentcloud/tokenhub/v20260322/model/ModifyApiKeyStatusRequest.h>
+#include <tencentcloud/tokenhub/v20260322/model/ModifyApiKeyStatusResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/ModifyGlossaryEntriesRequest.h>
 #include <tencentcloud/tokenhub/v20260322/model/ModifyGlossaryEntriesResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/ModifyTokenPlanApiKeyRequest.h>
@@ -85,6 +93,9 @@ namespace TencentCloud
                 TokenhubClient(const Credential &credential, const std::string &region);
                 TokenhubClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateApiKeyResponse> CreateApiKeyOutcome;
+                typedef std::future<CreateApiKeyOutcome> CreateApiKeyOutcomeCallable;
+                typedef std::function<void(const TokenhubClient*, const Model::CreateApiKeyRequest&, CreateApiKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApiKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateGlossaryResponse> CreateGlossaryOutcome;
                 typedef std::future<CreateGlossaryOutcome> CreateGlossaryOutcomeCallable;
                 typedef std::function<void(const TokenhubClient*, const Model::CreateGlossaryRequest&, CreateGlossaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGlossaryAsyncHandler;
@@ -97,6 +108,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTokenPlanTeamOrderAndBuyResponse> CreateTokenPlanTeamOrderAndBuyOutcome;
                 typedef std::future<CreateTokenPlanTeamOrderAndBuyOutcome> CreateTokenPlanTeamOrderAndBuyOutcomeCallable;
                 typedef std::function<void(const TokenhubClient*, const Model::CreateTokenPlanTeamOrderAndBuyRequest&, CreateTokenPlanTeamOrderAndBuyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTokenPlanTeamOrderAndBuyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteApiKeyResponse> DeleteApiKeyOutcome;
+                typedef std::future<DeleteApiKeyOutcome> DeleteApiKeyOutcomeCallable;
+                typedef std::function<void(const TokenhubClient*, const Model::DeleteApiKeyRequest&, DeleteApiKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApiKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteGlossaryResponse> DeleteGlossaryOutcome;
                 typedef std::future<DeleteGlossaryOutcome> DeleteGlossaryOutcomeCallable;
                 typedef std::function<void(const TokenhubClient*, const Model::DeleteGlossaryRequest&, DeleteGlossaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGlossaryAsyncHandler;
@@ -142,6 +156,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUsageRankListResponse> DescribeUsageRankListOutcome;
                 typedef std::future<DescribeUsageRankListOutcome> DescribeUsageRankListOutcomeCallable;
                 typedef std::function<void(const TokenhubClient*, const Model::DescribeUsageRankListRequest&, DescribeUsageRankListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsageRankListAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyApiKeyInfoResponse> ModifyApiKeyInfoOutcome;
+                typedef std::future<ModifyApiKeyInfoOutcome> ModifyApiKeyInfoOutcomeCallable;
+                typedef std::function<void(const TokenhubClient*, const Model::ModifyApiKeyInfoRequest&, ModifyApiKeyInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApiKeyInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyApiKeyStatusResponse> ModifyApiKeyStatusOutcome;
+                typedef std::future<ModifyApiKeyStatusOutcome> ModifyApiKeyStatusOutcomeCallable;
+                typedef std::function<void(const TokenhubClient*, const Model::ModifyApiKeyStatusRequest&, ModifyApiKeyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApiKeyStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyGlossaryEntriesResponse> ModifyGlossaryEntriesOutcome;
                 typedef std::future<ModifyGlossaryEntriesOutcome> ModifyGlossaryEntriesOutcomeCallable;
                 typedef std::function<void(const TokenhubClient*, const Model::ModifyGlossaryEntriesRequest&, ModifyGlossaryEntriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGlossaryEntriesAsyncHandler;
@@ -159,6 +179,17 @@ namespace TencentCloud
                 typedef std::function<void(const TokenhubClient*, const Model::UpgradeTokenPlanTeamOrderRequest&, UpgradeTokenPlanTeamOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeTokenPlanTeamOrderAsyncHandler;
 
 
+
+                /**
+                 *创建 API 密钥。
+
+创建一个新的 API 密钥，创建成功后返回 API 密钥 ID。需指定平台类型、绑定方式和初始状态。
+                 * @param req CreateApiKeyRequest
+                 * @return CreateApiKeyOutcome
+                 */
+                CreateApiKeyOutcome CreateApiKey(const Model::CreateApiKeyRequest &request);
+                void CreateApiKeyAsync(const Model::CreateApiKeyRequest& request, const CreateApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateApiKeyOutcomeCallable CreateApiKeyCallable(const Model::CreateApiKeyRequest& request);
 
                 /**
                  *创建术语库。
@@ -203,6 +234,15 @@ namespace TencentCloud
                 CreateTokenPlanTeamOrderAndBuyOutcome CreateTokenPlanTeamOrderAndBuy(const Model::CreateTokenPlanTeamOrderAndBuyRequest &request);
                 void CreateTokenPlanTeamOrderAndBuyAsync(const Model::CreateTokenPlanTeamOrderAndBuyRequest& request, const CreateTokenPlanTeamOrderAndBuyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTokenPlanTeamOrderAndBuyOutcomeCallable CreateTokenPlanTeamOrderAndBuyCallable(const Model::CreateTokenPlanTeamOrderAndBuyRequest& request);
+
+                /**
+                 *删除指定的 API 密钥，同时清理关联的模型绑定关系。
+                 * @param req DeleteApiKeyRequest
+                 * @return DeleteApiKeyOutcome
+                 */
+                DeleteApiKeyOutcome DeleteApiKey(const Model::DeleteApiKeyRequest &request);
+                void DeleteApiKeyAsync(const Model::DeleteApiKeyRequest& request, const DeleteApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteApiKeyOutcomeCallable DeleteApiKeyCallable(const Model::DeleteApiKeyRequest& request);
 
                 /**
                  *删除术语库。
@@ -376,6 +416,26 @@ namespace TencentCloud
                 DescribeUsageRankListOutcome DescribeUsageRankList(const Model::DescribeUsageRankListRequest &request);
                 void DescribeUsageRankListAsync(const Model::DescribeUsageRankListRequest& request, const DescribeUsageRankListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUsageRankListOutcomeCallable DescribeUsageRankListCallable(const Model::DescribeUsageRankListRequest& request);
+
+                /**
+                 *更新 API 密钥信息。
+
+更新 API 密钥的备注信息、 IP 白名单和 Token 限额（修改限额推荐使用QuotaDesired参数）。所有可选参数不传表示不修改。
+                 * @param req ModifyApiKeyInfoRequest
+                 * @return ModifyApiKeyInfoOutcome
+                 */
+                ModifyApiKeyInfoOutcome ModifyApiKeyInfo(const Model::ModifyApiKeyInfoRequest &request);
+                void ModifyApiKeyInfoAsync(const Model::ModifyApiKeyInfoRequest& request, const ModifyApiKeyInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyApiKeyInfoOutcomeCallable ModifyApiKeyInfoCallable(const Model::ModifyApiKeyInfoRequest& request);
+
+                /**
+                 *更新 API 密钥的启用或禁用状态。
+                 * @param req ModifyApiKeyStatusRequest
+                 * @return ModifyApiKeyStatusOutcome
+                 */
+                ModifyApiKeyStatusOutcome ModifyApiKeyStatus(const Model::ModifyApiKeyStatusRequest &request);
+                void ModifyApiKeyStatusAsync(const Model::ModifyApiKeyStatusRequest& request, const ModifyApiKeyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyApiKeyStatusOutcomeCallable ModifyApiKeyStatusCallable(const Model::ModifyApiKeyStatusRequest& request);
 
                 /**
                  *批量修改术语条目。

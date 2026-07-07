@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mps/v20190612/model/SmartSubtitleTaskFullTextSegmentItem.h>
 #include <tencentcloud/mps/v20190612/model/SubtitleResult.h>
 #include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
 
@@ -47,6 +48,31 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
+
+                    /**
+                     * 获取<p>智能字幕识别片段列表。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SegmentSet <p>智能字幕识别片段列表。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<SmartSubtitleTaskFullTextSegmentItem> GetSegmentSet() const;
+
+                    /**
+                     * 设置<p>智能字幕识别片段列表。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _segmentSet <p>智能字幕识别片段列表。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSegmentSet(const std::vector<SmartSubtitleTaskFullTextSegmentItem>& _segmentSet);
+
+                    /**
+                     * 判断参数 SegmentSet 是否已赋值
+                     * @return SegmentSet 是否已赋值
+                     * 
+                     */
+                    bool SegmentSetHasBeenSet() const;
 
                     /**
                      * 获取<p>识别字幕结果</p>
@@ -124,6 +150,13 @@ namespace TencentCloud
                     bool OutputStorageHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * <p>智能字幕识别片段列表。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SmartSubtitleTaskFullTextSegmentItem> m_segmentSet;
+                    bool m_segmentSetHasBeenSet;
 
                     /**
                      * <p>识别字幕结果</p>

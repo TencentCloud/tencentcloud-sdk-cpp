@@ -40,6 +40,56 @@ TokenhubClient::TokenhubClient(const Credential &credential, const string &regio
 }
 
 
+TokenhubClient::CreateApiKeyOutcome TokenhubClient::CreateApiKey(const CreateApiKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateApiKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateApiKeyResponse rsp = CreateApiKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateApiKeyOutcome(rsp);
+        else
+            return CreateApiKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateApiKeyOutcome(outcome.GetError());
+    }
+}
+
+void TokenhubClient::CreateApiKeyAsync(const CreateApiKeyRequest& request, const CreateApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateApiKeyRequest&;
+    using Resp = CreateApiKeyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateApiKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TokenhubClient::CreateApiKeyOutcomeCallable TokenhubClient::CreateApiKeyCallable(const CreateApiKeyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateApiKeyOutcome>>();
+    CreateApiKeyAsync(
+    request,
+    [prom](
+        const TokenhubClient*,
+        const CreateApiKeyRequest&,
+        CreateApiKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TokenhubClient::CreateGlossaryOutcome TokenhubClient::CreateGlossary(const CreateGlossaryRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateGlossary");
@@ -232,6 +282,56 @@ TokenhubClient::CreateTokenPlanTeamOrderAndBuyOutcomeCallable TokenhubClient::Cr
         const TokenhubClient*,
         const CreateTokenPlanTeamOrderAndBuyRequest&,
         CreateTokenPlanTeamOrderAndBuyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TokenhubClient::DeleteApiKeyOutcome TokenhubClient::DeleteApiKey(const DeleteApiKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteApiKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteApiKeyResponse rsp = DeleteApiKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteApiKeyOutcome(rsp);
+        else
+            return DeleteApiKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteApiKeyOutcome(outcome.GetError());
+    }
+}
+
+void TokenhubClient::DeleteApiKeyAsync(const DeleteApiKeyRequest& request, const DeleteApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteApiKeyRequest&;
+    using Resp = DeleteApiKeyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteApiKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TokenhubClient::DeleteApiKeyOutcomeCallable TokenhubClient::DeleteApiKeyCallable(const DeleteApiKeyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteApiKeyOutcome>>();
+    DeleteApiKeyAsync(
+    request,
+    [prom](
+        const TokenhubClient*,
+        const DeleteApiKeyRequest&,
+        DeleteApiKeyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -982,6 +1082,106 @@ TokenhubClient::DescribeUsageRankListOutcomeCallable TokenhubClient::DescribeUsa
         const TokenhubClient*,
         const DescribeUsageRankListRequest&,
         DescribeUsageRankListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TokenhubClient::ModifyApiKeyInfoOutcome TokenhubClient::ModifyApiKeyInfo(const ModifyApiKeyInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyApiKeyInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyApiKeyInfoResponse rsp = ModifyApiKeyInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyApiKeyInfoOutcome(rsp);
+        else
+            return ModifyApiKeyInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyApiKeyInfoOutcome(outcome.GetError());
+    }
+}
+
+void TokenhubClient::ModifyApiKeyInfoAsync(const ModifyApiKeyInfoRequest& request, const ModifyApiKeyInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyApiKeyInfoRequest&;
+    using Resp = ModifyApiKeyInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyApiKeyInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TokenhubClient::ModifyApiKeyInfoOutcomeCallable TokenhubClient::ModifyApiKeyInfoCallable(const ModifyApiKeyInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyApiKeyInfoOutcome>>();
+    ModifyApiKeyInfoAsync(
+    request,
+    [prom](
+        const TokenhubClient*,
+        const ModifyApiKeyInfoRequest&,
+        ModifyApiKeyInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TokenhubClient::ModifyApiKeyStatusOutcome TokenhubClient::ModifyApiKeyStatus(const ModifyApiKeyStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyApiKeyStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyApiKeyStatusResponse rsp = ModifyApiKeyStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyApiKeyStatusOutcome(rsp);
+        else
+            return ModifyApiKeyStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyApiKeyStatusOutcome(outcome.GetError());
+    }
+}
+
+void TokenhubClient::ModifyApiKeyStatusAsync(const ModifyApiKeyStatusRequest& request, const ModifyApiKeyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyApiKeyStatusRequest&;
+    using Resp = ModifyApiKeyStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyApiKeyStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TokenhubClient::ModifyApiKeyStatusOutcomeCallable TokenhubClient::ModifyApiKeyStatusCallable(const ModifyApiKeyStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyApiKeyStatusOutcome>>();
+    ModifyApiKeyStatusAsync(
+    request,
+    [prom](
+        const TokenhubClient*,
+        const ModifyApiKeyStatusRequest&,
+        ModifyApiKeyStatusOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

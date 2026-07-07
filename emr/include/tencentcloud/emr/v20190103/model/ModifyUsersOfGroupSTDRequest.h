@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群名称
-                     * @return InstanceId 集群名称
+                     * 获取<p>集群名称</p>
+                     * @return InstanceId <p>集群名称</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群名称
-                     * @param _instanceId 集群名称
+                     * 设置<p>集群名称</p>
+                     * @param _instanceId <p>集群名称</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取用户组名
-                     * @return Group 用户组名
+                     * 获取<p>用户组名</p>
+                     * @return Group <p>用户组名</p>
                      * 
                      */
                     std::string GetGroup() const;
 
                     /**
-                     * 设置用户组名
-                     * @param _group 用户组名
+                     * 设置<p>用户组名</p>
+                     * @param _group <p>用户组名</p>
                      * 
                      */
                     void SetGroup(const std::string& _group);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool GroupHasBeenSet() const;
 
                     /**
-                     * 获取用户列表
-                     * @return Users 用户列表
+                     * 获取<p>用户列表</p>
+                     * @return Users <p>用户列表</p>
                      * 
                      */
                     std::vector<std::string> GetUsers() const;
 
                     /**
-                     * 设置用户列表
-                     * @param _users 用户列表
+                     * 设置<p>用户列表</p>
+                     * @param _users <p>用户列表</p>
                      * 
                      */
                     void SetUsers(const std::vector<std::string>& _users);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool UsersHasBeenSet() const;
 
                     /**
-                     * 获取用户组描述
-                     * @return Description 用户组描述
+                     * 获取<p>用户组描述</p>
+                     * @return Description <p>用户组描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置用户组描述
-                     * @param _description 用户组描述
+                     * 设置<p>用户组描述</p>
+                     * @param _description <p>用户组描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -127,47 +127,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取枚举类, ADD, DELETE, SYNC
-
-
-枚举类说明:
-- ADD: 新增的批量用户, 多次新增相同的用户不会报错
-- DELETE: 从用户组里删除的批量用户, 删除不存在的用户不会报错
-- SYNC: 用于同步整个用户组, 当列表为空时代表清空整个用户组
-默认为SYNC
-
-                     * @return OperateAction 枚举类, ADD, DELETE, SYNC
-
-
-枚举类说明:
-- ADD: 新增的批量用户, 多次新增相同的用户不会报错
-- DELETE: 从用户组里删除的批量用户, 删除不存在的用户不会报错
-- SYNC: 用于同步整个用户组, 当列表为空时代表清空整个用户组
-默认为SYNC
-
+                     * 获取<p>枚举类, ADD, DELETE, SYNC</p><p>枚举类说明:</p><ul><li>ADD: 新增的批量用户, 多次新增相同的用户不会报错</li><li>DELETE: 从用户组里删除的批量用户, 删除不存在的用户不会报错</li><li>SYNC: 用于同步整个用户组, 当列表为空时代表清空整个用户组<br>默认为SYNC</li></ul>
+                     * @return OperateAction <p>枚举类, ADD, DELETE, SYNC</p><p>枚举类说明:</p><ul><li>ADD: 新增的批量用户, 多次新增相同的用户不会报错</li><li>DELETE: 从用户组里删除的批量用户, 删除不存在的用户不会报错</li><li>SYNC: 用于同步整个用户组, 当列表为空时代表清空整个用户组<br>默认为SYNC</li></ul>
                      * 
                      */
                     std::string GetOperateAction() const;
 
                     /**
-                     * 设置枚举类, ADD, DELETE, SYNC
-
-
-枚举类说明:
-- ADD: 新增的批量用户, 多次新增相同的用户不会报错
-- DELETE: 从用户组里删除的批量用户, 删除不存在的用户不会报错
-- SYNC: 用于同步整个用户组, 当列表为空时代表清空整个用户组
-默认为SYNC
-
-                     * @param _operateAction 枚举类, ADD, DELETE, SYNC
-
-
-枚举类说明:
-- ADD: 新增的批量用户, 多次新增相同的用户不会报错
-- DELETE: 从用户组里删除的批量用户, 删除不存在的用户不会报错
-- SYNC: 用于同步整个用户组, 当列表为空时代表清空整个用户组
-默认为SYNC
-
+                     * 设置<p>枚举类, ADD, DELETE, SYNC</p><p>枚举类说明:</p><ul><li>ADD: 新增的批量用户, 多次新增相同的用户不会报错</li><li>DELETE: 从用户组里删除的批量用户, 删除不存在的用户不会报错</li><li>SYNC: 用于同步整个用户组, 当列表为空时代表清空整个用户组<br>默认为SYNC</li></ul>
+                     * @param _operateAction <p>枚举类, ADD, DELETE, SYNC</p><p>枚举类说明:</p><ul><li>ADD: 新增的批量用户, 多次新增相同的用户不会报错</li><li>DELETE: 从用户组里删除的批量用户, 删除不存在的用户不会报错</li><li>SYNC: 用于同步整个用户组, 当列表为空时代表清空整个用户组<br>默认为SYNC</li></ul>
                      * 
                      */
                     void SetOperateAction(const std::string& _operateAction);
@@ -182,39 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群名称
+                     * <p>集群名称</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 用户组名
+                     * <p>用户组名</p>
                      */
                     std::string m_group;
                     bool m_groupHasBeenSet;
 
                     /**
-                     * 用户列表
+                     * <p>用户列表</p>
                      */
                     std::vector<std::string> m_users;
                     bool m_usersHasBeenSet;
 
                     /**
-                     * 用户组描述
+                     * <p>用户组描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 枚举类, ADD, DELETE, SYNC
-
-
-枚举类说明:
-- ADD: 新增的批量用户, 多次新增相同的用户不会报错
-- DELETE: 从用户组里删除的批量用户, 删除不存在的用户不会报错
-- SYNC: 用于同步整个用户组, 当列表为空时代表清空整个用户组
-默认为SYNC
-
+                     * <p>枚举类, ADD, DELETE, SYNC</p><p>枚举类说明:</p><ul><li>ADD: 新增的批量用户, 多次新增相同的用户不会报错</li><li>DELETE: 从用户组里删除的批量用户, 删除不存在的用户不会报错</li><li>SYNC: 用于同步整个用户组, 当列表为空时代表清空整个用户组<br>默认为SYNC</li></ul>
                      */
                     std::string m_operateAction;
                     bool m_operateActionHasBeenSet;

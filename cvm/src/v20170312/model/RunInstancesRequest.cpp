@@ -53,6 +53,7 @@ RunInstancesRequest::RunInstancesRequest() :
     m_launchTemplateHasBeenSet(false),
     m_dedicatedClusterIdHasBeenSet(false),
     m_chcIdsHasBeenSet(false),
+    m_partitionNumberHasBeenSet(false),
     m_disableApiTerminationHasBeenSet(false),
     m_enableJumboFrameHasBeenSet(false)
 {
@@ -344,6 +345,14 @@ string RunInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_partitionNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PartitionNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_partitionNumber, allocator);
     }
 
     if (m_disableApiTerminationHasBeenSet)
@@ -848,6 +857,22 @@ void RunInstancesRequest::SetChcIds(const vector<string>& _chcIds)
 bool RunInstancesRequest::ChcIdsHasBeenSet() const
 {
     return m_chcIdsHasBeenSet;
+}
+
+int64_t RunInstancesRequest::GetPartitionNumber() const
+{
+    return m_partitionNumber;
+}
+
+void RunInstancesRequest::SetPartitionNumber(const int64_t& _partitionNumber)
+{
+    m_partitionNumber = _partitionNumber;
+    m_partitionNumberHasBeenSet = true;
+}
+
+bool RunInstancesRequest::PartitionNumberHasBeenSet() const
+{
+    return m_partitionNumberHasBeenSet;
 }
 
 bool RunInstancesRequest::GetDisableApiTermination() const

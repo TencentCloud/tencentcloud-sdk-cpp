@@ -24,8 +24,7 @@ PostgreSQLInfo::PostgreSQLInfo() :
     m_nameHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_versionHasBeenSet(false)
+    m_regionHasBeenSet(false)
 {
 }
 
@@ -74,16 +73,6 @@ CoreInternalOutcome PostgreSQLInfo::Deserialize(const rapidjson::Value &value)
         m_regionHasBeenSet = true;
     }
 
-    if (value.HasMember("Version") && !value["Version"].IsNull())
-    {
-        if (!value["Version"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `PostgreSQLInfo.Version` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_version = string(value["Version"].GetString());
-        m_versionHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -121,14 +110,6 @@ void PostgreSQLInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_versionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Version";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -196,21 +177,5 @@ void PostgreSQLInfo::SetRegion(const string& _region)
 bool PostgreSQLInfo::RegionHasBeenSet() const
 {
     return m_regionHasBeenSet;
-}
-
-string PostgreSQLInfo::GetVersion() const
-{
-    return m_version;
-}
-
-void PostgreSQLInfo::SetVersion(const string& _version)
-{
-    m_version = _version;
-    m_versionHasBeenSet = true;
-}
-
-bool PostgreSQLInfo::VersionHasBeenSet() const
-{
-    return m_versionHasBeenSet;
 }
 

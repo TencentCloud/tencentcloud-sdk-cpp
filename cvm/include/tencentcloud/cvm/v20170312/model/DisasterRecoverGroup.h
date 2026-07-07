@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分散置放群组id。
-                     * @return DisasterRecoverGroupId 分散置放群组id。
+                     * 获取<p>分散置放群组id。</p>
+                     * @return DisasterRecoverGroupId <p>分散置放群组id。</p>
                      * 
                      */
                     std::string GetDisasterRecoverGroupId() const;
 
                     /**
-                     * 设置分散置放群组id。
-                     * @param _disasterRecoverGroupId 分散置放群组id。
+                     * 设置<p>分散置放群组id。</p>
+                     * @param _disasterRecoverGroupId <p>分散置放群组id。</p>
                      * 
                      */
                     void SetDisasterRecoverGroupId(const std::string& _disasterRecoverGroupId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool DisasterRecoverGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取分散置放群组名称，长度1-60个字符。
-                     * @return Name 分散置放群组名称，长度1-60个字符。
+                     * 获取<p>分散置放群组名称，长度1-60个字符。</p>
+                     * @return Name <p>分散置放群组名称，长度1-60个字符。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置分散置放群组名称，长度1-60个字符。
-                     * @param _name 分散置放群组名称，长度1-60个字符。
+                     * 设置<p>分散置放群组名称，长度1-60个字符。</p>
+                     * @param _name <p>分散置放群组名称，长度1-60个字符。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -90,27 +90,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取分散置放群组类型，取值范围：<br>
-<li>HOST：物理机<br></li>
-<li>SW：交换机<br></li>
-<li>RACK：机架</li>
-                     * @return Type 分散置放群组类型，取值范围：<br>
-<li>HOST：物理机<br></li>
-<li>SW：交换机<br></li>
-<li>RACK：机架</li>
+                     * 获取<p>分散置放群组类型，取值范围：<br></p><li>HOST：物理机<br></li><li>SW：交换机<br></li><li>RACK：机架</li>
+                     * @return Type <p>分散置放群组类型，取值范围：<br></p><li>HOST：物理机<br></li><li>SW：交换机<br></li><li>RACK：机架</li>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置分散置放群组类型，取值范围：<br>
-<li>HOST：物理机<br></li>
-<li>SW：交换机<br></li>
-<li>RACK：机架</li>
-                     * @param _type 分散置放群组类型，取值范围：<br>
-<li>HOST：物理机<br></li>
-<li>SW：交换机<br></li>
-<li>RACK：机架</li>
+                     * 设置<p>分散置放群组类型，取值范围：<br></p><li>HOST：物理机<br></li><li>SW：交换机<br></li><li>RACK：机架</li>
+                     * @param _type <p>分散置放群组类型，取值范围：<br></p><li>HOST：物理机<br></li><li>SW：交换机<br></li><li>RACK：机架</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -123,15 +111,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取分散置放群组内最大容纳云服务器数量。
-                     * @return CvmQuotaTotal 分散置放群组内最大容纳云服务器数量。
+                     * 获取<p>分散置放群组内最大容纳云服务器数量。</p>
+                     * @return CvmQuotaTotal <p>分散置放群组内最大容纳云服务器数量。</p>
                      * 
                      */
                     int64_t GetCvmQuotaTotal() const;
 
                     /**
-                     * 设置分散置放群组内最大容纳云服务器数量。
-                     * @param _cvmQuotaTotal 分散置放群组内最大容纳云服务器数量。
+                     * 设置<p>分散置放群组内最大容纳云服务器数量。</p>
+                     * @param _cvmQuotaTotal <p>分散置放群组内最大容纳云服务器数量。</p>
                      * 
                      */
                     void SetCvmQuotaTotal(const int64_t& _cvmQuotaTotal);
@@ -144,15 +132,15 @@ namespace TencentCloud
                     bool CvmQuotaTotalHasBeenSet() const;
 
                     /**
-                     * 获取分散置放群组内云服务器当前数量。
-                     * @return CurrentNum 分散置放群组内云服务器当前数量。
+                     * 获取<p>分散置放群组内云服务器当前数量。</p>
+                     * @return CurrentNum <p>分散置放群组内云服务器当前数量。</p>
                      * 
                      */
                     int64_t GetCurrentNum() const;
 
                     /**
-                     * 设置分散置放群组内云服务器当前数量。
-                     * @param _currentNum 分散置放群组内云服务器当前数量。
+                     * 设置<p>分散置放群组内云服务器当前数量。</p>
+                     * @param _currentNum <p>分散置放群组内云服务器当前数量。</p>
                      * 
                      */
                     void SetCurrentNum(const int64_t& _currentNum);
@@ -165,15 +153,15 @@ namespace TencentCloud
                     bool CurrentNumHasBeenSet() const;
 
                     /**
-                     * 获取分散置放群组内，云服务器id列表。
-                     * @return InstanceIds 分散置放群组内，云服务器id列表。
+                     * 获取<p>分散置放群组内，云服务器id列表。</p>
+                     * @return InstanceIds <p>分散置放群组内，云服务器id列表。</p>
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置分散置放群组内，云服务器id列表。
-                     * @param _instanceIds 分散置放群组内，云服务器id列表。
+                     * 设置<p>分散置放群组内，云服务器id列表。</p>
+                     * @param _instanceIds <p>分散置放群组内，云服务器id列表。</p>
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -186,15 +174,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取分散置放群组创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
-                     * @return CreateTime 分散置放群组创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+                     * 获取<p>分散置放群组创建时间。按照<code>ISO8601</code>标准表示，并且使用<code>UTC</code>时间。格式为：<code>YYYY-MM-DDThh:mm:ssZ</code>。</p>
+                     * @return CreateTime <p>分散置放群组创建时间。按照<code>ISO8601</code>标准表示，并且使用<code>UTC</code>时间。格式为：<code>YYYY-MM-DDThh:mm:ssZ</code>。</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置分散置放群组创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
-                     * @param _createTime 分散置放群组创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+                     * 设置<p>分散置放群组创建时间。按照<code>ISO8601</code>标准表示，并且使用<code>UTC</code>时间。格式为：<code>YYYY-MM-DDThh:mm:ssZ</code>。</p>
+                     * @param _createTime <p>分散置放群组创建时间。按照<code>ISO8601</code>标准表示，并且使用<code>UTC</code>时间。格式为：<code>YYYY-MM-DDThh:mm:ssZ</code>。</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -207,15 +195,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取置放群组亲和度
-                     * @return Affinity 置放群组亲和度
+                     * 获取<p>置放群组亲和度</p>
+                     * @return Affinity <p>置放群组亲和度</p>
                      * 
                      */
                     int64_t GetAffinity() const;
 
                     /**
-                     * 设置置放群组亲和度
-                     * @param _affinity 置放群组亲和度
+                     * 设置<p>置放群组亲和度</p>
+                     * @param _affinity <p>置放群组亲和度</p>
                      * 
                      */
                     void SetAffinity(const int64_t& _affinity);
@@ -228,15 +216,57 @@ namespace TencentCloud
                     bool AffinityHasBeenSet() const;
 
                     /**
-                     * 获取置放群组关联的标签列表。
-                     * @return Tags 置放群组关联的标签列表。
+                     * 获取<p>置放群组类型，当前支持两种；分散置放群组和分区置放群组(功能灰度中)，取值范围：PARTITION：分区置放群组，SPREAD：分散置放群组</p>
+                     * @return Strategy <p>置放群组类型，当前支持两种；分散置放群组和分区置放群组(功能灰度中)，取值范围：PARTITION：分区置放群组，SPREAD：分散置放群组</p>
+                     * 
+                     */
+                    std::string GetStrategy() const;
+
+                    /**
+                     * 设置<p>置放群组类型，当前支持两种；分散置放群组和分区置放群组(功能灰度中)，取值范围：PARTITION：分区置放群组，SPREAD：分散置放群组</p>
+                     * @param _strategy <p>置放群组类型，当前支持两种；分散置放群组和分区置放群组(功能灰度中)，取值范围：PARTITION：分区置放群组，SPREAD：分散置放群组</p>
+                     * 
+                     */
+                    void SetStrategy(const std::string& _strategy);
+
+                    /**
+                     * 判断参数 Strategy 是否已赋值
+                     * @return Strategy 是否已赋值
+                     * 
+                     */
+                    bool StrategyHasBeenSet() const;
+
+                    /**
+                     * 获取<p>分区置放群组的分区数量，如果是分区置放群组会返回(功能灰度中)</p>
+                     * @return PartitionCount <p>分区置放群组的分区数量，如果是分区置放群组会返回(功能灰度中)</p>
+                     * 
+                     */
+                    int64_t GetPartitionCount() const;
+
+                    /**
+                     * 设置<p>分区置放群组的分区数量，如果是分区置放群组会返回(功能灰度中)</p>
+                     * @param _partitionCount <p>分区置放群组的分区数量，如果是分区置放群组会返回(功能灰度中)</p>
+                     * 
+                     */
+                    void SetPartitionCount(const int64_t& _partitionCount);
+
+                    /**
+                     * 判断参数 PartitionCount 是否已赋值
+                     * @return PartitionCount 是否已赋值
+                     * 
+                     */
+                    bool PartitionCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>置放群组关联的标签列表。</p>
+                     * @return Tags <p>置放群组关联的标签列表。</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置置放群组关联的标签列表。
-                     * @param _tags 置放群组关联的标签列表。
+                     * 设置<p>置放群组关联的标签列表。</p>
+                     * @param _tags <p>置放群组关联的标签列表。</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -251,58 +281,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分散置放群组id。
+                     * <p>分散置放群组id。</p>
                      */
                     std::string m_disasterRecoverGroupId;
                     bool m_disasterRecoverGroupIdHasBeenSet;
 
                     /**
-                     * 分散置放群组名称，长度1-60个字符。
+                     * <p>分散置放群组名称，长度1-60个字符。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 分散置放群组类型，取值范围：<br>
-<li>HOST：物理机<br></li>
-<li>SW：交换机<br></li>
-<li>RACK：机架</li>
+                     * <p>分散置放群组类型，取值范围：<br></p><li>HOST：物理机<br></li><li>SW：交换机<br></li><li>RACK：机架</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 分散置放群组内最大容纳云服务器数量。
+                     * <p>分散置放群组内最大容纳云服务器数量。</p>
                      */
                     int64_t m_cvmQuotaTotal;
                     bool m_cvmQuotaTotalHasBeenSet;
 
                     /**
-                     * 分散置放群组内云服务器当前数量。
+                     * <p>分散置放群组内云服务器当前数量。</p>
                      */
                     int64_t m_currentNum;
                     bool m_currentNumHasBeenSet;
 
                     /**
-                     * 分散置放群组内，云服务器id列表。
+                     * <p>分散置放群组内，云服务器id列表。</p>
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 分散置放群组创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+                     * <p>分散置放群组创建时间。按照<code>ISO8601</code>标准表示，并且使用<code>UTC</code>时间。格式为：<code>YYYY-MM-DDThh:mm:ssZ</code>。</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 置放群组亲和度
+                     * <p>置放群组亲和度</p>
                      */
                     int64_t m_affinity;
                     bool m_affinityHasBeenSet;
 
                     /**
-                     * 置放群组关联的标签列表。
+                     * <p>置放群组类型，当前支持两种；分散置放群组和分区置放群组(功能灰度中)，取值范围：PARTITION：分区置放群组，SPREAD：分散置放群组</p>
+                     */
+                    std::string m_strategy;
+                    bool m_strategyHasBeenSet;
+
+                    /**
+                     * <p>分区置放群组的分区数量，如果是分区置放群组会返回(功能灰度中)</p>
+                     */
+                    int64_t m_partitionCount;
+                    bool m_partitionCountHasBeenSet;
+
+                    /**
+                     * <p>置放群组关联的标签列表。</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

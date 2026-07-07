@@ -1690,6 +1690,106 @@ ChcClient::DescribeResourceUsageOutcomeCallable ChcClient::DescribeResourceUsage
     return prom->get_future();
 }
 
+ChcClient::DescribeWorkOrderCarCollectListOutcome ChcClient::DescribeWorkOrderCarCollectList(const DescribeWorkOrderCarCollectListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWorkOrderCarCollectList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWorkOrderCarCollectListResponse rsp = DescribeWorkOrderCarCollectListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWorkOrderCarCollectListOutcome(rsp);
+        else
+            return DescribeWorkOrderCarCollectListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWorkOrderCarCollectListOutcome(outcome.GetError());
+    }
+}
+
+void ChcClient::DescribeWorkOrderCarCollectListAsync(const DescribeWorkOrderCarCollectListRequest& request, const DescribeWorkOrderCarCollectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeWorkOrderCarCollectListRequest&;
+    using Resp = DescribeWorkOrderCarCollectListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeWorkOrderCarCollectList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ChcClient::DescribeWorkOrderCarCollectListOutcomeCallable ChcClient::DescribeWorkOrderCarCollectListCallable(const DescribeWorkOrderCarCollectListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeWorkOrderCarCollectListOutcome>>();
+    DescribeWorkOrderCarCollectListAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribeWorkOrderCarCollectListRequest&,
+        DescribeWorkOrderCarCollectListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ChcClient::DescribeWorkOrderContactCollectListOutcome ChcClient::DescribeWorkOrderContactCollectList(const DescribeWorkOrderContactCollectListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWorkOrderContactCollectList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWorkOrderContactCollectListResponse rsp = DescribeWorkOrderContactCollectListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWorkOrderContactCollectListOutcome(rsp);
+        else
+            return DescribeWorkOrderContactCollectListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWorkOrderContactCollectListOutcome(outcome.GetError());
+    }
+}
+
+void ChcClient::DescribeWorkOrderContactCollectListAsync(const DescribeWorkOrderContactCollectListRequest& request, const DescribeWorkOrderContactCollectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeWorkOrderContactCollectListRequest&;
+    using Resp = DescribeWorkOrderContactCollectListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeWorkOrderContactCollectList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ChcClient::DescribeWorkOrderContactCollectListOutcomeCallable ChcClient::DescribeWorkOrderContactCollectListCallable(const DescribeWorkOrderContactCollectListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeWorkOrderContactCollectListOutcome>>();
+    DescribeWorkOrderContactCollectListAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribeWorkOrderContactCollectListRequest&,
+        DescribeWorkOrderContactCollectListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ChcClient::DescribeWorkOrderListOutcome ChcClient::DescribeWorkOrderList(const DescribeWorkOrderListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeWorkOrderList");
@@ -1732,6 +1832,56 @@ ChcClient::DescribeWorkOrderListOutcomeCallable ChcClient::DescribeWorkOrderList
         const ChcClient*,
         const DescribeWorkOrderListRequest&,
         DescribeWorkOrderListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ChcClient::DescribeWorkOrderPersonnelCollectListOutcome ChcClient::DescribeWorkOrderPersonnelCollectList(const DescribeWorkOrderPersonnelCollectListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWorkOrderPersonnelCollectList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWorkOrderPersonnelCollectListResponse rsp = DescribeWorkOrderPersonnelCollectListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWorkOrderPersonnelCollectListOutcome(rsp);
+        else
+            return DescribeWorkOrderPersonnelCollectListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWorkOrderPersonnelCollectListOutcome(outcome.GetError());
+    }
+}
+
+void ChcClient::DescribeWorkOrderPersonnelCollectListAsync(const DescribeWorkOrderPersonnelCollectListRequest& request, const DescribeWorkOrderPersonnelCollectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeWorkOrderPersonnelCollectListRequest&;
+    using Resp = DescribeWorkOrderPersonnelCollectListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeWorkOrderPersonnelCollectList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ChcClient::DescribeWorkOrderPersonnelCollectListOutcomeCallable ChcClient::DescribeWorkOrderPersonnelCollectListCallable(const DescribeWorkOrderPersonnelCollectListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeWorkOrderPersonnelCollectListOutcome>>();
+    DescribeWorkOrderPersonnelCollectListAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribeWorkOrderPersonnelCollectListRequest&,
+        DescribeWorkOrderPersonnelCollectListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -24,8 +24,8 @@ using namespace TencentCloud::Clb::V20180317::Model;
 using namespace std;
 
 RegenerateKeysResponse::RegenerateKeysResponse() :
-    m_regeneratedKeysHasBeenSet(false),
-    m_failedKeyIdsHasBeenSet(false)
+    m_failedKeyIdsHasBeenSet(false),
+    m_regeneratedKeysHasBeenSet(false)
 {
 }
 
@@ -63,6 +63,19 @@ CoreInternalOutcome RegenerateKeysResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("FailedKeyIds") && !rsp["FailedKeyIds"].IsNull())
+    {
+        if (!rsp["FailedKeyIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FailedKeyIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["FailedKeyIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_failedKeyIds.push_back((*itr).GetString());
+        }
+        m_failedKeyIdsHasBeenSet = true;
+    }
+
     if (rsp.HasMember("RegeneratedKeys") && !rsp["RegeneratedKeys"].IsNull())
     {
         if (!rsp["RegeneratedKeys"].IsArray())
@@ -83,19 +96,6 @@ CoreInternalOutcome RegenerateKeysResponse::Deserialize(const string &payload)
         m_regeneratedKeysHasBeenSet = true;
     }
 
-    if (rsp.HasMember("FailedKeyIds") && !rsp["FailedKeyIds"].IsNull())
-    {
-        if (!rsp["FailedKeyIds"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `FailedKeyIds` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["FailedKeyIds"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            m_failedKeyIds.push_back((*itr).GetString());
-        }
-        m_failedKeyIdsHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -105,6 +105,19 @@ string RegenerateKeysResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_failedKeyIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailedKeyIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_failedKeyIds.begin(); itr != m_failedKeyIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
 
     if (m_regeneratedKeysHasBeenSet)
     {
@@ -121,19 +134,6 @@ string RegenerateKeysResponse::ToJsonString() const
         }
     }
 
-    if (m_failedKeyIdsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FailedKeyIds";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_failedKeyIds.begin(); itr != m_failedKeyIds.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -146,16 +146,6 @@ string RegenerateKeysResponse::ToJsonString() const
 }
 
 
-vector<RegeneratedKey> RegenerateKeysResponse::GetRegeneratedKeys() const
-{
-    return m_regeneratedKeys;
-}
-
-bool RegenerateKeysResponse::RegeneratedKeysHasBeenSet() const
-{
-    return m_regeneratedKeysHasBeenSet;
-}
-
 vector<string> RegenerateKeysResponse::GetFailedKeyIds() const
 {
     return m_failedKeyIds;
@@ -164,6 +154,16 @@ vector<string> RegenerateKeysResponse::GetFailedKeyIds() const
 bool RegenerateKeysResponse::FailedKeyIdsHasBeenSet() const
 {
     return m_failedKeyIdsHasBeenSet;
+}
+
+vector<RegeneratedKey> RegenerateKeysResponse::GetRegeneratedKeys() const
+{
+    return m_regeneratedKeys;
+}
+
+bool RegenerateKeysResponse::RegeneratedKeysHasBeenSet() const
+{
+    return m_regeneratedKeysHasBeenSet;
 }
 
 

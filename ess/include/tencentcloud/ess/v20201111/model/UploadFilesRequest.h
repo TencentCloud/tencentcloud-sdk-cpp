@@ -213,6 +213,27 @@ namespace TencentCloud
                      */
                     bool AgentHasBeenSet() const;
 
+                    /**
+                     * 获取<p>文件过期时间的时间戳</p><p>取值范围：[1782835200, 4102329600]</p><p>单位：秒</p><p>设置上传文件的过期时间，此功能为付费能力，请联系电子签运营人员开通</p>
+                     * @return Deadline <p>文件过期时间的时间戳</p><p>取值范围：[1782835200, 4102329600]</p><p>单位：秒</p><p>设置上传文件的过期时间，此功能为付费能力，请联系电子签运营人员开通</p>
+                     * 
+                     */
+                    int64_t GetDeadline() const;
+
+                    /**
+                     * 设置<p>文件过期时间的时间戳</p><p>取值范围：[1782835200, 4102329600]</p><p>单位：秒</p><p>设置上传文件的过期时间，此功能为付费能力，请联系电子签运营人员开通</p>
+                     * @param _deadline <p>文件过期时间的时间戳</p><p>取值范围：[1782835200, 4102329600]</p><p>单位：秒</p><p>设置上传文件的过期时间，此功能为付费能力，请联系电子签运营人员开通</p>
+                     * 
+                     */
+                    void SetDeadline(const int64_t& _deadline);
+
+                    /**
+                     * 判断参数 Deadline 是否已赋值
+                     * @return Deadline 是否已赋值
+                     * 
+                     */
+                    bool DeadlineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -262,6 +283,12 @@ namespace TencentCloud
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
+
+                    /**
+                     * <p>文件过期时间的时间戳</p><p>取值范围：[1782835200, 4102329600]</p><p>单位：秒</p><p>设置上传文件的过期时间，此功能为付费能力，请联系电子签运营人员开通</p>
+                     */
+                    int64_t m_deadline;
+                    bool m_deadlineHasBeenSet;
 
                 };
             }

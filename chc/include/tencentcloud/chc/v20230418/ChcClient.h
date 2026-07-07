@@ -89,8 +89,14 @@
 #include <tencentcloud/chc/v20230418/model/DescribeRacksDistributionResponse.h>
 #include <tencentcloud/chc/v20230418/model/DescribeResourceUsageRequest.h>
 #include <tencentcloud/chc/v20230418/model/DescribeResourceUsageResponse.h>
+#include <tencentcloud/chc/v20230418/model/DescribeWorkOrderCarCollectListRequest.h>
+#include <tencentcloud/chc/v20230418/model/DescribeWorkOrderCarCollectListResponse.h>
+#include <tencentcloud/chc/v20230418/model/DescribeWorkOrderContactCollectListRequest.h>
+#include <tencentcloud/chc/v20230418/model/DescribeWorkOrderContactCollectListResponse.h>
 #include <tencentcloud/chc/v20230418/model/DescribeWorkOrderListRequest.h>
 #include <tencentcloud/chc/v20230418/model/DescribeWorkOrderListResponse.h>
+#include <tencentcloud/chc/v20230418/model/DescribeWorkOrderPersonnelCollectListRequest.h>
+#include <tencentcloud/chc/v20230418/model/DescribeWorkOrderPersonnelCollectListResponse.h>
 #include <tencentcloud/chc/v20230418/model/DescribeWorkOrderStatisticsRequest.h>
 #include <tencentcloud/chc/v20230418/model/DescribeWorkOrderStatisticsResponse.h>
 #include <tencentcloud/chc/v20230418/model/DescribeWorkOrderTypesRequest.h>
@@ -212,9 +218,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeResourceUsageResponse> DescribeResourceUsageOutcome;
                 typedef std::future<DescribeResourceUsageOutcome> DescribeResourceUsageOutcomeCallable;
                 typedef std::function<void(const ChcClient*, const Model::DescribeResourceUsageRequest&, DescribeResourceUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceUsageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWorkOrderCarCollectListResponse> DescribeWorkOrderCarCollectListOutcome;
+                typedef std::future<DescribeWorkOrderCarCollectListOutcome> DescribeWorkOrderCarCollectListOutcomeCallable;
+                typedef std::function<void(const ChcClient*, const Model::DescribeWorkOrderCarCollectListRequest&, DescribeWorkOrderCarCollectListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkOrderCarCollectListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWorkOrderContactCollectListResponse> DescribeWorkOrderContactCollectListOutcome;
+                typedef std::future<DescribeWorkOrderContactCollectListOutcome> DescribeWorkOrderContactCollectListOutcomeCallable;
+                typedef std::function<void(const ChcClient*, const Model::DescribeWorkOrderContactCollectListRequest&, DescribeWorkOrderContactCollectListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkOrderContactCollectListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWorkOrderListResponse> DescribeWorkOrderListOutcome;
                 typedef std::future<DescribeWorkOrderListOutcome> DescribeWorkOrderListOutcomeCallable;
                 typedef std::function<void(const ChcClient*, const Model::DescribeWorkOrderListRequest&, DescribeWorkOrderListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkOrderListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWorkOrderPersonnelCollectListResponse> DescribeWorkOrderPersonnelCollectListOutcome;
+                typedef std::future<DescribeWorkOrderPersonnelCollectListOutcome> DescribeWorkOrderPersonnelCollectListOutcomeCallable;
+                typedef std::function<void(const ChcClient*, const Model::DescribeWorkOrderPersonnelCollectListRequest&, DescribeWorkOrderPersonnelCollectListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkOrderPersonnelCollectListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWorkOrderStatisticsResponse> DescribeWorkOrderStatisticsOutcome;
                 typedef std::future<DescribeWorkOrderStatisticsOutcome> DescribeWorkOrderStatisticsOutcomeCallable;
                 typedef std::function<void(const ChcClient*, const Model::DescribeWorkOrderStatisticsRequest&, DescribeWorkOrderStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkOrderStatisticsAsyncHandler;
@@ -528,6 +543,24 @@ namespace TencentCloud
                 DescribeResourceUsageOutcomeCallable DescribeResourceUsageCallable(const Model::DescribeResourceUsageRequest& request);
 
                 /**
+                 *查询工单归集的车辆信息列表，支持按车牌号、驾驶员姓名模糊搜索
+                 * @param req DescribeWorkOrderCarCollectListRequest
+                 * @return DescribeWorkOrderCarCollectListOutcome
+                 */
+                DescribeWorkOrderCarCollectListOutcome DescribeWorkOrderCarCollectList(const Model::DescribeWorkOrderCarCollectListRequest &request);
+                void DescribeWorkOrderCarCollectListAsync(const Model::DescribeWorkOrderCarCollectListRequest& request, const DescribeWorkOrderCarCollectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWorkOrderCarCollectListOutcomeCallable DescribeWorkOrderCarCollectListCallable(const Model::DescribeWorkOrderCarCollectListRequest& request);
+
+                /**
+                 *查询工单归集的业务联系人信息列表，支持按姓名、电话模糊搜索
+                 * @param req DescribeWorkOrderContactCollectListRequest
+                 * @return DescribeWorkOrderContactCollectListOutcome
+                 */
+                DescribeWorkOrderContactCollectListOutcome DescribeWorkOrderContactCollectList(const Model::DescribeWorkOrderContactCollectListRequest &request);
+                void DescribeWorkOrderContactCollectListAsync(const Model::DescribeWorkOrderContactCollectListRequest& request, const DescribeWorkOrderContactCollectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWorkOrderContactCollectListOutcomeCallable DescribeWorkOrderContactCollectListCallable(const Model::DescribeWorkOrderContactCollectListRequest& request);
+
+                /**
                  *查询工单列表
                  * @param req DescribeWorkOrderListRequest
                  * @return DescribeWorkOrderListOutcome
@@ -535,6 +568,15 @@ namespace TencentCloud
                 DescribeWorkOrderListOutcome DescribeWorkOrderList(const Model::DescribeWorkOrderListRequest &request);
                 void DescribeWorkOrderListAsync(const Model::DescribeWorkOrderListRequest& request, const DescribeWorkOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeWorkOrderListOutcomeCallable DescribeWorkOrderListCallable(const Model::DescribeWorkOrderListRequest& request);
+
+                /**
+                 *查询工单归集的人员信息列表，支持按姓名、手机号模糊搜索
+                 * @param req DescribeWorkOrderPersonnelCollectListRequest
+                 * @return DescribeWorkOrderPersonnelCollectListOutcome
+                 */
+                DescribeWorkOrderPersonnelCollectListOutcome DescribeWorkOrderPersonnelCollectList(const Model::DescribeWorkOrderPersonnelCollectListRequest &request);
+                void DescribeWorkOrderPersonnelCollectListAsync(const Model::DescribeWorkOrderPersonnelCollectListRequest& request, const DescribeWorkOrderPersonnelCollectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWorkOrderPersonnelCollectListOutcomeCallable DescribeWorkOrderPersonnelCollectListCallable(const Model::DescribeWorkOrderPersonnelCollectListRequest& request);
 
                 /**
                  *工单统计数据查询

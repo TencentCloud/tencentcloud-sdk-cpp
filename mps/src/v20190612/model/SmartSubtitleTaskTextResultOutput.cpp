@@ -21,6 +21,7 @@ using namespace TencentCloud::Mps::V20190612::Model;
 using namespace std;
 
 SmartSubtitleTaskTextResultOutput::SmartSubtitleTaskTextResultOutput() :
+    m_segmentSetHasBeenSet(false),
     m_recognizeSubtitleResultHasBeenSet(false),
     m_transSubtitleResultHasBeenSet(false),
     m_outputStorageHasBeenSet(false)
@@ -31,6 +32,26 @@ CoreInternalOutcome SmartSubtitleTaskTextResultOutput::Deserialize(const rapidjs
 {
     string requestId = "";
 
+
+    if (value.HasMember("SegmentSet") && !value["SegmentSet"].IsNull())
+    {
+        if (!value["SegmentSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SmartSubtitleTaskTextResultOutput.SegmentSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SegmentSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SmartSubtitleTaskFullTextSegmentItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_segmentSet.push_back(item);
+        }
+        m_segmentSetHasBeenSet = true;
+    }
 
     if (value.HasMember("RecognizeSubtitleResult") && !value["RecognizeSubtitleResult"].IsNull())
     {
@@ -96,6 +117,21 @@ CoreInternalOutcome SmartSubtitleTaskTextResultOutput::Deserialize(const rapidjs
 void SmartSubtitleTaskTextResultOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_segmentSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SegmentSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_segmentSet.begin(); itr != m_segmentSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_recognizeSubtitleResultHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -137,6 +173,22 @@ void SmartSubtitleTaskTextResultOutput::ToJsonObject(rapidjson::Value &value, ra
 
 }
 
+
+vector<SmartSubtitleTaskFullTextSegmentItem> SmartSubtitleTaskTextResultOutput::GetSegmentSet() const
+{
+    return m_segmentSet;
+}
+
+void SmartSubtitleTaskTextResultOutput::SetSegmentSet(const vector<SmartSubtitleTaskFullTextSegmentItem>& _segmentSet)
+{
+    m_segmentSet = _segmentSet;
+    m_segmentSetHasBeenSet = true;
+}
+
+bool SmartSubtitleTaskTextResultOutput::SegmentSetHasBeenSet() const
+{
+    return m_segmentSetHasBeenSet;
+}
 
 vector<SubtitleResult> SmartSubtitleTaskTextResultOutput::GetRecognizeSubtitleResult() const
 {

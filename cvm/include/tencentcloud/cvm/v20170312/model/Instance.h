@@ -1033,6 +1033,27 @@ namespace TencentCloud
                      */
                     bool CpuTopologyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>分区置放群组的分区号，具体取决于所选置放群组的分区数量(功能灰度中)</p>
+                     * @return PartitionNumber <p>分区置放群组的分区号，具体取决于所选置放群组的分区数量(功能灰度中)</p>
+                     * 
+                     */
+                    int64_t GetPartitionNumber() const;
+
+                    /**
+                     * 设置<p>分区置放群组的分区号，具体取决于所选置放群组的分区数量(功能灰度中)</p>
+                     * @param _partitionNumber <p>分区置放群组的分区号，具体取决于所选置放群组的分区数量(功能灰度中)</p>
+                     * 
+                     */
+                    void SetPartitionNumber(const int64_t& _partitionNumber);
+
+                    /**
+                     * 判断参数 PartitionNumber 是否已赋值
+                     * @return PartitionNumber 是否已赋值
+                     * 
+                     */
+                    bool PartitionNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1312,6 +1333,12 @@ namespace TencentCloud
                      */
                     CpuTopology m_cpuTopology;
                     bool m_cpuTopologyHasBeenSet;
+
+                    /**
+                     * <p>分区置放群组的分区号，具体取决于所选置放群组的分区数量(功能灰度中)</p>
+                     */
+                    int64_t m_partitionNumber;
+                    bool m_partitionNumberHasBeenSet;
 
                 };
             }

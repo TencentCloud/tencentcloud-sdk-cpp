@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取加速地域。
-                     * @return AccelerateRegion 加速地域。
+                     * 获取<p>加速地域。</p>
+                     * @return AccelerateRegion <p>加速地域。</p>
                      * 
                      */
                     std::string GetAccelerateRegion() const;
 
                     /**
-                     * 设置加速地域。
-                     * @param _accelerateRegion 加速地域。
+                     * 设置<p>加速地域。</p>
+                     * @param _accelerateRegion <p>加速地域。</p>
                      * 
                      */
                     void SetAccelerateRegion(const std::string& _accelerateRegion);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool AccelerateRegionHasBeenSet() const;
 
                     /**
-                     * 获取带宽。
-                     * @return Bandwidth 带宽。
+                     * 获取<p>带宽。</p>
+                     * @return Bandwidth <p>带宽。</p>
                      * 
                      */
                     uint64_t GetBandwidth() const;
 
                     /**
-                     * 设置带宽。
-                     * @param _bandwidth 带宽。
+                     * 设置<p>带宽。</p>
+                     * @param _bandwidth <p>带宽。</p>
                      * 
                      */
                     void SetBandwidth(const uint64_t& _bandwidth);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取支持'BGP', '三网', '精品'，默认BGP。
-                     * @return IspType 支持'BGP', '三网', '精品'，默认BGP。
+                     * 获取<p>支持&#39;BGP&#39;, &#39;QUALITY_BGP&#39;, &#39;STATIC_IP&#39;，默认BGP。</p><p>枚举值：</p><ul><li>BGP： BGP</li><li>STATIC_IP： 三网</li><li>QUALITY_BGP： 精品BGP</li></ul>
+                     * @return IspType <p>支持&#39;BGP&#39;, &#39;QUALITY_BGP&#39;, &#39;STATIC_IP&#39;，默认BGP。</p><p>枚举值：</p><ul><li>BGP： BGP</li><li>STATIC_IP： 三网</li><li>QUALITY_BGP： 精品BGP</li></ul>
                      * 
                      */
                     std::string GetIspType() const;
 
                     /**
-                     * 设置支持'BGP', '三网', '精品'，默认BGP。
-                     * @param _ispType 支持'BGP', '三网', '精品'，默认BGP。
+                     * 设置<p>支持&#39;BGP&#39;, &#39;QUALITY_BGP&#39;, &#39;STATIC_IP&#39;，默认BGP。</p><p>枚举值：</p><ul><li>BGP： BGP</li><li>STATIC_IP： 三网</li><li>QUALITY_BGP： 精品BGP</li></ul>
+                     * @param _ispType <p>支持&#39;BGP&#39;, &#39;QUALITY_BGP&#39;, &#39;STATIC_IP&#39;，默认BGP。</p><p>枚举值：</p><ul><li>BGP： BGP</li><li>STATIC_IP： 三网</li><li>QUALITY_BGP： 精品BGP</li></ul>
                      * 
                      */
                     void SetIspType(const std::string& _ispType);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool IspTypeHasBeenSet() const;
 
                     /**
-                     * 获取仅支持IPv4，默认是IPv4。
-                     * @return IpVersion 仅支持IPv4，默认是IPv4。
+                     * 获取<p>仅支持IPv4，默认是IPv4。</p>
+                     * @return IpVersion <p>仅支持IPv4，默认是IPv4。</p>
                      * 
                      */
                     std::string GetIpVersion() const;
 
                     /**
-                     * 设置仅支持IPv4，默认是IPv4。
-                     * @param _ipVersion 仅支持IPv4，默认是IPv4。
+                     * 设置<p>仅支持IPv4，默认是IPv4。</p>
+                     * @param _ipVersion <p>仅支持IPv4，默认是IPv4。</p>
                      * 
                      */
                     void SetIpVersion(const std::string& _ipVersion);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool IpVersionHasBeenSet() const;
 
                     /**
-                     * 获取加速地域ID。
-                     * @return AcceleratorAreaId 加速地域ID。
+                     * 获取<p>加速地域ID。</p>
+                     * @return AcceleratorAreaId <p>加速地域ID。</p>
                      * 
                      */
                     std::string GetAcceleratorAreaId() const;
 
                     /**
-                     * 设置加速地域ID。
-                     * @param _acceleratorAreaId 加速地域ID。
+                     * 设置<p>加速地域ID。</p>
+                     * @param _acceleratorAreaId <p>加速地域ID。</p>
                      * 
                      */
                     void SetAcceleratorAreaId(const std::string& _acceleratorAreaId);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool AcceleratorAreaIdHasBeenSet() const;
 
                     /**
-                     * 获取IP。
-                     * @return IpAddress IP。
+                     * 获取<p>IP。</p>
+                     * @return IpAddress <p>IP。</p>
                      * 
                      */
                     std::vector<std::string> GetIpAddress() const;
 
                     /**
-                     * 设置IP。
-                     * @param _ipAddress IP。
+                     * 设置<p>IP。</p>
+                     * @param _ipAddress <p>IP。</p>
                      * 
                      */
                     void SetIpAddress(const std::vector<std::string>& _ipAddress);
@@ -174,18 +174,18 @@ namespace TencentCloud
                     bool IpAddressHasBeenSet() const;
 
                     /**
-                     * 获取IP信息。
+                     * 获取<p>IP信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IpAddressInfoSet IP信息。
+                     * @return IpAddressInfoSet <p>IP信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IpAddressInfoSet> GetIpAddressInfoSet() const;
 
                     /**
-                     * 设置IP信息。
+                     * 设置<p>IP信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ipAddressInfoSet IP信息。
+                     * @param _ipAddressInfoSet <p>IP信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -201,43 +201,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 加速地域。
+                     * <p>加速地域。</p>
                      */
                     std::string m_accelerateRegion;
                     bool m_accelerateRegionHasBeenSet;
 
                     /**
-                     * 带宽。
+                     * <p>带宽。</p>
                      */
                     uint64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * 支持'BGP', '三网', '精品'，默认BGP。
+                     * <p>支持&#39;BGP&#39;, &#39;QUALITY_BGP&#39;, &#39;STATIC_IP&#39;，默认BGP。</p><p>枚举值：</p><ul><li>BGP： BGP</li><li>STATIC_IP： 三网</li><li>QUALITY_BGP： 精品BGP</li></ul>
                      */
                     std::string m_ispType;
                     bool m_ispTypeHasBeenSet;
 
                     /**
-                     * 仅支持IPv4，默认是IPv4。
+                     * <p>仅支持IPv4，默认是IPv4。</p>
                      */
                     std::string m_ipVersion;
                     bool m_ipVersionHasBeenSet;
 
                     /**
-                     * 加速地域ID。
+                     * <p>加速地域ID。</p>
                      */
                     std::string m_acceleratorAreaId;
                     bool m_acceleratorAreaIdHasBeenSet;
 
                     /**
-                     * IP。
+                     * <p>IP。</p>
                      */
                     std::vector<std::string> m_ipAddress;
                     bool m_ipAddressHasBeenSet;
 
                     /**
-                     * IP信息。
+                     * <p>IP信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IpAddressInfoSet> m_ipAddressInfoSet;

@@ -30,7 +30,8 @@ UploadFilesRequest::UploadFilesRequest() :
     m_coverRectHasBeenSet(false),
     m_customIdsHasBeenSet(false),
     m_fileUrlsHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_agentHasBeenSet(false),
+    m_deadlineHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,14 @@ string UploadFilesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_deadlineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Deadline";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deadline, allocator);
     }
 
 
@@ -253,6 +262,22 @@ void UploadFilesRequest::SetAgent(const Agent& _agent)
 bool UploadFilesRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+int64_t UploadFilesRequest::GetDeadline() const
+{
+    return m_deadline;
+}
+
+void UploadFilesRequest::SetDeadline(const int64_t& _deadline)
+{
+    m_deadline = _deadline;
+    m_deadlineHasBeenSet = true;
+}
+
+bool UploadFilesRequest::DeadlineHasBeenSet() const
+{
+    return m_deadlineHasBeenSet;
 }
 
 

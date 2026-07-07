@@ -147,6 +147,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/ParseLiveStreamProcessNotificationResponse.h
   include/tencentcloud/mps/v20190612/model/SubtitleShadowConfig.h
   include/tencentcloud/mps/v20190612/model/DescribeVideoDatabaseEntryTaskDetailRequest.h
+  include/tencentcloud/mps/v20190612/model/SmartSubtitleTaskFullTextSegmentItem.h
   include/tencentcloud/mps/v20190612/model/UserDefineAsrTextReviewTemplateInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/CreateStreamPackageLinearAssemblyProgramRequest.h
   include/tencentcloud/mps/v20190612/model/SegmentDeliverInfo.h
@@ -1185,6 +1186,7 @@ set(mps_src
   src/v20190612/model/ParseLiveStreamProcessNotificationResponse.cpp
   src/v20190612/model/SubtitleShadowConfig.cpp
   src/v20190612/model/DescribeVideoDatabaseEntryTaskDetailRequest.cpp
+  src/v20190612/model/SmartSubtitleTaskFullTextSegmentItem.cpp
   src/v20190612/model/UserDefineAsrTextReviewTemplateInfoForUpdate.cpp
   src/v20190612/model/CreateStreamPackageLinearAssemblyProgramRequest.cpp
   src/v20190612/model/SegmentDeliverInfo.cpp

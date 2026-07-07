@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取删除返回结果
-                     * @return Data 删除返回结果
+                     * 获取<p>删除返回结果</p>
+                     * @return Data <p>删除返回结果</p>
                      * 
                      */
                     std::vector<ResultItem> GetData() const;
@@ -58,13 +58,33 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取<p>流程id</p>
+                     * @return FlowId <p>流程id</p>
+                     * 
+                     */
+                    int64_t GetFlowId() const;
+
+                    /**
+                     * 判断参数 FlowId 是否已赋值
+                     * @return FlowId 是否已赋值
+                     * 
+                     */
+                    bool FlowIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 删除返回结果
+                     * <p>删除返回结果</p>
                      */
                     std::vector<ResultItem> m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * <p>流程id</p>
+                     */
+                    int64_t m_flowId;
+                    bool m_flowIdHasBeenSet;
 
                 };
             }

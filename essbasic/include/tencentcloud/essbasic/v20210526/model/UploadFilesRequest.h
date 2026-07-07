@@ -129,6 +129,27 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取<p>文件的截止有效期，最长有效期是当前时间后的一年。如果超过截止有效期则文件会失效。此功能是白名单功能，如需使用，请联系电子签开通</p><p>如果没有传入，则默认过期时间是上传时间加10分钟</p>
+                     * @return Deadline <p>文件的截止有效期，最长有效期是当前时间后的一年。如果超过截止有效期则文件会失效。此功能是白名单功能，如需使用，请联系电子签开通</p><p>如果没有传入，则默认过期时间是上传时间加10分钟</p>
+                     * 
+                     */
+                    int64_t GetDeadline() const;
+
+                    /**
+                     * 设置<p>文件的截止有效期，最长有效期是当前时间后的一年。如果超过截止有效期则文件会失效。此功能是白名单功能，如需使用，请联系电子签开通</p><p>如果没有传入，则默认过期时间是上传时间加10分钟</p>
+                     * @param _deadline <p>文件的截止有效期，最长有效期是当前时间后的一年。如果超过截止有效期则文件会失效。此功能是白名单功能，如需使用，请联系电子签开通</p><p>如果没有传入，则默认过期时间是上传时间加10分钟</p>
+                     * 
+                     */
+                    void SetDeadline(const int64_t& _deadline);
+
+                    /**
+                     * 判断参数 Deadline 是否已赋值
+                     * @return Deadline 是否已赋值
+                     * 
+                     */
+                    bool DeadlineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -154,6 +175,12 @@ namespace TencentCloud
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * <p>文件的截止有效期，最长有效期是当前时间后的一年。如果超过截止有效期则文件会失效。此功能是白名单功能，如需使用，请联系电子签开通</p><p>如果没有传入，则默认过期时间是上传时间加10分钟</p>
+                     */
+                    int64_t m_deadline;
+                    bool m_deadlineHasBeenSet;
 
                 };
             }

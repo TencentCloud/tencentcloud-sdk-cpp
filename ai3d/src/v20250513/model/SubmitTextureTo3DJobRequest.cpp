@@ -28,7 +28,9 @@ SubmitTextureTo3DJobRequest::SubmitTextureTo3DJobRequest() :
     m_multiViewImagesHasBeenSet(false),
     m_promptHasBeenSet(false),
     m_imageHasBeenSet(false),
-    m_enablePBRHasBeenSet(false)
+    m_enablePBRHasBeenSet(false),
+    m_enableKeepUVHasBeenSet(false),
+    m_textureSizeHasBeenSet(false)
 {
 }
 
@@ -94,6 +96,22 @@ string SubmitTextureTo3DJobRequest::ToJsonString() const
         string key = "EnablePBR";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enablePBR, allocator);
+    }
+
+    if (m_enableKeepUVHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableKeepUV";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableKeepUV, allocator);
+    }
+
+    if (m_textureSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TextureSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_textureSize, allocator);
     }
 
 
@@ -198,6 +216,38 @@ void SubmitTextureTo3DJobRequest::SetEnablePBR(const bool& _enablePBR)
 bool SubmitTextureTo3DJobRequest::EnablePBRHasBeenSet() const
 {
     return m_enablePBRHasBeenSet;
+}
+
+bool SubmitTextureTo3DJobRequest::GetEnableKeepUV() const
+{
+    return m_enableKeepUV;
+}
+
+void SubmitTextureTo3DJobRequest::SetEnableKeepUV(const bool& _enableKeepUV)
+{
+    m_enableKeepUV = _enableKeepUV;
+    m_enableKeepUVHasBeenSet = true;
+}
+
+bool SubmitTextureTo3DJobRequest::EnableKeepUVHasBeenSet() const
+{
+    return m_enableKeepUVHasBeenSet;
+}
+
+int64_t SubmitTextureTo3DJobRequest::GetTextureSize() const
+{
+    return m_textureSize;
+}
+
+void SubmitTextureTo3DJobRequest::SetTextureSize(const int64_t& _textureSize)
+{
+    m_textureSize = _textureSize;
+    m_textureSizeHasBeenSet = true;
+}
+
+bool SubmitTextureTo3DJobRequest::TextureSizeHasBeenSet() const
+{
+    return m_textureSizeHasBeenSet;
 }
 
 

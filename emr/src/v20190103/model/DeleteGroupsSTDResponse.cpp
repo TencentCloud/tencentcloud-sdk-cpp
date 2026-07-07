@@ -24,7 +24,8 @@ using namespace TencentCloud::Emr::V20190103::Model;
 using namespace std;
 
 DeleteGroupsSTDResponse::DeleteGroupsSTDResponse() :
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_flowIdHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,16 @@ CoreInternalOutcome DeleteGroupsSTDResponse::Deserialize(const string &payload)
         m_dataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FlowId") && !rsp["FlowId"].IsNull())
+    {
+        if (!rsp["FlowId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowId = rsp["FlowId"].GetInt64();
+        m_flowIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string DeleteGroupsSTDResponse::ToJsonString() const
         }
     }
 
+    if (m_flowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_flowId, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +146,16 @@ vector<ResultItem> DeleteGroupsSTDResponse::GetData() const
 bool DeleteGroupsSTDResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+int64_t DeleteGroupsSTDResponse::GetFlowId() const
+{
+    return m_flowId;
+}
+
+bool DeleteGroupsSTDResponse::FlowIdHasBeenSet() const
+{
+    return m_flowIdHasBeenSet;
 }
 
 

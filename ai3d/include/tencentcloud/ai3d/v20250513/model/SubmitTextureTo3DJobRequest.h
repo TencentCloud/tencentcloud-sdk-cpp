@@ -171,6 +171,48 @@ namespace TencentCloud
                      */
                     bool EnablePBRHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否保持模型UV，开启后模型布线纹理均不改变，UV布线不跟纹理进行改变，默认false</p>
+                     * @return EnableKeepUV <p>是否保持模型UV，开启后模型布线纹理均不改变，UV布线不跟纹理进行改变，默认false</p>
+                     * 
+                     */
+                    bool GetEnableKeepUV() const;
+
+                    /**
+                     * 设置<p>是否保持模型UV，开启后模型布线纹理均不改变，UV布线不跟纹理进行改变，默认false</p>
+                     * @param _enableKeepUV <p>是否保持模型UV，开启后模型布线纹理均不改变，UV布线不跟纹理进行改变，默认false</p>
+                     * 
+                     */
+                    void SetEnableKeepUV(const bool& _enableKeepUV);
+
+                    /**
+                     * 判断参数 EnableKeepUV 是否已赋值
+                     * @return EnableKeepUV 是否已赋值
+                     * 
+                     */
+                    bool EnableKeepUVHasBeenSet() const;
+
+                    /**
+                     * 获取<p>仅支持正方形贴图，分辨率区间为720～4096，默认为4096</p>
+                     * @return TextureSize <p>仅支持正方形贴图，分辨率区间为720～4096，默认为4096</p>
+                     * 
+                     */
+                    int64_t GetTextureSize() const;
+
+                    /**
+                     * 设置<p>仅支持正方形贴图，分辨率区间为720～4096，默认为4096</p>
+                     * @param _textureSize <p>仅支持正方形贴图，分辨率区间为720～4096，默认为4096</p>
+                     * 
+                     */
+                    void SetTextureSize(const int64_t& _textureSize);
+
+                    /**
+                     * 判断参数 TextureSize 是否已赋值
+                     * @return TextureSize 是否已赋值
+                     * 
+                     */
+                    bool TextureSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -208,6 +250,18 @@ namespace TencentCloud
                      */
                     bool m_enablePBR;
                     bool m_enablePBRHasBeenSet;
+
+                    /**
+                     * <p>是否保持模型UV，开启后模型布线纹理均不改变，UV布线不跟纹理进行改变，默认false</p>
+                     */
+                    bool m_enableKeepUV;
+                    bool m_enableKeepUVHasBeenSet;
+
+                    /**
+                     * <p>仅支持正方形贴图，分辨率区间为720～4096，默认为4096</p>
+                     */
+                    int64_t m_textureSize;
+                    bool m_textureSizeHasBeenSet;
 
                 };
             }

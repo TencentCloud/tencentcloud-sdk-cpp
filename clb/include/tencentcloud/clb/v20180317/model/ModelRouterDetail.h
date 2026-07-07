@@ -24,12 +24,12 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/clb/v20180317/model/ClusterInfo.h>
+#include <tencentcloud/clb/v20180317/model/CreditUsage.h>
 #include <tencentcloud/clb/v20180317/model/RateLimitConfigForModelRouter.h>
 #include <tencentcloud/clb/v20180317/model/RouterSettingWithFallBack.h>
 #include <tencentcloud/clb/v20180317/model/ServiceEndPoints.h>
 #include <tencentcloud/clb/v20180317/model/TagInfo.h>
-#include <tencentcloud/clb/v20180317/model/CreditUsage.h>
-#include <tencentcloud/clb/v20180317/model/ClusterInfo.h>
 
 
 namespace TencentCloud
@@ -53,6 +53,77 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取<p>模型路由实例关联的Budget ID。</p><p>未关联Budget时返回空字符串。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BudgetId <p>模型路由实例关联的Budget ID。</p><p>未关联Budget时返回空字符串。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBudgetId() const;
+
+                    /**
+                     * 设置<p>模型路由实例关联的Budget ID。</p><p>未关联Budget时返回空字符串。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _budgetId <p>模型路由实例关联的Budget ID。</p><p>未关联Budget时返回空字符串。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBudgetId(const std::string& _budgetId);
+
+                    /**
+                     * 判断参数 BudgetId 是否已赋值
+                     * @return BudgetId 是否已赋值
+                     * 
+                     */
+                    bool BudgetIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模型路由实例关联的Budget名称。</p><p>未关联Budget时返回空字符串。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BudgetName <p>模型路由实例关联的Budget名称。</p><p>未关联Budget时返回空字符串。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBudgetName() const;
+
+                    /**
+                     * 设置<p>模型路由实例关联的Budget名称。</p><p>未关联Budget时返回空字符串。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _budgetName <p>模型路由实例关联的Budget名称。</p><p>未关联Budget时返回空字符串。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBudgetName(const std::string& _budgetName);
+
+                    /**
+                     * 判断参数 BudgetName 是否已赋值
+                     * @return BudgetName 是否已赋值
+                     * 
+                     */
+                    bool BudgetNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集群信息</p>
+                     * @return ClusterInfo <p>集群信息</p>
+                     * 
+                     */
+                    ClusterInfo GetClusterInfo() const;
+
+                    /**
+                     * 设置<p>集群信息</p>
+                     * @param _clusterInfo <p>集群信息</p>
+                     * 
+                     */
+                    void SetClusterInfo(const ClusterInfo& _clusterInfo);
+
+                    /**
+                     * 判断参数 ClusterInfo 是否已赋值
+                     * @return ClusterInfo 是否已赋值
+                     * 
+                     */
+                    bool ClusterInfoHasBeenSet() const;
+
+                    /**
                      * 获取<p>创建时间</p>
                      * @return CreatedTime <p>创建时间</p>
                      * 
@@ -72,6 +143,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CreatedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模型路由实例按Budget刷新周期划分的Credit使用情况。</p><p>当关联Budget配置多个刷新周期时，按1d、7d、30d顺序返回各周期用量；未关联Budget时返回空数组。</p>
+                     * @return CreditUsageSet <p>模型路由实例按Budget刷新周期划分的Credit使用情况。</p><p>当关联Budget配置多个刷新周期时，按1d、7d、30d顺序返回各周期用量；未关联Budget时返回空数组。</p>
+                     * 
+                     */
+                    std::vector<CreditUsage> GetCreditUsageSet() const;
+
+                    /**
+                     * 设置<p>模型路由实例按Budget刷新周期划分的Credit使用情况。</p><p>当关联Budget配置多个刷新周期时，按1d、7d、30d顺序返回各周期用量；未关联Budget时返回空数组。</p>
+                     * @param _creditUsageSet <p>模型路由实例按Budget刷新周期划分的Credit使用情况。</p><p>当关联Budget配置多个刷新周期时，按1d、7d、30d顺序返回各周期用量；未关联Budget时返回空数组。</p>
+                     * 
+                     */
+                    void SetCreditUsageSet(const std::vector<CreditUsage>& _creditUsageSet);
+
+                    /**
+                     * 判断参数 CreditUsageSet 是否已赋值
+                     * @return CreditUsageSet 是否已赋值
+                     * 
+                     */
+                    bool CreditUsageSetHasBeenSet() const;
 
                     /**
                      * 获取<p>模型路由实例域名</p>
@@ -246,6 +338,27 @@ namespace TencentCloud
                     bool RouterSettingHasBeenSet() const;
 
                     /**
+                     * 获取<p>安全组ID列表</p>
+                     * @return SecurityGroups <p>安全组ID列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetSecurityGroups() const;
+
+                    /**
+                     * 设置<p>安全组ID列表</p>
+                     * @param _securityGroups <p>安全组ID列表</p>
+                     * 
+                     */
+                    void SetSecurityGroups(const std::vector<std::string>& _securityGroups);
+
+                    /**
+                     * 判断参数 SecurityGroups 是否已赋值
+                     * @return SecurityGroups 是否已赋值
+                     * 
+                     */
+                    bool SecurityGroupsHasBeenSet() const;
+
+                    /**
                      * 获取<p>模型路由实例的安全状态</p><p>枚举值：</p><ul><li>Normal： 正常</li><li>Banned： 已封禁</li><li>Frozen： 已冻结</li></ul>
                      * @return SecurityStatus <p>模型路由实例的安全状态</p><p>枚举值：</p><ul><li>Normal： 正常</li><li>Banned： 已封禁</li><li>Frozen： 已冻结</li></ul>
                      * 
@@ -413,151 +526,39 @@ namespace TencentCloud
                      */
                     bool VpcIdHasBeenSet() const;
 
-                    /**
-                     * 获取<p>模型路由实例关联的Budget ID。</p><p>未关联Budget时返回空字符串。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BudgetId <p>模型路由实例关联的Budget ID。</p><p>未关联Budget时返回空字符串。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetBudgetId() const;
-
-                    /**
-                     * 设置<p>模型路由实例关联的Budget ID。</p><p>未关联Budget时返回空字符串。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _budgetId <p>模型路由实例关联的Budget ID。</p><p>未关联Budget时返回空字符串。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetBudgetId(const std::string& _budgetId);
-
-                    /**
-                     * 判断参数 BudgetId 是否已赋值
-                     * @return BudgetId 是否已赋值
-                     * 
-                     */
-                    bool BudgetIdHasBeenSet() const;
-
-                    /**
-                     * 获取<p>模型路由实例关联的Budget名称。</p><p>未关联Budget时返回空字符串。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BudgetName <p>模型路由实例关联的Budget名称。</p><p>未关联Budget时返回空字符串。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetBudgetName() const;
-
-                    /**
-                     * 设置<p>模型路由实例关联的Budget名称。</p><p>未关联Budget时返回空字符串。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _budgetName <p>模型路由实例关联的Budget名称。</p><p>未关联Budget时返回空字符串。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetBudgetName(const std::string& _budgetName);
-
-                    /**
-                     * 判断参数 BudgetName 是否已赋值
-                     * @return BudgetName 是否已赋值
-                     * 
-                     */
-                    bool BudgetNameHasBeenSet() const;
-
-                    /**
-                     * 获取<p>模型路由实例的Credit使用情况。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreditUsage <p>模型路由实例的Credit使用情况。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    CreditUsage GetCreditUsage() const;
-
-                    /**
-                     * 设置<p>模型路由实例的Credit使用情况。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _creditUsage <p>模型路由实例的Credit使用情况。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetCreditUsage(const CreditUsage& _creditUsage);
-
-                    /**
-                     * 判断参数 CreditUsage 是否已赋值
-                     * @return CreditUsage 是否已赋值
-                     * 
-                     */
-                    bool CreditUsageHasBeenSet() const;
-
-                    /**
-                     * 获取<p>模型路由实例按Budget刷新周期划分的Credit使用情况。</p><p>当关联Budget配置多个刷新周期时，按1d、7d、30d顺序返回各周期用量；未关联Budget时返回空数组。</p>
-                     * @return CreditUsageSet <p>模型路由实例按Budget刷新周期划分的Credit使用情况。</p><p>当关联Budget配置多个刷新周期时，按1d、7d、30d顺序返回各周期用量；未关联Budget时返回空数组。</p>
-                     * 
-                     */
-                    std::vector<CreditUsage> GetCreditUsageSet() const;
-
-                    /**
-                     * 设置<p>模型路由实例按Budget刷新周期划分的Credit使用情况。</p><p>当关联Budget配置多个刷新周期时，按1d、7d、30d顺序返回各周期用量；未关联Budget时返回空数组。</p>
-                     * @param _creditUsageSet <p>模型路由实例按Budget刷新周期划分的Credit使用情况。</p><p>当关联Budget配置多个刷新周期时，按1d、7d、30d顺序返回各周期用量；未关联Budget时返回空数组。</p>
-                     * 
-                     */
-                    void SetCreditUsageSet(const std::vector<CreditUsage>& _creditUsageSet);
-
-                    /**
-                     * 判断参数 CreditUsageSet 是否已赋值
-                     * @return CreditUsageSet 是否已赋值
-                     * 
-                     */
-                    bool CreditUsageSetHasBeenSet() const;
-
-                    /**
-                     * 获取<p>安全组ID列表</p>
-                     * @return SecurityGroups <p>安全组ID列表</p>
-                     * 
-                     */
-                    std::vector<std::string> GetSecurityGroups() const;
-
-                    /**
-                     * 设置<p>安全组ID列表</p>
-                     * @param _securityGroups <p>安全组ID列表</p>
-                     * 
-                     */
-                    void SetSecurityGroups(const std::vector<std::string>& _securityGroups);
-
-                    /**
-                     * 判断参数 SecurityGroups 是否已赋值
-                     * @return SecurityGroups 是否已赋值
-                     * 
-                     */
-                    bool SecurityGroupsHasBeenSet() const;
-
-                    /**
-                     * 获取<p>集群信息</p>
-                     * @return ClusterInfo <p>集群信息</p>
-                     * 
-                     */
-                    ClusterInfo GetClusterInfo() const;
-
-                    /**
-                     * 设置<p>集群信息</p>
-                     * @param _clusterInfo <p>集群信息</p>
-                     * 
-                     */
-                    void SetClusterInfo(const ClusterInfo& _clusterInfo);
-
-                    /**
-                     * 判断参数 ClusterInfo 是否已赋值
-                     * @return ClusterInfo 是否已赋值
-                     * 
-                     */
-                    bool ClusterInfoHasBeenSet() const;
-
                 private:
+
+                    /**
+                     * <p>模型路由实例关联的Budget ID。</p><p>未关联Budget时返回空字符串。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_budgetId;
+                    bool m_budgetIdHasBeenSet;
+
+                    /**
+                     * <p>模型路由实例关联的Budget名称。</p><p>未关联Budget时返回空字符串。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_budgetName;
+                    bool m_budgetNameHasBeenSet;
+
+                    /**
+                     * <p>集群信息</p>
+                     */
+                    ClusterInfo m_clusterInfo;
+                    bool m_clusterInfoHasBeenSet;
 
                     /**
                      * <p>创建时间</p>
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
+
+                    /**
+                     * <p>模型路由实例按Budget刷新周期划分的Credit使用情况。</p><p>当关联Budget配置多个刷新周期时，按1d、7d、30d顺序返回各周期用量；未关联Budget时返回空数组。</p>
+                     */
+                    std::vector<CreditUsage> m_creditUsageSet;
+                    bool m_creditUsageSetHasBeenSet;
 
                     /**
                      * <p>模型路由实例域名</p>
@@ -609,6 +610,12 @@ namespace TencentCloud
                     bool m_routerSettingHasBeenSet;
 
                     /**
+                     * <p>安全组ID列表</p>
+                     */
+                    std::vector<std::string> m_securityGroups;
+                    bool m_securityGroupsHasBeenSet;
+
+                    /**
                      * <p>模型路由实例的安全状态</p><p>枚举值：</p><ul><li>Normal： 正常</li><li>Banned： 已封禁</li><li>Frozen： 已冻结</li></ul>
                      */
                     std::string m_securityStatus;
@@ -655,45 +662,6 @@ namespace TencentCloud
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
-
-                    /**
-                     * <p>模型路由实例关联的Budget ID。</p><p>未关联Budget时返回空字符串。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_budgetId;
-                    bool m_budgetIdHasBeenSet;
-
-                    /**
-                     * <p>模型路由实例关联的Budget名称。</p><p>未关联Budget时返回空字符串。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_budgetName;
-                    bool m_budgetNameHasBeenSet;
-
-                    /**
-                     * <p>模型路由实例的Credit使用情况。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    CreditUsage m_creditUsage;
-                    bool m_creditUsageHasBeenSet;
-
-                    /**
-                     * <p>模型路由实例按Budget刷新周期划分的Credit使用情况。</p><p>当关联Budget配置多个刷新周期时，按1d、7d、30d顺序返回各周期用量；未关联Budget时返回空数组。</p>
-                     */
-                    std::vector<CreditUsage> m_creditUsageSet;
-                    bool m_creditUsageSetHasBeenSet;
-
-                    /**
-                     * <p>安全组ID列表</p>
-                     */
-                    std::vector<std::string> m_securityGroups;
-                    bool m_securityGroupsHasBeenSet;
-
-                    /**
-                     * <p>集群信息</p>
-                     */
-                    ClusterInfo m_clusterInfo;
-                    bool m_clusterInfoHasBeenSet;
 
                 };
             }

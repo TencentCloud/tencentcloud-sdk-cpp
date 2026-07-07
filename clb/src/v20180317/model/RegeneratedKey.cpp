@@ -21,8 +21,8 @@ using namespace TencentCloud::Clb::V20180317::Model;
 using namespace std;
 
 RegeneratedKey::RegeneratedKey() :
-    m_keyIdHasBeenSet(false),
-    m_keyHasBeenSet(false)
+    m_keyHasBeenSet(false),
+    m_keyIdHasBeenSet(false)
 {
 }
 
@@ -30,16 +30,6 @@ CoreInternalOutcome RegeneratedKey::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("KeyId") && !value["KeyId"].IsNull())
-    {
-        if (!value["KeyId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `RegeneratedKey.KeyId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_keyId = string(value["KeyId"].GetString());
-        m_keyIdHasBeenSet = true;
-    }
 
     if (value.HasMember("Key") && !value["Key"].IsNull())
     {
@@ -51,20 +41,22 @@ CoreInternalOutcome RegeneratedKey::Deserialize(const rapidjson::Value &value)
         m_keyHasBeenSet = true;
     }
 
+    if (value.HasMember("KeyId") && !value["KeyId"].IsNull())
+    {
+        if (!value["KeyId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegeneratedKey.KeyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_keyId = string(value["KeyId"].GetString());
+        m_keyIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void RegeneratedKey::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_keyIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "KeyId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_keyId.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_keyHasBeenSet)
     {
@@ -74,24 +66,16 @@ void RegeneratedKey::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(m_key.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_keyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keyId.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string RegeneratedKey::GetKeyId() const
-{
-    return m_keyId;
-}
-
-void RegeneratedKey::SetKeyId(const string& _keyId)
-{
-    m_keyId = _keyId;
-    m_keyIdHasBeenSet = true;
-}
-
-bool RegeneratedKey::KeyIdHasBeenSet() const
-{
-    return m_keyIdHasBeenSet;
-}
 
 string RegeneratedKey::GetKey() const
 {
@@ -107,5 +91,21 @@ void RegeneratedKey::SetKey(const string& _key)
 bool RegeneratedKey::KeyHasBeenSet() const
 {
     return m_keyHasBeenSet;
+}
+
+string RegeneratedKey::GetKeyId() const
+{
+    return m_keyId;
+}
+
+void RegeneratedKey::SetKeyId(const string& _keyId)
+{
+    m_keyId = _keyId;
+    m_keyIdHasBeenSet = true;
+}
+
+bool RegeneratedKey::KeyIdHasBeenSet() const
+{
+    return m_keyIdHasBeenSet;
 }
 

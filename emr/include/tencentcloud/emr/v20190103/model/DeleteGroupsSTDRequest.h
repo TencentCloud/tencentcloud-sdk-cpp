@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群名称
-                     * @return InstanceId 集群名称
+                     * 获取<p>集群名称</p>
+                     * @return InstanceId <p>集群名称</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群名称
-                     * @param _instanceId 集群名称
+                     * 设置<p>集群名称</p>
+                     * @param _instanceId <p>集群名称</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取用户组名称数组
-                     * @return GroupNames 用户组名称数组
+                     * 获取<p>用户组名称数组</p>
+                     * @return GroupNames <p>用户组名称数组</p>
                      * 
                      */
                     std::vector<std::string> GetGroupNames() const;
 
                     /**
-                     * 设置用户组名称数组
-                     * @param _groupNames 用户组名称数组
+                     * 设置<p>用户组名称数组</p>
+                     * @param _groupNames <p>用户组名称数组</p>
                      * 
                      */
                     void SetGroupNames(const std::vector<std::string>& _groupNames);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群名称
+                     * <p>集群名称</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 用户组名称数组
+                     * <p>用户组名称数组</p>
                      */
                     std::vector<std::string> m_groupNames;
                     bool m_groupNamesHasBeenSet;

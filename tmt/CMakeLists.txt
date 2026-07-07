@@ -23,9 +23,7 @@ set(tmt_public_header_model
   include/tencentcloud/tmt/v20180321/model/ImageTranslateLLMResponse.h
   include/tencentcloud/tmt/v20180321/model/Coord.h
   include/tencentcloud/tmt/v20180321/model/TransDetail.h
-  include/tencentcloud/tmt/v20180321/model/TextTranslateRequest.h
   include/tencentcloud/tmt/v20180321/model/BoundingBox.h
-  include/tencentcloud/tmt/v20180321/model/TextTranslateResponse.h
   include/tencentcloud/tmt/v20180321/model/RotateParagraphRect.h
   )
 
@@ -35,9 +33,7 @@ set(tmt_src
   src/v20180321/model/ImageTranslateLLMResponse.cpp
   src/v20180321/model/Coord.cpp
   src/v20180321/model/TransDetail.cpp
-  src/v20180321/model/TextTranslateRequest.cpp
   src/v20180321/model/BoundingBox.cpp
-  src/v20180321/model/TextTranslateResponse.cpp
   src/v20180321/model/RotateParagraphRect.cpp
   )
 

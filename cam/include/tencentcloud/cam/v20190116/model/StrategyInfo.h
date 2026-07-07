@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略ID。
-                     * @return PolicyId 策略ID。
+                     * 获取<p>策略ID。</p>
+                     * @return PolicyId <p>策略ID。</p>
                      * 
                      */
                     uint64_t GetPolicyId() const;
 
                     /**
-                     * 设置策略ID。
-                     * @param _policyId 策略ID。
+                     * 设置<p>策略ID。</p>
+                     * @param _policyId <p>策略ID。</p>
                      * 
                      */
                     void SetPolicyId(const uint64_t& _policyId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool PolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取策略名称。
-                     * @return PolicyName 策略名称。
+                     * 获取<p>策略名称。</p>
+                     * @return PolicyName <p>策略名称。</p>
                      * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
-                     * 设置策略名称。
-                     * @param _policyName 策略名称。
+                     * 设置<p>策略名称。</p>
+                     * @param _policyName <p>策略名称。</p>
                      * 
                      */
                     void SetPolicyName(const std::string& _policyName);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool PolicyNameHasBeenSet() const;
 
                     /**
-                     * 获取策略创建时间。
-                     * @return AddTime 策略创建时间。
+                     * 获取<p>策略创建时间。</p>
+                     * @return AddTime <p>策略创建时间。</p>
                      * 
                      */
                     std::string GetAddTime() const;
 
                     /**
-                     * 设置策略创建时间。
-                     * @param _addTime 策略创建时间。
+                     * 设置<p>策略创建时间。</p>
+                     * @param _addTime <p>策略创建时间。</p>
                      * 
                      */
                     void SetAddTime(const std::string& _addTime);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool AddTimeHasBeenSet() const;
 
                     /**
-                     * 获取策略类型。1 表示自定义策略，2 表示预设策略。
-                     * @return Type 策略类型。1 表示自定义策略，2 表示预设策略。
+                     * 获取<p>策略类型。1 表示自定义策略，2 表示预设策略。</p>
+                     * @return Type <p>策略类型。1 表示自定义策略，2 表示预设策略。</p>
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置策略类型。1 表示自定义策略，2 表示预设策略。
-                     * @param _type 策略类型。1 表示自定义策略，2 表示预设策略。
+                     * 设置<p>策略类型。1 表示自定义策略，2 表示预设策略。</p>
+                     * @param _type <p>策略类型。1 表示自定义策略，2 表示预设策略。</p>
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -132,18 +132,18 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取策略描述。
+                     * 获取<p>策略描述。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 策略描述。
+                     * @return Description <p>策略描述。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置策略描述。
+                     * 设置<p>策略描述。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 策略描述。
+                     * @param _description <p>策略描述。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -157,15 +157,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取创建来源，1 通过控制台创建, 2 通过策略语法创建。
-                     * @return CreateMode 创建来源，1 通过控制台创建, 2 通过策略语法创建。
+                     * 获取<p>创建来源，1 通过控制台创建, 2 通过策略语法创建。</p>
+                     * @return CreateMode <p>创建来源，1 通过控制台创建, 2 通过策略语法创建。</p>
                      * 
                      */
                     uint64_t GetCreateMode() const;
 
                     /**
-                     * 设置创建来源，1 通过控制台创建, 2 通过策略语法创建。
-                     * @param _createMode 创建来源，1 通过控制台创建, 2 通过策略语法创建。
+                     * 设置<p>创建来源，1 通过控制台创建, 2 通过策略语法创建。</p>
+                     * @param _createMode <p>创建来源，1 通过控制台创建, 2 通过策略语法创建。</p>
                      * 
                      */
                     void SetCreateMode(const uint64_t& _createMode);
@@ -178,15 +178,15 @@ namespace TencentCloud
                     bool CreateModeHasBeenSet() const;
 
                     /**
-                     * 获取关联的用户数
-                     * @return Attachments 关联的用户数
+                     * 获取<p>关联的用户数</p>
+                     * @return Attachments <p>关联的用户数</p>
                      * 
                      */
                     uint64_t GetAttachments() const;
 
                     /**
-                     * 设置关联的用户数
-                     * @param _attachments 关联的用户数
+                     * 设置<p>关联的用户数</p>
+                     * @param _attachments <p>关联的用户数</p>
                      * 
                      */
                     void SetAttachments(const uint64_t& _attachments);
@@ -199,18 +199,18 @@ namespace TencentCloud
                     bool AttachmentsHasBeenSet() const;
 
                     /**
-                     * 获取策略关联的产品
+                     * 获取<p>策略关联的产品</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServiceType 策略关联的产品
+                     * @return ServiceType <p>策略关联的产品</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置策略关联的产品
+                     * 设置<p>策略关联的产品</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _serviceType 策略关联的产品
+                     * @param _serviceType <p>策略关联的产品</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -224,18 +224,18 @@ namespace TencentCloud
                     bool ServiceTypeHasBeenSet() const;
 
                     /**
-                     * 获取当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略
+                     * 获取<p>当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsAttached 当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略
+                     * @return IsAttached <p>当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsAttached() const;
 
                     /**
-                     * 设置当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略
+                     * 设置<p>当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isAttached 当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略
+                     * @param _isAttached <p>当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -249,18 +249,18 @@ namespace TencentCloud
                     bool IsAttachedHasBeenSet() const;
 
                     /**
-                     * 获取是否已下线
+                     * 获取<p>是否已下线</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Deactived 是否已下线
+                     * @return Deactived <p>是否已下线</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDeactived() const;
 
                     /**
-                     * 设置是否已下线
+                     * 设置<p>是否已下线</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _deactived 是否已下线
+                     * @param _deactived <p>是否已下线</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -274,18 +274,18 @@ namespace TencentCloud
                     bool DeactivedHasBeenSet() const;
 
                     /**
-                     * 获取已下线产品列表
+                     * 获取<p>已下线产品列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeactivedDetail 已下线产品列表
+                     * @return DeactivedDetail <p>已下线产品列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDeactivedDetail() const;
 
                     /**
-                     * 设置已下线产品列表
+                     * 设置<p>已下线产品列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _deactivedDetail 已下线产品列表
+                     * @param _deactivedDetail <p>已下线产品列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -299,18 +299,18 @@ namespace TencentCloud
                     bool DeactivedDetailHasBeenSet() const;
 
                     /**
-                     * 获取是否是服务相关角色策略
+                     * 获取<p>是否是服务相关角色策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsServiceLinkedPolicy 是否是服务相关角色策略
+                     * @return IsServiceLinkedPolicy <p>是否是服务相关角色策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsServiceLinkedPolicy() const;
 
                     /**
-                     * 设置是否是服务相关角色策略
+                     * 设置<p>是否是服务相关角色策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isServiceLinkedPolicy 是否是服务相关角色策略
+                     * @param _isServiceLinkedPolicy <p>是否是服务相关角色策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -324,18 +324,18 @@ namespace TencentCloud
                     bool IsServiceLinkedPolicyHasBeenSet() const;
 
                     /**
-                     * 获取关联策略实体数
+                     * 获取<p>关联策略实体数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AttachEntityCount 关联策略实体数
+                     * @return AttachEntityCount <p>关联策略实体数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAttachEntityCount() const;
 
                     /**
-                     * 设置关联策略实体数
+                     * 设置<p>关联策略实体数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _attachEntityCount 关联策略实体数
+                     * @param _attachEntityCount <p>关联策略实体数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -349,18 +349,18 @@ namespace TencentCloud
                     bool AttachEntityCountHasBeenSet() const;
 
                     /**
-                     * 获取关联权限边界实体数
+                     * 获取<p>关联权限边界实体数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AttachEntityBoundaryCount 关联权限边界实体数
+                     * @return AttachEntityBoundaryCount <p>关联权限边界实体数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAttachEntityBoundaryCount() const;
 
                     /**
-                     * 设置关联权限边界实体数
+                     * 设置<p>关联权限边界实体数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _attachEntityBoundaryCount 关联权限边界实体数
+                     * @param _attachEntityBoundaryCount <p>关联权限边界实体数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -374,18 +374,18 @@ namespace TencentCloud
                     bool AttachEntityBoundaryCountHasBeenSet() const;
 
                     /**
-                     * 获取最后编辑时间
+                     * 获取<p>最后编辑时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 最后编辑时间
+                     * @return UpdateTime <p>最后编辑时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置最后编辑时间
+                     * 设置<p>最后编辑时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime 最后编辑时间
+                     * @param _updateTime <p>最后编辑时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -399,15 +399,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
-                     * @return Tags 标签列表
+                     * 获取<p>标签列表</p>
+                     * @return Tags <p>标签列表</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置标签列表
-                     * @param _tags 标签列表
+                     * 设置<p>标签列表</p>
+                     * @param _tags <p>标签列表</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -419,112 +419,139 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>权限级别</p><p>枚举值：</p><ul><li>Global： 全局权限</li><li>Finance： 财务权限</li><li>CloudProduct： 云产品权限</li></ul>
+                     * @return PermissionLevel <p>权限级别</p><p>枚举值：</p><ul><li>Global： 全局权限</li><li>Finance： 财务权限</li><li>CloudProduct： 云产品权限</li></ul>
+                     * 
+                     */
+                    std::string GetPermissionLevel() const;
+
+                    /**
+                     * 设置<p>权限级别</p><p>枚举值：</p><ul><li>Global： 全局权限</li><li>Finance： 财务权限</li><li>CloudProduct： 云产品权限</li></ul>
+                     * @param _permissionLevel <p>权限级别</p><p>枚举值：</p><ul><li>Global： 全局权限</li><li>Finance： 财务权限</li><li>CloudProduct： 云产品权限</li></ul>
+                     * 
+                     */
+                    void SetPermissionLevel(const std::string& _permissionLevel);
+
+                    /**
+                     * 判断参数 PermissionLevel 是否已赋值
+                     * @return PermissionLevel 是否已赋值
+                     * 
+                     */
+                    bool PermissionLevelHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 策略ID。
+                     * <p>策略ID。</p>
                      */
                     uint64_t m_policyId;
                     bool m_policyIdHasBeenSet;
 
                     /**
-                     * 策略名称。
+                     * <p>策略名称。</p>
                      */
                     std::string m_policyName;
                     bool m_policyNameHasBeenSet;
 
                     /**
-                     * 策略创建时间。
+                     * <p>策略创建时间。</p>
                      */
                     std::string m_addTime;
                     bool m_addTimeHasBeenSet;
 
                     /**
-                     * 策略类型。1 表示自定义策略，2 表示预设策略。
+                     * <p>策略类型。1 表示自定义策略，2 表示预设策略。</p>
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 策略描述。
+                     * <p>策略描述。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 创建来源，1 通过控制台创建, 2 通过策略语法创建。
+                     * <p>创建来源，1 通过控制台创建, 2 通过策略语法创建。</p>
                      */
                     uint64_t m_createMode;
                     bool m_createModeHasBeenSet;
 
                     /**
-                     * 关联的用户数
+                     * <p>关联的用户数</p>
                      */
                     uint64_t m_attachments;
                     bool m_attachmentsHasBeenSet;
 
                     /**
-                     * 策略关联的产品
+                     * <p>策略关联的产品</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
 
                     /**
-                     * 当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略
+                     * <p>当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isAttached;
                     bool m_isAttachedHasBeenSet;
 
                     /**
-                     * 是否已下线
+                     * <p>是否已下线</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_deactived;
                     bool m_deactivedHasBeenSet;
 
                     /**
-                     * 已下线产品列表
+                     * <p>已下线产品列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_deactivedDetail;
                     bool m_deactivedDetailHasBeenSet;
 
                     /**
-                     * 是否是服务相关角色策略
+                     * <p>是否是服务相关角色策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isServiceLinkedPolicy;
                     bool m_isServiceLinkedPolicyHasBeenSet;
 
                     /**
-                     * 关联策略实体数
+                     * <p>关联策略实体数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_attachEntityCount;
                     bool m_attachEntityCountHasBeenSet;
 
                     /**
-                     * 关联权限边界实体数
+                     * <p>关联权限边界实体数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_attachEntityBoundaryCount;
                     bool m_attachEntityBoundaryCountHasBeenSet;
 
                     /**
-                     * 最后编辑时间
+                     * <p>最后编辑时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * <p>标签列表</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * <p>权限级别</p><p>枚举值：</p><ul><li>Global： 全局权限</li><li>Finance： 财务权限</li><li>CloudProduct： 云产品权限</li></ul>
+                     */
+                    std::string m_permissionLevel;
+                    bool m_permissionLevelHasBeenSet;
 
                 };
             }

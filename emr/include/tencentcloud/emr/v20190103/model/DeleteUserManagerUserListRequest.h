@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群实例ID
-                     * @return InstanceId 集群实例ID
+                     * 获取<p>集群实例ID</p>
+                     * @return InstanceId <p>集群实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群实例ID
-                     * @param _instanceId 集群实例ID
+                     * 设置<p>集群实例ID</p>
+                     * @param _instanceId <p>集群实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取集群用户名列表
-                     * @return UserNameList 集群用户名列表
+                     * 获取<p>集群用户名列表</p>
+                     * @return UserNameList <p>集群用户名列表</p>
                      * 
                      */
                     std::vector<std::string> GetUserNameList() const;
 
                     /**
-                     * 设置集群用户名列表
-                     * @param _userNameList 集群用户名列表
+                     * 设置<p>集群用户名列表</p>
+                     * @param _userNameList <p>集群用户名列表</p>
                      * 
                      */
                     void SetUserNameList(const std::vector<std::string>& _userNameList);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool UserNameListHasBeenSet() const;
 
                     /**
-                     * 获取tke/eks集群id，容器集群传
-                     * @return TkeClusterId tke/eks集群id，容器集群传
+                     * 获取<p>tke/eks集群id，容器集群传</p>
+                     * @return TkeClusterId <p>tke/eks集群id，容器集群传</p>
                      * 
                      */
                     std::string GetTkeClusterId() const;
 
                     /**
-                     * 设置tke/eks集群id，容器集群传
-                     * @param _tkeClusterId tke/eks集群id，容器集群传
+                     * 设置<p>tke/eks集群id，容器集群传</p>
+                     * @param _tkeClusterId <p>tke/eks集群id，容器集群传</p>
                      * 
                      */
                     void SetTkeClusterId(const std::string& _tkeClusterId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool TkeClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取默认空，容器版传"native"
-                     * @return DisplayStrategy 默认空，容器版传"native"
+                     * 获取<p>默认空，容器版传&quot;native&quot;</p>
+                     * @return DisplayStrategy <p>默认空，容器版传&quot;native&quot;</p>
                      * 
                      */
                     std::string GetDisplayStrategy() const;
 
                     /**
-                     * 设置默认空，容器版传"native"
-                     * @param _displayStrategy 默认空，容器版传"native"
+                     * 设置<p>默认空，容器版传&quot;native&quot;</p>
+                     * @param _displayStrategy <p>默认空，容器版传&quot;native&quot;</p>
                      * 
                      */
                     void SetDisplayStrategy(const std::string& _displayStrategy);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool DisplayStrategyHasBeenSet() const;
 
                     /**
-                     * 获取用户组
-                     * @return UserGroupList 用户组
+                     * 获取<p>用户组</p>
+                     * @return UserGroupList <p>用户组</p>
                      * 
                      */
                     std::vector<UserAndGroup> GetUserGroupList() const;
 
                     /**
-                     * 设置用户组
-                     * @param _userGroupList 用户组
+                     * 设置<p>用户组</p>
+                     * @param _userGroupList <p>用户组</p>
                      * 
                      */
                     void SetUserGroupList(const std::vector<UserAndGroup>& _userGroupList);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool UserGroupListHasBeenSet() const;
 
                     /**
-                     * 获取是否删除家目录，只针对cvm集群
-                     * @return DeleteHomeDir 是否删除家目录，只针对cvm集群
+                     * 获取<p>是否删除家目录，只针对cvm集群</p>
+                     * @return DeleteHomeDir <p>是否删除家目录，只针对cvm集群</p>
                      * 
                      */
                     bool GetDeleteHomeDir() const;
 
                     /**
-                     * 设置是否删除家目录，只针对cvm集群
-                     * @param _deleteHomeDir 是否删除家目录，只针对cvm集群
+                     * 设置<p>是否删除家目录，只针对cvm集群</p>
+                     * @param _deleteHomeDir <p>是否删除家目录，只针对cvm集群</p>
                      * 
                      */
                     void SetDeleteHomeDir(const bool& _deleteHomeDir);
@@ -172,37 +172,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群实例ID
+                     * <p>集群实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 集群用户名列表
+                     * <p>集群用户名列表</p>
                      */
                     std::vector<std::string> m_userNameList;
                     bool m_userNameListHasBeenSet;
 
                     /**
-                     * tke/eks集群id，容器集群传
+                     * <p>tke/eks集群id，容器集群传</p>
                      */
                     std::string m_tkeClusterId;
                     bool m_tkeClusterIdHasBeenSet;
 
                     /**
-                     * 默认空，容器版传"native"
+                     * <p>默认空，容器版传&quot;native&quot;</p>
                      */
                     std::string m_displayStrategy;
                     bool m_displayStrategyHasBeenSet;
 
                     /**
-                     * 用户组
+                     * <p>用户组</p>
                      */
                     std::vector<UserAndGroup> m_userGroupList;
                     bool m_userGroupListHasBeenSet;
 
                     /**
-                     * 是否删除家目录，只针对cvm集群
+                     * <p>是否删除家目录，只针对cvm集群</p>
                      */
                     bool m_deleteHomeDir;
                     bool m_deleteHomeDirHasBeenSet;

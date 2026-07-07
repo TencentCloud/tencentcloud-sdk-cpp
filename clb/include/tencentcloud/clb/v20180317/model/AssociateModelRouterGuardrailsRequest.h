@@ -1,0 +1,108 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_CLB_V20180317_MODEL_ASSOCIATEMODELROUTERGUARDRAILSREQUEST_H_
+#define TENCENTCLOUD_CLB_V20180317_MODEL_ASSOCIATEMODELROUTERGUARDRAILSREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/clb/v20180317/model/AssociateGuardrailConfig.h>
+
+
+namespace TencentCloud
+{
+    namespace Clb
+    {
+        namespace V20180317
+        {
+            namespace Model
+            {
+                /**
+                * AssociateModelRouterGuardrails请求参数结构体
+                */
+                class AssociateModelRouterGuardrailsRequest : public AbstractModel
+                {
+                public:
+                    AssociateModelRouterGuardrailsRequest();
+                    ~AssociateModelRouterGuardrailsRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取<p>待关联的 Guardrail 防护配置列表。</p><p>当前最多支持 1 个元素。每个元素必须填写 InstanceId、ServiceId；Type 和 InputCheckDepth 为选填，不传时分别使用默认值 WAF 和 5。本结构不包含 GuardrailId，关联成功后由系统生成。</p>
+                     * @return Guardrails <p>待关联的 Guardrail 防护配置列表。</p><p>当前最多支持 1 个元素。每个元素必须填写 InstanceId、ServiceId；Type 和 InputCheckDepth 为选填，不传时分别使用默认值 WAF 和 5。本结构不包含 GuardrailId，关联成功后由系统生成。</p>
+                     * 
+                     */
+                    std::vector<AssociateGuardrailConfig> GetGuardrails() const;
+
+                    /**
+                     * 设置<p>待关联的 Guardrail 防护配置列表。</p><p>当前最多支持 1 个元素。每个元素必须填写 InstanceId、ServiceId；Type 和 InputCheckDepth 为选填，不传时分别使用默认值 WAF 和 5。本结构不包含 GuardrailId，关联成功后由系统生成。</p>
+                     * @param _guardrails <p>待关联的 Guardrail 防护配置列表。</p><p>当前最多支持 1 个元素。每个元素必须填写 InstanceId、ServiceId；Type 和 InputCheckDepth 为选填，不传时分别使用默认值 WAF 和 5。本结构不包含 GuardrailId，关联成功后由系统生成。</p>
+                     * 
+                     */
+                    void SetGuardrails(const std::vector<AssociateGuardrailConfig>& _guardrails);
+
+                    /**
+                     * 判断参数 Guardrails 是否已赋值
+                     * @return Guardrails 是否已赋值
+                     * 
+                     */
+                    bool GuardrailsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模型路由实例 ID。</p>
+                     * @return ModelRouterId <p>模型路由实例 ID。</p>
+                     * 
+                     */
+                    std::string GetModelRouterId() const;
+
+                    /**
+                     * 设置<p>模型路由实例 ID。</p>
+                     * @param _modelRouterId <p>模型路由实例 ID。</p>
+                     * 
+                     */
+                    void SetModelRouterId(const std::string& _modelRouterId);
+
+                    /**
+                     * 判断参数 ModelRouterId 是否已赋值
+                     * @return ModelRouterId 是否已赋值
+                     * 
+                     */
+                    bool ModelRouterIdHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * <p>待关联的 Guardrail 防护配置列表。</p><p>当前最多支持 1 个元素。每个元素必须填写 InstanceId、ServiceId；Type 和 InputCheckDepth 为选填，不传时分别使用默认值 WAF 和 5。本结构不包含 GuardrailId，关联成功后由系统生成。</p>
+                     */
+                    std::vector<AssociateGuardrailConfig> m_guardrails;
+                    bool m_guardrailsHasBeenSet;
+
+                    /**
+                     * <p>模型路由实例 ID。</p>
+                     */
+                    std::string m_modelRouterId;
+                    bool m_modelRouterIdHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_CLB_V20180317_MODEL_ASSOCIATEMODELROUTERGUARDRAILSREQUEST_H_

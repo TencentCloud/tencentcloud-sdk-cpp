@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeOfflineExportTemporaryCredentialsResponse::DescribeOfflineExportTemporaryCredentialsResponse() :
     m_returnCodeHasBeenSet(false),
-    m_returnMsgHasBeenSet(false)
+    m_returnMsgHasBeenSet(false),
+    m_linkHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome DescribeOfflineExportTemporaryCredentialsResponse::Deseriali
         m_returnMsgHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Link") && !rsp["Link"].IsNull())
+    {
+        if (!rsp["Link"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Link` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_link = string(rsp["Link"].GetString());
+        m_linkHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string DescribeOfflineExportTemporaryCredentialsResponse::ToJsonString() const
         string key = "ReturnMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_returnMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_linkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Link";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_link.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +158,16 @@ string DescribeOfflineExportTemporaryCredentialsResponse::GetReturnMsg() const
 bool DescribeOfflineExportTemporaryCredentialsResponse::ReturnMsgHasBeenSet() const
 {
     return m_returnMsgHasBeenSet;
+}
+
+string DescribeOfflineExportTemporaryCredentialsResponse::GetLink() const
+{
+    return m_link;
+}
+
+bool DescribeOfflineExportTemporaryCredentialsResponse::LinkHasBeenSet() const
+{
+    return m_linkHasBeenSet;
 }
 
 

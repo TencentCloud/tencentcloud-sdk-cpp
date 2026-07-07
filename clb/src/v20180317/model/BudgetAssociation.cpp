@@ -25,8 +25,10 @@ BudgetAssociation::BudgetAssociation() :
     m_createdTimeHasBeenSet(false),
     m_keyIdHasBeenSet(false),
     m_modelRouterIdHasBeenSet(false),
+    m_resourceNameHasBeenSet(false),
+    m_statusHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_userGroupIdHasBeenSet(false)
 {
 }
 
@@ -75,14 +77,14 @@ CoreInternalOutcome BudgetAssociation::Deserialize(const rapidjson::Value &value
         m_modelRouterIdHasBeenSet = true;
     }
 
-    if (value.HasMember("Type") && !value["Type"].IsNull())
+    if (value.HasMember("ResourceName") && !value["ResourceName"].IsNull())
     {
-        if (!value["Type"].IsString())
+        if (!value["ResourceName"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `BudgetAssociation.Type` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BudgetAssociation.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_type = string(value["Type"].GetString());
-        m_typeHasBeenSet = true;
+        m_resourceName = string(value["ResourceName"].GetString());
+        m_resourceNameHasBeenSet = true;
     }
 
     if (value.HasMember("Status") && !value["Status"].IsNull())
@@ -93,6 +95,26 @@ CoreInternalOutcome BudgetAssociation::Deserialize(const rapidjson::Value &value
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BudgetAssociation.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserGroupId") && !value["UserGroupId"].IsNull())
+    {
+        if (!value["UserGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BudgetAssociation.UserGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userGroupId = string(value["UserGroupId"].GetString());
+        m_userGroupIdHasBeenSet = true;
     }
 
 
@@ -134,12 +156,12 @@ void BudgetAssociation::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, rapidjson::Value(m_modelRouterId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_typeHasBeenSet)
+    if (m_resourceNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Type";
+        string key = "ResourceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
@@ -148,6 +170,22 @@ void BudgetAssociation::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userGroupId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -217,20 +255,20 @@ bool BudgetAssociation::ModelRouterIdHasBeenSet() const
     return m_modelRouterIdHasBeenSet;
 }
 
-string BudgetAssociation::GetType() const
+string BudgetAssociation::GetResourceName() const
 {
-    return m_type;
+    return m_resourceName;
 }
 
-void BudgetAssociation::SetType(const string& _type)
+void BudgetAssociation::SetResourceName(const string& _resourceName)
 {
-    m_type = _type;
-    m_typeHasBeenSet = true;
+    m_resourceName = _resourceName;
+    m_resourceNameHasBeenSet = true;
 }
 
-bool BudgetAssociation::TypeHasBeenSet() const
+bool BudgetAssociation::ResourceNameHasBeenSet() const
 {
-    return m_typeHasBeenSet;
+    return m_resourceNameHasBeenSet;
 }
 
 string BudgetAssociation::GetStatus() const
@@ -247,5 +285,37 @@ void BudgetAssociation::SetStatus(const string& _status)
 bool BudgetAssociation::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string BudgetAssociation::GetType() const
+{
+    return m_type;
+}
+
+void BudgetAssociation::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool BudgetAssociation::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+string BudgetAssociation::GetUserGroupId() const
+{
+    return m_userGroupId;
+}
+
+void BudgetAssociation::SetUserGroupId(const string& _userGroupId)
+{
+    m_userGroupId = _userGroupId;
+    m_userGroupIdHasBeenSet = true;
+}
+
+bool BudgetAssociation::UserGroupIdHasBeenSet() const
+{
+    return m_userGroupIdHasBeenSet;
 }
 

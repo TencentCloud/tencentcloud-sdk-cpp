@@ -24,9 +24,9 @@ using namespace std;
 
 DescribeBudgetAssociationsRequest::DescribeBudgetAssociationsRequest() :
     m_budgetIdHasBeenSet(false),
-    m_typeHasBeenSet(false),
+    m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -45,12 +45,12 @@ string DescribeBudgetAssociationsRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_budgetId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_typeHasBeenSet)
+    if (m_limitHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Type";
+        string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
     }
 
     if (m_offsetHasBeenSet)
@@ -61,12 +61,12 @@ string DescribeBudgetAssociationsRequest::ToJsonString() const
         d.AddMember(iKey, m_offset, allocator);
     }
 
-    if (m_limitHasBeenSet)
+    if (m_typeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
+        string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -93,20 +93,20 @@ bool DescribeBudgetAssociationsRequest::BudgetIdHasBeenSet() const
     return m_budgetIdHasBeenSet;
 }
 
-string DescribeBudgetAssociationsRequest::GetType() const
+uint64_t DescribeBudgetAssociationsRequest::GetLimit() const
 {
-    return m_type;
+    return m_limit;
 }
 
-void DescribeBudgetAssociationsRequest::SetType(const string& _type)
+void DescribeBudgetAssociationsRequest::SetLimit(const uint64_t& _limit)
 {
-    m_type = _type;
-    m_typeHasBeenSet = true;
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
 }
 
-bool DescribeBudgetAssociationsRequest::TypeHasBeenSet() const
+bool DescribeBudgetAssociationsRequest::LimitHasBeenSet() const
 {
-    return m_typeHasBeenSet;
+    return m_limitHasBeenSet;
 }
 
 uint64_t DescribeBudgetAssociationsRequest::GetOffset() const
@@ -125,20 +125,20 @@ bool DescribeBudgetAssociationsRequest::OffsetHasBeenSet() const
     return m_offsetHasBeenSet;
 }
 
-uint64_t DescribeBudgetAssociationsRequest::GetLimit() const
+string DescribeBudgetAssociationsRequest::GetType() const
 {
-    return m_limit;
+    return m_type;
 }
 
-void DescribeBudgetAssociationsRequest::SetLimit(const uint64_t& _limit)
+void DescribeBudgetAssociationsRequest::SetType(const string& _type)
 {
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
+    m_type = _type;
+    m_typeHasBeenSet = true;
 }
 
-bool DescribeBudgetAssociationsRequest::LimitHasBeenSet() const
+bool DescribeBudgetAssociationsRequest::TypeHasBeenSet() const
 {
-    return m_limitHasBeenSet;
+    return m_typeHasBeenSet;
 }
 
 

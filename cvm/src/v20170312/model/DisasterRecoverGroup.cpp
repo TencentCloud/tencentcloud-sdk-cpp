@@ -29,6 +29,8 @@ DisasterRecoverGroup::DisasterRecoverGroup() :
     m_instanceIdsHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_affinityHasBeenSet(false),
+    m_strategyHasBeenSet(false),
+    m_partitionCountHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -119,6 +121,26 @@ CoreInternalOutcome DisasterRecoverGroup::Deserialize(const rapidjson::Value &va
         }
         m_affinity = value["Affinity"].GetInt64();
         m_affinityHasBeenSet = true;
+    }
+
+    if (value.HasMember("Strategy") && !value["Strategy"].IsNull())
+    {
+        if (!value["Strategy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisasterRecoverGroup.Strategy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_strategy = string(value["Strategy"].GetString());
+        m_strategyHasBeenSet = true;
+    }
+
+    if (value.HasMember("PartitionCount") && !value["PartitionCount"].IsNull())
+    {
+        if (!value["PartitionCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisasterRecoverGroup.PartitionCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_partitionCount = value["PartitionCount"].GetInt64();
+        m_partitionCountHasBeenSet = true;
     }
 
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
@@ -215,6 +237,22 @@ void DisasterRecoverGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Affinity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_affinity, allocator);
+    }
+
+    if (m_strategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Strategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_strategy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_partitionCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PartitionCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_partitionCount, allocator);
     }
 
     if (m_tagsHasBeenSet)
@@ -361,6 +399,38 @@ void DisasterRecoverGroup::SetAffinity(const int64_t& _affinity)
 bool DisasterRecoverGroup::AffinityHasBeenSet() const
 {
     return m_affinityHasBeenSet;
+}
+
+string DisasterRecoverGroup::GetStrategy() const
+{
+    return m_strategy;
+}
+
+void DisasterRecoverGroup::SetStrategy(const string& _strategy)
+{
+    m_strategy = _strategy;
+    m_strategyHasBeenSet = true;
+}
+
+bool DisasterRecoverGroup::StrategyHasBeenSet() const
+{
+    return m_strategyHasBeenSet;
+}
+
+int64_t DisasterRecoverGroup::GetPartitionCount() const
+{
+    return m_partitionCount;
+}
+
+void DisasterRecoverGroup::SetPartitionCount(const int64_t& _partitionCount)
+{
+    m_partitionCount = _partitionCount;
+    m_partitionCountHasBeenSet = true;
+}
+
+bool DisasterRecoverGroup::PartitionCountHasBeenSet() const
+{
+    return m_partitionCountHasBeenSet;
 }
 
 vector<Tag> DisasterRecoverGroup::GetTags() const

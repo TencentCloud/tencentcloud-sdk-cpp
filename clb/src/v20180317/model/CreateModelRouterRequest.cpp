@@ -24,18 +24,18 @@ using namespace std;
 
 CreateModelRouterRequest::CreateModelRouterRequest() :
     m_modelRouterTypeHasBeenSet(false),
-    m_modelRouterNameHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_portHasBeenSet(false),
-    m_certIdHasBeenSet(false),
-    m_networkTypeHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
     m_budgetIdHasBeenSet(false),
+    m_certIdHasBeenSet(false),
+    m_clusterInfoHasBeenSet(false),
+    m_modelRouterNameHasBeenSet(false),
+    m_networkTypeHasBeenSet(false),
+    m_portHasBeenSet(false),
     m_rateLimitConfigHasBeenSet(false),
     m_routerSettingHasBeenSet(false),
+    m_schemaHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clusterInfoHasBeenSet(false)
+    m_vpcIdHasBeenSet(false)
 {
 }
 
@@ -54,28 +54,12 @@ string CreateModelRouterRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_modelRouterType.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_modelRouterNameHasBeenSet)
+    if (m_budgetIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ModelRouterName";
+        string key = "BudgetId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_modelRouterName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_schemaHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Schema";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_schema.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_portHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Port";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_port, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_budgetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_certIdHasBeenSet)
@@ -86,6 +70,23 @@ string CreateModelRouterRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_certId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_clusterInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_clusterInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_modelRouterNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelRouterName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelRouterName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_networkTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -94,28 +95,12 @@ string CreateModelRouterRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_networkType.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_vpcIdHasBeenSet)
+    if (m_portHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "VpcId";
+        string key = "Port";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_subnetIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubnetId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_budgetIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BudgetId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_budgetId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_port, allocator);
     }
 
     if (m_rateLimitConfigHasBeenSet)
@@ -136,6 +121,22 @@ string CreateModelRouterRequest::ToJsonString() const
         m_routerSetting.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_schemaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Schema";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_schema.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_tagsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -151,13 +152,12 @@ string CreateModelRouterRequest::ToJsonString() const
         }
     }
 
-    if (m_clusterInfoHasBeenSet)
+    if (m_vpcIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClusterInfo";
+        string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_clusterInfo.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -184,52 +184,20 @@ bool CreateModelRouterRequest::ModelRouterTypeHasBeenSet() const
     return m_modelRouterTypeHasBeenSet;
 }
 
-string CreateModelRouterRequest::GetModelRouterName() const
+string CreateModelRouterRequest::GetBudgetId() const
 {
-    return m_modelRouterName;
+    return m_budgetId;
 }
 
-void CreateModelRouterRequest::SetModelRouterName(const string& _modelRouterName)
+void CreateModelRouterRequest::SetBudgetId(const string& _budgetId)
 {
-    m_modelRouterName = _modelRouterName;
-    m_modelRouterNameHasBeenSet = true;
+    m_budgetId = _budgetId;
+    m_budgetIdHasBeenSet = true;
 }
 
-bool CreateModelRouterRequest::ModelRouterNameHasBeenSet() const
+bool CreateModelRouterRequest::BudgetIdHasBeenSet() const
 {
-    return m_modelRouterNameHasBeenSet;
-}
-
-string CreateModelRouterRequest::GetSchema() const
-{
-    return m_schema;
-}
-
-void CreateModelRouterRequest::SetSchema(const string& _schema)
-{
-    m_schema = _schema;
-    m_schemaHasBeenSet = true;
-}
-
-bool CreateModelRouterRequest::SchemaHasBeenSet() const
-{
-    return m_schemaHasBeenSet;
-}
-
-uint64_t CreateModelRouterRequest::GetPort() const
-{
-    return m_port;
-}
-
-void CreateModelRouterRequest::SetPort(const uint64_t& _port)
-{
-    m_port = _port;
-    m_portHasBeenSet = true;
-}
-
-bool CreateModelRouterRequest::PortHasBeenSet() const
-{
-    return m_portHasBeenSet;
+    return m_budgetIdHasBeenSet;
 }
 
 string CreateModelRouterRequest::GetCertId() const
@@ -248,6 +216,38 @@ bool CreateModelRouterRequest::CertIdHasBeenSet() const
     return m_certIdHasBeenSet;
 }
 
+ClusterInfo CreateModelRouterRequest::GetClusterInfo() const
+{
+    return m_clusterInfo;
+}
+
+void CreateModelRouterRequest::SetClusterInfo(const ClusterInfo& _clusterInfo)
+{
+    m_clusterInfo = _clusterInfo;
+    m_clusterInfoHasBeenSet = true;
+}
+
+bool CreateModelRouterRequest::ClusterInfoHasBeenSet() const
+{
+    return m_clusterInfoHasBeenSet;
+}
+
+string CreateModelRouterRequest::GetModelRouterName() const
+{
+    return m_modelRouterName;
+}
+
+void CreateModelRouterRequest::SetModelRouterName(const string& _modelRouterName)
+{
+    m_modelRouterName = _modelRouterName;
+    m_modelRouterNameHasBeenSet = true;
+}
+
+bool CreateModelRouterRequest::ModelRouterNameHasBeenSet() const
+{
+    return m_modelRouterNameHasBeenSet;
+}
+
 string CreateModelRouterRequest::GetNetworkType() const
 {
     return m_networkType;
@@ -264,52 +264,20 @@ bool CreateModelRouterRequest::NetworkTypeHasBeenSet() const
     return m_networkTypeHasBeenSet;
 }
 
-string CreateModelRouterRequest::GetVpcId() const
+uint64_t CreateModelRouterRequest::GetPort() const
 {
-    return m_vpcId;
+    return m_port;
 }
 
-void CreateModelRouterRequest::SetVpcId(const string& _vpcId)
+void CreateModelRouterRequest::SetPort(const uint64_t& _port)
 {
-    m_vpcId = _vpcId;
-    m_vpcIdHasBeenSet = true;
+    m_port = _port;
+    m_portHasBeenSet = true;
 }
 
-bool CreateModelRouterRequest::VpcIdHasBeenSet() const
+bool CreateModelRouterRequest::PortHasBeenSet() const
 {
-    return m_vpcIdHasBeenSet;
-}
-
-string CreateModelRouterRequest::GetSubnetId() const
-{
-    return m_subnetId;
-}
-
-void CreateModelRouterRequest::SetSubnetId(const string& _subnetId)
-{
-    m_subnetId = _subnetId;
-    m_subnetIdHasBeenSet = true;
-}
-
-bool CreateModelRouterRequest::SubnetIdHasBeenSet() const
-{
-    return m_subnetIdHasBeenSet;
-}
-
-string CreateModelRouterRequest::GetBudgetId() const
-{
-    return m_budgetId;
-}
-
-void CreateModelRouterRequest::SetBudgetId(const string& _budgetId)
-{
-    m_budgetId = _budgetId;
-    m_budgetIdHasBeenSet = true;
-}
-
-bool CreateModelRouterRequest::BudgetIdHasBeenSet() const
-{
-    return m_budgetIdHasBeenSet;
+    return m_portHasBeenSet;
 }
 
 RateLimitConfigForModelRouter CreateModelRouterRequest::GetRateLimitConfig() const
@@ -344,6 +312,38 @@ bool CreateModelRouterRequest::RouterSettingHasBeenSet() const
     return m_routerSettingHasBeenSet;
 }
 
+string CreateModelRouterRequest::GetSchema() const
+{
+    return m_schema;
+}
+
+void CreateModelRouterRequest::SetSchema(const string& _schema)
+{
+    m_schema = _schema;
+    m_schemaHasBeenSet = true;
+}
+
+bool CreateModelRouterRequest::SchemaHasBeenSet() const
+{
+    return m_schemaHasBeenSet;
+}
+
+string CreateModelRouterRequest::GetSubnetId() const
+{
+    return m_subnetId;
+}
+
+void CreateModelRouterRequest::SetSubnetId(const string& _subnetId)
+{
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
+}
+
+bool CreateModelRouterRequest::SubnetIdHasBeenSet() const
+{
+    return m_subnetIdHasBeenSet;
+}
+
 vector<TagInfo> CreateModelRouterRequest::GetTags() const
 {
     return m_tags;
@@ -360,20 +360,20 @@ bool CreateModelRouterRequest::TagsHasBeenSet() const
     return m_tagsHasBeenSet;
 }
 
-ClusterInfo CreateModelRouterRequest::GetClusterInfo() const
+string CreateModelRouterRequest::GetVpcId() const
 {
-    return m_clusterInfo;
+    return m_vpcId;
 }
 
-void CreateModelRouterRequest::SetClusterInfo(const ClusterInfo& _clusterInfo)
+void CreateModelRouterRequest::SetVpcId(const string& _vpcId)
 {
-    m_clusterInfo = _clusterInfo;
-    m_clusterInfoHasBeenSet = true;
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
 }
 
-bool CreateModelRouterRequest::ClusterInfoHasBeenSet() const
+bool CreateModelRouterRequest::VpcIdHasBeenSet() const
 {
-    return m_clusterInfoHasBeenSet;
+    return m_vpcIdHasBeenSet;
 }
 
 

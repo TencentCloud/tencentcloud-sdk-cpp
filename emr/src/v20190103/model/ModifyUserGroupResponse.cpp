@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Emr::V20190103::Model;
 using namespace std;
 
-ModifyUserGroupResponse::ModifyUserGroupResponse()
+ModifyUserGroupResponse::ModifyUserGroupResponse() :
+    m_flowIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome ModifyUserGroupResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("FlowId") && !rsp["FlowId"].IsNull())
+    {
+        if (!rsp["FlowId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowId = rsp["FlowId"].GetInt64();
+        m_flowIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string ModifyUserGroupResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_flowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_flowId, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string ModifyUserGroupResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t ModifyUserGroupResponse::GetFlowId() const
+{
+    return m_flowId;
+}
+
+bool ModifyUserGroupResponse::FlowIdHasBeenSet() const
+{
+    return m_flowIdHasBeenSet;
+}
 
 

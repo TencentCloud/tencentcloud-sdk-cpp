@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Redis::V20180412::Model;
 using namespace std;
 
-CreateExportTaskResponse::CreateExportTaskResponse()
+CreateExportTaskResponse::CreateExportTaskResponse() :
+    m_fileNameHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateExportTaskResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("FileName") && !rsp["FileName"].IsNull())
+    {
+        if (!rsp["FileName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileName = string(rsp["FileName"].GetString());
+        m_fileNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateExportTaskResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_fileNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateExportTaskResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateExportTaskResponse::GetFileName() const
+{
+    return m_fileName;
+}
+
+bool CreateExportTaskResponse::FileNameHasBeenSet() const
+{
+    return m_fileNameHasBeenSet;
+}
 
 

@@ -22,7 +22,8 @@ using namespace std;
 
 IpAddressInfoSet::IpAddressInfoSet() :
     m_ipAddressHasBeenSet(false),
-    m_ispTypeHasBeenSet(false)
+    m_ispTypeHasBeenSet(false),
+    m_ddosProtectionTypeHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome IpAddressInfoSet::Deserialize(const rapidjson::Value &value)
         m_ispTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("DdosProtectionType") && !value["DdosProtectionType"].IsNull())
+    {
+        if (!value["DdosProtectionType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IpAddressInfoSet.DdosProtectionType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ddosProtectionType = string(value["DdosProtectionType"].GetString());
+        m_ddosProtectionTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void IpAddressInfoSet::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "IspType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ispType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ddosProtectionTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DdosProtectionType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ddosProtectionType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void IpAddressInfoSet::SetIspType(const string& _ispType)
 bool IpAddressInfoSet::IspTypeHasBeenSet() const
 {
     return m_ispTypeHasBeenSet;
+}
+
+string IpAddressInfoSet::GetDdosProtectionType() const
+{
+    return m_ddosProtectionType;
+}
+
+void IpAddressInfoSet::SetDdosProtectionType(const string& _ddosProtectionType)
+{
+    m_ddosProtectionType = _ddosProtectionType;
+    m_ddosProtectionTypeHasBeenSet = true;
+}
+
+bool IpAddressInfoSet::DdosProtectionTypeHasBeenSet() const
+{
+    return m_ddosProtectionTypeHasBeenSet;
 }
 

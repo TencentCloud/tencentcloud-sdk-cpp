@@ -130,27 +130,6 @@ namespace TencentCloud
                      */
                     bool RegionHasBeenSet() const;
 
-                    /**
-                     * 获取<p>数据库引擎版本</p>
-                     * @return Version <p>数据库引擎版本</p>
-                     * 
-                     */
-                    std::string GetVersion() const;
-
-                    /**
-                     * 设置<p>数据库引擎版本</p>
-                     * @param _version <p>数据库引擎版本</p>
-                     * 
-                     */
-                    void SetVersion(const std::string& _version);
-
-                    /**
-                     * 判断参数 Version 是否已赋值
-                     * @return Version 是否已赋值
-                     * 
-                     */
-                    bool VersionHasBeenSet() const;
-
                 private:
 
                     /**
@@ -176,12 +155,6 @@ namespace TencentCloud
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
-
-                    /**
-                     * <p>数据库引擎版本</p>
-                     */
-                    std::string m_version;
-                    bool m_versionHasBeenSet;
 
                 };
             }

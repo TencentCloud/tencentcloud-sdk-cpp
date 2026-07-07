@@ -65,7 +65,8 @@ Instance::Instance() :
     m_latestOperationErrorMsgHasBeenSet(false),
     m_metadataHasBeenSet(false),
     m_publicIPv6AddressesHasBeenSet(false),
-    m_cpuTopologyHasBeenSet(false)
+    m_cpuTopologyHasBeenSet(false),
+    m_partitionNumberHasBeenSet(false)
 {
 }
 
@@ -621,6 +622,16 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_cpuTopologyHasBeenSet = true;
     }
 
+    if (value.HasMember("PartitionNumber") && !value["PartitionNumber"].IsNull())
+    {
+        if (!value["PartitionNumber"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.PartitionNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_partitionNumber = value["PartitionNumber"].GetInt64();
+        m_partitionNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1043,6 +1054,14 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cpuTopology.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_partitionNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PartitionNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_partitionNumber, allocator);
     }
 
 }
@@ -1766,5 +1785,21 @@ void Instance::SetCpuTopology(const CpuTopology& _cpuTopology)
 bool Instance::CpuTopologyHasBeenSet() const
 {
     return m_cpuTopologyHasBeenSet;
+}
+
+int64_t Instance::GetPartitionNumber() const
+{
+    return m_partitionNumber;
+}
+
+void Instance::SetPartitionNumber(const int64_t& _partitionNumber)
+{
+    m_partitionNumber = _partitionNumber;
+    m_partitionNumberHasBeenSet = true;
+}
+
+bool Instance::PartitionNumberHasBeenSet() const
+{
+    return m_partitionNumberHasBeenSet;
 }
 
