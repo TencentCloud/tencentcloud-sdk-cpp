@@ -58,7 +58,7 @@ void Trip(TestableClient &c, const string &origin, const string &host) {
 
 const char *kP   = "cvm.tencentcloudapi.com";
 const char *kFb1 = "cvm.tencentcloudapi.com.cn";
-const char *kFb2 = "cvm.tencentcloudapi.cn";  // bottom (no breaker)
+const char *kFb2 = "cvm.tencentcloudapi.cn";
 
 }  // namespace
 
@@ -90,13 +90,24 @@ TEST(AbstractClientBreakerTest, DescendsToNextCandidateInOrder) {
     EXPECT_NE(d.breaker, nullptr);
 }
 
-TEST(AbstractClientBreakerTest, FrontCandidatesOpenFallsToBottomNoReport) {
+TEST(AbstractClientBreakerTest, FrontCandidatesOpenFallsToFb2WithBreaker) {
     TestableClient c(MakeProfile(""));
     Trip(c, kP, kP);
-    Trip(c, kP, kFb1);  // kFb2 is the bottom, has no breaker
+    Trip(c, kP, kFb1);
+    // kFb2 now also has a breaker (all candidates do).
     TestableClient::EndpointDecision d = c.SelectEndpoint(kP);
     EXPECT_EQ(d.host, kFb2);
-    EXPECT_EQ(d.breaker, nullptr);
+    EXPECT_NE(d.breaker, nullptr);  // kFb2 has breaker, Allow() == true
+}
+
+TEST(AbstractClientBreakerTest, AllOpenFallsBackToPrimaryNoReport) {
+    TestableClient c(MakeProfile(""));
+    Trip(c, kP, kP);
+    Trip(c, kP, kFb1);
+    Trip(c, kP, kFb2);  // all three tripped
+    TestableClient::EndpointDecision d = c.SelectEndpoint(kP);
+    EXPECT_EQ(d.host, kP);           // falls back to primary (origin)
+    EXPECT_EQ(d.breaker, nullptr);   // force-send, no report
 }
 
 TEST(AbstractClientBreakerTest, DisabledBypass) {

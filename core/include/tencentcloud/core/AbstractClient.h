@@ -122,10 +122,10 @@ namespace TencentCloud
         //
         // Breakers are keyed by (origin, host) in a lazily-populated
         // registry. The candidate list for a request is built by
-        // DomainFailoverManager::BuildCandidates(); every candidate
-        // except the LAST is guarded by a breaker. The last candidate is
-        // the bottom fallback: it is force-sent without a breaker and
-        // without reporting (legacy behavior preserved).
+        // DomainFailoverManager::BuildCandidates(); EVERY candidate
+        // (including the last) is guarded by a breaker. If all breakers
+        // are Open, SelectEndpoint falls back to the primary (origin)
+        // without a breaker — force-sent, no report.
         //
         // shared_ptr is used so async completion callbacks can capture
         // the selected breaker directly; the breaker then outlives the

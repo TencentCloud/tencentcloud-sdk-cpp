@@ -90,9 +90,10 @@ public:
 
     /// Build the ordered candidate endpoint list for one request:
     /// [primary, fallback1, fallback2, ...]. The first element is always
-    /// |primary|; the LAST element is the bottom fallback (the caller
-    /// must NOT guard it with a breaker -- it is force-sent without
-    /// reporting, preserving legacy behavior).
+    /// |primary|. ALL candidates are guarded by breakers in
+    /// SelectEndpoint(); if all breakers are Open, SelectEndpoint falls
+    /// back to primary (candidates[0]) without a breaker (force-send,
+    /// no report).
     ///
     /// Built on ParseEndpoint(): Mode A (BackupEndpoint set) appends the
     /// normalized backup via ResolveBackupEndpoint(); Mode B (no backup)

@@ -166,11 +166,13 @@ AbstractClient::EndpointDecision AbstractClient::SelectEndpoint(
     std::vector<std::string> candidates =
         DomainFailoverManager::BuildCandidates(primary_endpoint, backup_ep);
 
-    // The LAST candidate is the bottom fallback: no breaker, force-sent,
-    // not reported (legacy behavior). Only consult breakers for the
-    // candidates before it.
-    const size_t last = candidates.size() - 1;
-    for (size_t i = 0; i < last; ++i)
+    // Every candidate (including the last) is guarded by a breaker.
+    // If a candidate's breaker Allow()s, we send to it and Report the
+    // outcome. If ALL breakers are Open, we fall back to the primary
+    // (candidates[0]) without a breaker — force-send, no report.
+    // This aligns with Java SDK's selectHost(): origin first, then
+    // TLD rotation, all breakers open → fall through to origin.
+    for (size_t i = 0; i < candidates.size(); ++i)
     {
         std::shared_ptr<CircuitBreaker> breaker =
             BreakerFor(primary_endpoint, candidates[i]);
@@ -182,10 +184,9 @@ AbstractClient::EndpointDecision AbstractClient::SelectEndpoint(
             return d;
         }
     }
-    // All front candidates Open (or single-candidate case) -> fall to
-    // the bottom; force-send without reporting.
+    // All breakers Open -> force-send primary (origin), no report.
     EndpointDecision d;
-    d.host = candidates[last];
+    d.host = candidates[0];
     d.breaker = nullptr;
     return d;
 }
