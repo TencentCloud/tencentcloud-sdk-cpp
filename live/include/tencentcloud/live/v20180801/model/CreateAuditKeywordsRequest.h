@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取关键词列表。
-                     * @return Keywords 关键词列表。
+                     * 获取<p>关键词列表。</p>
+                     * @return Keywords <p>关键词列表。</p>
                      * 
                      */
                     std::vector<AuditKeyword> GetKeywords() const;
 
                     /**
-                     * 设置关键词列表。
-                     * @param _keywords 关键词列表。
+                     * 设置<p>关键词列表。</p>
+                     * @param _keywords <p>关键词列表。</p>
                      * 
                      */
                     void SetKeywords(const std::vector<AuditKeyword>& _keywords);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool KeywordsHasBeenSet() const;
 
                     /**
-                     * 获取直播审核词库Id。
-                     * @return LibId 直播审核词库Id。
+                     * 获取<p>直播审核词库Id。</p>
+                     * @return LibId <p>直播审核词库Id。</p>
                      * 
                      */
                     std::string GetLibId() const;
 
                     /**
-                     * 设置直播审核词库Id。
-                     * @param _libId 直播审核词库Id。
+                     * 设置<p>直播审核词库Id。</p>
+                     * @param _libId <p>直播审核词库Id。</p>
                      * 
                      */
                     void SetLibId(const std::string& _libId);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 关键词列表。
+                     * <p>关键词列表。</p>
                      */
                     std::vector<AuditKeyword> m_keywords;
                     bool m_keywordsHasBeenSet;
 
                     /**
-                     * 直播审核词库Id。
+                     * <p>直播审核词库Id。</p>
                      */
                     std::string m_libId;
                     bool m_libIdHasBeenSet;

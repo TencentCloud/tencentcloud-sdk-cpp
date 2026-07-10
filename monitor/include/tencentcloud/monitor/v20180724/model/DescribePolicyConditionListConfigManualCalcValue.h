@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取默认值
+                     * 获取<p>默认值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Default 默认值
+                     * @return Default <p>默认值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDefault() const;
 
                     /**
-                     * 设置默认值
+                     * 设置<p>默认值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _default 默认值
+                     * @param _default <p>默认值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool DefaultHasBeenSet() const;
 
                     /**
-                     * 获取固定值
+                     * 获取<p>固定值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Fixed 固定值
+                     * @return Fixed <p>固定值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFixed() const;
 
                     /**
-                     * 设置固定值
+                     * 设置<p>固定值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fixed 固定值
+                     * @param _fixed <p>固定值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool FixedHasBeenSet() const;
 
                     /**
-                     * 获取最大值
+                     * 获取<p>最大值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Max 最大值
+                     * @return Max <p>最大值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMax() const;
 
                     /**
-                     * 设置最大值
+                     * 设置<p>最大值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _max 最大值
+                     * @param _max <p>最大值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool MaxHasBeenSet() const;
 
                     /**
-                     * 获取最小值
+                     * 获取<p>最小值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Min 最小值
+                     * @return Min <p>最小值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMin() const;
 
                     /**
-                     * 设置最小值
+                     * 设置<p>最小值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _min 最小值
+                     * @param _min <p>最小值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,15 +147,15 @@ namespace TencentCloud
                     bool MinHasBeenSet() const;
 
                     /**
-                     * 获取是否必须
-                     * @return Need 是否必须
+                     * 获取<p>是否必须</p>
+                     * @return Need <p>是否必须</p>
                      * 
                      */
                     bool GetNeed() const;
 
                     /**
-                     * 设置是否必须
-                     * @param _need 是否必须
+                     * 设置<p>是否必须</p>
+                     * @param _need <p>是否必须</p>
                      * 
                      */
                     void SetNeed(const bool& _need);
@@ -170,35 +170,35 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 默认值
+                     * <p>默认值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_default;
                     bool m_defaultHasBeenSet;
 
                     /**
-                     * 固定值
+                     * <p>固定值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fixed;
                     bool m_fixedHasBeenSet;
 
                     /**
-                     * 最大值
+                     * <p>最大值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_max;
                     bool m_maxHasBeenSet;
 
                     /**
-                     * 最小值
+                     * <p>最小值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_min;
                     bool m_minHasBeenSet;
 
                     /**
-                     * 是否必须
+                     * <p>是否必须</p>
                      */
                     bool m_need;
                     bool m_needHasBeenSet;

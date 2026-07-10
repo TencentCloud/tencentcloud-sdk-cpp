@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取<p>回滚的sql 语句</p>
-                     * @return Rollback <p>回滚的sql 语句</p>
+                     * 获取<p>回滚的sql 语句</p><p>deprecated</p>
+                     * @return Rollback <p>回滚的sql 语句</p><p>deprecated</p>
                      * 
                      */
                     std::string GetRollback() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool RollbackHasBeenSet() const;
 
                     /**
-                     * 获取<p>migration query 语句的checksum值</p><p>由服务端自动生成，同版本 checksum 不一致会拒绝执行</p>
-                     * @return Checksum <p>migration query 语句的checksum值</p><p>由服务端自动生成，同版本 checksum 不一致会拒绝执行</p>
+                     * 获取<p>migration query 语句的checksum值,由服务端自动生成，同版本 checksum 不一致会拒绝执行</p><p>deprecated</p>
+                     * @return Checksum <p>migration query 语句的checksum值,由服务端自动生成，同版本 checksum 不一致会拒绝执行</p><p>deprecated</p>
                      * 
                      */
                     std::string GetChecksum() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool ChecksumHasBeenSet() const;
 
                     /**
-                     * 获取<p>用于标记调用来源</p>
-                     * @return Source <p>用于标记调用来源</p>
+                     * 获取<p>用于标记调用来源</p><p>deprecated</p>
+                     * @return Source <p>用于标记调用来源</p><p>deprecated</p>
                      * 
                      */
                     std::string GetSource() const;
@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取<p>用于标记该条migration由谁创建，目前默认调用的用户uin</p>
-                     * @return CreatedBy <p>用于标记该条migration由谁创建，目前默认调用的用户uin</p>
+                     * 获取<p>用于标记该条migration由谁创建，目前默认调用的用户uin</p><p>deprecated</p>
+                     * @return CreatedBy <p>用于标记该条migration由谁创建，目前默认调用的用户uin</p><p>deprecated</p>
                      * 
                      */
                     std::string GetCreatedBy() const;
@@ -142,8 +142,8 @@ namespace TencentCloud
                     bool CreatedByHasBeenSet() const;
 
                     /**
-                     * 获取<p>该migration创建时间</p>
-                     * @return CreatedAt <p>该migration创建时间</p>
+                     * 获取<p>该migration创建时间</p><p>deprecated</p>
+                     * @return CreatedAt <p>该migration创建时间</p><p>deprecated</p>
                      * 
                      */
                     std::string GetCreatedAt() const;
@@ -156,8 +156,8 @@ namespace TencentCloud
                     bool CreatedAtHasBeenSet() const;
 
                     /**
-                     * 获取<p>该migration应用时间</p>
-                     * @return AppliedAt <p>该migration应用时间</p>
+                     * 获取<p>该migration应用时间</p><p>deprecated</p>
+                     * @return AppliedAt <p>该migration应用时间</p><p>deprecated</p>
                      * 
                      */
                     std::string GetAppliedAt() const;
@@ -170,8 +170,8 @@ namespace TencentCloud
                     bool AppliedAtHasBeenSet() const;
 
                     /**
-                     * 获取<p>该migration执行耗时</p><p>单位：毫秒</p>
-                     * @return DurationMs <p>该migration执行耗时</p><p>单位：毫秒</p>
+                     * 获取<p>该migration执行耗时</p><p>单位：毫秒</p><p>deprecated</p>
+                     * @return DurationMs <p>该migration执行耗时</p><p>单位：毫秒</p><p>deprecated</p>
                      * 
                      */
                     int64_t GetDurationMs() const;
@@ -204,43 +204,43 @@ namespace TencentCloud
                     bool m_queryHasBeenSet;
 
                     /**
-                     * <p>回滚的sql 语句</p>
+                     * <p>回滚的sql 语句</p><p>deprecated</p>
                      */
                     std::string m_rollback;
                     bool m_rollbackHasBeenSet;
 
                     /**
-                     * <p>migration query 语句的checksum值</p><p>由服务端自动生成，同版本 checksum 不一致会拒绝执行</p>
+                     * <p>migration query 语句的checksum值,由服务端自动生成，同版本 checksum 不一致会拒绝执行</p><p>deprecated</p>
                      */
                     std::string m_checksum;
                     bool m_checksumHasBeenSet;
 
                     /**
-                     * <p>用于标记调用来源</p>
+                     * <p>用于标记调用来源</p><p>deprecated</p>
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * <p>用于标记该条migration由谁创建，目前默认调用的用户uin</p>
+                     * <p>用于标记该条migration由谁创建，目前默认调用的用户uin</p><p>deprecated</p>
                      */
                     std::string m_createdBy;
                     bool m_createdByHasBeenSet;
 
                     /**
-                     * <p>该migration创建时间</p>
+                     * <p>该migration创建时间</p><p>deprecated</p>
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
-                     * <p>该migration应用时间</p>
+                     * <p>该migration应用时间</p><p>deprecated</p>
                      */
                     std::string m_appliedAt;
                     bool m_appliedAtHasBeenSet;
 
                     /**
-                     * <p>该migration执行耗时</p><p>单位：毫秒</p>
+                     * <p>该migration执行耗时</p><p>单位：毫秒</p><p>deprecated</p>
                      */
                     int64_t m_durationMs;
                     bool m_durationMsHasBeenSet;

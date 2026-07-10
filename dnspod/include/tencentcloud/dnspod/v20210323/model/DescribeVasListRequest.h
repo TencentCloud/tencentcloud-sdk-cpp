@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取偏移量，默认值为0。
-                     * @return Offset 偏移量，默认值为0。
+                     * 获取<p>偏移量，默认值为0。</p>
+                     * @return Offset <p>偏移量，默认值为0。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认值为0。
-                     * @param _offset 偏移量，默认值为0。
+                     * 设置<p>偏移量，默认值为0。</p>
+                     * @param _offset <p>偏移量，默认值为0。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取限制数量，默认值为20。
-                     * @return Limit 限制数量，默认值为20。
+                     * 获取<p>限制数量，默认值为20。</p>
+                     * @return Limit <p>限制数量，默认值为20。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置限制数量，默认值为20。
-                     * @param _limit 限制数量，默认值为20。
+                     * 设置<p>限制数量，默认值为20。</p>
+                     * @param _limit <p>限制数量，默认值为20。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取域名ID
-                     * @return DomainId 域名ID
+                     * 获取<p>域名ID</p>
+                     * @return DomainId <p>域名ID</p>
                      * 
                      */
                     uint64_t GetDomainId() const;
 
                     /**
-                     * 设置域名ID
-                     * @param _domainId 域名ID
+                     * 设置<p>域名ID</p>
+                     * @param _domainId <p>域名ID</p>
                      * 
                      */
                     void SetDomainId(const uint64_t& _domainId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DomainIdHasBeenSet() const;
 
                     /**
-                     * 获取使用资源 ID 列表查询
-                     * @return ResourceIdList 使用资源 ID 列表查询
+                     * 获取<p>使用资源 ID 列表查询</p>
+                     * @return ResourceIdList <p>使用资源 ID 列表查询</p>
                      * 
                      */
                     std::vector<std::string> GetResourceIdList() const;
 
                     /**
-                     * 设置使用资源 ID 列表查询
-                     * @param _resourceIdList 使用资源 ID 列表查询
+                     * 设置<p>使用资源 ID 列表查询</p>
+                     * @param _resourceIdList <p>使用资源 ID 列表查询</p>
                      * 
                      */
                     void SetResourceIdList(const std::vector<std::string>& _resourceIdList);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ResourceIdListHasBeenSet() const;
 
                     /**
-                     * 获取增值服务类型
-                     * @return LimitType 增值服务类型
+                     * 获取<p>增值服务类型</p>
+                     * @return LimitType <p>增值服务类型</p>
                      * 
                      */
                     std::string GetLimitType() const;
 
                     /**
-                     * 设置增值服务类型
-                     * @param _limitType 增值服务类型
+                     * 设置<p>增值服务类型</p>
+                     * @param _limitType <p>增值服务类型</p>
                      * 
                      */
                     void SetLimitType(const std::string& _limitType);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 偏移量，默认值为0。
+                     * <p>偏移量，默认值为0。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 限制数量，默认值为20。
+                     * <p>限制数量，默认值为20。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 域名ID
+                     * <p>域名ID</p>
                      */
                     uint64_t m_domainId;
                     bool m_domainIdHasBeenSet;
 
                     /**
-                     * 使用资源 ID 列表查询
+                     * <p>使用资源 ID 列表查询</p>
                      */
                     std::vector<std::string> m_resourceIdList;
                     bool m_resourceIdListHasBeenSet;
 
                     /**
-                     * 增值服务类型
+                     * <p>增值服务类型</p>
                      */
                     std::string m_limitType;
                     bool m_limitTypeHasBeenSet;

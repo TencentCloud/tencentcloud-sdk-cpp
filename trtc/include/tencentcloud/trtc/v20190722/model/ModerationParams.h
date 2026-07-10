@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取审核任务类型， 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核  默认值1 
-                     * @return ModerationType 审核任务类型， 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核  默认值1 
+                     * 获取<p>AI 内容理解任务类型， 1:音频切片理解，2:视频截帧理解，3:音视切片+视频截帧理解  默认值1 </p><p>枚举值：</p><ul><li>1： 音频切片理解</li></ul>
+                     * @return ModerationType <p>AI 内容理解任务类型， 1:音频切片理解，2:视频截帧理解，3:音视切片+视频截帧理解  默认值1 </p><p>枚举值：</p><ul><li>1： 音频切片理解</li></ul>
                      * 
                      */
                     uint64_t GetModerationType() const;
 
                     /**
-                     * 设置审核任务类型， 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核  默认值1 
-                     * @param _moderationType 审核任务类型， 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核  默认值1 
+                     * 设置<p>AI 内容理解任务类型， 1:音频切片理解，2:视频截帧理解，3:音视切片+视频截帧理解  默认值1 </p><p>枚举值：</p><ul><li>1： 音频切片理解</li></ul>
+                     * @param _moderationType <p>AI 内容理解任务类型， 1:音频切片理解，2:视频截帧理解，3:音视切片+视频截帧理解  默认值1 </p><p>枚举值：</p><ul><li>1： 音频切片理解</li></ul>
                      * 
                      */
                     void SetModerationType(const uint64_t& _moderationType);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool ModerationTypeHasBeenSet() const;
 
                     /**
-                     * 获取房间内持续没有用户（主播）上行推流的状态超过MaxIdleTime的时长，自动停止切片，单位：秒。默认值为 30 秒，该值需大于等于 5秒，且小于等于1800秒(0.5小时)。示例值：30 
-                     * @return MaxIdleTime 房间内持续没有用户（主播）上行推流的状态超过MaxIdleTime的时长，自动停止切片，单位：秒。默认值为 30 秒，该值需大于等于 5秒，且小于等于1800秒(0.5小时)。示例值：30 
+                     * 获取<p>房间内持续没有用户（主播）上行推流的状态超过MaxIdleTime的时长，自动停止切片，单位：秒。默认值为 30 秒，该值需大于等于 5秒，且小于等于1800秒(0.5小时)。示例值：30</p>
+                     * @return MaxIdleTime <p>房间内持续没有用户（主播）上行推流的状态超过MaxIdleTime的时长，自动停止切片，单位：秒。默认值为 30 秒，该值需大于等于 5秒，且小于等于1800秒(0.5小时)。示例值：30</p>
                      * 
                      */
                     uint64_t GetMaxIdleTime() const;
 
                     /**
-                     * 设置房间内持续没有用户（主播）上行推流的状态超过MaxIdleTime的时长，自动停止切片，单位：秒。默认值为 30 秒，该值需大于等于 5秒，且小于等于1800秒(0.5小时)。示例值：30 
-                     * @param _maxIdleTime 房间内持续没有用户（主播）上行推流的状态超过MaxIdleTime的时长，自动停止切片，单位：秒。默认值为 30 秒，该值需大于等于 5秒，且小于等于1800秒(0.5小时)。示例值：30 
+                     * 设置<p>房间内持续没有用户（主播）上行推流的状态超过MaxIdleTime的时长，自动停止切片，单位：秒。默认值为 30 秒，该值需大于等于 5秒，且小于等于1800秒(0.5小时)。示例值：30</p>
+                     * @param _maxIdleTime <p>房间内持续没有用户（主播）上行推流的状态超过MaxIdleTime的时长，自动停止切片，单位：秒。默认值为 30 秒，该值需大于等于 5秒，且小于等于1800秒(0.5小时)。示例值：30</p>
                      * 
                      */
                     void SetMaxIdleTime(const uint64_t& _maxIdleTime);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool MaxIdleTimeHasBeenSet() const;
 
                     /**
-                     * 获取音频切片时长，默认15s 示例值：15, 范围15-60s
-                     * @return SliceAudio 音频切片时长，默认15s 示例值：15, 范围15-60s
+                     * 获取<p>音频切片时长，默认15s 示例值：15, 范围15-60s</p>
+                     * @return SliceAudio <p>音频切片时长，默认15s 示例值：15, 范围15-60s</p>
                      * 
                      */
                     uint64_t GetSliceAudio() const;
 
                     /**
-                     * 设置音频切片时长，默认15s 示例值：15, 范围15-60s
-                     * @param _sliceAudio 音频切片时长，默认15s 示例值：15, 范围15-60s
+                     * 设置<p>音频切片时长，默认15s 示例值：15, 范围15-60s</p>
+                     * @param _sliceAudio <p>音频切片时长，默认15s 示例值：15, 范围15-60s</p>
                      * 
                      */
                     void SetSliceAudio(const uint64_t& _sliceAudio);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool SliceAudioHasBeenSet() const;
 
                     /**
-                     * 获取视频截帧间隔时长，默认5s, 范围1-60s
-                     * @return SliceVideo 视频截帧间隔时长，默认5s, 范围1-60s
+                     * 获取<p>视频截帧间隔时长，默认5s, 范围1-60s</p>
+                     * @return SliceVideo <p>视频截帧间隔时长，默认5s, 范围1-60s</p>
                      * 
                      */
                     uint64_t GetSliceVideo() const;
 
                     /**
-                     * 设置视频截帧间隔时长，默认5s, 范围1-60s
-                     * @param _sliceVideo 视频截帧间隔时长，默认5s, 范围1-60s
+                     * 设置<p>视频截帧间隔时长，默认5s, 范围1-60s</p>
+                     * @param _sliceVideo <p>视频截帧间隔时长，默认5s, 范围1-60s</p>
                      * 
                      */
                     void SetSliceVideo(const uint64_t& _sliceVideo);
@@ -133,35 +133,15 @@ namespace TencentCloud
                     bool SliceVideoHasBeenSet() const;
 
                     /**
-                     * 获取供应商枚举，
-trtc : trtc内容理解（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
-tianyu : 天御内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
-ace  : ACE内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
-shumei : 数美审核（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
-yidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
-                     * @return ModerationSupplier 供应商枚举，
-trtc : trtc内容理解（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
-tianyu : 天御内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
-ace  : ACE内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
-shumei : 数美审核（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
-yidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
+                     * 获取<p>供应商枚举，<br>trtc : trtc内容理解</p>
+                     * @return ModerationSupplier <p>供应商枚举，<br>trtc : trtc内容理解</p>
                      * 
                      */
                     std::string GetModerationSupplier() const;
 
                     /**
-                     * 设置供应商枚举，
-trtc : trtc内容理解（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
-tianyu : 天御内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
-ace  : ACE内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
-shumei : 数美审核（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
-yidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
-                     * @param _moderationSupplier 供应商枚举，
-trtc : trtc内容理解（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
-tianyu : 天御内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
-ace  : ACE内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
-shumei : 数美审核（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
-yidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
+                     * 设置<p>供应商枚举，<br>trtc : trtc内容理解</p>
+                     * @param _moderationSupplier <p>供应商枚举，<br>trtc : trtc内容理解</p>
                      * 
                      */
                     void SetModerationSupplier(const std::string& _moderationSupplier);
@@ -174,15 +154,15 @@ yidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核
                     bool ModerationSupplierHasBeenSet() const;
 
                     /**
-                     * 获取第三方审核商送审需要配置信息, ModerationSupplier为trtc时，这个参数可以不需要初始化
-                     * @return ModerationSupplierParam 第三方审核商送审需要配置信息, ModerationSupplier为trtc时，这个参数可以不需要初始化
+                     * 获取<p>第三方内容理解供应商需要配置信息, ModerationSupplier为trtc时，这个参数可以不需要初始化</p>
+                     * @return ModerationSupplierParam <p>第三方内容理解供应商需要配置信息, ModerationSupplier为trtc时，这个参数可以不需要初始化</p>
                      * 
                      */
                     ModerationSupplierParam GetModerationSupplierParam() const;
 
                     /**
-                     * 设置第三方审核商送审需要配置信息, ModerationSupplier为trtc时，这个参数可以不需要初始化
-                     * @param _moderationSupplierParam 第三方审核商送审需要配置信息, ModerationSupplier为trtc时，这个参数可以不需要初始化
+                     * 设置<p>第三方内容理解供应商需要配置信息, ModerationSupplier为trtc时，这个参数可以不需要初始化</p>
+                     * @param _moderationSupplierParam <p>第三方内容理解供应商需要配置信息, ModerationSupplier为trtc时，这个参数可以不需要初始化</p>
                      * 
                      */
                     void SetModerationSupplierParam(const ModerationSupplierParam& _moderationSupplierParam);
@@ -195,15 +175,15 @@ yidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核
                     bool ModerationSupplierParamHasBeenSet() const;
 
                     /**
-                     * 获取是否保存文件:  0不保存文件 1保存所有文件 2仅保存命中文件
-                     * @return SaveModerationFile 是否保存文件:  0不保存文件 1保存所有文件 2仅保存命中文件
+                     * 获取<p>是否保存文件:  0不保存文件 1保存所有文件 2仅保存命中文件</p>
+                     * @return SaveModerationFile <p>是否保存文件:  0不保存文件 1保存所有文件 2仅保存命中文件</p>
                      * 
                      */
                     uint64_t GetSaveModerationFile() const;
 
                     /**
-                     * 设置是否保存文件:  0不保存文件 1保存所有文件 2仅保存命中文件
-                     * @param _saveModerationFile 是否保存文件:  0不保存文件 1保存所有文件 2仅保存命中文件
+                     * 设置<p>是否保存文件:  0不保存文件 1保存所有文件 2仅保存命中文件</p>
+                     * @param _saveModerationFile <p>是否保存文件:  0不保存文件 1保存所有文件 2仅保存命中文件</p>
                      * 
                      */
                     void SetSaveModerationFile(const uint64_t& _saveModerationFile);
@@ -216,15 +196,15 @@ yidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核
                     bool SaveModerationFileHasBeenSet() const;
 
                     /**
-                     * 获取是否回调所有审核结果:0 默认回调所有结果 1 仅回调命中结果 
-                     * @return CallbackAllResults 是否回调所有审核结果:0 默认回调所有结果 1 仅回调命中结果 
+                     * 获取<p>是否回调所有内容理解结果:0 默认回调所有结果 1 仅回调命中结果</p>
+                     * @return CallbackAllResults <p>是否回调所有内容理解结果:0 默认回调所有结果 1 仅回调命中结果</p>
                      * 
                      */
                     uint64_t GetCallbackAllResults() const;
 
                     /**
-                     * 设置是否回调所有审核结果:0 默认回调所有结果 1 仅回调命中结果 
-                     * @param _callbackAllResults 是否回调所有审核结果:0 默认回调所有结果 1 仅回调命中结果 
+                     * 设置<p>是否回调所有内容理解结果:0 默认回调所有结果 1 仅回调命中结果</p>
+                     * @param _callbackAllResults <p>是否回调所有内容理解结果:0 默认回调所有结果 1 仅回调命中结果</p>
                      * 
                      */
                     void SetCallbackAllResults(const uint64_t& _callbackAllResults);
@@ -237,15 +217,15 @@ yidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核
                     bool CallbackAllResultsHasBeenSet() const;
 
                     /**
-                     * 获取指定订阅流白名单或者黑名单。
-                     * @return SubscribeStreamUserIds 指定订阅流白名单或者黑名单。
+                     * 获取<p>指定订阅流白名单或者黑名单。</p>
+                     * @return SubscribeStreamUserIds <p>指定订阅流白名单或者黑名单。</p>
                      * 
                      */
                     SubscribeModerationUserIds GetSubscribeStreamUserIds() const;
 
                     /**
-                     * 设置指定订阅流白名单或者黑名单。
-                     * @param _subscribeStreamUserIds 指定订阅流白名单或者黑名单。
+                     * 设置<p>指定订阅流白名单或者黑名单。</p>
+                     * @param _subscribeStreamUserIds <p>指定订阅流白名单或者黑名单。</p>
                      * 
                      */
                     void SetSubscribeStreamUserIds(const SubscribeModerationUserIds& _subscribeStreamUserIds);
@@ -260,60 +240,55 @@ yidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核
                 private:
 
                     /**
-                     * 审核任务类型， 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核  默认值1 
+                     * <p>AI 内容理解任务类型， 1:音频切片理解，2:视频截帧理解，3:音视切片+视频截帧理解  默认值1 </p><p>枚举值：</p><ul><li>1： 音频切片理解</li></ul>
                      */
                     uint64_t m_moderationType;
                     bool m_moderationTypeHasBeenSet;
 
                     /**
-                     * 房间内持续没有用户（主播）上行推流的状态超过MaxIdleTime的时长，自动停止切片，单位：秒。默认值为 30 秒，该值需大于等于 5秒，且小于等于1800秒(0.5小时)。示例值：30 
+                     * <p>房间内持续没有用户（主播）上行推流的状态超过MaxIdleTime的时长，自动停止切片，单位：秒。默认值为 30 秒，该值需大于等于 5秒，且小于等于1800秒(0.5小时)。示例值：30</p>
                      */
                     uint64_t m_maxIdleTime;
                     bool m_maxIdleTimeHasBeenSet;
 
                     /**
-                     * 音频切片时长，默认15s 示例值：15, 范围15-60s
+                     * <p>音频切片时长，默认15s 示例值：15, 范围15-60s</p>
                      */
                     uint64_t m_sliceAudio;
                     bool m_sliceAudioHasBeenSet;
 
                     /**
-                     * 视频截帧间隔时长，默认5s, 范围1-60s
+                     * <p>视频截帧间隔时长，默认5s, 范围1-60s</p>
                      */
                     uint64_t m_sliceVideo;
                     bool m_sliceVideoHasBeenSet;
 
                     /**
-                     * 供应商枚举，
-trtc : trtc内容理解（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
-tianyu : 天御内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
-ace  : ACE内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
-shumei : 数美审核（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
-yidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
+                     * <p>供应商枚举，<br>trtc : trtc内容理解</p>
                      */
                     std::string m_moderationSupplier;
                     bool m_moderationSupplierHasBeenSet;
 
                     /**
-                     * 第三方审核商送审需要配置信息, ModerationSupplier为trtc时，这个参数可以不需要初始化
+                     * <p>第三方内容理解供应商需要配置信息, ModerationSupplier为trtc时，这个参数可以不需要初始化</p>
                      */
                     ModerationSupplierParam m_moderationSupplierParam;
                     bool m_moderationSupplierParamHasBeenSet;
 
                     /**
-                     * 是否保存文件:  0不保存文件 1保存所有文件 2仅保存命中文件
+                     * <p>是否保存文件:  0不保存文件 1保存所有文件 2仅保存命中文件</p>
                      */
                     uint64_t m_saveModerationFile;
                     bool m_saveModerationFileHasBeenSet;
 
                     /**
-                     * 是否回调所有审核结果:0 默认回调所有结果 1 仅回调命中结果 
+                     * <p>是否回调所有内容理解结果:0 默认回调所有结果 1 仅回调命中结果</p>
                      */
                     uint64_t m_callbackAllResults;
                     bool m_callbackAllResultsHasBeenSet;
 
                     /**
-                     * 指定订阅流白名单或者黑名单。
+                     * <p>指定订阅流白名单或者黑名单。</p>
                      */
                     SubscribeModerationUserIds m_subscribeStreamUserIds;
                     bool m_subscribeStreamUserIdsHasBeenSet;

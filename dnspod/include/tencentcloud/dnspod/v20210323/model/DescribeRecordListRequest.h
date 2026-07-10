@@ -87,21 +87,21 @@ namespace TencentCloud
                     /**
                      * 获取<p>解析记录的主机头，如果传了此参数，则只会返回此主机头对应的解析记录</p>
                      * @return Subdomain <p>解析记录的主机头，如果传了此参数，则只会返回此主机头对应的解析记录</p>
-                     * 
+                     * @deprecated
                      */
                     std::string GetSubdomain() const;
 
                     /**
                      * 设置<p>解析记录的主机头，如果传了此参数，则只会返回此主机头对应的解析记录</p>
                      * @param _subdomain <p>解析记录的主机头，如果传了此参数，则只会返回此主机头对应的解析记录</p>
-                     * 
+                     * @deprecated
                      */
                     void SetSubdomain(const std::string& _subdomain);
 
                     /**
                      * 判断参数 Subdomain 是否已赋值
                      * @return Subdomain 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SubdomainHasBeenSet() const;
 
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取<p>查询不到数据时是否报错</p>枚举值：<ul><li> yes： 报错</li><li> no： 不报错，返回空列表</li></ul>默认值：yes
-                     * @return ErrorOnEmpty <p>查询不到数据时是否报错</p>枚举值：<ul><li> yes： 报错</li><li> no： 不报错，返回空列表</li></ul>默认值：yes
+                     * 获取<p>查询不到数据时是否报错</p><p>枚举值：</p><ul><li>yes： 报错</li><li>no： 不报错，返回空列表</li></ul><p>默认值：yes</p>
+                     * @return ErrorOnEmpty <p>查询不到数据时是否报错</p><p>枚举值：</p><ul><li>yes： 报错</li><li>no： 不报错，返回空列表</li></ul><p>默认值：yes</p>
                      * 
                      */
                     std::string GetErrorOnEmpty() const;
 
                     /**
-                     * 设置<p>查询不到数据时是否报错</p>枚举值：<ul><li> yes： 报错</li><li> no： 不报错，返回空列表</li></ul>默认值：yes
-                     * @param _errorOnEmpty <p>查询不到数据时是否报错</p>枚举值：<ul><li> yes： 报错</li><li> no： 不报错，返回空列表</li></ul>默认值：yes
+                     * 设置<p>查询不到数据时是否报错</p><p>枚举值：</p><ul><li>yes： 报错</li><li>no： 不报错，返回空列表</li></ul><p>默认值：yes</p>
+                     * @param _errorOnEmpty <p>查询不到数据时是否报错</p><p>枚举值：</p><ul><li>yes： 报错</li><li>no： 不报错，返回空列表</li></ul><p>默认值：yes</p>
                      * 
                      */
                     void SetErrorOnEmpty(const std::string& _errorOnEmpty);
@@ -314,6 +314,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ErrorOnEmptyHasBeenSet() const;
+
+                    /**
+                     * 获取<p>解析记录的主机头，如果传了此参数，则只会返回此主机头对应的解析记录</p><p>新增规范参数，同时传递SubDomain和Subdomain参数时，后端优先使用SubDomain参数</p>
+                     * @return SubDomain <p>解析记录的主机头，如果传了此参数，则只会返回此主机头对应的解析记录</p><p>新增规范参数，同时传递SubDomain和Subdomain参数时，后端优先使用SubDomain参数</p>
+                     * 
+                     */
+                    std::string GetSubDomain() const;
+
+                    /**
+                     * 设置<p>解析记录的主机头，如果传了此参数，则只会返回此主机头对应的解析记录</p><p>新增规范参数，同时传递SubDomain和Subdomain参数时，后端优先使用SubDomain参数</p>
+                     * @param _subDomain <p>解析记录的主机头，如果传了此参数，则只会返回此主机头对应的解析记录</p><p>新增规范参数，同时传递SubDomain和Subdomain参数时，后端优先使用SubDomain参数</p>
+                     * 
+                     */
+                    void SetSubDomain(const std::string& _subDomain);
+
+                    /**
+                     * 判断参数 SubDomain 是否已赋值
+                     * @return SubDomain 是否已赋值
+                     * 
+                     */
+                    bool SubDomainHasBeenSet() const;
 
                 private:
 
@@ -390,10 +411,16 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * <p>查询不到数据时是否报错</p>枚举值：<ul><li> yes： 报错</li><li> no： 不报错，返回空列表</li></ul>默认值：yes
+                     * <p>查询不到数据时是否报错</p><p>枚举值：</p><ul><li>yes： 报错</li><li>no： 不报错，返回空列表</li></ul><p>默认值：yes</p>
                      */
                     std::string m_errorOnEmpty;
                     bool m_errorOnEmptyHasBeenSet;
+
+                    /**
+                     * <p>解析记录的主机头，如果传了此参数，则只会返回此主机头对应的解析记录</p><p>新增规范参数，同时传递SubDomain和Subdomain参数时，后端优先使用SubDomain参数</p>
+                     */
+                    std::string m_subDomain;
+                    bool m_subDomainHasBeenSet;
 
                 };
             }

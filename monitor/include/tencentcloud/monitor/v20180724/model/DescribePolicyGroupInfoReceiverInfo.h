@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警接收组id列表
-                     * @return ReceiverGroupList 告警接收组id列表
+                     * 获取<p>告警接收组id列表</p>
+                     * @return ReceiverGroupList <p>告警接收组id列表</p>
                      * 
                      */
                     std::vector<int64_t> GetReceiverGroupList() const;
 
                     /**
-                     * 设置告警接收组id列表
-                     * @param _receiverGroupList 告警接收组id列表
+                     * 设置<p>告警接收组id列表</p>
+                     * @param _receiverGroupList <p>告警接收组id列表</p>
                      * 
                      */
                     void SetReceiverGroupList(const std::vector<int64_t>& _receiverGroupList);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ReceiverGroupListHasBeenSet() const;
 
                     /**
-                     * 获取告警接收人id列表
-                     * @return ReceiverUserList 告警接收人id列表
+                     * 获取<p>告警接收人id列表</p>
+                     * @return ReceiverUserList <p>告警接收人id列表</p>
                      * 
                      */
                     std::vector<int64_t> GetReceiverUserList() const;
 
                     /**
-                     * 设置告警接收人id列表
-                     * @param _receiverUserList 告警接收人id列表
+                     * 设置<p>告警接收人id列表</p>
+                     * @param _receiverUserList <p>告警接收人id列表</p>
                      * 
                      */
                     void SetReceiverUserList(const std::vector<int64_t>& _receiverUserList);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ReceiverUserListHasBeenSet() const;
 
                     /**
-                     * 获取告警时间段开始时间。范围[0,86400)，作为 UNIX 时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
-                     * @return StartTime 告警时间段开始时间。范围[0,86400)，作为 UNIX 时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
+                     * 获取<p>告警时间段开始时间。范围[0,86400)，作为 UNIX 时间戳转成北京时间后去掉日期，例如7200表示&quot;10:0:0&quot;</p>
+                     * @return StartTime <p>告警时间段开始时间。范围[0,86400)，作为 UNIX 时间戳转成北京时间后去掉日期，例如7200表示&quot;10:0:0&quot;</p>
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置告警时间段开始时间。范围[0,86400)，作为 UNIX 时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
-                     * @param _startTime 告警时间段开始时间。范围[0,86400)，作为 UNIX 时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
+                     * 设置<p>告警时间段开始时间。范围[0,86400)，作为 UNIX 时间戳转成北京时间后去掉日期，例如7200表示&quot;10:0:0&quot;</p>
+                     * @param _startTime <p>告警时间段开始时间。范围[0,86400)，作为 UNIX 时间戳转成北京时间后去掉日期，例如7200表示&quot;10:0:0&quot;</p>
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取告警时间段结束时间。含义同StartTime
-                     * @return EndTime 告警时间段结束时间。含义同StartTime
+                     * 获取<p>告警时间段结束时间。含义同StartTime</p>
+                     * @return EndTime <p>告警时间段结束时间。含义同StartTime</p>
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置告警时间段结束时间。含义同StartTime
-                     * @param _endTime 告警时间段结束时间。含义同StartTime
+                     * 设置<p>告警时间段结束时间。含义同StartTime</p>
+                     * @param _endTime <p>告警时间段结束时间。含义同StartTime</p>
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取接收类型。“group”(接收组)或“user”(接收人)
-                     * @return ReceiverType 接收类型。“group”(接收组)或“user”(接收人)
+                     * 获取<p>接收类型。“group”(接收组)或“user”(接收人)</p>
+                     * @return ReceiverType <p>接收类型。“group”(接收组)或“user”(接收人)</p>
                      * 
                      */
                     std::string GetReceiverType() const;
 
                     /**
-                     * 设置接收类型。“group”(接收组)或“user”(接收人)
-                     * @param _receiverType 接收类型。“group”(接收组)或“user”(接收人)
+                     * 设置<p>接收类型。“group”(接收组)或“user”(接收人)</p>
+                     * @param _receiverType <p>接收类型。“group”(接收组)或“user”(接收人)</p>
                      * 
                      */
                     void SetReceiverType(const std::string& _receiverType);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ReceiverTypeHasBeenSet() const;
 
                     /**
-                     * 获取告警通知方式。可选 "SMS","SITE","EMAIL","CALL","WECHAT"
-                     * @return NotifyWay 告警通知方式。可选 "SMS","SITE","EMAIL","CALL","WECHAT"
+                     * 获取<p>告警通知方式。可选 &quot;SMS&quot;,&quot;SITE&quot;,&quot;EMAIL&quot;,&quot;CALL&quot;,&quot;WECHAT&quot;</p>
+                     * @return NotifyWay <p>告警通知方式。可选 &quot;SMS&quot;,&quot;SITE&quot;,&quot;EMAIL&quot;,&quot;CALL&quot;,&quot;WECHAT&quot;</p>
                      * 
                      */
                     std::vector<std::string> GetNotifyWay() const;
 
                     /**
-                     * 设置告警通知方式。可选 "SMS","SITE","EMAIL","CALL","WECHAT"
-                     * @param _notifyWay 告警通知方式。可选 "SMS","SITE","EMAIL","CALL","WECHAT"
+                     * 设置<p>告警通知方式。可选 &quot;SMS&quot;,&quot;SITE&quot;,&quot;EMAIL&quot;,&quot;CALL&quot;,&quot;WECHAT&quot;</p>
+                     * @param _notifyWay <p>告警通知方式。可选 &quot;SMS&quot;,&quot;SITE&quot;,&quot;EMAIL&quot;,&quot;CALL&quot;,&quot;WECHAT&quot;</p>
                      * 
                      */
                     void SetNotifyWay(const std::vector<std::string>& _notifyWay);
@@ -173,18 +173,18 @@ namespace TencentCloud
                     bool NotifyWayHasBeenSet() const;
 
                     /**
-                     * 获取电话告警接收者uid
+                     * 获取<p>电话告警接收者uid</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UidList 电话告警接收者uid
+                     * @return UidList <p>电话告警接收者uid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetUidList() const;
 
                     /**
-                     * 设置电话告警接收者uid
+                     * 设置<p>电话告警接收者uid</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _uidList 电话告警接收者uid
+                     * @param _uidList <p>电话告警接收者uid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -198,15 +198,15 @@ namespace TencentCloud
                     bool UidListHasBeenSet() const;
 
                     /**
-                     * 获取电话告警轮数
-                     * @return RoundNumber 电话告警轮数
+                     * 获取<p>电话告警轮数</p>
+                     * @return RoundNumber <p>电话告警轮数</p>
                      * 
                      */
                     int64_t GetRoundNumber() const;
 
                     /**
-                     * 设置电话告警轮数
-                     * @param _roundNumber 电话告警轮数
+                     * 设置<p>电话告警轮数</p>
+                     * @param _roundNumber <p>电话告警轮数</p>
                      * 
                      */
                     void SetRoundNumber(const int64_t& _roundNumber);
@@ -219,15 +219,15 @@ namespace TencentCloud
                     bool RoundNumberHasBeenSet() const;
 
                     /**
-                     * 获取电话告警每轮间隔（秒）
-                     * @return RoundInterval 电话告警每轮间隔（秒）
+                     * 获取<p>电话告警每轮间隔（秒）</p>
+                     * @return RoundInterval <p>电话告警每轮间隔（秒）</p>
                      * 
                      */
                     int64_t GetRoundInterval() const;
 
                     /**
-                     * 设置电话告警每轮间隔（秒）
-                     * @param _roundInterval 电话告警每轮间隔（秒）
+                     * 设置<p>电话告警每轮间隔（秒）</p>
+                     * @param _roundInterval <p>电话告警每轮间隔（秒）</p>
                      * 
                      */
                     void SetRoundInterval(const int64_t& _roundInterval);
@@ -240,15 +240,15 @@ namespace TencentCloud
                     bool RoundIntervalHasBeenSet() const;
 
                     /**
-                     * 获取电话告警对个人间隔（秒）
-                     * @return PersonInterval 电话告警对个人间隔（秒）
+                     * 获取<p>电话告警对个人间隔（秒）</p>
+                     * @return PersonInterval <p>电话告警对个人间隔（秒）</p>
                      * 
                      */
                     int64_t GetPersonInterval() const;
 
                     /**
-                     * 设置电话告警对个人间隔（秒）
-                     * @param _personInterval 电话告警对个人间隔（秒）
+                     * 设置<p>电话告警对个人间隔（秒）</p>
+                     * @param _personInterval <p>电话告警对个人间隔（秒）</p>
                      * 
                      */
                     void SetPersonInterval(const int64_t& _personInterval);
@@ -261,15 +261,15 @@ namespace TencentCloud
                     bool PersonIntervalHasBeenSet() const;
 
                     /**
-                     * 获取是否需要电话告警触达提示。0不需要，1需要
-                     * @return NeedSendNotice 是否需要电话告警触达提示。0不需要，1需要
+                     * 获取<p>是否需要电话告警触达提示。0不需要，1需要</p>
+                     * @return NeedSendNotice <p>是否需要电话告警触达提示。0不需要，1需要</p>
                      * 
                      */
                     int64_t GetNeedSendNotice() const;
 
                     /**
-                     * 设置是否需要电话告警触达提示。0不需要，1需要
-                     * @param _needSendNotice 是否需要电话告警触达提示。0不需要，1需要
+                     * 设置<p>是否需要电话告警触达提示。0不需要，1需要</p>
+                     * @param _needSendNotice <p>是否需要电话告警触达提示。0不需要，1需要</p>
                      * 
                      */
                     void SetNeedSendNotice(const int64_t& _needSendNotice);
@@ -282,15 +282,15 @@ namespace TencentCloud
                     bool NeedSendNoticeHasBeenSet() const;
 
                     /**
-                     * 获取电话告警通知时机。可选"OCCUR"(告警时通知),"RECOVER"(恢复时通知)
-                     * @return SendFor 电话告警通知时机。可选"OCCUR"(告警时通知),"RECOVER"(恢复时通知)
+                     * 获取<p>电话告警通知时机。可选&quot;OCCUR&quot;(告警时通知),&quot;RECOVER&quot;(恢复时通知)</p>
+                     * @return SendFor <p>电话告警通知时机。可选&quot;OCCUR&quot;(告警时通知),&quot;RECOVER&quot;(恢复时通知)</p>
                      * 
                      */
                     std::vector<std::string> GetSendFor() const;
 
                     /**
-                     * 设置电话告警通知时机。可选"OCCUR"(告警时通知),"RECOVER"(恢复时通知)
-                     * @param _sendFor 电话告警通知时机。可选"OCCUR"(告警时通知),"RECOVER"(恢复时通知)
+                     * 设置<p>电话告警通知时机。可选&quot;OCCUR&quot;(告警时通知),&quot;RECOVER&quot;(恢复时通知)</p>
+                     * @param _sendFor <p>电话告警通知时机。可选&quot;OCCUR&quot;(告警时通知),&quot;RECOVER&quot;(恢复时通知)</p>
                      * 
                      */
                     void SetSendFor(const std::vector<std::string>& _sendFor);
@@ -303,15 +303,15 @@ namespace TencentCloud
                     bool SendForHasBeenSet() const;
 
                     /**
-                     * 获取恢复通知方式。可选"SMS"
-                     * @return RecoverNotify 恢复通知方式。可选"SMS"
+                     * 获取<p>恢复通知方式。可选&quot;SMS&quot;</p>
+                     * @return RecoverNotify <p>恢复通知方式。可选&quot;SMS&quot;</p>
                      * 
                      */
                     std::vector<std::string> GetRecoverNotify() const;
 
                     /**
-                     * 设置恢复通知方式。可选"SMS"
-                     * @param _recoverNotify 恢复通知方式。可选"SMS"
+                     * 设置<p>恢复通知方式。可选&quot;SMS&quot;</p>
+                     * @param _recoverNotify <p>恢复通知方式。可选&quot;SMS&quot;</p>
                      * 
                      */
                     void SetRecoverNotify(const std::vector<std::string>& _recoverNotify);
@@ -324,18 +324,18 @@ namespace TencentCloud
                     bool RecoverNotifyHasBeenSet() const;
 
                     /**
-                     * 获取告警发送语言
+                     * 获取<p>告警发送语言</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReceiveLanguage 告警发送语言
+                     * @return ReceiveLanguage <p>告警发送语言</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReceiveLanguage() const;
 
                     /**
-                     * 设置告警发送语言
+                     * 设置<p>告警发送语言</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _receiveLanguage 告警发送语言
+                     * @param _receiveLanguage <p>告警发送语言</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -351,86 +351,86 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 告警接收组id列表
+                     * <p>告警接收组id列表</p>
                      */
                     std::vector<int64_t> m_receiverGroupList;
                     bool m_receiverGroupListHasBeenSet;
 
                     /**
-                     * 告警接收人id列表
+                     * <p>告警接收人id列表</p>
                      */
                     std::vector<int64_t> m_receiverUserList;
                     bool m_receiverUserListHasBeenSet;
 
                     /**
-                     * 告警时间段开始时间。范围[0,86400)，作为 UNIX 时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
+                     * <p>告警时间段开始时间。范围[0,86400)，作为 UNIX 时间戳转成北京时间后去掉日期，例如7200表示&quot;10:0:0&quot;</p>
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 告警时间段结束时间。含义同StartTime
+                     * <p>告警时间段结束时间。含义同StartTime</p>
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 接收类型。“group”(接收组)或“user”(接收人)
+                     * <p>接收类型。“group”(接收组)或“user”(接收人)</p>
                      */
                     std::string m_receiverType;
                     bool m_receiverTypeHasBeenSet;
 
                     /**
-                     * 告警通知方式。可选 "SMS","SITE","EMAIL","CALL","WECHAT"
+                     * <p>告警通知方式。可选 &quot;SMS&quot;,&quot;SITE&quot;,&quot;EMAIL&quot;,&quot;CALL&quot;,&quot;WECHAT&quot;</p>
                      */
                     std::vector<std::string> m_notifyWay;
                     bool m_notifyWayHasBeenSet;
 
                     /**
-                     * 电话告警接收者uid
+                     * <p>电话告警接收者uid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_uidList;
                     bool m_uidListHasBeenSet;
 
                     /**
-                     * 电话告警轮数
+                     * <p>电话告警轮数</p>
                      */
                     int64_t m_roundNumber;
                     bool m_roundNumberHasBeenSet;
 
                     /**
-                     * 电话告警每轮间隔（秒）
+                     * <p>电话告警每轮间隔（秒）</p>
                      */
                     int64_t m_roundInterval;
                     bool m_roundIntervalHasBeenSet;
 
                     /**
-                     * 电话告警对个人间隔（秒）
+                     * <p>电话告警对个人间隔（秒）</p>
                      */
                     int64_t m_personInterval;
                     bool m_personIntervalHasBeenSet;
 
                     /**
-                     * 是否需要电话告警触达提示。0不需要，1需要
+                     * <p>是否需要电话告警触达提示。0不需要，1需要</p>
                      */
                     int64_t m_needSendNotice;
                     bool m_needSendNoticeHasBeenSet;
 
                     /**
-                     * 电话告警通知时机。可选"OCCUR"(告警时通知),"RECOVER"(恢复时通知)
+                     * <p>电话告警通知时机。可选&quot;OCCUR&quot;(告警时通知),&quot;RECOVER&quot;(恢复时通知)</p>
                      */
                     std::vector<std::string> m_sendFor;
                     bool m_sendForHasBeenSet;
 
                     /**
-                     * 恢复通知方式。可选"SMS"
+                     * <p>恢复通知方式。可选&quot;SMS&quot;</p>
                      */
                     std::vector<std::string> m_recoverNotify;
                     bool m_recoverNotifyHasBeenSet;
 
                     /**
-                     * 告警发送语言
+                     * <p>告警发送语言</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_receiveLanguage;

@@ -27,7 +27,8 @@ LogicBackupConfigInfo::LogicBackupConfigInfo() :
     m_logicReserveDurationHasBeenSet(false),
     m_logicCrossRegionsEnableHasBeenSet(false),
     m_logicCrossRegionsHasBeenSet(false),
-    m_autoCopyVaultsHasBeenSet(false)
+    m_autoCopyVaultsHasBeenSet(false),
+    m_logicCrossRegionSaveDaysHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,16 @@ CoreInternalOutcome LogicBackupConfigInfo::Deserialize(const rapidjson::Value &v
         m_autoCopyVaultsHasBeenSet = true;
     }
 
+    if (value.HasMember("LogicCrossRegionSaveDays") && !value["LogicCrossRegionSaveDays"].IsNull())
+    {
+        if (!value["LogicCrossRegionSaveDays"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogicBackupConfigInfo.LogicCrossRegionSaveDays` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_logicCrossRegionSaveDays = value["LogicCrossRegionSaveDays"].GetInt64();
+        m_logicCrossRegionSaveDaysHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -192,6 +203,14 @@ void LogicBackupConfigInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_logicCrossRegionSaveDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogicCrossRegionSaveDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_logicCrossRegionSaveDays, allocator);
     }
 
 }
@@ -307,5 +326,21 @@ void LogicBackupConfigInfo::SetAutoCopyVaults(const vector<CreateBackupVaultItem
 bool LogicBackupConfigInfo::AutoCopyVaultsHasBeenSet() const
 {
     return m_autoCopyVaultsHasBeenSet;
+}
+
+int64_t LogicBackupConfigInfo::GetLogicCrossRegionSaveDays() const
+{
+    return m_logicCrossRegionSaveDays;
+}
+
+void LogicBackupConfigInfo::SetLogicCrossRegionSaveDays(const int64_t& _logicCrossRegionSaveDays)
+{
+    m_logicCrossRegionSaveDays = _logicCrossRegionSaveDays;
+    m_logicCrossRegionSaveDaysHasBeenSet = true;
+}
+
+bool LogicBackupConfigInfo::LogicCrossRegionSaveDaysHasBeenSet() const
+{
+    return m_logicCrossRegionSaveDaysHasBeenSet;
 }
 

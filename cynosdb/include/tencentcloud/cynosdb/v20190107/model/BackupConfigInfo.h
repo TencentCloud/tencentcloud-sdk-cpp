@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取系统自动时间
-                     * @return BackupCustomAutoTime 系统自动时间
+                     * 获取<p>系统自动时间</p>
+                     * @return BackupCustomAutoTime <p>系统自动时间</p>
                      * 
                      */
                     bool GetBackupCustomAutoTime() const;
 
                     /**
-                     * 设置系统自动时间
-                     * @param _backupCustomAutoTime 系统自动时间
+                     * 设置<p>系统自动时间</p>
+                     * @param _backupCustomAutoTime <p>系统自动时间</p>
                      * 
                      */
                     void SetBackupCustomAutoTime(const bool& _backupCustomAutoTime);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool BackupCustomAutoTimeHasBeenSet() const;
 
                     /**
-                     * 获取表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
-                     * @return BackupTimeBeg 表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
+                     * 获取<p>表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
+                     * @return BackupTimeBeg <p>表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
                      * 
                      */
                     uint64_t GetBackupTimeBeg() const;
 
                     /**
-                     * 设置表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
-                     * @param _backupTimeBeg 表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
+                     * 设置<p>表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
+                     * @param _backupTimeBeg <p>表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
                      * 
                      */
                     void SetBackupTimeBeg(const uint64_t& _backupTimeBeg);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool BackupTimeBegHasBeenSet() const;
 
                     /**
-                     * 获取表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
-                     * @return BackupTimeEnd 表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
+                     * 获取<p>表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
+                     * @return BackupTimeEnd <p>表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
                      * 
                      */
                     uint64_t GetBackupTimeEnd() const;
 
                     /**
-                     * 设置表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
-                     * @param _backupTimeEnd 表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
+                     * 设置<p>表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
+                     * @param _backupTimeEnd <p>表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
                      * 
                      */
                     void SetBackupTimeEnd(const uint64_t& _backupTimeEnd);
@@ -111,18 +111,18 @@ namespace TencentCloud
                     bool BackupTimeEndHasBeenSet() const;
 
                     /**
-                     * 获取该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周日到周六的备份方式，full-全量备份，increment-增量备份
+                     * 获取<p>该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周日到周六的备份方式，full-全量备份，increment-增量备份</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BackupWeekDays 该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周日到周六的备份方式，full-全量备份，increment-增量备份
+                     * @return BackupWeekDays <p>该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周日到周六的备份方式，full-全量备份，increment-增量备份</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetBackupWeekDays() const;
 
                     /**
-                     * 设置该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周日到周六的备份方式，full-全量备份，increment-增量备份
+                     * 设置<p>该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周日到周六的备份方式，full-全量备份，increment-增量备份</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _backupWeekDays 该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周日到周六的备份方式，full-全量备份，increment-增量备份
+                     * @param _backupWeekDays <p>该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周日到周六的备份方式，full-全量备份，increment-增量备份</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -136,15 +136,15 @@ namespace TencentCloud
                     bool BackupWeekDaysHasBeenSet() const;
 
                     /**
-                     * 获取间隔时间
-                     * @return BackupIntervalTime 间隔时间
+                     * 获取<p>间隔时间</p>
+                     * @return BackupIntervalTime <p>间隔时间</p>
                      * 
                      */
                     int64_t GetBackupIntervalTime() const;
 
                     /**
-                     * 设置间隔时间
-                     * @param _backupIntervalTime 间隔时间
+                     * 设置<p>间隔时间</p>
+                     * @param _backupIntervalTime <p>间隔时间</p>
                      * 
                      */
                     void SetBackupIntervalTime(const int64_t& _backupIntervalTime);
@@ -157,15 +157,15 @@ namespace TencentCloud
                     bool BackupIntervalTimeHasBeenSet() const;
 
                     /**
-                     * 获取表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600247=604800，最大为158112000
-                     * @return ReserveDuration 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600247=604800，最大为158112000
+                     * 获取<p>表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600247=604800，最大为158112000</p>
+                     * @return ReserveDuration <p>表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600247=604800，最大为158112000</p>
                      * 
                      */
                     uint64_t GetReserveDuration() const;
 
                     /**
-                     * 设置表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600247=604800，最大为158112000
-                     * @param _reserveDuration 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600247=604800，最大为158112000
+                     * 设置<p>表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600247=604800，最大为158112000</p>
+                     * @param _reserveDuration <p>表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600247=604800，最大为158112000</p>
                      * 
                      */
                     void SetReserveDuration(const uint64_t& _reserveDuration);
@@ -178,23 +178,15 @@ namespace TencentCloud
                     bool ReserveDurationHasBeenSet() const;
 
                     /**
-                     * 获取跨地域备份开启
-yes-开启
-no-关闭
-                     * @return CrossRegionsEnable 跨地域备份开启
-yes-开启
-no-关闭
+                     * 获取<p>跨地域备份开启<br>yes-开启<br>no-关闭</p>
+                     * @return CrossRegionsEnable <p>跨地域备份开启<br>yes-开启<br>no-关闭</p>
                      * 
                      */
                     std::string GetCrossRegionsEnable() const;
 
                     /**
-                     * 设置跨地域备份开启
-yes-开启
-no-关闭
-                     * @param _crossRegionsEnable 跨地域备份开启
-yes-开启
-no-关闭
+                     * 设置<p>跨地域备份开启<br>yes-开启<br>no-关闭</p>
+                     * @param _crossRegionsEnable <p>跨地域备份开启<br>yes-开启<br>no-关闭</p>
                      * 
                      */
                     void SetCrossRegionsEnable(const std::string& _crossRegionsEnable);
@@ -207,18 +199,18 @@ no-关闭
                     bool CrossRegionsEnableHasBeenSet() const;
 
                     /**
-                     * 获取跨地域备份地域
+                     * 获取<p>跨地域备份地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CrossRegions 跨地域备份地域
+                     * @return CrossRegions <p>跨地域备份地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCrossRegions() const;
 
                     /**
-                     * 设置跨地域备份地域
+                     * 设置<p>跨地域备份地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _crossRegions 跨地域备份地域
+                     * @param _crossRegions <p>跨地域备份地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -232,15 +224,36 @@ no-关闭
                     bool CrossRegionsHasBeenSet() const;
 
                     /**
-                     * 获取自动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
-                     * @return BackupTriggerStrategy 自动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
+                     * 获取<p>跨地域备份保留时间</p><p>单位：天</p>
+                     * @return CrossRegionSaveDays <p>跨地域备份保留时间</p><p>单位：天</p>
+                     * 
+                     */
+                    int64_t GetCrossRegionSaveDays() const;
+
+                    /**
+                     * 设置<p>跨地域备份保留时间</p><p>单位：天</p>
+                     * @param _crossRegionSaveDays <p>跨地域备份保留时间</p><p>单位：天</p>
+                     * 
+                     */
+                    void SetCrossRegionSaveDays(const int64_t& _crossRegionSaveDays);
+
+                    /**
+                     * 判断参数 CrossRegionSaveDays 是否已赋值
+                     * @return CrossRegionSaveDays 是否已赋值
+                     * 
+                     */
+                    bool CrossRegionSaveDaysHasBeenSet() const;
+
+                    /**
+                     * 获取<p>自动数据备份触发策略，periodically:自动周期备份,frequent:高频备份</p>
+                     * @return BackupTriggerStrategy <p>自动数据备份触发策略，periodically:自动周期备份,frequent:高频备份</p>
                      * 
                      */
                     std::string GetBackupTriggerStrategy() const;
 
                     /**
-                     * 设置自动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
-                     * @param _backupTriggerStrategy 自动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
+                     * 设置<p>自动数据备份触发策略，periodically:自动周期备份,frequent:高频备份</p>
+                     * @param _backupTriggerStrategy <p>自动数据备份触发策略，periodically:自动周期备份,frequent:高频备份</p>
                      * 
                      */
                     void SetBackupTriggerStrategy(const std::string& _backupTriggerStrategy);
@@ -253,15 +266,15 @@ no-关闭
                     bool BackupTriggerStrategyHasBeenSet() const;
 
                     /**
-                     * 获取备份投递关系
-                     * @return AutoCopyVaults 备份投递关系
+                     * 获取<p>备份投递关系</p>
+                     * @return AutoCopyVaults <p>备份投递关系</p>
                      * 
                      */
                     std::vector<CreateBackupVaultItem> GetAutoCopyVaults() const;
 
                     /**
-                     * 设置备份投递关系
-                     * @param _autoCopyVaults 备份投递关系
+                     * 设置<p>备份投递关系</p>
+                     * @param _autoCopyVaults <p>备份投递关系</p>
                      * 
                      */
                     void SetAutoCopyVaults(const std::vector<CreateBackupVaultItem>& _autoCopyVaults);
@@ -276,65 +289,69 @@ no-关闭
                 private:
 
                     /**
-                     * 系统自动时间
+                     * <p>系统自动时间</p>
                      */
                     bool m_backupCustomAutoTime;
                     bool m_backupCustomAutoTimeHasBeenSet;
 
                     /**
-                     * 表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
+                     * <p>表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
                      */
                     uint64_t m_backupTimeBeg;
                     bool m_backupTimeBegHasBeenSet;
 
                     /**
-                     * 表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
+                     * <p>表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
                      */
                     uint64_t m_backupTimeEnd;
                     bool m_backupTimeEndHasBeenSet;
 
                     /**
-                     * 该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周日到周六的备份方式，full-全量备份，increment-增量备份
+                     * <p>该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周日到周六的备份方式，full-全量备份，increment-增量备份</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_backupWeekDays;
                     bool m_backupWeekDaysHasBeenSet;
 
                     /**
-                     * 间隔时间
+                     * <p>间隔时间</p>
                      */
                     int64_t m_backupIntervalTime;
                     bool m_backupIntervalTimeHasBeenSet;
 
                     /**
-                     * 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600247=604800，最大为158112000
+                     * <p>表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600247=604800，最大为158112000</p>
                      */
                     uint64_t m_reserveDuration;
                     bool m_reserveDurationHasBeenSet;
 
                     /**
-                     * 跨地域备份开启
-yes-开启
-no-关闭
+                     * <p>跨地域备份开启<br>yes-开启<br>no-关闭</p>
                      */
                     std::string m_crossRegionsEnable;
                     bool m_crossRegionsEnableHasBeenSet;
 
                     /**
-                     * 跨地域备份地域
+                     * <p>跨地域备份地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_crossRegions;
                     bool m_crossRegionsHasBeenSet;
 
                     /**
-                     * 自动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
+                     * <p>跨地域备份保留时间</p><p>单位：天</p>
+                     */
+                    int64_t m_crossRegionSaveDays;
+                    bool m_crossRegionSaveDaysHasBeenSet;
+
+                    /**
+                     * <p>自动数据备份触发策略，periodically:自动周期备份,frequent:高频备份</p>
                      */
                     std::string m_backupTriggerStrategy;
                     bool m_backupTriggerStrategyHasBeenSet;
 
                     /**
-                     * 备份投递关系
+                     * <p>备份投递关系</p>
                      */
                     std::vector<CreateBackupVaultItem> m_autoCopyVaults;
                     bool m_autoCopyVaultsHasBeenSet;

@@ -31,6 +31,7 @@ set(asr_public_header_model
   include/tencentcloud/asr/v20190614/model/CloseAsyncRecognitionTaskRequest.h
   include/tencentcloud/asr/v20190614/model/Task.h
   include/tencentcloud/asr/v20190614/model/AsyncRecognitionTasks.h
+  include/tencentcloud/asr/v20190614/model/VoicePrintGroupListRequest.h
   include/tencentcloud/asr/v20190614/model/DeleteCustomizationResponse.h
   include/tencentcloud/asr/v20190614/model/TaskStatus.h
   include/tencentcloud/asr/v20190614/model/GetCustomizationListRequest.h
@@ -68,6 +69,7 @@ set(asr_public_header_model
   include/tencentcloud/asr/v20190614/model/GetAsrVocabResponse.h
   include/tencentcloud/asr/v20190614/model/HotWord.h
   include/tencentcloud/asr/v20190614/model/UpdateAsrKeyWordLibRequest.h
+  include/tencentcloud/asr/v20190614/model/VoicePrintGroupList.h
   include/tencentcloud/asr/v20190614/model/GetUsageByDateResponse.h
   include/tencentcloud/asr/v20190614/model/VoicePrintDeleteResponse.h
   include/tencentcloud/asr/v20190614/model/DownloadCustomizationResponse.h
@@ -97,6 +99,7 @@ set(asr_public_header_model
   include/tencentcloud/asr/v20190614/model/VoicePrintCompareData.h
   include/tencentcloud/asr/v20190614/model/VoicePrintVerifyRequest.h
   include/tencentcloud/asr/v20190614/model/SetVocabStateRequest.h
+  include/tencentcloud/asr/v20190614/model/VoicePrintGroupListResponse.h
   include/tencentcloud/asr/v20190614/model/Model.h
   include/tencentcloud/asr/v20190614/model/CreateAsrVocabRequest.h
   include/tencentcloud/asr/v20190614/model/VoicePrintVerifyResponse.h
@@ -122,6 +125,7 @@ set(asr_src
   src/v20190614/model/CloseAsyncRecognitionTaskRequest.cpp
   src/v20190614/model/Task.cpp
   src/v20190614/model/AsyncRecognitionTasks.cpp
+  src/v20190614/model/VoicePrintGroupListRequest.cpp
   src/v20190614/model/DeleteCustomizationResponse.cpp
   src/v20190614/model/TaskStatus.cpp
   src/v20190614/model/GetCustomizationListRequest.cpp
@@ -159,6 +163,7 @@ set(asr_src
   src/v20190614/model/GetAsrVocabResponse.cpp
   src/v20190614/model/HotWord.cpp
   src/v20190614/model/UpdateAsrKeyWordLibRequest.cpp
+  src/v20190614/model/VoicePrintGroupList.cpp
   src/v20190614/model/GetUsageByDateResponse.cpp
   src/v20190614/model/VoicePrintDeleteResponse.cpp
   src/v20190614/model/DownloadCustomizationResponse.cpp
@@ -188,6 +193,7 @@ set(asr_src
   src/v20190614/model/VoicePrintCompareData.cpp
   src/v20190614/model/VoicePrintVerifyRequest.cpp
   src/v20190614/model/SetVocabStateRequest.cpp
+  src/v20190614/model/VoicePrintGroupListResponse.cpp
   src/v20190614/model/Model.cpp
   src/v20190614/model/CreateAsrVocabRequest.cpp
   src/v20190614/model/VoicePrintVerifyResponse.cpp

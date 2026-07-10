@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订阅的数据库类型，目前支持 cynosdbmysql(tdsql-c mysql版),mariadb,mongodb,mysql,percona,tdpg(tdsql postgresql版),tdsqlpercona(tdsql mysql版)
-                     * @return Product 订阅的数据库类型，目前支持 cynosdbmysql(tdsql-c mysql版),mariadb,mongodb,mysql,percona,tdpg(tdsql postgresql版),tdsqlpercona(tdsql mysql版)
+                     * 获取<p>订阅的数据库类型，目前支持 cynosdbmysql(tdsql-c mysql版),mariadb,mongodb,mysql,percona,tdpg(tdsql postgresql版),tdsqlpercona(tdsql mysql版)</p>
+                     * @return Product <p>订阅的数据库类型，目前支持 cynosdbmysql(tdsql-c mysql版),mariadb,mongodb,mysql,percona,tdpg(tdsql postgresql版),tdsqlpercona(tdsql mysql版)</p>
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置订阅的数据库类型，目前支持 cynosdbmysql(tdsql-c mysql版),mariadb,mongodb,mysql,percona,tdpg(tdsql postgresql版),tdsqlpercona(tdsql mysql版)
-                     * @param _product 订阅的数据库类型，目前支持 cynosdbmysql(tdsql-c mysql版),mariadb,mongodb,mysql,percona,tdpg(tdsql postgresql版),tdsqlpercona(tdsql mysql版)
+                     * 设置<p>订阅的数据库类型，目前支持 cynosdbmysql(tdsql-c mysql版),mariadb,mongodb,mysql,percona,tdpg(tdsql postgresql版),tdsqlpercona(tdsql mysql版)</p>
+                     * @param _product <p>订阅的数据库类型，目前支持 cynosdbmysql(tdsql-c mysql版),mariadb,mongodb,mysql,percona,tdpg(tdsql postgresql版),tdsqlpercona(tdsql mysql版)</p>
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取付费方式，枚举值：0-包年包月，1-按量计费
-                     * @return PayType 付费方式，枚举值：0-包年包月，1-按量计费
+                     * 获取<p>付费方式，枚举值：0-包年包月，1-按量计费</p>
+                     * @return PayType <p>付费方式，枚举值：0-包年包月，1-按量计费</p>
                      * 
                      */
                     int64_t GetPayType() const;
 
                     /**
-                     * 设置付费方式，枚举值：0-包年包月，1-按量计费
-                     * @param _payType 付费方式，枚举值：0-包年包月，1-按量计费
+                     * 设置<p>付费方式，枚举值：0-包年包月，1-按量计费</p>
+                     * @param _payType <p>付费方式，枚举值：0-包年包月，1-按量计费</p>
                      * 
                      */
                     void SetPayType(const int64_t& _payType);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool PayTypeHasBeenSet() const;
 
                     /**
-                     * 获取购买时长。当 payType 为包年包月时，该项需要填，单位为月，最小值为 1，最大值为 120。不填默认1
-                     * @return Duration 购买时长。当 payType 为包年包月时，该项需要填，单位为月，最小值为 1，最大值为 120。不填默认1
+                     * 获取<p>购买时长。当 payType 为包年包月时，该项需要填，单位为月，最小值为 1，最大值为 120。不填默认1</p>
+                     * @return Duration <p>购买时长。当 payType 为包年包月时，该项需要填，单位为月，最小值为 1，最大值为 120。不填默认1</p>
                      * 
                      */
                     int64_t GetDuration() const;
 
                     /**
-                     * 设置购买时长。当 payType 为包年包月时，该项需要填，单位为月，最小值为 1，最大值为 120。不填默认1
-                     * @param _duration 购买时长。当 payType 为包年包月时，该项需要填，单位为月，最小值为 1，最大值为 120。不填默认1
+                     * 设置<p>购买时长。当 payType 为包年包月时，该项需要填，单位为月，最小值为 1，最大值为 120。不填默认1</p>
+                     * @param _duration <p>购买时长。当 payType 为包年包月时，该项需要填，单位为月，最小值为 1，最大值为 120。不填默认1</p>
                      * 
                      */
                     void SetDuration(const int64_t& _duration);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取是否自动续费。当 payType 为包年包月时，该项需要填。枚举值：0-不自动续费，1-自动续费。默认不自动续费。按量计费设置该标识无效。
-                     * @return AutoRenew 是否自动续费。当 payType 为包年包月时，该项需要填。枚举值：0-不自动续费，1-自动续费。默认不自动续费。按量计费设置该标识无效。
+                     * 获取<p>是否自动续费。当 payType 为包年包月时，该项需要填。枚举值：0-不自动续费，1-自动续费。默认不自动续费。按量计费设置该标识无效。</p>
+                     * @return AutoRenew <p>是否自动续费。当 payType 为包年包月时，该项需要填。枚举值：0-不自动续费，1-自动续费。默认不自动续费。按量计费设置该标识无效。</p>
                      * 
                      */
                     int64_t GetAutoRenew() const;
 
                     /**
-                     * 设置是否自动续费。当 payType 为包年包月时，该项需要填。枚举值：0-不自动续费，1-自动续费。默认不自动续费。按量计费设置该标识无效。
-                     * @param _autoRenew 是否自动续费。当 payType 为包年包月时，该项需要填。枚举值：0-不自动续费，1-自动续费。默认不自动续费。按量计费设置该标识无效。
+                     * 设置<p>是否自动续费。当 payType 为包年包月时，该项需要填。枚举值：0-不自动续费，1-自动续费。默认不自动续费。按量计费设置该标识无效。</p>
+                     * @param _autoRenew <p>是否自动续费。当 payType 为包年包月时，该项需要填。枚举值：0-不自动续费，1-自动续费。默认不自动续费。按量计费设置该标识无效。</p>
                      * 
                      */
                     void SetAutoRenew(const int64_t& _autoRenew);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool AutoRenewHasBeenSet() const;
 
                     /**
-                     * 获取购买数量,默认为1，最大为10
-                     * @return Count 购买数量,默认为1，最大为10
+                     * 获取<p>购买数量,默认为1，最大为10</p>
+                     * @return Count <p>购买数量,默认为1，最大为10</p>
                      * 
                      */
                     int64_t GetCount() const;
 
                     /**
-                     * 设置购买数量,默认为1，最大为10
-                     * @param _count 购买数量,默认为1，最大为10
+                     * 设置<p>购买数量,默认为1，最大为10</p>
+                     * @param _count <p>购买数量,默认为1，最大为10</p>
                      * 
                      */
                     void SetCount(const int64_t& _count);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取实例资源标签
-                     * @return Tags 实例资源标签
+                     * 获取<p>实例资源标签</p>
+                     * @return Tags <p>实例资源标签</p>
                      * 
                      */
                     std::vector<TagItem> GetTags() const;
 
                     /**
-                     * 设置实例资源标签
-                     * @param _tags 实例资源标签
+                     * 设置<p>实例资源标签</p>
+                     * @param _tags <p>实例资源标签</p>
                      * 
                      */
                     void SetTags(const std::vector<TagItem>& _tags);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取任务名，自定义
-                     * @return Name 任务名，自定义
+                     * 获取<p>任务名，自定义</p>
+                     * @return Name <p>任务名，自定义</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置任务名，自定义
-                     * @param _name 任务名，自定义
+                     * 设置<p>任务名，自定义</p>
+                     * @param _name <p>任务名，自定义</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -191,15 +191,36 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取订阅实例规格，当前仅支持small、medium、large
-                     * @return InstanceClass 订阅实例规格，当前仅支持small、medium、large
+                     * 获取<p>数据订阅版本，目前支持kafka和kafkaPro（专业版），如果不填，默认kafkaPro</p>
+                     * @return SubscribeVersion <p>数据订阅版本，目前支持kafka和kafkaPro（专业版），如果不填，默认kafkaPro</p>
+                     * 
+                     */
+                    std::string GetSubscribeVersion() const;
+
+                    /**
+                     * 设置<p>数据订阅版本，目前支持kafka和kafkaPro（专业版），如果不填，默认kafkaPro</p>
+                     * @param _subscribeVersion <p>数据订阅版本，目前支持kafka和kafkaPro（专业版），如果不填，默认kafkaPro</p>
+                     * 
+                     */
+                    void SetSubscribeVersion(const std::string& _subscribeVersion);
+
+                    /**
+                     * 判断参数 SubscribeVersion 是否已赋值
+                     * @return SubscribeVersion 是否已赋值
+                     * 
+                     */
+                    bool SubscribeVersionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>订阅实例规格，当前仅支持small、medium、large</p>
+                     * @return InstanceClass <p>订阅实例规格，当前仅支持small、medium、large</p>
                      * 
                      */
                     std::string GetInstanceClass() const;
 
                     /**
-                     * 设置订阅实例规格，当前仅支持small、medium、large
-                     * @param _instanceClass 订阅实例规格，当前仅支持small、medium、large
+                     * 设置<p>订阅实例规格，当前仅支持small、medium、large</p>
+                     * @param _instanceClass <p>订阅实例规格，当前仅支持small、medium、large</p>
                      * 
                      */
                     void SetInstanceClass(const std::string& _instanceClass);
@@ -214,49 +235,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订阅的数据库类型，目前支持 cynosdbmysql(tdsql-c mysql版),mariadb,mongodb,mysql,percona,tdpg(tdsql postgresql版),tdsqlpercona(tdsql mysql版)
+                     * <p>订阅的数据库类型，目前支持 cynosdbmysql(tdsql-c mysql版),mariadb,mongodb,mysql,percona,tdpg(tdsql postgresql版),tdsqlpercona(tdsql mysql版)</p>
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
 
                     /**
-                     * 付费方式，枚举值：0-包年包月，1-按量计费
+                     * <p>付费方式，枚举值：0-包年包月，1-按量计费</p>
                      */
                     int64_t m_payType;
                     bool m_payTypeHasBeenSet;
 
                     /**
-                     * 购买时长。当 payType 为包年包月时，该项需要填，单位为月，最小值为 1，最大值为 120。不填默认1
+                     * <p>购买时长。当 payType 为包年包月时，该项需要填，单位为月，最小值为 1，最大值为 120。不填默认1</p>
                      */
                     int64_t m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 是否自动续费。当 payType 为包年包月时，该项需要填。枚举值：0-不自动续费，1-自动续费。默认不自动续费。按量计费设置该标识无效。
+                     * <p>是否自动续费。当 payType 为包年包月时，该项需要填。枚举值：0-不自动续费，1-自动续费。默认不自动续费。按量计费设置该标识无效。</p>
                      */
                     int64_t m_autoRenew;
                     bool m_autoRenewHasBeenSet;
 
                     /**
-                     * 购买数量,默认为1，最大为10
+                     * <p>购买数量,默认为1，最大为10</p>
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
-                     * 实例资源标签
+                     * <p>实例资源标签</p>
                      */
                     std::vector<TagItem> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 任务名，自定义
+                     * <p>任务名，自定义</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 订阅实例规格，当前仅支持small、medium、large
+                     * <p>数据订阅版本，目前支持kafka和kafkaPro（专业版），如果不填，默认kafkaPro</p>
+                     */
+                    std::string m_subscribeVersion;
+                    bool m_subscribeVersionHasBeenSet;
+
+                    /**
+                     * <p>订阅实例规格，当前仅支持small、medium、large</p>
                      */
                     std::string m_instanceClass;
                     bool m_instanceClassHasBeenSet;

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取事件名
-                     * @return EventName 事件名
+                     * 获取<p>事件名</p>
+                     * @return EventName <p>事件名</p>
                      * 
                      */
                     std::string GetEventName() const;
 
                     /**
-                     * 设置事件名
-                     * @param _eventName 事件名
+                     * 设置<p>事件名</p>
+                     * @param _eventName <p>事件名</p>
                      * 
                      */
                     void SetEventName(const std::string& _eventName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool EventNameHasBeenSet() const;
 
                     /**
-                     * 获取展示的事件名
-                     * @return Description 展示的事件名
+                     * 获取<p>展示的事件名</p>
+                     * @return Description <p>展示的事件名</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置展示的事件名
-                     * @param _description 展示的事件名
+                     * 设置<p>展示的事件名</p>
+                     * @param _description <p>展示的事件名</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取告警策略类型
-                     * @return Namespace 告警策略类型
+                     * 获取<p>告警策略类型</p>
+                     * @return Namespace <p>告警策略类型</p>
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
-                     * 设置告警策略类型
-                     * @param _namespace 告警策略类型
+                     * 设置<p>告警策略类型</p>
+                     * @param _namespace <p>告警策略类型</p>
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 事件名
+                     * <p>事件名</p>
                      */
                     std::string m_eventName;
                     bool m_eventNameHasBeenSet;
 
                     /**
-                     * 展示的事件名
+                     * <p>展示的事件名</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 告警策略类型
+                     * <p>告警策略类型</p>
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;

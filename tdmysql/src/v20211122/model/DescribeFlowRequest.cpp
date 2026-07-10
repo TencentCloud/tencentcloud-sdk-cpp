@@ -22,7 +22,8 @@
 using namespace TencentCloud::Tdmysql::V20211122::Model;
 using namespace std;
 
-DescribeFlowRequest::DescribeFlowRequest()
+DescribeFlowRequest::DescribeFlowRequest() :
+    m_flowIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeFlowRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_flowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_flowId, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeFlowRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeFlowRequest::GetFlowId() const
+{
+    return m_flowId;
+}
+
+void DescribeFlowRequest::SetFlowId(const int64_t& _flowId)
+{
+    m_flowId = _flowId;
+    m_flowIdHasBeenSet = true;
+}
+
+bool DescribeFlowRequest::FlowIdHasBeenSet() const
+{
+    return m_flowIdHasBeenSet;
+}
 
 

@@ -64,6 +64,27 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
+                     * 获取是否开启修改保护。开启后，可防止实例被意外修改或删除。\n- true：开启修改保护\n- false：关闭修改保护
+                     * @return ModificationProtectionEnabled 是否开启修改保护。开启后，可防止实例被意外修改或删除。\n- true：开启修改保护\n- false：关闭修改保护
+                     * 
+                     */
+                    bool GetModificationProtectionEnabled() const;
+
+                    /**
+                     * 设置是否开启修改保护。开启后，可防止实例被意外修改或删除。\n- true：开启修改保护\n- false：关闭修改保护
+                     * @param _modificationProtectionEnabled 是否开启修改保护。开启后，可防止实例被意外修改或删除。\n- true：开启修改保护\n- false：关闭修改保护
+                     * 
+                     */
+                    void SetModificationProtectionEnabled(const bool& _modificationProtectionEnabled);
+
+                    /**
+                     * 判断参数 ModificationProtectionEnabled 是否已赋值
+                     * @return ModificationProtectionEnabled 是否已赋值
+                     * 
+                     */
+                    bool ModificationProtectionEnabledHasBeenSet() const;
+
+                    /**
                      * 获取是否只预检此次请求。取值：
 - true：仅执行预检，不实际操作资源。检查参数完整性、请求格式及业务限制，通过返回 DryRunOperation，不通过返回对应错误。
 - false（默认）：执行正常请求，检查通过后直接操作资源。
@@ -91,27 +112,6 @@ namespace TencentCloud
                      * 
                      */
                     bool DryRunHasBeenSet() const;
-
-                    /**
-                     * 获取是否开启修改保护。开启后，可防止实例被意外修改或删除。\n- true：开启修改保护\n- false：关闭修改保护
-                     * @return ModificationProtectionEnabled 是否开启修改保护。开启后，可防止实例被意外修改或删除。\n- true：开启修改保护\n- false：关闭修改保护
-                     * 
-                     */
-                    bool GetModificationProtectionEnabled() const;
-
-                    /**
-                     * 设置是否开启修改保护。开启后，可防止实例被意外修改或删除。\n- true：开启修改保护\n- false：关闭修改保护
-                     * @param _modificationProtectionEnabled 是否开启修改保护。开启后，可防止实例被意外修改或删除。\n- true：开启修改保护\n- false：关闭修改保护
-                     * 
-                     */
-                    void SetModificationProtectionEnabled(const bool& _modificationProtectionEnabled);
-
-                    /**
-                     * 判断参数 ModificationProtectionEnabled 是否已赋值
-                     * @return ModificationProtectionEnabled 是否已赋值
-                     * 
-                     */
-                    bool ModificationProtectionEnabledHasBeenSet() const;
 
                     /**
                      * 获取开启修改保护的原因说明。
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
+                     * 是否开启修改保护。开启后，可防止实例被意外修改或删除。\n- true：开启修改保护\n- false：关闭修改保护
+                     */
+                    bool m_modificationProtectionEnabled;
+                    bool m_modificationProtectionEnabledHasBeenSet;
+
+                    /**
                      * 是否只预检此次请求。取值：
 - true：仅执行预检，不实际操作资源。检查参数完整性、请求格式及业务限制，通过返回 DryRunOperation，不通过返回对应错误。
 - false（默认）：执行正常请求，检查通过后直接操作资源。
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;
-
-                    /**
-                     * 是否开启修改保护。开启后，可防止实例被意外修改或删除。\n- true：开启修改保护\n- false：关闭修改保护
-                     */
-                    bool m_modificationProtectionEnabled;
-                    bool m_modificationProtectionEnabledHasBeenSet;
 
                     /**
                      * 开启修改保护的原因说明。

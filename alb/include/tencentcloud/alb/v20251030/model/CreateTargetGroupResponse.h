@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标组 ID，格式为 lbtg- 后接 8 位字母数字。
-                     * @return TargetGroupId 目标组 ID，格式为 lbtg- 后接 8 位字母数字。
+                     * 获取<p>目标组 ID，格式为 lbtg- 后接 8 位字母数字。</p>
+                     * @return TargetGroupId <p>目标组 ID，格式为 lbtg- 后接 8 位字母数字。</p>
                      * 
                      */
                     std::string GetTargetGroupId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目标组 ID，格式为 lbtg- 后接 8 位字母数字。
+                     * <p>目标组 ID，格式为 lbtg- 后接 8 位字母数字。</p>
                      */
                     std::string m_targetGroupId;
                     bool m_targetGroupIdHasBeenSet;

@@ -47,8 +47,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取当前统计维度解析量小计
-                     * @return Data 当前统计维度解析量小计
+                     * 获取<p>当前统计维度解析量小计</p>
+                     * @return Data <p>当前统计维度解析量小计</p>
                      * 
                      */
                     std::vector<DomainAnalyticsDetail> GetData() const;
@@ -61,8 +61,8 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取域名解析量统计查询信息
-                     * @return Info 域名解析量统计查询信息
+                     * 获取<p>域名解析量统计查询信息</p>
+                     * @return Info <p>域名解析量统计查询信息</p>
                      * 
                      */
                     DomainAnalyticsInfo GetInfo() const;
@@ -75,8 +75,8 @@ namespace TencentCloud
                     bool InfoHasBeenSet() const;
 
                     /**
-                     * 获取域名别名解析量统计信息
-                     * @return AliasData 域名别名解析量统计信息
+                     * 获取<p>域名别名解析量统计信息</p>
+                     * @return AliasData <p>域名别名解析量统计信息</p>
                      * 
                      */
                     std::vector<DomainAliasAnalyticsItem> GetAliasData() const;
@@ -91,19 +91,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 当前统计维度解析量小计
+                     * <p>当前统计维度解析量小计</p>
                      */
                     std::vector<DomainAnalyticsDetail> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 域名解析量统计查询信息
+                     * <p>域名解析量统计查询信息</p>
                      */
                     DomainAnalyticsInfo m_info;
                     bool m_infoHasBeenSet;
 
                     /**
-                     * 域名别名解析量统计信息
+                     * <p>域名别名解析量统计信息</p>
                      */
                     std::vector<DomainAliasAnalyticsItem> m_aliasData;
                     bool m_aliasDataHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取安全策略 ID，格式为 tls- 后接 8 位字母数字。
-                     * @return SecurityPolicyId 安全策略 ID，格式为 tls- 后接 8 位字母数字。
+                     * 获取<p>安全策略 ID，格式为 tls- 后接 8 位字母数字。</p>
+                     * @return SecurityPolicyId <p>安全策略 ID，格式为 tls- 后接 8 位字母数字。</p>
                      * 
                      */
                     std::string GetSecurityPolicyId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 安全策略 ID，格式为 tls- 后接 8 位字母数字。
+                     * <p>安全策略 ID，格式为 tls- 后接 8 位字母数字。</p>
                      */
                     std::string m_securityPolicyId;
                     bool m_securityPolicyIdHasBeenSet;

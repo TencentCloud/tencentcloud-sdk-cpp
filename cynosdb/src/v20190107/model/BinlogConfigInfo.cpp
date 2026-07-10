@@ -24,6 +24,7 @@ BinlogConfigInfo::BinlogConfigInfo() :
     m_binlogSaveDaysHasBeenSet(false),
     m_binlogCrossRegionsEnableHasBeenSet(false),
     m_binlogCrossRegionsHasBeenSet(false),
+    m_binlogCrossRegionSaveDaysHasBeenSet(false),
     m_autoCopyVaultsHasBeenSet(false)
 {
 }
@@ -64,6 +65,16 @@ CoreInternalOutcome BinlogConfigInfo::Deserialize(const rapidjson::Value &value)
             m_binlogCrossRegions.push_back((*itr).GetString());
         }
         m_binlogCrossRegionsHasBeenSet = true;
+    }
+
+    if (value.HasMember("BinlogCrossRegionSaveDays") && !value["BinlogCrossRegionSaveDays"].IsNull())
+    {
+        if (!value["BinlogCrossRegionSaveDays"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BinlogConfigInfo.BinlogCrossRegionSaveDays` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_binlogCrossRegionSaveDays = value["BinlogCrossRegionSaveDays"].GetInt64();
+        m_binlogCrossRegionSaveDaysHasBeenSet = true;
     }
 
     if (value.HasMember("AutoCopyVaults") && !value["AutoCopyVaults"].IsNull())
@@ -120,6 +131,14 @@ void BinlogConfigInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_binlogCrossRegionSaveDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BinlogCrossRegionSaveDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_binlogCrossRegionSaveDays, allocator);
     }
 
     if (m_autoCopyVaultsHasBeenSet)
@@ -186,6 +205,22 @@ void BinlogConfigInfo::SetBinlogCrossRegions(const vector<string>& _binlogCrossR
 bool BinlogConfigInfo::BinlogCrossRegionsHasBeenSet() const
 {
     return m_binlogCrossRegionsHasBeenSet;
+}
+
+int64_t BinlogConfigInfo::GetBinlogCrossRegionSaveDays() const
+{
+    return m_binlogCrossRegionSaveDays;
+}
+
+void BinlogConfigInfo::SetBinlogCrossRegionSaveDays(const int64_t& _binlogCrossRegionSaveDays)
+{
+    m_binlogCrossRegionSaveDays = _binlogCrossRegionSaveDays;
+    m_binlogCrossRegionSaveDaysHasBeenSet = true;
+}
+
+bool BinlogConfigInfo::BinlogCrossRegionSaveDaysHasBeenSet() const
+{
+    return m_binlogCrossRegionSaveDaysHasBeenSet;
 }
 
 vector<CreateBackupVaultItem> BinlogConfigInfo::GetAutoCopyVaults() const

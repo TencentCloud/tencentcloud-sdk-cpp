@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取健康检查模板列表。
-                     * @return HealthCheckTemplates 健康检查模板列表。
+                     * 获取<p>健康检查模板列表。</p>
+                     * @return HealthCheckTemplates <p>健康检查模板列表。</p>
                      * 
                      */
                     std::vector<HealthCheckTemplate> GetHealthCheckTemplates() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool HealthCheckTemplatesHasBeenSet() const;
 
                     /**
-                     * 获取下一次查询的Token值，如果当前是最后一页，返回为空。
-                     * @return NextToken 下一次查询的Token值，如果当前是最后一页，返回为空。
+                     * 获取<p>下一次查询的Token值，如果当前是最后一页，返回为空。</p>
+                     * @return NextToken <p>下一次查询的Token值，如果当前是最后一页，返回为空。</p>
                      * 
                      */
                     std::string GetNextToken() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool NextTokenHasBeenSet() const;
 
                     /**
-                     * 获取经过筛选后查询到的健康检查模板总数。
-                     * @return TotalCount 经过筛选后查询到的健康检查模板总数。
+                     * 获取<p>经过筛选后查询到的健康检查模板总数。</p>
+                     * @return TotalCount <p>经过筛选后查询到的健康检查模板总数。</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 健康检查模板列表。
+                     * <p>健康检查模板列表。</p>
                      */
                     std::vector<HealthCheckTemplate> m_healthCheckTemplates;
                     bool m_healthCheckTemplatesHasBeenSet;
 
                     /**
-                     * 下一次查询的Token值，如果当前是最后一页，返回为空。
+                     * <p>下一次查询的Token值，如果当前是最后一页，返回为空。</p>
                      */
                     std::string m_nextToken;
                     bool m_nextTokenHasBeenSet;
 
                     /**
-                     * 经过筛选后查询到的健康检查模板总数。
+                     * <p>经过筛选后查询到的健康检查模板总数。</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

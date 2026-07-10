@@ -44,7 +44,9 @@ RabbitMQVipInstance::RabbitMQVipInstance() :
     m_isolatedTimeHasBeenSet(false),
     m_enableDeletionProtectionHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_publicStreamAccessEndpointHasBeenSet(false)
+    m_publicStreamAccessEndpointHasBeenSet(false),
+    m_clusterTypeHasBeenSet(false),
+    m_cdcClusterIdHasBeenSet(false)
 {
 }
 
@@ -313,6 +315,26 @@ CoreInternalOutcome RabbitMQVipInstance::Deserialize(const rapidjson::Value &val
         m_publicStreamAccessEndpointHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterType") && !value["ClusterType"].IsNull())
+    {
+        if (!value["ClusterType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVipInstance.ClusterType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterType = string(value["ClusterType"].GetString());
+        m_clusterTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CdcClusterId") && !value["CdcClusterId"].IsNull())
+    {
+        if (!value["CdcClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVipInstance.CdcClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cdcClusterId = string(value["CdcClusterId"].GetString());
+        m_cdcClusterIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -524,6 +546,22 @@ void RabbitMQVipInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "PublicStreamAccessEndpoint";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_publicStreamAccessEndpoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cdcClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CdcClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cdcClusterId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -911,5 +949,37 @@ void RabbitMQVipInstance::SetPublicStreamAccessEndpoint(const string& _publicStr
 bool RabbitMQVipInstance::PublicStreamAccessEndpointHasBeenSet() const
 {
     return m_publicStreamAccessEndpointHasBeenSet;
+}
+
+string RabbitMQVipInstance::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void RabbitMQVipInstance::SetClusterType(const string& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool RabbitMQVipInstance::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
+}
+
+string RabbitMQVipInstance::GetCdcClusterId() const
+{
+    return m_cdcClusterId;
+}
+
+void RabbitMQVipInstance::SetCdcClusterId(const string& _cdcClusterId)
+{
+    m_cdcClusterId = _cdcClusterId;
+    m_cdcClusterIdHasBeenSet = true;
+}
+
+bool RabbitMQVipInstance::CdcClusterIdHasBeenSet() const
+{
+    return m_cdcClusterIdHasBeenSet;
 }
 

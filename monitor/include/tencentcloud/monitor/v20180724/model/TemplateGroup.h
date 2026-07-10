@@ -50,18 +50,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指标告警规则
+                     * 获取<p>指标告警规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Conditions 指标告警规则
+                     * @return Conditions <p>指标告警规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Condition> GetConditions() const;
 
                     /**
-                     * 设置指标告警规则
+                     * 设置<p>指标告警规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _conditions 指标告警规则
+                     * @param _conditions <p>指标告警规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -75,18 +75,18 @@ namespace TencentCloud
                     bool ConditionsHasBeenSet() const;
 
                     /**
-                     * 获取事件告警规则
+                     * 获取<p>事件告警规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EventConditions 事件告警规则
+                     * @return EventConditions <p>事件告警规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EventCondition> GetEventConditions() const;
 
                     /**
-                     * 设置事件告警规则
+                     * 设置<p>事件告警规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _eventConditions 事件告警规则
+                     * @param _eventConditions <p>事件告警规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -100,18 +100,18 @@ namespace TencentCloud
                     bool EventConditionsHasBeenSet() const;
 
                     /**
-                     * 获取关联告警策略组
+                     * 获取<p>关联告警策略组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PolicyGroups 关联告警策略组
+                     * @return PolicyGroups <p>关联告警策略组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PolicyGroup> GetPolicyGroups() const;
 
                     /**
-                     * 设置关联告警策略组
+                     * 设置<p>关联告警策略组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _policyGroups 关联告警策略组
+                     * @param _policyGroups <p>关联告警策略组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -125,15 +125,15 @@ namespace TencentCloud
                     bool PolicyGroupsHasBeenSet() const;
 
                     /**
-                     * 获取模板策略组ID
-                     * @return GroupID 模板策略组ID
+                     * 获取<p>模板策略组ID</p>
+                     * @return GroupID <p>模板策略组ID</p>
                      * 
                      */
                     int64_t GetGroupID() const;
 
                     /**
-                     * 设置模板策略组ID
-                     * @param _groupID 模板策略组ID
+                     * 设置<p>模板策略组ID</p>
+                     * @param _groupID <p>模板策略组ID</p>
                      * 
                      */
                     void SetGroupID(const int64_t& _groupID);
@@ -146,15 +146,15 @@ namespace TencentCloud
                     bool GroupIDHasBeenSet() const;
 
                     /**
-                     * 获取模板策略组名称
-                     * @return GroupName 模板策略组名称
+                     * 获取<p>模板策略组名称</p>
+                     * @return GroupName <p>模板策略组名称</p>
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置模板策略组名称
-                     * @param _groupName 模板策略组名称
+                     * 设置<p>模板策略组名称</p>
+                     * @param _groupName <p>模板策略组名称</p>
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -167,15 +167,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return InsertTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return InsertTime <p>创建时间</p>
                      * 
                      */
                     int64_t GetInsertTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _insertTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _insertTime <p>创建时间</p>
                      * 
                      */
                     void SetInsertTime(const int64_t& _insertTime);
@@ -188,15 +188,15 @@ namespace TencentCloud
                     bool InsertTimeHasBeenSet() const;
 
                     /**
-                     * 获取最后修改人UIN
-                     * @return LastEditUin 最后修改人UIN
+                     * 获取<p>最后修改人UIN</p>
+                     * @return LastEditUin <p>最后修改人UIN</p>
                      * 
                      */
                     int64_t GetLastEditUin() const;
 
                     /**
-                     * 设置最后修改人UIN
-                     * @param _lastEditUin 最后修改人UIN
+                     * 设置<p>最后修改人UIN</p>
+                     * @param _lastEditUin <p>最后修改人UIN</p>
                      * 
                      */
                     void SetLastEditUin(const int64_t& _lastEditUin);
@@ -209,15 +209,15 @@ namespace TencentCloud
                     bool LastEditUinHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Remark 备注
+                     * 获取<p>备注</p>
+                     * @return Remark <p>备注</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注
-                     * @param _remark 备注
+                     * 设置<p>备注</p>
+                     * @param _remark <p>备注</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -230,15 +230,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdateTime 更新时间
+                     * 获取<p>更新时间</p>
+                     * @return UpdateTime <p>更新时间</p>
                      * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
-                     * @param _updateTime 更新时间
+                     * 设置<p>更新时间</p>
+                     * @param _updateTime <p>更新时间</p>
                      * 
                      */
                     void SetUpdateTime(const int64_t& _updateTime);
@@ -251,15 +251,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取视图
-                     * @return ViewName 视图
+                     * 获取<p>视图</p>
+                     * @return ViewName <p>视图</p>
                      * 
                      */
                     std::string GetViewName() const;
 
                     /**
-                     * 设置视图
-                     * @param _viewName 视图
+                     * 设置<p>视图</p>
+                     * @param _viewName <p>视图</p>
                      * 
                      */
                     void SetViewName(const std::string& _viewName);
@@ -272,15 +272,15 @@ namespace TencentCloud
                     bool ViewNameHasBeenSet() const;
 
                     /**
-                     * 获取是否为与关系
-                     * @return IsUnionRule 是否为与关系
+                     * 获取<p>是否为与关系</p>
+                     * @return IsUnionRule <p>是否为与关系</p>
                      * 
                      */
                     int64_t GetIsUnionRule() const;
 
                     /**
-                     * 设置是否为与关系
-                     * @param _isUnionRule 是否为与关系
+                     * 设置<p>是否为与关系</p>
+                     * @param _isUnionRule <p>是否为与关系</p>
                      * 
                      */
                     void SetIsUnionRule(const int64_t& _isUnionRule);
@@ -295,70 +295,70 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 指标告警规则
+                     * <p>指标告警规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Condition> m_conditions;
                     bool m_conditionsHasBeenSet;
 
                     /**
-                     * 事件告警规则
+                     * <p>事件告警规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EventCondition> m_eventConditions;
                     bool m_eventConditionsHasBeenSet;
 
                     /**
-                     * 关联告警策略组
+                     * <p>关联告警策略组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PolicyGroup> m_policyGroups;
                     bool m_policyGroupsHasBeenSet;
 
                     /**
-                     * 模板策略组ID
+                     * <p>模板策略组ID</p>
                      */
                     int64_t m_groupID;
                     bool m_groupIDHasBeenSet;
 
                     /**
-                     * 模板策略组名称
+                     * <p>模板策略组名称</p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     int64_t m_insertTime;
                     bool m_insertTimeHasBeenSet;
 
                     /**
-                     * 最后修改人UIN
+                     * <p>最后修改人UIN</p>
                      */
                     int64_t m_lastEditUin;
                     bool m_lastEditUinHasBeenSet;
 
                     /**
-                     * 备注
+                     * <p>备注</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
                      */
                     int64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 视图
+                     * <p>视图</p>
                      */
                     std::string m_viewName;
                     bool m_viewNameHasBeenSet;
 
                     /**
-                     * 是否为与关系
+                     * <p>是否为与关系</p>
                      */
                     int64_t m_isUnionRule;
                     bool m_isUnionRuleHasBeenSet;

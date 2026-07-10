@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名ID
-                     * @return DomainId 域名ID
+                     * 获取<p>域名ID</p>
+                     * @return DomainId <p>域名ID</p>
                      * 
                      */
                     uint64_t GetDomainId() const;
 
                     /**
-                     * 设置域名ID
-                     * @param _domainId 域名ID
+                     * 设置<p>域名ID</p>
+                     * @param _domainId <p>域名ID</p>
                      * 
                      */
                     void SetDomainId(const uint64_t& _domainId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool DomainIdHasBeenSet() const;
 
                     /**
-                     * 获取域名状态，正常：ENABLE，暂停：PAUSE，封禁：SPAM
-                     * @return Status 域名状态，正常：ENABLE，暂停：PAUSE，封禁：SPAM
+                     * 获取<p>域名状态，正常：ENABLE，暂停：PAUSE，封禁：SPAM</p>
+                     * @return Status <p>域名状态，正常：ENABLE，暂停：PAUSE，封禁：SPAM</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置域名状态，正常：ENABLE，暂停：PAUSE，封禁：SPAM
-                     * @param _status 域名状态，正常：ENABLE，暂停：PAUSE，封禁：SPAM
+                     * 设置<p>域名状态，正常：ENABLE，暂停：PAUSE，封禁：SPAM</p>
+                     * @param _status <p>域名状态，正常：ENABLE，暂停：PAUSE，封禁：SPAM</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取域名套餐等级
-                     * @return Grade 域名套餐等级
+                     * 获取<p>域名套餐等级</p>
+                     * @return Grade <p>域名套餐等级</p>
                      * 
                      */
                     std::string GetGrade() const;
 
                     /**
-                     * 设置域名套餐等级
-                     * @param _grade 域名套餐等级
+                     * 设置<p>域名套餐等级</p>
+                     * @param _grade <p>域名套餐等级</p>
                      * 
                      */
                     void SetGrade(const std::string& _grade);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool GradeHasBeenSet() const;
 
                     /**
-                     * 获取域名分组ID
-                     * @return GroupId 域名分组ID
+                     * 获取<p>域名分组ID</p>
+                     * @return GroupId <p>域名分组ID</p>
                      * 
                      */
                     uint64_t GetGroupId() const;
 
                     /**
-                     * 设置域名分组ID
-                     * @param _groupId 域名分组ID
+                     * 设置<p>域名分组ID</p>
+                     * @param _groupId <p>域名分组ID</p>
                      * 
                      */
                     void SetGroupId(const uint64_t& _groupId);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取是否星标域名
-                     * @return IsMark 是否星标域名
+                     * 获取<p>是否星标域名</p>
+                     * @return IsMark <p>是否星标域名</p>
                      * 
                      */
                     std::string GetIsMark() const;
 
                     /**
-                     * 设置是否星标域名
-                     * @param _isMark 是否星标域名
+                     * 设置<p>是否星标域名</p>
+                     * @param _isMark <p>是否星标域名</p>
                      * 
                      */
                     void SetIsMark(const std::string& _isMark);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool IsMarkHasBeenSet() const;
 
                     /**
-                     * 获取TTL(DNS记录缓存时间)，单位：秒
-                     * @return TTL TTL(DNS记录缓存时间)，单位：秒
+                     * 获取<p>TTL(DNS记录缓存时间)，单位：秒</p>
+                     * @return TTL <p>TTL(DNS记录缓存时间)，单位：秒</p>
                      * 
                      */
                     uint64_t GetTTL() const;
 
                     /**
-                     * 设置TTL(DNS记录缓存时间)，单位：秒
-                     * @param _tTL TTL(DNS记录缓存时间)，单位：秒
+                     * 设置<p>TTL(DNS记录缓存时间)，单位：秒</p>
+                     * @param _tTL <p>TTL(DNS记录缓存时间)，单位：秒</p>
                      * 
                      */
                     void SetTTL(const uint64_t& _tTL);
@@ -174,36 +174,36 @@ namespace TencentCloud
                     bool TTLHasBeenSet() const;
 
                     /**
-                     * 获取cname加速启用状态
-                     * @return CnameSpeedup cname加速启用状态
-                     * 
+                     * 获取<p>CNAME加速启用状态</p>
+                     * @return CnameSpeedup <p>CNAME加速启用状态</p>
+                     * @deprecated
                      */
                     std::string GetCnameSpeedup() const;
 
                     /**
-                     * 设置cname加速启用状态
-                     * @param _cnameSpeedup cname加速启用状态
-                     * 
+                     * 设置<p>CNAME加速启用状态</p>
+                     * @param _cnameSpeedup <p>CNAME加速启用状态</p>
+                     * @deprecated
                      */
                     void SetCnameSpeedup(const std::string& _cnameSpeedup);
 
                     /**
                      * 判断参数 CnameSpeedup 是否已赋值
                      * @return CnameSpeedup 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool CnameSpeedupHasBeenSet() const;
 
                     /**
-                     * 获取域名备注
-                     * @return Remark 域名备注
+                     * 获取<p>域名备注</p>
+                     * @return Remark <p>域名备注</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置域名备注
-                     * @param _remark 域名备注
+                     * 设置<p>域名备注</p>
+                     * @param _remark <p>域名备注</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取域名Punycode
-                     * @return Punycode 域名Punycode
+                     * 获取<p>域名Punycode</p>
+                     * @return Punycode <p>域名Punycode</p>
                      * 
                      */
                     std::string GetPunycode() const;
 
                     /**
-                     * 设置域名Punycode
-                     * @param _punycode 域名Punycode
+                     * 设置<p>域名Punycode</p>
+                     * @param _punycode <p>域名Punycode</p>
                      * 
                      */
                     void SetPunycode(const std::string& _punycode);
@@ -237,36 +237,36 @@ namespace TencentCloud
                     bool PunycodeHasBeenSet() const;
 
                     /**
-                     * 获取域名DNS状态，错误：dnserror，正常：空字符串
-                     * @return DnsStatus 域名DNS状态，错误：dnserror，正常：空字符串
-                     * 
+                     * 获取<p>域名DNS状态，错误：dnserror，正常：空字符串</p>
+                     * @return DnsStatus <p>域名DNS状态，错误：dnserror，正常：空字符串</p>
+                     * @deprecated
                      */
                     std::string GetDnsStatus() const;
 
                     /**
-                     * 设置域名DNS状态，错误：dnserror，正常：空字符串
-                     * @param _dnsStatus 域名DNS状态，错误：dnserror，正常：空字符串
-                     * 
+                     * 设置<p>域名DNS状态，错误：dnserror，正常：空字符串</p>
+                     * @param _dnsStatus <p>域名DNS状态，错误：dnserror，正常：空字符串</p>
+                     * @deprecated
                      */
                     void SetDnsStatus(const std::string& _dnsStatus);
 
                     /**
                      * 判断参数 DnsStatus 是否已赋值
                      * @return DnsStatus 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DnsStatusHasBeenSet() const;
 
                     /**
-                     * 获取域名的NS列表
-                     * @return DnspodNsList 域名的NS列表
+                     * 获取<p>域名的NS列表</p>
+                     * @return DnspodNsList <p>域名的NS列表</p>
                      * 
                      */
                     std::vector<std::string> GetDnspodNsList() const;
 
                     /**
-                     * 设置域名的NS列表
-                     * @param _dnspodNsList 域名的NS列表
+                     * 设置<p>域名的NS列表</p>
+                     * @param _dnspodNsList <p>域名的NS列表</p>
                      * 
                      */
                     void SetDnspodNsList(const std::vector<std::string>& _dnspodNsList);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool DnspodNsListHasBeenSet() const;
 
                     /**
-                     * 获取域名
-                     * @return Domain 域名
+                     * 获取<p>域名</p>
+                     * @return Domain <p>域名</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置域名
-                     * @param _domain 域名
+                     * 设置<p>域名</p>
+                     * @param _domain <p>域名</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取域名等级代号
-                     * @return GradeLevel 域名等级代号
+                     * 获取<p>域名等级代号</p>
+                     * @return GradeLevel <p>域名等级代号</p>
                      * 
                      */
                     uint64_t GetGradeLevel() const;
 
                     /**
-                     * 设置域名等级代号
-                     * @param _gradeLevel 域名等级代号
+                     * 设置<p>域名等级代号</p>
+                     * @param _gradeLevel <p>域名等级代号</p>
                      * 
                      */
                     void SetGradeLevel(const uint64_t& _gradeLevel);
@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool GradeLevelHasBeenSet() const;
 
                     /**
-                     * 获取域名所属的用户ID
-                     * @return UserId 域名所属的用户ID
+                     * 获取<p>域名所属的用户ID</p>
+                     * @return UserId <p>域名所属的用户ID</p>
                      * 
                      */
                     uint64_t GetUserId() const;
 
                     /**
-                     * 设置域名所属的用户ID
-                     * @param _userId 域名所属的用户ID
+                     * 设置<p>域名所属的用户ID</p>
+                     * @param _userId <p>域名所属的用户ID</p>
                      * 
                      */
                     void SetUserId(const uint64_t& _userId);
@@ -342,15 +342,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取是否为付费域名
-                     * @return IsVip 是否为付费域名
+                     * 获取<p>是否为付费域名</p>
+                     * @return IsVip <p>是否为付费域名</p>
                      * 
                      */
                     std::string GetIsVip() const;
 
                     /**
-                     * 设置是否为付费域名
-                     * @param _isVip 是否为付费域名
+                     * 设置<p>是否为付费域名</p>
+                     * @param _isVip <p>是否为付费域名</p>
                      * 
                      */
                     void SetIsVip(const std::string& _isVip);
@@ -363,15 +363,15 @@ namespace TencentCloud
                     bool IsVipHasBeenSet() const;
 
                     /**
-                     * 获取域名所有者的账号
-                     * @return Owner 域名所有者的账号
+                     * 获取<p>域名所有者的账号</p>
+                     * @return Owner <p>域名所有者的账号</p>
                      * 
                      */
                     std::string GetOwner() const;
 
                     /**
-                     * 设置域名所有者的账号
-                     * @param _owner 域名所有者的账号
+                     * 设置<p>域名所有者的账号</p>
+                     * @param _owner <p>域名所有者的账号</p>
                      * 
                      */
                     void SetOwner(const std::string& _owner);
@@ -384,15 +384,15 @@ namespace TencentCloud
                     bool OwnerHasBeenSet() const;
 
                     /**
-                     * 获取域名等级的描述
-                     * @return GradeTitle 域名等级的描述
+                     * 获取<p>域名等级的描述</p>
+                     * @return GradeTitle <p>域名等级的描述</p>
                      * 
                      */
                     std::string GetGradeTitle() const;
 
                     /**
-                     * 设置域名等级的描述
-                     * @param _gradeTitle 域名等级的描述
+                     * 设置<p>域名等级的描述</p>
+                     * @param _gradeTitle <p>域名等级的描述</p>
                      * 
                      */
                     void SetGradeTitle(const std::string& _gradeTitle);
@@ -405,15 +405,15 @@ namespace TencentCloud
                     bool GradeTitleHasBeenSet() const;
 
                     /**
-                     * 获取域名创建时间
-                     * @return CreatedOn 域名创建时间
+                     * 获取<p>域名创建时间</p>
+                     * @return CreatedOn <p>域名创建时间</p>
                      * 
                      */
                     std::string GetCreatedOn() const;
 
                     /**
-                     * 设置域名创建时间
-                     * @param _createdOn 域名创建时间
+                     * 设置<p>域名创建时间</p>
+                     * @param _createdOn <p>域名创建时间</p>
                      * 
                      */
                     void SetCreatedOn(const std::string& _createdOn);
@@ -426,15 +426,15 @@ namespace TencentCloud
                     bool CreatedOnHasBeenSet() const;
 
                     /**
-                     * 获取最后操作时间
-                     * @return UpdatedOn 最后操作时间
+                     * 获取<p>最后操作时间</p>
+                     * @return UpdatedOn <p>最后操作时间</p>
                      * 
                      */
                     std::string GetUpdatedOn() const;
 
                     /**
-                     * 设置最后操作时间
-                     * @param _updatedOn 最后操作时间
+                     * 设置<p>最后操作时间</p>
+                     * @param _updatedOn <p>最后操作时间</p>
                      * 
                      */
                     void SetUpdatedOn(const std::string& _updatedOn);
@@ -447,15 +447,15 @@ namespace TencentCloud
                     bool UpdatedOnHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云账户Uin
-                     * @return Uin 腾讯云账户Uin
+                     * 获取<p>腾讯云账户Uin</p>
+                     * @return Uin <p>腾讯云账户Uin</p>
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置腾讯云账户Uin
-                     * @param _uin 腾讯云账户Uin
+                     * 设置<p>腾讯云账户Uin</p>
+                     * @param _uin <p>腾讯云账户Uin</p>
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -468,15 +468,15 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取域名实际使用的NS列表
-                     * @return ActualNsList 域名实际使用的NS列表
+                     * 获取<p>域名实际使用的NS列表</p>
+                     * @return ActualNsList <p>域名实际使用的NS列表</p>
                      * 
                      */
                     std::vector<std::string> GetActualNsList() const;
 
                     /**
-                     * 设置域名实际使用的NS列表
-                     * @param _actualNsList 域名实际使用的NS列表
+                     * 设置<p>域名实际使用的NS列表</p>
+                     * @param _actualNsList <p>域名实际使用的NS列表</p>
                      * 
                      */
                     void SetActualNsList(const std::vector<std::string>& _actualNsList);
@@ -489,15 +489,15 @@ namespace TencentCloud
                     bool ActualNsListHasBeenSet() const;
 
                     /**
-                     * 获取域名的记录数量
-                     * @return RecordCount 域名的记录数量
+                     * 获取<p>域名的记录数量</p>
+                     * @return RecordCount <p>域名的记录数量</p>
                      * 
                      */
                     uint64_t GetRecordCount() const;
 
                     /**
-                     * 设置域名的记录数量
-                     * @param _recordCount 域名的记录数量
+                     * 设置<p>域名的记录数量</p>
+                     * @param _recordCount <p>域名的记录数量</p>
                      * 
                      */
                     void SetRecordCount(const uint64_t& _recordCount);
@@ -510,15 +510,15 @@ namespace TencentCloud
                     bool RecordCountHasBeenSet() const;
 
                     /**
-                     * 获取域名所有者的账户昵称
-                     * @return OwnerNick 域名所有者的账户昵称
+                     * 获取<p>域名所有者的账户昵称</p>
+                     * @return OwnerNick <p>域名所有者的账户昵称</p>
                      * 
                      */
                     std::string GetOwnerNick() const;
 
                     /**
-                     * 设置域名所有者的账户昵称
-                     * @param _ownerNick 域名所有者的账户昵称
+                     * 设置<p>域名所有者的账户昵称</p>
+                     * @param _ownerNick <p>域名所有者的账户昵称</p>
                      * 
                      */
                     void SetOwnerNick(const std::string& _ownerNick);
@@ -531,15 +531,15 @@ namespace TencentCloud
                     bool OwnerNickHasBeenSet() const;
 
                     /**
-                     * 获取是否在付费套餐宽限期
-                     * @return IsGracePeriod 是否在付费套餐宽限期
+                     * 获取<p>是否在付费套餐宽限期</p>
+                     * @return IsGracePeriod <p>是否在付费套餐宽限期</p>
                      * 
                      */
                     std::string GetIsGracePeriod() const;
 
                     /**
-                     * 设置是否在付费套餐宽限期
-                     * @param _isGracePeriod 是否在付费套餐宽限期
+                     * 设置<p>是否在付费套餐宽限期</p>
+                     * @param _isGracePeriod <p>是否在付费套餐宽限期</p>
                      * 
                      */
                     void SetIsGracePeriod(const std::string& _isGracePeriod);
@@ -552,15 +552,15 @@ namespace TencentCloud
                     bool IsGracePeriodHasBeenSet() const;
 
                     /**
-                     * 获取是否在付费套餐缓冲期
-                     * @return VipBuffered 是否在付费套餐缓冲期
+                     * 获取<p>是否在付费套餐缓冲期</p>
+                     * @return VipBuffered <p>是否在付费套餐缓冲期</p>
                      * 
                      */
                     std::string GetVipBuffered() const;
 
                     /**
-                     * 设置是否在付费套餐缓冲期
-                     * @param _vipBuffered 是否在付费套餐缓冲期
+                     * 设置<p>是否在付费套餐缓冲期</p>
+                     * @param _vipBuffered <p>是否在付费套餐缓冲期</p>
                      * 
                      */
                     void SetVipBuffered(const std::string& _vipBuffered);
@@ -573,18 +573,18 @@ namespace TencentCloud
                     bool VipBufferedHasBeenSet() const;
 
                     /**
-                     * 获取VIP套餐有效期开始时间
+                     * 获取<p>VIP套餐有效期开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VipStartAt VIP套餐有效期开始时间
+                     * @return VipStartAt <p>VIP套餐有效期开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVipStartAt() const;
 
                     /**
-                     * 设置VIP套餐有效期开始时间
+                     * 设置<p>VIP套餐有效期开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vipStartAt VIP套餐有效期开始时间
+                     * @param _vipStartAt <p>VIP套餐有效期开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -598,18 +598,18 @@ namespace TencentCloud
                     bool VipStartAtHasBeenSet() const;
 
                     /**
-                     * 获取VIP套餐有效期结束时间
+                     * 获取<p>VIP套餐有效期结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VipEndAt VIP套餐有效期结束时间
+                     * @return VipEndAt <p>VIP套餐有效期结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVipEndAt() const;
 
                     /**
-                     * 设置VIP套餐有效期结束时间
+                     * 设置<p>VIP套餐有效期结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vipEndAt VIP套餐有效期结束时间
+                     * @param _vipEndAt <p>VIP套餐有效期结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -623,18 +623,18 @@ namespace TencentCloud
                     bool VipEndAtHasBeenSet() const;
 
                     /**
-                     * 获取VIP套餐自动续费标识。可能的值为：default-默认；no-不自动续费；yes-自动续费
+                     * 获取<p>VIP套餐自动续费标识。可能的值为：default-默认；no-不自动续费；yes-自动续费</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VipAutoRenew VIP套餐自动续费标识。可能的值为：default-默认；no-不自动续费；yes-自动续费
+                     * @return VipAutoRenew <p>VIP套餐自动续费标识。可能的值为：default-默认；no-不自动续费；yes-自动续费</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVipAutoRenew() const;
 
                     /**
-                     * 设置VIP套餐自动续费标识。可能的值为：default-默认；no-不自动续费；yes-自动续费
+                     * 设置<p>VIP套餐自动续费标识。可能的值为：default-默认；no-不自动续费；yes-自动续费</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vipAutoRenew VIP套餐自动续费标识。可能的值为：default-默认；no-不自动续费；yes-自动续费
+                     * @param _vipAutoRenew <p>VIP套餐自动续费标识。可能的值为：default-默认；no-不自动续费；yes-自动续费</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -648,18 +648,18 @@ namespace TencentCloud
                     bool VipAutoRenewHasBeenSet() const;
 
                     /**
-                     * 获取VIP套餐资源ID
+                     * 获取<p>VIP套餐资源ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VipResourceId VIP套餐资源ID
+                     * @return VipResourceId <p>VIP套餐资源ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVipResourceId() const;
 
                     /**
-                     * 设置VIP套餐资源ID
+                     * 设置<p>VIP套餐资源ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vipResourceId VIP套餐资源ID
+                     * @param _vipResourceId <p>VIP套餐资源ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -673,15 +673,15 @@ namespace TencentCloud
                     bool VipResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取是否是子域名。
-                     * @return IsSubDomain 是否是子域名。
+                     * 获取<p>是否是子域名。</p>
+                     * @return IsSubDomain <p>是否是子域名。</p>
                      * 
                      */
                     bool GetIsSubDomain() const;
 
                     /**
-                     * 设置是否是子域名。
-                     * @param _isSubDomain 是否是子域名。
+                     * 设置<p>是否是子域名。</p>
+                     * @param _isSubDomain <p>是否是子域名。</p>
                      * 
                      */
                     void SetIsSubDomain(const bool& _isSubDomain);
@@ -694,15 +694,15 @@ namespace TencentCloud
                     bool IsSubDomainHasBeenSet() const;
 
                     /**
-                     * 获取域名关联的标签列表
-                     * @return TagList 域名关联的标签列表
+                     * 获取<p>域名关联的标签列表</p>
+                     * @return TagList <p>域名关联的标签列表</p>
                      * 
                      */
                     std::vector<TagItem> GetTagList() const;
 
                     /**
-                     * 设置域名关联的标签列表
-                     * @param _tagList 域名关联的标签列表
+                     * 设置<p>域名关联的标签列表</p>
+                     * @param _tagList <p>域名关联的标签列表</p>
                      * 
                      */
                     void SetTagList(const std::vector<TagItem>& _tagList);
@@ -715,15 +715,15 @@ namespace TencentCloud
                     bool TagListHasBeenSet() const;
 
                     /**
-                     * 获取是否启用搜索引擎推送
-                     * @return SearchEnginePush 是否启用搜索引擎推送
+                     * 获取<p>是否启用搜索引擎推送</p>
+                     * @return SearchEnginePush <p>是否启用搜索引擎推送</p>
                      * 
                      */
                     std::string GetSearchEnginePush() const;
 
                     /**
-                     * 设置是否启用搜索引擎推送
-                     * @param _searchEnginePush 是否启用搜索引擎推送
+                     * 设置<p>是否启用搜索引擎推送</p>
+                     * @param _searchEnginePush <p>是否启用搜索引擎推送</p>
                      * 
                      */
                     void SetSearchEnginePush(const std::string& _searchEnginePush);
@@ -736,15 +736,15 @@ namespace TencentCloud
                     bool SearchEnginePushHasBeenSet() const;
 
                     /**
-                     * 获取是否开启辅助 DNS
-                     * @return SlaveDNS 是否开启辅助 DNS
+                     * 获取<p>是否开启辅助 DNS</p>
+                     * @return SlaveDNS <p>是否开启辅助 DNS</p>
                      * 
                      */
                     std::string GetSlaveDNS() const;
 
                     /**
-                     * 设置是否开启辅助 DNS
-                     * @param _slaveDNS 是否开启辅助 DNS
+                     * 设置<p>是否开启辅助 DNS</p>
+                     * @param _slaveDNS <p>是否开启辅助 DNS</p>
                      * 
                      */
                     void SetSlaveDNS(const std::string& _slaveDNS);
@@ -756,209 +756,263 @@ namespace TencentCloud
                      */
                     bool SlaveDNSHasBeenSet() const;
 
+                    /**
+                     * 获取<p>域名DNS状态，错误：dnserror，正常：空字符串</p>
+                     * @return DNSStatus <p>域名DNS状态，错误：dnserror，正常：空字符串</p>
+                     * 
+                     */
+                    std::string GetDNSStatus() const;
+
+                    /**
+                     * 设置<p>域名DNS状态，错误：dnserror，正常：空字符串</p>
+                     * @param _dNSStatus <p>域名DNS状态，错误：dnserror，正常：空字符串</p>
+                     * 
+                     */
+                    void SetDNSStatus(const std::string& _dNSStatus);
+
+                    /**
+                     * 判断参数 DNSStatus 是否已赋值
+                     * @return DNSStatus 是否已赋值
+                     * 
+                     */
+                    bool DNSStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>CNAME加速启用状态</p>
+                     * @return CNAMESpeedup <p>CNAME加速启用状态</p>
+                     * 
+                     */
+                    std::string GetCNAMESpeedup() const;
+
+                    /**
+                     * 设置<p>CNAME加速启用状态</p>
+                     * @param _cNAMESpeedup <p>CNAME加速启用状态</p>
+                     * 
+                     */
+                    void SetCNAMESpeedup(const std::string& _cNAMESpeedup);
+
+                    /**
+                     * 判断参数 CNAMESpeedup 是否已赋值
+                     * @return CNAMESpeedup 是否已赋值
+                     * 
+                     */
+                    bool CNAMESpeedupHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 域名ID
+                     * <p>域名ID</p>
                      */
                     uint64_t m_domainId;
                     bool m_domainIdHasBeenSet;
 
                     /**
-                     * 域名状态，正常：ENABLE，暂停：PAUSE，封禁：SPAM
+                     * <p>域名状态，正常：ENABLE，暂停：PAUSE，封禁：SPAM</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 域名套餐等级
+                     * <p>域名套餐等级</p>
                      */
                     std::string m_grade;
                     bool m_gradeHasBeenSet;
 
                     /**
-                     * 域名分组ID
+                     * <p>域名分组ID</p>
                      */
                     uint64_t m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 是否星标域名
+                     * <p>是否星标域名</p>
                      */
                     std::string m_isMark;
                     bool m_isMarkHasBeenSet;
 
                     /**
-                     * TTL(DNS记录缓存时间)，单位：秒
+                     * <p>TTL(DNS记录缓存时间)，单位：秒</p>
                      */
                     uint64_t m_tTL;
                     bool m_tTLHasBeenSet;
 
                     /**
-                     * cname加速启用状态
+                     * <p>CNAME加速启用状态</p>
                      */
                     std::string m_cnameSpeedup;
                     bool m_cnameSpeedupHasBeenSet;
 
                     /**
-                     * 域名备注
+                     * <p>域名备注</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 域名Punycode
+                     * <p>域名Punycode</p>
                      */
                     std::string m_punycode;
                     bool m_punycodeHasBeenSet;
 
                     /**
-                     * 域名DNS状态，错误：dnserror，正常：空字符串
+                     * <p>域名DNS状态，错误：dnserror，正常：空字符串</p>
                      */
                     std::string m_dnsStatus;
                     bool m_dnsStatusHasBeenSet;
 
                     /**
-                     * 域名的NS列表
+                     * <p>域名的NS列表</p>
                      */
                     std::vector<std::string> m_dnspodNsList;
                     bool m_dnspodNsListHasBeenSet;
 
                     /**
-                     * 域名
+                     * <p>域名</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 域名等级代号
+                     * <p>域名等级代号</p>
                      */
                     uint64_t m_gradeLevel;
                     bool m_gradeLevelHasBeenSet;
 
                     /**
-                     * 域名所属的用户ID
+                     * <p>域名所属的用户ID</p>
                      */
                     uint64_t m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 是否为付费域名
+                     * <p>是否为付费域名</p>
                      */
                     std::string m_isVip;
                     bool m_isVipHasBeenSet;
 
                     /**
-                     * 域名所有者的账号
+                     * <p>域名所有者的账号</p>
                      */
                     std::string m_owner;
                     bool m_ownerHasBeenSet;
 
                     /**
-                     * 域名等级的描述
+                     * <p>域名等级的描述</p>
                      */
                     std::string m_gradeTitle;
                     bool m_gradeTitleHasBeenSet;
 
                     /**
-                     * 域名创建时间
+                     * <p>域名创建时间</p>
                      */
                     std::string m_createdOn;
                     bool m_createdOnHasBeenSet;
 
                     /**
-                     * 最后操作时间
+                     * <p>最后操作时间</p>
                      */
                     std::string m_updatedOn;
                     bool m_updatedOnHasBeenSet;
 
                     /**
-                     * 腾讯云账户Uin
+                     * <p>腾讯云账户Uin</p>
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 域名实际使用的NS列表
+                     * <p>域名实际使用的NS列表</p>
                      */
                     std::vector<std::string> m_actualNsList;
                     bool m_actualNsListHasBeenSet;
 
                     /**
-                     * 域名的记录数量
+                     * <p>域名的记录数量</p>
                      */
                     uint64_t m_recordCount;
                     bool m_recordCountHasBeenSet;
 
                     /**
-                     * 域名所有者的账户昵称
+                     * <p>域名所有者的账户昵称</p>
                      */
                     std::string m_ownerNick;
                     bool m_ownerNickHasBeenSet;
 
                     /**
-                     * 是否在付费套餐宽限期
+                     * <p>是否在付费套餐宽限期</p>
                      */
                     std::string m_isGracePeriod;
                     bool m_isGracePeriodHasBeenSet;
 
                     /**
-                     * 是否在付费套餐缓冲期
+                     * <p>是否在付费套餐缓冲期</p>
                      */
                     std::string m_vipBuffered;
                     bool m_vipBufferedHasBeenSet;
 
                     /**
-                     * VIP套餐有效期开始时间
+                     * <p>VIP套餐有效期开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vipStartAt;
                     bool m_vipStartAtHasBeenSet;
 
                     /**
-                     * VIP套餐有效期结束时间
+                     * <p>VIP套餐有效期结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vipEndAt;
                     bool m_vipEndAtHasBeenSet;
 
                     /**
-                     * VIP套餐自动续费标识。可能的值为：default-默认；no-不自动续费；yes-自动续费
+                     * <p>VIP套餐自动续费标识。可能的值为：default-默认；no-不自动续费；yes-自动续费</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vipAutoRenew;
                     bool m_vipAutoRenewHasBeenSet;
 
                     /**
-                     * VIP套餐资源ID
+                     * <p>VIP套餐资源ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vipResourceId;
                     bool m_vipResourceIdHasBeenSet;
 
                     /**
-                     * 是否是子域名。
+                     * <p>是否是子域名。</p>
                      */
                     bool m_isSubDomain;
                     bool m_isSubDomainHasBeenSet;
 
                     /**
-                     * 域名关联的标签列表
+                     * <p>域名关联的标签列表</p>
                      */
                     std::vector<TagItem> m_tagList;
                     bool m_tagListHasBeenSet;
 
                     /**
-                     * 是否启用搜索引擎推送
+                     * <p>是否启用搜索引擎推送</p>
                      */
                     std::string m_searchEnginePush;
                     bool m_searchEnginePushHasBeenSet;
 
                     /**
-                     * 是否开启辅助 DNS
+                     * <p>是否开启辅助 DNS</p>
                      */
                     std::string m_slaveDNS;
                     bool m_slaveDNSHasBeenSet;
+
+                    /**
+                     * <p>域名DNS状态，错误：dnserror，正常：空字符串</p>
+                     */
+                    std::string m_dNSStatus;
+                    bool m_dNSStatusHasBeenSet;
+
+                    /**
+                     * <p>CNAME加速启用状态</p>
+                     */
+                    std::string m_cNAMESpeedup;
+                    bool m_cNAMESpeedupHasBeenSet;
 
                 };
             }

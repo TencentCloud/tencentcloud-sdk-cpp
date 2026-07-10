@@ -24,7 +24,8 @@ ModelChargingItem::ModelChargingItem() :
     m_priceNameHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_priceHasBeenSet(false),
-    m_priceUnitHasBeenSet(false)
+    m_priceUnitHasBeenSet(false),
+    m_peakPriceHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome ModelChargingItem::Deserialize(const rapidjson::Value &value
         m_priceUnitHasBeenSet = true;
     }
 
+    if (value.HasMember("PeakPrice") && !value["PeakPrice"].IsNull())
+    {
+        if (!value["PeakPrice"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelChargingItem.PeakPrice` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_peakPrice = string(value["PeakPrice"].GetString());
+        m_peakPriceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void ModelChargingItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "PriceUnit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_priceUnit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_peakPriceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PeakPrice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_peakPrice.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void ModelChargingItem::SetPriceUnit(const string& _priceUnit)
 bool ModelChargingItem::PriceUnitHasBeenSet() const
 {
     return m_priceUnitHasBeenSet;
+}
+
+string ModelChargingItem::GetPeakPrice() const
+{
+    return m_peakPrice;
+}
+
+void ModelChargingItem::SetPeakPrice(const string& _peakPrice)
+{
+    m_peakPrice = _peakPrice;
+    m_peakPriceHasBeenSet = true;
+}
+
+bool ModelChargingItem::PeakPriceHasBeenSet() const
+{
+    return m_peakPriceHasBeenSet;
 }
 

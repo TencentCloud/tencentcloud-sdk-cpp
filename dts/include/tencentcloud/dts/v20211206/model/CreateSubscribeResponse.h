@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据订阅实例的ID数组
-                     * @return SubscribeIds 数据订阅实例的ID数组
+                     * 获取<p>数据订阅实例的ID数组</p>
+                     * @return SubscribeIds <p>数据订阅实例的ID数组</p>
                      * 
                      */
                     std::vector<std::string> GetSubscribeIds() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据订阅实例的ID数组
+                     * <p>数据订阅实例的ID数组</p>
                      */
                     std::vector<std::string> m_subscribeIds;
                     bool m_subscribeIdsHasBeenSet;

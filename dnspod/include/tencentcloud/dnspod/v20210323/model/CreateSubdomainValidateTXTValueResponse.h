@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要添加 TXT 记录的主域名。
-                     * @return Domain 需要添加 TXT 记录的主域名。
+                     * 获取<p>需要添加 TXT 记录的主域名。</p>
+                     * @return Domain <p>需要添加 TXT 记录的主域名。</p>
                      * 
                      */
                     std::string GetDomain() const;
@@ -58,22 +58,22 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取需要添加 TXT 记录的主机记录。
-                     * @return Subdomain 需要添加 TXT 记录的主机记录。
-                     * 
+                     * 获取<p>需要添加 TXT 记录的主机记录。</p>
+                     * @return Subdomain <p>需要添加 TXT 记录的主机记录。</p>
+                     * @deprecated
                      */
                     std::string GetSubdomain() const;
 
                     /**
                      * 判断参数 Subdomain 是否已赋值
                      * @return Subdomain 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SubdomainHasBeenSet() const;
 
                     /**
-                     * 获取需要添加记录类型。
-                     * @return RecordType 需要添加记录类型。
+                     * 获取<p>需要添加记录类型。</p>
+                     * @return RecordType <p>需要添加记录类型。</p>
                      * 
                      */
                     std::string GetRecordType() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool RecordTypeHasBeenSet() const;
 
                     /**
-                     * 获取需要添加 TXT 记录的记录值。
-                     * @return Value 需要添加 TXT 记录的记录值。
+                     * 获取<p>需要添加 TXT 记录的记录值。</p>
+                     * @return Value <p>需要添加 TXT 记录的记录值。</p>
                      * 
                      */
                     std::string GetValue() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool ValueHasBeenSet() const;
 
                     /**
-                     * 获取需要添加 TXT 记录的上级域名(可选，主域名和上级域名任选一个添加即可)。
-                     * @return ParentDomain 需要添加 TXT 记录的上级域名(可选，主域名和上级域名任选一个添加即可)。
+                     * 获取<p>需要添加 TXT 记录的上级域名(可选，主域名和上级域名任选一个添加即可)。</p>
+                     * @return ParentDomain <p>需要添加 TXT 记录的上级域名(可选，主域名和上级域名任选一个添加即可)。</p>
                      * 
                      */
                     std::string GetParentDomain() const;
@@ -113,37 +113,57 @@ namespace TencentCloud
                      */
                     bool ParentDomainHasBeenSet() const;
 
+                    /**
+                     * 获取<p>需要添加 TXT 记录的主机记录。</p><p>新增规范参数，建议优先使用SubDomain参数</p>
+                     * @return SubDomain <p>需要添加 TXT 记录的主机记录。</p><p>新增规范参数，建议优先使用SubDomain参数</p>
+                     * 
+                     */
+                    std::string GetSubDomain() const;
+
+                    /**
+                     * 判断参数 SubDomain 是否已赋值
+                     * @return SubDomain 是否已赋值
+                     * 
+                     */
+                    bool SubDomainHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 需要添加 TXT 记录的主域名。
+                     * <p>需要添加 TXT 记录的主域名。</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 需要添加 TXT 记录的主机记录。
+                     * <p>需要添加 TXT 记录的主机记录。</p>
                      */
                     std::string m_subdomain;
                     bool m_subdomainHasBeenSet;
 
                     /**
-                     * 需要添加记录类型。
+                     * <p>需要添加记录类型。</p>
                      */
                     std::string m_recordType;
                     bool m_recordTypeHasBeenSet;
 
                     /**
-                     * 需要添加 TXT 记录的记录值。
+                     * <p>需要添加 TXT 记录的记录值。</p>
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
-                     * 需要添加 TXT 记录的上级域名(可选，主域名和上级域名任选一个添加即可)。
+                     * <p>需要添加 TXT 记录的上级域名(可选，主域名和上级域名任选一个添加即可)。</p>
                      */
                     std::string m_parentDomain;
                     bool m_parentDomainHasBeenSet;
+
+                    /**
+                     * <p>需要添加 TXT 记录的主机记录。</p><p>新增规范参数，建议优先使用SubDomain参数</p>
+                     */
+                    std::string m_subDomain;
+                    bool m_subDomainHasBeenSet;
 
                 };
             }

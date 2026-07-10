@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取加速地域信息。
-                     * @return AccelerateAreaSet 加速地域信息。
+                     * 获取<p>加速地域信息。</p>
+                     * @return AccelerateAreaSet <p>加速地域信息。</p>
                      * 
                      */
                     std::vector<AcceleratorAreas> GetAccelerateAreaSet() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool AccelerateAreaSetHasBeenSet() const;
 
                     /**
-                     * 获取实例个数。
-                     * @return TotalCount 实例个数。
+                     * 获取<p>实例个数。</p>
+                     * @return TotalCount <p>实例个数。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 加速地域信息。
+                     * <p>加速地域信息。</p>
                      */
                     std::vector<AcceleratorAreas> m_accelerateAreaSet;
                     bool m_accelerateAreaSetHasBeenSet;
 
                     /**
-                     * 实例个数。
+                     * <p>实例个数。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

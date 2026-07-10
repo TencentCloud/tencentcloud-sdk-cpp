@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取默认持续时间，单位：秒
+                     * 获取<p>默认持续时间，单位：秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Default 默认持续时间，单位：秒
+                     * @return Default <p>默认持续时间，单位：秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDefault() const;
 
                     /**
-                     * 设置默认持续时间，单位：秒
+                     * 设置<p>默认持续时间，单位：秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _default 默认持续时间，单位：秒
+                     * @param _default <p>默认持续时间，单位：秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool DefaultHasBeenSet() const;
 
                     /**
-                     * 获取可选持续时间，单位：秒
+                     * 获取<p>可选持续时间，单位：秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Keys 可选持续时间，单位：秒
+                     * @return Keys <p>可选持续时间，单位：秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetKeys() const;
 
                     /**
-                     * 设置可选持续时间，单位：秒
+                     * 设置<p>可选持续时间，单位：秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _keys 可选持续时间，单位：秒
+                     * @param _keys <p>可选持续时间，单位：秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,15 +97,15 @@ namespace TencentCloud
                     bool KeysHasBeenSet() const;
 
                     /**
-                     * 获取是否必须
-                     * @return Need 是否必须
+                     * 获取<p>是否必须</p>
+                     * @return Need <p>是否必须</p>
                      * 
                      */
                     bool GetNeed() const;
 
                     /**
-                     * 设置是否必须
-                     * @param _need 是否必须
+                     * 设置<p>是否必须</p>
+                     * @param _need <p>是否必须</p>
                      * 
                      */
                     void SetNeed(const bool& _need);
@@ -120,21 +120,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 默认持续时间，单位：秒
+                     * <p>默认持续时间，单位：秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_default;
                     bool m_defaultHasBeenSet;
 
                     /**
-                     * 可选持续时间，单位：秒
+                     * <p>可选持续时间，单位：秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_keys;
                     bool m_keysHasBeenSet;
 
                     /**
-                     * 是否必须
+                     * <p>是否必须</p>
                      */
                     bool m_need;
                     bool m_needHasBeenSet;

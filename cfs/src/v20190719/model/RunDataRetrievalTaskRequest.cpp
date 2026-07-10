@@ -22,7 +22,8 @@
 using namespace TencentCloud::Cfs::V20190719::Model;
 using namespace std;
 
-RunDataRetrievalTaskRequest::RunDataRetrievalTaskRequest()
+RunDataRetrievalTaskRequest::RunDataRetrievalTaskRequest() :
+    m_dataRetrievalIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string RunDataRetrievalTaskRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_dataRetrievalIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataRetrievalId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataRetrievalId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string RunDataRetrievalTaskRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string RunDataRetrievalTaskRequest::GetDataRetrievalId() const
+{
+    return m_dataRetrievalId;
+}
+
+void RunDataRetrievalTaskRequest::SetDataRetrievalId(const string& _dataRetrievalId)
+{
+    m_dataRetrievalId = _dataRetrievalId;
+    m_dataRetrievalIdHasBeenSet = true;
+}
+
+bool RunDataRetrievalTaskRequest::DataRetrievalIdHasBeenSet() const
+{
+    return m_dataRetrievalIdHasBeenSet;
+}
 
 

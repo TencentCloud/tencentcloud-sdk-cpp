@@ -27,7 +27,8 @@ DescribeResolveCountRequest::DescribeResolveCountRequest() :
     m_startDateHasBeenSet(false),
     m_endDateHasBeenSet(false),
     m_dnsFormatHasBeenSet(false),
-    m_domainIdHasBeenSet(false)
+    m_domainIdHasBeenSet(false),
+    m_dNSFormatHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string DescribeResolveCountRequest::ToJsonString() const
         string key = "DomainId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_domainId, allocator);
+    }
+
+    if (m_dNSFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DNSFormat";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dNSFormat.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void DescribeResolveCountRequest::SetDomainId(const uint64_t& _domainId)
 bool DescribeResolveCountRequest::DomainIdHasBeenSet() const
 {
     return m_domainIdHasBeenSet;
+}
+
+string DescribeResolveCountRequest::GetDNSFormat() const
+{
+    return m_dNSFormat;
+}
+
+void DescribeResolveCountRequest::SetDNSFormat(const string& _dNSFormat)
+{
+    m_dNSFormat = _dNSFormat;
+    m_dNSFormatHasBeenSet = true;
+}
+
+bool DescribeResolveCountRequest::DNSFormatHasBeenSet() const
+{
+    return m_dNSFormatHasBeenSet;
 }
 
 

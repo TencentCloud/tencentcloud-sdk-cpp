@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启自动逻辑备份
-                     * @return LogicBackupEnable 是否开启自动逻辑备份
+                     * 获取<p>是否开启自动逻辑备份</p>
+                     * @return LogicBackupEnable <p>是否开启自动逻辑备份</p>
                      * 
                      */
                     std::string GetLogicBackupEnable() const;
 
                     /**
-                     * 设置是否开启自动逻辑备份
-                     * @param _logicBackupEnable 是否开启自动逻辑备份
+                     * 设置<p>是否开启自动逻辑备份</p>
+                     * @param _logicBackupEnable <p>是否开启自动逻辑备份</p>
                      * 
                      */
                     void SetLogicBackupEnable(const std::string& _logicBackupEnable);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool LogicBackupEnableHasBeenSet() const;
 
                     /**
-                     * 获取自动逻辑备份开始时间
-                     * @return LogicBackupTimeBeg 自动逻辑备份开始时间
+                     * 获取<p>自动逻辑备份开始时间</p>
+                     * @return LogicBackupTimeBeg <p>自动逻辑备份开始时间</p>
                      * 
                      */
                     uint64_t GetLogicBackupTimeBeg() const;
 
                     /**
-                     * 设置自动逻辑备份开始时间
-                     * @param _logicBackupTimeBeg 自动逻辑备份开始时间
+                     * 设置<p>自动逻辑备份开始时间</p>
+                     * @param _logicBackupTimeBeg <p>自动逻辑备份开始时间</p>
                      * 
                      */
                     void SetLogicBackupTimeBeg(const uint64_t& _logicBackupTimeBeg);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool LogicBackupTimeBegHasBeenSet() const;
 
                     /**
-                     * 获取自动逻辑备份结束时间
-                     * @return LogicBackupTimeEnd 自动逻辑备份结束时间
+                     * 获取<p>自动逻辑备份结束时间</p>
+                     * @return LogicBackupTimeEnd <p>自动逻辑备份结束时间</p>
                      * 
                      */
                     uint64_t GetLogicBackupTimeEnd() const;
 
                     /**
-                     * 设置自动逻辑备份结束时间
-                     * @param _logicBackupTimeEnd 自动逻辑备份结束时间
+                     * 设置<p>自动逻辑备份结束时间</p>
+                     * @param _logicBackupTimeEnd <p>自动逻辑备份结束时间</p>
                      * 
                      */
                     void SetLogicBackupTimeEnd(const uint64_t& _logicBackupTimeEnd);
@@ -111,19 +111,15 @@ namespace TencentCloud
                     bool LogicBackupTimeEndHasBeenSet() const;
 
                     /**
-                     * 获取自动逻辑备份保留时间
-单位：秒
-                     * @return LogicReserveDuration 自动逻辑备份保留时间
-单位：秒
+                     * 获取<p>自动逻辑备份保留时间<br>单位：秒</p>
+                     * @return LogicReserveDuration <p>自动逻辑备份保留时间<br>单位：秒</p>
                      * 
                      */
                     uint64_t GetLogicReserveDuration() const;
 
                     /**
-                     * 设置自动逻辑备份保留时间
-单位：秒
-                     * @param _logicReserveDuration 自动逻辑备份保留时间
-单位：秒
+                     * 设置<p>自动逻辑备份保留时间<br>单位：秒</p>
+                     * @param _logicReserveDuration <p>自动逻辑备份保留时间<br>单位：秒</p>
                      * 
                      */
                     void SetLogicReserveDuration(const uint64_t& _logicReserveDuration);
@@ -136,19 +132,15 @@ namespace TencentCloud
                     bool LogicReserveDurationHasBeenSet() const;
 
                     /**
-                     * 获取是否开启跨地域逻辑备份
-可选值：ON/OFF
-                     * @return LogicCrossRegionsEnable 是否开启跨地域逻辑备份
-可选值：ON/OFF
+                     * 获取<p>是否开启跨地域逻辑备份<br>可选值：ON/OFF</p>
+                     * @return LogicCrossRegionsEnable <p>是否开启跨地域逻辑备份<br>可选值：ON/OFF</p>
                      * 
                      */
                     std::string GetLogicCrossRegionsEnable() const;
 
                     /**
-                     * 设置是否开启跨地域逻辑备份
-可选值：ON/OFF
-                     * @param _logicCrossRegionsEnable 是否开启跨地域逻辑备份
-可选值：ON/OFF
+                     * 设置<p>是否开启跨地域逻辑备份<br>可选值：ON/OFF</p>
+                     * @param _logicCrossRegionsEnable <p>是否开启跨地域逻辑备份<br>可选值：ON/OFF</p>
                      * 
                      */
                     void SetLogicCrossRegionsEnable(const std::string& _logicCrossRegionsEnable);
@@ -161,18 +153,18 @@ namespace TencentCloud
                     bool LogicCrossRegionsEnableHasBeenSet() const;
 
                     /**
-                     * 获取逻辑备份所跨地域
+                     * 获取<p>逻辑备份所跨地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LogicCrossRegions 逻辑备份所跨地域
+                     * @return LogicCrossRegions <p>逻辑备份所跨地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetLogicCrossRegions() const;
 
                     /**
-                     * 设置逻辑备份所跨地域
+                     * 设置<p>逻辑备份所跨地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _logicCrossRegions 逻辑备份所跨地域
+                     * @param _logicCrossRegions <p>逻辑备份所跨地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -186,15 +178,15 @@ namespace TencentCloud
                     bool LogicCrossRegionsHasBeenSet() const;
 
                     /**
-                     * 获取备份投递关系
-                     * @return AutoCopyVaults 备份投递关系
+                     * 获取<p>备份投递关系</p>
+                     * @return AutoCopyVaults <p>备份投递关系</p>
                      * 
                      */
                     std::vector<CreateBackupVaultItem> GetAutoCopyVaults() const;
 
                     /**
-                     * 设置备份投递关系
-                     * @param _autoCopyVaults 备份投递关系
+                     * 设置<p>备份投递关系</p>
+                     * @param _autoCopyVaults <p>备份投递关系</p>
                      * 
                      */
                     void SetAutoCopyVaults(const std::vector<CreateBackupVaultItem>& _autoCopyVaults);
@@ -206,52 +198,77 @@ namespace TencentCloud
                      */
                     bool AutoCopyVaultsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>天</p><p>单位：跨地域逻辑备份保留时间</p>
+                     * @return LogicCrossRegionSaveDays <p>天</p><p>单位：跨地域逻辑备份保留时间</p>
+                     * 
+                     */
+                    int64_t GetLogicCrossRegionSaveDays() const;
+
+                    /**
+                     * 设置<p>天</p><p>单位：跨地域逻辑备份保留时间</p>
+                     * @param _logicCrossRegionSaveDays <p>天</p><p>单位：跨地域逻辑备份保留时间</p>
+                     * 
+                     */
+                    void SetLogicCrossRegionSaveDays(const int64_t& _logicCrossRegionSaveDays);
+
+                    /**
+                     * 判断参数 LogicCrossRegionSaveDays 是否已赋值
+                     * @return LogicCrossRegionSaveDays 是否已赋值
+                     * 
+                     */
+                    bool LogicCrossRegionSaveDaysHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 是否开启自动逻辑备份
+                     * <p>是否开启自动逻辑备份</p>
                      */
                     std::string m_logicBackupEnable;
                     bool m_logicBackupEnableHasBeenSet;
 
                     /**
-                     * 自动逻辑备份开始时间
+                     * <p>自动逻辑备份开始时间</p>
                      */
                     uint64_t m_logicBackupTimeBeg;
                     bool m_logicBackupTimeBegHasBeenSet;
 
                     /**
-                     * 自动逻辑备份结束时间
+                     * <p>自动逻辑备份结束时间</p>
                      */
                     uint64_t m_logicBackupTimeEnd;
                     bool m_logicBackupTimeEndHasBeenSet;
 
                     /**
-                     * 自动逻辑备份保留时间
-单位：秒
+                     * <p>自动逻辑备份保留时间<br>单位：秒</p>
                      */
                     uint64_t m_logicReserveDuration;
                     bool m_logicReserveDurationHasBeenSet;
 
                     /**
-                     * 是否开启跨地域逻辑备份
-可选值：ON/OFF
+                     * <p>是否开启跨地域逻辑备份<br>可选值：ON/OFF</p>
                      */
                     std::string m_logicCrossRegionsEnable;
                     bool m_logicCrossRegionsEnableHasBeenSet;
 
                     /**
-                     * 逻辑备份所跨地域
+                     * <p>逻辑备份所跨地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_logicCrossRegions;
                     bool m_logicCrossRegionsHasBeenSet;
 
                     /**
-                     * 备份投递关系
+                     * <p>备份投递关系</p>
                      */
                     std::vector<CreateBackupVaultItem> m_autoCopyVaults;
                     bool m_autoCopyVaultsHasBeenSet;
+
+                    /**
+                     * <p>天</p><p>单位：跨地域逻辑备份保留时间</p>
+                     */
+                    int64_t m_logicCrossRegionSaveDays;
+                    bool m_logicCrossRegionSaveDaysHasBeenSet;
 
                 };
             }

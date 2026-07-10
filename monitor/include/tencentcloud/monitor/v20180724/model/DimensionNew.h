@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取维度 key 标示，后台英文名
-                     * @return Key 维度 key 标示，后台英文名
+                     * 获取<p>维度 key 标示，后台英文名</p>
+                     * @return Key <p>维度 key 标示，后台英文名</p>
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置维度 key 标示，后台英文名
-                     * @param _key 维度 key 标示，后台英文名
+                     * 设置<p>维度 key 标示，后台英文名</p>
+                     * @param _key <p>维度 key 标示，后台英文名</p>
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取维度 key 名称，中英文前台展示名
-                     * @return Name 维度 key 名称，中英文前台展示名
+                     * 获取<p>维度 key 名称，中英文前台展示名</p>
+                     * @return Name <p>维度 key 名称，中英文前台展示名</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置维度 key 名称，中英文前台展示名
-                     * @param _name 维度 key 名称，中英文前台展示名
+                     * 设置<p>维度 key 名称，中英文前台展示名</p>
+                     * @param _name <p>维度 key 名称，中英文前台展示名</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取是否必选
-                     * @return IsRequired 是否必选
+                     * 获取<p>是否必选</p>
+                     * @return IsRequired <p>是否必选</p>
                      * 
                      */
                     bool GetIsRequired() const;
 
                     /**
-                     * 设置是否必选
-                     * @param _isRequired 是否必选
+                     * 设置<p>是否必选</p>
+                     * @param _isRequired <p>是否必选</p>
                      * 
                      */
                     void SetIsRequired(const bool& _isRequired);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool IsRequiredHasBeenSet() const;
 
                     /**
-                     * 获取支持的操作符列表
-                     * @return Operators 支持的操作符列表
+                     * 获取<p>支持的操作符列表</p>
+                     * @return Operators <p>支持的操作符列表</p>
                      * 
                      */
                     std::vector<Operator> GetOperators() const;
 
                     /**
-                     * 设置支持的操作符列表
-                     * @param _operators 支持的操作符列表
+                     * 设置<p>支持的操作符列表</p>
+                     * @param _operators <p>支持的操作符列表</p>
                      * 
                      */
                     void SetOperators(const std::vector<Operator>& _operators);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool OperatorsHasBeenSet() const;
 
                     /**
-                     * 获取是否支持多选
-                     * @return IsMultiple 是否支持多选
+                     * 获取<p>是否支持多选</p>
+                     * @return IsMultiple <p>是否支持多选</p>
                      * 
                      */
                     bool GetIsMultiple() const;
 
                     /**
-                     * 设置是否支持多选
-                     * @param _isMultiple 是否支持多选
+                     * 设置<p>是否支持多选</p>
+                     * @param _isMultiple <p>是否支持多选</p>
                      * 
                      */
                     void SetIsMultiple(const bool& _isMultiple);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool IsMultipleHasBeenSet() const;
 
                     /**
-                     * 获取创建后是否可以修改
-                     * @return IsMutable 创建后是否可以修改
+                     * 获取<p>创建后是否可以修改</p>
+                     * @return IsMutable <p>创建后是否可以修改</p>
                      * 
                      */
                     bool GetIsMutable() const;
 
                     /**
-                     * 设置创建后是否可以修改
-                     * @param _isMutable 创建后是否可以修改
+                     * 设置<p>创建后是否可以修改</p>
+                     * @param _isMutable <p>创建后是否可以修改</p>
                      * 
                      */
                     void SetIsMutable(const bool& _isMutable);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool IsMutableHasBeenSet() const;
 
                     /**
-                     * 获取是否展示给用户
-                     * @return IsVisible 是否展示给用户
+                     * 获取<p>是否展示给用户</p>
+                     * @return IsVisible <p>是否展示给用户</p>
                      * 
                      */
                     bool GetIsVisible() const;
 
                     /**
-                     * 设置是否展示给用户
-                     * @param _isVisible 是否展示给用户
+                     * 设置<p>是否展示给用户</p>
+                     * @param _isVisible <p>是否展示给用户</p>
                      * 
                      */
                     void SetIsVisible(const bool& _isVisible);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool IsVisibleHasBeenSet() const;
 
                     /**
-                     * 获取能否用来过滤策略列表
-                     * @return CanFilterPolicy 能否用来过滤策略列表
+                     * 获取<p>能否用来过滤策略列表</p>
+                     * @return CanFilterPolicy <p>能否用来过滤策略列表</p>
                      * 
                      */
                     bool GetCanFilterPolicy() const;
 
                     /**
-                     * 设置能否用来过滤策略列表
-                     * @param _canFilterPolicy 能否用来过滤策略列表
+                     * 设置<p>能否用来过滤策略列表</p>
+                     * @param _canFilterPolicy <p>能否用来过滤策略列表</p>
                      * 
                      */
                     void SetCanFilterPolicy(const bool& _canFilterPolicy);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool CanFilterPolicyHasBeenSet() const;
 
                     /**
-                     * 获取能否用来过滤告警历史
-                     * @return CanFilterHistory 能否用来过滤告警历史
+                     * 获取<p>能否用来过滤告警历史</p>
+                     * @return CanFilterHistory <p>能否用来过滤告警历史</p>
                      * 
                      */
                     bool GetCanFilterHistory() const;
 
                     /**
-                     * 设置能否用来过滤告警历史
-                     * @param _canFilterHistory 能否用来过滤告警历史
+                     * 设置<p>能否用来过滤告警历史</p>
+                     * @param _canFilterHistory <p>能否用来过滤告警历史</p>
                      * 
                      */
                     void SetCanFilterHistory(const bool& _canFilterHistory);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool CanFilterHistoryHasBeenSet() const;
 
                     /**
-                     * 获取能否作为聚合维度
-                     * @return CanGroupBy 能否作为聚合维度
+                     * 获取<p>能否作为聚合维度</p>
+                     * @return CanGroupBy <p>能否作为聚合维度</p>
                      * 
                      */
                     bool GetCanGroupBy() const;
 
                     /**
-                     * 设置能否作为聚合维度
-                     * @param _canGroupBy 能否作为聚合维度
+                     * 设置<p>能否作为聚合维度</p>
+                     * @param _canGroupBy <p>能否作为聚合维度</p>
                      * 
                      */
                     void SetCanGroupBy(const bool& _canGroupBy);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool CanGroupByHasBeenSet() const;
 
                     /**
-                     * 获取是否必须作为聚合维度
-                     * @return MustGroupBy 是否必须作为聚合维度
+                     * 获取<p>是否必须作为聚合维度</p>
+                     * @return MustGroupBy <p>是否必须作为聚合维度</p>
                      * 
                      */
                     bool GetMustGroupBy() const;
 
                     /**
-                     * 设置是否必须作为聚合维度
-                     * @param _mustGroupBy 是否必须作为聚合维度
+                     * 设置<p>是否必须作为聚合维度</p>
+                     * @param _mustGroupBy <p>是否必须作为聚合维度</p>
                      * 
                      */
                     void SetMustGroupBy(const bool& _mustGroupBy);
@@ -279,18 +279,18 @@ namespace TencentCloud
                     bool MustGroupByHasBeenSet() const;
 
                     /**
-                     * 获取前端翻译要替换的 key
+                     * 获取<p>前端翻译要替换的 key</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ShowValueReplace 前端翻译要替换的 key
+                     * @return ShowValueReplace <p>前端翻译要替换的 key</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetShowValueReplace() const;
 
                     /**
-                     * 设置前端翻译要替换的 key
+                     * 设置<p>前端翻译要替换的 key</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _showValueReplace 前端翻译要替换的 key
+                     * @param _showValueReplace <p>前端翻译要替换的 key</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -306,73 +306,73 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 维度 key 标示，后台英文名
+                     * <p>维度 key 标示，后台英文名</p>
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 维度 key 名称，中英文前台展示名
+                     * <p>维度 key 名称，中英文前台展示名</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 是否必选
+                     * <p>是否必选</p>
                      */
                     bool m_isRequired;
                     bool m_isRequiredHasBeenSet;
 
                     /**
-                     * 支持的操作符列表
+                     * <p>支持的操作符列表</p>
                      */
                     std::vector<Operator> m_operators;
                     bool m_operatorsHasBeenSet;
 
                     /**
-                     * 是否支持多选
+                     * <p>是否支持多选</p>
                      */
                     bool m_isMultiple;
                     bool m_isMultipleHasBeenSet;
 
                     /**
-                     * 创建后是否可以修改
+                     * <p>创建后是否可以修改</p>
                      */
                     bool m_isMutable;
                     bool m_isMutableHasBeenSet;
 
                     /**
-                     * 是否展示给用户
+                     * <p>是否展示给用户</p>
                      */
                     bool m_isVisible;
                     bool m_isVisibleHasBeenSet;
 
                     /**
-                     * 能否用来过滤策略列表
+                     * <p>能否用来过滤策略列表</p>
                      */
                     bool m_canFilterPolicy;
                     bool m_canFilterPolicyHasBeenSet;
 
                     /**
-                     * 能否用来过滤告警历史
+                     * <p>能否用来过滤告警历史</p>
                      */
                     bool m_canFilterHistory;
                     bool m_canFilterHistoryHasBeenSet;
 
                     /**
-                     * 能否作为聚合维度
+                     * <p>能否作为聚合维度</p>
                      */
                     bool m_canGroupBy;
                     bool m_canGroupByHasBeenSet;
 
                     /**
-                     * 是否必须作为聚合维度
+                     * <p>是否必须作为聚合维度</p>
                      */
                     bool m_mustGroupBy;
                     bool m_mustGroupByHasBeenSet;
 
                     /**
-                     * 前端翻译要替换的 key
+                     * <p>前端翻译要替换的 key</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_showValueReplace;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取镜像地址
-                     * @return Image 镜像地址
+                     * 获取<p>镜像地址</p>
+                     * @return Image <p>镜像地址</p>
                      * 
                      */
                     std::string GetImage() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool ImageHasBeenSet() const;
 
                     /**
-                     * 获取镜像 Digest
-                     * @return ImageDigest 镜像 Digest
+                     * 获取<p>镜像 Digest</p>
+                     * @return ImageDigest <p>镜像 Digest</p>
                      * 
                      */
                     std::string GetImageDigest() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool ImageDigestHasBeenSet() const;
 
                     /**
-                     * 获取镜像仓库类型：`enterprise`、`personal`。
-                     * @return ImageRegistryType 镜像仓库类型：`enterprise`、`personal`。
+                     * 获取<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>。</p>
+                     * @return ImageRegistryType <p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>。</p>
                      * 
                      */
                     std::string GetImageRegistryType() const;
@@ -88,19 +88,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 镜像地址
+                     * <p>镜像地址</p>
                      */
                     std::string m_image;
                     bool m_imageHasBeenSet;
 
                     /**
-                     * 镜像 Digest
+                     * <p>镜像 Digest</p>
                      */
                     std::string m_imageDigest;
                     bool m_imageDigestHasBeenSet;
 
                     /**
-                     * 镜像仓库类型：`enterprise`、`personal`。
+                     * <p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>。</p>
                      */
                     std::string m_imageRegistryType;
                     bool m_imageRegistryTypeHasBeenSet;

@@ -6240,6 +6240,56 @@ MonitorClient::EnableGrafanaSSOOutcomeCallable MonitorClient::EnableGrafanaSSOCa
     return prom->get_future();
 }
 
+MonitorClient::EnablePredefinedPoliciesOutcome MonitorClient::EnablePredefinedPolicies(const EnablePredefinedPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnablePredefinedPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnablePredefinedPoliciesResponse rsp = EnablePredefinedPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnablePredefinedPoliciesOutcome(rsp);
+        else
+            return EnablePredefinedPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return EnablePredefinedPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::EnablePredefinedPoliciesAsync(const EnablePredefinedPoliciesRequest& request, const EnablePredefinedPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EnablePredefinedPoliciesRequest&;
+    using Resp = EnablePredefinedPoliciesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "EnablePredefinedPolicies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::EnablePredefinedPoliciesOutcomeCallable MonitorClient::EnablePredefinedPoliciesCallable(const EnablePredefinedPoliciesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<EnablePredefinedPoliciesOutcome>>();
+    EnablePredefinedPoliciesAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const EnablePredefinedPoliciesRequest&,
+        EnablePredefinedPoliciesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MonitorClient::EnableSSOCamCheckOutcome MonitorClient::EnableSSOCamCheck(const EnableSSOCamCheckRequest &request)
 {
     auto outcome = MakeRequest(request, "EnableSSOCamCheck");

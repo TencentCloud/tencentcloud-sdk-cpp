@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取触发任务类型 AS=弹性伸缩
+                     * 获取<p>触发任务类型 AS=弹性伸缩</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 触发任务类型 AS=弹性伸缩
+                     * @return Type <p>触发任务类型 AS=弹性伸缩</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置触发任务类型 AS=弹性伸缩
+                     * 设置<p>触发任务类型 AS=弹性伸缩</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type 触发任务类型 AS=弹性伸缩
+                     * @param _type <p>触发任务类型 AS=弹性伸缩</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取用 json 表示配置信息 {"Key1":"Value1","Key2":"Value2"}
+                     * 获取<p>用 json 表示配置信息 {&quot;Key1&quot;:&quot;Value1&quot;,&quot;Key2&quot;:&quot;Value2&quot;}</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskConfig 用 json 表示配置信息 {"Key1":"Value1","Key2":"Value2"}
+                     * @return TaskConfig <p>用 json 表示配置信息 {&quot;Key1&quot;:&quot;Value1&quot;,&quot;Key2&quot;:&quot;Value2&quot;}</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskConfig() const;
 
                     /**
-                     * 设置用 json 表示配置信息 {"Key1":"Value1","Key2":"Value2"}
+                     * 设置<p>用 json 表示配置信息 {&quot;Key1&quot;:&quot;Value1&quot;,&quot;Key2&quot;:&quot;Value2&quot;}</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskConfig 用 json 表示配置信息 {"Key1":"Value1","Key2":"Value2"}
+                     * @param _taskConfig <p>用 json 表示配置信息 {&quot;Key1&quot;:&quot;Value1&quot;,&quot;Key2&quot;:&quot;Value2&quot;}</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,14 +99,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 触发任务类型 AS=弹性伸缩
+                     * <p>触发任务类型 AS=弹性伸缩</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 用 json 表示配置信息 {"Key1":"Value1","Key2":"Value2"}
+                     * <p>用 json 表示配置信息 {&quot;Key1&quot;:&quot;Value1&quot;,&quot;Key2&quot;:&quot;Value2&quot;}</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskConfig;

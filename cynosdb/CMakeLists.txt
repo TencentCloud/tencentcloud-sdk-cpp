@@ -363,6 +363,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeVaultBackupClusterInfoRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeRollbackTimeRangeResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBinlogListByVaultItem.h
+  include/tencentcloud/cynosdb/v20190107/model/BinlogRegionInfo.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterServerlessScalePlansRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeAuditLogFilesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/SwitchClusterZoneResponse.h
@@ -1022,6 +1023,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeVaultBackupClusterInfoRequest.cpp
   src/v20190107/model/DescribeRollbackTimeRangeResponse.cpp
   src/v20190107/model/DescribeBinlogListByVaultItem.cpp
+  src/v20190107/model/BinlogRegionInfo.cpp
   src/v20190107/model/DescribeClusterServerlessScalePlansRequest.cpp
   src/v20190107/model/DescribeAuditLogFilesResponse.cpp
   src/v20190107/model/SwitchClusterZoneResponse.cpp

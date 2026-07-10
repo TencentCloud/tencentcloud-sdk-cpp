@@ -42,7 +42,34 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>数据检索 ID。可通过 DescribeDataRetrieval 接口获取。</p>
+                     * @return DataRetrievalId <p>数据检索 ID。可通过 DescribeDataRetrieval 接口获取。</p>
+                     * 
+                     */
+                    std::string GetDataRetrievalId() const;
+
+                    /**
+                     * 设置<p>数据检索 ID。可通过 DescribeDataRetrieval 接口获取。</p>
+                     * @param _dataRetrievalId <p>数据检索 ID。可通过 DescribeDataRetrieval 接口获取。</p>
+                     * 
+                     */
+                    void SetDataRetrievalId(const std::string& _dataRetrievalId);
+
+                    /**
+                     * 判断参数 DataRetrievalId 是否已赋值
+                     * @return DataRetrievalId 是否已赋值
+                     * 
+                     */
+                    bool DataRetrievalIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>数据检索 ID。可通过 DescribeDataRetrieval 接口获取。</p>
+                     */
+                    std::string m_dataRetrievalId;
+                    bool m_dataRetrievalIdHasBeenSet;
 
                 };
             }

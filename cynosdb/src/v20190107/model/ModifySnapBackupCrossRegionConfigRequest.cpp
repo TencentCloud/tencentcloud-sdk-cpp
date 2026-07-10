@@ -25,7 +25,8 @@ using namespace std;
 ModifySnapBackupCrossRegionConfigRequest::ModifySnapBackupCrossRegionConfigRequest() :
     m_clusterIdHasBeenSet(false),
     m_crossRegionsEnableHasBeenSet(false),
-    m_crossRegionsHasBeenSet(false)
+    m_crossRegionsHasBeenSet(false),
+    m_crossRegionSaveDaysHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string ModifySnapBackupCrossRegionConfigRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_crossRegionSaveDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CrossRegionSaveDays";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_crossRegionSaveDays, allocator);
     }
 
 
@@ -119,6 +128,22 @@ void ModifySnapBackupCrossRegionConfigRequest::SetCrossRegions(const vector<stri
 bool ModifySnapBackupCrossRegionConfigRequest::CrossRegionsHasBeenSet() const
 {
     return m_crossRegionsHasBeenSet;
+}
+
+int64_t ModifySnapBackupCrossRegionConfigRequest::GetCrossRegionSaveDays() const
+{
+    return m_crossRegionSaveDays;
+}
+
+void ModifySnapBackupCrossRegionConfigRequest::SetCrossRegionSaveDays(const int64_t& _crossRegionSaveDays)
+{
+    m_crossRegionSaveDays = _crossRegionSaveDays;
+    m_crossRegionSaveDaysHasBeenSet = true;
+}
+
+bool ModifySnapBackupCrossRegionConfigRequest::CrossRegionSaveDaysHasBeenSet() const
+{
+    return m_crossRegionSaveDaysHasBeenSet;
 }
 
 

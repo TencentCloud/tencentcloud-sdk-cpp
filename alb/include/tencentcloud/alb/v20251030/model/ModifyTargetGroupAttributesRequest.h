@@ -45,23 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否预览此次请求。
-- **false**（默认）：发送普通请求，直接修改目标组。
-- **true**：发送预览请求，检查修改目标组的参数、格式、业务限制等是否符合要求。
-                     * @return DryRun 是否预览此次请求。
-- **false**（默认）：发送普通请求，直接修改目标组。
-- **true**：发送预览请求，检查修改目标组的参数、格式、业务限制等是否符合要求。
+                     * 获取<p>是否预览此次请求。</p><ul><li><strong>false</strong>（默认）：发送普通请求，直接修改目标组。</li><li><strong>true</strong>：发送预览请求，检查修改目标组的参数、格式、业务限制等是否符合要求。</li></ul>
+                     * @return DryRun <p>是否预览此次请求。</p><ul><li><strong>false</strong>（默认）：发送普通请求，直接修改目标组。</li><li><strong>true</strong>：发送预览请求，检查修改目标组的参数、格式、业务限制等是否符合要求。</li></ul>
                      * 
                      */
                     bool GetDryRun() const;
 
                     /**
-                     * 设置是否预览此次请求。
-- **false**（默认）：发送普通请求，直接修改目标组。
-- **true**：发送预览请求，检查修改目标组的参数、格式、业务限制等是否符合要求。
-                     * @param _dryRun 是否预览此次请求。
-- **false**（默认）：发送普通请求，直接修改目标组。
-- **true**：发送预览请求，检查修改目标组的参数、格式、业务限制等是否符合要求。
+                     * 设置<p>是否预览此次请求。</p><ul><li><strong>false</strong>（默认）：发送普通请求，直接修改目标组。</li><li><strong>true</strong>：发送预览请求，检查修改目标组的参数、格式、业务限制等是否符合要求。</li></ul>
+                     * @param _dryRun <p>是否预览此次请求。</p><ul><li><strong>false</strong>（默认）：发送普通请求，直接修改目标组。</li><li><strong>true</strong>：发送预览请求，检查修改目标组的参数、格式、业务限制等是否符合要求。</li></ul>
                      * 
                      */
                     void SetDryRun(const bool& _dryRun);
@@ -74,19 +66,15 @@ namespace TencentCloud
                     bool DryRunHasBeenSet() const;
 
                     /**
-                     * 获取健康检查配置。
-
-                     * @return HealthCheckConfig 健康检查配置。
-
+                     * 获取<p>健康检查配置。</p>
+                     * @return HealthCheckConfig <p>健康检查配置。</p>
                      * 
                      */
                     HealthCheckConfig GetHealthCheckConfig() const;
 
                     /**
-                     * 设置健康检查配置。
-
-                     * @param _healthCheckConfig 健康检查配置。
-
+                     * 设置<p>健康检查配置。</p>
+                     * @param _healthCheckConfig <p>健康检查配置。</p>
                      * 
                      */
                     void SetHealthCheckConfig(const HealthCheckConfig& _healthCheckConfig);
@@ -99,15 +87,15 @@ namespace TencentCloud
                     bool HealthCheckConfigHasBeenSet() const;
 
                     /**
-                     * 获取是否开启长连接。
-                     * @return KeepaliveEnabled 是否开启长连接。
+                     * 获取<p>是否开启长连接。</p>
+                     * @return KeepaliveEnabled <p>是否开启长连接。</p>
                      * 
                      */
                     bool GetKeepaliveEnabled() const;
 
                     /**
-                     * 设置是否开启长连接。
-                     * @param _keepaliveEnabled 是否开启长连接。
+                     * 设置<p>是否开启长连接。</p>
+                     * @param _keepaliveEnabled <p>是否开启长连接。</p>
                      * 
                      */
                     void SetKeepaliveEnabled(const bool& _keepaliveEnabled);
@@ -120,23 +108,15 @@ namespace TencentCloud
                     bool KeepaliveEnabledHasBeenSet() const;
 
                     /**
-                     * 获取调度算法。取值：
-- **wrr**：加权轮训，按照权重选择后端服务器，权重越高的服务器被轮训到的概率越高。
-- **wlc**：加权最小连接数，当不同后端服务器权重值相同时，当前连接数越小的后端服务器被轮询到的概率越高。
-                     * @return SchedulerAlgorithm 调度算法。取值：
-- **wrr**：加权轮训，按照权重选择后端服务器，权重越高的服务器被轮训到的概率越高。
-- **wlc**：加权最小连接数，当不同后端服务器权重值相同时，当前连接数越小的后端服务器被轮询到的概率越高。
+                     * 获取<p>调度算法。取值：</p><ul><li><strong>wrr</strong>：加权轮询，按照权重选择后端服务器，权重越高的服务器被轮询到的概率越高。</li><li><strong>wlc</strong>：加权最小连接数，当不同后端服务器权重值相同时，当前连接数越小的后端服务器被轮询到的概率越高。</li></ul>
+                     * @return SchedulerAlgorithm <p>调度算法。取值：</p><ul><li><strong>wrr</strong>：加权轮询，按照权重选择后端服务器，权重越高的服务器被轮询到的概率越高。</li><li><strong>wlc</strong>：加权最小连接数，当不同后端服务器权重值相同时，当前连接数越小的后端服务器被轮询到的概率越高。</li></ul>
                      * 
                      */
                     std::string GetSchedulerAlgorithm() const;
 
                     /**
-                     * 设置调度算法。取值：
-- **wrr**：加权轮训，按照权重选择后端服务器，权重越高的服务器被轮训到的概率越高。
-- **wlc**：加权最小连接数，当不同后端服务器权重值相同时，当前连接数越小的后端服务器被轮询到的概率越高。
-                     * @param _schedulerAlgorithm 调度算法。取值：
-- **wrr**：加权轮训，按照权重选择后端服务器，权重越高的服务器被轮训到的概率越高。
-- **wlc**：加权最小连接数，当不同后端服务器权重值相同时，当前连接数越小的后端服务器被轮询到的概率越高。
+                     * 设置<p>调度算法。取值：</p><ul><li><strong>wrr</strong>：加权轮询，按照权重选择后端服务器，权重越高的服务器被轮询到的概率越高。</li><li><strong>wlc</strong>：加权最小连接数，当不同后端服务器权重值相同时，当前连接数越小的后端服务器被轮询到的概率越高。</li></ul>
+                     * @param _schedulerAlgorithm <p>调度算法。取值：</p><ul><li><strong>wrr</strong>：加权轮询，按照权重选择后端服务器，权重越高的服务器被轮询到的概率越高。</li><li><strong>wlc</strong>：加权最小连接数，当不同后端服务器权重值相同时，当前连接数越小的后端服务器被轮询到的概率越高。</li></ul>
                      * 
                      */
                     void SetSchedulerAlgorithm(const std::string& _schedulerAlgorithm);
@@ -149,15 +129,15 @@ namespace TencentCloud
                     bool SchedulerAlgorithmHasBeenSet() const;
 
                     /**
-                     * 获取会话保持配置。
-                     * @return StickySessionConfig 会话保持配置。
+                     * 获取<p>会话保持配置。</p>
+                     * @return StickySessionConfig <p>会话保持配置。</p>
                      * 
                      */
                     StickySessionConfig GetStickySessionConfig() const;
 
                     /**
-                     * 设置会话保持配置。
-                     * @param _stickySessionConfig 会话保持配置。
+                     * 设置<p>会话保持配置。</p>
+                     * @param _stickySessionConfig <p>会话保持配置。</p>
                      * 
                      */
                     void SetStickySessionConfig(const StickySessionConfig& _stickySessionConfig);
@@ -170,15 +150,15 @@ namespace TencentCloud
                     bool StickySessionConfigHasBeenSet() const;
 
                     /**
-                     * 获取目标组 ID，格式为 lbtg- 后接 8 位字母数字。
-                     * @return TargetGroupId 目标组 ID，格式为 lbtg- 后接 8 位字母数字。
+                     * 获取<p>目标组 ID，格式为 lbtg- 后接 8 位字母数字。</p>
+                     * @return TargetGroupId <p>目标组 ID，格式为 lbtg- 后接 8 位字母数字。</p>
                      * 
                      */
                     std::string GetTargetGroupId() const;
 
                     /**
-                     * 设置目标组 ID，格式为 lbtg- 后接 8 位字母数字。
-                     * @param _targetGroupId 目标组 ID，格式为 lbtg- 后接 8 位字母数字。
+                     * 设置<p>目标组 ID，格式为 lbtg- 后接 8 位字母数字。</p>
+                     * @param _targetGroupId <p>目标组 ID，格式为 lbtg- 后接 8 位字母数字。</p>
                      * 
                      */
                     void SetTargetGroupId(const std::string& _targetGroupId);
@@ -191,15 +171,15 @@ namespace TencentCloud
                     bool TargetGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取目标组名称。长度为 1~255 个字符，可包含数字、大小写字母、中文、半角句号（.）、下划线（_）和短划线（-）。不传目标组名称时默认使用ID作为目标组名称。
-                     * @return TargetGroupName 目标组名称。长度为 1~255 个字符，可包含数字、大小写字母、中文、半角句号（.）、下划线（_）和短划线（-）。不传目标组名称时默认使用ID作为目标组名称。
+                     * 获取<p>目标组名称。长度为 1~255 个字符，可包含数字、大小写字母、中文、半角句号（.）、下划线（_）和短划线（-）。不传目标组名称时默认使用ID作为目标组名称。</p>
+                     * @return TargetGroupName <p>目标组名称。长度为 1~255 个字符，可包含数字、大小写字母、中文、半角句号（.）、下划线（_）和短划线（-）。不传目标组名称时默认使用ID作为目标组名称。</p>
                      * 
                      */
                     std::string GetTargetGroupName() const;
 
                     /**
-                     * 设置目标组名称。长度为 1~255 个字符，可包含数字、大小写字母、中文、半角句号（.）、下划线（_）和短划线（-）。不传目标组名称时默认使用ID作为目标组名称。
-                     * @param _targetGroupName 目标组名称。长度为 1~255 个字符，可包含数字、大小写字母、中文、半角句号（.）、下划线（_）和短划线（-）。不传目标组名称时默认使用ID作为目标组名称。
+                     * 设置<p>目标组名称。长度为 1~255 个字符，可包含数字、大小写字母、中文、半角句号（.）、下划线（_）和短划线（-）。不传目标组名称时默认使用ID作为目标组名称。</p>
+                     * @param _targetGroupName <p>目标组名称。长度为 1~255 个字符，可包含数字、大小写字母、中文、半角句号（.）、下划线（_）和短划线（-）。不传目标组名称时默认使用ID作为目标组名称。</p>
                      * 
                      */
                     void SetTargetGroupName(const std::string& _targetGroupName);
@@ -214,48 +194,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否预览此次请求。
-- **false**（默认）：发送普通请求，直接修改目标组。
-- **true**：发送预览请求，检查修改目标组的参数、格式、业务限制等是否符合要求。
+                     * <p>是否预览此次请求。</p><ul><li><strong>false</strong>（默认）：发送普通请求，直接修改目标组。</li><li><strong>true</strong>：发送预览请求，检查修改目标组的参数、格式、业务限制等是否符合要求。</li></ul>
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;
 
                     /**
-                     * 健康检查配置。
-
+                     * <p>健康检查配置。</p>
                      */
                     HealthCheckConfig m_healthCheckConfig;
                     bool m_healthCheckConfigHasBeenSet;
 
                     /**
-                     * 是否开启长连接。
+                     * <p>是否开启长连接。</p>
                      */
                     bool m_keepaliveEnabled;
                     bool m_keepaliveEnabledHasBeenSet;
 
                     /**
-                     * 调度算法。取值：
-- **wrr**：加权轮训，按照权重选择后端服务器，权重越高的服务器被轮训到的概率越高。
-- **wlc**：加权最小连接数，当不同后端服务器权重值相同时，当前连接数越小的后端服务器被轮询到的概率越高。
+                     * <p>调度算法。取值：</p><ul><li><strong>wrr</strong>：加权轮询，按照权重选择后端服务器，权重越高的服务器被轮询到的概率越高。</li><li><strong>wlc</strong>：加权最小连接数，当不同后端服务器权重值相同时，当前连接数越小的后端服务器被轮询到的概率越高。</li></ul>
                      */
                     std::string m_schedulerAlgorithm;
                     bool m_schedulerAlgorithmHasBeenSet;
 
                     /**
-                     * 会话保持配置。
+                     * <p>会话保持配置。</p>
                      */
                     StickySessionConfig m_stickySessionConfig;
                     bool m_stickySessionConfigHasBeenSet;
 
                     /**
-                     * 目标组 ID，格式为 lbtg- 后接 8 位字母数字。
+                     * <p>目标组 ID，格式为 lbtg- 后接 8 位字母数字。</p>
                      */
                     std::string m_targetGroupId;
                     bool m_targetGroupIdHasBeenSet;
 
                     /**
-                     * 目标组名称。长度为 1~255 个字符，可包含数字、大小写字母、中文、半角句号（.）、下划线（_）和短划线（-）。不传目标组名称时默认使用ID作为目标组名称。
+                     * <p>目标组名称。长度为 1~255 个字符，可包含数字、大小写字母、中文、半角句号（.）、下划线（_）和短划线（-）。不传目标组名称时默认使用ID作为目标组名称。</p>
                      */
                     std::string m_targetGroupName;
                     bool m_targetGroupNameHasBeenSet;

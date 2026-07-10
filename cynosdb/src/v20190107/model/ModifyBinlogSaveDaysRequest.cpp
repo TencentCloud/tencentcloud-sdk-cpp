@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyBinlogSaveDaysRequest::ModifyBinlogSaveDaysRequest() :
     m_clusterIdHasBeenSet(false),
-    m_binlogSaveDaysHasBeenSet(false)
+    m_binlogSaveDaysHasBeenSet(false),
+    m_binlogCrossRegionSaveDaysHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string ModifyBinlogSaveDaysRequest::ToJsonString() const
         string key = "BinlogSaveDays";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_binlogSaveDays, allocator);
+    }
+
+    if (m_binlogCrossRegionSaveDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BinlogCrossRegionSaveDays";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_binlogCrossRegionSaveDays, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void ModifyBinlogSaveDaysRequest::SetBinlogSaveDays(const int64_t& _binlogSaveDa
 bool ModifyBinlogSaveDaysRequest::BinlogSaveDaysHasBeenSet() const
 {
     return m_binlogSaveDaysHasBeenSet;
+}
+
+int64_t ModifyBinlogSaveDaysRequest::GetBinlogCrossRegionSaveDays() const
+{
+    return m_binlogCrossRegionSaveDays;
+}
+
+void ModifyBinlogSaveDaysRequest::SetBinlogCrossRegionSaveDays(const int64_t& _binlogCrossRegionSaveDays)
+{
+    m_binlogCrossRegionSaveDays = _binlogCrossRegionSaveDays;
+    m_binlogCrossRegionSaveDaysHasBeenSet = true;
+}
+
+bool ModifyBinlogSaveDaysRequest::BinlogCrossRegionSaveDaysHasBeenSet() const
+{
+    return m_binlogCrossRegionSaveDaysHasBeenSet;
 }
 
 

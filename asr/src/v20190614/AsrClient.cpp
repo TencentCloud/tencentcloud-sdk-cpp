@@ -1490,6 +1490,56 @@ AsrClient::VoicePrintEnrollOutcomeCallable AsrClient::VoicePrintEnrollCallable(c
     return prom->get_future();
 }
 
+AsrClient::VoicePrintGroupListOutcome AsrClient::VoicePrintGroupList(const VoicePrintGroupListRequest &request)
+{
+    auto outcome = MakeRequest(request, "VoicePrintGroupList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VoicePrintGroupListResponse rsp = VoicePrintGroupListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VoicePrintGroupListOutcome(rsp);
+        else
+            return VoicePrintGroupListOutcome(o.GetError());
+    }
+    else
+    {
+        return VoicePrintGroupListOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::VoicePrintGroupListAsync(const VoicePrintGroupListRequest& request, const VoicePrintGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const VoicePrintGroupListRequest&;
+    using Resp = VoicePrintGroupListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "VoicePrintGroupList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AsrClient::VoicePrintGroupListOutcomeCallable AsrClient::VoicePrintGroupListCallable(const VoicePrintGroupListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<VoicePrintGroupListOutcome>>();
+    VoicePrintGroupListAsync(
+    request,
+    [prom](
+        const AsrClient*,
+        const VoicePrintGroupListRequest&,
+        VoicePrintGroupListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AsrClient::VoicePrintGroupVerifyOutcome AsrClient::VoicePrintGroupVerify(const VoicePrintGroupVerifyRequest &request)
 {
     auto outcome = MakeRequest(request, "VoicePrintGroupVerify");

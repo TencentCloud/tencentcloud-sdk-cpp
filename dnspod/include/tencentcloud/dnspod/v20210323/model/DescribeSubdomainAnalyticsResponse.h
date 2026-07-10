@@ -47,8 +47,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取当前统计维度解析量小计
-                     * @return Data 当前统计维度解析量小计
+                     * 获取<p>当前统计维度解析量小计</p>
+                     * @return Data <p>当前统计维度解析量小计</p>
                      * 
                      */
                     std::vector<DomainAnalyticsDetail> GetData() const;
@@ -61,8 +61,8 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取子域名解析量统计查询信息
-                     * @return Info 子域名解析量统计查询信息
+                     * 获取<p>子域名解析量统计查询信息</p>
+                     * @return Info <p>子域名解析量统计查询信息</p>
                      * 
                      */
                     SubdomainAnalyticsInfo GetInfo() const;
@@ -75,8 +75,8 @@ namespace TencentCloud
                     bool InfoHasBeenSet() const;
 
                     /**
-                     * 获取子域名别名解析量统计信息
-                     * @return AliasData 子域名别名解析量统计信息
+                     * 获取<p>子域名别名解析量统计信息</p>
+                     * @return AliasData <p>子域名别名解析量统计信息</p>
                      * 
                      */
                     std::vector<SubdomainAliasAnalyticsItem> GetAliasData() const;
@@ -91,19 +91,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 当前统计维度解析量小计
+                     * <p>当前统计维度解析量小计</p>
                      */
                     std::vector<DomainAnalyticsDetail> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 子域名解析量统计查询信息
+                     * <p>子域名解析量统计查询信息</p>
                      */
                     SubdomainAnalyticsInfo m_info;
                     bool m_infoHasBeenSet;
 
                     /**
-                     * 子域名别名解析量统计信息
+                     * <p>子域名别名解析量统计信息</p>
                      */
                     std::vector<SubdomainAliasAnalyticsItem> m_aliasData;
                     bool m_aliasDataHasBeenSet;

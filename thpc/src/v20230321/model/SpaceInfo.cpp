@@ -22,6 +22,7 @@ using namespace std;
 
 SpaceInfo::SpaceInfo() :
     m_spaceIdHasBeenSet(false),
+    m_spaceClassHasBeenSet(false),
     m_spaceFamilyHasBeenSet(false),
     m_spaceTypeHasBeenSet(false),
     m_spaceNameHasBeenSet(false),
@@ -34,7 +35,8 @@ SpaceInfo::SpaceInfo() :
     m_expiredTimeHasBeenSet(false),
     m_placementHasBeenSet(false),
     m_latestOperationHasBeenSet(false),
-    m_latestOperationStateHasBeenSet(false)
+    m_latestOperationStateHasBeenSet(false),
+    m_privateIpAddressesHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,16 @@ CoreInternalOutcome SpaceInfo::Deserialize(const rapidjson::Value &value)
         }
         m_spaceId = string(value["SpaceId"].GetString());
         m_spaceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SpaceClass") && !value["SpaceClass"].IsNull())
+    {
+        if (!value["SpaceClass"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SpaceInfo.SpaceClass` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_spaceClass = string(value["SpaceClass"].GetString());
+        m_spaceClassHasBeenSet = true;
     }
 
     if (value.HasMember("SpaceFamily") && !value["SpaceFamily"].IsNull())
@@ -200,6 +212,19 @@ CoreInternalOutcome SpaceInfo::Deserialize(const rapidjson::Value &value)
         m_latestOperationStateHasBeenSet = true;
     }
 
+    if (value.HasMember("PrivateIpAddresses") && !value["PrivateIpAddresses"].IsNull())
+    {
+        if (!value["PrivateIpAddresses"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SpaceInfo.PrivateIpAddresses` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PrivateIpAddresses"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_privateIpAddresses.push_back((*itr).GetString());
+        }
+        m_privateIpAddressesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -213,6 +238,14 @@ void SpaceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "SpaceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_spaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_spaceClassHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpaceClass";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_spaceClass.c_str(), allocator).Move(), allocator);
     }
 
     if (m_spaceFamilyHasBeenSet)
@@ -327,6 +360,19 @@ void SpaceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, rapidjson::Value(m_latestOperationState.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_privateIpAddressesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrivateIpAddresses";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_privateIpAddresses.begin(); itr != m_privateIpAddresses.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 }
 
 
@@ -344,6 +390,22 @@ void SpaceInfo::SetSpaceId(const string& _spaceId)
 bool SpaceInfo::SpaceIdHasBeenSet() const
 {
     return m_spaceIdHasBeenSet;
+}
+
+string SpaceInfo::GetSpaceClass() const
+{
+    return m_spaceClass;
+}
+
+void SpaceInfo::SetSpaceClass(const string& _spaceClass)
+{
+    m_spaceClass = _spaceClass;
+    m_spaceClassHasBeenSet = true;
+}
+
+bool SpaceInfo::SpaceClassHasBeenSet() const
+{
+    return m_spaceClassHasBeenSet;
 }
 
 string SpaceInfo::GetSpaceFamily() const
@@ -552,5 +614,21 @@ void SpaceInfo::SetLatestOperationState(const string& _latestOperationState)
 bool SpaceInfo::LatestOperationStateHasBeenSet() const
 {
     return m_latestOperationStateHasBeenSet;
+}
+
+vector<string> SpaceInfo::GetPrivateIpAddresses() const
+{
+    return m_privateIpAddresses;
+}
+
+void SpaceInfo::SetPrivateIpAddresses(const vector<string>& _privateIpAddresses)
+{
+    m_privateIpAddresses = _privateIpAddresses;
+    m_privateIpAddressesHasBeenSet = true;
+}
+
+bool SpaceInfo::PrivateIpAddressesHasBeenSet() const
+{
+    return m_privateIpAddressesHasBeenSet;
 }
 

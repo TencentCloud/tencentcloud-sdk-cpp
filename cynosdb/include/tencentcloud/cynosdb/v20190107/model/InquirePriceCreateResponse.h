@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例价格
-                     * @return InstancePrice 实例价格
+                     * 获取<p>实例价格</p>
+                     * @return InstancePrice <p>实例价格</p>
                      * 
                      */
                     TradePrice GetInstancePrice() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool InstancePriceHasBeenSet() const;
 
                     /**
-                     * 获取存储价格
-                     * @return StoragePrice 存储价格
+                     * 获取<p>存储价格</p>
+                     * @return StoragePrice <p>存储价格</p>
                      * 
                      */
                     TradePrice GetStoragePrice() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例价格
+                     * <p>实例价格</p>
                      */
                     TradePrice m_instancePrice;
                     bool m_instancePriceHasBeenSet;
 
                     /**
-                     * 存储价格
+                     * <p>存储价格</p>
                      */
                     TradePrice m_storagePrice;
                     bool m_storagePriceHasBeenSet;

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取添加成功的关键词 Id 列表。
-                     * @return KeywordIds 添加成功的关键词 Id 列表。
+                     * 获取<p>添加成功的关键词 Id 列表。</p>
+                     * @return KeywordIds <p>添加成功的关键词 Id 列表。</p>
                      * 
                      */
                     std::vector<std::string> GetKeywordIds() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool KeywordIdsHasBeenSet() const;
 
                     /**
-                     * 获取重复关键词列表。
-                     * @return DupInfos 重复关键词列表。
+                     * 获取<p>重复关键词列表。</p>
+                     * @return DupInfos <p>重复关键词列表。</p>
                      * 
                      */
                     std::vector<AuditKeywordInfo> GetDupInfos() const;
@@ -72,19 +72,39 @@ namespace TencentCloud
                      */
                     bool DupInfosHasBeenSet() const;
 
+                    /**
+                     * 获取<p>新增成功关键词列表</p>
+                     * @return Keywords <p>新增成功关键词列表</p>
+                     * 
+                     */
+                    std::vector<AuditKeywordInfo> GetKeywords() const;
+
+                    /**
+                     * 判断参数 Keywords 是否已赋值
+                     * @return Keywords 是否已赋值
+                     * 
+                     */
+                    bool KeywordsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 添加成功的关键词 Id 列表。
+                     * <p>添加成功的关键词 Id 列表。</p>
                      */
                     std::vector<std::string> m_keywordIds;
                     bool m_keywordIdsHasBeenSet;
 
                     /**
-                     * 重复关键词列表。
+                     * <p>重复关键词列表。</p>
                      */
                     std::vector<AuditKeywordInfo> m_dupInfos;
                     bool m_dupInfosHasBeenSet;
+
+                    /**
+                     * <p>新增成功关键词列表</p>
+                     */
+                    std::vector<AuditKeywordInfo> m_keywords;
+                    bool m_keywordsHasBeenSet;
 
                 };
             }

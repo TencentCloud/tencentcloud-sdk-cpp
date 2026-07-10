@@ -53,18 +53,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取检测方式
+                     * 获取<p>检测方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CalcType 检测方式
+                     * @return CalcType <p>检测方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribePolicyConditionListConfigManualCalcType GetCalcType() const;
 
                     /**
-                     * 设置检测方式
+                     * 设置<p>检测方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _calcType 检测方式
+                     * @param _calcType <p>检测方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -78,18 +78,18 @@ namespace TencentCloud
                     bool CalcTypeHasBeenSet() const;
 
                     /**
-                     * 获取检测阈值
+                     * 获取<p>检测阈值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CalcValue 检测阈值
+                     * @return CalcValue <p>检测阈值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribePolicyConditionListConfigManualCalcValue GetCalcValue() const;
 
                     /**
-                     * 设置检测阈值
+                     * 设置<p>检测阈值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _calcValue 检测阈值
+                     * @param _calcValue <p>检测阈值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -103,18 +103,18 @@ namespace TencentCloud
                     bool CalcValueHasBeenSet() const;
 
                     /**
-                     * 获取持续时间
+                     * 获取<p>持续时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ContinueTime 持续时间
+                     * @return ContinueTime <p>持续时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribePolicyConditionListConfigManualContinueTime GetContinueTime() const;
 
                     /**
-                     * 设置持续时间
+                     * 设置<p>持续时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _continueTime 持续时间
+                     * @param _continueTime <p>持续时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -128,18 +128,18 @@ namespace TencentCloud
                     bool ContinueTimeHasBeenSet() const;
 
                     /**
-                     * 获取数据周期
+                     * 获取<p>数据周期</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Period 数据周期
+                     * @return Period <p>数据周期</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribePolicyConditionListConfigManualPeriod GetPeriod() const;
 
                     /**
-                     * 设置数据周期
+                     * 设置<p>数据周期</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _period 数据周期
+                     * @param _period <p>数据周期</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -153,18 +153,18 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取持续周期个数
+                     * 获取<p>持续周期个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PeriodNum 持续周期个数
+                     * @return PeriodNum <p>持续周期个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribePolicyConditionListConfigManualPeriodNum GetPeriodNum() const;
 
                     /**
-                     * 设置持续周期个数
+                     * 设置<p>持续周期个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _periodNum 持续周期个数
+                     * @param _periodNum <p>持续周期个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -178,18 +178,18 @@ namespace TencentCloud
                     bool PeriodNumHasBeenSet() const;
 
                     /**
-                     * 获取聚合方式
+                     * 获取<p>聚合方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StatType 聚合方式
+                     * @return StatType <p>聚合方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribePolicyConditionListConfigManualStatType GetStatType() const;
 
                     /**
-                     * 设置聚合方式
+                     * 设置<p>聚合方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _statType 聚合方式
+                     * @param _statType <p>聚合方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -205,42 +205,42 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 检测方式
+                     * <p>检测方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribePolicyConditionListConfigManualCalcType m_calcType;
                     bool m_calcTypeHasBeenSet;
 
                     /**
-                     * 检测阈值
+                     * <p>检测阈值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribePolicyConditionListConfigManualCalcValue m_calcValue;
                     bool m_calcValueHasBeenSet;
 
                     /**
-                     * 持续时间
+                     * <p>持续时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribePolicyConditionListConfigManualContinueTime m_continueTime;
                     bool m_continueTimeHasBeenSet;
 
                     /**
-                     * 数据周期
+                     * <p>数据周期</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribePolicyConditionListConfigManualPeriod m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 持续周期个数
+                     * <p>持续周期个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribePolicyConditionListConfigManualPeriodNum m_periodNum;
                     bool m_periodNumHasBeenSet;
 
                     /**
-                     * 聚合方式
+                     * <p>聚合方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribePolicyConditionListConfigManualStatType m_statType;

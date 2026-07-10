@@ -490,6 +490,56 @@ DbbrainClient::CreateDBDiagReportUrlOutcomeCallable DbbrainClient::CreateDBDiagR
     return prom->get_future();
 }
 
+DbbrainClient::CreateIgnoreDiagRecordOutcome DbbrainClient::CreateIgnoreDiagRecord(const CreateIgnoreDiagRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateIgnoreDiagRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateIgnoreDiagRecordResponse rsp = CreateIgnoreDiagRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateIgnoreDiagRecordOutcome(rsp);
+        else
+            return CreateIgnoreDiagRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateIgnoreDiagRecordOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::CreateIgnoreDiagRecordAsync(const CreateIgnoreDiagRecordRequest& request, const CreateIgnoreDiagRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateIgnoreDiagRecordRequest&;
+    using Resp = CreateIgnoreDiagRecordResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateIgnoreDiagRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbbrainClient::CreateIgnoreDiagRecordOutcomeCallable DbbrainClient::CreateIgnoreDiagRecordCallable(const CreateIgnoreDiagRecordRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateIgnoreDiagRecordOutcome>>();
+    CreateIgnoreDiagRecordAsync(
+    request,
+    [prom](
+        const DbbrainClient*,
+        const CreateIgnoreDiagRecordRequest&,
+        CreateIgnoreDiagRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbbrainClient::CreateKillTaskOutcome DbbrainClient::CreateKillTask(const CreateKillTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateKillTask");

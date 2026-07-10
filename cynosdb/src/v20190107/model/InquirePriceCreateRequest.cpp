@@ -33,7 +33,9 @@ InquirePriceCreateRequest::InquirePriceCreateRequest() :
     m_ccuHasBeenSet(false),
     m_storageLimitHasBeenSet(false),
     m_timeSpanHasBeenSet(false),
-    m_timeUnitHasBeenSet(false)
+    m_timeUnitHasBeenSet(false),
+    m_storageVersionHasBeenSet(false),
+    m_isMultiAzHasBeenSet(false)
 {
 }
 
@@ -130,6 +132,22 @@ string InquirePriceCreateRequest::ToJsonString() const
         string key = "TimeUnit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_timeUnit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_storageVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isMultiAzHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsMultiAz";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isMultiAz, allocator);
     }
 
 
@@ -314,6 +332,38 @@ void InquirePriceCreateRequest::SetTimeUnit(const string& _timeUnit)
 bool InquirePriceCreateRequest::TimeUnitHasBeenSet() const
 {
     return m_timeUnitHasBeenSet;
+}
+
+string InquirePriceCreateRequest::GetStorageVersion() const
+{
+    return m_storageVersion;
+}
+
+void InquirePriceCreateRequest::SetStorageVersion(const string& _storageVersion)
+{
+    m_storageVersion = _storageVersion;
+    m_storageVersionHasBeenSet = true;
+}
+
+bool InquirePriceCreateRequest::StorageVersionHasBeenSet() const
+{
+    return m_storageVersionHasBeenSet;
+}
+
+bool InquirePriceCreateRequest::GetIsMultiAz() const
+{
+    return m_isMultiAz;
+}
+
+void InquirePriceCreateRequest::SetIsMultiAz(const bool& _isMultiAz)
+{
+    m_isMultiAz = _isMultiAz;
+    m_isMultiAzHasBeenSet = true;
+}
+
+bool InquirePriceCreateRequest::IsMultiAzHasBeenSet() const
+{
+    return m_isMultiAzHasBeenSet;
 }
 
 

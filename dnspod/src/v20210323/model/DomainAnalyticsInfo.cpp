@@ -25,7 +25,9 @@ DomainAnalyticsInfo::DomainAnalyticsInfo() :
     m_dnsTotalHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false)
+    m_endDateHasBeenSet(false),
+    m_dNSFormatHasBeenSet(false),
+    m_dNSTotalHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,26 @@ CoreInternalOutcome DomainAnalyticsInfo::Deserialize(const rapidjson::Value &val
         m_endDateHasBeenSet = true;
     }
 
+    if (value.HasMember("DNSFormat") && !value["DNSFormat"].IsNull())
+    {
+        if (!value["DNSFormat"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainAnalyticsInfo.DNSFormat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dNSFormat = string(value["DNSFormat"].GetString());
+        m_dNSFormatHasBeenSet = true;
+    }
+
+    if (value.HasMember("DNSTotal") && !value["DNSTotal"].IsNull())
+    {
+        if (!value["DNSTotal"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainAnalyticsInfo.DNSTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dNSTotal = value["DNSTotal"].GetUint64();
+        m_dNSTotalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +151,22 @@ void DomainAnalyticsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "EndDate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_endDate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dNSFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DNSFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dNSFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dNSTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DNSTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dNSTotal, allocator);
     }
 
 }
@@ -212,5 +250,37 @@ void DomainAnalyticsInfo::SetEndDate(const string& _endDate)
 bool DomainAnalyticsInfo::EndDateHasBeenSet() const
 {
     return m_endDateHasBeenSet;
+}
+
+string DomainAnalyticsInfo::GetDNSFormat() const
+{
+    return m_dNSFormat;
+}
+
+void DomainAnalyticsInfo::SetDNSFormat(const string& _dNSFormat)
+{
+    m_dNSFormat = _dNSFormat;
+    m_dNSFormatHasBeenSet = true;
+}
+
+bool DomainAnalyticsInfo::DNSFormatHasBeenSet() const
+{
+    return m_dNSFormatHasBeenSet;
+}
+
+uint64_t DomainAnalyticsInfo::GetDNSTotal() const
+{
+    return m_dNSTotal;
+}
+
+void DomainAnalyticsInfo::SetDNSTotal(const uint64_t& _dNSTotal)
+{
+    m_dNSTotal = _dNSTotal;
+    m_dNSTotalHasBeenSet = true;
+}
+
+bool DomainAnalyticsInfo::DNSTotalHasBeenSet() const
+{
+    return m_dNSTotalHasBeenSet;
 }
 

@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool StatementTimeoutMsHasBeenSet() const;
 
                     /**
-                     * 获取<p>标记请求来源</p>
-                     * @return Source <p>标记请求来源</p>
+                     * 获取<p>标记请求来源</p><p>deprecated</p>
+                     * @return Source <p>标记请求来源</p><p>deprecated</p>
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
-                     * 设置<p>标记请求来源</p>
-                     * @param _source <p>标记请求来源</p>
+                     * 设置<p>标记请求来源</p><p>deprecated</p>
+                     * @param _source <p>标记请求来源</p><p>deprecated</p>
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -147,6 +147,27 @@ namespace TencentCloud
                      * 
                      */
                     bool SourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>为true时允许 out-of-order local migrations</p><p>默认值：false</p>
+                     * @return IncludeAll <p>为true时允许 out-of-order local migrations</p><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetIncludeAll() const;
+
+                    /**
+                     * 设置<p>为true时允许 out-of-order local migrations</p><p>默认值：false</p>
+                     * @param _includeAll <p>为true时允许 out-of-order local migrations</p><p>默认值：false</p>
+                     * 
+                     */
+                    void SetIncludeAll(const bool& _includeAll);
+
+                    /**
+                     * 判断参数 IncludeAll 是否已赋值
+                     * @return IncludeAll 是否已赋值
+                     * 
+                     */
+                    bool IncludeAllHasBeenSet() const;
 
                 private:
 
@@ -175,10 +196,16 @@ namespace TencentCloud
                     bool m_statementTimeoutMsHasBeenSet;
 
                     /**
-                     * <p>标记请求来源</p>
+                     * <p>标记请求来源</p><p>deprecated</p>
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
+
+                    /**
+                     * <p>为true时允许 out-of-order local migrations</p><p>默认值：false</p>
+                     */
+                    bool m_includeAll;
+                    bool m_includeAllHasBeenSet;
 
                 };
             }

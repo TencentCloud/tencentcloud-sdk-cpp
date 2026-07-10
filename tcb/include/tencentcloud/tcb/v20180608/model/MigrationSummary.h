@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取<p>migration query sql 语句checksum</p><p>服务端自动生成，同版本不同checksum会拒绝执行</p>
-                     * @return Checksum <p>migration query sql 语句checksum</p><p>服务端自动生成，同版本不同checksum会拒绝执行</p>
+                     * 获取<p>migration query sql 语句checksum，服务端自动生成，同版本不同checksum会拒绝执行</p><p>deprecated</p>
+                     * @return Checksum <p>migration query sql 语句checksum，服务端自动生成，同版本不同checksum会拒绝执行</p><p>deprecated</p>
                      * 
                      */
                     std::string GetChecksum() const;
 
                     /**
-                     * 设置<p>migration query sql 语句checksum</p><p>服务端自动生成，同版本不同checksum会拒绝执行</p>
-                     * @param _checksum <p>migration query sql 语句checksum</p><p>服务端自动生成，同版本不同checksum会拒绝执行</p>
+                     * 设置<p>migration query sql 语句checksum，服务端自动生成，同版本不同checksum会拒绝执行</p><p>deprecated</p>
+                     * @param _checksum <p>migration query sql 语句checksum，服务端自动生成，同版本不同checksum会拒绝执行</p><p>deprecated</p>
                      * 
                      */
                     void SetChecksum(const std::string& _checksum);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ChecksumHasBeenSet() const;
 
                     /**
-                     * 获取<p>应用时间</p>
-                     * @return AppliedAt <p>应用时间</p>
+                     * 获取<p>应用时间</p><p>deprecated</p>
+                     * @return AppliedAt <p>应用时间</p><p>deprecated</p>
                      * 
                      */
                     std::string GetAppliedAt() const;
 
                     /**
-                     * 设置<p>应用时间</p>
-                     * @param _appliedAt <p>应用时间</p>
+                     * 设置<p>应用时间</p><p>deprecated</p>
+                     * @param _appliedAt <p>应用时间</p><p>deprecated</p>
                      * 
                      */
                     void SetAppliedAt(const std::string& _appliedAt);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool AppliedAtHasBeenSet() const;
 
                     /**
-                     * 获取<p>请求来源</p>
-                     * @return Source <p>请求来源</p>
+                     * 获取<p>请求来源</p><p>deprecated</p>
+                     * @return Source <p>请求来源</p><p>deprecated</p>
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
-                     * 设置<p>请求来源</p>
-                     * @param _source <p>请求来源</p>
+                     * 设置<p>请求来源</p><p>deprecated</p>
+                     * @param _source <p>请求来源</p><p>deprecated</p>
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取<p>migration 创建时间</p>
-                     * @return CreatedBy <p>migration 创建时间</p>
+                     * 获取<p>migration 创建时间</p><p>deprecated</p>
+                     * @return CreatedBy <p>migration 创建时间</p><p>deprecated</p>
                      * 
                      */
                     std::string GetCreatedBy() const;
 
                     /**
-                     * 设置<p>migration 创建时间</p>
-                     * @param _createdBy <p>migration 创建时间</p>
+                     * 设置<p>migration 创建时间</p><p>deprecated</p>
+                     * @param _createdBy <p>migration 创建时间</p><p>deprecated</p>
                      * 
                      */
                     void SetCreatedBy(const std::string& _createdBy);
@@ -187,25 +187,25 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * <p>migration query sql 语句checksum</p><p>服务端自动生成，同版本不同checksum会拒绝执行</p>
+                     * <p>migration query sql 语句checksum，服务端自动生成，同版本不同checksum会拒绝执行</p><p>deprecated</p>
                      */
                     std::string m_checksum;
                     bool m_checksumHasBeenSet;
 
                     /**
-                     * <p>应用时间</p>
+                     * <p>应用时间</p><p>deprecated</p>
                      */
                     std::string m_appliedAt;
                     bool m_appliedAtHasBeenSet;
 
                     /**
-                     * <p>请求来源</p>
+                     * <p>请求来源</p><p>deprecated</p>
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * <p>migration 创建时间</p>
+                     * <p>migration 创建时间</p><p>deprecated</p>
                      */
                     std::string m_createdBy;
                     bool m_createdByHasBeenSet;

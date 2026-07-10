@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警通知频率
+                     * 获取<p>告警通知频率</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlarmNotifyPeriod 告警通知频率
+                     * @return AlarmNotifyPeriod <p>告警通知频率</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAlarmNotifyPeriod() const;
 
                     /**
-                     * 设置告警通知频率
+                     * 设置<p>告警通知频率</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _alarmNotifyPeriod 告警通知频率
+                     * @param _alarmNotifyPeriod <p>告警通知频率</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool AlarmNotifyPeriodHasBeenSet() const;
 
                     /**
-                     * 获取重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）
+                     * 获取<p>重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlarmNotifyType 重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）
+                     * @return AlarmNotifyType <p>重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAlarmNotifyType() const;
 
                     /**
-                     * 设置重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）
+                     * 设置<p>重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _alarmNotifyType 重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）
+                     * @param _alarmNotifyType <p>重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,15 +97,15 @@ namespace TencentCloud
                     bool AlarmNotifyTypeHasBeenSet() const;
 
                     /**
-                     * 获取事件ID
-                     * @return EventID 事件ID
+                     * 获取<p>事件ID</p>
+                     * @return EventID <p>事件ID</p>
                      * 
                      */
                     std::string GetEventID() const;
 
                     /**
-                     * 设置事件ID
-                     * @param _eventID 事件ID
+                     * 设置<p>事件ID</p>
+                     * @param _eventID <p>事件ID</p>
                      * 
                      */
                     void SetEventID(const std::string& _eventID);
@@ -118,15 +118,15 @@ namespace TencentCloud
                     bool EventIDHasBeenSet() const;
 
                     /**
-                     * 获取事件展示名称（对外）
-                     * @return EventDisplayName 事件展示名称（对外）
+                     * 获取<p>事件展示名称（对外）</p>
+                     * @return EventDisplayName <p>事件展示名称（对外）</p>
                      * 
                      */
                     std::string GetEventDisplayName() const;
 
                     /**
-                     * 设置事件展示名称（对外）
-                     * @param _eventDisplayName 事件展示名称（对外）
+                     * 设置<p>事件展示名称（对外）</p>
+                     * @param _eventDisplayName <p>事件展示名称（对外）</p>
                      * 
                      */
                     void SetEventDisplayName(const std::string& _eventDisplayName);
@@ -139,15 +139,15 @@ namespace TencentCloud
                     bool EventDisplayNameHasBeenSet() const;
 
                     /**
-                     * 获取规则ID
-                     * @return RuleID 规则ID
+                     * 获取<p>规则ID</p>
+                     * @return RuleID <p>规则ID</p>
                      * 
                      */
                     std::string GetRuleID() const;
 
                     /**
-                     * 设置规则ID
-                     * @param _ruleID 规则ID
+                     * 设置<p>规则ID</p>
+                     * @param _ruleID <p>规则ID</p>
                      * 
                      */
                     void SetRuleID(const std::string& _ruleID);
@@ -160,18 +160,18 @@ namespace TencentCloud
                     bool RuleIDHasBeenSet() const;
 
                     /**
-                     * 获取指标名
+                     * 获取<p>指标名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MetricName 指标名
+                     * @return MetricName <p>指标名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMetricName() const;
 
                     /**
-                     * 设置指标名
+                     * 设置<p>指标名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _metricName 指标名
+                     * @param _metricName <p>指标名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -187,39 +187,39 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 告警通知频率
+                     * <p>告警通知频率</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_alarmNotifyPeriod;
                     bool m_alarmNotifyPeriodHasBeenSet;
 
                     /**
-                     * 重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）
+                     * <p>重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_alarmNotifyType;
                     bool m_alarmNotifyTypeHasBeenSet;
 
                     /**
-                     * 事件ID
+                     * <p>事件ID</p>
                      */
                     std::string m_eventID;
                     bool m_eventIDHasBeenSet;
 
                     /**
-                     * 事件展示名称（对外）
+                     * <p>事件展示名称（对外）</p>
                      */
                     std::string m_eventDisplayName;
                     bool m_eventDisplayNameHasBeenSet;
 
                     /**
-                     * 规则ID
+                     * <p>规则ID</p>
                      */
                     std::string m_ruleID;
                     bool m_ruleIDHasBeenSet;
 
                     /**
-                     * 指标名
+                     * <p>指标名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_metricName;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取审核任务的唯一Id，在启动切片任务成功后会返回。
-                     * @return TaskId 审核任务的唯一Id，在启动切片任务成功后会返回。
+                     * 获取<p>AI 内容理解任务的唯一Id，在启动切片任务成功后会返回。</p>
+                     * @return TaskId <p>AI 内容理解任务的唯一Id，在启动切片任务成功后会返回。</p>
                      * 
                      */
                     std::string GetTaskId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 审核任务的唯一Id，在启动切片任务成功后会返回。
+                     * <p>AI 内容理解任务的唯一Id，在启动切片任务成功后会返回。</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

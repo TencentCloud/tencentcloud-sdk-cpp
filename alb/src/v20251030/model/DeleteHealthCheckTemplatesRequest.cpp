@@ -23,8 +23,8 @@ using namespace TencentCloud::Alb::V20251030::Model;
 using namespace std;
 
 DeleteHealthCheckTemplatesRequest::DeleteHealthCheckTemplatesRequest() :
-    m_dryRunHasBeenSet(false),
-    m_healthCheckTemplateIdsHasBeenSet(false)
+    m_healthCheckTemplateIdsHasBeenSet(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -34,14 +34,6 @@ string DeleteHealthCheckTemplatesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_dryRunHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DryRun";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_dryRun, allocator);
-    }
 
     if (m_healthCheckTemplateIdsHasBeenSet)
     {
@@ -56,6 +48,14 @@ string DeleteHealthCheckTemplatesRequest::ToJsonString() const
         }
     }
 
+    if (m_dryRunHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DryRun";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dryRun, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -63,22 +63,6 @@ string DeleteHealthCheckTemplatesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-bool DeleteHealthCheckTemplatesRequest::GetDryRun() const
-{
-    return m_dryRun;
-}
-
-void DeleteHealthCheckTemplatesRequest::SetDryRun(const bool& _dryRun)
-{
-    m_dryRun = _dryRun;
-    m_dryRunHasBeenSet = true;
-}
-
-bool DeleteHealthCheckTemplatesRequest::DryRunHasBeenSet() const
-{
-    return m_dryRunHasBeenSet;
-}
 
 vector<string> DeleteHealthCheckTemplatesRequest::GetHealthCheckTemplateIds() const
 {
@@ -94,6 +78,22 @@ void DeleteHealthCheckTemplatesRequest::SetHealthCheckTemplateIds(const vector<s
 bool DeleteHealthCheckTemplatesRequest::HealthCheckTemplateIdsHasBeenSet() const
 {
     return m_healthCheckTemplateIdsHasBeenSet;
+}
+
+bool DeleteHealthCheckTemplatesRequest::GetDryRun() const
+{
+    return m_dryRun;
+}
+
+void DeleteHealthCheckTemplatesRequest::SetDryRun(const bool& _dryRun)
+{
+    m_dryRun = _dryRun;
+    m_dryRunHasBeenSet = true;
+}
+
+bool DeleteHealthCheckTemplatesRequest::DryRunHasBeenSet() const
+{
+    return m_dryRunHasBeenSet;
 }
 
 

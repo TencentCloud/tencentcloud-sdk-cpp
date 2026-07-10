@@ -39,7 +39,9 @@ CreateRabbitMQVipInstanceRequest::CreateRabbitMQVipInstanceRequest() :
     m_resourceTagsHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
     m_enablePublicAccessHasBeenSet(false),
-    m_enableDeletionProtectionHasBeenSet(false)
+    m_enableDeletionProtectionHasBeenSet(false),
+    m_clusterTypeHasBeenSet(false),
+    m_cdcClusterIdHasBeenSet(false)
 {
 }
 
@@ -196,6 +198,22 @@ string CreateRabbitMQVipInstanceRequest::ToJsonString() const
         string key = "EnableDeletionProtection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableDeletionProtection, allocator);
+    }
+
+    if (m_clusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cdcClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CdcClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cdcClusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -476,6 +494,38 @@ void CreateRabbitMQVipInstanceRequest::SetEnableDeletionProtection(const bool& _
 bool CreateRabbitMQVipInstanceRequest::EnableDeletionProtectionHasBeenSet() const
 {
     return m_enableDeletionProtectionHasBeenSet;
+}
+
+string CreateRabbitMQVipInstanceRequest::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void CreateRabbitMQVipInstanceRequest::SetClusterType(const string& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool CreateRabbitMQVipInstanceRequest::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
+}
+
+string CreateRabbitMQVipInstanceRequest::GetCdcClusterId() const
+{
+    return m_cdcClusterId;
+}
+
+void CreateRabbitMQVipInstanceRequest::SetCdcClusterId(const string& _cdcClusterId)
+{
+    m_cdcClusterId = _cdcClusterId;
+    m_cdcClusterIdHasBeenSet = true;
+}
+
+bool CreateRabbitMQVipInstanceRequest::CdcClusterIdHasBeenSet() const
+{
+    return m_cdcClusterIdHasBeenSet;
 }
 
 

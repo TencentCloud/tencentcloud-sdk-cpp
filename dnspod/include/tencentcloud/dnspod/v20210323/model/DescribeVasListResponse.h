@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合筛选条件的套餐总数
-                     * @return TotalCount 符合筛选条件的套餐总数
+                     * 获取<p>符合筛选条件的套餐总数</p>
+                     * @return TotalCount <p>符合筛选条件的套餐总数</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,32 +59,52 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取增值服务信息列表
-                     * @return VasList 增值服务信息列表
-                     * 
+                     * 获取<p>增值服务信息列表</p>
+                     * @return VasList <p>增值服务信息列表</p>
+                     * @deprecated
                      */
                     std::vector<VasListItem> GetVasList() const;
 
                     /**
                      * 判断参数 VasList 是否已赋值
                      * @return VasList 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool VasListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>增值服务信息列表</p>
+                     * @return VASList <p>增值服务信息列表</p>
+                     * 
+                     */
+                    std::vector<VasListItem> GetVASList() const;
+
+                    /**
+                     * 判断参数 VASList 是否已赋值
+                     * @return VASList 是否已赋值
+                     * 
+                     */
+                    bool VASListHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 符合筛选条件的套餐总数
+                     * <p>符合筛选条件的套餐总数</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 增值服务信息列表
+                     * <p>增值服务信息列表</p>
                      */
                     std::vector<VasListItem> m_vasList;
                     bool m_vasListHasBeenSet;
+
+                    /**
+                     * <p>增值服务信息列表</p>
+                     */
+                    std::vector<VasListItem> m_vASList;
+                    bool m_vASListHasBeenSet;
 
                 };
             }

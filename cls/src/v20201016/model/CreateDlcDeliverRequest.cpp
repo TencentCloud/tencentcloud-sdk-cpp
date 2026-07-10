@@ -31,7 +31,10 @@ CreateDlcDeliverRequest::CreateDlcDeliverRequest() :
     m_maxSizeHasBeenSet(false),
     m_intervalHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_hasServicesLogHasBeenSet(false)
+    m_hasServicesLogHasBeenSet(false),
+    m_autoCreateFieldHasBeenSet(false),
+    m_dlcFailHandleHasBeenSet(false),
+    m_dSLFilterHasBeenSet(false)
 {
 }
 
@@ -113,6 +116,31 @@ string CreateDlcDeliverRequest::ToJsonString() const
         string key = "HasServicesLog";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_hasServicesLog, allocator);
+    }
+
+    if (m_autoCreateFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoCreateField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoCreateField, allocator);
+    }
+
+    if (m_dlcFailHandleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DlcFailHandle";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dlcFailHandle.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_dSLFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DSLFilter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dSLFilter.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -265,6 +293,54 @@ void CreateDlcDeliverRequest::SetHasServicesLog(const uint64_t& _hasServicesLog)
 bool CreateDlcDeliverRequest::HasServicesLogHasBeenSet() const
 {
     return m_hasServicesLogHasBeenSet;
+}
+
+bool CreateDlcDeliverRequest::GetAutoCreateField() const
+{
+    return m_autoCreateField;
+}
+
+void CreateDlcDeliverRequest::SetAutoCreateField(const bool& _autoCreateField)
+{
+    m_autoCreateField = _autoCreateField;
+    m_autoCreateFieldHasBeenSet = true;
+}
+
+bool CreateDlcDeliverRequest::AutoCreateFieldHasBeenSet() const
+{
+    return m_autoCreateFieldHasBeenSet;
+}
+
+DlcFailHandle CreateDlcDeliverRequest::GetDlcFailHandle() const
+{
+    return m_dlcFailHandle;
+}
+
+void CreateDlcDeliverRequest::SetDlcFailHandle(const DlcFailHandle& _dlcFailHandle)
+{
+    m_dlcFailHandle = _dlcFailHandle;
+    m_dlcFailHandleHasBeenSet = true;
+}
+
+bool CreateDlcDeliverRequest::DlcFailHandleHasBeenSet() const
+{
+    return m_dlcFailHandleHasBeenSet;
+}
+
+string CreateDlcDeliverRequest::GetDSLFilter() const
+{
+    return m_dSLFilter;
+}
+
+void CreateDlcDeliverRequest::SetDSLFilter(const string& _dSLFilter)
+{
+    m_dSLFilter = _dSLFilter;
+    m_dSLFilterHasBeenSet = true;
+}
+
+bool CreateDlcDeliverRequest::DSLFilterHasBeenSet() const
+{
+    return m_dSLFilterHasBeenSet;
 }
 
 

@@ -52,15 +52,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略组id
-                     * @return GroupId 策略组id
+                     * 获取<p>策略组id</p>
+                     * @return GroupId <p>策略组id</p>
                      * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
-                     * 设置策略组id
-                     * @param _groupId 策略组id
+                     * 设置<p>策略组id</p>
+                     * @param _groupId <p>策略组id</p>
                      * 
                      */
                     void SetGroupId(const int64_t& _groupId);
@@ -73,15 +73,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取策略组名称
-                     * @return GroupName 策略组名称
+                     * 获取<p>策略组名称</p>
+                     * @return GroupName <p>策略组名称</p>
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置策略组名称
-                     * @param _groupName 策略组名称
+                     * 设置<p>策略组名称</p>
+                     * @param _groupName <p>策略组名称</p>
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -94,15 +94,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取是否开启
-                     * @return IsOpen 是否开启
+                     * 获取<p>是否开启</p>
+                     * @return IsOpen <p>是否开启</p>
                      * 
                      */
                     bool GetIsOpen() const;
 
                     /**
-                     * 设置是否开启
-                     * @param _isOpen 是否开启
+                     * 设置<p>是否开启</p>
+                     * @param _isOpen <p>是否开启</p>
                      * 
                      */
                     void SetIsOpen(const bool& _isOpen);
@@ -115,15 +115,15 @@ namespace TencentCloud
                     bool IsOpenHasBeenSet() const;
 
                     /**
-                     * 获取策略视图名称
-                     * @return ViewName 策略视图名称
+                     * 获取<p>策略视图名称</p>
+                     * @return ViewName <p>策略视图名称</p>
                      * 
                      */
                     std::string GetViewName() const;
 
                     /**
-                     * 设置策略视图名称
-                     * @param _viewName 策略视图名称
+                     * 设置<p>策略视图名称</p>
+                     * @param _viewName <p>策略视图名称</p>
                      * 
                      */
                     void SetViewName(const std::string& _viewName);
@@ -136,15 +136,15 @@ namespace TencentCloud
                     bool ViewNameHasBeenSet() const;
 
                     /**
-                     * 获取最近编辑的用户uin
-                     * @return LastEditUin 最近编辑的用户uin
+                     * 获取<p>最近编辑的用户uin</p>
+                     * @return LastEditUin <p>最近编辑的用户uin</p>
                      * 
                      */
                     std::string GetLastEditUin() const;
 
                     /**
-                     * 设置最近编辑的用户uin
-                     * @param _lastEditUin 最近编辑的用户uin
+                     * 设置<p>最近编辑的用户uin</p>
+                     * @param _lastEditUin <p>最近编辑的用户uin</p>
                      * 
                      */
                     void SetLastEditUin(const std::string& _lastEditUin);
@@ -157,15 +157,15 @@ namespace TencentCloud
                     bool LastEditUinHasBeenSet() const;
 
                     /**
-                     * 获取最后修改时间
-                     * @return UpdateTime 最后修改时间
+                     * 获取<p>最后修改时间</p>
+                     * @return UpdateTime <p>最后修改时间</p>
                      * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
-                     * 设置最后修改时间
-                     * @param _updateTime 最后修改时间
+                     * 设置<p>最后修改时间</p>
+                     * @param _updateTime <p>最后修改时间</p>
                      * 
                      */
                     void SetUpdateTime(const int64_t& _updateTime);
@@ -178,15 +178,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return InsertTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return InsertTime <p>创建时间</p>
                      * 
                      */
                     int64_t GetInsertTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _insertTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _insertTime <p>创建时间</p>
                      * 
                      */
                     void SetInsertTime(const int64_t& _insertTime);
@@ -199,15 +199,15 @@ namespace TencentCloud
                     bool InsertTimeHasBeenSet() const;
 
                     /**
-                     * 获取策略组绑定的实例数
-                     * @return UseSum 策略组绑定的实例数
+                     * 获取<p>策略组绑定的实例数</p>
+                     * @return UseSum <p>策略组绑定的实例数</p>
                      * 
                      */
                     int64_t GetUseSum() const;
 
                     /**
-                     * 设置策略组绑定的实例数
-                     * @param _useSum 策略组绑定的实例数
+                     * 设置<p>策略组绑定的实例数</p>
+                     * @param _useSum <p>策略组绑定的实例数</p>
                      * 
                      */
                     void SetUseSum(const int64_t& _useSum);
@@ -220,15 +220,15 @@ namespace TencentCloud
                     bool UseSumHasBeenSet() const;
 
                     /**
-                     * 获取策略组绑定的未屏蔽实例数
-                     * @return NoShieldedSum 策略组绑定的未屏蔽实例数
+                     * 获取<p>策略组绑定的未屏蔽实例数</p>
+                     * @return NoShieldedSum <p>策略组绑定的未屏蔽实例数</p>
                      * 
                      */
                     int64_t GetNoShieldedSum() const;
 
                     /**
-                     * 设置策略组绑定的未屏蔽实例数
-                     * @param _noShieldedSum 策略组绑定的未屏蔽实例数
+                     * 设置<p>策略组绑定的未屏蔽实例数</p>
+                     * @param _noShieldedSum <p>策略组绑定的未屏蔽实例数</p>
                      * 
                      */
                     void SetNoShieldedSum(const int64_t& _noShieldedSum);
@@ -241,15 +241,15 @@ namespace TencentCloud
                     bool NoShieldedSumHasBeenSet() const;
 
                     /**
-                     * 获取是否为默认策略，0表示非默认策略，1表示默认策略
-                     * @return IsDefault 是否为默认策略，0表示非默认策略，1表示默认策略
+                     * 获取<p>是否为默认策略，0表示非默认策略，1表示默认策略</p>
+                     * @return IsDefault <p>是否为默认策略，0表示非默认策略，1表示默认策略</p>
                      * 
                      */
                     int64_t GetIsDefault() const;
 
                     /**
-                     * 设置是否为默认策略，0表示非默认策略，1表示默认策略
-                     * @param _isDefault 是否为默认策略，0表示非默认策略，1表示默认策略
+                     * 设置<p>是否为默认策略，0表示非默认策略，1表示默认策略</p>
+                     * @param _isDefault <p>是否为默认策略，0表示非默认策略，1表示默认策略</p>
                      * 
                      */
                     void SetIsDefault(const int64_t& _isDefault);
@@ -262,15 +262,15 @@ namespace TencentCloud
                     bool IsDefaultHasBeenSet() const;
 
                     /**
-                     * 获取是否可以设置成默认策略
-                     * @return CanSetDefault 是否可以设置成默认策略
+                     * 获取<p>是否可以设置成默认策略</p>
+                     * @return CanSetDefault <p>是否可以设置成默认策略</p>
                      * 
                      */
                     bool GetCanSetDefault() const;
 
                     /**
-                     * 设置是否可以设置成默认策略
-                     * @param _canSetDefault 是否可以设置成默认策略
+                     * 设置<p>是否可以设置成默认策略</p>
+                     * @param _canSetDefault <p>是否可以设置成默认策略</p>
                      * 
                      */
                     void SetCanSetDefault(const bool& _canSetDefault);
@@ -283,15 +283,15 @@ namespace TencentCloud
                     bool CanSetDefaultHasBeenSet() const;
 
                     /**
-                     * 获取父策略组id
-                     * @return ParentGroupId 父策略组id
+                     * 获取<p>父策略组id</p>
+                     * @return ParentGroupId <p>父策略组id</p>
                      * 
                      */
                     int64_t GetParentGroupId() const;
 
                     /**
-                     * 设置父策略组id
-                     * @param _parentGroupId 父策略组id
+                     * 设置<p>父策略组id</p>
+                     * @param _parentGroupId <p>父策略组id</p>
                      * 
                      */
                     void SetParentGroupId(const int64_t& _parentGroupId);
@@ -304,15 +304,15 @@ namespace TencentCloud
                     bool ParentGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取策略组备注
-                     * @return Remark 策略组备注
+                     * 获取<p>策略组备注</p>
+                     * @return Remark <p>策略组备注</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置策略组备注
-                     * @param _remark 策略组备注
+                     * 设置<p>策略组备注</p>
+                     * @param _remark <p>策略组备注</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -325,15 +325,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取策略组所属项目id
-                     * @return ProjectId 策略组所属项目id
+                     * 获取<p>策略组所属项目id</p>
+                     * @return ProjectId <p>策略组所属项目id</p>
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置策略组所属项目id
-                     * @param _projectId 策略组所属项目id
+                     * 设置<p>策略组所属项目id</p>
+                     * @param _projectId <p>策略组所属项目id</p>
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -346,18 +346,18 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取阈值规则列表
+                     * 获取<p>阈值规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Conditions 阈值规则列表
+                     * @return Conditions <p>阈值规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DescribePolicyGroupInfoCondition> GetConditions() const;
 
                     /**
-                     * 设置阈值规则列表
+                     * 设置<p>阈值规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _conditions 阈值规则列表
+                     * @param _conditions <p>阈值规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -371,18 +371,18 @@ namespace TencentCloud
                     bool ConditionsHasBeenSet() const;
 
                     /**
-                     * 获取产品事件规则列表
+                     * 获取<p>产品事件规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EventConditions 产品事件规则列表
+                     * @return EventConditions <p>产品事件规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DescribePolicyGroupInfoEventCondition> GetEventConditions() const;
 
                     /**
-                     * 设置产品事件规则列表
+                     * 设置<p>产品事件规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _eventConditions 产品事件规则列表
+                     * @param _eventConditions <p>产品事件规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -396,18 +396,18 @@ namespace TencentCloud
                     bool EventConditionsHasBeenSet() const;
 
                     /**
-                     * 获取用户接收人列表
+                     * 获取<p>用户接收人列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReceiverInfos 用户接收人列表
+                     * @return ReceiverInfos <p>用户接收人列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DescribePolicyGroupInfoReceiverInfo> GetReceiverInfos() const;
 
                     /**
-                     * 设置用户接收人列表
+                     * 设置<p>用户接收人列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _receiverInfos 用户接收人列表
+                     * @param _receiverInfos <p>用户接收人列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -421,18 +421,18 @@ namespace TencentCloud
                     bool ReceiverInfosHasBeenSet() const;
 
                     /**
-                     * 获取模板策略组
+                     * 获取<p>模板策略组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ConditionsTemp 模板策略组
+                     * @return ConditionsTemp <p>模板策略组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribePolicyGroupInfoConditionTpl GetConditionsTemp() const;
 
                     /**
-                     * 设置模板策略组
+                     * 设置<p>模板策略组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _conditionsTemp 模板策略组
+                     * @param _conditionsTemp <p>模板策略组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -446,18 +446,18 @@ namespace TencentCloud
                     bool ConditionsTempHasBeenSet() const;
 
                     /**
-                     * 获取策略组绑定的实例组信息
+                     * 获取<p>策略组绑定的实例组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceGroup 策略组绑定的实例组信息
+                     * @return InstanceGroup <p>策略组绑定的实例组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribePolicyGroupListGroupInstanceGroup GetInstanceGroup() const;
 
                     /**
-                     * 设置策略组绑定的实例组信息
+                     * 设置<p>策略组绑定的实例组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceGroup 策略组绑定的实例组信息
+                     * @param _instanceGroup <p>策略组绑定的实例组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -471,18 +471,18 @@ namespace TencentCloud
                     bool InstanceGroupHasBeenSet() const;
 
                     /**
-                     * 获取且或规则标识, 0表示或规则(任意一条规则满足阈值条件就告警), 1表示且规则(所有规则都满足阈值条件才告警)
+                     * 获取<p>且或规则标识, 0表示或规则(任意一条规则满足阈值条件就告警), 1表示且规则(所有规则都满足阈值条件才告警)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsUnionRule 且或规则标识, 0表示或规则(任意一条规则满足阈值条件就告警), 1表示且规则(所有规则都满足阈值条件才告警)
+                     * @return IsUnionRule <p>且或规则标识, 0表示或规则(任意一条规则满足阈值条件就告警), 1表示且规则(所有规则都满足阈值条件才告警)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsUnionRule() const;
 
                     /**
-                     * 设置且或规则标识, 0表示或规则(任意一条规则满足阈值条件就告警), 1表示且规则(所有规则都满足阈值条件才告警)
+                     * 设置<p>且或规则标识, 0表示或规则(任意一条规则满足阈值条件就告警), 1表示且规则(所有规则都满足阈值条件才告警)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isUnionRule 且或规则标识, 0表示或规则(任意一条规则满足阈值条件就告警), 1表示且规则(所有规则都满足阈值条件才告警)
+                     * @param _isUnionRule <p>且或规则标识, 0表示或规则(任意一条规则满足阈值条件就告警), 1表示且规则(所有规则都满足阈值条件才告警)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -498,126 +498,126 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略组id
+                     * <p>策略组id</p>
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 策略组名称
+                     * <p>策略组名称</p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 是否开启
+                     * <p>是否开启</p>
                      */
                     bool m_isOpen;
                     bool m_isOpenHasBeenSet;
 
                     /**
-                     * 策略视图名称
+                     * <p>策略视图名称</p>
                      */
                     std::string m_viewName;
                     bool m_viewNameHasBeenSet;
 
                     /**
-                     * 最近编辑的用户uin
+                     * <p>最近编辑的用户uin</p>
                      */
                     std::string m_lastEditUin;
                     bool m_lastEditUinHasBeenSet;
 
                     /**
-                     * 最后修改时间
+                     * <p>最后修改时间</p>
                      */
                     int64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     int64_t m_insertTime;
                     bool m_insertTimeHasBeenSet;
 
                     /**
-                     * 策略组绑定的实例数
+                     * <p>策略组绑定的实例数</p>
                      */
                     int64_t m_useSum;
                     bool m_useSumHasBeenSet;
 
                     /**
-                     * 策略组绑定的未屏蔽实例数
+                     * <p>策略组绑定的未屏蔽实例数</p>
                      */
                     int64_t m_noShieldedSum;
                     bool m_noShieldedSumHasBeenSet;
 
                     /**
-                     * 是否为默认策略，0表示非默认策略，1表示默认策略
+                     * <p>是否为默认策略，0表示非默认策略，1表示默认策略</p>
                      */
                     int64_t m_isDefault;
                     bool m_isDefaultHasBeenSet;
 
                     /**
-                     * 是否可以设置成默认策略
+                     * <p>是否可以设置成默认策略</p>
                      */
                     bool m_canSetDefault;
                     bool m_canSetDefaultHasBeenSet;
 
                     /**
-                     * 父策略组id
+                     * <p>父策略组id</p>
                      */
                     int64_t m_parentGroupId;
                     bool m_parentGroupIdHasBeenSet;
 
                     /**
-                     * 策略组备注
+                     * <p>策略组备注</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 策略组所属项目id
+                     * <p>策略组所属项目id</p>
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 阈值规则列表
+                     * <p>阈值规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DescribePolicyGroupInfoCondition> m_conditions;
                     bool m_conditionsHasBeenSet;
 
                     /**
-                     * 产品事件规则列表
+                     * <p>产品事件规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DescribePolicyGroupInfoEventCondition> m_eventConditions;
                     bool m_eventConditionsHasBeenSet;
 
                     /**
-                     * 用户接收人列表
+                     * <p>用户接收人列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DescribePolicyGroupInfoReceiverInfo> m_receiverInfos;
                     bool m_receiverInfosHasBeenSet;
 
                     /**
-                     * 模板策略组
+                     * <p>模板策略组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribePolicyGroupInfoConditionTpl m_conditionsTemp;
                     bool m_conditionsTempHasBeenSet;
 
                     /**
-                     * 策略组绑定的实例组信息
+                     * <p>策略组绑定的实例组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribePolicyGroupListGroupInstanceGroup m_instanceGroup;
                     bool m_instanceGroupHasBeenSet;
 
                     /**
-                     * 且或规则标识, 0表示或规则(任意一条规则满足阈值条件就告警), 1表示且规则(所有规则都满足阈值条件才告警)
+                     * <p>且或规则标识, 0表示或规则(任意一条规则满足阈值条件就告警), 1表示且规则(所有规则都满足阈值条件才告警)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isUnionRule;

@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取子网 ID。
+                     * 获取<p>子网 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubnetId 子网 ID。
+                     * @return SubnetId <p>子网 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网 ID。
+                     * 设置<p>子网 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subnetId 子网 ID。
+                     * @param _subnetId <p>子网 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,22 +73,18 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取可用区ID。最多支持添加10个可用区。若当前地域支持2个及以上的可用区，至少需要添加2个可用区。
-您可以通过调用[DescribeZones](~~36064~~)接口获取可用区ID对应的可用区的信息。
+                     * 获取<p>可用区ID。最多支持添加10个可用区。若当前地域支持2个及以上的可用区，至少需要添加2个可用区。<br>您可以通过调用<a href="https://cloud.tencent.com/document/api/1822/133727">DescribeZones</a>接口获取可用区ID对应的可用区的信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ZoneId 可用区ID。最多支持添加10个可用区。若当前地域支持2个及以上的可用区，至少需要添加2个可用区。
-您可以通过调用[DescribeZones](~~36064~~)接口获取可用区ID对应的可用区的信息。
+                     * @return ZoneId <p>可用区ID。最多支持添加10个可用区。若当前地域支持2个及以上的可用区，至少需要添加2个可用区。<br>您可以通过调用<a href="https://cloud.tencent.com/document/api/1822/133727">DescribeZones</a>接口获取可用区ID对应的可用区的信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置可用区ID。最多支持添加10个可用区。若当前地域支持2个及以上的可用区，至少需要添加2个可用区。
-您可以通过调用[DescribeZones](~~36064~~)接口获取可用区ID对应的可用区的信息。
+                     * 设置<p>可用区ID。最多支持添加10个可用区。若当前地域支持2个及以上的可用区，至少需要添加2个可用区。<br>您可以通过调用<a href="https://cloud.tencent.com/document/api/1822/133727">DescribeZones</a>接口获取可用区ID对应的可用区的信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _zoneId 可用区ID。最多支持添加10个可用区。若当前地域支持2个及以上的可用区，至少需要添加2个可用区。
-您可以通过调用[DescribeZones](~~36064~~)接口获取可用区ID对应的可用区的信息。
+                     * @param _zoneId <p>可用区ID。最多支持添加10个可用区。若当前地域支持2个及以上的可用区，至少需要添加2个可用区。<br>您可以通过调用<a href="https://cloud.tencent.com/document/api/1822/133727">DescribeZones</a>接口获取可用区ID对应的可用区的信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -102,15 +98,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡 VIP/EIP 信息
-                     * @return LoadBalancerAddress 负载均衡 VIP/EIP 信息
+                     * 获取<p>负载均衡 VIP/EIP 信息</p>
+                     * @return LoadBalancerAddress <p>负载均衡 VIP/EIP 信息</p>
                      * 
                      */
                     LoadBalancerAddress GetLoadBalancerAddress() const;
 
                     /**
-                     * 设置负载均衡 VIP/EIP 信息
-                     * @param _loadBalancerAddress 负载均衡 VIP/EIP 信息
+                     * 设置<p>负载均衡 VIP/EIP 信息</p>
+                     * @param _loadBalancerAddress <p>负载均衡 VIP/EIP 信息</p>
                      * 
                      */
                     void SetLoadBalancerAddress(const LoadBalancerAddress& _loadBalancerAddress);
@@ -123,35 +119,15 @@ namespace TencentCloud
                     bool LoadBalancerAddressHasBeenSet() const;
 
                     /**
-                     * 获取可用区状态。取值：
-- **Active**：运行中。
-- **Stopped**：已停止。
-- **Shifted**：已移除。
-- **Starting**：启动中。
-- **Stopping**：停止中。
-                     * @return Status 可用区状态。取值：
-- **Active**：运行中。
-- **Stopped**：已停止。
-- **Shifted**：已移除。
-- **Starting**：启动中。
-- **Stopping**：停止中。
+                     * 获取<p>可用区状态。取值：</p><ul><li><strong>Active</strong>：运行中。</li><li><strong>Stopped</strong>：已停止。</li><li><strong>Shifted</strong>：已移除。</li><li><strong>Starting</strong>：启动中。</li><li><strong>Stopping</strong>：停止中。</li></ul>
+                     * @return Status <p>可用区状态。取值：</p><ul><li><strong>Active</strong>：运行中。</li><li><strong>Stopped</strong>：已停止。</li><li><strong>Shifted</strong>：已移除。</li><li><strong>Starting</strong>：启动中。</li><li><strong>Stopping</strong>：停止中。</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置可用区状态。取值：
-- **Active**：运行中。
-- **Stopped**：已停止。
-- **Shifted**：已移除。
-- **Starting**：启动中。
-- **Stopping**：停止中。
-                     * @param _status 可用区状态。取值：
-- **Active**：运行中。
-- **Stopped**：已停止。
-- **Shifted**：已移除。
-- **Starting**：启动中。
-- **Stopping**：停止中。
+                     * 设置<p>可用区状态。取值：</p><ul><li><strong>Active</strong>：运行中。</li><li><strong>Stopped</strong>：已停止。</li><li><strong>Shifted</strong>：已移除。</li><li><strong>Starting</strong>：启动中。</li><li><strong>Stopping</strong>：停止中。</li></ul>
+                     * @param _status <p>可用区状态。取值：</p><ul><li><strong>Active</strong>：运行中。</li><li><strong>Stopped</strong>：已停止。</li><li><strong>Shifted</strong>：已移除。</li><li><strong>Starting</strong>：启动中。</li><li><strong>Stopping</strong>：停止中。</li></ul>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -166,33 +142,27 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 子网 ID。
+                     * <p>子网 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 可用区ID。最多支持添加10个可用区。若当前地域支持2个及以上的可用区，至少需要添加2个可用区。
-您可以通过调用[DescribeZones](~~36064~~)接口获取可用区ID对应的可用区的信息。
+                     * <p>可用区ID。最多支持添加10个可用区。若当前地域支持2个及以上的可用区，至少需要添加2个可用区。<br>您可以通过调用<a href="https://cloud.tencent.com/document/api/1822/133727">DescribeZones</a>接口获取可用区ID对应的可用区的信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 负载均衡 VIP/EIP 信息
+                     * <p>负载均衡 VIP/EIP 信息</p>
                      */
                     LoadBalancerAddress m_loadBalancerAddress;
                     bool m_loadBalancerAddressHasBeenSet;
 
                     /**
-                     * 可用区状态。取值：
-- **Active**：运行中。
-- **Stopped**：已停止。
-- **Shifted**：已移除。
-- **Starting**：启动中。
-- **Stopping**：停止中。
+                     * <p>可用区状态。取值：</p><ul><li><strong>Active</strong>：运行中。</li><li><strong>Stopped</strong>：已停止。</li><li><strong>Shifted</strong>：已移除。</li><li><strong>Starting</strong>：启动中。</li><li><strong>Stopping</strong>：停止中。</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

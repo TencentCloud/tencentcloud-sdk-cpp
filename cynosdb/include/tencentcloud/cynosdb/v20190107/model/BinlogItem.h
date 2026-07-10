@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cynosdb/v20190107/model/VaultInfo.h>
+#include <tencentcloud/cynosdb/v20190107/model/BinlogRegionInfo.h>
 
 
 namespace TencentCloud
@@ -48,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Binlog文件名称
-                     * @return FileName Binlog文件名称
+                     * 获取<p>Binlog文件名称</p>
+                     * @return FileName <p>Binlog文件名称</p>
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
-                     * 设置Binlog文件名称
-                     * @param _fileName Binlog文件名称
+                     * 设置<p>Binlog文件名称</p>
+                     * @param _fileName <p>Binlog文件名称</p>
                      * 
                      */
                     void SetFileName(const std::string& _fileName);
@@ -69,15 +70,15 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取文件大小，单位：字节
-                     * @return FileSize 文件大小，单位：字节
+                     * 获取<p>文件大小，单位：字节</p>
+                     * @return FileSize <p>文件大小，单位：字节</p>
                      * 
                      */
                     int64_t GetFileSize() const;
 
                     /**
-                     * 设置文件大小，单位：字节
-                     * @param _fileSize 文件大小，单位：字节
+                     * 设置<p>文件大小，单位：字节</p>
+                     * @param _fileSize <p>文件大小，单位：字节</p>
                      * 
                      */
                     void SetFileSize(const int64_t& _fileSize);
@@ -90,15 +91,15 @@ namespace TencentCloud
                     bool FileSizeHasBeenSet() const;
 
                     /**
-                     * 获取事务最早时间
-                     * @return StartTime 事务最早时间
+                     * 获取<p>事务最早时间</p>
+                     * @return StartTime <p>事务最早时间</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置事务最早时间
-                     * @param _startTime 事务最早时间
+                     * 设置<p>事务最早时间</p>
+                     * @param _startTime <p>事务最早时间</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -111,15 +112,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取事务最晚时间
-                     * @return FinishTime 事务最晚时间
+                     * 获取<p>事务最晚时间</p>
+                     * @return FinishTime <p>事务最晚时间</p>
                      * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
-                     * 设置事务最晚时间
-                     * @param _finishTime 事务最晚时间
+                     * 设置<p>事务最晚时间</p>
+                     * @param _finishTime <p>事务最晚时间</p>
                      * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
@@ -132,15 +133,15 @@ namespace TencentCloud
                     bool FinishTimeHasBeenSet() const;
 
                     /**
-                     * 获取Binlog文件ID
-                     * @return BinlogId Binlog文件ID
+                     * 获取<p>Binlog文件ID</p>
+                     * @return BinlogId <p>Binlog文件ID</p>
                      * 
                      */
                     int64_t GetBinlogId() const;
 
                     /**
-                     * 设置Binlog文件ID
-                     * @param _binlogId Binlog文件ID
+                     * 设置<p>Binlog文件ID</p>
+                     * @param _binlogId <p>Binlog文件ID</p>
                      * 
                      */
                     void SetBinlogId(const int64_t& _binlogId);
@@ -153,15 +154,15 @@ namespace TencentCloud
                     bool BinlogIdHasBeenSet() const;
 
                     /**
-                     * 获取binlog所跨地域
-                     * @return CrossRegions binlog所跨地域
+                     * 获取<p>binlog所跨地域</p>
+                     * @return CrossRegions <p>binlog所跨地域</p>
                      * 
                      */
                     std::vector<std::string> GetCrossRegions() const;
 
                     /**
-                     * 设置binlog所跨地域
-                     * @param _crossRegions binlog所跨地域
+                     * 设置<p>binlog所跨地域</p>
+                     * @param _crossRegions <p>binlog所跨地域</p>
                      * 
                      */
                     void SetCrossRegions(const std::vector<std::string>& _crossRegions);
@@ -174,15 +175,15 @@ namespace TencentCloud
                     bool CrossRegionsHasBeenSet() const;
 
                     /**
-                     * 获取备份投递状态
-                     * @return CopyStatus 备份投递状态
+                     * 获取<p>备份投递状态</p>
+                     * @return CopyStatus <p>备份投递状态</p>
                      * 
                      */
                     std::string GetCopyStatus() const;
 
                     /**
-                     * 设置备份投递状态
-                     * @param _copyStatus 备份投递状态
+                     * 设置<p>备份投递状态</p>
+                     * @param _copyStatus <p>备份投递状态</p>
                      * 
                      */
                     void SetCopyStatus(const std::string& _copyStatus);
@@ -195,15 +196,15 @@ namespace TencentCloud
                     bool CopyStatusHasBeenSet() const;
 
                     /**
-                     * 获取保险箱信息
-                     * @return VaultInfos 保险箱信息
+                     * 获取<p>保险箱信息</p>
+                     * @return VaultInfos <p>保险箱信息</p>
                      * 
                      */
                     std::vector<VaultInfo> GetVaultInfos() const;
 
                     /**
-                     * 设置保险箱信息
-                     * @param _vaultInfos 保险箱信息
+                     * 设置<p>保险箱信息</p>
+                     * @param _vaultInfos <p>保险箱信息</p>
                      * 
                      */
                     void SetVaultInfos(const std::vector<VaultInfo>& _vaultInfos);
@@ -216,15 +217,15 @@ namespace TencentCloud
                     bool VaultInfosHasBeenSet() const;
 
                     /**
-                     * 获取加密秘钥key
-                     * @return EncryptKeyId 加密秘钥key
+                     * 获取<p>加密秘钥key</p>
+                     * @return EncryptKeyId <p>加密秘钥key</p>
                      * 
                      */
                     std::string GetEncryptKeyId() const;
 
                     /**
-                     * 设置加密秘钥key
-                     * @param _encryptKeyId 加密秘钥key
+                     * 设置<p>加密秘钥key</p>
+                     * @param _encryptKeyId <p>加密秘钥key</p>
                      * 
                      */
                     void SetEncryptKeyId(const std::string& _encryptKeyId);
@@ -237,15 +238,15 @@ namespace TencentCloud
                     bool EncryptKeyIdHasBeenSet() const;
 
                     /**
-                     * 获取加密秘钥地域
-                     * @return EncryptRegion 加密秘钥地域
+                     * 获取<p>加密秘钥地域</p>
+                     * @return EncryptRegion <p>加密秘钥地域</p>
                      * 
                      */
                     std::string GetEncryptRegion() const;
 
                     /**
-                     * 设置加密秘钥地域
-                     * @param _encryptRegion 加密秘钥地域
+                     * 设置<p>加密秘钥地域</p>
+                     * @param _encryptRegion <p>加密秘钥地域</p>
                      * 
                      */
                     void SetEncryptRegion(const std::string& _encryptRegion);
@@ -257,67 +258,94 @@ namespace TencentCloud
                      */
                     bool EncryptRegionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>备份的地域分布信息</p>
+                     * @return ExistRegions <p>备份的地域分布信息</p>
+                     * 
+                     */
+                    std::vector<BinlogRegionInfo> GetExistRegions() const;
+
+                    /**
+                     * 设置<p>备份的地域分布信息</p>
+                     * @param _existRegions <p>备份的地域分布信息</p>
+                     * 
+                     */
+                    void SetExistRegions(const std::vector<BinlogRegionInfo>& _existRegions);
+
+                    /**
+                     * 判断参数 ExistRegions 是否已赋值
+                     * @return ExistRegions 是否已赋值
+                     * 
+                     */
+                    bool ExistRegionsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Binlog文件名称
+                     * <p>Binlog文件名称</p>
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * 文件大小，单位：字节
+                     * <p>文件大小，单位：字节</p>
                      */
                     int64_t m_fileSize;
                     bool m_fileSizeHasBeenSet;
 
                     /**
-                     * 事务最早时间
+                     * <p>事务最早时间</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 事务最晚时间
+                     * <p>事务最晚时间</p>
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;
 
                     /**
-                     * Binlog文件ID
+                     * <p>Binlog文件ID</p>
                      */
                     int64_t m_binlogId;
                     bool m_binlogIdHasBeenSet;
 
                     /**
-                     * binlog所跨地域
+                     * <p>binlog所跨地域</p>
                      */
                     std::vector<std::string> m_crossRegions;
                     bool m_crossRegionsHasBeenSet;
 
                     /**
-                     * 备份投递状态
+                     * <p>备份投递状态</p>
                      */
                     std::string m_copyStatus;
                     bool m_copyStatusHasBeenSet;
 
                     /**
-                     * 保险箱信息
+                     * <p>保险箱信息</p>
                      */
                     std::vector<VaultInfo> m_vaultInfos;
                     bool m_vaultInfosHasBeenSet;
 
                     /**
-                     * 加密秘钥key
+                     * <p>加密秘钥key</p>
                      */
                     std::string m_encryptKeyId;
                     bool m_encryptKeyIdHasBeenSet;
 
                     /**
-                     * 加密秘钥地域
+                     * <p>加密秘钥地域</p>
                      */
                     std::string m_encryptRegion;
                     bool m_encryptRegionHasBeenSet;
+
+                    /**
+                     * <p>备份的地域分布信息</p>
+                     */
+                    std::vector<BinlogRegionInfo> m_existRegions;
+                    bool m_existRegionsHasBeenSet;
 
                 };
             }

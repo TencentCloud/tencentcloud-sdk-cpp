@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取事件详细信息
+                     * 获取<p>事件详细信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Events 事件详细信息
+                     * @return Events <p>事件详细信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,8 +61,8 @@ namespace TencentCloud
                     bool EventsHasBeenSet() const;
 
                     /**
-                     * 获取分页号
-                     * @return Page 分页号
+                     * 获取<p>分页号</p>
+                     * @return Page <p>分页号</p>
                      * 
                      */
                     int64_t GetPage() const;
@@ -75,8 +75,8 @@ namespace TencentCloud
                     bool PageHasBeenSet() const;
 
                     /**
-                     * 获取分页大小
-                     * @return Size 分页大小
+                     * 获取<p>分页大小</p>
+                     * @return Size <p>分页大小</p>
                      * 
                      */
                     int64_t GetSize() const;
@@ -89,8 +89,8 @@ namespace TencentCloud
                     bool SizeHasBeenSet() const;
 
                     /**
-                     * 获取总页数
-                     * @return TotalPages 总页数
+                     * 获取<p>总页数</p>
+                     * @return TotalPages <p>总页数</p>
                      * 
                      */
                     int64_t GetTotalPages() const;
@@ -103,8 +103,8 @@ namespace TencentCloud
                     bool TotalPagesHasBeenSet() const;
 
                     /**
-                     * 获取总条数
-                     * @return TotalCount 总条数
+                     * 获取<p>总条数</p>
+                     * @return TotalCount <p>总条数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -119,32 +119,32 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 事件详细信息
+                     * <p>事件详细信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<HouseEventsInfo> m_events;
                     bool m_eventsHasBeenSet;
 
                     /**
-                     * 分页号
+                     * <p>分页号</p>
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;
 
                     /**
-                     * 分页大小
+                     * <p>分页大小</p>
                      */
                     int64_t m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
-                     * 总页数
+                     * <p>总页数</p>
                      */
                     int64_t m_totalPages;
                     bool m_totalPagesHasBeenSet;
 
                     /**
-                     * 总条数
+                     * <p>总条数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

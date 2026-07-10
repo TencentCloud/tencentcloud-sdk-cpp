@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取虚拟集群名称
-                     * @return DataEngineName 虚拟集群名称
+                     * 获取<p>虚拟集群名称</p>
+                     * @return DataEngineName <p>虚拟集群名称</p>
                      * 
                      */
                     std::string GetDataEngineName() const;
 
                     /**
-                     * 设置虚拟集群名称
-                     * @param _dataEngineName 虚拟集群名称
+                     * 设置<p>虚拟集群名称</p>
+                     * @param _dataEngineName <p>虚拟集群名称</p>
                      * 
                      */
                     void SetDataEngineName(const std::string& _dataEngineName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DataEngineNameHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为10，最大为100
-                     * @return Limit 返回数量，默认为10，最大为100
+                     * 获取<p>返回数量，默认为10，最大为100</p>
+                     * @return Limit <p>返回数量，默认为10，最大为100</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为10，最大为100
-                     * @param _limit 返回数量，默认为10，最大为100
+                     * 设置<p>返回数量，默认为10，最大为100</p>
+                     * @param _limit <p>返回数量，默认为10，最大为100</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0
-                     * @return Offset 偏移量，默认为0
+                     * 获取<p>偏移量，默认为0</p>
+                     * @return Offset <p>偏移量，默认为0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0
-                     * @param _offset 偏移量，默认为0
+                     * 设置<p>偏移量，默认为0</p>
+                     * @param _offset <p>偏移量，默认为0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取资源组id
-                     * @return SessionId 资源组id
+                     * 获取<p>资源组id</p>
+                     * @return SessionId <p>资源组id</p>
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置资源组id
-                     * @param _sessionId 资源组id
+                     * 设置<p>资源组id</p>
+                     * @param _sessionId <p>资源组id</p>
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -126,31 +126,85 @@ namespace TencentCloud
                      */
                     bool SessionIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>查询开始时间，用于筛选资源组启停事件的时间范围，不传则不限制开始时间</p><p>参数格式：YYYY-mm-dd HH:MM:SS</p>
+                     * @return StartTime <p>查询开始时间，用于筛选资源组启停事件的时间范围，不传则不限制开始时间</p><p>参数格式：YYYY-mm-dd HH:MM:SS</p>
+                     * 
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置<p>查询开始时间，用于筛选资源组启停事件的时间范围，不传则不限制开始时间</p><p>参数格式：YYYY-mm-dd HH:MM:SS</p>
+                     * @param _startTime <p>查询开始时间，用于筛选资源组启停事件的时间范围，不传则不限制开始时间</p><p>参数格式：YYYY-mm-dd HH:MM:SS</p>
+                     * 
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>查询结束时间，用于筛选资源组启停事件的时间范围，不传则不限制结束时间。需大于等于 StartTime</p><p>参数格式：YYYY-mm-dd HH:MM:SS</p>
+                     * @return EndTime <p>查询结束时间，用于筛选资源组启停事件的时间范围，不传则不限制结束时间。需大于等于 StartTime</p><p>参数格式：YYYY-mm-dd HH:MM:SS</p>
+                     * 
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置<p>查询结束时间，用于筛选资源组启停事件的时间范围，不传则不限制结束时间。需大于等于 StartTime</p><p>参数格式：YYYY-mm-dd HH:MM:SS</p>
+                     * @param _endTime <p>查询结束时间，用于筛选资源组启停事件的时间范围，不传则不限制结束时间。需大于等于 StartTime</p><p>参数格式：YYYY-mm-dd HH:MM:SS</p>
+                     * 
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 虚拟集群名称
+                     * <p>虚拟集群名称</p>
                      */
                     std::string m_dataEngineName;
                     bool m_dataEngineNameHasBeenSet;
 
                     /**
-                     * 返回数量，默认为10，最大为100
+                     * <p>返回数量，默认为10，最大为100</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0
+                     * <p>偏移量，默认为0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 资源组id
+                     * <p>资源组id</p>
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
+
+                    /**
+                     * <p>查询开始时间，用于筛选资源组启停事件的时间范围，不传则不限制开始时间</p><p>参数格式：YYYY-mm-dd HH:MM:SS</p>
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * <p>查询结束时间，用于筛选资源组启停事件的时间范围，不传则不限制结束时间。需大于等于 StartTime</p><p>参数格式：YYYY-mm-dd HH:MM:SS</p>
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
 
                 };
             }

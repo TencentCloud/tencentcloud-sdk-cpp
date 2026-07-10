@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取统计周期
-                     * @return CalcPeriod 统计周期
+                     * 获取<p>统计周期</p>
+                     * @return CalcPeriod <p>统计周期</p>
                      * 
                      */
                     std::string GetCalcPeriod() const;
 
                     /**
-                     * 设置统计周期
-                     * @param _calcPeriod 统计周期
+                     * 设置<p>统计周期</p>
+                     * @param _calcPeriod <p>统计周期</p>
                      * 
                      */
                     void SetCalcPeriod(const std::string& _calcPeriod);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CalcPeriodHasBeenSet() const;
 
                     /**
-                     * 获取统计方式
-                     * @return CalcType 统计方式
+                     * 获取<p>统计方式</p>
+                     * @return CalcType <p>统计方式</p>
                      * 
                      */
                     std::string GetCalcType() const;
 
                     /**
-                     * 设置统计方式
-                     * @param _calcType 统计方式
+                     * 设置<p>统计方式</p>
+                     * @param _calcType <p>统计方式</p>
                      * 
                      */
                     void SetCalcType(const std::string& _calcType);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool CalcTypeHasBeenSet() const;
 
                     /**
-                     * 获取持续周期
-                     * @return ContinuePeriod 持续周期
+                     * 获取<p>持续周期</p>
+                     * @return ContinuePeriod <p>持续周期</p>
                      * 
                      */
                     std::string GetContinuePeriod() const;
 
                     /**
-                     * 设置持续周期
-                     * @param _continuePeriod 持续周期
+                     * 设置<p>持续周期</p>
+                     * @param _continuePeriod <p>持续周期</p>
                      * 
                      */
                     void SetContinuePeriod(const std::string& _continuePeriod);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ContinuePeriodHasBeenSet() const;
 
                     /**
-                     * 获取指标ID
-                     * @return MetricID 指标ID
+                     * 获取<p>指标ID</p>
+                     * @return MetricID <p>指标ID</p>
                      * 
                      */
                     int64_t GetMetricID() const;
 
                     /**
-                     * 设置指标ID
-                     * @param _metricID 指标ID
+                     * 设置<p>指标ID</p>
+                     * @param _metricID <p>指标ID</p>
                      * 
                      */
                     void SetMetricID(const int64_t& _metricID);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool MetricIDHasBeenSet() const;
 
                     /**
-                     * 获取统计值
-                     * @return CalcValue 统计值
+                     * 获取<p>统计值</p>
+                     * @return CalcValue <p>统计值</p>
                      * 
                      */
                     std::string GetCalcValue() const;
 
                     /**
-                     * 设置统计值
-                     * @param _calcValue 统计值
+                     * 设置<p>统计值</p>
+                     * @param _calcValue <p>统计值</p>
                      * 
                      */
                     void SetCalcValue(const std::string& _calcValue);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool CalcValueHasBeenSet() const;
 
                     /**
-                     * 获取告警通知周期
-                     * @return AlarmNotifyPeriod 告警通知周期
+                     * 获取<p>告警通知周期</p>
+                     * @return AlarmNotifyPeriod <p>告警通知周期</p>
                      * 
                      */
                     std::string GetAlarmNotifyPeriod() const;
 
                     /**
-                     * 设置告警通知周期
-                     * @param _alarmNotifyPeriod 告警通知周期
+                     * 设置<p>告警通知周期</p>
+                     * @param _alarmNotifyPeriod <p>告警通知周期</p>
                      * 
                      */
                     void SetAlarmNotifyPeriod(const std::string& _alarmNotifyPeriod);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool AlarmNotifyPeriodHasBeenSet() const;
 
                     /**
-                     * 获取告警通知方式
-                     * @return AlarmNotifyType 告警通知方式
+                     * 获取<p>告警通知方式</p>
+                     * @return AlarmNotifyType <p>告警通知方式</p>
                      * 
                      */
                     int64_t GetAlarmNotifyType() const;
 
                     /**
-                     * 设置告警通知方式
-                     * @param _alarmNotifyType 告警通知方式
+                     * 设置<p>告警通知方式</p>
+                     * @param _alarmNotifyType <p>告警通知方式</p>
                      * 
                      */
                     void SetAlarmNotifyType(const int64_t& _alarmNotifyType);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool AlarmNotifyTypeHasBeenSet() const;
 
                     /**
-                     * 获取规则ID
-                     * @return RuleID 规则ID
+                     * 获取<p>规则ID</p>
+                     * @return RuleID <p>规则ID</p>
                      * 
                      */
                     int64_t GetRuleID() const;
 
                     /**
-                     * 设置规则ID
-                     * @param _ruleID 规则ID
+                     * 设置<p>规则ID</p>
+                     * @param _ruleID <p>规则ID</p>
                      * 
                      */
                     void SetRuleID(const int64_t& _ruleID);
@@ -217,49 +217,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 统计周期
+                     * <p>统计周期</p>
                      */
                     std::string m_calcPeriod;
                     bool m_calcPeriodHasBeenSet;
 
                     /**
-                     * 统计方式
+                     * <p>统计方式</p>
                      */
                     std::string m_calcType;
                     bool m_calcTypeHasBeenSet;
 
                     /**
-                     * 持续周期
+                     * <p>持续周期</p>
                      */
                     std::string m_continuePeriod;
                     bool m_continuePeriodHasBeenSet;
 
                     /**
-                     * 指标ID
+                     * <p>指标ID</p>
                      */
                     int64_t m_metricID;
                     bool m_metricIDHasBeenSet;
 
                     /**
-                     * 统计值
+                     * <p>统计值</p>
                      */
                     std::string m_calcValue;
                     bool m_calcValueHasBeenSet;
 
                     /**
-                     * 告警通知周期
+                     * <p>告警通知周期</p>
                      */
                     std::string m_alarmNotifyPeriod;
                     bool m_alarmNotifyPeriodHasBeenSet;
 
                     /**
-                     * 告警通知方式
+                     * <p>告警通知方式</p>
                      */
                     int64_t m_alarmNotifyType;
                     bool m_alarmNotifyTypeHasBeenSet;
 
                     /**
-                     * 规则ID
+                     * <p>规则ID</p>
                      */
                     int64_t m_ruleID;
                     bool m_ruleIDHasBeenSet;

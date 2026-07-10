@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取镜像地址
-                     * @return Image 镜像地址
+                     * 获取<p>镜像地址</p>
+                     * @return Image <p>镜像地址</p>
                      * 
                      */
                     std::string GetImage() const;
 
                     /**
-                     * 设置镜像地址
-                     * @param _image 镜像地址
+                     * 设置<p>镜像地址</p>
+                     * @param _image <p>镜像地址</p>
                      * 
                      */
                     void SetImage(const std::string& _image);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ImageHasBeenSet() const;
 
                     /**
-                     * 获取镜像仓库类型：`enterprise`、`personal`。
-                     * @return ImageRegistryType 镜像仓库类型：`enterprise`、`personal`。
+                     * 获取<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code></p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>
+                     * @return ImageRegistryType <p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code></p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>
                      * 
                      */
                     std::string GetImageRegistryType() const;
 
                     /**
-                     * 设置镜像仓库类型：`enterprise`、`personal`。
-                     * @param _imageRegistryType 镜像仓库类型：`enterprise`、`personal`。
+                     * 设置<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code></p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>
+                     * @param _imageRegistryType <p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code></p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>
                      * 
                      */
                     void SetImageRegistryType(const std::string& _imageRegistryType);
@@ -84,19 +84,46 @@ namespace TencentCloud
                      */
                     bool ImageRegistryTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>预热超时时长</p>
+                     * @return TimeoutMinutes <p>预热超时时长</p>
+                     * 
+                     */
+                    int64_t GetTimeoutMinutes() const;
+
+                    /**
+                     * 设置<p>预热超时时长</p>
+                     * @param _timeoutMinutes <p>预热超时时长</p>
+                     * 
+                     */
+                    void SetTimeoutMinutes(const int64_t& _timeoutMinutes);
+
+                    /**
+                     * 判断参数 TimeoutMinutes 是否已赋值
+                     * @return TimeoutMinutes 是否已赋值
+                     * 
+                     */
+                    bool TimeoutMinutesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 镜像地址
+                     * <p>镜像地址</p>
                      */
                     std::string m_image;
                     bool m_imageHasBeenSet;
 
                     /**
-                     * 镜像仓库类型：`enterprise`、`personal`。
+                     * <p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code></p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>
                      */
                     std::string m_imageRegistryType;
                     bool m_imageRegistryTypeHasBeenSet;
+
+                    /**
+                     * <p>预热超时时长</p>
+                     */
+                    int64_t m_timeoutMinutes;
+                    bool m_timeoutMinutesHasBeenSet;
 
                 };
             }

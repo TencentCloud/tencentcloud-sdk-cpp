@@ -118,7 +118,9 @@ TaskOpsDto::TaskOpsDto() :
     m_bundleInfoHasBeenSet(false),
     m_workflowTypeHasBeenSet(false),
     m_taskExtDTOHasBeenSet(false),
-    m_scheduleTimeZoneHasBeenSet(false)
+    m_scheduleTimeZoneHasBeenSet(false),
+    m_proxyTaskIdHasBeenSet(false),
+    m_proxyTaskTypeIdHasBeenSet(false)
 {
 }
 
@@ -1179,6 +1181,26 @@ CoreInternalOutcome TaskOpsDto::Deserialize(const rapidjson::Value &value)
         m_scheduleTimeZoneHasBeenSet = true;
     }
 
+    if (value.HasMember("ProxyTaskId") && !value["ProxyTaskId"].IsNull())
+    {
+        if (!value["ProxyTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskOpsDto.ProxyTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_proxyTaskId = string(value["ProxyTaskId"].GetString());
+        m_proxyTaskIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProxyTaskTypeId") && !value["ProxyTaskTypeId"].IsNull())
+    {
+        if (!value["ProxyTaskTypeId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskOpsDto.ProxyTaskTypeId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_proxyTaskTypeId = value["ProxyTaskTypeId"].GetInt64();
+        m_proxyTaskTypeIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1994,6 +2016,22 @@ void TaskOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ScheduleTimeZone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_proxyTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proxyTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_proxyTaskTypeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyTaskTypeId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_proxyTaskTypeId, allocator);
     }
 
 }
@@ -3565,5 +3603,37 @@ void TaskOpsDto::SetScheduleTimeZone(const string& _scheduleTimeZone)
 bool TaskOpsDto::ScheduleTimeZoneHasBeenSet() const
 {
     return m_scheduleTimeZoneHasBeenSet;
+}
+
+string TaskOpsDto::GetProxyTaskId() const
+{
+    return m_proxyTaskId;
+}
+
+void TaskOpsDto::SetProxyTaskId(const string& _proxyTaskId)
+{
+    m_proxyTaskId = _proxyTaskId;
+    m_proxyTaskIdHasBeenSet = true;
+}
+
+bool TaskOpsDto::ProxyTaskIdHasBeenSet() const
+{
+    return m_proxyTaskIdHasBeenSet;
+}
+
+int64_t TaskOpsDto::GetProxyTaskTypeId() const
+{
+    return m_proxyTaskTypeId;
+}
+
+void TaskOpsDto::SetProxyTaskTypeId(const int64_t& _proxyTaskTypeId)
+{
+    m_proxyTaskTypeId = _proxyTaskTypeId;
+    m_proxyTaskTypeIdHasBeenSet = true;
+}
+
+bool TaskOpsDto::ProxyTaskTypeIdHasBeenSet() const
+{
+    return m_proxyTaskTypeIdHasBeenSet;
 }
 

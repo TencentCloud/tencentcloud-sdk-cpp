@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取CalcType 取值
+                     * 获取<p>CalcType 取值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Keys CalcType 取值
+                     * @return Keys <p>CalcType 取值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetKeys() const;
 
                     /**
-                     * 设置CalcType 取值
+                     * 设置<p>CalcType 取值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _keys CalcType 取值
+                     * @param _keys <p>CalcType 取值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool KeysHasBeenSet() const;
 
                     /**
-                     * 获取是否必须
-                     * @return Need 是否必须
+                     * 获取<p>是否必须</p>
+                     * @return Need <p>是否必须</p>
                      * 
                      */
                     bool GetNeed() const;
 
                     /**
-                     * 设置是否必须
-                     * @param _need 是否必须
+                     * 设置<p>是否必须</p>
+                     * @param _need <p>是否必须</p>
                      * 
                      */
                     void SetNeed(const bool& _need);
@@ -95,14 +95,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * CalcType 取值
+                     * <p>CalcType 取值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_keys;
                     bool m_keysHasBeenSet;
 
                     /**
-                     * 是否必须
+                     * <p>是否必须</p>
                      */
                     bool m_need;
                     bool m_needHasBeenSet;

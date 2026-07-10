@@ -43,6 +43,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取健康检查模板 ID 列表，ID 格式为 hct- 后接字母数字。
+                     * @return HealthCheckTemplateIds 健康检查模板 ID 列表，ID 格式为 hct- 后接字母数字。
+                     * 
+                     */
+                    std::vector<std::string> GetHealthCheckTemplateIds() const;
+
+                    /**
+                     * 设置健康检查模板 ID 列表，ID 格式为 hct- 后接字母数字。
+                     * @param _healthCheckTemplateIds 健康检查模板 ID 列表，ID 格式为 hct- 后接字母数字。
+                     * 
+                     */
+                    void SetHealthCheckTemplateIds(const std::vector<std::string>& _healthCheckTemplateIds);
+
+                    /**
+                     * 判断参数 HealthCheckTemplateIds 是否已赋值
+                     * @return HealthCheckTemplateIds 是否已赋值
+                     * 
+                     */
+                    bool HealthCheckTemplateIdsHasBeenSet() const;
+
+                    /**
                      * 获取是否预览此次请求。
 - **false**（默认）：发送普通请求，直接删除模板。
 - **true**：发送预览请求，检查删除模板的参数、格式、业务限制等是否符合要求。
@@ -71,28 +92,13 @@ namespace TencentCloud
                      */
                     bool DryRunHasBeenSet() const;
 
-                    /**
-                     * 获取健康检查模板 ID 列表，ID 格式为 hct- 后接字母数字。
-                     * @return HealthCheckTemplateIds 健康检查模板 ID 列表，ID 格式为 hct- 后接字母数字。
-                     * 
-                     */
-                    std::vector<std::string> GetHealthCheckTemplateIds() const;
-
-                    /**
-                     * 设置健康检查模板 ID 列表，ID 格式为 hct- 后接字母数字。
-                     * @param _healthCheckTemplateIds 健康检查模板 ID 列表，ID 格式为 hct- 后接字母数字。
-                     * 
-                     */
-                    void SetHealthCheckTemplateIds(const std::vector<std::string>& _healthCheckTemplateIds);
-
-                    /**
-                     * 判断参数 HealthCheckTemplateIds 是否已赋值
-                     * @return HealthCheckTemplateIds 是否已赋值
-                     * 
-                     */
-                    bool HealthCheckTemplateIdsHasBeenSet() const;
-
                 private:
+
+                    /**
+                     * 健康检查模板 ID 列表，ID 格式为 hct- 后接字母数字。
+                     */
+                    std::vector<std::string> m_healthCheckTemplateIds;
+                    bool m_healthCheckTemplateIdsHasBeenSet;
 
                     /**
                      * 是否预览此次请求。
@@ -101,12 +107,6 @@ namespace TencentCloud
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;
-
-                    /**
-                     * 健康检查模板 ID 列表，ID 格式为 hct- 后接字母数字。
-                     */
-                    std::vector<std::string> m_healthCheckTemplateIds;
-                    bool m_healthCheckTemplateIdsHasBeenSet;
 
                 };
             }

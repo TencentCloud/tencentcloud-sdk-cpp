@@ -45,14 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回资源及状态，状态码：
-1 - 封堵状态
-2 - 正常状态
-3 - 攻击状态
-                     * @return Data 返回资源及状态，状态码：
-1 - 封堵状态
-2 - 正常状态
-3 - 攻击状态
+                     * 获取<p>返回资源及状态，状态码：<br>1 - 封堵状态<br>2 - 正常状态<br>3 - 攻击状态</p>
+                     * @return Data <p>返回资源及状态，状态码：<br>1 - 封堵状态<br>2 - 正常状态<br>3 - 攻击状态</p>
                      * 
                      */
                     std::vector<KeyValue> GetData() const;
@@ -65,8 +59,8 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取域名化资产的名称
-                     * @return CLBData 域名化资产的名称
+                     * 获取<p>域名化资产的名称</p>
+                     * @return CLBData <p>域名化资产的名称</p>
                      * 
                      */
                     std::vector<KeyValue> GetCLBData() const;
@@ -79,8 +73,8 @@ namespace TencentCloud
                     bool CLBDataHasBeenSet() const;
 
                     /**
-                     * 获取cnamewaf资源状态
-                     * @return CnameWafData cnamewaf资源状态
+                     * 获取<p>cnamewaf资源状态</p>
+                     * @return CnameWafData <p>cnamewaf资源状态</p>
                      * 
                      */
                     std::vector<KeyValue> GetCnameWafData() const;
@@ -95,22 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回资源及状态，状态码：
-1 - 封堵状态
-2 - 正常状态
-3 - 攻击状态
+                     * <p>返回资源及状态，状态码：<br>1 - 封堵状态<br>2 - 正常状态<br>3 - 攻击状态</p>
                      */
                     std::vector<KeyValue> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 域名化资产的名称
+                     * <p>域名化资产的名称</p>
                      */
                     std::vector<KeyValue> m_cLBData;
                     bool m_cLBDataHasBeenSet;
 
                     /**
-                     * cnamewaf资源状态
+                     * <p>cnamewaf资源状态</p>
                      */
                     std::vector<KeyValue> m_cnameWafData;
                     bool m_cnameWafDataHasBeenSet;

@@ -24,8 +24,8 @@ using namespace std;
 
 RemoveTargetsFromTargetGroupRequest::RemoveTargetsFromTargetGroupRequest() :
     m_targetGroupIdHasBeenSet(false),
-    m_dryRunHasBeenSet(false),
-    m_targetsHasBeenSet(false)
+    m_targetsHasBeenSet(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -44,14 +44,6 @@ string RemoveTargetsFromTargetGroupRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_targetGroupId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_dryRunHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DryRun";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_dryRun, allocator);
-    }
-
     if (m_targetsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -65,6 +57,14 @@ string RemoveTargetsFromTargetGroupRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_dryRunHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DryRun";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dryRun, allocator);
     }
 
 
@@ -91,22 +91,6 @@ bool RemoveTargetsFromTargetGroupRequest::TargetGroupIdHasBeenSet() const
     return m_targetGroupIdHasBeenSet;
 }
 
-bool RemoveTargetsFromTargetGroupRequest::GetDryRun() const
-{
-    return m_dryRun;
-}
-
-void RemoveTargetsFromTargetGroupRequest::SetDryRun(const bool& _dryRun)
-{
-    m_dryRun = _dryRun;
-    m_dryRunHasBeenSet = true;
-}
-
-bool RemoveTargetsFromTargetGroupRequest::DryRunHasBeenSet() const
-{
-    return m_dryRunHasBeenSet;
-}
-
 vector<TargetToRemove> RemoveTargetsFromTargetGroupRequest::GetTargets() const
 {
     return m_targets;
@@ -121,6 +105,22 @@ void RemoveTargetsFromTargetGroupRequest::SetTargets(const vector<TargetToRemove
 bool RemoveTargetsFromTargetGroupRequest::TargetsHasBeenSet() const
 {
     return m_targetsHasBeenSet;
+}
+
+bool RemoveTargetsFromTargetGroupRequest::GetDryRun() const
+{
+    return m_dryRun;
+}
+
+void RemoveTargetsFromTargetGroupRequest::SetDryRun(const bool& _dryRun)
+{
+    m_dryRun = _dryRun;
+    m_dryRunHasBeenSet = true;
+}
+
+bool RemoveTargetsFromTargetGroupRequest::DryRunHasBeenSet() const
+{
+    return m_dryRunHasBeenSet;
 }
 
 

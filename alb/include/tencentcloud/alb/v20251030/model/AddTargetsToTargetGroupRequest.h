@@ -65,6 +65,27 @@ namespace TencentCloud
                     bool TargetGroupIdHasBeenSet() const;
 
                     /**
+                     * 获取需要添加至目标组的后端服务列表。单次请求最多支持添加 **50** 个后端服务。
+                     * @return Targets 需要添加至目标组的后端服务列表。单次请求最多支持添加 **50** 个后端服务。
+                     * 
+                     */
+                    std::vector<TargetToAdd> GetTargets() const;
+
+                    /**
+                     * 设置需要添加至目标组的后端服务列表。单次请求最多支持添加 **50** 个后端服务。
+                     * @param _targets 需要添加至目标组的后端服务列表。单次请求最多支持添加 **50** 个后端服务。
+                     * 
+                     */
+                    void SetTargets(const std::vector<TargetToAdd>& _targets);
+
+                    /**
+                     * 判断参数 Targets 是否已赋值
+                     * @return Targets 是否已赋值
+                     * 
+                     */
+                    bool TargetsHasBeenSet() const;
+
+                    /**
                      * 获取是否预览此次请求。 
 - **false**（默认）：发送普通请求，直接添加后端服务至目标组。 
 - **true**：发送预览请求，检查添加后端服务的参数、格式、业务限制等是否符合要求。
@@ -93,27 +114,6 @@ namespace TencentCloud
                      */
                     bool DryRunHasBeenSet() const;
 
-                    /**
-                     * 获取需要添加至目标组的后端服务列表。单次请求最多支持添加 **50** 个后端服务。
-                     * @return Targets 需要添加至目标组的后端服务列表。单次请求最多支持添加 **50** 个后端服务。
-                     * 
-                     */
-                    std::vector<TargetToAdd> GetTargets() const;
-
-                    /**
-                     * 设置需要添加至目标组的后端服务列表。单次请求最多支持添加 **50** 个后端服务。
-                     * @param _targets 需要添加至目标组的后端服务列表。单次请求最多支持添加 **50** 个后端服务。
-                     * 
-                     */
-                    void SetTargets(const std::vector<TargetToAdd>& _targets);
-
-                    /**
-                     * 判断参数 Targets 是否已赋值
-                     * @return Targets 是否已赋值
-                     * 
-                     */
-                    bool TargetsHasBeenSet() const;
-
                 private:
 
                     /**
@@ -123,18 +123,18 @@ namespace TencentCloud
                     bool m_targetGroupIdHasBeenSet;
 
                     /**
+                     * 需要添加至目标组的后端服务列表。单次请求最多支持添加 **50** 个后端服务。
+                     */
+                    std::vector<TargetToAdd> m_targets;
+                    bool m_targetsHasBeenSet;
+
+                    /**
                      * 是否预览此次请求。 
 - **false**（默认）：发送普通请求，直接添加后端服务至目标组。 
 - **true**：发送预览请求，检查添加后端服务的参数、格式、业务限制等是否符合要求。
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;
-
-                    /**
-                     * 需要添加至目标组的后端服务列表。单次请求最多支持添加 **50** 个后端服务。
-                     */
-                    std::vector<TargetToAdd> m_targets;
-                    bool m_targetsHasBeenSet;
 
                 };
             }

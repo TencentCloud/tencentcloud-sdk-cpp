@@ -560,6 +560,48 @@ namespace TencentCloud
                      */
                     bool PublicStreamAccessEndpointHasBeenSet() const;
 
+                    /**
+                     * 获取<p>集群类型</p><p>枚举值：</p><ul><li>NORMAL： 公有云</li><li>CDC： 本地专用集群</li></ul>
+                     * @return ClusterType <p>集群类型</p><p>枚举值：</p><ul><li>NORMAL： 公有云</li><li>CDC： 本地专用集群</li></ul>
+                     * 
+                     */
+                    std::string GetClusterType() const;
+
+                    /**
+                     * 设置<p>集群类型</p><p>枚举值：</p><ul><li>NORMAL： 公有云</li><li>CDC： 本地专用集群</li></ul>
+                     * @param _clusterType <p>集群类型</p><p>枚举值：</p><ul><li>NORMAL： 公有云</li><li>CDC： 本地专用集群</li></ul>
+                     * 
+                     */
+                    void SetClusterType(const std::string& _clusterType);
+
+                    /**
+                     * 判断参数 ClusterType 是否已赋值
+                     * @return ClusterType 是否已赋值
+                     * 
+                     */
+                    bool ClusterTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>CDC 集群 ID</p>
+                     * @return CdcClusterId <p>CDC 集群 ID</p>
+                     * 
+                     */
+                    std::string GetCdcClusterId() const;
+
+                    /**
+                     * 设置<p>CDC 集群 ID</p>
+                     * @param _cdcClusterId <p>CDC 集群 ID</p>
+                     * 
+                     */
+                    void SetCdcClusterId(const std::string& _cdcClusterId);
+
+                    /**
+                     * 判断参数 CdcClusterId 是否已赋值
+                     * @return CdcClusterId 是否已赋值
+                     * 
+                     */
+                    bool CdcClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -707,6 +749,18 @@ namespace TencentCloud
                      */
                     std::string m_publicStreamAccessEndpoint;
                     bool m_publicStreamAccessEndpointHasBeenSet;
+
+                    /**
+                     * <p>集群类型</p><p>枚举值：</p><ul><li>NORMAL： 公有云</li><li>CDC： 本地专用集群</li></ul>
+                     */
+                    std::string m_clusterType;
+                    bool m_clusterTypeHasBeenSet;
+
+                    /**
+                     * <p>CDC 集群 ID</p>
+                     */
+                    std::string m_cdcClusterId;
+                    bool m_cdcClusterIdHasBeenSet;
 
                 };
             }

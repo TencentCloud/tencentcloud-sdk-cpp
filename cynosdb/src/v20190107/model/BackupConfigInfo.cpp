@@ -29,6 +29,7 @@ BackupConfigInfo::BackupConfigInfo() :
     m_reserveDurationHasBeenSet(false),
     m_crossRegionsEnableHasBeenSet(false),
     m_crossRegionsHasBeenSet(false),
+    m_crossRegionSaveDaysHasBeenSet(false),
     m_backupTriggerStrategyHasBeenSet(false),
     m_autoCopyVaultsHasBeenSet(false)
 {
@@ -123,6 +124,16 @@ CoreInternalOutcome BackupConfigInfo::Deserialize(const rapidjson::Value &value)
             m_crossRegions.push_back((*itr).GetString());
         }
         m_crossRegionsHasBeenSet = true;
+    }
+
+    if (value.HasMember("CrossRegionSaveDays") && !value["CrossRegionSaveDays"].IsNull())
+    {
+        if (!value["CrossRegionSaveDays"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupConfigInfo.CrossRegionSaveDays` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_crossRegionSaveDays = value["CrossRegionSaveDays"].GetInt64();
+        m_crossRegionSaveDaysHasBeenSet = true;
     }
 
     if (value.HasMember("BackupTriggerStrategy") && !value["BackupTriggerStrategy"].IsNull())
@@ -234,6 +245,14 @@ void BackupConfigInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_crossRegionSaveDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CrossRegionSaveDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_crossRegionSaveDays, allocator);
     }
 
     if (m_backupTriggerStrategyHasBeenSet)
@@ -388,6 +407,22 @@ void BackupConfigInfo::SetCrossRegions(const vector<string>& _crossRegions)
 bool BackupConfigInfo::CrossRegionsHasBeenSet() const
 {
     return m_crossRegionsHasBeenSet;
+}
+
+int64_t BackupConfigInfo::GetCrossRegionSaveDays() const
+{
+    return m_crossRegionSaveDays;
+}
+
+void BackupConfigInfo::SetCrossRegionSaveDays(const int64_t& _crossRegionSaveDays)
+{
+    m_crossRegionSaveDays = _crossRegionSaveDays;
+    m_crossRegionSaveDaysHasBeenSet = true;
+}
+
+bool BackupConfigInfo::CrossRegionSaveDaysHasBeenSet() const
+{
+    return m_crossRegionSaveDaysHasBeenSet;
 }
 
 string BackupConfigInfo::GetBackupTriggerStrategy() const

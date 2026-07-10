@@ -30,7 +30,8 @@ BinlogItem::BinlogItem() :
     m_copyStatusHasBeenSet(false),
     m_vaultInfosHasBeenSet(false),
     m_encryptKeyIdHasBeenSet(false),
-    m_encryptRegionHasBeenSet(false)
+    m_encryptRegionHasBeenSet(false),
+    m_existRegionsHasBeenSet(false)
 {
 }
 
@@ -152,6 +153,26 @@ CoreInternalOutcome BinlogItem::Deserialize(const rapidjson::Value &value)
         m_encryptRegionHasBeenSet = true;
     }
 
+    if (value.HasMember("ExistRegions") && !value["ExistRegions"].IsNull())
+    {
+        if (!value["ExistRegions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BinlogItem.ExistRegions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExistRegions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BinlogRegionInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_existRegions.push_back(item);
+        }
+        m_existRegionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -249,6 +270,21 @@ void BinlogItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "EncryptRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_encryptRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_existRegionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExistRegions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_existRegions.begin(); itr != m_existRegions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -412,5 +448,21 @@ void BinlogItem::SetEncryptRegion(const string& _encryptRegion)
 bool BinlogItem::EncryptRegionHasBeenSet() const
 {
     return m_encryptRegionHasBeenSet;
+}
+
+vector<BinlogRegionInfo> BinlogItem::GetExistRegions() const
+{
+    return m_existRegions;
+}
+
+void BinlogItem::SetExistRegions(const vector<BinlogRegionInfo>& _existRegions)
+{
+    m_existRegions = _existRegions;
+    m_existRegionsHasBeenSet = true;
+}
+
+bool BinlogItem::ExistRegionsHasBeenSet() const
+{
+    return m_existRegionsHasBeenSet;
 }
 

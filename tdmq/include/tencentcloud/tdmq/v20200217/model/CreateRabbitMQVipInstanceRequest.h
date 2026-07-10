@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可用区
-                     * @return ZoneIds 可用区
+                     * 获取<p>可用区</p>
+                     * @return ZoneIds <p>可用区</p>
                      * 
                      */
                     std::vector<int64_t> GetZoneIds() const;
 
                     /**
-                     * 设置可用区
-                     * @param _zoneIds 可用区
+                     * 设置<p>可用区</p>
+                     * @param _zoneIds <p>可用区</p>
                      * 
                      */
                     void SetZoneIds(const std::vector<int64_t>& _zoneIds);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ID，形如 vpc-xxx。有效的 VpcId 可通过登录[私有网络](https://console.cloud.tencent.com/vpc/vpc?rid=1)控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372)，从接口返回中的 unVpcId 字段获取。若在创建子机时 VpcId 与 SubnetId 同时传入 DEFAULT，则强制使用默认 vpc 网络。
-                     * @return VpcId 私有网络ID，形如 vpc-xxx。有效的 VpcId 可通过登录[私有网络](https://console.cloud.tencent.com/vpc/vpc?rid=1)控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372)，从接口返回中的 unVpcId 字段获取。若在创建子机时 VpcId 与 SubnetId 同时传入 DEFAULT，则强制使用默认 vpc 网络。
+                     * 获取<p>私有网络ID，形如 vpc-xxx。有效的 VpcId 可通过登录<a href="https://console.cloud.tencent.com/vpc/vpc?rid=1">私有网络</a>控制台查询；也可以调用接口 <a href="https://cloud.tencent.com/document/api/215/1372">DescribeVpcEx</a>，从接口返回中的 unVpcId 字段获取。若在创建子机时 VpcId 与 SubnetId 同时传入 DEFAULT，则强制使用默认 vpc 网络。</p>
+                     * @return VpcId <p>私有网络ID，形如 vpc-xxx。有效的 VpcId 可通过登录<a href="https://console.cloud.tencent.com/vpc/vpc?rid=1">私有网络</a>控制台查询；也可以调用接口 <a href="https://cloud.tencent.com/document/api/215/1372">DescribeVpcEx</a>，从接口返回中的 unVpcId 字段获取。若在创建子机时 VpcId 与 SubnetId 同时传入 DEFAULT，则强制使用默认 vpc 网络。</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络ID，形如 vpc-xxx。有效的 VpcId 可通过登录[私有网络](https://console.cloud.tencent.com/vpc/vpc?rid=1)控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372)，从接口返回中的 unVpcId 字段获取。若在创建子机时 VpcId 与 SubnetId 同时传入 DEFAULT，则强制使用默认 vpc 网络。
-                     * @param _vpcId 私有网络ID，形如 vpc-xxx。有效的 VpcId 可通过登录[私有网络](https://console.cloud.tencent.com/vpc/vpc?rid=1)控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372)，从接口返回中的 unVpcId 字段获取。若在创建子机时 VpcId 与 SubnetId 同时传入 DEFAULT，则强制使用默认 vpc 网络。
+                     * 设置<p>私有网络ID，形如 vpc-xxx。有效的 VpcId 可通过登录<a href="https://console.cloud.tencent.com/vpc/vpc?rid=1">私有网络</a>控制台查询；也可以调用接口 <a href="https://cloud.tencent.com/document/api/215/1372">DescribeVpcEx</a>，从接口返回中的 unVpcId 字段获取。若在创建子机时 VpcId 与 SubnetId 同时传入 DEFAULT，则强制使用默认 vpc 网络。</p>
+                     * @param _vpcId <p>私有网络ID，形如 vpc-xxx。有效的 VpcId 可通过登录<a href="https://console.cloud.tencent.com/vpc/vpc?rid=1">私有网络</a>控制台查询；也可以调用接口 <a href="https://cloud.tencent.com/document/api/215/1372">DescribeVpcEx</a>，从接口返回中的 unVpcId 字段获取。若在创建子机时 VpcId 与 SubnetId 同时传入 DEFAULT，则强制使用默认 vpc 网络。</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取私有网络子网 ID，形如 subnet-xxx。有效的私有网络子网 ID 可通过登录[子网控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口 [DescribeSubnets](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的 unSubnetId 字段获取。若在创建子机时 SubnetId 与 VpcId 同时传入 DEFAULT，则强制使用默认 vpc 网络。
-                     * @return SubnetId 私有网络子网 ID，形如 subnet-xxx。有效的私有网络子网 ID 可通过登录[子网控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口 [DescribeSubnets](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的 unSubnetId 字段获取。若在创建子机时 SubnetId 与 VpcId 同时传入 DEFAULT，则强制使用默认 vpc 网络。
+                     * 获取<p>私有网络子网 ID，形如 subnet-xxx。有效的私有网络子网 ID 可通过登录<a href="https://console.cloud.tencent.com/vpc/subnet?rid=1">子网控制台</a>查询；也可以调用接口 <a href="https://cloud.tencent.com/document/api/215/15784">DescribeSubnets</a>，从接口返回中的 unSubnetId 字段获取。若在创建子机时 SubnetId 与 VpcId 同时传入 DEFAULT，则强制使用默认 vpc 网络。</p>
+                     * @return SubnetId <p>私有网络子网 ID，形如 subnet-xxx。有效的私有网络子网 ID 可通过登录<a href="https://console.cloud.tencent.com/vpc/subnet?rid=1">子网控制台</a>查询；也可以调用接口 <a href="https://cloud.tencent.com/document/api/215/15784">DescribeSubnets</a>，从接口返回中的 unSubnetId 字段获取。若在创建子机时 SubnetId 与 VpcId 同时传入 DEFAULT，则强制使用默认 vpc 网络。</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置私有网络子网 ID，形如 subnet-xxx。有效的私有网络子网 ID 可通过登录[子网控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口 [DescribeSubnets](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的 unSubnetId 字段获取。若在创建子机时 SubnetId 与 VpcId 同时传入 DEFAULT，则强制使用默认 vpc 网络。
-                     * @param _subnetId 私有网络子网 ID，形如 subnet-xxx。有效的私有网络子网 ID 可通过登录[子网控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口 [DescribeSubnets](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的 unSubnetId 字段获取。若在创建子机时 SubnetId 与 VpcId 同时传入 DEFAULT，则强制使用默认 vpc 网络。
+                     * 设置<p>私有网络子网 ID，形如 subnet-xxx。有效的私有网络子网 ID 可通过登录<a href="https://console.cloud.tencent.com/vpc/subnet?rid=1">子网控制台</a>查询；也可以调用接口 <a href="https://cloud.tencent.com/document/api/215/15784">DescribeSubnets</a>，从接口返回中的 unSubnetId 字段获取。若在创建子机时 SubnetId 与 VpcId 同时传入 DEFAULT，则强制使用默认 vpc 网络。</p>
+                     * @param _subnetId <p>私有网络子网 ID，形如 subnet-xxx。有效的私有网络子网 ID 可通过登录<a href="https://console.cloud.tencent.com/vpc/subnet?rid=1">子网控制台</a>查询；也可以调用接口 <a href="https://cloud.tencent.com/document/api/215/15784">DescribeSubnets</a>，从接口返回中的 unSubnetId 字段获取。若在创建子机时 SubnetId 与 VpcId 同时传入 DEFAULT，则强制使用默认 vpc 网络。</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取集群名称
-                     * @return ClusterName 集群名称
+                     * 获取<p>集群名称</p>
+                     * @return ClusterName <p>集群名称</p>
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
-                     * 设置集群名称
-                     * @param _clusterName 集群名称
+                     * 设置<p>集群名称</p>
+                     * @param _clusterName <p>集群名称</p>
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -128,51 +128,15 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取集群的节点规格，需要输入对应的规格标识：
-2C8G：rabbit-vip-profession-2c8g
-4C16G：rabbit-vip-profession-4c16g
-8C32G：rabbit-vip-profession-8c32g
-16C32G：rabbit-vip-basic-4
-16C64G：rabbit-vip-profession-16c64g
-2C4G：rabbit-vip-basic-5
-4C8G：rabbit-vip-basic-1
-8C16G（已售罄）：rabbit-vip-basic-2
-不传默认为 4C8G：rabbit-vip-basic-1
-                     * @return NodeSpec 集群的节点规格，需要输入对应的规格标识：
-2C8G：rabbit-vip-profession-2c8g
-4C16G：rabbit-vip-profession-4c16g
-8C32G：rabbit-vip-profession-8c32g
-16C32G：rabbit-vip-basic-4
-16C64G：rabbit-vip-profession-16c64g
-2C4G：rabbit-vip-basic-5
-4C8G：rabbit-vip-basic-1
-8C16G（已售罄）：rabbit-vip-basic-2
-不传默认为 4C8G：rabbit-vip-basic-1
+                     * 获取<p>集群的节点规格，需要输入对应的规格标识：<br>2C8G：rabbit-vip-profession-2c8g<br>4C16G：rabbit-vip-profession-4c16g<br>8C32G：rabbit-vip-profession-8c32g<br>16C32G：rabbit-vip-basic-4<br>16C64G：rabbit-vip-profession-16c64g<br>2C4G：rabbit-vip-basic-5<br>4C8G：rabbit-vip-basic-1<br>8C16G（已售罄）：rabbit-vip-basic-2<br>不传默认为 4C8G：rabbit-vip-basic-1</p>
+                     * @return NodeSpec <p>集群的节点规格，需要输入对应的规格标识：<br>2C8G：rabbit-vip-profession-2c8g<br>4C16G：rabbit-vip-profession-4c16g<br>8C32G：rabbit-vip-profession-8c32g<br>16C32G：rabbit-vip-basic-4<br>16C64G：rabbit-vip-profession-16c64g<br>2C4G：rabbit-vip-basic-5<br>4C8G：rabbit-vip-basic-1<br>8C16G（已售罄）：rabbit-vip-basic-2<br>不传默认为 4C8G：rabbit-vip-basic-1</p>
                      * 
                      */
                     std::string GetNodeSpec() const;
 
                     /**
-                     * 设置集群的节点规格，需要输入对应的规格标识：
-2C8G：rabbit-vip-profession-2c8g
-4C16G：rabbit-vip-profession-4c16g
-8C32G：rabbit-vip-profession-8c32g
-16C32G：rabbit-vip-basic-4
-16C64G：rabbit-vip-profession-16c64g
-2C4G：rabbit-vip-basic-5
-4C8G：rabbit-vip-basic-1
-8C16G（已售罄）：rabbit-vip-basic-2
-不传默认为 4C8G：rabbit-vip-basic-1
-                     * @param _nodeSpec 集群的节点规格，需要输入对应的规格标识：
-2C8G：rabbit-vip-profession-2c8g
-4C16G：rabbit-vip-profession-4c16g
-8C32G：rabbit-vip-profession-8c32g
-16C32G：rabbit-vip-basic-4
-16C64G：rabbit-vip-profession-16c64g
-2C4G：rabbit-vip-basic-5
-4C8G：rabbit-vip-basic-1
-8C16G（已售罄）：rabbit-vip-basic-2
-不传默认为 4C8G：rabbit-vip-basic-1
+                     * 设置<p>集群的节点规格，需要输入对应的规格标识：<br>2C8G：rabbit-vip-profession-2c8g<br>4C16G：rabbit-vip-profession-4c16g<br>8C32G：rabbit-vip-profession-8c32g<br>16C32G：rabbit-vip-basic-4<br>16C64G：rabbit-vip-profession-16c64g<br>2C4G：rabbit-vip-basic-5<br>4C8G：rabbit-vip-basic-1<br>8C16G（已售罄）：rabbit-vip-basic-2<br>不传默认为 4C8G：rabbit-vip-basic-1</p>
+                     * @param _nodeSpec <p>集群的节点规格，需要输入对应的规格标识：<br>2C8G：rabbit-vip-profession-2c8g<br>4C16G：rabbit-vip-profession-4c16g<br>8C32G：rabbit-vip-profession-8c32g<br>16C32G：rabbit-vip-basic-4<br>16C64G：rabbit-vip-profession-16c64g<br>2C4G：rabbit-vip-basic-5<br>4C8G：rabbit-vip-basic-1<br>8C16G（已售罄）：rabbit-vip-basic-2<br>不传默认为 4C8G：rabbit-vip-basic-1</p>
                      * 
                      */
                     void SetNodeSpec(const std::string& _nodeSpec);
@@ -185,15 +149,15 @@ namespace TencentCloud
                     bool NodeSpecHasBeenSet() const;
 
                     /**
-                     * 获取节点数量,多可用区最少为3节点。不传默认单可用区为1,多可用区为3
-                     * @return NodeNum 节点数量,多可用区最少为3节点。不传默认单可用区为1,多可用区为3
+                     * 获取<p>节点数量,多可用区最少为3节点。不传默认单可用区为1,多可用区为3</p>
+                     * @return NodeNum <p>节点数量,多可用区最少为3节点。不传默认单可用区为1,多可用区为3</p>
                      * 
                      */
                     int64_t GetNodeNum() const;
 
                     /**
-                     * 设置节点数量,多可用区最少为3节点。不传默认单可用区为1,多可用区为3
-                     * @param _nodeNum 节点数量,多可用区最少为3节点。不传默认单可用区为1,多可用区为3
+                     * 设置<p>节点数量,多可用区最少为3节点。不传默认单可用区为1,多可用区为3</p>
+                     * @param _nodeNum <p>节点数量,多可用区最少为3节点。不传默认单可用区为1,多可用区为3</p>
                      * 
                      */
                     void SetNodeNum(const int64_t& _nodeNum);
@@ -206,15 +170,15 @@ namespace TencentCloud
                     bool NodeNumHasBeenSet() const;
 
                     /**
-                     * 获取单节点存储规格,不传默认为200G
-                     * @return StorageSize 单节点存储规格,不传默认为200G
+                     * 获取<p>单节点存储规格,不传默认为200G</p>
+                     * @return StorageSize <p>单节点存储规格,不传默认为200G</p>
                      * 
                      */
                     int64_t GetStorageSize() const;
 
                     /**
-                     * 设置单节点存储规格,不传默认为200G
-                     * @param _storageSize 单节点存储规格,不传默认为200G
+                     * 设置<p>单节点存储规格,不传默认为200G</p>
+                     * @param _storageSize <p>单节点存储规格,不传默认为200G</p>
                      * 
                      */
                     void SetStorageSize(const int64_t& _storageSize);
@@ -227,15 +191,15 @@ namespace TencentCloud
                     bool StorageSizeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启默认镜像队列，true 表示为开启，false 表示为不开启。不传默认为 false
-                     * @return EnableCreateDefaultHaMirrorQueue 是否开启默认镜像队列，true 表示为开启，false 表示为不开启。不传默认为 false
+                     * 获取<p>是否开启默认镜像队列，true 表示为开启，false 表示为不开启。不传默认为 false。该参数对4.x集群不生效。</p>
+                     * @return EnableCreateDefaultHaMirrorQueue <p>是否开启默认镜像队列，true 表示为开启，false 表示为不开启。不传默认为 false。该参数对4.x集群不生效。</p>
                      * 
                      */
                     bool GetEnableCreateDefaultHaMirrorQueue() const;
 
                     /**
-                     * 设置是否开启默认镜像队列，true 表示为开启，false 表示为不开启。不传默认为 false
-                     * @param _enableCreateDefaultHaMirrorQueue 是否开启默认镜像队列，true 表示为开启，false 表示为不开启。不传默认为 false
+                     * 设置<p>是否开启默认镜像队列，true 表示为开启，false 表示为不开启。不传默认为 false。该参数对4.x集群不生效。</p>
+                     * @param _enableCreateDefaultHaMirrorQueue <p>是否开启默认镜像队列，true 表示为开启，false 表示为不开启。不传默认为 false。该参数对4.x集群不生效。</p>
                      * 
                      */
                     void SetEnableCreateDefaultHaMirrorQueue(const bool& _enableCreateDefaultHaMirrorQueue);
@@ -248,15 +212,15 @@ namespace TencentCloud
                     bool EnableCreateDefaultHaMirrorQueueHasBeenSet() const;
 
                     /**
-                     * 获取仅预付费集群（PayMode 参数为 1 时）使用该参数，表示是否自动续费，true 表示打开自动续费。不传默认为 true
-                     * @return AutoRenewFlag 仅预付费集群（PayMode 参数为 1 时）使用该参数，表示是否自动续费，true 表示打开自动续费。不传默认为 true
+                     * 获取<p>仅预付费集群（PayMode 参数为 1 时）使用该参数，表示是否自动续费，true 表示打开自动续费。不传默认为 true</p>
+                     * @return AutoRenewFlag <p>仅预付费集群（PayMode 参数为 1 时）使用该参数，表示是否自动续费，true 表示打开自动续费。不传默认为 true</p>
                      * 
                      */
                     bool GetAutoRenewFlag() const;
 
                     /**
-                     * 设置仅预付费集群（PayMode 参数为 1 时）使用该参数，表示是否自动续费，true 表示打开自动续费。不传默认为 true
-                     * @param _autoRenewFlag 仅预付费集群（PayMode 参数为 1 时）使用该参数，表示是否自动续费，true 表示打开自动续费。不传默认为 true
+                     * 设置<p>仅预付费集群（PayMode 参数为 1 时）使用该参数，表示是否自动续费，true 表示打开自动续费。不传默认为 true</p>
+                     * @param _autoRenewFlag <p>仅预付费集群（PayMode 参数为 1 时）使用该参数，表示是否自动续费，true 表示打开自动续费。不传默认为 true</p>
                      * 
                      */
                     void SetAutoRenewFlag(const bool& _autoRenewFlag);
@@ -269,15 +233,15 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取购买时长,不传默认为1(月)
-                     * @return TimeSpan 购买时长,不传默认为1(月)
+                     * 获取<p>购买时长,不传默认为1(月)</p>
+                     * @return TimeSpan <p>购买时长,不传默认为1(月)</p>
                      * 
                      */
                     int64_t GetTimeSpan() const;
 
                     /**
-                     * 设置购买时长,不传默认为1(月)
-                     * @param _timeSpan 购买时长,不传默认为1(月)
+                     * 设置<p>购买时长,不传默认为1(月)</p>
+                     * @param _timeSpan <p>购买时长,不传默认为1(月)</p>
                      * 
                      */
                     void SetTimeSpan(const int64_t& _timeSpan);
@@ -290,15 +254,15 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取付费方式，0 为后付费，即按量计费；1 为预付费，即包年包月。默认包年包月
-                     * @return PayMode 付费方式，0 为后付费，即按量计费；1 为预付费，即包年包月。默认包年包月
+                     * 获取<p>付费方式，0 为后付费，即按量计费；1 为预付费，即包年包月。默认包年包月</p>
+                     * @return PayMode <p>付费方式，0 为后付费，即按量计费；1 为预付费，即包年包月。默认包年包月</p>
                      * 
                      */
                     uint64_t GetPayMode() const;
 
                     /**
-                     * 设置付费方式，0 为后付费，即按量计费；1 为预付费，即包年包月。默认包年包月
-                     * @param _payMode 付费方式，0 为后付费，即按量计费；1 为预付费，即包年包月。默认包年包月
+                     * 设置<p>付费方式，0 为后付费，即按量计费；1 为预付费，即包年包月。默认包年包月</p>
+                     * @param _payMode <p>付费方式，0 为后付费，即按量计费；1 为预付费，即包年包月。默认包年包月</p>
                      * 
                      */
                     void SetPayMode(const uint64_t& _payMode);
@@ -311,15 +275,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取集群版本，不传默认为 3.8.30，可选值为 3.8.30、3.11.8和3.13.7
-                     * @return ClusterVersion 集群版本，不传默认为 3.8.30，可选值为 3.8.30、3.11.8和3.13.7
+                     * 获取<p>集群版本，不传默认为 3.8.30，可选值为 3.8.30、3.11.8和3.13.7</p>
+                     * @return ClusterVersion <p>集群版本，不传默认为 3.8.30，可选值为 3.8.30、3.11.8和3.13.7</p>
                      * 
                      */
                     std::string GetClusterVersion() const;
 
                     /**
-                     * 设置集群版本，不传默认为 3.8.30，可选值为 3.8.30、3.11.8和3.13.7
-                     * @param _clusterVersion 集群版本，不传默认为 3.8.30，可选值为 3.8.30、3.11.8和3.13.7
+                     * 设置<p>集群版本，不传默认为 3.8.30，可选值为 3.8.30、3.11.8和3.13.7</p>
+                     * @param _clusterVersion <p>集群版本，不传默认为 3.8.30，可选值为 3.8.30、3.11.8和3.13.7</p>
                      * 
                      */
                     void SetClusterVersion(const std::string& _clusterVersion);
@@ -332,15 +296,15 @@ namespace TencentCloud
                     bool ClusterVersionHasBeenSet() const;
 
                     /**
-                     * 获取是否国际站请求，默认 false
-                     * @return IsIntl 是否国际站请求，默认 false
+                     * 获取<p>是否国际站请求，默认 false</p>
+                     * @return IsIntl <p>是否国际站请求，默认 false</p>
                      * 
                      */
                     bool GetIsIntl() const;
 
                     /**
-                     * 设置是否国际站请求，默认 false
-                     * @param _isIntl 是否国际站请求，默认 false
+                     * 设置<p>是否国际站请求，默认 false</p>
+                     * @param _isIntl <p>是否国际站请求，默认 false</p>
                      * 
                      */
                     void SetIsIntl(const bool& _isIntl);
@@ -353,15 +317,15 @@ namespace TencentCloud
                     bool IsIntlHasBeenSet() const;
 
                     /**
-                     * 获取资源标签列表
-                     * @return ResourceTags 资源标签列表
+                     * 获取<p>资源标签列表</p>
+                     * @return ResourceTags <p>资源标签列表</p>
                      * 
                      */
                     std::vector<Tag> GetResourceTags() const;
 
                     /**
-                     * 设置资源标签列表
-                     * @param _resourceTags 资源标签列表
+                     * 设置<p>资源标签列表</p>
+                     * @param _resourceTags <p>资源标签列表</p>
                      * 
                      */
                     void SetResourceTags(const std::vector<Tag>& _resourceTags);
@@ -374,15 +338,15 @@ namespace TencentCloud
                     bool ResourceTagsHasBeenSet() const;
 
                     /**
-                     * 获取公网带宽大小，单位 Mbps
-                     * @return Bandwidth 公网带宽大小，单位 Mbps
+                     * 获取<p>公网带宽大小，单位 Mbps</p>
+                     * @return Bandwidth <p>公网带宽大小，单位 Mbps</p>
                      * 
                      */
                     uint64_t GetBandwidth() const;
 
                     /**
-                     * 设置公网带宽大小，单位 Mbps
-                     * @param _bandwidth 公网带宽大小，单位 Mbps
+                     * 设置<p>公网带宽大小，单位 Mbps</p>
+                     * @param _bandwidth <p>公网带宽大小，单位 Mbps</p>
                      * 
                      */
                     void SetBandwidth(const uint64_t& _bandwidth);
@@ -395,15 +359,15 @@ namespace TencentCloud
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取是否打开公网接入，不传默认为false
-                     * @return EnablePublicAccess 是否打开公网接入，不传默认为false
+                     * 获取<p>是否打开公网接入，不传默认为false</p>
+                     * @return EnablePublicAccess <p>是否打开公网接入，不传默认为false</p>
                      * 
                      */
                     bool GetEnablePublicAccess() const;
 
                     /**
-                     * 设置是否打开公网接入，不传默认为false
-                     * @param _enablePublicAccess 是否打开公网接入，不传默认为false
+                     * 设置<p>是否打开公网接入，不传默认为false</p>
+                     * @param _enablePublicAccess <p>是否打开公网接入，不传默认为false</p>
                      * 
                      */
                     void SetEnablePublicAccess(const bool& _enablePublicAccess);
@@ -416,15 +380,15 @@ namespace TencentCloud
                     bool EnablePublicAccessHasBeenSet() const;
 
                     /**
-                     * 获取是否打开集群删除保护，不传默认为 false
-                     * @return EnableDeletionProtection 是否打开集群删除保护，不传默认为 false
+                     * 获取<p>是否打开集群删除保护，不传默认为 false</p>
+                     * @return EnableDeletionProtection <p>是否打开集群删除保护，不传默认为 false</p>
                      * 
                      */
                     bool GetEnableDeletionProtection() const;
 
                     /**
-                     * 设置是否打开集群删除保护，不传默认为 false
-                     * @param _enableDeletionProtection 是否打开集群删除保护，不传默认为 false
+                     * 设置<p>是否打开集群删除保护，不传默认为 false</p>
+                     * @param _enableDeletionProtection <p>是否打开集群删除保护，不传默认为 false</p>
                      * 
                      */
                     void SetEnableDeletionProtection(const bool& _enableDeletionProtection);
@@ -436,118 +400,163 @@ namespace TencentCloud
                      */
                     bool EnableDeletionProtectionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>集群类型</p><p>枚举值：</p><ul><li>NORMAL： 公有云</li><li>CDC： 本地专用集群</li></ul>
+                     * @return ClusterType <p>集群类型</p><p>枚举值：</p><ul><li>NORMAL： 公有云</li><li>CDC： 本地专用集群</li></ul>
+                     * 
+                     */
+                    std::string GetClusterType() const;
+
+                    /**
+                     * 设置<p>集群类型</p><p>枚举值：</p><ul><li>NORMAL： 公有云</li><li>CDC： 本地专用集群</li></ul>
+                     * @param _clusterType <p>集群类型</p><p>枚举值：</p><ul><li>NORMAL： 公有云</li><li>CDC： 本地专用集群</li></ul>
+                     * 
+                     */
+                    void SetClusterType(const std::string& _clusterType);
+
+                    /**
+                     * 判断参数 ClusterType 是否已赋值
+                     * @return ClusterType 是否已赋值
+                     * 
+                     */
+                    bool ClusterTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>CDC 集群 ID</p>
+                     * @return CdcClusterId <p>CDC 集群 ID</p>
+                     * 
+                     */
+                    std::string GetCdcClusterId() const;
+
+                    /**
+                     * 设置<p>CDC 集群 ID</p>
+                     * @param _cdcClusterId <p>CDC 集群 ID</p>
+                     * 
+                     */
+                    void SetCdcClusterId(const std::string& _cdcClusterId);
+
+                    /**
+                     * 判断参数 CdcClusterId 是否已赋值
+                     * @return CdcClusterId 是否已赋值
+                     * 
+                     */
+                    bool CdcClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 可用区
+                     * <p>可用区</p>
                      */
                     std::vector<int64_t> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
 
                     /**
-                     * 私有网络ID，形如 vpc-xxx。有效的 VpcId 可通过登录[私有网络](https://console.cloud.tencent.com/vpc/vpc?rid=1)控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372)，从接口返回中的 unVpcId 字段获取。若在创建子机时 VpcId 与 SubnetId 同时传入 DEFAULT，则强制使用默认 vpc 网络。
+                     * <p>私有网络ID，形如 vpc-xxx。有效的 VpcId 可通过登录<a href="https://console.cloud.tencent.com/vpc/vpc?rid=1">私有网络</a>控制台查询；也可以调用接口 <a href="https://cloud.tencent.com/document/api/215/1372">DescribeVpcEx</a>，从接口返回中的 unVpcId 字段获取。若在创建子机时 VpcId 与 SubnetId 同时传入 DEFAULT，则强制使用默认 vpc 网络。</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 私有网络子网 ID，形如 subnet-xxx。有效的私有网络子网 ID 可通过登录[子网控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口 [DescribeSubnets](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的 unSubnetId 字段获取。若在创建子机时 SubnetId 与 VpcId 同时传入 DEFAULT，则强制使用默认 vpc 网络。
+                     * <p>私有网络子网 ID，形如 subnet-xxx。有效的私有网络子网 ID 可通过登录<a href="https://console.cloud.tencent.com/vpc/subnet?rid=1">子网控制台</a>查询；也可以调用接口 <a href="https://cloud.tencent.com/document/api/215/15784">DescribeSubnets</a>，从接口返回中的 unSubnetId 字段获取。若在创建子机时 SubnetId 与 VpcId 同时传入 DEFAULT，则强制使用默认 vpc 网络。</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 集群名称
+                     * <p>集群名称</p>
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 集群的节点规格，需要输入对应的规格标识：
-2C8G：rabbit-vip-profession-2c8g
-4C16G：rabbit-vip-profession-4c16g
-8C32G：rabbit-vip-profession-8c32g
-16C32G：rabbit-vip-basic-4
-16C64G：rabbit-vip-profession-16c64g
-2C4G：rabbit-vip-basic-5
-4C8G：rabbit-vip-basic-1
-8C16G（已售罄）：rabbit-vip-basic-2
-不传默认为 4C8G：rabbit-vip-basic-1
+                     * <p>集群的节点规格，需要输入对应的规格标识：<br>2C8G：rabbit-vip-profession-2c8g<br>4C16G：rabbit-vip-profession-4c16g<br>8C32G：rabbit-vip-profession-8c32g<br>16C32G：rabbit-vip-basic-4<br>16C64G：rabbit-vip-profession-16c64g<br>2C4G：rabbit-vip-basic-5<br>4C8G：rabbit-vip-basic-1<br>8C16G（已售罄）：rabbit-vip-basic-2<br>不传默认为 4C8G：rabbit-vip-basic-1</p>
                      */
                     std::string m_nodeSpec;
                     bool m_nodeSpecHasBeenSet;
 
                     /**
-                     * 节点数量,多可用区最少为3节点。不传默认单可用区为1,多可用区为3
+                     * <p>节点数量,多可用区最少为3节点。不传默认单可用区为1,多可用区为3</p>
                      */
                     int64_t m_nodeNum;
                     bool m_nodeNumHasBeenSet;
 
                     /**
-                     * 单节点存储规格,不传默认为200G
+                     * <p>单节点存储规格,不传默认为200G</p>
                      */
                     int64_t m_storageSize;
                     bool m_storageSizeHasBeenSet;
 
                     /**
-                     * 是否开启默认镜像队列，true 表示为开启，false 表示为不开启。不传默认为 false
+                     * <p>是否开启默认镜像队列，true 表示为开启，false 表示为不开启。不传默认为 false。该参数对4.x集群不生效。</p>
                      */
                     bool m_enableCreateDefaultHaMirrorQueue;
                     bool m_enableCreateDefaultHaMirrorQueueHasBeenSet;
 
                     /**
-                     * 仅预付费集群（PayMode 参数为 1 时）使用该参数，表示是否自动续费，true 表示打开自动续费。不传默认为 true
+                     * <p>仅预付费集群（PayMode 参数为 1 时）使用该参数，表示是否自动续费，true 表示打开自动续费。不传默认为 true</p>
                      */
                     bool m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 购买时长,不传默认为1(月)
+                     * <p>购买时长,不传默认为1(月)</p>
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 付费方式，0 为后付费，即按量计费；1 为预付费，即包年包月。默认包年包月
+                     * <p>付费方式，0 为后付费，即按量计费；1 为预付费，即包年包月。默认包年包月</p>
                      */
                     uint64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 集群版本，不传默认为 3.8.30，可选值为 3.8.30、3.11.8和3.13.7
+                     * <p>集群版本，不传默认为 3.8.30，可选值为 3.8.30、3.11.8和3.13.7</p>
                      */
                     std::string m_clusterVersion;
                     bool m_clusterVersionHasBeenSet;
 
                     /**
-                     * 是否国际站请求，默认 false
+                     * <p>是否国际站请求，默认 false</p>
                      */
                     bool m_isIntl;
                     bool m_isIntlHasBeenSet;
 
                     /**
-                     * 资源标签列表
+                     * <p>资源标签列表</p>
                      */
                     std::vector<Tag> m_resourceTags;
                     bool m_resourceTagsHasBeenSet;
 
                     /**
-                     * 公网带宽大小，单位 Mbps
+                     * <p>公网带宽大小，单位 Mbps</p>
                      */
                     uint64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * 是否打开公网接入，不传默认为false
+                     * <p>是否打开公网接入，不传默认为false</p>
                      */
                     bool m_enablePublicAccess;
                     bool m_enablePublicAccessHasBeenSet;
 
                     /**
-                     * 是否打开集群删除保护，不传默认为 false
+                     * <p>是否打开集群删除保护，不传默认为 false</p>
                      */
                     bool m_enableDeletionProtection;
                     bool m_enableDeletionProtectionHasBeenSet;
+
+                    /**
+                     * <p>集群类型</p><p>枚举值：</p><ul><li>NORMAL： 公有云</li><li>CDC： 本地专用集群</li></ul>
+                     */
+                    std::string m_clusterType;
+                    bool m_clusterTypeHasBeenSet;
+
+                    /**
+                     * <p>CDC 集群 ID</p>
+                     */
+                    std::string m_cdcClusterId;
+                    bool m_cdcClusterIdHasBeenSet;
 
                 };
             }

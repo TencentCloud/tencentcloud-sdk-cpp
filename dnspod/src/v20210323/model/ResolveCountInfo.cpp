@@ -26,7 +26,9 @@ ResolveCountInfo::ResolveCountInfo() :
     m_startDateHasBeenSet(false),
     m_endDateHasBeenSet(false),
     m_subDomainHasBeenSet(false),
-    m_dnsFormatHasBeenSet(false)
+    m_dnsFormatHasBeenSet(false),
+    m_dNSTotalHasBeenSet(false),
+    m_dNSFormatHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome ResolveCountInfo::Deserialize(const rapidjson::Value &value)
         m_dnsFormatHasBeenSet = true;
     }
 
+    if (value.HasMember("DNSTotal") && !value["DNSTotal"].IsNull())
+    {
+        if (!value["DNSTotal"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResolveCountInfo.DNSTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dNSTotal = value["DNSTotal"].GetUint64();
+        m_dNSTotalHasBeenSet = true;
+    }
+
+    if (value.HasMember("DNSFormat") && !value["DNSFormat"].IsNull())
+    {
+        if (!value["DNSFormat"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResolveCountInfo.DNSFormat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dNSFormat = string(value["DNSFormat"].GetString());
+        m_dNSFormatHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void ResolveCountInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "DnsFormat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dnsFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dNSTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DNSTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dNSTotal, allocator);
+    }
+
+    if (m_dNSFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DNSFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dNSFormat.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void ResolveCountInfo::SetDnsFormat(const string& _dnsFormat)
 bool ResolveCountInfo::DnsFormatHasBeenSet() const
 {
     return m_dnsFormatHasBeenSet;
+}
+
+uint64_t ResolveCountInfo::GetDNSTotal() const
+{
+    return m_dNSTotal;
+}
+
+void ResolveCountInfo::SetDNSTotal(const uint64_t& _dNSTotal)
+{
+    m_dNSTotal = _dNSTotal;
+    m_dNSTotalHasBeenSet = true;
+}
+
+bool ResolveCountInfo::DNSTotalHasBeenSet() const
+{
+    return m_dNSTotalHasBeenSet;
+}
+
+string ResolveCountInfo::GetDNSFormat() const
+{
+    return m_dNSFormat;
+}
+
+void ResolveCountInfo::SetDNSFormat(const string& _dNSFormat)
+{
+    m_dNSFormat = _dNSFormat;
+    m_dNSFormatHasBeenSet = true;
+}
+
+bool ResolveCountInfo::DNSFormatHasBeenSet() const
+{
+    return m_dNSFormatHasBeenSet;
 }
 

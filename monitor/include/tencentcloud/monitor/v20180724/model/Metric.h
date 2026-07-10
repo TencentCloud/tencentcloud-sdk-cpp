@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警策略类型
-                     * @return Namespace 告警策略类型
+                     * 获取<p>告警策略类型</p>
+                     * @return Namespace <p>告警策略类型</p>
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
-                     * 设置告警策略类型
-                     * @param _namespace 告警策略类型
+                     * 设置<p>告警策略类型</p>
+                     * @param _namespace <p>告警策略类型</p>
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool NamespaceHasBeenSet() const;
 
                     /**
-                     * 获取指标名
-                     * @return MetricName 指标名
+                     * 获取<p>指标名</p>
+                     * @return MetricName <p>指标名</p>
                      * 
                      */
                     std::string GetMetricName() const;
 
                     /**
-                     * 设置指标名
-                     * @param _metricName 指标名
+                     * 设置<p>指标名</p>
+                     * @param _metricName <p>指标名</p>
                      * 
                      */
                     void SetMetricName(const std::string& _metricName);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool MetricNameHasBeenSet() const;
 
                     /**
-                     * 获取指标展示名
-                     * @return Description 指标展示名
+                     * 获取<p>指标展示名</p>
+                     * @return Description <p>指标展示名</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置指标展示名
-                     * @param _description 指标展示名
+                     * 设置<p>指标展示名</p>
+                     * @param _description <p>指标展示名</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取最小值
-                     * @return Min 最小值
+                     * 获取<p>最小值</p>
+                     * @return Min <p>最小值</p>
                      * 
                      */
                     double GetMin() const;
 
                     /**
-                     * 设置最小值
-                     * @param _min 最小值
+                     * 设置<p>最小值</p>
+                     * @param _min <p>最小值</p>
                      * 
                      */
                     void SetMin(const double& _min);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool MinHasBeenSet() const;
 
                     /**
-                     * 获取最大值
-                     * @return Max 最大值
+                     * 获取<p>最大值</p>
+                     * @return Max <p>最大值</p>
                      * 
                      */
                     double GetMax() const;
 
                     /**
-                     * 设置最大值
-                     * @param _max 最大值
+                     * 设置<p>最大值</p>
+                     * @param _max <p>最大值</p>
                      * 
                      */
                     void SetMax(const double& _max);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool MaxHasBeenSet() const;
 
                     /**
-                     * 获取维度列表
-                     * @return Dimensions 维度列表
+                     * 获取<p>维度列表</p>
+                     * @return Dimensions <p>维度列表</p>
                      * 
                      */
                     std::vector<std::string> GetDimensions() const;
 
                     /**
-                     * 设置维度列表
-                     * @param _dimensions 维度列表
+                     * 设置<p>维度列表</p>
+                     * @param _dimensions <p>维度列表</p>
                      * 
                      */
                     void SetDimensions(const std::vector<std::string>& _dimensions);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool DimensionsHasBeenSet() const;
 
                     /**
-                     * 获取单位
-                     * @return Unit 单位
+                     * 获取<p>单位</p>
+                     * @return Unit <p>单位</p>
                      * 
                      */
                     std::string GetUnit() const;
 
                     /**
-                     * 设置单位
-                     * @param _unit 单位
+                     * 设置<p>单位</p>
+                     * @param _unit <p>单位</p>
                      * 
                      */
                     void SetUnit(const std::string& _unit);
@@ -196,18 +196,18 @@ namespace TencentCloud
                     bool UnitHasBeenSet() const;
 
                     /**
-                     * 获取指标配置
+                     * 获取<p>指标配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MetricConfig 指标配置
+                     * @return MetricConfig <p>指标配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MetricConfig GetMetricConfig() const;
 
                     /**
-                     * 设置指标配置
+                     * 设置<p>指标配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _metricConfig 指标配置
+                     * @param _metricConfig <p>指标配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -221,18 +221,18 @@ namespace TencentCloud
                     bool MetricConfigHasBeenSet() const;
 
                     /**
-                     * 获取是否为高级指标。1是 0否
+                     * 获取<p>是否为高级指标。1是 0否</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsAdvanced 是否为高级指标。1是 0否
+                     * @return IsAdvanced <p>是否为高级指标。1是 0否</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsAdvanced() const;
 
                     /**
-                     * 设置是否为高级指标。1是 0否
+                     * 设置<p>是否为高级指标。1是 0否</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isAdvanced 是否为高级指标。1是 0否
+                     * @param _isAdvanced <p>是否为高级指标。1是 0否</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -246,18 +246,18 @@ namespace TencentCloud
                     bool IsAdvancedHasBeenSet() const;
 
                     /**
-                     * 获取高级指标是否开通。1是 0否
+                     * 获取<p>高级指标是否开通。1是 0否</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsOpen 高级指标是否开通。1是 0否
+                     * @return IsOpen <p>高级指标是否开通。1是 0否</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsOpen() const;
 
                     /**
-                     * 设置高级指标是否开通。1是 0否
+                     * 设置<p>高级指标是否开通。1是 0否</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isOpen 高级指标是否开通。1是 0否
+                     * @param _isOpen <p>高级指标是否开通。1是 0否</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -271,18 +271,18 @@ namespace TencentCloud
                     bool IsOpenHasBeenSet() const;
 
                     /**
-                     * 获取集成中心产品ID
+                     * 获取<p>集成中心产品ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProductId 集成中心产品ID
+                     * @return ProductId <p>集成中心产品ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProductId() const;
 
                     /**
-                     * 设置集成中心产品ID
+                     * 设置<p>集成中心产品ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _productId 集成中心产品ID
+                     * @param _productId <p>集成中心产品ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -296,18 +296,18 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取匹配运算符
+                     * 获取<p>匹配运算符</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Operators 匹配运算符
+                     * @return Operators <p>匹配运算符</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Operator> GetOperators() const;
 
                     /**
-                     * 设置匹配运算符
+                     * 设置<p>匹配运算符</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _operators 匹配运算符
+                     * @param _operators <p>匹配运算符</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -321,18 +321,18 @@ namespace TencentCloud
                     bool OperatorsHasBeenSet() const;
 
                     /**
-                     * 获取指标触发
+                     * 获取<p>指标触发</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Periods 指标触发
+                     * @return Periods <p>指标触发</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetPeriods() const;
 
                     /**
-                     * 设置指标触发
+                     * 设置<p>指标触发</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _periods 指标触发
+                     * @param _periods <p>指标触发</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -346,18 +346,18 @@ namespace TencentCloud
                     bool PeriodsHasBeenSet() const;
 
                     /**
-                     * 获取是否延迟指标
+                     * 获取<p>是否延迟指标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsLatenessMetric 是否延迟指标
+                     * @return IsLatenessMetric <p>是否延迟指标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsLatenessMetric() const;
 
                     /**
-                     * 设置是否延迟指标
+                     * 设置<p>是否延迟指标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isLatenessMetric 是否延迟指标
+                     * @param _isLatenessMetric <p>是否延迟指标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -373,91 +373,91 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 告警策略类型
+                     * <p>告警策略类型</p>
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
-                     * 指标名
+                     * <p>指标名</p>
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;
 
                     /**
-                     * 指标展示名
+                     * <p>指标展示名</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 最小值
+                     * <p>最小值</p>
                      */
                     double m_min;
                     bool m_minHasBeenSet;
 
                     /**
-                     * 最大值
+                     * <p>最大值</p>
                      */
                     double m_max;
                     bool m_maxHasBeenSet;
 
                     /**
-                     * 维度列表
+                     * <p>维度列表</p>
                      */
                     std::vector<std::string> m_dimensions;
                     bool m_dimensionsHasBeenSet;
 
                     /**
-                     * 单位
+                     * <p>单位</p>
                      */
                     std::string m_unit;
                     bool m_unitHasBeenSet;
 
                     /**
-                     * 指标配置
+                     * <p>指标配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MetricConfig m_metricConfig;
                     bool m_metricConfigHasBeenSet;
 
                     /**
-                     * 是否为高级指标。1是 0否
+                     * <p>是否为高级指标。1是 0否</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isAdvanced;
                     bool m_isAdvancedHasBeenSet;
 
                     /**
-                     * 高级指标是否开通。1是 0否
+                     * <p>高级指标是否开通。1是 0否</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isOpen;
                     bool m_isOpenHasBeenSet;
 
                     /**
-                     * 集成中心产品ID
+                     * <p>集成中心产品ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 匹配运算符
+                     * <p>匹配运算符</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Operator> m_operators;
                     bool m_operatorsHasBeenSet;
 
                     /**
-                     * 指标触发
+                     * <p>指标触发</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_periods;
                     bool m_periodsHasBeenSet;
 
                     /**
-                     * 是否延迟指标
+                     * <p>是否延迟指标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isLatenessMetric;

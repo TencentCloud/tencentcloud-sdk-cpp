@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要查询解析量的域名
-                     * @return Domain 要查询解析量的域名
+                     * 获取<p>要查询解析量的域名</p>
+                     * @return Domain <p>要查询解析量的域名</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置要查询解析量的域名
-                     * @param _domain 要查询解析量的域名
+                     * 设置<p>要查询解析量的域名</p>
+                     * @param _domain <p>要查询解析量的域名</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取查询的开始时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。
-                     * @return StartDate 查询的开始时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。
+                     * 获取<p>查询的开始时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。</p>
+                     * @return StartDate <p>查询的开始时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。</p>
                      * 
                      */
                     std::string GetStartDate() const;
 
                     /**
-                     * 设置查询的开始时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。
-                     * @param _startDate 查询的开始时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。
+                     * 设置<p>查询的开始时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。</p>
+                     * @param _startDate <p>查询的开始时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。</p>
                      * 
                      */
                     void SetStartDate(const std::string& _startDate);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartDateHasBeenSet() const;
 
                     /**
-                     * 获取查询的结束时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。
-                     * @return EndDate 查询的结束时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。
+                     * 获取<p>查询的结束时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。</p>
+                     * @return EndDate <p>查询的结束时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。</p>
                      * 
                      */
                     std::string GetEndDate() const;
 
                     /**
-                     * 设置查询的结束时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。
-                     * @param _endDate 查询的结束时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。
+                     * 设置<p>查询的结束时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。</p>
+                     * @param _endDate <p>查询的结束时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。</p>
                      * 
                      */
                     void SetEndDate(const std::string& _endDate);
@@ -106,36 +106,36 @@ namespace TencentCloud
                     bool EndDateHasBeenSet() const;
 
                     /**
-                     * 获取数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据
-                     * @return DnsFormat 数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据
-                     * 
+                     * 获取<p>数据统计格式</p><p>枚举值：</p><ul><li>minute： 按十分钟维度统计数据</li><li>hour： 按小时维度统计数据</li><li>day： 按天维度统计数据</li></ul>
+                     * @return DnsFormat <p>数据统计格式</p><p>枚举值：</p><ul><li>minute： 按十分钟维度统计数据</li><li>hour： 按小时维度统计数据</li><li>day： 按天维度统计数据</li></ul>
+                     * @deprecated
                      */
                     std::string GetDnsFormat() const;
 
                     /**
-                     * 设置数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据
-                     * @param _dnsFormat 数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据
-                     * 
+                     * 设置<p>数据统计格式</p><p>枚举值：</p><ul><li>minute： 按十分钟维度统计数据</li><li>hour： 按小时维度统计数据</li><li>day： 按天维度统计数据</li></ul>
+                     * @param _dnsFormat <p>数据统计格式</p><p>枚举值：</p><ul><li>minute： 按十分钟维度统计数据</li><li>hour： 按小时维度统计数据</li><li>day： 按天维度统计数据</li></ul>
+                     * @deprecated
                      */
                     void SetDnsFormat(const std::string& _dnsFormat);
 
                     /**
                      * 判断参数 DnsFormat 是否已赋值
                      * @return DnsFormat 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DnsFormatHasBeenSet() const;
 
                     /**
-                     * 获取域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
-                     * @return DomainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * 获取<p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId</p>
+                     * @return DomainId <p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId</p>
                      * 
                      */
                     uint64_t GetDomainId() const;
 
                     /**
-                     * 设置域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
-                     * @param _domainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * 设置<p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId</p>
+                     * @param _domainId <p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId</p>
                      * 
                      */
                     void SetDomainId(const uint64_t& _domainId);
@@ -147,37 +147,64 @@ namespace TencentCloud
                      */
                     bool DomainIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>数据统计格式</p><p>枚举值：</p><ul><li>minute： 按十分钟维度统计数据</li><li>hour： 按小时维度统计数据</li><li>day： 按天维度统计数据</li></ul><p>新增规范参数，同时传递DNSFormat和DnsFormat参数时，后端优先使用DNSFormat参数</p>
+                     * @return DNSFormat <p>数据统计格式</p><p>枚举值：</p><ul><li>minute： 按十分钟维度统计数据</li><li>hour： 按小时维度统计数据</li><li>day： 按天维度统计数据</li></ul><p>新增规范参数，同时传递DNSFormat和DnsFormat参数时，后端优先使用DNSFormat参数</p>
+                     * 
+                     */
+                    std::string GetDNSFormat() const;
+
+                    /**
+                     * 设置<p>数据统计格式</p><p>枚举值：</p><ul><li>minute： 按十分钟维度统计数据</li><li>hour： 按小时维度统计数据</li><li>day： 按天维度统计数据</li></ul><p>新增规范参数，同时传递DNSFormat和DnsFormat参数时，后端优先使用DNSFormat参数</p>
+                     * @param _dNSFormat <p>数据统计格式</p><p>枚举值：</p><ul><li>minute： 按十分钟维度统计数据</li><li>hour： 按小时维度统计数据</li><li>day： 按天维度统计数据</li></ul><p>新增规范参数，同时传递DNSFormat和DnsFormat参数时，后端优先使用DNSFormat参数</p>
+                     * 
+                     */
+                    void SetDNSFormat(const std::string& _dNSFormat);
+
+                    /**
+                     * 判断参数 DNSFormat 是否已赋值
+                     * @return DNSFormat 是否已赋值
+                     * 
+                     */
+                    bool DNSFormatHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 要查询解析量的域名
+                     * <p>要查询解析量的域名</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 查询的开始时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。
+                     * <p>查询的开始时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。</p>
                      */
                     std::string m_startDate;
                     bool m_startDateHasBeenSet;
 
                     /**
-                     * 查询的结束时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。
+                     * <p>查询的结束时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。</p>
                      */
                     std::string m_endDate;
                     bool m_endDateHasBeenSet;
 
                     /**
-                     * 数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据
+                     * <p>数据统计格式</p><p>枚举值：</p><ul><li>minute： 按十分钟维度统计数据</li><li>hour： 按小时维度统计数据</li><li>day： 按天维度统计数据</li></ul>
                      */
                     std::string m_dnsFormat;
                     bool m_dnsFormatHasBeenSet;
 
                     /**
-                     * 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * <p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId</p>
                      */
                     uint64_t m_domainId;
                     bool m_domainIdHasBeenSet;
+
+                    /**
+                     * <p>数据统计格式</p><p>枚举值：</p><ul><li>minute： 按十分钟维度统计数据</li><li>hour： 按小时维度统计数据</li><li>day： 按天维度统计数据</li></ul><p>新增规范参数，同时传递DNSFormat和DnsFormat参数时，后端优先使用DNSFormat参数</p>
+                     */
+                    std::string m_dNSFormat;
+                    bool m_dNSFormatHasBeenSet;
 
                 };
             }

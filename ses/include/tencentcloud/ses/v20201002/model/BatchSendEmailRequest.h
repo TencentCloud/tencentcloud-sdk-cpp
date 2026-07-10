@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ReceiverIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>邮件主题</p>
-                     * @return Subject <p>邮件主题</p>
+                     * 获取<p>邮件主题</p><p>当使用模版发送时，支持使用模版变量参数填充</p>
+                     * @return Subject <p>邮件主题</p><p>当使用模版发送时，支持使用模版变量参数填充</p>
                      * 
                      */
                     std::string GetSubject() const;
 
                     /**
-                     * 设置<p>邮件主题</p>
-                     * @param _subject <p>邮件主题</p>
+                     * 设置<p>邮件主题</p><p>当使用模版发送时，支持使用模版变量参数填充</p>
+                     * @param _subject <p>邮件主题</p><p>当使用模版发送时，支持使用模版变量参数填充</p>
                      * 
                      */
                     void SetSubject(const std::string& _subject);
@@ -314,7 +314,7 @@ namespace TencentCloud
                     bool m_receiverIdHasBeenSet;
 
                     /**
-                     * <p>邮件主题</p>
+                     * <p>邮件主题</p><p>当使用模版发送时，支持使用模版变量参数填充</p>
                      */
                     std::string m_subject;
                     bool m_subjectHasBeenSet;

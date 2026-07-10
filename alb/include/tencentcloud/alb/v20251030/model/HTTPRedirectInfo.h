@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取重定向的HTTP码，支持301、302、303、307、 308。
-                     * @return HttpCode 重定向的HTTP码，支持301、302、303、307、 308。
+                     * 获取<p>重定向的HTTP码，支持301、302、303、307、 308。</p>
+                     * @return HttpCode <p>重定向的HTTP码，支持301、302、303、307、 308。</p>
                      * 
                      */
                     int64_t GetHttpCode() const;
 
                     /**
-                     * 设置重定向的HTTP码，支持301、302、303、307、 308。
-                     * @param _httpCode 重定向的HTTP码，支持301、302、303、307、 308。
+                     * 设置<p>重定向的HTTP码，支持301、302、303、307、 308。</p>
+                     * @param _httpCode <p>重定向的HTTP码，支持301、302、303、307、 308。</p>
                      * 
                      */
                     void SetHttpCode(const int64_t& _httpCode);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool HttpCodeHasBeenSet() const;
 
                     /**
-                     * 获取重定向的主机地址，默认值${host}。长度3 ~ 128个字符，支持的字符集为：a-z 0-9 _ . -。
-                     * @return Host 重定向的主机地址，默认值${host}。长度3 ~ 128个字符，支持的字符集为：a-z 0-9 _ . -。
+                     * 获取<p>重定向的主机地址，默认值${host}。长度3 ~ 128个字符，支持的字符集为：a-z 0-9 _ . -。</p>
+                     * @return Host <p>重定向的主机地址，默认值${host}。长度3 ~ 128个字符，支持的字符集为：a-z 0-9 _ . -。</p>
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置重定向的主机地址，默认值${host}。长度3 ~ 128个字符，支持的字符集为：a-z 0-9 _ . -。
-                     * @param _host 重定向的主机地址，默认值${host}。长度3 ~ 128个字符，支持的字符集为：a-z 0-9 _ . -。
+                     * 设置<p>重定向的主机地址，默认值${host}。长度3 ~ 128个字符，支持的字符集为：a-z 0-9 _ . -。</p>
+                     * @param _host <p>重定向的主机地址，默认值${host}。长度3 ~ 128个字符，支持的字符集为：a-z 0-9 _ . -。</p>
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool HostHasBeenSet() const;
 
                     /**
-                     * 获取重定向的路径，默认值${path}。长度1 ~ 128个字符，支持的字符集为：a-z 0-9  ? =  _  . - / : 。
-                     * @return Path 重定向的路径，默认值${path}。长度1 ~ 128个字符，支持的字符集为：a-z 0-9  ? =  _  . - / : 。
+                     * 获取<p>重定向的路径，默认值${path}。长度1 ~ 128个字符，支持的字符集为：a-z A-Z 0-9  ? =  _  . - / : 。</p>
+                     * @return Path <p>重定向的路径，默认值${path}。长度1 ~ 128个字符，支持的字符集为：a-z A-Z 0-9  ? =  _  . - / : 。</p>
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置重定向的路径，默认值${path}。长度1 ~ 128个字符，支持的字符集为：a-z 0-9  ? =  _  . - / : 。
-                     * @param _path 重定向的路径，默认值${path}。长度1 ~ 128个字符，支持的字符集为：a-z 0-9  ? =  _  . - / : 。
+                     * 设置<p>重定向的路径，默认值${path}。长度1 ~ 128个字符，支持的字符集为：a-z A-Z 0-9  ? =  _  . - / : 。</p>
+                     * @param _path <p>重定向的路径，默认值${path}。长度1 ~ 128个字符，支持的字符集为：a-z A-Z 0-9  ? =  _  . - / : 。</p>
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取重定向的端口，默认值 ${port}。取值1 ~ 65535。
-                     * @return Port 重定向的端口，默认值 ${port}。取值1 ~ 65535。
+                     * 获取<p>重定向的端口，默认值 ${port}。取值1 ~ 65535。</p>
+                     * @return Port <p>重定向的端口，默认值 ${port}。取值1 ~ 65535。</p>
                      * 
                      */
                     std::string GetPort() const;
 
                     /**
-                     * 设置重定向的端口，默认值 ${port}。取值1 ~ 65535。
-                     * @param _port 重定向的端口，默认值 ${port}。取值1 ~ 65535。
+                     * 设置<p>重定向的端口，默认值 ${port}。取值1 ~ 65535。</p>
+                     * @param _port <p>重定向的端口，默认值 ${port}。取值1 ~ 65535。</p>
                      * 
                      */
                     void SetPort(const std::string& _port);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取重定向的协议，取值：HTTP,HTTPS，默认值${protocol}。
-                     * @return Protocol 重定向的协议，取值：HTTP,HTTPS，默认值${protocol}。
+                     * 获取<p>重定向的协议，取值：HTTP,HTTPS，默认值${protocol}。</p>
+                     * @return Protocol <p>重定向的协议，取值：HTTP,HTTPS，默认值${protocol}。</p>
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置重定向的协议，取值：HTTP,HTTPS，默认值${protocol}。
-                     * @param _protocol 重定向的协议，取值：HTTP,HTTPS，默认值${protocol}。
+                     * 设置<p>重定向的协议，取值：HTTP,HTTPS，默认值${protocol}。</p>
+                     * @param _protocol <p>重定向的协议，取值：HTTP,HTTPS，默认值${protocol}。</p>
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取重定向的查询字符串，默认值${query}。长度1 ~ 128字符，支持可打印字符，不支持 #[]{}\|<>& 和空格。
-                     * @return Query 重定向的查询字符串，默认值${query}。长度1 ~ 128字符，支持可打印字符，不支持 #[]{}\|<>& 和空格。
+                     * 获取<p>重定向的查询字符串，默认值${query}。长度1 ~ 128字符，支持可打印字符，不支持 #[]{}|&lt;&gt;&amp; 和空格。</p>
+                     * @return Query <p>重定向的查询字符串，默认值${query}。长度1 ~ 128字符，支持可打印字符，不支持 #[]{}|&lt;&gt;&amp; 和空格。</p>
                      * 
                      */
                     std::string GetQuery() const;
 
                     /**
-                     * 设置重定向的查询字符串，默认值${query}。长度1 ~ 128字符，支持可打印字符，不支持 #[]{}\|<>& 和空格。
-                     * @param _query 重定向的查询字符串，默认值${query}。长度1 ~ 128字符，支持可打印字符，不支持 #[]{}\|<>& 和空格。
+                     * 设置<p>重定向的查询字符串，默认值${query}。长度1 ~ 128字符，支持可打印字符，不支持 #[]{}|&lt;&gt;&amp; 和空格。</p>
+                     * @param _query <p>重定向的查询字符串，默认值${query}。长度1 ~ 128字符，支持可打印字符，不支持 #[]{}|&lt;&gt;&amp; 和空格。</p>
                      * 
                      */
                     void SetQuery(const std::string& _query);
@@ -175,37 +175,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 重定向的HTTP码，支持301、302、303、307、 308。
+                     * <p>重定向的HTTP码，支持301、302、303、307、 308。</p>
                      */
                     int64_t m_httpCode;
                     bool m_httpCodeHasBeenSet;
 
                     /**
-                     * 重定向的主机地址，默认值${host}。长度3 ~ 128个字符，支持的字符集为：a-z 0-9 _ . -。
+                     * <p>重定向的主机地址，默认值${host}。长度3 ~ 128个字符，支持的字符集为：a-z 0-9 _ . -。</p>
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
 
                     /**
-                     * 重定向的路径，默认值${path}。长度1 ~ 128个字符，支持的字符集为：a-z 0-9  ? =  _  . - / : 。
+                     * <p>重定向的路径，默认值${path}。长度1 ~ 128个字符，支持的字符集为：a-z A-Z 0-9  ? =  _  . - / : 。</p>
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
-                     * 重定向的端口，默认值 ${port}。取值1 ~ 65535。
+                     * <p>重定向的端口，默认值 ${port}。取值1 ~ 65535。</p>
                      */
                     std::string m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 重定向的协议，取值：HTTP,HTTPS，默认值${protocol}。
+                     * <p>重定向的协议，取值：HTTP,HTTPS，默认值${protocol}。</p>
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 重定向的查询字符串，默认值${query}。长度1 ~ 128字符，支持可打印字符，不支持 #[]{}\|<>& 和空格。
+                     * <p>重定向的查询字符串，默认值${query}。长度1 ~ 128字符，支持可打印字符，不支持 #[]{}|&lt;&gt;&amp; 和空格。</p>
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;

@@ -41,6 +41,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportTaskResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportUrlRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportUrlResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/CreateIgnoreDiagRecordRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/CreateIgnoreDiagRecordResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateKillTaskRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateKillTaskResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateMailProfileRequest.h>
@@ -242,6 +244,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDBDiagReportUrlResponse> CreateDBDiagReportUrlOutcome;
                 typedef std::future<CreateDBDiagReportUrlOutcome> CreateDBDiagReportUrlOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CreateDBDiagReportUrlRequest&, CreateDBDiagReportUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBDiagReportUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateIgnoreDiagRecordResponse> CreateIgnoreDiagRecordOutcome;
+                typedef std::future<CreateIgnoreDiagRecordOutcome> CreateIgnoreDiagRecordOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::CreateIgnoreDiagRecordRequest&, CreateIgnoreDiagRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIgnoreDiagRecordAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateKillTaskResponse> CreateKillTaskOutcome;
                 typedef std::future<CreateKillTaskOutcome> CreateKillTaskOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CreateKillTaskRequest&, CreateKillTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateKillTaskAsyncHandler;
@@ -565,6 +570,15 @@ namespace TencentCloud
                 CreateDBDiagReportUrlOutcome CreateDBDiagReportUrl(const Model::CreateDBDiagReportUrlRequest &request);
                 void CreateDBDiagReportUrlAsync(const Model::CreateDBDiagReportUrlRequest& request, const CreateDBDiagReportUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDBDiagReportUrlOutcomeCallable CreateDBDiagReportUrlCallable(const Model::CreateDBDiagReportUrlRequest& request);
+
+                /**
+                 *对实例的某个诊断项设置忽略或取消忽略状态。
+                 * @param req CreateIgnoreDiagRecordRequest
+                 * @return CreateIgnoreDiagRecordOutcome
+                 */
+                CreateIgnoreDiagRecordOutcome CreateIgnoreDiagRecord(const Model::CreateIgnoreDiagRecordRequest &request);
+                void CreateIgnoreDiagRecordAsync(const Model::CreateIgnoreDiagRecordRequest& request, const CreateIgnoreDiagRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateIgnoreDiagRecordOutcomeCallable CreateIgnoreDiagRecordCallable(const Model::CreateIgnoreDiagRecordRequest& request);
 
                 /**
                  *创建中断会话的任务。

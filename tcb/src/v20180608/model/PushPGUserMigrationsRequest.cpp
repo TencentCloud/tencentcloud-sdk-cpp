@@ -27,7 +27,8 @@ PushPGUserMigrationsRequest::PushPGUserMigrationsRequest() :
     m_migrationsHasBeenSet(false),
     m_lockTimeoutMsHasBeenSet(false),
     m_statementTimeoutMsHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+    m_sourceHasBeenSet(false),
+    m_includeAllHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,14 @@ string PushPGUserMigrationsRequest::ToJsonString() const
         string key = "Source";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_source.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_includeAllHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncludeAll";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_includeAll, allocator);
     }
 
 
@@ -171,6 +180,22 @@ void PushPGUserMigrationsRequest::SetSource(const string& _source)
 bool PushPGUserMigrationsRequest::SourceHasBeenSet() const
 {
     return m_sourceHasBeenSet;
+}
+
+bool PushPGUserMigrationsRequest::GetIncludeAll() const
+{
+    return m_includeAll;
+}
+
+void PushPGUserMigrationsRequest::SetIncludeAll(const bool& _includeAll)
+{
+    m_includeAll = _includeAll;
+    m_includeAllHasBeenSet = true;
+}
+
+bool PushPGUserMigrationsRequest::IncludeAllHasBeenSet() const
+{
+    return m_includeAllHasBeenSet;
 }
 
 

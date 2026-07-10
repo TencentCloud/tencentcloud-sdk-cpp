@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/DlcInfo.h>
+#include <tencentcloud/cls/v20201016/model/DlcFailHandle.h>
 
 
 namespace TencentCloud
@@ -274,6 +275,69 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自动创建dlc字段</p><p>默认值：false</p><p>当您的日志中有新增字段时，系统自动将其投递至DLC</p>
+                     * @return AutoCreateField <p>自动创建dlc字段</p><p>默认值：false</p><p>当您的日志中有新增字段时，系统自动将其投递至DLC</p>
+                     * 
+                     */
+                    bool GetAutoCreateField() const;
+
+                    /**
+                     * 设置<p>自动创建dlc字段</p><p>默认值：false</p><p>当您的日志中有新增字段时，系统自动将其投递至DLC</p>
+                     * @param _autoCreateField <p>自动创建dlc字段</p><p>默认值：false</p><p>当您的日志中有新增字段时，系统自动将其投递至DLC</p>
+                     * 
+                     */
+                    void SetAutoCreateField(const bool& _autoCreateField);
+
+                    /**
+                     * 判断参数 AutoCreateField 是否已赋值
+                     * @return AutoCreateField 是否已赋值
+                     * 
+                     */
+                    bool AutoCreateFieldHasBeenSet() const;
+
+                    /**
+                     * 获取<p>将投递失败的日志存储至DLC表</p>
+                     * @return DlcFailHandle <p>将投递失败的日志存储至DLC表</p>
+                     * 
+                     */
+                    DlcFailHandle GetDlcFailHandle() const;
+
+                    /**
+                     * 设置<p>将投递失败的日志存储至DLC表</p>
+                     * @param _dlcFailHandle <p>将投递失败的日志存储至DLC表</p>
+                     * 
+                     */
+                    void SetDlcFailHandle(const DlcFailHandle& _dlcFailHandle);
+
+                    /**
+                     * 判断参数 DlcFailHandle 是否已赋值
+                     * @return DlcFailHandle 是否已赋值
+                     * 
+                     */
+                    bool DlcFailHandleHasBeenSet() const;
+
+                    /**
+                     * 获取<p>日志预过滤-数据写入 Splunk 的原始数据进行预过滤处理</p>
+                     * @return DSLFilter <p>日志预过滤-数据写入 Splunk 的原始数据进行预过滤处理</p>
+                     * 
+                     */
+                    std::string GetDSLFilter() const;
+
+                    /**
+                     * 设置<p>日志预过滤-数据写入 Splunk 的原始数据进行预过滤处理</p>
+                     * @param _dSLFilter <p>日志预过滤-数据写入 Splunk 的原始数据进行预过滤处理</p>
+                     * 
+                     */
+                    void SetDSLFilter(const std::string& _dSLFilter);
+
+                    /**
+                     * 判断参数 DSLFilter 是否已赋值
+                     * @return DSLFilter 是否已赋值
+                     * 
+                     */
+                    bool DSLFilterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -341,6 +405,24 @@ namespace TencentCloud
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>自动创建dlc字段</p><p>默认值：false</p><p>当您的日志中有新增字段时，系统自动将其投递至DLC</p>
+                     */
+                    bool m_autoCreateField;
+                    bool m_autoCreateFieldHasBeenSet;
+
+                    /**
+                     * <p>将投递失败的日志存储至DLC表</p>
+                     */
+                    DlcFailHandle m_dlcFailHandle;
+                    bool m_dlcFailHandleHasBeenSet;
+
+                    /**
+                     * <p>日志预过滤-数据写入 Splunk 的原始数据进行预过滤处理</p>
+                     */
+                    std::string m_dSLFilter;
+                    bool m_dSLFilterHasBeenSet;
 
                 };
             }

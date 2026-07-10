@@ -81,6 +81,8 @@
 #include <tencentcloud/asr/v20190614/model/VoicePrintDeleteResponse.h>
 #include <tencentcloud/asr/v20190614/model/VoicePrintEnrollRequest.h>
 #include <tencentcloud/asr/v20190614/model/VoicePrintEnrollResponse.h>
+#include <tencentcloud/asr/v20190614/model/VoicePrintGroupListRequest.h>
+#include <tencentcloud/asr/v20190614/model/VoicePrintGroupListResponse.h>
 #include <tencentcloud/asr/v20190614/model/VoicePrintGroupVerifyRequest.h>
 #include <tencentcloud/asr/v20190614/model/VoicePrintGroupVerifyResponse.h>
 #include <tencentcloud/asr/v20190614/model/VoicePrintUpdateRequest.h>
@@ -188,6 +190,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::VoicePrintEnrollResponse> VoicePrintEnrollOutcome;
                 typedef std::future<VoicePrintEnrollOutcome> VoicePrintEnrollOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::VoicePrintEnrollRequest&, VoicePrintEnrollOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VoicePrintEnrollAsyncHandler;
+                typedef Outcome<Core::Error, Model::VoicePrintGroupListResponse> VoicePrintGroupListOutcome;
+                typedef std::future<VoicePrintGroupListOutcome> VoicePrintGroupListOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::VoicePrintGroupListRequest&, VoicePrintGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VoicePrintGroupListAsyncHandler;
                 typedef Outcome<Core::Error, Model::VoicePrintGroupVerifyResponse> VoicePrintGroupVerifyOutcome;
                 typedef std::future<VoicePrintGroupVerifyOutcome> VoicePrintGroupVerifyOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::VoicePrintGroupVerifyRequest&, VoicePrintGroupVerifyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VoicePrintGroupVerifyAsyncHandler;
@@ -505,6 +510,15 @@ namespace TencentCloud
                 VoicePrintEnrollOutcome VoicePrintEnroll(const Model::VoicePrintEnrollRequest &request);
                 void VoicePrintEnrollAsync(const Model::VoicePrintEnrollRequest& request, const VoicePrintEnrollAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 VoicePrintEnrollOutcomeCallable VoicePrintEnrollCallable(const Model::VoicePrintEnrollRequest& request);
+
+                /**
+                 *返回注册的说话人分组信息列表
+                 * @param req VoicePrintGroupListRequest
+                 * @return VoicePrintGroupListOutcome
+                 */
+                VoicePrintGroupListOutcome VoicePrintGroupList(const Model::VoicePrintGroupListRequest &request);
+                void VoicePrintGroupListAsync(const Model::VoicePrintGroupListRequest& request, const VoicePrintGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VoicePrintGroupListOutcomeCallable VoicePrintGroupListCallable(const Model::VoicePrintGroupListRequest& request);
 
                 /**
                  *说话人验证1:N接口，可以通过传入一段说话人音频，并且指定已存在的groupId, 和返回topN,  接口返回groupId内所有声纹和传入音频声纹比对打分TopN的结果。

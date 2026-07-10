@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目Id
-                     * @return ProjectId 项目Id
+                     * 获取<p>项目Id</p>
+                     * @return ProjectId <p>项目Id</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目Id
-                     * @param _projectId 项目Id
+                     * 设置<p>项目Id</p>
+                     * @param _projectId <p>项目Id</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取任务Id
-                     * @return TaskId 任务Id
+                     * 获取<p>任务Id</p>
+                     * @return TaskId <p>任务Id</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务Id
-                     * @param _taskId 任务Id
+                     * 设置<p>任务Id</p>
+                     * @param _taskId <p>任务Id</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取分页页码
-                     * @return PageNumber 分页页码
+                     * 获取<p>分页页码</p>
+                     * @return PageNumber <p>分页页码</p>
                      * 
                      */
                     std::string GetPageNumber() const;
 
                     /**
-                     * 设置分页页码
-                     * @param _pageNumber 分页页码
+                     * 设置<p>分页页码</p>
+                     * @param _pageNumber <p>分页页码</p>
                      * 
                      */
                     void SetPageNumber(const std::string& _pageNumber);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取分页大小
-                     * @return PageSize 分页大小
+                     * 获取<p>分页大小</p>
+                     * @return PageSize <p>分页大小</p>
                      * 
                      */
                     std::string GetPageSize() const;
 
                     /**
-                     * 设置分页大小
-                     * @param _pageSize 分页大小
+                     * 设置<p>分页大小</p>
+                     * @param _pageSize <p>分页大小</p>
                      * 
                      */
                     void SetPageSize(const std::string& _pageSize);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目Id
+                     * <p>项目Id</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 任务Id
+                     * <p>任务Id</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 分页页码
+                     * <p>分页页码</p>
                      */
                     std::string m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 分页大小
+                     * <p>分页大小</p>
                      */
                     std::string m_pageSize;
                     bool m_pageSizeHasBeenSet;

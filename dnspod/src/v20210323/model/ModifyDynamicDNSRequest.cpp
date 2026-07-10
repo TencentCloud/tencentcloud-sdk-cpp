@@ -30,7 +30,8 @@ ModifyDynamicDNSRequest::ModifyDynamicDNSRequest() :
     m_subDomainHasBeenSet(false),
     m_recordLineIdHasBeenSet(false),
     m_valueHasBeenSet(false),
-    m_ttlHasBeenSet(false)
+    m_ttlHasBeenSet(false),
+    m_tTLHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string ModifyDynamicDNSRequest::ToJsonString() const
         string key = "Ttl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ttl, allocator);
+    }
+
+    if (m_tTLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TTL";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_tTL, allocator);
     }
 
 
@@ -239,6 +248,22 @@ void ModifyDynamicDNSRequest::SetTtl(const uint64_t& _ttl)
 bool ModifyDynamicDNSRequest::TtlHasBeenSet() const
 {
     return m_ttlHasBeenSet;
+}
+
+uint64_t ModifyDynamicDNSRequest::GetTTL() const
+{
+    return m_tTL;
+}
+
+void ModifyDynamicDNSRequest::SetTTL(const uint64_t& _tTL)
+{
+    m_tTL = _tTL;
+    m_tTLHasBeenSet = true;
+}
+
+bool ModifyDynamicDNSRequest::TTLHasBeenSet() const
+{
+    return m_tTLHasBeenSet;
 }
 
 

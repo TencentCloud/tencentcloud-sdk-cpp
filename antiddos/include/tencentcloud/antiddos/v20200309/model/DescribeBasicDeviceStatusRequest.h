@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取IP 资源列表
-                     * @return IpList IP 资源列表
+                     * 获取<p>IP 资源列表</p>
+                     * @return IpList <p>IP 资源列表</p>
                      * 
                      */
                     std::vector<std::string> GetIpList() const;
 
                     /**
-                     * 设置IP 资源列表
-                     * @param _ipList IP 资源列表
+                     * 设置<p>IP 资源列表</p>
+                     * @param _ipList <p>IP 资源列表</p>
                      * 
                      */
                     void SetIpList(const std::vector<std::string>& _ipList);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool IpListHasBeenSet() const;
 
                     /**
-                     * 获取域名化资源传id
-                     * @return IdList 域名化资源传id
+                     * 获取<p>域名化资源传id</p>
+                     * @return IdList <p>域名化资源传id</p>
                      * 
                      */
                     std::vector<std::string> GetIdList() const;
 
                     /**
-                     * 设置域名化资源传id
-                     * @param _idList 域名化资源传id
+                     * 设置<p>域名化资源传id</p>
+                     * @param _idList <p>域名化资源传id</p>
                      * 
                      */
                     void SetIdList(const std::vector<std::string>& _idList);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool IdListHasBeenSet() const;
 
                     /**
-                     * 获取地域名称
-                     * @return FilterRegion 地域名称
+                     * 获取<p>地域名称</p>
+                     * @return FilterRegion <p>地域名称</p>
                      * 
                      */
                     uint64_t GetFilterRegion() const;
 
                     /**
-                     * 设置地域名称
-                     * @param _filterRegion 地域名称
+                     * 设置<p>地域名称</p>
+                     * @param _filterRegion <p>地域名称</p>
                      * 
                      */
                     void SetFilterRegion(const uint64_t& _filterRegion);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool FilterRegionHasBeenSet() const;
 
                     /**
-                     * 获取cnameWaf资源
-                     * @return CnameWafIdList cnameWaf资源
+                     * 获取<p>cnameWaf资源</p>
+                     * @return CnameWafIdList <p>cnameWaf资源</p>
                      * 
                      */
                     std::vector<std::string> GetCnameWafIdList() const;
 
                     /**
-                     * 设置cnameWaf资源
-                     * @param _cnameWafIdList cnameWaf资源
+                     * 设置<p>cnameWaf资源</p>
+                     * @param _cnameWafIdList <p>cnameWaf资源</p>
                      * 
                      */
                     void SetCnameWafIdList(const std::vector<std::string>& _cnameWafIdList);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * IP 资源列表
+                     * <p>IP 资源列表</p>
                      */
                     std::vector<std::string> m_ipList;
                     bool m_ipListHasBeenSet;
 
                     /**
-                     * 域名化资源传id
+                     * <p>域名化资源传id</p>
                      */
                     std::vector<std::string> m_idList;
                     bool m_idListHasBeenSet;
 
                     /**
-                     * 地域名称
+                     * <p>地域名称</p>
                      */
                     uint64_t m_filterRegion;
                     bool m_filterRegionHasBeenSet;
 
                     /**
-                     * cnameWaf资源
+                     * <p>cnameWaf资源</p>
                      */
                     std::vector<std::string> m_cnameWafIdList;
                     bool m_cnameWafIdListHasBeenSet;

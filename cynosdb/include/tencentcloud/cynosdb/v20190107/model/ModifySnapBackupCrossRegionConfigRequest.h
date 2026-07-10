@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取是否开启跨地域快照备份ON/OFF
-                     * @return CrossRegionsEnable 是否开启跨地域快照备份ON/OFF
+                     * 获取<p>是否开启跨地域快照备份ON/OFF</p>
+                     * @return CrossRegionsEnable <p>是否开启跨地域快照备份ON/OFF</p>
                      * 
                      */
                     std::string GetCrossRegionsEnable() const;
 
                     /**
-                     * 设置是否开启跨地域快照备份ON/OFF
-                     * @param _crossRegionsEnable 是否开启跨地域快照备份ON/OFF
+                     * 设置<p>是否开启跨地域快照备份ON/OFF</p>
+                     * @param _crossRegionsEnable <p>是否开启跨地域快照备份ON/OFF</p>
                      * 
                      */
                     void SetCrossRegionsEnable(const std::string& _crossRegionsEnable);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool CrossRegionsEnableHasBeenSet() const;
 
                     /**
-                     * 获取快照备份所跨地域
-                     * @return CrossRegions 快照备份所跨地域
+                     * 获取<p>快照备份所跨地域</p>
+                     * @return CrossRegions <p>快照备份所跨地域</p>
                      * 
                      */
                     std::vector<std::string> GetCrossRegions() const;
 
                     /**
-                     * 设置快照备份所跨地域
-                     * @param _crossRegions 快照备份所跨地域
+                     * 设置<p>快照备份所跨地域</p>
+                     * @param _crossRegions <p>快照备份所跨地域</p>
                      * 
                      */
                     void SetCrossRegions(const std::vector<std::string>& _crossRegions);
@@ -105,25 +105,52 @@ namespace TencentCloud
                      */
                     bool CrossRegionsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>跨地域备份保留时间</p><p>单位：天</p>
+                     * @return CrossRegionSaveDays <p>跨地域备份保留时间</p><p>单位：天</p>
+                     * 
+                     */
+                    int64_t GetCrossRegionSaveDays() const;
+
+                    /**
+                     * 设置<p>跨地域备份保留时间</p><p>单位：天</p>
+                     * @param _crossRegionSaveDays <p>跨地域备份保留时间</p><p>单位：天</p>
+                     * 
+                     */
+                    void SetCrossRegionSaveDays(const int64_t& _crossRegionSaveDays);
+
+                    /**
+                     * 判断参数 CrossRegionSaveDays 是否已赋值
+                     * @return CrossRegionSaveDays 是否已赋值
+                     * 
+                     */
+                    bool CrossRegionSaveDaysHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 是否开启跨地域快照备份ON/OFF
+                     * <p>是否开启跨地域快照备份ON/OFF</p>
                      */
                     std::string m_crossRegionsEnable;
                     bool m_crossRegionsEnableHasBeenSet;
 
                     /**
-                     * 快照备份所跨地域
+                     * <p>快照备份所跨地域</p>
                      */
                     std::vector<std::string> m_crossRegions;
                     bool m_crossRegionsHasBeenSet;
+
+                    /**
+                     * <p>跨地域备份保留时间</p><p>单位：天</p>
+                     */
+                    int64_t m_crossRegionSaveDays;
+                    bool m_crossRegionSaveDaysHasBeenSet;
 
                 };
             }

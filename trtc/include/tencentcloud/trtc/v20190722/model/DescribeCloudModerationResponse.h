@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取切片任务的唯一Id，在启动切片任务成功后会返回。
-                     * @return TaskId 切片任务的唯一Id，在启动切片任务成功后会返回。
+                     * 获取<p>AI 内容理解任务的唯一Id，在启动切片任务成功后会返回。</p>
+                     * @return TaskId <p>AI 内容理解任务的唯一Id，在启动切片任务成功后会返回。</p>
                      * 
                      */
                     std::string GetTaskId() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取云端切片任务的状态信息。Idle:表示当前任务空闲中,InProgress:表示当前任务正在进行中,Exited:表示当前任务正在退出的过程中。
-                     * @return Status 云端切片任务的状态信息。Idle:表示当前任务空闲中,InProgress:表示当前任务正在进行中,Exited:表示当前任务正在退出的过程中。
+                     * 获取<p>AI内容理解任务的状态信息。Idle:表示当前任务空闲中,InProgress:表示当前任务正在进行中,Exited:表示当前任务正在退出的过程中。</p><p>枚举值：</p><ul><li>InProgress： 进行中</li></ul>
+                     * @return Status <p>AI内容理解任务的状态信息。Idle:表示当前任务空闲中,InProgress:表示当前任务正在进行中,Exited:表示当前任务正在退出的过程中。</p><p>枚举值：</p><ul><li>InProgress： 进行中</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取订阅黑白名单
-                     * @return SubscribeStreamUserIds 订阅黑白名单
+                     * 获取<p>订阅黑白名单</p>
+                     * @return SubscribeStreamUserIds <p>订阅黑白名单</p>
                      * 
                      */
                     SubscribeModerationUserIds GetSubscribeStreamUserIds() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 切片任务的唯一Id，在启动切片任务成功后会返回。
+                     * <p>AI 内容理解任务的唯一Id，在启动切片任务成功后会返回。</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 云端切片任务的状态信息。Idle:表示当前任务空闲中,InProgress:表示当前任务正在进行中,Exited:表示当前任务正在退出的过程中。
+                     * <p>AI内容理解任务的状态信息。Idle:表示当前任务空闲中,InProgress:表示当前任务正在进行中,Exited:表示当前任务正在退出的过程中。</p><p>枚举值：</p><ul><li>InProgress： 进行中</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 订阅黑白名单
+                     * <p>订阅黑白名单</p>
                      */
                     SubscribeModerationUserIds m_subscribeStreamUserIds;
                     bool m_subscribeStreamUserIdsHasBeenSet;

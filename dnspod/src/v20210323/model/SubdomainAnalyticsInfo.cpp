@@ -26,7 +26,10 @@ SubdomainAnalyticsInfo::SubdomainAnalyticsInfo() :
     m_domainHasBeenSet(false),
     m_startDateHasBeenSet(false),
     m_endDateHasBeenSet(false),
-    m_subdomainHasBeenSet(false)
+    m_subdomainHasBeenSet(false),
+    m_dNSFormatHasBeenSet(false),
+    m_dNSTotalHasBeenSet(false),
+    m_subDomainHasBeenSet(false)
 {
 }
 
@@ -95,6 +98,36 @@ CoreInternalOutcome SubdomainAnalyticsInfo::Deserialize(const rapidjson::Value &
         m_subdomainHasBeenSet = true;
     }
 
+    if (value.HasMember("DNSFormat") && !value["DNSFormat"].IsNull())
+    {
+        if (!value["DNSFormat"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubdomainAnalyticsInfo.DNSFormat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dNSFormat = string(value["DNSFormat"].GetString());
+        m_dNSFormatHasBeenSet = true;
+    }
+
+    if (value.HasMember("DNSTotal") && !value["DNSTotal"].IsNull())
+    {
+        if (!value["DNSTotal"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubdomainAnalyticsInfo.DNSTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dNSTotal = value["DNSTotal"].GetUint64();
+        m_dNSTotalHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubDomain") && !value["SubDomain"].IsNull())
+    {
+        if (!value["SubDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubdomainAnalyticsInfo.SubDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subDomain = string(value["SubDomain"].GetString());
+        m_subDomainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +181,30 @@ void SubdomainAnalyticsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "Subdomain";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subdomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dNSFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DNSFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dNSFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dNSTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DNSTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dNSTotal, allocator);
+    }
+
+    if (m_subDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subDomain.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +304,53 @@ void SubdomainAnalyticsInfo::SetSubdomain(const string& _subdomain)
 bool SubdomainAnalyticsInfo::SubdomainHasBeenSet() const
 {
     return m_subdomainHasBeenSet;
+}
+
+string SubdomainAnalyticsInfo::GetDNSFormat() const
+{
+    return m_dNSFormat;
+}
+
+void SubdomainAnalyticsInfo::SetDNSFormat(const string& _dNSFormat)
+{
+    m_dNSFormat = _dNSFormat;
+    m_dNSFormatHasBeenSet = true;
+}
+
+bool SubdomainAnalyticsInfo::DNSFormatHasBeenSet() const
+{
+    return m_dNSFormatHasBeenSet;
+}
+
+uint64_t SubdomainAnalyticsInfo::GetDNSTotal() const
+{
+    return m_dNSTotal;
+}
+
+void SubdomainAnalyticsInfo::SetDNSTotal(const uint64_t& _dNSTotal)
+{
+    m_dNSTotal = _dNSTotal;
+    m_dNSTotalHasBeenSet = true;
+}
+
+bool SubdomainAnalyticsInfo::DNSTotalHasBeenSet() const
+{
+    return m_dNSTotalHasBeenSet;
+}
+
+string SubdomainAnalyticsInfo::GetSubDomain() const
+{
+    return m_subDomain;
+}
+
+void SubdomainAnalyticsInfo::SetSubDomain(const string& _subDomain)
+{
+    m_subDomain = _subDomain;
+    m_subDomainHasBeenSet = true;
+}
+
+bool SubdomainAnalyticsInfo::SubDomainHasBeenSet() const
+{
+    return m_subDomainHasBeenSet;
 }
 

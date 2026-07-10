@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeVasListResponse::DescribeVasListResponse() :
     m_totalCountHasBeenSet(false),
-    m_vasListHasBeenSet(false)
+    m_vasListHasBeenSet(false),
+    m_vASListHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,26 @@ CoreInternalOutcome DescribeVasListResponse::Deserialize(const string &payload)
         m_vasListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VASList") && !rsp["VASList"].IsNull())
+    {
+        if (!rsp["VASList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VASList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["VASList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VasListItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_vASList.push_back(item);
+        }
+        m_vASListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -120,6 +141,21 @@ string DescribeVasListResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_vasList.begin(); itr != m_vasList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_vASListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VASList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_vASList.begin(); itr != m_vASList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -156,6 +192,16 @@ vector<VasListItem> DescribeVasListResponse::GetVasList() const
 bool DescribeVasListResponse::VasListHasBeenSet() const
 {
     return m_vasListHasBeenSet;
+}
+
+vector<VasListItem> DescribeVasListResponse::GetVASList() const
+{
+    return m_vASList;
+}
+
+bool DescribeVasListResponse::VASListHasBeenSet() const
+{
+    return m_vASListHasBeenSet;
 }
 
 

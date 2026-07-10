@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取vhost名
-                     * @return VirtualHost vhost名
+                     * 获取<p>vhost名</p>
+                     * @return VirtualHost <p>vhost名</p>
                      * 
                      */
                     std::string GetVirtualHost() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * vhost名
+                     * <p>vhost名</p>
                      */
                     std::string m_virtualHost;
                     bool m_virtualHostHasBeenSet;

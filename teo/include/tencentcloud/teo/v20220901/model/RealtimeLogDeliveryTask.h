@@ -53,15 +53,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实时日志投递任务 ID。
-                     * @return TaskId 实时日志投递任务 ID。
+                     * 获取<p>实时日志投递任务 ID。</p>
+                     * @return TaskId <p>实时日志投递任务 ID。</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置实时日志投递任务 ID。
-                     * @param _taskId 实时日志投递任务 ID。
+                     * 设置<p>实时日志投递任务 ID。</p>
+                     * @param _taskId <p>实时日志投递任务 ID。</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -74,15 +74,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取实时日志投递任务的名称。
-                     * @return TaskName 实时日志投递任务的名称。
+                     * 获取<p>实时日志投递任务的名称。</p>
+                     * @return TaskName <p>实时日志投递任务的名称。</p>
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
-                     * 设置实时日志投递任务的名称。
-                     * @param _taskName 实时日志投递任务的名称。
+                     * 设置<p>实时日志投递任务的名称。</p>
+                     * @param _taskName <p>实时日志投递任务的名称。</p>
                      * 
                      */
                     void SetTaskName(const std::string& _taskName);
@@ -95,15 +95,15 @@ namespace TencentCloud
                     bool TaskNameHasBeenSet() const;
 
                     /**
-                     * 获取实时日志投递任务的状态，取值有： <li>enabled: 已启用；</li> <li>disabled: 已停用；</li><li>deleted: 异常删除状态，请检查目的地腾讯云 CLS 日志集/日志主题是否已被删除。</li>
-                     * @return DeliveryStatus 实时日志投递任务的状态，取值有： <li>enabled: 已启用；</li> <li>disabled: 已停用；</li><li>deleted: 异常删除状态，请检查目的地腾讯云 CLS 日志集/日志主题是否已被删除。</li>
+                     * 获取<p>实时日志投递任务的状态，取值有： <li>enabled: 已启用；</li> <li>disabled: 已停用；</li><li>deleted: 异常删除状态，请检查目的地腾讯云 CLS 日志集/日志主题是否已被删除。</li></p>
+                     * @return DeliveryStatus <p>实时日志投递任务的状态，取值有： <li>enabled: 已启用；</li> <li>disabled: 已停用；</li><li>deleted: 异常删除状态，请检查目的地腾讯云 CLS 日志集/日志主题是否已被删除。</li></p>
                      * 
                      */
                     std::string GetDeliveryStatus() const;
 
                     /**
-                     * 设置实时日志投递任务的状态，取值有： <li>enabled: 已启用；</li> <li>disabled: 已停用；</li><li>deleted: 异常删除状态，请检查目的地腾讯云 CLS 日志集/日志主题是否已被删除。</li>
-                     * @param _deliveryStatus 实时日志投递任务的状态，取值有： <li>enabled: 已启用；</li> <li>disabled: 已停用；</li><li>deleted: 异常删除状态，请检查目的地腾讯云 CLS 日志集/日志主题是否已被删除。</li>
+                     * 设置<p>实时日志投递任务的状态，取值有： <li>enabled: 已启用；</li> <li>disabled: 已停用；</li><li>deleted: 异常删除状态，请检查目的地腾讯云 CLS 日志集/日志主题是否已被删除。</li></p>
+                     * @param _deliveryStatus <p>实时日志投递任务的状态，取值有： <li>enabled: 已启用；</li> <li>disabled: 已停用；</li><li>deleted: 异常删除状态，请检查目的地腾讯云 CLS 日志集/日志主题是否已被删除。</li></p>
                      * 
                      */
                     void SetDeliveryStatus(const std::string& _deliveryStatus);
@@ -116,15 +116,15 @@ namespace TencentCloud
                     bool DeliveryStatusHasBeenSet() const;
 
                     /**
-                     * 获取实时日志投递任务类型，取值有： <li>cls: 推送到腾讯云 CLS；</li> <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li> <li>s3：推送到 AWS S3 兼容存储桶地址；</li><li>log_analysis：推送到 EdgeOne 日志分析。</li>
-                     * @return TaskType 实时日志投递任务类型，取值有： <li>cls: 推送到腾讯云 CLS；</li> <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li> <li>s3：推送到 AWS S3 兼容存储桶地址；</li><li>log_analysis：推送到 EdgeOne 日志分析。</li>
+                     * 获取<p>实时日志投递任务类型，取值有： <li>cls: 推送到腾讯云 CLS；</li> <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li> <li>s3：推送到 AWS S3 兼容存储桶地址；</li><li>log_analysis：推送到 EdgeOne 日志分析。</li></p>
+                     * @return TaskType <p>实时日志投递任务类型，取值有： <li>cls: 推送到腾讯云 CLS；</li> <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li> <li>s3：推送到 AWS S3 兼容存储桶地址；</li><li>log_analysis：推送到 EdgeOne 日志分析。</li></p>
                      * 
                      */
                     std::string GetTaskType() const;
 
                     /**
-                     * 设置实时日志投递任务类型，取值有： <li>cls: 推送到腾讯云 CLS；</li> <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li> <li>s3：推送到 AWS S3 兼容存储桶地址；</li><li>log_analysis：推送到 EdgeOne 日志分析。</li>
-                     * @param _taskType 实时日志投递任务类型，取值有： <li>cls: 推送到腾讯云 CLS；</li> <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li> <li>s3：推送到 AWS S3 兼容存储桶地址；</li><li>log_analysis：推送到 EdgeOne 日志分析。</li>
+                     * 设置<p>实时日志投递任务类型，取值有： <li>cls: 推送到腾讯云 CLS；</li> <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li> <li>s3：推送到 AWS S3 兼容存储桶地址；</li><li>log_analysis：推送到 EdgeOne 日志分析。</li></p>
+                     * @param _taskType <p>实时日志投递任务类型，取值有： <li>cls: 推送到腾讯云 CLS；</li> <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li> <li>s3：推送到 AWS S3 兼容存储桶地址；</li><li>log_analysis：推送到 EdgeOne 日志分析。</li></p>
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -137,15 +137,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取实时日志投递任务对应的实体（七层域名或者四层代理实例）列表。取值示例如下： <li>七层域名：domain.example.com；</li> <li>四层代理实例：sid-2s69eb5wcms7。</li>	
-                     * @return EntityList 实时日志投递任务对应的实体（七层域名或者四层代理实例）列表。取值示例如下： <li>七层域名：domain.example.com；</li> <li>四层代理实例：sid-2s69eb5wcms7。</li>	
+                     * 获取<p>实时日志投递任务对应的实体（七层域名或者四层代理实例）列表。取值示例如下： <li>七层域名：domain.example.com；</li> <li>四层代理实例：sid-2s69eb5wcms7。</li></p>
+                     * @return EntityList <p>实时日志投递任务对应的实体（七层域名或者四层代理实例）列表。取值示例如下： <li>七层域名：domain.example.com；</li> <li>四层代理实例：sid-2s69eb5wcms7。</li></p>
                      * 
                      */
                     std::vector<std::string> GetEntityList() const;
 
                     /**
-                     * 设置实时日志投递任务对应的实体（七层域名或者四层代理实例）列表。取值示例如下： <li>七层域名：domain.example.com；</li> <li>四层代理实例：sid-2s69eb5wcms7。</li>	
-                     * @param _entityList 实时日志投递任务对应的实体（七层域名或者四层代理实例）列表。取值示例如下： <li>七层域名：domain.example.com；</li> <li>四层代理实例：sid-2s69eb5wcms7。</li>	
+                     * 设置<p>实时日志投递任务对应的实体（七层域名或者四层代理实例）列表。取值示例如下： <li>七层域名：domain.example.com；</li> <li>四层代理实例：sid-2s69eb5wcms7。</li></p>
+                     * @param _entityList <p>实时日志投递任务对应的实体（七层域名或者四层代理实例）列表。取值示例如下： <li>七层域名：domain.example.com；</li> <li>四层代理实例：sid-2s69eb5wcms7。</li></p>
                      * 
                      */
                     void SetEntityList(const std::vector<std::string>& _entityList);
@@ -158,15 +158,15 @@ namespace TencentCloud
                     bool EntityListHasBeenSet() const;
 
                     /**
-                     * 获取数据投递类型，取值有： <li>domain：站点加速日志；</li> <li>application：四层代理日志；</li> <li>web-rateLiming：速率限制和 CC 攻击防护日志；</li> <li>web-attack：托管规则日志；</li> <li>web-rule：自定义规则日志；</li> <li>web-bot：Bot管理日志。</li>
-                     * @return LogType 数据投递类型，取值有： <li>domain：站点加速日志；</li> <li>application：四层代理日志；</li> <li>web-rateLiming：速率限制和 CC 攻击防护日志；</li> <li>web-attack：托管规则日志；</li> <li>web-rule：自定义规则日志；</li> <li>web-bot：Bot管理日志。</li>
+                     * 获取<p>数据投递类型，取值有： <li>l7-access-logs：七层访问日志；</li><li>application：四层代理日志；</li> <li>function：边缘函数运行日志；</li> <li>web-attack：托管规则日志；</li> <li>domain：站点加速日志；</li> <li>web-rateLiming：速率限制和 CC 攻击防护日志；</li><li>web-rule：自定义规则日志；</li> <li>web-bot：Bot 管理日志。</li></p>
+                     * @return LogType <p>数据投递类型，取值有： <li>l7-access-logs：七层访问日志；</li><li>application：四层代理日志；</li> <li>function：边缘函数运行日志；</li> <li>web-attack：托管规则日志；</li> <li>domain：站点加速日志；</li> <li>web-rateLiming：速率限制和 CC 攻击防护日志；</li><li>web-rule：自定义规则日志；</li> <li>web-bot：Bot 管理日志。</li></p>
                      * 
                      */
                     std::string GetLogType() const;
 
                     /**
-                     * 设置数据投递类型，取值有： <li>domain：站点加速日志；</li> <li>application：四层代理日志；</li> <li>web-rateLiming：速率限制和 CC 攻击防护日志；</li> <li>web-attack：托管规则日志；</li> <li>web-rule：自定义规则日志；</li> <li>web-bot：Bot管理日志。</li>
-                     * @param _logType 数据投递类型，取值有： <li>domain：站点加速日志；</li> <li>application：四层代理日志；</li> <li>web-rateLiming：速率限制和 CC 攻击防护日志；</li> <li>web-attack：托管规则日志；</li> <li>web-rule：自定义规则日志；</li> <li>web-bot：Bot管理日志。</li>
+                     * 设置<p>数据投递类型，取值有： <li>l7-access-logs：七层访问日志；</li><li>application：四层代理日志；</li> <li>function：边缘函数运行日志；</li> <li>web-attack：托管规则日志；</li> <li>domain：站点加速日志；</li> <li>web-rateLiming：速率限制和 CC 攻击防护日志；</li><li>web-rule：自定义规则日志；</li> <li>web-bot：Bot 管理日志。</li></p>
+                     * @param _logType <p>数据投递类型，取值有： <li>l7-access-logs：七层访问日志；</li><li>application：四层代理日志；</li> <li>function：边缘函数运行日志；</li> <li>web-attack：托管规则日志；</li> <li>domain：站点加速日志；</li> <li>web-rateLiming：速率限制和 CC 攻击防护日志；</li><li>web-rule：自定义规则日志；</li> <li>web-bot：Bot 管理日志。</li></p>
                      * 
                      */
                     void SetLogType(const std::string& _logType);
@@ -179,15 +179,15 @@ namespace TencentCloud
                     bool LogTypeHasBeenSet() const;
 
                     /**
-                     * 获取数据投递区域，取值有： <li>mainland：中国大陆境内；</li> <li>overseas：全球（不含中国大陆）。</li>
-                     * @return Area 数据投递区域，取值有： <li>mainland：中国大陆境内；</li> <li>overseas：全球（不含中国大陆）。</li>
+                     * 获取<p>数据投递区域，取值有： <li>mainland：中国大陆境内；</li> <li>overseas：全球（不含中国大陆）。</li></p>
+                     * @return Area <p>数据投递区域，取值有： <li>mainland：中国大陆境内；</li> <li>overseas：全球（不含中国大陆）。</li></p>
                      * 
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置数据投递区域，取值有： <li>mainland：中国大陆境内；</li> <li>overseas：全球（不含中国大陆）。</li>
-                     * @param _area 数据投递区域，取值有： <li>mainland：中国大陆境内；</li> <li>overseas：全球（不含中国大陆）。</li>
+                     * 设置<p>数据投递区域，取值有： <li>mainland：中国大陆境内；</li> <li>overseas：全球（不含中国大陆）。</li></p>
+                     * @param _area <p>数据投递区域，取值有： <li>mainland：中国大陆境内；</li> <li>overseas：全球（不含中国大陆）。</li></p>
                      * 
                      */
                     void SetArea(const std::string& _area);
@@ -200,15 +200,15 @@ namespace TencentCloud
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取投递的预设字段列表。
-                     * @return Fields 投递的预设字段列表。
+                     * 获取<p>投递的预设字段列表。</p>
+                     * @return Fields <p>投递的预设字段列表。</p>
                      * 
                      */
                     std::vector<std::string> GetFields() const;
 
                     /**
-                     * 设置投递的预设字段列表。
-                     * @param _fields 投递的预设字段列表。
+                     * 设置<p>投递的预设字段列表。</p>
+                     * @param _fields <p>投递的预设字段列表。</p>
                      * 
                      */
                     void SetFields(const std::vector<std::string>& _fields);
@@ -221,15 +221,15 @@ namespace TencentCloud
                     bool FieldsHasBeenSet() const;
 
                     /**
-                     * 获取投递的自定义字段列表。
-                     * @return CustomFields 投递的自定义字段列表。
+                     * 获取<p>投递的自定义字段列表。</p>
+                     * @return CustomFields <p>投递的自定义字段列表。</p>
                      * 
                      */
                     std::vector<CustomField> GetCustomFields() const;
 
                     /**
-                     * 设置投递的自定义字段列表。
-                     * @param _customFields 投递的自定义字段列表。
+                     * 设置<p>投递的自定义字段列表。</p>
+                     * @param _customFields <p>投递的自定义字段列表。</p>
                      * 
                      */
                     void SetCustomFields(const std::vector<CustomField>& _customFields);
@@ -242,15 +242,15 @@ namespace TencentCloud
                     bool CustomFieldsHasBeenSet() const;
 
                     /**
-                     * 获取日志投递的过滤条件。
-                     * @return DeliveryConditions 日志投递的过滤条件。
+                     * 获取<p>日志投递的过滤条件。</p>
+                     * @return DeliveryConditions <p>日志投递的过滤条件。</p>
                      * 
                      */
                     std::vector<DeliveryCondition> GetDeliveryConditions() const;
 
                     /**
-                     * 设置日志投递的过滤条件。
-                     * @param _deliveryConditions 日志投递的过滤条件。
+                     * 设置<p>日志投递的过滤条件。</p>
+                     * @param _deliveryConditions <p>日志投递的过滤条件。</p>
                      * 
                      */
                     void SetDeliveryConditions(const std::vector<DeliveryCondition>& _deliveryConditions);
@@ -263,15 +263,15 @@ namespace TencentCloud
                     bool DeliveryConditionsHasBeenSet() const;
 
                     /**
-                     * 获取采样比例，采用千分制，取值范围为1-1000，例如：605 表示采样比例为 60.5%。
-                     * @return Sample 采样比例，采用千分制，取值范围为1-1000，例如：605 表示采样比例为 60.5%。
+                     * 获取<p>采样比例，采用千分制，取值范围为1-1000，例如：605 表示采样比例为 60.5%。</p>
+                     * @return Sample <p>采样比例，采用千分制，取值范围为1-1000，例如：605 表示采样比例为 60.5%。</p>
                      * 
                      */
                     uint64_t GetSample() const;
 
                     /**
-                     * 设置采样比例，采用千分制，取值范围为1-1000，例如：605 表示采样比例为 60.5%。
-                     * @param _sample 采样比例，采用千分制，取值范围为1-1000，例如：605 表示采样比例为 60.5%。
+                     * 设置<p>采样比例，采用千分制，取值范围为1-1000，例如：605 表示采样比例为 60.5%。</p>
+                     * @param _sample <p>采样比例，采用千分制，取值范围为1-1000，例如：605 表示采样比例为 60.5%。</p>
                      * 
                      */
                     void SetSample(const uint64_t& _sample);
@@ -284,26 +284,18 @@ namespace TencentCloud
                     bool SampleHasBeenSet() const;
 
                     /**
-                     * 获取日志投递的输出格式。出参为 null 时表示为默认格式，默认格式逻辑如下：
-<li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li>
-<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines。</li>
+                     * 获取<p>日志投递的输出格式。出参为 null 时表示为默认格式，默认格式逻辑如下：</p><li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li><li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LogFormat 日志投递的输出格式。出参为 null 时表示为默认格式，默认格式逻辑如下：
-<li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li>
-<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines。</li>
+                     * @return LogFormat <p>日志投递的输出格式。出参为 null 时表示为默认格式，默认格式逻辑如下：</p><li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li><li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     LogFormat GetLogFormat() const;
 
                     /**
-                     * 设置日志投递的输出格式。出参为 null 时表示为默认格式，默认格式逻辑如下：
-<li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li>
-<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines。</li>
+                     * 设置<p>日志投递的输出格式。出参为 null 时表示为默认格式，默认格式逻辑如下：</p><li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li><li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _logFormat 日志投递的输出格式。出参为 null 时表示为默认格式，默认格式逻辑如下：
-<li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li>
-<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines。</li>
+                     * @param _logFormat <p>日志投递的输出格式。出参为 null 时表示为默认格式，默认格式逻辑如下：</p><li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li><li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -317,18 +309,18 @@ namespace TencentCloud
                     bool LogFormatHasBeenSet() const;
 
                     /**
-                     * 获取CLS 的配置信息。
+                     * 获取<p>CLS 的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CLS CLS 的配置信息。
+                     * @return CLS <p>CLS 的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CLSTopic GetCLS() const;
 
                     /**
-                     * 设置CLS 的配置信息。
+                     * 设置<p>CLS 的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cLS CLS 的配置信息。
+                     * @param _cLS <p>CLS 的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -342,18 +334,18 @@ namespace TencentCloud
                     bool CLSHasBeenSet() const;
 
                     /**
-                     * 获取自定义 HTTP 服务的配置信息。
+                     * 获取<p>自定义 HTTP 服务的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CustomEndpoint 自定义 HTTP 服务的配置信息。
+                     * @return CustomEndpoint <p>自定义 HTTP 服务的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CustomEndpoint GetCustomEndpoint() const;
 
                     /**
-                     * 设置自定义 HTTP 服务的配置信息。
+                     * 设置<p>自定义 HTTP 服务的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _customEndpoint 自定义 HTTP 服务的配置信息。
+                     * @param _customEndpoint <p>自定义 HTTP 服务的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -367,18 +359,18 @@ namespace TencentCloud
                     bool CustomEndpointHasBeenSet() const;
 
                     /**
-                     * 获取AWS S3 兼容存储桶的配置信息。
+                     * 获取<p>AWS S3 兼容存储桶的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return S3 AWS S3 兼容存储桶的配置信息。
+                     * @return S3 <p>AWS S3 兼容存储桶的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     S3 GetS3() const;
 
                     /**
-                     * 设置AWS S3 兼容存储桶的配置信息。
+                     * 设置<p>AWS S3 兼容存储桶的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _s3 AWS S3 兼容存储桶的配置信息。
+                     * @param _s3 <p>AWS S3 兼容存储桶的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -392,15 +384,15 @@ namespace TencentCloud
                     bool S3HasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return CreateTime 创建时间。
+                     * 获取<p>创建时间。</p>
+                     * @return CreateTime <p>创建时间。</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _createTime 创建时间。
+                     * 设置<p>创建时间。</p>
+                     * @param _createTime <p>创建时间。</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -413,15 +405,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间。
-                     * @return UpdateTime 更新时间。
+                     * 获取<p>更新时间。</p>
+                     * @return UpdateTime <p>更新时间。</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间。
-                     * @param _updateTime 更新时间。
+                     * 设置<p>更新时间。</p>
+                     * @param _updateTime <p>更新时间。</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -436,109 +428,107 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实时日志投递任务 ID。
+                     * <p>实时日志投递任务 ID。</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 实时日志投递任务的名称。
+                     * <p>实时日志投递任务的名称。</p>
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
 
                     /**
-                     * 实时日志投递任务的状态，取值有： <li>enabled: 已启用；</li> <li>disabled: 已停用；</li><li>deleted: 异常删除状态，请检查目的地腾讯云 CLS 日志集/日志主题是否已被删除。</li>
+                     * <p>实时日志投递任务的状态，取值有： <li>enabled: 已启用；</li> <li>disabled: 已停用；</li><li>deleted: 异常删除状态，请检查目的地腾讯云 CLS 日志集/日志主题是否已被删除。</li></p>
                      */
                     std::string m_deliveryStatus;
                     bool m_deliveryStatusHasBeenSet;
 
                     /**
-                     * 实时日志投递任务类型，取值有： <li>cls: 推送到腾讯云 CLS；</li> <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li> <li>s3：推送到 AWS S3 兼容存储桶地址；</li><li>log_analysis：推送到 EdgeOne 日志分析。</li>
+                     * <p>实时日志投递任务类型，取值有： <li>cls: 推送到腾讯云 CLS；</li> <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li> <li>s3：推送到 AWS S3 兼容存储桶地址；</li><li>log_analysis：推送到 EdgeOne 日志分析。</li></p>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 实时日志投递任务对应的实体（七层域名或者四层代理实例）列表。取值示例如下： <li>七层域名：domain.example.com；</li> <li>四层代理实例：sid-2s69eb5wcms7。</li>	
+                     * <p>实时日志投递任务对应的实体（七层域名或者四层代理实例）列表。取值示例如下： <li>七层域名：domain.example.com；</li> <li>四层代理实例：sid-2s69eb5wcms7。</li></p>
                      */
                     std::vector<std::string> m_entityList;
                     bool m_entityListHasBeenSet;
 
                     /**
-                     * 数据投递类型，取值有： <li>domain：站点加速日志；</li> <li>application：四层代理日志；</li> <li>web-rateLiming：速率限制和 CC 攻击防护日志；</li> <li>web-attack：托管规则日志；</li> <li>web-rule：自定义规则日志；</li> <li>web-bot：Bot管理日志。</li>
+                     * <p>数据投递类型，取值有： <li>l7-access-logs：七层访问日志；</li><li>application：四层代理日志；</li> <li>function：边缘函数运行日志；</li> <li>web-attack：托管规则日志；</li> <li>domain：站点加速日志；</li> <li>web-rateLiming：速率限制和 CC 攻击防护日志；</li><li>web-rule：自定义规则日志；</li> <li>web-bot：Bot 管理日志。</li></p>
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;
 
                     /**
-                     * 数据投递区域，取值有： <li>mainland：中国大陆境内；</li> <li>overseas：全球（不含中国大陆）。</li>
+                     * <p>数据投递区域，取值有： <li>mainland：中国大陆境内；</li> <li>overseas：全球（不含中国大陆）。</li></p>
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
 
                     /**
-                     * 投递的预设字段列表。
+                     * <p>投递的预设字段列表。</p>
                      */
                     std::vector<std::string> m_fields;
                     bool m_fieldsHasBeenSet;
 
                     /**
-                     * 投递的自定义字段列表。
+                     * <p>投递的自定义字段列表。</p>
                      */
                     std::vector<CustomField> m_customFields;
                     bool m_customFieldsHasBeenSet;
 
                     /**
-                     * 日志投递的过滤条件。
+                     * <p>日志投递的过滤条件。</p>
                      */
                     std::vector<DeliveryCondition> m_deliveryConditions;
                     bool m_deliveryConditionsHasBeenSet;
 
                     /**
-                     * 采样比例，采用千分制，取值范围为1-1000，例如：605 表示采样比例为 60.5%。
+                     * <p>采样比例，采用千分制，取值范围为1-1000，例如：605 表示采样比例为 60.5%。</p>
                      */
                     uint64_t m_sample;
                     bool m_sampleHasBeenSet;
 
                     /**
-                     * 日志投递的输出格式。出参为 null 时表示为默认格式，默认格式逻辑如下：
-<li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li>
-<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines。</li>
+                     * <p>日志投递的输出格式。出参为 null 时表示为默认格式，默认格式逻辑如下：</p><li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li><li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LogFormat m_logFormat;
                     bool m_logFormatHasBeenSet;
 
                     /**
-                     * CLS 的配置信息。
+                     * <p>CLS 的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CLSTopic m_cLS;
                     bool m_cLSHasBeenSet;
 
                     /**
-                     * 自定义 HTTP 服务的配置信息。
+                     * <p>自定义 HTTP 服务的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CustomEndpoint m_customEndpoint;
                     bool m_customEndpointHasBeenSet;
 
                     /**
-                     * AWS S3 兼容存储桶的配置信息。
+                     * <p>AWS S3 兼容存储桶的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     S3 m_s3;
                     bool m_s3HasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * <p>创建时间。</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间。
+                     * <p>更新时间。</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

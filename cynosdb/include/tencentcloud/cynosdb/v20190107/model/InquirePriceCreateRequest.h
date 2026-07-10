@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可用区,每个地域提供最佳实践
-                     * @return Zone 可用区,每个地域提供最佳实践
+                     * 获取<p>可用区,每个地域提供最佳实践</p>
+                     * @return Zone <p>可用区,每个地域提供最佳实践</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区,每个地域提供最佳实践
-                     * @param _zone 可用区,每个地域提供最佳实践
+                     * 设置<p>可用区,每个地域提供最佳实践</p>
+                     * @param _zone <p>可用区,每个地域提供最佳实践</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取购买计算节点个数
-                     * @return GoodsNum 购买计算节点个数
+                     * 获取<p>购买计算节点个数</p>
+                     * @return GoodsNum <p>购买计算节点个数</p>
                      * 
                      */
                     int64_t GetGoodsNum() const;
 
                     /**
-                     * 设置购买计算节点个数
-                     * @param _goodsNum 购买计算节点个数
+                     * 设置<p>购买计算节点个数</p>
+                     * @param _goodsNum <p>购买计算节点个数</p>
                      * 
                      */
                     void SetGoodsNum(const int64_t& _goodsNum);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool GoodsNumHasBeenSet() const;
 
                     /**
-                     * 获取实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS
-                     * @return InstancePayMode 实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS
+                     * 获取<p>实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS</p>
+                     * @return InstancePayMode <p>实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS</p>
                      * 
                      */
                     std::string GetInstancePayMode() const;
 
                     /**
-                     * 设置实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS
-                     * @param _instancePayMode 实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS
+                     * 设置<p>实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS</p>
+                     * @param _instancePayMode <p>实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS</p>
                      * 
                      */
                     void SetInstancePayMode(const std::string& _instancePayMode);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool InstancePayModeHasBeenSet() const;
 
                     /**
-                     * 获取存储购买类型，可选值为：PREPAID, POSTPAID
-                     * @return StoragePayMode 存储购买类型，可选值为：PREPAID, POSTPAID
+                     * 获取<p>存储购买类型，可选值为：PREPAID, POSTPAID</p>
+                     * @return StoragePayMode <p>存储购买类型，可选值为：PREPAID, POSTPAID</p>
                      * 
                      */
                     std::string GetStoragePayMode() const;
 
                     /**
-                     * 设置存储购买类型，可选值为：PREPAID, POSTPAID
-                     * @param _storagePayMode 存储购买类型，可选值为：PREPAID, POSTPAID
+                     * 设置<p>存储购买类型，可选值为：PREPAID, POSTPAID</p>
+                     * @param _storagePayMode <p>存储购买类型，可选值为：PREPAID, POSTPAID</p>
                      * 
                      */
                     void SetStoragePayMode(const std::string& _storagePayMode);
@@ -127,23 +127,15 @@ namespace TencentCloud
                     bool StoragePayModeHasBeenSet() const;
 
                     /**
-                     * 获取实例设备类型，支持值如下：
-- common：表示通用型
-- exclusive：表示独享型
-                     * @return DeviceType 实例设备类型，支持值如下：
-- common：表示通用型
-- exclusive：表示独享型
+                     * 获取<p>实例设备类型，支持值如下：</p><ul><li>common：表示通用型</li><li>exclusive：表示独享型</li></ul>
+                     * @return DeviceType <p>实例设备类型，支持值如下：</p><ul><li>common：表示通用型</li><li>exclusive：表示独享型</li></ul>
                      * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
-                     * 设置实例设备类型，支持值如下：
-- common：表示通用型
-- exclusive：表示独享型
-                     * @param _deviceType 实例设备类型，支持值如下：
-- common：表示通用型
-- exclusive：表示独享型
+                     * 设置<p>实例设备类型，支持值如下：</p><ul><li>common：表示通用型</li><li>exclusive：表示独享型</li></ul>
+                     * @param _deviceType <p>实例设备类型，支持值如下：</p><ul><li>common：表示通用型</li><li>exclusive：表示独享型</li></ul>
                      * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
@@ -156,15 +148,15 @@ namespace TencentCloud
                     bool DeviceTypeHasBeenSet() const;
 
                     /**
-                     * 获取CPU核数，PREPAID与POSTPAID实例类型必传
-                     * @return Cpu CPU核数，PREPAID与POSTPAID实例类型必传
+                     * 获取<p>CPU核数，PREPAID与POSTPAID实例类型必传</p>
+                     * @return Cpu <p>CPU核数，PREPAID与POSTPAID实例类型必传</p>
                      * 
                      */
                     int64_t GetCpu() const;
 
                     /**
-                     * 设置CPU核数，PREPAID与POSTPAID实例类型必传
-                     * @param _cpu CPU核数，PREPAID与POSTPAID实例类型必传
+                     * 设置<p>CPU核数，PREPAID与POSTPAID实例类型必传</p>
+                     * @param _cpu <p>CPU核数，PREPAID与POSTPAID实例类型必传</p>
                      * 
                      */
                     void SetCpu(const int64_t& _cpu);
@@ -177,15 +169,15 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取内存大小，单位G，PREPAID与POSTPAID实例类型必传
-                     * @return Memory 内存大小，单位G，PREPAID与POSTPAID实例类型必传
+                     * 获取<p>内存大小，单位G，PREPAID与POSTPAID实例类型必传</p>
+                     * @return Memory <p>内存大小，单位G，PREPAID与POSTPAID实例类型必传</p>
                      * 
                      */
                     int64_t GetMemory() const;
 
                     /**
-                     * 设置内存大小，单位G，PREPAID与POSTPAID实例类型必传
-                     * @param _memory 内存大小，单位G，PREPAID与POSTPAID实例类型必传
+                     * 设置<p>内存大小，单位G，PREPAID与POSTPAID实例类型必传</p>
+                     * @param _memory <p>内存大小，单位G，PREPAID与POSTPAID实例类型必传</p>
                      * 
                      */
                     void SetMemory(const int64_t& _memory);
@@ -198,15 +190,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取Ccu大小，serverless类型必传
-                     * @return Ccu Ccu大小，serverless类型必传
+                     * 获取<p>Ccu大小，serverless类型必传</p>
+                     * @return Ccu <p>Ccu大小，serverless类型必传</p>
                      * 
                      */
                     double GetCcu() const;
 
                     /**
-                     * 设置Ccu大小，serverless类型必传
-                     * @param _ccu Ccu大小，serverless类型必传
+                     * 设置<p>Ccu大小，serverless类型必传</p>
+                     * @param _ccu <p>Ccu大小，serverless类型必传</p>
                      * 
                      */
                     void SetCcu(const double& _ccu);
@@ -219,15 +211,15 @@ namespace TencentCloud
                     bool CcuHasBeenSet() const;
 
                     /**
-                     * 获取存储大小，PREPAID存储类型必传
-                     * @return StorageLimit 存储大小，PREPAID存储类型必传
+                     * 获取<p>存储大小，PREPAID存储类型必传</p>
+                     * @return StorageLimit <p>存储大小，PREPAID存储类型必传</p>
                      * 
                      */
                     int64_t GetStorageLimit() const;
 
                     /**
-                     * 设置存储大小，PREPAID存储类型必传
-                     * @param _storageLimit 存储大小，PREPAID存储类型必传
+                     * 设置<p>存储大小，PREPAID存储类型必传</p>
+                     * @param _storageLimit <p>存储大小，PREPAID存储类型必传</p>
                      * 
                      */
                     void SetStorageLimit(const int64_t& _storageLimit);
@@ -240,15 +232,15 @@ namespace TencentCloud
                     bool StorageLimitHasBeenSet() const;
 
                     /**
-                     * 获取购买时长，PREPAID购买类型必传
-                     * @return TimeSpan 购买时长，PREPAID购买类型必传
+                     * 获取<p>购买时长，PREPAID购买类型必传</p>
+                     * @return TimeSpan <p>购买时长，PREPAID购买类型必传</p>
                      * 
                      */
                     int64_t GetTimeSpan() const;
 
                     /**
-                     * 设置购买时长，PREPAID购买类型必传
-                     * @param _timeSpan 购买时长，PREPAID购买类型必传
+                     * 设置<p>购买时长，PREPAID购买类型必传</p>
+                     * @param _timeSpan <p>购买时长，PREPAID购买类型必传</p>
                      * 
                      */
                     void SetTimeSpan(const int64_t& _timeSpan);
@@ -261,15 +253,15 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取时长单位，可选值为：m,d。PREPAID购买类型必传
-                     * @return TimeUnit 时长单位，可选值为：m,d。PREPAID购买类型必传
+                     * 获取<p>时长单位，可选值为：m,d。PREPAID购买类型必传</p>
+                     * @return TimeUnit <p>时长单位，可选值为：m,d。PREPAID购买类型必传</p>
                      * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
-                     * 设置时长单位，可选值为：m,d。PREPAID购买类型必传
-                     * @param _timeUnit 时长单位，可选值为：m,d。PREPAID购买类型必传
+                     * 设置<p>时长单位，可选值为：m,d。PREPAID购买类型必传</p>
+                     * @param _timeUnit <p>时长单位，可选值为：m,d。PREPAID购买类型必传</p>
                      * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
@@ -281,75 +273,127 @@ namespace TencentCloud
                      */
                     bool TimeUnitHasBeenSet() const;
 
+                    /**
+                     * 获取<p>存储架构类型。 枚举值：1.0/2.0 默认值：1.0</p>
+                     * @return StorageVersion <p>存储架构类型。 枚举值：1.0/2.0 默认值：1.0</p>
+                     * 
+                     */
+                    std::string GetStorageVersion() const;
+
+                    /**
+                     * 设置<p>存储架构类型。 枚举值：1.0/2.0 默认值：1.0</p>
+                     * @param _storageVersion <p>存储架构类型。 枚举值：1.0/2.0 默认值：1.0</p>
+                     * 
+                     */
+                    void SetStorageVersion(const std::string& _storageVersion);
+
+                    /**
+                     * 判断参数 StorageVersion 是否已赋值
+                     * @return StorageVersion 是否已赋值
+                     * 
+                     */
+                    bool StorageVersionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>存储是否跨AZ，2.0存储架构下有效</p>
+                     * @return IsMultiAz <p>存储是否跨AZ，2.0存储架构下有效</p>
+                     * 
+                     */
+                    bool GetIsMultiAz() const;
+
+                    /**
+                     * 设置<p>存储是否跨AZ，2.0存储架构下有效</p>
+                     * @param _isMultiAz <p>存储是否跨AZ，2.0存储架构下有效</p>
+                     * 
+                     */
+                    void SetIsMultiAz(const bool& _isMultiAz);
+
+                    /**
+                     * 判断参数 IsMultiAz 是否已赋值
+                     * @return IsMultiAz 是否已赋值
+                     * 
+                     */
+                    bool IsMultiAzHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 可用区,每个地域提供最佳实践
+                     * <p>可用区,每个地域提供最佳实践</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 购买计算节点个数
+                     * <p>购买计算节点个数</p>
                      */
                     int64_t m_goodsNum;
                     bool m_goodsNumHasBeenSet;
 
                     /**
-                     * 实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS
+                     * <p>实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS</p>
                      */
                     std::string m_instancePayMode;
                     bool m_instancePayModeHasBeenSet;
 
                     /**
-                     * 存储购买类型，可选值为：PREPAID, POSTPAID
+                     * <p>存储购买类型，可选值为：PREPAID, POSTPAID</p>
                      */
                     std::string m_storagePayMode;
                     bool m_storagePayModeHasBeenSet;
 
                     /**
-                     * 实例设备类型，支持值如下：
-- common：表示通用型
-- exclusive：表示独享型
+                     * <p>实例设备类型，支持值如下：</p><ul><li>common：表示通用型</li><li>exclusive：表示独享型</li></ul>
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;
 
                     /**
-                     * CPU核数，PREPAID与POSTPAID实例类型必传
+                     * <p>CPU核数，PREPAID与POSTPAID实例类型必传</p>
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 内存大小，单位G，PREPAID与POSTPAID实例类型必传
+                     * <p>内存大小，单位G，PREPAID与POSTPAID实例类型必传</p>
                      */
                     int64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * Ccu大小，serverless类型必传
+                     * <p>Ccu大小，serverless类型必传</p>
                      */
                     double m_ccu;
                     bool m_ccuHasBeenSet;
 
                     /**
-                     * 存储大小，PREPAID存储类型必传
+                     * <p>存储大小，PREPAID存储类型必传</p>
                      */
                     int64_t m_storageLimit;
                     bool m_storageLimitHasBeenSet;
 
                     /**
-                     * 购买时长，PREPAID购买类型必传
+                     * <p>购买时长，PREPAID购买类型必传</p>
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 时长单位，可选值为：m,d。PREPAID购买类型必传
+                     * <p>时长单位，可选值为：m,d。PREPAID购买类型必传</p>
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
+
+                    /**
+                     * <p>存储架构类型。 枚举值：1.0/2.0 默认值：1.0</p>
+                     */
+                    std::string m_storageVersion;
+                    bool m_storageVersionHasBeenSet;
+
+                    /**
+                     * <p>存储是否跨AZ，2.0存储架构下有效</p>
+                     */
+                    bool m_isMultiAz;
+                    bool m_isMultiAzHasBeenSet;
 
                 };
             }

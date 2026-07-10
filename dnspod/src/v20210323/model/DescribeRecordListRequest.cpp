@@ -35,7 +35,8 @@ DescribeRecordListRequest::DescribeRecordListRequest() :
     m_sortTypeHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_errorOnEmptyHasBeenSet(false)
+    m_errorOnEmptyHasBeenSet(false),
+    m_subDomainHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,14 @@ string DescribeRecordListRequest::ToJsonString() const
         string key = "ErrorOnEmpty";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_errorOnEmpty.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubDomain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subDomain.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -364,6 +373,22 @@ void DescribeRecordListRequest::SetErrorOnEmpty(const string& _errorOnEmpty)
 bool DescribeRecordListRequest::ErrorOnEmptyHasBeenSet() const
 {
     return m_errorOnEmptyHasBeenSet;
+}
+
+string DescribeRecordListRequest::GetSubDomain() const
+{
+    return m_subDomain;
+}
+
+void DescribeRecordListRequest::SetSubDomain(const string& _subDomain)
+{
+    m_subDomain = _subDomain;
+    m_subDomainHasBeenSet = true;
+}
+
+bool DescribeRecordListRequest::SubDomainHasBeenSet() const
+{
+    return m_subDomainHasBeenSet;
 }
 
 

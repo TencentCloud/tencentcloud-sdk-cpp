@@ -299,6 +299,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/PrometheusInstancesItem.h
   include/tencentcloud/monitor/v20180724/model/DescribeConditionsTemplateListRequest.h
   include/tencentcloud/monitor/v20180724/model/DeletePrometheusRecordRuleYamlResponse.h
+  include/tencentcloud/monitor/v20180724/model/EnablePredefinedPoliciesRequest.h
   include/tencentcloud/monitor/v20180724/model/MetricDataPoint.h
   include/tencentcloud/monitor/v20180724/model/GetMonitorDataRequest.h
   include/tencentcloud/monitor/v20180724/model/CreateRecordingRuleRequest.h
@@ -331,6 +332,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/CreatePrometheusClusterAgentRequest.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyConditionResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribePrometheusInstancesOverviewResponse.h
+  include/tencentcloud/monitor/v20180724/model/EnablePredefinedPoliciesResponse.h
   include/tencentcloud/monitor/v20180724/model/MetricSet.h
   include/tencentcloud/monitor/v20180724/model/PrometheusInstanceGrantInfo.h
   include/tencentcloud/monitor/v20180724/model/RoutePrometheusDynamicAPIRequest.h
@@ -875,6 +877,7 @@ set(monitor_src
   src/v20180724/model/PrometheusInstancesItem.cpp
   src/v20180724/model/DescribeConditionsTemplateListRequest.cpp
   src/v20180724/model/DeletePrometheusRecordRuleYamlResponse.cpp
+  src/v20180724/model/EnablePredefinedPoliciesRequest.cpp
   src/v20180724/model/MetricDataPoint.cpp
   src/v20180724/model/GetMonitorDataRequest.cpp
   src/v20180724/model/CreateRecordingRuleRequest.cpp
@@ -907,6 +910,7 @@ set(monitor_src
   src/v20180724/model/CreatePrometheusClusterAgentRequest.cpp
   src/v20180724/model/ModifyAlarmPolicyConditionResponse.cpp
   src/v20180724/model/DescribePrometheusInstancesOverviewResponse.cpp
+  src/v20180724/model/EnablePredefinedPoliciesResponse.cpp
   src/v20180724/model/MetricSet.cpp
   src/v20180724/model/PrometheusInstanceGrantInfo.cpp
   src/v20180724/model/RoutePrometheusDynamicAPIRequest.cpp

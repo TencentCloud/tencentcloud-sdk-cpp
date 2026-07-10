@@ -25,7 +25,8 @@ using namespace std;
 PreviewPGUserMigrationsRequest::PreviewPGUserMigrationsRequest() :
     m_envIdHasBeenSet(false),
     m_migrationsHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+    m_sourceHasBeenSet(false),
+    m_includeAllHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,14 @@ string PreviewPGUserMigrationsRequest::ToJsonString() const
         string key = "Source";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_source.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_includeAllHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncludeAll";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_includeAll, allocator);
     }
 
 
@@ -121,6 +130,22 @@ void PreviewPGUserMigrationsRequest::SetSource(const string& _source)
 bool PreviewPGUserMigrationsRequest::SourceHasBeenSet() const
 {
     return m_sourceHasBeenSet;
+}
+
+bool PreviewPGUserMigrationsRequest::GetIncludeAll() const
+{
+    return m_includeAll;
+}
+
+void PreviewPGUserMigrationsRequest::SetIncludeAll(const bool& _includeAll)
+{
+    m_includeAll = _includeAll;
+    m_includeAllHasBeenSet = true;
+}
+
+bool PreviewPGUserMigrationsRequest::IncludeAllHasBeenSet() const
+{
+    return m_includeAllHasBeenSet;
 }
 
 

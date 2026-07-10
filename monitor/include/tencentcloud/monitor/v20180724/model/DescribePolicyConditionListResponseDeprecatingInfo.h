@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否隐藏
+                     * 获取<p>是否隐藏</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Hidden 是否隐藏
+                     * @return Hidden <p>是否隐藏</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetHidden() const;
 
                     /**
-                     * 设置是否隐藏
+                     * 设置<p>是否隐藏</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hidden 是否隐藏
+                     * @param _hidden <p>是否隐藏</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool HiddenHasBeenSet() const;
 
                     /**
-                     * 获取新视图名称
+                     * 获取<p>新视图名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NewViewNames 新视图名称
+                     * @return NewViewNames <p>新视图名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetNewViewNames() const;
 
                     /**
-                     * 设置新视图名称
+                     * 设置<p>新视图名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _newViewNames 新视图名称
+                     * @param _newViewNames <p>新视图名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool NewViewNamesHasBeenSet() const;
 
                     /**
-                     * 获取描述
+                     * 获取<p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 描述
+                     * @return Description <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
+                     * 设置<p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 描述
+                     * @param _description <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,21 +124,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否隐藏
+                     * <p>是否隐藏</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_hidden;
                     bool m_hiddenHasBeenSet;
 
                     /**
-                     * 新视图名称
+                     * <p>新视图名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_newViewNames;
                     bool m_newViewNamesHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;

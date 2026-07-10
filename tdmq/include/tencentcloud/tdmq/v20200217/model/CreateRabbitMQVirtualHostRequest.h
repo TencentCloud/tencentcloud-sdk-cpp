@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID，形如amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
-                     * @return InstanceId 实例 ID，形如amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
+                     * 获取<p>实例 ID，形如amqp-xxxxxxxx。有效的 InstanceId 可通过登录 <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ 控制台</a>查询。</p>
+                     * @return InstanceId <p>实例 ID，形如amqp-xxxxxxxx。有效的 InstanceId 可通过登录 <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ 控制台</a>查询。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID，形如amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
-                     * @param _instanceId 实例 ID，形如amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
+                     * 设置<p>实例 ID，形如amqp-xxxxxxxx。有效的 InstanceId 可通过登录 <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ 控制台</a>查询。</p>
+                     * @param _instanceId <p>实例 ID，形如amqp-xxxxxxxx。有效的 InstanceId 可通过登录 <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ 控制台</a>查询。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取vhost名
-                     * @return VirtualHost vhost名
+                     * 获取<p>vhost名</p>
+                     * @return VirtualHost <p>vhost名</p>
                      * 
                      */
                     std::string GetVirtualHost() const;
 
                     /**
-                     * 设置vhost名
-                     * @param _virtualHost vhost名
+                     * 设置<p>vhost名</p>
+                     * @param _virtualHost <p>vhost名</p>
                      * 
                      */
                     void SetVirtualHost(const std::string& _virtualHost);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool VirtualHostHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
+                     * 获取<p>描述</p>
+                     * @return Description <p>描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
-                     * @param _description 描述
+                     * 设置<p>描述</p>
+                     * @param _description <p>描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取消息轨迹开关,true打开,false关闭,默认关闭
-                     * @return TraceFlag 消息轨迹开关,true打开,false关闭,默认关闭
+                     * 获取<p>消息轨迹开关,true打开,false关闭,默认关闭</p>
+                     * @return TraceFlag <p>消息轨迹开关,true打开,false关闭,默认关闭</p>
                      * 
                      */
                     bool GetTraceFlag() const;
 
                     /**
-                     * 设置消息轨迹开关,true打开,false关闭,默认关闭
-                     * @param _traceFlag 消息轨迹开关,true打开,false关闭,默认关闭
+                     * 设置<p>消息轨迹开关,true打开,false关闭,默认关闭</p>
+                     * @param _traceFlag <p>消息轨迹开关,true打开,false关闭,默认关闭</p>
                      * 
                      */
                     void SetTraceFlag(const bool& _traceFlag);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool TraceFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否创建镜像队列策略，默认值 true
-                     * @return MirrorQueuePolicyFlag 是否创建镜像队列策略，默认值 true
+                     * 获取<p>是否创建镜像队列策略，默认值 true。该参数对4.x集群不生效。</p>
+                     * @return MirrorQueuePolicyFlag <p>是否创建镜像队列策略，默认值 true。该参数对4.x集群不生效。</p>
                      * 
                      */
                     bool GetMirrorQueuePolicyFlag() const;
 
                     /**
-                     * 设置是否创建镜像队列策略，默认值 true
-                     * @param _mirrorQueuePolicyFlag 是否创建镜像队列策略，默认值 true
+                     * 设置<p>是否创建镜像队列策略，默认值 true。该参数对4.x集群不生效。</p>
+                     * @param _mirrorQueuePolicyFlag <p>是否创建镜像队列策略，默认值 true。该参数对4.x集群不生效。</p>
                      * 
                      */
                     void SetMirrorQueuePolicyFlag(const bool& _mirrorQueuePolicyFlag);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID，形如amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
+                     * <p>实例 ID，形如amqp-xxxxxxxx。有效的 InstanceId 可通过登录 <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ 控制台</a>查询。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * vhost名
+                     * <p>vhost名</p>
                      */
                     std::string m_virtualHost;
                     bool m_virtualHostHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 消息轨迹开关,true打开,false关闭,默认关闭
+                     * <p>消息轨迹开关,true打开,false关闭,默认关闭</p>
                      */
                     bool m_traceFlag;
                     bool m_traceFlagHasBeenSet;
 
                     /**
-                     * 是否创建镜像队列策略，默认值 true
+                     * <p>是否创建镜像队列策略，默认值 true。该参数对4.x集群不生效。</p>
                      */
                     bool m_mirrorQueuePolicyFlag;
                     bool m_mirrorQueuePolicyFlagHasBeenSet;

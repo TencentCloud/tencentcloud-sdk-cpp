@@ -42,7 +42,34 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>流程ID</p>
+                     * @return FlowId <p>流程ID</p>
+                     * 
+                     */
+                    int64_t GetFlowId() const;
+
+                    /**
+                     * 设置<p>流程ID</p>
+                     * @param _flowId <p>流程ID</p>
+                     * 
+                     */
+                    void SetFlowId(const int64_t& _flowId);
+
+                    /**
+                     * 判断参数 FlowId 是否已赋值
+                     * @return FlowId 是否已赋值
+                     * 
+                     */
+                    bool FlowIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>流程ID</p>
+                     */
+                    int64_t m_flowId;
+                    bool m_flowIdHasBeenSet;
 
                 };
             }

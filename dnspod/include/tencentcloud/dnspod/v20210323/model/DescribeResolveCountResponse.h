@@ -47,8 +47,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取解析量明细
-                     * @return Data 解析量明细
+                     * 获取<p>解析量明细</p>
+                     * @return Data <p>解析量明细</p>
                      * 
                      */
                     std::vector<ResolveCountDataItem> GetData() const;
@@ -61,8 +61,8 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取解析量统计信息
-                     * @return Info 解析量统计信息
+                     * 获取<p>解析量统计信息</p>
+                     * @return Info <p>解析量统计信息</p>
                      * 
                      */
                     ResolveCountInfo GetInfo() const;
@@ -75,8 +75,8 @@ namespace TencentCloud
                     bool InfoHasBeenSet() const;
 
                     /**
-                     * 获取别名解析量明细
-                     * @return AliasData 别名解析量明细
+                     * 获取<p>别名解析量明细</p>
+                     * @return AliasData <p>别名解析量明细</p>
                      * 
                      */
                     std::vector<ResolveCountAliasItem> GetAliasData() const;
@@ -91,19 +91,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 解析量明细
+                     * <p>解析量明细</p>
                      */
                     std::vector<ResolveCountDataItem> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 解析量统计信息
+                     * <p>解析量统计信息</p>
                      */
                     ResolveCountInfo m_info;
                     bool m_infoHasBeenSet;
 
                     /**
-                     * 别名解析量明细
+                     * <p>别名解析量明细</p>
                      */
                     std::vector<ResolveCountAliasItem> m_aliasData;
                     bool m_aliasDataHasBeenSet;

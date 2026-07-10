@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取事件id
-                     * @return EventId 事件id
+                     * 获取<p>事件id</p>
+                     * @return EventId <p>事件id</p>
                      * 
                      */
                     int64_t GetEventId() const;
 
                     /**
-                     * 设置事件id
-                     * @param _eventId 事件id
+                     * 设置<p>事件id</p>
+                     * @param _eventId <p>事件id</p>
                      * 
                      */
                     void SetEventId(const int64_t& _eventId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool EventIdHasBeenSet() const;
 
                     /**
-                     * 获取事件名称
-                     * @return EventShowName 事件名称
+                     * 获取<p>事件名称</p>
+                     * @return EventShowName <p>事件名称</p>
                      * 
                      */
                     std::string GetEventShowName() const;
 
                     /**
-                     * 设置事件名称
-                     * @param _eventShowName 事件名称
+                     * 设置<p>事件名称</p>
+                     * @param _eventShowName <p>事件名称</p>
                      * 
                      */
                     void SetEventShowName(const std::string& _eventShowName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool EventShowNameHasBeenSet() const;
 
                     /**
-                     * 获取是否需要恢复
-                     * @return NeedRecovered 是否需要恢复
+                     * 获取<p>是否需要恢复</p>
+                     * @return NeedRecovered <p>是否需要恢复</p>
                      * 
                      */
                     bool GetNeedRecovered() const;
 
                     /**
-                     * 设置是否需要恢复
-                     * @param _needRecovered 是否需要恢复
+                     * 设置<p>是否需要恢复</p>
+                     * @param _needRecovered <p>是否需要恢复</p>
                      * 
                      */
                     void SetNeedRecovered(const bool& _needRecovered);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool NeedRecoveredHasBeenSet() const;
 
                     /**
-                     * 获取事件类型，预留字段，当前固定取值为2
-                     * @return Type 事件类型，预留字段，当前固定取值为2
+                     * 获取<p>事件类型，预留字段，当前固定取值为2</p>
+                     * @return Type <p>事件类型，预留字段，当前固定取值为2</p>
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置事件类型，预留字段，当前固定取值为2
-                     * @param _type 事件类型，预留字段，当前固定取值为2
+                     * 设置<p>事件类型，预留字段，当前固定取值为2</p>
+                     * @param _type <p>事件类型，预留字段，当前固定取值为2</p>
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -133,25 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 事件id
+                     * <p>事件id</p>
                      */
                     int64_t m_eventId;
                     bool m_eventIdHasBeenSet;
 
                     /**
-                     * 事件名称
+                     * <p>事件名称</p>
                      */
                     std::string m_eventShowName;
                     bool m_eventShowNameHasBeenSet;
 
                     /**
-                     * 是否需要恢复
+                     * <p>是否需要恢复</p>
                      */
                     bool m_needRecovered;
                     bool m_needRecoveredHasBeenSet;
 
                     /**
-                     * 事件类型，预留字段，当前固定取值为2
+                     * <p>事件类型，预留字段，当前固定取值为2</p>
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;

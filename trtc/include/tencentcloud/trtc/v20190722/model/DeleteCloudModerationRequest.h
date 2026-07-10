@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。
-                     * @return SdkAppId TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。
+                     * 获取<p>TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。</p>
+                     * @return SdkAppId <p>TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。</p>
                      * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
-                     * 设置TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。
-                     * @param _sdkAppId TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。
+                     * 设置<p>TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。</p>
+                     * @param _sdkAppId <p>TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。</p>
                      * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取审核任务的唯一Id，在启动切片任务成功后会返回。
-                     * @return TaskId 审核任务的唯一Id，在启动切片任务成功后会返回。
+                     * 获取<p>AI 内容理解任务的唯一Id，在启动切片任务成功后会返回。</p>
+                     * @return TaskId <p>AI 内容理解任务的唯一Id，在启动切片任务成功后会返回。</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置审核任务的唯一Id，在启动切片任务成功后会返回。
-                     * @param _taskId 审核任务的唯一Id，在启动切片任务成功后会返回。
+                     * 设置<p>AI 内容理解任务的唯一Id，在启动切片任务成功后会返回。</p>
+                     * @param _taskId <p>AI 内容理解任务的唯一Id，在启动切片任务成功后会返回。</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。
+                     * <p>TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。</p>
                      */
                     uint64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 审核任务的唯一Id，在启动切片任务成功后会返回。
+                     * <p>AI 内容理解任务的唯一Id，在启动切片任务成功后会返回。</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

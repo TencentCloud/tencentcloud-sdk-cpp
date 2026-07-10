@@ -53,7 +53,9 @@ DomainInfo::DomainInfo() :
     m_isSubDomainHasBeenSet(false),
     m_tagListHasBeenSet(false),
     m_searchEnginePushHasBeenSet(false),
-    m_slaveDNSHasBeenSet(false)
+    m_slaveDNSHasBeenSet(false),
+    m_dNSStatusHasBeenSet(false),
+    m_cNAMESpeedupHasBeenSet(false)
 {
 }
 
@@ -408,6 +410,26 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
         m_slaveDNSHasBeenSet = true;
     }
 
+    if (value.HasMember("DNSStatus") && !value["DNSStatus"].IsNull())
+    {
+        if (!value["DNSStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.DNSStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dNSStatus = string(value["DNSStatus"].GetString());
+        m_dNSStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("CNAMESpeedup") && !value["CNAMESpeedup"].IsNull())
+    {
+        if (!value["CNAMESpeedup"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.CNAMESpeedup` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cNAMESpeedup = string(value["CNAMESpeedup"].GetString());
+        m_cNAMESpeedupHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -694,6 +716,22 @@ void DomainInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "SlaveDNS";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_slaveDNS.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dNSStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DNSStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dNSStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cNAMESpeedupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CNAMESpeedup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cNAMESpeedup.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1225,5 +1263,37 @@ void DomainInfo::SetSlaveDNS(const string& _slaveDNS)
 bool DomainInfo::SlaveDNSHasBeenSet() const
 {
     return m_slaveDNSHasBeenSet;
+}
+
+string DomainInfo::GetDNSStatus() const
+{
+    return m_dNSStatus;
+}
+
+void DomainInfo::SetDNSStatus(const string& _dNSStatus)
+{
+    m_dNSStatus = _dNSStatus;
+    m_dNSStatusHasBeenSet = true;
+}
+
+bool DomainInfo::DNSStatusHasBeenSet() const
+{
+    return m_dNSStatusHasBeenSet;
+}
+
+string DomainInfo::GetCNAMESpeedup() const
+{
+    return m_cNAMESpeedup;
+}
+
+void DomainInfo::SetCNAMESpeedup(const string& _cNAMESpeedup)
+{
+    m_cNAMESpeedup = _cNAMESpeedup;
+    m_cNAMESpeedupHasBeenSet = true;
+}
+
+bool DomainInfo::CNAMESpeedupHasBeenSet() const
+{
+    return m_cNAMESpeedupHasBeenSet;
 }
 

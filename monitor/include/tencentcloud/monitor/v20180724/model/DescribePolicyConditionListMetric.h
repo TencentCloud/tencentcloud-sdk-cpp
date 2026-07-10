@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指标配置
+                     * 获取<p>指标配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ConfigManual 指标配置
+                     * @return ConfigManual <p>指标配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribePolicyConditionListConfigManual GetConfigManual() const;
 
                     /**
-                     * 设置指标配置
+                     * 设置<p>指标配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _configManual 指标配置
+                     * @param _configManual <p>指标配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,15 +73,15 @@ namespace TencentCloud
                     bool ConfigManualHasBeenSet() const;
 
                     /**
-                     * 获取指标id
-                     * @return MetricId 指标id
+                     * 获取<p>指标id</p>
+                     * @return MetricId <p>指标id</p>
                      * 
                      */
                     int64_t GetMetricId() const;
 
                     /**
-                     * 设置指标id
-                     * @param _metricId 指标id
+                     * 设置<p>指标id</p>
+                     * @param _metricId <p>指标id</p>
                      * 
                      */
                     void SetMetricId(const int64_t& _metricId);
@@ -94,15 +94,15 @@ namespace TencentCloud
                     bool MetricIdHasBeenSet() const;
 
                     /**
-                     * 获取指标名称
-                     * @return MetricShowName 指标名称
+                     * 获取<p>指标名称</p>
+                     * @return MetricShowName <p>指标名称</p>
                      * 
                      */
                     std::string GetMetricShowName() const;
 
                     /**
-                     * 设置指标名称
-                     * @param _metricShowName 指标名称
+                     * 设置<p>指标名称</p>
+                     * @param _metricShowName <p>指标名称</p>
                      * 
                      */
                     void SetMetricShowName(const std::string& _metricShowName);
@@ -115,15 +115,15 @@ namespace TencentCloud
                     bool MetricShowNameHasBeenSet() const;
 
                     /**
-                     * 获取指标单位
-                     * @return MetricUnit 指标单位
+                     * 获取<p>指标单位</p>
+                     * @return MetricUnit <p>指标单位</p>
                      * 
                      */
                     std::string GetMetricUnit() const;
 
                     /**
-                     * 设置指标单位
-                     * @param _metricUnit 指标单位
+                     * 设置<p>指标单位</p>
+                     * @param _metricUnit <p>指标单位</p>
                      * 
                      */
                     void SetMetricUnit(const std::string& _metricUnit);
@@ -138,26 +138,26 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 指标配置
+                     * <p>指标配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribePolicyConditionListConfigManual m_configManual;
                     bool m_configManualHasBeenSet;
 
                     /**
-                     * 指标id
+                     * <p>指标id</p>
                      */
                     int64_t m_metricId;
                     bool m_metricIdHasBeenSet;
 
                     /**
-                     * 指标名称
+                     * <p>指标名称</p>
                      */
                     std::string m_metricShowName;
                     bool m_metricShowNameHasBeenSet;
 
                     /**
-                     * 指标单位
+                     * <p>指标单位</p>
                      */
                     std::string m_metricUnit;
                     bool m_metricUnitHasBeenSet;

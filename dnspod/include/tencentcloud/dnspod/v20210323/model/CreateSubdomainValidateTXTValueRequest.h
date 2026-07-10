@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要添加的子域名 Zone 域。
-                     * @return DomainZone 要添加的子域名 Zone 域。
+                     * 获取<p>要添加的子域名 Zone 域。</p>
+                     * @return DomainZone <p>要添加的子域名 Zone 域。</p>
                      * 
                      */
                     std::string GetDomainZone() const;
 
                     /**
-                     * 设置要添加的子域名 Zone 域。
-                     * @param _domainZone 要添加的子域名 Zone 域。
+                     * 设置<p>要添加的子域名 Zone 域。</p>
+                     * @param _domainZone <p>要添加的子域名 Zone 域。</p>
                      * 
                      */
                     void SetDomainZone(const std::string& _domainZone);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要添加的子域名 Zone 域。
+                     * <p>要添加的子域名 Zone 域。</p>
                      */
                     std::string m_domainZone;
                     bool m_domainZoneHasBeenSet;

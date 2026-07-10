@@ -44,27 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤器。通过指定的过滤条件来查询健康检查模版，支持：
-- Name的值为**HealthCheckTemplateName**。通过名称来筛选健康检查模版。**Values**的值为模版名称列表。
-- Name的值为**HealthCheckProtocol**。通过健康检查协议来筛选健康检查模版。**Values**的值为协议列表。
-- 通过标签方式筛选。
-                     * @return Filters 过滤器。通过指定的过滤条件来查询健康检查模版，支持：
-- Name的值为**HealthCheckTemplateName**。通过名称来筛选健康检查模版。**Values**的值为模版名称列表。
-- Name的值为**HealthCheckProtocol**。通过健康检查协议来筛选健康检查模版。**Values**的值为协议列表。
-- 通过标签方式筛选。
+                     * 获取<p>过滤器。通过指定的过滤条件来查询健康检查模板，支持：</p><ul><li>Name的值为<strong>HealthCheckTemplateName</strong>。通过名称来筛选健康检查模板。<strong>Values</strong>的值为模板名称列表。</li><li>Name的值为<strong>HealthCheckProtocol</strong>。通过健康检查协议来筛选健康检查模板。<strong>Values</strong>的值为协议列表。</li><li>通过标签方式筛选。</li></ul>
+                     * @return Filters <p>过滤器。通过指定的过滤条件来查询健康检查模板，支持：</p><ul><li>Name的值为<strong>HealthCheckTemplateName</strong>。通过名称来筛选健康检查模板。<strong>Values</strong>的值为模板名称列表。</li><li>Name的值为<strong>HealthCheckProtocol</strong>。通过健康检查协议来筛选健康检查模板。<strong>Values</strong>的值为协议列表。</li><li>通过标签方式筛选。</li></ul>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤器。通过指定的过滤条件来查询健康检查模版，支持：
-- Name的值为**HealthCheckTemplateName**。通过名称来筛选健康检查模版。**Values**的值为模版名称列表。
-- Name的值为**HealthCheckProtocol**。通过健康检查协议来筛选健康检查模版。**Values**的值为协议列表。
-- 通过标签方式筛选。
-                     * @param _filters 过滤器。通过指定的过滤条件来查询健康检查模版，支持：
-- Name的值为**HealthCheckTemplateName**。通过名称来筛选健康检查模版。**Values**的值为模版名称列表。
-- Name的值为**HealthCheckProtocol**。通过健康检查协议来筛选健康检查模版。**Values**的值为协议列表。
-- 通过标签方式筛选。
+                     * 设置<p>过滤器。通过指定的过滤条件来查询健康检查模板，支持：</p><ul><li>Name的值为<strong>HealthCheckTemplateName</strong>。通过名称来筛选健康检查模板。<strong>Values</strong>的值为模板名称列表。</li><li>Name的值为<strong>HealthCheckProtocol</strong>。通过健康检查协议来筛选健康检查模板。<strong>Values</strong>的值为协议列表。</li><li>通过标签方式筛选。</li></ul>
+                     * @param _filters <p>过滤器。通过指定的过滤条件来查询健康检查模板，支持：</p><ul><li>Name的值为<strong>HealthCheckTemplateName</strong>。通过名称来筛选健康检查模板。<strong>Values</strong>的值为模板名称列表。</li><li>Name的值为<strong>HealthCheckProtocol</strong>。通过健康检查协议来筛选健康检查模板。<strong>Values</strong>的值为协议列表。</li><li>通过标签方式筛选。</li></ul>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -77,15 +65,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取健康检查模板 ID 列表，ID 格式为 hct- 后接字母数字。
-                     * @return HealthCheckTemplateIds 健康检查模板 ID 列表，ID 格式为 hct- 后接字母数字。
+                     * 获取<p>健康检查模板 ID 列表，ID 格式为 hct- 后接字母数字。</p>
+                     * @return HealthCheckTemplateIds <p>健康检查模板 ID 列表，ID 格式为 hct- 后接字母数字。</p>
                      * 
                      */
                     std::vector<std::string> GetHealthCheckTemplateIds() const;
 
                     /**
-                     * 设置健康检查模板 ID 列表，ID 格式为 hct- 后接字母数字。
-                     * @param _healthCheckTemplateIds 健康检查模板 ID 列表，ID 格式为 hct- 后接字母数字。
+                     * 设置<p>健康检查模板 ID 列表，ID 格式为 hct- 后接字母数字。</p>
+                     * @param _healthCheckTemplateIds <p>健康检查模板 ID 列表，ID 格式为 hct- 后接字母数字。</p>
                      * 
                      */
                     void SetHealthCheckTemplateIds(const std::vector<std::string>& _healthCheckTemplateIds);
@@ -98,15 +86,15 @@ namespace TencentCloud
                     bool HealthCheckTemplateIdsHasBeenSet() const;
 
                     /**
-                     * 获取返回列表的数量，默认为20，最大值为100。
-                     * @return MaxResults 返回列表的数量，默认为20，最大值为100。
+                     * 获取<p>返回列表的数量，默认为20，最大值为100。</p>
+                     * @return MaxResults <p>返回列表的数量，默认为20，最大值为100。</p>
                      * 
                      */
                     std::string GetMaxResults() const;
 
                     /**
-                     * 设置返回列表的数量，默认为20，最大值为100。
-                     * @param _maxResults 返回列表的数量，默认为20，最大值为100。
+                     * 设置<p>返回列表的数量，默认为20，最大值为100。</p>
+                     * @param _maxResults <p>返回列表的数量，默认为20，最大值为100。</p>
                      * 
                      */
                     void SetMaxResults(const std::string& _maxResults);
@@ -119,19 +107,15 @@ namespace TencentCloud
                     bool MaxResultsHasBeenSet() const;
 
                     /**
-                     * 获取下一次查询的Token值。第一次查询和没有下一次查询时，无需填写。
-如果有下一次查询，取值为上一次 API 调用返回的 NextToken 值。
-                     * @return NextToken 下一次查询的Token值。第一次查询和没有下一次查询时，无需填写。
-如果有下一次查询，取值为上一次 API 调用返回的 NextToken 值。
+                     * 获取<p>下一次查询的Token值。第一次查询和没有下一次查询时，无需填写。<br>如果有下一次查询，取值为上一次 API 调用返回的 NextToken 值。</p>
+                     * @return NextToken <p>下一次查询的Token值。第一次查询和没有下一次查询时，无需填写。<br>如果有下一次查询，取值为上一次 API 调用返回的 NextToken 值。</p>
                      * 
                      */
                     std::string GetNextToken() const;
 
                     /**
-                     * 设置下一次查询的Token值。第一次查询和没有下一次查询时，无需填写。
-如果有下一次查询，取值为上一次 API 调用返回的 NextToken 值。
-                     * @param _nextToken 下一次查询的Token值。第一次查询和没有下一次查询时，无需填写。
-如果有下一次查询，取值为上一次 API 调用返回的 NextToken 值。
+                     * 设置<p>下一次查询的Token值。第一次查询和没有下一次查询时，无需填写。<br>如果有下一次查询，取值为上一次 API 调用返回的 NextToken 值。</p>
+                     * @param _nextToken <p>下一次查询的Token值。第一次查询和没有下一次查询时，无需填写。<br>如果有下一次查询，取值为上一次 API 调用返回的 NextToken 值。</p>
                      * 
                      */
                     void SetNextToken(const std::string& _nextToken);
@@ -146,29 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 过滤器。通过指定的过滤条件来查询健康检查模版，支持：
-- Name的值为**HealthCheckTemplateName**。通过名称来筛选健康检查模版。**Values**的值为模版名称列表。
-- Name的值为**HealthCheckProtocol**。通过健康检查协议来筛选健康检查模版。**Values**的值为协议列表。
-- 通过标签方式筛选。
+                     * <p>过滤器。通过指定的过滤条件来查询健康检查模板，支持：</p><ul><li>Name的值为<strong>HealthCheckTemplateName</strong>。通过名称来筛选健康检查模板。<strong>Values</strong>的值为模板名称列表。</li><li>Name的值为<strong>HealthCheckProtocol</strong>。通过健康检查协议来筛选健康检查模板。<strong>Values</strong>的值为协议列表。</li><li>通过标签方式筛选。</li></ul>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 健康检查模板 ID 列表，ID 格式为 hct- 后接字母数字。
+                     * <p>健康检查模板 ID 列表，ID 格式为 hct- 后接字母数字。</p>
                      */
                     std::vector<std::string> m_healthCheckTemplateIds;
                     bool m_healthCheckTemplateIdsHasBeenSet;
 
                     /**
-                     * 返回列表的数量，默认为20，最大值为100。
+                     * <p>返回列表的数量，默认为20，最大值为100。</p>
                      */
                     std::string m_maxResults;
                     bool m_maxResultsHasBeenSet;
 
                     /**
-                     * 下一次查询的Token值。第一次查询和没有下一次查询时，无需填写。
-如果有下一次查询，取值为上一次 API 调用返回的 NextToken 值。
+                     * <p>下一次查询的Token值。第一次查询和没有下一次查询时，无需填写。<br>如果有下一次查询，取值为上一次 API 调用返回的 NextToken 值。</p>
                      */
                     std::string m_nextToken;
                     bool m_nextTokenHasBeenSet;

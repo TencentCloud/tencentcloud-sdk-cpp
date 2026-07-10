@@ -271,6 +271,8 @@
 #include <tencentcloud/monitor/v20180724/model/EnableGrafanaInternetResponse.h>
 #include <tencentcloud/monitor/v20180724/model/EnableGrafanaSSORequest.h>
 #include <tencentcloud/monitor/v20180724/model/EnableGrafanaSSOResponse.h>
+#include <tencentcloud/monitor/v20180724/model/EnablePredefinedPoliciesRequest.h>
+#include <tencentcloud/monitor/v20180724/model/EnablePredefinedPoliciesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/EnableSSOCamCheckRequest.h>
 #include <tencentcloud/monitor/v20180724/model/EnableSSOCamCheckResponse.h>
 #include <tencentcloud/monitor/v20180724/model/ExportPrometheusReadOnlyDynamicAPIRequest.h>
@@ -765,6 +767,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnableGrafanaSSOResponse> EnableGrafanaSSOOutcome;
                 typedef std::future<EnableGrafanaSSOOutcome> EnableGrafanaSSOOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::EnableGrafanaSSORequest&, EnableGrafanaSSOOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableGrafanaSSOAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnablePredefinedPoliciesResponse> EnablePredefinedPoliciesOutcome;
+                typedef std::future<EnablePredefinedPoliciesOutcome> EnablePredefinedPoliciesOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::EnablePredefinedPoliciesRequest&, EnablePredefinedPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnablePredefinedPoliciesAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableSSOCamCheckResponse> EnableSSOCamCheckOutcome;
                 typedef std::future<EnableSSOCamCheckOutcome> EnableSSOCamCheckOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::EnableSSOCamCheckRequest&, EnableSSOCamCheckOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableSSOCamCheckAsyncHandler;
@@ -2068,6 +2073,15 @@ namespace TencentCloud
                 EnableGrafanaSSOOutcome EnableGrafanaSSO(const Model::EnableGrafanaSSORequest &request);
                 void EnableGrafanaSSOAsync(const Model::EnableGrafanaSSORequest& request, const EnableGrafanaSSOAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableGrafanaSSOOutcomeCallable EnableGrafanaSSOCallable(const Model::EnableGrafanaSSORequest& request);
+
+                /**
+                 *一键启用（创建）某个云产品下的预设策略
+                 * @param req EnablePredefinedPoliciesRequest
+                 * @return EnablePredefinedPoliciesOutcome
+                 */
+                EnablePredefinedPoliciesOutcome EnablePredefinedPolicies(const Model::EnablePredefinedPoliciesRequest &request);
+                void EnablePredefinedPoliciesAsync(const Model::EnablePredefinedPoliciesRequest& request, const EnablePredefinedPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnablePredefinedPoliciesOutcomeCallable EnablePredefinedPoliciesCallable(const Model::EnablePredefinedPoliciesRequest& request);
 
                 /**
                  *SSO单点登录时，设置是否cam鉴权

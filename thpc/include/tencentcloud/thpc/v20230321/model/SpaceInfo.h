@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作空间ID
-                     * @return SpaceId 工作空间ID
+                     * 获取<p>工作空间ID</p>
+                     * @return SpaceId <p>工作空间ID</p>
                      * 
                      */
                     std::string GetSpaceId() const;
 
                     /**
-                     * 设置工作空间ID
-                     * @param _spaceId 工作空间ID
+                     * 设置<p>工作空间ID</p>
+                     * @param _spaceId <p>工作空间ID</p>
                      * 
                      */
                     void SetSpaceId(const std::string& _spaceId);
@@ -70,15 +70,36 @@ namespace TencentCloud
                     bool SpaceIdHasBeenSet() const;
 
                     /**
-                     * 获取工作空间类型
-                     * @return SpaceFamily 工作空间类型
+                     * 获取<p>工作空间类别</p>
+                     * @return SpaceClass <p>工作空间类别</p>
+                     * 
+                     */
+                    std::string GetSpaceClass() const;
+
+                    /**
+                     * 设置<p>工作空间类别</p>
+                     * @param _spaceClass <p>工作空间类别</p>
+                     * 
+                     */
+                    void SetSpaceClass(const std::string& _spaceClass);
+
+                    /**
+                     * 判断参数 SpaceClass 是否已赋值
+                     * @return SpaceClass 是否已赋值
+                     * 
+                     */
+                    bool SpaceClassHasBeenSet() const;
+
+                    /**
+                     * 获取<p>工作空间类型</p>
+                     * @return SpaceFamily <p>工作空间类型</p>
                      * 
                      */
                     std::string GetSpaceFamily() const;
 
                     /**
-                     * 设置工作空间类型
-                     * @param _spaceFamily 工作空间类型
+                     * 设置<p>工作空间类型</p>
+                     * @param _spaceFamily <p>工作空间类型</p>
                      * 
                      */
                     void SetSpaceFamily(const std::string& _spaceFamily);
@@ -91,15 +112,15 @@ namespace TencentCloud
                     bool SpaceFamilyHasBeenSet() const;
 
                     /**
-                     * 获取工作空间规格
-                     * @return SpaceType 工作空间规格
+                     * 获取<p>工作空间规格</p>
+                     * @return SpaceType <p>工作空间规格</p>
                      * 
                      */
                     std::string GetSpaceType() const;
 
                     /**
-                     * 设置工作空间规格
-                     * @param _spaceType 工作空间规格
+                     * 设置<p>工作空间规格</p>
+                     * @param _spaceType <p>工作空间规格</p>
                      * 
                      */
                     void SetSpaceType(const std::string& _spaceType);
@@ -112,15 +133,15 @@ namespace TencentCloud
                     bool SpaceTypeHasBeenSet() const;
 
                     /**
-                     * 获取工作空间名称
-                     * @return SpaceName 工作空间名称
+                     * 获取<p>工作空间名称</p>
+                     * @return SpaceName <p>工作空间名称</p>
                      * 
                      */
                     std::string GetSpaceName() const;
 
                     /**
-                     * 设置工作空间名称
-                     * @param _spaceName 工作空间名称
+                     * 设置<p>工作空间名称</p>
+                     * @param _spaceName <p>工作空间名称</p>
                      * 
                      */
                     void SetSpaceName(const std::string& _spaceName);
@@ -133,15 +154,15 @@ namespace TencentCloud
                     bool SpaceNameHasBeenSet() const;
 
                     /**
-                     * 获取工作空间状态。取值范围：<br><li>PENDING：表示创建中<br></li><li>LAUNCH_FAILED：表示创建失败<br></li><li>ONLINE：表示运行中<br></li><li>ARREARS：表示隔离中<br></li><li>TERMINATING：表示销毁中。<br></li>
-                     * @return SpaceState 工作空间状态。取值范围：<br><li>PENDING：表示创建中<br></li><li>LAUNCH_FAILED：表示创建失败<br></li><li>ONLINE：表示运行中<br></li><li>ARREARS：表示隔离中<br></li><li>TERMINATING：表示销毁中。<br></li>
+                     * 获取<p>工作空间状态。取值范围：<br><li>PENDING：表示创建中<br></li><li>LAUNCH_FAILED：表示创建失败<br></li><li>ONLINE：表示运行中<br></li><li>ARREARS：表示隔离中<br></li><li>TERMINATING：表示销毁中。<br></li></p>
+                     * @return SpaceState <p>工作空间状态。取值范围：<br><li>PENDING：表示创建中<br></li><li>LAUNCH_FAILED：表示创建失败<br></li><li>ONLINE：表示运行中<br></li><li>ARREARS：表示隔离中<br></li><li>TERMINATING：表示销毁中。<br></li></p>
                      * 
                      */
                     std::string GetSpaceState() const;
 
                     /**
-                     * 设置工作空间状态。取值范围：<br><li>PENDING：表示创建中<br></li><li>LAUNCH_FAILED：表示创建失败<br></li><li>ONLINE：表示运行中<br></li><li>ARREARS：表示隔离中<br></li><li>TERMINATING：表示销毁中。<br></li>
-                     * @param _spaceState 工作空间状态。取值范围：<br><li>PENDING：表示创建中<br></li><li>LAUNCH_FAILED：表示创建失败<br></li><li>ONLINE：表示运行中<br></li><li>ARREARS：表示隔离中<br></li><li>TERMINATING：表示销毁中。<br></li>
+                     * 设置<p>工作空间状态。取值范围：<br><li>PENDING：表示创建中<br></li><li>LAUNCH_FAILED：表示创建失败<br></li><li>ONLINE：表示运行中<br></li><li>ARREARS：表示隔离中<br></li><li>TERMINATING：表示销毁中。<br></li></p>
+                     * @param _spaceState <p>工作空间状态。取值范围：<br><li>PENDING：表示创建中<br></li><li>LAUNCH_FAILED：表示创建失败<br></li><li>ONLINE：表示运行中<br></li><li>ARREARS：表示隔离中<br></li><li>TERMINATING：表示销毁中。<br></li></p>
                      * 
                      */
                     void SetSpaceState(const std::string& _spaceState);
@@ -154,15 +175,15 @@ namespace TencentCloud
                     bool SpaceStateHasBeenSet() const;
 
                     /**
-                     * 获取工作空间计费模式
-                     * @return SpaceChargeType 工作空间计费模式
+                     * 获取<p>工作空间计费模式</p>
+                     * @return SpaceChargeType <p>工作空间计费模式</p>
                      * 
                      */
                     std::string GetSpaceChargeType() const;
 
                     /**
-                     * 设置工作空间计费模式
-                     * @param _spaceChargeType 工作空间计费模式
+                     * 设置<p>工作空间计费模式</p>
+                     * @param _spaceChargeType <p>工作空间计费模式</p>
                      * 
                      */
                     void SetSpaceChargeType(const std::string& _spaceChargeType);
@@ -175,15 +196,15 @@ namespace TencentCloud
                     bool SpaceChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取工作空间对应资源ID
-                     * @return ResourceId 工作空间对应资源ID
+                     * 获取<p>工作空间对应资源ID</p>
+                     * @return ResourceId <p>工作空间对应资源ID</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置工作空间对应资源ID
-                     * @param _resourceId 工作空间对应资源ID
+                     * 设置<p>工作空间对应资源ID</p>
+                     * @param _resourceId <p>工作空间对应资源ID</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -196,15 +217,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标识
-                     * @return RenewFlag 自动续费标识
+                     * 获取<p>自动续费标识</p>
+                     * @return RenewFlag <p>自动续费标识</p>
                      * 
                      */
                     std::string GetRenewFlag() const;
 
                     /**
-                     * 设置自动续费标识
-                     * @param _renewFlag 自动续费标识
+                     * 设置<p>自动续费标识</p>
+                     * @param _renewFlag <p>自动续费标识</p>
                      * 
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
@@ -217,15 +238,15 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取工作空间关联的工作列表
-                     * @return Tags 工作空间关联的工作列表
+                     * 获取<p>工作空间关联的工作列表</p>
+                     * @return Tags <p>工作空间关联的工作列表</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置工作空间关联的工作列表
-                     * @param _tags 工作空间关联的工作列表
+                     * 设置<p>工作空间关联的工作列表</p>
+                     * @param _tags <p>工作空间关联的工作列表</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -238,15 +259,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreatedTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreatedTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createdTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createdTime <p>创建时间</p>
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -259,15 +280,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取到期时间
-                     * @return ExpiredTime 到期时间
+                     * 获取<p>到期时间</p>
+                     * @return ExpiredTime <p>到期时间</p>
                      * 
                      */
                     std::string GetExpiredTime() const;
 
                     /**
-                     * 设置到期时间
-                     * @param _expiredTime 到期时间
+                     * 设置<p>到期时间</p>
+                     * @param _expiredTime <p>到期时间</p>
                      * 
                      */
                     void SetExpiredTime(const std::string& _expiredTime);
@@ -280,15 +301,15 @@ namespace TencentCloud
                     bool ExpiredTimeHasBeenSet() const;
 
                     /**
-                     * 获取工作空间所在位置
-                     * @return Placement 工作空间所在位置
+                     * 获取<p>工作空间所在位置</p>
+                     * @return Placement <p>工作空间所在位置</p>
                      * 
                      */
                     Placement GetPlacement() const;
 
                     /**
-                     * 设置工作空间所在位置
-                     * @param _placement 工作空间所在位置
+                     * 设置<p>工作空间所在位置</p>
+                     * @param _placement <p>工作空间所在位置</p>
                      * 
                      */
                     void SetPlacement(const Placement& _placement);
@@ -301,18 +322,18 @@ namespace TencentCloud
                     bool PlacementHasBeenSet() const;
 
                     /**
-                     * 获取工作空间的最新操作
+                     * 获取<p>工作空间的最新操作</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LatestOperation 工作空间的最新操作
+                     * @return LatestOperation <p>工作空间的最新操作</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLatestOperation() const;
 
                     /**
-                     * 设置工作空间的最新操作
+                     * 设置<p>工作空间的最新操作</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _latestOperation 工作空间的最新操作
+                     * @param _latestOperation <p>工作空间的最新操作</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -326,18 +347,18 @@ namespace TencentCloud
                     bool LatestOperationHasBeenSet() const;
 
                     /**
-                     * 获取工作空间的最新操作状态
+                     * 获取<p>工作空间的最新操作状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LatestOperationState 工作空间的最新操作状态
+                     * @return LatestOperationState <p>工作空间的最新操作状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLatestOperationState() const;
 
                     /**
-                     * 设置工作空间的最新操作状态
+                     * 设置<p>工作空间的最新操作状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _latestOperationState 工作空间的最新操作状态
+                     * @param _latestOperationState <p>工作空间的最新操作状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -350,93 +371,126 @@ namespace TencentCloud
                      */
                     bool LatestOperationStateHasBeenSet() const;
 
+                    /**
+                     * 获取<p>实例的内网IP</p>
+                     * @return PrivateIpAddresses <p>实例的内网IP</p>
+                     * 
+                     */
+                    std::vector<std::string> GetPrivateIpAddresses() const;
+
+                    /**
+                     * 设置<p>实例的内网IP</p>
+                     * @param _privateIpAddresses <p>实例的内网IP</p>
+                     * 
+                     */
+                    void SetPrivateIpAddresses(const std::vector<std::string>& _privateIpAddresses);
+
+                    /**
+                     * 判断参数 PrivateIpAddresses 是否已赋值
+                     * @return PrivateIpAddresses 是否已赋值
+                     * 
+                     */
+                    bool PrivateIpAddressesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 工作空间ID
+                     * <p>工作空间ID</p>
                      */
                     std::string m_spaceId;
                     bool m_spaceIdHasBeenSet;
 
                     /**
-                     * 工作空间类型
+                     * <p>工作空间类别</p>
+                     */
+                    std::string m_spaceClass;
+                    bool m_spaceClassHasBeenSet;
+
+                    /**
+                     * <p>工作空间类型</p>
                      */
                     std::string m_spaceFamily;
                     bool m_spaceFamilyHasBeenSet;
 
                     /**
-                     * 工作空间规格
+                     * <p>工作空间规格</p>
                      */
                     std::string m_spaceType;
                     bool m_spaceTypeHasBeenSet;
 
                     /**
-                     * 工作空间名称
+                     * <p>工作空间名称</p>
                      */
                     std::string m_spaceName;
                     bool m_spaceNameHasBeenSet;
 
                     /**
-                     * 工作空间状态。取值范围：<br><li>PENDING：表示创建中<br></li><li>LAUNCH_FAILED：表示创建失败<br></li><li>ONLINE：表示运行中<br></li><li>ARREARS：表示隔离中<br></li><li>TERMINATING：表示销毁中。<br></li>
+                     * <p>工作空间状态。取值范围：<br><li>PENDING：表示创建中<br></li><li>LAUNCH_FAILED：表示创建失败<br></li><li>ONLINE：表示运行中<br></li><li>ARREARS：表示隔离中<br></li><li>TERMINATING：表示销毁中。<br></li></p>
                      */
                     std::string m_spaceState;
                     bool m_spaceStateHasBeenSet;
 
                     /**
-                     * 工作空间计费模式
+                     * <p>工作空间计费模式</p>
                      */
                     std::string m_spaceChargeType;
                     bool m_spaceChargeTypeHasBeenSet;
 
                     /**
-                     * 工作空间对应资源ID
+                     * <p>工作空间对应资源ID</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 自动续费标识
+                     * <p>自动续费标识</p>
                      */
                     std::string m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 工作空间关联的工作列表
+                     * <p>工作空间关联的工作列表</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 到期时间
+                     * <p>到期时间</p>
                      */
                     std::string m_expiredTime;
                     bool m_expiredTimeHasBeenSet;
 
                     /**
-                     * 工作空间所在位置
+                     * <p>工作空间所在位置</p>
                      */
                     Placement m_placement;
                     bool m_placementHasBeenSet;
 
                     /**
-                     * 工作空间的最新操作
+                     * <p>工作空间的最新操作</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_latestOperation;
                     bool m_latestOperationHasBeenSet;
 
                     /**
-                     * 工作空间的最新操作状态
+                     * <p>工作空间的最新操作状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_latestOperationState;
                     bool m_latestOperationStateHasBeenSet;
+
+                    /**
+                     * <p>实例的内网IP</p>
+                     */
+                    std::vector<std::string> m_privateIpAddresses;
+                    bool m_privateIpAddressesHasBeenSet;
 
                 };
             }

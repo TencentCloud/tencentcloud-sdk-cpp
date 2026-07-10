@@ -86,6 +86,27 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
+                     * 获取转发规则列表。
+                     * @return Rules 转发规则列表。
+                     * 
+                     */
+                    std::vector<RuleInput> GetRules() const;
+
+                    /**
+                     * 设置转发规则列表。
+                     * @param _rules 转发规则列表。
+                     * 
+                     */
+                    void SetRules(const std::vector<RuleInput>& _rules);
+
+                    /**
+                     * 判断参数 Rules 是否已赋值
+                     * @return Rules 是否已赋值
+                     * 
+                     */
+                    bool RulesHasBeenSet() const;
+
+                    /**
                      * 获取客户端Token，用于保证请求的幂等性。  从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符。  若您未指定，则系统自动使用API请求的RequestId作为ClientToken标识。每次API请求的RequestId不一样。
                      * @return ClientToken 客户端Token，用于保证请求的幂等性。  从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符。  若您未指定，则系统自动使用API请求的RequestId作为ClientToken标识。每次API请求的RequestId不一样。
                      * 
@@ -127,27 +148,6 @@ namespace TencentCloud
                      */
                     bool DryRunHasBeenSet() const;
 
-                    /**
-                     * 获取转发规则列表。
-                     * @return Rules 转发规则列表。
-                     * 
-                     */
-                    std::vector<RuleInput> GetRules() const;
-
-                    /**
-                     * 设置转发规则列表。
-                     * @param _rules 转发规则列表。
-                     * 
-                     */
-                    void SetRules(const std::vector<RuleInput>& _rules);
-
-                    /**
-                     * 判断参数 Rules 是否已赋值
-                     * @return Rules 是否已赋值
-                     * 
-                     */
-                    bool RulesHasBeenSet() const;
-
                 private:
 
                     /**
@@ -163,6 +163,12 @@ namespace TencentCloud
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
+                     * 转发规则列表。
+                     */
+                    std::vector<RuleInput> m_rules;
+                    bool m_rulesHasBeenSet;
+
+                    /**
                      * 客户端Token，用于保证请求的幂等性。  从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符。  若您未指定，则系统自动使用API请求的RequestId作为ClientToken标识。每次API请求的RequestId不一样。
                      */
                     std::string m_clientToken;
@@ -173,12 +179,6 @@ namespace TencentCloud
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;
-
-                    /**
-                     * 转发规则列表。
-                     */
-                    std::vector<RuleInput> m_rules;
-                    bool m_rulesHasBeenSet;
 
                 };
             }

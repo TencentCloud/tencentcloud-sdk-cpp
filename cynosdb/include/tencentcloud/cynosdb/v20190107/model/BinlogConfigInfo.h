@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取binlog保留时间
-                     * @return BinlogSaveDays binlog保留时间
+                     * 获取<p>binlog保留时间</p>
+                     * @return BinlogSaveDays <p>binlog保留时间</p>
                      * 
                      */
                     int64_t GetBinlogSaveDays() const;
 
                     /**
-                     * 设置binlog保留时间
-                     * @param _binlogSaveDays binlog保留时间
+                     * 设置<p>binlog保留时间</p>
+                     * @param _binlogSaveDays <p>binlog保留时间</p>
                      * 
                      */
                     void SetBinlogSaveDays(const int64_t& _binlogSaveDays);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool BinlogSaveDaysHasBeenSet() const;
 
                     /**
-                     * 获取binlog异地地域备份是否开启
-                     * @return BinlogCrossRegionsEnable binlog异地地域备份是否开启
+                     * 获取<p>binlog异地地域备份是否开启</p>
+                     * @return BinlogCrossRegionsEnable <p>binlog异地地域备份是否开启</p>
                      * 
                      */
                     std::string GetBinlogCrossRegionsEnable() const;
 
                     /**
-                     * 设置binlog异地地域备份是否开启
-                     * @param _binlogCrossRegionsEnable binlog异地地域备份是否开启
+                     * 设置<p>binlog异地地域备份是否开启</p>
+                     * @param _binlogCrossRegionsEnable <p>binlog异地地域备份是否开启</p>
                      * 
                      */
                     void SetBinlogCrossRegionsEnable(const std::string& _binlogCrossRegionsEnable);
@@ -90,18 +90,18 @@ namespace TencentCloud
                     bool BinlogCrossRegionsEnableHasBeenSet() const;
 
                     /**
-                     * 获取binlog异地地域
+                     * 获取<p>binlog异地地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BinlogCrossRegions binlog异地地域
+                     * @return BinlogCrossRegions <p>binlog异地地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetBinlogCrossRegions() const;
 
                     /**
-                     * 设置binlog异地地域
+                     * 设置<p>binlog异地地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _binlogCrossRegions binlog异地地域
+                     * @param _binlogCrossRegions <p>binlog异地地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -115,15 +115,36 @@ namespace TencentCloud
                     bool BinlogCrossRegionsHasBeenSet() const;
 
                     /**
-                     * 获取保险箱信息
-                     * @return AutoCopyVaults 保险箱信息
+                     * 获取<p>跨地域备份保留时间</p><p>单位：天</p>
+                     * @return BinlogCrossRegionSaveDays <p>跨地域备份保留时间</p><p>单位：天</p>
+                     * 
+                     */
+                    int64_t GetBinlogCrossRegionSaveDays() const;
+
+                    /**
+                     * 设置<p>跨地域备份保留时间</p><p>单位：天</p>
+                     * @param _binlogCrossRegionSaveDays <p>跨地域备份保留时间</p><p>单位：天</p>
+                     * 
+                     */
+                    void SetBinlogCrossRegionSaveDays(const int64_t& _binlogCrossRegionSaveDays);
+
+                    /**
+                     * 判断参数 BinlogCrossRegionSaveDays 是否已赋值
+                     * @return BinlogCrossRegionSaveDays 是否已赋值
+                     * 
+                     */
+                    bool BinlogCrossRegionSaveDaysHasBeenSet() const;
+
+                    /**
+                     * 获取<p>保险箱信息</p>
+                     * @return AutoCopyVaults <p>保险箱信息</p>
                      * 
                      */
                     std::vector<CreateBackupVaultItem> GetAutoCopyVaults() const;
 
                     /**
-                     * 设置保险箱信息
-                     * @param _autoCopyVaults 保险箱信息
+                     * 设置<p>保险箱信息</p>
+                     * @param _autoCopyVaults <p>保险箱信息</p>
                      * 
                      */
                     void SetAutoCopyVaults(const std::vector<CreateBackupVaultItem>& _autoCopyVaults);
@@ -138,26 +159,32 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * binlog保留时间
+                     * <p>binlog保留时间</p>
                      */
                     int64_t m_binlogSaveDays;
                     bool m_binlogSaveDaysHasBeenSet;
 
                     /**
-                     * binlog异地地域备份是否开启
+                     * <p>binlog异地地域备份是否开启</p>
                      */
                     std::string m_binlogCrossRegionsEnable;
                     bool m_binlogCrossRegionsEnableHasBeenSet;
 
                     /**
-                     * binlog异地地域
+                     * <p>binlog异地地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_binlogCrossRegions;
                     bool m_binlogCrossRegionsHasBeenSet;
 
                     /**
-                     * 保险箱信息
+                     * <p>跨地域备份保留时间</p><p>单位：天</p>
+                     */
+                    int64_t m_binlogCrossRegionSaveDays;
+                    bool m_binlogCrossRegionSaveDaysHasBeenSet;
+
+                    /**
+                     * <p>保险箱信息</p>
                      */
                     std::vector<CreateBackupVaultItem> m_autoCopyVaults;
                     bool m_autoCopyVaultsHasBeenSet;

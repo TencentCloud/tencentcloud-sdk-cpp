@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取上游任务详情
-                     * @return Data 上游任务详情
+                     * 获取<p>上游任务详情</p>
+                     * @return Data <p>上游任务详情</p>
                      * 
                      */
                     ParentDependencyConfigPage GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 上游任务详情
+                     * <p>上游任务详情</p>
                      */
                     ParentDependencyConfigPage m_data;
                     bool m_dataHasBeenSet;

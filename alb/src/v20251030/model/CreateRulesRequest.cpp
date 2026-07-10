@@ -25,9 +25,9 @@ using namespace std;
 CreateRulesRequest::CreateRulesRequest() :
     m_listenerIdHasBeenSet(false),
     m_loadBalancerIdHasBeenSet(false),
+    m_rulesHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
-    m_dryRunHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -54,6 +54,21 @@ string CreateRulesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_loadBalancerId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_rulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Rules";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_rules.begin(); itr != m_rules.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_clientTokenHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -68,21 +83,6 @@ string CreateRulesRequest::ToJsonString() const
         string key = "DryRun";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dryRun, allocator);
-    }
-
-    if (m_rulesHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Rules";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_rules.begin(); itr != m_rules.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
     }
 
 
@@ -125,6 +125,22 @@ bool CreateRulesRequest::LoadBalancerIdHasBeenSet() const
     return m_loadBalancerIdHasBeenSet;
 }
 
+vector<RuleInput> CreateRulesRequest::GetRules() const
+{
+    return m_rules;
+}
+
+void CreateRulesRequest::SetRules(const vector<RuleInput>& _rules)
+{
+    m_rules = _rules;
+    m_rulesHasBeenSet = true;
+}
+
+bool CreateRulesRequest::RulesHasBeenSet() const
+{
+    return m_rulesHasBeenSet;
+}
+
 string CreateRulesRequest::GetClientToken() const
 {
     return m_clientToken;
@@ -155,22 +171,6 @@ void CreateRulesRequest::SetDryRun(const bool& _dryRun)
 bool CreateRulesRequest::DryRunHasBeenSet() const
 {
     return m_dryRunHasBeenSet;
-}
-
-vector<RuleInput> CreateRulesRequest::GetRules() const
-{
-    return m_rules;
-}
-
-void CreateRulesRequest::SetRules(const vector<RuleInput>& _rules)
-{
-    m_rules = _rules;
-    m_rulesHasBeenSet = true;
-}
-
-bool CreateRulesRequest::RulesHasBeenSet() const
-{
-    return m_rulesHasBeenSet;
 }
 
 

@@ -47,35 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取cfs的存储类型
-  // HP:通用性能型
-  // SD:通用标准型
-  // TP:turbo性能型
-  // TB:turbo标准型
-  // THP:吞吐型
-                     * @return CFSStorageType cfs的存储类型
-  // HP:通用性能型
-  // SD:通用标准型
-  // TP:turbo性能型
-  // TB:turbo标准型
-  // THP:吞吐型
+                     * 获取<p>cfs的存储类型<br>  // HP:通用性能型<br>  // SD:通用标准型<br>  // TP:turbo性能型<br>  // TB:turbo标准型<br>  // THP:吞吐型</p>
+                     * @return CFSStorageType <p>cfs的存储类型<br>  // HP:通用性能型<br>  // SD:通用标准型<br>  // TP:turbo性能型<br>  // TB:turbo标准型<br>  // THP:吞吐型</p>
                      * 
                      */
                     std::string GetCFSStorageType() const;
 
                     /**
-                     * 设置cfs的存储类型
-  // HP:通用性能型
-  // SD:通用标准型
-  // TP:turbo性能型
-  // TB:turbo标准型
-  // THP:吞吐型
-                     * @param _cFSStorageType cfs的存储类型
-  // HP:通用性能型
-  // SD:通用标准型
-  // TP:turbo性能型
-  // TB:turbo标准型
-  // THP:吞吐型
+                     * 设置<p>cfs的存储类型<br>  // HP:通用性能型<br>  // SD:通用标准型<br>  // TP:turbo性能型<br>  // TB:turbo标准型<br>  // THP:吞吐型</p>
+                     * @param _cFSStorageType <p>cfs的存储类型<br>  // HP:通用性能型<br>  // SD:通用标准型<br>  // TP:turbo性能型<br>  // TB:turbo标准型<br>  // THP:吞吐型</p>
                      * 
                      */
                     void SetCFSStorageType(const std::string& _cFSStorageType);
@@ -88,15 +68,15 @@ namespace TencentCloud
                     bool CFSStorageTypeHasBeenSet() const;
 
                     /**
-                     * 获取cfs的协议
-                     * @return CFSProtocol cfs的协议
+                     * 获取<p>cfs的协议</p>
+                     * @return CFSProtocol <p>cfs的协议</p>
                      * 
                      */
                     std::string GetCFSProtocol() const;
 
                     /**
-                     * 设置cfs的协议
-                     * @param _cFSProtocol cfs的协议
+                     * 设置<p>cfs的协议</p>
+                     * @param _cFSProtocol <p>cfs的协议</p>
                      * 
                      */
                     void SetCFSProtocol(const std::string& _cFSProtocol);
@@ -111,18 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * cfs的存储类型
-  // HP:通用性能型
-  // SD:通用标准型
-  // TP:turbo性能型
-  // TB:turbo标准型
-  // THP:吞吐型
+                     * <p>cfs的存储类型<br>  // HP:通用性能型<br>  // SD:通用标准型<br>  // TP:turbo性能型<br>  // TB:turbo标准型<br>  // THP:吞吐型</p>
                      */
                     std::string m_cFSStorageType;
                     bool m_cFSStorageTypeHasBeenSet;
 
                     /**
-                     * cfs的协议
+                     * <p>cfs的协议</p>
                      */
                     std::string m_cFSProtocol;
                     bool m_cFSProtocolHasBeenSet;

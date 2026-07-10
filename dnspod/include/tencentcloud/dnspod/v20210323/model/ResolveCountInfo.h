@@ -47,36 +47,36 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取当前统计周期解析量总计
-                     * @return DnsTotal 当前统计周期解析量总计
-                     * 
+                     * 获取<p>当前统计周期解析量总计</p>
+                     * @return DnsTotal <p>当前统计周期解析量总计</p>
+                     * @deprecated
                      */
                     uint64_t GetDnsTotal() const;
 
                     /**
-                     * 设置当前统计周期解析量总计
-                     * @param _dnsTotal 当前统计周期解析量总计
-                     * 
+                     * 设置<p>当前统计周期解析量总计</p>
+                     * @param _dnsTotal <p>当前统计周期解析量总计</p>
+                     * @deprecated
                      */
                     void SetDnsTotal(const uint64_t& _dnsTotal);
 
                     /**
                      * 判断参数 DnsTotal 是否已赋值
                      * @return DnsTotal 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DnsTotalHasBeenSet() const;
 
                     /**
-                     * 获取当前查询的域名
-                     * @return Domain 当前查询的域名
+                     * 获取<p>当前查询的域名</p>
+                     * @return Domain <p>当前查询的域名</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置当前查询的域名
-                     * @param _domain 当前查询的域名
+                     * 设置<p>当前查询的域名</p>
+                     * @param _domain <p>当前查询的域名</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取当前统计周期开始时间
-                     * @return StartDate 当前统计周期开始时间
+                     * 获取<p>当前统计周期开始时间</p>
+                     * @return StartDate <p>当前统计周期开始时间</p>
                      * 
                      */
                     std::string GetStartDate() const;
 
                     /**
-                     * 设置当前统计周期开始时间
-                     * @param _startDate 当前统计周期开始时间
+                     * 设置<p>当前统计周期开始时间</p>
+                     * @param _startDate <p>当前统计周期开始时间</p>
                      * 
                      */
                     void SetStartDate(const std::string& _startDate);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool StartDateHasBeenSet() const;
 
                     /**
-                     * 获取当前统计周期结束时间
-                     * @return EndDate 当前统计周期结束时间
+                     * 获取<p>当前统计周期结束时间</p>
+                     * @return EndDate <p>当前统计周期结束时间</p>
                      * 
                      */
                     std::string GetEndDate() const;
 
                     /**
-                     * 设置当前统计周期结束时间
-                     * @param _endDate 当前统计周期结束时间
+                     * 设置<p>当前统计周期结束时间</p>
+                     * @param _endDate <p>当前统计周期结束时间</p>
                      * 
                      */
                     void SetEndDate(const std::string& _endDate);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool EndDateHasBeenSet() const;
 
                     /**
-                     * 获取当前统计的子域名
-                     * @return SubDomain 当前统计的子域名
+                     * 获取<p>当前统计的子域名</p>
+                     * @return SubDomain <p>当前统计的子域名</p>
                      * 
                      */
                     std::string GetSubDomain() const;
 
                     /**
-                     * 设置当前统计的子域名
-                     * @param _subDomain 当前统计的子域名
+                     * 设置<p>当前统计的子域名</p>
+                     * @param _subDomain <p>当前统计的子域名</p>
                      * 
                      */
                     void SetSubDomain(const std::string& _subDomain);
@@ -152,63 +152,117 @@ namespace TencentCloud
                     bool SubDomainHasBeenSet() const;
 
                     /**
-                     * 获取数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据
-                     * @return DnsFormat 数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据
-                     * 
+                     * 获取<p>数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据</p>
+                     * @return DnsFormat <p>数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据</p>
+                     * @deprecated
                      */
                     std::string GetDnsFormat() const;
 
                     /**
-                     * 设置数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据
-                     * @param _dnsFormat 数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据
-                     * 
+                     * 设置<p>数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据</p>
+                     * @param _dnsFormat <p>数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据</p>
+                     * @deprecated
                      */
                     void SetDnsFormat(const std::string& _dnsFormat);
 
                     /**
                      * 判断参数 DnsFormat 是否已赋值
                      * @return DnsFormat 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DnsFormatHasBeenSet() const;
+
+                    /**
+                     * 获取<p>当前统计周期解析量总计</p>
+                     * @return DNSTotal <p>当前统计周期解析量总计</p>
+                     * 
+                     */
+                    uint64_t GetDNSTotal() const;
+
+                    /**
+                     * 设置<p>当前统计周期解析量总计</p>
+                     * @param _dNSTotal <p>当前统计周期解析量总计</p>
+                     * 
+                     */
+                    void SetDNSTotal(const uint64_t& _dNSTotal);
+
+                    /**
+                     * 判断参数 DNSTotal 是否已赋值
+                     * @return DNSTotal 是否已赋值
+                     * 
+                     */
+                    bool DNSTotalHasBeenSet() const;
+
+                    /**
+                     * 获取<p>数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据</p>
+                     * @return DNSFormat <p>数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据</p>
+                     * 
+                     */
+                    std::string GetDNSFormat() const;
+
+                    /**
+                     * 设置<p>数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据</p>
+                     * @param _dNSFormat <p>数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据</p>
+                     * 
+                     */
+                    void SetDNSFormat(const std::string& _dNSFormat);
+
+                    /**
+                     * 判断参数 DNSFormat 是否已赋值
+                     * @return DNSFormat 是否已赋值
+                     * 
+                     */
+                    bool DNSFormatHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 当前统计周期解析量总计
+                     * <p>当前统计周期解析量总计</p>
                      */
                     uint64_t m_dnsTotal;
                     bool m_dnsTotalHasBeenSet;
 
                     /**
-                     * 当前查询的域名
+                     * <p>当前查询的域名</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 当前统计周期开始时间
+                     * <p>当前统计周期开始时间</p>
                      */
                     std::string m_startDate;
                     bool m_startDateHasBeenSet;
 
                     /**
-                     * 当前统计周期结束时间
+                     * <p>当前统计周期结束时间</p>
                      */
                     std::string m_endDate;
                     bool m_endDateHasBeenSet;
 
                     /**
-                     * 当前统计的子域名
+                     * <p>当前统计的子域名</p>
                      */
                     std::string m_subDomain;
                     bool m_subDomainHasBeenSet;
 
                     /**
-                     * 数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据
+                     * <p>数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据</p>
                      */
                     std::string m_dnsFormat;
                     bool m_dnsFormatHasBeenSet;
+
+                    /**
+                     * <p>当前统计周期解析量总计</p>
+                     */
+                    uint64_t m_dNSTotal;
+                    bool m_dNSTotalHasBeenSet;
+
+                    /**
+                     * <p>数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据</p>
+                     */
+                    std::string m_dNSFormat;
+                    bool m_dNSFormatHasBeenSet;
 
                 };
             }

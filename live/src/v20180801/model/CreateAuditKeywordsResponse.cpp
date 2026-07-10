@@ -25,7 +25,8 @@ using namespace std;
 
 CreateAuditKeywordsResponse::CreateAuditKeywordsResponse() :
     m_keywordIdsHasBeenSet(false),
-    m_dupInfosHasBeenSet(false)
+    m_dupInfosHasBeenSet(false),
+    m_keywordsHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,26 @@ CoreInternalOutcome CreateAuditKeywordsResponse::Deserialize(const string &paylo
         m_dupInfosHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Keywords") && !rsp["Keywords"].IsNull())
+    {
+        if (!rsp["Keywords"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Keywords` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Keywords"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AuditKeywordInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_keywords.push_back(item);
+        }
+        m_keywordsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +155,21 @@ string CreateAuditKeywordsResponse::ToJsonString() const
         }
     }
 
+    if (m_keywordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Keywords";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_keywords.begin(); itr != m_keywords.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -164,6 +200,16 @@ vector<AuditKeywordInfo> CreateAuditKeywordsResponse::GetDupInfos() const
 bool CreateAuditKeywordsResponse::DupInfosHasBeenSet() const
 {
     return m_dupInfosHasBeenSet;
+}
+
+vector<AuditKeywordInfo> CreateAuditKeywordsResponse::GetKeywords() const
+{
+    return m_keywords;
+}
+
+bool CreateAuditKeywordsResponse::KeywordsHasBeenSet() const
+{
+    return m_keywordsHasBeenSet;
 }
 
 

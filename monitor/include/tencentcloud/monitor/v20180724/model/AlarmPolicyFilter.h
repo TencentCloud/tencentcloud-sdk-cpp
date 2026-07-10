@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤条件类型 DIMENSION=使用 Dimensions 做过滤
+                     * 获取<p>过滤条件类型 DIMENSION=使用 Dimensions 做过滤</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 过滤条件类型 DIMENSION=使用 Dimensions 做过滤
+                     * @return Type <p>过滤条件类型 DIMENSION=使用 Dimensions 做过滤</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置过滤条件类型 DIMENSION=使用 Dimensions 做过滤
+                     * 设置<p>过滤条件类型 DIMENSION=使用 Dimensions 做过滤</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type 过滤条件类型 DIMENSION=使用 Dimensions 做过滤
+                     * @param _type <p>过滤条件类型 DIMENSION=使用 Dimensions 做过滤</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取AlarmPolicyDimension 二维数组序列化后的json字符串，一维数组之间互为或关系，一维数组内的元素互为与关系
+                     * 获取<p>AlarmPolicyDimension 二维数组序列化后的json字符串，一维数组之间互为或关系，一维数组内的元素互为与关系</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Dimensions AlarmPolicyDimension 二维数组序列化后的json字符串，一维数组之间互为或关系，一维数组内的元素互为与关系
+                     * @return Dimensions <p>AlarmPolicyDimension 二维数组序列化后的json字符串，一维数组之间互为或关系，一维数组内的元素互为与关系</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDimensions() const;
 
                     /**
-                     * 设置AlarmPolicyDimension 二维数组序列化后的json字符串，一维数组之间互为或关系，一维数组内的元素互为与关系
+                     * 设置<p>AlarmPolicyDimension 二维数组序列化后的json字符串，一维数组之间互为或关系，一维数组内的元素互为与关系</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dimensions AlarmPolicyDimension 二维数组序列化后的json字符串，一维数组之间互为或关系，一维数组内的元素互为与关系
+                     * @param _dimensions <p>AlarmPolicyDimension 二维数组序列化后的json字符串，一维数组之间互为或关系，一维数组内的元素互为与关系</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,14 +99,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 过滤条件类型 DIMENSION=使用 Dimensions 做过滤
+                     * <p>过滤条件类型 DIMENSION=使用 Dimensions 做过滤</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * AlarmPolicyDimension 二维数组序列化后的json字符串，一维数组之间互为或关系，一维数组内的元素互为与关系
+                     * <p>AlarmPolicyDimension 二维数组序列化后的json字符串，一维数组之间互为或关系，一维数组内的元素互为与关系</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dimensions;

@@ -34,7 +34,8 @@ Resource::Resource() :
     m_localDiskNumHasBeenSet(false),
     m_diskNumHasBeenSet(false),
     m_gpuDescHasBeenSet(false),
-    m_partitionNumberHasBeenSet(false)
+    m_partitionNumberHasBeenSet(false),
+    m_hCCHpcClusterIdHasBeenSet(false)
 {
 }
 
@@ -203,6 +204,16 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
         m_partitionNumberHasBeenSet = true;
     }
 
+    if (value.HasMember("HCCHpcClusterId") && !value["HCCHpcClusterId"].IsNull())
+    {
+        if (!value["HCCHpcClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.HCCHpcClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hCCHpcClusterId = string(value["HCCHpcClusterId"].GetString());
+        m_hCCHpcClusterIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -334,6 +345,14 @@ void Resource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "PartitionNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_partitionNumber, allocator);
+    }
+
+    if (m_hCCHpcClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HCCHpcClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hCCHpcClusterId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -561,5 +580,21 @@ void Resource::SetPartitionNumber(const int64_t& _partitionNumber)
 bool Resource::PartitionNumberHasBeenSet() const
 {
     return m_partitionNumberHasBeenSet;
+}
+
+string Resource::GetHCCHpcClusterId() const
+{
+    return m_hCCHpcClusterId;
+}
+
+void Resource::SetHCCHpcClusterId(const string& _hCCHpcClusterId)
+{
+    m_hCCHpcClusterId = _hCCHpcClusterId;
+    m_hCCHpcClusterIdHasBeenSet = true;
+}
+
+bool Resource::HCCHpcClusterIdHasBeenSet() const
+{
+    return m_hCCHpcClusterIdHasBeenSet;
 }
 

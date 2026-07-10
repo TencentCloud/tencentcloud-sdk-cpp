@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取该条告警的ID
-                     * @return Id 该条告警的ID
+                     * 获取<p>该条告警的ID</p>
+                     * @return Id <p>该条告警的ID</p>
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置该条告警的ID
-                     * @param _id 该条告警的ID
+                     * 设置<p>该条告警的ID</p>
+                     * @param _id <p>该条告警的ID</p>
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -69,18 +69,18 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取项目ID
+                     * 获取<p>项目ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProjectId 项目ID
+                     * @return ProjectId <p>项目ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目ID
+                     * 设置<p>项目ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _projectId 项目ID
+                     * @param _projectId <p>项目ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -94,18 +94,18 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取项目名称
+                     * 获取<p>项目名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProjectName 项目名称
+                     * @return ProjectName <p>项目名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectName() const;
 
                     /**
-                     * 设置项目名称
+                     * 设置<p>项目名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _projectName 项目名称
+                     * @param _projectName <p>项目名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -119,18 +119,18 @@ namespace TencentCloud
                     bool ProjectNameHasBeenSet() const;
 
                     /**
-                     * 获取告警状态ID，0表示未恢复；1表示已恢复；2,3,5表示数据不足；4表示已失效
+                     * 获取<p>告警状态ID，0表示未恢复；1表示已恢复；2,3,5表示数据不足；4表示已失效</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 告警状态ID，0表示未恢复；1表示已恢复；2,3,5表示数据不足；4表示已失效
+                     * @return Status <p>告警状态ID，0表示未恢复；1表示已恢复；2,3,5表示数据不足；4表示已失效</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置告警状态ID，0表示未恢复；1表示已恢复；2,3,5表示数据不足；4表示已失效
+                     * 设置<p>告警状态ID，0表示未恢复；1表示已恢复；2,3,5表示数据不足；4表示已失效</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 告警状态ID，0表示未恢复；1表示已恢复；2,3,5表示数据不足；4表示已失效
+                     * @param _status <p>告警状态ID，0表示未恢复；1表示已恢复；2,3,5表示数据不足；4表示已失效</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -144,18 +144,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取告警状态，ALARM表示未恢复；OK表示已恢复；NO_DATA表示数据不足；NO_CONF表示已失效
+                     * 获取<p>告警状态，ALARM表示未恢复；OK表示已恢复；NO_DATA表示数据不足；NO_CONF表示已失效</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlarmStatus 告警状态，ALARM表示未恢复；OK表示已恢复；NO_DATA表示数据不足；NO_CONF表示已失效
+                     * @return AlarmStatus <p>告警状态，ALARM表示未恢复；OK表示已恢复；NO_DATA表示数据不足；NO_CONF表示已失效</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAlarmStatus() const;
 
                     /**
-                     * 设置告警状态，ALARM表示未恢复；OK表示已恢复；NO_DATA表示数据不足；NO_CONF表示已失效
+                     * 设置<p>告警状态，ALARM表示未恢复；OK表示已恢复；NO_DATA表示数据不足；NO_CONF表示已失效</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _alarmStatus 告警状态，ALARM表示未恢复；OK表示已恢复；NO_DATA表示数据不足；NO_CONF表示已失效
+                     * @param _alarmStatus <p>告警状态，ALARM表示未恢复；OK表示已恢复；NO_DATA表示数据不足；NO_CONF表示已失效</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -169,18 +169,18 @@ namespace TencentCloud
                     bool AlarmStatusHasBeenSet() const;
 
                     /**
-                     * 获取策略组ID
+                     * 获取<p>策略组ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupId 策略组ID
+                     * @return GroupId <p>策略组ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
-                     * 设置策略组ID
+                     * 设置<p>策略组ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _groupId 策略组ID
+                     * @param _groupId <p>策略组ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -194,18 +194,18 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取策略组名
+                     * 获取<p>策略组名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupName 策略组名
+                     * @return GroupName <p>策略组名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置策略组名
+                     * 设置<p>策略组名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _groupName 策略组名
+                     * @param _groupName <p>策略组名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -219,18 +219,18 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取发生时间
+                     * 获取<p>发生时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FirstOccurTime 发生时间
+                     * @return FirstOccurTime <p>发生时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFirstOccurTime() const;
 
                     /**
-                     * 设置发生时间
+                     * 设置<p>发生时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _firstOccurTime 发生时间
+                     * @param _firstOccurTime <p>发生时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -244,18 +244,18 @@ namespace TencentCloud
                     bool FirstOccurTimeHasBeenSet() const;
 
                     /**
-                     * 获取持续时间，单位s
+                     * 获取<p>持续时间，单位s</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Duration 持续时间，单位s
+                     * @return Duration <p>持续时间，单位s</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDuration() const;
 
                     /**
-                     * 设置持续时间，单位s
+                     * 设置<p>持续时间，单位s</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _duration 持续时间，单位s
+                     * @param _duration <p>持续时间，单位s</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -269,18 +269,18 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
+                     * 获取<p>结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastOccurTime 结束时间
+                     * @return LastOccurTime <p>结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastOccurTime() const;
 
                     /**
-                     * 设置结束时间
+                     * 设置<p>结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lastOccurTime 结束时间
+                     * @param _lastOccurTime <p>结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -294,18 +294,18 @@ namespace TencentCloud
                     bool LastOccurTimeHasBeenSet() const;
 
                     /**
-                     * 获取告警内容
+                     * 获取<p>告警内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Content 告警内容
+                     * @return Content <p>告警内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置告警内容
+                     * 设置<p>告警内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _content 告警内容
+                     * @param _content <p>告警内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -319,18 +319,18 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取告警对象
+                     * 获取<p>告警对象</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ObjName 告警对象
+                     * @return ObjName <p>告警对象</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetObjName() const;
 
                     /**
-                     * 设置告警对象
+                     * 设置<p>告警对象</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _objName 告警对象
+                     * @param _objName <p>告警对象</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -344,18 +344,18 @@ namespace TencentCloud
                     bool ObjNameHasBeenSet() const;
 
                     /**
-                     * 获取告警对象ID
+                     * 获取<p>告警对象ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ObjId 告警对象ID
+                     * @return ObjId <p>告警对象ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetObjId() const;
 
                     /**
-                     * 设置告警对象ID
+                     * 设置<p>告警对象ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _objId 告警对象ID
+                     * @param _objId <p>告警对象ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -369,18 +369,18 @@ namespace TencentCloud
                     bool ObjIdHasBeenSet() const;
 
                     /**
-                     * 获取策略类型
+                     * 获取<p>策略类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ViewName 策略类型
+                     * @return ViewName <p>策略类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetViewName() const;
 
                     /**
-                     * 设置策略类型
+                     * 设置<p>策略类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _viewName 策略类型
+                     * @param _viewName <p>策略类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -394,18 +394,18 @@ namespace TencentCloud
                     bool ViewNameHasBeenSet() const;
 
                     /**
-                     * 获取VPC，只有CVM有
+                     * 获取<p>VPC，只有CVM有</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Vpc VPC，只有CVM有
+                     * @return Vpc <p>VPC，只有CVM有</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpc() const;
 
                     /**
-                     * 设置VPC，只有CVM有
+                     * 设置<p>VPC，只有CVM有</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vpc VPC，只有CVM有
+                     * @param _vpc <p>VPC，只有CVM有</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -419,18 +419,18 @@ namespace TencentCloud
                     bool VpcHasBeenSet() const;
 
                     /**
-                     * 获取指标ID
+                     * 获取<p>指标ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MetricId 指标ID
+                     * @return MetricId <p>指标ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMetricId() const;
 
                     /**
-                     * 设置指标ID
+                     * 设置<p>指标ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _metricId 指标ID
+                     * @param _metricId <p>指标ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -444,18 +444,18 @@ namespace TencentCloud
                     bool MetricIdHasBeenSet() const;
 
                     /**
-                     * 获取指标名
+                     * 获取<p>指标名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MetricName 指标名
+                     * @return MetricName <p>指标名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMetricName() const;
 
                     /**
-                     * 设置指标名
+                     * 设置<p>指标名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _metricName 指标名
+                     * @param _metricName <p>指标名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -469,18 +469,18 @@ namespace TencentCloud
                     bool MetricNameHasBeenSet() const;
 
                     /**
-                     * 获取告警类型，0表示指标告警，2表示产品事件告警，3表示平台事件告警
+                     * 获取<p>告警类型，0表示指标告警，2表示产品事件告警，3表示平台事件告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlarmType 告警类型，0表示指标告警，2表示产品事件告警，3表示平台事件告警
+                     * @return AlarmType <p>告警类型，0表示指标告警，2表示产品事件告警，3表示平台事件告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAlarmType() const;
 
                     /**
-                     * 设置告警类型，0表示指标告警，2表示产品事件告警，3表示平台事件告警
+                     * 设置<p>告警类型，0表示指标告警，2表示产品事件告警，3表示平台事件告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _alarmType 告警类型，0表示指标告警，2表示产品事件告警，3表示平台事件告警
+                     * @param _alarmType <p>告警类型，0表示指标告警，2表示产品事件告警，3表示平台事件告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -494,18 +494,18 @@ namespace TencentCloud
                     bool AlarmTypeHasBeenSet() const;
 
                     /**
-                     * 获取地域
+                     * 获取<p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Region 地域
+                     * @return Region <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域
+                     * 设置<p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _region 地域
+                     * @param _region <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -519,18 +519,18 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取告警对象维度信息
+                     * 获取<p>告警对象维度信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Dimensions 告警对象维度信息
+                     * @return Dimensions <p>告警对象维度信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDimensions() const;
 
                     /**
-                     * 设置告警对象维度信息
+                     * 设置<p>告警对象维度信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dimensions 告警对象维度信息
+                     * @param _dimensions <p>告警对象维度信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -544,18 +544,18 @@ namespace TencentCloud
                     bool DimensionsHasBeenSet() const;
 
                     /**
-                     * 获取通知方式
+                     * 获取<p>通知方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NotifyWay 通知方式
+                     * @return NotifyWay <p>通知方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetNotifyWay() const;
 
                     /**
-                     * 设置通知方式
+                     * 设置<p>通知方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _notifyWay 通知方式
+                     * @param _notifyWay <p>通知方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -569,18 +569,18 @@ namespace TencentCloud
                     bool NotifyWayHasBeenSet() const;
 
                     /**
-                     * 获取所属实例组信息
+                     * 获取<p>所属实例组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceGroup 所属实例组信息
+                     * @return InstanceGroup <p>所属实例组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InstanceGroup> GetInstanceGroup() const;
 
                     /**
-                     * 设置所属实例组信息
+                     * 设置<p>所属实例组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceGroup 所属实例组信息
+                     * @param _instanceGroup <p>所属实例组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -596,153 +596,153 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 该条告警的ID
+                     * <p>该条告警的ID</p>
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 项目名称
+                     * <p>项目名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectName;
                     bool m_projectNameHasBeenSet;
 
                     /**
-                     * 告警状态ID，0表示未恢复；1表示已恢复；2,3,5表示数据不足；4表示已失效
+                     * <p>告警状态ID，0表示未恢复；1表示已恢复；2,3,5表示数据不足；4表示已失效</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 告警状态，ALARM表示未恢复；OK表示已恢复；NO_DATA表示数据不足；NO_CONF表示已失效
+                     * <p>告警状态，ALARM表示未恢复；OK表示已恢复；NO_DATA表示数据不足；NO_CONF表示已失效</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_alarmStatus;
                     bool m_alarmStatusHasBeenSet;
 
                     /**
-                     * 策略组ID
+                     * <p>策略组ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 策略组名
+                     * <p>策略组名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 发生时间
+                     * <p>发生时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_firstOccurTime;
                     bool m_firstOccurTimeHasBeenSet;
 
                     /**
-                     * 持续时间，单位s
+                     * <p>持续时间，单位s</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * <p>结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastOccurTime;
                     bool m_lastOccurTimeHasBeenSet;
 
                     /**
-                     * 告警内容
+                     * <p>告警内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 告警对象
+                     * <p>告警对象</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_objName;
                     bool m_objNameHasBeenSet;
 
                     /**
-                     * 告警对象ID
+                     * <p>告警对象ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_objId;
                     bool m_objIdHasBeenSet;
 
                     /**
-                     * 策略类型
+                     * <p>策略类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_viewName;
                     bool m_viewNameHasBeenSet;
 
                     /**
-                     * VPC，只有CVM有
+                     * <p>VPC，只有CVM有</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpc;
                     bool m_vpcHasBeenSet;
 
                     /**
-                     * 指标ID
+                     * <p>指标ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_metricId;
                     bool m_metricIdHasBeenSet;
 
                     /**
-                     * 指标名
+                     * <p>指标名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;
 
                     /**
-                     * 告警类型，0表示指标告警，2表示产品事件告警，3表示平台事件告警
+                     * <p>告警类型，0表示指标告警，2表示产品事件告警，3表示平台事件告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_alarmType;
                     bool m_alarmTypeHasBeenSet;
 
                     /**
-                     * 地域
+                     * <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 告警对象维度信息
+                     * <p>告警对象维度信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dimensions;
                     bool m_dimensionsHasBeenSet;
 
                     /**
-                     * 通知方式
+                     * <p>通知方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_notifyWay;
                     bool m_notifyWayHasBeenSet;
 
                     /**
-                     * 所属实例组信息
+                     * <p>所属实例组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InstanceGroup> m_instanceGroup;

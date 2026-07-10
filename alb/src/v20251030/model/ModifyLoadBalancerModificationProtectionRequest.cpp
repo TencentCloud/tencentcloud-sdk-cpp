@@ -24,8 +24,8 @@ using namespace std;
 
 ModifyLoadBalancerModificationProtectionRequest::ModifyLoadBalancerModificationProtectionRequest() :
     m_loadBalancerIdHasBeenSet(false),
-    m_dryRunHasBeenSet(false),
     m_modificationProtectionEnabledHasBeenSet(false),
+    m_dryRunHasBeenSet(false),
     m_reasonHasBeenSet(false)
 {
 }
@@ -45,20 +45,20 @@ string ModifyLoadBalancerModificationProtectionRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_loadBalancerId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_dryRunHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DryRun";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_dryRun, allocator);
-    }
-
     if (m_modificationProtectionEnabledHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModificationProtectionEnabled";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_modificationProtectionEnabled, allocator);
+    }
+
+    if (m_dryRunHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DryRun";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dryRun, allocator);
     }
 
     if (m_reasonHasBeenSet)
@@ -93,22 +93,6 @@ bool ModifyLoadBalancerModificationProtectionRequest::LoadBalancerIdHasBeenSet()
     return m_loadBalancerIdHasBeenSet;
 }
 
-bool ModifyLoadBalancerModificationProtectionRequest::GetDryRun() const
-{
-    return m_dryRun;
-}
-
-void ModifyLoadBalancerModificationProtectionRequest::SetDryRun(const bool& _dryRun)
-{
-    m_dryRun = _dryRun;
-    m_dryRunHasBeenSet = true;
-}
-
-bool ModifyLoadBalancerModificationProtectionRequest::DryRunHasBeenSet() const
-{
-    return m_dryRunHasBeenSet;
-}
-
 bool ModifyLoadBalancerModificationProtectionRequest::GetModificationProtectionEnabled() const
 {
     return m_modificationProtectionEnabled;
@@ -123,6 +107,22 @@ void ModifyLoadBalancerModificationProtectionRequest::SetModificationProtectionE
 bool ModifyLoadBalancerModificationProtectionRequest::ModificationProtectionEnabledHasBeenSet() const
 {
     return m_modificationProtectionEnabledHasBeenSet;
+}
+
+bool ModifyLoadBalancerModificationProtectionRequest::GetDryRun() const
+{
+    return m_dryRun;
+}
+
+void ModifyLoadBalancerModificationProtectionRequest::SetDryRun(const bool& _dryRun)
+{
+    m_dryRun = _dryRun;
+    m_dryRunHasBeenSet = true;
+}
+
+bool ModifyLoadBalancerModificationProtectionRequest::DryRunHasBeenSet() const
+{
+    return m_dryRunHasBeenSet;
 }
 
 string ModifyLoadBalancerModificationProtectionRequest::GetReason() const

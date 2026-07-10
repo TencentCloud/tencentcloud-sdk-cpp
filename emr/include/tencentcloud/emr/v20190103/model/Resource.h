@@ -350,6 +350,27 @@ namespace TencentCloud
                      */
                     bool PartitionNumberHasBeenSet() const;
 
+                    /**
+                     * 获取<p>高性能集群ID</p>
+                     * @return HCCHpcClusterId <p>高性能集群ID</p>
+                     * 
+                     */
+                    std::string GetHCCHpcClusterId() const;
+
+                    /**
+                     * 设置<p>高性能集群ID</p>
+                     * @param _hCCHpcClusterId <p>高性能集群ID</p>
+                     * 
+                     */
+                    void SetHCCHpcClusterId(const std::string& _hCCHpcClusterId);
+
+                    /**
+                     * 判断参数 HCCHpcClusterId 是否已赋值
+                     * @return HCCHpcClusterId 是否已赋值
+                     * 
+                     */
+                    bool HCCHpcClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -437,6 +458,12 @@ namespace TencentCloud
                      */
                     int64_t m_partitionNumber;
                     bool m_partitionNumberHasBeenSet;
+
+                    /**
+                     * <p>高性能集群ID</p>
+                     */
+                    std::string m_hCCHpcClusterId;
+                    bool m_hCCHpcClusterIdHasBeenSet;
 
                 };
             }
