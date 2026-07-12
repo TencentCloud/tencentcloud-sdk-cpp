@@ -27,7 +27,9 @@ ComputeDetail::ComputeDetail() :
     m_gPUMemoryHasBeenSet(false),
     m_gPUPerformanceHasBeenSet(false),
     m_cPUHasBeenSet(false),
-    m_memoryHasBeenSet(false)
+    m_memoryHasBeenSet(false),
+    m_prepaidEnableHasBeenSet(false),
+    m_postpaidEnableHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome ComputeDetail::Deserialize(const rapidjson::Value &value)
         m_memoryHasBeenSet = true;
     }
 
+    if (value.HasMember("PrepaidEnable") && !value["PrepaidEnable"].IsNull())
+    {
+        if (!value["PrepaidEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ComputeDetail.PrepaidEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_prepaidEnable = value["PrepaidEnable"].GetBool();
+        m_prepaidEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("PostpaidEnable") && !value["PostpaidEnable"].IsNull())
+    {
+        if (!value["PostpaidEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ComputeDetail.PostpaidEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_postpaidEnable = value["PostpaidEnable"].GetBool();
+        m_postpaidEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void ComputeDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Memory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_memory.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_prepaidEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrepaidEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_prepaidEnable, allocator);
+    }
+
+    if (m_postpaidEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PostpaidEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_postpaidEnable, allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void ComputeDetail::SetMemory(const string& _memory)
 bool ComputeDetail::MemoryHasBeenSet() const
 {
     return m_memoryHasBeenSet;
+}
+
+bool ComputeDetail::GetPrepaidEnable() const
+{
+    return m_prepaidEnable;
+}
+
+void ComputeDetail::SetPrepaidEnable(const bool& _prepaidEnable)
+{
+    m_prepaidEnable = _prepaidEnable;
+    m_prepaidEnableHasBeenSet = true;
+}
+
+bool ComputeDetail::PrepaidEnableHasBeenSet() const
+{
+    return m_prepaidEnableHasBeenSet;
+}
+
+bool ComputeDetail::GetPostpaidEnable() const
+{
+    return m_postpaidEnable;
+}
+
+void ComputeDetail::SetPostpaidEnable(const bool& _postpaidEnable)
+{
+    m_postpaidEnable = _postpaidEnable;
+    m_postpaidEnableHasBeenSet = true;
+}
+
+bool ComputeDetail::PostpaidEnableHasBeenSet() const
+{
+    return m_postpaidEnableHasBeenSet;
 }
 

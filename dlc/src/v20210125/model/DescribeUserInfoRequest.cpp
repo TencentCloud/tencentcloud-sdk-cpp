@@ -30,7 +30,8 @@ DescribeUserInfoRequest::DescribeUserInfoRequest() :
     m_sortingHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_accountTypeHasBeenSet(false)
+    m_accountTypeHasBeenSet(false),
+    m_policyIdHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,14 @@ string DescribeUserInfoRequest::ToJsonString() const
         string key = "AccountType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_accountType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_policyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_policyId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -246,6 +255,22 @@ void DescribeUserInfoRequest::SetAccountType(const string& _accountType)
 bool DescribeUserInfoRequest::AccountTypeHasBeenSet() const
 {
     return m_accountTypeHasBeenSet;
+}
+
+string DescribeUserInfoRequest::GetPolicyId() const
+{
+    return m_policyId;
+}
+
+void DescribeUserInfoRequest::SetPolicyId(const string& _policyId)
+{
+    m_policyId = _policyId;
+    m_policyIdHasBeenSet = true;
+}
+
+bool DescribeUserInfoRequest::PolicyIdHasBeenSet() const
+{
+    return m_policyIdHasBeenSet;
 }
 
 

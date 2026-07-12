@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户Id，和CAM侧Uin匹配
-                     * @return UserId 用户Id，和CAM侧Uin匹配
+                     * 获取<p>用户Id，和CAM侧Uin匹配</p>
+                     * @return UserId <p>用户Id，和CAM侧Uin匹配</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户Id，和CAM侧Uin匹配
-                     * @param _userId 用户Id，和CAM侧Uin匹配
+                     * 设置<p>用户Id，和CAM侧Uin匹配</p>
+                     * @param _userId <p>用户Id，和CAM侧Uin匹配</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取解绑的权限集合
-                     * @return PolicySet 解绑的权限集合
+                     * 获取<p>解绑的权限集合</p>
+                     * @return PolicySet <p>解绑的权限集合</p>
                      * 
                      */
                     std::vector<Policy> GetPolicySet() const;
 
                     /**
-                     * 设置解绑的权限集合
-                     * @param _policySet 解绑的权限集合
+                     * 设置<p>解绑的权限集合</p>
+                     * @param _policySet <p>解绑的权限集合</p>
                      * 
                      */
                     void SetPolicySet(const std::vector<Policy>& _policySet);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool PolicySetHasBeenSet() const;
 
                     /**
-                     * 获取用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
-                     * @return AccountType 用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
+                     * 获取<p>用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）</p>
+                     * @return AccountType <p>用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）</p>
                      * 
                      */
                     std::string GetAccountType() const;
 
                     /**
-                     * 设置用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
-                     * @param _accountType 用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
+                     * 设置<p>用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）</p>
+                     * @param _accountType <p>用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）</p>
                      * 
                      */
                     void SetAccountType(const std::string& _accountType);
@@ -106,25 +106,52 @@ namespace TencentCloud
                      */
                     bool AccountTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>要授权的策略列表</p>
+                     * @return PolicyIds <p>要授权的策略列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetPolicyIds() const;
+
+                    /**
+                     * 设置<p>要授权的策略列表</p>
+                     * @param _policyIds <p>要授权的策略列表</p>
+                     * 
+                     */
+                    void SetPolicyIds(const std::vector<std::string>& _policyIds);
+
+                    /**
+                     * 判断参数 PolicyIds 是否已赋值
+                     * @return PolicyIds 是否已赋值
+                     * 
+                     */
+                    bool PolicyIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 用户Id，和CAM侧Uin匹配
+                     * <p>用户Id，和CAM侧Uin匹配</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 解绑的权限集合
+                     * <p>解绑的权限集合</p>
                      */
                     std::vector<Policy> m_policySet;
                     bool m_policySetHasBeenSet;
 
                     /**
-                     * 用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
+                     * <p>用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）</p>
                      */
                     std::string m_accountType;
                     bool m_accountTypeHasBeenSet;
+
+                    /**
+                     * <p>要授权的策略列表</p>
+                     */
+                    std::vector<std::string> m_policyIds;
+                    bool m_policyIdsHasBeenSet;
 
                 };
             }

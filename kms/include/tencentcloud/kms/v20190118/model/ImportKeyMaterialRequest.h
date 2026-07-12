@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取使用GetParametersForImport 返回的PublicKey加密后的密钥材料base64编码。对于国密版本region的KMS，导入的密钥材料长度要求为 128 bit，FIPS版本region的KMS， 导入的密钥材料长度要求为 256 bit。
-                     * @return EncryptedKeyMaterial 使用GetParametersForImport 返回的PublicKey加密后的密钥材料base64编码。对于国密版本region的KMS，导入的密钥材料长度要求为 128 bit，FIPS版本region的KMS， 导入的密钥材料长度要求为 256 bit。
+                     * 获取<p>使用GetParametersForImport 返回的PublicKey加密后的密钥材料base64编码。对于国密版本region的KMS，导入的密钥材料长度要求为 128 bit，FIPS 140-2版本region的KMS， 导入的密钥材料长度要求为 256 bit。</p>
+                     * @return EncryptedKeyMaterial <p>使用GetParametersForImport 返回的PublicKey加密后的密钥材料base64编码。对于国密版本region的KMS，导入的密钥材料长度要求为 128 bit，FIPS 140-2版本region的KMS， 导入的密钥材料长度要求为 256 bit。</p>
                      * 
                      */
                     std::string GetEncryptedKeyMaterial() const;
 
                     /**
-                     * 设置使用GetParametersForImport 返回的PublicKey加密后的密钥材料base64编码。对于国密版本region的KMS，导入的密钥材料长度要求为 128 bit，FIPS版本region的KMS， 导入的密钥材料长度要求为 256 bit。
-                     * @param _encryptedKeyMaterial 使用GetParametersForImport 返回的PublicKey加密后的密钥材料base64编码。对于国密版本region的KMS，导入的密钥材料长度要求为 128 bit，FIPS版本region的KMS， 导入的密钥材料长度要求为 256 bit。
+                     * 设置<p>使用GetParametersForImport 返回的PublicKey加密后的密钥材料base64编码。对于国密版本region的KMS，导入的密钥材料长度要求为 128 bit，FIPS 140-2版本region的KMS， 导入的密钥材料长度要求为 256 bit。</p>
+                     * @param _encryptedKeyMaterial <p>使用GetParametersForImport 返回的PublicKey加密后的密钥材料base64编码。对于国密版本region的KMS，导入的密钥材料长度要求为 128 bit，FIPS 140-2版本region的KMS， 导入的密钥材料长度要求为 256 bit。</p>
                      * 
                      */
                     void SetEncryptedKeyMaterial(const std::string& _encryptedKeyMaterial);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool EncryptedKeyMaterialHasBeenSet() const;
 
                     /**
-                     * 获取通过调用GetParametersForImport获得的导入令牌。
-                     * @return ImportToken 通过调用GetParametersForImport获得的导入令牌。
+                     * 获取<p>通过调用GetParametersForImport获得的导入令牌。</p>
+                     * @return ImportToken <p>通过调用GetParametersForImport获得的导入令牌。</p>
                      * 
                      */
                     std::string GetImportToken() const;
 
                     /**
-                     * 设置通过调用GetParametersForImport获得的导入令牌。
-                     * @param _importToken 通过调用GetParametersForImport获得的导入令牌。
+                     * 设置<p>通过调用GetParametersForImport获得的导入令牌。</p>
+                     * @param _importToken <p>通过调用GetParametersForImport获得的导入令牌。</p>
                      * 
                      */
                     void SetImportToken(const std::string& _importToken);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ImportTokenHasBeenSet() const;
 
                     /**
-                     * 获取指定导入密钥材料的CMK，需要和GetParametersForImport 指定的CMK相同。
-                     * @return KeyId 指定导入密钥材料的CMK，需要和GetParametersForImport 指定的CMK相同。
+                     * 获取<p>指定导入密钥材料的CMK，需要和GetParametersForImport 指定的CMK相同。</p>
+                     * @return KeyId <p>指定导入密钥材料的CMK，需要和GetParametersForImport 指定的CMK相同。</p>
                      * 
                      */
                     std::string GetKeyId() const;
 
                     /**
-                     * 设置指定导入密钥材料的CMK，需要和GetParametersForImport 指定的CMK相同。
-                     * @param _keyId 指定导入密钥材料的CMK，需要和GetParametersForImport 指定的CMK相同。
+                     * 设置<p>指定导入密钥材料的CMK，需要和GetParametersForImport 指定的CMK相同。</p>
+                     * @param _keyId <p>指定导入密钥材料的CMK，需要和GetParametersForImport 指定的CMK相同。</p>
                      * 
                      */
                     void SetKeyId(const std::string& _keyId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool KeyIdHasBeenSet() const;
 
                     /**
-                     * 获取密钥材料过期时间 unix 时间戳，不指定或者 0 表示密钥材料不会过期，若指定过期时间，需要大于当前时间点，最大支持 2147443200。
-                     * @return ValidTo 密钥材料过期时间 unix 时间戳，不指定或者 0 表示密钥材料不会过期，若指定过期时间，需要大于当前时间点，最大支持 2147443200。
+                     * 获取<p>密钥材料过期时间 unix 时间戳，不指定或者 0 表示密钥材料不会过期，若指定过期时间，需要大于当前时间点，最大支持 2147443200。</p>
+                     * @return ValidTo <p>密钥材料过期时间 unix 时间戳，不指定或者 0 表示密钥材料不会过期，若指定过期时间，需要大于当前时间点，最大支持 2147443200。</p>
                      * 
                      */
                     uint64_t GetValidTo() const;
 
                     /**
-                     * 设置密钥材料过期时间 unix 时间戳，不指定或者 0 表示密钥材料不会过期，若指定过期时间，需要大于当前时间点，最大支持 2147443200。
-                     * @param _validTo 密钥材料过期时间 unix 时间戳，不指定或者 0 表示密钥材料不会过期，若指定过期时间，需要大于当前时间点，最大支持 2147443200。
+                     * 设置<p>密钥材料过期时间 unix 时间戳，不指定或者 0 表示密钥材料不会过期，若指定过期时间，需要大于当前时间点，最大支持 2147443200。</p>
+                     * @param _validTo <p>密钥材料过期时间 unix 时间戳，不指定或者 0 表示密钥材料不会过期，若指定过期时间，需要大于当前时间点，最大支持 2147443200。</p>
                      * 
                      */
                     void SetValidTo(const uint64_t& _validTo);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 使用GetParametersForImport 返回的PublicKey加密后的密钥材料base64编码。对于国密版本region的KMS，导入的密钥材料长度要求为 128 bit，FIPS版本region的KMS， 导入的密钥材料长度要求为 256 bit。
+                     * <p>使用GetParametersForImport 返回的PublicKey加密后的密钥材料base64编码。对于国密版本region的KMS，导入的密钥材料长度要求为 128 bit，FIPS 140-2版本region的KMS， 导入的密钥材料长度要求为 256 bit。</p>
                      */
                     std::string m_encryptedKeyMaterial;
                     bool m_encryptedKeyMaterialHasBeenSet;
 
                     /**
-                     * 通过调用GetParametersForImport获得的导入令牌。
+                     * <p>通过调用GetParametersForImport获得的导入令牌。</p>
                      */
                     std::string m_importToken;
                     bool m_importTokenHasBeenSet;
 
                     /**
-                     * 指定导入密钥材料的CMK，需要和GetParametersForImport 指定的CMK相同。
+                     * <p>指定导入密钥材料的CMK，需要和GetParametersForImport 指定的CMK相同。</p>
                      */
                     std::string m_keyId;
                     bool m_keyIdHasBeenSet;
 
                     /**
-                     * 密钥材料过期时间 unix 时间戳，不指定或者 0 表示密钥材料不会过期，若指定过期时间，需要大于当前时间点，最大支持 2147443200。
+                     * <p>密钥材料过期时间 unix 时间戳，不指定或者 0 表示密钥材料不会过期，若指定过期时间，需要大于当前时间点，最大支持 2147443200。</p>
                      */
                     uint64_t m_validTo;
                     bool m_validToHasBeenSet;

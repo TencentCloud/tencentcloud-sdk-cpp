@@ -28,7 +28,8 @@ CreateContractComparisonTaskRequest::CreateContractComparisonTaskRequest() :
     m_diffFileResourceIdHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_userDataHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_revisionOperationHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,14 @@ string CreateContractComparisonTaskRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_revisionOperationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RevisionOperation";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_revisionOperation, allocator);
     }
 
 
@@ -197,6 +206,22 @@ void CreateContractComparisonTaskRequest::SetTags(const vector<Tag>& _tags)
 bool CreateContractComparisonTaskRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+int64_t CreateContractComparisonTaskRequest::GetRevisionOperation() const
+{
+    return m_revisionOperation;
+}
+
+void CreateContractComparisonTaskRequest::SetRevisionOperation(const int64_t& _revisionOperation)
+{
+    m_revisionOperation = _revisionOperation;
+    m_revisionOperationHasBeenSet = true;
+}
+
+bool CreateContractComparisonTaskRequest::RevisionOperationHasBeenSet() const
+{
+    return m_revisionOperationHasBeenSet;
 }
 
 

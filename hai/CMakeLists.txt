@@ -47,6 +47,7 @@ set(hai_public_header_model
   include/tencentcloud/hai/v20230812/model/ServicePriceDetail.h
   include/tencentcloud/hai/v20230812/model/StartInstanceRequest.h
   include/tencentcloud/hai/v20230812/model/DeployInferServiceResponse.h
+  include/tencentcloud/hai/v20230812/model/ServiceChargePrepaid.h
   include/tencentcloud/hai/v20230812/model/LoginSetting.h
   include/tencentcloud/hai/v20230812/model/DescribeMuskPromptsResponse.h
   include/tencentcloud/hai/v20230812/model/UpdateServiceConfigsResponse.h
@@ -137,6 +138,7 @@ set(hai_src
   src/v20230812/model/ServicePriceDetail.cpp
   src/v20230812/model/StartInstanceRequest.cpp
   src/v20230812/model/DeployInferServiceResponse.cpp
+  src/v20230812/model/ServiceChargePrepaid.cpp
   src/v20230812/model/LoginSetting.cpp
   src/v20230812/model/DescribeMuskPromptsResponse.cpp
   src/v20230812/model/UpdateServiceConfigsResponse.cpp

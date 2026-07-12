@@ -3890,6 +3890,56 @@ CynosdbClient::DescribeClusterInstanceGrpsOutcomeCallable CynosdbClient::Describ
     return prom->get_future();
 }
 
+CynosdbClient::DescribeClusterLevelsOutcome CynosdbClient::DescribeClusterLevels(const DescribeClusterLevelsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterLevels");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterLevelsResponse rsp = DescribeClusterLevelsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterLevelsOutcome(rsp);
+        else
+            return DescribeClusterLevelsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterLevelsOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeClusterLevelsAsync(const DescribeClusterLevelsRequest& request, const DescribeClusterLevelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeClusterLevelsRequest&;
+    using Resp = DescribeClusterLevelsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterLevels", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::DescribeClusterLevelsOutcomeCallable CynosdbClient::DescribeClusterLevelsCallable(const DescribeClusterLevelsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeClusterLevelsOutcome>>();
+    DescribeClusterLevelsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeClusterLevelsRequest&,
+        DescribeClusterLevelsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CynosdbClient::DescribeClusterParamLogsOutcome CynosdbClient::DescribeClusterParamLogs(const DescribeClusterParamLogsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterParamLogs");

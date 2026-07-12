@@ -33,7 +33,12 @@ ServiceDetail::ServiceDetail() :
     m_hyperParamHasBeenSet(false),
     m_securityTypeHasBeenSet(false),
     m_roleComputeSetHasBeenSet(false),
-    m_targetReplicasHasBeenSet(false)
+    m_targetReplicasHasBeenSet(false),
+    m_chargeTypeHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
+    m_renewFlagHasBeenSet(false),
+    m_restrictStateHasBeenSet(false),
+    m_isCustomDeployHasBeenSet(false)
 {
 }
 
@@ -209,6 +214,56 @@ CoreInternalOutcome ServiceDetail::Deserialize(const rapidjson::Value &value)
         m_targetReplicasHasBeenSet = true;
     }
 
+    if (value.HasMember("ChargeType") && !value["ChargeType"].IsNull())
+    {
+        if (!value["ChargeType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceDetail.ChargeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_chargeType = string(value["ChargeType"].GetString());
+        m_chargeTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpireTime") && !value["ExpireTime"].IsNull())
+    {
+        if (!value["ExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceDetail.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = string(value["ExpireTime"].GetString());
+        m_expireTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RenewFlag") && !value["RenewFlag"].IsNull())
+    {
+        if (!value["RenewFlag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceDetail.RenewFlag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_renewFlag = string(value["RenewFlag"].GetString());
+        m_renewFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("RestrictState") && !value["RestrictState"].IsNull())
+    {
+        if (!value["RestrictState"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceDetail.RestrictState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_restrictState = string(value["RestrictState"].GetString());
+        m_restrictStateHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsCustomDeploy") && !value["IsCustomDeploy"].IsNull())
+    {
+        if (!value["IsCustomDeploy"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceDetail.IsCustomDeploy` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCustomDeploy = value["IsCustomDeploy"].GetInt64();
+        m_isCustomDeployHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -340,6 +395,46 @@ void ServiceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "TargetReplicas";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_targetReplicas, allocator);
+    }
+
+    if (m_chargeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_chargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_renewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_renewFlag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_restrictStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RestrictState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_restrictState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isCustomDeployHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCustomDeploy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCustomDeploy, allocator);
     }
 
 }
@@ -551,5 +646,85 @@ void ServiceDetail::SetTargetReplicas(const uint64_t& _targetReplicas)
 bool ServiceDetail::TargetReplicasHasBeenSet() const
 {
     return m_targetReplicasHasBeenSet;
+}
+
+string ServiceDetail::GetChargeType() const
+{
+    return m_chargeType;
+}
+
+void ServiceDetail::SetChargeType(const string& _chargeType)
+{
+    m_chargeType = _chargeType;
+    m_chargeTypeHasBeenSet = true;
+}
+
+bool ServiceDetail::ChargeTypeHasBeenSet() const
+{
+    return m_chargeTypeHasBeenSet;
+}
+
+string ServiceDetail::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void ServiceDetail::SetExpireTime(const string& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool ServiceDetail::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
+
+string ServiceDetail::GetRenewFlag() const
+{
+    return m_renewFlag;
+}
+
+void ServiceDetail::SetRenewFlag(const string& _renewFlag)
+{
+    m_renewFlag = _renewFlag;
+    m_renewFlagHasBeenSet = true;
+}
+
+bool ServiceDetail::RenewFlagHasBeenSet() const
+{
+    return m_renewFlagHasBeenSet;
+}
+
+string ServiceDetail::GetRestrictState() const
+{
+    return m_restrictState;
+}
+
+void ServiceDetail::SetRestrictState(const string& _restrictState)
+{
+    m_restrictState = _restrictState;
+    m_restrictStateHasBeenSet = true;
+}
+
+bool ServiceDetail::RestrictStateHasBeenSet() const
+{
+    return m_restrictStateHasBeenSet;
+}
+
+int64_t ServiceDetail::GetIsCustomDeploy() const
+{
+    return m_isCustomDeploy;
+}
+
+void ServiceDetail::SetIsCustomDeploy(const int64_t& _isCustomDeploy)
+{
+    m_isCustomDeploy = _isCustomDeploy;
+    m_isCustomDeployHasBeenSet = true;
+}
+
+bool ServiceDetail::IsCustomDeployHasBeenSet() const
+{
+    return m_isCustomDeployHasBeenSet;
 }
 

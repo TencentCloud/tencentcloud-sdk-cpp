@@ -22,7 +22,10 @@
 using namespace TencentCloud::Tokenhub::V20260322::Model;
 using namespace std;
 
-ModifyApiKeyStatusRequest::ModifyApiKeyStatusRequest()
+ModifyApiKeyStatusRequest::ModifyApiKeyStatusRequest() :
+    m_apiKeyIdHasBeenSet(false),
+    m_platformHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,30 @@ string ModifyApiKeyStatusRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_apiKeyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiKeyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_apiKeyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_platformHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Platform";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_platform.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +67,53 @@ string ModifyApiKeyStatusRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string ModifyApiKeyStatusRequest::GetApiKeyId() const
+{
+    return m_apiKeyId;
+}
+
+void ModifyApiKeyStatusRequest::SetApiKeyId(const string& _apiKeyId)
+{
+    m_apiKeyId = _apiKeyId;
+    m_apiKeyIdHasBeenSet = true;
+}
+
+bool ModifyApiKeyStatusRequest::ApiKeyIdHasBeenSet() const
+{
+    return m_apiKeyIdHasBeenSet;
+}
+
+string ModifyApiKeyStatusRequest::GetPlatform() const
+{
+    return m_platform;
+}
+
+void ModifyApiKeyStatusRequest::SetPlatform(const string& _platform)
+{
+    m_platform = _platform;
+    m_platformHasBeenSet = true;
+}
+
+bool ModifyApiKeyStatusRequest::PlatformHasBeenSet() const
+{
+    return m_platformHasBeenSet;
+}
+
+string ModifyApiKeyStatusRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void ModifyApiKeyStatusRequest::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool ModifyApiKeyStatusRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
 
 

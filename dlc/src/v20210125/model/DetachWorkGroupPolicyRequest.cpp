@@ -24,7 +24,8 @@ using namespace std;
 
 DetachWorkGroupPolicyRequest::DetachWorkGroupPolicyRequest() :
     m_workGroupIdHasBeenSet(false),
-    m_policySetHasBeenSet(false)
+    m_policySetHasBeenSet(false),
+    m_policyIdsHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,19 @@ string DetachWorkGroupPolicyRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_policyIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_policyIds.begin(); itr != m_policyIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -96,6 +110,22 @@ void DetachWorkGroupPolicyRequest::SetPolicySet(const vector<Policy>& _policySet
 bool DetachWorkGroupPolicyRequest::PolicySetHasBeenSet() const
 {
     return m_policySetHasBeenSet;
+}
+
+vector<string> DetachWorkGroupPolicyRequest::GetPolicyIds() const
+{
+    return m_policyIds;
+}
+
+void DetachWorkGroupPolicyRequest::SetPolicyIds(const vector<string>& _policyIds)
+{
+    m_policyIds = _policyIds;
+    m_policyIdsHasBeenSet = true;
+}
+
+bool DetachWorkGroupPolicyRequest::PolicyIdsHasBeenSet() const
+{
+    return m_policyIdsHasBeenSet;
 }
 
 

@@ -29,7 +29,8 @@ CreateInferServiceByTemplateRequest::CreateInferServiceByTemplateRequest() :
     m_serviceChargeTypeHasBeenSet(false),
     m_hyperParamHasBeenSet(false),
     m_networkSettingHasBeenSet(false),
-    m_securityTypeHasBeenSet(false)
+    m_securityTypeHasBeenSet(false),
+    m_serviceChargePrepaidHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,15 @@ string CreateInferServiceByTemplateRequest::ToJsonString() const
         string key = "SecurityType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_securityType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceChargePrepaidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceChargePrepaid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_serviceChargePrepaid.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -216,6 +226,22 @@ void CreateInferServiceByTemplateRequest::SetSecurityType(const string& _securit
 bool CreateInferServiceByTemplateRequest::SecurityTypeHasBeenSet() const
 {
     return m_securityTypeHasBeenSet;
+}
+
+ServiceChargePrepaid CreateInferServiceByTemplateRequest::GetServiceChargePrepaid() const
+{
+    return m_serviceChargePrepaid;
+}
+
+void CreateInferServiceByTemplateRequest::SetServiceChargePrepaid(const ServiceChargePrepaid& _serviceChargePrepaid)
+{
+    m_serviceChargePrepaid = _serviceChargePrepaid;
+    m_serviceChargePrepaidHasBeenSet = true;
+}
+
+bool CreateInferServiceByTemplateRequest::ServiceChargePrepaidHasBeenSet() const
+{
+    return m_serviceChargePrepaidHasBeenSet;
 }
 
 

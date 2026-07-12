@@ -22,6 +22,7 @@ using namespace std;
 
 ProcessImageAsyncInput::ProcessImageAsyncInput() :
     m_fileIdHasBeenSet(false),
+    m_urlHasBeenSet(false),
     m_imageTaskInputHasBeenSet(false),
     m_outputConfigHasBeenSet(false)
 {
@@ -40,6 +41,16 @@ CoreInternalOutcome ProcessImageAsyncInput::Deserialize(const rapidjson::Value &
         }
         m_fileId = string(value["FileId"].GetString());
         m_fileIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Url") && !value["Url"].IsNull())
+    {
+        if (!value["Url"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessImageAsyncInput.Url` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_url = string(value["Url"].GetString());
+        m_urlHasBeenSet = true;
     }
 
     if (value.HasMember("ImageTaskInput") && !value["ImageTaskInput"].IsNull())
@@ -91,6 +102,14 @@ void ProcessImageAsyncInput::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         value.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_urlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Url";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_imageTaskInputHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -126,6 +145,22 @@ void ProcessImageAsyncInput::SetFileId(const string& _fileId)
 bool ProcessImageAsyncInput::FileIdHasBeenSet() const
 {
     return m_fileIdHasBeenSet;
+}
+
+string ProcessImageAsyncInput::GetUrl() const
+{
+    return m_url;
+}
+
+void ProcessImageAsyncInput::SetUrl(const string& _url)
+{
+    m_url = _url;
+    m_urlHasBeenSet = true;
+}
+
+bool ProcessImageAsyncInput::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
 }
 
 ProcessImageAsyncTaskInput ProcessImageAsyncInput::GetImageTaskInput() const

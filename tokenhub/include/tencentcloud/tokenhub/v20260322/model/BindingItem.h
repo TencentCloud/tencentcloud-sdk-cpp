@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源 ID（模型 ID 或服务 ID）。
-                     * @return ResourceId 资源 ID（模型 ID 或服务 ID）。
+                     * 获取<p>资源 ID（模型 ID 或服务 ID）。</p>
+                     * @return ResourceId <p>资源 ID（模型 ID 或服务 ID）。</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源 ID（模型 ID 或服务 ID）。
-                     * @param _resourceId 资源 ID（模型 ID 或服务 ID）。
+                     * 设置<p>资源 ID（模型 ID 或服务 ID）。</p>
+                     * @param _resourceId <p>资源 ID（模型 ID 或服务 ID）。</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取资源类型。取值：endpoint（服务）、model（模型）。
-                     * @return ResourceType 资源类型。取值：endpoint（服务）、model（模型）。
+                     * 获取<p>资源类型。取值：endpoint（推理服务）、model（模型）。推荐绑定endpoint，绑定model即将下线。已绑定model的apikey仍可使用，但控制台回显将不会展示模型绑定列表。</p><p>枚举值：</p><ul><li>endpoint： 绑定到endpoint（默认推理服务或自定义推理服务）</li></ul>
+                     * @return ResourceType <p>资源类型。取值：endpoint（推理服务）、model（模型）。推荐绑定endpoint，绑定model即将下线。已绑定model的apikey仍可使用，但控制台回显将不会展示模型绑定列表。</p><p>枚举值：</p><ul><li>endpoint： 绑定到endpoint（默认推理服务或自定义推理服务）</li></ul>
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置资源类型。取值：endpoint（服务）、model（模型）。
-                     * @param _resourceType 资源类型。取值：endpoint（服务）、model（模型）。
+                     * 设置<p>资源类型。取值：endpoint（推理服务）、model（模型）。推荐绑定endpoint，绑定model即将下线。已绑定model的apikey仍可使用，但控制台回显将不会展示模型绑定列表。</p><p>枚举值：</p><ul><li>endpoint： 绑定到endpoint（默认推理服务或自定义推理服务）</li></ul>
+                     * @param _resourceType <p>资源类型。取值：endpoint（推理服务）、model（模型）。推荐绑定endpoint，绑定model即将下线。已绑定model的apikey仍可使用，但控制台回显将不会展示模型绑定列表。</p><p>枚举值：</p><ul><li>endpoint： 绑定到endpoint（默认推理服务或自定义推理服务）</li></ul>
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取资源状态
-                     * @return Status 资源状态
+                     * 获取<p>资源状态</p>
+                     * @return Status <p>资源状态</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置资源状态
-                     * @param _status 资源状态
+                     * 设置<p>资源状态</p>
+                     * @param _status <p>资源状态</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源 ID（模型 ID 或服务 ID）。
+                     * <p>资源 ID（模型 ID 或服务 ID）。</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 资源类型。取值：endpoint（服务）、model（模型）。
+                     * <p>资源类型。取值：endpoint（推理服务）、model（模型）。推荐绑定endpoint，绑定model即将下线。已绑定model的apikey仍可使用，但控制台回显将不会展示模型绑定列表。</p><p>枚举值：</p><ul><li>endpoint： 绑定到endpoint（默认推理服务或自定义推理服务）</li></ul>
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * 资源状态
+                     * <p>资源状态</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

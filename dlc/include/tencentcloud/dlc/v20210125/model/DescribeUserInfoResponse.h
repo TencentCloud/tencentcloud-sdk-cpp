@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户详细信息
+                     * 获取<p>用户详细信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UserInfo 用户详细信息
+                     * @return UserInfo <p>用户详细信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户详细信息
+                     * <p>用户详细信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     UserDetailInfo m_userInfo;

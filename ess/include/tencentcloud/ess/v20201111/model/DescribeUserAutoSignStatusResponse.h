@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询用户是否已开通自动签
-                     * @return IsOpen 查询用户是否已开通自动签
+                     * 获取<p>查询用户是否已开通自动签</p>
+                     * @return IsOpen <p>查询用户是否已开通自动签</p>
                      * 
                      */
                     bool GetIsOpen() const;
@@ -58,12 +58,8 @@ namespace TencentCloud
                     bool IsOpenHasBeenSet() const;
 
                     /**
-                     * 获取自动签许可生效时间。当且仅当已通过许可开通自动签时有值。
-
-值为unix时间戳,单位为秒。
-                     * @return LicenseFrom 自动签许可生效时间。当且仅当已通过许可开通自动签时有值。
-
-值为unix时间戳,单位为秒。
+                     * 获取<p>自动签许可生效时间。当且仅当已通过许可开通自动签时有值。</p><p>值为unix时间戳,单位为秒。</p>
+                     * @return LicenseFrom <p>自动签许可生效时间。当且仅当已通过许可开通自动签时有值。</p><p>值为unix时间戳,单位为秒。</p>
                      * 
                      */
                     int64_t GetLicenseFrom() const;
@@ -76,12 +72,8 @@ namespace TencentCloud
                     bool LicenseFromHasBeenSet() const;
 
                     /**
-                     * 获取自动签许可到期时间。当且仅当已通过许可开通自动签时有值。
-
-值为unix时间戳,单位为秒。
-                     * @return LicenseTo 自动签许可到期时间。当且仅当已通过许可开通自动签时有值。
-
-值为unix时间戳,单位为秒。
+                     * 获取<p>自动签许可到期时间。当且仅当已通过许可开通自动签时有值。</p><p>值为unix时间戳,单位为秒。</p>
+                     * @return LicenseTo <p>自动签许可到期时间。当且仅当已通过许可开通自动签时有值。</p><p>值为unix时间戳,单位为秒。</p>
                      * 
                      */
                     int64_t GetLicenseTo() const;
@@ -94,8 +86,8 @@ namespace TencentCloud
                     bool LicenseToHasBeenSet() const;
 
                     /**
-                     * 获取设置用户开通自动签时是否绑定个人自动签账号许可。<ul><li>**0**: 使用个人自动签账号许可进行开通，个人自动签账号许可有效期1年，注: `不可解绑释放更换他人`</li><li>**1**: 不绑定自动签账号许可开通，后续使用合同份额进行合同发起</li></ul>
-                     * @return LicenseType 设置用户开通自动签时是否绑定个人自动签账号许可。<ul><li>**0**: 使用个人自动签账号许可进行开通，个人自动签账号许可有效期1年，注: `不可解绑释放更换他人`</li><li>**1**: 不绑定自动签账号许可开通，后续使用合同份额进行合同发起</li></ul>
+                     * 获取<p>设置用户开通自动签时是否绑定个人自动签账号许可。<ul><li><strong>0</strong>: 使用个人自动签账号许可进行开通，个人自动签账号许可有效期1年，注: <code>不可解绑释放更换他人</code></li><li><strong>1</strong>: 不绑定自动签账号许可开通，后续使用合同份额进行合同发起</li></ul></p>
+                     * @return LicenseType <p>设置用户开通自动签时是否绑定个人自动签账号许可。<ul><li><strong>0</strong>: 使用个人自动签账号许可进行开通，个人自动签账号许可有效期1年，注: <code>不可解绑释放更换他人</code></li><li><strong>1</strong>: 不绑定自动签账号许可开通，后续使用合同份额进行合同发起</li></ul></p>
                      * 
                      */
                     int64_t GetLicenseType() const;
@@ -108,8 +100,8 @@ namespace TencentCloud
                     bool LicenseTypeHasBeenSet() const;
 
                     /**
-                     * 获取用户开通自动签指定使用的印章，为空则未设置印章，需重新进入开通链接设置印章。
-                     * @return SealId 用户开通自动签指定使用的印章，为空则未设置印章，需重新进入开通链接设置印章。
+                     * 获取<p>用户开通自动签指定使用的印章，为空则未设置印章，需重新进入开通链接设置印章。</p>
+                     * @return SealId <p>用户开通自动签指定使用的印章，为空则未设置印章，需重新进入开通链接设置印章。</p>
                      * 
                      */
                     std::string GetSealId() const;
@@ -124,35 +116,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询用户是否已开通自动签
+                     * <p>查询用户是否已开通自动签</p>
                      */
                     bool m_isOpen;
                     bool m_isOpenHasBeenSet;
 
                     /**
-                     * 自动签许可生效时间。当且仅当已通过许可开通自动签时有值。
-
-值为unix时间戳,单位为秒。
+                     * <p>自动签许可生效时间。当且仅当已通过许可开通自动签时有值。</p><p>值为unix时间戳,单位为秒。</p>
                      */
                     int64_t m_licenseFrom;
                     bool m_licenseFromHasBeenSet;
 
                     /**
-                     * 自动签许可到期时间。当且仅当已通过许可开通自动签时有值。
-
-值为unix时间戳,单位为秒。
+                     * <p>自动签许可到期时间。当且仅当已通过许可开通自动签时有值。</p><p>值为unix时间戳,单位为秒。</p>
                      */
                     int64_t m_licenseTo;
                     bool m_licenseToHasBeenSet;
 
                     /**
-                     * 设置用户开通自动签时是否绑定个人自动签账号许可。<ul><li>**0**: 使用个人自动签账号许可进行开通，个人自动签账号许可有效期1年，注: `不可解绑释放更换他人`</li><li>**1**: 不绑定自动签账号许可开通，后续使用合同份额进行合同发起</li></ul>
+                     * <p>设置用户开通自动签时是否绑定个人自动签账号许可。<ul><li><strong>0</strong>: 使用个人自动签账号许可进行开通，个人自动签账号许可有效期1年，注: <code>不可解绑释放更换他人</code></li><li><strong>1</strong>: 不绑定自动签账号许可开通，后续使用合同份额进行合同发起</li></ul></p>
                      */
                     int64_t m_licenseType;
                     bool m_licenseTypeHasBeenSet;
 
                     /**
-                     * 用户开通自动签指定使用的印章，为空则未设置印章，需重新进入开通链接设置印章。
+                     * <p>用户开通自动签指定使用的印章，为空则未设置印章，需重新进入开通链接设置印章。</p>
                      */
                     std::string m_sealId;
                     bool m_sealIdHasBeenSet;

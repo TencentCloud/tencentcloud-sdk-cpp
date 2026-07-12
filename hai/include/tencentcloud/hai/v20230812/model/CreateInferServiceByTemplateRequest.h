@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/hai/v20230812/model/HyperParam.h>
 #include <tencentcloud/hai/v20230812/model/NetworkSetting.h>
+#include <tencentcloud/hai/v20230812/model/ServiceChargePrepaid.h>
 
 
 namespace TencentCloud
@@ -191,6 +192,27 @@ namespace TencentCloud
                      */
                     bool SecurityTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>包年包月参数(ServiceChargeType为包月时必填)</p>
+                     * @return ServiceChargePrepaid <p>包年包月参数(ServiceChargeType为包月时必填)</p>
+                     * 
+                     */
+                    ServiceChargePrepaid GetServiceChargePrepaid() const;
+
+                    /**
+                     * 设置<p>包年包月参数(ServiceChargeType为包月时必填)</p>
+                     * @param _serviceChargePrepaid <p>包年包月参数(ServiceChargeType为包月时必填)</p>
+                     * 
+                     */
+                    void SetServiceChargePrepaid(const ServiceChargePrepaid& _serviceChargePrepaid);
+
+                    /**
+                     * 判断参数 ServiceChargePrepaid 是否已赋值
+                     * @return ServiceChargePrepaid 是否已赋值
+                     * 
+                     */
+                    bool ServiceChargePrepaidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -234,6 +256,12 @@ namespace TencentCloud
                      */
                     std::string m_securityType;
                     bool m_securityTypeHasBeenSet;
+
+                    /**
+                     * <p>包年包月参数(ServiceChargeType为包月时必填)</p>
+                     */
+                    ServiceChargePrepaid m_serviceChargePrepaid;
+                    bool m_serviceChargePrepaidHasBeenSet;
 
                 };
             }

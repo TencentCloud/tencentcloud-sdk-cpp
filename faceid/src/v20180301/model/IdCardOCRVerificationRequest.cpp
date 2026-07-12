@@ -27,7 +27,8 @@ IdCardOCRVerificationRequest::IdCardOCRVerificationRequest() :
     m_nameHasBeenSet(false),
     m_imageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false),
-    m_encryptionHasBeenSet(false)
+    m_encryptionHasBeenSet(false),
+    m_configHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string IdCardOCRVerificationRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_encryption.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_configHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Config";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_config.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void IdCardOCRVerificationRequest::SetEncryption(const Encryption& _encryption)
 bool IdCardOCRVerificationRequest::EncryptionHasBeenSet() const
 {
     return m_encryptionHasBeenSet;
+}
+
+string IdCardOCRVerificationRequest::GetConfig() const
+{
+    return m_config;
+}
+
+void IdCardOCRVerificationRequest::SetConfig(const string& _config)
+{
+    m_config = _config;
+    m_configHasBeenSet = true;
+}
+
+bool IdCardOCRVerificationRequest::ConfigHasBeenSet() const
+{
+    return m_configHasBeenSet;
 }
 
 

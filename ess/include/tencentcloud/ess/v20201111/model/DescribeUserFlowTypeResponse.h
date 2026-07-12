@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询到的所有用户合同类型列表	
-                     * @return AllUserFlowTypes 查询到的所有用户合同类型列表	
+                     * 获取<p>查询到的所有用户合同类型列表</p>
+                     * @return AllUserFlowTypes <p>查询到的所有用户合同类型列表</p>
                      * 
                      */
                     std::vector<TemplateUserFlowType> GetAllUserFlowTypes() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询到的所有用户合同类型列表	
+                     * <p>查询到的所有用户合同类型列表</p>
                      */
                     std::vector<TemplateUserFlowType> m_allUserFlowTypes;
                     bool m_allUserFlowTypesHasBeenSet;

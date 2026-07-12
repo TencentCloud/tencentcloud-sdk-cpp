@@ -44,19 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取执行合同审查任务的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
-                     * @return Operator 执行合同审查任务的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * 获取<p>执行合同审查任务的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
+                     * @return Operator <p>执行合同审查任务的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置执行合同审查任务的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
-                     * @param _operator 执行合同审查任务的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * 设置<p>执行合同审查任务的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
+                     * @param _operator <p>执行合同审查任务的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -69,15 +65,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取合同对比任务ID，该参数通过调用接口CreateContractComparisonTask获取。
-                     * @return TaskId 合同对比任务ID，该参数通过调用接口CreateContractComparisonTask获取。
+                     * 获取<p>合同对比任务ID，该参数通过调用接口CreateContractComparisonTask获取。</p>
+                     * @return TaskId <p>合同对比任务ID，该参数通过调用接口CreateContractComparisonTask获取。</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置合同对比任务ID，该参数通过调用接口CreateContractComparisonTask获取。
-                     * @param _taskId 合同对比任务ID，该参数通过调用接口CreateContractComparisonTask获取。
+                     * 设置<p>合同对比任务ID，该参数通过调用接口CreateContractComparisonTask获取。</p>
+                     * @param _taskId <p>合同对比任务ID，该参数通过调用接口CreateContractComparisonTask获取。</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -90,35 +86,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取导出对比结果文件类型。
-类型如下：
-<ul>
-<li> **0**：【PDF】以新合同文件为基础，导出带有可视化对比点标注的PDF文件。</li>
-<li> **1**：【EXCEL】导出结构化的对比点明细表格，以列表形式罗列每一个差异点，包含改动位置、类型、标签及修改前后的完整内容。</li>
-</ul>
-                     * @return ExportType 导出对比结果文件类型。
-类型如下：
-<ul>
-<li> **0**：【PDF】以新合同文件为基础，导出带有可视化对比点标注的PDF文件。</li>
-<li> **1**：【EXCEL】导出结构化的对比点明细表格，以列表形式罗列每一个差异点，包含改动位置、类型、标签及修改前后的完整内容。</li>
-</ul>
+                     * 获取<p>导出对比结果文件类型。<br>类型如下：</p><ul><li> **0**：【PDF】以新合同文件为基础，导出带有可视化对比点标注的PDF文件。</li><li> **1**：【EXCEL】导出结构化的对比点明细表格，以列表形式罗列每一个差异点，包含改动位置、类型、标签及修改前后的完整内容。</li></ul>
+                     * @return ExportType <p>导出对比结果文件类型。<br>类型如下：</p><ul><li> **0**：【PDF】以新合同文件为基础，导出带有可视化对比点标注的PDF文件。</li><li> **1**：【EXCEL】导出结构化的对比点明细表格，以列表形式罗列每一个差异点，包含改动位置、类型、标签及修改前后的完整内容。</li></ul>
                      * 
                      */
                     int64_t GetExportType() const;
 
                     /**
-                     * 设置导出对比结果文件类型。
-类型如下：
-<ul>
-<li> **0**：【PDF】以新合同文件为基础，导出带有可视化对比点标注的PDF文件。</li>
-<li> **1**：【EXCEL】导出结构化的对比点明细表格，以列表形式罗列每一个差异点，包含改动位置、类型、标签及修改前后的完整内容。</li>
-</ul>
-                     * @param _exportType 导出对比结果文件类型。
-类型如下：
-<ul>
-<li> **0**：【PDF】以新合同文件为基础，导出带有可视化对比点标注的PDF文件。</li>
-<li> **1**：【EXCEL】导出结构化的对比点明细表格，以列表形式罗列每一个差异点，包含改动位置、类型、标签及修改前后的完整内容。</li>
-</ul>
+                     * 设置<p>导出对比结果文件类型。<br>类型如下：</p><ul><li> **0**：【PDF】以新合同文件为基础，导出带有可视化对比点标注的PDF文件。</li><li> **1**：【EXCEL】导出结构化的对比点明细表格，以列表形式罗列每一个差异点，包含改动位置、类型、标签及修改前后的完整内容。</li></ul>
+                     * @param _exportType <p>导出对比结果文件类型。<br>类型如下：</p><ul><li> **0**：【PDF】以新合同文件为基础，导出带有可视化对比点标注的PDF文件。</li><li> **1**：【EXCEL】导出结构化的对比点明细表格，以列表形式罗列每一个差异点，包含改动位置、类型、标签及修改前后的完整内容。</li></ul>
                      * 
                      */
                     void SetExportType(const int64_t& _exportType);
@@ -131,31 +107,15 @@ namespace TencentCloud
                     bool ExportTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否忽略，适用于PDF。
-<ul>
-<li> **true**：导出文件标注去掉忽略项。</li>
-<li> **false**：导出文件包含所有对比点。</li>
-</ul>
-                     * @return Ignore 是否忽略，适用于PDF。
-<ul>
-<li> **true**：导出文件标注去掉忽略项。</li>
-<li> **false**：导出文件包含所有对比点。</li>
-</ul>
+                     * 获取<p>是否忽略，适用于PDF。</p><ul><li> **true**：导出文件标注去掉忽略项。</li><li> **false**：导出文件包含所有对比点。</li></ul>
+                     * @return Ignore <p>是否忽略，适用于PDF。</p><ul><li> **true**：导出文件标注去掉忽略项。</li><li> **false**：导出文件包含所有对比点。</li></ul>
                      * 
                      */
                     bool GetIgnore() const;
 
                     /**
-                     * 设置是否忽略，适用于PDF。
-<ul>
-<li> **true**：导出文件标注去掉忽略项。</li>
-<li> **false**：导出文件包含所有对比点。</li>
-</ul>
-                     * @param _ignore 是否忽略，适用于PDF。
-<ul>
-<li> **true**：导出文件标注去掉忽略项。</li>
-<li> **false**：导出文件包含所有对比点。</li>
-</ul>
+                     * 设置<p>是否忽略，适用于PDF。</p><ul><li> **true**：导出文件标注去掉忽略项。</li><li> **false**：导出文件包含所有对比点。</li></ul>
+                     * @param _ignore <p>是否忽略，适用于PDF。</p><ul><li> **true**：导出文件标注去掉忽略项。</li><li> **false**：导出文件包含所有对比点。</li></ul>
                      * 
                      */
                     void SetIgnore(const bool& _ignore);
@@ -170,35 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 执行合同审查任务的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * <p>执行合同审查任务的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 合同对比任务ID，该参数通过调用接口CreateContractComparisonTask获取。
+                     * <p>合同对比任务ID，该参数通过调用接口CreateContractComparisonTask获取。</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 导出对比结果文件类型。
-类型如下：
-<ul>
-<li> **0**：【PDF】以新合同文件为基础，导出带有可视化对比点标注的PDF文件。</li>
-<li> **1**：【EXCEL】导出结构化的对比点明细表格，以列表形式罗列每一个差异点，包含改动位置、类型、标签及修改前后的完整内容。</li>
-</ul>
+                     * <p>导出对比结果文件类型。<br>类型如下：</p><ul><li> **0**：【PDF】以新合同文件为基础，导出带有可视化对比点标注的PDF文件。</li><li> **1**：【EXCEL】导出结构化的对比点明细表格，以列表形式罗列每一个差异点，包含改动位置、类型、标签及修改前后的完整内容。</li></ul>
                      */
                     int64_t m_exportType;
                     bool m_exportTypeHasBeenSet;
 
                     /**
-                     * 是否忽略，适用于PDF。
-<ul>
-<li> **true**：导出文件标注去掉忽略项。</li>
-<li> **false**：导出文件包含所有对比点。</li>
-</ul>
+                     * <p>是否忽略，适用于PDF。</p><ul><li> **true**：导出文件标注去掉忽略项。</li><li> **false**：导出文件包含所有对比点。</li></ul>
                      */
                     bool m_ignore;
                     bool m_ignoreHasBeenSet;

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户Id，和子用户uin相同，需要先使用CreateUser接口创建用户。可以使用DescribeUsers接口查看。
-                     * @return UserId 用户Id，和子用户uin相同，需要先使用CreateUser接口创建用户。可以使用DescribeUsers接口查看。
+                     * 获取<p>用户Id，和子用户uin相同，需要先使用CreateUser接口创建用户。可以使用DescribeUsers接口查看。</p>
+                     * @return UserId <p>用户Id，和子用户uin相同，需要先使用CreateUser接口创建用户。可以使用DescribeUsers接口查看。</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户Id，和子用户uin相同，需要先使用CreateUser接口创建用户。可以使用DescribeUsers接口查看。
-                     * @param _userId 用户Id，和子用户uin相同，需要先使用CreateUser接口创建用户。可以使用DescribeUsers接口查看。
+                     * 设置<p>用户Id，和子用户uin相同，需要先使用CreateUser接口创建用户。可以使用DescribeUsers接口查看。</p>
+                     * @param _userId <p>用户Id，和子用户uin相同，需要先使用CreateUser接口创建用户。可以使用DescribeUsers接口查看。</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取鉴权策略集合
-                     * @return PolicySet 鉴权策略集合
+                     * 获取<p>鉴权策略集合</p>
+                     * @return PolicySet <p>鉴权策略集合</p>
                      * 
                      */
                     std::vector<Policy> GetPolicySet() const;
 
                     /**
-                     * 设置鉴权策略集合
-                     * @param _policySet 鉴权策略集合
+                     * 设置<p>鉴权策略集合</p>
+                     * @param _policySet <p>鉴权策略集合</p>
                      * 
                      */
                     void SetPolicySet(const std::vector<Policy>& _policySet);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool PolicySetHasBeenSet() const;
 
                     /**
-                     * 获取用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
-                     * @return AccountType 用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
+                     * 获取<p>用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）</p>
+                     * @return AccountType <p>用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）</p>
                      * 
                      */
                     std::string GetAccountType() const;
 
                     /**
-                     * 设置用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
-                     * @param _accountType 用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
+                     * 设置<p>用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）</p>
+                     * @param _accountType <p>用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）</p>
                      * 
                      */
                     void SetAccountType(const std::string& _accountType);
@@ -109,19 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户Id，和子用户uin相同，需要先使用CreateUser接口创建用户。可以使用DescribeUsers接口查看。
+                     * <p>用户Id，和子用户uin相同，需要先使用CreateUser接口创建用户。可以使用DescribeUsers接口查看。</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 鉴权策略集合
+                     * <p>鉴权策略集合</p>
                      */
                     std::vector<Policy> m_policySet;
                     bool m_policySetHasBeenSet;
 
                     /**
-                     * 用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
+                     * <p>用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）</p>
                      */
                     std::string m_accountType;
                     bool m_accountTypeHasBeenSet;

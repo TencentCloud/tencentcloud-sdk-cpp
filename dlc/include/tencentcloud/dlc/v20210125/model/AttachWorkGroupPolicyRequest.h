@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作组Id
-                     * @return WorkGroupId 工作组Id
+                     * 获取<p>工作组Id</p>
+                     * @return WorkGroupId <p>工作组Id</p>
                      * 
                      */
                     int64_t GetWorkGroupId() const;
 
                     /**
-                     * 设置工作组Id
-                     * @param _workGroupId 工作组Id
+                     * 设置<p>工作组Id</p>
+                     * @param _workGroupId <p>工作组Id</p>
                      * 
                      */
                     void SetWorkGroupId(const int64_t& _workGroupId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool WorkGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取要绑定的策略集合
-                     * @return PolicySet 要绑定的策略集合
+                     * 获取<p>要绑定的策略集合</p>
+                     * @return PolicySet <p>要绑定的策略集合</p>
                      * 
                      */
                     std::vector<Policy> GetPolicySet() const;
 
                     /**
-                     * 设置要绑定的策略集合
-                     * @param _policySet 要绑定的策略集合
+                     * 设置<p>要绑定的策略集合</p>
+                     * @param _policySet <p>要绑定的策略集合</p>
                      * 
                      */
                     void SetPolicySet(const std::vector<Policy>& _policySet);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 工作组Id
+                     * <p>工作组Id</p>
                      */
                     int64_t m_workGroupId;
                     bool m_workGroupIdHasBeenSet;
 
                     /**
-                     * 要绑定的策略集合
+                     * <p>要绑定的策略集合</p>
                      */
                     std::vector<Policy> m_policySet;
                     bool m_policySetHasBeenSet;

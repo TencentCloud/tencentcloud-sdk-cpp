@@ -177,6 +177,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterInstanceGroupsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterInstanceGrpsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterInstanceGrpsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeClusterLevelsRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeClusterLevelsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterParamLogsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterParamLogsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterParamsRequest.h>
@@ -742,6 +744,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterInstanceGrpsResponse> DescribeClusterInstanceGrpsOutcome;
                 typedef std::future<DescribeClusterInstanceGrpsOutcome> DescribeClusterInstanceGrpsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeClusterInstanceGrpsRequest&, DescribeClusterInstanceGrpsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterInstanceGrpsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterLevelsResponse> DescribeClusterLevelsOutcome;
+                typedef std::future<DescribeClusterLevelsOutcome> DescribeClusterLevelsOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeClusterLevelsRequest&, DescribeClusterLevelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterLevelsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterParamLogsResponse> DescribeClusterParamLogsOutcome;
                 typedef std::future<DescribeClusterParamLogsOutcome> DescribeClusterParamLogsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeClusterParamLogsRequest&, DescribeClusterParamLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterParamLogsAsyncHandler;
@@ -1917,6 +1922,15 @@ namespace TencentCloud
                 DescribeClusterInstanceGrpsOutcome DescribeClusterInstanceGrps(const Model::DescribeClusterInstanceGrpsRequest &request);
                 void DescribeClusterInstanceGrpsAsync(const Model::DescribeClusterInstanceGrpsRequest& request, const DescribeClusterInstanceGrpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClusterInstanceGrpsOutcomeCallable DescribeClusterInstanceGrpsCallable(const Model::DescribeClusterInstanceGrpsRequest& request);
+
+                /**
+                 *查询可支持的集群类型列表
+                 * @param req DescribeClusterLevelsRequest
+                 * @return DescribeClusterLevelsOutcome
+                 */
+                DescribeClusterLevelsOutcome DescribeClusterLevels(const Model::DescribeClusterLevelsRequest &request);
+                void DescribeClusterLevelsAsync(const Model::DescribeClusterLevelsRequest& request, const DescribeClusterLevelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterLevelsOutcomeCallable DescribeClusterLevelsCallable(const Model::DescribeClusterLevelsRequest& request);
 
                 /**
                  *本接口（DescribeClusterParamLogs）用于查询参数修改记录。

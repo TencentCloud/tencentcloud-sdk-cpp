@@ -31,7 +31,10 @@ IdCardOCRVerificationResponse::IdCardOCRVerificationResponse() :
     m_sexHasBeenSet(false),
     m_nationHasBeenSet(false),
     m_birthHasBeenSet(false),
-    m_addressHasBeenSet(false)
+    m_addressHasBeenSet(false),
+    m_portraitHasBeenSet(false),
+    m_warningsHasBeenSet(false),
+    m_qualityHasBeenSet(false)
 {
 }
 
@@ -149,6 +152,36 @@ CoreInternalOutcome IdCardOCRVerificationResponse::Deserialize(const string &pay
         m_addressHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Portrait") && !rsp["Portrait"].IsNull())
+    {
+        if (!rsp["Portrait"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Portrait` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_portrait = string(rsp["Portrait"].GetString());
+        m_portraitHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Warnings") && !rsp["Warnings"].IsNull())
+    {
+        if (!rsp["Warnings"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Warnings` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_warnings = string(rsp["Warnings"].GetString());
+        m_warningsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Quality") && !rsp["Quality"].IsNull())
+    {
+        if (!rsp["Quality"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Quality` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_quality = rsp["Quality"].GetDouble();
+        m_qualityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +254,30 @@ string IdCardOCRVerificationResponse::ToJsonString() const
         string key = "Address";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_address.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_portraitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Portrait";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_portrait.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_warningsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Warnings";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_warnings.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_qualityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Quality";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_quality, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -313,6 +370,36 @@ string IdCardOCRVerificationResponse::GetAddress() const
 bool IdCardOCRVerificationResponse::AddressHasBeenSet() const
 {
     return m_addressHasBeenSet;
+}
+
+string IdCardOCRVerificationResponse::GetPortrait() const
+{
+    return m_portrait;
+}
+
+bool IdCardOCRVerificationResponse::PortraitHasBeenSet() const
+{
+    return m_portraitHasBeenSet;
+}
+
+string IdCardOCRVerificationResponse::GetWarnings() const
+{
+    return m_warnings;
+}
+
+bool IdCardOCRVerificationResponse::WarningsHasBeenSet() const
+{
+    return m_warningsHasBeenSet;
+}
+
+double IdCardOCRVerificationResponse::GetQuality() const
+{
+    return m_quality;
+}
+
+bool IdCardOCRVerificationResponse::QualityHasBeenSet() const
+{
+    return m_qualityHasBeenSet;
 }
 
 

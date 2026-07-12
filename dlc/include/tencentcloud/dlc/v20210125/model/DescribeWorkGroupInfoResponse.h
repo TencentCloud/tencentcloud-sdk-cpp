@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作组详细信息
+                     * 获取<p>工作组详细信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkGroupInfo 工作组详细信息
+                     * @return WorkGroupInfo <p>工作组详细信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 工作组详细信息
+                     * <p>工作组详细信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WorkGroupDetailInfo m_workGroupInfo;

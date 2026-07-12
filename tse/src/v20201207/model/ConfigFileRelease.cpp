@@ -39,7 +39,9 @@ ConfigFileRelease::ConfigFileRelease() :
     m_formatHasBeenSet(false),
     m_configFileIdHasBeenSet(false),
     m_configFileSupportedClientHasBeenSet(false),
-    m_configFilePersistentHasBeenSet(false)
+    m_configFilePersistentHasBeenSet(false),
+    m_betaLabelsHasBeenSet(false),
+    m_releaseTypeHasBeenSet(false)
 {
 }
 
@@ -245,6 +247,36 @@ CoreInternalOutcome ConfigFileRelease::Deserialize(const rapidjson::Value &value
         m_configFilePersistentHasBeenSet = true;
     }
 
+    if (value.HasMember("BetaLabels") && !value["BetaLabels"].IsNull())
+    {
+        if (!value["BetaLabels"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ConfigFileRelease.BetaLabels` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BetaLabels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BetaLabel item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_betaLabels.push_back(item);
+        }
+        m_betaLabelsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReleaseType") && !value["ReleaseType"].IsNull())
+    {
+        if (!value["ReleaseType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigFileRelease.ReleaseType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_releaseType = string(value["ReleaseType"].GetString());
+        m_releaseTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -403,6 +435,29 @@ void ConfigFileRelease::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_configFilePersistent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_betaLabelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BetaLabels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_betaLabels.begin(); itr != m_betaLabels.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_releaseTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReleaseType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_releaseType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -710,5 +765,37 @@ void ConfigFileRelease::SetConfigFilePersistent(const ConfigFilePersistent& _con
 bool ConfigFileRelease::ConfigFilePersistentHasBeenSet() const
 {
     return m_configFilePersistentHasBeenSet;
+}
+
+vector<BetaLabel> ConfigFileRelease::GetBetaLabels() const
+{
+    return m_betaLabels;
+}
+
+void ConfigFileRelease::SetBetaLabels(const vector<BetaLabel>& _betaLabels)
+{
+    m_betaLabels = _betaLabels;
+    m_betaLabelsHasBeenSet = true;
+}
+
+bool ConfigFileRelease::BetaLabelsHasBeenSet() const
+{
+    return m_betaLabelsHasBeenSet;
+}
+
+string ConfigFileRelease::GetReleaseType() const
+{
+    return m_releaseType;
+}
+
+void ConfigFileRelease::SetReleaseType(const string& _releaseType)
+{
+    m_releaseType = _releaseType;
+    m_releaseTypeHasBeenSet = true;
+}
+
+bool ConfigFileRelease::ReleaseTypeHasBeenSet() const
+{
+    return m_releaseTypeHasBeenSet;
 }
 

@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/ImageEncodeConfig.h>
 #include <tencentcloud/vod/v20180717/model/ImageEnhanceConfig.h>
+#include <tencentcloud/vod/v20180717/model/ImageBeautyConfig.h>
 
 
 namespace TencentCloud
@@ -37,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 图片异步处理配置
+                * 图片异步处理配置。
                 */
                 class ProcessImageAsyncTask : public AbstractModel
                 {
@@ -49,18 +50,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图片转码输出配置。
+                     * 获取<p>图片转码输出配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EncodeConfig 图片转码输出配置。
+                     * @return EncodeConfig <p>图片转码输出配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ImageEncodeConfig GetEncodeConfig() const;
 
                     /**
-                     * 设置图片转码输出配置。
+                     * 设置<p>图片转码输出配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _encodeConfig 图片转码输出配置。
+                     * @param _encodeConfig <p>图片转码输出配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,18 +75,18 @@ namespace TencentCloud
                     bool EncodeConfigHasBeenSet() const;
 
                     /**
-                     * 获取图片增强配置。
+                     * 获取<p>图片增强配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EnhanceConfig 图片增强配置。
+                     * @return EnhanceConfig <p>图片增强配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ImageEnhanceConfig GetEnhanceConfig() const;
 
                     /**
-                     * 设置图片增强配置。
+                     * 设置<p>图片增强配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _enhanceConfig 图片增强配置。
+                     * @param _enhanceConfig <p>图片增强配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,21 +99,53 @@ namespace TencentCloud
                      */
                     bool EnhanceConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>图片美颜配置。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BeautyConfig <p>图片美颜配置。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ImageBeautyConfig GetBeautyConfig() const;
+
+                    /**
+                     * 设置<p>图片美颜配置。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _beautyConfig <p>图片美颜配置。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBeautyConfig(const ImageBeautyConfig& _beautyConfig);
+
+                    /**
+                     * 判断参数 BeautyConfig 是否已赋值
+                     * @return BeautyConfig 是否已赋值
+                     * 
+                     */
+                    bool BeautyConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 图片转码输出配置。
+                     * <p>图片转码输出配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ImageEncodeConfig m_encodeConfig;
                     bool m_encodeConfigHasBeenSet;
 
                     /**
-                     * 图片增强配置。
+                     * <p>图片增强配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ImageEnhanceConfig m_enhanceConfig;
                     bool m_enhanceConfigHasBeenSet;
+
+                    /**
+                     * <p>图片美颜配置。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ImageBeautyConfig m_beautyConfig;
+                    bool m_beautyConfigHasBeenSet;
 
                 };
             }

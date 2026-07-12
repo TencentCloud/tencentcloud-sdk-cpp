@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取CMK的全局唯一标识
-                     * @return KeyId CMK的全局唯一标识
+                     * 获取<p>CMK的全局唯一标识</p>
+                     * @return KeyId <p>CMK的全局唯一标识</p>
                      * 
                      */
                     std::string GetKeyId() const;
 
                     /**
-                     * 设置CMK的全局唯一标识
-                     * @param _keyId CMK的全局唯一标识
+                     * 设置<p>CMK的全局唯一标识</p>
+                     * @param _keyId <p>CMK的全局唯一标识</p>
                      * 
                      */
                     void SetKeyId(const std::string& _keyId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool KeyIdHasBeenSet() const;
 
                     /**
-                     * 获取作为密钥更容易辨识，更容易被人看懂的别名
-                     * @return Alias 作为密钥更容易辨识，更容易被人看懂的别名
+                     * 获取<p>作为密钥更容易辨识，更容易被人看懂的别名</p>
+                     * @return Alias <p>作为密钥更容易辨识，更容易被人看懂的别名</p>
                      * 
                      */
                     std::string GetAlias() const;
 
                     /**
-                     * 设置作为密钥更容易辨识，更容易被人看懂的别名
-                     * @param _alias 作为密钥更容易辨识，更容易被人看懂的别名
+                     * 设置<p>作为密钥更容易辨识，更容易被人看懂的别名</p>
+                     * @param _alias <p>作为密钥更容易辨识，更容易被人看懂的别名</p>
                      * 
                      */
                     void SetAlias(const std::string& _alias);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool AliasHasBeenSet() const;
 
                     /**
-                     * 获取密钥创建时间
-                     * @return CreateTime 密钥创建时间
+                     * 获取<p>密钥创建时间</p>
+                     * @return CreateTime <p>密钥创建时间</p>
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
-                     * 设置密钥创建时间
-                     * @param _createTime 密钥创建时间
+                     * 设置<p>密钥创建时间</p>
+                     * @param _createTime <p>密钥创建时间</p>
                      * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取CMK的描述
-                     * @return Description CMK的描述
+                     * 获取<p>CMK的描述</p>
+                     * @return Description <p>CMK的描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置CMK的描述
-                     * @param _description CMK的描述
+                     * 设置<p>CMK的描述</p>
+                     * @param _description <p>CMK的描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport | Archived
-                     * @return KeyState CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport | Archived
+                     * 获取<p>CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport | Archived</p>
+                     * @return KeyState <p>CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport | Archived</p>
                      * 
                      */
                     std::string GetKeyState() const;
 
                     /**
-                     * 设置CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport | Archived
-                     * @param _keyState CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport | Archived
+                     * 设置<p>CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport | Archived</p>
+                     * @param _keyState <p>CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport | Archived</p>
                      * 
                      */
                     void SetKeyState(const std::string& _keyState);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool KeyStateHasBeenSet() const;
 
                     /**
-                     * 获取CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2 | ASYMMETRIC_SIGN_VERIFY_SM2 | ASYMMETRIC_SIGN_VERIFY_RSA_2048 | ASYMMETRIC_SIGN_VERIFY_ECC
-                     * @return KeyUsage CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2 | ASYMMETRIC_SIGN_VERIFY_SM2 | ASYMMETRIC_SIGN_VERIFY_RSA_2048 | ASYMMETRIC_SIGN_VERIFY_ECC
+                     * 获取<p>CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2 | ASYMMETRIC_SIGN_VERIFY_SM2 | ASYMMETRIC_SIGN_VERIFY_RSA_2048 | ASYMMETRIC_SIGN_VERIFY_ECC</p>
+                     * @return KeyUsage <p>CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2 | ASYMMETRIC_SIGN_VERIFY_SM2 | ASYMMETRIC_SIGN_VERIFY_RSA_2048 | ASYMMETRIC_SIGN_VERIFY_ECC</p>
                      * 
                      */
                     std::string GetKeyUsage() const;
 
                     /**
-                     * 设置CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2 | ASYMMETRIC_SIGN_VERIFY_SM2 | ASYMMETRIC_SIGN_VERIFY_RSA_2048 | ASYMMETRIC_SIGN_VERIFY_ECC
-                     * @param _keyUsage CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2 | ASYMMETRIC_SIGN_VERIFY_SM2 | ASYMMETRIC_SIGN_VERIFY_RSA_2048 | ASYMMETRIC_SIGN_VERIFY_ECC
+                     * 设置<p>CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2 | ASYMMETRIC_SIGN_VERIFY_SM2 | ASYMMETRIC_SIGN_VERIFY_RSA_2048 | ASYMMETRIC_SIGN_VERIFY_ECC</p>
+                     * @param _keyUsage <p>CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2 | ASYMMETRIC_SIGN_VERIFY_SM2 | ASYMMETRIC_SIGN_VERIFY_RSA_2048 | ASYMMETRIC_SIGN_VERIFY_ECC</p>
                      * 
                      */
                     void SetKeyUsage(const std::string& _keyUsage);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool KeyUsageHasBeenSet() const;
 
                     /**
-                     * 获取CMK类型，2 表示符合FIPS标准，4表示符合国密标准
-                     * @return Type CMK类型，2 表示符合FIPS标准，4表示符合国密标准
+                     * 获取<p>CMK类型，2 表示符合FIPS 140-2标准，4表示符合国密标准</p><p>枚举值：</p><ul><li>2： 表示符合FIPS 140-2标准</li><li>4： 表示符合国密标准</li></ul>
+                     * @return Type <p>CMK类型，2 表示符合FIPS 140-2标准，4表示符合国密标准</p><p>枚举值：</p><ul><li>2： 表示符合FIPS 140-2标准</li><li>4： 表示符合国密标准</li></ul>
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置CMK类型，2 表示符合FIPS标准，4表示符合国密标准
-                     * @param _type CMK类型，2 表示符合FIPS标准，4表示符合国密标准
+                     * 设置<p>CMK类型，2 表示符合FIPS 140-2标准，4表示符合国密标准</p><p>枚举值：</p><ul><li>2： 表示符合FIPS 140-2标准</li><li>4： 表示符合国密标准</li></ul>
+                     * @param _type <p>CMK类型，2 表示符合FIPS 140-2标准，4表示符合国密标准</p><p>枚举值：</p><ul><li>2： 表示符合FIPS 140-2标准</li><li>4： 表示符合国密标准</li></ul>
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取创建者
-                     * @return CreatorUin 创建者
+                     * 获取<p>创建者</p>
+                     * @return CreatorUin <p>创建者</p>
                      * 
                      */
                     uint64_t GetCreatorUin() const;
 
                     /**
-                     * 设置创建者
-                     * @param _creatorUin 创建者
+                     * 设置<p>创建者</p>
+                     * @param _creatorUin <p>创建者</p>
                      * 
                      */
                     void SetCreatorUin(const uint64_t& _creatorUin);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool CreatorUinHasBeenSet() const;
 
                     /**
-                     * 获取是否开启了密钥轮换功能
-                     * @return KeyRotationEnabled 是否开启了密钥轮换功能
+                     * 获取<p>是否开启了密钥轮换功能</p>
+                     * @return KeyRotationEnabled <p>是否开启了密钥轮换功能</p>
                      * 
                      */
                     bool GetKeyRotationEnabled() const;
 
                     /**
-                     * 设置是否开启了密钥轮换功能
-                     * @param _keyRotationEnabled 是否开启了密钥轮换功能
+                     * 设置<p>是否开启了密钥轮换功能</p>
+                     * @param _keyRotationEnabled <p>是否开启了密钥轮换功能</p>
                      * 
                      */
                     void SetKeyRotationEnabled(const bool& _keyRotationEnabled);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool KeyRotationEnabledHasBeenSet() const;
 
                     /**
-                     * 获取CMK的创建者，用户创建的为 user，授权各云产品自动创建的为对应的产品名
-                     * @return Owner CMK的创建者，用户创建的为 user，授权各云产品自动创建的为对应的产品名
+                     * 获取<p>CMK的创建者，用户创建的为 user，授权各云产品自动创建的为对应的产品名</p>
+                     * @return Owner <p>CMK的创建者，用户创建的为 user，授权各云产品自动创建的为对应的产品名</p>
                      * 
                      */
                     std::string GetOwner() const;
 
                     /**
-                     * 设置CMK的创建者，用户创建的为 user，授权各云产品自动创建的为对应的产品名
-                     * @param _owner CMK的创建者，用户创建的为 user，授权各云产品自动创建的为对应的产品名
+                     * 设置<p>CMK的创建者，用户创建的为 user，授权各云产品自动创建的为对应的产品名</p>
+                     * @param _owner <p>CMK的创建者，用户创建的为 user，授权各云产品自动创建的为对应的产品名</p>
                      * 
                      */
                     void SetOwner(const std::string& _owner);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool OwnerHasBeenSet() const;
 
                     /**
-                     * 获取在密钥轮换开启状态下，下次轮换的时间
-                     * @return NextRotateTime 在密钥轮换开启状态下，下次轮换的时间
+                     * 获取<p>在密钥轮换开启状态下，下次轮换的时间</p>
+                     * @return NextRotateTime <p>在密钥轮换开启状态下，下次轮换的时间</p>
                      * 
                      */
                     uint64_t GetNextRotateTime() const;
 
                     /**
-                     * 设置在密钥轮换开启状态下，下次轮换的时间
-                     * @param _nextRotateTime 在密钥轮换开启状态下，下次轮换的时间
+                     * 设置<p>在密钥轮换开启状态下，下次轮换的时间</p>
+                     * @param _nextRotateTime <p>在密钥轮换开启状态下，下次轮换的时间</p>
                      * 
                      */
                     void SetNextRotateTime(const uint64_t& _nextRotateTime);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool NextRotateTimeHasBeenSet() const;
 
                     /**
-                     * 获取计划删除的时间
-                     * @return DeletionDate 计划删除的时间
+                     * 获取<p>计划删除的时间</p>
+                     * @return DeletionDate <p>计划删除的时间</p>
                      * 
                      */
                     uint64_t GetDeletionDate() const;
 
                     /**
-                     * 设置计划删除的时间
-                     * @param _deletionDate 计划删除的时间
+                     * 设置<p>计划删除的时间</p>
+                     * @param _deletionDate <p>计划删除的时间</p>
                      * 
                      */
                     void SetDeletionDate(const uint64_t& _deletionDate);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool DeletionDateHasBeenSet() const;
 
                     /**
-                     * 获取CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL
-                     * @return Origin CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL
+                     * 获取<p>CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL</p>
+                     * @return Origin <p>CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL</p>
                      * 
                      */
                     std::string GetOrigin() const;
 
                     /**
-                     * 设置CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL
-                     * @param _origin CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL
+                     * 设置<p>CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL</p>
+                     * @param _origin <p>CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL</p>
                      * 
                      */
                     void SetOrigin(const std::string& _origin);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool OriginHasBeenSet() const;
 
                     /**
-                     * 获取在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期
-                     * @return ValidTo 在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期
+                     * 获取<p>在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期</p>
+                     * @return ValidTo <p>在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期</p>
                      * 
                      */
                     uint64_t GetValidTo() const;
 
                     /**
-                     * 设置在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期
-                     * @param _validTo 在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期
+                     * 设置<p>在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期</p>
+                     * @param _validTo <p>在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期</p>
                      * 
                      */
                     void SetValidTo(const uint64_t& _validTo);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool ValidToHasBeenSet() const;
 
                     /**
-                     * 获取资源ID，格式：creatorUin/$creatorUin/$keyId
-                     * @return ResourceId 资源ID，格式：creatorUin/$creatorUin/$keyId
+                     * 获取<p>资源ID，格式：creatorUin/$creatorUin/$keyId</p>
+                     * @return ResourceId <p>资源ID，格式：creatorUin/$creatorUin/$keyId</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源ID，格式：creatorUin/$creatorUin/$keyId
-                     * @param _resourceId 资源ID，格式：creatorUin/$creatorUin/$keyId
+                     * 设置<p>资源ID，格式：creatorUin/$creatorUin/$keyId</p>
+                     * @param _resourceId <p>资源ID，格式：creatorUin/$creatorUin/$keyId</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）
-                     * @return HsmClusterId HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）
+                     * 获取<p>HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）</p>
+                     * @return HsmClusterId <p>HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）</p>
                      * 
                      */
                     std::string GetHsmClusterId() const;
 
                     /**
-                     * 设置HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）
-                     * @param _hsmClusterId HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）
+                     * 设置<p>HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）</p>
+                     * @param _hsmClusterId <p>HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）</p>
                      * 
                      */
                     void SetHsmClusterId(const std::string& _hsmClusterId);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool HsmClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取密钥轮转周期（天）
-                     * @return RotateDays 密钥轮转周期（天）
+                     * 获取<p>密钥轮转周期（天）</p>
+                     * @return RotateDays <p>密钥轮转周期（天）</p>
                      * 
                      */
                     uint64_t GetRotateDays() const;
 
                     /**
-                     * 设置密钥轮转周期（天）
-                     * @param _rotateDays 密钥轮转周期（天）
+                     * 设置<p>密钥轮转周期（天）</p>
+                     * @param _rotateDays <p>密钥轮转周期（天）</p>
                      * 
                      */
                     void SetRotateDays(const uint64_t& _rotateDays);
@@ -404,15 +404,15 @@ namespace TencentCloud
                     bool RotateDaysHasBeenSet() const;
 
                     /**
-                     * 获取上次乱转时间（Unix timestamp）
-                     * @return LastRotateTime 上次乱转时间（Unix timestamp）
+                     * 获取<p>上次轮转时间（Unix timestamp）</p>
+                     * @return LastRotateTime <p>上次轮转时间（Unix timestamp）</p>
                      * 
                      */
                     uint64_t GetLastRotateTime() const;
 
                     /**
-                     * 设置上次乱转时间（Unix timestamp）
-                     * @param _lastRotateTime 上次乱转时间（Unix timestamp）
+                     * 设置<p>上次轮转时间（Unix timestamp）</p>
+                     * @param _lastRotateTime <p>上次轮转时间（Unix timestamp）</p>
                      * 
                      */
                     void SetLastRotateTime(const uint64_t& _lastRotateTime);
@@ -425,15 +425,15 @@ namespace TencentCloud
                     bool LastRotateTimeHasBeenSet() const;
 
                     /**
-                     * 获取 密钥是否是主副本。0:主本，1:同步副本。
-                     * @return IsSyncReplica  密钥是否是主副本。0:主本，1:同步副本。
+                     * 获取<p>密钥是否是主副本。0:主本，1:同步副本。</p>
+                     * @return IsSyncReplica <p>密钥是否是主副本。0:主本，1:同步副本。</p>
                      * 
                      */
                     int64_t GetIsSyncReplica() const;
 
                     /**
-                     * 设置 密钥是否是主副本。0:主本，1:同步副本。
-                     * @param _isSyncReplica  密钥是否是主副本。0:主本，1:同步副本。
+                     * 设置<p>密钥是否是主副本。0:主本，1:同步副本。</p>
+                     * @param _isSyncReplica <p>密钥是否是主副本。0:主本，1:同步副本。</p>
                      * 
                      */
                     void SetIsSyncReplica(const int64_t& _isSyncReplica);
@@ -446,15 +446,15 @@ namespace TencentCloud
                     bool IsSyncReplicaHasBeenSet() const;
 
                     /**
-                     * 获取同步的原始地域
-                     * @return SourceRegion 同步的原始地域
+                     * 获取<p>同步的原始地域</p>
+                     * @return SourceRegion <p>同步的原始地域</p>
                      * 
                      */
                     std::string GetSourceRegion() const;
 
                     /**
-                     * 设置同步的原始地域
-                     * @param _sourceRegion 同步的原始地域
+                     * 设置<p>同步的原始地域</p>
+                     * @param _sourceRegion <p>同步的原始地域</p>
                      * 
                      */
                     void SetSourceRegion(const std::string& _sourceRegion);
@@ -467,15 +467,15 @@ namespace TencentCloud
                     bool SourceRegionHasBeenSet() const;
 
                     /**
-                     * 获取密钥同步的状态，0:未同步,1:同步成功,2:同步失败,3:同步中。
-                     * @return SyncStatus 密钥同步的状态，0:未同步,1:同步成功,2:同步失败,3:同步中。
+                     * 获取<p>密钥同步的状态，0:未同步,1:同步成功,2:同步失败,3:同步中。</p>
+                     * @return SyncStatus <p>密钥同步的状态，0:未同步,1:同步成功,2:同步失败,3:同步中。</p>
                      * 
                      */
                     int64_t GetSyncStatus() const;
 
                     /**
-                     * 设置密钥同步的状态，0:未同步,1:同步成功,2:同步失败,3:同步中。
-                     * @param _syncStatus 密钥同步的状态，0:未同步,1:同步成功,2:同步失败,3:同步中。
+                     * 设置<p>密钥同步的状态，0:未同步,1:同步成功,2:同步失败,3:同步中。</p>
+                     * @param _syncStatus <p>密钥同步的状态，0:未同步,1:同步成功,2:同步失败,3:同步中。</p>
                      * 
                      */
                     void SetSyncStatus(const int64_t& _syncStatus);
@@ -488,15 +488,15 @@ namespace TencentCloud
                     bool SyncStatusHasBeenSet() const;
 
                     /**
-                     * 获取同步的结果描述
-                     * @return SyncMessages 同步的结果描述
+                     * 获取<p>同步的结果描述</p>
+                     * @return SyncMessages <p>同步的结果描述</p>
                      * 
                      */
                     std::string GetSyncMessages() const;
 
                     /**
-                     * 设置同步的结果描述
-                     * @param _syncMessages 同步的结果描述
+                     * 设置<p>同步的结果描述</p>
+                     * @param _syncMessages <p>同步的结果描述</p>
                      * 
                      */
                     void SetSyncMessages(const std::string& _syncMessages);
@@ -509,15 +509,15 @@ namespace TencentCloud
                     bool SyncMessagesHasBeenSet() const;
 
                     /**
-                     * 获取同步的开始时间
-                     * @return SyncStartTime 同步的开始时间
+                     * 获取<p>同步的开始时间</p>
+                     * @return SyncStartTime <p>同步的开始时间</p>
                      * 
                      */
                     uint64_t GetSyncStartTime() const;
 
                     /**
-                     * 设置同步的开始时间
-                     * @param _syncStartTime 同步的开始时间
+                     * 设置<p>同步的开始时间</p>
+                     * @param _syncStartTime <p>同步的开始时间</p>
                      * 
                      */
                     void SetSyncStartTime(const uint64_t& _syncStartTime);
@@ -530,15 +530,15 @@ namespace TencentCloud
                     bool SyncStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取同步的结束时间
-                     * @return SyncEndTime 同步的结束时间
+                     * 获取<p>同步的结束时间</p>
+                     * @return SyncEndTime <p>同步的结束时间</p>
                      * 
                      */
                     uint64_t GetSyncEndTime() const;
 
                     /**
-                     * 设置同步的结束时间
-                     * @param _syncEndTime 同步的结束时间
+                     * 设置<p>同步的结束时间</p>
+                     * @param _syncEndTime <p>同步的结束时间</p>
                      * 
                      */
                     void SetSyncEndTime(const uint64_t& _syncEndTime);
@@ -551,15 +551,15 @@ namespace TencentCloud
                     bool SyncEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取同步的原始集群，如果为空，是公有云公共集群
-                     * @return SourceHsmClusterId 同步的原始集群，如果为空，是公有云公共集群
+                     * 获取<p>同步的原始集群，如果为空，是公有云公共集群</p>
+                     * @return SourceHsmClusterId <p>同步的原始集群，如果为空，是公有云公共集群</p>
                      * 
                      */
                     std::string GetSourceHsmClusterId() const;
 
                     /**
-                     * 设置同步的原始集群，如果为空，是公有云公共集群
-                     * @param _sourceHsmClusterId 同步的原始集群，如果为空，是公有云公共集群
+                     * 设置<p>同步的原始集群，如果为空，是公有云公共集群</p>
+                     * @param _sourceHsmClusterId <p>同步的原始集群，如果为空，是公有云公共集群</p>
                      * 
                      */
                     void SetSourceHsmClusterId(const std::string& _sourceHsmClusterId);
@@ -572,15 +572,15 @@ namespace TencentCloud
                     bool SourceHsmClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取成员账号appId
-                     * @return AccountAppId 成员账号appId
+                     * 获取<p>成员账号appId</p>
+                     * @return AccountAppId <p>成员账号appId</p>
                      * 
                      */
                     uint64_t GetAccountAppId() const;
 
                     /**
-                     * 设置成员账号appId
-                     * @param _accountAppId 成员账号appId
+                     * 设置<p>成员账号appId</p>
+                     * @param _accountAppId <p>成员账号appId</p>
                      * 
                      */
                     void SetAccountAppId(const uint64_t& _accountAppId);
@@ -593,15 +593,15 @@ namespace TencentCloud
                     bool AccountAppIdHasBeenSet() const;
 
                     /**
-                     * 获取成员账号uin
-                     * @return AccountUin 成员账号uin
+                     * 获取<p>成员账号uin</p>
+                     * @return AccountUin <p>成员账号uin</p>
                      * 
                      */
                     uint64_t GetAccountUin() const;
 
                     /**
-                     * 设置成员账号uin
-                     * @param _accountUin 成员账号uin
+                     * 设置<p>成员账号uin</p>
+                     * @param _accountUin <p>成员账号uin</p>
                      * 
                      */
                     void SetAccountUin(const uint64_t& _accountUin);
@@ -614,15 +614,15 @@ namespace TencentCloud
                     bool AccountUinHasBeenSet() const;
 
                     /**
-                     * 获取成员账号名称
-                     * @return AccountName 成员账号名称
+                     * 获取<p>成员账号名称</p>
+                     * @return AccountName <p>成员账号名称</p>
                      * 
                      */
                     std::string GetAccountName() const;
 
                     /**
-                     * 设置成员账号名称
-                     * @param _accountName 成员账号名称
+                     * 设置<p>成员账号名称</p>
+                     * @param _accountName <p>成员账号名称</p>
                      * 
                      */
                     void SetAccountName(const std::string& _accountName);
@@ -637,169 +637,169 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * CMK的全局唯一标识
+                     * <p>CMK的全局唯一标识</p>
                      */
                     std::string m_keyId;
                     bool m_keyIdHasBeenSet;
 
                     /**
-                     * 作为密钥更容易辨识，更容易被人看懂的别名
+                     * <p>作为密钥更容易辨识，更容易被人看懂的别名</p>
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;
 
                     /**
-                     * 密钥创建时间
+                     * <p>密钥创建时间</p>
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * CMK的描述
+                     * <p>CMK的描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport | Archived
+                     * <p>CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport | Archived</p>
                      */
                     std::string m_keyState;
                     bool m_keyStateHasBeenSet;
 
                     /**
-                     * CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2 | ASYMMETRIC_SIGN_VERIFY_SM2 | ASYMMETRIC_SIGN_VERIFY_RSA_2048 | ASYMMETRIC_SIGN_VERIFY_ECC
+                     * <p>CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2 | ASYMMETRIC_SIGN_VERIFY_SM2 | ASYMMETRIC_SIGN_VERIFY_RSA_2048 | ASYMMETRIC_SIGN_VERIFY_ECC</p>
                      */
                     std::string m_keyUsage;
                     bool m_keyUsageHasBeenSet;
 
                     /**
-                     * CMK类型，2 表示符合FIPS标准，4表示符合国密标准
+                     * <p>CMK类型，2 表示符合FIPS 140-2标准，4表示符合国密标准</p><p>枚举值：</p><ul><li>2： 表示符合FIPS 140-2标准</li><li>4： 表示符合国密标准</li></ul>
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 创建者
+                     * <p>创建者</p>
                      */
                     uint64_t m_creatorUin;
                     bool m_creatorUinHasBeenSet;
 
                     /**
-                     * 是否开启了密钥轮换功能
+                     * <p>是否开启了密钥轮换功能</p>
                      */
                     bool m_keyRotationEnabled;
                     bool m_keyRotationEnabledHasBeenSet;
 
                     /**
-                     * CMK的创建者，用户创建的为 user，授权各云产品自动创建的为对应的产品名
+                     * <p>CMK的创建者，用户创建的为 user，授权各云产品自动创建的为对应的产品名</p>
                      */
                     std::string m_owner;
                     bool m_ownerHasBeenSet;
 
                     /**
-                     * 在密钥轮换开启状态下，下次轮换的时间
+                     * <p>在密钥轮换开启状态下，下次轮换的时间</p>
                      */
                     uint64_t m_nextRotateTime;
                     bool m_nextRotateTimeHasBeenSet;
 
                     /**
-                     * 计划删除的时间
+                     * <p>计划删除的时间</p>
                      */
                     uint64_t m_deletionDate;
                     bool m_deletionDateHasBeenSet;
 
                     /**
-                     * CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL
+                     * <p>CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL</p>
                      */
                     std::string m_origin;
                     bool m_originHasBeenSet;
 
                     /**
-                     * 在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期
+                     * <p>在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期</p>
                      */
                     uint64_t m_validTo;
                     bool m_validToHasBeenSet;
 
                     /**
-                     * 资源ID，格式：creatorUin/$creatorUin/$keyId
+                     * <p>资源ID，格式：creatorUin/$creatorUin/$keyId</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）
+                     * <p>HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）</p>
                      */
                     std::string m_hsmClusterId;
                     bool m_hsmClusterIdHasBeenSet;
 
                     /**
-                     * 密钥轮转周期（天）
+                     * <p>密钥轮转周期（天）</p>
                      */
                     uint64_t m_rotateDays;
                     bool m_rotateDaysHasBeenSet;
 
                     /**
-                     * 上次乱转时间（Unix timestamp）
+                     * <p>上次轮转时间（Unix timestamp）</p>
                      */
                     uint64_t m_lastRotateTime;
                     bool m_lastRotateTimeHasBeenSet;
 
                     /**
-                     *  密钥是否是主副本。0:主本，1:同步副本。
+                     * <p>密钥是否是主副本。0:主本，1:同步副本。</p>
                      */
                     int64_t m_isSyncReplica;
                     bool m_isSyncReplicaHasBeenSet;
 
                     /**
-                     * 同步的原始地域
+                     * <p>同步的原始地域</p>
                      */
                     std::string m_sourceRegion;
                     bool m_sourceRegionHasBeenSet;
 
                     /**
-                     * 密钥同步的状态，0:未同步,1:同步成功,2:同步失败,3:同步中。
+                     * <p>密钥同步的状态，0:未同步,1:同步成功,2:同步失败,3:同步中。</p>
                      */
                     int64_t m_syncStatus;
                     bool m_syncStatusHasBeenSet;
 
                     /**
-                     * 同步的结果描述
+                     * <p>同步的结果描述</p>
                      */
                     std::string m_syncMessages;
                     bool m_syncMessagesHasBeenSet;
 
                     /**
-                     * 同步的开始时间
+                     * <p>同步的开始时间</p>
                      */
                     uint64_t m_syncStartTime;
                     bool m_syncStartTimeHasBeenSet;
 
                     /**
-                     * 同步的结束时间
+                     * <p>同步的结束时间</p>
                      */
                     uint64_t m_syncEndTime;
                     bool m_syncEndTimeHasBeenSet;
 
                     /**
-                     * 同步的原始集群，如果为空，是公有云公共集群
+                     * <p>同步的原始集群，如果为空，是公有云公共集群</p>
                      */
                     std::string m_sourceHsmClusterId;
                     bool m_sourceHsmClusterIdHasBeenSet;
 
                     /**
-                     * 成员账号appId
+                     * <p>成员账号appId</p>
                      */
                     uint64_t m_accountAppId;
                     bool m_accountAppIdHasBeenSet;
 
                     /**
-                     * 成员账号uin
+                     * <p>成员账号uin</p>
                      */
                     uint64_t m_accountUin;
                     bool m_accountUinHasBeenSet;
 
                     /**
-                     * 成员账号名称
+                     * <p>成员账号名称</p>
                      */
                     std::string m_accountName;
                     bool m_accountNameHasBeenSet;

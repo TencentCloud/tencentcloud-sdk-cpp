@@ -29,7 +29,8 @@ DescribeWorkGroupInfoRequest::DescribeWorkGroupInfoRequest() :
     m_sortByHasBeenSet(false),
     m_sortingHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_policyIdHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,14 @@ string DescribeWorkGroupInfoRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_policyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_policyId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -221,6 +230,22 @@ void DescribeWorkGroupInfoRequest::SetOffset(const int64_t& _offset)
 bool DescribeWorkGroupInfoRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeWorkGroupInfoRequest::GetPolicyId() const
+{
+    return m_policyId;
+}
+
+void DescribeWorkGroupInfoRequest::SetPolicyId(const string& _policyId)
+{
+    m_policyId = _policyId;
+    m_policyIdHasBeenSet = true;
+}
+
+bool DescribeWorkGroupInfoRequest::PolicyIdHasBeenSet() const
+{
+    return m_policyIdHasBeenSet;
 }
 
 

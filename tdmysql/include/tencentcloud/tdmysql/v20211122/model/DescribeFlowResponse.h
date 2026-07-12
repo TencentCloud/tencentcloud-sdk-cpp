@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>running表示进行中；success表示成功；paused表示暂停；failed表示失败</p>
+                     * @return Status <p>running表示进行中；success表示成功；paused表示暂停；failed表示失败</p>
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>running表示进行中；success表示成功；paused表示暂停；failed表示失败</p>
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

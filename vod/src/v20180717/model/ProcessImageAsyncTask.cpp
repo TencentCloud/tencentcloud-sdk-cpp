@@ -22,7 +22,8 @@ using namespace std;
 
 ProcessImageAsyncTask::ProcessImageAsyncTask() :
     m_encodeConfigHasBeenSet(false),
-    m_enhanceConfigHasBeenSet(false)
+    m_enhanceConfigHasBeenSet(false),
+    m_beautyConfigHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,23 @@ CoreInternalOutcome ProcessImageAsyncTask::Deserialize(const rapidjson::Value &v
         m_enhanceConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("BeautyConfig") && !value["BeautyConfig"].IsNull())
+    {
+        if (!value["BeautyConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessImageAsyncTask.BeautyConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_beautyConfig.Deserialize(value["BeautyConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_beautyConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +106,15 @@ void ProcessImageAsyncTask::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_enhanceConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_beautyConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BeautyConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_beautyConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -123,5 +150,21 @@ void ProcessImageAsyncTask::SetEnhanceConfig(const ImageEnhanceConfig& _enhanceC
 bool ProcessImageAsyncTask::EnhanceConfigHasBeenSet() const
 {
     return m_enhanceConfigHasBeenSet;
+}
+
+ImageBeautyConfig ProcessImageAsyncTask::GetBeautyConfig() const
+{
+    return m_beautyConfig;
+}
+
+void ProcessImageAsyncTask::SetBeautyConfig(const ImageBeautyConfig& _beautyConfig)
+{
+    m_beautyConfig = _beautyConfig;
+    m_beautyConfigHasBeenSet = true;
+}
+
+bool ProcessImageAsyncTask::BeautyConfigHasBeenSet() const
+{
+    return m_beautyConfigHasBeenSet;
 }
 

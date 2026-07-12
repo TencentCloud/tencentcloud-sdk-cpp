@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/Policy.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>要授权的策略列表</p>
+                     * @return PolicySet <p>要授权的策略列表</p>
+                     * 
+                     */
+                    std::vector<Policy> GetPolicySet() const;
+
+                    /**
+                     * 判断参数 PolicySet 是否已赋值
+                     * @return PolicySet 是否已赋值
+                     * 
+                     */
+                    bool PolicySetHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>要授权的策略列表</p>
+                     */
+                    std::vector<Policy> m_policySet;
+                    bool m_policySetHasBeenSet;
 
                 };
             }

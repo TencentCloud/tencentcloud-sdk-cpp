@@ -45,19 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待检测的文本内容，需为UTF-8编码并以Base64格式传入。
-
-                     * @return Content 待检测的文本内容，需为UTF-8编码并以Base64格式传入。
-
+                     * 获取<p>待检测的文本内容，需为UTF-8编码并以Base64格式传入。</p>
+                     * @return Content <p>待检测的文本内容，需为UTF-8编码并以Base64格式传入。</p>
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置待检测的文本内容，需为UTF-8编码并以Base64格式传入。
-
-                     * @param _content 待检测的文本内容，需为UTF-8编码并以Base64格式传入。
-
+                     * 设置<p>待检测的文本内容，需为UTF-8编码并以Base64格式传入。</p>
+                     * @param _content <p>待检测的文本内容，需为UTF-8编码并以Base64格式传入。</p>
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -70,23 +66,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取接口使用的识别策略编号，需在[控制台](https://console.cloud.tencent.com/cms/clouds/manage)获取。详细获取方式请参考以下链接：
-- **内容安全**（详见步骤四：策略配置）：[点击这里](https://cloud.tencent.com/document/product/1124/37119)
-- **AI生成识别**（详见服务对接->方式二）：[点击这里](https://cloud.tencent.com/document/product/1124/118694)
-                     * @return BizType 接口使用的识别策略编号，需在[控制台](https://console.cloud.tencent.com/cms/clouds/manage)获取。详细获取方式请参考以下链接：
-- **内容安全**（详见步骤四：策略配置）：[点击这里](https://cloud.tencent.com/document/product/1124/37119)
-- **AI生成识别**（详见服务对接->方式二）：[点击这里](https://cloud.tencent.com/document/product/1124/118694)
+                     * 获取<p>接口使用的识别策略编号，需在<a href="https://console.cloud.tencent.com/cms/clouds/manage">控制台</a>获取。详细获取方式请参考以下链接：</p><ul><li><strong>内容安全</strong>（详见步骤四：策略配置）：<a href="https://cloud.tencent.com/document/product/1124/37119">点击这里</a></li><li><strong>AI生成识别</strong>（详见服务对接-&gt;方式二）：<a href="https://cloud.tencent.com/document/product/1124/118694">点击这里</a></li></ul>
+                     * @return BizType <p>接口使用的识别策略编号，需在<a href="https://console.cloud.tencent.com/cms/clouds/manage">控制台</a>获取。详细获取方式请参考以下链接：</p><ul><li><strong>内容安全</strong>（详见步骤四：策略配置）：<a href="https://cloud.tencent.com/document/product/1124/37119">点击这里</a></li><li><strong>AI生成识别</strong>（详见服务对接-&gt;方式二）：<a href="https://cloud.tencent.com/document/product/1124/118694">点击这里</a></li></ul>
                      * 
                      */
                     std::string GetBizType() const;
 
                     /**
-                     * 设置接口使用的识别策略编号，需在[控制台](https://console.cloud.tencent.com/cms/clouds/manage)获取。详细获取方式请参考以下链接：
-- **内容安全**（详见步骤四：策略配置）：[点击这里](https://cloud.tencent.com/document/product/1124/37119)
-- **AI生成识别**（详见服务对接->方式二）：[点击这里](https://cloud.tencent.com/document/product/1124/118694)
-                     * @param _bizType 接口使用的识别策略编号，需在[控制台](https://console.cloud.tencent.com/cms/clouds/manage)获取。详细获取方式请参考以下链接：
-- **内容安全**（详见步骤四：策略配置）：[点击这里](https://cloud.tencent.com/document/product/1124/37119)
-- **AI生成识别**（详见服务对接->方式二）：[点击这里](https://cloud.tencent.com/document/product/1124/118694)
+                     * 设置<p>接口使用的识别策略编号，需在<a href="https://console.cloud.tencent.com/cms/clouds/manage">控制台</a>获取。详细获取方式请参考以下链接：</p><ul><li><strong>内容安全</strong>（详见步骤四：策略配置）：<a href="https://cloud.tencent.com/document/product/1124/37119">点击这里</a></li><li><strong>AI生成识别</strong>（详见服务对接-&gt;方式二）：<a href="https://cloud.tencent.com/document/product/1124/118694">点击这里</a></li></ul>
+                     * @param _bizType <p>接口使用的识别策略编号，需在<a href="https://console.cloud.tencent.com/cms/clouds/manage">控制台</a>获取。详细获取方式请参考以下链接：</p><ul><li><strong>内容安全</strong>（详见步骤四：策略配置）：<a href="https://cloud.tencent.com/document/product/1124/37119">点击这里</a></li><li><strong>AI生成识别</strong>（详见服务对接-&gt;方式二）：<a href="https://cloud.tencent.com/document/product/1124/118694">点击这里</a></li></ul>
                      * 
                      */
                     void SetBizType(const std::string& _bizType);
@@ -99,19 +87,15 @@ namespace TencentCloud
                     bool BizTypeHasBeenSet() const;
 
                     /**
-                     * 获取该字段表示您为待检测文本分配的数据ID，作用是方便您对数据进行标识和管理。
-取值：可由英文字母、数字、四种特殊符号（_，-，@，#）组成，**长度不超过64个字符**。
-                     * @return DataId 该字段表示您为待检测文本分配的数据ID，作用是方便您对数据进行标识和管理。
-取值：可由英文字母、数字、四种特殊符号（_，-，@，#）组成，**长度不超过64个字符**。
+                     * 获取<p>该字段表示您为待检测文本分配的数据ID，作用是方便您对数据进行标识和管理。<br>取值：可由英文字母、数字、四种特殊符号（_，-，@，#）组成，<strong>长度不超过64个字符</strong>。</p>
+                     * @return DataId <p>该字段表示您为待检测文本分配的数据ID，作用是方便您对数据进行标识和管理。<br>取值：可由英文字母、数字、四种特殊符号（_，-，@，#）组成，<strong>长度不超过64个字符</strong>。</p>
                      * 
                      */
                     std::string GetDataId() const;
 
                     /**
-                     * 设置该字段表示您为待检测文本分配的数据ID，作用是方便您对数据进行标识和管理。
-取值：可由英文字母、数字、四种特殊符号（_，-，@，#）组成，**长度不超过64个字符**。
-                     * @param _dataId 该字段表示您为待检测文本分配的数据ID，作用是方便您对数据进行标识和管理。
-取值：可由英文字母、数字、四种特殊符号（_，-，@，#）组成，**长度不超过64个字符**。
+                     * 设置<p>该字段表示您为待检测文本分配的数据ID，作用是方便您对数据进行标识和管理。<br>取值：可由英文字母、数字、四种特殊符号（_，-，@，#）组成，<strong>长度不超过64个字符</strong>。</p>
+                     * @param _dataId <p>该字段表示您为待检测文本分配的数据ID，作用是方便您对数据进行标识和管理。<br>取值：可由英文字母、数字、四种特殊符号（_，-，@，#）组成，<strong>长度不超过64个字符</strong>。</p>
                      * 
                      */
                     void SetDataId(const std::string& _dataId);
@@ -124,15 +108,15 @@ namespace TencentCloud
                     bool DataIdHasBeenSet() const;
 
                     /**
-                     * 获取该字段标识用户信息，传入后可增强甄别有违规风险的发布者账号。
-                     * @return User 该字段标识用户信息，传入后可增强甄别有违规风险的发布者账号。
+                     * 获取<p>该字段标识用户信息，传入后可增强甄别有违规风险的发布者账号。</p>
+                     * @return User <p>该字段标识用户信息，传入后可增强甄别有违规风险的发布者账号。</p>
                      * 
                      */
                     User GetUser() const;
 
                     /**
-                     * 设置该字段标识用户信息，传入后可增强甄别有违规风险的发布者账号。
-                     * @param _user 该字段标识用户信息，传入后可增强甄别有违规风险的发布者账号。
+                     * 设置<p>该字段标识用户信息，传入后可增强甄别有违规风险的发布者账号。</p>
+                     * @param _user <p>该字段标识用户信息，传入后可增强甄别有违规风险的发布者账号。</p>
                      * 
                      */
                     void SetUser(const User& _user);
@@ -145,15 +129,15 @@ namespace TencentCloud
                     bool UserHasBeenSet() const;
 
                     /**
-                     * 获取该字段标识设备信息，传入后可增强甄别有违规风险的发布者设备。
-                     * @return Device 该字段标识设备信息，传入后可增强甄别有违规风险的发布者设备。
+                     * 获取<p>该字段标识设备信息，传入后可增强甄别有违规风险的发布者设备。</p>
+                     * @return Device <p>该字段标识设备信息，传入后可增强甄别有违规风险的发布者设备。</p>
                      * 
                      */
                     Device GetDevice() const;
 
                     /**
-                     * 设置该字段标识设备信息，传入后可增强甄别有违规风险的发布者设备。
-                     * @param _device 该字段标识设备信息，传入后可增强甄别有违规风险的发布者设备。
+                     * 设置<p>该字段标识设备信息，传入后可增强甄别有违规风险的发布者设备。</p>
+                     * @param _device <p>该字段标识设备信息，传入后可增强甄别有违规风险的发布者设备。</p>
                      * 
                      */
                     void SetDevice(const Device& _device);
@@ -166,27 +150,15 @@ namespace TencentCloud
                     bool DeviceHasBeenSet() const;
 
                     /**
-                     * 获取Content字段的原始语种，枚举值包括 zh 和 en：
-- 推荐使用 zh
-- en 适用于纯英文内容，耗时较高。若需使用 en，请先通过[反馈工单](https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=1287&source=14&data_title=%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8&step=1)确认
-
-                     * @return SourceLanguage Content字段的原始语种，枚举值包括 zh 和 en：
-- 推荐使用 zh
-- en 适用于纯英文内容，耗时较高。若需使用 en，请先通过[反馈工单](https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=1287&source=14&data_title=%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8&step=1)确认
-
+                     * 获取<p>Content字段的原始语种，枚举值包括 zh 和 en：</p><ul><li>推荐使用 zh</li><li>en 适用于纯英文内容，耗时较高。若需使用 en，请先通过<a href="https://console.cloud.tencent.com/workorder/category?level1_id=141&amp;level2_id=1287&amp;source=14&amp;data_title=%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8&amp;step=1">反馈工单</a>确认</li></ul>
+                     * @return SourceLanguage <p>Content字段的原始语种，枚举值包括 zh 和 en：</p><ul><li>推荐使用 zh</li><li>en 适用于纯英文内容，耗时较高。若需使用 en，请先通过<a href="https://console.cloud.tencent.com/workorder/category?level1_id=141&amp;level2_id=1287&amp;source=14&amp;data_title=%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8&amp;step=1">反馈工单</a>确认</li></ul>
                      * 
                      */
                     std::string GetSourceLanguage() const;
 
                     /**
-                     * 设置Content字段的原始语种，枚举值包括 zh 和 en：
-- 推荐使用 zh
-- en 适用于纯英文内容，耗时较高。若需使用 en，请先通过[反馈工单](https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=1287&source=14&data_title=%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8&step=1)确认
-
-                     * @param _sourceLanguage Content字段的原始语种，枚举值包括 zh 和 en：
-- 推荐使用 zh
-- en 适用于纯英文内容，耗时较高。若需使用 en，请先通过[反馈工单](https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=1287&source=14&data_title=%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8&step=1)确认
-
+                     * 设置<p>Content字段的原始语种，枚举值包括 zh 和 en：</p><ul><li>推荐使用 zh</li><li>en 适用于纯英文内容，耗时较高。若需使用 en，请先通过<a href="https://console.cloud.tencent.com/workorder/category?level1_id=141&amp;level2_id=1287&amp;source=14&amp;data_title=%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8&amp;step=1">反馈工单</a>确认</li></ul>
+                     * @param _sourceLanguage <p>Content字段的原始语种，枚举值包括 zh 和 en：</p><ul><li>推荐使用 zh</li><li>en 适用于纯英文内容，耗时较高。若需使用 en，请先通过<a href="https://console.cloud.tencent.com/workorder/category?level1_id=141&amp;level2_id=1287&amp;source=14&amp;data_title=%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8&amp;step=1">反馈工单</a>确认</li></ul>
                      * 
                      */
                     void SetSourceLanguage(const std::string& _sourceLanguage);
@@ -199,23 +171,15 @@ namespace TencentCloud
                     bool SourceLanguageHasBeenSet() const;
 
                     /**
-                     * 获取服务类型，枚举值包括 TEXT 和 TEXT_AIGC：
-TEXT：内容安全
-TEXT_AIGC：AI生成识别
-                     * @return Type 服务类型，枚举值包括 TEXT 和 TEXT_AIGC：
-TEXT：内容安全
-TEXT_AIGC：AI生成识别
+                     * 获取<p>服务类型，枚举值包括 TEXT 和 TEXT_AIGC：<br>TEXT：内容安全<br>TEXT_AIGC：AI生成识别</p>
+                     * @return Type <p>服务类型，枚举值包括 TEXT 和 TEXT_AIGC：<br>TEXT：内容安全<br>TEXT_AIGC：AI生成识别</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置服务类型，枚举值包括 TEXT 和 TEXT_AIGC：
-TEXT：内容安全
-TEXT_AIGC：AI生成识别
-                     * @param _type 服务类型，枚举值包括 TEXT 和 TEXT_AIGC：
-TEXT：内容安全
-TEXT_AIGC：AI生成识别
+                     * 设置<p>服务类型，枚举值包括 TEXT 和 TEXT_AIGC：<br>TEXT：内容安全<br>TEXT_AIGC：AI生成识别</p>
+                     * @param _type <p>服务类型，枚举值包括 TEXT 和 TEXT_AIGC：<br>TEXT：内容安全<br>TEXT_AIGC：AI生成识别</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -228,15 +192,15 @@ TEXT_AIGC：AI生成识别
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取适用于上下文关联审核场景，若多条文本内容需要联合审核，通过该字段关联会话。
-                     * @return SessionId 适用于上下文关联审核场景，若多条文本内容需要联合审核，通过该字段关联会话。
+                     * 获取<p>适用于上下文关联审核场景，若多条文本内容需要联合审核，通过该字段关联会话。</p>
+                     * @return SessionId <p>适用于上下文关联审核场景，若多条文本内容需要联合审核，通过该字段关联会话。</p>
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置适用于上下文关联审核场景，若多条文本内容需要联合审核，通过该字段关联会话。
-                     * @param _sessionId 适用于上下文关联审核场景，若多条文本内容需要联合审核，通过该字段关联会话。
+                     * 设置<p>适用于上下文关联审核场景，若多条文本内容需要联合审核，通过该字段关联会话。</p>
+                     * @param _sessionId <p>适用于上下文关联审核场景，若多条文本内容需要联合审核，通过该字段关联会话。</p>
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -251,58 +215,49 @@ TEXT_AIGC：AI生成识别
                 private:
 
                     /**
-                     * 待检测的文本内容，需为UTF-8编码并以Base64格式传入。
-
+                     * <p>待检测的文本内容，需为UTF-8编码并以Base64格式传入。</p>
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 接口使用的识别策略编号，需在[控制台](https://console.cloud.tencent.com/cms/clouds/manage)获取。详细获取方式请参考以下链接：
-- **内容安全**（详见步骤四：策略配置）：[点击这里](https://cloud.tencent.com/document/product/1124/37119)
-- **AI生成识别**（详见服务对接->方式二）：[点击这里](https://cloud.tencent.com/document/product/1124/118694)
+                     * <p>接口使用的识别策略编号，需在<a href="https://console.cloud.tencent.com/cms/clouds/manage">控制台</a>获取。详细获取方式请参考以下链接：</p><ul><li><strong>内容安全</strong>（详见步骤四：策略配置）：<a href="https://cloud.tencent.com/document/product/1124/37119">点击这里</a></li><li><strong>AI生成识别</strong>（详见服务对接-&gt;方式二）：<a href="https://cloud.tencent.com/document/product/1124/118694">点击这里</a></li></ul>
                      */
                     std::string m_bizType;
                     bool m_bizTypeHasBeenSet;
 
                     /**
-                     * 该字段表示您为待检测文本分配的数据ID，作用是方便您对数据进行标识和管理。
-取值：可由英文字母、数字、四种特殊符号（_，-，@，#）组成，**长度不超过64个字符**。
+                     * <p>该字段表示您为待检测文本分配的数据ID，作用是方便您对数据进行标识和管理。<br>取值：可由英文字母、数字、四种特殊符号（_，-，@，#）组成，<strong>长度不超过64个字符</strong>。</p>
                      */
                     std::string m_dataId;
                     bool m_dataIdHasBeenSet;
 
                     /**
-                     * 该字段标识用户信息，传入后可增强甄别有违规风险的发布者账号。
+                     * <p>该字段标识用户信息，传入后可增强甄别有违规风险的发布者账号。</p>
                      */
                     User m_user;
                     bool m_userHasBeenSet;
 
                     /**
-                     * 该字段标识设备信息，传入后可增强甄别有违规风险的发布者设备。
+                     * <p>该字段标识设备信息，传入后可增强甄别有违规风险的发布者设备。</p>
                      */
                     Device m_device;
                     bool m_deviceHasBeenSet;
 
                     /**
-                     * Content字段的原始语种，枚举值包括 zh 和 en：
-- 推荐使用 zh
-- en 适用于纯英文内容，耗时较高。若需使用 en，请先通过[反馈工单](https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=1287&source=14&data_title=%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8&step=1)确认
-
+                     * <p>Content字段的原始语种，枚举值包括 zh 和 en：</p><ul><li>推荐使用 zh</li><li>en 适用于纯英文内容，耗时较高。若需使用 en，请先通过<a href="https://console.cloud.tencent.com/workorder/category?level1_id=141&amp;level2_id=1287&amp;source=14&amp;data_title=%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8&amp;step=1">反馈工单</a>确认</li></ul>
                      */
                     std::string m_sourceLanguage;
                     bool m_sourceLanguageHasBeenSet;
 
                     /**
-                     * 服务类型，枚举值包括 TEXT 和 TEXT_AIGC：
-TEXT：内容安全
-TEXT_AIGC：AI生成识别
+                     * <p>服务类型，枚举值包括 TEXT 和 TEXT_AIGC：<br>TEXT：内容安全<br>TEXT_AIGC：AI生成识别</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 适用于上下文关联审核场景，若多条文本内容需要联合审核，通过该字段关联会话。
+                     * <p>适用于上下文关联审核场景，若多条文本内容需要联合审核，通过该字段关联会话。</p>
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;

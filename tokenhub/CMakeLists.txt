@@ -23,6 +23,7 @@ set(tokenhub_public_header_model
   include/tencentcloud/tokenhub/v20260322/model/BindingItem.h
   include/tencentcloud/tokenhub/v20260322/model/CreateApiKeysResultItem.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanApiKeyListResponse.h
+  include/tencentcloud/tokenhub/v20260322/model/QuotasDesired.h
   include/tencentcloud/tokenhub/v20260322/model/DeleteGlossaryResponse.h
   include/tencentcloud/tokenhub/v20260322/model/DeleteGlossaryEntriesResponse.h
   include/tencentcloud/tokenhub/v20260322/model/RenewTokenPlanTeamOrderResponse.h
@@ -37,6 +38,7 @@ set(tokenhub_public_header_model
   include/tencentcloud/tokenhub/v20260322/model/CreateTokenPlanTeamOrderAndBuyRequest.h
   include/tencentcloud/tokenhub/v20260322/model/DeleteTokenPlanApiKeyResponse.h
   include/tencentcloud/tokenhub/v20260322/model/GlossaryEntryItem.h
+  include/tencentcloud/tokenhub/v20260322/model/QuotaCreateItem.h
   include/tencentcloud/tokenhub/v20260322/model/ModifyGlossaryEntriesResponse.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanResponse.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeModelListRequest.h
@@ -114,6 +116,7 @@ set(tokenhub_src
   src/v20260322/model/BindingItem.cpp
   src/v20260322/model/CreateApiKeysResultItem.cpp
   src/v20260322/model/DescribeTokenPlanApiKeyListResponse.cpp
+  src/v20260322/model/QuotasDesired.cpp
   src/v20260322/model/DeleteGlossaryResponse.cpp
   src/v20260322/model/DeleteGlossaryEntriesResponse.cpp
   src/v20260322/model/RenewTokenPlanTeamOrderResponse.cpp
@@ -128,6 +131,7 @@ set(tokenhub_src
   src/v20260322/model/CreateTokenPlanTeamOrderAndBuyRequest.cpp
   src/v20260322/model/DeleteTokenPlanApiKeyResponse.cpp
   src/v20260322/model/GlossaryEntryItem.cpp
+  src/v20260322/model/QuotaCreateItem.cpp
   src/v20260322/model/ModifyGlossaryEntriesResponse.cpp
   src/v20260322/model/DescribeTokenPlanResponse.cpp
   src/v20260322/model/DescribeModelListRequest.cpp

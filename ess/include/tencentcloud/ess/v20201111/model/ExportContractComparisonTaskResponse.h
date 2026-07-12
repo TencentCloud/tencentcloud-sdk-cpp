@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取对比任务详情下载链接。
-                     * @return ResourceUrl 对比任务详情下载链接。
+                     * 获取<p>对比任务详情下载链接。</p>
+                     * @return ResourceUrl <p>对比任务详情下载链接。</p>
                      * 
                      */
                     std::string GetResourceUrl() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool ResourceUrlHasBeenSet() const;
 
                     /**
-                     * 获取下载链接有效截止时间。
-                     * @return ExpireTime 下载链接有效截止时间。
+                     * 获取<p>下载链接有效截止时间。</p>
+                     * @return ExpireTime <p>下载链接有效截止时间。</p>
                      * 
                      */
                     int64_t GetExpireTime() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 对比任务详情下载链接。
+                     * <p>对比任务详情下载链接。</p>
                      */
                     std::string m_resourceUrl;
                     bool m_resourceUrlHasBeenSet;
 
                     /**
-                     * 下载链接有效截止时间。
+                     * <p>下载链接有效截止时间。</p>
                      */
                     int64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;

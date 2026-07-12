@@ -37,7 +37,8 @@ TextModerationResponse::TextModerationResponse() :
     m_contextTextHasBeenSet(false),
     m_sentimentAnalysisHasBeenSet(false),
     m_hitTypeHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
+    m_sessionIdHasBeenSet(false),
+    m_hitSnippetInfosHasBeenSet(false)
 {
 }
 
@@ -245,6 +246,26 @@ CoreInternalOutcome TextModerationResponse::Deserialize(const string &payload)
         m_sessionIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("HitSnippetInfos") && !rsp["HitSnippetInfos"].IsNull())
+    {
+        if (!rsp["HitSnippetInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `HitSnippetInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["HitSnippetInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            HitSnippetInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_hitSnippetInfos.push_back(item);
+        }
+        m_hitSnippetInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -385,6 +406,21 @@ string TextModerationResponse::ToJsonString() const
         string key = "SessionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hitSnippetInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HitSnippetInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_hitSnippetInfos.begin(); itr != m_hitSnippetInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -537,6 +573,16 @@ string TextModerationResponse::GetSessionId() const
 bool TextModerationResponse::SessionIdHasBeenSet() const
 {
     return m_sessionIdHasBeenSet;
+}
+
+vector<HitSnippetInfo> TextModerationResponse::GetHitSnippetInfos() const
+{
+    return m_hitSnippetInfos;
+}
+
+bool TextModerationResponse::HitSnippetInfosHasBeenSet() const
+{
+    return m_hitSnippetInfosHasBeenSet;
 }
 
 

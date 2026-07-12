@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户Id
-                     * @return UserId 用户Id
+                     * 获取<p>用户Id</p>
+                     * @return UserId <p>用户Id</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户Id
-                     * @param _userId 用户Id
+                     * 设置<p>用户Id</p>
+                     * @param _userId <p>用户Id</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取必传字段，查询的信息类型，Group：工作组 DataAuth：数据权限 EngineAuth:引擎权限 RowFilter：行级别权限
-                     * @return Type 必传字段，查询的信息类型，Group：工作组 DataAuth：数据权限 EngineAuth:引擎权限 RowFilter：行级别权限
+                     * 获取<p>必传字段，查询的信息类型，Group：工作组 DataAuth：数据权限 EngineAuth:引擎权限 RowFilter：行级别权限</p>
+                     * @return Type <p>必传字段，查询的信息类型，Group：工作组 DataAuth：数据权限 EngineAuth:引擎权限 RowFilter：行级别权限</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置必传字段，查询的信息类型，Group：工作组 DataAuth：数据权限 EngineAuth:引擎权限 RowFilter：行级别权限
-                     * @param _type 必传字段，查询的信息类型，Group：工作组 DataAuth：数据权限 EngineAuth:引擎权限 RowFilter：行级别权限
+                     * 设置<p>必传字段，查询的信息类型，Group：工作组 DataAuth：数据权限 EngineAuth:引擎权限 RowFilter：行级别权限</p>
+                     * @param _type <p>必传字段，查询的信息类型，Group：工作组 DataAuth：数据权限 EngineAuth:引擎权限 RowFilter：行级别权限</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -86,87 +86,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取查询的过滤条件。
-
-当Type为Group时，支持Key为workgroup-name的模糊搜索；
-
-当Type为DataAuth时，支持key：
-
-policy-type：权限类型。
-
-policy-source：数据来源。
-
-data-name：库表的模糊搜索。
-
-当Type为EngineAuth时，支持key：
-
-policy-type：权限类型。
-
-policy-source：数据来源。
-
-engine-name：库表的模糊搜索。
-                     * @return Filters 查询的过滤条件。
-
-当Type为Group时，支持Key为workgroup-name的模糊搜索；
-
-当Type为DataAuth时，支持key：
-
-policy-type：权限类型。
-
-policy-source：数据来源。
-
-data-name：库表的模糊搜索。
-
-当Type为EngineAuth时，支持key：
-
-policy-type：权限类型。
-
-policy-source：数据来源。
-
-engine-name：库表的模糊搜索。
+                     * 获取<p>查询的过滤条件。</p><p>当Type为Group时，支持Key为workgroup-name的模糊搜索；</p><p>当Type为DataAuth时，支持key：</p><p>policy-type：权限类型。</p><p>policy-source：数据来源。</p><p>data-name：库表的模糊搜索。</p><p>当Type为EngineAuth时，支持key：</p><p>policy-type：权限类型。</p><p>policy-source：数据来源。</p><p>engine-name：库表的模糊搜索。</p>
+                     * @return Filters <p>查询的过滤条件。</p><p>当Type为Group时，支持Key为workgroup-name的模糊搜索；</p><p>当Type为DataAuth时，支持key：</p><p>policy-type：权限类型。</p><p>policy-source：数据来源。</p><p>data-name：库表的模糊搜索。</p><p>当Type为EngineAuth时，支持key：</p><p>policy-type：权限类型。</p><p>policy-source：数据来源。</p><p>engine-name：库表的模糊搜索。</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置查询的过滤条件。
-
-当Type为Group时，支持Key为workgroup-name的模糊搜索；
-
-当Type为DataAuth时，支持key：
-
-policy-type：权限类型。
-
-policy-source：数据来源。
-
-data-name：库表的模糊搜索。
-
-当Type为EngineAuth时，支持key：
-
-policy-type：权限类型。
-
-policy-source：数据来源。
-
-engine-name：库表的模糊搜索。
-                     * @param _filters 查询的过滤条件。
-
-当Type为Group时，支持Key为workgroup-name的模糊搜索；
-
-当Type为DataAuth时，支持key：
-
-policy-type：权限类型。
-
-policy-source：数据来源。
-
-data-name：库表的模糊搜索。
-
-当Type为EngineAuth时，支持key：
-
-policy-type：权限类型。
-
-policy-source：数据来源。
-
-engine-name：库表的模糊搜索。
+                     * 设置<p>查询的过滤条件。</p><p>当Type为Group时，支持Key为workgroup-name的模糊搜索；</p><p>当Type为DataAuth时，支持key：</p><p>policy-type：权限类型。</p><p>policy-source：数据来源。</p><p>data-name：库表的模糊搜索。</p><p>当Type为EngineAuth时，支持key：</p><p>policy-type：权限类型。</p><p>policy-source：数据来源。</p><p>engine-name：库表的模糊搜索。</p>
+                     * @param _filters <p>查询的过滤条件。</p><p>当Type为Group时，支持Key为workgroup-name的模糊搜索；</p><p>当Type为DataAuth时，支持key：</p><p>policy-type：权限类型。</p><p>policy-source：数据来源。</p><p>data-name：库表的模糊搜索。</p><p>当Type为EngineAuth时，支持key：</p><p>policy-type：权限类型。</p><p>policy-source：数据来源。</p><p>engine-name：库表的模糊搜索。</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -179,39 +107,15 @@ engine-name：库表的模糊搜索。
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取排序字段。
-
-当Type为Group时，支持create-time、group-name
-
-当Type为DataAuth时，支持create-time
-
-当Type为EngineAuth时，支持create-time
-                     * @return SortBy 排序字段。
-
-当Type为Group时，支持create-time、group-name
-
-当Type为DataAuth时，支持create-time
-
-当Type为EngineAuth时，支持create-time
+                     * 获取<p>排序字段。</p><p>当Type为Group时，支持create-time、group-name</p><p>当Type为DataAuth时，支持create-time</p><p>当Type为EngineAuth时，支持create-time</p>
+                     * @return SortBy <p>排序字段。</p><p>当Type为Group时，支持create-time、group-name</p><p>当Type为DataAuth时，支持create-time</p><p>当Type为EngineAuth时，支持create-time</p>
                      * 
                      */
                     std::string GetSortBy() const;
 
                     /**
-                     * 设置排序字段。
-
-当Type为Group时，支持create-time、group-name
-
-当Type为DataAuth时，支持create-time
-
-当Type为EngineAuth时，支持create-time
-                     * @param _sortBy 排序字段。
-
-当Type为Group时，支持create-time、group-name
-
-当Type为DataAuth时，支持create-time
-
-当Type为EngineAuth时，支持create-time
+                     * 设置<p>排序字段。</p><p>当Type为Group时，支持create-time、group-name</p><p>当Type为DataAuth时，支持create-time</p><p>当Type为EngineAuth时，支持create-time</p>
+                     * @param _sortBy <p>排序字段。</p><p>当Type为Group时，支持create-time、group-name</p><p>当Type为DataAuth时，支持create-time</p><p>当Type为EngineAuth时，支持create-time</p>
                      * 
                      */
                     void SetSortBy(const std::string& _sortBy);
@@ -224,15 +128,15 @@ engine-name：库表的模糊搜索。
                     bool SortByHasBeenSet() const;
 
                     /**
-                     * 获取排序方式，desc表示正序，asc表示反序， 默认为asc
-                     * @return Sorting 排序方式，desc表示正序，asc表示反序， 默认为asc
+                     * 获取<p>排序方式，desc表示正序，asc表示反序， 默认为asc</p>
+                     * @return Sorting <p>排序方式，desc表示正序，asc表示反序， 默认为asc</p>
                      * 
                      */
                     std::string GetSorting() const;
 
                     /**
-                     * 设置排序方式，desc表示正序，asc表示反序， 默认为asc
-                     * @param _sorting 排序方式，desc表示正序，asc表示反序， 默认为asc
+                     * 设置<p>排序方式，desc表示正序，asc表示反序， 默认为asc</p>
+                     * @param _sorting <p>排序方式，desc表示正序，asc表示反序， 默认为asc</p>
                      * 
                      */
                     void SetSorting(const std::string& _sorting);
@@ -245,15 +149,15 @@ engine-name：库表的模糊搜索。
                     bool SortingHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认20，最大值100
-                     * @return Limit 返回数量，默认20，最大值100
+                     * 获取<p>返回数量，默认20，最大值100</p>
+                     * @return Limit <p>返回数量，默认20，最大值100</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认20，最大值100
-                     * @param _limit 返回数量，默认20，最大值100
+                     * 设置<p>返回数量，默认20，最大值100</p>
+                     * @param _limit <p>返回数量，默认20，最大值100</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -266,15 +170,15 @@ engine-name：库表的模糊搜索。
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0
-                     * @return Offset 偏移量，默认为0
+                     * 获取<p>偏移量，默认为0</p>
+                     * @return Offset <p>偏移量，默认为0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0
-                     * @param _offset 偏移量，默认为0
+                     * 设置<p>偏移量，默认为0</p>
+                     * @param _offset <p>偏移量，默认为0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -287,15 +191,15 @@ engine-name：库表的模糊搜索。
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
-                     * @return AccountType 用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
+                     * 获取<p>用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）</p>
+                     * @return AccountType <p>用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）</p>
                      * 
                      */
                     std::string GetAccountType() const;
 
                     /**
-                     * 设置用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
-                     * @param _accountType 用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
+                     * 设置<p>用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）</p>
+                     * @param _accountType <p>用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）</p>
                      * 
                      */
                     void SetAccountType(const std::string& _accountType);
@@ -307,79 +211,82 @@ engine-name：库表的模糊搜索。
                      */
                     bool AccountTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>TF 资源 ID</p>
+                     * @return PolicyId <p>TF 资源 ID</p>
+                     * 
+                     */
+                    std::string GetPolicyId() const;
+
+                    /**
+                     * 设置<p>TF 资源 ID</p>
+                     * @param _policyId <p>TF 资源 ID</p>
+                     * 
+                     */
+                    void SetPolicyId(const std::string& _policyId);
+
+                    /**
+                     * 判断参数 PolicyId 是否已赋值
+                     * @return PolicyId 是否已赋值
+                     * 
+                     */
+                    bool PolicyIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 用户Id
+                     * <p>用户Id</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 必传字段，查询的信息类型，Group：工作组 DataAuth：数据权限 EngineAuth:引擎权限 RowFilter：行级别权限
+                     * <p>必传字段，查询的信息类型，Group：工作组 DataAuth：数据权限 EngineAuth:引擎权限 RowFilter：行级别权限</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 查询的过滤条件。
-
-当Type为Group时，支持Key为workgroup-name的模糊搜索；
-
-当Type为DataAuth时，支持key：
-
-policy-type：权限类型。
-
-policy-source：数据来源。
-
-data-name：库表的模糊搜索。
-
-当Type为EngineAuth时，支持key：
-
-policy-type：权限类型。
-
-policy-source：数据来源。
-
-engine-name：库表的模糊搜索。
+                     * <p>查询的过滤条件。</p><p>当Type为Group时，支持Key为workgroup-name的模糊搜索；</p><p>当Type为DataAuth时，支持key：</p><p>policy-type：权限类型。</p><p>policy-source：数据来源。</p><p>data-name：库表的模糊搜索。</p><p>当Type为EngineAuth时，支持key：</p><p>policy-type：权限类型。</p><p>policy-source：数据来源。</p><p>engine-name：库表的模糊搜索。</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 排序字段。
-
-当Type为Group时，支持create-time、group-name
-
-当Type为DataAuth时，支持create-time
-
-当Type为EngineAuth时，支持create-time
+                     * <p>排序字段。</p><p>当Type为Group时，支持create-time、group-name</p><p>当Type为DataAuth时，支持create-time</p><p>当Type为EngineAuth时，支持create-time</p>
                      */
                     std::string m_sortBy;
                     bool m_sortByHasBeenSet;
 
                     /**
-                     * 排序方式，desc表示正序，asc表示反序， 默认为asc
+                     * <p>排序方式，desc表示正序，asc表示反序， 默认为asc</p>
                      */
                     std::string m_sorting;
                     bool m_sortingHasBeenSet;
 
                     /**
-                     * 返回数量，默认20，最大值100
+                     * <p>返回数量，默认20，最大值100</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0
+                     * <p>偏移量，默认为0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
+                     * <p>用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）</p>
                      */
                     std::string m_accountType;
                     bool m_accountTypeHasBeenSet;
+
+                    /**
+                     * <p>TF 资源 ID</p>
+                     */
+                    std::string m_policyId;
+                    bool m_policyIdHasBeenSet;
 
                 };
             }

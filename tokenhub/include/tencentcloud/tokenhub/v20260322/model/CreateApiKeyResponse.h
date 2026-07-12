@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>apikey id</p>
+                     * @return ApiKeyId <p>apikey id</p>
+                     * 
+                     */
+                    std::string GetApiKeyId() const;
+
+                    /**
+                     * 判断参数 ApiKeyId 是否已赋值
+                     * @return ApiKeyId 是否已赋值
+                     * 
+                     */
+                    bool ApiKeyIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>apikey id</p>
+                     */
+                    std::string m_apiKeyId;
+                    bool m_apiKeyIdHasBeenSet;
 
                 };
             }

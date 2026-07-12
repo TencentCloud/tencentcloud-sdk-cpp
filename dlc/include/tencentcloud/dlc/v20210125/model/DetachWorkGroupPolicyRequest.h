@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作组Id
-                     * @return WorkGroupId 工作组Id
+                     * 获取<p>工作组Id</p>
+                     * @return WorkGroupId <p>工作组Id</p>
                      * 
                      */
                     int64_t GetWorkGroupId() const;
 
                     /**
-                     * 设置工作组Id
-                     * @param _workGroupId 工作组Id
+                     * 设置<p>工作组Id</p>
+                     * @param _workGroupId <p>工作组Id</p>
                      * 
                      */
                     void SetWorkGroupId(const int64_t& _workGroupId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool WorkGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取解绑的权限集合
-                     * @return PolicySet 解绑的权限集合
+                     * 获取<p>解绑的权限集合</p>
+                     * @return PolicySet <p>解绑的权限集合</p>
                      * 
                      */
                     std::vector<Policy> GetPolicySet() const;
 
                     /**
-                     * 设置解绑的权限集合
-                     * @param _policySet 解绑的权限集合
+                     * 设置<p>解绑的权限集合</p>
+                     * @param _policySet <p>解绑的权限集合</p>
                      * 
                      */
                     void SetPolicySet(const std::vector<Policy>& _policySet);
@@ -85,19 +85,46 @@ namespace TencentCloud
                      */
                     bool PolicySetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>要授权的策略列表</p>
+                     * @return PolicyIds <p>要授权的策略列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetPolicyIds() const;
+
+                    /**
+                     * 设置<p>要授权的策略列表</p>
+                     * @param _policyIds <p>要授权的策略列表</p>
+                     * 
+                     */
+                    void SetPolicyIds(const std::vector<std::string>& _policyIds);
+
+                    /**
+                     * 判断参数 PolicyIds 是否已赋值
+                     * @return PolicyIds 是否已赋值
+                     * 
+                     */
+                    bool PolicyIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 工作组Id
+                     * <p>工作组Id</p>
                      */
                     int64_t m_workGroupId;
                     bool m_workGroupIdHasBeenSet;
 
                     /**
-                     * 解绑的权限集合
+                     * <p>解绑的权限集合</p>
                      */
                     std::vector<Policy> m_policySet;
                     bool m_policySetHasBeenSet;
+
+                    /**
+                     * <p>要授权的策略列表</p>
+                     */
+                    std::vector<std::string> m_policyIds;
+                    bool m_policyIdsHasBeenSet;
 
                 };
             }

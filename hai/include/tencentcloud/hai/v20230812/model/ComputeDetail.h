@@ -193,6 +193,48 @@ namespace TencentCloud
                      */
                     bool MemoryHasBeenSet() const;
 
+                    /**
+                     * 获取该套餐是否支持包年包月
+                     * @return PrepaidEnable 该套餐是否支持包年包月
+                     * 
+                     */
+                    bool GetPrepaidEnable() const;
+
+                    /**
+                     * 设置该套餐是否支持包年包月
+                     * @param _prepaidEnable 该套餐是否支持包年包月
+                     * 
+                     */
+                    void SetPrepaidEnable(const bool& _prepaidEnable);
+
+                    /**
+                     * 判断参数 PrepaidEnable 是否已赋值
+                     * @return PrepaidEnable 是否已赋值
+                     * 
+                     */
+                    bool PrepaidEnableHasBeenSet() const;
+
+                    /**
+                     * 获取该套餐是否支持按量计费
+                     * @return PostpaidEnable 该套餐是否支持按量计费
+                     * 
+                     */
+                    bool GetPostpaidEnable() const;
+
+                    /**
+                     * 设置该套餐是否支持按量计费
+                     * @param _postpaidEnable 该套餐是否支持按量计费
+                     * 
+                     */
+                    void SetPostpaidEnable(const bool& _postpaidEnable);
+
+                    /**
+                     * 判断参数 PostpaidEnable 是否已赋值
+                     * @return PostpaidEnable 是否已赋值
+                     * 
+                     */
+                    bool PostpaidEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +278,18 @@ namespace TencentCloud
                      */
                     std::string m_memory;
                     bool m_memoryHasBeenSet;
+
+                    /**
+                     * 该套餐是否支持包年包月
+                     */
+                    bool m_prepaidEnable;
+                    bool m_prepaidEnableHasBeenSet;
+
+                    /**
+                     * 该套餐是否支持按量计费
+                     */
+                    bool m_postpaidEnable;
+                    bool m_postpaidEnableHasBeenSet;
 
                 };
             }

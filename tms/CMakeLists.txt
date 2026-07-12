@@ -20,6 +20,7 @@ set(tms_public_header
   )
 
 set(tms_public_header_model
+  include/tencentcloud/tms/v20201229/model/HitPosition.h
   include/tencentcloud/tms/v20201229/model/SentimentAnalysis.h
   include/tencentcloud/tms/v20201229/model/GetFinancialLLMTaskResultRequest.h
   include/tencentcloud/tms/v20201229/model/RiskDetails.h
@@ -30,6 +31,7 @@ set(tms_public_header_model
   include/tencentcloud/tms/v20201229/model/FinancialLLMViolationReason.h
   include/tencentcloud/tms/v20201229/model/CreateFinancialLLMTaskResponse.h
   include/tencentcloud/tms/v20201229/model/Tag.h
+  include/tencentcloud/tms/v20201229/model/HitSnippetInfo.h
   include/tencentcloud/tms/v20201229/model/CreateFinancialLLMTaskRequest.h
   include/tencentcloud/tms/v20201229/model/FinancialLLMViolationDetail.h
   include/tencentcloud/tms/v20201229/model/Device.h
@@ -60,6 +62,7 @@ set(tms_public_header_model
 set(tms_src
   src/v20201229/TmsClient.cpp
   src/v20200713/TmsClient.cpp
+  src/v20201229/model/HitPosition.cpp
   src/v20201229/model/SentimentAnalysis.cpp
   src/v20201229/model/GetFinancialLLMTaskResultRequest.cpp
   src/v20201229/model/RiskDetails.cpp
@@ -70,6 +73,7 @@ set(tms_src
   src/v20201229/model/FinancialLLMViolationReason.cpp
   src/v20201229/model/CreateFinancialLLMTaskResponse.cpp
   src/v20201229/model/Tag.cpp
+  src/v20201229/model/HitSnippetInfo.cpp
   src/v20201229/model/CreateFinancialLLMTaskRequest.cpp
   src/v20201229/model/FinancialLLMViolationDetail.cpp
   src/v20201229/model/Device.cpp

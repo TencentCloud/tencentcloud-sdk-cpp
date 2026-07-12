@@ -322,6 +322,111 @@ namespace TencentCloud
                      */
                     bool TargetReplicasHasBeenSet() const;
 
+                    /**
+                     * 获取计费类型：POSTPAID_BY_HOUR(按量)/PREPAID_BY_MONTH(包月)
+                     * @return ChargeType 计费类型：POSTPAID_BY_HOUR(按量)/PREPAID_BY_MONTH(包月)
+                     * 
+                     */
+                    std::string GetChargeType() const;
+
+                    /**
+                     * 设置计费类型：POSTPAID_BY_HOUR(按量)/PREPAID_BY_MONTH(包月)
+                     * @param _chargeType 计费类型：POSTPAID_BY_HOUR(按量)/PREPAID_BY_MONTH(包月)
+                     * 
+                     */
+                    void SetChargeType(const std::string& _chargeType);
+
+                    /**
+                     * 判断参数 ChargeType 是否已赋值
+                     * @return ChargeType 是否已赋值
+                     * 
+                     */
+                    bool ChargeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取到期时间(包月)，按量为空
+                     * @return ExpireTime 到期时间(包月)，按量为空
+                     * 
+                     */
+                    std::string GetExpireTime() const;
+
+                    /**
+                     * 设置到期时间(包月)，按量为空
+                     * @param _expireTime 到期时间(包月)，按量为空
+                     * 
+                     */
+                    void SetExpireTime(const std::string& _expireTime);
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     * 
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
+                    /**
+                     * 获取自动续费标识(包月)
+                     * @return RenewFlag 自动续费标识(包月)
+                     * 
+                     */
+                    std::string GetRenewFlag() const;
+
+                    /**
+                     * 设置自动续费标识(包月)
+                     * @param _renewFlag 自动续费标识(包月)
+                     * 
+                     */
+                    void SetRenewFlag(const std::string& _renewFlag);
+
+                    /**
+                     * 判断参数 RenewFlag 是否已赋值
+                     * @return RenewFlag 是否已赋值
+                     * 
+                     */
+                    bool RenewFlagHasBeenSet() const;
+
+                    /**
+                     * 获取受限状态(如欠费隔离)
+                     * @return RestrictState 受限状态(如欠费隔离)
+                     * 
+                     */
+                    std::string GetRestrictState() const;
+
+                    /**
+                     * 设置受限状态(如欠费隔离)
+                     * @param _restrictState 受限状态(如欠费隔离)
+                     * 
+                     */
+                    void SetRestrictState(const std::string& _restrictState);
+
+                    /**
+                     * 判断参数 RestrictState 是否已赋值
+                     * @return RestrictState 是否已赋值
+                     * 
+                     */
+                    bool RestrictStateHasBeenSet() const;
+
+                    /**
+                     * 获取是否自定义部署：1是 0否
+                     * @return IsCustomDeploy 是否自定义部署：1是 0否
+                     * 
+                     */
+                    int64_t GetIsCustomDeploy() const;
+
+                    /**
+                     * 设置是否自定义部署：1是 0否
+                     * @param _isCustomDeploy 是否自定义部署：1是 0否
+                     * 
+                     */
+                    void SetIsCustomDeploy(const int64_t& _isCustomDeploy);
+
+                    /**
+                     * 判断参数 IsCustomDeploy 是否已赋值
+                     * @return IsCustomDeploy 是否已赋值
+                     * 
+                     */
+                    bool IsCustomDeployHasBeenSet() const;
+
                 private:
 
                     /**
@@ -401,6 +506,36 @@ namespace TencentCloud
                      */
                     uint64_t m_targetReplicas;
                     bool m_targetReplicasHasBeenSet;
+
+                    /**
+                     * 计费类型：POSTPAID_BY_HOUR(按量)/PREPAID_BY_MONTH(包月)
+                     */
+                    std::string m_chargeType;
+                    bool m_chargeTypeHasBeenSet;
+
+                    /**
+                     * 到期时间(包月)，按量为空
+                     */
+                    std::string m_expireTime;
+                    bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 自动续费标识(包月)
+                     */
+                    std::string m_renewFlag;
+                    bool m_renewFlagHasBeenSet;
+
+                    /**
+                     * 受限状态(如欠费隔离)
+                     */
+                    std::string m_restrictState;
+                    bool m_restrictStateHasBeenSet;
+
+                    /**
+                     * 是否自定义部署：1是 0否
+                     */
+                    int64_t m_isCustomDeploy;
+                    bool m_isCustomDeployHasBeenSet;
 
                 };
             }

@@ -40,7 +40,8 @@ Policy::Policy() :
     m_idHasBeenSet(false),
     m_engineGenerationHasBeenSet(false),
     m_modelHasBeenSet(false),
-    m_isAdminPolicyHasBeenSet(false)
+    m_isAdminPolicyHasBeenSet(false),
+    m_policyIdHasBeenSet(false)
 {
 }
 
@@ -249,6 +250,16 @@ CoreInternalOutcome Policy::Deserialize(const rapidjson::Value &value)
         m_isAdminPolicyHasBeenSet = true;
     }
 
+    if (value.HasMember("PolicyId") && !value["PolicyId"].IsNull())
+    {
+        if (!value["PolicyId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Policy.PolicyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_policyId = string(value["PolicyId"].GetString());
+        m_policyIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -414,6 +425,14 @@ void Policy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "IsAdminPolicy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAdminPolicy, allocator);
+    }
+
+    if (m_policyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_policyId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -737,5 +756,21 @@ void Policy::SetIsAdminPolicy(const bool& _isAdminPolicy)
 bool Policy::IsAdminPolicyHasBeenSet() const
 {
     return m_isAdminPolicyHasBeenSet;
+}
+
+string Policy::GetPolicyId() const
+{
+    return m_policyId;
+}
+
+void Policy::SetPolicyId(const string& _policyId)
+{
+    m_policyId = _policyId;
+    m_policyIdHasBeenSet = true;
+}
+
+bool Policy::PolicyIdHasBeenSet() const
+{
+    return m_policyIdHasBeenSet;
 }
 

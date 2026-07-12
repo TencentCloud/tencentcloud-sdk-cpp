@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取企业套餐余额及使用情况
-                     * @return Summary 企业套餐余额及使用情况
+                     * 获取<p>企业套餐余额及使用情况</p>
+                     * @return Summary <p>企业套餐余额及使用情况</p>
                      * 
                      */
                     std::vector<OrgBillSummary> GetSummary() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool SummaryHasBeenSet() const;
 
                     /**
-                     * 获取集团子企业套餐使用情况
-                     * @return SubOrgSummary 集团子企业套餐使用情况
+                     * 获取<p>集团子企业套餐使用情况</p>
+                     * @return SubOrgSummary <p>集团子企业套餐使用情况</p>
                      * 
                      */
                     std::vector<SubOrgBillSummary> GetSubOrgSummary() const;
@@ -76,13 +76,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 企业套餐余额及使用情况
+                     * <p>企业套餐余额及使用情况</p>
                      */
                     std::vector<OrgBillSummary> m_summary;
                     bool m_summaryHasBeenSet;
 
                     /**
-                     * 集团子企业套餐使用情况
+                     * <p>集团子企业套餐使用情况</p>
                      */
                     std::vector<SubOrgBillSummary> m_subOrgSummary;
                     bool m_subOrgSummaryHasBeenSet;

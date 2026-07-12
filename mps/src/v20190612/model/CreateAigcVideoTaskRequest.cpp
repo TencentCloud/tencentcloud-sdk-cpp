@@ -33,6 +33,7 @@ CreateAigcVideoTaskRequest::CreateAigcVideoTaskRequest() :
     m_lastImageUrlHasBeenSet(false),
     m_imageInfosHasBeenSet(false),
     m_videoInfosHasBeenSet(false),
+    m_audioInfosHasBeenSet(false),
     m_durationHasBeenSet(false),
     m_extraParametersHasBeenSet(false),
     m_storeCosParamHasBeenSet(false),
@@ -136,6 +137,21 @@ string CreateAigcVideoTaskRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_videoInfos.begin(); itr != m_videoInfos.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_audioInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioInfos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_audioInfos.begin(); itr != m_audioInfos.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -350,6 +366,22 @@ void CreateAigcVideoTaskRequest::SetVideoInfos(const vector<AigcVideoReferenceVi
 bool CreateAigcVideoTaskRequest::VideoInfosHasBeenSet() const
 {
     return m_videoInfosHasBeenSet;
+}
+
+vector<AigcVideoReferenceAudioInfo> CreateAigcVideoTaskRequest::GetAudioInfos() const
+{
+    return m_audioInfos;
+}
+
+void CreateAigcVideoTaskRequest::SetAudioInfos(const vector<AigcVideoReferenceAudioInfo>& _audioInfos)
+{
+    m_audioInfos = _audioInfos;
+    m_audioInfosHasBeenSet = true;
+}
+
+bool CreateAigcVideoTaskRequest::AudioInfosHasBeenSet() const
+{
+    return m_audioInfosHasBeenSet;
 }
 
 int64_t CreateAigcVideoTaskRequest::GetDuration() const

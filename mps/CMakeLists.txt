@@ -808,6 +808,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/UserDefineFaceReviewTemplateInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/DescribeInputRTMPSettings.h
   include/tencentcloud/mps/v20190612/model/StreamUrlDetail.h
+  include/tencentcloud/mps/v20190612/model/AigcVideoReferenceAudioInfo.h
   include/tencentcloud/mps/v20190612/model/DeleteProcessImageTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/DescribeStreamLinkSecurityGroupsRequest.h
   include/tencentcloud/mps/v20190612/model/OcrFullTextConfigureInfoForUpdate.h
@@ -1847,6 +1848,7 @@ set(mps_src
   src/v20190612/model/UserDefineFaceReviewTemplateInfoForUpdate.cpp
   src/v20190612/model/DescribeInputRTMPSettings.cpp
   src/v20190612/model/StreamUrlDetail.cpp
+  src/v20190612/model/AigcVideoReferenceAudioInfo.cpp
   src/v20190612/model/DeleteProcessImageTemplateResponse.cpp
   src/v20190612/model/DescribeStreamLinkSecurityGroupsRequest.cpp
   src/v20190612/model/OcrFullTextConfigureInfoForUpdate.cpp

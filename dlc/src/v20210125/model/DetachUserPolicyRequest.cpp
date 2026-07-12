@@ -25,7 +25,8 @@ using namespace std;
 DetachUserPolicyRequest::DetachUserPolicyRequest() :
     m_userIdHasBeenSet(false),
     m_policySetHasBeenSet(false),
-    m_accountTypeHasBeenSet(false)
+    m_accountTypeHasBeenSet(false),
+    m_policyIdsHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,19 @@ string DetachUserPolicyRequest::ToJsonString() const
         string key = "AccountType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_accountType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_policyIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_policyIds.begin(); itr != m_policyIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -121,6 +135,22 @@ void DetachUserPolicyRequest::SetAccountType(const string& _accountType)
 bool DetachUserPolicyRequest::AccountTypeHasBeenSet() const
 {
     return m_accountTypeHasBeenSet;
+}
+
+vector<string> DetachUserPolicyRequest::GetPolicyIds() const
+{
+    return m_policyIds;
+}
+
+void DetachUserPolicyRequest::SetPolicyIds(const vector<string>& _policyIds)
+{
+    m_policyIds = _policyIds;
+    m_policyIdsHasBeenSet = true;
+}
+
+bool DetachUserPolicyRequest::PolicyIdsHasBeenSet() const
+{
+    return m_policyIdsHasBeenSet;
 }
 
 

@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tdmysql::V20211122::Model;
 using namespace std;
 
-DescribeFlowResponse::DescribeFlowResponse()
+DescribeFlowResponse::DescribeFlowResponse() :
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome DescribeFlowResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    {
+        if (!rsp["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(rsp["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string DescribeFlowResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string DescribeFlowResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeFlowResponse::GetStatus() const
+{
+    return m_status;
+}
+
+bool DescribeFlowResponse::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
 
 

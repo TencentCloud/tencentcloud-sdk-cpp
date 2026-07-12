@@ -213,6 +213,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/IsolateInstanceResponse.h
   include/tencentcloud/cynosdb/v20190107/model/CopyClusterPasswordComplexityResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterTransparentEncryptInfoRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/DescribeClusterLevelsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DeleteVaultsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/MigrateOpt.h
   include/tencentcloud/cynosdb/v20190107/model/GoodsSpec.h
@@ -346,6 +347,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DisassociateSecurityGroupsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterDatabasesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/OfflineLibraDBInstanceResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/RenewLibraDBClustersResponse.h
   include/tencentcloud/cynosdb/v20190107/model/VaultInfo.h
   include/tencentcloud/cynosdb/v20190107/model/RemoveClusterSlaveZoneRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyResourcePackagesDeductionPriorityRequest.h
@@ -555,7 +557,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/ModifyInstanceUpgradeLimitDaysRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyLibraDBClusterAccountHostRequest.h
   include/tencentcloud/cynosdb/v20190107/model/CloseClusterPasswordComplexityRequest.h
-  include/tencentcloud/cynosdb/v20190107/model/ModifyLibraDBClusterAccountDescriptionResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/DescribeClusterLevelsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeIsolatedInstancesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyAccountParamsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ResetAccountPasswordRequest.h
@@ -621,7 +623,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/LibraDBClusterSet.h
   include/tencentcloud/cynosdb/v20190107/model/DeleteClusterSaveBackupRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeSlaveZonesRequest.h
-  include/tencentcloud/cynosdb/v20190107/model/RenewLibraDBClustersResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/ModifyLibraDBClusterAccountDescriptionResponse.h
   include/tencentcloud/cynosdb/v20190107/model/BillingResourceInfo.h
   include/tencentcloud/cynosdb/v20190107/model/InstanceNameWeight.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBackupDownloadRestrictionResponse.h
@@ -873,6 +875,7 @@ set(cynosdb_src
   src/v20190107/model/IsolateInstanceResponse.cpp
   src/v20190107/model/CopyClusterPasswordComplexityResponse.cpp
   src/v20190107/model/DescribeClusterTransparentEncryptInfoRequest.cpp
+  src/v20190107/model/DescribeClusterLevelsRequest.cpp
   src/v20190107/model/DeleteVaultsResponse.cpp
   src/v20190107/model/MigrateOpt.cpp
   src/v20190107/model/GoodsSpec.cpp
@@ -1006,6 +1009,7 @@ set(cynosdb_src
   src/v20190107/model/DisassociateSecurityGroupsResponse.cpp
   src/v20190107/model/DescribeClusterDatabasesRequest.cpp
   src/v20190107/model/OfflineLibraDBInstanceResponse.cpp
+  src/v20190107/model/RenewLibraDBClustersResponse.cpp
   src/v20190107/model/VaultInfo.cpp
   src/v20190107/model/RemoveClusterSlaveZoneRequest.cpp
   src/v20190107/model/ModifyResourcePackagesDeductionPriorityRequest.cpp
@@ -1215,7 +1219,7 @@ set(cynosdb_src
   src/v20190107/model/ModifyInstanceUpgradeLimitDaysRequest.cpp
   src/v20190107/model/ModifyLibraDBClusterAccountHostRequest.cpp
   src/v20190107/model/CloseClusterPasswordComplexityRequest.cpp
-  src/v20190107/model/ModifyLibraDBClusterAccountDescriptionResponse.cpp
+  src/v20190107/model/DescribeClusterLevelsResponse.cpp
   src/v20190107/model/DescribeIsolatedInstancesRequest.cpp
   src/v20190107/model/ModifyAccountParamsRequest.cpp
   src/v20190107/model/ResetAccountPasswordRequest.cpp
@@ -1281,7 +1285,7 @@ set(cynosdb_src
   src/v20190107/model/LibraDBClusterSet.cpp
   src/v20190107/model/DeleteClusterSaveBackupRequest.cpp
   src/v20190107/model/DescribeSlaveZonesRequest.cpp
-  src/v20190107/model/RenewLibraDBClustersResponse.cpp
+  src/v20190107/model/ModifyLibraDBClusterAccountDescriptionResponse.cpp
   src/v20190107/model/BillingResourceInfo.cpp
   src/v20190107/model/InstanceNameWeight.cpp
   src/v20190107/model/DescribeBackupDownloadRestrictionResponse.cpp

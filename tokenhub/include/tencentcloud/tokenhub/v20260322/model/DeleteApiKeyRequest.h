@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>API 密钥 ID。</p>
+                     * @return ApiKeyId <p>API 密钥 ID。</p>
+                     * 
+                     */
+                    std::string GetApiKeyId() const;
+
+                    /**
+                     * 设置<p>API 密钥 ID。</p>
+                     * @param _apiKeyId <p>API 密钥 ID。</p>
+                     * 
+                     */
+                    void SetApiKeyId(const std::string& _apiKeyId);
+
+                    /**
+                     * 判断参数 ApiKeyId 是否已赋值
+                     * @return ApiKeyId 是否已赋值
+                     * 
+                     */
+                    bool ApiKeyIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>平台类型。取值：maas。</p>
+                     * @return Platform <p>平台类型。取值：maas。</p>
+                     * 
+                     */
+                    std::string GetPlatform() const;
+
+                    /**
+                     * 设置<p>平台类型。取值：maas。</p>
+                     * @param _platform <p>平台类型。取值：maas。</p>
+                     * 
+                     */
+                    void SetPlatform(const std::string& _platform);
+
+                    /**
+                     * 判断参数 Platform 是否已赋值
+                     * @return Platform 是否已赋值
+                     * 
+                     */
+                    bool PlatformHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>API 密钥 ID。</p>
+                     */
+                    std::string m_apiKeyId;
+                    bool m_apiKeyIdHasBeenSet;
+
+                    /**
+                     * <p>平台类型。取值：maas。</p>
+                     */
+                    std::string m_platform;
+                    bool m_platformHasBeenSet;
 
                 };
             }

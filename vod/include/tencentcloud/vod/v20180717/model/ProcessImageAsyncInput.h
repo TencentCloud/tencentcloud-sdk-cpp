@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图片处理的FileId。
-                     * @return FileId 图片处理的FileId。
+                     * 获取<p>图片处理的FileId。</p>
+                     * @return FileId <p>图片处理的FileId。</p>
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置图片处理的FileId。
-                     * @param _fileId 图片处理的FileId。
+                     * 设置<p>图片处理的FileId。</p>
+                     * @param _fileId <p>图片处理的FileId。</p>
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -70,15 +70,36 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取图片处理参数。
-                     * @return ImageTaskInput 图片处理参数。
+                     * 获取<p>图片URL。</p>
+                     * @return Url <p>图片URL。</p>
+                     * 
+                     */
+                    std::string GetUrl() const;
+
+                    /**
+                     * 设置<p>图片URL。</p>
+                     * @param _url <p>图片URL。</p>
+                     * 
+                     */
+                    void SetUrl(const std::string& _url);
+
+                    /**
+                     * 判断参数 Url 是否已赋值
+                     * @return Url 是否已赋值
+                     * 
+                     */
+                    bool UrlHasBeenSet() const;
+
+                    /**
+                     * 获取<p>图片处理参数。</p>
+                     * @return ImageTaskInput <p>图片处理参数。</p>
                      * 
                      */
                     ProcessImageAsyncTaskInput GetImageTaskInput() const;
 
                     /**
-                     * 设置图片处理参数。
-                     * @param _imageTaskInput 图片处理参数。
+                     * 设置<p>图片处理参数。</p>
+                     * @param _imageTaskInput <p>图片处理参数。</p>
                      * 
                      */
                     void SetImageTaskInput(const ProcessImageAsyncTaskInput& _imageTaskInput);
@@ -91,15 +112,15 @@ namespace TencentCloud
                     bool ImageTaskInputHasBeenSet() const;
 
                     /**
-                     * 获取图片处理任务的输出媒体文件配置。
-                     * @return OutputConfig 图片处理任务的输出媒体文件配置。
+                     * 获取<p>图片处理任务的输出媒体文件配置。</p>
+                     * @return OutputConfig <p>图片处理任务的输出媒体文件配置。</p>
                      * 
                      */
                     ProcessImageAsyncOutputConfig GetOutputConfig() const;
 
                     /**
-                     * 设置图片处理任务的输出媒体文件配置。
-                     * @param _outputConfig 图片处理任务的输出媒体文件配置。
+                     * 设置<p>图片处理任务的输出媒体文件配置。</p>
+                     * @param _outputConfig <p>图片处理任务的输出媒体文件配置。</p>
                      * 
                      */
                     void SetOutputConfig(const ProcessImageAsyncOutputConfig& _outputConfig);
@@ -114,19 +135,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 图片处理的FileId。
+                     * <p>图片处理的FileId。</p>
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 图片处理参数。
+                     * <p>图片URL。</p>
+                     */
+                    std::string m_url;
+                    bool m_urlHasBeenSet;
+
+                    /**
+                     * <p>图片处理参数。</p>
                      */
                     ProcessImageAsyncTaskInput m_imageTaskInput;
                     bool m_imageTaskInputHasBeenSet;
 
                     /**
-                     * 图片处理任务的输出媒体文件配置。
+                     * <p>图片处理任务的输出媒体文件配置。</p>
                      */
                     ProcessImageAsyncOutputConfig m_outputConfig;
                     bool m_outputConfigHasBeenSet;

@@ -22,7 +22,9 @@
 using namespace TencentCloud::Tokenhub::V20260322::Model;
 using namespace std;
 
-DeleteApiKeyRequest::DeleteApiKeyRequest()
+DeleteApiKeyRequest::DeleteApiKeyRequest() :
+    m_apiKeyIdHasBeenSet(false),
+    m_platformHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,22 @@ string DeleteApiKeyRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_apiKeyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiKeyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_apiKeyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_platformHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Platform";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_platform.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +58,37 @@ string DeleteApiKeyRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DeleteApiKeyRequest::GetApiKeyId() const
+{
+    return m_apiKeyId;
+}
+
+void DeleteApiKeyRequest::SetApiKeyId(const string& _apiKeyId)
+{
+    m_apiKeyId = _apiKeyId;
+    m_apiKeyIdHasBeenSet = true;
+}
+
+bool DeleteApiKeyRequest::ApiKeyIdHasBeenSet() const
+{
+    return m_apiKeyIdHasBeenSet;
+}
+
+string DeleteApiKeyRequest::GetPlatform() const
+{
+    return m_platform;
+}
+
+void DeleteApiKeyRequest::SetPlatform(const string& _platform)
+{
+    m_platform = _platform;
+    m_platformHasBeenSet = true;
+}
+
+bool DeleteApiKeyRequest::PlatformHasBeenSet() const
+{
+    return m_platformHasBeenSet;
+}
 
 

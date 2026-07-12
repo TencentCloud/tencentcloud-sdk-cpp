@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-AttachWorkGroupPolicyResponse::AttachWorkGroupPolicyResponse()
+AttachWorkGroupPolicyResponse::AttachWorkGroupPolicyResponse() :
+    m_policySetHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome AttachWorkGroupPolicyResponse::Deserialize(const string &pay
     }
 
 
+    if (rsp.HasMember("PolicySet") && !rsp["PolicySet"].IsNull())
+    {
+        if (!rsp["PolicySet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PolicySet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["PolicySet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Policy item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_policySet.push_back(item);
+        }
+        m_policySetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +91,21 @@ string AttachWorkGroupPolicyResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_policySetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicySet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_policySet.begin(); itr != m_policySet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +118,15 @@ string AttachWorkGroupPolicyResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<Policy> AttachWorkGroupPolicyResponse::GetPolicySet() const
+{
+    return m_policySet;
+}
+
+bool AttachWorkGroupPolicyResponse::PolicySetHasBeenSet() const
+{
+    return m_policySetHasBeenSet;
+}
 
 

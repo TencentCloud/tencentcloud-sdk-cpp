@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tokenhub::V20260322::Model;
 using namespace std;
 
-CreateApiKeyResponse::CreateApiKeyResponse()
+CreateApiKeyResponse::CreateApiKeyResponse() :
+    m_apiKeyIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateApiKeyResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("ApiKeyId") && !rsp["ApiKeyId"].IsNull())
+    {
+        if (!rsp["ApiKeyId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApiKeyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_apiKeyId = string(rsp["ApiKeyId"].GetString());
+        m_apiKeyIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateApiKeyResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_apiKeyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiKeyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apiKeyId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateApiKeyResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateApiKeyResponse::GetApiKeyId() const
+{
+    return m_apiKeyId;
+}
+
+bool CreateApiKeyResponse::ApiKeyIdHasBeenSet() const
+{
+    return m_apiKeyIdHasBeenSet;
+}
 
 

@@ -19,8 +19,9 @@ set(tse_public_header
   )
 
 set(tse_public_header_model
-  include/tencentcloud/tse/v20201207/model/DescribeNacosReplicasRequest.h
+  include/tencentcloud/tse/v20201207/model/BetaLabel.h
   include/tencentcloud/tse/v20201207/model/CreateConfigFileGroupRequest.h
+  include/tencentcloud/tse/v20201207/model/DescribeNacosReplicasRequest.h
   include/tencentcloud/tse/v20201207/model/DeleteWafDomainsRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayNodesRequest.h
   include/tencentcloud/tse/v20201207/model/GovernanceAlias.h
@@ -129,7 +130,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/DescribeSREInstancesResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayConsumerGroupResponse.h
   include/tencentcloud/tse/v20201207/model/AutoScalerRules.h
-  include/tencentcloud/tse/v20201207/model/GovernanceInterfaceDescription.h
+  include/tencentcloud/tse/v20201207/model/CreateWafDomainsRequest.h
   include/tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayServiceRateLimitRequest.h
   include/tencentcloud/tse/v20201207/model/ModifyNativeGatewayServerGroupRequest.h
   include/tencentcloud/tse/v20201207/model/AIGWForwardDesensitizeConfig.h
@@ -180,7 +181,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/InstanceTagInfo.h
   include/tencentcloud/tse/v20201207/model/UnbindAutoScalerResourceStrategyFromGroupsResponse.h
   include/tencentcloud/tse/v20201207/model/UpdateUpstreamTargetsResponse.h
-  include/tencentcloud/tse/v20201207/model/CreateWafDomainsRequest.h
+  include/tencentcloud/tse/v20201207/model/GovernanceInterfaceDescription.h
   include/tencentcloud/tse/v20201207/model/DescribeGovernanceServiceContractVersionsRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayCertificatesResponse.h
   include/tencentcloud/tse/v20201207/model/KongUpstreamPreview.h
@@ -245,6 +246,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/SourceInstanceVpcInfo.h
   include/tencentcloud/tse/v20201207/model/ModifyConfigFileGroupResponse.h
   include/tencentcloud/tse/v20201207/model/ArgumentValue.h
+  include/tencentcloud/tse/v20201207/model/BetaLabelMatchString.h
   include/tencentcloud/tse/v20201207/model/RateLimitResponse.h
   include/tencentcloud/tse/v20201207/model/RollbackConfigFileReleasesRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayInfoByIpResponse.h
@@ -514,8 +516,9 @@ set(tse_public_header_model
 
 set(tse_src
   src/v20201207/TseClient.cpp
-  src/v20201207/model/DescribeNacosReplicasRequest.cpp
+  src/v20201207/model/BetaLabel.cpp
   src/v20201207/model/CreateConfigFileGroupRequest.cpp
+  src/v20201207/model/DescribeNacosReplicasRequest.cpp
   src/v20201207/model/DeleteWafDomainsRequest.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayNodesRequest.cpp
   src/v20201207/model/GovernanceAlias.cpp
@@ -624,7 +627,7 @@ set(tse_src
   src/v20201207/model/DescribeSREInstancesResponse.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayConsumerGroupResponse.cpp
   src/v20201207/model/AutoScalerRules.cpp
-  src/v20201207/model/GovernanceInterfaceDescription.cpp
+  src/v20201207/model/CreateWafDomainsRequest.cpp
   src/v20201207/model/CreateCloudNativeAPIGatewayServiceRateLimitRequest.cpp
   src/v20201207/model/ModifyNativeGatewayServerGroupRequest.cpp
   src/v20201207/model/AIGWForwardDesensitizeConfig.cpp
@@ -675,7 +678,7 @@ set(tse_src
   src/v20201207/model/InstanceTagInfo.cpp
   src/v20201207/model/UnbindAutoScalerResourceStrategyFromGroupsResponse.cpp
   src/v20201207/model/UpdateUpstreamTargetsResponse.cpp
-  src/v20201207/model/CreateWafDomainsRequest.cpp
+  src/v20201207/model/GovernanceInterfaceDescription.cpp
   src/v20201207/model/DescribeGovernanceServiceContractVersionsRequest.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayCertificatesResponse.cpp
   src/v20201207/model/KongUpstreamPreview.cpp
@@ -740,6 +743,7 @@ set(tse_src
   src/v20201207/model/SourceInstanceVpcInfo.cpp
   src/v20201207/model/ModifyConfigFileGroupResponse.cpp
   src/v20201207/model/ArgumentValue.cpp
+  src/v20201207/model/BetaLabelMatchString.cpp
   src/v20201207/model/RateLimitResponse.cpp
   src/v20201207/model/RollbackConfigFileReleasesRequest.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayInfoByIpResponse.cpp

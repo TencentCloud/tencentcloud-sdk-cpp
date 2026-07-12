@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tse/v20201207/model/ConfigFilePersistent.h>
+#include <tencentcloud/tse/v20201207/model/BetaLabel.h>
 
 
 namespace TencentCloud
@@ -48,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取配置文件发布id
-                     * @return Id 配置文件发布id
+                     * 获取<p>配置文件发布id</p>
+                     * @return Id <p>配置文件发布id</p>
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置配置文件发布id
-                     * @param _id 配置文件发布id
+                     * 设置<p>配置文件发布id</p>
+                     * @param _id <p>配置文件发布id</p>
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -69,15 +70,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取配置文件发布名称
-                     * @return Name 配置文件发布名称
+                     * 获取<p>配置文件发布名称</p>
+                     * @return Name <p>配置文件发布名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置配置文件发布名称
-                     * @param _name 配置文件发布名称
+                     * 设置<p>配置文件发布名称</p>
+                     * @param _name <p>配置文件发布名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -90,15 +91,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取配置文件发布命名空间
-                     * @return Namespace 配置文件发布命名空间
+                     * 获取<p>配置文件发布命名空间</p>
+                     * @return Namespace <p>配置文件发布命名空间</p>
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
-                     * 设置配置文件发布命名空间
-                     * @param _namespace 配置文件发布命名空间
+                     * 设置<p>配置文件发布命名空间</p>
+                     * @param _namespace <p>配置文件发布命名空间</p>
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -111,15 +112,15 @@ namespace TencentCloud
                     bool NamespaceHasBeenSet() const;
 
                     /**
-                     * 获取配置文件发布组
-                     * @return Group 配置文件发布组
+                     * 获取<p>配置文件发布组</p>
+                     * @return Group <p>配置文件发布组</p>
                      * 
                      */
                     std::string GetGroup() const;
 
                     /**
-                     * 设置配置文件发布组
-                     * @param _group 配置文件发布组
+                     * 设置<p>配置文件发布组</p>
+                     * @param _group <p>配置文件发布组</p>
                      * 
                      */
                     void SetGroup(const std::string& _group);
@@ -132,15 +133,15 @@ namespace TencentCloud
                     bool GroupHasBeenSet() const;
 
                     /**
-                     * 获取配置文件发布文件名称
-                     * @return FileName 配置文件发布文件名称
+                     * 获取<p>配置文件发布文件名称</p>
+                     * @return FileName <p>配置文件发布文件名称</p>
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
-                     * 设置配置文件发布文件名称
-                     * @param _fileName 配置文件发布文件名称
+                     * 设置<p>配置文件发布文件名称</p>
+                     * @param _fileName <p>配置文件发布文件名称</p>
                      * 
                      */
                     void SetFileName(const std::string& _fileName);
@@ -153,15 +154,15 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取配置文件发布内容
-                     * @return Content 配置文件发布内容
+                     * 获取<p>配置文件发布内容</p>
+                     * @return Content <p>配置文件发布内容</p>
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置配置文件发布内容
-                     * @param _content 配置文件发布内容
+                     * 设置<p>配置文件发布内容</p>
+                     * @param _content <p>配置文件发布内容</p>
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -174,15 +175,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取配置文件发布注释
-                     * @return Comment 配置文件发布注释
+                     * 获取<p>配置文件发布注释</p>
+                     * @return Comment <p>配置文件发布注释</p>
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置配置文件发布注释
-                     * @param _comment 配置文件发布注释
+                     * 设置<p>配置文件发布注释</p>
+                     * @param _comment <p>配置文件发布注释</p>
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -195,15 +196,15 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取配置文件发布Md5
-                     * @return Md5 配置文件发布Md5
+                     * 获取<p>配置文件发布Md5</p>
+                     * @return Md5 <p>配置文件发布Md5</p>
                      * 
                      */
                     std::string GetMd5() const;
 
                     /**
-                     * 设置配置文件发布Md5
-                     * @param _md5 配置文件发布Md5
+                     * 设置<p>配置文件发布Md5</p>
+                     * @param _md5 <p>配置文件发布Md5</p>
                      * 
                      */
                     void SetMd5(const std::string& _md5);
@@ -216,15 +217,15 @@ namespace TencentCloud
                     bool Md5HasBeenSet() const;
 
                     /**
-                     * 获取配置文件发布版本
-                     * @return Version 配置文件发布版本
+                     * 获取<p>配置文件发布版本</p>
+                     * @return Version <p>配置文件发布版本</p>
                      * 
                      */
                     uint64_t GetVersion() const;
 
                     /**
-                     * 设置配置文件发布版本
-                     * @param _version 配置文件发布版本
+                     * 设置<p>配置文件发布版本</p>
+                     * @param _version <p>配置文件发布版本</p>
                      * 
                      */
                     void SetVersion(const uint64_t& _version);
@@ -237,15 +238,15 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取配置文件发布创建时间
-                     * @return CreateTime 配置文件发布创建时间
+                     * 获取<p>配置文件发布创建时间</p>
+                     * @return CreateTime <p>配置文件发布创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置配置文件发布创建时间
-                     * @param _createTime 配置文件发布创建时间
+                     * 设置<p>配置文件发布创建时间</p>
+                     * @param _createTime <p>配置文件发布创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -258,15 +259,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取配置文件发布创建者
-                     * @return CreateBy 配置文件发布创建者
+                     * 获取<p>配置文件发布创建者</p>
+                     * @return CreateBy <p>配置文件发布创建者</p>
                      * 
                      */
                     std::string GetCreateBy() const;
 
                     /**
-                     * 设置配置文件发布创建者
-                     * @param _createBy 配置文件发布创建者
+                     * 设置<p>配置文件发布创建者</p>
+                     * @param _createBy <p>配置文件发布创建者</p>
                      * 
                      */
                     void SetCreateBy(const std::string& _createBy);
@@ -279,15 +280,15 @@ namespace TencentCloud
                     bool CreateByHasBeenSet() const;
 
                     /**
-                     * 获取配置文件发布修改时间
-                     * @return ModifyTime 配置文件发布修改时间
+                     * 获取<p>配置文件发布修改时间</p>
+                     * @return ModifyTime <p>配置文件发布修改时间</p>
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
-                     * 设置配置文件发布修改时间
-                     * @param _modifyTime 配置文件发布修改时间
+                     * 设置<p>配置文件发布修改时间</p>
+                     * @param _modifyTime <p>配置文件发布修改时间</p>
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -300,15 +301,15 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取配置文件发布修改者
-                     * @return ModifyBy 配置文件发布修改者
+                     * 获取<p>配置文件发布修改者</p>
+                     * @return ModifyBy <p>配置文件发布修改者</p>
                      * 
                      */
                     std::string GetModifyBy() const;
 
                     /**
-                     * 设置配置文件发布修改者
-                     * @param _modifyBy 配置文件发布修改者
+                     * 设置<p>配置文件发布修改者</p>
+                     * @param _modifyBy <p>配置文件发布修改者</p>
                      * 
                      */
                     void SetModifyBy(const std::string& _modifyBy);
@@ -321,15 +322,15 @@ namespace TencentCloud
                     bool ModifyByHasBeenSet() const;
 
                     /**
-                     * 获取发布描述
-                     * @return ReleaseDescription 发布描述
+                     * 获取<p>发布描述</p>
+                     * @return ReleaseDescription <p>发布描述</p>
                      * 
                      */
                     std::string GetReleaseDescription() const;
 
                     /**
-                     * 设置发布描述
-                     * @param _releaseDescription 发布描述
+                     * 设置<p>发布描述</p>
+                     * @param _releaseDescription <p>发布描述</p>
                      * 
                      */
                     void SetReleaseDescription(const std::string& _releaseDescription);
@@ -342,15 +343,15 @@ namespace TencentCloud
                     bool ReleaseDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取是否生效
-                     * @return Active 是否生效
+                     * 获取<p>是否生效</p>
+                     * @return Active <p>是否生效</p>
                      * 
                      */
                     bool GetActive() const;
 
                     /**
-                     * 设置是否生效
-                     * @param _active 是否生效
+                     * 设置<p>是否生效</p>
+                     * @param _active <p>是否生效</p>
                      * 
                      */
                     void SetActive(const bool& _active);
@@ -363,15 +364,15 @@ namespace TencentCloud
                     bool ActiveHasBeenSet() const;
 
                     /**
-                     * 获取格式
-                     * @return Format 格式
+                     * 获取<p>格式</p>
+                     * @return Format <p>格式</p>
                      * 
                      */
                     std::string GetFormat() const;
 
                     /**
-                     * 设置格式
-                     * @param _format 格式
+                     * 设置<p>格式</p>
+                     * @param _format <p>格式</p>
                      * 
                      */
                     void SetFormat(const std::string& _format);
@@ -384,15 +385,15 @@ namespace TencentCloud
                     bool FormatHasBeenSet() const;
 
                     /**
-                     * 获取配置文件ID
-                     * @return ConfigFileId 配置文件ID
+                     * 获取<p>配置文件ID</p>
+                     * @return ConfigFileId <p>配置文件ID</p>
                      * 
                      */
                     std::string GetConfigFileId() const;
 
                     /**
-                     * 设置配置文件ID
-                     * @param _configFileId 配置文件ID
+                     * 设置<p>配置文件ID</p>
+                     * @param _configFileId <p>配置文件ID</p>
                      * 
                      */
                     void SetConfigFileId(const std::string& _configFileId);
@@ -405,15 +406,15 @@ namespace TencentCloud
                     bool ConfigFileIdHasBeenSet() const;
 
                     /**
-                     * 获取配置文件类型
-                     * @return ConfigFileSupportedClient 配置文件类型
+                     * 获取<p>配置文件类型</p>
+                     * @return ConfigFileSupportedClient <p>配置文件类型</p>
                      * 
                      */
                     int64_t GetConfigFileSupportedClient() const;
 
                     /**
-                     * 设置配置文件类型
-                     * @param _configFileSupportedClient 配置文件类型
+                     * 设置<p>配置文件类型</p>
+                     * @param _configFileSupportedClient <p>配置文件类型</p>
                      * 
                      */
                     void SetConfigFileSupportedClient(const int64_t& _configFileSupportedClient);
@@ -426,15 +427,15 @@ namespace TencentCloud
                     bool ConfigFileSupportedClientHasBeenSet() const;
 
                     /**
-                     * 获取配置文件持久化
-                     * @return ConfigFilePersistent 配置文件持久化
+                     * 获取<p>配置文件持久化</p>
+                     * @return ConfigFilePersistent <p>配置文件持久化</p>
                      * 
                      */
                     ConfigFilePersistent GetConfigFilePersistent() const;
 
                     /**
-                     * 设置配置文件持久化
-                     * @param _configFilePersistent 配置文件持久化
+                     * 设置<p>配置文件持久化</p>
+                     * @param _configFilePersistent <p>配置文件持久化</p>
                      * 
                      */
                     void SetConfigFilePersistent(const ConfigFilePersistent& _configFilePersistent);
@@ -446,121 +447,175 @@ namespace TencentCloud
                      */
                     bool ConfigFilePersistentHasBeenSet() const;
 
+                    /**
+                     * 获取<p>灰度标签</p>
+                     * @return BetaLabels <p>灰度标签</p>
+                     * 
+                     */
+                    std::vector<BetaLabel> GetBetaLabels() const;
+
+                    /**
+                     * 设置<p>灰度标签</p>
+                     * @param _betaLabels <p>灰度标签</p>
+                     * 
+                     */
+                    void SetBetaLabels(const std::vector<BetaLabel>& _betaLabels);
+
+                    /**
+                     * 判断参数 BetaLabels 是否已赋值
+                     * @return BetaLabels 是否已赋值
+                     * 
+                     */
+                    bool BetaLabelsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>发布类型</p><p>枚举值：</p><ul><li>gary： 灰度发布</li></ul>
+                     * @return ReleaseType <p>发布类型</p><p>枚举值：</p><ul><li>gary： 灰度发布</li></ul>
+                     * 
+                     */
+                    std::string GetReleaseType() const;
+
+                    /**
+                     * 设置<p>发布类型</p><p>枚举值：</p><ul><li>gary： 灰度发布</li></ul>
+                     * @param _releaseType <p>发布类型</p><p>枚举值：</p><ul><li>gary： 灰度发布</li></ul>
+                     * 
+                     */
+                    void SetReleaseType(const std::string& _releaseType);
+
+                    /**
+                     * 判断参数 ReleaseType 是否已赋值
+                     * @return ReleaseType 是否已赋值
+                     * 
+                     */
+                    bool ReleaseTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 配置文件发布id
+                     * <p>配置文件发布id</p>
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 配置文件发布名称
+                     * <p>配置文件发布名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 配置文件发布命名空间
+                     * <p>配置文件发布命名空间</p>
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
-                     * 配置文件发布组
+                     * <p>配置文件发布组</p>
                      */
                     std::string m_group;
                     bool m_groupHasBeenSet;
 
                     /**
-                     * 配置文件发布文件名称
+                     * <p>配置文件发布文件名称</p>
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * 配置文件发布内容
+                     * <p>配置文件发布内容</p>
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 配置文件发布注释
+                     * <p>配置文件发布注释</p>
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
-                     * 配置文件发布Md5
+                     * <p>配置文件发布Md5</p>
                      */
                     std::string m_md5;
                     bool m_md5HasBeenSet;
 
                     /**
-                     * 配置文件发布版本
+                     * <p>配置文件发布版本</p>
                      */
                     uint64_t m_version;
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 配置文件发布创建时间
+                     * <p>配置文件发布创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 配置文件发布创建者
+                     * <p>配置文件发布创建者</p>
                      */
                     std::string m_createBy;
                     bool m_createByHasBeenSet;
 
                     /**
-                     * 配置文件发布修改时间
+                     * <p>配置文件发布修改时间</p>
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * 配置文件发布修改者
+                     * <p>配置文件发布修改者</p>
                      */
                     std::string m_modifyBy;
                     bool m_modifyByHasBeenSet;
 
                     /**
-                     * 发布描述
+                     * <p>发布描述</p>
                      */
                     std::string m_releaseDescription;
                     bool m_releaseDescriptionHasBeenSet;
 
                     /**
-                     * 是否生效
+                     * <p>是否生效</p>
                      */
                     bool m_active;
                     bool m_activeHasBeenSet;
 
                     /**
-                     * 格式
+                     * <p>格式</p>
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;
 
                     /**
-                     * 配置文件ID
+                     * <p>配置文件ID</p>
                      */
                     std::string m_configFileId;
                     bool m_configFileIdHasBeenSet;
 
                     /**
-                     * 配置文件类型
+                     * <p>配置文件类型</p>
                      */
                     int64_t m_configFileSupportedClient;
                     bool m_configFileSupportedClientHasBeenSet;
 
                     /**
-                     * 配置文件持久化
+                     * <p>配置文件持久化</p>
                      */
                     ConfigFilePersistent m_configFilePersistent;
                     bool m_configFilePersistentHasBeenSet;
+
+                    /**
+                     * <p>灰度标签</p>
+                     */
+                    std::vector<BetaLabel> m_betaLabels;
+                    bool m_betaLabelsHasBeenSet;
+
+                    /**
+                     * <p>发布类型</p><p>枚举值：</p><ul><li>gary： 灰度发布</li></ul>
+                     */
+                    std::string m_releaseType;
+                    bool m_releaseTypeHasBeenSet;
 
                 };
             }

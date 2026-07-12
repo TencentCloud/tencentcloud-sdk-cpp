@@ -15,34 +15,34 @@
 #
 
 set(tsw_public_header
-  include/tencentcloud/tsw/v20210412/TswClient.h
   include/tencentcloud/tsw/v20200924/TswClient.h
+  include/tencentcloud/tsw/v20210412/TswClient.h
   )
 
 set(tsw_public_header_model
+  include/tencentcloud/tsw/v20200924/model/DescribeAgentShellResponse.h
+  include/tencentcloud/tsw/v20200924/model/AgentShell.h
+  include/tencentcloud/tsw/v20200924/model/DescribeAgentShellRequest.h
   include/tencentcloud/tsw/v20210412/model/DescribeTokenRequest.h
   include/tencentcloud/tsw/v20210412/model/DescribeServiceAlertObjectResponse.h
   include/tencentcloud/tsw/v20210412/model/DescribeComponentAlertObjectResponse.h
   include/tencentcloud/tsw/v20210412/model/DescribeServiceAlertObjectRequest.h
   include/tencentcloud/tsw/v20210412/model/DescribeComponentAlertObjectRequest.h
   include/tencentcloud/tsw/v20210412/model/DescribeTokenResponse.h
-  include/tencentcloud/tsw/v20200924/model/DescribeAgentShellResponse.h
-  include/tencentcloud/tsw/v20200924/model/AgentShell.h
-  include/tencentcloud/tsw/v20200924/model/DescribeAgentShellRequest.h
   )
 
 set(tsw_src
-  src/v20210412/TswClient.cpp
   src/v20200924/TswClient.cpp
+  src/v20210412/TswClient.cpp
+  src/v20200924/model/DescribeAgentShellResponse.cpp
+  src/v20200924/model/AgentShell.cpp
+  src/v20200924/model/DescribeAgentShellRequest.cpp
   src/v20210412/model/DescribeTokenRequest.cpp
   src/v20210412/model/DescribeServiceAlertObjectResponse.cpp
   src/v20210412/model/DescribeComponentAlertObjectResponse.cpp
   src/v20210412/model/DescribeServiceAlertObjectRequest.cpp
   src/v20210412/model/DescribeComponentAlertObjectRequest.cpp
   src/v20210412/model/DescribeTokenResponse.cpp
-  src/v20200924/model/DescribeAgentShellResponse.cpp
-  src/v20200924/model/AgentShell.cpp
-  src/v20200924/model/DescribeAgentShellRequest.cpp
   )
 
 set(tsw_include
@@ -71,9 +71,9 @@ target_link_libraries(tsw
   core)
 
 #install(FILES ${tsw_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/tsw/v20200924)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/tsw/v20210412)
 #install(FILES ${tsw_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/tsw/v20200924/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/tsw/v20210412/model)
 install(DIRECTORY ${tsw_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 
