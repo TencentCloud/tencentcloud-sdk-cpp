@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/AigcVideoTaskOutputFileInfo.h>
+#include <tencentcloud/vod/v20180717/model/AigcVideoTaskUsage.h>
 
 
 namespace TencentCloud
@@ -89,6 +90,27 @@ namespace TencentCloud
                      */
                     bool ProcedureTaskIdsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>AIGC 生视频任务的用量信息。</p>
+                     * @return Usage <p>AIGC 生视频任务的用量信息。</p>
+                     * 
+                     */
+                    AigcVideoTaskUsage GetUsage() const;
+
+                    /**
+                     * 设置<p>AIGC 生视频任务的用量信息。</p>
+                     * @param _usage <p>AIGC 生视频任务的用量信息。</p>
+                     * 
+                     */
+                    void SetUsage(const AigcVideoTaskUsage& _usage);
+
+                    /**
+                     * 判断参数 Usage 是否已赋值
+                     * @return Usage 是否已赋值
+                     * 
+                     */
+                    bool UsageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -102,6 +124,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_procedureTaskIds;
                     bool m_procedureTaskIdsHasBeenSet;
+
+                    /**
+                     * <p>AIGC 生视频任务的用量信息。</p>
+                     */
+                    AigcVideoTaskUsage m_usage;
+                    bool m_usageHasBeenSet;
 
                 };
             }

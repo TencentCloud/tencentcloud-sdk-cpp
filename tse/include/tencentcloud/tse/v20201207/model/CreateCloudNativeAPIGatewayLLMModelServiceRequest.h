@@ -24,6 +24,8 @@
 #include <tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayLLMModelFallbackRule.h>
 #include <tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayLLMModelParamCheckInfo.h>
 #include <tencentcloud/tse/v20201207/model/AIGWLLMQuotaLimit.h>
+#include <tencentcloud/tse/v20201207/model/AIGWModelRewriteRule.h>
+#include <tencentcloud/tse/v20201207/model/KeyValue.h>
 
 
 namespace TencentCloud
@@ -507,6 +509,216 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>模型改写规则</p>
+                     * @return ModelRewriteRules <p>模型改写规则</p>
+                     * 
+                     */
+                    std::vector<AIGWModelRewriteRule> GetModelRewriteRules() const;
+
+                    /**
+                     * 设置<p>模型改写规则</p>
+                     * @param _modelRewriteRules <p>模型改写规则</p>
+                     * 
+                     */
+                    void SetModelRewriteRules(const std::vector<AIGWModelRewriteRule>& _modelRewriteRules);
+
+                    /**
+                     * 判断参数 ModelRewriteRules 是否已赋值
+                     * @return ModelRewriteRules 是否已赋值
+                     * 
+                     */
+                    bool ModelRewriteRulesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>服务来源ID</p>
+                     * @return SourceId <p>服务来源ID</p>
+                     * 
+                     */
+                    std::string GetSourceId() const;
+
+                    /**
+                     * 设置<p>服务来源ID</p>
+                     * @param _sourceId <p>服务来源ID</p>
+                     * 
+                     */
+                    void SetSourceId(const std::string& _sourceId);
+
+                    /**
+                     * 判断参数 SourceId 是否已赋值
+                     * @return SourceId 是否已赋值
+                     * 
+                     */
+                    bool SourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>服务来源命名空间</p>
+                     * @return Namespace <p>服务来源命名空间</p>
+                     * 
+                     */
+                    std::string GetNamespace() const;
+
+                    /**
+                     * 设置<p>服务来源命名空间</p>
+                     * @param _namespace <p>服务来源命名空间</p>
+                     * 
+                     */
+                    void SetNamespace(const std::string& _namespace);
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     * 
+                     */
+                    bool NamespaceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>服务来源服务名</p>
+                     * @return ServiceName <p>服务来源服务名</p>
+                     * 
+                     */
+                    std::string GetServiceName() const;
+
+                    /**
+                     * 设置<p>服务来源服务名</p>
+                     * @param _serviceName <p>服务来源服务名</p>
+                     * 
+                     */
+                    void SetServiceName(const std::string& _serviceName);
+
+                    /**
+                     * 判断参数 ServiceName 是否已赋值
+                     * @return ServiceName 是否已赋值
+                     * 
+                     */
+                    bool ServiceNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>服务来源协议</p>
+                     * @return Protocol <p>服务来源协议</p>
+                     * 
+                     */
+                    std::string GetProtocol() const;
+
+                    /**
+                     * 设置<p>服务来源协议</p>
+                     * @param _protocol <p>服务来源协议</p>
+                     * 
+                     */
+                    void SetProtocol(const std::string& _protocol);
+
+                    /**
+                     * 判断参数 Protocol 是否已赋值
+                     * @return Protocol 是否已赋值
+                     * 
+                     */
+                    bool ProtocolHasBeenSet() const;
+
+                    /**
+                     * 获取<p>扩展参数</p>
+                     * @return ExtParams <p>扩展参数</p>
+                     * 
+                     */
+                    std::vector<KeyValue> GetExtParams() const;
+
+                    /**
+                     * 设置<p>扩展参数</p>
+                     * @param _extParams <p>扩展参数</p>
+                     * 
+                     */
+                    void SetExtParams(const std::vector<KeyValue>& _extParams);
+
+                    /**
+                     * 判断参数 ExtParams 是否已赋值
+                     * @return ExtParams 是否已赋值
+                     * 
+                     */
+                    bool ExtParamsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>自定义供应商名字</p>
+                     * @return CustomProviderName <p>自定义供应商名字</p>
+                     * 
+                     */
+                    std::string GetCustomProviderName() const;
+
+                    /**
+                     * 设置<p>自定义供应商名字</p>
+                     * @param _customProviderName <p>自定义供应商名字</p>
+                     * 
+                     */
+                    void SetCustomProviderName(const std::string& _customProviderName);
+
+                    /**
+                     * 判断参数 CustomProviderName 是否已赋值
+                     * @return CustomProviderName 是否已赋值
+                     * 
+                     */
+                    bool CustomProviderNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启密钥轮转</p>
+                     * @return KeyRotationEnabled <p>是否开启密钥轮转</p>
+                     * 
+                     */
+                    bool GetKeyRotationEnabled() const;
+
+                    /**
+                     * 设置<p>是否开启密钥轮转</p>
+                     * @param _keyRotationEnabled <p>是否开启密钥轮转</p>
+                     * 
+                     */
+                    void SetKeyRotationEnabled(const bool& _keyRotationEnabled);
+
+                    /**
+                     * 判断参数 KeyRotationEnabled 是否已赋值
+                     * @return KeyRotationEnabled 是否已赋值
+                     * 
+                     */
+                    bool KeyRotationEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取<p>密钥轮转周期</p><p>单位：天数</p>
+                     * @return KeyRotationPeriodDays <p>密钥轮转周期</p><p>单位：天数</p>
+                     * 
+                     */
+                    uint64_t GetKeyRotationPeriodDays() const;
+
+                    /**
+                     * 设置<p>密钥轮转周期</p><p>单位：天数</p>
+                     * @param _keyRotationPeriodDays <p>密钥轮转周期</p><p>单位：天数</p>
+                     * 
+                     */
+                    void SetKeyRotationPeriodDays(const uint64_t& _keyRotationPeriodDays);
+
+                    /**
+                     * 判断参数 KeyRotationPeriodDays 是否已赋值
+                     * @return KeyRotationPeriodDays 是否已赋值
+                     * 
+                     */
+                    bool KeyRotationPeriodDaysHasBeenSet() const;
+
+                    /**
+                     * 获取<p>外部服务来源ID</p>
+                     * @return ExternalInstanceId <p>外部服务来源ID</p>
+                     * 
+                     */
+                    std::string GetExternalInstanceId() const;
+
+                    /**
+                     * 设置<p>外部服务来源ID</p>
+                     * @param _externalInstanceId <p>外部服务来源ID</p>
+                     * 
+                     */
+                    void SetExternalInstanceId(const std::string& _externalInstanceId);
+
+                    /**
+                     * 判断参数 ExternalInstanceId 是否已赋值
+                     * @return ExternalInstanceId 是否已赋值
+                     * 
+                     */
+                    bool ExternalInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -640,6 +852,66 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * <p>模型改写规则</p>
+                     */
+                    std::vector<AIGWModelRewriteRule> m_modelRewriteRules;
+                    bool m_modelRewriteRulesHasBeenSet;
+
+                    /**
+                     * <p>服务来源ID</p>
+                     */
+                    std::string m_sourceId;
+                    bool m_sourceIdHasBeenSet;
+
+                    /**
+                     * <p>服务来源命名空间</p>
+                     */
+                    std::string m_namespace;
+                    bool m_namespaceHasBeenSet;
+
+                    /**
+                     * <p>服务来源服务名</p>
+                     */
+                    std::string m_serviceName;
+                    bool m_serviceNameHasBeenSet;
+
+                    /**
+                     * <p>服务来源协议</p>
+                     */
+                    std::string m_protocol;
+                    bool m_protocolHasBeenSet;
+
+                    /**
+                     * <p>扩展参数</p>
+                     */
+                    std::vector<KeyValue> m_extParams;
+                    bool m_extParamsHasBeenSet;
+
+                    /**
+                     * <p>自定义供应商名字</p>
+                     */
+                    std::string m_customProviderName;
+                    bool m_customProviderNameHasBeenSet;
+
+                    /**
+                     * <p>是否开启密钥轮转</p>
+                     */
+                    bool m_keyRotationEnabled;
+                    bool m_keyRotationEnabledHasBeenSet;
+
+                    /**
+                     * <p>密钥轮转周期</p><p>单位：天数</p>
+                     */
+                    uint64_t m_keyRotationPeriodDays;
+                    bool m_keyRotationPeriodDaysHasBeenSet;
+
+                    /**
+                     * <p>外部服务来源ID</p>
+                     */
+                    std::string m_externalInstanceId;
+                    bool m_externalInstanceIdHasBeenSet;
 
                 };
             }

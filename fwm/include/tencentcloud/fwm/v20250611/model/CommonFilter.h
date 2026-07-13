@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取筛选字段名。支持：SecurityGroupId、FwGroupId、Ip（IP地址模糊搜索）、InstanceName（实例名称模糊搜索）、VpcId（VPC ID精确搜索）
+                     * 获取<p>筛选字段名。支持：SecurityGroupId、FwGroupId、IP（IP地址模糊搜索）、InstanceName（实例名称模糊搜索）、VpcId（VPC ID精确搜索）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 筛选字段名。支持：SecurityGroupId、FwGroupId、Ip（IP地址模糊搜索）、InstanceName（实例名称模糊搜索）、VpcId（VPC ID精确搜索）
+                     * @return Name <p>筛选字段名。支持：SecurityGroupId、FwGroupId、IP（IP地址模糊搜索）、InstanceName（实例名称模糊搜索）、VpcId（VPC ID精确搜索）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置筛选字段名。支持：SecurityGroupId、FwGroupId、Ip（IP地址模糊搜索）、InstanceName（实例名称模糊搜索）、VpcId（VPC ID精确搜索）
+                     * 设置<p>筛选字段名。支持：SecurityGroupId、FwGroupId、IP（IP地址模糊搜索）、InstanceName（实例名称模糊搜索）、VpcId（VPC ID精确搜索）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 筛选字段名。支持：SecurityGroupId、FwGroupId、Ip（IP地址模糊搜索）、InstanceName（实例名称模糊搜索）、VpcId（VPC ID精确搜索）
+                     * @param _name <p>筛选字段名。支持：SecurityGroupId、FwGroupId、IP（IP地址模糊搜索）、InstanceName（实例名称模糊搜索）、VpcId（VPC ID精确搜索）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取筛选值列表
+                     * 获取<p>筛选值列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Values 筛选值列表
+                     * @return Values <p>筛选值列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
-                     * 设置筛选值列表
+                     * 设置<p>筛选值列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _values 筛选值列表
+                     * @param _values <p>筛选值列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool ValuesHasBeenSet() const;
 
                     /**
-                     * 获取操作类型。1=等于，7=in，9=模糊匹配
+                     * 获取<p>操作类型。1=等于，7=in，9=模糊匹配</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OperatorType 操作类型。1=等于，7=in，9=模糊匹配
+                     * @return OperatorType <p>操作类型。1=等于，7=in，9=模糊匹配</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOperatorType() const;
 
                     /**
-                     * 设置操作类型。1=等于，7=in，9=模糊匹配
+                     * 设置<p>操作类型。1=等于，7=in，9=模糊匹配</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _operatorType 操作类型。1=等于，7=in，9=模糊匹配
+                     * @param _operatorType <p>操作类型。1=等于，7=in，9=模糊匹配</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,21 +124,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 筛选字段名。支持：SecurityGroupId、FwGroupId、Ip（IP地址模糊搜索）、InstanceName（实例名称模糊搜索）、VpcId（VPC ID精确搜索）
+                     * <p>筛选字段名。支持：SecurityGroupId、FwGroupId、IP（IP地址模糊搜索）、InstanceName（实例名称模糊搜索）、VpcId（VPC ID精确搜索）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 筛选值列表
+                     * <p>筛选值列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;
 
                     /**
-                     * 操作类型。1=等于，7=in，9=模糊匹配
+                     * <p>操作类型。1=等于，7=in，9=模糊匹配</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_operatorType;

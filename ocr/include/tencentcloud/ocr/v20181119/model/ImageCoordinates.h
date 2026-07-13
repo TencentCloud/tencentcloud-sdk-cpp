@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取头像左上角横坐标
+                     * 获取<p>头像左上角横坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return X 头像左上角横坐标
+                     * @return X <p>头像左上角横坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetX() const;
 
                     /**
-                     * 设置头像左上角横坐标
+                     * 设置<p>头像左上角横坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _x 头像左上角横坐标
+                     * @param _x <p>头像左上角横坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool XHasBeenSet() const;
 
                     /**
-                     * 获取头像左上角纵坐标
+                     * 获取<p>头像左上角纵坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Y 头像左上角纵坐标
+                     * @return Y <p>头像左上角纵坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetY() const;
 
                     /**
-                     * 设置头像左上角纵坐标
+                     * 设置<p>头像左上角纵坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _y 头像左上角纵坐标
+                     * @param _y <p>头像左上角纵坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool YHasBeenSet() const;
 
                     /**
-                     * 获取头像框宽度
+                     * 获取<p>头像框宽度</p><p>单位：px</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Width 头像框宽度
+                     * @return Width <p>头像框宽度</p><p>单位：px</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置头像框宽度
+                     * 设置<p>头像框宽度</p><p>单位：px</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _width 头像框宽度
+                     * @param _width <p>头像框宽度</p><p>单位：px</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取头像框高度
+                     * 获取<p>头像框高度</p><p>单位：px</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Height 头像框高度
+                     * @return Height <p>头像框高度</p><p>单位：px</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置头像框高度
+                     * 设置<p>头像框高度</p><p>单位：px</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _height 头像框高度
+                     * @param _height <p>头像框高度</p><p>单位：px</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -149,28 +149,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 头像左上角横坐标
+                     * <p>头像左上角横坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_x;
                     bool m_xHasBeenSet;
 
                     /**
-                     * 头像左上角纵坐标
+                     * <p>头像左上角纵坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_y;
                     bool m_yHasBeenSet;
 
                     /**
-                     * 头像框宽度
+                     * <p>头像框宽度</p><p>单位：px</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 头像框高度
+                     * <p>头像框高度</p><p>单位：px</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_height;

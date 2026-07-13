@@ -90,6 +90,56 @@ TokenhubClient::CreateApiKeyOutcomeCallable TokenhubClient::CreateApiKeyCallable
     return prom->get_future();
 }
 
+TokenhubClient::CreateEndpointOutcome TokenhubClient::CreateEndpoint(const CreateEndpointRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEndpoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEndpointResponse rsp = CreateEndpointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEndpointOutcome(rsp);
+        else
+            return CreateEndpointOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEndpointOutcome(outcome.GetError());
+    }
+}
+
+void TokenhubClient::CreateEndpointAsync(const CreateEndpointRequest& request, const CreateEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateEndpointRequest&;
+    using Resp = CreateEndpointResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateEndpoint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TokenhubClient::CreateEndpointOutcomeCallable TokenhubClient::CreateEndpointCallable(const CreateEndpointRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateEndpointOutcome>>();
+    CreateEndpointAsync(
+    request,
+    [prom](
+        const TokenhubClient*,
+        const CreateEndpointRequest&,
+        CreateEndpointOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TokenhubClient::CreateGlossaryOutcome TokenhubClient::CreateGlossary(const CreateGlossaryRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateGlossary");
@@ -332,6 +382,56 @@ TokenhubClient::DeleteApiKeyOutcomeCallable TokenhubClient::DeleteApiKeyCallable
         const TokenhubClient*,
         const DeleteApiKeyRequest&,
         DeleteApiKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TokenhubClient::DeleteEndpointOutcome TokenhubClient::DeleteEndpoint(const DeleteEndpointRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteEndpoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteEndpointResponse rsp = DeleteEndpointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteEndpointOutcome(rsp);
+        else
+            return DeleteEndpointOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteEndpointOutcome(outcome.GetError());
+    }
+}
+
+void TokenhubClient::DeleteEndpointAsync(const DeleteEndpointRequest& request, const DeleteEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteEndpointRequest&;
+    using Resp = DeleteEndpointResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteEndpoint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TokenhubClient::DeleteEndpointOutcomeCallable TokenhubClient::DeleteEndpointCallable(const DeleteEndpointRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteEndpointOutcome>>();
+    DeleteEndpointAsync(
+    request,
+    [prom](
+        const TokenhubClient*,
+        const DeleteEndpointRequest&,
+        DeleteEndpointOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -590,6 +690,56 @@ TokenhubClient::DescribeApiKeyListOutcomeCallable TokenhubClient::DescribeApiKey
     return prom->get_future();
 }
 
+TokenhubClient::DescribeEndpointOutcome TokenhubClient::DescribeEndpoint(const DescribeEndpointRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEndpoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEndpointResponse rsp = DescribeEndpointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEndpointOutcome(rsp);
+        else
+            return DescribeEndpointOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEndpointOutcome(outcome.GetError());
+    }
+}
+
+void TokenhubClient::DescribeEndpointAsync(const DescribeEndpointRequest& request, const DescribeEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeEndpointRequest&;
+    using Resp = DescribeEndpointResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeEndpoint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TokenhubClient::DescribeEndpointOutcomeCallable TokenhubClient::DescribeEndpointCallable(const DescribeEndpointRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeEndpointOutcome>>();
+    DescribeEndpointAsync(
+    request,
+    [prom](
+        const TokenhubClient*,
+        const DescribeEndpointRequest&,
+        DescribeEndpointOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TokenhubClient::DescribeGlossariesOutcome TokenhubClient::DescribeGlossaries(const DescribeGlossariesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGlossaries");
@@ -682,6 +832,56 @@ TokenhubClient::DescribeGlossaryEntriesOutcomeCallable TokenhubClient::DescribeG
         const TokenhubClient*,
         const DescribeGlossaryEntriesRequest&,
         DescribeGlossaryEntriesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TokenhubClient::DescribeModelEndpointListOutcome TokenhubClient::DescribeModelEndpointList(const DescribeModelEndpointListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelEndpointList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelEndpointListResponse rsp = DescribeModelEndpointListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelEndpointListOutcome(rsp);
+        else
+            return DescribeModelEndpointListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelEndpointListOutcome(outcome.GetError());
+    }
+}
+
+void TokenhubClient::DescribeModelEndpointListAsync(const DescribeModelEndpointListRequest& request, const DescribeModelEndpointListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeModelEndpointListRequest&;
+    using Resp = DescribeModelEndpointListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeModelEndpointList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TokenhubClient::DescribeModelEndpointListOutcomeCallable TokenhubClient::DescribeModelEndpointListCallable(const DescribeModelEndpointListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeModelEndpointListOutcome>>();
+    DescribeModelEndpointListAsync(
+    request,
+    [prom](
+        const TokenhubClient*,
+        const DescribeModelEndpointListRequest&,
+        DescribeModelEndpointListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1182,6 +1382,56 @@ TokenhubClient::ModifyApiKeyStatusOutcomeCallable TokenhubClient::ModifyApiKeySt
         const TokenhubClient*,
         const ModifyApiKeyStatusRequest&,
         ModifyApiKeyStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TokenhubClient::ModifyEndpointOutcome TokenhubClient::ModifyEndpoint(const ModifyEndpointRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyEndpoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyEndpointResponse rsp = ModifyEndpointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyEndpointOutcome(rsp);
+        else
+            return ModifyEndpointOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyEndpointOutcome(outcome.GetError());
+    }
+}
+
+void TokenhubClient::ModifyEndpointAsync(const ModifyEndpointRequest& request, const ModifyEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyEndpointRequest&;
+    using Resp = ModifyEndpointResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyEndpoint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TokenhubClient::ModifyEndpointOutcomeCallable TokenhubClient::ModifyEndpointCallable(const ModifyEndpointRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyEndpointOutcome>>();
+    ModifyEndpointAsync(
+    request,
+    [prom](
+        const TokenhubClient*,
+        const ModifyEndpointRequest&,
+        ModifyEndpointOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

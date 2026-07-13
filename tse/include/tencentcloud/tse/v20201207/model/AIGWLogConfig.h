@@ -130,6 +130,48 @@ namespace TencentCloud
                      */
                     bool ResponseLogPayloadMaxSizeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>请求 payload access log 输出模式</p><p>枚举值：</p><ul><li>raw： access log 中 body 记录客户端原始请求</li><li>processed： access log 中 body 记录 AI 网关协议适配、改写、归一化后的 OpenAI-compatible 内容</li></ul>
+                     * @return RequestLogPayloadMode <p>请求 payload access log 输出模式</p><p>枚举值：</p><ul><li>raw： access log 中 body 记录客户端原始请求</li><li>processed： access log 中 body 记录 AI 网关协议适配、改写、归一化后的 OpenAI-compatible 内容</li></ul>
+                     * 
+                     */
+                    std::string GetRequestLogPayloadMode() const;
+
+                    /**
+                     * 设置<p>请求 payload access log 输出模式</p><p>枚举值：</p><ul><li>raw： access log 中 body 记录客户端原始请求</li><li>processed： access log 中 body 记录 AI 网关协议适配、改写、归一化后的 OpenAI-compatible 内容</li></ul>
+                     * @param _requestLogPayloadMode <p>请求 payload access log 输出模式</p><p>枚举值：</p><ul><li>raw： access log 中 body 记录客户端原始请求</li><li>processed： access log 中 body 记录 AI 网关协议适配、改写、归一化后的 OpenAI-compatible 内容</li></ul>
+                     * 
+                     */
+                    void SetRequestLogPayloadMode(const std::string& _requestLogPayloadMode);
+
+                    /**
+                     * 判断参数 RequestLogPayloadMode 是否已赋值
+                     * @return RequestLogPayloadMode 是否已赋值
+                     * 
+                     */
+                    bool RequestLogPayloadModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>上游原始 payload access log 输出模式</p><p>枚举值：</p><ul><li>raw： access log 中 body 记录客户端原始上游响应</li><li>processed： access log 中 body 记录 AI 网关协议适配、改写、归一化后的 OpenAI-compatible 内容</li></ul>
+                     * @return ResponseLogPayloadMode <p>上游原始 payload access log 输出模式</p><p>枚举值：</p><ul><li>raw： access log 中 body 记录客户端原始上游响应</li><li>processed： access log 中 body 记录 AI 网关协议适配、改写、归一化后的 OpenAI-compatible 内容</li></ul>
+                     * 
+                     */
+                    std::string GetResponseLogPayloadMode() const;
+
+                    /**
+                     * 设置<p>上游原始 payload access log 输出模式</p><p>枚举值：</p><ul><li>raw： access log 中 body 记录客户端原始上游响应</li><li>processed： access log 中 body 记录 AI 网关协议适配、改写、归一化后的 OpenAI-compatible 内容</li></ul>
+                     * @param _responseLogPayloadMode <p>上游原始 payload access log 输出模式</p><p>枚举值：</p><ul><li>raw： access log 中 body 记录客户端原始上游响应</li><li>processed： access log 中 body 记录 AI 网关协议适配、改写、归一化后的 OpenAI-compatible 内容</li></ul>
+                     * 
+                     */
+                    void SetResponseLogPayloadMode(const std::string& _responseLogPayloadMode);
+
+                    /**
+                     * 判断参数 ResponseLogPayloadMode 是否已赋值
+                     * @return ResponseLogPayloadMode 是否已赋值
+                     * 
+                     */
+                    bool ResponseLogPayloadModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +197,18 @@ namespace TencentCloud
                      */
                     int64_t m_responseLogPayloadMaxSize;
                     bool m_responseLogPayloadMaxSizeHasBeenSet;
+
+                    /**
+                     * <p>请求 payload access log 输出模式</p><p>枚举值：</p><ul><li>raw： access log 中 body 记录客户端原始请求</li><li>processed： access log 中 body 记录 AI 网关协议适配、改写、归一化后的 OpenAI-compatible 内容</li></ul>
+                     */
+                    std::string m_requestLogPayloadMode;
+                    bool m_requestLogPayloadModeHasBeenSet;
+
+                    /**
+                     * <p>上游原始 payload access log 输出模式</p><p>枚举值：</p><ul><li>raw： access log 中 body 记录客户端原始上游响应</li><li>processed： access log 中 body 记录 AI 网关协议适配、改写、归一化后的 OpenAI-compatible 内容</li></ul>
+                     */
+                    std::string m_responseLogPayloadMode;
+                    bool m_responseLogPayloadModeHasBeenSet;
 
                 };
             }

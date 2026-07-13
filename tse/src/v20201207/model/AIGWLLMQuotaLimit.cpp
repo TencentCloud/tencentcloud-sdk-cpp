@@ -22,7 +22,8 @@ using namespace std;
 
 AIGWLLMQuotaLimit::AIGWLLMQuotaLimit() :
     m_rPMLimitHasBeenSet(false),
-    m_tPMLimitHasBeenSet(false)
+    m_tPMLimitHasBeenSet(false),
+    m_concurrentCountLimitHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome AIGWLLMQuotaLimit::Deserialize(const rapidjson::Value &value
         m_tPMLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("ConcurrentCountLimit") && !value["ConcurrentCountLimit"].IsNull())
+    {
+        if (!value["ConcurrentCountLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWLLMQuotaLimit.ConcurrentCountLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_concurrentCountLimit = value["ConcurrentCountLimit"].GetInt64();
+        m_concurrentCountLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void AIGWLLMQuotaLimit::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "TPMLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tPMLimit, allocator);
+    }
+
+    if (m_concurrentCountLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConcurrentCountLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_concurrentCountLimit, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void AIGWLLMQuotaLimit::SetTPMLimit(const int64_t& _tPMLimit)
 bool AIGWLLMQuotaLimit::TPMLimitHasBeenSet() const
 {
     return m_tPMLimitHasBeenSet;
+}
+
+int64_t AIGWLLMQuotaLimit::GetConcurrentCountLimit() const
+{
+    return m_concurrentCountLimit;
+}
+
+void AIGWLLMQuotaLimit::SetConcurrentCountLimit(const int64_t& _concurrentCountLimit)
+{
+    m_concurrentCountLimit = _concurrentCountLimit;
+    m_concurrentCountLimitHasBeenSet = true;
+}
+
+bool AIGWLLMQuotaLimit::ConcurrentCountLimitHasBeenSet() const
+{
+    return m_concurrentCountLimitHasBeenSet;
 }
 

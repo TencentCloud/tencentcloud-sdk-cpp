@@ -35,7 +35,11 @@ DescribeBackupDetailResponse::DescribeBackupDetailResponse() :
     m_instanceTypeHasBeenSet(false),
     m_memSizeHasBeenSet(false),
     m_shardNumHasBeenSet(false),
-    m_replicasNumHasBeenSet(false)
+    m_replicasNumHasBeenSet(false),
+    m_encryptedHasBeenSet(false),
+    m_decryptKeyHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
+    m_keyAlgorithmHasBeenSet(false)
 {
 }
 
@@ -193,6 +197,46 @@ CoreInternalOutcome DescribeBackupDetailResponse::Deserialize(const string &payl
         m_replicasNumHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Encrypted") && !rsp["Encrypted"].IsNull())
+    {
+        if (!rsp["Encrypted"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Encrypted` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_encrypted = rsp["Encrypted"].GetBool();
+        m_encryptedHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DecryptKey") && !rsp["DecryptKey"].IsNull())
+    {
+        if (!rsp["DecryptKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DecryptKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_decryptKey = string(rsp["DecryptKey"].GetString());
+        m_decryptKeyHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("KmsKeyId") && !rsp["KmsKeyId"].IsNull())
+    {
+        if (!rsp["KmsKeyId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KmsKeyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kmsKeyId = string(rsp["KmsKeyId"].GetString());
+        m_kmsKeyIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("KeyAlgorithm") && !rsp["KeyAlgorithm"].IsNull())
+    {
+        if (!rsp["KeyAlgorithm"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KeyAlgorithm` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_keyAlgorithm = string(rsp["KeyAlgorithm"].GetString());
+        m_keyAlgorithmHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -297,6 +341,38 @@ string DescribeBackupDetailResponse::ToJsonString() const
         string key = "ReplicasNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_replicasNum, allocator);
+    }
+
+    if (m_encryptedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encrypted";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_encrypted, allocator);
+    }
+
+    if (m_decryptKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DecryptKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_decryptKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kmsKeyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KmsKeyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kmsKeyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keyAlgorithmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyAlgorithm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keyAlgorithm.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -429,6 +505,46 @@ int64_t DescribeBackupDetailResponse::GetReplicasNum() const
 bool DescribeBackupDetailResponse::ReplicasNumHasBeenSet() const
 {
     return m_replicasNumHasBeenSet;
+}
+
+bool DescribeBackupDetailResponse::GetEncrypted() const
+{
+    return m_encrypted;
+}
+
+bool DescribeBackupDetailResponse::EncryptedHasBeenSet() const
+{
+    return m_encryptedHasBeenSet;
+}
+
+string DescribeBackupDetailResponse::GetDecryptKey() const
+{
+    return m_decryptKey;
+}
+
+bool DescribeBackupDetailResponse::DecryptKeyHasBeenSet() const
+{
+    return m_decryptKeyHasBeenSet;
+}
+
+string DescribeBackupDetailResponse::GetKmsKeyId() const
+{
+    return m_kmsKeyId;
+}
+
+bool DescribeBackupDetailResponse::KmsKeyIdHasBeenSet() const
+{
+    return m_kmsKeyIdHasBeenSet;
+}
+
+string DescribeBackupDetailResponse::GetKeyAlgorithm() const
+{
+    return m_keyAlgorithm;
+}
+
+bool DescribeBackupDetailResponse::KeyAlgorithmHasBeenSet() const
+{
+    return m_keyAlgorithmHasBeenSet;
 }
 
 

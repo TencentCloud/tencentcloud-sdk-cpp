@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例分组名称id
-                     * @return InstanceGroupId 实例分组名称id
+                     * 获取<p>实例分组名称id</p>
+                     * @return InstanceGroupId <p>实例分组名称id</p>
                      * 
                      */
                     int64_t GetInstanceGroupId() const;
 
                     /**
-                     * 设置实例分组名称id
-                     * @param _instanceGroupId 实例分组名称id
+                     * 设置<p>实例分组名称id</p>
+                     * @param _instanceGroupId <p>实例分组名称id</p>
                      * 
                      */
                     void SetInstanceGroupId(const int64_t& _instanceGroupId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool InstanceGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取策略类型视图名称
-                     * @return ViewName 策略类型视图名称
+                     * 获取<p>策略类型视图名称</p>
+                     * @return ViewName <p>策略类型视图名称</p>
                      * 
                      */
                     std::string GetViewName() const;
 
                     /**
-                     * 设置策略类型视图名称
-                     * @param _viewName 策略类型视图名称
+                     * 设置<p>策略类型视图名称</p>
+                     * @param _viewName <p>策略类型视图名称</p>
                      * 
                      */
                     void SetViewName(const std::string& _viewName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ViewNameHasBeenSet() const;
 
                     /**
-                     * 获取最近编辑的用户uin
-                     * @return LastEditUin 最近编辑的用户uin
+                     * 获取<p>最近编辑的用户uin</p>
+                     * @return LastEditUin <p>最近编辑的用户uin</p>
                      * 
                      */
                     std::string GetLastEditUin() const;
 
                     /**
-                     * 设置最近编辑的用户uin
-                     * @param _lastEditUin 最近编辑的用户uin
+                     * 设置<p>最近编辑的用户uin</p>
+                     * @param _lastEditUin <p>最近编辑的用户uin</p>
                      * 
                      */
                     void SetLastEditUin(const std::string& _lastEditUin);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool LastEditUinHasBeenSet() const;
 
                     /**
-                     * 获取实例分组名称
-                     * @return GroupName 实例分组名称
+                     * 获取<p>实例分组名称</p>
+                     * @return GroupName <p>实例分组名称</p>
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置实例分组名称
-                     * @param _groupName 实例分组名称
+                     * 设置<p>实例分组名称</p>
+                     * @param _groupName <p>实例分组名称</p>
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取实例数量
-                     * @return InstanceSum 实例数量
+                     * 获取<p>实例数量</p>
+                     * @return InstanceSum <p>实例数量</p>
                      * 
                      */
                     int64_t GetInstanceSum() const;
 
                     /**
-                     * 设置实例数量
-                     * @param _instanceSum 实例数量
+                     * 设置<p>实例数量</p>
+                     * @param _instanceSum <p>实例数量</p>
                      * 
                      */
                     void SetInstanceSum(const int64_t& _instanceSum);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool InstanceSumHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdateTime 更新时间
+                     * 获取<p>更新时间</p>
+                     * @return UpdateTime <p>更新时间</p>
                      * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
-                     * @param _updateTime 更新时间
+                     * 设置<p>更新时间</p>
+                     * @param _updateTime <p>更新时间</p>
                      * 
                      */
                     void SetUpdateTime(const int64_t& _updateTime);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return InsertTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return InsertTime <p>创建时间</p>
                      * 
                      */
                     int64_t GetInsertTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _insertTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _insertTime <p>创建时间</p>
                      * 
                      */
                     void SetInsertTime(const int64_t& _insertTime);
@@ -196,43 +196,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例分组名称id
+                     * <p>实例分组名称id</p>
                      */
                     int64_t m_instanceGroupId;
                     bool m_instanceGroupIdHasBeenSet;
 
                     /**
-                     * 策略类型视图名称
+                     * <p>策略类型视图名称</p>
                      */
                     std::string m_viewName;
                     bool m_viewNameHasBeenSet;
 
                     /**
-                     * 最近编辑的用户uin
+                     * <p>最近编辑的用户uin</p>
                      */
                     std::string m_lastEditUin;
                     bool m_lastEditUinHasBeenSet;
 
                     /**
-                     * 实例分组名称
+                     * <p>实例分组名称</p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 实例数量
+                     * <p>实例数量</p>
                      */
                     int64_t m_instanceSum;
                     bool m_instanceSumHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
                      */
                     int64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     int64_t m_insertTime;
                     bool m_insertTimeHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备份 ID。
-                     * @return BackupId 备份 ID。
+                     * 获取<p>备份 ID。</p>
+                     * @return BackupId <p>备份 ID。</p>
                      * 
                      */
                     std::string GetBackupId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool BackupIdHasBeenSet() const;
 
                     /**
-                     * 获取备份开始时间。
-                     * @return StartTime 备份开始时间。
+                     * 获取<p>备份开始时间。</p>
+                     * @return StartTime <p>备份开始时间。</p>
                      * 
                      */
                     std::string GetStartTime() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取备份结束时间。
-                     * @return EndTime 备份结束时间。
+                     * 获取<p>备份结束时间。</p>
+                     * @return EndTime <p>备份结束时间。</p>
                      * 
                      */
                     std::string GetEndTime() const;
@@ -86,14 +86,8 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取备份方式。 
-
-- 1：手动备份。
--  0：自动备份。
-                     * @return BackupType 备份方式。 
-
-- 1：手动备份。
--  0：自动备份。
+                     * 获取<p>备份方式。 </p><ul><li>1：手动备份。</li><li>0：自动备份。</li></ul>
+                     * @return BackupType <p>备份方式。 </p><ul><li>1：手动备份。</li><li>0：自动备份。</li></ul>
                      * 
                      */
                     std::string GetBackupType() const;
@@ -106,20 +100,8 @@ namespace TencentCloud
                     bool BackupTypeHasBeenSet() const;
 
                     /**
-                     * 获取备份状态。 
-
-- 1：备份被其它流程锁定。
-- 2：备份正常，没有被任何流程锁定。
-- -1：备份已过期。
-- 3：备份正在被导出。
-- 4：备份导出成功。
-                     * @return Status 备份状态。 
-
-- 1：备份被其它流程锁定。
-- 2：备份正常，没有被任何流程锁定。
-- -1：备份已过期。
-- 3：备份正在被导出。
-- 4：备份导出成功。
+                     * 获取<p>备份状态。 </p><ul><li>1：备份被其它流程锁定。</li><li>2：备份正常，没有被任何流程锁定。</li><li>-1：备份已过期。</li><li>3：备份正在被导出。</li><li>4：备份导出成功。</li></ul>
+                     * @return Status <p>备份状态。 </p><ul><li>1：备份被其它流程锁定。</li><li>2：备份正常，没有被任何流程锁定。</li><li>-1：备份已过期。</li><li>3：备份正在被导出。</li><li>4：备份导出成功。</li></ul>
                      * 
                      */
                     int64_t GetStatus() const;
@@ -132,8 +114,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取备份的备注信息。
-                     * @return Remark 备份的备注信息。
+                     * 获取<p>备份的备注信息。</p>
+                     * @return Remark <p>备份的备注信息。</p>
                      * 
                      */
                     std::string GetRemark() const;
@@ -146,14 +128,8 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取备份是否被锁定。
-
-- 0：未被锁定。
-- 1：已被锁定。
-                     * @return Locked 备份是否被锁定。
-
-- 0：未被锁定。
-- 1：已被锁定。
+                     * 获取<p>备份是否被锁定。</p><ul><li>0：未被锁定。</li><li>1：已被锁定。</li></ul>
+                     * @return Locked <p>备份是否被锁定。</p><ul><li>0：未被锁定。</li><li>1：已被锁定。</li></ul>
                      * 
                      */
                     int64_t GetLocked() const;
@@ -166,8 +142,8 @@ namespace TencentCloud
                     bool LockedHasBeenSet() const;
 
                     /**
-                     * 获取备份文件大小。单位：Byte。
-                     * @return BackupSize 备份文件大小。单位：Byte。
+                     * 获取<p>备份文件大小。单位：Byte。</p>
+                     * @return BackupSize <p>备份文件大小。单位：Byte。</p>
                      * 
                      */
                     int64_t GetBackupSize() const;
@@ -180,8 +156,8 @@ namespace TencentCloud
                     bool BackupSizeHasBeenSet() const;
 
                     /**
-                     * 获取实例类型。
-                     * @return InstanceType 实例类型。
+                     * 获取<p>实例类型。</p>
+                     * @return InstanceType <p>实例类型。</p>
                      * 
                      */
                     int64_t GetInstanceType() const;
@@ -194,8 +170,8 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取单分片内存规格大小，单位：MB。
-                     * @return MemSize 单分片内存规格大小，单位：MB。
+                     * 获取<p>单分片内存规格大小，单位：MB。</p>
+                     * @return MemSize <p>单分片内存规格大小，单位：MB。</p>
                      * 
                      */
                     int64_t GetMemSize() const;
@@ -208,8 +184,8 @@ namespace TencentCloud
                     bool MemSizeHasBeenSet() const;
 
                     /**
-                     * 获取分片数量。
-                     * @return ShardNum 分片数量。
+                     * 获取<p>分片数量。</p>
+                     * @return ShardNum <p>分片数量。</p>
                      * 
                      */
                     int64_t GetShardNum() const;
@@ -222,8 +198,8 @@ namespace TencentCloud
                     bool ShardNumHasBeenSet() const;
 
                     /**
-                     * 获取副本数量。
-                     * @return ReplicasNum 副本数量。
+                     * 获取<p>副本数量。</p>
+                     * @return ReplicasNum <p>副本数量。</p>
                      * 
                      */
                     int64_t GetReplicasNum() const;
@@ -235,91 +211,159 @@ namespace TencentCloud
                      */
                     bool ReplicasNumHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否已加密。</p><p>枚举值：</p><ul><li>true： 已加密</li><li>false： 未加密</li></ul>
+                     * @return Encrypted <p>是否已加密。</p><p>枚举值：</p><ul><li>true： 已加密</li><li>false： 未加密</li></ul>
+                     * 
+                     */
+                    bool GetEncrypted() const;
+
+                    /**
+                     * 判断参数 Encrypted 是否已赋值
+                     * @return Encrypted 是否已赋值
+                     * 
+                     */
+                    bool EncryptedHasBeenSet() const;
+
+                    /**
+                     * 获取<p>解密密钥。</p>
+                     * @return DecryptKey <p>解密密钥。</p>
+                     * 
+                     */
+                    std::string GetDecryptKey() const;
+
+                    /**
+                     * 判断参数 DecryptKey 是否已赋值
+                     * @return DecryptKey 是否已赋值
+                     * 
+                     */
+                    bool DecryptKeyHasBeenSet() const;
+
+                    /**
+                     * 获取<p>KMS的密钥ID。</p>
+                     * @return KmsKeyId <p>KMS的密钥ID。</p>
+                     * 
+                     */
+                    std::string GetKmsKeyId() const;
+
+                    /**
+                     * 判断参数 KmsKeyId 是否已赋值
+                     * @return KmsKeyId 是否已赋值
+                     * 
+                     */
+                    bool KmsKeyIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>加密该备份文件的加密算法。</p><p>枚举值：</p><ul><li>AES-256-CBC： 当前仅支持AES-256-CBC</li></ul>
+                     * @return KeyAlgorithm <p>加密该备份文件的加密算法。</p><p>枚举值：</p><ul><li>AES-256-CBC： 当前仅支持AES-256-CBC</li></ul>
+                     * 
+                     */
+                    std::string GetKeyAlgorithm() const;
+
+                    /**
+                     * 判断参数 KeyAlgorithm 是否已赋值
+                     * @return KeyAlgorithm 是否已赋值
+                     * 
+                     */
+                    bool KeyAlgorithmHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 备份 ID。
+                     * <p>备份 ID。</p>
                      */
                     std::string m_backupId;
                     bool m_backupIdHasBeenSet;
 
                     /**
-                     * 备份开始时间。
+                     * <p>备份开始时间。</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 备份结束时间。
+                     * <p>备份结束时间。</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 备份方式。 
-
-- 1：手动备份。
--  0：自动备份。
+                     * <p>备份方式。 </p><ul><li>1：手动备份。</li><li>0：自动备份。</li></ul>
                      */
                     std::string m_backupType;
                     bool m_backupTypeHasBeenSet;
 
                     /**
-                     * 备份状态。 
-
-- 1：备份被其它流程锁定。
-- 2：备份正常，没有被任何流程锁定。
-- -1：备份已过期。
-- 3：备份正在被导出。
-- 4：备份导出成功。
+                     * <p>备份状态。 </p><ul><li>1：备份被其它流程锁定。</li><li>2：备份正常，没有被任何流程锁定。</li><li>-1：备份已过期。</li><li>3：备份正在被导出。</li><li>4：备份导出成功。</li></ul>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 备份的备注信息。
+                     * <p>备份的备注信息。</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 备份是否被锁定。
-
-- 0：未被锁定。
-- 1：已被锁定。
+                     * <p>备份是否被锁定。</p><ul><li>0：未被锁定。</li><li>1：已被锁定。</li></ul>
                      */
                     int64_t m_locked;
                     bool m_lockedHasBeenSet;
 
                     /**
-                     * 备份文件大小。单位：Byte。
+                     * <p>备份文件大小。单位：Byte。</p>
                      */
                     int64_t m_backupSize;
                     bool m_backupSizeHasBeenSet;
 
                     /**
-                     * 实例类型。
+                     * <p>实例类型。</p>
                      */
                     int64_t m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 单分片内存规格大小，单位：MB。
+                     * <p>单分片内存规格大小，单位：MB。</p>
                      */
                     int64_t m_memSize;
                     bool m_memSizeHasBeenSet;
 
                     /**
-                     * 分片数量。
+                     * <p>分片数量。</p>
                      */
                     int64_t m_shardNum;
                     bool m_shardNumHasBeenSet;
 
                     /**
-                     * 副本数量。
+                     * <p>副本数量。</p>
                      */
                     int64_t m_replicasNum;
                     bool m_replicasNumHasBeenSet;
+
+                    /**
+                     * <p>是否已加密。</p><p>枚举值：</p><ul><li>true： 已加密</li><li>false： 未加密</li></ul>
+                     */
+                    bool m_encrypted;
+                    bool m_encryptedHasBeenSet;
+
+                    /**
+                     * <p>解密密钥。</p>
+                     */
+                    std::string m_decryptKey;
+                    bool m_decryptKeyHasBeenSet;
+
+                    /**
+                     * <p>KMS的密钥ID。</p>
+                     */
+                    std::string m_kmsKeyId;
+                    bool m_kmsKeyIdHasBeenSet;
+
+                    /**
+                     * <p>加密该备份文件的加密算法。</p><p>枚举值：</p><ul><li>AES-256-CBC： 当前仅支持AES-256-CBC</li></ul>
+                     */
+                    std::string m_keyAlgorithm;
+                    bool m_keyAlgorithmHasBeenSet;
 
                 };
             }

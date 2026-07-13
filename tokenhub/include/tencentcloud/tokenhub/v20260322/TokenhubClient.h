@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/tokenhub/v20260322/model/CreateApiKeyRequest.h>
 #include <tencentcloud/tokenhub/v20260322/model/CreateApiKeyResponse.h>
+#include <tencentcloud/tokenhub/v20260322/model/CreateEndpointRequest.h>
+#include <tencentcloud/tokenhub/v20260322/model/CreateEndpointResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/CreateGlossaryRequest.h>
 #include <tencentcloud/tokenhub/v20260322/model/CreateGlossaryResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/CreateGlossaryEntriesRequest.h>
@@ -35,6 +37,8 @@
 #include <tencentcloud/tokenhub/v20260322/model/CreateTokenPlanTeamOrderAndBuyResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/DeleteApiKeyRequest.h>
 #include <tencentcloud/tokenhub/v20260322/model/DeleteApiKeyResponse.h>
+#include <tencentcloud/tokenhub/v20260322/model/DeleteEndpointRequest.h>
+#include <tencentcloud/tokenhub/v20260322/model/DeleteEndpointResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/DeleteGlossaryRequest.h>
 #include <tencentcloud/tokenhub/v20260322/model/DeleteGlossaryResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/DeleteGlossaryEntriesRequest.h>
@@ -45,10 +49,14 @@
 #include <tencentcloud/tokenhub/v20260322/model/DescribeApiKeyResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeApiKeyListRequest.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeApiKeyListResponse.h>
+#include <tencentcloud/tokenhub/v20260322/model/DescribeEndpointRequest.h>
+#include <tencentcloud/tokenhub/v20260322/model/DescribeEndpointResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeGlossariesRequest.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeGlossariesResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeGlossaryEntriesRequest.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeGlossaryEntriesResponse.h>
+#include <tencentcloud/tokenhub/v20260322/model/DescribeModelEndpointListRequest.h>
+#include <tencentcloud/tokenhub/v20260322/model/DescribeModelEndpointListResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeModelListRequest.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeModelListResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanRequest.h>
@@ -69,6 +77,8 @@
 #include <tencentcloud/tokenhub/v20260322/model/ModifyApiKeyInfoResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/ModifyApiKeyStatusRequest.h>
 #include <tencentcloud/tokenhub/v20260322/model/ModifyApiKeyStatusResponse.h>
+#include <tencentcloud/tokenhub/v20260322/model/ModifyEndpointRequest.h>
+#include <tencentcloud/tokenhub/v20260322/model/ModifyEndpointResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/ModifyGlossaryEntriesRequest.h>
 #include <tencentcloud/tokenhub/v20260322/model/ModifyGlossaryEntriesResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/ModifyTokenPlanApiKeyRequest.h>
@@ -96,6 +106,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateApiKeyResponse> CreateApiKeyOutcome;
                 typedef std::future<CreateApiKeyOutcome> CreateApiKeyOutcomeCallable;
                 typedef std::function<void(const TokenhubClient*, const Model::CreateApiKeyRequest&, CreateApiKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApiKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateEndpointResponse> CreateEndpointOutcome;
+                typedef std::future<CreateEndpointOutcome> CreateEndpointOutcomeCallable;
+                typedef std::function<void(const TokenhubClient*, const Model::CreateEndpointRequest&, CreateEndpointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEndpointAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateGlossaryResponse> CreateGlossaryOutcome;
                 typedef std::future<CreateGlossaryOutcome> CreateGlossaryOutcomeCallable;
                 typedef std::function<void(const TokenhubClient*, const Model::CreateGlossaryRequest&, CreateGlossaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGlossaryAsyncHandler;
@@ -111,6 +124,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteApiKeyResponse> DeleteApiKeyOutcome;
                 typedef std::future<DeleteApiKeyOutcome> DeleteApiKeyOutcomeCallable;
                 typedef std::function<void(const TokenhubClient*, const Model::DeleteApiKeyRequest&, DeleteApiKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApiKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteEndpointResponse> DeleteEndpointOutcome;
+                typedef std::future<DeleteEndpointOutcome> DeleteEndpointOutcomeCallable;
+                typedef std::function<void(const TokenhubClient*, const Model::DeleteEndpointRequest&, DeleteEndpointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEndpointAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteGlossaryResponse> DeleteGlossaryOutcome;
                 typedef std::future<DeleteGlossaryOutcome> DeleteGlossaryOutcomeCallable;
                 typedef std::function<void(const TokenhubClient*, const Model::DeleteGlossaryRequest&, DeleteGlossaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGlossaryAsyncHandler;
@@ -126,12 +142,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApiKeyListResponse> DescribeApiKeyListOutcome;
                 typedef std::future<DescribeApiKeyListOutcome> DescribeApiKeyListOutcomeCallable;
                 typedef std::function<void(const TokenhubClient*, const Model::DescribeApiKeyListRequest&, DescribeApiKeyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiKeyListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEndpointResponse> DescribeEndpointOutcome;
+                typedef std::future<DescribeEndpointOutcome> DescribeEndpointOutcomeCallable;
+                typedef std::function<void(const TokenhubClient*, const Model::DescribeEndpointRequest&, DescribeEndpointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEndpointAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGlossariesResponse> DescribeGlossariesOutcome;
                 typedef std::future<DescribeGlossariesOutcome> DescribeGlossariesOutcomeCallable;
                 typedef std::function<void(const TokenhubClient*, const Model::DescribeGlossariesRequest&, DescribeGlossariesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGlossariesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGlossaryEntriesResponse> DescribeGlossaryEntriesOutcome;
                 typedef std::future<DescribeGlossaryEntriesOutcome> DescribeGlossaryEntriesOutcomeCallable;
                 typedef std::function<void(const TokenhubClient*, const Model::DescribeGlossaryEntriesRequest&, DescribeGlossaryEntriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGlossaryEntriesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeModelEndpointListResponse> DescribeModelEndpointListOutcome;
+                typedef std::future<DescribeModelEndpointListOutcome> DescribeModelEndpointListOutcomeCallable;
+                typedef std::function<void(const TokenhubClient*, const Model::DescribeModelEndpointListRequest&, DescribeModelEndpointListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelEndpointListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeModelListResponse> DescribeModelListOutcome;
                 typedef std::future<DescribeModelListOutcome> DescribeModelListOutcomeCallable;
                 typedef std::function<void(const TokenhubClient*, const Model::DescribeModelListRequest&, DescribeModelListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelListAsyncHandler;
@@ -162,6 +184,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyApiKeyStatusResponse> ModifyApiKeyStatusOutcome;
                 typedef std::future<ModifyApiKeyStatusOutcome> ModifyApiKeyStatusOutcomeCallable;
                 typedef std::function<void(const TokenhubClient*, const Model::ModifyApiKeyStatusRequest&, ModifyApiKeyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApiKeyStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyEndpointResponse> ModifyEndpointOutcome;
+                typedef std::future<ModifyEndpointOutcome> ModifyEndpointOutcomeCallable;
+                typedef std::function<void(const TokenhubClient*, const Model::ModifyEndpointRequest&, ModifyEndpointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEndpointAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyGlossaryEntriesResponse> ModifyGlossaryEntriesOutcome;
                 typedef std::future<ModifyGlossaryEntriesOutcome> ModifyGlossaryEntriesOutcomeCallable;
                 typedef std::function<void(const TokenhubClient*, const Model::ModifyGlossaryEntriesRequest&, ModifyGlossaryEntriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGlossaryEntriesAsyncHandler;
@@ -190,6 +215,17 @@ namespace TencentCloud
                 CreateApiKeyOutcome CreateApiKey(const Model::CreateApiKeyRequest &request);
                 void CreateApiKeyAsync(const Model::CreateApiKeyRequest& request, const CreateApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateApiKeyOutcomeCallable CreateApiKeyCallable(const Model::CreateApiKeyRequest& request);
+
+                /**
+                 *创建推理服务。
+
+创建一个在线推理服务，创建成功后返回推理服务 ID。
+                 * @param req CreateEndpointRequest
+                 * @return CreateEndpointOutcome
+                 */
+                CreateEndpointOutcome CreateEndpoint(const Model::CreateEndpointRequest &request);
+                void CreateEndpointAsync(const Model::CreateEndpointRequest& request, const CreateEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEndpointOutcomeCallable CreateEndpointCallable(const Model::CreateEndpointRequest& request);
 
                 /**
                  *创建术语库。
@@ -245,6 +281,17 @@ namespace TencentCloud
                 DeleteApiKeyOutcomeCallable DeleteApiKeyCallable(const Model::DeleteApiKeyRequest& request);
 
                 /**
+                 *删除推理服务。
+
+删除指定的推理服务端点，操作不可逆。调用接口后，若通过 DescribeEndpoint 接口查询不到对应的端点，则表示删除成功。
+                 * @param req DeleteEndpointRequest
+                 * @return DeleteEndpointOutcome
+                 */
+                DeleteEndpointOutcome DeleteEndpoint(const Model::DeleteEndpointRequest &request);
+                void DeleteEndpointAsync(const Model::DeleteEndpointRequest& request, const DeleteEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteEndpointOutcomeCallable DeleteEndpointCallable(const Model::DeleteEndpointRequest& request);
+
+                /**
                  *删除术语库。
 
 删除指定的术语库及其下所有术语条目。删除操作幂等，对不存在的术语库返回成功。调用接口后，若通过 DescribeGlossaries 接口查询不到对应术语库，则表示删除成功。
@@ -298,6 +345,17 @@ namespace TencentCloud
                 DescribeApiKeyListOutcomeCallable DescribeApiKeyListCallable(const Model::DescribeApiKeyListRequest& request);
 
                 /**
+                 *查询推理服务详情。
+
+根据推理服务 ID 查询推理服务的详细信息，包括计费信息、免费额度、API 调用地址等。
+                 * @param req DescribeEndpointRequest
+                 * @return DescribeEndpointOutcome
+                 */
+                DescribeEndpointOutcome DescribeEndpoint(const Model::DescribeEndpointRequest &request);
+                void DescribeEndpointAsync(const Model::DescribeEndpointRequest& request, const DescribeEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEndpointOutcomeCallable DescribeEndpointCallable(const Model::DescribeEndpointRequest& request);
+
+                /**
                  *查询术语库列表。
 
 查询当前应用下的术语库列表。支持分页、过滤和排序。
@@ -318,6 +376,17 @@ namespace TencentCloud
                 DescribeGlossaryEntriesOutcome DescribeGlossaryEntries(const Model::DescribeGlossaryEntriesRequest &request);
                 void DescribeGlossaryEntriesAsync(const Model::DescribeGlossaryEntriesRequest& request, const DescribeGlossaryEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeGlossaryEntriesOutcomeCallable DescribeGlossaryEntriesCallable(const Model::DescribeGlossaryEntriesRequest& request);
+
+                /**
+                 *查询模型接入点列表。
+
+以模型为基准展示所有在线文本类型模型的接入点概览，支持按状态、计费方式、创建来源等条件筛选，使用 Offset/Limit 分页。
+                 * @param req DescribeModelEndpointListRequest
+                 * @return DescribeModelEndpointListOutcome
+                 */
+                DescribeModelEndpointListOutcome DescribeModelEndpointList(const Model::DescribeModelEndpointListRequest &request);
+                void DescribeModelEndpointListAsync(const Model::DescribeModelEndpointListRequest& request, const DescribeModelEndpointListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeModelEndpointListOutcomeCallable DescribeModelEndpointListCallable(const Model::DescribeModelEndpointListRequest& request);
 
                 /**
                  *查询模型列表。
@@ -436,6 +505,22 @@ namespace TencentCloud
                 ModifyApiKeyStatusOutcome ModifyApiKeyStatus(const Model::ModifyApiKeyStatusRequest &request);
                 void ModifyApiKeyStatusAsync(const Model::ModifyApiKeyStatusRequest& request, const ModifyApiKeyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyApiKeyStatusOutcomeCallable ModifyApiKeyStatusCallable(const Model::ModifyApiKeyStatusRequest& request);
+
+                /**
+                 *修改推理服务。
+
+修改推理服务的属性，支持修改服务名称、QPM/TPM 限流上限、TPM 包续费设置、智能路由开关和手动重试 TPM 购买。
+
+注意事项：
+- 不支持通过本接口切换计费类型（ChargeType），计费类型仅可在创建推理服务（CreateEndpoint）时指定。
+- 不支持通过本接口修改 TPM 预付费保障包的 quota（TpmInputLimit/TpmOutputLimit/TimeSpan），这些值仅可在创建推理服务时指定。
+- 当 RetryTPMPurchase 为 true 时，系统会异步重试 TPM 包购买，调用后需轮询推理服务状态确认结果。
+                 * @param req ModifyEndpointRequest
+                 * @return ModifyEndpointOutcome
+                 */
+                ModifyEndpointOutcome ModifyEndpoint(const Model::ModifyEndpointRequest &request);
+                void ModifyEndpointAsync(const Model::ModifyEndpointRequest& request, const ModifyEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyEndpointOutcomeCallable ModifyEndpointCallable(const Model::ModifyEndpointRequest& request);
 
                 /**
                  *批量修改术语条目。

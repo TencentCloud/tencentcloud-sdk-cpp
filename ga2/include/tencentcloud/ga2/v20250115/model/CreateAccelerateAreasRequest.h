@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取全球加速实例ID。
-                     * @return GlobalAcceleratorId 全球加速实例ID。
+                     * 获取<p>全球加速实例ID。</p>
+                     * @return GlobalAcceleratorId <p>全球加速实例ID。</p>
                      * 
                      */
                     std::string GetGlobalAcceleratorId() const;
 
                     /**
-                     * 设置全球加速实例ID。
-                     * @param _globalAcceleratorId 全球加速实例ID。
+                     * 设置<p>全球加速实例ID。</p>
+                     * @param _globalAcceleratorId <p>全球加速实例ID。</p>
                      * 
                      */
                     void SetGlobalAcceleratorId(const std::string& _globalAcceleratorId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool GlobalAcceleratorIdHasBeenSet() const;
 
                     /**
-                     * 获取加速地域信息。
-                     * @return AcceleratorAreas 加速地域信息。
+                     * 获取<p>加速地域信息。一次最多创建10组加速地域。</p>
+                     * @return AcceleratorAreas <p>加速地域信息。一次最多创建10组加速地域。</p>
                      * 
                      */
                     std::vector<AcceleratorAreas> GetAcceleratorAreas() const;
 
                     /**
-                     * 设置加速地域信息。
-                     * @param _acceleratorAreas 加速地域信息。
+                     * 设置<p>加速地域信息。一次最多创建10组加速地域。</p>
+                     * @param _acceleratorAreas <p>加速地域信息。一次最多创建10组加速地域。</p>
                      * 
                      */
                     void SetAcceleratorAreas(const std::vector<AcceleratorAreas>& _acceleratorAreas);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 全球加速实例ID。
+                     * <p>全球加速实例ID。</p>
                      */
                     std::string m_globalAcceleratorId;
                     bool m_globalAcceleratorIdHasBeenSet;
 
                     /**
-                     * 加速地域信息。
+                     * <p>加速地域信息。一次最多创建10组加速地域。</p>
                      */
                     std::vector<AcceleratorAreas> m_acceleratorAreas;
                     bool m_acceleratorAreasHasBeenSet;

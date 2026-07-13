@@ -28,6 +28,8 @@
 #include <tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayLLMModelServiceRouteModelNameStrategy.h>
 #include <tencentcloud/tse/v20201207/model/AIGWIntentRoute.h>
 #include <tencentcloud/tse/v20201207/model/AIGWLatencyPriorityConfig.h>
+#include <tencentcloud/tse/v20201207/model/AIGWCacheAwareRouteConfig.h>
+#include <tencentcloud/tse/v20201207/model/AIGWTokenLengthRoute.h>
 
 
 namespace TencentCloud
@@ -155,6 +157,48 @@ namespace TencentCloud
                      */
                     bool LatencyPriorityConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>缓存感知路由配置（前缀缓存）</p>
+                     * @return CacheAwareRouteConfig <p>缓存感知路由配置（前缀缓存）</p>
+                     * 
+                     */
+                    AIGWCacheAwareRouteConfig GetCacheAwareRouteConfig() const;
+
+                    /**
+                     * 设置<p>缓存感知路由配置（前缀缓存）</p>
+                     * @param _cacheAwareRouteConfig <p>缓存感知路由配置（前缀缓存）</p>
+                     * 
+                     */
+                    void SetCacheAwareRouteConfig(const AIGWCacheAwareRouteConfig& _cacheAwareRouteConfig);
+
+                    /**
+                     * 判断参数 CacheAwareRouteConfig 是否已赋值
+                     * @return CacheAwareRouteConfig 是否已赋值
+                     * 
+                     */
+                    bool CacheAwareRouteConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>token 长度路由</p>
+                     * @return TokenLengthRouteConfig <p>token 长度路由</p>
+                     * 
+                     */
+                    AIGWTokenLengthRoute GetTokenLengthRouteConfig() const;
+
+                    /**
+                     * 设置<p>token 长度路由</p>
+                     * @param _tokenLengthRouteConfig <p>token 长度路由</p>
+                     * 
+                     */
+                    void SetTokenLengthRouteConfig(const AIGWTokenLengthRoute& _tokenLengthRouteConfig);
+
+                    /**
+                     * 判断参数 TokenLengthRouteConfig 是否已赋值
+                     * @return TokenLengthRouteConfig 是否已赋值
+                     * 
+                     */
+                    bool TokenLengthRouteConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -186,6 +230,18 @@ namespace TencentCloud
                      */
                     AIGWLatencyPriorityConfig m_latencyPriorityConfig;
                     bool m_latencyPriorityConfigHasBeenSet;
+
+                    /**
+                     * <p>缓存感知路由配置（前缀缓存）</p>
+                     */
+                    AIGWCacheAwareRouteConfig m_cacheAwareRouteConfig;
+                    bool m_cacheAwareRouteConfigHasBeenSet;
+
+                    /**
+                     * <p>token 长度路由</p>
+                     */
+                    AIGWTokenLengthRoute m_tokenLengthRouteConfig;
+                    bool m_tokenLengthRouteConfigHasBeenSet;
 
                 };
             }

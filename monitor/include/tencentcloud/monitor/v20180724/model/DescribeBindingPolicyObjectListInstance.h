@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取对象唯一id
-                     * @return UniqueId 对象唯一id
+                     * 获取<p>对象唯一id</p>
+                     * @return UniqueId <p>对象唯一id</p>
                      * 
                      */
                     std::string GetUniqueId() const;
 
                     /**
-                     * 设置对象唯一id
-                     * @param _uniqueId 对象唯一id
+                     * 设置<p>对象唯一id</p>
+                     * @param _uniqueId <p>对象唯一id</p>
                      * 
                      */
                     void SetUniqueId(const std::string& _uniqueId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool UniqueIdHasBeenSet() const;
 
                     /**
-                     * 获取表示对象实例的维度集合，jsonObj字符串
-                     * @return Dimensions 表示对象实例的维度集合，jsonObj字符串
+                     * 获取<p>表示对象实例的维度集合，jsonObj字符串</p>
+                     * @return Dimensions <p>表示对象实例的维度集合，jsonObj字符串</p>
                      * 
                      */
                     std::string GetDimensions() const;
 
                     /**
-                     * 设置表示对象实例的维度集合，jsonObj字符串
-                     * @param _dimensions 表示对象实例的维度集合，jsonObj字符串
+                     * 设置<p>表示对象实例的维度集合，jsonObj字符串</p>
+                     * @param _dimensions <p>表示对象实例的维度集合，jsonObj字符串</p>
                      * 
                      */
                     void SetDimensions(const std::string& _dimensions);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DimensionsHasBeenSet() const;
 
                     /**
-                     * 获取对象是否被屏蔽，0表示未屏蔽，1表示被屏蔽
-                     * @return IsShielded 对象是否被屏蔽，0表示未屏蔽，1表示被屏蔽
+                     * 获取<p>对象是否被屏蔽，0表示未屏蔽，1表示被屏蔽</p>
+                     * @return IsShielded <p>对象是否被屏蔽，0表示未屏蔽，1表示被屏蔽</p>
                      * 
                      */
                     int64_t GetIsShielded() const;
 
                     /**
-                     * 设置对象是否被屏蔽，0表示未屏蔽，1表示被屏蔽
-                     * @param _isShielded 对象是否被屏蔽，0表示未屏蔽，1表示被屏蔽
+                     * 设置<p>对象是否被屏蔽，0表示未屏蔽，1表示被屏蔽</p>
+                     * @param _isShielded <p>对象是否被屏蔽，0表示未屏蔽，1表示被屏蔽</p>
                      * 
                      */
                     void SetIsShielded(const int64_t& _isShielded);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool IsShieldedHasBeenSet() const;
 
                     /**
-                     * 获取对象所在的地域
-                     * @return Region 对象所在的地域
+                     * 获取<p>对象所在的地域</p>
+                     * @return Region <p>对象所在的地域</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置对象所在的地域
-                     * @param _region 对象所在的地域
+                     * 设置<p>对象所在的地域</p>
+                     * @param _region <p>对象所在的地域</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -133,25 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 对象唯一id
+                     * <p>对象唯一id</p>
                      */
                     std::string m_uniqueId;
                     bool m_uniqueIdHasBeenSet;
 
                     /**
-                     * 表示对象实例的维度集合，jsonObj字符串
+                     * <p>表示对象实例的维度集合，jsonObj字符串</p>
                      */
                     std::string m_dimensions;
                     bool m_dimensionsHasBeenSet;
 
                     /**
-                     * 对象是否被屏蔽，0表示未屏蔽，1表示被屏蔽
+                     * <p>对象是否被屏蔽，0表示未屏蔽，1表示被屏蔽</p>
                      */
                     int64_t m_isShielded;
                     bool m_isShieldedHasBeenSet;
 
                     /**
-                     * 对象所在的地域
+                     * <p>对象所在的地域</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;

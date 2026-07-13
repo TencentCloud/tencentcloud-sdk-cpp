@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取沙箱工具ID
-                     * @return ToolId 沙箱工具ID
+                     * 获取<p>沙箱工具ID</p>
+                     * @return ToolId <p>沙箱工具ID</p>
                      * 
                      */
                     std::string GetToolId() const;
 
                     /**
-                     * 设置沙箱工具ID
-                     * @param _toolId 沙箱工具ID
+                     * 设置<p>沙箱工具ID</p>
+                     * @param _toolId <p>沙箱工具ID</p>
                      * 
                      */
                     void SetToolId(const std::string& _toolId);
@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool ToolIdHasBeenSet() const;
 
                     /**
-                     * 获取沙箱工具描述，最大长度200字符
-                     * @return Description 沙箱工具描述，最大长度200字符
+                     * 获取<p>沙箱工具描述，最大长度200字符</p>
+                     * @return Description <p>沙箱工具描述，最大长度200字符</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置沙箱工具描述，最大长度200字符
-                     * @param _description 沙箱工具描述，最大长度200字符
+                     * 设置<p>沙箱工具描述，最大长度200字符</p>
+                     * @param _description <p>沙箱工具描述，最大长度200字符</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -88,15 +88,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取网络配置
-                     * @return NetworkConfiguration 网络配置
+                     * 获取<p>网络配置</p>
+                     * @return NetworkConfiguration <p>网络配置</p>
                      * 
                      */
                     NetworkConfiguration GetNetworkConfiguration() const;
 
                     /**
-                     * 设置网络配置
-                     * @param _networkConfiguration 网络配置
+                     * 设置<p>网络配置</p>
+                     * @param _networkConfiguration <p>网络配置</p>
                      * 
                      */
                     void SetNetworkConfiguration(const NetworkConfiguration& _networkConfiguration);
@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool NetworkConfigurationHasBeenSet() const;
 
                     /**
-                     * 获取标签
-                     * @return Tags 标签
+                     * 获取<p>标签</p>
+                     * @return Tags <p>标签</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置标签
-                     * @param _tags 标签
+                     * 设置<p>标签</p>
+                     * @param _tags <p>标签</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取沙箱工具自定义配置
-                     * @return CustomConfiguration 沙箱工具自定义配置
+                     * 获取<p>沙箱工具自定义配置</p>
+                     * @return CustomConfiguration <p>沙箱工具自定义配置</p>
                      * 
                      */
                     CustomConfiguration GetCustomConfiguration() const;
 
                     /**
-                     * 设置沙箱工具自定义配置
-                     * @param _customConfiguration 沙箱工具自定义配置
+                     * 设置<p>沙箱工具自定义配置</p>
+                     * @param _customConfiguration <p>沙箱工具自定义配置</p>
                      * 
                      */
                     void SetCustomConfiguration(const CustomConfiguration& _customConfiguration);
@@ -153,31 +153,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 沙箱工具ID
+                     * <p>沙箱工具ID</p>
                      */
                     std::string m_toolId;
                     bool m_toolIdHasBeenSet;
 
                     /**
-                     * 沙箱工具描述，最大长度200字符
+                     * <p>沙箱工具描述，最大长度200字符</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 网络配置
+                     * <p>网络配置</p>
                      */
                     NetworkConfiguration m_networkConfiguration;
                     bool m_networkConfigurationHasBeenSet;
 
                     /**
-                     * 标签
+                     * <p>标签</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 沙箱工具自定义配置
+                     * <p>沙箱工具自定义配置</p>
                      */
                     CustomConfiguration m_customConfiguration;
                     bool m_customConfigurationHasBeenSet;

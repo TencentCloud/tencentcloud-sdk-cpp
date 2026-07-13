@@ -50,7 +50,8 @@ DescribeCloudNativeAPIGatewayResult::DescribeCloudNativeAPIGatewayResult() :
     m_availableVersionsHasBeenSet(false),
     m_availableUpgradeVersionsHasBeenSet(false),
     m_availableUpgradeHasBeenSet(false),
-    m_availableRollbackVersionHasBeenSet(false)
+    m_availableRollbackVersionHasBeenSet(false),
+    m_forceHTTPSRedirectHasBeenSet(false)
 {
 }
 
@@ -399,6 +400,16 @@ CoreInternalOutcome DescribeCloudNativeAPIGatewayResult::Deserialize(const rapid
         m_availableRollbackVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("ForceHTTPSRedirect") && !value["ForceHTTPSRedirect"].IsNull())
+    {
+        if (!value["ForceHTTPSRedirect"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeCloudNativeAPIGatewayResult.ForceHTTPSRedirect` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_forceHTTPSRedirect = value["ForceHTTPSRedirect"].GetBool();
+        m_forceHTTPSRedirectHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -669,6 +680,14 @@ void DescribeCloudNativeAPIGatewayResult::ToJsonObject(rapidjson::Value &value, 
         string key = "AvailableRollbackVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_availableRollbackVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forceHTTPSRedirectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForceHTTPSRedirect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_forceHTTPSRedirect, allocator);
     }
 
 }
@@ -1152,5 +1171,21 @@ void DescribeCloudNativeAPIGatewayResult::SetAvailableRollbackVersion(const stri
 bool DescribeCloudNativeAPIGatewayResult::AvailableRollbackVersionHasBeenSet() const
 {
     return m_availableRollbackVersionHasBeenSet;
+}
+
+bool DescribeCloudNativeAPIGatewayResult::GetForceHTTPSRedirect() const
+{
+    return m_forceHTTPSRedirect;
+}
+
+void DescribeCloudNativeAPIGatewayResult::SetForceHTTPSRedirect(const bool& _forceHTTPSRedirect)
+{
+    m_forceHTTPSRedirect = _forceHTTPSRedirect;
+    m_forceHTTPSRedirectHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayResult::ForceHTTPSRedirectHasBeenSet() const
+{
+    return m_forceHTTPSRedirectHasBeenSet;
 }
 

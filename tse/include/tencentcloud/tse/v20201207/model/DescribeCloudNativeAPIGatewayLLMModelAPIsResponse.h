@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模型 API 列表。
-                     * @return Result 模型 API 列表。
+                     * 获取<p>模型 API 列表。</p>
+                     * @return Result <p>模型 API 列表。</p>
                      * 
                      */
                     ListCloudNativeAPIGatewayLLMModelAPI GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模型 API 列表。
+                     * <p>模型 API 列表。</p>
                      */
                     ListCloudNativeAPIGatewayLLMModelAPI m_result;
                     bool m_resultHasBeenSet;

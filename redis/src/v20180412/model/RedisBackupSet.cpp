@@ -35,7 +35,8 @@ RedisBackupSet::RedisBackupSet() :
     m_regionHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_fileTypeHasBeenSet(false),
-    m_expireTimeHasBeenSet(false)
+    m_expireTimeHasBeenSet(false),
+    m_encryptedHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome RedisBackupSet::Deserialize(const rapidjson::Value &value)
         m_expireTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Encrypted") && !value["Encrypted"].IsNull())
+    {
+        if (!value["Encrypted"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RedisBackupSet.Encrypted` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_encrypted = value["Encrypted"].GetBool();
+        m_encryptedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void RedisBackupSet::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encrypted";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_encrypted, allocator);
     }
 
 }
@@ -562,5 +581,21 @@ void RedisBackupSet::SetExpireTime(const string& _expireTime)
 bool RedisBackupSet::ExpireTimeHasBeenSet() const
 {
     return m_expireTimeHasBeenSet;
+}
+
+bool RedisBackupSet::GetEncrypted() const
+{
+    return m_encrypted;
+}
+
+void RedisBackupSet::SetEncrypted(const bool& _encrypted)
+{
+    m_encrypted = _encrypted;
+    m_encryptedHasBeenSet = true;
+}
+
+bool RedisBackupSet::EncryptedHasBeenSet() const
+{
+    return m_encryptedHasBeenSet;
 }
 

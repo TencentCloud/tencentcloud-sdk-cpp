@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网关 id。
-                     * @return GatewayId 网关 id。
+                     * 获取<p>网关 id。</p>
+                     * @return GatewayId <p>网关 id。</p>
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
-                     * 设置网关 id。
-                     * @param _gatewayId 网关 id。
+                     * 设置<p>网关 id。</p>
+                     * @param _gatewayId <p>网关 id。</p>
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -190,10 +190,31 @@ namespace TencentCloud
                      */
                     bool UseToBindHasBeenSet() const;
 
+                    /**
+                     * 获取<p>消费者ID</p>
+                     * @return ConsumerId <p>消费者ID</p>
+                     * 
+                     */
+                    std::string GetConsumerId() const;
+
+                    /**
+                     * 设置<p>消费者ID</p>
+                     * @param _consumerId <p>消费者ID</p>
+                     * 
+                     */
+                    void SetConsumerId(const std::string& _consumerId);
+
+                    /**
+                     * 判断参数 ConsumerId 是否已赋值
+                     * @return ConsumerId 是否已赋值
+                     * 
+                     */
+                    bool ConsumerIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 网关 id。
+                     * <p>网关 id。</p>
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
@@ -233,6 +254,12 @@ namespace TencentCloud
                      */
                     bool m_useToBind;
                     bool m_useToBindHasBeenSet;
+
+                    /**
+                     * <p>消费者ID</p>
+                     */
+                    std::string m_consumerId;
+                    bool m_consumerIdHasBeenSet;
 
                 };
             }

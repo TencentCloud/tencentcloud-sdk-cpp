@@ -4040,6 +4040,56 @@ CkafkaClient::InstanceScalingDownOutcomeCallable CkafkaClient::InstanceScalingDo
     return prom->get_future();
 }
 
+CkafkaClient::IsolatedInstancePreOutcome CkafkaClient::IsolatedInstancePre(const IsolatedInstancePreRequest &request)
+{
+    auto outcome = MakeRequest(request, "IsolatedInstancePre");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        IsolatedInstancePreResponse rsp = IsolatedInstancePreResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return IsolatedInstancePreOutcome(rsp);
+        else
+            return IsolatedInstancePreOutcome(o.GetError());
+    }
+    else
+    {
+        return IsolatedInstancePreOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::IsolatedInstancePreAsync(const IsolatedInstancePreRequest& request, const IsolatedInstancePreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const IsolatedInstancePreRequest&;
+    using Resp = IsolatedInstancePreResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "IsolatedInstancePre", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CkafkaClient::IsolatedInstancePreOutcomeCallable CkafkaClient::IsolatedInstancePreCallable(const IsolatedInstancePreRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<IsolatedInstancePreOutcome>>();
+    IsolatedInstancePreAsync(
+    request,
+    [prom](
+        const CkafkaClient*,
+        const IsolatedInstancePreRequest&,
+        IsolatedInstancePreOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CkafkaClient::ModifyAccessPolicyOutcome CkafkaClient::ModifyAccessPolicy(const ModifyAccessPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAccessPolicy");

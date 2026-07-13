@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取驾驶证正页姓名
-                     * @return Name 驾驶证正页姓名
+                     * 获取<p>驾驶证正页姓名</p>
+                     * @return Name <p>驾驶证正页姓名</p>
                      * 
                      */
                     std::string GetName() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取性别
-                     * @return Sex 性别
+                     * 获取<p>性别</p>
+                     * @return Sex <p>性别</p>
                      * 
                      */
                     std::string GetSex() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool SexHasBeenSet() const;
 
                     /**
-                     * 获取国籍
-                     * @return Nationality 国籍
+                     * 获取<p>国籍</p>
+                     * @return Nationality <p>国籍</p>
                      * 
                      */
                     std::string GetNationality() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool NationalityHasBeenSet() const;
 
                     /**
-                     * 获取住址
-                     * @return Address 住址
+                     * 获取<p>住址</p>
+                     * @return Address <p>住址</p>
                      * 
                      */
                     std::string GetAddress() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool AddressHasBeenSet() const;
 
                     /**
-                     * 获取出生日期（YYYY-MM-DD）
-                     * @return DateOfBirth 出生日期（YYYY-MM-DD）
+                     * 获取<p>出生日期（YYYY-MM-DD）</p>
+                     * @return DateOfBirth <p>出生日期（YYYY-MM-DD）</p>
                      * 
                      */
                     std::string GetDateOfBirth() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool DateOfBirthHasBeenSet() const;
 
                     /**
-                     * 获取初次领证日期（YYYY-MM-DD）
-                     * @return DateOfFirstIssue 初次领证日期（YYYY-MM-DD）
+                     * 获取<p>初次领证日期（YYYY-MM-DD）</p>
+                     * @return DateOfFirstIssue <p>初次领证日期（YYYY-MM-DD）</p>
                      * 
                      */
                     std::string GetDateOfFirstIssue() const;
@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool DateOfFirstIssueHasBeenSet() const;
 
                     /**
-                     * 获取准驾车型
-                     * @return Class 准驾车型
+                     * 获取<p>准驾车型</p>
+                     * @return Class <p>准驾车型</p>
                      * 
                      */
                     std::string GetClass() const;
@@ -142,8 +142,8 @@ namespace TencentCloud
                     bool ClassHasBeenSet() const;
 
                     /**
-                     * 获取有效期开始时间（YYYY-MM-DD）
-                     * @return StartDate 有效期开始时间（YYYY-MM-DD）
+                     * 获取<p>有效期开始时间（YYYY-MM-DD）</p>
+                     * @return StartDate <p>有效期开始时间（YYYY-MM-DD）</p>
                      * 
                      */
                     std::string GetStartDate() const;
@@ -156,10 +156,8 @@ namespace TencentCloud
                     bool StartDateHasBeenSet() const;
 
                     /**
-                     * 获取有效期截止时间（新版驾驶证返回 YYYY-MM-DD，
-老版驾驶证返回有效期限 X年）
-                     * @return EndDate 有效期截止时间（新版驾驶证返回 YYYY-MM-DD，
-老版驾驶证返回有效期限 X年）
+                     * 获取<p>有效期截止时间（新版驾驶证返回 YYYY-MM-DD，老版驾驶证返回有效期限 X年；若驾驶证有效期为长期，则返回&quot;长期&quot;）</p>
+                     * @return EndDate <p>有效期截止时间（新版驾驶证返回 YYYY-MM-DD，老版驾驶证返回有效期限 X年；若驾驶证有效期为长期，则返回&quot;长期&quot;）</p>
                      * 
                      */
                     std::string GetEndDate() const;
@@ -172,8 +170,8 @@ namespace TencentCloud
                     bool EndDateHasBeenSet() const;
 
                     /**
-                     * 获取驾驶证正页证号
-                     * @return CardCode 驾驶证正页证号
+                     * 获取<p>驾驶证正页证号</p>
+                     * @return CardCode <p>驾驶证正页证号</p>
                      * 
                      */
                     std::string GetCardCode() const;
@@ -186,8 +184,8 @@ namespace TencentCloud
                     bool CardCodeHasBeenSet() const;
 
                     /**
-                     * 获取档案编号
-                     * @return ArchivesCode 档案编号
+                     * 获取<p>档案编号</p>
+                     * @return ArchivesCode <p>档案编号</p>
                      * 
                      */
                     std::string GetArchivesCode() const;
@@ -200,8 +198,8 @@ namespace TencentCloud
                     bool ArchivesCodeHasBeenSet() const;
 
                     /**
-                     * 获取记录
-                     * @return Record 记录
+                     * 获取<p>记录</p>
+                     * @return Record <p>记录</p>
                      * 
                      */
                     std::string GetRecord() const;
@@ -214,20 +212,8 @@ namespace TencentCloud
                     bool RecordHasBeenSet() const;
 
                     /**
-                     * 获取Code 告警码列表和释义：
--9102  复印件告警
--9103  翻拍件告警
--9104  反光告警
--9105  模糊告警
--9106  边框不完整告警
-注：告警码可以同时存在多个
-                     * @return RecognizeWarnCode Code 告警码列表和释义：
--9102  复印件告警
--9103  翻拍件告警
--9104  反光告警
--9105  模糊告警
--9106  边框不完整告警
-注：告警码可以同时存在多个
+                     * 获取<p>Code 告警码列表和释义：<br>-9102  复印件告警<br>-9103  翻拍件告警<br>-9104  反光告警<br>-9105  模糊告警<br>-9106  边框不完整告警<br>注：告警码可以同时存在多个</p>
+                     * @return RecognizeWarnCode <p>Code 告警码列表和释义：<br>-9102  复印件告警<br>-9103  翻拍件告警<br>-9104  反光告警<br>-9105  模糊告警<br>-9106  边框不完整告警<br>注：告警码可以同时存在多个</p>
                      * 
                      */
                     std::vector<int64_t> GetRecognizeWarnCode() const;
@@ -240,20 +226,8 @@ namespace TencentCloud
                     bool RecognizeWarnCodeHasBeenSet() const;
 
                     /**
-                     * 获取告警码说明：
-WARN_DRIVER_LICENSE_COPY_CARD 复印件告警
-WARN_DRIVER_LICENSE_SCREENED_CARD 翻拍件告警
-WARN_DRIVER_LICENSE_REFLECTION 反光告警
-WARN_DRIVER_LICENSE_BLUR 模糊告警
-WARN_DRIVER_LICENSE_BORDER_INCOMPLETE 边框不完整告警
-注：告警信息可以同时存在多个
-                     * @return RecognizeWarnMsg 告警码说明：
-WARN_DRIVER_LICENSE_COPY_CARD 复印件告警
-WARN_DRIVER_LICENSE_SCREENED_CARD 翻拍件告警
-WARN_DRIVER_LICENSE_REFLECTION 反光告警
-WARN_DRIVER_LICENSE_BLUR 模糊告警
-WARN_DRIVER_LICENSE_BORDER_INCOMPLETE 边框不完整告警
-注：告警信息可以同时存在多个
+                     * 获取<p>告警码说明：<br>WARN_DRIVER_LICENSE_COPY_CARD 复印件告警<br>WARN_DRIVER_LICENSE_SCREENED_CARD 翻拍件告警<br>WARN_DRIVER_LICENSE_REFLECTION 反光告警<br>WARN_DRIVER_LICENSE_BLUR 模糊告警<br>WARN_DRIVER_LICENSE_BORDER_INCOMPLETE 边框不完整告警<br>注：告警信息可以同时存在多个</p>
+                     * @return RecognizeWarnMsg <p>告警码说明：<br>WARN_DRIVER_LICENSE_COPY_CARD 复印件告警<br>WARN_DRIVER_LICENSE_SCREENED_CARD 翻拍件告警<br>WARN_DRIVER_LICENSE_REFLECTION 反光告警<br>WARN_DRIVER_LICENSE_BLUR 模糊告警<br>WARN_DRIVER_LICENSE_BORDER_INCOMPLETE 边框不完整告警<br>注：告警信息可以同时存在多个</p>
                      * 
                      */
                     std::vector<std::string> GetRecognizeWarnMsg() const;
@@ -266,8 +240,8 @@ WARN_DRIVER_LICENSE_BORDER_INCOMPLETE 边框不完整告警
                     bool RecognizeWarnMsgHasBeenSet() const;
 
                     /**
-                     * 获取发证单位
-                     * @return IssuingAuthority 发证单位
+                     * 获取<p>发证单位</p>
+                     * @return IssuingAuthority <p>发证单位</p>
                      * 
                      */
                     std::string GetIssuingAuthority() const;
@@ -280,8 +254,8 @@ WARN_DRIVER_LICENSE_BORDER_INCOMPLETE 边框不完整告警
                     bool IssuingAuthorityHasBeenSet() const;
 
                     /**
-                     * 获取状态（仅电子驾驶证支持返回该字段）
-                     * @return State 状态（仅电子驾驶证支持返回该字段）
+                     * 获取<p>状态（仅电子驾驶证支持返回该字段）</p>
+                     * @return State <p>状态（仅电子驾驶证支持返回该字段）</p>
                      * 
                      */
                     std::string GetState() const;
@@ -294,8 +268,8 @@ WARN_DRIVER_LICENSE_BORDER_INCOMPLETE 边框不完整告警
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取累积记分（仅电子驾驶证支持返回该字段）
-                     * @return CumulativeScore 累积记分（仅电子驾驶证支持返回该字段）
+                     * 获取<p>累积记分（仅电子驾驶证支持返回该字段）</p>
+                     * @return CumulativeScore <p>累积记分（仅电子驾驶证支持返回该字段）</p>
                      * 
                      */
                     std::string GetCumulativeScore() const;
@@ -308,8 +282,8 @@ WARN_DRIVER_LICENSE_BORDER_INCOMPLETE 边框不完整告警
                     bool CumulativeScoreHasBeenSet() const;
 
                     /**
-                     * 获取当前时间（仅电子驾驶证支持返回该字段）
-                     * @return CurrentTime 当前时间（仅电子驾驶证支持返回该字段）
+                     * 获取<p>当前时间（仅电子驾驶证支持返回该字段）</p>
+                     * @return CurrentTime <p>当前时间（仅电子驾驶证支持返回该字段）</p>
                      * 
                      */
                     std::string GetCurrentTime() const;
@@ -322,8 +296,8 @@ WARN_DRIVER_LICENSE_BORDER_INCOMPLETE 边框不完整告警
                     bool CurrentTimeHasBeenSet() const;
 
                     /**
-                     * 获取生成时间（仅电子驾驶证支持返回该字段）
-                     * @return GenerateTime 生成时间（仅电子驾驶证支持返回该字段）
+                     * 获取<p>生成时间（仅电子驾驶证支持返回该字段）</p>
+                     * @return GenerateTime <p>生成时间（仅电子驾驶证支持返回该字段）</p>
                      * 
                      */
                     std::string GetGenerateTime() const;
@@ -336,8 +310,8 @@ WARN_DRIVER_LICENSE_BORDER_INCOMPLETE 边框不完整告警
                     bool GenerateTimeHasBeenSet() const;
 
                     /**
-                     * 获取驾驶证副页姓名
-                     * @return BackPageName 驾驶证副页姓名
+                     * 获取<p>驾驶证副页姓名</p>
+                     * @return BackPageName <p>驾驶证副页姓名</p>
                      * 
                      */
                     std::string GetBackPageName() const;
@@ -350,8 +324,8 @@ WARN_DRIVER_LICENSE_BORDER_INCOMPLETE 边框不完整告警
                     bool BackPageNameHasBeenSet() const;
 
                     /**
-                     * 获取驾驶证副页证号
-                     * @return BackPageCardCode 驾驶证副页证号
+                     * 获取<p>驾驶证副页证号</p>
+                     * @return BackPageCardCode <p>驾驶证副页证号</p>
                      * 
                      */
                     std::string GetBackPageCardCode() const;
@@ -364,12 +338,8 @@ WARN_DRIVER_LICENSE_BORDER_INCOMPLETE 边框不完整告警
                     bool BackPageCardCodeHasBeenSet() const;
 
                     /**
-                     * 获取驾驶证类型
-电子驾驶证：Electronic
-普通驾驶证：Normal
-                     * @return DriverLicenseType 驾驶证类型
-电子驾驶证：Electronic
-普通驾驶证：Normal
+                     * 获取<p>驾驶证类型<br>电子驾驶证：Electronic<br>普通驾驶证：Normal</p>
+                     * @return DriverLicenseType <p>驾驶证类型<br>电子驾驶证：Electronic<br>普通驾驶证：Normal</p>
                      * 
                      */
                     std::string GetDriverLicenseType() const;
@@ -384,148 +354,133 @@ WARN_DRIVER_LICENSE_BORDER_INCOMPLETE 边框不完整告警
                 private:
 
                     /**
-                     * 驾驶证正页姓名
+                     * <p>驾驶证正页姓名</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 性别
+                     * <p>性别</p>
                      */
                     std::string m_sex;
                     bool m_sexHasBeenSet;
 
                     /**
-                     * 国籍
+                     * <p>国籍</p>
                      */
                     std::string m_nationality;
                     bool m_nationalityHasBeenSet;
 
                     /**
-                     * 住址
+                     * <p>住址</p>
                      */
                     std::string m_address;
                     bool m_addressHasBeenSet;
 
                     /**
-                     * 出生日期（YYYY-MM-DD）
+                     * <p>出生日期（YYYY-MM-DD）</p>
                      */
                     std::string m_dateOfBirth;
                     bool m_dateOfBirthHasBeenSet;
 
                     /**
-                     * 初次领证日期（YYYY-MM-DD）
+                     * <p>初次领证日期（YYYY-MM-DD）</p>
                      */
                     std::string m_dateOfFirstIssue;
                     bool m_dateOfFirstIssueHasBeenSet;
 
                     /**
-                     * 准驾车型
+                     * <p>准驾车型</p>
                      */
                     std::string m_class;
                     bool m_classHasBeenSet;
 
                     /**
-                     * 有效期开始时间（YYYY-MM-DD）
+                     * <p>有效期开始时间（YYYY-MM-DD）</p>
                      */
                     std::string m_startDate;
                     bool m_startDateHasBeenSet;
 
                     /**
-                     * 有效期截止时间（新版驾驶证返回 YYYY-MM-DD，
-老版驾驶证返回有效期限 X年）
+                     * <p>有效期截止时间（新版驾驶证返回 YYYY-MM-DD，老版驾驶证返回有效期限 X年；若驾驶证有效期为长期，则返回&quot;长期&quot;）</p>
                      */
                     std::string m_endDate;
                     bool m_endDateHasBeenSet;
 
                     /**
-                     * 驾驶证正页证号
+                     * <p>驾驶证正页证号</p>
                      */
                     std::string m_cardCode;
                     bool m_cardCodeHasBeenSet;
 
                     /**
-                     * 档案编号
+                     * <p>档案编号</p>
                      */
                     std::string m_archivesCode;
                     bool m_archivesCodeHasBeenSet;
 
                     /**
-                     * 记录
+                     * <p>记录</p>
                      */
                     std::string m_record;
                     bool m_recordHasBeenSet;
 
                     /**
-                     * Code 告警码列表和释义：
--9102  复印件告警
--9103  翻拍件告警
--9104  反光告警
--9105  模糊告警
--9106  边框不完整告警
-注：告警码可以同时存在多个
+                     * <p>Code 告警码列表和释义：<br>-9102  复印件告警<br>-9103  翻拍件告警<br>-9104  反光告警<br>-9105  模糊告警<br>-9106  边框不完整告警<br>注：告警码可以同时存在多个</p>
                      */
                     std::vector<int64_t> m_recognizeWarnCode;
                     bool m_recognizeWarnCodeHasBeenSet;
 
                     /**
-                     * 告警码说明：
-WARN_DRIVER_LICENSE_COPY_CARD 复印件告警
-WARN_DRIVER_LICENSE_SCREENED_CARD 翻拍件告警
-WARN_DRIVER_LICENSE_REFLECTION 反光告警
-WARN_DRIVER_LICENSE_BLUR 模糊告警
-WARN_DRIVER_LICENSE_BORDER_INCOMPLETE 边框不完整告警
-注：告警信息可以同时存在多个
+                     * <p>告警码说明：<br>WARN_DRIVER_LICENSE_COPY_CARD 复印件告警<br>WARN_DRIVER_LICENSE_SCREENED_CARD 翻拍件告警<br>WARN_DRIVER_LICENSE_REFLECTION 反光告警<br>WARN_DRIVER_LICENSE_BLUR 模糊告警<br>WARN_DRIVER_LICENSE_BORDER_INCOMPLETE 边框不完整告警<br>注：告警信息可以同时存在多个</p>
                      */
                     std::vector<std::string> m_recognizeWarnMsg;
                     bool m_recognizeWarnMsgHasBeenSet;
 
                     /**
-                     * 发证单位
+                     * <p>发证单位</p>
                      */
                     std::string m_issuingAuthority;
                     bool m_issuingAuthorityHasBeenSet;
 
                     /**
-                     * 状态（仅电子驾驶证支持返回该字段）
+                     * <p>状态（仅电子驾驶证支持返回该字段）</p>
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 累积记分（仅电子驾驶证支持返回该字段）
+                     * <p>累积记分（仅电子驾驶证支持返回该字段）</p>
                      */
                     std::string m_cumulativeScore;
                     bool m_cumulativeScoreHasBeenSet;
 
                     /**
-                     * 当前时间（仅电子驾驶证支持返回该字段）
+                     * <p>当前时间（仅电子驾驶证支持返回该字段）</p>
                      */
                     std::string m_currentTime;
                     bool m_currentTimeHasBeenSet;
 
                     /**
-                     * 生成时间（仅电子驾驶证支持返回该字段）
+                     * <p>生成时间（仅电子驾驶证支持返回该字段）</p>
                      */
                     std::string m_generateTime;
                     bool m_generateTimeHasBeenSet;
 
                     /**
-                     * 驾驶证副页姓名
+                     * <p>驾驶证副页姓名</p>
                      */
                     std::string m_backPageName;
                     bool m_backPageNameHasBeenSet;
 
                     /**
-                     * 驾驶证副页证号
+                     * <p>驾驶证副页证号</p>
                      */
                     std::string m_backPageCardCode;
                     bool m_backPageCardCodeHasBeenSet;
 
                     /**
-                     * 驾驶证类型
-电子驾驶证：Electronic
-普通驾驶证：Normal
+                     * <p>驾驶证类型<br>电子驾驶证：Electronic<br>普通驾驶证：Normal</p>
                      */
                     std::string m_driverLicenseType;
                     bool m_driverLicenseTypeHasBeenSet;

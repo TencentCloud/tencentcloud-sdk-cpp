@@ -26,6 +26,7 @@ LLMPkg::LLMPkg() :
     m_regionHasBeenSet(false),
     m_beginTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
+    m_inquireNumHasBeenSet(false),
     m_inquireKeyHasBeenSet(false)
 {
 }
@@ -85,6 +86,16 @@ CoreInternalOutcome LLMPkg::Deserialize(const rapidjson::Value &value)
         m_endTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("InquireNum") && !value["InquireNum"].IsNull())
+    {
+        if (!value["InquireNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LLMPkg.InquireNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_inquireNum = value["InquireNum"].GetInt64();
+        m_inquireNumHasBeenSet = true;
+    }
+
     if (value.HasMember("InquireKey") && !value["InquireKey"].IsNull())
     {
         if (!value["InquireKey"].IsString())
@@ -140,6 +151,14 @@ void LLMPkg::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inquireNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InquireNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_inquireNum, allocator);
     }
 
     if (m_inquireKeyHasBeenSet)
@@ -231,6 +250,22 @@ void LLMPkg::SetEndTime(const string& _endTime)
 bool LLMPkg::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+int64_t LLMPkg::GetInquireNum() const
+{
+    return m_inquireNum;
+}
+
+void LLMPkg::SetInquireNum(const int64_t& _inquireNum)
+{
+    m_inquireNum = _inquireNum;
+    m_inquireNumHasBeenSet = true;
+}
+
+bool LLMPkg::InquireNumHasBeenSet() const
+{
+    return m_inquireNumHasBeenSet;
 }
 
 string LLMPkg::GetInquireKey() const

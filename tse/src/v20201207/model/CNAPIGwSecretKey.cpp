@@ -34,7 +34,11 @@ CNAPIGwSecretKey::CNAPIGwSecretKey() :
     m_createTimeHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
     m_bindCountHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_jWTCredentialConfigHasBeenSet(false),
+    m_oAuthCredentialConfigHasBeenSet(false),
+    m_oIDCCredentialConfigHasBeenSet(false),
+    m_providerHasBeenSet(false)
 {
 }
 
@@ -183,6 +187,67 @@ CoreInternalOutcome CNAPIGwSecretKey::Deserialize(const rapidjson::Value &value)
         m_resourceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("JWTCredentialConfig") && !value["JWTCredentialConfig"].IsNull())
+    {
+        if (!value["JWTCredentialConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.JWTCredentialConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_jWTCredentialConfig.Deserialize(value["JWTCredentialConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_jWTCredentialConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("OAuthCredentialConfig") && !value["OAuthCredentialConfig"].IsNull())
+    {
+        if (!value["OAuthCredentialConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.OAuthCredentialConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_oAuthCredentialConfig.Deserialize(value["OAuthCredentialConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_oAuthCredentialConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("OIDCCredentialConfig") && !value["OIDCCredentialConfig"].IsNull())
+    {
+        if (!value["OIDCCredentialConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.OIDCCredentialConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_oIDCCredentialConfig.Deserialize(value["OIDCCredentialConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_oIDCCredentialConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("Provider") && !value["Provider"].IsNull())
+    {
+        if (!value["Provider"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.Provider` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_provider = string(value["Provider"].GetString());
+        m_providerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +365,41 @@ void CNAPIGwSecretKey::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ResourceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jWTCredentialConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JWTCredentialConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_jWTCredentialConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_oAuthCredentialConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OAuthCredentialConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_oAuthCredentialConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_oIDCCredentialConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OIDCCredentialConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_oIDCCredentialConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_providerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Provider";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_provider.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +627,69 @@ void CNAPIGwSecretKey::SetResourceType(const string& _resourceType)
 bool CNAPIGwSecretKey::ResourceTypeHasBeenSet() const
 {
     return m_resourceTypeHasBeenSet;
+}
+
+AIGWJWTCredentialConfig CNAPIGwSecretKey::GetJWTCredentialConfig() const
+{
+    return m_jWTCredentialConfig;
+}
+
+void CNAPIGwSecretKey::SetJWTCredentialConfig(const AIGWJWTCredentialConfig& _jWTCredentialConfig)
+{
+    m_jWTCredentialConfig = _jWTCredentialConfig;
+    m_jWTCredentialConfigHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::JWTCredentialConfigHasBeenSet() const
+{
+    return m_jWTCredentialConfigHasBeenSet;
+}
+
+AIGWOAuthCredentialConfig CNAPIGwSecretKey::GetOAuthCredentialConfig() const
+{
+    return m_oAuthCredentialConfig;
+}
+
+void CNAPIGwSecretKey::SetOAuthCredentialConfig(const AIGWOAuthCredentialConfig& _oAuthCredentialConfig)
+{
+    m_oAuthCredentialConfig = _oAuthCredentialConfig;
+    m_oAuthCredentialConfigHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::OAuthCredentialConfigHasBeenSet() const
+{
+    return m_oAuthCredentialConfigHasBeenSet;
+}
+
+AIGWOIDCCredentialConfig CNAPIGwSecretKey::GetOIDCCredentialConfig() const
+{
+    return m_oIDCCredentialConfig;
+}
+
+void CNAPIGwSecretKey::SetOIDCCredentialConfig(const AIGWOIDCCredentialConfig& _oIDCCredentialConfig)
+{
+    m_oIDCCredentialConfig = _oIDCCredentialConfig;
+    m_oIDCCredentialConfigHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::OIDCCredentialConfigHasBeenSet() const
+{
+    return m_oIDCCredentialConfigHasBeenSet;
+}
+
+string CNAPIGwSecretKey::GetProvider() const
+{
+    return m_provider;
+}
+
+void CNAPIGwSecretKey::SetProvider(const string& _provider)
+{
+    m_provider = _provider;
+    m_providerHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::ProviderHasBeenSet() const
+{
+    return m_providerHasBeenSet;
 }
 

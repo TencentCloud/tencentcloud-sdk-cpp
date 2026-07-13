@@ -25,7 +25,8 @@ ApplicationAttribute::ApplicationAttribute() :
     m_runInstanceCountHasBeenSet(false),
     m_groupCountHasBeenSet(false),
     m_runningGroupCountHasBeenSet(false),
-    m_abnormalCountHasBeenSet(false)
+    m_abnormalCountHasBeenSet(false),
+    m_imageTagCountHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome ApplicationAttribute::Deserialize(const rapidjson::Value &va
         m_abnormalCountHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageTagCount") && !value["ImageTagCount"].IsNull())
+    {
+        if (!value["ImageTagCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationAttribute.ImageTagCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageTagCount = value["ImageTagCount"].GetInt64();
+        m_imageTagCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void ApplicationAttribute::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "AbnormalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_abnormalCount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageTagCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageTagCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_imageTagCount, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void ApplicationAttribute::SetAbnormalCount(const string& _abnormalCount)
 bool ApplicationAttribute::AbnormalCountHasBeenSet() const
 {
     return m_abnormalCountHasBeenSet;
+}
+
+int64_t ApplicationAttribute::GetImageTagCount() const
+{
+    return m_imageTagCount;
+}
+
+void ApplicationAttribute::SetImageTagCount(const int64_t& _imageTagCount)
+{
+    m_imageTagCount = _imageTagCount;
+    m_imageTagCountHasBeenSet = true;
+}
+
+bool ApplicationAttribute::ImageTagCountHasBeenSet() const
+{
+    return m_imageTagCountHasBeenSet;
 }
 

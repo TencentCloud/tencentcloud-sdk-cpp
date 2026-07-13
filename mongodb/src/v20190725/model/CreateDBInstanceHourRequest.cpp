@@ -50,6 +50,10 @@ CreateDBInstanceHourRequest::CreateDBInstanceHourRequest() :
     m_readonlyNodeAvailabilityZoneListHasBeenSet(false),
     m_hiddenZoneHasBeenSet(false),
     m_paramTemplateIdHasBeenSet(false),
+    m_dataEncryptionHasBeenSet(false),
+    m_encryptionKeySourceHasBeenSet(false),
+    m_keyIdHasBeenSet(false),
+    m_kmsRegionHasBeenSet(false),
     m_cpuCoreHasBeenSet(false)
 {
 }
@@ -297,6 +301,38 @@ string CreateDBInstanceHourRequest::ToJsonString() const
         string key = "ParamTemplateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_paramTemplateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataEncryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataEncryption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataEncryption.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptionKeySourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptionKeySource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_encryptionKeySource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_keyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kmsRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KmsRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_kmsRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cpuCoreHasBeenSet)
@@ -745,6 +781,70 @@ void CreateDBInstanceHourRequest::SetParamTemplateId(const string& _paramTemplat
 bool CreateDBInstanceHourRequest::ParamTemplateIdHasBeenSet() const
 {
     return m_paramTemplateIdHasBeenSet;
+}
+
+string CreateDBInstanceHourRequest::GetDataEncryption() const
+{
+    return m_dataEncryption;
+}
+
+void CreateDBInstanceHourRequest::SetDataEncryption(const string& _dataEncryption)
+{
+    m_dataEncryption = _dataEncryption;
+    m_dataEncryptionHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::DataEncryptionHasBeenSet() const
+{
+    return m_dataEncryptionHasBeenSet;
+}
+
+string CreateDBInstanceHourRequest::GetEncryptionKeySource() const
+{
+    return m_encryptionKeySource;
+}
+
+void CreateDBInstanceHourRequest::SetEncryptionKeySource(const string& _encryptionKeySource)
+{
+    m_encryptionKeySource = _encryptionKeySource;
+    m_encryptionKeySourceHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::EncryptionKeySourceHasBeenSet() const
+{
+    return m_encryptionKeySourceHasBeenSet;
+}
+
+string CreateDBInstanceHourRequest::GetKeyId() const
+{
+    return m_keyId;
+}
+
+void CreateDBInstanceHourRequest::SetKeyId(const string& _keyId)
+{
+    m_keyId = _keyId;
+    m_keyIdHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::KeyIdHasBeenSet() const
+{
+    return m_keyIdHasBeenSet;
+}
+
+string CreateDBInstanceHourRequest::GetKmsRegion() const
+{
+    return m_kmsRegion;
+}
+
+void CreateDBInstanceHourRequest::SetKmsRegion(const string& _kmsRegion)
+{
+    m_kmsRegion = _kmsRegion;
+    m_kmsRegionHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::KmsRegionHasBeenSet() const
+{
+    return m_kmsRegionHasBeenSet;
 }
 
 int64_t CreateDBInstanceHourRequest::GetCpuCore() const

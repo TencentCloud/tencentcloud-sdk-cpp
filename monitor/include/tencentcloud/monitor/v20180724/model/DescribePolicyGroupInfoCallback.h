@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户回调接口地址
-                     * @return CallbackUrl 用户回调接口地址
+                     * 获取<p>用户回调接口地址</p>
+                     * @return CallbackUrl <p>用户回调接口地址</p>
                      * 
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
-                     * 设置用户回调接口地址
-                     * @param _callbackUrl 用户回调接口地址
+                     * 设置<p>用户回调接口地址</p>
+                     * @param _callbackUrl <p>用户回调接口地址</p>
                      * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
-                     * 获取用户回调接口状态，0表示未验证，1表示已验证，2表示存在url但没有通过验证
-                     * @return ValidFlag 用户回调接口状态，0表示未验证，1表示已验证，2表示存在url但没有通过验证
+                     * 获取<p>用户回调接口状态，0表示未验证，1表示已验证，2表示存在url但没有通过验证</p>
+                     * @return ValidFlag <p>用户回调接口状态，0表示未验证，1表示已验证，2表示存在url但没有通过验证</p>
                      * 
                      */
                     int64_t GetValidFlag() const;
 
                     /**
-                     * 设置用户回调接口状态，0表示未验证，1表示已验证，2表示存在url但没有通过验证
-                     * @param _validFlag 用户回调接口状态，0表示未验证，1表示已验证，2表示存在url但没有通过验证
+                     * 设置<p>用户回调接口状态，0表示未验证，1表示已验证，2表示存在url但没有通过验证</p>
+                     * @param _validFlag <p>用户回调接口状态，0表示未验证，1表示已验证，2表示存在url但没有通过验证</p>
                      * 
                      */
                     void SetValidFlag(const int64_t& _validFlag);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ValidFlagHasBeenSet() const;
 
                     /**
-                     * 获取用户回调接口验证码
-                     * @return VerifyCode 用户回调接口验证码
+                     * 获取<p>用户回调接口验证码</p>
+                     * @return VerifyCode <p>用户回调接口验证码</p>
                      * 
                      */
                     std::string GetVerifyCode() const;
 
                     /**
-                     * 设置用户回调接口验证码
-                     * @param _verifyCode 用户回调接口验证码
+                     * 设置<p>用户回调接口验证码</p>
+                     * @param _verifyCode <p>用户回调接口验证码</p>
                      * 
                      */
                     void SetVerifyCode(const std::string& _verifyCode);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户回调接口地址
+                     * <p>用户回调接口地址</p>
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;
 
                     /**
-                     * 用户回调接口状态，0表示未验证，1表示已验证，2表示存在url但没有通过验证
+                     * <p>用户回调接口状态，0表示未验证，1表示已验证，2表示存在url但没有通过验证</p>
                      */
                     int64_t m_validFlag;
                     bool m_validFlagHasBeenSet;
 
                     /**
-                     * 用户回调接口验证码
+                     * <p>用户回调接口验证码</p>
                      */
                     std::string m_verifyCode;
                     bool m_verifyCodeHasBeenSet;

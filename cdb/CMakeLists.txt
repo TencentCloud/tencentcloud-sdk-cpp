@@ -221,6 +221,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceLogToCLSRequest.h
   include/tencentcloud/cdb/v20170320/model/AnalysisNodeInfo.h
   include/tencentcloud/cdb/v20170320/model/StartBatchRollbackRequest.h
+  include/tencentcloud/cdb/v20170320/model/DeliverSummary.h
   include/tencentcloud/cdb/v20170320/model/OpenDBInstanceEncryptionRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceCharsetRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyInstancePasswordComplexityResponse.h
@@ -696,6 +697,7 @@ set(cdb_src
   src/v20170320/model/DescribeDBInstanceLogToCLSRequest.cpp
   src/v20170320/model/AnalysisNodeInfo.cpp
   src/v20170320/model/StartBatchRollbackRequest.cpp
+  src/v20170320/model/DeliverSummary.cpp
   src/v20170320/model/OpenDBInstanceEncryptionRequest.cpp
   src/v20170320/model/DescribeDBInstanceCharsetRequest.cpp
   src/v20170320/model/ModifyInstancePasswordComplexityResponse.cpp

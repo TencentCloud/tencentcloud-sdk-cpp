@@ -26,7 +26,8 @@ BuildCustomerClusterRequest::BuildCustomerClusterRequest() :
     m_fileSystemIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_clusterNameHasBeenSet(false)
+    m_clusterNameHasBeenSet(false),
+    m_zoneHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string BuildCustomerClusterRequest::ToJsonString() const
         string key = "ClusterName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void BuildCustomerClusterRequest::SetClusterName(const string& _clusterName)
 bool BuildCustomerClusterRequest::ClusterNameHasBeenSet() const
 {
     return m_clusterNameHasBeenSet;
+}
+
+string BuildCustomerClusterRequest::GetZone() const
+{
+    return m_zone;
+}
+
+void BuildCustomerClusterRequest::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool BuildCustomerClusterRequest::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
 }
 
 

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取地域id
-                     * @return RegionId 地域id
+                     * 获取<p>地域id</p>
+                     * @return RegionId <p>地域id</p>
                      * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
-                     * 设置地域id
-                     * @param _regionId 地域id
+                     * 设置<p>地域id</p>
+                     * @param _regionId <p>地域id</p>
                      * 
                      */
                     void SetRegionId(const int64_t& _regionId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取地域简称
-                     * @return Region 地域简称
+                     * 获取<p>地域简称</p>
+                     * @return Region <p>地域简称</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域简称
-                     * @param _region 地域简称
+                     * 设置<p>地域简称</p>
+                     * @param _region <p>地域简称</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取维度组合json字符串
-                     * @return Dimensions 维度组合json字符串
+                     * 获取<p>维度组合json字符串</p>
+                     * @return Dimensions <p>维度组合json字符串</p>
                      * 
                      */
                     std::string GetDimensions() const;
 
                     /**
-                     * 设置维度组合json字符串
-                     * @param _dimensions 维度组合json字符串
+                     * 设置<p>维度组合json字符串</p>
+                     * @param _dimensions <p>维度组合json字符串</p>
                      * 
                      */
                     void SetDimensions(const std::string& _dimensions);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool DimensionsHasBeenSet() const;
 
                     /**
-                     * 获取事件维度组合json字符串
-                     * @return EventDimensions 事件维度组合json字符串
+                     * 获取<p>事件维度组合json字符串</p>
+                     * @return EventDimensions <p>事件维度组合json字符串</p>
                      * 
                      */
                     std::string GetEventDimensions() const;
 
                     /**
-                     * 设置事件维度组合json字符串
-                     * @param _eventDimensions 事件维度组合json字符串
+                     * 设置<p>事件维度组合json字符串</p>
+                     * @param _eventDimensions <p>事件维度组合json字符串</p>
                      * 
                      */
                     void SetEventDimensions(const std::string& _eventDimensions);
@@ -133,25 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 地域id
+                     * <p>地域id</p>
                      */
                     int64_t m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 地域简称
+                     * <p>地域简称</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 维度组合json字符串
+                     * <p>维度组合json字符串</p>
                      */
                     std::string m_dimensions;
                     bool m_dimensionsHasBeenSet;
 
                     /**
-                     * 事件维度组合json字符串
+                     * <p>事件维度组合json字符串</p>
                      */
                     std::string m_eventDimensions;
                     bool m_eventDimensionsHasBeenSet;

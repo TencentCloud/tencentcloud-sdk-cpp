@@ -25,7 +25,9 @@ using namespace std;
 DescribeCloudNativeAPIGatewayConsumerListRequest::DescribeCloudNativeAPIGatewayConsumerListRequest() :
     m_gatewayIdHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false),
+    m_resourceIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string DescribeCloudNativeAPIGatewayConsumerListRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_resourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +132,38 @@ void DescribeCloudNativeAPIGatewayConsumerListRequest::SetOffset(const uint64_t&
 bool DescribeCloudNativeAPIGatewayConsumerListRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewayConsumerListRequest::GetResourceType() const
+{
+    return m_resourceType;
+}
+
+void DescribeCloudNativeAPIGatewayConsumerListRequest::SetResourceType(const string& _resourceType)
+{
+    m_resourceType = _resourceType;
+    m_resourceTypeHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayConsumerListRequest::ResourceTypeHasBeenSet() const
+{
+    return m_resourceTypeHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewayConsumerListRequest::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void DescribeCloudNativeAPIGatewayConsumerListRequest::SetResourceId(const string& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayConsumerListRequest::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
 }
 
 

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合查询条件的实例总数。
-                     * @return TotalCount 符合查询条件的实例总数。
+                     * 获取<p>符合查询条件的实例总数。</p>
+                     * @return TotalCount <p>符合查询条件的实例总数。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,9 +59,9 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取审计实例详细信息列表。
+                     * 获取<p>审计实例详细信息列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Items 审计实例详细信息列表。
+                     * @return Items <p>审计实例详细信息列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,13 +77,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合查询条件的实例总数。
+                     * <p>符合查询条件的实例总数。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 审计实例详细信息列表。
+                     * <p>审计实例详细信息列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InstanceDbAuditStatus> m_items;

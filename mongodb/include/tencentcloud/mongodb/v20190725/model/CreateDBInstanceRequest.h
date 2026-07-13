@@ -674,6 +674,90 @@ namespace TencentCloud
                     bool ParamTemplateIdHasBeenSet() const;
 
                     /**
+                     * 获取<p>数据库存储加密取值。</p><ul><li>No_Encryption：不采用存储加密。</li><li>TDE：开启 TDE 存储加密方式。</li></ul>
+                     * @return DataEncryption <p>数据库存储加密取值。</p><ul><li>No_Encryption：不采用存储加密。</li><li>TDE：开启 TDE 存储加密方式。</li></ul>
+                     * 
+                     */
+                    std::string GetDataEncryption() const;
+
+                    /**
+                     * 设置<p>数据库存储加密取值。</p><ul><li>No_Encryption：不采用存储加密。</li><li>TDE：开启 TDE 存储加密方式。</li></ul>
+                     * @param _dataEncryption <p>数据库存储加密取值。</p><ul><li>No_Encryption：不采用存储加密。</li><li>TDE：开启 TDE 存储加密方式。</li></ul>
+                     * 
+                     */
+                    void SetDataEncryption(const std::string& _dataEncryption);
+
+                    /**
+                     * 判断参数 DataEncryption 是否已赋值
+                     * @return DataEncryption 是否已赋值
+                     * 
+                     */
+                    bool DataEncryptionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>如选取 TDE 存储加密，须指定密钥来源。</p><ul><li>auto 自动生成密钥。</li><li>manual 手动指定密钥。</li></ul>
+                     * @return EncryptionKeySource <p>如选取 TDE 存储加密，须指定密钥来源。</p><ul><li>auto 自动生成密钥。</li><li>manual 手动指定密钥。</li></ul>
+                     * 
+                     */
+                    std::string GetEncryptionKeySource() const;
+
+                    /**
+                     * 设置<p>如选取 TDE 存储加密，须指定密钥来源。</p><ul><li>auto 自动生成密钥。</li><li>manual 手动指定密钥。</li></ul>
+                     * @param _encryptionKeySource <p>如选取 TDE 存储加密，须指定密钥来源。</p><ul><li>auto 自动生成密钥。</li><li>manual 手动指定密钥。</li></ul>
+                     * 
+                     */
+                    void SetEncryptionKeySource(const std::string& _encryptionKeySource);
+
+                    /**
+                     * 判断参数 EncryptionKeySource 是否已赋值
+                     * @return EncryptionKeySource 是否已赋值
+                     * 
+                     */
+                    bool EncryptionKeySourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>密钥 ID。如密钥资源选取为指定自定义，须输入指定的密钥 ID。</p>
+                     * @return KeyId <p>密钥 ID。如密钥资源选取为指定自定义，须输入指定的密钥 ID。</p>
+                     * 
+                     */
+                    std::string GetKeyId() const;
+
+                    /**
+                     * 设置<p>密钥 ID。如密钥资源选取为指定自定义，须输入指定的密钥 ID。</p>
+                     * @param _keyId <p>密钥 ID。如密钥资源选取为指定自定义，须输入指定的密钥 ID。</p>
+                     * 
+                     */
+                    void SetKeyId(const std::string& _keyId);
+
+                    /**
+                     * 判断参数 KeyId 是否已赋值
+                     * @return KeyId 是否已赋值
+                     * 
+                     */
+                    bool KeyIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>如果密钥来源为指定自定义密钥，须填写该字段指定密钥的地域信息。</p>
+                     * @return KmsRegion <p>如果密钥来源为指定自定义密钥，须填写该字段指定密钥的地域信息。</p>
+                     * 
+                     */
+                    std::string GetKmsRegion() const;
+
+                    /**
+                     * 设置<p>如果密钥来源为指定自定义密钥，须填写该字段指定密钥的地域信息。</p>
+                     * @param _kmsRegion <p>如果密钥来源为指定自定义密钥，须填写该字段指定密钥的地域信息。</p>
+                     * 
+                     */
+                    void SetKmsRegion(const std::string& _kmsRegion);
+
+                    /**
+                     * 判断参数 KmsRegion 是否已赋值
+                     * @return KmsRegion 是否已赋值
+                     * 
+                     */
+                    bool KmsRegionHasBeenSet() const;
+
+                    /**
                      * 获取<p>实例CPU核大小，单位：C。具体售卖的CPU规格，请通过接口 <a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a> 获取<br>注意：通用 I 型实例必须设置 CPU 大小。</p>
                      * @return CpuCore <p>实例CPU核大小，单位：C。具体售卖的CPU规格，请通过接口 <a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a> 获取<br>注意：通用 I 型实例必须设置 CPU 大小。</p>
                      * 
@@ -875,6 +959,30 @@ namespace TencentCloud
                      */
                     std::string m_paramTemplateId;
                     bool m_paramTemplateIdHasBeenSet;
+
+                    /**
+                     * <p>数据库存储加密取值。</p><ul><li>No_Encryption：不采用存储加密。</li><li>TDE：开启 TDE 存储加密方式。</li></ul>
+                     */
+                    std::string m_dataEncryption;
+                    bool m_dataEncryptionHasBeenSet;
+
+                    /**
+                     * <p>如选取 TDE 存储加密，须指定密钥来源。</p><ul><li>auto 自动生成密钥。</li><li>manual 手动指定密钥。</li></ul>
+                     */
+                    std::string m_encryptionKeySource;
+                    bool m_encryptionKeySourceHasBeenSet;
+
+                    /**
+                     * <p>密钥 ID。如密钥资源选取为指定自定义，须输入指定的密钥 ID。</p>
+                     */
+                    std::string m_keyId;
+                    bool m_keyIdHasBeenSet;
+
+                    /**
+                     * <p>如果密钥来源为指定自定义密钥，须填写该字段指定密钥的地域信息。</p>
+                     */
+                    std::string m_kmsRegion;
+                    bool m_kmsRegionHasBeenSet;
 
                     /**
                      * <p>实例CPU核大小，单位：C。具体售卖的CPU规格，请通过接口 <a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a> 获取<br>注意：通用 I 型实例必须设置 CPU 大小。</p>

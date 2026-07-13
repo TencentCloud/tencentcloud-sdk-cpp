@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建设备所归属的项目ID
-                     * @return ProjectId 创建设备所归属的项目ID
+                     * 获取<p>创建设备所归属的项目ID</p>
+                     * @return ProjectId <p>创建设备所归属的项目ID</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置创建设备所归属的项目ID
-                     * @param _projectId 创建设备所归属的项目ID
+                     * 设置<p>创建设备所归属的项目ID</p>
+                     * @param _projectId <p>创建设备所归属的项目ID</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取创建设备ID，项目内需要唯一，由小写英文字母、数字和下划线构成，长度不超过18
-                     * @return DeviceId 创建设备ID，项目内需要唯一，由小写英文字母、数字和下划线构成，长度不超过18
+                     * 获取<p>创建设备ID，项目内需要唯一，由小写英文字母、数字和下划线构成，长度不超过32</p>
+                     * @return DeviceId <p>创建设备ID，项目内需要唯一，由小写英文字母、数字和下划线构成，长度不超过32</p>
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
-                     * 设置创建设备ID，项目内需要唯一，由小写英文字母、数字和下划线构成，长度不超过18
-                     * @param _deviceId 创建设备ID，项目内需要唯一，由小写英文字母、数字和下划线构成，长度不超过18
+                     * 设置<p>创建设备ID，项目内需要唯一，由小写英文字母、数字和下划线构成，长度不超过32</p>
+                     * @param _deviceId <p>创建设备ID，项目内需要唯一，由小写英文字母、数字和下划线构成，长度不超过32</p>
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DeviceIdHasBeenSet() const;
 
                     /**
-                     * 获取创建设备名称，长度小于24, 可包含中文、数字、英文字母和下划线
-                     * @return DeviceName 创建设备名称，长度小于24, 可包含中文、数字、英文字母和下划线
+                     * 获取<p>创建设备名称，长度小于24, 可包含中文、数字、英文字母和下划线</p>
+                     * @return DeviceName <p>创建设备名称，长度小于24, 可包含中文、数字、英文字母和下划线</p>
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
-                     * 设置创建设备名称，长度小于24, 可包含中文、数字、英文字母和下划线
-                     * @param _deviceName 创建设备名称，长度小于24, 可包含中文、数字、英文字母和下划线
+                     * 设置<p>创建设备名称，长度小于24, 可包含中文、数字、英文字母和下划线</p>
+                     * @param _deviceName <p>创建设备名称，长度小于24, 可包含中文、数字、英文字母和下划线</p>
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取设备类型，field为现场设备（受控设备），remote为远端设备（操控设备），不填默认为field
-                     * @return DeviceType 设备类型，field为现场设备（受控设备），remote为远端设备（操控设备），不填默认为field
+                     * 获取<p>设备类型</p><p>枚举值：</p><ul><li>field： 现场设备（受控设备）</li><li>remote： 远端设备（操控设备）</li></ul>
+                     * @return DeviceType <p>设备类型</p><p>枚举值：</p><ul><li>field： 现场设备（受控设备）</li><li>remote： 远端设备（操控设备）</li></ul>
                      * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
-                     * 设置设备类型，field为现场设备（受控设备），remote为远端设备（操控设备），不填默认为field
-                     * @param _deviceType 设备类型，field为现场设备（受控设备），remote为远端设备（操控设备），不填默认为field
+                     * 设置<p>设备类型</p><p>枚举值：</p><ul><li>field： 现场设备（受控设备）</li><li>remote： 远端设备（操控设备）</li></ul>
+                     * @param _deviceType <p>设备类型</p><p>枚举值：</p><ul><li>field： 现场设备（受控设备）</li><li>remote： 远端设备（操控设备）</li></ul>
                      * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DeviceTypeHasBeenSet() const;
 
                     /**
-                     * 获取设备认证口令，由大小写英文字母和数字构成，须为16位
-                     * @return DeviceToken 设备认证口令，由大小写英文字母和数字构成，须为16位
+                     * 获取<p>设备认证口令，由大小写英文字母和数字构成，须为16位</p>
+                     * @return DeviceToken <p>设备认证口令，由大小写英文字母和数字构成，须为16位</p>
                      * 
                      */
                     std::string GetDeviceToken() const;
 
                     /**
-                     * 设置设备认证口令，由大小写英文字母和数字构成，须为16位
-                     * @param _deviceToken 设备认证口令，由大小写英文字母和数字构成，须为16位
+                     * 设置<p>设备认证口令，由大小写英文字母和数字构成，须为16位</p>
+                     * @param _deviceToken <p>设备认证口令，由大小写英文字母和数字构成，须为16位</p>
                      * 
                      */
                     void SetDeviceToken(const std::string& _deviceToken);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建设备所归属的项目ID
+                     * <p>创建设备所归属的项目ID</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 创建设备ID，项目内需要唯一，由小写英文字母、数字和下划线构成，长度不超过18
+                     * <p>创建设备ID，项目内需要唯一，由小写英文字母、数字和下划线构成，长度不超过32</p>
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
 
                     /**
-                     * 创建设备名称，长度小于24, 可包含中文、数字、英文字母和下划线
+                     * <p>创建设备名称，长度小于24, 可包含中文、数字、英文字母和下划线</p>
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 设备类型，field为现场设备（受控设备），remote为远端设备（操控设备），不填默认为field
+                     * <p>设备类型</p><p>枚举值：</p><ul><li>field： 现场设备（受控设备）</li><li>remote： 远端设备（操控设备）</li></ul>
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;
 
                     /**
-                     * 设备认证口令，由大小写英文字母和数字构成，须为16位
+                     * <p>设备认证口令，由大小写英文字母和数字构成，须为16位</p>
                      */
                     std::string m_deviceToken;
                     bool m_deviceTokenHasBeenSet;

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取源地址内容
-                     * @return SourceContent 源地址内容
+                     * 获取<p>源地址内容</p>
+                     * @return SourceContent <p>源地址内容</p>
                      * 
                      */
                     std::string GetSourceContent() const;
 
                     /**
-                     * 设置源地址内容
-                     * @param _sourceContent 源地址内容
+                     * 设置<p>源地址内容</p>
+                     * @param _sourceContent <p>源地址内容</p>
                      * 
                      */
                     void SetSourceContent(const std::string& _sourceContent);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool SourceContentHasBeenSet() const;
 
                     /**
-                     * 获取源类型：ip/url/template/instance/tag
-                     * @return SourceType 源类型：ip/url/template/instance/tag
+                     * 获取<p>源类型：ip/url/template/instance/tag</p>
+                     * @return SourceType <p>源类型：ip/url/template/instance/tag</p>
                      * 
                      */
                     std::string GetSourceType() const;
 
                     /**
-                     * 设置源类型：ip/url/template/instance/tag
-                     * @param _sourceType 源类型：ip/url/template/instance/tag
+                     * 设置<p>源类型：ip/url/template/instance/tag</p>
+                     * @param _sourceType <p>源类型：ip/url/template/instance/tag</p>
                      * 
                      */
                     void SetSourceType(const std::string& _sourceType);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取目的地址内容
-                     * @return TargetContent 目的地址内容
+                     * 获取<p>目的地址内容</p>
+                     * @return TargetContent <p>目的地址内容</p>
                      * 
                      */
                     std::string GetTargetContent() const;
 
                     /**
-                     * 设置目的地址内容
-                     * @param _targetContent 目的地址内容
+                     * 设置<p>目的地址内容</p>
+                     * @param _targetContent <p>目的地址内容</p>
                      * 
                      */
                     void SetTargetContent(const std::string& _targetContent);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool TargetContentHasBeenSet() const;
 
                     /**
-                     * 获取目的类型：ip/url/template/instance/tag
-                     * @return TargetType 目的类型：ip/url/template/instance/tag
+                     * 获取<p>目的类型：ip/url/template/instance/tag</p>
+                     * @return TargetType <p>目的类型：ip/url/template/instance/tag</p>
                      * 
                      */
                     std::string GetTargetType() const;
 
                     /**
-                     * 设置目的类型：ip/url/template/instance/tag
-                     * @param _targetType 目的类型：ip/url/template/instance/tag
+                     * 设置<p>目的类型：ip/url/template/instance/tag</p>
+                     * @param _targetType <p>目的类型：ip/url/template/instance/tag</p>
                      * 
                      */
                     void SetTargetType(const std::string& _targetType);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool TargetTypeHasBeenSet() const;
 
                     /**
-                     * 获取协议：TCP/UDP/ICMP/ANY/HTTP/HTTPS/DNS/FTP等
-                     * @return Protocol 协议：TCP/UDP/ICMP/ANY/HTTP/HTTPS/DNS/FTP等
+                     * 获取<p>协议：TCP/UDP/ICMP/ANY/HTTP/HTTPS/DNS/FTP等</p>
+                     * @return Protocol <p>协议：TCP/UDP/ICMP/ANY/HTTP/HTTPS/DNS/FTP等</p>
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置协议：TCP/UDP/ICMP/ANY/HTTP/HTTPS/DNS/FTP等
-                     * @param _protocol 协议：TCP/UDP/ICMP/ANY/HTTP/HTTPS/DNS/FTP等
+                     * 设置<p>协议：TCP/UDP/ICMP/ANY/HTTP/HTTPS/DNS/FTP等</p>
+                     * @param _protocol <p>协议：TCP/UDP/ICMP/ANY/HTTP/HTTPS/DNS/FTP等</p>
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取动作：accept/drop/log
-                     * @return RuleAction 动作：accept/drop/log
+                     * 获取<p>动作：accept/drop/log</p>
+                     * @return RuleAction <p>动作：accept/drop/log</p>
                      * 
                      */
                     std::string GetRuleAction() const;
 
                     /**
-                     * 设置动作：accept/drop/log
-                     * @param _ruleAction 动作：accept/drop/log
+                     * 设置<p>动作：accept/drop/log</p>
+                     * @param _ruleAction <p>动作：accept/drop/log</p>
                      * 
                      */
                     void SetRuleAction(const std::string& _ruleAction);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool RuleActionHasBeenSet() const;
 
                     /**
-                     * 获取优先级（从1开始）
-                     * @return OrderIndex 优先级（从1开始）
+                     * 获取<p>优先级（从1开始）</p>
+                     * @return OrderIndex <p>优先级（从1开始）</p>
                      * 
                      */
                     int64_t GetOrderIndex() const;
 
                     /**
-                     * 设置优先级（从1开始）
-                     * @param _orderIndex 优先级（从1开始）
+                     * 设置<p>优先级（从1开始）</p>
+                     * @param _orderIndex <p>优先级（从1开始）</p>
                      * 
                      */
                     void SetOrderIndex(const int64_t& _orderIndex);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool OrderIndexHasBeenSet() const;
 
                     /**
-                     * 获取规则生效范围：ALL-全局生效，ap-xxx-地域生效，cfwnat-xxx-NAT防火墙实例生效
-                     * @return Scope 规则生效范围：ALL-全局生效，ap-xxx-地域生效，cfwnat-xxx-NAT防火墙实例生效
+                     * 获取<p>规则生效范围：ALL-全局生效，ap-xxx-地域生效，cfwnat-xxx-NAT防火墙实例生效</p>
+                     * @return Scope <p>规则生效范围：ALL-全局生效，ap-xxx-地域生效，cfwnat-xxx-NAT防火墙实例生效</p>
                      * 
                      */
                     std::string GetScope() const;
 
                     /**
-                     * 设置规则生效范围：ALL-全局生效，ap-xxx-地域生效，cfwnat-xxx-NAT防火墙实例生效
-                     * @param _scope 规则生效范围：ALL-全局生效，ap-xxx-地域生效，cfwnat-xxx-NAT防火墙实例生效
+                     * 设置<p>规则生效范围：ALL-全局生效，ap-xxx-地域生效，cfwnat-xxx-NAT防火墙实例生效</p>
+                     * @param _scope <p>规则生效范围：ALL-全局生效，ap-xxx-地域生效，cfwnat-xxx-NAT防火墙实例生效</p>
                      * 
                      */
                     void SetScope(const std::string& _scope);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool ScopeHasBeenSet() const;
 
                     /**
-                     * 获取规则方向：1-入站规则，0-出站规则
-                     * @return Direction 规则方向：1-入站规则，0-出站规则
+                     * 获取<p>规则方向：1-入站规则，0-出站规则</p>
+                     * @return Direction <p>规则方向：1-入站规则，0-出站规则</p>
                      * 
                      */
                     int64_t GetDirection() const;
 
                     /**
-                     * 设置规则方向：1-入站规则，0-出站规则
-                     * @param _direction 规则方向：1-入站规则，0-出站规则
+                     * 设置<p>规则方向：1-入站规则，0-出站规则</p>
+                     * @param _direction <p>规则方向：1-入站规则，0-出站规则</p>
                      * 
                      */
                     void SetDirection(const int64_t& _direction);
@@ -236,18 +236,18 @@ namespace TencentCloud
                     bool DirectionHasBeenSet() const;
 
                     /**
-                     * 获取规则ID（修改时必填）
+                     * 获取<p>规则ID（修改时必填）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleId 规则ID（修改时必填）
+                     * @return RuleId <p>规则ID（修改时必填）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置规则ID（修改时必填）
+                     * 设置<p>规则ID（修改时必填）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ruleId 规则ID（修改时必填）
+                     * @param _ruleId <p>规则ID（修改时必填）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -261,18 +261,18 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取端口（ICMP协议时为空）
+                     * 获取<p>端口（ICMP协议时为空）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Port 端口（ICMP协议时为空）
+                     * @return Port <p>端口（ICMP协议时为空）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPort() const;
 
                     /**
-                     * 设置端口（ICMP协议时为空）
+                     * 设置<p>端口（ICMP协议时为空）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _port 端口（ICMP协议时为空）
+                     * @param _port <p>端口（ICMP协议时为空）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -286,18 +286,18 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取规则描述
+                     * 获取<p>规则描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 规则描述
+                     * @return Description <p>规则描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置规则描述
+                     * 设置<p>规则描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 规则描述
+                     * @param _description <p>规则描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -311,18 +311,18 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取端口模板ID
+                     * 获取<p>端口模板ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ParamTemplateId 端口模板ID
+                     * @return ParamTemplateId <p>端口模板ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParamTemplateId() const;
 
                     /**
-                     * 设置端口模板ID
+                     * 设置<p>端口模板ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _paramTemplateId 端口模板ID
+                     * @param _paramTemplateId <p>端口模板ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -336,18 +336,18 @@ namespace TencentCloud
                     bool ParamTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取规则归属的成员账号ID（当Scope为cfwnat-xxx或SourceType/DestType为instance/tag时必填）
+                     * 获取<p>规则归属的成员账号ID(当Scope为cfwnat-xxx或SourceType/DestType为instance/tag时必填)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BelongMemberId 规则归属的成员账号ID（当Scope为cfwnat-xxx或SourceType/DestType为instance/tag时必填）
+                     * @return BelongMemberId <p>规则归属的成员账号ID(当Scope为cfwnat-xxx或SourceType/DestType为instance/tag时必填)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBelongMemberId() const;
 
                     /**
-                     * 设置规则归属的成员账号ID（当Scope为cfwnat-xxx或SourceType/DestType为instance/tag时必填）
+                     * 设置<p>规则归属的成员账号ID(当Scope为cfwnat-xxx或SourceType/DestType为instance/tag时必填)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _belongMemberId 规则归属的成员账号ID（当Scope为cfwnat-xxx或SourceType/DestType为instance/tag时必填）
+                     * @param _belongMemberId <p>规则归属的成员账号ID(当Scope为cfwnat-xxx或SourceType/DestType为instance/tag时必填)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -363,89 +363,89 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 源地址内容
+                     * <p>源地址内容</p>
                      */
                     std::string m_sourceContent;
                     bool m_sourceContentHasBeenSet;
 
                     /**
-                     * 源类型：ip/url/template/instance/tag
+                     * <p>源类型：ip/url/template/instance/tag</p>
                      */
                     std::string m_sourceType;
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * 目的地址内容
+                     * <p>目的地址内容</p>
                      */
                     std::string m_targetContent;
                     bool m_targetContentHasBeenSet;
 
                     /**
-                     * 目的类型：ip/url/template/instance/tag
+                     * <p>目的类型：ip/url/template/instance/tag</p>
                      */
                     std::string m_targetType;
                     bool m_targetTypeHasBeenSet;
 
                     /**
-                     * 协议：TCP/UDP/ICMP/ANY/HTTP/HTTPS/DNS/FTP等
+                     * <p>协议：TCP/UDP/ICMP/ANY/HTTP/HTTPS/DNS/FTP等</p>
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 动作：accept/drop/log
+                     * <p>动作：accept/drop/log</p>
                      */
                     std::string m_ruleAction;
                     bool m_ruleActionHasBeenSet;
 
                     /**
-                     * 优先级（从1开始）
+                     * <p>优先级（从1开始）</p>
                      */
                     int64_t m_orderIndex;
                     bool m_orderIndexHasBeenSet;
 
                     /**
-                     * 规则生效范围：ALL-全局生效，ap-xxx-地域生效，cfwnat-xxx-NAT防火墙实例生效
+                     * <p>规则生效范围：ALL-全局生效，ap-xxx-地域生效，cfwnat-xxx-NAT防火墙实例生效</p>
                      */
                     std::string m_scope;
                     bool m_scopeHasBeenSet;
 
                     /**
-                     * 规则方向：1-入站规则，0-出站规则
+                     * <p>规则方向：1-入站规则，0-出站规则</p>
                      */
                     int64_t m_direction;
                     bool m_directionHasBeenSet;
 
                     /**
-                     * 规则ID（修改时必填）
+                     * <p>规则ID（修改时必填）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * 端口（ICMP协议时为空）
+                     * <p>端口（ICMP协议时为空）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 规则描述
+                     * <p>规则描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 端口模板ID
+                     * <p>端口模板ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_paramTemplateId;
                     bool m_paramTemplateIdHasBeenSet;
 
                     /**
-                     * 规则归属的成员账号ID（当Scope为cfwnat-xxx或SourceType/DestType为instance/tag时必填）
+                     * <p>规则归属的成员账号ID(当Scope为cfwnat-xxx或SourceType/DestType为instance/tag时必填)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_belongMemberId;

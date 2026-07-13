@@ -1,0 +1,111 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_TSE_V20201207_MODEL_AIGWCACHEAWAREROUTECANDIDATE_H_
+#define TENCENTCLOUD_TSE_V20201207_MODEL_AIGWCACHEAWAREROUTECANDIDATE_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Tse
+    {
+        namespace V20201207
+        {
+            namespace Model
+            {
+                /**
+                * 缓存感知路由候选模型服务
+                */
+                class AIGWCacheAwareRouteCandidate : public AbstractModel
+                {
+                public:
+                    AIGWCacheAwareRouteCandidate();
+                    ~AIGWCacheAwareRouteCandidate() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取<p>模型服务ID</p>
+                     * @return ModelServiceId <p>模型服务ID</p>
+                     * 
+                     */
+                    std::string GetModelServiceId() const;
+
+                    /**
+                     * 设置<p>模型服务ID</p>
+                     * @param _modelServiceId <p>模型服务ID</p>
+                     * 
+                     */
+                    void SetModelServiceId(const std::string& _modelServiceId);
+
+                    /**
+                     * 判断参数 ModelServiceId 是否已赋值
+                     * @return ModelServiceId 是否已赋值
+                     * 
+                     */
+                    bool ModelServiceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模型服务名称</p>
+                     * @return ModelServiceName <p>模型服务名称</p>
+                     * 
+                     */
+                    std::string GetModelServiceName() const;
+
+                    /**
+                     * 设置<p>模型服务名称</p>
+                     * @param _modelServiceName <p>模型服务名称</p>
+                     * 
+                     */
+                    void SetModelServiceName(const std::string& _modelServiceName);
+
+                    /**
+                     * 判断参数 ModelServiceName 是否已赋值
+                     * @return ModelServiceName 是否已赋值
+                     * 
+                     */
+                    bool ModelServiceNameHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * <p>模型服务ID</p>
+                     */
+                    std::string m_modelServiceId;
+                    bool m_modelServiceIdHasBeenSet;
+
+                    /**
+                     * <p>模型服务名称</p>
+                     */
+                    std::string m_modelServiceName;
+                    bool m_modelServiceNameHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_TSE_V20201207_MODEL_AIGWCACHEAWAREROUTECANDIDATE_H_

@@ -22,7 +22,8 @@ using namespace std;
 
 AigcVideoTaskOutput::AigcVideoTaskOutput() :
     m_fileInfosHasBeenSet(false),
-    m_procedureTaskIdsHasBeenSet(false)
+    m_procedureTaskIdsHasBeenSet(false),
+    m_usageHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,23 @@ CoreInternalOutcome AigcVideoTaskOutput::Deserialize(const rapidjson::Value &val
         m_procedureTaskIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("Usage") && !value["Usage"].IsNull())
+    {
+        if (!value["Usage"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcVideoTaskOutput.Usage` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_usage.Deserialize(value["Usage"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_usageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +117,15 @@ void AigcVideoTaskOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         }
     }
 
+    if (m_usageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Usage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_usage.ToJsonObject(value[key.c_str()], allocator);
+    }
+
 }
 
 
@@ -132,5 +159,21 @@ void AigcVideoTaskOutput::SetProcedureTaskIds(const vector<string>& _procedureTa
 bool AigcVideoTaskOutput::ProcedureTaskIdsHasBeenSet() const
 {
     return m_procedureTaskIdsHasBeenSet;
+}
+
+AigcVideoTaskUsage AigcVideoTaskOutput::GetUsage() const
+{
+    return m_usage;
+}
+
+void AigcVideoTaskOutput::SetUsage(const AigcVideoTaskUsage& _usage)
+{
+    m_usage = _usage;
+    m_usageHasBeenSet = true;
+}
+
+bool AigcVideoTaskOutput::UsageHasBeenSet() const
+{
+    return m_usageHasBeenSet;
 }
 

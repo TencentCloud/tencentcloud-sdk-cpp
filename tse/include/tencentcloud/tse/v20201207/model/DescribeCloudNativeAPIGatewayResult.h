@@ -51,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云原生API网关ID。
-                     * @return GatewayId 云原生API网关ID。
+                     * 获取<p>云原生API网关ID。</p>
+                     * @return GatewayId <p>云原生API网关ID。</p>
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
-                     * 设置云原生API网关ID。
-                     * @param _gatewayId 云原生API网关ID。
+                     * 设置<p>云原生API网关ID。</p>
+                     * @param _gatewayId <p>云原生API网关ID。</p>
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取云原生API网关状态。
-                     * @return Status 云原生API网关状态。
+                     * 获取<p>云原生API网关状态。</p>
+                     * @return Status <p>云原生API网关状态。</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置云原生API网关状态。
-                     * @param _status 云原生API网关状态。
+                     * 设置<p>云原生API网关状态。</p>
+                     * @param _status <p>云原生API网关状态。</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取云原生API网关名。
-                     * @return Name 云原生API网关名。
+                     * 获取<p>云原生API网关名。</p>
+                     * @return Name <p>云原生API网关名。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置云原生API网关名。
-                     * @param _name 云原生API网关名。
+                     * 设置<p>云原生API网关名。</p>
+                     * @param _name <p>云原生API网关名。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取云原生API网关类型。
-                     * @return Type 云原生API网关类型。
+                     * 获取<p>云原生API网关类型。</p>
+                     * @return Type <p>云原生API网关类型。</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置云原生API网关类型。
-                     * @param _type 云原生API网关类型。
+                     * 设置<p>云原生API网关类型。</p>
+                     * @param _type <p>云原生API网关类型。</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -135,23 +135,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取实例版本：
-- 2.4.1
-- 2.5.1
-                     * @return GatewayVersion 实例版本：
-- 2.4.1
-- 2.5.1
+                     * 获取<p>实例版本：</p><ul><li>2.4.1</li><li>2.5.1</li></ul>
+                     * @return GatewayVersion <p>实例版本：</p><ul><li>2.4.1</li><li>2.5.1</li></ul>
                      * 
                      */
                     std::string GetGatewayVersion() const;
 
                     /**
-                     * 设置实例版本：
-- 2.4.1
-- 2.5.1
-                     * @param _gatewayVersion 实例版本：
-- 2.4.1
-- 2.5.1
+                     * 设置<p>实例版本：</p><ul><li>2.4.1</li><li>2.5.1</li></ul>
+                     * @param _gatewayVersion <p>实例版本：</p><ul><li>2.4.1</li><li>2.5.1</li></ul>
                      * 
                      */
                     void SetGatewayVersion(const std::string& _gatewayVersion);
@@ -164,15 +156,15 @@ namespace TencentCloud
                     bool GatewayVersionHasBeenSet() const;
 
                     /**
-                     * 获取云原生API网关节点信息。
-                     * @return NodeConfig 云原生API网关节点信息。
+                     * 获取<p>云原生API网关节点信息。</p>
+                     * @return NodeConfig <p>云原生API网关节点信息。</p>
                      * 
                      */
                     CloudNativeAPIGatewayNodeConfig GetNodeConfig() const;
 
                     /**
-                     * 设置云原生API网关节点信息。
-                     * @param _nodeConfig 云原生API网关节点信息。
+                     * 设置<p>云原生API网关节点信息。</p>
+                     * @param _nodeConfig <p>云原生API网关节点信息。</p>
                      * 
                      */
                     void SetNodeConfig(const CloudNativeAPIGatewayNodeConfig& _nodeConfig);
@@ -185,15 +177,15 @@ namespace TencentCloud
                     bool NodeConfigHasBeenSet() const;
 
                     /**
-                     * 获取云原生API网关vpc配置。
-                     * @return VpcConfig 云原生API网关vpc配置。
+                     * 获取<p>云原生API网关vpc配置。</p>
+                     * @return VpcConfig <p>云原生API网关vpc配置。</p>
                      * 
                      */
                     CloudNativeAPIGatewayVpcConfig GetVpcConfig() const;
 
                     /**
-                     * 设置云原生API网关vpc配置。
-                     * @param _vpcConfig 云原生API网关vpc配置。
+                     * 设置<p>云原生API网关vpc配置。</p>
+                     * @param _vpcConfig <p>云原生API网关vpc配置。</p>
                      * 
                      */
                     void SetVpcConfig(const CloudNativeAPIGatewayVpcConfig& _vpcConfig);
@@ -206,15 +198,15 @@ namespace TencentCloud
                     bool VpcConfigHasBeenSet() const;
 
                     /**
-                     * 获取云原生API网关描述。
-                     * @return Description 云原生API网关描述。
+                     * 获取<p>云原生API网关描述。</p>
+                     * @return Description <p>云原生API网关描述。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置云原生API网关描述。
-                     * @param _description 云原生API网关描述。
+                     * 设置<p>云原生API网关描述。</p>
+                     * @param _description <p>云原生API网关描述。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -227,15 +219,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取云原生API网关创建时间。
-                     * @return CreateTime 云原生API网关创建时间。
+                     * 获取<p>云原生API网关创建时间。</p>
+                     * @return CreateTime <p>云原生API网关创建时间。</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置云原生API网关创建时间。
-                     * @param _createTime 云原生API网关创建时间。
+                     * 设置<p>云原生API网关创建时间。</p>
+                     * @param _createTime <p>云原生API网关创建时间。</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -248,15 +240,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例的标签信息
-                     * @return Tags 实例的标签信息
+                     * 获取<p>实例的标签信息</p>
+                     * @return Tags <p>实例的标签信息</p>
                      * 
                      */
                     std::vector<InstanceTagInfo> GetTags() const;
 
                     /**
-                     * 设置实例的标签信息
-                     * @param _tags 实例的标签信息
+                     * 设置<p>实例的标签信息</p>
+                     * @param _tags <p>实例的标签信息</p>
                      * 
                      */
                     void SetTags(const std::vector<InstanceTagInfo>& _tags);
@@ -269,15 +261,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取是否开启 cls 日志
-                     * @return EnableCls 是否开启 cls 日志
+                     * 获取<p>是否开启 cls 日志</p>
+                     * @return EnableCls <p>是否开启 cls 日志</p>
                      * 
                      */
                     bool GetEnableCls() const;
 
                     /**
-                     * 设置是否开启 cls 日志
-                     * @param _enableCls 是否开启 cls 日志
+                     * 设置<p>是否开启 cls 日志</p>
+                     * @param _enableCls <p>是否开启 cls 日志</p>
                      * 
                      */
                     void SetEnableCls(const bool& _enableCls);
@@ -290,15 +282,15 @@ namespace TencentCloud
                     bool EnableClsHasBeenSet() const;
 
                     /**
-                     * 获取付费模式，0表示后付费，1预付费
-                     * @return TradeType 付费模式，0表示后付费，1预付费
+                     * 获取<p>付费模式，0表示后付费，1预付费</p>
+                     * @return TradeType <p>付费模式，0表示后付费，1预付费</p>
                      * 
                      */
                     int64_t GetTradeType() const;
 
                     /**
-                     * 设置付费模式，0表示后付费，1预付费
-                     * @param _tradeType 付费模式，0表示后付费，1预付费
+                     * 设置<p>付费模式，0表示后付费，1预付费</p>
+                     * @param _tradeType <p>付费模式，0表示后付费，1预付费</p>
                      * 
                      */
                     void SetTradeType(const int64_t& _tradeType);
@@ -311,15 +303,15 @@ namespace TencentCloud
                     bool TradeTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例版本，当前支持开发版、标准版、专业版【TRIAL、STANDARD、PROFESSIONAL】
-                     * @return FeatureVersion 实例版本，当前支持开发版、标准版、专业版【TRIAL、STANDARD、PROFESSIONAL】
+                     * 获取<p>实例版本，当前支持开发版、标准版、专业版【TRIAL、STANDARD、PROFESSIONAL】</p>
+                     * @return FeatureVersion <p>实例版本，当前支持开发版、标准版、专业版【TRIAL、STANDARD、PROFESSIONAL】</p>
                      * 
                      */
                     std::string GetFeatureVersion() const;
 
                     /**
-                     * 设置实例版本，当前支持开发版、标准版、专业版【TRIAL、STANDARD、PROFESSIONAL】
-                     * @param _featureVersion 实例版本，当前支持开发版、标准版、专业版【TRIAL、STANDARD、PROFESSIONAL】
+                     * 设置<p>实例版本，当前支持开发版、标准版、专业版【TRIAL、STANDARD、PROFESSIONAL】</p>
+                     * @param _featureVersion <p>实例版本，当前支持开发版、标准版、专业版【TRIAL、STANDARD、PROFESSIONAL】</p>
                      * 
                      */
                     void SetFeatureVersion(const std::string& _featureVersion);
@@ -332,15 +324,15 @@ namespace TencentCloud
                     bool FeatureVersionHasBeenSet() const;
 
                     /**
-                     * 获取公网出流量带宽，[1,2048]Mbps
-                     * @return InternetMaxBandwidthOut 公网出流量带宽，[1,2048]Mbps
+                     * 获取<p>公网出流量带宽，[1,2048]Mbps</p>
+                     * @return InternetMaxBandwidthOut <p>公网出流量带宽，[1,2048]Mbps</p>
                      * 
                      */
                     uint64_t GetInternetMaxBandwidthOut() const;
 
                     /**
-                     * 设置公网出流量带宽，[1,2048]Mbps
-                     * @param _internetMaxBandwidthOut 公网出流量带宽，[1,2048]Mbps
+                     * 设置<p>公网出流量带宽，[1,2048]Mbps</p>
+                     * @param _internetMaxBandwidthOut <p>公网出流量带宽，[1,2048]Mbps</p>
                      * 
                      */
                     void SetInternetMaxBandwidthOut(const uint64_t& _internetMaxBandwidthOut);
@@ -353,19 +345,15 @@ namespace TencentCloud
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标记，0表示默认状态(用户未设置，即初始状态)；
-1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0
-                     * @return AutoRenewFlag 自动续费标记，0表示默认状态(用户未设置，即初始状态)；
-1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0
+                     * 获取<p>自动续费标记，0表示默认状态(用户未设置，即初始状态)；<br>1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0</p>
+                     * @return AutoRenewFlag <p>自动续费标记，0表示默认状态(用户未设置，即初始状态)；<br>1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0</p>
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置自动续费标记，0表示默认状态(用户未设置，即初始状态)；
-1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0
-                     * @param _autoRenewFlag 自动续费标记，0表示默认状态(用户未设置，即初始状态)；
-1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0
+                     * 设置<p>自动续费标记，0表示默认状态(用户未设置，即初始状态)；<br>1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0</p>
+                     * @param _autoRenewFlag <p>自动续费标记，0表示默认状态(用户未设置，即初始状态)；<br>1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0</p>
                      * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
@@ -378,15 +366,15 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取到期时间，预付费时使用
-                     * @return CurDeadline 到期时间，预付费时使用
+                     * 获取<p>到期时间，预付费时使用</p>
+                     * @return CurDeadline <p>到期时间，预付费时使用</p>
                      * 
                      */
                     std::string GetCurDeadline() const;
 
                     /**
-                     * 设置到期时间，预付费时使用
-                     * @param _curDeadline 到期时间，预付费时使用
+                     * 设置<p>到期时间，预付费时使用</p>
+                     * @param _curDeadline <p>到期时间，预付费时使用</p>
                      * 
                      */
                     void SetCurDeadline(const std::string& _curDeadline);
@@ -399,15 +387,15 @@ namespace TencentCloud
                     bool CurDeadlineHasBeenSet() const;
 
                     /**
-                     * 获取隔离时间，实例隔离时使用
-                     * @return IsolateTime 隔离时间，实例隔离时使用
+                     * 获取<p>隔离时间，实例隔离时使用</p>
+                     * @return IsolateTime <p>隔离时间，实例隔离时使用</p>
                      * 
                      */
                     std::string GetIsolateTime() const;
 
                     /**
-                     * 设置隔离时间，实例隔离时使用
-                     * @param _isolateTime 隔离时间，实例隔离时使用
+                     * 设置<p>隔离时间，实例隔离时使用</p>
+                     * @param _isolateTime <p>隔离时间，实例隔离时使用</p>
                      * 
                      */
                     void SetIsolateTime(const std::string& _isolateTime);
@@ -420,15 +408,15 @@ namespace TencentCloud
                     bool IsolateTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启客户端公网。
-                     * @return EnableInternet 是否开启客户端公网。
+                     * 获取<p>是否开启客户端公网。</p>
+                     * @return EnableInternet <p>是否开启客户端公网。</p>
                      * 
                      */
                     bool GetEnableInternet() const;
 
                     /**
-                     * 设置是否开启客户端公网。
-                     * @param _enableInternet 是否开启客户端公网。
+                     * 设置<p>是否开启客户端公网。</p>
+                     * @param _enableInternet <p>是否开启客户端公网。</p>
                      * 
                      */
                     void SetEnableInternet(const bool& _enableInternet);
@@ -441,15 +429,15 @@ namespace TencentCloud
                     bool EnableInternetHasBeenSet() const;
 
                     /**
-                     * 获取实例实际的地域信息
-                     * @return EngineRegion 实例实际的地域信息
+                     * 获取<p>实例实际的地域信息</p>
+                     * @return EngineRegion <p>实例实际的地域信息</p>
                      * 
                      */
                     std::string GetEngineRegion() const;
 
                     /**
-                     * 设置实例实际的地域信息
-                     * @param _engineRegion 实例实际的地域信息
+                     * 设置<p>实例实际的地域信息</p>
+                     * @param _engineRegion <p>实例实际的地域信息</p>
                      * 
                      */
                     void SetEngineRegion(const std::string& _engineRegion);
@@ -462,15 +450,15 @@ namespace TencentCloud
                     bool EngineRegionHasBeenSet() const;
 
                     /**
-                     * 获取Ingress class名称
-                     * @return IngressClassName Ingress class名称
+                     * 获取<p>Ingress class名称</p>
+                     * @return IngressClassName <p>Ingress class名称</p>
                      * 
                      */
                     std::string GetIngressClassName() const;
 
                     /**
-                     * 设置Ingress class名称
-                     * @param _ingressClassName Ingress class名称
+                     * 设置<p>Ingress class名称</p>
+                     * @param _ingressClassName <p>Ingress class名称</p>
                      * 
                      */
                     void SetIngressClassName(const std::string& _ingressClassName);
@@ -483,15 +471,15 @@ namespace TencentCloud
                     bool IngressClassNameHasBeenSet() const;
 
                     /**
-                     * 获取公网计费方式。可选取值 BANDWIDTH | TRAFFIC ，表示按带宽和按流量计费。
-                     * @return InternetPayMode 公网计费方式。可选取值 BANDWIDTH | TRAFFIC ，表示按带宽和按流量计费。
+                     * 获取<p>公网计费方式。可选取值 BANDWIDTH | TRAFFIC ，表示按带宽和按流量计费。</p>
+                     * @return InternetPayMode <p>公网计费方式。可选取值 BANDWIDTH | TRAFFIC ，表示按带宽和按流量计费。</p>
                      * 
                      */
                     std::string GetInternetPayMode() const;
 
                     /**
-                     * 设置公网计费方式。可选取值 BANDWIDTH | TRAFFIC ，表示按带宽和按流量计费。
-                     * @param _internetPayMode 公网计费方式。可选取值 BANDWIDTH | TRAFFIC ，表示按带宽和按流量计费。
+                     * 设置<p>公网计费方式。可选取值 BANDWIDTH | TRAFFIC ，表示按带宽和按流量计费。</p>
+                     * @param _internetPayMode <p>公网计费方式。可选取值 BANDWIDTH | TRAFFIC ，表示按带宽和按流量计费。</p>
                      * 
                      */
                     void SetInternetPayMode(const std::string& _internetPayMode);
@@ -504,15 +492,15 @@ namespace TencentCloud
                     bool InternetPayModeHasBeenSet() const;
 
                     /**
-                     * 获取云原生API网关小版本号
-                     * @return GatewayMinorVersion 云原生API网关小版本号
+                     * 获取<p>云原生API网关小版本号</p>
+                     * @return GatewayMinorVersion <p>云原生API网关小版本号</p>
                      * 
                      */
                     std::string GetGatewayMinorVersion() const;
 
                     /**
-                     * 设置云原生API网关小版本号
-                     * @param _gatewayMinorVersion 云原生API网关小版本号
+                     * 设置<p>云原生API网关小版本号</p>
+                     * @param _gatewayMinorVersion <p>云原生API网关小版本号</p>
                      * 
                      */
                     void SetGatewayMinorVersion(const std::string& _gatewayMinorVersion);
@@ -525,15 +513,15 @@ namespace TencentCloud
                     bool GatewayMinorVersionHasBeenSet() const;
 
                     /**
-                     * 获取实例监听的端口信息
-                     * @return InstancePort 实例监听的端口信息
+                     * 获取<p>实例监听的端口信息</p>
+                     * @return InstancePort <p>实例监听的端口信息</p>
                      * 
                      */
                     InstancePort GetInstancePort() const;
 
                     /**
-                     * 设置实例监听的端口信息
-                     * @param _instancePort 实例监听的端口信息
+                     * 设置<p>实例监听的端口信息</p>
+                     * @param _instancePort <p>实例监听的端口信息</p>
                      * 
                      */
                     void SetInstancePort(const InstancePort& _instancePort);
@@ -546,15 +534,15 @@ namespace TencentCloud
                     bool InstancePortHasBeenSet() const;
 
                     /**
-                     * 获取公网CLB默认类型
-                     * @return LoadBalancerType 公网CLB默认类型
+                     * 获取<p>公网CLB默认类型</p>
+                     * @return LoadBalancerType <p>公网CLB默认类型</p>
                      * 
                      */
                     std::string GetLoadBalancerType() const;
 
                     /**
-                     * 设置公网CLB默认类型
-                     * @param _loadBalancerType 公网CLB默认类型
+                     * 设置<p>公网CLB默认类型</p>
+                     * @param _loadBalancerType <p>公网CLB默认类型</p>
                      * 
                      */
                     void SetLoadBalancerType(const std::string& _loadBalancerType);
@@ -567,15 +555,15 @@ namespace TencentCloud
                     bool LoadBalancerTypeHasBeenSet() const;
 
                     /**
-                     * 获取公网IP地址列表
-                     * @return PublicIpAddresses 公网IP地址列表
+                     * 获取<p>公网IP地址列表</p>
+                     * @return PublicIpAddresses <p>公网IP地址列表</p>
                      * 
                      */
                     std::vector<std::string> GetPublicIpAddresses() const;
 
                     /**
-                     * 设置公网IP地址列表
-                     * @param _publicIpAddresses 公网IP地址列表
+                     * 设置<p>公网IP地址列表</p>
+                     * @param _publicIpAddresses <p>公网IP地址列表</p>
                      * 
                      */
                     void SetPublicIpAddresses(const std::vector<std::string>& _publicIpAddresses);
@@ -588,15 +576,15 @@ namespace TencentCloud
                     bool PublicIpAddressesHasBeenSet() const;
 
                     /**
-                     * 获取是否开启删除保护
-                     * @return DeleteProtect 是否开启删除保护
+                     * 获取<p>是否开启删除保护</p>
+                     * @return DeleteProtect <p>是否开启删除保护</p>
                      * 
                      */
                     bool GetDeleteProtect() const;
 
                     /**
-                     * 设置是否开启删除保护
-                     * @param _deleteProtect 是否开启删除保护
+                     * 设置<p>是否开启删除保护</p>
+                     * @param _deleteProtect <p>是否开启删除保护</p>
                      * 
                      */
                     void SetDeleteProtect(const bool& _deleteProtect);
@@ -609,18 +597,18 @@ namespace TencentCloud
                     bool DeleteProtectHasBeenSet() const;
 
                     /**
-                     * 获取表示可以升级的版本号
+                     * 获取<p>表示可以升级的版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AvailableVersions 表示可以升级的版本号
+                     * @return AvailableVersions <p>表示可以升级的版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAvailableVersions() const;
 
                     /**
-                     * 设置表示可以升级的版本号
+                     * 设置<p>表示可以升级的版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _availableVersions 表示可以升级的版本号
+                     * @param _availableVersions <p>表示可以升级的版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -634,15 +622,15 @@ namespace TencentCloud
                     bool AvailableVersionsHasBeenSet() const;
 
                     /**
-                     * 获取网关可以升级的版本号列表
-                     * @return AvailableUpgradeVersions 网关可以升级的版本号列表
+                     * 获取<p>网关可以升级的版本号列表</p>
+                     * @return AvailableUpgradeVersions <p>网关可以升级的版本号列表</p>
                      * 
                      */
                     std::vector<std::string> GetAvailableUpgradeVersions() const;
 
                     /**
-                     * 设置网关可以升级的版本号列表
-                     * @param _availableUpgradeVersions 网关可以升级的版本号列表
+                     * 设置<p>网关可以升级的版本号列表</p>
+                     * @param _availableUpgradeVersions <p>网关可以升级的版本号列表</p>
                      * 
                      */
                     void SetAvailableUpgradeVersions(const std::vector<std::string>& _availableUpgradeVersions);
@@ -655,15 +643,15 @@ namespace TencentCloud
                     bool AvailableUpgradeVersionsHasBeenSet() const;
 
                     /**
-                     * 获取是否提示可升级
-                     * @return AvailableUpgrade 是否提示可升级
+                     * 获取<p>是否提示可升级</p>
+                     * @return AvailableUpgrade <p>是否提示可升级</p>
                      * 
                      */
                     bool GetAvailableUpgrade() const;
 
                     /**
-                     * 设置是否提示可升级
-                     * @param _availableUpgrade 是否提示可升级
+                     * 设置<p>是否提示可升级</p>
+                     * @param _availableUpgrade <p>是否提示可升级</p>
                      * 
                      */
                     void SetAvailableUpgrade(const bool& _availableUpgrade);
@@ -676,15 +664,15 @@ namespace TencentCloud
                     bool AvailableUpgradeHasBeenSet() const;
 
                     /**
-                     * 获取可回退的版本
-                     * @return AvailableRollbackVersion 可回退的版本
+                     * 获取<p>可回退的版本</p>
+                     * @return AvailableRollbackVersion <p>可回退的版本</p>
                      * 
                      */
                     std::string GetAvailableRollbackVersion() const;
 
                     /**
-                     * 设置可回退的版本
-                     * @param _availableRollbackVersion 可回退的版本
+                     * 设置<p>可回退的版本</p>
+                     * @param _availableRollbackVersion <p>可回退的版本</p>
                      * 
                      */
                     void SetAvailableRollbackVersion(const std::string& _availableRollbackVersion);
@@ -696,191 +684,215 @@ namespace TencentCloud
                      */
                     bool AvailableRollbackVersionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>强制跳转HTTPS开关</p>
+                     * @return ForceHTTPSRedirect <p>强制跳转HTTPS开关</p>
+                     * 
+                     */
+                    bool GetForceHTTPSRedirect() const;
+
+                    /**
+                     * 设置<p>强制跳转HTTPS开关</p>
+                     * @param _forceHTTPSRedirect <p>强制跳转HTTPS开关</p>
+                     * 
+                     */
+                    void SetForceHTTPSRedirect(const bool& _forceHTTPSRedirect);
+
+                    /**
+                     * 判断参数 ForceHTTPSRedirect 是否已赋值
+                     * @return ForceHTTPSRedirect 是否已赋值
+                     * 
+                     */
+                    bool ForceHTTPSRedirectHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 云原生API网关ID。
+                     * <p>云原生API网关ID。</p>
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * 云原生API网关状态。
+                     * <p>云原生API网关状态。</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 云原生API网关名。
+                     * <p>云原生API网关名。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 云原生API网关类型。
+                     * <p>云原生API网关类型。</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 实例版本：
-- 2.4.1
-- 2.5.1
+                     * <p>实例版本：</p><ul><li>2.4.1</li><li>2.5.1</li></ul>
                      */
                     std::string m_gatewayVersion;
                     bool m_gatewayVersionHasBeenSet;
 
                     /**
-                     * 云原生API网关节点信息。
+                     * <p>云原生API网关节点信息。</p>
                      */
                     CloudNativeAPIGatewayNodeConfig m_nodeConfig;
                     bool m_nodeConfigHasBeenSet;
 
                     /**
-                     * 云原生API网关vpc配置。
+                     * <p>云原生API网关vpc配置。</p>
                      */
                     CloudNativeAPIGatewayVpcConfig m_vpcConfig;
                     bool m_vpcConfigHasBeenSet;
 
                     /**
-                     * 云原生API网关描述。
+                     * <p>云原生API网关描述。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 云原生API网关创建时间。
+                     * <p>云原生API网关创建时间。</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 实例的标签信息
+                     * <p>实例的标签信息</p>
                      */
                     std::vector<InstanceTagInfo> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 是否开启 cls 日志
+                     * <p>是否开启 cls 日志</p>
                      */
                     bool m_enableCls;
                     bool m_enableClsHasBeenSet;
 
                     /**
-                     * 付费模式，0表示后付费，1预付费
+                     * <p>付费模式，0表示后付费，1预付费</p>
                      */
                     int64_t m_tradeType;
                     bool m_tradeTypeHasBeenSet;
 
                     /**
-                     * 实例版本，当前支持开发版、标准版、专业版【TRIAL、STANDARD、PROFESSIONAL】
+                     * <p>实例版本，当前支持开发版、标准版、专业版【TRIAL、STANDARD、PROFESSIONAL】</p>
                      */
                     std::string m_featureVersion;
                     bool m_featureVersionHasBeenSet;
 
                     /**
-                     * 公网出流量带宽，[1,2048]Mbps
+                     * <p>公网出流量带宽，[1,2048]Mbps</p>
                      */
                     uint64_t m_internetMaxBandwidthOut;
                     bool m_internetMaxBandwidthOutHasBeenSet;
 
                     /**
-                     * 自动续费标记，0表示默认状态(用户未设置，即初始状态)；
-1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0
+                     * <p>自动续费标记，0表示默认状态(用户未设置，即初始状态)；<br>1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0</p>
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 到期时间，预付费时使用
+                     * <p>到期时间，预付费时使用</p>
                      */
                     std::string m_curDeadline;
                     bool m_curDeadlineHasBeenSet;
 
                     /**
-                     * 隔离时间，实例隔离时使用
+                     * <p>隔离时间，实例隔离时使用</p>
                      */
                     std::string m_isolateTime;
                     bool m_isolateTimeHasBeenSet;
 
                     /**
-                     * 是否开启客户端公网。
+                     * <p>是否开启客户端公网。</p>
                      */
                     bool m_enableInternet;
                     bool m_enableInternetHasBeenSet;
 
                     /**
-                     * 实例实际的地域信息
+                     * <p>实例实际的地域信息</p>
                      */
                     std::string m_engineRegion;
                     bool m_engineRegionHasBeenSet;
 
                     /**
-                     * Ingress class名称
+                     * <p>Ingress class名称</p>
                      */
                     std::string m_ingressClassName;
                     bool m_ingressClassNameHasBeenSet;
 
                     /**
-                     * 公网计费方式。可选取值 BANDWIDTH | TRAFFIC ，表示按带宽和按流量计费。
+                     * <p>公网计费方式。可选取值 BANDWIDTH | TRAFFIC ，表示按带宽和按流量计费。</p>
                      */
                     std::string m_internetPayMode;
                     bool m_internetPayModeHasBeenSet;
 
                     /**
-                     * 云原生API网关小版本号
+                     * <p>云原生API网关小版本号</p>
                      */
                     std::string m_gatewayMinorVersion;
                     bool m_gatewayMinorVersionHasBeenSet;
 
                     /**
-                     * 实例监听的端口信息
+                     * <p>实例监听的端口信息</p>
                      */
                     InstancePort m_instancePort;
                     bool m_instancePortHasBeenSet;
 
                     /**
-                     * 公网CLB默认类型
+                     * <p>公网CLB默认类型</p>
                      */
                     std::string m_loadBalancerType;
                     bool m_loadBalancerTypeHasBeenSet;
 
                     /**
-                     * 公网IP地址列表
+                     * <p>公网IP地址列表</p>
                      */
                     std::vector<std::string> m_publicIpAddresses;
                     bool m_publicIpAddressesHasBeenSet;
 
                     /**
-                     * 是否开启删除保护
+                     * <p>是否开启删除保护</p>
                      */
                     bool m_deleteProtect;
                     bool m_deleteProtectHasBeenSet;
 
                     /**
-                     * 表示可以升级的版本号
+                     * <p>表示可以升级的版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_availableVersions;
                     bool m_availableVersionsHasBeenSet;
 
                     /**
-                     * 网关可以升级的版本号列表
+                     * <p>网关可以升级的版本号列表</p>
                      */
                     std::vector<std::string> m_availableUpgradeVersions;
                     bool m_availableUpgradeVersionsHasBeenSet;
 
                     /**
-                     * 是否提示可升级
+                     * <p>是否提示可升级</p>
                      */
                     bool m_availableUpgrade;
                     bool m_availableUpgradeHasBeenSet;
 
                     /**
-                     * 可回退的版本
+                     * <p>可回退的版本</p>
                      */
                     std::string m_availableRollbackVersion;
                     bool m_availableRollbackVersionHasBeenSet;
+
+                    /**
+                     * <p>强制跳转HTTPS开关</p>
+                     */
+                    bool m_forceHTTPSRedirect;
+                    bool m_forceHTTPSRedirectHasBeenSet;
 
                 };
             }

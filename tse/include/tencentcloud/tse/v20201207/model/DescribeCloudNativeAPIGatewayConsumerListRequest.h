@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>每页条数，范围 [1, 100]，默认 20。</p>
-                     * @return Limit <p>每页条数，范围 [1, 100]，默认 20。</p>
+                     * 获取<p>页显示条数，最大20</p>
+                     * @return Limit <p>页显示条数，最大20</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置<p>每页条数，范围 [1, 100]，默认 20。</p>
-                     * @param _limit <p>每页条数，范围 [1, 100]，默认 20。</p>
+                     * 设置<p>页显示条数，最大20</p>
+                     * @param _limit <p>页显示条数，最大20</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取<p>起始位置，从 0 开始。</p>
-                     * @return Offset <p>起始位置，从 0 开始。</p>
+                     * 获取<p>起始位置</p>
+                     * @return Offset <p>起始位置</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置<p>起始位置，从 0 开始。</p>
-                     * @param _offset <p>起始位置，从 0 开始。</p>
+                     * 设置<p>起始位置</p>
+                     * @param _offset <p>起始位置</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -105,6 +105,48 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>资源类型</p><p>枚举值：</p><ul><li>ModelAPI： 模型API</li><li>MCPServer： MCP服务</li></ul>
+                     * @return ResourceType <p>资源类型</p><p>枚举值：</p><ul><li>ModelAPI： 模型API</li><li>MCPServer： MCP服务</li></ul>
+                     * 
+                     */
+                    std::string GetResourceType() const;
+
+                    /**
+                     * 设置<p>资源类型</p><p>枚举值：</p><ul><li>ModelAPI： 模型API</li><li>MCPServer： MCP服务</li></ul>
+                     * @param _resourceType <p>资源类型</p><p>枚举值：</p><ul><li>ModelAPI： 模型API</li><li>MCPServer： MCP服务</li></ul>
+                     * 
+                     */
+                    void SetResourceType(const std::string& _resourceType);
+
+                    /**
+                     * 判断参数 ResourceType 是否已赋值
+                     * @return ResourceType 是否已赋值
+                     * 
+                     */
+                    bool ResourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>资源ID</p>
+                     * @return ResourceId <p>资源ID</p>
+                     * 
+                     */
+                    std::string GetResourceId() const;
+
+                    /**
+                     * 设置<p>资源ID</p>
+                     * @param _resourceId <p>资源ID</p>
+                     * 
+                     */
+                    void SetResourceId(const std::string& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     * 
+                     */
+                    bool ResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -114,16 +156,28 @@ namespace TencentCloud
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * <p>每页条数，范围 [1, 100]，默认 20。</p>
+                     * <p>页显示条数，最大20</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * <p>起始位置，从 0 开始。</p>
+                     * <p>起始位置</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * <p>资源类型</p><p>枚举值：</p><ul><li>ModelAPI： 模型API</li><li>MCPServer： MCP服务</li></ul>
+                     */
+                    std::string m_resourceType;
+                    bool m_resourceTypeHasBeenSet;
+
+                    /**
+                     * <p>资源ID</p>
+                     */
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
 
                 };
             }

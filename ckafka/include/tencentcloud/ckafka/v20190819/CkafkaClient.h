@@ -183,6 +183,8 @@
 #include <tencentcloud/ckafka/v20190819/model/InquireCkafkaPriceResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/InstanceScalingDownRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/InstanceScalingDownResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/IsolatedInstancePreRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/IsolatedInstancePreResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyAccessPolicyRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyAccessPolicyResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyAclRuleRequest.h>
@@ -471,6 +473,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InstanceScalingDownResponse> InstanceScalingDownOutcome;
                 typedef std::future<InstanceScalingDownOutcome> InstanceScalingDownOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::InstanceScalingDownRequest&, InstanceScalingDownOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstanceScalingDownAsyncHandler;
+                typedef Outcome<Core::Error, Model::IsolatedInstancePreResponse> IsolatedInstancePreOutcome;
+                typedef std::future<IsolatedInstancePreOutcome> IsolatedInstancePreOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::IsolatedInstancePreRequest&, IsolatedInstancePreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolatedInstancePreAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAccessPolicyResponse> ModifyAccessPolicyOutcome;
                 typedef std::future<ModifyAccessPolicyOutcome> ModifyAccessPolicyOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::ModifyAccessPolicyRequest&, ModifyAccessPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccessPolicyAsyncHandler;
@@ -1245,6 +1250,15 @@ namespace TencentCloud
                 InstanceScalingDownOutcome InstanceScalingDown(const Model::InstanceScalingDownRequest &request);
                 void InstanceScalingDownAsync(const Model::InstanceScalingDownRequest& request, const InstanceScalingDownAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InstanceScalingDownOutcomeCallable InstanceScalingDownCallable(const Model::InstanceScalingDownRequest& request);
+
+                /**
+                 *隔离预付费实例，该接口会对实例执行隔离的动作，执行成功后实例会被隔离
+                 * @param req IsolatedInstancePreRequest
+                 * @return IsolatedInstancePreOutcome
+                 */
+                IsolatedInstancePreOutcome IsolatedInstancePre(const Model::IsolatedInstancePreRequest &request);
+                void IsolatedInstancePreAsync(const Model::IsolatedInstancePreRequest& request, const IsolatedInstancePreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                IsolatedInstancePreOutcomeCallable IsolatedInstancePreCallable(const Model::IsolatedInstancePreRequest& request);
 
                 /**
                  *修改实例公网IP白名单列表接口

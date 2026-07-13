@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备份总数。
-                     * @return TotalCount 备份总数。
+                     * 获取<p>备份总数。</p>
+                     * @return TotalCount <p>备份总数。</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取实例的备份数组。
-                     * @return BackupSet 实例的备份数组。
+                     * 获取<p>实例的备份数组。</p>
+                     * @return BackupSet <p>实例的备份数组。</p>
                      * 
                      */
                     std::vector<RedisBackupSet> GetBackupSet() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 备份总数。
+                     * <p>备份总数。</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 实例的备份数组。
+                     * <p>实例的备份数组。</p>
                      */
                     std::vector<RedisBackupSet> m_backupSet;
                     bool m_backupSetHasBeenSet;

@@ -68,6 +68,27 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
+                     * 获取
+                     * @return IsAutoMonitor 
+                     * 
+                     */
+                    uint64_t GetIsAutoMonitor() const;
+
+                    /**
+                     * 设置
+                     * @param _isAutoMonitor 
+                     * 
+                     */
+                    void SetIsAutoMonitor(const uint64_t& _isAutoMonitor);
+
+                    /**
+                     * 判断参数 IsAutoMonitor 是否已赋值
+                     * @return IsAutoMonitor 是否已赋值
+                     * 
+                     */
+                    bool IsAutoMonitorHasBeenSet() const;
+
+                    /**
                      * 获取bucket id集合
                      * @return BucketIdSet bucket id集合
                      * 
@@ -95,6 +116,12 @@ namespace TencentCloud
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    uint64_t m_isAutoMonitor;
+                    bool m_isAutoMonitorHasBeenSet;
 
                     /**
                      * bucket id集合

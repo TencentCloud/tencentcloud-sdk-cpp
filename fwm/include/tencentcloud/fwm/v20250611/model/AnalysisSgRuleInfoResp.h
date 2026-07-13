@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则id  等同RuleUuid
-                     * @return Id 规则id  等同RuleUuid
+                     * 获取<p>规则id  等同RuleUuid</p>
+                     * @return Id <p>规则id  等同RuleUuid</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置规则id  等同RuleUuid
-                     * @param _id 规则id  等同RuleUuid
+                     * 设置<p>规则id  等同RuleUuid</p>
+                     * @param _id <p>规则id  等同RuleUuid</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取规则Id
-                     * @return RuleId 规则Id
+                     * 获取<p>规则Id</p>
+                     * @return RuleId <p>规则Id</p>
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置规则Id
-                     * @param _ruleId 规则Id
+                     * 设置<p>规则Id</p>
+                     * @param _ruleId <p>规则Id</p>
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取排序
-                     * @return OrderIndex 排序
+                     * 获取<p>排序</p>
+                     * @return OrderIndex <p>排序</p>
                      * 
                      */
                     int64_t GetOrderIndex() const;
 
                     /**
-                     * 设置排序
-                     * @param _orderIndex 排序
+                     * 设置<p>排序</p>
+                     * @param _orderIndex <p>排序</p>
                      * 
                      */
                     void SetOrderIndex(const int64_t& _orderIndex);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool OrderIndexHasBeenSet() const;
 
                     /**
-                     * 获取云防排序
-                     * @return CfwOrderIndex 云防排序
+                     * 获取<p>云防排序</p>
+                     * @return CfwOrderIndex <p>云防排序</p>
                      * 
                      */
                     int64_t GetCfwOrderIndex() const;
 
                     /**
-                     * 设置云防排序
-                     * @param _cfwOrderIndex 云防排序
+                     * 设置<p>云防排序</p>
+                     * @param _cfwOrderIndex <p>云防排序</p>
                      * 
                      */
                     void SetCfwOrderIndex(const int64_t& _cfwOrderIndex);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool CfwOrderIndexHasBeenSet() const;
 
                     /**
-                     * 获取源规则内容
-                     * @return SourceId 源规则内容
+                     * 获取<p>源规则内容</p>
+                     * @return SourceId <p>源规则内容</p>
                      * 
                      */
                     std::string GetSourceId() const;
 
                     /**
-                     * 设置源规则内容
-                     * @param _sourceId 源规则内容
+                     * 设置<p>源规则内容</p>
+                     * @param _sourceId <p>源规则内容</p>
                      * 
                      */
                     void SetSourceId(const std::string& _sourceId);
@@ -154,63 +154,15 @@ namespace TencentCloud
                     bool SourceIdHasBeenSet() const;
 
                     /**
-                     * 获取源规则类型 
-取值范围 0/1/2/3/4/5/6/7/8/9/100
-0表示ip(net),
-1表示VPC实例(instance)
-2表示子网实例(instance)
-3表示CVM实例(instance)
-4表示CLB实例(instance)
-5表示ENI实例(instance)
-6表示数据库实例(instance)
-7表示模板(template)
-8表示标签(tag)
-9表示地域(region)
-100表示资产分组(resourcegroup)
-                     * @return SourceType 源规则类型 
-取值范围 0/1/2/3/4/5/6/7/8/9/100
-0表示ip(net),
-1表示VPC实例(instance)
-2表示子网实例(instance)
-3表示CVM实例(instance)
-4表示CLB实例(instance)
-5表示ENI实例(instance)
-6表示数据库实例(instance)
-7表示模板(template)
-8表示标签(tag)
-9表示地域(region)
-100表示资产分组(resourcegroup)
+                     * 获取<p>源规则类型<br>取值范围 0/1/2/3/4/5/6/7/8/9<br>0表示ip(net),<br>1表示VPC实例(instance)<br>2表示子网实例(instance)<br>3表示CVM实例(instance)<br>4表示CLB实例(instance)<br>5表示ENI实例(instance)<br>6表示数据库实例(instance)<br>7表示模板(template)<br>8表示标签(tag)<br>9表示地域(region)</p><p>枚举值：</p><ul><li>0： IP / CIDR</li><li>1： VPC 实例</li><li>2： 子网 </li><li>3： CVM 实例</li><li>4： CLB 实例</li><li>5： ENI（弹性网卡）实例</li><li>6： CDB（云数据库）实例</li><li>7： 参数模板</li><li>8： 标签</li><li>9： 地域</li></ul>
+                     * @return SourceType <p>源规则类型<br>取值范围 0/1/2/3/4/5/6/7/8/9<br>0表示ip(net),<br>1表示VPC实例(instance)<br>2表示子网实例(instance)<br>3表示CVM实例(instance)<br>4表示CLB实例(instance)<br>5表示ENI实例(instance)<br>6表示数据库实例(instance)<br>7表示模板(template)<br>8表示标签(tag)<br>9表示地域(region)</p><p>枚举值：</p><ul><li>0： IP / CIDR</li><li>1： VPC 实例</li><li>2： 子网 </li><li>3： CVM 实例</li><li>4： CLB 实例</li><li>5： ENI（弹性网卡）实例</li><li>6： CDB（云数据库）实例</li><li>7： 参数模板</li><li>8： 标签</li><li>9： 地域</li></ul>
                      * 
                      */
                     int64_t GetSourceType() const;
 
                     /**
-                     * 设置源规则类型 
-取值范围 0/1/2/3/4/5/6/7/8/9/100
-0表示ip(net),
-1表示VPC实例(instance)
-2表示子网实例(instance)
-3表示CVM实例(instance)
-4表示CLB实例(instance)
-5表示ENI实例(instance)
-6表示数据库实例(instance)
-7表示模板(template)
-8表示标签(tag)
-9表示地域(region)
-100表示资产分组(resourcegroup)
-                     * @param _sourceType 源规则类型 
-取值范围 0/1/2/3/4/5/6/7/8/9/100
-0表示ip(net),
-1表示VPC实例(instance)
-2表示子网实例(instance)
-3表示CVM实例(instance)
-4表示CLB实例(instance)
-5表示ENI实例(instance)
-6表示数据库实例(instance)
-7表示模板(template)
-8表示标签(tag)
-9表示地域(region)
-100表示资产分组(resourcegroup)
+                     * 设置<p>源规则类型<br>取值范围 0/1/2/3/4/5/6/7/8/9<br>0表示ip(net),<br>1表示VPC实例(instance)<br>2表示子网实例(instance)<br>3表示CVM实例(instance)<br>4表示CLB实例(instance)<br>5表示ENI实例(instance)<br>6表示数据库实例(instance)<br>7表示模板(template)<br>8表示标签(tag)<br>9表示地域(region)</p><p>枚举值：</p><ul><li>0： IP / CIDR</li><li>1： VPC 实例</li><li>2： 子网 </li><li>3： CVM 实例</li><li>4： CLB 实例</li><li>5： ENI（弹性网卡）实例</li><li>6： CDB（云数据库）实例</li><li>7： 参数模板</li><li>8： 标签</li><li>9： 地域</li></ul>
+                     * @param _sourceType <p>源规则类型<br>取值范围 0/1/2/3/4/5/6/7/8/9<br>0表示ip(net),<br>1表示VPC实例(instance)<br>2表示子网实例(instance)<br>3表示CVM实例(instance)<br>4表示CLB实例(instance)<br>5表示ENI实例(instance)<br>6表示数据库实例(instance)<br>7表示模板(template)<br>8表示标签(tag)<br>9表示地域(region)</p><p>枚举值：</p><ul><li>0： IP / CIDR</li><li>1： VPC 实例</li><li>2： 子网 </li><li>3： CVM 实例</li><li>4： CLB 实例</li><li>5： ENI（弹性网卡）实例</li><li>6： CDB（云数据库）实例</li><li>7： 参数模板</li><li>8： 标签</li><li>9： 地域</li></ul>
                      * 
                      */
                     void SetSourceType(const int64_t& _sourceType);
@@ -223,15 +175,15 @@ namespace TencentCloud
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取目的规则内容
-                     * @return TargetId 目的规则内容
+                     * 获取<p>目的规则内容</p>
+                     * @return TargetId <p>目的规则内容</p>
                      * 
                      */
                     std::string GetTargetId() const;
 
                     /**
-                     * 设置目的规则内容
-                     * @param _targetId 目的规则内容
+                     * 设置<p>目的规则内容</p>
+                     * @param _targetId <p>目的规则内容</p>
                      * 
                      */
                     void SetTargetId(const std::string& _targetId);
@@ -244,63 +196,15 @@ namespace TencentCloud
                     bool TargetIdHasBeenSet() const;
 
                     /**
-                     * 获取目的规则类型 
-取值范围 0/1/2/3/4/5/6/7/8/9/100
-0表示ip(net),
-1表示VPC实例(instance)
-2表示子网实例(instance)
-3表示CVM实例(instance)
-4表示CLB实例(instance)
-5表示ENI实例(instance)
-6表示数据库实例(instance)
-7表示模板(template)
-8表示标签(tag)
-9表示地域(region)
-100表示资产分组(resourcegroup)
-                     * @return TargetType 目的规则类型 
-取值范围 0/1/2/3/4/5/6/7/8/9/100
-0表示ip(net),
-1表示VPC实例(instance)
-2表示子网实例(instance)
-3表示CVM实例(instance)
-4表示CLB实例(instance)
-5表示ENI实例(instance)
-6表示数据库实例(instance)
-7表示模板(template)
-8表示标签(tag)
-9表示地域(region)
-100表示资产分组(resourcegroup)
+                     * 获取<p>目的规则类型<br>取值范围 0/1/2/3/4/5/6/7/8/9/100<br>0表示ip(net),<br>1表示VPC实例(instance)<br>2表示子网实例(instance)<br>3表示CVM实例(instance)<br>4表示CLB实例(instance)<br>5表示ENI实例(instance)<br>6表示数据库实例(instance)<br>7表示模板(template)<br>8表示标签(tag)<br>9表示地域(region)<br>100表示资产分组(resourcegroup)</p><p>枚举值：</p><ul><li>0： IP / CIDR</li><li>1： VPC 实例</li><li>2： 子网 </li><li>3： CVM 实例</li><li>4： CLB 实例</li><li>5： ENI（弹性网卡）实例</li><li>6： CDB（云数据库）实例</li><li>7： 参数模板</li><li>8： 标签</li><li>9： 地域</li></ul>
+                     * @return TargetType <p>目的规则类型<br>取值范围 0/1/2/3/4/5/6/7/8/9/100<br>0表示ip(net),<br>1表示VPC实例(instance)<br>2表示子网实例(instance)<br>3表示CVM实例(instance)<br>4表示CLB实例(instance)<br>5表示ENI实例(instance)<br>6表示数据库实例(instance)<br>7表示模板(template)<br>8表示标签(tag)<br>9表示地域(region)<br>100表示资产分组(resourcegroup)</p><p>枚举值：</p><ul><li>0： IP / CIDR</li><li>1： VPC 实例</li><li>2： 子网 </li><li>3： CVM 实例</li><li>4： CLB 实例</li><li>5： ENI（弹性网卡）实例</li><li>6： CDB（云数据库）实例</li><li>7： 参数模板</li><li>8： 标签</li><li>9： 地域</li></ul>
                      * 
                      */
                     int64_t GetTargetType() const;
 
                     /**
-                     * 设置目的规则类型 
-取值范围 0/1/2/3/4/5/6/7/8/9/100
-0表示ip(net),
-1表示VPC实例(instance)
-2表示子网实例(instance)
-3表示CVM实例(instance)
-4表示CLB实例(instance)
-5表示ENI实例(instance)
-6表示数据库实例(instance)
-7表示模板(template)
-8表示标签(tag)
-9表示地域(region)
-100表示资产分组(resourcegroup)
-                     * @param _targetType 目的规则类型 
-取值范围 0/1/2/3/4/5/6/7/8/9/100
-0表示ip(net),
-1表示VPC实例(instance)
-2表示子网实例(instance)
-3表示CVM实例(instance)
-4表示CLB实例(instance)
-5表示ENI实例(instance)
-6表示数据库实例(instance)
-7表示模板(template)
-8表示标签(tag)
-9表示地域(region)
-100表示资产分组(resourcegroup)
+                     * 设置<p>目的规则类型<br>取值范围 0/1/2/3/4/5/6/7/8/9/100<br>0表示ip(net),<br>1表示VPC实例(instance)<br>2表示子网实例(instance)<br>3表示CVM实例(instance)<br>4表示CLB实例(instance)<br>5表示ENI实例(instance)<br>6表示数据库实例(instance)<br>7表示模板(template)<br>8表示标签(tag)<br>9表示地域(region)<br>100表示资产分组(resourcegroup)</p><p>枚举值：</p><ul><li>0： IP / CIDR</li><li>1： VPC 实例</li><li>2： 子网 </li><li>3： CVM 实例</li><li>4： CLB 实例</li><li>5： ENI（弹性网卡）实例</li><li>6： CDB（云数据库）实例</li><li>7： 参数模板</li><li>8： 标签</li><li>9： 地域</li></ul>
+                     * @param _targetType <p>目的规则类型<br>取值范围 0/1/2/3/4/5/6/7/8/9/100<br>0表示ip(net),<br>1表示VPC实例(instance)<br>2表示子网实例(instance)<br>3表示CVM实例(instance)<br>4表示CLB实例(instance)<br>5表示ENI实例(instance)<br>6表示数据库实例(instance)<br>7表示模板(template)<br>8表示标签(tag)<br>9表示地域(region)<br>100表示资产分组(resourcegroup)</p><p>枚举值：</p><ul><li>0： IP / CIDR</li><li>1： VPC 实例</li><li>2： 子网 </li><li>3： CVM 实例</li><li>4： CLB 实例</li><li>5： ENI（弹性网卡）实例</li><li>6： CDB（云数据库）实例</li><li>7： 参数模板</li><li>8： 标签</li><li>9： 地域</li></ul>
                      * 
                      */
                     void SetTargetType(const int64_t& _targetType);
@@ -313,27 +217,15 @@ namespace TencentCloud
                     bool TargetTypeHasBeenSet() const;
 
                     /**
-                     * 获取协议名称
-取值范围:TCP/ANY/ICMP/UDP
-ANY:表示所有
-
-                     * @return Protocol 协议名称
-取值范围:TCP/ANY/ICMP/UDP
-ANY:表示所有
-
+                     * 获取<p>协议名称<br>取值范围:TCP/ANY/ICMP/UDP<br>ANY:表示所有</p>
+                     * @return Protocol <p>协议名称<br>取值范围:TCP/ANY/ICMP/UDP<br>ANY:表示所有</p>
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置协议名称
-取值范围:TCP/ANY/ICMP/UDP
-ANY:表示所有
-
-                     * @param _protocol 协议名称
-取值范围:TCP/ANY/ICMP/UDP
-ANY:表示所有
-
+                     * 设置<p>协议名称<br>取值范围:TCP/ANY/ICMP/UDP<br>ANY:表示所有</p>
+                     * @param _protocol <p>协议名称<br>取值范围:TCP/ANY/ICMP/UDP<br>ANY:表示所有</p>
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -346,15 +238,15 @@ ANY:表示所有
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取端口
-                     * @return Port 端口
+                     * 获取<p>端口</p>
+                     * @return Port <p>端口</p>
                      * 
                      */
                     std::string GetPort() const;
 
                     /**
-                     * 设置端口
-                     * @param _port 端口
+                     * 设置<p>端口</p>
+                     * @param _port <p>端口</p>
                      * 
                      */
                     void SetPort(const std::string& _port);
@@ -367,27 +259,15 @@ ANY:表示所有
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取规则策略
-取值范围:1/2
-1:阻断
-2:放行
-                     * @return Strategy 规则策略
-取值范围:1/2
-1:阻断
-2:放行
+                     * 获取<p>规则策略<br>取值范围:1/2<br>1:阻断<br>2:放行</p>
+                     * @return Strategy <p>规则策略<br>取值范围:1/2<br>1:阻断<br>2:放行</p>
                      * 
                      */
                     int64_t GetStrategy() const;
 
                     /**
-                     * 设置规则策略
-取值范围:1/2
-1:阻断
-2:放行
-                     * @param _strategy 规则策略
-取值范围:1/2
-1:阻断
-2:放行
+                     * 设置<p>规则策略<br>取值范围:1/2<br>1:阻断<br>2:放行</p>
+                     * @param _strategy <p>规则策略<br>取值范围:1/2<br>1:阻断<br>2:放行</p>
                      * 
                      */
                     void SetStrategy(const int64_t& _strategy);
@@ -400,15 +280,15 @@ ANY:表示所有
                     bool StrategyHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Detail 描述
+                     * 获取<p>描述</p>
+                     * @return Detail <p>描述</p>
                      * 
                      */
                     std::string GetDetail() const;
 
                     /**
-                     * 设置描述
-                     * @param _detail 描述
+                     * 设置<p>描述</p>
+                     * @param _detail <p>描述</p>
                      * 
                      */
                     void SetDetail(const std::string& _detail);
@@ -421,15 +301,15 @@ ANY:表示所有
                     bool DetailHasBeenSet() const;
 
                     /**
-                     * 获取地域
-                     * @return Region 地域
+                     * 获取<p>地域</p>
+                     * @return Region <p>地域</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域
-                     * @param _region 地域
+                     * 设置<p>地域</p>
+                     * @param _region <p>地域</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -442,15 +322,15 @@ ANY:表示所有
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取服务模板id
-                     * @return ServiceTemplateId 服务模板id
+                     * 获取<p>服务模板id</p>
+                     * @return ServiceTemplateId <p>服务模板id</p>
                      * 
                      */
                     std::string GetServiceTemplateId() const;
 
                     /**
-                     * 设置服务模板id
-                     * @param _serviceTemplateId 服务模板id
+                     * 设置<p>服务模板id</p>
+                     * @param _serviceTemplateId <p>服务模板id</p>
                      * 
                      */
                     void SetServiceTemplateId(const std::string& _serviceTemplateId);
@@ -463,15 +343,15 @@ ANY:表示所有
                     bool ServiceTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取源资产名称
-                     * @return SouInstanceName 源资产名称
+                     * 获取<p>源资产名称</p>
+                     * @return SouInstanceName <p>源资产名称</p>
                      * 
                      */
                     std::string GetSouInstanceName() const;
 
                     /**
-                     * 设置源资产名称
-                     * @param _souInstanceName 源资产名称
+                     * 设置<p>源资产名称</p>
+                     * @param _souInstanceName <p>源资产名称</p>
                      * 
                      */
                     void SetSouInstanceName(const std::string& _souInstanceName);
@@ -484,15 +364,15 @@ ANY:表示所有
                     bool SouInstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取源资产公网ip
-                     * @return SouPublicIp 源资产公网ip
+                     * 获取<p>源资产公网ip</p>
+                     * @return SouPublicIp <p>源资产公网ip</p>
                      * 
                      */
                     std::string GetSouPublicIp() const;
 
                     /**
-                     * 设置源资产公网ip
-                     * @param _souPublicIp 源资产公网ip
+                     * 设置<p>源资产公网ip</p>
+                     * @param _souPublicIp <p>源资产公网ip</p>
                      * 
                      */
                     void SetSouPublicIp(const std::string& _souPublicIp);
@@ -505,15 +385,15 @@ ANY:表示所有
                     bool SouPublicIpHasBeenSet() const;
 
                     /**
-                     * 获取源资产内网ip
-                     * @return SouPrivateIp 源资产内网ip
+                     * 获取<p>源资产内网ip</p>
+                     * @return SouPrivateIp <p>源资产内网ip</p>
                      * 
                      */
                     std::string GetSouPrivateIp() const;
 
                     /**
-                     * 设置源资产内网ip
-                     * @param _souPrivateIp 源资产内网ip
+                     * 设置<p>源资产内网ip</p>
+                     * @param _souPrivateIp <p>源资产内网ip</p>
                      * 
                      */
                     void SetSouPrivateIp(const std::string& _souPrivateIp);
@@ -526,15 +406,15 @@ ANY:表示所有
                     bool SouPrivateIpHasBeenSet() const;
 
                     /**
-                     * 获取源资产网段信息
-                     * @return SouCidr 源资产网段信息
+                     * 获取<p>源资产网段信息</p>
+                     * @return SouCidr <p>源资产网段信息</p>
                      * 
                      */
                     std::string GetSouCidr() const;
 
                     /**
-                     * 设置源资产网段信息
-                     * @param _souCidr 源资产网段信息
+                     * 设置<p>源资产网段信息</p>
+                     * @param _souCidr <p>源资产网段信息</p>
                      * 
                      */
                     void SetSouCidr(const std::string& _souCidr);
@@ -547,15 +427,15 @@ ANY:表示所有
                     bool SouCidrHasBeenSet() const;
 
                     /**
-                     * 获取源模板名称
-                     * @return SouParameterName 源模板名称
+                     * 获取<p>源模板名称</p>
+                     * @return SouParameterName <p>源模板名称</p>
                      * 
                      */
                     std::string GetSouParameterName() const;
 
                     /**
-                     * 设置源模板名称
-                     * @param _souParameterName 源模板名称
+                     * 设置<p>源模板名称</p>
+                     * @param _souParameterName <p>源模板名称</p>
                      * 
                      */
                     void SetSouParameterName(const std::string& _souParameterName);
@@ -568,15 +448,15 @@ ANY:表示所有
                     bool SouParameterNameHasBeenSet() const;
 
                     /**
-                     * 获取目的资产名称
-                     * @return InstanceName 目的资产名称
+                     * 获取<p>目的资产名称</p>
+                     * @return InstanceName <p>目的资产名称</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置目的资产名称
-                     * @param _instanceName 目的资产名称
+                     * 设置<p>目的资产名称</p>
+                     * @param _instanceName <p>目的资产名称</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -589,15 +469,15 @@ ANY:表示所有
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取目的资产公网ip
-                     * @return PublicIp 目的资产公网ip
+                     * 获取<p>目的资产公网ip</p>
+                     * @return PublicIp <p>目的资产公网ip</p>
                      * 
                      */
                     std::string GetPublicIp() const;
 
                     /**
-                     * 设置目的资产公网ip
-                     * @param _publicIp 目的资产公网ip
+                     * 设置<p>目的资产公网ip</p>
+                     * @param _publicIp <p>目的资产公网ip</p>
                      * 
                      */
                     void SetPublicIp(const std::string& _publicIp);
@@ -610,15 +490,15 @@ ANY:表示所有
                     bool PublicIpHasBeenSet() const;
 
                     /**
-                     * 获取目的资产内网ip
-                     * @return PrivateIp 目的资产内网ip
+                     * 获取<p>目的资产内网ip</p>
+                     * @return PrivateIp <p>目的资产内网ip</p>
                      * 
                      */
                     std::string GetPrivateIp() const;
 
                     /**
-                     * 设置目的资产内网ip
-                     * @param _privateIp 目的资产内网ip
+                     * 设置<p>目的资产内网ip</p>
+                     * @param _privateIp <p>目的资产内网ip</p>
                      * 
                      */
                     void SetPrivateIp(const std::string& _privateIp);
@@ -631,15 +511,15 @@ ANY:表示所有
                     bool PrivateIpHasBeenSet() const;
 
                     /**
-                     * 获取目的资产网段信息
-                     * @return Cidr 目的资产网段信息
+                     * 获取<p>目的资产网段信息</p>
+                     * @return Cidr <p>目的资产网段信息</p>
                      * 
                      */
                     std::string GetCidr() const;
 
                     /**
-                     * 设置目的资产网段信息
-                     * @param _cidr 目的资产网段信息
+                     * 设置<p>目的资产网段信息</p>
+                     * @param _cidr <p>目的资产网段信息</p>
                      * 
                      */
                     void SetCidr(const std::string& _cidr);
@@ -652,15 +532,15 @@ ANY:表示所有
                     bool CidrHasBeenSet() const;
 
                     /**
-                     * 获取目的模板名称
-                     * @return ParameterName 目的模板名称
+                     * 获取<p>目的模板名称</p>
+                     * @return ParameterName <p>目的模板名称</p>
                      * 
                      */
                     std::string GetParameterName() const;
 
                     /**
-                     * 设置目的模板名称
-                     * @param _parameterName 目的模板名称
+                     * 设置<p>目的模板名称</p>
+                     * @param _parameterName <p>目的模板名称</p>
                      * 
                      */
                     void SetParameterName(const std::string& _parameterName);
@@ -673,15 +553,15 @@ ANY:表示所有
                     bool ParameterNameHasBeenSet() const;
 
                     /**
-                     * 获取端口模板名称
-                     * @return ProtocolPortName 端口模板名称
+                     * 获取<p>端口模板名称</p>
+                     * @return ProtocolPortName <p>端口模板名称</p>
                      * 
                      */
                     std::string GetProtocolPortName() const;
 
                     /**
-                     * 设置端口模板名称
-                     * @param _protocolPortName 端口模板名称
+                     * 设置<p>端口模板名称</p>
+                     * @param _protocolPortName <p>端口模板名称</p>
                      * 
                      */
                     void SetProtocolPortName(const std::string& _protocolPortName);
@@ -694,15 +574,15 @@ ANY:表示所有
                     bool ProtocolPortNameHasBeenSet() const;
 
                     /**
-                     * 获取域名解析的IP统计
-                     * @return DnsParseCount 域名解析的IP统计
+                     * 获取<p>域名解析的IP统计</p>
+                     * @return DnsParseCount <p>域名解析的IP统计</p>
                      * 
                      */
                     SgDnsParseCount GetDnsParseCount() const;
 
                     /**
-                     * 设置域名解析的IP统计
-                     * @param _dnsParseCount 域名解析的IP统计
+                     * 设置<p>域名解析的IP统计</p>
+                     * @param _dnsParseCount <p>域名解析的IP统计</p>
                      * 
                      */
                     void SetDnsParseCount(const SgDnsParseCount& _dnsParseCount);
@@ -715,15 +595,15 @@ ANY:表示所有
                     bool DnsParseCountHasBeenSet() const;
 
                     /**
-                     * 获取规则生效范围
-                     * @return Scope 规则生效范围
+                     * 获取<p>规则生效范围</p>
+                     * @return Scope <p>规则生效范围</p>
                      * 
                      */
                     std::string GetScope() const;
 
                     /**
-                     * 设置规则生效范围
-                     * @param _scope 规则生效范围
+                     * 设置<p>规则生效范围</p>
+                     * @param _scope <p>规则生效范围</p>
                      * 
                      */
                     void SetScope(const std::string& _scope);
@@ -736,27 +616,15 @@ ANY:表示所有
                     bool ScopeHasBeenSet() const;
 
                     /**
-                     * 获取分区：
-1防火墙管理最前分区
-2是云防规则
-3防火墙管理最后分区
-                     * @return RulePartition 分区：
-1防火墙管理最前分区
-2是云防规则
-3防火墙管理最后分区
+                     * 获取<p>分区：<br>1防火墙管理最前分区<br>2是云防规则<br>3防火墙管理最后分区</p>
+                     * @return RulePartition <p>分区：<br>1防火墙管理最前分区<br>2是云防规则<br>3防火墙管理最后分区</p>
                      * 
                      */
                     int64_t GetRulePartition() const;
 
                     /**
-                     * 设置分区：
-1防火墙管理最前分区
-2是云防规则
-3防火墙管理最后分区
-                     * @param _rulePartition 分区：
-1防火墙管理最前分区
-2是云防规则
-3防火墙管理最后分区
+                     * 设置<p>分区：<br>1防火墙管理最前分区<br>2是云防规则<br>3防火墙管理最后分区</p>
+                     * @param _rulePartition <p>分区：<br>1防火墙管理最前分区<br>2是云防规则<br>3防火墙管理最后分区</p>
                      * 
                      */
                     void SetRulePartition(const int64_t& _rulePartition);
@@ -769,15 +637,15 @@ ANY:表示所有
                     bool RulePartitionHasBeenSet() const;
 
                     /**
-                     * 获取规则组Id
-                     * @return GroupId 规则组Id
+                     * 获取<p>规则组Id</p>
+                     * @return GroupId <p>规则组Id</p>
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置规则组Id
-                     * @param _groupId 规则组Id
+                     * 设置<p>规则组Id</p>
+                     * @param _groupId <p>规则组Id</p>
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -790,15 +658,15 @@ ANY:表示所有
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取规则组名称
-                     * @return GroupName 规则组名称
+                     * 获取<p>规则组名称</p>
+                     * @return GroupName <p>规则组名称</p>
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置规则组名称
-                     * @param _groupName 规则组名称
+                     * 设置<p>规则组名称</p>
+                     * @param _groupName <p>规则组名称</p>
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -811,15 +679,15 @@ ANY:表示所有
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取规则组内规则id
-                     * @return GroupRuleId 规则组内规则id
+                     * 获取<p>规则组内规则id</p>
+                     * @return GroupRuleId <p>规则组内规则id</p>
                      * 
                      */
                     std::string GetGroupRuleId() const;
 
                     /**
-                     * 设置规则组内规则id
-                     * @param _groupRuleId 规则组内规则id
+                     * 设置<p>规则组内规则id</p>
+                     * @param _groupRuleId <p>规则组内规则id</p>
                      * 
                      */
                     void SetGroupRuleId(const std::string& _groupRuleId);
@@ -832,15 +700,15 @@ ANY:表示所有
                     bool GroupRuleIdHasBeenSet() const;
 
                     /**
-                     * 获取策略Id
-                     * @return StrategyId 策略Id
+                     * 获取<p>策略Id</p>
+                     * @return StrategyId <p>策略Id</p>
                      * 
                      */
                     std::string GetStrategyId() const;
 
                     /**
-                     * 设置策略Id
-                     * @param _strategyId 策略Id
+                     * 设置<p>策略Id</p>
+                     * @param _strategyId <p>策略Id</p>
                      * 
                      */
                     void SetStrategyId(const std::string& _strategyId);
@@ -853,15 +721,15 @@ ANY:表示所有
                     bool StrategyIdHasBeenSet() const;
 
                     /**
-                     * 获取ip类型
-                     * @return IpVersion ip类型
+                     * 获取<p>ip类型</p>
+                     * @return IpVersion <p>ip类型</p>
                      * 
                      */
                     std::string GetIpVersion() const;
 
                     /**
-                     * 设置ip类型
-                     * @param _ipVersion ip类型
+                     * 设置<p>ip类型</p>
+                     * @param _ipVersion <p>ip类型</p>
                      * 
                      */
                     void SetIpVersion(const std::string& _ipVersion);
@@ -874,18 +742,18 @@ ANY:表示所有
                     bool IpVersionHasBeenSet() const;
 
                     /**
-                     * 获取成员信息
+                     * 获取<p>成员信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BelongMember 成员信息
+                     * @return BelongMember <p>成员信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MemberInfo GetBelongMember() const;
 
                     /**
-                     * 设置成员信息
+                     * 设置<p>成员信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _belongMember 成员信息
+                     * @param _belongMember <p>成员信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -901,238 +769,205 @@ ANY:表示所有
                 private:
 
                     /**
-                     * 规则id  等同RuleUuid
+                     * <p>规则id  等同RuleUuid</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 规则Id
+                     * <p>规则Id</p>
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * 排序
+                     * <p>排序</p>
                      */
                     int64_t m_orderIndex;
                     bool m_orderIndexHasBeenSet;
 
                     /**
-                     * 云防排序
+                     * <p>云防排序</p>
                      */
                     int64_t m_cfwOrderIndex;
                     bool m_cfwOrderIndexHasBeenSet;
 
                     /**
-                     * 源规则内容
+                     * <p>源规则内容</p>
                      */
                     std::string m_sourceId;
                     bool m_sourceIdHasBeenSet;
 
                     /**
-                     * 源规则类型 
-取值范围 0/1/2/3/4/5/6/7/8/9/100
-0表示ip(net),
-1表示VPC实例(instance)
-2表示子网实例(instance)
-3表示CVM实例(instance)
-4表示CLB实例(instance)
-5表示ENI实例(instance)
-6表示数据库实例(instance)
-7表示模板(template)
-8表示标签(tag)
-9表示地域(region)
-100表示资产分组(resourcegroup)
+                     * <p>源规则类型<br>取值范围 0/1/2/3/4/5/6/7/8/9<br>0表示ip(net),<br>1表示VPC实例(instance)<br>2表示子网实例(instance)<br>3表示CVM实例(instance)<br>4表示CLB实例(instance)<br>5表示ENI实例(instance)<br>6表示数据库实例(instance)<br>7表示模板(template)<br>8表示标签(tag)<br>9表示地域(region)</p><p>枚举值：</p><ul><li>0： IP / CIDR</li><li>1： VPC 实例</li><li>2： 子网 </li><li>3： CVM 实例</li><li>4： CLB 实例</li><li>5： ENI（弹性网卡）实例</li><li>6： CDB（云数据库）实例</li><li>7： 参数模板</li><li>8： 标签</li><li>9： 地域</li></ul>
                      */
                     int64_t m_sourceType;
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * 目的规则内容
+                     * <p>目的规则内容</p>
                      */
                     std::string m_targetId;
                     bool m_targetIdHasBeenSet;
 
                     /**
-                     * 目的规则类型 
-取值范围 0/1/2/3/4/5/6/7/8/9/100
-0表示ip(net),
-1表示VPC实例(instance)
-2表示子网实例(instance)
-3表示CVM实例(instance)
-4表示CLB实例(instance)
-5表示ENI实例(instance)
-6表示数据库实例(instance)
-7表示模板(template)
-8表示标签(tag)
-9表示地域(region)
-100表示资产分组(resourcegroup)
+                     * <p>目的规则类型<br>取值范围 0/1/2/3/4/5/6/7/8/9/100<br>0表示ip(net),<br>1表示VPC实例(instance)<br>2表示子网实例(instance)<br>3表示CVM实例(instance)<br>4表示CLB实例(instance)<br>5表示ENI实例(instance)<br>6表示数据库实例(instance)<br>7表示模板(template)<br>8表示标签(tag)<br>9表示地域(region)<br>100表示资产分组(resourcegroup)</p><p>枚举值：</p><ul><li>0： IP / CIDR</li><li>1： VPC 实例</li><li>2： 子网 </li><li>3： CVM 实例</li><li>4： CLB 实例</li><li>5： ENI（弹性网卡）实例</li><li>6： CDB（云数据库）实例</li><li>7： 参数模板</li><li>8： 标签</li><li>9： 地域</li></ul>
                      */
                     int64_t m_targetType;
                     bool m_targetTypeHasBeenSet;
 
                     /**
-                     * 协议名称
-取值范围:TCP/ANY/ICMP/UDP
-ANY:表示所有
-
+                     * <p>协议名称<br>取值范围:TCP/ANY/ICMP/UDP<br>ANY:表示所有</p>
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 端口
+                     * <p>端口</p>
                      */
                     std::string m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 规则策略
-取值范围:1/2
-1:阻断
-2:放行
+                     * <p>规则策略<br>取值范围:1/2<br>1:阻断<br>2:放行</p>
                      */
                     int64_t m_strategy;
                     bool m_strategyHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
                      */
                     std::string m_detail;
                     bool m_detailHasBeenSet;
 
                     /**
-                     * 地域
+                     * <p>地域</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 服务模板id
+                     * <p>服务模板id</p>
                      */
                     std::string m_serviceTemplateId;
                     bool m_serviceTemplateIdHasBeenSet;
 
                     /**
-                     * 源资产名称
+                     * <p>源资产名称</p>
                      */
                     std::string m_souInstanceName;
                     bool m_souInstanceNameHasBeenSet;
 
                     /**
-                     * 源资产公网ip
+                     * <p>源资产公网ip</p>
                      */
                     std::string m_souPublicIp;
                     bool m_souPublicIpHasBeenSet;
 
                     /**
-                     * 源资产内网ip
+                     * <p>源资产内网ip</p>
                      */
                     std::string m_souPrivateIp;
                     bool m_souPrivateIpHasBeenSet;
 
                     /**
-                     * 源资产网段信息
+                     * <p>源资产网段信息</p>
                      */
                     std::string m_souCidr;
                     bool m_souCidrHasBeenSet;
 
                     /**
-                     * 源模板名称
+                     * <p>源模板名称</p>
                      */
                     std::string m_souParameterName;
                     bool m_souParameterNameHasBeenSet;
 
                     /**
-                     * 目的资产名称
+                     * <p>目的资产名称</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 目的资产公网ip
+                     * <p>目的资产公网ip</p>
                      */
                     std::string m_publicIp;
                     bool m_publicIpHasBeenSet;
 
                     /**
-                     * 目的资产内网ip
+                     * <p>目的资产内网ip</p>
                      */
                     std::string m_privateIp;
                     bool m_privateIpHasBeenSet;
 
                     /**
-                     * 目的资产网段信息
+                     * <p>目的资产网段信息</p>
                      */
                     std::string m_cidr;
                     bool m_cidrHasBeenSet;
 
                     /**
-                     * 目的模板名称
+                     * <p>目的模板名称</p>
                      */
                     std::string m_parameterName;
                     bool m_parameterNameHasBeenSet;
 
                     /**
-                     * 端口模板名称
+                     * <p>端口模板名称</p>
                      */
                     std::string m_protocolPortName;
                     bool m_protocolPortNameHasBeenSet;
 
                     /**
-                     * 域名解析的IP统计
+                     * <p>域名解析的IP统计</p>
                      */
                     SgDnsParseCount m_dnsParseCount;
                     bool m_dnsParseCountHasBeenSet;
 
                     /**
-                     * 规则生效范围
+                     * <p>规则生效范围</p>
                      */
                     std::string m_scope;
                     bool m_scopeHasBeenSet;
 
                     /**
-                     * 分区：
-1防火墙管理最前分区
-2是云防规则
-3防火墙管理最后分区
+                     * <p>分区：<br>1防火墙管理最前分区<br>2是云防规则<br>3防火墙管理最后分区</p>
                      */
                     int64_t m_rulePartition;
                     bool m_rulePartitionHasBeenSet;
 
                     /**
-                     * 规则组Id
+                     * <p>规则组Id</p>
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 规则组名称
+                     * <p>规则组名称</p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 规则组内规则id
+                     * <p>规则组内规则id</p>
                      */
                     std::string m_groupRuleId;
                     bool m_groupRuleIdHasBeenSet;
 
                     /**
-                     * 策略Id
+                     * <p>策略Id</p>
                      */
                     std::string m_strategyId;
                     bool m_strategyIdHasBeenSet;
 
                     /**
-                     * ip类型
+                     * <p>ip类型</p>
                      */
                     std::string m_ipVersion;
                     bool m_ipVersionHasBeenSet;
 
                     /**
-                     * 成员信息
+                     * <p>成员信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MemberInfo m_belongMember;

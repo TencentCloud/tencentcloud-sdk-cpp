@@ -65,7 +65,10 @@ ModifyApmInstanceRequest::ModifyApmInstanceRequest() :
     m_isDeserializationAnalysisHasBeenSet(false),
     m_urlLongSegmentThresholdHasBeenSet(false),
     m_urlNumberSegmentThresholdHasBeenSet(false),
-    m_logSpanIdKeyHasBeenSet(false)
+    m_logSpanIdKeyHasBeenSet(false),
+    m_enableHeadSamplerHasBeenSet(false),
+    m_headSamplerTypeHasBeenSet(false),
+    m_headSamplerArgHasBeenSet(false)
 {
 }
 
@@ -430,6 +433,30 @@ string ModifyApmInstanceRequest::ToJsonString() const
         string key = "LogSpanIdKey";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_logSpanIdKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableHeadSamplerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableHeadSampler";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableHeadSampler, allocator);
+    }
+
+    if (m_headSamplerTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HeadSamplerType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_headSamplerType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_headSamplerArgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HeadSamplerArg";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_headSamplerArg, allocator);
     }
 
 
@@ -1126,6 +1153,54 @@ void ModifyApmInstanceRequest::SetLogSpanIdKey(const string& _logSpanIdKey)
 bool ModifyApmInstanceRequest::LogSpanIdKeyHasBeenSet() const
 {
     return m_logSpanIdKeyHasBeenSet;
+}
+
+bool ModifyApmInstanceRequest::GetEnableHeadSampler() const
+{
+    return m_enableHeadSampler;
+}
+
+void ModifyApmInstanceRequest::SetEnableHeadSampler(const bool& _enableHeadSampler)
+{
+    m_enableHeadSampler = _enableHeadSampler;
+    m_enableHeadSamplerHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::EnableHeadSamplerHasBeenSet() const
+{
+    return m_enableHeadSamplerHasBeenSet;
+}
+
+string ModifyApmInstanceRequest::GetHeadSamplerType() const
+{
+    return m_headSamplerType;
+}
+
+void ModifyApmInstanceRequest::SetHeadSamplerType(const string& _headSamplerType)
+{
+    m_headSamplerType = _headSamplerType;
+    m_headSamplerTypeHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::HeadSamplerTypeHasBeenSet() const
+{
+    return m_headSamplerTypeHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetHeadSamplerArg() const
+{
+    return m_headSamplerArg;
+}
+
+void ModifyApmInstanceRequest::SetHeadSamplerArg(const int64_t& _headSamplerArg)
+{
+    m_headSamplerArg = _headSamplerArg;
+    m_headSamplerArgHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::HeadSamplerArgHasBeenSet() const
+{
+    return m_headSamplerArgHasBeenSet;
 }
 
 

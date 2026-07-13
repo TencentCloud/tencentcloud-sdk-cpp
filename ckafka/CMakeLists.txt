@@ -75,6 +75,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/BatchContent.h
   include/tencentcloud/ckafka/v20190819/model/ScfParam.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicRequest.h
+  include/tencentcloud/ckafka/v20190819/model/IsolatedInstancePreRequest.h
   include/tencentcloud/ckafka/v20190819/model/PostgreSQLModifyConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/ModifyAclRuleRequest.h
   include/tencentcloud/ckafka/v20190819/model/Group.h
@@ -335,6 +336,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/BatchModifyGroupOffsetsResponse.h
   include/tencentcloud/ckafka/v20190819/model/CreateDatahubTopicRequest.h
   include/tencentcloud/ckafka/v20190819/model/CreateInstancePostResp.h
+  include/tencentcloud/ckafka/v20190819/model/IsolatedInstancePreResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTopicResponse.h
   include/tencentcloud/ckafka/v20190819/model/CreateCdcClusterResponse.h
   include/tencentcloud/ckafka/v20190819/model/OperateResponseData.h
@@ -455,6 +457,7 @@ set(ckafka_src
   src/v20190819/model/BatchContent.cpp
   src/v20190819/model/ScfParam.cpp
   src/v20190819/model/DescribeTopicRequest.cpp
+  src/v20190819/model/IsolatedInstancePreRequest.cpp
   src/v20190819/model/PostgreSQLModifyConnectParam.cpp
   src/v20190819/model/ModifyAclRuleRequest.cpp
   src/v20190819/model/Group.cpp
@@ -715,6 +718,7 @@ set(ckafka_src
   src/v20190819/model/BatchModifyGroupOffsetsResponse.cpp
   src/v20190819/model/CreateDatahubTopicRequest.cpp
   src/v20190819/model/CreateInstancePostResp.cpp
+  src/v20190819/model/IsolatedInstancePreResponse.cpp
   src/v20190819/model/DescribeDatahubTopicResponse.cpp
   src/v20190819/model/CreateCdcClusterResponse.cpp
   src/v20190819/model/OperateResponseData.cpp

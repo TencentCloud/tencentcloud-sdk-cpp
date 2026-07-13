@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例审计开启的状态。1-已开启审计；0-未开启审计。
-                     * @return AuditSwitch 实例审计开启的状态。1-已开启审计；0-未开启审计。
+                     * 获取<p>实例审计开启的状态。1-已开启审计；0-未开启审计。</p>
+                     * @return AuditSwitch <p>实例审计开启的状态。1-已开启审计；0-未开启审计。</p>
                      * 
                      */
                     int64_t GetAuditSwitch() const;
 
                     /**
-                     * 设置实例审计开启的状态。1-已开启审计；0-未开启审计。
-                     * @param _auditSwitch 实例审计开启的状态。1-已开启审计；0-未开启审计。
+                     * 设置<p>实例审计开启的状态。1-已开启审计；0-未开启审计。</p>
+                     * @param _auditSwitch <p>实例审计开启的状态。1-已开启审计；0-未开启审计。</p>
                      * 
                      */
                     void SetAuditSwitch(const int64_t& _auditSwitch);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool AuditSwitchHasBeenSet() const;
 
                     /**
-                     * 获取查询实例列表的过滤条件。
-                     * @return Filters 查询实例列表的过滤条件。
+                     * 获取<p>查询实例列表的过滤条件。</p>
+                     * @return Filters <p>查询实例列表的过滤条件。</p>
                      * 
                      */
                     std::vector<AuditInstanceFilters> GetFilters() const;
 
                     /**
-                     * 设置查询实例列表的过滤条件。
-                     * @param _filters 查询实例列表的过滤条件。
+                     * 设置<p>查询实例列表的过滤条件。</p>
+                     * @param _filters <p>查询实例列表的过滤条件。</p>
                      * 
                      */
                     void SetFilters(const std::vector<AuditInstanceFilters>& _filters);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取实例的审计规则模式。1-规则审计；0-全审计。
-                     * @return AuditMode 实例的审计规则模式。1-规则审计；0-全审计。
+                     * 获取<p>实例的审计规则模式。1-规则审计；0-全审计。</p>
+                     * @return AuditMode <p>实例的审计规则模式。1-规则审计；0-全审计。</p>
                      * 
                      */
                     int64_t GetAuditMode() const;
 
                     /**
-                     * 设置实例的审计规则模式。1-规则审计；0-全审计。
-                     * @param _auditMode 实例的审计规则模式。1-规则审计；0-全审计。
+                     * 设置<p>实例的审计规则模式。1-规则审计；0-全审计。</p>
+                     * @param _auditMode <p>实例的审计规则模式。1-规则审计；0-全审计。</p>
                      * 
                      */
                     void SetAuditMode(const int64_t& _auditMode);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool AuditModeHasBeenSet() const;
 
                     /**
-                     * 获取单次请求返回的数量。默认值为30，最大值为 20000。
-                     * @return Limit 单次请求返回的数量。默认值为30，最大值为 20000。
+                     * 获取<p>单次请求返回的数量。默认值为30，最大值为 20000。</p>
+                     * @return Limit <p>单次请求返回的数量。默认值为30，最大值为 20000。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置单次请求返回的数量。默认值为30，最大值为 20000。
-                     * @param _limit 单次请求返回的数量。默认值为30，最大值为 20000。
+                     * 设置<p>单次请求返回的数量。默认值为30，最大值为 20000。</p>
+                     * @param _limit <p>单次请求返回的数量。默认值为30，最大值为 20000。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认值为 0。
-                     * @return Offset 偏移量，默认值为 0。
+                     * 获取<p>偏移量，默认值为 0。</p>
+                     * @return Offset <p>偏移量，默认值为 0。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认值为 0。
-                     * @param _offset 偏移量，默认值为 0。
+                     * 设置<p>偏移量，默认值为 0。</p>
+                     * @param _offset <p>偏移量，默认值为 0。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -151,31 +151,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例审计开启的状态。1-已开启审计；0-未开启审计。
+                     * <p>实例审计开启的状态。1-已开启审计；0-未开启审计。</p>
                      */
                     int64_t m_auditSwitch;
                     bool m_auditSwitchHasBeenSet;
 
                     /**
-                     * 查询实例列表的过滤条件。
+                     * <p>查询实例列表的过滤条件。</p>
                      */
                     std::vector<AuditInstanceFilters> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 实例的审计规则模式。1-规则审计；0-全审计。
+                     * <p>实例的审计规则模式。1-规则审计；0-全审计。</p>
                      */
                     int64_t m_auditMode;
                     bool m_auditModeHasBeenSet;
 
                     /**
-                     * 单次请求返回的数量。默认值为30，最大值为 20000。
+                     * <p>单次请求返回的数量。默认值为30，最大值为 20000。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，默认值为 0。
+                     * <p>偏移量，默认值为 0。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

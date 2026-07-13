@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总实例个数
-                     * @return InstanceCount 总实例个数
+                     * 获取<p>总实例个数</p>
+                     * @return InstanceCount <p>总实例个数</p>
                      * 
                      */
                     int64_t GetInstanceCount() const;
 
                     /**
-                     * 设置总实例个数
-                     * @param _instanceCount 总实例个数
+                     * 设置<p>总实例个数</p>
+                     * @param _instanceCount <p>总实例个数</p>
                      * 
                      */
                     void SetInstanceCount(const int64_t& _instanceCount);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool InstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取运行实例个数
-                     * @return RunInstanceCount 运行实例个数
+                     * 获取<p>运行实例个数</p>
+                     * @return RunInstanceCount <p>运行实例个数</p>
                      * 
                      */
                     int64_t GetRunInstanceCount() const;
 
                     /**
-                     * 设置运行实例个数
-                     * @param _runInstanceCount 运行实例个数
+                     * 设置<p>运行实例个数</p>
+                     * @param _runInstanceCount <p>运行实例个数</p>
                      * 
                      */
                     void SetRunInstanceCount(const int64_t& _runInstanceCount);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool RunInstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取应用下部署组个数
-                     * @return GroupCount 应用下部署组个数
+                     * 获取<p>应用下部署组个数</p>
+                     * @return GroupCount <p>应用下部署组个数</p>
                      * 
                      */
                     int64_t GetGroupCount() const;
 
                     /**
-                     * 设置应用下部署组个数
-                     * @param _groupCount 应用下部署组个数
+                     * 设置<p>应用下部署组个数</p>
+                     * @param _groupCount <p>应用下部署组个数</p>
                      * 
                      */
                     void SetGroupCount(const int64_t& _groupCount);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool GroupCountHasBeenSet() const;
 
                     /**
-                     * 获取运行中部署组个数
-                     * @return RunningGroupCount 运行中部署组个数
+                     * 获取<p>运行中部署组个数</p>
+                     * @return RunningGroupCount <p>运行中部署组个数</p>
                      * 
                      */
                     std::string GetRunningGroupCount() const;
 
                     /**
-                     * 设置运行中部署组个数
-                     * @param _runningGroupCount 运行中部署组个数
+                     * 设置<p>运行中部署组个数</p>
+                     * @param _runningGroupCount <p>运行中部署组个数</p>
                      * 
                      */
                     void SetRunningGroupCount(const std::string& _runningGroupCount);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool RunningGroupCountHasBeenSet() const;
 
                     /**
-                     * 获取异常部署组个数
-                     * @return AbnormalCount 异常部署组个数
+                     * 获取<p>异常部署组个数</p>
+                     * @return AbnormalCount <p>异常部署组个数</p>
                      * 
                      */
                     std::string GetAbnormalCount() const;
 
                     /**
-                     * 设置异常部署组个数
-                     * @param _abnormalCount 异常部署组个数
+                     * 设置<p>异常部署组个数</p>
+                     * @param _abnormalCount <p>异常部署组个数</p>
                      * 
                      */
                     void SetAbnormalCount(const std::string& _abnormalCount);
@@ -151,37 +151,64 @@ namespace TencentCloud
                      */
                     bool AbnormalCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>镜像tag数量</p>
+                     * @return ImageTagCount <p>镜像tag数量</p>
+                     * 
+                     */
+                    int64_t GetImageTagCount() const;
+
+                    /**
+                     * 设置<p>镜像tag数量</p>
+                     * @param _imageTagCount <p>镜像tag数量</p>
+                     * 
+                     */
+                    void SetImageTagCount(const int64_t& _imageTagCount);
+
+                    /**
+                     * 判断参数 ImageTagCount 是否已赋值
+                     * @return ImageTagCount 是否已赋值
+                     * 
+                     */
+                    bool ImageTagCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 总实例个数
+                     * <p>总实例个数</p>
                      */
                     int64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;
 
                     /**
-                     * 运行实例个数
+                     * <p>运行实例个数</p>
                      */
                     int64_t m_runInstanceCount;
                     bool m_runInstanceCountHasBeenSet;
 
                     /**
-                     * 应用下部署组个数
+                     * <p>应用下部署组个数</p>
                      */
                     int64_t m_groupCount;
                     bool m_groupCountHasBeenSet;
 
                     /**
-                     * 运行中部署组个数
+                     * <p>运行中部署组个数</p>
                      */
                     std::string m_runningGroupCount;
                     bool m_runningGroupCountHasBeenSet;
 
                     /**
-                     * 异常部署组个数
+                     * <p>异常部署组个数</p>
                      */
                     std::string m_abnormalCount;
                     bool m_abnormalCountHasBeenSet;
+
+                    /**
+                     * <p>镜像tag数量</p>
+                     */
+                    int64_t m_imageTagCount;
+                    bool m_imageTagCountHasBeenSet;
 
                 };
             }

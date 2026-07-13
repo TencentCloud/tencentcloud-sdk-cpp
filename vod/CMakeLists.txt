@@ -908,6 +908,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/MPSSmartEraseTaskInput.h
   include/tencentcloud/vod/v20180717/model/ReviewImageResponse.h
   include/tencentcloud/vod/v20180717/model/DescribeStorageRegionsResponse.h
+  include/tencentcloud/vod/v20180717/model/SampleSnapshotTemplate.h
   include/tencentcloud/vod/v20180717/model/ModifySnapshotByTimeOffsetTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/ModifyReviewTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/CreateProcessImageAsyncTemplateRequest.h
@@ -1076,7 +1077,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/LLMComprehendAsr.h
   include/tencentcloud/vod/v20180717/model/SceneAigcImageTaskInput.h
   include/tencentcloud/vod/v20180717/model/CreateAnimatedGraphicsTemplateResponse.h
-  include/tencentcloud/vod/v20180717/model/SampleSnapshotTemplate.h
+  include/tencentcloud/vod/v20180717/model/AigcVideoTaskUsage.h
   include/tencentcloud/vod/v20180717/model/AigcVideoTaskInput.h
   include/tencentcloud/vod/v20180717/model/ComplexAdaptiveDynamicStreamingTaskInput.h
   include/tencentcloud/vod/v20180717/model/AudioEnhanceConfig.h
@@ -2010,6 +2011,7 @@ set(vod_src
   src/v20180717/model/MPSSmartEraseTaskInput.cpp
   src/v20180717/model/ReviewImageResponse.cpp
   src/v20180717/model/DescribeStorageRegionsResponse.cpp
+  src/v20180717/model/SampleSnapshotTemplate.cpp
   src/v20180717/model/ModifySnapshotByTimeOffsetTemplateRequest.cpp
   src/v20180717/model/ModifyReviewTemplateResponse.cpp
   src/v20180717/model/CreateProcessImageAsyncTemplateRequest.cpp
@@ -2178,7 +2180,7 @@ set(vod_src
   src/v20180717/model/LLMComprehendAsr.cpp
   src/v20180717/model/SceneAigcImageTaskInput.cpp
   src/v20180717/model/CreateAnimatedGraphicsTemplateResponse.cpp
-  src/v20180717/model/SampleSnapshotTemplate.cpp
+  src/v20180717/model/AigcVideoTaskUsage.cpp
   src/v20180717/model/AigcVideoTaskInput.cpp
   src/v20180717/model/ComplexAdaptiveDynamicStreamingTaskInput.cpp
   src/v20180717/model/AudioEnhanceConfig.cpp

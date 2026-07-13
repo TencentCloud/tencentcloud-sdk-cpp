@@ -22,6 +22,7 @@ using namespace std;
 
 CosBucketId::CosBucketId() :
     m_appIdHasBeenSet(false),
+    m_isAutoMonitorHasBeenSet(false),
     m_bucketIdSetHasBeenSet(false)
 {
 }
@@ -39,6 +40,16 @@ CoreInternalOutcome CosBucketId::Deserialize(const rapidjson::Value &value)
         }
         m_appId = string(value["AppId"].GetString());
         m_appIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsAutoMonitor") && !value["IsAutoMonitor"].IsNull())
+    {
+        if (!value["IsAutoMonitor"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CosBucketId.IsAutoMonitor` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAutoMonitor = value["IsAutoMonitor"].GetUint64();
+        m_isAutoMonitorHasBeenSet = true;
     }
 
     if (value.HasMember("BucketIdSet") && !value["BucketIdSet"].IsNull())
@@ -67,6 +78,14 @@ void CosBucketId::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isAutoMonitorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAutoMonitor";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isAutoMonitor, allocator);
     }
 
     if (m_bucketIdSetHasBeenSet)
@@ -99,6 +118,22 @@ void CosBucketId::SetAppId(const string& _appId)
 bool CosBucketId::AppIdHasBeenSet() const
 {
     return m_appIdHasBeenSet;
+}
+
+uint64_t CosBucketId::GetIsAutoMonitor() const
+{
+    return m_isAutoMonitor;
+}
+
+void CosBucketId::SetIsAutoMonitor(const uint64_t& _isAutoMonitor)
+{
+    m_isAutoMonitor = _isAutoMonitor;
+    m_isAutoMonitorHasBeenSet = true;
+}
+
+bool CosBucketId::IsAutoMonitorHasBeenSet() const
+{
+    return m_isAutoMonitorHasBeenSet;
 }
 
 vector<string> CosBucketId::GetBucketIdSet() const

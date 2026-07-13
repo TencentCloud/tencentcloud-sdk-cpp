@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 有效大模型安全包信息
+                * 大模型安全「后付费」资源信息（数据源：tb_waf_llm_resource），与 DescribeInstances 的 InstanceDetail.LLMPkg 保持一致
                 */
                 class LLMPkg : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源id
-                     * @return ResourceIds 资源id
+                     * 获取<p>资源id</p>
+                     * @return ResourceIds <p>资源id</p>
                      * 
                      */
                     std::string GetResourceIds() const;
 
                     /**
-                     * 设置资源id
-                     * @param _resourceIds 资源id
+                     * 设置<p>资源id</p>
+                     * @param _resourceIds <p>资源id</p>
                      * 
                      */
                     void SetResourceIds(const std::string& _resourceIds);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return Status 状态
+                     * 获取<p>状态</p>
+                     * @return Status <p>状态</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态
-                     * @param _status 状态
+                     * 设置<p>状态</p>
+                     * @param _status <p>状态</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取地域
-                     * @return Region 地域
+                     * 获取<p>地域</p>
+                     * @return Region <p>地域</p>
                      * 
                      */
                     int64_t GetRegion() const;
 
                     /**
-                     * 设置地域
-                     * @param _region 地域
+                     * 设置<p>地域</p>
+                     * @param _region <p>地域</p>
                      * 
                      */
                     void SetRegion(const int64_t& _region);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return BeginTime 开始时间
+                     * 获取<p>开始时间</p>
+                     * @return BeginTime <p>开始时间</p>
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _beginTime 开始时间
+                     * 设置<p>开始时间</p>
+                     * @param _beginTime <p>开始时间</p>
                      * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取<p>结束时间</p>
+                     * @return EndTime <p>结束时间</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置<p>结束时间</p>
+                     * @param _endTime <p>结束时间</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -152,15 +152,36 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取计费项
-                     * @return InquireKey 计费项
+                     * 获取<p>申请数量</p>
+                     * @return InquireNum <p>申请数量</p>
+                     * 
+                     */
+                    int64_t GetInquireNum() const;
+
+                    /**
+                     * 设置<p>申请数量</p>
+                     * @param _inquireNum <p>申请数量</p>
+                     * 
+                     */
+                    void SetInquireNum(const int64_t& _inquireNum);
+
+                    /**
+                     * 判断参数 InquireNum 是否已赋值
+                     * @return InquireNum 是否已赋值
+                     * 
+                     */
+                    bool InquireNumHasBeenSet() const;
+
+                    /**
+                     * 获取<p>计费项标签，如 sv_wsm_waf_llm_prompt_attack</p>
+                     * @return InquireKey <p>计费项标签，如 sv_wsm_waf_llm_prompt_attack</p>
                      * 
                      */
                     std::string GetInquireKey() const;
 
                     /**
-                     * 设置计费项
-                     * @param _inquireKey 计费项
+                     * 设置<p>计费项标签，如 sv_wsm_waf_llm_prompt_attack</p>
+                     * @param _inquireKey <p>计费项标签，如 sv_wsm_waf_llm_prompt_attack</p>
                      * 
                      */
                     void SetInquireKey(const std::string& _inquireKey);
@@ -175,37 +196,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源id
+                     * <p>资源id</p>
                      */
                     std::string m_resourceIds;
                     bool m_resourceIdsHasBeenSet;
 
                     /**
-                     * 状态
+                     * <p>状态</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 地域
+                     * <p>地域</p>
                      */
                     int64_t m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * <p>开始时间</p>
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * <p>结束时间</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 计费项
+                     * <p>申请数量</p>
+                     */
+                    int64_t m_inquireNum;
+                    bool m_inquireNumHasBeenSet;
+
+                    /**
+                     * <p>计费项标签，如 sv_wsm_waf_llm_prompt_attack</p>
                      */
                     std::string m_inquireKey;
                     bool m_inquireKeyHasBeenSet;
