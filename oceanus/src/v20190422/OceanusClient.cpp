@@ -390,6 +390,56 @@ OceanusClient::CreateJobConfigOutcomeCallable OceanusClient::CreateJobConfigCall
     return prom->get_future();
 }
 
+OceanusClient::CreateOceanusClusterOutcome OceanusClient::CreateOceanusCluster(const CreateOceanusClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOceanusCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOceanusClusterResponse rsp = CreateOceanusClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOceanusClusterOutcome(rsp);
+        else
+            return CreateOceanusClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOceanusClusterOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::CreateOceanusClusterAsync(const CreateOceanusClusterRequest& request, const CreateOceanusClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateOceanusClusterRequest&;
+    using Resp = CreateOceanusClusterResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateOceanusCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OceanusClient::CreateOceanusClusterOutcomeCallable OceanusClient::CreateOceanusClusterCallable(const CreateOceanusClusterRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateOceanusClusterOutcome>>();
+    CreateOceanusClusterAsync(
+    request,
+    [prom](
+        const OceanusClient*,
+        const CreateOceanusClusterRequest&,
+        CreateOceanusClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OceanusClient::CreateResourceOutcome OceanusClient::CreateResource(const CreateResourceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateResource");
@@ -732,6 +782,56 @@ OceanusClient::DeleteJobsOutcomeCallable OceanusClient::DeleteJobsCallable(const
         const OceanusClient*,
         const DeleteJobsRequest&,
         DeleteJobsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+OceanusClient::DeleteOceanusClusterOutcome OceanusClient::DeleteOceanusCluster(const DeleteOceanusClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteOceanusCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteOceanusClusterResponse rsp = DeleteOceanusClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteOceanusClusterOutcome(rsp);
+        else
+            return DeleteOceanusClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteOceanusClusterOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::DeleteOceanusClusterAsync(const DeleteOceanusClusterRequest& request, const DeleteOceanusClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteOceanusClusterRequest&;
+    using Resp = DeleteOceanusClusterResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteOceanusCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OceanusClient::DeleteOceanusClusterOutcomeCallable OceanusClient::DeleteOceanusClusterCallable(const DeleteOceanusClusterRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteOceanusClusterOutcome>>();
+    DeleteOceanusClusterAsync(
+    request,
+    [prom](
+        const OceanusClient*,
+        const DeleteOceanusClusterRequest&,
+        DeleteOceanusClusterOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2140,6 +2240,56 @@ OceanusClient::ParseConnectorOutcomeCallable OceanusClient::ParseConnectorCallab
     return prom->get_future();
 }
 
+OceanusClient::RenewOceanusClusterOutcome OceanusClient::RenewOceanusCluster(const RenewOceanusClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "RenewOceanusCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RenewOceanusClusterResponse rsp = RenewOceanusClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RenewOceanusClusterOutcome(rsp);
+        else
+            return RenewOceanusClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return RenewOceanusClusterOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::RenewOceanusClusterAsync(const RenewOceanusClusterRequest& request, const RenewOceanusClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RenewOceanusClusterRequest&;
+    using Resp = RenewOceanusClusterResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RenewOceanusCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OceanusClient::RenewOceanusClusterOutcomeCallable OceanusClient::RenewOceanusClusterCallable(const RenewOceanusClusterRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RenewOceanusClusterOutcome>>();
+    RenewOceanusClusterAsync(
+    request,
+    [prom](
+        const OceanusClient*,
+        const RenewOceanusClusterRequest&,
+        RenewOceanusClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OceanusClient::RunJobsOutcome OceanusClient::RunJobs(const RunJobsRequest &request)
 {
     auto outcome = MakeRequest(request, "RunJobs");
@@ -2232,6 +2382,56 @@ OceanusClient::RunSqlGatewayStatementOutcomeCallable OceanusClient::RunSqlGatewa
         const OceanusClient*,
         const RunSqlGatewayStatementRequest&,
         RunSqlGatewayStatementOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+OceanusClient::ScaleOceanusClusterOutcome OceanusClient::ScaleOceanusCluster(const ScaleOceanusClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "ScaleOceanusCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ScaleOceanusClusterResponse rsp = ScaleOceanusClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ScaleOceanusClusterOutcome(rsp);
+        else
+            return ScaleOceanusClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return ScaleOceanusClusterOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::ScaleOceanusClusterAsync(const ScaleOceanusClusterRequest& request, const ScaleOceanusClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ScaleOceanusClusterRequest&;
+    using Resp = ScaleOceanusClusterResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ScaleOceanusCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OceanusClient::ScaleOceanusClusterOutcomeCallable OceanusClient::ScaleOceanusClusterCallable(const ScaleOceanusClusterRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ScaleOceanusClusterOutcome>>();
+    ScaleOceanusClusterAsync(
+    request,
+    [prom](
+        const OceanusClient*,
+        const ScaleOceanusClusterRequest&,
+        ScaleOceanusClusterOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

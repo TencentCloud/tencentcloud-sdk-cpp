@@ -33,7 +33,10 @@ DisplayLeakageCode::DisplayLeakageCode() :
     m_suggestionHasBeenSet(false),
     m_keywordHasBeenSet(false),
     m_handlingStatusHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_repoNamespaceHasBeenSet(false),
+    m_repoNameHasBeenSet(false),
+    m_authorNameHasBeenSet(false)
 {
 }
 
@@ -179,6 +182,36 @@ CoreInternalOutcome DisplayLeakageCode::Deserialize(const rapidjson::Value &valu
         m_remarkHasBeenSet = true;
     }
 
+    if (value.HasMember("RepoNamespace") && !value["RepoNamespace"].IsNull())
+    {
+        if (!value["RepoNamespace"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayLeakageCode.RepoNamespace` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_repoNamespace = string(value["RepoNamespace"].GetString());
+        m_repoNamespaceHasBeenSet = true;
+    }
+
+    if (value.HasMember("RepoName") && !value["RepoName"].IsNull())
+    {
+        if (!value["RepoName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayLeakageCode.RepoName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_repoName = string(value["RepoName"].GetString());
+        m_repoNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("AuthorName") && !value["AuthorName"].IsNull())
+    {
+        if (!value["AuthorName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayLeakageCode.AuthorName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_authorName = string(value["AuthorName"].GetString());
+        m_authorNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -289,6 +322,30 @@ void DisplayLeakageCode::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repoNamespaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepoNamespace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_repoNamespace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repoNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepoName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_repoName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_authorNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthorName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_authorName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -500,5 +557,53 @@ void DisplayLeakageCode::SetRemark(const string& _remark)
 bool DisplayLeakageCode::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string DisplayLeakageCode::GetRepoNamespace() const
+{
+    return m_repoNamespace;
+}
+
+void DisplayLeakageCode::SetRepoNamespace(const string& _repoNamespace)
+{
+    m_repoNamespace = _repoNamespace;
+    m_repoNamespaceHasBeenSet = true;
+}
+
+bool DisplayLeakageCode::RepoNamespaceHasBeenSet() const
+{
+    return m_repoNamespaceHasBeenSet;
+}
+
+string DisplayLeakageCode::GetRepoName() const
+{
+    return m_repoName;
+}
+
+void DisplayLeakageCode::SetRepoName(const string& _repoName)
+{
+    m_repoName = _repoName;
+    m_repoNameHasBeenSet = true;
+}
+
+bool DisplayLeakageCode::RepoNameHasBeenSet() const
+{
+    return m_repoNameHasBeenSet;
+}
+
+string DisplayLeakageCode::GetAuthorName() const
+{
+    return m_authorName;
+}
+
+void DisplayLeakageCode::SetAuthorName(const string& _authorName)
+{
+    m_authorName = _authorName;
+    m_authorNameHasBeenSet = true;
+}
+
+bool DisplayLeakageCode::AuthorNameHasBeenSet() const
+{
+    return m_authorNameHasBeenSet;
 }
 

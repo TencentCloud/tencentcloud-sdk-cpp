@@ -11240,6 +11240,56 @@ VodClient::SplitMediaOutcomeCallable VodClient::SplitMediaCallable(const SplitMe
     return prom->get_future();
 }
 
+VodClient::UpdateAigcApiTokenOutcome VodClient::UpdateAigcApiToken(const UpdateAigcApiTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAigcApiToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAigcApiTokenResponse rsp = UpdateAigcApiTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAigcApiTokenOutcome(rsp);
+        else
+            return UpdateAigcApiTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAigcApiTokenOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::UpdateAigcApiTokenAsync(const UpdateAigcApiTokenRequest& request, const UpdateAigcApiTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateAigcApiTokenRequest&;
+    using Resp = UpdateAigcApiTokenResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateAigcApiToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::UpdateAigcApiTokenOutcomeCallable VodClient::UpdateAigcApiTokenCallable(const UpdateAigcApiTokenRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateAigcApiTokenOutcome>>();
+    UpdateAigcApiTokenAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const UpdateAigcApiTokenRequest&,
+        UpdateAigcApiTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VodClient::VerifyDomainRecordOutcome VodClient::VerifyDomainRecord(const VerifyDomainRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "VerifyDomainRecord");

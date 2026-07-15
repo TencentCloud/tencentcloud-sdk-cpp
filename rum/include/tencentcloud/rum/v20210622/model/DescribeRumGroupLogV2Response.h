@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Query result in JSON string format
-                     * @return Result Query result in JSON string format
+                     * 获取<p>Query result in JSON string format</p>
+                     * @return Result <p>Query result in JSON string format</p>
                      * 
                      */
                     std::string GetResult() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Query result in JSON string format
+                     * <p>Query result in JSON string format</p>
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

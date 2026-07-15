@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取API Token 列表
-                     * @return ApiTokens API Token 列表
+                     * 获取<p>API Token 列表</p>
+                     * @return ApiTokens <p>API Token 列表</p>
                      * 
                      */
                     std::vector<std::string> GetApiTokens() const;
@@ -57,13 +57,33 @@ namespace TencentCloud
                      */
                     bool ApiTokensHasBeenSet() const;
 
+                    /**
+                     * 获取<p>ExtInfo信息，和API Token列表一一对应</p>
+                     * @return ExtInfos <p>ExtInfo信息，和API Token列表一一对应</p>
+                     * 
+                     */
+                    std::vector<std::string> GetExtInfos() const;
+
+                    /**
+                     * 判断参数 ExtInfos 是否已赋值
+                     * @return ExtInfos 是否已赋值
+                     * 
+                     */
+                    bool ExtInfosHasBeenSet() const;
+
                 private:
 
                     /**
-                     * API Token 列表
+                     * <p>API Token 列表</p>
                      */
                     std::vector<std::string> m_apiTokens;
                     bool m_apiTokensHasBeenSet;
+
+                    /**
+                     * <p>ExtInfo信息，和API Token列表一一对应</p>
+                     */
+                    std::vector<std::string> m_extInfos;
+                    bool m_extInfosHasBeenSet;
 
                 };
             }

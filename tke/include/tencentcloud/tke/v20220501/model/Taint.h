@@ -47,6 +47,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取Taint的Effect
+                     * @return Effect Taint的Effect
+                     * 
+                     */
+                    std::string GetEffect() const;
+
+                    /**
+                     * 设置Taint的Effect
+                     * @param _effect Taint的Effect
+                     * 
+                     */
+                    void SetEffect(const std::string& _effect);
+
+                    /**
+                     * 判断参数 Effect 是否已赋值
+                     * @return Effect 是否已赋值
+                     * 
+                     */
+                    bool EffectHasBeenSet() const;
+
+                    /**
                      * 获取Taint的Key
                      * @return Key Taint的Key
                      * 
@@ -88,28 +109,13 @@ namespace TencentCloud
                      */
                     bool ValueHasBeenSet() const;
 
-                    /**
-                     * 获取Taint的Effect
-                     * @return Effect Taint的Effect
-                     * 
-                     */
-                    std::string GetEffect() const;
-
-                    /**
-                     * 设置Taint的Effect
-                     * @param _effect Taint的Effect
-                     * 
-                     */
-                    void SetEffect(const std::string& _effect);
-
-                    /**
-                     * 判断参数 Effect 是否已赋值
-                     * @return Effect 是否已赋值
-                     * 
-                     */
-                    bool EffectHasBeenSet() const;
-
                 private:
+
+                    /**
+                     * Taint的Effect
+                     */
+                    std::string m_effect;
+                    bool m_effectHasBeenSet;
 
                     /**
                      * Taint的Key
@@ -122,12 +128,6 @@ namespace TencentCloud
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
-
-                    /**
-                     * Taint的Effect
-                     */
-                    std::string m_effect;
-                    bool m_effectHasBeenSet;
 
                 };
             }

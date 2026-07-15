@@ -169,6 +169,27 @@ namespace TencentCloud
                      */
                     bool LegalNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>新法人的手机号。<br>仅当法人发生变更时传入，用于向新法人发送短信通知。<br>需为合法的手机号或固定电话格式。</p>
+                     * @return NewLegalMobile <p>新法人的手机号。<br>仅当法人发生变更时传入，用于向新法人发送短信通知。<br>需为合法的手机号或固定电话格式。</p>
+                     * 
+                     */
+                    std::string GetNewLegalMobile() const;
+
+                    /**
+                     * 设置<p>新法人的手机号。<br>仅当法人发生变更时传入，用于向新法人发送短信通知。<br>需为合法的手机号或固定电话格式。</p>
+                     * @param _newLegalMobile <p>新法人的手机号。<br>仅当法人发生变更时传入，用于向新法人发送短信通知。<br>需为合法的手机号或固定电话格式。</p>
+                     * 
+                     */
+                    void SetNewLegalMobile(const std::string& _newLegalMobile);
+
+                    /**
+                     * 判断参数 NewLegalMobile 是否已赋值
+                     * @return NewLegalMobile 是否已赋值
+                     * 
+                     */
+                    bool NewLegalMobileHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +227,12 @@ namespace TencentCloud
                      */
                     std::string m_legalName;
                     bool m_legalNameHasBeenSet;
+
+                    /**
+                     * <p>新法人的手机号。<br>仅当法人发生变更时传入，用于向新法人发送短信通知。<br>需为合法的手机号或固定电话格式。</p>
+                     */
+                    std::string m_newLegalMobile;
+                    bool m_newLegalMobileHasBeenSet;
 
                 };
             }

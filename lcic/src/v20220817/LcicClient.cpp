@@ -1690,6 +1690,56 @@ LcicClient::DescribeDocumentsByRoomOutcomeCallable LcicClient::DescribeDocuments
     return prom->get_future();
 }
 
+LcicClient::DescribeEditVersionsOutcome LcicClient::DescribeEditVersions(const DescribeEditVersionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEditVersions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEditVersionsResponse rsp = DescribeEditVersionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEditVersionsOutcome(rsp);
+        else
+            return DescribeEditVersionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEditVersionsOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DescribeEditVersionsAsync(const DescribeEditVersionsRequest& request, const DescribeEditVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeEditVersionsRequest&;
+    using Resp = DescribeEditVersionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeEditVersions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LcicClient::DescribeEditVersionsOutcomeCallable LcicClient::DescribeEditVersionsCallable(const DescribeEditVersionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeEditVersionsOutcome>>();
+    DescribeEditVersionsAsync(
+    request,
+    [prom](
+        const LcicClient*,
+        const DescribeEditVersionsRequest&,
+        DescribeEditVersionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LcicClient::DescribeGroupOutcome LcicClient::DescribeGroup(const DescribeGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGroup");
@@ -2840,6 +2890,56 @@ LcicClient::ForbidSendMsgOutcomeCallable LcicClient::ForbidSendMsgCallable(const
     return prom->get_future();
 }
 
+LcicClient::GetEditVersionTokenOutcome LcicClient::GetEditVersionToken(const GetEditVersionTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetEditVersionToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetEditVersionTokenResponse rsp = GetEditVersionTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetEditVersionTokenOutcome(rsp);
+        else
+            return GetEditVersionTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return GetEditVersionTokenOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::GetEditVersionTokenAsync(const GetEditVersionTokenRequest& request, const GetEditVersionTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetEditVersionTokenRequest&;
+    using Resp = GetEditVersionTokenResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetEditVersionToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LcicClient::GetEditVersionTokenOutcomeCallable LcicClient::GetEditVersionTokenCallable(const GetEditVersionTokenRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetEditVersionTokenOutcome>>();
+    GetEditVersionTokenAsync(
+    request,
+    [prom](
+        const LcicClient*,
+        const GetEditVersionTokenRequest&,
+        GetEditVersionTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LcicClient::GetPlaybackTokenOutcome LcicClient::GetPlaybackToken(const GetPlaybackTokenRequest &request)
 {
     auto outcome = MakeRequest(request, "GetPlaybackToken");
@@ -3782,6 +3882,56 @@ LcicClient::SetAppCustomContentOutcomeCallable LcicClient::SetAppCustomContentCa
         const LcicClient*,
         const SetAppCustomContentRequest&,
         SetAppCustomContentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LcicClient::SetMainEditVersionOutcome LcicClient::SetMainEditVersion(const SetMainEditVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetMainEditVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetMainEditVersionResponse rsp = SetMainEditVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetMainEditVersionOutcome(rsp);
+        else
+            return SetMainEditVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return SetMainEditVersionOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::SetMainEditVersionAsync(const SetMainEditVersionRequest& request, const SetMainEditVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SetMainEditVersionRequest&;
+    using Resp = SetMainEditVersionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SetMainEditVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LcicClient::SetMainEditVersionOutcomeCallable LcicClient::SetMainEditVersionCallable(const SetMainEditVersionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SetMainEditVersionOutcome>>();
+    SetMainEditVersionAsync(
+    request,
+    [prom](
+        const LcicClient*,
+        const SetMainEditVersionRequest&,
+        SetMainEditVersionOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

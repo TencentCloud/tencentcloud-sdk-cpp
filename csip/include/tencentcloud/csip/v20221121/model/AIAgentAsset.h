@@ -282,15 +282,15 @@ namespace TencentCloud
                     bool MetadataRiskURLHasBeenSet() const;
 
                     /**
-                     * 获取<p>无</p>
-                     * @return SkillState <p>无</p>
+                     * 获取<p>凭据 Skill 安装状态</p>
+                     * @return SkillState <p>凭据 Skill 安装状态</p>
                      * 
                      */
                     SkillState GetSkillState() const;
 
                     /**
-                     * 设置<p>无</p>
-                     * @param _skillState <p>无</p>
+                     * 设置<p>凭据 Skill 安装状态</p>
+                     * @param _skillState <p>凭据 Skill 安装状态</p>
                      * 
                      */
                     void SetSkillState(const SkillState& _skillState);
@@ -434,7 +434,7 @@ namespace TencentCloud
                     bool m_metadataRiskURLHasBeenSet;
 
                     /**
-                     * <p>无</p>
+                     * <p>凭据 Skill 安装状态</p>
                      */
                     SkillState m_skillState;
                     bool m_skillStateHasBeenSet;

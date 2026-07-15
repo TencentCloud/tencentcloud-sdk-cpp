@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取appid
-                     * @return AppId appid
+                     * 获取<p>appid</p>
+                     * @return AppId <p>appid</p>
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
-                     * 设置appid
-                     * @param _appId appid
+                     * 设置<p>appid</p>
+                     * @param _appId <p>appid</p>
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return IsAutoMonitor 
+                     * 获取<p>是否自动监测</p>
+                     * @return IsAutoMonitor <p>是否自动监测</p>
                      * 
                      */
                     uint64_t GetIsAutoMonitor() const;
 
                     /**
-                     * 设置
-                     * @param _isAutoMonitor 
+                     * 设置<p>是否自动监测</p>
+                     * @param _isAutoMonitor <p>是否自动监测</p>
                      * 
                      */
                     void SetIsAutoMonitor(const uint64_t& _isAutoMonitor);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool IsAutoMonitorHasBeenSet() const;
 
                     /**
-                     * 获取bucket id集合
-                     * @return BucketIdSet bucket id集合
+                     * 获取<p>bucket id集合</p>
+                     * @return BucketIdSet <p>bucket id集合</p>
                      * 
                      */
                     std::vector<std::string> GetBucketIdSet() const;
 
                     /**
-                     * 设置bucket id集合
-                     * @param _bucketIdSet bucket id集合
+                     * 设置<p>bucket id集合</p>
+                     * @param _bucketIdSet <p>bucket id集合</p>
                      * 
                      */
                     void SetBucketIdSet(const std::vector<std::string>& _bucketIdSet);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * appid
+                     * <p>appid</p>
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 
+                     * <p>是否自动监测</p>
                      */
                     uint64_t m_isAutoMonitor;
                     bool m_isAutoMonitorHasBeenSet;
 
                     /**
-                     * bucket id集合
+                     * <p>bucket id集合</p>
                      */
                     std::vector<std::string> m_bucketIdSet;
                     bool m_bucketIdSetHasBeenSet;

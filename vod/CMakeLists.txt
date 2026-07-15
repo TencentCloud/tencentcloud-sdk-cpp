@@ -934,6 +934,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/PornAsrReviewTemplateInfoForUpdate.h
   include/tencentcloud/vod/v20180717/model/ModifySubAppIdStatusResponse.h
   include/tencentcloud/vod/v20180717/model/CreateAIAnalysisTemplateRequest.h
+  include/tencentcloud/vod/v20180717/model/UpdateAigcApiTokenResponse.h
   include/tencentcloud/vod/v20180717/model/AiReviewTerrorismTaskInput.h
   include/tencentcloud/vod/v20180717/model/ComplexAdaptiveDynamicStreamingTaskStreamPara.h
   include/tencentcloud/vod/v20180717/model/MPSUpdateSmartEraseSubtitleConfig.h
@@ -983,6 +984,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/DescribeWatermarkTemplatesResponse.h
   include/tencentcloud/vod/v20180717/model/WeChatMiniProgramPublishResponse.h
   include/tencentcloud/vod/v20180717/model/DescribeRoundPlaysResponse.h
+  include/tencentcloud/vod/v20180717/model/UpdateAigcApiTokenRequest.h
   include/tencentcloud/vod/v20180717/model/ImageTransform.h
   include/tencentcloud/vod/v20180717/model/CreateAnimatedGraphicsTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/AigcVideoRedrawTaskOutput.h
@@ -2038,6 +2040,7 @@ set(vod_src
   src/v20180717/model/PornAsrReviewTemplateInfoForUpdate.cpp
   src/v20180717/model/ModifySubAppIdStatusResponse.cpp
   src/v20180717/model/CreateAIAnalysisTemplateRequest.cpp
+  src/v20180717/model/UpdateAigcApiTokenResponse.cpp
   src/v20180717/model/AiReviewTerrorismTaskInput.cpp
   src/v20180717/model/ComplexAdaptiveDynamicStreamingTaskStreamPara.cpp
   src/v20180717/model/MPSUpdateSmartEraseSubtitleConfig.cpp
@@ -2087,6 +2090,7 @@ set(vod_src
   src/v20180717/model/DescribeWatermarkTemplatesResponse.cpp
   src/v20180717/model/WeChatMiniProgramPublishResponse.cpp
   src/v20180717/model/DescribeRoundPlaysResponse.cpp
+  src/v20180717/model/UpdateAigcApiTokenRequest.cpp
   src/v20180717/model/ImageTransform.cpp
   src/v20180717/model/CreateAnimatedGraphicsTemplateRequest.cpp
   src/v20180717/model/AigcVideoRedrawTaskOutput.cpp

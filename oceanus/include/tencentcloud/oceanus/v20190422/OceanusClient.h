@@ -37,6 +37,8 @@
 #include <tencentcloud/oceanus/v20190422/model/CreateJobResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateJobConfigRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateJobConfigResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/CreateOceanusClusterRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/CreateOceanusClusterResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateResourceRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateResourceResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateResourceConfigRequest.h>
@@ -51,6 +53,8 @@
 #include <tencentcloud/oceanus/v20190422/model/DeleteJobConfigsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DeleteJobsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DeleteJobsResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/DeleteOceanusClusterRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/DeleteOceanusClusterResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DeleteResourceConfigsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DeleteResourceConfigsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DeleteResourcesRequest.h>
@@ -107,10 +111,14 @@
 #include <tencentcloud/oceanus/v20190422/model/ModifyWorkSpaceResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/ParseConnectorRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/ParseConnectorResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/RenewOceanusClusterRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/RenewOceanusClusterResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/RunJobsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/RunJobsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/RunSqlGatewayStatementRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/RunSqlGatewayStatementResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/ScaleOceanusClusterRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/ScaleOceanusClusterResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/StopJobsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/StopJobsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/TriggerJobSavepointRequest.h>
@@ -150,6 +158,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateJobConfigResponse> CreateJobConfigOutcome;
                 typedef std::future<CreateJobConfigOutcome> CreateJobConfigOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::CreateJobConfigRequest&, CreateJobConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateJobConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOceanusClusterResponse> CreateOceanusClusterOutcome;
+                typedef std::future<CreateOceanusClusterOutcome> CreateOceanusClusterOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::CreateOceanusClusterRequest&, CreateOceanusClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOceanusClusterAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateResourceResponse> CreateResourceOutcome;
                 typedef std::future<CreateResourceOutcome> CreateResourceOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::CreateResourceRequest&, CreateResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourceAsyncHandler;
@@ -171,6 +182,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteJobsResponse> DeleteJobsOutcome;
                 typedef std::future<DeleteJobsOutcome> DeleteJobsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DeleteJobsRequest&, DeleteJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteJobsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteOceanusClusterResponse> DeleteOceanusClusterOutcome;
+                typedef std::future<DeleteOceanusClusterOutcome> DeleteOceanusClusterOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::DeleteOceanusClusterRequest&, DeleteOceanusClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOceanusClusterAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteResourceConfigsResponse> DeleteResourceConfigsOutcome;
                 typedef std::future<DeleteResourceConfigsOutcome> DeleteResourceConfigsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DeleteResourceConfigsRequest&, DeleteResourceConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourceConfigsAsyncHandler;
@@ -255,12 +269,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ParseConnectorResponse> ParseConnectorOutcome;
                 typedef std::future<ParseConnectorOutcome> ParseConnectorOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::ParseConnectorRequest&, ParseConnectorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ParseConnectorAsyncHandler;
+                typedef Outcome<Core::Error, Model::RenewOceanusClusterResponse> RenewOceanusClusterOutcome;
+                typedef std::future<RenewOceanusClusterOutcome> RenewOceanusClusterOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::RenewOceanusClusterRequest&, RenewOceanusClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewOceanusClusterAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunJobsResponse> RunJobsOutcome;
                 typedef std::future<RunJobsOutcome> RunJobsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::RunJobsRequest&, RunJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunJobsAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunSqlGatewayStatementResponse> RunSqlGatewayStatementOutcome;
                 typedef std::future<RunSqlGatewayStatementOutcome> RunSqlGatewayStatementOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::RunSqlGatewayStatementRequest&, RunSqlGatewayStatementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunSqlGatewayStatementAsyncHandler;
+                typedef Outcome<Core::Error, Model::ScaleOceanusClusterResponse> ScaleOceanusClusterOutcome;
+                typedef std::future<ScaleOceanusClusterOutcome> ScaleOceanusClusterOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::ScaleOceanusClusterRequest&, ScaleOceanusClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScaleOceanusClusterAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopJobsResponse> StopJobsOutcome;
                 typedef std::future<StopJobsOutcome> StopJobsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::StopJobsRequest&, StopJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopJobsAsyncHandler;
@@ -334,6 +354,15 @@ namespace TencentCloud
                 CreateJobConfigOutcomeCallable CreateJobConfigCallable(const Model::CreateJobConfigRequest& request);
 
                 /**
+                 *创建Oceanus集群
+                 * @param req CreateOceanusClusterRequest
+                 * @return CreateOceanusClusterOutcome
+                 */
+                CreateOceanusClusterOutcome CreateOceanusCluster(const Model::CreateOceanusClusterRequest &request);
+                void CreateOceanusClusterAsync(const Model::CreateOceanusClusterRequest& request, const CreateOceanusClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOceanusClusterOutcomeCallable CreateOceanusClusterCallable(const Model::CreateOceanusClusterRequest& request);
+
+                /**
                  *创建资源接口
                  * @param req CreateResourceRequest
                  * @return CreateResourceOutcome
@@ -395,6 +424,15 @@ namespace TencentCloud
                 DeleteJobsOutcome DeleteJobs(const Model::DeleteJobsRequest &request);
                 void DeleteJobsAsync(const Model::DeleteJobsRequest& request, const DeleteJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteJobsOutcomeCallable DeleteJobsCallable(const Model::DeleteJobsRequest& request);
+
+                /**
+                 *销毁Oceanus集群
+                 * @param req DeleteOceanusClusterRequest
+                 * @return DeleteOceanusClusterOutcome
+                 */
+                DeleteOceanusClusterOutcome DeleteOceanusCluster(const Model::DeleteOceanusClusterRequest &request);
+                void DeleteOceanusClusterAsync(const Model::DeleteOceanusClusterRequest& request, const DeleteOceanusClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteOceanusClusterOutcomeCallable DeleteOceanusClusterCallable(const Model::DeleteOceanusClusterRequest& request);
 
                 /**
                  *删除资源版本
@@ -657,6 +695,15 @@ namespace TencentCloud
                 ParseConnectorOutcomeCallable ParseConnectorCallable(const Model::ParseConnectorRequest& request);
 
                 /**
+                 *续费Oceanus集群
+                 * @param req RenewOceanusClusterRequest
+                 * @return RenewOceanusClusterOutcome
+                 */
+                RenewOceanusClusterOutcome RenewOceanusCluster(const Model::RenewOceanusClusterRequest &request);
+                void RenewOceanusClusterAsync(const Model::RenewOceanusClusterRequest& request, const RenewOceanusClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenewOceanusClusterOutcomeCallable RenewOceanusClusterCallable(const Model::RenewOceanusClusterRequest& request);
+
+                /**
                  *批量启动或者恢复作业，批量操作数量上限20
                  * @param req RunJobsRequest
                  * @return RunJobsOutcome
@@ -673,6 +720,15 @@ namespace TencentCloud
                 RunSqlGatewayStatementOutcome RunSqlGatewayStatement(const Model::RunSqlGatewayStatementRequest &request);
                 void RunSqlGatewayStatementAsync(const Model::RunSqlGatewayStatementRequest& request, const RunSqlGatewayStatementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RunSqlGatewayStatementOutcomeCallable RunSqlGatewayStatementCallable(const Model::RunSqlGatewayStatementRequest& request);
+
+                /**
+                 *扩缩容Oceanus集群
+                 * @param req ScaleOceanusClusterRequest
+                 * @return ScaleOceanusClusterOutcome
+                 */
+                ScaleOceanusClusterOutcome ScaleOceanusCluster(const Model::ScaleOceanusClusterRequest &request);
+                void ScaleOceanusClusterAsync(const Model::ScaleOceanusClusterRequest& request, const ScaleOceanusClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ScaleOceanusClusterOutcomeCallable ScaleOceanusClusterCallable(const Model::ScaleOceanusClusterRequest& request);
 
                 /**
                  *批量停止作业，批量操作数量上限为20

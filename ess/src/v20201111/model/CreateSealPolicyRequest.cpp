@@ -30,7 +30,8 @@ CreateSealPolicyRequest::CreateSealPolicyRequest() :
     m_userIdsHasBeenSet(false),
     m_policyHasBeenSet(false),
     m_agentHasBeenSet(false),
-    m_optionsHasBeenSet(false)
+    m_optionsHasBeenSet(false),
+    m_authorizationFlowsHasBeenSet(false)
 {
 }
 
@@ -124,6 +125,15 @@ string CreateSealPolicyRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_authorizationFlowsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthorizationFlows";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_authorizationFlows.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -260,6 +270,22 @@ void CreateSealPolicyRequest::SetOptions(const vector<Option>& _options)
 bool CreateSealPolicyRequest::OptionsHasBeenSet() const
 {
     return m_optionsHasBeenSet;
+}
+
+SealPolicyAuthorizationFlows CreateSealPolicyRequest::GetAuthorizationFlows() const
+{
+    return m_authorizationFlows;
+}
+
+void CreateSealPolicyRequest::SetAuthorizationFlows(const SealPolicyAuthorizationFlows& _authorizationFlows)
+{
+    m_authorizationFlows = _authorizationFlows;
+    m_authorizationFlowsHasBeenSet = true;
+}
+
+bool CreateSealPolicyRequest::AuthorizationFlowsHasBeenSet() const
+{
+    return m_authorizationFlowsHasBeenSet;
 }
 
 

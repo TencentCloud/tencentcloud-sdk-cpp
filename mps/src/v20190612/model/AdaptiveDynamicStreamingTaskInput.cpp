@@ -34,7 +34,8 @@ AdaptiveDynamicStreamingTaskInput::AdaptiveDynamicStreamingTaskInput() :
     m_subtitleTemplateHasBeenSet(false),
     m_stdExtInfoHasBeenSet(false),
     m_keyPTSListHasBeenSet(false),
-    m_addOnAudiosHasBeenSet(false)
+    m_addOnAudiosHasBeenSet(false),
+    m_stdExtStreamInfosHasBeenSet(false)
 {
 }
 
@@ -244,6 +245,26 @@ CoreInternalOutcome AdaptiveDynamicStreamingTaskInput::Deserialize(const rapidjs
         m_addOnAudiosHasBeenSet = true;
     }
 
+    if (value.HasMember("StdExtStreamInfos") && !value["StdExtStreamInfos"].IsNull())
+    {
+        if (!value["StdExtStreamInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.StdExtStreamInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["StdExtStreamInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AdaptiveStreamTemplate item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_stdExtStreamInfos.push_back(item);
+        }
+        m_stdExtStreamInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -387,6 +408,21 @@ void AdaptiveDynamicStreamingTaskInput::ToJsonObject(rapidjson::Value &value, ra
 
         int i=0;
         for (auto itr = m_addOnAudios.begin(); itr != m_addOnAudios.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_stdExtStreamInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StdExtStreamInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_stdExtStreamInfos.begin(); itr != m_stdExtStreamInfos.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -618,5 +654,21 @@ void AdaptiveDynamicStreamingTaskInput::SetAddOnAudios(const vector<AddOnAudio>&
 bool AdaptiveDynamicStreamingTaskInput::AddOnAudiosHasBeenSet() const
 {
     return m_addOnAudiosHasBeenSet;
+}
+
+vector<AdaptiveStreamTemplate> AdaptiveDynamicStreamingTaskInput::GetStdExtStreamInfos() const
+{
+    return m_stdExtStreamInfos;
+}
+
+void AdaptiveDynamicStreamingTaskInput::SetStdExtStreamInfos(const vector<AdaptiveStreamTemplate>& _stdExtStreamInfos)
+{
+    m_stdExtStreamInfos = _stdExtStreamInfos;
+    m_stdExtStreamInfosHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTaskInput::StdExtStreamInfosHasBeenSet() const
+{
+    return m_stdExtStreamInfosHasBeenSet;
 }
 

@@ -35,6 +35,8 @@
 #include <tencentcloud/ga2/v20250115/model/CreateGlobalAcceleratorResponse.h>
 #include <tencentcloud/ga2/v20250115/model/CreateListenerRequest.h>
 #include <tencentcloud/ga2/v20250115/model/CreateListenerResponse.h>
+#include <tencentcloud/ga2/v20250115/model/CreateListenerAdditionalCertRequest.h>
+#include <tencentcloud/ga2/v20250115/model/CreateListenerAdditionalCertResponse.h>
 #include <tencentcloud/ga2/v20250115/model/DeleteAccelerateAreasRequest.h>
 #include <tencentcloud/ga2/v20250115/model/DeleteAccelerateAreasResponse.h>
 #include <tencentcloud/ga2/v20250115/model/DeleteEndpointGroupsRequest.h>
@@ -47,6 +49,8 @@
 #include <tencentcloud/ga2/v20250115/model/DeleteGlobalAcceleratorResponse.h>
 #include <tencentcloud/ga2/v20250115/model/DeleteListenerRequest.h>
 #include <tencentcloud/ga2/v20250115/model/DeleteListenerResponse.h>
+#include <tencentcloud/ga2/v20250115/model/DeleteListenerAdditionalCertRequest.h>
+#include <tencentcloud/ga2/v20250115/model/DeleteListenerAdditionalCertResponse.h>
 #include <tencentcloud/ga2/v20250115/model/DescribeAccelerateAreasRequest.h>
 #include <tencentcloud/ga2/v20250115/model/DescribeAccelerateAreasResponse.h>
 #include <tencentcloud/ga2/v20250115/model/DescribeAccelerateRegionsRequest.h>
@@ -77,6 +81,8 @@
 #include <tencentcloud/ga2/v20250115/model/ModifyGlobalAcceleratorResponse.h>
 #include <tencentcloud/ga2/v20250115/model/ModifyListenerRequest.h>
 #include <tencentcloud/ga2/v20250115/model/ModifyListenerResponse.h>
+#include <tencentcloud/ga2/v20250115/model/ReplaceListenerAdditionalCertRequest.h>
+#include <tencentcloud/ga2/v20250115/model/ReplaceListenerAdditionalCertResponse.h>
 
 
 namespace TencentCloud
@@ -109,6 +115,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateListenerResponse> CreateListenerOutcome;
                 typedef std::future<CreateListenerOutcome> CreateListenerOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::CreateListenerRequest&, CreateListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateListenerAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateListenerAdditionalCertResponse> CreateListenerAdditionalCertOutcome;
+                typedef std::future<CreateListenerAdditionalCertOutcome> CreateListenerAdditionalCertOutcomeCallable;
+                typedef std::function<void(const Ga2Client*, const Model::CreateListenerAdditionalCertRequest&, CreateListenerAdditionalCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateListenerAdditionalCertAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAccelerateAreasResponse> DeleteAccelerateAreasOutcome;
                 typedef std::future<DeleteAccelerateAreasOutcome> DeleteAccelerateAreasOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::DeleteAccelerateAreasRequest&, DeleteAccelerateAreasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccelerateAreasAsyncHandler;
@@ -127,6 +136,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteListenerResponse> DeleteListenerOutcome;
                 typedef std::future<DeleteListenerOutcome> DeleteListenerOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::DeleteListenerRequest&, DeleteListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteListenerAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteListenerAdditionalCertResponse> DeleteListenerAdditionalCertOutcome;
+                typedef std::future<DeleteListenerAdditionalCertOutcome> DeleteListenerAdditionalCertOutcomeCallable;
+                typedef std::function<void(const Ga2Client*, const Model::DeleteListenerAdditionalCertRequest&, DeleteListenerAdditionalCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteListenerAdditionalCertAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAccelerateAreasResponse> DescribeAccelerateAreasOutcome;
                 typedef std::future<DescribeAccelerateAreasOutcome> DescribeAccelerateAreasOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::DescribeAccelerateAreasRequest&, DescribeAccelerateAreasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccelerateAreasAsyncHandler;
@@ -172,6 +184,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyListenerResponse> ModifyListenerOutcome;
                 typedef std::future<ModifyListenerOutcome> ModifyListenerOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::ModifyListenerRequest&, ModifyListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyListenerAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReplaceListenerAdditionalCertResponse> ReplaceListenerAdditionalCertOutcome;
+                typedef std::future<ReplaceListenerAdditionalCertOutcome> ReplaceListenerAdditionalCertOutcomeCallable;
+                typedef std::function<void(const Ga2Client*, const Model::ReplaceListenerAdditionalCertRequest&, ReplaceListenerAdditionalCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceListenerAdditionalCertAsyncHandler;
 
 
 
@@ -230,6 +245,15 @@ namespace TencentCloud
                 CreateListenerOutcomeCallable CreateListenerCallable(const Model::CreateListenerRequest& request);
 
                 /**
+                 *添加扩展证书
+                 * @param req CreateListenerAdditionalCertRequest
+                 * @return CreateListenerAdditionalCertOutcome
+                 */
+                CreateListenerAdditionalCertOutcome CreateListenerAdditionalCert(const Model::CreateListenerAdditionalCertRequest &request);
+                void CreateListenerAdditionalCertAsync(const Model::CreateListenerAdditionalCertRequest& request, const CreateListenerAdditionalCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateListenerAdditionalCertOutcomeCallable CreateListenerAdditionalCertCallable(const Model::CreateListenerAdditionalCertRequest& request);
+
+                /**
                  *删除加速地域
                  * @param req DeleteAccelerateAreasRequest
                  * @return DeleteAccelerateAreasOutcome
@@ -282,6 +306,15 @@ namespace TencentCloud
                 DeleteListenerOutcome DeleteListener(const Model::DeleteListenerRequest &request);
                 void DeleteListenerAsync(const Model::DeleteListenerRequest& request, const DeleteListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteListenerOutcomeCallable DeleteListenerCallable(const Model::DeleteListenerRequest& request);
+
+                /**
+                 *删除扩展证书
+                 * @param req DeleteListenerAdditionalCertRequest
+                 * @return DeleteListenerAdditionalCertOutcome
+                 */
+                DeleteListenerAdditionalCertOutcome DeleteListenerAdditionalCert(const Model::DeleteListenerAdditionalCertRequest &request);
+                void DeleteListenerAdditionalCertAsync(const Model::DeleteListenerAdditionalCertRequest& request, const DeleteListenerAdditionalCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteListenerAdditionalCertOutcomeCallable DeleteListenerAdditionalCertCallable(const Model::DeleteListenerAdditionalCertRequest& request);
 
                 /**
                  *查询加速地域
@@ -417,6 +450,15 @@ namespace TencentCloud
                 ModifyListenerOutcome ModifyListener(const Model::ModifyListenerRequest &request);
                 void ModifyListenerAsync(const Model::ModifyListenerRequest& request, const ModifyListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyListenerOutcomeCallable ModifyListenerCallable(const Model::ModifyListenerRequest& request);
+
+                /**
+                 *替换扩展证书
+                 * @param req ReplaceListenerAdditionalCertRequest
+                 * @return ReplaceListenerAdditionalCertOutcome
+                 */
+                ReplaceListenerAdditionalCertOutcome ReplaceListenerAdditionalCert(const Model::ReplaceListenerAdditionalCertRequest &request);
+                void ReplaceListenerAdditionalCertAsync(const Model::ReplaceListenerAdditionalCertRequest& request, const ReplaceListenerAdditionalCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReplaceListenerAdditionalCertOutcomeCallable ReplaceListenerAdditionalCertCallable(const Model::ReplaceListenerAdditionalCertRequest& request);
 
             };
         }

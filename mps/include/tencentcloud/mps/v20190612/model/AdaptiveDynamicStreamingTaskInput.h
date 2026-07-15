@@ -31,6 +31,7 @@
 #include <tencentcloud/mps/v20190612/model/DrmInfo.h>
 #include <tencentcloud/mps/v20190612/model/SubtitleTemplate.h>
 #include <tencentcloud/mps/v20190612/model/AddOnAudio.h>
+#include <tencentcloud/mps/v20190612/model/AdaptiveStreamTemplate.h>
 
 
 namespace TencentCloud
@@ -371,6 +372,27 @@ namespace TencentCloud
                      */
                     bool AddOnAudiosHasBeenSet() const;
 
+                    /**
+                     * 获取<p>非空时直接替换模板的 StreamInfos 字段，字段格式与创建自适应模板时的 StreamInfos 完全一致</p>
+                     * @return StdExtStreamInfos <p>非空时直接替换模板的 StreamInfos 字段，字段格式与创建自适应模板时的 StreamInfos 完全一致</p>
+                     * 
+                     */
+                    std::vector<AdaptiveStreamTemplate> GetStdExtStreamInfos() const;
+
+                    /**
+                     * 设置<p>非空时直接替换模板的 StreamInfos 字段，字段格式与创建自适应模板时的 StreamInfos 完全一致</p>
+                     * @param _stdExtStreamInfos <p>非空时直接替换模板的 StreamInfos 字段，字段格式与创建自适应模板时的 StreamInfos 完全一致</p>
+                     * 
+                     */
+                    void SetStdExtStreamInfos(const std::vector<AdaptiveStreamTemplate>& _stdExtStreamInfos);
+
+                    /**
+                     * 判断参数 StdExtStreamInfos 是否已赋值
+                     * @return StdExtStreamInfos 是否已赋值
+                     * 
+                     */
+                    bool StdExtStreamInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -462,6 +484,12 @@ namespace TencentCloud
                      */
                     std::vector<AddOnAudio> m_addOnAudios;
                     bool m_addOnAudiosHasBeenSet;
+
+                    /**
+                     * <p>非空时直接替换模板的 StreamInfos 字段，字段格式与创建自适应模板时的 StreamInfos 完全一致</p>
+                     */
+                    std::vector<AdaptiveStreamTemplate> m_stdExtStreamInfos;
+                    bool m_stdExtStreamInfosHasBeenSet;
 
                 };
             }

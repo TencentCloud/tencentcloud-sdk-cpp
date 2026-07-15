@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目得分数组
-                     * @return ScoreSet 项目得分数组
+                     * 获取<p>项目得分数组</p>
+                     * @return ScoreSet <p>项目得分数组</p>
                      * 
                      */
                     std::vector<ScoreInfoV2> GetScoreSet() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目得分数组
+                     * <p>项目得分数组</p>
                      */
                     std::vector<ScoreInfoV2> m_scoreSet;
                     bool m_scoreSetHasBeenSet;

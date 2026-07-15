@@ -43,7 +43,8 @@ CreateCustomerRequest::CreateCustomerRequest() :
     m_portScanQpsHasBeenSet(false),
     m_singleIPTaskLimitHasBeenSet(false),
     m_highRiskAckHasBeenSet(false),
-    m_scanRateAckChecklistHasBeenSet(false)
+    m_scanRateAckChecklistHasBeenSet(false),
+    m_scanPriorityHasBeenSet(false)
 {
 }
 
@@ -225,6 +226,15 @@ string CreateCustomerRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_scanPriorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanPriority";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_scanPriority.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -569,6 +579,22 @@ void CreateCustomerRequest::SetScanRateAckChecklist(const vector<string>& _scanR
 bool CreateCustomerRequest::ScanRateAckChecklistHasBeenSet() const
 {
     return m_scanRateAckChecklistHasBeenSet;
+}
+
+ScanPriorityReq CreateCustomerRequest::GetScanPriority() const
+{
+    return m_scanPriority;
+}
+
+void CreateCustomerRequest::SetScanPriority(const ScanPriorityReq& _scanPriority)
+{
+    m_scanPriority = _scanPriority;
+    m_scanPriorityHasBeenSet = true;
+}
+
+bool CreateCustomerRequest::ScanPriorityHasBeenSet() const
+{
+    return m_scanPriorityHasBeenSet;
 }
 
 

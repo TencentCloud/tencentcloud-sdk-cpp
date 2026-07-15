@@ -340,6 +340,56 @@ Ga2Client::CreateListenerOutcomeCallable Ga2Client::CreateListenerCallable(const
     return prom->get_future();
 }
 
+Ga2Client::CreateListenerAdditionalCertOutcome Ga2Client::CreateListenerAdditionalCert(const CreateListenerAdditionalCertRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateListenerAdditionalCert");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateListenerAdditionalCertResponse rsp = CreateListenerAdditionalCertResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateListenerAdditionalCertOutcome(rsp);
+        else
+            return CreateListenerAdditionalCertOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateListenerAdditionalCertOutcome(outcome.GetError());
+    }
+}
+
+void Ga2Client::CreateListenerAdditionalCertAsync(const CreateListenerAdditionalCertRequest& request, const CreateListenerAdditionalCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateListenerAdditionalCertRequest&;
+    using Resp = CreateListenerAdditionalCertResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateListenerAdditionalCert", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ga2Client::CreateListenerAdditionalCertOutcomeCallable Ga2Client::CreateListenerAdditionalCertCallable(const CreateListenerAdditionalCertRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateListenerAdditionalCertOutcome>>();
+    CreateListenerAdditionalCertAsync(
+    request,
+    [prom](
+        const Ga2Client*,
+        const CreateListenerAdditionalCertRequest&,
+        CreateListenerAdditionalCertOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 Ga2Client::DeleteAccelerateAreasOutcome Ga2Client::DeleteAccelerateAreas(const DeleteAccelerateAreasRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAccelerateAreas");
@@ -632,6 +682,56 @@ Ga2Client::DeleteListenerOutcomeCallable Ga2Client::DeleteListenerCallable(const
         const Ga2Client*,
         const DeleteListenerRequest&,
         DeleteListenerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+Ga2Client::DeleteListenerAdditionalCertOutcome Ga2Client::DeleteListenerAdditionalCert(const DeleteListenerAdditionalCertRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteListenerAdditionalCert");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteListenerAdditionalCertResponse rsp = DeleteListenerAdditionalCertResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteListenerAdditionalCertOutcome(rsp);
+        else
+            return DeleteListenerAdditionalCertOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteListenerAdditionalCertOutcome(outcome.GetError());
+    }
+}
+
+void Ga2Client::DeleteListenerAdditionalCertAsync(const DeleteListenerAdditionalCertRequest& request, const DeleteListenerAdditionalCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteListenerAdditionalCertRequest&;
+    using Resp = DeleteListenerAdditionalCertResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteListenerAdditionalCert", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ga2Client::DeleteListenerAdditionalCertOutcomeCallable Ga2Client::DeleteListenerAdditionalCertCallable(const DeleteListenerAdditionalCertRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteListenerAdditionalCertOutcome>>();
+    DeleteListenerAdditionalCertAsync(
+    request,
+    [prom](
+        const Ga2Client*,
+        const DeleteListenerAdditionalCertRequest&,
+        DeleteListenerAdditionalCertOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1382,6 +1482,56 @@ Ga2Client::ModifyListenerOutcomeCallable Ga2Client::ModifyListenerCallable(const
         const Ga2Client*,
         const ModifyListenerRequest&,
         ModifyListenerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+Ga2Client::ReplaceListenerAdditionalCertOutcome Ga2Client::ReplaceListenerAdditionalCert(const ReplaceListenerAdditionalCertRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReplaceListenerAdditionalCert");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReplaceListenerAdditionalCertResponse rsp = ReplaceListenerAdditionalCertResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReplaceListenerAdditionalCertOutcome(rsp);
+        else
+            return ReplaceListenerAdditionalCertOutcome(o.GetError());
+    }
+    else
+    {
+        return ReplaceListenerAdditionalCertOutcome(outcome.GetError());
+    }
+}
+
+void Ga2Client::ReplaceListenerAdditionalCertAsync(const ReplaceListenerAdditionalCertRequest& request, const ReplaceListenerAdditionalCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ReplaceListenerAdditionalCertRequest&;
+    using Resp = ReplaceListenerAdditionalCertResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ReplaceListenerAdditionalCert", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ga2Client::ReplaceListenerAdditionalCertOutcomeCallable Ga2Client::ReplaceListenerAdditionalCertCallable(const ReplaceListenerAdditionalCertRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ReplaceListenerAdditionalCertOutcome>>();
+    ReplaceListenerAdditionalCertAsync(
+    request,
+    [prom](
+        const Ga2Client*,
+        const ReplaceListenerAdditionalCertRequest&,
+        ReplaceListenerAdditionalCertOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

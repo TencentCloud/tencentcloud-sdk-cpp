@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取排序方式  desc  asc（必填）
-                     * @return OrderBy 排序方式  desc  asc（必填）
+                     * 获取<p>排序方式  desc  asc（必填）</p>
+                     * @return OrderBy <p>排序方式  desc  asc（必填）</p>
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序方式  desc  asc（必填）
-                     * @param _orderBy 排序方式  desc  asc（必填）
+                     * 设置<p>排序方式  desc  asc（必填）</p>
+                     * @param _orderBy <p>排序方式  desc  asc（必填）</p>
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取开始时间（必填）
-                     * @return StartTime 开始时间（必填）
+                     * 获取<p>开始时间（必填）</p>
+                     * @return StartTime <p>开始时间（必填）</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间（必填）
-                     * @param _startTime 开始时间（必填）
+                     * 设置<p>开始时间（必填）</p>
+                     * @param _startTime <p>开始时间（必填）</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取单次查询返回的原始日志条数，最大值为100（必填）
-                     * @return Limit 单次查询返回的原始日志条数，最大值为100（必填）
+                     * 获取<p>单次查询返回的原始日志条数，最大值为100（必填）</p>
+                     * @return Limit <p>单次查询返回的原始日志条数，最大值为100（必填）</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置单次查询返回的原始日志条数，最大值为100（必填）
-                     * @param _limit 单次查询返回的原始日志条数，最大值为100（必填）
+                     * 设置<p>单次查询返回的原始日志条数，最大值为100（必填）</p>
+                     * @param _limit <p>单次查询返回的原始日志条数，最大值为100（必填）</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取页数，第几页
-                     * @return Page 页数，第几页
+                     * 获取<p>页数，第几页（注意：该字段已废弃！）</p>
+                     * @return Page <p>页数，第几页（注意：该字段已废弃！）</p>
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
-                     * 设置页数，第几页
-                     * @param _page 页数，第几页
+                     * 设置<p>页数，第几页（注意：该字段已废弃！）</p>
+                     * @param _page <p>页数，第几页（注意：该字段已废弃！）</p>
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool PageHasBeenSet() const;
 
                     /**
-                     * 获取查询语句，参考控制台请求参数，语句长度最大为4096（必填）
-                     * @return Query 查询语句，参考控制台请求参数，语句长度最大为4096（必填）
+                     * 获取<p>查询语句，参考控制台请求参数，语句长度最大为4096（必填）</p>
+                     * @return Query <p>查询语句，参考控制台请求参数，语句长度最大为4096（必填）</p>
                      * 
                      */
                     std::string GetQuery() const;
 
                     /**
-                     * 设置查询语句，参考控制台请求参数，语句长度最大为4096（必填）
-                     * @param _query 查询语句，参考控制台请求参数，语句长度最大为4096（必填）
+                     * 设置<p>查询语句，参考控制台请求参数，语句长度最大为4096（必填）</p>
+                     * @param _query <p>查询语句，参考控制台请求参数，语句长度最大为4096（必填）</p>
                      * 
                      */
                     void SetQuery(const std::string& _query);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取结束时间（必填）
-                     * @return EndTime 结束时间（必填）
+                     * 获取<p>结束时间（必填）</p>
+                     * @return EndTime <p>结束时间（必填）</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间（必填）
-                     * @param _endTime 结束时间（必填）
+                     * 设置<p>结束时间（必填）</p>
+                     * @param _endTime <p>结束时间（必填）</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取项目ID（必填）
-                     * @return ID 项目ID（必填）
+                     * 获取<p>项目ID（必填）</p>
+                     * @return ID <p>项目ID（必填）</p>
                      * 
                      */
                     int64_t GetID() const;
 
                     /**
-                     * 设置项目ID（必填）
-                     * @param _iD 项目ID（必填）
+                     * 设置<p>项目ID（必填）</p>
+                     * @param _iD <p>项目ID（必填）</p>
                      * 
                      */
                     void SetID(const int64_t& _iD);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取聚合字段
-                     * @return GroupField 聚合字段
+                     * 获取<p>聚合字段</p>
+                     * @return GroupField <p>聚合字段</p>
                      * 
                      */
                     std::string GetGroupField() const;
 
                     /**
-                     * 设置聚合字段
-                     * @param _groupField 聚合字段
+                     * 设置<p>聚合字段</p>
+                     * @param _groupField <p>聚合字段</p>
                      * 
                      */
                     void SetGroupField(const std::string& _groupField);
@@ -213,49 +213,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 排序方式  desc  asc（必填）
+                     * <p>排序方式  desc  asc（必填）</p>
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 开始时间（必填）
+                     * <p>开始时间（必填）</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 单次查询返回的原始日志条数，最大值为100（必填）
+                     * <p>单次查询返回的原始日志条数，最大值为100（必填）</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 页数，第几页
+                     * <p>页数，第几页（注意：该字段已废弃！）</p>
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;
 
                     /**
-                     * 查询语句，参考控制台请求参数，语句长度最大为4096（必填）
+                     * <p>查询语句，参考控制台请求参数，语句长度最大为4096（必填）</p>
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 结束时间（必填）
+                     * <p>结束时间（必填）</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 项目ID（必填）
+                     * <p>项目ID（必填）</p>
                      */
                     int64_t m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 聚合字段
+                     * <p>聚合字段</p>
                      */
                     std::string m_groupField;
                     bool m_groupFieldHasBeenSet;

@@ -44,10 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取最终授权成功的用户ID，在腾讯电子签平台的唯一身份标识，为32位字符串。
-可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查看某位员工的UserId(在页面中展示为用户ID)。
-                     * @return UserIds 最终授权成功的用户ID，在腾讯电子签平台的唯一身份标识，为32位字符串。
-可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查看某位员工的UserId(在页面中展示为用户ID)。
+                     * 获取<p>最终授权成功的用户ID，在腾讯电子签平台的唯一身份标识，为32位字符串。<br>可登录腾讯电子签控制台，在 &quot;更多能力&quot;-&gt;&quot;组织管理&quot; 中查看某位员工的UserId(在页面中展示为用户ID)。</p>
+                     * @return UserIds <p>最终授权成功的用户ID，在腾讯电子签平台的唯一身份标识，为32位字符串。<br>可登录腾讯电子签控制台，在 &quot;更多能力&quot;-&gt;&quot;组织管理&quot; 中查看某位员工的UserId(在页面中展示为用户ID)。</p>
                      * 
                      */
                     std::vector<std::string> GetUserIds() const;
@@ -60,8 +58,8 @@ namespace TencentCloud
                     bool UserIdsHasBeenSet() const;
 
                     /**
-                     * 获取人脸验证操作人链接，用法可以参考"[跳转电子签小程序配置](https://qian.tencent.com/developers/company/openwxminiprogram/)"，默认为空。
-                     * @return SealOperatorVerifyPath 人脸验证操作人链接，用法可以参考"[跳转电子签小程序配置](https://qian.tencent.com/developers/company/openwxminiprogram/)"，默认为空。
+                     * 获取<p>人脸验证操作人链接，用法可以参考&quot;<a href="https://qian.tencent.com/developers/company/openwxminiprogram/">跳转电子签小程序配置</a>&quot;，默认为空。</p>
+                     * @return SealOperatorVerifyPath <p>人脸验证操作人链接，用法可以参考&quot;<a href="https://qian.tencent.com/developers/company/openwxminiprogram/">跳转电子签小程序配置</a>&quot;，默认为空。</p>
                      * 
                      */
                     std::string GetSealOperatorVerifyPath() const;
@@ -74,8 +72,8 @@ namespace TencentCloud
                     bool SealOperatorVerifyPathHasBeenSet() const;
 
                     /**
-                     * 获取人脸验证操作人二维码链接，扫码后会跳转到腾讯电子签小程序进行人脸验证，默认为空。
-                     * @return SealOperatorVerifyQrcodeUrl 人脸验证操作人二维码链接，扫码后会跳转到腾讯电子签小程序进行人脸验证，默认为空。
+                     * 获取<p>人脸验证操作人二维码链接，扫码后会跳转到腾讯电子签小程序进行人脸验证，默认为空。</p>
+                     * @return SealOperatorVerifyQrcodeUrl <p>人脸验证操作人二维码链接，扫码后会跳转到腾讯电子签小程序进行人脸验证，默认为空。</p>
                      * 
                      */
                     std::string GetSealOperatorVerifyQrcodeUrl() const;
@@ -90,20 +88,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 最终授权成功的用户ID，在腾讯电子签平台的唯一身份标识，为32位字符串。
-可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查看某位员工的UserId(在页面中展示为用户ID)。
+                     * <p>最终授权成功的用户ID，在腾讯电子签平台的唯一身份标识，为32位字符串。<br>可登录腾讯电子签控制台，在 &quot;更多能力&quot;-&gt;&quot;组织管理&quot; 中查看某位员工的UserId(在页面中展示为用户ID)。</p>
                      */
                     std::vector<std::string> m_userIds;
                     bool m_userIdsHasBeenSet;
 
                     /**
-                     * 人脸验证操作人链接，用法可以参考"[跳转电子签小程序配置](https://qian.tencent.com/developers/company/openwxminiprogram/)"，默认为空。
+                     * <p>人脸验证操作人链接，用法可以参考&quot;<a href="https://qian.tencent.com/developers/company/openwxminiprogram/">跳转电子签小程序配置</a>&quot;，默认为空。</p>
                      */
                     std::string m_sealOperatorVerifyPath;
                     bool m_sealOperatorVerifyPathHasBeenSet;
 
                     /**
-                     * 人脸验证操作人二维码链接，扫码后会跳转到腾讯电子签小程序进行人脸验证，默认为空。
+                     * <p>人脸验证操作人二维码链接，扫码后会跳转到腾讯电子签小程序进行人脸验证，默认为空。</p>
                      */
                     std::string m_sealOperatorVerifyQrcodeUrl;
                     bool m_sealOperatorVerifyQrcodeUrlHasBeenSet;

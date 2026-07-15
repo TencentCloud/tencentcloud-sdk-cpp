@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主键ID
-                     * @return Id 主键ID
+                     * 获取<p>主键ID</p>
+                     * @return Id <p>主键ID</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置主键ID
-                     * @param _id 主键ID
+                     * 设置<p>主键ID</p>
+                     * @param _id <p>主键ID</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取公共字段
-                     * @return DisplayToolCommon 公共字段
+                     * 获取<p>公共字段</p>
+                     * @return DisplayToolCommon <p>公共字段</p>
                      * 
                      */
                     DisplayToolCommon GetDisplayToolCommon() const;
 
                     /**
-                     * 设置公共字段
-                     * @param _displayToolCommon 公共字段
+                     * 设置<p>公共字段</p>
+                     * @param _displayToolCommon <p>公共字段</p>
                      * 
                      */
                     void SetDisplayToolCommon(const DisplayToolCommon& _displayToolCommon);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool DisplayToolCommonHasBeenSet() const;
 
                     /**
-                     * 获取事件名称
-                     * @return Name 事件名称
+                     * 获取<p>事件名称</p>
+                     * @return Name <p>事件名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置事件名称
-                     * @param _name 事件名称
+                     * 设置<p>事件名称</p>
+                     * @param _name <p>事件名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取事件描述
-                     * @return Description 事件描述
+                     * 获取<p>事件描述</p>
+                     * @return Description <p>事件描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置事件描述
-                     * @param _description 事件描述
+                     * 设置<p>事件描述</p>
+                     * @param _description <p>事件描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取数据源
-                     * @return Source 数据源
+                     * 获取<p>数据源</p>
+                     * @return Source <p>数据源</p>
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
-                     * 设置数据源
-                     * @param _source 数据源
+                     * 设置<p>数据源</p>
+                     * @param _source <p>数据源</p>
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取风险等级：1-低危 2-中危 3-高危 4-严重 5-误报
-                     * @return RiskLevel 风险等级：1-低危 2-中危 3-高危 4-严重 5-误报
+                     * 获取<p>风险等级：1-低危 2-中危 3-高危 4-严重 5-误报</p>
+                     * @return RiskLevel <p>风险等级：1-低危 2-中危 3-高危 4-严重 5-误报</p>
                      * 
                      */
                     int64_t GetRiskLevel() const;
 
                     /**
-                     * 设置风险等级：1-低危 2-中危 3-高危 4-严重 5-误报
-                     * @param _riskLevel 风险等级：1-低危 2-中危 3-高危 4-严重 5-误报
+                     * 设置<p>风险等级：1-低危 2-中危 3-高危 4-严重 5-误报</p>
+                     * @param _riskLevel <p>风险等级：1-低危 2-中危 3-高危 4-严重 5-误报</p>
                      * 
                      */
                     void SetRiskLevel(const int64_t& _riskLevel);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool RiskLevelHasBeenSet() const;
 
                     /**
-                     * 获取仓库名称
-                     * @return HubName 仓库名称
+                     * 获取<p>仓库名称</p>
+                     * @return HubName <p>仓库名称</p>
                      * 
                      */
                     std::string GetHubName() const;
 
                     /**
-                     * 设置仓库名称
-                     * @param _hubName 仓库名称
+                     * 设置<p>仓库名称</p>
+                     * @param _hubName <p>仓库名称</p>
                      * 
                      */
                     void SetHubName(const std::string& _hubName);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool HubNameHasBeenSet() const;
 
                     /**
-                     * 获取链接
-                     * @return Url 链接
+                     * 获取<p>链接</p>
+                     * @return Url <p>链接</p>
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置链接
-                     * @param _url 链接
+                     * 设置<p>链接</p>
+                     * @param _url <p>链接</p>
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取截图
-                     * @return Screenshot 截图
+                     * 获取<p>截图</p>
+                     * @return Screenshot <p>截图</p>
                      * 
                      */
                     std::string GetScreenshot() const;
 
                     /**
-                     * 设置截图
-                     * @param _screenshot 截图
+                     * 设置<p>截图</p>
+                     * @param _screenshot <p>截图</p>
                      * 
                      */
                     void SetScreenshot(const std::string& _screenshot);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool ScreenshotHasBeenSet() const;
 
                     /**
-                     * 获取建议
-                     * @return Suggestion 建议
+                     * 获取<p>建议</p>
+                     * @return Suggestion <p>建议</p>
                      * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置建议
-                     * @param _suggestion 建议
+                     * 设置<p>建议</p>
+                     * @param _suggestion <p>建议</p>
                      * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取关键词
-                     * @return Keyword 关键词
+                     * 获取<p>关键词</p>
+                     * @return Keyword <p>关键词</p>
                      * 
                      */
                     std::string GetKeyword() const;
 
                     /**
-                     * 设置关键词
-                     * @param _keyword 关键词
+                     * 设置<p>关键词</p>
+                     * @param _keyword <p>关键词</p>
                      * 
                      */
                     void SetKeyword(const std::string& _keyword);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool KeywordHasBeenSet() const;
 
                     /**
-                     * 获取处置状态：0-待处理 1-处理中 2-已处理
-                     * @return HandlingStatus 处置状态：0-待处理 1-处理中 2-已处理
+                     * 获取<p>处置状态</p><p>枚举值：</p><ul><li>0： 待处理</li><li>1： 处理中</li><li>2： 已处理</li><li>3： 误报</li></ul>
+                     * @return HandlingStatus <p>处置状态</p><p>枚举值：</p><ul><li>0： 待处理</li><li>1： 处理中</li><li>2： 已处理</li><li>3： 误报</li></ul>
                      * 
                      */
                     int64_t GetHandlingStatus() const;
 
                     /**
-                     * 设置处置状态：0-待处理 1-处理中 2-已处理
-                     * @param _handlingStatus 处置状态：0-待处理 1-处理中 2-已处理
+                     * 设置<p>处置状态</p><p>枚举值：</p><ul><li>0： 待处理</li><li>1： 处理中</li><li>2： 已处理</li><li>3： 误报</li></ul>
+                     * @param _handlingStatus <p>处置状态</p><p>枚举值：</p><ul><li>0： 待处理</li><li>1： 处理中</li><li>2： 已处理</li><li>3： 误报</li></ul>
                      * 
                      */
                     void SetHandlingStatus(const int64_t& _handlingStatus);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool HandlingStatusHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Remark 备注
+                     * 获取<p>备注</p>
+                     * @return Remark <p>备注</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注
-                     * @param _remark 备注
+                     * 设置<p>备注</p>
+                     * @param _remark <p>备注</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -320,85 +320,166 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取<p>仓库命名空间</p>
+                     * @return RepoNamespace <p>仓库命名空间</p>
+                     * 
+                     */
+                    std::string GetRepoNamespace() const;
+
+                    /**
+                     * 设置<p>仓库命名空间</p>
+                     * @param _repoNamespace <p>仓库命名空间</p>
+                     * 
+                     */
+                    void SetRepoNamespace(const std::string& _repoNamespace);
+
+                    /**
+                     * 判断参数 RepoNamespace 是否已赋值
+                     * @return RepoNamespace 是否已赋值
+                     * 
+                     */
+                    bool RepoNamespaceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>仓库名称</p>
+                     * @return RepoName <p>仓库名称</p>
+                     * 
+                     */
+                    std::string GetRepoName() const;
+
+                    /**
+                     * 设置<p>仓库名称</p>
+                     * @param _repoName <p>仓库名称</p>
+                     * 
+                     */
+                    void SetRepoName(const std::string& _repoName);
+
+                    /**
+                     * 判断参数 RepoName 是否已赋值
+                     * @return RepoName 是否已赋值
+                     * 
+                     */
+                    bool RepoNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>作者名称</p>
+                     * @return AuthorName <p>作者名称</p>
+                     * 
+                     */
+                    std::string GetAuthorName() const;
+
+                    /**
+                     * 设置<p>作者名称</p>
+                     * @param _authorName <p>作者名称</p>
+                     * 
+                     */
+                    void SetAuthorName(const std::string& _authorName);
+
+                    /**
+                     * 判断参数 AuthorName 是否已赋值
+                     * @return AuthorName 是否已赋值
+                     * 
+                     */
+                    bool AuthorNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 主键ID
+                     * <p>主键ID</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 公共字段
+                     * <p>公共字段</p>
                      */
                     DisplayToolCommon m_displayToolCommon;
                     bool m_displayToolCommonHasBeenSet;
 
                     /**
-                     * 事件名称
+                     * <p>事件名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 事件描述
+                     * <p>事件描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 数据源
+                     * <p>数据源</p>
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 风险等级：1-低危 2-中危 3-高危 4-严重 5-误报
+                     * <p>风险等级：1-低危 2-中危 3-高危 4-严重 5-误报</p>
                      */
                     int64_t m_riskLevel;
                     bool m_riskLevelHasBeenSet;
 
                     /**
-                     * 仓库名称
+                     * <p>仓库名称</p>
                      */
                     std::string m_hubName;
                     bool m_hubNameHasBeenSet;
 
                     /**
-                     * 链接
+                     * <p>链接</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 截图
+                     * <p>截图</p>
                      */
                     std::string m_screenshot;
                     bool m_screenshotHasBeenSet;
 
                     /**
-                     * 建议
+                     * <p>建议</p>
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * 关键词
+                     * <p>关键词</p>
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;
 
                     /**
-                     * 处置状态：0-待处理 1-处理中 2-已处理
+                     * <p>处置状态</p><p>枚举值：</p><ul><li>0： 待处理</li><li>1： 处理中</li><li>2： 已处理</li><li>3： 误报</li></ul>
                      */
                     int64_t m_handlingStatus;
                     bool m_handlingStatusHasBeenSet;
 
                     /**
-                     * 备注
+                     * <p>备注</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * <p>仓库命名空间</p>
+                     */
+                    std::string m_repoNamespace;
+                    bool m_repoNamespaceHasBeenSet;
+
+                    /**
+                     * <p>仓库名称</p>
+                     */
+                    std::string m_repoName;
+                    bool m_repoNameHasBeenSet;
+
+                    /**
+                     * <p>作者名称</p>
+                     */
+                    std::string m_authorName;
+                    bool m_authorNameHasBeenSet;
 
                 };
             }

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ctem/v20231128/model/ScanPriorityDisplay.h>
 
 
 namespace TencentCloud
@@ -575,6 +576,31 @@ namespace TencentCloud
                      */
                     bool PortScanQpsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>扫描优先级配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScanPriority <p>扫描优先级配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ScanPriorityDisplay GetScanPriority() const;
+
+                    /**
+                     * 设置<p>扫描优先级配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scanPriority <p>扫描优先级配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScanPriority(const ScanPriorityDisplay& _scanPriority);
+
+                    /**
+                     * 判断参数 ScanPriority 是否已赋值
+                     * @return ScanPriority 是否已赋值
+                     * 
+                     */
+                    bool ScanPriorityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -727,6 +753,13 @@ namespace TencentCloud
                      */
                     int64_t m_portScanQps;
                     bool m_portScanQpsHasBeenSet;
+
+                    /**
+                     * <p>扫描优先级配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ScanPriorityDisplay m_scanPriority;
+                    bool m_scanPriorityHasBeenSet;
 
                 };
             }

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群 ID
-                     * @return ClusterId 集群 ID
+                     * 获取<p>集群 ID</p>
+                     * @return ClusterId <p>集群 ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群 ID
-                     * @param _clusterId 集群 ID
+                     * 设置<p>集群 ID</p>
+                     * @param _clusterId <p>集群 ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取节点池名称
-                     * @return Name 节点池名称
+                     * 获取<p>节点池名称</p>
+                     * @return Name <p>节点池名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置节点池名称
-                     * @param _name 节点池名称
+                     * 设置<p>节点池名称</p>
+                     * @param _name <p>节点池名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取节点池类型
-                     * @return Type 节点池类型
+                     * 获取<p>节点池类型</p>
+                     * @return Type <p>节点池类型</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置节点池类型
-                     * @param _type 节点池类型
+                     * 设置<p>节点池类型</p>
+                     * @param _type <p>节点池类型</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取节点  Labels
-                     * @return Labels 节点  Labels
+                     * 获取<p>节点  Labels</p>
+                     * @return Labels <p>节点  Labels</p>
                      * 
                      */
                     std::vector<Label> GetLabels() const;
 
                     /**
-                     * 设置节点  Labels
-                     * @param _labels 节点  Labels
+                     * 设置<p>节点  Labels</p>
+                     * @param _labels <p>节点  Labels</p>
                      * 
                      */
                     void SetLabels(const std::vector<Label>& _labels);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool LabelsHasBeenSet() const;
 
                     /**
-                     * 获取节点污点
-                     * @return Taints 节点污点
+                     * 获取<p>节点污点</p>
+                     * @return Taints <p>节点污点</p>
                      * 
                      */
                     std::vector<Taint> GetTaints() const;
 
                     /**
-                     * 设置节点污点
-                     * @param _taints 节点污点
+                     * 设置<p>节点污点</p>
+                     * @param _taints <p>节点污点</p>
                      * 
                      */
                     void SetTaints(const std::vector<Taint>& _taints);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool TaintsHasBeenSet() const;
 
                     /**
-                     * 获取节点标签
-                     * @return Tags 节点标签
+                     * 获取<p>节点标签</p>
+                     * @return Tags <p>节点标签</p>
                      * 
                      */
                     std::vector<TagSpecification> GetTags() const;
 
                     /**
-                     * 设置节点标签
-                     * @param _tags 节点标签
+                     * 设置<p>节点标签</p>
+                     * @param _tags <p>节点标签</p>
                      * 
                      */
                     void SetTags(const std::vector<TagSpecification>& _tags);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取是否开启删除保护
-                     * @return DeletionProtection 是否开启删除保护
+                     * 获取<p>是否开启删除保护</p>
+                     * @return DeletionProtection <p>是否开启删除保护</p>
                      * 
                      */
                     bool GetDeletionProtection() const;
 
                     /**
-                     * 设置是否开启删除保护
-                     * @param _deletionProtection 是否开启删除保护
+                     * 设置<p>是否开启删除保护</p>
+                     * @param _deletionProtection <p>是否开启删除保护</p>
                      * 
                      */
                     void SetDeletionProtection(const bool& _deletionProtection);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool DeletionProtectionHasBeenSet() const;
 
                     /**
-                     * 获取节点是否默认不可调度
-                     * @return Unschedulable 节点是否默认不可调度
+                     * 获取<p>节点是否默认不可调度</p>
+                     * @return Unschedulable <p>节点是否默认不可调度</p>
                      * 
                      */
                     bool GetUnschedulable() const;
 
                     /**
-                     * 设置节点是否默认不可调度
-                     * @param _unschedulable 节点是否默认不可调度
+                     * 设置<p>节点是否默认不可调度</p>
+                     * @param _unschedulable <p>节点是否默认不可调度</p>
                      * 
                      */
                     void SetUnschedulable(const bool& _unschedulable);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool UnschedulableHasBeenSet() const;
 
                     /**
-                     * 获取原生节点池创建参数（Type字段设置为Native时需填写）
-                     * @return Native 原生节点池创建参数（Type字段设置为Native时需填写）
+                     * 获取<p>原生节点池创建参数（Type字段设置为Native时需填写）</p>
+                     * @return Native <p>原生节点池创建参数（Type字段设置为Native时需填写）</p>
                      * 
                      */
                     CreateNativeNodePoolParam GetNative() const;
 
                     /**
-                     * 设置原生节点池创建参数（Type字段设置为Native时需填写）
-                     * @param _native 原生节点池创建参数（Type字段设置为Native时需填写）
+                     * 设置<p>原生节点池创建参数（Type字段设置为Native时需填写）</p>
+                     * @param _native <p>原生节点池创建参数（Type字段设置为Native时需填写）</p>
                      * 
                      */
                     void SetNative(const CreateNativeNodePoolParam& _native);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool NativeHasBeenSet() const;
 
                     /**
-                     * 获取节点 Annotation 列表
-                     * @return Annotations 节点 Annotation 列表
+                     * 获取<p>节点 Annotation 列表</p>
+                     * @return Annotations <p>节点 Annotation 列表</p>
                      * 
                      */
                     std::vector<Annotation> GetAnnotations() const;
 
                     /**
-                     * 设置节点 Annotation 列表
-                     * @param _annotations 节点 Annotation 列表
+                     * 设置<p>节点 Annotation 列表</p>
+                     * @param _annotations <p>节点 Annotation 列表</p>
                      * 
                      */
                     void SetAnnotations(const std::vector<Annotation>& _annotations);
@@ -260,61 +260,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群 ID
+                     * <p>集群 ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 节点池名称
+                     * <p>节点池名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 节点池类型
+                     * <p>节点池类型</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 节点  Labels
+                     * <p>节点  Labels</p>
                      */
                     std::vector<Label> m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
-                     * 节点污点
+                     * <p>节点污点</p>
                      */
                     std::vector<Taint> m_taints;
                     bool m_taintsHasBeenSet;
 
                     /**
-                     * 节点标签
+                     * <p>节点标签</p>
                      */
                     std::vector<TagSpecification> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 是否开启删除保护
+                     * <p>是否开启删除保护</p>
                      */
                     bool m_deletionProtection;
                     bool m_deletionProtectionHasBeenSet;
 
                     /**
-                     * 节点是否默认不可调度
+                     * <p>节点是否默认不可调度</p>
                      */
                     bool m_unschedulable;
                     bool m_unschedulableHasBeenSet;
 
                     /**
-                     * 原生节点池创建参数（Type字段设置为Native时需填写）
+                     * <p>原生节点池创建参数（Type字段设置为Native时需填写）</p>
                      */
                     CreateNativeNodePoolParam m_native;
                     bool m_nativeHasBeenSet;
 
                     /**
-                     * 节点 Annotation 列表
+                     * <p>节点 Annotation 列表</p>
                      */
                     std::vector<Annotation> m_annotations;
                     bool m_annotationsHasBeenSet;

@@ -21,9 +21,9 @@ using namespace TencentCloud::Tke::V20220501::Model;
 using namespace std;
 
 Taint::Taint() :
+    m_effectHasBeenSet(false),
     m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_effectHasBeenSet(false)
+    m_valueHasBeenSet(false)
 {
 }
 
@@ -31,6 +31,16 @@ CoreInternalOutcome Taint::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("Effect") && !value["Effect"].IsNull())
+    {
+        if (!value["Effect"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Taint.Effect` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_effect = string(value["Effect"].GetString());
+        m_effectHasBeenSet = true;
+    }
 
     if (value.HasMember("Key") && !value["Key"].IsNull())
     {
@@ -52,22 +62,20 @@ CoreInternalOutcome Taint::Deserialize(const rapidjson::Value &value)
         m_valueHasBeenSet = true;
     }
 
-    if (value.HasMember("Effect") && !value["Effect"].IsNull())
-    {
-        if (!value["Effect"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Taint.Effect` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_effect = string(value["Effect"].GetString());
-        m_effectHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
 void Taint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_effectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Effect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_effect.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_keyHasBeenSet)
     {
@@ -85,16 +93,24 @@ void Taint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         value.AddMember(iKey, rapidjson::Value(m_value.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_effectHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Effect";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_effect.c_str(), allocator).Move(), allocator);
-    }
-
 }
 
+
+string Taint::GetEffect() const
+{
+    return m_effect;
+}
+
+void Taint::SetEffect(const string& _effect)
+{
+    m_effect = _effect;
+    m_effectHasBeenSet = true;
+}
+
+bool Taint::EffectHasBeenSet() const
+{
+    return m_effectHasBeenSet;
+}
 
 string Taint::GetKey() const
 {
@@ -126,21 +142,5 @@ void Taint::SetValue(const string& _value)
 bool Taint::ValueHasBeenSet() const
 {
     return m_valueHasBeenSet;
-}
-
-string Taint::GetEffect() const
-{
-    return m_effect;
-}
-
-void Taint::SetEffect(const string& _effect)
-{
-    m_effect = _effect;
-    m_effectHasBeenSet = true;
-}
-
-bool Taint::EffectHasBeenSet() const
-{
-    return m_effectHasBeenSet;
 }
 

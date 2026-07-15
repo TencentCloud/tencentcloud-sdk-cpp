@@ -252,6 +252,27 @@ namespace TencentCloud
                      */
                     bool KnowledgeBaseIdsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>版本信息</p>
+                     * @return ArchVersion <p>版本信息</p>
+                     * 
+                     */
+                    std::string GetArchVersion() const;
+
+                    /**
+                     * 设置<p>版本信息</p>
+                     * @param _archVersion <p>版本信息</p>
+                     * 
+                     */
+                    void SetArchVersion(const std::string& _archVersion);
+
+                    /**
+                     * 判断参数 ArchVersion 是否已赋值
+                     * @return ArchVersion 是否已赋值
+                     * 
+                     */
+                    bool ArchVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +334,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_knowledgeBaseIds;
                     bool m_knowledgeBaseIdsHasBeenSet;
+
+                    /**
+                     * <p>版本信息</p>
+                     */
+                    std::string m_archVersion;
+                    bool m_archVersionHasBeenSet;
 
                 };
             }

@@ -41,6 +41,8 @@
 #include <tencentcloud/mps/v20190612/model/CreateAIRecognitionTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateAdaptiveDynamicStreamingTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateAdaptiveDynamicStreamingTemplateResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateAiDramaTaskRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateAiDramaTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateAigcAudioTaskRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateAigcAudioTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateAigcImageTaskRequest.h>
@@ -105,6 +107,8 @@
 #include <tencentcloud/mps/v20190612/model/CreateTranscodeTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateVideoDatabaseEntryTaskRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateVideoDatabaseEntryTaskResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateVideoRedrawTaskRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateVideoRedrawTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateVideoSearchTaskRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateVideoSearchTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateWatermarkTemplateRequest.h>
@@ -490,6 +494,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAdaptiveDynamicStreamingTemplateResponse> CreateAdaptiveDynamicStreamingTemplateOutcome;
                 typedef std::future<CreateAdaptiveDynamicStreamingTemplateOutcome> CreateAdaptiveDynamicStreamingTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateAdaptiveDynamicStreamingTemplateRequest&, CreateAdaptiveDynamicStreamingTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAdaptiveDynamicStreamingTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAiDramaTaskResponse> CreateAiDramaTaskOutcome;
+                typedef std::future<CreateAiDramaTaskOutcome> CreateAiDramaTaskOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateAiDramaTaskRequest&, CreateAiDramaTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAiDramaTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAigcAudioTaskResponse> CreateAigcAudioTaskOutcome;
                 typedef std::future<CreateAigcAudioTaskOutcome> CreateAigcAudioTaskOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateAigcAudioTaskRequest&, CreateAigcAudioTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcAudioTaskAsyncHandler;
@@ -586,6 +593,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateVideoDatabaseEntryTaskResponse> CreateVideoDatabaseEntryTaskOutcome;
                 typedef std::future<CreateVideoDatabaseEntryTaskOutcome> CreateVideoDatabaseEntryTaskOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateVideoDatabaseEntryTaskRequest&, CreateVideoDatabaseEntryTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoDatabaseEntryTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVideoRedrawTaskResponse> CreateVideoRedrawTaskOutcome;
+                typedef std::future<CreateVideoRedrawTaskOutcome> CreateVideoRedrawTaskOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateVideoRedrawTaskRequest&, CreateVideoRedrawTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoRedrawTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateVideoSearchTaskResponse> CreateVideoSearchTaskOutcome;
                 typedef std::future<CreateVideoSearchTaskOutcome> CreateVideoSearchTaskOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateVideoSearchTaskRequest&, CreateVideoSearchTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoSearchTaskAsyncHandler;
@@ -1188,6 +1198,15 @@ namespace TencentCloud
                 CreateAdaptiveDynamicStreamingTemplateOutcomeCallable CreateAdaptiveDynamicStreamingTemplateCallable(const Model::CreateAdaptiveDynamicStreamingTemplateRequest& request);
 
                 /**
+                 *Ai漫剧工作流，输入剧本，自动拆分分镜，生成Ai漫剧
+                 * @param req CreateAiDramaTaskRequest
+                 * @return CreateAiDramaTaskOutcome
+                 */
+                CreateAiDramaTaskOutcome CreateAiDramaTask(const Model::CreateAiDramaTaskRequest &request);
+                void CreateAiDramaTaskAsync(const Model::CreateAiDramaTaskRequest& request, const CreateAiDramaTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAiDramaTaskOutcomeCallable CreateAiDramaTaskCallable(const Model::CreateAiDramaTaskRequest& request);
+
+                /**
                  *调用该接口，用于创建AI生音频任务。
                  * @param req CreateAigcAudioTaskRequest
                  * @return CreateAigcAudioTaskOutcome
@@ -1492,6 +1511,15 @@ namespace TencentCloud
                 CreateVideoDatabaseEntryTaskOutcome CreateVideoDatabaseEntryTask(const Model::CreateVideoDatabaseEntryTaskRequest &request);
                 void CreateVideoDatabaseEntryTaskAsync(const Model::CreateVideoDatabaseEntryTaskRequest& request, const CreateVideoDatabaseEntryTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateVideoDatabaseEntryTaskOutcomeCallable CreateVideoDatabaseEntryTaskCallable(const Model::CreateVideoDatabaseEntryTaskRequest& request);
+
+                /**
+                 *创建AIGC转绘任务
+                 * @param req CreateVideoRedrawTaskRequest
+                 * @return CreateVideoRedrawTaskOutcome
+                 */
+                CreateVideoRedrawTaskOutcome CreateVideoRedrawTask(const Model::CreateVideoRedrawTaskRequest &request);
+                void CreateVideoRedrawTaskAsync(const Model::CreateVideoRedrawTaskRequest& request, const CreateVideoRedrawTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVideoRedrawTaskOutcomeCallable CreateVideoRedrawTaskCallable(const Model::CreateVideoRedrawTaskRequest& request);
 
                 /**
                  *使用检索值检索库中最接近检索值的若干视频。

@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取企业名称模糊搜索
-                     * @return Keyword 企业名称模糊搜索
+                     * 获取<p>企业名称模糊搜索</p>
+                     * @return Keyword <p>企业名称模糊搜索</p>
                      * 
                      */
                     std::string GetKeyword() const;
 
                     /**
-                     * 设置企业名称模糊搜索
-                     * @param _keyword 企业名称模糊搜索
+                     * 设置<p>企业名称模糊搜索</p>
+                     * @param _keyword <p>企业名称模糊搜索</p>
                      * 
                      */
                     void SetKeyword(const std::string& _keyword);
@@ -148,7 +148,7 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 企业名称模糊搜索
+                     * <p>企业名称模糊搜索</p>
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;

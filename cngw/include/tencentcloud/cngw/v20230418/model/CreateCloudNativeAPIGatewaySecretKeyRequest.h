@@ -21,6 +21,9 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWJWTCredentialConfig.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWOAuthCredentialConfig.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWOIDCCredentialConfig.h>
 
 
 namespace TencentCloud
@@ -43,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID
-                     * @return GatewayId 实例 ID
+                     * 获取<p>实例 ID</p>
+                     * @return GatewayId <p>实例 ID</p>
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param _gatewayId 实例 ID
+                     * 设置<p>实例 ID</p>
+                     * @param _gatewayId <p>实例 ID</p>
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -231,10 +234,73 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>JWT凭证配置</p>
+                     * @return JWTCredentialConfig <p>JWT凭证配置</p>
+                     * 
+                     */
+                    AIGWJWTCredentialConfig GetJWTCredentialConfig() const;
+
+                    /**
+                     * 设置<p>JWT凭证配置</p>
+                     * @param _jWTCredentialConfig <p>JWT凭证配置</p>
+                     * 
+                     */
+                    void SetJWTCredentialConfig(const AIGWJWTCredentialConfig& _jWTCredentialConfig);
+
+                    /**
+                     * 判断参数 JWTCredentialConfig 是否已赋值
+                     * @return JWTCredentialConfig 是否已赋值
+                     * 
+                     */
+                    bool JWTCredentialConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Oauth2凭证配置</p>
+                     * @return OAuthCredentialConfig <p>Oauth2凭证配置</p>
+                     * 
+                     */
+                    AIGWOAuthCredentialConfig GetOAuthCredentialConfig() const;
+
+                    /**
+                     * 设置<p>Oauth2凭证配置</p>
+                     * @param _oAuthCredentialConfig <p>Oauth2凭证配置</p>
+                     * 
+                     */
+                    void SetOAuthCredentialConfig(const AIGWOAuthCredentialConfig& _oAuthCredentialConfig);
+
+                    /**
+                     * 判断参数 OAuthCredentialConfig 是否已赋值
+                     * @return OAuthCredentialConfig 是否已赋值
+                     * 
+                     */
+                    bool OAuthCredentialConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>OIDC凭证配置</p>
+                     * @return OIDCCredentialConfig <p>OIDC凭证配置</p>
+                     * 
+                     */
+                    AIGWOIDCCredentialConfig GetOIDCCredentialConfig() const;
+
+                    /**
+                     * 设置<p>OIDC凭证配置</p>
+                     * @param _oIDCCredentialConfig <p>OIDC凭证配置</p>
+                     * 
+                     */
+                    void SetOIDCCredentialConfig(const AIGWOIDCCredentialConfig& _oIDCCredentialConfig);
+
+                    /**
+                     * 判断参数 OIDCCredentialConfig 是否已赋值
+                     * @return OIDCCredentialConfig 是否已赋值
+                     * 
+                     */
+                    bool OIDCCredentialConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例 ID
+                     * <p>实例 ID</p>
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
@@ -286,6 +352,24 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * <p>JWT凭证配置</p>
+                     */
+                    AIGWJWTCredentialConfig m_jWTCredentialConfig;
+                    bool m_jWTCredentialConfigHasBeenSet;
+
+                    /**
+                     * <p>Oauth2凭证配置</p>
+                     */
+                    AIGWOAuthCredentialConfig m_oAuthCredentialConfig;
+                    bool m_oAuthCredentialConfigHasBeenSet;
+
+                    /**
+                     * <p>OIDC凭证配置</p>
+                     */
+                    AIGWOIDCCredentialConfig m_oIDCCredentialConfig;
+                    bool m_oIDCCredentialConfigHasBeenSet;
 
                 };
             }

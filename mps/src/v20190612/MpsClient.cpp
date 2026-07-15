@@ -490,6 +490,56 @@ MpsClient::CreateAdaptiveDynamicStreamingTemplateOutcomeCallable MpsClient::Crea
     return prom->get_future();
 }
 
+MpsClient::CreateAiDramaTaskOutcome MpsClient::CreateAiDramaTask(const CreateAiDramaTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAiDramaTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAiDramaTaskResponse rsp = CreateAiDramaTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAiDramaTaskOutcome(rsp);
+        else
+            return CreateAiDramaTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAiDramaTaskOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateAiDramaTaskAsync(const CreateAiDramaTaskRequest& request, const CreateAiDramaTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAiDramaTaskRequest&;
+    using Resp = CreateAiDramaTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAiDramaTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::CreateAiDramaTaskOutcomeCallable MpsClient::CreateAiDramaTaskCallable(const CreateAiDramaTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAiDramaTaskOutcome>>();
+    CreateAiDramaTaskAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const CreateAiDramaTaskRequest&,
+        CreateAiDramaTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::CreateAigcAudioTaskOutcome MpsClient::CreateAigcAudioTask(const CreateAigcAudioTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAigcAudioTask");
@@ -2082,6 +2132,56 @@ MpsClient::CreateVideoDatabaseEntryTaskOutcomeCallable MpsClient::CreateVideoDat
         const MpsClient*,
         const CreateVideoDatabaseEntryTaskRequest&,
         CreateVideoDatabaseEntryTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MpsClient::CreateVideoRedrawTaskOutcome MpsClient::CreateVideoRedrawTask(const CreateVideoRedrawTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVideoRedrawTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVideoRedrawTaskResponse rsp = CreateVideoRedrawTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVideoRedrawTaskOutcome(rsp);
+        else
+            return CreateVideoRedrawTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVideoRedrawTaskOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateVideoRedrawTaskAsync(const CreateVideoRedrawTaskRequest& request, const CreateVideoRedrawTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateVideoRedrawTaskRequest&;
+    using Resp = CreateVideoRedrawTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateVideoRedrawTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::CreateVideoRedrawTaskOutcomeCallable MpsClient::CreateVideoRedrawTaskCallable(const CreateVideoRedrawTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateVideoRedrawTaskOutcome>>();
+    CreateVideoRedrawTaskAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const CreateVideoRedrawTaskRequest&,
+        CreateVideoRedrawTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

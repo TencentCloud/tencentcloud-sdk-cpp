@@ -25,7 +25,10 @@ using namespace std;
 ModifyCloudNativeAPIGatewayMCPServerAuthRequest::ModifyCloudNativeAPIGatewayMCPServerAuthRequest() :
     m_gatewayIdHasBeenSet(false),
     m_serverIdHasBeenSet(false),
-    m_authTypeHasBeenSet(false)
+    m_authTypeHasBeenSet(false),
+    m_jWTAuthConfigHasBeenSet(false),
+    m_oAuthAuthConfigHasBeenSet(false),
+    m_oIDCAuthConfigHasBeenSet(false)
 {
 }
 
@@ -58,6 +61,33 @@ string ModifyCloudNativeAPIGatewayMCPServerAuthRequest::ToJsonString() const
         string key = "AuthType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_authType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jWTAuthConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JWTAuthConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_jWTAuthConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_oAuthAuthConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OAuthAuthConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_oAuthAuthConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_oIDCAuthConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OIDCAuthConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_oIDCAuthConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -114,6 +144,54 @@ void ModifyCloudNativeAPIGatewayMCPServerAuthRequest::SetAuthType(const string& 
 bool ModifyCloudNativeAPIGatewayMCPServerAuthRequest::AuthTypeHasBeenSet() const
 {
     return m_authTypeHasBeenSet;
+}
+
+AIGWJWTAuthPluginConfig ModifyCloudNativeAPIGatewayMCPServerAuthRequest::GetJWTAuthConfig() const
+{
+    return m_jWTAuthConfig;
+}
+
+void ModifyCloudNativeAPIGatewayMCPServerAuthRequest::SetJWTAuthConfig(const AIGWJWTAuthPluginConfig& _jWTAuthConfig)
+{
+    m_jWTAuthConfig = _jWTAuthConfig;
+    m_jWTAuthConfigHasBeenSet = true;
+}
+
+bool ModifyCloudNativeAPIGatewayMCPServerAuthRequest::JWTAuthConfigHasBeenSet() const
+{
+    return m_jWTAuthConfigHasBeenSet;
+}
+
+AIGWOAuthAuthPluginConfig ModifyCloudNativeAPIGatewayMCPServerAuthRequest::GetOAuthAuthConfig() const
+{
+    return m_oAuthAuthConfig;
+}
+
+void ModifyCloudNativeAPIGatewayMCPServerAuthRequest::SetOAuthAuthConfig(const AIGWOAuthAuthPluginConfig& _oAuthAuthConfig)
+{
+    m_oAuthAuthConfig = _oAuthAuthConfig;
+    m_oAuthAuthConfigHasBeenSet = true;
+}
+
+bool ModifyCloudNativeAPIGatewayMCPServerAuthRequest::OAuthAuthConfigHasBeenSet() const
+{
+    return m_oAuthAuthConfigHasBeenSet;
+}
+
+AIGWOIDCAuthPluginConfig ModifyCloudNativeAPIGatewayMCPServerAuthRequest::GetOIDCAuthConfig() const
+{
+    return m_oIDCAuthConfig;
+}
+
+void ModifyCloudNativeAPIGatewayMCPServerAuthRequest::SetOIDCAuthConfig(const AIGWOIDCAuthPluginConfig& _oIDCAuthConfig)
+{
+    m_oIDCAuthConfig = _oIDCAuthConfig;
+    m_oIDCAuthConfigHasBeenSet = true;
+}
+
+bool ModifyCloudNativeAPIGatewayMCPServerAuthRequest::OIDCAuthConfigHasBeenSet() const
+{
+    return m_oIDCAuthConfigHasBeenSet;
 }
 
 

@@ -471,6 +471,8 @@
 #include <tencentcloud/vod/v20180717/model/SimpleHlsClipResponse.h>
 #include <tencentcloud/vod/v20180717/model/SplitMediaRequest.h>
 #include <tencentcloud/vod/v20180717/model/SplitMediaResponse.h>
+#include <tencentcloud/vod/v20180717/model/UpdateAigcApiTokenRequest.h>
+#include <tencentcloud/vod/v20180717/model/UpdateAigcApiTokenResponse.h>
 #include <tencentcloud/vod/v20180717/model/VerifyDomainRecordRequest.h>
 #include <tencentcloud/vod/v20180717/model/VerifyDomainRecordResponse.h>
 #include <tencentcloud/vod/v20180717/model/WeChatMiniProgramPublishRequest.h>
@@ -1161,6 +1163,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SplitMediaResponse> SplitMediaOutcome;
                 typedef std::future<SplitMediaOutcome> SplitMediaOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::SplitMediaRequest&, SplitMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SplitMediaAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateAigcApiTokenResponse> UpdateAigcApiTokenOutcome;
+                typedef std::future<UpdateAigcApiTokenOutcome> UpdateAigcApiTokenOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::UpdateAigcApiTokenRequest&, UpdateAigcApiTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAigcApiTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::VerifyDomainRecordResponse> VerifyDomainRecordOutcome;
                 typedef std::future<VerifyDomainRecordOutcome> VerifyDomainRecordOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::VerifyDomainRecordRequest&, VerifyDomainRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyDomainRecordAsyncHandler;
@@ -3544,6 +3549,15 @@ namespace TencentCloud
                 SplitMediaOutcome SplitMedia(const Model::SplitMediaRequest &request);
                 void SplitMediaAsync(const Model::SplitMediaRequest& request, const SplitMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SplitMediaOutcomeCallable SplitMediaCallable(const Model::SplitMediaRequest& request);
+
+                /**
+                 *创建AIGC调用API的Token。创建后数据同步有延时，约30秒后可查询或删除。
+                 * @param req UpdateAigcApiTokenRequest
+                 * @return UpdateAigcApiTokenOutcome
+                 */
+                UpdateAigcApiTokenOutcome UpdateAigcApiToken(const Model::UpdateAigcApiTokenRequest &request);
+                void UpdateAigcApiTokenAsync(const Model::UpdateAigcApiTokenRequest& request, const UpdateAigcApiTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateAigcApiTokenOutcomeCallable UpdateAigcApiTokenCallable(const Model::UpdateAigcApiTokenRequest& request);
 
                 /**
                  *该接口用于验证域名解析值。

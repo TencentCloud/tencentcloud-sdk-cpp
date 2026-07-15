@@ -28,7 +28,8 @@ ModifyOrganizationBusinessInfoRequest::ModifyOrganizationBusinessInfoRequest() :
     m_organizationNameHasBeenSet(false),
     m_addressHasBeenSet(false),
     m_organizationTypeHasBeenSet(false),
-    m_legalNameHasBeenSet(false)
+    m_legalNameHasBeenSet(false),
+    m_newLegalMobileHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string ModifyOrganizationBusinessInfoRequest::ToJsonString() const
         string key = "LegalName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_legalName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_newLegalMobileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewLegalMobile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_newLegalMobile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +199,22 @@ void ModifyOrganizationBusinessInfoRequest::SetLegalName(const string& _legalNam
 bool ModifyOrganizationBusinessInfoRequest::LegalNameHasBeenSet() const
 {
     return m_legalNameHasBeenSet;
+}
+
+string ModifyOrganizationBusinessInfoRequest::GetNewLegalMobile() const
+{
+    return m_newLegalMobile;
+}
+
+void ModifyOrganizationBusinessInfoRequest::SetNewLegalMobile(const string& _newLegalMobile)
+{
+    m_newLegalMobile = _newLegalMobile;
+    m_newLegalMobileHasBeenSet = true;
+}
+
+bool ModifyOrganizationBusinessInfoRequest::NewLegalMobileHasBeenSet() const
+{
+    return m_newLegalMobileHasBeenSet;
 }
 
 

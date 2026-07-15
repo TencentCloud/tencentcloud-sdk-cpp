@@ -89,6 +89,8 @@
 #include <tencentcloud/lcic/v20220817/model/DescribeDocumentsResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeDocumentsByRoomRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeDocumentsByRoomResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeEditVersionsRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeEditVersionsResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeGroupRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeGroupResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeGroupListRequest.h>
@@ -135,6 +137,8 @@
 #include <tencentcloud/lcic/v20220817/model/EndRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/ForbidSendMsgRequest.h>
 #include <tencentcloud/lcic/v20220817/model/ForbidSendMsgResponse.h>
+#include <tencentcloud/lcic/v20220817/model/GetEditVersionTokenRequest.h>
+#include <tencentcloud/lcic/v20220817/model/GetEditVersionTokenResponse.h>
 #include <tencentcloud/lcic/v20220817/model/GetPlaybackTokenRequest.h>
 #include <tencentcloud/lcic/v20220817/model/GetPlaybackTokenResponse.h>
 #include <tencentcloud/lcic/v20220817/model/GetRoomEventRequest.h>
@@ -173,6 +177,8 @@
 #include <tencentcloud/lcic/v20220817/model/SendRoomNotificationMessageResponse.h>
 #include <tencentcloud/lcic/v20220817/model/SetAppCustomContentRequest.h>
 #include <tencentcloud/lcic/v20220817/model/SetAppCustomContentResponse.h>
+#include <tencentcloud/lcic/v20220817/model/SetMainEditVersionRequest.h>
+#include <tencentcloud/lcic/v20220817/model/SetMainEditVersionResponse.h>
 #include <tencentcloud/lcic/v20220817/model/SetMarqueeRequest.h>
 #include <tencentcloud/lcic/v20220817/model/SetMarqueeResponse.h>
 #include <tencentcloud/lcic/v20220817/model/SetWatermarkRequest.h>
@@ -300,6 +306,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDocumentsByRoomResponse> DescribeDocumentsByRoomOutcome;
                 typedef std::future<DescribeDocumentsByRoomOutcome> DescribeDocumentsByRoomOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeDocumentsByRoomRequest&, DescribeDocumentsByRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDocumentsByRoomAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEditVersionsResponse> DescribeEditVersionsOutcome;
+                typedef std::future<DescribeEditVersionsOutcome> DescribeEditVersionsOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DescribeEditVersionsRequest&, DescribeEditVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEditVersionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGroupResponse> DescribeGroupOutcome;
                 typedef std::future<DescribeGroupOutcome> DescribeGroupOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeGroupRequest&, DescribeGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupAsyncHandler;
@@ -369,6 +378,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ForbidSendMsgResponse> ForbidSendMsgOutcome;
                 typedef std::future<ForbidSendMsgOutcome> ForbidSendMsgOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::ForbidSendMsgRequest&, ForbidSendMsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ForbidSendMsgAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetEditVersionTokenResponse> GetEditVersionTokenOutcome;
+                typedef std::future<GetEditVersionTokenOutcome> GetEditVersionTokenOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::GetEditVersionTokenRequest&, GetEditVersionTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetEditVersionTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetPlaybackTokenResponse> GetPlaybackTokenOutcome;
                 typedef std::future<GetPlaybackTokenOutcome> GetPlaybackTokenOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::GetPlaybackTokenRequest&, GetPlaybackTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPlaybackTokenAsyncHandler;
@@ -426,6 +438,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetAppCustomContentResponse> SetAppCustomContentOutcome;
                 typedef std::future<SetAppCustomContentOutcome> SetAppCustomContentOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::SetAppCustomContentRequest&, SetAppCustomContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAppCustomContentAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetMainEditVersionResponse> SetMainEditVersionOutcome;
+                typedef std::future<SetMainEditVersionOutcome> SetMainEditVersionOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::SetMainEditVersionRequest&, SetMainEditVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetMainEditVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetMarqueeResponse> SetMarqueeOutcome;
                 typedef std::future<SetMarqueeOutcome> SetMarqueeOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::SetMarqueeRequest&, SetMarqueeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetMarqueeAsyncHandler;
@@ -771,6 +786,15 @@ namespace TencentCloud
                 DescribeDocumentsByRoomOutcomeCallable DescribeDocumentsByRoomCallable(const Model::DescribeDocumentsByRoomRequest& request);
 
                 /**
+                 *获取课堂的所有编辑版本（含源版本）
+                 * @param req DescribeEditVersionsRequest
+                 * @return DescribeEditVersionsOutcome
+                 */
+                DescribeEditVersionsOutcome DescribeEditVersions(const Model::DescribeEditVersionsRequest &request);
+                void DescribeEditVersionsAsync(const Model::DescribeEditVersionsRequest& request, const DescribeEditVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEditVersionsOutcomeCallable DescribeEditVersionsCallable(const Model::DescribeEditVersionsRequest& request);
+
+                /**
                  *此接口用于获取群组详情
                  * @param req DescribeGroupRequest
                  * @return DescribeGroupOutcome
@@ -982,6 +1006,15 @@ namespace TencentCloud
                 ForbidSendMsgOutcomeCallable ForbidSendMsgCallable(const Model::ForbidSendMsgRequest& request);
 
                 /**
+                 *获取剪辑信令回放token
+                 * @param req GetEditVersionTokenRequest
+                 * @return GetEditVersionTokenOutcome
+                 */
+                GetEditVersionTokenOutcome GetEditVersionToken(const Model::GetEditVersionTokenRequest &request);
+                void GetEditVersionTokenAsync(const Model::GetEditVersionTokenRequest& request, const GetEditVersionTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetEditVersionTokenOutcomeCallable GetEditVersionTokenCallable(const Model::GetEditVersionTokenRequest& request);
+
+                /**
                  *获取信令录制回放token，用于回放指定课堂时鉴权
                  * @param req GetPlaybackTokenRequest
                  * @return GetPlaybackTokenOutcome
@@ -1151,6 +1184,15 @@ namespace TencentCloud
                 SetAppCustomContentOutcome SetAppCustomContent(const Model::SetAppCustomContentRequest &request);
                 void SetAppCustomContentAsync(const Model::SetAppCustomContentRequest& request, const SetAppCustomContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetAppCustomContentOutcomeCallable SetAppCustomContentCallable(const Model::SetAppCustomContentRequest& request);
+
+                /**
+                 *切换课堂的主编辑版本
+                 * @param req SetMainEditVersionRequest
+                 * @return SetMainEditVersionOutcome
+                 */
+                SetMainEditVersionOutcome SetMainEditVersion(const Model::SetMainEditVersionRequest &request);
+                void SetMainEditVersionAsync(const Model::SetMainEditVersionRequest& request, const SetMainEditVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetMainEditVersionOutcomeCallable SetMainEditVersionCallable(const Model::SetMainEditVersionRequest& request);
 
                 /**
                  *设置跑马灯参数设置

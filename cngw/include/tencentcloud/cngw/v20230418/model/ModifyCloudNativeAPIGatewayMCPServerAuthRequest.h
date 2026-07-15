@@ -21,6 +21,9 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWJWTAuthPluginConfig.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWOAuthAuthPluginConfig.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWOIDCAuthPluginConfig.h>
 
 
 namespace TencentCloud
@@ -105,6 +108,69 @@ namespace TencentCloud
                      */
                     bool AuthTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>JWT认证配置</p>
+                     * @return JWTAuthConfig <p>JWT认证配置</p>
+                     * 
+                     */
+                    AIGWJWTAuthPluginConfig GetJWTAuthConfig() const;
+
+                    /**
+                     * 设置<p>JWT认证配置</p>
+                     * @param _jWTAuthConfig <p>JWT认证配置</p>
+                     * 
+                     */
+                    void SetJWTAuthConfig(const AIGWJWTAuthPluginConfig& _jWTAuthConfig);
+
+                    /**
+                     * 判断参数 JWTAuthConfig 是否已赋值
+                     * @return JWTAuthConfig 是否已赋值
+                     * 
+                     */
+                    bool JWTAuthConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>OAuth认证配置</p>
+                     * @return OAuthAuthConfig <p>OAuth认证配置</p>
+                     * 
+                     */
+                    AIGWOAuthAuthPluginConfig GetOAuthAuthConfig() const;
+
+                    /**
+                     * 设置<p>OAuth认证配置</p>
+                     * @param _oAuthAuthConfig <p>OAuth认证配置</p>
+                     * 
+                     */
+                    void SetOAuthAuthConfig(const AIGWOAuthAuthPluginConfig& _oAuthAuthConfig);
+
+                    /**
+                     * 判断参数 OAuthAuthConfig 是否已赋值
+                     * @return OAuthAuthConfig 是否已赋值
+                     * 
+                     */
+                    bool OAuthAuthConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>OIDC认证配置</p>
+                     * @return OIDCAuthConfig <p>OIDC认证配置</p>
+                     * 
+                     */
+                    AIGWOIDCAuthPluginConfig GetOIDCAuthConfig() const;
+
+                    /**
+                     * 设置<p>OIDC认证配置</p>
+                     * @param _oIDCAuthConfig <p>OIDC认证配置</p>
+                     * 
+                     */
+                    void SetOIDCAuthConfig(const AIGWOIDCAuthPluginConfig& _oIDCAuthConfig);
+
+                    /**
+                     * 判断参数 OIDCAuthConfig 是否已赋值
+                     * @return OIDCAuthConfig 是否已赋值
+                     * 
+                     */
+                    bool OIDCAuthConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +190,24 @@ namespace TencentCloud
                      */
                     std::string m_authType;
                     bool m_authTypeHasBeenSet;
+
+                    /**
+                     * <p>JWT认证配置</p>
+                     */
+                    AIGWJWTAuthPluginConfig m_jWTAuthConfig;
+                    bool m_jWTAuthConfigHasBeenSet;
+
+                    /**
+                     * <p>OAuth认证配置</p>
+                     */
+                    AIGWOAuthAuthPluginConfig m_oAuthAuthConfig;
+                    bool m_oAuthAuthConfigHasBeenSet;
+
+                    /**
+                     * <p>OIDC认证配置</p>
+                     */
+                    AIGWOIDCAuthPluginConfig m_oIDCAuthConfig;
+                    bool m_oIDCAuthConfigHasBeenSet;
 
                 };
             }

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取<p>开始时间</p>
+                     * @return StartTime <p>开始时间</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
+                     * 设置<p>开始时间</p>
+                     * @param _startTime <p>开始时间</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取<p>结束时间</p>
+                     * @return EndTime <p>结束时间</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置<p>结束时间</p>
+                     * @param _endTime <p>结束时间</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取项目 ID 列表
-                     * @return IDList 项目 ID 列表
+                     * 获取<p>项目 ID 列表</p>
+                     * @return IDList <p>项目 ID 列表</p>
                      * 
                      */
                     std::vector<int64_t> GetIDList() const;
 
                     /**
-                     * 设置项目 ID 列表
-                     * @param _iDList 项目 ID 列表
+                     * 设置<p>项目 ID 列表</p>
+                     * @param _iDList <p>项目 ID 列表</p>
                      * 
                      */
                     void SetIDList(const std::vector<int64_t>& _iDList);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool IDListHasBeenSet() const;
 
                     /**
-                     * 获取查询粒度，hour 或 day
-                     * @return Type 查询粒度，hour 或 day
+                     * 获取<p>查询粒度，hour 或 day</p>
+                     * @return Type <p>查询粒度，hour 或 day</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置查询粒度，hour 或 day
-                     * @param _type 查询粒度，hour 或 day
+                     * 设置<p>查询粒度，hour 或 day</p>
+                     * @param _type <p>查询粒度，hour 或 day</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取环境
-                     * @return Env 环境
+                     * 获取<p>环境</p>
+                     * @return Env <p>环境</p>
                      * 
                      */
                     std::string GetEnv() const;
 
                     /**
-                     * 设置环境
-                     * @param _env 环境
+                     * 设置<p>环境</p>
+                     * @param _env <p>环境</p>
                      * 
                      */
                     void SetEnv(const std::string& _env);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开始时间
+                     * <p>开始时间</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * <p>结束时间</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 项目 ID 列表
+                     * <p>项目 ID 列表</p>
                      */
                     std::vector<int64_t> m_iDList;
                     bool m_iDListHasBeenSet;
 
                     /**
-                     * 查询粒度，hour 或 day
+                     * <p>查询粒度，hour 或 day</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 环境
+                     * <p>环境</p>
                      */
                     std::string m_env;
                     bool m_envHasBeenSet;

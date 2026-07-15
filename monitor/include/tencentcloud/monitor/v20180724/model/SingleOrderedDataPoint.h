@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例对象维度组合	
+                     * 获取<p>实例对象维度组合</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Dimensions 实例对象维度组合	
+                     * @return Dimensions <p>实例对象维度组合</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Dimension> GetDimensions() const;
 
                     /**
-                     * 设置实例对象维度组合	
+                     * 设置<p>实例对象维度组合</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dimensions 实例对象维度组合	
+                     * @param _dimensions <p>实例对象维度组合</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool DimensionsHasBeenSet() const;
 
                     /**
-                     * 获取监控数据值
+                     * 获取<p>监控数据值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Value 监控数据值
+                     * @return Value <p>监控数据值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetValue() const;
 
                     /**
-                     * 设置监控数据值
+                     * 设置<p>监控数据值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _value 监控数据值
+                     * @param _value <p>监控数据值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool ValueHasBeenSet() const;
 
                     /**
-                     * 获取监控数据时间戳
+                     * 获取<p>监控数据时间戳</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Timestamp 监控数据时间戳
+                     * @return Timestamp <p>监控数据时间戳</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTimestamp() const;
 
                     /**
-                     * 设置监控数据时间戳
+                     * 设置<p>监控数据时间戳</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _timestamp 监控数据时间戳
+                     * @param _timestamp <p>监控数据时间戳</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,18 +123,18 @@ namespace TencentCloud
                     bool TimestampHasBeenSet() const;
 
                     /**
-                     * 获取排序序号
+                     * 获取<p>排序序号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Order 排序序号
+                     * @return Order <p>排序序号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOrder() const;
 
                     /**
-                     * 设置排序序号
+                     * 设置<p>排序序号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _order 排序序号
+                     * @param _order <p>排序序号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -150,28 +150,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例对象维度组合	
+                     * <p>实例对象维度组合</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Dimension> m_dimensions;
                     bool m_dimensionsHasBeenSet;
 
                     /**
-                     * 监控数据值
+                     * <p>监控数据值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_value;
                     bool m_valueHasBeenSet;
 
                     /**
-                     * 监控数据时间戳
+                     * <p>监控数据时间戳</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_timestamp;
                     bool m_timestampHasBeenSet;
 
                     /**
-                     * 排序序号
+                     * <p>排序序号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_order;

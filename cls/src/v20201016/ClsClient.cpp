@@ -440,6 +440,56 @@ ClsClient::CommitConsumerOffsetsOutcomeCallable ClsClient::CommitConsumerOffsets
     return prom->get_future();
 }
 
+ClsClient::CreateAgentApplicationOutcome ClsClient::CreateAgentApplication(const CreateAgentApplicationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAgentApplication");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAgentApplicationResponse rsp = CreateAgentApplicationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAgentApplicationOutcome(rsp);
+        else
+            return CreateAgentApplicationOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAgentApplicationOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateAgentApplicationAsync(const CreateAgentApplicationRequest& request, const CreateAgentApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAgentApplicationRequest&;
+    using Resp = CreateAgentApplicationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAgentApplication", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::CreateAgentApplicationOutcomeCallable ClsClient::CreateAgentApplicationCallable(const CreateAgentApplicationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAgentApplicationOutcome>>();
+    CreateAgentApplicationAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const CreateAgentApplicationRequest&,
+        CreateAgentApplicationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClsClient::CreateAlarmOutcome ClsClient::CreateAlarm(const CreateAlarmRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAlarm");
@@ -1940,6 +1990,106 @@ ClsClient::CreateRecordingRuleYamlTaskOutcomeCallable ClsClient::CreateRecording
     return prom->get_future();
 }
 
+ClsClient::CreateRemoteWriteTaskOutcome ClsClient::CreateRemoteWriteTask(const CreateRemoteWriteTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRemoteWriteTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRemoteWriteTaskResponse rsp = CreateRemoteWriteTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRemoteWriteTaskOutcome(rsp);
+        else
+            return CreateRemoteWriteTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRemoteWriteTaskOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateRemoteWriteTaskAsync(const CreateRemoteWriteTaskRequest& request, const CreateRemoteWriteTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateRemoteWriteTaskRequest&;
+    using Resp = CreateRemoteWriteTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateRemoteWriteTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::CreateRemoteWriteTaskOutcomeCallable ClsClient::CreateRemoteWriteTaskCallable(const CreateRemoteWriteTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateRemoteWriteTaskOutcome>>();
+    CreateRemoteWriteTaskAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const CreateRemoteWriteTaskRequest&,
+        CreateRemoteWriteTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::CreateS3RechargeOutcome ClsClient::CreateS3Recharge(const CreateS3RechargeRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateS3Recharge");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateS3RechargeResponse rsp = CreateS3RechargeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateS3RechargeOutcome(rsp);
+        else
+            return CreateS3RechargeOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateS3RechargeOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateS3RechargeAsync(const CreateS3RechargeRequest& request, const CreateS3RechargeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateS3RechargeRequest&;
+    using Resp = CreateS3RechargeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateS3Recharge", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::CreateS3RechargeOutcomeCallable ClsClient::CreateS3RechargeCallable(const CreateS3RechargeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateS3RechargeOutcome>>();
+    CreateS3RechargeAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const CreateS3RechargeRequest&,
+        CreateS3RechargeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClsClient::CreateScheduledSqlOutcome ClsClient::CreateScheduledSql(const CreateScheduledSqlRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateScheduledSql");
@@ -2232,6 +2382,56 @@ ClsClient::CreateWebCallbackOutcomeCallable ClsClient::CreateWebCallbackCallable
         const ClsClient*,
         const CreateWebCallbackRequest&,
         CreateWebCallbackOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DeleteAgentApplicationOutcome ClsClient::DeleteAgentApplication(const DeleteAgentApplicationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAgentApplication");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAgentApplicationResponse rsp = DeleteAgentApplicationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAgentApplicationOutcome(rsp);
+        else
+            return DeleteAgentApplicationOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAgentApplicationOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteAgentApplicationAsync(const DeleteAgentApplicationRequest& request, const DeleteAgentApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAgentApplicationRequest&;
+    using Resp = DeleteAgentApplicationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAgentApplication", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DeleteAgentApplicationOutcomeCallable ClsClient::DeleteAgentApplicationCallable(const DeleteAgentApplicationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAgentApplicationOutcome>>();
+    DeleteAgentApplicationAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DeleteAgentApplicationRequest&,
+        DeleteAgentApplicationOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3740,6 +3940,106 @@ ClsClient::DeleteRecordingRuleYamlTaskOutcomeCallable ClsClient::DeleteRecording
     return prom->get_future();
 }
 
+ClsClient::DeleteRemoteWriteTaskOutcome ClsClient::DeleteRemoteWriteTask(const DeleteRemoteWriteTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRemoteWriteTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRemoteWriteTaskResponse rsp = DeleteRemoteWriteTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRemoteWriteTaskOutcome(rsp);
+        else
+            return DeleteRemoteWriteTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRemoteWriteTaskOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteRemoteWriteTaskAsync(const DeleteRemoteWriteTaskRequest& request, const DeleteRemoteWriteTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteRemoteWriteTaskRequest&;
+    using Resp = DeleteRemoteWriteTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteRemoteWriteTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DeleteRemoteWriteTaskOutcomeCallable ClsClient::DeleteRemoteWriteTaskCallable(const DeleteRemoteWriteTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteRemoteWriteTaskOutcome>>();
+    DeleteRemoteWriteTaskAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DeleteRemoteWriteTaskRequest&,
+        DeleteRemoteWriteTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DeleteS3RechargeOutcome ClsClient::DeleteS3Recharge(const DeleteS3RechargeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteS3Recharge");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteS3RechargeResponse rsp = DeleteS3RechargeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteS3RechargeOutcome(rsp);
+        else
+            return DeleteS3RechargeOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteS3RechargeOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteS3RechargeAsync(const DeleteS3RechargeRequest& request, const DeleteS3RechargeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteS3RechargeRequest&;
+    using Resp = DeleteS3RechargeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteS3Recharge", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DeleteS3RechargeOutcomeCallable ClsClient::DeleteS3RechargeCallable(const DeleteS3RechargeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteS3RechargeOutcome>>();
+    DeleteS3RechargeAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DeleteS3RechargeRequest&,
+        DeleteS3RechargeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClsClient::DeleteScheduledSqlOutcome ClsClient::DeleteScheduledSql(const DeleteScheduledSqlRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteScheduledSql");
@@ -4032,6 +4332,106 @@ ClsClient::DeleteWebCallbackOutcomeCallable ClsClient::DeleteWebCallbackCallable
         const ClsClient*,
         const DeleteWebCallbackRequest&,
         DeleteWebCallbackOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DescribeAgentApplicationsOutcome ClsClient::DescribeAgentApplications(const DescribeAgentApplicationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAgentApplications");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAgentApplicationsResponse rsp = DescribeAgentApplicationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAgentApplicationsOutcome(rsp);
+        else
+            return DescribeAgentApplicationsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAgentApplicationsOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeAgentApplicationsAsync(const DescribeAgentApplicationsRequest& request, const DescribeAgentApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAgentApplicationsRequest&;
+    using Resp = DescribeAgentApplicationsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAgentApplications", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DescribeAgentApplicationsOutcomeCallable ClsClient::DescribeAgentApplicationsCallable(const DescribeAgentApplicationsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAgentApplicationsOutcome>>();
+    DescribeAgentApplicationsAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DescribeAgentApplicationsRequest&,
+        DescribeAgentApplicationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DescribeAgentConfigsOutcome ClsClient::DescribeAgentConfigs(const DescribeAgentConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAgentConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAgentConfigsResponse rsp = DescribeAgentConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAgentConfigsOutcome(rsp);
+        else
+            return DescribeAgentConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAgentConfigsOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeAgentConfigsAsync(const DescribeAgentConfigsRequest& request, const DescribeAgentConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAgentConfigsRequest&;
+    using Resp = DescribeAgentConfigsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAgentConfigs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DescribeAgentConfigsOutcomeCallable ClsClient::DescribeAgentConfigsCallable(const DescribeAgentConfigsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAgentConfigsOutcome>>();
+    DescribeAgentConfigsAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DescribeAgentConfigsRequest&,
+        DescribeAgentConfigsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -6490,6 +6890,106 @@ ClsClient::DescribeRecordingRuleYamlTaskOutcomeCallable ClsClient::DescribeRecor
     return prom->get_future();
 }
 
+ClsClient::DescribeRemoteWriteTasksOutcome ClsClient::DescribeRemoteWriteTasks(const DescribeRemoteWriteTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRemoteWriteTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRemoteWriteTasksResponse rsp = DescribeRemoteWriteTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRemoteWriteTasksOutcome(rsp);
+        else
+            return DescribeRemoteWriteTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRemoteWriteTasksOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeRemoteWriteTasksAsync(const DescribeRemoteWriteTasksRequest& request, const DescribeRemoteWriteTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRemoteWriteTasksRequest&;
+    using Resp = DescribeRemoteWriteTasksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRemoteWriteTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DescribeRemoteWriteTasksOutcomeCallable ClsClient::DescribeRemoteWriteTasksCallable(const DescribeRemoteWriteTasksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRemoteWriteTasksOutcome>>();
+    DescribeRemoteWriteTasksAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DescribeRemoteWriteTasksRequest&,
+        DescribeRemoteWriteTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DescribeS3RechargesOutcome ClsClient::DescribeS3Recharges(const DescribeS3RechargesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeS3Recharges");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeS3RechargesResponse rsp = DescribeS3RechargesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeS3RechargesOutcome(rsp);
+        else
+            return DescribeS3RechargesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeS3RechargesOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeS3RechargesAsync(const DescribeS3RechargesRequest& request, const DescribeS3RechargesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeS3RechargesRequest&;
+    using Resp = DescribeS3RechargesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeS3Recharges", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DescribeS3RechargesOutcomeCallable ClsClient::DescribeS3RechargesCallable(const DescribeS3RechargesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeS3RechargesOutcome>>();
+    DescribeS3RechargesAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DescribeS3RechargesRequest&,
+        DescribeS3RechargesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClsClient::DescribeScheduledSqlInfoOutcome ClsClient::DescribeScheduledSqlInfo(const DescribeScheduledSqlInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeScheduledSqlInfo");
@@ -7232,6 +7732,56 @@ ClsClient::MergePartitionOutcomeCallable ClsClient::MergePartitionCallable(const
         const ClsClient*,
         const MergePartitionRequest&,
         MergePartitionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::ModifyAgentApplicationOutcome ClsClient::ModifyAgentApplication(const ModifyAgentApplicationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAgentApplication");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAgentApplicationResponse rsp = ModifyAgentApplicationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAgentApplicationOutcome(rsp);
+        else
+            return ModifyAgentApplicationOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAgentApplicationOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyAgentApplicationAsync(const ModifyAgentApplicationRequest& request, const ModifyAgentApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyAgentApplicationRequest&;
+    using Resp = ModifyAgentApplicationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyAgentApplication", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::ModifyAgentApplicationOutcomeCallable ClsClient::ModifyAgentApplicationCallable(const ModifyAgentApplicationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyAgentApplicationOutcome>>();
+    ModifyAgentApplicationAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const ModifyAgentApplicationRequest&,
+        ModifyAgentApplicationOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -8690,6 +9240,106 @@ ClsClient::ModifyRecordingRuleYamlTaskOutcomeCallable ClsClient::ModifyRecording
     return prom->get_future();
 }
 
+ClsClient::ModifyRemoteWriteTaskOutcome ClsClient::ModifyRemoteWriteTask(const ModifyRemoteWriteTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRemoteWriteTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRemoteWriteTaskResponse rsp = ModifyRemoteWriteTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRemoteWriteTaskOutcome(rsp);
+        else
+            return ModifyRemoteWriteTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRemoteWriteTaskOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyRemoteWriteTaskAsync(const ModifyRemoteWriteTaskRequest& request, const ModifyRemoteWriteTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyRemoteWriteTaskRequest&;
+    using Resp = ModifyRemoteWriteTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyRemoteWriteTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::ModifyRemoteWriteTaskOutcomeCallable ClsClient::ModifyRemoteWriteTaskCallable(const ModifyRemoteWriteTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyRemoteWriteTaskOutcome>>();
+    ModifyRemoteWriteTaskAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const ModifyRemoteWriteTaskRequest&,
+        ModifyRemoteWriteTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::ModifyS3RechargeOutcome ClsClient::ModifyS3Recharge(const ModifyS3RechargeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyS3Recharge");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyS3RechargeResponse rsp = ModifyS3RechargeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyS3RechargeOutcome(rsp);
+        else
+            return ModifyS3RechargeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyS3RechargeOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyS3RechargeAsync(const ModifyS3RechargeRequest& request, const ModifyS3RechargeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyS3RechargeRequest&;
+    using Resp = ModifyS3RechargeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyS3Recharge", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::ModifyS3RechargeOutcomeCallable ClsClient::ModifyS3RechargeCallable(const ModifyS3RechargeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyS3RechargeOutcome>>();
+    ModifyS3RechargeAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const ModifyS3RechargeRequest&,
+        ModifyS3RechargeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClsClient::ModifyScheduledSqlOutcome ClsClient::ModifyScheduledSql(const ModifyScheduledSqlRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyScheduledSql");
@@ -9482,6 +10132,56 @@ ClsClient::SearchLogOutcomeCallable ClsClient::SearchLogCallable(const SearchLog
         const ClsClient*,
         const SearchLogRequest&,
         SearchLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::SearchS3RechargeInfoOutcome ClsClient::SearchS3RechargeInfo(const SearchS3RechargeInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchS3RechargeInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchS3RechargeInfoResponse rsp = SearchS3RechargeInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchS3RechargeInfoOutcome(rsp);
+        else
+            return SearchS3RechargeInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchS3RechargeInfoOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::SearchS3RechargeInfoAsync(const SearchS3RechargeInfoRequest& request, const SearchS3RechargeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SearchS3RechargeInfoRequest&;
+    using Resp = SearchS3RechargeInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SearchS3RechargeInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::SearchS3RechargeInfoOutcomeCallable ClsClient::SearchS3RechargeInfoCallable(const SearchS3RechargeInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SearchS3RechargeInfoOutcome>>();
+    SearchS3RechargeInfoAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const SearchS3RechargeInfoRequest&,
+        SearchS3RechargeInfoOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

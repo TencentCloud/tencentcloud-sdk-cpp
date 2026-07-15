@@ -98,6 +98,7 @@ set(ctem_public_header_model
   include/tencentcloud/ctem/v20231128/model/DeleteSeedsRequest.h
   include/tencentcloud/ctem/v20231128/model/CreateHttpResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeSeedsRequest.h
+  include/tencentcloud/ctem/v20231128/model/ScanPriorityReq.h
   include/tencentcloud/ctem/v20231128/model/CreateSubDomainRequest.h
   include/tencentcloud/ctem/v20231128/model/DescribeWechatOfficialAccountsRequest.h
   include/tencentcloud/ctem/v20231128/model/DisplayFakeApp.h
@@ -129,6 +130,7 @@ set(ctem_public_header_model
   include/tencentcloud/ctem/v20231128/model/DescribeGithubsResponse.h
   include/tencentcloud/ctem/v20231128/model/CreateCustomerResponse.h
   include/tencentcloud/ctem/v20231128/model/CreateWechatOfficialAccountRequest.h
+  include/tencentcloud/ctem/v20231128/model/ScanPriorityDisplay.h
   include/tencentcloud/ctem/v20231128/model/DeleteWechatOfficialAccountsResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeManagesResponse.h
   include/tencentcloud/ctem/v20231128/model/CreateEnterpriseRequest.h
@@ -259,6 +261,7 @@ set(ctem_src
   src/v20231128/model/DeleteSeedsRequest.cpp
   src/v20231128/model/CreateHttpResponse.cpp
   src/v20231128/model/DescribeSeedsRequest.cpp
+  src/v20231128/model/ScanPriorityReq.cpp
   src/v20231128/model/CreateSubDomainRequest.cpp
   src/v20231128/model/DescribeWechatOfficialAccountsRequest.cpp
   src/v20231128/model/DisplayFakeApp.cpp
@@ -290,6 +293,7 @@ set(ctem_src
   src/v20231128/model/DescribeGithubsResponse.cpp
   src/v20231128/model/CreateCustomerResponse.cpp
   src/v20231128/model/CreateWechatOfficialAccountRequest.cpp
+  src/v20231128/model/ScanPriorityDisplay.cpp
   src/v20231128/model/DeleteWechatOfficialAccountsResponse.cpp
   src/v20231128/model/DescribeManagesResponse.cpp
   src/v20231128/model/CreateEnterpriseRequest.cpp

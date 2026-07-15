@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool CategoryGradeHasBeenSet() const;
 
                     /**
-                     * 获取<p>无</p>
-                     * @return RuleRelations <p>无</p>
+                     * 获取<p>关联的数据项信息</p>
+                     * @return RuleRelations <p>关联的数据项信息</p>
                      * 
                      */
                     std::vector<DspmIdentifyComplianceRuleRelation> GetRuleRelations() const;
 
                     /**
-                     * 设置<p>无</p>
-                     * @param _ruleRelations <p>无</p>
+                     * 设置<p>关联的数据项信息</p>
+                     * @param _ruleRelations <p>关联的数据项信息</p>
                      * 
                      */
                     void SetRuleRelations(const std::vector<DspmIdentifyComplianceRuleRelation>& _ruleRelations);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool RuleRelationsHasBeenSet() const;
 
                     /**
-                     * 获取<p>无</p>
-                     * @return Children <p>无</p>
+                     * 获取<p>子节点信息</p>
+                     * @return Children <p>子节点信息</p>
                      * 
                      */
                     std::vector<DspmIdentifyComplianceCategoryRelation> GetChildren() const;
 
                     /**
-                     * 设置<p>无</p>
-                     * @param _children <p>无</p>
+                     * 设置<p>子节点信息</p>
+                     * @param _children <p>子节点信息</p>
                      * 
                      */
                     void SetChildren(const std::vector<DspmIdentifyComplianceCategoryRelation>& _children);
@@ -255,13 +255,13 @@ namespace TencentCloud
                     bool m_categoryGradeHasBeenSet;
 
                     /**
-                     * <p>无</p>
+                     * <p>关联的数据项信息</p>
                      */
                     std::vector<DspmIdentifyComplianceRuleRelation> m_ruleRelations;
                     bool m_ruleRelationsHasBeenSet;
 
                     /**
-                     * <p>无</p>
+                     * <p>子节点信息</p>
                      */
                     std::vector<DspmIdentifyComplianceCategoryRelation> m_children;
                     bool m_childrenHasBeenSet;

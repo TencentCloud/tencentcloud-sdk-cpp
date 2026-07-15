@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取<p>开始时间</p>
+                     * @return StartTime <p>开始时间</p>
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
+                     * 设置<p>开始时间</p>
+                     * @param _startTime <p>开始时间</p>
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取<p>结束时间</p>
+                     * @return EndTime <p>结束时间</p>
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置<p>结束时间</p>
+                     * @param _endTime <p>结束时间</p>
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取项目ID
-                     * @return ID 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return ID <p>项目ID</p>
                      * 
                      */
                     int64_t GetID() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _iD 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _iD <p>项目ID</p>
                      * 
                      */
                     void SetID(const int64_t& _iD);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取上报类型（custom，event，log，miniProgramData，performance，pv，speed，webvitals）
-                     * @return ReportType 上报类型（custom，event，log，miniProgramData，performance，pv，speed，webvitals）
+                     * 获取<p>上报类型（custom，event，log，miniProgramData，performance，pv，speed，webvitals）</p>
+                     * @return ReportType <p>上报类型（custom，event，log，miniProgramData，performance，pv，speed，webvitals）</p>
                      * 
                      */
                     std::string GetReportType() const;
 
                     /**
-                     * 设置上报类型（custom，event，log，miniProgramData，performance，pv，speed，webvitals）
-                     * @param _reportType 上报类型（custom，event，log，miniProgramData，performance，pv，speed，webvitals）
+                     * 设置<p>上报类型（custom，event，log，miniProgramData，performance，pv，speed，webvitals）</p>
+                     * @param _reportType <p>上报类型（custom，event，log，miniProgramData，performance，pv，speed，webvitals）</p>
                      * 
                      */
                     void SetReportType(const std::string& _reportType);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ReportTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceID 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceID <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceID 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceID <p>实例ID</p>
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开始时间
+                     * <p>开始时间</p>
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * <p>结束时间</p>
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     int64_t m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 上报类型（custom，event，log，miniProgramData，performance，pv，speed，webvitals）
+                     * <p>上报类型（custom，event，log，miniProgramData，performance，pv，speed，webvitals）</p>
                      */
                     std::string m_reportType;
                     bool m_reportTypeHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;

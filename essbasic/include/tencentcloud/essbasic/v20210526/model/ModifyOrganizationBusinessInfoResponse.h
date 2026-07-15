@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool UnfinishedCountHasBeenSet() const;
 
                     /**
-                     * 获取<p>SaaS 企业下未完结合同的 flowId 列表。</p>
-                     * @return FlowIds <p>SaaS 企业下未完结合同的 flowId 列表。</p>
+                     * 获取<p>SaaS 企业下未完结合同的 flowId 列表。注:<code>SaaS企业下的合同ID可能无法查询，可通知子客企业去处理相应的合同</code></p>
+                     * @return FlowIds <p>SaaS 企业下未完结合同的 flowId 列表。注:<code>SaaS企业下的合同ID可能无法查询，可通知子客企业去处理相应的合同</code></p>
                      * 
                      */
                     std::vector<std::string> GetFlowIds() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool FlowIdsHasBeenSet() const;
 
                     /**
-                     * 获取<p>渠道子客企业下未完结合同的 flowId 列表。</p>
-                     * @return ChannelFlowIds <p>渠道子客企业下未完结合同的 flowId 列表。</p>
+                     * 获取<p>渠道子客企业下未完结合同的 flowId 列表。注：<code>子客企业在其他渠道下的合同ID可能无法查询，可通知子客企业去处理其他渠道下相应的合同</code></p>
+                     * @return ChannelFlowIds <p>渠道子客企业下未完结合同的 flowId 列表。注：<code>子客企业在其他渠道下的合同ID可能无法查询，可通知子客企业去处理其他渠道下相应的合同</code></p>
                      * 
                      */
                     std::vector<std::string> GetChannelFlowIds() const;
@@ -134,13 +134,13 @@ namespace TencentCloud
                     bool m_unfinishedCountHasBeenSet;
 
                     /**
-                     * <p>SaaS 企业下未完结合同的 flowId 列表。</p>
+                     * <p>SaaS 企业下未完结合同的 flowId 列表。注:<code>SaaS企业下的合同ID可能无法查询，可通知子客企业去处理相应的合同</code></p>
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;
 
                     /**
-                     * <p>渠道子客企业下未完结合同的 flowId 列表。</p>
+                     * <p>渠道子客企业下未完结合同的 flowId 列表。注：<code>子客企业在其他渠道下的合同ID可能无法查询，可通知子客企业去处理其他渠道下相应的合同</code></p>
                      */
                     std::vector<std::string> m_channelFlowIds;
                     bool m_channelFlowIdsHasBeenSet;

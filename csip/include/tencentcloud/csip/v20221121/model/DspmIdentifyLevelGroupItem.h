@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取<p>无</p>
-                     * @return ComplianceRelations <p>无</p>
+                     * 获取<p>关联的识别模板信息</p>
+                     * @return ComplianceRelations <p>关联的识别模板信息</p>
                      * 
                      */
                     std::vector<DspmIdentifyRefComplianceInfo> GetComplianceRelations() const;
 
                     /**
-                     * 设置<p>无</p>
-                     * @param _complianceRelations <p>无</p>
+                     * 设置<p>关联的识别模板信息</p>
+                     * @param _complianceRelations <p>关联的识别模板信息</p>
                      * 
                      */
                     void SetComplianceRelations(const std::vector<DspmIdentifyRefComplianceInfo>& _complianceRelations);
@@ -234,7 +234,7 @@ namespace TencentCloud
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * <p>无</p>
+                     * <p>关联的识别模板信息</p>
                      */
                     std::vector<DspmIdentifyRefComplianceInfo> m_complianceRelations;
                     bool m_complianceRelationsHasBeenSet;

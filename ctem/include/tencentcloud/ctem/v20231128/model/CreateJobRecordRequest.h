@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ctem/v20231128/model/ScanPriorityReq.h>
 
 
 namespace TencentCloud
@@ -231,6 +232,27 @@ namespace TencentCloud
                      */
                     bool ScanRateAckChecklistHasBeenSet() const;
 
+                    /**
+                     * 获取<p>扫描优先级配置</p>
+                     * @return ScanPriority <p>扫描优先级配置</p>
+                     * 
+                     */
+                    ScanPriorityReq GetScanPriority() const;
+
+                    /**
+                     * 设置<p>扫描优先级配置</p>
+                     * @param _scanPriority <p>扫描优先级配置</p>
+                     * 
+                     */
+                    void SetScanPriority(const ScanPriorityReq& _scanPriority);
+
+                    /**
+                     * 判断参数 ScanPriority 是否已赋值
+                     * @return ScanPriority 是否已赋值
+                     * 
+                     */
+                    bool ScanPriorityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +308,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_scanRateAckChecklist;
                     bool m_scanRateAckChecklistHasBeenSet;
+
+                    /**
+                     * <p>扫描优先级配置</p>
+                     */
+                    ScanPriorityReq m_scanPriority;
+                    bool m_scanPriorityHasBeenSet;
 
                 };
             }

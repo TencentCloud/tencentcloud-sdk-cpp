@@ -45,7 +45,8 @@ Customer::Customer() :
     m_isIncludeFullScanHasBeenSet(false),
     m_enableGroupMemberDiscoveredHasBeenSet(false),
     m_singleIPTaskLimitHasBeenSet(false),
-    m_portScanQpsHasBeenSet(false)
+    m_portScanQpsHasBeenSet(false),
+    m_scanPriorityHasBeenSet(false)
 {
 }
 
@@ -304,6 +305,23 @@ CoreInternalOutcome Customer::Deserialize(const rapidjson::Value &value)
         m_portScanQpsHasBeenSet = true;
     }
 
+    if (value.HasMember("ScanPriority") && !value["ScanPriority"].IsNull())
+    {
+        if (!value["ScanPriority"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Customer.ScanPriority` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_scanPriority.Deserialize(value["ScanPriority"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_scanPriorityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -509,6 +527,15 @@ void Customer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "PortScanQps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_portScanQps, allocator);
+    }
+
+    if (m_scanPriorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanPriority";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_scanPriority.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -912,5 +939,21 @@ void Customer::SetPortScanQps(const int64_t& _portScanQps)
 bool Customer::PortScanQpsHasBeenSet() const
 {
     return m_portScanQpsHasBeenSet;
+}
+
+ScanPriorityDisplay Customer::GetScanPriority() const
+{
+    return m_scanPriority;
+}
+
+void Customer::SetScanPriority(const ScanPriorityDisplay& _scanPriority)
+{
+    m_scanPriority = _scanPriority;
+    m_scanPriorityHasBeenSet = true;
+}
+
+bool Customer::ScanPriorityHasBeenSet() const
+{
+    return m_scanPriorityHasBeenSet;
 }
 

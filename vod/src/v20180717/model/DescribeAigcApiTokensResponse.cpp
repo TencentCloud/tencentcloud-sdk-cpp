@@ -24,7 +24,8 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 DescribeAigcApiTokensResponse::DescribeAigcApiTokensResponse() :
-    m_apiTokensHasBeenSet(false)
+    m_apiTokensHasBeenSet(false),
+    m_extInfosHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,19 @@ CoreInternalOutcome DescribeAigcApiTokensResponse::Deserialize(const string &pay
         m_apiTokensHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ExtInfos") && !rsp["ExtInfos"].IsNull())
+    {
+        if (!rsp["ExtInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExtInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ExtInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_extInfos.push_back((*itr).GetString());
+        }
+        m_extInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -93,6 +107,19 @@ string DescribeAigcApiTokensResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_apiTokens.begin(); itr != m_apiTokens.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_extInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_extInfos.begin(); itr != m_extInfos.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -118,6 +145,16 @@ vector<string> DescribeAigcApiTokensResponse::GetApiTokens() const
 bool DescribeAigcApiTokensResponse::ApiTokensHasBeenSet() const
 {
     return m_apiTokensHasBeenSet;
+}
+
+vector<string> DescribeAigcApiTokensResponse::GetExtInfos() const
+{
+    return m_extInfos;
+}
+
+bool DescribeAigcApiTokensResponse::ExtInfosHasBeenSet() const
+{
+    return m_extInfosHasBeenSet;
 }
 
 

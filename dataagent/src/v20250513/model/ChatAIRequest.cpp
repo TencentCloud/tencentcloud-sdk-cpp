@@ -32,7 +32,8 @@ ChatAIRequest::ChatAIRequest() :
     m_dataSourceIdsHasBeenSet(false),
     m_agentTypeHasBeenSet(false),
     m_oldRecordIdHasBeenSet(false),
-    m_knowledgeBaseIdsHasBeenSet(false)
+    m_knowledgeBaseIdsHasBeenSet(false),
+    m_archVersionHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,14 @@ string ChatAIRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_archVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArchVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_archVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -299,6 +308,22 @@ void ChatAIRequest::SetKnowledgeBaseIds(const vector<string>& _knowledgeBaseIds)
 bool ChatAIRequest::KnowledgeBaseIdsHasBeenSet() const
 {
     return m_knowledgeBaseIdsHasBeenSet;
+}
+
+string ChatAIRequest::GetArchVersion() const
+{
+    return m_archVersion;
+}
+
+void ChatAIRequest::SetArchVersion(const string& _archVersion)
+{
+    m_archVersion = _archVersion;
+    m_archVersionHasBeenSet = true;
+}
+
+bool ChatAIRequest::ArchVersionHasBeenSet() const
+{
+    return m_archVersionHasBeenSet;
 }
 
 

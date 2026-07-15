@@ -31,7 +31,10 @@ CreateCloudNativeAPIGatewaySecretKeyRequest::CreateCloudNativeAPIGatewaySecretKe
     m_kmsKeyNameHasBeenSet(false),
     m_kmsKeyVersionHasBeenSet(false),
     m_secretValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_jWTCredentialConfigHasBeenSet(false),
+    m_oAuthCredentialConfigHasBeenSet(false),
+    m_oIDCCredentialConfigHasBeenSet(false)
 {
 }
 
@@ -112,6 +115,33 @@ string CreateCloudNativeAPIGatewaySecretKeyRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jWTCredentialConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JWTCredentialConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_jWTCredentialConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_oAuthCredentialConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OAuthCredentialConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_oAuthCredentialConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_oIDCCredentialConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OIDCCredentialConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_oIDCCredentialConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -264,6 +294,54 @@ void CreateCloudNativeAPIGatewaySecretKeyRequest::SetDescription(const string& _
 bool CreateCloudNativeAPIGatewaySecretKeyRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+AIGWJWTCredentialConfig CreateCloudNativeAPIGatewaySecretKeyRequest::GetJWTCredentialConfig() const
+{
+    return m_jWTCredentialConfig;
+}
+
+void CreateCloudNativeAPIGatewaySecretKeyRequest::SetJWTCredentialConfig(const AIGWJWTCredentialConfig& _jWTCredentialConfig)
+{
+    m_jWTCredentialConfig = _jWTCredentialConfig;
+    m_jWTCredentialConfigHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewaySecretKeyRequest::JWTCredentialConfigHasBeenSet() const
+{
+    return m_jWTCredentialConfigHasBeenSet;
+}
+
+AIGWOAuthCredentialConfig CreateCloudNativeAPIGatewaySecretKeyRequest::GetOAuthCredentialConfig() const
+{
+    return m_oAuthCredentialConfig;
+}
+
+void CreateCloudNativeAPIGatewaySecretKeyRequest::SetOAuthCredentialConfig(const AIGWOAuthCredentialConfig& _oAuthCredentialConfig)
+{
+    m_oAuthCredentialConfig = _oAuthCredentialConfig;
+    m_oAuthCredentialConfigHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewaySecretKeyRequest::OAuthCredentialConfigHasBeenSet() const
+{
+    return m_oAuthCredentialConfigHasBeenSet;
+}
+
+AIGWOIDCCredentialConfig CreateCloudNativeAPIGatewaySecretKeyRequest::GetOIDCCredentialConfig() const
+{
+    return m_oIDCCredentialConfig;
+}
+
+void CreateCloudNativeAPIGatewaySecretKeyRequest::SetOIDCCredentialConfig(const AIGWOIDCCredentialConfig& _oIDCCredentialConfig)
+{
+    m_oIDCCredentialConfig = _oIDCCredentialConfig;
+    m_oIDCCredentialConfigHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewaySecretKeyRequest::OIDCCredentialConfigHasBeenSet() const
+{
+    return m_oIDCCredentialConfigHasBeenSet;
 }
 
 

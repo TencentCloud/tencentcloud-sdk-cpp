@@ -44,7 +44,17 @@ CloudNativeAPIGatewayLLMModelService::CloudNativeAPIGatewayLLMModelService() :
     m_sNIHasBeenSet(false),
     m_quotaLimitHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_secretKeyIdsHasBeenSet(false)
+    m_secretKeyIdsHasBeenSet(false),
+    m_modelRewriteRulesHasBeenSet(false),
+    m_sourceIdHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
+    m_serviceNameHasBeenSet(false),
+    m_protocolHasBeenSet(false),
+    m_extParamsHasBeenSet(false),
+    m_customProviderNameHasBeenSet(false),
+    m_keyRotationEnabledHasBeenSet(false),
+    m_keyRotationPeriodDaysHasBeenSet(false),
+    m_externalInstanceIdHasBeenSet(false)
 {
 }
 
@@ -317,6 +327,126 @@ CoreInternalOutcome CloudNativeAPIGatewayLLMModelService::Deserialize(const rapi
         m_secretKeyIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("ModelRewriteRules") && !value["ModelRewriteRules"].IsNull())
+    {
+        if (!value["ModelRewriteRules"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelService.ModelRewriteRules` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ModelRewriteRules"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AIGWModelRewriteRule item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_modelRewriteRules.push_back(item);
+        }
+        m_modelRewriteRulesHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceId") && !value["SourceId"].IsNull())
+    {
+        if (!value["SourceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelService.SourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceId = string(value["SourceId"].GetString());
+        m_sourceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Namespace") && !value["Namespace"].IsNull())
+    {
+        if (!value["Namespace"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelService.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_namespace = string(value["Namespace"].GetString());
+        m_namespaceHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServiceName") && !value["ServiceName"].IsNull())
+    {
+        if (!value["ServiceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelService.ServiceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceName = string(value["ServiceName"].GetString());
+        m_serviceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Protocol") && !value["Protocol"].IsNull())
+    {
+        if (!value["Protocol"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelService.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protocol = string(value["Protocol"].GetString());
+        m_protocolHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExtParams") && !value["ExtParams"].IsNull())
+    {
+        if (!value["ExtParams"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelService.ExtParams` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExtParams"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KeyValue item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_extParams.push_back(item);
+        }
+        m_extParamsHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomProviderName") && !value["CustomProviderName"].IsNull())
+    {
+        if (!value["CustomProviderName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelService.CustomProviderName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customProviderName = string(value["CustomProviderName"].GetString());
+        m_customProviderNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("KeyRotationEnabled") && !value["KeyRotationEnabled"].IsNull())
+    {
+        if (!value["KeyRotationEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelService.KeyRotationEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_keyRotationEnabled = value["KeyRotationEnabled"].GetBool();
+        m_keyRotationEnabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("KeyRotationPeriodDays") && !value["KeyRotationPeriodDays"].IsNull())
+    {
+        if (!value["KeyRotationPeriodDays"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelService.KeyRotationPeriodDays` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_keyRotationPeriodDays = value["KeyRotationPeriodDays"].GetUint64();
+        m_keyRotationPeriodDaysHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExternalInstanceId") && !value["ExternalInstanceId"].IsNull())
+    {
+        if (!value["ExternalInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelService.ExternalInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_externalInstanceId = string(value["ExternalInstanceId"].GetString());
+        m_externalInstanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -522,6 +652,100 @@ void CloudNativeAPIGatewayLLMModelService::ToJsonObject(rapidjson::Value &value,
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_modelRewriteRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelRewriteRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_modelRewriteRules.begin(); itr != m_modelRewriteRules.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_sourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Namespace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Protocol";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtParams";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_extParams.begin(); itr != m_extParams.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_customProviderNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomProviderName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customProviderName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keyRotationEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyRotationEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_keyRotationEnabled, allocator);
+    }
+
+    if (m_keyRotationPeriodDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyRotationPeriodDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_keyRotationPeriodDays, allocator);
+    }
+
+    if (m_externalInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalInstanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -909,5 +1133,165 @@ void CloudNativeAPIGatewayLLMModelService::SetSecretKeyIds(const vector<string>&
 bool CloudNativeAPIGatewayLLMModelService::SecretKeyIdsHasBeenSet() const
 {
     return m_secretKeyIdsHasBeenSet;
+}
+
+vector<AIGWModelRewriteRule> CloudNativeAPIGatewayLLMModelService::GetModelRewriteRules() const
+{
+    return m_modelRewriteRules;
+}
+
+void CloudNativeAPIGatewayLLMModelService::SetModelRewriteRules(const vector<AIGWModelRewriteRule>& _modelRewriteRules)
+{
+    m_modelRewriteRules = _modelRewriteRules;
+    m_modelRewriteRulesHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::ModelRewriteRulesHasBeenSet() const
+{
+    return m_modelRewriteRulesHasBeenSet;
+}
+
+string CloudNativeAPIGatewayLLMModelService::GetSourceId() const
+{
+    return m_sourceId;
+}
+
+void CloudNativeAPIGatewayLLMModelService::SetSourceId(const string& _sourceId)
+{
+    m_sourceId = _sourceId;
+    m_sourceIdHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::SourceIdHasBeenSet() const
+{
+    return m_sourceIdHasBeenSet;
+}
+
+string CloudNativeAPIGatewayLLMModelService::GetNamespace() const
+{
+    return m_namespace;
+}
+
+void CloudNativeAPIGatewayLLMModelService::SetNamespace(const string& _namespace)
+{
+    m_namespace = _namespace;
+    m_namespaceHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::NamespaceHasBeenSet() const
+{
+    return m_namespaceHasBeenSet;
+}
+
+string CloudNativeAPIGatewayLLMModelService::GetServiceName() const
+{
+    return m_serviceName;
+}
+
+void CloudNativeAPIGatewayLLMModelService::SetServiceName(const string& _serviceName)
+{
+    m_serviceName = _serviceName;
+    m_serviceNameHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::ServiceNameHasBeenSet() const
+{
+    return m_serviceNameHasBeenSet;
+}
+
+string CloudNativeAPIGatewayLLMModelService::GetProtocol() const
+{
+    return m_protocol;
+}
+
+void CloudNativeAPIGatewayLLMModelService::SetProtocol(const string& _protocol)
+{
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::ProtocolHasBeenSet() const
+{
+    return m_protocolHasBeenSet;
+}
+
+vector<KeyValue> CloudNativeAPIGatewayLLMModelService::GetExtParams() const
+{
+    return m_extParams;
+}
+
+void CloudNativeAPIGatewayLLMModelService::SetExtParams(const vector<KeyValue>& _extParams)
+{
+    m_extParams = _extParams;
+    m_extParamsHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::ExtParamsHasBeenSet() const
+{
+    return m_extParamsHasBeenSet;
+}
+
+string CloudNativeAPIGatewayLLMModelService::GetCustomProviderName() const
+{
+    return m_customProviderName;
+}
+
+void CloudNativeAPIGatewayLLMModelService::SetCustomProviderName(const string& _customProviderName)
+{
+    m_customProviderName = _customProviderName;
+    m_customProviderNameHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::CustomProviderNameHasBeenSet() const
+{
+    return m_customProviderNameHasBeenSet;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::GetKeyRotationEnabled() const
+{
+    return m_keyRotationEnabled;
+}
+
+void CloudNativeAPIGatewayLLMModelService::SetKeyRotationEnabled(const bool& _keyRotationEnabled)
+{
+    m_keyRotationEnabled = _keyRotationEnabled;
+    m_keyRotationEnabledHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::KeyRotationEnabledHasBeenSet() const
+{
+    return m_keyRotationEnabledHasBeenSet;
+}
+
+uint64_t CloudNativeAPIGatewayLLMModelService::GetKeyRotationPeriodDays() const
+{
+    return m_keyRotationPeriodDays;
+}
+
+void CloudNativeAPIGatewayLLMModelService::SetKeyRotationPeriodDays(const uint64_t& _keyRotationPeriodDays)
+{
+    m_keyRotationPeriodDays = _keyRotationPeriodDays;
+    m_keyRotationPeriodDaysHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::KeyRotationPeriodDaysHasBeenSet() const
+{
+    return m_keyRotationPeriodDaysHasBeenSet;
+}
+
+string CloudNativeAPIGatewayLLMModelService::GetExternalInstanceId() const
+{
+    return m_externalInstanceId;
+}
+
+void CloudNativeAPIGatewayLLMModelService::SetExternalInstanceId(const string& _externalInstanceId)
+{
+    m_externalInstanceId = _externalInstanceId;
+    m_externalInstanceIdHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::ExternalInstanceIdHasBeenSet() const
+{
+    return m_externalInstanceIdHasBeenSet;
 }
 

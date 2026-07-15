@@ -24,6 +24,8 @@
 #include <tencentcloud/cngw/v20230418/model/CloudNativeAPIGatewayLLMModelFallbackRule.h>
 #include <tencentcloud/cngw/v20230418/model/CloudNativeAPIGatewayLLMModelParamCheckInfo.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWLLMQuotaLimit.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWModelRewriteRule.h>
+#include <tencentcloud/cngw/v20230418/model/KeyValue.h>
 
 
 namespace TencentCloud
@@ -507,6 +509,132 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>参数改写规则</p>
+                     * @return ModelRewriteRules <p>参数改写规则</p>
+                     * 
+                     */
+                    std::vector<AIGWModelRewriteRule> GetModelRewriteRules() const;
+
+                    /**
+                     * 设置<p>参数改写规则</p>
+                     * @param _modelRewriteRules <p>参数改写规则</p>
+                     * 
+                     */
+                    void SetModelRewriteRules(const std::vector<AIGWModelRewriteRule>& _modelRewriteRules);
+
+                    /**
+                     * 判断参数 ModelRewriteRules 是否已赋值
+                     * @return ModelRewriteRules 是否已赋值
+                     * 
+                     */
+                    bool ModelRewriteRulesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模型自定义供应商名称</p>
+                     * @return CustomProviderName <p>模型自定义供应商名称</p>
+                     * 
+                     */
+                    std::string GetCustomProviderName() const;
+
+                    /**
+                     * 设置<p>模型自定义供应商名称</p>
+                     * @param _customProviderName <p>模型自定义供应商名称</p>
+                     * 
+                     */
+                    void SetCustomProviderName(const std::string& _customProviderName);
+
+                    /**
+                     * 判断参数 CustomProviderName 是否已赋值
+                     * @return CustomProviderName 是否已赋值
+                     * 
+                     */
+                    bool CustomProviderNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>外部服务来源ID</p>
+                     * @return ExternalInstanceId <p>外部服务来源ID</p>
+                     * 
+                     */
+                    std::string GetExternalInstanceId() const;
+
+                    /**
+                     * 设置<p>外部服务来源ID</p>
+                     * @param _externalInstanceId <p>外部服务来源ID</p>
+                     * 
+                     */
+                    void SetExternalInstanceId(const std::string& _externalInstanceId);
+
+                    /**
+                     * 判断参数 ExternalInstanceId 是否已赋值
+                     * @return ExternalInstanceId 是否已赋值
+                     * 
+                     */
+                    bool ExternalInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>其他参数</p>
+                     * @return ExtParams <p>其他参数</p>
+                     * 
+                     */
+                    std::vector<KeyValue> GetExtParams() const;
+
+                    /**
+                     * 设置<p>其他参数</p>
+                     * @param _extParams <p>其他参数</p>
+                     * 
+                     */
+                    void SetExtParams(const std::vector<KeyValue>& _extParams);
+
+                    /**
+                     * 判断参数 ExtParams 是否已赋值
+                     * @return ExtParams 是否已赋值
+                     * 
+                     */
+                    bool ExtParamsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>密钥轮转开关</p>
+                     * @return KeyRotationEnabled <p>密钥轮转开关</p>
+                     * 
+                     */
+                    bool GetKeyRotationEnabled() const;
+
+                    /**
+                     * 设置<p>密钥轮转开关</p>
+                     * @param _keyRotationEnabled <p>密钥轮转开关</p>
+                     * 
+                     */
+                    void SetKeyRotationEnabled(const bool& _keyRotationEnabled);
+
+                    /**
+                     * 判断参数 KeyRotationEnabled 是否已赋值
+                     * @return KeyRotationEnabled 是否已赋值
+                     * 
+                     */
+                    bool KeyRotationEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取<p>密钥轮转周期</p><p>单位：天数</p>
+                     * @return KeyRotationPeriodDays <p>密钥轮转周期</p><p>单位：天数</p>
+                     * 
+                     */
+                    uint64_t GetKeyRotationPeriodDays() const;
+
+                    /**
+                     * 设置<p>密钥轮转周期</p><p>单位：天数</p>
+                     * @param _keyRotationPeriodDays <p>密钥轮转周期</p><p>单位：天数</p>
+                     * 
+                     */
+                    void SetKeyRotationPeriodDays(const uint64_t& _keyRotationPeriodDays);
+
+                    /**
+                     * 判断参数 KeyRotationPeriodDays 是否已赋值
+                     * @return KeyRotationPeriodDays 是否已赋值
+                     * 
+                     */
+                    bool KeyRotationPeriodDaysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -640,6 +768,42 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * <p>参数改写规则</p>
+                     */
+                    std::vector<AIGWModelRewriteRule> m_modelRewriteRules;
+                    bool m_modelRewriteRulesHasBeenSet;
+
+                    /**
+                     * <p>模型自定义供应商名称</p>
+                     */
+                    std::string m_customProviderName;
+                    bool m_customProviderNameHasBeenSet;
+
+                    /**
+                     * <p>外部服务来源ID</p>
+                     */
+                    std::string m_externalInstanceId;
+                    bool m_externalInstanceIdHasBeenSet;
+
+                    /**
+                     * <p>其他参数</p>
+                     */
+                    std::vector<KeyValue> m_extParams;
+                    bool m_extParamsHasBeenSet;
+
+                    /**
+                     * <p>密钥轮转开关</p>
+                     */
+                    bool m_keyRotationEnabled;
+                    bool m_keyRotationEnabledHasBeenSet;
+
+                    /**
+                     * <p>密钥轮转周期</p><p>单位：天数</p>
+                     */
+                    uint64_t m_keyRotationPeriodDays;
+                    bool m_keyRotationPeriodDaysHasBeenSet;
 
                 };
             }

@@ -25,7 +25,9 @@ CloudNativeAPIGatewayLLMModelServiceRoute::CloudNativeAPIGatewayLLMModelServiceR
     m_weightedConfigHasBeenSet(false),
     m_modelNameConfigHasBeenSet(false),
     m_intentRouteConfigHasBeenSet(false),
-    m_latencyPriorityConfigHasBeenSet(false)
+    m_latencyPriorityConfigHasBeenSet(false),
+    m_cacheAwareRouteConfigHasBeenSet(false),
+    m_tokenLengthRouteConfigHasBeenSet(false)
 {
 }
 
@@ -121,6 +123,40 @@ CoreInternalOutcome CloudNativeAPIGatewayLLMModelServiceRoute::Deserialize(const
         m_latencyPriorityConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("CacheAwareRouteConfig") && !value["CacheAwareRouteConfig"].IsNull())
+    {
+        if (!value["CacheAwareRouteConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelServiceRoute.CacheAwareRouteConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cacheAwareRouteConfig.Deserialize(value["CacheAwareRouteConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cacheAwareRouteConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("TokenLengthRouteConfig") && !value["TokenLengthRouteConfig"].IsNull())
+    {
+        if (!value["TokenLengthRouteConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelServiceRoute.TokenLengthRouteConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tokenLengthRouteConfig.Deserialize(value["TokenLengthRouteConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tokenLengthRouteConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +223,24 @@ void CloudNativeAPIGatewayLLMModelServiceRoute::ToJsonObject(rapidjson::Value &v
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_latencyPriorityConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cacheAwareRouteConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CacheAwareRouteConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cacheAwareRouteConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_tokenLengthRouteConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenLengthRouteConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tokenLengthRouteConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -270,5 +324,37 @@ void CloudNativeAPIGatewayLLMModelServiceRoute::SetLatencyPriorityConfig(const A
 bool CloudNativeAPIGatewayLLMModelServiceRoute::LatencyPriorityConfigHasBeenSet() const
 {
     return m_latencyPriorityConfigHasBeenSet;
+}
+
+AIGWCacheAwareRouteConfig CloudNativeAPIGatewayLLMModelServiceRoute::GetCacheAwareRouteConfig() const
+{
+    return m_cacheAwareRouteConfig;
+}
+
+void CloudNativeAPIGatewayLLMModelServiceRoute::SetCacheAwareRouteConfig(const AIGWCacheAwareRouteConfig& _cacheAwareRouteConfig)
+{
+    m_cacheAwareRouteConfig = _cacheAwareRouteConfig;
+    m_cacheAwareRouteConfigHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelServiceRoute::CacheAwareRouteConfigHasBeenSet() const
+{
+    return m_cacheAwareRouteConfigHasBeenSet;
+}
+
+AIGWTokenLengthRoute CloudNativeAPIGatewayLLMModelServiceRoute::GetTokenLengthRouteConfig() const
+{
+    return m_tokenLengthRouteConfig;
+}
+
+void CloudNativeAPIGatewayLLMModelServiceRoute::SetTokenLengthRouteConfig(const AIGWTokenLengthRoute& _tokenLengthRouteConfig)
+{
+    m_tokenLengthRouteConfig = _tokenLengthRouteConfig;
+    m_tokenLengthRouteConfigHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelServiceRoute::TokenLengthRouteConfigHasBeenSet() const
+{
+    return m_tokenLengthRouteConfigHasBeenSet;
 }
 

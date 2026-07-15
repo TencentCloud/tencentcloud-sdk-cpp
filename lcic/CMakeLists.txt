@@ -64,10 +64,12 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/BatchDescribeDocumentRequest.h
   include/tencentcloud/lcic/v20220817/model/RegisterUserRequest.h
   include/tencentcloud/lcic/v20220817/model/BatchCreateRoomResponse.h
+  include/tencentcloud/lcic/v20220817/model/DescribeEditVersionsRequest.h
   include/tencentcloud/lcic/v20220817/model/LoginUserWithRoomRequest.h
   include/tencentcloud/lcic/v20220817/model/UnbindDocumentFromRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/CreateDocumentResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeMarqueeRequest.h
+  include/tencentcloud/lcic/v20220817/model/SetWatermarkRequest.h
   include/tencentcloud/lcic/v20220817/model/DescribeGroupResponse.h
   include/tencentcloud/lcic/v20220817/model/SetAppCustomContentResponse.h
   include/tencentcloud/lcic/v20220817/model/UnblockKickedUserRequest.h
@@ -114,6 +116,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/DescribeRoomForbiddenUserResponse.h
   include/tencentcloud/lcic/v20220817/model/UserInfo.h
   include/tencentcloud/lcic/v20220817/model/DescribeUserResponse.h
+  include/tencentcloud/lcic/v20220817/model/GetEditVersionTokenRequest.h
   include/tencentcloud/lcic/v20220817/model/DescribeScoreListResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeDocumentRequest.h
   include/tencentcloud/lcic/v20220817/model/BatchDeleteRecordResponse.h
@@ -129,6 +132,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/GetRoomMessageResponse.h
   include/tencentcloud/lcic/v20220817/model/GroupBaseInfo.h
   include/tencentcloud/lcic/v20220817/model/BatchUserInfo.h
+  include/tencentcloud/lcic/v20220817/model/EditVersions.h
   include/tencentcloud/lcic/v20220817/model/BatchAddGroupMemberRequest.h
   include/tencentcloud/lcic/v20220817/model/StartRecordResponse.h
   include/tencentcloud/lcic/v20220817/model/LoginUserWithRoomResponse.h
@@ -139,6 +143,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/DescribeRecordStreamResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeCurrentMemberListRequest.h
   include/tencentcloud/lcic/v20220817/model/SendRoomNotificationMessageRequest.h
+  include/tencentcloud/lcic/v20220817/model/GetEditVersionTokenResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeSdkAppIdUsersResponse.h
   include/tencentcloud/lcic/v20220817/model/EventDataInfo.h
   include/tencentcloud/lcic/v20220817/model/DescribeAnswerListResponse.h
@@ -152,6 +157,8 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/EndRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/GetPlaybackTokenRequest.h
   include/tencentcloud/lcic/v20220817/model/EndRoomRequest.h
+  include/tencentcloud/lcic/v20220817/model/SetMainEditVersionResponse.h
+  include/tencentcloud/lcic/v20220817/model/DescribeEditVersionsResponse.h
   include/tencentcloud/lcic/v20220817/model/CreateGroupWithMembersResponse.h
   include/tencentcloud/lcic/v20220817/model/BatchDeleteGroupMemberRequest.h
   include/tencentcloud/lcic/v20220817/model/ImageInfo.h
@@ -182,7 +189,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/SetMarqueeResponse.h
   include/tencentcloud/lcic/v20220817/model/QuestionInfo.h
   include/tencentcloud/lcic/v20220817/model/KickUserFromRoomRequest.h
-  include/tencentcloud/lcic/v20220817/model/SetWatermarkRequest.h
+  include/tencentcloud/lcic/v20220817/model/SetMainEditVersionRequest.h
   include/tencentcloud/lcic/v20220817/model/GetRoomsRequest.h
   include/tencentcloud/lcic/v20220817/model/BatchGetPlaybackTokenResponse.h
   include/tencentcloud/lcic/v20220817/model/ForbidSendMsgResponse.h
@@ -268,10 +275,12 @@ set(lcic_src
   src/v20220817/model/BatchDescribeDocumentRequest.cpp
   src/v20220817/model/RegisterUserRequest.cpp
   src/v20220817/model/BatchCreateRoomResponse.cpp
+  src/v20220817/model/DescribeEditVersionsRequest.cpp
   src/v20220817/model/LoginUserWithRoomRequest.cpp
   src/v20220817/model/UnbindDocumentFromRoomResponse.cpp
   src/v20220817/model/CreateDocumentResponse.cpp
   src/v20220817/model/DescribeMarqueeRequest.cpp
+  src/v20220817/model/SetWatermarkRequest.cpp
   src/v20220817/model/DescribeGroupResponse.cpp
   src/v20220817/model/SetAppCustomContentResponse.cpp
   src/v20220817/model/UnblockKickedUserRequest.cpp
@@ -318,6 +327,7 @@ set(lcic_src
   src/v20220817/model/DescribeRoomForbiddenUserResponse.cpp
   src/v20220817/model/UserInfo.cpp
   src/v20220817/model/DescribeUserResponse.cpp
+  src/v20220817/model/GetEditVersionTokenRequest.cpp
   src/v20220817/model/DescribeScoreListResponse.cpp
   src/v20220817/model/DescribeDocumentRequest.cpp
   src/v20220817/model/BatchDeleteRecordResponse.cpp
@@ -333,6 +343,7 @@ set(lcic_src
   src/v20220817/model/GetRoomMessageResponse.cpp
   src/v20220817/model/GroupBaseInfo.cpp
   src/v20220817/model/BatchUserInfo.cpp
+  src/v20220817/model/EditVersions.cpp
   src/v20220817/model/BatchAddGroupMemberRequest.cpp
   src/v20220817/model/StartRecordResponse.cpp
   src/v20220817/model/LoginUserWithRoomResponse.cpp
@@ -343,6 +354,7 @@ set(lcic_src
   src/v20220817/model/DescribeRecordStreamResponse.cpp
   src/v20220817/model/DescribeCurrentMemberListRequest.cpp
   src/v20220817/model/SendRoomNotificationMessageRequest.cpp
+  src/v20220817/model/GetEditVersionTokenResponse.cpp
   src/v20220817/model/DescribeSdkAppIdUsersResponse.cpp
   src/v20220817/model/EventDataInfo.cpp
   src/v20220817/model/DescribeAnswerListResponse.cpp
@@ -356,6 +368,8 @@ set(lcic_src
   src/v20220817/model/EndRoomResponse.cpp
   src/v20220817/model/GetPlaybackTokenRequest.cpp
   src/v20220817/model/EndRoomRequest.cpp
+  src/v20220817/model/SetMainEditVersionResponse.cpp
+  src/v20220817/model/DescribeEditVersionsResponse.cpp
   src/v20220817/model/CreateGroupWithMembersResponse.cpp
   src/v20220817/model/BatchDeleteGroupMemberRequest.cpp
   src/v20220817/model/ImageInfo.cpp
@@ -386,7 +400,7 @@ set(lcic_src
   src/v20220817/model/SetMarqueeResponse.cpp
   src/v20220817/model/QuestionInfo.cpp
   src/v20220817/model/KickUserFromRoomRequest.cpp
-  src/v20220817/model/SetWatermarkRequest.cpp
+  src/v20220817/model/SetMainEditVersionRequest.cpp
   src/v20220817/model/GetRoomsRequest.cpp
   src/v20220817/model/BatchGetPlaybackTokenResponse.cpp
   src/v20220817/model/ForbidSendMsgResponse.cpp

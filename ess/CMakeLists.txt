@@ -157,6 +157,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateRiskIdentificationTaskFeedbackResponse.h
   include/tencentcloud/ess/v20201111/model/BatchOrganizationRegistrationTasksDetails.h
   include/tencentcloud/ess/v20201111/model/RecipientComponentInfo.h
+  include/tencentcloud/ess/v20201111/model/SealPolicyAuthorizationFlows.h
   include/tencentcloud/ess/v20201111/model/ExportContractReviewResultResponse.h
   include/tencentcloud/ess/v20201111/model/SingleSignOnEmployees.h
   include/tencentcloud/ess/v20201111/model/WebThemeConfig.h
@@ -621,6 +622,7 @@ set(ess_src
   src/v20201111/model/CreateRiskIdentificationTaskFeedbackResponse.cpp
   src/v20201111/model/BatchOrganizationRegistrationTasksDetails.cpp
   src/v20201111/model/RecipientComponentInfo.cpp
+  src/v20201111/model/SealPolicyAuthorizationFlows.cpp
   src/v20201111/model/ExportContractReviewResultResponse.cpp
   src/v20201111/model/SingleSignOnEmployees.cpp
   src/v20201111/model/WebThemeConfig.cpp

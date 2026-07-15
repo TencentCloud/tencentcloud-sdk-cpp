@@ -24,7 +24,9 @@ AIGWLogConfig::AIGWLogConfig() :
     m_enableRequestLogPayloadsHasBeenSet(false),
     m_enableResponseLogPayloadsHasBeenSet(false),
     m_requestLogPayloadMaxSizeHasBeenSet(false),
-    m_responseLogPayloadMaxSizeHasBeenSet(false)
+    m_responseLogPayloadMaxSizeHasBeenSet(false),
+    m_requestLogPayloadModeHasBeenSet(false),
+    m_responseLogPayloadModeHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome AIGWLogConfig::Deserialize(const rapidjson::Value &value)
         m_responseLogPayloadMaxSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("RequestLogPayloadMode") && !value["RequestLogPayloadMode"].IsNull())
+    {
+        if (!value["RequestLogPayloadMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWLogConfig.RequestLogPayloadMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_requestLogPayloadMode = string(value["RequestLogPayloadMode"].GetString());
+        m_requestLogPayloadModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResponseLogPayloadMode") && !value["ResponseLogPayloadMode"].IsNull())
+    {
+        if (!value["ResponseLogPayloadMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWLogConfig.ResponseLogPayloadMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_responseLogPayloadMode = string(value["ResponseLogPayloadMode"].GetString());
+        m_responseLogPayloadModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void AIGWLogConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "ResponseLogPayloadMaxSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_responseLogPayloadMaxSize, allocator);
+    }
+
+    if (m_requestLogPayloadModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestLogPayloadMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_requestLogPayloadMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_responseLogPayloadModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResponseLogPayloadMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_responseLogPayloadMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void AIGWLogConfig::SetResponseLogPayloadMaxSize(const int64_t& _responseLogPayl
 bool AIGWLogConfig::ResponseLogPayloadMaxSizeHasBeenSet() const
 {
     return m_responseLogPayloadMaxSizeHasBeenSet;
+}
+
+string AIGWLogConfig::GetRequestLogPayloadMode() const
+{
+    return m_requestLogPayloadMode;
+}
+
+void AIGWLogConfig::SetRequestLogPayloadMode(const string& _requestLogPayloadMode)
+{
+    m_requestLogPayloadMode = _requestLogPayloadMode;
+    m_requestLogPayloadModeHasBeenSet = true;
+}
+
+bool AIGWLogConfig::RequestLogPayloadModeHasBeenSet() const
+{
+    return m_requestLogPayloadModeHasBeenSet;
+}
+
+string AIGWLogConfig::GetResponseLogPayloadMode() const
+{
+    return m_responseLogPayloadMode;
+}
+
+void AIGWLogConfig::SetResponseLogPayloadMode(const string& _responseLogPayloadMode)
+{
+    m_responseLogPayloadMode = _responseLogPayloadMode;
+    m_responseLogPayloadModeHasBeenSet = true;
+}
+
+bool AIGWLogConfig::ResponseLogPayloadModeHasBeenSet() const
+{
+    return m_responseLogPayloadModeHasBeenSet;
 }
 
