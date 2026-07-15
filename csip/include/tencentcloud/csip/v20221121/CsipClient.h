@@ -489,6 +489,8 @@
 #include <tencentcloud/csip/v20221121/model/ModifyAILinkSettingResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyAlarmRiskStatusRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyAlarmRiskStatusResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyCosAuditBucketMonitorStatusRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyCosAuditBucketMonitorStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyCosAuditMonitorAccountRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyCosAuditMonitorAccountResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyCosAuditObjectIdentifyStatusRequest.h>
@@ -1306,6 +1308,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAlarmRiskStatusResponse> ModifyAlarmRiskStatusOutcome;
                 typedef std::future<ModifyAlarmRiskStatusOutcome> ModifyAlarmRiskStatusOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyAlarmRiskStatusRequest&, ModifyAlarmRiskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlarmRiskStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCosAuditBucketMonitorStatusResponse> ModifyCosAuditBucketMonitorStatusOutcome;
+                typedef std::future<ModifyCosAuditBucketMonitorStatusOutcome> ModifyCosAuditBucketMonitorStatusOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyCosAuditBucketMonitorStatusRequest&, ModifyCosAuditBucketMonitorStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCosAuditBucketMonitorStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCosAuditMonitorAccountResponse> ModifyCosAuditMonitorAccountOutcome;
                 typedef std::future<ModifyCosAuditMonitorAccountOutcome> ModifyCosAuditMonitorAccountOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyCosAuditMonitorAccountRequest&, ModifyCosAuditMonitorAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCosAuditMonitorAccountAsyncHandler;
@@ -3561,6 +3566,15 @@ namespace TencentCloud
                 ModifyAlarmRiskStatusOutcome ModifyAlarmRiskStatus(const Model::ModifyAlarmRiskStatusRequest &request);
                 void ModifyAlarmRiskStatusAsync(const Model::ModifyAlarmRiskStatusRequest& request, const ModifyAlarmRiskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAlarmRiskStatusOutcomeCallable ModifyAlarmRiskStatusCallable(const Model::ModifyAlarmRiskStatusRequest& request);
+
+                /**
+                 *修改存储桶监测状态
+                 * @param req ModifyCosAuditBucketMonitorStatusRequest
+                 * @return ModifyCosAuditBucketMonitorStatusOutcome
+                 */
+                ModifyCosAuditBucketMonitorStatusOutcome ModifyCosAuditBucketMonitorStatus(const Model::ModifyCosAuditBucketMonitorStatusRequest &request);
+                void ModifyCosAuditBucketMonitorStatusAsync(const Model::ModifyCosAuditBucketMonitorStatusRequest& request, const ModifyCosAuditBucketMonitorStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCosAuditBucketMonitorStatusOutcomeCallable ModifyCosAuditBucketMonitorStatusCallable(const Model::ModifyCosAuditBucketMonitorStatusRequest& request);
 
                 /**
                  *修改cos审计监测账号

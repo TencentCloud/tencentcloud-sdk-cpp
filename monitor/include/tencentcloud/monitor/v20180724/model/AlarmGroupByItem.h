@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Item Id
+                     * 获取<p>Item Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Id Item Id
+                     * @return Id <p>Item Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置Item Id
+                     * 设置<p>Item Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _id Item Id
+                     * @param _id <p>Item Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取名称
+                     * 获取<p>名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 名称
+                     * @return Name <p>名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称
+                     * 设置<p>名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 名称
+                     * @param _name <p>名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,14 +99,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Item Id
+                     * <p>Item Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 名称
+                     * <p>名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;

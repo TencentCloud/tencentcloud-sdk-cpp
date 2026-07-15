@@ -30,6 +30,7 @@
 #include <tencentcloud/vod/v20180717/model/BlindWatermarkInput.h>
 #include <tencentcloud/vod/v20180717/model/MosaicInput.h>
 #include <tencentcloud/vod/v20180717/model/HeadTailTaskInput.h>
+#include <tencentcloud/vod/v20180717/model/OverrideTranscodeParameter.h>
 #include <tencentcloud/vod/v20180717/model/SubtitleInfoInput.h>
 
 
@@ -243,6 +244,27 @@ namespace TencentCloud
                     bool EndTimeOffsetHasBeenSet() const;
 
                     /**
+                     * 获取<p>自定义视频转码参数。</p>
+                     * @return OverrideParameter <p>自定义视频转码参数。</p>
+                     * 
+                     */
+                    OverrideTranscodeParameter GetOverrideParameter() const;
+
+                    /**
+                     * 设置<p>自定义视频转码参数。</p>
+                     * @param _overrideParameter <p>自定义视频转码参数。</p>
+                     * 
+                     */
+                    void SetOverrideParameter(const OverrideTranscodeParameter& _overrideParameter);
+
+                    /**
+                     * 判断参数 OverrideParameter 是否已赋值
+                     * @return OverrideParameter 是否已赋值
+                     * 
+                     */
+                    bool OverrideParameterHasBeenSet() const;
+
+                    /**
                      * 获取<p>字幕压制信息列表。最大可支持 2 个。</p>
                      * @return SubtitleInfoSet <p>字幕压制信息列表。最大可支持 2 个。</p>
                      * 
@@ -318,6 +340,12 @@ namespace TencentCloud
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;
+
+                    /**
+                     * <p>自定义视频转码参数。</p>
+                     */
+                    OverrideTranscodeParameter m_overrideParameter;
+                    bool m_overrideParameterHasBeenSet;
 
                     /**
                      * <p>字幕压制信息列表。最大可支持 2 个。</p>

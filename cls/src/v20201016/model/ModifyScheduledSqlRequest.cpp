@@ -35,7 +35,8 @@ ModifyScheduledSqlRequest::ModifyScheduledSqlRequest() :
     m_nameHasBeenSet(false),
     m_syntaxRuleHasBeenSet(false),
     m_hasServicesLogHasBeenSet(false),
-    m_fullQueryHasBeenSet(false)
+    m_fullQueryHasBeenSet(false),
+    m_processPeriodUnitHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,14 @@ string ModifyScheduledSqlRequest::ToJsonString() const
         string key = "FullQuery";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_fullQuery, allocator);
+    }
+
+    if (m_processPeriodUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessPeriodUnit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_processPeriodUnit, allocator);
     }
 
 
@@ -365,6 +374,22 @@ void ModifyScheduledSqlRequest::SetFullQuery(const uint64_t& _fullQuery)
 bool ModifyScheduledSqlRequest::FullQueryHasBeenSet() const
 {
     return m_fullQueryHasBeenSet;
+}
+
+int64_t ModifyScheduledSqlRequest::GetProcessPeriodUnit() const
+{
+    return m_processPeriodUnit;
+}
+
+void ModifyScheduledSqlRequest::SetProcessPeriodUnit(const int64_t& _processPeriodUnit)
+{
+    m_processPeriodUnit = _processPeriodUnit;
+    m_processPeriodUnitHasBeenSet = true;
+}
+
+bool ModifyScheduledSqlRequest::ProcessPeriodUnitHasBeenSet() const
+{
+    return m_processPeriodUnitHasBeenSet;
 }
 
 

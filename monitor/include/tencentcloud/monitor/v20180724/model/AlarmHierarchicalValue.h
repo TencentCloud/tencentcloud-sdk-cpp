@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取提醒等级阈值
+                     * 获取<p>提醒等级阈值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Remind 提醒等级阈值
+                     * @return Remind <p>提醒等级阈值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemind() const;
 
                     /**
-                     * 设置提醒等级阈值
+                     * 设置<p>提醒等级阈值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _remind 提醒等级阈值
+                     * @param _remind <p>提醒等级阈值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool RemindHasBeenSet() const;
 
                     /**
-                     * 获取警告等级阈值
+                     * 获取<p>警告等级阈值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Warn 警告等级阈值
+                     * @return Warn <p>警告等级阈值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWarn() const;
 
                     /**
-                     * 设置警告等级阈值
+                     * 设置<p>警告等级阈值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _warn 警告等级阈值
+                     * @param _warn <p>警告等级阈值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool WarnHasBeenSet() const;
 
                     /**
-                     * 获取严重等级阈值
+                     * 获取<p>严重等级阈值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Serious 严重等级阈值
+                     * @return Serious <p>严重等级阈值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSerious() const;
 
                     /**
-                     * 设置严重等级阈值
+                     * 设置<p>严重等级阈值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _serious 严重等级阈值
+                     * @param _serious <p>严重等级阈值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,21 +124,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 提醒等级阈值
+                     * <p>提醒等级阈值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remind;
                     bool m_remindHasBeenSet;
 
                     /**
-                     * 警告等级阈值
+                     * <p>警告等级阈值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_warn;
                     bool m_warnHasBeenSet;
 
                     /**
-                     * 严重等级阈值
+                     * <p>严重等级阈值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serious;

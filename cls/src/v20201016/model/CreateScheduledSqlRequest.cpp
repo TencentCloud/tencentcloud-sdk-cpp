@@ -34,6 +34,7 @@ CreateScheduledSqlRequest::CreateScheduledSqlRequest() :
     m_processTimeWindowHasBeenSet(false),
     m_processDelayHasBeenSet(false),
     m_srcTopicRegionHasBeenSet(false),
+    m_processPeriodUnitHasBeenSet(false),
     m_processEndTimeHasBeenSet(false),
     m_syntaxRuleHasBeenSet(false),
     m_hasServicesLogHasBeenSet(false),
@@ -135,6 +136,14 @@ string CreateScheduledSqlRequest::ToJsonString() const
         string key = "SrcTopicRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_srcTopicRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_processPeriodUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessPeriodUnit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_processPeriodUnit, allocator);
     }
 
     if (m_processEndTimeHasBeenSet)
@@ -351,6 +360,22 @@ void CreateScheduledSqlRequest::SetSrcTopicRegion(const string& _srcTopicRegion)
 bool CreateScheduledSqlRequest::SrcTopicRegionHasBeenSet() const
 {
     return m_srcTopicRegionHasBeenSet;
+}
+
+int64_t CreateScheduledSqlRequest::GetProcessPeriodUnit() const
+{
+    return m_processPeriodUnit;
+}
+
+void CreateScheduledSqlRequest::SetProcessPeriodUnit(const int64_t& _processPeriodUnit)
+{
+    m_processPeriodUnit = _processPeriodUnit;
+    m_processPeriodUnitHasBeenSet = true;
+}
+
+bool CreateScheduledSqlRequest::ProcessPeriodUnitHasBeenSet() const
+{
+    return m_processPeriodUnitHasBeenSet;
 }
 
 uint64_t CreateScheduledSqlRequest::GetProcessEndTime() const

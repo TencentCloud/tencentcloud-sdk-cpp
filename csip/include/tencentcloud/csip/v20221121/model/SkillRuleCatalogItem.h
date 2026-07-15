@@ -47,15 +47,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取融合规则 ID（9xxxx）
-                     * @return RuleID 融合规则 ID（9xxxx）
+                     * 获取融合规则 ID
+参数格式：形如 9xxxx
+                     * @return RuleID 融合规则 ID
+参数格式：形如 9xxxx
                      * 
                      */
                     std::string GetRuleID() const;
 
                     /**
-                     * 设置融合规则 ID（9xxxx）
-                     * @param _ruleID 融合规则 ID（9xxxx）
+                     * 设置融合规则 ID
+参数格式：形如 9xxxx
+                     * @param _ruleID 融合规则 ID
+参数格式：形如 9xxxx
                      * 
                      */
                     void SetRuleID(const std::string& _ruleID);
@@ -91,7 +95,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 融合规则 ID（9xxxx）
+                     * 融合规则 ID
+参数格式：形如 9xxxx
                      */
                     std::string m_ruleID;
                     bool m_ruleIDHasBeenSet;

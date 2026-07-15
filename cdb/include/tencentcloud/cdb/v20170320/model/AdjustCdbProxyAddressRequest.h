@@ -317,15 +317,15 @@ namespace TencentCloud
                     bool AutoLoadBalanceHasBeenSet() const;
 
                     /**
-                     * 获取<p>访问模式：nearby - 就近访问，balance - 均衡分配，默认就近访问。</p>
-                     * @return AccessMode <p>访问模式：nearby - 就近访问，balance - 均衡分配，默认就近访问。</p>
+                     * 获取<p>访问模式。</p><p>枚举值：</p><ul><li>nearby： 就近访问</li><li>balance： 均衡分配</li><li>direct_nearby： 纯网络转发就近访问</li><li>direct_balance： 纯网络转发均衡分配</li></ul>
+                     * @return AccessMode <p>访问模式。</p><p>枚举值：</p><ul><li>nearby： 就近访问</li><li>balance： 均衡分配</li><li>direct_nearby： 纯网络转发就近访问</li><li>direct_balance： 纯网络转发均衡分配</li></ul>
                      * 
                      */
                     std::string GetAccessMode() const;
 
                     /**
-                     * 设置<p>访问模式：nearby - 就近访问，balance - 均衡分配，默认就近访问。</p>
-                     * @param _accessMode <p>访问模式：nearby - 就近访问，balance - 均衡分配，默认就近访问。</p>
+                     * 设置<p>访问模式。</p><p>枚举值：</p><ul><li>nearby： 就近访问</li><li>balance： 均衡分配</li><li>direct_nearby： 纯网络转发就近访问</li><li>direct_balance： 纯网络转发均衡分配</li></ul>
+                     * @param _accessMode <p>访问模式。</p><p>枚举值：</p><ul><li>nearby： 就近访问</li><li>balance： 均衡分配</li><li>direct_nearby： 纯网络转发就近访问</li><li>direct_balance： 纯网络转发均衡分配</li></ul>
                      * 
                      */
                     void SetAccessMode(const std::string& _accessMode);
@@ -460,7 +460,7 @@ namespace TencentCloud
                     bool m_autoLoadBalanceHasBeenSet;
 
                     /**
-                     * <p>访问模式：nearby - 就近访问，balance - 均衡分配，默认就近访问。</p>
+                     * <p>访问模式。</p><p>枚举值：</p><ul><li>nearby： 就近访问</li><li>balance： 均衡分配</li><li>direct_nearby： 纯网络转发就近访问</li><li>direct_balance： 纯网络转发均衡分配</li></ul>
                      */
                     std::string m_accessMode;
                     bool m_accessModeHasBeenSet;

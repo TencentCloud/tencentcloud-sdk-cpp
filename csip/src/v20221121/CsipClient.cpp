@@ -11690,6 +11690,56 @@ CsipClient::ModifyAlarmRiskStatusOutcomeCallable CsipClient::ModifyAlarmRiskStat
     return prom->get_future();
 }
 
+CsipClient::ModifyCosAuditBucketMonitorStatusOutcome CsipClient::ModifyCosAuditBucketMonitorStatus(const ModifyCosAuditBucketMonitorStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCosAuditBucketMonitorStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCosAuditBucketMonitorStatusResponse rsp = ModifyCosAuditBucketMonitorStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCosAuditBucketMonitorStatusOutcome(rsp);
+        else
+            return ModifyCosAuditBucketMonitorStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCosAuditBucketMonitorStatusOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifyCosAuditBucketMonitorStatusAsync(const ModifyCosAuditBucketMonitorStatusRequest& request, const ModifyCosAuditBucketMonitorStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyCosAuditBucketMonitorStatusRequest&;
+    using Resp = ModifyCosAuditBucketMonitorStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyCosAuditBucketMonitorStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifyCosAuditBucketMonitorStatusOutcomeCallable CsipClient::ModifyCosAuditBucketMonitorStatusCallable(const ModifyCosAuditBucketMonitorStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyCosAuditBucketMonitorStatusOutcome>>();
+    ModifyCosAuditBucketMonitorStatusAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifyCosAuditBucketMonitorStatusRequest&,
+        ModifyCosAuditBucketMonitorStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::ModifyCosAuditMonitorAccountOutcome CsipClient::ModifyCosAuditMonitorAccount(const ModifyCosAuditMonitorAccountRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCosAuditMonitorAccount");

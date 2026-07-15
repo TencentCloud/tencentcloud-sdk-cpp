@@ -49,18 +49,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指标名或事件名，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询 。
+                     * 获取<p>指标名或事件名，支持的指标可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询，支持的事件可以从 <a href="https://cloud.tencent.com/document/product/248/51284">DescribeAlarmEvents</a> 查询 。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MetricName 指标名或事件名，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询 。
+                     * @return MetricName <p>指标名或事件名，支持的指标可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询，支持的事件可以从 <a href="https://cloud.tencent.com/document/product/248/51284">DescribeAlarmEvents</a> 查询 。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMetricName() const;
 
                     /**
-                     * 设置指标名或事件名，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询 。
+                     * 设置<p>指标名或事件名，支持的指标可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询，支持的事件可以从 <a href="https://cloud.tencent.com/document/product/248/51284">DescribeAlarmEvents</a> 查询 。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _metricName 指标名或事件名，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询 。
+                     * @param _metricName <p>指标名或事件名，支持的指标可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询，支持的事件可以从 <a href="https://cloud.tencent.com/document/product/248/51284">DescribeAlarmEvents</a> 查询 。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,18 +74,18 @@ namespace TencentCloud
                     bool MetricNameHasBeenSet() const;
 
                     /**
-                     * 获取秒数 统计周期，支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
+                     * 获取<p>秒数 统计周期，支持的值可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Period 秒数 统计周期，支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
+                     * @return Period <p>秒数 统计周期，支持的值可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置秒数 统计周期，支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
+                     * 设置<p>秒数 统计周期，支持的值可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _period 秒数 统计周期，支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
+                     * @param _period <p>秒数 统计周期，支持的值可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,90 +99,18 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取英文运算符
-intelligent=无阈值智能检测
-eq=等于
-ge=大于等于
-gt=大于
-le=小于等于
-lt=小于
-ne=不等于
-day_increase=天同比增长
-day_decrease=天同比下降
-day_wave=天同比波动
-week_increase=周同比增长
-week_decrease=周同比下降
-week_wave=周同比波动
-cycle_increase=环比增长
-cycle_decrease=环比下降
-cycle_wave=环比波动
-re=正则匹配
-支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
+                     * 获取<p>英文运算符<br>intelligent=无阈值智能检测<br>eq=等于<br>ge=大于等于<br>gt=大于<br>le=小于等于<br>lt=小于<br>ne=不等于<br>day_increase=天同比增长<br>day_decrease=天同比下降<br>day_wave=天同比波动<br>week_increase=周同比增长<br>week_decrease=周同比下降<br>week_wave=周同比波动<br>cycle_increase=环比增长<br>cycle_decrease=环比下降<br>cycle_wave=环比波动<br>re=正则匹配<br>支持的值可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Operator 英文运算符
-intelligent=无阈值智能检测
-eq=等于
-ge=大于等于
-gt=大于
-le=小于等于
-lt=小于
-ne=不等于
-day_increase=天同比增长
-day_decrease=天同比下降
-day_wave=天同比波动
-week_increase=周同比增长
-week_decrease=周同比下降
-week_wave=周同比波动
-cycle_increase=环比增长
-cycle_decrease=环比下降
-cycle_wave=环比波动
-re=正则匹配
-支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
+                     * @return Operator <p>英文运算符<br>intelligent=无阈值智能检测<br>eq=等于<br>ge=大于等于<br>gt=大于<br>le=小于等于<br>lt=小于<br>ne=不等于<br>day_increase=天同比增长<br>day_decrease=天同比下降<br>day_wave=天同比波动<br>week_increase=周同比增长<br>week_decrease=周同比下降<br>week_wave=周同比波动<br>cycle_increase=环比增长<br>cycle_decrease=环比下降<br>cycle_wave=环比波动<br>re=正则匹配<br>支持的值可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置英文运算符
-intelligent=无阈值智能检测
-eq=等于
-ge=大于等于
-gt=大于
-le=小于等于
-lt=小于
-ne=不等于
-day_increase=天同比增长
-day_decrease=天同比下降
-day_wave=天同比波动
-week_increase=周同比增长
-week_decrease=周同比下降
-week_wave=周同比波动
-cycle_increase=环比增长
-cycle_decrease=环比下降
-cycle_wave=环比波动
-re=正则匹配
-支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
+                     * 设置<p>英文运算符<br>intelligent=无阈值智能检测<br>eq=等于<br>ge=大于等于<br>gt=大于<br>le=小于等于<br>lt=小于<br>ne=不等于<br>day_increase=天同比增长<br>day_decrease=天同比下降<br>day_wave=天同比波动<br>week_increase=周同比增长<br>week_decrease=周同比下降<br>week_wave=周同比波动<br>cycle_increase=环比增长<br>cycle_decrease=环比下降<br>cycle_wave=环比波动<br>re=正则匹配<br>支持的值可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _operator 英文运算符
-intelligent=无阈值智能检测
-eq=等于
-ge=大于等于
-gt=大于
-le=小于等于
-lt=小于
-ne=不等于
-day_increase=天同比增长
-day_decrease=天同比下降
-day_wave=天同比波动
-week_increase=周同比增长
-week_decrease=周同比下降
-week_wave=周同比波动
-cycle_increase=环比增长
-cycle_decrease=环比下降
-cycle_wave=环比波动
-re=正则匹配
-支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
+                     * @param _operator <p>英文运算符<br>intelligent=无阈值智能检测<br>eq=等于<br>ge=大于等于<br>gt=大于<br>le=小于等于<br>lt=小于<br>ne=不等于<br>day_increase=天同比增长<br>day_decrease=天同比下降<br>day_wave=天同比波动<br>week_increase=周同比增长<br>week_decrease=周同比下降<br>week_wave=周同比波动<br>cycle_increase=环比增长<br>cycle_decrease=环比下降<br>cycle_wave=环比波动<br>re=正则匹配<br>支持的值可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -196,18 +124,18 @@ re=正则匹配
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取阈值，支持的范围可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
+                     * 获取<p>阈值，支持的范围可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Value 阈值，支持的范围可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
+                     * @return Value <p>阈值，支持的范围可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置阈值，支持的范围可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
+                     * 设置<p>阈值，支持的范围可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _value 阈值，支持的范围可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
+                     * @param _value <p>阈值，支持的范围可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -221,18 +149,18 @@ re=正则匹配
                     bool ValueHasBeenSet() const;
 
                     /**
-                     * 获取周期数 持续通知周期 1=持续1个周期 2=持续2个周期...，支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询
+                     * 获取<p>周期数 持续通知周期 1=持续1个周期 2=持续2个周期...，支持的值可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ContinuePeriod 周期数 持续通知周期 1=持续1个周期 2=持续2个周期...，支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询
+                     * @return ContinuePeriod <p>周期数 持续通知周期 1=持续1个周期 2=持续2个周期...，支持的值可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetContinuePeriod() const;
 
                     /**
-                     * 设置周期数 持续通知周期 1=持续1个周期 2=持续2个周期...，支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询
+                     * 设置<p>周期数 持续通知周期 1=持续1个周期 2=持续2个周期...，支持的值可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _continuePeriod 周期数 持续通知周期 1=持续1个周期 2=持续2个周期...，支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询
+                     * @param _continuePeriod <p>周期数 持续通知周期 1=持续1个周期 2=持续2个周期...，支持的值可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -246,18 +174,18 @@ re=正则匹配
                     bool ContinuePeriodHasBeenSet() const;
 
                     /**
-                     * 获取秒数 告警间隔  0=不重复 300=每5分钟告警一次 600=每10分钟告警一次 900=每15分钟告警一次 1800=每30分钟告警一次 3600=每1小时告警一次 7200=每2小时告警一次 10800=每3小时告警一次 21600=每6小时告警一次 43200=每12小时告警一次 86400=每1天告警一次
+                     * 获取<p>秒数 告警间隔  0=不重复 300=每5分钟告警一次 600=每10分钟告警一次 900=每15分钟告警一次 1800=每30分钟告警一次 3600=每1小时告警一次 7200=每2小时告警一次 10800=每3小时告警一次 21600=每6小时告警一次 43200=每12小时告警一次 86400=每1天告警一次</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NoticeFrequency 秒数 告警间隔  0=不重复 300=每5分钟告警一次 600=每10分钟告警一次 900=每15分钟告警一次 1800=每30分钟告警一次 3600=每1小时告警一次 7200=每2小时告警一次 10800=每3小时告警一次 21600=每6小时告警一次 43200=每12小时告警一次 86400=每1天告警一次
+                     * @return NoticeFrequency <p>秒数 告警间隔  0=不重复 300=每5分钟告警一次 600=每10分钟告警一次 900=每15分钟告警一次 1800=每30分钟告警一次 3600=每1小时告警一次 7200=每2小时告警一次 10800=每3小时告警一次 21600=每6小时告警一次 43200=每12小时告警一次 86400=每1天告警一次</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNoticeFrequency() const;
 
                     /**
-                     * 设置秒数 告警间隔  0=不重复 300=每5分钟告警一次 600=每10分钟告警一次 900=每15分钟告警一次 1800=每30分钟告警一次 3600=每1小时告警一次 7200=每2小时告警一次 10800=每3小时告警一次 21600=每6小时告警一次 43200=每12小时告警一次 86400=每1天告警一次
+                     * 设置<p>秒数 告警间隔  0=不重复 300=每5分钟告警一次 600=每10分钟告警一次 900=每15分钟告警一次 1800=每30分钟告警一次 3600=每1小时告警一次 7200=每2小时告警一次 10800=每3小时告警一次 21600=每6小时告警一次 43200=每12小时告警一次 86400=每1天告警一次</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _noticeFrequency 秒数 告警间隔  0=不重复 300=每5分钟告警一次 600=每10分钟告警一次 900=每15分钟告警一次 1800=每30分钟告警一次 3600=每1小时告警一次 7200=每2小时告警一次 10800=每3小时告警一次 21600=每6小时告警一次 43200=每12小时告警一次 86400=每1天告警一次
+                     * @param _noticeFrequency <p>秒数 告警间隔  0=不重复 300=每5分钟告警一次 600=每10分钟告警一次 900=每15分钟告警一次 1800=每30分钟告警一次 3600=每1小时告警一次 7200=每2小时告警一次 10800=每3小时告警一次 21600=每6小时告警一次 43200=每12小时告警一次 86400=每1天告警一次</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -271,18 +199,18 @@ re=正则匹配
                     bool NoticeFrequencyHasBeenSet() const;
 
                     /**
-                     * 获取告警频率是否指数增长 0=否 1=是
+                     * 获取<p>告警频率是否指数增长 0=否 1=是</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsPowerNotice 告警频率是否指数增长 0=否 1=是
+                     * @return IsPowerNotice <p>告警频率是否指数增长 0=否 1=是</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsPowerNotice() const;
 
                     /**
-                     * 设置告警频率是否指数增长 0=否 1=是
+                     * 设置<p>告警频率是否指数增长 0=否 1=是</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isPowerNotice 告警频率是否指数增长 0=否 1=是
+                     * @param _isPowerNotice <p>告警频率是否指数增长 0=否 1=是</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -296,18 +224,18 @@ re=正则匹配
                     bool IsPowerNoticeHasBeenSet() const;
 
                     /**
-                     * 获取对于单个触发规则的过滤条件
+                     * 获取<p>对于单个触发规则的过滤条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Filter 对于单个触发规则的过滤条件
+                     * @return Filter <p>对于单个触发规则的过滤条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AlarmPolicyFilter GetFilter() const;
 
                     /**
-                     * 设置对于单个触发规则的过滤条件
+                     * 设置<p>对于单个触发规则的过滤条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _filter 对于单个触发规则的过滤条件
+                     * @param _filter <p>对于单个触发规则的过滤条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -321,18 +249,18 @@ re=正则匹配
                     bool FilterHasBeenSet() const;
 
                     /**
-                     * 获取指标展示名，用于出参
+                     * 获取<p>指标展示名，用于出参</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 指标展示名，用于出参
+                     * @return Description <p>指标展示名，用于出参</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置指标展示名，用于出参
+                     * 设置<p>指标展示名，用于出参</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 指标展示名，用于出参
+                     * @param _description <p>指标展示名，用于出参</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -346,18 +274,18 @@ re=正则匹配
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取单位，用于出参
+                     * 获取<p>单位，用于出参</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Unit 单位，用于出参
+                     * @return Unit <p>单位，用于出参</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUnit() const;
 
                     /**
-                     * 设置单位，用于出参
+                     * 设置<p>单位，用于出参</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _unit 单位，用于出参
+                     * @param _unit <p>单位，用于出参</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -371,18 +299,18 @@ re=正则匹配
                     bool UnitHasBeenSet() const;
 
                     /**
-                     * 获取触发条件类型 STATIC=静态阈值 DYNAMIC=动态阈值。创建或编辑策略时，如不填则默认为 STATIC。
+                     * 获取<p>触发条件类型 STATIC=静态阈值 DYNAMIC=动态阈值。创建或编辑策略时，如不填则默认为 STATIC。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleType 触发条件类型 STATIC=静态阈值 DYNAMIC=动态阈值。创建或编辑策略时，如不填则默认为 STATIC。
+                     * @return RuleType <p>触发条件类型 STATIC=静态阈值 DYNAMIC=动态阈值。创建或编辑策略时，如不填则默认为 STATIC。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleType() const;
 
                     /**
-                     * 设置触发条件类型 STATIC=静态阈值 DYNAMIC=动态阈值。创建或编辑策略时，如不填则默认为 STATIC。
+                     * 设置<p>触发条件类型 STATIC=静态阈值 DYNAMIC=动态阈值。创建或编辑策略时，如不填则默认为 STATIC。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ruleType 触发条件类型 STATIC=静态阈值 DYNAMIC=动态阈值。创建或编辑策略时，如不填则默认为 STATIC。
+                     * @param _ruleType <p>触发条件类型 STATIC=静态阈值 DYNAMIC=动态阈值。创建或编辑策略时，如不填则默认为 STATIC。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -396,18 +324,18 @@ re=正则匹配
                     bool RuleTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否为高级指标，0否，1是
+                     * 获取<p>是否为高级指标，0否，1是</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsAdvanced 是否为高级指标，0否，1是
+                     * @return IsAdvanced <p>是否为高级指标，0否，1是</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsAdvanced() const;
 
                     /**
-                     * 设置是否为高级指标，0否，1是
+                     * 设置<p>是否为高级指标，0否，1是</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isAdvanced 是否为高级指标，0否，1是
+                     * @param _isAdvanced <p>是否为高级指标，0否，1是</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -421,18 +349,18 @@ re=正则匹配
                     bool IsAdvancedHasBeenSet() const;
 
                     /**
-                     * 获取高级指标是否开通，0否，1是
+                     * 获取<p>高级指标是否开通，0否，1是</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsOpen 高级指标是否开通，0否，1是
+                     * @return IsOpen <p>高级指标是否开通，0否，1是</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsOpen() const;
 
                     /**
-                     * 设置高级指标是否开通，0否，1是
+                     * 设置<p>高级指标是否开通，0否，1是</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isOpen 高级指标是否开通，0否，1是
+                     * @param _isOpen <p>高级指标是否开通，0否，1是</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -446,18 +374,18 @@ re=正则匹配
                     bool IsOpenHasBeenSet() const;
 
                     /**
-                     * 获取集成中心产品ID
+                     * 获取<p>集成中心产品ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProductId 集成中心产品ID
+                     * @return ProductId <p>集成中心产品ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductId() const;
 
                     /**
-                     * 设置集成中心产品ID
+                     * 设置<p>集成中心产品ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _productId 集成中心产品ID
+                     * @param _productId <p>集成中心产品ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -471,18 +399,18 @@ re=正则匹配
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取最大值
+                     * 获取<p>最大值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ValueMax 最大值
+                     * @return ValueMax <p>最大值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetValueMax() const;
 
                     /**
-                     * 设置最大值
+                     * 设置<p>最大值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _valueMax 最大值
+                     * @param _valueMax <p>最大值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -496,18 +424,18 @@ re=正则匹配
                     bool ValueMaxHasBeenSet() const;
 
                     /**
-                     * 获取最小值
+                     * 获取<p>最小值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ValueMin 最小值
+                     * @return ValueMin <p>最小值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetValueMin() const;
 
                     /**
-                     * 设置最小值
+                     * 设置<p>最小值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _valueMin 最小值
+                     * @param _valueMin <p>最小值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -521,18 +449,18 @@ re=正则匹配
                     bool ValueMinHasBeenSet() const;
 
                     /**
-                     * 获取告警分级阈值配置
+                     * 获取<p>告警分级阈值配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HierarchicalValue 告警分级阈值配置
+                     * @return HierarchicalValue <p>告警分级阈值配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AlarmHierarchicalValue GetHierarchicalValue() const;
 
                     /**
-                     * 设置告警分级阈值配置
+                     * 设置<p>告警分级阈值配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hierarchicalValue 告警分级阈值配置
+                     * @param _hierarchicalValue <p>告警分级阈值配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -546,18 +474,18 @@ re=正则匹配
                     bool HierarchicalValueHasBeenSet() const;
 
                     /**
-                     * 获取是否延迟指标
+                     * 获取<p>是否延迟指标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsLatenessMetric 是否延迟指标
+                     * @return IsLatenessMetric <p>是否延迟指标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsLatenessMetric() const;
 
                     /**
-                     * 设置是否延迟指标
+                     * 设置<p>是否延迟指标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isLatenessMetric 是否延迟指标
+                     * @param _isLatenessMetric <p>是否延迟指标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -573,144 +501,126 @@ re=正则匹配
                 private:
 
                     /**
-                     * 指标名或事件名，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询 。
+                     * <p>指标名或事件名，支持的指标可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询，支持的事件可以从 <a href="https://cloud.tencent.com/document/product/248/51284">DescribeAlarmEvents</a> 查询 。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;
 
                     /**
-                     * 秒数 统计周期，支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
+                     * <p>秒数 统计周期，支持的值可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 英文运算符
-intelligent=无阈值智能检测
-eq=等于
-ge=大于等于
-gt=大于
-le=小于等于
-lt=小于
-ne=不等于
-day_increase=天同比增长
-day_decrease=天同比下降
-day_wave=天同比波动
-week_increase=周同比增长
-week_decrease=周同比下降
-week_wave=周同比波动
-cycle_increase=环比增长
-cycle_decrease=环比下降
-cycle_wave=环比波动
-re=正则匹配
-支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
+                     * <p>英文运算符<br>intelligent=无阈值智能检测<br>eq=等于<br>ge=大于等于<br>gt=大于<br>le=小于等于<br>lt=小于<br>ne=不等于<br>day_increase=天同比增长<br>day_decrease=天同比下降<br>day_wave=天同比波动<br>week_increase=周同比增长<br>week_decrease=周同比下降<br>week_wave=周同比波动<br>cycle_increase=环比增长<br>cycle_decrease=环比下降<br>cycle_wave=环比波动<br>re=正则匹配<br>支持的值可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 阈值，支持的范围可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
+                     * <p>阈值，支持的范围可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
-                     * 周期数 持续通知周期 1=持续1个周期 2=持续2个周期...，支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询
+                     * <p>周期数 持续通知周期 1=持续1个周期 2=持续2个周期...，支持的值可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_continuePeriod;
                     bool m_continuePeriodHasBeenSet;
 
                     /**
-                     * 秒数 告警间隔  0=不重复 300=每5分钟告警一次 600=每10分钟告警一次 900=每15分钟告警一次 1800=每30分钟告警一次 3600=每1小时告警一次 7200=每2小时告警一次 10800=每3小时告警一次 21600=每6小时告警一次 43200=每12小时告警一次 86400=每1天告警一次
+                     * <p>秒数 告警间隔  0=不重复 300=每5分钟告警一次 600=每10分钟告警一次 900=每15分钟告警一次 1800=每30分钟告警一次 3600=每1小时告警一次 7200=每2小时告警一次 10800=每3小时告警一次 21600=每6小时告警一次 43200=每12小时告警一次 86400=每1天告警一次</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_noticeFrequency;
                     bool m_noticeFrequencyHasBeenSet;
 
                     /**
-                     * 告警频率是否指数增长 0=否 1=是
+                     * <p>告警频率是否指数增长 0=否 1=是</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isPowerNotice;
                     bool m_isPowerNoticeHasBeenSet;
 
                     /**
-                     * 对于单个触发规则的过滤条件
+                     * <p>对于单个触发规则的过滤条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AlarmPolicyFilter m_filter;
                     bool m_filterHasBeenSet;
 
                     /**
-                     * 指标展示名，用于出参
+                     * <p>指标展示名，用于出参</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 单位，用于出参
+                     * <p>单位，用于出参</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_unit;
                     bool m_unitHasBeenSet;
 
                     /**
-                     * 触发条件类型 STATIC=静态阈值 DYNAMIC=动态阈值。创建或编辑策略时，如不填则默认为 STATIC。
+                     * <p>触发条件类型 STATIC=静态阈值 DYNAMIC=动态阈值。创建或编辑策略时，如不填则默认为 STATIC。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleType;
                     bool m_ruleTypeHasBeenSet;
 
                     /**
-                     * 是否为高级指标，0否，1是
+                     * <p>是否为高级指标，0否，1是</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isAdvanced;
                     bool m_isAdvancedHasBeenSet;
 
                     /**
-                     * 高级指标是否开通，0否，1是
+                     * <p>高级指标是否开通，0否，1是</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isOpen;
                     bool m_isOpenHasBeenSet;
 
                     /**
-                     * 集成中心产品ID
+                     * <p>集成中心产品ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 最大值
+                     * <p>最大值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_valueMax;
                     bool m_valueMaxHasBeenSet;
 
                     /**
-                     * 最小值
+                     * <p>最小值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_valueMin;
                     bool m_valueMinHasBeenSet;
 
                     /**
-                     * 告警分级阈值配置
+                     * <p>告警分级阈值配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AlarmHierarchicalValue m_hierarchicalValue;
                     bool m_hierarchicalValueHasBeenSet;
 
                     /**
-                     * 是否延迟指标
+                     * <p>是否延迟指标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isLatenessMetric;

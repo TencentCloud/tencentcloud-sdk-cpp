@@ -24,7 +24,8 @@ OrganizationAuthorizationOptions::OrganizationAuthorizationOptions() :
     m_uniformSocialCreditCodeSameHasBeenSet(false),
     m_organizationNameSameHasBeenSet(false),
     m_legalNameSameHasBeenSet(false),
-    m_bankAccountNumberSameHasBeenSet(false)
+    m_bankAccountNumberSameHasBeenSet(false),
+    m_addressSameHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome OrganizationAuthorizationOptions::Deserialize(const rapidjso
         m_bankAccountNumberSameHasBeenSet = true;
     }
 
+    if (value.HasMember("AddressSame") && !value["AddressSame"].IsNull())
+    {
+        if (!value["AddressSame"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrganizationAuthorizationOptions.AddressSame` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_addressSame = value["AddressSame"].GetBool();
+        m_addressSameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void OrganizationAuthorizationOptions::ToJsonObject(rapidjson::Value &value, rap
         string key = "BankAccountNumberSame";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bankAccountNumberSame, allocator);
+    }
+
+    if (m_addressSameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddressSame";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_addressSame, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void OrganizationAuthorizationOptions::SetBankAccountNumberSame(const bool& _ban
 bool OrganizationAuthorizationOptions::BankAccountNumberSameHasBeenSet() const
 {
     return m_bankAccountNumberSameHasBeenSet;
+}
+
+bool OrganizationAuthorizationOptions::GetAddressSame() const
+{
+    return m_addressSame;
+}
+
+void OrganizationAuthorizationOptions::SetAddressSame(const bool& _addressSame)
+{
+    m_addressSame = _addressSame;
+    m_addressSameHasBeenSet = true;
+}
+
+bool OrganizationAuthorizationOptions::AddressSameHasBeenSet() const
+{
+    return m_addressSameHasBeenSet;
 }
 

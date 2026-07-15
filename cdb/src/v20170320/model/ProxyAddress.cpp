@@ -40,7 +40,8 @@ ProxyAddress::ProxyAddress() :
     m_accessModeHasBeenSet(false),
     m_autoLoadBalanceHasBeenSet(false),
     m_apNodeAsRoNodeHasBeenSet(false),
-    m_apQueryToOtherNodeHasBeenSet(false)
+    m_apQueryToOtherNodeHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
 }
 
@@ -259,6 +260,16 @@ CoreInternalOutcome ProxyAddress::Deserialize(const rapidjson::Value &value)
         m_apQueryToOtherNodeHasBeenSet = true;
     }
 
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyAddress.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -431,6 +442,14 @@ void ProxyAddress::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ApQueryToOtherNode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_apQueryToOtherNode, allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -754,5 +773,21 @@ void ProxyAddress::SetApQueryToOtherNode(const bool& _apQueryToOtherNode)
 bool ProxyAddress::ApQueryToOtherNodeHasBeenSet() const
 {
     return m_apQueryToOtherNodeHasBeenSet;
+}
+
+string ProxyAddress::GetRegion() const
+{
+    return m_region;
+}
+
+void ProxyAddress::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool ProxyAddress::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
 }
 

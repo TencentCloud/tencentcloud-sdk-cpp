@@ -81,15 +81,15 @@ STATIC：静态分析引擎
                     bool ScanTypeHasBeenSet() const;
 
                     /**
-                     * 获取该引擎命中的规则列表
-                     * @return RuleList 该引擎命中的规则列表
+                     * 获取命中规则列表
+                     * @return RuleList 命中规则列表
                      * 
                      */
                     std::vector<SkillScanRuleHit> GetRuleList() const;
 
                     /**
-                     * 设置该引擎命中的规则列表
-                     * @param _ruleList 该引擎命中的规则列表
+                     * 设置命中规则列表
+                     * @param _ruleList 命中规则列表
                      * 
                      */
                     void SetRuleList(const std::vector<SkillScanRuleHit>& _ruleList);
@@ -113,7 +113,7 @@ STATIC：静态分析引擎
                     bool m_scanTypeHasBeenSet;
 
                     /**
-                     * 该引擎命中的规则列表
+                     * 命中规则列表
                      */
                     std::vector<SkillScanRuleHit> m_ruleList;
                     bool m_ruleListHasBeenSet;

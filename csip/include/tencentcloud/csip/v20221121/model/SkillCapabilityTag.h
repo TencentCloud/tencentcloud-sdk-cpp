@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取能力标签标识，适合程序判定、过滤或聚合使用
-                     * @return ID 能力标签标识，适合程序判定、过滤或聚合使用
+                     * 获取能力标签标识
+                     * @return ID 能力标签标识
                      * 
                      */
                     std::string GetID() const;
 
                     /**
-                     * 设置能力标签标识，适合程序判定、过滤或聚合使用
-                     * @param _iD 能力标签标识，适合程序判定、过滤或聚合使用
+                     * 设置能力标签标识
+                     * @param _iD 能力标签标识
                      * 
                      */
                     void SetID(const std::string& _iD);
@@ -91,7 +91,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 能力标签标识，适合程序判定、过滤或聚合使用
+                     * 能力标签标识
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;

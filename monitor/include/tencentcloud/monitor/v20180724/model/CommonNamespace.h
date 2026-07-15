@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取命名空间标示
-                     * @return Id 命名空间标示
+                     * 获取<p>命名空间标示</p>
+                     * @return Id <p>命名空间标示</p>
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置命名空间标示
-                     * @param _id 命名空间标示
+                     * 设置<p>命名空间标示</p>
+                     * @param _id <p>命名空间标示</p>
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取命名空间名称
-                     * @return Name 命名空间名称
+                     * 获取<p>命名空间名称</p>
+                     * @return Name <p>命名空间名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置命名空间名称
-                     * @param _name 命名空间名称
+                     * 设置<p>命名空间名称</p>
+                     * @param _name <p>命名空间名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取命名空间值
-                     * @return Value 命名空间值
+                     * 获取<p>命名空间值</p>
+                     * @return Value <p>命名空间值</p>
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置命名空间值
-                     * @param _value 命名空间值
+                     * 设置<p>命名空间值</p>
+                     * @param _value <p>命名空间值</p>
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ValueHasBeenSet() const;
 
                     /**
-                     * 获取产品名称
-                     * @return ProductName 产品名称
+                     * 获取<p>产品名称</p>
+                     * @return ProductName <p>产品名称</p>
                      * 
                      */
                     std::string GetProductName() const;
 
                     /**
-                     * 设置产品名称
-                     * @param _productName 产品名称
+                     * 设置<p>产品名称</p>
+                     * @param _productName <p>产品名称</p>
                      * 
                      */
                     void SetProductName(const std::string& _productName);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ProductNameHasBeenSet() const;
 
                     /**
-                     * 获取配置信息
-                     * @return Config 配置信息
+                     * 获取<p>配置信息</p>
+                     * @return Config <p>配置信息</p>
                      * 
                      */
                     std::string GetConfig() const;
 
                     /**
-                     * 设置配置信息
-                     * @param _config 配置信息
+                     * 设置<p>配置信息</p>
+                     * @param _config <p>配置信息</p>
                      * 
                      */
                     void SetConfig(const std::string& _config);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ConfigHasBeenSet() const;
 
                     /**
-                     * 获取支持地域列表
-                     * @return AvailableRegions 支持地域列表
+                     * 获取<p>支持地域列表</p>
+                     * @return AvailableRegions <p>支持地域列表</p>
                      * 
                      */
                     std::vector<std::string> GetAvailableRegions() const;
 
                     /**
-                     * 设置支持地域列表
-                     * @param _availableRegions 支持地域列表
+                     * 设置<p>支持地域列表</p>
+                     * @param _availableRegions <p>支持地域列表</p>
                      * 
                      */
                     void SetAvailableRegions(const std::vector<std::string>& _availableRegions);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool AvailableRegionsHasBeenSet() const;
 
                     /**
-                     * 获取排序Id
-                     * @return SortId 排序Id
+                     * 获取<p>排序Id</p>
+                     * @return SortId <p>排序Id</p>
                      * 
                      */
                     int64_t GetSortId() const;
 
                     /**
-                     * 设置排序Id
-                     * @param _sortId 排序Id
+                     * 设置<p>排序Id</p>
+                     * @param _sortId <p>排序Id</p>
                      * 
                      */
                     void SetSortId(const int64_t& _sortId);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool SortIdHasBeenSet() const;
 
                     /**
-                     * 获取Dashboard中的唯一表示
-                     * @return DashboardId Dashboard中的唯一表示
+                     * 获取<p>Dashboard中的唯一表示</p>
+                     * @return DashboardId <p>Dashboard中的唯一表示</p>
                      * 
                      */
                     std::string GetDashboardId() const;
 
                     /**
-                     * 设置Dashboard中的唯一表示
-                     * @param _dashboardId Dashboard中的唯一表示
+                     * 设置<p>Dashboard中的唯一表示</p>
+                     * @param _dashboardId <p>Dashboard中的唯一表示</p>
                      * 
                      */
                     void SetDashboardId(const std::string& _dashboardId);
@@ -217,49 +217,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 命名空间标示
+                     * <p>命名空间标示</p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 命名空间名称
+                     * <p>命名空间名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 命名空间值
+                     * <p>命名空间值</p>
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
-                     * 产品名称
+                     * <p>产品名称</p>
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
-                     * 配置信息
+                     * <p>配置信息</p>
                      */
                     std::string m_config;
                     bool m_configHasBeenSet;
 
                     /**
-                     * 支持地域列表
+                     * <p>支持地域列表</p>
                      */
                     std::vector<std::string> m_availableRegions;
                     bool m_availableRegionsHasBeenSet;
 
                     /**
-                     * 排序Id
+                     * <p>排序Id</p>
                      */
                     int64_t m_sortId;
                     bool m_sortIdHasBeenSet;
 
                     /**
-                     * Dashboard中的唯一表示
+                     * <p>Dashboard中的唯一表示</p>
                      */
                     std::string m_dashboardId;
                     bool m_dashboardIdHasBeenSet;

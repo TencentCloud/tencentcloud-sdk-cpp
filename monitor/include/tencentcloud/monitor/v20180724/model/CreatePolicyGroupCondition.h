@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指标Id
-                     * @return MetricId 指标Id
+                     * 获取<p>指标Id</p>
+                     * @return MetricId <p>指标Id</p>
                      * 
                      */
                     int64_t GetMetricId() const;
 
                     /**
-                     * 设置指标Id
-                     * @param _metricId 指标Id
+                     * 设置<p>指标Id</p>
+                     * @param _metricId <p>指标Id</p>
                      * 
                      */
                     void SetMetricId(const int64_t& _metricId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool MetricIdHasBeenSet() const;
 
                     /**
-                     * 获取告警发送收敛类型。0连续告警，1指数告警
-                     * @return AlarmNotifyType 告警发送收敛类型。0连续告警，1指数告警
+                     * 获取<p>告警发送收敛类型。0连续告警，1指数告警</p>
+                     * @return AlarmNotifyType <p>告警发送收敛类型。0连续告警，1指数告警</p>
                      * 
                      */
                     int64_t GetAlarmNotifyType() const;
 
                     /**
-                     * 设置告警发送收敛类型。0连续告警，1指数告警
-                     * @param _alarmNotifyType 告警发送收敛类型。0连续告警，1指数告警
+                     * 设置<p>告警发送收敛类型。0连续告警，1指数告警</p>
+                     * @param _alarmNotifyType <p>告警发送收敛类型。0连续告警，1指数告警</p>
                      * 
                      */
                     void SetAlarmNotifyType(const int64_t& _alarmNotifyType);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool AlarmNotifyTypeHasBeenSet() const;
 
                     /**
-                     * 获取告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次
-                     * @return AlarmNotifyPeriod 告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次
+                     * 获取<p>告警发送周期单位秒。&lt;0 不触发, 0 只触发一次, &gt;0 每隔triggerTime秒触发一次</p>
+                     * @return AlarmNotifyPeriod <p>告警发送周期单位秒。&lt;0 不触发, 0 只触发一次, &gt;0 每隔triggerTime秒触发一次</p>
                      * 
                      */
                     int64_t GetAlarmNotifyPeriod() const;
 
                     /**
-                     * 设置告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次
-                     * @param _alarmNotifyPeriod 告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次
+                     * 设置<p>告警发送周期单位秒。&lt;0 不触发, 0 只触发一次, &gt;0 每隔triggerTime秒触发一次</p>
+                     * @param _alarmNotifyPeriod <p>告警发送周期单位秒。&lt;0 不触发, 0 只触发一次, &gt;0 每隔triggerTime秒触发一次</p>
                      * 
                      */
                     void SetAlarmNotifyPeriod(const int64_t& _alarmNotifyPeriod);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool AlarmNotifyPeriodHasBeenSet() const;
 
                     /**
-                     * 获取比较类型，1表示大于，2表示大于等于，3表示小于，4表示小于等于，5表示相等，6表示不相等。如果指标有配置默认比较类型值可以不填。
-                     * @return CalcType 比较类型，1表示大于，2表示大于等于，3表示小于，4表示小于等于，5表示相等，6表示不相等。如果指标有配置默认比较类型值可以不填。
+                     * 获取<p>比较类型，1表示大于，2表示大于等于，3表示小于，4表示小于等于，5表示相等，6表示不相等。如果指标有配置默认比较类型值可以不填。</p>
+                     * @return CalcType <p>比较类型，1表示大于，2表示大于等于，3表示小于，4表示小于等于，5表示相等，6表示不相等。如果指标有配置默认比较类型值可以不填。</p>
                      * 
                      */
                     int64_t GetCalcType() const;
 
                     /**
-                     * 设置比较类型，1表示大于，2表示大于等于，3表示小于，4表示小于等于，5表示相等，6表示不相等。如果指标有配置默认比较类型值可以不填。
-                     * @param _calcType 比较类型，1表示大于，2表示大于等于，3表示小于，4表示小于等于，5表示相等，6表示不相等。如果指标有配置默认比较类型值可以不填。
+                     * 设置<p>比较类型，1表示大于，2表示大于等于，3表示小于，4表示小于等于，5表示相等，6表示不相等。如果指标有配置默认比较类型值可以不填。</p>
+                     * @param _calcType <p>比较类型，1表示大于，2表示大于等于，3表示小于，4表示小于等于，5表示相等，6表示不相等。如果指标有配置默认比较类型值可以不填。</p>
                      * 
                      */
                     void SetCalcType(const int64_t& _calcType);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool CalcTypeHasBeenSet() const;
 
                     /**
-                     * 获取比较的值，如果指标不必须CalcValue可不填
-                     * @return CalcValue 比较的值，如果指标不必须CalcValue可不填
+                     * 获取<p>比较的值，如果指标不必须CalcValue可不填</p>
+                     * @return CalcValue <p>比较的值，如果指标不必须CalcValue可不填</p>
                      * 
                      */
                     double GetCalcValue() const;
 
                     /**
-                     * 设置比较的值，如果指标不必须CalcValue可不填
-                     * @param _calcValue 比较的值，如果指标不必须CalcValue可不填
+                     * 设置<p>比较的值，如果指标不必须CalcValue可不填</p>
+                     * @param _calcValue <p>比较的值，如果指标不必须CalcValue可不填</p>
                      * 
                      */
                     void SetCalcValue(const double& _calcValue);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool CalcValueHasBeenSet() const;
 
                     /**
-                     * 获取数据聚合周期(单位秒)，若指标有默认值可不填
-                     * @return CalcPeriod 数据聚合周期(单位秒)，若指标有默认值可不填
+                     * 获取<p>数据聚合周期(单位秒)，若指标有默认值可不填</p>
+                     * @return CalcPeriod <p>数据聚合周期(单位秒)，若指标有默认值可不填</p>
                      * 
                      */
                     int64_t GetCalcPeriod() const;
 
                     /**
-                     * 设置数据聚合周期(单位秒)，若指标有默认值可不填
-                     * @param _calcPeriod 数据聚合周期(单位秒)，若指标有默认值可不填
+                     * 设置<p>数据聚合周期(单位秒)，若指标有默认值可不填</p>
+                     * @param _calcPeriod <p>数据聚合周期(单位秒)，若指标有默认值可不填</p>
                      * 
                      */
                     void SetCalcPeriod(const int64_t& _calcPeriod);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool CalcPeriodHasBeenSet() const;
 
                     /**
-                     * 获取持续几个检测周期触发规则会告警
-                     * @return ContinuePeriod 持续几个检测周期触发规则会告警
+                     * 获取<p>持续几个检测周期触发规则会告警</p>
+                     * @return ContinuePeriod <p>持续几个检测周期触发规则会告警</p>
                      * 
                      */
                     int64_t GetContinuePeriod() const;
 
                     /**
-                     * 设置持续几个检测周期触发规则会告警
-                     * @param _continuePeriod 持续几个检测周期触发规则会告警
+                     * 设置<p>持续几个检测周期触发规则会告警</p>
+                     * @param _continuePeriod <p>持续几个检测周期触发规则会告警</p>
                      * 
                      */
                     void SetContinuePeriod(const int64_t& _continuePeriod);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool ContinuePeriodHasBeenSet() const;
 
                     /**
-                     * 获取如果通过模板创建，需要传入模板中该指标的对应RuleId
-                     * @return RuleId 如果通过模板创建，需要传入模板中该指标的对应RuleId
+                     * 获取<p>如果通过模板创建，需要传入模板中该指标的对应RuleId</p>
+                     * @return RuleId <p>如果通过模板创建，需要传入模板中该指标的对应RuleId</p>
                      * 
                      */
                     int64_t GetRuleId() const;
 
                     /**
-                     * 设置如果通过模板创建，需要传入模板中该指标的对应RuleId
-                     * @param _ruleId 如果通过模板创建，需要传入模板中该指标的对应RuleId
+                     * 设置<p>如果通过模板创建，需要传入模板中该指标的对应RuleId</p>
+                     * @param _ruleId <p>如果通过模板创建，需要传入模板中该指标的对应RuleId</p>
                      * 
                      */
                     void SetRuleId(const int64_t& _ruleId);
@@ -217,49 +217,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 指标Id
+                     * <p>指标Id</p>
                      */
                     int64_t m_metricId;
                     bool m_metricIdHasBeenSet;
 
                     /**
-                     * 告警发送收敛类型。0连续告警，1指数告警
+                     * <p>告警发送收敛类型。0连续告警，1指数告警</p>
                      */
                     int64_t m_alarmNotifyType;
                     bool m_alarmNotifyTypeHasBeenSet;
 
                     /**
-                     * 告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次
+                     * <p>告警发送周期单位秒。&lt;0 不触发, 0 只触发一次, &gt;0 每隔triggerTime秒触发一次</p>
                      */
                     int64_t m_alarmNotifyPeriod;
                     bool m_alarmNotifyPeriodHasBeenSet;
 
                     /**
-                     * 比较类型，1表示大于，2表示大于等于，3表示小于，4表示小于等于，5表示相等，6表示不相等。如果指标有配置默认比较类型值可以不填。
+                     * <p>比较类型，1表示大于，2表示大于等于，3表示小于，4表示小于等于，5表示相等，6表示不相等。如果指标有配置默认比较类型值可以不填。</p>
                      */
                     int64_t m_calcType;
                     bool m_calcTypeHasBeenSet;
 
                     /**
-                     * 比较的值，如果指标不必须CalcValue可不填
+                     * <p>比较的值，如果指标不必须CalcValue可不填</p>
                      */
                     double m_calcValue;
                     bool m_calcValueHasBeenSet;
 
                     /**
-                     * 数据聚合周期(单位秒)，若指标有默认值可不填
+                     * <p>数据聚合周期(单位秒)，若指标有默认值可不填</p>
                      */
                     int64_t m_calcPeriod;
                     bool m_calcPeriodHasBeenSet;
 
                     /**
-                     * 持续几个检测周期触发规则会告警
+                     * <p>持续几个检测周期触发规则会告警</p>
                      */
                     int64_t m_continuePeriod;
                     bool m_continuePeriodHasBeenSet;
 
                     /**
-                     * 如果通过模板创建，需要传入模板中该指标的对应RuleId
+                     * <p>如果通过模板创建，需要传入模板中该指标的对应RuleId</p>
                      */
                     int64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;

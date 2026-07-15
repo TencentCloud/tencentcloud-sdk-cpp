@@ -42,7 +42,88 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>集群id</p>
+                     * @return InstanceId <p>集群id</p>
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置<p>集群id</p>
+                     * @param _instanceId <p>集群id</p>
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>请求路径</p>
+                     * @return Uri <p>请求路径</p>
+                     * 
+                     */
+                    std::string GetUri() const;
+
+                    /**
+                     * 设置<p>请求路径</p>
+                     * @param _uri <p>请求路径</p>
+                     * 
+                     */
+                    void SetUri(const std::string& _uri);
+
+                    /**
+                     * 判断参数 Uri 是否已赋值
+                     * @return Uri 是否已赋值
+                     * 
+                     */
+                    bool UriHasBeenSet() const;
+
+                    /**
+                     * 获取<p>调用方</p>
+                     * @return Caller <p>调用方</p>
+                     * 
+                     */
+                    std::string GetCaller() const;
+
+                    /**
+                     * 设置<p>调用方</p>
+                     * @param _caller <p>调用方</p>
+                     * 
+                     */
+                    void SetCaller(const std::string& _caller);
+
+                    /**
+                     * 判断参数 Caller 是否已赋值
+                     * @return Caller 是否已赋值
+                     * 
+                     */
+                    bool CallerHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>集群id</p>
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * <p>请求路径</p>
+                     */
+                    std::string m_uri;
+                    bool m_uriHasBeenSet;
+
+                    /**
+                     * <p>调用方</p>
+                     */
+                    std::string m_caller;
+                    bool m_callerHasBeenSet;
 
                 };
             }

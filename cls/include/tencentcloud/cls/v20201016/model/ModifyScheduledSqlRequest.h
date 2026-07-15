@@ -316,6 +316,27 @@ namespace TencentCloud
                      */
                     bool FullQueryHasBeenSet() const;
 
+                    /**
+                     * 获取<p>调度周期单位</p><p>取值范围：[1, 2]</p><p>默认值：1</p><p>默认值1（分钟），其他值2（秒）</p>
+                     * @return ProcessPeriodUnit <p>调度周期单位</p><p>取值范围：[1, 2]</p><p>默认值：1</p><p>默认值1（分钟），其他值2（秒）</p>
+                     * 
+                     */
+                    int64_t GetProcessPeriodUnit() const;
+
+                    /**
+                     * 设置<p>调度周期单位</p><p>取值范围：[1, 2]</p><p>默认值：1</p><p>默认值1（分钟），其他值2（秒）</p>
+                     * @param _processPeriodUnit <p>调度周期单位</p><p>取值范围：[1, 2]</p><p>默认值：1</p><p>默认值1（分钟），其他值2（秒）</p>
+                     * 
+                     */
+                    void SetProcessPeriodUnit(const int64_t& _processPeriodUnit);
+
+                    /**
+                     * 判断参数 ProcessPeriodUnit 是否已赋值
+                     * @return ProcessPeriodUnit 是否已赋值
+                     * 
+                     */
+                    bool ProcessPeriodUnitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -395,6 +416,12 @@ namespace TencentCloud
                      */
                     uint64_t m_fullQuery;
                     bool m_fullQueryHasBeenSet;
+
+                    /**
+                     * <p>调度周期单位</p><p>取值范围：[1, 2]</p><p>默认值：1</p><p>默认值1（分钟），其他值2（秒）</p>
+                     */
+                    int64_t m_processPeriodUnit;
+                    bool m_processPeriodUnitHasBeenSet;
 
                 };
             }

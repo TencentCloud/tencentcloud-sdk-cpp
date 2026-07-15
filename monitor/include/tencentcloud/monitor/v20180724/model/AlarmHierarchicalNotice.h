@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通知模板ID
+                     * 获取<p>通知模板ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NoticeId 通知模板ID
+                     * @return NoticeId <p>通知模板ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNoticeId() const;
 
                     /**
-                     * 设置通知模板ID
+                     * 设置<p>通知模板ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _noticeId 通知模板ID
+                     * @param _noticeId <p>通知模板ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool NoticeIdHasBeenSet() const;
 
                     /**
-                     * 获取通知等级列表，["Remind","Serious"]表示该通知模板仅接收提醒和严重类别的告警
+                     * 获取<p>通知等级列表，[&quot;Remind&quot;,&quot;Serious&quot;]表示该通知模板仅接收提醒和严重类别的告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Classification 通知等级列表，["Remind","Serious"]表示该通知模板仅接收提醒和严重类别的告警
+                     * @return Classification <p>通知等级列表，[&quot;Remind&quot;,&quot;Serious&quot;]表示该通知模板仅接收提醒和严重类别的告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetClassification() const;
 
                     /**
-                     * 设置通知等级列表，["Remind","Serious"]表示该通知模板仅接收提醒和严重类别的告警
+                     * 设置<p>通知等级列表，[&quot;Remind&quot;,&quot;Serious&quot;]表示该通知模板仅接收提醒和严重类别的告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _classification 通知等级列表，["Remind","Serious"]表示该通知模板仅接收提醒和严重类别的告警
+                     * @param _classification <p>通知等级列表，[&quot;Remind&quot;,&quot;Serious&quot;]表示该通知模板仅接收提醒和严重类别的告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool ClassificationHasBeenSet() const;
 
                     /**
-                     * 获取模板对应的策略id
+                     * 获取<p>模板对应的策略id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PolicyId 模板对应的策略id
+                     * @return PolicyId <p>模板对应的策略id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
-                     * 设置模板对应的策略id
+                     * 设置<p>模板对应的策略id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _policyId 模板对应的策略id
+                     * @param _policyId <p>模板对应的策略id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,21 +124,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 通知模板ID
+                     * <p>通知模板ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_noticeId;
                     bool m_noticeIdHasBeenSet;
 
                     /**
-                     * 通知等级列表，["Remind","Serious"]表示该通知模板仅接收提醒和严重类别的告警
+                     * <p>通知等级列表，[&quot;Remind&quot;,&quot;Serious&quot;]表示该通知模板仅接收提醒和严重类别的告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_classification;
                     bool m_classificationHasBeenSet;
 
                     /**
-                     * 模板对应的策略id
+                     * <p>模板对应的策略id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_policyId;

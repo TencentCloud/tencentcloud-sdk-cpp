@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取维度名（英文）
+                     * 获取<p>维度名（英文）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Key 维度名（英文）
+                     * @return Key <p>维度名（英文）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置维度名（英文）
+                     * 设置<p>维度名（英文）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _key 维度名（英文）
+                     * @param _key <p>维度名（英文）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取维度名（中文）
+                     * 获取<p>维度名（中文）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 维度名（中文）
+                     * @return Name <p>维度名（中文）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置维度名（中文）
+                     * 设置<p>维度名（中文）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 维度名（中文）
+                     * @param _name <p>维度名（中文）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取维度值
+                     * 获取<p>维度值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Value 维度值
+                     * @return Value <p>维度值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置维度值
+                     * 设置<p>维度值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _value 维度值
+                     * @param _value <p>维度值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,21 +124,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 维度名（英文）
+                     * <p>维度名（英文）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 维度名（中文）
+                     * <p>维度名（中文）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 维度值
+                     * <p>维度值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;

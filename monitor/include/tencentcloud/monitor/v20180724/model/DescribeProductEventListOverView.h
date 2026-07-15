@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取状态变更的事件数量
+                     * 获取<p>状态变更的事件数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StatusChangeAmount 状态变更的事件数量
+                     * @return StatusChangeAmount <p>状态变更的事件数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatusChangeAmount() const;
 
                     /**
-                     * 设置状态变更的事件数量
+                     * 设置<p>状态变更的事件数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _statusChangeAmount 状态变更的事件数量
+                     * @param _statusChangeAmount <p>状态变更的事件数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool StatusChangeAmountHasBeenSet() const;
 
                     /**
-                     * 获取告警状态未配置的事件数量
+                     * 获取<p>告警状态未配置的事件数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UnConfigAlarmAmount 告警状态未配置的事件数量
+                     * @return UnConfigAlarmAmount <p>告警状态未配置的事件数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUnConfigAlarmAmount() const;
 
                     /**
-                     * 设置告警状态未配置的事件数量
+                     * 设置<p>告警状态未配置的事件数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _unConfigAlarmAmount 告警状态未配置的事件数量
+                     * @param _unConfigAlarmAmount <p>告警状态未配置的事件数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool UnConfigAlarmAmountHasBeenSet() const;
 
                     /**
-                     * 获取异常事件数量
+                     * 获取<p>异常事件数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UnNormalEventAmount 异常事件数量
+                     * @return UnNormalEventAmount <p>异常事件数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUnNormalEventAmount() const;
 
                     /**
-                     * 设置异常事件数量
+                     * 设置<p>异常事件数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _unNormalEventAmount 异常事件数量
+                     * @param _unNormalEventAmount <p>异常事件数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool UnNormalEventAmountHasBeenSet() const;
 
                     /**
-                     * 获取未恢复的事件数量
+                     * 获取<p>未恢复的事件数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UnRecoverAmount 未恢复的事件数量
+                     * @return UnRecoverAmount <p>未恢复的事件数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUnRecoverAmount() const;
 
                     /**
-                     * 设置未恢复的事件数量
+                     * 设置<p>未恢复的事件数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _unRecoverAmount 未恢复的事件数量
+                     * @param _unRecoverAmount <p>未恢复的事件数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -149,28 +149,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 状态变更的事件数量
+                     * <p>状态变更的事件数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_statusChangeAmount;
                     bool m_statusChangeAmountHasBeenSet;
 
                     /**
-                     * 告警状态未配置的事件数量
+                     * <p>告警状态未配置的事件数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_unConfigAlarmAmount;
                     bool m_unConfigAlarmAmountHasBeenSet;
 
                     /**
-                     * 异常事件数量
+                     * <p>异常事件数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_unNormalEventAmount;
                     bool m_unNormalEventAmountHasBeenSet;
 
                     /**
-                     * 未恢复的事件数量
+                     * <p>未恢复的事件数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_unRecoverAmount;

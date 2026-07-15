@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略ID
+                     * 获取<p>策略ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupId 策略ID
+                     * @return GroupId <p>策略ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
-                     * 设置策略ID
+                     * 设置<p>策略ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _groupId 策略ID
+                     * @param _groupId <p>策略ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取策略名
+                     * 获取<p>策略名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupName 策略名
+                     * @return GroupName <p>策略名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置策略名
+                     * 设置<p>策略名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _groupName 策略名
+                     * @param _groupName <p>策略名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,14 +99,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略ID
+                     * <p>策略ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 策略名
+                     * <p>策略名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;

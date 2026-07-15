@@ -653,6 +653,27 @@ namespace TencentCloud
                      */
                     bool HideBizLicenseHasBeenSet() const;
 
+                    /**
+                     * 获取<p>对方打开链接认证时，公司地址是否要与接口传递上来的保持一致。</p><ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul><p></p><p>p.s. 仅在公司地址（OrganizationAddress）不为空时有效</p>
+                     * @return AddressSame <p>对方打开链接认证时，公司地址是否要与接口传递上来的保持一致。</p><ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul><p></p><p>p.s. 仅在公司地址（OrganizationAddress）不为空时有效</p>
+                     * 
+                     */
+                    bool GetAddressSame() const;
+
+                    /**
+                     * 设置<p>对方打开链接认证时，公司地址是否要与接口传递上来的保持一致。</p><ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul><p></p><p>p.s. 仅在公司地址（OrganizationAddress）不为空时有效</p>
+                     * @param _addressSame <p>对方打开链接认证时，公司地址是否要与接口传递上来的保持一致。</p><ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul><p></p><p>p.s. 仅在公司地址（OrganizationAddress）不为空时有效</p>
+                     * 
+                     */
+                    void SetAddressSame(const bool& _addressSame);
+
+                    /**
+                     * 判断参数 AddressSame 是否已赋值
+                     * @return AddressSame 是否已赋值
+                     * 
+                     */
+                    bool AddressSameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -828,6 +849,12 @@ namespace TencentCloud
                      */
                     bool m_hideBizLicense;
                     bool m_hideBizLicenseHasBeenSet;
+
+                    /**
+                     * <p>对方打开链接认证时，公司地址是否要与接口传递上来的保持一致。</p><ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul><p></p><p>p.s. 仅在公司地址（OrganizationAddress）不为空时有效</p>
+                     */
+                    bool m_addressSame;
+                    bool m_addressSameHasBeenSet;
 
                 };
             }

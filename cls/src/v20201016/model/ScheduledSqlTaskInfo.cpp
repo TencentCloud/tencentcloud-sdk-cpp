@@ -40,7 +40,8 @@ ScheduledSqlTaskInfo::ScheduledSqlTaskInfo() :
     m_srcTopicRegionHasBeenSet(false),
     m_syntaxRuleHasBeenSet(false),
     m_hasServicesLogHasBeenSet(false),
-    m_fullQueryHasBeenSet(false)
+    m_fullQueryHasBeenSet(false),
+    m_processPeriodUnitHasBeenSet(false)
 {
 }
 
@@ -256,6 +257,16 @@ CoreInternalOutcome ScheduledSqlTaskInfo::Deserialize(const rapidjson::Value &va
         m_fullQueryHasBeenSet = true;
     }
 
+    if (value.HasMember("ProcessPeriodUnit") && !value["ProcessPeriodUnit"].IsNull())
+    {
+        if (!value["ProcessPeriodUnit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScheduledSqlTaskInfo.ProcessPeriodUnit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_processPeriodUnit = value["ProcessPeriodUnit"].GetInt64();
+        m_processPeriodUnitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -422,6 +433,14 @@ void ScheduledSqlTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "FullQuery";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fullQuery, allocator);
+    }
+
+    if (m_processPeriodUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessPeriodUnit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_processPeriodUnit, allocator);
     }
 
 }
@@ -745,5 +764,21 @@ void ScheduledSqlTaskInfo::SetFullQuery(const uint64_t& _fullQuery)
 bool ScheduledSqlTaskInfo::FullQueryHasBeenSet() const
 {
     return m_fullQueryHasBeenSet;
+}
+
+int64_t ScheduledSqlTaskInfo::GetProcessPeriodUnit() const
+{
+    return m_processPeriodUnit;
+}
+
+void ScheduledSqlTaskInfo::SetProcessPeriodUnit(const int64_t& _processPeriodUnit)
+{
+    m_processPeriodUnit = _processPeriodUnit;
+    m_processPeriodUnitHasBeenSet = true;
+}
+
+bool ScheduledSqlTaskInfo::ProcessPeriodUnitHasBeenSet() const
+{
+    return m_processPeriodUnitHasBeenSet;
 }
 

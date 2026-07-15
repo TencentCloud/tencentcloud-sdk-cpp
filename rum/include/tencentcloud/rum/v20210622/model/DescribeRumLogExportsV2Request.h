@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Page size
-                     * @return PageSize Page size
+                     * 获取<p>Page size</p>
+                     * @return PageSize <p>Page size</p>
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置Page size
-                     * @param _pageSize Page size
+                     * 设置<p>Page size</p>
+                     * @param _pageSize <p>Page size</p>
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取Page number
-                     * @return PageNum Page number
+                     * 获取<p>Page number</p>
+                     * @return PageNum <p>Page number</p>
                      * 
                      */
                     int64_t GetPageNum() const;
 
                     /**
-                     * 设置Page number
-                     * @param _pageNum Page number
+                     * 设置<p>Page number</p>
+                     * @param _pageNum <p>Page number</p>
                      * 
                      */
                     void SetPageNum(const int64_t& _pageNum);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PageNumHasBeenSet() const;
 
                     /**
-                     * 获取Project ID
-                     * @return ID Project ID
+                     * 获取<p>Project ID</p>
+                     * @return ID <p>Project ID</p>
                      * 
                      */
                     int64_t GetID() const;
 
                     /**
-                     * 设置Project ID
-                     * @param _iD Project ID
+                     * 设置<p>Project ID</p>
+                     * @param _iD <p>Project ID</p>
                      * 
                      */
                     void SetID(const int64_t& _iD);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Page size
+                     * <p>Page size</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * Page number
+                     * <p>Page number</p>
                      */
                     int64_t m_pageNum;
                     bool m_pageNumHasBeenSet;
 
                     /**
-                     * Project ID
+                     * <p>Project ID</p>
                      */
                     int64_t m_iD;
                     bool m_iDHasBeenSet;

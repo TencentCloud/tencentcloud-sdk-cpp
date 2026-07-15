@@ -707,6 +707,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/TextToSpeechAsyncRequest.h
   include/tencentcloud/mps/v20190612/model/DescribeInputHLSPullSettings.h
   include/tencentcloud/mps/v20190612/model/CreateSubtitleEmbedTemplateResponse.h
+  include/tencentcloud/mps/v20190612/model/ImageTaskInfo.h
   include/tencentcloud/mps/v20190612/model/CreateStreamPackageSourceLocationResponse.h
   include/tencentcloud/mps/v20190612/model/DeleteSmartSubtitleTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/DescribeStreamPackageLinearAssemblyProgramSchedulesRequest.h
@@ -755,6 +756,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/BatchProcessMediaRequest.h
   include/tencentcloud/mps/v20190612/model/FlowLogInfo.h
   include/tencentcloud/mps/v20190612/model/DeleteWordSamplesResponse.h
+  include/tencentcloud/mps/v20190612/model/DescribeImageTasksResponse.h
   include/tencentcloud/mps/v20190612/model/DeleteStreamLinkOutputResponse.h
   include/tencentcloud/mps/v20190612/model/ImageEnhanceConfig.h
   include/tencentcloud/mps/v20190612/model/WatermarkInput.h
@@ -1048,6 +1050,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/FailOverOption.h
   include/tencentcloud/mps/v20190612/model/LowLightEnhanceConfig.h
   include/tencentcloud/mps/v20190612/model/DescribeMediaMetaDataRequest.h
+  include/tencentcloud/mps/v20190612/model/DescribeImageTasksRequest.h
   include/tencentcloud/mps/v20190612/model/AigcVideoReferenceImageInfo.h
   include/tencentcloud/mps/v20190612/model/FrameTagConfigureInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/CreateImageSpriteTemplateResponse.h
@@ -1747,6 +1750,7 @@ set(mps_src
   src/v20190612/model/TextToSpeechAsyncRequest.cpp
   src/v20190612/model/DescribeInputHLSPullSettings.cpp
   src/v20190612/model/CreateSubtitleEmbedTemplateResponse.cpp
+  src/v20190612/model/ImageTaskInfo.cpp
   src/v20190612/model/CreateStreamPackageSourceLocationResponse.cpp
   src/v20190612/model/DeleteSmartSubtitleTemplateRequest.cpp
   src/v20190612/model/DescribeStreamPackageLinearAssemblyProgramSchedulesRequest.cpp
@@ -1795,6 +1799,7 @@ set(mps_src
   src/v20190612/model/BatchProcessMediaRequest.cpp
   src/v20190612/model/FlowLogInfo.cpp
   src/v20190612/model/DeleteWordSamplesResponse.cpp
+  src/v20190612/model/DescribeImageTasksResponse.cpp
   src/v20190612/model/DeleteStreamLinkOutputResponse.cpp
   src/v20190612/model/ImageEnhanceConfig.cpp
   src/v20190612/model/WatermarkInput.cpp
@@ -2088,6 +2093,7 @@ set(mps_src
   src/v20190612/model/FailOverOption.cpp
   src/v20190612/model/LowLightEnhanceConfig.cpp
   src/v20190612/model/DescribeMediaMetaDataRequest.cpp
+  src/v20190612/model/DescribeImageTasksRequest.cpp
   src/v20190612/model/AigcVideoReferenceImageInfo.cpp
   src/v20190612/model/FrameTagConfigureInfoForUpdate.cpp
   src/v20190612/model/CreateImageSpriteTemplateResponse.cpp

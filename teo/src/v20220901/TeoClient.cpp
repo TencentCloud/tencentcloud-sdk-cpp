@@ -1340,6 +1340,56 @@ TeoClient::CreateLoadBalancerOutcomeCallable TeoClient::CreateLoadBalancerCallab
     return prom->get_future();
 }
 
+TeoClient::CreateLogAnalysisDownloadTaskOutcome TeoClient::CreateLogAnalysisDownloadTask(const CreateLogAnalysisDownloadTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLogAnalysisDownloadTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLogAnalysisDownloadTaskResponse rsp = CreateLogAnalysisDownloadTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLogAnalysisDownloadTaskOutcome(rsp);
+        else
+            return CreateLogAnalysisDownloadTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLogAnalysisDownloadTaskOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateLogAnalysisDownloadTaskAsync(const CreateLogAnalysisDownloadTaskRequest& request, const CreateLogAnalysisDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateLogAnalysisDownloadTaskRequest&;
+    using Resp = CreateLogAnalysisDownloadTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateLogAnalysisDownloadTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::CreateLogAnalysisDownloadTaskOutcomeCallable TeoClient::CreateLogAnalysisDownloadTaskCallable(const CreateLogAnalysisDownloadTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateLogAnalysisDownloadTaskOutcome>>();
+    CreateLogAnalysisDownloadTaskAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const CreateLogAnalysisDownloadTaskRequest&,
+        CreateLogAnalysisDownloadTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TeoClient::CreateMultiPathGatewayOutcome TeoClient::CreateMultiPathGateway(const CreateMultiPathGatewayRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateMultiPathGateway");
@@ -5382,6 +5432,106 @@ TeoClient::DescribeLoadBalancerListOutcomeCallable TeoClient::DescribeLoadBalanc
         const TeoClient*,
         const DescribeLoadBalancerListRequest&,
         DescribeLoadBalancerListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::DescribeLogAnalysisDetailOutcome TeoClient::DescribeLogAnalysisDetail(const DescribeLogAnalysisDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogAnalysisDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogAnalysisDetailResponse rsp = DescribeLogAnalysisDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogAnalysisDetailOutcome(rsp);
+        else
+            return DescribeLogAnalysisDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogAnalysisDetailOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeLogAnalysisDetailAsync(const DescribeLogAnalysisDetailRequest& request, const DescribeLogAnalysisDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLogAnalysisDetailRequest&;
+    using Resp = DescribeLogAnalysisDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogAnalysisDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DescribeLogAnalysisDetailOutcomeCallable TeoClient::DescribeLogAnalysisDetailCallable(const DescribeLogAnalysisDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLogAnalysisDetailOutcome>>();
+    DescribeLogAnalysisDetailAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DescribeLogAnalysisDetailRequest&,
+        DescribeLogAnalysisDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::DescribeLogAnalysisDownloadTasksOutcome TeoClient::DescribeLogAnalysisDownloadTasks(const DescribeLogAnalysisDownloadTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogAnalysisDownloadTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogAnalysisDownloadTasksResponse rsp = DescribeLogAnalysisDownloadTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogAnalysisDownloadTasksOutcome(rsp);
+        else
+            return DescribeLogAnalysisDownloadTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogAnalysisDownloadTasksOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeLogAnalysisDownloadTasksAsync(const DescribeLogAnalysisDownloadTasksRequest& request, const DescribeLogAnalysisDownloadTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLogAnalysisDownloadTasksRequest&;
+    using Resp = DescribeLogAnalysisDownloadTasksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogAnalysisDownloadTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DescribeLogAnalysisDownloadTasksOutcomeCallable TeoClient::DescribeLogAnalysisDownloadTasksCallable(const DescribeLogAnalysisDownloadTasksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLogAnalysisDownloadTasksOutcome>>();
+    DescribeLogAnalysisDownloadTasksAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DescribeLogAnalysisDownloadTasksRequest&,
+        DescribeLogAnalysisDownloadTasksOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

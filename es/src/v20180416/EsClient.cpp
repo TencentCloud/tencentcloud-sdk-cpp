@@ -990,6 +990,106 @@ EsClient::DescribeAutoBackUpStrategyOutcomeCallable EsClient::DescribeAutoBackUp
     return prom->get_future();
 }
 
+EsClient::DescribeAutoScaleDiskInfoOutcome EsClient::DescribeAutoScaleDiskInfo(const DescribeAutoScaleDiskInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAutoScaleDiskInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAutoScaleDiskInfoResponse rsp = DescribeAutoScaleDiskInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAutoScaleDiskInfoOutcome(rsp);
+        else
+            return DescribeAutoScaleDiskInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAutoScaleDiskInfoOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeAutoScaleDiskInfoAsync(const DescribeAutoScaleDiskInfoRequest& request, const DescribeAutoScaleDiskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAutoScaleDiskInfoRequest&;
+    using Resp = DescribeAutoScaleDiskInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAutoScaleDiskInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::DescribeAutoScaleDiskInfoOutcomeCallable EsClient::DescribeAutoScaleDiskInfoCallable(const DescribeAutoScaleDiskInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAutoScaleDiskInfoOutcome>>();
+    DescribeAutoScaleDiskInfoAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeAutoScaleDiskInfoRequest&,
+        DescribeAutoScaleDiskInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EsClient::DescribeClusterDiskRangeOutcome EsClient::DescribeClusterDiskRange(const DescribeClusterDiskRangeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterDiskRange");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterDiskRangeResponse rsp = DescribeClusterDiskRangeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterDiskRangeOutcome(rsp);
+        else
+            return DescribeClusterDiskRangeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterDiskRangeOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeClusterDiskRangeAsync(const DescribeClusterDiskRangeRequest& request, const DescribeClusterDiskRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeClusterDiskRangeRequest&;
+    using Resp = DescribeClusterDiskRangeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterDiskRange", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::DescribeClusterDiskRangeOutcomeCallable EsClient::DescribeClusterDiskRangeCallable(const DescribeClusterDiskRangeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeClusterDiskRangeOutcome>>();
+    DescribeClusterDiskRangeAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeClusterDiskRangeRequest&,
+        DescribeClusterDiskRangeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EsClient::DescribeClusterSnapshotOutcome EsClient::DescribeClusterSnapshot(const DescribeClusterSnapshotRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterSnapshot");
@@ -1040,6 +1140,56 @@ EsClient::DescribeClusterSnapshotOutcomeCallable EsClient::DescribeClusterSnapsh
     return prom->get_future();
 }
 
+EsClient::DescribeCosBackupStrategyViewsOutcome EsClient::DescribeCosBackupStrategyViews(const DescribeCosBackupStrategyViewsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCosBackupStrategyViews");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCosBackupStrategyViewsResponse rsp = DescribeCosBackupStrategyViewsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCosBackupStrategyViewsOutcome(rsp);
+        else
+            return DescribeCosBackupStrategyViewsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCosBackupStrategyViewsOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeCosBackupStrategyViewsAsync(const DescribeCosBackupStrategyViewsRequest& request, const DescribeCosBackupStrategyViewsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCosBackupStrategyViewsRequest&;
+    using Resp = DescribeCosBackupStrategyViewsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCosBackupStrategyViews", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::DescribeCosBackupStrategyViewsOutcomeCallable EsClient::DescribeCosBackupStrategyViewsCallable(const DescribeCosBackupStrategyViewsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCosBackupStrategyViewsOutcome>>();
+    DescribeCosBackupStrategyViewsAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeCosBackupStrategyViewsRequest&,
+        DescribeCosBackupStrategyViewsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EsClient::DescribeDiagnoseOutcome EsClient::DescribeDiagnose(const DescribeDiagnoseRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDiagnose");
@@ -1082,6 +1232,206 @@ EsClient::DescribeDiagnoseOutcomeCallable EsClient::DescribeDiagnoseCallable(con
         const EsClient*,
         const DescribeDiagnoseRequest&,
         DescribeDiagnoseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EsClient::DescribeEsInstanceEventListsOutcome EsClient::DescribeEsInstanceEventLists(const DescribeEsInstanceEventListsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEsInstanceEventLists");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEsInstanceEventListsResponse rsp = DescribeEsInstanceEventListsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEsInstanceEventListsOutcome(rsp);
+        else
+            return DescribeEsInstanceEventListsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEsInstanceEventListsOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeEsInstanceEventListsAsync(const DescribeEsInstanceEventListsRequest& request, const DescribeEsInstanceEventListsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeEsInstanceEventListsRequest&;
+    using Resp = DescribeEsInstanceEventListsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeEsInstanceEventLists", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::DescribeEsInstanceEventListsOutcomeCallable EsClient::DescribeEsInstanceEventListsCallable(const DescribeEsInstanceEventListsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeEsInstanceEventListsOutcome>>();
+    DescribeEsInstanceEventListsAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeEsInstanceEventListsRequest&,
+        DescribeEsInstanceEventListsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EsClient::DescribeEventDataDetailOutcome EsClient::DescribeEventDataDetail(const DescribeEventDataDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEventDataDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEventDataDetailResponse rsp = DescribeEventDataDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEventDataDetailOutcome(rsp);
+        else
+            return DescribeEventDataDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEventDataDetailOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeEventDataDetailAsync(const DescribeEventDataDetailRequest& request, const DescribeEventDataDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeEventDataDetailRequest&;
+    using Resp = DescribeEventDataDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeEventDataDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::DescribeEventDataDetailOutcomeCallable EsClient::DescribeEventDataDetailCallable(const DescribeEventDataDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeEventDataDetailOutcome>>();
+    DescribeEventDataDetailAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeEventDataDetailRequest&,
+        DescribeEventDataDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EsClient::DescribeEventInfoListOutcome EsClient::DescribeEventInfoList(const DescribeEventInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEventInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEventInfoListResponse rsp = DescribeEventInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEventInfoListOutcome(rsp);
+        else
+            return DescribeEventInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEventInfoListOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeEventInfoListAsync(const DescribeEventInfoListRequest& request, const DescribeEventInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeEventInfoListRequest&;
+    using Resp = DescribeEventInfoListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeEventInfoList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::DescribeEventInfoListOutcomeCallable EsClient::DescribeEventInfoListCallable(const DescribeEventInfoListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeEventInfoListOutcome>>();
+    DescribeEventInfoListAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeEventInfoListRequest&,
+        DescribeEventInfoListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EsClient::DescribeForceMergeTaskOutcome EsClient::DescribeForceMergeTask(const DescribeForceMergeTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeForceMergeTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeForceMergeTaskResponse rsp = DescribeForceMergeTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeForceMergeTaskOutcome(rsp);
+        else
+            return DescribeForceMergeTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeForceMergeTaskOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeForceMergeTaskAsync(const DescribeForceMergeTaskRequest& request, const DescribeForceMergeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeForceMergeTaskRequest&;
+    using Resp = DescribeForceMergeTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeForceMergeTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::DescribeForceMergeTaskOutcomeCallable EsClient::DescribeForceMergeTaskCallable(const DescribeForceMergeTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeForceMergeTaskOutcome>>();
+    DescribeForceMergeTaskAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeForceMergeTaskRequest&,
+        DescribeForceMergeTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1590,6 +1940,156 @@ EsClient::DescribeLogstashPipelinesOutcomeCallable EsClient::DescribeLogstashPip
     return prom->get_future();
 }
 
+EsClient::DescribeLogstashViewsOutcome EsClient::DescribeLogstashViews(const DescribeLogstashViewsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogstashViews");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogstashViewsResponse rsp = DescribeLogstashViewsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogstashViewsOutcome(rsp);
+        else
+            return DescribeLogstashViewsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogstashViewsOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeLogstashViewsAsync(const DescribeLogstashViewsRequest& request, const DescribeLogstashViewsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLogstashViewsRequest&;
+    using Resp = DescribeLogstashViewsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogstashViews", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::DescribeLogstashViewsOutcomeCallable EsClient::DescribeLogstashViewsCallable(const DescribeLogstashViewsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLogstashViewsOutcome>>();
+    DescribeLogstashViewsAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeLogstashViewsRequest&,
+        DescribeLogstashViewsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EsClient::DescribeRegionsOutcome EsClient::DescribeRegions(const DescribeRegionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRegions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRegionsResponse rsp = DescribeRegionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRegionsOutcome(rsp);
+        else
+            return DescribeRegionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRegionsOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeRegionsAsync(const DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRegionsRequest&;
+    using Resp = DescribeRegionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRegions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::DescribeRegionsOutcomeCallable EsClient::DescribeRegionsCallable(const DescribeRegionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRegionsOutcome>>();
+    DescribeRegionsAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeRegionsRequest&,
+        DescribeRegionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EsClient::DescribeRequestInstancePolicyOutcome EsClient::DescribeRequestInstancePolicy(const DescribeRequestInstancePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRequestInstancePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRequestInstancePolicyResponse rsp = DescribeRequestInstancePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRequestInstancePolicyOutcome(rsp);
+        else
+            return DescribeRequestInstancePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRequestInstancePolicyOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeRequestInstancePolicyAsync(const DescribeRequestInstancePolicyRequest& request, const DescribeRequestInstancePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRequestInstancePolicyRequest&;
+    using Resp = DescribeRequestInstancePolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRequestInstancePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::DescribeRequestInstancePolicyOutcomeCallable EsClient::DescribeRequestInstancePolicyCallable(const DescribeRequestInstancePolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRequestInstancePolicyOutcome>>();
+    DescribeRequestInstancePolicyAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeRequestInstancePolicyRequest&,
+        DescribeRequestInstancePolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EsClient::DescribeServerlessInstancesOutcome EsClient::DescribeServerlessInstances(const DescribeServerlessInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeServerlessInstances");
@@ -1790,6 +2290,56 @@ EsClient::DescribeServerlessSpacesOutcomeCallable EsClient::DescribeServerlessSp
     return prom->get_future();
 }
 
+EsClient::DescribeSnapshotViewsOutcome EsClient::DescribeSnapshotViews(const DescribeSnapshotViewsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSnapshotViews");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSnapshotViewsResponse rsp = DescribeSnapshotViewsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSnapshotViewsOutcome(rsp);
+        else
+            return DescribeSnapshotViewsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSnapshotViewsOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeSnapshotViewsAsync(const DescribeSnapshotViewsRequest& request, const DescribeSnapshotViewsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSnapshotViewsRequest&;
+    using Resp = DescribeSnapshotViewsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSnapshotViews", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::DescribeSnapshotViewsOutcomeCallable EsClient::DescribeSnapshotViewsCallable(const DescribeSnapshotViewsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSnapshotViewsOutcome>>();
+    DescribeSnapshotViewsAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeSnapshotViewsRequest&,
+        DescribeSnapshotViewsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EsClient::DescribeSpaceKibanaToolsOutcome EsClient::DescribeSpaceKibanaTools(const DescribeSpaceKibanaToolsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSpaceKibanaTools");
@@ -1832,6 +2382,56 @@ EsClient::DescribeSpaceKibanaToolsOutcomeCallable EsClient::DescribeSpaceKibanaT
         const EsClient*,
         const DescribeSpaceKibanaToolsRequest&,
         DescribeSpaceKibanaToolsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EsClient::DescribeUpgradeOutcome EsClient::DescribeUpgrade(const DescribeUpgradeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUpgrade");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUpgradeResponse rsp = DescribeUpgradeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUpgradeOutcome(rsp);
+        else
+            return DescribeUpgradeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUpgradeOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeUpgradeAsync(const DescribeUpgradeRequest& request, const DescribeUpgradeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeUpgradeRequest&;
+    using Resp = DescribeUpgradeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeUpgrade", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::DescribeUpgradeOutcomeCallable EsClient::DescribeUpgradeCallable(const DescribeUpgradeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeUpgradeOutcome>>();
+    DescribeUpgradeAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeUpgradeRequest&,
+        DescribeUpgradeOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2482,6 +3082,106 @@ EsClient::QueryIpTraceLogOutcomeCallable EsClient::QueryIpTraceLogCallable(const
         const EsClient*,
         const QueryIpTraceLogRequest&,
         QueryIpTraceLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EsClient::QueryZoneResourceOutcome EsClient::QueryZoneResource(const QueryZoneResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryZoneResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryZoneResourceResponse rsp = QueryZoneResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryZoneResourceOutcome(rsp);
+        else
+            return QueryZoneResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryZoneResourceOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::QueryZoneResourceAsync(const QueryZoneResourceRequest& request, const QueryZoneResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const QueryZoneResourceRequest&;
+    using Resp = QueryZoneResourceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "QueryZoneResource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::QueryZoneResourceOutcomeCallable EsClient::QueryZoneResourceCallable(const QueryZoneResourceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<QueryZoneResourceOutcome>>();
+    QueryZoneResourceAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const QueryZoneResourceRequest&,
+        QueryZoneResourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EsClient::QueryZoneResourceForLogstashOutcome EsClient::QueryZoneResourceForLogstash(const QueryZoneResourceForLogstashRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryZoneResourceForLogstash");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryZoneResourceForLogstashResponse rsp = QueryZoneResourceForLogstashResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryZoneResourceForLogstashOutcome(rsp);
+        else
+            return QueryZoneResourceForLogstashOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryZoneResourceForLogstashOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::QueryZoneResourceForLogstashAsync(const QueryZoneResourceForLogstashRequest& request, const QueryZoneResourceForLogstashAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const QueryZoneResourceForLogstashRequest&;
+    using Resp = QueryZoneResourceForLogstashResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "QueryZoneResourceForLogstash", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::QueryZoneResourceForLogstashOutcomeCallable EsClient::QueryZoneResourceForLogstashCallable(const QueryZoneResourceForLogstashRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<QueryZoneResourceForLogstashOutcome>>();
+    QueryZoneResourceForLogstashAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const QueryZoneResourceForLogstashRequest&,
+        QueryZoneResourceForLogstashOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

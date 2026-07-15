@@ -36,8 +36,7 @@ ModifyHealthCheckTemplateRequest::ModifyHealthCheckTemplateRequest() :
     m_healthCheckProtocolHasBeenSet(false),
     m_healthCheckTemplateNameHasBeenSet(false),
     m_healthCheckTimeoutHasBeenSet(false),
-    m_healthCheckUnhealthyThresholdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_healthCheckUnhealthyThresholdHasBeenSet(false)
 {
 }
 
@@ -163,21 +162,6 @@ string ModifyHealthCheckTemplateRequest::ToJsonString() const
         string key = "HealthCheckUnhealthyThreshold";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_healthCheckUnhealthyThreshold, allocator);
-    }
-
-    if (m_tagsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Tags";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
     }
 
 
@@ -410,22 +394,6 @@ void ModifyHealthCheckTemplateRequest::SetHealthCheckUnhealthyThreshold(const ui
 bool ModifyHealthCheckTemplateRequest::HealthCheckUnhealthyThresholdHasBeenSet() const
 {
     return m_healthCheckUnhealthyThresholdHasBeenSet;
-}
-
-vector<TagInfo> ModifyHealthCheckTemplateRequest::GetTags() const
-{
-    return m_tags;
-}
-
-void ModifyHealthCheckTemplateRequest::SetTags(const vector<TagInfo>& _tags)
-{
-    m_tags = _tags;
-    m_tagsHasBeenSet = true;
-}
-
-bool ModifyHealthCheckTemplateRequest::TagsHasBeenSet() const
-{
-    return m_tagsHasBeenSet;
 }
 
 

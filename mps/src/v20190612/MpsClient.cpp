@@ -4890,6 +4890,56 @@ MpsClient::DescribeImageTaskDetailOutcomeCallable MpsClient::DescribeImageTaskDe
     return prom->get_future();
 }
 
+MpsClient::DescribeImageTasksOutcome MpsClient::DescribeImageTasks(const DescribeImageTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageTasksResponse rsp = DescribeImageTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageTasksOutcome(rsp);
+        else
+            return DescribeImageTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageTasksOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeImageTasksAsync(const DescribeImageTasksRequest& request, const DescribeImageTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageTasksRequest&;
+    using Resp = DescribeImageTasksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::DescribeImageTasksOutcomeCallable MpsClient::DescribeImageTasksCallable(const DescribeImageTasksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageTasksOutcome>>();
+    DescribeImageTasksAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const DescribeImageTasksRequest&,
+        DescribeImageTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::DescribeLiveRecordTemplatesOutcome MpsClient::DescribeLiveRecordTemplates(const DescribeLiveRecordTemplatesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLiveRecordTemplates");

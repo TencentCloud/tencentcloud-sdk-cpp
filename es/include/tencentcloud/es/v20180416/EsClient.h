@@ -61,10 +61,24 @@
 #include <tencentcloud/es/v20180416/model/DeleteServerlessSpaceUserResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeAutoBackUpStrategyRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeAutoBackUpStrategyResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeAutoScaleDiskInfoRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeAutoScaleDiskInfoResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeClusterDiskRangeRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeClusterDiskRangeResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeClusterSnapshotRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeClusterSnapshotResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeCosBackupStrategyViewsRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeCosBackupStrategyViewsResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeDiagnoseRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeDiagnoseResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeEsInstanceEventListsRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeEsInstanceEventListsResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeEventDataDetailRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeEventDataDetailResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeEventInfoListRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeEventInfoListResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeForceMergeTaskRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeForceMergeTaskResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeIndexListRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeIndexListResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeIndexMetaRequest.h>
@@ -85,6 +99,12 @@
 #include <tencentcloud/es/v20180416/model/DescribeLogstashInstancesResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeLogstashPipelinesRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeLogstashPipelinesResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeLogstashViewsRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeLogstashViewsResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeRegionsRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeRegionsResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeRequestInstancePolicyRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeRequestInstancePolicyResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeServerlessInstancesRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeServerlessInstancesResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeServerlessMetricsRequest.h>
@@ -93,8 +113,12 @@
 #include <tencentcloud/es/v20180416/model/DescribeServerlessSpaceUserResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeServerlessSpacesRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeServerlessSpacesResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeSnapshotViewsRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeSnapshotViewsResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeSpaceKibanaToolsRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeSpaceKibanaToolsResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeUpgradeRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeUpgradeResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeUserCosSnapshotListRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeUserCosSnapshotListResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeViewsRequest.h>
@@ -121,6 +145,10 @@
 #include <tencentcloud/es/v20180416/model/ModifyEsVipSecurityGroupResponse.h>
 #include <tencentcloud/es/v20180416/model/QueryIpTraceLogRequest.h>
 #include <tencentcloud/es/v20180416/model/QueryIpTraceLogResponse.h>
+#include <tencentcloud/es/v20180416/model/QueryZoneResourceRequest.h>
+#include <tencentcloud/es/v20180416/model/QueryZoneResourceResponse.h>
+#include <tencentcloud/es/v20180416/model/QueryZoneResourceForLogstashRequest.h>
+#include <tencentcloud/es/v20180416/model/QueryZoneResourceForLogstashResponse.h>
 #include <tencentcloud/es/v20180416/model/RequestInstancesRequest.h>
 #include <tencentcloud/es/v20180416/model/RequestInstancesResponse.h>
 #include <tencentcloud/es/v20180416/model/RequestInstancesByGetRequest.h>
@@ -240,12 +268,33 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAutoBackUpStrategyResponse> DescribeAutoBackUpStrategyOutcome;
                 typedef std::future<DescribeAutoBackUpStrategyOutcome> DescribeAutoBackUpStrategyOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeAutoBackUpStrategyRequest&, DescribeAutoBackUpStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoBackUpStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAutoScaleDiskInfoResponse> DescribeAutoScaleDiskInfoOutcome;
+                typedef std::future<DescribeAutoScaleDiskInfoOutcome> DescribeAutoScaleDiskInfoOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeAutoScaleDiskInfoRequest&, DescribeAutoScaleDiskInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoScaleDiskInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterDiskRangeResponse> DescribeClusterDiskRangeOutcome;
+                typedef std::future<DescribeClusterDiskRangeOutcome> DescribeClusterDiskRangeOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeClusterDiskRangeRequest&, DescribeClusterDiskRangeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterDiskRangeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterSnapshotResponse> DescribeClusterSnapshotOutcome;
                 typedef std::future<DescribeClusterSnapshotOutcome> DescribeClusterSnapshotOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeClusterSnapshotRequest&, DescribeClusterSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterSnapshotAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosBackupStrategyViewsResponse> DescribeCosBackupStrategyViewsOutcome;
+                typedef std::future<DescribeCosBackupStrategyViewsOutcome> DescribeCosBackupStrategyViewsOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeCosBackupStrategyViewsRequest&, DescribeCosBackupStrategyViewsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosBackupStrategyViewsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDiagnoseResponse> DescribeDiagnoseOutcome;
                 typedef std::future<DescribeDiagnoseOutcome> DescribeDiagnoseOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeDiagnoseRequest&, DescribeDiagnoseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiagnoseAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEsInstanceEventListsResponse> DescribeEsInstanceEventListsOutcome;
+                typedef std::future<DescribeEsInstanceEventListsOutcome> DescribeEsInstanceEventListsOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeEsInstanceEventListsRequest&, DescribeEsInstanceEventListsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEsInstanceEventListsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEventDataDetailResponse> DescribeEventDataDetailOutcome;
+                typedef std::future<DescribeEventDataDetailOutcome> DescribeEventDataDetailOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeEventDataDetailRequest&, DescribeEventDataDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventDataDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEventInfoListResponse> DescribeEventInfoListOutcome;
+                typedef std::future<DescribeEventInfoListOutcome> DescribeEventInfoListOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeEventInfoListRequest&, DescribeEventInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventInfoListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeForceMergeTaskResponse> DescribeForceMergeTaskOutcome;
+                typedef std::future<DescribeForceMergeTaskOutcome> DescribeForceMergeTaskOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeForceMergeTaskRequest&, DescribeForceMergeTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeForceMergeTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIndexListResponse> DescribeIndexListOutcome;
                 typedef std::future<DescribeIndexListOutcome> DescribeIndexListOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeIndexListRequest&, DescribeIndexListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIndexListAsyncHandler;
@@ -276,6 +325,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLogstashPipelinesResponse> DescribeLogstashPipelinesOutcome;
                 typedef std::future<DescribeLogstashPipelinesOutcome> DescribeLogstashPipelinesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeLogstashPipelinesRequest&, DescribeLogstashPipelinesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogstashPipelinesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogstashViewsResponse> DescribeLogstashViewsOutcome;
+                typedef std::future<DescribeLogstashViewsOutcome> DescribeLogstashViewsOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeLogstashViewsRequest&, DescribeLogstashViewsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogstashViewsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
+                typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeRegionsRequest&, DescribeRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRequestInstancePolicyResponse> DescribeRequestInstancePolicyOutcome;
+                typedef std::future<DescribeRequestInstancePolicyOutcome> DescribeRequestInstancePolicyOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeRequestInstancePolicyRequest&, DescribeRequestInstancePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRequestInstancePolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeServerlessInstancesResponse> DescribeServerlessInstancesOutcome;
                 typedef std::future<DescribeServerlessInstancesOutcome> DescribeServerlessInstancesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeServerlessInstancesRequest&, DescribeServerlessInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServerlessInstancesAsyncHandler;
@@ -288,9 +346,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeServerlessSpacesResponse> DescribeServerlessSpacesOutcome;
                 typedef std::future<DescribeServerlessSpacesOutcome> DescribeServerlessSpacesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeServerlessSpacesRequest&, DescribeServerlessSpacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServerlessSpacesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSnapshotViewsResponse> DescribeSnapshotViewsOutcome;
+                typedef std::future<DescribeSnapshotViewsOutcome> DescribeSnapshotViewsOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeSnapshotViewsRequest&, DescribeSnapshotViewsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotViewsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSpaceKibanaToolsResponse> DescribeSpaceKibanaToolsOutcome;
                 typedef std::future<DescribeSpaceKibanaToolsOutcome> DescribeSpaceKibanaToolsOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeSpaceKibanaToolsRequest&, DescribeSpaceKibanaToolsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpaceKibanaToolsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUpgradeResponse> DescribeUpgradeOutcome;
+                typedef std::future<DescribeUpgradeOutcome> DescribeUpgradeOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeUpgradeRequest&, DescribeUpgradeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUpgradeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserCosSnapshotListResponse> DescribeUserCosSnapshotListOutcome;
                 typedef std::future<DescribeUserCosSnapshotListOutcome> DescribeUserCosSnapshotListOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeUserCosSnapshotListRequest&, DescribeUserCosSnapshotListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserCosSnapshotListAsyncHandler;
@@ -330,6 +394,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryIpTraceLogResponse> QueryIpTraceLogOutcome;
                 typedef std::future<QueryIpTraceLogOutcome> QueryIpTraceLogOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::QueryIpTraceLogRequest&, QueryIpTraceLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryIpTraceLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryZoneResourceResponse> QueryZoneResourceOutcome;
+                typedef std::future<QueryZoneResourceOutcome> QueryZoneResourceOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::QueryZoneResourceRequest&, QueryZoneResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryZoneResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryZoneResourceForLogstashResponse> QueryZoneResourceForLogstashOutcome;
+                typedef std::future<QueryZoneResourceForLogstashOutcome> QueryZoneResourceForLogstashOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::QueryZoneResourceForLogstashRequest&, QueryZoneResourceForLogstashOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryZoneResourceForLogstashAsyncHandler;
                 typedef Outcome<Core::Error, Model::RequestInstancesResponse> RequestInstancesOutcome;
                 typedef std::future<RequestInstancesOutcome> RequestInstancesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::RequestInstancesRequest&, RequestInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RequestInstancesAsyncHandler;
@@ -577,6 +647,24 @@ namespace TencentCloud
                 DescribeAutoBackUpStrategyOutcomeCallable DescribeAutoBackUpStrategyCallable(const Model::DescribeAutoBackUpStrategyRequest& request);
 
                 /**
+                 *获取自动扩盘参数
+                 * @param req DescribeAutoScaleDiskInfoRequest
+                 * @return DescribeAutoScaleDiskInfoOutcome
+                 */
+                DescribeAutoScaleDiskInfoOutcome DescribeAutoScaleDiskInfo(const Model::DescribeAutoScaleDiskInfoRequest &request);
+                void DescribeAutoScaleDiskInfoAsync(const Model::DescribeAutoScaleDiskInfoRequest& request, const DescribeAutoScaleDiskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAutoScaleDiskInfoOutcomeCallable DescribeAutoScaleDiskInfoCallable(const Model::DescribeAutoScaleDiskInfoRequest& request);
+
+                /**
+                 *获取集群节点磁盘大小上下限
+                 * @param req DescribeClusterDiskRangeRequest
+                 * @return DescribeClusterDiskRangeOutcome
+                 */
+                DescribeClusterDiskRangeOutcome DescribeClusterDiskRange(const Model::DescribeClusterDiskRangeRequest &request);
+                void DescribeClusterDiskRangeAsync(const Model::DescribeClusterDiskRangeRequest& request, const DescribeClusterDiskRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterDiskRangeOutcomeCallable DescribeClusterDiskRangeCallable(const Model::DescribeClusterDiskRangeRequest& request);
+
+                /**
                  *获取快照备份列表
                  * @param req DescribeClusterSnapshotRequest
                  * @return DescribeClusterSnapshotOutcome
@@ -586,6 +674,15 @@ namespace TencentCloud
                 DescribeClusterSnapshotOutcomeCallable DescribeClusterSnapshotCallable(const Model::DescribeClusterSnapshotRequest& request);
 
                 /**
+                 *获取集群自动备份策略概览
+                 * @param req DescribeCosBackupStrategyViewsRequest
+                 * @return DescribeCosBackupStrategyViewsOutcome
+                 */
+                DescribeCosBackupStrategyViewsOutcome DescribeCosBackupStrategyViews(const Model::DescribeCosBackupStrategyViewsRequest &request);
+                void DescribeCosBackupStrategyViewsAsync(const Model::DescribeCosBackupStrategyViewsRequest& request, const DescribeCosBackupStrategyViewsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosBackupStrategyViewsOutcomeCallable DescribeCosBackupStrategyViewsCallable(const Model::DescribeCosBackupStrategyViewsRequest& request);
+
+                /**
                  *查询智能运维诊断结果报告
                  * @param req DescribeDiagnoseRequest
                  * @return DescribeDiagnoseOutcome
@@ -593,6 +690,42 @@ namespace TencentCloud
                 DescribeDiagnoseOutcome DescribeDiagnose(const Model::DescribeDiagnoseRequest &request);
                 void DescribeDiagnoseAsync(const Model::DescribeDiagnoseRequest& request, const DescribeDiagnoseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDiagnoseOutcomeCallable DescribeDiagnoseCallable(const Model::DescribeDiagnoseRequest& request);
+
+                /**
+                 *查询事件中心列表
+                 * @param req DescribeEsInstanceEventListsRequest
+                 * @return DescribeEsInstanceEventListsOutcome
+                 */
+                DescribeEsInstanceEventListsOutcome DescribeEsInstanceEventLists(const Model::DescribeEsInstanceEventListsRequest &request);
+                void DescribeEsInstanceEventListsAsync(const Model::DescribeEsInstanceEventListsRequest& request, const DescribeEsInstanceEventListsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEsInstanceEventListsOutcomeCallable DescribeEsInstanceEventListsCallable(const Model::DescribeEsInstanceEventListsRequest& request);
+
+                /**
+                 *查询事件详情
+                 * @param req DescribeEventDataDetailRequest
+                 * @return DescribeEventDataDetailOutcome
+                 */
+                DescribeEventDataDetailOutcome DescribeEventDataDetail(const Model::DescribeEventDataDetailRequest &request);
+                void DescribeEventDataDetailAsync(const Model::DescribeEventDataDetailRequest& request, const DescribeEventDataDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEventDataDetailOutcomeCallable DescribeEventDataDetailCallable(const Model::DescribeEventDataDetailRequest& request);
+
+                /**
+                 *查询事件类型列表
+                 * @param req DescribeEventInfoListRequest
+                 * @return DescribeEventInfoListOutcome
+                 */
+                DescribeEventInfoListOutcome DescribeEventInfoList(const Model::DescribeEventInfoListRequest &request);
+                void DescribeEventInfoListAsync(const Model::DescribeEventInfoListRequest& request, const DescribeEventInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEventInfoListOutcomeCallable DescribeEventInfoListCallable(const Model::DescribeEventInfoListRequest& request);
+
+                /**
+                 *查询新增的forcemerge任务列表
+                 * @param req DescribeForceMergeTaskRequest
+                 * @return DescribeForceMergeTaskOutcome
+                 */
+                DescribeForceMergeTaskOutcome DescribeForceMergeTask(const Model::DescribeForceMergeTaskRequest &request);
+                void DescribeForceMergeTaskAsync(const Model::DescribeForceMergeTaskRequest& request, const DescribeForceMergeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeForceMergeTaskOutcomeCallable DescribeForceMergeTaskCallable(const Model::DescribeForceMergeTaskRequest& request);
 
                 /**
                  *获取索引列表
@@ -685,6 +818,33 @@ namespace TencentCloud
                 DescribeLogstashPipelinesOutcomeCallable DescribeLogstashPipelinesCallable(const Model::DescribeLogstashPipelinesRequest& request);
 
                 /**
+                 *查询Logstash集群视图
+                 * @param req DescribeLogstashViewsRequest
+                 * @return DescribeLogstashViewsOutcome
+                 */
+                DescribeLogstashViewsOutcome DescribeLogstashViews(const Model::DescribeLogstashViewsRequest &request);
+                void DescribeLogstashViewsAsync(const Model::DescribeLogstashViewsRequest& request, const DescribeLogstashViewsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogstashViewsOutcomeCallable DescribeLogstashViewsCallable(const Model::DescribeLogstashViewsRequest& request);
+
+                /**
+                 *查询ES支持的地域列表
+                 * @param req DescribeRegionsRequest
+                 * @return DescribeRegionsOutcome
+                 */
+                DescribeRegionsOutcome DescribeRegions(const Model::DescribeRegionsRequest &request);
+                void DescribeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRegionsOutcomeCallable DescribeRegionsCallable(const Model::DescribeRegionsRequest& request);
+
+                /**
+                 *集群可访问API展示
+                 * @param req DescribeRequestInstancePolicyRequest
+                 * @return DescribeRequestInstancePolicyOutcome
+                 */
+                DescribeRequestInstancePolicyOutcome DescribeRequestInstancePolicy(const Model::DescribeRequestInstancePolicyRequest &request);
+                void DescribeRequestInstancePolicyAsync(const Model::DescribeRequestInstancePolicyRequest& request, const DescribeRequestInstancePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRequestInstancePolicyOutcomeCallable DescribeRequestInstancePolicyCallable(const Model::DescribeRequestInstancePolicyRequest& request);
+
+                /**
                  *Serverless获取索引列表
                  * @param req DescribeServerlessInstancesRequest
                  * @return DescribeServerlessInstancesOutcome
@@ -722,6 +882,15 @@ namespace TencentCloud
                 DescribeServerlessSpacesOutcomeCallable DescribeServerlessSpacesCallable(const Model::DescribeServerlessSpacesRequest& request);
 
                 /**
+                 *获取集群快照列表概览
+                 * @param req DescribeSnapshotViewsRequest
+                 * @return DescribeSnapshotViewsOutcome
+                 */
+                DescribeSnapshotViewsOutcome DescribeSnapshotViews(const Model::DescribeSnapshotViewsRequest &request);
+                void DescribeSnapshotViewsAsync(const Model::DescribeSnapshotViewsRequest& request, const DescribeSnapshotViewsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSnapshotViewsOutcomeCallable DescribeSnapshotViewsCallable(const Model::DescribeSnapshotViewsRequest& request);
+
+                /**
                  *space维度的kibana获取登录token
                  * @param req DescribeSpaceKibanaToolsRequest
                  * @return DescribeSpaceKibanaToolsOutcome
@@ -729,6 +898,15 @@ namespace TencentCloud
                 DescribeSpaceKibanaToolsOutcome DescribeSpaceKibanaTools(const Model::DescribeSpaceKibanaToolsRequest &request);
                 void DescribeSpaceKibanaToolsAsync(const Model::DescribeSpaceKibanaToolsRequest& request, const DescribeSpaceKibanaToolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSpaceKibanaToolsOutcomeCallable DescribeSpaceKibanaToolsCallable(const Model::DescribeSpaceKibanaToolsRequest& request);
+
+                /**
+                 *获取实例可升级列表，包括可升级的大版本、商业特性
+                 * @param req DescribeUpgradeRequest
+                 * @return DescribeUpgradeOutcome
+                 */
+                DescribeUpgradeOutcome DescribeUpgrade(const Model::DescribeUpgradeRequest &request);
+                void DescribeUpgradeAsync(const Model::DescribeUpgradeRequest& request, const DescribeUpgradeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUpgradeOutcomeCallable DescribeUpgradeCallable(const Model::DescribeUpgradeRequest& request);
 
                 /**
                  *查询快照信息接口
@@ -846,6 +1024,24 @@ namespace TencentCloud
                 QueryIpTraceLogOutcome QueryIpTraceLog(const Model::QueryIpTraceLogRequest &request);
                 void QueryIpTraceLogAsync(const Model::QueryIpTraceLogRequest& request, const QueryIpTraceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryIpTraceLogOutcomeCallable QueryIpTraceLogCallable(const Model::QueryIpTraceLogRequest& request);
+
+                /**
+                 *获取指定region下指定zone列表的资源情况
+                 * @param req QueryZoneResourceRequest
+                 * @return QueryZoneResourceOutcome
+                 */
+                QueryZoneResourceOutcome QueryZoneResource(const Model::QueryZoneResourceRequest &request);
+                void QueryZoneResourceAsync(const Model::QueryZoneResourceRequest& request, const QueryZoneResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryZoneResourceOutcomeCallable QueryZoneResourceCallable(const Model::QueryZoneResourceRequest& request);
+
+                /**
+                 *获取Logstash指定region下指定zone列表的资源情况
+                 * @param req QueryZoneResourceForLogstashRequest
+                 * @return QueryZoneResourceForLogstashOutcome
+                 */
+                QueryZoneResourceForLogstashOutcome QueryZoneResourceForLogstash(const Model::QueryZoneResourceForLogstashRequest &request);
+                void QueryZoneResourceForLogstashAsync(const Model::QueryZoneResourceForLogstashRequest& request, const QueryZoneResourceForLogstashAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryZoneResourceForLogstashOutcomeCallable QueryZoneResourceForLogstashCallable(const Model::QueryZoneResourceForLogstashRequest& request);
 
                 /**
                  *请求集群实例

@@ -217,6 +217,8 @@
 #include <tencentcloud/mps/v20190612/model/DescribeImageSpriteTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeImageTaskDetailRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeImageTaskDetailResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeImageTasksRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeImageTasksResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeLiveRecordTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeLiveRecordTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeMDPMPSUserInfoRequest.h>
@@ -752,6 +754,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeImageTaskDetailResponse> DescribeImageTaskDetailOutcome;
                 typedef std::future<DescribeImageTaskDetailOutcome> DescribeImageTaskDetailOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeImageTaskDetailRequest&, DescribeImageTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageTaskDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageTasksResponse> DescribeImageTasksOutcome;
+                typedef std::future<DescribeImageTasksOutcome> DescribeImageTasksOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeImageTasksRequest&, DescribeImageTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLiveRecordTemplatesResponse> DescribeLiveRecordTemplatesOutcome;
                 typedef std::future<DescribeLiveRecordTemplatesOutcome> DescribeLiveRecordTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeLiveRecordTemplatesRequest&, DescribeLiveRecordTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveRecordTemplatesAsyncHandler;
@@ -2004,6 +2009,15 @@ namespace TencentCloud
                 DescribeImageTaskDetailOutcome DescribeImageTaskDetail(const Model::DescribeImageTaskDetailRequest &request);
                 void DescribeImageTaskDetailAsync(const Model::DescribeImageTaskDetailRequest& request, const DescribeImageTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeImageTaskDetailOutcomeCallable DescribeImageTaskDetailCallable(const Model::DescribeImageTaskDetailRequest& request);
+
+                /**
+                 *图片处理任务查询接口。
+                 * @param req DescribeImageTasksRequest
+                 * @return DescribeImageTasksOutcome
+                 */
+                DescribeImageTasksOutcome DescribeImageTasks(const Model::DescribeImageTasksRequest &request);
+                void DescribeImageTasksAsync(const Model::DescribeImageTasksRequest& request, const DescribeImageTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageTasksOutcomeCallable DescribeImageTasksCallable(const Model::DescribeImageTasksRequest& request);
 
                 /**
                  *获取直播录制模板

@@ -2540,6 +2540,106 @@ EssbasicClient::ChannelVerifyPdfOutcomeCallable EssbasicClient::ChannelVerifyPdf
     return prom->get_future();
 }
 
+EssbasicClient::CreateBatchAdminChangeInvitationsOutcome EssbasicClient::CreateBatchAdminChangeInvitations(const CreateBatchAdminChangeInvitationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBatchAdminChangeInvitations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBatchAdminChangeInvitationsResponse rsp = CreateBatchAdminChangeInvitationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBatchAdminChangeInvitationsOutcome(rsp);
+        else
+            return CreateBatchAdminChangeInvitationsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBatchAdminChangeInvitationsOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::CreateBatchAdminChangeInvitationsAsync(const CreateBatchAdminChangeInvitationsRequest& request, const CreateBatchAdminChangeInvitationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateBatchAdminChangeInvitationsRequest&;
+    using Resp = CreateBatchAdminChangeInvitationsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateBatchAdminChangeInvitations", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssbasicClient::CreateBatchAdminChangeInvitationsOutcomeCallable EssbasicClient::CreateBatchAdminChangeInvitationsCallable(const CreateBatchAdminChangeInvitationsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateBatchAdminChangeInvitationsOutcome>>();
+    CreateBatchAdminChangeInvitationsAsync(
+    request,
+    [prom](
+        const EssbasicClient*,
+        const CreateBatchAdminChangeInvitationsRequest&,
+        CreateBatchAdminChangeInvitationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EssbasicClient::CreateBatchAdminChangeInvitationsUrlOutcome EssbasicClient::CreateBatchAdminChangeInvitationsUrl(const CreateBatchAdminChangeInvitationsUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBatchAdminChangeInvitationsUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBatchAdminChangeInvitationsUrlResponse rsp = CreateBatchAdminChangeInvitationsUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBatchAdminChangeInvitationsUrlOutcome(rsp);
+        else
+            return CreateBatchAdminChangeInvitationsUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBatchAdminChangeInvitationsUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::CreateBatchAdminChangeInvitationsUrlAsync(const CreateBatchAdminChangeInvitationsUrlRequest& request, const CreateBatchAdminChangeInvitationsUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateBatchAdminChangeInvitationsUrlRequest&;
+    using Resp = CreateBatchAdminChangeInvitationsUrlResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateBatchAdminChangeInvitationsUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssbasicClient::CreateBatchAdminChangeInvitationsUrlOutcomeCallable EssbasicClient::CreateBatchAdminChangeInvitationsUrlCallable(const CreateBatchAdminChangeInvitationsUrlRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateBatchAdminChangeInvitationsUrlOutcome>>();
+    CreateBatchAdminChangeInvitationsUrlAsync(
+    request,
+    [prom](
+        const EssbasicClient*,
+        const CreateBatchAdminChangeInvitationsUrlRequest&,
+        CreateBatchAdminChangeInvitationsUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EssbasicClient::CreateBatchInitOrganizationUrlOutcome EssbasicClient::CreateBatchInitOrganizationUrl(const CreateBatchInitOrganizationUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBatchInitOrganizationUrl");
@@ -4532,6 +4632,56 @@ EssbasicClient::ModifyFlowDeadlineOutcomeCallable EssbasicClient::ModifyFlowDead
         const EssbasicClient*,
         const ModifyFlowDeadlineRequest&,
         ModifyFlowDeadlineOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EssbasicClient::ModifyOrganizationBusinessInfoOutcome EssbasicClient::ModifyOrganizationBusinessInfo(const ModifyOrganizationBusinessInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyOrganizationBusinessInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyOrganizationBusinessInfoResponse rsp = ModifyOrganizationBusinessInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyOrganizationBusinessInfoOutcome(rsp);
+        else
+            return ModifyOrganizationBusinessInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyOrganizationBusinessInfoOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ModifyOrganizationBusinessInfoAsync(const ModifyOrganizationBusinessInfoRequest& request, const ModifyOrganizationBusinessInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyOrganizationBusinessInfoRequest&;
+    using Resp = ModifyOrganizationBusinessInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyOrganizationBusinessInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssbasicClient::ModifyOrganizationBusinessInfoOutcomeCallable EssbasicClient::ModifyOrganizationBusinessInfoCallable(const ModifyOrganizationBusinessInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyOrganizationBusinessInfoOutcome>>();
+    ModifyOrganizationBusinessInfoAsync(
+    request,
+    [prom](
+        const EssbasicClient*,
+        const ModifyOrganizationBusinessInfoRequest&,
+        ModifyOrganizationBusinessInfoOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

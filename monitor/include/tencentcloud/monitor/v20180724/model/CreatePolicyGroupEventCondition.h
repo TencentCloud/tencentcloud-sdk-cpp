@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警事件的Id
-                     * @return EventId 告警事件的Id
+                     * 获取<p>告警事件的Id</p>
+                     * @return EventId <p>告警事件的Id</p>
                      * 
                      */
                     int64_t GetEventId() const;
 
                     /**
-                     * 设置告警事件的Id
-                     * @param _eventId 告警事件的Id
+                     * 设置<p>告警事件的Id</p>
+                     * @param _eventId <p>告警事件的Id</p>
                      * 
                      */
                     void SetEventId(const int64_t& _eventId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool EventIdHasBeenSet() const;
 
                     /**
-                     * 获取告警发送收敛类型。0连续告警，1指数告警
-                     * @return AlarmNotifyType 告警发送收敛类型。0连续告警，1指数告警
+                     * 获取<p>告警发送收敛类型。0连续告警，1指数告警</p>
+                     * @return AlarmNotifyType <p>告警发送收敛类型。0连续告警，1指数告警</p>
                      * 
                      */
                     int64_t GetAlarmNotifyType() const;
 
                     /**
-                     * 设置告警发送收敛类型。0连续告警，1指数告警
-                     * @param _alarmNotifyType 告警发送收敛类型。0连续告警，1指数告警
+                     * 设置<p>告警发送收敛类型。0连续告警，1指数告警</p>
+                     * @param _alarmNotifyType <p>告警发送收敛类型。0连续告警，1指数告警</p>
                      * 
                      */
                     void SetAlarmNotifyType(const int64_t& _alarmNotifyType);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool AlarmNotifyTypeHasBeenSet() const;
 
                     /**
-                     * 获取告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次
-                     * @return AlarmNotifyPeriod 告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次
+                     * 获取<p>告警发送周期单位秒。&lt;0 不触发, 0 只触发一次, &gt;0 每隔triggerTime秒触发一次</p>
+                     * @return AlarmNotifyPeriod <p>告警发送周期单位秒。&lt;0 不触发, 0 只触发一次, &gt;0 每隔triggerTime秒触发一次</p>
                      * 
                      */
                     int64_t GetAlarmNotifyPeriod() const;
 
                     /**
-                     * 设置告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次
-                     * @param _alarmNotifyPeriod 告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次
+                     * 设置<p>告警发送周期单位秒。&lt;0 不触发, 0 只触发一次, &gt;0 每隔triggerTime秒触发一次</p>
+                     * @param _alarmNotifyPeriod <p>告警发送周期单位秒。&lt;0 不触发, 0 只触发一次, &gt;0 每隔triggerTime秒触发一次</p>
                      * 
                      */
                     void SetAlarmNotifyPeriod(const int64_t& _alarmNotifyPeriod);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool AlarmNotifyPeriodHasBeenSet() const;
 
                     /**
-                     * 获取如果通过模板创建，需要传入模板中该指标的对应RuleId
-                     * @return RuleId 如果通过模板创建，需要传入模板中该指标的对应RuleId
+                     * 获取<p>如果通过模板创建，需要传入模板中该指标的对应RuleId</p>
+                     * @return RuleId <p>如果通过模板创建，需要传入模板中该指标的对应RuleId</p>
                      * 
                      */
                     int64_t GetRuleId() const;
 
                     /**
-                     * 设置如果通过模板创建，需要传入模板中该指标的对应RuleId
-                     * @param _ruleId 如果通过模板创建，需要传入模板中该指标的对应RuleId
+                     * 设置<p>如果通过模板创建，需要传入模板中该指标的对应RuleId</p>
+                     * @param _ruleId <p>如果通过模板创建，需要传入模板中该指标的对应RuleId</p>
                      * 
                      */
                     void SetRuleId(const int64_t& _ruleId);
@@ -133,25 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 告警事件的Id
+                     * <p>告警事件的Id</p>
                      */
                     int64_t m_eventId;
                     bool m_eventIdHasBeenSet;
 
                     /**
-                     * 告警发送收敛类型。0连续告警，1指数告警
+                     * <p>告警发送收敛类型。0连续告警，1指数告警</p>
                      */
                     int64_t m_alarmNotifyType;
                     bool m_alarmNotifyTypeHasBeenSet;
 
                     /**
-                     * 告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次
+                     * <p>告警发送周期单位秒。&lt;0 不触发, 0 只触发一次, &gt;0 每隔triggerTime秒触发一次</p>
                      */
                     int64_t m_alarmNotifyPeriod;
                     bool m_alarmNotifyPeriodHasBeenSet;
 
                     /**
-                     * 如果通过模板创建，需要传入模板中该指标的对应RuleId
+                     * <p>如果通过模板创建，需要传入模板中该指标的对应RuleId</p>
                      */
                     int64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;

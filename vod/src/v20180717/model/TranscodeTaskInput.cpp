@@ -30,6 +30,7 @@ TranscodeTaskInput::TranscodeTaskInput() :
     m_headTailSetHasBeenSet(false),
     m_startTimeOffsetHasBeenSet(false),
     m_endTimeOffsetHasBeenSet(false),
+    m_overrideParameterHasBeenSet(false),
     m_subtitleInfoSetHasBeenSet(false)
 {
 }
@@ -180,6 +181,23 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
         m_endTimeOffsetHasBeenSet = true;
     }
 
+    if (value.HasMember("OverrideParameter") && !value["OverrideParameter"].IsNull())
+    {
+        if (!value["OverrideParameter"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.OverrideParameter` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_overrideParameter.Deserialize(value["OverrideParameter"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_overrideParameterHasBeenSet = true;
+    }
+
     if (value.HasMember("SubtitleInfoSet") && !value["SubtitleInfoSet"].IsNull())
     {
         if (!value["SubtitleInfoSet"].IsArray())
@@ -301,6 +319,15 @@ void TranscodeTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "EndTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTimeOffset, allocator);
+    }
+
+    if (m_overrideParameterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OverrideParameter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_overrideParameter.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_subtitleInfoSetHasBeenSet)
@@ -463,6 +490,22 @@ void TranscodeTaskInput::SetEndTimeOffset(const double& _endTimeOffset)
 bool TranscodeTaskInput::EndTimeOffsetHasBeenSet() const
 {
     return m_endTimeOffsetHasBeenSet;
+}
+
+OverrideTranscodeParameter TranscodeTaskInput::GetOverrideParameter() const
+{
+    return m_overrideParameter;
+}
+
+void TranscodeTaskInput::SetOverrideParameter(const OverrideTranscodeParameter& _overrideParameter)
+{
+    m_overrideParameter = _overrideParameter;
+    m_overrideParameterHasBeenSet = true;
+}
+
+bool TranscodeTaskInput::OverrideParameterHasBeenSet() const
+{
+    return m_overrideParameterHasBeenSet;
 }
 
 vector<SubtitleInfoInput> TranscodeTaskInput::GetSubtitleInfoSet() const

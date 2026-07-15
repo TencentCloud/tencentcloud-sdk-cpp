@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警通知频率
-                     * @return AlarmNotifyPeriod 告警通知频率
+                     * 获取<p>告警通知频率</p>
+                     * @return AlarmNotifyPeriod <p>告警通知频率</p>
                      * 
                      */
                     int64_t GetAlarmNotifyPeriod() const;
 
                     /**
-                     * 设置告警通知频率
-                     * @param _alarmNotifyPeriod 告警通知频率
+                     * 设置<p>告警通知频率</p>
+                     * @param _alarmNotifyPeriod <p>告警通知频率</p>
                      * 
                      */
                     void SetAlarmNotifyPeriod(const int64_t& _alarmNotifyPeriod);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool AlarmNotifyPeriodHasBeenSet() const;
 
                     /**
-                     * 获取重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）
-                     * @return AlarmNotifyType 重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）
+                     * 获取<p>重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）</p>
+                     * @return AlarmNotifyType <p>重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）</p>
                      * 
                      */
                     int64_t GetAlarmNotifyType() const;
 
                     /**
-                     * 设置重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）
-                     * @param _alarmNotifyType 重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）
+                     * 设置<p>重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）</p>
+                     * @param _alarmNotifyType <p>重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）</p>
                      * 
                      */
                     void SetAlarmNotifyType(const int64_t& _alarmNotifyType);
@@ -90,18 +90,18 @@ namespace TencentCloud
                     bool AlarmNotifyTypeHasBeenSet() const;
 
                     /**
-                     * 获取检测方式
+                     * 获取<p>检测方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CalcType 检测方式
+                     * @return CalcType <p>检测方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCalcType() const;
 
                     /**
-                     * 设置检测方式
+                     * 设置<p>检测方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _calcType 检测方式
+                     * @param _calcType <p>检测方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -115,18 +115,18 @@ namespace TencentCloud
                     bool CalcTypeHasBeenSet() const;
 
                     /**
-                     * 获取检测值
+                     * 获取<p>检测值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CalcValue 检测值
+                     * @return CalcValue <p>检测值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCalcValue() const;
 
                     /**
-                     * 设置检测值
+                     * 设置<p>检测值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _calcValue 检测值
+                     * @param _calcValue <p>检测值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -140,18 +140,18 @@ namespace TencentCloud
                     bool CalcValueHasBeenSet() const;
 
                     /**
-                     * 获取持续时间，单位秒
+                     * 获取<p>持续时间，单位秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ContinueTime 持续时间，单位秒
+                     * @return ContinueTime <p>持续时间，单位秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContinueTime() const;
 
                     /**
-                     * 设置持续时间，单位秒
+                     * 设置<p>持续时间，单位秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _continueTime 持续时间，单位秒
+                     * @param _continueTime <p>持续时间，单位秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -165,15 +165,15 @@ namespace TencentCloud
                     bool ContinueTimeHasBeenSet() const;
 
                     /**
-                     * 获取指标ID
-                     * @return MetricID 指标ID
+                     * 获取<p>指标ID</p>
+                     * @return MetricID <p>指标ID</p>
                      * 
                      */
                     int64_t GetMetricID() const;
 
                     /**
-                     * 设置指标ID
-                     * @param _metricID 指标ID
+                     * 设置<p>指标ID</p>
+                     * @param _metricID <p>指标ID</p>
                      * 
                      */
                     void SetMetricID(const int64_t& _metricID);
@@ -186,15 +186,15 @@ namespace TencentCloud
                     bool MetricIDHasBeenSet() const;
 
                     /**
-                     * 获取指标展示名称（对外）
-                     * @return MetricDisplayName 指标展示名称（对外）
+                     * 获取<p>指标展示名称（对外）</p>
+                     * @return MetricDisplayName <p>指标展示名称（对外）</p>
                      * 
                      */
                     std::string GetMetricDisplayName() const;
 
                     /**
-                     * 设置指标展示名称（对外）
-                     * @param _metricDisplayName 指标展示名称（对外）
+                     * 设置<p>指标展示名称（对外）</p>
+                     * @param _metricDisplayName <p>指标展示名称（对外）</p>
                      * 
                      */
                     void SetMetricDisplayName(const std::string& _metricDisplayName);
@@ -207,15 +207,15 @@ namespace TencentCloud
                     bool MetricDisplayNameHasBeenSet() const;
 
                     /**
-                     * 获取周期
-                     * @return Period 周期
+                     * 获取<p>周期</p>
+                     * @return Period <p>周期</p>
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置周期
-                     * @param _period 周期
+                     * 设置<p>周期</p>
+                     * @param _period <p>周期</p>
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -228,15 +228,15 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取规则ID
-                     * @return RuleID 规则ID
+                     * 获取<p>规则ID</p>
+                     * @return RuleID <p>规则ID</p>
                      * 
                      */
                     int64_t GetRuleID() const;
 
                     /**
-                     * 设置规则ID
-                     * @param _ruleID 规则ID
+                     * 设置<p>规则ID</p>
+                     * @param _ruleID <p>规则ID</p>
                      * 
                      */
                     void SetRuleID(const int64_t& _ruleID);
@@ -249,15 +249,15 @@ namespace TencentCloud
                     bool RuleIDHasBeenSet() const;
 
                     /**
-                     * 获取指标单位
-                     * @return Unit 指标单位
+                     * 获取<p>指标单位</p>
+                     * @return Unit <p>指标单位</p>
                      * 
                      */
                     std::string GetUnit() const;
 
                     /**
-                     * 设置指标单位
-                     * @param _unit 指标单位
+                     * 设置<p>指标单位</p>
+                     * @param _unit <p>指标单位</p>
                      * 
                      */
                     void SetUnit(const std::string& _unit);
@@ -270,15 +270,15 @@ namespace TencentCloud
                     bool UnitHasBeenSet() const;
 
                     /**
-                     * 获取是否为高级指标，0：否；1：是
-                     * @return IsAdvanced 是否为高级指标，0：否；1：是
+                     * 获取<p>是否为高级指标，0：否；1：是</p>
+                     * @return IsAdvanced <p>是否为高级指标，0：否；1：是</p>
                      * 
                      */
                     int64_t GetIsAdvanced() const;
 
                     /**
-                     * 设置是否为高级指标，0：否；1：是
-                     * @param _isAdvanced 是否为高级指标，0：否；1：是
+                     * 设置<p>是否为高级指标，0：否；1：是</p>
+                     * @param _isAdvanced <p>是否为高级指标，0：否；1：是</p>
                      * 
                      */
                     void SetIsAdvanced(const int64_t& _isAdvanced);
@@ -291,15 +291,15 @@ namespace TencentCloud
                     bool IsAdvancedHasBeenSet() const;
 
                     /**
-                     * 获取是否开通高级指标，0：否；1：是
-                     * @return IsOpen 是否开通高级指标，0：否；1：是
+                     * 获取<p>是否开通高级指标，0：否；1：是</p>
+                     * @return IsOpen <p>是否开通高级指标，0：否；1：是</p>
                      * 
                      */
                     int64_t GetIsOpen() const;
 
                     /**
-                     * 设置是否开通高级指标，0：否；1：是
-                     * @param _isOpen 是否开通高级指标，0：否；1：是
+                     * 设置<p>是否开通高级指标，0：否；1：是</p>
+                     * @param _isOpen <p>是否开通高级指标，0：否；1：是</p>
                      * 
                      */
                     void SetIsOpen(const int64_t& _isOpen);
@@ -312,18 +312,18 @@ namespace TencentCloud
                     bool IsOpenHasBeenSet() const;
 
                     /**
-                     * 获取产品ID
+                     * 获取<p>产品ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProductId 产品ID
+                     * @return ProductId <p>产品ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductId() const;
 
                     /**
-                     * 设置产品ID
+                     * 设置<p>产品ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _productId 产品ID
+                     * @param _productId <p>产品ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -337,18 +337,18 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取告警分级阈值配置
+                     * 获取<p>告警分级阈值配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HierarchicalValue 告警分级阈值配置
+                     * @return HierarchicalValue <p>告警分级阈值配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AlarmHierarchicalValue GetHierarchicalValue() const;
 
                     /**
-                     * 设置告警分级阈值配置
+                     * 设置<p>告警分级阈值配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hierarchicalValue 告警分级阈值配置
+                     * @param _hierarchicalValue <p>告警分级阈值配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -362,18 +362,18 @@ namespace TencentCloud
                     bool HierarchicalValueHasBeenSet() const;
 
                     /**
-                     * 获取指标类型，用于区分动态指标
+                     * 获取<p>指标类型，用于区分动态指标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleType 指标类型，用于区分动态指标
+                     * @return RuleType <p>指标类型，用于区分动态指标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleType() const;
 
                     /**
-                     * 设置指标类型，用于区分动态指标
+                     * 设置<p>指标类型，用于区分动态指标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ruleType 指标类型，用于区分动态指标
+                     * @param _ruleType <p>指标类型，用于区分动态指标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -389,96 +389,96 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 告警通知频率
+                     * <p>告警通知频率</p>
                      */
                     int64_t m_alarmNotifyPeriod;
                     bool m_alarmNotifyPeriodHasBeenSet;
 
                     /**
-                     * 重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）
+                     * <p>重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）</p>
                      */
                     int64_t m_alarmNotifyType;
                     bool m_alarmNotifyTypeHasBeenSet;
 
                     /**
-                     * 检测方式
+                     * <p>检测方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_calcType;
                     bool m_calcTypeHasBeenSet;
 
                     /**
-                     * 检测值
+                     * <p>检测值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_calcValue;
                     bool m_calcValueHasBeenSet;
 
                     /**
-                     * 持续时间，单位秒
+                     * <p>持续时间，单位秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_continueTime;
                     bool m_continueTimeHasBeenSet;
 
                     /**
-                     * 指标ID
+                     * <p>指标ID</p>
                      */
                     int64_t m_metricID;
                     bool m_metricIDHasBeenSet;
 
                     /**
-                     * 指标展示名称（对外）
+                     * <p>指标展示名称（对外）</p>
                      */
                     std::string m_metricDisplayName;
                     bool m_metricDisplayNameHasBeenSet;
 
                     /**
-                     * 周期
+                     * <p>周期</p>
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 规则ID
+                     * <p>规则ID</p>
                      */
                     int64_t m_ruleID;
                     bool m_ruleIDHasBeenSet;
 
                     /**
-                     * 指标单位
+                     * <p>指标单位</p>
                      */
                     std::string m_unit;
                     bool m_unitHasBeenSet;
 
                     /**
-                     * 是否为高级指标，0：否；1：是
+                     * <p>是否为高级指标，0：否；1：是</p>
                      */
                     int64_t m_isAdvanced;
                     bool m_isAdvancedHasBeenSet;
 
                     /**
-                     * 是否开通高级指标，0：否；1：是
+                     * <p>是否开通高级指标，0：否；1：是</p>
                      */
                     int64_t m_isOpen;
                     bool m_isOpenHasBeenSet;
 
                     /**
-                     * 产品ID
+                     * <p>产品ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 告警分级阈值配置
+                     * <p>告警分级阈值配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AlarmHierarchicalValue m_hierarchicalValue;
                     bool m_hierarchicalValueHasBeenSet;
 
                     /**
-                     * 指标类型，用于区分动态指标
+                     * <p>指标类型，用于区分动态指标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleType;

@@ -275,6 +275,27 @@ namespace TencentCloud
                     bool SrcTopicRegionHasBeenSet() const;
 
                     /**
+                     * 获取<p>调度时间单位</p><p>取值范围：[1, 2]</p><p>默认值：1</p><p>默认值为1（分钟），其他值2（秒）</p>
+                     * @return ProcessPeriodUnit <p>调度时间单位</p><p>取值范围：[1, 2]</p><p>默认值：1</p><p>默认值为1（分钟），其他值2（秒）</p>
+                     * 
+                     */
+                    int64_t GetProcessPeriodUnit() const;
+
+                    /**
+                     * 设置<p>调度时间单位</p><p>取值范围：[1, 2]</p><p>默认值：1</p><p>默认值为1（分钟），其他值2（秒）</p>
+                     * @param _processPeriodUnit <p>调度时间单位</p><p>取值范围：[1, 2]</p><p>默认值：1</p><p>默认值为1（分钟），其他值2（秒）</p>
+                     * 
+                     */
+                    void SetProcessPeriodUnit(const int64_t& _processPeriodUnit);
+
+                    /**
+                     * 判断参数 ProcessPeriodUnit 是否已赋值
+                     * @return ProcessPeriodUnit 是否已赋值
+                     * 
+                     */
+                    bool ProcessPeriodUnitHasBeenSet() const;
+
+                    /**
                      * 获取<p>调度结束时间，当ProcessType=2时为必传字段, Unix时间戳，单位ms</p>
                      * @return ProcessEndTime <p>调度结束时间，当ProcessType=2时为必传字段, Unix时间戳，单位ms</p>
                      * 
@@ -425,6 +446,12 @@ namespace TencentCloud
                      */
                     std::string m_srcTopicRegion;
                     bool m_srcTopicRegionHasBeenSet;
+
+                    /**
+                     * <p>调度时间单位</p><p>取值范围：[1, 2]</p><p>默认值：1</p><p>默认值为1（分钟），其他值2（秒）</p>
+                     */
+                    int64_t m_processPeriodUnit;
+                    bool m_processPeriodUnitHasBeenSet;
 
                     /**
                      * <p>调度结束时间，当ProcessType=2时为必传字段, Unix时间戳，单位ms</p>

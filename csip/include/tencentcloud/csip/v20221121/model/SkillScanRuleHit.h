@@ -47,15 +47,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取融合规则编号（9xxxx），可与 RuleCatalog 交叉引用
-                     * @return RuleID 融合规则编号（9xxxx），可与 RuleCatalog 交叉引用
+                     * 获取融合规则编号
+参数格式：形如 9xxxx
+                     * @return RuleID 融合规则编号
+参数格式：形如 9xxxx
                      * 
                      */
                     std::string GetRuleID() const;
 
                     /**
-                     * 设置融合规则编号（9xxxx），可与 RuleCatalog 交叉引用
-                     * @param _ruleID 融合规则编号（9xxxx），可与 RuleCatalog 交叉引用
+                     * 设置融合规则编号
+参数格式：形如 9xxxx
+                     * @param _ruleID 融合规则编号
+参数格式：形如 9xxxx
                      * 
                      */
                     void SetRuleID(const std::string& _ruleID);
@@ -68,15 +72,15 @@ namespace TencentCloud
                     bool RuleIDHasBeenSet() const;
 
                     /**
-                     * 获取当前命中规则的具体发现描述，包含文件位置、行为特征、风险点等信息
-                     * @return Description 当前命中规则的具体发现描述，包含文件位置、行为特征、风险点等信息
+                     * 获取风险发现描述
+                     * @return Description 风险发现描述
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置当前命中规则的具体发现描述，包含文件位置、行为特征、风险点等信息
-                     * @param _description 当前命中规则的具体发现描述，包含文件位置、行为特征、风险点等信息
+                     * 设置风险发现描述
+                     * @param _description 风险发现描述
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -91,13 +95,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 融合规则编号（9xxxx），可与 RuleCatalog 交叉引用
+                     * 融合规则编号
+参数格式：形如 9xxxx
                      */
                     std::string m_ruleID;
                     bool m_ruleIDHasBeenSet;
 
                     /**
-                     * 当前命中规则的具体发现描述，包含文件位置、行为特征、风险点等信息
+                     * 风险发现描述
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

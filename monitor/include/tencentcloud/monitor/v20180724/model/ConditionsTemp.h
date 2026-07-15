@@ -49,18 +49,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板名称
+                     * 获取<p>模板名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TemplateName 模板名称
+                     * @return TemplateName <p>模板名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置模板名称
+                     * 设置<p>模板名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _templateName 模板名称
+                     * @param _templateName <p>模板名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,18 +74,18 @@ namespace TencentCloud
                     bool TemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取指标触发条件
+                     * 获取<p>指标触发条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Condition 指标触发条件
+                     * @return Condition <p>指标触发条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AlarmPolicyCondition GetCondition() const;
 
                     /**
-                     * 设置指标触发条件
+                     * 设置<p>指标触发条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _condition 指标触发条件
+                     * @param _condition <p>指标触发条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,18 +99,18 @@ namespace TencentCloud
                     bool ConditionHasBeenSet() const;
 
                     /**
-                     * 获取事件触发条件
+                     * 获取<p>事件触发条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EventCondition 事件触发条件
+                     * @return EventCondition <p>事件触发条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AlarmPolicyEventCondition GetEventCondition() const;
 
                     /**
-                     * 设置事件触发条件
+                     * 设置<p>事件触发条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _eventCondition 事件触发条件
+                     * @param _eventCondition <p>事件触发条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -126,21 +126,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板名称
+                     * <p>模板名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;
 
                     /**
-                     * 指标触发条件
+                     * <p>指标触发条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AlarmPolicyCondition m_condition;
                     bool m_conditionHasBeenSet;
 
                     /**
-                     * 事件触发条件
+                     * <p>事件触发条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AlarmPolicyEventCondition m_eventCondition;

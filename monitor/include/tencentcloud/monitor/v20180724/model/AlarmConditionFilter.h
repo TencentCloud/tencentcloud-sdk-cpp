@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取类型
+                     * 获取<p>类型</p><p>枚举值：</p><ul><li>EXPRESSION： 用表达式过滤</li><li>DIMENSION： 用维度条件过滤</li><li>BIND_ALL： 绑定全部实例</li><li>LOG_ALARM： 日志告警专用过滤</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 类型
+                     * @return Type <p>类型</p><p>枚举值：</p><ul><li>EXPRESSION： 用表达式过滤</li><li>DIMENSION： 用维度条件过滤</li><li>BIND_ALL： 绑定全部实例</li><li>LOG_ALARM： 日志告警专用过滤</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型
+                     * 设置<p>类型</p><p>枚举值：</p><ul><li>EXPRESSION： 用表达式过滤</li><li>DIMENSION： 用维度条件过滤</li><li>BIND_ALL： 绑定全部实例</li><li>LOG_ALARM： 日志告警专用过滤</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type 类型
+                     * @param _type <p>类型</p><p>枚举值：</p><ul><li>EXPRESSION： 用表达式过滤</li><li>DIMENSION： 用维度条件过滤</li><li>BIND_ALL： 绑定全部实例</li><li>LOG_ALARM： 日志告警专用过滤</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取表达式
+                     * 获取<p>表达式</p><p>Type为Expression有值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Expression 表达式
+                     * @return Expression <p>表达式</p><p>Type为Expression有值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpression() const;
 
                     /**
-                     * 设置表达式
+                     * 设置<p>表达式</p><p>Type为Expression有值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _expression 表达式
+                     * @param _expression <p>表达式</p><p>Type为Expression有值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool ExpressionHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件
+                     * 获取<p>过滤条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Dimensions 过滤条件
+                     * @return Dimensions <p>过滤条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDimensions() const;
 
                     /**
-                     * 设置过滤条件
+                     * 设置<p>过滤条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dimensions 过滤条件
+                     * @param _dimensions <p>过滤条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,21 +124,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 类型
+                     * <p>类型</p><p>枚举值：</p><ul><li>EXPRESSION： 用表达式过滤</li><li>DIMENSION： 用维度条件过滤</li><li>BIND_ALL： 绑定全部实例</li><li>LOG_ALARM： 日志告警专用过滤</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 表达式
+                     * <p>表达式</p><p>Type为Expression有值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expression;
                     bool m_expressionHasBeenSet;
 
                     /**
-                     * 过滤条件
+                     * <p>过滤条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dimensions;

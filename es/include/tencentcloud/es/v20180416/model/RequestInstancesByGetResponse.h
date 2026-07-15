@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>集群返回信息</p>
+                     * @return Detail <p>集群返回信息</p>
+                     * 
+                     */
+                    std::string GetDetail() const;
+
+                    /**
+                     * 判断参数 Detail 是否已赋值
+                     * @return Detail 是否已赋值
+                     * 
+                     */
+                    bool DetailHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>集群返回信息</p>
+                     */
+                    std::string m_detail;
+                    bool m_detailHasBeenSet;
 
                 };
             }

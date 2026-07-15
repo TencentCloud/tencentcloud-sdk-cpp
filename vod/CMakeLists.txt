@@ -114,6 +114,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/AiReviewTaskPoliticalOcrResult.h
   include/tencentcloud/vod/v20180717/model/QualityEnhanceTask.h
   include/tencentcloud/vod/v20180717/model/AiSampleWord.h
+  include/tencentcloud/vod/v20180717/model/OverrideTranscodeParameter.h
   include/tencentcloud/vod/v20180717/model/PoliticalOcrReviewTemplateInfo.h
   include/tencentcloud/vod/v20180717/model/CreateImageSpriteTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/AigcAudioReferenceAudioInfo.h
@@ -1217,6 +1218,7 @@ set(vod_src
   src/v20180717/model/AiReviewTaskPoliticalOcrResult.cpp
   src/v20180717/model/QualityEnhanceTask.cpp
   src/v20180717/model/AiSampleWord.cpp
+  src/v20180717/model/OverrideTranscodeParameter.cpp
   src/v20180717/model/PoliticalOcrReviewTemplateInfo.cpp
   src/v20180717/model/CreateImageSpriteTemplateRequest.cpp
   src/v20180717/model/AigcAudioReferenceAudioInfo.cpp

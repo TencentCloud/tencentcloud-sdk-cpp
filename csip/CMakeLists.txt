@@ -149,7 +149,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeExposeAssetCategoryResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmIdentifyInfoListRequest.h
   include/tencentcloud/csip/v20221121/model/ModifyCosAuditObjectSampleRateResponse.h
-  include/tencentcloud/csip/v20221121/model/VulRiskItem.h
+  include/tencentcloud/csip/v20221121/model/ModifyCosAuditBucketMonitorStatusResponse.h
   include/tencentcloud/csip/v20221121/model/DeleteCosAkAssetResponse.h
   include/tencentcloud/csip/v20221121/model/AssetTagModifyAssetItem.h
   include/tencentcloud/csip/v20221121/model/DescribeAccessKeyAlarmResponse.h
@@ -202,6 +202,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/CreateDspmPersonalIdentifyResponse.h
   include/tencentcloud/csip/v20221121/model/DspmIpCount.h
   include/tencentcloud/csip/v20221121/model/DescribeGatewayAssetsRequest.h
+  include/tencentcloud/csip/v20221121/model/ModifyCosAuditBucketMonitorStatusRequest.h
   include/tencentcloud/csip/v20221121/model/AccessKeyAsset.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskCallRecordRequest.h
   include/tencentcloud/csip/v20221121/model/DspmAssetFieldInfo.h
@@ -248,6 +249,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/HitRules.h
   include/tencentcloud/csip/v20221121/model/DspmIdentifyCount.h
   include/tencentcloud/csip/v20221121/model/DspmAccessRecord.h
+  include/tencentcloud/csip/v20221121/model/VulRiskItem.h
   include/tencentcloud/csip/v20221121/model/DescribeTopAttackInfoResponse.h
   include/tencentcloud/csip/v20221121/model/ModifyDspmPersonalIdentifyRequest.h
   include/tencentcloud/csip/v20221121/model/CreateIaCAccessTokenResponse.h
@@ -992,7 +994,7 @@ set(csip_src
   src/v20221121/model/DescribeExposeAssetCategoryResponse.cpp
   src/v20221121/model/DescribeDspmIdentifyInfoListRequest.cpp
   src/v20221121/model/ModifyCosAuditObjectSampleRateResponse.cpp
-  src/v20221121/model/VulRiskItem.cpp
+  src/v20221121/model/ModifyCosAuditBucketMonitorStatusResponse.cpp
   src/v20221121/model/DeleteCosAkAssetResponse.cpp
   src/v20221121/model/AssetTagModifyAssetItem.cpp
   src/v20221121/model/DescribeAccessKeyAlarmResponse.cpp
@@ -1045,6 +1047,7 @@ set(csip_src
   src/v20221121/model/CreateDspmPersonalIdentifyResponse.cpp
   src/v20221121/model/DspmIpCount.cpp
   src/v20221121/model/DescribeGatewayAssetsRequest.cpp
+  src/v20221121/model/ModifyCosAuditBucketMonitorStatusRequest.cpp
   src/v20221121/model/AccessKeyAsset.cpp
   src/v20221121/model/DescribeRiskCallRecordRequest.cpp
   src/v20221121/model/DspmAssetFieldInfo.cpp
@@ -1091,6 +1094,7 @@ set(csip_src
   src/v20221121/model/HitRules.cpp
   src/v20221121/model/DspmIdentifyCount.cpp
   src/v20221121/model/DspmAccessRecord.cpp
+  src/v20221121/model/VulRiskItem.cpp
   src/v20221121/model/DescribeTopAttackInfoResponse.cpp
   src/v20221121/model/ModifyDspmPersonalIdentifyRequest.cpp
   src/v20221121/model/CreateIaCAccessTokenResponse.cpp

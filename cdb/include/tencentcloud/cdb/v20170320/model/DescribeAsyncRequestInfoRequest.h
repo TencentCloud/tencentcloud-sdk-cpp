@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取异步任务的请求 ID。
-                     * @return AsyncRequestId 异步任务的请求 ID。
+                     * 获取<p>异步任务的请求 ID。</p>
+                     * @return AsyncRequestId <p>异步任务的请求 ID。</p>
                      * 
                      */
                     std::string GetAsyncRequestId() const;
 
                     /**
-                     * 设置异步任务的请求 ID。
-                     * @param _asyncRequestId 异步任务的请求 ID。
+                     * 设置<p>异步任务的请求 ID。</p>
+                     * @param _asyncRequestId <p>异步任务的请求 ID。</p>
                      * 
                      */
                     void SetAsyncRequestId(const std::string& _asyncRequestId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 异步任务的请求 ID。
+                     * <p>异步任务的请求 ID。</p>
                      */
                     std::string m_asyncRequestId;
                     bool m_asyncRequestIdHasBeenSet;
