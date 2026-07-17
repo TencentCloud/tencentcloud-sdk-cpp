@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。
-                     * @return ProductType 套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。
+                     * 获取<p>套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。</p>
+                     * @return ProductType <p>套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。</p>
                      * 
                      */
                     std::string GetProductType() const;
 
                     /**
-                     * 设置套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。
-                     * @param _productType 套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。
+                     * 设置<p>套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。</p>
+                     * @param _productType <p>套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。</p>
                      * 
                      */
                     void SetProductType(const std::string& _productType);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProductTypeHasBeenSet() const;
 
                     /**
-                     * 获取套餐名称。只能包含中文、字母、数字、下划线、连字符，以中文或者字母开头，以中文或字母或数字结尾，2~50个字符
-                     * @return TeamName 套餐名称。只能包含中文、字母、数字、下划线、连字符，以中文或者字母开头，以中文或字母或数字结尾，2~50个字符
+                     * 获取<p>套餐名称。只能包含中文、字母、数字、下划线、连字符，以中文或者字母开头，以中文或字母或数字结尾，2~50个字符</p>
+                     * @return TeamName <p>套餐名称。只能包含中文、字母、数字、下划线、连字符，以中文或者字母开头，以中文或字母或数字结尾，2~50个字符</p>
                      * 
                      */
                     std::string GetTeamName() const;
 
                     /**
-                     * 设置套餐名称。只能包含中文、字母、数字、下划线、连字符，以中文或者字母开头，以中文或字母或数字结尾，2~50个字符
-                     * @param _teamName 套餐名称。只能包含中文、字母、数字、下划线、连字符，以中文或者字母开头，以中文或字母或数字结尾，2~50个字符
+                     * 设置<p>套餐名称。只能包含中文、字母、数字、下划线、连字符，以中文或者字母开头，以中文或字母或数字结尾，2~50个字符</p>
+                     * @param _teamName <p>套餐名称。只能包含中文、字母、数字、下划线、连字符，以中文或者字母开头，以中文或字母或数字结尾，2~50个字符</p>
                      * 
                      */
                     void SetTeamName(const std::string& _teamName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TeamNameHasBeenSet() const;
 
                     /**
-                     * 获取购买时长。单位：月。必须大于 0。
-                     * @return TimeSpan 购买时长。单位：月。必须大于 0。
+                     * 获取<p>购买时长。单位：月。必须大于 0，支持1个月～12个月。</p>
+                     * @return TimeSpan <p>购买时长。单位：月。必须大于 0，支持1个月～12个月。</p>
                      * 
                      */
                     int64_t GetTimeSpan() const;
 
                     /**
-                     * 设置购买时长。单位：月。必须大于 0。
-                     * @param _timeSpan 购买时长。单位：月。必须大于 0。
+                     * 设置<p>购买时长。单位：月。必须大于 0，支持1个月～12个月。</p>
+                     * @param _timeSpan <p>购买时长。单位：月。必须大于 0，支持1个月～12个月。</p>
                      * 
                      */
                     void SetTimeSpan(const int64_t& _timeSpan);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取购买的套餐规格。套餐类型为专业套餐（enterprise），单位取值为积分；轻享套餐（enterprise-auto），单位取值为 tokens。
-                     * @return CreditOrToken 购买的套餐规格。套餐类型为专业套餐（enterprise），单位取值为积分；轻享套餐（enterprise-auto），单位取值为 tokens。
+                     * 获取<p>购买的套餐规格。套餐类型为专业套餐（enterprise），单位取值为积分；轻享套餐（enterprise-auto），单位取值为 tokens。</p>
+                     * @return CreditOrToken <p>购买的套餐规格。套餐类型为专业套餐（enterprise），单位取值为积分；轻享套餐（enterprise-auto），单位取值为 tokens。</p>
                      * 
                      */
                     int64_t GetCreditOrToken() const;
 
                     /**
-                     * 设置购买的套餐规格。套餐类型为专业套餐（enterprise），单位取值为积分；轻享套餐（enterprise-auto），单位取值为 tokens。
-                     * @param _creditOrToken 购买的套餐规格。套餐类型为专业套餐（enterprise），单位取值为积分；轻享套餐（enterprise-auto），单位取值为 tokens。
+                     * 设置<p>购买的套餐规格。套餐类型为专业套餐（enterprise），单位取值为积分；轻享套餐（enterprise-auto），单位取值为 tokens。</p>
+                     * @param _creditOrToken <p>购买的套餐规格。套餐类型为专业套餐（enterprise），单位取值为积分；轻享套餐（enterprise-auto），单位取值为 tokens。</p>
                      * 
                      */
                     void SetCreditOrToken(const int64_t& _creditOrToken);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool CreditOrTokenHasBeenSet() const;
 
                     /**
-                     * 获取是否开启自动续费。默认不开启。
-                     * @return EnableAutoRenew 是否开启自动续费。默认不开启。
+                     * 获取<p>是否开启自动续费。默认不开启。</p>
+                     * @return EnableAutoRenew <p>是否开启自动续费。默认不开启。</p>
                      * 
                      */
                     bool GetEnableAutoRenew() const;
 
                     /**
-                     * 设置是否开启自动续费。默认不开启。
-                     * @param _enableAutoRenew 是否开启自动续费。默认不开启。
+                     * 设置<p>是否开启自动续费。默认不开启。</p>
+                     * @param _enableAutoRenew <p>是否开启自动续费。默认不开启。</p>
                      * 
                      */
                     void SetEnableAutoRenew(const bool& _enableAutoRenew);
@@ -147,37 +147,64 @@ namespace TencentCloud
                      */
                     bool EnableAutoRenewHasBeenSet() const;
 
+                    /**
+                     * 获取<p>已有套餐 ID（非空时走过期续费，空时走新购）</p>
+                     * @return TeamId <p>已有套餐 ID（非空时走过期续费，空时走新购）</p>
+                     * 
+                     */
+                    std::string GetTeamId() const;
+
+                    /**
+                     * 设置<p>已有套餐 ID（非空时走过期续费，空时走新购）</p>
+                     * @param _teamId <p>已有套餐 ID（非空时走过期续费，空时走新购）</p>
+                     * 
+                     */
+                    void SetTeamId(const std::string& _teamId);
+
+                    /**
+                     * 判断参数 TeamId 是否已赋值
+                     * @return TeamId 是否已赋值
+                     * 
+                     */
+                    bool TeamIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。
+                     * <p>套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。</p>
                      */
                     std::string m_productType;
                     bool m_productTypeHasBeenSet;
 
                     /**
-                     * 套餐名称。只能包含中文、字母、数字、下划线、连字符，以中文或者字母开头，以中文或字母或数字结尾，2~50个字符
+                     * <p>套餐名称。只能包含中文、字母、数字、下划线、连字符，以中文或者字母开头，以中文或字母或数字结尾，2~50个字符</p>
                      */
                     std::string m_teamName;
                     bool m_teamNameHasBeenSet;
 
                     /**
-                     * 购买时长。单位：月。必须大于 0。
+                     * <p>购买时长。单位：月。必须大于 0，支持1个月～12个月。</p>
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 购买的套餐规格。套餐类型为专业套餐（enterprise），单位取值为积分；轻享套餐（enterprise-auto），单位取值为 tokens。
+                     * <p>购买的套餐规格。套餐类型为专业套餐（enterprise），单位取值为积分；轻享套餐（enterprise-auto），单位取值为 tokens。</p>
                      */
                     int64_t m_creditOrToken;
                     bool m_creditOrTokenHasBeenSet;
 
                     /**
-                     * 是否开启自动续费。默认不开启。
+                     * <p>是否开启自动续费。默认不开启。</p>
                      */
                     bool m_enableAutoRenew;
                     bool m_enableAutoRenewHasBeenSet;
+
+                    /**
+                     * <p>已有套餐 ID（非空时走过期续费，空时走新购）</p>
+                     */
+                    std::string m_teamId;
+                    bool m_teamIdHasBeenSet;
 
                 };
             }

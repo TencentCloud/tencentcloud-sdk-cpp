@@ -78,9 +78,9 @@ namespace TencentCloud
                     bool EdgesHasBeenSet() const;
 
                     /**
-                     * 获取<p>拓扑图是否有修改</p>
+                     * 获取<p>拓扑图是否有修改</p><p>枚举值：</p><ul><li>0： 拓扑图未修改</li><li>1： 拓扑图已修改</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TopologyModifyFlag <p>拓扑图是否有修改</p>
+                     * @return TopologyModifyFlag <p>拓扑图是否有修改</p><p>枚举值：</p><ul><li>0： 拓扑图未修改</li><li>1： 拓扑图已修改</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_edgesHasBeenSet;
 
                     /**
-                     * <p>拓扑图是否有修改</p>
+                     * <p>拓扑图是否有修改</p><p>枚举值：</p><ul><li>0： 拓扑图未修改</li><li>1： 拓扑图已修改</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_topologyModifyFlag;

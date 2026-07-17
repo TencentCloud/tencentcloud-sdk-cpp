@@ -43,10 +43,14 @@
 #include <tencentcloud/iotexplorer/v20190423/model/BindTWeTalkAIBotResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BindTWeTalkAgentRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BindTWeTalkAgentResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/BindUserDeviceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/BindUserDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CallDeviceActionAsyncRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CallDeviceActionAsyncResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CallDeviceActionSyncRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CallDeviceActionSyncResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CallDeviceRRPCSyncRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CallDeviceRRPCSyncResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ChangeP2PRouteRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ChangeP2PRouteResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CheckFirmwareUpdateRequest.h>
@@ -465,6 +469,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ResetTWeCallDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ResumeWeCallDeviceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ResumeWeCallDeviceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/RevokeBindUserDeviceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/RevokeBindUserDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchPositionSpaceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchPositionSpaceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchStudioProductRequest.h>
@@ -541,12 +547,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BindTWeTalkAgentResponse> BindTWeTalkAgentOutcome;
                 typedef std::future<BindTWeTalkAgentOutcome> BindTWeTalkAgentOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::BindTWeTalkAgentRequest&, BindTWeTalkAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindTWeTalkAgentAsyncHandler;
+                typedef Outcome<Core::Error, Model::BindUserDeviceResponse> BindUserDeviceOutcome;
+                typedef std::future<BindUserDeviceOutcome> BindUserDeviceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::BindUserDeviceRequest&, BindUserDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindUserDeviceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CallDeviceActionAsyncResponse> CallDeviceActionAsyncOutcome;
                 typedef std::future<CallDeviceActionAsyncOutcome> CallDeviceActionAsyncOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CallDeviceActionAsyncRequest&, CallDeviceActionAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CallDeviceActionAsyncAsyncHandler;
                 typedef Outcome<Core::Error, Model::CallDeviceActionSyncResponse> CallDeviceActionSyncOutcome;
                 typedef std::future<CallDeviceActionSyncOutcome> CallDeviceActionSyncOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CallDeviceActionSyncRequest&, CallDeviceActionSyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CallDeviceActionSyncAsyncHandler;
+                typedef Outcome<Core::Error, Model::CallDeviceRRPCSyncResponse> CallDeviceRRPCSyncOutcome;
+                typedef std::future<CallDeviceRRPCSyncOutcome> CallDeviceRRPCSyncOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CallDeviceRRPCSyncRequest&, CallDeviceRRPCSyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CallDeviceRRPCSyncAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChangeP2PRouteResponse> ChangeP2PRouteOutcome;
                 typedef std::future<ChangeP2PRouteOutcome> ChangeP2PRouteOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ChangeP2PRouteRequest&, ChangeP2PRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChangeP2PRouteAsyncHandler;
@@ -1174,6 +1186,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResumeWeCallDeviceResponse> ResumeWeCallDeviceOutcome;
                 typedef std::future<ResumeWeCallDeviceOutcome> ResumeWeCallDeviceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ResumeWeCallDeviceRequest&, ResumeWeCallDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeWeCallDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::RevokeBindUserDeviceResponse> RevokeBindUserDeviceOutcome;
+                typedef std::future<RevokeBindUserDeviceOutcome> RevokeBindUserDeviceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::RevokeBindUserDeviceRequest&, RevokeBindUserDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevokeBindUserDeviceAsyncHandler;
                 typedef Outcome<Core::Error, Model::SearchPositionSpaceResponse> SearchPositionSpaceOutcome;
                 typedef std::future<SearchPositionSpaceOutcome> SearchPositionSpaceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::SearchPositionSpaceRequest&, SearchPositionSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchPositionSpaceAsyncHandler;
@@ -1318,6 +1333,17 @@ namespace TencentCloud
                 BindTWeTalkAgentOutcomeCallable BindTWeTalkAgentCallable(const Model::BindTWeTalkAgentRequest& request);
 
                 /**
+                 *1. 按 `(IotAppID, OpenID)` 兜底创建 / 复用 app 端用户；
+2. 按 `(用户, FamilyName)` 兜底创建 / 复用默认家庭；
+3. 将设备直接绑定到该家庭（已绑同家庭视为成功，并继续异步下发 `bind_device` 消息）。
+                 * @param req BindUserDeviceRequest
+                 * @return BindUserDeviceOutcome
+                 */
+                BindUserDeviceOutcome BindUserDevice(const Model::BindUserDeviceRequest &request);
+                void BindUserDeviceAsync(const Model::BindUserDeviceRequest& request, const BindUserDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindUserDeviceOutcomeCallable BindUserDeviceCallable(const Model::BindUserDeviceRequest& request);
+
+                /**
                  *提供给用户异步调用设备行为的能力
                  * @param req CallDeviceActionAsyncRequest
                  * @return CallDeviceActionAsyncOutcome
@@ -1334,6 +1360,49 @@ namespace TencentCloud
                 CallDeviceActionSyncOutcome CallDeviceActionSync(const Model::CallDeviceActionSyncRequest &request);
                 void CallDeviceActionSyncAsync(const Model::CallDeviceActionSyncRequest& request, const CallDeviceActionSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CallDeviceActionSyncOutcomeCallable CallDeviceActionSyncCallable(const Model::CallDeviceActionSyncRequest& request);
+
+                /**
+                 *平台向设备发起一次同步 RRPC（Reverse RPC）调用——下行下发请求，同步阻塞等待设备回包，超时未回则返回 Timeout。
+
+适用场景：
+
+默认模式：使用平台保留 topic $iotrrpc/down 和 $iotrrpc/up。
+自定义模式：业务自带下行 topic；Reply topic 可选 —— 不传时平台仅依赖 clientToken 关联上行 ack。
+
+
+
+## 设备侧实现指引
+
+### 默认模式
+
+1. 订阅 `$iotrrpc/down/{ProductId}/{DeviceName}/+`；
+2. 收到下行后，从 topic 末段解析 `{mid}`；
+3. 向 `$iotrrpc/up/{ProductId}/{DeviceName}/{mid}` 发送回包，**payload 任意字节**（推荐 JSON）。
+
+### 自定义模式
+
+1. 订阅业务 `Topic`；
+2. 解析 payload JSON，**保留 `clientToken` 字段**；
+3. 处理业务后，构造 envelope JSON：
+
+   ```json
+   {
+     "method": "rrpc_sync_reply",
+     "clientToken": "<原样回填>",
+     "payload": "<base64 of 业务字节>"
+   }
+   ```
+
+4. publish 到与平台 `ReplyTopic` 通配符匹配的具体 topic（推荐使用与下行同 topic）。
+
+> ⚠️ `clientToken` **必填且必须原样回填**，否则平台无法关联，调用方将收到 `Status=Timeout`。
+> ⚠️ `method` 必须为 `rrpc_sync_reply`，否则会直接 skip。
+                 * @param req CallDeviceRRPCSyncRequest
+                 * @return CallDeviceRRPCSyncOutcome
+                 */
+                CallDeviceRRPCSyncOutcome CallDeviceRRPCSync(const Model::CallDeviceRRPCSyncRequest &request);
+                void CallDeviceRRPCSyncAsync(const Model::CallDeviceRRPCSyncRequest& request, const CallDeviceRRPCSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CallDeviceRRPCSyncOutcomeCallable CallDeviceRRPCSyncCallable(const Model::CallDeviceRRPCSyncRequest& request);
 
                 /**
                  *p2p路线切换（此接口目前处于内测接口，可以联系申请加白 ）
@@ -3221,6 +3290,17 @@ namespace TencentCloud
                 ResumeWeCallDeviceOutcome ResumeWeCallDevice(const Model::ResumeWeCallDeviceRequest &request);
                 void ResumeWeCallDeviceAsync(const Model::ResumeWeCallDeviceRequest& request, const ResumeWeCallDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResumeWeCallDeviceOutcomeCallable ResumeWeCallDeviceCallable(const Model::ResumeWeCallDeviceRequest& request);
+
+                /**
+                 *1. 按 `(IotAppID, OpenID)` 只读定位用户（不存在视为已解绑，幂等成功）；
+2. 按 `(用户, FamilyName)` 只读定位家庭（不存在视为已解绑，幂等成功）；
+3. 解除设备与该家庭的绑定关系，异步下发 `delete_device` 消息；解绑路径不校验设备存在性，允许设备已删除时清理残留绑定关系。
+                 * @param req RevokeBindUserDeviceRequest
+                 * @return RevokeBindUserDeviceOutcome
+                 */
+                RevokeBindUserDeviceOutcome RevokeBindUserDevice(const Model::RevokeBindUserDeviceRequest &request);
+                void RevokeBindUserDeviceAsync(const Model::RevokeBindUserDeviceRequest& request, const RevokeBindUserDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RevokeBindUserDeviceOutcomeCallable RevokeBindUserDeviceCallable(const Model::RevokeBindUserDeviceRequest& request);
 
                 /**
                  *搜索位置空间

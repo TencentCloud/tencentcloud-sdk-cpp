@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取单次详情数据
-                     * @return DataSet 单次详情数据
+                     * 获取<p>单次详情数据</p>
+                     * @return DataSet <p>单次详情数据</p>
                      * 
                      */
                     std::vector<DetailedSingleDataDefine> GetDataSet() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool DataSetHasBeenSet() const;
 
                     /**
-                     * 获取符合条件的数据总数
-                     * @return TotalNumber 符合条件的数据总数
+                     * 获取<p>符合条件的数据总数</p>
+                     * @return TotalNumber <p>符合条件的数据总数</p>
                      * 
                      */
                     int64_t GetTotalNumber() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool TotalNumberHasBeenSet() const;
 
                     /**
-                     * 获取es scroll查询的id
-                     * @return ScrollID es scroll查询的id
+                     * 获取<p>es scroll查询的id</p>
+                     * @return ScrollID <p>es scroll查询的id</p>
                      * 
                      */
                     std::string GetScrollID() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 单次详情数据
+                     * <p>单次详情数据</p>
                      */
                     std::vector<DetailedSingleDataDefine> m_dataSet;
                     bool m_dataSetHasBeenSet;
 
                     /**
-                     * 符合条件的数据总数
+                     * <p>符合条件的数据总数</p>
                      */
                     int64_t m_totalNumber;
                     bool m_totalNumberHasBeenSet;
 
                     /**
-                     * es scroll查询的id
+                     * <p>es scroll查询的id</p>
                      */
                     std::string m_scrollID;
                     bool m_scrollIDHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则
-                     * @return RuleUuids 规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则
+                     * 获取<p>规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则</p>
+                     * @return RuleUuids <p>规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则</p>
                      * 
                      */
                     std::vector<int64_t> GetRuleUuids() const;
 
                     /**
-                     * 设置规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则
-                     * @param _ruleUuids 规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则
+                     * 设置<p>规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则</p>
+                     * @param _ruleUuids <p>规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则</p>
                      * 
                      */
                     void SetRuleUuids(const std::vector<int64_t>& _ruleUuids);
@@ -64,15 +64,36 @@ namespace TencentCloud
                     bool RuleUuidsHasBeenSet() const;
 
                     /**
-                     * 获取仅当RuleUuids为-1时有效；0：删除Ipv4规则，1：删除Ipv6规则；默认为Ipv4类型规则
-                     * @return IpVersion 仅当RuleUuids为-1时有效；0：删除Ipv4规则，1：删除Ipv6规则；默认为Ipv4类型规则
+                     * 获取<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * @return CfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * 
+                     */
+                    std::string GetCfwAiAgentOperationSource() const;
+
+                    /**
+                     * 设置<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * @param _cfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * 
+                     */
+                    void SetCfwAiAgentOperationSource(const std::string& _cfwAiAgentOperationSource);
+
+                    /**
+                     * 判断参数 CfwAiAgentOperationSource 是否已赋值
+                     * @return CfwAiAgentOperationSource 是否已赋值
+                     * 
+                     */
+                    bool CfwAiAgentOperationSourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>仅当RuleUuids为-1时有效；0：删除Ipv4规则，1：删除Ipv6规则；默认为Ipv4类型规则</p>
+                     * @return IpVersion <p>仅当RuleUuids为-1时有效；0：删除Ipv4规则，1：删除Ipv6规则；默认为Ipv4类型规则</p>
                      * 
                      */
                     uint64_t GetIpVersion() const;
 
                     /**
-                     * 设置仅当RuleUuids为-1时有效；0：删除Ipv4规则，1：删除Ipv6规则；默认为Ipv4类型规则
-                     * @param _ipVersion 仅当RuleUuids为-1时有效；0：删除Ipv4规则，1：删除Ipv6规则；默认为Ipv4类型规则
+                     * 设置<p>仅当RuleUuids为-1时有效；0：删除Ipv4规则，1：删除Ipv6规则；默认为Ipv4类型规则</p>
+                     * @param _ipVersion <p>仅当RuleUuids为-1时有效；0：删除Ipv4规则，1：删除Ipv6规则；默认为Ipv4类型规则</p>
                      * 
                      */
                     void SetIpVersion(const uint64_t& _ipVersion);
@@ -87,13 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则
+                     * <p>规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则</p>
                      */
                     std::vector<int64_t> m_ruleUuids;
                     bool m_ruleUuidsHasBeenSet;
 
                     /**
-                     * 仅当RuleUuids为-1时有效；0：删除Ipv4规则，1：删除Ipv6规则；默认为Ipv4类型规则
+                     * <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     */
+                    std::string m_cfwAiAgentOperationSource;
+                    bool m_cfwAiAgentOperationSourceHasBeenSet;
+
+                    /**
+                     * <p>仅当RuleUuids为-1时有效；0：删除Ipv4规则，1：删除Ipv6规则；默认为Ipv4类型规则</p>
                      */
                     uint64_t m_ipVersion;
                     bool m_ipVersionHasBeenSet;

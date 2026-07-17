@@ -390,6 +390,56 @@ TdmysqlClient::DeleteUsersOutcomeCallable TdmysqlClient::DeleteUsersCallable(con
     return prom->get_future();
 }
 
+TdmysqlClient::DescribeDBEnginesOutcome TdmysqlClient::DescribeDBEngines(const DescribeDBEnginesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBEngines");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBEnginesResponse rsp = DescribeDBEnginesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBEnginesOutcome(rsp);
+        else
+            return DescribeDBEnginesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBEnginesOutcome(outcome.GetError());
+    }
+}
+
+void TdmysqlClient::DescribeDBEnginesAsync(const DescribeDBEnginesRequest& request, const DescribeDBEnginesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBEnginesRequest&;
+    using Resp = DescribeDBEnginesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBEngines", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmysqlClient::DescribeDBEnginesOutcomeCallable TdmysqlClient::DescribeDBEnginesCallable(const DescribeDBEnginesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBEnginesOutcome>>();
+    DescribeDBEnginesAsync(
+    request,
+    [prom](
+        const TdmysqlClient*,
+        const DescribeDBEnginesRequest&,
+        DescribeDBEnginesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TdmysqlClient::DescribeDBInstanceDetailOutcome TdmysqlClient::DescribeDBInstanceDetail(const DescribeDBInstanceDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBInstanceDetail");

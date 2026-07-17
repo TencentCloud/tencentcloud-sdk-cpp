@@ -24,6 +24,7 @@ using namespace std;
 
 AddEnterpriseSecurityGroupRulesRequest::AddEnterpriseSecurityGroupRulesRequest() :
     m_dataHasBeenSet(false),
+    m_cfwAiAgentOperationSourceHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_isDelayHasBeenSet(false),
@@ -52,6 +53,14 @@ string AddEnterpriseSecurityGroupRulesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_cfwAiAgentOperationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CfwAiAgentOperationSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cfwAiAgentOperationSource.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
@@ -116,6 +125,22 @@ void AddEnterpriseSecurityGroupRulesRequest::SetData(const vector<SecurityGroupR
 bool AddEnterpriseSecurityGroupRulesRequest::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+string AddEnterpriseSecurityGroupRulesRequest::GetCfwAiAgentOperationSource() const
+{
+    return m_cfwAiAgentOperationSource;
+}
+
+void AddEnterpriseSecurityGroupRulesRequest::SetCfwAiAgentOperationSource(const string& _cfwAiAgentOperationSource)
+{
+    m_cfwAiAgentOperationSource = _cfwAiAgentOperationSource;
+    m_cfwAiAgentOperationSourceHasBeenSet = true;
+}
+
+bool AddEnterpriseSecurityGroupRulesRequest::CfwAiAgentOperationSourceHasBeenSet() const
+{
+    return m_cfwAiAgentOperationSourceHasBeenSet;
 }
 
 uint64_t AddEnterpriseSecurityGroupRulesRequest::GetType() const

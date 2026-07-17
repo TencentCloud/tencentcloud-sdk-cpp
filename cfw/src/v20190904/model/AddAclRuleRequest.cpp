@@ -24,6 +24,7 @@ using namespace std;
 
 AddAclRuleRequest::AddAclRuleRequest() :
     m_rulesHasBeenSet(false),
+    m_cfwAiAgentOperationSourceHasBeenSet(false),
     m_fromHasBeenSet(false)
 {
 }
@@ -48,6 +49,14 @@ string AddAclRuleRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_cfwAiAgentOperationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CfwAiAgentOperationSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cfwAiAgentOperationSource.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fromHasBeenSet)
@@ -80,6 +89,22 @@ void AddAclRuleRequest::SetRules(const vector<CreateRuleItem>& _rules)
 bool AddAclRuleRequest::RulesHasBeenSet() const
 {
     return m_rulesHasBeenSet;
+}
+
+string AddAclRuleRequest::GetCfwAiAgentOperationSource() const
+{
+    return m_cfwAiAgentOperationSource;
+}
+
+void AddAclRuleRequest::SetCfwAiAgentOperationSource(const string& _cfwAiAgentOperationSource)
+{
+    m_cfwAiAgentOperationSource = _cfwAiAgentOperationSource;
+    m_cfwAiAgentOperationSourceHasBeenSet = true;
+}
+
+bool AddAclRuleRequest::CfwAiAgentOperationSourceHasBeenSet() const
+{
+    return m_cfwAiAgentOperationSourceHasBeenSet;
 }
 
 string AddAclRuleRequest::GetFrom() const

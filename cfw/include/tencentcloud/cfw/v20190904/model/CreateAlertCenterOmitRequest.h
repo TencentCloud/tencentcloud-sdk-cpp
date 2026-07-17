@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取处置对象,ID列表，  IdLists和IpList二选一
-                     * @return HandleIdList 处置对象,ID列表，  IdLists和IpList二选一
+                     * 获取<p>处置对象,ID列表，  IdLists和IpList二选一</p>
+                     * @return HandleIdList <p>处置对象,ID列表，  IdLists和IpList二选一</p>
                      * 
                      */
                     std::vector<std::string> GetHandleIdList() const;
 
                     /**
-                     * 设置处置对象,ID列表，  IdLists和IpList二选一
-                     * @param _handleIdList 处置对象,ID列表，  IdLists和IpList二选一
+                     * 设置<p>处置对象,ID列表，  IdLists和IpList二选一</p>
+                     * @param _handleIdList <p>处置对象,ID列表，  IdLists和IpList二选一</p>
                      * 
                      */
                     void SetHandleIdList(const std::vector<std::string>& _handleIdList);
@@ -64,19 +64,15 @@ namespace TencentCloud
                     bool HandleIdListHasBeenSet() const;
 
                     /**
-                     * 获取忽略数据来源：
-AlertTable 告警中心  InterceptionTable拦截列表
-                     * @return TableType 忽略数据来源：
-AlertTable 告警中心  InterceptionTable拦截列表
+                     * 获取<p>忽略数据来源：<br>AlertTable 告警中心  InterceptionTable拦截列表</p>
+                     * @return TableType <p>忽略数据来源：<br>AlertTable 告警中心  InterceptionTable拦截列表</p>
                      * 
                      */
                     std::string GetTableType() const;
 
                     /**
-                     * 设置忽略数据来源：
-AlertTable 告警中心  InterceptionTable拦截列表
-                     * @param _tableType 忽略数据来源：
-AlertTable 告警中心  InterceptionTable拦截列表
+                     * 设置<p>忽略数据来源：<br>AlertTable 告警中心  InterceptionTable拦截列表</p>
+                     * @param _tableType <p>忽略数据来源：<br>AlertTable 告警中心  InterceptionTable拦截列表</p>
                      * 
                      */
                     void SetTableType(const std::string& _tableType);
@@ -89,15 +85,36 @@ AlertTable 告警中心  InterceptionTable拦截列表
                     bool TableTypeHasBeenSet() const;
 
                     /**
-                     * 获取处置对象,事件ID列表
-                     * @return HandleEventIdList 处置对象,事件ID列表
+                     * 获取<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * @return CfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * 
+                     */
+                    std::string GetCfwAiAgentOperationSource() const;
+
+                    /**
+                     * 设置<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * @param _cfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * 
+                     */
+                    void SetCfwAiAgentOperationSource(const std::string& _cfwAiAgentOperationSource);
+
+                    /**
+                     * 判断参数 CfwAiAgentOperationSource 是否已赋值
+                     * @return CfwAiAgentOperationSource 是否已赋值
+                     * 
+                     */
+                    bool CfwAiAgentOperationSourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>处置对象,事件ID列表</p>
+                     * @return HandleEventIdList <p>处置对象,事件ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetHandleEventIdList() const;
 
                     /**
-                     * 设置处置对象,事件ID列表
-                     * @param _handleEventIdList 处置对象,事件ID列表
+                     * 设置<p>处置对象,事件ID列表</p>
+                     * @param _handleEventIdList <p>处置对象,事件ID列表</p>
                      * 
                      */
                     void SetHandleEventIdList(const std::vector<std::string>& _handleEventIdList);
@@ -112,20 +129,25 @@ AlertTable 告警中心  InterceptionTable拦截列表
                 private:
 
                     /**
-                     * 处置对象,ID列表，  IdLists和IpList二选一
+                     * <p>处置对象,ID列表，  IdLists和IpList二选一</p>
                      */
                     std::vector<std::string> m_handleIdList;
                     bool m_handleIdListHasBeenSet;
 
                     /**
-                     * 忽略数据来源：
-AlertTable 告警中心  InterceptionTable拦截列表
+                     * <p>忽略数据来源：<br>AlertTable 告警中心  InterceptionTable拦截列表</p>
                      */
                     std::string m_tableType;
                     bool m_tableTypeHasBeenSet;
 
                     /**
-                     * 处置对象,事件ID列表
+                     * <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     */
+                    std::string m_cfwAiAgentOperationSource;
+                    bool m_cfwAiAgentOperationSourceHasBeenSet;
+
+                    /**
+                     * <p>处置对象,事件ID列表</p>
                      */
                     std::vector<std::string> m_handleEventIdList;
                     bool m_handleEventIdListHasBeenSet;

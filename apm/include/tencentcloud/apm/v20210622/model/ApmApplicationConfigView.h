@@ -155,15 +155,15 @@ namespace TencentCloud
                     bool ErrorCodeFilterHasBeenSet() const;
 
                     /**
-                     * 获取<p>应用诊断开关（已废弃）</p>
-                     * @return EventEnable <p>应用诊断开关（已废弃）</p>
+                     * 获取<p>应用诊断开关</p>
+                     * @return EventEnable <p>应用诊断开关</p>
                      * 
                      */
                     bool GetEventEnable() const;
 
                     /**
-                     * 设置<p>应用诊断开关（已废弃）</p>
-                     * @param _eventEnable <p>应用诊断开关（已废弃）</p>
+                     * 设置<p>应用诊断开关</p>
+                     * @param _eventEnable <p>应用诊断开关</p>
                      * 
                      */
                     void SetEventEnable(const bool& _eventEnable);
@@ -407,15 +407,15 @@ namespace TencentCloud
                     bool AgentEnableHasBeenSet() const;
 
                     /**
-                     * 获取<p>组件列表开关（已废弃）</p>
-                     * @return InstrumentList <p>组件列表开关（已废弃）</p>
+                     * 获取<p>组件列表开关</p>
+                     * @return InstrumentList <p>组件列表开关</p>
                      * 
                      */
                     std::vector<Instrument> GetInstrumentList() const;
 
                     /**
-                     * 设置<p>组件列表开关（已废弃）</p>
-                     * @param _instrumentList <p>组件列表开关（已废弃）</p>
+                     * 设置<p>组件列表开关</p>
+                     * @param _instrumentList <p>组件列表开关</p>
                      * 
                      */
                     void SetInstrumentList(const std::vector<Instrument>& _instrumentList);
@@ -428,15 +428,15 @@ namespace TencentCloud
                     bool InstrumentListHasBeenSet() const;
 
                     /**
-                     * 获取<p>链路压缩开关（已废弃）</p>
-                     * @return TraceSquash <p>链路压缩开关（已废弃）</p>
+                     * 获取<p>链路压缩开关</p>
+                     * @return TraceSquash <p>链路压缩开关</p>
                      * 
                      */
                     bool GetTraceSquash() const;
 
                     /**
-                     * 设置<p>链路压缩开关（已废弃）</p>
-                     * @param _traceSquash <p>链路压缩开关（已废弃）</p>
+                     * 设置<p>链路压缩开关</p>
+                     * @param _traceSquash <p>链路压缩开关</p>
                      * 
                      */
                     void SetTraceSquash(const bool& _traceSquash);
@@ -1153,7 +1153,7 @@ namespace TencentCloud
                     bool m_errorCodeFilterHasBeenSet;
 
                     /**
-                     * <p>应用诊断开关（已废弃）</p>
+                     * <p>应用诊断开关</p>
                      */
                     bool m_eventEnable;
                     bool m_eventEnableHasBeenSet;
@@ -1225,13 +1225,13 @@ namespace TencentCloud
                     bool m_agentEnableHasBeenSet;
 
                     /**
-                     * <p>组件列表开关（已废弃）</p>
+                     * <p>组件列表开关</p>
                      */
                     std::vector<Instrument> m_instrumentList;
                     bool m_instrumentListHasBeenSet;
 
                     /**
-                     * <p>链路压缩开关（已废弃）</p>
+                     * <p>链路压缩开关</p>
                      */
                     bool m_traceSquash;
                     bool m_traceSquashHasBeenSet;

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体处理生成的文件输出的目标 *Bucket ID*
-                     * @return Bucket 媒体处理生成的文件输出的目标 *Bucket ID*
+                     * 获取<p>媒体处理生成的文件输出的目标 <em>Bucket ID</em></p>
+                     * @return Bucket <p>媒体处理生成的文件输出的目标 <em>Bucket ID</em></p>
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
-                     * 设置媒体处理生成的文件输出的目标 *Bucket ID*
-                     * @param _bucket 媒体处理生成的文件输出的目标 *Bucket ID*
+                     * 设置<p>媒体处理生成的文件输出的目标 <em>Bucket ID</em></p>
+                     * @param _bucket <p>媒体处理生成的文件输出的目标 <em>Bucket ID</em></p>
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool BucketHasBeenSet() const;
 
                     /**
-                     * 获取媒体处理生成的文件输出的目标 Bucket 的园区
-                     * @return Region 媒体处理生成的文件输出的目标 Bucket 的园区
+                     * 获取<p>媒体处理生成的文件输出的目标 Bucket 的园区</p>
+                     * @return Region <p>媒体处理生成的文件输出的目标 Bucket 的园区</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置媒体处理生成的文件输出的目标 Bucket 的园区
-                     * @param _region 媒体处理生成的文件输出的目标 Bucket 的园区
+                     * 设置<p>媒体处理生成的文件输出的目标 Bucket 的园区</p>
+                     * @param _region <p>媒体处理生成的文件输出的目标 Bucket 的园区</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取点播专业版应用Id
-                     * @return SubAppId 点播专业版应用Id
+                     * 获取<p>点播专业版应用Id</p>
+                     * @return SubAppId <p>点播专业版应用Id</p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置点播专业版应用Id
-                     * @param _subAppId 点播专业版应用Id
+                     * 设置<p>点播专业版应用Id</p>
+                     * @param _subAppId <p>点播专业版应用Id</p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 媒体处理生成的文件输出的目标 *Bucket ID*
+                     * <p>媒体处理生成的文件输出的目标 <em>Bucket ID</em></p>
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
 
                     /**
-                     * 媒体处理生成的文件输出的目标 Bucket 的园区
+                     * <p>媒体处理生成的文件输出的目标 Bucket 的园区</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 点播专业版应用Id
+                     * <p>点播专业版应用Id</p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;

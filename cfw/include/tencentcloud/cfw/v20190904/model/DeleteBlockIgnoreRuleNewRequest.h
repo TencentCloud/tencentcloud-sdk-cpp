@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否删除全部
-                     * @return DeleteAll 是否删除全部
+                     * 获取<p>是否删除全部</p>
+                     * @return DeleteAll <p>是否删除全部</p>
                      * 
                      */
                     int64_t GetDeleteAll() const;
 
                     /**
-                     * 设置是否删除全部
-                     * @param _deleteAll 是否删除全部
+                     * 设置<p>是否删除全部</p>
+                     * @param _deleteAll <p>是否删除全部</p>
                      * 
                      */
                     void SetDeleteAll(const int64_t& _deleteAll);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool DeleteAllHasBeenSet() const;
 
                     /**
-                     * 获取blocklist 封禁列表 whitelist 白名单列表
-                     * @return ShowType blocklist 封禁列表 whitelist 白名单列表
+                     * 获取<p>blocklist 封禁列表 whitelist 白名单列表</p>
+                     * @return ShowType <p>blocklist 封禁列表 whitelist 白名单列表</p>
                      * 
                      */
                     std::string GetShowType() const;
 
                     /**
-                     * 设置blocklist 封禁列表 whitelist 白名单列表
-                     * @param _showType blocklist 封禁列表 whitelist 白名单列表
+                     * 设置<p>blocklist 封禁列表 whitelist 白名单列表</p>
+                     * @param _showType <p>blocklist 封禁列表 whitelist 白名单列表</p>
                      * 
                      */
                     void SetShowType(const std::string& _showType);
@@ -86,15 +86,36 @@ namespace TencentCloud
                     bool ShowTypeHasBeenSet() const;
 
                     /**
-                     * 获取规则列表
-                     * @return Rules 规则列表
+                     * 获取<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * @return CfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * 
+                     */
+                    std::string GetCfwAiAgentOperationSource() const;
+
+                    /**
+                     * 设置<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * @param _cfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * 
+                     */
+                    void SetCfwAiAgentOperationSource(const std::string& _cfwAiAgentOperationSource);
+
+                    /**
+                     * 判断参数 CfwAiAgentOperationSource 是否已赋值
+                     * @return CfwAiAgentOperationSource 是否已赋值
+                     * 
+                     */
+                    bool CfwAiAgentOperationSourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>规则列表</p>
+                     * @return Rules <p>规则列表</p>
                      * 
                      */
                     std::vector<BanAndAllowRuleDel> GetRules() const;
 
                     /**
-                     * 设置规则列表
-                     * @param _rules 规则列表
+                     * 设置<p>规则列表</p>
+                     * @param _rules <p>规则列表</p>
                      * 
                      */
                     void SetRules(const std::vector<BanAndAllowRuleDel>& _rules);
@@ -107,19 +128,15 @@ namespace TencentCloud
                     bool RulesHasBeenSet() const;
 
                     /**
-                     * 获取封禁：1，放通：100，
-主要用于全部删除时区分列表类型
-                     * @return RuleType 封禁：1，放通：100，
-主要用于全部删除时区分列表类型
+                     * 获取<p>封禁：1，放通：100，<br>主要用于全部删除时区分列表类型</p>
+                     * @return RuleType <p>封禁：1，放通：100，<br>主要用于全部删除时区分列表类型</p>
                      * 
                      */
                     int64_t GetRuleType() const;
 
                     /**
-                     * 设置封禁：1，放通：100，
-主要用于全部删除时区分列表类型
-                     * @param _ruleType 封禁：1，放通：100，
-主要用于全部删除时区分列表类型
+                     * 设置<p>封禁：1，放通：100，<br>主要用于全部删除时区分列表类型</p>
+                     * @param _ruleType <p>封禁：1，放通：100，<br>主要用于全部删除时区分列表类型</p>
                      * 
                      */
                     void SetRuleType(const int64_t& _ruleType);
@@ -134,26 +151,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否删除全部
+                     * <p>是否删除全部</p>
                      */
                     int64_t m_deleteAll;
                     bool m_deleteAllHasBeenSet;
 
                     /**
-                     * blocklist 封禁列表 whitelist 白名单列表
+                     * <p>blocklist 封禁列表 whitelist 白名单列表</p>
                      */
                     std::string m_showType;
                     bool m_showTypeHasBeenSet;
 
                     /**
-                     * 规则列表
+                     * <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     */
+                    std::string m_cfwAiAgentOperationSource;
+                    bool m_cfwAiAgentOperationSourceHasBeenSet;
+
+                    /**
+                     * <p>规则列表</p>
                      */
                     std::vector<BanAndAllowRuleDel> m_rules;
                     bool m_rulesHasBeenSet;
 
                     /**
-                     * 封禁：1，放通：100，
-主要用于全部删除时区分列表类型
+                     * <p>封禁：1，放通：100，<br>主要用于全部删除时区分列表类型</p>
                      */
                     int64_t m_ruleType;
                     bool m_ruleTypeHasBeenSet;

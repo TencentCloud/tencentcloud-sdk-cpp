@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要编辑的规则数组，基于Uuid唯一id修改该规则
-                     * @return Rules 需要编辑的规则数组，基于Uuid唯一id修改该规则
+                     * 获取<p>需要编辑的规则数组，基于Uuid唯一id修改该规则</p>
+                     * @return Rules <p>需要编辑的规则数组，基于Uuid唯一id修改该规则</p>
                      * 
                      */
                     std::vector<CreateRuleItem> GetRules() const;
 
                     /**
-                     * 设置需要编辑的规则数组，基于Uuid唯一id修改该规则
-                     * @param _rules 需要编辑的规则数组，基于Uuid唯一id修改该规则
+                     * 设置<p>需要编辑的规则数组，基于Uuid唯一id修改该规则</p>
+                     * @param _rules <p>需要编辑的规则数组，基于Uuid唯一id修改该规则</p>
                      * 
                      */
                     void SetRules(const std::vector<CreateRuleItem>& _rules);
@@ -64,13 +64,40 @@ namespace TencentCloud
                      */
                     bool RulesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * @return CfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * 
+                     */
+                    std::string GetCfwAiAgentOperationSource() const;
+
+                    /**
+                     * 设置<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * @param _cfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * 
+                     */
+                    void SetCfwAiAgentOperationSource(const std::string& _cfwAiAgentOperationSource);
+
+                    /**
+                     * 判断参数 CfwAiAgentOperationSource 是否已赋值
+                     * @return CfwAiAgentOperationSource 是否已赋值
+                     * 
+                     */
+                    bool CfwAiAgentOperationSourceHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 需要编辑的规则数组，基于Uuid唯一id修改该规则
+                     * <p>需要编辑的规则数组，基于Uuid唯一id修改该规则</p>
                      */
                     std::vector<CreateRuleItem> m_rules;
                     bool m_rulesHasBeenSet;
+
+                    /**
+                     * <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     */
+                    std::string m_cfwAiAgentOperationSource;
+                    bool m_cfwAiAgentOperationSourceHasBeenSet;
 
                 };
             }

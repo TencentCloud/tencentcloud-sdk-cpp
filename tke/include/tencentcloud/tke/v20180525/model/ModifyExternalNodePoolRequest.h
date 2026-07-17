@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取节点池ID
-                     * @return NodePoolId 节点池ID
+                     * 获取<p>节点池ID</p>
+                     * @return NodePoolId <p>节点池ID</p>
                      * 
                      */
                     std::string GetNodePoolId() const;
 
                     /**
-                     * 设置节点池ID
-                     * @param _nodePoolId 节点池ID
+                     * 设置<p>节点池ID</p>
+                     * @param _nodePoolId <p>节点池ID</p>
                      * 
                      */
                     void SetNodePoolId(const std::string& _nodePoolId);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool NodePoolIdHasBeenSet() const;
 
                     /**
-                     * 获取节点池名称
-                     * @return Name 节点池名称
+                     * 获取<p>节点池名称</p>
+                     * @return Name <p>节点池名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置节点池名称
-                     * @param _name 节点池名称
+                     * 设置<p>节点池名称</p>
+                     * @param _name <p>节点池名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取注册节点标签
-                     * @return Labels 注册节点标签
+                     * 获取<p>注册节点标签</p>
+                     * @return Labels <p>注册节点标签</p>
                      * 
                      */
                     std::vector<Label> GetLabels() const;
 
                     /**
-                     * 设置注册节点标签
-                     * @param _labels 注册节点标签
+                     * 设置<p>注册节点标签</p>
+                     * @param _labels <p>注册节点标签</p>
                      * 
                      */
                     void SetLabels(const std::vector<Label>& _labels);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool LabelsHasBeenSet() const;
 
                     /**
-                     * 获取注册节点污点
-                     * @return Taints 注册节点污点
+                     * 获取<p>注册节点污点</p>
+                     * @return Taints <p>注册节点污点</p>
                      * 
                      */
                     std::vector<Taint> GetTaints() const;
 
                     /**
-                     * 设置注册节点污点
-                     * @param _taints 注册节点污点
+                     * 设置<p>注册节点污点</p>
+                     * @param _taints <p>注册节点污点</p>
                      * 
                      */
                     void SetTaints(const std::vector<Taint>& _taints);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool TaintsHasBeenSet() const;
 
                     /**
-                     * 获取删除保护开关
-                     * @return DeletionProtection 删除保护开关
+                     * 获取<p>删除保护开关</p>
+                     * @return DeletionProtection <p>删除保护开关</p>
                      * 
                      */
                     bool GetDeletionProtection() const;
 
                     /**
-                     * 设置删除保护开关
-                     * @param _deletionProtection 删除保护开关
+                     * 设置<p>删除保护开关</p>
+                     * @param _deletionProtection <p>删除保护开关</p>
                      * 
                      */
                     void SetDeletionProtection(const bool& _deletionProtection);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool DeletionProtectionHasBeenSet() const;
 
                     /**
-                     * 获取base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看
-                     * @return UserScript base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看
+                     * 获取<p>base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看</p>
+                     * @return UserScript <p>base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看</p>
                      * 
                      */
                     std::string GetUserScript() const;
 
                     /**
-                     * 设置base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看
-                     * @param _userScript base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看
+                     * 设置<p>base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看</p>
+                     * @param _userScript <p>base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看</p>
                      * 
                      */
                     void SetUserScript(const std::string& _userScript);
@@ -194,43 +194,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 节点池ID
+                     * <p>节点池ID</p>
                      */
                     std::string m_nodePoolId;
                     bool m_nodePoolIdHasBeenSet;
 
                     /**
-                     * 节点池名称
+                     * <p>节点池名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 注册节点标签
+                     * <p>注册节点标签</p>
                      */
                     std::vector<Label> m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
-                     * 注册节点污点
+                     * <p>注册节点污点</p>
                      */
                     std::vector<Taint> m_taints;
                     bool m_taintsHasBeenSet;
 
                     /**
-                     * 删除保护开关
+                     * <p>删除保护开关</p>
                      */
                     bool m_deletionProtection;
                     bool m_deletionProtectionHasBeenSet;
 
                     /**
-                     * base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看
+                     * <p>base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看</p>
                      */
                     std::string m_userScript;
                     bool m_userScriptHasBeenSet;

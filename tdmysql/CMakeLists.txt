@@ -28,6 +28,7 @@ set(tdmysql_public_header_model
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBParametersRequest.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyInstanceNetworkResponse.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyInstanceSSLStatusResponse.h
+  include/tencentcloud/tdmysql/v20211122/model/DescribeDBEnginesRequest.h
   include/tencentcloud/tdmysql/v20211122/model/RestartDBInstancesResponse.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeSlowLogsRequest.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyInstanceNameRequest.h
@@ -58,8 +59,9 @@ set(tdmysql_public_header_model
   include/tencentcloud/tdmysql/v20211122/model/NodeInfo.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeSpecsResponse.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyDBInstanceSecurityGroupsResponse.h
-  include/tencentcloud/tdmysql/v20211122/model/CreateCloneInstanceResponse.h
+  include/tencentcloud/tdmysql/v20211122/model/DescribeDBSArchiveLogsResponse.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyUserPrivilegesResponse.h
+  include/tencentcloud/tdmysql/v20211122/model/DBEngineInfo.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeSlowLogsResponse.h
   include/tencentcloud/tdmysql/v20211122/model/CreateDBSBackupResponse.h
   include/tencentcloud/tdmysql/v20211122/model/BackupSetsReqFilter.h
@@ -99,7 +101,7 @@ set(tdmysql_public_header_model
   include/tencentcloud/tdmysql/v20211122/model/SecurityGroup.h
   include/tencentcloud/tdmysql/v20211122/model/DeleteUsersRequest.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyUserPrivilegesRequest.h
-  include/tencentcloud/tdmysql/v20211122/model/DescribeDBSArchiveLogsResponse.h
+  include/tencentcloud/tdmysql/v20211122/model/CreateCloneInstanceResponse.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDatabaseObjectsResponse.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeMaintenanceWindowResponse.h
   include/tencentcloud/tdmysql/v20211122/model/InstanceNode.h
@@ -134,6 +136,7 @@ set(tdmysql_public_header_model
   include/tencentcloud/tdmysql/v20211122/model/ModifyDBSBackupSetCommentResponse.h
   include/tencentcloud/tdmysql/v20211122/model/AutoScalingConfig.h
   include/tencentcloud/tdmysql/v20211122/model/DatabaseProcedure.h
+  include/tencentcloud/tdmysql/v20211122/model/DescribeDBEnginesResponse.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyAutoRenewFlagRequest.h
   include/tencentcloud/tdmysql/v20211122/model/ResetUsersPasswordResponse.h
   include/tencentcloud/tdmysql/v20211122/model/CreateDBSBackupRequest.h
@@ -170,6 +173,7 @@ set(tdmysql_src
   src/v20211122/model/DescribeDBParametersRequest.cpp
   src/v20211122/model/ModifyInstanceNetworkResponse.cpp
   src/v20211122/model/ModifyInstanceSSLStatusResponse.cpp
+  src/v20211122/model/DescribeDBEnginesRequest.cpp
   src/v20211122/model/RestartDBInstancesResponse.cpp
   src/v20211122/model/DescribeSlowLogsRequest.cpp
   src/v20211122/model/ModifyInstanceNameRequest.cpp
@@ -200,8 +204,9 @@ set(tdmysql_src
   src/v20211122/model/NodeInfo.cpp
   src/v20211122/model/DescribeSpecsResponse.cpp
   src/v20211122/model/ModifyDBInstanceSecurityGroupsResponse.cpp
-  src/v20211122/model/CreateCloneInstanceResponse.cpp
+  src/v20211122/model/DescribeDBSArchiveLogsResponse.cpp
   src/v20211122/model/ModifyUserPrivilegesResponse.cpp
+  src/v20211122/model/DBEngineInfo.cpp
   src/v20211122/model/DescribeSlowLogsResponse.cpp
   src/v20211122/model/CreateDBSBackupResponse.cpp
   src/v20211122/model/BackupSetsReqFilter.cpp
@@ -241,7 +246,7 @@ set(tdmysql_src
   src/v20211122/model/SecurityGroup.cpp
   src/v20211122/model/DeleteUsersRequest.cpp
   src/v20211122/model/ModifyUserPrivilegesRequest.cpp
-  src/v20211122/model/DescribeDBSArchiveLogsResponse.cpp
+  src/v20211122/model/CreateCloneInstanceResponse.cpp
   src/v20211122/model/DescribeDatabaseObjectsResponse.cpp
   src/v20211122/model/DescribeMaintenanceWindowResponse.cpp
   src/v20211122/model/InstanceNode.cpp
@@ -276,6 +281,7 @@ set(tdmysql_src
   src/v20211122/model/ModifyDBSBackupSetCommentResponse.cpp
   src/v20211122/model/AutoScalingConfig.cpp
   src/v20211122/model/DatabaseProcedure.cpp
+  src/v20211122/model/DescribeDBEnginesResponse.cpp
   src/v20211122/model/ModifyAutoRenewFlagRequest.cpp
   src/v20211122/model/ResetUsersPasswordResponse.cpp
   src/v20211122/model/CreateDBSBackupRequest.cpp

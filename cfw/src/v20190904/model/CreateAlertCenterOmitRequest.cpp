@@ -25,6 +25,7 @@ using namespace std;
 CreateAlertCenterOmitRequest::CreateAlertCenterOmitRequest() :
     m_handleIdListHasBeenSet(false),
     m_tableTypeHasBeenSet(false),
+    m_cfwAiAgentOperationSourceHasBeenSet(false),
     m_handleEventIdListHasBeenSet(false)
 {
 }
@@ -55,6 +56,14 @@ string CreateAlertCenterOmitRequest::ToJsonString() const
         string key = "TableType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_tableType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cfwAiAgentOperationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CfwAiAgentOperationSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cfwAiAgentOperationSource.c_str(), allocator).Move(), allocator);
     }
 
     if (m_handleEventIdListHasBeenSet)
@@ -108,6 +117,22 @@ void CreateAlertCenterOmitRequest::SetTableType(const string& _tableType)
 bool CreateAlertCenterOmitRequest::TableTypeHasBeenSet() const
 {
     return m_tableTypeHasBeenSet;
+}
+
+string CreateAlertCenterOmitRequest::GetCfwAiAgentOperationSource() const
+{
+    return m_cfwAiAgentOperationSource;
+}
+
+void CreateAlertCenterOmitRequest::SetCfwAiAgentOperationSource(const string& _cfwAiAgentOperationSource)
+{
+    m_cfwAiAgentOperationSource = _cfwAiAgentOperationSource;
+    m_cfwAiAgentOperationSourceHasBeenSet = true;
+}
+
+bool CreateAlertCenterOmitRequest::CfwAiAgentOperationSourceHasBeenSet() const
+{
+    return m_cfwAiAgentOperationSourceHasBeenSet;
 }
 
 vector<string> CreateAlertCenterOmitRequest::GetHandleEventIdList() const

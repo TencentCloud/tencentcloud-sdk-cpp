@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取腾讯云订单 ID。用于关联一次购买操作下的所有子订单。
-                     * @return BigOrderId 腾讯云订单 ID。用于关联一次购买操作下的所有子订单。
+                     * 获取<p>腾讯云订单 ID。用于关联一次购买操作下的所有子订单。</p>
+                     * @return BigOrderId <p>腾讯云订单 ID。用于关联一次购买操作下的所有子订单。</p>
                      * 
                      */
                     std::string GetBigOrderId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 腾讯云订单 ID。用于关联一次购买操作下的所有子订单。
+                     * <p>腾讯云订单 ID。用于关联一次购买操作下的所有子订单。</p>
                      */
                     std::string m_bigOrderId;
                     bool m_bigOrderIdHasBeenSet;

@@ -25,6 +25,7 @@ using namespace std;
 CreateBlockIgnoreRuleNewRequest::CreateBlockIgnoreRuleNewRequest() :
     m_rulesHasBeenSet(false),
     m_ruleTypeHasBeenSet(false),
+    m_cfwAiAgentOperationSourceHasBeenSet(false),
     m_coverDuplicateHasBeenSet(false)
 {
 }
@@ -57,6 +58,14 @@ string CreateBlockIgnoreRuleNewRequest::ToJsonString() const
         string key = "RuleType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ruleType, allocator);
+    }
+
+    if (m_cfwAiAgentOperationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CfwAiAgentOperationSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cfwAiAgentOperationSource.c_str(), allocator).Move(), allocator);
     }
 
     if (m_coverDuplicateHasBeenSet)
@@ -105,6 +114,22 @@ void CreateBlockIgnoreRuleNewRequest::SetRuleType(const int64_t& _ruleType)
 bool CreateBlockIgnoreRuleNewRequest::RuleTypeHasBeenSet() const
 {
     return m_ruleTypeHasBeenSet;
+}
+
+string CreateBlockIgnoreRuleNewRequest::GetCfwAiAgentOperationSource() const
+{
+    return m_cfwAiAgentOperationSource;
+}
+
+void CreateBlockIgnoreRuleNewRequest::SetCfwAiAgentOperationSource(const string& _cfwAiAgentOperationSource)
+{
+    m_cfwAiAgentOperationSource = _cfwAiAgentOperationSource;
+    m_cfwAiAgentOperationSourceHasBeenSet = true;
+}
+
+bool CreateBlockIgnoreRuleNewRequest::CfwAiAgentOperationSourceHasBeenSet() const
+{
+    return m_cfwAiAgentOperationSourceHasBeenSet;
 }
 
 int64_t CreateBlockIgnoreRuleNewRequest::GetCoverDuplicate() const

@@ -489,6 +489,27 @@ namespace TencentCloud
                      */
                     bool TriggerStrategyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>智能体并发限制</p>
+                     * @return ConcurrencyLimit <p>智能体并发限制</p>
+                     * 
+                     */
+                    int64_t GetConcurrencyLimit() const;
+
+                    /**
+                     * 设置<p>智能体并发限制</p>
+                     * @param _concurrencyLimit <p>智能体并发限制</p>
+                     * 
+                     */
+                    void SetConcurrencyLimit(const int64_t& _concurrencyLimit);
+
+                    /**
+                     * 判断参数 ConcurrencyLimit 是否已赋值
+                     * @return ConcurrencyLimit 是否已赋值
+                     * 
+                     */
+                    bool ConcurrencyLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -616,6 +637,12 @@ namespace TencentCloud
                      */
                     std::vector<TriggerStrategyItem> m_triggerStrategy;
                     bool m_triggerStrategyHasBeenSet;
+
+                    /**
+                     * <p>智能体并发限制</p>
+                     */
+                    int64_t m_concurrencyLimit;
+                    bool m_concurrencyLimitHasBeenSet;
 
                 };
             }

@@ -15,11 +15,18 @@
 #
 
 set(antiddos_public_header
-  include/tencentcloud/antiddos/v20200309/AntiddosClient.h
   include/tencentcloud/antiddos/v20250903/AntiddosClient.h
+  include/tencentcloud/antiddos/v20200309/AntiddosClient.h
   )
 
 set(antiddos_public_header_model
+  include/tencentcloud/antiddos/v20250903/model/DDoSUnblockQuota.h
+  include/tencentcloud/antiddos/v20250903/model/Filter.h
+  include/tencentcloud/antiddos/v20250903/model/UnblockResourcesResponse.h
+  include/tencentcloud/antiddos/v20250903/model/DDoSBlockRecord.h
+  include/tencentcloud/antiddos/v20250903/model/DescribeDDoSBlockRecordsResponse.h
+  include/tencentcloud/antiddos/v20250903/model/UnblockResourcesRequest.h
+  include/tencentcloud/antiddos/v20250903/model/DescribeDDoSBlockRecordsRequest.h
   include/tencentcloud/antiddos/v20200309/model/CreateDefaultAlarmThresholdRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeDDoSConnectLimitListRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListBGPIPInstancesResponse.h
@@ -290,18 +297,18 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/InstanceChargePrepaid.h
   include/tencentcloud/antiddos/v20200309/model/CreatePacketFilterConfigRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeCCTrendRequest.h
-  include/tencentcloud/antiddos/v20250903/model/DDoSUnblockQuota.h
-  include/tencentcloud/antiddos/v20250903/model/Filter.h
-  include/tencentcloud/antiddos/v20250903/model/UnblockResourcesResponse.h
-  include/tencentcloud/antiddos/v20250903/model/DDoSBlockRecord.h
-  include/tencentcloud/antiddos/v20250903/model/DescribeDDoSBlockRecordsResponse.h
-  include/tencentcloud/antiddos/v20250903/model/UnblockResourcesRequest.h
-  include/tencentcloud/antiddos/v20250903/model/DescribeDDoSBlockRecordsRequest.h
   )
 
 set(antiddos_src
-  src/v20200309/AntiddosClient.cpp
   src/v20250903/AntiddosClient.cpp
+  src/v20200309/AntiddosClient.cpp
+  src/v20250903/model/DDoSUnblockQuota.cpp
+  src/v20250903/model/Filter.cpp
+  src/v20250903/model/UnblockResourcesResponse.cpp
+  src/v20250903/model/DDoSBlockRecord.cpp
+  src/v20250903/model/DescribeDDoSBlockRecordsResponse.cpp
+  src/v20250903/model/UnblockResourcesRequest.cpp
+  src/v20250903/model/DescribeDDoSBlockRecordsRequest.cpp
   src/v20200309/model/CreateDefaultAlarmThresholdRequest.cpp
   src/v20200309/model/DescribeDDoSConnectLimitListRequest.cpp
   src/v20200309/model/DescribeListBGPIPInstancesResponse.cpp
@@ -572,13 +579,6 @@ set(antiddos_src
   src/v20200309/model/InstanceChargePrepaid.cpp
   src/v20200309/model/CreatePacketFilterConfigRequest.cpp
   src/v20200309/model/DescribeCCTrendRequest.cpp
-  src/v20250903/model/DDoSUnblockQuota.cpp
-  src/v20250903/model/Filter.cpp
-  src/v20250903/model/UnblockResourcesResponse.cpp
-  src/v20250903/model/DDoSBlockRecord.cpp
-  src/v20250903/model/DescribeDDoSBlockRecordsResponse.cpp
-  src/v20250903/model/UnblockResourcesRequest.cpp
-  src/v20250903/model/DescribeDDoSBlockRecordsRequest.cpp
   )
 
 set(antiddos_include
@@ -607,9 +607,9 @@ target_link_libraries(antiddos
   core)
 
 #install(FILES ${antiddos_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/antiddos/v20250903)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/antiddos/v20200309)
 #install(FILES ${antiddos_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/antiddos/v20250903/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/antiddos/v20200309/model)
 install(DIRECTORY ${antiddos_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 

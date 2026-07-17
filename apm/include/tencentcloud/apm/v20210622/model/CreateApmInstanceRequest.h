@@ -130,21 +130,21 @@ namespace TencentCloud
                     /**
                      * 获取业务系统上报额度值，默认赋值为0表示不限制上报额度，已废弃
                      * @return SpanDailyCounters 业务系统上报额度值，默认赋值为0表示不限制上报额度，已废弃
-                     * 
+                     * @deprecated
                      */
                     uint64_t GetSpanDailyCounters() const;
 
                     /**
                      * 设置业务系统上报额度值，默认赋值为0表示不限制上报额度，已废弃
                      * @param _spanDailyCounters 业务系统上报额度值，默认赋值为0表示不限制上报额度，已废弃
-                     * 
+                     * @deprecated
                      */
                     void SetSpanDailyCounters(const uint64_t& _spanDailyCounters);
 
                     /**
                      * 判断参数 SpanDailyCounters 是否已赋值
                      * @return SpanDailyCounters 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SpanDailyCountersHasBeenSet() const;
 

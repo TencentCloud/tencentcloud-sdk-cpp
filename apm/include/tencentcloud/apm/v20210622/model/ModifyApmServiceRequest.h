@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
-                     * @return ServiceID 应用ID
+                     * 获取<p>应用ID</p>
+                     * @return ServiceID <p>应用ID</p>
                      * 
                      */
                     std::string GetServiceID() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _serviceID 应用ID
+                     * 设置<p>应用ID</p>
+                     * @param _serviceID <p>应用ID</p>
                      * 
                      */
                     void SetServiceID(const std::string& _serviceID);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ServiceIDHasBeenSet() const;
 
                     /**
-                     * 获取应用描述
-                     * @return ServiceDescription 应用描述
+                     * 获取<p>应用描述</p>
+                     * @return ServiceDescription <p>应用描述</p>
                      * 
                      */
                     std::string GetServiceDescription() const;
 
                     /**
-                     * 设置应用描述
-                     * @param _serviceDescription 应用描述
+                     * 设置<p>应用描述</p>
+                     * @param _serviceDescription <p>应用描述</p>
                      * 
                      */
                     void SetServiceDescription(const std::string& _serviceDescription);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ServiceDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
-                     * @return Tags 标签列表
+                     * 获取<p>标签列表</p>
+                     * @return Tags <p>标签列表</p>
                      * 
                      */
                     std::vector<ApmTag> GetTags() const;
 
                     /**
-                     * 设置标签列表
-                     * @param _tags 标签列表
+                     * 设置<p>标签列表</p>
+                     * @param _tags <p>标签列表</p>
                      * 
                      */
                     void SetTags(const std::vector<ApmTag>& _tags);
@@ -109,19 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用ID
+                     * <p>应用ID</p>
                      */
                     std::string m_serviceID;
                     bool m_serviceIDHasBeenSet;
 
                     /**
-                     * 应用描述
+                     * <p>应用描述</p>
                      */
                     std::string m_serviceDescription;
                     bool m_serviceDescriptionHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * <p>标签列表</p>
                      */
                     std::vector<ApmTag> m_tags;
                     bool m_tagsHasBeenSet;

@@ -25,6 +25,7 @@ using namespace std;
 DeleteBlockIgnoreRuleNewRequest::DeleteBlockIgnoreRuleNewRequest() :
     m_deleteAllHasBeenSet(false),
     m_showTypeHasBeenSet(false),
+    m_cfwAiAgentOperationSourceHasBeenSet(false),
     m_rulesHasBeenSet(false),
     m_ruleTypeHasBeenSet(false)
 {
@@ -51,6 +52,14 @@ string DeleteBlockIgnoreRuleNewRequest::ToJsonString() const
         string key = "ShowType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_showType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cfwAiAgentOperationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CfwAiAgentOperationSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cfwAiAgentOperationSource.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rulesHasBeenSet)
@@ -114,6 +123,22 @@ void DeleteBlockIgnoreRuleNewRequest::SetShowType(const string& _showType)
 bool DeleteBlockIgnoreRuleNewRequest::ShowTypeHasBeenSet() const
 {
     return m_showTypeHasBeenSet;
+}
+
+string DeleteBlockIgnoreRuleNewRequest::GetCfwAiAgentOperationSource() const
+{
+    return m_cfwAiAgentOperationSource;
+}
+
+void DeleteBlockIgnoreRuleNewRequest::SetCfwAiAgentOperationSource(const string& _cfwAiAgentOperationSource)
+{
+    m_cfwAiAgentOperationSource = _cfwAiAgentOperationSource;
+    m_cfwAiAgentOperationSourceHasBeenSet = true;
+}
+
+bool DeleteBlockIgnoreRuleNewRequest::CfwAiAgentOperationSourceHasBeenSet() const
+{
+    return m_cfwAiAgentOperationSourceHasBeenSet;
 }
 
 vector<BanAndAllowRuleDel> DeleteBlockIgnoreRuleNewRequest::GetRules() const

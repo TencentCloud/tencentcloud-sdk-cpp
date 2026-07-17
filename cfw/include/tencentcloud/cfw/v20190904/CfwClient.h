@@ -105,10 +105,28 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeCcnVpcFwPolicyLimitResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeCcnVpcFwSwitchRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeCcnVpcFwSwitchResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCfwAlertsRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCfwAlertsResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCfwAnalysisDataRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCfwAnalysisDataResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCfwAssetsRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCfwAssetsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeCfwEipsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeCfwEipsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeCfwInsStatusRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeCfwInsStatusResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCfwLogsRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCfwLogsResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCfwRiskOverviewRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCfwRiskOverviewResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCfwRuleOptimizationRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCfwRuleOptimizationResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCfwRulesRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCfwRulesResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCfwStatusMonitorRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCfwStatusMonitorResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCfwSwitchesRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCfwSwitchesResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeClusterNatCcnFwSwitchListRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeClusterNatCcnFwSwitchListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeClusterVpcFwSwitchsRequest.h>
@@ -442,12 +460,39 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCcnVpcFwSwitchResponse> DescribeCcnVpcFwSwitchOutcome;
                 typedef std::future<DescribeCcnVpcFwSwitchOutcome> DescribeCcnVpcFwSwitchOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeCcnVpcFwSwitchRequest&, DescribeCcnVpcFwSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCcnVpcFwSwitchAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCfwAlertsResponse> DescribeCfwAlertsOutcome;
+                typedef std::future<DescribeCfwAlertsOutcome> DescribeCfwAlertsOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeCfwAlertsRequest&, DescribeCfwAlertsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfwAlertsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCfwAnalysisDataResponse> DescribeCfwAnalysisDataOutcome;
+                typedef std::future<DescribeCfwAnalysisDataOutcome> DescribeCfwAnalysisDataOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeCfwAnalysisDataRequest&, DescribeCfwAnalysisDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfwAnalysisDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCfwAssetsResponse> DescribeCfwAssetsOutcome;
+                typedef std::future<DescribeCfwAssetsOutcome> DescribeCfwAssetsOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeCfwAssetsRequest&, DescribeCfwAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfwAssetsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCfwEipsResponse> DescribeCfwEipsOutcome;
                 typedef std::future<DescribeCfwEipsOutcome> DescribeCfwEipsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeCfwEipsRequest&, DescribeCfwEipsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfwEipsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCfwInsStatusResponse> DescribeCfwInsStatusOutcome;
                 typedef std::future<DescribeCfwInsStatusOutcome> DescribeCfwInsStatusOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeCfwInsStatusRequest&, DescribeCfwInsStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfwInsStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCfwLogsResponse> DescribeCfwLogsOutcome;
+                typedef std::future<DescribeCfwLogsOutcome> DescribeCfwLogsOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeCfwLogsRequest&, DescribeCfwLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfwLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCfwRiskOverviewResponse> DescribeCfwRiskOverviewOutcome;
+                typedef std::future<DescribeCfwRiskOverviewOutcome> DescribeCfwRiskOverviewOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeCfwRiskOverviewRequest&, DescribeCfwRiskOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfwRiskOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCfwRuleOptimizationResponse> DescribeCfwRuleOptimizationOutcome;
+                typedef std::future<DescribeCfwRuleOptimizationOutcome> DescribeCfwRuleOptimizationOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeCfwRuleOptimizationRequest&, DescribeCfwRuleOptimizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfwRuleOptimizationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCfwRulesResponse> DescribeCfwRulesOutcome;
+                typedef std::future<DescribeCfwRulesOutcome> DescribeCfwRulesOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeCfwRulesRequest&, DescribeCfwRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfwRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCfwStatusMonitorResponse> DescribeCfwStatusMonitorOutcome;
+                typedef std::future<DescribeCfwStatusMonitorOutcome> DescribeCfwStatusMonitorOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeCfwStatusMonitorRequest&, DescribeCfwStatusMonitorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfwStatusMonitorAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCfwSwitchesResponse> DescribeCfwSwitchesOutcome;
+                typedef std::future<DescribeCfwSwitchesOutcome> DescribeCfwSwitchesOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeCfwSwitchesRequest&, DescribeCfwSwitchesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfwSwitchesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterNatCcnFwSwitchListResponse> DescribeClusterNatCcnFwSwitchListOutcome;
                 typedef std::future<DescribeClusterNatCcnFwSwitchListOutcome> DescribeClusterNatCcnFwSwitchListOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeClusterNatCcnFwSwitchListRequest&, DescribeClusterNatCcnFwSwitchListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterNatCcnFwSwitchListAsyncHandler;
@@ -1117,6 +1162,33 @@ namespace TencentCloud
                 DescribeCcnVpcFwSwitchOutcomeCallable DescribeCcnVpcFwSwitchCallable(const Model::DescribeCcnVpcFwSwitchRequest& request);
 
                 /**
+                 *查询当前租户防火墙聚合告警事件。Response.Data 内 total 表示聚合告警事件数；alerts[].occurrence_count 表示单个聚合告警事件的告警发生次数/命中次数。
+                 * @param req DescribeCfwAlertsRequest
+                 * @return DescribeCfwAlertsOutcome
+                 */
+                DescribeCfwAlertsOutcome DescribeCfwAlerts(const Model::DescribeCfwAlertsRequest &request);
+                void DescribeCfwAlertsAsync(const Model::DescribeCfwAlertsRequest& request, const DescribeCfwAlertsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCfwAlertsOutcomeCallable DescribeCfwAlertsCallable(const Model::DescribeCfwAlertsRequest& request);
+
+                /**
+                 *查询当前租户防火墙分析报告数据。按分析场景返回整组分析结果，结果在 Response.Data 的 JSON 字符串中。
+                 * @param req DescribeCfwAnalysisDataRequest
+                 * @return DescribeCfwAnalysisDataOutcome
+                 */
+                DescribeCfwAnalysisDataOutcome DescribeCfwAnalysisData(const Model::DescribeCfwAnalysisDataRequest &request);
+                void DescribeCfwAnalysisDataAsync(const Model::DescribeCfwAnalysisDataRequest& request, const DescribeCfwAnalysisDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCfwAnalysisDataOutcomeCallable DescribeCfwAnalysisDataCallable(const Model::DescribeCfwAnalysisDataRequest& request);
+
+                /**
+                 *查询当前租户防火墙纳管资产。默认查询主机资产；仅明确需要 VPC 或子网时传 AssetType。结果在 Response.Data 的 JSON 字符串中。
+                 * @param req DescribeCfwAssetsRequest
+                 * @return DescribeCfwAssetsOutcome
+                 */
+                DescribeCfwAssetsOutcome DescribeCfwAssets(const Model::DescribeCfwAssetsRequest &request);
+                void DescribeCfwAssetsAsync(const Model::DescribeCfwAssetsRequest& request, const DescribeCfwAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCfwAssetsOutcomeCallable DescribeCfwAssetsCallable(const Model::DescribeCfwAssetsRequest& request);
+
+                /**
                  *查询防火墙弹性公网IP
                  * @param req DescribeCfwEipsRequest
                  * @return DescribeCfwEipsOutcome
@@ -1133,6 +1205,60 @@ namespace TencentCloud
                 DescribeCfwInsStatusOutcome DescribeCfwInsStatus(const Model::DescribeCfwInsStatusRequest &request);
                 void DescribeCfwInsStatusAsync(const Model::DescribeCfwInsStatusRequest& request, const DescribeCfwInsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCfwInsStatusOutcomeCallable DescribeCfwInsStatusCallable(const Model::DescribeCfwInsStatusRequest& request);
+
+                /**
+                 *查询当前租户防火墙日志。分页只使用 Response.Data 内的 HasMore / NextToken。
+                 * @param req DescribeCfwLogsRequest
+                 * @return DescribeCfwLogsOutcome
+                 */
+                DescribeCfwLogsOutcome DescribeCfwLogs(const Model::DescribeCfwLogsRequest &request);
+                void DescribeCfwLogsAsync(const Model::DescribeCfwLogsRequest& request, const DescribeCfwLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCfwLogsOutcomeCallable DescribeCfwLogsCallable(const Model::DescribeCfwLogsRequest& request);
+
+                /**
+                 *查询当前租户风险中心未处理风险概览。默认查询最近 7 天；自定义时间范围需同时传 StartTime 和 EndTime。结果在 Response.Data 的 JSON 字符串中。
+                 * @param req DescribeCfwRiskOverviewRequest
+                 * @return DescribeCfwRiskOverviewOutcome
+                 */
+                DescribeCfwRiskOverviewOutcome DescribeCfwRiskOverview(const Model::DescribeCfwRiskOverviewRequest &request);
+                void DescribeCfwRiskOverviewAsync(const Model::DescribeCfwRiskOverviewRequest& request, const DescribeCfwRiskOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCfwRiskOverviewOutcomeCallable DescribeCfwRiskOverviewCallable(const Model::DescribeCfwRiskOverviewRequest& request);
+
+                /**
+                 *查询当前租户防火墙规则优化建议。只读分析，不修改规则；Action 名保持单数 RuleOptimization。结果在 Response.Data 的 JSON 字符串中。
+                 * @param req DescribeCfwRuleOptimizationRequest
+                 * @return DescribeCfwRuleOptimizationOutcome
+                 */
+                DescribeCfwRuleOptimizationOutcome DescribeCfwRuleOptimization(const Model::DescribeCfwRuleOptimizationRequest &request);
+                void DescribeCfwRuleOptimizationAsync(const Model::DescribeCfwRuleOptimizationRequest& request, const DescribeCfwRuleOptimizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCfwRuleOptimizationOutcomeCallable DescribeCfwRuleOptimizationCallable(const Model::DescribeCfwRuleOptimizationRequest& request);
+
+                /**
+                 *查询当前租户防火墙规则配置。覆盖互联网边界、NAT、VPC、企业安全组，以及入侵防御 intrusion_prevention 的 blocklist、whitelist、isolate 三类有效列表。结果在 Response.Data 的 JSON 字符串中。
+                 * @param req DescribeCfwRulesRequest
+                 * @return DescribeCfwRulesOutcome
+                 */
+                DescribeCfwRulesOutcome DescribeCfwRules(const Model::DescribeCfwRulesRequest &request);
+                void DescribeCfwRulesAsync(const Model::DescribeCfwRulesRequest& request, const DescribeCfwRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCfwRulesOutcomeCallable DescribeCfwRulesCallable(const Model::DescribeCfwRulesRequest& request);
+
+                /**
+                 *查询状态监控场景。Op=describe_scene 用于发现可用场景、指标、视角和二级下拉 available_options；Op=fetch_scene 用于拉取具体场景快照，结果在 Response.Data 的 JSON 字符串中。
+                 * @param req DescribeCfwStatusMonitorRequest
+                 * @return DescribeCfwStatusMonitorOutcome
+                 */
+                DescribeCfwStatusMonitorOutcome DescribeCfwStatusMonitor(const Model::DescribeCfwStatusMonitorRequest &request);
+                void DescribeCfwStatusMonitorAsync(const Model::DescribeCfwStatusMonitorRequest& request, const DescribeCfwStatusMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCfwStatusMonitorOutcomeCallable DescribeCfwStatusMonitorCallable(const Model::DescribeCfwStatusMonitorRequest& request);
+
+                /**
+                 *查询当前租户防火墙防护开关总览。结果在 Response.Data 的 JSON 字符串中。本接口没有自定义业务入参，不支持过滤、排序或分页。
+                 * @param req DescribeCfwSwitchesRequest
+                 * @return DescribeCfwSwitchesOutcome
+                 */
+                DescribeCfwSwitchesOutcome DescribeCfwSwitches(const Model::DescribeCfwSwitchesRequest &request);
+                void DescribeCfwSwitchesAsync(const Model::DescribeCfwSwitchesRequest& request, const DescribeCfwSwitchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCfwSwitchesOutcomeCallable DescribeCfwSwitchesCallable(const Model::DescribeCfwSwitchesRequest& request);
 
                 /**
                  *查询NAT CCN集群模式防火墙开关列表

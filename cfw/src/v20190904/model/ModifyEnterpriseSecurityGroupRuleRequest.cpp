@@ -25,6 +25,7 @@ using namespace std;
 ModifyEnterpriseSecurityGroupRuleRequest::ModifyEnterpriseSecurityGroupRuleRequest() :
     m_ruleUuidHasBeenSet(false),
     m_modifyTypeHasBeenSet(false),
+    m_cfwAiAgentOperationSourceHasBeenSet(false),
     m_dataHasBeenSet(false),
     m_enableHasBeenSet(false)
 {
@@ -51,6 +52,14 @@ string ModifyEnterpriseSecurityGroupRuleRequest::ToJsonString() const
         string key = "ModifyType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_modifyType, allocator);
+    }
+
+    if (m_cfwAiAgentOperationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CfwAiAgentOperationSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cfwAiAgentOperationSource.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dataHasBeenSet)
@@ -108,6 +117,22 @@ void ModifyEnterpriseSecurityGroupRuleRequest::SetModifyType(const uint64_t& _mo
 bool ModifyEnterpriseSecurityGroupRuleRequest::ModifyTypeHasBeenSet() const
 {
     return m_modifyTypeHasBeenSet;
+}
+
+string ModifyEnterpriseSecurityGroupRuleRequest::GetCfwAiAgentOperationSource() const
+{
+    return m_cfwAiAgentOperationSource;
+}
+
+void ModifyEnterpriseSecurityGroupRuleRequest::SetCfwAiAgentOperationSource(const string& _cfwAiAgentOperationSource)
+{
+    m_cfwAiAgentOperationSource = _cfwAiAgentOperationSource;
+    m_cfwAiAgentOperationSourceHasBeenSet = true;
+}
+
+bool ModifyEnterpriseSecurityGroupRuleRequest::CfwAiAgentOperationSourceHasBeenSet() const
+{
+    return m_cfwAiAgentOperationSourceHasBeenSet;
 }
 
 SecurityGroupRule ModifyEnterpriseSecurityGroupRuleRequest::GetData() const

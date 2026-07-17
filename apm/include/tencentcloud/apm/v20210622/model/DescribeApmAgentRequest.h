@@ -129,21 +129,21 @@ namespace TencentCloud
                     /**
                      * 获取上报方式，已弃用
                      * @return ReportMethod 上报方式，已弃用
-                     * 
+                     * @deprecated
                      */
                     std::string GetReportMethod() const;
 
                     /**
                      * 设置上报方式，已弃用
                      * @param _reportMethod 上报方式，已弃用
-                     * 
+                     * @deprecated
                      */
                     void SetReportMethod(const std::string& _reportMethod);
 
                     /**
                      * 判断参数 ReportMethod 是否已赋值
                      * @return ReportMethod 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ReportMethodHasBeenSet() const;
 

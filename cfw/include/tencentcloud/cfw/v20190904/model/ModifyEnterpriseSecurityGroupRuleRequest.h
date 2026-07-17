@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则的uuid，可通过查询规则列表获取
-                     * @return RuleUuid 规则的uuid，可通过查询规则列表获取
+                     * 获取<p>规则的uuid，可通过查询规则列表获取</p>
+                     * @return RuleUuid <p>规则的uuid，可通过查询规则列表获取</p>
                      * 
                      */
                     uint64_t GetRuleUuid() const;
 
                     /**
-                     * 设置规则的uuid，可通过查询规则列表获取
-                     * @param _ruleUuid 规则的uuid，可通过查询规则列表获取
+                     * 设置<p>规则的uuid，可通过查询规则列表获取</p>
+                     * @param _ruleUuid <p>规则的uuid，可通过查询规则列表获取</p>
                      * 
                      */
                     void SetRuleUuid(const uint64_t& _ruleUuid);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool RuleUuidHasBeenSet() const;
 
                     /**
-                     * 获取修改类型，0：修改规则内容；1：修改单条规则开关状态；2：修改所有规则开关状态
-                     * @return ModifyType 修改类型，0：修改规则内容；1：修改单条规则开关状态；2：修改所有规则开关状态
+                     * 获取<p>修改类型，0：修改规则内容；1：修改单条规则开关状态；2：修改所有规则开关状态</p>
+                     * @return ModifyType <p>修改类型，0：修改规则内容；1：修改单条规则开关状态；2：修改所有规则开关状态</p>
                      * 
                      */
                     uint64_t GetModifyType() const;
 
                     /**
-                     * 设置修改类型，0：修改规则内容；1：修改单条规则开关状态；2：修改所有规则开关状态
-                     * @param _modifyType 修改类型，0：修改规则内容；1：修改单条规则开关状态；2：修改所有规则开关状态
+                     * 设置<p>修改类型，0：修改规则内容；1：修改单条规则开关状态；2：修改所有规则开关状态</p>
+                     * @param _modifyType <p>修改类型，0：修改规则内容；1：修改单条规则开关状态；2：修改所有规则开关状态</p>
                      * 
                      */
                     void SetModifyType(const uint64_t& _modifyType);
@@ -86,15 +86,36 @@ namespace TencentCloud
                     bool ModifyTypeHasBeenSet() const;
 
                     /**
-                     * 获取编辑后的企业安全组规则数据；修改规则状态不用填该字段
-                     * @return Data 编辑后的企业安全组规则数据；修改规则状态不用填该字段
+                     * 获取<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * @return CfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * 
+                     */
+                    std::string GetCfwAiAgentOperationSource() const;
+
+                    /**
+                     * 设置<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * @param _cfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * 
+                     */
+                    void SetCfwAiAgentOperationSource(const std::string& _cfwAiAgentOperationSource);
+
+                    /**
+                     * 判断参数 CfwAiAgentOperationSource 是否已赋值
+                     * @return CfwAiAgentOperationSource 是否已赋值
+                     * 
+                     */
+                    bool CfwAiAgentOperationSourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>编辑后的企业安全组规则数据；修改规则状态不用填该字段</p>
+                     * @return Data <p>编辑后的企业安全组规则数据；修改规则状态不用填该字段</p>
                      * 
                      */
                     SecurityGroupRule GetData() const;
 
                     /**
-                     * 设置编辑后的企业安全组规则数据；修改规则状态不用填该字段
-                     * @param _data 编辑后的企业安全组规则数据；修改规则状态不用填该字段
+                     * 设置<p>编辑后的企业安全组规则数据；修改规则状态不用填该字段</p>
+                     * @param _data <p>编辑后的企业安全组规则数据；修改规则状态不用填该字段</p>
                      * 
                      */
                     void SetData(const SecurityGroupRule& _data);
@@ -107,15 +128,15 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取0是关闭,1是开启
-                     * @return Enable 0是关闭,1是开启
+                     * 获取<p>0是关闭,1是开启</p>
+                     * @return Enable <p>0是关闭,1是开启</p>
                      * 
                      */
                     uint64_t GetEnable() const;
 
                     /**
-                     * 设置0是关闭,1是开启
-                     * @param _enable 0是关闭,1是开启
+                     * 设置<p>0是关闭,1是开启</p>
+                     * @param _enable <p>0是关闭,1是开启</p>
                      * 
                      */
                     void SetEnable(const uint64_t& _enable);
@@ -130,25 +151,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 规则的uuid，可通过查询规则列表获取
+                     * <p>规则的uuid，可通过查询规则列表获取</p>
                      */
                     uint64_t m_ruleUuid;
                     bool m_ruleUuidHasBeenSet;
 
                     /**
-                     * 修改类型，0：修改规则内容；1：修改单条规则开关状态；2：修改所有规则开关状态
+                     * <p>修改类型，0：修改规则内容；1：修改单条规则开关状态；2：修改所有规则开关状态</p>
                      */
                     uint64_t m_modifyType;
                     bool m_modifyTypeHasBeenSet;
 
                     /**
-                     * 编辑后的企业安全组规则数据；修改规则状态不用填该字段
+                     * <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     */
+                    std::string m_cfwAiAgentOperationSource;
+                    bool m_cfwAiAgentOperationSourceHasBeenSet;
+
+                    /**
+                     * <p>编辑后的企业安全组规则数据；修改规则状态不用填该字段</p>
                      */
                     SecurityGroupRule m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 0是关闭,1是开启
+                     * <p>0是关闭,1是开启</p>
                      */
                     uint64_t m_enable;
                     bool m_enableHasBeenSet;

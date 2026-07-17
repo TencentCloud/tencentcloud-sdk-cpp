@@ -540,6 +540,56 @@ IotexplorerClient::BindTWeTalkAgentOutcomeCallable IotexplorerClient::BindTWeTal
     return prom->get_future();
 }
 
+IotexplorerClient::BindUserDeviceOutcome IotexplorerClient::BindUserDevice(const BindUserDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindUserDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindUserDeviceResponse rsp = BindUserDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindUserDeviceOutcome(rsp);
+        else
+            return BindUserDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return BindUserDeviceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::BindUserDeviceAsync(const BindUserDeviceRequest& request, const BindUserDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const BindUserDeviceRequest&;
+    using Resp = BindUserDeviceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "BindUserDevice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::BindUserDeviceOutcomeCallable IotexplorerClient::BindUserDeviceCallable(const BindUserDeviceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<BindUserDeviceOutcome>>();
+    BindUserDeviceAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const BindUserDeviceRequest&,
+        BindUserDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::CallDeviceActionAsyncOutcome IotexplorerClient::CallDeviceActionAsync(const CallDeviceActionAsyncRequest &request)
 {
     auto outcome = MakeRequest(request, "CallDeviceActionAsync");
@@ -632,6 +682,56 @@ IotexplorerClient::CallDeviceActionSyncOutcomeCallable IotexplorerClient::CallDe
         const IotexplorerClient*,
         const CallDeviceActionSyncRequest&,
         CallDeviceActionSyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::CallDeviceRRPCSyncOutcome IotexplorerClient::CallDeviceRRPCSync(const CallDeviceRRPCSyncRequest &request)
+{
+    auto outcome = MakeRequest(request, "CallDeviceRRPCSync");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CallDeviceRRPCSyncResponse rsp = CallDeviceRRPCSyncResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CallDeviceRRPCSyncOutcome(rsp);
+        else
+            return CallDeviceRRPCSyncOutcome(o.GetError());
+    }
+    else
+    {
+        return CallDeviceRRPCSyncOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CallDeviceRRPCSyncAsync(const CallDeviceRRPCSyncRequest& request, const CallDeviceRRPCSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CallDeviceRRPCSyncRequest&;
+    using Resp = CallDeviceRRPCSyncResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CallDeviceRRPCSync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::CallDeviceRRPCSyncOutcomeCallable IotexplorerClient::CallDeviceRRPCSyncCallable(const CallDeviceRRPCSyncRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CallDeviceRRPCSyncOutcome>>();
+    CallDeviceRRPCSyncAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const CallDeviceRRPCSyncRequest&,
+        CallDeviceRRPCSyncOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -11082,6 +11182,56 @@ IotexplorerClient::ResumeWeCallDeviceOutcomeCallable IotexplorerClient::ResumeWe
         const IotexplorerClient*,
         const ResumeWeCallDeviceRequest&,
         ResumeWeCallDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::RevokeBindUserDeviceOutcome IotexplorerClient::RevokeBindUserDevice(const RevokeBindUserDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "RevokeBindUserDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RevokeBindUserDeviceResponse rsp = RevokeBindUserDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RevokeBindUserDeviceOutcome(rsp);
+        else
+            return RevokeBindUserDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return RevokeBindUserDeviceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::RevokeBindUserDeviceAsync(const RevokeBindUserDeviceRequest& request, const RevokeBindUserDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RevokeBindUserDeviceRequest&;
+    using Resp = RevokeBindUserDeviceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RevokeBindUserDevice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::RevokeBindUserDeviceOutcomeCallable IotexplorerClient::RevokeBindUserDeviceCallable(const RevokeBindUserDeviceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RevokeBindUserDeviceOutcome>>();
+    RevokeBindUserDeviceAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const RevokeBindUserDeviceRequest&,
+        RevokeBindUserDeviceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

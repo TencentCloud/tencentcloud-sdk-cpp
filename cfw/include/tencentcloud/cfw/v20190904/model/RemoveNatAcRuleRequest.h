@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则
-                     * @return RuleUuid 规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则
+                     * 获取<p>规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则</p>
+                     * @return RuleUuid <p>规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则</p>
                      * 
                      */
                     std::vector<int64_t> GetRuleUuid() const;
 
                     /**
-                     * 设置规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则
-                     * @param _ruleUuid 规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则
+                     * 设置<p>规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则</p>
+                     * @param _ruleUuid <p>规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则</p>
                      * 
                      */
                     void SetRuleUuid(const std::vector<int64_t>& _ruleUuid);
@@ -64,15 +64,36 @@ namespace TencentCloud
                     bool RuleUuidHasBeenSet() const;
 
                     /**
-                     * 获取规则方向：1，入站；0，出站
-                     * @return Direction 规则方向：1，入站；0，出站
+                     * 获取<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * @return CfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * 
+                     */
+                    std::string GetCfwAiAgentOperationSource() const;
+
+                    /**
+                     * 设置<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * @param _cfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * 
+                     */
+                    void SetCfwAiAgentOperationSource(const std::string& _cfwAiAgentOperationSource);
+
+                    /**
+                     * 判断参数 CfwAiAgentOperationSource 是否已赋值
+                     * @return CfwAiAgentOperationSource 是否已赋值
+                     * 
+                     */
+                    bool CfwAiAgentOperationSourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>规则方向：1，入站；0，出站</p>
+                     * @return Direction <p>规则方向：1，入站；0，出站</p>
                      * 
                      */
                     uint64_t GetDirection() const;
 
                     /**
-                     * 设置规则方向：1，入站；0，出站
-                     * @param _direction 规则方向：1，入站；0，出站
+                     * 设置<p>规则方向：1，入站；0，出站</p>
+                     * @param _direction <p>规则方向：1，入站；0，出站</p>
                      * 
                      */
                     void SetDirection(const uint64_t& _direction);
@@ -87,13 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则
+                     * <p>规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则</p>
                      */
                     std::vector<int64_t> m_ruleUuid;
                     bool m_ruleUuidHasBeenSet;
 
                     /**
-                     * 规则方向：1，入站；0，出站
+                     * <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     */
+                    std::string m_cfwAiAgentOperationSource;
+                    bool m_cfwAiAgentOperationSourceHasBeenSet;
+
+                    /**
+                     * <p>规则方向：1，入站；0，出站</p>
                      */
                     uint64_t m_direction;
                     bool m_directionHasBeenSet;

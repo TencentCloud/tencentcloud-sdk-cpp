@@ -24,6 +24,7 @@ using namespace std;
 
 RemoveNatAcRuleRequest::RemoveNatAcRuleRequest() :
     m_ruleUuidHasBeenSet(false),
+    m_cfwAiAgentOperationSourceHasBeenSet(false),
     m_directionHasBeenSet(false)
 {
 }
@@ -46,6 +47,14 @@ string RemoveNatAcRuleRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_cfwAiAgentOperationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CfwAiAgentOperationSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cfwAiAgentOperationSource.c_str(), allocator).Move(), allocator);
     }
 
     if (m_directionHasBeenSet)
@@ -78,6 +87,22 @@ void RemoveNatAcRuleRequest::SetRuleUuid(const vector<int64_t>& _ruleUuid)
 bool RemoveNatAcRuleRequest::RuleUuidHasBeenSet() const
 {
     return m_ruleUuidHasBeenSet;
+}
+
+string RemoveNatAcRuleRequest::GetCfwAiAgentOperationSource() const
+{
+    return m_cfwAiAgentOperationSource;
+}
+
+void RemoveNatAcRuleRequest::SetCfwAiAgentOperationSource(const string& _cfwAiAgentOperationSource)
+{
+    m_cfwAiAgentOperationSource = _cfwAiAgentOperationSource;
+    m_cfwAiAgentOperationSourceHasBeenSet = true;
+}
+
+bool RemoveNatAcRuleRequest::CfwAiAgentOperationSourceHasBeenSet() const
+{
+    return m_cfwAiAgentOperationSourceHasBeenSet;
 }
 
 uint64_t RemoveNatAcRuleRequest::GetDirection() const

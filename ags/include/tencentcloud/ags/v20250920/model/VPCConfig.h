@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取VPC子网ID列表
-                     * @return SubnetIds VPC子网ID列表
+                     * 获取<p>VPC子网ID列表</p>
+                     * @return SubnetIds <p>VPC子网ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
-                     * 设置VPC子网ID列表
-                     * @param _subnetIds VPC子网ID列表
+                     * 设置<p>VPC子网ID列表</p>
+                     * @param _subnetIds <p>VPC子网ID列表</p>
                      * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool SubnetIdsHasBeenSet() const;
 
                     /**
-                     * 获取安全组ID列表
-                     * @return SecurityGroupIds 安全组ID列表
+                     * 获取<p>安全组ID列表</p>
+                     * @return SecurityGroupIds <p>安全组ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置安全组ID列表
-                     * @param _securityGroupIds 安全组ID列表
+                     * 设置<p>安全组ID列表</p>
+                     * @param _securityGroupIds <p>安全组ID列表</p>
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * VPC子网ID列表
+                     * <p>VPC子网ID列表</p>
                      */
                     std::vector<std::string> m_subnetIds;
                     bool m_subnetIdsHasBeenSet;
 
                     /**
-                     * 安全组ID列表
+                     * <p>安全组ID列表</p>
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;

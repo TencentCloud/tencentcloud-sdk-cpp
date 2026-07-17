@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
-                     * @return ClusterId 集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
+                     * 获取<p>集群ID（请登录 <a href="https://console.cloud.tencent.com/tke2">TKE 控制台</a> 获取集群 ID ）</p>
+                     * @return ClusterId <p>集群ID（请登录 <a href="https://console.cloud.tencent.com/tke2">TKE 控制台</a> 获取集群 ID ）</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
-                     * @param _clusterId 集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
+                     * 设置<p>集群ID（请登录 <a href="https://console.cloud.tencent.com/tke2">TKE 控制台</a> 获取集群 ID ）</p>
+                     * @param _clusterId <p>集群ID（请登录 <a href="https://console.cloud.tencent.com/tke2">TKE 控制台</a> 获取集群 ID ）</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -65,27 +65,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取create 表示开始一次升级任务
-pause 表示停止任务
-resume表示继续任务
-abort表示终止任务
-                     * @return Operation create 表示开始一次升级任务
-pause 表示停止任务
-resume表示继续任务
-abort表示终止任务
+                     * 获取<p>create 表示开始一次升级任务<br>pause 表示停止任务<br>resume表示继续任务<br>abort表示终止任务</p>
+                     * @return Operation <p>create 表示开始一次升级任务<br>pause 表示停止任务<br>resume表示继续任务<br>abort表示终止任务</p>
                      * 
                      */
                     std::string GetOperation() const;
 
                     /**
-                     * 设置create 表示开始一次升级任务
-pause 表示停止任务
-resume表示继续任务
-abort表示终止任务
-                     * @param _operation create 表示开始一次升级任务
-pause 表示停止任务
-resume表示继续任务
-abort表示终止任务
+                     * 设置<p>create 表示开始一次升级任务<br>pause 表示停止任务<br>resume表示继续任务<br>abort表示终止任务</p>
+                     * @param _operation <p>create 表示开始一次升级任务<br>pause 表示停止任务<br>resume表示继续任务<br>abort表示终止任务</p>
                      * 
                      */
                     void SetOperation(const std::string& _operation);
@@ -98,27 +86,15 @@ abort表示终止任务
                     bool OperationHasBeenSet() const;
 
                     /**
-                     * 获取升级类型，只有Operation是create需要设置
-reset 大版本重装升级
-hot 小版本热升级
-major 大版本原地升级
-                     * @return UpgradeType 升级类型，只有Operation是create需要设置
-reset 大版本重装升级
-hot 小版本热升级
-major 大版本原地升级
+                     * 获取<p>升级类型，只有Operation是create需要设置<br>reset 大版本重装升级<br>hot 小版本热升级<br>major 大版本原地升级</p>
+                     * @return UpgradeType <p>升级类型，只有Operation是create需要设置<br>reset 大版本重装升级<br>hot 小版本热升级<br>major 大版本原地升级</p>
                      * 
                      */
                     std::string GetUpgradeType() const;
 
                     /**
-                     * 设置升级类型，只有Operation是create需要设置
-reset 大版本重装升级
-hot 小版本热升级
-major 大版本原地升级
-                     * @param _upgradeType 升级类型，只有Operation是create需要设置
-reset 大版本重装升级
-hot 小版本热升级
-major 大版本原地升级
+                     * 设置<p>升级类型，只有Operation是create需要设置<br>reset 大版本重装升级<br>hot 小版本热升级<br>major 大版本原地升级</p>
+                     * @param _upgradeType <p>升级类型，只有Operation是create需要设置<br>reset 大版本重装升级<br>hot 小版本热升级<br>major 大版本原地升级</p>
                      * 
                      */
                     void SetUpgradeType(const std::string& _upgradeType);
@@ -131,19 +107,15 @@ major 大版本原地升级
                     bool UpgradeTypeHasBeenSet() const;
 
                     /**
-                     * 获取需要升级的节点列表，可以通过控制台或 [查询待升级节点接口
-](https://cloud.tencent.com/document/api/457/50366) 获取
-                     * @return InstanceIds 需要升级的节点列表，可以通过控制台或 [查询待升级节点接口
-](https://cloud.tencent.com/document/api/457/50366) 获取
+                     * 获取<p>需要升级的节点列表，可以通过控制台或 <a href="https://cloud.tencent.com/document/api/457/50366">查询待升级节点接口</a> 获取</p>
+                     * @return InstanceIds <p>需要升级的节点列表，可以通过控制台或 <a href="https://cloud.tencent.com/document/api/457/50366">查询待升级节点接口</a> 获取</p>
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置需要升级的节点列表，可以通过控制台或 [查询待升级节点接口
-](https://cloud.tencent.com/document/api/457/50366) 获取
-                     * @param _instanceIds 需要升级的节点列表，可以通过控制台或 [查询待升级节点接口
-](https://cloud.tencent.com/document/api/457/50366) 获取
+                     * 设置<p>需要升级的节点列表，可以通过控制台或 <a href="https://cloud.tencent.com/document/api/457/50366">查询待升级节点接口</a> 获取</p>
+                     * @param _instanceIds <p>需要升级的节点列表，可以通过控制台或 <a href="https://cloud.tencent.com/document/api/457/50366">查询待升级节点接口</a> 获取</p>
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -156,15 +128,15 @@ major 大版本原地升级
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取当节点重新加入集群时候所使用的参数，参考添加已有节点接口
-                     * @return ResetParam 当节点重新加入集群时候所使用的参数，参考添加已有节点接口
+                     * 获取<p>当节点重新加入集群时候所使用的参数，参考添加已有节点接口</p>
+                     * @return ResetParam <p>当节点重新加入集群时候所使用的参数，参考添加已有节点接口</p>
                      * 
                      */
                     UpgradeNodeResetParam GetResetParam() const;
 
                     /**
-                     * 设置当节点重新加入集群时候所使用的参数，参考添加已有节点接口
-                     * @param _resetParam 当节点重新加入集群时候所使用的参数，参考添加已有节点接口
+                     * 设置<p>当节点重新加入集群时候所使用的参数，参考添加已有节点接口</p>
+                     * @param _resetParam <p>当节点重新加入集群时候所使用的参数，参考添加已有节点接口</p>
                      * 
                      */
                     void SetResetParam(const UpgradeNodeResetParam& _resetParam);
@@ -177,15 +149,15 @@ major 大版本原地升级
                     bool ResetParamHasBeenSet() const;
 
                     /**
-                     * 获取是否忽略节点升级前检查，默认值 false
-                     * @return SkipPreCheck 是否忽略节点升级前检查，默认值 false
+                     * 获取<p>是否忽略节点升级前检查，默认值 false</p>
+                     * @return SkipPreCheck <p>是否忽略节点升级前检查，默认值 false</p>
                      * 
                      */
                     bool GetSkipPreCheck() const;
 
                     /**
-                     * 设置是否忽略节点升级前检查，默认值 false
-                     * @param _skipPreCheck 是否忽略节点升级前检查，默认值 false
+                     * 设置<p>是否忽略节点升级前检查，默认值 false</p>
+                     * @param _skipPreCheck <p>是否忽略节点升级前检查，默认值 false</p>
                      * 
                      */
                     void SetSkipPreCheck(const bool& _skipPreCheck);
@@ -198,15 +170,15 @@ major 大版本原地升级
                     bool SkipPreCheckHasBeenSet() const;
 
                     /**
-                     * 获取最大可容忍的不可用Pod比例，如果设置 0 表示不做校验
-                     * @return MaxNotReadyPercent 最大可容忍的不可用Pod比例，如果设置 0 表示不做校验
+                     * 获取<p>最大可容忍的不可用Pod百分比，如果设置 0 表示不做校验</p><p>取值范围：[0, 100]</p><p>默认值：20</p>
+                     * @return MaxNotReadyPercent <p>最大可容忍的不可用Pod百分比，如果设置 0 表示不做校验</p><p>取值范围：[0, 100]</p><p>默认值：20</p>
                      * 
                      */
                     double GetMaxNotReadyPercent() const;
 
                     /**
-                     * 设置最大可容忍的不可用Pod比例，如果设置 0 表示不做校验
-                     * @param _maxNotReadyPercent 最大可容忍的不可用Pod比例，如果设置 0 表示不做校验
+                     * 设置<p>最大可容忍的不可用Pod百分比，如果设置 0 表示不做校验</p><p>取值范围：[0, 100]</p><p>默认值：20</p>
+                     * @param _maxNotReadyPercent <p>最大可容忍的不可用Pod百分比，如果设置 0 表示不做校验</p><p>取值范围：[0, 100]</p><p>默认值：20</p>
                      * 
                      */
                     void SetMaxNotReadyPercent(const double& _maxNotReadyPercent);
@@ -219,15 +191,15 @@ major 大版本原地升级
                     bool MaxNotReadyPercentHasBeenSet() const;
 
                     /**
-                     * 获取是否升级节点运行时，默认false不升级
-                     * @return UpgradeRunTime 是否升级节点运行时，默认false不升级
+                     * 获取<p>是否升级节点运行时，默认false不升级</p>
+                     * @return UpgradeRunTime <p>是否升级节点运行时，默认false不升级</p>
                      * 
                      */
                     bool GetUpgradeRunTime() const;
 
                     /**
-                     * 设置是否升级节点运行时，默认false不升级
-                     * @param _upgradeRunTime 是否升级节点运行时，默认false不升级
+                     * 设置<p>是否升级节点运行时，默认false不升级</p>
+                     * @param _upgradeRunTime <p>是否升级节点运行时，默认false不升级</p>
                      * 
                      */
                     void SetUpgradeRunTime(const bool& _upgradeRunTime);
@@ -240,15 +212,15 @@ major 大版本原地升级
                     bool UpgradeRunTimeHasBeenSet() const;
 
                     /**
-                     * 获取支持多个节点并行升级，默认值为 1，最大并行数为15
-                     * @return Concurrent 支持多个节点并行升级，默认值为 1，最大并行数为15
+                     * 获取<p>支持多个节点并行升级，默认值为 1，最大并行数为15</p>
+                     * @return Concurrent <p>支持多个节点并行升级，默认值为 1，最大并行数为15</p>
                      * 
                      */
                     int64_t GetConcurrent() const;
 
                     /**
-                     * 设置支持多个节点并行升级，默认值为 1，最大并行数为15
-                     * @param _concurrent 支持多个节点并行升级，默认值为 1，最大并行数为15
+                     * 设置<p>支持多个节点并行升级，默认值为 1，最大并行数为15</p>
+                     * @param _concurrent <p>支持多个节点并行升级，默认值为 1，最大并行数为15</p>
                      * 
                      */
                     void SetConcurrent(const int64_t& _concurrent);
@@ -263,62 +235,55 @@ major 大版本原地升级
                 private:
 
                     /**
-                     * 集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
+                     * <p>集群ID（请登录 <a href="https://console.cloud.tencent.com/tke2">TKE 控制台</a> 获取集群 ID ）</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * create 表示开始一次升级任务
-pause 表示停止任务
-resume表示继续任务
-abort表示终止任务
+                     * <p>create 表示开始一次升级任务<br>pause 表示停止任务<br>resume表示继续任务<br>abort表示终止任务</p>
                      */
                     std::string m_operation;
                     bool m_operationHasBeenSet;
 
                     /**
-                     * 升级类型，只有Operation是create需要设置
-reset 大版本重装升级
-hot 小版本热升级
-major 大版本原地升级
+                     * <p>升级类型，只有Operation是create需要设置<br>reset 大版本重装升级<br>hot 小版本热升级<br>major 大版本原地升级</p>
                      */
                     std::string m_upgradeType;
                     bool m_upgradeTypeHasBeenSet;
 
                     /**
-                     * 需要升级的节点列表，可以通过控制台或 [查询待升级节点接口
-](https://cloud.tencent.com/document/api/457/50366) 获取
+                     * <p>需要升级的节点列表，可以通过控制台或 <a href="https://cloud.tencent.com/document/api/457/50366">查询待升级节点接口</a> 获取</p>
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 当节点重新加入集群时候所使用的参数，参考添加已有节点接口
+                     * <p>当节点重新加入集群时候所使用的参数，参考添加已有节点接口</p>
                      */
                     UpgradeNodeResetParam m_resetParam;
                     bool m_resetParamHasBeenSet;
 
                     /**
-                     * 是否忽略节点升级前检查，默认值 false
+                     * <p>是否忽略节点升级前检查，默认值 false</p>
                      */
                     bool m_skipPreCheck;
                     bool m_skipPreCheckHasBeenSet;
 
                     /**
-                     * 最大可容忍的不可用Pod比例，如果设置 0 表示不做校验
+                     * <p>最大可容忍的不可用Pod百分比，如果设置 0 表示不做校验</p><p>取值范围：[0, 100]</p><p>默认值：20</p>
                      */
                     double m_maxNotReadyPercent;
                     bool m_maxNotReadyPercentHasBeenSet;
 
                     /**
-                     * 是否升级节点运行时，默认false不升级
+                     * <p>是否升级节点运行时，默认false不升级</p>
                      */
                     bool m_upgradeRunTime;
                     bool m_upgradeRunTimeHasBeenSet;
 
                     /**
-                     * 支持多个节点并行升级，默认值为 1，最大并行数为15
+                     * <p>支持多个节点并行升级，默认值为 1，最大并行数为15</p>
                      */
                     int64_t m_concurrent;
                     bool m_concurrentHasBeenSet;

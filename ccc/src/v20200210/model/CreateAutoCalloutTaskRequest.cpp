@@ -43,7 +43,8 @@ CreateAutoCalloutTaskRequest::CreateAutoCalloutTaskRequest() :
     m_retryHangupTypesHasBeenSet(false),
     m_retryTagsHasBeenSet(false),
     m_availableWorkTimeConfigHasBeenSet(false),
-    m_triggerStrategyHasBeenSet(false)
+    m_triggerStrategyHasBeenSet(false),
+    m_concurrencyLimitHasBeenSet(false)
 {
 }
 
@@ -277,6 +278,14 @@ string CreateAutoCalloutTaskRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_concurrencyLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConcurrencyLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_concurrencyLimit, allocator);
     }
 
 
@@ -621,6 +630,22 @@ void CreateAutoCalloutTaskRequest::SetTriggerStrategy(const vector<TriggerStrate
 bool CreateAutoCalloutTaskRequest::TriggerStrategyHasBeenSet() const
 {
     return m_triggerStrategyHasBeenSet;
+}
+
+int64_t CreateAutoCalloutTaskRequest::GetConcurrencyLimit() const
+{
+    return m_concurrencyLimit;
+}
+
+void CreateAutoCalloutTaskRequest::SetConcurrencyLimit(const int64_t& _concurrencyLimit)
+{
+    m_concurrencyLimit = _concurrencyLimit;
+    m_concurrencyLimitHasBeenSet = true;
+}
+
+bool CreateAutoCalloutTaskRequest::ConcurrencyLimitHasBeenSet() const
+{
+    return m_concurrencyLimitHasBeenSet;
 }
 
 

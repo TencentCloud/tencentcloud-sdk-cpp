@@ -23,7 +23,8 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 ModifyVpcAcRuleRequest::ModifyVpcAcRuleRequest() :
-    m_rulesHasBeenSet(false)
+    m_rulesHasBeenSet(false),
+    m_cfwAiAgentOperationSourceHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string ModifyVpcAcRuleRequest::ToJsonString() const
         }
     }
 
+    if (m_cfwAiAgentOperationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CfwAiAgentOperationSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cfwAiAgentOperationSource.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -71,6 +80,22 @@ void ModifyVpcAcRuleRequest::SetRules(const vector<VpcRuleItem>& _rules)
 bool ModifyVpcAcRuleRequest::RulesHasBeenSet() const
 {
     return m_rulesHasBeenSet;
+}
+
+string ModifyVpcAcRuleRequest::GetCfwAiAgentOperationSource() const
+{
+    return m_cfwAiAgentOperationSource;
+}
+
+void ModifyVpcAcRuleRequest::SetCfwAiAgentOperationSource(const string& _cfwAiAgentOperationSource)
+{
+    m_cfwAiAgentOperationSource = _cfwAiAgentOperationSource;
+    m_cfwAiAgentOperationSourceHasBeenSet = true;
+}
+
+bool ModifyVpcAcRuleRequest::CfwAiAgentOperationSourceHasBeenSet() const
+{
+    return m_cfwAiAgentOperationSourceHasBeenSet;
 }
 
 

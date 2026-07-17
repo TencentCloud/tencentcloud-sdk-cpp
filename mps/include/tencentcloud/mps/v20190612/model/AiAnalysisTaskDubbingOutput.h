@@ -131,6 +131,27 @@ namespace TencentCloud
                      */
                     bool OutputStorageHasBeenSet() const;
 
+                    /**
+                     * 获取<p>额外结果，目前包含字幕文件结果 Url</p>
+                     * @return ExtraOutput <p>额外结果，目前包含字幕文件结果 Url</p>
+                     * 
+                     */
+                    std::string GetExtraOutput() const;
+
+                    /**
+                     * 设置<p>额外结果，目前包含字幕文件结果 Url</p>
+                     * @param _extraOutput <p>额外结果，目前包含字幕文件结果 Url</p>
+                     * 
+                     */
+                    void SetExtraOutput(const std::string& _extraOutput);
+
+                    /**
+                     * 判断参数 ExtraOutput 是否已赋值
+                     * @return ExtraOutput 是否已赋值
+                     * 
+                     */
+                    bool ExtraOutputHasBeenSet() const;
+
                 private:
 
                     /**
@@ -156,6 +177,12 @@ namespace TencentCloud
                      */
                     TaskOutputStorage m_outputStorage;
                     bool m_outputStorageHasBeenSet;
+
+                    /**
+                     * <p>额外结果，目前包含字幕文件结果 Url</p>
+                     */
+                    std::string m_extraOutput;
+                    bool m_extraOutputHasBeenSet;
 
                 };
             }

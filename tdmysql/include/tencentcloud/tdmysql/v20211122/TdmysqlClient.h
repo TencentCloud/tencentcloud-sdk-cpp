@@ -37,6 +37,8 @@
 #include <tencentcloud/tdmysql/v20211122/model/DeleteDBSBackupSetsResponse.h>
 #include <tencentcloud/tdmysql/v20211122/model/DeleteUsersRequest.h>
 #include <tencentcloud/tdmysql/v20211122/model/DeleteUsersResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBEnginesRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBEnginesResponse.h>
 #include <tencentcloud/tdmysql/v20211122/model/DescribeDBInstanceDetailRequest.h>
 #include <tencentcloud/tdmysql/v20211122/model/DescribeDBInstanceDetailResponse.h>
 #include <tencentcloud/tdmysql/v20211122/model/DescribeDBInstancesRequest.h>
@@ -148,6 +150,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteUsersResponse> DeleteUsersOutcome;
                 typedef std::future<DeleteUsersOutcome> DeleteUsersOutcomeCallable;
                 typedef std::function<void(const TdmysqlClient*, const Model::DeleteUsersRequest&, DeleteUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUsersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBEnginesResponse> DescribeDBEnginesOutcome;
+                typedef std::future<DescribeDBEnginesOutcome> DescribeDBEnginesOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeDBEnginesRequest&, DescribeDBEnginesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBEnginesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBInstanceDetailResponse> DescribeDBInstanceDetailOutcome;
                 typedef std::future<DescribeDBInstanceDetailOutcome> DescribeDBInstanceDetailOutcomeCallable;
                 typedef std::function<void(const TdmysqlClient*, const Model::DescribeDBInstanceDetailRequest&, DescribeDBInstanceDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceDetailAsyncHandler;
@@ -327,6 +332,15 @@ namespace TencentCloud
                 DeleteUsersOutcome DeleteUsers(const Model::DeleteUsersRequest &request);
                 void DeleteUsersAsync(const Model::DeleteUsersRequest& request, const DeleteUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteUsersOutcomeCallable DeleteUsersCallable(const Model::DeleteUsersRequest& request);
+
+                /**
+                 *本接口（DescribeDBEngines）用于获取DB引擎版本列表
+                 * @param req DescribeDBEnginesRequest
+                 * @return DescribeDBEnginesOutcome
+                 */
+                DescribeDBEnginesOutcome DescribeDBEngines(const Model::DescribeDBEnginesRequest &request);
+                void DescribeDBEnginesAsync(const Model::DescribeDBEnginesRequest& request, const DescribeDBEnginesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBEnginesOutcomeCallable DescribeDBEnginesCallable(const Model::DescribeDBEnginesRequest& request);
 
                 /**
                  *本接口（DescribeDBInstanceDetail）提供查询实例详情功能

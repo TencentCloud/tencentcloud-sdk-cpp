@@ -27,7 +27,8 @@ DescribePrometheusAlertGroupsRequest::DescribePrometheusAlertGroupsRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
+    m_groupNameHasBeenSet(false),
+    m_labelsHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,21 @@ string DescribePrometheusAlertGroupsRequest::ToJsonString() const
         string key = "GroupName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_groupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_labelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Labels";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_labels.begin(); itr != m_labels.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -164,6 +180,22 @@ void DescribePrometheusAlertGroupsRequest::SetGroupName(const string& _groupName
 bool DescribePrometheusAlertGroupsRequest::GroupNameHasBeenSet() const
 {
     return m_groupNameHasBeenSet;
+}
+
+vector<PrometheusRuleKV> DescribePrometheusAlertGroupsRequest::GetLabels() const
+{
+    return m_labels;
+}
+
+void DescribePrometheusAlertGroupsRequest::SetLabels(const vector<PrometheusRuleKV>& _labels)
+{
+    m_labels = _labels;
+    m_labelsHasBeenSet = true;
+}
+
+bool DescribePrometheusAlertGroupsRequest::LabelsHasBeenSet() const
+{
+    return m_labelsHasBeenSet;
 }
 
 

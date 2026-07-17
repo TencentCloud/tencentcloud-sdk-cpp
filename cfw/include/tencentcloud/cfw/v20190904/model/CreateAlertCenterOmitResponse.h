@@ -44,12 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回状态码：
-0 成功
-非0 失败
-                     * @return ReturnCode 返回状态码：
-0 成功
-非0 失败
+                     * 获取<p>返回状态码：<br>0 成功<br>非0 失败</p>
+                     * @return ReturnCode <p>返回状态码：<br>0 成功<br>非0 失败</p>
                      * 
                      */
                     int64_t GetReturnCode() const;
@@ -62,12 +58,8 @@ namespace TencentCloud
                     bool ReturnCodeHasBeenSet() const;
 
                     /**
-                     * 获取返回信息：
-success 成功
-其他
-                     * @return ReturnMsg 返回信息：
-success 成功
-其他
+                     * 获取<p>返回信息：<br>success 成功<br>其他</p>
+                     * @return ReturnMsg <p>返回信息：<br>success 成功<br>其他</p>
                      * 
                      */
                     std::string GetReturnMsg() const;
@@ -80,16 +72,8 @@ success 成功
                     bool ReturnMsgHasBeenSet() const;
 
                     /**
-                     * 获取处置状态码：
-0  处置成功
--1 通用错误，不用处理
--3 表示重复，需重新刷新列表
-其他
-                     * @return Status 处置状态码：
-0  处置成功
--1 通用错误，不用处理
--3 表示重复，需重新刷新列表
-其他
+                     * 获取<p>处置状态码：<br>0  处置成功<br>-1 通用错误，不用处理<br>-3 表示重复，需重新刷新列表<br>其他</p>
+                     * @return Status <p>处置状态码：<br>0  处置成功<br>-1 通用错误，不用处理<br>-3 表示重复，需重新刷新列表<br>其他</p>
                      * 
                      */
                     int64_t GetStatus() const;
@@ -104,27 +88,19 @@ success 成功
                 private:
 
                     /**
-                     * 返回状态码：
-0 成功
-非0 失败
+                     * <p>返回状态码：<br>0 成功<br>非0 失败</p>
                      */
                     int64_t m_returnCode;
                     bool m_returnCodeHasBeenSet;
 
                     /**
-                     * 返回信息：
-success 成功
-其他
+                     * <p>返回信息：<br>success 成功<br>其他</p>
                      */
                     std::string m_returnMsg;
                     bool m_returnMsgHasBeenSet;
 
                     /**
-                     * 处置状态码：
-0  处置成功
--1 通用错误，不用处理
--3 表示重复，需重新刷新列表
-其他
+                     * <p>处置状态码：<br>0  处置成功<br>-1 通用错误，不用处理<br>-3 表示重复，需重新刷新列表<br>其他</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

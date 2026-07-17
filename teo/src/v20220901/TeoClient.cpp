@@ -1090,6 +1090,106 @@ TeoClient::CreateFunctionRuleOutcomeCallable TeoClient::CreateFunctionRuleCallab
     return prom->get_future();
 }
 
+TeoClient::CreateInferenceAPITokenOutcome TeoClient::CreateInferenceAPIToken(const CreateInferenceAPITokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInferenceAPIToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInferenceAPITokenResponse rsp = CreateInferenceAPITokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInferenceAPITokenOutcome(rsp);
+        else
+            return CreateInferenceAPITokenOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInferenceAPITokenOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateInferenceAPITokenAsync(const CreateInferenceAPITokenRequest& request, const CreateInferenceAPITokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateInferenceAPITokenRequest&;
+    using Resp = CreateInferenceAPITokenResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateInferenceAPIToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::CreateInferenceAPITokenOutcomeCallable TeoClient::CreateInferenceAPITokenCallable(const CreateInferenceAPITokenRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateInferenceAPITokenOutcome>>();
+    CreateInferenceAPITokenAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const CreateInferenceAPITokenRequest&,
+        CreateInferenceAPITokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::CreateInferenceServiceOutcome TeoClient::CreateInferenceService(const CreateInferenceServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInferenceService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInferenceServiceResponse rsp = CreateInferenceServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInferenceServiceOutcome(rsp);
+        else
+            return CreateInferenceServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInferenceServiceOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateInferenceServiceAsync(const CreateInferenceServiceRequest& request, const CreateInferenceServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateInferenceServiceRequest&;
+    using Resp = CreateInferenceServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateInferenceService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::CreateInferenceServiceOutcomeCallable TeoClient::CreateInferenceServiceCallable(const CreateInferenceServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateInferenceServiceOutcome>>();
+    CreateInferenceServiceAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const CreateInferenceServiceRequest&,
+        CreateInferenceServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TeoClient::CreateJustInTimeTranscodeTemplateOutcome TeoClient::CreateJustInTimeTranscodeTemplate(const CreateJustInTimeTranscodeTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateJustInTimeTranscodeTemplate");
@@ -2832,6 +2932,56 @@ TeoClient::DeleteFunctionRulesOutcomeCallable TeoClient::DeleteFunctionRulesCall
         const TeoClient*,
         const DeleteFunctionRulesRequest&,
         DeleteFunctionRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::DeleteInferenceAPITokenOutcome TeoClient::DeleteInferenceAPIToken(const DeleteInferenceAPITokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteInferenceAPIToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteInferenceAPITokenResponse rsp = DeleteInferenceAPITokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteInferenceAPITokenOutcome(rsp);
+        else
+            return DeleteInferenceAPITokenOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteInferenceAPITokenOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DeleteInferenceAPITokenAsync(const DeleteInferenceAPITokenRequest& request, const DeleteInferenceAPITokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteInferenceAPITokenRequest&;
+    using Resp = DeleteInferenceAPITokenResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteInferenceAPIToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DeleteInferenceAPITokenOutcomeCallable TeoClient::DeleteInferenceAPITokenCallable(const DeleteInferenceAPITokenRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteInferenceAPITokenOutcome>>();
+    DeleteInferenceAPITokenAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DeleteInferenceAPITokenRequest&,
+        DeleteInferenceAPITokenOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -5132,6 +5282,306 @@ TeoClient::DescribeIdentificationsOutcomeCallable TeoClient::DescribeIdentificat
         const TeoClient*,
         const DescribeIdentificationsRequest&,
         DescribeIdentificationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::DescribeInferenceAPITokensOutcome TeoClient::DescribeInferenceAPITokens(const DescribeInferenceAPITokensRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInferenceAPITokens");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInferenceAPITokensResponse rsp = DescribeInferenceAPITokensResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInferenceAPITokensOutcome(rsp);
+        else
+            return DescribeInferenceAPITokensOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInferenceAPITokensOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeInferenceAPITokensAsync(const DescribeInferenceAPITokensRequest& request, const DescribeInferenceAPITokensAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeInferenceAPITokensRequest&;
+    using Resp = DescribeInferenceAPITokensResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeInferenceAPITokens", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DescribeInferenceAPITokensOutcomeCallable TeoClient::DescribeInferenceAPITokensCallable(const DescribeInferenceAPITokensRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeInferenceAPITokensOutcome>>();
+    DescribeInferenceAPITokensAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DescribeInferenceAPITokensRequest&,
+        DescribeInferenceAPITokensOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::DescribeInferenceHardwareSpecificationsOutcome TeoClient::DescribeInferenceHardwareSpecifications(const DescribeInferenceHardwareSpecificationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInferenceHardwareSpecifications");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInferenceHardwareSpecificationsResponse rsp = DescribeInferenceHardwareSpecificationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInferenceHardwareSpecificationsOutcome(rsp);
+        else
+            return DescribeInferenceHardwareSpecificationsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInferenceHardwareSpecificationsOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeInferenceHardwareSpecificationsAsync(const DescribeInferenceHardwareSpecificationsRequest& request, const DescribeInferenceHardwareSpecificationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeInferenceHardwareSpecificationsRequest&;
+    using Resp = DescribeInferenceHardwareSpecificationsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeInferenceHardwareSpecifications", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DescribeInferenceHardwareSpecificationsOutcomeCallable TeoClient::DescribeInferenceHardwareSpecificationsCallable(const DescribeInferenceHardwareSpecificationsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeInferenceHardwareSpecificationsOutcome>>();
+    DescribeInferenceHardwareSpecificationsAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DescribeInferenceHardwareSpecificationsRequest&,
+        DescribeInferenceHardwareSpecificationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::DescribeInferenceServiceDeploymentLogsOutcome TeoClient::DescribeInferenceServiceDeploymentLogs(const DescribeInferenceServiceDeploymentLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInferenceServiceDeploymentLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInferenceServiceDeploymentLogsResponse rsp = DescribeInferenceServiceDeploymentLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInferenceServiceDeploymentLogsOutcome(rsp);
+        else
+            return DescribeInferenceServiceDeploymentLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInferenceServiceDeploymentLogsOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeInferenceServiceDeploymentLogsAsync(const DescribeInferenceServiceDeploymentLogsRequest& request, const DescribeInferenceServiceDeploymentLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeInferenceServiceDeploymentLogsRequest&;
+    using Resp = DescribeInferenceServiceDeploymentLogsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeInferenceServiceDeploymentLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DescribeInferenceServiceDeploymentLogsOutcomeCallable TeoClient::DescribeInferenceServiceDeploymentLogsCallable(const DescribeInferenceServiceDeploymentLogsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeInferenceServiceDeploymentLogsOutcome>>();
+    DescribeInferenceServiceDeploymentLogsAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DescribeInferenceServiceDeploymentLogsRequest&,
+        DescribeInferenceServiceDeploymentLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::DescribeInferenceServiceDeploymentRecordsOutcome TeoClient::DescribeInferenceServiceDeploymentRecords(const DescribeInferenceServiceDeploymentRecordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInferenceServiceDeploymentRecords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInferenceServiceDeploymentRecordsResponse rsp = DescribeInferenceServiceDeploymentRecordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInferenceServiceDeploymentRecordsOutcome(rsp);
+        else
+            return DescribeInferenceServiceDeploymentRecordsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInferenceServiceDeploymentRecordsOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeInferenceServiceDeploymentRecordsAsync(const DescribeInferenceServiceDeploymentRecordsRequest& request, const DescribeInferenceServiceDeploymentRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeInferenceServiceDeploymentRecordsRequest&;
+    using Resp = DescribeInferenceServiceDeploymentRecordsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeInferenceServiceDeploymentRecords", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DescribeInferenceServiceDeploymentRecordsOutcomeCallable TeoClient::DescribeInferenceServiceDeploymentRecordsCallable(const DescribeInferenceServiceDeploymentRecordsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeInferenceServiceDeploymentRecordsOutcome>>();
+    DescribeInferenceServiceDeploymentRecordsAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DescribeInferenceServiceDeploymentRecordsRequest&,
+        DescribeInferenceServiceDeploymentRecordsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::DescribeInferenceServiceMonitorDataOutcome TeoClient::DescribeInferenceServiceMonitorData(const DescribeInferenceServiceMonitorDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInferenceServiceMonitorData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInferenceServiceMonitorDataResponse rsp = DescribeInferenceServiceMonitorDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInferenceServiceMonitorDataOutcome(rsp);
+        else
+            return DescribeInferenceServiceMonitorDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInferenceServiceMonitorDataOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeInferenceServiceMonitorDataAsync(const DescribeInferenceServiceMonitorDataRequest& request, const DescribeInferenceServiceMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeInferenceServiceMonitorDataRequest&;
+    using Resp = DescribeInferenceServiceMonitorDataResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeInferenceServiceMonitorData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DescribeInferenceServiceMonitorDataOutcomeCallable TeoClient::DescribeInferenceServiceMonitorDataCallable(const DescribeInferenceServiceMonitorDataRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeInferenceServiceMonitorDataOutcome>>();
+    DescribeInferenceServiceMonitorDataAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DescribeInferenceServiceMonitorDataRequest&,
+        DescribeInferenceServiceMonitorDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::DescribeInferenceServicesOutcome TeoClient::DescribeInferenceServices(const DescribeInferenceServicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInferenceServices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInferenceServicesResponse rsp = DescribeInferenceServicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInferenceServicesOutcome(rsp);
+        else
+            return DescribeInferenceServicesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInferenceServicesOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeInferenceServicesAsync(const DescribeInferenceServicesRequest& request, const DescribeInferenceServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeInferenceServicesRequest&;
+    using Resp = DescribeInferenceServicesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeInferenceServices", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DescribeInferenceServicesOutcomeCallable TeoClient::DescribeInferenceServicesCallable(const DescribeInferenceServicesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeInferenceServicesOutcome>>();
+    DescribeInferenceServicesAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DescribeInferenceServicesRequest&,
+        DescribeInferenceServicesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -9190,6 +9640,56 @@ TeoClient::ModifyHostsCertificateOutcomeCallable TeoClient::ModifyHostsCertifica
     return prom->get_future();
 }
 
+TeoClient::ModifyInferenceServiceOutcome TeoClient::ModifyInferenceService(const ModifyInferenceServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInferenceService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInferenceServiceResponse rsp = ModifyInferenceServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInferenceServiceOutcome(rsp);
+        else
+            return ModifyInferenceServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInferenceServiceOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyInferenceServiceAsync(const ModifyInferenceServiceRequest& request, const ModifyInferenceServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyInferenceServiceRequest&;
+    using Resp = ModifyInferenceServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyInferenceService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::ModifyInferenceServiceOutcomeCallable TeoClient::ModifyInferenceServiceCallable(const ModifyInferenceServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyInferenceServiceOutcome>>();
+    ModifyInferenceServiceAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const ModifyInferenceServiceRequest&,
+        ModifyInferenceServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TeoClient::ModifyL4ProxyOutcome TeoClient::ModifyL4Proxy(const ModifyL4ProxyRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyL4Proxy");
@@ -10682,6 +11182,56 @@ TeoClient::ModifyZoneWorkModeOutcomeCallable TeoClient::ModifyZoneWorkModeCallab
         const TeoClient*,
         const ModifyZoneWorkModeRequest&,
         ModifyZoneWorkModeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::OperateInferenceServiceOutcome TeoClient::OperateInferenceService(const OperateInferenceServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "OperateInferenceService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OperateInferenceServiceResponse rsp = OperateInferenceServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OperateInferenceServiceOutcome(rsp);
+        else
+            return OperateInferenceServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return OperateInferenceServiceOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::OperateInferenceServiceAsync(const OperateInferenceServiceRequest& request, const OperateInferenceServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const OperateInferenceServiceRequest&;
+    using Resp = OperateInferenceServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "OperateInferenceService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::OperateInferenceServiceOutcomeCallable TeoClient::OperateInferenceServiceCallable(const OperateInferenceServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<OperateInferenceServiceOutcome>>();
+    OperateInferenceServiceAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const OperateInferenceServiceRequest&,
+        OperateInferenceServiceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

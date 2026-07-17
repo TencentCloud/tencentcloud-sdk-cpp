@@ -24,7 +24,8 @@ using namespace std;
 
 RemoveEnterpriseSecurityGroupRuleRequest::RemoveEnterpriseSecurityGroupRuleRequest() :
     m_ruleUuidHasBeenSet(false),
-    m_removeTypeHasBeenSet(false)
+    m_removeTypeHasBeenSet(false),
+    m_cfwAiAgentOperationSourceHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string RemoveEnterpriseSecurityGroupRuleRequest::ToJsonString() const
         string key = "RemoveType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_removeType, allocator);
+    }
+
+    if (m_cfwAiAgentOperationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CfwAiAgentOperationSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cfwAiAgentOperationSource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void RemoveEnterpriseSecurityGroupRuleRequest::SetRemoveType(const int64_t& _rem
 bool RemoveEnterpriseSecurityGroupRuleRequest::RemoveTypeHasBeenSet() const
 {
     return m_removeTypeHasBeenSet;
+}
+
+string RemoveEnterpriseSecurityGroupRuleRequest::GetCfwAiAgentOperationSource() const
+{
+    return m_cfwAiAgentOperationSource;
+}
+
+void RemoveEnterpriseSecurityGroupRuleRequest::SetCfwAiAgentOperationSource(const string& _cfwAiAgentOperationSource)
+{
+    m_cfwAiAgentOperationSource = _cfwAiAgentOperationSource;
+    m_cfwAiAgentOperationSourceHasBeenSet = true;
+}
+
+bool RemoveEnterpriseSecurityGroupRuleRequest::CfwAiAgentOperationSourceHasBeenSet() const
+{
+    return m_cfwAiAgentOperationSourceHasBeenSet;
 }
 
 

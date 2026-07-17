@@ -2090,6 +2090,156 @@ CfwClient::DescribeCcnVpcFwSwitchOutcomeCallable CfwClient::DescribeCcnVpcFwSwit
     return prom->get_future();
 }
 
+CfwClient::DescribeCfwAlertsOutcome CfwClient::DescribeCfwAlerts(const DescribeCfwAlertsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCfwAlerts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCfwAlertsResponse rsp = DescribeCfwAlertsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCfwAlertsOutcome(rsp);
+        else
+            return DescribeCfwAlertsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCfwAlertsOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeCfwAlertsAsync(const DescribeCfwAlertsRequest& request, const DescribeCfwAlertsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCfwAlertsRequest&;
+    using Resp = DescribeCfwAlertsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCfwAlerts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeCfwAlertsOutcomeCallable CfwClient::DescribeCfwAlertsCallable(const DescribeCfwAlertsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCfwAlertsOutcome>>();
+    DescribeCfwAlertsAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeCfwAlertsRequest&,
+        DescribeCfwAlertsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::DescribeCfwAnalysisDataOutcome CfwClient::DescribeCfwAnalysisData(const DescribeCfwAnalysisDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCfwAnalysisData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCfwAnalysisDataResponse rsp = DescribeCfwAnalysisDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCfwAnalysisDataOutcome(rsp);
+        else
+            return DescribeCfwAnalysisDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCfwAnalysisDataOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeCfwAnalysisDataAsync(const DescribeCfwAnalysisDataRequest& request, const DescribeCfwAnalysisDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCfwAnalysisDataRequest&;
+    using Resp = DescribeCfwAnalysisDataResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCfwAnalysisData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeCfwAnalysisDataOutcomeCallable CfwClient::DescribeCfwAnalysisDataCallable(const DescribeCfwAnalysisDataRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCfwAnalysisDataOutcome>>();
+    DescribeCfwAnalysisDataAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeCfwAnalysisDataRequest&,
+        DescribeCfwAnalysisDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::DescribeCfwAssetsOutcome CfwClient::DescribeCfwAssets(const DescribeCfwAssetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCfwAssets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCfwAssetsResponse rsp = DescribeCfwAssetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCfwAssetsOutcome(rsp);
+        else
+            return DescribeCfwAssetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCfwAssetsOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeCfwAssetsAsync(const DescribeCfwAssetsRequest& request, const DescribeCfwAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCfwAssetsRequest&;
+    using Resp = DescribeCfwAssetsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCfwAssets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeCfwAssetsOutcomeCallable CfwClient::DescribeCfwAssetsCallable(const DescribeCfwAssetsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCfwAssetsOutcome>>();
+    DescribeCfwAssetsAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeCfwAssetsRequest&,
+        DescribeCfwAssetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfwClient::DescribeCfwEipsOutcome CfwClient::DescribeCfwEips(const DescribeCfwEipsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCfwEips");
@@ -2182,6 +2332,306 @@ CfwClient::DescribeCfwInsStatusOutcomeCallable CfwClient::DescribeCfwInsStatusCa
         const CfwClient*,
         const DescribeCfwInsStatusRequest&,
         DescribeCfwInsStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::DescribeCfwLogsOutcome CfwClient::DescribeCfwLogs(const DescribeCfwLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCfwLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCfwLogsResponse rsp = DescribeCfwLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCfwLogsOutcome(rsp);
+        else
+            return DescribeCfwLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCfwLogsOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeCfwLogsAsync(const DescribeCfwLogsRequest& request, const DescribeCfwLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCfwLogsRequest&;
+    using Resp = DescribeCfwLogsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCfwLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeCfwLogsOutcomeCallable CfwClient::DescribeCfwLogsCallable(const DescribeCfwLogsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCfwLogsOutcome>>();
+    DescribeCfwLogsAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeCfwLogsRequest&,
+        DescribeCfwLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::DescribeCfwRiskOverviewOutcome CfwClient::DescribeCfwRiskOverview(const DescribeCfwRiskOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCfwRiskOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCfwRiskOverviewResponse rsp = DescribeCfwRiskOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCfwRiskOverviewOutcome(rsp);
+        else
+            return DescribeCfwRiskOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCfwRiskOverviewOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeCfwRiskOverviewAsync(const DescribeCfwRiskOverviewRequest& request, const DescribeCfwRiskOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCfwRiskOverviewRequest&;
+    using Resp = DescribeCfwRiskOverviewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCfwRiskOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeCfwRiskOverviewOutcomeCallable CfwClient::DescribeCfwRiskOverviewCallable(const DescribeCfwRiskOverviewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCfwRiskOverviewOutcome>>();
+    DescribeCfwRiskOverviewAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeCfwRiskOverviewRequest&,
+        DescribeCfwRiskOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::DescribeCfwRuleOptimizationOutcome CfwClient::DescribeCfwRuleOptimization(const DescribeCfwRuleOptimizationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCfwRuleOptimization");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCfwRuleOptimizationResponse rsp = DescribeCfwRuleOptimizationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCfwRuleOptimizationOutcome(rsp);
+        else
+            return DescribeCfwRuleOptimizationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCfwRuleOptimizationOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeCfwRuleOptimizationAsync(const DescribeCfwRuleOptimizationRequest& request, const DescribeCfwRuleOptimizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCfwRuleOptimizationRequest&;
+    using Resp = DescribeCfwRuleOptimizationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCfwRuleOptimization", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeCfwRuleOptimizationOutcomeCallable CfwClient::DescribeCfwRuleOptimizationCallable(const DescribeCfwRuleOptimizationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCfwRuleOptimizationOutcome>>();
+    DescribeCfwRuleOptimizationAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeCfwRuleOptimizationRequest&,
+        DescribeCfwRuleOptimizationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::DescribeCfwRulesOutcome CfwClient::DescribeCfwRules(const DescribeCfwRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCfwRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCfwRulesResponse rsp = DescribeCfwRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCfwRulesOutcome(rsp);
+        else
+            return DescribeCfwRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCfwRulesOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeCfwRulesAsync(const DescribeCfwRulesRequest& request, const DescribeCfwRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCfwRulesRequest&;
+    using Resp = DescribeCfwRulesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCfwRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeCfwRulesOutcomeCallable CfwClient::DescribeCfwRulesCallable(const DescribeCfwRulesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCfwRulesOutcome>>();
+    DescribeCfwRulesAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeCfwRulesRequest&,
+        DescribeCfwRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::DescribeCfwStatusMonitorOutcome CfwClient::DescribeCfwStatusMonitor(const DescribeCfwStatusMonitorRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCfwStatusMonitor");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCfwStatusMonitorResponse rsp = DescribeCfwStatusMonitorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCfwStatusMonitorOutcome(rsp);
+        else
+            return DescribeCfwStatusMonitorOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCfwStatusMonitorOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeCfwStatusMonitorAsync(const DescribeCfwStatusMonitorRequest& request, const DescribeCfwStatusMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCfwStatusMonitorRequest&;
+    using Resp = DescribeCfwStatusMonitorResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCfwStatusMonitor", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeCfwStatusMonitorOutcomeCallable CfwClient::DescribeCfwStatusMonitorCallable(const DescribeCfwStatusMonitorRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCfwStatusMonitorOutcome>>();
+    DescribeCfwStatusMonitorAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeCfwStatusMonitorRequest&,
+        DescribeCfwStatusMonitorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::DescribeCfwSwitchesOutcome CfwClient::DescribeCfwSwitches(const DescribeCfwSwitchesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCfwSwitches");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCfwSwitchesResponse rsp = DescribeCfwSwitchesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCfwSwitchesOutcome(rsp);
+        else
+            return DescribeCfwSwitchesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCfwSwitchesOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeCfwSwitchesAsync(const DescribeCfwSwitchesRequest& request, const DescribeCfwSwitchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCfwSwitchesRequest&;
+    using Resp = DescribeCfwSwitchesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCfwSwitches", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeCfwSwitchesOutcomeCallable CfwClient::DescribeCfwSwitchesCallable(const DescribeCfwSwitchesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCfwSwitchesOutcome>>();
+    DescribeCfwSwitchesAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeCfwSwitchesRequest&,
+        DescribeCfwSwitchesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

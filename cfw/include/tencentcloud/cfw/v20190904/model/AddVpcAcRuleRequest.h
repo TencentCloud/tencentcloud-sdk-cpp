@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要添加的vpc内网间规则列表
-                     * @return Rules 需要添加的vpc内网间规则列表
+                     * 获取<p>需要添加的vpc内网间规则列表</p>
+                     * @return Rules <p>需要添加的vpc内网间规则列表</p>
                      * 
                      */
                     std::vector<VpcRuleItem> GetRules() const;
 
                     /**
-                     * 设置需要添加的vpc内网间规则列表
-                     * @param _rules 需要添加的vpc内网间规则列表
+                     * 设置<p>需要添加的vpc内网间规则列表</p>
+                     * @param _rules <p>需要添加的vpc内网间规则列表</p>
                      * 
                      */
                     void SetRules(const std::vector<VpcRuleItem>& _rules);
@@ -65,15 +65,36 @@ namespace TencentCloud
                     bool RulesHasBeenSet() const;
 
                     /**
-                     * 获取添加规则的来源，一般不需要使用，值insert_rule 表示插入指定位置的规则；值batch_import 表示批量导入规则；为空时表示添加规则
-                     * @return From 添加规则的来源，一般不需要使用，值insert_rule 表示插入指定位置的规则；值batch_import 表示批量导入规则；为空时表示添加规则
+                     * 获取<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * @return CfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * 
+                     */
+                    std::string GetCfwAiAgentOperationSource() const;
+
+                    /**
+                     * 设置<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * @param _cfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * 
+                     */
+                    void SetCfwAiAgentOperationSource(const std::string& _cfwAiAgentOperationSource);
+
+                    /**
+                     * 判断参数 CfwAiAgentOperationSource 是否已赋值
+                     * @return CfwAiAgentOperationSource 是否已赋值
+                     * 
+                     */
+                    bool CfwAiAgentOperationSourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>添加规则的来源，一般不需要使用，值insert_rule 表示插入指定位置的规则；值batch_import 表示批量导入规则；为空时表示添加规则</p>
+                     * @return From <p>添加规则的来源，一般不需要使用，值insert_rule 表示插入指定位置的规则；值batch_import 表示批量导入规则；为空时表示添加规则</p>
                      * 
                      */
                     std::string GetFrom() const;
 
                     /**
-                     * 设置添加规则的来源，一般不需要使用，值insert_rule 表示插入指定位置的规则；值batch_import 表示批量导入规则；为空时表示添加规则
-                     * @param _from 添加规则的来源，一般不需要使用，值insert_rule 表示插入指定位置的规则；值batch_import 表示批量导入规则；为空时表示添加规则
+                     * 设置<p>添加规则的来源，一般不需要使用，值insert_rule 表示插入指定位置的规则；值batch_import 表示批量导入规则；为空时表示添加规则</p>
+                     * @param _from <p>添加规则的来源，一般不需要使用，值insert_rule 表示插入指定位置的规则；值batch_import 表示批量导入规则；为空时表示添加规则</p>
                      * 
                      */
                     void SetFrom(const std::string& _from);
@@ -88,13 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要添加的vpc内网间规则列表
+                     * <p>需要添加的vpc内网间规则列表</p>
                      */
                     std::vector<VpcRuleItem> m_rules;
                     bool m_rulesHasBeenSet;
 
                     /**
-                     * 添加规则的来源，一般不需要使用，值insert_rule 表示插入指定位置的规则；值batch_import 表示批量导入规则；为空时表示添加规则
+                     * <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     */
+                    std::string m_cfwAiAgentOperationSource;
+                    bool m_cfwAiAgentOperationSourceHasBeenSet;
+
+                    /**
+                     * <p>添加规则的来源，一般不需要使用，值insert_rule 表示插入指定位置的规则；值batch_import 表示批量导入规则；为空时表示添加规则</p>
                      */
                     std::string m_from;
                     bool m_fromHasBeenSet;

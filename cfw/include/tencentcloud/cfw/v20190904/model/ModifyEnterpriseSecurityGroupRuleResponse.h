@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取状态值，0：编辑成功，非0：编辑失败
-                     * @return Status 状态值，0：编辑成功，非0：编辑失败
+                     * 获取<p>状态值，0：编辑成功，非0：编辑失败</p>
+                     * @return Status <p>状态值，0：编辑成功，非0：编辑失败</p>
                      * 
                      */
                     uint64_t GetStatus() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取编辑后新生成规则的Id
-                     * @return NewRuleUuid 编辑后新生成规则的Id
+                     * 获取<p>编辑后新生成规则的Id</p>
+                     * @return NewRuleUuid <p>编辑后新生成规则的Id</p>
                      * 
                      */
                     uint64_t GetNewRuleUuid() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 状态值，0：编辑成功，非0：编辑失败
+                     * <p>状态值，0：编辑成功，非0：编辑失败</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 编辑后新生成规则的Id
+                     * <p>编辑后新生成规则的Id</p>
                      */
                     uint64_t m_newRuleUuid;
                     bool m_newRuleUuidHasBeenSet;

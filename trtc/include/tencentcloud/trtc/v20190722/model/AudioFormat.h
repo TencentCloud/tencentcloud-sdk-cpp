@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>生成的音频格式</p><ul><li><p>TextToSpeechSSE 流式接口</p><p>支持 pcm,mp3,  默认: pcm</p></li><li><p>TextToSpeech 非流式接口</p><p>支持 pcm,wav,mp3,  默认: pcm</p></li><li><p>AsyncTextToSpeech<br>支持pcm,mp3, 默认: mp3</p></li></ul>
-                     * @return Format <p>生成的音频格式</p><ul><li><p>TextToSpeechSSE 流式接口</p><p>支持 pcm,mp3,  默认: pcm</p></li><li><p>TextToSpeech 非流式接口</p><p>支持 pcm,wav,mp3,  默认: pcm</p></li><li><p>AsyncTextToSpeech<br>支持pcm,mp3, 默认: mp3</p></li></ul>
+                     * 获取<p>生成的音频格式，注意opus格式是ogg/opus编码</p><ul><li><p>TextToSpeechSSE 流式接口</p><p>支持 pcm,mp3,opus 默认: pcm</p></li><li><p>TextToSpeech 非流式接口</p><p>支持 pcm,wav,mp3,opus  默认: pcm</p></li><li><p>AsyncTextToSpeech<br>支持pcm,mp3,opus 默认: mp3</p></li></ul>
+                     * @return Format <p>生成的音频格式，注意opus格式是ogg/opus编码</p><ul><li><p>TextToSpeechSSE 流式接口</p><p>支持 pcm,mp3,opus 默认: pcm</p></li><li><p>TextToSpeech 非流式接口</p><p>支持 pcm,wav,mp3,opus  默认: pcm</p></li><li><p>AsyncTextToSpeech<br>支持pcm,mp3,opus 默认: mp3</p></li></ul>
                      * 
                      */
                     std::string GetFormat() const;
 
                     /**
-                     * 设置<p>生成的音频格式</p><ul><li><p>TextToSpeechSSE 流式接口</p><p>支持 pcm,mp3,  默认: pcm</p></li><li><p>TextToSpeech 非流式接口</p><p>支持 pcm,wav,mp3,  默认: pcm</p></li><li><p>AsyncTextToSpeech<br>支持pcm,mp3, 默认: mp3</p></li></ul>
-                     * @param _format <p>生成的音频格式</p><ul><li><p>TextToSpeechSSE 流式接口</p><p>支持 pcm,mp3,  默认: pcm</p></li><li><p>TextToSpeech 非流式接口</p><p>支持 pcm,wav,mp3,  默认: pcm</p></li><li><p>AsyncTextToSpeech<br>支持pcm,mp3, 默认: mp3</p></li></ul>
+                     * 设置<p>生成的音频格式，注意opus格式是ogg/opus编码</p><ul><li><p>TextToSpeechSSE 流式接口</p><p>支持 pcm,mp3,opus 默认: pcm</p></li><li><p>TextToSpeech 非流式接口</p><p>支持 pcm,wav,mp3,opus  默认: pcm</p></li><li><p>AsyncTextToSpeech<br>支持pcm,mp3,opus 默认: mp3</p></li></ul>
+                     * @param _format <p>生成的音频格式，注意opus格式是ogg/opus编码</p><ul><li><p>TextToSpeechSSE 流式接口</p><p>支持 pcm,mp3,opus 默认: pcm</p></li><li><p>TextToSpeech 非流式接口</p><p>支持 pcm,wav,mp3,opus  默认: pcm</p></li><li><p>AsyncTextToSpeech<br>支持pcm,mp3,opus 默认: mp3</p></li></ul>
                      * 
                      */
                     void SetFormat(const std::string& _format);
@@ -112,7 +112,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>生成的音频格式</p><ul><li><p>TextToSpeechSSE 流式接口</p><p>支持 pcm,mp3,  默认: pcm</p></li><li><p>TextToSpeech 非流式接口</p><p>支持 pcm,wav,mp3,  默认: pcm</p></li><li><p>AsyncTextToSpeech<br>支持pcm,mp3, 默认: mp3</p></li></ul>
+                     * <p>生成的音频格式，注意opus格式是ogg/opus编码</p><ul><li><p>TextToSpeechSSE 流式接口</p><p>支持 pcm,mp3,opus 默认: pcm</p></li><li><p>TextToSpeech 非流式接口</p><p>支持 pcm,wav,mp3,opus  默认: pcm</p></li><li><p>AsyncTextToSpeech<br>支持pcm,mp3,opus 默认: mp3</p></li></ul>
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;

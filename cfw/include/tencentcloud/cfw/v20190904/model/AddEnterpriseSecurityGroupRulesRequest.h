@@ -65,6 +65,27 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
+                     * 获取<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * @return CfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * 
+                     */
+                    std::string GetCfwAiAgentOperationSource() const;
+
+                    /**
+                     * 设置<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * @param _cfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * 
+                     */
+                    void SetCfwAiAgentOperationSource(const std::string& _cfwAiAgentOperationSource);
+
+                    /**
+                     * 判断参数 CfwAiAgentOperationSource 是否已赋值
+                     * @return CfwAiAgentOperationSource 是否已赋值
+                     * 
+                     */
+                    bool CfwAiAgentOperationSourceHasBeenSet() const;
+
+                    /**
                      * 获取<p>添加类型，0：添加到最后，1：添加到最前；2：中间插入；默认0添加到最后</p>
                      * @return Type <p>添加类型，0：添加到最后，1：添加到最前；2：中间插入；默认0添加到最后</p>
                      * 
@@ -176,6 +197,12 @@ namespace TencentCloud
                      */
                     std::vector<SecurityGroupRule> m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     */
+                    std::string m_cfwAiAgentOperationSource;
+                    bool m_cfwAiAgentOperationSourceHasBeenSet;
 
                     /**
                      * <p>添加类型，0：添加到最后，1：添加到最前；2：中间插入；默认0添加到最后</p>

@@ -24,6 +24,7 @@ using namespace std;
 
 RemoveVpcAcRuleRequest::RemoveVpcAcRuleRequest() :
     m_ruleUuidsHasBeenSet(false),
+    m_cfwAiAgentOperationSourceHasBeenSet(false),
     m_ipVersionHasBeenSet(false)
 {
 }
@@ -46,6 +47,14 @@ string RemoveVpcAcRuleRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_cfwAiAgentOperationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CfwAiAgentOperationSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cfwAiAgentOperationSource.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ipVersionHasBeenSet)
@@ -78,6 +87,22 @@ void RemoveVpcAcRuleRequest::SetRuleUuids(const vector<int64_t>& _ruleUuids)
 bool RemoveVpcAcRuleRequest::RuleUuidsHasBeenSet() const
 {
     return m_ruleUuidsHasBeenSet;
+}
+
+string RemoveVpcAcRuleRequest::GetCfwAiAgentOperationSource() const
+{
+    return m_cfwAiAgentOperationSource;
+}
+
+void RemoveVpcAcRuleRequest::SetCfwAiAgentOperationSource(const string& _cfwAiAgentOperationSource)
+{
+    m_cfwAiAgentOperationSource = _cfwAiAgentOperationSource;
+    m_cfwAiAgentOperationSourceHasBeenSet = true;
+}
+
+bool RemoveVpcAcRuleRequest::CfwAiAgentOperationSourceHasBeenSet() const
+{
+    return m_cfwAiAgentOperationSourceHasBeenSet;
 }
 
 uint64_t RemoveVpcAcRuleRequest::GetIpVersion() const

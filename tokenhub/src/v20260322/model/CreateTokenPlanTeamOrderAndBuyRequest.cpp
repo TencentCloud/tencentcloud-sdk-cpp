@@ -27,7 +27,8 @@ CreateTokenPlanTeamOrderAndBuyRequest::CreateTokenPlanTeamOrderAndBuyRequest() :
     m_teamNameHasBeenSet(false),
     m_timeSpanHasBeenSet(false),
     m_creditOrTokenHasBeenSet(false),
-    m_enableAutoRenewHasBeenSet(false)
+    m_enableAutoRenewHasBeenSet(false),
+    m_teamIdHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string CreateTokenPlanTeamOrderAndBuyRequest::ToJsonString() const
         string key = "EnableAutoRenew";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableAutoRenew, allocator);
+    }
+
+    if (m_teamIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TeamId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_teamId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void CreateTokenPlanTeamOrderAndBuyRequest::SetEnableAutoRenew(const bool& _enab
 bool CreateTokenPlanTeamOrderAndBuyRequest::EnableAutoRenewHasBeenSet() const
 {
     return m_enableAutoRenewHasBeenSet;
+}
+
+string CreateTokenPlanTeamOrderAndBuyRequest::GetTeamId() const
+{
+    return m_teamId;
+}
+
+void CreateTokenPlanTeamOrderAndBuyRequest::SetTeamId(const string& _teamId)
+{
+    m_teamId = _teamId;
+    m_teamIdHasBeenSet = true;
+}
+
+bool CreateTokenPlanTeamOrderAndBuyRequest::TeamIdHasBeenSet() const
+{
+    return m_teamIdHasBeenSet;
 }
 
 

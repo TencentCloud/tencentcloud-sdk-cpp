@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则的uuid，可通过查询规则列表获取
-                     * @return RuleUuid 规则的uuid，可通过查询规则列表获取
+                     * 获取<p>规则的uuid，可通过查询规则列表获取</p>
+                     * @return RuleUuid <p>规则的uuid，可通过查询规则列表获取</p>
                      * 
                      */
                     int64_t GetRuleUuid() const;
 
                     /**
-                     * 设置规则的uuid，可通过查询规则列表获取
-                     * @param _ruleUuid 规则的uuid，可通过查询规则列表获取
+                     * 设置<p>规则的uuid，可通过查询规则列表获取</p>
+                     * @param _ruleUuid <p>规则的uuid，可通过查询规则列表获取</p>
                      * 
                      */
                     void SetRuleUuid(const int64_t& _ruleUuid);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool RuleUuidHasBeenSet() const;
 
                     /**
-                     * 获取删除类型，0是单条删除，RuleUuid填写删除规则id，1为全部删除，RuleUuid填0即可
-                     * @return RemoveType 删除类型，0是单条删除，RuleUuid填写删除规则id，1为全部删除，RuleUuid填0即可
+                     * 获取<p>删除类型，0是单条删除，RuleUuid填写删除规则id，1为全部删除，RuleUuid填0即可</p>
+                     * @return RemoveType <p>删除类型，0是单条删除，RuleUuid填写删除规则id，1为全部删除，RuleUuid填0即可</p>
                      * 
                      */
                     int64_t GetRemoveType() const;
 
                     /**
-                     * 设置删除类型，0是单条删除，RuleUuid填写删除规则id，1为全部删除，RuleUuid填0即可
-                     * @param _removeType 删除类型，0是单条删除，RuleUuid填写删除规则id，1为全部删除，RuleUuid填0即可
+                     * 设置<p>删除类型，0是单条删除，RuleUuid填写删除规则id，1为全部删除，RuleUuid填0即可</p>
+                     * @param _removeType <p>删除类型，0是单条删除，RuleUuid填写删除规则id，1为全部删除，RuleUuid填0即可</p>
                      * 
                      */
                     void SetRemoveType(const int64_t& _removeType);
@@ -84,19 +84,46 @@ namespace TencentCloud
                      */
                     bool RemoveTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * @return CfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * 
+                     */
+                    std::string GetCfwAiAgentOperationSource() const;
+
+                    /**
+                     * 设置<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * @param _cfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * 
+                     */
+                    void SetCfwAiAgentOperationSource(const std::string& _cfwAiAgentOperationSource);
+
+                    /**
+                     * 判断参数 CfwAiAgentOperationSource 是否已赋值
+                     * @return CfwAiAgentOperationSource 是否已赋值
+                     * 
+                     */
+                    bool CfwAiAgentOperationSourceHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 规则的uuid，可通过查询规则列表获取
+                     * <p>规则的uuid，可通过查询规则列表获取</p>
                      */
                     int64_t m_ruleUuid;
                     bool m_ruleUuidHasBeenSet;
 
                     /**
-                     * 删除类型，0是单条删除，RuleUuid填写删除规则id，1为全部删除，RuleUuid填0即可
+                     * <p>删除类型，0是单条删除，RuleUuid填写删除规则id，1为全部删除，RuleUuid填0即可</p>
                      */
                     int64_t m_removeType;
                     bool m_removeTypeHasBeenSet;
+
+                    /**
+                     * <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     */
+                    std::string m_cfwAiAgentOperationSource;
+                    bool m_cfwAiAgentOperationSourceHasBeenSet;
 
                 };
             }

@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警分组信息
+                     * 获取<p>告警分组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlertGroupSet 告警分组信息
+                     * @return AlertGroupSet <p>告警分组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool AlertGroupSetHasBeenSet() const;
 
                     /**
-                     * 获取告警分组总数
+                     * 获取<p>告警分组总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCount 告警分组总数
+                     * @return TotalCount <p>告警分组总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -79,14 +79,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 告警分组信息
+                     * <p>告警分组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PrometheusAlertGroupSet> m_alertGroupSet;
                     bool m_alertGroupSetHasBeenSet;
 
                     /**
-                     * 告警分组总数
+                     * <p>告警分组总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;

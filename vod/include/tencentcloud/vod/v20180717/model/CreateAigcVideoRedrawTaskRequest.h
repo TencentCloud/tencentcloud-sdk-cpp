@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>AIGC 视频转绘任务的输入视频的文件信息。</p>
-                     * @return FileInfo <p>AIGC 视频转绘任务的输入视频的文件信息。</p>
+                     * 获取<p>AIGC 视频转绘任务的输入视频的文件信息。输入视频时长需短于 90 秒，大小在2GB内。</p>
+                     * @return FileInfo <p>AIGC 视频转绘任务的输入视频的文件信息。输入视频时长需短于 90 秒，大小在2GB内。</p>
                      * 
                      */
                     AigcVideoRedrawTaskInputFileInfo GetFileInfo() const;
 
                     /**
-                     * 设置<p>AIGC 视频转绘任务的输入视频的文件信息。</p>
-                     * @param _fileInfo <p>AIGC 视频转绘任务的输入视频的文件信息。</p>
+                     * 设置<p>AIGC 视频转绘任务的输入视频的文件信息。输入视频时长需短于 90 秒，大小在2GB内。</p>
+                     * @param _fileInfo <p>AIGC 视频转绘任务的输入视频的文件信息。输入视频时长需短于 90 秒，大小在2GB内。</p>
                      * 
                      */
                     void SetFileInfo(const AigcVideoRedrawTaskInputFileInfo& _fileInfo);
@@ -200,7 +200,7 @@ namespace TencentCloud
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * <p>AIGC 视频转绘任务的输入视频的文件信息。</p>
+                     * <p>AIGC 视频转绘任务的输入视频的文件信息。输入视频时长需短于 90 秒，大小在2GB内。</p>
                      */
                     AigcVideoRedrawTaskInputFileInfo m_fileInfo;
                     bool m_fileInfoHasBeenSet;

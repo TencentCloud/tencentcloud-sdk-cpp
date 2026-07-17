@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取节点池ID
-                     * @return NodePoolId 节点池ID
+                     * 获取<p>节点池ID</p>
+                     * @return NodePoolId <p>节点池ID</p>
                      * 
                      */
                     std::string GetNodePoolId() const;
 
                     /**
-                     * 设置节点池ID
-                     * @param _nodePoolId 节点池ID
+                     * 设置<p>节点池ID</p>
+                     * @param _nodePoolId <p>节点池ID</p>
                      * 
                      */
                     void SetNodePoolId(const std::string& _nodePoolId);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool NodePoolIdHasBeenSet() const;
 
                     /**
-                     * 获取名称，最长63个字符，只能包含小写字母、数字及分隔符“_”，且必须以小写字母开头，数字或小写字母结尾
-                     * @return Name 名称，最长63个字符，只能包含小写字母、数字及分隔符“_”，且必须以小写字母开头，数字或小写字母结尾
+                     * 获取<p>名称，最长63个字符，只能包含小写字母、数字及分隔符“_”，且必须以小写字母开头，数字或小写字母结尾</p>
+                     * @return Name <p>名称，最长63个字符，只能包含小写字母、数字及分隔符“_”，且必须以小写字母开头，数字或小写字母结尾</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称，最长63个字符，只能包含小写字母、数字及分隔符“_”，且必须以小写字母开头，数字或小写字母结尾
-                     * @param _name 名称，最长63个字符，只能包含小写字母、数字及分隔符“_”，且必须以小写字母开头，数字或小写字母结尾
+                     * 设置<p>名称，最长63个字符，只能包含小写字母、数字及分隔符“_”，且必须以小写字母开头，数字或小写字母结尾</p>
+                     * @param _name <p>名称，最长63个字符，只能包含小写字母、数字及分隔符“_”，且必须以小写字母开头，数字或小写字母结尾</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取最大节点数
-                     * @return MaxNodesNum 最大节点数
+                     * 获取<p>最大节点数</p>
+                     * @return MaxNodesNum <p>最大节点数</p>
                      * 
                      */
                     int64_t GetMaxNodesNum() const;
 
                     /**
-                     * 设置最大节点数
-                     * @param _maxNodesNum 最大节点数
+                     * 设置<p>最大节点数</p>
+                     * @param _maxNodesNum <p>最大节点数</p>
                      * 
                      */
                     void SetMaxNodesNum(const int64_t& _maxNodesNum);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool MaxNodesNumHasBeenSet() const;
 
                     /**
-                     * 获取最小节点数
-                     * @return MinNodesNum 最小节点数
+                     * 获取<p>最小节点数</p>
+                     * @return MinNodesNum <p>最小节点数</p>
                      * 
                      */
                     int64_t GetMinNodesNum() const;
 
                     /**
-                     * 设置最小节点数
-                     * @param _minNodesNum 最小节点数
+                     * 设置<p>最小节点数</p>
+                     * @param _minNodesNum <p>最小节点数</p>
                      * 
                      */
                     void SetMinNodesNum(const int64_t& _minNodesNum);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool MinNodesNumHasBeenSet() const;
 
                     /**
-                     * 获取标签
-                     * @return Labels 标签
+                     * 获取<p>标签</p>
+                     * @return Labels <p>标签</p>
                      * 
                      */
                     std::vector<Label> GetLabels() const;
 
                     /**
-                     * 设置标签
-                     * @param _labels 标签
+                     * 设置<p>标签</p>
+                     * @param _labels <p>标签</p>
                      * 
                      */
                     void SetLabels(const std::vector<Label>& _labels);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool LabelsHasBeenSet() const;
 
                     /**
-                     * 获取污点
-                     * @return Taints 污点
+                     * 获取<p>污点</p>
+                     * @return Taints <p>污点</p>
                      * 
                      */
                     std::vector<Taint> GetTaints() const;
 
                     /**
-                     * 设置污点
-                     * @param _taints 污点
+                     * 设置<p>污点</p>
+                     * @param _taints <p>污点</p>
                      * 
                      */
                     void SetTaints(const std::vector<Taint>& _taints);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool TaintsHasBeenSet() const;
 
                     /**
-                     * 获取节点 Annotation 列表
-                     * @return Annotations 节点 Annotation 列表
+                     * 获取<p>节点 Annotation 列表</p>
+                     * @return Annotations <p>节点 Annotation 列表</p>
                      * 
                      */
                     std::vector<AnnotationValue> GetAnnotations() const;
 
                     /**
-                     * 设置节点 Annotation 列表
-                     * @param _annotations 节点 Annotation 列表
+                     * 设置<p>节点 Annotation 列表</p>
+                     * @param _annotations <p>节点 Annotation 列表</p>
                      * 
                      */
                     void SetAnnotations(const std::vector<AnnotationValue>& _annotations);
@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool AnnotationsHasBeenSet() const;
 
                     /**
-                     * 获取是否开启伸缩
-                     * @return EnableAutoscale 是否开启伸缩
+                     * 获取<p>是否开启伸缩</p>
+                     * @return EnableAutoscale <p>是否开启伸缩</p>
                      * 
                      */
                     bool GetEnableAutoscale() const;
 
                     /**
-                     * 设置是否开启伸缩
-                     * @param _enableAutoscale 是否开启伸缩
+                     * 设置<p>是否开启伸缩</p>
+                     * @param _enableAutoscale <p>是否开启伸缩</p>
                      * 
                      */
                     void SetEnableAutoscale(const bool& _enableAutoscale);
@@ -238,15 +238,15 @@ namespace TencentCloud
                     bool EnableAutoscaleHasBeenSet() const;
 
                     /**
-                     * 获取操作系统名称
-                     * @return OsName 操作系统名称
+                     * 获取<p>操作系统名称</p>
+                     * @return OsName <p>操作系统名称</p>
                      * 
                      */
                     std::string GetOsName() const;
 
                     /**
-                     * 设置操作系统名称
-                     * @param _osName 操作系统名称
+                     * 设置<p>操作系统名称</p>
+                     * @param _osName <p>操作系统名称</p>
                      * 
                      */
                     void SetOsName(const std::string& _osName);
@@ -259,15 +259,15 @@ namespace TencentCloud
                     bool OsNameHasBeenSet() const;
 
                     /**
-                     * 获取镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
-                     * @return OsCustomizeType 镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+                     * 获取<p>镜像版本，&quot;DOCKER_CUSTOMIZE&quot;(容器定制版),&quot;GENERAL&quot;(普通版本，默认值)</p>
+                     * @return OsCustomizeType <p>镜像版本，&quot;DOCKER_CUSTOMIZE&quot;(容器定制版),&quot;GENERAL&quot;(普通版本，默认值)</p>
                      * 
                      */
                     std::string GetOsCustomizeType() const;
 
                     /**
-                     * 设置镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
-                     * @param _osCustomizeType 镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+                     * 设置<p>镜像版本，&quot;DOCKER_CUSTOMIZE&quot;(容器定制版),&quot;GENERAL&quot;(普通版本，默认值)</p>
+                     * @param _osCustomizeType <p>镜像版本，&quot;DOCKER_CUSTOMIZE&quot;(容器定制版),&quot;GENERAL&quot;(普通版本，默认值)</p>
                      * 
                      */
                     void SetOsCustomizeType(const std::string& _osCustomizeType);
@@ -280,15 +280,15 @@ namespace TencentCloud
                     bool OsCustomizeTypeHasBeenSet() const;
 
                     /**
-                     * 获取GPU驱动版本，CUDA版本，cuDNN版本以及是否启用MIG特性
-                     * @return GPUArgs GPU驱动版本，CUDA版本，cuDNN版本以及是否启用MIG特性
+                     * 获取<p>GPU驱动版本，CUDA版本，cuDNN版本以及是否启用MIG特性</p>
+                     * @return GPUArgs <p>GPU驱动版本，CUDA版本，cuDNN版本以及是否启用MIG特性</p>
                      * 
                      */
                     GPUArgs GetGPUArgs() const;
 
                     /**
-                     * 设置GPU驱动版本，CUDA版本，cuDNN版本以及是否启用MIG特性
-                     * @param _gPUArgs GPU驱动版本，CUDA版本，cuDNN版本以及是否启用MIG特性
+                     * 设置<p>GPU驱动版本，CUDA版本，cuDNN版本以及是否启用MIG特性</p>
+                     * @param _gPUArgs <p>GPU驱动版本，CUDA版本，cuDNN版本以及是否启用MIG特性</p>
                      * 
                      */
                     void SetGPUArgs(const GPUArgs& _gPUArgs);
@@ -301,15 +301,15 @@ namespace TencentCloud
                     bool GPUArgsHasBeenSet() const;
 
                     /**
-                     * 获取base64编码后的自定义脚本
-                     * @return UserScript base64编码后的自定义脚本
+                     * 获取<p>base64编码后的自定义脚本</p>
+                     * @return UserScript <p>base64编码后的自定义脚本</p>
                      * 
                      */
                     std::string GetUserScript() const;
 
                     /**
-                     * 设置base64编码后的自定义脚本
-                     * @param _userScript base64编码后的自定义脚本
+                     * 设置<p>base64编码后的自定义脚本</p>
+                     * @param _userScript <p>base64编码后的自定义脚本</p>
                      * 
                      */
                     void SetUserScript(const std::string& _userScript);
@@ -322,15 +322,15 @@ namespace TencentCloud
                     bool UserScriptHasBeenSet() const;
 
                     /**
-                     * 获取更新label和taint时忽略存量节点
-                     * @return IgnoreExistedNode 更新label和taint时忽略存量节点
+                     * 获取<p>更新label和taint时忽略存量节点</p>
+                     * @return IgnoreExistedNode <p>更新label和taint时忽略存量节点</p>
                      * 
                      */
                     bool GetIgnoreExistedNode() const;
 
                     /**
-                     * 设置更新label和taint时忽略存量节点
-                     * @param _ignoreExistedNode 更新label和taint时忽略存量节点
+                     * 设置<p>更新label和taint时忽略存量节点</p>
+                     * @param _ignoreExistedNode <p>更新label和taint时忽略存量节点</p>
                      * 
                      */
                     void SetIgnoreExistedNode(const bool& _ignoreExistedNode);
@@ -343,15 +343,15 @@ namespace TencentCloud
                     bool IgnoreExistedNodeHasBeenSet() const;
 
                     /**
-                     * 获取节点自定义参数
-                     * @return ExtraArgs 节点自定义参数
+                     * 获取<p>节点自定义参数</p>
+                     * @return ExtraArgs <p>节点自定义参数</p>
                      * 
                      */
                     InstanceExtraArgs GetExtraArgs() const;
 
                     /**
-                     * 设置节点自定义参数
-                     * @param _extraArgs 节点自定义参数
+                     * 设置<p>节点自定义参数</p>
+                     * @param _extraArgs <p>节点自定义参数</p>
                      * 
                      */
                     void SetExtraArgs(const InstanceExtraArgs& _extraArgs);
@@ -364,15 +364,15 @@ namespace TencentCloud
                     bool ExtraArgsHasBeenSet() const;
 
                     /**
-                     * 获取资源标签
-                     * @return Tags 资源标签
+                     * 获取<p>资源标签</p>
+                     * @return Tags <p>资源标签</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置资源标签
-                     * @param _tags 资源标签
+                     * 设置<p>资源标签</p>
+                     * @param _tags <p>资源标签</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -385,15 +385,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.
-                     * @return Unschedulable 设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.
+                     * 获取<p>设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.</p>
+                     * @return Unschedulable <p>设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.</p>
                      * 
                      */
                     int64_t GetUnschedulable() const;
 
                     /**
-                     * 设置设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.
-                     * @param _unschedulable 设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.
+                     * 设置<p>设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.</p>
+                     * @param _unschedulable <p>设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.</p>
                      * 
                      */
                     void SetUnschedulable(const int64_t& _unschedulable);
@@ -406,15 +406,15 @@ namespace TencentCloud
                     bool UnschedulableHasBeenSet() const;
 
                     /**
-                     * 获取删除保护开关
-                     * @return DeletionProtection 删除保护开关
+                     * 获取<p>删除保护开关</p>
+                     * @return DeletionProtection <p>删除保护开关</p>
                      * 
                      */
                     bool GetDeletionProtection() const;
 
                     /**
-                     * 设置删除保护开关
-                     * @param _deletionProtection 删除保护开关
+                     * 设置<p>删除保护开关</p>
+                     * @param _deletionProtection <p>删除保护开关</p>
                      * 
                      */
                     void SetDeletionProtection(const bool& _deletionProtection);
@@ -427,15 +427,15 @@ namespace TencentCloud
                     bool DeletionProtectionHasBeenSet() const;
 
                     /**
-                     * 获取dockerd --graph 指定值, 默认为 /var/lib/docker
-                     * @return DockerGraphPath dockerd --graph 指定值, 默认为 /var/lib/docker
+                     * 获取<p>dockerd --graph 指定值, 默认为 /var/lib/docker</p>
+                     * @return DockerGraphPath <p>dockerd --graph 指定值, 默认为 /var/lib/docker</p>
                      * 
                      */
                     std::string GetDockerGraphPath() const;
 
                     /**
-                     * 设置dockerd --graph 指定值, 默认为 /var/lib/docker
-                     * @param _dockerGraphPath dockerd --graph 指定值, 默认为 /var/lib/docker
+                     * 设置<p>dockerd --graph 指定值, 默认为 /var/lib/docker</p>
+                     * @param _dockerGraphPath <p>dockerd --graph 指定值, 默认为 /var/lib/docker</p>
                      * 
                      */
                     void SetDockerGraphPath(const std::string& _dockerGraphPath);
@@ -448,15 +448,15 @@ namespace TencentCloud
                     bool DockerGraphPathHasBeenSet() const;
 
                     /**
-                     * 获取base64编码后的自定义脚本
-                     * @return PreStartUserScript base64编码后的自定义脚本
+                     * 获取<p>base64编码后的自定义脚本</p>
+                     * @return PreStartUserScript <p>base64编码后的自定义脚本</p>
                      * 
                      */
                     std::string GetPreStartUserScript() const;
 
                     /**
-                     * 设置base64编码后的自定义脚本
-                     * @param _preStartUserScript base64编码后的自定义脚本
+                     * 设置<p>base64编码后的自定义脚本</p>
+                     * @param _preStartUserScript <p>base64编码后的自定义脚本</p>
                      * 
                      */
                     void SetPreStartUserScript(const std::string& _preStartUserScript);
@@ -471,121 +471,121 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 节点池ID
+                     * <p>节点池ID</p>
                      */
                     std::string m_nodePoolId;
                     bool m_nodePoolIdHasBeenSet;
 
                     /**
-                     * 名称，最长63个字符，只能包含小写字母、数字及分隔符“_”，且必须以小写字母开头，数字或小写字母结尾
+                     * <p>名称，最长63个字符，只能包含小写字母、数字及分隔符“_”，且必须以小写字母开头，数字或小写字母结尾</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 最大节点数
+                     * <p>最大节点数</p>
                      */
                     int64_t m_maxNodesNum;
                     bool m_maxNodesNumHasBeenSet;
 
                     /**
-                     * 最小节点数
+                     * <p>最小节点数</p>
                      */
                     int64_t m_minNodesNum;
                     bool m_minNodesNumHasBeenSet;
 
                     /**
-                     * 标签
+                     * <p>标签</p>
                      */
                     std::vector<Label> m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
-                     * 污点
+                     * <p>污点</p>
                      */
                     std::vector<Taint> m_taints;
                     bool m_taintsHasBeenSet;
 
                     /**
-                     * 节点 Annotation 列表
+                     * <p>节点 Annotation 列表</p>
                      */
                     std::vector<AnnotationValue> m_annotations;
                     bool m_annotationsHasBeenSet;
 
                     /**
-                     * 是否开启伸缩
+                     * <p>是否开启伸缩</p>
                      */
                     bool m_enableAutoscale;
                     bool m_enableAutoscaleHasBeenSet;
 
                     /**
-                     * 操作系统名称
+                     * <p>操作系统名称</p>
                      */
                     std::string m_osName;
                     bool m_osNameHasBeenSet;
 
                     /**
-                     * 镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+                     * <p>镜像版本，&quot;DOCKER_CUSTOMIZE&quot;(容器定制版),&quot;GENERAL&quot;(普通版本，默认值)</p>
                      */
                     std::string m_osCustomizeType;
                     bool m_osCustomizeTypeHasBeenSet;
 
                     /**
-                     * GPU驱动版本，CUDA版本，cuDNN版本以及是否启用MIG特性
+                     * <p>GPU驱动版本，CUDA版本，cuDNN版本以及是否启用MIG特性</p>
                      */
                     GPUArgs m_gPUArgs;
                     bool m_gPUArgsHasBeenSet;
 
                     /**
-                     * base64编码后的自定义脚本
+                     * <p>base64编码后的自定义脚本</p>
                      */
                     std::string m_userScript;
                     bool m_userScriptHasBeenSet;
 
                     /**
-                     * 更新label和taint时忽略存量节点
+                     * <p>更新label和taint时忽略存量节点</p>
                      */
                     bool m_ignoreExistedNode;
                     bool m_ignoreExistedNodeHasBeenSet;
 
                     /**
-                     * 节点自定义参数
+                     * <p>节点自定义参数</p>
                      */
                     InstanceExtraArgs m_extraArgs;
                     bool m_extraArgsHasBeenSet;
 
                     /**
-                     * 资源标签
+                     * <p>资源标签</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.
+                     * <p>设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.</p>
                      */
                     int64_t m_unschedulable;
                     bool m_unschedulableHasBeenSet;
 
                     /**
-                     * 删除保护开关
+                     * <p>删除保护开关</p>
                      */
                     bool m_deletionProtection;
                     bool m_deletionProtectionHasBeenSet;
 
                     /**
-                     * dockerd --graph 指定值, 默认为 /var/lib/docker
+                     * <p>dockerd --graph 指定值, 默认为 /var/lib/docker</p>
                      */
                     std::string m_dockerGraphPath;
                     bool m_dockerGraphPathHasBeenSet;
 
                     /**
-                     * base64编码后的自定义脚本
+                     * <p>base64编码后的自定义脚本</p>
                      */
                     std::string m_preStartUserScript;
                     bool m_preStartUserScriptHasBeenSet;
