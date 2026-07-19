@@ -37,6 +37,8 @@
 #include <tencentcloud/chdfs/v20201112/model/CreateMountPointResponse.h>
 #include <tencentcloud/chdfs/v20201112/model/CreateRestoreTasksRequest.h>
 #include <tencentcloud/chdfs/v20201112/model/CreateRestoreTasksResponse.h>
+#include <tencentcloud/chdfs/v20201112/model/CreateTrashConfigRequest.h>
+#include <tencentcloud/chdfs/v20201112/model/CreateTrashConfigResponse.h>
 #include <tencentcloud/chdfs/v20201112/model/DeleteAccessGroupRequest.h>
 #include <tencentcloud/chdfs/v20201112/model/DeleteAccessGroupResponse.h>
 #include <tencentcloud/chdfs/v20201112/model/DeleteAccessRulesRequest.h>
@@ -47,6 +49,8 @@
 #include <tencentcloud/chdfs/v20201112/model/DeleteLifeCycleRulesResponse.h>
 #include <tencentcloud/chdfs/v20201112/model/DeleteMountPointRequest.h>
 #include <tencentcloud/chdfs/v20201112/model/DeleteMountPointResponse.h>
+#include <tencentcloud/chdfs/v20201112/model/DeleteTrashConfigRequest.h>
+#include <tencentcloud/chdfs/v20201112/model/DeleteTrashConfigResponse.h>
 #include <tencentcloud/chdfs/v20201112/model/DescribeAccessGroupRequest.h>
 #include <tencentcloud/chdfs/v20201112/model/DescribeAccessGroupResponse.h>
 #include <tencentcloud/chdfs/v20201112/model/DescribeAccessGroupsRequest.h>
@@ -67,6 +71,8 @@
 #include <tencentcloud/chdfs/v20201112/model/DescribeResourceTagsResponse.h>
 #include <tencentcloud/chdfs/v20201112/model/DescribeRestoreTasksRequest.h>
 #include <tencentcloud/chdfs/v20201112/model/DescribeRestoreTasksResponse.h>
+#include <tencentcloud/chdfs/v20201112/model/DescribeTrashConfigRequest.h>
+#include <tencentcloud/chdfs/v20201112/model/DescribeTrashConfigResponse.h>
 #include <tencentcloud/chdfs/v20201112/model/DisassociateAccessGroupsRequest.h>
 #include <tencentcloud/chdfs/v20201112/model/DisassociateAccessGroupsResponse.h>
 #include <tencentcloud/chdfs/v20201112/model/ModifyAccessGroupRequest.h>
@@ -81,6 +87,8 @@
 #include <tencentcloud/chdfs/v20201112/model/ModifyMountPointResponse.h>
 #include <tencentcloud/chdfs/v20201112/model/ModifyResourceTagsRequest.h>
 #include <tencentcloud/chdfs/v20201112/model/ModifyResourceTagsResponse.h>
+#include <tencentcloud/chdfs/v20201112/model/ModifyTrashConfigRequest.h>
+#include <tencentcloud/chdfs/v20201112/model/ModifyTrashConfigResponse.h>
 
 
 namespace TencentCloud
@@ -116,6 +124,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRestoreTasksResponse> CreateRestoreTasksOutcome;
                 typedef std::future<CreateRestoreTasksOutcome> CreateRestoreTasksOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::CreateRestoreTasksRequest&, CreateRestoreTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRestoreTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTrashConfigResponse> CreateTrashConfigOutcome;
+                typedef std::future<CreateTrashConfigOutcome> CreateTrashConfigOutcomeCallable;
+                typedef std::function<void(const ChdfsClient*, const Model::CreateTrashConfigRequest&, CreateTrashConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTrashConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAccessGroupResponse> DeleteAccessGroupOutcome;
                 typedef std::future<DeleteAccessGroupOutcome> DeleteAccessGroupOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::DeleteAccessGroupRequest&, DeleteAccessGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccessGroupAsyncHandler;
@@ -131,6 +142,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteMountPointResponse> DeleteMountPointOutcome;
                 typedef std::future<DeleteMountPointOutcome> DeleteMountPointOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::DeleteMountPointRequest&, DeleteMountPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMountPointAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteTrashConfigResponse> DeleteTrashConfigOutcome;
+                typedef std::future<DeleteTrashConfigOutcome> DeleteTrashConfigOutcomeCallable;
+                typedef std::function<void(const ChdfsClient*, const Model::DeleteTrashConfigRequest&, DeleteTrashConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTrashConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAccessGroupResponse> DescribeAccessGroupOutcome;
                 typedef std::future<DescribeAccessGroupOutcome> DescribeAccessGroupOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::DescribeAccessGroupRequest&, DescribeAccessGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessGroupAsyncHandler;
@@ -161,6 +175,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRestoreTasksResponse> DescribeRestoreTasksOutcome;
                 typedef std::future<DescribeRestoreTasksOutcome> DescribeRestoreTasksOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::DescribeRestoreTasksRequest&, DescribeRestoreTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRestoreTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTrashConfigResponse> DescribeTrashConfigOutcome;
+                typedef std::future<DescribeTrashConfigOutcome> DescribeTrashConfigOutcomeCallable;
+                typedef std::function<void(const ChdfsClient*, const Model::DescribeTrashConfigRequest&, DescribeTrashConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrashConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisassociateAccessGroupsResponse> DisassociateAccessGroupsOutcome;
                 typedef std::future<DisassociateAccessGroupsOutcome> DisassociateAccessGroupsOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::DisassociateAccessGroupsRequest&, DisassociateAccessGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateAccessGroupsAsyncHandler;
@@ -182,6 +199,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyResourceTagsResponse> ModifyResourceTagsOutcome;
                 typedef std::future<ModifyResourceTagsOutcome> ModifyResourceTagsOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::ModifyResourceTagsRequest&, ModifyResourceTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourceTagsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTrashConfigResponse> ModifyTrashConfigOutcome;
+                typedef std::future<ModifyTrashConfigOutcome> ModifyTrashConfigOutcomeCallable;
+                typedef std::function<void(const ChdfsClient*, const Model::ModifyTrashConfigRequest&, ModifyTrashConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTrashConfigAsyncHandler;
 
 
 
@@ -249,6 +269,15 @@ namespace TencentCloud
                 CreateRestoreTasksOutcomeCallable CreateRestoreTasksCallable(const Model::CreateRestoreTasksRequest& request);
 
                 /**
+                 *创建回收站配置。
+                 * @param req CreateTrashConfigRequest
+                 * @return CreateTrashConfigOutcome
+                 */
+                CreateTrashConfigOutcome CreateTrashConfig(const Model::CreateTrashConfigRequest &request);
+                void CreateTrashConfigAsync(const Model::CreateTrashConfigRequest& request, const CreateTrashConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTrashConfigOutcomeCallable CreateTrashConfigCallable(const Model::CreateTrashConfigRequest& request);
+
+                /**
                  *删除权限组。
                  * @param req DeleteAccessGroupRequest
                  * @return DeleteAccessGroupOutcome
@@ -292,6 +321,15 @@ namespace TencentCloud
                 DeleteMountPointOutcome DeleteMountPoint(const Model::DeleteMountPointRequest &request);
                 void DeleteMountPointAsync(const Model::DeleteMountPointRequest& request, const DeleteMountPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteMountPointOutcomeCallable DeleteMountPointCallable(const Model::DeleteMountPointRequest& request);
+
+                /**
+                 *删除回收站配置。
+                 * @param req DeleteTrashConfigRequest
+                 * @return DeleteTrashConfigOutcome
+                 */
+                DeleteTrashConfigOutcome DeleteTrashConfig(const Model::DeleteTrashConfigRequest &request);
+                void DeleteTrashConfigAsync(const Model::DeleteTrashConfigRequest& request, const DeleteTrashConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTrashConfigOutcomeCallable DeleteTrashConfigCallable(const Model::DeleteTrashConfigRequest& request);
 
                 /**
                  *查看权限组详细信息。
@@ -384,6 +422,15 @@ namespace TencentCloud
                 DescribeRestoreTasksOutcomeCallable DescribeRestoreTasksCallable(const Model::DescribeRestoreTasksRequest& request);
 
                 /**
+                 *通过文件系统ID查看回收站配置。
+                 * @param req DescribeTrashConfigRequest
+                 * @return DescribeTrashConfigOutcome
+                 */
+                DescribeTrashConfigOutcome DescribeTrashConfig(const Model::DescribeTrashConfigRequest &request);
+                void DescribeTrashConfigAsync(const Model::DescribeTrashConfigRequest& request, const DescribeTrashConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTrashConfigOutcomeCallable DescribeTrashConfigCallable(const Model::DescribeTrashConfigRequest& request);
+
+                /**
                  *给挂载点解绑多个权限组。
                  * @param req DisassociateAccessGroupsRequest
                  * @return DisassociateAccessGroupsOutcome
@@ -445,6 +492,15 @@ namespace TencentCloud
                 ModifyResourceTagsOutcome ModifyResourceTags(const Model::ModifyResourceTagsRequest &request);
                 void ModifyResourceTagsAsync(const Model::ModifyResourceTagsRequest& request, const ModifyResourceTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyResourceTagsOutcomeCallable ModifyResourceTagsCallable(const Model::ModifyResourceTagsRequest& request);
+
+                /**
+                 *修改回收站配置，需要指定回收站路径，数据保留时间、和状态。
+                 * @param req ModifyTrashConfigRequest
+                 * @return ModifyTrashConfigOutcome
+                 */
+                ModifyTrashConfigOutcome ModifyTrashConfig(const Model::ModifyTrashConfigRequest &request);
+                void ModifyTrashConfigAsync(const Model::ModifyTrashConfigRequest& request, const ModifyTrashConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTrashConfigOutcomeCallable ModifyTrashConfigCallable(const Model::ModifyTrashConfigRequest& request);
 
             };
         }

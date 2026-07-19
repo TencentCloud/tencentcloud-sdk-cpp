@@ -1,0 +1,169 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/iotexplorer/v20190423/model/RevokeShareDeviceFromUserRequest.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using namespace TencentCloud::Iotexplorer::V20190423::Model;
+using namespace std;
+
+RevokeShareDeviceFromUserRequest::RevokeShareDeviceFromUserRequest() :
+    m_appKeyHasBeenSet(false),
+    m_productIdHasBeenSet(false),
+    m_deviceNameHasBeenSet(false),
+    m_ownerOpenIDHasBeenSet(false),
+    m_toOpenIDHasBeenSet(false)
+{
+}
+
+string RevokeShareDeviceFromUserRequest::ToJsonString() const
+{
+    rapidjson::Document d;
+    d.SetObject();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
+
+
+    if (m_appKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_appKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerOpenIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerOpenID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ownerOpenID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_toOpenIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToOpenID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_toOpenID.c_str(), allocator).Move(), allocator);
+    }
+
+
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    d.Accept(writer);
+    return buffer.GetString();
+}
+
+
+string RevokeShareDeviceFromUserRequest::GetAppKey() const
+{
+    return m_appKey;
+}
+
+void RevokeShareDeviceFromUserRequest::SetAppKey(const string& _appKey)
+{
+    m_appKey = _appKey;
+    m_appKeyHasBeenSet = true;
+}
+
+bool RevokeShareDeviceFromUserRequest::AppKeyHasBeenSet() const
+{
+    return m_appKeyHasBeenSet;
+}
+
+string RevokeShareDeviceFromUserRequest::GetProductId() const
+{
+    return m_productId;
+}
+
+void RevokeShareDeviceFromUserRequest::SetProductId(const string& _productId)
+{
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
+}
+
+bool RevokeShareDeviceFromUserRequest::ProductIdHasBeenSet() const
+{
+    return m_productIdHasBeenSet;
+}
+
+string RevokeShareDeviceFromUserRequest::GetDeviceName() const
+{
+    return m_deviceName;
+}
+
+void RevokeShareDeviceFromUserRequest::SetDeviceName(const string& _deviceName)
+{
+    m_deviceName = _deviceName;
+    m_deviceNameHasBeenSet = true;
+}
+
+bool RevokeShareDeviceFromUserRequest::DeviceNameHasBeenSet() const
+{
+    return m_deviceNameHasBeenSet;
+}
+
+string RevokeShareDeviceFromUserRequest::GetOwnerOpenID() const
+{
+    return m_ownerOpenID;
+}
+
+void RevokeShareDeviceFromUserRequest::SetOwnerOpenID(const string& _ownerOpenID)
+{
+    m_ownerOpenID = _ownerOpenID;
+    m_ownerOpenIDHasBeenSet = true;
+}
+
+bool RevokeShareDeviceFromUserRequest::OwnerOpenIDHasBeenSet() const
+{
+    return m_ownerOpenIDHasBeenSet;
+}
+
+string RevokeShareDeviceFromUserRequest::GetToOpenID() const
+{
+    return m_toOpenID;
+}
+
+void RevokeShareDeviceFromUserRequest::SetToOpenID(const string& _toOpenID)
+{
+    m_toOpenID = _toOpenID;
+    m_toOpenIDHasBeenSet = true;
+}
+
+bool RevokeShareDeviceFromUserRequest::ToOpenIDHasBeenSet() const
+{
+    return m_toOpenIDHasBeenSet;
+}
+
+

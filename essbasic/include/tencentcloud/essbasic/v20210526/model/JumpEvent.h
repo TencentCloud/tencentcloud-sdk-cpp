@@ -47,27 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取跳转事件枚举，
-* 1 - 企业收录。
-* 2 - 超管授权书审核。
-* 3 - 认证完成。
-                     * @return JumpEventType 跳转事件枚举，
-* 1 - 企业收录。
-* 2 - 超管授权书审核。
-* 3 - 认证完成。
+                     * 获取<p>跳转事件枚举</p><p>枚举值：</p><ul><li>1： 企业收录</li><li>2： 超管授权书审核</li><li>3： 企业认证完成</li><li>4： 员工加入完成</li></ul>
+                     * @return JumpEventType <p>跳转事件枚举</p><p>枚举值：</p><ul><li>1： 企业收录</li><li>2： 超管授权书审核</li><li>3： 企业认证完成</li><li>4： 员工加入完成</li></ul>
                      * 
                      */
                     uint64_t GetJumpEventType() const;
 
                     /**
-                     * 设置跳转事件枚举，
-* 1 - 企业收录。
-* 2 - 超管授权书审核。
-* 3 - 认证完成。
-                     * @param _jumpEventType 跳转事件枚举，
-* 1 - 企业收录。
-* 2 - 超管授权书审核。
-* 3 - 认证完成。
+                     * 设置<p>跳转事件枚举</p><p>枚举值：</p><ul><li>1： 企业收录</li><li>2： 超管授权书审核</li><li>3： 企业认证完成</li><li>4： 员工加入完成</li></ul>
+                     * @param _jumpEventType <p>跳转事件枚举</p><p>枚举值：</p><ul><li>1： 企业收录</li><li>2： 超管授权书审核</li><li>3： 企业认证完成</li><li>4： 员工加入完成</li></ul>
                      * 
                      */
                     void SetJumpEventType(const uint64_t& _jumpEventType);
@@ -80,27 +68,15 @@ namespace TencentCloud
                     bool JumpEventTypeHasBeenSet() const;
 
                     /**
-                     * 获取为认证成功后页面进行回跳的URL，请确保回跳地址的可用性。
-Endpoint如果是APP 类型，请传递<font color="red">"true"</font>
-如果 Endpoint 是 H5 类型，请参考文档[跳转电子签H5](https://qian.tencent.com/developers/partner/openqianh5)
-p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。
-                     * @return JumpUrl 为认证成功后页面进行回跳的URL，请确保回跳地址的可用性。
-Endpoint如果是APP 类型，请传递<font color="red">"true"</font>
-如果 Endpoint 是 H5 类型，请参考文档[跳转电子签H5](https://qian.tencent.com/developers/partner/openqianh5)
-p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。
+                     * 获取<p>为认证成功后页面进行回跳的URL，请确保回跳地址的可用性。<br>Endpoint如果是APP 类型，请传递<font color="red">&quot;true&quot;</font><br>如果 Endpoint 是 H5 类型，请参考文档<a href="https://qian.tencent.com/developers/partner/openqianh5">跳转电子签H5</a><br>p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。</p>
+                     * @return JumpUrl <p>为认证成功后页面进行回跳的URL，请确保回跳地址的可用性。<br>Endpoint如果是APP 类型，请传递<font color="red">&quot;true&quot;</font><br>如果 Endpoint 是 H5 类型，请参考文档<a href="https://qian.tencent.com/developers/partner/openqianh5">跳转电子签H5</a><br>p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。</p>
                      * 
                      */
                     std::string GetJumpUrl() const;
 
                     /**
-                     * 设置为认证成功后页面进行回跳的URL，请确保回跳地址的可用性。
-Endpoint如果是APP 类型，请传递<font color="red">"true"</font>
-如果 Endpoint 是 H5 类型，请参考文档[跳转电子签H5](https://qian.tencent.com/developers/partner/openqianh5)
-p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。
-                     * @param _jumpUrl 为认证成功后页面进行回跳的URL，请确保回跳地址的可用性。
-Endpoint如果是APP 类型，请传递<font color="red">"true"</font>
-如果 Endpoint 是 H5 类型，请参考文档[跳转电子签H5](https://qian.tencent.com/developers/partner/openqianh5)
-p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。
+                     * 设置<p>为认证成功后页面进行回跳的URL，请确保回跳地址的可用性。<br>Endpoint如果是APP 类型，请传递<font color="red">&quot;true&quot;</font><br>如果 Endpoint 是 H5 类型，请参考文档<a href="https://qian.tencent.com/developers/partner/openqianh5">跳转电子签H5</a><br>p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。</p>
+                     * @param _jumpUrl <p>为认证成功后页面进行回跳的URL，请确保回跳地址的可用性。<br>Endpoint如果是APP 类型，请传递<font color="red">&quot;true&quot;</font><br>如果 Endpoint 是 H5 类型，请参考文档<a href="https://qian.tencent.com/developers/partner/openqianh5">跳转电子签H5</a><br>p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。</p>
                      * 
                      */
                     void SetJumpUrl(const std::string& _jumpUrl);
@@ -115,19 +91,13 @@ p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，
                 private:
 
                     /**
-                     * 跳转事件枚举，
-* 1 - 企业收录。
-* 2 - 超管授权书审核。
-* 3 - 认证完成。
+                     * <p>跳转事件枚举</p><p>枚举值：</p><ul><li>1： 企业收录</li><li>2： 超管授权书审核</li><li>3： 企业认证完成</li><li>4： 员工加入完成</li></ul>
                      */
                     uint64_t m_jumpEventType;
                     bool m_jumpEventTypeHasBeenSet;
 
                     /**
-                     * 为认证成功后页面进行回跳的URL，请确保回跳地址的可用性。
-Endpoint如果是APP 类型，请传递<font color="red">"true"</font>
-如果 Endpoint 是 H5 类型，请参考文档[跳转电子签H5](https://qian.tencent.com/developers/partner/openqianh5)
-p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。
+                     * <p>为认证成功后页面进行回跳的URL，请确保回跳地址的可用性。<br>Endpoint如果是APP 类型，请传递<font color="red">&quot;true&quot;</font><br>如果 Endpoint 是 H5 类型，请参考文档<a href="https://qian.tencent.com/developers/partner/openqianh5">跳转电子签H5</a><br>p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。</p>
                      */
                     std::string m_jumpUrl;
                     bool m_jumpUrlHasBeenSet;

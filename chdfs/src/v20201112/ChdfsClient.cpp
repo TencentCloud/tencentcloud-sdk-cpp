@@ -390,6 +390,56 @@ ChdfsClient::CreateRestoreTasksOutcomeCallable ChdfsClient::CreateRestoreTasksCa
     return prom->get_future();
 }
 
+ChdfsClient::CreateTrashConfigOutcome ChdfsClient::CreateTrashConfig(const CreateTrashConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTrashConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTrashConfigResponse rsp = CreateTrashConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTrashConfigOutcome(rsp);
+        else
+            return CreateTrashConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTrashConfigOutcome(outcome.GetError());
+    }
+}
+
+void ChdfsClient::CreateTrashConfigAsync(const CreateTrashConfigRequest& request, const CreateTrashConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateTrashConfigRequest&;
+    using Resp = CreateTrashConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateTrashConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ChdfsClient::CreateTrashConfigOutcomeCallable ChdfsClient::CreateTrashConfigCallable(const CreateTrashConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateTrashConfigOutcome>>();
+    CreateTrashConfigAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const CreateTrashConfigRequest&,
+        CreateTrashConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ChdfsClient::DeleteAccessGroupOutcome ChdfsClient::DeleteAccessGroup(const DeleteAccessGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAccessGroup");
@@ -632,6 +682,56 @@ ChdfsClient::DeleteMountPointOutcomeCallable ChdfsClient::DeleteMountPointCallab
         const ChdfsClient*,
         const DeleteMountPointRequest&,
         DeleteMountPointOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ChdfsClient::DeleteTrashConfigOutcome ChdfsClient::DeleteTrashConfig(const DeleteTrashConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTrashConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTrashConfigResponse rsp = DeleteTrashConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTrashConfigOutcome(rsp);
+        else
+            return DeleteTrashConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTrashConfigOutcome(outcome.GetError());
+    }
+}
+
+void ChdfsClient::DeleteTrashConfigAsync(const DeleteTrashConfigRequest& request, const DeleteTrashConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteTrashConfigRequest&;
+    using Resp = DeleteTrashConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteTrashConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ChdfsClient::DeleteTrashConfigOutcomeCallable ChdfsClient::DeleteTrashConfigCallable(const DeleteTrashConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteTrashConfigOutcome>>();
+    DeleteTrashConfigAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const DeleteTrashConfigRequest&,
+        DeleteTrashConfigOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1140,6 +1240,56 @@ ChdfsClient::DescribeRestoreTasksOutcomeCallable ChdfsClient::DescribeRestoreTas
     return prom->get_future();
 }
 
+ChdfsClient::DescribeTrashConfigOutcome ChdfsClient::DescribeTrashConfig(const DescribeTrashConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTrashConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTrashConfigResponse rsp = DescribeTrashConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTrashConfigOutcome(rsp);
+        else
+            return DescribeTrashConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTrashConfigOutcome(outcome.GetError());
+    }
+}
+
+void ChdfsClient::DescribeTrashConfigAsync(const DescribeTrashConfigRequest& request, const DescribeTrashConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTrashConfigRequest&;
+    using Resp = DescribeTrashConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTrashConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ChdfsClient::DescribeTrashConfigOutcomeCallable ChdfsClient::DescribeTrashConfigCallable(const DescribeTrashConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTrashConfigOutcome>>();
+    DescribeTrashConfigAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const DescribeTrashConfigRequest&,
+        DescribeTrashConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ChdfsClient::DisassociateAccessGroupsOutcome ChdfsClient::DisassociateAccessGroups(const DisassociateAccessGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DisassociateAccessGroups");
@@ -1482,6 +1632,56 @@ ChdfsClient::ModifyResourceTagsOutcomeCallable ChdfsClient::ModifyResourceTagsCa
         const ChdfsClient*,
         const ModifyResourceTagsRequest&,
         ModifyResourceTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ChdfsClient::ModifyTrashConfigOutcome ChdfsClient::ModifyTrashConfig(const ModifyTrashConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTrashConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTrashConfigResponse rsp = ModifyTrashConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTrashConfigOutcome(rsp);
+        else
+            return ModifyTrashConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTrashConfigOutcome(outcome.GetError());
+    }
+}
+
+void ChdfsClient::ModifyTrashConfigAsync(const ModifyTrashConfigRequest& request, const ModifyTrashConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyTrashConfigRequest&;
+    using Resp = ModifyTrashConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyTrashConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ChdfsClient::ModifyTrashConfigOutcomeCallable ChdfsClient::ModifyTrashConfigCallable(const ModifyTrashConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyTrashConfigOutcome>>();
+    ModifyTrashConfigAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const ModifyTrashConfigRequest&,
+        ModifyTrashConfigOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

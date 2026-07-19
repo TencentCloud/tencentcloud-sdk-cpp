@@ -29,6 +29,7 @@
 #include <tencentcloud/cdwch/v20200915/model/InstanceStateInfo.h>
 #include <tencentcloud/cdwch/v20200915/model/ServiceInfo.h>
 #include <tencentcloud/cdwch/v20200915/model/InstanceDetail.h>
+#include <tencentcloud/cdwch/v20200915/model/DiskEncryptInfo.h>
 
 
 namespace TencentCloud
@@ -1269,6 +1270,27 @@ namespace TencentCloud
                      */
                     bool HttpsEnabledHasBeenSet() const;
 
+                    /**
+                     * 获取<p>集群磁盘加密配置</p>
+                     * @return DiskEncryptInfo <p>集群磁盘加密配置</p>
+                     * 
+                     */
+                    DiskEncryptInfo GetDiskEncryptInfo() const;
+
+                    /**
+                     * 设置<p>集群磁盘加密配置</p>
+                     * @param _diskEncryptInfo <p>集群磁盘加密配置</p>
+                     * 
+                     */
+                    void SetDiskEncryptInfo(const DiskEncryptInfo& _diskEncryptInfo);
+
+                    /**
+                     * 判断参数 DiskEncryptInfo 是否已赋值
+                     * @return DiskEncryptInfo 是否已赋值
+                     * 
+                     */
+                    bool DiskEncryptInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1618,6 +1640,12 @@ namespace TencentCloud
                      */
                     bool m_httpsEnabled;
                     bool m_httpsEnabledHasBeenSet;
+
+                    /**
+                     * <p>集群磁盘加密配置</p>
+                     */
+                    DiskEncryptInfo m_diskEncryptInfo;
+                    bool m_diskEncryptInfoHasBeenSet;
 
                 };
             }

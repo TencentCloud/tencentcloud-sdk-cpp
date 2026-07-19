@@ -57,6 +57,8 @@
 #include <tencentcloud/mps/v20190612/model/CreateBlindWatermarkTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateContentReviewTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateContentReviewTemplateResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateDocToVideoTaskRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateDocToVideoTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateImageSpriteTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateImageSpriteTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateLiveRecordTemplateRequest.h>
@@ -343,6 +345,8 @@
 #include <tencentcloud/mps/v20190612/model/DisassociateSecurityGroupResponse.h>
 #include <tencentcloud/mps/v20190612/model/EditMediaRequest.h>
 #include <tencentcloud/mps/v20190612/model/EditMediaResponse.h>
+#include <tencentcloud/mps/v20190612/model/EmbeddingDataRequest.h>
+#include <tencentcloud/mps/v20190612/model/EmbeddingDataResponse.h>
 #include <tencentcloud/mps/v20190612/model/EnableScheduleRequest.h>
 #include <tencentcloud/mps/v20190612/model/EnableScheduleResponse.h>
 #include <tencentcloud/mps/v20190612/model/EnableWorkflowRequest.h>
@@ -518,6 +522,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateContentReviewTemplateResponse> CreateContentReviewTemplateOutcome;
                 typedef std::future<CreateContentReviewTemplateOutcome> CreateContentReviewTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateContentReviewTemplateRequest&, CreateContentReviewTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateContentReviewTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDocToVideoTaskResponse> CreateDocToVideoTaskOutcome;
+                typedef std::future<CreateDocToVideoTaskOutcome> CreateDocToVideoTaskOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateDocToVideoTaskRequest&, CreateDocToVideoTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDocToVideoTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateImageSpriteTemplateResponse> CreateImageSpriteTemplateOutcome;
                 typedef std::future<CreateImageSpriteTemplateOutcome> CreateImageSpriteTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateImageSpriteTemplateRequest&, CreateImageSpriteTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageSpriteTemplateAsyncHandler;
@@ -947,6 +954,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EditMediaResponse> EditMediaOutcome;
                 typedef std::future<EditMediaOutcome> EditMediaOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::EditMediaRequest&, EditMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EditMediaAsyncHandler;
+                typedef Outcome<Core::Error, Model::EmbeddingDataResponse> EmbeddingDataOutcome;
+                typedef std::future<EmbeddingDataOutcome> EmbeddingDataOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::EmbeddingDataRequest&, EmbeddingDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EmbeddingDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableScheduleResponse> EnableScheduleOutcome;
                 typedef std::future<EnableScheduleOutcome> EnableScheduleOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::EnableScheduleRequest&, EnableScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableScheduleAsyncHandler;
@@ -1268,6 +1278,15 @@ namespace TencentCloud
                 CreateContentReviewTemplateOutcome CreateContentReviewTemplate(const Model::CreateContentReviewTemplateRequest &request);
                 void CreateContentReviewTemplateAsync(const Model::CreateContentReviewTemplateRequest& request, const CreateContentReviewTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateContentReviewTemplateOutcomeCallable CreateContentReviewTemplateCallable(const Model::CreateContentReviewTemplateRequest& request);
+
+                /**
+                 *创建 AiGC 文档生成视频任务
+                 * @param req CreateDocToVideoTaskRequest
+                 * @return CreateDocToVideoTaskOutcome
+                 */
+                CreateDocToVideoTaskOutcome CreateDocToVideoTask(const Model::CreateDocToVideoTaskRequest &request);
+                void CreateDocToVideoTaskAsync(const Model::CreateDocToVideoTaskRequest& request, const CreateDocToVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDocToVideoTaskOutcomeCallable CreateDocToVideoTaskCallable(const Model::CreateDocToVideoTaskRequest& request);
 
                 /**
                  *创建用户自定义雪碧图模板，数量上限：16。
@@ -2602,6 +2621,15 @@ namespace TencentCloud
                 EditMediaOutcome EditMedia(const Model::EditMediaRequest &request);
                 void EditMediaAsync(const Model::EditMediaRequest& request, const EditMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EditMediaOutcomeCallable EditMediaCallable(const Model::EditMediaRequest& request);
+
+                /**
+                 *模型embedding 接口
+                 * @param req EmbeddingDataRequest
+                 * @return EmbeddingDataOutcome
+                 */
+                EmbeddingDataOutcome EmbeddingData(const Model::EmbeddingDataRequest &request);
+                void EmbeddingDataAsync(const Model::EmbeddingDataRequest& request, const EmbeddingDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EmbeddingDataOutcomeCallable EmbeddingDataCallable(const Model::EmbeddingDataRequest& request);
 
                 /**
                  *启用自动化触发编排任务。

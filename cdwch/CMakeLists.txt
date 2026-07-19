@@ -51,6 +51,7 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/CreateInstanceNewRequest.h
   include/tencentcloud/cdwch/v20200915/model/GroupInfo.h
   include/tencentcloud/cdwch/v20200915/model/AttachCBSSpec.h
+  include/tencentcloud/cdwch/v20200915/model/DescribeBackUpScheduleResponse.h
   include/tencentcloud/cdwch/v20200915/model/CreateBackUpScheduleRequest.h
   include/tencentcloud/cdwch/v20200915/model/DescribeSpecRequest.h
   include/tencentcloud/cdwch/v20200915/model/ActionAlterCkUserResponse.h
@@ -81,7 +82,7 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/SecondaryZoneInfo.h
   include/tencentcloud/cdwch/v20200915/model/InstanceConfigInfo.h
   include/tencentcloud/cdwch/v20200915/model/SearchTags.h
-  include/tencentcloud/cdwch/v20200915/model/DescribeBackUpScheduleResponse.h
+  include/tencentcloud/cdwch/v20200915/model/DiskEncryptInfo.h
   include/tencentcloud/cdwch/v20200915/model/DescribeCkSqlApisResponse.h
   include/tencentcloud/cdwch/v20200915/model/Charge.h
   include/tencentcloud/cdwch/v20200915/model/DescribeBackUpScheduleRequest.h
@@ -147,6 +148,7 @@ set(cdwch_src
   src/v20200915/model/CreateInstanceNewRequest.cpp
   src/v20200915/model/GroupInfo.cpp
   src/v20200915/model/AttachCBSSpec.cpp
+  src/v20200915/model/DescribeBackUpScheduleResponse.cpp
   src/v20200915/model/CreateBackUpScheduleRequest.cpp
   src/v20200915/model/DescribeSpecRequest.cpp
   src/v20200915/model/ActionAlterCkUserResponse.cpp
@@ -177,7 +179,7 @@ set(cdwch_src
   src/v20200915/model/SecondaryZoneInfo.cpp
   src/v20200915/model/InstanceConfigInfo.cpp
   src/v20200915/model/SearchTags.cpp
-  src/v20200915/model/DescribeBackUpScheduleResponse.cpp
+  src/v20200915/model/DiskEncryptInfo.cpp
   src/v20200915/model/DescribeCkSqlApisResponse.cpp
   src/v20200915/model/Charge.cpp
   src/v20200915/model/DescribeBackUpScheduleRequest.cpp

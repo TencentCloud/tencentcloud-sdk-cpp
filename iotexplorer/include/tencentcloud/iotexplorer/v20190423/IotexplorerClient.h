@@ -471,12 +471,16 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ResumeWeCallDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/RevokeBindUserDeviceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/RevokeBindUserDeviceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/RevokeShareDeviceFromUserRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/RevokeShareDeviceFromUserResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchPositionSpaceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchPositionSpaceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchStudioProductRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchStudioProductResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchTopicRuleResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ShareDeviceToUserRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ShareDeviceToUserResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/TerminateTWeSeeSubscriptionRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/TerminateTWeSeeSubscriptionResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/TransferCloudStorageRequest.h>
@@ -1189,6 +1193,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RevokeBindUserDeviceResponse> RevokeBindUserDeviceOutcome;
                 typedef std::future<RevokeBindUserDeviceOutcome> RevokeBindUserDeviceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::RevokeBindUserDeviceRequest&, RevokeBindUserDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevokeBindUserDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::RevokeShareDeviceFromUserResponse> RevokeShareDeviceFromUserOutcome;
+                typedef std::future<RevokeShareDeviceFromUserOutcome> RevokeShareDeviceFromUserOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::RevokeShareDeviceFromUserRequest&, RevokeShareDeviceFromUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevokeShareDeviceFromUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::SearchPositionSpaceResponse> SearchPositionSpaceOutcome;
                 typedef std::future<SearchPositionSpaceOutcome> SearchPositionSpaceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::SearchPositionSpaceRequest&, SearchPositionSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchPositionSpaceAsyncHandler;
@@ -1198,6 +1205,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SearchTopicRuleResponse> SearchTopicRuleOutcome;
                 typedef std::future<SearchTopicRuleOutcome> SearchTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::SearchTopicRuleRequest&, SearchTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchTopicRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ShareDeviceToUserResponse> ShareDeviceToUserOutcome;
+                typedef std::future<ShareDeviceToUserOutcome> ShareDeviceToUserOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ShareDeviceToUserRequest&, ShareDeviceToUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ShareDeviceToUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::TerminateTWeSeeSubscriptionResponse> TerminateTWeSeeSubscriptionOutcome;
                 typedef std::future<TerminateTWeSeeSubscriptionOutcome> TerminateTWeSeeSubscriptionOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::TerminateTWeSeeSubscriptionRequest&, TerminateTWeSeeSubscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateTWeSeeSubscriptionAsyncHandler;
@@ -3303,6 +3313,19 @@ namespace TencentCloud
                 RevokeBindUserDeviceOutcomeCallable RevokeBindUserDeviceCallable(const Model::RevokeBindUserDeviceRequest& request);
 
                 /**
+                 *Owner 取消对指定用户的设备分享：
+1. 校验产品 ACL / 子产品禁止 / 设备真实存在；
+2. 只读定位 Owner（必须已存在），并校验 Owner 持有该设备；
+3. 只读定位被取消分享用户（不存在视为已取消，幂等成功）；
+4. 删除分享关系记录（不存在视为已取消，幂等成功）。
+                 * @param req RevokeShareDeviceFromUserRequest
+                 * @return RevokeShareDeviceFromUserOutcome
+                 */
+                RevokeShareDeviceFromUserOutcome RevokeShareDeviceFromUser(const Model::RevokeShareDeviceFromUserRequest &request);
+                void RevokeShareDeviceFromUserAsync(const Model::RevokeShareDeviceFromUserRequest& request, const RevokeShareDeviceFromUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RevokeShareDeviceFromUserOutcomeCallable RevokeShareDeviceFromUserCallable(const Model::RevokeShareDeviceFromUserRequest& request);
+
+                /**
                  *搜索位置空间
                  * @param req SearchPositionSpaceRequest
                  * @return SearchPositionSpaceOutcome
@@ -3328,6 +3351,19 @@ namespace TencentCloud
                 SearchTopicRuleOutcome SearchTopicRule(const Model::SearchTopicRuleRequest &request);
                 void SearchTopicRuleAsync(const Model::SearchTopicRuleRequest& request, const SearchTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SearchTopicRuleOutcomeCallable SearchTopicRuleCallable(const Model::SearchTopicRuleRequest& request);
+
+                /**
+                 *Owner 将其名下的设备分享给指定 App 用户：
+1. 校验产品 ACL / 子产品禁止 / 设备真实存在；
+2. 只读定位 Owner（必须已存在），并校验 Owner 确实持有该设备；
+3. 兜底创建被分享用户（已存在则复用，昵称不覆盖）；
+4. 写入分享关系（重复分享幂等成功，不修改原 CreateTime）。
+                 * @param req ShareDeviceToUserRequest
+                 * @return ShareDeviceToUserOutcome
+                 */
+                ShareDeviceToUserOutcome ShareDeviceToUser(const Model::ShareDeviceToUserRequest &request);
+                void ShareDeviceToUserAsync(const Model::ShareDeviceToUserRequest& request, const ShareDeviceToUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ShareDeviceToUserOutcomeCallable ShareDeviceToUserCallable(const Model::ShareDeviceToUserRequest& request);
 
                 /**
                  *退订 TWeSee 预付费订阅

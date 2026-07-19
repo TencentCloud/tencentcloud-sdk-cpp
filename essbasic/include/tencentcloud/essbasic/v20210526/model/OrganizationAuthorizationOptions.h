@@ -154,6 +154,27 @@ p.s. 注意这些选项一旦传递，相关的信息也不会被上传的营业
                      */
                     bool AddressSameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>对方打开链接认证时，公司营业执照是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>p.s. 仅在公司营业执照（BusinessLicense）不为空时有效</p>
+                     * @return BizLicenseSame <p>对方打开链接认证时，公司营业执照是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>p.s. 仅在公司营业执照（BusinessLicense）不为空时有效</p>
+                     * 
+                     */
+                    bool GetBizLicenseSame() const;
+
+                    /**
+                     * 设置<p>对方打开链接认证时，公司营业执照是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>p.s. 仅在公司营业执照（BusinessLicense）不为空时有效</p>
+                     * @param _bizLicenseSame <p>对方打开链接认证时，公司营业执照是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>p.s. 仅在公司营业执照（BusinessLicense）不为空时有效</p>
+                     * 
+                     */
+                    void SetBizLicenseSame(const bool& _bizLicenseSame);
+
+                    /**
+                     * 判断参数 BizLicenseSame 是否已赋值
+                     * @return BizLicenseSame 是否已赋值
+                     * 
+                     */
+                    bool BizLicenseSameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -185,6 +206,12 @@ p.s. 注意这些选项一旦传递，相关的信息也不会被上传的营业
                      */
                     bool m_addressSame;
                     bool m_addressSameHasBeenSet;
+
+                    /**
+                     * <p>对方打开链接认证时，公司营业执照是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>p.s. 仅在公司营业执照（BusinessLicense）不为空时有效</p>
+                     */
+                    bool m_bizLicenseSame;
+                    bool m_bizLicenseSameHasBeenSet;
 
                 };
             }

@@ -78,7 +78,8 @@ InstanceInfo::InstanceInfo() :
     m_showRipHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_enableConfigKeyValueHasBeenSet(false),
-    m_httpsEnabledHasBeenSet(false)
+    m_httpsEnabledHasBeenSet(false),
+    m_diskEncryptInfoHasBeenSet(false)
 {
 }
 
@@ -718,6 +719,23 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_httpsEnabledHasBeenSet = true;
     }
 
+    if (value.HasMember("DiskEncryptInfo") && !value["DiskEncryptInfo"].IsNull())
+    {
+        if (!value["DiskEncryptInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.DiskEncryptInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_diskEncryptInfo.Deserialize(value["DiskEncryptInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_diskEncryptInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1210,6 +1228,15 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "HttpsEnabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_httpsEnabled, allocator);
+    }
+
+    if (m_diskEncryptInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskEncryptInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_diskEncryptInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2141,5 +2168,21 @@ void InstanceInfo::SetHttpsEnabled(const bool& _httpsEnabled)
 bool InstanceInfo::HttpsEnabledHasBeenSet() const
 {
     return m_httpsEnabledHasBeenSet;
+}
+
+DiskEncryptInfo InstanceInfo::GetDiskEncryptInfo() const
+{
+    return m_diskEncryptInfo;
+}
+
+void InstanceInfo::SetDiskEncryptInfo(const DiskEncryptInfo& _diskEncryptInfo)
+{
+    m_diskEncryptInfo = _diskEncryptInfo;
+    m_diskEncryptInfoHasBeenSet = true;
+}
+
+bool InstanceInfo::DiskEncryptInfoHasBeenSet() const
+{
+    return m_diskEncryptInfoHasBeenSet;
 }
 

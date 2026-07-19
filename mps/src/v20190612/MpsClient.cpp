@@ -890,6 +890,56 @@ MpsClient::CreateContentReviewTemplateOutcomeCallable MpsClient::CreateContentRe
     return prom->get_future();
 }
 
+MpsClient::CreateDocToVideoTaskOutcome MpsClient::CreateDocToVideoTask(const CreateDocToVideoTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDocToVideoTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDocToVideoTaskResponse rsp = CreateDocToVideoTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDocToVideoTaskOutcome(rsp);
+        else
+            return CreateDocToVideoTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDocToVideoTaskOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateDocToVideoTaskAsync(const CreateDocToVideoTaskRequest& request, const CreateDocToVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateDocToVideoTaskRequest&;
+    using Resp = CreateDocToVideoTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateDocToVideoTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::CreateDocToVideoTaskOutcomeCallable MpsClient::CreateDocToVideoTaskCallable(const CreateDocToVideoTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateDocToVideoTaskOutcome>>();
+    CreateDocToVideoTaskAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const CreateDocToVideoTaskRequest&,
+        CreateDocToVideoTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::CreateImageSpriteTemplateOutcome MpsClient::CreateImageSpriteTemplate(const CreateImageSpriteTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateImageSpriteTemplate");
@@ -8032,6 +8082,56 @@ MpsClient::EditMediaOutcomeCallable MpsClient::EditMediaCallable(const EditMedia
         const MpsClient*,
         const EditMediaRequest&,
         EditMediaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MpsClient::EmbeddingDataOutcome MpsClient::EmbeddingData(const EmbeddingDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "EmbeddingData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EmbeddingDataResponse rsp = EmbeddingDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EmbeddingDataOutcome(rsp);
+        else
+            return EmbeddingDataOutcome(o.GetError());
+    }
+    else
+    {
+        return EmbeddingDataOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::EmbeddingDataAsync(const EmbeddingDataRequest& request, const EmbeddingDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EmbeddingDataRequest&;
+    using Resp = EmbeddingDataResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "EmbeddingData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::EmbeddingDataOutcomeCallable MpsClient::EmbeddingDataCallable(const EmbeddingDataRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<EmbeddingDataOutcome>>();
+    EmbeddingDataAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const EmbeddingDataRequest&,
+        EmbeddingDataOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

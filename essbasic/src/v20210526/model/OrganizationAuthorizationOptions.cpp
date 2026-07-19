@@ -25,7 +25,8 @@ OrganizationAuthorizationOptions::OrganizationAuthorizationOptions() :
     m_organizationNameSameHasBeenSet(false),
     m_legalNameSameHasBeenSet(false),
     m_bankAccountNumberSameHasBeenSet(false),
-    m_addressSameHasBeenSet(false)
+    m_addressSameHasBeenSet(false),
+    m_bizLicenseSameHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome OrganizationAuthorizationOptions::Deserialize(const rapidjso
         m_addressSameHasBeenSet = true;
     }
 
+    if (value.HasMember("BizLicenseSame") && !value["BizLicenseSame"].IsNull())
+    {
+        if (!value["BizLicenseSame"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrganizationAuthorizationOptions.BizLicenseSame` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_bizLicenseSame = value["BizLicenseSame"].GetBool();
+        m_bizLicenseSameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void OrganizationAuthorizationOptions::ToJsonObject(rapidjson::Value &value, rap
         string key = "AddressSame";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_addressSame, allocator);
+    }
+
+    if (m_bizLicenseSameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BizLicenseSame";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bizLicenseSame, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void OrganizationAuthorizationOptions::SetAddressSame(const bool& _addressSame)
 bool OrganizationAuthorizationOptions::AddressSameHasBeenSet() const
 {
     return m_addressSameHasBeenSet;
+}
+
+bool OrganizationAuthorizationOptions::GetBizLicenseSame() const
+{
+    return m_bizLicenseSame;
+}
+
+void OrganizationAuthorizationOptions::SetBizLicenseSame(const bool& _bizLicenseSame)
+{
+    m_bizLicenseSame = _bizLicenseSame;
+    m_bizLicenseSameHasBeenSet = true;
+}
+
+bool OrganizationAuthorizationOptions::BizLicenseSameHasBeenSet() const
+{
+    return m_bizLicenseSameHasBeenSet;
 }
 

@@ -11240,6 +11240,56 @@ IotexplorerClient::RevokeBindUserDeviceOutcomeCallable IotexplorerClient::Revoke
     return prom->get_future();
 }
 
+IotexplorerClient::RevokeShareDeviceFromUserOutcome IotexplorerClient::RevokeShareDeviceFromUser(const RevokeShareDeviceFromUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "RevokeShareDeviceFromUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RevokeShareDeviceFromUserResponse rsp = RevokeShareDeviceFromUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RevokeShareDeviceFromUserOutcome(rsp);
+        else
+            return RevokeShareDeviceFromUserOutcome(o.GetError());
+    }
+    else
+    {
+        return RevokeShareDeviceFromUserOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::RevokeShareDeviceFromUserAsync(const RevokeShareDeviceFromUserRequest& request, const RevokeShareDeviceFromUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RevokeShareDeviceFromUserRequest&;
+    using Resp = RevokeShareDeviceFromUserResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RevokeShareDeviceFromUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::RevokeShareDeviceFromUserOutcomeCallable IotexplorerClient::RevokeShareDeviceFromUserCallable(const RevokeShareDeviceFromUserRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RevokeShareDeviceFromUserOutcome>>();
+    RevokeShareDeviceFromUserAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const RevokeShareDeviceFromUserRequest&,
+        RevokeShareDeviceFromUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::SearchPositionSpaceOutcome IotexplorerClient::SearchPositionSpace(const SearchPositionSpaceRequest &request)
 {
     auto outcome = MakeRequest(request, "SearchPositionSpace");
@@ -11382,6 +11432,56 @@ IotexplorerClient::SearchTopicRuleOutcomeCallable IotexplorerClient::SearchTopic
         const IotexplorerClient*,
         const SearchTopicRuleRequest&,
         SearchTopicRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::ShareDeviceToUserOutcome IotexplorerClient::ShareDeviceToUser(const ShareDeviceToUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "ShareDeviceToUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ShareDeviceToUserResponse rsp = ShareDeviceToUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ShareDeviceToUserOutcome(rsp);
+        else
+            return ShareDeviceToUserOutcome(o.GetError());
+    }
+    else
+    {
+        return ShareDeviceToUserOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ShareDeviceToUserAsync(const ShareDeviceToUserRequest& request, const ShareDeviceToUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ShareDeviceToUserRequest&;
+    using Resp = ShareDeviceToUserResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ShareDeviceToUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::ShareDeviceToUserOutcomeCallable IotexplorerClient::ShareDeviceToUserCallable(const ShareDeviceToUserRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ShareDeviceToUserOutcome>>();
+    ShareDeviceToUserAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const ShareDeviceToUserRequest&,
+        ShareDeviceToUserOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
