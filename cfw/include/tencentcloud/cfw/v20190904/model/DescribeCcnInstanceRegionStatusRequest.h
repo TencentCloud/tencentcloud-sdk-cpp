@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云联网ID
-                     * @return CcnId 云联网ID
+                     * 获取<p>云联网ID</p>
+                     * @return CcnId <p>云联网ID</p>
                      * 
                      */
                     std::string GetCcnId() const;
 
                     /**
-                     * 设置云联网ID
-                     * @param _ccnId 云联网ID
+                     * 设置<p>云联网ID</p>
+                     * @param _ccnId <p>云联网ID</p>
                      * 
                      */
                     void SetCcnId(const std::string& _ccnId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool CcnIdHasBeenSet() const;
 
                     /**
-                     * 获取要查询引流网络部署状态的云联网关联的实例ID列表
-                     * @return InstanceIds 要查询引流网络部署状态的云联网关联的实例ID列表
+                     * 获取<p>要查询引流网络部署状态的云联网关联的实例ID列表</p>
+                     * @return InstanceIds <p>要查询引流网络部署状态的云联网关联的实例ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置要查询引流网络部署状态的云联网关联的实例ID列表
-                     * @param _instanceIds 要查询引流网络部署状态的云联网关联的实例ID列表
+                     * 设置<p>要查询引流网络部署状态的云联网关联的实例ID列表</p>
+                     * @param _instanceIds <p>要查询引流网络部署状态的云联网关联的实例ID列表</p>
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取引流路由方法 0:多路由表, 1:策略路由
-                     * @return RoutingMode 引流路由方法 0:多路由表, 1:策略路由
+                     * 获取<p>引流路由方法 0:多路由表, 1:策略路由</p>
+                     * @return RoutingMode <p>引流路由方法 0:多路由表, 1:策略路由</p>
                      * 
                      */
                     uint64_t GetRoutingMode() const;
 
                     /**
-                     * 设置引流路由方法 0:多路由表, 1:策略路由
-                     * @param _routingMode 引流路由方法 0:多路由表, 1:策略路由
+                     * 设置<p>引流路由方法 0:多路由表, 1:策略路由</p>
+                     * @param _routingMode <p>引流路由方法 0:多路由表, 1:策略路由</p>
                      * 
                      */
                     void SetRoutingMode(const uint64_t& _routingMode);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云联网ID
+                     * <p>云联网ID</p>
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;
 
                     /**
-                     * 要查询引流网络部署状态的云联网关联的实例ID列表
+                     * <p>要查询引流网络部署状态的云联网关联的实例ID列表</p>
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 引流路由方法 0:多路由表, 1:策略路由
+                     * <p>引流路由方法 0:多路由表, 1:策略路由</p>
                      */
                     uint64_t m_routingMode;
                     bool m_routingModeHasBeenSet;

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源组名称
-                     * @return WorkloadGroupName 资源组名称
+                     * 获取<p>资源组名称</p>
+                     * @return WorkloadGroupName <p>资源组名称</p>
                      * 
                      */
                     std::string GetWorkloadGroupName() const;
 
                     /**
-                     * 设置资源组名称
-                     * @param _workloadGroupName 资源组名称
+                     * 设置<p>资源组名称</p>
+                     * @param _workloadGroupName <p>资源组名称</p>
                      * 
                      */
                     void SetWorkloadGroupName(const std::string& _workloadGroupName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool WorkloadGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取CPU权重
-                     * @return CpuShare CPU权重
+                     * 获取<p>CPU权重</p>
+                     * @return CpuShare <p>CPU权重</p>
                      * 
                      */
                     int64_t GetCpuShare() const;
 
                     /**
-                     * 设置CPU权重
-                     * @param _cpuShare CPU权重
+                     * 设置<p>CPU权重</p>
+                     * @param _cpuShare <p>CPU权重</p>
                      * 
                      */
                     void SetCpuShare(const int64_t& _cpuShare);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool CpuShareHasBeenSet() const;
 
                     /**
-                     * 获取内存限制，所有资源组的内存限制值之和应该小于等于100
-                     * @return MemoryLimit 内存限制，所有资源组的内存限制值之和应该小于等于100
+                     * 获取<p>内存限制，所有资源组的内存限制值之和应该小于等于100</p>
+                     * @return MemoryLimit <p>内存限制，所有资源组的内存限制值之和应该小于等于100</p>
                      * 
                      */
                     int64_t GetMemoryLimit() const;
 
                     /**
-                     * 设置内存限制，所有资源组的内存限制值之和应该小于等于100
-                     * @param _memoryLimit 内存限制，所有资源组的内存限制值之和应该小于等于100
+                     * 设置<p>内存限制，所有资源组的内存限制值之和应该小于等于100</p>
+                     * @param _memoryLimit <p>内存限制，所有资源组的内存限制值之和应该小于等于100</p>
                      * 
                      */
                     void SetMemoryLimit(const int64_t& _memoryLimit);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool MemoryLimitHasBeenSet() const;
 
                     /**
-                     * 获取是否允许超配分配
-                     * @return EnableMemoryOverCommit 是否允许超配分配
+                     * 获取<p>是否允许超配分配</p>
+                     * @return EnableMemoryOverCommit <p>是否允许超配分配</p>
                      * 
                      */
                     bool GetEnableMemoryOverCommit() const;
 
                     /**
-                     * 设置是否允许超配分配
-                     * @param _enableMemoryOverCommit 是否允许超配分配
+                     * 设置<p>是否允许超配分配</p>
+                     * @param _enableMemoryOverCommit <p>是否允许超配分配</p>
                      * 
                      */
                     void SetEnableMemoryOverCommit(const bool& _enableMemoryOverCommit);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool EnableMemoryOverCommitHasBeenSet() const;
 
                     /**
-                     * 获取cpu硬限制
-                     * @return CpuHardLimit cpu硬限制
+                     * 获取<p>cpu硬限制</p>
+                     * @return CpuHardLimit <p>cpu硬限制</p>
                      * 
                      */
                     std::string GetCpuHardLimit() const;
 
                     /**
-                     * 设置cpu硬限制
-                     * @param _cpuHardLimit cpu硬限制
+                     * 设置<p>cpu硬限制</p>
+                     * @param _cpuHardLimit <p>cpu硬限制</p>
                      * 
                      */
                     void SetCpuHardLimit(const std::string& _cpuHardLimit);
@@ -151,37 +151,172 @@ namespace TencentCloud
                      */
                     bool CpuHardLimitHasBeenSet() const;
 
+                    /**
+                     * 获取<p>4.1+ 新增；默认值为 0（不预留），根据业务可设为 5/10</p>
+                     * @return MinCpuPercent <p>4.1+ 新增；默认值为 0（不预留），根据业务可设为 5/10</p>
+                     * 
+                     */
+                    int64_t GetMinCpuPercent() const;
+
+                    /**
+                     * 设置<p>4.1+ 新增；默认值为 0（不预留），根据业务可设为 5/10</p>
+                     * @param _minCpuPercent <p>4.1+ 新增；默认值为 0（不预留），根据业务可设为 5/10</p>
+                     * 
+                     */
+                    void SetMinCpuPercent(const int64_t& _minCpuPercent);
+
+                    /**
+                     * 判断参数 MinCpuPercent 是否已赋值
+                     * @return MinCpuPercent 是否已赋值
+                     * 
+                     */
+                    bool MinCpuPercentHasBeenSet() const;
+
+                    /**
+                     * 获取<p>4.1+ 新增；默认值为 0（不预留），根据业务可设为 5/10</p>
+                     * @return MinMemoryPercent <p>4.1+ 新增；默认值为 0（不预留），根据业务可设为 5/10</p>
+                     * 
+                     */
+                    int64_t GetMinMemoryPercent() const;
+
+                    /**
+                     * 设置<p>4.1+ 新增；默认值为 0（不预留），根据业务可设为 5/10</p>
+                     * @param _minMemoryPercent <p>4.1+ 新增；默认值为 0（不预留），根据业务可设为 5/10</p>
+                     * 
+                     */
+                    void SetMinMemoryPercent(const int64_t& _minMemoryPercent);
+
+                    /**
+                     * 判断参数 MinMemoryPercent 是否已赋值
+                     * @return MinMemoryPercent 是否已赋值
+                     * 
+                     */
+                    bool MinMemoryPercentHasBeenSet() const;
+
+                    /**
+                     * 获取<p>2.1+ 新增；不传走内核默认（Integer.MAX_VALUE=2147483647），建议按业务并发量配置</p>
+                     * @return MaxConcurrencyNum <p>2.1+ 新增；不传走内核默认（Integer.MAX_VALUE=2147483647），建议按业务并发量配置</p>
+                     * 
+                     */
+                    int64_t GetMaxConcurrencyNum() const;
+
+                    /**
+                     * 设置<p>2.1+ 新增；不传走内核默认（Integer.MAX_VALUE=2147483647），建议按业务并发量配置</p>
+                     * @param _maxConcurrencyNum <p>2.1+ 新增；不传走内核默认（Integer.MAX_VALUE=2147483647），建议按业务并发量配置</p>
+                     * 
+                     */
+                    void SetMaxConcurrencyNum(const int64_t& _maxConcurrencyNum);
+
+                    /**
+                     * 判断参数 MaxConcurrencyNum 是否已赋值
+                     * @return MaxConcurrencyNum 是否已赋值
+                     * 
+                     */
+                    bool MaxConcurrencyNumHasBeenSet() const;
+
+                    /**
+                     * 获取<p>2.1+ 新增；0=不排队，建议为 MaxConcurrencyNum 的 50%</p>
+                     * @return MaxQueueSize <p>2.1+ 新增；0=不排队，建议为 MaxConcurrencyNum 的 50%</p>
+                     * 
+                     */
+                    int64_t GetMaxQueueSize() const;
+
+                    /**
+                     * 设置<p>2.1+ 新增；0=不排队，建议为 MaxConcurrencyNum 的 50%</p>
+                     * @param _maxQueueSize <p>2.1+ 新增；0=不排队，建议为 MaxConcurrencyNum 的 50%</p>
+                     * 
+                     */
+                    void SetMaxQueueSize(const int64_t& _maxQueueSize);
+
+                    /**
+                     * 判断参数 MaxQueueSize 是否已赋值
+                     * @return MaxQueueSize 是否已赋值
+                     * 
+                     */
+                    bool MaxQueueSizeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>2.1+ 新增；单位 ms，建议 5000（5s）</p>
+                     * @return QueueTimeout <p>2.1+ 新增；单位 ms，建议 5000（5s）</p>
+                     * 
+                     */
+                    int64_t GetQueueTimeout() const;
+
+                    /**
+                     * 设置<p>2.1+ 新增；单位 ms，建议 5000（5s）</p>
+                     * @param _queueTimeout <p>2.1+ 新增；单位 ms，建议 5000（5s）</p>
+                     * 
+                     */
+                    void SetQueueTimeout(const int64_t& _queueTimeout);
+
+                    /**
+                     * 判断参数 QueueTimeout 是否已赋值
+                     * @return QueueTimeout 是否已赋值
+                     * 
+                     */
+                    bool QueueTimeoutHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 资源组名称
+                     * <p>资源组名称</p>
                      */
                     std::string m_workloadGroupName;
                     bool m_workloadGroupNameHasBeenSet;
 
                     /**
-                     * CPU权重
+                     * <p>CPU权重</p>
                      */
                     int64_t m_cpuShare;
                     bool m_cpuShareHasBeenSet;
 
                     /**
-                     * 内存限制，所有资源组的内存限制值之和应该小于等于100
+                     * <p>内存限制，所有资源组的内存限制值之和应该小于等于100</p>
                      */
                     int64_t m_memoryLimit;
                     bool m_memoryLimitHasBeenSet;
 
                     /**
-                     * 是否允许超配分配
+                     * <p>是否允许超配分配</p>
                      */
                     bool m_enableMemoryOverCommit;
                     bool m_enableMemoryOverCommitHasBeenSet;
 
                     /**
-                     * cpu硬限制
+                     * <p>cpu硬限制</p>
                      */
                     std::string m_cpuHardLimit;
                     bool m_cpuHardLimitHasBeenSet;
+
+                    /**
+                     * <p>4.1+ 新增；默认值为 0（不预留），根据业务可设为 5/10</p>
+                     */
+                    int64_t m_minCpuPercent;
+                    bool m_minCpuPercentHasBeenSet;
+
+                    /**
+                     * <p>4.1+ 新增；默认值为 0（不预留），根据业务可设为 5/10</p>
+                     */
+                    int64_t m_minMemoryPercent;
+                    bool m_minMemoryPercentHasBeenSet;
+
+                    /**
+                     * <p>2.1+ 新增；不传走内核默认（Integer.MAX_VALUE=2147483647），建议按业务并发量配置</p>
+                     */
+                    int64_t m_maxConcurrencyNum;
+                    bool m_maxConcurrencyNumHasBeenSet;
+
+                    /**
+                     * <p>2.1+ 新增；0=不排队，建议为 MaxConcurrencyNum 的 50%</p>
+                     */
+                    int64_t m_maxQueueSize;
+                    bool m_maxQueueSizeHasBeenSet;
+
+                    /**
+                     * <p>2.1+ 新增；单位 ms，建议 5000（5s）</p>
+                     */
+                    int64_t m_queueTimeout;
+                    bool m_queueTimeoutHasBeenSet;
 
                 };
             }

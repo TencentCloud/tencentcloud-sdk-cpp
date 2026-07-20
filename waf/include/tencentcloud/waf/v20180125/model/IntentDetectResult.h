@@ -67,6 +67,27 @@ namespace TencentCloud
                      */
                     bool IsUnSafeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>检出分类</p>
+                     * @return Category <p>检出分类</p>
+                     * 
+                     */
+                    std::string GetCategory() const;
+
+                    /**
+                     * 设置<p>检出分类</p>
+                     * @param _category <p>检出分类</p>
+                     * 
+                     */
+                    void SetCategory(const std::string& _category);
+
+                    /**
+                     * 判断参数 Category 是否已赋值
+                     * @return Category 是否已赋值
+                     * 
+                     */
+                    bool CategoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -74,6 +95,12 @@ namespace TencentCloud
                      */
                     uint64_t m_isUnSafe;
                     bool m_isUnSafeHasBeenSet;
+
+                    /**
+                     * <p>检出分类</p>
+                     */
+                    std::string m_category;
+                    bool m_categoryHasBeenSet;
 
                 };
             }

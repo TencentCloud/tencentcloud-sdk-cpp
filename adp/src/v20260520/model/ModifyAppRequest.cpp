@@ -29,7 +29,6 @@ ModifyAppRequest::ModifyAppRequest() :
     m_configHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_shareConfigHasBeenSet(false),
     m_sharedKbIdListHasBeenSet(false),
     m_updateMaskHasBeenSet(false)
 {
@@ -89,15 +88,6 @@ string ModifyAppRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_shareConfigHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ShareConfig";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_shareConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_sharedKbIdListHasBeenSet)
@@ -224,22 +214,6 @@ void ModifyAppRequest::SetName(const string& _name)
 bool ModifyAppRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
-}
-
-AppShareAccessControl ModifyAppRequest::GetShareConfig() const
-{
-    return m_shareConfig;
-}
-
-void ModifyAppRequest::SetShareConfig(const AppShareAccessControl& _shareConfig)
-{
-    m_shareConfig = _shareConfig;
-    m_shareConfigHasBeenSet = true;
-}
-
-bool ModifyAppRequest::ShareConfigHasBeenSet() const
-{
-    return m_shareConfigHasBeenSet;
 }
 
 vector<string> ModifyAppRequest::GetSharedKbIdList() const

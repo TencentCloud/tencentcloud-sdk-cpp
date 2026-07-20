@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取支持自动接入和策略路由的CCN列表
+                     * 获取<p>支持自动接入和策略路由的CCN列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SupportCcnPolicy 支持自动接入和策略路由的CCN列表
+                     * @return SupportCcnPolicy <p>支持自动接入和策略路由的CCN列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -60,9 +60,9 @@ namespace TencentCloud
                     bool SupportCcnPolicyHasBeenSet() const;
 
                     /**
-                     * 获取自动接入中支持自定义cidr的CCN列表
+                     * 获取<p>自动接入中支持自定义cidr的CCN列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SupportCcnPolicyCidr 自动接入中支持自定义cidr的CCN列表
+                     * @return SupportCcnPolicyCidr <p>自动接入中支持自定义cidr的CCN列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -78,14 +78,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 支持自动接入和策略路由的CCN列表
+                     * <p>支持自动接入和策略路由的CCN列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_supportCcnPolicy;
                     bool m_supportCcnPolicyHasBeenSet;
 
                     /**
-                     * 自动接入中支持自定义cidr的CCN列表
+                     * <p>自动接入中支持自定义cidr的CCN列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_supportCcnPolicyCidr;

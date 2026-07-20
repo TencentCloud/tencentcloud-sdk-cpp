@@ -31,6 +31,7 @@
 #include <tencentcloud/adp/v20260520/model/AppShareURLInfo.h>
 #include <tencentcloud/adp/v20260520/model/AppStatusInfo.h>
 #include <tencentcloud/adp/v20260520/model/AppSharedKbInfo.h>
+#include <tencentcloud/adp/v20260520/model/CorpShareConfig.h>
 
 
 namespace TencentCloud
@@ -54,18 +55,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取辅助信息(子状态/审批/申诉/搜索资源/特殊状态等)
+                     * 获取<p>辅助信息(子状态/审批/申诉/搜索资源/特殊状态等)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AuxiliaryInfo 辅助信息(子状态/审批/申诉/搜索资源/特殊状态等)
+                     * @return AuxiliaryInfo <p>辅助信息(子状态/审批/申诉/搜索资源/特殊状态等)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AppAuxiliaryInfo GetAuxiliaryInfo() const;
 
                     /**
-                     * 设置辅助信息(子状态/审批/申诉/搜索资源/特殊状态等)
+                     * 设置<p>辅助信息(子状态/审批/申诉/搜索资源/特殊状态等)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _auxiliaryInfo 辅助信息(子状态/审批/申诉/搜索资源/特殊状态等)
+                     * @param _auxiliaryInfo <p>辅助信息(子状态/审批/申诉/搜索资源/特殊状态等)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -79,18 +80,18 @@ namespace TencentCloud
                     bool AuxiliaryInfoHasBeenSet() const;
 
                     /**
-                     * 获取配置
+                     * 获取<p>配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Config 配置
+                     * @return Config <p>配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AppConfig GetConfig() const;
 
                     /**
-                     * 设置配置
+                     * 设置<p>配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _config 配置
+                     * @param _config <p>配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -104,18 +105,18 @@ namespace TencentCloud
                     bool ConfigHasBeenSet() const;
 
                     /**
-                     * 获取元数据
+                     * 获取<p>元数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Metadata 元数据
+                     * @return Metadata <p>元数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AppMetadata GetMetadata() const;
 
                     /**
-                     * 设置元数据
+                     * 设置<p>元数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _metadata 元数据
+                     * @param _metadata <p>元数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -129,18 +130,18 @@ namespace TencentCloud
                     bool MetadataHasBeenSet() const;
 
                     /**
-                     * 获取应用密钥信息
+                     * 获取<p>应用密钥信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SecretInfo 应用密钥信息
+                     * @return SecretInfo <p>应用密钥信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AppSecretInfo GetSecretInfo() const;
 
                     /**
-                     * 设置应用密钥信息
+                     * 设置<p>应用密钥信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _secretInfo 应用密钥信息
+                     * @param _secretInfo <p>应用密钥信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -154,18 +155,18 @@ namespace TencentCloud
                     bool SecretInfoHasBeenSet() const;
 
                     /**
-                     * 获取分享链接信息(含访问控制)
+                     * 获取<p>分享链接信息(含访问控制)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ShareUrlInfo 分享链接信息(含访问控制)
+                     * @return ShareUrlInfo <p>分享链接信息(含访问控制)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AppShareURLInfo GetShareUrlInfo() const;
 
                     /**
-                     * 设置分享链接信息(含访问控制)
+                     * 设置<p>分享链接信息(含访问控制)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _shareUrlInfo 分享链接信息(含访问控制)
+                     * @param _shareUrlInfo <p>分享链接信息(含访问控制)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -179,18 +180,18 @@ namespace TencentCloud
                     bool ShareUrlInfoHasBeenSet() const;
 
                     /**
-                     * 获取状态
+                     * 获取<p>状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 状态
+                     * @return Status <p>状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AppStatusInfo GetStatus() const;
 
                     /**
-                     * 设置状态
+                     * 设置<p>状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 状态
+                     * @param _status <p>状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -204,15 +205,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取应用引用的共享知识库列表
-                     * @return SharedKbList 应用引用的共享知识库列表
+                     * 获取<p>应用引用的共享知识库列表</p>
+                     * @return SharedKbList <p>应用引用的共享知识库列表</p>
                      * 
                      */
                     std::vector<AppSharedKbInfo> GetSharedKbList() const;
 
                     /**
-                     * 设置应用引用的共享知识库列表
-                     * @param _sharedKbList 应用引用的共享知识库列表
+                     * 设置<p>应用引用的共享知识库列表</p>
+                     * @param _sharedKbList <p>应用引用的共享知识库列表</p>
                      * 
                      */
                     void SetSharedKbList(const std::vector<AppSharedKbInfo>& _sharedKbList);
@@ -224,55 +225,87 @@ namespace TencentCloud
                      */
                     bool SharedKbListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>企业共享配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CorpShareConfig <p>企业共享配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    CorpShareConfig GetCorpShareConfig() const;
+
+                    /**
+                     * 设置<p>企业共享配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _corpShareConfig <p>企业共享配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCorpShareConfig(const CorpShareConfig& _corpShareConfig);
+
+                    /**
+                     * 判断参数 CorpShareConfig 是否已赋值
+                     * @return CorpShareConfig 是否已赋值
+                     * 
+                     */
+                    bool CorpShareConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 辅助信息(子状态/审批/申诉/搜索资源/特殊状态等)
+                     * <p>辅助信息(子状态/审批/申诉/搜索资源/特殊状态等)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AppAuxiliaryInfo m_auxiliaryInfo;
                     bool m_auxiliaryInfoHasBeenSet;
 
                     /**
-                     * 配置
+                     * <p>配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AppConfig m_config;
                     bool m_configHasBeenSet;
 
                     /**
-                     * 元数据
+                     * <p>元数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AppMetadata m_metadata;
                     bool m_metadataHasBeenSet;
 
                     /**
-                     * 应用密钥信息
+                     * <p>应用密钥信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AppSecretInfo m_secretInfo;
                     bool m_secretInfoHasBeenSet;
 
                     /**
-                     * 分享链接信息(含访问控制)
+                     * <p>分享链接信息(含访问控制)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AppShareURLInfo m_shareUrlInfo;
                     bool m_shareUrlInfoHasBeenSet;
 
                     /**
-                     * 状态
+                     * <p>状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AppStatusInfo m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 应用引用的共享知识库列表
+                     * <p>应用引用的共享知识库列表</p>
                      */
                     std::vector<AppSharedKbInfo> m_sharedKbList;
                     bool m_sharedKbListHasBeenSet;
+
+                    /**
+                     * <p>企业共享配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CorpShareConfig m_corpShareConfig;
+                    bool m_corpShareConfigHasBeenSet;
 
                 };
             }

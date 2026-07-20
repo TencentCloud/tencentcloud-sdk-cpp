@@ -4490,6 +4490,106 @@ DlcClient::DescribeLakeFsTaskResultOutcomeCallable DlcClient::DescribeLakeFsTask
     return prom->get_future();
 }
 
+DlcClient::DescribeMCPTaskOutcome DlcClient::DescribeMCPTask(const DescribeMCPTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMCPTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMCPTaskResponse rsp = DescribeMCPTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMCPTaskOutcome(rsp);
+        else
+            return DescribeMCPTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMCPTaskOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeMCPTaskAsync(const DescribeMCPTaskRequest& request, const DescribeMCPTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMCPTaskRequest&;
+    using Resp = DescribeMCPTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMCPTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeMCPTaskOutcomeCallable DlcClient::DescribeMCPTaskCallable(const DescribeMCPTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMCPTaskOutcome>>();
+    DescribeMCPTaskAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeMCPTaskRequest&,
+        DescribeMCPTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeMCPTaskResultOutcome DlcClient::DescribeMCPTaskResult(const DescribeMCPTaskResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMCPTaskResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMCPTaskResultResponse rsp = DescribeMCPTaskResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMCPTaskResultOutcome(rsp);
+        else
+            return DescribeMCPTaskResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMCPTaskResultOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeMCPTaskResultAsync(const DescribeMCPTaskResultRequest& request, const DescribeMCPTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMCPTaskResultRequest&;
+    using Resp = DescribeMCPTaskResultResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMCPTaskResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeMCPTaskResultOutcomeCallable DlcClient::DescribeMCPTaskResultCallable(const DescribeMCPTaskResultRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMCPTaskResultOutcome>>();
+    DescribeMCPTaskResultAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeMCPTaskResultRequest&,
+        DescribeMCPTaskResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::DescribeNativeSparkSessionsOutcome DlcClient::DescribeNativeSparkSessions(const DescribeNativeSparkSessionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNativeSparkSessions");

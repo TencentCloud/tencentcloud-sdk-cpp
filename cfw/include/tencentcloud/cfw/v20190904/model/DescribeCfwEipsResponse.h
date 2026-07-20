@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回值信息
-                     * @return NatFwEipList 返回值信息
+                     * 获取<p>返回值信息</p>
+                     * @return NatFwEipList <p>返回值信息</p>
                      * 
                      */
                     std::vector<NatFwEipsInfo> GetNatFwEipList() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回值信息
+                     * <p>返回值信息</p>
                      */
                     std::vector<NatFwEipsInfo> m_natFwEipList;
                     bool m_natFwEipListHasBeenSet;

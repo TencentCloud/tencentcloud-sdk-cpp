@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/VideoRedrawInput.h>
 #include <tencentcloud/mps/v20190612/model/VideoRedrawCosInfo.h>
+#include <tencentcloud/mps/v20190612/model/VideoRedrawTaskInfo.h>
 
 
 namespace TencentCloud
@@ -86,6 +87,27 @@ namespace TencentCloud
                      */
                     bool CosInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<p>ai转绘任务信息</p>
+                     * @return TaskInfo <p>ai转绘任务信息</p>
+                     * 
+                     */
+                    VideoRedrawTaskInfo GetTaskInfo() const;
+
+                    /**
+                     * 设置<p>ai转绘任务信息</p>
+                     * @param _taskInfo <p>ai转绘任务信息</p>
+                     * 
+                     */
+                    void SetTaskInfo(const VideoRedrawTaskInfo& _taskInfo);
+
+                    /**
+                     * 判断参数 TaskInfo 是否已赋值
+                     * @return TaskInfo 是否已赋值
+                     * 
+                     */
+                    bool TaskInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -99,6 +121,12 @@ namespace TencentCloud
                      */
                     VideoRedrawCosInfo m_cosInfo;
                     bool m_cosInfoHasBeenSet;
+
+                    /**
+                     * <p>ai转绘任务信息</p>
+                     */
+                    VideoRedrawTaskInfo m_taskInfo;
+                    bool m_taskInfoHasBeenSet;
 
                 };
             }

@@ -127,6 +127,48 @@ namespace TencentCloud
                     bool RuleActionHasBeenSet() const;
 
                     /**
+                     * 获取<p>启用状态过滤。可选。默认只返回启用规则；传 false 只查询禁用规则。</p>
+                     * @return Enabled <p>启用状态过滤。可选。默认只返回启用规则；传 false 只查询禁用规则。</p>
+                     * 
+                     */
+                    bool GetEnabled() const;
+
+                    /**
+                     * 设置<p>启用状态过滤。可选。默认只返回启用规则；传 false 只查询禁用规则。</p>
+                     * @param _enabled <p>启用状态过滤。可选。默认只返回启用规则；传 false 只查询禁用规则。</p>
+                     * 
+                     */
+                    void SetEnabled(const bool& _enabled);
+
+                    /**
+                     * 判断参数 Enabled 是否已赋值
+                     * @return Enabled 是否已赋值
+                     * 
+                     */
+                    bool EnabledHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否同时包含启用和禁用规则。可选。true 表示包含两类；不能和 Enabled 同时使用。</p>
+                     * @return IncludeDisabled <p>是否同时包含启用和禁用规则。可选。true 表示包含两类；不能和 Enabled 同时使用。</p>
+                     * 
+                     */
+                    bool GetIncludeDisabled() const;
+
+                    /**
+                     * 设置<p>是否同时包含启用和禁用规则。可选。true 表示包含两类；不能和 Enabled 同时使用。</p>
+                     * @param _includeDisabled <p>是否同时包含启用和禁用规则。可选。true 表示包含两类；不能和 Enabled 同时使用。</p>
+                     * 
+                     */
+                    void SetIncludeDisabled(const bool& _includeDisabled);
+
+                    /**
+                     * 判断参数 IncludeDisabled 是否已赋值
+                     * @return IncludeDisabled 是否已赋值
+                     * 
+                     */
+                    bool IncludeDisabledHasBeenSet() const;
+
+                    /**
                      * 获取<p>精确规则 ID 过滤。可选。用于按数值规则标识定位单条规则。</p>
                      * @return RuleId <p>精确规则 ID 过滤。可选。用于按数值规则标识定位单条规则。</p>
                      * 
@@ -146,6 +188,174 @@ namespace TencentCloud
                      * 
                      */
                     bool RuleIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>精确公开规则标识过滤。可选。推荐在用户提供规则标识时使用。</p>
+                     * @return RuleUuid <p>精确公开规则标识过滤。可选。推荐在用户提供规则标识时使用。</p>
+                     * 
+                     */
+                    std::string GetRuleUuid() const;
+
+                    /**
+                     * 设置<p>精确公开规则标识过滤。可选。推荐在用户提供规则标识时使用。</p>
+                     * @param _ruleUuid <p>精确公开规则标识过滤。可选。推荐在用户提供规则标识时使用。</p>
+                     * 
+                     */
+                    void SetRuleUuid(const std::string& _ruleUuid);
+
+                    /**
+                     * 判断参数 RuleUuid 是否已赋值
+                     * @return RuleUuid 是否已赋值
+                     * 
+                     */
+                    bool RuleUuidHasBeenSet() const;
+
+                    /**
+                     * 获取<p>协议过滤。可选。例如 TCP、UDP、ICMP、HTTP、HTTPS、ANY；不传则不过滤。</p>
+                     * @return Protocol <p>协议过滤。可选。例如 TCP、UDP、ICMP、HTTP、HTTPS、ANY；不传则不过滤。</p>
+                     * 
+                     */
+                    std::string GetProtocol() const;
+
+                    /**
+                     * 设置<p>协议过滤。可选。例如 TCP、UDP、ICMP、HTTP、HTTPS、ANY；不传则不过滤。</p>
+                     * @param _protocol <p>协议过滤。可选。例如 TCP、UDP、ICMP、HTTP、HTTPS、ANY；不传则不过滤。</p>
+                     * 
+                     */
+                    void SetProtocol(const std::string& _protocol);
+
+                    /**
+                     * 判断参数 Protocol 是否已赋值
+                     * @return Protocol 是否已赋值
+                     * 
+                     */
+                    bool ProtocolHasBeenSet() const;
+
+                    /**
+                     * 获取<p>源地址或源内容关键字过滤。可选，支持模糊匹配。</p>
+                     * @return SrcIp <p>源地址或源内容关键字过滤。可选，支持模糊匹配。</p>
+                     * 
+                     */
+                    std::string GetSrcIp() const;
+
+                    /**
+                     * 设置<p>源地址或源内容关键字过滤。可选，支持模糊匹配。</p>
+                     * @param _srcIp <p>源地址或源内容关键字过滤。可选，支持模糊匹配。</p>
+                     * 
+                     */
+                    void SetSrcIp(const std::string& _srcIp);
+
+                    /**
+                     * 判断参数 SrcIp 是否已赋值
+                     * @return SrcIp 是否已赋值
+                     * 
+                     */
+                    bool SrcIpHasBeenSet() const;
+
+                    /**
+                     * 获取<p>目的地址、目的域名或目的内容关键字过滤。可选，支持模糊匹配。</p>
+                     * @return DstIp <p>目的地址、目的域名或目的内容关键字过滤。可选，支持模糊匹配。</p>
+                     * 
+                     */
+                    std::string GetDstIp() const;
+
+                    /**
+                     * 设置<p>目的地址、目的域名或目的内容关键字过滤。可选，支持模糊匹配。</p>
+                     * @param _dstIp <p>目的地址、目的域名或目的内容关键字过滤。可选，支持模糊匹配。</p>
+                     * 
+                     */
+                    void SetDstIp(const std::string& _dstIp);
+
+                    /**
+                     * 判断参数 DstIp 是否已赋值
+                     * @return DstIp 是否已赋值
+                     * 
+                     */
+                    bool DstIpHasBeenSet() const;
+
+                    /**
+                     * 获取<p>规则描述关键字过滤。可选。</p>
+                     * @return Description <p>规则描述关键字过滤。可选。</p>
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置<p>规则描述关键字过滤。可选。</p>
+                     * @param _description <p>规则描述关键字过滤。可选。</p>
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>入侵防御列表关键字搜索。可选，最大 100 字符。blocklist 搜索 ioc/address/comment/rule_source；whitelist 搜索 rule_name/ioc/comment/src_ip/dst_ip；isolate 搜索实例、公网 IP、内网 IP、VPC、地域。</p>
+                     * @return Keyword <p>入侵防御列表关键字搜索。可选，最大 100 字符。blocklist 搜索 ioc/address/comment/rule_source；whitelist 搜索 rule_name/ioc/comment/src_ip/dst_ip；isolate 搜索实例、公网 IP、内网 IP、VPC、地域。</p>
+                     * 
+                     */
+                    std::string GetKeyword() const;
+
+                    /**
+                     * 设置<p>入侵防御列表关键字搜索。可选，最大 100 字符。blocklist 搜索 ioc/address/comment/rule_source；whitelist 搜索 rule_name/ioc/comment/src_ip/dst_ip；isolate 搜索实例、公网 IP、内网 IP、VPC、地域。</p>
+                     * @param _keyword <p>入侵防御列表关键字搜索。可选，最大 100 字符。blocklist 搜索 ioc/address/comment/rule_source；whitelist 搜索 rule_name/ioc/comment/src_ip/dst_ip；isolate 搜索实例、公网 IP、内网 IP、VPC、地域。</p>
+                     * 
+                     */
+                    void SetKeyword(const std::string& _keyword);
+
+                    /**
+                     * 判断参数 Keyword 是否已赋值
+                     * @return Keyword 是否已赋值
+                     * 
+                     */
+                    bool KeywordHasBeenSet() const;
+
+                    /**
+                     * 获取<p>精确实例 ID 过滤。仅 RuleType=intrusion_prevention 且 ListType=isolate 时使用；写操作前后核验应使用该参数而不是 Keyword。</p>
+                     * @return InstanceId <p>精确实例 ID 过滤。仅 RuleType=intrusion_prevention 且 ListType=isolate 时使用；写操作前后核验应使用该参数而不是 Keyword。</p>
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置<p>精确实例 ID 过滤。仅 RuleType=intrusion_prevention 且 ListType=isolate 时使用；写操作前后核验应使用该参数而不是 Keyword。</p>
+                     * @param _instanceId <p>精确实例 ID 过滤。仅 RuleType=intrusion_prevention 且 ListType=isolate 时使用；写操作前后核验应使用该参数而不是 Keyword。</p>
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否展开模板、资产组、实例等名称。可选，默认 true；传 false 返回原始标识。</p>
+                     * @return ExpandNames <p>是否展开模板、资产组、实例等名称。可选，默认 true；传 false 返回原始标识。</p>
+                     * 
+                     */
+                    bool GetExpandNames() const;
+
+                    /**
+                     * 设置<p>是否展开模板、资产组、实例等名称。可选，默认 true；传 false 返回原始标识。</p>
+                     * @param _expandNames <p>是否展开模板、资产组、实例等名称。可选，默认 true；传 false 返回原始标识。</p>
+                     * 
+                     */
+                    void SetExpandNames(const bool& _expandNames);
+
+                    /**
+                     * 判断参数 ExpandNames 是否已赋值
+                     * @return ExpandNames 是否已赋值
+                     * 
+                     */
+                    bool ExpandNamesHasBeenSet() const;
 
                     /**
                      * 获取<p>单页返回规则数。可选，默认 100，最大 1000。</p>
@@ -216,10 +426,70 @@ namespace TencentCloud
                     bool m_ruleActionHasBeenSet;
 
                     /**
+                     * <p>启用状态过滤。可选。默认只返回启用规则；传 false 只查询禁用规则。</p>
+                     */
+                    bool m_enabled;
+                    bool m_enabledHasBeenSet;
+
+                    /**
+                     * <p>是否同时包含启用和禁用规则。可选。true 表示包含两类；不能和 Enabled 同时使用。</p>
+                     */
+                    bool m_includeDisabled;
+                    bool m_includeDisabledHasBeenSet;
+
+                    /**
                      * <p>精确规则 ID 过滤。可选。用于按数值规则标识定位单条规则。</p>
                      */
                     int64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;
+
+                    /**
+                     * <p>精确公开规则标识过滤。可选。推荐在用户提供规则标识时使用。</p>
+                     */
+                    std::string m_ruleUuid;
+                    bool m_ruleUuidHasBeenSet;
+
+                    /**
+                     * <p>协议过滤。可选。例如 TCP、UDP、ICMP、HTTP、HTTPS、ANY；不传则不过滤。</p>
+                     */
+                    std::string m_protocol;
+                    bool m_protocolHasBeenSet;
+
+                    /**
+                     * <p>源地址或源内容关键字过滤。可选，支持模糊匹配。</p>
+                     */
+                    std::string m_srcIp;
+                    bool m_srcIpHasBeenSet;
+
+                    /**
+                     * <p>目的地址、目的域名或目的内容关键字过滤。可选，支持模糊匹配。</p>
+                     */
+                    std::string m_dstIp;
+                    bool m_dstIpHasBeenSet;
+
+                    /**
+                     * <p>规则描述关键字过滤。可选。</p>
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
+
+                    /**
+                     * <p>入侵防御列表关键字搜索。可选，最大 100 字符。blocklist 搜索 ioc/address/comment/rule_source；whitelist 搜索 rule_name/ioc/comment/src_ip/dst_ip；isolate 搜索实例、公网 IP、内网 IP、VPC、地域。</p>
+                     */
+                    std::string m_keyword;
+                    bool m_keywordHasBeenSet;
+
+                    /**
+                     * <p>精确实例 ID 过滤。仅 RuleType=intrusion_prevention 且 ListType=isolate 时使用；写操作前后核验应使用该参数而不是 Keyword。</p>
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * <p>是否展开模板、资产组、实例等名称。可选，默认 true；传 false 返回原始标识。</p>
+                     */
+                    bool m_expandNames;
+                    bool m_expandNamesHasBeenSet;
 
                     /**
                      * <p>单页返回规则数。可选，默认 100，最大 1000。</p>

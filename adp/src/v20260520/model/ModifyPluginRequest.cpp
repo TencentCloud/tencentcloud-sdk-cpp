@@ -28,7 +28,9 @@ ModifyPluginRequest::ModifyPluginRequest() :
     m_profileHasBeenSet(false),
     m_configHasBeenSet(false),
     m_updateMaskHasBeenSet(false),
-    m_toolListHasBeenSet(false)
+    m_toolListHasBeenSet(false),
+    m_loginUinHasBeenSet(false),
+    m_loginSubAccountUinHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,22 @@ string ModifyPluginRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_loginUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoginUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_loginUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loginSubAccountUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoginSubAccountUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_loginSubAccountUin.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -199,6 +217,38 @@ void ModifyPluginRequest::SetToolList(const vector<Tool>& _toolList)
 bool ModifyPluginRequest::ToolListHasBeenSet() const
 {
     return m_toolListHasBeenSet;
+}
+
+string ModifyPluginRequest::GetLoginUin() const
+{
+    return m_loginUin;
+}
+
+void ModifyPluginRequest::SetLoginUin(const string& _loginUin)
+{
+    m_loginUin = _loginUin;
+    m_loginUinHasBeenSet = true;
+}
+
+bool ModifyPluginRequest::LoginUinHasBeenSet() const
+{
+    return m_loginUinHasBeenSet;
+}
+
+string ModifyPluginRequest::GetLoginSubAccountUin() const
+{
+    return m_loginSubAccountUin;
+}
+
+void ModifyPluginRequest::SetLoginSubAccountUin(const string& _loginSubAccountUin)
+{
+    m_loginSubAccountUin = _loginSubAccountUin;
+    m_loginSubAccountUinHasBeenSet = true;
+}
+
+bool ModifyPluginRequest::LoginSubAccountUinHasBeenSet() const
+{
+    return m_loginSubAccountUinHasBeenSet;
 }
 
 

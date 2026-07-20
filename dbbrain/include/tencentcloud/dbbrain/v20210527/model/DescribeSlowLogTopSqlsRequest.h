@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID 。
-                     * @return InstanceId 实例 ID 。
+                     * 获取<p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
+                     * @return InstanceId <p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID 。
-                     * @param _instanceId 实例 ID 。
+                     * 设置<p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
+                     * @param _instanceId <p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取开始时间，如“2019-09-10 12:13:14”。
-                     * @return StartTime 开始时间，如“2019-09-10 12:13:14”。
+                     * 获取<p>开始时间，如“2019-09-10 12:13:14”。</p>
+                     * @return StartTime <p>开始时间，如“2019-09-10 12:13:14”。</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间，如“2019-09-10 12:13:14”。
-                     * @param _startTime 开始时间，如“2019-09-10 12:13:14”。
+                     * 设置<p>开始时间，如“2019-09-10 12:13:14”。</p>
+                     * @param _startTime <p>开始时间，如“2019-09-10 12:13:14”。</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。
-                     * @return EndTime 截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。
+                     * 获取<p>截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。</p>
+                     * @return EndTime <p>截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。
-                     * @param _endTime 截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。
+                     * 设置<p>截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。</p>
+                     * @param _endTime <p>截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键，默认为QueryTime。
-                     * @return SortBy 排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键，默认为QueryTime。
+                     * 获取<p>排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键，默认为QueryTime。<br>其中：<br>QueryTime-查询耗时<br>ExecTimes-执行次数<br>RowsSent-返回行数<br>LockTime-锁等待时间<br>RowsExamined-扫描行数</p>
+                     * @return SortBy <p>排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键，默认为QueryTime。<br>其中：<br>QueryTime-查询耗时<br>ExecTimes-执行次数<br>RowsSent-返回行数<br>LockTime-锁等待时间<br>RowsExamined-扫描行数</p>
                      * 
                      */
                     std::string GetSortBy() const;
 
                     /**
-                     * 设置排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键，默认为QueryTime。
-                     * @param _sortBy 排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键，默认为QueryTime。
+                     * 设置<p>排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键，默认为QueryTime。<br>其中：<br>QueryTime-查询耗时<br>ExecTimes-执行次数<br>RowsSent-返回行数<br>LockTime-锁等待时间<br>RowsExamined-扫描行数</p>
+                     * @param _sortBy <p>排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键，默认为QueryTime。<br>其中：<br>QueryTime-查询耗时<br>ExecTimes-执行次数<br>RowsSent-返回行数<br>LockTime-锁等待时间<br>RowsExamined-扫描行数</p>
                      * 
                      */
                     void SetSortBy(const std::string& _sortBy);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool SortByHasBeenSet() const;
 
                     /**
-                     * 获取排序方式，支持ASC（升序）以及DESC（降序），默认为DESC。
-                     * @return OrderBy 排序方式，支持ASC（升序）以及DESC（降序），默认为DESC。
+                     * 获取<p>排序方式，支持ASC（升序）以及DESC（降序），默认为DESC。</p>
+                     * @return OrderBy <p>排序方式，支持ASC（升序）以及DESC（降序），默认为DESC。</p>
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序方式，支持ASC（升序）以及DESC（降序），默认为DESC。
-                     * @param _orderBy 排序方式，支持ASC（升序）以及DESC（降序），默认为DESC。
+                     * 设置<p>排序方式，支持ASC（升序）以及DESC（降序），默认为DESC。</p>
+                     * @param _orderBy <p>排序方式，支持ASC（升序）以及DESC（降序），默认为DESC。</p>
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为20，最大值为100。
-                     * @return Limit 返回数量，默认为20，最大值为100。
+                     * 获取<p>返回数量，默认为20，最大值为100。</p>
+                     * @return Limit <p>返回数量，默认为20，最大值为100。</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为20，最大值为100。
-                     * @param _limit 返回数量，默认为20，最大值为100。
+                     * 设置<p>返回数量，默认为20，最大值为100。</p>
+                     * @param _limit <p>返回数量，默认为20，最大值为100。</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0。
-                     * @return Offset 偏移量，默认为0。
+                     * 获取<p>偏移量，默认为0。</p>
+                     * @return Offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0。
-                     * @param _offset 偏移量，默认为0。
+                     * 设置<p>偏移量，默认为0。</p>
+                     * @param _offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取数据库名称数组。
-                     * @return SchemaList 数据库名称数组。
+                     * 获取<p>数据库名称数组。</p>
+                     * @return SchemaList <p>数据库名称数组。</p>
                      * 
                      */
                     std::vector<SchemaItem> GetSchemaList() const;
 
                     /**
-                     * 设置数据库名称数组。
-                     * @param _schemaList 数据库名称数组。
+                     * 设置<p>数据库名称数组。</p>
+                     * @param _schemaList <p>数据库名称数组。</p>
                      * 
                      */
                     void SetSchemaList(const std::vector<SchemaItem>& _schemaList);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool SchemaListHasBeenSet() const;
 
                     /**
-                     * 获取服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL，默认为"mysql"。
-                     * @return Product 服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL，默认为"mysql"。
+                     * 获取<p>服务产品类型，支持值包括： &quot;mysql&quot; - 云数据库 MySQL， &quot;cynosdb&quot; - 云数据库 CynosDB  for MySQL， &quot;tdstore&quot; - 云数据库TDSQL Boundless，默认为&quot;mysql&quot;。</p>
+                     * @return Product <p>服务产品类型，支持值包括： &quot;mysql&quot; - 云数据库 MySQL， &quot;cynosdb&quot; - 云数据库 CynosDB  for MySQL， &quot;tdstore&quot; - 云数据库TDSQL Boundless，默认为&quot;mysql&quot;。</p>
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL，默认为"mysql"。
-                     * @param _product 服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL，默认为"mysql"。
+                     * 设置<p>服务产品类型，支持值包括： &quot;mysql&quot; - 云数据库 MySQL， &quot;cynosdb&quot; - 云数据库 CynosDB  for MySQL， &quot;tdstore&quot; - 云数据库TDSQL Boundless，默认为&quot;mysql&quot;。</p>
+                     * @param _product <p>服务产品类型，支持值包括： &quot;mysql&quot; - 云数据库 MySQL， &quot;cynosdb&quot; - 云数据库 CynosDB  for MySQL， &quot;tdstore&quot; - 云数据库TDSQL Boundless，默认为&quot;mysql&quot;。</p>
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -235,55 +235,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID 。
+                     * <p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 开始时间，如“2019-09-10 12:13:14”。
+                     * <p>开始时间，如“2019-09-10 12:13:14”。</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。
+                     * <p>截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键，默认为QueryTime。
+                     * <p>排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键，默认为QueryTime。<br>其中：<br>QueryTime-查询耗时<br>ExecTimes-执行次数<br>RowsSent-返回行数<br>LockTime-锁等待时间<br>RowsExamined-扫描行数</p>
                      */
                     std::string m_sortBy;
                     bool m_sortByHasBeenSet;
 
                     /**
-                     * 排序方式，支持ASC（升序）以及DESC（降序），默认为DESC。
+                     * <p>排序方式，支持ASC（升序）以及DESC（降序），默认为DESC。</p>
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 返回数量，默认为20，最大值为100。
+                     * <p>返回数量，默认为20，最大值为100。</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0。
+                     * <p>偏移量，默认为0。</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 数据库名称数组。
+                     * <p>数据库名称数组。</p>
                      */
                     std::vector<SchemaItem> m_schemaList;
                     bool m_schemaListHasBeenSet;
 
                     /**
-                     * 服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL，默认为"mysql"。
+                     * <p>服务产品类型，支持值包括： &quot;mysql&quot; - 云数据库 MySQL， &quot;cynosdb&quot; - 云数据库 CynosDB  for MySQL， &quot;tdstore&quot; - 云数据库TDSQL Boundless，默认为&quot;mysql&quot;。</p>
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取EDGE_FW : 互联网边界防火墙 , NDR: 流量分析，VPC_FW：VPC边界防火墙
-                     * @return FwType EDGE_FW : 互联网边界防火墙 , NDR: 流量分析，VPC_FW：VPC边界防火墙
+                     * 获取<p>EDGE_FW : 互联网边界防火墙 , NDR: 流量分析，VPC_FW：VPC边界防火墙</p>
+                     * @return FwType <p>EDGE_FW : 互联网边界防火墙 , NDR: 流量分析，VPC_FW：VPC边界防火墙</p>
                      * 
                      */
                     std::string GetFwType() const;
 
                     /**
-                     * 设置EDGE_FW : 互联网边界防火墙 , NDR: 流量分析，VPC_FW：VPC边界防火墙
-                     * @param _fwType EDGE_FW : 互联网边界防火墙 , NDR: 流量分析，VPC_FW：VPC边界防火墙
+                     * 设置<p>EDGE_FW : 互联网边界防火墙 , NDR: 流量分析，VPC_FW：VPC边界防火墙</p>
+                     * @param _fwType <p>EDGE_FW : 互联网边界防火墙 , NDR: 流量分析，VPC_FW：VPC边界防火墙</p>
                      * 
                      */
                     void SetFwType(const std::string& _fwType);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * EDGE_FW : 互联网边界防火墙 , NDR: 流量分析，VPC_FW：VPC边界防火墙
+                     * <p>EDGE_FW : 互联网边界防火墙 , NDR: 流量分析，VPC_FW：VPC边界防火墙</p>
                      */
                     std::string m_fwType;
                     bool m_fwTypeHasBeenSet;

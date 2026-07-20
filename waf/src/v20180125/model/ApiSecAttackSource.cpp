@@ -31,7 +31,10 @@ ApiSecAttackSource::ApiSecAttackSource() :
     m_attackCountHasBeenSet(false),
     m_missUserNameHasBeenSet(false),
     m_attackDetailHasBeenSet(false),
-    m_missPasswordHasBeenSet(false)
+    m_missPasswordHasBeenSet(false),
+    m_eventDescriptionHasBeenSet(false),
+    m_eventDescriptionEngHasBeenSet(false),
+    m_sampleHasBeenSet(false)
 {
 }
 
@@ -153,6 +156,43 @@ CoreInternalOutcome ApiSecAttackSource::Deserialize(const rapidjson::Value &valu
         m_missPasswordHasBeenSet = true;
     }
 
+    if (value.HasMember("EventDescription") && !value["EventDescription"].IsNull())
+    {
+        if (!value["EventDescription"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApiSecAttackSource.EventDescription` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eventDescription = string(value["EventDescription"].GetString());
+        m_eventDescriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("EventDescriptionEng") && !value["EventDescriptionEng"].IsNull())
+    {
+        if (!value["EventDescriptionEng"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApiSecAttackSource.EventDescriptionEng` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eventDescriptionEng = string(value["EventDescriptionEng"].GetString());
+        m_eventDescriptionEngHasBeenSet = true;
+    }
+
+    if (value.HasMember("Sample") && !value["Sample"].IsNull())
+    {
+        if (!value["Sample"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApiSecAttackSource.Sample` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_sample.Deserialize(value["Sample"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_sampleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +291,31 @@ void ApiSecAttackSource::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "MissPassword";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_missPassword.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eventDescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventDescription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eventDescriptionEngHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventDescriptionEng";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventDescriptionEng.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sampleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sample";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sample.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -430,5 +495,53 @@ void ApiSecAttackSource::SetMissPassword(const string& _missPassword)
 bool ApiSecAttackSource::MissPasswordHasBeenSet() const
 {
     return m_missPasswordHasBeenSet;
+}
+
+string ApiSecAttackSource::GetEventDescription() const
+{
+    return m_eventDescription;
+}
+
+void ApiSecAttackSource::SetEventDescription(const string& _eventDescription)
+{
+    m_eventDescription = _eventDescription;
+    m_eventDescriptionHasBeenSet = true;
+}
+
+bool ApiSecAttackSource::EventDescriptionHasBeenSet() const
+{
+    return m_eventDescriptionHasBeenSet;
+}
+
+string ApiSecAttackSource::GetEventDescriptionEng() const
+{
+    return m_eventDescriptionEng;
+}
+
+void ApiSecAttackSource::SetEventDescriptionEng(const string& _eventDescriptionEng)
+{
+    m_eventDescriptionEng = _eventDescriptionEng;
+    m_eventDescriptionEngHasBeenSet = true;
+}
+
+bool ApiSecAttackSource::EventDescriptionEngHasBeenSet() const
+{
+    return m_eventDescriptionEngHasBeenSet;
+}
+
+ApiEventSample ApiSecAttackSource::GetSample() const
+{
+    return m_sample;
+}
+
+void ApiSecAttackSource::SetSample(const ApiEventSample& _sample)
+{
+    m_sample = _sample;
+    m_sampleHasBeenSet = true;
+}
+
+bool ApiSecAttackSource::SampleHasBeenSet() const
+{
+    return m_sampleHasBeenSet;
 }
 

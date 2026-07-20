@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取防火墙组ID
-                     * @return FwGroupId 防火墙组ID
+                     * 获取<p>防火墙组ID</p>
+                     * @return FwGroupId <p>防火墙组ID</p>
                      * 
                      */
                     std::string GetFwGroupId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 防火墙组ID
+                     * <p>防火墙组ID</p>
                      */
                     std::string m_fwGroupId;
                     bool m_fwGroupIdHasBeenSet;

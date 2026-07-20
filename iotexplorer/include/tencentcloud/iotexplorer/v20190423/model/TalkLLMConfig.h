@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ADPConfig.h>
 
 
 namespace TencentCloud
@@ -152,15 +153,15 @@ namespace TencentCloud
                     bool TimeoutHasBeenSet() const;
 
                     /**
-                     * 获取<p>OpenAI兼容模型Base URL，仅支持 80 和 443 端口，Type=openai时必填</p>
-                     * @return BaseUrl <p>OpenAI兼容模型Base URL，仅支持 80 和 443 端口，Type=openai时必填</p>
+                     * 获取<p>OpenAI兼容模型的Base URL，Type=openai时必填</p>
+                     * @return BaseUrl <p>OpenAI兼容模型的Base URL，Type=openai时必填</p>
                      * 
                      */
                     std::string GetBaseUrl() const;
 
                     /**
-                     * 设置<p>OpenAI兼容模型Base URL，仅支持 80 和 443 端口，Type=openai时必填</p>
-                     * @param _baseUrl <p>OpenAI兼容模型Base URL，仅支持 80 和 443 端口，Type=openai时必填</p>
+                     * 设置<p>OpenAI兼容模型的Base URL，Type=openai时必填</p>
+                     * @param _baseUrl <p>OpenAI兼容模型的Base URL，Type=openai时必填</p>
                      * 
                      */
                     void SetBaseUrl(const std::string& _baseUrl);
@@ -235,6 +236,27 @@ namespace TencentCloud
                      */
                     bool ExtraBodyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>ADP 平台配置</p>
+                     * @return ADP <p>ADP 平台配置</p>
+                     * 
+                     */
+                    ADPConfig GetADP() const;
+
+                    /**
+                     * 设置<p>ADP 平台配置</p>
+                     * @param _aDP <p>ADP 平台配置</p>
+                     * 
+                     */
+                    void SetADP(const ADPConfig& _aDP);
+
+                    /**
+                     * 判断参数 ADP 是否已赋值
+                     * @return ADP 是否已赋值
+                     * 
+                     */
+                    bool ADPHasBeenSet() const;
+
                 private:
 
                     /**
@@ -268,7 +290,7 @@ namespace TencentCloud
                     bool m_timeoutHasBeenSet;
 
                     /**
-                     * <p>OpenAI兼容模型Base URL，仅支持 80 和 443 端口，Type=openai时必填</p>
+                     * <p>OpenAI兼容模型的Base URL，Type=openai时必填</p>
                      */
                     std::string m_baseUrl;
                     bool m_baseUrlHasBeenSet;
@@ -290,6 +312,12 @@ namespace TencentCloud
                      */
                     std::string m_extraBody;
                     bool m_extraBodyHasBeenSet;
+
+                    /**
+                     * <p>ADP 平台配置</p>
+                     */
+                    ADPConfig m_aDP;
+                    bool m_aDPHasBeenSet;
 
                 };
             }

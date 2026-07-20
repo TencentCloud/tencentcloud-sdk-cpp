@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取need_approval
-                     * @return NeedApproval need_approval
+                     * 获取<p>need_approval</p>
+                     * @return NeedApproval <p>need_approval</p>
                      * 
                      */
                     bool GetNeedApproval() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool NeedApprovalHasBeenSet() const;
 
                     /**
-                     * 获取release_id
-                     * @return ReleaseId release_id
+                     * 获取<p>release_id</p>
+                     * @return ReleaseId <p>release_id</p>
                      * 
                      */
                     std::string GetReleaseId() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * need_approval
+                     * <p>need_approval</p>
                      */
                     bool m_needApproval;
                     bool m_needApprovalHasBeenSet;
 
                     /**
-                     * release_id
+                     * <p>release_id</p>
                      */
                     std::string m_releaseId;
                     bool m_releaseIdHasBeenSet;

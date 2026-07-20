@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取连接器信息
-                     * @return Connections 连接器信息
+                     * 获取<p>连接器信息</p>
+                     * @return Connections <p>连接器信息</p>
                      * 
                      */
                     std::vector<Connection> GetConnections() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool ConnectionsHasBeenSet() const;
 
                     /**
-                     * 获取连接器总数
-                     * @return TotalCount 连接器总数
+                     * 获取<p>连接器总数</p>
+                     * @return TotalCount <p>连接器总数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 连接器信息
+                     * <p>连接器信息</p>
                      */
                     std::vector<Connection> m_connections;
                     bool m_connectionsHasBeenSet;
 
                     /**
-                     * 连接器总数
+                     * <p>连接器总数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

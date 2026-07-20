@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取事件集ID
-                     * @return EventBusId 事件集ID
+                     * 获取<p>事件集ID</p>
+                     * @return EventBusId <p>事件集ID</p>
                      * 
                      */
                     std::string GetEventBusId() const;
 
                     /**
-                     * 设置事件集ID
-                     * @param _eventBusId 事件集ID
+                     * 设置<p>事件集ID</p>
+                     * @param _eventBusId <p>事件集ID</p>
                      * 
                      */
                     void SetEventBusId(const std::string& _eventBusId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool EventBusIdHasBeenSet() const;
 
                     /**
-                     * 获取根据哪个字段进行返回结果排序，目前支持如下以下字段：AddTime, ModTime
-                     * @return OrderBy 根据哪个字段进行返回结果排序，目前支持如下以下字段：AddTime, ModTime
+                     * 获取<p>根据哪个字段进行返回结果排序</p><p>枚举值：</p><ul><li>created_at： 创建时间</li><li>updated_at： 更新时间</li><li>name： 连接器名称</li></ul><p>默认值：updated_at</p>
+                     * @return OrderBy <p>根据哪个字段进行返回结果排序</p><p>枚举值：</p><ul><li>created_at： 创建时间</li><li>updated_at： 更新时间</li><li>name： 连接器名称</li></ul><p>默认值：updated_at</p>
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置根据哪个字段进行返回结果排序，目前支持如下以下字段：AddTime, ModTime
-                     * @param _orderBy 根据哪个字段进行返回结果排序，目前支持如下以下字段：AddTime, ModTime
+                     * 设置<p>根据哪个字段进行返回结果排序</p><p>枚举值：</p><ul><li>created_at： 创建时间</li><li>updated_at： 更新时间</li><li>name： 连接器名称</li></ul><p>默认值：updated_at</p>
+                     * @param _orderBy <p>根据哪个字段进行返回结果排序</p><p>枚举值：</p><ul><li>created_at： 创建时间</li><li>updated_at： 更新时间</li><li>name： 连接器名称</li></ul><p>默认值：updated_at</p>
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为20，最大值为100。
-                     * @return Limit 返回数量，默认为20，最大值为100。
+                     * 获取<p>返回数量，默认为20，最大值为100。</p>
+                     * @return Limit <p>返回数量，默认为20，最大值为100。</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为20，最大值为100。
-                     * @param _limit 返回数量，默认为20，最大值为100。
+                     * 设置<p>返回数量，默认为20，最大值为100。</p>
+                     * @param _limit <p>返回数量，默认为20，最大值为100。</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取以升序还是降序的方式返回结果，可选值 ASC 和 DESC
-                     * @return Order 以升序还是降序的方式返回结果，可选值 ASC 和 DESC
+                     * 获取<p>以升序还是降序的方式返回结果，可选值 ASC 和 DESC</p>
+                     * @return Order <p>以升序还是降序的方式返回结果，可选值 ASC 和 DESC</p>
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置以升序还是降序的方式返回结果，可选值 ASC 和 DESC
-                     * @param _order 以升序还是降序的方式返回结果，可选值 ASC 和 DESC
+                     * 设置<p>以升序还是降序的方式返回结果，可选值 ASC 和 DESC</p>
+                     * @param _order <p>以升序还是降序的方式返回结果，可选值 ASC 和 DESC</p>
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0。
-                     * @return Offset 偏移量，默认为0。
+                     * 获取<p>偏移量，默认为0。</p>
+                     * @return Offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0。
-                     * @param _offset 偏移量，默认为0。
+                     * 设置<p>偏移量，默认为0。</p>
+                     * @param _offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 事件集ID
+                     * <p>事件集ID</p>
                      */
                     std::string m_eventBusId;
                     bool m_eventBusIdHasBeenSet;
 
                     /**
-                     * 根据哪个字段进行返回结果排序，目前支持如下以下字段：AddTime, ModTime
+                     * <p>根据哪个字段进行返回结果排序</p><p>枚举值：</p><ul><li>created_at： 创建时间</li><li>updated_at： 更新时间</li><li>name： 连接器名称</li></ul><p>默认值：updated_at</p>
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 返回数量，默认为20，最大值为100。
+                     * <p>返回数量，默认为20，最大值为100。</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 以升序还是降序的方式返回结果，可选值 ASC 和 DESC
+                     * <p>以升序还是降序的方式返回结果，可选值 ASC 和 DESC</p>
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0。
+                     * <p>偏移量，默认为0。</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

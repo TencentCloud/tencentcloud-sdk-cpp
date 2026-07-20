@@ -37,7 +37,8 @@ AddBatchCustomRuleRequest::AddBatchCustomRuleRequest() :
     m_jobDateTimeHasBeenSet(false),
     m_logicalOpHasBeenSet(false),
     m_pageIdHasBeenSet(false),
-    m_actionRatioHasBeenSet(false)
+    m_actionRatioHasBeenSet(false),
+    m_groupIdsHasBeenSet(false)
 {
 }
 
@@ -179,6 +180,19 @@ string AddBatchCustomRuleRequest::ToJsonString() const
         string key = "ActionRatio";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_actionRatio, allocator);
+    }
+
+    if (m_groupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_groupIds.begin(); itr != m_groupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
 
@@ -427,6 +441,22 @@ void AddBatchCustomRuleRequest::SetActionRatio(const uint64_t& _actionRatio)
 bool AddBatchCustomRuleRequest::ActionRatioHasBeenSet() const
 {
     return m_actionRatioHasBeenSet;
+}
+
+vector<uint64_t> AddBatchCustomRuleRequest::GetGroupIds() const
+{
+    return m_groupIds;
+}
+
+void AddBatchCustomRuleRequest::SetGroupIds(const vector<uint64_t>& _groupIds)
+{
+    m_groupIds = _groupIds;
+    m_groupIdsHasBeenSet = true;
+}
+
+bool AddBatchCustomRuleRequest::GroupIdsHasBeenSet() const
+{
+    return m_groupIdsHasBeenSet;
 }
 
 

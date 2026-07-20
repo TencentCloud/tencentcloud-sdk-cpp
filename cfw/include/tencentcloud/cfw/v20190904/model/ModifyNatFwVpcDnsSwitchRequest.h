@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取nat 防火墙 id
-                     * @return NatFwInsId nat 防火墙 id
+                     * 获取<p>nat 防火墙 id</p>
+                     * @return NatFwInsId <p>nat 防火墙 id</p>
                      * 
                      */
                     std::string GetNatFwInsId() const;
 
                     /**
-                     * 设置nat 防火墙 id
-                     * @param _natFwInsId nat 防火墙 id
+                     * 设置<p>nat 防火墙 id</p>
+                     * @param _natFwInsId <p>nat 防火墙 id</p>
                      * 
                      */
                     void SetNatFwInsId(const std::string& _natFwInsId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool NatFwInsIdHasBeenSet() const;
 
                     /**
-                     * 获取DNS 开关切换列表
-                     * @return DnsVpcSwitchLst DNS 开关切换列表
+                     * 获取<p>DNS 开关切换列表</p>
+                     * @return DnsVpcSwitchLst <p>DNS 开关切换列表</p>
                      * 
                      */
                     std::vector<DnsVpcSwitch> GetDnsVpcSwitchLst() const;
 
                     /**
-                     * 设置DNS 开关切换列表
-                     * @param _dnsVpcSwitchLst DNS 开关切换列表
+                     * 设置<p>DNS 开关切换列表</p>
+                     * @param _dnsVpcSwitchLst <p>DNS 开关切换列表</p>
                      * 
                      */
                     void SetDnsVpcSwitchLst(const std::vector<DnsVpcSwitch>& _dnsVpcSwitchLst);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * nat 防火墙 id
+                     * <p>nat 防火墙 id</p>
                      */
                     std::string m_natFwInsId;
                     bool m_natFwInsIdHasBeenSet;
 
                     /**
-                     * DNS 开关切换列表
+                     * <p>DNS 开关切换列表</p>
                      */
                     std::vector<DnsVpcSwitch> m_dnsVpcSwitchLst;
                     bool m_dnsVpcSwitchLstHasBeenSet;

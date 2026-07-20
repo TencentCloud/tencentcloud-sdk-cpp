@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取站点 ID。
-                     * @return ZoneId 站点 ID。
+                     * 获取<p>站点 ID。</p>
+                     * @return ZoneId <p>站点 ID。</p>
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置站点 ID。
-                     * @param _zoneId 站点 ID。
+                     * 设置<p>站点 ID。</p>
+                     * @param _zoneId <p>站点 ID。</p>
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取待新建版本的配置组 ID。
-                     * @return GroupId 待新建版本的配置组 ID。
+                     * 获取<p>待新建版本的配置组 ID。您可以通过查询环境信息接口（DescribeEnvironments）获取完整的环境信息，环境信息中包含了每个配置组类型的配置组 ID。</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1552/101862">DescribeEnvironments</a> 返回值 <code>EnvInfos</code></p>
+                     * @return GroupId <p>待新建版本的配置组 ID。您可以通过查询环境信息接口（DescribeEnvironments）获取完整的环境信息，环境信息中包含了每个配置组类型的配置组 ID。</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1552/101862">DescribeEnvironments</a> 返回值 <code>EnvInfos</code></p>
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置待新建版本的配置组 ID。
-                     * @param _groupId 待新建版本的配置组 ID。
+                     * 设置<p>待新建版本的配置组 ID。您可以通过查询环境信息接口（DescribeEnvironments）获取完整的环境信息，环境信息中包含了每个配置组类型的配置组 ID。</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1552/101862">DescribeEnvironments</a> 返回值 <code>EnvInfos</code></p>
+                     * @param _groupId <p>待新建版本的配置组 ID。您可以通过查询环境信息接口（DescribeEnvironments）获取完整的环境信息，环境信息中包含了每个配置组类型的配置组 ID。</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1552/101862">DescribeEnvironments</a> 返回值 <code>EnvInfos</code></p>
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取待导入的配置内容。要求采用 JSON 格式，按照 UTF-8 方式进行编码。配置文件内容可参考下方示例。
-                     * @return Content 待导入的配置内容。要求采用 JSON 格式，按照 UTF-8 方式进行编码。配置文件内容可参考下方示例。
+                     * 获取<p>待导入的配置内容。要求采用 JSON 格式，按照 UTF-8 方式进行编码。配置文件内容可参考下方示例和 <a href="https://cloud.tencent.com/document/product/1552/125342">配置组语法说明</a>。</p>
+                     * @return Content <p>待导入的配置内容。要求采用 JSON 格式，按照 UTF-8 方式进行编码。配置文件内容可参考下方示例和 <a href="https://cloud.tencent.com/document/product/1552/125342">配置组语法说明</a>。</p>
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置待导入的配置内容。要求采用 JSON 格式，按照 UTF-8 方式进行编码。配置文件内容可参考下方示例。
-                     * @param _content 待导入的配置内容。要求采用 JSON 格式，按照 UTF-8 方式进行编码。配置文件内容可参考下方示例。
+                     * 设置<p>待导入的配置内容。要求采用 JSON 格式，按照 UTF-8 方式进行编码。配置文件内容可参考下方示例和 <a href="https://cloud.tencent.com/document/product/1552/125342">配置组语法说明</a>。</p>
+                     * @param _content <p>待导入的配置内容。要求采用 JSON 格式，按照 UTF-8 方式进行编码。配置文件内容可参考下方示例和 <a href="https://cloud.tencent.com/document/product/1552/125342">配置组语法说明</a>。</p>
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取版本描述，可输入最大长度为 50 个字符，可以通过本字段填写该版本的使用场景等。
-                     * @return Description 版本描述，可输入最大长度为 50 个字符，可以通过本字段填写该版本的使用场景等。
+                     * 获取<p>版本描述，可输入最大长度为 50 个字符，可以通过本字段填写该版本的使用场景等。</p>
+                     * @return Description <p>版本描述，可输入最大长度为 50 个字符，可以通过本字段填写该版本的使用场景等。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置版本描述，可输入最大长度为 50 个字符，可以通过本字段填写该版本的使用场景等。
-                     * @param _description 版本描述，可输入最大长度为 50 个字符，可以通过本字段填写该版本的使用场景等。
+                     * 设置<p>版本描述，可输入最大长度为 50 个字符，可以通过本字段填写该版本的使用场景等。</p>
+                     * @param _description <p>版本描述，可输入最大长度为 50 个字符，可以通过本字段填写该版本的使用场景等。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -126,31 +126,58 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>新版本所基于的来源版本 ID。新版本将在该来源版本的配置基础上派生创建。该字段可选，未传入时默认采用当前生产环境正在生效的版本作为来源版本。</p><p>取值参考：</p><ul><li><a href="https://cloud.tencent.com/document/api/1552/101867">CreateConfigGroupVersion</a> 返回值 <code>VersionId</code></li><li><a href="https://cloud.tencent.com/document/api/1552/101864">DescribeConfigGroupVersions</a> 返回值 <code>ConfigGroupVersionInfos</code></li></ul>
+                     * @return SourceVersion <p>新版本所基于的来源版本 ID。新版本将在该来源版本的配置基础上派生创建。该字段可选，未传入时默认采用当前生产环境正在生效的版本作为来源版本。</p><p>取值参考：</p><ul><li><a href="https://cloud.tencent.com/document/api/1552/101867">CreateConfigGroupVersion</a> 返回值 <code>VersionId</code></li><li><a href="https://cloud.tencent.com/document/api/1552/101864">DescribeConfigGroupVersions</a> 返回值 <code>ConfigGroupVersionInfos</code></li></ul>
+                     * 
+                     */
+                    std::string GetSourceVersion() const;
+
+                    /**
+                     * 设置<p>新版本所基于的来源版本 ID。新版本将在该来源版本的配置基础上派生创建。该字段可选，未传入时默认采用当前生产环境正在生效的版本作为来源版本。</p><p>取值参考：</p><ul><li><a href="https://cloud.tencent.com/document/api/1552/101867">CreateConfigGroupVersion</a> 返回值 <code>VersionId</code></li><li><a href="https://cloud.tencent.com/document/api/1552/101864">DescribeConfigGroupVersions</a> 返回值 <code>ConfigGroupVersionInfos</code></li></ul>
+                     * @param _sourceVersion <p>新版本所基于的来源版本 ID。新版本将在该来源版本的配置基础上派生创建。该字段可选，未传入时默认采用当前生产环境正在生效的版本作为来源版本。</p><p>取值参考：</p><ul><li><a href="https://cloud.tencent.com/document/api/1552/101867">CreateConfigGroupVersion</a> 返回值 <code>VersionId</code></li><li><a href="https://cloud.tencent.com/document/api/1552/101864">DescribeConfigGroupVersions</a> 返回值 <code>ConfigGroupVersionInfos</code></li></ul>
+                     * 
+                     */
+                    void SetSourceVersion(const std::string& _sourceVersion);
+
+                    /**
+                     * 判断参数 SourceVersion 是否已赋值
+                     * @return SourceVersion 是否已赋值
+                     * 
+                     */
+                    bool SourceVersionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 站点 ID。
+                     * <p>站点 ID。</p>
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 待新建版本的配置组 ID。
+                     * <p>待新建版本的配置组 ID。您可以通过查询环境信息接口（DescribeEnvironments）获取完整的环境信息，环境信息中包含了每个配置组类型的配置组 ID。</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1552/101862">DescribeEnvironments</a> 返回值 <code>EnvInfos</code></p>
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 待导入的配置内容。要求采用 JSON 格式，按照 UTF-8 方式进行编码。配置文件内容可参考下方示例。
+                     * <p>待导入的配置内容。要求采用 JSON 格式，按照 UTF-8 方式进行编码。配置文件内容可参考下方示例和 <a href="https://cloud.tencent.com/document/product/1552/125342">配置组语法说明</a>。</p>
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 版本描述，可输入最大长度为 50 个字符，可以通过本字段填写该版本的使用场景等。
+                     * <p>版本描述，可输入最大长度为 50 个字符，可以通过本字段填写该版本的使用场景等。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * <p>新版本所基于的来源版本 ID。新版本将在该来源版本的配置基础上派生创建。该字段可选，未传入时默认采用当前生产环境正在生效的版本作为来源版本。</p><p>取值参考：</p><ul><li><a href="https://cloud.tencent.com/document/api/1552/101867">CreateConfigGroupVersion</a> 返回值 <code>VersionId</code></li><li><a href="https://cloud.tencent.com/document/api/1552/101864">DescribeConfigGroupVersions</a> 返回值 <code>ConfigGroupVersionInfos</code></li></ul>
+                     */
+                    std::string m_sourceVersion;
+                    bool m_sourceVersionHasBeenSet;
 
                 };
             }

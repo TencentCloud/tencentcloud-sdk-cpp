@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取地域总数量
-                     * @return Total 地域总数量
+                     * 获取<p>地域总数量</p>
+                     * @return Total <p>地域总数量</p>
                      * 
                      */
                     uint64_t GetTotal() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取地域防火墙引流网络状态列表
-                     * @return RegionFwStatus 地域防火墙引流网络状态列表
+                     * 获取<p>地域防火墙引流网络状态列表</p>
+                     * @return RegionFwStatus <p>地域防火墙引流网络状态列表</p>
                      * 
                      */
                     std::vector<RegionFwStatus> GetRegionFwStatus() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 地域总数量
+                     * <p>地域总数量</p>
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 地域防火墙引流网络状态列表
+                     * <p>地域防火墙引流网络状态列表</p>
                      */
                     std::vector<RegionFwStatus> m_regionFwStatus;
                     bool m_regionFwStatusHasBeenSet;

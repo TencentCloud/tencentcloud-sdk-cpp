@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。
-                     * @return Data 查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。
+                     * 获取<p>查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。</p>
+                     * @return Data <p>查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。</p>
                      * 
                      */
                     std::string GetData() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。
+                     * <p>查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。</p>
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;

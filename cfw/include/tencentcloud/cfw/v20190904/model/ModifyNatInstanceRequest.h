@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取NAT防火墙实例名称
-                     * @return InstanceName NAT防火墙实例名称
+                     * 获取<p>NAT防火墙实例名称</p>
+                     * @return InstanceName <p>NAT防火墙实例名称</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置NAT防火墙实例名称
-                     * @param _instanceName NAT防火墙实例名称
+                     * 设置<p>NAT防火墙实例名称</p>
+                     * @param _instanceName <p>NAT防火墙实例名称</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取NAT防火墙实例ID
-                     * @return NatInstanceId NAT防火墙实例ID
+                     * 获取<p>NAT防火墙实例ID</p>
+                     * @return NatInstanceId <p>NAT防火墙实例ID</p>
                      * 
                      */
                     std::string GetNatInstanceId() const;
 
                     /**
-                     * 设置NAT防火墙实例ID
-                     * @param _natInstanceId NAT防火墙实例ID
+                     * 设置<p>NAT防火墙实例ID</p>
+                     * @param _natInstanceId <p>NAT防火墙实例ID</p>
                      * 
                      */
                     void SetNatInstanceId(const std::string& _natInstanceId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * NAT防火墙实例名称
+                     * <p>NAT防火墙实例名称</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * NAT防火墙实例ID
+                     * <p>NAT防火墙实例ID</p>
                      */
                     std::string m_natInstanceId;
                     bool m_natInstanceIdHasBeenSet;

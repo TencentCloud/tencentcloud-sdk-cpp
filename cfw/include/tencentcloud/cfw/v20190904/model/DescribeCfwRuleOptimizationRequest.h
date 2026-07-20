@@ -43,15 +43,57 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取长期零命中规则阈值天数。可选，必须为正整数，默认 180。
-                     * @return IdleDays 长期零命中规则阈值天数。可选，必须为正整数，默认 180。
+                     * 获取<p>防火墙规则类型。必填。枚举：border 互联网边界；nat NAT 边界；vpc VPC 间；enterprise_sg 企业安全组。</p>
+                     * @return RuleType <p>防火墙规则类型。必填。枚举：border 互联网边界；nat NAT 边界；vpc VPC 间；enterprise_sg 企业安全组。</p>
+                     * 
+                     */
+                    std::string GetRuleType() const;
+
+                    /**
+                     * 设置<p>防火墙规则类型。必填。枚举：border 互联网边界；nat NAT 边界；vpc VPC 间；enterprise_sg 企业安全组。</p>
+                     * @param _ruleType <p>防火墙规则类型。必填。枚举：border 互联网边界；nat NAT 边界；vpc VPC 间；enterprise_sg 企业安全组。</p>
+                     * 
+                     */
+                    void SetRuleType(const std::string& _ruleType);
+
+                    /**
+                     * 判断参数 RuleType 是否已赋值
+                     * @return RuleType 是否已赋值
+                     * 
+                     */
+                    bool RuleTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>要执行的优化维度白名单。可选，例如 D1、D2、D8；不传默认执行全部支持维度。</p>
+                     * @return Dimensions <p>要执行的优化维度白名单。可选，例如 D1、D2、D8；不传默认执行全部支持维度。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetDimensions() const;
+
+                    /**
+                     * 设置<p>要执行的优化维度白名单。可选，例如 D1、D2、D8；不传默认执行全部支持维度。</p>
+                     * @param _dimensions <p>要执行的优化维度白名单。可选，例如 D1、D2、D8；不传默认执行全部支持维度。</p>
+                     * 
+                     */
+                    void SetDimensions(const std::vector<std::string>& _dimensions);
+
+                    /**
+                     * 判断参数 Dimensions 是否已赋值
+                     * @return Dimensions 是否已赋值
+                     * 
+                     */
+                    bool DimensionsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>长期零命中规则阈值天数。可选，默认 180。</p>
+                     * @return IdleDays <p>长期零命中规则阈值天数。可选，默认 180。</p>
                      * 
                      */
                     int64_t GetIdleDays() const;
 
                     /**
-                     * 设置长期零命中规则阈值天数。可选，必须为正整数，默认 180。
-                     * @param _idleDays 长期零命中规则阈值天数。可选，必须为正整数，默认 180。
+                     * 设置<p>长期零命中规则阈值天数。可选，默认 180。</p>
+                     * @param _idleDays <p>长期零命中规则阈值天数。可选，默认 180。</p>
                      * 
                      */
                     void SetIdleDays(const int64_t& _idleDays);
@@ -64,15 +106,15 @@ namespace TencentCloud
                     bool IdleDaysHasBeenSet() const;
 
                     /**
-                     * 获取单 IP 离散过多聚合建议的最小数量。可选，最小为 2，默认 10。
-                     * @return IpAggMin 单 IP 离散过多聚合建议的最小数量。可选，最小为 2，默认 10。
+                     * 获取<p>单 IP 离散过多聚合建议的最小数量。可选，默认 10。</p>
+                     * @return IpAggMin <p>单 IP 离散过多聚合建议的最小数量。可选，默认 10。</p>
                      * 
                      */
                     int64_t GetIpAggMin() const;
 
                     /**
-                     * 设置单 IP 离散过多聚合建议的最小数量。可选，最小为 2，默认 10。
-                     * @param _ipAggMin 单 IP 离散过多聚合建议的最小数量。可选，最小为 2，默认 10。
+                     * 设置<p>单 IP 离散过多聚合建议的最小数量。可选，默认 10。</p>
+                     * @param _ipAggMin <p>单 IP 离散过多聚合建议的最小数量。可选，默认 10。</p>
                      * 
                      */
                     void SetIpAggMin(const int64_t& _ipAggMin);
@@ -85,15 +127,15 @@ namespace TencentCloud
                     bool IpAggMinHasBeenSet() const;
 
                     /**
-                     * 获取可迁移 IOC 建议中返回的样例 IOC 数量上限。可选，必须为正整数，默认 50。
-                     * @return IocSample 可迁移 IOC 建议中返回的样例 IOC 数量上限。可选，必须为正整数，默认 50。
+                     * 获取<p>可迁移 IOC 建议中返回的样例 IOC 数量上限。可选，默认 50。</p>
+                     * @return IocSample <p>可迁移 IOC 建议中返回的样例 IOC 数量上限。可选，默认 50。</p>
                      * 
                      */
                     int64_t GetIocSample() const;
 
                     /**
-                     * 设置可迁移 IOC 建议中返回的样例 IOC 数量上限。可选，必须为正整数，默认 50。
-                     * @param _iocSample 可迁移 IOC 建议中返回的样例 IOC 数量上限。可选，必须为正整数，默认 50。
+                     * 设置<p>可迁移 IOC 建议中返回的样例 IOC 数量上限。可选，默认 50。</p>
+                     * @param _iocSample <p>可迁移 IOC 建议中返回的样例 IOC 数量上限。可选，默认 50。</p>
                      * 
                      */
                     void SetIocSample(const int64_t& _iocSample);
@@ -108,19 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 长期零命中规则阈值天数。可选，必须为正整数，默认 180。
+                     * <p>防火墙规则类型。必填。枚举：border 互联网边界；nat NAT 边界；vpc VPC 间；enterprise_sg 企业安全组。</p>
+                     */
+                    std::string m_ruleType;
+                    bool m_ruleTypeHasBeenSet;
+
+                    /**
+                     * <p>要执行的优化维度白名单。可选，例如 D1、D2、D8；不传默认执行全部支持维度。</p>
+                     */
+                    std::vector<std::string> m_dimensions;
+                    bool m_dimensionsHasBeenSet;
+
+                    /**
+                     * <p>长期零命中规则阈值天数。可选，默认 180。</p>
                      */
                     int64_t m_idleDays;
                     bool m_idleDaysHasBeenSet;
 
                     /**
-                     * 单 IP 离散过多聚合建议的最小数量。可选，最小为 2，默认 10。
+                     * <p>单 IP 离散过多聚合建议的最小数量。可选，默认 10。</p>
                      */
                     int64_t m_ipAggMin;
                     bool m_ipAggMinHasBeenSet;
 
                     /**
-                     * 可迁移 IOC 建议中返回的样例 IOC 数量上限。可选，必须为正整数，默认 50。
+                     * <p>可迁移 IOC 建议中返回的样例 IOC 数量上限。可选，默认 50。</p>
                      */
                     int64_t m_iocSample;
                     bool m_iocSampleHasBeenSet;

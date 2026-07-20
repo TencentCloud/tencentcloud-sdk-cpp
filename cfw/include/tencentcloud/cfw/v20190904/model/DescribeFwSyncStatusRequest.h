@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询的同步状态类型：Route,同步路由状态
-                     * @return SyncType 查询的同步状态类型：Route,同步路由状态
+                     * 获取<p>查询的同步状态类型：Route,同步路由状态</p>
+                     * @return SyncType <p>查询的同步状态类型：Route,同步路由状态</p>
                      * 
                      */
                     std::string GetSyncType() const;
 
                     /**
-                     * 设置查询的同步状态类型：Route,同步路由状态
-                     * @param _syncType 查询的同步状态类型：Route,同步路由状态
+                     * 设置<p>查询的同步状态类型：Route,同步路由状态</p>
+                     * @param _syncType <p>查询的同步状态类型：Route,同步路由状态</p>
                      * 
                      */
                     void SetSyncType(const std::string& _syncType);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询的同步状态类型：Route,同步路由状态
+                     * <p>查询的同步状态类型：Route,同步路由状态</p>
                      */
                     std::string m_syncType;
                     bool m_syncTypeHasBeenSet;

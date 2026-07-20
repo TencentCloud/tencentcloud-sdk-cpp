@@ -52,7 +52,10 @@ Machine::Machine() :
     m_nodeTypeHasBeenSet(false),
     m_containerDefendStatusHasBeenSet(false),
     m_containerCountHasBeenSet(false),
-    m_cpuCoreCountHasBeenSet(false)
+    m_cpuCoreCountHasBeenSet(false),
+    m_migrationRequiredHasBeenSet(false),
+    m_isSupportXSPMHasBeenSet(false),
+    m_canUnbindHasBeenSet(false)
 {
 }
 
@@ -418,6 +421,36 @@ CoreInternalOutcome Machine::Deserialize(const rapidjson::Value &value)
         m_cpuCoreCountHasBeenSet = true;
     }
 
+    if (value.HasMember("MigrationRequired") && !value["MigrationRequired"].IsNull())
+    {
+        if (!value["MigrationRequired"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Machine.MigrationRequired` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_migrationRequired = value["MigrationRequired"].GetBool();
+        m_migrationRequiredHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsSupportXSPM") && !value["IsSupportXSPM"].IsNull())
+    {
+        if (!value["IsSupportXSPM"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Machine.IsSupportXSPM` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportXSPM = value["IsSupportXSPM"].GetBool();
+        m_isSupportXSPMHasBeenSet = true;
+    }
+
+    if (value.HasMember("CanUnbind") && !value["CanUnbind"].IsNull())
+    {
+        if (!value["CanUnbind"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Machine.CanUnbind` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_canUnbind = value["CanUnbind"].GetBool();
+        m_canUnbindHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -700,6 +733,30 @@ void Machine::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "CpuCoreCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cpuCoreCount, allocator);
+    }
+
+    if (m_migrationRequiredHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MigrationRequired";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_migrationRequired, allocator);
+    }
+
+    if (m_isSupportXSPMHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportXSPM";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSupportXSPM, allocator);
+    }
+
+    if (m_canUnbindHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanUnbind";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_canUnbind, allocator);
     }
 
 }
@@ -1215,5 +1272,53 @@ void Machine::SetCpuCoreCount(const uint64_t& _cpuCoreCount)
 bool Machine::CpuCoreCountHasBeenSet() const
 {
     return m_cpuCoreCountHasBeenSet;
+}
+
+bool Machine::GetMigrationRequired() const
+{
+    return m_migrationRequired;
+}
+
+void Machine::SetMigrationRequired(const bool& _migrationRequired)
+{
+    m_migrationRequired = _migrationRequired;
+    m_migrationRequiredHasBeenSet = true;
+}
+
+bool Machine::MigrationRequiredHasBeenSet() const
+{
+    return m_migrationRequiredHasBeenSet;
+}
+
+bool Machine::GetIsSupportXSPM() const
+{
+    return m_isSupportXSPM;
+}
+
+void Machine::SetIsSupportXSPM(const bool& _isSupportXSPM)
+{
+    m_isSupportXSPM = _isSupportXSPM;
+    m_isSupportXSPMHasBeenSet = true;
+}
+
+bool Machine::IsSupportXSPMHasBeenSet() const
+{
+    return m_isSupportXSPMHasBeenSet;
+}
+
+bool Machine::GetCanUnbind() const
+{
+    return m_canUnbind;
+}
+
+void Machine::SetCanUnbind(const bool& _canUnbind)
+{
+    m_canUnbind = _canUnbind;
+    m_canUnbindHasBeenSet = true;
+}
+
+bool Machine::CanUnbindHasBeenSet() const
+{
+    return m_canUnbindHasBeenSet;
 }
 

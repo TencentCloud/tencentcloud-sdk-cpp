@@ -23,8 +23,9 @@ using namespace std;
 ConfigGroupVersionInfo::ConfigGroupVersionInfo() :
     m_versionIdHasBeenSet(false),
     m_versionNumberHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
+    m_sourceVersionHasBeenSet(false),
     m_groupTypeHasBeenSet(false),
+    m_groupIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_createTimeHasBeenSet(false)
@@ -56,14 +57,14 @@ CoreInternalOutcome ConfigGroupVersionInfo::Deserialize(const rapidjson::Value &
         m_versionNumberHasBeenSet = true;
     }
 
-    if (value.HasMember("GroupId") && !value["GroupId"].IsNull())
+    if (value.HasMember("SourceVersion") && !value["SourceVersion"].IsNull())
     {
-        if (!value["GroupId"].IsString())
+        if (!value["SourceVersion"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `ConfigGroupVersionInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConfigGroupVersionInfo.SourceVersion` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_groupId = string(value["GroupId"].GetString());
-        m_groupIdHasBeenSet = true;
+        m_sourceVersion = string(value["SourceVersion"].GetString());
+        m_sourceVersionHasBeenSet = true;
     }
 
     if (value.HasMember("GroupType") && !value["GroupType"].IsNull())
@@ -74,6 +75,16 @@ CoreInternalOutcome ConfigGroupVersionInfo::Deserialize(const rapidjson::Value &
         }
         m_groupType = string(value["GroupType"].GetString());
         m_groupTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupId") && !value["GroupId"].IsNull())
+    {
+        if (!value["GroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigGroupVersionInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupId = string(value["GroupId"].GetString());
+        m_groupIdHasBeenSet = true;
     }
 
     if (value.HasMember("Description") && !value["Description"].IsNull())
@@ -129,12 +140,12 @@ void ConfigGroupVersionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         value.AddMember(iKey, rapidjson::Value(m_versionNumber.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_groupIdHasBeenSet)
+    if (m_sourceVersionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "GroupId";
+        string key = "SourceVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_groupTypeHasBeenSet)
@@ -143,6 +154,14 @@ void ConfigGroupVersionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "GroupType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_groupType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
@@ -204,20 +223,20 @@ bool ConfigGroupVersionInfo::VersionNumberHasBeenSet() const
     return m_versionNumberHasBeenSet;
 }
 
-string ConfigGroupVersionInfo::GetGroupId() const
+string ConfigGroupVersionInfo::GetSourceVersion() const
 {
-    return m_groupId;
+    return m_sourceVersion;
 }
 
-void ConfigGroupVersionInfo::SetGroupId(const string& _groupId)
+void ConfigGroupVersionInfo::SetSourceVersion(const string& _sourceVersion)
 {
-    m_groupId = _groupId;
-    m_groupIdHasBeenSet = true;
+    m_sourceVersion = _sourceVersion;
+    m_sourceVersionHasBeenSet = true;
 }
 
-bool ConfigGroupVersionInfo::GroupIdHasBeenSet() const
+bool ConfigGroupVersionInfo::SourceVersionHasBeenSet() const
 {
-    return m_groupIdHasBeenSet;
+    return m_sourceVersionHasBeenSet;
 }
 
 string ConfigGroupVersionInfo::GetGroupType() const
@@ -234,6 +253,22 @@ void ConfigGroupVersionInfo::SetGroupType(const string& _groupType)
 bool ConfigGroupVersionInfo::GroupTypeHasBeenSet() const
 {
     return m_groupTypeHasBeenSet;
+}
+
+string ConfigGroupVersionInfo::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void ConfigGroupVersionInfo::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool ConfigGroupVersionInfo::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
 }
 
 string ConfigGroupVersionInfo::GetDescription() const

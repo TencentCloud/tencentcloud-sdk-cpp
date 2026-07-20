@@ -65,6 +65,8 @@
 #include <tencentcloud/adp/v20260520/model/DeleteSpaceResponse.h>
 #include <tencentcloud/adp/v20260520/model/DeleteVariableRequest.h>
 #include <tencentcloud/adp/v20260520/model/DeleteVariableResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeAccountListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeAccountListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeAgentDetailRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeAgentDetailResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeAgentReleasePreviewListRequest.h>
@@ -75,6 +77,10 @@
 #include <tencentcloud/adp/v20260520/model/DescribeAppResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeAppSummaryListRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeAppSummaryListResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeAuditLogListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeAuditLogListResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeAuditLogMetaRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeAuditLogMetaResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeConversationRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeConversationResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeConversationListRequest.h>
@@ -216,6 +222,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteVariableResponse> DeleteVariableOutcome;
                 typedef std::future<DeleteVariableOutcome> DeleteVariableOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DeleteVariableRequest&, DeleteVariableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVariableAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAccountListResponse> DescribeAccountListOutcome;
+                typedef std::future<DescribeAccountListOutcome> DescribeAccountListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeAccountListRequest&, DescribeAccountListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAgentDetailResponse> DescribeAgentDetailOutcome;
                 typedef std::future<DescribeAgentDetailOutcome> DescribeAgentDetailOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeAgentDetailRequest&, DescribeAgentDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentDetailAsyncHandler;
@@ -231,6 +240,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAppSummaryListResponse> DescribeAppSummaryListOutcome;
                 typedef std::future<DescribeAppSummaryListOutcome> DescribeAppSummaryListOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeAppSummaryListRequest&, DescribeAppSummaryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppSummaryListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuditLogListResponse> DescribeAuditLogListOutcome;
+                typedef std::future<DescribeAuditLogListOutcome> DescribeAuditLogListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeAuditLogListRequest&, DescribeAuditLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuditLogMetaResponse> DescribeAuditLogMetaOutcome;
+                typedef std::future<DescribeAuditLogMetaOutcome> DescribeAuditLogMetaOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeAuditLogMetaRequest&, DescribeAuditLogMetaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogMetaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeConversationResponse> DescribeConversationOutcome;
                 typedef std::future<DescribeConversationOutcome> DescribeConversationOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeConversationRequest&, DescribeConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConversationAsyncHandler;
@@ -520,6 +535,15 @@ namespace TencentCloud
                 DeleteVariableOutcomeCallable DeleteVariableCallable(const Model::DeleteVariableRequest& request);
 
                 /**
+                 *查看企业下的员工列表
+                 * @param req DescribeAccountListRequest
+                 * @return DescribeAccountListOutcome
+                 */
+                DescribeAccountListOutcome DescribeAccountList(const Model::DescribeAccountListRequest &request);
+                void DescribeAccountListAsync(const Model::DescribeAccountListRequest& request, const DescribeAccountListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccountListOutcomeCallable DescribeAccountListCallable(const Model::DescribeAccountListRequest& request);
+
+                /**
                  *查询 Agent 详情
                  * @param req DescribeAgentDetailRequest
                  * @return DescribeAgentDetailOutcome
@@ -563,6 +587,24 @@ namespace TencentCloud
                 DescribeAppSummaryListOutcome DescribeAppSummaryList(const Model::DescribeAppSummaryListRequest &request);
                 void DescribeAppSummaryListAsync(const Model::DescribeAppSummaryListRequest& request, const DescribeAppSummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAppSummaryListOutcomeCallable DescribeAppSummaryListCallable(const Model::DescribeAppSummaryListRequest& request);
+
+                /**
+                 *查看操作日志列表
+                 * @param req DescribeAuditLogListRequest
+                 * @return DescribeAuditLogListOutcome
+                 */
+                DescribeAuditLogListOutcome DescribeAuditLogList(const Model::DescribeAuditLogListRequest &request);
+                void DescribeAuditLogListAsync(const Model::DescribeAuditLogListRequest& request, const DescribeAuditLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuditLogListOutcomeCallable DescribeAuditLogListCallable(const Model::DescribeAuditLogListRequest& request);
+
+                /**
+                 *获取审计日志元信息
+                 * @param req DescribeAuditLogMetaRequest
+                 * @return DescribeAuditLogMetaOutcome
+                 */
+                DescribeAuditLogMetaOutcome DescribeAuditLogMeta(const Model::DescribeAuditLogMetaRequest &request);
+                void DescribeAuditLogMetaAsync(const Model::DescribeAuditLogMetaRequest& request, const DescribeAuditLogMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuditLogMetaOutcomeCallable DescribeAuditLogMetaCallable(const Model::DescribeAuditLogMetaRequest& request);
 
                 /**
                  *查看会话信息

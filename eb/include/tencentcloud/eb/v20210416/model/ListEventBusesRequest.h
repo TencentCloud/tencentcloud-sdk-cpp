@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取根据哪个字段进行返回结果排序,支持以下字段：created_at（创建时间）, updated_at（修改时间）
-                     * @return OrderBy 根据哪个字段进行返回结果排序,支持以下字段：created_at（创建时间）, updated_at（修改时间）
+                     * 获取<p>根据哪个字段进行返回结果排序</p><p>枚举值：</p><ul><li>created_at： 创建时间</li><li>updated_at： 修改时间</li><li>name： 事件集名称</li></ul><p>默认值：updated_at</p>
+                     * @return OrderBy <p>根据哪个字段进行返回结果排序</p><p>枚举值：</p><ul><li>created_at： 创建时间</li><li>updated_at： 修改时间</li><li>name： 事件集名称</li></ul><p>默认值：updated_at</p>
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置根据哪个字段进行返回结果排序,支持以下字段：created_at（创建时间）, updated_at（修改时间）
-                     * @param _orderBy 根据哪个字段进行返回结果排序,支持以下字段：created_at（创建时间）, updated_at（修改时间）
+                     * 设置<p>根据哪个字段进行返回结果排序</p><p>枚举值：</p><ul><li>created_at： 创建时间</li><li>updated_at： 修改时间</li><li>name： 事件集名称</li></ul><p>默认值：updated_at</p>
+                     * @param _orderBy <p>根据哪个字段进行返回结果排序</p><p>枚举值：</p><ul><li>created_at： 创建时间</li><li>updated_at： 修改时间</li><li>name： 事件集名称</li></ul><p>默认值：updated_at</p>
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为20，最大值为100。
-                     * @return Limit 返回数量，默认为20，最大值为100。
+                     * 获取<p>返回数量，默认为20，最大值为100。</p>
+                     * @return Limit <p>返回数量，默认为20，最大值为100。</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为20，最大值为100。
-                     * @param _limit 返回数量，默认为20，最大值为100。
+                     * 设置<p>返回数量，默认为20，最大值为100。</p>
+                     * @param _limit <p>返回数量，默认为20，最大值为100。</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）
-                     * @return Order 以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）
+                     * 获取<p>以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）</p>
+                     * @return Order <p>以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）</p>
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）
-                     * @param _order 以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）
+                     * 设置<p>以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）</p>
+                     * @param _order <p>以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）</p>
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取过滤字段范围: EventBusName(事件集名称)/EventBusId(事件集Id)/Type(事件集类型:Cloud(云服务);Platform(平台型);Custom(自定义))/TagKey(标签键)。每次请求的Filters的上限为10，Filter.Values的上限为5。[{"Name":"Type","Values":["Cloud","Platform"]}]
-                     * @return Filters 过滤字段范围: EventBusName(事件集名称)/EventBusId(事件集Id)/Type(事件集类型:Cloud(云服务);Platform(平台型);Custom(自定义))/TagKey(标签键)。每次请求的Filters的上限为10，Filter.Values的上限为5。[{"Name":"Type","Values":["Cloud","Platform"]}]
+                     * 获取<p>过滤字段范围: EventBusName(事件集名称)/EventBusId(事件集Id)/Type(事件集类型:Cloud(云服务);Platform(平台型);Custom(自定义))/TagKey(标签键)。每次请求的Filters的上限为10，Filter.Values的上限为5。[{&quot;Name&quot;:&quot;Type&quot;,&quot;Values&quot;:[&quot;Cloud&quot;,&quot;Platform&quot;]}]</p>
+                     * @return Filters <p>过滤字段范围: EventBusName(事件集名称)/EventBusId(事件集Id)/Type(事件集类型:Cloud(云服务);Platform(平台型);Custom(自定义))/TagKey(标签键)。每次请求的Filters的上限为10，Filter.Values的上限为5。[{&quot;Name&quot;:&quot;Type&quot;,&quot;Values&quot;:[&quot;Cloud&quot;,&quot;Platform&quot;]}]</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤字段范围: EventBusName(事件集名称)/EventBusId(事件集Id)/Type(事件集类型:Cloud(云服务);Platform(平台型);Custom(自定义))/TagKey(标签键)。每次请求的Filters的上限为10，Filter.Values的上限为5。[{"Name":"Type","Values":["Cloud","Platform"]}]
-                     * @param _filters 过滤字段范围: EventBusName(事件集名称)/EventBusId(事件集Id)/Type(事件集类型:Cloud(云服务);Platform(平台型);Custom(自定义))/TagKey(标签键)。每次请求的Filters的上限为10，Filter.Values的上限为5。[{"Name":"Type","Values":["Cloud","Platform"]}]
+                     * 设置<p>过滤字段范围: EventBusName(事件集名称)/EventBusId(事件集Id)/Type(事件集类型:Cloud(云服务);Platform(平台型);Custom(自定义))/TagKey(标签键)。每次请求的Filters的上限为10，Filter.Values的上限为5。[{&quot;Name&quot;:&quot;Type&quot;,&quot;Values&quot;:[&quot;Cloud&quot;,&quot;Platform&quot;]}]</p>
+                     * @param _filters <p>过滤字段范围: EventBusName(事件集名称)/EventBusId(事件集Id)/Type(事件集类型:Cloud(云服务);Platform(平台型);Custom(自定义))/TagKey(标签键)。每次请求的Filters的上限为10，Filter.Values的上限为5。[{&quot;Name&quot;:&quot;Type&quot;,&quot;Values&quot;:[&quot;Cloud&quot;,&quot;Platform&quot;]}]</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量，默认为0。
-                     * @return Offset 分页偏移量，默认为0。
+                     * 获取<p>分页偏移量，默认为0。</p>
+                     * @return Offset <p>分页偏移量，默认为0。</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量，默认为0。
-                     * @param _offset 分页偏移量，默认为0。
+                     * 设置<p>分页偏移量，默认为0。</p>
+                     * @param _offset <p>分页偏移量，默认为0。</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -151,31 +151,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 根据哪个字段进行返回结果排序,支持以下字段：created_at（创建时间）, updated_at（修改时间）
+                     * <p>根据哪个字段进行返回结果排序</p><p>枚举值：</p><ul><li>created_at： 创建时间</li><li>updated_at： 修改时间</li><li>name： 事件集名称</li></ul><p>默认值：updated_at</p>
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 返回数量，默认为20，最大值为100。
+                     * <p>返回数量，默认为20，最大值为100。</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）
+                     * <p>以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）</p>
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 过滤字段范围: EventBusName(事件集名称)/EventBusId(事件集Id)/Type(事件集类型:Cloud(云服务);Platform(平台型);Custom(自定义))/TagKey(标签键)。每次请求的Filters的上限为10，Filter.Values的上限为5。[{"Name":"Type","Values":["Cloud","Platform"]}]
+                     * <p>过滤字段范围: EventBusName(事件集名称)/EventBusId(事件集Id)/Type(事件集类型:Cloud(云服务);Platform(平台型);Custom(自定义))/TagKey(标签键)。每次请求的Filters的上限为10，Filter.Values的上限为5。[{&quot;Name&quot;:&quot;Type&quot;,&quot;Values&quot;:[&quot;Cloud&quot;,&quot;Platform&quot;]}]</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 分页偏移量，默认为0。
+                     * <p>分页偏移量，默认为0。</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

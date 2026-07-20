@@ -63,6 +63,48 @@ namespace TencentCloud
                      */
                     bool PluginIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>登录用户主账号(集成商模式必填)</p>
+                     * @return LoginUin <p>登录用户主账号(集成商模式必填)</p>
+                     * 
+                     */
+                    std::string GetLoginUin() const;
+
+                    /**
+                     * 设置<p>登录用户主账号(集成商模式必填)</p>
+                     * @param _loginUin <p>登录用户主账号(集成商模式必填)</p>
+                     * 
+                     */
+                    void SetLoginUin(const std::string& _loginUin);
+
+                    /**
+                     * 判断参数 LoginUin 是否已赋值
+                     * @return LoginUin 是否已赋值
+                     * 
+                     */
+                    bool LoginUinHasBeenSet() const;
+
+                    /**
+                     * 获取<p>登录用户子账号(集成商模式必填)</p>
+                     * @return LoginSubAccountUin <p>登录用户子账号(集成商模式必填)</p>
+                     * 
+                     */
+                    std::string GetLoginSubAccountUin() const;
+
+                    /**
+                     * 设置<p>登录用户子账号(集成商模式必填)</p>
+                     * @param _loginSubAccountUin <p>登录用户子账号(集成商模式必填)</p>
+                     * 
+                     */
+                    void SetLoginSubAccountUin(const std::string& _loginSubAccountUin);
+
+                    /**
+                     * 判断参数 LoginSubAccountUin 是否已赋值
+                     * @return LoginSubAccountUin 是否已赋值
+                     * 
+                     */
+                    bool LoginSubAccountUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +112,18 @@ namespace TencentCloud
                      */
                     std::string m_pluginId;
                     bool m_pluginIdHasBeenSet;
+
+                    /**
+                     * <p>登录用户主账号(集成商模式必填)</p>
+                     */
+                    std::string m_loginUin;
+                    bool m_loginUinHasBeenSet;
+
+                    /**
+                     * <p>登录用户子账号(集成商模式必填)</p>
+                     */
+                    std::string m_loginSubAccountUin;
+                    bool m_loginSubAccountUinHasBeenSet;
 
                 };
             }

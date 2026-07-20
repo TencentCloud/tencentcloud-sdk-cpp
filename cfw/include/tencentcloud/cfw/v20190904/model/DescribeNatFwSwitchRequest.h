@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取偏移量，分页用
-                     * @return Offset 偏移量，分页用
+                     * 获取<p>偏移量，分页用</p>
+                     * @return Offset <p>偏移量，分页用</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，分页用
-                     * @param _offset 偏移量，分页用
+                     * 设置<p>偏移量，分页用</p>
+                     * @param _offset <p>偏移量，分页用</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取条数，分页用
-                     * @return Limit 条数，分页用
+                     * 获取<p>条数，分页用</p>
+                     * @return Limit <p>条数，分页用</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置条数，分页用
-                     * @param _limit 条数，分页用
+                     * 设置<p>条数，分页用</p>
+                     * @param _limit <p>条数，分页用</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件组合
-                     * @return Filters 过滤条件组合
+                     * 获取<p>过滤条件组合</p>
+                     * @return Filters <p>过滤条件组合</p>
                      * 
                      */
                     std::vector<CommonFilter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件组合
-                     * @param _filters 过滤条件组合
+                     * 设置<p>过滤条件组合</p>
+                     * @param _filters <p>过滤条件组合</p>
                      * 
                      */
                     void SetFilters(const std::vector<CommonFilter>& _filters);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值
-                     * @return Order desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值
+                     * 获取<p>desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值</p>
+                     * @return Order <p>desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值</p>
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值
-                     * @param _order desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值
+                     * 设置<p>desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值</p>
+                     * @param _order <p>desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值</p>
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取排序所用到的字段
-                     * @return By 排序所用到的字段
+                     * 获取<p>排序所用到的字段</p>
+                     * @return By <p>排序所用到的字段</p>
                      * 
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置排序所用到的字段
-                     * @param _by 排序所用到的字段
+                     * 设置<p>排序所用到的字段</p>
+                     * @param _by <p>排序所用到的字段</p>
                      * 
                      */
                     void SetBy(const std::string& _by);
@@ -151,31 +151,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 偏移量，分页用
+                     * <p>偏移量，分页用</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 条数，分页用
+                     * <p>条数，分页用</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 过滤条件组合
+                     * <p>过滤条件组合</p>
                      */
                     std::vector<CommonFilter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值
+                     * <p>desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值</p>
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 排序所用到的字段
+                     * <p>排序所用到的字段</p>
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;

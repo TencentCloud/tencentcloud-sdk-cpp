@@ -23,7 +23,8 @@ using namespace TencentCloud::Adp::V20260520::Model;
 using namespace std;
 
 DeleteAppRequest::DeleteAppRequest() :
-    m_appIdHasBeenSet(false)
+    m_appIdHasBeenSet(false),
+    m_reasonHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DeleteAppRequest::ToJsonString() const
         string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Reason";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_reason.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DeleteAppRequest::SetAppId(const string& _appId)
 bool DeleteAppRequest::AppIdHasBeenSet() const
 {
     return m_appIdHasBeenSet;
+}
+
+string DeleteAppRequest::GetReason() const
+{
+    return m_reason;
+}
+
+void DeleteAppRequest::SetReason(const string& _reason)
+{
+    m_reason = _reason;
+    m_reasonHasBeenSet = true;
+}
+
+bool DeleteAppRequest::ReasonHasBeenSet() const
+{
+    return m_reasonHasBeenSet;
 }
 
 

@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/adp/v20260520/model/AppShareAccessControl.h>
+#include <tencentcloud/adp/v20260520/model/CorpShareConfig.h>
 
 
 namespace TencentCloud
@@ -47,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建时间 (Unix时间戳,秒级)
-                     * @return CreateTime 创建时间 (Unix时间戳,秒级)
+                     * 获取<p>创建时间 (Unix时间戳,秒级)</p>
+                     * @return CreateTime <p>创建时间 (Unix时间戳,秒级)</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间 (Unix时间戳,秒级)
-                     * @param _createTime 创建时间 (Unix时间戳,秒级)
+                     * 设置<p>创建时间 (Unix时间戳,秒级)</p>
+                     * @param _createTime <p>创建时间 (Unix时间戳,秒级)</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -68,15 +70,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取发布描述
-                     * @return Description 发布描述
+                     * 获取<p>发布描述</p>
+                     * @return Description <p>发布描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置发布描述
-                     * @param _description 发布描述
+                     * 设置<p>发布描述</p>
+                     * @param _description <p>发布描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -89,15 +91,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取发布ID
-                     * @return ReleaseId 发布ID
+                     * 获取<p>发布ID</p>
+                     * @return ReleaseId <p>发布ID</p>
                      * 
                      */
                     std::string GetReleaseId() const;
 
                     /**
-                     * 设置发布ID
-                     * @param _releaseId 发布ID
+                     * 设置<p>发布ID</p>
+                     * @param _releaseId <p>发布ID</p>
                      * 
                      */
                     void SetReleaseId(const std::string& _releaseId);
@@ -110,15 +112,15 @@ namespace TencentCloud
                     bool ReleaseIdHasBeenSet() const;
 
                     /**
-                     * 获取发布状态。枚举值: 1:待发布, 2:发布中, 3:发布成功, 4:发布失败, 5:审核中, 6:审核成功, 7:审核失败, 8:发布成功回调处理中, 9:发布暂停, 10:申诉审核中, 11:申诉审核通过, 12:申诉审核不通过
-                     * @return Status 发布状态。枚举值: 1:待发布, 2:发布中, 3:发布成功, 4:发布失败, 5:审核中, 6:审核成功, 7:审核失败, 8:发布成功回调处理中, 9:发布暂停, 10:申诉审核中, 11:申诉审核通过, 12:申诉审核不通过
+                     * 获取<p>发布状态。枚举值: 1:待发布, 2:发布中, 3:发布成功, 4:发布失败, 5:审核中, 6:审核成功, 7:审核失败, 8:发布成功回调处理中, 9:发布暂停, 10:申诉审核中, 11:申诉审核通过, 12:申诉审核不通过</p>
+                     * @return Status <p>发布状态。枚举值: 1:待发布, 2:发布中, 3:发布成功, 4:发布失败, 5:审核中, 6:审核成功, 7:审核失败, 8:发布成功回调处理中, 9:发布暂停, 10:申诉审核中, 11:申诉审核通过, 12:申诉审核不通过</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置发布状态。枚举值: 1:待发布, 2:发布中, 3:发布成功, 4:发布失败, 5:审核中, 6:审核成功, 7:审核失败, 8:发布成功回调处理中, 9:发布暂停, 10:申诉审核中, 11:申诉审核通过, 12:申诉审核不通过
-                     * @param _status 发布状态。枚举值: 1:待发布, 2:发布中, 3:发布成功, 4:发布失败, 5:审核中, 6:审核成功, 7:审核失败, 8:发布成功回调处理中, 9:发布暂停, 10:申诉审核中, 11:申诉审核通过, 12:申诉审核不通过
+                     * 设置<p>发布状态。枚举值: 1:待发布, 2:发布中, 3:发布成功, 4:发布失败, 5:审核中, 6:审核成功, 7:审核失败, 8:发布成功回调处理中, 9:发布暂停, 10:申诉审核中, 11:申诉审核通过, 12:申诉审核不通过</p>
+                     * @param _status <p>发布状态。枚举值: 1:待发布, 2:发布中, 3:发布成功, 4:发布失败, 5:审核中, 6:审核成功, 7:审核失败, 8:发布成功回调处理中, 9:发布暂停, 10:申诉审核中, 11:申诉审核通过, 12:申诉审核不通过</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -131,15 +133,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取状态描述
-                     * @return StatusDescription 状态描述
+                     * 获取<p>状态描述</p>
+                     * @return StatusDescription <p>状态描述</p>
                      * 
                      */
                     std::string GetStatusDescription() const;
 
                     /**
-                     * 设置状态描述
-                     * @param _statusDescription 状态描述
+                     * 设置<p>状态描述</p>
+                     * @param _statusDescription <p>状态描述</p>
                      * 
                      */
                     void SetStatusDescription(const std::string& _statusDescription);
@@ -152,15 +154,40 @@ namespace TencentCloud
                     bool StatusDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取发布渠道ID列表
-                     * @return ChannelIdList 发布渠道ID列表
+                     * 获取<p>应用分享访问控制</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppShareAccessControl <p>应用分享访问控制</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AppShareAccessControl GetAppShareAccessControl() const;
+
+                    /**
+                     * 设置<p>应用分享访问控制</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _appShareAccessControl <p>应用分享访问控制</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAppShareAccessControl(const AppShareAccessControl& _appShareAccessControl);
+
+                    /**
+                     * 判断参数 AppShareAccessControl 是否已赋值
+                     * @return AppShareAccessControl 是否已赋值
+                     * 
+                     */
+                    bool AppShareAccessControlHasBeenSet() const;
+
+                    /**
+                     * 获取<p>发布渠道ID列表</p>
+                     * @return ChannelIdList <p>发布渠道ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetChannelIdList() const;
 
                     /**
-                     * 设置发布渠道ID列表
-                     * @param _channelIdList 发布渠道ID列表
+                     * 设置<p>发布渠道ID列表</p>
+                     * @param _channelIdList <p>发布渠道ID列表</p>
                      * 
                      */
                     void SetChannelIdList(const std::vector<std::string>& _channelIdList);
@@ -172,43 +199,82 @@ namespace TencentCloud
                      */
                     bool ChannelIdListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>企业共享配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CorpShareConfig <p>企业共享配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    CorpShareConfig GetCorpShareConfig() const;
+
+                    /**
+                     * 设置<p>企业共享配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _corpShareConfig <p>企业共享配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCorpShareConfig(const CorpShareConfig& _corpShareConfig);
+
+                    /**
+                     * 判断参数 CorpShareConfig 是否已赋值
+                     * @return CorpShareConfig 是否已赋值
+                     * 
+                     */
+                    bool CorpShareConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 创建时间 (Unix时间戳,秒级)
+                     * <p>创建时间 (Unix时间戳,秒级)</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 发布描述
+                     * <p>发布描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 发布ID
+                     * <p>发布ID</p>
                      */
                     std::string m_releaseId;
                     bool m_releaseIdHasBeenSet;
 
                     /**
-                     * 发布状态。枚举值: 1:待发布, 2:发布中, 3:发布成功, 4:发布失败, 5:审核中, 6:审核成功, 7:审核失败, 8:发布成功回调处理中, 9:发布暂停, 10:申诉审核中, 11:申诉审核通过, 12:申诉审核不通过
+                     * <p>发布状态。枚举值: 1:待发布, 2:发布中, 3:发布成功, 4:发布失败, 5:审核中, 6:审核成功, 7:审核失败, 8:发布成功回调处理中, 9:发布暂停, 10:申诉审核中, 11:申诉审核通过, 12:申诉审核不通过</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 状态描述
+                     * <p>状态描述</p>
                      */
                     std::string m_statusDescription;
                     bool m_statusDescriptionHasBeenSet;
 
                     /**
-                     * 发布渠道ID列表
+                     * <p>应用分享访问控制</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AppShareAccessControl m_appShareAccessControl;
+                    bool m_appShareAccessControlHasBeenSet;
+
+                    /**
+                     * <p>发布渠道ID列表</p>
                      */
                     std::vector<std::string> m_channelIdList;
                     bool m_channelIdListHasBeenSet;
+
+                    /**
+                     * <p>企业共享配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CorpShareConfig m_corpShareConfig;
+                    bool m_corpShareConfigHasBeenSet;
 
                 };
             }

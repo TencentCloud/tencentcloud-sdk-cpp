@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取状态
-                     * @return Status 状态
+                     * 获取<p>状态</p>
+                     * @return Status <p>状态</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态
-                     * @param _status 状态
+                     * 设置<p>状态</p>
+                     * @param _status <p>状态</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取修改时间
-                     * @return ModTime 修改时间
+                     * 获取<p>修改时间</p>
+                     * @return ModTime <p>修改时间</p>
                      * 
                      */
                     std::string GetModTime() const;
 
                     /**
-                     * 设置修改时间
-                     * @param _modTime 修改时间
+                     * 设置<p>修改时间</p>
+                     * @param _modTime <p>修改时间</p>
                      * 
                      */
                     void SetModTime(const std::string& _modTime);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool ModTimeHasBeenSet() const;
 
                     /**
-                     * 获取使能开关
-                     * @return Enable 使能开关
+                     * 获取<p>使能开关</p>
+                     * @return Enable <p>使能开关</p>
                      * 
                      */
                     bool GetEnable() const;
 
                     /**
-                     * 设置使能开关
-                     * @param _enable 使能开关
+                     * 设置<p>使能开关</p>
+                     * @param _enable <p>使能开关</p>
                      * 
                      */
                     void SetEnable(const bool& _enable);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
+                     * 获取<p>描述</p>
+                     * @return Description <p>描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
-                     * @param _description 描述
+                     * 设置<p>描述</p>
+                     * @param _description <p>描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取规则ID
-                     * @return RuleId 规则ID
+                     * 获取<p>规则ID</p>
+                     * @return RuleId <p>规则ID</p>
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置规则ID
-                     * @param _ruleId 规则ID
+                     * 设置<p>规则ID</p>
+                     * @param _ruleId <p>规则ID</p>
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return AddTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return AddTime <p>创建时间</p>
                      * 
                      */
                     std::string GetAddTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _addTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _addTime <p>创建时间</p>
                      * 
                      */
                     void SetAddTime(const std::string& _addTime);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool AddTimeHasBeenSet() const;
 
                     /**
-                     * 获取事件集ID
-                     * @return EventBusId 事件集ID
+                     * 获取<p>事件集ID</p>
+                     * @return EventBusId <p>事件集ID</p>
                      * 
                      */
                     std::string GetEventBusId() const;
 
                     /**
-                     * 设置事件集ID
-                     * @param _eventBusId 事件集ID
+                     * 设置<p>事件集ID</p>
+                     * @param _eventBusId <p>事件集ID</p>
                      * 
                      */
                     void SetEventBusId(const std::string& _eventBusId);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool EventBusIdHasBeenSet() const;
 
                     /**
-                     * 获取规则名称
-                     * @return RuleName 规则名称
+                     * 获取<p>规则名称</p>
+                     * @return RuleName <p>规则名称</p>
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
-                     * 设置规则名称
-                     * @param _ruleName 规则名称
+                     * 设置<p>规则名称</p>
+                     * @param _ruleName <p>规则名称</p>
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -217,18 +217,18 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取Target 简要信息
+                     * 获取<p>Target 简要信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Targets Target 简要信息
+                     * @return Targets <p>Target 简要信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TargetBrief> GetTargets() const;
 
                     /**
-                     * 设置Target 简要信息
+                     * 设置<p>Target 简要信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _targets Target 简要信息
+                     * @param _targets <p>Target 简要信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -242,18 +242,18 @@ namespace TencentCloud
                     bool TargetsHasBeenSet() const;
 
                     /**
-                     * 获取rule设置的dlq规则. 可能为null
+                     * 获取<p>rule设置的dlq规则. 可能为null</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeadLetterConfig rule设置的dlq规则. 可能为null
+                     * @return DeadLetterConfig <p>rule设置的dlq规则. 可能为null</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DeadLetterConfig GetDeadLetterConfig() const;
 
                     /**
-                     * 设置rule设置的dlq规则. 可能为null
+                     * 设置<p>rule设置的dlq规则. 可能为null</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _deadLetterConfig rule设置的dlq规则. 可能为null
+                     * @param _deadLetterConfig <p>rule设置的dlq规则. 可能为null</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -269,62 +269,62 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 状态
+                     * <p>状态</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 修改时间
+                     * <p>修改时间</p>
                      */
                     std::string m_modTime;
                     bool m_modTimeHasBeenSet;
 
                     /**
-                     * 使能开关
+                     * <p>使能开关</p>
                      */
                     bool m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 规则ID
+                     * <p>规则ID</p>
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_addTime;
                     bool m_addTimeHasBeenSet;
 
                     /**
-                     * 事件集ID
+                     * <p>事件集ID</p>
                      */
                     std::string m_eventBusId;
                     bool m_eventBusIdHasBeenSet;
 
                     /**
-                     * 规则名称
+                     * <p>规则名称</p>
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * Target 简要信息
+                     * <p>Target 简要信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TargetBrief> m_targets;
                     bool m_targetsHasBeenSet;
 
                     /**
-                     * rule设置的dlq规则. 可能为null
+                     * <p>rule设置的dlq规则. 可能为null</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DeadLetterConfig m_deadLetterConfig;

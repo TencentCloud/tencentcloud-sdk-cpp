@@ -722,6 +722,69 @@ namespace TencentCloud
                      */
                     bool CpuCoreCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否支持迁移</p>
+                     * @return MigrationRequired <p>是否支持迁移</p>
+                     * 
+                     */
+                    bool GetMigrationRequired() const;
+
+                    /**
+                     * 设置<p>是否支持迁移</p>
+                     * @param _migrationRequired <p>是否支持迁移</p>
+                     * 
+                     */
+                    void SetMigrationRequired(const bool& _migrationRequired);
+
+                    /**
+                     * 判断参数 MigrationRequired 是否已赋值
+                     * @return MigrationRequired 是否已赋值
+                     * 
+                     */
+                    bool MigrationRequiredHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否支持暴露面扫描</p>
+                     * @return IsSupportXSPM <p>是否支持暴露面扫描</p>
+                     * 
+                     */
+                    bool GetIsSupportXSPM() const;
+
+                    /**
+                     * 设置<p>是否支持暴露面扫描</p>
+                     * @param _isSupportXSPM <p>是否支持暴露面扫描</p>
+                     * 
+                     */
+                    void SetIsSupportXSPM(const bool& _isSupportXSPM);
+
+                    /**
+                     * 判断参数 IsSupportXSPM 是否已赋值
+                     * @return IsSupportXSPM 是否已赋值
+                     * 
+                     */
+                    bool IsSupportXSPMHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否能解绑</p>
+                     * @return CanUnbind <p>是否能解绑</p>
+                     * 
+                     */
+                    bool GetCanUnbind() const;
+
+                    /**
+                     * 设置<p>是否能解绑</p>
+                     * @param _canUnbind <p>是否能解绑</p>
+                     * 
+                     */
+                    void SetCanUnbind(const bool& _canUnbind);
+
+                    /**
+                     * 判断参数 CanUnbind 是否已赋值
+                     * @return CanUnbind 是否已赋值
+                     * 
+                     */
+                    bool CanUnbindHasBeenSet() const;
+
                 private:
 
                     /**
@@ -915,6 +978,24 @@ namespace TencentCloud
                      */
                     uint64_t m_cpuCoreCount;
                     bool m_cpuCoreCountHasBeenSet;
+
+                    /**
+                     * <p>是否支持迁移</p>
+                     */
+                    bool m_migrationRequired;
+                    bool m_migrationRequiredHasBeenSet;
+
+                    /**
+                     * <p>是否支持暴露面扫描</p>
+                     */
+                    bool m_isSupportXSPM;
+                    bool m_isSupportXSPMHasBeenSet;
+
+                    /**
+                     * <p>是否能解绑</p>
+                     */
+                    bool m_canUnbind;
+                    bool m_canUnbindHasBeenSet;
 
                 };
             }

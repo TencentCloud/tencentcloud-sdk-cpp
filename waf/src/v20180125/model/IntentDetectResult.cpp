@@ -21,7 +21,8 @@ using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
 IntentDetectResult::IntentDetectResult() :
-    m_isUnSafeHasBeenSet(false)
+    m_isUnSafeHasBeenSet(false),
+    m_categoryHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome IntentDetectResult::Deserialize(const rapidjson::Value &valu
         m_isUnSafeHasBeenSet = true;
     }
 
+    if (value.HasMember("Category") && !value["Category"].IsNull())
+    {
+        if (!value["Category"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntentDetectResult.Category` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_category = string(value["Category"].GetString());
+        m_categoryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void IntentDetectResult::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "IsUnSafe";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isUnSafe, allocator);
+    }
+
+    if (m_categoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Category";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_category.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void IntentDetectResult::SetIsUnSafe(const uint64_t& _isUnSafe)
 bool IntentDetectResult::IsUnSafeHasBeenSet() const
 {
     return m_isUnSafeHasBeenSet;
+}
+
+string IntentDetectResult::GetCategory() const
+{
+    return m_category;
+}
+
+void IntentDetectResult::SetCategory(const string& _category)
+{
+    m_category = _category;
+    m_categoryHasBeenSet = true;
+}
+
+bool IntentDetectResult::CategoryHasBeenSet() const
+{
+    return m_categoryHasBeenSet;
 }
 

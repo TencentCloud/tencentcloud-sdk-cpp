@@ -24,7 +24,8 @@ using namespace std;
 
 CreateVideoRedrawTaskRequest::CreateVideoRedrawTaskRequest() :
     m_inputHasBeenSet(false),
-    m_cosInfoHasBeenSet(false)
+    m_cosInfoHasBeenSet(false),
+    m_taskInfoHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,15 @@ string CreateVideoRedrawTaskRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cosInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_taskInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_taskInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -91,6 +101,22 @@ void CreateVideoRedrawTaskRequest::SetCosInfo(const VideoRedrawCosInfo& _cosInfo
 bool CreateVideoRedrawTaskRequest::CosInfoHasBeenSet() const
 {
     return m_cosInfoHasBeenSet;
+}
+
+VideoRedrawTaskInfo CreateVideoRedrawTaskRequest::GetTaskInfo() const
+{
+    return m_taskInfo;
+}
+
+void CreateVideoRedrawTaskRequest::SetTaskInfo(const VideoRedrawTaskInfo& _taskInfo)
+{
+    m_taskInfo = _taskInfo;
+    m_taskInfoHasBeenSet = true;
+}
+
+bool CreateVideoRedrawTaskRequest::TaskInfoHasBeenSet() const
+{
+    return m_taskInfoHasBeenSet;
 }
 
 

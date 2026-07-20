@@ -23,6 +23,8 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 DescribeCfwRuleOptimizationRequest::DescribeCfwRuleOptimizationRequest() :
+    m_ruleTypeHasBeenSet(false),
+    m_dimensionsHasBeenSet(false),
     m_idleDaysHasBeenSet(false),
     m_ipAggMinHasBeenSet(false),
     m_iocSampleHasBeenSet(false)
@@ -35,6 +37,27 @@ string DescribeCfwRuleOptimizationRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_ruleTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ruleType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dimensionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Dimensions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_dimensions.begin(); itr != m_dimensions.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
 
     if (m_idleDaysHasBeenSet)
     {
@@ -67,6 +90,38 @@ string DescribeCfwRuleOptimizationRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeCfwRuleOptimizationRequest::GetRuleType() const
+{
+    return m_ruleType;
+}
+
+void DescribeCfwRuleOptimizationRequest::SetRuleType(const string& _ruleType)
+{
+    m_ruleType = _ruleType;
+    m_ruleTypeHasBeenSet = true;
+}
+
+bool DescribeCfwRuleOptimizationRequest::RuleTypeHasBeenSet() const
+{
+    return m_ruleTypeHasBeenSet;
+}
+
+vector<string> DescribeCfwRuleOptimizationRequest::GetDimensions() const
+{
+    return m_dimensions;
+}
+
+void DescribeCfwRuleOptimizationRequest::SetDimensions(const vector<string>& _dimensions)
+{
+    m_dimensions = _dimensions;
+    m_dimensionsHasBeenSet = true;
+}
+
+bool DescribeCfwRuleOptimizationRequest::DimensionsHasBeenSet() const
+{
+    return m_dimensionsHasBeenSet;
+}
 
 int64_t DescribeCfwRuleOptimizationRequest::GetIdleDays() const
 {

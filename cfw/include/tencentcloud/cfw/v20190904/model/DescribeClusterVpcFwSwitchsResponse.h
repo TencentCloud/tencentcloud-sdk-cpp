@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总条数
-                     * @return Total 总条数
+                     * 获取<p>总条数</p>
+                     * @return Total <p>总条数</p>
                      * 
                      */
                     uint64_t GetTotal() const;
@@ -60,9 +60,9 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取防火墙开关列表
+                     * 获取<p>防火墙开关列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 防火墙开关列表
+                     * @return Data <p>防火墙开关列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -76,8 +76,8 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取开关开启失败列表
-                     * @return FailData 开关开启失败列表
+                     * 获取<p>开关开启失败列表</p>
+                     * @return FailData <p>开关开启失败列表</p>
                      * 
                      */
                     std::vector<SwitchFailInfo> GetFailData() const;
@@ -92,20 +92,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总条数
+                     * <p>总条数</p>
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 防火墙开关列表
+                     * <p>防火墙开关列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ClusterSwitchDetail> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 开关开启失败列表
+                     * <p>开关开启失败列表</p>
                      */
                     std::vector<SwitchFailInfo> m_failData;
                     bool m_failDataHasBeenSet;

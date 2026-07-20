@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取默认文件名称
-                     * @return DefaultFileName 默认文件名称
+                     * 获取<p>默认文件名称</p>
+                     * @return DefaultFileName <p>默认文件名称</p>
                      * 
                      */
                     std::string GetDefaultFileName() const;
 
                     /**
-                     * 设置默认文件名称
-                     * @param _defaultFileName 默认文件名称
+                     * 设置<p>默认文件名称</p>
+                     * @param _defaultFileName <p>默认文件名称</p>
                      * 
                      */
                     void SetDefaultFileName(const std::string& _defaultFileName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DefaultFileNameHasBeenSet() const;
 
                     /**
-                     * 获取默认值
-                     * @return DefaultValue 默认值
+                     * 获取<p>默认值</p>
+                     * @return DefaultValue <p>默认值</p>
                      * 
                      */
                     std::string GetDefaultValue() const;
 
                     /**
-                     * 设置默认值
-                     * @param _defaultValue 默认值
+                     * 设置<p>默认值</p>
+                     * @param _defaultValue <p>默认值</p>
                      * 
                      */
                     void SetDefaultValue(const std::string& _defaultValue);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DefaultValueHasBeenSet() const;
 
                     /**
-                     * 获取变量描述
-                     * @return Description 变量描述
+                     * 获取<p>变量描述</p>
+                     * @return Description <p>变量描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置变量描述
-                     * @param _description 变量描述
+                     * 设置<p>变量描述</p>
+                     * @param _description <p>变量描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取模块类型。枚举值: 1:环境参数, 2:应用参数, 3:系统参数, -1:所有参数
-                     * @return ModuleType 模块类型。枚举值: 1:环境参数, 2:应用参数, 3:系统参数, -1:所有参数
+                     * 获取<p>模块类型。枚举值: 1:环境参数, 2:应用参数, 3:系统参数, -1:所有参数</p>
+                     * @return ModuleType <p>模块类型。枚举值: 1:环境参数, 2:应用参数, 3:系统参数, -1:所有参数</p>
                      * 
                      */
                     int64_t GetModuleType() const;
 
                     /**
-                     * 设置模块类型。枚举值: 1:环境参数, 2:应用参数, 3:系统参数, -1:所有参数
-                     * @param _moduleType 模块类型。枚举值: 1:环境参数, 2:应用参数, 3:系统参数, -1:所有参数
+                     * 设置<p>模块类型。枚举值: 1:环境参数, 2:应用参数, 3:系统参数, -1:所有参数</p>
+                     * @param _moduleType <p>模块类型。枚举值: 1:环境参数, 2:应用参数, 3:系统参数, -1:所有参数</p>
                      * 
                      */
                     void SetModuleType(const int64_t& _moduleType);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ModuleTypeHasBeenSet() const;
 
                     /**
-                     * 获取变量名称
-                     * @return Name 变量名称
+                     * 获取<p>变量名称</p>
+                     * @return Name <p>变量名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置变量名称
-                     * @param _name 变量名称
+                     * 设置<p>变量名称</p>
+                     * @param _name <p>变量名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取变量类型。枚举值: 1:字符串, 2:整数, 3:浮点数, 4:布尔值, 5:对象, 6:字符串数组, 7:整数数组, 8:浮点数数组, 9:布尔值数组, 10:对象数组, 11:文件, 12:文档, 13:图片, 14:音频, 15:视频, 16:文件数组, 17:文档数组, 18:图片数组, 19:音频数组, 20:视频数组, 21:数组的数组, 22:密钥/敏感信息, 99:空值
-                     * @return Type 变量类型。枚举值: 1:字符串, 2:整数, 3:浮点数, 4:布尔值, 5:对象, 6:字符串数组, 7:整数数组, 8:浮点数数组, 9:布尔值数组, 10:对象数组, 11:文件, 12:文档, 13:图片, 14:音频, 15:视频, 16:文件数组, 17:文档数组, 18:图片数组, 19:音频数组, 20:视频数组, 21:数组的数组, 22:密钥/敏感信息, 99:空值
+                     * 获取<p>变量类型</p><p>枚举值：</p><ul><li>0： 字符串</li><li>1： 整数</li><li>2： 浮点数</li><li>3： 布尔值</li><li>4： 对象</li><li>5： 字符串数组</li><li>6： 整数数组</li><li>7： 浮点数数组</li><li>8： 布尔值数组</li><li>9： 对象数组</li><li>10： 文件</li><li>11： 文档</li><li>12： 图片</li><li>13： 音频</li><li>14： 视频</li><li>15： 文件数组</li><li>16： 文档数组</li><li>17： 图片数组</li><li>18： 音频数组</li><li>19： 视频数组</li><li>20： 数组的数组</li><li>21： 密钥</li></ul>
+                     * @return Type <p>变量类型</p><p>枚举值：</p><ul><li>0： 字符串</li><li>1： 整数</li><li>2： 浮点数</li><li>3： 布尔值</li><li>4： 对象</li><li>5： 字符串数组</li><li>6： 整数数组</li><li>7： 浮点数数组</li><li>8： 布尔值数组</li><li>9： 对象数组</li><li>10： 文件</li><li>11： 文档</li><li>12： 图片</li><li>13： 音频</li><li>14： 视频</li><li>15： 文件数组</li><li>16： 文档数组</li><li>17： 图片数组</li><li>18： 音频数组</li><li>19： 视频数组</li><li>20： 数组的数组</li><li>21： 密钥</li></ul>
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置变量类型。枚举值: 1:字符串, 2:整数, 3:浮点数, 4:布尔值, 5:对象, 6:字符串数组, 7:整数数组, 8:浮点数数组, 9:布尔值数组, 10:对象数组, 11:文件, 12:文档, 13:图片, 14:音频, 15:视频, 16:文件数组, 17:文档数组, 18:图片数组, 19:音频数组, 20:视频数组, 21:数组的数组, 22:密钥/敏感信息, 99:空值
-                     * @param _type 变量类型。枚举值: 1:字符串, 2:整数, 3:浮点数, 4:布尔值, 5:对象, 6:字符串数组, 7:整数数组, 8:浮点数数组, 9:布尔值数组, 10:对象数组, 11:文件, 12:文档, 13:图片, 14:音频, 15:视频, 16:文件数组, 17:文档数组, 18:图片数组, 19:音频数组, 20:视频数组, 21:数组的数组, 22:密钥/敏感信息, 99:空值
+                     * 设置<p>变量类型</p><p>枚举值：</p><ul><li>0： 字符串</li><li>1： 整数</li><li>2： 浮点数</li><li>3： 布尔值</li><li>4： 对象</li><li>5： 字符串数组</li><li>6： 整数数组</li><li>7： 浮点数数组</li><li>8： 布尔值数组</li><li>9： 对象数组</li><li>10： 文件</li><li>11： 文档</li><li>12： 图片</li><li>13： 音频</li><li>14： 视频</li><li>15： 文件数组</li><li>16： 文档数组</li><li>17： 图片数组</li><li>18： 音频数组</li><li>19： 视频数组</li><li>20： 数组的数组</li><li>21： 密钥</li></ul>
+                     * @param _type <p>变量类型</p><p>枚举值：</p><ul><li>0： 字符串</li><li>1： 整数</li><li>2： 浮点数</li><li>3： 布尔值</li><li>4： 对象</li><li>5： 字符串数组</li><li>6： 整数数组</li><li>7： 浮点数数组</li><li>8： 布尔值数组</li><li>9： 对象数组</li><li>10： 文件</li><li>11： 文档</li><li>12： 图片</li><li>13： 音频</li><li>14： 视频</li><li>15： 文件数组</li><li>16： 文档数组</li><li>17： 图片数组</li><li>18： 音频数组</li><li>19： 视频数组</li><li>20： 数组的数组</li><li>21： 密钥</li></ul>
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取变量ID
-                     * @return VariableId 变量ID
+                     * 获取<p>变量ID</p>
+                     * @return VariableId <p>变量ID</p>
                      * 
                      */
                     std::string GetVariableId() const;
 
                     /**
-                     * 设置变量ID
-                     * @param _variableId 变量ID
+                     * 设置<p>变量ID</p>
+                     * @param _variableId <p>变量ID</p>
                      * 
                      */
                     void SetVariableId(const std::string& _variableId);
@@ -193,49 +193,103 @@ namespace TencentCloud
                      */
                     bool VariableIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否启用网络策略(仅环境变量生效)</p>
+                     * @return EnableEndpoints <p>是否启用网络策略(仅环境变量生效)</p>
+                     * 
+                     */
+                    bool GetEnableEndpoints() const;
+
+                    /**
+                     * 设置<p>是否启用网络策略(仅环境变量生效)</p>
+                     * @param _enableEndpoints <p>是否启用网络策略(仅环境变量生效)</p>
+                     * 
+                     */
+                    void SetEnableEndpoints(const bool& _enableEndpoints);
+
+                    /**
+                     * 判断参数 EnableEndpoints 是否已赋值
+                     * @return EnableEndpoints 是否已赋值
+                     * 
+                     */
+                    bool EnableEndpointsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>网络策略列表(支持: 精确域名、*.通配子域名、可带协议/端口/路径前缀)</p>
+                     * @return EndpointList <p>网络策略列表(支持: 精确域名、*.通配子域名、可带协议/端口/路径前缀)</p>
+                     * 
+                     */
+                    std::vector<std::string> GetEndpointList() const;
+
+                    /**
+                     * 设置<p>网络策略列表(支持: 精确域名、*.通配子域名、可带协议/端口/路径前缀)</p>
+                     * @param _endpointList <p>网络策略列表(支持: 精确域名、*.通配子域名、可带协议/端口/路径前缀)</p>
+                     * 
+                     */
+                    void SetEndpointList(const std::vector<std::string>& _endpointList);
+
+                    /**
+                     * 判断参数 EndpointList 是否已赋值
+                     * @return EndpointList 是否已赋值
+                     * 
+                     */
+                    bool EndpointListHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 默认文件名称
+                     * <p>默认文件名称</p>
                      */
                     std::string m_defaultFileName;
                     bool m_defaultFileNameHasBeenSet;
 
                     /**
-                     * 默认值
+                     * <p>默认值</p>
                      */
                     std::string m_defaultValue;
                     bool m_defaultValueHasBeenSet;
 
                     /**
-                     * 变量描述
+                     * <p>变量描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 模块类型。枚举值: 1:环境参数, 2:应用参数, 3:系统参数, -1:所有参数
+                     * <p>模块类型。枚举值: 1:环境参数, 2:应用参数, 3:系统参数, -1:所有参数</p>
                      */
                     int64_t m_moduleType;
                     bool m_moduleTypeHasBeenSet;
 
                     /**
-                     * 变量名称
+                     * <p>变量名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 变量类型。枚举值: 1:字符串, 2:整数, 3:浮点数, 4:布尔值, 5:对象, 6:字符串数组, 7:整数数组, 8:浮点数数组, 9:布尔值数组, 10:对象数组, 11:文件, 12:文档, 13:图片, 14:音频, 15:视频, 16:文件数组, 17:文档数组, 18:图片数组, 19:音频数组, 20:视频数组, 21:数组的数组, 22:密钥/敏感信息, 99:空值
+                     * <p>变量类型</p><p>枚举值：</p><ul><li>0： 字符串</li><li>1： 整数</li><li>2： 浮点数</li><li>3： 布尔值</li><li>4： 对象</li><li>5： 字符串数组</li><li>6： 整数数组</li><li>7： 浮点数数组</li><li>8： 布尔值数组</li><li>9： 对象数组</li><li>10： 文件</li><li>11： 文档</li><li>12： 图片</li><li>13： 音频</li><li>14： 视频</li><li>15： 文件数组</li><li>16： 文档数组</li><li>17： 图片数组</li><li>18： 音频数组</li><li>19： 视频数组</li><li>20： 数组的数组</li><li>21： 密钥</li></ul>
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 变量ID
+                     * <p>变量ID</p>
                      */
                     std::string m_variableId;
                     bool m_variableIdHasBeenSet;
+
+                    /**
+                     * <p>是否启用网络策略(仅环境变量生效)</p>
+                     */
+                    bool m_enableEndpoints;
+                    bool m_enableEndpointsHasBeenSet;
+
+                    /**
+                     * <p>网络策略列表(支持: 精确域名、*.通配子域名、可带协议/端口/路径前缀)</p>
+                     */
+                    std::vector<std::string> m_endpointList;
+                    bool m_endpointListHasBeenSet;
 
                 };
             }

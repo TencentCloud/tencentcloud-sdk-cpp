@@ -1090,6 +1090,56 @@ AdpClient::DeleteVariableOutcomeCallable AdpClient::DeleteVariableCallable(const
     return prom->get_future();
 }
 
+AdpClient::DescribeAccountListOutcome AdpClient::DescribeAccountList(const DescribeAccountListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccountList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccountListResponse rsp = DescribeAccountListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccountListOutcome(rsp);
+        else
+            return DescribeAccountListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccountListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeAccountListAsync(const DescribeAccountListRequest& request, const DescribeAccountListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAccountListRequest&;
+    using Resp = DescribeAccountListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccountList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeAccountListOutcomeCallable AdpClient::DescribeAccountListCallable(const DescribeAccountListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAccountListOutcome>>();
+    DescribeAccountListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeAccountListRequest&,
+        DescribeAccountListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::DescribeAgentDetailOutcome AdpClient::DescribeAgentDetail(const DescribeAgentDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAgentDetail");
@@ -1332,6 +1382,106 @@ AdpClient::DescribeAppSummaryListOutcomeCallable AdpClient::DescribeAppSummaryLi
         const AdpClient*,
         const DescribeAppSummaryListRequest&,
         DescribeAppSummaryListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeAuditLogListOutcome AdpClient::DescribeAuditLogList(const DescribeAuditLogListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditLogList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditLogListResponse rsp = DescribeAuditLogListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditLogListOutcome(rsp);
+        else
+            return DescribeAuditLogListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditLogListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeAuditLogListAsync(const DescribeAuditLogListRequest& request, const DescribeAuditLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAuditLogListRequest&;
+    using Resp = DescribeAuditLogListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAuditLogList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeAuditLogListOutcomeCallable AdpClient::DescribeAuditLogListCallable(const DescribeAuditLogListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAuditLogListOutcome>>();
+    DescribeAuditLogListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeAuditLogListRequest&,
+        DescribeAuditLogListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeAuditLogMetaOutcome AdpClient::DescribeAuditLogMeta(const DescribeAuditLogMetaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditLogMeta");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditLogMetaResponse rsp = DescribeAuditLogMetaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditLogMetaOutcome(rsp);
+        else
+            return DescribeAuditLogMetaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditLogMetaOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeAuditLogMetaAsync(const DescribeAuditLogMetaRequest& request, const DescribeAuditLogMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAuditLogMetaRequest&;
+    using Resp = DescribeAuditLogMetaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAuditLogMeta", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeAuditLogMetaOutcomeCallable AdpClient::DescribeAuditLogMetaCallable(const DescribeAuditLogMetaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAuditLogMetaOutcome>>();
+    DescribeAuditLogMetaAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeAuditLogMetaRequest&,
+        DescribeAuditLogMetaOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

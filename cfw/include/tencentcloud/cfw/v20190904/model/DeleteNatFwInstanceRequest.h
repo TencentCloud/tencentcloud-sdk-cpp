@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取防火墙实例id
-                     * @return CfwInstance 防火墙实例id
+                     * 获取<p>防火墙实例id</p>
+                     * @return CfwInstance <p>防火墙实例id</p>
                      * 
                      */
                     std::string GetCfwInstance() const;
 
                     /**
-                     * 设置防火墙实例id
-                     * @param _cfwInstance 防火墙实例id
+                     * 设置<p>防火墙实例id</p>
+                     * @param _cfwInstance <p>防火墙实例id</p>
                      * 
                      */
                     void SetCfwInstance(const std::string& _cfwInstance);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 防火墙实例id
+                     * <p>防火墙实例id</p>
                      */
                     std::string m_cfwInstance;
                     bool m_cfwInstanceHasBeenSet;

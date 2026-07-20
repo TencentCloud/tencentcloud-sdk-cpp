@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取NAT防火墙实例ID
-                     * @return NatInsId NAT防火墙实例ID
+                     * 获取<p>NAT防火墙实例ID</p>
+                     * @return NatInsId <p>NAT防火墙实例ID</p>
                      * 
                      */
                     std::string GetNatInsId() const;
 
                     /**
-                     * 设置NAT防火墙实例ID
-                     * @param _natInsId NAT防火墙实例ID
+                     * 设置<p>NAT防火墙实例ID</p>
+                     * @param _natInsId <p>NAT防火墙实例ID</p>
                      * 
                      */
                     void SetNatInsId(const std::string& _natInsId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NatInsIdHasBeenSet() const;
 
                     /**
-                     * 获取云联网实例ID
-                     * @return CcnId 云联网实例ID
+                     * 获取<p>云联网实例ID</p>
+                     * @return CcnId <p>云联网实例ID</p>
                      * 
                      */
                     std::string GetCcnId() const;
 
                     /**
-                     * 设置云联网实例ID
-                     * @param _ccnId 云联网实例ID
+                     * 设置<p>云联网实例ID</p>
+                     * @param _ccnId <p>云联网实例ID</p>
                      * 
                      */
                     void SetCcnId(const std::string& _ccnId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * NAT防火墙实例ID
+                     * <p>NAT防火墙实例ID</p>
                      */
                     std::string m_natInsId;
                     bool m_natInsIdHasBeenSet;
 
                     /**
-                     * 云联网实例ID
+                     * <p>云联网实例ID</p>
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;

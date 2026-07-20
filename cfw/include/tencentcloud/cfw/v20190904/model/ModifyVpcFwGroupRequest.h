@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取编辑的防火墙(组)ID
-                     * @return FwGroupId 编辑的防火墙(组)ID
+                     * 获取<p>编辑的防火墙(组)ID</p>
+                     * @return FwGroupId <p>编辑的防火墙(组)ID</p>
                      * 
                      */
                     std::string GetFwGroupId() const;
 
                     /**
-                     * 设置编辑的防火墙(组)ID
-                     * @param _fwGroupId 编辑的防火墙(组)ID
+                     * 设置<p>编辑的防火墙(组)ID</p>
+                     * @param _fwGroupId <p>编辑的防火墙(组)ID</p>
                      * 
                      */
                     void SetFwGroupId(const std::string& _fwGroupId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool FwGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取修改防火墙(组)名称
-                     * @return Name 修改防火墙(组)名称
+                     * 获取<p>修改防火墙(组)名称</p>
+                     * @return Name <p>修改防火墙(组)名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置修改防火墙(组)名称
-                     * @param _name 修改防火墙(组)名称
+                     * 设置<p>修改防火墙(组)名称</p>
+                     * @param _name <p>修改防火墙(组)名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取编辑的防火墙实例列表
-                     * @return VpcFwInstances 编辑的防火墙实例列表
+                     * 获取<p>编辑的防火墙实例列表</p>
+                     * @return VpcFwInstances <p>编辑的防火墙实例列表</p>
                      * 
                      */
                     std::vector<VpcFwInstance> GetVpcFwInstances() const;
 
                     /**
-                     * 设置编辑的防火墙实例列表
-                     * @param _vpcFwInstances 编辑的防火墙实例列表
+                     * 设置<p>编辑的防火墙实例列表</p>
+                     * @param _vpcFwInstances <p>编辑的防火墙实例列表</p>
                      * 
                      */
                     void SetVpcFwInstances(const std::vector<VpcFwInstance>& _vpcFwInstances);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool VpcFwInstancesHasBeenSet() const;
 
                     /**
-                     * 获取指定防火墙使用网段信息
-                     * @return FwCidrInfo 指定防火墙使用网段信息
+                     * 获取<p>指定防火墙使用网段信息</p>
+                     * @return FwCidrInfo <p>指定防火墙使用网段信息</p>
                      * 
                      */
                     FwCidrInfo GetFwCidrInfo() const;
 
                     /**
-                     * 设置指定防火墙使用网段信息
-                     * @param _fwCidrInfo 指定防火墙使用网段信息
+                     * 设置<p>指定防火墙使用网段信息</p>
+                     * @param _fwCidrInfo <p>指定防火墙使用网段信息</p>
                      * 
                      */
                     void SetFwCidrInfo(const FwCidrInfo& _fwCidrInfo);
@@ -131,25 +131,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 编辑的防火墙(组)ID
+                     * <p>编辑的防火墙(组)ID</p>
                      */
                     std::string m_fwGroupId;
                     bool m_fwGroupIdHasBeenSet;
 
                     /**
-                     * 修改防火墙(组)名称
+                     * <p>修改防火墙(组)名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 编辑的防火墙实例列表
+                     * <p>编辑的防火墙实例列表</p>
                      */
                     std::vector<VpcFwInstance> m_vpcFwInstances;
                     bool m_vpcFwInstancesHasBeenSet;
 
                     /**
-                     * 指定防火墙使用网段信息
+                     * <p>指定防火墙使用网段信息</p>
                      */
                     FwCidrInfo m_fwCidrInfo;
                     bool m_fwCidrInfoHasBeenSet;

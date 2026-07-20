@@ -21,11 +21,14 @@ set(dataagent_public_header
 set(dataagent_public_header_model
   include/tencentcloud/dataagent/v20250513/model/UploadAndCommitFileRequest.h
   include/tencentcloud/dataagent/v20250513/model/GetKnowledgeBaseListRequest.h
+  include/tencentcloud/dataagent/v20250513/model/QueryUserAuthorityResponse.h
   include/tencentcloud/dataagent/v20250513/model/AddChunkRequest.h
   include/tencentcloud/dataagent/v20250513/model/GetUserInstanceListRequest.h
   include/tencentcloud/dataagent/v20250513/model/QuerySceneListResponse.h
+  include/tencentcloud/dataagent/v20250513/model/ModelList.h
   include/tencentcloud/dataagent/v20250513/model/ModifyChunkRequest.h
   include/tencentcloud/dataagent/v20250513/model/ChatAIResponse.h
+  include/tencentcloud/dataagent/v20250513/model/QueryModelsResponse.h
   include/tencentcloud/dataagent/v20250513/model/DeleteChunkRequest.h
   include/tencentcloud/dataagent/v20250513/model/GetSessionDetailsResponse.h
   include/tencentcloud/dataagent/v20250513/model/ModelUserAuthority.h
@@ -40,7 +43,7 @@ set(dataagent_public_header_model
   include/tencentcloud/dataagent/v20250513/model/SearchConfig.h
   include/tencentcloud/dataagent/v20250513/model/StepExpand.h
   include/tencentcloud/dataagent/v20250513/model/GetSessionDetailsRequest.h
-  include/tencentcloud/dataagent/v20250513/model/QueryUserAuthorityResponse.h
+  include/tencentcloud/dataagent/v20250513/model/QueryModelsRequest.h
   include/tencentcloud/dataagent/v20250513/model/ModifyKnowledgeBaseRequest.h
   include/tencentcloud/dataagent/v20250513/model/DeleteChunkResponse.h
   include/tencentcloud/dataagent/v20250513/model/CreateDataAgentSessionResponse.h
@@ -94,11 +97,14 @@ set(dataagent_src
   src/v20250513/DataagentClient.cpp
   src/v20250513/model/UploadAndCommitFileRequest.cpp
   src/v20250513/model/GetKnowledgeBaseListRequest.cpp
+  src/v20250513/model/QueryUserAuthorityResponse.cpp
   src/v20250513/model/AddChunkRequest.cpp
   src/v20250513/model/GetUserInstanceListRequest.cpp
   src/v20250513/model/QuerySceneListResponse.cpp
+  src/v20250513/model/ModelList.cpp
   src/v20250513/model/ModifyChunkRequest.cpp
   src/v20250513/model/ChatAIResponse.cpp
+  src/v20250513/model/QueryModelsResponse.cpp
   src/v20250513/model/DeleteChunkRequest.cpp
   src/v20250513/model/GetSessionDetailsResponse.cpp
   src/v20250513/model/ModelUserAuthority.cpp
@@ -113,7 +119,7 @@ set(dataagent_src
   src/v20250513/model/SearchConfig.cpp
   src/v20250513/model/StepExpand.cpp
   src/v20250513/model/GetSessionDetailsRequest.cpp
-  src/v20250513/model/QueryUserAuthorityResponse.cpp
+  src/v20250513/model/QueryModelsRequest.cpp
   src/v20250513/model/ModifyKnowledgeBaseRequest.cpp
   src/v20250513/model/DeleteChunkResponse.cpp
   src/v20250513/model/CreateDataAgentSessionResponse.cpp

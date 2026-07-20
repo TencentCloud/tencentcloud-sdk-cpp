@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Dnat规则列表
-                     * @return Data Dnat规则列表
+                     * 获取<p>Dnat规则列表</p>
+                     * @return Data <p>Dnat规则列表</p>
                      * 
                      */
                     std::vector<DescNatDnatRule> GetData() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取列表总数
-                     * @return Total 列表总数
+                     * 获取<p>列表总数</p>
+                     * @return Total <p>列表总数</p>
                      * 
                      */
                     uint64_t GetTotal() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Dnat规则列表
+                     * <p>Dnat规则列表</p>
                      */
                     std::vector<DescNatDnatRule> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 列表总数
+                     * <p>列表总数</p>
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;

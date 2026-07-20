@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>过滤字段名。</p>
+                     * 获取过滤字段名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name <p>过滤字段名。</p>
+                     * @return Name 过滤字段名。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置<p>过滤字段名。</p>
+                     * 设置过滤字段名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name <p>过滤字段名。</p>
+                     * @param _name 过滤字段名。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取<p>过滤值列表，最多 10 个。</p>
+                     * 获取过滤值列表，最多 10 个。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Values <p>过滤值列表，最多 10 个。</p>
+                     * @return Values 过滤值列表，最多 10 个。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
-                     * 设置<p>过滤值列表，最多 10 个。</p>
+                     * 设置过滤值列表，最多 10 个。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _values <p>过滤值列表，最多 10 个。</p>
+                     * @param _values 过滤值列表，最多 10 个。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool ValuesHasBeenSet() const;
 
                     /**
-                     * 获取<p>操作符类型，可选；仅支持后端允许的类型。</p>
+                     * 获取操作符类型，可选；仅支持后端允许的类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OperatorType <p>操作符类型，可选；仅支持后端允许的类型。</p>
+                     * @return OperatorType 操作符类型，可选；仅支持后端允许的类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOperatorType() const;
 
                     /**
-                     * 设置<p>操作符类型，可选；仅支持后端允许的类型。</p>
+                     * 设置操作符类型，可选；仅支持后端允许的类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _operatorType <p>操作符类型，可选；仅支持后端允许的类型。</p>
+                     * @param _operatorType 操作符类型，可选；仅支持后端允许的类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,21 +124,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>过滤字段名。</p>
+                     * 过滤字段名。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * <p>过滤值列表，最多 10 个。</p>
+                     * 过滤值列表，最多 10 个。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;
 
                     /**
-                     * <p>操作符类型，可选；仅支持后端允许的类型。</p>
+                     * 操作符类型，可选；仅支持后端允许的类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_operatorType;

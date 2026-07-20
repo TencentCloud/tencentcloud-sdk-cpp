@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取修改成功
-                     * @return ReturnMsg 修改成功
+                     * 获取<p>修改成功</p>
+                     * @return ReturnMsg <p>修改成功</p>
                      * 
                      */
                     std::string GetReturnMsg() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 修改成功
+                     * <p>修改成功</p>
                      */
                     std::string m_returnMsg;
                     bool m_returnMsgHasBeenSet;

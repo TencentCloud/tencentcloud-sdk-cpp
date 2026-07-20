@@ -64,6 +64,7 @@ CreateDBInstanceHourRequest::CreateDBInstanceHourRequest() :
     m_clusterTopologyHasBeenSet(false),
     m_diskTypeHasBeenSet(false),
     m_clusterTypeHasBeenSet(false),
+    m_diskEncryptionHasBeenSet(false),
     m_destroyProtectHasBeenSet(false),
     m_fourthZoneHasBeenSet(false)
 {
@@ -438,6 +439,14 @@ string CreateDBInstanceHourRequest::ToJsonString() const
         string key = "ClusterType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_diskEncryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskEncryption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_diskEncryption.c_str(), allocator).Move(), allocator);
     }
 
     if (m_destroyProtectHasBeenSet)
@@ -1118,6 +1127,22 @@ void CreateDBInstanceHourRequest::SetClusterType(const string& _clusterType)
 bool CreateDBInstanceHourRequest::ClusterTypeHasBeenSet() const
 {
     return m_clusterTypeHasBeenSet;
+}
+
+string CreateDBInstanceHourRequest::GetDiskEncryption() const
+{
+    return m_diskEncryption;
+}
+
+void CreateDBInstanceHourRequest::SetDiskEncryption(const string& _diskEncryption)
+{
+    m_diskEncryption = _diskEncryption;
+    m_diskEncryptionHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::DiskEncryptionHasBeenSet() const
+{
+    return m_diskEncryptionHasBeenSet;
 }
 
 string CreateDBInstanceHourRequest::GetDestroyProtect() const

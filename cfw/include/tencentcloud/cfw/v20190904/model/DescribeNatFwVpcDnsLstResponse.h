@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取nat防火墙vpc dns 信息数组
-                     * @return VpcDnsSwitchLst nat防火墙vpc dns 信息数组
+                     * 获取<p>nat防火墙vpc dns 信息数组</p>
+                     * @return VpcDnsSwitchLst <p>nat防火墙vpc dns 信息数组</p>
                      * 
                      */
                     std::vector<VpcDnsInfo> GetVpcDnsSwitchLst() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool VpcDnsSwitchLstHasBeenSet() const;
 
                     /**
-                     * 获取返回参数 success成功 failed 失败
-                     * @return ReturnMsg 返回参数 success成功 failed 失败
+                     * 获取<p>返回参数 success成功 failed 失败</p>
+                     * @return ReturnMsg <p>返回参数 success成功 failed 失败</p>
                      * 
                      */
                     std::string GetReturnMsg() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool ReturnMsgHasBeenSet() const;
 
                     /**
-                     * 获取开关总条数
-                     * @return Total 开关总条数
+                     * 获取<p>开关总条数</p>
+                     * @return Total <p>开关总条数</p>
                      * 
                      */
                     int64_t GetTotal() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * nat防火墙vpc dns 信息数组
+                     * <p>nat防火墙vpc dns 信息数组</p>
                      */
                     std::vector<VpcDnsInfo> m_vpcDnsSwitchLst;
                     bool m_vpcDnsSwitchLstHasBeenSet;
 
                     /**
-                     * 返回参数 success成功 failed 失败
+                     * <p>返回参数 success成功 failed 失败</p>
                      */
                     std::string m_returnMsg;
                     bool m_returnMsgHasBeenSet;
 
                     /**
-                     * 开关总条数
+                     * <p>开关总条数</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;

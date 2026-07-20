@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * FieldMask
+                * 字段掩码
                 */
                 class FieldMask : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>参数名称</p><p>参数格式：需要获取的指定字段路径</p>
-                     * @return Paths <p>参数名称</p><p>参数格式：需要获取的指定字段路径</p>
+                     * 获取字段路径列表
+                     * @return Paths 字段路径列表
                      * 
                      */
                     std::vector<std::string> GetPaths() const;
 
                     /**
-                     * 设置<p>参数名称</p><p>参数格式：需要获取的指定字段路径</p>
-                     * @param _paths <p>参数名称</p><p>参数格式：需要获取的指定字段路径</p>
+                     * 设置字段路径列表
+                     * @param _paths 字段路径列表
                      * 
                      */
                     void SetPaths(const std::vector<std::string>& _paths);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>参数名称</p><p>参数格式：需要获取的指定字段路径</p>
+                     * 字段路径列表
                      */
                     std::vector<std::string> m_paths;
                     bool m_pathsHasBeenSet;

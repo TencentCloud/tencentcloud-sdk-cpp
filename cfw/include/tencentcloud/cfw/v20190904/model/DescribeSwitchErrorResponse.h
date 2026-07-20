@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取错误信息列表
+                     * 获取<p>错误信息列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 错误信息列表
+                     * @return Data <p>错误信息列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 错误信息列表
+                     * <p>错误信息列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SwitchError> m_data;

@@ -26,7 +26,8 @@ CreateConfigGroupVersionRequest::CreateConfigGroupVersionRequest() :
     m_zoneIdHasBeenSet(false),
     m_groupIdHasBeenSet(false),
     m_contentHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_sourceVersionHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string CreateConfigGroupVersionRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sourceVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void CreateConfigGroupVersionRequest::SetDescription(const string& _description)
 bool CreateConfigGroupVersionRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string CreateConfigGroupVersionRequest::GetSourceVersion() const
+{
+    return m_sourceVersion;
+}
+
+void CreateConfigGroupVersionRequest::SetSourceVersion(const string& _sourceVersion)
+{
+    m_sourceVersion = _sourceVersion;
+    m_sourceVersionHasBeenSet = true;
+}
+
+bool CreateConfigGroupVersionRequest::SourceVersionHasBeenSet() const
+{
+    return m_sourceVersionHasBeenSet;
 }
 
 

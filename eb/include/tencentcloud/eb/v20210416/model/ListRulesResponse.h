@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取事件规则信息
-                     * @return Rules 事件规则信息
+                     * 获取<p>事件规则信息</p>
+                     * @return Rules <p>事件规则信息</p>
                      * 
                      */
                     std::vector<Rule> GetRules() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool RulesHasBeenSet() const;
 
                     /**
-                     * 获取事件规则总数
-                     * @return TotalCount 事件规则总数
+                     * 获取<p>事件规则总数</p>
+                     * @return TotalCount <p>事件规则总数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 事件规则信息
+                     * <p>事件规则信息</p>
                      */
                     std::vector<Rule> m_rules;
                     bool m_rulesHasBeenSet;
 
                     /**
-                     * 事件规则总数
+                     * <p>事件规则总数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

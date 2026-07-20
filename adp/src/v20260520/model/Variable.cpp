@@ -27,7 +27,9 @@ Variable::Variable() :
     m_moduleTypeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_variableIdHasBeenSet(false)
+    m_variableIdHasBeenSet(false),
+    m_enableEndpointsHasBeenSet(false),
+    m_endpointListHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,29 @@ CoreInternalOutcome Variable::Deserialize(const rapidjson::Value &value)
         m_variableIdHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableEndpoints") && !value["EnableEndpoints"].IsNull())
+    {
+        if (!value["EnableEndpoints"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Variable.EnableEndpoints` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableEndpoints = value["EnableEndpoints"].GetBool();
+        m_enableEndpointsHasBeenSet = true;
+    }
+
+    if (value.HasMember("EndpointList") && !value["EndpointList"].IsNull())
+    {
+        if (!value["EndpointList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Variable.EndpointList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["EndpointList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_endpointList.push_back((*itr).GetString());
+        }
+        m_endpointListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +192,27 @@ void Variable::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "VariableId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_variableId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableEndpointsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableEndpoints";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableEndpoints, allocator);
+    }
+
+    if (m_endpointListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndpointList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_endpointList.begin(); itr != m_endpointList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -282,5 +328,37 @@ void Variable::SetVariableId(const string& _variableId)
 bool Variable::VariableIdHasBeenSet() const
 {
     return m_variableIdHasBeenSet;
+}
+
+bool Variable::GetEnableEndpoints() const
+{
+    return m_enableEndpoints;
+}
+
+void Variable::SetEnableEndpoints(const bool& _enableEndpoints)
+{
+    m_enableEndpoints = _enableEndpoints;
+    m_enableEndpointsHasBeenSet = true;
+}
+
+bool Variable::EnableEndpointsHasBeenSet() const
+{
+    return m_enableEndpointsHasBeenSet;
+}
+
+vector<string> Variable::GetEndpointList() const
+{
+    return m_endpointList;
+}
+
+void Variable::SetEndpointList(const vector<string>& _endpointList)
+{
+    m_endpointList = _endpointList;
+    m_endpointListHasBeenSet = true;
+}
+
+bool Variable::EndpointListHasBeenSet() const
+{
+    return m_endpointListHasBeenSet;
 }
 

@@ -44,14 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回状态
-0 请求成功
-2 请求失败
-3 请求失败-频率限制
-                     * @return Status 返回状态
-0 请求成功
-2 请求失败
-3 请求失败-频率限制
+                     * 获取<p>返回状态<br>0 请求成功<br>2 请求失败<br>3 请求失败-频率限制</p>
+                     * @return Status <p>返回状态<br>0 请求成功<br>2 请求失败<br>3 请求失败-频率限制</p>
                      * 
                      */
                     int64_t GetStatus() const;
@@ -64,10 +58,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取success 成功
-其他失败
-                     * @return ReturnMsg success 成功
-其他失败
+                     * 获取<p>success 成功<br>其他失败</p>
+                     * @return ReturnMsg <p>success 成功<br>其他失败</p>
                      * 
                      */
                     std::string GetReturnMsg() const;
@@ -80,10 +72,8 @@ namespace TencentCloud
                     bool ReturnMsgHasBeenSet() const;
 
                     /**
-                     * 获取0 成功
-非0 失败
-                     * @return ReturnCode 0 成功
-非0 失败
+                     * 获取<p>0 成功<br>非0 失败</p>
+                     * @return ReturnCode <p>0 成功<br>非0 失败</p>
                      * 
                      */
                     uint64_t GetReturnCode() const;
@@ -98,24 +88,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回状态
-0 请求成功
-2 请求失败
-3 请求失败-频率限制
+                     * <p>返回状态<br>0 请求成功<br>2 请求失败<br>3 请求失败-频率限制</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * success 成功
-其他失败
+                     * <p>success 成功<br>其他失败</p>
                      */
                     std::string m_returnMsg;
                     bool m_returnMsgHasBeenSet;
 
                     /**
-                     * 0 成功
-非0 失败
+                     * <p>0 成功<br>非0 失败</p>
                      */
                     uint64_t m_returnCode;
                     bool m_returnCodeHasBeenSet;

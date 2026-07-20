@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取0：cfw新增模式，1：cfw接入模式。
-                     * @return Mode 0：cfw新增模式，1：cfw接入模式。
+                     * 获取<p>0：cfw新增模式，1：cfw接入模式。</p>
+                     * @return Mode <p>0：cfw新增模式，1：cfw接入模式。</p>
                      * 
                      */
                     uint64_t GetMode() const;
 
                     /**
-                     * 设置0：cfw新增模式，1：cfw接入模式。
-                     * @param _mode 0：cfw新增模式，1：cfw接入模式。
+                     * 设置<p>0：cfw新增模式，1：cfw接入模式。</p>
+                     * @param _mode <p>0：cfw新增模式，1：cfw接入模式。</p>
                      * 
                      */
                     void SetMode(const uint64_t& _mode);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取防火墙实例id，该字段必须传递。
-                     * @return CfwInstance 防火墙实例id，该字段必须传递。
+                     * 获取<p>防火墙实例id，该字段必须传递。</p>
+                     * @return CfwInstance <p>防火墙实例id，该字段必须传递。</p>
                      * 
                      */
                     std::string GetCfwInstance() const;
 
                     /**
-                     * 设置防火墙实例id，该字段必须传递。
-                     * @param _cfwInstance 防火墙实例id，该字段必须传递。
+                     * 设置<p>防火墙实例id，该字段必须传递。</p>
+                     * @param _cfwInstance <p>防火墙实例id，该字段必须传递。</p>
                      * 
                      */
                     void SetCfwInstance(const std::string& _cfwInstance);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool CfwInstanceHasBeenSet() const;
 
                     /**
-                     * 获取添加或删除操作的Dnat规则列表。
-                     * @return DnatRules 添加或删除操作的Dnat规则列表。
+                     * 获取<p>添加或删除操作的Dnat规则列表。</p>
+                     * @return DnatRules <p>添加或删除操作的Dnat规则列表。</p>
                      * 
                      */
                     std::vector<CfwNatDnatRule> GetDnatRules() const;
 
                     /**
-                     * 设置添加或删除操作的Dnat规则列表。
-                     * @param _dnatRules 添加或删除操作的Dnat规则列表。
+                     * 设置<p>添加或删除操作的Dnat规则列表。</p>
+                     * @param _dnatRules <p>添加或删除操作的Dnat规则列表。</p>
                      * 
                      */
                     void SetDnatRules(const std::vector<CfwNatDnatRule>& _dnatRules);
@@ -109,19 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 0：cfw新增模式，1：cfw接入模式。
+                     * <p>0：cfw新增模式，1：cfw接入模式。</p>
                      */
                     uint64_t m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 防火墙实例id，该字段必须传递。
+                     * <p>防火墙实例id，该字段必须传递。</p>
                      */
                     std::string m_cfwInstance;
                     bool m_cfwInstanceHasBeenSet;
 
                     /**
-                     * 添加或删除操作的Dnat规则列表。
+                     * <p>添加或删除操作的Dnat规则列表。</p>
                      */
                     std::vector<CfwNatDnatRule> m_dnatRules;
                     bool m_dnatRulesHasBeenSet;

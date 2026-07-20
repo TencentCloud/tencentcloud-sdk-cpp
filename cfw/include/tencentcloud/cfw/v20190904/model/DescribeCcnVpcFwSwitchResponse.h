@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取互联对配置
+                     * 获取<p>互联对配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InterconnectPairs 互联对配置
+                     * @return InterconnectPairs <p>互联对配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 互联对配置
+                     * <p>互联对配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InterconnectPair> m_interconnectPairs;

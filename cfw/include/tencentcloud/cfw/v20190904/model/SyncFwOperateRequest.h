@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取同步操作类型：Route，同步防火墙路由
-                     * @return SyncType 同步操作类型：Route，同步防火墙路由
+                     * 获取<p>同步操作类型：Route，同步防火墙路由</p>
+                     * @return SyncType <p>同步操作类型：Route，同步防火墙路由</p>
                      * 
                      */
                     std::string GetSyncType() const;
 
                     /**
-                     * 设置同步操作类型：Route，同步防火墙路由
-                     * @param _syncType 同步操作类型：Route，同步防火墙路由
+                     * 设置<p>同步操作类型：Route，同步防火墙路由</p>
+                     * @param _syncType <p>同步操作类型：Route，同步防火墙路由</p>
                      * 
                      */
                     void SetSyncType(const std::string& _syncType);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SyncTypeHasBeenSet() const;
 
                     /**
-                     * 获取防火墙类型；nat,nat防火墙;ew,vpc间防火墙
-                     * @return FwType 防火墙类型；nat,nat防火墙;ew,vpc间防火墙
+                     * 获取<p>防火墙类型；nat,nat防火墙;ew,vpc间防火墙</p>
+                     * @return FwType <p>防火墙类型；nat,nat防火墙;ew,vpc间防火墙</p>
                      * 
                      */
                     std::string GetFwType() const;
 
                     /**
-                     * 设置防火墙类型；nat,nat防火墙;ew,vpc间防火墙
-                     * @param _fwType 防火墙类型；nat,nat防火墙;ew,vpc间防火墙
+                     * 设置<p>防火墙类型；nat,nat防火墙;ew,vpc间防火墙</p>
+                     * @param _fwType <p>防火墙类型；nat,nat防火墙;ew,vpc间防火墙</p>
                      * 
                      */
                     void SetFwType(const std::string& _fwType);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 同步操作类型：Route，同步防火墙路由
+                     * <p>同步操作类型：Route，同步防火墙路由</p>
                      */
                     std::string m_syncType;
                     bool m_syncTypeHasBeenSet;
 
                     /**
-                     * 防火墙类型；nat,nat防火墙;ew,vpc间防火墙
+                     * <p>防火墙类型；nat,nat防火墙;ew,vpc间防火墙</p>
                      */
                     std::string m_fwType;
                     bool m_fwTypeHasBeenSet;

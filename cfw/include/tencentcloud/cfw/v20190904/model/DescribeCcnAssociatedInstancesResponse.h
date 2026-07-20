@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例总数
-                     * @return Total 实例总数
+                     * 获取<p>实例总数</p>
+                     * @return Total <p>实例总数</p>
                      * 
                      */
                     uint64_t GetTotal() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取云联网关联的实例信息
-                     * @return CcnAssociatedInstances 云联网关联的实例信息
+                     * 获取<p>云联网关联的实例信息</p>
+                     * @return CcnAssociatedInstances <p>云联网关联的实例信息</p>
                      * 
                      */
                     std::vector<CcnAssociatedInstance> GetCcnAssociatedInstances() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例总数
+                     * <p>实例总数</p>
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 云联网关联的实例信息
+                     * <p>云联网关联的实例信息</p>
                      */
                     std::vector<CcnAssociatedInstance> m_ccnAssociatedInstances;
                     bool m_ccnAssociatedInstancesHasBeenSet;

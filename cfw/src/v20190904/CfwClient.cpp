@@ -540,6 +540,56 @@ CfwClient::CreateAlertCenterRuleOutcomeCallable CfwClient::CreateAlertCenterRule
     return prom->get_future();
 }
 
+CfwClient::CreateAlertCenterRuleAsyncOutcome CfwClient::CreateAlertCenterRuleAsync(const CreateAlertCenterRuleAsyncRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAlertCenterRuleAsync");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAlertCenterRuleAsyncResponse rsp = CreateAlertCenterRuleAsyncResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAlertCenterRuleAsyncOutcome(rsp);
+        else
+            return CreateAlertCenterRuleAsyncOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAlertCenterRuleAsyncOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::CreateAlertCenterRuleAsyncAsync(const CreateAlertCenterRuleAsyncRequest& request, const CreateAlertCenterRuleAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAlertCenterRuleAsyncRequest&;
+    using Resp = CreateAlertCenterRuleAsyncResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAlertCenterRuleAsync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::CreateAlertCenterRuleAsyncOutcomeCallable CfwClient::CreateAlertCenterRuleAsyncCallable(const CreateAlertCenterRuleAsyncRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAlertCenterRuleAsyncOutcome>>();
+    CreateAlertCenterRuleAsyncAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const CreateAlertCenterRuleAsyncRequest&,
+        CreateAlertCenterRuleAsyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfwClient::CreateBlockIgnoreRuleListOutcome CfwClient::CreateBlockIgnoreRuleList(const CreateBlockIgnoreRuleListRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBlockIgnoreRuleList");
@@ -5932,6 +5982,56 @@ CfwClient::ModifyIpsModeSwitchOutcomeCallable CfwClient::ModifyIpsModeSwitchCall
         const CfwClient*,
         const ModifyIpsModeSwitchRequest&,
         ModifyIpsModeSwitchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::ModifyIsolateTableOutcome CfwClient::ModifyIsolateTable(const ModifyIsolateTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyIsolateTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyIsolateTableResponse rsp = ModifyIsolateTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyIsolateTableOutcome(rsp);
+        else
+            return ModifyIsolateTableOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyIsolateTableOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::ModifyIsolateTableAsync(const ModifyIsolateTableRequest& request, const ModifyIsolateTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyIsolateTableRequest&;
+    using Resp = ModifyIsolateTableResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyIsolateTable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::ModifyIsolateTableOutcomeCallable CfwClient::ModifyIsolateTableCallable(const ModifyIsolateTableRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyIsolateTableOutcome>>();
+    ModifyIsolateTableAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const ModifyIsolateTableRequest&,
+        ModifyIsolateTableOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

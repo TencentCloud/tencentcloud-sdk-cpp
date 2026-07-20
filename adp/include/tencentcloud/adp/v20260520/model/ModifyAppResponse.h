@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取app_id
-                     * @return AppId app_id
+                     * 获取<p>app_id</p>
+                     * @return AppId <p>app_id</p>
                      * 
                      */
                     std::string GetAppId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取更新时间 (Unix时间戳,秒级)
-                     * @return UpdateTime 更新时间 (Unix时间戳,秒级)
+                     * 获取<p>更新时间 (Unix时间戳,秒级)</p>
+                     * @return UpdateTime <p>更新时间 (Unix时间戳,秒级)</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * app_id
+                     * <p>app_id</p>
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 更新时间 (Unix时间戳,秒级)
+                     * <p>更新时间 (Unix时间戳,秒级)</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ip 开关列表
-                     * @return Data ip 开关列表
+                     * 获取<p>ip 开关列表</p>
+                     * @return Data <p>ip 开关列表</p>
                      * 
                      */
                     std::vector<EdgeIpInfo> GetData() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取ip 开关列表个数
-                     * @return Total ip 开关列表个数
+                     * 获取<p>ip 开关列表个数</p>
+                     * @return Total <p>ip 开关列表个数</p>
                      * 
                      */
                     int64_t GetTotal() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取地域列表
-                     * @return RegionLst 地域列表
+                     * 获取<p>地域列表</p>
+                     * @return RegionLst <p>地域列表</p>
                      * 
                      */
                     std::vector<std::string> GetRegionLst() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool RegionLstHasBeenSet() const;
 
                     /**
-                     * 获取实例类型列表
-                     * @return InstanceTypeLst 实例类型列表
+                     * 获取<p>实例类型列表</p>
+                     * @return InstanceTypeLst <p>实例类型列表</p>
                      * 
                      */
                     std::vector<std::string> GetInstanceTypeLst() const;
@@ -101,8 +101,8 @@ namespace TencentCloud
                     bool InstanceTypeLstHasBeenSet() const;
 
                     /**
-                     * 获取串行模式开关个数
-                     * @return SerilCount 串行模式开关个数
+                     * 获取<p>串行模式开关个数</p>
+                     * @return SerilCount <p>串行模式开关个数</p>
                      * 
                      */
                     int64_t GetSerilCount() const;
@@ -117,31 +117,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ip 开关列表
+                     * <p>ip 开关列表</p>
                      */
                     std::vector<EdgeIpInfo> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * ip 开关列表个数
+                     * <p>ip 开关列表个数</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 地域列表
+                     * <p>地域列表</p>
                      */
                     std::vector<std::string> m_regionLst;
                     bool m_regionLstHasBeenSet;
 
                     /**
-                     * 实例类型列表
+                     * <p>实例类型列表</p>
                      */
                     std::vector<std::string> m_instanceTypeLst;
                     bool m_instanceTypeLstHasBeenSet;
 
                     /**
-                     * 串行模式开关个数
+                     * <p>串行模式开关个数</p>
                      */
                     int64_t m_serilCount;
                     bool m_serilCountHasBeenSet;

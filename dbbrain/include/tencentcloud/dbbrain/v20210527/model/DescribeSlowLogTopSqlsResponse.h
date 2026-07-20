@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合条件的记录总数。
-                     * @return TotalCount 符合条件的记录总数。
+                     * 获取<p>符合条件的记录总数。</p>
+                     * @return TotalCount <p>符合条件的记录总数。</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取慢日志 top sql 列表
-                     * @return Rows 慢日志 top sql 列表
+                     * 获取<p>慢日志 top sql 列表</p>
+                     * @return Rows <p>慢日志 top sql 列表</p>
                      * 
                      */
                     std::vector<SlowLogTopSqlItem> GetRows() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合条件的记录总数。
+                     * <p>符合条件的记录总数。</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 慢日志 top sql 列表
+                     * <p>慢日志 top sql 列表</p>
                      */
                     std::vector<SlowLogTopSqlItem> m_rows;
                     bool m_rowsHasBeenSet;

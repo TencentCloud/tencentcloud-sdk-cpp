@@ -26,7 +26,8 @@ using namespace std;
 DescribeAssetSyncResponse::DescribeAssetSyncResponse() :
     m_statusHasBeenSet(false),
     m_returnMsgHasBeenSet(false),
-    m_returnCodeHasBeenSet(false)
+    m_returnCodeHasBeenSet(false),
+    m_cVMCountHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome DescribeAssetSyncResponse::Deserialize(const string &payload
         m_returnCodeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CVMCount") && !rsp["CVMCount"].IsNull())
+    {
+        if (!rsp["CVMCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CVMCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cVMCount = rsp["CVMCount"].GetInt64();
+        m_cVMCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribeAssetSyncResponse::ToJsonString() const
         string key = "ReturnCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_returnCode, allocator);
+    }
+
+    if (m_cVMCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CVMCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cVMCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +187,16 @@ uint64_t DescribeAssetSyncResponse::GetReturnCode() const
 bool DescribeAssetSyncResponse::ReturnCodeHasBeenSet() const
 {
     return m_returnCodeHasBeenSet;
+}
+
+int64_t DescribeAssetSyncResponse::GetCVMCount() const
+{
+    return m_cVMCount;
+}
+
+bool DescribeAssetSyncResponse::CVMCountHasBeenSet() const
+{
+    return m_cVMCountHasBeenSet;
 }
 
 

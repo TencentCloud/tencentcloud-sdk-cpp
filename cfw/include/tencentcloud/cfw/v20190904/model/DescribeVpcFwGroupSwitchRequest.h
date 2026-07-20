@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取每页条数
-                     * @return Limit 每页条数
+                     * 获取<p>每页条数</p>
+                     * @return Limit <p>每页条数</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页条数
-                     * @param _limit 每页条数
+                     * 设置<p>每页条数</p>
+                     * @param _limit <p>每页条数</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移值
-                     * @return Offset 偏移值
+                     * 获取<p>偏移值</p>
+                     * @return Offset <p>偏移值</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移值
-                     * @param _offset 偏移值
+                     * 设置<p>偏移值</p>
+                     * @param _offset <p>偏移值</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件组合
-                     * @return Filters 过滤条件组合
+                     * 获取<p>过滤条件组合</p>
+                     * @return Filters <p>过滤条件组合</p>
                      * 
                      */
                     std::vector<CommonFilter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件组合
-                     * @param _filters 过滤条件组合
+                     * 设置<p>过滤条件组合</p>
+                     * @param _filters <p>过滤条件组合</p>
                      * 
                      */
                     void SetFilters(const std::vector<CommonFilter>& _filters);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取检索的起始时间，可不传
-                     * @return StartTime 检索的起始时间，可不传
+                     * 获取<p>检索的起始时间，可不传</p>
+                     * @return StartTime <p>检索的起始时间，可不传</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置检索的起始时间，可不传
-                     * @param _startTime 检索的起始时间，可不传
+                     * 设置<p>检索的起始时间，可不传</p>
+                     * @param _startTime <p>检索的起始时间，可不传</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取检索的截止时间，可不传
-                     * @return EndTime 检索的截止时间，可不传
+                     * 获取<p>检索的截止时间，可不传</p>
+                     * @return EndTime <p>检索的截止时间，可不传</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置检索的截止时间，可不传
-                     * @param _endTime 检索的截止时间，可不传
+                     * 设置<p>检索的截止时间，可不传</p>
+                     * @param _endTime <p>检索的截止时间，可不传</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值
-                     * @return Order desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值
+                     * 获取<p>desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值</p>
+                     * @return Order <p>desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值</p>
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值
-                     * @param _order desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值
+                     * 设置<p>desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值</p>
+                     * @param _order <p>desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值</p>
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取排序所用到的字段
-                     * @return By 排序所用到的字段
+                     * 获取<p>排序所用到的字段</p>
+                     * @return By <p>排序所用到的字段</p>
                      * 
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置排序所用到的字段
-                     * @param _by 排序所用到的字段
+                     * 设置<p>排序所用到的字段</p>
+                     * @param _by <p>排序所用到的字段</p>
                      * 
                      */
                     void SetBy(const std::string& _by);
@@ -193,43 +193,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 每页条数
+                     * <p>每页条数</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移值
+                     * <p>偏移值</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 过滤条件组合
+                     * <p>过滤条件组合</p>
                      */
                     std::vector<CommonFilter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 检索的起始时间，可不传
+                     * <p>检索的起始时间，可不传</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 检索的截止时间，可不传
+                     * <p>检索的截止时间，可不传</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值
+                     * <p>desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值</p>
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 排序所用到的字段
+                     * <p>排序所用到的字段</p>
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;

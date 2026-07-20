@@ -201,6 +201,10 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeLakeFsInfoResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeLakeFsTaskResultRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeLakeFsTaskResultResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeMCPTaskRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeMCPTaskResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeMCPTaskResultRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeMCPTaskResultResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeNativeSparkSessionsRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeNativeSparkSessionsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeNetworkConnectionsRequest.h>
@@ -684,6 +688,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLakeFsTaskResultResponse> DescribeLakeFsTaskResultOutcome;
                 typedef std::future<DescribeLakeFsTaskResultOutcome> DescribeLakeFsTaskResultOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeLakeFsTaskResultRequest&, DescribeLakeFsTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLakeFsTaskResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMCPTaskResponse> DescribeMCPTaskOutcome;
+                typedef std::future<DescribeMCPTaskOutcome> DescribeMCPTaskOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeMCPTaskRequest&, DescribeMCPTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMCPTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMCPTaskResultResponse> DescribeMCPTaskResultOutcome;
+                typedef std::future<DescribeMCPTaskResultOutcome> DescribeMCPTaskResultOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeMCPTaskResultRequest&, DescribeMCPTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMCPTaskResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNativeSparkSessionsResponse> DescribeNativeSparkSessionsOutcome;
                 typedef std::future<DescribeNativeSparkSessionsOutcome> DescribeNativeSparkSessionsOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeNativeSparkSessionsRequest&, DescribeNativeSparkSessionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNativeSparkSessionsAsyncHandler;
@@ -1792,6 +1802,24 @@ namespace TencentCloud
                 DescribeLakeFsTaskResultOutcome DescribeLakeFsTaskResult(const Model::DescribeLakeFsTaskResultRequest &request);
                 void DescribeLakeFsTaskResultAsync(const Model::DescribeLakeFsTaskResultRequest& request, const DescribeLakeFsTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLakeFsTaskResultOutcomeCallable DescribeLakeFsTaskResultCallable(const Model::DescribeLakeFsTaskResultRequest& request);
+
+                /**
+                 *该接口（DescribeTasks）用于查询任务列表
+                 * @param req DescribeMCPTaskRequest
+                 * @return DescribeMCPTaskOutcome
+                 */
+                DescribeMCPTaskOutcome DescribeMCPTask(const Model::DescribeMCPTaskRequest &request);
+                void DescribeMCPTaskAsync(const Model::DescribeMCPTaskRequest& request, const DescribeMCPTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMCPTaskOutcomeCallable DescribeMCPTaskCallable(const Model::DescribeMCPTaskRequest& request);
+
+                /**
+                 *获取任务结果查询
+                 * @param req DescribeMCPTaskResultRequest
+                 * @return DescribeMCPTaskResultOutcome
+                 */
+                DescribeMCPTaskResultOutcome DescribeMCPTaskResult(const Model::DescribeMCPTaskResultRequest &request);
+                void DescribeMCPTaskResultAsync(const Model::DescribeMCPTaskResultRequest& request, const DescribeMCPTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMCPTaskResultOutcomeCallable DescribeMCPTaskResultCallable(const Model::DescribeMCPTaskResultRequest& request);
 
                 /**
                  *根据资源组获取spark session列表

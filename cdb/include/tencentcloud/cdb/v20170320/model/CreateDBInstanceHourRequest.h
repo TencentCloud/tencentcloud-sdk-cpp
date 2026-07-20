@@ -908,6 +908,27 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
+                     * 获取<p>是否对磁盘进行加密。仅云盘版实例支持该功能。 指定为 &quot;on&quot; 表示开启加密， 否则不加密。 购买只读实例、灾备实例、新克隆实例时该参数自动和主实例保持一致。</p>
+                     * @return DiskEncryption <p>是否对磁盘进行加密。仅云盘版实例支持该功能。 指定为 &quot;on&quot; 表示开启加密， 否则不加密。 购买只读实例、灾备实例、新克隆实例时该参数自动和主实例保持一致。</p>
+                     * 
+                     */
+                    std::string GetDiskEncryption() const;
+
+                    /**
+                     * 设置<p>是否对磁盘进行加密。仅云盘版实例支持该功能。 指定为 &quot;on&quot; 表示开启加密， 否则不加密。 购买只读实例、灾备实例、新克隆实例时该参数自动和主实例保持一致。</p>
+                     * @param _diskEncryption <p>是否对磁盘进行加密。仅云盘版实例支持该功能。 指定为 &quot;on&quot; 表示开启加密， 否则不加密。 购买只读实例、灾备实例、新克隆实例时该参数自动和主实例保持一致。</p>
+                     * 
+                     */
+                    void SetDiskEncryption(const std::string& _diskEncryption);
+
+                    /**
+                     * 判断参数 DiskEncryption 是否已赋值
+                     * @return DiskEncryption 是否已赋值
+                     * 
+                     */
+                    bool DiskEncryptionHasBeenSet() const;
+
+                    /**
                      * 获取<p>开启或关闭实例销毁保护。on-开启，off-关闭</p>
                      * @return DestroyProtect <p>开启或关闭实例销毁保护。on-开启，off-关闭</p>
                      * 
@@ -1196,6 +1217,12 @@ namespace TencentCloud
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
+
+                    /**
+                     * <p>是否对磁盘进行加密。仅云盘版实例支持该功能。 指定为 &quot;on&quot; 表示开启加密， 否则不加密。 购买只读实例、灾备实例、新克隆实例时该参数自动和主实例保持一致。</p>
+                     */
+                    std::string m_diskEncryption;
+                    bool m_diskEncryptionHasBeenSet;
 
                     /**
                      * <p>开启或关闭实例销毁保护。on-开启，off-关闭</p>

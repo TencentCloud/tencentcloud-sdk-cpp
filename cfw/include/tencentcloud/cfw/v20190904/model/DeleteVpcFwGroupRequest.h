@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取防火墙(组)Id
-                     * @return FwGroupId 防火墙(组)Id
+                     * 获取<p>防火墙(组)Id</p>
+                     * @return FwGroupId <p>防火墙(组)Id</p>
                      * 
                      */
                     std::string GetFwGroupId() const;
 
                     /**
-                     * 设置防火墙(组)Id
-                     * @param _fwGroupId 防火墙(组)Id
+                     * 设置<p>防火墙(组)Id</p>
+                     * @param _fwGroupId <p>防火墙(组)Id</p>
                      * 
                      */
                     void SetFwGroupId(const std::string& _fwGroupId);
@@ -64,23 +64,15 @@ namespace TencentCloud
                     bool FwGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取是否删除整个防火墙(组)
-0：不删除防火墙(组)，只删除单独实例
-1：删除整个防火墙(组)
-                     * @return DeleteFwGroup 是否删除整个防火墙(组)
-0：不删除防火墙(组)，只删除单独实例
-1：删除整个防火墙(组)
+                     * 获取<p>是否删除整个防火墙(组)<br>0：不删除防火墙(组)，只删除单独实例<br>1：删除整个防火墙(组)</p>
+                     * @return DeleteFwGroup <p>是否删除整个防火墙(组)<br>0：不删除防火墙(组)，只删除单独实例<br>1：删除整个防火墙(组)</p>
                      * 
                      */
                     int64_t GetDeleteFwGroup() const;
 
                     /**
-                     * 设置是否删除整个防火墙(组)
-0：不删除防火墙(组)，只删除单独实例
-1：删除整个防火墙(组)
-                     * @param _deleteFwGroup 是否删除整个防火墙(组)
-0：不删除防火墙(组)，只删除单独实例
-1：删除整个防火墙(组)
+                     * 设置<p>是否删除整个防火墙(组)<br>0：不删除防火墙(组)，只删除单独实例<br>1：删除整个防火墙(组)</p>
+                     * @param _deleteFwGroup <p>是否删除整个防火墙(组)<br>0：不删除防火墙(组)，只删除单独实例<br>1：删除整个防火墙(组)</p>
                      * 
                      */
                     void SetDeleteFwGroup(const int64_t& _deleteFwGroup);
@@ -93,15 +85,15 @@ namespace TencentCloud
                     bool DeleteFwGroupHasBeenSet() const;
 
                     /**
-                     * 获取待删除的防火墙实例数组
-                     * @return VpcFwInsList 待删除的防火墙实例数组
+                     * 获取<p>待删除的防火墙实例数组</p>
+                     * @return VpcFwInsList <p>待删除的防火墙实例数组</p>
                      * 
                      */
                     std::vector<std::string> GetVpcFwInsList() const;
 
                     /**
-                     * 设置待删除的防火墙实例数组
-                     * @param _vpcFwInsList 待删除的防火墙实例数组
+                     * 设置<p>待删除的防火墙实例数组</p>
+                     * @param _vpcFwInsList <p>待删除的防火墙实例数组</p>
                      * 
                      */
                     void SetVpcFwInsList(const std::vector<std::string>& _vpcFwInsList);
@@ -116,21 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 防火墙(组)Id
+                     * <p>防火墙(组)Id</p>
                      */
                     std::string m_fwGroupId;
                     bool m_fwGroupIdHasBeenSet;
 
                     /**
-                     * 是否删除整个防火墙(组)
-0：不删除防火墙(组)，只删除单独实例
-1：删除整个防火墙(组)
+                     * <p>是否删除整个防火墙(组)<br>0：不删除防火墙(组)，只删除单独实例<br>1：删除整个防火墙(组)</p>
                      */
                     int64_t m_deleteFwGroup;
                     bool m_deleteFwGroupHasBeenSet;
 
                     /**
-                     * 待删除的防火墙实例数组
+                     * <p>待删除的防火墙实例数组</p>
                      */
                     std::vector<std::string> m_vpcFwInsList;
                     bool m_vpcFwInsListHasBeenSet;

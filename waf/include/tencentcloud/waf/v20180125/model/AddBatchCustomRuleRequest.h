@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则名称
-                     * @return Name 规则名称
+                     * 获取<p>规则名称</p>
+                     * @return Name <p>规则名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置规则名称
-                     * @param _name 规则名称
+                     * 设置<p>规则名称</p>
+                     * @param _name <p>规则名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）
-                     * @return ExpireTime 如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）
+                     * 获取<p>如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）</p>
+                     * @return ExpireTime <p>如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）</p>
                      * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
-                     * 设置如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）
-                     * @param _expireTime 如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）
+                     * 设置<p>如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）</p>
+                     * @param _expireTime <p>如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）</p>
                      * 
                      */
                     void SetExpireTime(const int64_t& _expireTime);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取优先级
-                     * @return SortId 优先级
+                     * 获取<p>优先级</p>
+                     * @return SortId <p>优先级</p>
                      * 
                      */
                     int64_t GetSortId() const;
 
                     /**
-                     * 设置优先级
-                     * @param _sortId 优先级
+                     * 设置<p>优先级</p>
+                     * @param _sortId <p>优先级</p>
                      * 
                      */
                     void SetSortId(const int64_t& _sortId);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool SortIdHasBeenSet() const;
 
                     /**
-                     * 获取动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向
-                     * @return ActionType 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向
+                     * 获取<p>动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向</p>
+                     * @return ActionType <p>动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向</p>
                      * 
                      */
                     int64_t GetActionType() const;
 
                     /**
-                     * 设置动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向
-                     * @param _actionType 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向
+                     * 设置<p>动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向</p>
+                     * @param _actionType <p>动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向</p>
                      * 
                      */
                     void SetActionType(const int64_t& _actionType);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool ActionTypeHasBeenSet() const;
 
                     /**
-                     * 获取重定向地址
-                     * @return Redirect 重定向地址
+                     * 获取<p>重定向地址</p>
+                     * @return Redirect <p>重定向地址</p>
                      * 
                      */
                     std::string GetRedirect() const;
 
                     /**
-                     * 设置重定向地址
-                     * @param _redirect 重定向地址
+                     * 设置<p>重定向地址</p>
+                     * @param _redirect <p>重定向地址</p>
                      * 
                      */
                     void SetRedirect(const std::string& _redirect);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool RedirectHasBeenSet() const;
 
                     /**
-                     * 获取加白模块
-                     * @return Bypass 加白模块
+                     * 获取<p>加白模块</p>
+                     * @return Bypass <p>加白模块</p>
                      * 
                      */
                     std::string GetBypass() const;
 
                     /**
-                     * 设置加白模块
-                     * @param _bypass 加白模块
+                     * 设置<p>加白模块</p>
+                     * @param _bypass <p>加白模块</p>
                      * 
                      */
                     void SetBypass(const std::string& _bypass);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool BypassHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Remark 备注
+                     * 获取<p>备注</p>
+                     * @return Remark <p>备注</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注
-                     * @param _remark 备注
+                     * 设置<p>备注</p>
+                     * @param _remark <p>备注</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取事件Id
-                     * @return EventId 事件Id
+                     * 获取<p>事件Id</p>
+                     * @return EventId <p>事件Id</p>
                      * 
                      */
                     std::string GetEventId() const;
 
                     /**
-                     * 设置事件Id
-                     * @param _eventId 事件Id
+                     * 设置<p>事件Id</p>
+                     * @param _eventId <p>事件Id</p>
                      * 
                      */
                     void SetEventId(const std::string& _eventId);
@@ -213,15 +213,15 @@ namespace TencentCloud
                     bool EventIdHasBeenSet() const;
 
                     /**
-                     * 获取域名列表
-                     * @return Domains 域名列表
+                     * 获取<p>域名列表</p>
+                     * @return Domains <p>域名列表</p>
                      * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
-                     * 设置域名列表
-                     * @param _domains 域名列表
+                     * 设置<p>域名列表</p>
+                     * @param _domains <p>域名列表</p>
                      * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
@@ -234,15 +234,15 @@ namespace TencentCloud
                     bool DomainsHasBeenSet() const;
 
                     /**
-                     * 获取策略详情列表
-                     * @return Strategies 策略详情列表
+                     * 获取<p>策略详情列表</p>
+                     * @return Strategies <p>策略详情列表</p>
                      * 
                      */
                     std::vector<Strategy> GetStrategies() const;
 
                     /**
-                     * 设置策略详情列表
-                     * @param _strategies 策略详情列表
+                     * 设置<p>策略详情列表</p>
+                     * @param _strategies <p>策略详情列表</p>
                      * 
                      */
                     void SetStrategies(const std::vector<Strategy>& _strategies);
@@ -255,15 +255,15 @@ namespace TencentCloud
                     bool StrategiesHasBeenSet() const;
 
                     /**
-                     * 获取规则执行的方式，TimedJob为定时执行，CronJob为周期执行
-                     * @return JobType 规则执行的方式，TimedJob为定时执行，CronJob为周期执行
+                     * 获取<p>规则执行的方式，TimedJob为定时执行，CronJob为周期执行</p>
+                     * @return JobType <p>规则执行的方式，TimedJob为定时执行，CronJob为周期执行</p>
                      * 
                      */
                     std::string GetJobType() const;
 
                     /**
-                     * 设置规则执行的方式，TimedJob为定时执行，CronJob为周期执行
-                     * @param _jobType 规则执行的方式，TimedJob为定时执行，CronJob为周期执行
+                     * 设置<p>规则执行的方式，TimedJob为定时执行，CronJob为周期执行</p>
+                     * @param _jobType <p>规则执行的方式，TimedJob为定时执行，CronJob为周期执行</p>
                      * 
                      */
                     void SetJobType(const std::string& _jobType);
@@ -276,15 +276,15 @@ namespace TencentCloud
                     bool JobTypeHasBeenSet() const;
 
                     /**
-                     * 获取定时任务配置
-                     * @return JobDateTime 定时任务配置
+                     * 获取<p>定时任务配置</p>
+                     * @return JobDateTime <p>定时任务配置</p>
                      * 
                      */
                     JobDateTime GetJobDateTime() const;
 
                     /**
-                     * 设置定时任务配置
-                     * @param _jobDateTime 定时任务配置
+                     * 设置<p>定时任务配置</p>
+                     * @param _jobDateTime <p>定时任务配置</p>
                      * 
                      */
                     void SetJobDateTime(const JobDateTime& _jobDateTime);
@@ -297,15 +297,15 @@ namespace TencentCloud
                     bool JobDateTimeHasBeenSet() const;
 
                     /**
-                     * 获取匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
-                     * @return LogicalOp 匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+                     * 获取<p>匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系</p>
+                     * @return LogicalOp <p>匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系</p>
                      * 
                      */
                     std::string GetLogicalOp() const;
 
                     /**
-                     * 设置匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
-                     * @param _logicalOp 匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+                     * 设置<p>匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系</p>
+                     * @param _logicalOp <p>匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系</p>
                      * 
                      */
                     void SetLogicalOp(const std::string& _logicalOp);
@@ -318,15 +318,15 @@ namespace TencentCloud
                     bool LogicalOpHasBeenSet() const;
 
                     /**
-                     * 获取页面ID
-                     * @return PageId 页面ID
+                     * 获取<p>页面ID</p>
+                     * @return PageId <p>页面ID</p>
                      * 
                      */
                     std::string GetPageId() const;
 
                     /**
-                     * 设置页面ID
-                     * @param _pageId 页面ID
+                     * 设置<p>页面ID</p>
+                     * @param _pageId <p>页面ID</p>
                      * 
                      */
                     void SetPageId(const std::string& _pageId);
@@ -339,15 +339,15 @@ namespace TencentCloud
                     bool PageIdHasBeenSet() const;
 
                     /**
-                     * 获取动作灰度比例
-                     * @return ActionRatio 动作灰度比例
+                     * 获取<p>动作灰度比例</p>
+                     * @return ActionRatio <p>动作灰度比例</p>
                      * 
                      */
                     uint64_t GetActionRatio() const;
 
                     /**
-                     * 设置动作灰度比例
-                     * @param _actionRatio 动作灰度比例
+                     * 设置<p>动作灰度比例</p>
+                     * @param _actionRatio <p>动作灰度比例</p>
                      * 
                      */
                     void SetActionRatio(const uint64_t& _actionRatio);
@@ -359,97 +359,124 @@ namespace TencentCloud
                      */
                     bool ActionRatioHasBeenSet() const;
 
+                    /**
+                     * 获取<p>绑定的防护组ID</p>
+                     * @return GroupIds <p>绑定的防护组ID</p>
+                     * 
+                     */
+                    std::vector<uint64_t> GetGroupIds() const;
+
+                    /**
+                     * 设置<p>绑定的防护组ID</p>
+                     * @param _groupIds <p>绑定的防护组ID</p>
+                     * 
+                     */
+                    void SetGroupIds(const std::vector<uint64_t>& _groupIds);
+
+                    /**
+                     * 判断参数 GroupIds 是否已赋值
+                     * @return GroupIds 是否已赋值
+                     * 
+                     */
+                    bool GroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 规则名称
+                     * <p>规则名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）
+                     * <p>如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）</p>
                      */
                     int64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 优先级
+                     * <p>优先级</p>
                      */
                     int64_t m_sortId;
                     bool m_sortIdHasBeenSet;
 
                     /**
-                     * 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向
+                     * <p>动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向</p>
                      */
                     int64_t m_actionType;
                     bool m_actionTypeHasBeenSet;
 
                     /**
-                     * 重定向地址
+                     * <p>重定向地址</p>
                      */
                     std::string m_redirect;
                     bool m_redirectHasBeenSet;
 
                     /**
-                     * 加白模块
+                     * <p>加白模块</p>
                      */
                     std::string m_bypass;
                     bool m_bypassHasBeenSet;
 
                     /**
-                     * 备注
+                     * <p>备注</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 事件Id
+                     * <p>事件Id</p>
                      */
                     std::string m_eventId;
                     bool m_eventIdHasBeenSet;
 
                     /**
-                     * 域名列表
+                     * <p>域名列表</p>
                      */
                     std::vector<std::string> m_domains;
                     bool m_domainsHasBeenSet;
 
                     /**
-                     * 策略详情列表
+                     * <p>策略详情列表</p>
                      */
                     std::vector<Strategy> m_strategies;
                     bool m_strategiesHasBeenSet;
 
                     /**
-                     * 规则执行的方式，TimedJob为定时执行，CronJob为周期执行
+                     * <p>规则执行的方式，TimedJob为定时执行，CronJob为周期执行</p>
                      */
                     std::string m_jobType;
                     bool m_jobTypeHasBeenSet;
 
                     /**
-                     * 定时任务配置
+                     * <p>定时任务配置</p>
                      */
                     JobDateTime m_jobDateTime;
                     bool m_jobDateTimeHasBeenSet;
 
                     /**
-                     * 匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+                     * <p>匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系</p>
                      */
                     std::string m_logicalOp;
                     bool m_logicalOpHasBeenSet;
 
                     /**
-                     * 页面ID
+                     * <p>页面ID</p>
                      */
                     std::string m_pageId;
                     bool m_pageIdHasBeenSet;
 
                     /**
-                     * 动作灰度比例
+                     * <p>动作灰度比例</p>
                      */
                     uint64_t m_actionRatio;
                     bool m_actionRatioHasBeenSet;
+
+                    /**
+                     * <p>绑定的防护组ID</p>
+                     */
+                    std::vector<uint64_t> m_groupIds;
+                    bool m_groupIdsHasBeenSet;
 
                 };
             }

@@ -51,7 +51,8 @@ ClbObject::ClbObject() :
     m_memberNickNameHasBeenSet(false),
     m_tagInfosHasBeenSet(false),
     m_preciseDomainDetailsHasBeenSet(false),
-    m_wafAccessStatusHasBeenSet(false)
+    m_wafAccessStatusHasBeenSet(false),
+    m_noteHasBeenSet(false)
 {
 }
 
@@ -402,6 +403,16 @@ CoreInternalOutcome ClbObject::Deserialize(const rapidjson::Value &value)
         m_wafAccessStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("Note") && !value["Note"].IsNull())
+    {
+        if (!value["Note"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClbObject.Note` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_note = string(value["Note"].GetString());
+        m_noteHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -689,6 +700,14 @@ void ClbObject::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "WafAccessStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_wafAccessStatus, allocator);
+    }
+
+    if (m_noteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Note";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_note.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1188,5 +1207,21 @@ void ClbObject::SetWafAccessStatus(const int64_t& _wafAccessStatus)
 bool ClbObject::WafAccessStatusHasBeenSet() const
 {
     return m_wafAccessStatusHasBeenSet;
+}
+
+string ClbObject::GetNote() const
+{
+    return m_note;
+}
+
+void ClbObject::SetNote(const string& _note)
+{
+    m_note = _note;
+    m_noteHasBeenSet = true;
+}
+
+bool ClbObject::NoteHasBeenSet() const
+{
+    return m_noteHasBeenSet;
 }
 

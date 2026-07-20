@@ -21,6 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/adp/v20260520/model/AppShareAccessControl.h>
+#include <tencentcloud/adp/v20260520/model/CorpShareConfig.h>
 
 
 namespace TencentCloud
@@ -43,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
-                     * @return AppId 应用ID
+                     * 获取<p>应用ID</p>
+                     * @return AppId <p>应用ID</p>
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _appId 应用ID
+                     * 设置<p>应用ID</p>
+                     * @param _appId <p>应用ID</p>
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -64,15 +66,36 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取渠道ID列表
-                     * @return ChannelIdList 渠道ID列表
+                     * 获取<p>应用分享访问控制配置</p>
+                     * @return AppShareAccessControl <p>应用分享访问控制配置</p>
+                     * 
+                     */
+                    AppShareAccessControl GetAppShareAccessControl() const;
+
+                    /**
+                     * 设置<p>应用分享访问控制配置</p>
+                     * @param _appShareAccessControl <p>应用分享访问控制配置</p>
+                     * 
+                     */
+                    void SetAppShareAccessControl(const AppShareAccessControl& _appShareAccessControl);
+
+                    /**
+                     * 判断参数 AppShareAccessControl 是否已赋值
+                     * @return AppShareAccessControl 是否已赋值
+                     * 
+                     */
+                    bool AppShareAccessControlHasBeenSet() const;
+
+                    /**
+                     * 获取<p>渠道ID列表</p>
+                     * @return ChannelIdList <p>渠道ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetChannelIdList() const;
 
                     /**
-                     * 设置渠道ID列表
-                     * @param _channelIdList 渠道ID列表
+                     * 设置<p>渠道ID列表</p>
+                     * @param _channelIdList <p>渠道ID列表</p>
                      * 
                      */
                     void SetChannelIdList(const std::vector<std::string>& _channelIdList);
@@ -85,15 +108,36 @@ namespace TencentCloud
                     bool ChannelIdListHasBeenSet() const;
 
                     /**
-                     * 获取发布描述
-                     * @return Description 发布描述
+                     * 获取<p>企业共享配置</p>
+                     * @return CorpShareConfig <p>企业共享配置</p>
+                     * 
+                     */
+                    CorpShareConfig GetCorpShareConfig() const;
+
+                    /**
+                     * 设置<p>企业共享配置</p>
+                     * @param _corpShareConfig <p>企业共享配置</p>
+                     * 
+                     */
+                    void SetCorpShareConfig(const CorpShareConfig& _corpShareConfig);
+
+                    /**
+                     * 判断参数 CorpShareConfig 是否已赋值
+                     * @return CorpShareConfig 是否已赋值
+                     * 
+                     */
+                    bool CorpShareConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>发布描述</p>
+                     * @return Description <p>发布描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置发布描述
-                     * @param _description 发布描述
+                     * 设置<p>发布描述</p>
+                     * @param _description <p>发布描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -106,15 +150,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取将默认知识库中，仅调试生效的知识批量变更为"调试/发布都生效"
-                     * @return IsDevToRelease 将默认知识库中，仅调试生效的知识批量变更为"调试/发布都生效"
+                     * 获取<p>将默认知识库中，仅调试生效的知识批量变更为&quot;调试/发布都生效&quot;</p>
+                     * @return IsDevToRelease <p>将默认知识库中，仅调试生效的知识批量变更为&quot;调试/发布都生效&quot;</p>
                      * 
                      */
                     bool GetIsDevToRelease() const;
 
                     /**
-                     * 设置将默认知识库中，仅调试生效的知识批量变更为"调试/发布都生效"
-                     * @param _isDevToRelease 将默认知识库中，仅调试生效的知识批量变更为"调试/发布都生效"
+                     * 设置<p>将默认知识库中，仅调试生效的知识批量变更为&quot;调试/发布都生效&quot;</p>
+                     * @param _isDevToRelease <p>将默认知识库中，仅调试生效的知识批量变更为&quot;调试/发布都生效&quot;</p>
                      * 
                      */
                     void SetIsDevToRelease(const bool& _isDevToRelease);
@@ -127,15 +171,15 @@ namespace TencentCloud
                     bool IsDevToReleaseHasBeenSet() const;
 
                     /**
-                     * 获取是否同步发布为应用模板
-                     * @return IsPublishAsTemplate 是否同步发布为应用模板
+                     * 获取<p>是否同步发布为应用模板</p>
+                     * @return IsPublishAsTemplate <p>是否同步发布为应用模板</p>
                      * 
                      */
                     bool GetIsPublishAsTemplate() const;
 
                     /**
-                     * 设置是否同步发布为应用模板
-                     * @param _isPublishAsTemplate 是否同步发布为应用模板
+                     * 设置<p>是否同步发布为应用模板</p>
+                     * @param _isPublishAsTemplate <p>是否同步发布为应用模板</p>
                      * 
                      */
                     void SetIsPublishAsTemplate(const bool& _isPublishAsTemplate);
@@ -150,31 +194,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用ID
+                     * <p>应用ID</p>
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 渠道ID列表
+                     * <p>应用分享访问控制配置</p>
+                     */
+                    AppShareAccessControl m_appShareAccessControl;
+                    bool m_appShareAccessControlHasBeenSet;
+
+                    /**
+                     * <p>渠道ID列表</p>
                      */
                     std::vector<std::string> m_channelIdList;
                     bool m_channelIdListHasBeenSet;
 
                     /**
-                     * 发布描述
+                     * <p>企业共享配置</p>
+                     */
+                    CorpShareConfig m_corpShareConfig;
+                    bool m_corpShareConfigHasBeenSet;
+
+                    /**
+                     * <p>发布描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 将默认知识库中，仅调试生效的知识批量变更为"调试/发布都生效"
+                     * <p>将默认知识库中，仅调试生效的知识批量变更为&quot;调试/发布都生效&quot;</p>
                      */
                     bool m_isDevToRelease;
                     bool m_isDevToReleaseHasBeenSet;
 
                     /**
-                     * 是否同步发布为应用模板
+                     * <p>是否同步发布为应用模板</p>
                      */
                     bool m_isPublishAsTemplate;
                     bool m_isPublishAsTemplateHasBeenSet;

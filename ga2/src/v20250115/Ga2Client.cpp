@@ -290,6 +290,106 @@ Ga2Client::CreateGlobalAcceleratorOutcomeCallable Ga2Client::CreateGlobalAcceler
     return prom->get_future();
 }
 
+Ga2Client::CreateGlobalAcceleratorAclPolicyOutcome Ga2Client::CreateGlobalAcceleratorAclPolicy(const CreateGlobalAcceleratorAclPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGlobalAcceleratorAclPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGlobalAcceleratorAclPolicyResponse rsp = CreateGlobalAcceleratorAclPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGlobalAcceleratorAclPolicyOutcome(rsp);
+        else
+            return CreateGlobalAcceleratorAclPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGlobalAcceleratorAclPolicyOutcome(outcome.GetError());
+    }
+}
+
+void Ga2Client::CreateGlobalAcceleratorAclPolicyAsync(const CreateGlobalAcceleratorAclPolicyRequest& request, const CreateGlobalAcceleratorAclPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateGlobalAcceleratorAclPolicyRequest&;
+    using Resp = CreateGlobalAcceleratorAclPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateGlobalAcceleratorAclPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ga2Client::CreateGlobalAcceleratorAclPolicyOutcomeCallable Ga2Client::CreateGlobalAcceleratorAclPolicyCallable(const CreateGlobalAcceleratorAclPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateGlobalAcceleratorAclPolicyOutcome>>();
+    CreateGlobalAcceleratorAclPolicyAsync(
+    request,
+    [prom](
+        const Ga2Client*,
+        const CreateGlobalAcceleratorAclPolicyRequest&,
+        CreateGlobalAcceleratorAclPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+Ga2Client::CreateGlobalAcceleratorAclRuleOutcome Ga2Client::CreateGlobalAcceleratorAclRule(const CreateGlobalAcceleratorAclRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGlobalAcceleratorAclRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGlobalAcceleratorAclRuleResponse rsp = CreateGlobalAcceleratorAclRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGlobalAcceleratorAclRuleOutcome(rsp);
+        else
+            return CreateGlobalAcceleratorAclRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGlobalAcceleratorAclRuleOutcome(outcome.GetError());
+    }
+}
+
+void Ga2Client::CreateGlobalAcceleratorAclRuleAsync(const CreateGlobalAcceleratorAclRuleRequest& request, const CreateGlobalAcceleratorAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateGlobalAcceleratorAclRuleRequest&;
+    using Resp = CreateGlobalAcceleratorAclRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateGlobalAcceleratorAclRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ga2Client::CreateGlobalAcceleratorAclRuleOutcomeCallable Ga2Client::CreateGlobalAcceleratorAclRuleCallable(const CreateGlobalAcceleratorAclRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateGlobalAcceleratorAclRuleOutcome>>();
+    CreateGlobalAcceleratorAclRuleAsync(
+    request,
+    [prom](
+        const Ga2Client*,
+        const CreateGlobalAcceleratorAclRuleRequest&,
+        CreateGlobalAcceleratorAclRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 Ga2Client::CreateListenerOutcome Ga2Client::CreateListener(const CreateListenerRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateListener");
@@ -632,6 +732,106 @@ Ga2Client::DeleteGlobalAcceleratorOutcomeCallable Ga2Client::DeleteGlobalAcceler
         const Ga2Client*,
         const DeleteGlobalAcceleratorRequest&,
         DeleteGlobalAcceleratorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+Ga2Client::DeleteGlobalAcceleratorAclPolicyOutcome Ga2Client::DeleteGlobalAcceleratorAclPolicy(const DeleteGlobalAcceleratorAclPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGlobalAcceleratorAclPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGlobalAcceleratorAclPolicyResponse rsp = DeleteGlobalAcceleratorAclPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGlobalAcceleratorAclPolicyOutcome(rsp);
+        else
+            return DeleteGlobalAcceleratorAclPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGlobalAcceleratorAclPolicyOutcome(outcome.GetError());
+    }
+}
+
+void Ga2Client::DeleteGlobalAcceleratorAclPolicyAsync(const DeleteGlobalAcceleratorAclPolicyRequest& request, const DeleteGlobalAcceleratorAclPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteGlobalAcceleratorAclPolicyRequest&;
+    using Resp = DeleteGlobalAcceleratorAclPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteGlobalAcceleratorAclPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ga2Client::DeleteGlobalAcceleratorAclPolicyOutcomeCallable Ga2Client::DeleteGlobalAcceleratorAclPolicyCallable(const DeleteGlobalAcceleratorAclPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteGlobalAcceleratorAclPolicyOutcome>>();
+    DeleteGlobalAcceleratorAclPolicyAsync(
+    request,
+    [prom](
+        const Ga2Client*,
+        const DeleteGlobalAcceleratorAclPolicyRequest&,
+        DeleteGlobalAcceleratorAclPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+Ga2Client::DeleteGlobalAcceleratorAclRuleOutcome Ga2Client::DeleteGlobalAcceleratorAclRule(const DeleteGlobalAcceleratorAclRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGlobalAcceleratorAclRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGlobalAcceleratorAclRuleResponse rsp = DeleteGlobalAcceleratorAclRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGlobalAcceleratorAclRuleOutcome(rsp);
+        else
+            return DeleteGlobalAcceleratorAclRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGlobalAcceleratorAclRuleOutcome(outcome.GetError());
+    }
+}
+
+void Ga2Client::DeleteGlobalAcceleratorAclRuleAsync(const DeleteGlobalAcceleratorAclRuleRequest& request, const DeleteGlobalAcceleratorAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteGlobalAcceleratorAclRuleRequest&;
+    using Resp = DeleteGlobalAcceleratorAclRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteGlobalAcceleratorAclRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ga2Client::DeleteGlobalAcceleratorAclRuleOutcomeCallable Ga2Client::DeleteGlobalAcceleratorAclRuleCallable(const DeleteGlobalAcceleratorAclRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteGlobalAcceleratorAclRuleOutcome>>();
+    DeleteGlobalAcceleratorAclRuleAsync(
+    request,
+    [prom](
+        const Ga2Client*,
+        const DeleteGlobalAcceleratorAclRuleRequest&,
+        DeleteGlobalAcceleratorAclRuleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1432,6 +1632,106 @@ Ga2Client::ModifyGlobalAcceleratorOutcomeCallable Ga2Client::ModifyGlobalAcceler
         const Ga2Client*,
         const ModifyGlobalAcceleratorRequest&,
         ModifyGlobalAcceleratorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+Ga2Client::ModifyGlobalAcceleratorAclPolicyOutcome Ga2Client::ModifyGlobalAcceleratorAclPolicy(const ModifyGlobalAcceleratorAclPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGlobalAcceleratorAclPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGlobalAcceleratorAclPolicyResponse rsp = ModifyGlobalAcceleratorAclPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGlobalAcceleratorAclPolicyOutcome(rsp);
+        else
+            return ModifyGlobalAcceleratorAclPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGlobalAcceleratorAclPolicyOutcome(outcome.GetError());
+    }
+}
+
+void Ga2Client::ModifyGlobalAcceleratorAclPolicyAsync(const ModifyGlobalAcceleratorAclPolicyRequest& request, const ModifyGlobalAcceleratorAclPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyGlobalAcceleratorAclPolicyRequest&;
+    using Resp = ModifyGlobalAcceleratorAclPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyGlobalAcceleratorAclPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ga2Client::ModifyGlobalAcceleratorAclPolicyOutcomeCallable Ga2Client::ModifyGlobalAcceleratorAclPolicyCallable(const ModifyGlobalAcceleratorAclPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyGlobalAcceleratorAclPolicyOutcome>>();
+    ModifyGlobalAcceleratorAclPolicyAsync(
+    request,
+    [prom](
+        const Ga2Client*,
+        const ModifyGlobalAcceleratorAclPolicyRequest&,
+        ModifyGlobalAcceleratorAclPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+Ga2Client::ModifyGlobalAcceleratorAclRuleOutcome Ga2Client::ModifyGlobalAcceleratorAclRule(const ModifyGlobalAcceleratorAclRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGlobalAcceleratorAclRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGlobalAcceleratorAclRuleResponse rsp = ModifyGlobalAcceleratorAclRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGlobalAcceleratorAclRuleOutcome(rsp);
+        else
+            return ModifyGlobalAcceleratorAclRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGlobalAcceleratorAclRuleOutcome(outcome.GetError());
+    }
+}
+
+void Ga2Client::ModifyGlobalAcceleratorAclRuleAsync(const ModifyGlobalAcceleratorAclRuleRequest& request, const ModifyGlobalAcceleratorAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyGlobalAcceleratorAclRuleRequest&;
+    using Resp = ModifyGlobalAcceleratorAclRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyGlobalAcceleratorAclRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ga2Client::ModifyGlobalAcceleratorAclRuleOutcomeCallable Ga2Client::ModifyGlobalAcceleratorAclRuleCallable(const ModifyGlobalAcceleratorAclRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyGlobalAcceleratorAclRuleOutcome>>();
+    ModifyGlobalAcceleratorAclRuleAsync(
+    request,
+    [prom](
+        const Ga2Client*,
+        const ModifyGlobalAcceleratorAclRuleRequest&,
+        ModifyGlobalAcceleratorAclRuleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

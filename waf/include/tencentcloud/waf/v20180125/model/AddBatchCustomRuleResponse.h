@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作成功
-                     * @return Res 操作成功
+                     * 获取<p>操作成功</p>
+                     * @return Res <p>操作成功</p>
                      * 
                      */
                     std::string GetRes() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 操作成功
+                     * <p>操作成功</p>
                      */
                     std::string m_res;
                     bool m_resHasBeenSet;

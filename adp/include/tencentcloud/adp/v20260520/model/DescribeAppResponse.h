@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用详情
-                     * @return App 应用详情
+                     * 获取<p>应用详情</p>
+                     * @return App <p>应用详情</p>
                      * 
                      */
                     App GetApp() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用详情
+                     * <p>应用详情</p>
                      */
                     App m_app;
                     bool m_appHasBeenSet;

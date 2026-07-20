@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取防火墙实例名称
-                     * @return Name 防火墙实例名称
+                     * 获取<p>防火墙实例名称</p>
+                     * @return Name <p>防火墙实例名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置防火墙实例名称
-                     * @param _name 防火墙实例名称
+                     * 设置<p>防火墙实例名称</p>
+                     * @param _name <p>防火墙实例名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取带宽
-                     * @return Width 带宽
+                     * 获取<p>带宽</p>
+                     * @return Width <p>带宽</p>
                      * 
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置带宽
-                     * @param _width 带宽
+                     * 设置<p>带宽</p>
+                     * @param _width <p>带宽</p>
                      * 
                      */
                     void SetWidth(const int64_t& _width);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取模式 1：接入模式；0：新增模式
-                     * @return Mode 模式 1：接入模式；0：新增模式
+                     * 获取<p>模式 1：接入模式；0：新增模式</p>
+                     * @return Mode <p>模式 1：接入模式；0：新增模式</p>
                      * 
                      */
                     int64_t GetMode() const;
 
                     /**
-                     * 设置模式 1：接入模式；0：新增模式
-                     * @param _mode 模式 1：接入模式；0：新增模式
+                     * 设置<p>模式 1：接入模式；0：新增模式</p>
+                     * @param _mode <p>模式 1：接入模式；0：新增模式</p>
                      * 
                      */
                     void SetMode(const int64_t& _mode);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取新增模式传递参数，其中NewModeItems和NatgwList至少传递一种。
-                     * @return NewModeItems 新增模式传递参数，其中NewModeItems和NatgwList至少传递一种。
+                     * 获取<p>新增模式传递参数，其中NewModeItems和NatgwList至少传递一种。</p>
+                     * @return NewModeItems <p>新增模式传递参数，其中NewModeItems和NatgwList至少传递一种。</p>
                      * 
                      */
                     NewModeItems GetNewModeItems() const;
 
                     /**
-                     * 设置新增模式传递参数，其中NewModeItems和NatgwList至少传递一种。
-                     * @param _newModeItems 新增模式传递参数，其中NewModeItems和NatgwList至少传递一种。
+                     * 设置<p>新增模式传递参数，其中NewModeItems和NatgwList至少传递一种。</p>
+                     * @param _newModeItems <p>新增模式传递参数，其中NewModeItems和NatgwList至少传递一种。</p>
                      * 
                      */
                     void SetNewModeItems(const NewModeItems& _newModeItems);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool NewModeItemsHasBeenSet() const;
 
                     /**
-                     * 获取接入模式接入的nat网关列表，其中NewModeItems和NatgwList至少传递一种。
-                     * @return NatGwList 接入模式接入的nat网关列表，其中NewModeItems和NatgwList至少传递一种。
+                     * 获取<p>接入模式接入的nat网关列表，其中NewModeItems和NatgwList至少传递一种。</p>
+                     * @return NatGwList <p>接入模式接入的nat网关列表，其中NewModeItems和NatgwList至少传递一种。</p>
                      * 
                      */
                     std::vector<std::string> GetNatGwList() const;
 
                     /**
-                     * 设置接入模式接入的nat网关列表，其中NewModeItems和NatgwList至少传递一种。
-                     * @param _natGwList 接入模式接入的nat网关列表，其中NewModeItems和NatgwList至少传递一种。
+                     * 设置<p>接入模式接入的nat网关列表，其中NewModeItems和NatgwList至少传递一种。</p>
+                     * @param _natGwList <p>接入模式接入的nat网关列表，其中NewModeItems和NatgwList至少传递一种。</p>
                      * 
                      */
                     void SetNatGwList(const std::vector<std::string>& _natGwList);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool NatGwListHasBeenSet() const;
 
                     /**
-                     * 获取主可用区，为空则选择默认可用区
-                     * @return Zone 主可用区，为空则选择默认可用区
+                     * 获取<p>主可用区，为空则选择默认可用区</p>
+                     * @return Zone <p>主可用区，为空则选择默认可用区</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置主可用区，为空则选择默认可用区
-                     * @param _zone 主可用区，为空则选择默认可用区
+                     * 设置<p>主可用区，为空则选择默认可用区</p>
+                     * @param _zone <p>主可用区，为空则选择默认可用区</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取备可用区，为空则选择默认可用区
-                     * @return ZoneBak 备可用区，为空则选择默认可用区
+                     * 获取<p>备可用区，为空则选择默认可用区</p>
+                     * @return ZoneBak <p>备可用区，为空则选择默认可用区</p>
                      * 
                      */
                     std::string GetZoneBak() const;
 
                     /**
-                     * 设置备可用区，为空则选择默认可用区
-                     * @param _zoneBak 备可用区，为空则选择默认可用区
+                     * 设置<p>备可用区，为空则选择默认可用区</p>
+                     * @param _zoneBak <p>备可用区，为空则选择默认可用区</p>
                      * 
                      */
                     void SetZoneBak(const std::string& _zoneBak);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool ZoneBakHasBeenSet() const;
 
                     /**
-                     * 获取异地灾备 1：使用异地灾备；0：不使用异地灾备；为空则默认不使用异地灾备
-                     * @return CrossAZone 异地灾备 1：使用异地灾备；0：不使用异地灾备；为空则默认不使用异地灾备
+                     * 获取<p>异地灾备 1：使用异地灾备；0：不使用异地灾备；为空则默认不使用异地灾备</p>
+                     * @return CrossAZone <p>异地灾备 1：使用异地灾备；0：不使用异地灾备；为空则默认不使用异地灾备</p>
                      * 
                      */
                     int64_t GetCrossAZone() const;
 
                     /**
-                     * 设置异地灾备 1：使用异地灾备；0：不使用异地灾备；为空则默认不使用异地灾备
-                     * @param _crossAZone 异地灾备 1：使用异地灾备；0：不使用异地灾备；为空则默认不使用异地灾备
+                     * 设置<p>异地灾备 1：使用异地灾备；0：不使用异地灾备；为空则默认不使用异地灾备</p>
+                     * @param _crossAZone <p>异地灾备 1：使用异地灾备；0：不使用异地灾备；为空则默认不使用异地灾备</p>
                      * 
                      */
                     void SetCrossAZone(const int64_t& _crossAZone);
@@ -213,15 +213,15 @@ namespace TencentCloud
                     bool CrossAZoneHasBeenSet() const;
 
                     /**
-                     * 获取0不创建域名,1创建域名
-                     * @return IsCreateDomain 0不创建域名,1创建域名
+                     * 获取<p>0不创建域名,1创建域名</p>
+                     * @return IsCreateDomain <p>0不创建域名,1创建域名</p>
                      * 
                      */
                     int64_t GetIsCreateDomain() const;
 
                     /**
-                     * 设置0不创建域名,1创建域名
-                     * @param _isCreateDomain 0不创建域名,1创建域名
+                     * 设置<p>0不创建域名,1创建域名</p>
+                     * @param _isCreateDomain <p>0不创建域名,1创建域名</p>
                      * 
                      */
                     void SetIsCreateDomain(const int64_t& _isCreateDomain);
@@ -234,15 +234,15 @@ namespace TencentCloud
                     bool IsCreateDomainHasBeenSet() const;
 
                     /**
-                     * 获取如果要创建域名则必填
-                     * @return Domain 如果要创建域名则必填
+                     * 获取<p>如果要创建域名则必填</p>
+                     * @return Domain <p>如果要创建域名则必填</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置如果要创建域名则必填
-                     * @param _domain 如果要创建域名则必填
+                     * 设置<p>如果要创建域名则必填</p>
+                     * @param _domain <p>如果要创建域名则必填</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -255,15 +255,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取指定防火墙使用网段信息
-                     * @return FwCidrInfo 指定防火墙使用网段信息
+                     * 获取<p>指定防火墙使用网段信息</p>
+                     * @return FwCidrInfo <p>指定防火墙使用网段信息</p>
                      * 
                      */
                     FwCidrInfo GetFwCidrInfo() const;
 
                     /**
-                     * 设置指定防火墙使用网段信息
-                     * @param _fwCidrInfo 指定防火墙使用网段信息
+                     * 设置<p>指定防火墙使用网段信息</p>
+                     * @param _fwCidrInfo <p>指定防火墙使用网段信息</p>
                      * 
                      */
                     void SetFwCidrInfo(const FwCidrInfo& _fwCidrInfo);
@@ -278,67 +278,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 防火墙实例名称
+                     * <p>防火墙实例名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 带宽
+                     * <p>带宽</p>
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 模式 1：接入模式；0：新增模式
+                     * <p>模式 1：接入模式；0：新增模式</p>
                      */
                     int64_t m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 新增模式传递参数，其中NewModeItems和NatgwList至少传递一种。
+                     * <p>新增模式传递参数，其中NewModeItems和NatgwList至少传递一种。</p>
                      */
                     NewModeItems m_newModeItems;
                     bool m_newModeItemsHasBeenSet;
 
                     /**
-                     * 接入模式接入的nat网关列表，其中NewModeItems和NatgwList至少传递一种。
+                     * <p>接入模式接入的nat网关列表，其中NewModeItems和NatgwList至少传递一种。</p>
                      */
                     std::vector<std::string> m_natGwList;
                     bool m_natGwListHasBeenSet;
 
                     /**
-                     * 主可用区，为空则选择默认可用区
+                     * <p>主可用区，为空则选择默认可用区</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 备可用区，为空则选择默认可用区
+                     * <p>备可用区，为空则选择默认可用区</p>
                      */
                     std::string m_zoneBak;
                     bool m_zoneBakHasBeenSet;
 
                     /**
-                     * 异地灾备 1：使用异地灾备；0：不使用异地灾备；为空则默认不使用异地灾备
+                     * <p>异地灾备 1：使用异地灾备；0：不使用异地灾备；为空则默认不使用异地灾备</p>
                      */
                     int64_t m_crossAZone;
                     bool m_crossAZoneHasBeenSet;
 
                     /**
-                     * 0不创建域名,1创建域名
+                     * <p>0不创建域名,1创建域名</p>
                      */
                     int64_t m_isCreateDomain;
                     bool m_isCreateDomainHasBeenSet;
 
                     /**
-                     * 如果要创建域名则必填
+                     * <p>如果要创建域名则必填</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 指定防火墙使用网段信息
+                     * <p>指定防火墙使用网段信息</p>
                      */
                     FwCidrInfo m_fwCidrInfo;
                     bool m_fwCidrInfoHasBeenSet;

@@ -44,10 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取0 正常
--1 异常
-                     * @return Status 0 正常
--1 异常
+                     * 获取<p>0 正常<br>-1 异常</p>
+                     * @return Status <p>0 正常<br>-1 异常</p>
                      * 
                      */
                     int64_t GetStatus() const;
@@ -60,8 +58,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取nat实例唯一ID
-                     * @return NatInstanceId nat实例唯一ID
+                     * 获取<p>nat实例唯一ID</p>
+                     * @return NatInstanceId <p>nat实例唯一ID</p>
                      * 
                      */
                     std::string GetNatInstanceId() const;
@@ -76,14 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 0 正常
--1 异常
+                     * <p>0 正常<br>-1 异常</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * nat实例唯一ID
+                     * <p>nat实例唯一ID</p>
                      */
                     std::string m_natInstanceId;
                     bool m_natInstanceIdHasBeenSet;

@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool AuthTypeHasBeenSet() const;
 
                     /**
-                     * 获取OAuth 授权同意模式；0-开发者授权；1-使用者授权（仅在auth_type=3时生效）
-                     * @return OAuthConsent OAuth 授权同意模式；0-开发者授权；1-使用者授权（仅在auth_type=3时生效）
+                     * 获取<p>OAuth 授权同意模式；0-开发者授权；1-使用者授权（仅在auth_type=3时生效）</p>
+                     * @return OAuthConsent <p>OAuth 授权同意模式；0-开发者授权；1-使用者授权（仅在auth_type=3时生效）</p>
                      * 
                      */
                     int64_t GetOAuthConsent() const;
 
                     /**
-                     * 设置OAuth 授权同意模式；0-开发者授权；1-使用者授权（仅在auth_type=3时生效）
-                     * @param _oAuthConsent OAuth 授权同意模式；0-开发者授权；1-使用者授权（仅在auth_type=3时生效）
+                     * 设置<p>OAuth 授权同意模式；0-开发者授权；1-使用者授权（仅在auth_type=3时生效）</p>
+                     * @param _oAuthConsent <p>OAuth 授权同意模式；0-开发者授权；1-使用者授权（仅在auth_type=3时生效）</p>
                      * 
                      */
                     void SetOAuthConsent(const int64_t& _oAuthConsent);
@@ -206,7 +206,7 @@ namespace TencentCloud
                     bool m_authTypeHasBeenSet;
 
                     /**
-                     * OAuth 授权同意模式；0-开发者授权；1-使用者授权（仅在auth_type=3时生效）
+                     * <p>OAuth 授权同意模式；0-开发者授权；1-使用者授权（仅在auth_type=3时生效）</p>
                      */
                     int64_t m_oAuthConsent;
                     bool m_oAuthConsentHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取bind：绑定eip；unbind：解绑eip；newAdd：新增防火墙弹性公网ip
-                     * @return OperationType bind：绑定eip；unbind：解绑eip；newAdd：新增防火墙弹性公网ip
+                     * 获取<p>bind：绑定eip；unbind：解绑eip；newAdd：新增防火墙弹性公网ip</p>
+                     * @return OperationType <p>bind：绑定eip；unbind：解绑eip；newAdd：新增防火墙弹性公网ip</p>
                      * 
                      */
                     std::string GetOperationType() const;
 
                     /**
-                     * 设置bind：绑定eip；unbind：解绑eip；newAdd：新增防火墙弹性公网ip
-                     * @param _operationType bind：绑定eip；unbind：解绑eip；newAdd：新增防火墙弹性公网ip
+                     * 设置<p>bind：绑定eip；unbind：解绑eip；newAdd：新增防火墙弹性公网ip</p>
+                     * @param _operationType <p>bind：绑定eip；unbind：解绑eip；newAdd：新增防火墙弹性公网ip</p>
                      * 
                      */
                     void SetOperationType(const std::string& _operationType);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool OperationTypeHasBeenSet() const;
 
                     /**
-                     * 获取防火墙实例id
-                     * @return CfwInstance 防火墙实例id
+                     * 获取<p>防火墙实例id</p>
+                     * @return CfwInstance <p>防火墙实例id</p>
                      * 
                      */
                     std::string GetCfwInstance() const;
 
                     /**
-                     * 设置防火墙实例id
-                     * @param _cfwInstance 防火墙实例id
+                     * 设置<p>防火墙实例id</p>
+                     * @param _cfwInstance <p>防火墙实例id</p>
                      * 
                      */
                     void SetCfwInstance(const std::string& _cfwInstance);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool CfwInstanceHasBeenSet() const;
 
                     /**
-                     * 获取当OperationType 为bind或unbind操作时，使用该字段。
-                     * @return EipList 当OperationType 为bind或unbind操作时，使用该字段。
+                     * 获取<p>当OperationType 为bind或unbind操作时，使用该字段。</p>
+                     * @return EipList <p>当OperationType 为bind或unbind操作时，使用该字段。</p>
                      * 
                      */
                     std::vector<std::string> GetEipList() const;
 
                     /**
-                     * 设置当OperationType 为bind或unbind操作时，使用该字段。
-                     * @param _eipList 当OperationType 为bind或unbind操作时，使用该字段。
+                     * 设置<p>当OperationType 为bind或unbind操作时，使用该字段。</p>
+                     * @param _eipList <p>当OperationType 为bind或unbind操作时，使用该字段。</p>
                      * 
                      */
                     void SetEipList(const std::vector<std::string>& _eipList);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * bind：绑定eip；unbind：解绑eip；newAdd：新增防火墙弹性公网ip
+                     * <p>bind：绑定eip；unbind：解绑eip；newAdd：新增防火墙弹性公网ip</p>
                      */
                     std::string m_operationType;
                     bool m_operationTypeHasBeenSet;
 
                     /**
-                     * 防火墙实例id
+                     * <p>防火墙实例id</p>
                      */
                     std::string m_cfwInstance;
                     bool m_cfwInstanceHasBeenSet;
 
                     /**
-                     * 当OperationType 为bind或unbind操作时，使用该字段。
+                     * <p>当OperationType 为bind或unbind操作时，使用该字段。</p>
                      */
                     std::vector<std::string> m_eipList;
                     bool m_eipListHasBeenSet;

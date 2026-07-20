@@ -26,7 +26,9 @@ CreatePluginRequest::CreatePluginRequest() :
     m_profileHasBeenSet(false),
     m_configHasBeenSet(false),
     m_spaceIdHasBeenSet(false),
-    m_toolListHasBeenSet(false)
+    m_toolListHasBeenSet(false),
+    m_loginUinHasBeenSet(false),
+    m_loginSubAccountUinHasBeenSet(false)
 {
 }
 
@@ -68,8 +70,30 @@ string CreatePluginRequest::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ToolList";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_toolList.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_toolList.begin(); itr != m_toolList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_loginUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoginUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_loginUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loginSubAccountUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoginSubAccountUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_loginSubAccountUin.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -128,12 +152,12 @@ bool CreatePluginRequest::SpaceIdHasBeenSet() const
     return m_spaceIdHasBeenSet;
 }
 
-Tool CreatePluginRequest::GetToolList() const
+vector<Tool> CreatePluginRequest::GetToolList() const
 {
     return m_toolList;
 }
 
-void CreatePluginRequest::SetToolList(const Tool& _toolList)
+void CreatePluginRequest::SetToolList(const vector<Tool>& _toolList)
 {
     m_toolList = _toolList;
     m_toolListHasBeenSet = true;
@@ -142,6 +166,38 @@ void CreatePluginRequest::SetToolList(const Tool& _toolList)
 bool CreatePluginRequest::ToolListHasBeenSet() const
 {
     return m_toolListHasBeenSet;
+}
+
+string CreatePluginRequest::GetLoginUin() const
+{
+    return m_loginUin;
+}
+
+void CreatePluginRequest::SetLoginUin(const string& _loginUin)
+{
+    m_loginUin = _loginUin;
+    m_loginUinHasBeenSet = true;
+}
+
+bool CreatePluginRequest::LoginUinHasBeenSet() const
+{
+    return m_loginUinHasBeenSet;
+}
+
+string CreatePluginRequest::GetLoginSubAccountUin() const
+{
+    return m_loginSubAccountUin;
+}
+
+void CreatePluginRequest::SetLoginSubAccountUin(const string& _loginSubAccountUin)
+{
+    m_loginSubAccountUin = _loginSubAccountUin;
+    m_loginSubAccountUinHasBeenSet = true;
+}
+
+bool CreatePluginRequest::LoginSubAccountUinHasBeenSet() const
+{
+    return m_loginSubAccountUinHasBeenSet;
 }
 
 

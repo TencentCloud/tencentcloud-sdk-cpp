@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 应用分享访问控制配置
+                * AppShareAccessControl
                 */
                 class AppShareAccessControl : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取访问控制类型。枚举值: 1:公开访问(所有用户都可访问), 2:内部访问(仅企业用户可访问), 3:账号白名单(指定UIN/手机/邮箱/IP可访问)
-                     * @return AccessType 访问控制类型。枚举值: 1:公开访问(所有用户都可访问), 2:内部访问(仅企业用户可访问), 3:账号白名单(指定UIN/手机/邮箱/IP可访问)
+                     * 获取<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_SHARE_ACCESS_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>APP_SHARE_ACCESS_TYPE_PUBLIC</td><td>1</td><td>公开访问(所有用户都可访问)</td></tr><tr><td>APP_SHARE_ACCESS_TYPE_INTERNAL</td><td>2</td><td>内部访问(仅企业用户可访问)</td></tr><tr><td>APP_SHARE_ACCESS_TYPE_ACCOUNT_WHITELIST</td><td>3</td><td>账号白名单(指定UIN/手机/邮箱/IP可访问)</td></tr></tbody></table>
+                     * @return AccessType <table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_SHARE_ACCESS_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>APP_SHARE_ACCESS_TYPE_PUBLIC</td><td>1</td><td>公开访问(所有用户都可访问)</td></tr><tr><td>APP_SHARE_ACCESS_TYPE_INTERNAL</td><td>2</td><td>内部访问(仅企业用户可访问)</td></tr><tr><td>APP_SHARE_ACCESS_TYPE_ACCOUNT_WHITELIST</td><td>3</td><td>账号白名单(指定UIN/手机/邮箱/IP可访问)</td></tr></tbody></table>
                      * 
                      */
                     int64_t GetAccessType() const;
 
                     /**
-                     * 设置访问控制类型。枚举值: 1:公开访问(所有用户都可访问), 2:内部访问(仅企业用户可访问), 3:账号白名单(指定UIN/手机/邮箱/IP可访问)
-                     * @param _accessType 访问控制类型。枚举值: 1:公开访问(所有用户都可访问), 2:内部访问(仅企业用户可访问), 3:账号白名单(指定UIN/手机/邮箱/IP可访问)
+                     * 设置<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_SHARE_ACCESS_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>APP_SHARE_ACCESS_TYPE_PUBLIC</td><td>1</td><td>公开访问(所有用户都可访问)</td></tr><tr><td>APP_SHARE_ACCESS_TYPE_INTERNAL</td><td>2</td><td>内部访问(仅企业用户可访问)</td></tr><tr><td>APP_SHARE_ACCESS_TYPE_ACCOUNT_WHITELIST</td><td>3</td><td>账号白名单(指定UIN/手机/邮箱/IP可访问)</td></tr></tbody></table>
+                     * @param _accessType <table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_SHARE_ACCESS_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>APP_SHARE_ACCESS_TYPE_PUBLIC</td><td>1</td><td>公开访问(所有用户都可访问)</td></tr><tr><td>APP_SHARE_ACCESS_TYPE_INTERNAL</td><td>2</td><td>内部访问(仅企业用户可访问)</td></tr><tr><td>APP_SHARE_ACCESS_TYPE_ACCOUNT_WHITELIST</td><td>3</td><td>账号白名单(指定UIN/手机/邮箱/IP可访问)</td></tr></tbody></table>
                      * 
                      */
                     void SetAccessType(const int64_t& _accessType);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool AccessTypeHasBeenSet() const;
 
                     /**
-                     * 获取体验链接开关
-                     * @return Enabled 体验链接开关
+                     * 获取<p>是否开启访问控制</p><p>枚举值：</p><ul><li>true： 启用</li><li>false： 禁用</li></ul>
+                     * @return Enabled <p>是否开启访问控制</p><p>枚举值：</p><ul><li>true： 启用</li><li>false： 禁用</li></ul>
                      * 
                      */
                     bool GetEnabled() const;
 
                     /**
-                     * 设置体验链接开关
-                     * @param _enabled 体验链接开关
+                     * 设置<p>是否开启访问控制</p><p>枚举值：</p><ul><li>true： 启用</li><li>false： 禁用</li></ul>
+                     * @param _enabled <p>是否开启访问控制</p><p>枚举值：</p><ul><li>true： 启用</li><li>false： 禁用</li></ul>
                      * 
                      */
                     void SetEnabled(const bool& _enabled);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool EnabledHasBeenSet() const;
 
                     /**
-                     * 获取白名单(仅 access_type=ACCOUNT_WHITELIST 时生效)
-                     * @return Whitelist 白名单(仅 access_type=ACCOUNT_WHITELIST 时生效)
+                     * 获取<p>白名单信息</p>
+                     * @return Whitelist <p>白名单信息</p>
                      * 
                      */
                     std::vector<AppShareWhitelistItem> GetWhitelist() const;
 
                     /**
-                     * 设置白名单(仅 access_type=ACCOUNT_WHITELIST 时生效)
-                     * @param _whitelist 白名单(仅 access_type=ACCOUNT_WHITELIST 时生效)
+                     * 设置<p>白名单信息</p>
+                     * @param _whitelist <p>白名单信息</p>
                      * 
                      */
                     void SetWhitelist(const std::vector<AppShareWhitelistItem>& _whitelist);
@@ -113,19 +113,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 访问控制类型。枚举值: 1:公开访问(所有用户都可访问), 2:内部访问(仅企业用户可访问), 3:账号白名单(指定UIN/手机/邮箱/IP可访问)
+                     * <table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_SHARE_ACCESS_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>APP_SHARE_ACCESS_TYPE_PUBLIC</td><td>1</td><td>公开访问(所有用户都可访问)</td></tr><tr><td>APP_SHARE_ACCESS_TYPE_INTERNAL</td><td>2</td><td>内部访问(仅企业用户可访问)</td></tr><tr><td>APP_SHARE_ACCESS_TYPE_ACCOUNT_WHITELIST</td><td>3</td><td>账号白名单(指定UIN/手机/邮箱/IP可访问)</td></tr></tbody></table>
                      */
                     int64_t m_accessType;
                     bool m_accessTypeHasBeenSet;
 
                     /**
-                     * 体验链接开关
+                     * <p>是否开启访问控制</p><p>枚举值：</p><ul><li>true： 启用</li><li>false： 禁用</li></ul>
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;
 
                     /**
-                     * 白名单(仅 access_type=ACCOUNT_WHITELIST 时生效)
+                     * <p>白名单信息</p>
                      */
                     std::vector<AppShareWhitelistItem> m_whitelist;
                     bool m_whitelistHasBeenSet;

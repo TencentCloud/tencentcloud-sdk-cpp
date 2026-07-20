@@ -437,6 +437,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/GetFamilyDeviceUserListResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/UnbindTWeTalkAgentRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteLoRaGatewayResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/ADPConfig.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteTWeTalkAgentResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/LoRaGatewayItem.h
   include/tencentcloud/iotexplorer/v20190423/model/BindTWeTalkAIBotRequest.h
@@ -1049,6 +1050,7 @@ set(iotexplorer_src
   src/v20190423/model/GetFamilyDeviceUserListResponse.cpp
   src/v20190423/model/UnbindTWeTalkAgentRequest.cpp
   src/v20190423/model/DeleteLoRaGatewayResponse.cpp
+  src/v20190423/model/ADPConfig.cpp
   src/v20190423/model/DeleteTWeTalkAgentResponse.cpp
   src/v20190423/model/LoRaGatewayItem.cpp
   src/v20190423/model/BindTWeTalkAIBotRequest.cpp

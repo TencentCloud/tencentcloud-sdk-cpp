@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取VPC防火墙(组)名称
-                     * @return Name VPC防火墙(组)名称
+                     * 获取<p>VPC防火墙(组)名称</p>
+                     * @return Name <p>VPC防火墙(组)名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置VPC防火墙(组)名称
-                     * @param _name VPC防火墙(组)名称
+                     * 设置<p>VPC防火墙(组)名称</p>
+                     * @param _name <p>VPC防火墙(组)名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取模式 1：CCN云联网模式；0：私有网络模式 2: sase 模式 3：ccn 高级模式 4: 私有网络(跨租户单边模式)
-                     * @return Mode 模式 1：CCN云联网模式；0：私有网络模式 2: sase 模式 3：ccn 高级模式 4: 私有网络(跨租户单边模式)
+                     * 获取<p>模式 1：CCN云联网模式；0：私有网络模式 2: sase 模式 3：ccn 高级模式 4: 私有网络(跨租户单边模式)</p>
+                     * @return Mode <p>模式 1：CCN云联网模式；0：私有网络模式 2: sase 模式 3：ccn 高级模式 4: 私有网络(跨租户单边模式)</p>
                      * 
                      */
                     int64_t GetMode() const;
 
                     /**
-                     * 设置模式 1：CCN云联网模式；0：私有网络模式 2: sase 模式 3：ccn 高级模式 4: 私有网络(跨租户单边模式)
-                     * @param _mode 模式 1：CCN云联网模式；0：私有网络模式 2: sase 模式 3：ccn 高级模式 4: 私有网络(跨租户单边模式)
+                     * 设置<p>模式 1：CCN云联网模式；0：私有网络模式 2: sase 模式 3：ccn 高级模式 4: 私有网络(跨租户单边模式)</p>
+                     * @param _mode <p>模式 1：CCN云联网模式；0：私有网络模式 2: sase 模式 3：ccn 高级模式 4: 私有网络(跨租户单边模式)</p>
                      * 
                      */
                     void SetMode(const int64_t& _mode);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取防火墙(组)下的防火墙实例列表
-                     * @return VpcFwInstances 防火墙(组)下的防火墙实例列表
+                     * 获取<p>防火墙(组)下的防火墙实例列表</p>
+                     * @return VpcFwInstances <p>防火墙(组)下的防火墙实例列表</p>
                      * 
                      */
                     std::vector<VpcFwInstance> GetVpcFwInstances() const;
 
                     /**
-                     * 设置防火墙(组)下的防火墙实例列表
-                     * @param _vpcFwInstances 防火墙(组)下的防火墙实例列表
+                     * 设置<p>防火墙(组)下的防火墙实例列表</p>
+                     * @param _vpcFwInstances <p>防火墙(组)下的防火墙实例列表</p>
                      * 
                      */
                     void SetVpcFwInstances(const std::vector<VpcFwInstance>& _vpcFwInstances);
@@ -108,31 +108,15 @@ namespace TencentCloud
                     bool VpcFwInstancesHasBeenSet() const;
 
                     /**
-                     * 获取防火墙实例的开关模式
-1: 单点互通
-2: 多点互通
-3: 全互通
-4: 自定义路由
-                     * @return SwitchMode 防火墙实例的开关模式
-1: 单点互通
-2: 多点互通
-3: 全互通
-4: 自定义路由
+                     * 获取<p>防火墙实例的开关模式<br>1: 单点互通<br>2: 多点互通<br>3: 全互通<br>4: 自定义路由</p>
+                     * @return SwitchMode <p>防火墙实例的开关模式<br>1: 单点互通<br>2: 多点互通<br>3: 全互通<br>4: 自定义路由</p>
                      * 
                      */
                     int64_t GetSwitchMode() const;
 
                     /**
-                     * 设置防火墙实例的开关模式
-1: 单点互通
-2: 多点互通
-3: 全互通
-4: 自定义路由
-                     * @param _switchMode 防火墙实例的开关模式
-1: 单点互通
-2: 多点互通
-3: 全互通
-4: 自定义路由
+                     * 设置<p>防火墙实例的开关模式<br>1: 单点互通<br>2: 多点互通<br>3: 全互通<br>4: 自定义路由</p>
+                     * @param _switchMode <p>防火墙实例的开关模式<br>1: 单点互通<br>2: 多点互通<br>3: 全互通<br>4: 自定义路由</p>
                      * 
                      */
                     void SetSwitchMode(const int64_t& _switchMode);
@@ -145,19 +129,15 @@ namespace TencentCloud
                     bool SwitchModeHasBeenSet() const;
 
                     /**
-                     * 获取auto 自动选择防火墙网段
-10.10.10.0/24 用户输入的防火墙网段
-                     * @return FwVpcCidr auto 自动选择防火墙网段
-10.10.10.0/24 用户输入的防火墙网段
+                     * 获取<p>auto 自动选择防火墙网段<br>10.10.10.0/24 用户输入的防火墙网段</p>
+                     * @return FwVpcCidr <p>auto 自动选择防火墙网段<br>10.10.10.0/24 用户输入的防火墙网段</p>
                      * 
                      */
                     std::string GetFwVpcCidr() const;
 
                     /**
-                     * 设置auto 自动选择防火墙网段
-10.10.10.0/24 用户输入的防火墙网段
-                     * @param _fwVpcCidr auto 自动选择防火墙网段
-10.10.10.0/24 用户输入的防火墙网段
+                     * 设置<p>auto 自动选择防火墙网段<br>10.10.10.0/24 用户输入的防火墙网段</p>
+                     * @param _fwVpcCidr <p>auto 自动选择防火墙网段<br>10.10.10.0/24 用户输入的防火墙网段</p>
                      * 
                      */
                     void SetFwVpcCidr(const std::string& _fwVpcCidr);
@@ -170,15 +150,15 @@ namespace TencentCloud
                     bool FwVpcCidrHasBeenSet() const;
 
                     /**
-                     * 获取云联网id ，适用于云联网模式
-                     * @return CcnId 云联网id ，适用于云联网模式
+                     * 获取<p>云联网id ，适用于云联网模式</p>
+                     * @return CcnId <p>云联网id ，适用于云联网模式</p>
                      * 
                      */
                     std::string GetCcnId() const;
 
                     /**
-                     * 设置云联网id ，适用于云联网模式
-                     * @param _ccnId 云联网id ，适用于云联网模式
+                     * 设置<p>云联网id ，适用于云联网模式</p>
+                     * @param _ccnId <p>云联网id ，适用于云联网模式</p>
                      * 
                      */
                     void SetCcnId(const std::string& _ccnId);
@@ -191,15 +171,15 @@ namespace TencentCloud
                     bool CcnIdHasBeenSet() const;
 
                     /**
-                     * 获取指定防火墙使用网段信息
-                     * @return FwCidrInfo 指定防火墙使用网段信息
+                     * 获取<p>指定防火墙使用网段信息</p>
+                     * @return FwCidrInfo <p>指定防火墙使用网段信息</p>
                      * 
                      */
                     FwCidrInfo GetFwCidrInfo() const;
 
                     /**
-                     * 设置指定防火墙使用网段信息
-                     * @param _fwCidrInfo 指定防火墙使用网段信息
+                     * 设置<p>指定防火墙使用网段信息</p>
+                     * @param _fwCidrInfo <p>指定防火墙使用网段信息</p>
                      * 
                      */
                     void SetFwCidrInfo(const FwCidrInfo& _fwCidrInfo);
@@ -212,15 +192,15 @@ namespace TencentCloud
                     bool FwCidrInfoHasBeenSet() const;
 
                     /**
-                     * 获取跨租户管理员模式  1管理员 2多账号
-                     * @return CrossUserMode 跨租户管理员模式  1管理员 2多账号
+                     * 获取<p>跨租户管理员模式  1管理员 2多账号</p>
+                     * @return CrossUserMode <p>跨租户管理员模式  1管理员 2多账号</p>
                      * 
                      */
                     std::string GetCrossUserMode() const;
 
                     /**
-                     * 设置跨租户管理员模式  1管理员 2多账号
-                     * @param _crossUserMode 跨租户管理员模式  1管理员 2多账号
+                     * 设置<p>跨租户管理员模式  1管理员 2多账号</p>
+                     * @param _crossUserMode <p>跨租户管理员模式  1管理员 2多账号</p>
                      * 
                      */
                     void SetCrossUserMode(const std::string& _crossUserMode);
@@ -235,54 +215,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * VPC防火墙(组)名称
+                     * <p>VPC防火墙(组)名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 模式 1：CCN云联网模式；0：私有网络模式 2: sase 模式 3：ccn 高级模式 4: 私有网络(跨租户单边模式)
+                     * <p>模式 1：CCN云联网模式；0：私有网络模式 2: sase 模式 3：ccn 高级模式 4: 私有网络(跨租户单边模式)</p>
                      */
                     int64_t m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 防火墙(组)下的防火墙实例列表
+                     * <p>防火墙(组)下的防火墙实例列表</p>
                      */
                     std::vector<VpcFwInstance> m_vpcFwInstances;
                     bool m_vpcFwInstancesHasBeenSet;
 
                     /**
-                     * 防火墙实例的开关模式
-1: 单点互通
-2: 多点互通
-3: 全互通
-4: 自定义路由
+                     * <p>防火墙实例的开关模式<br>1: 单点互通<br>2: 多点互通<br>3: 全互通<br>4: 自定义路由</p>
                      */
                     int64_t m_switchMode;
                     bool m_switchModeHasBeenSet;
 
                     /**
-                     * auto 自动选择防火墙网段
-10.10.10.0/24 用户输入的防火墙网段
+                     * <p>auto 自动选择防火墙网段<br>10.10.10.0/24 用户输入的防火墙网段</p>
                      */
                     std::string m_fwVpcCidr;
                     bool m_fwVpcCidrHasBeenSet;
 
                     /**
-                     * 云联网id ，适用于云联网模式
+                     * <p>云联网id ，适用于云联网模式</p>
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;
 
                     /**
-                     * 指定防火墙使用网段信息
+                     * <p>指定防火墙使用网段信息</p>
                      */
                     FwCidrInfo m_fwCidrInfo;
                     bool m_fwCidrInfoHasBeenSet;
 
                     /**
-                     * 跨租户管理员模式  1管理员 2多账号
+                     * <p>跨租户管理员模式  1管理员 2多账号</p>
                      */
                     std::string m_crossUserMode;
                     bool m_crossUserModeHasBeenSet;

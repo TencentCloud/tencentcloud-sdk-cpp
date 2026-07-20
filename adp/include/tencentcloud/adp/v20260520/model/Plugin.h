@@ -100,14 +100,18 @@ namespace TencentCloud
 
                     /**
                      * 获取插件运营管理信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operation 插件运营管理信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PluginOperation GetOperation() const;
 
                     /**
                      * 设置插件运营管理信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operation 插件运营管理信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperation(const PluginOperation& _operation);
@@ -163,14 +167,18 @@ namespace TencentCloud
 
                     /**
                      * 获取插件基础信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Profile 插件基础信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PluginProfile GetProfile() const;
 
                     /**
                      * 设置插件基础信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _profile 插件基础信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProfile(const PluginProfile& _profile);
@@ -184,14 +192,18 @@ namespace TencentCloud
 
                     /**
                      * 获取插件统计信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Statistics 插件统计信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PluginStatistics GetStatistics() const;
 
                     /**
                      * 设置插件统计信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statistics 插件统计信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatistics(const PluginStatistics& _statistics);
@@ -226,14 +238,18 @@ namespace TencentCloud
 
                     /**
                      * 获取工具列表
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ToolList 工具列表
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tool> GetToolList() const;
 
                     /**
                      * 设置工具列表
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _toolList 工具列表
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetToolList(const std::vector<Tool>& _toolList);
@@ -268,14 +284,18 @@ namespace TencentCloud
 
                     /**
                      * 获取用户维度的插件状态信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserState 用户维度的插件状态信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PluginUserState GetUserState() const;
 
                     /**
                      * 设置用户维度的插件状态信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userState 用户维度的插件状态信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserState(const PluginUserState& _userState);
@@ -304,6 +324,7 @@ namespace TencentCloud
 
                     /**
                      * 插件运营管理信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PluginOperation m_operation;
                     bool m_operationHasBeenSet;
@@ -322,12 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 插件基础信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PluginProfile m_profile;
                     bool m_profileHasBeenSet;
 
                     /**
                      * 插件统计信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PluginStatistics m_statistics;
                     bool m_statisticsHasBeenSet;
@@ -340,6 +363,7 @@ namespace TencentCloud
 
                     /**
                      * 工具列表
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tool> m_toolList;
                     bool m_toolListHasBeenSet;
@@ -352,6 +376,7 @@ namespace TencentCloud
 
                     /**
                      * 用户维度的插件状态信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PluginUserState m_userState;
                     bool m_userStateHasBeenSet;

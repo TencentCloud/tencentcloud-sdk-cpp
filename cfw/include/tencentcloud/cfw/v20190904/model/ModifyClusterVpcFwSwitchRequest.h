@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开关，0：关闭，1：开启
-                     * @return Enable 开关，0：关闭，1：开启
+                     * 获取<p>开关，0：关闭，1：开启</p>
+                     * @return Enable <p>开关，0：关闭，1：开启</p>
                      * 
                      */
                     int64_t GetEnable() const;
 
                     /**
-                     * 设置开关，0：关闭，1：开启
-                     * @param _enable 开关，0：关闭，1：开启
+                     * 设置<p>开关，0：关闭，1：开启</p>
+                     * @param _enable <p>开关，0：关闭，1：开启</p>
                      * 
                      */
                     void SetEnable(const int64_t& _enable);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取集群模式vpc间防火墙ccn开关信息
-                     * @return CcnSwitch 集群模式vpc间防火墙ccn开关信息
+                     * 获取<p>集群模式vpc间防火墙ccn开关信息</p>
+                     * @return CcnSwitch <p>集群模式vpc间防火墙ccn开关信息</p>
                      * 
                      */
                     std::vector<CcnSwitchInfo> GetCcnSwitch() const;
 
                     /**
-                     * 设置集群模式vpc间防火墙ccn开关信息
-                     * @param _ccnSwitch 集群模式vpc间防火墙ccn开关信息
+                     * 设置<p>集群模式vpc间防火墙ccn开关信息</p>
+                     * @param _ccnSwitch <p>集群模式vpc间防火墙ccn开关信息</p>
                      * 
                      */
                     void SetCcnSwitch(const std::vector<CcnSwitchInfo>& _ccnSwitch);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开关，0：关闭，1：开启
+                     * <p>开关，0：关闭，1：开启</p>
                      */
                     int64_t m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 集群模式vpc间防火墙ccn开关信息
+                     * <p>集群模式vpc间防火墙ccn开关信息</p>
                      */
                     std::vector<CcnSwitchInfo> m_ccnSwitch;
                     bool m_ccnSwitchHasBeenSet;

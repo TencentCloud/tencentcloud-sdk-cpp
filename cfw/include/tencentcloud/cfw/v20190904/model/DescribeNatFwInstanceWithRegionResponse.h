@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例数组
-                     * @return NatinsLst 实例数组
+                     * 获取<p>实例数组</p>
+                     * @return NatinsLst <p>实例数组</p>
                      * 
                      */
                     std::vector<NatFwInstance> GetNatinsLst() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例数组
+                     * <p>实例数组</p>
                      */
                     std::vector<NatFwInstance> m_natinsLst;
                     bool m_natinsLstHasBeenSet;

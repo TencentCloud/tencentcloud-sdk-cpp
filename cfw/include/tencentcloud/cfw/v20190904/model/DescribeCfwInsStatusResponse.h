@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取防火墙实例运行状态
+                     * 获取<p>防火墙实例运行状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CfwInsStatus 防火墙实例运行状态
+                     * @return CfwInsStatus <p>防火墙实例运行状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,8 +61,8 @@ namespace TencentCloud
                     bool CfwInsStatusHasBeenSet() const;
 
                     /**
-                     * 获取0
-                     * @return TotalCount 0
+                     * 获取<p>0</p>
+                     * @return TotalCount <p>0</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -77,14 +77,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 防火墙实例运行状态
+                     * <p>防火墙实例运行状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CfwInsStatus> m_cfwInsStatus;
                     bool m_cfwInsStatusHasBeenSet;
 
                     /**
-                     * 0
+                     * <p>0</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

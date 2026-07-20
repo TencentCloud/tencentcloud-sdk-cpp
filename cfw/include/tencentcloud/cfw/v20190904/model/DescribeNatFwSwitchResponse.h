@@ -47,9 +47,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总数
+                     * 获取<p>总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Total 总数
+                     * @return Total <p>总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,9 +63,9 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取NAT边界防火墙开关列表数据
+                     * 获取<p>NAT边界防火墙开关列表数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data NAT边界防火墙开关列表数据
+                     * @return Data <p>NAT边界防火墙开关列表数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -79,9 +79,9 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取开关相关VPC列表
+                     * 获取<p>开关相关VPC列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VpcList 开关相关VPC列表
+                     * @return VpcList <p>开关相关VPC列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -95,9 +95,9 @@ namespace TencentCloud
                     bool VpcListHasBeenSet() const;
 
                     /**
-                     * 获取开关相关NAT列表
+                     * 获取<p>开关相关NAT列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NatList 开关相关NAT列表
+                     * @return NatList <p>开关相关NAT列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -111,9 +111,9 @@ namespace TencentCloud
                     bool NatListHasBeenSet() const;
 
                     /**
-                     * 获取开关相关ROUTE列表
+                     * 获取<p>开关相关ROUTE列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RouteList 开关相关ROUTE列表
+                     * @return RouteList <p>开关相关ROUTE列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -127,9 +127,9 @@ namespace TencentCloud
                     bool RouteListHasBeenSet() const;
 
                     /**
-                     * 获取开启开关个数
+                     * 获取<p>开启开关个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OnNum 开启开关个数
+                     * @return OnNum <p>开启开关个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -143,9 +143,9 @@ namespace TencentCloud
                     bool OnNumHasBeenSet() const;
 
                     /**
-                     * 获取关闭开关个数
+                     * 获取<p>关闭开关个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OffNum 关闭开关个数
+                     * @return OffNum <p>关闭开关个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -159,9 +159,9 @@ namespace TencentCloud
                     bool OffNumHasBeenSet() const;
 
                     /**
-                     * 获取失败开关状态
+                     * 获取<p>失败开关状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FailData 失败开关状态
+                     * @return FailData <p>失败开关状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -177,56 +177,56 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总数
+                     * <p>总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * NAT边界防火墙开关列表数据
+                     * <p>NAT边界防火墙开关列表数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NatSwitchListData> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 开关相关VPC列表
+                     * <p>开关相关VPC列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CommonIdName> m_vpcList;
                     bool m_vpcListHasBeenSet;
 
                     /**
-                     * 开关相关NAT列表
+                     * <p>开关相关NAT列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CommonIdName> m_natList;
                     bool m_natListHasBeenSet;
 
                     /**
-                     * 开关相关ROUTE列表
+                     * <p>开关相关ROUTE列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CommonIdName> m_routeList;
                     bool m_routeListHasBeenSet;
 
                     /**
-                     * 开启开关个数
+                     * <p>开启开关个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_onNum;
                     bool m_onNumHasBeenSet;
 
                     /**
-                     * 关闭开关个数
+                     * <p>关闭开关个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_offNum;
                     bool m_offNumHasBeenSet;
 
                     /**
-                     * 失败开关状态
+                     * <p>失败开关状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CommonIdNameStatus> m_failData;

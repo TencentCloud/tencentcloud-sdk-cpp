@@ -1090,6 +1090,56 @@ DataagentClient::QueryKnowledgeTaskOutcomeCallable DataagentClient::QueryKnowled
     return prom->get_future();
 }
 
+DataagentClient::QueryModelsOutcome DataagentClient::QueryModels(const QueryModelsRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryModels");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryModelsResponse rsp = QueryModelsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryModelsOutcome(rsp);
+        else
+            return QueryModelsOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryModelsOutcome(outcome.GetError());
+    }
+}
+
+void DataagentClient::QueryModelsAsync(const QueryModelsRequest& request, const QueryModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const QueryModelsRequest&;
+    using Resp = QueryModelsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "QueryModels", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DataagentClient::QueryModelsOutcomeCallable DataagentClient::QueryModelsCallable(const QueryModelsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<QueryModelsOutcome>>();
+    QueryModelsAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const QueryModelsRequest&,
+        QueryModelsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DataagentClient::QuerySceneListOutcome DataagentClient::QuerySceneList(const QuerySceneListRequest &request)
 {
     auto outcome = MakeRequest(request, "QuerySceneList");

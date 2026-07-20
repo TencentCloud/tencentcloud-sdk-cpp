@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取nat实例信息
-                     * @return CfwInsId nat实例信息
+                     * 获取<p>nat实例信息</p>
+                     * @return CfwInsId <p>nat实例信息</p>
                      * 
                      */
                     std::string GetCfwInsId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * nat实例信息
+                     * <p>nat实例信息</p>
                      */
                     std::string m_cfwInsId;
                     bool m_cfwInsIdHasBeenSet;

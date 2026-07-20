@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取natfw 防火墙实例id
-                     * @return NatFwInsId natfw 防火墙实例id
+                     * 获取<p>natfw 防火墙实例id</p>
+                     * @return NatFwInsId <p>natfw 防火墙实例id</p>
                      * 
                      */
                     std::string GetNatFwInsId() const;
 
                     /**
-                     * 设置natfw 防火墙实例id
-                     * @param _natFwInsId natfw 防火墙实例id
+                     * 设置<p>natfw 防火墙实例id</p>
+                     * @param _natFwInsId <p>natfw 防火墙实例id</p>
                      * 
                      */
                     void SetNatFwInsId(const std::string& _natFwInsId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NatFwInsIdHasBeenSet() const;
 
                     /**
-                     * 获取natfw 过滤，以','分隔
-                     * @return NatInsIdFilter natfw 过滤，以','分隔
+                     * 获取<p>natfw 过滤，以&#39;,&#39;分隔</p>
+                     * @return NatInsIdFilter <p>natfw 过滤，以&#39;,&#39;分隔</p>
                      * 
                      */
                     std::string GetNatInsIdFilter() const;
 
                     /**
-                     * 设置natfw 过滤，以','分隔
-                     * @param _natInsIdFilter natfw 过滤，以','分隔
+                     * 设置<p>natfw 过滤，以&#39;,&#39;分隔</p>
+                     * @param _natInsIdFilter <p>natfw 过滤，以&#39;,&#39;分隔</p>
                      * 
                      */
                     void SetNatInsIdFilter(const std::string& _natInsIdFilter);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NatInsIdFilterHasBeenSet() const;
 
                     /**
-                     * 获取分页页数
-                     * @return Offset 分页页数
+                     * 获取<p>分页页数</p>
+                     * @return Offset <p>分页页数</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页页数
-                     * @param _offset 分页页数
+                     * 设置<p>分页页数</p>
+                     * @param _offset <p>分页页数</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页最多个数
-                     * @return Limit 每页最多个数
+                     * 获取<p>每页最多个数</p>
+                     * @return Limit <p>每页最多个数</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每页最多个数
-                     * @param _limit 每页最多个数
+                     * 设置<p>每页最多个数</p>
+                     * @param _limit <p>每页最多个数</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * natfw 防火墙实例id
+                     * <p>natfw 防火墙实例id</p>
                      */
                     std::string m_natFwInsId;
                     bool m_natFwInsIdHasBeenSet;
 
                     /**
-                     * natfw 过滤，以','分隔
+                     * <p>natfw 过滤，以&#39;,&#39;分隔</p>
                      */
                     std::string m_natInsIdFilter;
                     bool m_natInsIdFilterHasBeenSet;
 
                     /**
-                     * 分页页数
+                     * <p>分页页数</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页最多个数
+                     * <p>每页最多个数</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

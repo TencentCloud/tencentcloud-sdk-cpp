@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/waf/v20180125/model/ApiEventSample.h>
 
 
 namespace TencentCloud
@@ -47,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取攻击来源ip
-                     * @return SrcIp 攻击来源ip
+                     * 获取<p>攻击来源ip</p>
+                     * @return SrcIp <p>攻击来源ip</p>
                      * 
                      */
                     std::string GetSrcIp() const;
 
                     /**
-                     * 设置攻击来源ip
-                     * @param _srcIp 攻击来源ip
+                     * 设置<p>攻击来源ip</p>
+                     * @param _srcIp <p>攻击来源ip</p>
                      * 
                      */
                     void SetSrcIp(const std::string& _srcIp);
@@ -68,15 +69,15 @@ namespace TencentCloud
                     bool SrcIpHasBeenSet() const;
 
                     /**
-                     * 获取威胁等级
-                     * @return EventLevel 威胁等级
+                     * 获取<p>威胁等级</p>
+                     * @return EventLevel <p>威胁等级</p>
                      * 
                      */
                     std::string GetEventLevel() const;
 
                     /**
-                     * 设置威胁等级
-                     * @param _eventLevel 威胁等级
+                     * 设置<p>威胁等级</p>
+                     * @param _eventLevel <p>威胁等级</p>
                      * 
                      */
                     void SetEventLevel(const std::string& _eventLevel);
@@ -89,15 +90,15 @@ namespace TencentCloud
                     bool EventLevelHasBeenSet() const;
 
                     /**
-                     * 获取BOT标签
-                     * @return BotLabel BOT标签
+                     * 获取<p>BOT标签</p>
+                     * @return BotLabel <p>BOT标签</p>
                      * 
                      */
                     std::string GetBotLabel() const;
 
                     /**
-                     * 设置BOT标签
-                     * @param _botLabel BOT标签
+                     * 设置<p>BOT标签</p>
+                     * @param _botLabel <p>BOT标签</p>
                      * 
                      */
                     void SetBotLabel(const std::string& _botLabel);
@@ -110,15 +111,15 @@ namespace TencentCloud
                     bool BotLabelHasBeenSet() const;
 
                     /**
-                     * 获取变更时间
-                     * @return Timestamp 变更时间
+                     * 获取<p>变更时间</p>
+                     * @return Timestamp <p>变更时间</p>
                      * 
                      */
                     uint64_t GetTimestamp() const;
 
                     /**
-                     * 设置变更时间
-                     * @param _timestamp 变更时间
+                     * 设置<p>变更时间</p>
+                     * @param _timestamp <p>变更时间</p>
                      * 
                      */
                     void SetTimestamp(const uint64_t& _timestamp);
@@ -131,15 +132,15 @@ namespace TencentCloud
                     bool TimestampHasBeenSet() const;
 
                     /**
-                     * 获取地理位置
-                     * @return City 地理位置
+                     * 获取<p>地理位置</p>
+                     * @return City <p>地理位置</p>
                      * 
                      */
                     std::string GetCity() const;
 
                     /**
-                     * 设置地理位置
-                     * @param _city 地理位置
+                     * 设置<p>地理位置</p>
+                     * @param _city <p>地理位置</p>
                      * 
                      */
                     void SetCity(const std::string& _city);
@@ -152,15 +153,15 @@ namespace TencentCloud
                     bool CityHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取<p>开始时间</p>
+                     * @return StartTime <p>开始时间</p>
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
+                     * 设置<p>开始时间</p>
+                     * @param _startTime <p>开始时间</p>
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -173,15 +174,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取关联事件数量
-                     * @return EventCount 关联事件数量
+                     * 获取<p>关联事件数量</p>
+                     * @return EventCount <p>关联事件数量</p>
                      * 
                      */
                     int64_t GetEventCount() const;
 
                     /**
-                     * 设置关联事件数量
-                     * @param _eventCount 关联事件数量
+                     * 设置<p>关联事件数量</p>
+                     * @param _eventCount <p>关联事件数量</p>
                      * 
                      */
                     void SetEventCount(const int64_t& _eventCount);
@@ -194,15 +195,15 @@ namespace TencentCloud
                     bool EventCountHasBeenSet() const;
 
                     /**
-                     * 获取攻击数量
-                     * @return AttackCount 攻击数量
+                     * 获取<p>攻击数量</p>
+                     * @return AttackCount <p>攻击数量</p>
                      * 
                      */
                     int64_t GetAttackCount() const;
 
                     /**
-                     * 设置攻击数量
-                     * @param _attackCount 攻击数量
+                     * 设置<p>攻击数量</p>
+                     * @param _attackCount <p>攻击数量</p>
                      * 
                      */
                     void SetAttackCount(const int64_t& _attackCount);
@@ -215,15 +216,15 @@ namespace TencentCloud
                     bool AttackCountHasBeenSet() const;
 
                     /**
-                     * 获取缺失参数名，当事件类型是缺失参数名，缺失参数名和密码时，返回此字段
-                     * @return MissUserName 缺失参数名，当事件类型是缺失参数名，缺失参数名和密码时，返回此字段
+                     * 获取<p>缺失参数名，当事件类型是缺失参数名，缺失参数名和密码时，返回此字段</p>
+                     * @return MissUserName <p>缺失参数名，当事件类型是缺失参数名，缺失参数名和密码时，返回此字段</p>
                      * 
                      */
                     std::string GetMissUserName() const;
 
                     /**
-                     * 设置缺失参数名，当事件类型是缺失参数名，缺失参数名和密码时，返回此字段
-                     * @param _missUserName 缺失参数名，当事件类型是缺失参数名，缺失参数名和密码时，返回此字段
+                     * 设置<p>缺失参数名，当事件类型是缺失参数名，缺失参数名和密码时，返回此字段</p>
+                     * @param _missUserName <p>缺失参数名，当事件类型是缺失参数名，缺失参数名和密码时，返回此字段</p>
                      * 
                      */
                     void SetMissUserName(const std::string& _missUserName);
@@ -236,15 +237,15 @@ namespace TencentCloud
                     bool MissUserNameHasBeenSet() const;
 
                     /**
-                     * 获取当是水平越权和垂直越权时，返回此字段
-                     * @return AttackDetail 当是水平越权和垂直越权时，返回此字段
+                     * 获取<p>当是水平越权和垂直越权时，返回此字段</p>
+                     * @return AttackDetail <p>当是水平越权和垂直越权时，返回此字段</p>
                      * 
                      */
                     std::vector<std::string> GetAttackDetail() const;
 
                     /**
-                     * 设置当是水平越权和垂直越权时，返回此字段
-                     * @param _attackDetail 当是水平越权和垂直越权时，返回此字段
+                     * 设置<p>当是水平越权和垂直越权时，返回此字段</p>
+                     * @param _attackDetail <p>当是水平越权和垂直越权时，返回此字段</p>
                      * 
                      */
                     void SetAttackDetail(const std::vector<std::string>& _attackDetail);
@@ -257,15 +258,15 @@ namespace TencentCloud
                     bool AttackDetailHasBeenSet() const;
 
                     /**
-                     * 获取缺失密码参数，当事件类型是缺失参数名，缺失参数名和密码时，返回此字段
-                     * @return MissPassword 缺失密码参数，当事件类型是缺失参数名，缺失参数名和密码时，返回此字段
+                     * 获取<p>缺失密码参数，当事件类型是缺失参数名，缺失参数名和密码时，返回此字段</p>
+                     * @return MissPassword <p>缺失密码参数，当事件类型是缺失参数名，缺失参数名和密码时，返回此字段</p>
                      * 
                      */
                     std::string GetMissPassword() const;
 
                     /**
-                     * 设置缺失密码参数，当事件类型是缺失参数名，缺失参数名和密码时，返回此字段
-                     * @param _missPassword 缺失密码参数，当事件类型是缺失参数名，缺失参数名和密码时，返回此字段
+                     * 设置<p>缺失密码参数，当事件类型是缺失参数名，缺失参数名和密码时，返回此字段</p>
+                     * @param _missPassword <p>缺失密码参数，当事件类型是缺失参数名，缺失参数名和密码时，返回此字段</p>
                      * 
                      */
                     void SetMissPassword(const std::string& _missPassword);
@@ -277,73 +278,154 @@ namespace TencentCloud
                      */
                     bool MissPasswordHasBeenSet() const;
 
+                    /**
+                     * 获取<p>事件描述</p>
+                     * @return EventDescription <p>事件描述</p>
+                     * 
+                     */
+                    std::string GetEventDescription() const;
+
+                    /**
+                     * 设置<p>事件描述</p>
+                     * @param _eventDescription <p>事件描述</p>
+                     * 
+                     */
+                    void SetEventDescription(const std::string& _eventDescription);
+
+                    /**
+                     * 判断参数 EventDescription 是否已赋值
+                     * @return EventDescription 是否已赋值
+                     * 
+                     */
+                    bool EventDescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>事件描述(英文)</p>
+                     * @return EventDescriptionEng <p>事件描述(英文)</p>
+                     * 
+                     */
+                    std::string GetEventDescriptionEng() const;
+
+                    /**
+                     * 设置<p>事件描述(英文)</p>
+                     * @param _eventDescriptionEng <p>事件描述(英文)</p>
+                     * 
+                     */
+                    void SetEventDescriptionEng(const std::string& _eventDescriptionEng);
+
+                    /**
+                     * 判断参数 EventDescriptionEng 是否已赋值
+                     * @return EventDescriptionEng 是否已赋值
+                     * 
+                     */
+                    bool EventDescriptionEngHasBeenSet() const;
+
+                    /**
+                     * 获取<p>攻击样本</p>
+                     * @return Sample <p>攻击样本</p>
+                     * 
+                     */
+                    ApiEventSample GetSample() const;
+
+                    /**
+                     * 设置<p>攻击样本</p>
+                     * @param _sample <p>攻击样本</p>
+                     * 
+                     */
+                    void SetSample(const ApiEventSample& _sample);
+
+                    /**
+                     * 判断参数 Sample 是否已赋值
+                     * @return Sample 是否已赋值
+                     * 
+                     */
+                    bool SampleHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 攻击来源ip
+                     * <p>攻击来源ip</p>
                      */
                     std::string m_srcIp;
                     bool m_srcIpHasBeenSet;
 
                     /**
-                     * 威胁等级
+                     * <p>威胁等级</p>
                      */
                     std::string m_eventLevel;
                     bool m_eventLevelHasBeenSet;
 
                     /**
-                     * BOT标签
+                     * <p>BOT标签</p>
                      */
                     std::string m_botLabel;
                     bool m_botLabelHasBeenSet;
 
                     /**
-                     * 变更时间
+                     * <p>变更时间</p>
                      */
                     uint64_t m_timestamp;
                     bool m_timestampHasBeenSet;
 
                     /**
-                     * 地理位置
+                     * <p>地理位置</p>
                      */
                     std::string m_city;
                     bool m_cityHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * <p>开始时间</p>
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 关联事件数量
+                     * <p>关联事件数量</p>
                      */
                     int64_t m_eventCount;
                     bool m_eventCountHasBeenSet;
 
                     /**
-                     * 攻击数量
+                     * <p>攻击数量</p>
                      */
                     int64_t m_attackCount;
                     bool m_attackCountHasBeenSet;
 
                     /**
-                     * 缺失参数名，当事件类型是缺失参数名，缺失参数名和密码时，返回此字段
+                     * <p>缺失参数名，当事件类型是缺失参数名，缺失参数名和密码时，返回此字段</p>
                      */
                     std::string m_missUserName;
                     bool m_missUserNameHasBeenSet;
 
                     /**
-                     * 当是水平越权和垂直越权时，返回此字段
+                     * <p>当是水平越权和垂直越权时，返回此字段</p>
                      */
                     std::vector<std::string> m_attackDetail;
                     bool m_attackDetailHasBeenSet;
 
                     /**
-                     * 缺失密码参数，当事件类型是缺失参数名，缺失参数名和密码时，返回此字段
+                     * <p>缺失密码参数，当事件类型是缺失参数名，缺失参数名和密码时，返回此字段</p>
                      */
                     std::string m_missPassword;
                     bool m_missPasswordHasBeenSet;
+
+                    /**
+                     * <p>事件描述</p>
+                     */
+                    std::string m_eventDescription;
+                    bool m_eventDescriptionHasBeenSet;
+
+                    /**
+                     * <p>事件描述(英文)</p>
+                     */
+                    std::string m_eventDescriptionEng;
+                    bool m_eventDescriptionEngHasBeenSet;
+
+                    /**
+                     * <p>攻击样本</p>
+                     */
+                    ApiEventSample m_sample;
+                    bool m_sampleHasBeenSet;
 
                 };
             }

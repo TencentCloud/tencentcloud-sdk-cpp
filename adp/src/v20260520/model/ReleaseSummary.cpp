@@ -26,7 +26,9 @@ ReleaseSummary::ReleaseSummary() :
     m_releaseIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statusDescriptionHasBeenSet(false),
-    m_channelIdListHasBeenSet(false)
+    m_appShareAccessControlHasBeenSet(false),
+    m_channelIdListHasBeenSet(false),
+    m_corpShareConfigHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,23 @@ CoreInternalOutcome ReleaseSummary::Deserialize(const rapidjson::Value &value)
         m_statusDescriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("AppShareAccessControl") && !value["AppShareAccessControl"].IsNull())
+    {
+        if (!value["AppShareAccessControl"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReleaseSummary.AppShareAccessControl` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_appShareAccessControl.Deserialize(value["AppShareAccessControl"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_appShareAccessControlHasBeenSet = true;
+    }
+
     if (value.HasMember("ChannelIdList") && !value["ChannelIdList"].IsNull())
     {
         if (!value["ChannelIdList"].IsArray())
@@ -96,6 +115,23 @@ CoreInternalOutcome ReleaseSummary::Deserialize(const rapidjson::Value &value)
             m_channelIdList.push_back((*itr).GetString());
         }
         m_channelIdListHasBeenSet = true;
+    }
+
+    if (value.HasMember("CorpShareConfig") && !value["CorpShareConfig"].IsNull())
+    {
+        if (!value["CorpShareConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReleaseSummary.CorpShareConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_corpShareConfig.Deserialize(value["CorpShareConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_corpShareConfigHasBeenSet = true;
     }
 
 
@@ -145,6 +181,15 @@ void ReleaseSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(m_statusDescription.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_appShareAccessControlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppShareAccessControl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_appShareAccessControl.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_channelIdListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -156,6 +201,15 @@ void ReleaseSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_corpShareConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CorpShareConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_corpShareConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -241,6 +295,22 @@ bool ReleaseSummary::StatusDescriptionHasBeenSet() const
     return m_statusDescriptionHasBeenSet;
 }
 
+AppShareAccessControl ReleaseSummary::GetAppShareAccessControl() const
+{
+    return m_appShareAccessControl;
+}
+
+void ReleaseSummary::SetAppShareAccessControl(const AppShareAccessControl& _appShareAccessControl)
+{
+    m_appShareAccessControl = _appShareAccessControl;
+    m_appShareAccessControlHasBeenSet = true;
+}
+
+bool ReleaseSummary::AppShareAccessControlHasBeenSet() const
+{
+    return m_appShareAccessControlHasBeenSet;
+}
+
 vector<string> ReleaseSummary::GetChannelIdList() const
 {
     return m_channelIdList;
@@ -255,5 +325,21 @@ void ReleaseSummary::SetChannelIdList(const vector<string>& _channelIdList)
 bool ReleaseSummary::ChannelIdListHasBeenSet() const
 {
     return m_channelIdListHasBeenSet;
+}
+
+CorpShareConfig ReleaseSummary::GetCorpShareConfig() const
+{
+    return m_corpShareConfig;
+}
+
+void ReleaseSummary::SetCorpShareConfig(const CorpShareConfig& _corpShareConfig)
+{
+    m_corpShareConfig = _corpShareConfig;
+    m_corpShareConfigHasBeenSet = true;
+}
+
+bool ReleaseSummary::CorpShareConfigHasBeenSet() const
+{
+    return m_corpShareConfigHasBeenSet;
 }
 

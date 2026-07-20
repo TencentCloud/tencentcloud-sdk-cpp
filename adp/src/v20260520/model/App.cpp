@@ -27,7 +27,8 @@ App::App() :
     m_secretInfoHasBeenSet(false),
     m_shareUrlInfoHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_sharedKbListHasBeenSet(false)
+    m_sharedKbListHasBeenSet(false),
+    m_corpShareConfigHasBeenSet(false)
 {
 }
 
@@ -158,6 +159,23 @@ CoreInternalOutcome App::Deserialize(const rapidjson::Value &value)
         m_sharedKbListHasBeenSet = true;
     }
 
+    if (value.HasMember("CorpShareConfig") && !value["CorpShareConfig"].IsNull())
+    {
+        if (!value["CorpShareConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `App.CorpShareConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_corpShareConfig.Deserialize(value["CorpShareConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_corpShareConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -232,6 +250,15 @@ void App::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_corpShareConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CorpShareConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_corpShareConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -347,5 +374,21 @@ void App::SetSharedKbList(const vector<AppSharedKbInfo>& _sharedKbList)
 bool App::SharedKbListHasBeenSet() const
 {
     return m_sharedKbListHasBeenSet;
+}
+
+CorpShareConfig App::GetCorpShareConfig() const
+{
+    return m_corpShareConfig;
+}
+
+void App::SetCorpShareConfig(const CorpShareConfig& _corpShareConfig)
+{
+    m_corpShareConfig = _corpShareConfig;
+    m_corpShareConfigHasBeenSet = true;
+}
+
+bool App::CorpShareConfigHasBeenSet() const
+{
+    return m_corpShareConfigHasBeenSet;
 }
 

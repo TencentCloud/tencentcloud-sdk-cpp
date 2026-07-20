@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取app_id
-                     * @return AppId app_id
+                     * 获取<p>app_id</p>
+                     * @return AppId <p>app_id</p>
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
-                     * 设置app_id
-                     * @param _appId app_id
+                     * 设置<p>app_id</p>
+                     * @param _appId <p>app_id</p>
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -63,13 +63,40 @@ namespace TencentCloud
                      */
                     bool AppIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>删除原因(非必填,审批时展示)</p>
+                     * @return Reason <p>删除原因(非必填,审批时展示)</p>
+                     * 
+                     */
+                    std::string GetReason() const;
+
+                    /**
+                     * 设置<p>删除原因(非必填,审批时展示)</p>
+                     * @param _reason <p>删除原因(非必填,审批时展示)</p>
+                     * 
+                     */
+                    void SetReason(const std::string& _reason);
+
+                    /**
+                     * 判断参数 Reason 是否已赋值
+                     * @return Reason 是否已赋值
+                     * 
+                     */
+                    bool ReasonHasBeenSet() const;
+
                 private:
 
                     /**
-                     * app_id
+                     * <p>app_id</p>
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
+
+                    /**
+                     * <p>删除原因(非必填,审批时展示)</p>
+                     */
+                    std::string m_reason;
+                    bool m_reasonHasBeenSet;
 
                 };
             }

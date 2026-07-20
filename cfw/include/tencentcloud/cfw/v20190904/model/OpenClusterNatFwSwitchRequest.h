@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取NAT CCN防火墙开关配置
-                     * @return NatCcnSwitch NAT CCN防火墙开关配置
+                     * 获取<p>NAT CCN防火墙开关配置</p>
+                     * @return NatCcnSwitch <p>NAT CCN防火墙开关配置</p>
                      * 
                      */
                     NatCcnSwitchConfig GetNatCcnSwitch() const;
 
                     /**
-                     * 设置NAT CCN防火墙开关配置
-                     * @param _natCcnSwitch NAT CCN防火墙开关配置
+                     * 设置<p>NAT CCN防火墙开关配置</p>
+                     * @param _natCcnSwitch <p>NAT CCN防火墙开关配置</p>
                      * 
                      */
                     void SetNatCcnSwitch(const NatCcnSwitchConfig& _natCcnSwitch);
@@ -67,7 +67,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * NAT CCN防火墙开关配置
+                     * <p>NAT CCN防火墙开关配置</p>
                      */
                     NatCcnSwitchConfig m_natCcnSwitch;
                     bool m_natCcnSwitchHasBeenSet;

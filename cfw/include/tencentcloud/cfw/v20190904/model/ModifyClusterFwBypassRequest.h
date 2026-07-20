@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取防火墙类型，"VPC_FW"-VPC防火墙，"NAT_FW"-NAT防火墙
-                     * @return FwType 防火墙类型，"VPC_FW"-VPC防火墙，"NAT_FW"-NAT防火墙
+                     * 获取<p>防火墙类型，&quot;VPC_FW&quot;-VPC防火墙，&quot;NAT_FW&quot;-NAT防火墙</p>
+                     * @return FwType <p>防火墙类型，&quot;VPC_FW&quot;-VPC防火墙，&quot;NAT_FW&quot;-NAT防火墙</p>
                      * 
                      */
                     std::string GetFwType() const;
 
                     /**
-                     * 设置防火墙类型，"VPC_FW"-VPC防火墙，"NAT_FW"-NAT防火墙
-                     * @param _fwType 防火墙类型，"VPC_FW"-VPC防火墙，"NAT_FW"-NAT防火墙
+                     * 设置<p>防火墙类型，&quot;VPC_FW&quot;-VPC防火墙，&quot;NAT_FW&quot;-NAT防火墙</p>
+                     * @param _fwType <p>防火墙类型，&quot;VPC_FW&quot;-VPC防火墙，&quot;NAT_FW&quot;-NAT防火墙</p>
                      * 
                      */
                     void SetFwType(const std::string& _fwType);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool FwTypeHasBeenSet() const;
 
                     /**
-                     * 获取云联网实例ID
-                     * @return CcnId 云联网实例ID
+                     * 获取<p>云联网实例ID</p>
+                     * @return CcnId <p>云联网实例ID</p>
                      * 
                      */
                     std::string GetCcnId() const;
 
                     /**
-                     * 设置云联网实例ID
-                     * @param _ccnId 云联网实例ID
+                     * 设置<p>云联网实例ID</p>
+                     * @param _ccnId <p>云联网实例ID</p>
                      * 
                      */
                     void SetCcnId(const std::string& _ccnId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool CcnIdHasBeenSet() const;
 
                     /**
-                     * 获取Bypass开关，true-开启Bypass（禁用正常下一跳，流量绕过防火墙），false-关闭Bypass（启用正常下一跳，流量经过防火墙）
-                     * @return Enable Bypass开关，true-开启Bypass（禁用正常下一跳，流量绕过防火墙），false-关闭Bypass（启用正常下一跳，流量经过防火墙）
+                     * 获取<p>Bypass开关，true-开启Bypass（禁用正常下一跳，流量绕过防火墙），false-关闭Bypass（启用正常下一跳，流量经过防火墙）</p>
+                     * @return Enable <p>Bypass开关，true-开启Bypass（禁用正常下一跳，流量绕过防火墙），false-关闭Bypass（启用正常下一跳，流量经过防火墙）</p>
                      * 
                      */
                     bool GetEnable() const;
 
                     /**
-                     * 设置Bypass开关，true-开启Bypass（禁用正常下一跳，流量绕过防火墙），false-关闭Bypass（启用正常下一跳，流量经过防火墙）
-                     * @param _enable Bypass开关，true-开启Bypass（禁用正常下一跳，流量绕过防火墙），false-关闭Bypass（启用正常下一跳，流量经过防火墙）
+                     * 设置<p>Bypass开关，true-开启Bypass（禁用正常下一跳，流量绕过防火墙），false-关闭Bypass（启用正常下一跳，流量经过防火墙）</p>
+                     * @param _enable <p>Bypass开关，true-开启Bypass（禁用正常下一跳，流量绕过防火墙），false-关闭Bypass（启用正常下一跳，流量经过防火墙）</p>
                      * 
                      */
                     void SetEnable(const bool& _enable);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取NAT防火墙实例ID，FwType为nat时必填
-                     * @return NatInsId NAT防火墙实例ID，FwType为nat时必填
+                     * 获取<p>NAT防火墙实例ID，FwType为nat时必填</p>
+                     * @return NatInsId <p>NAT防火墙实例ID，FwType为nat时必填</p>
                      * 
                      */
                     std::string GetNatInsId() const;
 
                     /**
-                     * 设置NAT防火墙实例ID，FwType为nat时必填
-                     * @param _natInsId NAT防火墙实例ID，FwType为nat时必填
+                     * 设置<p>NAT防火墙实例ID，FwType为nat时必填</p>
+                     * @param _natInsId <p>NAT防火墙实例ID，FwType为nat时必填</p>
                      * 
                      */
                     void SetNatInsId(const std::string& _natInsId);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 防火墙类型，"VPC_FW"-VPC防火墙，"NAT_FW"-NAT防火墙
+                     * <p>防火墙类型，&quot;VPC_FW&quot;-VPC防火墙，&quot;NAT_FW&quot;-NAT防火墙</p>
                      */
                     std::string m_fwType;
                     bool m_fwTypeHasBeenSet;
 
                     /**
-                     * 云联网实例ID
+                     * <p>云联网实例ID</p>
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;
 
                     /**
-                     * Bypass开关，true-开启Bypass（禁用正常下一跳，流量绕过防火墙），false-关闭Bypass（启用正常下一跳，流量经过防火墙）
+                     * <p>Bypass开关，true-开启Bypass（禁用正常下一跳，流量绕过防火墙），false-关闭Bypass（启用正常下一跳，流量经过防火墙）</p>
                      */
                     bool m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * NAT防火墙实例ID，FwType为nat时必填
+                     * <p>NAT防火墙实例ID，FwType为nat时必填</p>
                      */
                     std::string m_natInsId;
                     bool m_natInsIdHasBeenSet;

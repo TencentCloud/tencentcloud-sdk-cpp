@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例卡片信息数组
-                     * @return NatinsLst 实例卡片信息数组
+                     * 获取<p>实例卡片信息数组</p>
+                     * @return NatinsLst <p>实例卡片信息数组</p>
                      * 
                      */
                     std::vector<NatInstanceInfo> GetNatinsLst() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool NatinsLstHasBeenSet() const;
 
                     /**
-                     * 获取nat 防火墙个数
-                     * @return Total nat 防火墙个数
+                     * 获取<p>nat 防火墙个数</p>
+                     * @return Total <p>nat 防火墙个数</p>
                      * 
                      */
                     int64_t GetTotal() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例卡片信息数组
+                     * <p>实例卡片信息数组</p>
                      */
                     std::vector<NatInstanceInfo> m_natinsLst;
                     bool m_natinsLstHasBeenSet;
 
                     /**
-                     * nat 防火墙个数
+                     * <p>nat 防火墙个数</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;

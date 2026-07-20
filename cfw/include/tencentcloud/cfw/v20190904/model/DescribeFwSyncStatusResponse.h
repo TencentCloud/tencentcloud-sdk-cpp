@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取同步状态：1，同步中；0，同步完成
-                     * @return SyncStatus 同步状态：1，同步中；0，同步完成
+                     * 获取<p>同步状态：1，同步中；0，同步完成</p>
+                     * @return SyncStatus <p>同步状态：1，同步中；0，同步完成</p>
                      * 
                      */
                     int64_t GetSyncStatus() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 同步状态：1，同步中；0，同步完成
+                     * <p>同步状态：1，同步中；0，同步完成</p>
                      */
                     int64_t m_syncStatus;
                     bool m_syncStatusHasBeenSet;

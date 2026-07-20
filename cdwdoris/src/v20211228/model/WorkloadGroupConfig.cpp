@@ -25,7 +25,12 @@ WorkloadGroupConfig::WorkloadGroupConfig() :
     m_cpuShareHasBeenSet(false),
     m_memoryLimitHasBeenSet(false),
     m_enableMemoryOverCommitHasBeenSet(false),
-    m_cpuHardLimitHasBeenSet(false)
+    m_cpuHardLimitHasBeenSet(false),
+    m_minCpuPercentHasBeenSet(false),
+    m_minMemoryPercentHasBeenSet(false),
+    m_maxConcurrencyNumHasBeenSet(false),
+    m_maxQueueSizeHasBeenSet(false),
+    m_queueTimeoutHasBeenSet(false)
 {
 }
 
@@ -84,6 +89,56 @@ CoreInternalOutcome WorkloadGroupConfig::Deserialize(const rapidjson::Value &val
         m_cpuHardLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("MinCpuPercent") && !value["MinCpuPercent"].IsNull())
+    {
+        if (!value["MinCpuPercent"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkloadGroupConfig.MinCpuPercent` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_minCpuPercent = value["MinCpuPercent"].GetInt64();
+        m_minCpuPercentHasBeenSet = true;
+    }
+
+    if (value.HasMember("MinMemoryPercent") && !value["MinMemoryPercent"].IsNull())
+    {
+        if (!value["MinMemoryPercent"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkloadGroupConfig.MinMemoryPercent` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_minMemoryPercent = value["MinMemoryPercent"].GetInt64();
+        m_minMemoryPercentHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxConcurrencyNum") && !value["MaxConcurrencyNum"].IsNull())
+    {
+        if (!value["MaxConcurrencyNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkloadGroupConfig.MaxConcurrencyNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxConcurrencyNum = value["MaxConcurrencyNum"].GetInt64();
+        m_maxConcurrencyNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxQueueSize") && !value["MaxQueueSize"].IsNull())
+    {
+        if (!value["MaxQueueSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkloadGroupConfig.MaxQueueSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxQueueSize = value["MaxQueueSize"].GetInt64();
+        m_maxQueueSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("QueueTimeout") && !value["QueueTimeout"].IsNull())
+    {
+        if (!value["QueueTimeout"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkloadGroupConfig.QueueTimeout` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_queueTimeout = value["QueueTimeout"].GetInt64();
+        m_queueTimeoutHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +184,46 @@ void WorkloadGroupConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "CpuHardLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cpuHardLimit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_minCpuPercentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinCpuPercent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_minCpuPercent, allocator);
+    }
+
+    if (m_minMemoryPercentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinMemoryPercent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_minMemoryPercent, allocator);
+    }
+
+    if (m_maxConcurrencyNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxConcurrencyNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxConcurrencyNum, allocator);
+    }
+
+    if (m_maxQueueSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxQueueSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxQueueSize, allocator);
+    }
+
+    if (m_queueTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueueTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_queueTimeout, allocator);
     }
 
 }
@@ -212,5 +307,85 @@ void WorkloadGroupConfig::SetCpuHardLimit(const string& _cpuHardLimit)
 bool WorkloadGroupConfig::CpuHardLimitHasBeenSet() const
 {
     return m_cpuHardLimitHasBeenSet;
+}
+
+int64_t WorkloadGroupConfig::GetMinCpuPercent() const
+{
+    return m_minCpuPercent;
+}
+
+void WorkloadGroupConfig::SetMinCpuPercent(const int64_t& _minCpuPercent)
+{
+    m_minCpuPercent = _minCpuPercent;
+    m_minCpuPercentHasBeenSet = true;
+}
+
+bool WorkloadGroupConfig::MinCpuPercentHasBeenSet() const
+{
+    return m_minCpuPercentHasBeenSet;
+}
+
+int64_t WorkloadGroupConfig::GetMinMemoryPercent() const
+{
+    return m_minMemoryPercent;
+}
+
+void WorkloadGroupConfig::SetMinMemoryPercent(const int64_t& _minMemoryPercent)
+{
+    m_minMemoryPercent = _minMemoryPercent;
+    m_minMemoryPercentHasBeenSet = true;
+}
+
+bool WorkloadGroupConfig::MinMemoryPercentHasBeenSet() const
+{
+    return m_minMemoryPercentHasBeenSet;
+}
+
+int64_t WorkloadGroupConfig::GetMaxConcurrencyNum() const
+{
+    return m_maxConcurrencyNum;
+}
+
+void WorkloadGroupConfig::SetMaxConcurrencyNum(const int64_t& _maxConcurrencyNum)
+{
+    m_maxConcurrencyNum = _maxConcurrencyNum;
+    m_maxConcurrencyNumHasBeenSet = true;
+}
+
+bool WorkloadGroupConfig::MaxConcurrencyNumHasBeenSet() const
+{
+    return m_maxConcurrencyNumHasBeenSet;
+}
+
+int64_t WorkloadGroupConfig::GetMaxQueueSize() const
+{
+    return m_maxQueueSize;
+}
+
+void WorkloadGroupConfig::SetMaxQueueSize(const int64_t& _maxQueueSize)
+{
+    m_maxQueueSize = _maxQueueSize;
+    m_maxQueueSizeHasBeenSet = true;
+}
+
+bool WorkloadGroupConfig::MaxQueueSizeHasBeenSet() const
+{
+    return m_maxQueueSizeHasBeenSet;
+}
+
+int64_t WorkloadGroupConfig::GetQueueTimeout() const
+{
+    return m_queueTimeout;
+}
+
+void WorkloadGroupConfig::SetQueueTimeout(const int64_t& _queueTimeout)
+{
+    m_queueTimeout = _queueTimeout;
+    m_queueTimeoutHasBeenSet = true;
+}
+
+bool WorkloadGroupConfig::QueueTimeoutHasBeenSet() const
+{
+    return m_queueTimeoutHasBeenSet;
 }
 

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取获取实例列表过滤字段
-                     * @return Filter 获取实例列表过滤字段
+                     * 获取<p>获取实例列表过滤字段</p>
+                     * @return Filter <p>获取实例列表过滤字段</p>
                      * 
                      */
                     std::vector<NatFwFilter> GetFilter() const;
 
                     /**
-                     * 设置获取实例列表过滤字段
-                     * @param _filter 获取实例列表过滤字段
+                     * 设置<p>获取实例列表过滤字段</p>
+                     * @param _filter <p>获取实例列表过滤字段</p>
                      * 
                      */
                     void SetFilter(const std::vector<NatFwFilter>& _filter);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool FilterHasBeenSet() const;
 
                     /**
-                     * 获取第几页
-                     * @return Offset 第几页
+                     * 获取<p>第几页</p>
+                     * @return Offset <p>第几页</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置第几页
-                     * @param _offset 第几页
+                     * 设置<p>第几页</p>
+                     * @param _offset <p>第几页</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页长度
-                     * @return Limit 每页长度
+                     * 获取<p>每页长度</p>
+                     * @return Limit <p>每页长度</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每页长度
-                     * @param _limit 每页长度
+                     * 设置<p>每页长度</p>
+                     * @param _limit <p>每页长度</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -109,19 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 获取实例列表过滤字段
+                     * <p>获取实例列表过滤字段</p>
                      */
                     std::vector<NatFwFilter> m_filter;
                     bool m_filterHasBeenSet;
 
                     /**
-                     * 第几页
+                     * <p>第几页</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页长度
+                     * <p>每页长度</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

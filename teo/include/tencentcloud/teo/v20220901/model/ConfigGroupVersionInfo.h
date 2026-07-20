@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取版本 ID。
-                     * @return VersionId 版本 ID。
+                     * 获取<p>配置组版本 ID，创建配置组版本时 EdgeOne 分配的唯一资源 ID。</p><p>参数格式：ver-2kplomhisdcb</p><p>取值参考：</p><ul><li><a href="https://cloud.tencent.com/document/api/1552/101867">CreateConfigGroupVersion</a> 返回值 <code>VersionId</code></li><li><a href="https://cloud.tencent.com/document/api/1552/101864">DescribeConfigGroupVersions</a> 返回值 <code>ConfigGroupVersionInfos</code></li></ul>
+                     * @return VersionId <p>配置组版本 ID，创建配置组版本时 EdgeOne 分配的唯一资源 ID。</p><p>参数格式：ver-2kplomhisdcb</p><p>取值参考：</p><ul><li><a href="https://cloud.tencent.com/document/api/1552/101867">CreateConfigGroupVersion</a> 返回值 <code>VersionId</code></li><li><a href="https://cloud.tencent.com/document/api/1552/101864">DescribeConfigGroupVersions</a> 返回值 <code>ConfigGroupVersionInfos</code></li></ul>
                      * 
                      */
                     std::string GetVersionId() const;
 
                     /**
-                     * 设置版本 ID。
-                     * @param _versionId 版本 ID。
+                     * 设置<p>配置组版本 ID，创建配置组版本时 EdgeOne 分配的唯一资源 ID。</p><p>参数格式：ver-2kplomhisdcb</p><p>取值参考：</p><ul><li><a href="https://cloud.tencent.com/document/api/1552/101867">CreateConfigGroupVersion</a> 返回值 <code>VersionId</code></li><li><a href="https://cloud.tencent.com/document/api/1552/101864">DescribeConfigGroupVersions</a> 返回值 <code>ConfigGroupVersionInfos</code></li></ul>
+                     * @param _versionId <p>配置组版本 ID，创建配置组版本时 EdgeOne 分配的唯一资源 ID。</p><p>参数格式：ver-2kplomhisdcb</p><p>取值参考：</p><ul><li><a href="https://cloud.tencent.com/document/api/1552/101867">CreateConfigGroupVersion</a> 返回值 <code>VersionId</code></li><li><a href="https://cloud.tencent.com/document/api/1552/101864">DescribeConfigGroupVersions</a> 返回值 <code>ConfigGroupVersionInfos</code></li></ul>
                      * 
                      */
                     void SetVersionId(const std::string& _versionId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool VersionIdHasBeenSet() const;
 
                     /**
-                     * 获取版本号。
-                     * @return VersionNumber 版本号。
+                     * 获取<p>配置组版本号。该参数仅作展示使用，配置组每创建一次新版本，该版本号自增加一，初始版本的版本号为 &quot;0&quot;。</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1552/101864">DescribeConfigGroupVersions</a> 返回值 <code>ConfigGroupVersionInfos</code></p>
+                     * @return VersionNumber <p>配置组版本号。该参数仅作展示使用，配置组每创建一次新版本，该版本号自增加一，初始版本的版本号为 &quot;0&quot;。</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1552/101864">DescribeConfigGroupVersions</a> 返回值 <code>ConfigGroupVersionInfos</code></p>
                      * 
                      */
                     std::string GetVersionNumber() const;
 
                     /**
-                     * 设置版本号。
-                     * @param _versionNumber 版本号。
+                     * 设置<p>配置组版本号。该参数仅作展示使用，配置组每创建一次新版本，该版本号自增加一，初始版本的版本号为 &quot;0&quot;。</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1552/101864">DescribeConfigGroupVersions</a> 返回值 <code>ConfigGroupVersionInfos</code></p>
+                     * @param _versionNumber <p>配置组版本号。该参数仅作展示使用，配置组每创建一次新版本，该版本号自增加一，初始版本的版本号为 &quot;0&quot;。</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1552/101864">DescribeConfigGroupVersions</a> 返回值 <code>ConfigGroupVersionInfos</code></p>
                      * 
                      */
                     void SetVersionNumber(const std::string& _versionNumber);
@@ -89,36 +89,36 @@ namespace TencentCloud
                     bool VersionNumberHasBeenSet() const;
 
                     /**
-                     * 获取配置组 ID。
-                     * @return GroupId 配置组 ID。
+                     * 获取<p>配置组版本所基于的来源版本 ID，在创建配置组版本时进行指定来源版本 ID，新版本将在该来源版本的配置基础上派生创建。</p><p>参数格式：ver-2kplomhisdcb</p><p>取值参考：</p><ul><li><a href="https://cloud.tencent.com/document/api/1552/101867">CreateConfigGroupVersion</a> 返回值 <code>VersionId</code></li><li><a href="https://cloud.tencent.com/document/api/1552/101864">DescribeConfigGroupVersions</a> 返回值 <code>ConfigGroupVersionInfos</code></li></ul>
+                     * @return SourceVersion <p>配置组版本所基于的来源版本 ID，在创建配置组版本时进行指定来源版本 ID，新版本将在该来源版本的配置基础上派生创建。</p><p>参数格式：ver-2kplomhisdcb</p><p>取值参考：</p><ul><li><a href="https://cloud.tencent.com/document/api/1552/101867">CreateConfigGroupVersion</a> 返回值 <code>VersionId</code></li><li><a href="https://cloud.tencent.com/document/api/1552/101864">DescribeConfigGroupVersions</a> 返回值 <code>ConfigGroupVersionInfos</code></li></ul>
                      * 
                      */
-                    std::string GetGroupId() const;
+                    std::string GetSourceVersion() const;
 
                     /**
-                     * 设置配置组 ID。
-                     * @param _groupId 配置组 ID。
+                     * 设置<p>配置组版本所基于的来源版本 ID，在创建配置组版本时进行指定来源版本 ID，新版本将在该来源版本的配置基础上派生创建。</p><p>参数格式：ver-2kplomhisdcb</p><p>取值参考：</p><ul><li><a href="https://cloud.tencent.com/document/api/1552/101867">CreateConfigGroupVersion</a> 返回值 <code>VersionId</code></li><li><a href="https://cloud.tencent.com/document/api/1552/101864">DescribeConfigGroupVersions</a> 返回值 <code>ConfigGroupVersionInfos</code></li></ul>
+                     * @param _sourceVersion <p>配置组版本所基于的来源版本 ID，在创建配置组版本时进行指定来源版本 ID，新版本将在该来源版本的配置基础上派生创建。</p><p>参数格式：ver-2kplomhisdcb</p><p>取值参考：</p><ul><li><a href="https://cloud.tencent.com/document/api/1552/101867">CreateConfigGroupVersion</a> 返回值 <code>VersionId</code></li><li><a href="https://cloud.tencent.com/document/api/1552/101864">DescribeConfigGroupVersions</a> 返回值 <code>ConfigGroupVersionInfos</code></li></ul>
                      * 
                      */
-                    void SetGroupId(const std::string& _groupId);
+                    void SetSourceVersion(const std::string& _sourceVersion);
 
                     /**
-                     * 判断参数 GroupId 是否已赋值
-                     * @return GroupId 是否已赋值
+                     * 判断参数 SourceVersion 是否已赋值
+                     * @return SourceVersion 是否已赋值
                      * 
                      */
-                    bool GroupIdHasBeenSet() const;
+                    bool SourceVersionHasBeenSet() const;
 
                     /**
-                     * 获取配置组类型，可选项如下：<li>l7_acceleration: 七层加速配置组；</li><li>edge_functions: 边缘函数配置组；</li><li>web_security: Web 防护配置组。</li>
-                     * @return GroupType 配置组类型，可选项如下：<li>l7_acceleration: 七层加速配置组；</li><li>edge_functions: 边缘函数配置组；</li><li>web_security: Web 防护配置组。</li>
+                     * 获取<p>版本归属的配置组类型。</p><p>枚举值：</p><ul><li>l7_acceleration： 七层加速配置组</li><li>edge_functions： 边缘函数配置组</li><li>web_security： Web 防护配置组</li></ul>
+                     * @return GroupType <p>版本归属的配置组类型。</p><p>枚举值：</p><ul><li>l7_acceleration： 七层加速配置组</li><li>edge_functions： 边缘函数配置组</li><li>web_security： Web 防护配置组</li></ul>
                      * 
                      */
                     std::string GetGroupType() const;
 
                     /**
-                     * 设置配置组类型，可选项如下：<li>l7_acceleration: 七层加速配置组；</li><li>edge_functions: 边缘函数配置组；</li><li>web_security: Web 防护配置组。</li>
-                     * @param _groupType 配置组类型，可选项如下：<li>l7_acceleration: 七层加速配置组；</li><li>edge_functions: 边缘函数配置组；</li><li>web_security: Web 防护配置组。</li>
+                     * 设置<p>版本归属的配置组类型。</p><p>枚举值：</p><ul><li>l7_acceleration： 七层加速配置组</li><li>edge_functions： 边缘函数配置组</li><li>web_security： Web 防护配置组</li></ul>
+                     * @param _groupType <p>版本归属的配置组类型。</p><p>枚举值：</p><ul><li>l7_acceleration： 七层加速配置组</li><li>edge_functions： 边缘函数配置组</li><li>web_security： Web 防护配置组</li></ul>
                      * 
                      */
                     void SetGroupType(const std::string& _groupType);
@@ -131,15 +131,36 @@ namespace TencentCloud
                     bool GroupTypeHasBeenSet() const;
 
                     /**
-                     * 获取版本描述。
-                     * @return Description 版本描述。
+                     * 获取<p>版本归属的配置组 ID。</p><p>参数格式：cg-2kplomhisdcb</p>
+                     * @return GroupId <p>版本归属的配置组 ID。</p><p>参数格式：cg-2kplomhisdcb</p>
+                     * 
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置<p>版本归属的配置组 ID。</p><p>参数格式：cg-2kplomhisdcb</p>
+                     * @param _groupId <p>版本归属的配置组 ID。</p><p>参数格式：cg-2kplomhisdcb</p>
+                     * 
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     * 
+                     */
+                    bool GroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>版本描述。</p>
+                     * @return Description <p>版本描述。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置版本描述。
-                     * @param _description 版本描述。
+                     * 设置<p>版本描述。</p>
+                     * @param _description <p>版本描述。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -152,27 +173,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取版本状态，取值有：
-<li>creating：创建中；</li>
-<li>inactive：未生效；</li>
-<li>active：已生效。</li>
-                     * @return Status 版本状态，取值有：
-<li>creating：创建中；</li>
-<li>inactive：未生效；</li>
-<li>active：已生效。</li>
+                     * 获取<p>版本生效状态。</p><p>枚举值：</p><ul><li>creating： 版本创建中</li><li>inactive： 版本未生效</li><li>active： 版本已生效</li></ul>
+                     * @return Status <p>版本生效状态。</p><p>枚举值：</p><ul><li>creating： 版本创建中</li><li>inactive： 版本未生效</li><li>active： 版本已生效</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置版本状态，取值有：
-<li>creating：创建中；</li>
-<li>inactive：未生效；</li>
-<li>active：已生效。</li>
-                     * @param _status 版本状态，取值有：
-<li>creating：创建中；</li>
-<li>inactive：未生效；</li>
-<li>active：已生效。</li>
+                     * 设置<p>版本生效状态。</p><p>枚举值：</p><ul><li>creating： 版本创建中</li><li>inactive： 版本未生效</li><li>active： 版本已生效</li></ul>
+                     * @param _status <p>版本生效状态。</p><p>枚举值：</p><ul><li>creating： 版本创建中</li><li>inactive： 版本未生效</li><li>active： 版本已生效</li></ul>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -185,15 +194,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取版本创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。
-                     * @return CreateTime 版本创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。
+                     * 获取<p>版本创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。</p>
+                     * @return CreateTime <p>版本创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置版本创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。
-                     * @param _createTime 版本创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。
+                     * 设置<p>版本创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。</p>
+                     * @param _createTime <p>版本创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -208,46 +217,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 版本 ID。
+                     * <p>配置组版本 ID，创建配置组版本时 EdgeOne 分配的唯一资源 ID。</p><p>参数格式：ver-2kplomhisdcb</p><p>取值参考：</p><ul><li><a href="https://cloud.tencent.com/document/api/1552/101867">CreateConfigGroupVersion</a> 返回值 <code>VersionId</code></li><li><a href="https://cloud.tencent.com/document/api/1552/101864">DescribeConfigGroupVersions</a> 返回值 <code>ConfigGroupVersionInfos</code></li></ul>
                      */
                     std::string m_versionId;
                     bool m_versionIdHasBeenSet;
 
                     /**
-                     * 版本号。
+                     * <p>配置组版本号。该参数仅作展示使用，配置组每创建一次新版本，该版本号自增加一，初始版本的版本号为 &quot;0&quot;。</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1552/101864">DescribeConfigGroupVersions</a> 返回值 <code>ConfigGroupVersionInfos</code></p>
                      */
                     std::string m_versionNumber;
                     bool m_versionNumberHasBeenSet;
 
                     /**
-                     * 配置组 ID。
+                     * <p>配置组版本所基于的来源版本 ID，在创建配置组版本时进行指定来源版本 ID，新版本将在该来源版本的配置基础上派生创建。</p><p>参数格式：ver-2kplomhisdcb</p><p>取值参考：</p><ul><li><a href="https://cloud.tencent.com/document/api/1552/101867">CreateConfigGroupVersion</a> 返回值 <code>VersionId</code></li><li><a href="https://cloud.tencent.com/document/api/1552/101864">DescribeConfigGroupVersions</a> 返回值 <code>ConfigGroupVersionInfos</code></li></ul>
                      */
-                    std::string m_groupId;
-                    bool m_groupIdHasBeenSet;
+                    std::string m_sourceVersion;
+                    bool m_sourceVersionHasBeenSet;
 
                     /**
-                     * 配置组类型，可选项如下：<li>l7_acceleration: 七层加速配置组；</li><li>edge_functions: 边缘函数配置组；</li><li>web_security: Web 防护配置组。</li>
+                     * <p>版本归属的配置组类型。</p><p>枚举值：</p><ul><li>l7_acceleration： 七层加速配置组</li><li>edge_functions： 边缘函数配置组</li><li>web_security： Web 防护配置组</li></ul>
                      */
                     std::string m_groupType;
                     bool m_groupTypeHasBeenSet;
 
                     /**
-                     * 版本描述。
+                     * <p>版本归属的配置组 ID。</p><p>参数格式：cg-2kplomhisdcb</p>
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
+
+                    /**
+                     * <p>版本描述。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 版本状态，取值有：
-<li>creating：创建中；</li>
-<li>inactive：未生效；</li>
-<li>active：已生效。</li>
+                     * <p>版本生效状态。</p><p>枚举值：</p><ul><li>creating： 版本创建中</li><li>inactive： 版本未生效</li><li>active： 版本已生效</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 版本创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。
+                     * <p>版本创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;

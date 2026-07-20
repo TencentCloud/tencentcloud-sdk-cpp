@@ -44,23 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取打开或关闭开关
-0：关闭开关
-1：打开开关
-                     * @return Enable 打开或关闭开关
-0：关闭开关
-1：打开开关
+                     * 获取<p>打开或关闭开关<br>0：关闭开关<br>1：打开开关</p>
+                     * @return Enable <p>打开或关闭开关<br>0：关闭开关<br>1：打开开关</p>
                      * 
                      */
                     int64_t GetEnable() const;
 
                     /**
-                     * 设置打开或关闭开关
-0：关闭开关
-1：打开开关
-                     * @param _enable 打开或关闭开关
-0：关闭开关
-1：打开开关
+                     * 设置<p>打开或关闭开关<br>0：关闭开关<br>1：打开开关</p>
+                     * @param _enable <p>打开或关闭开关<br>0：关闭开关<br>1：打开开关</p>
                      * 
                      */
                     void SetEnable(const int64_t& _enable);
@@ -73,15 +65,15 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取是否操作全部开关 0 不操作全部开关，1 操作全部开关
-                     * @return AllSwitch 是否操作全部开关 0 不操作全部开关，1 操作全部开关
+                     * 获取<p>是否操作全部开关 0 不操作全部开关，1 操作全部开关</p>
+                     * @return AllSwitch <p>是否操作全部开关 0 不操作全部开关，1 操作全部开关</p>
                      * 
                      */
                     int64_t GetAllSwitch() const;
 
                     /**
-                     * 设置是否操作全部开关 0 不操作全部开关，1 操作全部开关
-                     * @param _allSwitch 是否操作全部开关 0 不操作全部开关，1 操作全部开关
+                     * 设置<p>是否操作全部开关 0 不操作全部开关，1 操作全部开关</p>
+                     * @param _allSwitch <p>是否操作全部开关 0 不操作全部开关，1 操作全部开关</p>
                      * 
                      */
                     void SetAllSwitch(const int64_t& _allSwitch);
@@ -94,15 +86,15 @@ namespace TencentCloud
                     bool AllSwitchHasBeenSet() const;
 
                     /**
-                     * 获取开关列表
-                     * @return SwitchList 开关列表
+                     * 获取<p>开关列表</p>
+                     * @return SwitchList <p>开关列表</p>
                      * 
                      */
                     std::vector<FwGroupSwitch> GetSwitchList() const;
 
                     /**
-                     * 设置开关列表
-                     * @param _switchList 开关列表
+                     * 设置<p>开关列表</p>
+                     * @param _switchList <p>开关列表</p>
                      * 
                      */
                     void SetSwitchList(const std::vector<FwGroupSwitch>& _switchList);
@@ -117,21 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 打开或关闭开关
-0：关闭开关
-1：打开开关
+                     * <p>打开或关闭开关<br>0：关闭开关<br>1：打开开关</p>
                      */
                     int64_t m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 是否操作全部开关 0 不操作全部开关，1 操作全部开关
+                     * <p>是否操作全部开关 0 不操作全部开关，1 操作全部开关</p>
                      */
                     int64_t m_allSwitch;
                     bool m_allSwitchHasBeenSet;
 
                     /**
-                     * 开关列表
+                     * <p>开关列表</p>
                      */
                     std::vector<FwGroupSwitch> m_switchList;
                     bool m_switchListHasBeenSet;

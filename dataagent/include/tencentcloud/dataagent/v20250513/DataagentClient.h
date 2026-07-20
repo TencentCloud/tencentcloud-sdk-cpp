@@ -65,6 +65,8 @@
 #include <tencentcloud/dataagent/v20250513/model/QueryChunkListResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/QueryKnowledgeTaskRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/QueryKnowledgeTaskResponse.h>
+#include <tencentcloud/dataagent/v20250513/model/QueryModelsRequest.h>
+#include <tencentcloud/dataagent/v20250513/model/QueryModelsResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/QuerySceneListRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/QuerySceneListResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/QueryUserAuthorityRequest.h>
@@ -152,6 +154,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryKnowledgeTaskResponse> QueryKnowledgeTaskOutcome;
                 typedef std::future<QueryKnowledgeTaskOutcome> QueryKnowledgeTaskOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::QueryKnowledgeTaskRequest&, QueryKnowledgeTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryKnowledgeTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryModelsResponse> QueryModelsOutcome;
+                typedef std::future<QueryModelsOutcome> QueryModelsOutcomeCallable;
+                typedef std::function<void(const DataagentClient*, const Model::QueryModelsRequest&, QueryModelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryModelsAsyncHandler;
                 typedef Outcome<Core::Error, Model::QuerySceneListResponse> QuerySceneListOutcome;
                 typedef std::future<QuerySceneListOutcome> QuerySceneListOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::QuerySceneListRequest&, QuerySceneListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuerySceneListAsyncHandler;
@@ -358,6 +363,15 @@ namespace TencentCloud
                 QueryKnowledgeTaskOutcome QueryKnowledgeTask(const Model::QueryKnowledgeTaskRequest &request);
                 void QueryKnowledgeTaskAsync(const Model::QueryKnowledgeTaskRequest& request, const QueryKnowledgeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryKnowledgeTaskOutcomeCallable QueryKnowledgeTaskCallable(const Model::QueryKnowledgeTaskRequest& request);
+
+                /**
+                 *查询聊天支持模型信息
+                 * @param req QueryModelsRequest
+                 * @return QueryModelsOutcome
+                 */
+                QueryModelsOutcome QueryModels(const Model::QueryModelsRequest &request);
+                void QueryModelsAsync(const Model::QueryModelsRequest& request, const QueryModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryModelsOutcomeCallable QueryModelsCallable(const Model::QueryModelsRequest& request);
 
                 /**
                  *查询场景列表

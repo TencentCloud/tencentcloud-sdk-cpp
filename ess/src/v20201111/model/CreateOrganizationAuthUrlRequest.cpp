@@ -52,7 +52,8 @@ CreateOrganizationAuthUrlRequest::CreateOrganizationAuthUrlRequest() :
     m_organizationIdCardTypeSameHasBeenSet(false),
     m_authorizationMethodHasBeenSet(false),
     m_hideBizLicenseHasBeenSet(false),
-    m_addressSameHasBeenSet(false)
+    m_addressSameHasBeenSet(false),
+    m_bizLicenseSameHasBeenSet(false)
 {
 }
 
@@ -329,6 +330,14 @@ string CreateOrganizationAuthUrlRequest::ToJsonString() const
         string key = "AddressSame";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_addressSame, allocator);
+    }
+
+    if (m_bizLicenseSameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BizLicenseSame";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bizLicenseSame, allocator);
     }
 
 
@@ -817,6 +826,22 @@ void CreateOrganizationAuthUrlRequest::SetAddressSame(const bool& _addressSame)
 bool CreateOrganizationAuthUrlRequest::AddressSameHasBeenSet() const
 {
     return m_addressSameHasBeenSet;
+}
+
+bool CreateOrganizationAuthUrlRequest::GetBizLicenseSame() const
+{
+    return m_bizLicenseSame;
+}
+
+void CreateOrganizationAuthUrlRequest::SetBizLicenseSame(const bool& _bizLicenseSame)
+{
+    m_bizLicenseSame = _bizLicenseSame;
+    m_bizLicenseSameHasBeenSet = true;
+}
+
+bool CreateOrganizationAuthUrlRequest::BizLicenseSameHasBeenSet() const
+{
+    return m_bizLicenseSameHasBeenSet;
 }
 
 

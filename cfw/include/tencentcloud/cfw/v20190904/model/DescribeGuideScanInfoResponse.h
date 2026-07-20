@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取扫描信息
-                     * @return Data 扫描信息
+                     * 获取<p>扫描信息</p>
+                     * @return Data <p>扫描信息</p>
                      * 
                      */
                     ScanInfo GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 扫描信息
+                     * <p>扫描信息</p>
                      */
                     ScanInfo m_data;
                     bool m_dataHasBeenSet;

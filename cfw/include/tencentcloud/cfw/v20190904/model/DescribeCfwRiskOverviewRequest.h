@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>自定义开始时间。可选，格式 YYYY-MM-DD HH:MM:SS；必须和 EndTime 同时传。</p>
+                     * @return StartTime <p>自定义开始时间。可选，格式 YYYY-MM-DD HH:MM:SS；必须和 EndTime 同时传。</p>
+                     * 
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置<p>自定义开始时间。可选，格式 YYYY-MM-DD HH:MM:SS；必须和 EndTime 同时传。</p>
+                     * @param _startTime <p>自定义开始时间。可选，格式 YYYY-MM-DD HH:MM:SS；必须和 EndTime 同时传。</p>
+                     * 
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>自定义结束时间。可选，格式 YYYY-MM-DD HH:MM:SS；必须和 StartTime 同时传。</p>
+                     * @return EndTime <p>自定义结束时间。可选，格式 YYYY-MM-DD HH:MM:SS；必须和 StartTime 同时传。</p>
+                     * 
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置<p>自定义结束时间。可选，格式 YYYY-MM-DD HH:MM:SS；必须和 StartTime 同时传。</p>
+                     * @param _endTime <p>自定义结束时间。可选，格式 YYYY-MM-DD HH:MM:SS；必须和 StartTime 同时传。</p>
+                     * 
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>自定义开始时间。可选，格式 YYYY-MM-DD HH:MM:SS；必须和 EndTime 同时传。</p>
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * <p>自定义结束时间。可选，格式 YYYY-MM-DD HH:MM:SS；必须和 StartTime 同时传。</p>
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
 
                 };
             }

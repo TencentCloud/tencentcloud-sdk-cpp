@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取慢日志开始时间
-                     * @return Timestamp 慢日志开始时间
+                     * 获取慢日志开始时间，格式: "yyyy-MM-dd HH:mm:ss"
+                     * @return Timestamp 慢日志开始时间，格式: "yyyy-MM-dd HH:mm:ss"
                      * 
                      */
                     std::string GetTimestamp() const;
 
                     /**
-                     * 设置慢日志开始时间
-                     * @param _timestamp 慢日志开始时间
+                     * 设置慢日志开始时间，格式: "yyyy-MM-dd HH:mm:ss"
+                     * @param _timestamp 慢日志开始时间，格式: "yyyy-MM-dd HH:mm:ss"
                      * 
                      */
                     void SetTimestamp(const std::string& _timestamp);
@@ -238,7 +238,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 慢日志开始时间
+                     * 慢日志开始时间，格式: "yyyy-MM-dd HH:mm:ss"
                      */
                     std::string m_timestamp;
                     bool m_timestampHasBeenSet;

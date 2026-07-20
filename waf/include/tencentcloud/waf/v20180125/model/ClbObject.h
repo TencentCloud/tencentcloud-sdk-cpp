@@ -699,6 +699,27 @@ namespace TencentCloud
                      */
                     bool WafAccessStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>备注</p>
+                     * @return Note <p>备注</p>
+                     * 
+                     */
+                    std::string GetNote() const;
+
+                    /**
+                     * 设置<p>备注</p>
+                     * @param _note <p>备注</p>
+                     * 
+                     */
+                    void SetNote(const std::string& _note);
+
+                    /**
+                     * 判断参数 Note 是否已赋值
+                     * @return Note 是否已赋值
+                     * 
+                     */
+                    bool NoteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -886,6 +907,12 @@ namespace TencentCloud
                      */
                     int64_t m_wafAccessStatus;
                     bool m_wafAccessStatusHasBeenSet;
+
+                    /**
+                     * <p>备注</p>
+                     */
+                    std::string m_note;
+                    bool m_noteHasBeenSet;
 
                 };
             }

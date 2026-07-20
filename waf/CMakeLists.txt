@@ -183,6 +183,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/BotIdConfig.h
   include/tencentcloud/waf/v20180125/model/DeleteHostRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyIpAccessControlRequest.h
+  include/tencentcloud/waf/v20180125/model/ApiEventSample.h
   include/tencentcloud/waf/v20180125/model/AddCustomWhiteRuleResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyBatchCustomWhiteRuleStatusRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyUserSignatureClassRequest.h
@@ -847,6 +848,7 @@ set(waf_src
   src/v20180125/model/BotIdConfig.cpp
   src/v20180125/model/DeleteHostRequest.cpp
   src/v20180125/model/ModifyIpAccessControlRequest.cpp
+  src/v20180125/model/ApiEventSample.cpp
   src/v20180125/model/AddCustomWhiteRuleResponse.cpp
   src/v20180125/model/ModifyBatchCustomWhiteRuleStatusRequest.cpp
   src/v20180125/model/ModifyUserSignatureClassRequest.cpp

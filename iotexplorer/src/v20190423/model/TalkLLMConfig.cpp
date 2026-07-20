@@ -29,7 +29,8 @@ TalkLLMConfig::TalkLLMConfig() :
     m_baseUrlHasBeenSet(false),
     m_modelHasBeenSet(false),
     m_apiKeyHasBeenSet(false),
-    m_extraBodyHasBeenSet(false)
+    m_extraBodyHasBeenSet(false),
+    m_aDPHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,23 @@ CoreInternalOutcome TalkLLMConfig::Deserialize(const rapidjson::Value &value)
         m_extraBodyHasBeenSet = true;
     }
 
+    if (value.HasMember("ADP") && !value["ADP"].IsNull())
+    {
+        if (!value["ADP"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TalkLLMConfig.ADP` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aDP.Deserialize(value["ADP"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aDPHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +223,15 @@ void TalkLLMConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "ExtraBody";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_extraBody.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aDPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ADP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aDP.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -352,5 +379,21 @@ void TalkLLMConfig::SetExtraBody(const string& _extraBody)
 bool TalkLLMConfig::ExtraBodyHasBeenSet() const
 {
     return m_extraBodyHasBeenSet;
+}
+
+ADPConfig TalkLLMConfig::GetADP() const
+{
+    return m_aDP;
+}
+
+void TalkLLMConfig::SetADP(const ADPConfig& _aDP)
+{
+    m_aDP = _aDP;
+    m_aDPHasBeenSet = true;
+}
+
+bool TalkLLMConfig::ADPHasBeenSet() const
+{
+    return m_aDPHasBeenSet;
 }
 

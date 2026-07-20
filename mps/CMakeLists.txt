@@ -714,6 +714,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/SuperResolutionConfig.h
   include/tencentcloud/mps/v20190612/model/CreateLiveRecordTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/TrackSelector.h
+  include/tencentcloud/mps/v20190612/model/VideoRedrawTaskInfo.h
   include/tencentcloud/mps/v20190612/model/ActivityResult.h
   include/tencentcloud/mps/v20190612/model/DescribeAsrHotwordsResponse.h
   include/tencentcloud/mps/v20190612/model/TextToSpeechAsyncRequest.h
@@ -1774,6 +1775,7 @@ set(mps_src
   src/v20190612/model/SuperResolutionConfig.cpp
   src/v20190612/model/CreateLiveRecordTemplateResponse.cpp
   src/v20190612/model/TrackSelector.cpp
+  src/v20190612/model/VideoRedrawTaskInfo.cpp
   src/v20190612/model/ActivityResult.cpp
   src/v20190612/model/DescribeAsrHotwordsResponse.cpp
   src/v20190612/model/TextToSpeechAsyncRequest.cpp

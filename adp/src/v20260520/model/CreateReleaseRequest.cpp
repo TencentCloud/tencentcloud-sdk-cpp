@@ -24,7 +24,9 @@ using namespace std;
 
 CreateReleaseRequest::CreateReleaseRequest() :
     m_appIdHasBeenSet(false),
+    m_appShareAccessControlHasBeenSet(false),
     m_channelIdListHasBeenSet(false),
+    m_corpShareConfigHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_isDevToReleaseHasBeenSet(false),
     m_isPublishAsTemplateHasBeenSet(false)
@@ -46,6 +48,15 @@ string CreateReleaseRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_appShareAccessControlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppShareAccessControl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_appShareAccessControl.ToJsonObject(d[key.c_str()], allocator);
+    }
+
     if (m_channelIdListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -57,6 +68,15 @@ string CreateReleaseRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_corpShareConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CorpShareConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_corpShareConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_descriptionHasBeenSet)
@@ -107,6 +127,22 @@ bool CreateReleaseRequest::AppIdHasBeenSet() const
     return m_appIdHasBeenSet;
 }
 
+AppShareAccessControl CreateReleaseRequest::GetAppShareAccessControl() const
+{
+    return m_appShareAccessControl;
+}
+
+void CreateReleaseRequest::SetAppShareAccessControl(const AppShareAccessControl& _appShareAccessControl)
+{
+    m_appShareAccessControl = _appShareAccessControl;
+    m_appShareAccessControlHasBeenSet = true;
+}
+
+bool CreateReleaseRequest::AppShareAccessControlHasBeenSet() const
+{
+    return m_appShareAccessControlHasBeenSet;
+}
+
 vector<string> CreateReleaseRequest::GetChannelIdList() const
 {
     return m_channelIdList;
@@ -121,6 +157,22 @@ void CreateReleaseRequest::SetChannelIdList(const vector<string>& _channelIdList
 bool CreateReleaseRequest::ChannelIdListHasBeenSet() const
 {
     return m_channelIdListHasBeenSet;
+}
+
+CorpShareConfig CreateReleaseRequest::GetCorpShareConfig() const
+{
+    return m_corpShareConfig;
+}
+
+void CreateReleaseRequest::SetCorpShareConfig(const CorpShareConfig& _corpShareConfig)
+{
+    m_corpShareConfig = _corpShareConfig;
+    m_corpShareConfigHasBeenSet = true;
+}
+
+bool CreateReleaseRequest::CorpShareConfigHasBeenSet() const
+{
+    return m_corpShareConfigHasBeenSet;
 }
 
 string CreateReleaseRequest::GetDescription() const

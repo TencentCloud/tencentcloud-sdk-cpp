@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取支持的引流策略数量（最外层总条数）
-                     * @return CcnPolicyInterconnectPairLenLimit 支持的引流策略数量（最外层总条数）
+                     * 获取<p>支持的引流策略数量（最外层总条数）</p>
+                     * @return CcnPolicyInterconnectPairLenLimit <p>支持的引流策略数量（最外层总条数）</p>
                      * 
                      */
                     uint64_t GetCcnPolicyInterconnectPairLenLimit() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool CcnPolicyInterconnectPairLenLimitHasBeenSet() const;
 
                     /**
-                     * 获取单条引流策略中单组的最大配置数量（内层单组总条数）
-                     * @return CcnPolicyGroupLenLimit 单条引流策略中单组的最大配置数量（内层单组总条数）
+                     * 获取<p>单条引流策略中单组的最大配置数量（内层单组总条数）</p>
+                     * @return CcnPolicyGroupLenLimit <p>单条引流策略中单组的最大配置数量（内层单组总条数）</p>
                      * 
                      */
                     uint64_t GetCcnPolicyGroupLenLimit() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool CcnPolicyGroupLenLimitHasBeenSet() const;
 
                     /**
-                     * 获取接入的实例网段长度（网段数量）限制
-                     * @return CcnPolicyCidrLenLimit 接入的实例网段长度（网段数量）限制
+                     * 获取<p>接入的实例网段长度（网段数量）限制</p>
+                     * @return CcnPolicyCidrLenLimit <p>接入的实例网段长度（网段数量）限制</p>
                      * 
                      */
                     uint64_t GetCcnPolicyCidrLenLimit() const;
@@ -88,19 +88,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 支持的引流策略数量（最外层总条数）
+                     * <p>支持的引流策略数量（最外层总条数）</p>
                      */
                     uint64_t m_ccnPolicyInterconnectPairLenLimit;
                     bool m_ccnPolicyInterconnectPairLenLimitHasBeenSet;
 
                     /**
-                     * 单条引流策略中单组的最大配置数量（内层单组总条数）
+                     * <p>单条引流策略中单组的最大配置数量（内层单组总条数）</p>
                      */
                     uint64_t m_ccnPolicyGroupLenLimit;
                     bool m_ccnPolicyGroupLenLimitHasBeenSet;
 
                     /**
-                     * 接入的实例网段长度（网段数量）限制
+                     * <p>接入的实例网段长度（网段数量）限制</p>
                      */
                     uint64_t m_ccnPolicyCidrLenLimit;
                     bool m_ccnPolicyCidrLenLimitHasBeenSet;

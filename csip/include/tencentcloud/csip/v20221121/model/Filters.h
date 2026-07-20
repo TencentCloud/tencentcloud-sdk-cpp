@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 过滤条件。同一 Name 下多个 Values 为或关系；不同 Name 之间为且关系
+                * 过滤条件。同一 Name 下多个 Values 为或关系；不同 Name 之间为且关系。支持的 Name：TaskID（任务ID精确）、TaskStatus（任务状态）、TaskType（任务类型）
                 */
                 class Filters : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤条件名称
-                     * @return Name 过滤条件名称
+                     * 获取过滤条件名称。取值：TaskID（任务ID，精确匹配）、TaskStatus（任务状态，Values: INIT/SCANNING/SUCCESS/FAILED）、TaskType（任务类型，Values: PERIODIC/MANUAL）
+                     * @return Name 过滤条件名称。取值：TaskID（任务ID，精确匹配）、TaskStatus（任务状态，Values: INIT/SCANNING/SUCCESS/FAILED）、TaskType（任务类型，Values: PERIODIC/MANUAL）
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置过滤条件名称
-                     * @param _name 过滤条件名称
+                     * 设置过滤条件名称。取值：TaskID（任务ID，精确匹配）、TaskStatus（任务状态，Values: INIT/SCANNING/SUCCESS/FAILED）、TaskType（任务类型，Values: PERIODIC/MANUAL）
+                     * @param _name 过滤条件名称。取值：TaskID（任务ID，精确匹配）、TaskStatus（任务状态，Values: INIT/SCANNING/SUCCESS/FAILED）、TaskType（任务类型，Values: PERIODIC/MANUAL）
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -112,7 +112,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 过滤条件名称
+                     * 过滤条件名称。取值：TaskID（任务ID，精确匹配）、TaskStatus（任务状态，Values: INIT/SCANNING/SUCCESS/FAILED）、TaskType（任务类型，Values: PERIODIC/MANUAL）
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

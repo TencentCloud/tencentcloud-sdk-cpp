@@ -23,7 +23,9 @@ using namespace TencentCloud::Adp::V20260520::Model;
 using namespace std;
 
 DeletePluginRequest::DeletePluginRequest() :
-    m_pluginIdHasBeenSet(false)
+    m_pluginIdHasBeenSet(false),
+    m_loginUinHasBeenSet(false),
+    m_loginSubAccountUinHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,22 @@ string DeletePluginRequest::ToJsonString() const
         string key = "PluginId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_pluginId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loginUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoginUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_loginUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loginSubAccountUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoginSubAccountUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_loginSubAccountUin.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +82,38 @@ void DeletePluginRequest::SetPluginId(const string& _pluginId)
 bool DeletePluginRequest::PluginIdHasBeenSet() const
 {
     return m_pluginIdHasBeenSet;
+}
+
+string DeletePluginRequest::GetLoginUin() const
+{
+    return m_loginUin;
+}
+
+void DeletePluginRequest::SetLoginUin(const string& _loginUin)
+{
+    m_loginUin = _loginUin;
+    m_loginUinHasBeenSet = true;
+}
+
+bool DeletePluginRequest::LoginUinHasBeenSet() const
+{
+    return m_loginUinHasBeenSet;
+}
+
+string DeletePluginRequest::GetLoginSubAccountUin() const
+{
+    return m_loginSubAccountUin;
+}
+
+void DeletePluginRequest::SetLoginSubAccountUin(const string& _loginSubAccountUin)
+{
+    m_loginSubAccountUin = _loginSubAccountUin;
+    m_loginSubAccountUinHasBeenSet = true;
+}
+
+bool DeletePluginRequest::LoginSubAccountUinHasBeenSet() const
+{
+    return m_loginSubAccountUinHasBeenSet;
 }
 
 

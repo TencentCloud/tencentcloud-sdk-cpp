@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）</p>
-                     * @return OrderBy <p>根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）</p>
+                     * 获取<p>根据哪个字段进行返回结果排序</p><p>枚举值：</p><ul><li>created_at： 创建时间</li><li>updated_at： 修改时间</li></ul><p>默认值：updated_at</p>
+                     * @return OrderBy <p>根据哪个字段进行返回结果排序</p><p>枚举值：</p><ul><li>created_at： 创建时间</li><li>updated_at： 修改时间</li></ul><p>默认值：updated_at</p>
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置<p>根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）</p>
-                     * @param _orderBy <p>根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）</p>
+                     * 设置<p>根据哪个字段进行返回结果排序</p><p>枚举值：</p><ul><li>created_at： 创建时间</li><li>updated_at： 修改时间</li></ul><p>默认值：updated_at</p>
+                     * @param _orderBy <p>根据哪个字段进行返回结果排序</p><p>枚举值：</p><ul><li>created_at： 创建时间</li><li>updated_at： 修改时间</li></ul><p>默认值：updated_at</p>
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * <p>根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）</p>
+                     * <p>根据哪个字段进行返回结果排序</p><p>枚举值：</p><ul><li>created_at： 创建时间</li><li>updated_at： 修改时间</li></ul><p>默认值：updated_at</p>
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;

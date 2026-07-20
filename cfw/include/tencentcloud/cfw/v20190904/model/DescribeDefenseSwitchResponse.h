@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取基础防御开关
-                     * @return BasicRuleSwitch 基础防御开关
+                     * 获取<p>基础防御开关</p>
+                     * @return BasicRuleSwitch <p>基础防御开关</p>
                      * 
                      */
                     int64_t GetBasicRuleSwitch() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool BasicRuleSwitchHasBeenSet() const;
 
                     /**
-                     * 获取安全基线开关
-                     * @return BaselineAllSwitch 安全基线开关
+                     * 获取<p>安全基线开关</p>
+                     * @return BaselineAllSwitch <p>安全基线开关</p>
                      * 
                      */
                     int64_t GetBaselineAllSwitch() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool BaselineAllSwitchHasBeenSet() const;
 
                     /**
-                     * 获取威胁情报开关
-                     * @return TiSwitch 威胁情报开关
+                     * 获取<p>威胁情报开关</p>
+                     * @return TiSwitch <p>威胁情报开关</p>
                      * 
                      */
                     int64_t GetTiSwitch() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool TiSwitchHasBeenSet() const;
 
                     /**
-                     * 获取虚拟补丁开关
-                     * @return VirtualPatchSwitch 虚拟补丁开关
+                     * 获取<p>虚拟补丁开关</p>
+                     * @return VirtualPatchSwitch <p>虚拟补丁开关</p>
                      * 
                      */
                     int64_t GetVirtualPatchSwitch() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool VirtualPatchSwitchHasBeenSet() const;
 
                     /**
-                     * 获取是否历史开启
-                     * @return HistoryOpen 是否历史开启
+                     * 获取<p>是否历史开启</p>
+                     * @return HistoryOpen <p>是否历史开启</p>
                      * 
                      */
                     int64_t GetHistoryOpen() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool HistoryOpenHasBeenSet() const;
 
                     /**
-                     * 获取状态值，0：查询成功，非0：查询失败
-                     * @return ReturnCode 状态值，0：查询成功，非0：查询失败
+                     * 获取<p>状态值，0：查询成功，非0：查询失败</p>
+                     * @return ReturnCode <p>状态值，0：查询成功，非0：查询失败</p>
                      * 
                      */
                     int64_t GetReturnCode() const;
@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool ReturnCodeHasBeenSet() const;
 
                     /**
-                     * 获取状态信息，success：查询成功，fail：查询失败
-                     * @return ReturnMsg 状态信息，success：查询成功，fail：查询失败
+                     * 获取<p>状态信息，success：查询成功，fail：查询失败</p>
+                     * @return ReturnMsg <p>状态信息，success：查询成功，fail：查询失败</p>
                      * 
                      */
                     std::string GetReturnMsg() const;
@@ -144,43 +144,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 基础防御开关
+                     * <p>基础防御开关</p>
                      */
                     int64_t m_basicRuleSwitch;
                     bool m_basicRuleSwitchHasBeenSet;
 
                     /**
-                     * 安全基线开关
+                     * <p>安全基线开关</p>
                      */
                     int64_t m_baselineAllSwitch;
                     bool m_baselineAllSwitchHasBeenSet;
 
                     /**
-                     * 威胁情报开关
+                     * <p>威胁情报开关</p>
                      */
                     int64_t m_tiSwitch;
                     bool m_tiSwitchHasBeenSet;
 
                     /**
-                     * 虚拟补丁开关
+                     * <p>虚拟补丁开关</p>
                      */
                     int64_t m_virtualPatchSwitch;
                     bool m_virtualPatchSwitchHasBeenSet;
 
                     /**
-                     * 是否历史开启
+                     * <p>是否历史开启</p>
                      */
                     int64_t m_historyOpen;
                     bool m_historyOpenHasBeenSet;
 
                     /**
-                     * 状态值，0：查询成功，非0：查询失败
+                     * <p>状态值，0：查询成功，非0：查询失败</p>
                      */
                     int64_t m_returnCode;
                     bool m_returnCodeHasBeenSet;
 
                     /**
-                     * 状态信息，success：查询成功，fail：查询失败
+                     * <p>状态信息，success：查询成功，fail：查询失败</p>
                      */
                     std::string m_returnMsg;
                     bool m_returnMsgHasBeenSet;

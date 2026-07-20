@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/adp/v20260520/model/ClawAgentCustomConfig.h>
+#include <tencentcloud/adp/v20260520/model/ClawAgentAgentTeamConfig.h>
+#include <tencentcloud/adp/v20260520/model/ClawAgentLongMemoryConfig.h>
 
 
 namespace TencentCloud
@@ -72,6 +74,56 @@ namespace TencentCloud
                      */
                     bool CustomConfigHasBeenSet() const;
 
+                    /**
+                     * 获取Agent团队协作配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AgentTeamConfig Agent团队协作配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ClawAgentAgentTeamConfig GetAgentTeamConfig() const;
+
+                    /**
+                     * 设置Agent团队协作配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _agentTeamConfig Agent团队协作配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAgentTeamConfig(const ClawAgentAgentTeamConfig& _agentTeamConfig);
+
+                    /**
+                     * 判断参数 AgentTeamConfig 是否已赋值
+                     * @return AgentTeamConfig 是否已赋值
+                     * 
+                     */
+                    bool AgentTeamConfigHasBeenSet() const;
+
+                    /**
+                     * 获取长期记忆配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LongMemoryConfig 长期记忆配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ClawAgentLongMemoryConfig GetLongMemoryConfig() const;
+
+                    /**
+                     * 设置长期记忆配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _longMemoryConfig 长期记忆配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLongMemoryConfig(const ClawAgentLongMemoryConfig& _longMemoryConfig);
+
+                    /**
+                     * 判断参数 LongMemoryConfig 是否已赋值
+                     * @return LongMemoryConfig 是否已赋值
+                     * 
+                     */
+                    bool LongMemoryConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +132,20 @@ namespace TencentCloud
                      */
                     ClawAgentCustomConfig m_customConfig;
                     bool m_customConfigHasBeenSet;
+
+                    /**
+                     * Agent团队协作配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ClawAgentAgentTeamConfig m_agentTeamConfig;
+                    bool m_agentTeamConfigHasBeenSet;
+
+                    /**
+                     * 长期记忆配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ClawAgentLongMemoryConfig m_longMemoryConfig;
+                    bool m_longMemoryConfigHasBeenSet;
 
                 };
             }
