@@ -32,7 +32,10 @@ SqlGatewayItem::SqlGatewayItem() :
     m_propertiesHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_memHasBeenSet(false),
-    m_jdkVersionHasBeenSet(false)
+    m_jdkVersionHasBeenSet(false),
+    m_sessionClusterIdHasBeenSet(false),
+    m_pgUserHasBeenSet(false),
+    m_endpointsHasBeenSet(false)
 {
 }
 
@@ -181,6 +184,46 @@ CoreInternalOutcome SqlGatewayItem::Deserialize(const rapidjson::Value &value)
         m_jdkVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("SessionClusterId") && !value["SessionClusterId"].IsNull())
+    {
+        if (!value["SessionClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SqlGatewayItem.SessionClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionClusterId = string(value["SessionClusterId"].GetString());
+        m_sessionClusterIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("PgUser") && !value["PgUser"].IsNull())
+    {
+        if (!value["PgUser"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SqlGatewayItem.PgUser` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pgUser = string(value["PgUser"].GetString());
+        m_pgUserHasBeenSet = true;
+    }
+
+    if (value.HasMember("Endpoints") && !value["Endpoints"].IsNull())
+    {
+        if (!value["Endpoints"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SqlGatewayItem.Endpoints` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Endpoints"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SqlGatewayEndpoint item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_endpoints.push_back(item);
+        }
+        m_endpointsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -296,6 +339,37 @@ void SqlGatewayItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "JdkVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_jdkVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessionClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pgUserHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PgUser";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pgUser.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endpointsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Endpoints";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_endpoints.begin(); itr != m_endpoints.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -491,5 +565,53 @@ void SqlGatewayItem::SetJdkVersion(const string& _jdkVersion)
 bool SqlGatewayItem::JdkVersionHasBeenSet() const
 {
     return m_jdkVersionHasBeenSet;
+}
+
+string SqlGatewayItem::GetSessionClusterId() const
+{
+    return m_sessionClusterId;
+}
+
+void SqlGatewayItem::SetSessionClusterId(const string& _sessionClusterId)
+{
+    m_sessionClusterId = _sessionClusterId;
+    m_sessionClusterIdHasBeenSet = true;
+}
+
+bool SqlGatewayItem::SessionClusterIdHasBeenSet() const
+{
+    return m_sessionClusterIdHasBeenSet;
+}
+
+string SqlGatewayItem::GetPgUser() const
+{
+    return m_pgUser;
+}
+
+void SqlGatewayItem::SetPgUser(const string& _pgUser)
+{
+    m_pgUser = _pgUser;
+    m_pgUserHasBeenSet = true;
+}
+
+bool SqlGatewayItem::PgUserHasBeenSet() const
+{
+    return m_pgUserHasBeenSet;
+}
+
+vector<SqlGatewayEndpoint> SqlGatewayItem::GetEndpoints() const
+{
+    return m_endpoints;
+}
+
+void SqlGatewayItem::SetEndpoints(const vector<SqlGatewayEndpoint>& _endpoints)
+{
+    m_endpoints = _endpoints;
+    m_endpointsHasBeenSet = true;
+}
+
+bool SqlGatewayItem::EndpointsHasBeenSet() const
+{
+    return m_endpointsHasBeenSet;
 }
 

@@ -85,6 +85,8 @@
 #include <tencentcloud/cfw/v20190904/model/DeleteVpcFwGroupResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAcListsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAcListsResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeAclRegInfoRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeAclRegInfoResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAclRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAclRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAddressTemplateListRequest.h>
@@ -434,6 +436,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAcListsResponse> DescribeAcListsOutcome;
                 typedef std::future<DescribeAcListsOutcome> DescribeAcListsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeAcListsRequest&, DescribeAcListsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAcListsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAclRegInfoResponse> DescribeAclRegInfoOutcome;
+                typedef std::future<DescribeAclRegInfoOutcome> DescribeAclRegInfoOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeAclRegInfoRequest&, DescribeAclRegInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAclRegInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAclRuleResponse> DescribeAclRuleOutcome;
                 typedef std::future<DescribeAclRuleOutcome> DescribeAclRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeAclRuleRequest&, DescribeAclRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAclRuleAsyncHandler;
@@ -1078,6 +1083,15 @@ namespace TencentCloud
                 DescribeAcListsOutcome DescribeAcLists(const Model::DescribeAcListsRequest &request);
                 void DescribeAcListsAsync(const Model::DescribeAcListsRequest& request, const DescribeAcListsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAcListsOutcomeCallable DescribeAcListsCallable(const Model::DescribeAcListsRequest& request);
+
+                /**
+                 *查询ACL规则支持配置的地区
+                 * @param req DescribeAclRegInfoRequest
+                 * @return DescribeAclRegInfoOutcome
+                 */
+                DescribeAclRegInfoOutcome DescribeAclRegInfo(const Model::DescribeAclRegInfoRequest &request);
+                void DescribeAclRegInfoAsync(const Model::DescribeAclRegInfoRequest& request, const DescribeAclRegInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAclRegInfoOutcomeCallable DescribeAclRegInfoCallable(const Model::DescribeAclRegInfoRequest& request);
 
                 /**
                  *查询互联网边界访问控制列表

@@ -22,7 +22,8 @@
 using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-DescribeMCPTaskResultRequest::DescribeMCPTaskResultRequest()
+DescribeMCPTaskResultRequest::DescribeMCPTaskResultRequest() :
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeMCPTaskResultRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeMCPTaskResultRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeMCPTaskResultRequest::GetTaskId() const
+{
+    return m_taskId;
+}
+
+void DescribeMCPTaskResultRequest::SetTaskId(const string& _taskId)
+{
+    m_taskId = _taskId;
+    m_taskIdHasBeenSet = true;
+}
+
+bool DescribeMCPTaskResultRequest::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
+}
 
 

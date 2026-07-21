@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取防火墙实例id
-                     * @return CfwInsId 防火墙实例id
+                     * 获取<p>防火墙实例id</p>
+                     * @return CfwInsId <p>防火墙实例id</p>
                      * 
                      */
                     std::string GetCfwInsId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 防火墙实例id
+                     * <p>防火墙实例id</p>
                      */
                     std::string m_cfwInsId;
                     bool m_cfwInsIdHasBeenSet;

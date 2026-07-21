@@ -58,6 +58,7 @@ Service::Service() :
     m_subUinNameHasBeenSet(false),
     m_schedulingPolicyHasBeenSet(false),
     m_externalResourceGroupsHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
     m_changerHasBeenSet(false),
     m_changerNameHasBeenSet(false)
 {
@@ -486,6 +487,16 @@ CoreInternalOutcome Service::Deserialize(const rapidjson::Value &value)
         m_externalResourceGroupsHasBeenSet = true;
     }
 
+    if (value.HasMember("ProjectId") && !value["ProjectId"].IsNull())
+    {
+        if (!value["ProjectId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectId = string(value["ProjectId"].GetString());
+        m_projectIdHasBeenSet = true;
+    }
+
     if (value.HasMember("Changer") && !value["Changer"].IsNull())
     {
         if (!value["Changer"].IsString())
@@ -825,6 +836,14 @@ void Service::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_changerHasBeenSet)
@@ -1436,6 +1455,22 @@ void Service::SetExternalResourceGroups(const vector<ResourceGroupInfo>& _extern
 bool Service::ExternalResourceGroupsHasBeenSet() const
 {
     return m_externalResourceGroupsHasBeenSet;
+}
+
+string Service::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void Service::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool Service::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 
 string Service::GetChanger() const

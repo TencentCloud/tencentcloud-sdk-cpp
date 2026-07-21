@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-DescribeMCPTaskResponse::DescribeMCPTaskResponse()
+DescribeMCPTaskResponse::DescribeMCPTaskResponse() :
+    m_taskInfoHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,23 @@ CoreInternalOutcome DescribeMCPTaskResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("TaskInfo") && !rsp["TaskInfo"].IsNull())
+    {
+        if (!rsp["TaskInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_taskInfo.Deserialize(rsp["TaskInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_taskInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +88,15 @@ string DescribeMCPTaskResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_taskInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_taskInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string DescribeMCPTaskResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+MCPTaskInfo DescribeMCPTaskResponse::GetTaskInfo() const
+{
+    return m_taskInfo;
+}
+
+bool DescribeMCPTaskResponse::TaskInfoHasBeenSet() const
+{
+    return m_taskInfoHasBeenSet;
+}
 
 

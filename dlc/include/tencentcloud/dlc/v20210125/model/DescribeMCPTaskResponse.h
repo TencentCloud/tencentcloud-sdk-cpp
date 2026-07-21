@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/MCPTaskInfo.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>任务详细信息</p>
+                     * @return TaskInfo <p>任务详细信息</p>
+                     * 
+                     */
+                    MCPTaskInfo GetTaskInfo() const;
+
+                    /**
+                     * 判断参数 TaskInfo 是否已赋值
+                     * @return TaskInfo 是否已赋值
+                     * 
+                     */
+                    bool TaskInfoHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>任务详细信息</p>
+                     */
+                    MCPTaskInfo m_taskInfo;
+                    bool m_taskInfoHasBeenSet;
 
                 };
             }

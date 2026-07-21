@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取生成的模型服务
+                     * 获取<p>生成的模型服务</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Service 生成的模型服务
+                     * @return Service <p>生成的模型服务</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 生成的模型服务
+                     * <p>生成的模型服务</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Service m_service;

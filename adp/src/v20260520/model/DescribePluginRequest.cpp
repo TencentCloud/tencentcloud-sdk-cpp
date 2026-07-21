@@ -25,7 +25,8 @@ using namespace std;
 DescribePluginRequest::DescribePluginRequest() :
     m_pluginIdHasBeenSet(false),
     m_spaceIdHasBeenSet(false),
-    m_fieldMaskHasBeenSet(false)
+    m_fieldMaskHasBeenSet(false),
+    m_moduleHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string DescribePluginRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_fieldMask.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_moduleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Module";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_module, allocator);
     }
 
 
@@ -115,6 +124,22 @@ void DescribePluginRequest::SetFieldMask(const FieldMask& _fieldMask)
 bool DescribePluginRequest::FieldMaskHasBeenSet() const
 {
     return m_fieldMaskHasBeenSet;
+}
+
+int64_t DescribePluginRequest::GetModule() const
+{
+    return m_module;
+}
+
+void DescribePluginRequest::SetModule(const int64_t& _module)
+{
+    m_module = _module;
+    m_moduleHasBeenSet = true;
+}
+
+bool DescribePluginRequest::ModuleHasBeenSet() const
+{
+    return m_moduleHasBeenSet;
 }
 
 

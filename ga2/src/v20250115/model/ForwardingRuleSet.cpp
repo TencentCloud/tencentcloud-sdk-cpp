@@ -30,7 +30,9 @@ ForwardingRuleSet::ForwardingRuleSet() :
     m_globalAcceleratorIdHasBeenSet(false),
     m_listenerIdHasBeenSet(false),
     m_forwardingPolicyIdHasBeenSet(false),
-    m_forwardingRuleIdHasBeenSet(false)
+    m_forwardingRuleIdHasBeenSet(false),
+    m_hideResponseHeadersHasBeenSet(false),
+    m_responseHeadersHasBeenSet(false)
 {
 }
 
@@ -169,6 +171,46 @@ CoreInternalOutcome ForwardingRuleSet::Deserialize(const rapidjson::Value &value
         m_forwardingRuleIdHasBeenSet = true;
     }
 
+    if (value.HasMember("HideResponseHeaders") && !value["HideResponseHeaders"].IsNull())
+    {
+        if (!value["HideResponseHeaders"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ForwardingRuleSet.HideResponseHeaders` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["HideResponseHeaders"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            HideResponseHeaders item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_hideResponseHeaders.push_back(item);
+        }
+        m_hideResponseHeadersHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResponseHeaders") && !value["ResponseHeaders"].IsNull())
+    {
+        if (!value["ResponseHeaders"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ForwardingRuleSet.ResponseHeaders` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ResponseHeaders"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ResponseHeaders item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_responseHeaders.push_back(item);
+        }
+        m_responseHeadersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -275,6 +317,36 @@ void ForwardingRuleSet::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ForwardingRuleId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_forwardingRuleId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hideResponseHeadersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HideResponseHeaders";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_hideResponseHeaders.begin(); itr != m_hideResponseHeaders.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_responseHeadersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResponseHeaders";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_responseHeaders.begin(); itr != m_responseHeaders.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -438,5 +510,37 @@ void ForwardingRuleSet::SetForwardingRuleId(const string& _forwardingRuleId)
 bool ForwardingRuleSet::ForwardingRuleIdHasBeenSet() const
 {
     return m_forwardingRuleIdHasBeenSet;
+}
+
+vector<HideResponseHeaders> ForwardingRuleSet::GetHideResponseHeaders() const
+{
+    return m_hideResponseHeaders;
+}
+
+void ForwardingRuleSet::SetHideResponseHeaders(const vector<HideResponseHeaders>& _hideResponseHeaders)
+{
+    m_hideResponseHeaders = _hideResponseHeaders;
+    m_hideResponseHeadersHasBeenSet = true;
+}
+
+bool ForwardingRuleSet::HideResponseHeadersHasBeenSet() const
+{
+    return m_hideResponseHeadersHasBeenSet;
+}
+
+vector<ResponseHeaders> ForwardingRuleSet::GetResponseHeaders() const
+{
+    return m_responseHeaders;
+}
+
+void ForwardingRuleSet::SetResponseHeaders(const vector<ResponseHeaders>& _responseHeaders)
+{
+    m_responseHeaders = _responseHeaders;
+    m_responseHeadersHasBeenSet = true;
+}
+
+bool ForwardingRuleSet::ResponseHeadersHasBeenSet() const
+{
+    return m_responseHeadersHasBeenSet;
 }
 

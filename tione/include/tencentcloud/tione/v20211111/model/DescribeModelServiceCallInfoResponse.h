@@ -51,9 +51,7 @@ namespace TencentCloud
 
                     /**
                      * 获取服务调用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceCallInfo 服务调用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ServiceCallInfo GetServiceCallInfo() const;
@@ -67,9 +65,7 @@ namespace TencentCloud
 
                     /**
                      * 获取升级网关调用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InferGatewayCallInfo 升级网关调用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InferGatewayCallInfo GetInferGatewayCallInfo() const;
@@ -83,9 +79,7 @@ namespace TencentCloud
 
                     /**
                      * 获取默认nginx网关的调用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultNginxGatewayCallInfo 默认nginx网关的调用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DefaultNginxGatewayCallInfo GetDefaultNginxGatewayCallInfo() const;
@@ -99,9 +93,7 @@ namespace TencentCloud
 
                     /**
                      * 获取太极服务的调用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TJCallInfo 太极服务的调用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TJCallInfo GetTJCallInfo() const;
@@ -149,28 +141,24 @@ namespace TencentCloud
 
                     /**
                      * 服务调用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ServiceCallInfo m_serviceCallInfo;
                     bool m_serviceCallInfoHasBeenSet;
 
                     /**
                      * 升级网关调用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InferGatewayCallInfo m_inferGatewayCallInfo;
                     bool m_inferGatewayCallInfoHasBeenSet;
 
                     /**
                      * 默认nginx网关的调用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DefaultNginxGatewayCallInfo m_defaultNginxGatewayCallInfo;
                     bool m_defaultNginxGatewayCallInfoHasBeenSet;
 
                     /**
                      * 太极服务的调用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TJCallInfo m_tJCallInfo;
                     bool m_tJCallInfoHasBeenSet;

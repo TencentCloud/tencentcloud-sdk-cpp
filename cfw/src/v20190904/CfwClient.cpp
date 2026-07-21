@@ -1590,6 +1590,56 @@ CfwClient::DescribeAcListsOutcomeCallable CfwClient::DescribeAcListsCallable(con
     return prom->get_future();
 }
 
+CfwClient::DescribeAclRegInfoOutcome CfwClient::DescribeAclRegInfo(const DescribeAclRegInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAclRegInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAclRegInfoResponse rsp = DescribeAclRegInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAclRegInfoOutcome(rsp);
+        else
+            return DescribeAclRegInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAclRegInfoOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeAclRegInfoAsync(const DescribeAclRegInfoRequest& request, const DescribeAclRegInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAclRegInfoRequest&;
+    using Resp = DescribeAclRegInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAclRegInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeAclRegInfoOutcomeCallable CfwClient::DescribeAclRegInfoCallable(const DescribeAclRegInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAclRegInfoOutcome>>();
+    DescribeAclRegInfoAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeAclRegInfoRequest&,
+        DescribeAclRegInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfwClient::DescribeAclRuleOutcome CfwClient::DescribeAclRule(const DescribeAclRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAclRule");

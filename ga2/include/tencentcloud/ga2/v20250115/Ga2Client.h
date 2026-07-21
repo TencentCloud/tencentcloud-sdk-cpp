@@ -33,6 +33,8 @@
 #include <tencentcloud/ga2/v20250115/model/CreateForwardingRuleResponse.h>
 #include <tencentcloud/ga2/v20250115/model/CreateGlobalAcceleratorRequest.h>
 #include <tencentcloud/ga2/v20250115/model/CreateGlobalAcceleratorResponse.h>
+#include <tencentcloud/ga2/v20250115/model/CreateGlobalAcceleratorAccessLogRequest.h>
+#include <tencentcloud/ga2/v20250115/model/CreateGlobalAcceleratorAccessLogResponse.h>
 #include <tencentcloud/ga2/v20250115/model/CreateGlobalAcceleratorAclPolicyRequest.h>
 #include <tencentcloud/ga2/v20250115/model/CreateGlobalAcceleratorAclPolicyResponse.h>
 #include <tencentcloud/ga2/v20250115/model/CreateGlobalAcceleratorAclRuleRequest.h>
@@ -51,6 +53,8 @@
 #include <tencentcloud/ga2/v20250115/model/DeleteForwardingRuleResponse.h>
 #include <tencentcloud/ga2/v20250115/model/DeleteGlobalAcceleratorRequest.h>
 #include <tencentcloud/ga2/v20250115/model/DeleteGlobalAcceleratorResponse.h>
+#include <tencentcloud/ga2/v20250115/model/DeleteGlobalAcceleratorAccessLogRequest.h>
+#include <tencentcloud/ga2/v20250115/model/DeleteGlobalAcceleratorAccessLogResponse.h>
 #include <tencentcloud/ga2/v20250115/model/DeleteGlobalAcceleratorAclPolicyRequest.h>
 #include <tencentcloud/ga2/v20250115/model/DeleteGlobalAcceleratorAclPolicyResponse.h>
 #include <tencentcloud/ga2/v20250115/model/DeleteGlobalAcceleratorAclRuleRequest.h>
@@ -63,6 +67,8 @@
 #include <tencentcloud/ga2/v20250115/model/DescribeAccelerateAreasResponse.h>
 #include <tencentcloud/ga2/v20250115/model/DescribeAccelerateRegionsRequest.h>
 #include <tencentcloud/ga2/v20250115/model/DescribeAccelerateRegionsResponse.h>
+#include <tencentcloud/ga2/v20250115/model/DescribeAccessLogParamRequest.h>
+#include <tencentcloud/ga2/v20250115/model/DescribeAccessLogParamResponse.h>
 #include <tencentcloud/ga2/v20250115/model/DescribeCrossBorderSettlementRequest.h>
 #include <tencentcloud/ga2/v20250115/model/DescribeCrossBorderSettlementResponse.h>
 #include <tencentcloud/ga2/v20250115/model/DescribeEndpointGroupsRequest.h>
@@ -71,6 +77,12 @@
 #include <tencentcloud/ga2/v20250115/model/DescribeForwardingPolicyResponse.h>
 #include <tencentcloud/ga2/v20250115/model/DescribeForwardingRuleRequest.h>
 #include <tencentcloud/ga2/v20250115/model/DescribeForwardingRuleResponse.h>
+#include <tencentcloud/ga2/v20250115/model/DescribeGlobalAcceleratorAccessLogRequest.h>
+#include <tencentcloud/ga2/v20250115/model/DescribeGlobalAcceleratorAccessLogResponse.h>
+#include <tencentcloud/ga2/v20250115/model/DescribeGlobalAcceleratorAclPoliciesRequest.h>
+#include <tencentcloud/ga2/v20250115/model/DescribeGlobalAcceleratorAclPoliciesResponse.h>
+#include <tencentcloud/ga2/v20250115/model/DescribeGlobalAcceleratorAclRulesRequest.h>
+#include <tencentcloud/ga2/v20250115/model/DescribeGlobalAcceleratorAclRulesResponse.h>
 #include <tencentcloud/ga2/v20250115/model/DescribeGlobalAcceleratorsRequest.h>
 #include <tencentcloud/ga2/v20250115/model/DescribeGlobalAcceleratorsResponse.h>
 #include <tencentcloud/ga2/v20250115/model/DescribeListenersRequest.h>
@@ -79,6 +91,8 @@
 #include <tencentcloud/ga2/v20250115/model/DescribeTaskResultResponse.h>
 #include <tencentcloud/ga2/v20250115/model/ModifyAccelerateAreasRequest.h>
 #include <tencentcloud/ga2/v20250115/model/ModifyAccelerateAreasResponse.h>
+#include <tencentcloud/ga2/v20250115/model/ModifyAccessLogStatusRequest.h>
+#include <tencentcloud/ga2/v20250115/model/ModifyAccessLogStatusResponse.h>
 #include <tencentcloud/ga2/v20250115/model/ModifyEndpointGroupRequest.h>
 #include <tencentcloud/ga2/v20250115/model/ModifyEndpointGroupResponse.h>
 #include <tencentcloud/ga2/v20250115/model/ModifyForwardingPolicyRequest.h>
@@ -87,6 +101,8 @@
 #include <tencentcloud/ga2/v20250115/model/ModifyForwardingRuleResponse.h>
 #include <tencentcloud/ga2/v20250115/model/ModifyGlobalAcceleratorRequest.h>
 #include <tencentcloud/ga2/v20250115/model/ModifyGlobalAcceleratorResponse.h>
+#include <tencentcloud/ga2/v20250115/model/ModifyGlobalAcceleratorAccessLogRequest.h>
+#include <tencentcloud/ga2/v20250115/model/ModifyGlobalAcceleratorAccessLogResponse.h>
 #include <tencentcloud/ga2/v20250115/model/ModifyGlobalAcceleratorAclPolicyRequest.h>
 #include <tencentcloud/ga2/v20250115/model/ModifyGlobalAcceleratorAclPolicyResponse.h>
 #include <tencentcloud/ga2/v20250115/model/ModifyGlobalAcceleratorAclRuleRequest.h>
@@ -124,6 +140,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateGlobalAcceleratorResponse> CreateGlobalAcceleratorOutcome;
                 typedef std::future<CreateGlobalAcceleratorOutcome> CreateGlobalAcceleratorOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::CreateGlobalAcceleratorRequest&, CreateGlobalAcceleratorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGlobalAcceleratorAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateGlobalAcceleratorAccessLogResponse> CreateGlobalAcceleratorAccessLogOutcome;
+                typedef std::future<CreateGlobalAcceleratorAccessLogOutcome> CreateGlobalAcceleratorAccessLogOutcomeCallable;
+                typedef std::function<void(const Ga2Client*, const Model::CreateGlobalAcceleratorAccessLogRequest&, CreateGlobalAcceleratorAccessLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGlobalAcceleratorAccessLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateGlobalAcceleratorAclPolicyResponse> CreateGlobalAcceleratorAclPolicyOutcome;
                 typedef std::future<CreateGlobalAcceleratorAclPolicyOutcome> CreateGlobalAcceleratorAclPolicyOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::CreateGlobalAcceleratorAclPolicyRequest&, CreateGlobalAcceleratorAclPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGlobalAcceleratorAclPolicyAsyncHandler;
@@ -151,6 +170,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteGlobalAcceleratorResponse> DeleteGlobalAcceleratorOutcome;
                 typedef std::future<DeleteGlobalAcceleratorOutcome> DeleteGlobalAcceleratorOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::DeleteGlobalAcceleratorRequest&, DeleteGlobalAcceleratorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGlobalAcceleratorAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteGlobalAcceleratorAccessLogResponse> DeleteGlobalAcceleratorAccessLogOutcome;
+                typedef std::future<DeleteGlobalAcceleratorAccessLogOutcome> DeleteGlobalAcceleratorAccessLogOutcomeCallable;
+                typedef std::function<void(const Ga2Client*, const Model::DeleteGlobalAcceleratorAccessLogRequest&, DeleteGlobalAcceleratorAccessLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGlobalAcceleratorAccessLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteGlobalAcceleratorAclPolicyResponse> DeleteGlobalAcceleratorAclPolicyOutcome;
                 typedef std::future<DeleteGlobalAcceleratorAclPolicyOutcome> DeleteGlobalAcceleratorAclPolicyOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::DeleteGlobalAcceleratorAclPolicyRequest&, DeleteGlobalAcceleratorAclPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGlobalAcceleratorAclPolicyAsyncHandler;
@@ -169,6 +191,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAccelerateRegionsResponse> DescribeAccelerateRegionsOutcome;
                 typedef std::future<DescribeAccelerateRegionsOutcome> DescribeAccelerateRegionsOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::DescribeAccelerateRegionsRequest&, DescribeAccelerateRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccelerateRegionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAccessLogParamResponse> DescribeAccessLogParamOutcome;
+                typedef std::future<DescribeAccessLogParamOutcome> DescribeAccessLogParamOutcomeCallable;
+                typedef std::function<void(const Ga2Client*, const Model::DescribeAccessLogParamRequest&, DescribeAccessLogParamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessLogParamAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCrossBorderSettlementResponse> DescribeCrossBorderSettlementOutcome;
                 typedef std::future<DescribeCrossBorderSettlementOutcome> DescribeCrossBorderSettlementOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::DescribeCrossBorderSettlementRequest&, DescribeCrossBorderSettlementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCrossBorderSettlementAsyncHandler;
@@ -181,6 +206,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeForwardingRuleResponse> DescribeForwardingRuleOutcome;
                 typedef std::future<DescribeForwardingRuleOutcome> DescribeForwardingRuleOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::DescribeForwardingRuleRequest&, DescribeForwardingRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeForwardingRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGlobalAcceleratorAccessLogResponse> DescribeGlobalAcceleratorAccessLogOutcome;
+                typedef std::future<DescribeGlobalAcceleratorAccessLogOutcome> DescribeGlobalAcceleratorAccessLogOutcomeCallable;
+                typedef std::function<void(const Ga2Client*, const Model::DescribeGlobalAcceleratorAccessLogRequest&, DescribeGlobalAcceleratorAccessLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGlobalAcceleratorAccessLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGlobalAcceleratorAclPoliciesResponse> DescribeGlobalAcceleratorAclPoliciesOutcome;
+                typedef std::future<DescribeGlobalAcceleratorAclPoliciesOutcome> DescribeGlobalAcceleratorAclPoliciesOutcomeCallable;
+                typedef std::function<void(const Ga2Client*, const Model::DescribeGlobalAcceleratorAclPoliciesRequest&, DescribeGlobalAcceleratorAclPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGlobalAcceleratorAclPoliciesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGlobalAcceleratorAclRulesResponse> DescribeGlobalAcceleratorAclRulesOutcome;
+                typedef std::future<DescribeGlobalAcceleratorAclRulesOutcome> DescribeGlobalAcceleratorAclRulesOutcomeCallable;
+                typedef std::function<void(const Ga2Client*, const Model::DescribeGlobalAcceleratorAclRulesRequest&, DescribeGlobalAcceleratorAclRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGlobalAcceleratorAclRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGlobalAcceleratorsResponse> DescribeGlobalAcceleratorsOutcome;
                 typedef std::future<DescribeGlobalAcceleratorsOutcome> DescribeGlobalAcceleratorsOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::DescribeGlobalAcceleratorsRequest&, DescribeGlobalAcceleratorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGlobalAcceleratorsAsyncHandler;
@@ -193,6 +227,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAccelerateAreasResponse> ModifyAccelerateAreasOutcome;
                 typedef std::future<ModifyAccelerateAreasOutcome> ModifyAccelerateAreasOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::ModifyAccelerateAreasRequest&, ModifyAccelerateAreasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccelerateAreasAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAccessLogStatusResponse> ModifyAccessLogStatusOutcome;
+                typedef std::future<ModifyAccessLogStatusOutcome> ModifyAccessLogStatusOutcomeCallable;
+                typedef std::function<void(const Ga2Client*, const Model::ModifyAccessLogStatusRequest&, ModifyAccessLogStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccessLogStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyEndpointGroupResponse> ModifyEndpointGroupOutcome;
                 typedef std::future<ModifyEndpointGroupOutcome> ModifyEndpointGroupOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::ModifyEndpointGroupRequest&, ModifyEndpointGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEndpointGroupAsyncHandler;
@@ -205,6 +242,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyGlobalAcceleratorResponse> ModifyGlobalAcceleratorOutcome;
                 typedef std::future<ModifyGlobalAcceleratorOutcome> ModifyGlobalAcceleratorOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::ModifyGlobalAcceleratorRequest&, ModifyGlobalAcceleratorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGlobalAcceleratorAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyGlobalAcceleratorAccessLogResponse> ModifyGlobalAcceleratorAccessLogOutcome;
+                typedef std::future<ModifyGlobalAcceleratorAccessLogOutcome> ModifyGlobalAcceleratorAccessLogOutcomeCallable;
+                typedef std::function<void(const Ga2Client*, const Model::ModifyGlobalAcceleratorAccessLogRequest&, ModifyGlobalAcceleratorAccessLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGlobalAcceleratorAccessLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyGlobalAcceleratorAclPolicyResponse> ModifyGlobalAcceleratorAclPolicyOutcome;
                 typedef std::future<ModifyGlobalAcceleratorAclPolicyOutcome> ModifyGlobalAcceleratorAclPolicyOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::ModifyGlobalAcceleratorAclPolicyRequest&, ModifyGlobalAcceleratorAclPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGlobalAcceleratorAclPolicyAsyncHandler;
@@ -264,6 +304,15 @@ namespace TencentCloud
                 CreateGlobalAcceleratorOutcome CreateGlobalAccelerator(const Model::CreateGlobalAcceleratorRequest &request);
                 void CreateGlobalAcceleratorAsync(const Model::CreateGlobalAcceleratorRequest& request, const CreateGlobalAcceleratorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateGlobalAcceleratorOutcomeCallable CreateGlobalAcceleratorCallable(const Model::CreateGlobalAcceleratorRequest& request);
+
+                /**
+                 *创建GA访问日志
+                 * @param req CreateGlobalAcceleratorAccessLogRequest
+                 * @return CreateGlobalAcceleratorAccessLogOutcome
+                 */
+                CreateGlobalAcceleratorAccessLogOutcome CreateGlobalAcceleratorAccessLog(const Model::CreateGlobalAcceleratorAccessLogRequest &request);
+                void CreateGlobalAcceleratorAccessLogAsync(const Model::CreateGlobalAcceleratorAccessLogRequest& request, const CreateGlobalAcceleratorAccessLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateGlobalAcceleratorAccessLogOutcomeCallable CreateGlobalAcceleratorAccessLogCallable(const Model::CreateGlobalAcceleratorAccessLogRequest& request);
 
                 /**
                  *创建访问控制策略
@@ -347,6 +396,15 @@ namespace TencentCloud
                 DeleteGlobalAcceleratorOutcomeCallable DeleteGlobalAcceleratorCallable(const Model::DeleteGlobalAcceleratorRequest& request);
 
                 /**
+                 *删除GA日志任务
+                 * @param req DeleteGlobalAcceleratorAccessLogRequest
+                 * @return DeleteGlobalAcceleratorAccessLogOutcome
+                 */
+                DeleteGlobalAcceleratorAccessLogOutcome DeleteGlobalAcceleratorAccessLog(const Model::DeleteGlobalAcceleratorAccessLogRequest &request);
+                void DeleteGlobalAcceleratorAccessLogAsync(const Model::DeleteGlobalAcceleratorAccessLogRequest& request, const DeleteGlobalAcceleratorAccessLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteGlobalAcceleratorAccessLogOutcomeCallable DeleteGlobalAcceleratorAccessLogCallable(const Model::DeleteGlobalAcceleratorAccessLogRequest& request);
+
+                /**
                  *删除访问控制策略
                  * @param req DeleteGlobalAcceleratorAclPolicyRequest
                  * @return DeleteGlobalAcceleratorAclPolicyOutcome
@@ -401,6 +459,15 @@ namespace TencentCloud
                 DescribeAccelerateRegionsOutcomeCallable DescribeAccelerateRegionsCallable(const Model::DescribeAccelerateRegionsRequest& request);
 
                 /**
+                 *查看访问日志上报参数
+                 * @param req DescribeAccessLogParamRequest
+                 * @return DescribeAccessLogParamOutcome
+                 */
+                DescribeAccessLogParamOutcome DescribeAccessLogParam(const Model::DescribeAccessLogParamRequest &request);
+                void DescribeAccessLogParamAsync(const Model::DescribeAccessLogParamRequest& request, const DescribeAccessLogParamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccessLogParamOutcomeCallable DescribeAccessLogParamCallable(const Model::DescribeAccessLogParamRequest& request);
+
+                /**
                  *查询跨境账单
                  * @param req DescribeCrossBorderSettlementRequest
                  * @return DescribeCrossBorderSettlementOutcome
@@ -435,6 +502,33 @@ namespace TencentCloud
                 DescribeForwardingRuleOutcome DescribeForwardingRule(const Model::DescribeForwardingRuleRequest &request);
                 void DescribeForwardingRuleAsync(const Model::DescribeForwardingRuleRequest& request, const DescribeForwardingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeForwardingRuleOutcomeCallable DescribeForwardingRuleCallable(const Model::DescribeForwardingRuleRequest& request);
+
+                /**
+                 *查询日志任务
+                 * @param req DescribeGlobalAcceleratorAccessLogRequest
+                 * @return DescribeGlobalAcceleratorAccessLogOutcome
+                 */
+                DescribeGlobalAcceleratorAccessLogOutcome DescribeGlobalAcceleratorAccessLog(const Model::DescribeGlobalAcceleratorAccessLogRequest &request);
+                void DescribeGlobalAcceleratorAccessLogAsync(const Model::DescribeGlobalAcceleratorAccessLogRequest& request, const DescribeGlobalAcceleratorAccessLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGlobalAcceleratorAccessLogOutcomeCallable DescribeGlobalAcceleratorAccessLogCallable(const Model::DescribeGlobalAcceleratorAccessLogRequest& request);
+
+                /**
+                 *查看访问控制策略
+                 * @param req DescribeGlobalAcceleratorAclPoliciesRequest
+                 * @return DescribeGlobalAcceleratorAclPoliciesOutcome
+                 */
+                DescribeGlobalAcceleratorAclPoliciesOutcome DescribeGlobalAcceleratorAclPolicies(const Model::DescribeGlobalAcceleratorAclPoliciesRequest &request);
+                void DescribeGlobalAcceleratorAclPoliciesAsync(const Model::DescribeGlobalAcceleratorAclPoliciesRequest& request, const DescribeGlobalAcceleratorAclPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGlobalAcceleratorAclPoliciesOutcomeCallable DescribeGlobalAcceleratorAclPoliciesCallable(const Model::DescribeGlobalAcceleratorAclPoliciesRequest& request);
+
+                /**
+                 *查看ACL规则
+                 * @param req DescribeGlobalAcceleratorAclRulesRequest
+                 * @return DescribeGlobalAcceleratorAclRulesOutcome
+                 */
+                DescribeGlobalAcceleratorAclRulesOutcome DescribeGlobalAcceleratorAclRules(const Model::DescribeGlobalAcceleratorAclRulesRequest &request);
+                void DescribeGlobalAcceleratorAclRulesAsync(const Model::DescribeGlobalAcceleratorAclRulesRequest& request, const DescribeGlobalAcceleratorAclRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGlobalAcceleratorAclRulesOutcomeCallable DescribeGlobalAcceleratorAclRulesCallable(const Model::DescribeGlobalAcceleratorAclRulesRequest& request);
 
                 /**
                  *修改全球加速实例
@@ -473,6 +567,15 @@ namespace TencentCloud
                 ModifyAccelerateAreasOutcomeCallable ModifyAccelerateAreasCallable(const Model::ModifyAccelerateAreasRequest& request);
 
                 /**
+                 *修改日志任务状态
+                 * @param req ModifyAccessLogStatusRequest
+                 * @return ModifyAccessLogStatusOutcome
+                 */
+                ModifyAccessLogStatusOutcome ModifyAccessLogStatus(const Model::ModifyAccessLogStatusRequest &request);
+                void ModifyAccessLogStatusAsync(const Model::ModifyAccessLogStatusRequest& request, const ModifyAccessLogStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAccessLogStatusOutcomeCallable ModifyAccessLogStatusCallable(const Model::ModifyAccessLogStatusRequest& request);
+
+                /**
                  *修改终端节点组。
                  * @param req ModifyEndpointGroupRequest
                  * @return ModifyEndpointGroupOutcome
@@ -507,6 +610,15 @@ namespace TencentCloud
                 ModifyGlobalAcceleratorOutcome ModifyGlobalAccelerator(const Model::ModifyGlobalAcceleratorRequest &request);
                 void ModifyGlobalAcceleratorAsync(const Model::ModifyGlobalAcceleratorRequest& request, const ModifyGlobalAcceleratorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyGlobalAcceleratorOutcomeCallable ModifyGlobalAcceleratorCallable(const Model::ModifyGlobalAcceleratorRequest& request);
+
+                /**
+                 *修改GA访问日志
+                 * @param req ModifyGlobalAcceleratorAccessLogRequest
+                 * @return ModifyGlobalAcceleratorAccessLogOutcome
+                 */
+                ModifyGlobalAcceleratorAccessLogOutcome ModifyGlobalAcceleratorAccessLog(const Model::ModifyGlobalAcceleratorAccessLogRequest &request);
+                void ModifyGlobalAcceleratorAccessLogAsync(const Model::ModifyGlobalAcceleratorAccessLogRequest& request, const ModifyGlobalAcceleratorAccessLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyGlobalAcceleratorAccessLogOutcomeCallable ModifyGlobalAcceleratorAccessLogCallable(const Model::ModifyGlobalAcceleratorAccessLogRequest& request);
 
                 /**
                  *修改访问控制策略状态

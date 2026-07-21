@@ -24,6 +24,7 @@ using namespace std;
 
 DeleteModelServiceRequest::DeleteModelServiceRequest() :
     m_serviceIdHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false),
     m_serviceCategoryHasBeenSet(false)
 {
 }
@@ -41,6 +42,14 @@ string DeleteModelServiceRequest::ToJsonString() const
         string key = "ServiceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serviceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serviceCategoryHasBeenSet)
@@ -73,6 +82,22 @@ void DeleteModelServiceRequest::SetServiceId(const string& _serviceId)
 bool DeleteModelServiceRequest::ServiceIdHasBeenSet() const
 {
     return m_serviceIdHasBeenSet;
+}
+
+string DeleteModelServiceRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void DeleteModelServiceRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool DeleteModelServiceRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 string DeleteModelServiceRequest::GetServiceCategory() const

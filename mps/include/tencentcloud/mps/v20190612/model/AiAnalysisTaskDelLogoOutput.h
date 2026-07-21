@@ -207,6 +207,69 @@ namespace TencentCloud
                      */
                     bool VoiceClonedMarkFileHasBeenSet() const;
 
+                    /**
+                     * 获取<p>擦除后文件的FileId。</p>
+                     * @return FileId <p>擦除后文件的FileId。</p>
+                     * 
+                     */
+                    std::string GetFileId() const;
+
+                    /**
+                     * 设置<p>擦除后文件的FileId。</p>
+                     * @param _fileId <p>擦除后文件的FileId。</p>
+                     * 
+                     */
+                    void SetFileId(const std::string& _fileId);
+
+                    /**
+                     * 判断参数 FileId 是否已赋值
+                     * @return FileId 是否已赋值
+                     * 
+                     */
+                    bool FileIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>基于画面提取的字幕文件FileId。</p>
+                     * @return OriginSubtitleFileId <p>基于画面提取的字幕文件FileId。</p>
+                     * 
+                     */
+                    std::string GetOriginSubtitleFileId() const;
+
+                    /**
+                     * 设置<p>基于画面提取的字幕文件FileId。</p>
+                     * @param _originSubtitleFileId <p>基于画面提取的字幕文件FileId。</p>
+                     * 
+                     */
+                    void SetOriginSubtitleFileId(const std::string& _originSubtitleFileId);
+
+                    /**
+                     * 判断参数 OriginSubtitleFileId 是否已赋值
+                     * @return OriginSubtitleFileId 是否已赋值
+                     * 
+                     */
+                    bool OriginSubtitleFileIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>基于画面提取的字幕翻译文件FileId    。</p>
+                     * @return TranslateSubtitleFileId <p>基于画面提取的字幕翻译文件FileId    。</p>
+                     * 
+                     */
+                    std::string GetTranslateSubtitleFileId() const;
+
+                    /**
+                     * 设置<p>基于画面提取的字幕翻译文件FileId    。</p>
+                     * @param _translateSubtitleFileId <p>基于画面提取的字幕翻译文件FileId    。</p>
+                     * 
+                     */
+                    void SetTranslateSubtitleFileId(const std::string& _translateSubtitleFileId);
+
+                    /**
+                     * 判断参数 TranslateSubtitleFileId 是否已赋值
+                     * @return TranslateSubtitleFileId 是否已赋值
+                     * 
+                     */
+                    bool TranslateSubtitleFileIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -253,6 +316,24 @@ namespace TencentCloud
                      */
                     std::string m_voiceClonedMarkFile;
                     bool m_voiceClonedMarkFileHasBeenSet;
+
+                    /**
+                     * <p>擦除后文件的FileId。</p>
+                     */
+                    std::string m_fileId;
+                    bool m_fileIdHasBeenSet;
+
+                    /**
+                     * <p>基于画面提取的字幕文件FileId。</p>
+                     */
+                    std::string m_originSubtitleFileId;
+                    bool m_originSubtitleFileIdHasBeenSet;
+
+                    /**
+                     * <p>基于画面提取的字幕翻译文件FileId    。</p>
+                     */
+                    std::string m_translateSubtitleFileId;
+                    bool m_translateSubtitleFileIdHasBeenSet;
 
                 };
             }

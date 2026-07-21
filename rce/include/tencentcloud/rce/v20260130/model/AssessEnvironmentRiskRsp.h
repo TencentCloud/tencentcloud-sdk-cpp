@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>环境风险分信息</p>
-                     * @return Score <p>环境风险分信息</p>
+                     * 获取<p>IP环境风险分信息</p>
+                     * @return Score <p>IP环境风险分信息</p>
                      * 
                      */
                     DataScore GetScore() const;
 
                     /**
-                     * 设置<p>环境风险分信息</p>
-                     * @param _score <p>环境风险分信息</p>
+                     * 设置<p>IP环境风险分信息</p>
+                     * @param _score <p>IP环境风险分信息</p>
                      * 
                      */
                     void SetScore(const DataScore& _score);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool ScoreHasBeenSet() const;
 
                     /**
-                     * 获取<p>环境基础信息</p>
-                     * @return Environment <p>环境基础信息</p>
+                     * 获取<p>IP环境基础信息</p>
+                     * @return Environment <p>IP环境基础信息</p>
                      * 
                      */
                     Environment GetEnvironment() const;
 
                     /**
-                     * 设置<p>环境基础信息</p>
-                     * @param _environment <p>环境基础信息</p>
+                     * 设置<p>IP环境基础信息</p>
+                     * @param _environment <p>IP环境基础信息</p>
                      * 
                      */
                     void SetEnvironment(const Environment& _environment);
@@ -93,13 +93,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>环境风险分信息</p>
+                     * <p>IP环境风险分信息</p>
                      */
                     DataScore m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
-                     * <p>环境基础信息</p>
+                     * <p>IP环境基础信息</p>
                      */
                     Environment m_environment;
                     bool m_environmentHasBeenSet;

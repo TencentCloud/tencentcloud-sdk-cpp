@@ -24,7 +24,8 @@ SubtitleResult::SubtitleResult() :
     m_languageHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_pathHasBeenSet(false),
-    m_subtitleEmbedPathHasBeenSet(false)
+    m_subtitleEmbedPathHasBeenSet(false),
+    m_subtitleFileIdHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome SubtitleResult::Deserialize(const rapidjson::Value &value)
         m_subtitleEmbedPathHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitleFileId") && !value["SubtitleFileId"].IsNull())
+    {
+        if (!value["SubtitleFileId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubtitleResult.SubtitleFileId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subtitleFileId = string(value["SubtitleFileId"].GetString());
+        m_subtitleFileIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void SubtitleResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "SubtitleEmbedPath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subtitleEmbedPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subtitleFileIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleFileId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subtitleFileId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void SubtitleResult::SetSubtitleEmbedPath(const string& _subtitleEmbedPath)
 bool SubtitleResult::SubtitleEmbedPathHasBeenSet() const
 {
     return m_subtitleEmbedPathHasBeenSet;
+}
+
+string SubtitleResult::GetSubtitleFileId() const
+{
+    return m_subtitleFileId;
+}
+
+void SubtitleResult::SetSubtitleFileId(const string& _subtitleFileId)
+{
+    m_subtitleFileId = _subtitleFileId;
+    m_subtitleFileIdHasBeenSet = true;
+}
+
+bool SubtitleResult::SubtitleFileIdHasBeenSet() const
+{
+    return m_subtitleFileIdHasBeenSet;
 }
 

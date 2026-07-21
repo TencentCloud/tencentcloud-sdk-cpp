@@ -116,6 +116,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DescribeIpsModeSwitchRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyBlockTopResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwVpcDnsLstResponse.h
+  include/tencentcloud/cfw/v20190904/model/DescribeAclRegInfoResponse.h
   include/tencentcloud/cfw/v20190904/model/CreateBlockIgnoreRuleListResponse.h
   include/tencentcloud/cfw/v20190904/model/TLogInfo.h
   include/tencentcloud/cfw/v20190904/model/DescribeLogsResponse.h
@@ -150,7 +151,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DatabaseWhiteListRuleData.h
   include/tencentcloud/cfw/v20190904/model/DescribeTLogInfoResponse.h
   include/tencentcloud/cfw/v20190904/model/PolicyRoutePreCheckReport.h
-  include/tencentcloud/cfw/v20190904/model/NatFwInstance.h
+  include/tencentcloud/cfw/v20190904/model/AclRegInfo.h
   include/tencentcloud/cfw/v20190904/model/DescribeCfwLogsResponse.h
   include/tencentcloud/cfw/v20190904/model/ModifyAllPublicIPSwitchStatusResponse.h
   include/tencentcloud/cfw/v20190904/model/BanAndAllowRuleDel.h
@@ -174,6 +175,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DescribeCcnAssociatedInstancesRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyVpcAcRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/BetaInfoByACL.h
+  include/tencentcloud/cfw/v20190904/model/CreateNatFwDnatRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeAcListsResponse.h
   include/tencentcloud/cfw/v20190904/model/ModifyClusterFwBypassResponse.h
   include/tencentcloud/cfw/v20190904/model/AddNatAcRuleRequest.h
@@ -186,7 +188,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DeleteResourceGroupRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyFwGroupSwitchRequest.h
   include/tencentcloud/cfw/v20190904/model/CreateAddressTemplateResponse.h
-  include/tencentcloud/cfw/v20190904/model/CreateNatFwDnatRuleResponse.h
+  include/tencentcloud/cfw/v20190904/model/DescribeAclRegInfoRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeResourceGroupNewResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwClusterRegionStatusRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeAddressTemplateListRequest.h
@@ -337,6 +339,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/CloseClusterNatFwSwitchResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwInstanceWithRegionRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyAddressTemplateRequest.h
+  include/tencentcloud/cfw/v20190904/model/NatFwInstance.h
   include/tencentcloud/cfw/v20190904/model/CfwNatDnatRule.h
   include/tencentcloud/cfw/v20190904/model/UpdateClusterVpcFwRequest.h
   include/tencentcloud/cfw/v20190904/model/DeleteNatFwDnatRuleRequest.h
@@ -533,6 +536,7 @@ set(cfw_src
   src/v20190904/model/DescribeIpsModeSwitchRequest.cpp
   src/v20190904/model/ModifyBlockTopResponse.cpp
   src/v20190904/model/DescribeNatFwVpcDnsLstResponse.cpp
+  src/v20190904/model/DescribeAclRegInfoResponse.cpp
   src/v20190904/model/CreateBlockIgnoreRuleListResponse.cpp
   src/v20190904/model/TLogInfo.cpp
   src/v20190904/model/DescribeLogsResponse.cpp
@@ -567,7 +571,7 @@ set(cfw_src
   src/v20190904/model/DatabaseWhiteListRuleData.cpp
   src/v20190904/model/DescribeTLogInfoResponse.cpp
   src/v20190904/model/PolicyRoutePreCheckReport.cpp
-  src/v20190904/model/NatFwInstance.cpp
+  src/v20190904/model/AclRegInfo.cpp
   src/v20190904/model/DescribeCfwLogsResponse.cpp
   src/v20190904/model/ModifyAllPublicIPSwitchStatusResponse.cpp
   src/v20190904/model/BanAndAllowRuleDel.cpp
@@ -591,6 +595,7 @@ set(cfw_src
   src/v20190904/model/DescribeCcnAssociatedInstancesRequest.cpp
   src/v20190904/model/ModifyVpcAcRuleRequest.cpp
   src/v20190904/model/BetaInfoByACL.cpp
+  src/v20190904/model/CreateNatFwDnatRuleResponse.cpp
   src/v20190904/model/DescribeAcListsResponse.cpp
   src/v20190904/model/ModifyClusterFwBypassResponse.cpp
   src/v20190904/model/AddNatAcRuleRequest.cpp
@@ -603,7 +608,7 @@ set(cfw_src
   src/v20190904/model/DeleteResourceGroupRequest.cpp
   src/v20190904/model/ModifyFwGroupSwitchRequest.cpp
   src/v20190904/model/CreateAddressTemplateResponse.cpp
-  src/v20190904/model/CreateNatFwDnatRuleResponse.cpp
+  src/v20190904/model/DescribeAclRegInfoRequest.cpp
   src/v20190904/model/DescribeResourceGroupNewResponse.cpp
   src/v20190904/model/DescribeNatFwClusterRegionStatusRequest.cpp
   src/v20190904/model/DescribeAddressTemplateListRequest.cpp
@@ -754,6 +759,7 @@ set(cfw_src
   src/v20190904/model/CloseClusterNatFwSwitchResponse.cpp
   src/v20190904/model/DescribeNatFwInstanceWithRegionRequest.cpp
   src/v20190904/model/ModifyAddressTemplateRequest.cpp
+  src/v20190904/model/NatFwInstance.cpp
   src/v20190904/model/CfwNatDnatRule.cpp
   src/v20190904/model/UpdateClusterVpcFwRequest.cpp
   src/v20190904/model/DeleteNatFwDnatRuleRequest.cpp

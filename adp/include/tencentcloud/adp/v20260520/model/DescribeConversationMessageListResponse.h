@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/adp/v20260520/model/ConversationMessage.h>
+#include <tencentcloud/adp/v20260520/model/ConversationResetInfo.h>
 
 
 namespace TencentCloud
@@ -117,16 +118,32 @@ namespace TencentCloud
                     /**
                      * 获取<p>消息列表</p>
                      * @return Messages <p>消息列表</p>
-                     * 
+                     * @deprecated
                      */
                     std::vector<ConversationMessage> GetMessages() const;
 
                     /**
                      * 判断参数 Messages 是否已赋值
                      * @return Messages 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool MessagesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>最近一次重置信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResetInfo <p>最近一次重置信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ConversationResetInfo GetResetInfo() const;
+
+                    /**
+                     * 判断参数 ResetInfo 是否已赋值
+                     * @return ResetInfo 是否已赋值
+                     * 
+                     */
+                    bool ResetInfoHasBeenSet() const;
 
                 private:
 
@@ -165,6 +182,13 @@ namespace TencentCloud
                      */
                     std::vector<ConversationMessage> m_messages;
                     bool m_messagesHasBeenSet;
+
+                    /**
+                     * <p>最近一次重置信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ConversationResetInfo m_resetInfo;
+                    bool m_resetInfoHasBeenSet;
 
                 };
             }

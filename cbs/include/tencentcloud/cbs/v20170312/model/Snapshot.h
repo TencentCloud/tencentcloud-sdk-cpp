@@ -532,6 +532,27 @@ namespace TencentCloud
                      */
                     bool AutoSnapshotPolicyIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>快照模式。取值为 INSTANT_SNAPSHOT 表示极速快照，STANDARD_SNAPSHOT 表示普通快照。</p><p>枚举值：</p><ul><li>INSTANT_SNAPSHOT： 极速快照</li><li>STANDARD_SNAPSHOT： 普通快照</li></ul>
+                     * @return SnapshotMode <p>快照模式。取值为 INSTANT_SNAPSHOT 表示极速快照，STANDARD_SNAPSHOT 表示普通快照。</p><p>枚举值：</p><ul><li>INSTANT_SNAPSHOT： 极速快照</li><li>STANDARD_SNAPSHOT： 普通快照</li></ul>
+                     * 
+                     */
+                    std::string GetSnapshotMode() const;
+
+                    /**
+                     * 设置<p>快照模式。取值为 INSTANT_SNAPSHOT 表示极速快照，STANDARD_SNAPSHOT 表示普通快照。</p><p>枚举值：</p><ul><li>INSTANT_SNAPSHOT： 极速快照</li><li>STANDARD_SNAPSHOT： 普通快照</li></ul>
+                     * @param _snapshotMode <p>快照模式。取值为 INSTANT_SNAPSHOT 表示极速快照，STANDARD_SNAPSHOT 表示普通快照。</p><p>枚举值：</p><ul><li>INSTANT_SNAPSHOT： 极速快照</li><li>STANDARD_SNAPSHOT： 普通快照</li></ul>
+                     * 
+                     */
+                    void SetSnapshotMode(const std::string& _snapshotMode);
+
+                    /**
+                     * 判断参数 SnapshotMode 是否已赋值
+                     * @return SnapshotMode 是否已赋值
+                     * 
+                     */
+                    bool SnapshotModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -671,6 +692,12 @@ namespace TencentCloud
                      */
                     std::string m_autoSnapshotPolicyId;
                     bool m_autoSnapshotPolicyIdHasBeenSet;
+
+                    /**
+                     * <p>快照模式。取值为 INSTANT_SNAPSHOT 表示极速快照，STANDARD_SNAPSHOT 表示普通快照。</p><p>枚举值：</p><ul><li>INSTANT_SNAPSHOT： 极速快照</li><li>STANDARD_SNAPSHOT： 普通快照</li></ul>
+                     */
+                    std::string m_snapshotMode;
+                    bool m_snapshotModeHasBeenSet;
 
                 };
             }

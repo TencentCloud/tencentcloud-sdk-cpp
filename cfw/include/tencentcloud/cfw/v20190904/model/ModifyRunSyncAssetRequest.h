@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取0: 互联网防火墙开关，1：vpc 防火墙开关
-                     * @return Type 0: 互联网防火墙开关，1：vpc 防火墙开关
+                     * 获取<p>0: 互联网防火墙开关，1：vpc 防火墙开关</p>
+                     * @return Type <p>0: 互联网防火墙开关，1：vpc 防火墙开关</p>
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置0: 互联网防火墙开关，1：vpc 防火墙开关
-                     * @param _type 0: 互联网防火墙开关，1：vpc 防火墙开关
+                     * 设置<p>0: 互联网防火墙开关，1：vpc 防火墙开关</p>
+                     * @param _type <p>0: 互联网防火墙开关，1：vpc 防火墙开关</p>
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 0: 互联网防火墙开关，1：vpc 防火墙开关
+                     * <p>0: 互联网防火墙开关，1：vpc 防火墙开关</p>
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;

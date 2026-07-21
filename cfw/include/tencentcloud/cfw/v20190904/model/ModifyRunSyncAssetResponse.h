@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取0：同步成功，1：资产更新中，2：后台同步调用失败
-                     * @return Status 0：同步成功，1：资产更新中，2：后台同步调用失败
+                     * 获取<p>0：同步成功，1：资产更新中，2：后台同步调用失败</p>
+                     * @return Status <p>0：同步成功，1：资产更新中，2：后台同步调用失败</p>
                      * 
                      */
                     int64_t GetStatus() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 0：同步成功，1：资产更新中，2：后台同步调用失败
+                     * <p>0：同步成功，1：资产更新中，2：后台同步调用失败</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

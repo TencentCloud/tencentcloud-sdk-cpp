@@ -942,6 +942,27 @@ namespace TencentCloud
                     bool ExternalResourceGroupsHasBeenSet() const;
 
                     /**
+                     * 获取<p>服务所属的项目 id,0表示默认空间</p>
+                     * @return ProjectId <p>服务所属的项目 id,0表示默认空间</p>
+                     * 
+                     */
+                    std::string GetProjectId() const;
+
+                    /**
+                     * 设置<p>服务所属的项目 id,0表示默认空间</p>
+                     * @param _projectId <p>服务所属的项目 id,0表示默认空间</p>
+                     * 
+                     */
+                    void SetProjectId(const std::string& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>变更服务的子账户</p>
                      * @return Changer <p>变更服务的子账户</p>
                      * 
@@ -1234,6 +1255,12 @@ namespace TencentCloud
                      */
                     std::vector<ResourceGroupInfo> m_externalResourceGroups;
                     bool m_externalResourceGroupsHasBeenSet;
+
+                    /**
+                     * <p>服务所属的项目 id,0表示默认空间</p>
+                     */
+                    std::string m_projectId;
+                    bool m_projectIdHasBeenSet;
 
                     /**
                      * <p>变更服务的子账户</p>

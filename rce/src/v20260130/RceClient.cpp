@@ -40,6 +40,106 @@ RceClient::RceClient(const Credential &credential, const string &region, const C
 }
 
 
+RceClient::AssessDeviceRiskPremiumProOutcome RceClient::AssessDeviceRiskPremiumPro(const AssessDeviceRiskPremiumProRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssessDeviceRiskPremiumPro");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssessDeviceRiskPremiumProResponse rsp = AssessDeviceRiskPremiumProResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssessDeviceRiskPremiumProOutcome(rsp);
+        else
+            return AssessDeviceRiskPremiumProOutcome(o.GetError());
+    }
+    else
+    {
+        return AssessDeviceRiskPremiumProOutcome(outcome.GetError());
+    }
+}
+
+void RceClient::AssessDeviceRiskPremiumProAsync(const AssessDeviceRiskPremiumProRequest& request, const AssessDeviceRiskPremiumProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AssessDeviceRiskPremiumProRequest&;
+    using Resp = AssessDeviceRiskPremiumProResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AssessDeviceRiskPremiumPro", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RceClient::AssessDeviceRiskPremiumProOutcomeCallable RceClient::AssessDeviceRiskPremiumProCallable(const AssessDeviceRiskPremiumProRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AssessDeviceRiskPremiumProOutcome>>();
+    AssessDeviceRiskPremiumProAsync(
+    request,
+    [prom](
+        const RceClient*,
+        const AssessDeviceRiskPremiumProRequest&,
+        AssessDeviceRiskPremiumProOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RceClient::AssessDeviceRiskProOutcome RceClient::AssessDeviceRiskPro(const AssessDeviceRiskProRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssessDeviceRiskPro");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssessDeviceRiskProResponse rsp = AssessDeviceRiskProResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssessDeviceRiskProOutcome(rsp);
+        else
+            return AssessDeviceRiskProOutcome(o.GetError());
+    }
+    else
+    {
+        return AssessDeviceRiskProOutcome(outcome.GetError());
+    }
+}
+
+void RceClient::AssessDeviceRiskProAsync(const AssessDeviceRiskProRequest& request, const AssessDeviceRiskProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AssessDeviceRiskProRequest&;
+    using Resp = AssessDeviceRiskProResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AssessDeviceRiskPro", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RceClient::AssessDeviceRiskProOutcomeCallable RceClient::AssessDeviceRiskProCallable(const AssessDeviceRiskProRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AssessDeviceRiskProOutcome>>();
+    AssessDeviceRiskProAsync(
+    request,
+    [prom](
+        const RceClient*,
+        const AssessDeviceRiskProRequest&,
+        AssessDeviceRiskProOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 RceClient::AssessEnvironmentRiskOutcome RceClient::AssessEnvironmentRisk(const AssessEnvironmentRiskRequest &request)
 {
     auto outcome = MakeRequest(request, "AssessEnvironmentRisk");

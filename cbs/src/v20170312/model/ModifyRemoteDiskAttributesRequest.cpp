@@ -25,7 +25,8 @@ using namespace std;
 ModifyRemoteDiskAttributesRequest::ModifyRemoteDiskAttributesRequest() :
     m_remoteDiskIdsHasBeenSet(false),
     m_diskNameHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_autoRenewFlagHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string ModifyRemoteDiskAttributesRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_autoRenewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_autoRenewFlag.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void ModifyRemoteDiskAttributesRequest::SetProjectId(const uint64_t& _projectId)
 bool ModifyRemoteDiskAttributesRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string ModifyRemoteDiskAttributesRequest::GetAutoRenewFlag() const
+{
+    return m_autoRenewFlag;
+}
+
+void ModifyRemoteDiskAttributesRequest::SetAutoRenewFlag(const string& _autoRenewFlag)
+{
+    m_autoRenewFlag = _autoRenewFlag;
+    m_autoRenewFlagHasBeenSet = true;
+}
+
+bool ModifyRemoteDiskAttributesRequest::AutoRenewFlagHasBeenSet() const
+{
+    return m_autoRenewFlagHasBeenSet;
 }
 
 

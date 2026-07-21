@@ -27,7 +27,8 @@ PluginSummary::PluginSummary() :
     m_statisticsHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_userStateHasBeenSet(false),
-    m_configHasBeenSet(false)
+    m_configHasBeenSet(false),
+    m_toolListHasBeenSet(false)
 {
 }
 
@@ -141,6 +142,26 @@ CoreInternalOutcome PluginSummary::Deserialize(const rapidjson::Value &value)
         m_configHasBeenSet = true;
     }
 
+    if (value.HasMember("ToolList") && !value["ToolList"].IsNull())
+    {
+        if (!value["ToolList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PluginSummary.ToolList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ToolList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ToolSummary item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_toolList.push_back(item);
+        }
+        m_toolListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -207,6 +228,21 @@ void PluginSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_config.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_toolListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToolList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_toolList.begin(); itr != m_toolList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -322,5 +358,21 @@ void PluginSummary::SetConfig(const PluginConfig& _config)
 bool PluginSummary::ConfigHasBeenSet() const
 {
     return m_configHasBeenSet;
+}
+
+vector<ToolSummary> PluginSummary::GetToolList() const
+{
+    return m_toolList;
+}
+
+void PluginSummary::SetToolList(const vector<ToolSummary>& _toolList)
+{
+    m_toolList = _toolList;
+    m_toolListHasBeenSet = true;
+}
+
+bool PluginSummary::ToolListHasBeenSet() const
+{
+    return m_toolListHasBeenSet;
 }
 

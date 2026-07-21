@@ -29,6 +29,7 @@
 #include <tencentcloud/adp/v20260520/model/PluginStatistics.h>
 #include <tencentcloud/adp/v20260520/model/PluginUserState.h>
 #include <tencentcloud/adp/v20260520/model/PluginConfig.h>
+#include <tencentcloud/adp/v20260520/model/ToolSummary.h>
 
 
 namespace TencentCloud
@@ -198,6 +199,27 @@ namespace TencentCloud
                      */
                     bool ConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>工具信息</p>
+                     * @return ToolList <p>工具信息</p>
+                     * 
+                     */
+                    std::vector<ToolSummary> GetToolList() const;
+
+                    /**
+                     * 设置<p>工具信息</p>
+                     * @param _toolList <p>工具信息</p>
+                     * 
+                     */
+                    void SetToolList(const std::vector<ToolSummary>& _toolList);
+
+                    /**
+                     * 判断参数 ToolList 是否已赋值
+                     * @return ToolList 是否已赋值
+                     * 
+                     */
+                    bool ToolListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -241,6 +263,12 @@ namespace TencentCloud
                      */
                     PluginConfig m_config;
                     bool m_configHasBeenSet;
+
+                    /**
+                     * <p>工具信息</p>
+                     */
+                    std::vector<ToolSummary> m_toolList;
+                    bool m_toolListHasBeenSet;
 
                 };
             }

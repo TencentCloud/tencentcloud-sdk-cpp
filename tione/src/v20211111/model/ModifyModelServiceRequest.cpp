@@ -24,6 +24,7 @@ using namespace std;
 
 ModifyModelServiceRequest::ModifyModelServiceRequest() :
     m_serviceIdHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false),
     m_modelInfoHasBeenSet(false),
     m_imageInfoHasBeenSet(false),
     m_envHasBeenSet(false),
@@ -75,6 +76,14 @@ string ModifyModelServiceRequest::ToJsonString() const
         string key = "ServiceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serviceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_modelInfoHasBeenSet)
@@ -417,6 +426,22 @@ void ModifyModelServiceRequest::SetServiceId(const string& _serviceId)
 bool ModifyModelServiceRequest::ServiceIdHasBeenSet() const
 {
     return m_serviceIdHasBeenSet;
+}
+
+string ModifyModelServiceRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void ModifyModelServiceRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool ModifyModelServiceRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 ModelInfo ModifyModelServiceRequest::GetModelInfo() const

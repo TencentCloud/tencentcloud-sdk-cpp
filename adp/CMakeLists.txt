@@ -32,6 +32,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/SkillClassification.h
   include/tencentcloud/adp/v20260520/model/ModifySpaceRequest.h
   include/tencentcloud/adp/v20260520/model/DeleteSkillShareRequest.h
+  include/tencentcloud/adp/v20260520/model/ToolSummary.h
   include/tencentcloud/adp/v20260520/model/GenerateModel.h
   include/tencentcloud/adp/v20260520/model/DescribeSkillDetailResponse.h
   include/tencentcloud/adp/v20260520/model/AgentAdvancedConfig.h
@@ -121,7 +122,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/ConversationWorkspace.h
   include/tencentcloud/adp/v20260520/model/BillingAttribute.h
   include/tencentcloud/adp/v20260520/model/SkillReferenceGroup.h
-  include/tencentcloud/adp/v20260520/model/AppWebSearchConfig.h
+  include/tencentcloud/adp/v20260520/model/ConversationResetInfo.h
   include/tencentcloud/adp/v20260520/model/AgentSpec.h
   include/tencentcloud/adp/v20260520/model/ModifyConversationResponse.h
   include/tencentcloud/adp/v20260520/model/ClawAgentConfig.h
@@ -171,6 +172,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/CreatePluginRequest.h
   include/tencentcloud/adp/v20260520/model/AgentProfile.h
   include/tencentcloud/adp/v20260520/model/OAuthConfig.h
+  include/tencentcloud/adp/v20260520/model/AppWebSearchConfig.h
   include/tencentcloud/adp/v20260520/model/CopyAgentFromAppResponse.h
   include/tencentcloud/adp/v20260520/model/CreateWorkspaceCredentialResponse.h
   include/tencentcloud/adp/v20260520/model/ModelParams.h
@@ -297,6 +299,7 @@ set(adp_src
   src/v20260520/model/SkillClassification.cpp
   src/v20260520/model/ModifySpaceRequest.cpp
   src/v20260520/model/DeleteSkillShareRequest.cpp
+  src/v20260520/model/ToolSummary.cpp
   src/v20260520/model/GenerateModel.cpp
   src/v20260520/model/DescribeSkillDetailResponse.cpp
   src/v20260520/model/AgentAdvancedConfig.cpp
@@ -386,7 +389,7 @@ set(adp_src
   src/v20260520/model/ConversationWorkspace.cpp
   src/v20260520/model/BillingAttribute.cpp
   src/v20260520/model/SkillReferenceGroup.cpp
-  src/v20260520/model/AppWebSearchConfig.cpp
+  src/v20260520/model/ConversationResetInfo.cpp
   src/v20260520/model/AgentSpec.cpp
   src/v20260520/model/ModifyConversationResponse.cpp
   src/v20260520/model/ClawAgentConfig.cpp
@@ -436,6 +439,7 @@ set(adp_src
   src/v20260520/model/CreatePluginRequest.cpp
   src/v20260520/model/AgentProfile.cpp
   src/v20260520/model/OAuthConfig.cpp
+  src/v20260520/model/AppWebSearchConfig.cpp
   src/v20260520/model/CopyAgentFromAppResponse.cpp
   src/v20260520/model/CreateWorkspaceCredentialResponse.cpp
   src/v20260520/model/ModelParams.cpp

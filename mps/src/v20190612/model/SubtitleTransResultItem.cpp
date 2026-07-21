@@ -25,7 +25,8 @@ SubtitleTransResultItem::SubtitleTransResultItem() :
     m_transSrcHasBeenSet(false),
     m_transDstHasBeenSet(false),
     m_pathHasBeenSet(false),
-    m_subtitleEmbedPathHasBeenSet(false)
+    m_subtitleEmbedPathHasBeenSet(false),
+    m_subtitleFileIdHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome SubtitleTransResultItem::Deserialize(const rapidjson::Value 
         m_subtitleEmbedPathHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitleFileId") && !value["SubtitleFileId"].IsNull())
+    {
+        if (!value["SubtitleFileId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubtitleTransResultItem.SubtitleFileId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subtitleFileId = string(value["SubtitleFileId"].GetString());
+        m_subtitleFileIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void SubtitleTransResultItem::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "SubtitleEmbedPath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subtitleEmbedPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subtitleFileIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleFileId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subtitleFileId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void SubtitleTransResultItem::SetSubtitleEmbedPath(const string& _subtitleEmbedP
 bool SubtitleTransResultItem::SubtitleEmbedPathHasBeenSet() const
 {
     return m_subtitleEmbedPathHasBeenSet;
+}
+
+string SubtitleTransResultItem::GetSubtitleFileId() const
+{
+    return m_subtitleFileId;
+}
+
+void SubtitleTransResultItem::SetSubtitleFileId(const string& _subtitleFileId)
+{
+    m_subtitleFileId = _subtitleFileId;
+    m_subtitleFileIdHasBeenSet = true;
+}
+
+bool SubtitleTransResultItem::SubtitleFileIdHasBeenSet() const
+{
+    return m_subtitleFileIdHasBeenSet;
 }
 

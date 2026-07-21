@@ -23,6 +23,10 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/rce/v20260130/model/AssessDeviceRiskPremiumProRequest.h>
+#include <tencentcloud/rce/v20260130/model/AssessDeviceRiskPremiumProResponse.h>
+#include <tencentcloud/rce/v20260130/model/AssessDeviceRiskProRequest.h>
+#include <tencentcloud/rce/v20260130/model/AssessDeviceRiskProResponse.h>
 #include <tencentcloud/rce/v20260130/model/AssessEnvironmentRiskRequest.h>
 #include <tencentcloud/rce/v20260130/model/AssessEnvironmentRiskResponse.h>
 
@@ -39,11 +43,35 @@ namespace TencentCloud
                 RceClient(const Credential &credential, const std::string &region);
                 RceClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AssessDeviceRiskPremiumProResponse> AssessDeviceRiskPremiumProOutcome;
+                typedef std::future<AssessDeviceRiskPremiumProOutcome> AssessDeviceRiskPremiumProOutcomeCallable;
+                typedef std::function<void(const RceClient*, const Model::AssessDeviceRiskPremiumProRequest&, AssessDeviceRiskPremiumProOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssessDeviceRiskPremiumProAsyncHandler;
+                typedef Outcome<Core::Error, Model::AssessDeviceRiskProResponse> AssessDeviceRiskProOutcome;
+                typedef std::future<AssessDeviceRiskProOutcome> AssessDeviceRiskProOutcomeCallable;
+                typedef std::function<void(const RceClient*, const Model::AssessDeviceRiskProRequest&, AssessDeviceRiskProOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssessDeviceRiskProAsyncHandler;
                 typedef Outcome<Core::Error, Model::AssessEnvironmentRiskResponse> AssessEnvironmentRiskOutcome;
                 typedef std::future<AssessEnvironmentRiskOutcome> AssessEnvironmentRiskOutcomeCallable;
                 typedef std::function<void(const RceClient*, const Model::AssessEnvironmentRiskRequest&, AssessEnvironmentRiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssessEnvironmentRiskAsyncHandler;
 
 
+
+                /**
+                 *设备风险评估-高级版
+                 * @param req AssessDeviceRiskPremiumProRequest
+                 * @return AssessDeviceRiskPremiumProOutcome
+                 */
+                AssessDeviceRiskPremiumProOutcome AssessDeviceRiskPremiumPro(const Model::AssessDeviceRiskPremiumProRequest &request);
+                void AssessDeviceRiskPremiumProAsync(const Model::AssessDeviceRiskPremiumProRequest& request, const AssessDeviceRiskPremiumProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssessDeviceRiskPremiumProOutcomeCallable AssessDeviceRiskPremiumProCallable(const Model::AssessDeviceRiskPremiumProRequest& request);
+
+                /**
+                 *设备风险评估-基础版
+                 * @param req AssessDeviceRiskProRequest
+                 * @return AssessDeviceRiskProOutcome
+                 */
+                AssessDeviceRiskProOutcome AssessDeviceRiskPro(const Model::AssessDeviceRiskProRequest &request);
+                void AssessDeviceRiskProAsync(const Model::AssessDeviceRiskProRequest& request, const AssessDeviceRiskProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssessDeviceRiskProOutcomeCallable AssessDeviceRiskProCallable(const Model::AssessDeviceRiskProRequest& request);
 
                 /**
                  *环境风险评估

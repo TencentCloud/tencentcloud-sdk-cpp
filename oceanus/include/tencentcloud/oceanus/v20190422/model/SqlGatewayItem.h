@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/oceanus/v20190422/model/GatewayRefItem.h>
 #include <tencentcloud/oceanus/v20190422/model/Property.h>
+#include <tencentcloud/oceanus/v20190422/model/SqlGatewayEndpoint.h>
 
 
 namespace TencentCloud
@@ -49,18 +50,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取唯一标识
+                     * 获取<p>唯一标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SerialId 唯一标识
+                     * @return SerialId <p>唯一标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSerialId() const;
 
                     /**
-                     * 设置唯一标识
+                     * 设置<p>唯一标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _serialId 唯一标识
+                     * @param _serialId <p>唯一标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,18 +75,18 @@ namespace TencentCloud
                     bool SerialIdHasBeenSet() const;
 
                     /**
-                     * 获取Flink内核版本
+                     * 获取<p>Flink内核版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FlinkVersion Flink内核版本
+                     * @return FlinkVersion <p>Flink内核版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlinkVersion() const;
 
                     /**
-                     * 设置Flink内核版本
+                     * 设置<p>Flink内核版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _flinkVersion Flink内核版本
+                     * @param _flinkVersion <p>Flink内核版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,18 +100,18 @@ namespace TencentCloud
                     bool FlinkVersionHasBeenSet() const;
 
                     /**
-                     * 获取状态，1.停止 2. 开启中 3. 开启 4. 开启失败 5. 停止中
+                     * 获取<p>状态，1.停止 2. 开启中 3. 开启 4. 开启失败 5. 停止中</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 状态，1.停止 2. 开启中 3. 开启 4. 开启失败 5. 停止中
+                     * @return Status <p>状态，1.停止 2. 开启中 3. 开启 4. 开启失败 5. 停止中</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态，1.停止 2. 开启中 3. 开启 4. 开启失败 5. 停止中
+                     * 设置<p>状态，1.停止 2. 开启中 3. 开启 4. 开启失败 5. 停止中</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 状态，1.停止 2. 开启中 3. 开启 4. 开启失败 5. 停止中
+                     * @param _status <p>状态，1.停止 2. 开启中 3. 开启 4. 开启失败 5. 停止中</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,18 +125,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取创建人
+                     * 获取<p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreatorUin 创建人
+                     * @return CreatorUin <p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatorUin() const;
 
                     /**
-                     * 设置创建人
+                     * 设置<p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _creatorUin 创建人
+                     * @param _creatorUin <p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -149,18 +150,18 @@ namespace TencentCloud
                     bool CreatorUinHasBeenSet() const;
 
                     /**
-                     * 获取引用资源
+                     * 获取<p>引用资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceRefs 引用资源
+                     * @return ResourceRefs <p>引用资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<GatewayRefItem> GetResourceRefs() const;
 
                     /**
-                     * 设置引用资源
+                     * 设置<p>引用资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resourceRefs 引用资源
+                     * @param _resourceRefs <p>引用资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -174,18 +175,18 @@ namespace TencentCloud
                     bool ResourceRefsHasBeenSet() const;
 
                     /**
-                     * 获取Cu规格
+                     * 获取<p>Cu规格</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CuSpec Cu规格
+                     * @return CuSpec <p>Cu规格</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetCuSpec() const;
 
                     /**
-                     * 设置Cu规格
+                     * 设置<p>Cu规格</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cuSpec Cu规格
+                     * @param _cuSpec <p>Cu规格</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -199,18 +200,18 @@ namespace TencentCloud
                     bool CuSpecHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
+                     * 获取<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 创建时间
+                     * @return CreateTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
+                     * 设置<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 创建时间
+                     * @param _createTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -224,18 +225,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
+                     * 获取<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 更新时间
+                     * @return UpdateTime <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
+                     * 设置<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime 更新时间
+                     * @param _updateTime <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -249,18 +250,18 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取配置参数
+                     * 获取<p>配置参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Properties 配置参数
+                     * @return Properties <p>配置参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Property> GetProperties() const;
 
                     /**
-                     * 设置配置参数
+                     * 设置<p>配置参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _properties 配置参数
+                     * @param _properties <p>配置参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -274,15 +275,15 @@ namespace TencentCloud
                     bool PropertiesHasBeenSet() const;
 
                     /**
-                     * 获取Cpu
-                     * @return Cpu Cpu
+                     * 获取<p>Cpu</p>
+                     * @return Cpu <p>Cpu</p>
                      * 
                      */
                     double GetCpu() const;
 
                     /**
-                     * 设置Cpu
-                     * @param _cpu Cpu
+                     * 设置<p>Cpu</p>
+                     * @param _cpu <p>Cpu</p>
                      * 
                      */
                     void SetCpu(const double& _cpu);
@@ -295,15 +296,15 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取Mem
-                     * @return Mem Mem
+                     * 获取<p>Mem</p>
+                     * @return Mem <p>Mem</p>
                      * 
                      */
                     double GetMem() const;
 
                     /**
-                     * 设置Mem
-                     * @param _mem Mem
+                     * 设置<p>Mem</p>
+                     * @param _mem <p>Mem</p>
                      * 
                      */
                     void SetMem(const double& _mem);
@@ -316,15 +317,15 @@ namespace TencentCloud
                     bool MemHasBeenSet() const;
 
                     /**
-                     * 获取jdk版本
-                     * @return JdkVersion jdk版本
+                     * 获取<p>jdk版本</p>
+                     * @return JdkVersion <p>jdk版本</p>
                      * 
                      */
                     std::string GetJdkVersion() const;
 
                     /**
-                     * 设置jdk版本
-                     * @param _jdkVersion jdk版本
+                     * 设置<p>jdk版本</p>
+                     * @param _jdkVersion <p>jdk版本</p>
                      * 
                      */
                     void SetJdkVersion(const std::string& _jdkVersion);
@@ -336,88 +337,184 @@ namespace TencentCloud
                      */
                     bool JdkVersionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>session id</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessionClusterId <p>session id</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSessionClusterId() const;
+
+                    /**
+                     * 设置<p>session id</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sessionClusterId <p>session id</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSessionClusterId(const std::string& _sessionClusterId);
+
+                    /**
+                     * 判断参数 SessionClusterId 是否已赋值
+                     * @return SessionClusterId 是否已赋值
+                     * 
+                     */
+                    bool SessionClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>pg用户名</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PgUser <p>pg用户名</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPgUser() const;
+
+                    /**
+                     * 设置<p>pg用户名</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _pgUser <p>pg用户名</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPgUser(const std::string& _pgUser);
+
+                    /**
+                     * 判断参数 PgUser 是否已赋值
+                     * @return PgUser 是否已赋值
+                     * 
+                     */
+                    bool PgUserHasBeenSet() const;
+
+                    /**
+                     * 获取<p>协议</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Endpoints <p>协议</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<SqlGatewayEndpoint> GetEndpoints() const;
+
+                    /**
+                     * 设置<p>协议</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _endpoints <p>协议</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEndpoints(const std::vector<SqlGatewayEndpoint>& _endpoints);
+
+                    /**
+                     * 判断参数 Endpoints 是否已赋值
+                     * @return Endpoints 是否已赋值
+                     * 
+                     */
+                    bool EndpointsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 唯一标识
+                     * <p>唯一标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serialId;
                     bool m_serialIdHasBeenSet;
 
                     /**
-                     * Flink内核版本
+                     * <p>Flink内核版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flinkVersion;
                     bool m_flinkVersionHasBeenSet;
 
                     /**
-                     * 状态，1.停止 2. 开启中 3. 开启 4. 开启失败 5. 停止中
+                     * <p>状态，1.停止 2. 开启中 3. 开启 4. 开启失败 5. 停止中</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 创建人
+                     * <p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creatorUin;
                     bool m_creatorUinHasBeenSet;
 
                     /**
-                     * 引用资源
+                     * <p>引用资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<GatewayRefItem> m_resourceRefs;
                     bool m_resourceRefsHasBeenSet;
 
                     /**
-                     * Cu规格
+                     * <p>Cu规格</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_cuSpec;
                     bool m_cuSpecHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 配置参数
+                     * <p>配置参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Property> m_properties;
                     bool m_propertiesHasBeenSet;
 
                     /**
-                     * Cpu
+                     * <p>Cpu</p>
                      */
                     double m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * Mem
+                     * <p>Mem</p>
                      */
                     double m_mem;
                     bool m_memHasBeenSet;
 
                     /**
-                     * jdk版本
+                     * <p>jdk版本</p>
                      */
                     std::string m_jdkVersion;
                     bool m_jdkVersionHasBeenSet;
+
+                    /**
+                     * <p>session id</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sessionClusterId;
+                    bool m_sessionClusterIdHasBeenSet;
+
+                    /**
+                     * <p>pg用户名</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pgUser;
+                    bool m_pgUserHasBeenSet;
+
+                    /**
+                     * <p>协议</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SqlGatewayEndpoint> m_endpoints;
+                    bool m_endpointsHasBeenSet;
 
                 };
             }

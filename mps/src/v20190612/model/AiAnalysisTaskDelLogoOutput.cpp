@@ -27,7 +27,10 @@ AiAnalysisTaskDelLogoOutput::AiAnalysisTaskDelLogoOutput() :
     m_translateSubtitlePathHasBeenSet(false),
     m_subtitlePosHasBeenSet(false),
     m_voiceClonedVideoHasBeenSet(false),
-    m_voiceClonedMarkFileHasBeenSet(false)
+    m_voiceClonedMarkFileHasBeenSet(false),
+    m_fileIdHasBeenSet(false),
+    m_originSubtitleFileIdHasBeenSet(false),
+    m_translateSubtitleFileIdHasBeenSet(false)
 {
 }
 
@@ -120,6 +123,36 @@ CoreInternalOutcome AiAnalysisTaskDelLogoOutput::Deserialize(const rapidjson::Va
         m_voiceClonedMarkFileHasBeenSet = true;
     }
 
+    if (value.HasMember("FileId") && !value["FileId"].IsNull())
+    {
+        if (!value["FileId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskDelLogoOutput.FileId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileId = string(value["FileId"].GetString());
+        m_fileIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("OriginSubtitleFileId") && !value["OriginSubtitleFileId"].IsNull())
+    {
+        if (!value["OriginSubtitleFileId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskDelLogoOutput.OriginSubtitleFileId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originSubtitleFileId = string(value["OriginSubtitleFileId"].GetString());
+        m_originSubtitleFileIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TranslateSubtitleFileId") && !value["TranslateSubtitleFileId"].IsNull())
+    {
+        if (!value["TranslateSubtitleFileId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskDelLogoOutput.TranslateSubtitleFileId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_translateSubtitleFileId = string(value["TranslateSubtitleFileId"].GetString());
+        m_translateSubtitleFileIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +216,30 @@ void AiAnalysisTaskDelLogoOutput::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "VoiceClonedMarkFile";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_voiceClonedMarkFile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originSubtitleFileIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginSubtitleFileId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originSubtitleFileId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_translateSubtitleFileIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TranslateSubtitleFileId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_translateSubtitleFileId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -298,5 +355,53 @@ void AiAnalysisTaskDelLogoOutput::SetVoiceClonedMarkFile(const string& _voiceClo
 bool AiAnalysisTaskDelLogoOutput::VoiceClonedMarkFileHasBeenSet() const
 {
     return m_voiceClonedMarkFileHasBeenSet;
+}
+
+string AiAnalysisTaskDelLogoOutput::GetFileId() const
+{
+    return m_fileId;
+}
+
+void AiAnalysisTaskDelLogoOutput::SetFileId(const string& _fileId)
+{
+    m_fileId = _fileId;
+    m_fileIdHasBeenSet = true;
+}
+
+bool AiAnalysisTaskDelLogoOutput::FileIdHasBeenSet() const
+{
+    return m_fileIdHasBeenSet;
+}
+
+string AiAnalysisTaskDelLogoOutput::GetOriginSubtitleFileId() const
+{
+    return m_originSubtitleFileId;
+}
+
+void AiAnalysisTaskDelLogoOutput::SetOriginSubtitleFileId(const string& _originSubtitleFileId)
+{
+    m_originSubtitleFileId = _originSubtitleFileId;
+    m_originSubtitleFileIdHasBeenSet = true;
+}
+
+bool AiAnalysisTaskDelLogoOutput::OriginSubtitleFileIdHasBeenSet() const
+{
+    return m_originSubtitleFileIdHasBeenSet;
+}
+
+string AiAnalysisTaskDelLogoOutput::GetTranslateSubtitleFileId() const
+{
+    return m_translateSubtitleFileId;
+}
+
+void AiAnalysisTaskDelLogoOutput::SetTranslateSubtitleFileId(const string& _translateSubtitleFileId)
+{
+    m_translateSubtitleFileId = _translateSubtitleFileId;
+    m_translateSubtitleFileIdHasBeenSet = true;
+}
+
+bool AiAnalysisTaskDelLogoOutput::TranslateSubtitleFileIdHasBeenSet() const
+{
+    return m_translateSubtitleFileIdHasBeenSet;
 }
 

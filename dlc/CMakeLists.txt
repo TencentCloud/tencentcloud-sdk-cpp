@@ -85,6 +85,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeUserRolesResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateExportTaskRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateDMSTableRequest.h
+  include/tencentcloud/dlc/v20210125/model/ModifySparkAppResponse.h
   include/tencentcloud/dlc/v20210125/model/DMSTable.h
   include/tencentcloud/dlc/v20210125/model/CreateSparkSubmitTaskResponse.h
   include/tencentcloud/dlc/v20210125/model/UpdateEngineResourceGroupNetworkConfigInfoResponse.h
@@ -391,6 +392,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CreateTcIcebergTableResponse.h
   include/tencentcloud/dlc/v20210125/model/DeleteSparkAppResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeUserDataEngineConfigRequest.h
+  include/tencentcloud/dlc/v20210125/model/MCPTaskInfo.h
   include/tencentcloud/dlc/v20210125/model/CreateTasksResponse.h
   include/tencentcloud/dlc/v20210125/model/TccHive.h
   include/tencentcloud/dlc/v20210125/model/GrantDLCCatalogAccessResponse.h
@@ -475,7 +477,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/Partition.h
   include/tencentcloud/dlc/v20210125/model/ModifySparkAppBatchRequest.h
   include/tencentcloud/dlc/v20210125/model/RegisterThirdPartyAccessUserResponse.h
-  include/tencentcloud/dlc/v20210125/model/ModifySparkAppResponse.h
+  include/tencentcloud/dlc/v20210125/model/MCPTaskResultInfo.h
   include/tencentcloud/dlc/v20210125/model/LaunchStandardEngineResourceGroupsRequest.h
   include/tencentcloud/dlc/v20210125/model/Property.h
   include/tencentcloud/dlc/v20210125/model/UserVpcConnectionInfo.h
@@ -622,6 +624,7 @@ set(dlc_src
   src/v20210125/model/DescribeUserRolesResponse.cpp
   src/v20210125/model/CreateExportTaskRequest.cpp
   src/v20210125/model/CreateDMSTableRequest.cpp
+  src/v20210125/model/ModifySparkAppResponse.cpp
   src/v20210125/model/DMSTable.cpp
   src/v20210125/model/CreateSparkSubmitTaskResponse.cpp
   src/v20210125/model/UpdateEngineResourceGroupNetworkConfigInfoResponse.cpp
@@ -928,6 +931,7 @@ set(dlc_src
   src/v20210125/model/CreateTcIcebergTableResponse.cpp
   src/v20210125/model/DeleteSparkAppResponse.cpp
   src/v20210125/model/DescribeUserDataEngineConfigRequest.cpp
+  src/v20210125/model/MCPTaskInfo.cpp
   src/v20210125/model/CreateTasksResponse.cpp
   src/v20210125/model/TccHive.cpp
   src/v20210125/model/GrantDLCCatalogAccessResponse.cpp
@@ -1012,7 +1016,7 @@ set(dlc_src
   src/v20210125/model/Partition.cpp
   src/v20210125/model/ModifySparkAppBatchRequest.cpp
   src/v20210125/model/RegisterThirdPartyAccessUserResponse.cpp
-  src/v20210125/model/ModifySparkAppResponse.cpp
+  src/v20210125/model/MCPTaskResultInfo.cpp
   src/v20210125/model/LaunchStandardEngineResourceGroupsRequest.cpp
   src/v20210125/model/Property.cpp
   src/v20210125/model/UserVpcConnectionInfo.cpp

@@ -57,10 +57,10 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/SegmentSpecificInfo.h
   include/tencentcloud/mps/v20190612/model/DeleteAnimatedGraphicsTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/AiReviewTaskProhibitedOcrResult.h
-  include/tencentcloud/mps/v20190612/model/DescribeSubtitleEmbedTemplatesRequest.h
+  include/tencentcloud/mps/v20190612/model/DescribeSmartSubtitleTemplatesRequest.h
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskAsrFullTextResultOutput.h
   include/tencentcloud/mps/v20190612/model/AsrHotwordsSetItem.h
-  include/tencentcloud/mps/v20190612/model/AiReviewProhibitedOcrTaskOutput.h
+  include/tencentcloud/mps/v20190612/model/AiRestorationConfig.h
   include/tencentcloud/mps/v20190612/model/DeleteScheduleResponse.h
   include/tencentcloud/mps/v20190612/model/DisableScheduleResponse.h
   include/tencentcloud/mps/v20190612/model/ManageTaskResponse.h
@@ -219,7 +219,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskClassificationOutput.h
   include/tencentcloud/mps/v20190612/model/SRTAddressDestination.h
   include/tencentcloud/mps/v20190612/model/DescribeFlowId.h
-  include/tencentcloud/mps/v20190612/model/DescribeSmartSubtitleTemplatesRequest.h
+  include/tencentcloud/mps/v20190612/model/AiReviewProhibitedOcrTaskOutput.h
   include/tencentcloud/mps/v20190612/model/DescribeMDPMPSUserInfoResponse.h
   include/tencentcloud/mps/v20190612/model/DeleteStreamPackageLinearAssemblyProgramsRequest.h
   include/tencentcloud/mps/v20190612/model/DisassociateSecurityGroupResponse.h
@@ -531,6 +531,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/DetectVideoSubtitleAreaRequest.h
   include/tencentcloud/mps/v20190612/model/DescribePersonSamplesRequest.h
   include/tencentcloud/mps/v20190612/model/EnableScheduleResponse.h
+  include/tencentcloud/mps/v20190612/model/DescribeSubtitleEmbedTemplatesRequest.h
   include/tencentcloud/mps/v20190612/model/Project.h
   include/tencentcloud/mps/v20190612/model/OutputSRTSourceAddressResp.h
   include/tencentcloud/mps/v20190612/model/ClassificationConfigureInfoForUpdate.h
@@ -1118,10 +1119,10 @@ set(mps_src
   src/v20190612/model/SegmentSpecificInfo.cpp
   src/v20190612/model/DeleteAnimatedGraphicsTemplateResponse.cpp
   src/v20190612/model/AiReviewTaskProhibitedOcrResult.cpp
-  src/v20190612/model/DescribeSubtitleEmbedTemplatesRequest.cpp
+  src/v20190612/model/DescribeSmartSubtitleTemplatesRequest.cpp
   src/v20190612/model/AiRecognitionTaskAsrFullTextResultOutput.cpp
   src/v20190612/model/AsrHotwordsSetItem.cpp
-  src/v20190612/model/AiReviewProhibitedOcrTaskOutput.cpp
+  src/v20190612/model/AiRestorationConfig.cpp
   src/v20190612/model/DeleteScheduleResponse.cpp
   src/v20190612/model/DisableScheduleResponse.cpp
   src/v20190612/model/ManageTaskResponse.cpp
@@ -1280,7 +1281,7 @@ set(mps_src
   src/v20190612/model/AiAnalysisTaskClassificationOutput.cpp
   src/v20190612/model/SRTAddressDestination.cpp
   src/v20190612/model/DescribeFlowId.cpp
-  src/v20190612/model/DescribeSmartSubtitleTemplatesRequest.cpp
+  src/v20190612/model/AiReviewProhibitedOcrTaskOutput.cpp
   src/v20190612/model/DescribeMDPMPSUserInfoResponse.cpp
   src/v20190612/model/DeleteStreamPackageLinearAssemblyProgramsRequest.cpp
   src/v20190612/model/DisassociateSecurityGroupResponse.cpp
@@ -1592,6 +1593,7 @@ set(mps_src
   src/v20190612/model/DetectVideoSubtitleAreaRequest.cpp
   src/v20190612/model/DescribePersonSamplesRequest.cpp
   src/v20190612/model/EnableScheduleResponse.cpp
+  src/v20190612/model/DescribeSubtitleEmbedTemplatesRequest.cpp
   src/v20190612/model/Project.cpp
   src/v20190612/model/OutputSRTSourceAddressResp.cpp
   src/v20190612/model/ClassificationConfigureInfoForUpdate.cpp

@@ -106,6 +106,27 @@ namespace TencentCloud
                      */
                     bool FieldMaskHasBeenSet() const;
 
+                    /**
+                     * 获取<p>插件展示场景。不传或取 0 时不限定场景。</p><p>枚举值：</p><ul><li>0：不限定场景</li><li>1：Agent 模式</li><li>2：工作流</li><li>3：智能工作台</li></ul>
+                     * @return Module <p>插件展示场景。不传或取 0 时不限定场景。</p><p>枚举值：</p><ul><li>0：不限定场景</li><li>1：Agent 模式</li><li>2：工作流</li><li>3：智能工作台</li></ul>
+                     * 
+                     */
+                    int64_t GetModule() const;
+
+                    /**
+                     * 设置<p>插件展示场景。不传或取 0 时不限定场景。</p><p>枚举值：</p><ul><li>0：不限定场景</li><li>1：Agent 模式</li><li>2：工作流</li><li>3：智能工作台</li></ul>
+                     * @param _module <p>插件展示场景。不传或取 0 时不限定场景。</p><p>枚举值：</p><ul><li>0：不限定场景</li><li>1：Agent 模式</li><li>2：工作流</li><li>3：智能工作台</li></ul>
+                     * 
+                     */
+                    void SetModule(const int64_t& _module);
+
+                    /**
+                     * 判断参数 Module 是否已赋值
+                     * @return Module 是否已赋值
+                     * 
+                     */
+                    bool ModuleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +146,12 @@ namespace TencentCloud
                      */
                     FieldMask m_fieldMask;
                     bool m_fieldMaskHasBeenSet;
+
+                    /**
+                     * <p>插件展示场景。不传或取 0 时不限定场景。</p><p>枚举值：</p><ul><li>0：不限定场景</li><li>1：Agent 模式</li><li>2：工作流</li><li>3：智能工作台</li></ul>
+                     */
+                    int64_t m_module;
+                    bool m_moduleHasBeenSet;
 
                 };
             }

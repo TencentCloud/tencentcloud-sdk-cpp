@@ -24,7 +24,9 @@ VODInputInfo::VODInputInfo() :
     m_bucketHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_objectHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_subAppIdHasBeenSet(false),
+    m_vodBasicHasBeenSet(false),
+    m_fileIdHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome VODInputInfo::Deserialize(const rapidjson::Value &value)
         m_subAppIdHasBeenSet = true;
     }
 
+    if (value.HasMember("VodBasic") && !value["VodBasic"].IsNull())
+    {
+        if (!value["VodBasic"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VODInputInfo.VodBasic` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vodBasic = value["VodBasic"].GetInt64();
+        m_vodBasicHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileId") && !value["FileId"].IsNull())
+    {
+        if (!value["FileId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VODInputInfo.FileId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileId = string(value["FileId"].GetString());
+        m_fileIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void VODInputInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "SubAppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_subAppId, allocator);
+    }
+
+    if (m_vodBasicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VodBasic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vodBasic, allocator);
+    }
+
+    if (m_fileIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void VODInputInfo::SetSubAppId(const uint64_t& _subAppId)
 bool VODInputInfo::SubAppIdHasBeenSet() const
 {
     return m_subAppIdHasBeenSet;
+}
+
+int64_t VODInputInfo::GetVodBasic() const
+{
+    return m_vodBasic;
+}
+
+void VODInputInfo::SetVodBasic(const int64_t& _vodBasic)
+{
+    m_vodBasic = _vodBasic;
+    m_vodBasicHasBeenSet = true;
+}
+
+bool VODInputInfo::VodBasicHasBeenSet() const
+{
+    return m_vodBasicHasBeenSet;
+}
+
+string VODInputInfo::GetFileId() const
+{
+    return m_fileId;
+}
+
+void VODInputInfo::SetFileId(const string& _fileId)
+{
+    m_fileId = _fileId;
+    m_fileIdHasBeenSet = true;
+}
+
+bool VODInputInfo::FileIdHasBeenSet() const
+{
+    return m_fileIdHasBeenSet;
 }
 

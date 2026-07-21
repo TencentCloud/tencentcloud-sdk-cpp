@@ -29,7 +29,8 @@ AvatarScriptInfo::AvatarScriptInfo() :
     m_durationHasBeenSet(false),
     m_positionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_mediaUrlHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome AvatarScriptInfo::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("MediaUrl") && !value["MediaUrl"].IsNull())
+    {
+        if (!value["MediaUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AvatarScriptInfo.MediaUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mediaUrl = string(value["MediaUrl"].GetString());
+        m_mediaUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void AvatarScriptInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mediaUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MediaUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mediaUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void AvatarScriptInfo::SetUpdateTime(const string& _updateTime)
 bool AvatarScriptInfo::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string AvatarScriptInfo::GetMediaUrl() const
+{
+    return m_mediaUrl;
+}
+
+void AvatarScriptInfo::SetMediaUrl(const string& _mediaUrl)
+{
+    m_mediaUrl = _mediaUrl;
+    m_mediaUrlHasBeenSet = true;
+}
+
+bool AvatarScriptInfo::MediaUrlHasBeenSet() const
+{
+    return m_mediaUrlHasBeenSet;
 }
 

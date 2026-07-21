@@ -152,6 +152,48 @@ namespace TencentCloud
                      */
                     bool ExtraOutputHasBeenSet() const;
 
+                    /**
+                     * 获取<p>译制视频FileId。</p>
+                     * @return VideoFileId <p>译制视频FileId。</p>
+                     * 
+                     */
+                    std::string GetVideoFileId() const;
+
+                    /**
+                     * 设置<p>译制视频FileId。</p>
+                     * @param _videoFileId <p>译制视频FileId。</p>
+                     * 
+                     */
+                    void SetVideoFileId(const std::string& _videoFileId);
+
+                    /**
+                     * 判断参数 VideoFileId 是否已赋值
+                     * @return VideoFileId 是否已赋值
+                     * 
+                     */
+                    bool VideoFileIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>标记文件FileId。</p>
+                     * @return SpeakerFileId <p>标记文件FileId。</p>
+                     * 
+                     */
+                    std::string GetSpeakerFileId() const;
+
+                    /**
+                     * 设置<p>标记文件FileId。</p>
+                     * @param _speakerFileId <p>标记文件FileId。</p>
+                     * 
+                     */
+                    void SetSpeakerFileId(const std::string& _speakerFileId);
+
+                    /**
+                     * 判断参数 SpeakerFileId 是否已赋值
+                     * @return SpeakerFileId 是否已赋值
+                     * 
+                     */
+                    bool SpeakerFileIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -183,6 +225,18 @@ namespace TencentCloud
                      */
                     std::string m_extraOutput;
                     bool m_extraOutputHasBeenSet;
+
+                    /**
+                     * <p>译制视频FileId。</p>
+                     */
+                    std::string m_videoFileId;
+                    bool m_videoFileIdHasBeenSet;
+
+                    /**
+                     * <p>标记文件FileId。</p>
+                     */
+                    std::string m_speakerFileId;
+                    bool m_speakerFileIdHasBeenSet;
 
                 };
             }

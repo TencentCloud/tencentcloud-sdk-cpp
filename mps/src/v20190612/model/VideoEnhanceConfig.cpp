@@ -32,7 +32,8 @@ VideoEnhanceConfig::VideoEnhanceConfig() :
     m_artifactRepairHasBeenSet(false),
     m_enhanceSceneTypeHasBeenSet(false),
     m_diffusionEnhanceHasBeenSet(false),
-    m_frameRateWithDenHasBeenSet(false)
+    m_frameRateWithDenHasBeenSet(false),
+    m_aiRestorationHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,23 @@ CoreInternalOutcome VideoEnhanceConfig::Deserialize(const rapidjson::Value &valu
         m_frameRateWithDenHasBeenSet = true;
     }
 
+    if (value.HasMember("AiRestoration") && !value["AiRestoration"].IsNull())
+    {
+        if (!value["AiRestoration"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoEnhanceConfig.AiRestoration` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aiRestoration.Deserialize(value["AiRestoration"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aiRestorationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -350,6 +368,15 @@ void VideoEnhanceConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_frameRateWithDen.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aiRestorationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AiRestoration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aiRestoration.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -545,5 +572,21 @@ void VideoEnhanceConfig::SetFrameRateWithDen(const FrameRateWithDenConfig& _fram
 bool VideoEnhanceConfig::FrameRateWithDenHasBeenSet() const
 {
     return m_frameRateWithDenHasBeenSet;
+}
+
+AiRestorationConfig VideoEnhanceConfig::GetAiRestoration() const
+{
+    return m_aiRestoration;
+}
+
+void VideoEnhanceConfig::SetAiRestoration(const AiRestorationConfig& _aiRestoration)
+{
+    m_aiRestoration = _aiRestoration;
+    m_aiRestorationHasBeenSet = true;
+}
+
+bool VideoEnhanceConfig::AiRestorationHasBeenSet() const
+{
+    return m_aiRestorationHasBeenSet;
 }
 

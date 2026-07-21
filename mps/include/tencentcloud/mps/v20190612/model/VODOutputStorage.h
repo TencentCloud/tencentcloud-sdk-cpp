@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 媒体处理 VOD（点播专业版） 输出对象信息。
+                * 媒体处理 VOD输出对象信息。
                 */
                 class VODOutputStorage : public AbstractModel
                 {
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取<p>点播专业版应用Id</p>
-                     * @return SubAppId <p>点播专业版应用Id</p>
+                     * 获取<p>点播应用Id</p>
+                     * @return SubAppId <p>点播应用Id</p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<p>点播专业版应用Id</p>
-                     * @param _subAppId <p>点播专业版应用Id</p>
+                     * 设置<p>点播应用Id</p>
+                     * @param _subAppId <p>点播应用Id</p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -108,6 +108,27 @@ namespace TencentCloud
                      * 
                      */
                     bool SubAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>任务输出是否使用VOD标准版。<br>注意：不填表示使用VOD专业版。</p><p>枚举值：</p><ul><li>0： 不使用VOD标准版</li><li>1： 使用VOD标准版</li></ul>
+                     * @return VodBasic <p>任务输出是否使用VOD标准版。<br>注意：不填表示使用VOD专业版。</p><p>枚举值：</p><ul><li>0： 不使用VOD标准版</li><li>1： 使用VOD标准版</li></ul>
+                     * 
+                     */
+                    int64_t GetVodBasic() const;
+
+                    /**
+                     * 设置<p>任务输出是否使用VOD标准版。<br>注意：不填表示使用VOD专业版。</p><p>枚举值：</p><ul><li>0： 不使用VOD标准版</li><li>1： 使用VOD标准版</li></ul>
+                     * @param _vodBasic <p>任务输出是否使用VOD标准版。<br>注意：不填表示使用VOD专业版。</p><p>枚举值：</p><ul><li>0： 不使用VOD标准版</li><li>1： 使用VOD标准版</li></ul>
+                     * 
+                     */
+                    void SetVodBasic(const int64_t& _vodBasic);
+
+                    /**
+                     * 判断参数 VodBasic 是否已赋值
+                     * @return VodBasic 是否已赋值
+                     * 
+                     */
+                    bool VodBasicHasBeenSet() const;
 
                 private:
 
@@ -124,10 +145,16 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * <p>点播专业版应用Id</p>
+                     * <p>点播应用Id</p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
+
+                    /**
+                     * <p>任务输出是否使用VOD标准版。<br>注意：不填表示使用VOD专业版。</p><p>枚举值：</p><ul><li>0： 不使用VOD标准版</li><li>1： 使用VOD标准版</li></ul>
+                     */
+                    int64_t m_vodBasic;
+                    bool m_vodBasicHasBeenSet;
 
                 };
             }

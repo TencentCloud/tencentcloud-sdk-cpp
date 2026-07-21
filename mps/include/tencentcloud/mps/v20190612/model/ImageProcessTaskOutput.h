@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取输出文件的路径。
+                     * 获取<p>输出文件的路径。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Path 输出文件的路径。
+                     * @return Path <p>输出文件的路径。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置输出文件的路径。
+                     * 设置<p>输出文件的路径。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _path 输出文件的路径。
+                     * @param _path <p>输出文件的路径。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取输出文件的存储位置。
+                     * 获取<p>输出文件的存储位置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OutputStorage 输出文件的存储位置。
+                     * @return OutputStorage <p>输出文件的存储位置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
-                     * 设置输出文件的存储位置。
+                     * 设置<p>输出文件的存储位置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _outputStorage 输出文件的存储位置。
+                     * @param _outputStorage <p>输出文件的存储位置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,15 +98,15 @@ namespace TencentCloud
                     bool OutputStorageHasBeenSet() const;
 
                     /**
-                     * 获取输出文件的URL。
-                     * @return SignedUrl 输出文件的URL。
+                     * 获取<p>输出文件的URL。</p>
+                     * @return SignedUrl <p>输出文件的URL。</p>
                      * 
                      */
                     std::string GetSignedUrl() const;
 
                     /**
-                     * 设置输出文件的URL。
-                     * @param _signedUrl 输出文件的URL。
+                     * 设置<p>输出文件的URL。</p>
+                     * @param _signedUrl <p>输出文件的URL。</p>
                      * 
                      */
                     void SetSignedUrl(const std::string& _signedUrl);
@@ -119,15 +119,15 @@ namespace TencentCloud
                     bool SignedUrlHasBeenSet() const;
 
                     /**
-                     * 获取图生文任务的处理结果。
-                     * @return Content 图生文任务的处理结果。
+                     * 获取<p>图生文任务的处理结果。</p>
+                     * @return Content <p>图生文任务的处理结果。</p>
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置图生文任务的处理结果。
-                     * @param _content 图生文任务的处理结果。
+                     * 设置<p>图生文任务的处理结果。</p>
+                     * @param _content <p>图生文任务的处理结果。</p>
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -139,33 +139,60 @@ namespace TencentCloud
                      */
                     bool ContentHasBeenSet() const;
 
+                    /**
+                     * 获取<p>VOD标准版FileId</p>
+                     * @return FileId <p>VOD标准版FileId</p>
+                     * 
+                     */
+                    std::string GetFileId() const;
+
+                    /**
+                     * 设置<p>VOD标准版FileId</p>
+                     * @param _fileId <p>VOD标准版FileId</p>
+                     * 
+                     */
+                    void SetFileId(const std::string& _fileId);
+
+                    /**
+                     * 判断参数 FileId 是否已赋值
+                     * @return FileId 是否已赋值
+                     * 
+                     */
+                    bool FileIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 输出文件的路径。
+                     * <p>输出文件的路径。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
-                     * 输出文件的存储位置。
+                     * <p>输出文件的存储位置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TaskOutputStorage m_outputStorage;
                     bool m_outputStorageHasBeenSet;
 
                     /**
-                     * 输出文件的URL。
+                     * <p>输出文件的URL。</p>
                      */
                     std::string m_signedUrl;
                     bool m_signedUrlHasBeenSet;
 
                     /**
-                     * 图生文任务的处理结果。
+                     * <p>图生文任务的处理结果。</p>
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * <p>VOD标准版FileId</p>
+                     */
+                    std::string m_fileId;
+                    bool m_fileIdHasBeenSet;
 
                 };
             }

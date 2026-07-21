@@ -235,6 +235,27 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>已完成状态的视频URL</p>
+                     * @return MediaUrl <p>已完成状态的视频URL</p>
+                     * 
+                     */
+                    std::string GetMediaUrl() const;
+
+                    /**
+                     * 设置<p>已完成状态的视频URL</p>
+                     * @param _mediaUrl <p>已完成状态的视频URL</p>
+                     * 
+                     */
+                    void SetMediaUrl(const std::string& _mediaUrl);
+
+                    /**
+                     * 判断参数 MediaUrl 是否已赋值
+                     * @return MediaUrl 是否已赋值
+                     * 
+                     */
+                    bool MediaUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +311,12 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * <p>已完成状态的视频URL</p>
+                     */
+                    std::string m_mediaUrl;
+                    bool m_mediaUrlHasBeenSet;
 
                 };
             }

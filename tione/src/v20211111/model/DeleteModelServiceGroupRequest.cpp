@@ -23,7 +23,8 @@ using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
 DeleteModelServiceGroupRequest::DeleteModelServiceGroupRequest() :
-    m_serviceGroupIdHasBeenSet(false)
+    m_serviceGroupIdHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DeleteModelServiceGroupRequest::ToJsonString() const
         string key = "ServiceGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serviceGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DeleteModelServiceGroupRequest::SetServiceGroupId(const string& _serviceGro
 bool DeleteModelServiceGroupRequest::ServiceGroupIdHasBeenSet() const
 {
     return m_serviceGroupIdHasBeenSet;
+}
+
+string DeleteModelServiceGroupRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void DeleteModelServiceGroupRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool DeleteModelServiceGroupRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据源id
-                     * @return DatasourceId 数据源id
+                     * 获取<p>数据源id</p>
+                     * @return DatasourceId <p>数据源id</p>
                      * 
                      */
                     std::string GetDatasourceId() const;
 
                     /**
-                     * 设置数据源id
-                     * @param _datasourceId 数据源id
+                     * 设置<p>数据源id</p>
+                     * @param _datasourceId <p>数据源id</p>
                      * 
                      */
                     void SetDatasourceId(const std::string& _datasourceId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool DatasourceIdHasBeenSet() const;
 
                     /**
-                     * 获取库名称
-                     * @return DatabaseName 库名称
+                     * 获取<p>库名称</p>
+                     * @return DatabaseName <p>库名称</p>
                      * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
-                     * 设置库名称
-                     * @param _databaseName 库名称
+                     * 设置<p>库名称</p>
+                     * @param _databaseName <p>库名称</p>
                      * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool DatabaseNameHasBeenSet() const;
 
                     /**
-                     * 获取表名称
-                     * @return TableName 表名称
+                     * 获取<p>表名称</p>
+                     * @return TableName <p>表名称</p>
                      * 
                      */
                     std::string GetTableName() const;
 
                     /**
-                     * 设置表名称
-                     * @param _tableName 表名称
+                     * 设置<p>表名称</p>
+                     * @param _tableName <p>表名称</p>
                      * 
                      */
                     void SetTableName(const std::string& _tableName);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool TableNameHasBeenSet() const;
 
                     /**
-                     * 获取catalog值
-                     * @return CatalogName catalog值
+                     * 获取<p>catalog值,仅使用DLC且开启TcLake的支持,其他类型传空即可</p>
+                     * @return CatalogName <p>catalog值,仅使用DLC且开启TcLake的支持,其他类型传空即可</p>
                      * 
                      */
                     std::string GetCatalogName() const;
 
                     /**
-                     * 设置catalog值
-                     * @param _catalogName catalog值
+                     * 设置<p>catalog值,仅使用DLC且开启TcLake的支持,其他类型传空即可</p>
+                     * @param _catalogName <p>catalog值,仅使用DLC且开启TcLake的支持,其他类型传空即可</p>
                      * 
                      */
                     void SetCatalogName(const std::string& _catalogName);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool CatalogNameHasBeenSet() const;
 
                     /**
-                     * 获取schema名称
-                     * @return SchemaName schema名称
+                     * 获取<p>schema名称</p>
+                     * @return SchemaName <p>schema名称</p>
                      * 
                      */
                     std::string GetSchemaName() const;
 
                     /**
-                     * 设置schema名称
-                     * @param _schemaName schema名称
+                     * 设置<p>schema名称</p>
+                     * @param _schemaName <p>schema名称</p>
                      * 
                      */
                     void SetSchemaName(const std::string& _schemaName);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool SchemaNameHasBeenSet() const;
 
                     /**
-                     * 获取扩展参数
-                     * @return ExtParams 扩展参数
+                     * 获取<p>扩展参数</p>
+                     * @return ExtParams <p>扩展参数</p>
                      * 
                      */
                     std::vector<ExtParam> GetExtParams() const;
 
                     /**
-                     * 设置扩展参数
-                     * @param _extParams 扩展参数
+                     * 设置<p>扩展参数</p>
+                     * @param _extParams <p>扩展参数</p>
                      * 
                      */
                     void SetExtParams(const std::vector<ExtParam>& _extParams);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool ExtParamsHasBeenSet() const;
 
                     /**
-                     * 获取table类型 TABLE｜VIEW
-                     * @return TableType table类型 TABLE｜VIEW
+                     * 获取<p>table类型 TABLE｜VIEW</p>
+                     * @return TableType <p>table类型 TABLE｜VIEW</p>
                      * 
                      */
                     std::string GetTableType() const;
 
                     /**
-                     * 设置table类型 TABLE｜VIEW
-                     * @param _tableType table类型 TABLE｜VIEW
+                     * 设置<p>table类型 TABLE｜VIEW</p>
+                     * @param _tableType <p>table类型 TABLE｜VIEW</p>
                      * 
                      */
                     void SetTableType(const std::string& _tableType);
@@ -197,43 +197,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据源id
+                     * <p>数据源id</p>
                      */
                     std::string m_datasourceId;
                     bool m_datasourceIdHasBeenSet;
 
                     /**
-                     * 库名称
+                     * <p>库名称</p>
                      */
                     std::string m_databaseName;
                     bool m_databaseNameHasBeenSet;
 
                     /**
-                     * 表名称
+                     * <p>表名称</p>
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;
 
                     /**
-                     * catalog值
+                     * <p>catalog值,仅使用DLC且开启TcLake的支持,其他类型传空即可</p>
                      */
                     std::string m_catalogName;
                     bool m_catalogNameHasBeenSet;
 
                     /**
-                     * schema名称
+                     * <p>schema名称</p>
                      */
                     std::string m_schemaName;
                     bool m_schemaNameHasBeenSet;
 
                     /**
-                     * 扩展参数
+                     * <p>扩展参数</p>
                      */
                     std::vector<ExtParam> m_extParams;
                     bool m_extParamsHasBeenSet;
 
                     /**
-                     * table类型 TABLE｜VIEW
+                     * <p>table类型 TABLE｜VIEW</p>
                      */
                     std::string m_tableType;
                     bool m_tableTypeHasBeenSet;

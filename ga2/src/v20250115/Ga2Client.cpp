@@ -290,6 +290,56 @@ Ga2Client::CreateGlobalAcceleratorOutcomeCallable Ga2Client::CreateGlobalAcceler
     return prom->get_future();
 }
 
+Ga2Client::CreateGlobalAcceleratorAccessLogOutcome Ga2Client::CreateGlobalAcceleratorAccessLog(const CreateGlobalAcceleratorAccessLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGlobalAcceleratorAccessLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGlobalAcceleratorAccessLogResponse rsp = CreateGlobalAcceleratorAccessLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGlobalAcceleratorAccessLogOutcome(rsp);
+        else
+            return CreateGlobalAcceleratorAccessLogOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGlobalAcceleratorAccessLogOutcome(outcome.GetError());
+    }
+}
+
+void Ga2Client::CreateGlobalAcceleratorAccessLogAsync(const CreateGlobalAcceleratorAccessLogRequest& request, const CreateGlobalAcceleratorAccessLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateGlobalAcceleratorAccessLogRequest&;
+    using Resp = CreateGlobalAcceleratorAccessLogResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateGlobalAcceleratorAccessLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ga2Client::CreateGlobalAcceleratorAccessLogOutcomeCallable Ga2Client::CreateGlobalAcceleratorAccessLogCallable(const CreateGlobalAcceleratorAccessLogRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateGlobalAcceleratorAccessLogOutcome>>();
+    CreateGlobalAcceleratorAccessLogAsync(
+    request,
+    [prom](
+        const Ga2Client*,
+        const CreateGlobalAcceleratorAccessLogRequest&,
+        CreateGlobalAcceleratorAccessLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 Ga2Client::CreateGlobalAcceleratorAclPolicyOutcome Ga2Client::CreateGlobalAcceleratorAclPolicy(const CreateGlobalAcceleratorAclPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateGlobalAcceleratorAclPolicy");
@@ -740,6 +790,56 @@ Ga2Client::DeleteGlobalAcceleratorOutcomeCallable Ga2Client::DeleteGlobalAcceler
     return prom->get_future();
 }
 
+Ga2Client::DeleteGlobalAcceleratorAccessLogOutcome Ga2Client::DeleteGlobalAcceleratorAccessLog(const DeleteGlobalAcceleratorAccessLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGlobalAcceleratorAccessLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGlobalAcceleratorAccessLogResponse rsp = DeleteGlobalAcceleratorAccessLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGlobalAcceleratorAccessLogOutcome(rsp);
+        else
+            return DeleteGlobalAcceleratorAccessLogOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGlobalAcceleratorAccessLogOutcome(outcome.GetError());
+    }
+}
+
+void Ga2Client::DeleteGlobalAcceleratorAccessLogAsync(const DeleteGlobalAcceleratorAccessLogRequest& request, const DeleteGlobalAcceleratorAccessLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteGlobalAcceleratorAccessLogRequest&;
+    using Resp = DeleteGlobalAcceleratorAccessLogResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteGlobalAcceleratorAccessLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ga2Client::DeleteGlobalAcceleratorAccessLogOutcomeCallable Ga2Client::DeleteGlobalAcceleratorAccessLogCallable(const DeleteGlobalAcceleratorAccessLogRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteGlobalAcceleratorAccessLogOutcome>>();
+    DeleteGlobalAcceleratorAccessLogAsync(
+    request,
+    [prom](
+        const Ga2Client*,
+        const DeleteGlobalAcceleratorAccessLogRequest&,
+        DeleteGlobalAcceleratorAccessLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 Ga2Client::DeleteGlobalAcceleratorAclPolicyOutcome Ga2Client::DeleteGlobalAcceleratorAclPolicy(const DeleteGlobalAcceleratorAclPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteGlobalAcceleratorAclPolicy");
@@ -1040,6 +1140,56 @@ Ga2Client::DescribeAccelerateRegionsOutcomeCallable Ga2Client::DescribeAccelerat
     return prom->get_future();
 }
 
+Ga2Client::DescribeAccessLogParamOutcome Ga2Client::DescribeAccessLogParam(const DescribeAccessLogParamRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccessLogParam");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccessLogParamResponse rsp = DescribeAccessLogParamResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccessLogParamOutcome(rsp);
+        else
+            return DescribeAccessLogParamOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccessLogParamOutcome(outcome.GetError());
+    }
+}
+
+void Ga2Client::DescribeAccessLogParamAsync(const DescribeAccessLogParamRequest& request, const DescribeAccessLogParamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAccessLogParamRequest&;
+    using Resp = DescribeAccessLogParamResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccessLogParam", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ga2Client::DescribeAccessLogParamOutcomeCallable Ga2Client::DescribeAccessLogParamCallable(const DescribeAccessLogParamRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAccessLogParamOutcome>>();
+    DescribeAccessLogParamAsync(
+    request,
+    [prom](
+        const Ga2Client*,
+        const DescribeAccessLogParamRequest&,
+        DescribeAccessLogParamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 Ga2Client::DescribeCrossBorderSettlementOutcome Ga2Client::DescribeCrossBorderSettlement(const DescribeCrossBorderSettlementRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCrossBorderSettlement");
@@ -1232,6 +1382,156 @@ Ga2Client::DescribeForwardingRuleOutcomeCallable Ga2Client::DescribeForwardingRu
         const Ga2Client*,
         const DescribeForwardingRuleRequest&,
         DescribeForwardingRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+Ga2Client::DescribeGlobalAcceleratorAccessLogOutcome Ga2Client::DescribeGlobalAcceleratorAccessLog(const DescribeGlobalAcceleratorAccessLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGlobalAcceleratorAccessLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGlobalAcceleratorAccessLogResponse rsp = DescribeGlobalAcceleratorAccessLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGlobalAcceleratorAccessLogOutcome(rsp);
+        else
+            return DescribeGlobalAcceleratorAccessLogOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGlobalAcceleratorAccessLogOutcome(outcome.GetError());
+    }
+}
+
+void Ga2Client::DescribeGlobalAcceleratorAccessLogAsync(const DescribeGlobalAcceleratorAccessLogRequest& request, const DescribeGlobalAcceleratorAccessLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeGlobalAcceleratorAccessLogRequest&;
+    using Resp = DescribeGlobalAcceleratorAccessLogResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeGlobalAcceleratorAccessLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ga2Client::DescribeGlobalAcceleratorAccessLogOutcomeCallable Ga2Client::DescribeGlobalAcceleratorAccessLogCallable(const DescribeGlobalAcceleratorAccessLogRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeGlobalAcceleratorAccessLogOutcome>>();
+    DescribeGlobalAcceleratorAccessLogAsync(
+    request,
+    [prom](
+        const Ga2Client*,
+        const DescribeGlobalAcceleratorAccessLogRequest&,
+        DescribeGlobalAcceleratorAccessLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+Ga2Client::DescribeGlobalAcceleratorAclPoliciesOutcome Ga2Client::DescribeGlobalAcceleratorAclPolicies(const DescribeGlobalAcceleratorAclPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGlobalAcceleratorAclPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGlobalAcceleratorAclPoliciesResponse rsp = DescribeGlobalAcceleratorAclPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGlobalAcceleratorAclPoliciesOutcome(rsp);
+        else
+            return DescribeGlobalAcceleratorAclPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGlobalAcceleratorAclPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void Ga2Client::DescribeGlobalAcceleratorAclPoliciesAsync(const DescribeGlobalAcceleratorAclPoliciesRequest& request, const DescribeGlobalAcceleratorAclPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeGlobalAcceleratorAclPoliciesRequest&;
+    using Resp = DescribeGlobalAcceleratorAclPoliciesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeGlobalAcceleratorAclPolicies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ga2Client::DescribeGlobalAcceleratorAclPoliciesOutcomeCallable Ga2Client::DescribeGlobalAcceleratorAclPoliciesCallable(const DescribeGlobalAcceleratorAclPoliciesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeGlobalAcceleratorAclPoliciesOutcome>>();
+    DescribeGlobalAcceleratorAclPoliciesAsync(
+    request,
+    [prom](
+        const Ga2Client*,
+        const DescribeGlobalAcceleratorAclPoliciesRequest&,
+        DescribeGlobalAcceleratorAclPoliciesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+Ga2Client::DescribeGlobalAcceleratorAclRulesOutcome Ga2Client::DescribeGlobalAcceleratorAclRules(const DescribeGlobalAcceleratorAclRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGlobalAcceleratorAclRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGlobalAcceleratorAclRulesResponse rsp = DescribeGlobalAcceleratorAclRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGlobalAcceleratorAclRulesOutcome(rsp);
+        else
+            return DescribeGlobalAcceleratorAclRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGlobalAcceleratorAclRulesOutcome(outcome.GetError());
+    }
+}
+
+void Ga2Client::DescribeGlobalAcceleratorAclRulesAsync(const DescribeGlobalAcceleratorAclRulesRequest& request, const DescribeGlobalAcceleratorAclRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeGlobalAcceleratorAclRulesRequest&;
+    using Resp = DescribeGlobalAcceleratorAclRulesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeGlobalAcceleratorAclRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ga2Client::DescribeGlobalAcceleratorAclRulesOutcomeCallable Ga2Client::DescribeGlobalAcceleratorAclRulesCallable(const DescribeGlobalAcceleratorAclRulesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeGlobalAcceleratorAclRulesOutcome>>();
+    DescribeGlobalAcceleratorAclRulesAsync(
+    request,
+    [prom](
+        const Ga2Client*,
+        const DescribeGlobalAcceleratorAclRulesRequest&,
+        DescribeGlobalAcceleratorAclRulesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1440,6 +1740,56 @@ Ga2Client::ModifyAccelerateAreasOutcomeCallable Ga2Client::ModifyAccelerateAreas
     return prom->get_future();
 }
 
+Ga2Client::ModifyAccessLogStatusOutcome Ga2Client::ModifyAccessLogStatus(const ModifyAccessLogStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAccessLogStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAccessLogStatusResponse rsp = ModifyAccessLogStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAccessLogStatusOutcome(rsp);
+        else
+            return ModifyAccessLogStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAccessLogStatusOutcome(outcome.GetError());
+    }
+}
+
+void Ga2Client::ModifyAccessLogStatusAsync(const ModifyAccessLogStatusRequest& request, const ModifyAccessLogStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyAccessLogStatusRequest&;
+    using Resp = ModifyAccessLogStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyAccessLogStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ga2Client::ModifyAccessLogStatusOutcomeCallable Ga2Client::ModifyAccessLogStatusCallable(const ModifyAccessLogStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyAccessLogStatusOutcome>>();
+    ModifyAccessLogStatusAsync(
+    request,
+    [prom](
+        const Ga2Client*,
+        const ModifyAccessLogStatusRequest&,
+        ModifyAccessLogStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 Ga2Client::ModifyEndpointGroupOutcome Ga2Client::ModifyEndpointGroup(const ModifyEndpointGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyEndpointGroup");
@@ -1632,6 +1982,56 @@ Ga2Client::ModifyGlobalAcceleratorOutcomeCallable Ga2Client::ModifyGlobalAcceler
         const Ga2Client*,
         const ModifyGlobalAcceleratorRequest&,
         ModifyGlobalAcceleratorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+Ga2Client::ModifyGlobalAcceleratorAccessLogOutcome Ga2Client::ModifyGlobalAcceleratorAccessLog(const ModifyGlobalAcceleratorAccessLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGlobalAcceleratorAccessLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGlobalAcceleratorAccessLogResponse rsp = ModifyGlobalAcceleratorAccessLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGlobalAcceleratorAccessLogOutcome(rsp);
+        else
+            return ModifyGlobalAcceleratorAccessLogOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGlobalAcceleratorAccessLogOutcome(outcome.GetError());
+    }
+}
+
+void Ga2Client::ModifyGlobalAcceleratorAccessLogAsync(const ModifyGlobalAcceleratorAccessLogRequest& request, const ModifyGlobalAcceleratorAccessLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyGlobalAcceleratorAccessLogRequest&;
+    using Resp = ModifyGlobalAcceleratorAccessLogResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyGlobalAcceleratorAccessLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ga2Client::ModifyGlobalAcceleratorAccessLogOutcomeCallable Ga2Client::ModifyGlobalAcceleratorAccessLogCallable(const ModifyGlobalAcceleratorAccessLogRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyGlobalAcceleratorAccessLogOutcome>>();
+    ModifyGlobalAcceleratorAccessLogAsync(
+    request,
+    [prom](
+        const Ga2Client*,
+        const ModifyGlobalAcceleratorAccessLogRequest&,
+        ModifyGlobalAcceleratorAccessLogOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

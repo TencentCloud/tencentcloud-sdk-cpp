@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 媒体处理 VOD （点播专业版）对象信息。
+                * 媒体处理 VOD 对象信息。
                 */
                 class VODInputInfo : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体处理对象文件所在的 *Bucket ID*
-                     * @return Bucket 媒体处理对象文件所在的 *Bucket ID*
+                     * 获取<p>媒体处理对象文件所在的 <em>Bucket ID</em></p>
+                     * @return Bucket <p>媒体处理对象文件所在的 <em>Bucket ID</em></p>
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
-                     * 设置媒体处理对象文件所在的 *Bucket ID*
-                     * @param _bucket 媒体处理对象文件所在的 *Bucket ID*
+                     * 设置<p>媒体处理对象文件所在的 <em>Bucket ID</em></p>
+                     * @param _bucket <p>媒体处理对象文件所在的 <em>Bucket ID</em></p>
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool BucketHasBeenSet() const;
 
                     /**
-                     * 获取媒体处理对象文件所在的 Bucket 所属园区
-                     * @return Region 媒体处理对象文件所在的 Bucket 所属园区
+                     * 获取<p>媒体处理对象文件所在的 Bucket 所属园区</p>
+                     * @return Region <p>媒体处理对象文件所在的 Bucket 所属园区</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置媒体处理对象文件所在的 Bucket 所属园区
-                     * @param _region 媒体处理对象文件所在的 Bucket 所属园区
+                     * 设置<p>媒体处理对象文件所在的 Bucket 所属园区</p>
+                     * @param _region <p>媒体处理对象文件所在的 Bucket 所属园区</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取媒体处理对象文件的输入路径
-                     * @return Object 媒体处理对象文件的输入路径
+                     * 获取<p>媒体处理对象文件的输入路径</p>
+                     * @return Object <p>媒体处理对象文件的输入路径</p>
                      * 
                      */
                     std::string GetObject() const;
 
                     /**
-                     * 设置媒体处理对象文件的输入路径
-                     * @param _object 媒体处理对象文件的输入路径
+                     * 设置<p>媒体处理对象文件的输入路径</p>
+                     * @param _object <p>媒体处理对象文件的输入路径</p>
                      * 
                      */
                     void SetObject(const std::string& _object);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ObjectHasBeenSet() const;
 
                     /**
-                     * 获取点播专业版应用Id
-                     * @return SubAppId 点播专业版应用Id
+                     * 获取<p>点播应用Id。</p>
+                     * @return SubAppId <p>点播应用Id。</p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置点播专业版应用Id
-                     * @param _subAppId 点播专业版应用Id
+                     * 设置<p>点播应用Id。</p>
+                     * @param _subAppId <p>点播应用Id。</p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -130,31 +130,85 @@ namespace TencentCloud
                      */
                     bool SubAppIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否使用VOD标准版。<br>注意：不填表示使用VOD专业版。</p><p>枚举值：</p><ul><li>0： 使用VOD专业版</li><li>1： 使用VOD标准版，可使用FileId发起任务</li></ul><p>默认值：0</p>
+                     * @return VodBasic <p>是否使用VOD标准版。<br>注意：不填表示使用VOD专业版。</p><p>枚举值：</p><ul><li>0： 使用VOD专业版</li><li>1： 使用VOD标准版，可使用FileId发起任务</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    int64_t GetVodBasic() const;
+
+                    /**
+                     * 设置<p>是否使用VOD标准版。<br>注意：不填表示使用VOD专业版。</p><p>枚举值：</p><ul><li>0： 使用VOD专业版</li><li>1： 使用VOD标准版，可使用FileId发起任务</li></ul><p>默认值：0</p>
+                     * @param _vodBasic <p>是否使用VOD标准版。<br>注意：不填表示使用VOD专业版。</p><p>枚举值：</p><ul><li>0： 使用VOD专业版</li><li>1： 使用VOD标准版，可使用FileId发起任务</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    void SetVodBasic(const int64_t& _vodBasic);
+
+                    /**
+                     * 判断参数 VodBasic 是否已赋值
+                     * @return VodBasic 是否已赋值
+                     * 
+                     */
+                    bool VodBasicHasBeenSet() const;
+
+                    /**
+                     * 获取<p>VOD标准版FileId</p>
+                     * @return FileId <p>VOD标准版FileId</p>
+                     * 
+                     */
+                    std::string GetFileId() const;
+
+                    /**
+                     * 设置<p>VOD标准版FileId</p>
+                     * @param _fileId <p>VOD标准版FileId</p>
+                     * 
+                     */
+                    void SetFileId(const std::string& _fileId);
+
+                    /**
+                     * 判断参数 FileId 是否已赋值
+                     * @return FileId 是否已赋值
+                     * 
+                     */
+                    bool FileIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 媒体处理对象文件所在的 *Bucket ID*
+                     * <p>媒体处理对象文件所在的 <em>Bucket ID</em></p>
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
 
                     /**
-                     * 媒体处理对象文件所在的 Bucket 所属园区
+                     * <p>媒体处理对象文件所在的 Bucket 所属园区</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 媒体处理对象文件的输入路径
+                     * <p>媒体处理对象文件的输入路径</p>
                      */
                     std::string m_object;
                     bool m_objectHasBeenSet;
 
                     /**
-                     * 点播专业版应用Id
+                     * <p>点播应用Id。</p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
+
+                    /**
+                     * <p>是否使用VOD标准版。<br>注意：不填表示使用VOD专业版。</p><p>枚举值：</p><ul><li>0： 使用VOD专业版</li><li>1： 使用VOD标准版，可使用FileId发起任务</li></ul><p>默认值：0</p>
+                     */
+                    int64_t m_vodBasic;
+                    bool m_vodBasicHasBeenSet;
+
+                    /**
+                     * <p>VOD标准版FileId</p>
+                     */
+                    std::string m_fileId;
+                    bool m_fileIdHasBeenSet;
 
                 };
             }

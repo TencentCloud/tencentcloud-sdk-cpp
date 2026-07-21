@@ -43,7 +43,8 @@ Snapshot::Snapshot() :
     m_tagsHasBeenSet(false),
     m_isLockedHasBeenSet(false),
     m_latestModifyTimeHasBeenSet(false),
-    m_autoSnapshotPolicyIdHasBeenSet(false)
+    m_autoSnapshotPolicyIdHasBeenSet(false),
+    m_snapshotModeHasBeenSet(false)
 {
 }
 
@@ -312,6 +313,16 @@ CoreInternalOutcome Snapshot::Deserialize(const rapidjson::Value &value)
         m_autoSnapshotPolicyIdHasBeenSet = true;
     }
 
+    if (value.HasMember("SnapshotMode") && !value["SnapshotMode"].IsNull())
+    {
+        if (!value["SnapshotMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshot.SnapshotMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_snapshotMode = string(value["SnapshotMode"].GetString());
+        m_snapshotModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -521,6 +532,14 @@ void Snapshot::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "AutoSnapshotPolicyId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_autoSnapshotPolicyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_snapshotModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SnapshotMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_snapshotMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -892,5 +911,21 @@ void Snapshot::SetAutoSnapshotPolicyId(const string& _autoSnapshotPolicyId)
 bool Snapshot::AutoSnapshotPolicyIdHasBeenSet() const
 {
     return m_autoSnapshotPolicyIdHasBeenSet;
+}
+
+string Snapshot::GetSnapshotMode() const
+{
+    return m_snapshotMode;
+}
+
+void Snapshot::SetSnapshotMode(const string& _snapshotMode)
+{
+    m_snapshotMode = _snapshotMode;
+    m_snapshotModeHasBeenSet = true;
+}
+
+bool Snapshot::SnapshotModeHasBeenSet() const
+{
+    return m_snapshotModeHasBeenSet;
 }
 

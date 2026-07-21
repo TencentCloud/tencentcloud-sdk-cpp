@@ -180,6 +180,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/DeleteOceanusClusterResponse.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobsResponse.h
   include/tencentcloud/oceanus/v20190422/model/ExpertModeConfiguration.h
+  include/tencentcloud/oceanus/v20190422/model/SqlGatewayEndpoint.h
   include/tencentcloud/oceanus/v20190422/model/Order.h
   include/tencentcloud/oceanus/v20190422/model/CreateConnectorRequest.h
   include/tencentcloud/oceanus/v20190422/model/CopyJobItem.h
@@ -353,6 +354,7 @@ set(oceanus_src
   src/v20190422/model/DeleteOceanusClusterResponse.cpp
   src/v20190422/model/DescribeJobsResponse.cpp
   src/v20190422/model/ExpertModeConfiguration.cpp
+  src/v20190422/model/SqlGatewayEndpoint.cpp
   src/v20190422/model/Order.cpp
   src/v20190422/model/CreateConnectorRequest.cpp
   src/v20190422/model/CopyJobItem.cpp

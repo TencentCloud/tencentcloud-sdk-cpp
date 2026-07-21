@@ -27,6 +27,8 @@
 #include <tencentcloud/ga2/v20250115/model/RuleCondition.h>
 #include <tencentcloud/ga2/v20250115/model/RuleAction.h>
 #include <tencentcloud/ga2/v20250115/model/OriginHeader.h>
+#include <tencentcloud/ga2/v20250115/model/HideResponseHeaders.h>
+#include <tencentcloud/ga2/v20250115/model/ResponseHeaders.h>
 
 
 namespace TencentCloud
@@ -50,15 +52,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取七层转发规则条件信息。
-                     * @return RuleCondition 七层转发规则条件信息。
+                     * 获取<p>七层转发规则条件信息。</p>
+                     * @return RuleCondition <p>七层转发规则条件信息。</p>
                      * 
                      */
                     std::vector<RuleCondition> GetRuleCondition() const;
 
                     /**
-                     * 设置七层转发规则条件信息。
-                     * @param _ruleCondition 七层转发规则条件信息。
+                     * 设置<p>七层转发规则条件信息。</p>
+                     * @param _ruleCondition <p>七层转发规则条件信息。</p>
                      * 
                      */
                     void SetRuleCondition(const std::vector<RuleCondition>& _ruleCondition);
@@ -71,15 +73,15 @@ namespace TencentCloud
                     bool RuleConditionHasBeenSet() const;
 
                     /**
-                     * 获取七层转发规则行为信息。
-                     * @return RuleAction 七层转发规则行为信息。
+                     * 获取<p>七层转发规则行为信息。</p>
+                     * @return RuleAction <p>七层转发规则行为信息。</p>
                      * 
                      */
                     std::vector<RuleAction> GetRuleAction() const;
 
                     /**
-                     * 设置七层转发规则行为信息。
-                     * @param _ruleAction 七层转发规则行为信息。
+                     * 设置<p>七层转发规则行为信息。</p>
+                     * @param _ruleAction <p>七层转发规则行为信息。</p>
                      * 
                      */
                     void SetRuleAction(const std::vector<RuleAction>& _ruleAction);
@@ -92,15 +94,15 @@ namespace TencentCloud
                     bool RuleActionHasBeenSet() const;
 
                     /**
-                     * 获取是否开启回源Sni。
-                     * @return EnableOriginSni 是否开启回源Sni。
+                     * 获取<p>是否开启回源Sni。</p>
+                     * @return EnableOriginSni <p>是否开启回源Sni。</p>
                      * 
                      */
                     bool GetEnableOriginSni() const;
 
                     /**
-                     * 设置是否开启回源Sni。
-                     * @param _enableOriginSni 是否开启回源Sni。
+                     * 设置<p>是否开启回源Sni。</p>
+                     * @param _enableOriginSni <p>是否开启回源Sni。</p>
                      * 
                      */
                     void SetEnableOriginSni(const bool& _enableOriginSni);
@@ -113,15 +115,15 @@ namespace TencentCloud
                     bool EnableOriginSniHasBeenSet() const;
 
                     /**
-                     * 获取回源Sni。
-                     * @return OriginSni 回源Sni。
+                     * 获取<p>回源Sni。</p>
+                     * @return OriginSni <p>回源Sni。</p>
                      * 
                      */
                     std::string GetOriginSni() const;
 
                     /**
-                     * 设置回源Sni。
-                     * @param _originSni 回源Sni。
+                     * 设置<p>回源Sni。</p>
+                     * @param _originSni <p>回源Sni。</p>
                      * 
                      */
                     void SetOriginSni(const std::string& _originSni);
@@ -134,15 +136,15 @@ namespace TencentCloud
                     bool OriginSniHasBeenSet() const;
 
                     /**
-                     * 获取回源Herder信息。
-                     * @return OriginHeaders 回源Herder信息。
+                     * 获取<p>回源Herder信息。</p>
+                     * @return OriginHeaders <p>回源Herder信息。</p>
                      * 
                      */
                     std::vector<OriginHeader> GetOriginHeaders() const;
 
                     /**
-                     * 设置回源Herder信息。
-                     * @param _originHeaders 回源Herder信息。
+                     * 设置<p>回源Herder信息。</p>
+                     * @param _originHeaders <p>回源Herder信息。</p>
                      * 
                      */
                     void SetOriginHeaders(const std::vector<OriginHeader>& _originHeaders);
@@ -155,15 +157,15 @@ namespace TencentCloud
                     bool OriginHeadersHasBeenSet() const;
 
                     /**
-                     * 获取回源Host。
-                     * @return OriginHost 回源Host。
+                     * 获取<p>回源Host。</p>
+                     * @return OriginHost <p>回源Host。</p>
                      * 
                      */
                     std::string GetOriginHost() const;
 
                     /**
-                     * 设置回源Host。
-                     * @param _originHost 回源Host。
+                     * 设置<p>回源Host。</p>
+                     * @param _originHost <p>回源Host。</p>
                      * 
                      */
                     void SetOriginHost(const std::string& _originHost);
@@ -176,15 +178,15 @@ namespace TencentCloud
                     bool OriginHostHasBeenSet() const;
 
                     /**
-                     * 获取全球加速实例ID。
-                     * @return GlobalAcceleratorId 全球加速实例ID。
+                     * 获取<p>全球加速实例ID。</p>
+                     * @return GlobalAcceleratorId <p>全球加速实例ID。</p>
                      * 
                      */
                     std::string GetGlobalAcceleratorId() const;
 
                     /**
-                     * 设置全球加速实例ID。
-                     * @param _globalAcceleratorId 全球加速实例ID。
+                     * 设置<p>全球加速实例ID。</p>
+                     * @param _globalAcceleratorId <p>全球加速实例ID。</p>
                      * 
                      */
                     void SetGlobalAcceleratorId(const std::string& _globalAcceleratorId);
@@ -197,15 +199,15 @@ namespace TencentCloud
                     bool GlobalAcceleratorIdHasBeenSet() const;
 
                     /**
-                     * 获取监听器ID。
-                     * @return ListenerId 监听器ID。
+                     * 获取<p>监听器ID。</p>
+                     * @return ListenerId <p>监听器ID。</p>
                      * 
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置监听器ID。
-                     * @param _listenerId 监听器ID。
+                     * 设置<p>监听器ID。</p>
+                     * @param _listenerId <p>监听器ID。</p>
                      * 
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -218,15 +220,15 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取七层转发策略ID。
-                     * @return ForwardingPolicyId 七层转发策略ID。
+                     * 获取<p>七层转发策略ID。</p>
+                     * @return ForwardingPolicyId <p>七层转发策略ID。</p>
                      * 
                      */
                     std::string GetForwardingPolicyId() const;
 
                     /**
-                     * 设置七层转发策略ID。
-                     * @param _forwardingPolicyId 七层转发策略ID。
+                     * 设置<p>七层转发策略ID。</p>
+                     * @param _forwardingPolicyId <p>七层转发策略ID。</p>
                      * 
                      */
                     void SetForwardingPolicyId(const std::string& _forwardingPolicyId);
@@ -239,15 +241,15 @@ namespace TencentCloud
                     bool ForwardingPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取七层转发规则ID。
-                     * @return ForwardingRuleId 七层转发规则ID。
+                     * 获取<p>七层转发规则ID。</p>
+                     * @return ForwardingRuleId <p>七层转发规则ID。</p>
                      * 
                      */
                     std::string GetForwardingRuleId() const;
 
                     /**
-                     * 设置七层转发规则ID。
-                     * @param _forwardingRuleId 七层转发规则ID。
+                     * 设置<p>七层转发规则ID。</p>
+                     * @param _forwardingRuleId <p>七层转发规则ID。</p>
                      * 
                      */
                     void SetForwardingRuleId(const std::string& _forwardingRuleId);
@@ -259,67 +261,121 @@ namespace TencentCloud
                      */
                     bool ForwardingRuleIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>源站响应头</p>
+                     * @return HideResponseHeaders <p>源站响应头</p>
+                     * 
+                     */
+                    std::vector<HideResponseHeaders> GetHideResponseHeaders() const;
+
+                    /**
+                     * 设置<p>源站响应头</p>
+                     * @param _hideResponseHeaders <p>源站响应头</p>
+                     * 
+                     */
+                    void SetHideResponseHeaders(const std::vector<HideResponseHeaders>& _hideResponseHeaders);
+
+                    /**
+                     * 判断参数 HideResponseHeaders 是否已赋值
+                     * @return HideResponseHeaders 是否已赋值
+                     * 
+                     */
+                    bool HideResponseHeadersHasBeenSet() const;
+
+                    /**
+                     * 获取<p>删除源站响应头</p>
+                     * @return ResponseHeaders <p>删除源站响应头</p>
+                     * 
+                     */
+                    std::vector<ResponseHeaders> GetResponseHeaders() const;
+
+                    /**
+                     * 设置<p>删除源站响应头</p>
+                     * @param _responseHeaders <p>删除源站响应头</p>
+                     * 
+                     */
+                    void SetResponseHeaders(const std::vector<ResponseHeaders>& _responseHeaders);
+
+                    /**
+                     * 判断参数 ResponseHeaders 是否已赋值
+                     * @return ResponseHeaders 是否已赋值
+                     * 
+                     */
+                    bool ResponseHeadersHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 七层转发规则条件信息。
+                     * <p>七层转发规则条件信息。</p>
                      */
                     std::vector<RuleCondition> m_ruleCondition;
                     bool m_ruleConditionHasBeenSet;
 
                     /**
-                     * 七层转发规则行为信息。
+                     * <p>七层转发规则行为信息。</p>
                      */
                     std::vector<RuleAction> m_ruleAction;
                     bool m_ruleActionHasBeenSet;
 
                     /**
-                     * 是否开启回源Sni。
+                     * <p>是否开启回源Sni。</p>
                      */
                     bool m_enableOriginSni;
                     bool m_enableOriginSniHasBeenSet;
 
                     /**
-                     * 回源Sni。
+                     * <p>回源Sni。</p>
                      */
                     std::string m_originSni;
                     bool m_originSniHasBeenSet;
 
                     /**
-                     * 回源Herder信息。
+                     * <p>回源Herder信息。</p>
                      */
                     std::vector<OriginHeader> m_originHeaders;
                     bool m_originHeadersHasBeenSet;
 
                     /**
-                     * 回源Host。
+                     * <p>回源Host。</p>
                      */
                     std::string m_originHost;
                     bool m_originHostHasBeenSet;
 
                     /**
-                     * 全球加速实例ID。
+                     * <p>全球加速实例ID。</p>
                      */
                     std::string m_globalAcceleratorId;
                     bool m_globalAcceleratorIdHasBeenSet;
 
                     /**
-                     * 监听器ID。
+                     * <p>监听器ID。</p>
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 七层转发策略ID。
+                     * <p>七层转发策略ID。</p>
                      */
                     std::string m_forwardingPolicyId;
                     bool m_forwardingPolicyIdHasBeenSet;
 
                     /**
-                     * 七层转发规则ID。
+                     * <p>七层转发规则ID。</p>
                      */
                     std::string m_forwardingRuleId;
                     bool m_forwardingRuleIdHasBeenSet;
+
+                    /**
+                     * <p>源站响应头</p>
+                     */
+                    std::vector<HideResponseHeaders> m_hideResponseHeaders;
+                    bool m_hideResponseHeadersHasBeenSet;
+
+                    /**
+                     * <p>删除源站响应头</p>
+                     */
+                    std::vector<ResponseHeaders> m_responseHeaders;
+                    bool m_responseHeadersHasBeenSet;
 
                 };
             }
