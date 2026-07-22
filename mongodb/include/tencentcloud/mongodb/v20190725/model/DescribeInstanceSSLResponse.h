@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取SSL开启状态。0为关闭，1为开启
+                     * 获取<p>SSL开启状态。0为关闭，1为开启</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status SSL开启状态。0为关闭，1为开启
+                     * @return Status <p>SSL开启状态。0为关闭，1为开启</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -60,9 +60,9 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取证书过期时间，格式为2023-05-01 12:00:00
+                     * 获取<p>证书过期时间，格式为2023-05-01 12:00:00</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExpiredTime 证书过期时间，格式为2023-05-01 12:00:00
+                     * @return ExpiredTime <p>证书过期时间，格式为2023-05-01 12:00:00</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -76,9 +76,9 @@ namespace TencentCloud
                     bool ExpiredTimeHasBeenSet() const;
 
                     /**
-                     * 获取证书下载链接
+                     * 获取<p>证书下载链接</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CertUrl 证书下载链接
+                     * @return CertUrl <p>证书下载链接</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -94,21 +94,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * SSL开启状态。0为关闭，1为开启
+                     * <p>SSL开启状态。0为关闭，1为开启</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 证书过期时间，格式为2023-05-01 12:00:00
+                     * <p>证书过期时间，格式为2023-05-01 12:00:00</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expiredTime;
                     bool m_expiredTimeHasBeenSet;
 
                     /**
-                     * 证书下载链接
+                     * <p>证书下载链接</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certUrl;

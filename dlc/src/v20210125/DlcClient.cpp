@@ -340,6 +340,56 @@ DlcClient::AlterDMSTableOutcomeCallable DlcClient::AlterDMSTableCallable(const A
     return prom->get_future();
 }
 
+DlcClient::AlterTableCommentOutcome DlcClient::AlterTableComment(const AlterTableCommentRequest &request)
+{
+    auto outcome = MakeRequest(request, "AlterTableComment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AlterTableCommentResponse rsp = AlterTableCommentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AlterTableCommentOutcome(rsp);
+        else
+            return AlterTableCommentOutcome(o.GetError());
+    }
+    else
+    {
+        return AlterTableCommentOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::AlterTableCommentAsync(const AlterTableCommentRequest& request, const AlterTableCommentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AlterTableCommentRequest&;
+    using Resp = AlterTableCommentResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AlterTableComment", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::AlterTableCommentOutcomeCallable DlcClient::AlterTableCommentCallable(const AlterTableCommentRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AlterTableCommentOutcome>>();
+    AlterTableCommentAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const AlterTableCommentRequest&,
+        AlterTableCommentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::AssignMangedTablePropertiesOutcome DlcClient::AssignMangedTableProperties(const AssignMangedTablePropertiesRequest &request)
 {
     auto outcome = MakeRequest(request, "AssignMangedTableProperties");
@@ -1590,6 +1640,56 @@ DlcClient::CreateInternalTableOutcomeCallable DlcClient::CreateInternalTableCall
     return prom->get_future();
 }
 
+DlcClient::CreateMetaDatabaseOutcome DlcClient::CreateMetaDatabase(const CreateMetaDatabaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMetaDatabase");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMetaDatabaseResponse rsp = CreateMetaDatabaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMetaDatabaseOutcome(rsp);
+        else
+            return CreateMetaDatabaseOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMetaDatabaseOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateMetaDatabaseAsync(const CreateMetaDatabaseRequest& request, const CreateMetaDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateMetaDatabaseRequest&;
+    using Resp = CreateMetaDatabaseResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateMetaDatabase", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::CreateMetaDatabaseOutcomeCallable DlcClient::CreateMetaDatabaseCallable(const CreateMetaDatabaseRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateMetaDatabaseOutcome>>();
+    CreateMetaDatabaseAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const CreateMetaDatabaseRequest&,
+        CreateMetaDatabaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::CreateNotebookSessionOutcome DlcClient::CreateNotebookSession(const CreateNotebookSessionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateNotebookSession");
@@ -2732,6 +2832,56 @@ DlcClient::DeleteDataMaskStrategyOutcomeCallable DlcClient::DeleteDataMaskStrate
         const DlcClient*,
         const DeleteDataMaskStrategyRequest&,
         DeleteDataMaskStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DeleteMetaDatabaseOutcome DlcClient::DeleteMetaDatabase(const DeleteMetaDatabaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteMetaDatabase");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteMetaDatabaseResponse rsp = DeleteMetaDatabaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteMetaDatabaseOutcome(rsp);
+        else
+            return DeleteMetaDatabaseOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteMetaDatabaseOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DeleteMetaDatabaseAsync(const DeleteMetaDatabaseRequest& request, const DeleteMetaDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteMetaDatabaseRequest&;
+    using Resp = DeleteMetaDatabaseResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteMetaDatabase", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DeleteMetaDatabaseOutcomeCallable DlcClient::DeleteMetaDatabaseCallable(const DeleteMetaDatabaseRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteMetaDatabaseOutcome>>();
+    DeleteMetaDatabaseAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DeleteMetaDatabaseRequest&,
+        DeleteMetaDatabaseOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4032,6 +4182,56 @@ DlcClient::DescribeDataMaskStrategiesOutcomeCallable DlcClient::DescribeDataMask
         const DlcClient*,
         const DescribeDataMaskStrategiesRequest&,
         DescribeDataMaskStrategiesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeDatabaseOutcome DlcClient::DescribeDatabase(const DescribeDatabaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDatabase");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDatabaseResponse rsp = DescribeDatabaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDatabaseOutcome(rsp);
+        else
+            return DescribeDatabaseOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDatabaseOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeDatabaseAsync(const DescribeDatabaseRequest& request, const DescribeDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDatabaseRequest&;
+    using Resp = DescribeDatabaseResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDatabase", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeDatabaseOutcomeCallable DlcClient::DescribeDatabaseCallable(const DescribeDatabaseRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDatabaseOutcome>>();
+    DescribeDatabaseAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeDatabaseRequest&,
+        DescribeDatabaseOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -7432,6 +7632,56 @@ DlcClient::GenerateCreateMangedTableSqlOutcomeCallable DlcClient::GenerateCreate
         const DlcClient*,
         const GenerateCreateMangedTableSqlRequest&,
         GenerateCreateMangedTableSqlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::GenerateInternalTableOutcome DlcClient::GenerateInternalTable(const GenerateInternalTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "GenerateInternalTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GenerateInternalTableResponse rsp = GenerateInternalTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GenerateInternalTableOutcome(rsp);
+        else
+            return GenerateInternalTableOutcome(o.GetError());
+    }
+    else
+    {
+        return GenerateInternalTableOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::GenerateInternalTableAsync(const GenerateInternalTableRequest& request, const GenerateInternalTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GenerateInternalTableRequest&;
+    using Resp = GenerateInternalTableResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GenerateInternalTable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::GenerateInternalTableOutcomeCallable DlcClient::GenerateInternalTableCallable(const GenerateInternalTableRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GenerateInternalTableOutcome>>();
+    GenerateInternalTableAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const GenerateInternalTableRequest&,
+        GenerateInternalTableOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

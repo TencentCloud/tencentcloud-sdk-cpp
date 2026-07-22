@@ -21,20 +21,20 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 SecurityGroupRule::SecurityGroupRule() :
-    m_sourceContentHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_destContentHasBeenSet(false),
     m_destTypeHasBeenSet(false),
-    m_ruleActionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_orderIndexHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_portHasBeenSet(false),
-    m_serviceTemplateIdHasBeenSet(false),
-    m_idHasBeenSet(false),
+    m_ruleActionHasBeenSet(false),
+    m_sourceContentHasBeenSet(false),
+    m_sourceTypeHasBeenSet(false),
     m_enableHasBeenSet(false),
-    m_uidHasBeenSet(false),
-    m_scopeHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_portHasBeenSet(false),
+    m_protocolHasBeenSet(false),
+    m_scopeHasBeenSet(false),
+    m_serviceTemplateIdHasBeenSet(false),
+    m_uidHasBeenSet(false)
 {
 }
 
@@ -43,24 +43,14 @@ CoreInternalOutcome SecurityGroupRule::Deserialize(const rapidjson::Value &value
     string requestId = "";
 
 
-    if (value.HasMember("SourceContent") && !value["SourceContent"].IsNull())
+    if (value.HasMember("Description") && !value["Description"].IsNull())
     {
-        if (!value["SourceContent"].IsString())
+        if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `SecurityGroupRule.SourceContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupRule.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_sourceContent = string(value["SourceContent"].GetString());
-        m_sourceContentHasBeenSet = true;
-    }
-
-    if (value.HasMember("SourceType") && !value["SourceType"].IsNull())
-    {
-        if (!value["SourceType"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `SecurityGroupRule.SourceType` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_sourceType = string(value["SourceType"].GetString());
-        m_sourceTypeHasBeenSet = true;
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
     }
 
     if (value.HasMember("DestContent") && !value["DestContent"].IsNull())
@@ -83,26 +73,6 @@ CoreInternalOutcome SecurityGroupRule::Deserialize(const rapidjson::Value &value
         m_destTypeHasBeenSet = true;
     }
 
-    if (value.HasMember("RuleAction") && !value["RuleAction"].IsNull())
-    {
-        if (!value["RuleAction"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `SecurityGroupRule.RuleAction` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_ruleAction = string(value["RuleAction"].GetString());
-        m_ruleActionHasBeenSet = true;
-    }
-
-    if (value.HasMember("Description") && !value["Description"].IsNull())
-    {
-        if (!value["Description"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `SecurityGroupRule.Description` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_description = string(value["Description"].GetString());
-        m_descriptionHasBeenSet = true;
-    }
-
     if (value.HasMember("OrderIndex") && !value["OrderIndex"].IsNull())
     {
         if (!value["OrderIndex"].IsString())
@@ -113,44 +83,34 @@ CoreInternalOutcome SecurityGroupRule::Deserialize(const rapidjson::Value &value
         m_orderIndexHasBeenSet = true;
     }
 
-    if (value.HasMember("Protocol") && !value["Protocol"].IsNull())
+    if (value.HasMember("RuleAction") && !value["RuleAction"].IsNull())
     {
-        if (!value["Protocol"].IsString())
+        if (!value["RuleAction"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `SecurityGroupRule.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupRule.RuleAction` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_protocol = string(value["Protocol"].GetString());
-        m_protocolHasBeenSet = true;
+        m_ruleAction = string(value["RuleAction"].GetString());
+        m_ruleActionHasBeenSet = true;
     }
 
-    if (value.HasMember("Port") && !value["Port"].IsNull())
+    if (value.HasMember("SourceContent") && !value["SourceContent"].IsNull())
     {
-        if (!value["Port"].IsString())
+        if (!value["SourceContent"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `SecurityGroupRule.Port` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupRule.SourceContent` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_port = string(value["Port"].GetString());
-        m_portHasBeenSet = true;
+        m_sourceContent = string(value["SourceContent"].GetString());
+        m_sourceContentHasBeenSet = true;
     }
 
-    if (value.HasMember("ServiceTemplateId") && !value["ServiceTemplateId"].IsNull())
+    if (value.HasMember("SourceType") && !value["SourceType"].IsNull())
     {
-        if (!value["ServiceTemplateId"].IsString())
+        if (!value["SourceType"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `SecurityGroupRule.ServiceTemplateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupRule.SourceType` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_serviceTemplateId = string(value["ServiceTemplateId"].GetString());
-        m_serviceTemplateIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("Id") && !value["Id"].IsNull())
-    {
-        if (!value["Id"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `SecurityGroupRule.Id` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_id = string(value["Id"].GetString());
-        m_idHasBeenSet = true;
+        m_sourceType = string(value["SourceType"].GetString());
+        m_sourceTypeHasBeenSet = true;
     }
 
     if (value.HasMember("Enable") && !value["Enable"].IsNull())
@@ -163,14 +123,34 @@ CoreInternalOutcome SecurityGroupRule::Deserialize(const rapidjson::Value &value
         m_enableHasBeenSet = true;
     }
 
-    if (value.HasMember("Uid") && !value["Uid"].IsNull())
+    if (value.HasMember("Id") && !value["Id"].IsNull())
     {
-        if (!value["Uid"].IsString())
+        if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `SecurityGroupRule.Uid` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupRule.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_uid = string(value["Uid"].GetString());
-        m_uidHasBeenSet = true;
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
+    }
+
+    if (value.HasMember("Port") && !value["Port"].IsNull())
+    {
+        if (!value["Port"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupRule.Port` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_port = string(value["Port"].GetString());
+        m_portHasBeenSet = true;
+    }
+
+    if (value.HasMember("Protocol") && !value["Protocol"].IsNull())
+    {
+        if (!value["Protocol"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupRule.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protocol = string(value["Protocol"].GetString());
+        m_protocolHasBeenSet = true;
     }
 
     if (value.HasMember("Scope") && !value["Scope"].IsNull())
@@ -183,6 +163,26 @@ CoreInternalOutcome SecurityGroupRule::Deserialize(const rapidjson::Value &value
         m_scopeHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceTemplateId") && !value["ServiceTemplateId"].IsNull())
+    {
+        if (!value["ServiceTemplateId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupRule.ServiceTemplateId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceTemplateId = string(value["ServiceTemplateId"].GetString());
+        m_serviceTemplateIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Uid") && !value["Uid"].IsNull())
+    {
+        if (!value["Uid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupRule.Uid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uid = string(value["Uid"].GetString());
+        m_uidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -190,20 +190,12 @@ CoreInternalOutcome SecurityGroupRule::Deserialize(const rapidjson::Value &value
 void SecurityGroupRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_sourceContentHasBeenSet)
+    if (m_descriptionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SourceContent";
+        string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_sourceContent.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_sourceTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SourceType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_sourceType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_destContentHasBeenSet)
@@ -222,22 +214,6 @@ void SecurityGroupRule::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, rapidjson::Value(m_destType.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_ruleActionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RuleAction";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_ruleAction.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_descriptionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Description";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_orderIndexHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -246,36 +222,28 @@ void SecurityGroupRule::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, rapidjson::Value(m_orderIndex.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_protocolHasBeenSet)
+    if (m_ruleActionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Protocol";
+        string key = "RuleAction";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleAction.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_portHasBeenSet)
+    if (m_sourceContentHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Port";
+        string key = "SourceContent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_port.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceContent.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_serviceTemplateIdHasBeenSet)
+    if (m_sourceTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ServiceTemplateId";
+        string key = "SourceType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_serviceTemplateId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_idHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Id";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_enableHasBeenSet)
@@ -286,12 +254,28 @@ void SecurityGroupRule::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, rapidjson::Value(m_enable.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_uidHasBeenSet)
+    if (m_idHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Uid";
+        string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_uid.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_portHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Port";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_port.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Protocol";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scopeHasBeenSet)
@@ -302,39 +286,39 @@ void SecurityGroupRule::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, rapidjson::Value(m_scope.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_serviceTemplateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceTemplateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uid.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
-string SecurityGroupRule::GetSourceContent() const
+string SecurityGroupRule::GetDescription() const
 {
-    return m_sourceContent;
+    return m_description;
 }
 
-void SecurityGroupRule::SetSourceContent(const string& _sourceContent)
+void SecurityGroupRule::SetDescription(const string& _description)
 {
-    m_sourceContent = _sourceContent;
-    m_sourceContentHasBeenSet = true;
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
 }
 
-bool SecurityGroupRule::SourceContentHasBeenSet() const
+bool SecurityGroupRule::DescriptionHasBeenSet() const
 {
-    return m_sourceContentHasBeenSet;
-}
-
-string SecurityGroupRule::GetSourceType() const
-{
-    return m_sourceType;
-}
-
-void SecurityGroupRule::SetSourceType(const string& _sourceType)
-{
-    m_sourceType = _sourceType;
-    m_sourceTypeHasBeenSet = true;
-}
-
-bool SecurityGroupRule::SourceTypeHasBeenSet() const
-{
-    return m_sourceTypeHasBeenSet;
+    return m_descriptionHasBeenSet;
 }
 
 string SecurityGroupRule::GetDestContent() const
@@ -369,38 +353,6 @@ bool SecurityGroupRule::DestTypeHasBeenSet() const
     return m_destTypeHasBeenSet;
 }
 
-string SecurityGroupRule::GetRuleAction() const
-{
-    return m_ruleAction;
-}
-
-void SecurityGroupRule::SetRuleAction(const string& _ruleAction)
-{
-    m_ruleAction = _ruleAction;
-    m_ruleActionHasBeenSet = true;
-}
-
-bool SecurityGroupRule::RuleActionHasBeenSet() const
-{
-    return m_ruleActionHasBeenSet;
-}
-
-string SecurityGroupRule::GetDescription() const
-{
-    return m_description;
-}
-
-void SecurityGroupRule::SetDescription(const string& _description)
-{
-    m_description = _description;
-    m_descriptionHasBeenSet = true;
-}
-
-bool SecurityGroupRule::DescriptionHasBeenSet() const
-{
-    return m_descriptionHasBeenSet;
-}
-
 string SecurityGroupRule::GetOrderIndex() const
 {
     return m_orderIndex;
@@ -417,68 +369,52 @@ bool SecurityGroupRule::OrderIndexHasBeenSet() const
     return m_orderIndexHasBeenSet;
 }
 
-string SecurityGroupRule::GetProtocol() const
+string SecurityGroupRule::GetRuleAction() const
 {
-    return m_protocol;
+    return m_ruleAction;
 }
 
-void SecurityGroupRule::SetProtocol(const string& _protocol)
+void SecurityGroupRule::SetRuleAction(const string& _ruleAction)
 {
-    m_protocol = _protocol;
-    m_protocolHasBeenSet = true;
+    m_ruleAction = _ruleAction;
+    m_ruleActionHasBeenSet = true;
 }
 
-bool SecurityGroupRule::ProtocolHasBeenSet() const
+bool SecurityGroupRule::RuleActionHasBeenSet() const
 {
-    return m_protocolHasBeenSet;
+    return m_ruleActionHasBeenSet;
 }
 
-string SecurityGroupRule::GetPort() const
+string SecurityGroupRule::GetSourceContent() const
 {
-    return m_port;
+    return m_sourceContent;
 }
 
-void SecurityGroupRule::SetPort(const string& _port)
+void SecurityGroupRule::SetSourceContent(const string& _sourceContent)
 {
-    m_port = _port;
-    m_portHasBeenSet = true;
+    m_sourceContent = _sourceContent;
+    m_sourceContentHasBeenSet = true;
 }
 
-bool SecurityGroupRule::PortHasBeenSet() const
+bool SecurityGroupRule::SourceContentHasBeenSet() const
 {
-    return m_portHasBeenSet;
+    return m_sourceContentHasBeenSet;
 }
 
-string SecurityGroupRule::GetServiceTemplateId() const
+string SecurityGroupRule::GetSourceType() const
 {
-    return m_serviceTemplateId;
+    return m_sourceType;
 }
 
-void SecurityGroupRule::SetServiceTemplateId(const string& _serviceTemplateId)
+void SecurityGroupRule::SetSourceType(const string& _sourceType)
 {
-    m_serviceTemplateId = _serviceTemplateId;
-    m_serviceTemplateIdHasBeenSet = true;
+    m_sourceType = _sourceType;
+    m_sourceTypeHasBeenSet = true;
 }
 
-bool SecurityGroupRule::ServiceTemplateIdHasBeenSet() const
+bool SecurityGroupRule::SourceTypeHasBeenSet() const
 {
-    return m_serviceTemplateIdHasBeenSet;
-}
-
-string SecurityGroupRule::GetId() const
-{
-    return m_id;
-}
-
-void SecurityGroupRule::SetId(const string& _id)
-{
-    m_id = _id;
-    m_idHasBeenSet = true;
-}
-
-bool SecurityGroupRule::IdHasBeenSet() const
-{
-    return m_idHasBeenSet;
+    return m_sourceTypeHasBeenSet;
 }
 
 string SecurityGroupRule::GetEnable() const
@@ -497,20 +433,52 @@ bool SecurityGroupRule::EnableHasBeenSet() const
     return m_enableHasBeenSet;
 }
 
-string SecurityGroupRule::GetUid() const
+string SecurityGroupRule::GetId() const
 {
-    return m_uid;
+    return m_id;
 }
 
-void SecurityGroupRule::SetUid(const string& _uid)
+void SecurityGroupRule::SetId(const string& _id)
 {
-    m_uid = _uid;
-    m_uidHasBeenSet = true;
+    m_id = _id;
+    m_idHasBeenSet = true;
 }
 
-bool SecurityGroupRule::UidHasBeenSet() const
+bool SecurityGroupRule::IdHasBeenSet() const
 {
-    return m_uidHasBeenSet;
+    return m_idHasBeenSet;
+}
+
+string SecurityGroupRule::GetPort() const
+{
+    return m_port;
+}
+
+void SecurityGroupRule::SetPort(const string& _port)
+{
+    m_port = _port;
+    m_portHasBeenSet = true;
+}
+
+bool SecurityGroupRule::PortHasBeenSet() const
+{
+    return m_portHasBeenSet;
+}
+
+string SecurityGroupRule::GetProtocol() const
+{
+    return m_protocol;
+}
+
+void SecurityGroupRule::SetProtocol(const string& _protocol)
+{
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
+}
+
+bool SecurityGroupRule::ProtocolHasBeenSet() const
+{
+    return m_protocolHasBeenSet;
 }
 
 string SecurityGroupRule::GetScope() const
@@ -527,5 +495,37 @@ void SecurityGroupRule::SetScope(const string& _scope)
 bool SecurityGroupRule::ScopeHasBeenSet() const
 {
     return m_scopeHasBeenSet;
+}
+
+string SecurityGroupRule::GetServiceTemplateId() const
+{
+    return m_serviceTemplateId;
+}
+
+void SecurityGroupRule::SetServiceTemplateId(const string& _serviceTemplateId)
+{
+    m_serviceTemplateId = _serviceTemplateId;
+    m_serviceTemplateIdHasBeenSet = true;
+}
+
+bool SecurityGroupRule::ServiceTemplateIdHasBeenSet() const
+{
+    return m_serviceTemplateIdHasBeenSet;
+}
+
+string SecurityGroupRule::GetUid() const
+{
+    return m_uid;
+}
+
+void SecurityGroupRule::SetUid(const string& _uid)
+{
+    m_uid = _uid;
+    m_uidHasBeenSet = true;
+}
+
+bool SecurityGroupRule::UidHasBeenSet() const
+{
+    return m_uidHasBeenSet;
 }
 

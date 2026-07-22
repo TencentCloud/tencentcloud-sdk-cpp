@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 自定义白名单规则
+                * RuleType=6 使用的自定义放通规则详情。SrcIP、DstIP 至少一项必须是具体 IP；另一项可省略或使用与具体 IP 同版本的通配网段 0.0.0.0/0、::/0。两项均为具体 IP 时，当前处理器拒绝源 IPv6、目的 IPv4 的组合；源 IPv4、目的 IPv6 的反向组合当前不受该版本检查限制。资产判定中，私网 IPv4 和任意 IPv6 直接通过，公网 IPv4 必须存在于当前账号 cfw_public_ip。两项均为具体 IP 时至少一项须通过资产判定；仅一项为具体 IP 且另一项省略或为同版本通配网段时，若实际 FwType 包含互联网边界位 1，该具体 IP 也必须通过资产判定。处理器据此计算规则方向和适用引擎。
                 */
                 class CustomWhiteRule : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取访问目的
-                     * @return DstIP 访问目的
+                     * 获取自定义规则的目的地址。SrcIP、DstIP 至少一项必须是具体 IP；本字段仅在 SrcIP 为具体 IP 时可省略或使用与 SrcIP 同版本的通配网段。两项均为具体 IP 时，源 IPv6、目的 IPv4 会被拒绝，源 IPv4、目的 IPv6 当前不受该版本检查限制。私网 IPv4 和任意 IPv6 直接通过资产判定，公网 IPv4 必须存在于当前账号 cfw_public_ip；是否要求通过资产判定由两侧地址与实际 FwType 联动决定。
+                     * @return DstIP 自定义规则的目的地址。SrcIP、DstIP 至少一项必须是具体 IP；本字段仅在 SrcIP 为具体 IP 时可省略或使用与 SrcIP 同版本的通配网段。两项均为具体 IP 时，源 IPv6、目的 IPv4 会被拒绝，源 IPv4、目的 IPv6 当前不受该版本检查限制。私网 IPv4 和任意 IPv6 直接通过资产判定，公网 IPv4 必须存在于当前账号 cfw_public_ip；是否要求通过资产判定由两侧地址与实际 FwType 联动决定。
                      * 
                      */
                     std::string GetDstIP() const;
 
                     /**
-                     * 设置访问目的
-                     * @param _dstIP 访问目的
+                     * 设置自定义规则的目的地址。SrcIP、DstIP 至少一项必须是具体 IP；本字段仅在 SrcIP 为具体 IP 时可省略或使用与 SrcIP 同版本的通配网段。两项均为具体 IP 时，源 IPv6、目的 IPv4 会被拒绝，源 IPv4、目的 IPv6 当前不受该版本检查限制。私网 IPv4 和任意 IPv6 直接通过资产判定，公网 IPv4 必须存在于当前账号 cfw_public_ip；是否要求通过资产判定由两侧地址与实际 FwType 联动决定。
+                     * @param _dstIP 自定义规则的目的地址。SrcIP、DstIP 至少一项必须是具体 IP；本字段仅在 SrcIP 为具体 IP 时可省略或使用与 SrcIP 同版本的通配网段。两项均为具体 IP 时，源 IPv6、目的 IPv4 会被拒绝，源 IPv4、目的 IPv6 当前不受该版本检查限制。私网 IPv4 和任意 IPv6 直接通过资产判定，公网 IPv4 必须存在于当前账号 cfw_public_ip；是否要求通过资产判定由两侧地址与实际 FwType 联动决定。
                      * 
                      */
                     void SetDstIP(const std::string& _dstIP);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DstIPHasBeenSet() const;
 
                     /**
-                     * 获取规则ID
-                     * @return IdsRuleId 规则ID
+                     * 获取自定义规则关联的入侵防御规则 ID；必须是可转换为整数且在入侵防御规则模板中存在的 ID。
+                     * @return IdsRuleId 自定义规则关联的入侵防御规则 ID；必须是可转换为整数且在入侵防御规则模板中存在的 ID。
                      * 
                      */
                     std::string GetIdsRuleId() const;
 
                     /**
-                     * 设置规则ID
-                     * @param _idsRuleId 规则ID
+                     * 设置自定义规则关联的入侵防御规则 ID；必须是可转换为整数且在入侵防御规则模板中存在的 ID。
+                     * @param _idsRuleId 自定义规则关联的入侵防御规则 ID；必须是可转换为整数且在入侵防御规则模板中存在的 ID。
                      * 
                      */
                     void SetIdsRuleId(const std::string& _idsRuleId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool IdsRuleIdHasBeenSet() const;
 
                     /**
-                     * 获取规则名称
-                     * @return IdsRuleName 规则名称
+                     * 获取自定义规则名称；处理器不对内容做额外校验。
+                     * @return IdsRuleName 自定义规则名称；处理器不对内容做额外校验。
                      * 
                      */
                     std::string GetIdsRuleName() const;
 
                     /**
-                     * 设置规则名称
-                     * @param _idsRuleName 规则名称
+                     * 设置自定义规则名称；处理器不对内容做额外校验。
+                     * @param _idsRuleName 自定义规则名称；处理器不对内容做额外校验。
                      * 
                      */
                     void SetIdsRuleName(const std::string& _idsRuleName);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool IdsRuleNameHasBeenSet() const;
 
                     /**
-                     * 获取访问源
-                     * @return SrcIP 访问源
+                     * 获取自定义规则的源地址。SrcIP、DstIP 至少一项必须是具体 IP；本字段仅在 DstIP 为具体 IP 时可省略或使用与 DstIP 同版本的通配网段。两项均为具体 IP 时，源 IPv6、目的 IPv4 会被拒绝，源 IPv4、目的 IPv6 当前不受该版本检查限制。私网 IPv4 和任意 IPv6 直接通过资产判定，公网 IPv4 必须存在于当前账号 cfw_public_ip；是否要求通过资产判定由两侧地址与实际 FwType 联动决定。
+                     * @return SrcIP 自定义规则的源地址。SrcIP、DstIP 至少一项必须是具体 IP；本字段仅在 DstIP 为具体 IP 时可省略或使用与 DstIP 同版本的通配网段。两项均为具体 IP 时，源 IPv6、目的 IPv4 会被拒绝，源 IPv4、目的 IPv6 当前不受该版本检查限制。私网 IPv4 和任意 IPv6 直接通过资产判定，公网 IPv4 必须存在于当前账号 cfw_public_ip；是否要求通过资产判定由两侧地址与实际 FwType 联动决定。
                      * 
                      */
                     std::string GetSrcIP() const;
 
                     /**
-                     * 设置访问源
-                     * @param _srcIP 访问源
+                     * 设置自定义规则的源地址。SrcIP、DstIP 至少一项必须是具体 IP；本字段仅在 DstIP 为具体 IP 时可省略或使用与 DstIP 同版本的通配网段。两项均为具体 IP 时，源 IPv6、目的 IPv4 会被拒绝，源 IPv4、目的 IPv6 当前不受该版本检查限制。私网 IPv4 和任意 IPv6 直接通过资产判定，公网 IPv4 必须存在于当前账号 cfw_public_ip；是否要求通过资产判定由两侧地址与实际 FwType 联动决定。
+                     * @param _srcIP 自定义规则的源地址。SrcIP、DstIP 至少一项必须是具体 IP；本字段仅在 DstIP 为具体 IP 时可省略或使用与 DstIP 同版本的通配网段。两项均为具体 IP 时，源 IPv6、目的 IPv4 会被拒绝，源 IPv4、目的 IPv6 当前不受该版本检查限制。私网 IPv4 和任意 IPv6 直接通过资产判定，公网 IPv4 必须存在于当前账号 cfw_public_ip；是否要求通过资产判定由两侧地址与实际 FwType 联动决定。
                      * 
                      */
                     void SetSrcIP(const std::string& _srcIP);
@@ -133,25 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 访问目的
+                     * 自定义规则的目的地址。SrcIP、DstIP 至少一项必须是具体 IP；本字段仅在 SrcIP 为具体 IP 时可省略或使用与 SrcIP 同版本的通配网段。两项均为具体 IP 时，源 IPv6、目的 IPv4 会被拒绝，源 IPv4、目的 IPv6 当前不受该版本检查限制。私网 IPv4 和任意 IPv6 直接通过资产判定，公网 IPv4 必须存在于当前账号 cfw_public_ip；是否要求通过资产判定由两侧地址与实际 FwType 联动决定。
                      */
                     std::string m_dstIP;
                     bool m_dstIPHasBeenSet;
 
                     /**
-                     * 规则ID
+                     * 自定义规则关联的入侵防御规则 ID；必须是可转换为整数且在入侵防御规则模板中存在的 ID。
                      */
                     std::string m_idsRuleId;
                     bool m_idsRuleIdHasBeenSet;
 
                     /**
-                     * 规则名称
+                     * 自定义规则名称；处理器不对内容做额外校验。
                      */
                     std::string m_idsRuleName;
                     bool m_idsRuleNameHasBeenSet;
 
                     /**
-                     * 访问源
+                     * 自定义规则的源地址。SrcIP、DstIP 至少一项必须是具体 IP；本字段仅在 DstIP 为具体 IP 时可省略或使用与 DstIP 同版本的通配网段。两项均为具体 IP 时，源 IPv6、目的 IPv4 会被拒绝，源 IPv4、目的 IPv6 当前不受该版本检查限制。私网 IPv4 和任意 IPv6 直接通过资产判定，公网 IPv4 必须存在于当前账号 cfw_public_ip；是否要求通过资产判定由两侧地址与实际 FwType 联动决定。
                      */
                     std::string m_srcIP;
                     bool m_srcIPHasBeenSet;

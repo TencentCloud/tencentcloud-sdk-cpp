@@ -44,7 +44,8 @@ DescribeSecretResponse::DescribeSecretResponse() :
     m_encryptTypeHasBeenSet(false),
     m_encryptSwitchingHasBeenSet(false),
     m_createUinStringHasBeenSet(false),
-    m_targetUinStringHasBeenSet(false)
+    m_targetUinStringHasBeenSet(false),
+    m_accountInfoListHasBeenSet(false)
 {
 }
 
@@ -295,6 +296,26 @@ CoreInternalOutcome DescribeSecretResponse::Deserialize(const string &payload)
         m_targetUinStringHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AccountInfoList") && !rsp["AccountInfoList"].IsNull())
+    {
+        if (!rsp["AccountInfoList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AccountInfoList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["AccountInfoList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SecretAccountInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_accountInfoList.push_back(item);
+        }
+        m_accountInfoListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -476,6 +497,21 @@ string DescribeSecretResponse::ToJsonString() const
         string key = "TargetUinString";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_targetUinString.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accountInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_accountInfoList.begin(); itr != m_accountInfoList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -698,6 +734,16 @@ string DescribeSecretResponse::GetTargetUinString() const
 bool DescribeSecretResponse::TargetUinStringHasBeenSet() const
 {
     return m_targetUinStringHasBeenSet;
+}
+
+vector<SecretAccountInfo> DescribeSecretResponse::GetAccountInfoList() const
+{
+    return m_accountInfoList;
+}
+
+bool DescribeSecretResponse::AccountInfoListHasBeenSet() const
+{
+    return m_accountInfoListHasBeenSet;
 }
 
 

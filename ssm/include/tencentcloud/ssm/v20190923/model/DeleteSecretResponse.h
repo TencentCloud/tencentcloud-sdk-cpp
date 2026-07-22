@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指定删除的凭据名称。
-                     * @return SecretName 指定删除的凭据名称。
+                     * 获取<p>指定删除的凭据名称。</p>
+                     * @return SecretName <p>指定删除的凭据名称。</p>
                      * 
                      */
                     std::string GetSecretName() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool SecretNameHasBeenSet() const;
 
                     /**
-                     * 获取凭据删除的日期，unix时间戳。
-                     * @return DeleteTime 凭据删除的日期，unix时间戳。
+                     * 获取<p>凭据删除的日期，unix时间戳。</p>
+                     * @return DeleteTime <p>凭据删除的日期，unix时间戳。</p>
                      * 
                      */
                     int64_t GetDeleteTime() const;
@@ -71,19 +71,39 @@ namespace TencentCloud
                      */
                     bool DeleteTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>异步删除任务 ID</p>
+                     * @return FlowID <p>异步删除任务 ID</p>
+                     * 
+                     */
+                    int64_t GetFlowID() const;
+
+                    /**
+                     * 判断参数 FlowID 是否已赋值
+                     * @return FlowID 是否已赋值
+                     * 
+                     */
+                    bool FlowIDHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 指定删除的凭据名称。
+                     * <p>指定删除的凭据名称。</p>
                      */
                     std::string m_secretName;
                     bool m_secretNameHasBeenSet;
 
                     /**
-                     * 凭据删除的日期，unix时间戳。
+                     * <p>凭据删除的日期，unix时间戳。</p>
                      */
                     int64_t m_deleteTime;
                     bool m_deleteTimeHasBeenSet;
+
+                    /**
+                     * <p>异步删除任务 ID</p>
+                     */
+                    int64_t m_flowID;
+                    bool m_flowIDHasBeenSet;
 
                 };
             }

@@ -28,7 +28,8 @@ ImageTaskInput::ImageTaskInput() :
     m_beautyConfigHasBeenSet(false),
     m_transformConfigHasBeenSet(false),
     m_aiTryOnConfigHasBeenSet(false),
-    m_aiPosterSuiteConfigHasBeenSet(false)
+    m_aiPosterSuiteConfigHasBeenSet(false),
+    m_createImageConfigHasBeenSet(false)
 {
 }
 
@@ -173,6 +174,23 @@ CoreInternalOutcome ImageTaskInput::Deserialize(const rapidjson::Value &value)
         m_aiPosterSuiteConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateImageConfig") && !value["CreateImageConfig"].IsNull())
+    {
+        if (!value["CreateImageConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageTaskInput.CreateImageConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_createImageConfig.Deserialize(value["CreateImageConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_createImageConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -250,6 +268,15 @@ void ImageTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_aiPosterSuiteConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_createImageConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateImageConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_createImageConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -381,5 +408,21 @@ void ImageTaskInput::SetAiPosterSuiteConfig(const AiPosterSuiteConfig& _aiPoster
 bool ImageTaskInput::AiPosterSuiteConfigHasBeenSet() const
 {
     return m_aiPosterSuiteConfigHasBeenSet;
+}
+
+CreateImageConfig ImageTaskInput::GetCreateImageConfig() const
+{
+    return m_createImageConfig;
+}
+
+void ImageTaskInput::SetCreateImageConfig(const CreateImageConfig& _createImageConfig)
+{
+    m_createImageConfig = _createImageConfig;
+    m_createImageConfigHasBeenSet = true;
+}
+
+bool ImageTaskInput::CreateImageConfigHasBeenSet() const
+{
+    return m_createImageConfigHasBeenSet;
 }
 

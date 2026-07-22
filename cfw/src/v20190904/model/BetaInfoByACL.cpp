@@ -21,9 +21,9 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 BetaInfoByACL::BetaInfoByACL() :
+    m_lastTimeHasBeenSet(false),
     m_taskIdHasBeenSet(false),
-    m_taskNameHasBeenSet(false),
-    m_lastTimeHasBeenSet(false)
+    m_taskNameHasBeenSet(false)
 {
 }
 
@@ -31,6 +31,16 @@ CoreInternalOutcome BetaInfoByACL::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("LastTime") && !value["LastTime"].IsNull())
+    {
+        if (!value["LastTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BetaInfoByACL.LastTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastTime = string(value["LastTime"].GetString());
+        m_lastTimeHasBeenSet = true;
+    }
 
     if (value.HasMember("TaskId") && !value["TaskId"].IsNull())
     {
@@ -52,22 +62,20 @@ CoreInternalOutcome BetaInfoByACL::Deserialize(const rapidjson::Value &value)
         m_taskNameHasBeenSet = true;
     }
 
-    if (value.HasMember("LastTime") && !value["LastTime"].IsNull())
-    {
-        if (!value["LastTime"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `BetaInfoByACL.LastTime` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_lastTime = string(value["LastTime"].GetString());
-        m_lastTimeHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
 void BetaInfoByACL::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_lastTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastTime.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_taskIdHasBeenSet)
     {
@@ -85,16 +93,24 @@ void BetaInfoByACL::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         value.AddMember(iKey, rapidjson::Value(m_taskName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_lastTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LastTime";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_lastTime.c_str(), allocator).Move(), allocator);
-    }
-
 }
 
+
+string BetaInfoByACL::GetLastTime() const
+{
+    return m_lastTime;
+}
+
+void BetaInfoByACL::SetLastTime(const string& _lastTime)
+{
+    m_lastTime = _lastTime;
+    m_lastTimeHasBeenSet = true;
+}
+
+bool BetaInfoByACL::LastTimeHasBeenSet() const
+{
+    return m_lastTimeHasBeenSet;
+}
 
 int64_t BetaInfoByACL::GetTaskId() const
 {
@@ -126,21 +142,5 @@ void BetaInfoByACL::SetTaskName(const string& _taskName)
 bool BetaInfoByACL::TaskNameHasBeenSet() const
 {
     return m_taskNameHasBeenSet;
-}
-
-string BetaInfoByACL::GetLastTime() const
-{
-    return m_lastTime;
-}
-
-void BetaInfoByACL::SetLastTime(const string& _lastTime)
-{
-    m_lastTime = _lastTime;
-    m_lastTimeHasBeenSet = true;
-}
-
-bool BetaInfoByACL::LastTimeHasBeenSet() const
-{
-    return m_lastTimeHasBeenSet;
 }
 

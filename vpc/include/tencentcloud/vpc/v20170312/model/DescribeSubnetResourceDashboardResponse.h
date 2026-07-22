@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源统计结果。
-                     * @return ResourceStatisticsSet 资源统计结果。
+                     * 获取<p>资源统计结果。</p>
+                     * @return ResourceStatisticsSet <p>资源统计结果。</p>
                      * 
                      */
                     std::vector<ResourceStatistics> GetResourceStatisticsSet() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源统计结果。
+                     * <p>资源统计结果。</p>
                      */
                     std::vector<ResourceStatistics> m_resourceStatisticsSet;
                     bool m_resourceStatisticsSetHasBeenSet;

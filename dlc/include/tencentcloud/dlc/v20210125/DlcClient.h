@@ -35,6 +35,8 @@
 #include <tencentcloud/dlc/v20210125/model/AlterDMSPartitionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/AlterDMSTableRequest.h>
 #include <tencentcloud/dlc/v20210125/model/AlterDMSTableResponse.h>
+#include <tencentcloud/dlc/v20210125/model/AlterTableCommentRequest.h>
+#include <tencentcloud/dlc/v20210125/model/AlterTableCommentResponse.h>
 #include <tencentcloud/dlc/v20210125/model/AssignMangedTablePropertiesRequest.h>
 #include <tencentcloud/dlc/v20210125/model/AssignMangedTablePropertiesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/AssociateDatasourceHouseRequest.h>
@@ -85,6 +87,8 @@
 #include <tencentcloud/dlc/v20210125/model/CreateImportTaskResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateInternalTableRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateInternalTableResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateMetaDatabaseRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateMetaDatabaseResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateNotebookSessionRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateNotebookSessionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateNotebookSessionStatementRequest.h>
@@ -131,6 +135,8 @@
 #include <tencentcloud/dlc/v20210125/model/DeleteDataEngineResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteDataMaskStrategyRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteDataMaskStrategyResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DeleteMetaDatabaseRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DeleteMetaDatabaseResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteNativeSparkSessionRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteNativeSparkSessionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteNotebookSessionRequest.h>
@@ -183,6 +189,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeDataEnginesScaleDetailResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDataMaskStrategiesRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDataMaskStrategiesResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeDatabaseRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeDatabaseResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDatabasesRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDatabasesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDatasourceConnectionRequest.h>
@@ -319,6 +327,8 @@
 #include <tencentcloud/dlc/v20210125/model/DropDMSTableResponse.h>
 #include <tencentcloud/dlc/v20210125/model/GenerateCreateMangedTableSqlRequest.h>
 #include <tencentcloud/dlc/v20210125/model/GenerateCreateMangedTableSqlResponse.h>
+#include <tencentcloud/dlc/v20210125/model/GenerateInternalTableRequest.h>
+#include <tencentcloud/dlc/v20210125/model/GenerateInternalTableResponse.h>
 #include <tencentcloud/dlc/v20210125/model/GetOptimizerPolicyRequest.h>
 #include <tencentcloud/dlc/v20210125/model/GetOptimizerPolicyResponse.h>
 #include <tencentcloud/dlc/v20210125/model/GrantDLCCatalogAccessRequest.h>
@@ -439,6 +449,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AlterDMSTableResponse> AlterDMSTableOutcome;
                 typedef std::future<AlterDMSTableOutcome> AlterDMSTableOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::AlterDMSTableRequest&, AlterDMSTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AlterDMSTableAsyncHandler;
+                typedef Outcome<Core::Error, Model::AlterTableCommentResponse> AlterTableCommentOutcome;
+                typedef std::future<AlterTableCommentOutcome> AlterTableCommentOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::AlterTableCommentRequest&, AlterTableCommentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AlterTableCommentAsyncHandler;
                 typedef Outcome<Core::Error, Model::AssignMangedTablePropertiesResponse> AssignMangedTablePropertiesOutcome;
                 typedef std::future<AssignMangedTablePropertiesOutcome> AssignMangedTablePropertiesOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::AssignMangedTablePropertiesRequest&, AssignMangedTablePropertiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssignMangedTablePropertiesAsyncHandler;
@@ -514,6 +527,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateInternalTableResponse> CreateInternalTableOutcome;
                 typedef std::future<CreateInternalTableOutcome> CreateInternalTableOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateInternalTableRequest&, CreateInternalTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInternalTableAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMetaDatabaseResponse> CreateMetaDatabaseOutcome;
+                typedef std::future<CreateMetaDatabaseOutcome> CreateMetaDatabaseOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateMetaDatabaseRequest&, CreateMetaDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMetaDatabaseAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateNotebookSessionResponse> CreateNotebookSessionOutcome;
                 typedef std::future<CreateNotebookSessionOutcome> CreateNotebookSessionOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateNotebookSessionRequest&, CreateNotebookSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNotebookSessionAsyncHandler;
@@ -583,6 +599,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDataMaskStrategyResponse> DeleteDataMaskStrategyOutcome;
                 typedef std::future<DeleteDataMaskStrategyOutcome> DeleteDataMaskStrategyOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DeleteDataMaskStrategyRequest&, DeleteDataMaskStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataMaskStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteMetaDatabaseResponse> DeleteMetaDatabaseOutcome;
+                typedef std::future<DeleteMetaDatabaseOutcome> DeleteMetaDatabaseOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DeleteMetaDatabaseRequest&, DeleteMetaDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMetaDatabaseAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteNativeSparkSessionResponse> DeleteNativeSparkSessionOutcome;
                 typedef std::future<DeleteNativeSparkSessionOutcome> DeleteNativeSparkSessionOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DeleteNativeSparkSessionRequest&, DeleteNativeSparkSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNativeSparkSessionAsyncHandler;
@@ -661,6 +680,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDataMaskStrategiesResponse> DescribeDataMaskStrategiesOutcome;
                 typedef std::future<DescribeDataMaskStrategiesOutcome> DescribeDataMaskStrategiesOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeDataMaskStrategiesRequest&, DescribeDataMaskStrategiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataMaskStrategiesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDatabaseResponse> DescribeDatabaseOutcome;
+                typedef std::future<DescribeDatabaseOutcome> DescribeDatabaseOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeDatabaseRequest&, DescribeDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDatabasesResponse> DescribeDatabasesOutcome;
                 typedef std::future<DescribeDatabasesOutcome> DescribeDatabasesOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeDatabasesRequest&, DescribeDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabasesAsyncHandler;
@@ -865,6 +887,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GenerateCreateMangedTableSqlResponse> GenerateCreateMangedTableSqlOutcome;
                 typedef std::future<GenerateCreateMangedTableSqlOutcome> GenerateCreateMangedTableSqlOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::GenerateCreateMangedTableSqlRequest&, GenerateCreateMangedTableSqlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateCreateMangedTableSqlAsyncHandler;
+                typedef Outcome<Core::Error, Model::GenerateInternalTableResponse> GenerateInternalTableOutcome;
+                typedef std::future<GenerateInternalTableOutcome> GenerateInternalTableOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::GenerateInternalTableRequest&, GenerateInternalTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateInternalTableAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetOptimizerPolicyResponse> GetOptimizerPolicyOutcome;
                 typedef std::future<GetOptimizerPolicyOutcome> GetOptimizerPolicyOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::GetOptimizerPolicyRequest&, GetOptimizerPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetOptimizerPolicyAsyncHandler;
@@ -1053,6 +1078,15 @@ namespace TencentCloud
                 AlterDMSTableOutcome AlterDMSTable(const Model::AlterDMSTableRequest &request);
                 void AlterDMSTableAsync(const Model::AlterDMSTableRequest& request, const AlterDMSTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AlterDMSTableOutcomeCallable AlterDMSTableCallable(const Model::AlterDMSTableRequest& request);
+
+                /**
+                 *修改表备注
+                 * @param req AlterTableCommentRequest
+                 * @return AlterTableCommentOutcome
+                 */
+                AlterTableCommentOutcome AlterTableComment(const Model::AlterTableCommentRequest &request);
+                void AlterTableCommentAsync(const Model::AlterTableCommentRequest& request, const AlterTableCommentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AlterTableCommentOutcomeCallable AlterTableCommentCallable(const Model::AlterTableCommentRequest& request);
 
                 /**
                  *分配原生表表属性
@@ -1280,6 +1314,15 @@ namespace TencentCloud
                 CreateInternalTableOutcomeCallable CreateInternalTableCallable(const Model::CreateInternalTableRequest& request);
 
                 /**
+                 *本接口（CreateMetaDatabase）用于创建元数据库
+                 * @param req CreateMetaDatabaseRequest
+                 * @return CreateMetaDatabaseOutcome
+                 */
+                CreateMetaDatabaseOutcome CreateMetaDatabase(const Model::CreateMetaDatabaseRequest &request);
+                void CreateMetaDatabaseAsync(const Model::CreateMetaDatabaseRequest& request, const CreateMetaDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMetaDatabaseOutcomeCallable CreateMetaDatabaseCallable(const Model::CreateMetaDatabaseRequest& request);
+
+                /**
                  *本接口（CreateNotebookSession）用于创建交互式session（notebook）
                  * @param req CreateNotebookSessionRequest
                  * @return CreateNotebookSessionOutcome
@@ -1487,6 +1530,15 @@ namespace TencentCloud
                 DeleteDataMaskStrategyOutcome DeleteDataMaskStrategy(const Model::DeleteDataMaskStrategyRequest &request);
                 void DeleteDataMaskStrategyAsync(const Model::DeleteDataMaskStrategyRequest& request, const DeleteDataMaskStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDataMaskStrategyOutcomeCallable DeleteDataMaskStrategyCallable(const Model::DeleteDataMaskStrategyRequest& request);
+
+                /**
+                 *本接口（DeleteMetaDatabase）用于一键删除元数据库
+                 * @param req DeleteMetaDatabaseRequest
+                 * @return DeleteMetaDatabaseOutcome
+                 */
+                DeleteMetaDatabaseOutcome DeleteMetaDatabase(const Model::DeleteMetaDatabaseRequest &request);
+                void DeleteMetaDatabaseAsync(const Model::DeleteMetaDatabaseRequest& request, const DeleteMetaDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteMetaDatabaseOutcomeCallable DeleteMetaDatabaseCallable(const Model::DeleteMetaDatabaseRequest& request);
 
                 /**
                  *根据spark session名称销毁eg spark session
@@ -1721,6 +1773,15 @@ namespace TencentCloud
                 DescribeDataMaskStrategiesOutcome DescribeDataMaskStrategies(const Model::DescribeDataMaskStrategiesRequest &request);
                 void DescribeDataMaskStrategiesAsync(const Model::DescribeDataMaskStrategiesRequest& request, const DescribeDataMaskStrategiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDataMaskStrategiesOutcomeCallable DescribeDataMaskStrategiesCallable(const Model::DescribeDataMaskStrategiesRequest& request);
+
+                /**
+                 *本接口（DescribeDatabase）,查询数据库详细信息
+                 * @param req DescribeDatabaseRequest
+                 * @return DescribeDatabaseOutcome
+                 */
+                DescribeDatabaseOutcome DescribeDatabase(const Model::DescribeDatabaseRequest &request);
+                void DescribeDatabaseAsync(const Model::DescribeDatabaseRequest& request, const DescribeDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDatabaseOutcomeCallable DescribeDatabaseCallable(const Model::DescribeDatabaseRequest& request);
 
                 /**
                  *本接口（DescribeDatabases）用于查询数据库列表。
@@ -2333,6 +2394,15 @@ namespace TencentCloud
                 GenerateCreateMangedTableSqlOutcome GenerateCreateMangedTableSql(const Model::GenerateCreateMangedTableSqlRequest &request);
                 void GenerateCreateMangedTableSqlAsync(const Model::GenerateCreateMangedTableSqlRequest& request, const GenerateCreateMangedTableSqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GenerateCreateMangedTableSqlOutcomeCallable GenerateCreateMangedTableSqlCallable(const Model::GenerateCreateMangedTableSqlRequest& request);
+
+                /**
+                 *建表
+                 * @param req GenerateInternalTableRequest
+                 * @return GenerateInternalTableOutcome
+                 */
+                GenerateInternalTableOutcome GenerateInternalTable(const Model::GenerateInternalTableRequest &request);
+                void GenerateInternalTableAsync(const Model::GenerateInternalTableRequest& request, const GenerateInternalTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GenerateInternalTableOutcomeCallable GenerateInternalTableCallable(const Model::GenerateInternalTableRequest& request);
 
                 /**
                  *GetOptimizerPolicy

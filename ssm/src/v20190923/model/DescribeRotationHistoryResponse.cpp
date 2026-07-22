@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeRotationHistoryResponse::DescribeRotationHistoryResponse() :
     m_versionIDsHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_accountInfoListHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,26 @@ CoreInternalOutcome DescribeRotationHistoryResponse::Deserialize(const string &p
         m_totalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AccountInfoList") && !rsp["AccountInfoList"].IsNull())
+    {
+        if (!rsp["AccountInfoList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AccountInfoList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["AccountInfoList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SecretAccountInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_accountInfoList.push_back(item);
+        }
+        m_accountInfoListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +136,21 @@ string DescribeRotationHistoryResponse::ToJsonString() const
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_accountInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_accountInfoList.begin(); itr != m_accountInfoList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -147,6 +183,16 @@ int64_t DescribeRotationHistoryResponse::GetTotalCount() const
 bool DescribeRotationHistoryResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+vector<SecretAccountInfo> DescribeRotationHistoryResponse::GetAccountInfoList() const
+{
+    return m_accountInfoList;
+}
+
+bool DescribeRotationHistoryResponse::AccountInfoListHasBeenSet() const
+{
+    return m_accountInfoListHasBeenSet;
 }
 
 

@@ -21,13 +21,13 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 SecurityGroupSimplifyRule::SecurityGroupSimplifyRule() :
-    m_sourceContentHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_destContentHasBeenSet(false),
     m_protocolHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_ruleUuidHasBeenSet(false),
+    m_scopeHasBeenSet(false),
     m_sequenceHasBeenSet(false),
-    m_scopeHasBeenSet(false)
+    m_sourceContentHasBeenSet(false)
 {
 }
 
@@ -36,14 +36,14 @@ CoreInternalOutcome SecurityGroupSimplifyRule::Deserialize(const rapidjson::Valu
     string requestId = "";
 
 
-    if (value.HasMember("SourceContent") && !value["SourceContent"].IsNull())
+    if (value.HasMember("Description") && !value["Description"].IsNull())
     {
-        if (!value["SourceContent"].IsString())
+        if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `SecurityGroupSimplifyRule.SourceContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupSimplifyRule.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_sourceContent = string(value["SourceContent"].GetString());
-        m_sourceContentHasBeenSet = true;
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
     }
 
     if (value.HasMember("DestContent") && !value["DestContent"].IsNull())
@@ -66,16 +66,6 @@ CoreInternalOutcome SecurityGroupSimplifyRule::Deserialize(const rapidjson::Valu
         m_protocolHasBeenSet = true;
     }
 
-    if (value.HasMember("Description") && !value["Description"].IsNull())
-    {
-        if (!value["Description"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `SecurityGroupSimplifyRule.Description` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_description = string(value["Description"].GetString());
-        m_descriptionHasBeenSet = true;
-    }
-
     if (value.HasMember("RuleUuid") && !value["RuleUuid"].IsNull())
     {
         if (!value["RuleUuid"].IsInt64())
@@ -84,16 +74,6 @@ CoreInternalOutcome SecurityGroupSimplifyRule::Deserialize(const rapidjson::Valu
         }
         m_ruleUuid = value["RuleUuid"].GetInt64();
         m_ruleUuidHasBeenSet = true;
-    }
-
-    if (value.HasMember("Sequence") && !value["Sequence"].IsNull())
-    {
-        if (!value["Sequence"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `SecurityGroupSimplifyRule.Sequence` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_sequence = value["Sequence"].GetInt64();
-        m_sequenceHasBeenSet = true;
     }
 
     if (value.HasMember("Scope") && !value["Scope"].IsNull())
@@ -106,6 +86,26 @@ CoreInternalOutcome SecurityGroupSimplifyRule::Deserialize(const rapidjson::Valu
         m_scopeHasBeenSet = true;
     }
 
+    if (value.HasMember("Sequence") && !value["Sequence"].IsNull())
+    {
+        if (!value["Sequence"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupSimplifyRule.Sequence` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sequence = value["Sequence"].GetInt64();
+        m_sequenceHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceContent") && !value["SourceContent"].IsNull())
+    {
+        if (!value["SourceContent"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupSimplifyRule.SourceContent` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceContent = string(value["SourceContent"].GetString());
+        m_sourceContentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -113,12 +113,12 @@ CoreInternalOutcome SecurityGroupSimplifyRule::Deserialize(const rapidjson::Valu
 void SecurityGroupSimplifyRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_sourceContentHasBeenSet)
+    if (m_descriptionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SourceContent";
+        string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_sourceContent.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_destContentHasBeenSet)
@@ -137,28 +137,12 @@ void SecurityGroupSimplifyRule::ToJsonObject(rapidjson::Value &value, rapidjson:
         value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_descriptionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Description";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_ruleUuidHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuleUuid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ruleUuid, allocator);
-    }
-
-    if (m_sequenceHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Sequence";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_sequence, allocator);
     }
 
     if (m_scopeHasBeenSet)
@@ -169,23 +153,39 @@ void SecurityGroupSimplifyRule::ToJsonObject(rapidjson::Value &value, rapidjson:
         value.AddMember(iKey, rapidjson::Value(m_scope.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_sequenceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sequence";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sequence, allocator);
+    }
+
+    if (m_sourceContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceContent.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
-string SecurityGroupSimplifyRule::GetSourceContent() const
+string SecurityGroupSimplifyRule::GetDescription() const
 {
-    return m_sourceContent;
+    return m_description;
 }
 
-void SecurityGroupSimplifyRule::SetSourceContent(const string& _sourceContent)
+void SecurityGroupSimplifyRule::SetDescription(const string& _description)
 {
-    m_sourceContent = _sourceContent;
-    m_sourceContentHasBeenSet = true;
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
 }
 
-bool SecurityGroupSimplifyRule::SourceContentHasBeenSet() const
+bool SecurityGroupSimplifyRule::DescriptionHasBeenSet() const
 {
-    return m_sourceContentHasBeenSet;
+    return m_descriptionHasBeenSet;
 }
 
 string SecurityGroupSimplifyRule::GetDestContent() const
@@ -220,22 +220,6 @@ bool SecurityGroupSimplifyRule::ProtocolHasBeenSet() const
     return m_protocolHasBeenSet;
 }
 
-string SecurityGroupSimplifyRule::GetDescription() const
-{
-    return m_description;
-}
-
-void SecurityGroupSimplifyRule::SetDescription(const string& _description)
-{
-    m_description = _description;
-    m_descriptionHasBeenSet = true;
-}
-
-bool SecurityGroupSimplifyRule::DescriptionHasBeenSet() const
-{
-    return m_descriptionHasBeenSet;
-}
-
 int64_t SecurityGroupSimplifyRule::GetRuleUuid() const
 {
     return m_ruleUuid;
@@ -250,6 +234,22 @@ void SecurityGroupSimplifyRule::SetRuleUuid(const int64_t& _ruleUuid)
 bool SecurityGroupSimplifyRule::RuleUuidHasBeenSet() const
 {
     return m_ruleUuidHasBeenSet;
+}
+
+string SecurityGroupSimplifyRule::GetScope() const
+{
+    return m_scope;
+}
+
+void SecurityGroupSimplifyRule::SetScope(const string& _scope)
+{
+    m_scope = _scope;
+    m_scopeHasBeenSet = true;
+}
+
+bool SecurityGroupSimplifyRule::ScopeHasBeenSet() const
+{
+    return m_scopeHasBeenSet;
 }
 
 int64_t SecurityGroupSimplifyRule::GetSequence() const
@@ -268,19 +268,19 @@ bool SecurityGroupSimplifyRule::SequenceHasBeenSet() const
     return m_sequenceHasBeenSet;
 }
 
-string SecurityGroupSimplifyRule::GetScope() const
+string SecurityGroupSimplifyRule::GetSourceContent() const
 {
-    return m_scope;
+    return m_sourceContent;
 }
 
-void SecurityGroupSimplifyRule::SetScope(const string& _scope)
+void SecurityGroupSimplifyRule::SetSourceContent(const string& _sourceContent)
 {
-    m_scope = _scope;
-    m_scopeHasBeenSet = true;
+    m_sourceContent = _sourceContent;
+    m_sourceContentHasBeenSet = true;
 }
 
-bool SecurityGroupSimplifyRule::ScopeHasBeenSet() const
+bool SecurityGroupSimplifyRule::SourceContentHasBeenSet() const
 {
-    return m_scopeHasBeenSet;
+    return m_sourceContentHasBeenSet;
 }
 

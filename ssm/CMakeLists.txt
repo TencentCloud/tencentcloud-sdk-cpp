@@ -70,6 +70,7 @@ set(ssm_public_header_model
   include/tencentcloud/ssm/v20190923/model/CreateProductSecretResponse.h
   include/tencentcloud/ssm/v20190923/model/ListSecretsResponse.h
   include/tencentcloud/ssm/v20190923/model/DescribeSecretRequest.h
+  include/tencentcloud/ssm/v20190923/model/SecretAccountInfo.h
   include/tencentcloud/ssm/v20190923/model/GetServiceStatusRequest.h
   include/tencentcloud/ssm/v20190923/model/ListSecretVersionIdsResponse.h
   )
@@ -127,6 +128,7 @@ set(ssm_src
   src/v20190923/model/CreateProductSecretResponse.cpp
   src/v20190923/model/ListSecretsResponse.cpp
   src/v20190923/model/DescribeSecretRequest.cpp
+  src/v20190923/model/SecretAccountInfo.cpp
   src/v20190923/model/GetServiceStatusRequest.cpp
   src/v20190923/model/ListSecretVersionIdsResponse.cpp
   )

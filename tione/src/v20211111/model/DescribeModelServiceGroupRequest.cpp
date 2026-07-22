@@ -24,6 +24,7 @@ using namespace std;
 
 DescribeModelServiceGroupRequest::DescribeModelServiceGroupRequest() :
     m_serviceGroupIdHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false),
     m_serviceCategoryHasBeenSet(false)
 {
 }
@@ -41,6 +42,14 @@ string DescribeModelServiceGroupRequest::ToJsonString() const
         string key = "ServiceGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serviceGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serviceCategoryHasBeenSet)
@@ -73,6 +82,22 @@ void DescribeModelServiceGroupRequest::SetServiceGroupId(const string& _serviceG
 bool DescribeModelServiceGroupRequest::ServiceGroupIdHasBeenSet() const
 {
     return m_serviceGroupIdHasBeenSet;
+}
+
+string DescribeModelServiceGroupRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void DescribeModelServiceGroupRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool DescribeModelServiceGroupRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 string DescribeModelServiceGroupRequest::GetServiceCategory() const

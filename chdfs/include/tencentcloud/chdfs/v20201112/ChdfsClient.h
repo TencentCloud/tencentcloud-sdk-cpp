@@ -35,6 +35,8 @@
 #include <tencentcloud/chdfs/v20201112/model/CreateLifeCycleRulesResponse.h>
 #include <tencentcloud/chdfs/v20201112/model/CreateMountPointRequest.h>
 #include <tencentcloud/chdfs/v20201112/model/CreateMountPointResponse.h>
+#include <tencentcloud/chdfs/v20201112/model/CreatePathProtectionRuleRequest.h>
+#include <tencentcloud/chdfs/v20201112/model/CreatePathProtectionRuleResponse.h>
 #include <tencentcloud/chdfs/v20201112/model/CreateRestoreTasksRequest.h>
 #include <tencentcloud/chdfs/v20201112/model/CreateRestoreTasksResponse.h>
 #include <tencentcloud/chdfs/v20201112/model/CreateTrashConfigRequest.h>
@@ -49,6 +51,8 @@
 #include <tencentcloud/chdfs/v20201112/model/DeleteLifeCycleRulesResponse.h>
 #include <tencentcloud/chdfs/v20201112/model/DeleteMountPointRequest.h>
 #include <tencentcloud/chdfs/v20201112/model/DeleteMountPointResponse.h>
+#include <tencentcloud/chdfs/v20201112/model/DeletePathProtectionRuleRequest.h>
+#include <tencentcloud/chdfs/v20201112/model/DeletePathProtectionRuleResponse.h>
 #include <tencentcloud/chdfs/v20201112/model/DeleteTrashConfigRequest.h>
 #include <tencentcloud/chdfs/v20201112/model/DeleteTrashConfigResponse.h>
 #include <tencentcloud/chdfs/v20201112/model/DescribeAccessGroupRequest.h>
@@ -67,6 +71,8 @@
 #include <tencentcloud/chdfs/v20201112/model/DescribeMountPointResponse.h>
 #include <tencentcloud/chdfs/v20201112/model/DescribeMountPointsRequest.h>
 #include <tencentcloud/chdfs/v20201112/model/DescribeMountPointsResponse.h>
+#include <tencentcloud/chdfs/v20201112/model/DescribePathProtectionRulesRequest.h>
+#include <tencentcloud/chdfs/v20201112/model/DescribePathProtectionRulesResponse.h>
 #include <tencentcloud/chdfs/v20201112/model/DescribeResourceTagsRequest.h>
 #include <tencentcloud/chdfs/v20201112/model/DescribeResourceTagsResponse.h>
 #include <tencentcloud/chdfs/v20201112/model/DescribeRestoreTasksRequest.h>
@@ -85,6 +91,8 @@
 #include <tencentcloud/chdfs/v20201112/model/ModifyLifeCycleRulesResponse.h>
 #include <tencentcloud/chdfs/v20201112/model/ModifyMountPointRequest.h>
 #include <tencentcloud/chdfs/v20201112/model/ModifyMountPointResponse.h>
+#include <tencentcloud/chdfs/v20201112/model/ModifyPathProtectionRuleRequest.h>
+#include <tencentcloud/chdfs/v20201112/model/ModifyPathProtectionRuleResponse.h>
 #include <tencentcloud/chdfs/v20201112/model/ModifyResourceTagsRequest.h>
 #include <tencentcloud/chdfs/v20201112/model/ModifyResourceTagsResponse.h>
 #include <tencentcloud/chdfs/v20201112/model/ModifyTrashConfigRequest.h>
@@ -121,6 +129,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateMountPointResponse> CreateMountPointOutcome;
                 typedef std::future<CreateMountPointOutcome> CreateMountPointOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::CreateMountPointRequest&, CreateMountPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMountPointAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePathProtectionRuleResponse> CreatePathProtectionRuleOutcome;
+                typedef std::future<CreatePathProtectionRuleOutcome> CreatePathProtectionRuleOutcomeCallable;
+                typedef std::function<void(const ChdfsClient*, const Model::CreatePathProtectionRuleRequest&, CreatePathProtectionRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePathProtectionRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRestoreTasksResponse> CreateRestoreTasksOutcome;
                 typedef std::future<CreateRestoreTasksOutcome> CreateRestoreTasksOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::CreateRestoreTasksRequest&, CreateRestoreTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRestoreTasksAsyncHandler;
@@ -142,6 +153,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteMountPointResponse> DeleteMountPointOutcome;
                 typedef std::future<DeleteMountPointOutcome> DeleteMountPointOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::DeleteMountPointRequest&, DeleteMountPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMountPointAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeletePathProtectionRuleResponse> DeletePathProtectionRuleOutcome;
+                typedef std::future<DeletePathProtectionRuleOutcome> DeletePathProtectionRuleOutcomeCallable;
+                typedef std::function<void(const ChdfsClient*, const Model::DeletePathProtectionRuleRequest&, DeletePathProtectionRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePathProtectionRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTrashConfigResponse> DeleteTrashConfigOutcome;
                 typedef std::future<DeleteTrashConfigOutcome> DeleteTrashConfigOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::DeleteTrashConfigRequest&, DeleteTrashConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTrashConfigAsyncHandler;
@@ -169,6 +183,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMountPointsResponse> DescribeMountPointsOutcome;
                 typedef std::future<DescribeMountPointsOutcome> DescribeMountPointsOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::DescribeMountPointsRequest&, DescribeMountPointsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMountPointsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePathProtectionRulesResponse> DescribePathProtectionRulesOutcome;
+                typedef std::future<DescribePathProtectionRulesOutcome> DescribePathProtectionRulesOutcomeCallable;
+                typedef std::function<void(const ChdfsClient*, const Model::DescribePathProtectionRulesRequest&, DescribePathProtectionRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePathProtectionRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeResourceTagsResponse> DescribeResourceTagsOutcome;
                 typedef std::future<DescribeResourceTagsOutcome> DescribeResourceTagsOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::DescribeResourceTagsRequest&, DescribeResourceTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceTagsAsyncHandler;
@@ -196,6 +213,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyMountPointResponse> ModifyMountPointOutcome;
                 typedef std::future<ModifyMountPointOutcome> ModifyMountPointOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::ModifyMountPointRequest&, ModifyMountPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMountPointAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPathProtectionRuleResponse> ModifyPathProtectionRuleOutcome;
+                typedef std::future<ModifyPathProtectionRuleOutcome> ModifyPathProtectionRuleOutcomeCallable;
+                typedef std::function<void(const ChdfsClient*, const Model::ModifyPathProtectionRuleRequest&, ModifyPathProtectionRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPathProtectionRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyResourceTagsResponse> ModifyResourceTagsOutcome;
                 typedef std::future<ModifyResourceTagsOutcome> ModifyResourceTagsOutcomeCallable;
                 typedef std::function<void(const ChdfsClient*, const Model::ModifyResourceTagsRequest&, ModifyResourceTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourceTagsAsyncHandler;
@@ -260,6 +280,15 @@ namespace TencentCloud
                 CreateMountPointOutcomeCallable CreateMountPointCallable(const Model::CreateMountPointRequest& request);
 
                 /**
+                 *创建路径保护规则。
+                 * @param req CreatePathProtectionRuleRequest
+                 * @return CreatePathProtectionRuleOutcome
+                 */
+                CreatePathProtectionRuleOutcome CreatePathProtectionRule(const Model::CreatePathProtectionRuleRequest &request);
+                void CreatePathProtectionRuleAsync(const Model::CreatePathProtectionRuleRequest& request, const CreatePathProtectionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePathProtectionRuleOutcomeCallable CreatePathProtectionRuleCallable(const Model::CreatePathProtectionRuleRequest& request);
+
+                /**
                  *批量创建回热任务，回热任务ID、状态和创建时间无需填写。
                  * @param req CreateRestoreTasksRequest
                  * @return CreateRestoreTasksOutcome
@@ -321,6 +350,15 @@ namespace TencentCloud
                 DeleteMountPointOutcome DeleteMountPoint(const Model::DeleteMountPointRequest &request);
                 void DeleteMountPointAsync(const Model::DeleteMountPointRequest& request, const DeleteMountPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteMountPointOutcomeCallable DeleteMountPointCallable(const Model::DeleteMountPointRequest& request);
+
+                /**
+                 *删除路径保护规则。
+                 * @param req DeletePathProtectionRuleRequest
+                 * @return DeletePathProtectionRuleOutcome
+                 */
+                DeletePathProtectionRuleOutcome DeletePathProtectionRule(const Model::DeletePathProtectionRuleRequest &request);
+                void DeletePathProtectionRuleAsync(const Model::DeletePathProtectionRuleRequest& request, const DeletePathProtectionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePathProtectionRuleOutcomeCallable DeletePathProtectionRuleCallable(const Model::DeletePathProtectionRuleRequest& request);
 
                 /**
                  *删除回收站配置。
@@ -404,6 +442,15 @@ namespace TencentCloud
                 DescribeMountPointsOutcomeCallable DescribeMountPointsCallable(const Model::DescribeMountPointsRequest& request);
 
                 /**
+                 *通过文件系统ID查看路径保护规则列表。
+                 * @param req DescribePathProtectionRulesRequest
+                 * @return DescribePathProtectionRulesOutcome
+                 */
+                DescribePathProtectionRulesOutcome DescribePathProtectionRules(const Model::DescribePathProtectionRulesRequest &request);
+                void DescribePathProtectionRulesAsync(const Model::DescribePathProtectionRulesRequest& request, const DescribePathProtectionRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePathProtectionRulesOutcomeCallable DescribePathProtectionRulesCallable(const Model::DescribePathProtectionRulesRequest& request);
+
+                /**
                  *通过文件系统ID查看资源标签列表。
                  * @param req DescribeResourceTagsRequest
                  * @return DescribeResourceTagsOutcome
@@ -483,6 +530,15 @@ namespace TencentCloud
                 ModifyMountPointOutcome ModifyMountPoint(const Model::ModifyMountPointRequest &request);
                 void ModifyMountPointAsync(const Model::ModifyMountPointRequest& request, const ModifyMountPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyMountPointOutcomeCallable ModifyMountPointCallable(const Model::ModifyMountPointRequest& request);
+
+                /**
+                 *修改路径保护规则属性，需要指定路径保护规则ID，支持修改规则名称、路径和状态。
+                 * @param req ModifyPathProtectionRuleRequest
+                 * @return ModifyPathProtectionRuleOutcome
+                 */
+                ModifyPathProtectionRuleOutcome ModifyPathProtectionRule(const Model::ModifyPathProtectionRuleRequest &request);
+                void ModifyPathProtectionRuleAsync(const Model::ModifyPathProtectionRuleRequest& request, const ModifyPathProtectionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPathProtectionRuleOutcomeCallable ModifyPathProtectionRuleCallable(const Model::ModifyPathProtectionRuleRequest& request);
 
                 /**
                  *修改资源标签列表，全量覆盖。

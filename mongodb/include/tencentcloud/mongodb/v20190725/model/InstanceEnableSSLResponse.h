@@ -44,13 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取SSL开启状态。
-- 0：关闭。
-- 1：开启。
+                     * 获取<p>SSL开启状态。</p><ul><li>0：关闭。</li><li>1：开启。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status SSL开启状态。
-- 0：关闭。
-- 1：开启。
+                     * @return Status <p>SSL开启状态。</p><ul><li>0：关闭。</li><li>1：开启。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -64,9 +60,9 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取证书文件过期时间，格式为：2023-05-01 12:00:00。
+                     * 获取<p>证书文件过期时间，格式为：2023-05-01 12:00:00。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExpiredTime 证书文件过期时间，格式为：2023-05-01 12:00:00。
+                     * @return ExpiredTime <p>证书文件过期时间，格式为：2023-05-01 12:00:00。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -80,9 +76,9 @@ namespace TencentCloud
                     bool ExpiredTimeHasBeenSet() const;
 
                     /**
-                     * 获取证书文件的下载链接。
+                     * 获取<p>证书文件的下载链接。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CertUrl 证书文件的下载链接。
+                     * @return CertUrl <p>证书文件的下载链接。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -96,8 +92,8 @@ namespace TencentCloud
                     bool CertUrlHasBeenSet() const;
 
                     /**
-                     * 获取流程id
-                     * @return FlowId 流程id
+                     * 获取<p>流程id</p>
+                     * @return FlowId <p>流程id</p>
                      * 
                      */
                     int64_t GetFlowId() const;
@@ -112,30 +108,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * SSL开启状态。
-- 0：关闭。
-- 1：开启。
+                     * <p>SSL开启状态。</p><ul><li>0：关闭。</li><li>1：开启。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 证书文件过期时间，格式为：2023-05-01 12:00:00。
+                     * <p>证书文件过期时间，格式为：2023-05-01 12:00:00。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expiredTime;
                     bool m_expiredTimeHasBeenSet;
 
                     /**
-                     * 证书文件的下载链接。
+                     * <p>证书文件的下载链接。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certUrl;
                     bool m_certUrlHasBeenSet;
 
                     /**
-                     * 流程id
+                     * <p>流程id</p>
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Vpc实例ID，例如：vpc-f1xjkw1b。
-                     * @return VpcIds Vpc实例ID，例如：vpc-f1xjkw1b。
+                     * 获取<p>Vpc实例ID，例如：vpc-f1xjkw1b。</p>
+                     * @return VpcIds <p>Vpc实例ID，例如：vpc-f1xjkw1b。</p>
                      * 
                      */
                     std::vector<std::string> GetVpcIds() const;
 
                     /**
-                     * 设置Vpc实例ID，例如：vpc-f1xjkw1b。
-                     * @param _vpcIds Vpc实例ID，例如：vpc-f1xjkw1b。
+                     * 设置<p>Vpc实例ID，例如：vpc-f1xjkw1b。</p>
+                     * @param _vpcIds <p>Vpc实例ID，例如：vpc-f1xjkw1b。</p>
                      * 
                      */
                     void SetVpcIds(const std::vector<std::string>& _vpcIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Vpc实例ID，例如：vpc-f1xjkw1b。
+                     * <p>Vpc实例ID，例如：vpc-f1xjkw1b。</p>
                      */
                     std::vector<std::string> m_vpcIds;
                     bool m_vpcIdsHasBeenSet;

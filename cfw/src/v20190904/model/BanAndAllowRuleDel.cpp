@@ -21,8 +21,8 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 BanAndAllowRuleDel::BanAndAllowRuleDel() :
-    m_iocHasBeenSet(false),
     m_directionListHasBeenSet(false),
+    m_iocHasBeenSet(false),
     m_ruleTypeHasBeenSet(false)
 {
 }
@@ -32,16 +32,6 @@ CoreInternalOutcome BanAndAllowRuleDel::Deserialize(const rapidjson::Value &valu
     string requestId = "";
 
 
-    if (value.HasMember("Ioc") && !value["Ioc"].IsNull())
-    {
-        if (!value["Ioc"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `BanAndAllowRuleDel.Ioc` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_ioc = string(value["Ioc"].GetString());
-        m_iocHasBeenSet = true;
-    }
-
     if (value.HasMember("DirectionList") && !value["DirectionList"].IsNull())
     {
         if (!value["DirectionList"].IsString())
@@ -50,6 +40,16 @@ CoreInternalOutcome BanAndAllowRuleDel::Deserialize(const rapidjson::Value &valu
         }
         m_directionList = string(value["DirectionList"].GetString());
         m_directionListHasBeenSet = true;
+    }
+
+    if (value.HasMember("Ioc") && !value["Ioc"].IsNull())
+    {
+        if (!value["Ioc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BanAndAllowRuleDel.Ioc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ioc = string(value["Ioc"].GetString());
+        m_iocHasBeenSet = true;
     }
 
     if (value.HasMember("RuleType") && !value["RuleType"].IsNull())
@@ -69,20 +69,20 @@ CoreInternalOutcome BanAndAllowRuleDel::Deserialize(const rapidjson::Value &valu
 void BanAndAllowRuleDel::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_iocHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Ioc";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_ioc.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_directionListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DirectionList";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_directionList.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iocHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ioc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ioc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ruleTypeHasBeenSet)
@@ -95,22 +95,6 @@ void BanAndAllowRuleDel::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
 
 }
 
-
-string BanAndAllowRuleDel::GetIoc() const
-{
-    return m_ioc;
-}
-
-void BanAndAllowRuleDel::SetIoc(const string& _ioc)
-{
-    m_ioc = _ioc;
-    m_iocHasBeenSet = true;
-}
-
-bool BanAndAllowRuleDel::IocHasBeenSet() const
-{
-    return m_iocHasBeenSet;
-}
 
 string BanAndAllowRuleDel::GetDirectionList() const
 {
@@ -126,6 +110,22 @@ void BanAndAllowRuleDel::SetDirectionList(const string& _directionList)
 bool BanAndAllowRuleDel::DirectionListHasBeenSet() const
 {
     return m_directionListHasBeenSet;
+}
+
+string BanAndAllowRuleDel::GetIoc() const
+{
+    return m_ioc;
+}
+
+void BanAndAllowRuleDel::SetIoc(const string& _ioc)
+{
+    m_ioc = _ioc;
+    m_iocHasBeenSet = true;
+}
+
+bool BanAndAllowRuleDel::IocHasBeenSet() const
+{
+    return m_iocHasBeenSet;
 }
 
 int64_t BanAndAllowRuleDel::GetRuleType() const

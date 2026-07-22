@@ -340,6 +340,56 @@ ChdfsClient::CreateMountPointOutcomeCallable ChdfsClient::CreateMountPointCallab
     return prom->get_future();
 }
 
+ChdfsClient::CreatePathProtectionRuleOutcome ChdfsClient::CreatePathProtectionRule(const CreatePathProtectionRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePathProtectionRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePathProtectionRuleResponse rsp = CreatePathProtectionRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePathProtectionRuleOutcome(rsp);
+        else
+            return CreatePathProtectionRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePathProtectionRuleOutcome(outcome.GetError());
+    }
+}
+
+void ChdfsClient::CreatePathProtectionRuleAsync(const CreatePathProtectionRuleRequest& request, const CreatePathProtectionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreatePathProtectionRuleRequest&;
+    using Resp = CreatePathProtectionRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreatePathProtectionRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ChdfsClient::CreatePathProtectionRuleOutcomeCallable ChdfsClient::CreatePathProtectionRuleCallable(const CreatePathProtectionRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreatePathProtectionRuleOutcome>>();
+    CreatePathProtectionRuleAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const CreatePathProtectionRuleRequest&,
+        CreatePathProtectionRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ChdfsClient::CreateRestoreTasksOutcome ChdfsClient::CreateRestoreTasks(const CreateRestoreTasksRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRestoreTasks");
@@ -682,6 +732,56 @@ ChdfsClient::DeleteMountPointOutcomeCallable ChdfsClient::DeleteMountPointCallab
         const ChdfsClient*,
         const DeleteMountPointRequest&,
         DeleteMountPointOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ChdfsClient::DeletePathProtectionRuleOutcome ChdfsClient::DeletePathProtectionRule(const DeletePathProtectionRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePathProtectionRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePathProtectionRuleResponse rsp = DeletePathProtectionRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePathProtectionRuleOutcome(rsp);
+        else
+            return DeletePathProtectionRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePathProtectionRuleOutcome(outcome.GetError());
+    }
+}
+
+void ChdfsClient::DeletePathProtectionRuleAsync(const DeletePathProtectionRuleRequest& request, const DeletePathProtectionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeletePathProtectionRuleRequest&;
+    using Resp = DeletePathProtectionRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeletePathProtectionRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ChdfsClient::DeletePathProtectionRuleOutcomeCallable ChdfsClient::DeletePathProtectionRuleCallable(const DeletePathProtectionRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeletePathProtectionRuleOutcome>>();
+    DeletePathProtectionRuleAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const DeletePathProtectionRuleRequest&,
+        DeletePathProtectionRuleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1140,6 +1240,56 @@ ChdfsClient::DescribeMountPointsOutcomeCallable ChdfsClient::DescribeMountPoints
     return prom->get_future();
 }
 
+ChdfsClient::DescribePathProtectionRulesOutcome ChdfsClient::DescribePathProtectionRules(const DescribePathProtectionRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePathProtectionRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePathProtectionRulesResponse rsp = DescribePathProtectionRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePathProtectionRulesOutcome(rsp);
+        else
+            return DescribePathProtectionRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePathProtectionRulesOutcome(outcome.GetError());
+    }
+}
+
+void ChdfsClient::DescribePathProtectionRulesAsync(const DescribePathProtectionRulesRequest& request, const DescribePathProtectionRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePathProtectionRulesRequest&;
+    using Resp = DescribePathProtectionRulesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePathProtectionRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ChdfsClient::DescribePathProtectionRulesOutcomeCallable ChdfsClient::DescribePathProtectionRulesCallable(const DescribePathProtectionRulesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePathProtectionRulesOutcome>>();
+    DescribePathProtectionRulesAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const DescribePathProtectionRulesRequest&,
+        DescribePathProtectionRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ChdfsClient::DescribeResourceTagsOutcome ChdfsClient::DescribeResourceTags(const DescribeResourceTagsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeResourceTags");
@@ -1582,6 +1732,56 @@ ChdfsClient::ModifyMountPointOutcomeCallable ChdfsClient::ModifyMountPointCallab
         const ChdfsClient*,
         const ModifyMountPointRequest&,
         ModifyMountPointOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ChdfsClient::ModifyPathProtectionRuleOutcome ChdfsClient::ModifyPathProtectionRule(const ModifyPathProtectionRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPathProtectionRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPathProtectionRuleResponse rsp = ModifyPathProtectionRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPathProtectionRuleOutcome(rsp);
+        else
+            return ModifyPathProtectionRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPathProtectionRuleOutcome(outcome.GetError());
+    }
+}
+
+void ChdfsClient::ModifyPathProtectionRuleAsync(const ModifyPathProtectionRuleRequest& request, const ModifyPathProtectionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyPathProtectionRuleRequest&;
+    using Resp = ModifyPathProtectionRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyPathProtectionRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ChdfsClient::ModifyPathProtectionRuleOutcomeCallable ChdfsClient::ModifyPathProtectionRuleCallable(const ModifyPathProtectionRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyPathProtectionRuleOutcome>>();
+    ModifyPathProtectionRuleAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const ModifyPathProtectionRuleRequest&,
+        ModifyPathProtectionRuleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

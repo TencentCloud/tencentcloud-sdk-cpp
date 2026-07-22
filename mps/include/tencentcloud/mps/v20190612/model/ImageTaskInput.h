@@ -32,6 +32,7 @@
 #include <tencentcloud/mps/v20190612/model/ImageTransformConfig.h>
 #include <tencentcloud/mps/v20190612/model/AiTryOnConfig.h>
 #include <tencentcloud/mps/v20190612/model/AiPosterSuiteConfig.h>
+#include <tencentcloud/mps/v20190612/model/CreateImageConfig.h>
 
 
 namespace TencentCloud
@@ -238,6 +239,27 @@ namespace TencentCloud
                      */
                     bool AiPosterSuiteConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>生图任务配置</p>
+                     * @return CreateImageConfig <p>生图任务配置</p>
+                     * 
+                     */
+                    CreateImageConfig GetCreateImageConfig() const;
+
+                    /**
+                     * 设置<p>生图任务配置</p>
+                     * @param _createImageConfig <p>生图任务配置</p>
+                     * 
+                     */
+                    void SetCreateImageConfig(const CreateImageConfig& _createImageConfig);
+
+                    /**
+                     * 判断参数 CreateImageConfig 是否已赋值
+                     * @return CreateImageConfig 是否已赋值
+                     * 
+                     */
+                    bool CreateImageConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -291,6 +313,12 @@ namespace TencentCloud
                      */
                     AiPosterSuiteConfig m_aiPosterSuiteConfig;
                     bool m_aiPosterSuiteConfigHasBeenSet;
+
+                    /**
+                     * <p>生图任务配置</p>
+                     */
+                    CreateImageConfig m_createImageConfig;
+                    bool m_createImageConfigHasBeenSet;
 
                 };
             }

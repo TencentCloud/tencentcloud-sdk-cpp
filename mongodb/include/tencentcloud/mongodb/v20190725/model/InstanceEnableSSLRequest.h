@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,23 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取配置是否要开启SSL访问。
-- true：开启。
-- false：关闭。
-                     * @return Enable 配置是否要开启SSL访问。
-- true：开启。
-- false：关闭。
+                     * 获取<p>配置是否要开启SSL访问。</p><ul><li>true：开启。</li><li>false：关闭。</li></ul>
+                     * @return Enable <p>配置是否要开启SSL访问。</p><ul><li>true：开启。</li><li>false：关闭。</li></ul>
                      * 
                      */
                     bool GetEnable() const;
 
                     /**
-                     * 设置配置是否要开启SSL访问。
-- true：开启。
-- false：关闭。
-                     * @param _enable 配置是否要开启SSL访问。
-- true：开启。
-- false：关闭。
+                     * 设置<p>配置是否要开启SSL访问。</p><ul><li>true：开启。</li><li>false：关闭。</li></ul>
+                     * @param _enable <p>配置是否要开启SSL访问。</p><ul><li>true：开启。</li><li>false：关闭。</li></ul>
                      * 
                      */
                     void SetEnable(const bool& _enable);
@@ -95,15 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 配置是否要开启SSL访问。
-- true：开启。
-- false：关闭。
+                     * <p>配置是否要开启SSL访问。</p><ul><li>true：开启。</li><li>false：关闭。</li></ul>
                      */
                     bool m_enable;
                     bool m_enableHasBeenSet;

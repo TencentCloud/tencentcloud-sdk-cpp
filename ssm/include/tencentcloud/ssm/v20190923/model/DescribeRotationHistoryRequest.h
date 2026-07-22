@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指定需要获取凭据轮转历史的凭据名称。
-                     * @return SecretName 指定需要获取凭据轮转历史的凭据名称。
+                     * 获取<p>指定需要获取凭据轮转历史的凭据名称。</p>
+                     * @return SecretName <p>指定需要获取凭据轮转历史的凭据名称。</p>
                      * 
                      */
                     std::string GetSecretName() const;
 
                     /**
-                     * 设置指定需要获取凭据轮转历史的凭据名称。
-                     * @param _secretName 指定需要获取凭据轮转历史的凭据名称。
+                     * 设置<p>指定需要获取凭据轮转历史的凭据名称。</p>
+                     * @param _secretName <p>指定需要获取凭据轮转历史的凭据名称。</p>
                      * 
                      */
                     void SetSecretName(const std::string& _secretName);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 指定需要获取凭据轮转历史的凭据名称。
+                     * <p>指定需要获取凭据轮转历史的凭据名称。</p>
                      */
                     std::string m_secretName;
                     bool m_secretNameHasBeenSet;

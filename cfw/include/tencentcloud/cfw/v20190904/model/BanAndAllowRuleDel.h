@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 封禁列表和放通列表结构体
+                * 封禁或放通规则项，包含对象、适用方向和规则类型。
                 */
                 class BanAndAllowRuleDel : public AbstractModel
                 {
@@ -47,36 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取封禁和放通对象
-                     * @return Ioc 封禁和放通对象
-                     * 
-                     */
-                    std::string GetIoc() const;
-
-                    /**
-                     * 设置封禁和放通对象
-                     * @param _ioc 封禁和放通对象
-                     * 
-                     */
-                    void SetIoc(const std::string& _ioc);
-
-                    /**
-                     * 判断参数 Ioc 是否已赋值
-                     * @return Ioc 是否已赋值
-                     * 
-                     */
-                    bool IocHasBeenSet() const;
-
-                    /**
-                     * 获取0互联网出站 1互联网入站 5内网访问源 6内网访问目的 （DeleteBlockIgnoreRuleNew接口，该字段无效）
-                     * @return DirectionList 0互联网出站 1互联网入站 5内网访问源 6内网访问目的 （DeleteBlockIgnoreRuleNew接口，该字段无效）
+                     * 获取规则适用方向，0 表示互联网出站，1 表示互联网入站，2 表示双向，3 表示东西向，4 表示情报误报反馈，5 表示内网访问源，6 表示内网访问目的；多个值以逗号分隔。
+                     * @return DirectionList 规则适用方向，0 表示互联网出站，1 表示互联网入站，2 表示双向，3 表示东西向，4 表示情报误报反馈，5 表示内网访问源，6 表示内网访问目的；多个值以逗号分隔。
                      * 
                      */
                     std::string GetDirectionList() const;
 
                     /**
-                     * 设置0互联网出站 1互联网入站 5内网访问源 6内网访问目的 （DeleteBlockIgnoreRuleNew接口，该字段无效）
-                     * @param _directionList 0互联网出站 1互联网入站 5内网访问源 6内网访问目的 （DeleteBlockIgnoreRuleNew接口，该字段无效）
+                     * 设置规则适用方向，0 表示互联网出站，1 表示互联网入站，2 表示双向，3 表示东西向，4 表示情报误报反馈，5 表示内网访问源，6 表示内网访问目的；多个值以逗号分隔。
+                     * @param _directionList 规则适用方向，0 表示互联网出站，1 表示互联网入站，2 表示双向，3 表示东西向，4 表示情报误报反馈，5 表示内网访问源，6 表示内网访问目的；多个值以逗号分隔。
                      * 
                      */
                     void SetDirectionList(const std::string& _directionList);
@@ -89,19 +68,36 @@ namespace TencentCloud
                     bool DirectionListHasBeenSet() const;
 
                     /**
-                     * 获取规则类型
-RuleType: 1黑名单 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则
-                     * @return RuleType 规则类型
-RuleType: 1黑名单 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则
+                     * 获取封禁或放通对象值。
+                     * @return Ioc 封禁或放通对象值。
+                     * 
+                     */
+                    std::string GetIoc() const;
+
+                    /**
+                     * 设置封禁或放通对象值。
+                     * @param _ioc 封禁或放通对象值。
+                     * 
+                     */
+                    void SetIoc(const std::string& _ioc);
+
+                    /**
+                     * 判断参数 Ioc 是否已赋值
+                     * @return Ioc 是否已赋值
+                     * 
+                     */
+                    bool IocHasBeenSet() const;
+
+                    /**
+                     * 获取规则类型标识。服务端定义的常用值为：1 封禁 IP，2 放通 IP，3 放通域名，4 威胁情报地址，5 资产实例，6 自定义策略，7 入侵防御规则，8 扩展 IP 规则，9 扩展自定义规则。
+                     * @return RuleType 规则类型标识。服务端定义的常用值为：1 封禁 IP，2 放通 IP，3 放通域名，4 威胁情报地址，5 资产实例，6 自定义策略，7 入侵防御规则，8 扩展 IP 规则，9 扩展自定义规则。
                      * 
                      */
                     int64_t GetRuleType() const;
 
                     /**
-                     * 设置规则类型
-RuleType: 1黑名单 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则
-                     * @param _ruleType 规则类型
-RuleType: 1黑名单 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则
+                     * 设置规则类型标识。服务端定义的常用值为：1 封禁 IP，2 放通 IP，3 放通域名，4 威胁情报地址，5 资产实例，6 自定义策略，7 入侵防御规则，8 扩展 IP 规则，9 扩展自定义规则。
+                     * @param _ruleType 规则类型标识。服务端定义的常用值为：1 封禁 IP，2 放通 IP，3 放通域名，4 威胁情报地址，5 资产实例，6 自定义策略，7 入侵防御规则，8 扩展 IP 规则，9 扩展自定义规则。
                      * 
                      */
                     void SetRuleType(const int64_t& _ruleType);
@@ -116,20 +112,19 @@ RuleType: 1黑名单 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵
                 private:
 
                     /**
-                     * 封禁和放通对象
-                     */
-                    std::string m_ioc;
-                    bool m_iocHasBeenSet;
-
-                    /**
-                     * 0互联网出站 1互联网入站 5内网访问源 6内网访问目的 （DeleteBlockIgnoreRuleNew接口，该字段无效）
+                     * 规则适用方向，0 表示互联网出站，1 表示互联网入站，2 表示双向，3 表示东西向，4 表示情报误报反馈，5 表示内网访问源，6 表示内网访问目的；多个值以逗号分隔。
                      */
                     std::string m_directionList;
                     bool m_directionListHasBeenSet;
 
                     /**
-                     * 规则类型
-RuleType: 1黑名单 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则
+                     * 封禁或放通对象值。
+                     */
+                    std::string m_ioc;
+                    bool m_iocHasBeenSet;
+
+                    /**
+                     * 规则类型标识。服务端定义的常用值为：1 封禁 IP，2 放通 IP，3 放通域名，4 威胁情报地址，5 资产实例，6 自定义策略，7 入侵防御规则，8 扩展 IP 规则，9 扩展自定义规则。
                      */
                     int64_t m_ruleType;
                     bool m_ruleTypeHasBeenSet;

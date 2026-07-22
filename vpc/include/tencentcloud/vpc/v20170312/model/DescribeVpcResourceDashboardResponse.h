@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源对象列表。
-                     * @return ResourceDashboardSet 资源对象列表。
+                     * 获取<p>资源对象列表。</p>
+                     * @return ResourceDashboardSet <p>资源对象列表。</p>
                      * 
                      */
                     std::vector<ResourceDashboard> GetResourceDashboardSet() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源对象列表。
+                     * <p>资源对象列表。</p>
                      */
                     std::vector<ResourceDashboard> m_resourceDashboardSet;
                     bool m_resourceDashboardSetHasBeenSet;

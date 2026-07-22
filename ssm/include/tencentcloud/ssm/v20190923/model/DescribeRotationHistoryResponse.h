@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ssm/v20190923/model/SecretAccountInfo.h>
 
 
 namespace TencentCloud
@@ -44,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取版本号列表
-                     * @return VersionIDs 版本号列表
+                     * 获取<p>版本号列表</p>
+                     * @return VersionIDs <p>版本号列表</p>
                      * 
                      */
                     std::vector<std::string> GetVersionIDs() const;
@@ -58,8 +59,8 @@ namespace TencentCloud
                     bool VersionIDsHasBeenSet() const;
 
                     /**
-                     * 获取版本号个数，可以给用户展示的版本号个数上限为10个。
-                     * @return TotalCount 版本号个数，可以给用户展示的版本号个数上限为10个。
+                     * 获取<p>版本号个数，可以给用户展示的版本号个数上限为10个。</p>
+                     * @return TotalCount <p>版本号个数，可以给用户展示的版本号个数上限为10个。</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -71,19 +72,39 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>凭据对应账号相关信息</p>
+                     * @return AccountInfoList <p>凭据对应账号相关信息</p>
+                     * 
+                     */
+                    std::vector<SecretAccountInfo> GetAccountInfoList() const;
+
+                    /**
+                     * 判断参数 AccountInfoList 是否已赋值
+                     * @return AccountInfoList 是否已赋值
+                     * 
+                     */
+                    bool AccountInfoListHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 版本号列表
+                     * <p>版本号列表</p>
                      */
                     std::vector<std::string> m_versionIDs;
                     bool m_versionIDsHasBeenSet;
 
                     /**
-                     * 版本号个数，可以给用户展示的版本号个数上限为10个。
+                     * <p>版本号个数，可以给用户展示的版本号个数上限为10个。</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * <p>凭据对应账号相关信息</p>
+                     */
+                    std::vector<SecretAccountInfo> m_accountInfoList;
+                    bool m_accountInfoListHasBeenSet;
 
                 };
             }

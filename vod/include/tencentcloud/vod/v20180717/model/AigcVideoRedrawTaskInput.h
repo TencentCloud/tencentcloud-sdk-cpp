@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/AigcVideoRedrawTaskInputFileInfo.h>
+#include <tencentcloud/vod/v20180717/model/AigcVideoRedrawTaskInfo.h>
 #include <tencentcloud/vod/v20180717/model/AigcVideoRedrawOutputConfig.h>
 
 
@@ -70,6 +71,27 @@ namespace TencentCloud
                     bool FileInfoHasBeenSet() const;
 
                     /**
+                     * 获取<p>AIGC 视频转绘任务参数信息。</p>
+                     * @return TaskInfo <p>AIGC 视频转绘任务参数信息。</p>
+                     * 
+                     */
+                    AigcVideoRedrawTaskInfo GetTaskInfo() const;
+
+                    /**
+                     * 设置<p>AIGC 视频转绘任务参数信息。</p>
+                     * @param _taskInfo <p>AIGC 视频转绘任务参数信息。</p>
+                     * 
+                     */
+                    void SetTaskInfo(const AigcVideoRedrawTaskInfo& _taskInfo);
+
+                    /**
+                     * 判断参数 TaskInfo 是否已赋值
+                     * @return TaskInfo 是否已赋值
+                     * 
+                     */
+                    bool TaskInfoHasBeenSet() const;
+
+                    /**
                      * 获取<p>AIGC 视频转绘输出配置。</p>
                      * @return OutputConfig <p>AIGC 视频转绘输出配置。</p>
                      * 
@@ -97,6 +119,12 @@ namespace TencentCloud
                      */
                     AigcVideoRedrawTaskInputFileInfo m_fileInfo;
                     bool m_fileInfoHasBeenSet;
+
+                    /**
+                     * <p>AIGC 视频转绘任务参数信息。</p>
+                     */
+                    AigcVideoRedrawTaskInfo m_taskInfo;
+                    bool m_taskInfoHasBeenSet;
 
                     /**
                      * <p>AIGC 视频转绘输出配置。</p>

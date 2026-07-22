@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 安全组规则
+                * 创建请求写入成功后返回的企业安全组规则摘要。
                 */
                 class SecurityGroupSimplifyRule : public AbstractModel
                 {
@@ -47,49 +47,25 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取访问源示例：
-net：IP/CIDR(192.168.0.2)
-template：参数模板(ipm-dyodhpby)
-instance：资产实例(ins-123456)
-resourcegroup：资产分组(/全部分组/分组1/子分组1)
-tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
-region：地域(ap-gaungzhou)
-                     * @return SourceContent 访问源示例：
-net：IP/CIDR(192.168.0.2)
-template：参数模板(ipm-dyodhpby)
-instance：资产实例(ins-123456)
-resourcegroup：资产分组(/全部分组/分组1/子分组1)
-tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
-region：地域(ap-gaungzhou)
+                     * 获取写入规则的描述。
+                     * @return Description 写入规则的描述。
                      * 
                      */
-                    std::string GetSourceContent() const;
+                    std::string GetDescription() const;
 
                     /**
-                     * 设置访问源示例：
-net：IP/CIDR(192.168.0.2)
-template：参数模板(ipm-dyodhpby)
-instance：资产实例(ins-123456)
-resourcegroup：资产分组(/全部分组/分组1/子分组1)
-tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
-region：地域(ap-gaungzhou)
-                     * @param _sourceContent 访问源示例：
-net：IP/CIDR(192.168.0.2)
-template：参数模板(ipm-dyodhpby)
-instance：资产实例(ins-123456)
-resourcegroup：资产分组(/全部分组/分组1/子分组1)
-tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
-region：地域(ap-gaungzhou)
+                     * 设置写入规则的描述。
+                     * @param _description 写入规则的描述。
                      * 
                      */
-                    void SetSourceContent(const std::string& _sourceContent);
+                    void SetDescription(const std::string& _description);
 
                     /**
-                     * 判断参数 SourceContent 是否已赋值
-                     * @return SourceContent 是否已赋值
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
                      * 
                      */
-                    bool SourceContentHasBeenSet() const;
+                    bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取访问目的示例：
@@ -137,15 +113,15 @@ region：地域(ap-gaungzhou)
                     bool DestContentHasBeenSet() const;
 
                     /**
-                     * 获取协议；TCP/UDP/ICMP/ANY
-                     * @return Protocol 协议；TCP/UDP/ICMP/ANY
+                     * 获取写入规则的协议。普通 IPv4 规则返回 ANY、TCP、UDP 或 ICMP；使用服务模板时，Protocol 可省略或留空，此时返回空字符串；若仍显式填写 Protocol，则只接受 ANY 并返回 ANY。
+                     * @return Protocol 写入规则的协议。普通 IPv4 规则返回 ANY、TCP、UDP 或 ICMP；使用服务模板时，Protocol 可省略或留空，此时返回空字符串；若仍显式填写 Protocol，则只接受 ANY 并返回 ANY。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置协议；TCP/UDP/ICMP/ANY
-                     * @param _protocol 协议；TCP/UDP/ICMP/ANY
+                     * 设置写入规则的协议。普通 IPv4 规则返回 ANY、TCP、UDP 或 ICMP；使用服务模板时，Protocol 可省略或留空，此时返回空字符串；若仍显式填写 Protocol，则只接受 ANY 并返回 ANY。
+                     * @param _protocol 写入规则的协议。普通 IPv4 规则返回 ANY、TCP、UDP 或 ICMP；使用服务模板时，Protocol 可省略或留空，此时返回空字符串；若仍显式填写 Protocol，则只接受 ANY 并返回 ANY。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -158,36 +134,15 @@ region：地域(ap-gaungzhou)
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
-                     * 
-                     */
-                    std::string GetDescription() const;
-
-                    /**
-                     * 设置描述
-                     * @param _description 描述
-                     * 
-                     */
-                    void SetDescription(const std::string& _description);
-
-                    /**
-                     * 判断参数 Description 是否已赋值
-                     * @return Description 是否已赋值
-                     * 
-                     */
-                    bool DescriptionHasBeenSet() const;
-
-                    /**
-                     * 获取规则对应的唯一id
-                     * @return RuleUuid 规则对应的唯一id
+                     * 获取服务端写入后生成或采用的规则数据库 ID。
+                     * @return RuleUuid 服务端写入后生成或采用的规则数据库 ID。
                      * 
                      */
                     int64_t GetRuleUuid() const;
 
                     /**
-                     * 设置规则对应的唯一id
-                     * @param _ruleUuid 规则对应的唯一id
+                     * 设置服务端写入后生成或采用的规则数据库 ID。
+                     * @param _ruleUuid 服务端写入后生成或采用的规则数据库 ID。
                      * 
                      */
                     void SetRuleUuid(const int64_t& _ruleUuid);
@@ -200,15 +155,36 @@ region：地域(ap-gaungzhou)
                     bool RuleUuidHasBeenSet() const;
 
                     /**
-                     * 获取规则序号
-                     * @return Sequence 规则序号
+                     * 获取写入后的规则生效范围；SG 表示安全组，LH 表示轻量应用服务器，组合范围以逗号分隔。
+                     * @return Scope 写入后的规则生效范围；SG 表示安全组，LH 表示轻量应用服务器，组合范围以逗号分隔。
+                     * 
+                     */
+                    std::string GetScope() const;
+
+                    /**
+                     * 设置写入后的规则生效范围；SG 表示安全组，LH 表示轻量应用服务器，组合范围以逗号分隔。
+                     * @param _scope 写入后的规则生效范围；SG 表示安全组，LH 表示轻量应用服务器，组合范围以逗号分隔。
+                     * 
+                     */
+                    void SetScope(const std::string& _scope);
+
+                    /**
+                     * 判断参数 Scope 是否已赋值
+                     * @return Scope 是否已赋值
+                     * 
+                     */
+                    bool ScopeHasBeenSet() const;
+
+                    /**
+                     * 获取服务端写入后的实际规则顺序。
+                     * @return Sequence 服务端写入后的实际规则顺序。
                      * 
                      */
                     int64_t GetSequence() const;
 
                     /**
-                     * 设置规则序号
-                     * @param _sequence 规则序号
+                     * 设置服务端写入后的实际规则顺序。
+                     * @param _sequence 服务端写入后的实际规则顺序。
                      * 
                      */
                     void SetSequence(const int64_t& _sequence);
@@ -221,39 +197,57 @@ region：地域(ap-gaungzhou)
                     bool SequenceHasBeenSet() const;
 
                     /**
-                     * 获取规则生效范围，SG安全组，LH轻量服务器
-                     * @return Scope 规则生效范围，SG安全组，LH轻量服务器
-                     * 
-                     */
-                    std::string GetScope() const;
-
-                    /**
-                     * 设置规则生效范围，SG安全组，LH轻量服务器
-                     * @param _scope 规则生效范围，SG安全组，LH轻量服务器
-                     * 
-                     */
-                    void SetScope(const std::string& _scope);
-
-                    /**
-                     * 判断参数 Scope 是否已赋值
-                     * @return Scope 是否已赋值
-                     * 
-                     */
-                    bool ScopeHasBeenSet() const;
-
-                private:
-
-                    /**
-                     * 访问源示例：
+                     * 获取访问源示例：
 net：IP/CIDR(192.168.0.2)
 template：参数模板(ipm-dyodhpby)
 instance：资产实例(ins-123456)
 resourcegroup：资产分组(/全部分组/分组1/子分组1)
 tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
 region：地域(ap-gaungzhou)
+                     * @return SourceContent 访问源示例：
+net：IP/CIDR(192.168.0.2)
+template：参数模板(ipm-dyodhpby)
+instance：资产实例(ins-123456)
+resourcegroup：资产分组(/全部分组/分组1/子分组1)
+tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
+region：地域(ap-gaungzhou)
+                     * 
                      */
-                    std::string m_sourceContent;
-                    bool m_sourceContentHasBeenSet;
+                    std::string GetSourceContent() const;
+
+                    /**
+                     * 设置访问源示例：
+net：IP/CIDR(192.168.0.2)
+template：参数模板(ipm-dyodhpby)
+instance：资产实例(ins-123456)
+resourcegroup：资产分组(/全部分组/分组1/子分组1)
+tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
+region：地域(ap-gaungzhou)
+                     * @param _sourceContent 访问源示例：
+net：IP/CIDR(192.168.0.2)
+template：参数模板(ipm-dyodhpby)
+instance：资产实例(ins-123456)
+resourcegroup：资产分组(/全部分组/分组1/子分组1)
+tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
+region：地域(ap-gaungzhou)
+                     * 
+                     */
+                    void SetSourceContent(const std::string& _sourceContent);
+
+                    /**
+                     * 判断参数 SourceContent 是否已赋值
+                     * @return SourceContent 是否已赋值
+                     * 
+                     */
+                    bool SourceContentHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 写入规则的描述。
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                     /**
                      * 访问目的示例：
@@ -268,34 +262,40 @@ region：地域(ap-gaungzhou)
                     bool m_destContentHasBeenSet;
 
                     /**
-                     * 协议；TCP/UDP/ICMP/ANY
+                     * 写入规则的协议。普通 IPv4 规则返回 ANY、TCP、UDP 或 ICMP；使用服务模板时，Protocol 可省略或留空，此时返回空字符串；若仍显式填写 Protocol，则只接受 ANY 并返回 ANY。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 描述
-                     */
-                    std::string m_description;
-                    bool m_descriptionHasBeenSet;
-
-                    /**
-                     * 规则对应的唯一id
+                     * 服务端写入后生成或采用的规则数据库 ID。
                      */
                     int64_t m_ruleUuid;
                     bool m_ruleUuidHasBeenSet;
 
                     /**
-                     * 规则序号
+                     * 写入后的规则生效范围；SG 表示安全组，LH 表示轻量应用服务器，组合范围以逗号分隔。
+                     */
+                    std::string m_scope;
+                    bool m_scopeHasBeenSet;
+
+                    /**
+                     * 服务端写入后的实际规则顺序。
                      */
                     int64_t m_sequence;
                     bool m_sequenceHasBeenSet;
 
                     /**
-                     * 规则生效范围，SG安全组，LH轻量服务器
+                     * 访问源示例：
+net：IP/CIDR(192.168.0.2)
+template：参数模板(ipm-dyodhpby)
+instance：资产实例(ins-123456)
+resourcegroup：资产分组(/全部分组/分组1/子分组1)
+tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
+region：地域(ap-gaungzhou)
                      */
-                    std::string m_scope;
-                    bool m_scopeHasBeenSet;
+                    std::string m_sourceContent;
+                    bool m_sourceContentHasBeenSet;
 
                 };
             }

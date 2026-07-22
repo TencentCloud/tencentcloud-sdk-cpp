@@ -21,35 +21,35 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 VpcRuleItem::VpcRuleItem() :
-    m_sourceContentHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_destContentHasBeenSet(false),
     m_destTypeHasBeenSet(false),
+    m_edgeIdHasBeenSet(false),
+    m_enableHasBeenSet(false),
+    m_orderIndexHasBeenSet(false),
+    m_portHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_ruleActionHasBeenSet(false),
-    m_portHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_orderIndexHasBeenSet(false),
-    m_enableHasBeenSet(false),
-    m_edgeIdHasBeenSet(false),
-    m_uuidHasBeenSet(false),
+    m_sourceContentHasBeenSet(false),
+    m_sourceTypeHasBeenSet(false),
+    m_betaListHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_deletedHasBeenSet(false),
+    m_destValueTypeHasBeenSet(false),
     m_detectedTimesHasBeenSet(false),
     m_edgeNameHasBeenSet(false),
-    m_internalUuidHasBeenSet(false),
-    m_deletedHasBeenSet(false),
     m_fwGroupIdHasBeenSet(false),
     m_fwGroupNameHasBeenSet(false),
-    m_betaListHasBeenSet(false),
+    m_internalUuidHasBeenSet(false),
+    m_invalidHasBeenSet(false),
+    m_ipVersionHasBeenSet(false),
     m_paramTemplateIdHasBeenSet(false),
     m_paramTemplateNameHasBeenSet(false),
-    m_targetNameHasBeenSet(false),
+    m_rulePartitionHasBeenSet(false),
     m_sourceNameHasBeenSet(false),
-    m_ipVersionHasBeenSet(false),
-    m_invalidHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
+    m_targetNameHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_destValueTypeHasBeenSet(false),
-    m_rulePartitionHasBeenSet(false)
+    m_uuidHasBeenSet(false)
 {
 }
 
@@ -58,24 +58,14 @@ CoreInternalOutcome VpcRuleItem::Deserialize(const rapidjson::Value &value)
     string requestId = "";
 
 
-    if (value.HasMember("SourceContent") && !value["SourceContent"].IsNull())
+    if (value.HasMember("Description") && !value["Description"].IsNull())
     {
-        if (!value["SourceContent"].IsString())
+        if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.SourceContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_sourceContent = string(value["SourceContent"].GetString());
-        m_sourceContentHasBeenSet = true;
-    }
-
-    if (value.HasMember("SourceType") && !value["SourceType"].IsNull())
-    {
-        if (!value["SourceType"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.SourceType` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_sourceType = string(value["SourceType"].GetString());
-        m_sourceTypeHasBeenSet = true;
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
     }
 
     if (value.HasMember("DestContent") && !value["DestContent"].IsNull())
@@ -98,6 +88,46 @@ CoreInternalOutcome VpcRuleItem::Deserialize(const rapidjson::Value &value)
         m_destTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("EdgeId") && !value["EdgeId"].IsNull())
+    {
+        if (!value["EdgeId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.EdgeId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_edgeId = string(value["EdgeId"].GetString());
+        m_edgeIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Enable") && !value["Enable"].IsNull())
+    {
+        if (!value["Enable"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.Enable` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_enable = string(value["Enable"].GetString());
+        m_enableHasBeenSet = true;
+    }
+
+    if (value.HasMember("OrderIndex") && !value["OrderIndex"].IsNull())
+    {
+        if (!value["OrderIndex"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.OrderIndex` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_orderIndex = value["OrderIndex"].GetInt64();
+        m_orderIndexHasBeenSet = true;
+    }
+
+    if (value.HasMember("Port") && !value["Port"].IsNull())
+    {
+        if (!value["Port"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.Port` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_port = string(value["Port"].GetString());
+        m_portHasBeenSet = true;
+    }
+
     if (value.HasMember("Protocol") && !value["Protocol"].IsNull())
     {
         if (!value["Protocol"].IsString())
@@ -118,124 +148,24 @@ CoreInternalOutcome VpcRuleItem::Deserialize(const rapidjson::Value &value)
         m_ruleActionHasBeenSet = true;
     }
 
-    if (value.HasMember("Port") && !value["Port"].IsNull())
+    if (value.HasMember("SourceContent") && !value["SourceContent"].IsNull())
     {
-        if (!value["Port"].IsString())
+        if (!value["SourceContent"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.Port` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.SourceContent` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_port = string(value["Port"].GetString());
-        m_portHasBeenSet = true;
+        m_sourceContent = string(value["SourceContent"].GetString());
+        m_sourceContentHasBeenSet = true;
     }
 
-    if (value.HasMember("Description") && !value["Description"].IsNull())
+    if (value.HasMember("SourceType") && !value["SourceType"].IsNull())
     {
-        if (!value["Description"].IsString())
+        if (!value["SourceType"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.Description` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.SourceType` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_description = string(value["Description"].GetString());
-        m_descriptionHasBeenSet = true;
-    }
-
-    if (value.HasMember("OrderIndex") && !value["OrderIndex"].IsNull())
-    {
-        if (!value["OrderIndex"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.OrderIndex` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_orderIndex = value["OrderIndex"].GetInt64();
-        m_orderIndexHasBeenSet = true;
-    }
-
-    if (value.HasMember("Enable") && !value["Enable"].IsNull())
-    {
-        if (!value["Enable"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.Enable` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_enable = string(value["Enable"].GetString());
-        m_enableHasBeenSet = true;
-    }
-
-    if (value.HasMember("EdgeId") && !value["EdgeId"].IsNull())
-    {
-        if (!value["EdgeId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.EdgeId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_edgeId = string(value["EdgeId"].GetString());
-        m_edgeIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("Uuid") && !value["Uuid"].IsNull())
-    {
-        if (!value["Uuid"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.Uuid` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_uuid = value["Uuid"].GetInt64();
-        m_uuidHasBeenSet = true;
-    }
-
-    if (value.HasMember("DetectedTimes") && !value["DetectedTimes"].IsNull())
-    {
-        if (!value["DetectedTimes"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.DetectedTimes` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_detectedTimes = value["DetectedTimes"].GetInt64();
-        m_detectedTimesHasBeenSet = true;
-    }
-
-    if (value.HasMember("EdgeName") && !value["EdgeName"].IsNull())
-    {
-        if (!value["EdgeName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.EdgeName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_edgeName = string(value["EdgeName"].GetString());
-        m_edgeNameHasBeenSet = true;
-    }
-
-    if (value.HasMember("InternalUuid") && !value["InternalUuid"].IsNull())
-    {
-        if (!value["InternalUuid"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.InternalUuid` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_internalUuid = value["InternalUuid"].GetInt64();
-        m_internalUuidHasBeenSet = true;
-    }
-
-    if (value.HasMember("Deleted") && !value["Deleted"].IsNull())
-    {
-        if (!value["Deleted"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.Deleted` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_deleted = value["Deleted"].GetInt64();
-        m_deletedHasBeenSet = true;
-    }
-
-    if (value.HasMember("FwGroupId") && !value["FwGroupId"].IsNull())
-    {
-        if (!value["FwGroupId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.FwGroupId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_fwGroupId = string(value["FwGroupId"].GetString());
-        m_fwGroupIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("FwGroupName") && !value["FwGroupName"].IsNull())
-    {
-        if (!value["FwGroupName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.FwGroupName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_fwGroupName = string(value["FwGroupName"].GetString());
-        m_fwGroupNameHasBeenSet = true;
+        m_sourceType = string(value["SourceType"].GetString());
+        m_sourceTypeHasBeenSet = true;
     }
 
     if (value.HasMember("BetaList") && !value["BetaList"].IsNull())
@@ -258,6 +188,106 @@ CoreInternalOutcome VpcRuleItem::Deserialize(const rapidjson::Value &value)
         m_betaListHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Deleted") && !value["Deleted"].IsNull())
+    {
+        if (!value["Deleted"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.Deleted` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deleted = value["Deleted"].GetInt64();
+        m_deletedHasBeenSet = true;
+    }
+
+    if (value.HasMember("DestValueType") && !value["DestValueType"].IsNull())
+    {
+        if (!value["DestValueType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.DestValueType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_destValueType = string(value["DestValueType"].GetString());
+        m_destValueTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DetectedTimes") && !value["DetectedTimes"].IsNull())
+    {
+        if (!value["DetectedTimes"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.DetectedTimes` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_detectedTimes = value["DetectedTimes"].GetInt64();
+        m_detectedTimesHasBeenSet = true;
+    }
+
+    if (value.HasMember("EdgeName") && !value["EdgeName"].IsNull())
+    {
+        if (!value["EdgeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.EdgeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_edgeName = string(value["EdgeName"].GetString());
+        m_edgeNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("FwGroupId") && !value["FwGroupId"].IsNull())
+    {
+        if (!value["FwGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.FwGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fwGroupId = string(value["FwGroupId"].GetString());
+        m_fwGroupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("FwGroupName") && !value["FwGroupName"].IsNull())
+    {
+        if (!value["FwGroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.FwGroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fwGroupName = string(value["FwGroupName"].GetString());
+        m_fwGroupNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("InternalUuid") && !value["InternalUuid"].IsNull())
+    {
+        if (!value["InternalUuid"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.InternalUuid` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_internalUuid = value["InternalUuid"].GetInt64();
+        m_internalUuidHasBeenSet = true;
+    }
+
+    if (value.HasMember("Invalid") && !value["Invalid"].IsNull())
+    {
+        if (!value["Invalid"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.Invalid` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_invalid = value["Invalid"].GetInt64();
+        m_invalidHasBeenSet = true;
+    }
+
+    if (value.HasMember("IpVersion") && !value["IpVersion"].IsNull())
+    {
+        if (!value["IpVersion"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.IpVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipVersion = value["IpVersion"].GetInt64();
+        m_ipVersionHasBeenSet = true;
+    }
+
     if (value.HasMember("ParamTemplateId") && !value["ParamTemplateId"].IsNull())
     {
         if (!value["ParamTemplateId"].IsString())
@@ -278,14 +308,14 @@ CoreInternalOutcome VpcRuleItem::Deserialize(const rapidjson::Value &value)
         m_paramTemplateNameHasBeenSet = true;
     }
 
-    if (value.HasMember("TargetName") && !value["TargetName"].IsNull())
+    if (value.HasMember("RulePartition") && !value["RulePartition"].IsNull())
     {
-        if (!value["TargetName"].IsString())
+        if (!value["RulePartition"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.TargetName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.RulePartition` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_targetName = string(value["TargetName"].GetString());
-        m_targetNameHasBeenSet = true;
+        m_rulePartition = value["RulePartition"].GetInt64();
+        m_rulePartitionHasBeenSet = true;
     }
 
     if (value.HasMember("SourceName") && !value["SourceName"].IsNull())
@@ -298,34 +328,14 @@ CoreInternalOutcome VpcRuleItem::Deserialize(const rapidjson::Value &value)
         m_sourceNameHasBeenSet = true;
     }
 
-    if (value.HasMember("IpVersion") && !value["IpVersion"].IsNull())
+    if (value.HasMember("TargetName") && !value["TargetName"].IsNull())
     {
-        if (!value["IpVersion"].IsInt64())
+        if (!value["TargetName"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.IpVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.TargetName` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_ipVersion = value["IpVersion"].GetInt64();
-        m_ipVersionHasBeenSet = true;
-    }
-
-    if (value.HasMember("Invalid") && !value["Invalid"].IsNull())
-    {
-        if (!value["Invalid"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.Invalid` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_invalid = value["Invalid"].GetInt64();
-        m_invalidHasBeenSet = true;
-    }
-
-    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
-    {
-        if (!value["CreateTime"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_createTime = string(value["CreateTime"].GetString());
-        m_createTimeHasBeenSet = true;
+        m_targetName = string(value["TargetName"].GetString());
+        m_targetNameHasBeenSet = true;
     }
 
     if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
@@ -338,24 +348,14 @@ CoreInternalOutcome VpcRuleItem::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
-    if (value.HasMember("DestValueType") && !value["DestValueType"].IsNull())
+    if (value.HasMember("Uuid") && !value["Uuid"].IsNull())
     {
-        if (!value["DestValueType"].IsString())
+        if (!value["Uuid"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.DestValueType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.Uuid` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_destValueType = string(value["DestValueType"].GetString());
-        m_destValueTypeHasBeenSet = true;
-    }
-
-    if (value.HasMember("RulePartition") && !value["RulePartition"].IsNull())
-    {
-        if (!value["RulePartition"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.RulePartition` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_rulePartition = value["RulePartition"].GetInt64();
-        m_rulePartitionHasBeenSet = true;
+        m_uuid = value["Uuid"].GetInt64();
+        m_uuidHasBeenSet = true;
     }
 
 
@@ -365,20 +365,12 @@ CoreInternalOutcome VpcRuleItem::Deserialize(const rapidjson::Value &value)
 void VpcRuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_sourceContentHasBeenSet)
+    if (m_descriptionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SourceContent";
+        string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_sourceContent.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_sourceTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SourceType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_sourceType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_destContentHasBeenSet)
@@ -397,6 +389,38 @@ void VpcRuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_destType.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_edgeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EdgeId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_edgeId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Enable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_enable.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderIndex";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_orderIndex, allocator);
+    }
+
+    if (m_portHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Port";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_port.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_protocolHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -413,52 +437,59 @@ void VpcRuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_ruleAction.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_portHasBeenSet)
+    if (m_sourceContentHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Port";
+        string key = "SourceContent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_port.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceContent.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_descriptionHasBeenSet)
+    if (m_sourceTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Description";
+        string key = "SourceType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceType.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_orderIndexHasBeenSet)
+    if (m_betaListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OrderIndex";
+        string key = "BetaList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_orderIndex, allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_betaList.begin(); itr != m_betaList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
-    if (m_enableHasBeenSet)
+    if (m_createTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Enable";
+        string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_enable.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_edgeIdHasBeenSet)
+    if (m_deletedHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EdgeId";
+        string key = "Deleted";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_edgeId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_deleted, allocator);
     }
 
-    if (m_uuidHasBeenSet)
+    if (m_destValueTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Uuid";
+        string key = "DestValueType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_uuid, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_destValueType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_detectedTimesHasBeenSet)
@@ -477,22 +508,6 @@ void VpcRuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_edgeName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_internalUuidHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InternalUuid";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_internalUuid, allocator);
-    }
-
-    if (m_deletedHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Deleted";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_deleted, allocator);
-    }
-
     if (m_fwGroupIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -509,19 +524,28 @@ void VpcRuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_fwGroupName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_betaListHasBeenSet)
+    if (m_internalUuidHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BetaList";
+        string key = "InternalUuid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+        value.AddMember(iKey, m_internalUuid, allocator);
+    }
 
-        int i=0;
-        for (auto itr = m_betaList.begin(); itr != m_betaList.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+    if (m_invalidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Invalid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_invalid, allocator);
+    }
+
+    if (m_ipVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ipVersion, allocator);
     }
 
     if (m_paramTemplateIdHasBeenSet)
@@ -540,12 +564,12 @@ void VpcRuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_paramTemplateName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_targetNameHasBeenSet)
+    if (m_rulePartitionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TargetName";
+        string key = "RulePartition";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_targetName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_rulePartition, allocator);
     }
 
     if (m_sourceNameHasBeenSet)
@@ -556,28 +580,12 @@ void VpcRuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_sourceName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_ipVersionHasBeenSet)
+    if (m_targetNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IpVersion";
+        string key = "TargetName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_ipVersion, allocator);
-    }
-
-    if (m_invalidHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Invalid";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_invalid, allocator);
-    }
-
-    if (m_createTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CreateTime";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_updateTimeHasBeenSet)
@@ -588,55 +596,31 @@ void VpcRuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_destValueTypeHasBeenSet)
+    if (m_uuidHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DestValueType";
+        string key = "Uuid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_destValueType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_rulePartitionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RulePartition";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_rulePartition, allocator);
+        value.AddMember(iKey, m_uuid, allocator);
     }
 
 }
 
 
-string VpcRuleItem::GetSourceContent() const
+string VpcRuleItem::GetDescription() const
 {
-    return m_sourceContent;
+    return m_description;
 }
 
-void VpcRuleItem::SetSourceContent(const string& _sourceContent)
+void VpcRuleItem::SetDescription(const string& _description)
 {
-    m_sourceContent = _sourceContent;
-    m_sourceContentHasBeenSet = true;
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
 }
 
-bool VpcRuleItem::SourceContentHasBeenSet() const
+bool VpcRuleItem::DescriptionHasBeenSet() const
 {
-    return m_sourceContentHasBeenSet;
-}
-
-string VpcRuleItem::GetSourceType() const
-{
-    return m_sourceType;
-}
-
-void VpcRuleItem::SetSourceType(const string& _sourceType)
-{
-    m_sourceType = _sourceType;
-    m_sourceTypeHasBeenSet = true;
-}
-
-bool VpcRuleItem::SourceTypeHasBeenSet() const
-{
-    return m_sourceTypeHasBeenSet;
+    return m_descriptionHasBeenSet;
 }
 
 string VpcRuleItem::GetDestContent() const
@@ -671,6 +655,70 @@ bool VpcRuleItem::DestTypeHasBeenSet() const
     return m_destTypeHasBeenSet;
 }
 
+string VpcRuleItem::GetEdgeId() const
+{
+    return m_edgeId;
+}
+
+void VpcRuleItem::SetEdgeId(const string& _edgeId)
+{
+    m_edgeId = _edgeId;
+    m_edgeIdHasBeenSet = true;
+}
+
+bool VpcRuleItem::EdgeIdHasBeenSet() const
+{
+    return m_edgeIdHasBeenSet;
+}
+
+string VpcRuleItem::GetEnable() const
+{
+    return m_enable;
+}
+
+void VpcRuleItem::SetEnable(const string& _enable)
+{
+    m_enable = _enable;
+    m_enableHasBeenSet = true;
+}
+
+bool VpcRuleItem::EnableHasBeenSet() const
+{
+    return m_enableHasBeenSet;
+}
+
+int64_t VpcRuleItem::GetOrderIndex() const
+{
+    return m_orderIndex;
+}
+
+void VpcRuleItem::SetOrderIndex(const int64_t& _orderIndex)
+{
+    m_orderIndex = _orderIndex;
+    m_orderIndexHasBeenSet = true;
+}
+
+bool VpcRuleItem::OrderIndexHasBeenSet() const
+{
+    return m_orderIndexHasBeenSet;
+}
+
+string VpcRuleItem::GetPort() const
+{
+    return m_port;
+}
+
+void VpcRuleItem::SetPort(const string& _port)
+{
+    m_port = _port;
+    m_portHasBeenSet = true;
+}
+
+bool VpcRuleItem::PortHasBeenSet() const
+{
+    return m_portHasBeenSet;
+}
+
 string VpcRuleItem::GetProtocol() const
 {
     return m_protocol;
@@ -703,100 +751,100 @@ bool VpcRuleItem::RuleActionHasBeenSet() const
     return m_ruleActionHasBeenSet;
 }
 
-string VpcRuleItem::GetPort() const
+string VpcRuleItem::GetSourceContent() const
 {
-    return m_port;
+    return m_sourceContent;
 }
 
-void VpcRuleItem::SetPort(const string& _port)
+void VpcRuleItem::SetSourceContent(const string& _sourceContent)
 {
-    m_port = _port;
-    m_portHasBeenSet = true;
+    m_sourceContent = _sourceContent;
+    m_sourceContentHasBeenSet = true;
 }
 
-bool VpcRuleItem::PortHasBeenSet() const
+bool VpcRuleItem::SourceContentHasBeenSet() const
 {
-    return m_portHasBeenSet;
+    return m_sourceContentHasBeenSet;
 }
 
-string VpcRuleItem::GetDescription() const
+string VpcRuleItem::GetSourceType() const
 {
-    return m_description;
+    return m_sourceType;
 }
 
-void VpcRuleItem::SetDescription(const string& _description)
+void VpcRuleItem::SetSourceType(const string& _sourceType)
 {
-    m_description = _description;
-    m_descriptionHasBeenSet = true;
+    m_sourceType = _sourceType;
+    m_sourceTypeHasBeenSet = true;
 }
 
-bool VpcRuleItem::DescriptionHasBeenSet() const
+bool VpcRuleItem::SourceTypeHasBeenSet() const
 {
-    return m_descriptionHasBeenSet;
+    return m_sourceTypeHasBeenSet;
 }
 
-int64_t VpcRuleItem::GetOrderIndex() const
+vector<BetaInfoByACL> VpcRuleItem::GetBetaList() const
 {
-    return m_orderIndex;
+    return m_betaList;
 }
 
-void VpcRuleItem::SetOrderIndex(const int64_t& _orderIndex)
+void VpcRuleItem::SetBetaList(const vector<BetaInfoByACL>& _betaList)
 {
-    m_orderIndex = _orderIndex;
-    m_orderIndexHasBeenSet = true;
+    m_betaList = _betaList;
+    m_betaListHasBeenSet = true;
 }
 
-bool VpcRuleItem::OrderIndexHasBeenSet() const
+bool VpcRuleItem::BetaListHasBeenSet() const
 {
-    return m_orderIndexHasBeenSet;
+    return m_betaListHasBeenSet;
 }
 
-string VpcRuleItem::GetEnable() const
+string VpcRuleItem::GetCreateTime() const
 {
-    return m_enable;
+    return m_createTime;
 }
 
-void VpcRuleItem::SetEnable(const string& _enable)
+void VpcRuleItem::SetCreateTime(const string& _createTime)
 {
-    m_enable = _enable;
-    m_enableHasBeenSet = true;
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
 }
 
-bool VpcRuleItem::EnableHasBeenSet() const
+bool VpcRuleItem::CreateTimeHasBeenSet() const
 {
-    return m_enableHasBeenSet;
+    return m_createTimeHasBeenSet;
 }
 
-string VpcRuleItem::GetEdgeId() const
+int64_t VpcRuleItem::GetDeleted() const
 {
-    return m_edgeId;
+    return m_deleted;
 }
 
-void VpcRuleItem::SetEdgeId(const string& _edgeId)
+void VpcRuleItem::SetDeleted(const int64_t& _deleted)
 {
-    m_edgeId = _edgeId;
-    m_edgeIdHasBeenSet = true;
+    m_deleted = _deleted;
+    m_deletedHasBeenSet = true;
 }
 
-bool VpcRuleItem::EdgeIdHasBeenSet() const
+bool VpcRuleItem::DeletedHasBeenSet() const
 {
-    return m_edgeIdHasBeenSet;
+    return m_deletedHasBeenSet;
 }
 
-int64_t VpcRuleItem::GetUuid() const
+string VpcRuleItem::GetDestValueType() const
 {
-    return m_uuid;
+    return m_destValueType;
 }
 
-void VpcRuleItem::SetUuid(const int64_t& _uuid)
+void VpcRuleItem::SetDestValueType(const string& _destValueType)
 {
-    m_uuid = _uuid;
-    m_uuidHasBeenSet = true;
+    m_destValueType = _destValueType;
+    m_destValueTypeHasBeenSet = true;
 }
 
-bool VpcRuleItem::UuidHasBeenSet() const
+bool VpcRuleItem::DestValueTypeHasBeenSet() const
 {
-    return m_uuidHasBeenSet;
+    return m_destValueTypeHasBeenSet;
 }
 
 int64_t VpcRuleItem::GetDetectedTimes() const
@@ -831,38 +879,6 @@ bool VpcRuleItem::EdgeNameHasBeenSet() const
     return m_edgeNameHasBeenSet;
 }
 
-int64_t VpcRuleItem::GetInternalUuid() const
-{
-    return m_internalUuid;
-}
-
-void VpcRuleItem::SetInternalUuid(const int64_t& _internalUuid)
-{
-    m_internalUuid = _internalUuid;
-    m_internalUuidHasBeenSet = true;
-}
-
-bool VpcRuleItem::InternalUuidHasBeenSet() const
-{
-    return m_internalUuidHasBeenSet;
-}
-
-int64_t VpcRuleItem::GetDeleted() const
-{
-    return m_deleted;
-}
-
-void VpcRuleItem::SetDeleted(const int64_t& _deleted)
-{
-    m_deleted = _deleted;
-    m_deletedHasBeenSet = true;
-}
-
-bool VpcRuleItem::DeletedHasBeenSet() const
-{
-    return m_deletedHasBeenSet;
-}
-
 string VpcRuleItem::GetFwGroupId() const
 {
     return m_fwGroupId;
@@ -895,20 +911,52 @@ bool VpcRuleItem::FwGroupNameHasBeenSet() const
     return m_fwGroupNameHasBeenSet;
 }
 
-vector<BetaInfoByACL> VpcRuleItem::GetBetaList() const
+int64_t VpcRuleItem::GetInternalUuid() const
 {
-    return m_betaList;
+    return m_internalUuid;
 }
 
-void VpcRuleItem::SetBetaList(const vector<BetaInfoByACL>& _betaList)
+void VpcRuleItem::SetInternalUuid(const int64_t& _internalUuid)
 {
-    m_betaList = _betaList;
-    m_betaListHasBeenSet = true;
+    m_internalUuid = _internalUuid;
+    m_internalUuidHasBeenSet = true;
 }
 
-bool VpcRuleItem::BetaListHasBeenSet() const
+bool VpcRuleItem::InternalUuidHasBeenSet() const
 {
-    return m_betaListHasBeenSet;
+    return m_internalUuidHasBeenSet;
+}
+
+int64_t VpcRuleItem::GetInvalid() const
+{
+    return m_invalid;
+}
+
+void VpcRuleItem::SetInvalid(const int64_t& _invalid)
+{
+    m_invalid = _invalid;
+    m_invalidHasBeenSet = true;
+}
+
+bool VpcRuleItem::InvalidHasBeenSet() const
+{
+    return m_invalidHasBeenSet;
+}
+
+int64_t VpcRuleItem::GetIpVersion() const
+{
+    return m_ipVersion;
+}
+
+void VpcRuleItem::SetIpVersion(const int64_t& _ipVersion)
+{
+    m_ipVersion = _ipVersion;
+    m_ipVersionHasBeenSet = true;
+}
+
+bool VpcRuleItem::IpVersionHasBeenSet() const
+{
+    return m_ipVersionHasBeenSet;
 }
 
 string VpcRuleItem::GetParamTemplateId() const
@@ -943,20 +991,20 @@ bool VpcRuleItem::ParamTemplateNameHasBeenSet() const
     return m_paramTemplateNameHasBeenSet;
 }
 
-string VpcRuleItem::GetTargetName() const
+int64_t VpcRuleItem::GetRulePartition() const
 {
-    return m_targetName;
+    return m_rulePartition;
 }
 
-void VpcRuleItem::SetTargetName(const string& _targetName)
+void VpcRuleItem::SetRulePartition(const int64_t& _rulePartition)
 {
-    m_targetName = _targetName;
-    m_targetNameHasBeenSet = true;
+    m_rulePartition = _rulePartition;
+    m_rulePartitionHasBeenSet = true;
 }
 
-bool VpcRuleItem::TargetNameHasBeenSet() const
+bool VpcRuleItem::RulePartitionHasBeenSet() const
 {
-    return m_targetNameHasBeenSet;
+    return m_rulePartitionHasBeenSet;
 }
 
 string VpcRuleItem::GetSourceName() const
@@ -975,52 +1023,20 @@ bool VpcRuleItem::SourceNameHasBeenSet() const
     return m_sourceNameHasBeenSet;
 }
 
-int64_t VpcRuleItem::GetIpVersion() const
+string VpcRuleItem::GetTargetName() const
 {
-    return m_ipVersion;
+    return m_targetName;
 }
 
-void VpcRuleItem::SetIpVersion(const int64_t& _ipVersion)
+void VpcRuleItem::SetTargetName(const string& _targetName)
 {
-    m_ipVersion = _ipVersion;
-    m_ipVersionHasBeenSet = true;
+    m_targetName = _targetName;
+    m_targetNameHasBeenSet = true;
 }
 
-bool VpcRuleItem::IpVersionHasBeenSet() const
+bool VpcRuleItem::TargetNameHasBeenSet() const
 {
-    return m_ipVersionHasBeenSet;
-}
-
-int64_t VpcRuleItem::GetInvalid() const
-{
-    return m_invalid;
-}
-
-void VpcRuleItem::SetInvalid(const int64_t& _invalid)
-{
-    m_invalid = _invalid;
-    m_invalidHasBeenSet = true;
-}
-
-bool VpcRuleItem::InvalidHasBeenSet() const
-{
-    return m_invalidHasBeenSet;
-}
-
-string VpcRuleItem::GetCreateTime() const
-{
-    return m_createTime;
-}
-
-void VpcRuleItem::SetCreateTime(const string& _createTime)
-{
-    m_createTime = _createTime;
-    m_createTimeHasBeenSet = true;
-}
-
-bool VpcRuleItem::CreateTimeHasBeenSet() const
-{
-    return m_createTimeHasBeenSet;
+    return m_targetNameHasBeenSet;
 }
 
 string VpcRuleItem::GetUpdateTime() const
@@ -1039,35 +1055,19 @@ bool VpcRuleItem::UpdateTimeHasBeenSet() const
     return m_updateTimeHasBeenSet;
 }
 
-string VpcRuleItem::GetDestValueType() const
+int64_t VpcRuleItem::GetUuid() const
 {
-    return m_destValueType;
+    return m_uuid;
 }
 
-void VpcRuleItem::SetDestValueType(const string& _destValueType)
+void VpcRuleItem::SetUuid(const int64_t& _uuid)
 {
-    m_destValueType = _destValueType;
-    m_destValueTypeHasBeenSet = true;
+    m_uuid = _uuid;
+    m_uuidHasBeenSet = true;
 }
 
-bool VpcRuleItem::DestValueTypeHasBeenSet() const
+bool VpcRuleItem::UuidHasBeenSet() const
 {
-    return m_destValueTypeHasBeenSet;
-}
-
-int64_t VpcRuleItem::GetRulePartition() const
-{
-    return m_rulePartition;
-}
-
-void VpcRuleItem::SetRulePartition(const int64_t& _rulePartition)
-{
-    m_rulePartition = _rulePartition;
-    m_rulePartitionHasBeenSet = true;
-}
-
-bool VpcRuleItem::RulePartitionHasBeenSet() const
-{
-    return m_rulePartitionHasBeenSet;
+    return m_uuidHasBeenSet;
 }
 

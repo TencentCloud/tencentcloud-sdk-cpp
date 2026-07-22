@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Subnet实例ID，例如：subnet-f1xjkw1b。
-                     * @return SubnetIds Subnet实例ID，例如：subnet-f1xjkw1b。
+                     * 获取<p>Subnet实例ID，例如：subnet-f1xjkw1b。</p>
+                     * @return SubnetIds <p>Subnet实例ID，例如：subnet-f1xjkw1b。</p>
                      * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
-                     * 设置Subnet实例ID，例如：subnet-f1xjkw1b。
-                     * @param _subnetIds Subnet实例ID，例如：subnet-f1xjkw1b。
+                     * 设置<p>Subnet实例ID，例如：subnet-f1xjkw1b。</p>
+                     * @param _subnetIds <p>Subnet实例ID，例如：subnet-f1xjkw1b。</p>
                      * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Subnet实例ID，例如：subnet-f1xjkw1b。
+                     * <p>Subnet实例ID，例如：subnet-f1xjkw1b。</p>
                      */
                     std::vector<std::string> m_subnetIds;
                     bool m_subnetIdsHasBeenSet;

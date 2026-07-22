@@ -25,7 +25,8 @@ using namespace std;
 
 DeleteSecretResponse::DeleteSecretResponse() :
     m_secretNameHasBeenSet(false),
-    m_deleteTimeHasBeenSet(false)
+    m_deleteTimeHasBeenSet(false),
+    m_flowIDHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome DeleteSecretResponse::Deserialize(const string &payload)
         m_deleteTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FlowID") && !rsp["FlowID"].IsNull())
+    {
+        if (!rsp["FlowID"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowID` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowID = rsp["FlowID"].GetInt64();
+        m_flowIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string DeleteSecretResponse::ToJsonString() const
         string key = "DeleteTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deleteTime, allocator);
+    }
+
+    if (m_flowIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_flowID, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +158,16 @@ int64_t DeleteSecretResponse::GetDeleteTime() const
 bool DeleteSecretResponse::DeleteTimeHasBeenSet() const
 {
     return m_deleteTimeHasBeenSet;
+}
+
+int64_t DeleteSecretResponse::GetFlowID() const
+{
+    return m_flowID;
+}
+
+bool DeleteSecretResponse::FlowIDHasBeenSet() const
+{
+    return m_flowIDHasBeenSet;
 }
 
 

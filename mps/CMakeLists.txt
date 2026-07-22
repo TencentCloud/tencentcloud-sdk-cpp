@@ -184,6 +184,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/CreateQualityControlTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/FlowMediaAudio.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskReelInput.h
+  include/tencentcloud/mps/v20190612/model/CreateImageConfig.h
   include/tencentcloud/mps/v20190612/model/DeleteStreamPackageLinearAssemblyProgramRequest.h
   include/tencentcloud/mps/v20190612/model/QualityControlResult.h
   include/tencentcloud/mps/v20190612/model/AiReviewPornTaskInput.h
@@ -490,6 +491,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/FlowStatistics.h
   include/tencentcloud/mps/v20190612/model/BatchSmartSubtitlesResult.h
   include/tencentcloud/mps/v20190612/model/QueryProjectResponse.h
+  include/tencentcloud/mps/v20190612/model/DescribeAigcTaskStatusResponse.h
   include/tencentcloud/mps/v20190612/model/MediaProcessTaskInput.h
   include/tencentcloud/mps/v20190612/model/CreateInputSRTSettings.h
   include/tencentcloud/mps/v20190612/model/DescribeDesignTaskRequest.h
@@ -589,6 +591,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/BatchSubTaskResult.h
   include/tencentcloud/mps/v20190612/model/MediaContentReviewSegmentItem.h
   include/tencentcloud/mps/v20190612/model/AigcStoreCosParam.h
+  include/tencentcloud/mps/v20190612/model/DescribeAigcTaskStatusRequest.h
   include/tencentcloud/mps/v20190612/model/DescribeDesignTaskResponse.h
   include/tencentcloud/mps/v20190612/model/CreateProjectRequest.h
   include/tencentcloud/mps/v20190612/model/FlowVideo.h
@@ -1246,6 +1249,7 @@ set(mps_src
   src/v20190612/model/CreateQualityControlTemplateResponse.cpp
   src/v20190612/model/FlowMediaAudio.cpp
   src/v20190612/model/AiAnalysisTaskReelInput.cpp
+  src/v20190612/model/CreateImageConfig.cpp
   src/v20190612/model/DeleteStreamPackageLinearAssemblyProgramRequest.cpp
   src/v20190612/model/QualityControlResult.cpp
   src/v20190612/model/AiReviewPornTaskInput.cpp
@@ -1552,6 +1556,7 @@ set(mps_src
   src/v20190612/model/FlowStatistics.cpp
   src/v20190612/model/BatchSmartSubtitlesResult.cpp
   src/v20190612/model/QueryProjectResponse.cpp
+  src/v20190612/model/DescribeAigcTaskStatusResponse.cpp
   src/v20190612/model/MediaProcessTaskInput.cpp
   src/v20190612/model/CreateInputSRTSettings.cpp
   src/v20190612/model/DescribeDesignTaskRequest.cpp
@@ -1651,6 +1656,7 @@ set(mps_src
   src/v20190612/model/BatchSubTaskResult.cpp
   src/v20190612/model/MediaContentReviewSegmentItem.cpp
   src/v20190612/model/AigcStoreCosParam.cpp
+  src/v20190612/model/DescribeAigcTaskStatusRequest.cpp
   src/v20190612/model/DescribeDesignTaskResponse.cpp
   src/v20190612/model/CreateProjectRequest.cpp
   src/v20190612/model/FlowVideo.cpp

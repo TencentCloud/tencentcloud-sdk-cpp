@@ -201,6 +201,8 @@
 #include <tencentcloud/mps/v20190612/model/DescribeAigcAudioTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAigcImageTaskRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAigcImageTaskResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeAigcTaskStatusRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeAigcTaskStatusResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAigcVideoTaskRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAigcVideoTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAnimatedGraphicsTemplatesRequest.h>
@@ -738,6 +740,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAigcImageTaskResponse> DescribeAigcImageTaskOutcome;
                 typedef std::future<DescribeAigcImageTaskOutcome> DescribeAigcImageTaskOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeAigcImageTaskRequest&, DescribeAigcImageTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcImageTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAigcTaskStatusResponse> DescribeAigcTaskStatusOutcome;
+                typedef std::future<DescribeAigcTaskStatusOutcome> DescribeAigcTaskStatusOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeAigcTaskStatusRequest&, DescribeAigcTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcTaskStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAigcVideoTaskResponse> DescribeAigcVideoTaskOutcome;
                 typedef std::future<DescribeAigcVideoTaskOutcome> DescribeAigcVideoTaskOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeAigcVideoTaskRequest&, DescribeAigcVideoTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcVideoTaskAsyncHandler;
@@ -1959,6 +1964,15 @@ namespace TencentCloud
                 DescribeAigcImageTaskOutcomeCallable DescribeAigcImageTaskCallable(const Model::DescribeAigcImageTaskRequest& request);
 
                 /**
+                 *查询AIGC场景任务接口
+                 * @param req DescribeAigcTaskStatusRequest
+                 * @return DescribeAigcTaskStatusOutcome
+                 */
+                DescribeAigcTaskStatusOutcome DescribeAigcTaskStatus(const Model::DescribeAigcTaskStatusRequest &request);
+                void DescribeAigcTaskStatusAsync(const Model::DescribeAigcTaskStatusRequest& request, const DescribeAigcTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAigcTaskStatusOutcomeCallable DescribeAigcTaskStatusCallable(const Model::DescribeAigcTaskStatusRequest& request);
+
+                /**
                  *调用该接口，用于查询AIGC生视频任务的进度以及获取生成结果。
                  * @param req DescribeAigcVideoTaskRequest
                  * @return DescribeAigcVideoTaskOutcome
@@ -2982,6 +2996,8 @@ namespace TencentCloud
 1. 格式转换；
 2. 图像增强；
 3. 图像擦除;
+4. 数字水印；
+5. 美颜滤镜；
                  * @param req ProcessImageRequest
                  * @return ProcessImageOutcome
                  */

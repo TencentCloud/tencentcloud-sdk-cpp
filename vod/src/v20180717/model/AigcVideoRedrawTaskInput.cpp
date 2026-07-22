@@ -22,6 +22,7 @@ using namespace std;
 
 AigcVideoRedrawTaskInput::AigcVideoRedrawTaskInput() :
     m_fileInfoHasBeenSet(false),
+    m_taskInfoHasBeenSet(false),
     m_outputConfigHasBeenSet(false)
 {
 }
@@ -46,6 +47,23 @@ CoreInternalOutcome AigcVideoRedrawTaskInput::Deserialize(const rapidjson::Value
         }
 
         m_fileInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskInfo") && !value["TaskInfo"].IsNull())
+    {
+        if (!value["TaskInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcVideoRedrawTaskInput.TaskInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_taskInfo.Deserialize(value["TaskInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_taskInfoHasBeenSet = true;
     }
 
     if (value.HasMember("OutputConfig") && !value["OutputConfig"].IsNull())
@@ -81,6 +99,15 @@ void AigcVideoRedrawTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::
         m_fileInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_taskInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_taskInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_outputConfigHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -107,6 +134,22 @@ void AigcVideoRedrawTaskInput::SetFileInfo(const AigcVideoRedrawTaskInputFileInf
 bool AigcVideoRedrawTaskInput::FileInfoHasBeenSet() const
 {
     return m_fileInfoHasBeenSet;
+}
+
+AigcVideoRedrawTaskInfo AigcVideoRedrawTaskInput::GetTaskInfo() const
+{
+    return m_taskInfo;
+}
+
+void AigcVideoRedrawTaskInput::SetTaskInfo(const AigcVideoRedrawTaskInfo& _taskInfo)
+{
+    m_taskInfo = _taskInfo;
+    m_taskInfoHasBeenSet = true;
+}
+
+bool AigcVideoRedrawTaskInput::TaskInfoHasBeenSet() const
+{
+    return m_taskInfoHasBeenSet;
 }
 
 AigcVideoRedrawOutputConfig AigcVideoRedrawTaskInput::GetOutputConfig() const

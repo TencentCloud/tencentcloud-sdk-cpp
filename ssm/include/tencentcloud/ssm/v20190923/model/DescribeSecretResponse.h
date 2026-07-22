@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ssm/v20190923/model/SecretAccountInfo.h>
 
 
 namespace TencentCloud
@@ -337,6 +338,20 @@ namespace TencentCloud
                      */
                     bool TargetUinStringHasBeenSet() const;
 
+                    /**
+                     * 获取<p>对应云产品的账号信息</p>
+                     * @return AccountInfoList <p>对应云产品的账号信息</p>
+                     * 
+                     */
+                    std::vector<SecretAccountInfo> GetAccountInfoList() const;
+
+                    /**
+                     * 判断参数 AccountInfoList 是否已赋值
+                     * @return AccountInfoList 是否已赋值
+                     * 
+                     */
+                    bool AccountInfoListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -464,6 +479,12 @@ namespace TencentCloud
                      */
                     std::string m_targetUinString;
                     bool m_targetUinStringHasBeenSet;
+
+                    /**
+                     * <p>对应云产品的账号信息</p>
+                     */
+                    std::vector<SecretAccountInfo> m_accountInfoList;
+                    bool m_accountInfoListHasBeenSet;
 
                 };
             }

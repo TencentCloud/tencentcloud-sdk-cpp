@@ -4490,6 +4490,56 @@ MpsClient::DescribeAigcImageTaskOutcomeCallable MpsClient::DescribeAigcImageTask
     return prom->get_future();
 }
 
+MpsClient::DescribeAigcTaskStatusOutcome MpsClient::DescribeAigcTaskStatus(const DescribeAigcTaskStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAigcTaskStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAigcTaskStatusResponse rsp = DescribeAigcTaskStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAigcTaskStatusOutcome(rsp);
+        else
+            return DescribeAigcTaskStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAigcTaskStatusOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeAigcTaskStatusAsync(const DescribeAigcTaskStatusRequest& request, const DescribeAigcTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAigcTaskStatusRequest&;
+    using Resp = DescribeAigcTaskStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAigcTaskStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::DescribeAigcTaskStatusOutcomeCallable MpsClient::DescribeAigcTaskStatusCallable(const DescribeAigcTaskStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAigcTaskStatusOutcome>>();
+    DescribeAigcTaskStatusAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const DescribeAigcTaskStatusRequest&,
+        DescribeAigcTaskStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::DescribeAigcVideoTaskOutcome MpsClient::DescribeAigcVideoTask(const DescribeAigcVideoTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAigcVideoTask");
