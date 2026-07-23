@@ -202,24 +202,20 @@ void AbstractClient::ReportResult(
 
 bool AbstractClient::IsFailoverTriggering(const std::string &error_code)
 {
-    // Only network-level errors that are reliably attributable to the
-    // current endpoint warrant a failover transition:
-    //   DnsError        - CURLE_COULDNT_RESOLVE_HOST
-    //   ConnectionError - CURLE_COULDNT_CONNECT
-    //   SSLError        - CURLE_PEER_FAILED_VERIFICATION (strong hint
-    //                     of DNS hijacking for TencentCloud domains)
+    // Errors that trigger a failover transition:
+    //   DnsError            - DNS resolution failure
+    //   ConnectionError     - connect failure or interrupted transfer
+    //   SSLError            - certificate verification / TLS handshake
+    //   ServiceNetworkError - HTTP response status is not 200
     //
-    // Explicitly NOT triggering failover:
-    //   ServiceNetworkError - any HTTP non-2xx; may come from business
-    //     errors (4xx), server faults (5xx), or throttling, and cannot
-    //     be reliably attributed to a per-endpoint network problem.
-    //     Matches HEAD's original behavior.
-    //   NetworkError - e.g. CURLE_OPERATION_TIMEDOUT spans multiple
-    //     stages; local client cert errors cannot be fixed by switching
-    //     domain.
+    // NetworkError remains non-triggering. In particular,
+    // CURLE_OPERATION_TIMEDOUT cannot be reliably attributed to the
+    // target endpoint and local TLS/configuration errors cannot be fixed
+    // by switching domains.
     return error_code == "DnsError" ||
            error_code == "ConnectionError" ||
-           error_code == "SSLError";
+           error_code == "SSLError" ||
+           error_code == "ServiceNetworkError";
 }
 
 HttpClient::HttpResponseOutcome AbstractClient::DoRequestWithEndpoint(

@@ -267,11 +267,23 @@ HttpClient::HttpResponseOutcome HttpClient::SendRequest(const HttpRequest &reque
         return HttpResponseOutcome(Core::Error("DnsError", std::string(errbuf)));
     case CURLE_COULDNT_CONNECT:
         return HttpResponseOutcome(Core::Error("ConnectionError", std::string(errbuf)));
+    case CURLE_GOT_NOTHING:
+    case CURLE_SEND_ERROR:
+    case CURLE_RECV_ERROR:
+    case CURLE_PARTIAL_FILE:
+        // The connection was established but was closed, reset, or
+        // interrupted while sending or receiving data. Align with Java
+        // SDK's SocketException failover behavior.
+        return HttpResponseOutcome(Core::Error("ConnectionError", std::string(errbuf)));
     case CURLE_PEER_FAILED_VERIFICATION:
         // Server certificate verification failed (SAN/CN mismatch, expired,
         // untrusted CA, etc.). This strongly indicates a server-side issue
         // and is a high-confidence signal of DNS hijacking when the target
         // is a TencentCloud domain.
+        return HttpResponseOutcome(Core::Error("SSLError", std::string(errbuf)));
+    case CURLE_SSL_CONNECT_ERROR:
+        // TLS handshake failure. Align with Java SDK's SSLException
+        // handling: all SSL handshake errors trigger domain failover.
         return HttpResponseOutcome(Core::Error("SSLError", std::string(errbuf)));
     default:
         // The following errors fall here and are intentionally not treated
@@ -280,8 +292,6 @@ HttpClient::HttpResponseOutcome HttpClient::SendRequest(const HttpRequest &reque
         // region or TLD:
         //   - CURLE_OPERATION_TIMEDOUT (28): spans DNS/TCP/TLS/req/resp
         //     stages, cannot be reliably attributed.
-        //   - CURLE_SSL_CONNECT_ERROR (35): TLS handshake failure due to
-        //     protocol/cipher mismatch, usually a client build issue.
         //   - CURLE_SSL_CERTPROBLEM (58): local client certificate problem.
         //   - CURLE_SSL_CIPHER (59): requested cipher not supported by
         //     the local libcurl/OpenSSL build.
@@ -493,6 +503,15 @@ void HttpClient::AsyncReqHandler()
                         ctx->completion_handler(
                             HttpResponseOutcome(Core::Error("ConnectionError", err_msg)));
                         break;
+                    case CURLE_GOT_NOTHING:
+                    case CURLE_SEND_ERROR:
+                    case CURLE_RECV_ERROR:
+                    case CURLE_PARTIAL_FILE:
+                        // The established connection was closed, reset, or
+                        // interrupted during request or response transfer.
+                        ctx->completion_handler(
+                            HttpResponseOutcome(Core::Error("ConnectionError", err_msg)));
+                        break;
                     case CURLE_PEER_FAILED_VERIFICATION:
                         // Server certificate verification failed.
                         // High-confidence signal of DNS hijacking for
@@ -500,11 +519,17 @@ void HttpClient::AsyncReqHandler()
                         ctx->completion_handler(
                             HttpResponseOutcome(Core::Error("SSLError", err_msg)));
                         break;
+                    case CURLE_SSL_CONNECT_ERROR:
+                        // TLS handshake failure. Align with Java SDK's
+                        // SSLException handling: trigger domain failover.
+                        ctx->completion_handler(
+                            HttpResponseOutcome(Core::Error("SSLError", err_msg)));
+                        break;
                     default:
-                        // CURLE_OPERATION_TIMEDOUT, CURLE_SSL_CONNECT_ERROR,
-                        // CURLE_SSL_CERTPROBLEM, CURLE_SSL_CIPHER and other
-                        // errors fall here. They are mostly client-side
-                        // issues and cannot be fixed by region/TLD switch.
+                        // CURLE_OPERATION_TIMEDOUT, CURLE_SSL_CERTPROBLEM,
+                        // CURLE_SSL_CIPHER and other errors fall here. They
+                        // are mostly client-side issues and cannot be fixed
+                        // by region/TLD switch.
                         ctx->completion_handler(
                             HttpResponseOutcome(Core::Error("NetworkError", err_msg)));
                         break;
