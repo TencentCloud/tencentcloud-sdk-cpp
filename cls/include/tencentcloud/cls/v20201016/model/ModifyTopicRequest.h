@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/Tag.h>
 #include <tencentcloud/cls/v20201016/model/TopicExtendInfo.h>
+#include <tencentcloud/cls/v20201016/model/CustomKmsInfo.h>
 
 
 namespace TencentCloud
@@ -360,6 +361,27 @@ namespace TencentCloud
                     bool EncryptionHasBeenSet() const;
 
                     /**
+                     * 获取<p>用户自定义 KMS 密钥信息；为空则使用默认密钥（别名 KMS-CLS）</p><p>当参数 Encryption为 1 时生效</p>
+                     * @return CustomKmsInfo <p>用户自定义 KMS 密钥信息；为空则使用默认密钥（别名 KMS-CLS）</p><p>当参数 Encryption为 1 时生效</p>
+                     * 
+                     */
+                    CustomKmsInfo GetCustomKmsInfo() const;
+
+                    /**
+                     * 设置<p>用户自定义 KMS 密钥信息；为空则使用默认密钥（别名 KMS-CLS）</p><p>当参数 Encryption为 1 时生效</p>
+                     * @param _customKmsInfo <p>用户自定义 KMS 密钥信息；为空则使用默认密钥（别名 KMS-CLS）</p><p>当参数 Encryption为 1 时生效</p>
+                     * 
+                     */
+                    void SetCustomKmsInfo(const CustomKmsInfo& _customKmsInfo);
+
+                    /**
+                     * 判断参数 CustomKmsInfo 是否已赋值
+                     * @return CustomKmsInfo 是否已赋值
+                     * 
+                     */
+                    bool CustomKmsInfoHasBeenSet() const;
+
+                    /**
                      * 获取<p>开启记录公网来源ip和服务端接收时间</p>
                      * @return IsSourceFrom <p>开启记录公网来源ip和服务端接收时间</p>
                      * 
@@ -492,6 +514,12 @@ namespace TencentCloud
                      */
                     uint64_t m_encryption;
                     bool m_encryptionHasBeenSet;
+
+                    /**
+                     * <p>用户自定义 KMS 密钥信息；为空则使用默认密钥（别名 KMS-CLS）</p><p>当参数 Encryption为 1 时生效</p>
+                     */
+                    CustomKmsInfo m_customKmsInfo;
+                    bool m_customKmsInfoHasBeenSet;
 
                     /**
                      * <p>开启记录公网来源ip和服务端接收时间</p>

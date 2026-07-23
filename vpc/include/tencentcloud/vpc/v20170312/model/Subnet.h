@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取`VPC`实例`ID`。
-                     * @return VpcId `VPC`实例`ID`。
+                     * 获取<p><code>VPC</code>实例<code>ID</code>。</p>
+                     * @return VpcId <p><code>VPC</code>实例<code>ID</code>。</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置`VPC`实例`ID`。
-                     * @param _vpcId `VPC`实例`ID`。
+                     * 设置<p><code>VPC</code>实例<code>ID</code>。</p>
+                     * @param _vpcId <p><code>VPC</code>实例<code>ID</code>。</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网实例`ID`，例如：subnet-bthucmmy。
-                     * @return SubnetId 子网实例`ID`，例如：subnet-bthucmmy。
+                     * 获取<p>子网实例<code>ID</code>，例如：subnet-bthucmmy。</p>
+                     * @return SubnetId <p>子网实例<code>ID</code>，例如：subnet-bthucmmy。</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网实例`ID`，例如：subnet-bthucmmy。
-                     * @param _subnetId 子网实例`ID`，例如：subnet-bthucmmy。
+                     * 设置<p>子网实例<code>ID</code>，例如：subnet-bthucmmy。</p>
+                     * @param _subnetId <p>子网实例<code>ID</code>，例如：subnet-bthucmmy。</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取子网名称。
-                     * @return SubnetName 子网名称。
+                     * 获取<p>子网名称。</p>
+                     * @return SubnetName <p>子网名称。</p>
                      * 
                      */
                     std::string GetSubnetName() const;
 
                     /**
-                     * 设置子网名称。
-                     * @param _subnetName 子网名称。
+                     * 设置<p>子网名称。</p>
+                     * @param _subnetName <p>子网名称。</p>
                      * 
                      */
                     void SetSubnetName(const std::string& _subnetName);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool SubnetNameHasBeenSet() const;
 
                     /**
-                     * 获取子网的 `IPv4` `CIDR`。
-                     * @return CidrBlock 子网的 `IPv4` `CIDR`。
+                     * 获取<p>子网的 <code>IPv4</code> <code>CIDR</code>。</p>
+                     * @return CidrBlock <p>子网的 <code>IPv4</code> <code>CIDR</code>。</p>
                      * 
                      */
                     std::string GetCidrBlock() const;
 
                     /**
-                     * 设置子网的 `IPv4` `CIDR`。
-                     * @param _cidrBlock 子网的 `IPv4` `CIDR`。
+                     * 设置<p>子网的 <code>IPv4</code> <code>CIDR</code>。</p>
+                     * @param _cidrBlock <p>子网的 <code>IPv4</code> <code>CIDR</code>。</p>
                      * 
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool CidrBlockHasBeenSet() const;
 
                     /**
-                     * 获取是否默认子网。
-                     * @return IsDefault 是否默认子网。
+                     * 获取<p>是否默认子网。</p>
+                     * @return IsDefault <p>是否默认子网。</p>
                      * 
                      */
                     bool GetIsDefault() const;
 
                     /**
-                     * 设置是否默认子网。
-                     * @param _isDefault 是否默认子网。
+                     * 设置<p>是否默认子网。</p>
+                     * @param _isDefault <p>是否默认子网。</p>
                      * 
                      */
                     void SetIsDefault(const bool& _isDefault);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool IsDefaultHasBeenSet() const;
 
                     /**
-                     * 获取是否开启广播。
-                     * @return EnableBroadcast 是否开启广播。
+                     * 获取<p>是否开启广播。</p>
+                     * @return EnableBroadcast <p>是否开启广播。</p>
                      * 
                      */
                     bool GetEnableBroadcast() const;
 
                     /**
-                     * 设置是否开启广播。
-                     * @param _enableBroadcast 是否开启广播。
+                     * 设置<p>是否开启广播。</p>
+                     * @param _enableBroadcast <p>是否开启广播。</p>
                      * 
                      */
                     void SetEnableBroadcast(const bool& _enableBroadcast);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool EnableBroadcastHasBeenSet() const;
 
                     /**
-                     * 获取可用区。
-                     * @return Zone 可用区。
+                     * 获取<p>可用区。</p>
+                     * @return Zone <p>可用区。</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区。
-                     * @param _zone 可用区。
+                     * 设置<p>可用区。</p>
+                     * @param _zone <p>可用区。</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取路由表实例ID，例如：rtb-l2h8d7c2。
-                     * @return RouteTableId 路由表实例ID，例如：rtb-l2h8d7c2。
+                     * 获取<p>路由表实例ID，例如：rtb-l2h8d7c2。</p>
+                     * @return RouteTableId <p>路由表实例ID，例如：rtb-l2h8d7c2。</p>
                      * 
                      */
                     std::string GetRouteTableId() const;
 
                     /**
-                     * 设置路由表实例ID，例如：rtb-l2h8d7c2。
-                     * @param _routeTableId 路由表实例ID，例如：rtb-l2h8d7c2。
+                     * 设置<p>路由表实例ID，例如：rtb-l2h8d7c2。</p>
+                     * @param _routeTableId <p>路由表实例ID，例如：rtb-l2h8d7c2。</p>
                      * 
                      */
                     void SetRouteTableId(const std::string& _routeTableId);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool RouteTableIdHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return CreatedTime 创建时间。
+                     * 获取<p>创建时间。</p>
+                     * @return CreatedTime <p>创建时间。</p>
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _createdTime 创建时间。
+                     * 设置<p>创建时间。</p>
+                     * @param _createdTime <p>创建时间。</p>
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取可用`IPv4`数。
-                     * @return AvailableIpAddressCount 可用`IPv4`数。
+                     * 获取<p>可用<code>IPv4</code>数。</p>
+                     * @return AvailableIpAddressCount <p>可用<code>IPv4</code>数。</p>
                      * 
                      */
                     uint64_t GetAvailableIpAddressCount() const;
 
                     /**
-                     * 设置可用`IPv4`数。
-                     * @param _availableIpAddressCount 可用`IPv4`数。
+                     * 设置<p>可用<code>IPv4</code>数。</p>
+                     * @param _availableIpAddressCount <p>可用<code>IPv4</code>数。</p>
                      * 
                      */
                     void SetAvailableIpAddressCount(const uint64_t& _availableIpAddressCount);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool AvailableIpAddressCountHasBeenSet() const;
 
                     /**
-                     * 获取子网的 `IPv6` `CIDR`。
-                     * @return Ipv6CidrBlock 子网的 `IPv6` `CIDR`。
+                     * 获取<p>子网的 <code>IPv6</code> <code>CIDR</code>。</p>
+                     * @return Ipv6CidrBlock <p>子网的 <code>IPv6</code> <code>CIDR</code>。</p>
                      * 
                      */
                     std::string GetIpv6CidrBlock() const;
 
                     /**
-                     * 设置子网的 `IPv6` `CIDR`。
-                     * @param _ipv6CidrBlock 子网的 `IPv6` `CIDR`。
+                     * 设置<p>子网的 <code>IPv6</code> <code>CIDR</code>。</p>
+                     * @param _ipv6CidrBlock <p>子网的 <code>IPv6</code> <code>CIDR</code>。</p>
                      * 
                      */
                     void SetIpv6CidrBlock(const std::string& _ipv6CidrBlock);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool Ipv6CidrBlockHasBeenSet() const;
 
                     /**
-                     * 获取关联`ACL`ID
-                     * @return NetworkAclId 关联`ACL`ID
+                     * 获取<p>关联<code>ACL</code>ID</p>
+                     * @return NetworkAclId <p>关联<code>ACL</code>ID</p>
                      * 
                      */
                     std::string GetNetworkAclId() const;
 
                     /**
-                     * 设置关联`ACL`ID
-                     * @param _networkAclId 关联`ACL`ID
+                     * 设置<p>关联<code>ACL</code>ID</p>
+                     * @param _networkAclId <p>关联<code>ACL</code>ID</p>
                      * 
                      */
                     void SetNetworkAclId(const std::string& _networkAclId);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool NetworkAclIdHasBeenSet() const;
 
                     /**
-                     * 获取是否为 `SNAT` 地址池子网。
-                     * @return IsRemoteVpcSnat 是否为 `SNAT` 地址池子网。
+                     * 获取<p>是否为 <code>SNAT</code> 地址池子网。</p>
+                     * @return IsRemoteVpcSnat <p>是否为 <code>SNAT</code> 地址池子网。</p>
                      * 
                      */
                     bool GetIsRemoteVpcSnat() const;
 
                     /**
-                     * 设置是否为 `SNAT` 地址池子网。
-                     * @param _isRemoteVpcSnat 是否为 `SNAT` 地址池子网。
+                     * 设置<p>是否为 <code>SNAT</code> 地址池子网。</p>
+                     * @param _isRemoteVpcSnat <p>是否为 <code>SNAT</code> 地址池子网。</p>
                      * 
                      */
                     void SetIsRemoteVpcSnat(const bool& _isRemoteVpcSnat);
@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool IsRemoteVpcSnatHasBeenSet() const;
 
                     /**
-                     * 获取子网`IPv4`总数。
-                     * @return TotalIpAddressCount 子网`IPv4`总数。
+                     * 获取<p>子网<code>IPv4</code>总数。</p>
+                     * @return TotalIpAddressCount <p>子网<code>IPv4</code>总数。</p>
                      * 
                      */
                     uint64_t GetTotalIpAddressCount() const;
 
                     /**
-                     * 设置子网`IPv4`总数。
-                     * @param _totalIpAddressCount 子网`IPv4`总数。
+                     * 设置<p>子网<code>IPv4</code>总数。</p>
+                     * @param _totalIpAddressCount <p>子网<code>IPv4</code>总数。</p>
                      * 
                      */
                     void SetTotalIpAddressCount(const uint64_t& _totalIpAddressCount);
@@ -342,15 +342,15 @@ namespace TencentCloud
                     bool TotalIpAddressCountHasBeenSet() const;
 
                     /**
-                     * 获取标签键值对。
-                     * @return TagSet 标签键值对。
+                     * 获取<p>标签键值对。</p>
+                     * @return TagSet <p>标签键值对。</p>
                      * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
-                     * 设置标签键值对。
-                     * @param _tagSet 标签键值对。
+                     * 设置<p>标签键值对。</p>
+                     * @param _tagSet <p>标签键值对。</p>
                      * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
@@ -363,15 +363,15 @@ namespace TencentCloud
                     bool TagSetHasBeenSet() const;
 
                     /**
-                     * 获取CDC实例ID。
-                     * @return CdcId CDC实例ID。
+                     * 获取<p>CDC实例ID。</p>
+                     * @return CdcId <p>CDC实例ID。</p>
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
-                     * 设置CDC实例ID。
-                     * @param _cdcId CDC实例ID。
+                     * 设置<p>CDC实例ID。</p>
+                     * @param _cdcId <p>CDC实例ID。</p>
                      * 
                      */
                     void SetCdcId(const std::string& _cdcId);
@@ -384,15 +384,15 @@ namespace TencentCloud
                     bool CdcIdHasBeenSet() const;
 
                     /**
-                     * 获取是否是CDC所属子网。0:否 1:是
-                     * @return IsCdcSubnet 是否是CDC所属子网。0:否 1:是
+                     * 获取<p>是否是CDC所属子网。0:否 1:是</p>
+                     * @return IsCdcSubnet <p>是否是CDC所属子网。0:否 1:是</p>
                      * 
                      */
                     int64_t GetIsCdcSubnet() const;
 
                     /**
-                     * 设置是否是CDC所属子网。0:否 1:是
-                     * @param _isCdcSubnet 是否是CDC所属子网。0:否 1:是
+                     * 设置<p>是否是CDC所属子网。0:否 1:是</p>
+                     * @param _isCdcSubnet <p>是否是CDC所属子网。0:否 1:是</p>
                      * 
                      */
                     void SetIsCdcSubnet(const int64_t& _isCdcSubnet);
@@ -407,103 +407,103 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * `VPC`实例`ID`。
+                     * <p><code>VPC</code>实例<code>ID</code>。</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网实例`ID`，例如：subnet-bthucmmy。
+                     * <p>子网实例<code>ID</code>，例如：subnet-bthucmmy。</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 子网名称。
+                     * <p>子网名称。</p>
                      */
                     std::string m_subnetName;
                     bool m_subnetNameHasBeenSet;
 
                     /**
-                     * 子网的 `IPv4` `CIDR`。
+                     * <p>子网的 <code>IPv4</code> <code>CIDR</code>。</p>
                      */
                     std::string m_cidrBlock;
                     bool m_cidrBlockHasBeenSet;
 
                     /**
-                     * 是否默认子网。
+                     * <p>是否默认子网。</p>
                      */
                     bool m_isDefault;
                     bool m_isDefaultHasBeenSet;
 
                     /**
-                     * 是否开启广播。
+                     * <p>是否开启广播。</p>
                      */
                     bool m_enableBroadcast;
                     bool m_enableBroadcastHasBeenSet;
 
                     /**
-                     * 可用区。
+                     * <p>可用区。</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 路由表实例ID，例如：rtb-l2h8d7c2。
+                     * <p>路由表实例ID，例如：rtb-l2h8d7c2。</p>
                      */
                     std::string m_routeTableId;
                     bool m_routeTableIdHasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * <p>创建时间。</p>
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 可用`IPv4`数。
+                     * <p>可用<code>IPv4</code>数。</p>
                      */
                     uint64_t m_availableIpAddressCount;
                     bool m_availableIpAddressCountHasBeenSet;
 
                     /**
-                     * 子网的 `IPv6` `CIDR`。
+                     * <p>子网的 <code>IPv6</code> <code>CIDR</code>。</p>
                      */
                     std::string m_ipv6CidrBlock;
                     bool m_ipv6CidrBlockHasBeenSet;
 
                     /**
-                     * 关联`ACL`ID
+                     * <p>关联<code>ACL</code>ID</p>
                      */
                     std::string m_networkAclId;
                     bool m_networkAclIdHasBeenSet;
 
                     /**
-                     * 是否为 `SNAT` 地址池子网。
+                     * <p>是否为 <code>SNAT</code> 地址池子网。</p>
                      */
                     bool m_isRemoteVpcSnat;
                     bool m_isRemoteVpcSnatHasBeenSet;
 
                     /**
-                     * 子网`IPv4`总数。
+                     * <p>子网<code>IPv4</code>总数。</p>
                      */
                     uint64_t m_totalIpAddressCount;
                     bool m_totalIpAddressCountHasBeenSet;
 
                     /**
-                     * 标签键值对。
+                     * <p>标签键值对。</p>
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;
 
                     /**
-                     * CDC实例ID。
+                     * <p>CDC实例ID。</p>
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;
 
                     /**
-                     * 是否是CDC所属子网。0:否 1:是
+                     * <p>是否是CDC所属子网。0:否 1:是</p>
                      */
                     int64_t m_isCdcSubnet;
                     bool m_isCdcSubnetHasBeenSet;

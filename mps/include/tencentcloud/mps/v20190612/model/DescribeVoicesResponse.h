@@ -73,6 +73,20 @@ namespace TencentCloud
                     bool MsgHasBeenSet() const;
 
                     /**
+                     * 获取<p>符合查询条件的音色总数</p>
+                     * @return TotalCount <p>符合查询条件的音色总数</p>
+                     * 
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
+                    /**
                      * 获取<p>可用音色列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Voices <p>可用音色列表</p>
@@ -101,6 +115,12 @@ namespace TencentCloud
                      */
                     std::string m_msg;
                     bool m_msgHasBeenSet;
+
+                    /**
+                     * <p>符合查询条件的音色总数</p>
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                     /**
                      * <p>可用音色列表</p>

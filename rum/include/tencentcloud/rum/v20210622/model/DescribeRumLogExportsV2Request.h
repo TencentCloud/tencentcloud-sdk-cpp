@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>Page size</p>
-                     * @return PageSize <p>Page size</p>
+                     * 获取<p>每页返回任务数</p>
+                     * @return PageSize <p>每页返回任务数</p>
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置<p>Page size</p>
-                     * @param _pageSize <p>Page size</p>
+                     * 设置<p>每页返回任务数</p>
+                     * @param _pageSize <p>每页返回任务数</p>
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取<p>Page number</p>
-                     * @return PageNum <p>Page number</p>
+                     * 获取<p>当前页码</p>
+                     * @return PageNum <p>当前页码</p>
                      * 
                      */
                     int64_t GetPageNum() const;
 
                     /**
-                     * 设置<p>Page number</p>
-                     * @param _pageNum <p>Page number</p>
+                     * 设置<p>当前页码</p>
+                     * @param _pageNum <p>当前页码</p>
                      * 
                      */
                     void SetPageNum(const int64_t& _pageNum);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PageNumHasBeenSet() const;
 
                     /**
-                     * 获取<p>Project ID</p>
-                     * @return ID <p>Project ID</p>
+                     * 获取<p>项目ID</p>
+                     * @return ID <p>项目ID</p>
                      * 
                      */
                     int64_t GetID() const;
 
                     /**
-                     * 设置<p>Project ID</p>
-                     * @param _iD <p>Project ID</p>
+                     * 设置<p>项目ID</p>
+                     * @param _iD <p>项目ID</p>
                      * 
                      */
                     void SetID(const int64_t& _iD);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>Page size</p>
+                     * <p>每页返回任务数</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * <p>Page number</p>
+                     * <p>当前页码</p>
                      */
                     int64_t m_pageNum;
                     bool m_pageNumHasBeenSet;
 
                     /**
-                     * <p>Project ID</p>
+                     * <p>项目ID</p>
                      */
                     int64_t m_iD;
                     bool m_iDHasBeenSet;

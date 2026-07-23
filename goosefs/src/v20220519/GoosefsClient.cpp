@@ -1490,6 +1490,56 @@ GoosefsClient::ModifyDataRepositoryBandwidthOutcomeCallable GoosefsClient::Modif
     return prom->get_future();
 }
 
+GoosefsClient::ModifyDataRepositoryTaskStatusOutcome GoosefsClient::ModifyDataRepositoryTaskStatus(const ModifyDataRepositoryTaskStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDataRepositoryTaskStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDataRepositoryTaskStatusResponse rsp = ModifyDataRepositoryTaskStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDataRepositoryTaskStatusOutcome(rsp);
+        else
+            return ModifyDataRepositoryTaskStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDataRepositoryTaskStatusOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::ModifyDataRepositoryTaskStatusAsync(const ModifyDataRepositoryTaskStatusRequest& request, const ModifyDataRepositoryTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDataRepositoryTaskStatusRequest&;
+    using Resp = ModifyDataRepositoryTaskStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDataRepositoryTaskStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GoosefsClient::ModifyDataRepositoryTaskStatusOutcomeCallable GoosefsClient::ModifyDataRepositoryTaskStatusCallable(const ModifyDataRepositoryTaskStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDataRepositoryTaskStatusOutcome>>();
+    ModifyDataRepositoryTaskStatusAsync(
+    request,
+    [prom](
+        const GoosefsClient*,
+        const ModifyDataRepositoryTaskStatusRequest&,
+        ModifyDataRepositoryTaskStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 GoosefsClient::MountMultipleStorageFileSystemOutcome GoosefsClient::MountMultipleStorageFileSystem(const MountMultipleStorageFileSystemRequest &request)
 {
     auto outcome = MakeRequest(request, "MountMultipleStorageFileSystem");

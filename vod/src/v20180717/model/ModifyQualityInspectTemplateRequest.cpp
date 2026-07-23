@@ -27,6 +27,8 @@ ModifyQualityInspectTemplateRequest::ModifyQualityInspectTemplateRequest() :
     m_subAppIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_commentHasBeenSet(false),
+    m_configsHasBeenSet(false),
+    m_strategyHasBeenSet(false),
     m_screenshotIntervalHasBeenSet(false),
     m_jitterConfigureHasBeenSet(false),
     m_blurConfigureHasBeenSet(false),
@@ -78,6 +80,30 @@ string ModifyQualityInspectTemplateRequest::ToJsonString() const
         string key = "Comment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Configs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_configs.begin(); itr != m_configs.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_strategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Strategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_strategy.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_screenshotIntervalHasBeenSet)
@@ -248,6 +274,38 @@ void ModifyQualityInspectTemplateRequest::SetComment(const string& _comment)
 bool ModifyQualityInspectTemplateRequest::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
+}
+
+vector<QualityInspectConfig> ModifyQualityInspectTemplateRequest::GetConfigs() const
+{
+    return m_configs;
+}
+
+void ModifyQualityInspectTemplateRequest::SetConfigs(const vector<QualityInspectConfig>& _configs)
+{
+    m_configs = _configs;
+    m_configsHasBeenSet = true;
+}
+
+bool ModifyQualityInspectTemplateRequest::ConfigsHasBeenSet() const
+{
+    return m_configsHasBeenSet;
+}
+
+QualityInspectStrategy ModifyQualityInspectTemplateRequest::GetStrategy() const
+{
+    return m_strategy;
+}
+
+void ModifyQualityInspectTemplateRequest::SetStrategy(const QualityInspectStrategy& _strategy)
+{
+    m_strategy = _strategy;
+    m_strategyHasBeenSet = true;
+}
+
+bool ModifyQualityInspectTemplateRequest::StrategyHasBeenSet() const
+{
+    return m_strategyHasBeenSet;
 }
 
 double ModifyQualityInspectTemplateRequest::GetScreenshotInterval() const

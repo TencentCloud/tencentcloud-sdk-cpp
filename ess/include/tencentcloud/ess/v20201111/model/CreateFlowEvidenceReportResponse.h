@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取出证报告 ID，可用于<a href="https://qian.tencent.com/developers/companyApis/certificate/DescribeFlowEvidenceReport" target="_blank">获取出证报告任务执行结果</a>查询出证任务结果和出证PDF的下载URL
-                     * @return ReportId 出证报告 ID，可用于<a href="https://qian.tencent.com/developers/companyApis/certificate/DescribeFlowEvidenceReport" target="_blank">获取出证报告任务执行结果</a>查询出证任务结果和出证PDF的下载URL
+                     * 获取<p>出证报告 ID，可用于<a href="https://qian.tencent.com/developers/companyApis/certificate/DescribeFlowEvidenceReport" target="_blank">获取出证报告任务执行结果</a>查询出证任务结果和出证PDF的下载URL</p>
+                     * @return ReportId <p>出证报告 ID，可用于<a href="https://qian.tencent.com/developers/companyApis/certificate/DescribeFlowEvidenceReport" target="_blank">获取出证报告任务执行结果</a>查询出证任务结果和出证PDF的下载URL</p>
                      * 
                      */
                     std::string GetReportId() const;
@@ -58,16 +58,8 @@ namespace TencentCloud
                     bool ReportIdHasBeenSet() const;
 
                     /**
-                     * 获取出证任务执行的状态, 状态含义如下：
-
-<ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>
-<li>**EvidenceStatusSuccess**：  出证任务执行成功</li>
-<li>**EvidenceStatusFailed** ： 出证任务执行失败</li></ul>
-                     * @return Status 出证任务执行的状态, 状态含义如下：
-
-<ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>
-<li>**EvidenceStatusSuccess**：  出证任务执行成功</li>
-<li>**EvidenceStatusFailed** ： 出证任务执行失败</li></ul>
+                     * 获取<p>出证任务执行的状态, 状态含义如下：</p><ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li><li>**EvidenceStatusSuccess**：  出证任务执行成功</li><li>**EvidenceStatusFailed** ： 出证任务执行失败</li></ul>
+                     * @return Status <p>出证任务执行的状态, 状态含义如下：</p><ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li><li>**EvidenceStatusSuccess**：  出证任务执行成功</li><li>**EvidenceStatusFailed** ： 出证任务执行失败</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
@@ -80,10 +72,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取此字段已经废除,不再使用.
-出证的PDF下载地址请调用DescribeChannelFlowEvidenceReport接口获取
-                     * @return ReportUrl 此字段已经废除,不再使用.
-出证的PDF下载地址请调用DescribeChannelFlowEvidenceReport接口获取
+                     * 获取<p>此字段已经废除,不再使用.<br>出证的PDF下载地址请调用DescribeChannelFlowEvidenceReport接口获取</p>
+                     * @return ReportUrl <p>此字段已经废除,不再使用.<br>出证的PDF下载地址请调用DescribeChannelFlowEvidenceReport接口获取</p>
                      * @deprecated
                      */
                     std::string GetReportUrl() const;
@@ -98,24 +88,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 出证报告 ID，可用于<a href="https://qian.tencent.com/developers/companyApis/certificate/DescribeFlowEvidenceReport" target="_blank">获取出证报告任务执行结果</a>查询出证任务结果和出证PDF的下载URL
+                     * <p>出证报告 ID，可用于<a href="https://qian.tencent.com/developers/companyApis/certificate/DescribeFlowEvidenceReport" target="_blank">获取出证报告任务执行结果</a>查询出证任务结果和出证PDF的下载URL</p>
                      */
                     std::string m_reportId;
                     bool m_reportIdHasBeenSet;
 
                     /**
-                     * 出证任务执行的状态, 状态含义如下：
-
-<ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>
-<li>**EvidenceStatusSuccess**：  出证任务执行成功</li>
-<li>**EvidenceStatusFailed** ： 出证任务执行失败</li></ul>
+                     * <p>出证任务执行的状态, 状态含义如下：</p><ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li><li>**EvidenceStatusSuccess**：  出证任务执行成功</li><li>**EvidenceStatusFailed** ： 出证任务执行失败</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 此字段已经废除,不再使用.
-出证的PDF下载地址请调用DescribeChannelFlowEvidenceReport接口获取
+                     * <p>此字段已经废除,不再使用.<br>出证的PDF下载地址请调用DescribeChannelFlowEvidenceReport接口获取</p>
                      */
                     std::string m_reportUrl;
                     bool m_reportUrlHasBeenSet;

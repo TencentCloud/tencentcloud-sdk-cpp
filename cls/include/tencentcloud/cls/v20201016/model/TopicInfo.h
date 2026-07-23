@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/Tag.h>
+#include <tencentcloud/cls/v20201016/model/CustomKmsInfo.h>
 #include <tencentcloud/cls/v20201016/model/TopicExtendInfo.h>
 
 
@@ -427,15 +428,15 @@ namespace TencentCloud
                     bool HotPeriodHasBeenSet() const;
 
                     /**
-                     * 获取<p>kms-cls服务秘钥id</p>
-                     * @return KeyId <p>kms-cls服务秘钥id</p>
+                     * 获取<p>kms-cls服务秘钥id</p><p>CustomKmsInfo为空时为系统默认密钥，CustomKmsInfo不为空时为用户自定义密钥</p>
+                     * @return KeyId <p>kms-cls服务秘钥id</p><p>CustomKmsInfo为空时为系统默认密钥，CustomKmsInfo不为空时为用户自定义密钥</p>
                      * 
                      */
                     std::string GetKeyId() const;
 
                     /**
-                     * 设置<p>kms-cls服务秘钥id</p>
-                     * @param _keyId <p>kms-cls服务秘钥id</p>
+                     * 设置<p>kms-cls服务秘钥id</p><p>CustomKmsInfo为空时为系统默认密钥，CustomKmsInfo不为空时为用户自定义密钥</p>
+                     * @param _keyId <p>kms-cls服务秘钥id</p><p>CustomKmsInfo为空时为系统默认密钥，CustomKmsInfo不为空时为用户自定义密钥</p>
                      * 
                      */
                     void SetKeyId(const std::string& _keyId);
@@ -446,6 +447,27 @@ namespace TencentCloud
                      * 
                      */
                     bool KeyIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>用户自定义 KMS 密钥信息</p>
+                     * @return CustomKmsInfo <p>用户自定义 KMS 密钥信息</p>
+                     * 
+                     */
+                    CustomKmsInfo GetCustomKmsInfo() const;
+
+                    /**
+                     * 设置<p>用户自定义 KMS 密钥信息</p>
+                     * @param _customKmsInfo <p>用户自定义 KMS 密钥信息</p>
+                     * 
+                     */
+                    void SetCustomKmsInfo(const CustomKmsInfo& _customKmsInfo);
+
+                    /**
+                     * 判断参数 CustomKmsInfo 是否已赋值
+                     * @return CustomKmsInfo 是否已赋值
+                     * 
+                     */
+                    bool CustomKmsInfoHasBeenSet() const;
 
                     /**
                      * 获取<p>主题类型。</p><ul><li>0: 日志主题 </li><li>1: 指标主题</li></ul>
@@ -747,10 +769,16 @@ namespace TencentCloud
                     bool m_hotPeriodHasBeenSet;
 
                     /**
-                     * <p>kms-cls服务秘钥id</p>
+                     * <p>kms-cls服务秘钥id</p><p>CustomKmsInfo为空时为系统默认密钥，CustomKmsInfo不为空时为用户自定义密钥</p>
                      */
                     std::string m_keyId;
                     bool m_keyIdHasBeenSet;
+
+                    /**
+                     * <p>用户自定义 KMS 密钥信息</p>
+                     */
+                    CustomKmsInfo m_customKmsInfo;
+                    bool m_customKmsInfoHasBeenSet;
 
                     /**
                      * <p>主题类型。</p><ul><li>0: 日志主题 </li><li>1: 指标主题</li></ul>

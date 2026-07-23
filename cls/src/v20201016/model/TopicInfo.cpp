@@ -40,6 +40,7 @@ TopicInfo::TopicInfo() :
     m_describesHasBeenSet(false),
     m_hotPeriodHasBeenSet(false),
     m_keyIdHasBeenSet(false),
+    m_customKmsInfoHasBeenSet(false),
     m_bizTypeHasBeenSet(false),
     m_isWebTrackingHasBeenSet(false),
     m_extendsHasBeenSet(false),
@@ -255,6 +256,23 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
         }
         m_keyId = string(value["KeyId"].GetString());
         m_keyIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomKmsInfo") && !value["CustomKmsInfo"].IsNull())
+    {
+        if (!value["CustomKmsInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.CustomKmsInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_customKmsInfo.Deserialize(value["CustomKmsInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_customKmsInfoHasBeenSet = true;
     }
 
     if (value.HasMember("BizType") && !value["BizType"].IsNull())
@@ -518,6 +536,15 @@ void TopicInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "KeyId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_keyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customKmsInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomKmsInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customKmsInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_bizTypeHasBeenSet)
@@ -898,6 +925,22 @@ void TopicInfo::SetKeyId(const string& _keyId)
 bool TopicInfo::KeyIdHasBeenSet() const
 {
     return m_keyIdHasBeenSet;
+}
+
+CustomKmsInfo TopicInfo::GetCustomKmsInfo() const
+{
+    return m_customKmsInfo;
+}
+
+void TopicInfo::SetCustomKmsInfo(const CustomKmsInfo& _customKmsInfo)
+{
+    m_customKmsInfo = _customKmsInfo;
+    m_customKmsInfoHasBeenSet = true;
+}
+
+bool TopicInfo::CustomKmsInfoHasBeenSet() const
+{
+    return m_customKmsInfoHasBeenSet;
 }
 
 uint64_t TopicInfo::GetBizType() const

@@ -25,6 +25,10 @@ QualityInspectTemplateItem::QualityInspectTemplateItem() :
     m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_commentHasBeenSet(false),
+    m_configsHasBeenSet(false),
+    m_strategyHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
     m_screenshotIntervalHasBeenSet(false),
     m_jitterConfigureHasBeenSet(false),
     m_blurConfigureHasBeenSet(false),
@@ -35,9 +39,7 @@ QualityInspectTemplateItem::QualityInspectTemplateItem() :
     m_mosaicConfigureHasBeenSet(false),
     m_qRCodeConfigureHasBeenSet(false),
     m_qualityEvaluationConfigureHasBeenSet(false),
-    m_voiceConfigureHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_voiceConfigureHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,63 @@ CoreInternalOutcome QualityInspectTemplateItem::Deserialize(const rapidjson::Val
         }
         m_comment = string(value["Comment"].GetString());
         m_commentHasBeenSet = true;
+    }
+
+    if (value.HasMember("Configs") && !value["Configs"].IsNull())
+    {
+        if (!value["Configs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `QualityInspectTemplateItem.Configs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Configs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            QualityInspectConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_configs.push_back(item);
+        }
+        m_configsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Strategy") && !value["Strategy"].IsNull())
+    {
+        if (!value["Strategy"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityInspectTemplateItem.Strategy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_strategy.Deserialize(value["Strategy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_strategyHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityInspectTemplateItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityInspectTemplateItem.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
     }
 
     if (value.HasMember("ScreenshotInterval") && !value["ScreenshotInterval"].IsNull())
@@ -266,26 +325,6 @@ CoreInternalOutcome QualityInspectTemplateItem::Deserialize(const rapidjson::Val
         m_voiceConfigureHasBeenSet = true;
     }
 
-    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
-    {
-        if (!value["CreateTime"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `QualityInspectTemplateItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_createTime = string(value["CreateTime"].GetString());
-        m_createTimeHasBeenSet = true;
-    }
-
-    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
-    {
-        if (!value["UpdateTime"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `QualityInspectTemplateItem.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_updateTime = string(value["UpdateTime"].GetString());
-        m_updateTimeHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -323,6 +362,46 @@ void QualityInspectTemplateItem::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "Comment";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Configs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_configs.begin(); itr != m_configs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_strategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Strategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_strategy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_screenshotIntervalHasBeenSet)
@@ -423,22 +502,6 @@ void QualityInspectTemplateItem::ToJsonObject(rapidjson::Value &value, rapidjson
         m_voiceConfigure.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_createTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CreateTime";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_updateTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "UpdateTime";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
-    }
-
 }
 
 
@@ -504,6 +567,70 @@ void QualityInspectTemplateItem::SetComment(const string& _comment)
 bool QualityInspectTemplateItem::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
+}
+
+vector<QualityInspectConfig> QualityInspectTemplateItem::GetConfigs() const
+{
+    return m_configs;
+}
+
+void QualityInspectTemplateItem::SetConfigs(const vector<QualityInspectConfig>& _configs)
+{
+    m_configs = _configs;
+    m_configsHasBeenSet = true;
+}
+
+bool QualityInspectTemplateItem::ConfigsHasBeenSet() const
+{
+    return m_configsHasBeenSet;
+}
+
+QualityInspectStrategy QualityInspectTemplateItem::GetStrategy() const
+{
+    return m_strategy;
+}
+
+void QualityInspectTemplateItem::SetStrategy(const QualityInspectStrategy& _strategy)
+{
+    m_strategy = _strategy;
+    m_strategyHasBeenSet = true;
+}
+
+bool QualityInspectTemplateItem::StrategyHasBeenSet() const
+{
+    return m_strategyHasBeenSet;
+}
+
+string QualityInspectTemplateItem::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void QualityInspectTemplateItem::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool QualityInspectTemplateItem::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string QualityInspectTemplateItem::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void QualityInspectTemplateItem::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool QualityInspectTemplateItem::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
 }
 
 double QualityInspectTemplateItem::GetScreenshotInterval() const
@@ -680,37 +807,5 @@ void QualityInspectTemplateItem::SetVoiceConfigure(const VoiceConfigureInfo& _vo
 bool QualityInspectTemplateItem::VoiceConfigureHasBeenSet() const
 {
     return m_voiceConfigureHasBeenSet;
-}
-
-string QualityInspectTemplateItem::GetCreateTime() const
-{
-    return m_createTime;
-}
-
-void QualityInspectTemplateItem::SetCreateTime(const string& _createTime)
-{
-    m_createTime = _createTime;
-    m_createTimeHasBeenSet = true;
-}
-
-bool QualityInspectTemplateItem::CreateTimeHasBeenSet() const
-{
-    return m_createTimeHasBeenSet;
-}
-
-string QualityInspectTemplateItem::GetUpdateTime() const
-{
-    return m_updateTime;
-}
-
-void QualityInspectTemplateItem::SetUpdateTime(const string& _updateTime)
-{
-    m_updateTime = _updateTime;
-    m_updateTimeHasBeenSet = true;
-}
-
-bool QualityInspectTemplateItem::UpdateTimeHasBeenSet() const
-{
-    return m_updateTimeHasBeenSet;
 }
 

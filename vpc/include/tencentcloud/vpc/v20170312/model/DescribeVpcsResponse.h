@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合条件的对象数。
-                     * @return TotalCount 符合条件的对象数。
+                     * 获取<p>符合条件的对象数。</p>
+                     * @return TotalCount <p>符合条件的对象数。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取VPC对象。
-                     * @return VpcSet VPC对象。
+                     * 获取<p>VPC对象。</p>
+                     * @return VpcSet <p>VPC对象。</p>
                      * 
                      */
                     std::vector<Vpc> GetVpcSet() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合条件的对象数。
+                     * <p>符合条件的对象数。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * VPC对象。
+                     * <p>VPC对象。</p>
                      */
                     std::vector<Vpc> m_vpcSet;
                     bool m_vpcSetHasBeenSet;

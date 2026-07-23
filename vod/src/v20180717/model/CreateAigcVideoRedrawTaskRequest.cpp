@@ -25,6 +25,7 @@ using namespace std;
 CreateAigcVideoRedrawTaskRequest::CreateAigcVideoRedrawTaskRequest() :
     m_subAppIdHasBeenSet(false),
     m_fileInfoHasBeenSet(false),
+    m_taskInfoHasBeenSet(false),
     m_outputConfigHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
@@ -55,6 +56,15 @@ string CreateAigcVideoRedrawTaskRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_fileInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_taskInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_taskInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_outputConfigHasBeenSet)
@@ -136,6 +146,22 @@ void CreateAigcVideoRedrawTaskRequest::SetFileInfo(const AigcVideoRedrawTaskInpu
 bool CreateAigcVideoRedrawTaskRequest::FileInfoHasBeenSet() const
 {
     return m_fileInfoHasBeenSet;
+}
+
+AigcVideoRedrawTaskInfo CreateAigcVideoRedrawTaskRequest::GetTaskInfo() const
+{
+    return m_taskInfo;
+}
+
+void CreateAigcVideoRedrawTaskRequest::SetTaskInfo(const AigcVideoRedrawTaskInfo& _taskInfo)
+{
+    m_taskInfo = _taskInfo;
+    m_taskInfoHasBeenSet = true;
+}
+
+bool CreateAigcVideoRedrawTaskRequest::TaskInfoHasBeenSet() const
+{
+    return m_taskInfoHasBeenSet;
 }
 
 AigcVideoRedrawOutputConfig CreateAigcVideoRedrawTaskRequest::GetOutputConfig() const

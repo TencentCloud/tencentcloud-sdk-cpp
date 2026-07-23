@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合条件的实例数量。
-                     * @return TotalCount 符合条件的实例数量。
+                     * 获取<p>符合条件的实例数量。</p>
+                     * @return TotalCount <p>符合条件的实例数量。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取子网对象。
-                     * @return SubnetSet 子网对象。
+                     * 获取<p>子网对象。</p>
+                     * @return SubnetSet <p>子网对象。</p>
                      * 
                      */
                     std::vector<Subnet> GetSubnetSet() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool SubnetSetHasBeenSet() const;
 
                     /**
-                     * 获取如果NextToken返回非空字符串 ，表示还有更多可用结果。 NextToken是每个页面唯一的分页令牌。使用返回的令牌再次调用以检索下一页。需要保持所有其他参数不变。每个分页令牌在 24 小时后过期。
-                     * @return NextToken 如果NextToken返回非空字符串 ，表示还有更多可用结果。 NextToken是每个页面唯一的分页令牌。使用返回的令牌再次调用以检索下一页。需要保持所有其他参数不变。每个分页令牌在 24 小时后过期。
+                     * 获取<p>如果NextToken返回非空字符串 ，表示还有更多可用结果。 NextToken是每个页面唯一的分页令牌。使用返回的令牌再次调用以检索下一页。需要保持所有其他参数不变。每个分页令牌在 24 小时后过期。</p>
+                     * @return NextToken <p>如果NextToken返回非空字符串 ，表示还有更多可用结果。 NextToken是每个页面唯一的分页令牌。使用返回的令牌再次调用以检索下一页。需要保持所有其他参数不变。每个分页令牌在 24 小时后过期。</p>
                      * 
                      */
                     std::string GetNextToken() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合条件的实例数量。
+                     * <p>符合条件的实例数量。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 子网对象。
+                     * <p>子网对象。</p>
                      */
                     std::vector<Subnet> m_subnetSet;
                     bool m_subnetSetHasBeenSet;
 
                     /**
-                     * 如果NextToken返回非空字符串 ，表示还有更多可用结果。 NextToken是每个页面唯一的分页令牌。使用返回的令牌再次调用以检索下一页。需要保持所有其他参数不变。每个分页令牌在 24 小时后过期。
+                     * <p>如果NextToken返回非空字符串 ，表示还有更多可用结果。 NextToken是每个页面唯一的分页令牌。使用返回的令牌再次调用以检索下一页。需要保持所有其他参数不变。每个分页令牌在 24 小时后过期。</p>
                      */
                     std::string m_nextToken;
                     bool m_nextTokenHasBeenSet;

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例详细信息列表。
-                     * @return NetworkInterfaceSet 实例详细信息列表。
+                     * 获取<p>实例详细信息列表。</p>
+                     * @return NetworkInterfaceSet <p>实例详细信息列表。</p>
                      * 
                      */
                     std::vector<NetworkInterface> GetNetworkInterfaceSet() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool NetworkInterfaceSetHasBeenSet() const;
 
                     /**
-                     * 获取符合条件的实例数量。
-                     * @return TotalCount 符合条件的实例数量。
+                     * 获取<p>符合条件的实例数量。</p>
+                     * @return TotalCount <p>符合条件的实例数量。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例详细信息列表。
+                     * <p>实例详细信息列表。</p>
                      */
                     std::vector<NetworkInterface> m_networkInterfaceSet;
                     bool m_networkInterfaceSetHasBeenSet;
 
                     /**
-                     * 符合条件的实例数量。
+                     * <p>符合条件的实例数量。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

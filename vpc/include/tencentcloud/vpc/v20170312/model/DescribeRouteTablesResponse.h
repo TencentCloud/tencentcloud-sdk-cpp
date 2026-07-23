@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合条件的实例数量。
-                     * @return TotalCount 符合条件的实例数量。
+                     * 获取<p>符合条件的实例数量。</p>
+                     * @return TotalCount <p>符合条件的实例数量。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取路由表对象。
-                     * @return RouteTableSet 路由表对象。
+                     * 获取<p>路由表对象。</p>
+                     * @return RouteTableSet <p>路由表对象。</p>
                      * 
                      */
                     std::vector<RouteTable> GetRouteTableSet() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合条件的实例数量。
+                     * <p>符合条件的实例数量。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 路由表对象。
+                     * <p>路由表对象。</p>
                      */
                     std::vector<RouteTable> m_routeTableSet;
                     bool m_routeTableSetHasBeenSet;

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板详情列表数据
-                     * @return Templates 模板详情列表数据
+                     * 获取<p>模板详情列表数据</p>
+                     * @return Templates <p>模板详情列表数据</p>
                      * 
                      */
                     std::vector<TemplateInfo> GetTemplates() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TemplatesHasBeenSet() const;
 
                     /**
-                     * 获取查询到的模板总数
-                     * @return TotalCount 查询到的模板总数
+                     * 获取<p>查询到的模板总数</p>
+                     * @return TotalCount <p>查询到的模板总数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取每页返回的数据条数
-                     * @return Limit 每页返回的数据条数
+                     * 获取<p>每页返回的数据条数</p>
+                     * @return Limit <p>每页返回的数据条数</p>
                      * 
                      */
                     uint64_t GetLimit() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取查询结果分页返回，此处指定第几页。页码从0开始，即首页为0。
-                     * @return Offset 查询结果分页返回，此处指定第几页。页码从0开始，即首页为0。
+                     * 获取<p>偏移量:从 0 开始，最大20000。</p>
+                     * @return Offset <p>偏移量:从 0 开始，最大20000。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
@@ -103,25 +103,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板详情列表数据
+                     * <p>模板详情列表数据</p>
                      */
                     std::vector<TemplateInfo> m_templates;
                     bool m_templatesHasBeenSet;
 
                     /**
-                     * 查询到的模板总数
+                     * <p>查询到的模板总数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 每页返回的数据条数
+                     * <p>每页返回的数据条数</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 查询结果分页返回，此处指定第几页。页码从0开始，即首页为0。
+                     * <p>偏移量:从 0 开始，最大20000。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

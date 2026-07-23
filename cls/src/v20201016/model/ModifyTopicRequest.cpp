@@ -38,6 +38,7 @@ ModifyTopicRequest::ModifyTopicRequest() :
     m_partitionCountHasBeenSet(false),
     m_cancelTopicAsyncTaskIDHasBeenSet(false),
     m_encryptionHasBeenSet(false),
+    m_customKmsInfoHasBeenSet(false),
     m_isSourceFromHasBeenSet(false),
     m_billingModeHasBeenSet(false)
 {
@@ -176,6 +177,15 @@ string ModifyTopicRequest::ToJsonString() const
         string key = "Encryption";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_encryption, allocator);
+    }
+
+    if (m_customKmsInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomKmsInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customKmsInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_isSourceFromHasBeenSet)
@@ -440,6 +450,22 @@ void ModifyTopicRequest::SetEncryption(const uint64_t& _encryption)
 bool ModifyTopicRequest::EncryptionHasBeenSet() const
 {
     return m_encryptionHasBeenSet;
+}
+
+CustomKmsInfo ModifyTopicRequest::GetCustomKmsInfo() const
+{
+    return m_customKmsInfo;
+}
+
+void ModifyTopicRequest::SetCustomKmsInfo(const CustomKmsInfo& _customKmsInfo)
+{
+    m_customKmsInfo = _customKmsInfo;
+    m_customKmsInfoHasBeenSet = true;
+}
+
+bool ModifyTopicRequest::CustomKmsInfoHasBeenSet() const
+{
+    return m_customKmsInfoHasBeenSet;
 }
 
 bool ModifyTopicRequest::GetIsSourceFrom() const

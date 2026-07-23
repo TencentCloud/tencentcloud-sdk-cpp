@@ -81,6 +81,8 @@
 #include <tencentcloud/goosefs/v20220519/model/ListLoadTasksResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/ModifyDataRepositoryBandwidthRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/ModifyDataRepositoryBandwidthResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/ModifyDataRepositoryTaskStatusRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/ModifyDataRepositoryTaskStatusResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/MountMultipleStorageFileSystemRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/MountMultipleStorageFileSystemResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/QueryClientNodeMountCommandRequest.h>
@@ -196,6 +198,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDataRepositoryBandwidthResponse> ModifyDataRepositoryBandwidthOutcome;
                 typedef std::future<ModifyDataRepositoryBandwidthOutcome> ModifyDataRepositoryBandwidthOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::ModifyDataRepositoryBandwidthRequest&, ModifyDataRepositoryBandwidthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDataRepositoryBandwidthAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDataRepositoryTaskStatusResponse> ModifyDataRepositoryTaskStatusOutcome;
+                typedef std::future<ModifyDataRepositoryTaskStatusOutcome> ModifyDataRepositoryTaskStatusOutcomeCallable;
+                typedef std::function<void(const GoosefsClient*, const Model::ModifyDataRepositoryTaskStatusRequest&, ModifyDataRepositoryTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDataRepositoryTaskStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::MountMultipleStorageFileSystemResponse> MountMultipleStorageFileSystemOutcome;
                 typedef std::future<MountMultipleStorageFileSystemOutcome> MountMultipleStorageFileSystemOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::MountMultipleStorageFileSystemRequest&, MountMultipleStorageFileSystemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MountMultipleStorageFileSystemAsyncHandler;
@@ -480,6 +485,15 @@ namespace TencentCloud
                 ModifyDataRepositoryBandwidthOutcome ModifyDataRepositoryBandwidth(const Model::ModifyDataRepositoryBandwidthRequest &request);
                 void ModifyDataRepositoryBandwidthAsync(const Model::ModifyDataRepositoryBandwidthRequest& request, const ModifyDataRepositoryBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDataRepositoryBandwidthOutcomeCallable ModifyDataRepositoryBandwidthCallable(const Model::ModifyDataRepositoryBandwidthRequest& request);
+
+                /**
+                 *修改数据流动任务状态，目前支持任务暂停/恢复
+                 * @param req ModifyDataRepositoryTaskStatusRequest
+                 * @return ModifyDataRepositoryTaskStatusOutcome
+                 */
+                ModifyDataRepositoryTaskStatusOutcome ModifyDataRepositoryTaskStatus(const Model::ModifyDataRepositoryTaskStatusRequest &request);
+                void ModifyDataRepositoryTaskStatusAsync(const Model::ModifyDataRepositoryTaskStatusRequest& request, const ModifyDataRepositoryTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDataRepositoryTaskStatusOutcomeCallable ModifyDataRepositoryTaskStatusCallable(const Model::ModifyDataRepositoryTaskStatusRequest& request);
 
                 /**
                  *客户端集群挂载存储集群

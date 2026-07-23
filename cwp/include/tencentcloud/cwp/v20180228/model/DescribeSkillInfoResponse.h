@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取skill信息列表
-                     * @return SkillInfoList skill信息列表
+                     * 获取<p>skill信息列表</p>
+                     * @return SkillInfoList <p>skill信息列表</p>
                      * 
                      */
                     std::vector<SkillInfo> GetSkillInfoList() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * skill信息列表
+                     * <p>skill信息列表</p>
                      */
                     std::vector<SkillInfo> m_skillInfoList;
                     bool m_skillInfoListHasBeenSet;

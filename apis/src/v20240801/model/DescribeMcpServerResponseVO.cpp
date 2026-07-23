@@ -61,7 +61,8 @@ DescribeMcpServerResponseVO::DescribeMcpServerResponseVO() :
     m_toolsHasBeenSet(false),
     m_wrapPaasIDHasBeenSet(false),
     m_relateAgentAppNumHasBeenSet(false),
-    m_pluginConfigsHasBeenSet(false)
+    m_pluginConfigsHasBeenSet(false),
+    m_ignoreHealthCheckHasBeenSet(false)
 {
 }
 
@@ -594,6 +595,16 @@ CoreInternalOutcome DescribeMcpServerResponseVO::Deserialize(const rapidjson::Va
         m_pluginConfigsHasBeenSet = true;
     }
 
+    if (value.HasMember("IgnoreHealthCheck") && !value["IgnoreHealthCheck"].IsNull())
+    {
+        if (!value["IgnoreHealthCheck"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeMcpServerResponseVO.IgnoreHealthCheck` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_ignoreHealthCheck = value["IgnoreHealthCheck"].GetBool();
+        m_ignoreHealthCheckHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -996,6 +1007,14 @@ void DescribeMcpServerResponseVO::ToJsonObject(rapidjson::Value &value, rapidjso
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_ignoreHealthCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IgnoreHealthCheck";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ignoreHealthCheck, allocator);
     }
 
 }
@@ -1655,5 +1674,21 @@ void DescribeMcpServerResponseVO::SetPluginConfigs(const vector<PluginConfigDTO>
 bool DescribeMcpServerResponseVO::PluginConfigsHasBeenSet() const
 {
     return m_pluginConfigsHasBeenSet;
+}
+
+bool DescribeMcpServerResponseVO::GetIgnoreHealthCheck() const
+{
+    return m_ignoreHealthCheck;
+}
+
+void DescribeMcpServerResponseVO::SetIgnoreHealthCheck(const bool& _ignoreHealthCheck)
+{
+    m_ignoreHealthCheck = _ignoreHealthCheck;
+    m_ignoreHealthCheckHasBeenSet = true;
+}
+
+bool DescribeMcpServerResponseVO::IgnoreHealthCheckHasBeenSet() const
+{
+    return m_ignoreHealthCheckHasBeenSet;
 }
 

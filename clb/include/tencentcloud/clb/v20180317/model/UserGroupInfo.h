@@ -225,6 +225,69 @@ namespace TencentCloud
                     bool BudgetNameHasBeenSet() const;
 
                     /**
+                     * 获取<p>关联的提示词 ID。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p><p>参数格式：pmt-1a2b3c4d</p>
+                     * @return PromptId <p>关联的提示词 ID。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p><p>参数格式：pmt-1a2b3c4d</p>
+                     * 
+                     */
+                    std::string GetPromptId() const;
+
+                    /**
+                     * 设置<p>关联的提示词 ID。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p><p>参数格式：pmt-1a2b3c4d</p>
+                     * @param _promptId <p>关联的提示词 ID。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p><p>参数格式：pmt-1a2b3c4d</p>
+                     * 
+                     */
+                    void SetPromptId(const std::string& _promptId);
+
+                    /**
+                     * 判断参数 PromptId 是否已赋值
+                     * @return PromptId 是否已赋值
+                     * 
+                     */
+                    bool PromptIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>关联的提示词版本。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p>
+                     * @return PromptVersion <p>关联的提示词版本。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p>
+                     * 
+                     */
+                    std::string GetPromptVersion() const;
+
+                    /**
+                     * 设置<p>关联的提示词版本。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p>
+                     * @param _promptVersion <p>关联的提示词版本。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p>
+                     * 
+                     */
+                    void SetPromptVersion(const std::string& _promptVersion);
+
+                    /**
+                     * 判断参数 PromptVersion 是否已赋值
+                     * @return PromptVersion 是否已赋值
+                     * 
+                     */
+                    bool PromptVersionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>关联的提示词名称。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p>
+                     * @return PromptName <p>关联的提示词名称。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p>
+                     * 
+                     */
+                    std::string GetPromptName() const;
+
+                    /**
+                     * 设置<p>关联的提示词名称。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p>
+                     * @param _promptName <p>关联的提示词名称。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p>
+                     * 
+                     */
+                    void SetPromptName(const std::string& _promptName);
+
+                    /**
+                     * 判断参数 PromptName 是否已赋值
+                     * @return PromptName 是否已赋值
+                     * 
+                     */
+                    bool PromptNameHasBeenSet() const;
+
+                    /**
                      * 获取<p>用户组多刷新周期 Credit 使用情况。</p><p>无多周期预算时为空数组。</p>
                      * @return CreditUsageSet <p>用户组多刷新周期 Credit 使用情况。</p><p>无多周期预算时为空数组。</p>
                      * 
@@ -380,6 +443,24 @@ namespace TencentCloud
                      */
                     std::string m_budgetName;
                     bool m_budgetNameHasBeenSet;
+
+                    /**
+                     * <p>关联的提示词 ID。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p><p>参数格式：pmt-1a2b3c4d</p>
+                     */
+                    std::string m_promptId;
+                    bool m_promptIdHasBeenSet;
+
+                    /**
+                     * <p>关联的提示词版本。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p>
+                     */
+                    std::string m_promptVersion;
+                    bool m_promptVersionHasBeenSet;
+
+                    /**
+                     * <p>关联的提示词名称。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p>
+                     */
+                    std::string m_promptName;
+                    bool m_promptNameHasBeenSet;
 
                     /**
                      * <p>用户组多刷新周期 Credit 使用情况。</p><p>无多周期预算时为空数组。</p>

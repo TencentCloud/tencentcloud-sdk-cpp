@@ -240,6 +240,106 @@ CfwClient::AddVpcAcRuleOutcomeCallable CfwClient::AddVpcAcRuleCallable(const Add
     return prom->get_future();
 }
 
+CfwClient::CheckClusterNatFwPreAccessOutcome CfwClient::CheckClusterNatFwPreAccess(const CheckClusterNatFwPreAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckClusterNatFwPreAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckClusterNatFwPreAccessResponse rsp = CheckClusterNatFwPreAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckClusterNatFwPreAccessOutcome(rsp);
+        else
+            return CheckClusterNatFwPreAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckClusterNatFwPreAccessOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::CheckClusterNatFwPreAccessAsync(const CheckClusterNatFwPreAccessRequest& request, const CheckClusterNatFwPreAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CheckClusterNatFwPreAccessRequest&;
+    using Resp = CheckClusterNatFwPreAccessResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CheckClusterNatFwPreAccess", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::CheckClusterNatFwPreAccessOutcomeCallable CfwClient::CheckClusterNatFwPreAccessCallable(const CheckClusterNatFwPreAccessRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CheckClusterNatFwPreAccessOutcome>>();
+    CheckClusterNatFwPreAccessAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const CheckClusterNatFwPreAccessRequest&,
+        CheckClusterNatFwPreAccessOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::CheckClusterVpcFwPreAccessOutcome CfwClient::CheckClusterVpcFwPreAccess(const CheckClusterVpcFwPreAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckClusterVpcFwPreAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckClusterVpcFwPreAccessResponse rsp = CheckClusterVpcFwPreAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckClusterVpcFwPreAccessOutcome(rsp);
+        else
+            return CheckClusterVpcFwPreAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckClusterVpcFwPreAccessOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::CheckClusterVpcFwPreAccessAsync(const CheckClusterVpcFwPreAccessRequest& request, const CheckClusterVpcFwPreAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CheckClusterVpcFwPreAccessRequest&;
+    using Resp = CheckClusterVpcFwPreAccessResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CheckClusterVpcFwPreAccess", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::CheckClusterVpcFwPreAccessOutcomeCallable CfwClient::CheckClusterVpcFwPreAccessCallable(const CheckClusterVpcFwPreAccessRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CheckClusterVpcFwPreAccessOutcome>>();
+    CheckClusterVpcFwPreAccessAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const CheckClusterVpcFwPreAccessRequest&,
+        CheckClusterVpcFwPreAccessOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfwClient::CloseClusterNatFwSwitchOutcome CfwClient::CloseClusterNatFwSwitch(const CloseClusterNatFwSwitchRequest &request)
 {
     auto outcome = MakeRequest(request, "CloseClusterNatFwSwitch");
@@ -1940,6 +2040,56 @@ CfwClient::DescribeBlockIgnoreListOutcomeCallable CfwClient::DescribeBlockIgnore
     return prom->get_future();
 }
 
+CfwClient::DescribeBlockListOutcome CfwClient::DescribeBlockList(const DescribeBlockListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBlockList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBlockListResponse rsp = DescribeBlockListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBlockListOutcome(rsp);
+        else
+            return DescribeBlockListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBlockListOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeBlockListAsync(const DescribeBlockListRequest& request, const DescribeBlockListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBlockListRequest&;
+    using Resp = DescribeBlockListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBlockList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeBlockListOutcomeCallable CfwClient::DescribeBlockListCallable(const DescribeBlockListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBlockListOutcome>>();
+    DescribeBlockListAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeBlockListRequest&,
+        DescribeBlockListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfwClient::DescribeBlockStaticListOutcome CfwClient::DescribeBlockStaticList(const DescribeBlockStaticListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBlockStaticList");
@@ -3140,6 +3290,56 @@ CfwClient::DescribeFwEdgeIpsOutcomeCallable CfwClient::DescribeFwEdgeIpsCallable
     return prom->get_future();
 }
 
+CfwClient::DescribeFwGroupIdNamesOutcome CfwClient::DescribeFwGroupIdNames(const DescribeFwGroupIdNamesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFwGroupIdNames");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFwGroupIdNamesResponse rsp = DescribeFwGroupIdNamesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFwGroupIdNamesOutcome(rsp);
+        else
+            return DescribeFwGroupIdNamesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFwGroupIdNamesOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeFwGroupIdNamesAsync(const DescribeFwGroupIdNamesRequest& request, const DescribeFwGroupIdNamesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeFwGroupIdNamesRequest&;
+    using Resp = DescribeFwGroupIdNamesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeFwGroupIdNames", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeFwGroupIdNamesOutcomeCallable CfwClient::DescribeFwGroupIdNamesCallable(const DescribeFwGroupIdNamesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeFwGroupIdNamesOutcome>>();
+    DescribeFwGroupIdNamesAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeFwGroupIdNamesRequest&,
+        DescribeFwGroupIdNamesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfwClient::DescribeFwGroupInstanceInfoOutcome CfwClient::DescribeFwGroupInstanceInfo(const DescribeFwGroupInstanceInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFwGroupInstanceInfo");
@@ -3382,6 +3582,56 @@ CfwClient::DescribeIpsModeSwitchOutcomeCallable CfwClient::DescribeIpsModeSwitch
         const CfwClient*,
         const DescribeIpsModeSwitchRequest&,
         DescribeIpsModeSwitchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::DescribeIpsRuleListNewOutcome CfwClient::DescribeIpsRuleListNew(const DescribeIpsRuleListNewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIpsRuleListNew");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIpsRuleListNewResponse rsp = DescribeIpsRuleListNewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIpsRuleListNewOutcome(rsp);
+        else
+            return DescribeIpsRuleListNewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIpsRuleListNewOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeIpsRuleListNewAsync(const DescribeIpsRuleListNewRequest& request, const DescribeIpsRuleListNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeIpsRuleListNewRequest&;
+    using Resp = DescribeIpsRuleListNewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeIpsRuleListNew", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeIpsRuleListNewOutcomeCallable CfwClient::DescribeIpsRuleListNewCallable(const DescribeIpsRuleListNewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeIpsRuleListNewOutcome>>();
+    DescribeIpsRuleListNewAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeIpsRuleListNewRequest&,
+        DescribeIpsRuleListNewOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4090,6 +4340,56 @@ CfwClient::DescribeNatFwVpcDnsLstOutcomeCallable CfwClient::DescribeNatFwVpcDnsL
     return prom->get_future();
 }
 
+CfwClient::DescribeNatRuleScopesOutcome CfwClient::DescribeNatRuleScopes(const DescribeNatRuleScopesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNatRuleScopes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNatRuleScopesResponse rsp = DescribeNatRuleScopesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNatRuleScopesOutcome(rsp);
+        else
+            return DescribeNatRuleScopesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNatRuleScopesOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeNatRuleScopesAsync(const DescribeNatRuleScopesRequest& request, const DescribeNatRuleScopesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeNatRuleScopesRequest&;
+    using Resp = DescribeNatRuleScopesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeNatRuleScopes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeNatRuleScopesOutcomeCallable CfwClient::DescribeNatRuleScopesCallable(const DescribeNatRuleScopesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeNatRuleScopesOutcome>>();
+    DescribeNatRuleScopesAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeNatRuleScopesRequest&,
+        DescribeNatRuleScopesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfwClient::DescribeOfflineExportTaskOutcome CfwClient::DescribeOfflineExportTask(const DescribeOfflineExportTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOfflineExportTask");
@@ -4382,6 +4682,56 @@ CfwClient::DescribeSecurityGroupListOutcomeCallable CfwClient::DescribeSecurityG
         const CfwClient*,
         const DescribeSecurityGroupListRequest&,
         DescribeSecurityGroupListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::DescribeSecurityGroupRegionListOutcome CfwClient::DescribeSecurityGroupRegionList(const DescribeSecurityGroupRegionListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecurityGroupRegionList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecurityGroupRegionListResponse rsp = DescribeSecurityGroupRegionListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecurityGroupRegionListOutcome(rsp);
+        else
+            return DescribeSecurityGroupRegionListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecurityGroupRegionListOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeSecurityGroupRegionListAsync(const DescribeSecurityGroupRegionListRequest& request, const DescribeSecurityGroupRegionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSecurityGroupRegionListRequest&;
+    using Resp = DescribeSecurityGroupRegionListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSecurityGroupRegionList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeSecurityGroupRegionListOutcomeCallable CfwClient::DescribeSecurityGroupRegionListCallable(const DescribeSecurityGroupRegionListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSecurityGroupRegionListOutcome>>();
+    DescribeSecurityGroupRegionListAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeSecurityGroupRegionListRequest&,
+        DescribeSecurityGroupRegionListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4832,6 +5182,56 @@ CfwClient::DescribeVpcAcRuleOutcomeCallable CfwClient::DescribeVpcAcRuleCallable
         const CfwClient*,
         const DescribeVpcAcRuleRequest&,
         DescribeVpcAcRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::DescribeVpcAclEdgeRangeOutcome CfwClient::DescribeVpcAclEdgeRange(const DescribeVpcAclEdgeRangeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVpcAclEdgeRange");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVpcAclEdgeRangeResponse rsp = DescribeVpcAclEdgeRangeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVpcAclEdgeRangeOutcome(rsp);
+        else
+            return DescribeVpcAclEdgeRangeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVpcAclEdgeRangeOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeVpcAclEdgeRangeAsync(const DescribeVpcAclEdgeRangeRequest& request, const DescribeVpcAclEdgeRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeVpcAclEdgeRangeRequest&;
+    using Resp = DescribeVpcAclEdgeRangeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeVpcAclEdgeRange", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeVpcAclEdgeRangeOutcomeCallable CfwClient::DescribeVpcAclEdgeRangeCallable(const DescribeVpcAclEdgeRangeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeVpcAclEdgeRangeOutcome>>();
+    DescribeVpcAclEdgeRangeAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeVpcAclEdgeRangeRequest&,
+        DescribeVpcAclEdgeRangeOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

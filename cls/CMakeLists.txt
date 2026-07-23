@@ -23,6 +23,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DescribeLogHistogramRequest.h
   include/tencentcloud/cls/v20201016/model/FilterStatistics.h
   include/tencentcloud/cls/v20201016/model/DescribeNetworkApplicationDetailRequest.h
+  include/tencentcloud/cls/v20201016/model/CustomKmsInfo.h
   include/tencentcloud/cls/v20201016/model/DeleteShipperRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteConsoleResponse.h
   include/tencentcloud/cls/v20201016/model/DynamicIndex.h
@@ -147,7 +148,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/CreateNoticeContentRequest.h
   include/tencentcloud/cls/v20201016/model/CreateDashboardRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteAlarmNoticeRequest.h
-  include/tencentcloud/cls/v20201016/model/DescribeScheduledSqlInfoResponse.h
+  include/tencentcloud/cls/v20201016/model/DeleteLogsetRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeConsumersRequest.h
   include/tencentcloud/cls/v20201016/model/ModifyRecordingRuleYamlTaskResponse.h
   include/tencentcloud/cls/v20201016/model/CreateMachineGroupRequest.h
@@ -197,7 +198,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/GroupPartitionInfo.h
   include/tencentcloud/cls/v20201016/model/GetMetricLabelValuesResponse.h
   include/tencentcloud/cls/v20201016/model/QueryMetricResponse.h
-  include/tencentcloud/cls/v20201016/model/DeleteLogsetRequest.h
+  include/tencentcloud/cls/v20201016/model/DescribeScheduledSqlInfoResponse.h
   include/tencentcloud/cls/v20201016/model/OpenKafkaConsumerResponse.h
   include/tencentcloud/cls/v20201016/model/AlarmTargetInfo.h
   include/tencentcloud/cls/v20201016/model/CreateSplunkDeliverResponse.h
@@ -617,6 +618,7 @@ set(cls_src
   src/v20201016/model/DescribeLogHistogramRequest.cpp
   src/v20201016/model/FilterStatistics.cpp
   src/v20201016/model/DescribeNetworkApplicationDetailRequest.cpp
+  src/v20201016/model/CustomKmsInfo.cpp
   src/v20201016/model/DeleteShipperRequest.cpp
   src/v20201016/model/DeleteConsoleResponse.cpp
   src/v20201016/model/DynamicIndex.cpp
@@ -741,7 +743,7 @@ set(cls_src
   src/v20201016/model/CreateNoticeContentRequest.cpp
   src/v20201016/model/CreateDashboardRequest.cpp
   src/v20201016/model/DeleteAlarmNoticeRequest.cpp
-  src/v20201016/model/DescribeScheduledSqlInfoResponse.cpp
+  src/v20201016/model/DeleteLogsetRequest.cpp
   src/v20201016/model/DescribeConsumersRequest.cpp
   src/v20201016/model/ModifyRecordingRuleYamlTaskResponse.cpp
   src/v20201016/model/CreateMachineGroupRequest.cpp
@@ -791,7 +793,7 @@ set(cls_src
   src/v20201016/model/GroupPartitionInfo.cpp
   src/v20201016/model/GetMetricLabelValuesResponse.cpp
   src/v20201016/model/QueryMetricResponse.cpp
-  src/v20201016/model/DeleteLogsetRequest.cpp
+  src/v20201016/model/DescribeScheduledSqlInfoResponse.cpp
   src/v20201016/model/OpenKafkaConsumerResponse.cpp
   src/v20201016/model/AlarmTargetInfo.cpp
   src/v20201016/model/CreateSplunkDeliverResponse.cpp

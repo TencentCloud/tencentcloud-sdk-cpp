@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool GlobalAcceleratorIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>名称，最大长度不能超过60个字节。</p>
-                     * @return Name <p>名称，最大长度不能超过60个字节。</p>
+                     * 获取<p>名称，最大长度不能超过128个字符。</p>
+                     * @return Name <p>名称，最大长度不能超过128个字符。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置<p>名称，最大长度不能超过60个字节。</p>
-                     * @param _name <p>名称，最大长度不能超过60个字节。</p>
+                     * 设置<p>名称，最大长度不能超过128个字符。</p>
+                     * @param _name <p>名称，最大长度不能超过128个字符。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool PortRangesHasBeenSet() const;
 
                     /**
-                     * 获取<p>描述信息，最大长度不能超过100个字节。</p>
-                     * @return Description <p>描述信息，最大长度不能超过100个字节。</p>
+                     * 获取<p>描述信息，最大长度不能超过100个字符。</p>
+                     * @return Description <p>描述信息，最大长度不能超过100个字符。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置<p>描述信息，最大长度不能超过100个字节。</p>
-                     * @param _description <p>描述信息，最大长度不能超过100个字节。</p>
+                     * 设置<p>描述信息，最大长度不能超过100个字符。</p>
+                     * @param _description <p>描述信息，最大长度不能超过100个字符。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -388,7 +388,7 @@ namespace TencentCloud
                     bool m_globalAcceleratorIdHasBeenSet;
 
                     /**
-                     * <p>名称，最大长度不能超过60个字节。</p>
+                     * <p>名称，最大长度不能超过128个字符。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -400,7 +400,7 @@ namespace TencentCloud
                     bool m_portRangesHasBeenSet;
 
                     /**
-                     * <p>描述信息，最大长度不能超过100个字节。</p>
+                     * <p>描述信息，最大长度不能超过100个字符。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

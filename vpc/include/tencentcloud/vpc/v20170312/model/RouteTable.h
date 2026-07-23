@@ -51,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取VPC实例ID。
-                     * @return VpcId VPC实例ID。
+                     * 获取<p>VPC实例ID。</p>
+                     * @return VpcId <p>VPC实例ID。</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC实例ID。
-                     * @param _vpcId VPC实例ID。
+                     * 设置<p>VPC实例ID。</p>
+                     * @param _vpcId <p>VPC实例ID。</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取路由表实例ID，例如：rtb-azd4dt1c。
-                     * @return RouteTableId 路由表实例ID，例如：rtb-azd4dt1c。
+                     * 获取<p>路由表实例ID，例如：rtb-azd4dt1c。</p>
+                     * @return RouteTableId <p>路由表实例ID，例如：rtb-azd4dt1c。</p>
                      * 
                      */
                     std::string GetRouteTableId() const;
 
                     /**
-                     * 设置路由表实例ID，例如：rtb-azd4dt1c。
-                     * @param _routeTableId 路由表实例ID，例如：rtb-azd4dt1c。
+                     * 设置<p>路由表实例ID，例如：rtb-azd4dt1c。</p>
+                     * @param _routeTableId <p>路由表实例ID，例如：rtb-azd4dt1c。</p>
                      * 
                      */
                     void SetRouteTableId(const std::string& _routeTableId);
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool RouteTableIdHasBeenSet() const;
 
                     /**
-                     * 获取路由表名称。
-                     * @return RouteTableName 路由表名称。
+                     * 获取<p>路由表名称。</p>
+                     * @return RouteTableName <p>路由表名称。</p>
                      * 
                      */
                     std::string GetRouteTableName() const;
 
                     /**
-                     * 设置路由表名称。
-                     * @param _routeTableName 路由表名称。
+                     * 设置<p>路由表名称。</p>
+                     * @param _routeTableName <p>路由表名称。</p>
                      * 
                      */
                     void SetRouteTableName(const std::string& _routeTableName);
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool RouteTableNameHasBeenSet() const;
 
                     /**
-                     * 获取路由表关联关系。
-                     * @return AssociationSet 路由表关联关系。
+                     * 获取<p>路由表关联关系。</p>
+                     * @return AssociationSet <p>路由表关联关系。</p>
                      * 
                      */
                     std::vector<RouteTableAssociation> GetAssociationSet() const;
 
                     /**
-                     * 设置路由表关联关系。
-                     * @param _associationSet 路由表关联关系。
+                     * 设置<p>路由表关联关系。</p>
+                     * @param _associationSet <p>路由表关联关系。</p>
                      * 
                      */
                     void SetAssociationSet(const std::vector<RouteTableAssociation>& _associationSet);
@@ -135,15 +135,15 @@ namespace TencentCloud
                     bool AssociationSetHasBeenSet() const;
 
                     /**
-                     * 获取IPv4路由策略集合。
-                     * @return RouteSet IPv4路由策略集合。
+                     * 获取<p>IPv4路由策略集合。</p>
+                     * @return RouteSet <p>IPv4路由策略集合。</p>
                      * 
                      */
                     std::vector<Route> GetRouteSet() const;
 
                     /**
-                     * 设置IPv4路由策略集合。
-                     * @param _routeSet IPv4路由策略集合。
+                     * 设置<p>IPv4路由策略集合。</p>
+                     * @param _routeSet <p>IPv4路由策略集合。</p>
                      * 
                      */
                     void SetRouteSet(const std::vector<Route>& _routeSet);
@@ -156,15 +156,15 @@ namespace TencentCloud
                     bool RouteSetHasBeenSet() const;
 
                     /**
-                     * 获取是否默认路由表。
-                     * @return Main 是否默认路由表。
+                     * 获取<p>是否默认路由表。</p>
+                     * @return Main <p>是否默认路由表。</p>
                      * 
                      */
                     bool GetMain() const;
 
                     /**
-                     * 设置是否默认路由表。
-                     * @param _main 是否默认路由表。
+                     * 设置<p>是否默认路由表。</p>
+                     * @param _main <p>是否默认路由表。</p>
                      * 
                      */
                     void SetMain(const bool& _main);
@@ -177,15 +177,15 @@ namespace TencentCloud
                     bool MainHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return CreatedTime 创建时间。
+                     * 获取<p>创建时间。</p>
+                     * @return CreatedTime <p>创建时间。</p>
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _createdTime 创建时间。
+                     * 设置<p>创建时间。</p>
+                     * @param _createdTime <p>创建时间。</p>
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -198,15 +198,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取标签键值对。
-                     * @return TagSet 标签键值对。
+                     * 获取<p>标签键值对。</p>
+                     * @return TagSet <p>标签键值对。</p>
                      * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
-                     * 设置标签键值对。
-                     * @param _tagSet 标签键值对。
+                     * 设置<p>标签键值对。</p>
+                     * @param _tagSet <p>标签键值对。</p>
                      * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
@@ -219,15 +219,15 @@ namespace TencentCloud
                     bool TagSetHasBeenSet() const;
 
                     /**
-                     * 获取local路由是否发布云联网。
-                     * @return LocalCidrForCcn local路由是否发布云联网。
+                     * 获取<p>local路由是否发布云联网。</p>
+                     * @return LocalCidrForCcn <p>local路由是否发布云联网。</p>
                      * 
                      */
                     std::vector<CidrForCcn> GetLocalCidrForCcn() const;
 
                     /**
-                     * 设置local路由是否发布云联网。
-                     * @param _localCidrForCcn local路由是否发布云联网。
+                     * 设置<p>local路由是否发布云联网。</p>
+                     * @param _localCidrForCcn <p>local路由是否发布云联网。</p>
                      * 
                      */
                     void SetLocalCidrForCcn(const std::vector<CidrForCcn>& _localCidrForCcn);
@@ -242,55 +242,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * VPC实例ID。
+                     * <p>VPC实例ID。</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 路由表实例ID，例如：rtb-azd4dt1c。
+                     * <p>路由表实例ID，例如：rtb-azd4dt1c。</p>
                      */
                     std::string m_routeTableId;
                     bool m_routeTableIdHasBeenSet;
 
                     /**
-                     * 路由表名称。
+                     * <p>路由表名称。</p>
                      */
                     std::string m_routeTableName;
                     bool m_routeTableNameHasBeenSet;
 
                     /**
-                     * 路由表关联关系。
+                     * <p>路由表关联关系。</p>
                      */
                     std::vector<RouteTableAssociation> m_associationSet;
                     bool m_associationSetHasBeenSet;
 
                     /**
-                     * IPv4路由策略集合。
+                     * <p>IPv4路由策略集合。</p>
                      */
                     std::vector<Route> m_routeSet;
                     bool m_routeSetHasBeenSet;
 
                     /**
-                     * 是否默认路由表。
+                     * <p>是否默认路由表。</p>
                      */
                     bool m_main;
                     bool m_mainHasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * <p>创建时间。</p>
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 标签键值对。
+                     * <p>标签键值对。</p>
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;
 
                     /**
-                     * local路由是否发布云联网。
+                     * <p>local路由是否发布云联网。</p>
                      */
                     std::vector<CidrForCcn> m_localCidrForCcn;
                     bool m_localCidrForCcnHasBeenSet;

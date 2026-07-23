@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取mcp server ID
-                     * @return Data mcp server ID
+                     * 获取<p>mcp server ID</p>
+                     * @return Data <p>mcp server ID</p>
                      * 
                      */
                     ResultIDVO GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * mcp server ID
+                     * <p>mcp server ID</p>
                      */
                     ResultIDVO m_data;
                     bool m_dataHasBeenSet;

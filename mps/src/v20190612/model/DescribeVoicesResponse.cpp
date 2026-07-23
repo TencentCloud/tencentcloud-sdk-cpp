@@ -26,6 +26,7 @@ using namespace std;
 DescribeVoicesResponse::DescribeVoicesResponse() :
     m_errorCodeHasBeenSet(false),
     m_msgHasBeenSet(false),
+    m_totalCountHasBeenSet(false),
     m_voicesHasBeenSet(false)
 {
 }
@@ -84,6 +85,16 @@ CoreInternalOutcome DescribeVoicesResponse::Deserialize(const string &payload)
         m_msgHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Voices") && !rsp["Voices"].IsNull())
     {
         if (!rsp["Voices"].IsArray())
@@ -128,6 +139,14 @@ string DescribeVoicesResponse::ToJsonString() const
         string key = "Msg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_msg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
     if (m_voicesHasBeenSet)
@@ -175,6 +194,16 @@ string DescribeVoicesResponse::GetMsg() const
 bool DescribeVoicesResponse::MsgHasBeenSet() const
 {
     return m_msgHasBeenSet;
+}
+
+int64_t DescribeVoicesResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeVoicesResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 vector<VoiceInfo> DescribeVoicesResponse::GetVoices() const

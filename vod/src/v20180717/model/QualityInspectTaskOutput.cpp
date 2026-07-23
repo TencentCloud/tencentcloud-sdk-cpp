@@ -24,7 +24,11 @@ QualityInspectTaskOutput::QualityInspectTaskOutput() :
     m_noAudioHasBeenSet(false),
     m_noVideoHasBeenSet(false),
     m_qualityEvaluationScoreHasBeenSet(false),
-    m_qualityInspectResultSetHasBeenSet(false)
+    m_qualityInspectResultSetHasBeenSet(false),
+    m_qualityEvaluationMeanOpinionScoreHasBeenSet(false),
+    m_aestheticEvaluationScoreHasBeenSet(false),
+    m_containerDiagnoseResultSetHasBeenSet(false),
+    m_lLMDetectionReportHasBeenSet(false)
 {
 }
 
@@ -83,6 +87,63 @@ CoreInternalOutcome QualityInspectTaskOutput::Deserialize(const rapidjson::Value
         m_qualityInspectResultSetHasBeenSet = true;
     }
 
+    if (value.HasMember("QualityEvaluationMeanOpinionScore") && !value["QualityEvaluationMeanOpinionScore"].IsNull())
+    {
+        if (!value["QualityEvaluationMeanOpinionScore"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityInspectTaskOutput.QualityEvaluationMeanOpinionScore` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_qualityEvaluationMeanOpinionScore = value["QualityEvaluationMeanOpinionScore"].GetDouble();
+        m_qualityEvaluationMeanOpinionScoreHasBeenSet = true;
+    }
+
+    if (value.HasMember("AestheticEvaluationScore") && !value["AestheticEvaluationScore"].IsNull())
+    {
+        if (!value["AestheticEvaluationScore"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityInspectTaskOutput.AestheticEvaluationScore` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_aestheticEvaluationScore = value["AestheticEvaluationScore"].GetInt64();
+        m_aestheticEvaluationScoreHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContainerDiagnoseResultSet") && !value["ContainerDiagnoseResultSet"].IsNull())
+    {
+        if (!value["ContainerDiagnoseResultSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `QualityInspectTaskOutput.ContainerDiagnoseResultSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ContainerDiagnoseResultSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            QualityInspectContainerDiagnoseResultItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_containerDiagnoseResultSet.push_back(item);
+        }
+        m_containerDiagnoseResultSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("LLMDetectionReport") && !value["LLMDetectionReport"].IsNull())
+    {
+        if (!value["LLMDetectionReport"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityInspectTaskOutput.LLMDetectionReport` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_lLMDetectionReport.Deserialize(value["LLMDetectionReport"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_lLMDetectionReportHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +188,46 @@ void QualityInspectTaskOutput::ToJsonObject(rapidjson::Value &value, rapidjson::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_qualityEvaluationMeanOpinionScoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QualityEvaluationMeanOpinionScore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_qualityEvaluationMeanOpinionScore, allocator);
+    }
+
+    if (m_aestheticEvaluationScoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AestheticEvaluationScore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aestheticEvaluationScore, allocator);
+    }
+
+    if (m_containerDiagnoseResultSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerDiagnoseResultSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_containerDiagnoseResultSet.begin(); itr != m_containerDiagnoseResultSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_lLMDetectionReportHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LLMDetectionReport";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_lLMDetectionReport.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -194,5 +295,69 @@ void QualityInspectTaskOutput::SetQualityInspectResultSet(const vector<QualityIn
 bool QualityInspectTaskOutput::QualityInspectResultSetHasBeenSet() const
 {
     return m_qualityInspectResultSetHasBeenSet;
+}
+
+double QualityInspectTaskOutput::GetQualityEvaluationMeanOpinionScore() const
+{
+    return m_qualityEvaluationMeanOpinionScore;
+}
+
+void QualityInspectTaskOutput::SetQualityEvaluationMeanOpinionScore(const double& _qualityEvaluationMeanOpinionScore)
+{
+    m_qualityEvaluationMeanOpinionScore = _qualityEvaluationMeanOpinionScore;
+    m_qualityEvaluationMeanOpinionScoreHasBeenSet = true;
+}
+
+bool QualityInspectTaskOutput::QualityEvaluationMeanOpinionScoreHasBeenSet() const
+{
+    return m_qualityEvaluationMeanOpinionScoreHasBeenSet;
+}
+
+int64_t QualityInspectTaskOutput::GetAestheticEvaluationScore() const
+{
+    return m_aestheticEvaluationScore;
+}
+
+void QualityInspectTaskOutput::SetAestheticEvaluationScore(const int64_t& _aestheticEvaluationScore)
+{
+    m_aestheticEvaluationScore = _aestheticEvaluationScore;
+    m_aestheticEvaluationScoreHasBeenSet = true;
+}
+
+bool QualityInspectTaskOutput::AestheticEvaluationScoreHasBeenSet() const
+{
+    return m_aestheticEvaluationScoreHasBeenSet;
+}
+
+vector<QualityInspectContainerDiagnoseResultItem> QualityInspectTaskOutput::GetContainerDiagnoseResultSet() const
+{
+    return m_containerDiagnoseResultSet;
+}
+
+void QualityInspectTaskOutput::SetContainerDiagnoseResultSet(const vector<QualityInspectContainerDiagnoseResultItem>& _containerDiagnoseResultSet)
+{
+    m_containerDiagnoseResultSet = _containerDiagnoseResultSet;
+    m_containerDiagnoseResultSetHasBeenSet = true;
+}
+
+bool QualityInspectTaskOutput::ContainerDiagnoseResultSetHasBeenSet() const
+{
+    return m_containerDiagnoseResultSetHasBeenSet;
+}
+
+QualityInspectLLMDetectionReport QualityInspectTaskOutput::GetLLMDetectionReport() const
+{
+    return m_lLMDetectionReport;
+}
+
+void QualityInspectTaskOutput::SetLLMDetectionReport(const QualityInspectLLMDetectionReport& _lLMDetectionReport)
+{
+    m_lLMDetectionReport = _lLMDetectionReport;
+    m_lLMDetectionReportHasBeenSet = true;
+}
+
+bool QualityInspectTaskOutput::LLMDetectionReportHasBeenSet() const
+{
+    return m_lLMDetectionReportHasBeenSet;
 }
 

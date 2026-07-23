@@ -68,6 +68,7 @@ set(goosefs_public_header_model
   include/tencentcloud/goosefs/v20220519/model/CreateLoadTaskRequest.h
   include/tencentcloud/goosefs/v20220519/model/LoadTaskCreationAttrs.h
   include/tencentcloud/goosefs/v20220519/model/ModifyDataRepositoryBandwidthResponse.h
+  include/tencentcloud/goosefs/v20220519/model/ModifyDataRepositoryTaskStatusResponse.h
   include/tencentcloud/goosefs/v20220519/model/ExpandCapacityResponse.h
   include/tencentcloud/goosefs/v20220519/model/DeleteFilesetRequest.h
   include/tencentcloud/goosefs/v20220519/model/AddCrossVpcSubnetSupportForClientNodeResponse.h
@@ -109,6 +110,7 @@ set(goosefs_public_header_model
   include/tencentcloud/goosefs/v20220519/model/AddCrossVpcSubnetSupportForClientNodeRequest.h
   include/tencentcloud/goosefs/v20220519/model/RoleToken.h
   include/tencentcloud/goosefs/v20220519/model/CustomerClusterAttr.h
+  include/tencentcloud/goosefs/v20220519/model/ModifyDataRepositoryTaskStatusRequest.h
   include/tencentcloud/goosefs/v20220519/model/DeleteCustomerClusterRequest.h
   )
 
@@ -163,6 +165,7 @@ set(goosefs_src
   src/v20220519/model/CreateLoadTaskRequest.cpp
   src/v20220519/model/LoadTaskCreationAttrs.cpp
   src/v20220519/model/ModifyDataRepositoryBandwidthResponse.cpp
+  src/v20220519/model/ModifyDataRepositoryTaskStatusResponse.cpp
   src/v20220519/model/ExpandCapacityResponse.cpp
   src/v20220519/model/DeleteFilesetRequest.cpp
   src/v20220519/model/AddCrossVpcSubnetSupportForClientNodeResponse.cpp
@@ -204,6 +207,7 @@ set(goosefs_src
   src/v20220519/model/AddCrossVpcSubnetSupportForClientNodeRequest.cpp
   src/v20220519/model/RoleToken.cpp
   src/v20220519/model/CustomerClusterAttr.cpp
+  src/v20220519/model/ModifyDataRepositoryTaskStatusRequest.cpp
   src/v20220519/model/DeleteCustomerClusterRequest.cpp
   )
 

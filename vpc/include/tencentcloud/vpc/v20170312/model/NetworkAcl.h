@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取`VPC`实例`ID`。
-                     * @return VpcId `VPC`实例`ID`。
+                     * 获取<p><code>VPC</code>实例<code>ID</code>。</p>
+                     * @return VpcId <p><code>VPC</code>实例<code>ID</code>。</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置`VPC`实例`ID`。
-                     * @param _vpcId `VPC`实例`ID`。
+                     * 设置<p><code>VPC</code>实例<code>ID</code>。</p>
+                     * @param _vpcId <p><code>VPC</code>实例<code>ID</code>。</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取网络ACL实例`ID`。
-                     * @return NetworkAclId 网络ACL实例`ID`。
+                     * 获取<p>网络ACL实例<code>ID</code>。</p>
+                     * @return NetworkAclId <p>网络ACL实例<code>ID</code>。</p>
                      * 
                      */
                     std::string GetNetworkAclId() const;
 
                     /**
-                     * 设置网络ACL实例`ID`。
-                     * @param _networkAclId 网络ACL实例`ID`。
+                     * 设置<p>网络ACL实例<code>ID</code>。</p>
+                     * @param _networkAclId <p>网络ACL实例<code>ID</code>。</p>
                      * 
                      */
                     void SetNetworkAclId(const std::string& _networkAclId);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool NetworkAclIdHasBeenSet() const;
 
                     /**
-                     * 获取网络ACL名称，最大长度为60。
-                     * @return NetworkAclName 网络ACL名称，最大长度为60。
+                     * 获取<p>网络ACL名称，最大长度为60。</p>
+                     * @return NetworkAclName <p>网络ACL名称，最大长度为60。</p>
                      * 
                      */
                     std::string GetNetworkAclName() const;
 
                     /**
-                     * 设置网络ACL名称，最大长度为60。
-                     * @param _networkAclName 网络ACL名称，最大长度为60。
+                     * 设置<p>网络ACL名称，最大长度为60。</p>
+                     * @param _networkAclName <p>网络ACL名称，最大长度为60。</p>
                      * 
                      */
                     void SetNetworkAclName(const std::string& _networkAclName);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool NetworkAclNameHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return CreatedTime 创建时间。
+                     * 获取<p>创建时间。</p>
+                     * @return CreatedTime <p>创建时间。</p>
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _createdTime 创建时间。
+                     * 设置<p>创建时间。</p>
+                     * @param _createdTime <p>创建时间。</p>
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -134,15 +134,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取网络ACL关联的子网数组。
-                     * @return SubnetSet 网络ACL关联的子网数组。
+                     * 获取<p>网络ACL关联的子网数组。</p>
+                     * @return SubnetSet <p>网络ACL关联的子网数组。</p>
                      * 
                      */
                     std::vector<Subnet> GetSubnetSet() const;
 
                     /**
-                     * 设置网络ACL关联的子网数组。
-                     * @param _subnetSet 网络ACL关联的子网数组。
+                     * 设置<p>网络ACL关联的子网数组。</p>
+                     * @param _subnetSet <p>网络ACL关联的子网数组。</p>
                      * 
                      */
                     void SetSubnetSet(const std::vector<Subnet>& _subnetSet);
@@ -155,15 +155,15 @@ namespace TencentCloud
                     bool SubnetSetHasBeenSet() const;
 
                     /**
-                     * 获取该参数仅对三元组ACL有效，网络ACl入站规则。
-                     * @return IngressEntries 该参数仅对三元组ACL有效，网络ACl入站规则。
+                     * 获取<p>该参数仅对三元组ACL有效，网络ACl入站规则。</p>
+                     * @return IngressEntries <p>该参数仅对三元组ACL有效，网络ACl入站规则。</p>
                      * 
                      */
                     std::vector<NetworkAclEntry> GetIngressEntries() const;
 
                     /**
-                     * 设置该参数仅对三元组ACL有效，网络ACl入站规则。
-                     * @param _ingressEntries 该参数仅对三元组ACL有效，网络ACl入站规则。
+                     * 设置<p>该参数仅对三元组ACL有效，网络ACl入站规则。</p>
+                     * @param _ingressEntries <p>该参数仅对三元组ACL有效，网络ACl入站规则。</p>
                      * 
                      */
                     void SetIngressEntries(const std::vector<NetworkAclEntry>& _ingressEntries);
@@ -176,15 +176,15 @@ namespace TencentCloud
                     bool IngressEntriesHasBeenSet() const;
 
                     /**
-                     * 获取该参数仅对三元组ACL有效，网络ACL出站规则。
-                     * @return EgressEntries 该参数仅对三元组ACL有效，网络ACL出站规则。
+                     * 获取<p>该参数仅对三元组ACL有效，网络ACL出站规则。</p>
+                     * @return EgressEntries <p>该参数仅对三元组ACL有效，网络ACL出站规则。</p>
                      * 
                      */
                     std::vector<NetworkAclEntry> GetEgressEntries() const;
 
                     /**
-                     * 设置该参数仅对三元组ACL有效，网络ACL出站规则。
-                     * @param _egressEntries 该参数仅对三元组ACL有效，网络ACL出站规则。
+                     * 设置<p>该参数仅对三元组ACL有效，网络ACL出站规则。</p>
+                     * @param _egressEntries <p>该参数仅对三元组ACL有效，网络ACL出站规则。</p>
                      * 
                      */
                     void SetEgressEntries(const std::vector<NetworkAclEntry>& _egressEntries);
@@ -197,15 +197,15 @@ namespace TencentCloud
                     bool EgressEntriesHasBeenSet() const;
 
                     /**
-                     * 获取网络ACL类型。三元组：'TRIPLE'   五元组：'QUINTUPLE'
-                     * @return NetworkAclType 网络ACL类型。三元组：'TRIPLE'   五元组：'QUINTUPLE'
+                     * 获取<p>网络ACL类型。三元组：&#39;TRIPLE&#39;   五元组：&#39;QUINTUPLE&#39;</p>
+                     * @return NetworkAclType <p>网络ACL类型。三元组：&#39;TRIPLE&#39;   五元组：&#39;QUINTUPLE&#39;</p>
                      * 
                      */
                     std::string GetNetworkAclType() const;
 
                     /**
-                     * 设置网络ACL类型。三元组：'TRIPLE'   五元组：'QUINTUPLE'
-                     * @param _networkAclType 网络ACL类型。三元组：'TRIPLE'   五元组：'QUINTUPLE'
+                     * 设置<p>网络ACL类型。三元组：&#39;TRIPLE&#39;   五元组：&#39;QUINTUPLE&#39;</p>
+                     * @param _networkAclType <p>网络ACL类型。三元组：&#39;TRIPLE&#39;   五元组：&#39;QUINTUPLE&#39;</p>
                      * 
                      */
                     void SetNetworkAclType(const std::string& _networkAclType);
@@ -218,15 +218,15 @@ namespace TencentCloud
                     bool NetworkAclTypeHasBeenSet() const;
 
                     /**
-                     * 获取标签键值对
-                     * @return TagSet 标签键值对
+                     * 获取<p>标签键值对</p>
+                     * @return TagSet <p>标签键值对</p>
                      * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
-                     * 设置标签键值对
-                     * @param _tagSet 标签键值对
+                     * 设置<p>标签键值对</p>
+                     * @param _tagSet <p>标签键值对</p>
                      * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
@@ -241,55 +241,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * `VPC`实例`ID`。
+                     * <p><code>VPC</code>实例<code>ID</code>。</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 网络ACL实例`ID`。
+                     * <p>网络ACL实例<code>ID</code>。</p>
                      */
                     std::string m_networkAclId;
                     bool m_networkAclIdHasBeenSet;
 
                     /**
-                     * 网络ACL名称，最大长度为60。
+                     * <p>网络ACL名称，最大长度为60。</p>
                      */
                     std::string m_networkAclName;
                     bool m_networkAclNameHasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * <p>创建时间。</p>
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 网络ACL关联的子网数组。
+                     * <p>网络ACL关联的子网数组。</p>
                      */
                     std::vector<Subnet> m_subnetSet;
                     bool m_subnetSetHasBeenSet;
 
                     /**
-                     * 该参数仅对三元组ACL有效，网络ACl入站规则。
+                     * <p>该参数仅对三元组ACL有效，网络ACl入站规则。</p>
                      */
                     std::vector<NetworkAclEntry> m_ingressEntries;
                     bool m_ingressEntriesHasBeenSet;
 
                     /**
-                     * 该参数仅对三元组ACL有效，网络ACL出站规则。
+                     * <p>该参数仅对三元组ACL有效，网络ACL出站规则。</p>
                      */
                     std::vector<NetworkAclEntry> m_egressEntries;
                     bool m_egressEntriesHasBeenSet;
 
                     /**
-                     * 网络ACL类型。三元组：'TRIPLE'   五元组：'QUINTUPLE'
+                     * <p>网络ACL类型。三元组：&#39;TRIPLE&#39;   五元组：&#39;QUINTUPLE&#39;</p>
                      */
                     std::string m_networkAclType;
                     bool m_networkAclTypeHasBeenSet;
 
                     /**
-                     * 标签键值对
+                     * <p>标签键值对</p>
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;

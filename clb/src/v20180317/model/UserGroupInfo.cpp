@@ -29,6 +29,9 @@ UserGroupInfo::UserGroupInfo() :
     m_intentRoutersHasBeenSet(false),
     m_budgetIdHasBeenSet(false),
     m_budgetNameHasBeenSet(false),
+    m_promptIdHasBeenSet(false),
+    m_promptVersionHasBeenSet(false),
+    m_promptNameHasBeenSet(false),
     m_creditUsageSetHasBeenSet(false),
     m_keyCountHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -126,6 +129,36 @@ CoreInternalOutcome UserGroupInfo::Deserialize(const rapidjson::Value &value)
         }
         m_budgetName = string(value["BudgetName"].GetString());
         m_budgetNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("PromptId") && !value["PromptId"].IsNull())
+    {
+        if (!value["PromptId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserGroupInfo.PromptId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_promptId = string(value["PromptId"].GetString());
+        m_promptIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("PromptVersion") && !value["PromptVersion"].IsNull())
+    {
+        if (!value["PromptVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserGroupInfo.PromptVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_promptVersion = string(value["PromptVersion"].GetString());
+        m_promptVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("PromptName") && !value["PromptName"].IsNull())
+    {
+        if (!value["PromptName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserGroupInfo.PromptName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_promptName = string(value["PromptName"].GetString());
+        m_promptNameHasBeenSet = true;
     }
 
     if (value.HasMember("CreditUsageSet") && !value["CreditUsageSet"].IsNull())
@@ -277,6 +310,30 @@ void UserGroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "BudgetName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_budgetName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_promptIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PromptId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_promptId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_promptVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PromptVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_promptVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_promptNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PromptName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_promptName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_creditUsageSetHasBeenSet)
@@ -462,6 +519,54 @@ void UserGroupInfo::SetBudgetName(const string& _budgetName)
 bool UserGroupInfo::BudgetNameHasBeenSet() const
 {
     return m_budgetNameHasBeenSet;
+}
+
+string UserGroupInfo::GetPromptId() const
+{
+    return m_promptId;
+}
+
+void UserGroupInfo::SetPromptId(const string& _promptId)
+{
+    m_promptId = _promptId;
+    m_promptIdHasBeenSet = true;
+}
+
+bool UserGroupInfo::PromptIdHasBeenSet() const
+{
+    return m_promptIdHasBeenSet;
+}
+
+string UserGroupInfo::GetPromptVersion() const
+{
+    return m_promptVersion;
+}
+
+void UserGroupInfo::SetPromptVersion(const string& _promptVersion)
+{
+    m_promptVersion = _promptVersion;
+    m_promptVersionHasBeenSet = true;
+}
+
+bool UserGroupInfo::PromptVersionHasBeenSet() const
+{
+    return m_promptVersionHasBeenSet;
+}
+
+string UserGroupInfo::GetPromptName() const
+{
+    return m_promptName;
+}
+
+void UserGroupInfo::SetPromptName(const string& _promptName)
+{
+    m_promptName = _promptName;
+    m_promptNameHasBeenSet = true;
+}
+
+bool UserGroupInfo::PromptNameHasBeenSet() const
+{
+    return m_promptNameHasBeenSet;
 }
 
 vector<CreditUsage> UserGroupInfo::GetCreditUsageSet() const

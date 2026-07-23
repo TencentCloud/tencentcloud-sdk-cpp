@@ -56,18 +56,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
+                     * 获取<p>实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceID 实例ID
+                     * @return InstanceID <p>实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
-                     * 设置实例ID
+                     * 设置<p>实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceID 实例ID
+                     * @param _instanceID <p>实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -81,18 +81,18 @@ namespace TencentCloud
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取名称
+                     * 获取<p>名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 名称
+                     * @return Name <p>名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称
+                     * 设置<p>名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 名称
+                     * @param _name <p>名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -106,18 +106,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取描述
+                     * 获取<p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 描述
+                     * @return Description <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
+                     * 设置<p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 描述
+                     * @param _description <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -131,18 +131,18 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取标签ID数组
+                     * 获取<p>标签ID数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LabelIDs 标签ID数组
+                     * @return LabelIDs <p>标签ID数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetLabelIDs() const;
 
                     /**
-                     * 设置标签ID数组
+                     * 设置<p>标签ID数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _labelIDs 标签ID数组
+                     * @param _labelIDs <p>标签ID数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -156,18 +156,18 @@ namespace TencentCloud
                     bool LabelIDsHasBeenSet() const;
 
                     /**
-                     * 获取目录ID数组
+                     * 获取<p>目录ID数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CategoryIDs 目录ID数组
+                     * @return CategoryIDs <p>目录ID数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCategoryIDs() const;
 
                     /**
-                     * 设置目录ID数组
+                     * 设置<p>目录ID数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _categoryIDs 目录ID数组
+                     * @param _categoryIDs <p>目录ID数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -181,18 +181,18 @@ namespace TencentCloud
                     bool CategoryIDsHasBeenSet() const;
 
                     /**
-                     * 获取负载方式，robin random consistentHash
+                     * 获取<p>负载方式，robin random consistentHash</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TargetSelect 负载方式，robin random consistentHash
+                     * @return TargetSelect <p>负载方式，robin random consistentHash</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTargetSelect() const;
 
                     /**
-                     * 设置负载方式，robin random consistentHash
+                     * 设置<p>负载方式，robin random consistentHash</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _targetSelect 负载方式，robin random consistentHash
+                     * @param _targetSelect <p>负载方式，robin random consistentHash</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -206,18 +206,18 @@ namespace TencentCloud
                     bool TargetSelectHasBeenSet() const;
 
                     /**
-                     * 获取目标服务器
+                     * 获取<p>目标服务器</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TargetHosts 目标服务器
+                     * @return TargetHosts <p>目标服务器</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TargetHostDTO> GetTargetHosts() const;
 
                     /**
-                     * 设置目标服务器
+                     * 设置<p>目标服务器</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _targetHosts 目标服务器
+                     * @param _targetHosts <p>目标服务器</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -231,18 +231,18 @@ namespace TencentCloud
                     bool TargetHostsHasBeenSet() const;
 
                     /**
-                     * 获取后端协议：http https
+                     * 获取<p>后端协议：http https</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HttpProtocolType 后端协议：http https
+                     * @return HttpProtocolType <p>后端协议：http https</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHttpProtocolType() const;
 
                     /**
-                     * 设置后端协议：http https
+                     * 设置<p>后端协议：http https</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _httpProtocolType 后端协议：http https
+                     * @param _httpProtocolType <p>后端协议：http https</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -256,18 +256,18 @@ namespace TencentCloud
                     bool HttpProtocolTypeHasBeenSet() const;
 
                     /**
-                     * 获取证书检查
+                     * 获取<p>证书检查</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CheckTargetCertsError 证书检查
+                     * @return CheckTargetCertsError <p>证书检查</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetCheckTargetCertsError() const;
 
                     /**
-                     * 设置证书检查
+                     * 设置<p>证书检查</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _checkTargetCertsError 证书检查
+                     * @param _checkTargetCertsError <p>证书检查</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -281,18 +281,18 @@ namespace TencentCloud
                     bool CheckTargetCertsErrorHasBeenSet() const;
 
                     /**
-                     * 获取目标路径
+                     * 获取<p>目标路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TargetPath 目标路径
+                     * @return TargetPath <p>目标路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTargetPath() const;
 
                     /**
-                     * 设置目标路径
+                     * 设置<p>目标路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _targetPath 目标路径
+                     * @param _targetPath <p>目标路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -306,18 +306,18 @@ namespace TencentCloud
                     bool TargetPathHasBeenSet() const;
 
                     /**
-                     * 获取流量控制状态
+                     * 获取<p>流量控制状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InvokeLimitConfigStatus 流量控制状态
+                     * @return InvokeLimitConfigStatus <p>流量控制状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetInvokeLimitConfigStatus() const;
 
                     /**
-                     * 设置流量控制状态
+                     * 设置<p>流量控制状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _invokeLimitConfigStatus 流量控制状态
+                     * @param _invokeLimitConfigStatus <p>流量控制状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -331,18 +331,18 @@ namespace TencentCloud
                     bool InvokeLimitConfigStatusHasBeenSet() const;
 
                     /**
-                     * 获取流量控制配置
+                     * 获取<p>流量控制配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InvokeLimitConfig 流量控制配置
+                     * @return InvokeLimitConfig <p>流量控制配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InvokeLimitConfigDTO GetInvokeLimitConfig() const;
 
                     /**
-                     * 设置流量控制配置
+                     * 设置<p>流量控制配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _invokeLimitConfig 流量控制配置
+                     * @param _invokeLimitConfig <p>流量控制配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -356,18 +356,18 @@ namespace TencentCloud
                     bool InvokeLimitConfigHasBeenSet() const;
 
                     /**
-                     * 获取IP白名单开启状态
+                     * 获取<p>IP白名单开启状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IpWhiteStatus IP白名单开启状态
+                     * @return IpWhiteStatus <p>IP白名单开启状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIpWhiteStatus() const;
 
                     /**
-                     * 设置IP白名单开启状态
+                     * 设置<p>IP白名单开启状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ipWhiteStatus IP白名单开启状态
+                     * @param _ipWhiteStatus <p>IP白名单开启状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -381,18 +381,18 @@ namespace TencentCloud
                     bool IpWhiteStatusHasBeenSet() const;
 
                     /**
-                     * 获取IP白名单配置
+                     * 获取<p>IP白名单配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IpWhiteConfig IP白名单配置
+                     * @return IpWhiteConfig <p>IP白名单配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     IpConfig GetIpWhiteConfig() const;
 
                     /**
-                     * 设置IP白名单配置
+                     * 设置<p>IP白名单配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ipWhiteConfig IP白名单配置
+                     * @param _ipWhiteConfig <p>IP白名单配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -406,18 +406,18 @@ namespace TencentCloud
                     bool IpWhiteConfigHasBeenSet() const;
 
                     /**
-                     * 获取IP黑名单开启状态
+                     * 获取<p>IP黑名单开启状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IpBlackStatus IP黑名单开启状态
+                     * @return IpBlackStatus <p>IP黑名单开启状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIpBlackStatus() const;
 
                     /**
-                     * 设置IP黑名单开启状态
+                     * 设置<p>IP黑名单开启状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ipBlackStatus IP黑名单开启状态
+                     * @param _ipBlackStatus <p>IP黑名单开启状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -431,18 +431,18 @@ namespace TencentCloud
                     bool IpBlackStatusHasBeenSet() const;
 
                     /**
-                     * 获取IP黑名单配置
+                     * 获取<p>IP黑名单配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IpBlackConfig IP黑名单配置
+                     * @return IpBlackConfig <p>IP黑名单配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     IpConfig GetIpBlackConfig() const;
 
                     /**
-                     * 设置IP黑名单配置
+                     * 设置<p>IP黑名单配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ipBlackConfig IP黑名单配置
+                     * @param _ipBlackConfig <p>IP黑名单配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -456,18 +456,18 @@ namespace TencentCloud
                     bool IpBlackConfigHasBeenSet() const;
 
                     /**
-                     * 获取mcp server ID
+                     * 获取<p>mcp server ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ID mcp server ID
+                     * @return ID <p>mcp server ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetID() const;
 
                     /**
-                     * 设置mcp server ID
+                     * 设置<p>mcp server ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _iD mcp server ID
+                     * @param _iD <p>mcp server ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -481,18 +481,18 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取状态
+                     * 获取<p>状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 状态
+                     * @return Status <p>状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态
+                     * 设置<p>状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 状态
+                     * @param _status <p>状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -506,18 +506,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取预览地址
+                     * 获取<p>预览地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Url 预览地址
+                     * @return Url <p>预览地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置预览地址
+                     * 设置<p>预览地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _url 预览地址
+                     * @param _url <p>预览地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -531,18 +531,18 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取应用
+                     * 获取<p>应用</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return App 应用
+                     * @return App <p>应用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     IDNameVO GetApp() const;
 
                     /**
-                     * 设置应用
+                     * 设置<p>应用</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _app 应用
+                     * @param _app <p>应用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -556,18 +556,18 @@ namespace TencentCloud
                     bool AppHasBeenSet() const;
 
                     /**
-                     * 获取目录
+                     * 获取<p>目录</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Catalogs 目录
+                     * @return Catalogs <p>目录</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IDNameVO> GetCatalogs() const;
 
                     /**
-                     * 设置目录
+                     * 设置<p>目录</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _catalogs 目录
+                     * @param _catalogs <p>目录</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -581,18 +581,18 @@ namespace TencentCloud
                     bool CatalogsHasBeenSet() const;
 
                     /**
-                     * 获取标签
+                     * 获取<p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Labels 标签
+                     * @return Labels <p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IDNameVO> GetLabels() const;
 
                     /**
-                     * 设置标签
+                     * 设置<p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _labels 标签
+                     * @param _labels <p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -606,18 +606,18 @@ namespace TencentCloud
                     bool LabelsHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
+                     * 获取<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 创建时间
+                     * @return CreateTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
+                     * 设置<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 创建时间
+                     * @param _createTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -631,18 +631,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取最后修改时间
+                     * 获取<p>最后修改时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastUpdateTime 最后修改时间
+                     * @return LastUpdateTime <p>最后修改时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastUpdateTime() const;
 
                     /**
-                     * 设置最后修改时间
+                     * 设置<p>最后修改时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lastUpdateTime 最后修改时间
+                     * @param _lastUpdateTime <p>最后修改时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -656,18 +656,18 @@ namespace TencentCloud
                     bool LastUpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取用户appID
+                     * 获取<p>用户appID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AppID 用户appID
+                     * @return AppID <p>用户appID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAppID() const;
 
                     /**
-                     * 设置用户appID
+                     * 设置<p>用户appID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _appID 用户appID
+                     * @param _appID <p>用户appID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -681,18 +681,18 @@ namespace TencentCloud
                     bool AppIDHasBeenSet() const;
 
                     /**
-                     * 获取用户ID
+                     * 获取<p>用户ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Uin 用户ID
+                     * @return Uin <p>用户ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置用户ID
+                     * 设置<p>用户ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _uin 用户ID
+                     * @param _uin <p>用户ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -706,18 +706,18 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取自定义host
+                     * 获取<p>自定义host</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CustomHttpHost 自定义host
+                     * @return CustomHttpHost <p>自定义host</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCustomHttpHost() const;
 
                     /**
-                     * 设置自定义host
+                     * 设置<p>自定义host</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _customHttpHost 自定义host
+                     * @param _customHttpHost <p>自定义host</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -731,18 +731,18 @@ namespace TencentCloud
                     bool CustomHttpHostHasBeenSet() const;
 
                     /**
-                     * 获取 Http 请求host类型 useRequestHost 保持源请求host targetHost 修正为源站host  customHost 自定义host
+                     * 获取<p>Http 请求host类型 useRequestHost 保持源请求host targetHost 修正为源站host  customHost 自定义host</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HttpHostType  Http 请求host类型 useRequestHost 保持源请求host targetHost 修正为源站host  customHost 自定义host
+                     * @return HttpHostType <p>Http 请求host类型 useRequestHost 保持源请求host targetHost 修正为源站host  customHost 自定义host</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHttpHostType() const;
 
                     /**
-                     * 设置 Http 请求host类型 useRequestHost 保持源请求host targetHost 修正为源站host  customHost 自定义host
+                     * 设置<p>Http 请求host类型 useRequestHost 保持源请求host targetHost 修正为源站host  customHost 自定义host</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _httpHostType  Http 请求host类型 useRequestHost 保持源请求host targetHost 修正为源站host  customHost 自定义host
+                     * @param _httpHostType <p>Http 请求host类型 useRequestHost 保持源请求host targetHost 修正为源站host  customHost 自定义host</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -756,18 +756,18 @@ namespace TencentCloud
                     bool HttpHostTypeHasBeenSet() const;
 
                     /**
-                     * 获取请求的超时时间
+                     * 获取<p>请求的超时时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Timeout 请求的超时时间
+                     * @return Timeout <p>请求的超时时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTimeout() const;
 
                     /**
-                     * 设置请求的超时时间
+                     * 设置<p>请求的超时时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _timeout 请求的超时时间
+                     * @param _timeout <p>请求的超时时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -781,15 +781,15 @@ namespace TencentCloud
                     bool TimeoutHasBeenSet() const;
 
                     /**
-                     * 获取mcp server模式
-                     * @return Mode mcp server模式
+                     * 获取<p>mcp server模式</p>
+                     * @return Mode <p>mcp server模式</p>
                      * 
                      */
                     std::string GetMode() const;
 
                     /**
-                     * 设置mcp server模式
-                     * @param _mode mcp server模式
+                     * 设置<p>mcp server模式</p>
+                     * @param _mode <p>mcp server模式</p>
                      * 
                      */
                     void SetMode(const std::string& _mode);
@@ -802,15 +802,15 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取mcp version
-                     * @return McpVersion mcp version
+                     * 获取<p>mcp version</p>
+                     * @return McpVersion <p>mcp version</p>
                      * 
                      */
                     std::string GetMcpVersion() const;
 
                     /**
-                     * 设置mcp version
-                     * @param _mcpVersion mcp version
+                     * 设置<p>mcp version</p>
+                     * @param _mcpVersion <p>mcp version</p>
                      * 
                      */
                     void SetMcpVersion(const std::string& _mcpVersion);
@@ -823,18 +823,18 @@ namespace TencentCloud
                     bool McpVersionHasBeenSet() const;
 
                     /**
-                     * 获取封装模式下绑定的服务ID列表
+                     * 获取<p>封装模式下绑定的服务ID列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WrapServices 封装模式下绑定的服务ID列表
+                     * @return WrapServices <p>封装模式下绑定的服务ID列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetWrapServices() const;
 
                     /**
-                     * 设置封装模式下绑定的服务ID列表
+                     * 设置<p>封装模式下绑定的服务ID列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _wrapServices 封装模式下绑定的服务ID列表
+                     * @param _wrapServices <p>封装模式下绑定的服务ID列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -848,15 +848,15 @@ namespace TencentCloud
                     bool WrapServicesHasBeenSet() const;
 
                     /**
-                     * 获取工具数量
-                     * @return ToolNum 工具数量
+                     * 获取<p>工具数量</p>
+                     * @return ToolNum <p>工具数量</p>
                      * 
                      */
                     int64_t GetToolNum() const;
 
                     /**
-                     * 设置工具数量
-                     * @param _toolNum 工具数量
+                     * 设置<p>工具数量</p>
+                     * @param _toolNum <p>工具数量</p>
                      * 
                      */
                     void SetToolNum(const int64_t& _toolNum);
@@ -869,15 +869,15 @@ namespace TencentCloud
                     bool ToolNumHasBeenSet() const;
 
                     /**
-                     * 获取安全规则集响应
-                     * @return McpSecurityRulesVO 安全规则集响应
+                     * 获取<p>安全规则集响应</p>
+                     * @return McpSecurityRulesVO <p>安全规则集响应</p>
                      * 
                      */
                     std::vector<McpSecurityRulesVO> GetMcpSecurityRulesVO() const;
 
                     /**
-                     * 设置安全规则集响应
-                     * @param _mcpSecurityRulesVO 安全规则集响应
+                     * 设置<p>安全规则集响应</p>
+                     * @param _mcpSecurityRulesVO <p>安全规则集响应</p>
                      * 
                      */
                     void SetMcpSecurityRulesVO(const std::vector<McpSecurityRulesVO>& _mcpSecurityRulesVO);
@@ -890,18 +890,18 @@ namespace TencentCloud
                     bool McpSecurityRulesVOHasBeenSet() const;
 
                     /**
-                     * 获取真实工具级别配置，实时拉取了tool/list做渲染的，如果tool/list不通，就拉不到。
+                     * 获取<p>真实工具级别配置，实时拉取了tool/list做渲染的，如果tool/list不通，就拉不到。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ToolConfigs 真实工具级别配置，实时拉取了tool/list做渲染的，如果tool/list不通，就拉不到。
+                     * @return ToolConfigs <p>真实工具级别配置，实时拉取了tool/list做渲染的，如果tool/list不通，就拉不到。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ToolConfigVO> GetToolConfigs() const;
 
                     /**
-                     * 设置真实工具级别配置，实时拉取了tool/list做渲染的，如果tool/list不通，就拉不到。
+                     * 设置<p>真实工具级别配置，实时拉取了tool/list做渲染的，如果tool/list不通，就拉不到。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _toolConfigs 真实工具级别配置，实时拉取了tool/list做渲染的，如果tool/list不通，就拉不到。
+                     * @param _toolConfigs <p>真实工具级别配置，实时拉取了tool/list做渲染的，如果tool/list不通，就拉不到。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -915,15 +915,15 @@ namespace TencentCloud
                     bool ToolConfigsHasBeenSet() const;
 
                     /**
-                     * 获取访问URL
-                     * @return UrlObj 访问URL
+                     * 获取<p>访问URL</p>
+                     * @return UrlObj <p>访问URL</p>
                      * 
                      */
                     McpUrlObj GetUrlObj() const;
 
                     /**
-                     * 设置访问URL
-                     * @param _urlObj 访问URL
+                     * 设置<p>访问URL</p>
+                     * @param _urlObj <p>访问URL</p>
                      * 
                      */
                     void SetUrlObj(const McpUrlObj& _urlObj);
@@ -936,15 +936,15 @@ namespace TencentCloud
                     bool UrlObjHasBeenSet() const;
 
                     /**
-                     * 获取后端mcp服务是否正常
-                     * @return ToolMessage 后端mcp服务是否正常
+                     * 获取<p>后端mcp服务是否正常</p>
+                     * @return ToolMessage <p>后端mcp服务是否正常</p>
                      * 
                      */
                     std::string GetToolMessage() const;
 
                     /**
-                     * 设置后端mcp服务是否正常
-                     * @param _toolMessage 后端mcp服务是否正常
+                     * 设置<p>后端mcp服务是否正常</p>
+                     * @param _toolMessage <p>后端mcp服务是否正常</p>
                      * 
                      */
                     void SetToolMessage(const std::string& _toolMessage);
@@ -957,15 +957,15 @@ namespace TencentCloud
                     bool ToolMessageHasBeenSet() const;
 
                     /**
-                     * 获取后端mcp服务的工具列表
-                     * @return Tools 后端mcp服务的工具列表
+                     * 获取<p>后端mcp服务的工具列表</p>
+                     * @return Tools <p>后端mcp服务的工具列表</p>
                      * 
                      */
                     std::vector<McpTool> GetTools() const;
 
                     /**
-                     * 设置后端mcp服务的工具列表
-                     * @param _tools 后端mcp服务的工具列表
+                     * 设置<p>后端mcp服务的工具列表</p>
+                     * @param _tools <p>后端mcp服务的工具列表</p>
                      * 
                      */
                     void SetTools(const std::vector<McpTool>& _tools);
@@ -978,15 +978,15 @@ namespace TencentCloud
                     bool ToolsHasBeenSet() const;
 
                     /**
-                     * 获取封装的API分组ID
-                     * @return WrapPaasID 封装的API分组ID
+                     * 获取<p>封装的API分组ID</p>
+                     * @return WrapPaasID <p>封装的API分组ID</p>
                      * 
                      */
                     std::string GetWrapPaasID() const;
 
                     /**
-                     * 设置封装的API分组ID
-                     * @param _wrapPaasID 封装的API分组ID
+                     * 设置<p>封装的API分组ID</p>
+                     * @param _wrapPaasID <p>封装的API分组ID</p>
                      * 
                      */
                     void SetWrapPaasID(const std::string& _wrapPaasID);
@@ -999,15 +999,15 @@ namespace TencentCloud
                     bool WrapPaasIDHasBeenSet() const;
 
                     /**
-                     * 获取关联的agentApp数量
-                     * @return RelateAgentAppNum 关联的agentApp数量
+                     * 获取<p>关联的agentApp数量</p>
+                     * @return RelateAgentAppNum <p>关联的agentApp数量</p>
                      * 
                      */
                     int64_t GetRelateAgentAppNum() const;
 
                     /**
-                     * 设置关联的agentApp数量
-                     * @param _relateAgentAppNum 关联的agentApp数量
+                     * 设置<p>关联的agentApp数量</p>
+                     * @param _relateAgentAppNum <p>关联的agentApp数量</p>
                      * 
                      */
                     void SetRelateAgentAppNum(const int64_t& _relateAgentAppNum);
@@ -1020,18 +1020,18 @@ namespace TencentCloud
                     bool RelateAgentAppNumHasBeenSet() const;
 
                     /**
-                     * 获取插件配置
+                     * 获取<p>插件配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PluginConfigs 插件配置
+                     * @return PluginConfigs <p>插件配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PluginConfigDTO> GetPluginConfigs() const;
 
                     /**
-                     * 设置插件配置
+                     * 设置<p>插件配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _pluginConfigs 插件配置
+                     * @param _pluginConfigs <p>插件配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1044,285 +1044,312 @@ namespace TencentCloud
                      */
                     bool PluginConfigsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否忽略健康检查</p>
+                     * @return IgnoreHealthCheck <p>是否忽略健康检查</p>
+                     * 
+                     */
+                    bool GetIgnoreHealthCheck() const;
+
+                    /**
+                     * 设置<p>是否忽略健康检查</p>
+                     * @param _ignoreHealthCheck <p>是否忽略健康检查</p>
+                     * 
+                     */
+                    void SetIgnoreHealthCheck(const bool& _ignoreHealthCheck);
+
+                    /**
+                     * 判断参数 IgnoreHealthCheck 是否已赋值
+                     * @return IgnoreHealthCheck 是否已赋值
+                     * 
+                     */
+                    bool IgnoreHealthCheckHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * 名称
+                     * <p>名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 标签ID数组
+                     * <p>标签ID数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_labelIDs;
                     bool m_labelIDsHasBeenSet;
 
                     /**
-                     * 目录ID数组
+                     * <p>目录ID数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_categoryIDs;
                     bool m_categoryIDsHasBeenSet;
 
                     /**
-                     * 负载方式，robin random consistentHash
+                     * <p>负载方式，robin random consistentHash</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_targetSelect;
                     bool m_targetSelectHasBeenSet;
 
                     /**
-                     * 目标服务器
+                     * <p>目标服务器</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TargetHostDTO> m_targetHosts;
                     bool m_targetHostsHasBeenSet;
 
                     /**
-                     * 后端协议：http https
+                     * <p>后端协议：http https</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_httpProtocolType;
                     bool m_httpProtocolTypeHasBeenSet;
 
                     /**
-                     * 证书检查
+                     * <p>证书检查</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_checkTargetCertsError;
                     bool m_checkTargetCertsErrorHasBeenSet;
 
                     /**
-                     * 目标路径
+                     * <p>目标路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_targetPath;
                     bool m_targetPathHasBeenSet;
 
                     /**
-                     * 流量控制状态
+                     * <p>流量控制状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_invokeLimitConfigStatus;
                     bool m_invokeLimitConfigStatusHasBeenSet;
 
                     /**
-                     * 流量控制配置
+                     * <p>流量控制配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InvokeLimitConfigDTO m_invokeLimitConfig;
                     bool m_invokeLimitConfigHasBeenSet;
 
                     /**
-                     * IP白名单开启状态
+                     * <p>IP白名单开启状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_ipWhiteStatus;
                     bool m_ipWhiteStatusHasBeenSet;
 
                     /**
-                     * IP白名单配置
+                     * <p>IP白名单配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IpConfig m_ipWhiteConfig;
                     bool m_ipWhiteConfigHasBeenSet;
 
                     /**
-                     * IP黑名单开启状态
+                     * <p>IP黑名单开启状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_ipBlackStatus;
                     bool m_ipBlackStatusHasBeenSet;
 
                     /**
-                     * IP黑名单配置
+                     * <p>IP黑名单配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IpConfig m_ipBlackConfig;
                     bool m_ipBlackConfigHasBeenSet;
 
                     /**
-                     * mcp server ID
+                     * <p>mcp server ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 状态
+                     * <p>状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 预览地址
+                     * <p>预览地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 应用
+                     * <p>应用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IDNameVO m_app;
                     bool m_appHasBeenSet;
 
                     /**
-                     * 目录
+                     * <p>目录</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IDNameVO> m_catalogs;
                     bool m_catalogsHasBeenSet;
 
                     /**
-                     * 标签
+                     * <p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IDNameVO> m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 最后修改时间
+                     * <p>最后修改时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastUpdateTime;
                     bool m_lastUpdateTimeHasBeenSet;
 
                     /**
-                     * 用户appID
+                     * <p>用户appID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appID;
                     bool m_appIDHasBeenSet;
 
                     /**
-                     * 用户ID
+                     * <p>用户ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 自定义host
+                     * <p>自定义host</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_customHttpHost;
                     bool m_customHttpHostHasBeenSet;
 
                     /**
-                     *  Http 请求host类型 useRequestHost 保持源请求host targetHost 修正为源站host  customHost 自定义host
+                     * <p>Http 请求host类型 useRequestHost 保持源请求host targetHost 修正为源站host  customHost 自定义host</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_httpHostType;
                     bool m_httpHostTypeHasBeenSet;
 
                     /**
-                     * 请求的超时时间
+                     * <p>请求的超时时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_timeout;
                     bool m_timeoutHasBeenSet;
 
                     /**
-                     * mcp server模式
+                     * <p>mcp server模式</p>
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * mcp version
+                     * <p>mcp version</p>
                      */
                     std::string m_mcpVersion;
                     bool m_mcpVersionHasBeenSet;
 
                     /**
-                     * 封装模式下绑定的服务ID列表
+                     * <p>封装模式下绑定的服务ID列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_wrapServices;
                     bool m_wrapServicesHasBeenSet;
 
                     /**
-                     * 工具数量
+                     * <p>工具数量</p>
                      */
                     int64_t m_toolNum;
                     bool m_toolNumHasBeenSet;
 
                     /**
-                     * 安全规则集响应
+                     * <p>安全规则集响应</p>
                      */
                     std::vector<McpSecurityRulesVO> m_mcpSecurityRulesVO;
                     bool m_mcpSecurityRulesVOHasBeenSet;
 
                     /**
-                     * 真实工具级别配置，实时拉取了tool/list做渲染的，如果tool/list不通，就拉不到。
+                     * <p>真实工具级别配置，实时拉取了tool/list做渲染的，如果tool/list不通，就拉不到。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ToolConfigVO> m_toolConfigs;
                     bool m_toolConfigsHasBeenSet;
 
                     /**
-                     * 访问URL
+                     * <p>访问URL</p>
                      */
                     McpUrlObj m_urlObj;
                     bool m_urlObjHasBeenSet;
 
                     /**
-                     * 后端mcp服务是否正常
+                     * <p>后端mcp服务是否正常</p>
                      */
                     std::string m_toolMessage;
                     bool m_toolMessageHasBeenSet;
 
                     /**
-                     * 后端mcp服务的工具列表
+                     * <p>后端mcp服务的工具列表</p>
                      */
                     std::vector<McpTool> m_tools;
                     bool m_toolsHasBeenSet;
 
                     /**
-                     * 封装的API分组ID
+                     * <p>封装的API分组ID</p>
                      */
                     std::string m_wrapPaasID;
                     bool m_wrapPaasIDHasBeenSet;
 
                     /**
-                     * 关联的agentApp数量
+                     * <p>关联的agentApp数量</p>
                      */
                     int64_t m_relateAgentAppNum;
                     bool m_relateAgentAppNumHasBeenSet;
 
                     /**
-                     * 插件配置
+                     * <p>插件配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PluginConfigDTO> m_pluginConfigs;
                     bool m_pluginConfigsHasBeenSet;
+
+                    /**
+                     * <p>是否忽略健康检查</p>
+                     */
+                    bool m_ignoreHealthCheck;
+                    bool m_ignoreHealthCheckHasBeenSet;
 
                 };
             }

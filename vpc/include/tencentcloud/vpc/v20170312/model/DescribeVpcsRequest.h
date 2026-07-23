@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。
-                     * @return VpcIds VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。
+                     * 获取<p>VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。</p>
+                     * @return VpcIds <p>VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。</p>
                      * 
                      */
                     std::vector<std::string> GetVpcIds() const;
 
                     /**
-                     * 设置VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。
-                     * @param _vpcIds VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。
+                     * 设置<p>VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。</p>
+                     * @param _vpcIds <p>VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。</p>
                      * 
                      */
                     void SetVpcIds(const std::vector<std::string>& _vpcIds);
@@ -65,59 +65,15 @@ namespace TencentCloud
                     bool VpcIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，不支持同时指定VpcIds和Filters参数。
-支持的过滤条件如下：
-<li>vpc-name：VPC实例名称，支持模糊查询。</li>
-<li>is-default ：是否默认VPC。</li>
-<li>vpc-id ：VPC实例ID，例如：vpc-f49l6u0z。</li>
-<li>cidr-block：VPC的CIDR。</li>
-<li>tag-key ：按照标签键进行过滤，非必填参数。</li>
-<li>tag:tag-key：按照标签键值对进行过滤，非必填参数。 其中 tag-key 请使用具体的标签键进行替换，可参考示例2。</li>
-  **说明：**若同一个过滤条件（Filter）存在多个Values，则同一Filter下Values间的关系为逻辑或（OR）关系；若存在多个过滤条件（Filter），Filter之间的关系为逻辑与（AND）关系。
-<li>ipv6-cidr-block - String - （过滤条件）IPv6子网网段，形如: 2402:4e00:1717:8700::/64 。</li>
-<li>isp-type  - String - （过滤条件）运营商类型，形如: BGP 取值范围：'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联通。</li>
-<li>address-type - String - （过滤条件）IPv6 Cidr 的类型，精确匹配。`GUA`(全球单播地址), `ULA`(唯一本地地址)。</li>
-                     * @return Filters 过滤条件，不支持同时指定VpcIds和Filters参数。
-支持的过滤条件如下：
-<li>vpc-name：VPC实例名称，支持模糊查询。</li>
-<li>is-default ：是否默认VPC。</li>
-<li>vpc-id ：VPC实例ID，例如：vpc-f49l6u0z。</li>
-<li>cidr-block：VPC的CIDR。</li>
-<li>tag-key ：按照标签键进行过滤，非必填参数。</li>
-<li>tag:tag-key：按照标签键值对进行过滤，非必填参数。 其中 tag-key 请使用具体的标签键进行替换，可参考示例2。</li>
-  **说明：**若同一个过滤条件（Filter）存在多个Values，则同一Filter下Values间的关系为逻辑或（OR）关系；若存在多个过滤条件（Filter），Filter之间的关系为逻辑与（AND）关系。
-<li>ipv6-cidr-block - String - （过滤条件）IPv6子网网段，形如: 2402:4e00:1717:8700::/64 。</li>
-<li>isp-type  - String - （过滤条件）运营商类型，形如: BGP 取值范围：'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联通。</li>
-<li>address-type - String - （过滤条件）IPv6 Cidr 的类型，精确匹配。`GUA`(全球单播地址), `ULA`(唯一本地地址)。</li>
+                     * 获取<p>过滤条件，不支持同时指定VpcIds和Filters参数。<br>支持的过滤条件如下：</p><li>vpc-name：VPC实例名称，支持模糊查询。</li><li>is-default ：是否默认VPC。</li><li>vpc-id ：VPC实例ID，例如：vpc-f49l6u0z。</li><li>cidr-block：VPC的CIDR。</li><li>tag-key ：按照标签键进行过滤，非必填参数。</li><li>tag:tag-key：按照标签键值对进行过滤，非必填参数。 其中 tag-key 请使用具体的标签键进行替换，可参考示例2。</li>  **说明：**若同一个过滤条件（Filter）存在多个Values，则同一Filter下Values间的关系为逻辑或（OR）关系；若存在多个过滤条件（Filter），Filter之间的关系为逻辑与（AND）关系。<li>ipv6-cidr-block - String - （过滤条件）IPv6子网网段，形如: 2402:4e00:1717:8700::/64 。</li><li>isp-type  - String - （过滤条件）运营商类型，形如: BGP 取值范围：'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联通。</li><li>address-type - String - （过滤条件）IPv6 Cidr 的类型，精确匹配。<code>GUA</code>(全球单播地址), <code>ULA</code>(唯一本地地址)。</li>
+                     * @return Filters <p>过滤条件，不支持同时指定VpcIds和Filters参数。<br>支持的过滤条件如下：</p><li>vpc-name：VPC实例名称，支持模糊查询。</li><li>is-default ：是否默认VPC。</li><li>vpc-id ：VPC实例ID，例如：vpc-f49l6u0z。</li><li>cidr-block：VPC的CIDR。</li><li>tag-key ：按照标签键进行过滤，非必填参数。</li><li>tag:tag-key：按照标签键值对进行过滤，非必填参数。 其中 tag-key 请使用具体的标签键进行替换，可参考示例2。</li>  **说明：**若同一个过滤条件（Filter）存在多个Values，则同一Filter下Values间的关系为逻辑或（OR）关系；若存在多个过滤条件（Filter），Filter之间的关系为逻辑与（AND）关系。<li>ipv6-cidr-block - String - （过滤条件）IPv6子网网段，形如: 2402:4e00:1717:8700::/64 。</li><li>isp-type  - String - （过滤条件）运营商类型，形如: BGP 取值范围：'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联通。</li><li>address-type - String - （过滤条件）IPv6 Cidr 的类型，精确匹配。<code>GUA</code>(全球单播地址), <code>ULA</code>(唯一本地地址)。</li>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，不支持同时指定VpcIds和Filters参数。
-支持的过滤条件如下：
-<li>vpc-name：VPC实例名称，支持模糊查询。</li>
-<li>is-default ：是否默认VPC。</li>
-<li>vpc-id ：VPC实例ID，例如：vpc-f49l6u0z。</li>
-<li>cidr-block：VPC的CIDR。</li>
-<li>tag-key ：按照标签键进行过滤，非必填参数。</li>
-<li>tag:tag-key：按照标签键值对进行过滤，非必填参数。 其中 tag-key 请使用具体的标签键进行替换，可参考示例2。</li>
-  **说明：**若同一个过滤条件（Filter）存在多个Values，则同一Filter下Values间的关系为逻辑或（OR）关系；若存在多个过滤条件（Filter），Filter之间的关系为逻辑与（AND）关系。
-<li>ipv6-cidr-block - String - （过滤条件）IPv6子网网段，形如: 2402:4e00:1717:8700::/64 。</li>
-<li>isp-type  - String - （过滤条件）运营商类型，形如: BGP 取值范围：'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联通。</li>
-<li>address-type - String - （过滤条件）IPv6 Cidr 的类型，精确匹配。`GUA`(全球单播地址), `ULA`(唯一本地地址)。</li>
-                     * @param _filters 过滤条件，不支持同时指定VpcIds和Filters参数。
-支持的过滤条件如下：
-<li>vpc-name：VPC实例名称，支持模糊查询。</li>
-<li>is-default ：是否默认VPC。</li>
-<li>vpc-id ：VPC实例ID，例如：vpc-f49l6u0z。</li>
-<li>cidr-block：VPC的CIDR。</li>
-<li>tag-key ：按照标签键进行过滤，非必填参数。</li>
-<li>tag:tag-key：按照标签键值对进行过滤，非必填参数。 其中 tag-key 请使用具体的标签键进行替换，可参考示例2。</li>
-  **说明：**若同一个过滤条件（Filter）存在多个Values，则同一Filter下Values间的关系为逻辑或（OR）关系；若存在多个过滤条件（Filter），Filter之间的关系为逻辑与（AND）关系。
-<li>ipv6-cidr-block - String - （过滤条件）IPv6子网网段，形如: 2402:4e00:1717:8700::/64 。</li>
-<li>isp-type  - String - （过滤条件）运营商类型，形如: BGP 取值范围：'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联通。</li>
-<li>address-type - String - （过滤条件）IPv6 Cidr 的类型，精确匹配。`GUA`(全球单播地址), `ULA`(唯一本地地址)。</li>
+                     * 设置<p>过滤条件，不支持同时指定VpcIds和Filters参数。<br>支持的过滤条件如下：</p><li>vpc-name：VPC实例名称，支持模糊查询。</li><li>is-default ：是否默认VPC。</li><li>vpc-id ：VPC实例ID，例如：vpc-f49l6u0z。</li><li>cidr-block：VPC的CIDR。</li><li>tag-key ：按照标签键进行过滤，非必填参数。</li><li>tag:tag-key：按照标签键值对进行过滤，非必填参数。 其中 tag-key 请使用具体的标签键进行替换，可参考示例2。</li>  **说明：**若同一个过滤条件（Filter）存在多个Values，则同一Filter下Values间的关系为逻辑或（OR）关系；若存在多个过滤条件（Filter），Filter之间的关系为逻辑与（AND）关系。<li>ipv6-cidr-block - String - （过滤条件）IPv6子网网段，形如: 2402:4e00:1717:8700::/64 。</li><li>isp-type  - String - （过滤条件）运营商类型，形如: BGP 取值范围：'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联通。</li><li>address-type - String - （过滤条件）IPv6 Cidr 的类型，精确匹配。<code>GUA</code>(全球单播地址), <code>ULA</code>(唯一本地地址)。</li>
+                     * @param _filters <p>过滤条件，不支持同时指定VpcIds和Filters参数。<br>支持的过滤条件如下：</p><li>vpc-name：VPC实例名称，支持模糊查询。</li><li>is-default ：是否默认VPC。</li><li>vpc-id ：VPC实例ID，例如：vpc-f49l6u0z。</li><li>cidr-block：VPC的CIDR。</li><li>tag-key ：按照标签键进行过滤，非必填参数。</li><li>tag:tag-key：按照标签键值对进行过滤，非必填参数。 其中 tag-key 请使用具体的标签键进行替换，可参考示例2。</li>  **说明：**若同一个过滤条件（Filter）存在多个Values，则同一Filter下Values间的关系为逻辑或（OR）关系；若存在多个过滤条件（Filter），Filter之间的关系为逻辑与（AND）关系。<li>ipv6-cidr-block - String - （过滤条件）IPv6子网网段，形如: 2402:4e00:1717:8700::/64 。</li><li>isp-type  - String - （过滤条件）运营商类型，形如: BGP 取值范围：'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联通。</li><li>address-type - String - （过滤条件）IPv6 Cidr 的类型，精确匹配。<code>GUA</code>(全球单播地址), <code>ULA</code>(唯一本地地址)。</li>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -130,15 +86,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0。
-                     * @return Offset 偏移量，默认为0。
+                     * 获取<p>偏移量，默认为0。</p>
+                     * @return Offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     std::string GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0。
-                     * @param _offset 偏移量，默认为0。
+                     * 设置<p>偏移量，默认为0。</p>
+                     * @param _offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     void SetOffset(const std::string& _offset);
@@ -151,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为20，最大值为100。
-                     * @return Limit 返回数量，默认为20，最大值为100。
+                     * 获取<p>返回数量，默认为20，最大值为100。</p>
+                     * @return Limit <p>返回数量，默认为20，最大值为100。</p>
                      * 
                      */
                     std::string GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为20，最大值为100。
-                     * @param _limit 返回数量，默认为20，最大值为100。
+                     * 设置<p>返回数量，默认为20，最大值为100。</p>
+                     * @param _limit <p>返回数量，默认为20，最大值为100。</p>
                      * 
                      */
                     void SetLimit(const std::string& _limit);
@@ -174,36 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。
+                     * <p>VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。</p>
                      */
                     std::vector<std::string> m_vpcIds;
                     bool m_vpcIdsHasBeenSet;
 
                     /**
-                     * 过滤条件，不支持同时指定VpcIds和Filters参数。
-支持的过滤条件如下：
-<li>vpc-name：VPC实例名称，支持模糊查询。</li>
-<li>is-default ：是否默认VPC。</li>
-<li>vpc-id ：VPC实例ID，例如：vpc-f49l6u0z。</li>
-<li>cidr-block：VPC的CIDR。</li>
-<li>tag-key ：按照标签键进行过滤，非必填参数。</li>
-<li>tag:tag-key：按照标签键值对进行过滤，非必填参数。 其中 tag-key 请使用具体的标签键进行替换，可参考示例2。</li>
-  **说明：**若同一个过滤条件（Filter）存在多个Values，则同一Filter下Values间的关系为逻辑或（OR）关系；若存在多个过滤条件（Filter），Filter之间的关系为逻辑与（AND）关系。
-<li>ipv6-cidr-block - String - （过滤条件）IPv6子网网段，形如: 2402:4e00:1717:8700::/64 。</li>
-<li>isp-type  - String - （过滤条件）运营商类型，形如: BGP 取值范围：'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联通。</li>
-<li>address-type - String - （过滤条件）IPv6 Cidr 的类型，精确匹配。`GUA`(全球单播地址), `ULA`(唯一本地地址)。</li>
+                     * <p>过滤条件，不支持同时指定VpcIds和Filters参数。<br>支持的过滤条件如下：</p><li>vpc-name：VPC实例名称，支持模糊查询。</li><li>is-default ：是否默认VPC。</li><li>vpc-id ：VPC实例ID，例如：vpc-f49l6u0z。</li><li>cidr-block：VPC的CIDR。</li><li>tag-key ：按照标签键进行过滤，非必填参数。</li><li>tag:tag-key：按照标签键值对进行过滤，非必填参数。 其中 tag-key 请使用具体的标签键进行替换，可参考示例2。</li>  **说明：**若同一个过滤条件（Filter）存在多个Values，则同一Filter下Values间的关系为逻辑或（OR）关系；若存在多个过滤条件（Filter），Filter之间的关系为逻辑与（AND）关系。<li>ipv6-cidr-block - String - （过滤条件）IPv6子网网段，形如: 2402:4e00:1717:8700::/64 。</li><li>isp-type  - String - （过滤条件）运营商类型，形如: BGP 取值范围：'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联通。</li><li>address-type - String - （过滤条件）IPv6 Cidr 的类型，精确匹配。<code>GUA</code>(全球单播地址), <code>ULA</code>(唯一本地地址)。</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0。
+                     * <p>偏移量，默认为0。</p>
                      */
                     std::string m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，默认为20，最大值为100。
+                     * <p>返回数量，默认为20，最大值为100。</p>
                      */
                     std::string m_limit;
                     bool m_limitHasBeenSet;

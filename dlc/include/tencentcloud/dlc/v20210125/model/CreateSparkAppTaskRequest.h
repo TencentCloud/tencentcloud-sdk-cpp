@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取spark作业名
-                     * @return JobName spark作业名
+                     * 获取<p>spark作业名</p>
+                     * @return JobName <p>spark作业名</p>
                      * 
                      */
                     std::string GetJobName() const;
 
                     /**
-                     * 设置spark作业名
-                     * @param _jobName spark作业名
+                     * 设置<p>spark作业名</p>
+                     * @param _jobName <p>spark作业名</p>
                      * 
                      */
                     void SetJobName(const std::string& _jobName);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool JobNameHasBeenSet() const;
 
                     /**
-                     * 获取spark作业程序入参，以空格分隔；一般用于周期性调用使用
-                     * @return CmdArgs spark作业程序入参，以空格分隔；一般用于周期性调用使用
+                     * 获取<p>spark作业程序入参，以空格分隔；一般用于周期性调用使用</p>
+                     * @return CmdArgs <p>spark作业程序入参，以空格分隔；一般用于周期性调用使用</p>
                      * 
                      */
                     std::string GetCmdArgs() const;
 
                     /**
-                     * 设置spark作业程序入参，以空格分隔；一般用于周期性调用使用
-                     * @param _cmdArgs spark作业程序入参，以空格分隔；一般用于周期性调用使用
+                     * 设置<p>spark作业程序入参，以空格分隔；一般用于周期性调用使用</p>
+                     * @param _cmdArgs <p>spark作业程序入参，以空格分隔；一般用于周期性调用使用</p>
                      * 
                      */
                     void SetCmdArgs(const std::string& _cmdArgs);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool CmdArgsHasBeenSet() const;
 
                     /**
-                     * 获取任务来源信息
-                     * @return SourceInfo 任务来源信息
+                     * 获取<p>任务来源信息</p>
+                     * @return SourceInfo <p>任务来源信息</p>
                      * 
                      */
                     std::vector<KVPair> GetSourceInfo() const;
 
                     /**
-                     * 设置任务来源信息
-                     * @param _sourceInfo 任务来源信息
+                     * 设置<p>任务来源信息</p>
+                     * @param _sourceInfo <p>任务来源信息</p>
                      * 
                      */
                     void SetSourceInfo(const std::vector<KVPair>& _sourceInfo);
@@ -109,19 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * spark作业名
+                     * <p>spark作业名</p>
                      */
                     std::string m_jobName;
                     bool m_jobNameHasBeenSet;
 
                     /**
-                     * spark作业程序入参，以空格分隔；一般用于周期性调用使用
+                     * <p>spark作业程序入参，以空格分隔；一般用于周期性调用使用</p>
                      */
                     std::string m_cmdArgs;
                     bool m_cmdArgsHasBeenSet;
 
                     /**
-                     * 任务来源信息
+                     * <p>任务来源信息</p>
                      */
                     std::vector<KVPair> m_sourceInfo;
                     bool m_sourceInfoHasBeenSet;

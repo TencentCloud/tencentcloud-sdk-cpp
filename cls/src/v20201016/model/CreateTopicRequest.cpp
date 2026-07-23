@@ -34,6 +34,7 @@ CreateTopicRequest::CreateTopicRequest() :
     m_describesHasBeenSet(false),
     m_hotPeriodHasBeenSet(false),
     m_encryptionHasBeenSet(false),
+    m_customKmsInfoHasBeenSet(false),
     m_bizTypeHasBeenSet(false),
     m_topicIdHasBeenSet(false),
     m_isWebTrackingHasBeenSet(false),
@@ -143,6 +144,15 @@ string CreateTopicRequest::ToJsonString() const
         string key = "Encryption";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_encryption, allocator);
+    }
+
+    if (m_customKmsInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomKmsInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customKmsInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_bizTypeHasBeenSet)
@@ -376,6 +386,22 @@ void CreateTopicRequest::SetEncryption(const uint64_t& _encryption)
 bool CreateTopicRequest::EncryptionHasBeenSet() const
 {
     return m_encryptionHasBeenSet;
+}
+
+CustomKmsInfo CreateTopicRequest::GetCustomKmsInfo() const
+{
+    return m_customKmsInfo;
+}
+
+void CreateTopicRequest::SetCustomKmsInfo(const CustomKmsInfo& _customKmsInfo)
+{
+    m_customKmsInfo = _customKmsInfo;
+    m_customKmsInfoHasBeenSet = true;
+}
+
+bool CreateTopicRequest::CustomKmsInfoHasBeenSet() const
+{
+    return m_customKmsInfoHasBeenSet;
 }
 
 uint64_t CreateTopicRequest::GetBizType() const

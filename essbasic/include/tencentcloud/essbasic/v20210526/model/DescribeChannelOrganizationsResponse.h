@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取满足查询条件的企业信息列表。
-                     * @return ChannelOrganizationInfos 满足查询条件的企业信息列表。
+                     * 获取<p>满足查询条件的企业信息列表。</p>
+                     * @return ChannelOrganizationInfos <p>满足查询条件的企业信息列表。</p>
                      * 
                      */
                     std::vector<ChannelOrganizationInfo> GetChannelOrganizationInfos() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool ChannelOrganizationInfosHasBeenSet() const;
 
                     /**
-                     * 获取指定分页返回第几页的数据。页码从 0 开始，即首页为 0，最大20000。
-                     * @return Offset 指定分页返回第几页的数据。页码从 0 开始，即首页为 0，最大20000。
+                     * 获取<p>偏移量:从 0 开始，最大20000。</p>
+                     * @return Offset <p>偏移量:从 0 开始，最大20000。</p>
                      * 
                      */
                     int64_t GetOffset() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取指定分页每页返回的数据条数，单页最大支持 200。
-                     * @return Limit 指定分页每页返回的数据条数，单页最大支持 200。
+                     * 获取<p>指定分页每页返回的数据条数，单页最大支持 200。</p>
+                     * @return Limit <p>指定分页每页返回的数据条数，单页最大支持 200。</p>
                      * 
                      */
                     int64_t GetLimit() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取满足查询条件的企业总数量。
-                     * @return Total 满足查询条件的企业总数量。
+                     * 获取<p>满足查询条件的企业总数量。</p>
+                     * @return Total <p>满足查询条件的企业总数量。</p>
                      * 
                      */
                     int64_t GetTotal() const;
@@ -103,25 +103,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 满足查询条件的企业信息列表。
+                     * <p>满足查询条件的企业信息列表。</p>
                      */
                     std::vector<ChannelOrganizationInfo> m_channelOrganizationInfos;
                     bool m_channelOrganizationInfosHasBeenSet;
 
                     /**
-                     * 指定分页返回第几页的数据。页码从 0 开始，即首页为 0，最大20000。
+                     * <p>偏移量:从 0 开始，最大20000。</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 指定分页每页返回的数据条数，单页最大支持 200。
+                     * <p>指定分页每页返回的数据条数，单页最大支持 200。</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 满足查询条件的企业总数量。
+                     * <p>满足查询条件的企业总数量。</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;

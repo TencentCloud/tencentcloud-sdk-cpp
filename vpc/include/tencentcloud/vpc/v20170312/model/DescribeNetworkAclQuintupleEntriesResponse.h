@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网络ACL条目列表（NetworkAclTuple5Entry）
-                     * @return NetworkAclQuintupleSet 网络ACL条目列表（NetworkAclTuple5Entry）
+                     * 获取<p>网络ACL条目列表（NetworkAclTuple5Entry）</p>
+                     * @return NetworkAclQuintupleSet <p>网络ACL条目列表（NetworkAclTuple5Entry）</p>
                      * 
                      */
                     std::vector<NetworkAclQuintupleEntry> GetNetworkAclQuintupleSet() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool NetworkAclQuintupleSetHasBeenSet() const;
 
                     /**
-                     * 获取符合条件的实例数量。
-                     * @return TotalCount 符合条件的实例数量。
+                     * 获取<p>符合条件的实例数量。</p>
+                     * @return TotalCount <p>符合条件的实例数量。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 网络ACL条目列表（NetworkAclTuple5Entry）
+                     * <p>网络ACL条目列表（NetworkAclTuple5Entry）</p>
                      */
                     std::vector<NetworkAclQuintupleEntry> m_networkAclQuintupleSet;
                     bool m_networkAclQuintupleSetHasBeenSet;
 
                     /**
-                     * 符合条件的实例数量。
+                     * <p>符合条件的实例数量。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

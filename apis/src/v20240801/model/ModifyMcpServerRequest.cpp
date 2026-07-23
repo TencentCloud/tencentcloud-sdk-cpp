@@ -48,7 +48,8 @@ ModifyMcpServerRequest::ModifyMcpServerRequest() :
     m_mcpSecurityRulesHasBeenSet(false),
     m_toolConfigsHasBeenSet(false),
     m_wrapPaasIDHasBeenSet(false),
-    m_pluginConfigsHasBeenSet(false)
+    m_pluginConfigsHasBeenSet(false),
+    m_ignoreHealthCheckHasBeenSet(false)
 {
 }
 
@@ -301,6 +302,14 @@ string ModifyMcpServerRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_ignoreHealthCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IgnoreHealthCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ignoreHealthCheck, allocator);
     }
 
 
@@ -725,6 +734,22 @@ void ModifyMcpServerRequest::SetPluginConfigs(const vector<PluginConfigDTO>& _pl
 bool ModifyMcpServerRequest::PluginConfigsHasBeenSet() const
 {
     return m_pluginConfigsHasBeenSet;
+}
+
+bool ModifyMcpServerRequest::GetIgnoreHealthCheck() const
+{
+    return m_ignoreHealthCheck;
+}
+
+void ModifyMcpServerRequest::SetIgnoreHealthCheck(const bool& _ignoreHealthCheck)
+{
+    m_ignoreHealthCheck = _ignoreHealthCheck;
+    m_ignoreHealthCheckHasBeenSet = true;
+}
+
+bool ModifyMcpServerRequest::IgnoreHealthCheckHasBeenSet() const
+{
+    return m_ignoreHealthCheckHasBeenSet;
 }
 
 

@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取mcp server ID
-                     * @return ID mcp server ID
+                     * 获取<p>mcp server ID</p>
+                     * @return ID <p>mcp server ID</p>
                      * 
                      */
                     std::string GetID() const;
 
                     /**
-                     * 设置mcp server ID
-                     * @param _iD mcp server ID
+                     * 设置<p>mcp server ID</p>
+                     * @param _iD <p>mcp server ID</p>
                      * 
                      */
                     void SetID(const std::string& _iD);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取模式：proxy代理模式； wrap封装模式；
-                     * @return Mode 模式：proxy代理模式； wrap封装模式；
+                     * 获取<p>模式：proxy代理模式； wrap封装模式；</p>
+                     * @return Mode <p>模式：proxy代理模式； wrap封装模式；</p>
                      * 
                      */
                     std::string GetMode() const;
 
                     /**
-                     * 设置模式：proxy代理模式； wrap封装模式；
-                     * @param _mode 模式：proxy代理模式； wrap封装模式；
+                     * 设置<p>模式：proxy代理模式； wrap封装模式；</p>
+                     * @param _mode <p>模式：proxy代理模式； wrap封装模式；</p>
                      * 
                      */
                     void SetMode(const std::string& _mode);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取版本号：2024-11-05 2025-03-26
-                     * @return McpVersion 版本号：2024-11-05 2025-03-26
+                     * 获取<p>版本号：2024-11-05 2025-03-26</p>
+                     * @return McpVersion <p>版本号：2024-11-05 2025-03-26</p>
                      * 
                      */
                     std::string GetMcpVersion() const;
 
                     /**
-                     * 设置版本号：2024-11-05 2025-03-26
-                     * @param _mcpVersion 版本号：2024-11-05 2025-03-26
+                     * 设置<p>版本号：2024-11-05 2025-03-26</p>
+                     * @param _mcpVersion <p>版本号：2024-11-05 2025-03-26</p>
                      * 
                      */
                     void SetMcpVersion(const std::string& _mcpVersion);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool McpVersionHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceID 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceID <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceID 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceID <p>实例ID</p>
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取名称
-                     * @return Name 名称
+                     * 获取<p>名称</p>
+                     * @return Name <p>名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称
-                     * @param _name 名称
+                     * 设置<p>名称</p>
+                     * @param _name <p>名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
+                     * 获取<p>描述</p>
+                     * @return Description <p>描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
-                     * @param _description 描述
+                     * 设置<p>描述</p>
+                     * @param _description <p>描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取封装服务列表
-                     * @return WrapServices 封装服务列表
+                     * 获取<p>封装服务列表</p>
+                     * @return WrapServices <p>封装服务列表</p>
                      * 
                      */
                     std::vector<std::string> GetWrapServices() const;
 
                     /**
-                     * 设置封装服务列表
-                     * @param _wrapServices 封装服务列表
+                     * 设置<p>封装服务列表</p>
+                     * @param _wrapServices <p>封装服务列表</p>
                      * 
                      */
                     void SetWrapServices(const std::vector<std::string>& _wrapServices);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool WrapServicesHasBeenSet() const;
 
                     /**
-                     * 获取负载方式，robin random consistentHash
-                     * @return TargetSelect 负载方式，robin random consistentHash
+                     * 获取<p>负载方式，robin random consistentHash</p>
+                     * @return TargetSelect <p>负载方式，robin random consistentHash</p>
                      * 
                      */
                     std::string GetTargetSelect() const;
 
                     /**
-                     * 设置负载方式，robin random consistentHash
-                     * @param _targetSelect 负载方式，robin random consistentHash
+                     * 设置<p>负载方式，robin random consistentHash</p>
+                     * @param _targetSelect <p>负载方式，robin random consistentHash</p>
                      * 
                      */
                     void SetTargetSelect(const std::string& _targetSelect);
@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool TargetSelectHasBeenSet() const;
 
                     /**
-                     * 获取目标服务器
-                     * @return TargetHosts 目标服务器
+                     * 获取<p>目标服务器</p>
+                     * @return TargetHosts <p>目标服务器</p>
                      * 
                      */
                     std::vector<TargetHostDTO> GetTargetHosts() const;
 
                     /**
-                     * 设置目标服务器
-                     * @param _targetHosts 目标服务器
+                     * 设置<p>目标服务器</p>
+                     * @param _targetHosts <p>目标服务器</p>
                      * 
                      */
                     void SetTargetHosts(const std::vector<TargetHostDTO>& _targetHosts);
@@ -238,15 +238,15 @@ namespace TencentCloud
                     bool TargetHostsHasBeenSet() const;
 
                     /**
-                     * 获取后端协议：http https
-                     * @return HttpProtocolType 后端协议：http https
+                     * 获取<p>后端协议：http https</p>
+                     * @return HttpProtocolType <p>后端协议：http https</p>
                      * 
                      */
                     std::string GetHttpProtocolType() const;
 
                     /**
-                     * 设置后端协议：http https
-                     * @param _httpProtocolType 后端协议：http https
+                     * 设置<p>后端协议：http https</p>
+                     * @param _httpProtocolType <p>后端协议：http https</p>
                      * 
                      */
                     void SetHttpProtocolType(const std::string& _httpProtocolType);
@@ -259,15 +259,15 @@ namespace TencentCloud
                     bool HttpProtocolTypeHasBeenSet() const;
 
                     /**
-                     * 获取证书检查
-                     * @return CheckTargetCertsError 证书检查
+                     * 获取<p>证书检查</p>
+                     * @return CheckTargetCertsError <p>证书检查</p>
                      * 
                      */
                     bool GetCheckTargetCertsError() const;
 
                     /**
-                     * 设置证书检查
-                     * @param _checkTargetCertsError 证书检查
+                     * 设置<p>证书检查</p>
+                     * @param _checkTargetCertsError <p>证书检查</p>
                      * 
                      */
                     void SetCheckTargetCertsError(const bool& _checkTargetCertsError);
@@ -280,15 +280,15 @@ namespace TencentCloud
                     bool CheckTargetCertsErrorHasBeenSet() const;
 
                     /**
-                     * 获取目标路径
-                     * @return TargetPath 目标路径
+                     * 获取<p>目标路径</p>
+                     * @return TargetPath <p>目标路径</p>
                      * 
                      */
                     std::string GetTargetPath() const;
 
                     /**
-                     * 设置目标路径
-                     * @param _targetPath 目标路径
+                     * 设置<p>目标路径</p>
+                     * @param _targetPath <p>目标路径</p>
                      * 
                      */
                     void SetTargetPath(const std::string& _targetPath);
@@ -301,15 +301,15 @@ namespace TencentCloud
                     bool TargetPathHasBeenSet() const;
 
                     /**
-                     * 获取流量控制开启状态
-                     * @return InvokeLimitConfigStatus 流量控制开启状态
+                     * 获取<p>流量控制开启状态</p>
+                     * @return InvokeLimitConfigStatus <p>流量控制开启状态</p>
                      * 
                      */
                     bool GetInvokeLimitConfigStatus() const;
 
                     /**
-                     * 设置流量控制开启状态
-                     * @param _invokeLimitConfigStatus 流量控制开启状态
+                     * 设置<p>流量控制开启状态</p>
+                     * @param _invokeLimitConfigStatus <p>流量控制开启状态</p>
                      * 
                      */
                     void SetInvokeLimitConfigStatus(const bool& _invokeLimitConfigStatus);
@@ -322,15 +322,15 @@ namespace TencentCloud
                     bool InvokeLimitConfigStatusHasBeenSet() const;
 
                     /**
-                     * 获取流量控制配置
-                     * @return InvokeLimitConfig 流量控制配置
+                     * 获取<p>流量控制配置</p>
+                     * @return InvokeLimitConfig <p>流量控制配置</p>
                      * 
                      */
                     InvokeLimitConfigDTO GetInvokeLimitConfig() const;
 
                     /**
-                     * 设置流量控制配置
-                     * @param _invokeLimitConfig 流量控制配置
+                     * 设置<p>流量控制配置</p>
+                     * @param _invokeLimitConfig <p>流量控制配置</p>
                      * 
                      */
                     void SetInvokeLimitConfig(const InvokeLimitConfigDTO& _invokeLimitConfig);
@@ -343,15 +343,15 @@ namespace TencentCloud
                     bool InvokeLimitConfigHasBeenSet() const;
 
                     /**
-                     * 获取IP白名单开启状态
-                     * @return IpWhiteStatus IP白名单开启状态
+                     * 获取<p>IP白名单开启状态</p>
+                     * @return IpWhiteStatus <p>IP白名单开启状态</p>
                      * 
                      */
                     bool GetIpWhiteStatus() const;
 
                     /**
-                     * 设置IP白名单开启状态
-                     * @param _ipWhiteStatus IP白名单开启状态
+                     * 设置<p>IP白名单开启状态</p>
+                     * @param _ipWhiteStatus <p>IP白名单开启状态</p>
                      * 
                      */
                     void SetIpWhiteStatus(const bool& _ipWhiteStatus);
@@ -364,15 +364,15 @@ namespace TencentCloud
                     bool IpWhiteStatusHasBeenSet() const;
 
                     /**
-                     * 获取IP白名单配置
-                     * @return IpWhiteConfig IP白名单配置
+                     * 获取<p>IP白名单配置</p>
+                     * @return IpWhiteConfig <p>IP白名单配置</p>
                      * 
                      */
                     IpConfig GetIpWhiteConfig() const;
 
                     /**
-                     * 设置IP白名单配置
-                     * @param _ipWhiteConfig IP白名单配置
+                     * 设置<p>IP白名单配置</p>
+                     * @param _ipWhiteConfig <p>IP白名单配置</p>
                      * 
                      */
                     void SetIpWhiteConfig(const IpConfig& _ipWhiteConfig);
@@ -385,15 +385,15 @@ namespace TencentCloud
                     bool IpWhiteConfigHasBeenSet() const;
 
                     /**
-                     * 获取IP黑名单开启状态
-                     * @return IpBlackStatus IP黑名单开启状态
+                     * 获取<p>IP黑名单开启状态</p>
+                     * @return IpBlackStatus <p>IP黑名单开启状态</p>
                      * 
                      */
                     bool GetIpBlackStatus() const;
 
                     /**
-                     * 设置IP黑名单开启状态
-                     * @param _ipBlackStatus IP黑名单开启状态
+                     * 设置<p>IP黑名单开启状态</p>
+                     * @param _ipBlackStatus <p>IP黑名单开启状态</p>
                      * 
                      */
                     void SetIpBlackStatus(const bool& _ipBlackStatus);
@@ -406,15 +406,15 @@ namespace TencentCloud
                     bool IpBlackStatusHasBeenSet() const;
 
                     /**
-                     * 获取IP黑名单配置
-                     * @return IpBlackConfig IP黑名单配置
+                     * 获取<p>IP黑名单配置</p>
+                     * @return IpBlackConfig <p>IP黑名单配置</p>
                      * 
                      */
                     IpConfig GetIpBlackConfig() const;
 
                     /**
-                     * 设置IP黑名单配置
-                     * @param _ipBlackConfig IP黑名单配置
+                     * 设置<p>IP黑名单配置</p>
+                     * @param _ipBlackConfig <p>IP黑名单配置</p>
                      * 
                      */
                     void SetIpBlackConfig(const IpConfig& _ipBlackConfig);
@@ -427,15 +427,15 @@ namespace TencentCloud
                     bool IpBlackConfigHasBeenSet() const;
 
                     /**
-                     * 获取目标Host类型 0 默认 1 vpc
-                     * @return TargetHostType 目标Host类型 0 默认 1 vpc
+                     * 获取<p>目标Host类型 0 默认 1 vpc</p>
+                     * @return TargetHostType <p>目标Host类型 0 默认 1 vpc</p>
                      * 
                      */
                     int64_t GetTargetHostType() const;
 
                     /**
-                     * 设置目标Host类型 0 默认 1 vpc
-                     * @param _targetHostType 目标Host类型 0 默认 1 vpc
+                     * 设置<p>目标Host类型 0 默认 1 vpc</p>
+                     * @param _targetHostType <p>目标Host类型 0 默认 1 vpc</p>
                      * 
                      */
                     void SetTargetHostType(const int64_t& _targetHostType);
@@ -448,15 +448,15 @@ namespace TencentCloud
                     bool TargetHostTypeHasBeenSet() const;
 
                     /**
-                     * 获取自定义host
-                     * @return CustomHttpHost 自定义host
+                     * 获取<p>自定义host</p>
+                     * @return CustomHttpHost <p>自定义host</p>
                      * 
                      */
                     std::string GetCustomHttpHost() const;
 
                     /**
-                     * 设置自定义host
-                     * @param _customHttpHost 自定义host
+                     * 设置<p>自定义host</p>
+                     * @param _customHttpHost <p>自定义host</p>
                      * 
                      */
                     void SetCustomHttpHost(const std::string& _customHttpHost);
@@ -469,15 +469,15 @@ namespace TencentCloud
                     bool CustomHttpHostHasBeenSet() const;
 
                     /**
-                     * 获取Http 请求host类型：useRequestHost 保持源请求；host targetHost 修正为源站host； customHost 自定义host
-                     * @return HttpHostType Http 请求host类型：useRequestHost 保持源请求；host targetHost 修正为源站host； customHost 自定义host
+                     * 获取<p>Http 请求host类型：useRequestHost 保持源请求；host targetHost 修正为源站host； customHost 自定义host</p>
+                     * @return HttpHostType <p>Http 请求host类型：useRequestHost 保持源请求；host targetHost 修正为源站host； customHost 自定义host</p>
                      * 
                      */
                     std::string GetHttpHostType() const;
 
                     /**
-                     * 设置Http 请求host类型：useRequestHost 保持源请求；host targetHost 修正为源站host； customHost 自定义host
-                     * @param _httpHostType Http 请求host类型：useRequestHost 保持源请求；host targetHost 修正为源站host； customHost 自定义host
+                     * 设置<p>Http 请求host类型：useRequestHost 保持源请求；host targetHost 修正为源站host； customHost 自定义host</p>
+                     * @param _httpHostType <p>Http 请求host类型：useRequestHost 保持源请求；host targetHost 修正为源站host； customHost 自定义host</p>
                      * 
                      */
                     void SetHttpHostType(const std::string& _httpHostType);
@@ -490,15 +490,15 @@ namespace TencentCloud
                     bool HttpHostTypeHasBeenSet() const;
 
                     /**
-                     * 获取请求的超时时间
-                     * @return Timeout 请求的超时时间
+                     * 获取<p>请求的超时时间</p>
+                     * @return Timeout <p>请求的超时时间</p>
                      * 
                      */
                     uint64_t GetTimeout() const;
 
                     /**
-                     * 设置请求的超时时间
-                     * @param _timeout 请求的超时时间
+                     * 设置<p>请求的超时时间</p>
+                     * @param _timeout <p>请求的超时时间</p>
                      * 
                      */
                     void SetTimeout(const uint64_t& _timeout);
@@ -511,15 +511,15 @@ namespace TencentCloud
                     bool TimeoutHasBeenSet() const;
 
                     /**
-                     * 获取安全规则集
-                     * @return McpSecurityRules 安全规则集
+                     * 获取<p>安全规则集</p>
+                     * @return McpSecurityRules <p>安全规则集</p>
                      * 
                      */
                     std::vector<McpSecurityRule> GetMcpSecurityRules() const;
 
                     /**
-                     * 设置安全规则集
-                     * @param _mcpSecurityRules 安全规则集
+                     * 设置<p>安全规则集</p>
+                     * @param _mcpSecurityRules <p>安全规则集</p>
                      * 
                      */
                     void SetMcpSecurityRules(const std::vector<McpSecurityRule>& _mcpSecurityRules);
@@ -532,15 +532,15 @@ namespace TencentCloud
                     bool McpSecurityRulesHasBeenSet() const;
 
                     /**
-                     * 获取工具集配置（openapi可能会用到）
-                     * @return ToolConfigs 工具集配置（openapi可能会用到）
+                     * 获取<p>工具集配置（openapi可能会用到）</p>
+                     * @return ToolConfigs <p>工具集配置（openapi可能会用到）</p>
                      * 
                      */
                     std::vector<ToolConfigDTO> GetToolConfigs() const;
 
                     /**
-                     * 设置工具集配置（openapi可能会用到）
-                     * @param _toolConfigs 工具集配置（openapi可能会用到）
+                     * 设置<p>工具集配置（openapi可能会用到）</p>
+                     * @param _toolConfigs <p>工具集配置（openapi可能会用到）</p>
                      * 
                      */
                     void SetToolConfigs(const std::vector<ToolConfigDTO>& _toolConfigs);
@@ -553,15 +553,15 @@ namespace TencentCloud
                     bool ToolConfigsHasBeenSet() const;
 
                     /**
-                     * 获取封装的API分组ID
-                     * @return WrapPaasID 封装的API分组ID
+                     * 获取<p>封装的API分组ID</p>
+                     * @return WrapPaasID <p>封装的API分组ID</p>
                      * 
                      */
                     std::string GetWrapPaasID() const;
 
                     /**
-                     * 设置封装的API分组ID
-                     * @param _wrapPaasID 封装的API分组ID
+                     * 设置<p>封装的API分组ID</p>
+                     * @param _wrapPaasID <p>封装的API分组ID</p>
                      * 
                      */
                     void SetWrapPaasID(const std::string& _wrapPaasID);
@@ -574,15 +574,15 @@ namespace TencentCloud
                     bool WrapPaasIDHasBeenSet() const;
 
                     /**
-                     * 获取插件配置
-                     * @return PluginConfigs 插件配置
+                     * 获取<p>插件配置</p>
+                     * @return PluginConfigs <p>插件配置</p>
                      * 
                      */
                     std::vector<PluginConfigDTO> GetPluginConfigs() const;
 
                     /**
-                     * 设置插件配置
-                     * @param _pluginConfigs 插件配置
+                     * 设置<p>插件配置</p>
+                     * @param _pluginConfigs <p>插件配置</p>
                      * 
                      */
                     void SetPluginConfigs(const std::vector<PluginConfigDTO>& _pluginConfigs);
@@ -594,163 +594,190 @@ namespace TencentCloud
                      */
                     bool PluginConfigsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否忽略健康检查</p>
+                     * @return IgnoreHealthCheck <p>是否忽略健康检查</p>
+                     * 
+                     */
+                    bool GetIgnoreHealthCheck() const;
+
+                    /**
+                     * 设置<p>是否忽略健康检查</p>
+                     * @param _ignoreHealthCheck <p>是否忽略健康检查</p>
+                     * 
+                     */
+                    void SetIgnoreHealthCheck(const bool& _ignoreHealthCheck);
+
+                    /**
+                     * 判断参数 IgnoreHealthCheck 是否已赋值
+                     * @return IgnoreHealthCheck 是否已赋值
+                     * 
+                     */
+                    bool IgnoreHealthCheckHasBeenSet() const;
+
                 private:
 
                     /**
-                     * mcp server ID
+                     * <p>mcp server ID</p>
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 模式：proxy代理模式； wrap封装模式；
+                     * <p>模式：proxy代理模式； wrap封装模式；</p>
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 版本号：2024-11-05 2025-03-26
+                     * <p>版本号：2024-11-05 2025-03-26</p>
                      */
                     std::string m_mcpVersion;
                     bool m_mcpVersionHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * 名称
+                     * <p>名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 封装服务列表
+                     * <p>封装服务列表</p>
                      */
                     std::vector<std::string> m_wrapServices;
                     bool m_wrapServicesHasBeenSet;
 
                     /**
-                     * 负载方式，robin random consistentHash
+                     * <p>负载方式，robin random consistentHash</p>
                      */
                     std::string m_targetSelect;
                     bool m_targetSelectHasBeenSet;
 
                     /**
-                     * 目标服务器
+                     * <p>目标服务器</p>
                      */
                     std::vector<TargetHostDTO> m_targetHosts;
                     bool m_targetHostsHasBeenSet;
 
                     /**
-                     * 后端协议：http https
+                     * <p>后端协议：http https</p>
                      */
                     std::string m_httpProtocolType;
                     bool m_httpProtocolTypeHasBeenSet;
 
                     /**
-                     * 证书检查
+                     * <p>证书检查</p>
                      */
                     bool m_checkTargetCertsError;
                     bool m_checkTargetCertsErrorHasBeenSet;
 
                     /**
-                     * 目标路径
+                     * <p>目标路径</p>
                      */
                     std::string m_targetPath;
                     bool m_targetPathHasBeenSet;
 
                     /**
-                     * 流量控制开启状态
+                     * <p>流量控制开启状态</p>
                      */
                     bool m_invokeLimitConfigStatus;
                     bool m_invokeLimitConfigStatusHasBeenSet;
 
                     /**
-                     * 流量控制配置
+                     * <p>流量控制配置</p>
                      */
                     InvokeLimitConfigDTO m_invokeLimitConfig;
                     bool m_invokeLimitConfigHasBeenSet;
 
                     /**
-                     * IP白名单开启状态
+                     * <p>IP白名单开启状态</p>
                      */
                     bool m_ipWhiteStatus;
                     bool m_ipWhiteStatusHasBeenSet;
 
                     /**
-                     * IP白名单配置
+                     * <p>IP白名单配置</p>
                      */
                     IpConfig m_ipWhiteConfig;
                     bool m_ipWhiteConfigHasBeenSet;
 
                     /**
-                     * IP黑名单开启状态
+                     * <p>IP黑名单开启状态</p>
                      */
                     bool m_ipBlackStatus;
                     bool m_ipBlackStatusHasBeenSet;
 
                     /**
-                     * IP黑名单配置
+                     * <p>IP黑名单配置</p>
                      */
                     IpConfig m_ipBlackConfig;
                     bool m_ipBlackConfigHasBeenSet;
 
                     /**
-                     * 目标Host类型 0 默认 1 vpc
+                     * <p>目标Host类型 0 默认 1 vpc</p>
                      */
                     int64_t m_targetHostType;
                     bool m_targetHostTypeHasBeenSet;
 
                     /**
-                     * 自定义host
+                     * <p>自定义host</p>
                      */
                     std::string m_customHttpHost;
                     bool m_customHttpHostHasBeenSet;
 
                     /**
-                     * Http 请求host类型：useRequestHost 保持源请求；host targetHost 修正为源站host； customHost 自定义host
+                     * <p>Http 请求host类型：useRequestHost 保持源请求；host targetHost 修正为源站host； customHost 自定义host</p>
                      */
                     std::string m_httpHostType;
                     bool m_httpHostTypeHasBeenSet;
 
                     /**
-                     * 请求的超时时间
+                     * <p>请求的超时时间</p>
                      */
                     uint64_t m_timeout;
                     bool m_timeoutHasBeenSet;
 
                     /**
-                     * 安全规则集
+                     * <p>安全规则集</p>
                      */
                     std::vector<McpSecurityRule> m_mcpSecurityRules;
                     bool m_mcpSecurityRulesHasBeenSet;
 
                     /**
-                     * 工具集配置（openapi可能会用到）
+                     * <p>工具集配置（openapi可能会用到）</p>
                      */
                     std::vector<ToolConfigDTO> m_toolConfigs;
                     bool m_toolConfigsHasBeenSet;
 
                     /**
-                     * 封装的API分组ID
+                     * <p>封装的API分组ID</p>
                      */
                     std::string m_wrapPaasID;
                     bool m_wrapPaasIDHasBeenSet;
 
                     /**
-                     * 插件配置
+                     * <p>插件配置</p>
                      */
                     std::vector<PluginConfigDTO> m_pluginConfigs;
                     bool m_pluginConfigsHasBeenSet;
+
+                    /**
+                     * <p>是否忽略健康检查</p>
+                     */
+                    bool m_ignoreHealthCheck;
+                    bool m_ignoreHealthCheckHasBeenSet;
 
                 };
             }

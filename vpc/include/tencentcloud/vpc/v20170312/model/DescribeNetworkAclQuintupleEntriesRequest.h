@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网络ACL实例ID。形如：acl-12345678。
-                     * @return NetworkAclId 网络ACL实例ID。形如：acl-12345678。
+                     * 获取<p>网络ACL实例ID。形如：acl-12345678。</p>
+                     * @return NetworkAclId <p>网络ACL实例ID。形如：acl-12345678。</p>
                      * 
                      */
                     std::string GetNetworkAclId() const;
 
                     /**
-                     * 设置网络ACL实例ID。形如：acl-12345678。
-                     * @param _networkAclId 网络ACL实例ID。形如：acl-12345678。
+                     * 设置<p>网络ACL实例ID。形如：acl-12345678。</p>
+                     * @param _networkAclId <p>网络ACL实例ID。形如：acl-12345678。</p>
                      * 
                      */
                     void SetNetworkAclId(const std::string& _networkAclId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool NetworkAclIdHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0。
-                     * @return Offset 偏移量，默认为0。
+                     * 获取<p>偏移量，默认为0。</p>
+                     * @return Offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0。
-                     * @param _offset 偏移量，默认为0。
+                     * 设置<p>偏移量，默认为0。</p>
+                     * @param _offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为20，最小值为1，最大值为100。
-                     * @return Limit 返回数量，默认为20，最小值为1，最大值为100。
+                     * 获取<p>返回数量，默认为20，最小值为1，最大值为100。</p>
+                     * @return Limit <p>返回数量，默认为20，最小值为1，最大值为100。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为20，最小值为1，最大值为100。
-                     * @param _limit 返回数量，默认为20，最小值为1，最大值为100。
+                     * 设置<p>返回数量，默认为20，最小值为1，最大值为100。</p>
+                     * @param _limit <p>返回数量，默认为20，最小值为1，最大值为100。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -107,43 +107,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，参数不支持同时指定`NetworkAclId`和`Filters`。
-<li>protocol - String - 协议，形如：`TCP`。</li>
-<li>description - String - 描述。</li>
-<li>destination-cidr - String - 目的CIDR， 形如：'192.168.0.0/24'。</li>
-<li>source-cidr- String - 源CIDR， 形如：'192.168.0.0/24'。</li>
-<li>action - String - 动作，形如ACCEPT或DROP。</li>
-<li>network-acl-quintuple-entry-id - String - 五元组唯一ID，形如：'acli45-ahnu4rv5'。</li>
-<li>network-acl-direction - String - 方向，形如：'INGRESS'或'EGRESS'。</li>
-                     * @return Filters 过滤条件，参数不支持同时指定`NetworkAclId`和`Filters`。
-<li>protocol - String - 协议，形如：`TCP`。</li>
-<li>description - String - 描述。</li>
-<li>destination-cidr - String - 目的CIDR， 形如：'192.168.0.0/24'。</li>
-<li>source-cidr- String - 源CIDR， 形如：'192.168.0.0/24'。</li>
-<li>action - String - 动作，形如ACCEPT或DROP。</li>
-<li>network-acl-quintuple-entry-id - String - 五元组唯一ID，形如：'acli45-ahnu4rv5'。</li>
-<li>network-acl-direction - String - 方向，形如：'INGRESS'或'EGRESS'。</li>
+                     * 获取<p>过滤条件，参数不支持同时指定<code>NetworkAclId</code>和<code>Filters</code>。</p><li>protocol - String - 协议，形如：<code>TCP</code>。</li><li>description - String - 描述。</li><li>destination-cidr - String - 目的CIDR， 形如：'192.168.0.0/24'。</li><li>source-cidr- String - 源CIDR， 形如：'192.168.0.0/24'。</li><li>action - String - 动作，形如ACCEPT或DROP。</li><li>network-acl-quintuple-entry-id - String - 五元组唯一ID，形如：'acli45-ahnu4rv5'。</li><li>network-acl-direction - String - 方向，形如：'INGRESS'或'EGRESS'。</li>
+                     * @return Filters <p>过滤条件，参数不支持同时指定<code>NetworkAclId</code>和<code>Filters</code>。</p><li>protocol - String - 协议，形如：<code>TCP</code>。</li><li>description - String - 描述。</li><li>destination-cidr - String - 目的CIDR， 形如：'192.168.0.0/24'。</li><li>source-cidr- String - 源CIDR， 形如：'192.168.0.0/24'。</li><li>action - String - 动作，形如ACCEPT或DROP。</li><li>network-acl-quintuple-entry-id - String - 五元组唯一ID，形如：'acli45-ahnu4rv5'。</li><li>network-acl-direction - String - 方向，形如：'INGRESS'或'EGRESS'。</li>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，参数不支持同时指定`NetworkAclId`和`Filters`。
-<li>protocol - String - 协议，形如：`TCP`。</li>
-<li>description - String - 描述。</li>
-<li>destination-cidr - String - 目的CIDR， 形如：'192.168.0.0/24'。</li>
-<li>source-cidr- String - 源CIDR， 形如：'192.168.0.0/24'。</li>
-<li>action - String - 动作，形如ACCEPT或DROP。</li>
-<li>network-acl-quintuple-entry-id - String - 五元组唯一ID，形如：'acli45-ahnu4rv5'。</li>
-<li>network-acl-direction - String - 方向，形如：'INGRESS'或'EGRESS'。</li>
-                     * @param _filters 过滤条件，参数不支持同时指定`NetworkAclId`和`Filters`。
-<li>protocol - String - 协议，形如：`TCP`。</li>
-<li>description - String - 描述。</li>
-<li>destination-cidr - String - 目的CIDR， 形如：'192.168.0.0/24'。</li>
-<li>source-cidr- String - 源CIDR， 形如：'192.168.0.0/24'。</li>
-<li>action - String - 动作，形如ACCEPT或DROP。</li>
-<li>network-acl-quintuple-entry-id - String - 五元组唯一ID，形如：'acli45-ahnu4rv5'。</li>
-<li>network-acl-direction - String - 方向，形如：'INGRESS'或'EGRESS'。</li>
+                     * 设置<p>过滤条件，参数不支持同时指定<code>NetworkAclId</code>和<code>Filters</code>。</p><li>protocol - String - 协议，形如：<code>TCP</code>。</li><li>description - String - 描述。</li><li>destination-cidr - String - 目的CIDR， 形如：'192.168.0.0/24'。</li><li>source-cidr- String - 源CIDR， 形如：'192.168.0.0/24'。</li><li>action - String - 动作，形如ACCEPT或DROP。</li><li>network-acl-quintuple-entry-id - String - 五元组唯一ID，形如：'acli45-ahnu4rv5'。</li><li>network-acl-direction - String - 方向，形如：'INGRESS'或'EGRESS'。</li>
+                     * @param _filters <p>过滤条件，参数不支持同时指定<code>NetworkAclId</code>和<code>Filters</code>。</p><li>protocol - String - 协议，形如：<code>TCP</code>。</li><li>description - String - 描述。</li><li>destination-cidr - String - 目的CIDR， 形如：'192.168.0.0/24'。</li><li>source-cidr- String - 源CIDR， 形如：'192.168.0.0/24'。</li><li>action - String - 动作，形如ACCEPT或DROP。</li><li>network-acl-quintuple-entry-id - String - 五元组唯一ID，形如：'acli45-ahnu4rv5'。</li><li>network-acl-direction - String - 方向，形如：'INGRESS'或'EGRESS'。</li>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -158,32 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 网络ACL实例ID。形如：acl-12345678。
+                     * <p>网络ACL实例ID。形如：acl-12345678。</p>
                      */
                     std::string m_networkAclId;
                     bool m_networkAclIdHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0。
+                     * <p>偏移量，默认为0。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，默认为20，最小值为1，最大值为100。
+                     * <p>返回数量，默认为20，最小值为1，最大值为100。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 过滤条件，参数不支持同时指定`NetworkAclId`和`Filters`。
-<li>protocol - String - 协议，形如：`TCP`。</li>
-<li>description - String - 描述。</li>
-<li>destination-cidr - String - 目的CIDR， 形如：'192.168.0.0/24'。</li>
-<li>source-cidr- String - 源CIDR， 形如：'192.168.0.0/24'。</li>
-<li>action - String - 动作，形如ACCEPT或DROP。</li>
-<li>network-acl-quintuple-entry-id - String - 五元组唯一ID，形如：'acli45-ahnu4rv5'。</li>
-<li>network-acl-direction - String - 方向，形如：'INGRESS'或'EGRESS'。</li>
+                     * <p>过滤条件，参数不支持同时指定<code>NetworkAclId</code>和<code>Filters</code>。</p><li>protocol - String - 协议，形如：<code>TCP</code>。</li><li>description - String - 描述。</li><li>destination-cidr - String - 目的CIDR， 形如：'192.168.0.0/24'。</li><li>source-cidr- String - 源CIDR， 形如：'192.168.0.0/24'。</li><li>action - String - 动作，形如ACCEPT或DROP。</li><li>network-acl-quintuple-entry-id - String - 五元组唯一ID，形如：'acli45-ahnu4rv5'。</li><li>network-acl-direction - String - 方向，形如：'INGRESS'或'EGRESS'。</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取批Id
-                     * @return BatchId 批Id
+                     * 获取<p>批Id</p>
+                     * @return BatchId <p>批Id</p>
                      * 
                      */
                     std::string GetBatchId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool BatchIdHasBeenSet() const;
 
                     /**
-                     * 获取任务Id
-                     * @return TaskId 任务Id
+                     * 获取<p>任务Id</p>
+                     * @return TaskId <p>任务Id</p>
                      * 
                      */
                     std::string GetTaskId() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 批Id
+                     * <p>批Id</p>
                      */
                     std::string m_batchId;
                     bool m_batchIdHasBeenSet;
 
                     /**
-                     * 任务Id
+                     * <p>任务Id</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
