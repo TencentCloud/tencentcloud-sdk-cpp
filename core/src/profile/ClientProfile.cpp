@@ -43,3 +43,23 @@ bool ClientProfile::IsUnsignedPayload()
 {
     return m_unsignedPayload;
 }
+
+void ClientProfile::SetDisableRegionBreaker(bool disabled)
+{
+    m_disableRegionBreaker = disabled;
+}
+
+bool ClientProfile::GetDisableRegionBreaker() const
+{
+    return m_disableRegionBreaker;
+}
+
+void ClientProfile::SetRegionBreakerProfile(const RegionBreakerProfile &profile)
+{
+    m_regionBreakerProfile = profile;
+}
+
+RegionBreakerProfile ClientProfile::GetRegionBreakerProfile() const
+{
+    return m_regionBreakerProfile;
+}
