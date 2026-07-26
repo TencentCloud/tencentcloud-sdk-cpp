@@ -24,10 +24,10 @@ using namespace std;
 
 DeleteBlockIgnoreRuleNewRequest::DeleteBlockIgnoreRuleNewRequest() :
     m_deleteAllHasBeenSet(false),
-    m_showTypeHasBeenSet(false),
     m_cfwAiAgentOperationSourceHasBeenSet(false),
+    m_ruleTypeHasBeenSet(false),
     m_rulesHasBeenSet(false),
-    m_ruleTypeHasBeenSet(false)
+    m_showTypeHasBeenSet(false)
 {
 }
 
@@ -46,20 +46,20 @@ string DeleteBlockIgnoreRuleNewRequest::ToJsonString() const
         d.AddMember(iKey, m_deleteAll, allocator);
     }
 
-    if (m_showTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ShowType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_showType.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_cfwAiAgentOperationSourceHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CfwAiAgentOperationSource";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cfwAiAgentOperationSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ruleType, allocator);
     }
 
     if (m_rulesHasBeenSet)
@@ -77,12 +77,12 @@ string DeleteBlockIgnoreRuleNewRequest::ToJsonString() const
         }
     }
 
-    if (m_ruleTypeHasBeenSet)
+    if (m_showTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RuleType";
+        string key = "ShowType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_ruleType, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_showType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -109,22 +109,6 @@ bool DeleteBlockIgnoreRuleNewRequest::DeleteAllHasBeenSet() const
     return m_deleteAllHasBeenSet;
 }
 
-string DeleteBlockIgnoreRuleNewRequest::GetShowType() const
-{
-    return m_showType;
-}
-
-void DeleteBlockIgnoreRuleNewRequest::SetShowType(const string& _showType)
-{
-    m_showType = _showType;
-    m_showTypeHasBeenSet = true;
-}
-
-bool DeleteBlockIgnoreRuleNewRequest::ShowTypeHasBeenSet() const
-{
-    return m_showTypeHasBeenSet;
-}
-
 string DeleteBlockIgnoreRuleNewRequest::GetCfwAiAgentOperationSource() const
 {
     return m_cfwAiAgentOperationSource;
@@ -139,6 +123,22 @@ void DeleteBlockIgnoreRuleNewRequest::SetCfwAiAgentOperationSource(const string&
 bool DeleteBlockIgnoreRuleNewRequest::CfwAiAgentOperationSourceHasBeenSet() const
 {
     return m_cfwAiAgentOperationSourceHasBeenSet;
+}
+
+int64_t DeleteBlockIgnoreRuleNewRequest::GetRuleType() const
+{
+    return m_ruleType;
+}
+
+void DeleteBlockIgnoreRuleNewRequest::SetRuleType(const int64_t& _ruleType)
+{
+    m_ruleType = _ruleType;
+    m_ruleTypeHasBeenSet = true;
+}
+
+bool DeleteBlockIgnoreRuleNewRequest::RuleTypeHasBeenSet() const
+{
+    return m_ruleTypeHasBeenSet;
 }
 
 vector<BanAndAllowRuleDel> DeleteBlockIgnoreRuleNewRequest::GetRules() const
@@ -157,20 +157,20 @@ bool DeleteBlockIgnoreRuleNewRequest::RulesHasBeenSet() const
     return m_rulesHasBeenSet;
 }
 
-int64_t DeleteBlockIgnoreRuleNewRequest::GetRuleType() const
+string DeleteBlockIgnoreRuleNewRequest::GetShowType() const
 {
-    return m_ruleType;
+    return m_showType;
 }
 
-void DeleteBlockIgnoreRuleNewRequest::SetRuleType(const int64_t& _ruleType)
+void DeleteBlockIgnoreRuleNewRequest::SetShowType(const string& _showType)
 {
-    m_ruleType = _ruleType;
-    m_ruleTypeHasBeenSet = true;
+    m_showType = _showType;
+    m_showTypeHasBeenSet = true;
 }
 
-bool DeleteBlockIgnoreRuleNewRequest::RuleTypeHasBeenSet() const
+bool DeleteBlockIgnoreRuleNewRequest::ShowTypeHasBeenSet() const
 {
-    return m_ruleTypeHasBeenSet;
+    return m_showTypeHasBeenSet;
 }
 
 

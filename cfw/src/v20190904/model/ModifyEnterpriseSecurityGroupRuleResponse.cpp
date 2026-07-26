@@ -24,8 +24,8 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 ModifyEnterpriseSecurityGroupRuleResponse::ModifyEnterpriseSecurityGroupRuleResponse() :
-    m_statusHasBeenSet(false),
-    m_newRuleUuidHasBeenSet(false)
+    m_newRuleUuidHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -63,16 +63,6 @@ CoreInternalOutcome ModifyEnterpriseSecurityGroupRuleResponse::Deserialize(const
     }
 
 
-    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
-    {
-        if (!rsp["Status"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Status` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_status = rsp["Status"].GetUint64();
-        m_statusHasBeenSet = true;
-    }
-
     if (rsp.HasMember("NewRuleUuid") && !rsp["NewRuleUuid"].IsNull())
     {
         if (!rsp["NewRuleUuid"].IsUint64())
@@ -81,6 +71,16 @@ CoreInternalOutcome ModifyEnterpriseSecurityGroupRuleResponse::Deserialize(const
         }
         m_newRuleUuid = rsp["NewRuleUuid"].GetUint64();
         m_newRuleUuidHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    {
+        if (!rsp["Status"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Status` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = rsp["Status"].GetUint64();
+        m_statusHasBeenSet = true;
     }
 
 
@@ -93,20 +93,20 @@ string ModifyEnterpriseSecurityGroupRuleResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_statusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_status, allocator);
-    }
-
     if (m_newRuleUuidHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NewRuleUuid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_newRuleUuid, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -121,16 +121,6 @@ string ModifyEnterpriseSecurityGroupRuleResponse::ToJsonString() const
 }
 
 
-uint64_t ModifyEnterpriseSecurityGroupRuleResponse::GetStatus() const
-{
-    return m_status;
-}
-
-bool ModifyEnterpriseSecurityGroupRuleResponse::StatusHasBeenSet() const
-{
-    return m_statusHasBeenSet;
-}
-
 uint64_t ModifyEnterpriseSecurityGroupRuleResponse::GetNewRuleUuid() const
 {
     return m_newRuleUuid;
@@ -139,6 +129,16 @@ uint64_t ModifyEnterpriseSecurityGroupRuleResponse::GetNewRuleUuid() const
 bool ModifyEnterpriseSecurityGroupRuleResponse::NewRuleUuidHasBeenSet() const
 {
     return m_newRuleUuidHasBeenSet;
+}
+
+uint64_t ModifyEnterpriseSecurityGroupRuleResponse::GetStatus() const
+{
+    return m_status;
+}
+
+bool ModifyEnterpriseSecurityGroupRuleResponse::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 
 

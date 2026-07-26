@@ -43,57 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>处置时间<br>1  1天<br>7   7天<br>-2 永久</p>
-                     * @return HandleTime <p>处置时间<br>1  1天<br>7   7天<br>-2 永久</p>
-                     * 
-                     */
-                    int64_t GetHandleTime() const;
-
-                    /**
-                     * 设置<p>处置时间<br>1  1天<br>7   7天<br>-2 永久</p>
-                     * @param _handleTime <p>处置时间<br>1  1天<br>7   7天<br>-2 永久</p>
-                     * 
-                     */
-                    void SetHandleTime(const int64_t& _handleTime);
-
-                    /**
-                     * 判断参数 HandleTime 是否已赋值
-                     * @return HandleTime 是否已赋值
-                     * 
-                     */
-                    bool HandleTimeHasBeenSet() const;
-
-                    /**
-                     * 获取<p>处置类型<br>当HandleIdList 不为空时：1封禁 2放通<br>当HandleIpList 不为空时：3放通 4封禁</p>
-                     * @return HandleType <p>处置类型<br>当HandleIdList 不为空时：1封禁 2放通<br>当HandleIpList 不为空时：3放通 4封禁</p>
-                     * 
-                     */
-                    int64_t GetHandleType() const;
-
-                    /**
-                     * 设置<p>处置类型<br>当HandleIdList 不为空时：1封禁 2放通<br>当HandleIpList 不为空时：3放通 4封禁</p>
-                     * @param _handleType <p>处置类型<br>当HandleIdList 不为空时：1封禁 2放通<br>当HandleIpList 不为空时：3放通 4封禁</p>
-                     * 
-                     */
-                    void SetHandleType(const int64_t& _handleType);
-
-                    /**
-                     * 判断参数 HandleType 是否已赋值
-                     * @return HandleType 是否已赋值
-                     * 
-                     */
-                    bool HandleTypeHasBeenSet() const;
-
-                    /**
-                     * 获取<p>当前日志方向： 0 出向 1 入向</p>
-                     * @return AlertDirection <p>当前日志方向： 0 出向 1 入向</p>
+                     * 获取<p>必填的告警方向：0 出向，1 入向，3 内网。用于 HandleIpList 中 IP 目标的处置方向；其它目标也必须传上述有效值。从 DescribeCfwAlerts 复制方向时，将 alerts[].direction 的 outbound、inbound、lateral 分别转换为 JSON 整数 0、1、3。</p>
+                     * @return AlertDirection <p>必填的告警方向：0 出向，1 入向，3 内网。用于 HandleIpList 中 IP 目标的处置方向；其它目标也必须传上述有效值。从 DescribeCfwAlerts 复制方向时，将 alerts[].direction 的 outbound、inbound、lateral 分别转换为 JSON 整数 0、1、3。</p>
                      * 
                      */
                     int64_t GetAlertDirection() const;
 
                     /**
-                     * 设置<p>当前日志方向： 0 出向 1 入向</p>
-                     * @param _alertDirection <p>当前日志方向： 0 出向 1 入向</p>
+                     * 设置<p>必填的告警方向：0 出向，1 入向，3 内网。用于 HandleIpList 中 IP 目标的处置方向；其它目标也必须传上述有效值。从 DescribeCfwAlerts 复制方向时，将 alerts[].direction 的 outbound、inbound、lateral 分别转换为 JSON 整数 0、1、3。</p>
+                     * @param _alertDirection <p>必填的告警方向：0 出向，1 入向，3 内网。用于 HandleIpList 中 IP 目标的处置方向；其它目标也必须传上述有效值。从 DescribeCfwAlerts 复制方向时，将 alerts[].direction 的 outbound、inbound、lateral 分别转换为 JSON 整数 0、1、3。</p>
                      * 
                      */
                     void SetAlertDirection(const int64_t& _alertDirection);
@@ -106,15 +64,15 @@ namespace TencentCloud
                     bool AlertDirectionHasBeenSet() const;
 
                     /**
-                     * 获取<p>处置方向： 0出向 1入向 0,1出入向 3内网</p>
-                     * @return HandleDirection <p>处置方向： 0出向 1入向 0,1出入向 3内网</p>
+                     * 获取<p>必填的处置生效方向。支持空字符串、0（互联网出向）、1（互联网入向）、0,1/1,0（互联网双向）、3（内网访问）、5（内网访问源）、6（内网访问目的）及 5,6/6,5。空字符串表示按告警原方向处置；同一 IP 的已有规则方向会与本次方向合并。</p>
+                     * @return HandleDirection <p>必填的处置生效方向。支持空字符串、0（互联网出向）、1（互联网入向）、0,1/1,0（互联网双向）、3（内网访问）、5（内网访问源）、6（内网访问目的）及 5,6/6,5。空字符串表示按告警原方向处置；同一 IP 的已有规则方向会与本次方向合并。</p>
                      * 
                      */
                     std::string GetHandleDirection() const;
 
                     /**
-                     * 设置<p>处置方向： 0出向 1入向 0,1出入向 3内网</p>
-                     * @param _handleDirection <p>处置方向： 0出向 1入向 0,1出入向 3内网</p>
+                     * 设置<p>必填的处置生效方向。支持空字符串、0（互联网出向）、1（互联网入向）、0,1/1,0（互联网双向）、3（内网访问）、5（内网访问源）、6（内网访问目的）及 5,6/6,5。空字符串表示按告警原方向处置；同一 IP 的已有规则方向会与本次方向合并。</p>
+                     * @param _handleDirection <p>必填的处置生效方向。支持空字符串、0（互联网出向）、1（互联网入向）、0,1/1,0（互联网双向）、3（内网访问）、5（内网访问源）、6（内网访问目的）及 5,6/6,5。空字符串表示按告警原方向处置；同一 IP 的已有规则方向会与本次方向合并。</p>
                      * 
                      */
                     void SetHandleDirection(const std::string& _handleDirection);
@@ -127,204 +85,57 @@ namespace TencentCloud
                     bool HandleDirectionHasBeenSet() const;
 
                     /**
-                     * 获取<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
-                     * @return CfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * 获取<p>处置有效期：1 表示 1 天，7 表示 7 天，-2 表示永久。</p>
+                     * @return HandleTime <p>处置有效期：1 表示 1 天，7 表示 7 天，-2 表示永久。</p>
                      * 
                      */
-                    std::string GetCfwAiAgentOperationSource() const;
+                    int64_t GetHandleTime() const;
 
                     /**
-                     * 设置<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
-                     * @param _cfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * 设置<p>处置有效期：1 表示 1 天，7 表示 7 天，-2 表示永久。</p>
+                     * @param _handleTime <p>处置有效期：1 表示 1 天，7 表示 7 天，-2 表示永久。</p>
                      * 
                      */
-                    void SetCfwAiAgentOperationSource(const std::string& _cfwAiAgentOperationSource);
+                    void SetHandleTime(const int64_t& _handleTime);
 
                     /**
-                     * 判断参数 CfwAiAgentOperationSource 是否已赋值
-                     * @return CfwAiAgentOperationSource 是否已赋值
+                     * 判断参数 HandleTime 是否已赋值
+                     * @return HandleTime 是否已赋值
                      * 
                      */
-                    bool CfwAiAgentOperationSourceHasBeenSet() const;
+                    bool HandleTimeHasBeenSet() const;
 
                     /**
-                     * 获取<p>处置对象,ID列表，  IdLists,IpList,EventIdList三选一</p>
-                     * @return HandleIdList <p>处置对象,ID列表，  IdLists,IpList,EventIdList三选一</p>
+                     * 获取<p>必填的处置类型：1 按 HandleIdList 或 HandleEventIdList 封禁，2 按 HandleIdList、HandleEventIdList 或 BlockDomain 加白，3 按 HandleIpList 加白 IP，4 按 HandleIpList 封禁 IP，5 将 HandleIdList 或 HandleEventIdList 对应的安全基线告警地址加入指定方向的安全基线列表，8 按 HandleEventIdList 关联资产或 AssetIdList 新增隔离。五类目标至少提供一类；HandleType=8 未能从事件解析出资产时必须提供 AssetIdList。IsolateType 和 WhiteIpList 仅用于类型 8。</p>
+                     * @return HandleType <p>必填的处置类型：1 按 HandleIdList 或 HandleEventIdList 封禁，2 按 HandleIdList、HandleEventIdList 或 BlockDomain 加白，3 按 HandleIpList 加白 IP，4 按 HandleIpList 封禁 IP，5 将 HandleIdList 或 HandleEventIdList 对应的安全基线告警地址加入指定方向的安全基线列表，8 按 HandleEventIdList 关联资产或 AssetIdList 新增隔离。五类目标至少提供一类；HandleType=8 未能从事件解析出资产时必须提供 AssetIdList。IsolateType 和 WhiteIpList 仅用于类型 8。</p>
                      * 
                      */
-                    std::vector<std::string> GetHandleIdList() const;
+                    int64_t GetHandleType() const;
 
                     /**
-                     * 设置<p>处置对象,ID列表，  IdLists,IpList,EventIdList三选一</p>
-                     * @param _handleIdList <p>处置对象,ID列表，  IdLists,IpList,EventIdList三选一</p>
+                     * 设置<p>必填的处置类型：1 按 HandleIdList 或 HandleEventIdList 封禁，2 按 HandleIdList、HandleEventIdList 或 BlockDomain 加白，3 按 HandleIpList 加白 IP，4 按 HandleIpList 封禁 IP，5 将 HandleIdList 或 HandleEventIdList 对应的安全基线告警地址加入指定方向的安全基线列表，8 按 HandleEventIdList 关联资产或 AssetIdList 新增隔离。五类目标至少提供一类；HandleType=8 未能从事件解析出资产时必须提供 AssetIdList。IsolateType 和 WhiteIpList 仅用于类型 8。</p>
+                     * @param _handleType <p>必填的处置类型：1 按 HandleIdList 或 HandleEventIdList 封禁，2 按 HandleIdList、HandleEventIdList 或 BlockDomain 加白，3 按 HandleIpList 加白 IP，4 按 HandleIpList 封禁 IP，5 将 HandleIdList 或 HandleEventIdList 对应的安全基线告警地址加入指定方向的安全基线列表，8 按 HandleEventIdList 关联资产或 AssetIdList 新增隔离。五类目标至少提供一类；HandleType=8 未能从事件解析出资产时必须提供 AssetIdList。IsolateType 和 WhiteIpList 仅用于类型 8。</p>
                      * 
                      */
-                    void SetHandleIdList(const std::vector<std::string>& _handleIdList);
+                    void SetHandleType(const int64_t& _handleType);
 
                     /**
-                     * 判断参数 HandleIdList 是否已赋值
-                     * @return HandleIdList 是否已赋值
+                     * 判断参数 HandleType 是否已赋值
+                     * @return HandleType 是否已赋值
                      * 
                      */
-                    bool HandleIdListHasBeenSet() const;
+                    bool HandleTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>处置对象,IP列表，  IdLists,IpList,EventIdList三选一</p>
-                     * @return HandleIpList <p>处置对象,IP列表，  IdLists,IpList,EventIdList三选一</p>
-                     * 
-                     */
-                    std::vector<std::string> GetHandleIpList() const;
-
-                    /**
-                     * 设置<p>处置对象,IP列表，  IdLists,IpList,EventIdList三选一</p>
-                     * @param _handleIpList <p>处置对象,IP列表，  IdLists,IpList,EventIdList三选一</p>
-                     * 
-                     */
-                    void SetHandleIpList(const std::vector<std::string>& _handleIpList);
-
-                    /**
-                     * 判断参数 HandleIpList 是否已赋值
-                     * @return HandleIpList 是否已赋值
-                     * 
-                     */
-                    bool HandleIpListHasBeenSet() const;
-
-                    /**
-                     * 获取<p>处置描述</p>
-                     * @return HandleComment <p>处置描述</p>
-                     * 
-                     */
-                    std::string GetHandleComment() const;
-
-                    /**
-                     * 设置<p>处置描述</p>
-                     * @param _handleComment <p>处置描述</p>
-                     * 
-                     */
-                    void SetHandleComment(const std::string& _handleComment);
-
-                    /**
-                     * 判断参数 HandleComment 是否已赋值
-                     * @return HandleComment 是否已赋值
-                     * 
-                     */
-                    bool HandleCommentHasBeenSet() const;
-
-                    /**
-                     * 获取<p>放通原因:<br>0默认 1重复 2误报 3紧急放通</p>
-                     * @return IgnoreReason <p>放通原因:<br>0默认 1重复 2误报 3紧急放通</p>
-                     * 
-                     */
-                    int64_t GetIgnoreReason() const;
-
-                    /**
-                     * 设置<p>放通原因:<br>0默认 1重复 2误报 3紧急放通</p>
-                     * @param _ignoreReason <p>放通原因:<br>0默认 1重复 2误报 3紧急放通</p>
-                     * 
-                     */
-                    void SetIgnoreReason(const int64_t& _ignoreReason);
-
-                    /**
-                     * 判断参数 IgnoreReason 是否已赋值
-                     * @return IgnoreReason 是否已赋值
-                     * 
-                     */
-                    bool IgnoreReasonHasBeenSet() const;
-
-                    /**
-                     * 获取<p>封禁域名-保留字段</p>
-                     * @return BlockDomain <p>封禁域名-保留字段</p>
-                     * 
-                     */
-                    std::string GetBlockDomain() const;
-
-                    /**
-                     * 设置<p>封禁域名-保留字段</p>
-                     * @param _blockDomain <p>封禁域名-保留字段</p>
-                     * 
-                     */
-                    void SetBlockDomain(const std::string& _blockDomain);
-
-                    /**
-                     * 判断参数 BlockDomain 是否已赋值
-                     * @return BlockDomain 是否已赋值
-                     * 
-                     */
-                    bool BlockDomainHasBeenSet() const;
-
-                    /**
-                     * 获取<p>处置对象,事件ID列表，  IdLists,IpList,EventIdList三选一</p>
-                     * @return HandleEventIdList <p>处置对象,事件ID列表，  IdLists,IpList,EventIdList三选一</p>
-                     * 
-                     */
-                    std::vector<std::string> GetHandleEventIdList() const;
-
-                    /**
-                     * 设置<p>处置对象,事件ID列表，  IdLists,IpList,EventIdList三选一</p>
-                     * @param _handleEventIdList <p>处置对象,事件ID列表，  IdLists,IpList,EventIdList三选一</p>
-                     * 
-                     */
-                    void SetHandleEventIdList(const std::vector<std::string>& _handleEventIdList);
-
-                    /**
-                     * 判断参数 HandleEventIdList 是否已赋值
-                     * @return HandleEventIdList 是否已赋值
-                     * 
-                     */
-                    bool HandleEventIdListHasBeenSet() const;
-
-                    /**
-                     * 获取<p>加白IP列表 隔离时放通的ip列表</p>
-                     * @return WhiteIpList <p>加白IP列表 隔离时放通的ip列表</p>
-                     * 
-                     */
-                    std::vector<std::string> GetWhiteIpList() const;
-
-                    /**
-                     * 设置<p>加白IP列表 隔离时放通的ip列表</p>
-                     * @param _whiteIpList <p>加白IP列表 隔离时放通的ip列表</p>
-                     * 
-                     */
-                    void SetWhiteIpList(const std::vector<std::string>& _whiteIpList);
-
-                    /**
-                     * 判断参数 WhiteIpList 是否已赋值
-                     * @return WhiteIpList 是否已赋值
-                     * 
-                     */
-                    bool WhiteIpListHasBeenSet() const;
-
-                    /**
-                     * 获取<p>隔离类型 1 互联网入站 2 互联网出站 4 内网访问</p>
-                     * @return IsolateType <p>隔离类型 1 互联网入站 2 互联网出站 4 内网访问</p>
-                     * 
-                     */
-                    std::vector<int64_t> GetIsolateType() const;
-
-                    /**
-                     * 设置<p>隔离类型 1 互联网入站 2 互联网出站 4 内网访问</p>
-                     * @param _isolateType <p>隔离类型 1 互联网入站 2 互联网出站 4 内网访问</p>
-                     * 
-                     */
-                    void SetIsolateType(const std::vector<int64_t>& _isolateType);
-
-                    /**
-                     * 判断参数 IsolateType 是否已赋值
-                     * @return IsolateType 是否已赋值
-                     * 
-                     */
-                    bool IsolateTypeHasBeenSet() const;
-
-                    /**
-                     * 获取<p>隔离资产列表</p>
-                     * @return AssetIdList <p>隔离资产列表</p>
+                     * 获取<p>资产隔离目标列表，可省略；仅 HandleType=8 使用。直接按资产隔离时，调用 DescribeCfwAssets，传 AssetType=host 和目标 InstanceId，解析返回结果；仅在唯一 assets[].instance_id 与目标完全相等时将其写入本字段，不使用资产名称。</p>
+                     * @return AssetIdList <p>资产隔离目标列表，可省略；仅 HandleType=8 使用。直接按资产隔离时，调用 DescribeCfwAssets，传 AssetType=host 和目标 InstanceId，解析返回结果；仅在唯一 assets[].instance_id 与目标完全相等时将其写入本字段，不使用资产名称。</p>
                      * 
                      */
                     std::vector<std::string> GetAssetIdList() const;
 
                     /**
-                     * 设置<p>隔离资产列表</p>
-                     * @param _assetIdList <p>隔离资产列表</p>
+                     * 设置<p>资产隔离目标列表，可省略；仅 HandleType=8 使用。直接按资产隔离时，调用 DescribeCfwAssets，传 AssetType=host 和目标 InstanceId，解析返回结果；仅在唯一 assets[].instance_id 与目标完全相等时将其写入本字段，不使用资产名称。</p>
+                     * @param _assetIdList <p>资产隔离目标列表，可省略；仅 HandleType=8 使用。直接按资产隔离时，调用 DescribeCfwAssets，传 AssetType=host 和目标 InstanceId，解析返回结果；仅在唯一 assets[].instance_id 与目标完全相等时将其写入本字段，不使用资产名称。</p>
                      * 
                      */
                     void SetAssetIdList(const std::vector<std::string>& _assetIdList);
@@ -337,15 +148,183 @@ namespace TencentCloud
                     bool AssetIdListHasBeenSet() const;
 
                     /**
-                     * 获取<p>处置HandleIpList，属于的告警事件ID</p>
-                     * @return TargetEventIdList <p>处置HandleIpList，属于的告警事件ID</p>
+                     * 获取<p>域名加白目标，传合法域名；HandleType 必须为 2，并同时传 TargetEventIdList。</p>
+                     * @return BlockDomain <p>域名加白目标，传合法域名；HandleType 必须为 2，并同时传 TargetEventIdList。</p>
+                     * 
+                     */
+                    std::string GetBlockDomain() const;
+
+                    /**
+                     * 设置<p>域名加白目标，传合法域名；HandleType 必须为 2，并同时传 TargetEventIdList。</p>
+                     * @param _blockDomain <p>域名加白目标，传合法域名；HandleType 必须为 2，并同时传 TargetEventIdList。</p>
+                     * 
+                     */
+                    void SetBlockDomain(const std::string& _blockDomain);
+
+                    /**
+                     * 判断参数 BlockDomain 是否已赋值
+                     * @return BlockDomain 是否已赋值
+                     * 
+                     */
+                    bool BlockDomainHasBeenSet() const;
+
+                    /**
+                     * 获取<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>。
+                     * @return CfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>。
+                     * 
+                     */
+                    std::string GetCfwAiAgentOperationSource() const;
+
+                    /**
+                     * 设置<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>。
+                     * @param _cfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>。
+                     * 
+                     */
+                    void SetCfwAiAgentOperationSource(const std::string& _cfwAiAgentOperationSource);
+
+                    /**
+                     * 判断参数 CfwAiAgentOperationSource 是否已赋值
+                     * @return CfwAiAgentOperationSource 是否已赋值
+                     * 
+                     */
+                    bool CfwAiAgentOperationSourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>可选处置说明，最多 50 个 Unicode 字符。</p>
+                     * @return HandleComment <p>可选处置说明，最多 50 个 Unicode 字符。</p>
+                     * 
+                     */
+                    std::string GetHandleComment() const;
+
+                    /**
+                     * 设置<p>可选处置说明，最多 50 个 Unicode 字符。</p>
+                     * @param _handleComment <p>可选处置说明，最多 50 个 Unicode 字符。</p>
+                     * 
+                     */
+                    void SetHandleComment(const std::string& _handleComment);
+
+                    /**
+                     * 判断参数 HandleComment 是否已赋值
+                     * @return HandleComment 是否已赋值
+                     * 
+                     */
+                    bool HandleCommentHasBeenSet() const;
+
+                    /**
+                     * 获取<p>告警事件 ID 列表，可省略。通过 DescribeCfwAlerts 获取，返回 alerts[].current_event_id 时使用该值，否则使用 alerts[].event_id。事件对应的告警日志会与 HandleIdList 合并后参与处置。</p>
+                     * @return HandleEventIdList <p>告警事件 ID 列表，可省略。通过 DescribeCfwAlerts 获取，返回 alerts[].current_event_id 时使用该值，否则使用 alerts[].event_id。事件对应的告警日志会与 HandleIdList 合并后参与处置。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetHandleEventIdList() const;
+
+                    /**
+                     * 设置<p>告警事件 ID 列表，可省略。通过 DescribeCfwAlerts 获取，返回 alerts[].current_event_id 时使用该值，否则使用 alerts[].event_id。事件对应的告警日志会与 HandleIdList 合并后参与处置。</p>
+                     * @param _handleEventIdList <p>告警事件 ID 列表，可省略。通过 DescribeCfwAlerts 获取，返回 alerts[].current_event_id 时使用该值，否则使用 alerts[].event_id。事件对应的告警日志会与 HandleIdList 合并后参与处置。</p>
+                     * 
+                     */
+                    void SetHandleEventIdList(const std::vector<std::string>& _handleEventIdList);
+
+                    /**
+                     * 判断参数 HandleEventIdList 是否已赋值
+                     * @return HandleEventIdList 是否已赋值
+                     * 
+                     */
+                    bool HandleEventIdListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>告警日志 ID 列表，可省略；可与 HandleEventIdList 同时使用。调用 DescribeLogs，传 Index=rule_threatinfo 和目标日志的查询条件，解析返回结果，仅使用目标记录的 log_id。告警事件 ID 使用 HandleEventIdList。</p>
+                     * @return HandleIdList <p>告警日志 ID 列表，可省略；可与 HandleEventIdList 同时使用。调用 DescribeLogs，传 Index=rule_threatinfo 和目标日志的查询条件，解析返回结果，仅使用目标记录的 log_id。告警事件 ID 使用 HandleEventIdList。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetHandleIdList() const;
+
+                    /**
+                     * 设置<p>告警日志 ID 列表，可省略；可与 HandleEventIdList 同时使用。调用 DescribeLogs，传 Index=rule_threatinfo 和目标日志的查询条件，解析返回结果，仅使用目标记录的 log_id。告警事件 ID 使用 HandleEventIdList。</p>
+                     * @param _handleIdList <p>告警日志 ID 列表，可省略；可与 HandleEventIdList 同时使用。调用 DescribeLogs，传 Index=rule_threatinfo 和目标日志的查询条件，解析返回结果，仅使用目标记录的 log_id。告警事件 ID 使用 HandleEventIdList。</p>
+                     * 
+                     */
+                    void SetHandleIdList(const std::vector<std::string>& _handleIdList);
+
+                    /**
+                     * 判断参数 HandleIdList 是否已赋值
+                     * @return HandleIdList 是否已赋值
+                     * 
+                     */
+                    bool HandleIdListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>IP 处置目标列表，每项必须是有效 IP 地址。HandleType=3 表示加白，HandleType=4 表示封禁；可使用 DescribeCfwAlerts 返回的 alerts[].src_ip_list 或 alerts[].dst_ip_list。</p>
+                     * @return HandleIpList <p>IP 处置目标列表，每项必须是有效 IP 地址。HandleType=3 表示加白，HandleType=4 表示封禁；可使用 DescribeCfwAlerts 返回的 alerts[].src_ip_list 或 alerts[].dst_ip_list。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetHandleIpList() const;
+
+                    /**
+                     * 设置<p>IP 处置目标列表，每项必须是有效 IP 地址。HandleType=3 表示加白，HandleType=4 表示封禁；可使用 DescribeCfwAlerts 返回的 alerts[].src_ip_list 或 alerts[].dst_ip_list。</p>
+                     * @param _handleIpList <p>IP 处置目标列表，每项必须是有效 IP 地址。HandleType=3 表示加白，HandleType=4 表示封禁；可使用 DescribeCfwAlerts 返回的 alerts[].src_ip_list 或 alerts[].dst_ip_list。</p>
+                     * 
+                     */
+                    void SetHandleIpList(const std::vector<std::string>& _handleIpList);
+
+                    /**
+                     * 判断参数 HandleIpList 是否已赋值
+                     * @return HandleIpList 是否已赋值
+                     * 
+                     */
+                    bool HandleIpListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>处置原因，可省略：0 未指定原因，1 重复，2 误报，3 紧急加白；主要用于加白记录。</p>
+                     * @return IgnoreReason <p>处置原因，可省略：0 未指定原因，1 重复，2 误报，3 紧急加白；主要用于加白记录。</p>
+                     * 
+                     */
+                    int64_t GetIgnoreReason() const;
+
+                    /**
+                     * 设置<p>处置原因，可省略：0 未指定原因，1 重复，2 误报，3 紧急加白；主要用于加白记录。</p>
+                     * @param _ignoreReason <p>处置原因，可省略：0 未指定原因，1 重复，2 误报，3 紧急加白；主要用于加白记录。</p>
+                     * 
+                     */
+                    void SetIgnoreReason(const int64_t& _ignoreReason);
+
+                    /**
+                     * 判断参数 IgnoreReason 是否已赋值
+                     * @return IgnoreReason 是否已赋值
+                     * 
+                     */
+                    bool IgnoreReasonHasBeenSet() const;
+
+                    /**
+                     * 获取<p>隔离范围数组，可省略：1 互联网入站，2 互联网出站，4 内网访问。仅 HandleType=8 使用；组合多个范围时传入对应值且不要重复，重复值会改变最终隔离范围。</p>
+                     * @return IsolateType <p>隔离范围数组，可省略：1 互联网入站，2 互联网出站，4 内网访问。仅 HandleType=8 使用；组合多个范围时传入对应值且不要重复，重复值会改变最终隔离范围。</p>
+                     * 
+                     */
+                    std::vector<int64_t> GetIsolateType() const;
+
+                    /**
+                     * 设置<p>隔离范围数组，可省略：1 互联网入站，2 互联网出站，4 内网访问。仅 HandleType=8 使用；组合多个范围时传入对应值且不要重复，重复值会改变最终隔离范围。</p>
+                     * @param _isolateType <p>隔离范围数组，可省略：1 互联网入站，2 互联网出站，4 内网访问。仅 HandleType=8 使用；组合多个范围时传入对应值且不要重复，重复值会改变最终隔离范围。</p>
+                     * 
+                     */
+                    void SetIsolateType(const std::vector<int64_t>& _isolateType);
+
+                    /**
+                     * 判断参数 IsolateType 是否已赋值
+                     * @return IsolateType 是否已赋值
+                     * 
+                     */
+                    bool IsolateTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>处置关联的来源事件 ID 列表，仅用于 HandleIpList 或 BlockDomain。BlockDomain 处置时必填，HandleIpList 处置时可省略；通过 DescribeCfwAlerts 获取，返回 alerts[].current_event_id 时使用该值，否则使用 alerts[].event_id。</p>
+                     * @return TargetEventIdList <p>处置关联的来源事件 ID 列表，仅用于 HandleIpList 或 BlockDomain。BlockDomain 处置时必填，HandleIpList 处置时可省略；通过 DescribeCfwAlerts 获取，返回 alerts[].current_event_id 时使用该值，否则使用 alerts[].event_id。</p>
                      * 
                      */
                     std::vector<std::string> GetTargetEventIdList() const;
 
                     /**
-                     * 设置<p>处置HandleIpList，属于的告警事件ID</p>
-                     * @param _targetEventIdList <p>处置HandleIpList，属于的告警事件ID</p>
+                     * 设置<p>处置关联的来源事件 ID 列表，仅用于 HandleIpList 或 BlockDomain。BlockDomain 处置时必填，HandleIpList 处置时可省略；通过 DescribeCfwAlerts 获取，返回 alerts[].current_event_id 时使用该值，否则使用 alerts[].event_id。</p>
+                     * @param _targetEventIdList <p>处置关联的来源事件 ID 列表，仅用于 HandleIpList 或 BlockDomain。BlockDomain 处置时必填，HandleIpList 处置时可省略；通过 DescribeCfwAlerts 获取，返回 alerts[].current_event_id 时使用该值，否则使用 alerts[].event_id。</p>
                      * 
                      */
                     void SetTargetEventIdList(const std::vector<std::string>& _targetEventIdList);
@@ -357,97 +336,118 @@ namespace TencentCloud
                      */
                     bool TargetEventIdListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>隔离后仍允许通信的 IPv4 地址列表，仅 HandleType=8 使用。可省略或传空数组；非空时每项必须是有效 IPv4 地址。</p>
+                     * @return WhiteIpList <p>隔离后仍允许通信的 IPv4 地址列表，仅 HandleType=8 使用。可省略或传空数组；非空时每项必须是有效 IPv4 地址。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetWhiteIpList() const;
+
+                    /**
+                     * 设置<p>隔离后仍允许通信的 IPv4 地址列表，仅 HandleType=8 使用。可省略或传空数组；非空时每项必须是有效 IPv4 地址。</p>
+                     * @param _whiteIpList <p>隔离后仍允许通信的 IPv4 地址列表，仅 HandleType=8 使用。可省略或传空数组；非空时每项必须是有效 IPv4 地址。</p>
+                     * 
+                     */
+                    void SetWhiteIpList(const std::vector<std::string>& _whiteIpList);
+
+                    /**
+                     * 判断参数 WhiteIpList 是否已赋值
+                     * @return WhiteIpList 是否已赋值
+                     * 
+                     */
+                    bool WhiteIpListHasBeenSet() const;
+
                 private:
 
                     /**
-                     * <p>处置时间<br>1  1天<br>7   7天<br>-2 永久</p>
-                     */
-                    int64_t m_handleTime;
-                    bool m_handleTimeHasBeenSet;
-
-                    /**
-                     * <p>处置类型<br>当HandleIdList 不为空时：1封禁 2放通<br>当HandleIpList 不为空时：3放通 4封禁</p>
-                     */
-                    int64_t m_handleType;
-                    bool m_handleTypeHasBeenSet;
-
-                    /**
-                     * <p>当前日志方向： 0 出向 1 入向</p>
+                     * <p>必填的告警方向：0 出向，1 入向，3 内网。用于 HandleIpList 中 IP 目标的处置方向；其它目标也必须传上述有效值。从 DescribeCfwAlerts 复制方向时，将 alerts[].direction 的 outbound、inbound、lateral 分别转换为 JSON 整数 0、1、3。</p>
                      */
                     int64_t m_alertDirection;
                     bool m_alertDirectionHasBeenSet;
 
                     /**
-                     * <p>处置方向： 0出向 1入向 0,1出入向 3内网</p>
+                     * <p>必填的处置生效方向。支持空字符串、0（互联网出向）、1（互联网入向）、0,1/1,0（互联网双向）、3（内网访问）、5（内网访问源）、6（内网访问目的）及 5,6/6,5。空字符串表示按告警原方向处置；同一 IP 的已有规则方向会与本次方向合并。</p>
                      */
                     std::string m_handleDirection;
                     bool m_handleDirectionHasBeenSet;
 
                     /**
-                     * <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * <p>处置有效期：1 表示 1 天，7 表示 7 天，-2 表示永久。</p>
                      */
-                    std::string m_cfwAiAgentOperationSource;
-                    bool m_cfwAiAgentOperationSourceHasBeenSet;
+                    int64_t m_handleTime;
+                    bool m_handleTimeHasBeenSet;
 
                     /**
-                     * <p>处置对象,ID列表，  IdLists,IpList,EventIdList三选一</p>
+                     * <p>必填的处置类型：1 按 HandleIdList 或 HandleEventIdList 封禁，2 按 HandleIdList、HandleEventIdList 或 BlockDomain 加白，3 按 HandleIpList 加白 IP，4 按 HandleIpList 封禁 IP，5 将 HandleIdList 或 HandleEventIdList 对应的安全基线告警地址加入指定方向的安全基线列表，8 按 HandleEventIdList 关联资产或 AssetIdList 新增隔离。五类目标至少提供一类；HandleType=8 未能从事件解析出资产时必须提供 AssetIdList。IsolateType 和 WhiteIpList 仅用于类型 8。</p>
                      */
-                    std::vector<std::string> m_handleIdList;
-                    bool m_handleIdListHasBeenSet;
+                    int64_t m_handleType;
+                    bool m_handleTypeHasBeenSet;
 
                     /**
-                     * <p>处置对象,IP列表，  IdLists,IpList,EventIdList三选一</p>
-                     */
-                    std::vector<std::string> m_handleIpList;
-                    bool m_handleIpListHasBeenSet;
-
-                    /**
-                     * <p>处置描述</p>
-                     */
-                    std::string m_handleComment;
-                    bool m_handleCommentHasBeenSet;
-
-                    /**
-                     * <p>放通原因:<br>0默认 1重复 2误报 3紧急放通</p>
-                     */
-                    int64_t m_ignoreReason;
-                    bool m_ignoreReasonHasBeenSet;
-
-                    /**
-                     * <p>封禁域名-保留字段</p>
-                     */
-                    std::string m_blockDomain;
-                    bool m_blockDomainHasBeenSet;
-
-                    /**
-                     * <p>处置对象,事件ID列表，  IdLists,IpList,EventIdList三选一</p>
-                     */
-                    std::vector<std::string> m_handleEventIdList;
-                    bool m_handleEventIdListHasBeenSet;
-
-                    /**
-                     * <p>加白IP列表 隔离时放通的ip列表</p>
-                     */
-                    std::vector<std::string> m_whiteIpList;
-                    bool m_whiteIpListHasBeenSet;
-
-                    /**
-                     * <p>隔离类型 1 互联网入站 2 互联网出站 4 内网访问</p>
-                     */
-                    std::vector<int64_t> m_isolateType;
-                    bool m_isolateTypeHasBeenSet;
-
-                    /**
-                     * <p>隔离资产列表</p>
+                     * <p>资产隔离目标列表，可省略；仅 HandleType=8 使用。直接按资产隔离时，调用 DescribeCfwAssets，传 AssetType=host 和目标 InstanceId，解析返回结果；仅在唯一 assets[].instance_id 与目标完全相等时将其写入本字段，不使用资产名称。</p>
                      */
                     std::vector<std::string> m_assetIdList;
                     bool m_assetIdListHasBeenSet;
 
                     /**
-                     * <p>处置HandleIpList，属于的告警事件ID</p>
+                     * <p>域名加白目标，传合法域名；HandleType 必须为 2，并同时传 TargetEventIdList。</p>
+                     */
+                    std::string m_blockDomain;
+                    bool m_blockDomainHasBeenSet;
+
+                    /**
+                     * <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>。
+                     */
+                    std::string m_cfwAiAgentOperationSource;
+                    bool m_cfwAiAgentOperationSourceHasBeenSet;
+
+                    /**
+                     * <p>可选处置说明，最多 50 个 Unicode 字符。</p>
+                     */
+                    std::string m_handleComment;
+                    bool m_handleCommentHasBeenSet;
+
+                    /**
+                     * <p>告警事件 ID 列表，可省略。通过 DescribeCfwAlerts 获取，返回 alerts[].current_event_id 时使用该值，否则使用 alerts[].event_id。事件对应的告警日志会与 HandleIdList 合并后参与处置。</p>
+                     */
+                    std::vector<std::string> m_handleEventIdList;
+                    bool m_handleEventIdListHasBeenSet;
+
+                    /**
+                     * <p>告警日志 ID 列表，可省略；可与 HandleEventIdList 同时使用。调用 DescribeLogs，传 Index=rule_threatinfo 和目标日志的查询条件，解析返回结果，仅使用目标记录的 log_id。告警事件 ID 使用 HandleEventIdList。</p>
+                     */
+                    std::vector<std::string> m_handleIdList;
+                    bool m_handleIdListHasBeenSet;
+
+                    /**
+                     * <p>IP 处置目标列表，每项必须是有效 IP 地址。HandleType=3 表示加白，HandleType=4 表示封禁；可使用 DescribeCfwAlerts 返回的 alerts[].src_ip_list 或 alerts[].dst_ip_list。</p>
+                     */
+                    std::vector<std::string> m_handleIpList;
+                    bool m_handleIpListHasBeenSet;
+
+                    /**
+                     * <p>处置原因，可省略：0 未指定原因，1 重复，2 误报，3 紧急加白；主要用于加白记录。</p>
+                     */
+                    int64_t m_ignoreReason;
+                    bool m_ignoreReasonHasBeenSet;
+
+                    /**
+                     * <p>隔离范围数组，可省略：1 互联网入站，2 互联网出站，4 内网访问。仅 HandleType=8 使用；组合多个范围时传入对应值且不要重复，重复值会改变最终隔离范围。</p>
+                     */
+                    std::vector<int64_t> m_isolateType;
+                    bool m_isolateTypeHasBeenSet;
+
+                    /**
+                     * <p>处置关联的来源事件 ID 列表，仅用于 HandleIpList 或 BlockDomain。BlockDomain 处置时必填，HandleIpList 处置时可省略；通过 DescribeCfwAlerts 获取，返回 alerts[].current_event_id 时使用该值，否则使用 alerts[].event_id。</p>
                      */
                     std::vector<std::string> m_targetEventIdList;
                     bool m_targetEventIdListHasBeenSet;
+
+                    /**
+                     * <p>隔离后仍允许通信的 IPv4 地址列表，仅 HandleType=8 使用。可省略或传空数组；非空时每项必须是有效 IPv4 地址。</p>
+                     */
+                    std::vector<std::string> m_whiteIpList;
+                    bool m_whiteIpListHasBeenSet;
 
                 };
             }

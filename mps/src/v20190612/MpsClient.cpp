@@ -340,6 +340,56 @@ MpsClient::BatchStopStreamLinkFlowOutcomeCallable MpsClient::BatchStopStreamLink
     return prom->get_future();
 }
 
+MpsClient::CloneViralOutcome MpsClient::CloneViral(const CloneViralRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloneViral");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloneViralResponse rsp = CloneViralResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloneViralOutcome(rsp);
+        else
+            return CloneViralOutcome(o.GetError());
+    }
+    else
+    {
+        return CloneViralOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CloneViralAsync(const CloneViralRequest& request, const CloneViralAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CloneViralRequest&;
+    using Resp = CloneViralResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CloneViral", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::CloneViralOutcomeCallable MpsClient::CloneViralCallable(const CloneViralRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CloneViralOutcome>>();
+    CloneViralAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const CloneViralRequest&,
+        CloneViralOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::CreateAIAnalysisTemplateOutcome MpsClient::CreateAIAnalysisTemplate(const CreateAIAnalysisTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAIAnalysisTemplate");
@@ -4832,6 +4882,56 @@ MpsClient::DescribeBlindWatermarkTemplatesOutcomeCallable MpsClient::DescribeBli
         const MpsClient*,
         const DescribeBlindWatermarkTemplatesRequest&,
         DescribeBlindWatermarkTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MpsClient::DescribeCloneViralTaskOutcome MpsClient::DescribeCloneViralTask(const DescribeCloneViralTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloneViralTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloneViralTaskResponse rsp = DescribeCloneViralTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloneViralTaskOutcome(rsp);
+        else
+            return DescribeCloneViralTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloneViralTaskOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeCloneViralTaskAsync(const DescribeCloneViralTaskRequest& request, const DescribeCloneViralTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloneViralTaskRequest&;
+    using Resp = DescribeCloneViralTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloneViralTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::DescribeCloneViralTaskOutcomeCallable MpsClient::DescribeCloneViralTaskCallable(const DescribeCloneViralTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloneViralTaskOutcome>>();
+    DescribeCloneViralTaskAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const DescribeCloneViralTaskRequest&,
+        DescribeCloneViralTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

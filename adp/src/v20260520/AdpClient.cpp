@@ -240,6 +240,56 @@ AdpClient::CreateAppOutcomeCallable AdpClient::CreateAppCallable(const CreateApp
     return prom->get_future();
 }
 
+AdpClient::CreateAppTriggerOutcome AdpClient::CreateAppTrigger(const CreateAppTriggerRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAppTrigger");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAppTriggerResponse rsp = CreateAppTriggerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAppTriggerOutcome(rsp);
+        else
+            return CreateAppTriggerOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAppTriggerOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::CreateAppTriggerAsync(const CreateAppTriggerRequest& request, const CreateAppTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAppTriggerRequest&;
+    using Resp = CreateAppTriggerResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAppTrigger", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::CreateAppTriggerOutcomeCallable AdpClient::CreateAppTriggerCallable(const CreateAppTriggerRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAppTriggerOutcome>>();
+    CreateAppTriggerAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const CreateAppTriggerRequest&,
+        CreateAppTriggerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::CreateConversationOutcome AdpClient::CreateConversation(const CreateConversationRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateConversation");
@@ -540,6 +590,56 @@ AdpClient::CreateSpaceOutcomeCallable AdpClient::CreateSpaceCallable(const Creat
     return prom->get_future();
 }
 
+AdpClient::CreateTimerTaskOutcome AdpClient::CreateTimerTask(const CreateTimerTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTimerTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTimerTaskResponse rsp = CreateTimerTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTimerTaskOutcome(rsp);
+        else
+            return CreateTimerTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTimerTaskOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::CreateTimerTaskAsync(const CreateTimerTaskRequest& request, const CreateTimerTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateTimerTaskRequest&;
+    using Resp = CreateTimerTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateTimerTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::CreateTimerTaskOutcomeCallable AdpClient::CreateTimerTaskCallable(const CreateTimerTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateTimerTaskOutcome>>();
+    CreateTimerTaskAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const CreateTimerTaskRequest&,
+        CreateTimerTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::CreateVariableOutcome AdpClient::CreateVariable(const CreateVariableRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateVariable");
@@ -790,6 +890,56 @@ AdpClient::DeleteAppOutcomeCallable AdpClient::DeleteAppCallable(const DeleteApp
     return prom->get_future();
 }
 
+AdpClient::DeleteAppTriggerOutcome AdpClient::DeleteAppTrigger(const DeleteAppTriggerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAppTrigger");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAppTriggerResponse rsp = DeleteAppTriggerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAppTriggerOutcome(rsp);
+        else
+            return DeleteAppTriggerOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAppTriggerOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DeleteAppTriggerAsync(const DeleteAppTriggerRequest& request, const DeleteAppTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAppTriggerRequest&;
+    using Resp = DeleteAppTriggerResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAppTrigger", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DeleteAppTriggerOutcomeCallable AdpClient::DeleteAppTriggerCallable(const DeleteAppTriggerRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAppTriggerOutcome>>();
+    DeleteAppTriggerAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DeleteAppTriggerRequest&,
+        DeleteAppTriggerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::DeleteConversationOutcome AdpClient::DeleteConversation(const DeleteConversationRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteConversation");
@@ -1032,6 +1182,56 @@ AdpClient::DeleteSpaceOutcomeCallable AdpClient::DeleteSpaceCallable(const Delet
         const AdpClient*,
         const DeleteSpaceRequest&,
         DeleteSpaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DeleteTimerTaskOutcome AdpClient::DeleteTimerTask(const DeleteTimerTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTimerTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTimerTaskResponse rsp = DeleteTimerTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTimerTaskOutcome(rsp);
+        else
+            return DeleteTimerTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTimerTaskOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DeleteTimerTaskAsync(const DeleteTimerTaskRequest& request, const DeleteTimerTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteTimerTaskRequest&;
+    using Resp = DeleteTimerTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteTimerTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DeleteTimerTaskOutcomeCallable AdpClient::DeleteTimerTaskCallable(const DeleteTimerTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteTimerTaskOutcome>>();
+    DeleteTimerTaskAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DeleteTimerTaskRequest&,
+        DeleteTimerTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1382,6 +1582,206 @@ AdpClient::DescribeAppSummaryListOutcomeCallable AdpClient::DescribeAppSummaryLi
         const AdpClient*,
         const DescribeAppSummaryListRequest&,
         DescribeAppSummaryListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeAppTriggerOutcome AdpClient::DescribeAppTrigger(const DescribeAppTriggerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAppTrigger");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAppTriggerResponse rsp = DescribeAppTriggerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAppTriggerOutcome(rsp);
+        else
+            return DescribeAppTriggerOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAppTriggerOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeAppTriggerAsync(const DescribeAppTriggerRequest& request, const DescribeAppTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAppTriggerRequest&;
+    using Resp = DescribeAppTriggerResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAppTrigger", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeAppTriggerOutcomeCallable AdpClient::DescribeAppTriggerCallable(const DescribeAppTriggerRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAppTriggerOutcome>>();
+    DescribeAppTriggerAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeAppTriggerRequest&,
+        DescribeAppTriggerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeAppTriggerInstanceOutcome AdpClient::DescribeAppTriggerInstance(const DescribeAppTriggerInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAppTriggerInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAppTriggerInstanceResponse rsp = DescribeAppTriggerInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAppTriggerInstanceOutcome(rsp);
+        else
+            return DescribeAppTriggerInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAppTriggerInstanceOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeAppTriggerInstanceAsync(const DescribeAppTriggerInstanceRequest& request, const DescribeAppTriggerInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAppTriggerInstanceRequest&;
+    using Resp = DescribeAppTriggerInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAppTriggerInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeAppTriggerInstanceOutcomeCallable AdpClient::DescribeAppTriggerInstanceCallable(const DescribeAppTriggerInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAppTriggerInstanceOutcome>>();
+    DescribeAppTriggerInstanceAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeAppTriggerInstanceRequest&,
+        DescribeAppTriggerInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeAppTriggerRunLogListOutcome AdpClient::DescribeAppTriggerRunLogList(const DescribeAppTriggerRunLogListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAppTriggerRunLogList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAppTriggerRunLogListResponse rsp = DescribeAppTriggerRunLogListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAppTriggerRunLogListOutcome(rsp);
+        else
+            return DescribeAppTriggerRunLogListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAppTriggerRunLogListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeAppTriggerRunLogListAsync(const DescribeAppTriggerRunLogListRequest& request, const DescribeAppTriggerRunLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAppTriggerRunLogListRequest&;
+    using Resp = DescribeAppTriggerRunLogListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAppTriggerRunLogList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeAppTriggerRunLogListOutcomeCallable AdpClient::DescribeAppTriggerRunLogListCallable(const DescribeAppTriggerRunLogListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAppTriggerRunLogListOutcome>>();
+    DescribeAppTriggerRunLogListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeAppTriggerRunLogListRequest&,
+        DescribeAppTriggerRunLogListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeAppTriggerSummaryListOutcome AdpClient::DescribeAppTriggerSummaryList(const DescribeAppTriggerSummaryListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAppTriggerSummaryList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAppTriggerSummaryListResponse rsp = DescribeAppTriggerSummaryListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAppTriggerSummaryListOutcome(rsp);
+        else
+            return DescribeAppTriggerSummaryListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAppTriggerSummaryListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeAppTriggerSummaryListAsync(const DescribeAppTriggerSummaryListRequest& request, const DescribeAppTriggerSummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAppTriggerSummaryListRequest&;
+    using Resp = DescribeAppTriggerSummaryListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAppTriggerSummaryList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeAppTriggerSummaryListOutcomeCallable AdpClient::DescribeAppTriggerSummaryListCallable(const DescribeAppTriggerSummaryListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAppTriggerSummaryListOutcome>>();
+    DescribeAppTriggerSummaryListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeAppTriggerSummaryListRequest&,
+        DescribeAppTriggerSummaryListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2240,6 +2640,156 @@ AdpClient::DescribeSystemVariableListOutcomeCallable AdpClient::DescribeSystemVa
     return prom->get_future();
 }
 
+AdpClient::DescribeTimerTaskOutcome AdpClient::DescribeTimerTask(const DescribeTimerTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTimerTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTimerTaskResponse rsp = DescribeTimerTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTimerTaskOutcome(rsp);
+        else
+            return DescribeTimerTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTimerTaskOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeTimerTaskAsync(const DescribeTimerTaskRequest& request, const DescribeTimerTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTimerTaskRequest&;
+    using Resp = DescribeTimerTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTimerTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeTimerTaskOutcomeCallable AdpClient::DescribeTimerTaskCallable(const DescribeTimerTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTimerTaskOutcome>>();
+    DescribeTimerTaskAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeTimerTaskRequest&,
+        DescribeTimerTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeTimerTaskRunLogListOutcome AdpClient::DescribeTimerTaskRunLogList(const DescribeTimerTaskRunLogListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTimerTaskRunLogList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTimerTaskRunLogListResponse rsp = DescribeTimerTaskRunLogListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTimerTaskRunLogListOutcome(rsp);
+        else
+            return DescribeTimerTaskRunLogListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTimerTaskRunLogListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeTimerTaskRunLogListAsync(const DescribeTimerTaskRunLogListRequest& request, const DescribeTimerTaskRunLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTimerTaskRunLogListRequest&;
+    using Resp = DescribeTimerTaskRunLogListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTimerTaskRunLogList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeTimerTaskRunLogListOutcomeCallable AdpClient::DescribeTimerTaskRunLogListCallable(const DescribeTimerTaskRunLogListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTimerTaskRunLogListOutcome>>();
+    DescribeTimerTaskRunLogListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeTimerTaskRunLogListRequest&,
+        DescribeTimerTaskRunLogListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeTimerTaskSummaryListOutcome AdpClient::DescribeTimerTaskSummaryList(const DescribeTimerTaskSummaryListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTimerTaskSummaryList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTimerTaskSummaryListResponse rsp = DescribeTimerTaskSummaryListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTimerTaskSummaryListOutcome(rsp);
+        else
+            return DescribeTimerTaskSummaryListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTimerTaskSummaryListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeTimerTaskSummaryListAsync(const DescribeTimerTaskSummaryListRequest& request, const DescribeTimerTaskSummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTimerTaskSummaryListRequest&;
+    using Resp = DescribeTimerTaskSummaryListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTimerTaskSummaryList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeTimerTaskSummaryListOutcomeCallable AdpClient::DescribeTimerTaskSummaryListCallable(const DescribeTimerTaskSummaryListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTimerTaskSummaryListOutcome>>();
+    DescribeTimerTaskSummaryListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeTimerTaskSummaryListRequest&,
+        DescribeTimerTaskSummaryListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::DescribeVariableOutcome AdpClient::DescribeVariable(const DescribeVariableRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVariable");
@@ -2440,6 +2990,106 @@ AdpClient::FavoriteSkillOutcomeCallable AdpClient::FavoriteSkillCallable(const F
     return prom->get_future();
 }
 
+AdpClient::MarkAppTriggerRunLogReadOutcome AdpClient::MarkAppTriggerRunLogRead(const MarkAppTriggerRunLogReadRequest &request)
+{
+    auto outcome = MakeRequest(request, "MarkAppTriggerRunLogRead");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        MarkAppTriggerRunLogReadResponse rsp = MarkAppTriggerRunLogReadResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return MarkAppTriggerRunLogReadOutcome(rsp);
+        else
+            return MarkAppTriggerRunLogReadOutcome(o.GetError());
+    }
+    else
+    {
+        return MarkAppTriggerRunLogReadOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::MarkAppTriggerRunLogReadAsync(const MarkAppTriggerRunLogReadRequest& request, const MarkAppTriggerRunLogReadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const MarkAppTriggerRunLogReadRequest&;
+    using Resp = MarkAppTriggerRunLogReadResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "MarkAppTriggerRunLogRead", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::MarkAppTriggerRunLogReadOutcomeCallable AdpClient::MarkAppTriggerRunLogReadCallable(const MarkAppTriggerRunLogReadRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<MarkAppTriggerRunLogReadOutcome>>();
+    MarkAppTriggerRunLogReadAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const MarkAppTriggerRunLogReadRequest&,
+        MarkAppTriggerRunLogReadOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::MarkTimerTaskRunLogReadOutcome AdpClient::MarkTimerTaskRunLogRead(const MarkTimerTaskRunLogReadRequest &request)
+{
+    auto outcome = MakeRequest(request, "MarkTimerTaskRunLogRead");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        MarkTimerTaskRunLogReadResponse rsp = MarkTimerTaskRunLogReadResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return MarkTimerTaskRunLogReadOutcome(rsp);
+        else
+            return MarkTimerTaskRunLogReadOutcome(o.GetError());
+    }
+    else
+    {
+        return MarkTimerTaskRunLogReadOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::MarkTimerTaskRunLogReadAsync(const MarkTimerTaskRunLogReadRequest& request, const MarkTimerTaskRunLogReadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const MarkTimerTaskRunLogReadRequest&;
+    using Resp = MarkTimerTaskRunLogReadResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "MarkTimerTaskRunLogRead", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::MarkTimerTaskRunLogReadOutcomeCallable AdpClient::MarkTimerTaskRunLogReadCallable(const MarkTimerTaskRunLogReadRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<MarkTimerTaskRunLogReadOutcome>>();
+    MarkTimerTaskRunLogReadAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const MarkTimerTaskRunLogReadRequest&,
+        MarkTimerTaskRunLogReadOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::ModifyAgentOutcome AdpClient::ModifyAgent(const ModifyAgentRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAgent");
@@ -2532,6 +3182,56 @@ AdpClient::ModifyAppOutcomeCallable AdpClient::ModifyAppCallable(const ModifyApp
         const AdpClient*,
         const ModifyAppRequest&,
         ModifyAppOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::ModifyAppTriggerOutcome AdpClient::ModifyAppTrigger(const ModifyAppTriggerRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAppTrigger");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAppTriggerResponse rsp = ModifyAppTriggerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAppTriggerOutcome(rsp);
+        else
+            return ModifyAppTriggerOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAppTriggerOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::ModifyAppTriggerAsync(const ModifyAppTriggerRequest& request, const ModifyAppTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyAppTriggerRequest&;
+    using Resp = ModifyAppTriggerResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyAppTrigger", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::ModifyAppTriggerOutcomeCallable AdpClient::ModifyAppTriggerCallable(const ModifyAppTriggerRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyAppTriggerOutcome>>();
+    ModifyAppTriggerAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const ModifyAppTriggerRequest&,
+        ModifyAppTriggerOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2740,6 +3440,56 @@ AdpClient::ModifySpaceOutcomeCallable AdpClient::ModifySpaceCallable(const Modif
     return prom->get_future();
 }
 
+AdpClient::ModifyTimerTaskOutcome AdpClient::ModifyTimerTask(const ModifyTimerTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTimerTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTimerTaskResponse rsp = ModifyTimerTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTimerTaskOutcome(rsp);
+        else
+            return ModifyTimerTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTimerTaskOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::ModifyTimerTaskAsync(const ModifyTimerTaskRequest& request, const ModifyTimerTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyTimerTaskRequest&;
+    using Resp = ModifyTimerTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyTimerTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::ModifyTimerTaskOutcomeCallable AdpClient::ModifyTimerTaskCallable(const ModifyTimerTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyTimerTaskOutcome>>();
+    ModifyTimerTaskAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const ModifyTimerTaskRequest&,
+        ModifyTimerTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::ModifyVariableOutcome AdpClient::ModifyVariable(const ModifyVariableRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyVariable");
@@ -2782,6 +3532,106 @@ AdpClient::ModifyVariableOutcomeCallable AdpClient::ModifyVariableCallable(const
         const AdpClient*,
         const ModifyVariableRequest&,
         ModifyVariableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::PauseAppTriggerOutcome AdpClient::PauseAppTrigger(const PauseAppTriggerRequest &request)
+{
+    auto outcome = MakeRequest(request, "PauseAppTrigger");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PauseAppTriggerResponse rsp = PauseAppTriggerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PauseAppTriggerOutcome(rsp);
+        else
+            return PauseAppTriggerOutcome(o.GetError());
+    }
+    else
+    {
+        return PauseAppTriggerOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::PauseAppTriggerAsync(const PauseAppTriggerRequest& request, const PauseAppTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const PauseAppTriggerRequest&;
+    using Resp = PauseAppTriggerResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "PauseAppTrigger", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::PauseAppTriggerOutcomeCallable AdpClient::PauseAppTriggerCallable(const PauseAppTriggerRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<PauseAppTriggerOutcome>>();
+    PauseAppTriggerAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const PauseAppTriggerRequest&,
+        PauseAppTriggerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::PauseTimerTaskOutcome AdpClient::PauseTimerTask(const PauseTimerTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "PauseTimerTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PauseTimerTaskResponse rsp = PauseTimerTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PauseTimerTaskOutcome(rsp);
+        else
+            return PauseTimerTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return PauseTimerTaskOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::PauseTimerTaskAsync(const PauseTimerTaskRequest& request, const PauseTimerTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const PauseTimerTaskRequest&;
+    using Resp = PauseTimerTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "PauseTimerTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::PauseTimerTaskOutcomeCallable AdpClient::PauseTimerTaskCallable(const PauseTimerTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<PauseTimerTaskOutcome>>();
+    PauseTimerTaskAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const PauseTimerTaskRequest&,
+        PauseTimerTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2890,6 +3740,106 @@ AdpClient::ResetConversationOutcomeCallable AdpClient::ResetConversationCallable
     return prom->get_future();
 }
 
+AdpClient::ResumeAppTriggerOutcome AdpClient::ResumeAppTrigger(const ResumeAppTriggerRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResumeAppTrigger");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResumeAppTriggerResponse rsp = ResumeAppTriggerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResumeAppTriggerOutcome(rsp);
+        else
+            return ResumeAppTriggerOutcome(o.GetError());
+    }
+    else
+    {
+        return ResumeAppTriggerOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::ResumeAppTriggerAsync(const ResumeAppTriggerRequest& request, const ResumeAppTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ResumeAppTriggerRequest&;
+    using Resp = ResumeAppTriggerResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ResumeAppTrigger", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::ResumeAppTriggerOutcomeCallable AdpClient::ResumeAppTriggerCallable(const ResumeAppTriggerRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ResumeAppTriggerOutcome>>();
+    ResumeAppTriggerAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const ResumeAppTriggerRequest&,
+        ResumeAppTriggerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::ResumeTimerTaskOutcome AdpClient::ResumeTimerTask(const ResumeTimerTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResumeTimerTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResumeTimerTaskResponse rsp = ResumeTimerTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResumeTimerTaskOutcome(rsp);
+        else
+            return ResumeTimerTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ResumeTimerTaskOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::ResumeTimerTaskAsync(const ResumeTimerTaskRequest& request, const ResumeTimerTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ResumeTimerTaskRequest&;
+    using Resp = ResumeTimerTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ResumeTimerTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::ResumeTimerTaskOutcomeCallable AdpClient::ResumeTimerTaskCallable(const ResumeTimerTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ResumeTimerTaskOutcome>>();
+    ResumeTimerTaskAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const ResumeTimerTaskRequest&,
+        ResumeTimerTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::RetryReleaseOutcome AdpClient::RetryRelease(const RetryReleaseRequest &request)
 {
     auto outcome = MakeRequest(request, "RetryRelease");
@@ -2982,6 +3932,106 @@ AdpClient::RollbackReleaseOutcomeCallable AdpClient::RollbackReleaseCallable(con
         const AdpClient*,
         const RollbackReleaseRequest&,
         RollbackReleaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::RunAppTriggerNowOutcome AdpClient::RunAppTriggerNow(const RunAppTriggerNowRequest &request)
+{
+    auto outcome = MakeRequest(request, "RunAppTriggerNow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RunAppTriggerNowResponse rsp = RunAppTriggerNowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RunAppTriggerNowOutcome(rsp);
+        else
+            return RunAppTriggerNowOutcome(o.GetError());
+    }
+    else
+    {
+        return RunAppTriggerNowOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::RunAppTriggerNowAsync(const RunAppTriggerNowRequest& request, const RunAppTriggerNowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RunAppTriggerNowRequest&;
+    using Resp = RunAppTriggerNowResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RunAppTriggerNow", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::RunAppTriggerNowOutcomeCallable AdpClient::RunAppTriggerNowCallable(const RunAppTriggerNowRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RunAppTriggerNowOutcome>>();
+    RunAppTriggerNowAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const RunAppTriggerNowRequest&,
+        RunAppTriggerNowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::RunTimerTaskNowOutcome AdpClient::RunTimerTaskNow(const RunTimerTaskNowRequest &request)
+{
+    auto outcome = MakeRequest(request, "RunTimerTaskNow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RunTimerTaskNowResponse rsp = RunTimerTaskNowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RunTimerTaskNowOutcome(rsp);
+        else
+            return RunTimerTaskNowOutcome(o.GetError());
+    }
+    else
+    {
+        return RunTimerTaskNowOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::RunTimerTaskNowAsync(const RunTimerTaskNowRequest& request, const RunTimerTaskNowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RunTimerTaskNowRequest&;
+    using Resp = RunTimerTaskNowResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RunTimerTaskNow", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::RunTimerTaskNowOutcomeCallable AdpClient::RunTimerTaskNowCallable(const RunTimerTaskNowRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RunTimerTaskNowOutcome>>();
+    RunTimerTaskNowAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const RunTimerTaskNowRequest&,
+        RunTimerTaskNowOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

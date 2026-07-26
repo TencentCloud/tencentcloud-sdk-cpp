@@ -23,8 +23,8 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 CreateBlockIgnoreRuleNewRequest::CreateBlockIgnoreRuleNewRequest() :
-    m_rulesHasBeenSet(false),
     m_ruleTypeHasBeenSet(false),
+    m_rulesHasBeenSet(false),
     m_cfwAiAgentOperationSourceHasBeenSet(false),
     m_coverDuplicateHasBeenSet(false)
 {
@@ -36,6 +36,14 @@ string CreateBlockIgnoreRuleNewRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_ruleTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ruleType, allocator);
+    }
 
     if (m_rulesHasBeenSet)
     {
@@ -50,14 +58,6 @@ string CreateBlockIgnoreRuleNewRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_ruleTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RuleType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_ruleType, allocator);
     }
 
     if (m_cfwAiAgentOperationSourceHasBeenSet)
@@ -84,22 +84,6 @@ string CreateBlockIgnoreRuleNewRequest::ToJsonString() const
 }
 
 
-vector<BanAndAllowRule> CreateBlockIgnoreRuleNewRequest::GetRules() const
-{
-    return m_rules;
-}
-
-void CreateBlockIgnoreRuleNewRequest::SetRules(const vector<BanAndAllowRule>& _rules)
-{
-    m_rules = _rules;
-    m_rulesHasBeenSet = true;
-}
-
-bool CreateBlockIgnoreRuleNewRequest::RulesHasBeenSet() const
-{
-    return m_rulesHasBeenSet;
-}
-
 int64_t CreateBlockIgnoreRuleNewRequest::GetRuleType() const
 {
     return m_ruleType;
@@ -114,6 +98,22 @@ void CreateBlockIgnoreRuleNewRequest::SetRuleType(const int64_t& _ruleType)
 bool CreateBlockIgnoreRuleNewRequest::RuleTypeHasBeenSet() const
 {
     return m_ruleTypeHasBeenSet;
+}
+
+vector<BanAndAllowRule> CreateBlockIgnoreRuleNewRequest::GetRules() const
+{
+    return m_rules;
+}
+
+void CreateBlockIgnoreRuleNewRequest::SetRules(const vector<BanAndAllowRule>& _rules)
+{
+    m_rules = _rules;
+    m_rulesHasBeenSet = true;
+}
+
+bool CreateBlockIgnoreRuleNewRequest::RulesHasBeenSet() const
+{
+    return m_rulesHasBeenSet;
 }
 
 string CreateBlockIgnoreRuleNewRequest::GetCfwAiAgentOperationSource() const

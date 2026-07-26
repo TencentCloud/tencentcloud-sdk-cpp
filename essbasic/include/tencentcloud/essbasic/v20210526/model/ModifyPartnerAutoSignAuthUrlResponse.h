@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取授权链接，以短链形式返回，短链的有效期参考回参中的 ExpiredTime。
-                     * @return Url 授权链接，以短链形式返回，短链的有效期参考回参中的 ExpiredTime。
+                     * 获取<p>授权链接，以短链形式返回，短链的有效期参考回参中的 ExpiredTime。</p>
+                     * @return Url <p>授权链接，以短链形式返回，短链的有效期参考回参中的 ExpiredTime。</p>
                      * 
                      */
                     std::string GetUrl() const;
@@ -58,10 +58,8 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取从客户小程序或者客户APP跳转至腾讯电子签小程序进行批量签署的跳转路径
-
-                     * @return MiniAppPath 从客户小程序或者客户APP跳转至腾讯电子签小程序进行批量签署的跳转路径
-
+                     * 获取<p>从客户小程序或者客户APP跳转至腾讯电子签小程序进行批量签署的跳转路径</p>
+                     * @return MiniAppPath <p>从客户小程序或者客户APP跳转至腾讯电子签小程序进行批量签署的跳转路径</p>
                      * 
                      */
                     std::string GetMiniAppPath() const;
@@ -74,8 +72,8 @@ namespace TencentCloud
                     bool MiniAppPathHasBeenSet() const;
 
                     /**
-                     * 获取链接过期时间以 Unix 时间戳格式表示，从生成链接时间起，往后7天有效期。过期后短链将失效，无法打开。
-                     * @return ExpireTime 链接过期时间以 Unix 时间戳格式表示，从生成链接时间起，往后7天有效期。过期后短链将失效，无法打开。
+                     * 获取<p>链接过期时间以 Unix 时间戳格式表示，从生成链接时间起，往后7天有效期。过期后短链将失效，无法打开。</p>
+                     * @return ExpireTime <p>链接过期时间以 Unix 时间戳格式表示，从生成链接时间起，往后7天有效期。过期后短链将失效，无法打开。</p>
                      * 
                      */
                     int64_t GetExpireTime() const;
@@ -90,20 +88,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 授权链接，以短链形式返回，短链的有效期参考回参中的 ExpiredTime。
+                     * <p>授权链接，以短链形式返回，短链的有效期参考回参中的 ExpiredTime。</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 从客户小程序或者客户APP跳转至腾讯电子签小程序进行批量签署的跳转路径
-
+                     * <p>从客户小程序或者客户APP跳转至腾讯电子签小程序进行批量签署的跳转路径</p>
                      */
                     std::string m_miniAppPath;
                     bool m_miniAppPathHasBeenSet;
 
                     /**
-                     * 链接过期时间以 Unix 时间戳格式表示，从生成链接时间起，往后7天有效期。过期后短链将失效，无法打开。
+                     * <p>链接过期时间以 Unix 时间戳格式表示，从生成链接时间起，往后7天有效期。过期后短链将失效，无法打开。</p>
                      */
                     int64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;

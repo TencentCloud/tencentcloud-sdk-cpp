@@ -23,8 +23,8 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 RemoveEnterpriseSecurityGroupRuleRequest::RemoveEnterpriseSecurityGroupRuleRequest() :
-    m_ruleUuidHasBeenSet(false),
     m_removeTypeHasBeenSet(false),
+    m_ruleUuidHasBeenSet(false),
     m_cfwAiAgentOperationSourceHasBeenSet(false)
 {
 }
@@ -36,20 +36,20 @@ string RemoveEnterpriseSecurityGroupRuleRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_ruleUuidHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RuleUuid";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_ruleUuid, allocator);
-    }
-
     if (m_removeTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RemoveType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_removeType, allocator);
+    }
+
+    if (m_ruleUuidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleUuid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ruleUuid, allocator);
     }
 
     if (m_cfwAiAgentOperationSourceHasBeenSet)
@@ -68,22 +68,6 @@ string RemoveEnterpriseSecurityGroupRuleRequest::ToJsonString() const
 }
 
 
-int64_t RemoveEnterpriseSecurityGroupRuleRequest::GetRuleUuid() const
-{
-    return m_ruleUuid;
-}
-
-void RemoveEnterpriseSecurityGroupRuleRequest::SetRuleUuid(const int64_t& _ruleUuid)
-{
-    m_ruleUuid = _ruleUuid;
-    m_ruleUuidHasBeenSet = true;
-}
-
-bool RemoveEnterpriseSecurityGroupRuleRequest::RuleUuidHasBeenSet() const
-{
-    return m_ruleUuidHasBeenSet;
-}
-
 int64_t RemoveEnterpriseSecurityGroupRuleRequest::GetRemoveType() const
 {
     return m_removeType;
@@ -98,6 +82,22 @@ void RemoveEnterpriseSecurityGroupRuleRequest::SetRemoveType(const int64_t& _rem
 bool RemoveEnterpriseSecurityGroupRuleRequest::RemoveTypeHasBeenSet() const
 {
     return m_removeTypeHasBeenSet;
+}
+
+int64_t RemoveEnterpriseSecurityGroupRuleRequest::GetRuleUuid() const
+{
+    return m_ruleUuid;
+}
+
+void RemoveEnterpriseSecurityGroupRuleRequest::SetRuleUuid(const int64_t& _ruleUuid)
+{
+    m_ruleUuid = _ruleUuid;
+    m_ruleUuidHasBeenSet = true;
+}
+
+bool RemoveEnterpriseSecurityGroupRuleRequest::RuleUuidHasBeenSet() const
+{
+    return m_ruleUuidHasBeenSet;
 }
 
 string RemoveEnterpriseSecurityGroupRuleRequest::GetCfwAiAgentOperationSource() const

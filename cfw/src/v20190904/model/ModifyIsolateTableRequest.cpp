@@ -23,11 +23,11 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 ModifyIsolateTableRequest::ModifyIsolateTableRequest() :
-    m_instanceIDHasBeenSet(false),
     m_buttonActionHasBeenSet(false),
+    m_instanceIDHasBeenSet(false),
     m_cfwAiAgentOperationSourceHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_startTimeHasBeenSet(false)
 {
 }
 
@@ -38,20 +38,20 @@ string ModifyIsolateTableRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_instanceIDHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceID";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_instanceID.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_buttonActionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ButtonAction";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_buttonAction.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceID.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cfwAiAgentOperationSourceHasBeenSet)
@@ -62,20 +62,20 @@ string ModifyIsolateTableRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_cfwAiAgentOperationSource.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_startTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "StartTime";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_endTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -85,22 +85,6 @@ string ModifyIsolateTableRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string ModifyIsolateTableRequest::GetInstanceID() const
-{
-    return m_instanceID;
-}
-
-void ModifyIsolateTableRequest::SetInstanceID(const string& _instanceID)
-{
-    m_instanceID = _instanceID;
-    m_instanceIDHasBeenSet = true;
-}
-
-bool ModifyIsolateTableRequest::InstanceIDHasBeenSet() const
-{
-    return m_instanceIDHasBeenSet;
-}
 
 string ModifyIsolateTableRequest::GetButtonAction() const
 {
@@ -116,6 +100,22 @@ void ModifyIsolateTableRequest::SetButtonAction(const string& _buttonAction)
 bool ModifyIsolateTableRequest::ButtonActionHasBeenSet() const
 {
     return m_buttonActionHasBeenSet;
+}
+
+string ModifyIsolateTableRequest::GetInstanceID() const
+{
+    return m_instanceID;
+}
+
+void ModifyIsolateTableRequest::SetInstanceID(const string& _instanceID)
+{
+    m_instanceID = _instanceID;
+    m_instanceIDHasBeenSet = true;
+}
+
+bool ModifyIsolateTableRequest::InstanceIDHasBeenSet() const
+{
+    return m_instanceIDHasBeenSet;
 }
 
 string ModifyIsolateTableRequest::GetCfwAiAgentOperationSource() const
@@ -134,22 +134,6 @@ bool ModifyIsolateTableRequest::CfwAiAgentOperationSourceHasBeenSet() const
     return m_cfwAiAgentOperationSourceHasBeenSet;
 }
 
-string ModifyIsolateTableRequest::GetStartTime() const
-{
-    return m_startTime;
-}
-
-void ModifyIsolateTableRequest::SetStartTime(const string& _startTime)
-{
-    m_startTime = _startTime;
-    m_startTimeHasBeenSet = true;
-}
-
-bool ModifyIsolateTableRequest::StartTimeHasBeenSet() const
-{
-    return m_startTimeHasBeenSet;
-}
-
 string ModifyIsolateTableRequest::GetEndTime() const
 {
     return m_endTime;
@@ -164,6 +148,22 @@ void ModifyIsolateTableRequest::SetEndTime(const string& _endTime)
 bool ModifyIsolateTableRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string ModifyIsolateTableRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void ModifyIsolateTableRequest::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool ModifyIsolateTableRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
 }
 
 

@@ -1,0 +1,76 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/adp/v20260520/model/OnceSchedule.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Adp::V20260520::Model;
+using namespace std;
+
+OnceSchedule::OnceSchedule() :
+    m_fireTimeHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome OnceSchedule::Deserialize(const rapidjson::Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("FireTime") && !value["FireTime"].IsNull())
+    {
+        if (!value["FireTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OnceSchedule.FireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fireTime = string(value["FireTime"].GetString());
+        m_fireTimeHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void OnceSchedule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+{
+
+    if (m_fireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fireTime.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+string OnceSchedule::GetFireTime() const
+{
+    return m_fireTime;
+}
+
+void OnceSchedule::SetFireTime(const string& _fireTime)
+{
+    m_fireTime = _fireTime;
+    m_fireTimeHasBeenSet = true;
+}
+
+bool OnceSchedule::FireTimeHasBeenSet() const
+{
+    return m_fireTimeHasBeenSet;
+}
+

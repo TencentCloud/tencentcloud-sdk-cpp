@@ -31,6 +31,8 @@
 #include <tencentcloud/adp/v20260520/model/CreateAgentResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateAppRequest.h>
 #include <tencentcloud/adp/v20260520/model/CreateAppResponse.h>
+#include <tencentcloud/adp/v20260520/model/CreateAppTriggerRequest.h>
+#include <tencentcloud/adp/v20260520/model/CreateAppTriggerResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateConversationRequest.h>
 #include <tencentcloud/adp/v20260520/model/CreateConversationResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreatePluginRequest.h>
@@ -43,6 +45,8 @@
 #include <tencentcloud/adp/v20260520/model/CreateSkillShareResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateSpaceRequest.h>
 #include <tencentcloud/adp/v20260520/model/CreateSpaceResponse.h>
+#include <tencentcloud/adp/v20260520/model/CreateTimerTaskRequest.h>
+#include <tencentcloud/adp/v20260520/model/CreateTimerTaskResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateVariableRequest.h>
 #include <tencentcloud/adp/v20260520/model/CreateVariableResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateWebSocketTokenRequest.h>
@@ -53,6 +57,8 @@
 #include <tencentcloud/adp/v20260520/model/DeleteAgentResponse.h>
 #include <tencentcloud/adp/v20260520/model/DeleteAppRequest.h>
 #include <tencentcloud/adp/v20260520/model/DeleteAppResponse.h>
+#include <tencentcloud/adp/v20260520/model/DeleteAppTriggerRequest.h>
+#include <tencentcloud/adp/v20260520/model/DeleteAppTriggerResponse.h>
 #include <tencentcloud/adp/v20260520/model/DeleteConversationRequest.h>
 #include <tencentcloud/adp/v20260520/model/DeleteConversationResponse.h>
 #include <tencentcloud/adp/v20260520/model/DeletePluginRequest.h>
@@ -63,6 +69,8 @@
 #include <tencentcloud/adp/v20260520/model/DeleteSkillShareResponse.h>
 #include <tencentcloud/adp/v20260520/model/DeleteSpaceRequest.h>
 #include <tencentcloud/adp/v20260520/model/DeleteSpaceResponse.h>
+#include <tencentcloud/adp/v20260520/model/DeleteTimerTaskRequest.h>
+#include <tencentcloud/adp/v20260520/model/DeleteTimerTaskResponse.h>
 #include <tencentcloud/adp/v20260520/model/DeleteVariableRequest.h>
 #include <tencentcloud/adp/v20260520/model/DeleteVariableResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeAccountListRequest.h>
@@ -77,6 +85,14 @@
 #include <tencentcloud/adp/v20260520/model/DescribeAppResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeAppSummaryListRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeAppSummaryListResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeAppTriggerRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeAppTriggerResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeAppTriggerInstanceRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeAppTriggerInstanceResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeAppTriggerRunLogListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeAppTriggerRunLogListResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeAppTriggerSummaryListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeAppTriggerSummaryListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeAuditLogListRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeAuditLogListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeAuditLogMetaRequest.h>
@@ -111,6 +127,12 @@
 #include <tencentcloud/adp/v20260520/model/DescribeSpaceListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeSystemVariableListRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeSystemVariableListResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeTimerTaskRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeTimerTaskResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeTimerTaskRunLogListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeTimerTaskRunLogListResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeTimerTaskSummaryListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeTimerTaskSummaryListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeVariableRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeVariableResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeVariableListRequest.h>
@@ -119,10 +141,16 @@
 #include <tencentcloud/adp/v20260520/model/FavoritePluginResponse.h>
 #include <tencentcloud/adp/v20260520/model/FavoriteSkillRequest.h>
 #include <tencentcloud/adp/v20260520/model/FavoriteSkillResponse.h>
+#include <tencentcloud/adp/v20260520/model/MarkAppTriggerRunLogReadRequest.h>
+#include <tencentcloud/adp/v20260520/model/MarkAppTriggerRunLogReadResponse.h>
+#include <tencentcloud/adp/v20260520/model/MarkTimerTaskRunLogReadRequest.h>
+#include <tencentcloud/adp/v20260520/model/MarkTimerTaskRunLogReadResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifyAgentRequest.h>
 #include <tencentcloud/adp/v20260520/model/ModifyAgentResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifyAppRequest.h>
 #include <tencentcloud/adp/v20260520/model/ModifyAppResponse.h>
+#include <tencentcloud/adp/v20260520/model/ModifyAppTriggerRequest.h>
+#include <tencentcloud/adp/v20260520/model/ModifyAppTriggerResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifyConversationRequest.h>
 #include <tencentcloud/adp/v20260520/model/ModifyConversationResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifyPluginRequest.h>
@@ -131,16 +159,30 @@
 #include <tencentcloud/adp/v20260520/model/ModifySkillResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifySpaceRequest.h>
 #include <tencentcloud/adp/v20260520/model/ModifySpaceResponse.h>
+#include <tencentcloud/adp/v20260520/model/ModifyTimerTaskRequest.h>
+#include <tencentcloud/adp/v20260520/model/ModifyTimerTaskResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifyVariableRequest.h>
 #include <tencentcloud/adp/v20260520/model/ModifyVariableResponse.h>
+#include <tencentcloud/adp/v20260520/model/PauseAppTriggerRequest.h>
+#include <tencentcloud/adp/v20260520/model/PauseAppTriggerResponse.h>
+#include <tencentcloud/adp/v20260520/model/PauseTimerTaskRequest.h>
+#include <tencentcloud/adp/v20260520/model/PauseTimerTaskResponse.h>
 #include <tencentcloud/adp/v20260520/model/ReleaseSkillRequest.h>
 #include <tencentcloud/adp/v20260520/model/ReleaseSkillResponse.h>
 #include <tencentcloud/adp/v20260520/model/ResetConversationRequest.h>
 #include <tencentcloud/adp/v20260520/model/ResetConversationResponse.h>
+#include <tencentcloud/adp/v20260520/model/ResumeAppTriggerRequest.h>
+#include <tencentcloud/adp/v20260520/model/ResumeAppTriggerResponse.h>
+#include <tencentcloud/adp/v20260520/model/ResumeTimerTaskRequest.h>
+#include <tencentcloud/adp/v20260520/model/ResumeTimerTaskResponse.h>
 #include <tencentcloud/adp/v20260520/model/RetryReleaseRequest.h>
 #include <tencentcloud/adp/v20260520/model/RetryReleaseResponse.h>
 #include <tencentcloud/adp/v20260520/model/RollbackReleaseRequest.h>
 #include <tencentcloud/adp/v20260520/model/RollbackReleaseResponse.h>
+#include <tencentcloud/adp/v20260520/model/RunAppTriggerNowRequest.h>
+#include <tencentcloud/adp/v20260520/model/RunAppTriggerNowResponse.h>
+#include <tencentcloud/adp/v20260520/model/RunTimerTaskNowRequest.h>
+#include <tencentcloud/adp/v20260520/model/RunTimerTaskNowResponse.h>
 #include <tencentcloud/adp/v20260520/model/UnfavoritePluginRequest.h>
 #include <tencentcloud/adp/v20260520/model/UnfavoritePluginResponse.h>
 #include <tencentcloud/adp/v20260520/model/UnfavoriteSkillRequest.h>
@@ -171,6 +213,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAppResponse> CreateAppOutcome;
                 typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::CreateAppRequest&, CreateAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAppTriggerResponse> CreateAppTriggerOutcome;
+                typedef std::future<CreateAppTriggerOutcome> CreateAppTriggerOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::CreateAppTriggerRequest&, CreateAppTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppTriggerAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateConversationResponse> CreateConversationOutcome;
                 typedef std::future<CreateConversationOutcome> CreateConversationOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::CreateConversationRequest&, CreateConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConversationAsyncHandler;
@@ -189,6 +234,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSpaceResponse> CreateSpaceOutcome;
                 typedef std::future<CreateSpaceOutcome> CreateSpaceOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::CreateSpaceRequest&, CreateSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSpaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTimerTaskResponse> CreateTimerTaskOutcome;
+                typedef std::future<CreateTimerTaskOutcome> CreateTimerTaskOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::CreateTimerTaskRequest&, CreateTimerTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTimerTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateVariableResponse> CreateVariableOutcome;
                 typedef std::future<CreateVariableOutcome> CreateVariableOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::CreateVariableRequest&, CreateVariableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVariableAsyncHandler;
@@ -204,6 +252,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAppResponse> DeleteAppOutcome;
                 typedef std::future<DeleteAppOutcome> DeleteAppOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DeleteAppRequest&, DeleteAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAppTriggerResponse> DeleteAppTriggerOutcome;
+                typedef std::future<DeleteAppTriggerOutcome> DeleteAppTriggerOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DeleteAppTriggerRequest&, DeleteAppTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAppTriggerAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteConversationResponse> DeleteConversationOutcome;
                 typedef std::future<DeleteConversationOutcome> DeleteConversationOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DeleteConversationRequest&, DeleteConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConversationAsyncHandler;
@@ -219,6 +270,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSpaceResponse> DeleteSpaceOutcome;
                 typedef std::future<DeleteSpaceOutcome> DeleteSpaceOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DeleteSpaceRequest&, DeleteSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSpaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteTimerTaskResponse> DeleteTimerTaskOutcome;
+                typedef std::future<DeleteTimerTaskOutcome> DeleteTimerTaskOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DeleteTimerTaskRequest&, DeleteTimerTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTimerTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteVariableResponse> DeleteVariableOutcome;
                 typedef std::future<DeleteVariableOutcome> DeleteVariableOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DeleteVariableRequest&, DeleteVariableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVariableAsyncHandler;
@@ -240,6 +294,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAppSummaryListResponse> DescribeAppSummaryListOutcome;
                 typedef std::future<DescribeAppSummaryListOutcome> DescribeAppSummaryListOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeAppSummaryListRequest&, DescribeAppSummaryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppSummaryListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAppTriggerResponse> DescribeAppTriggerOutcome;
+                typedef std::future<DescribeAppTriggerOutcome> DescribeAppTriggerOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeAppTriggerRequest&, DescribeAppTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppTriggerAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAppTriggerInstanceResponse> DescribeAppTriggerInstanceOutcome;
+                typedef std::future<DescribeAppTriggerInstanceOutcome> DescribeAppTriggerInstanceOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeAppTriggerInstanceRequest&, DescribeAppTriggerInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppTriggerInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAppTriggerRunLogListResponse> DescribeAppTriggerRunLogListOutcome;
+                typedef std::future<DescribeAppTriggerRunLogListOutcome> DescribeAppTriggerRunLogListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeAppTriggerRunLogListRequest&, DescribeAppTriggerRunLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppTriggerRunLogListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAppTriggerSummaryListResponse> DescribeAppTriggerSummaryListOutcome;
+                typedef std::future<DescribeAppTriggerSummaryListOutcome> DescribeAppTriggerSummaryListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeAppTriggerSummaryListRequest&, DescribeAppTriggerSummaryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppTriggerSummaryListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAuditLogListResponse> DescribeAuditLogListOutcome;
                 typedef std::future<DescribeAuditLogListOutcome> DescribeAuditLogListOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeAuditLogListRequest&, DescribeAuditLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogListAsyncHandler;
@@ -291,6 +357,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSystemVariableListResponse> DescribeSystemVariableListOutcome;
                 typedef std::future<DescribeSystemVariableListOutcome> DescribeSystemVariableListOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeSystemVariableListRequest&, DescribeSystemVariableListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSystemVariableListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTimerTaskResponse> DescribeTimerTaskOutcome;
+                typedef std::future<DescribeTimerTaskOutcome> DescribeTimerTaskOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeTimerTaskRequest&, DescribeTimerTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTimerTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTimerTaskRunLogListResponse> DescribeTimerTaskRunLogListOutcome;
+                typedef std::future<DescribeTimerTaskRunLogListOutcome> DescribeTimerTaskRunLogListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeTimerTaskRunLogListRequest&, DescribeTimerTaskRunLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTimerTaskRunLogListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTimerTaskSummaryListResponse> DescribeTimerTaskSummaryListOutcome;
+                typedef std::future<DescribeTimerTaskSummaryListOutcome> DescribeTimerTaskSummaryListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeTimerTaskSummaryListRequest&, DescribeTimerTaskSummaryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTimerTaskSummaryListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVariableResponse> DescribeVariableOutcome;
                 typedef std::future<DescribeVariableOutcome> DescribeVariableOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeVariableRequest&, DescribeVariableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVariableAsyncHandler;
@@ -303,12 +378,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::FavoriteSkillResponse> FavoriteSkillOutcome;
                 typedef std::future<FavoriteSkillOutcome> FavoriteSkillOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::FavoriteSkillRequest&, FavoriteSkillOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FavoriteSkillAsyncHandler;
+                typedef Outcome<Core::Error, Model::MarkAppTriggerRunLogReadResponse> MarkAppTriggerRunLogReadOutcome;
+                typedef std::future<MarkAppTriggerRunLogReadOutcome> MarkAppTriggerRunLogReadOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::MarkAppTriggerRunLogReadRequest&, MarkAppTriggerRunLogReadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MarkAppTriggerRunLogReadAsyncHandler;
+                typedef Outcome<Core::Error, Model::MarkTimerTaskRunLogReadResponse> MarkTimerTaskRunLogReadOutcome;
+                typedef std::future<MarkTimerTaskRunLogReadOutcome> MarkTimerTaskRunLogReadOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::MarkTimerTaskRunLogReadRequest&, MarkTimerTaskRunLogReadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MarkTimerTaskRunLogReadAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAgentResponse> ModifyAgentOutcome;
                 typedef std::future<ModifyAgentOutcome> ModifyAgentOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ModifyAgentRequest&, ModifyAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAgentAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAppResponse> ModifyAppOutcome;
                 typedef std::future<ModifyAppOutcome> ModifyAppOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ModifyAppRequest&, ModifyAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAppTriggerResponse> ModifyAppTriggerOutcome;
+                typedef std::future<ModifyAppTriggerOutcome> ModifyAppTriggerOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::ModifyAppTriggerRequest&, ModifyAppTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAppTriggerAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyConversationResponse> ModifyConversationOutcome;
                 typedef std::future<ModifyConversationOutcome> ModifyConversationOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ModifyConversationRequest&, ModifyConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConversationAsyncHandler;
@@ -321,21 +405,42 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifySpaceResponse> ModifySpaceOutcome;
                 typedef std::future<ModifySpaceOutcome> ModifySpaceOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ModifySpaceRequest&, ModifySpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySpaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTimerTaskResponse> ModifyTimerTaskOutcome;
+                typedef std::future<ModifyTimerTaskOutcome> ModifyTimerTaskOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::ModifyTimerTaskRequest&, ModifyTimerTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTimerTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyVariableResponse> ModifyVariableOutcome;
                 typedef std::future<ModifyVariableOutcome> ModifyVariableOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ModifyVariableRequest&, ModifyVariableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVariableAsyncHandler;
+                typedef Outcome<Core::Error, Model::PauseAppTriggerResponse> PauseAppTriggerOutcome;
+                typedef std::future<PauseAppTriggerOutcome> PauseAppTriggerOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::PauseAppTriggerRequest&, PauseAppTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PauseAppTriggerAsyncHandler;
+                typedef Outcome<Core::Error, Model::PauseTimerTaskResponse> PauseTimerTaskOutcome;
+                typedef std::future<PauseTimerTaskOutcome> PauseTimerTaskOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::PauseTimerTaskRequest&, PauseTimerTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PauseTimerTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReleaseSkillResponse> ReleaseSkillOutcome;
                 typedef std::future<ReleaseSkillOutcome> ReleaseSkillOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ReleaseSkillRequest&, ReleaseSkillOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseSkillAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetConversationResponse> ResetConversationOutcome;
                 typedef std::future<ResetConversationOutcome> ResetConversationOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ResetConversationRequest&, ResetConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetConversationAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResumeAppTriggerResponse> ResumeAppTriggerOutcome;
+                typedef std::future<ResumeAppTriggerOutcome> ResumeAppTriggerOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::ResumeAppTriggerRequest&, ResumeAppTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeAppTriggerAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResumeTimerTaskResponse> ResumeTimerTaskOutcome;
+                typedef std::future<ResumeTimerTaskOutcome> ResumeTimerTaskOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::ResumeTimerTaskRequest&, ResumeTimerTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeTimerTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::RetryReleaseResponse> RetryReleaseOutcome;
                 typedef std::future<RetryReleaseOutcome> RetryReleaseOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::RetryReleaseRequest&, RetryReleaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RetryReleaseAsyncHandler;
                 typedef Outcome<Core::Error, Model::RollbackReleaseResponse> RollbackReleaseOutcome;
                 typedef std::future<RollbackReleaseOutcome> RollbackReleaseOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::RollbackReleaseRequest&, RollbackReleaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollbackReleaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::RunAppTriggerNowResponse> RunAppTriggerNowOutcome;
+                typedef std::future<RunAppTriggerNowOutcome> RunAppTriggerNowOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::RunAppTriggerNowRequest&, RunAppTriggerNowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunAppTriggerNowAsyncHandler;
+                typedef Outcome<Core::Error, Model::RunTimerTaskNowResponse> RunTimerTaskNowOutcome;
+                typedef std::future<RunTimerTaskNowOutcome> RunTimerTaskNowOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::RunTimerTaskNowRequest&, RunTimerTaskNowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunTimerTaskNowAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnfavoritePluginResponse> UnfavoritePluginOutcome;
                 typedef std::future<UnfavoritePluginOutcome> UnfavoritePluginOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::UnfavoritePluginRequest&, UnfavoritePluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnfavoritePluginAsyncHandler;
@@ -380,6 +485,15 @@ namespace TencentCloud
                 CreateAppOutcome CreateApp(const Model::CreateAppRequest &request);
                 void CreateAppAsync(const Model::CreateAppRequest& request, const CreateAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAppOutcomeCallable CreateAppCallable(const Model::CreateAppRequest& request);
+
+                /**
+                 *CreateAppTrigger
+                 * @param req CreateAppTriggerRequest
+                 * @return CreateAppTriggerOutcome
+                 */
+                CreateAppTriggerOutcome CreateAppTrigger(const Model::CreateAppTriggerRequest &request);
+                void CreateAppTriggerAsync(const Model::CreateAppTriggerRequest& request, const CreateAppTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAppTriggerOutcomeCallable CreateAppTriggerCallable(const Model::CreateAppTriggerRequest& request);
 
                 /**
                  *新建会话
@@ -436,6 +550,15 @@ namespace TencentCloud
                 CreateSpaceOutcomeCallable CreateSpaceCallable(const Model::CreateSpaceRequest& request);
 
                 /**
+                 *CreateTimerTask
+                 * @param req CreateTimerTaskRequest
+                 * @return CreateTimerTaskOutcome
+                 */
+                CreateTimerTaskOutcome CreateTimerTask(const Model::CreateTimerTaskRequest &request);
+                void CreateTimerTaskAsync(const Model::CreateTimerTaskRequest& request, const CreateTimerTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTimerTaskOutcomeCallable CreateTimerTaskCallable(const Model::CreateTimerTaskRequest& request);
+
+                /**
                  *创建参数变量
                  * @param req CreateVariableRequest
                  * @return CreateVariableOutcome
@@ -481,6 +604,15 @@ namespace TencentCloud
                 DeleteAppOutcomeCallable DeleteAppCallable(const Model::DeleteAppRequest& request);
 
                 /**
+                 *DeleteAppTrigger
+                 * @param req DeleteAppTriggerRequest
+                 * @return DeleteAppTriggerOutcome
+                 */
+                DeleteAppTriggerOutcome DeleteAppTrigger(const Model::DeleteAppTriggerRequest &request);
+                void DeleteAppTriggerAsync(const Model::DeleteAppTriggerRequest& request, const DeleteAppTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAppTriggerOutcomeCallable DeleteAppTriggerCallable(const Model::DeleteAppTriggerRequest& request);
+
+                /**
                  *删除会话
                  * @param req DeleteConversationRequest
                  * @return DeleteConversationOutcome
@@ -524,6 +656,15 @@ namespace TencentCloud
                 DeleteSpaceOutcome DeleteSpace(const Model::DeleteSpaceRequest &request);
                 void DeleteSpaceAsync(const Model::DeleteSpaceRequest& request, const DeleteSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSpaceOutcomeCallable DeleteSpaceCallable(const Model::DeleteSpaceRequest& request);
+
+                /**
+                 *DeleteTimerTask
+                 * @param req DeleteTimerTaskRequest
+                 * @return DeleteTimerTaskOutcome
+                 */
+                DeleteTimerTaskOutcome DeleteTimerTask(const Model::DeleteTimerTaskRequest &request);
+                void DeleteTimerTaskAsync(const Model::DeleteTimerTaskRequest& request, const DeleteTimerTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTimerTaskOutcomeCallable DeleteTimerTaskCallable(const Model::DeleteTimerTaskRequest& request);
 
                 /**
                  *删除参数变量
@@ -587,6 +728,42 @@ namespace TencentCloud
                 DescribeAppSummaryListOutcome DescribeAppSummaryList(const Model::DescribeAppSummaryListRequest &request);
                 void DescribeAppSummaryListAsync(const Model::DescribeAppSummaryListRequest& request, const DescribeAppSummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAppSummaryListOutcomeCallable DescribeAppSummaryListCallable(const Model::DescribeAppSummaryListRequest& request);
+
+                /**
+                 *DescribeAppTrigger
+                 * @param req DescribeAppTriggerRequest
+                 * @return DescribeAppTriggerOutcome
+                 */
+                DescribeAppTriggerOutcome DescribeAppTrigger(const Model::DescribeAppTriggerRequest &request);
+                void DescribeAppTriggerAsync(const Model::DescribeAppTriggerRequest& request, const DescribeAppTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAppTriggerOutcomeCallable DescribeAppTriggerCallable(const Model::DescribeAppTriggerRequest& request);
+
+                /**
+                 *DescribeAppTriggerInstance
+                 * @param req DescribeAppTriggerInstanceRequest
+                 * @return DescribeAppTriggerInstanceOutcome
+                 */
+                DescribeAppTriggerInstanceOutcome DescribeAppTriggerInstance(const Model::DescribeAppTriggerInstanceRequest &request);
+                void DescribeAppTriggerInstanceAsync(const Model::DescribeAppTriggerInstanceRequest& request, const DescribeAppTriggerInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAppTriggerInstanceOutcomeCallable DescribeAppTriggerInstanceCallable(const Model::DescribeAppTriggerInstanceRequest& request);
+
+                /**
+                 *DescribeAppTriggerRunLogList
+                 * @param req DescribeAppTriggerRunLogListRequest
+                 * @return DescribeAppTriggerRunLogListOutcome
+                 */
+                DescribeAppTriggerRunLogListOutcome DescribeAppTriggerRunLogList(const Model::DescribeAppTriggerRunLogListRequest &request);
+                void DescribeAppTriggerRunLogListAsync(const Model::DescribeAppTriggerRunLogListRequest& request, const DescribeAppTriggerRunLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAppTriggerRunLogListOutcomeCallable DescribeAppTriggerRunLogListCallable(const Model::DescribeAppTriggerRunLogListRequest& request);
+
+                /**
+                 *DescribeAppTriggerSummaryList
+                 * @param req DescribeAppTriggerSummaryListRequest
+                 * @return DescribeAppTriggerSummaryListOutcome
+                 */
+                DescribeAppTriggerSummaryListOutcome DescribeAppTriggerSummaryList(const Model::DescribeAppTriggerSummaryListRequest &request);
+                void DescribeAppTriggerSummaryListAsync(const Model::DescribeAppTriggerSummaryListRequest& request, const DescribeAppTriggerSummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAppTriggerSummaryListOutcomeCallable DescribeAppTriggerSummaryListCallable(const Model::DescribeAppTriggerSummaryListRequest& request);
 
                 /**
                  *查看操作日志列表
@@ -742,6 +919,33 @@ namespace TencentCloud
                 DescribeSystemVariableListOutcomeCallable DescribeSystemVariableListCallable(const Model::DescribeSystemVariableListRequest& request);
 
                 /**
+                 *DescribeTimerTask
+                 * @param req DescribeTimerTaskRequest
+                 * @return DescribeTimerTaskOutcome
+                 */
+                DescribeTimerTaskOutcome DescribeTimerTask(const Model::DescribeTimerTaskRequest &request);
+                void DescribeTimerTaskAsync(const Model::DescribeTimerTaskRequest& request, const DescribeTimerTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTimerTaskOutcomeCallable DescribeTimerTaskCallable(const Model::DescribeTimerTaskRequest& request);
+
+                /**
+                 *查询定时任务执行记录列表
+                 * @param req DescribeTimerTaskRunLogListRequest
+                 * @return DescribeTimerTaskRunLogListOutcome
+                 */
+                DescribeTimerTaskRunLogListOutcome DescribeTimerTaskRunLogList(const Model::DescribeTimerTaskRunLogListRequest &request);
+                void DescribeTimerTaskRunLogListAsync(const Model::DescribeTimerTaskRunLogListRequest& request, const DescribeTimerTaskRunLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTimerTaskRunLogListOutcomeCallable DescribeTimerTaskRunLogListCallable(const Model::DescribeTimerTaskRunLogListRequest& request);
+
+                /**
+                 *查询定时任务列表
+                 * @param req DescribeTimerTaskSummaryListRequest
+                 * @return DescribeTimerTaskSummaryListOutcome
+                 */
+                DescribeTimerTaskSummaryListOutcome DescribeTimerTaskSummaryList(const Model::DescribeTimerTaskSummaryListRequest &request);
+                void DescribeTimerTaskSummaryListAsync(const Model::DescribeTimerTaskSummaryListRequest& request, const DescribeTimerTaskSummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTimerTaskSummaryListOutcomeCallable DescribeTimerTaskSummaryListCallable(const Model::DescribeTimerTaskSummaryListRequest& request);
+
+                /**
                  *获取参数变量
                  * @param req DescribeVariableRequest
                  * @return DescribeVariableOutcome
@@ -778,6 +982,24 @@ namespace TencentCloud
                 FavoriteSkillOutcomeCallable FavoriteSkillCallable(const Model::FavoriteSkillRequest& request);
 
                 /**
+                 *MarkAppTriggerRunLogRead
+                 * @param req MarkAppTriggerRunLogReadRequest
+                 * @return MarkAppTriggerRunLogReadOutcome
+                 */
+                MarkAppTriggerRunLogReadOutcome MarkAppTriggerRunLogRead(const Model::MarkAppTriggerRunLogReadRequest &request);
+                void MarkAppTriggerRunLogReadAsync(const Model::MarkAppTriggerRunLogReadRequest& request, const MarkAppTriggerRunLogReadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                MarkAppTriggerRunLogReadOutcomeCallable MarkAppTriggerRunLogReadCallable(const Model::MarkAppTriggerRunLogReadRequest& request);
+
+                /**
+                 *MarkTimerTaskRunLogRead
+                 * @param req MarkTimerTaskRunLogReadRequest
+                 * @return MarkTimerTaskRunLogReadOutcome
+                 */
+                MarkTimerTaskRunLogReadOutcome MarkTimerTaskRunLogRead(const Model::MarkTimerTaskRunLogReadRequest &request);
+                void MarkTimerTaskRunLogReadAsync(const Model::MarkTimerTaskRunLogReadRequest& request, const MarkTimerTaskRunLogReadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                MarkTimerTaskRunLogReadOutcomeCallable MarkTimerTaskRunLogReadCallable(const Model::MarkTimerTaskRunLogReadRequest& request);
+
+                /**
                  *修改Agent配置信息
                  * @param req ModifyAgentRequest
                  * @return ModifyAgentOutcome
@@ -794,6 +1016,15 @@ namespace TencentCloud
                 ModifyAppOutcome ModifyApp(const Model::ModifyAppRequest &request);
                 void ModifyAppAsync(const Model::ModifyAppRequest& request, const ModifyAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAppOutcomeCallable ModifyAppCallable(const Model::ModifyAppRequest& request);
+
+                /**
+                 *ModifyAppTrigger
+                 * @param req ModifyAppTriggerRequest
+                 * @return ModifyAppTriggerOutcome
+                 */
+                ModifyAppTriggerOutcome ModifyAppTrigger(const Model::ModifyAppTriggerRequest &request);
+                void ModifyAppTriggerAsync(const Model::ModifyAppTriggerRequest& request, const ModifyAppTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAppTriggerOutcomeCallable ModifyAppTriggerCallable(const Model::ModifyAppTriggerRequest& request);
 
                 /**
                  *修改会话信息
@@ -832,6 +1063,15 @@ namespace TencentCloud
                 ModifySpaceOutcomeCallable ModifySpaceCallable(const Model::ModifySpaceRequest& request);
 
                 /**
+                 *ModifyTimerTask
+                 * @param req ModifyTimerTaskRequest
+                 * @return ModifyTimerTaskOutcome
+                 */
+                ModifyTimerTaskOutcome ModifyTimerTask(const Model::ModifyTimerTaskRequest &request);
+                void ModifyTimerTaskAsync(const Model::ModifyTimerTaskRequest& request, const ModifyTimerTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTimerTaskOutcomeCallable ModifyTimerTaskCallable(const Model::ModifyTimerTaskRequest& request);
+
+                /**
                  *更新参数变量
                  * @param req ModifyVariableRequest
                  * @return ModifyVariableOutcome
@@ -839,6 +1079,24 @@ namespace TencentCloud
                 ModifyVariableOutcome ModifyVariable(const Model::ModifyVariableRequest &request);
                 void ModifyVariableAsync(const Model::ModifyVariableRequest& request, const ModifyVariableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyVariableOutcomeCallable ModifyVariableCallable(const Model::ModifyVariableRequest& request);
+
+                /**
+                 *PauseAppTrigger
+                 * @param req PauseAppTriggerRequest
+                 * @return PauseAppTriggerOutcome
+                 */
+                PauseAppTriggerOutcome PauseAppTrigger(const Model::PauseAppTriggerRequest &request);
+                void PauseAppTriggerAsync(const Model::PauseAppTriggerRequest& request, const PauseAppTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PauseAppTriggerOutcomeCallable PauseAppTriggerCallable(const Model::PauseAppTriggerRequest& request);
+
+                /**
+                 *PauseTimerTask
+                 * @param req PauseTimerTaskRequest
+                 * @return PauseTimerTaskOutcome
+                 */
+                PauseTimerTaskOutcome PauseTimerTask(const Model::PauseTimerTaskRequest &request);
+                void PauseTimerTaskAsync(const Model::PauseTimerTaskRequest& request, const PauseTimerTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PauseTimerTaskOutcomeCallable PauseTimerTaskCallable(const Model::PauseTimerTaskRequest& request);
 
                 /**
                  *上架skill
@@ -859,6 +1117,24 @@ namespace TencentCloud
                 ResetConversationOutcomeCallable ResetConversationCallable(const Model::ResetConversationRequest& request);
 
                 /**
+                 *ResumeAppTrigger
+                 * @param req ResumeAppTriggerRequest
+                 * @return ResumeAppTriggerOutcome
+                 */
+                ResumeAppTriggerOutcome ResumeAppTrigger(const Model::ResumeAppTriggerRequest &request);
+                void ResumeAppTriggerAsync(const Model::ResumeAppTriggerRequest& request, const ResumeAppTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResumeAppTriggerOutcomeCallable ResumeAppTriggerCallable(const Model::ResumeAppTriggerRequest& request);
+
+                /**
+                 *ResumeTimerTask
+                 * @param req ResumeTimerTaskRequest
+                 * @return ResumeTimerTaskOutcome
+                 */
+                ResumeTimerTaskOutcome ResumeTimerTask(const Model::ResumeTimerTaskRequest &request);
+                void ResumeTimerTaskAsync(const Model::ResumeTimerTaskRequest& request, const ResumeTimerTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResumeTimerTaskOutcomeCallable ResumeTimerTaskCallable(const Model::ResumeTimerTaskRequest& request);
+
+                /**
                  *重试发布(发布暂停之后再次重新发布)
                  * @param req RetryReleaseRequest
                  * @return RetryReleaseOutcome
@@ -875,6 +1151,24 @@ namespace TencentCloud
                 RollbackReleaseOutcome RollbackRelease(const Model::RollbackReleaseRequest &request);
                 void RollbackReleaseAsync(const Model::RollbackReleaseRequest& request, const RollbackReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RollbackReleaseOutcomeCallable RollbackReleaseCallable(const Model::RollbackReleaseRequest& request);
+
+                /**
+                 *RunAppTriggerNow
+                 * @param req RunAppTriggerNowRequest
+                 * @return RunAppTriggerNowOutcome
+                 */
+                RunAppTriggerNowOutcome RunAppTriggerNow(const Model::RunAppTriggerNowRequest &request);
+                void RunAppTriggerNowAsync(const Model::RunAppTriggerNowRequest& request, const RunAppTriggerNowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RunAppTriggerNowOutcomeCallable RunAppTriggerNowCallable(const Model::RunAppTriggerNowRequest& request);
+
+                /**
+                 *RunTimerTaskNow
+                 * @param req RunTimerTaskNowRequest
+                 * @return RunTimerTaskNowOutcome
+                 */
+                RunTimerTaskNowOutcome RunTimerTaskNow(const Model::RunTimerTaskNowRequest &request);
+                void RunTimerTaskNowAsync(const Model::RunTimerTaskNowRequest& request, const RunTimerTaskNowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RunTimerTaskNowOutcomeCallable RunTimerTaskNowCallable(const Model::RunTimerTaskNowRequest& request);
 
                 /**
                  *取消收藏插件

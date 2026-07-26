@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>0 成功  非0失败</p>
-                     * @return ReturnCode <p>0 成功  非0失败</p>
+                     * 获取处理返回码：0 表示成功。
+                     * @return ReturnCode 处理返回码：0 表示成功。
                      * 
                      */
                     int64_t GetReturnCode() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool ReturnCodeHasBeenSet() const;
 
                     /**
-                     * 获取<p>success 成功 其他失败</p>
-                     * @return ReturnMsg <p>success 成功 其他失败</p>
+                     * 获取处理结果信息，成功时为 success。
+                     * @return ReturnMsg 处理结果信息，成功时为 success。
                      * 
                      */
                     std::string GetReturnMsg() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>0 成功  非0失败</p>
+                     * 处理返回码：0 表示成功。
                      */
                     int64_t m_returnCode;
                     bool m_returnCodeHasBeenSet;
 
                     /**
-                     * <p>success 成功 其他失败</p>
+                     * 处理结果信息，成功时为 success。
                      */
                     std::string m_returnMsg;
                     bool m_returnMsgHasBeenSet;

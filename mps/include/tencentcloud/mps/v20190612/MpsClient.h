@@ -35,6 +35,8 @@
 #include <tencentcloud/mps/v20190612/model/BatchStartStreamLinkFlowResponse.h>
 #include <tencentcloud/mps/v20190612/model/BatchStopStreamLinkFlowRequest.h>
 #include <tencentcloud/mps/v20190612/model/BatchStopStreamLinkFlowResponse.h>
+#include <tencentcloud/mps/v20190612/model/CloneViralRequest.h>
+#include <tencentcloud/mps/v20190612/model/CloneViralResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateAIAnalysisTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateAIAnalysisTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateAIRecognitionTemplateRequest.h>
@@ -215,6 +217,8 @@
 #include <tencentcloud/mps/v20190612/model/DescribeBatchTaskDetailResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeBlindWatermarkTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeBlindWatermarkTemplatesResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeCloneViralTaskRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeCloneViralTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeContentReviewTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeContentReviewTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeDesignTaskRequest.h>
@@ -491,6 +495,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BatchStopStreamLinkFlowResponse> BatchStopStreamLinkFlowOutcome;
                 typedef std::future<BatchStopStreamLinkFlowOutcome> BatchStopStreamLinkFlowOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::BatchStopStreamLinkFlowRequest&, BatchStopStreamLinkFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchStopStreamLinkFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloneViralResponse> CloneViralOutcome;
+                typedef std::future<CloneViralOutcome> CloneViralOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CloneViralRequest&, CloneViralOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloneViralAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAIAnalysisTemplateResponse> CreateAIAnalysisTemplateOutcome;
                 typedef std::future<CreateAIAnalysisTemplateOutcome> CreateAIAnalysisTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateAIAnalysisTemplateRequest&, CreateAIAnalysisTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAIAnalysisTemplateAsyncHandler;
@@ -761,6 +768,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBlindWatermarkTemplatesResponse> DescribeBlindWatermarkTemplatesOutcome;
                 typedef std::future<DescribeBlindWatermarkTemplatesOutcome> DescribeBlindWatermarkTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeBlindWatermarkTemplatesRequest&, DescribeBlindWatermarkTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlindWatermarkTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloneViralTaskResponse> DescribeCloneViralTaskOutcome;
+                typedef std::future<DescribeCloneViralTaskOutcome> DescribeCloneViralTaskOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeCloneViralTaskRequest&, DescribeCloneViralTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloneViralTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeContentReviewTemplatesResponse> DescribeContentReviewTemplatesOutcome;
                 typedef std::future<DescribeContentReviewTemplatesOutcome> DescribeContentReviewTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeContentReviewTemplatesRequest&, DescribeContentReviewTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContentReviewTemplatesAsyncHandler;
@@ -1184,6 +1194,15 @@ namespace TencentCloud
                 BatchStopStreamLinkFlowOutcome BatchStopStreamLinkFlow(const Model::BatchStopStreamLinkFlowRequest &request);
                 void BatchStopStreamLinkFlowAsync(const Model::BatchStopStreamLinkFlowRequest& request, const BatchStopStreamLinkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BatchStopStreamLinkFlowOutcomeCallable BatchStopStreamLinkFlowCallable(const Model::BatchStopStreamLinkFlowRequest& request);
+
+                /**
+                 *爆款复刻。输入爆款参考视频+商品图，生成风格/节奏对齐的视频
+                 * @param req CloneViralRequest
+                 * @return CloneViralOutcome
+                 */
+                CloneViralOutcome CloneViral(const Model::CloneViralRequest &request);
+                void CloneViralAsync(const Model::CloneViralRequest& request, const CloneViralAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloneViralOutcomeCallable CloneViralCallable(const Model::CloneViralRequest& request);
 
                 /**
                  *创建用户自定义内容分析模板，数量上限：50。
@@ -2025,6 +2044,15 @@ namespace TencentCloud
                 DescribeBlindWatermarkTemplatesOutcome DescribeBlindWatermarkTemplates(const Model::DescribeBlindWatermarkTemplatesRequest &request);
                 void DescribeBlindWatermarkTemplatesAsync(const Model::DescribeBlindWatermarkTemplatesRequest& request, const DescribeBlindWatermarkTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBlindWatermarkTemplatesOutcomeCallable DescribeBlindWatermarkTemplatesCallable(const Model::DescribeBlindWatermarkTemplatesRequest& request);
+
+                /**
+                 *查询爆款复刻任务结果
+                 * @param req DescribeCloneViralTaskRequest
+                 * @return DescribeCloneViralTaskOutcome
+                 */
+                DescribeCloneViralTaskOutcome DescribeCloneViralTask(const Model::DescribeCloneViralTaskRequest &request);
+                void DescribeCloneViralTaskAsync(const Model::DescribeCloneViralTaskRequest& request, const DescribeCloneViralTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloneViralTaskOutcomeCallable DescribeCloneViralTaskCallable(const Model::DescribeCloneViralTaskRequest& request);
 
                 /**
                  *根据智能审核模板唯一标识，获取智能审核模板详情列表。返回结果包含符合条件的所有用户自定义模板及系统预置智能审核模板。

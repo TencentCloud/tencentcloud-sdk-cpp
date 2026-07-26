@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>创建成功后返回新策略ID列表</p>
-                     * @return RuleUuids <p>创建成功后返回新策略ID列表</p>
+                     * 获取新增规则的 ID 列表，顺序与 Rules 一致。
+                     * @return RuleUuids 新增规则的 ID 列表，顺序与 Rules 一致。
                      * 
                      */
                     std::vector<int64_t> GetRuleUuids() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>创建成功后返回新策略ID列表</p>
+                     * 新增规则的 ID 列表，顺序与 Rules 一致。
                      */
                     std::vector<int64_t> m_ruleUuids;
                     bool m_ruleUuidsHasBeenSet;

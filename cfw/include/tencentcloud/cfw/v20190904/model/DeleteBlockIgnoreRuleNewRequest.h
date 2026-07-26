@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>是否删除全部</p>
-                     * @return DeleteAll <p>是否删除全部</p>
+                     * 获取删除模式，必传且只接受整数 0 或 1。0 表示按 Rules 中的 RuleType 与 Ioc 删除匹配记录；1 表示按 ShowType 清空对应列表，其中 blocklist 删除全部 RuleType=1 记录，whitelist 删除全部 RuleType>=2 记录，风险极高。
+                     * @return DeleteAll 删除模式，必传且只接受整数 0 或 1。0 表示按 Rules 中的 RuleType 与 Ioc 删除匹配记录；1 表示按 ShowType 清空对应列表，其中 blocklist 删除全部 RuleType=1 记录，whitelist 删除全部 RuleType>=2 记录，风险极高。
                      * 
                      */
                     int64_t GetDeleteAll() const;
 
                     /**
-                     * 设置<p>是否删除全部</p>
-                     * @param _deleteAll <p>是否删除全部</p>
+                     * 设置删除模式，必传且只接受整数 0 或 1。0 表示按 Rules 中的 RuleType 与 Ioc 删除匹配记录；1 表示按 ShowType 清空对应列表，其中 blocklist 删除全部 RuleType=1 记录，whitelist 删除全部 RuleType>=2 记录，风险极高。
+                     * @param _deleteAll 删除模式，必传且只接受整数 0 或 1。0 表示按 Rules 中的 RuleType 与 Ioc 删除匹配记录；1 表示按 ShowType 清空对应列表，其中 blocklist 删除全部 RuleType=1 记录，whitelist 删除全部 RuleType>=2 记录，风险极高。
                      * 
                      */
                     void SetDeleteAll(const int64_t& _deleteAll);
@@ -65,36 +65,15 @@ namespace TencentCloud
                     bool DeleteAllHasBeenSet() const;
 
                     /**
-                     * 获取<p>blocklist 封禁列表 whitelist 白名单列表</p>
-                     * @return ShowType <p>blocklist 封禁列表 whitelist 白名单列表</p>
-                     * 
-                     */
-                    std::string GetShowType() const;
-
-                    /**
-                     * 设置<p>blocklist 封禁列表 whitelist 白名单列表</p>
-                     * @param _showType <p>blocklist 封禁列表 whitelist 白名单列表</p>
-                     * 
-                     */
-                    void SetShowType(const std::string& _showType);
-
-                    /**
-                     * 判断参数 ShowType 是否已赋值
-                     * @return ShowType 是否已赋值
-                     * 
-                     */
-                    bool ShowTypeHasBeenSet() const;
-
-                    /**
-                     * 获取<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
-                     * @return CfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * 获取<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>。
+                     * @return CfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>。
                      * 
                      */
                     std::string GetCfwAiAgentOperationSource() const;
 
                     /**
-                     * 设置<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
-                     * @param _cfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * 设置<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>。
+                     * @param _cfwAiAgentOperationSource <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>。
                      * 
                      */
                     void SetCfwAiAgentOperationSource(const std::string& _cfwAiAgentOperationSource);
@@ -107,15 +86,36 @@ namespace TencentCloud
                     bool CfwAiAgentOperationSourceHasBeenSet() const;
 
                     /**
-                     * 获取<p>规则列表</p>
-                     * @return Rules <p>规则列表</p>
+                     * 获取可省略。当前处理逻辑不读取该顶层字段；传入值不参与精确删除或整表删除的目标选择。
+                     * @return RuleType 可省略。当前处理逻辑不读取该顶层字段；传入值不参与精确删除或整表删除的目标选择。
+                     * 
+                     */
+                    int64_t GetRuleType() const;
+
+                    /**
+                     * 设置可省略。当前处理逻辑不读取该顶层字段；传入值不参与精确删除或整表删除的目标选择。
+                     * @param _ruleType 可省略。当前处理逻辑不读取该顶层字段；传入值不参与精确删除或整表删除的目标选择。
+                     * 
+                     */
+                    void SetRuleType(const int64_t& _ruleType);
+
+                    /**
+                     * 判断参数 RuleType 是否已赋值
+                     * @return RuleType 是否已赋值
+                     * 
+                     */
+                    bool RuleTypeHasBeenSet() const;
+
+                    /**
+                     * 获取待删除规则列表。DeleteAll=0 时必填，每项删除所有与 RuleType、Ioc 匹配的记录；DirectionList 不参与目标匹配，但 RuleType=1、2、3 时必须使用 DescribeBlockIgnoreList 返回的完整方向列表。同一请求混合 RuleType 时，引擎更新使用最后一项的 RuleType。DeleteAll=1 时省略。
+                     * @return Rules 待删除规则列表。DeleteAll=0 时必填，每项删除所有与 RuleType、Ioc 匹配的记录；DirectionList 不参与目标匹配，但 RuleType=1、2、3 时必须使用 DescribeBlockIgnoreList 返回的完整方向列表。同一请求混合 RuleType 时，引擎更新使用最后一项的 RuleType。DeleteAll=1 时省略。
                      * 
                      */
                     std::vector<BanAndAllowRuleDel> GetRules() const;
 
                     /**
-                     * 设置<p>规则列表</p>
-                     * @param _rules <p>规则列表</p>
+                     * 设置待删除规则列表。DeleteAll=0 时必填，每项删除所有与 RuleType、Ioc 匹配的记录；DirectionList 不参与目标匹配，但 RuleType=1、2、3 时必须使用 DescribeBlockIgnoreList 返回的完整方向列表。同一请求混合 RuleType 时，引擎更新使用最后一项的 RuleType。DeleteAll=1 时省略。
+                     * @param _rules 待删除规则列表。DeleteAll=0 时必填，每项删除所有与 RuleType、Ioc 匹配的记录；DirectionList 不参与目标匹配，但 RuleType=1、2、3 时必须使用 DescribeBlockIgnoreList 返回的完整方向列表。同一请求混合 RuleType 时，引擎更新使用最后一项的 RuleType。DeleteAll=1 时省略。
                      * 
                      */
                     void SetRules(const std::vector<BanAndAllowRuleDel>& _rules);
@@ -128,57 +128,57 @@ namespace TencentCloud
                     bool RulesHasBeenSet() const;
 
                     /**
-                     * 获取<p>封禁：1，放通：100，<br>主要用于全部删除时区分列表类型</p>
-                     * @return RuleType <p>封禁：1，放通：100，<br>主要用于全部删除时区分列表类型</p>
+                     * 获取列表类型，处理时必传且只接受 blocklist 或 whitelist。DeleteAll=1 时，blocklist 选择全部 RuleType=1 记录，whitelist 选择全部 RuleType>=2 记录；DeleteAll=0 时该字段仅校验取值，不限制 Rules 指定的删除目标。
+                     * @return ShowType 列表类型，处理时必传且只接受 blocklist 或 whitelist。DeleteAll=1 时，blocklist 选择全部 RuleType=1 记录，whitelist 选择全部 RuleType>=2 记录；DeleteAll=0 时该字段仅校验取值，不限制 Rules 指定的删除目标。
                      * 
                      */
-                    int64_t GetRuleType() const;
+                    std::string GetShowType() const;
 
                     /**
-                     * 设置<p>封禁：1，放通：100，<br>主要用于全部删除时区分列表类型</p>
-                     * @param _ruleType <p>封禁：1，放通：100，<br>主要用于全部删除时区分列表类型</p>
+                     * 设置列表类型，处理时必传且只接受 blocklist 或 whitelist。DeleteAll=1 时，blocklist 选择全部 RuleType=1 记录，whitelist 选择全部 RuleType>=2 记录；DeleteAll=0 时该字段仅校验取值，不限制 Rules 指定的删除目标。
+                     * @param _showType 列表类型，处理时必传且只接受 blocklist 或 whitelist。DeleteAll=1 时，blocklist 选择全部 RuleType=1 记录，whitelist 选择全部 RuleType>=2 记录；DeleteAll=0 时该字段仅校验取值，不限制 Rules 指定的删除目标。
                      * 
                      */
-                    void SetRuleType(const int64_t& _ruleType);
+                    void SetShowType(const std::string& _showType);
 
                     /**
-                     * 判断参数 RuleType 是否已赋值
-                     * @return RuleType 是否已赋值
+                     * 判断参数 ShowType 是否已赋值
+                     * @return ShowType 是否已赋值
                      * 
                      */
-                    bool RuleTypeHasBeenSet() const;
+                    bool ShowTypeHasBeenSet() const;
 
                 private:
 
                     /**
-                     * <p>是否删除全部</p>
+                     * 删除模式，必传且只接受整数 0 或 1。0 表示按 Rules 中的 RuleType 与 Ioc 删除匹配记录；1 表示按 ShowType 清空对应列表，其中 blocklist 删除全部 RuleType=1 记录，whitelist 删除全部 RuleType>=2 记录，风险极高。
                      */
                     int64_t m_deleteAll;
                     bool m_deleteAllHasBeenSet;
 
                     /**
-                     * <p>blocklist 封禁列表 whitelist 白名单列表</p>
-                     */
-                    std::string m_showType;
-                    bool m_showTypeHasBeenSet;
-
-                    /**
-                     * <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>
+                     * <p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>。
                      */
                     std::string m_cfwAiAgentOperationSource;
                     bool m_cfwAiAgentOperationSourceHasBeenSet;
 
                     /**
-                     * <p>规则列表</p>
+                     * 可省略。当前处理逻辑不读取该顶层字段；传入值不参与精确删除或整表删除的目标选择。
+                     */
+                    int64_t m_ruleType;
+                    bool m_ruleTypeHasBeenSet;
+
+                    /**
+                     * 待删除规则列表。DeleteAll=0 时必填，每项删除所有与 RuleType、Ioc 匹配的记录；DirectionList 不参与目标匹配，但 RuleType=1、2、3 时必须使用 DescribeBlockIgnoreList 返回的完整方向列表。同一请求混合 RuleType 时，引擎更新使用最后一项的 RuleType。DeleteAll=1 时省略。
                      */
                     std::vector<BanAndAllowRuleDel> m_rules;
                     bool m_rulesHasBeenSet;
 
                     /**
-                     * <p>封禁：1，放通：100，<br>主要用于全部删除时区分列表类型</p>
+                     * 列表类型，处理时必传且只接受 blocklist 或 whitelist。DeleteAll=1 时，blocklist 选择全部 RuleType=1 记录，whitelist 选择全部 RuleType>=2 记录；DeleteAll=0 时该字段仅校验取值，不限制 Rules 指定的删除目标。
                      */
-                    int64_t m_ruleType;
-                    bool m_ruleTypeHasBeenSet;
+                    std::string m_showType;
+                    bool m_showTypeHasBeenSet;
 
                 };
             }

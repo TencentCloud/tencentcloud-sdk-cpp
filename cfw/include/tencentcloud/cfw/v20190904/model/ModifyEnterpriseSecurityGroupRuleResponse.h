@@ -44,22 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>状态值，0：编辑成功，非0：编辑失败</p>
-                     * @return Status <p>状态值，0：编辑成功，非0：编辑失败</p>
-                     * 
-                     */
-                    uint64_t GetStatus() const;
-
-                    /**
-                     * 判断参数 Status 是否已赋值
-                     * @return Status 是否已赋值
-                     * 
-                     */
-                    bool StatusHasBeenSet() const;
-
-                    /**
-                     * 获取<p>编辑后新生成规则的Id</p>
-                     * @return NewRuleUuid <p>编辑后新生成规则的Id</p>
+                     * 获取ModifyType=0/1 返回规则 ID；ModifyType=2 回显请求中的 RuleUuid。
+                     * @return NewRuleUuid ModifyType=0/1 返回规则 ID；ModifyType=2 回显请求中的 RuleUuid。
                      * 
                      */
                     uint64_t GetNewRuleUuid() const;
@@ -71,19 +57,33 @@ namespace TencentCloud
                      */
                     bool NewRuleUuidHasBeenSet() const;
 
+                    /**
+                     * 获取处理状态：0 表示成功。
+                     * @return Status 处理状态：0 表示成功。
+                     * 
+                     */
+                    uint64_t GetStatus() const;
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
-                     * <p>状态值，0：编辑成功，非0：编辑失败</p>
-                     */
-                    uint64_t m_status;
-                    bool m_statusHasBeenSet;
-
-                    /**
-                     * <p>编辑后新生成规则的Id</p>
+                     * ModifyType=0/1 返回规则 ID；ModifyType=2 回显请求中的 RuleUuid。
                      */
                     uint64_t m_newRuleUuid;
                     bool m_newRuleUuidHasBeenSet;
+
+                    /**
+                     * 处理状态：0 表示成功。
+                     */
+                    uint64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

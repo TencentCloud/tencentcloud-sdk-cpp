@@ -45,22 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>状态值，0：添加成功，非0：添加失败</p>
-                     * @return Status <p>状态值，0：添加成功，非0：添加失败</p>
-                     * 
-                     */
-                    uint64_t GetStatus() const;
-
-                    /**
-                     * 判断参数 Status 是否已赋值
-                     * @return Status 是否已赋值
-                     * 
-                     */
-                    bool StatusHasBeenSet() const;
-
-                    /**
-                     * 获取<p>添加成功的规则详情</p>
-                     * @return Rules <p>添加成功的规则详情</p>
+                     * 获取新增规则的摘要列表。
+                     * @return Rules 新增规则的摘要列表。
                      * 
                      */
                     std::vector<SecurityGroupSimplifyRule> GetRules() const;
@@ -72,19 +58,33 @@ namespace TencentCloud
                      */
                     bool RulesHasBeenSet() const;
 
+                    /**
+                     * 获取处理状态：0 表示成功。
+                     * @return Status 处理状态：0 表示成功。
+                     * 
+                     */
+                    uint64_t GetStatus() const;
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
-                     * <p>状态值，0：添加成功，非0：添加失败</p>
-                     */
-                    uint64_t m_status;
-                    bool m_statusHasBeenSet;
-
-                    /**
-                     * <p>添加成功的规则详情</p>
+                     * 新增规则的摘要列表。
                      */
                     std::vector<SecurityGroupSimplifyRule> m_rules;
                     bool m_rulesHasBeenSet;
+
+                    /**
+                     * 处理状态：0 表示成功。
+                     */
+                    uint64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

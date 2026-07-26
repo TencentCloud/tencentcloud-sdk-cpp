@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 创建请求写入成功后返回的企业安全组规则摘要。
+                * 企业安全组规则摘要。
                 */
                 class SecurityGroupSimplifyRule : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取写入规则的描述。
-                     * @return Description 写入规则的描述。
+                     * 获取规则描述。
+                     * @return Description 规则描述。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置写入规则的描述。
-                     * @param _description 写入规则的描述。
+                     * 设置规则描述。
+                     * @param _description 规则描述。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -134,15 +134,15 @@ region：地域(ap-gaungzhou)
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取服务端写入后生成或采用的规则数据库 ID。
-                     * @return RuleUuid 服务端写入后生成或采用的规则数据库 ID。
+                     * 获取规则 ID。
+                     * @return RuleUuid 规则 ID。
                      * 
                      */
                     int64_t GetRuleUuid() const;
 
                     /**
-                     * 设置服务端写入后生成或采用的规则数据库 ID。
-                     * @param _ruleUuid 服务端写入后生成或采用的规则数据库 ID。
+                     * 设置规则 ID。
+                     * @param _ruleUuid 规则 ID。
                      * 
                      */
                     void SetRuleUuid(const int64_t& _ruleUuid);
@@ -176,15 +176,15 @@ region：地域(ap-gaungzhou)
                     bool ScopeHasBeenSet() const;
 
                     /**
-                     * 获取服务端写入后的实际规则顺序。
-                     * @return Sequence 服务端写入后的实际规则顺序。
+                     * 获取写入后的实际规则顺序。
+                     * @return Sequence 写入后的实际规则顺序。
                      * 
                      */
                     int64_t GetSequence() const;
 
                     /**
-                     * 设置服务端写入后的实际规则顺序。
-                     * @param _sequence 服务端写入后的实际规则顺序。
+                     * 设置写入后的实际规则顺序。
+                     * @param _sequence 写入后的实际规则顺序。
                      * 
                      */
                     void SetSequence(const int64_t& _sequence);
@@ -244,7 +244,7 @@ region：地域(ap-gaungzhou)
                 private:
 
                     /**
-                     * 写入规则的描述。
+                     * 规则描述。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -268,7 +268,7 @@ region：地域(ap-gaungzhou)
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 服务端写入后生成或采用的规则数据库 ID。
+                     * 规则 ID。
                      */
                     int64_t m_ruleUuid;
                     bool m_ruleUuidHasBeenSet;
@@ -280,7 +280,7 @@ region：地域(ap-gaungzhou)
                     bool m_scopeHasBeenSet;
 
                     /**
-                     * 服务端写入后的实际规则顺序。
+                     * 写入后的实际规则顺序。
                      */
                     int64_t m_sequence;
                     bool m_sequenceHasBeenSet;

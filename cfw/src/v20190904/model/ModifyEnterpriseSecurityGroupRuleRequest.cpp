@@ -23,8 +23,8 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 ModifyEnterpriseSecurityGroupRuleRequest::ModifyEnterpriseSecurityGroupRuleRequest() :
-    m_ruleUuidHasBeenSet(false),
     m_modifyTypeHasBeenSet(false),
+    m_ruleUuidHasBeenSet(false),
     m_cfwAiAgentOperationSourceHasBeenSet(false),
     m_dataHasBeenSet(false),
     m_enableHasBeenSet(false)
@@ -38,20 +38,20 @@ string ModifyEnterpriseSecurityGroupRuleRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_ruleUuidHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RuleUuid";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_ruleUuid, allocator);
-    }
-
     if (m_modifyTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModifyType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_modifyType, allocator);
+    }
+
+    if (m_ruleUuidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleUuid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ruleUuid, allocator);
     }
 
     if (m_cfwAiAgentOperationSourceHasBeenSet)
@@ -87,22 +87,6 @@ string ModifyEnterpriseSecurityGroupRuleRequest::ToJsonString() const
 }
 
 
-uint64_t ModifyEnterpriseSecurityGroupRuleRequest::GetRuleUuid() const
-{
-    return m_ruleUuid;
-}
-
-void ModifyEnterpriseSecurityGroupRuleRequest::SetRuleUuid(const uint64_t& _ruleUuid)
-{
-    m_ruleUuid = _ruleUuid;
-    m_ruleUuidHasBeenSet = true;
-}
-
-bool ModifyEnterpriseSecurityGroupRuleRequest::RuleUuidHasBeenSet() const
-{
-    return m_ruleUuidHasBeenSet;
-}
-
 uint64_t ModifyEnterpriseSecurityGroupRuleRequest::GetModifyType() const
 {
     return m_modifyType;
@@ -117,6 +101,22 @@ void ModifyEnterpriseSecurityGroupRuleRequest::SetModifyType(const uint64_t& _mo
 bool ModifyEnterpriseSecurityGroupRuleRequest::ModifyTypeHasBeenSet() const
 {
     return m_modifyTypeHasBeenSet;
+}
+
+uint64_t ModifyEnterpriseSecurityGroupRuleRequest::GetRuleUuid() const
+{
+    return m_ruleUuid;
+}
+
+void ModifyEnterpriseSecurityGroupRuleRequest::SetRuleUuid(const uint64_t& _ruleUuid)
+{
+    m_ruleUuid = _ruleUuid;
+    m_ruleUuidHasBeenSet = true;
+}
+
+bool ModifyEnterpriseSecurityGroupRuleRequest::RuleUuidHasBeenSet() const
+{
+    return m_ruleUuidHasBeenSet;
 }
 
 string ModifyEnterpriseSecurityGroupRuleRequest::GetCfwAiAgentOperationSource() const

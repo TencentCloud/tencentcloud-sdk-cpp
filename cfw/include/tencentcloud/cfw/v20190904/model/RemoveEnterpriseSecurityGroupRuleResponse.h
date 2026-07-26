@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>删除成功后返回被删除策略的uuid</p>
-                     * @return RuleUuid <p>删除成功后返回被删除策略的uuid</p>
+                     * 获取回显请求中的 RuleUuid。
+                     * @return RuleUuid 回显请求中的 RuleUuid。
                      * 
                      */
                     int64_t GetRuleUuid() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool RuleUuidHasBeenSet() const;
 
                     /**
-                     * 获取<p>0代表成功，-1代表失败</p>
-                     * @return Status <p>0代表成功，-1代表失败</p>
+                     * 获取处理状态：0 表示成功。
+                     * @return Status 处理状态：0 表示成功。
                      * 
                      */
                     int64_t GetStatus() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>删除成功后返回被删除策略的uuid</p>
+                     * 回显请求中的 RuleUuid。
                      */
                     int64_t m_ruleUuid;
                     bool m_ruleUuidHasBeenSet;
 
                     /**
-                     * <p>0代表成功，-1代表失败</p>
+                     * 处理状态：0 表示成功。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

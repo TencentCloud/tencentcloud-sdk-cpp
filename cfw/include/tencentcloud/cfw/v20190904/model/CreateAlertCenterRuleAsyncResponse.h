@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>返回状态码：<br>0 成功<br>非0 失败</p>
-                     * @return ReturnCode <p>返回状态码：<br>0 成功<br>非0 失败</p>
+                     * 获取请求返回码，0 表示已进入异步处理；处理进度见 Status。
+                     * @return ReturnCode 请求返回码，0 表示已进入异步处理；处理进度见 Status。
                      * 
                      */
                     int64_t GetReturnCode() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool ReturnCodeHasBeenSet() const;
 
                     /**
-                     * 获取<p>返回信息：<br>success 成功<br>其他</p>
-                     * @return ReturnMsg <p>返回信息：<br>success 成功<br>其他</p>
+                     * 获取与 ReturnCode 对应的结果信息，成功时为 success。
+                     * @return ReturnMsg 与 ReturnCode 对应的结果信息，成功时为 success。
                      * 
                      */
                     std::string GetReturnMsg() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool ReturnMsgHasBeenSet() const;
 
                     /**
-                     * 获取<p>处置状态码：0  处置成功 1处置中  -1 通用错误，不用处理-3 表示重复，需重新刷新列表其他</p>
-                     * @return Status <p>处置状态码：0  处置成功 1处置中  -1 通用错误，不用处理-3 表示重复，需重新刷新列表其他</p>
+                     * 获取异步处理状态：1 表示处理中，使用完全相同的请求参数继续查询；修改参数会发起新的操作。0 表示处理结束，处置结果通过对应查询接口获取。
+                     * @return Status 异步处理状态：1 表示处理中，使用完全相同的请求参数继续查询；修改参数会发起新的操作。0 表示处理结束，处置结果通过对应查询接口获取。
                      * 
                      */
                     int64_t GetStatus() const;
@@ -88,19 +88,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>返回状态码：<br>0 成功<br>非0 失败</p>
+                     * 请求返回码，0 表示已进入异步处理；处理进度见 Status。
                      */
                     int64_t m_returnCode;
                     bool m_returnCodeHasBeenSet;
 
                     /**
-                     * <p>返回信息：<br>success 成功<br>其他</p>
+                     * 与 ReturnCode 对应的结果信息，成功时为 success。
                      */
                     std::string m_returnMsg;
                     bool m_returnMsgHasBeenSet;
 
                     /**
-                     * <p>处置状态码：0  处置成功 1处置中  -1 通用错误，不用处理-3 表示重复，需重新刷新列表其他</p>
+                     * 异步处理状态：1 表示处理中，使用完全相同的请求参数继续查询；修改参数会发起新的操作。0 表示处理结束，处置结果通过对应查询接口获取。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>删除成功后返回被删除策略的uuid列表</p>
-                     * @return RuleUuids <p>删除成功后返回被删除策略的uuid列表</p>
+                     * 获取回显请求中的规则 ID 列表；全量删除返回 [-1]。
+                     * @return RuleUuids 回显请求中的规则 ID 列表；全量删除返回 [-1]。
                      * 
                      */
                     std::vector<int64_t> GetRuleUuids() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>删除成功后返回被删除策略的uuid列表</p>
+                     * 回显请求中的规则 ID 列表；全量删除返回 [-1]。
                      */
                     std::vector<int64_t> m_ruleUuids;
                     bool m_ruleUuidsHasBeenSet;

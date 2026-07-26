@@ -25,11 +25,11 @@ using namespace std;
 AddEnterpriseSecurityGroupRulesRequest::AddEnterpriseSecurityGroupRulesRequest() :
     m_dataHasBeenSet(false),
     m_cfwAiAgentOperationSourceHasBeenSet(false),
-    m_typeHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
-    m_isDelayHasBeenSet(false),
     m_fromHasBeenSet(false),
-    m_isUseIdHasBeenSet(false)
+    m_isDelayHasBeenSet(false),
+    m_isUseIdHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -63,28 +63,12 @@ string AddEnterpriseSecurityGroupRulesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_cfwAiAgentOperationSource.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_typeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Type";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_type, allocator);
-    }
-
     if (m_clientTokenHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClientToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_isDelayHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IsDelay";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_isDelay, allocator);
     }
 
     if (m_fromHasBeenSet)
@@ -95,12 +79,28 @@ string AddEnterpriseSecurityGroupRulesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_from.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_isDelayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDelay";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isDelay, allocator);
+    }
+
     if (m_isUseIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsUseId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isUseId, allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_type, allocator);
     }
 
 
@@ -143,22 +143,6 @@ bool AddEnterpriseSecurityGroupRulesRequest::CfwAiAgentOperationSourceHasBeenSet
     return m_cfwAiAgentOperationSourceHasBeenSet;
 }
 
-uint64_t AddEnterpriseSecurityGroupRulesRequest::GetType() const
-{
-    return m_type;
-}
-
-void AddEnterpriseSecurityGroupRulesRequest::SetType(const uint64_t& _type)
-{
-    m_type = _type;
-    m_typeHasBeenSet = true;
-}
-
-bool AddEnterpriseSecurityGroupRulesRequest::TypeHasBeenSet() const
-{
-    return m_typeHasBeenSet;
-}
-
 string AddEnterpriseSecurityGroupRulesRequest::GetClientToken() const
 {
     return m_clientToken;
@@ -173,22 +157,6 @@ void AddEnterpriseSecurityGroupRulesRequest::SetClientToken(const string& _clien
 bool AddEnterpriseSecurityGroupRulesRequest::ClientTokenHasBeenSet() const
 {
     return m_clientTokenHasBeenSet;
-}
-
-uint64_t AddEnterpriseSecurityGroupRulesRequest::GetIsDelay() const
-{
-    return m_isDelay;
-}
-
-void AddEnterpriseSecurityGroupRulesRequest::SetIsDelay(const uint64_t& _isDelay)
-{
-    m_isDelay = _isDelay;
-    m_isDelayHasBeenSet = true;
-}
-
-bool AddEnterpriseSecurityGroupRulesRequest::IsDelayHasBeenSet() const
-{
-    return m_isDelayHasBeenSet;
 }
 
 string AddEnterpriseSecurityGroupRulesRequest::GetFrom() const
@@ -207,6 +175,22 @@ bool AddEnterpriseSecurityGroupRulesRequest::FromHasBeenSet() const
     return m_fromHasBeenSet;
 }
 
+uint64_t AddEnterpriseSecurityGroupRulesRequest::GetIsDelay() const
+{
+    return m_isDelay;
+}
+
+void AddEnterpriseSecurityGroupRulesRequest::SetIsDelay(const uint64_t& _isDelay)
+{
+    m_isDelay = _isDelay;
+    m_isDelayHasBeenSet = true;
+}
+
+bool AddEnterpriseSecurityGroupRulesRequest::IsDelayHasBeenSet() const
+{
+    return m_isDelayHasBeenSet;
+}
+
 int64_t AddEnterpriseSecurityGroupRulesRequest::GetIsUseId() const
 {
     return m_isUseId;
@@ -221,6 +205,22 @@ void AddEnterpriseSecurityGroupRulesRequest::SetIsUseId(const int64_t& _isUseId)
 bool AddEnterpriseSecurityGroupRulesRequest::IsUseIdHasBeenSet() const
 {
     return m_isUseIdHasBeenSet;
+}
+
+uint64_t AddEnterpriseSecurityGroupRulesRequest::GetType() const
+{
+    return m_type;
+}
+
+void AddEnterpriseSecurityGroupRulesRequest::SetType(const uint64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool AddEnterpriseSecurityGroupRulesRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 

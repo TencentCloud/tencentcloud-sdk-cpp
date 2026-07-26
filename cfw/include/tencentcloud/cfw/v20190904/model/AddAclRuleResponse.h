@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据库插入成功后返回的新规则数值 ID 列表，顺序与已插入的 Rules 顺序一致；不表示异步规则下发已经完成。
-                     * @return RuleUuid 数据库插入成功后返回的新规则数值 ID 列表，顺序与已插入的 Rules 顺序一致；不表示异步规则下发已经完成。
+                     * 获取新增规则的 ID 列表，顺序与 Rules 一致。
+                     * @return RuleUuid 新增规则的 ID 列表，顺序与 Rules 一致。
                      * 
                      */
                     std::vector<int64_t> GetRuleUuid() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据库插入成功后返回的新规则数值 ID 列表，顺序与已插入的 Rules 顺序一致；不表示异步规则下发已经完成。
+                     * 新增规则的 ID 列表，顺序与 Rules 一致。
                      */
                     std::vector<int64_t> m_ruleUuid;
                     bool m_ruleUuidHasBeenSet;
