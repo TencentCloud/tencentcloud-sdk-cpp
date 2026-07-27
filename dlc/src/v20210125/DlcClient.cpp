@@ -1990,6 +1990,56 @@ DlcClient::CreateSparkAppOutcomeCallable DlcClient::CreateSparkAppCallable(const
     return prom->get_future();
 }
 
+DlcClient::CreateSparkAppForTDLCOutcome DlcClient::CreateSparkAppForTDLC(const CreateSparkAppForTDLCRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSparkAppForTDLC");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSparkAppForTDLCResponse rsp = CreateSparkAppForTDLCResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSparkAppForTDLCOutcome(rsp);
+        else
+            return CreateSparkAppForTDLCOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSparkAppForTDLCOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateSparkAppForTDLCAsync(const CreateSparkAppForTDLCRequest& request, const CreateSparkAppForTDLCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateSparkAppForTDLCRequest&;
+    using Resp = CreateSparkAppForTDLCResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateSparkAppForTDLC", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::CreateSparkAppForTDLCOutcomeCallable DlcClient::CreateSparkAppForTDLCCallable(const CreateSparkAppForTDLCRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateSparkAppForTDLCOutcome>>();
+    CreateSparkAppForTDLCAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const CreateSparkAppForTDLCRequest&,
+        CreateSparkAppForTDLCOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::CreateSparkAppTaskOutcome DlcClient::CreateSparkAppTask(const CreateSparkAppTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSparkAppTask");
@@ -4682,6 +4732,56 @@ DlcClient::DescribeLakeFsTaskResultOutcomeCallable DlcClient::DescribeLakeFsTask
         const DlcClient*,
         const DescribeLakeFsTaskResultRequest&,
         DescribeLakeFsTaskResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeMCPSubUinOutcome DlcClient::DescribeMCPSubUin(const DescribeMCPSubUinRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMCPSubUin");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMCPSubUinResponse rsp = DescribeMCPSubUinResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMCPSubUinOutcome(rsp);
+        else
+            return DescribeMCPSubUinOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMCPSubUinOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeMCPSubUinAsync(const DescribeMCPSubUinRequest& request, const DescribeMCPSubUinAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMCPSubUinRequest&;
+    using Resp = DescribeMCPSubUinResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMCPSubUin", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeMCPSubUinOutcomeCallable DlcClient::DescribeMCPSubUinCallable(const DescribeMCPSubUinRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMCPSubUinOutcome>>();
+    DescribeMCPSubUinAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeMCPSubUinRequest&,
+        DescribeMCPSubUinOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -8282,6 +8382,56 @@ DlcClient::ModifySparkAppBatchOutcomeCallable DlcClient::ModifySparkAppBatchCall
         const DlcClient*,
         const ModifySparkAppBatchRequest&,
         ModifySparkAppBatchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::ModifySparkAppForTDLCOutcome DlcClient::ModifySparkAppForTDLC(const ModifySparkAppForTDLCRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySparkAppForTDLC");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySparkAppForTDLCResponse rsp = ModifySparkAppForTDLCResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySparkAppForTDLCOutcome(rsp);
+        else
+            return ModifySparkAppForTDLCOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySparkAppForTDLCOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ModifySparkAppForTDLCAsync(const ModifySparkAppForTDLCRequest& request, const ModifySparkAppForTDLCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifySparkAppForTDLCRequest&;
+    using Resp = ModifySparkAppForTDLCResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifySparkAppForTDLC", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ModifySparkAppForTDLCOutcomeCallable DlcClient::ModifySparkAppForTDLCCallable(const ModifySparkAppForTDLCRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifySparkAppForTDLCOutcome>>();
+    ModifySparkAppForTDLCAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ModifySparkAppForTDLCRequest&,
+        ModifySparkAppForTDLCOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

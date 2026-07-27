@@ -26,7 +26,8 @@ CommonApproverOption::CommonApproverOption() :
     m_noTransferHasBeenSet(false),
     m_hideOneKeySignHasBeenSet(false),
     m_flowReadLimitHasBeenSet(false),
-    m_forbidAddSignDateHasBeenSet(false)
+    m_forbidAddSignDateHasBeenSet(false),
+    m_forbidModifySealInfosHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome CommonApproverOption::Deserialize(const rapidjson::Value &va
         m_forbidAddSignDateHasBeenSet = true;
     }
 
+    if (value.HasMember("ForbidModifySealInfos") && !value["ForbidModifySealInfos"].IsNull())
+    {
+        if (!value["ForbidModifySealInfos"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CommonApproverOption.ForbidModifySealInfos` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_forbidModifySealInfos = value["ForbidModifySealInfos"].GetBool();
+        m_forbidModifySealInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void CommonApproverOption::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "ForbidAddSignDate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_forbidAddSignDate, allocator);
+    }
+
+    if (m_forbidModifySealInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForbidModifySealInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_forbidModifySealInfos, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void CommonApproverOption::SetForbidAddSignDate(const bool& _forbidAddSignDate)
 bool CommonApproverOption::ForbidAddSignDateHasBeenSet() const
 {
     return m_forbidAddSignDateHasBeenSet;
+}
+
+bool CommonApproverOption::GetForbidModifySealInfos() const
+{
+    return m_forbidModifySealInfos;
+}
+
+void CommonApproverOption::SetForbidModifySealInfos(const bool& _forbidModifySealInfos)
+{
+    m_forbidModifySealInfos = _forbidModifySealInfos;
+    m_forbidModifySealInfosHasBeenSet = true;
+}
+
+bool CommonApproverOption::ForbidModifySealInfosHasBeenSet() const
+{
+    return m_forbidModifySealInfosHasBeenSet;
 }
 

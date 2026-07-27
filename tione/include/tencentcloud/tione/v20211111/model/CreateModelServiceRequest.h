@@ -37,6 +37,7 @@
 #include <tencentcloud/tione/v20211111/model/RollingUpdate.h>
 #include <tencentcloud/tione/v20211111/model/SidecarSpec.h>
 #include <tencentcloud/tione/v20211111/model/GatewayConfig.h>
+#include <tencentcloud/tione/v20211111/model/ResourceSupplyAttribute.h>
 
 
 namespace TencentCloud
@@ -1024,6 +1025,27 @@ namespace TencentCloud
                      */
                     bool GatewayConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>资源供应属性(潮汐/竞价等供应模式);空表示常规按量后付费</p>
+                     * @return ResourceSupplyAttribute <p>资源供应属性(潮汐/竞价等供应模式);空表示常规按量后付费</p>
+                     * 
+                     */
+                    ResourceSupplyAttribute GetResourceSupplyAttribute() const;
+
+                    /**
+                     * 设置<p>资源供应属性(潮汐/竞价等供应模式);空表示常规按量后付费</p>
+                     * @param _resourceSupplyAttribute <p>资源供应属性(潮汐/竞价等供应模式);空表示常规按量后付费</p>
+                     * 
+                     */
+                    void SetResourceSupplyAttribute(const ResourceSupplyAttribute& _resourceSupplyAttribute);
+
+                    /**
+                     * 判断参数 ResourceSupplyAttribute 是否已赋值
+                     * @return ResourceSupplyAttribute 是否已赋值
+                     * 
+                     */
+                    bool ResourceSupplyAttributeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1301,6 +1323,12 @@ namespace TencentCloud
                      */
                     GatewayConfig m_gatewayConfig;
                     bool m_gatewayConfigHasBeenSet;
+
+                    /**
+                     * <p>资源供应属性(潮汐/竞价等供应模式);空表示常规按量后付费</p>
+                     */
+                    ResourceSupplyAttribute m_resourceSupplyAttribute;
+                    bool m_resourceSupplyAttributeHasBeenSet;
 
                 };
             }

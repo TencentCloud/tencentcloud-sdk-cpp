@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_RUM_V20210622_MODEL_DESCRIBERUMGROUPLOGV2RESPONSE_H_
-#define TENCENTCLOUD_RUM_V20210622_MODEL_DESCRIBERUMGROUPLOGV2RESPONSE_H_
+#ifndef TENCENTCLOUD_DLC_V20210125_MODEL_CREATESPARKAPPFORTDLCRESPONSE_H_
+#define TENCENTCLOUD_DLC_V20210125_MODEL_CREATESPARKAPPFORTDLCRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,45 +25,45 @@
 
 namespace TencentCloud
 {
-    namespace Rum
+    namespace Dlc
     {
-        namespace V20210622
+        namespace V20210125
         {
             namespace Model
             {
                 /**
-                * DescribeRumGroupLogV2返回参数结构体
+                * CreateSparkAppForTDLC返回参数结构体
                 */
-                class DescribeRumGroupLogV2Response : public AbstractModel
+                class CreateSparkAppForTDLCResponse : public AbstractModel
                 {
                 public:
-                    DescribeRumGroupLogV2Response();
-                    ~DescribeRumGroupLogV2Response() = default;
+                    CreateSparkAppForTDLCResponse();
+                    ~CreateSparkAppForTDLCResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取<p>日志聚合结果</p>
-                     * @return Result <p>日志聚合结果</p>
+                     * 获取<p>App唯一标识</p>
+                     * @return SparkAppId <p>App唯一标识</p>
                      * 
                      */
-                    std::string GetResult() const;
+                    std::string GetSparkAppId() const;
 
                     /**
-                     * 判断参数 Result 是否已赋值
-                     * @return Result 是否已赋值
+                     * 判断参数 SparkAppId 是否已赋值
+                     * @return SparkAppId 是否已赋值
                      * 
                      */
-                    bool ResultHasBeenSet() const;
+                    bool SparkAppIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * <p>日志聚合结果</p>
+                     * <p>App唯一标识</p>
                      */
-                    std::string m_result;
-                    bool m_resultHasBeenSet;
+                    std::string m_sparkAppId;
+                    bool m_sparkAppIdHasBeenSet;
 
                 };
             }
@@ -71,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_RUM_V20210622_MODEL_DESCRIBERUMGROUPLOGV2RESPONSE_H_
+#endif // !TENCENTCLOUD_DLC_V20210125_MODEL_CREATESPARKAPPFORTDLCRESPONSE_H_

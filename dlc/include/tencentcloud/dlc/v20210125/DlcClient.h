@@ -101,6 +101,8 @@
 #include <tencentcloud/dlc/v20210125/model/CreateScriptResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateSparkAppRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateSparkAppResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateSparkAppForTDLCRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateSparkAppForTDLCResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateSparkAppTaskRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateSparkAppTaskResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateSparkSessionBatchSQLRequest.h>
@@ -209,6 +211,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeLakeFsInfoResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeLakeFsTaskResultRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeLakeFsTaskResultResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeMCPSubUinRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeMCPSubUinResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeMCPTaskRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeMCPTaskResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeMCPTaskResultRequest.h>
@@ -353,6 +357,8 @@
 #include <tencentcloud/dlc/v20210125/model/ModifySparkAppResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifySparkAppBatchRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ModifySparkAppBatchResponse.h>
+#include <tencentcloud/dlc/v20210125/model/ModifySparkAppForTDLCRequest.h>
+#include <tencentcloud/dlc/v20210125/model/ModifySparkAppForTDLCResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyUserRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyUserResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyUserTypeRequest.h>
@@ -548,6 +554,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSparkAppResponse> CreateSparkAppOutcome;
                 typedef std::future<CreateSparkAppOutcome> CreateSparkAppOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateSparkAppRequest&, CreateSparkAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSparkAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSparkAppForTDLCResponse> CreateSparkAppForTDLCOutcome;
+                typedef std::future<CreateSparkAppForTDLCOutcome> CreateSparkAppForTDLCOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateSparkAppForTDLCRequest&, CreateSparkAppForTDLCOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSparkAppForTDLCAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSparkAppTaskResponse> CreateSparkAppTaskOutcome;
                 typedef std::future<CreateSparkAppTaskOutcome> CreateSparkAppTaskOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateSparkAppTaskRequest&, CreateSparkAppTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSparkAppTaskAsyncHandler;
@@ -710,6 +719,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLakeFsTaskResultResponse> DescribeLakeFsTaskResultOutcome;
                 typedef std::future<DescribeLakeFsTaskResultOutcome> DescribeLakeFsTaskResultOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeLakeFsTaskResultRequest&, DescribeLakeFsTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLakeFsTaskResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMCPSubUinResponse> DescribeMCPSubUinOutcome;
+                typedef std::future<DescribeMCPSubUinOutcome> DescribeMCPSubUinOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeMCPSubUinRequest&, DescribeMCPSubUinOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMCPSubUinAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMCPTaskResponse> DescribeMCPTaskOutcome;
                 typedef std::future<DescribeMCPTaskOutcome> DescribeMCPTaskOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeMCPTaskRequest&, DescribeMCPTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMCPTaskAsyncHandler;
@@ -926,6 +938,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifySparkAppBatchResponse> ModifySparkAppBatchOutcome;
                 typedef std::future<ModifySparkAppBatchOutcome> ModifySparkAppBatchOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ModifySparkAppBatchRequest&, ModifySparkAppBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySparkAppBatchAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySparkAppForTDLCResponse> ModifySparkAppForTDLCOutcome;
+                typedef std::future<ModifySparkAppForTDLCOutcome> ModifySparkAppForTDLCOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::ModifySparkAppForTDLCRequest&, ModifySparkAppForTDLCOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySparkAppForTDLCAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyUserResponse> ModifyUserOutcome;
                 typedef std::future<ModifyUserOutcome> ModifyUserOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ModifyUserRequest&, ModifyUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserAsyncHandler;
@@ -1375,6 +1390,15 @@ namespace TencentCloud
                 CreateSparkAppOutcome CreateSparkApp(const Model::CreateSparkAppRequest &request);
                 void CreateSparkAppAsync(const Model::CreateSparkAppRequest& request, const CreateSparkAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSparkAppOutcomeCallable CreateSparkAppCallable(const Model::CreateSparkAppRequest& request);
+
+                /**
+                 *创建tdlc spark作业
+                 * @param req CreateSparkAppForTDLCRequest
+                 * @return CreateSparkAppForTDLCOutcome
+                 */
+                CreateSparkAppForTDLCOutcome CreateSparkAppForTDLC(const Model::CreateSparkAppForTDLCRequest &request);
+                void CreateSparkAppForTDLCAsync(const Model::CreateSparkAppForTDLCRequest& request, const CreateSparkAppForTDLCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSparkAppForTDLCOutcomeCallable CreateSparkAppForTDLCCallable(const Model::CreateSparkAppForTDLCRequest& request);
 
                 /**
                  *启动Spark作业
@@ -1863,6 +1887,15 @@ namespace TencentCloud
                 DescribeLakeFsTaskResultOutcome DescribeLakeFsTaskResult(const Model::DescribeLakeFsTaskResultRequest &request);
                 void DescribeLakeFsTaskResultAsync(const Model::DescribeLakeFsTaskResultRequest& request, const DescribeLakeFsTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLakeFsTaskResultOutcomeCallable DescribeLakeFsTaskResultCallable(const Model::DescribeLakeFsTaskResultRequest& request);
+
+                /**
+                 *获取账户子账户信息
+                 * @param req DescribeMCPSubUinRequest
+                 * @return DescribeMCPSubUinOutcome
+                 */
+                DescribeMCPSubUinOutcome DescribeMCPSubUin(const Model::DescribeMCPSubUinRequest &request);
+                void DescribeMCPSubUinAsync(const Model::DescribeMCPSubUinRequest& request, const DescribeMCPSubUinAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMCPSubUinOutcomeCallable DescribeMCPSubUinCallable(const Model::DescribeMCPSubUinRequest& request);
 
                 /**
                  *该接口（DescribeTasks）用于查询任务列表
@@ -2511,6 +2544,15 @@ namespace TencentCloud
                 ModifySparkAppBatchOutcome ModifySparkAppBatch(const Model::ModifySparkAppBatchRequest &request);
                 void ModifySparkAppBatchAsync(const Model::ModifySparkAppBatchRequest& request, const ModifySparkAppBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySparkAppBatchOutcomeCallable ModifySparkAppBatchCallable(const Model::ModifySparkAppBatchRequest& request);
+
+                /**
+                 *更新tdlc spark作业
+                 * @param req ModifySparkAppForTDLCRequest
+                 * @return ModifySparkAppForTDLCOutcome
+                 */
+                ModifySparkAppForTDLCOutcome ModifySparkAppForTDLC(const Model::ModifySparkAppForTDLCRequest &request);
+                void ModifySparkAppForTDLCAsync(const Model::ModifySparkAppForTDLCRequest& request, const ModifySparkAppForTDLCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySparkAppForTDLCOutcomeCallable ModifySparkAppForTDLCCallable(const Model::ModifySparkAppForTDLCRequest& request);
 
                 /**
                  *修改用户信息

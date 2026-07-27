@@ -51,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备份实例id
-                     * @return JobId 备份实例id
+                     * 获取<p>备份实例id</p>
+                     * @return JobId <p>备份实例id</p>
                      * 
                      */
                     int64_t GetJobId() const;
 
                     /**
-                     * 设置备份实例id
-                     * @param _jobId 备份实例id
+                     * 设置<p>备份实例id</p>
+                     * @param _jobId <p>备份实例id</p>
                      * 
                      */
                     void SetJobId(const int64_t& _jobId);
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取备份实例名
-                     * @return Snapshot 备份实例名
+                     * 获取<p>备份实例名</p>
+                     * @return Snapshot <p>备份实例名</p>
                      * 
                      */
                     std::string GetSnapshot() const;
 
                     /**
-                     * 设置备份实例名
-                     * @param _snapshot 备份实例名
+                     * 设置<p>备份实例名</p>
+                     * @param _snapshot <p>备份实例名</p>
                      * 
                      */
                     void SetSnapshot(const std::string& _snapshot);
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool SnapshotHasBeenSet() const;
 
                     /**
-                     * 获取备份数据量
-                     * @return BackUpSize 备份数据量
+                     * 获取<p>备份数据量</p>
+                     * @return BackUpSize <p>备份数据量</p>
                      * 
                      */
                     int64_t GetBackUpSize() const;
 
                     /**
-                     * 设置备份数据量
-                     * @param _backUpSize 备份数据量
+                     * 设置<p>备份数据量</p>
+                     * @param _backUpSize <p>备份数据量</p>
                      * 
                      */
                     void SetBackUpSize(const int64_t& _backUpSize);
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool BackUpSizeHasBeenSet() const;
 
                     /**
-                     * 获取备份单副本数据量
-                     * @return BackUpSingleSize 备份单副本数据量
+                     * 获取<p>备份单副本数据量</p>
+                     * @return BackUpSingleSize <p>备份单副本数据量</p>
                      * 
                      */
                     int64_t GetBackUpSingleSize() const;
 
                     /**
-                     * 设置备份单副本数据量
-                     * @param _backUpSingleSize 备份单副本数据量
+                     * 设置<p>备份单副本数据量</p>
+                     * @param _backUpSingleSize <p>备份单副本数据量</p>
                      * 
                      */
                     void SetBackUpSingleSize(const int64_t& _backUpSingleSize);
@@ -135,15 +135,15 @@ namespace TencentCloud
                     bool BackUpSingleSizeHasBeenSet() const;
 
                     /**
-                     * 获取实例创建时间
-                     * @return BackUpTime 实例创建时间
+                     * 获取<p>实例创建时间</p>
+                     * @return BackUpTime <p>实例创建时间</p>
                      * 
                      */
                     std::string GetBackUpTime() const;
 
                     /**
-                     * 设置实例创建时间
-                     * @param _backUpTime 实例创建时间
+                     * 设置<p>实例创建时间</p>
+                     * @param _backUpTime <p>实例创建时间</p>
                      * 
                      */
                     void SetBackUpTime(const std::string& _backUpTime);
@@ -156,15 +156,15 @@ namespace TencentCloud
                     bool BackUpTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例过期时间
-                     * @return ExpireTime 实例过期时间
+                     * 获取<p>实例过期时间</p>
+                     * @return ExpireTime <p>实例过期时间</p>
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置实例过期时间
-                     * @param _expireTime 实例过期时间
+                     * 设置<p>实例过期时间</p>
+                     * @param _expireTime <p>实例过期时间</p>
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -177,15 +177,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例状态
-                     * @return JobStatus 实例状态
+                     * 获取<p>实例状态</p>
+                     * @return JobStatus <p>实例状态</p>
                      * 
                      */
                     std::string GetJobStatus() const;
 
                     /**
-                     * 设置实例状态
-                     * @param _jobStatus 实例状态
+                     * 设置<p>实例状态</p>
+                     * @param _jobStatus <p>实例状态</p>
                      * 
                      */
                     void SetJobStatus(const std::string& _jobStatus);
@@ -198,15 +198,15 @@ namespace TencentCloud
                     bool JobStatusHasBeenSet() const;
 
                     /**
-                     * 获取0为默认。1时是对远端的doris进行备份，不周期，一次性
-                     * @return BackupType 0为默认。1时是对远端的doris进行备份，不周期，一次性
+                     * 获取<p>0为默认。1时是对远端的doris进行备份，不周期，一次性</p>
+                     * @return BackupType <p>0为默认。1时是对远端的doris进行备份，不周期，一次性</p>
                      * 
                      */
                     int64_t GetBackupType() const;
 
                     /**
-                     * 设置0为默认。1时是对远端的doris进行备份，不周期，一次性
-                     * @param _backupType 0为默认。1时是对远端的doris进行备份，不周期，一次性
+                     * 设置<p>0为默认。1时是对远端的doris进行备份，不周期，一次性</p>
+                     * @param _backupType <p>0为默认。1时是对远端的doris进行备份，不周期，一次性</p>
                      * 
                      */
                     void SetBackupType(const int64_t& _backupType);
@@ -219,15 +219,15 @@ namespace TencentCloud
                     bool BackupTypeHasBeenSet() const;
 
                     /**
-                     * 获取0为默认。1时是立即备份。2时是迁移
-                     * @return BackupTimeType 0为默认。1时是立即备份。2时是迁移
+                     * 获取<p>0为默认。1时是立即备份。2时是迁移</p>
+                     * @return BackupTimeType <p>0为默认。1时是立即备份。2时是迁移</p>
                      * 
                      */
                     int64_t GetBackupTimeType() const;
 
                     /**
-                     * 设置0为默认。1时是立即备份。2时是迁移
-                     * @param _backupTimeType 0为默认。1时是立即备份。2时是迁移
+                     * 设置<p>0为默认。1时是立即备份。2时是迁移</p>
+                     * @param _backupTimeType <p>0为默认。1时是立即备份。2时是迁移</p>
                      * 
                      */
                     void SetBackupTimeType(const int64_t& _backupTimeType);
@@ -240,15 +240,15 @@ namespace TencentCloud
                     bool BackupTimeTypeHasBeenSet() const;
 
                     /**
-                     * 获取远端doris的连接信息
-                     * @return DorisSourceInfo 远端doris的连接信息
+                     * 获取<p>远端doris的连接信息</p>
+                     * @return DorisSourceInfo <p>远端doris的连接信息</p>
                      * 
                      */
                     DorisSourceInfo GetDorisSourceInfo() const;
 
                     /**
-                     * 设置远端doris的连接信息
-                     * @param _dorisSourceInfo 远端doris的连接信息
+                     * 设置<p>远端doris的连接信息</p>
+                     * @param _dorisSourceInfo <p>远端doris的连接信息</p>
                      * 
                      */
                     void SetDorisSourceInfo(const DorisSourceInfo& _dorisSourceInfo);
@@ -261,15 +261,15 @@ namespace TencentCloud
                     bool DorisSourceInfoHasBeenSet() const;
 
                     /**
-                     * 获取实例状态对应的数值
-                     * @return JobStatusNum 实例状态对应的数值
+                     * 获取<p>实例状态对应的数值</p>
+                     * @return JobStatusNum <p>实例状态对应的数值</p>
                      * 
                      */
                     int64_t GetJobStatusNum() const;
 
                     /**
-                     * 设置实例状态对应的数值
-                     * @param _jobStatusNum 实例状态对应的数值
+                     * 设置<p>实例状态对应的数值</p>
+                     * @param _jobStatusNum <p>实例状态对应的数值</p>
                      * 
                      */
                     void SetJobStatusNum(const int64_t& _jobStatusNum);
@@ -282,15 +282,15 @@ namespace TencentCloud
                     bool JobStatusNumHasBeenSet() const;
 
                     /**
-                     * 获取备份实例中关于cos的信息	
-                     * @return BackupCosInfo 备份实例中关于cos的信息	
+                     * 获取<p>备份实例中关于cos的信息</p>
+                     * @return BackupCosInfo <p>备份实例中关于cos的信息</p>
                      * 
                      */
                     BackupCosInfo GetBackupCosInfo() const;
 
                     /**
-                     * 设置备份实例中关于cos的信息	
-                     * @param _backupCosInfo 备份实例中关于cos的信息	
+                     * 设置<p>备份实例中关于cos的信息</p>
+                     * @param _backupCosInfo <p>备份实例中关于cos的信息</p>
                      * 
                      */
                     void SetBackupCosInfo(const BackupCosInfo& _backupCosInfo);
@@ -303,15 +303,15 @@ namespace TencentCloud
                     bool BackupCosInfoHasBeenSet() const;
 
                     /**
-                     * 获取是否使用的自定义桶
-                     * @return IsUserDefineBucket 是否使用的自定义桶
+                     * 获取<p>是否使用的自定义桶</p>
+                     * @return IsUserDefineBucket <p>是否使用的自定义桶</p>
                      * 
                      */
                     bool GetIsUserDefineBucket() const;
 
                     /**
-                     * 设置是否使用的自定义桶
-                     * @param _isUserDefineBucket 是否使用的自定义桶
+                     * 设置<p>是否使用的自定义桶</p>
+                     * @param _isUserDefineBucket <p>是否使用的自定义桶</p>
                      * 
                      */
                     void SetIsUserDefineBucket(const bool& _isUserDefineBucket);
@@ -324,15 +324,15 @@ namespace TencentCloud
                     bool IsUserDefineBucketHasBeenSet() const;
 
                     /**
-                     * 获取错误原因
-                     * @return ErrorReason 错误原因
+                     * 获取<p>错误原因</p>
+                     * @return ErrorReason <p>错误原因</p>
                      * 
                      */
                     std::string GetErrorReason() const;
 
                     /**
-                     * 设置错误原因
-                     * @param _errorReason 错误原因
+                     * 设置<p>错误原因</p>
+                     * @param _errorReason <p>错误原因</p>
                      * 
                      */
                     void SetErrorReason(const std::string& _errorReason);
@@ -345,15 +345,15 @@ namespace TencentCloud
                     bool ErrorReasonHasBeenSet() const;
 
                     /**
-                     * 获取快照保留策略
-                     * @return SnapshotRemainPolicy 快照保留策略
+                     * 获取<p>快照保留策略</p>
+                     * @return SnapshotRemainPolicy <p>快照保留策略</p>
                      * 
                      */
                     SnapshotRemainPolicy GetSnapshotRemainPolicy() const;
 
                     /**
-                     * 设置快照保留策略
-                     * @param _snapshotRemainPolicy 快照保留策略
+                     * 设置<p>快照保留策略</p>
+                     * @param _snapshotRemainPolicy <p>快照保留策略</p>
                      * 
                      */
                     void SetSnapshotRemainPolicy(const SnapshotRemainPolicy& _snapshotRemainPolicy);
@@ -366,15 +366,15 @@ namespace TencentCloud
                     bool SnapshotRemainPolicyHasBeenSet() const;
 
                     /**
-                     * 获取隔离次数
-                     * @return IsolationCount 隔离次数
+                     * 获取<p>隔离次数</p>
+                     * @return IsolationCount <p>隔离次数</p>
                      * 
                      */
                     int64_t GetIsolationCount() const;
 
                     /**
-                     * 设置隔离次数
-                     * @param _isolationCount 隔离次数
+                     * 设置<p>隔离次数</p>
+                     * @param _isolationCount <p>隔离次数</p>
                      * 
                      */
                     void SetIsolationCount(const int64_t& _isolationCount);
@@ -387,15 +387,15 @@ namespace TencentCloud
                     bool IsolationCountHasBeenSet() const;
 
                     /**
-                     * 获取是否开启安全锁
-                     * @return EnableSecurityLock 是否开启安全锁
+                     * 获取<p>是否开启安全锁</p>
+                     * @return EnableSecurityLock <p>是否开启安全锁</p>
                      * 
                      */
                     uint64_t GetEnableSecurityLock() const;
 
                     /**
-                     * 设置是否开启安全锁
-                     * @param _enableSecurityLock 是否开启安全锁
+                     * 设置<p>是否开启安全锁</p>
+                     * @param _enableSecurityLock <p>是否开启安全锁</p>
                      * 
                      */
                     void SetEnableSecurityLock(const uint64_t& _enableSecurityLock);
@@ -408,15 +408,15 @@ namespace TencentCloud
                     bool EnableSecurityLockHasBeenSet() const;
 
                     /**
-                     * 获取宽限期天数
-                     * @return GracePeriod 宽限期天数
+                     * 获取<p>宽限期天数</p>
+                     * @return GracePeriod <p>宽限期天数</p>
                      * 
                      */
                     uint64_t GetGracePeriod() const;
 
                     /**
-                     * 设置宽限期天数
-                     * @param _gracePeriod 宽限期天数
+                     * 设置<p>宽限期天数</p>
+                     * @param _gracePeriod <p>宽限期天数</p>
                      * 
                      */
                     void SetGracePeriod(const uint64_t& _gracePeriod);
@@ -429,15 +429,15 @@ namespace TencentCloud
                     bool GracePeriodHasBeenSet() const;
 
                     /**
-                     * 获取宽限期开始时间
-                     * @return GraceStartTime 宽限期开始时间
+                     * 获取<p>宽限期开始时间</p>
+                     * @return GraceStartTime <p>宽限期开始时间</p>
                      * 
                      */
                     std::string GetGraceStartTime() const;
 
                     /**
-                     * 设置宽限期开始时间
-                     * @param _graceStartTime 宽限期开始时间
+                     * 设置<p>宽限期开始时间</p>
+                     * @param _graceStartTime <p>宽限期开始时间</p>
                      * 
                      */
                     void SetGraceStartTime(const std::string& _graceStartTime);
@@ -450,15 +450,15 @@ namespace TencentCloud
                     bool GraceStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否在宽限期内
-                     * @return IsWithinGracePeriod 是否在宽限期内
+                     * 获取<p>是否在宽限期内</p>
+                     * @return IsWithinGracePeriod <p>是否在宽限期内</p>
                      * 
                      */
                     bool GetIsWithinGracePeriod() const;
 
                     /**
-                     * 设置是否在宽限期内
-                     * @param _isWithinGracePeriod 是否在宽限期内
+                     * 设置<p>是否在宽限期内</p>
+                     * @param _isWithinGracePeriod <p>是否在宽限期内</p>
                      * 
                      */
                     void SetIsWithinGracePeriod(const bool& _isWithinGracePeriod);
@@ -471,15 +471,15 @@ namespace TencentCloud
                     bool IsWithinGracePeriodHasBeenSet() const;
 
                     /**
-                     * 获取是否使用托管桶
-                     * @return UseManagedBucket 是否使用托管桶
+                     * 获取<p>是否使用托管桶</p>
+                     * @return UseManagedBucket <p>是否使用托管桶</p>
                      * 
                      */
                     bool GetUseManagedBucket() const;
 
                     /**
-                     * 设置是否使用托管桶
-                     * @param _useManagedBucket 是否使用托管桶
+                     * 设置<p>是否使用托管桶</p>
+                     * @param _useManagedBucket <p>是否使用托管桶</p>
                      * 
                      */
                     void SetUseManagedBucket(const bool& _useManagedBucket);
@@ -492,15 +492,15 @@ namespace TencentCloud
                     bool UseManagedBucketHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -513,15 +513,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取<p>实例名称</p>
+                     * @return InstanceName <p>实例名称</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _instanceName 实例名称
+                     * 设置<p>实例名称</p>
+                     * @param _instanceName <p>实例名称</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -534,15 +534,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取实例状态
-                     * @return InstanceStatus 实例状态
+                     * 获取<p>实例状态</p>
+                     * @return InstanceStatus <p>实例状态</p>
                      * 
                      */
                     std::string GetInstanceStatus() const;
 
                     /**
-                     * 设置实例状态
-                     * @param _instanceStatus 实例状态
+                     * 设置<p>实例状态</p>
+                     * @param _instanceStatus <p>实例状态</p>
                      * 
                      */
                     void SetInstanceStatus(const std::string& _instanceStatus);
@@ -555,15 +555,15 @@ namespace TencentCloud
                     bool InstanceStatusHasBeenSet() const;
 
                     /**
-                     * 获取实例状态描述
-                     * @return InstanceStatusDesc 实例状态描述
+                     * 获取<p>实例状态描述</p>
+                     * @return InstanceStatusDesc <p>实例状态描述</p>
                      * 
                      */
                     std::string GetInstanceStatusDesc() const;
 
                     /**
-                     * 设置实例状态描述
-                     * @param _instanceStatusDesc 实例状态描述
+                     * 设置<p>实例状态描述</p>
+                     * @param _instanceStatusDesc <p>实例状态描述</p>
                      * 
                      */
                     void SetInstanceStatusDesc(const std::string& _instanceStatusDesc);
@@ -576,15 +576,15 @@ namespace TencentCloud
                     bool InstanceStatusDescHasBeenSet() const;
 
                     /**
-                     * 获取备份远程桶地域
-                     * @return DataRemoteRegion 备份远程桶地域
+                     * 获取<p>备份远程桶地域</p>
+                     * @return DataRemoteRegion <p>备份远程桶地域</p>
                      * 
                      */
                     std::string GetDataRemoteRegion() const;
 
                     /**
-                     * 设置备份远程桶地域
-                     * @param _dataRemoteRegion 备份远程桶地域
+                     * 设置<p>备份远程桶地域</p>
+                     * @param _dataRemoteRegion <p>备份远程桶地域</p>
                      * 
                      */
                     void SetDataRemoteRegion(const std::string& _dataRemoteRegion);
@@ -597,15 +597,15 @@ namespace TencentCloud
                     bool DataRemoteRegionHasBeenSet() const;
 
                     /**
-                     * 获取桶加密状态信息
-                     * @return BucketEncryption 桶加密状态信息
+                     * 获取<p>桶加密状态信息</p>
+                     * @return BucketEncryption <p>桶加密状态信息</p>
                      * 
                      */
                     BucketEncryptionInfo GetBucketEncryption() const;
 
                     /**
-                     * 设置桶加密状态信息
-                     * @param _bucketEncryption 桶加密状态信息
+                     * 设置<p>桶加密状态信息</p>
+                     * @param _bucketEncryption <p>桶加密状态信息</p>
                      * 
                      */
                     void SetBucketEncryption(const BucketEncryptionInfo& _bucketEncryption);
@@ -618,15 +618,15 @@ namespace TencentCloud
                     bool BucketEncryptionHasBeenSet() const;
 
                     /**
-                     * 获取备份任务创建时记录的加密类型：SSE-COS/SSE-KMS/disabled
-                     * @return Encryption 备份任务创建时记录的加密类型：SSE-COS/SSE-KMS/disabled
+                     * 获取<p>备份任务创建时记录的加密类型：SSE-COS/SSE-KMS/disabled</p>
+                     * @return Encryption <p>备份任务创建时记录的加密类型：SSE-COS/SSE-KMS/disabled</p>
                      * 
                      */
                     std::string GetEncryption() const;
 
                     /**
-                     * 设置备份任务创建时记录的加密类型：SSE-COS/SSE-KMS/disabled
-                     * @param _encryption 备份任务创建时记录的加密类型：SSE-COS/SSE-KMS/disabled
+                     * 设置<p>备份任务创建时记录的加密类型：SSE-COS/SSE-KMS/disabled</p>
+                     * @param _encryption <p>备份任务创建时记录的加密类型：SSE-COS/SSE-KMS/disabled</p>
                      * 
                      */
                     void SetEncryption(const std::string& _encryption);
@@ -639,15 +639,15 @@ namespace TencentCloud
                     bool EncryptionHasBeenSet() const;
 
                     /**
-                     * 获取是否开通加密存储：0-未开通，1-已开通
-                     * @return EncryptionEnabled 是否开通加密存储：0-未开通，1-已开通
+                     * 获取<p>是否开通加密存储：0-未开通，1-已开通</p>
+                     * @return EncryptionEnabled <p>是否开通加密存储：0-未开通，1-已开通</p>
                      * 
                      */
                     bool GetEncryptionEnabled() const;
 
                     /**
-                     * 设置是否开通加密存储：0-未开通，1-已开通
-                     * @param _encryptionEnabled 是否开通加密存储：0-未开通，1-已开通
+                     * 设置<p>是否开通加密存储：0-未开通，1-已开通</p>
+                     * @param _encryptionEnabled <p>是否开通加密存储：0-未开通，1-已开通</p>
                      * 
                      */
                     void SetEncryptionEnabled(const bool& _encryptionEnabled);
@@ -660,15 +660,15 @@ namespace TencentCloud
                     bool EncryptionEnabledHasBeenSet() const;
 
                     /**
-                     * 获取任务调度id
-                     * @return ScheduleId 任务调度id
+                     * 获取<p>任务调度id</p>
+                     * @return ScheduleId <p>任务调度id</p>
                      * 
                      */
                     int64_t GetScheduleId() const;
 
                     /**
-                     * 设置任务调度id
-                     * @param _scheduleId 任务调度id
+                     * 设置<p>任务调度id</p>
+                     * @param _scheduleId <p>任务调度id</p>
                      * 
                      */
                     void SetScheduleId(const int64_t& _scheduleId);
@@ -680,187 +680,295 @@ namespace TencentCloud
                      */
                     bool ScheduleIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>总任务数（库数）</p>
+                     * @return TotalTasks <p>总任务数（库数）</p>
+                     * 
+                     */
+                    int64_t GetTotalTasks() const;
+
+                    /**
+                     * 设置<p>总任务数（库数）</p>
+                     * @param _totalTasks <p>总任务数（库数）</p>
+                     * 
+                     */
+                    void SetTotalTasks(const int64_t& _totalTasks);
+
+                    /**
+                     * 判断参数 TotalTasks 是否已赋值
+                     * @return TotalTasks 是否已赋值
+                     * 
+                     */
+                    bool TotalTasksHasBeenSet() const;
+
+                    /**
+                     * 获取<p>已完成任务数</p>
+                     * @return CompletedTasks <p>已完成任务数</p>
+                     * 
+                     */
+                    int64_t GetCompletedTasks() const;
+
+                    /**
+                     * 设置<p>已完成任务数</p>
+                     * @param _completedTasks <p>已完成任务数</p>
+                     * 
+                     */
+                    void SetCompletedTasks(const int64_t& _completedTasks);
+
+                    /**
+                     * 判断参数 CompletedTasks 是否已赋值
+                     * @return CompletedTasks 是否已赋值
+                     * 
+                     */
+                    bool CompletedTasksHasBeenSet() const;
+
+                    /**
+                     * 获取<p>失败任务数</p>
+                     * @return FailedTasks <p>失败任务数</p>
+                     * 
+                     */
+                    int64_t GetFailedTasks() const;
+
+                    /**
+                     * 设置<p>失败任务数</p>
+                     * @param _failedTasks <p>失败任务数</p>
+                     * 
+                     */
+                    void SetFailedTasks(const int64_t& _failedTasks);
+
+                    /**
+                     * 判断参数 FailedTasks 是否已赋值
+                     * @return FailedTasks 是否已赋值
+                     * 
+                     */
+                    bool FailedTasksHasBeenSet() const;
+
+                    /**
+                     * 获取<p>备份进度描述，如 3/5</p>
+                     * @return BackupProgress <p>备份进度描述，如 3/5</p>
+                     * 
+                     */
+                    std::string GetBackupProgress() const;
+
+                    /**
+                     * 设置<p>备份进度描述，如 3/5</p>
+                     * @param _backupProgress <p>备份进度描述，如 3/5</p>
+                     * 
+                     */
+                    void SetBackupProgress(const std::string& _backupProgress);
+
+                    /**
+                     * 判断参数 BackupProgress 是否已赋值
+                     * @return BackupProgress 是否已赋值
+                     * 
+                     */
+                    bool BackupProgressHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 备份实例id
+                     * <p>备份实例id</p>
                      */
                     int64_t m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 备份实例名
+                     * <p>备份实例名</p>
                      */
                     std::string m_snapshot;
                     bool m_snapshotHasBeenSet;
 
                     /**
-                     * 备份数据量
+                     * <p>备份数据量</p>
                      */
                     int64_t m_backUpSize;
                     bool m_backUpSizeHasBeenSet;
 
                     /**
-                     * 备份单副本数据量
+                     * <p>备份单副本数据量</p>
                      */
                     int64_t m_backUpSingleSize;
                     bool m_backUpSingleSizeHasBeenSet;
 
                     /**
-                     * 实例创建时间
+                     * <p>实例创建时间</p>
                      */
                     std::string m_backUpTime;
                     bool m_backUpTimeHasBeenSet;
 
                     /**
-                     * 实例过期时间
+                     * <p>实例过期时间</p>
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 实例状态
+                     * <p>实例状态</p>
                      */
                     std::string m_jobStatus;
                     bool m_jobStatusHasBeenSet;
 
                     /**
-                     * 0为默认。1时是对远端的doris进行备份，不周期，一次性
+                     * <p>0为默认。1时是对远端的doris进行备份，不周期，一次性</p>
                      */
                     int64_t m_backupType;
                     bool m_backupTypeHasBeenSet;
 
                     /**
-                     * 0为默认。1时是立即备份。2时是迁移
+                     * <p>0为默认。1时是立即备份。2时是迁移</p>
                      */
                     int64_t m_backupTimeType;
                     bool m_backupTimeTypeHasBeenSet;
 
                     /**
-                     * 远端doris的连接信息
+                     * <p>远端doris的连接信息</p>
                      */
                     DorisSourceInfo m_dorisSourceInfo;
                     bool m_dorisSourceInfoHasBeenSet;
 
                     /**
-                     * 实例状态对应的数值
+                     * <p>实例状态对应的数值</p>
                      */
                     int64_t m_jobStatusNum;
                     bool m_jobStatusNumHasBeenSet;
 
                     /**
-                     * 备份实例中关于cos的信息	
+                     * <p>备份实例中关于cos的信息</p>
                      */
                     BackupCosInfo m_backupCosInfo;
                     bool m_backupCosInfoHasBeenSet;
 
                     /**
-                     * 是否使用的自定义桶
+                     * <p>是否使用的自定义桶</p>
                      */
                     bool m_isUserDefineBucket;
                     bool m_isUserDefineBucketHasBeenSet;
 
                     /**
-                     * 错误原因
+                     * <p>错误原因</p>
                      */
                     std::string m_errorReason;
                     bool m_errorReasonHasBeenSet;
 
                     /**
-                     * 快照保留策略
+                     * <p>快照保留策略</p>
                      */
                     SnapshotRemainPolicy m_snapshotRemainPolicy;
                     bool m_snapshotRemainPolicyHasBeenSet;
 
                     /**
-                     * 隔离次数
+                     * <p>隔离次数</p>
                      */
                     int64_t m_isolationCount;
                     bool m_isolationCountHasBeenSet;
 
                     /**
-                     * 是否开启安全锁
+                     * <p>是否开启安全锁</p>
                      */
                     uint64_t m_enableSecurityLock;
                     bool m_enableSecurityLockHasBeenSet;
 
                     /**
-                     * 宽限期天数
+                     * <p>宽限期天数</p>
                      */
                     uint64_t m_gracePeriod;
                     bool m_gracePeriodHasBeenSet;
 
                     /**
-                     * 宽限期开始时间
+                     * <p>宽限期开始时间</p>
                      */
                     std::string m_graceStartTime;
                     bool m_graceStartTimeHasBeenSet;
 
                     /**
-                     * 是否在宽限期内
+                     * <p>是否在宽限期内</p>
                      */
                     bool m_isWithinGracePeriod;
                     bool m_isWithinGracePeriodHasBeenSet;
 
                     /**
-                     * 是否使用托管桶
+                     * <p>是否使用托管桶</p>
                      */
                     bool m_useManagedBucket;
                     bool m_useManagedBucketHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * <p>实例名称</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 实例状态
+                     * <p>实例状态</p>
                      */
                     std::string m_instanceStatus;
                     bool m_instanceStatusHasBeenSet;
 
                     /**
-                     * 实例状态描述
+                     * <p>实例状态描述</p>
                      */
                     std::string m_instanceStatusDesc;
                     bool m_instanceStatusDescHasBeenSet;
 
                     /**
-                     * 备份远程桶地域
+                     * <p>备份远程桶地域</p>
                      */
                     std::string m_dataRemoteRegion;
                     bool m_dataRemoteRegionHasBeenSet;
 
                     /**
-                     * 桶加密状态信息
+                     * <p>桶加密状态信息</p>
                      */
                     BucketEncryptionInfo m_bucketEncryption;
                     bool m_bucketEncryptionHasBeenSet;
 
                     /**
-                     * 备份任务创建时记录的加密类型：SSE-COS/SSE-KMS/disabled
+                     * <p>备份任务创建时记录的加密类型：SSE-COS/SSE-KMS/disabled</p>
                      */
                     std::string m_encryption;
                     bool m_encryptionHasBeenSet;
 
                     /**
-                     * 是否开通加密存储：0-未开通，1-已开通
+                     * <p>是否开通加密存储：0-未开通，1-已开通</p>
                      */
                     bool m_encryptionEnabled;
                     bool m_encryptionEnabledHasBeenSet;
 
                     /**
-                     * 任务调度id
+                     * <p>任务调度id</p>
                      */
                     int64_t m_scheduleId;
                     bool m_scheduleIdHasBeenSet;
+
+                    /**
+                     * <p>总任务数（库数）</p>
+                     */
+                    int64_t m_totalTasks;
+                    bool m_totalTasksHasBeenSet;
+
+                    /**
+                     * <p>已完成任务数</p>
+                     */
+                    int64_t m_completedTasks;
+                    bool m_completedTasksHasBeenSet;
+
+                    /**
+                     * <p>失败任务数</p>
+                     */
+                    int64_t m_failedTasks;
+                    bool m_failedTasksHasBeenSet;
+
+                    /**
+                     * <p>备份进度描述，如 3/5</p>
+                     */
+                    std::string m_backupProgress;
+                    bool m_backupProgressHasBeenSet;
 
                 };
             }

@@ -188,6 +188,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/Pager.h
   include/tencentcloud/tcb/v20180608/model/MgoIndexKeys.h
   include/tencentcloud/tcb/v20180608/model/DescribeStaticStoreRequest.h
+  include/tencentcloud/tcb/v20180608/model/OwnershipVerificationInfo.h
   include/tencentcloud/tcb/v20180608/model/HTTPServiceQPSPerClient.h
   include/tencentcloud/tcb/v20180608/model/AssumeRoleForAllocatedEnvResponse.h
   include/tencentcloud/tcb/v20180608/model/VerificationConfig.h
@@ -199,7 +200,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/ModifyDatabaseACLResponse.h
   include/tencentcloud/tcb/v20180608/model/StaticStorageInfo.h
   include/tencentcloud/tcb/v20180608/model/CreateTableResponse.h
-  include/tencentcloud/tcb/v20180608/model/User.h
+  include/tencentcloud/tcb/v20180608/model/OwnershipVerificationFileInfo.h
   include/tencentcloud/tcb/v20180608/model/DestroyMySQLResult.h
   include/tencentcloud/tcb/v20180608/model/PreviewPGUserMigrationsResponse.h
   include/tencentcloud/tcb/v20180608/model/ReleaseEnvRequest.h
@@ -228,6 +229,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/ExecutePGSqlRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeUserListRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCurveDataRequest.h
+  include/tencentcloud/tcb/v20180608/model/User.h
   include/tencentcloud/tcb/v20180608/model/DescribeStaticStoreResponse.h
   include/tencentcloud/tcb/v20180608/model/ValueDetail.h
   include/tencentcloud/tcb/v20180608/model/DescribeResourcePermissionRequest.h
@@ -259,6 +261,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CreateCustomLoginKeyResponse.h
   include/tencentcloud/tcb/v20180608/model/ListTablesResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyClientRequest.h
+  include/tencentcloud/tcb/v20180608/model/WxGatewayCustomConfig.h
   include/tencentcloud/tcb/v20180608/model/ProviderResponseParametersMap.h
   include/tencentcloud/tcb/v20180608/model/DeleteUsersResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceRequest.h
@@ -282,7 +285,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/RunSqlRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvPlansResponse.h
   include/tencentcloud/tcb/v20180608/model/MessageLocalized.h
-  include/tencentcloud/tcb/v20180608/model/WxGatewayCustomConfig.h
+  include/tencentcloud/tcb/v20180608/model/OwnershipVerificationDnsInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribeTableResponse.h
   include/tencentcloud/tcb/v20180608/model/MetricUsage.h
   include/tencentcloud/tcb/v20180608/model/ModifyStorageSourceRequest.h
@@ -478,6 +481,7 @@ set(tcb_src
   src/v20180608/model/Pager.cpp
   src/v20180608/model/MgoIndexKeys.cpp
   src/v20180608/model/DescribeStaticStoreRequest.cpp
+  src/v20180608/model/OwnershipVerificationInfo.cpp
   src/v20180608/model/HTTPServiceQPSPerClient.cpp
   src/v20180608/model/AssumeRoleForAllocatedEnvResponse.cpp
   src/v20180608/model/VerificationConfig.cpp
@@ -489,7 +493,7 @@ set(tcb_src
   src/v20180608/model/ModifyDatabaseACLResponse.cpp
   src/v20180608/model/StaticStorageInfo.cpp
   src/v20180608/model/CreateTableResponse.cpp
-  src/v20180608/model/User.cpp
+  src/v20180608/model/OwnershipVerificationFileInfo.cpp
   src/v20180608/model/DestroyMySQLResult.cpp
   src/v20180608/model/PreviewPGUserMigrationsResponse.cpp
   src/v20180608/model/ReleaseEnvRequest.cpp
@@ -518,6 +522,7 @@ set(tcb_src
   src/v20180608/model/ExecutePGSqlRequest.cpp
   src/v20180608/model/DescribeUserListRequest.cpp
   src/v20180608/model/DescribeCurveDataRequest.cpp
+  src/v20180608/model/User.cpp
   src/v20180608/model/DescribeStaticStoreResponse.cpp
   src/v20180608/model/ValueDetail.cpp
   src/v20180608/model/DescribeResourcePermissionRequest.cpp
@@ -549,6 +554,7 @@ set(tcb_src
   src/v20180608/model/CreateCustomLoginKeyResponse.cpp
   src/v20180608/model/ListTablesResponse.cpp
   src/v20180608/model/ModifyClientRequest.cpp
+  src/v20180608/model/WxGatewayCustomConfig.cpp
   src/v20180608/model/ProviderResponseParametersMap.cpp
   src/v20180608/model/DeleteUsersResponse.cpp
   src/v20180608/model/DescribeCloudBaseBuildServiceRequest.cpp
@@ -572,7 +578,7 @@ set(tcb_src
   src/v20180608/model/RunSqlRequest.cpp
   src/v20180608/model/DescribeEnvPlansResponse.cpp
   src/v20180608/model/MessageLocalized.cpp
-  src/v20180608/model/WxGatewayCustomConfig.cpp
+  src/v20180608/model/OwnershipVerificationDnsInfo.cpp
   src/v20180608/model/DescribeTableResponse.cpp
   src/v20180608/model/MetricUsage.cpp
   src/v20180608/model/ModifyStorageSourceRequest.cpp

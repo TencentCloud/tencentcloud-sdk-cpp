@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境ID
-                     * @return EnvId 环境ID
+                     * 获取<p>环境ID</p>
+                     * @return EnvId <p>环境ID</p>
                      * 
                      */
                     std::string GetEnvId() const;
 
                     /**
-                     * 设置环境ID
-                     * @param _envId 环境ID
+                     * 设置<p>环境ID</p>
+                     * @param _envId <p>环境ID</p>
                      * 
                      */
                     void SetEnvId(const std::string& _envId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool EnvIdHasBeenSet() const;
 
                     /**
-                     * 获取域名路由信息
-                     * @return Domain 域名路由信息
+                     * 获取<p>域名路由信息</p>
+                     * @return Domain <p>域名路由信息</p>
                      * 
                      */
                     HTTPServiceDomainParam GetDomain() const;
 
                     /**
-                     * 设置域名路由信息
-                     * @param _domain 域名路由信息
+                     * 设置<p>域名路由信息</p>
+                     * @param _domain <p>域名路由信息</p>
                      * 
                      */
                     void SetDomain(const HTTPServiceDomainParam& _domain);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 环境ID
+                     * <p>环境ID</p>
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
 
                     /**
-                     * 域名路由信息
+                     * <p>域名路由信息</p>
                      */
                     HTTPServiceDomainParam m_domain;
                     bool m_domainHasBeenSet;

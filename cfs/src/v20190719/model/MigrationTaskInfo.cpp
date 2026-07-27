@@ -46,7 +46,8 @@ MigrationTaskInfo::MigrationTaskInfo() :
     m_fileCompletedListHasBeenSet(false),
     m_fileFailedListHasBeenSet(false),
     m_bucketPathHasBeenSet(false),
-    m_directionHasBeenSet(false)
+    m_directionHasBeenSet(false),
+    m_srcServiceHasBeenSet(false)
 {
 }
 
@@ -315,6 +316,16 @@ CoreInternalOutcome MigrationTaskInfo::Deserialize(const rapidjson::Value &value
         m_directionHasBeenSet = true;
     }
 
+    if (value.HasMember("SrcService") && !value["SrcService"].IsNull())
+    {
+        if (!value["SrcService"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MigrationTaskInfo.SrcService` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_srcService = string(value["SrcService"].GetString());
+        m_srcServiceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -528,6 +539,14 @@ void MigrationTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Direction";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_direction, allocator);
+    }
+
+    if (m_srcServiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcService";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_srcService.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -947,5 +966,21 @@ void MigrationTaskInfo::SetDirection(const uint64_t& _direction)
 bool MigrationTaskInfo::DirectionHasBeenSet() const
 {
     return m_directionHasBeenSet;
+}
+
+string MigrationTaskInfo::GetSrcService() const
+{
+    return m_srcService;
+}
+
+void MigrationTaskInfo::SetSrcService(const string& _srcService)
+{
+    m_srcService = _srcService;
+    m_srcServiceHasBeenSet = true;
+}
+
+bool MigrationTaskInfo::SrcServiceHasBeenSet() const
+{
+    return m_srcServiceHasBeenSet;
 }
 

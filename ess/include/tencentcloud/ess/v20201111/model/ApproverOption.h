@@ -193,6 +193,27 @@ namespace TencentCloud
                      */
                     bool ApproverMobileModeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>在嵌入式文件发起下,若合同是通过文件,当签署人控件指定了印章类型（或印章Id）,在嵌入页面上是否能修改</p>
+                     * @return ForbidModifySealInfos <p>在嵌入式文件发起下,若合同是通过文件,当签署人控件指定了印章类型（或印章Id）,在嵌入页面上是否能修改</p>
+                     * 
+                     */
+                    bool GetForbidModifySealInfos() const;
+
+                    /**
+                     * 设置<p>在嵌入式文件发起下,若合同是通过文件,当签署人控件指定了印章类型（或印章Id）,在嵌入页面上是否能修改</p>
+                     * @param _forbidModifySealInfos <p>在嵌入式文件发起下,若合同是通过文件,当签署人控件指定了印章类型（或印章Id）,在嵌入页面上是否能修改</p>
+                     * 
+                     */
+                    void SetForbidModifySealInfos(const bool& _forbidModifySealInfos);
+
+                    /**
+                     * 判断参数 ForbidModifySealInfos 是否已赋值
+                     * @return ForbidModifySealInfos 是否已赋值
+                     * 
+                     */
+                    bool ForbidModifySealInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +257,12 @@ namespace TencentCloud
                      */
                     std::string m_approverMobileMode;
                     bool m_approverMobileModeHasBeenSet;
+
+                    /**
+                     * <p>在嵌入式文件发起下,若合同是通过文件,当签署人控件指定了印章类型（或印章Id）,在嵌入页面上是否能修改</p>
+                     */
+                    bool m_forbidModifySealInfos;
+                    bool m_forbidModifySealInfosHasBeenSet;
 
                 };
             }

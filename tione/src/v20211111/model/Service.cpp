@@ -60,7 +60,8 @@ Service::Service() :
     m_externalResourceGroupsHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_changerHasBeenSet(false),
-    m_changerNameHasBeenSet(false)
+    m_changerNameHasBeenSet(false),
+    m_resourceSupplyAttributeHasBeenSet(false)
 {
 }
 
@@ -517,6 +518,23 @@ CoreInternalOutcome Service::Deserialize(const rapidjson::Value &value)
         m_changerNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceSupplyAttribute") && !value["ResourceSupplyAttribute"].IsNull())
+    {
+        if (!value["ResourceSupplyAttribute"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.ResourceSupplyAttribute` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_resourceSupplyAttribute.Deserialize(value["ResourceSupplyAttribute"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_resourceSupplyAttributeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -860,6 +878,15 @@ void Service::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "ChangerName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_changerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceSupplyAttributeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceSupplyAttribute";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_resourceSupplyAttribute.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1503,5 +1530,21 @@ void Service::SetChangerName(const string& _changerName)
 bool Service::ChangerNameHasBeenSet() const
 {
     return m_changerNameHasBeenSet;
+}
+
+ResourceSupplyAttribute Service::GetResourceSupplyAttribute() const
+{
+    return m_resourceSupplyAttribute;
+}
+
+void Service::SetResourceSupplyAttribute(const ResourceSupplyAttribute& _resourceSupplyAttribute)
+{
+    m_resourceSupplyAttribute = _resourceSupplyAttribute;
+    m_resourceSupplyAttributeHasBeenSet = true;
+}
+
+bool Service::ResourceSupplyAttributeHasBeenSet() const
+{
+    return m_resourceSupplyAttributeHasBeenSet;
 }
 

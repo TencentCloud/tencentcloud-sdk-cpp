@@ -239,6 +239,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/Container.h
   include/tencentcloud/tione/v20211111/model/DeleteDatasetResponse.h
   include/tencentcloud/tione/v20211111/model/MountLimitInfo.h
+  include/tencentcloud/tione/v20211111/model/ResourceSupplyAttribute.h
   include/tencentcloud/tione/v20211111/model/DescribePresetImageListResponse.h
   include/tencentcloud/tione/v20211111/model/TrainingTaskDetail.h
   include/tencentcloud/tione/v20211111/model/DescribeExportRequest.h
@@ -590,6 +591,7 @@ set(tione_src
   src/v20211111/model/Container.cpp
   src/v20211111/model/DeleteDatasetResponse.cpp
   src/v20211111/model/MountLimitInfo.cpp
+  src/v20211111/model/ResourceSupplyAttribute.cpp
   src/v20211111/model/DescribePresetImageListResponse.cpp
   src/v20211111/model/TrainingTaskDetail.cpp
   src/v20211111/model/DescribeExportRequest.cpp

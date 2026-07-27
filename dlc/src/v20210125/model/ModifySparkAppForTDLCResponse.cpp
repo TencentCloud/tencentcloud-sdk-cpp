@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tcb/v20180608/model/CreateHTTPServiceRouteResponse.h>
+#include <tencentcloud/dlc/v20210125/model/ModifySparkAppForTDLCResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tcb::V20180608::Model;
+using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-CreateHTTPServiceRouteResponse::CreateHTTPServiceRouteResponse() :
-    m_ownershipVerificationHasBeenSet(false)
+ModifySparkAppForTDLCResponse::ModifySparkAppForTDLCResponse()
 {
 }
 
-CoreInternalOutcome CreateHTTPServiceRouteResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifySparkAppForTDLCResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,41 +61,15 @@ CoreInternalOutcome CreateHTTPServiceRouteResponse::Deserialize(const string &pa
     }
 
 
-    if (rsp.HasMember("OwnershipVerification") && !rsp["OwnershipVerification"].IsNull())
-    {
-        if (!rsp["OwnershipVerification"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `OwnershipVerification` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_ownershipVerification.Deserialize(rsp["OwnershipVerification"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_ownershipVerificationHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string CreateHTTPServiceRouteResponse::ToJsonString() const
+string ModifySparkAppForTDLCResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_ownershipVerificationHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OwnershipVerification";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_ownershipVerification.ToJsonObject(value[key.c_str()], allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -109,15 +82,5 @@ string CreateHTTPServiceRouteResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-OwnershipVerificationInfo CreateHTTPServiceRouteResponse::GetOwnershipVerification() const
-{
-    return m_ownershipVerification;
-}
-
-bool CreateHTTPServiceRouteResponse::OwnershipVerificationHasBeenSet() const
-{
-    return m_ownershipVerificationHasBeenSet;
-}
 
 

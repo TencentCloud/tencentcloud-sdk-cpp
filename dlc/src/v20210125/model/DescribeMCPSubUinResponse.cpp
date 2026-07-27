@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tcb/v20180608/model/CreateHTTPServiceRouteResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeMCPSubUinResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tcb::V20180608::Model;
+using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-CreateHTTPServiceRouteResponse::CreateHTTPServiceRouteResponse() :
-    m_ownershipVerificationHasBeenSet(false)
+DescribeMCPSubUinResponse::DescribeMCPSubUinResponse() :
+    m_subuinHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateHTTPServiceRouteResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeMCPSubUinResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +62,32 @@ CoreInternalOutcome CreateHTTPServiceRouteResponse::Deserialize(const string &pa
     }
 
 
-    if (rsp.HasMember("OwnershipVerification") && !rsp["OwnershipVerification"].IsNull())
+    if (rsp.HasMember("Subuin") && !rsp["Subuin"].IsNull())
     {
-        if (!rsp["OwnershipVerification"].IsObject())
+        if (!rsp["Subuin"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `OwnershipVerification` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Subuin` IsString=false incorrectly").SetRequestId(requestId));
         }
-
-        CoreInternalOutcome outcome = m_ownershipVerification.Deserialize(rsp["OwnershipVerification"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_ownershipVerificationHasBeenSet = true;
+        m_subuin = string(rsp["Subuin"].GetString());
+        m_subuinHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string CreateHTTPServiceRouteResponse::ToJsonString() const
+string DescribeMCPSubUinResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_ownershipVerificationHasBeenSet)
+    if (m_subuinHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OwnershipVerification";
+        string key = "Subuin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_ownershipVerification.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subuin.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +102,14 @@ string CreateHTTPServiceRouteResponse::ToJsonString() const
 }
 
 
-OwnershipVerificationInfo CreateHTTPServiceRouteResponse::GetOwnershipVerification() const
+string DescribeMCPSubUinResponse::GetSubuin() const
 {
-    return m_ownershipVerification;
+    return m_subuin;
 }
 
-bool CreateHTTPServiceRouteResponse::OwnershipVerificationHasBeenSet() const
+bool DescribeMCPSubUinResponse::SubuinHasBeenSet() const
 {
-    return m_ownershipVerificationHasBeenSet;
+    return m_subuinHasBeenSet;
 }
 
 

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取1:开启 0:不开启
-                     * @return EnableHeaders 1:开启 0:不开启
+                     * 获取<p>1:开启 0:不开启</p>
+                     * @return EnableHeaders <p>1:开启 0:不开启</p>
                      * 
                      */
                     int64_t GetEnableHeaders() const;
 
                     /**
-                     * 设置1:开启 0:不开启
-                     * @param _enableHeaders 1:开启 0:不开启
+                     * 设置<p>1:开启 0:不开启</p>
+                     * @param _enableHeaders <p>1:开启 0:不开启</p>
                      * 
                      */
                     void SetEnableHeaders(const int64_t& _enableHeaders);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool EnableHeadersHasBeenSet() const;
 
                     /**
-                     * 获取1:开启 0:不开启
-                     * @return EnableBody 1:开启 0:不开启
+                     * 获取<p>1:开启 0:不开启</p>
+                     * @return EnableBody <p>1:开启 0:不开启</p>
                      * 
                      */
                     int64_t GetEnableBody() const;
 
                     /**
-                     * 设置1:开启 0:不开启
-                     * @param _enableBody 1:开启 0:不开启
+                     * 设置<p>1:开启 0:不开启</p>
+                     * @param _enableBody <p>1:开启 0:不开启</p>
                      * 
                      */
                     void SetEnableBody(const int64_t& _enableBody);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool EnableBodyHasBeenSet() const;
 
                     /**
-                     * 获取1:开启 0:不开启
-                     * @return EnableBot 1:开启 0:不开启
+                     * 获取<p>1:开启 0:不开启</p>
+                     * @return EnableBot <p>1:开启 0:不开启</p>
                      * 
                      */
                     int64_t GetEnableBot() const;
 
                     /**
-                     * 设置1:开启 0:不开启
-                     * @param _enableBot 1:开启 0:不开启
+                     * 设置<p>1:开启 0:不开启</p>
+                     * @param _enableBot <p>1:开启 0:不开启</p>
                      * 
                      */
                     void SetEnableBot(const int64_t& _enableBot);
@@ -110,19 +110,15 @@ namespace TencentCloud
                     bool EnableBotHasBeenSet() const;
 
                     /**
-                     * 获取响应方向body
-1:开启 0:不开启
-                     * @return EnableResponse 响应方向body
-1:开启 0:不开启
+                     * 获取<p>响应方向body<br>1:开启 0:不开启</p>
+                     * @return EnableResponse <p>响应方向body<br>1:开启 0:不开启</p>
                      * 
                      */
                     int64_t GetEnableResponse() const;
 
                     /**
-                     * 设置响应方向body
-1:开启 0:不开启
-                     * @param _enableResponse 响应方向body
-1:开启 0:不开启
+                     * 设置<p>响应方向body<br>1:开启 0:不开启</p>
+                     * @param _enableResponse <p>响应方向body<br>1:开启 0:不开启</p>
                      * 
                      */
                     void SetEnableResponse(const int64_t& _enableResponse);
@@ -137,26 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 1:开启 0:不开启
+                     * <p>1:开启 0:不开启</p>
                      */
                     int64_t m_enableHeaders;
                     bool m_enableHeadersHasBeenSet;
 
                     /**
-                     * 1:开启 0:不开启
+                     * <p>1:开启 0:不开启</p>
                      */
                     int64_t m_enableBody;
                     bool m_enableBodyHasBeenSet;
 
                     /**
-                     * 1:开启 0:不开启
+                     * <p>1:开启 0:不开启</p>
                      */
                     int64_t m_enableBot;
                     bool m_enableBotHasBeenSet;
 
                     /**
-                     * 响应方向body
-1:开启 0:不开启
+                     * <p>响应方向body<br>1:开启 0:不开启</p>
                      */
                     int64_t m_enableResponse;
                     bool m_enableResponseHasBeenSet;

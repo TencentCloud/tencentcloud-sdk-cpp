@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取排序方式 desc asc
-                     * @return OrderBy 排序方式 desc asc
+                     * 获取<p>排序方式 desc asc</p>
+                     * @return OrderBy <p>排序方式 desc asc</p>
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序方式 desc asc
-                     * @param _orderBy 排序方式 desc asc
+                     * 设置<p>排序方式 desc asc</p>
+                     * @param _orderBy <p>排序方式 desc asc</p>
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取开始时间（必填）格式为时间戳 毫秒
-                     * @return StartTime 开始时间（必填）格式为时间戳 毫秒
+                     * 获取<p>查询日志开始时间（必填）格式为时间戳 毫秒</p>
+                     * @return StartTime <p>查询日志开始时间（必填）格式为时间戳 毫秒</p>
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置开始时间（必填）格式为时间戳 毫秒
-                     * @param _startTime 开始时间（必填）格式为时间戳 毫秒
+                     * 设置<p>查询日志开始时间（必填）格式为时间戳 毫秒</p>
+                     * @param _startTime <p>查询日志开始时间（必填）格式为时间戳 毫秒</p>
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取单次查询返回的原始日志条数，最大值为100（必填）
-                     * @return Limit 单次查询返回的原始日志条数，最大值为100（必填）
+                     * 获取<p>单次查询返回的原始日志条数，最大值为100（必填）</p>
+                     * @return Limit <p>单次查询返回的原始日志条数，最大值为100（必填）</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置单次查询返回的原始日志条数，最大值为100（必填）
-                     * @param _limit 单次查询返回的原始日志条数，最大值为100（必填）
+                     * 设置<p>单次查询返回的原始日志条数，最大值为100（必填）</p>
+                     * @param _limit <p>单次查询返回的原始日志条数，最大值为100（必填）</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取查询的相关参数
-                     * @return Filter 查询的相关参数
+                     * 获取<p>过滤条件，其中key与运算符(Operator)对应可选字段枚举值与示例查看文档：https://cloud.tencent.com/document/product/248/87223</p>
+                     * @return Filter <p>过滤条件，其中key与运算符(Operator)对应可选字段枚举值与示例查看文档：https://cloud.tencent.com/document/product/248/87223</p>
                      * 
                      */
                     std::string GetFilter() const;
 
                     /**
-                     * 设置查询的相关参数
-                     * @param _filter 查询的相关参数
+                     * 设置<p>过滤条件，其中key与运算符(Operator)对应可选字段枚举值与示例查看文档：https://cloud.tencent.com/document/product/248/87223</p>
+                     * @param _filter <p>过滤条件，其中key与运算符(Operator)对应可选字段枚举值与示例查看文档：https://cloud.tencent.com/document/product/248/87223</p>
                      * 
                      */
                     void SetFilter(const std::string& _filter);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool FilterHasBeenSet() const;
 
                     /**
-                     * 获取结束时间（必填）格式为时间戳 毫秒
-                     * @return EndTime 结束时间（必填）格式为时间戳 毫秒
+                     * 获取<p>查询日志结束时间（必填）格式为时间戳 毫秒</p>
+                     * @return EndTime <p>查询日志结束时间（必填）格式为时间戳 毫秒</p>
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间（必填）格式为时间戳 毫秒
-                     * @param _endTime 结束时间（必填）格式为时间戳 毫秒
+                     * 设置<p>查询日志结束时间（必填）格式为时间戳 毫秒</p>
+                     * @param _endTime <p>查询日志结束时间（必填）格式为时间戳 毫秒</p>
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取项目ID（必填）
-                     * @return ID 项目ID（必填）
+                     * 获取<p>项目ID（必填）</p>
+                     * @return ID <p>项目ID（必填）</p>
                      * 
                      */
                     int64_t GetID() const;
 
                     /**
-                     * 设置项目ID（必填）
-                     * @param _iD 项目ID（必填）
+                     * 设置<p>项目ID（必填）</p>
+                     * @param _iD <p>项目ID（必填）</p>
                      * 
                      */
                     void SetID(const int64_t& _iD);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取上次查询的最后一个日志的时间戳
-                     * @return LastTime 上次查询的最后一个日志的时间戳
+                     * 获取<p>上次查询的最后一个日志的时间戳</p>
+                     * @return LastTime <p>上次查询的最后一个日志的时间戳</p>
                      * 
                      */
                     int64_t GetLastTime() const;
 
                     /**
-                     * 设置上次查询的最后一个日志的时间戳
-                     * @param _lastTime 上次查询的最后一个日志的时间戳
+                     * 设置<p>上次查询的最后一个日志的时间戳</p>
+                     * @param _lastTime <p>上次查询的最后一个日志的时间戳</p>
                      * 
                      */
                     void SetLastTime(const int64_t& _lastTime);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool LastTimeHasBeenSet() const;
 
                     /**
-                     * 获取上次查询的最后一个日志的rowId
-                     * @return LastRowId 上次查询的最后一个日志的rowId
+                     * 获取<p>上次查询的最后一个日志的rowId</p>
+                     * @return LastRowId <p>上次查询的最后一个日志的rowId</p>
                      * 
                      */
                     int64_t GetLastRowId() const;
 
                     /**
-                     * 设置上次查询的最后一个日志的rowId
-                     * @param _lastRowId 上次查询的最后一个日志的rowId
+                     * 设置<p>上次查询的最后一个日志的rowId</p>
+                     * @param _lastRowId <p>上次查询的最后一个日志的rowId</p>
                      * 
                      */
                     void SetLastRowId(const int64_t& _lastRowId);
@@ -213,49 +213,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 排序方式 desc asc
+                     * <p>排序方式 desc asc</p>
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 开始时间（必填）格式为时间戳 毫秒
+                     * <p>查询日志开始时间（必填）格式为时间戳 毫秒</p>
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 单次查询返回的原始日志条数，最大值为100（必填）
+                     * <p>单次查询返回的原始日志条数，最大值为100（必填）</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 查询的相关参数
+                     * <p>过滤条件，其中key与运算符(Operator)对应可选字段枚举值与示例查看文档：https://cloud.tencent.com/document/product/248/87223</p>
                      */
                     std::string m_filter;
                     bool m_filterHasBeenSet;
 
                     /**
-                     * 结束时间（必填）格式为时间戳 毫秒
+                     * <p>查询日志结束时间（必填）格式为时间戳 毫秒</p>
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 项目ID（必填）
+                     * <p>项目ID（必填）</p>
                      */
                     int64_t m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 上次查询的最后一个日志的时间戳
+                     * <p>上次查询的最后一个日志的时间戳</p>
                      */
                     int64_t m_lastTime;
                     bool m_lastTimeHasBeenSet;
 
                     /**
-                     * 上次查询的最后一个日志的rowId
+                     * <p>上次查询的最后一个日志的rowId</p>
                      */
                     int64_t m_lastRowId;
                     bool m_lastRowIdHasBeenSet;

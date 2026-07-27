@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Export name
-                     * @return Name Export name
+                     * 获取<p>Name（string，必填）：导出任务名称标识，需要在使用API创建导出任务时填写。此字段为后续能力扩展预留，不在查询结果中返回。</p>
+                     * @return Name <p>Name（string，必填）：导出任务名称标识，需要在使用API创建导出任务时填写。此字段为后续能力扩展预留，不在查询结果中返回。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置Export name
-                     * @param _name Export name
+                     * 设置<p>Name（string，必填）：导出任务名称标识，需要在使用API创建导出任务时填写。此字段为后续能力扩展预留，不在查询结果中返回。</p>
+                     * @param _name <p>Name（string，必填）：导出任务名称标识，需要在使用API创建导出任务时填写。此字段为后续能力扩展预留，不在查询结果中返回。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Start time
-                     * @return StartTime Start time
+                     * 获取<p>查询日志开始时间(必填)</p>
+                     * @return StartTime <p>查询日志开始时间(必填)</p>
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置Start time
-                     * @param _startTime Start time
+                     * 设置<p>查询日志开始时间(必填)</p>
+                     * @param _startTime <p>查询日志开始时间(必填)</p>
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取Query statement
-                     * @return Filter Query statement
+                     * 获取<p>过滤条件，其中key与运算符(Operator)对应可选字段枚举值与示例查看文档：https://cloud.tencent.com/document/product/248/87223</p>
+                     * @return Filter <p>过滤条件，其中key与运算符(Operator)对应可选字段枚举值与示例查看文档：https://cloud.tencent.com/document/product/248/87223</p>
                      * 
                      */
                     std::string GetFilter() const;
 
                     /**
-                     * 设置Query statement
-                     * @param _filter Query statement
+                     * 设置<p>过滤条件，其中key与运算符(Operator)对应可选字段枚举值与示例查看文档：https://cloud.tencent.com/document/product/248/87223</p>
+                     * @param _filter <p>过滤条件，其中key与运算符(Operator)对应可选字段枚举值与示例查看文档：https://cloud.tencent.com/document/product/248/87223</p>
                      * 
                      */
                     void SetFilter(const std::string& _filter);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool FilterHasBeenSet() const;
 
                     /**
-                     * 获取End time
-                     * @return EndTime End time
+                     * 获取<p>查询日志结束时间(必填)</p>
+                     * @return EndTime <p>查询日志结束时间(必填)</p>
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置End time
-                     * @param _endTime End time
+                     * 设置<p>查询日志结束时间(必填)</p>
+                     * @param _endTime <p>查询日志结束时间(必填)</p>
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取Project ID
-                     * @return ID Project ID
+                     * 获取<p>项目ID</p>
+                     * @return ID <p>项目ID</p>
                      * 
                      */
                     int64_t GetID() const;
 
                     /**
-                     * 设置Project ID
-                     * @param _iD Project ID
+                     * 设置<p>项目ID</p>
+                     * @param _iD <p>项目ID</p>
                      * 
                      */
                     void SetID(const int64_t& _iD);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取c字段
-                     * @return Fields c字段
+                     * 获取<p>注意：这个字段必选，不能为空！选择要导出哪些字段的参数，对应日志的列，可查看文档：https://cloud.tencent.com/document/product/248/87223</p><p>枚举值：</p><ul><li>level： 日志类型</li><li>url： URL</li><li>ip： 用户终端IP</li><li>version： 版本</li></ul>
+                     * @return Fields <p>注意：这个字段必选，不能为空！选择要导出哪些字段的参数，对应日志的列，可查看文档：https://cloud.tencent.com/document/product/248/87223</p><p>枚举值：</p><ul><li>level： 日志类型</li><li>url： URL</li><li>ip： 用户终端IP</li><li>version： 版本</li></ul>
                      * 
                      */
                     std::vector<std::string> GetFields() const;
 
                     /**
-                     * 设置c字段
-                     * @param _fields c字段
+                     * 设置<p>注意：这个字段必选，不能为空！选择要导出哪些字段的参数，对应日志的列，可查看文档：https://cloud.tencent.com/document/product/248/87223</p><p>枚举值：</p><ul><li>level： 日志类型</li><li>url： URL</li><li>ip： 用户终端IP</li><li>version： 版本</li></ul>
+                     * @param _fields <p>注意：这个字段必选，不能为空！选择要导出哪些字段的参数，对应日志的列，可查看文档：https://cloud.tencent.com/document/product/248/87223</p><p>枚举值：</p><ul><li>level： 日志类型</li><li>url： URL</li><li>ip： 用户终端IP</li><li>version： 版本</li></ul>
                      * 
                      */
                     void SetFields(const std::vector<std::string>& _fields);
@@ -171,37 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Export name
+                     * <p>Name（string，必填）：导出任务名称标识，需要在使用API创建导出任务时填写。此字段为后续能力扩展预留，不在查询结果中返回。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Start time
+                     * <p>查询日志开始时间(必填)</p>
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * Query statement
+                     * <p>过滤条件，其中key与运算符(Operator)对应可选字段枚举值与示例查看文档：https://cloud.tencent.com/document/product/248/87223</p>
                      */
                     std::string m_filter;
                     bool m_filterHasBeenSet;
 
                     /**
-                     * End time
+                     * <p>查询日志结束时间(必填)</p>
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * Project ID
+                     * <p>项目ID</p>
                      */
                     int64_t m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * c字段
+                     * <p>注意：这个字段必选，不能为空！选择要导出哪些字段的参数，对应日志的列，可查看文档：https://cloud.tencent.com/document/product/248/87223</p><p>枚举值：</p><ul><li>level： 日志类型</li><li>url： URL</li><li>ip： 用户终端IP</li><li>version： 版本</li></ul>
                      */
                     std::vector<std::string> m_fields;
                     bool m_fieldsHasBeenSet;

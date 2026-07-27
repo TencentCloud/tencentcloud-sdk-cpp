@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取迁移任务名称
-                     * @return TaskName 迁移任务名称
+                     * 获取<p>迁移任务名称</p>
+                     * @return TaskName <p>迁移任务名称</p>
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
-                     * 设置迁移任务名称
-                     * @param _taskName 迁移任务名称
+                     * 设置<p>迁移任务名称</p>
+                     * @param _taskName <p>迁移任务名称</p>
                      * 
                      */
                     void SetTaskName(const std::string& _taskName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TaskNameHasBeenSet() const;
 
                     /**
-                     * 获取迁移方式标志位，默认为0。0：桶迁移；1：清单迁移
-                     * @return MigrationType 迁移方式标志位，默认为0。0：桶迁移；1：清单迁移
+                     * 获取<p>迁移方式标志位，默认为0。0：桶迁移；1：清单迁移</p>
+                     * @return MigrationType <p>迁移方式标志位，默认为0。0：桶迁移；1：清单迁移</p>
                      * 
                      */
                     uint64_t GetMigrationType() const;
 
                     /**
-                     * 设置迁移方式标志位，默认为0。0：桶迁移；1：清单迁移
-                     * @param _migrationType 迁移方式标志位，默认为0。0：桶迁移；1：清单迁移
+                     * 设置<p>迁移方式标志位，默认为0。0：桶迁移；1：清单迁移</p>
+                     * @param _migrationType <p>迁移方式标志位，默认为0。0：桶迁移；1：清单迁移</p>
                      * 
                      */
                     void SetMigrationType(const uint64_t& _migrationType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool MigrationTypeHasBeenSet() const;
 
                     /**
-                     * 获取迁移模式，默认为0。0: 全量迁移
-                     * @return MigrationMode 迁移模式，默认为0。0: 全量迁移
+                     * 获取<p>迁移模式，默认为0。0: 全量迁移</p>
+                     * @return MigrationMode <p>迁移模式，默认为0。0: 全量迁移</p>
                      * 
                      */
                     uint64_t GetMigrationMode() const;
 
                     /**
-                     * 设置迁移模式，默认为0。0: 全量迁移
-                     * @param _migrationMode 迁移模式，默认为0。0: 全量迁移
+                     * 设置<p>迁移模式，默认为0。0: 全量迁移</p>
+                     * @param _migrationMode <p>迁移模式，默认为0。0: 全量迁移</p>
                      * 
                      */
                     void SetMigrationMode(const uint64_t& _migrationMode);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool MigrationModeHasBeenSet() const;
 
                     /**
-                     * 获取数据源账号的 SecretId
-                     * @return SrcSecretId 数据源账号的 SecretId
+                     * 获取<p>数据源账号的 SecretId</p>
+                     * @return SrcSecretId <p>数据源账号的 SecretId</p>
                      * 
                      */
                     std::string GetSrcSecretId() const;
 
                     /**
-                     * 设置数据源账号的 SecretId
-                     * @param _srcSecretId 数据源账号的 SecretId
+                     * 设置<p>数据源账号的 SecretId</p>
+                     * @param _srcSecretId <p>数据源账号的 SecretId</p>
                      * 
                      */
                     void SetSrcSecretId(const std::string& _srcSecretId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool SrcSecretIdHasBeenSet() const;
 
                     /**
-                     * 获取数据源账号的 SecretKey
-                     * @return SrcSecretKey 数据源账号的 SecretKey
+                     * 获取<p>数据源账号的 SecretKey</p>
+                     * @return SrcSecretKey <p>数据源账号的 SecretKey</p>
                      * 
                      */
                     std::string GetSrcSecretKey() const;
 
                     /**
-                     * 设置数据源账号的 SecretKey
-                     * @param _srcSecretKey 数据源账号的 SecretKey
+                     * 设置<p>数据源账号的 SecretKey</p>
+                     * @param _srcSecretKey <p>数据源账号的 SecretKey</p>
                      * 
                      */
                     void SetSrcSecretKey(const std::string& _srcSecretKey);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool SrcSecretKeyHasBeenSet() const;
 
                     /**
-                     * 获取文件系统实例 ID，通过查询文件系统 [DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170) 获取
-                     * @return FileSystemId 文件系统实例 ID，通过查询文件系统 [DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170) 获取
+                     * 获取<p>文件系统实例 ID，通过查询文件系统 <a href="https://cloud.tencent.com/document/product/582/38170">DescribeCfsFileSystems</a> 获取</p>
+                     * @return FileSystemId <p>文件系统实例 ID，通过查询文件系统 <a href="https://cloud.tencent.com/document/product/582/38170">DescribeCfsFileSystems</a> 获取</p>
                      * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
-                     * 设置文件系统实例 ID，通过查询文件系统 [DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170) 获取
-                     * @param _fileSystemId 文件系统实例 ID，通过查询文件系统 [DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170) 获取
+                     * 设置<p>文件系统实例 ID，通过查询文件系统 <a href="https://cloud.tencent.com/document/product/582/38170">DescribeCfsFileSystems</a> 获取</p>
+                     * @param _fileSystemId <p>文件系统实例 ID，通过查询文件系统 <a href="https://cloud.tencent.com/document/product/582/38170">DescribeCfsFileSystems</a> 获取</p>
                      * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取文件系统路径
-                     * @return FsPath 文件系统路径
+                     * 获取<p>文件系统路径</p>
+                     * @return FsPath <p>文件系统路径</p>
                      * 
                      */
                     std::string GetFsPath() const;
 
                     /**
-                     * 设置文件系统路径
-                     * @param _fsPath 文件系统路径
+                     * 设置<p>文件系统路径</p>
+                     * @param _fsPath <p>文件系统路径</p>
                      * 
                      */
                     void SetFsPath(const std::string& _fsPath);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool FsPathHasBeenSet() const;
 
                     /**
-                     * 获取同名文件迁移时覆盖策略，默认为0。0: 最后修改时间优先；1: 全覆盖；2: 不覆盖
-                     * @return CoverType 同名文件迁移时覆盖策略，默认为0。0: 最后修改时间优先；1: 全覆盖；2: 不覆盖
+                     * 获取<p>同名文件迁移时覆盖策略，默认为0。0: 最后修改时间优先；1: 全覆盖；2: 不覆盖</p>
+                     * @return CoverType <p>同名文件迁移时覆盖策略，默认为0。0: 最后修改时间优先；1: 全覆盖；2: 不覆盖</p>
                      * 
                      */
                     uint64_t GetCoverType() const;
 
                     /**
-                     * 设置同名文件迁移时覆盖策略，默认为0。0: 最后修改时间优先；1: 全覆盖；2: 不覆盖
-                     * @param _coverType 同名文件迁移时覆盖策略，默认为0。0: 最后修改时间优先；1: 全覆盖；2: 不覆盖
+                     * 设置<p>同名文件迁移时覆盖策略，默认为0。0: 最后修改时间优先；1: 全覆盖；2: 不覆盖</p>
+                     * @param _coverType <p>同名文件迁移时覆盖策略，默认为0。0: 最后修改时间优先；1: 全覆盖；2: 不覆盖</p>
                      * 
                      */
                     void SetCoverType(const uint64_t& _coverType);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool CoverTypeHasBeenSet() const;
 
                     /**
-                     * 获取数据源服务商。COS：腾讯云COS，OSS：阿里云OSS，OBS：华为云OBS
-                     * @return SrcService 数据源服务商。COS：腾讯云COS，OSS：阿里云OSS，OBS：华为云OBS
+                     * 获取<p>数据源服务商</p><p>枚举值：</p><ul><li>COS： 腾讯云COS</li><li>OSS： 阿里云OSS</li><li>OBS： 华为云OBS</li><li>BOS： 百度云BOS</li><li>TOS： 火山引擎TOS</li></ul>
+                     * @return SrcService <p>数据源服务商</p><p>枚举值：</p><ul><li>COS： 腾讯云COS</li><li>OSS： 阿里云OSS</li><li>OBS： 华为云OBS</li><li>BOS： 百度云BOS</li><li>TOS： 火山引擎TOS</li></ul>
                      * 
                      */
                     std::string GetSrcService() const;
 
                     /**
-                     * 设置数据源服务商。COS：腾讯云COS，OSS：阿里云OSS，OBS：华为云OBS
-                     * @param _srcService 数据源服务商。COS：腾讯云COS，OSS：阿里云OSS，OBS：华为云OBS
+                     * 设置<p>数据源服务商</p><p>枚举值：</p><ul><li>COS： 腾讯云COS</li><li>OSS： 阿里云OSS</li><li>OBS： 华为云OBS</li><li>BOS： 百度云BOS</li><li>TOS： 火山引擎TOS</li></ul>
+                     * @param _srcService <p>数据源服务商</p><p>枚举值：</p><ul><li>COS： 腾讯云COS</li><li>OSS： 阿里云OSS</li><li>OBS： 华为云OBS</li><li>BOS： 百度云BOS</li><li>TOS： 火山引擎TOS</li></ul>
                      * 
                      */
                     void SetSrcService(const std::string& _srcService);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool SrcServiceHasBeenSet() const;
 
                     /**
-                     * 获取数据源桶名称；桶迁移时，BucketName 和 BucketAddress 必填其一，清单迁移时无需填写此参数
-                     * @return BucketName 数据源桶名称；桶迁移时，BucketName 和 BucketAddress 必填其一，清单迁移时无需填写此参数
+                     * 获取<p>数据源桶名称；桶迁移时，BucketName 和 BucketAddress 必填其一，清单迁移时无需填写此参数</p>
+                     * @return BucketName <p>数据源桶名称；桶迁移时，BucketName 和 BucketAddress 必填其一，清单迁移时无需填写此参数</p>
                      * 
                      */
                     std::string GetBucketName() const;
 
                     /**
-                     * 设置数据源桶名称；桶迁移时，BucketName 和 BucketAddress 必填其一，清单迁移时无需填写此参数
-                     * @param _bucketName 数据源桶名称；桶迁移时，BucketName 和 BucketAddress 必填其一，清单迁移时无需填写此参数
+                     * 设置<p>数据源桶名称；桶迁移时，BucketName 和 BucketAddress 必填其一，清单迁移时无需填写此参数</p>
+                     * @param _bucketName <p>数据源桶名称；桶迁移时，BucketName 和 BucketAddress 必填其一，清单迁移时无需填写此参数</p>
                      * 
                      */
                     void SetBucketName(const std::string& _bucketName);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool BucketNameHasBeenSet() const;
 
                     /**
-                     * 获取数据源桶地域
-                     * @return BucketRegion 数据源桶地域
+                     * 获取<p>数据源桶地域</p>
+                     * @return BucketRegion <p>数据源桶地域</p>
                      * 
                      */
                     std::string GetBucketRegion() const;
 
                     /**
-                     * 设置数据源桶地域
-                     * @param _bucketRegion 数据源桶地域
+                     * 设置<p>数据源桶地域</p>
+                     * @param _bucketRegion <p>数据源桶地域</p>
                      * 
                      */
                     void SetBucketRegion(const std::string& _bucketRegion);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool BucketRegionHasBeenSet() const;
 
                     /**
-                     * 获取数据源桶地址；桶迁移时，BucketName 和 BucketAddress 必填其一，清单迁移时无需填写此参数
-                     * @return BucketAddress 数据源桶地址；桶迁移时，BucketName 和 BucketAddress 必填其一，清单迁移时无需填写此参数
+                     * 获取<p>数据源桶地址；桶迁移时，BucketName 和 BucketAddress 必填其一，清单迁移时无需填写此参数</p>
+                     * @return BucketAddress <p>数据源桶地址；桶迁移时，BucketName 和 BucketAddress 必填其一，清单迁移时无需填写此参数</p>
                      * 
                      */
                     std::string GetBucketAddress() const;
 
                     /**
-                     * 设置数据源桶地址；桶迁移时，BucketName 和 BucketAddress 必填其一，清单迁移时无需填写此参数
-                     * @param _bucketAddress 数据源桶地址；桶迁移时，BucketName 和 BucketAddress 必填其一，清单迁移时无需填写此参数
+                     * 设置<p>数据源桶地址；桶迁移时，BucketName 和 BucketAddress 必填其一，清单迁移时无需填写此参数</p>
+                     * @param _bucketAddress <p>数据源桶地址；桶迁移时，BucketName 和 BucketAddress 必填其一，清单迁移时无需填写此参数</p>
                      * 
                      */
                     void SetBucketAddress(const std::string& _bucketAddress);
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool BucketAddressHasBeenSet() const;
 
                     /**
-                     * 获取清单地址，迁移方式为清单迁移时必填
-                     * @return ListAddress 清单地址，迁移方式为清单迁移时必填
+                     * 获取<p>清单地址，迁移方式为清单迁移时必填</p>
+                     * @return ListAddress <p>清单地址，迁移方式为清单迁移时必填</p>
                      * 
                      */
                     std::string GetListAddress() const;
 
                     /**
-                     * 设置清单地址，迁移方式为清单迁移时必填
-                     * @param _listAddress 清单地址，迁移方式为清单迁移时必填
+                     * 设置<p>清单地址，迁移方式为清单迁移时必填</p>
+                     * @param _listAddress <p>清单地址，迁移方式为清单迁移时必填</p>
                      * 
                      */
                     void SetListAddress(const std::string& _listAddress);
@@ -316,15 +316,15 @@ namespace TencentCloud
                     bool ListAddressHasBeenSet() const;
 
                     /**
-                     * 获取目标文件系统名称
-                     * @return FsName 目标文件系统名称
+                     * 获取<p>目标文件系统名称</p>
+                     * @return FsName <p>目标文件系统名称</p>
                      * 
                      */
                     std::string GetFsName() const;
 
                     /**
-                     * 设置目标文件系统名称
-                     * @param _fsName 目标文件系统名称
+                     * 设置<p>目标文件系统名称</p>
+                     * @param _fsName <p>目标文件系统名称</p>
                      * 
                      */
                     void SetFsName(const std::string& _fsName);
@@ -337,15 +337,15 @@ namespace TencentCloud
                     bool FsNameHasBeenSet() const;
 
                     /**
-                     * 获取源桶路径，默认为 /
-                     * @return BucketPath 源桶路径，默认为 /
+                     * 获取<p>源桶路径，默认为 /</p>
+                     * @return BucketPath <p>源桶路径，默认为 /</p>
                      * 
                      */
                     std::string GetBucketPath() const;
 
                     /**
-                     * 设置源桶路径，默认为 /
-                     * @param _bucketPath 源桶路径，默认为 /
+                     * 设置<p>源桶路径，默认为 /</p>
+                     * @param _bucketPath <p>源桶路径，默认为 /</p>
                      * 
                      */
                     void SetBucketPath(const std::string& _bucketPath);
@@ -358,15 +358,15 @@ namespace TencentCloud
                     bool BucketPathHasBeenSet() const;
 
                     /**
-                     * 获取迁移方向；0：对象存储迁移至文件系统，1：文件系统迁移至对象存储。默认为0
-                     * @return Direction 迁移方向；0：对象存储迁移至文件系统，1：文件系统迁移至对象存储。默认为0
+                     * 获取<p>迁移方向；0：对象存储迁移至文件系统，1：文件系统迁移至对象存储。默认为0</p>
+                     * @return Direction <p>迁移方向；0：对象存储迁移至文件系统，1：文件系统迁移至对象存储。默认为0</p>
                      * 
                      */
                     uint64_t GetDirection() const;
 
                     /**
-                     * 设置迁移方向；0：对象存储迁移至文件系统，1：文件系统迁移至对象存储。默认为0
-                     * @param _direction 迁移方向；0：对象存储迁移至文件系统，1：文件系统迁移至对象存储。默认为0
+                     * 设置<p>迁移方向；0：对象存储迁移至文件系统，1：文件系统迁移至对象存储。默认为0</p>
+                     * @param _direction <p>迁移方向；0：对象存储迁移至文件系统，1：文件系统迁移至对象存储。默认为0</p>
                      * 
                      */
                     void SetDirection(const uint64_t& _direction);
@@ -381,97 +381,97 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 迁移任务名称
+                     * <p>迁移任务名称</p>
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
 
                     /**
-                     * 迁移方式标志位，默认为0。0：桶迁移；1：清单迁移
+                     * <p>迁移方式标志位，默认为0。0：桶迁移；1：清单迁移</p>
                      */
                     uint64_t m_migrationType;
                     bool m_migrationTypeHasBeenSet;
 
                     /**
-                     * 迁移模式，默认为0。0: 全量迁移
+                     * <p>迁移模式，默认为0。0: 全量迁移</p>
                      */
                     uint64_t m_migrationMode;
                     bool m_migrationModeHasBeenSet;
 
                     /**
-                     * 数据源账号的 SecretId
+                     * <p>数据源账号的 SecretId</p>
                      */
                     std::string m_srcSecretId;
                     bool m_srcSecretIdHasBeenSet;
 
                     /**
-                     * 数据源账号的 SecretKey
+                     * <p>数据源账号的 SecretKey</p>
                      */
                     std::string m_srcSecretKey;
                     bool m_srcSecretKeyHasBeenSet;
 
                     /**
-                     * 文件系统实例 ID，通过查询文件系统 [DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170) 获取
+                     * <p>文件系统实例 ID，通过查询文件系统 <a href="https://cloud.tencent.com/document/product/582/38170">DescribeCfsFileSystems</a> 获取</p>
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 文件系统路径
+                     * <p>文件系统路径</p>
                      */
                     std::string m_fsPath;
                     bool m_fsPathHasBeenSet;
 
                     /**
-                     * 同名文件迁移时覆盖策略，默认为0。0: 最后修改时间优先；1: 全覆盖；2: 不覆盖
+                     * <p>同名文件迁移时覆盖策略，默认为0。0: 最后修改时间优先；1: 全覆盖；2: 不覆盖</p>
                      */
                     uint64_t m_coverType;
                     bool m_coverTypeHasBeenSet;
 
                     /**
-                     * 数据源服务商。COS：腾讯云COS，OSS：阿里云OSS，OBS：华为云OBS
+                     * <p>数据源服务商</p><p>枚举值：</p><ul><li>COS： 腾讯云COS</li><li>OSS： 阿里云OSS</li><li>OBS： 华为云OBS</li><li>BOS： 百度云BOS</li><li>TOS： 火山引擎TOS</li></ul>
                      */
                     std::string m_srcService;
                     bool m_srcServiceHasBeenSet;
 
                     /**
-                     * 数据源桶名称；桶迁移时，BucketName 和 BucketAddress 必填其一，清单迁移时无需填写此参数
+                     * <p>数据源桶名称；桶迁移时，BucketName 和 BucketAddress 必填其一，清单迁移时无需填写此参数</p>
                      */
                     std::string m_bucketName;
                     bool m_bucketNameHasBeenSet;
 
                     /**
-                     * 数据源桶地域
+                     * <p>数据源桶地域</p>
                      */
                     std::string m_bucketRegion;
                     bool m_bucketRegionHasBeenSet;
 
                     /**
-                     * 数据源桶地址；桶迁移时，BucketName 和 BucketAddress 必填其一，清单迁移时无需填写此参数
+                     * <p>数据源桶地址；桶迁移时，BucketName 和 BucketAddress 必填其一，清单迁移时无需填写此参数</p>
                      */
                     std::string m_bucketAddress;
                     bool m_bucketAddressHasBeenSet;
 
                     /**
-                     * 清单地址，迁移方式为清单迁移时必填
+                     * <p>清单地址，迁移方式为清单迁移时必填</p>
                      */
                     std::string m_listAddress;
                     bool m_listAddressHasBeenSet;
 
                     /**
-                     * 目标文件系统名称
+                     * <p>目标文件系统名称</p>
                      */
                     std::string m_fsName;
                     bool m_fsNameHasBeenSet;
 
                     /**
-                     * 源桶路径，默认为 /
+                     * <p>源桶路径，默认为 /</p>
                      */
                     std::string m_bucketPath;
                     bool m_bucketPathHasBeenSet;
 
                     /**
-                     * 迁移方向；0：对象存储迁移至文件系统，1：文件系统迁移至对象存储。默认为0
+                     * <p>迁移方向；0：对象存储迁移至文件系统，1：文件系统迁移至对象存储。默认为0</p>
                      */
                     uint64_t m_direction;
                     bool m_directionHasBeenSet;

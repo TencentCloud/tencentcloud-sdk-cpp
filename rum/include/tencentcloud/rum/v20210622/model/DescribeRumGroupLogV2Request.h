@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取<p>开始时间（必填）</p>
-                     * @return StartTime <p>开始时间（必填）</p>
+                     * 获取<p>查询日志开始时间（必填）</p>
+                     * @return StartTime <p>查询日志开始时间（必填）</p>
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置<p>开始时间（必填）</p>
-                     * @param _startTime <p>开始时间（必填）</p>
+                     * 设置<p>查询日志开始时间（必填）</p>
+                     * @param _startTime <p>查询日志开始时间（必填）</p>
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取<p>过滤条件</p>
-                     * @return Filter <p>过滤条件</p>
+                     * 获取<p>过滤条件，其中key与运算符(Operator)对应可选字段枚举值与示例查看文档：https://cloud.tencent.com/document/product/248/87223</p>
+                     * @return Filter <p>过滤条件，其中key与运算符(Operator)对应可选字段枚举值与示例查看文档：https://cloud.tencent.com/document/product/248/87223</p>
                      * 
                      */
                     std::string GetFilter() const;
 
                     /**
-                     * 设置<p>过滤条件</p>
-                     * @param _filter <p>过滤条件</p>
+                     * 设置<p>过滤条件，其中key与运算符(Operator)对应可选字段枚举值与示例查看文档：https://cloud.tencent.com/document/product/248/87223</p>
+                     * @param _filter <p>过滤条件，其中key与运算符(Operator)对应可选字段枚举值与示例查看文档：https://cloud.tencent.com/document/product/248/87223</p>
                      * 
                      */
                     void SetFilter(const std::string& _filter);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool FilterHasBeenSet() const;
 
                     /**
-                     * 获取<p>结束时间（必填）</p>
-                     * @return EndTime <p>结束时间（必填）</p>
+                     * 获取<p>查询日志结束时间（必填）</p>
+                     * @return EndTime <p>查询日志结束时间（必填）</p>
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置<p>结束时间（必填）</p>
-                     * @param _endTime <p>结束时间（必填）</p>
+                     * 设置<p>查询日志结束时间（必填）</p>
+                     * @param _endTime <p>查询日志结束时间（必填）</p>
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -219,7 +219,7 @@ namespace TencentCloud
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * <p>开始时间（必填）</p>
+                     * <p>查询日志开始时间（必填）</p>
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
@@ -231,13 +231,13 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * <p>过滤条件</p>
+                     * <p>过滤条件，其中key与运算符(Operator)对应可选字段枚举值与示例查看文档：https://cloud.tencent.com/document/product/248/87223</p>
                      */
                     std::string m_filter;
                     bool m_filterHasBeenSet;
 
                     /**
-                     * <p>结束时间（必填）</p>
+                     * <p>查询日志结束时间（必填）</p>
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;

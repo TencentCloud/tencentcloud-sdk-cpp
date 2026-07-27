@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否允许修改签署人信息
-                     * @return CanEditApprover 是否允许修改签署人信息
+                     * 获取<p>是否允许修改签署人信息</p>
+                     * @return CanEditApprover <p>是否允许修改签署人信息</p>
                      * 
                      */
                     bool GetCanEditApprover() const;
 
                     /**
-                     * 设置是否允许修改签署人信息
-                     * @param _canEditApprover 是否允许修改签署人信息
+                     * 设置<p>是否允许修改签署人信息</p>
+                     * @param _canEditApprover <p>是否允许修改签署人信息</p>
                      * 
                      */
                     void SetCanEditApprover(const bool& _canEditApprover);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool CanEditApproverHasBeenSet() const;
 
                     /**
-                     * 获取是否可以拒签 默认false-可以拒签 true-不可以拒签
-                     * @return NoRefuse 是否可以拒签 默认false-可以拒签 true-不可以拒签
+                     * 获取<p>是否可以拒签 默认false-可以拒签 true-不可以拒签</p>
+                     * @return NoRefuse <p>是否可以拒签 默认false-可以拒签 true-不可以拒签</p>
                      * 
                      */
                     bool GetNoRefuse() const;
 
                     /**
-                     * 设置是否可以拒签 默认false-可以拒签 true-不可以拒签
-                     * @param _noRefuse 是否可以拒签 默认false-可以拒签 true-不可以拒签
+                     * 设置<p>是否可以拒签 默认false-可以拒签 true-不可以拒签</p>
+                     * @param _noRefuse <p>是否可以拒签 默认false-可以拒签 true-不可以拒签</p>
                      * 
                      */
                     void SetNoRefuse(const bool& _noRefuse);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool NoRefuseHasBeenSet() const;
 
                     /**
-                     * 获取是否可以转发 默认false-可以转发 true-不可以转发
-                     * @return NoTransfer 是否可以转发 默认false-可以转发 true-不可以转发
+                     * 获取<p>是否可以转发 默认false-可以转发 true-不可以转发</p>
+                     * @return NoTransfer <p>是否可以转发 默认false-可以转发 true-不可以转发</p>
                      * 
                      */
                     bool GetNoTransfer() const;
 
                     /**
-                     * 设置是否可以转发 默认false-可以转发 true-不可以转发
-                     * @param _noTransfer 是否可以转发 默认false-可以转发 true-不可以转发
+                     * 设置<p>是否可以转发 默认false-可以转发 true-不可以转发</p>
+                     * @param _noTransfer <p>是否可以转发 默认false-可以转发 true-不可以转发</p>
                      * 
                      */
                     void SetNoTransfer(const bool& _noTransfer);
@@ -111,27 +111,15 @@ namespace TencentCloud
                     bool NoTransferHasBeenSet() const;
 
                     /**
-                     * 获取当签署方有多个签署区时候，是否隐藏一键所有的签署区
-
-false：（默认）不隐藏
-true：隐藏，每个签署区要单独选择印章或者签名
-                     * @return HideOneKeySign 当签署方有多个签署区时候，是否隐藏一键所有的签署区
-
-false：（默认）不隐藏
-true：隐藏，每个签署区要单独选择印章或者签名
+                     * 获取<p>当签署方有多个签署区时候，是否隐藏一键所有的签署区</p><p>false：（默认）不隐藏<br>true：隐藏，每个签署区要单独选择印章或者签名</p>
+                     * @return HideOneKeySign <p>当签署方有多个签署区时候，是否隐藏一键所有的签署区</p><p>false：（默认）不隐藏<br>true：隐藏，每个签署区要单独选择印章或者签名</p>
                      * 
                      */
                     bool GetHideOneKeySign() const;
 
                     /**
-                     * 设置当签署方有多个签署区时候，是否隐藏一键所有的签署区
-
-false：（默认）不隐藏
-true：隐藏，每个签署区要单独选择印章或者签名
-                     * @param _hideOneKeySign 当签署方有多个签署区时候，是否隐藏一键所有的签署区
-
-false：（默认）不隐藏
-true：隐藏，每个签署区要单独选择印章或者签名
+                     * 设置<p>当签署方有多个签署区时候，是否隐藏一键所有的签署区</p><p>false：（默认）不隐藏<br>true：隐藏，每个签署区要单独选择印章或者签名</p>
+                     * @param _hideOneKeySign <p>当签署方有多个签署区时候，是否隐藏一键所有的签署区</p><p>false：（默认）不隐藏<br>true：隐藏，每个签署区要单独选择印章或者签名</p>
                      * 
                      */
                     void SetHideOneKeySign(const bool& _hideOneKeySign);
@@ -144,43 +132,15 @@ true：隐藏，每个签署区要单独选择印章或者签名
                     bool HideOneKeySignHasBeenSet() const;
 
                     /**
-                     * 获取签署人阅读合同限制参数
- <br/>取值：
-<ul>
-<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>
-<li> LimitReadTime，阅读合同仅限制阅读时长</li>
-<li> LimitBottom，阅读合同仅限制必须阅读到底</li>
-<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>
-</ul>
-                     * @return FlowReadLimit 签署人阅读合同限制参数
- <br/>取值：
-<ul>
-<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>
-<li> LimitReadTime，阅读合同仅限制阅读时长</li>
-<li> LimitBottom，阅读合同仅限制必须阅读到底</li>
-<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>
-</ul>
+                     * 获取<p>签署人阅读合同限制参数<br> <br>取值：</p><ul><li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li><li> LimitReadTime，阅读合同仅限制阅读时长</li><li> LimitBottom，阅读合同仅限制必须阅读到底</li><li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li></ul>
+                     * @return FlowReadLimit <p>签署人阅读合同限制参数<br> <br>取值：</p><ul><li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li><li> LimitReadTime，阅读合同仅限制阅读时长</li><li> LimitBottom，阅读合同仅限制必须阅读到底</li><li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li></ul>
                      * 
                      */
                     std::string GetFlowReadLimit() const;
 
                     /**
-                     * 设置签署人阅读合同限制参数
- <br/>取值：
-<ul>
-<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>
-<li> LimitReadTime，阅读合同仅限制阅读时长</li>
-<li> LimitBottom，阅读合同仅限制必须阅读到底</li>
-<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>
-</ul>
-                     * @param _flowReadLimit 签署人阅读合同限制参数
- <br/>取值：
-<ul>
-<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>
-<li> LimitReadTime，阅读合同仅限制阅读时长</li>
-<li> LimitBottom，阅读合同仅限制必须阅读到底</li>
-<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>
-</ul>
+                     * 设置<p>签署人阅读合同限制参数<br> <br>取值：</p><ul><li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li><li> LimitReadTime，阅读合同仅限制阅读时长</li><li> LimitBottom，阅读合同仅限制必须阅读到底</li><li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li></ul>
+                     * @param _flowReadLimit <p>签署人阅读合同限制参数<br> <br>取值：</p><ul><li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li><li> LimitReadTime，阅读合同仅限制阅读时长</li><li> LimitBottom，阅读合同仅限制必须阅读到底</li><li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li></ul>
                      * 
                      */
                     void SetFlowReadLimit(const std::string& _flowReadLimit);
@@ -193,35 +153,15 @@ true：隐藏，每个签署区要单独选择印章或者签名
                     bool FlowReadLimitHasBeenSet() const;
 
                     /**
-                     * 获取禁止在签署过程中添加签署日期控件
- <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
-<ul>
-<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
-<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
-</ul>
-                     * @return ForbidAddSignDate 禁止在签署过程中添加签署日期控件
- <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
-<ul>
-<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
-<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
-</ul>
+                     * 获取<p>禁止在签署过程中添加签署日期控件<br> <br>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：</p><ul><li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li><li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li></ul>
+                     * @return ForbidAddSignDate <p>禁止在签署过程中添加签署日期控件<br> <br>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：</p><ul><li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li><li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li></ul>
                      * 
                      */
                     bool GetForbidAddSignDate() const;
 
                     /**
-                     * 设置禁止在签署过程中添加签署日期控件
- <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
-<ul>
-<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
-<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
-</ul>
-                     * @param _forbidAddSignDate 禁止在签署过程中添加签署日期控件
- <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
-<ul>
-<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
-<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
-</ul>
+                     * 设置<p>禁止在签署过程中添加签署日期控件<br> <br>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：</p><ul><li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li><li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li></ul>
+                     * @param _forbidAddSignDate <p>禁止在签署过程中添加签署日期控件<br> <br>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：</p><ul><li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li><li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li></ul>
                      * 
                      */
                     void SetForbidAddSignDate(const bool& _forbidAddSignDate);
@@ -233,58 +173,70 @@ true：隐藏，每个签署区要单独选择印章或者签名
                      */
                     bool ForbidAddSignDateHasBeenSet() const;
 
+                    /**
+                     * 获取<p>在嵌入式文件发起下,若合同是通过文件,当签署人控件指定了印章类型（或印章Id）,在嵌入页面上是否能修改</p>
+                     * @return ForbidModifySealInfos <p>在嵌入式文件发起下,若合同是通过文件,当签署人控件指定了印章类型（或印章Id）,在嵌入页面上是否能修改</p>
+                     * 
+                     */
+                    bool GetForbidModifySealInfos() const;
+
+                    /**
+                     * 设置<p>在嵌入式文件发起下,若合同是通过文件,当签署人控件指定了印章类型（或印章Id）,在嵌入页面上是否能修改</p>
+                     * @param _forbidModifySealInfos <p>在嵌入式文件发起下,若合同是通过文件,当签署人控件指定了印章类型（或印章Id）,在嵌入页面上是否能修改</p>
+                     * 
+                     */
+                    void SetForbidModifySealInfos(const bool& _forbidModifySealInfos);
+
+                    /**
+                     * 判断参数 ForbidModifySealInfos 是否已赋值
+                     * @return ForbidModifySealInfos 是否已赋值
+                     * 
+                     */
+                    bool ForbidModifySealInfosHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 是否允许修改签署人信息
+                     * <p>是否允许修改签署人信息</p>
                      */
                     bool m_canEditApprover;
                     bool m_canEditApproverHasBeenSet;
 
                     /**
-                     * 是否可以拒签 默认false-可以拒签 true-不可以拒签
+                     * <p>是否可以拒签 默认false-可以拒签 true-不可以拒签</p>
                      */
                     bool m_noRefuse;
                     bool m_noRefuseHasBeenSet;
 
                     /**
-                     * 是否可以转发 默认false-可以转发 true-不可以转发
+                     * <p>是否可以转发 默认false-可以转发 true-不可以转发</p>
                      */
                     bool m_noTransfer;
                     bool m_noTransferHasBeenSet;
 
                     /**
-                     * 当签署方有多个签署区时候，是否隐藏一键所有的签署区
-
-false：（默认）不隐藏
-true：隐藏，每个签署区要单独选择印章或者签名
+                     * <p>当签署方有多个签署区时候，是否隐藏一键所有的签署区</p><p>false：（默认）不隐藏<br>true：隐藏，每个签署区要单独选择印章或者签名</p>
                      */
                     bool m_hideOneKeySign;
                     bool m_hideOneKeySignHasBeenSet;
 
                     /**
-                     * 签署人阅读合同限制参数
- <br/>取值：
-<ul>
-<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>
-<li> LimitReadTime，阅读合同仅限制阅读时长</li>
-<li> LimitBottom，阅读合同仅限制必须阅读到底</li>
-<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>
-</ul>
+                     * <p>签署人阅读合同限制参数<br> <br>取值：</p><ul><li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li><li> LimitReadTime，阅读合同仅限制阅读时长</li><li> LimitBottom，阅读合同仅限制必须阅读到底</li><li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li></ul>
                      */
                     std::string m_flowReadLimit;
                     bool m_flowReadLimitHasBeenSet;
 
                     /**
-                     * 禁止在签署过程中添加签署日期控件
- <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
-<ul>
-<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
-<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
-</ul>
+                     * <p>禁止在签署过程中添加签署日期控件<br> <br>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：</p><ul><li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li><li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li></ul>
                      */
                     bool m_forbidAddSignDate;
                     bool m_forbidAddSignDateHasBeenSet;
+
+                    /**
+                     * <p>在嵌入式文件发起下,若合同是通过文件,当签署人控件指定了印章类型（或印章Id）,在嵌入页面上是否能修改</p>
+                     */
+                    bool m_forbidModifySealInfos;
+                    bool m_forbidModifySealInfosHasBeenSet;
 
                 };
             }

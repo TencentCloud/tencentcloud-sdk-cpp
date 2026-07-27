@@ -50,7 +50,11 @@ BackUpJobDisplay::BackUpJobDisplay() :
     m_bucketEncryptionHasBeenSet(false),
     m_encryptionHasBeenSet(false),
     m_encryptionEnabledHasBeenSet(false),
-    m_scheduleIdHasBeenSet(false)
+    m_scheduleIdHasBeenSet(false),
+    m_totalTasksHasBeenSet(false),
+    m_completedTasksHasBeenSet(false),
+    m_failedTasksHasBeenSet(false),
+    m_backupProgressHasBeenSet(false)
 {
 }
 
@@ -387,6 +391,46 @@ CoreInternalOutcome BackUpJobDisplay::Deserialize(const rapidjson::Value &value)
         m_scheduleIdHasBeenSet = true;
     }
 
+    if (value.HasMember("TotalTasks") && !value["TotalTasks"].IsNull())
+    {
+        if (!value["TotalTasks"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.TotalTasks` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalTasks = value["TotalTasks"].GetInt64();
+        m_totalTasksHasBeenSet = true;
+    }
+
+    if (value.HasMember("CompletedTasks") && !value["CompletedTasks"].IsNull())
+    {
+        if (!value["CompletedTasks"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.CompletedTasks` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_completedTasks = value["CompletedTasks"].GetInt64();
+        m_completedTasksHasBeenSet = true;
+    }
+
+    if (value.HasMember("FailedTasks") && !value["FailedTasks"].IsNull())
+    {
+        if (!value["FailedTasks"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.FailedTasks` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_failedTasks = value["FailedTasks"].GetInt64();
+        m_failedTasksHasBeenSet = true;
+    }
+
+    if (value.HasMember("BackupProgress") && !value["BackupProgress"].IsNull())
+    {
+        if (!value["BackupProgress"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.BackupProgress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupProgress = string(value["BackupProgress"].GetString());
+        m_backupProgressHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -636,6 +680,38 @@ void BackUpJobDisplay::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ScheduleId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scheduleId, allocator);
+    }
+
+    if (m_totalTasksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalTasks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalTasks, allocator);
+    }
+
+    if (m_completedTasksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CompletedTasks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_completedTasks, allocator);
+    }
+
+    if (m_failedTasksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailedTasks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_failedTasks, allocator);
+    }
+
+    if (m_backupProgressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupProgress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backupProgress.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1119,5 +1195,69 @@ void BackUpJobDisplay::SetScheduleId(const int64_t& _scheduleId)
 bool BackUpJobDisplay::ScheduleIdHasBeenSet() const
 {
     return m_scheduleIdHasBeenSet;
+}
+
+int64_t BackUpJobDisplay::GetTotalTasks() const
+{
+    return m_totalTasks;
+}
+
+void BackUpJobDisplay::SetTotalTasks(const int64_t& _totalTasks)
+{
+    m_totalTasks = _totalTasks;
+    m_totalTasksHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::TotalTasksHasBeenSet() const
+{
+    return m_totalTasksHasBeenSet;
+}
+
+int64_t BackUpJobDisplay::GetCompletedTasks() const
+{
+    return m_completedTasks;
+}
+
+void BackUpJobDisplay::SetCompletedTasks(const int64_t& _completedTasks)
+{
+    m_completedTasks = _completedTasks;
+    m_completedTasksHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::CompletedTasksHasBeenSet() const
+{
+    return m_completedTasksHasBeenSet;
+}
+
+int64_t BackUpJobDisplay::GetFailedTasks() const
+{
+    return m_failedTasks;
+}
+
+void BackUpJobDisplay::SetFailedTasks(const int64_t& _failedTasks)
+{
+    m_failedTasks = _failedTasks;
+    m_failedTasksHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::FailedTasksHasBeenSet() const
+{
+    return m_failedTasksHasBeenSet;
+}
+
+string BackUpJobDisplay::GetBackupProgress() const
+{
+    return m_backupProgress;
+}
+
+void BackUpJobDisplay::SetBackupProgress(const string& _backupProgress)
+{
+    m_backupProgress = _backupProgress;
+    m_backupProgressHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::BackupProgressHasBeenSet() const
+{
+    return m_backupProgressHasBeenSet;
 }
 

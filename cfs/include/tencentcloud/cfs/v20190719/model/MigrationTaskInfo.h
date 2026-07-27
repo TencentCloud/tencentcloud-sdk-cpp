@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取迁移任务名称
-                     * @return TaskName 迁移任务名称
+                     * 获取<p>迁移任务名称</p>
+                     * @return TaskName <p>迁移任务名称</p>
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
-                     * 设置迁移任务名称
-                     * @param _taskName 迁移任务名称
+                     * 设置<p>迁移任务名称</p>
+                     * @param _taskName <p>迁移任务名称</p>
                      * 
                      */
                     void SetTaskName(const std::string& _taskName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TaskNameHasBeenSet() const;
 
                     /**
-                     * 获取迁移任务id
-                     * @return TaskId 迁移任务id
+                     * 获取<p>迁移任务id</p>
+                     * @return TaskId <p>迁移任务id</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置迁移任务id
-                     * @param _taskId 迁移任务id
+                     * 设置<p>迁移任务id</p>
+                     * @param _taskId <p>迁移任务id</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取迁移方式标志位，默认为0。0: 桶迁移；1: 清单迁移
-                     * @return MigrationType 迁移方式标志位，默认为0。0: 桶迁移；1: 清单迁移
+                     * 获取<p>迁移方式标志位，默认为0。0: 桶迁移；1: 清单迁移</p>
+                     * @return MigrationType <p>迁移方式标志位，默认为0。0: 桶迁移；1: 清单迁移</p>
                      * 
                      */
                     uint64_t GetMigrationType() const;
 
                     /**
-                     * 设置迁移方式标志位，默认为0。0: 桶迁移；1: 清单迁移
-                     * @param _migrationType 迁移方式标志位，默认为0。0: 桶迁移；1: 清单迁移
+                     * 设置<p>迁移方式标志位，默认为0。0: 桶迁移；1: 清单迁移</p>
+                     * @param _migrationType <p>迁移方式标志位，默认为0。0: 桶迁移；1: 清单迁移</p>
                      * 
                      */
                     void SetMigrationType(const uint64_t& _migrationType);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool MigrationTypeHasBeenSet() const;
 
                     /**
-                     * 获取迁移模式，默认为0。0: 全量迁移
-                     * @return MigrationMode 迁移模式，默认为0。0: 全量迁移
+                     * 获取<p>迁移模式，默认为0。0: 全量迁移</p>
+                     * @return MigrationMode <p>迁移模式，默认为0。0: 全量迁移</p>
                      * 
                      */
                     uint64_t GetMigrationMode() const;
 
                     /**
-                     * 设置迁移模式，默认为0。0: 全量迁移
-                     * @param _migrationMode 迁移模式，默认为0。0: 全量迁移
+                     * 设置<p>迁移模式，默认为0。0: 全量迁移</p>
+                     * @param _migrationMode <p>迁移模式，默认为0。0: 全量迁移</p>
                      * 
                      */
                     void SetMigrationMode(const uint64_t& _migrationMode);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool MigrationModeHasBeenSet() const;
 
                     /**
-                     * 获取数据源桶名称
-                     * @return BucketName 数据源桶名称
+                     * 获取<p>数据源桶名称</p>
+                     * @return BucketName <p>数据源桶名称</p>
                      * 
                      */
                     std::string GetBucketName() const;
 
                     /**
-                     * 设置数据源桶名称
-                     * @param _bucketName 数据源桶名称
+                     * 设置<p>数据源桶名称</p>
+                     * @param _bucketName <p>数据源桶名称</p>
                      * 
                      */
                     void SetBucketName(const std::string& _bucketName);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool BucketNameHasBeenSet() const;
 
                     /**
-                     * 获取数据源桶地域
-                     * @return BucketRegion 数据源桶地域
+                     * 获取<p>数据源桶地域</p>
+                     * @return BucketRegion <p>数据源桶地域</p>
                      * 
                      */
                     std::string GetBucketRegion() const;
 
                     /**
-                     * 设置数据源桶地域
-                     * @param _bucketRegion 数据源桶地域
+                     * 设置<p>数据源桶地域</p>
+                     * @param _bucketRegion <p>数据源桶地域</p>
                      * 
                      */
                     void SetBucketRegion(const std::string& _bucketRegion);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool BucketRegionHasBeenSet() const;
 
                     /**
-                     * 获取数据源桶地址
-                     * @return BucketAddress 数据源桶地址
+                     * 获取<p>数据源桶地址</p>
+                     * @return BucketAddress <p>数据源桶地址</p>
                      * 
                      */
                     std::string GetBucketAddress() const;
 
                     /**
-                     * 设置数据源桶地址
-                     * @param _bucketAddress 数据源桶地址
+                     * 设置<p>数据源桶地址</p>
+                     * @param _bucketAddress <p>数据源桶地址</p>
                      * 
                      */
                     void SetBucketAddress(const std::string& _bucketAddress);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool BucketAddressHasBeenSet() const;
 
                     /**
-                     * 获取清单地址
-                     * @return ListAddress 清单地址
+                     * 获取<p>清单地址</p>
+                     * @return ListAddress <p>清单地址</p>
                      * 
                      */
                     std::string GetListAddress() const;
 
                     /**
-                     * 设置清单地址
-                     * @param _listAddress 清单地址
+                     * 设置<p>清单地址</p>
+                     * @param _listAddress <p>清单地址</p>
                      * 
                      */
                     void SetListAddress(const std::string& _listAddress);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool ListAddressHasBeenSet() const;
 
                     /**
-                     * 获取文件系统实例名称
-                     * @return FsName 文件系统实例名称
+                     * 获取<p>文件系统实例名称</p>
+                     * @return FsName <p>文件系统实例名称</p>
                      * 
                      */
                     std::string GetFsName() const;
 
                     /**
-                     * 设置文件系统实例名称
-                     * @param _fsName 文件系统实例名称
+                     * 设置<p>文件系统实例名称</p>
+                     * @param _fsName <p>文件系统实例名称</p>
                      * 
                      */
                     void SetFsName(const std::string& _fsName);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool FsNameHasBeenSet() const;
 
                     /**
-                     * 获取文件系统实例Id
-                     * @return FileSystemId 文件系统实例Id
+                     * 获取<p>文件系统实例Id</p>
+                     * @return FileSystemId <p>文件系统实例Id</p>
                      * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
-                     * 设置文件系统实例Id
-                     * @param _fileSystemId 文件系统实例Id
+                     * 设置<p>文件系统实例Id</p>
+                     * @param _fileSystemId <p>文件系统实例Id</p>
                      * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取文件系统路径
-                     * @return FsPath 文件系统路径
+                     * 获取<p>文件系统路径</p>
+                     * @return FsPath <p>文件系统路径</p>
                      * 
                      */
                     std::string GetFsPath() const;
 
                     /**
-                     * 设置文件系统路径
-                     * @param _fsPath 文件系统路径
+                     * 设置<p>文件系统路径</p>
+                     * @param _fsPath <p>文件系统路径</p>
                      * 
                      */
                     void SetFsPath(const std::string& _fsPath);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool FsPathHasBeenSet() const;
 
                     /**
-                     * 获取同名文件迁移时覆盖策略，默认为0。0: 最后修改时间优先；1: 全覆盖；2: 不覆盖
-                     * @return CoverType 同名文件迁移时覆盖策略，默认为0。0: 最后修改时间优先；1: 全覆盖；2: 不覆盖
+                     * 获取<p>同名文件迁移时覆盖策略，默认为0。0: 最后修改时间优先；1: 全覆盖；2: 不覆盖</p>
+                     * @return CoverType <p>同名文件迁移时覆盖策略，默认为0。0: 最后修改时间优先；1: 全覆盖；2: 不覆盖</p>
                      * 
                      */
                     uint64_t GetCoverType() const;
 
                     /**
-                     * 设置同名文件迁移时覆盖策略，默认为0。0: 最后修改时间优先；1: 全覆盖；2: 不覆盖
-                     * @param _coverType 同名文件迁移时覆盖策略，默认为0。0: 最后修改时间优先；1: 全覆盖；2: 不覆盖
+                     * 设置<p>同名文件迁移时覆盖策略，默认为0。0: 最后修改时间优先；1: 全覆盖；2: 不覆盖</p>
+                     * @param _coverType <p>同名文件迁移时覆盖策略，默认为0。0: 最后修改时间优先；1: 全覆盖；2: 不覆盖</p>
                      * 
                      */
                     void SetCoverType(const uint64_t& _coverType);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool CoverTypeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取完成/终止时间
-                     * @return EndTime 完成/终止时间
+                     * 获取<p>完成/终止时间</p>
+                     * @return EndTime <p>完成/终止时间</p>
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置完成/终止时间
-                     * @param _endTime 完成/终止时间
+                     * 设置<p>完成/终止时间</p>
+                     * @param _endTime <p>完成/终止时间</p>
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取迁移状态。0: 已完成；1: 创建中；2: 运行中；3: 终止中；4: 已终止；5: 创建失败；6: 运行失败；7: 结束中；8: 删除中；9: 等待中
-                     * @return Status 迁移状态。0: 已完成；1: 创建中；2: 运行中；3: 终止中；4: 已终止；5: 创建失败；6: 运行失败；7: 结束中；8: 删除中；9: 等待中
+                     * 获取<p>迁移状态。0: 已完成；1: 创建中；2: 运行中；3: 终止中；4: 已终止；5: 创建失败；6: 运行失败；7: 结束中；8: 删除中；9: 等待中</p>
+                     * @return Status <p>迁移状态。0: 已完成；1: 创建中；2: 运行中；3: 终止中；4: 已终止；5: 创建失败；6: 运行失败；7: 结束中；8: 删除中；9: 等待中</p>
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置迁移状态。0: 已完成；1: 创建中；2: 运行中；3: 终止中；4: 已终止；5: 创建失败；6: 运行失败；7: 结束中；8: 删除中；9: 等待中
-                     * @param _status 迁移状态。0: 已完成；1: 创建中；2: 运行中；3: 终止中；4: 已终止；5: 创建失败；6: 运行失败；7: 结束中；8: 删除中；9: 等待中
+                     * 设置<p>迁移状态。0: 已完成；1: 创建中；2: 运行中；3: 终止中；4: 已终止；5: 创建失败；6: 运行失败；7: 结束中；8: 删除中；9: 等待中</p>
+                     * @param _status <p>迁移状态。0: 已完成；1: 创建中；2: 运行中；3: 终止中；4: 已终止；5: 创建失败；6: 运行失败；7: 结束中；8: 删除中；9: 等待中</p>
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取文件数量
-                     * @return FileTotalCount 文件数量
+                     * 获取<p>文件数量</p>
+                     * @return FileTotalCount <p>文件数量</p>
                      * 
                      */
                     uint64_t GetFileTotalCount() const;
 
                     /**
-                     * 设置文件数量
-                     * @param _fileTotalCount 文件数量
+                     * 设置<p>文件数量</p>
+                     * @param _fileTotalCount <p>文件数量</p>
                      * 
                      */
                     void SetFileTotalCount(const uint64_t& _fileTotalCount);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool FileTotalCountHasBeenSet() const;
 
                     /**
-                     * 获取已迁移文件数量
-                     * @return FileMigratedCount 已迁移文件数量
+                     * 获取<p>已迁移文件数量</p>
+                     * @return FileMigratedCount <p>已迁移文件数量</p>
                      * 
                      */
                     uint64_t GetFileMigratedCount() const;
 
                     /**
-                     * 设置已迁移文件数量
-                     * @param _fileMigratedCount 已迁移文件数量
+                     * 设置<p>已迁移文件数量</p>
+                     * @param _fileMigratedCount <p>已迁移文件数量</p>
                      * 
                      */
                     void SetFileMigratedCount(const uint64_t& _fileMigratedCount);
@@ -404,15 +404,15 @@ namespace TencentCloud
                     bool FileMigratedCountHasBeenSet() const;
 
                     /**
-                     * 获取迁移失败文件数量
-                     * @return FileFailedCount 迁移失败文件数量
+                     * 获取<p>迁移失败文件数量</p>
+                     * @return FileFailedCount <p>迁移失败文件数量</p>
                      * 
                      */
                     uint64_t GetFileFailedCount() const;
 
                     /**
-                     * 设置迁移失败文件数量
-                     * @param _fileFailedCount 迁移失败文件数量
+                     * 设置<p>迁移失败文件数量</p>
+                     * @param _fileFailedCount <p>迁移失败文件数量</p>
                      * 
                      */
                     void SetFileFailedCount(const uint64_t& _fileFailedCount);
@@ -425,15 +425,15 @@ namespace TencentCloud
                     bool FileFailedCountHasBeenSet() const;
 
                     /**
-                     * 获取文件容量，单位Byte
-                     * @return FileTotalSize 文件容量，单位Byte
+                     * 获取<p>文件容量，单位Byte</p>
+                     * @return FileTotalSize <p>文件容量，单位Byte</p>
                      * 
                      */
                     int64_t GetFileTotalSize() const;
 
                     /**
-                     * 设置文件容量，单位Byte
-                     * @param _fileTotalSize 文件容量，单位Byte
+                     * 设置<p>文件容量，单位Byte</p>
+                     * @param _fileTotalSize <p>文件容量，单位Byte</p>
                      * 
                      */
                     void SetFileTotalSize(const int64_t& _fileTotalSize);
@@ -446,15 +446,15 @@ namespace TencentCloud
                     bool FileTotalSizeHasBeenSet() const;
 
                     /**
-                     * 获取已迁移文件容量，单位Byte
-                     * @return FileMigratedSize 已迁移文件容量，单位Byte
+                     * 获取<p>已迁移文件容量，单位Byte</p>
+                     * @return FileMigratedSize <p>已迁移文件容量，单位Byte</p>
                      * 
                      */
                     int64_t GetFileMigratedSize() const;
 
                     /**
-                     * 设置已迁移文件容量，单位Byte
-                     * @param _fileMigratedSize 已迁移文件容量，单位Byte
+                     * 设置<p>已迁移文件容量，单位Byte</p>
+                     * @param _fileMigratedSize <p>已迁移文件容量，单位Byte</p>
                      * 
                      */
                     void SetFileMigratedSize(const int64_t& _fileMigratedSize);
@@ -467,15 +467,15 @@ namespace TencentCloud
                     bool FileMigratedSizeHasBeenSet() const;
 
                     /**
-                     * 获取迁移失败文件容量，单位Byte
-                     * @return FileFailedSize 迁移失败文件容量，单位Byte
+                     * 获取<p>迁移失败文件容量，单位Byte</p>
+                     * @return FileFailedSize <p>迁移失败文件容量，单位Byte</p>
                      * 
                      */
                     int64_t GetFileFailedSize() const;
 
                     /**
-                     * 设置迁移失败文件容量，单位Byte
-                     * @param _fileFailedSize 迁移失败文件容量，单位Byte
+                     * 设置<p>迁移失败文件容量，单位Byte</p>
+                     * @param _fileFailedSize <p>迁移失败文件容量，单位Byte</p>
                      * 
                      */
                     void SetFileFailedSize(const int64_t& _fileFailedSize);
@@ -488,15 +488,15 @@ namespace TencentCloud
                     bool FileFailedSizeHasBeenSet() const;
 
                     /**
-                     * 获取全部清单
-                     * @return FileTotalList 全部清单
+                     * 获取<p>全部清单</p>
+                     * @return FileTotalList <p>全部清单</p>
                      * 
                      */
                     std::string GetFileTotalList() const;
 
                     /**
-                     * 设置全部清单
-                     * @param _fileTotalList 全部清单
+                     * 设置<p>全部清单</p>
+                     * @param _fileTotalList <p>全部清单</p>
                      * 
                      */
                     void SetFileTotalList(const std::string& _fileTotalList);
@@ -509,15 +509,15 @@ namespace TencentCloud
                     bool FileTotalListHasBeenSet() const;
 
                     /**
-                     * 获取已完成文件清单
-                     * @return FileCompletedList 已完成文件清单
+                     * 获取<p>已完成文件清单</p>
+                     * @return FileCompletedList <p>已完成文件清单</p>
                      * 
                      */
                     std::string GetFileCompletedList() const;
 
                     /**
-                     * 设置已完成文件清单
-                     * @param _fileCompletedList 已完成文件清单
+                     * 设置<p>已完成文件清单</p>
+                     * @param _fileCompletedList <p>已完成文件清单</p>
                      * 
                      */
                     void SetFileCompletedList(const std::string& _fileCompletedList);
@@ -530,15 +530,15 @@ namespace TencentCloud
                     bool FileCompletedListHasBeenSet() const;
 
                     /**
-                     * 获取失败文件清单
-                     * @return FileFailedList 失败文件清单
+                     * 获取<p>失败文件清单</p>
+                     * @return FileFailedList <p>失败文件清单</p>
                      * 
                      */
                     std::string GetFileFailedList() const;
 
                     /**
-                     * 设置失败文件清单
-                     * @param _fileFailedList 失败文件清单
+                     * 设置<p>失败文件清单</p>
+                     * @param _fileFailedList <p>失败文件清单</p>
                      * 
                      */
                     void SetFileFailedList(const std::string& _fileFailedList);
@@ -551,15 +551,15 @@ namespace TencentCloud
                     bool FileFailedListHasBeenSet() const;
 
                     /**
-                     * 获取源桶路径
-                     * @return BucketPath 源桶路径
+                     * 获取<p>源桶路径</p>
+                     * @return BucketPath <p>源桶路径</p>
                      * 
                      */
                     std::string GetBucketPath() const;
 
                     /**
-                     * 设置源桶路径
-                     * @param _bucketPath 源桶路径
+                     * 设置<p>源桶路径</p>
+                     * @param _bucketPath <p>源桶路径</p>
                      * 
                      */
                     void SetBucketPath(const std::string& _bucketPath);
@@ -572,15 +572,15 @@ namespace TencentCloud
                     bool BucketPathHasBeenSet() const;
 
                     /**
-                     * 获取迁移方向。0: 对象存储迁移至文件系统，1: 文件系统迁移至对象存储。默认 0
-                     * @return Direction 迁移方向。0: 对象存储迁移至文件系统，1: 文件系统迁移至对象存储。默认 0
+                     * 获取<p>迁移方向。0: 对象存储迁移至文件系统，1: 文件系统迁移至对象存储。默认 0</p>
+                     * @return Direction <p>迁移方向。0: 对象存储迁移至文件系统，1: 文件系统迁移至对象存储。默认 0</p>
                      * 
                      */
                     uint64_t GetDirection() const;
 
                     /**
-                     * 设置迁移方向。0: 对象存储迁移至文件系统，1: 文件系统迁移至对象存储。默认 0
-                     * @param _direction 迁移方向。0: 对象存储迁移至文件系统，1: 文件系统迁移至对象存储。默认 0
+                     * 设置<p>迁移方向。0: 对象存储迁移至文件系统，1: 文件系统迁移至对象存储。默认 0</p>
+                     * @param _direction <p>迁移方向。0: 对象存储迁移至文件系统，1: 文件系统迁移至对象存储。默认 0</p>
                      * 
                      */
                     void SetDirection(const uint64_t& _direction);
@@ -592,163 +592,190 @@ namespace TencentCloud
                      */
                     bool DirectionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>数据源服务商</p><p>枚举值：</p><ul><li>COS： 腾讯云COS</li><li>OSS： 阿里云OSS</li><li>OBS： 华为云OBS</li><li>BOS： 百度云BOS</li><li>TOS： 火山引擎TOS</li></ul>
+                     * @return SrcService <p>数据源服务商</p><p>枚举值：</p><ul><li>COS： 腾讯云COS</li><li>OSS： 阿里云OSS</li><li>OBS： 华为云OBS</li><li>BOS： 百度云BOS</li><li>TOS： 火山引擎TOS</li></ul>
+                     * 
+                     */
+                    std::string GetSrcService() const;
+
+                    /**
+                     * 设置<p>数据源服务商</p><p>枚举值：</p><ul><li>COS： 腾讯云COS</li><li>OSS： 阿里云OSS</li><li>OBS： 华为云OBS</li><li>BOS： 百度云BOS</li><li>TOS： 火山引擎TOS</li></ul>
+                     * @param _srcService <p>数据源服务商</p><p>枚举值：</p><ul><li>COS： 腾讯云COS</li><li>OSS： 阿里云OSS</li><li>OBS： 华为云OBS</li><li>BOS： 百度云BOS</li><li>TOS： 火山引擎TOS</li></ul>
+                     * 
+                     */
+                    void SetSrcService(const std::string& _srcService);
+
+                    /**
+                     * 判断参数 SrcService 是否已赋值
+                     * @return SrcService 是否已赋值
+                     * 
+                     */
+                    bool SrcServiceHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 迁移任务名称
+                     * <p>迁移任务名称</p>
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
 
                     /**
-                     * 迁移任务id
+                     * <p>迁移任务id</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 迁移方式标志位，默认为0。0: 桶迁移；1: 清单迁移
+                     * <p>迁移方式标志位，默认为0。0: 桶迁移；1: 清单迁移</p>
                      */
                     uint64_t m_migrationType;
                     bool m_migrationTypeHasBeenSet;
 
                     /**
-                     * 迁移模式，默认为0。0: 全量迁移
+                     * <p>迁移模式，默认为0。0: 全量迁移</p>
                      */
                     uint64_t m_migrationMode;
                     bool m_migrationModeHasBeenSet;
 
                     /**
-                     * 数据源桶名称
+                     * <p>数据源桶名称</p>
                      */
                     std::string m_bucketName;
                     bool m_bucketNameHasBeenSet;
 
                     /**
-                     * 数据源桶地域
+                     * <p>数据源桶地域</p>
                      */
                     std::string m_bucketRegion;
                     bool m_bucketRegionHasBeenSet;
 
                     /**
-                     * 数据源桶地址
+                     * <p>数据源桶地址</p>
                      */
                     std::string m_bucketAddress;
                     bool m_bucketAddressHasBeenSet;
 
                     /**
-                     * 清单地址
+                     * <p>清单地址</p>
                      */
                     std::string m_listAddress;
                     bool m_listAddressHasBeenSet;
 
                     /**
-                     * 文件系统实例名称
+                     * <p>文件系统实例名称</p>
                      */
                     std::string m_fsName;
                     bool m_fsNameHasBeenSet;
 
                     /**
-                     * 文件系统实例Id
+                     * <p>文件系统实例Id</p>
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 文件系统路径
+                     * <p>文件系统路径</p>
                      */
                     std::string m_fsPath;
                     bool m_fsPathHasBeenSet;
 
                     /**
-                     * 同名文件迁移时覆盖策略，默认为0。0: 最后修改时间优先；1: 全覆盖；2: 不覆盖
+                     * <p>同名文件迁移时覆盖策略，默认为0。0: 最后修改时间优先；1: 全覆盖；2: 不覆盖</p>
                      */
                     uint64_t m_coverType;
                     bool m_coverTypeHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 完成/终止时间
+                     * <p>完成/终止时间</p>
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 迁移状态。0: 已完成；1: 创建中；2: 运行中；3: 终止中；4: 已终止；5: 创建失败；6: 运行失败；7: 结束中；8: 删除中；9: 等待中
+                     * <p>迁移状态。0: 已完成；1: 创建中；2: 运行中；3: 终止中；4: 已终止；5: 创建失败；6: 运行失败；7: 结束中；8: 删除中；9: 等待中</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 文件数量
+                     * <p>文件数量</p>
                      */
                     uint64_t m_fileTotalCount;
                     bool m_fileTotalCountHasBeenSet;
 
                     /**
-                     * 已迁移文件数量
+                     * <p>已迁移文件数量</p>
                      */
                     uint64_t m_fileMigratedCount;
                     bool m_fileMigratedCountHasBeenSet;
 
                     /**
-                     * 迁移失败文件数量
+                     * <p>迁移失败文件数量</p>
                      */
                     uint64_t m_fileFailedCount;
                     bool m_fileFailedCountHasBeenSet;
 
                     /**
-                     * 文件容量，单位Byte
+                     * <p>文件容量，单位Byte</p>
                      */
                     int64_t m_fileTotalSize;
                     bool m_fileTotalSizeHasBeenSet;
 
                     /**
-                     * 已迁移文件容量，单位Byte
+                     * <p>已迁移文件容量，单位Byte</p>
                      */
                     int64_t m_fileMigratedSize;
                     bool m_fileMigratedSizeHasBeenSet;
 
                     /**
-                     * 迁移失败文件容量，单位Byte
+                     * <p>迁移失败文件容量，单位Byte</p>
                      */
                     int64_t m_fileFailedSize;
                     bool m_fileFailedSizeHasBeenSet;
 
                     /**
-                     * 全部清单
+                     * <p>全部清单</p>
                      */
                     std::string m_fileTotalList;
                     bool m_fileTotalListHasBeenSet;
 
                     /**
-                     * 已完成文件清单
+                     * <p>已完成文件清单</p>
                      */
                     std::string m_fileCompletedList;
                     bool m_fileCompletedListHasBeenSet;
 
                     /**
-                     * 失败文件清单
+                     * <p>失败文件清单</p>
                      */
                     std::string m_fileFailedList;
                     bool m_fileFailedListHasBeenSet;
 
                     /**
-                     * 源桶路径
+                     * <p>源桶路径</p>
                      */
                     std::string m_bucketPath;
                     bool m_bucketPathHasBeenSet;
 
                     /**
-                     * 迁移方向。0: 对象存储迁移至文件系统，1: 文件系统迁移至对象存储。默认 0
+                     * <p>迁移方向。0: 对象存储迁移至文件系统，1: 文件系统迁移至对象存储。默认 0</p>
                      */
                     uint64_t m_direction;
                     bool m_directionHasBeenSet;
+
+                    /**
+                     * <p>数据源服务商</p><p>枚举值：</p><ul><li>COS： 腾讯云COS</li><li>OSS： 阿里云OSS</li><li>OBS： 华为云OBS</li><li>BOS： 百度云BOS</li><li>TOS： 火山引擎TOS</li></ul>
+                     */
+                    std::string m_srcService;
+                    bool m_srcServiceHasBeenSet;
 
                 };
             }

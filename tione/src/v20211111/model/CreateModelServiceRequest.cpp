@@ -68,7 +68,8 @@ CreateModelServiceRequest::CreateModelServiceRequest() :
     m_volumeMountsHasBeenSet(false),
     m_schedulingStrategyHasBeenSet(false),
     m_gatewayLogConfigHasBeenSet(false),
-    m_gatewayConfigHasBeenSet(false)
+    m_gatewayConfigHasBeenSet(false),
+    m_resourceSupplyAttributeHasBeenSet(false)
 {
 }
 
@@ -492,6 +493,15 @@ string CreateModelServiceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_gatewayConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_resourceSupplyAttributeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceSupplyAttribute";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_resourceSupplyAttribute.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -1236,6 +1246,22 @@ void CreateModelServiceRequest::SetGatewayConfig(const GatewayConfig& _gatewayCo
 bool CreateModelServiceRequest::GatewayConfigHasBeenSet() const
 {
     return m_gatewayConfigHasBeenSet;
+}
+
+ResourceSupplyAttribute CreateModelServiceRequest::GetResourceSupplyAttribute() const
+{
+    return m_resourceSupplyAttribute;
+}
+
+void CreateModelServiceRequest::SetResourceSupplyAttribute(const ResourceSupplyAttribute& _resourceSupplyAttribute)
+{
+    m_resourceSupplyAttribute = _resourceSupplyAttribute;
+    m_resourceSupplyAttributeHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::ResourceSupplyAttributeHasBeenSet() const
+{
+    return m_resourceSupplyAttributeHasBeenSet;
 }
 
 

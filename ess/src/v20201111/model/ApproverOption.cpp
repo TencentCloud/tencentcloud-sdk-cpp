@@ -27,7 +27,8 @@ ApproverOption::ApproverOption() :
     m_fillTypeHasBeenSet(false),
     m_flowReadLimitHasBeenSet(false),
     m_forbidAddSignDateHasBeenSet(false),
-    m_approverMobileModeHasBeenSet(false)
+    m_approverMobileModeHasBeenSet(false),
+    m_forbidModifySealInfosHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome ApproverOption::Deserialize(const rapidjson::Value &value)
         m_approverMobileModeHasBeenSet = true;
     }
 
+    if (value.HasMember("ForbidModifySealInfos") && !value["ForbidModifySealInfos"].IsNull())
+    {
+        if (!value["ForbidModifySealInfos"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproverOption.ForbidModifySealInfos` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_forbidModifySealInfos = value["ForbidModifySealInfos"].GetBool();
+        m_forbidModifySealInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void ApproverOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ApproverMobileMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_approverMobileMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forbidModifySealInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForbidModifySealInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_forbidModifySealInfos, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void ApproverOption::SetApproverMobileMode(const string& _approverMobileMode)
 bool ApproverOption::ApproverMobileModeHasBeenSet() const
 {
     return m_approverMobileModeHasBeenSet;
+}
+
+bool ApproverOption::GetForbidModifySealInfos() const
+{
+    return m_forbidModifySealInfos;
+}
+
+void ApproverOption::SetForbidModifySealInfos(const bool& _forbidModifySealInfos)
+{
+    m_forbidModifySealInfos = _forbidModifySealInfos;
+    m_forbidModifySealInfosHasBeenSet = true;
+}
+
+bool ApproverOption::ForbidModifySealInfosHasBeenSet() const
+{
+    return m_forbidModifySealInfosHasBeenSet;
 }
 

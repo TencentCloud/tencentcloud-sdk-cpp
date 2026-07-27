@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志明细
-                     * @return Result 日志明细
+                     * 获取<p>日志明细</p>
+                     * @return Result <p>日志明细</p>
                      * 
                      */
                     std::string GetResult() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志明细
+                     * <p>日志明细</p>
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;
