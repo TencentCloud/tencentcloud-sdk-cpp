@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool ContainerNetworkHasBeenSet() const;
 
                     /**
-                     * 获取<p>集群名称</p><p>入参限制：最长128个字符，只能为中文，英文，下划线。</p>
-                     * @return ClusterName <p>集群名称</p><p>入参限制：最长128个字符，只能为中文，英文，下划线。</p>
+                     * 获取<p>集群名称</p><p>入参限制：最长128个字符。</p>
+                     * @return ClusterName <p>集群名称</p><p>入参限制：最长128个字符。</p>
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
-                     * 设置<p>集群名称</p><p>入参限制：最长128个字符，只能为中文，英文，下划线。</p>
-                     * @param _clusterName <p>集群名称</p><p>入参限制：最长128个字符，只能为中文，英文，下划线。</p>
+                     * 设置<p>集群名称</p><p>入参限制：最长128个字符。</p>
+                     * @param _clusterName <p>集群名称</p><p>入参限制：最长128个字符。</p>
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -171,6 +171,27 @@ namespace TencentCloud
                      */
                     bool ClientTokenHasBeenSet() const;
 
+                    /**
+                     * 获取<p>试运行开关，true 时只执行参数校验，不发起创建流程，默认 false</p>
+                     * @return DryRun <p>试运行开关，true 时只执行参数校验，不发起创建流程，默认 false</p>
+                     * 
+                     */
+                    bool GetDryRun() const;
+
+                    /**
+                     * 设置<p>试运行开关，true 时只执行参数校验，不发起创建流程，默认 false</p>
+                     * @param _dryRun <p>试运行开关，true 时只执行参数校验，不发起创建流程，默认 false</p>
+                     * 
+                     */
+                    void SetDryRun(const bool& _dryRun);
+
+                    /**
+                     * 判断参数 DryRun 是否已赋值
+                     * @return DryRun 是否已赋值
+                     * 
+                     */
+                    bool DryRunHasBeenSet() const;
+
                 private:
 
                     /**
@@ -180,7 +201,7 @@ namespace TencentCloud
                     bool m_containerNetworkHasBeenSet;
 
                     /**
-                     * <p>集群名称</p><p>入参限制：最长128个字符，只能为中文，英文，下划线。</p>
+                     * <p>集群名称</p><p>入参限制：最长128个字符。</p>
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
@@ -208,6 +229,12 @@ namespace TencentCloud
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
+
+                    /**
+                     * <p>试运行开关，true 时只执行参数校验，不发起创建流程，默认 false</p>
+                     */
+                    bool m_dryRun;
+                    bool m_dryRunHasBeenSet;
 
                 };
             }

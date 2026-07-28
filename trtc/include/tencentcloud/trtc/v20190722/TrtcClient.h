@@ -37,6 +37,8 @@
 #include <tencentcloud/trtc/v20190722/model/CreateCloudSliceTaskResponse.h>
 #include <tencentcloud/trtc/v20190722/model/CreateCloudTranscriptionRequest.h>
 #include <tencentcloud/trtc/v20190722/model/CreateCloudTranscriptionResponse.h>
+#include <tencentcloud/trtc/v20190722/model/CreateLiveStreamModerationRequest.h>
+#include <tencentcloud/trtc/v20190722/model/CreateLiveStreamModerationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/CreatePictureRequest.h>
 #include <tencentcloud/trtc/v20190722/model/CreatePictureResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DeleteBasicModerationRequest.h>
@@ -49,6 +51,8 @@
 #include <tencentcloud/trtc/v20190722/model/DeleteCloudSliceTaskResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DeleteCloudTranscriptionRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DeleteCloudTranscriptionResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DeleteLiveStreamModerationRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DeleteLiveStreamModerationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DeletePictureRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DeletePictureResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DeleteVoicePrintRequest.h>
@@ -69,6 +73,8 @@
 #include <tencentcloud/trtc/v20190722/model/DescribeCloudSliceTaskResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCloudTranscriptionRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCloudTranscriptionResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeLiveStreamModerationRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeLiveStreamModerationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeMixTranscodingUsageRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeMixTranscodingUsageResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribePictureRequest.h>
@@ -212,6 +218,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCloudTranscriptionResponse> CreateCloudTranscriptionOutcome;
                 typedef std::future<CreateCloudTranscriptionOutcome> CreateCloudTranscriptionOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::CreateCloudTranscriptionRequest&, CreateCloudTranscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudTranscriptionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateLiveStreamModerationResponse> CreateLiveStreamModerationOutcome;
+                typedef std::future<CreateLiveStreamModerationOutcome> CreateLiveStreamModerationOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::CreateLiveStreamModerationRequest&, CreateLiveStreamModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLiveStreamModerationAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePictureResponse> CreatePictureOutcome;
                 typedef std::future<CreatePictureOutcome> CreatePictureOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::CreatePictureRequest&, CreatePictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePictureAsyncHandler;
@@ -230,6 +239,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCloudTranscriptionResponse> DeleteCloudTranscriptionOutcome;
                 typedef std::future<DeleteCloudTranscriptionOutcome> DeleteCloudTranscriptionOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DeleteCloudTranscriptionRequest&, DeleteCloudTranscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudTranscriptionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLiveStreamModerationResponse> DeleteLiveStreamModerationOutcome;
+                typedef std::future<DeleteLiveStreamModerationOutcome> DeleteLiveStreamModerationOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DeleteLiveStreamModerationRequest&, DeleteLiveStreamModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveStreamModerationAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeletePictureResponse> DeletePictureOutcome;
                 typedef std::future<DeletePictureOutcome> DeletePictureOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DeletePictureRequest&, DeletePictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePictureAsyncHandler;
@@ -260,6 +272,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudTranscriptionResponse> DescribeCloudTranscriptionOutcome;
                 typedef std::future<DescribeCloudTranscriptionOutcome> DescribeCloudTranscriptionOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeCloudTranscriptionRequest&, DescribeCloudTranscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudTranscriptionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLiveStreamModerationResponse> DescribeLiveStreamModerationOutcome;
+                typedef std::future<DescribeLiveStreamModerationOutcome> DescribeLiveStreamModerationOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeLiveStreamModerationRequest&, DescribeLiveStreamModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamModerationAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMixTranscodingUsageResponse> DescribeMixTranscodingUsageOutcome;
                 typedef std::future<DescribeMixTranscodingUsageOutcome> DescribeMixTranscodingUsageOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeMixTranscodingUsageRequest&, DescribeMixTranscodingUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMixTranscodingUsageAsyncHandler;
@@ -510,6 +525,17 @@ namespace TencentCloud
                 CreateCloudTranscriptionOutcomeCallable CreateCloudTranscriptionCallable(const Model::CreateCloudTranscriptionRequest& request);
 
                 /**
+                 *启动一路直播流审核。服务端异步拉流、定频截帧、音频切片、送审，通过回调返回结果。一次一个任务（一路流）。您可以通过此接口实现如下目标：
+●指定内容参数（LiveModerationParams）来指定内容理解需要的详细参数。
+●指定存储参数（LiveModerationStorageParams）将命中的切片文件指定上传到您希望的云存储，目前支持腾讯云（对象存储COS）以及第三方AWS（S3）和阿里云（OSS）
+                 * @param req CreateLiveStreamModerationRequest
+                 * @return CreateLiveStreamModerationOutcome
+                 */
+                CreateLiveStreamModerationOutcome CreateLiveStreamModeration(const Model::CreateLiveStreamModerationRequest &request);
+                void CreateLiveStreamModerationAsync(const Model::CreateLiveStreamModerationRequest& request, const CreateLiveStreamModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLiveStreamModerationOutcomeCallable CreateLiveStreamModerationCallable(const Model::CreateLiveStreamModerationRequest& request);
+
+                /**
                  *如果您需要在 [云端混流转码](https://cloud.tencent.com/document/product/647/16827) 时频繁新增自定义背景图或水印，可通过此接口上传新的图片素材。无需频繁新增图片的场景，建议直接在 [控制台 > 应用管理 > 素材管理](https://cloud.tencent.com/document/product/647/50769) 中操作。
                  * @param req CreatePictureRequest
                  * @return CreatePictureOutcome
@@ -562,6 +588,15 @@ namespace TencentCloud
                 DeleteCloudTranscriptionOutcome DeleteCloudTranscription(const Model::DeleteCloudTranscriptionRequest &request);
                 void DeleteCloudTranscriptionAsync(const Model::DeleteCloudTranscriptionRequest& request, const DeleteCloudTranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteCloudTranscriptionOutcomeCallable DeleteCloudTranscriptionCallable(const Model::DeleteCloudTranscriptionRequest& request);
+
+                /**
+                 *成功开启直播流AI 内容理解任务后，可以使用此接口来停止进行内容识别。
+                 * @param req DeleteLiveStreamModerationRequest
+                 * @return DeleteLiveStreamModerationOutcome
+                 */
+                DeleteLiveStreamModerationOutcome DeleteLiveStreamModeration(const Model::DeleteLiveStreamModerationRequest &request);
+                void DeleteLiveStreamModerationAsync(const Model::DeleteLiveStreamModerationRequest& request, const DeleteLiveStreamModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLiveStreamModerationOutcomeCallable DeleteLiveStreamModerationCallable(const Model::DeleteLiveStreamModerationRequest& request);
 
                 /**
                  *如果您需要在 [云端混流转码](https://cloud.tencent.com/document/product/647/16827) 时频繁删除自定义背景图或水印，可通过此接口删除已上传的图片。无需频繁删除图片的场景，建议直接在 [控制台 > 应用管理 > 素材管理](https://cloud.tencent.com/document/product/647/50769) 中操作。
@@ -658,6 +693,15 @@ namespace TencentCloud
                 DescribeCloudTranscriptionOutcome DescribeCloudTranscription(const Model::DescribeCloudTranscriptionRequest &request);
                 void DescribeCloudTranscriptionAsync(const Model::DescribeCloudTranscriptionRequest& request, const DescribeCloudTranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudTranscriptionOutcomeCallable DescribeCloudTranscriptionCallable(const Model::DescribeCloudTranscriptionRequest& request);
+
+                /**
+                 *成功开启直播流AI 内容理解任务后，可以使用此接口来查询AI 内容理解任务状态，仅在任务进行时有效，任务退出后查询将会返回错误。
+                 * @param req DescribeLiveStreamModerationRequest
+                 * @return DescribeLiveStreamModerationOutcome
+                 */
+                DescribeLiveStreamModerationOutcome DescribeLiveStreamModeration(const Model::DescribeLiveStreamModerationRequest &request);
+                void DescribeLiveStreamModerationAsync(const Model::DescribeLiveStreamModerationRequest& request, const DescribeLiveStreamModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLiveStreamModerationOutcomeCallable DescribeLiveStreamModerationCallable(const Model::DescribeLiveStreamModerationRequest& request);
 
                 /**
                  *获取TRTC混流转码的用量明细。

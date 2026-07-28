@@ -193,6 +193,56 @@ namespace TencentCloud
                      */
                     bool NodeTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>网络模式</p><p>枚举值：</p><ul><li>privatelink： 四层网络联通，放通SSH 通路</li><li>cross_tenant_eni： 三层网络联通，双网卡模式</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NetworkMode <p>网络模式</p><p>枚举值：</p><ul><li>privatelink： 四层网络联通，放通SSH 通路</li><li>cross_tenant_eni： 三层网络联通，双网卡模式</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNetworkMode() const;
+
+                    /**
+                     * 设置<p>网络模式</p><p>枚举值：</p><ul><li>privatelink： 四层网络联通，放通SSH 通路</li><li>cross_tenant_eni： 三层网络联通，双网卡模式</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _networkMode <p>网络模式</p><p>枚举值：</p><ul><li>privatelink： 四层网络联通，放通SSH 通路</li><li>cross_tenant_eni： 三层网络联通，双网卡模式</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNetworkMode(const std::string& _networkMode);
+
+                    /**
+                     * 判断参数 NetworkMode 是否已赋值
+                     * @return NetworkMode 是否已赋值
+                     * 
+                     */
+                    bool NetworkModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>当选择网络模式为三层网络联通模式时，此处的IP地址则为用户可访问的地址。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EniIP <p>当选择网络模式为三层网络联通模式时，此处的IP地址则为用户可访问的地址。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEniIP() const;
+
+                    /**
+                     * 设置<p>当选择网络模式为三层网络联通模式时，此处的IP地址则为用户可访问的地址。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _eniIP <p>当选择网络模式为三层网络联通模式时，此处的IP地址则为用户可访问的地址。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEniIP(const std::string& _eniIP);
+
+                    /**
+                     * 判断参数 EniIP 是否已赋值
+                     * @return EniIP 是否已赋值
+                     * 
+                     */
+                    bool EniIPHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +286,20 @@ namespace TencentCloud
                      */
                     std::string m_nodeType;
                     bool m_nodeTypeHasBeenSet;
+
+                    /**
+                     * <p>网络模式</p><p>枚举值：</p><ul><li>privatelink： 四层网络联通，放通SSH 通路</li><li>cross_tenant_eni： 三层网络联通，双网卡模式</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_networkMode;
+                    bool m_networkModeHasBeenSet;
+
+                    /**
+                     * <p>当选择网络模式为三层网络联通模式时，此处的IP地址则为用户可访问的地址。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_eniIP;
+                    bool m_eniIPHasBeenSet;
 
                 };
             }

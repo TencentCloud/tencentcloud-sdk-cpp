@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取账号数组，包含account和host
-                     * @return Accounts 账号数组，包含account和host
+                     * 获取<p>账号数组，包含account和host</p>
+                     * @return Accounts <p>账号数组，包含account和host</p>
                      * 
                      */
                     std::vector<InputAccount> GetAccounts() const;
 
                     /**
-                     * 设置账号数组，包含account和host
-                     * @param _accounts 账号数组，包含account和host
+                     * 设置<p>账号数组，包含account和host</p>
+                     * @param _accounts <p>账号数组，包含account和host</p>
                      * 
                      */
                     void SetAccounts(const std::vector<InputAccount>& _accounts);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 账号数组，包含account和host
+                     * <p>账号数组，包含account和host</p>
                      */
                     std::vector<InputAccount> m_accounts;
                     bool m_accountsHasBeenSet;

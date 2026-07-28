@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取SDP应答
-                     * @return SDPAnswer SDP应答
+                     * 获取<p>SDP应答</p>
+                     * @return SDPAnswer <p>SDP应答</p>
                      * 
                      */
                     std::string GetSDPAnswer() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * SDP应答
+                     * <p>SDP应答</p>
                      */
                     std::string m_sDPAnswer;
                     bool m_sDPAnswerHasBeenSet;

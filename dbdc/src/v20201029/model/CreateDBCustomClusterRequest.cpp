@@ -28,7 +28,8 @@ CreateDBCustomClusterRequest::CreateDBCustomClusterRequest() :
     m_apiServerNetworkHasBeenSet(false),
     m_clusterDescriptionHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientTokenHasBeenSet(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string CreateDBCustomClusterRequest::ToJsonString() const
         string key = "ClientToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dryRunHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DryRun";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dryRun, allocator);
     }
 
 
@@ -198,6 +207,22 @@ void CreateDBCustomClusterRequest::SetClientToken(const string& _clientToken)
 bool CreateDBCustomClusterRequest::ClientTokenHasBeenSet() const
 {
     return m_clientTokenHasBeenSet;
+}
+
+bool CreateDBCustomClusterRequest::GetDryRun() const
+{
+    return m_dryRun;
+}
+
+void CreateDBCustomClusterRequest::SetDryRun(const bool& _dryRun)
+{
+    m_dryRun = _dryRun;
+    m_dryRunHasBeenSet = true;
+}
+
+bool CreateDBCustomClusterRequest::DryRunHasBeenSet() const
+{
+    return m_dryRunHasBeenSet;
 }
 
 

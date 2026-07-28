@@ -45,7 +45,9 @@ DBCustomNode::DBCustomNode() :
     m_autoRenewHasBeenSet(false),
     m_switchIdHasBeenSet(false),
     m_rackIdHasBeenSet(false),
-    m_hostIpHasBeenSet(false)
+    m_hostIpHasBeenSet(false),
+    m_networkModeHasBeenSet(false),
+    m_eniIPHasBeenSet(false)
 {
 }
 
@@ -331,6 +333,26 @@ CoreInternalOutcome DBCustomNode::Deserialize(const rapidjson::Value &value)
         m_hostIpHasBeenSet = true;
     }
 
+    if (value.HasMember("NetworkMode") && !value["NetworkMode"].IsNull())
+    {
+        if (!value["NetworkMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBCustomNode.NetworkMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_networkMode = string(value["NetworkMode"].GetString());
+        m_networkModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("EniIP") && !value["EniIP"].IsNull())
+    {
+        if (!value["EniIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBCustomNode.EniIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eniIP = string(value["EniIP"].GetString());
+        m_eniIPHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -551,6 +573,22 @@ void DBCustomNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "HostIp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_hostIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eniIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EniIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eniIP.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -954,5 +992,37 @@ void DBCustomNode::SetHostIp(const string& _hostIp)
 bool DBCustomNode::HostIpHasBeenSet() const
 {
     return m_hostIpHasBeenSet;
+}
+
+string DBCustomNode::GetNetworkMode() const
+{
+    return m_networkMode;
+}
+
+void DBCustomNode::SetNetworkMode(const string& _networkMode)
+{
+    m_networkMode = _networkMode;
+    m_networkModeHasBeenSet = true;
+}
+
+bool DBCustomNode::NetworkModeHasBeenSet() const
+{
+    return m_networkModeHasBeenSet;
+}
+
+string DBCustomNode::GetEniIP() const
+{
+    return m_eniIP;
+}
+
+void DBCustomNode::SetEniIP(const string& _eniIP)
+{
+    m_eniIP = _eniIP;
+    m_eniIPHasBeenSet = true;
+}
+
+bool DBCustomNode::EniIPHasBeenSet() const
+{
+    return m_eniIPHasBeenSet;
 }
 

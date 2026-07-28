@@ -26,7 +26,12 @@ AddNodesToDBCustomClusterRequest::AddNodesToDBCustomClusterRequest() :
     m_clusterIdHasBeenSet(false),
     m_nodeIdsHasBeenSet(false),
     m_imageIdHasBeenSet(false),
-    m_loginSettingsHasBeenSet(false)
+    m_loginSettingsHasBeenSet(false),
+    m_labelsHasBeenSet(false),
+    m_taintsHasBeenSet(false),
+    m_hostNameHasBeenSet(false),
+    m_hostNameTypeHasBeenSet(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -73,6 +78,60 @@ string AddNodesToDBCustomClusterRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_loginSettings.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_labelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Labels";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_labels.begin(); itr != m_labels.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_taintsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Taints";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_taints.begin(); itr != m_taints.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_hostNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hostName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostNameTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostNameType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_hostNameType, allocator);
+    }
+
+    if (m_dryRunHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DryRun";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dryRun, allocator);
     }
 
 
@@ -145,6 +204,86 @@ void AddNodesToDBCustomClusterRequest::SetLoginSettings(const LoginSettings& _lo
 bool AddNodesToDBCustomClusterRequest::LoginSettingsHasBeenSet() const
 {
     return m_loginSettingsHasBeenSet;
+}
+
+vector<Label> AddNodesToDBCustomClusterRequest::GetLabels() const
+{
+    return m_labels;
+}
+
+void AddNodesToDBCustomClusterRequest::SetLabels(const vector<Label>& _labels)
+{
+    m_labels = _labels;
+    m_labelsHasBeenSet = true;
+}
+
+bool AddNodesToDBCustomClusterRequest::LabelsHasBeenSet() const
+{
+    return m_labelsHasBeenSet;
+}
+
+vector<Taint> AddNodesToDBCustomClusterRequest::GetTaints() const
+{
+    return m_taints;
+}
+
+void AddNodesToDBCustomClusterRequest::SetTaints(const vector<Taint>& _taints)
+{
+    m_taints = _taints;
+    m_taintsHasBeenSet = true;
+}
+
+bool AddNodesToDBCustomClusterRequest::TaintsHasBeenSet() const
+{
+    return m_taintsHasBeenSet;
+}
+
+string AddNodesToDBCustomClusterRequest::GetHostName() const
+{
+    return m_hostName;
+}
+
+void AddNodesToDBCustomClusterRequest::SetHostName(const string& _hostName)
+{
+    m_hostName = _hostName;
+    m_hostNameHasBeenSet = true;
+}
+
+bool AddNodesToDBCustomClusterRequest::HostNameHasBeenSet() const
+{
+    return m_hostNameHasBeenSet;
+}
+
+int64_t AddNodesToDBCustomClusterRequest::GetHostNameType() const
+{
+    return m_hostNameType;
+}
+
+void AddNodesToDBCustomClusterRequest::SetHostNameType(const int64_t& _hostNameType)
+{
+    m_hostNameType = _hostNameType;
+    m_hostNameTypeHasBeenSet = true;
+}
+
+bool AddNodesToDBCustomClusterRequest::HostNameTypeHasBeenSet() const
+{
+    return m_hostNameTypeHasBeenSet;
+}
+
+bool AddNodesToDBCustomClusterRequest::GetDryRun() const
+{
+    return m_dryRun;
+}
+
+void AddNodesToDBCustomClusterRequest::SetDryRun(const bool& _dryRun)
+{
+    m_dryRun = _dryRun;
+    m_dryRunHasBeenSet = true;
+}
+
+bool AddNodesToDBCustomClusterRequest::DryRunHasBeenSet() const
+{
+    return m_dryRunHasBeenSet;
 }
 
 

@@ -24,7 +24,9 @@ LogIdentity::LogIdentity() :
     m_idHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_podNameHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+    m_timestampHasBeenSet(false),
+    m_pkgIdHasBeenSet(false),
+    m_pkgLogIdHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome LogIdentity::Deserialize(const rapidjson::Value &value)
         m_timestampHasBeenSet = true;
     }
 
+    if (value.HasMember("PkgId") && !value["PkgId"].IsNull())
+    {
+        if (!value["PkgId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogIdentity.PkgId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pkgId = string(value["PkgId"].GetString());
+        m_pkgIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("PkgLogId") && !value["PkgLogId"].IsNull())
+    {
+        if (!value["PkgLogId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogIdentity.PkgLogId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pkgLogId = string(value["PkgLogId"].GetString());
+        m_pkgLogIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void LogIdentity::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Timestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_timestamp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pkgIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PkgId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pkgId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pkgLogIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PkgLogId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pkgLogId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void LogIdentity::SetTimestamp(const string& _timestamp)
 bool LogIdentity::TimestampHasBeenSet() const
 {
     return m_timestampHasBeenSet;
+}
+
+string LogIdentity::GetPkgId() const
+{
+    return m_pkgId;
+}
+
+void LogIdentity::SetPkgId(const string& _pkgId)
+{
+    m_pkgId = _pkgId;
+    m_pkgIdHasBeenSet = true;
+}
+
+bool LogIdentity::PkgIdHasBeenSet() const
+{
+    return m_pkgIdHasBeenSet;
+}
+
+string LogIdentity::GetPkgLogId() const
+{
+    return m_pkgLogId;
+}
+
+void LogIdentity::SetPkgLogId(const string& _pkgLogId)
+{
+    m_pkgLogId = _pkgLogId;
+    m_pkgLogIdHasBeenSet = true;
+}
+
+bool LogIdentity::PkgLogIdHasBeenSet() const
+{
+    return m_pkgLogIdHasBeenSet;
 }
 

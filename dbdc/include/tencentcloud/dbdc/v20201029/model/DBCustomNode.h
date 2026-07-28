@@ -586,6 +586,48 @@ namespace TencentCloud
                      */
                     bool HostIpHasBeenSet() const;
 
+                    /**
+                     * 获取<p>网络模式</p><p>枚举值：</p><ul><li>NetworkModePrivateLink： 四层 SSH 服务联通模式</li><li>NetworkModeCrossTenantENI：  三层双网卡访问方式</li></ul>
+                     * @return NetworkMode <p>网络模式</p><p>枚举值：</p><ul><li>NetworkModePrivateLink： 四层 SSH 服务联通模式</li><li>NetworkModeCrossTenantENI：  三层双网卡访问方式</li></ul>
+                     * 
+                     */
+                    std::string GetNetworkMode() const;
+
+                    /**
+                     * 设置<p>网络模式</p><p>枚举值：</p><ul><li>NetworkModePrivateLink： 四层 SSH 服务联通模式</li><li>NetworkModeCrossTenantENI：  三层双网卡访问方式</li></ul>
+                     * @param _networkMode <p>网络模式</p><p>枚举值：</p><ul><li>NetworkModePrivateLink： 四层 SSH 服务联通模式</li><li>NetworkModeCrossTenantENI：  三层双网卡访问方式</li></ul>
+                     * 
+                     */
+                    void SetNetworkMode(const std::string& _networkMode);
+
+                    /**
+                     * 判断参数 NetworkMode 是否已赋值
+                     * @return NetworkMode 是否已赋值
+                     * 
+                     */
+                    bool NetworkModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>当选择NetworkModeCrossTenantENI模式时，节点的访问IP地址</p>
+                     * @return EniIP <p>当选择NetworkModeCrossTenantENI模式时，节点的访问IP地址</p>
+                     * 
+                     */
+                    std::string GetEniIP() const;
+
+                    /**
+                     * 设置<p>当选择NetworkModeCrossTenantENI模式时，节点的访问IP地址</p>
+                     * @param _eniIP <p>当选择NetworkModeCrossTenantENI模式时，节点的访问IP地址</p>
+                     * 
+                     */
+                    void SetEniIP(const std::string& _eniIP);
+
+                    /**
+                     * 判断参数 EniIP 是否已赋值
+                     * @return EniIP 是否已赋值
+                     * 
+                     */
+                    bool EniIPHasBeenSet() const;
+
                 private:
 
                     /**
@@ -740,6 +782,18 @@ namespace TencentCloud
                      */
                     std::string m_hostIp;
                     bool m_hostIpHasBeenSet;
+
+                    /**
+                     * <p>网络模式</p><p>枚举值：</p><ul><li>NetworkModePrivateLink： 四层 SSH 服务联通模式</li><li>NetworkModeCrossTenantENI：  三层双网卡访问方式</li></ul>
+                     */
+                    std::string m_networkMode;
+                    bool m_networkModeHasBeenSet;
+
+                    /**
+                     * <p>当选择NetworkModeCrossTenantENI模式时，节点的访问IP地址</p>
+                     */
+                    std::string m_eniIP;
+                    bool m_eniIPHasBeenSet;
 
                 };
             }

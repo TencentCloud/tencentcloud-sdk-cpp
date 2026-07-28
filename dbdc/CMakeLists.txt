@@ -24,6 +24,7 @@ set(dbdc_public_header_model
   include/tencentcloud/dbdc/v20201029/model/RemoveNodesFromDBCustomClusterRequest.h
   include/tencentcloud/dbdc/v20201029/model/HostDetail.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterDetailResponse.h
+  include/tencentcloud/dbdc/v20201029/model/Label.h
   include/tencentcloud/dbdc/v20201029/model/LoginSettings.h
   include/tencentcloud/dbdc/v20201029/model/DBCustomImage.h
   include/tencentcloud/dbdc/v20201029/model/DBCustomClusterNode.h
@@ -71,6 +72,7 @@ set(dbdc_public_header_model
   include/tencentcloud/dbdc/v20201029/model/CreateDBCustomNodesRequest.h
   include/tencentcloud/dbdc/v20201029/model/InstanceExpand.h
   include/tencentcloud/dbdc/v20201029/model/RenewDBCustomNodeResponse.h
+  include/tencentcloud/dbdc/v20201029/model/Taint.h
   include/tencentcloud/dbdc/v20201029/model/DescribeInstanceListResponse.h
   include/tencentcloud/dbdc/v20201029/model/DBCustomCluster.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomImagesResponse.h
@@ -95,6 +97,7 @@ set(dbdc_src
   src/v20201029/model/RemoveNodesFromDBCustomClusterRequest.cpp
   src/v20201029/model/HostDetail.cpp
   src/v20201029/model/DescribeDBCustomClusterDetailResponse.cpp
+  src/v20201029/model/Label.cpp
   src/v20201029/model/LoginSettings.cpp
   src/v20201029/model/DBCustomImage.cpp
   src/v20201029/model/DBCustomClusterNode.cpp
@@ -142,6 +145,7 @@ set(dbdc_src
   src/v20201029/model/CreateDBCustomNodesRequest.cpp
   src/v20201029/model/InstanceExpand.cpp
   src/v20201029/model/RenewDBCustomNodeResponse.cpp
+  src/v20201029/model/Taint.cpp
   src/v20201029/model/DescribeInstanceListResponse.cpp
   src/v20201029/model/DBCustomCluster.cpp
   src/v20201029/model/DescribeDBCustomImagesResponse.cpp

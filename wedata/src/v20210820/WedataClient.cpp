@@ -5940,6 +5940,56 @@ WedataClient::DescribeInstanceLogListOutcomeCallable WedataClient::DescribeInsta
     return prom->get_future();
 }
 
+WedataClient::DescribeInstancesByExecutorsOutcome WedataClient::DescribeInstancesByExecutors(const DescribeInstancesByExecutorsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstancesByExecutors");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstancesByExecutorsResponse rsp = DescribeInstancesByExecutorsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstancesByExecutorsOutcome(rsp);
+        else
+            return DescribeInstancesByExecutorsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstancesByExecutorsOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeInstancesByExecutorsAsync(const DescribeInstancesByExecutorsRequest& request, const DescribeInstancesByExecutorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeInstancesByExecutorsRequest&;
+    using Resp = DescribeInstancesByExecutorsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstancesByExecutors", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::DescribeInstancesByExecutorsOutcomeCallable WedataClient::DescribeInstancesByExecutorsCallable(const DescribeInstancesByExecutorsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeInstancesByExecutorsOutcome>>();
+    DescribeInstancesByExecutorsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DescribeInstancesByExecutorsRequest&,
+        DescribeInstancesByExecutorsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::DescribeIntegrationNodeOutcome WedataClient::DescribeIntegrationNode(const DescribeIntegrationNodeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeIntegrationNode");

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取登录会话超时，10分钟，20分钟，30分钟，默认20分钟
-                     * @return TimeOut 登录会话超时，10分钟，20分钟，30分钟，默认20分钟
+                     * 获取<p>登录会话超时，10分钟，20分钟，30分钟，默认20分钟</p>
+                     * @return TimeOut <p>登录会话超时，10分钟，20分钟，30分钟，默认20分钟</p>
                      * 
                      */
                     uint64_t GetTimeOut() const;
 
                     /**
-                     * 设置登录会话超时，10分钟，20分钟，30分钟，默认20分钟
-                     * @param _timeOut 登录会话超时，10分钟，20分钟，30分钟，默认20分钟
+                     * 设置<p>登录会话超时，10分钟，20分钟，30分钟，默认20分钟</p>
+                     * @param _timeOut <p>登录会话超时，10分钟，20分钟，30分钟，默认20分钟</p>
                      * 
                      */
                     void SetTimeOut(const uint64_t& _timeOut);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TimeOutHasBeenSet() const;
 
                     /**
-                     * 获取连续密码错误次数，超过锁定账号，3-5
-                     * @return LockThreshold 连续密码错误次数，超过锁定账号，3-5
+                     * 获取<p>连续密码错误次数，超过锁定账号，3-5</p>
+                     * @return LockThreshold <p>连续密码错误次数，超过锁定账号，3-5</p>
                      * 
                      */
                     uint64_t GetLockThreshold() const;
 
                     /**
-                     * 设置连续密码错误次数，超过锁定账号，3-5
-                     * @param _lockThreshold 连续密码错误次数，超过锁定账号，3-5
+                     * 设置<p>连续密码错误次数，超过锁定账号，3-5</p>
+                     * @param _lockThreshold <p>连续密码错误次数，超过锁定账号，3-5</p>
                      * 
                      */
                     void SetLockThreshold(const uint64_t& _lockThreshold);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool LockThresholdHasBeenSet() const;
 
                     /**
-                     * 获取账号锁定时长，10分钟，20分钟，30分钟
-                     * @return LockTime 账号锁定时长，10分钟，20分钟，30分钟
+                     * 获取<p>账号锁定时长，10分钟，20分钟，30分钟</p>
+                     * @return LockTime <p>账号锁定时长，10分钟，20分钟，30分钟</p>
                      * 
                      */
                     uint64_t GetLockTime() const;
 
                     /**
-                     * 设置账号锁定时长，10分钟，20分钟，30分钟
-                     * @param _lockTime 账号锁定时长，10分钟，20分钟，30分钟
+                     * 设置<p>账号锁定时长，10分钟，20分钟，30分钟</p>
+                     * @param _lockTime <p>账号锁定时长，10分钟，20分钟，30分钟</p>
                      * 
                      */
                     void SetLockTime(const uint64_t& _lockTime);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool LockTimeHasBeenSet() const;
 
                     /**
-                     * 获取用户多少天不活跃，账号自动锁定
-                     * @return InactiveUserLock 用户多少天不活跃，账号自动锁定
+                     * 获取<p>用户多少天不活跃，账号自动锁定</p>
+                     * @return InactiveUserLock <p>用户多少天不活跃，账号自动锁定</p>
                      * 
                      */
                     uint64_t GetInactiveUserLock() const;
 
                     /**
-                     * 设置用户多少天不活跃，账号自动锁定
-                     * @param _inactiveUserLock 用户多少天不活跃，账号自动锁定
+                     * 设置<p>用户多少天不活跃，账号自动锁定</p>
+                     * @param _inactiveUserLock <p>用户多少天不活跃，账号自动锁定</p>
                      * 
                      */
                     void SetInactiveUserLock(const uint64_t& _inactiveUserLock);
@@ -130,31 +130,58 @@ namespace TencentCloud
                      */
                     bool InactiveUserLockHasBeenSet() const;
 
+                    /**
+                     * 获取<p>运维账号单点登录开关：0-关闭，1-开启</p>
+                     * @return EnableSingleLogin <p>运维账号单点登录开关：0-关闭，1-开启</p>
+                     * 
+                     */
+                    uint64_t GetEnableSingleLogin() const;
+
+                    /**
+                     * 设置<p>运维账号单点登录开关：0-关闭，1-开启</p>
+                     * @param _enableSingleLogin <p>运维账号单点登录开关：0-关闭，1-开启</p>
+                     * 
+                     */
+                    void SetEnableSingleLogin(const uint64_t& _enableSingleLogin);
+
+                    /**
+                     * 判断参数 EnableSingleLogin 是否已赋值
+                     * @return EnableSingleLogin 是否已赋值
+                     * 
+                     */
+                    bool EnableSingleLoginHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 登录会话超时，10分钟，20分钟，30分钟，默认20分钟
+                     * <p>登录会话超时，10分钟，20分钟，30分钟，默认20分钟</p>
                      */
                     uint64_t m_timeOut;
                     bool m_timeOutHasBeenSet;
 
                     /**
-                     * 连续密码错误次数，超过锁定账号，3-5
+                     * <p>连续密码错误次数，超过锁定账号，3-5</p>
                      */
                     uint64_t m_lockThreshold;
                     bool m_lockThresholdHasBeenSet;
 
                     /**
-                     * 账号锁定时长，10分钟，20分钟，30分钟
+                     * <p>账号锁定时长，10分钟，20分钟，30分钟</p>
                      */
                     uint64_t m_lockTime;
                     bool m_lockTimeHasBeenSet;
 
                     /**
-                     * 用户多少天不活跃，账号自动锁定
+                     * <p>用户多少天不活跃，账号自动锁定</p>
                      */
                     uint64_t m_inactiveUserLock;
                     bool m_inactiveUserLockHasBeenSet;
+
+                    /**
+                     * <p>运维账号单点登录开关：0-关闭，1-开启</p>
+                     */
+                    uint64_t m_enableSingleLogin;
+                    bool m_enableSingleLoginHasBeenSet;
 
                 };
             }

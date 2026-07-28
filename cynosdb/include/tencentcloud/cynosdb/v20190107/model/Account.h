@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据库账号名
-                     * @return AccountName 数据库账号名
+                     * 获取<p>数据库账号名</p>
+                     * @return AccountName <p>数据库账号名</p>
                      * 
                      */
                     std::string GetAccountName() const;
 
                     /**
-                     * 设置数据库账号名
-                     * @param _accountName 数据库账号名
+                     * 设置<p>数据库账号名</p>
+                     * @param _accountName <p>数据库账号名</p>
                      * 
                      */
                     void SetAccountName(const std::string& _accountName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AccountNameHasBeenSet() const;
 
                     /**
-                     * 获取主机
-                     * @return Host 主机
+                     * 获取<p>主机</p>
+                     * @return Host <p>主机</p>
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置主机
-                     * @param _host 主机
+                     * 设置<p>主机</p>
+                     * @param _host <p>主机</p>
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool HostHasBeenSet() const;
 
                     /**
-                     * 获取数据库账号描述
-                     * @return Description 数据库账号描述
+                     * 获取<p>数据库账号描述</p>
+                     * @return Description <p>数据库账号描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置数据库账号描述
-                     * @param _description 数据库账号描述
+                     * 设置<p>数据库账号描述</p>
+                     * @param _description <p>数据库账号描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdateTime 更新时间
+                     * 获取<p>更新时间</p>
+                     * @return UpdateTime <p>更新时间</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
-                     * @param _updateTime 更新时间
+                     * 设置<p>更新时间</p>
+                     * @param _updateTime <p>更新时间</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取用户最大连接数
-                     * @return MaxUserConnections 用户最大连接数
+                     * 获取<p>用户最大连接数</p>
+                     * @return MaxUserConnections <p>用户最大连接数</p>
                      * 
                      */
                     int64_t GetMaxUserConnections() const;
 
                     /**
-                     * 设置用户最大连接数
-                     * @param _maxUserConnections 用户最大连接数
+                     * 设置<p>用户最大连接数</p>
+                     * @param _maxUserConnections <p>用户最大连接数</p>
                      * 
                      */
                     void SetMaxUserConnections(const int64_t& _maxUserConnections);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool MaxUserConnectionsHasBeenSet() const;
 
                     /**
-                     * 获取是否开启密码轮转(0:关闭;1:开启)
-                     * @return PasswordRotation 是否开启密码轮转(0:关闭;1:开启)
+                     * 获取<p>是否开启密码轮转(0:关闭;1:开启)</p>
+                     * @return PasswordRotation <p>是否开启密码轮转(0:关闭;1:开启)</p>
                      * 
                      */
                     int64_t GetPasswordRotation() const;
 
                     /**
-                     * 设置是否开启密码轮转(0:关闭;1:开启)
-                     * @param _passwordRotation 是否开启密码轮转(0:关闭;1:开启)
+                     * 设置<p>是否开启密码轮转(0:关闭;1:开启)</p>
+                     * @param _passwordRotation <p>是否开启密码轮转(0:关闭;1:开启)</p>
                      * 
                      */
                     void SetPasswordRotation(const int64_t& _passwordRotation);
@@ -196,43 +196,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据库账号名
+                     * <p>数据库账号名</p>
                      */
                     std::string m_accountName;
                     bool m_accountNameHasBeenSet;
 
                     /**
-                     * 主机
+                     * <p>主机</p>
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
 
                     /**
-                     * 数据库账号描述
+                     * <p>数据库账号描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 用户最大连接数
+                     * <p>用户最大连接数</p>
                      */
                     int64_t m_maxUserConnections;
                     bool m_maxUserConnectionsHasBeenSet;
 
                     /**
-                     * 是否开启密码轮转(0:关闭;1:开启)
+                     * <p>是否开启密码轮转(0:关闭;1:开启)</p>
                      */
                     int64_t m_passwordRotation;
                     bool m_passwordRotationHasBeenSet;

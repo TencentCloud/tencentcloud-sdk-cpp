@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取单条日志的ID
+                     * 获取<p>单条日志的ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Id 单条日志的ID
+                     * @return Id <p>单条日志的ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置单条日志的ID
+                     * 设置<p>单条日志的ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _id 单条日志的ID
+                     * @param _id <p>单条日志的ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取单条日志的内容
+                     * 获取<p>单条日志的内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Message 单条日志的内容
+                     * @return Message <p>单条日志的内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置单条日志的内容
+                     * 设置<p>单条日志的内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _message 单条日志的内容
+                     * @param _message <p>单条日志的内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取这条日志对应的Pod名称
+                     * 获取<p>这条日志对应的Pod名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PodName 这条日志对应的Pod名称
+                     * @return PodName <p>这条日志对应的Pod名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPodName() const;
 
                     /**
-                     * 设置这条日志对应的Pod名称
+                     * 设置<p>这条日志对应的Pod名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _podName 这条日志对应的Pod名称
+                     * @param _podName <p>这条日志对应的Pod名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool PodNameHasBeenSet() const;
 
                     /**
-                     * 获取日志的时间戳（RFC3339格式的时间字符串）
+                     * 获取<p>日志的时间戳（RFC3339格式的时间字符串）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Timestamp 日志的时间戳（RFC3339格式的时间字符串）
+                     * @return Timestamp <p>日志的时间戳（RFC3339格式的时间字符串）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimestamp() const;
 
                     /**
-                     * 设置日志的时间戳（RFC3339格式的时间字符串）
+                     * 设置<p>日志的时间戳（RFC3339格式的时间字符串）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _timestamp 日志的时间戳（RFC3339格式的时间字符串）
+                     * @param _timestamp <p>日志的时间戳（RFC3339格式的时间字符串）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -146,35 +146,89 @@ namespace TencentCloud
                      */
                     bool TimestampHasBeenSet() const;
 
+                    /**
+                     * 获取<p>日志上报请求包的ID</p>
+                     * @return PkgId <p>日志上报请求包的ID</p>
+                     * 
+                     */
+                    std::string GetPkgId() const;
+
+                    /**
+                     * 设置<p>日志上报请求包的ID</p>
+                     * @param _pkgId <p>日志上报请求包的ID</p>
+                     * 
+                     */
+                    void SetPkgId(const std::string& _pkgId);
+
+                    /**
+                     * 判断参数 PkgId 是否已赋值
+                     * @return PkgId 是否已赋值
+                     * 
+                     */
+                    bool PkgIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>请求包内日志的ID</p>
+                     * @return PkgLogId <p>请求包内日志的ID</p>
+                     * 
+                     */
+                    std::string GetPkgLogId() const;
+
+                    /**
+                     * 设置<p>请求包内日志的ID</p>
+                     * @param _pkgLogId <p>请求包内日志的ID</p>
+                     * 
+                     */
+                    void SetPkgLogId(const std::string& _pkgLogId);
+
+                    /**
+                     * 判断参数 PkgLogId 是否已赋值
+                     * @return PkgLogId 是否已赋值
+                     * 
+                     */
+                    bool PkgLogIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 单条日志的ID
+                     * <p>单条日志的ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 单条日志的内容
+                     * <p>单条日志的内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 这条日志对应的Pod名称
+                     * <p>这条日志对应的Pod名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_podName;
                     bool m_podNameHasBeenSet;
 
                     /**
-                     * 日志的时间戳（RFC3339格式的时间字符串）
+                     * <p>日志的时间戳（RFC3339格式的时间字符串）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timestamp;
                     bool m_timestampHasBeenSet;
+
+                    /**
+                     * <p>日志上报请求包的ID</p>
+                     */
+                    std::string m_pkgId;
+                    bool m_pkgIdHasBeenSet;
+
+                    /**
+                     * <p>请求包内日志的ID</p>
+                     */
+                    std::string m_pkgLogId;
+                    bool m_pkgLogIdHasBeenSet;
 
                 };
             }

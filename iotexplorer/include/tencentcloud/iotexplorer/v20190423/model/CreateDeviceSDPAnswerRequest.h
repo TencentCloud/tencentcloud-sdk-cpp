@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品ID
-                     * @return ProductId 产品ID
+                     * 获取<p>产品ID</p>
+                     * @return ProductId <p>产品ID</p>
                      * 
                      */
                     std::string GetProductId() const;
 
                     /**
-                     * 设置产品ID
-                     * @param _productId 产品ID
+                     * 设置<p>产品ID</p>
+                     * @param _productId <p>产品ID</p>
                      * 
                      */
                     void SetProductId(const std::string& _productId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取设备名称
-                     * @return DeviceName 设备名称
+                     * 获取<p>设备名称</p>
+                     * @return DeviceName <p>设备名称</p>
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
-                     * 设置设备名称
-                     * @param _deviceName 设备名称
+                     * 设置<p>设备名称</p>
+                     * @param _deviceName <p>设备名称</p>
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取SDP提议
-                     * @return SDPOffer SDP提议
+                     * 获取<p>SDP提议</p>
+                     * @return SDPOffer <p>SDP提议</p>
                      * 
                      */
                     std::string GetSDPOffer() const;
 
                     /**
-                     * 设置SDP提议
-                     * @param _sDPOffer SDP提议
+                     * 设置<p>SDP提议</p>
+                     * @param _sDPOffer <p>SDP提议</p>
                      * 
                      */
                     void SetSDPOffer(const std::string& _sDPOffer);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool SDPOfferHasBeenSet() const;
 
                     /**
-                     * 获取客户自定义拉流标识
-                     * @return RequesterTag 客户自定义拉流标识
+                     * 获取<p>客户自定义拉流标识</p>
+                     * @return RequesterTag <p>客户自定义拉流标识</p>
                      * 
                      */
                     std::string GetRequesterTag() const;
 
                     /**
-                     * 设置客户自定义拉流标识
-                     * @param _requesterTag 客户自定义拉流标识
+                     * 设置<p>客户自定义拉流标识</p>
+                     * @param _requesterTag <p>客户自定义拉流标识</p>
                      * 
                      */
                     void SetRequesterTag(const std::string& _requesterTag);
@@ -126,31 +126,58 @@ namespace TencentCloud
                      */
                     bool RequesterTagHasBeenSet() const;
 
+                    /**
+                     * 获取<p>默认值：0，如果需要webrtc推流拉流在同一个SDP中，需要值为1，常用于单PC模式</p><p>枚举值：</p><ul><li>0： 默认值，传统多pc推流模式</li><li>1： 单pc模式，如果需要webrtc单pc推拉流，采用此模式，此模式下注意SDP需要包含推拉流全部信息</li></ul><p>默认值：0</p>
+                     * @return EnableSubPub <p>默认值：0，如果需要webrtc推流拉流在同一个SDP中，需要值为1，常用于单PC模式</p><p>枚举值：</p><ul><li>0： 默认值，传统多pc推流模式</li><li>1： 单pc模式，如果需要webrtc单pc推拉流，采用此模式，此模式下注意SDP需要包含推拉流全部信息</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    uint64_t GetEnableSubPub() const;
+
+                    /**
+                     * 设置<p>默认值：0，如果需要webrtc推流拉流在同一个SDP中，需要值为1，常用于单PC模式</p><p>枚举值：</p><ul><li>0： 默认值，传统多pc推流模式</li><li>1： 单pc模式，如果需要webrtc单pc推拉流，采用此模式，此模式下注意SDP需要包含推拉流全部信息</li></ul><p>默认值：0</p>
+                     * @param _enableSubPub <p>默认值：0，如果需要webrtc推流拉流在同一个SDP中，需要值为1，常用于单PC模式</p><p>枚举值：</p><ul><li>0： 默认值，传统多pc推流模式</li><li>1： 单pc模式，如果需要webrtc单pc推拉流，采用此模式，此模式下注意SDP需要包含推拉流全部信息</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    void SetEnableSubPub(const uint64_t& _enableSubPub);
+
+                    /**
+                     * 判断参数 EnableSubPub 是否已赋值
+                     * @return EnableSubPub 是否已赋值
+                     * 
+                     */
+                    bool EnableSubPubHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 产品ID
+                     * <p>产品ID</p>
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 设备名称
+                     * <p>设备名称</p>
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * SDP提议
+                     * <p>SDP提议</p>
                      */
                     std::string m_sDPOffer;
                     bool m_sDPOfferHasBeenSet;
 
                     /**
-                     * 客户自定义拉流标识
+                     * <p>客户自定义拉流标识</p>
                      */
                     std::string m_requesterTag;
                     bool m_requesterTagHasBeenSet;
+
+                    /**
+                     * <p>默认值：0，如果需要webrtc推流拉流在同一个SDP中，需要值为1，常用于单PC模式</p><p>枚举值：</p><ul><li>0： 默认值，传统多pc推流模式</li><li>1： 单pc模式，如果需要webrtc单pc推拉流，采用此模式，此模式下注意SDP需要包含推拉流全部信息</li></ul><p>默认值：0</p>
+                     */
+                    uint64_t m_enableSubPub;
+                    bool m_enableSubPubHasBeenSet;
 
                 };
             }

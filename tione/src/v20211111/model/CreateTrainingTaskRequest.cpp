@@ -49,7 +49,9 @@ CreateTrainingTaskRequest::CreateTrainingTaskRequest() :
     m_encodedStartCmdInfoHasBeenSet(false),
     m_codeReposHasBeenSet(false),
     m_exposeNetworkConfigHasBeenSet(false),
-    m_envsHasBeenSet(false)
+    m_envsHasBeenSet(false),
+    m_trainToolConfigHasBeenSet(false),
+    m_resourceSupplyAttributeHasBeenSet(false)
 {
 }
 
@@ -316,6 +318,24 @@ string CreateTrainingTaskRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_trainToolConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrainToolConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_trainToolConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_resourceSupplyAttributeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceSupplyAttribute";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_resourceSupplyAttribute.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -756,6 +776,38 @@ void CreateTrainingTaskRequest::SetEnvs(const vector<EnvVar>& _envs)
 bool CreateTrainingTaskRequest::EnvsHasBeenSet() const
 {
     return m_envsHasBeenSet;
+}
+
+TrainToolConfig CreateTrainingTaskRequest::GetTrainToolConfig() const
+{
+    return m_trainToolConfig;
+}
+
+void CreateTrainingTaskRequest::SetTrainToolConfig(const TrainToolConfig& _trainToolConfig)
+{
+    m_trainToolConfig = _trainToolConfig;
+    m_trainToolConfigHasBeenSet = true;
+}
+
+bool CreateTrainingTaskRequest::TrainToolConfigHasBeenSet() const
+{
+    return m_trainToolConfigHasBeenSet;
+}
+
+ResourceSupplyAttribute CreateTrainingTaskRequest::GetResourceSupplyAttribute() const
+{
+    return m_resourceSupplyAttribute;
+}
+
+void CreateTrainingTaskRequest::SetResourceSupplyAttribute(const ResourceSupplyAttribute& _resourceSupplyAttribute)
+{
+    m_resourceSupplyAttribute = _resourceSupplyAttribute;
+    m_resourceSupplyAttributeHasBeenSet = true;
+}
+
+bool CreateTrainingTaskRequest::ResourceSupplyAttributeHasBeenSet() const
+{
+    return m_resourceSupplyAttributeHasBeenSet;
 }
 
 

@@ -89,12 +89,16 @@
 #include <tencentcloud/mqtt/v20240516/model/DescribeClientListResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeDeviceCertificateRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeDeviceCertificateResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeDeviceCertificateBackupHistoryRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeDeviceCertificateBackupHistoryResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeDeviceCertificatesRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeDeviceCertificatesResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeDeviceIdentitiesRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeDeviceIdentitiesResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeDeviceIdentityRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeDeviceIdentityResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeDeviceIdentityBackupHistoryRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeDeviceIdentityBackupHistoryResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeInsPublicEndpointsRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeInsPublicEndpointsResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeInsVPCEndpointsRequest.h>
@@ -129,6 +133,8 @@
 #include <tencentcloud/mqtt/v20240516/model/DescribeTopicListResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeUserListRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeUserListResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeWillMessageRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeWillMessageResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/KickOutClientRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/KickOutClientResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyAuthorizationPolicyRequest.h>
@@ -280,6 +286,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDeviceCertificateResponse> DescribeDeviceCertificateOutcome;
                 typedef std::future<DescribeDeviceCertificateOutcome> DescribeDeviceCertificateOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeDeviceCertificateRequest&, DescribeDeviceCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceCertificateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeviceCertificateBackupHistoryResponse> DescribeDeviceCertificateBackupHistoryOutcome;
+                typedef std::future<DescribeDeviceCertificateBackupHistoryOutcome> DescribeDeviceCertificateBackupHistoryOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DescribeDeviceCertificateBackupHistoryRequest&, DescribeDeviceCertificateBackupHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceCertificateBackupHistoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeviceCertificatesResponse> DescribeDeviceCertificatesOutcome;
                 typedef std::future<DescribeDeviceCertificatesOutcome> DescribeDeviceCertificatesOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeDeviceCertificatesRequest&, DescribeDeviceCertificatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceCertificatesAsyncHandler;
@@ -289,6 +298,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDeviceIdentityResponse> DescribeDeviceIdentityOutcome;
                 typedef std::future<DescribeDeviceIdentityOutcome> DescribeDeviceIdentityOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeDeviceIdentityRequest&, DescribeDeviceIdentityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceIdentityAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeviceIdentityBackupHistoryResponse> DescribeDeviceIdentityBackupHistoryOutcome;
+                typedef std::future<DescribeDeviceIdentityBackupHistoryOutcome> DescribeDeviceIdentityBackupHistoryOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DescribeDeviceIdentityBackupHistoryRequest&, DescribeDeviceIdentityBackupHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceIdentityBackupHistoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInsPublicEndpointsResponse> DescribeInsPublicEndpointsOutcome;
                 typedef std::future<DescribeInsPublicEndpointsOutcome> DescribeInsPublicEndpointsOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeInsPublicEndpointsRequest&, DescribeInsPublicEndpointsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInsPublicEndpointsAsyncHandler;
@@ -340,6 +352,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserListResponse> DescribeUserListOutcome;
                 typedef std::future<DescribeUserListOutcome> DescribeUserListOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeUserListRequest&, DescribeUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWillMessageResponse> DescribeWillMessageOutcome;
+                typedef std::future<DescribeWillMessageOutcome> DescribeWillMessageOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DescribeWillMessageRequest&, DescribeWillMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWillMessageAsyncHandler;
                 typedef Outcome<Core::Error, Model::KickOutClientResponse> KickOutClientOutcome;
                 typedef std::future<KickOutClientOutcome> KickOutClientOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::KickOutClientRequest&, KickOutClientOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KickOutClientAsyncHandler;
@@ -698,6 +713,15 @@ namespace TencentCloud
                 DescribeDeviceCertificateOutcomeCallable DescribeDeviceCertificateCallable(const Model::DescribeDeviceCertificateRequest& request);
 
                 /**
+                 *跨集群灾备场景下查询设备证书同步记录
+                 * @param req DescribeDeviceCertificateBackupHistoryRequest
+                 * @return DescribeDeviceCertificateBackupHistoryOutcome
+                 */
+                DescribeDeviceCertificateBackupHistoryOutcome DescribeDeviceCertificateBackupHistory(const Model::DescribeDeviceCertificateBackupHistoryRequest &request);
+                void DescribeDeviceCertificateBackupHistoryAsync(const Model::DescribeDeviceCertificateBackupHistoryRequest& request, const DescribeDeviceCertificateBackupHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceCertificateBackupHistoryOutcomeCallable DescribeDeviceCertificateBackupHistoryCallable(const Model::DescribeDeviceCertificateBackupHistoryRequest& request);
+
+                /**
                  *分页查询设备证书
                  * @param req DescribeDeviceCertificatesRequest
                  * @return DescribeDeviceCertificatesOutcome
@@ -723,6 +747,15 @@ namespace TencentCloud
                 DescribeDeviceIdentityOutcome DescribeDeviceIdentity(const Model::DescribeDeviceIdentityRequest &request);
                 void DescribeDeviceIdentityAsync(const Model::DescribeDeviceIdentityRequest& request, const DescribeDeviceIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDeviceIdentityOutcomeCallable DescribeDeviceIdentityCallable(const Model::DescribeDeviceIdentityRequest& request);
+
+                /**
+                 *跨集群容灾场景下查询设备标识同步记录
+                 * @param req DescribeDeviceIdentityBackupHistoryRequest
+                 * @return DescribeDeviceIdentityBackupHistoryOutcome
+                 */
+                DescribeDeviceIdentityBackupHistoryOutcome DescribeDeviceIdentityBackupHistory(const Model::DescribeDeviceIdentityBackupHistoryRequest &request);
+                void DescribeDeviceIdentityBackupHistoryAsync(const Model::DescribeDeviceIdentityBackupHistoryRequest& request, const DescribeDeviceIdentityBackupHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceIdentityBackupHistoryOutcomeCallable DescribeDeviceIdentityBackupHistoryCallable(const Model::DescribeDeviceIdentityBackupHistoryRequest& request);
 
                 /**
                  *查询MQTT实例公网接入点
@@ -886,6 +919,15 @@ namespace TencentCloud
                 DescribeUserListOutcome DescribeUserList(const Model::DescribeUserListRequest &request);
                 void DescribeUserListAsync(const Model::DescribeUserListRequest& request, const DescribeUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserListOutcomeCallable DescribeUserListCallable(const Model::DescribeUserListRequest& request);
+
+                /**
+                 *遗嘱消息查询
+                 * @param req DescribeWillMessageRequest
+                 * @return DescribeWillMessageOutcome
+                 */
+                DescribeWillMessageOutcome DescribeWillMessage(const Model::DescribeWillMessageRequest &request);
+                void DescribeWillMessageAsync(const Model::DescribeWillMessageRequest& request, const DescribeWillMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWillMessageOutcomeCallable DescribeWillMessageCallable(const Model::DescribeWillMessageRequest& request);
 
                 /**
                  *踢出客户端

@@ -26,7 +26,8 @@ CreateDeviceSDPAnswerRequest::CreateDeviceSDPAnswerRequest() :
     m_productIdHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
     m_sDPOfferHasBeenSet(false),
-    m_requesterTagHasBeenSet(false)
+    m_requesterTagHasBeenSet(false),
+    m_enableSubPubHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string CreateDeviceSDPAnswerRequest::ToJsonString() const
         string key = "RequesterTag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_requesterTag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableSubPubHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableSubPub";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableSubPub, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void CreateDeviceSDPAnswerRequest::SetRequesterTag(const string& _requesterTag)
 bool CreateDeviceSDPAnswerRequest::RequesterTagHasBeenSet() const
 {
     return m_requesterTagHasBeenSet;
+}
+
+uint64_t CreateDeviceSDPAnswerRequest::GetEnableSubPub() const
+{
+    return m_enableSubPub;
+}
+
+void CreateDeviceSDPAnswerRequest::SetEnableSubPub(const uint64_t& _enableSubPub)
+{
+    m_enableSubPub = _enableSubPub;
+    m_enableSubPubHasBeenSet = true;
+}
+
+bool CreateDeviceSDPAnswerRequest::EnableSubPubHasBeenSet() const
+{
+    return m_enableSubPubHasBeenSet;
 }
 
 

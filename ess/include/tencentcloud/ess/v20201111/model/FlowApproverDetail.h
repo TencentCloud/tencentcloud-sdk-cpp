@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ess/v20201111/model/ForwardRecord.h>
 
 
 namespace TencentCloud
@@ -47,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签署时的相关信息
-                     * @return ApproveMessage 签署时的相关信息
+                     * 获取<p>签署时的相关信息</p>
+                     * @return ApproveMessage <p>签署时的相关信息</p>
                      * 
                      */
                     std::string GetApproveMessage() const;
 
                     /**
-                     * 设置签署时的相关信息
-                     * @param _approveMessage 签署时的相关信息
+                     * 设置<p>签署时的相关信息</p>
+                     * @param _approveMessage <p>签署时的相关信息</p>
                      * 
                      */
                     void SetApproveMessage(const std::string& _approveMessage);
@@ -68,15 +69,15 @@ namespace TencentCloud
                     bool ApproveMessageHasBeenSet() const;
 
                     /**
-                     * 获取签署方姓名
-                     * @return ApproveName 签署方姓名
+                     * 获取<p>签署方姓名</p>
+                     * @return ApproveName <p>签署方姓名</p>
                      * 
                      */
                     std::string GetApproveName() const;
 
                     /**
-                     * 设置签署方姓名
-                     * @param _approveName 签署方姓名
+                     * 设置<p>签署方姓名</p>
+                     * @param _approveName <p>签署方姓名</p>
                      * 
                      */
                     void SetApproveName(const std::string& _approveName);
@@ -89,67 +90,15 @@ namespace TencentCloud
                     bool ApproveNameHasBeenSet() const;
 
                     /**
-                     * 获取签署方的签署状态
-0：还没有发起
-1：流程中 没有开始处理
-2：待签署
-3：已签署
-4：已拒绝
-5：已过期
-6：已撤销
-7：还没有预发起
-8：待填写
-9：因为各种原因而终止
-10：填写完成
-15：已解除
-19：转他人处理
-                     * @return ApproveStatus 签署方的签署状态
-0：还没有发起
-1：流程中 没有开始处理
-2：待签署
-3：已签署
-4：已拒绝
-5：已过期
-6：已撤销
-7：还没有预发起
-8：待填写
-9：因为各种原因而终止
-10：填写完成
-15：已解除
-19：转他人处理
+                     * 获取<p>签署方的签署状态<br>0：还没有发起<br>1：流程中 没有开始处理<br>2：待签署<br>3：已签署<br>4：已拒绝<br>5：已过期<br>6：已撤销<br>7：还没有预发起<br>8：待填写<br>9：因为各种原因而终止<br>10：填写完成<br>15：已解除<br>19：转他人处理</p>
+                     * @return ApproveStatus <p>签署方的签署状态<br>0：还没有发起<br>1：流程中 没有开始处理<br>2：待签署<br>3：已签署<br>4：已拒绝<br>5：已过期<br>6：已撤销<br>7：还没有预发起<br>8：待填写<br>9：因为各种原因而终止<br>10：填写完成<br>15：已解除<br>19：转他人处理</p>
                      * 
                      */
                     int64_t GetApproveStatus() const;
 
                     /**
-                     * 设置签署方的签署状态
-0：还没有发起
-1：流程中 没有开始处理
-2：待签署
-3：已签署
-4：已拒绝
-5：已过期
-6：已撤销
-7：还没有预发起
-8：待填写
-9：因为各种原因而终止
-10：填写完成
-15：已解除
-19：转他人处理
-                     * @param _approveStatus 签署方的签署状态
-0：还没有发起
-1：流程中 没有开始处理
-2：待签署
-3：已签署
-4：已拒绝
-5：已过期
-6：已撤销
-7：还没有预发起
-8：待填写
-9：因为各种原因而终止
-10：填写完成
-15：已解除
-19：转他人处理
+                     * 设置<p>签署方的签署状态<br>0：还没有发起<br>1：流程中 没有开始处理<br>2：待签署<br>3：已签署<br>4：已拒绝<br>5：已过期<br>6：已撤销<br>7：还没有预发起<br>8：待填写<br>9：因为各种原因而终止<br>10：填写完成<br>15：已解除<br>19：转他人处理</p>
+                     * @param _approveStatus <p>签署方的签署状态<br>0：还没有发起<br>1：流程中 没有开始处理<br>2：待签署<br>3：已签署<br>4：已拒绝<br>5：已过期<br>6：已撤销<br>7：还没有预发起<br>8：待填写<br>9：因为各种原因而终止<br>10：填写完成<br>15：已解除<br>19：转他人处理</p>
                      * 
                      */
                     void SetApproveStatus(const int64_t& _approveStatus);
@@ -162,15 +111,15 @@ namespace TencentCloud
                     bool ApproveStatusHasBeenSet() const;
 
                     /**
-                     * 获取模板配置中的参与方ID,与控件绑定
-                     * @return ReceiptId 模板配置中的参与方ID,与控件绑定
+                     * 获取<p>模板配置中的参与方ID,与控件绑定</p>
+                     * @return ReceiptId <p>模板配置中的参与方ID,与控件绑定</p>
                      * @deprecated
                      */
                     std::string GetReceiptId() const;
 
                     /**
-                     * 设置模板配置中的参与方ID,与控件绑定
-                     * @param _receiptId 模板配置中的参与方ID,与控件绑定
+                     * 设置<p>模板配置中的参与方ID,与控件绑定</p>
+                     * @param _receiptId <p>模板配置中的参与方ID,与控件绑定</p>
                      * @deprecated
                      */
                     void SetReceiptId(const std::string& _receiptId);
@@ -183,15 +132,15 @@ namespace TencentCloud
                     bool ReceiptIdHasBeenSet() const;
 
                     /**
-                     * 获取客户自定义的用户ID
-                     * @return CustomUserId 客户自定义的用户ID
+                     * 获取<p>客户自定义的用户ID</p>
+                     * @return CustomUserId <p>客户自定义的用户ID</p>
                      * 
                      */
                     std::string GetCustomUserId() const;
 
                     /**
-                     * 设置客户自定义的用户ID
-                     * @param _customUserId 客户自定义的用户ID
+                     * 设置<p>客户自定义的用户ID</p>
+                     * @param _customUserId <p>客户自定义的用户ID</p>
                      * 
                      */
                     void SetCustomUserId(const std::string& _customUserId);
@@ -204,15 +153,15 @@ namespace TencentCloud
                     bool CustomUserIdHasBeenSet() const;
 
                     /**
-                     * 获取签署人手机号
-                     * @return Mobile 签署人手机号
+                     * 获取<p>签署人手机号</p>
+                     * @return Mobile <p>签署人手机号</p>
                      * 
                      */
                     std::string GetMobile() const;
 
                     /**
-                     * 设置签署人手机号
-                     * @param _mobile 签署人手机号
+                     * 设置<p>签署人手机号</p>
+                     * @param _mobile <p>签署人手机号</p>
                      * 
                      */
                     void SetMobile(const std::string& _mobile);
@@ -225,15 +174,15 @@ namespace TencentCloud
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取签署顺序，如果是有序签署，签署顺序从小到大
-                     * @return SignOrder 签署顺序，如果是有序签署，签署顺序从小到大
+                     * 获取<p>签署顺序，如果是有序签署，签署顺序从小到大</p>
+                     * @return SignOrder <p>签署顺序，如果是有序签署，签署顺序从小到大</p>
                      * 
                      */
                     int64_t GetSignOrder() const;
 
                     /**
-                     * 设置签署顺序，如果是有序签署，签署顺序从小到大
-                     * @param _signOrder 签署顺序，如果是有序签署，签署顺序从小到大
+                     * 设置<p>签署顺序，如果是有序签署，签署顺序从小到大</p>
+                     * @param _signOrder <p>签署顺序，如果是有序签署，签署顺序从小到大</p>
                      * 
                      */
                     void SetSignOrder(const int64_t& _signOrder);
@@ -246,15 +195,15 @@ namespace TencentCloud
                     bool SignOrderHasBeenSet() const;
 
                     /**
-                     * 获取签署人签署时间，时间戳，单位秒
-                     * @return ApproveTime 签署人签署时间，时间戳，单位秒
+                     * 获取<p>签署人签署时间，时间戳，单位秒</p>
+                     * @return ApproveTime <p>签署人签署时间，时间戳，单位秒</p>
                      * 
                      */
                     int64_t GetApproveTime() const;
 
                     /**
-                     * 设置签署人签署时间，时间戳，单位秒
-                     * @param _approveTime 签署人签署时间，时间戳，单位秒
+                     * 设置<p>签署人签署时间，时间戳，单位秒</p>
+                     * @param _approveTime <p>签署人签署时间，时间戳，单位秒</p>
                      * 
                      */
                     void SetApproveTime(const int64_t& _approveTime);
@@ -267,15 +216,15 @@ namespace TencentCloud
                     bool ApproveTimeHasBeenSet() const;
 
                     /**
-                     * 获取签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签
-                     * @return ApproveType 签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签
+                     * 获取<p>签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签</p>
+                     * @return ApproveType <p>签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签</p>
                      * 
                      */
                     std::string GetApproveType() const;
 
                     /**
-                     * 设置签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签
-                     * @param _approveType 签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签
+                     * 设置<p>签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签</p>
+                     * @param _approveType <p>签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签</p>
                      * 
                      */
                     void SetApproveType(const std::string& _approveType);
@@ -288,15 +237,15 @@ namespace TencentCloud
                     bool ApproveTypeHasBeenSet() const;
 
                     /**
-                     * 获取签署方侧用户来源，如WEWORKAPP-企业微信等
-                     * @return ApproverSource 签署方侧用户来源，如WEWORKAPP-企业微信等
+                     * 获取<p>签署方侧用户来源，如WEWORKAPP-企业微信等</p>
+                     * @return ApproverSource <p>签署方侧用户来源，如WEWORKAPP-企业微信等</p>
                      * 
                      */
                     std::string GetApproverSource() const;
 
                     /**
-                     * 设置签署方侧用户来源，如WEWORKAPP-企业微信等
-                     * @param _approverSource 签署方侧用户来源，如WEWORKAPP-企业微信等
+                     * 设置<p>签署方侧用户来源，如WEWORKAPP-企业微信等</p>
+                     * @param _approverSource <p>签署方侧用户来源，如WEWORKAPP-企业微信等</p>
                      * 
                      */
                     void SetApproverSource(const std::string& _approverSource);
@@ -309,15 +258,15 @@ namespace TencentCloud
                     bool ApproverSourceHasBeenSet() const;
 
                     /**
-                     * 获取客户自定义签署方标识
-                     * @return CustomApproverTag 客户自定义签署方标识
+                     * 获取<p>客户自定义签署方标识</p>
+                     * @return CustomApproverTag <p>客户自定义签署方标识</p>
                      * 
                      */
                     std::string GetCustomApproverTag() const;
 
                     /**
-                     * 设置客户自定义签署方标识
-                     * @param _customApproverTag 客户自定义签署方标识
+                     * 设置<p>客户自定义签署方标识</p>
+                     * @param _customApproverTag <p>客户自定义签署方标识</p>
                      * 
                      */
                     void SetCustomApproverTag(const std::string& _customApproverTag);
@@ -330,15 +279,15 @@ namespace TencentCloud
                     bool CustomApproverTagHasBeenSet() const;
 
                     /**
-                     * 获取签署方企业Id
-                     * @return OrganizationId 签署方企业Id
+                     * 获取<p>签署方企业Id</p>
+                     * @return OrganizationId <p>签署方企业Id</p>
                      * 
                      */
                     std::string GetOrganizationId() const;
 
                     /**
-                     * 设置签署方企业Id
-                     * @param _organizationId 签署方企业Id
+                     * 设置<p>签署方企业Id</p>
+                     * @param _organizationId <p>签署方企业Id</p>
                      * 
                      */
                     void SetOrganizationId(const std::string& _organizationId);
@@ -351,15 +300,15 @@ namespace TencentCloud
                     bool OrganizationIdHasBeenSet() const;
 
                     /**
-                     * 获取签署方企业名称
-                     * @return OrganizationName 签署方企业名称
+                     * 获取<p>签署方企业名称</p>
+                     * @return OrganizationName <p>签署方企业名称</p>
                      * 
                      */
                     std::string GetOrganizationName() const;
 
                     /**
-                     * 设置签署方企业名称
-                     * @param _organizationName 签署方企业名称
+                     * 设置<p>签署方企业名称</p>
+                     * @param _organizationName <p>签署方企业名称</p>
                      * 
                      */
                     void SetOrganizationName(const std::string& _organizationName);
@@ -372,15 +321,15 @@ namespace TencentCloud
                     bool OrganizationNameHasBeenSet() const;
 
                     /**
-                     * 获取签署参与人在本流程中的编号ID（每个流程不同），可用此ID来定位签署参与人在本流程的签署节点，也可用于后续创建签署链接等操作。
-                     * @return SignId 签署参与人在本流程中的编号ID（每个流程不同），可用此ID来定位签署参与人在本流程的签署节点，也可用于后续创建签署链接等操作。
+                     * 获取<p>签署参与人在本流程中的编号ID（每个流程不同），可用此ID来定位签署参与人在本流程的签署节点，也可用于后续创建签署链接等操作。</p>
+                     * @return SignId <p>签署参与人在本流程中的编号ID（每个流程不同），可用此ID来定位签署参与人在本流程的签署节点，也可用于后续创建签署链接等操作。</p>
                      * 
                      */
                     std::string GetSignId() const;
 
                     /**
-                     * 设置签署参与人在本流程中的编号ID（每个流程不同），可用此ID来定位签署参与人在本流程的签署节点，也可用于后续创建签署链接等操作。
-                     * @param _signId 签署参与人在本流程中的编号ID（每个流程不同），可用此ID来定位签署参与人在本流程的签署节点，也可用于后续创建签署链接等操作。
+                     * 设置<p>签署参与人在本流程中的编号ID（每个流程不同），可用此ID来定位签署参与人在本流程的签署节点，也可用于后续创建签署链接等操作。</p>
+                     * @param _signId <p>签署参与人在本流程中的编号ID（每个流程不同），可用此ID来定位签署参与人在本流程的签署节点，也可用于后续创建签署链接等操作。</p>
                      * 
                      */
                     void SetSignId(const std::string& _signId);
@@ -393,15 +342,15 @@ namespace TencentCloud
                     bool SignIdHasBeenSet() const;
 
                     /**
-                     * 获取自定义签署人角色
-                     * @return ApproverRoleName 自定义签署人角色
+                     * 获取<p>自定义签署人角色</p>
+                     * @return ApproverRoleName <p>自定义签署人角色</p>
                      * 
                      */
                     std::string GetApproverRoleName() const;
 
                     /**
-                     * 设置自定义签署人角色
-                     * @param _approverRoleName 自定义签署人角色
+                     * 设置<p>自定义签署人角色</p>
+                     * @param _approverRoleName <p>自定义签署人角色</p>
                      * 
                      */
                     void SetApproverRoleName(const std::string& _approverRoleName);
@@ -414,15 +363,15 @@ namespace TencentCloud
                     bool ApproverRoleNameHasBeenSet() const;
 
                     /**
-                     * 获取模板配置中的参与方ID,与控件绑定
-                     * @return RecipientId 模板配置中的参与方ID,与控件绑定
+                     * 获取<p>模板配置中的参与方ID,与控件绑定</p>
+                     * @return RecipientId <p>模板配置中的参与方ID,与控件绑定</p>
                      * 
                      */
                     std::string GetRecipientId() const;
 
                     /**
-                     * 设置模板配置中的参与方ID,与控件绑定
-                     * @param _recipientId 模板配置中的参与方ID,与控件绑定
+                     * 设置<p>模板配置中的参与方ID,与控件绑定</p>
+                     * @param _recipientId <p>模板配置中的参与方ID,与控件绑定</p>
                      * 
                      */
                     void SetRecipientId(const std::string& _recipientId);
@@ -434,116 +383,130 @@ namespace TencentCloud
                      */
                     bool RecipientIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>签署方转交记录列表，标识该签署方是由谁转交而来，按转交时间由远到近进行排序</p>
+                     * @return ForwardRecords <p>签署方转交记录列表，标识该签署方是由谁转交而来，按转交时间由远到近进行排序</p>
+                     * 
+                     */
+                    std::vector<ForwardRecord> GetForwardRecords() const;
+
+                    /**
+                     * 设置<p>签署方转交记录列表，标识该签署方是由谁转交而来，按转交时间由远到近进行排序</p>
+                     * @param _forwardRecords <p>签署方转交记录列表，标识该签署方是由谁转交而来，按转交时间由远到近进行排序</p>
+                     * 
+                     */
+                    void SetForwardRecords(const std::vector<ForwardRecord>& _forwardRecords);
+
+                    /**
+                     * 判断参数 ForwardRecords 是否已赋值
+                     * @return ForwardRecords 是否已赋值
+                     * 
+                     */
+                    bool ForwardRecordsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 签署时的相关信息
+                     * <p>签署时的相关信息</p>
                      */
                     std::string m_approveMessage;
                     bool m_approveMessageHasBeenSet;
 
                     /**
-                     * 签署方姓名
+                     * <p>签署方姓名</p>
                      */
                     std::string m_approveName;
                     bool m_approveNameHasBeenSet;
 
                     /**
-                     * 签署方的签署状态
-0：还没有发起
-1：流程中 没有开始处理
-2：待签署
-3：已签署
-4：已拒绝
-5：已过期
-6：已撤销
-7：还没有预发起
-8：待填写
-9：因为各种原因而终止
-10：填写完成
-15：已解除
-19：转他人处理
+                     * <p>签署方的签署状态<br>0：还没有发起<br>1：流程中 没有开始处理<br>2：待签署<br>3：已签署<br>4：已拒绝<br>5：已过期<br>6：已撤销<br>7：还没有预发起<br>8：待填写<br>9：因为各种原因而终止<br>10：填写完成<br>15：已解除<br>19：转他人处理</p>
                      */
                     int64_t m_approveStatus;
                     bool m_approveStatusHasBeenSet;
 
                     /**
-                     * 模板配置中的参与方ID,与控件绑定
+                     * <p>模板配置中的参与方ID,与控件绑定</p>
                      */
                     std::string m_receiptId;
                     bool m_receiptIdHasBeenSet;
 
                     /**
-                     * 客户自定义的用户ID
+                     * <p>客户自定义的用户ID</p>
                      */
                     std::string m_customUserId;
                     bool m_customUserIdHasBeenSet;
 
                     /**
-                     * 签署人手机号
+                     * <p>签署人手机号</p>
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 签署顺序，如果是有序签署，签署顺序从小到大
+                     * <p>签署顺序，如果是有序签署，签署顺序从小到大</p>
                      */
                     int64_t m_signOrder;
                     bool m_signOrderHasBeenSet;
 
                     /**
-                     * 签署人签署时间，时间戳，单位秒
+                     * <p>签署人签署时间，时间戳，单位秒</p>
                      */
                     int64_t m_approveTime;
                     bool m_approveTimeHasBeenSet;
 
                     /**
-                     * 签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签
+                     * <p>签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签</p>
                      */
                     std::string m_approveType;
                     bool m_approveTypeHasBeenSet;
 
                     /**
-                     * 签署方侧用户来源，如WEWORKAPP-企业微信等
+                     * <p>签署方侧用户来源，如WEWORKAPP-企业微信等</p>
                      */
                     std::string m_approverSource;
                     bool m_approverSourceHasBeenSet;
 
                     /**
-                     * 客户自定义签署方标识
+                     * <p>客户自定义签署方标识</p>
                      */
                     std::string m_customApproverTag;
                     bool m_customApproverTagHasBeenSet;
 
                     /**
-                     * 签署方企业Id
+                     * <p>签署方企业Id</p>
                      */
                     std::string m_organizationId;
                     bool m_organizationIdHasBeenSet;
 
                     /**
-                     * 签署方企业名称
+                     * <p>签署方企业名称</p>
                      */
                     std::string m_organizationName;
                     bool m_organizationNameHasBeenSet;
 
                     /**
-                     * 签署参与人在本流程中的编号ID（每个流程不同），可用此ID来定位签署参与人在本流程的签署节点，也可用于后续创建签署链接等操作。
+                     * <p>签署参与人在本流程中的编号ID（每个流程不同），可用此ID来定位签署参与人在本流程的签署节点，也可用于后续创建签署链接等操作。</p>
                      */
                     std::string m_signId;
                     bool m_signIdHasBeenSet;
 
                     /**
-                     * 自定义签署人角色
+                     * <p>自定义签署人角色</p>
                      */
                     std::string m_approverRoleName;
                     bool m_approverRoleNameHasBeenSet;
 
                     /**
-                     * 模板配置中的参与方ID,与控件绑定
+                     * <p>模板配置中的参与方ID,与控件绑定</p>
                      */
                     std::string m_recipientId;
                     bool m_recipientIdHasBeenSet;
+
+                    /**
+                     * <p>签署方转交记录列表，标识该签署方是由谁转交而来，按转交时间由远到近进行排序</p>
+                     */
+                    std::vector<ForwardRecord> m_forwardRecords;
+                    bool m_forwardRecordsHasBeenSet;
 
                 };
             }

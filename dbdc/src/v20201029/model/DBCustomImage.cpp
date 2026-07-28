@@ -24,7 +24,8 @@ DBCustomImage::DBCustomImage() :
     m_imageIdHasBeenSet(false),
     m_osNameHasBeenSet(false),
     m_imageTypeHasBeenSet(false),
-    m_architectureHasBeenSet(false)
+    m_architectureHasBeenSet(false),
+    m_osTypeHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome DBCustomImage::Deserialize(const rapidjson::Value &value)
         m_architectureHasBeenSet = true;
     }
 
+    if (value.HasMember("OsType") && !value["OsType"].IsNull())
+    {
+        if (!value["OsType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBCustomImage.OsType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_osType = string(value["OsType"].GetString());
+        m_osTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void DBCustomImage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Architecture";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_architecture.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_osTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OsType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_osType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void DBCustomImage::SetArchitecture(const string& _architecture)
 bool DBCustomImage::ArchitectureHasBeenSet() const
 {
     return m_architectureHasBeenSet;
+}
+
+string DBCustomImage::GetOsType() const
+{
+    return m_osType;
+}
+
+void DBCustomImage::SetOsType(const string& _osType)
+{
+    m_osType = _osType;
+    m_osTypeHasBeenSet = true;
+}
+
+bool DBCustomImage::OsTypeHasBeenSet() const
+{
+    return m_osTypeHasBeenSet;
 }
 

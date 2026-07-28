@@ -691,6 +691,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeRuleDimStatRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleTemplatesResponse.h
   include/tencentcloud/wedata/v20210820/model/ReportTableRequest.h
+  include/tencentcloud/wedata/v20210820/model/Partition.h
   include/tencentcloud/wedata/v20210820/model/CreateAndDDLSupport.h
   include/tencentcloud/wedata/v20210820/model/CreateIntegrationNodeResponse.h
   include/tencentcloud/wedata/v20210820/model/TaskInnerInfo.h
@@ -739,9 +740,9 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/TablePropertyScore.h
   include/tencentcloud/wedata/v20210820/model/TestRunningSubRecord.h
   include/tencentcloud/wedata/v20210820/model/DescribeFunctionKindsRequest.h
-  include/tencentcloud/wedata/v20210820/model/DescribeFunctionKindsResponse.h
+  include/tencentcloud/wedata/v20210820/model/DescribeInstancesByExecutorsRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeInstanceDetailInfoResponse.h
-  include/tencentcloud/wedata/v20210820/model/Partition.h
+  include/tencentcloud/wedata/v20210820/model/LineageProcessVO.h
   include/tencentcloud/wedata/v20210820/model/RelatedTask.h
   include/tencentcloud/wedata/v20210820/model/DescribeTemplateDimCountRequest.h
   include/tencentcloud/wedata/v20210820/model/CreateCodeTemplateVersionResponse.h
@@ -1054,6 +1055,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/TaskLogResponse.h
   include/tencentcloud/wedata/v20210820/model/TableRecordField.h
   include/tencentcloud/wedata/v20210820/model/QuietPeriod.h
+  include/tencentcloud/wedata/v20210820/model/DescribeInstancesByExecutorsResponse.h
   include/tencentcloud/wedata/v20210820/model/AdhocDetail.h
   include/tencentcloud/wedata/v20210820/model/DescribeInstanceLastLogRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeEventRequest.h
@@ -1214,6 +1216,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/ModifyIntegrationNodeRequest.h
   include/tencentcloud/wedata/v20210820/model/ModifyMonitorStatusResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleTemplatesByPageResponse.h
+  include/tencentcloud/wedata/v20210820/model/DescribeFunctionKindsResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeTemplateDimCountResponse.h
   include/tencentcloud/wedata/v20210820/model/DataSourceConnectStatus.h
   include/tencentcloud/wedata/v20210820/model/SuccessorTaskInfo.h
@@ -1500,7 +1503,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DlcExpiredSnapshotsInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeWorkflowCanvasInfoResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeRulesByPageResponse.h
-  include/tencentcloud/wedata/v20210820/model/LineageProcessVO.h
+  include/tencentcloud/wedata/v20210820/model/ExecutorTaskInstanceCount.h
   include/tencentcloud/wedata/v20210820/model/AttributeItemDsVO.h
   include/tencentcloud/wedata/v20210820/model/DescribeDatabaseMetaResponse.h
   include/tencentcloud/wedata/v20210820/model/RuleDimCnt.h
@@ -2337,6 +2340,7 @@ set(wedata_src
   src/v20210820/model/DescribeRuleDimStatRequest.cpp
   src/v20210820/model/DescribeRuleTemplatesResponse.cpp
   src/v20210820/model/ReportTableRequest.cpp
+  src/v20210820/model/Partition.cpp
   src/v20210820/model/CreateAndDDLSupport.cpp
   src/v20210820/model/CreateIntegrationNodeResponse.cpp
   src/v20210820/model/TaskInnerInfo.cpp
@@ -2385,9 +2389,9 @@ set(wedata_src
   src/v20210820/model/TablePropertyScore.cpp
   src/v20210820/model/TestRunningSubRecord.cpp
   src/v20210820/model/DescribeFunctionKindsRequest.cpp
-  src/v20210820/model/DescribeFunctionKindsResponse.cpp
+  src/v20210820/model/DescribeInstancesByExecutorsRequest.cpp
   src/v20210820/model/DescribeInstanceDetailInfoResponse.cpp
-  src/v20210820/model/Partition.cpp
+  src/v20210820/model/LineageProcessVO.cpp
   src/v20210820/model/RelatedTask.cpp
   src/v20210820/model/DescribeTemplateDimCountRequest.cpp
   src/v20210820/model/CreateCodeTemplateVersionResponse.cpp
@@ -2700,6 +2704,7 @@ set(wedata_src
   src/v20210820/model/TaskLogResponse.cpp
   src/v20210820/model/TableRecordField.cpp
   src/v20210820/model/QuietPeriod.cpp
+  src/v20210820/model/DescribeInstancesByExecutorsResponse.cpp
   src/v20210820/model/AdhocDetail.cpp
   src/v20210820/model/DescribeInstanceLastLogRequest.cpp
   src/v20210820/model/DescribeEventRequest.cpp
@@ -2860,6 +2865,7 @@ set(wedata_src
   src/v20210820/model/ModifyIntegrationNodeRequest.cpp
   src/v20210820/model/ModifyMonitorStatusResponse.cpp
   src/v20210820/model/DescribeRuleTemplatesByPageResponse.cpp
+  src/v20210820/model/DescribeFunctionKindsResponse.cpp
   src/v20210820/model/DescribeTemplateDimCountResponse.cpp
   src/v20210820/model/DataSourceConnectStatus.cpp
   src/v20210820/model/SuccessorTaskInfo.cpp
@@ -3146,7 +3152,7 @@ set(wedata_src
   src/v20210820/model/DlcExpiredSnapshotsInfo.cpp
   src/v20210820/model/DescribeWorkflowCanvasInfoResponse.cpp
   src/v20210820/model/DescribeRulesByPageResponse.cpp
-  src/v20210820/model/LineageProcessVO.cpp
+  src/v20210820/model/ExecutorTaskInstanceCount.cpp
   src/v20210820/model/AttributeItemDsVO.cpp
   src/v20210820/model/DescribeDatabaseMetaResponse.cpp
   src/v20210820/model/RuleDimCnt.cpp

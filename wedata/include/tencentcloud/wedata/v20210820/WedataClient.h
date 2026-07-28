@@ -259,6 +259,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeInstanceLogFileResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeInstanceLogListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeInstanceLogListResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeInstancesByExecutorsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeInstancesByExecutorsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationNodeRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationNodeResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationStatisticsRequest.h>
@@ -1005,6 +1007,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceLogListResponse> DescribeInstanceLogListOutcome;
                 typedef std::future<DescribeInstanceLogListOutcome> DescribeInstanceLogListOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeInstanceLogListRequest&, DescribeInstanceLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceLogListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstancesByExecutorsResponse> DescribeInstancesByExecutorsOutcome;
+                typedef std::future<DescribeInstancesByExecutorsOutcome> DescribeInstancesByExecutorsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeInstancesByExecutorsRequest&, DescribeInstancesByExecutorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesByExecutorsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIntegrationNodeResponse> DescribeIntegrationNodeOutcome;
                 typedef std::future<DescribeIntegrationNodeOutcome> DescribeIntegrationNodeOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeIntegrationNodeRequest&, DescribeIntegrationNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIntegrationNodeAsyncHandler;
@@ -2636,6 +2641,15 @@ namespace TencentCloud
                 DescribeInstanceLogListOutcome DescribeInstanceLogList(const Model::DescribeInstanceLogListRequest &request);
                 void DescribeInstanceLogListAsync(const Model::DescribeInstanceLogListRequest& request, const DescribeInstanceLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceLogListOutcomeCallable DescribeInstanceLogListCallable(const Model::DescribeInstanceLogListRequest& request);
+
+                /**
+                 *按执行资源组查询任务调度与运行实例数量统计
+                 * @param req DescribeInstancesByExecutorsRequest
+                 * @return DescribeInstancesByExecutorsOutcome
+                 */
+                DescribeInstancesByExecutorsOutcome DescribeInstancesByExecutors(const Model::DescribeInstancesByExecutorsRequest &request);
+                void DescribeInstancesByExecutorsAsync(const Model::DescribeInstancesByExecutorsRequest& request, const DescribeInstancesByExecutorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancesByExecutorsOutcomeCallable DescribeInstancesByExecutorsCallable(const Model::DescribeInstancesByExecutorsRequest& request);
 
                 /**
                  *查询集成节点

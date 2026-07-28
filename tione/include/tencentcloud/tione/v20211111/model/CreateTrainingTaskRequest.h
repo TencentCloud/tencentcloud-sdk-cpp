@@ -32,6 +32,8 @@
 #include <tencentcloud/tione/v20211111/model/CodeRepoConfig.h>
 #include <tencentcloud/tione/v20211111/model/ExposeNetworkConfig.h>
 #include <tencentcloud/tione/v20211111/model/EnvVar.h>
+#include <tencentcloud/tione/v20211111/model/TrainToolConfig.h>
+#include <tencentcloud/tione/v20211111/model/ResourceSupplyAttribute.h>
 
 
 namespace TencentCloud
@@ -620,6 +622,48 @@ namespace TencentCloud
                      */
                     bool EnvsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>训练诊断工具配置</p>
+                     * @return TrainToolConfig <p>训练诊断工具配置</p>
+                     * 
+                     */
+                    TrainToolConfig GetTrainToolConfig() const;
+
+                    /**
+                     * 设置<p>训练诊断工具配置</p>
+                     * @param _trainToolConfig <p>训练诊断工具配置</p>
+                     * 
+                     */
+                    void SetTrainToolConfig(const TrainToolConfig& _trainToolConfig);
+
+                    /**
+                     * 判断参数 TrainToolConfig 是否已赋值
+                     * @return TrainToolConfig 是否已赋值
+                     * 
+                     */
+                    bool TrainToolConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>资源供应属性</p>
+                     * @return ResourceSupplyAttribute <p>资源供应属性</p>
+                     * 
+                     */
+                    ResourceSupplyAttribute GetResourceSupplyAttribute() const;
+
+                    /**
+                     * 设置<p>资源供应属性</p>
+                     * @param _resourceSupplyAttribute <p>资源供应属性</p>
+                     * 
+                     */
+                    void SetResourceSupplyAttribute(const ResourceSupplyAttribute& _resourceSupplyAttribute);
+
+                    /**
+                     * 判断参数 ResourceSupplyAttribute 是否已赋值
+                     * @return ResourceSupplyAttribute 是否已赋值
+                     * 
+                     */
+                    bool ResourceSupplyAttributeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -783,6 +827,18 @@ namespace TencentCloud
                      */
                     std::vector<EnvVar> m_envs;
                     bool m_envsHasBeenSet;
+
+                    /**
+                     * <p>训练诊断工具配置</p>
+                     */
+                    TrainToolConfig m_trainToolConfig;
+                    bool m_trainToolConfigHasBeenSet;
+
+                    /**
+                     * <p>资源供应属性</p>
+                     */
+                    ResourceSupplyAttribute m_resourceSupplyAttribute;
+                    bool m_resourceSupplyAttributeHasBeenSet;
 
                 };
             }

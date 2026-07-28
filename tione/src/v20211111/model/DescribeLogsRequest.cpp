@@ -34,7 +34,8 @@ DescribeLogsRequest::DescribeLogsRequest() :
     m_orderFieldHasBeenSet(false),
     m_contextHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_logStreamHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,14 @@ string DescribeLogsRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_logStreamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogStream";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logStream.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -346,6 +355,22 @@ void DescribeLogsRequest::SetOffset(const uint64_t& _offset)
 bool DescribeLogsRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeLogsRequest::GetLogStream() const
+{
+    return m_logStream;
+}
+
+void DescribeLogsRequest::SetLogStream(const string& _logStream)
+{
+    m_logStream = _logStream;
+    m_logStreamHasBeenSet = true;
+}
+
+bool DescribeLogsRequest::LogStreamHasBeenSet() const
+{
+    return m_logStreamHasBeenSet;
 }
 
 

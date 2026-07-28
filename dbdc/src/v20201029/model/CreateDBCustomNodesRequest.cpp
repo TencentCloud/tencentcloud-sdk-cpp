@@ -27,16 +27,23 @@ CreateDBCustomNodesRequest::CreateDBCustomNodesRequest() :
     m_imageIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_periodHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
     m_nodeCountHasBeenSet(false),
     m_loginSettingsHasBeenSet(false),
+    m_periodHasBeenSet(false),
     m_autoRenewHasBeenSet(false),
     m_nodeNameHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
     m_voucherIdsHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientTokenHasBeenSet(false),
+    m_chargeTypeHasBeenSet(false),
+    m_networkModeHasBeenSet(false),
+    m_systemDiskHasBeenSet(false),
+    m_dataDisksHasBeenSet(false),
+    m_hostNameHasBeenSet(false),
+    m_dryRunHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
 }
 
@@ -79,14 +86,6 @@ string CreateDBCustomNodesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_periodHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Period";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_period, allocator);
-    }
-
     if (m_nodeTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +109,14 @@ string CreateDBCustomNodesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_loginSettings.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_periodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Period";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_period, allocator);
     }
 
     if (m_autoRenewHasBeenSet)
@@ -170,6 +177,75 @@ string CreateDBCustomNodesRequest::ToJsonString() const
         string key = "ClientToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_chargeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_chargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_networkMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_systemDiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SystemDisk";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_systemDisk.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_dataDisksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataDisks";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dataDisks.begin(); itr != m_dataDisks.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_hostNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hostName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dryRunHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DryRun";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dryRun, allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -244,22 +320,6 @@ bool CreateDBCustomNodesRequest::SubnetIdHasBeenSet() const
     return m_subnetIdHasBeenSet;
 }
 
-int64_t CreateDBCustomNodesRequest::GetPeriod() const
-{
-    return m_period;
-}
-
-void CreateDBCustomNodesRequest::SetPeriod(const int64_t& _period)
-{
-    m_period = _period;
-    m_periodHasBeenSet = true;
-}
-
-bool CreateDBCustomNodesRequest::PeriodHasBeenSet() const
-{
-    return m_periodHasBeenSet;
-}
-
 string CreateDBCustomNodesRequest::GetNodeType() const
 {
     return m_nodeType;
@@ -306,6 +366,22 @@ void CreateDBCustomNodesRequest::SetLoginSettings(const LoginSettings& _loginSet
 bool CreateDBCustomNodesRequest::LoginSettingsHasBeenSet() const
 {
     return m_loginSettingsHasBeenSet;
+}
+
+int64_t CreateDBCustomNodesRequest::GetPeriod() const
+{
+    return m_period;
+}
+
+void CreateDBCustomNodesRequest::SetPeriod(const int64_t& _period)
+{
+    m_period = _period;
+    m_periodHasBeenSet = true;
+}
+
+bool CreateDBCustomNodesRequest::PeriodHasBeenSet() const
+{
+    return m_periodHasBeenSet;
 }
 
 int64_t CreateDBCustomNodesRequest::GetAutoRenew() const
@@ -402,6 +478,118 @@ void CreateDBCustomNodesRequest::SetClientToken(const string& _clientToken)
 bool CreateDBCustomNodesRequest::ClientTokenHasBeenSet() const
 {
     return m_clientTokenHasBeenSet;
+}
+
+string CreateDBCustomNodesRequest::GetChargeType() const
+{
+    return m_chargeType;
+}
+
+void CreateDBCustomNodesRequest::SetChargeType(const string& _chargeType)
+{
+    m_chargeType = _chargeType;
+    m_chargeTypeHasBeenSet = true;
+}
+
+bool CreateDBCustomNodesRequest::ChargeTypeHasBeenSet() const
+{
+    return m_chargeTypeHasBeenSet;
+}
+
+string CreateDBCustomNodesRequest::GetNetworkMode() const
+{
+    return m_networkMode;
+}
+
+void CreateDBCustomNodesRequest::SetNetworkMode(const string& _networkMode)
+{
+    m_networkMode = _networkMode;
+    m_networkModeHasBeenSet = true;
+}
+
+bool CreateDBCustomNodesRequest::NetworkModeHasBeenSet() const
+{
+    return m_networkModeHasBeenSet;
+}
+
+SystemDisk CreateDBCustomNodesRequest::GetSystemDisk() const
+{
+    return m_systemDisk;
+}
+
+void CreateDBCustomNodesRequest::SetSystemDisk(const SystemDisk& _systemDisk)
+{
+    m_systemDisk = _systemDisk;
+    m_systemDiskHasBeenSet = true;
+}
+
+bool CreateDBCustomNodesRequest::SystemDiskHasBeenSet() const
+{
+    return m_systemDiskHasBeenSet;
+}
+
+vector<DataDisk> CreateDBCustomNodesRequest::GetDataDisks() const
+{
+    return m_dataDisks;
+}
+
+void CreateDBCustomNodesRequest::SetDataDisks(const vector<DataDisk>& _dataDisks)
+{
+    m_dataDisks = _dataDisks;
+    m_dataDisksHasBeenSet = true;
+}
+
+bool CreateDBCustomNodesRequest::DataDisksHasBeenSet() const
+{
+    return m_dataDisksHasBeenSet;
+}
+
+string CreateDBCustomNodesRequest::GetHostName() const
+{
+    return m_hostName;
+}
+
+void CreateDBCustomNodesRequest::SetHostName(const string& _hostName)
+{
+    m_hostName = _hostName;
+    m_hostNameHasBeenSet = true;
+}
+
+bool CreateDBCustomNodesRequest::HostNameHasBeenSet() const
+{
+    return m_hostNameHasBeenSet;
+}
+
+bool CreateDBCustomNodesRequest::GetDryRun() const
+{
+    return m_dryRun;
+}
+
+void CreateDBCustomNodesRequest::SetDryRun(const bool& _dryRun)
+{
+    m_dryRun = _dryRun;
+    m_dryRunHasBeenSet = true;
+}
+
+bool CreateDBCustomNodesRequest::DryRunHasBeenSet() const
+{
+    return m_dryRunHasBeenSet;
+}
+
+vector<string> CreateDBCustomNodesRequest::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void CreateDBCustomNodesRequest::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool CreateDBCustomNodesRequest::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
 }
 
 

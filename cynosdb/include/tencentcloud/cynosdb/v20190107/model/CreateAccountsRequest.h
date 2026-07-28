@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群id
-                     * @return ClusterId 集群id
+                     * 获取<p>集群id</p>
+                     * @return ClusterId <p>集群id</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群id
-                     * @param _clusterId 集群id
+                     * 设置<p>集群id</p>
+                     * @param _clusterId <p>集群id</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取新账户列表
-                     * @return Accounts 新账户列表
+                     * 获取<p>新账户列表</p>
+                     * @return Accounts <p>新账户列表</p>
                      * 
                      */
                     std::vector<NewAccount> GetAccounts() const;
 
                     /**
-                     * 设置新账户列表
-                     * @param _accounts 新账户列表
+                     * 设置<p>新账户列表</p>
+                     * @param _accounts <p>新账户列表</p>
                      * 
                      */
                     void SetAccounts(const std::vector<NewAccount>& _accounts);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群id
+                     * <p>集群id</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 新账户列表
+                     * <p>新账户列表</p>
                      */
                     std::vector<NewAccount> m_accounts;
                     bool m_accountsHasBeenSet;

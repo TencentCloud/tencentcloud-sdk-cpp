@@ -38,6 +38,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DeleteNotebookRequest.h
   include/tencentcloud/tione/v20211111/model/PushTrainingMetricsRequest.h
   include/tencentcloud/tione/v20211111/model/Filter.h
+  include/tencentcloud/tione/v20211111/model/TrainToolConfig.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionsRequest.h
   include/tencentcloud/tione/v20211111/model/CodeRepoConfig.h
   include/tencentcloud/tione/v20211111/model/CreateDatasetResponse.h
@@ -390,6 +391,7 @@ set(tione_src
   src/v20211111/model/DeleteNotebookRequest.cpp
   src/v20211111/model/PushTrainingMetricsRequest.cpp
   src/v20211111/model/Filter.cpp
+  src/v20211111/model/TrainToolConfig.cpp
   src/v20211111/model/DescribeTrainingModelVersionsRequest.cpp
   src/v20211111/model/CodeRepoConfig.cpp
   src/v20211111/model/CreateDatasetResponse.cpp

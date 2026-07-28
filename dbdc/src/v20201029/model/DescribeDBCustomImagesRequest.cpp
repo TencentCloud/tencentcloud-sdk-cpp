@@ -23,6 +23,7 @@ using namespace TencentCloud::Dbdc::V20201029::Model;
 using namespace std;
 
 DescribeDBCustomImagesRequest::DescribeDBCustomImagesRequest() :
+    m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
 {
@@ -34,6 +35,21 @@ string DescribeDBCustomImagesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
 
     if (m_offsetHasBeenSet)
     {
@@ -58,6 +74,22 @@ string DescribeDBCustomImagesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<Filter> DescribeDBCustomImagesRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeDBCustomImagesRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeDBCustomImagesRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
 
 int64_t DescribeDBCustomImagesRequest::GetOffset() const
 {

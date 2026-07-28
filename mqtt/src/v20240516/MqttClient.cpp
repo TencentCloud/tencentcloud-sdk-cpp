@@ -1690,6 +1690,56 @@ MqttClient::DescribeDeviceCertificateOutcomeCallable MqttClient::DescribeDeviceC
     return prom->get_future();
 }
 
+MqttClient::DescribeDeviceCertificateBackupHistoryOutcome MqttClient::DescribeDeviceCertificateBackupHistory(const DescribeDeviceCertificateBackupHistoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeviceCertificateBackupHistory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeviceCertificateBackupHistoryResponse rsp = DescribeDeviceCertificateBackupHistoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeviceCertificateBackupHistoryOutcome(rsp);
+        else
+            return DescribeDeviceCertificateBackupHistoryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeviceCertificateBackupHistoryOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DescribeDeviceCertificateBackupHistoryAsync(const DescribeDeviceCertificateBackupHistoryRequest& request, const DescribeDeviceCertificateBackupHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDeviceCertificateBackupHistoryRequest&;
+    using Resp = DescribeDeviceCertificateBackupHistoryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceCertificateBackupHistory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MqttClient::DescribeDeviceCertificateBackupHistoryOutcomeCallable MqttClient::DescribeDeviceCertificateBackupHistoryCallable(const DescribeDeviceCertificateBackupHistoryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDeviceCertificateBackupHistoryOutcome>>();
+    DescribeDeviceCertificateBackupHistoryAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeDeviceCertificateBackupHistoryRequest&,
+        DescribeDeviceCertificateBackupHistoryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MqttClient::DescribeDeviceCertificatesOutcome MqttClient::DescribeDeviceCertificates(const DescribeDeviceCertificatesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDeviceCertificates");
@@ -1832,6 +1882,56 @@ MqttClient::DescribeDeviceIdentityOutcomeCallable MqttClient::DescribeDeviceIden
         const MqttClient*,
         const DescribeDeviceIdentityRequest&,
         DescribeDeviceIdentityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MqttClient::DescribeDeviceIdentityBackupHistoryOutcome MqttClient::DescribeDeviceIdentityBackupHistory(const DescribeDeviceIdentityBackupHistoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeviceIdentityBackupHistory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeviceIdentityBackupHistoryResponse rsp = DescribeDeviceIdentityBackupHistoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeviceIdentityBackupHistoryOutcome(rsp);
+        else
+            return DescribeDeviceIdentityBackupHistoryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeviceIdentityBackupHistoryOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DescribeDeviceIdentityBackupHistoryAsync(const DescribeDeviceIdentityBackupHistoryRequest& request, const DescribeDeviceIdentityBackupHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDeviceIdentityBackupHistoryRequest&;
+    using Resp = DescribeDeviceIdentityBackupHistoryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceIdentityBackupHistory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MqttClient::DescribeDeviceIdentityBackupHistoryOutcomeCallable MqttClient::DescribeDeviceIdentityBackupHistoryCallable(const DescribeDeviceIdentityBackupHistoryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDeviceIdentityBackupHistoryOutcome>>();
+    DescribeDeviceIdentityBackupHistoryAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeDeviceIdentityBackupHistoryRequest&,
+        DescribeDeviceIdentityBackupHistoryOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2682,6 +2782,56 @@ MqttClient::DescribeUserListOutcomeCallable MqttClient::DescribeUserListCallable
         const MqttClient*,
         const DescribeUserListRequest&,
         DescribeUserListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MqttClient::DescribeWillMessageOutcome MqttClient::DescribeWillMessage(const DescribeWillMessageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWillMessage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWillMessageResponse rsp = DescribeWillMessageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWillMessageOutcome(rsp);
+        else
+            return DescribeWillMessageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWillMessageOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DescribeWillMessageAsync(const DescribeWillMessageRequest& request, const DescribeWillMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeWillMessageRequest&;
+    using Resp = DescribeWillMessageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeWillMessage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MqttClient::DescribeWillMessageOutcomeCallable MqttClient::DescribeWillMessageCallable(const DescribeWillMessageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeWillMessageOutcome>>();
+    DescribeWillMessageAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeWillMessageRequest&,
+        DescribeWillMessageOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

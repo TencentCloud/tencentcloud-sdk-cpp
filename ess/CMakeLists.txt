@@ -344,6 +344,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreatePrepareFlowGroupRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFileCounterSignResponse.h
   include/tencentcloud/ess/v20201111/model/VerifyDigitFileResult.h
+  include/tencentcloud/ess/v20201111/model/ForwardRecord.h
   include/tencentcloud/ess/v20201111/model/CreatePrepareFlowRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeCancelFlowsTaskRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeContractReviewMarkedRiskExportTaskResponse.h
@@ -809,6 +810,7 @@ set(ess_src
   src/v20201111/model/CreatePrepareFlowGroupRequest.cpp
   src/v20201111/model/CreateFileCounterSignResponse.cpp
   src/v20201111/model/VerifyDigitFileResult.cpp
+  src/v20201111/model/ForwardRecord.cpp
   src/v20201111/model/CreatePrepareFlowRequest.cpp
   src/v20201111/model/DescribeCancelFlowsTaskRequest.cpp
   src/v20201111/model/DescribeContractReviewMarkedRiskExportTaskResponse.cpp

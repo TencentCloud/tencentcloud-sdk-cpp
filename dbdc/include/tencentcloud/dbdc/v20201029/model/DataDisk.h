@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取<p>磁盘名称</p>
-                     * @return DiskName <p>磁盘名称</p>
+                     * 获取<p>磁盘名称</p><p>DataDisk 作为输入参数时，DiskName 无效。</p>
+                     * @return DiskName <p>磁盘名称</p><p>DataDisk 作为输入参数时，DiskName 无效。</p>
                      * 
                      */
                     std::string GetDiskName() const;
 
                     /**
-                     * 设置<p>磁盘名称</p>
-                     * @param _diskName <p>磁盘名称</p>
+                     * 设置<p>磁盘名称</p><p>DataDisk 作为输入参数时，DiskName 无效。</p>
+                     * @param _diskName <p>磁盘名称</p><p>DataDisk 作为输入参数时，DiskName 无效。</p>
                      * 
                      */
                     void SetDiskName(const std::string& _diskName);
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * <p>磁盘名称</p>
+                     * <p>磁盘名称</p><p>DataDisk 作为输入参数时，DiskName 无效。</p>
                      */
                     std::string m_diskName;
                     bool m_diskNameHasBeenSet;

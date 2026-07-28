@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否支持从可用区
-                     * @return IsSupportSlaveZone 是否支持从可用区
+                     * 获取<p>是否支持从可用区</p>
+                     * @return IsSupportSlaveZone <p>是否支持从可用区</p>
                      * 
                      */
                     std::string GetIsSupportSlaveZone() const;
 
                     /**
-                     * 设置是否支持从可用区
-                     * @param _isSupportSlaveZone 是否支持从可用区
+                     * 设置<p>是否支持从可用区</p>
+                     * @param _isSupportSlaveZone <p>是否支持从可用区</p>
                      * 
                      */
                     void SetIsSupportSlaveZone(const std::string& _isSupportSlaveZone);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IsSupportSlaveZoneHasBeenSet() const;
 
                     /**
-                     * 获取不支持从可用区的原因
-                     * @return NonsupportSlaveZoneReason 不支持从可用区的原因
+                     * 获取<p>不支持从可用区的原因</p>
+                     * @return NonsupportSlaveZoneReason <p>不支持从可用区的原因</p>
                      * 
                      */
                     std::string GetNonsupportSlaveZoneReason() const;
 
                     /**
-                     * 设置不支持从可用区的原因
-                     * @param _nonsupportSlaveZoneReason 不支持从可用区的原因
+                     * 设置<p>不支持从可用区的原因</p>
+                     * @param _nonsupportSlaveZoneReason <p>不支持从可用区的原因</p>
                      * 
                      */
                     void SetNonsupportSlaveZoneReason(const std::string& _nonsupportSlaveZoneReason);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NonsupportSlaveZoneReasonHasBeenSet() const;
 
                     /**
-                     * 获取是否支持RO实例
-                     * @return IsSupportRo 是否支持RO实例
+                     * 获取<p>是否支持RO实例</p>
+                     * @return IsSupportRo <p>是否支持RO实例</p>
                      * 
                      */
                     std::string GetIsSupportRo() const;
 
                     /**
-                     * 设置是否支持RO实例
-                     * @param _isSupportRo 是否支持RO实例
+                     * 设置<p>是否支持RO实例</p>
+                     * @param _isSupportRo <p>是否支持RO实例</p>
                      * 
                      */
                     void SetIsSupportRo(const std::string& _isSupportRo);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool IsSupportRoHasBeenSet() const;
 
                     /**
-                     * 获取不支持RO实例的原因
-                     * @return NonsupportRoReason 不支持RO实例的原因
+                     * 获取<p>不支持RO实例的原因</p>
+                     * @return NonsupportRoReason <p>不支持RO实例的原因</p>
                      * 
                      */
                     std::string GetNonsupportRoReason() const;
 
                     /**
-                     * 设置不支持RO实例的原因
-                     * @param _nonsupportRoReason 不支持RO实例的原因
+                     * 设置<p>不支持RO实例的原因</p>
+                     * @param _nonsupportRoReason <p>不支持RO实例的原因</p>
                      * 
                      */
                     void SetNonsupportRoReason(const std::string& _nonsupportRoReason);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool NonsupportRoReasonHasBeenSet() const;
 
                     /**
-                     * 获取是否支持手动发起快照备份
-                     * @return IsSupportManualSnapshot 是否支持手动发起快照备份
+                     * 获取<p>是否支持手动发起快照备份</p>
+                     * @return IsSupportManualSnapshot <p>是否支持手动发起快照备份</p>
                      * 
                      */
                     std::string GetIsSupportManualSnapshot() const;
 
                     /**
-                     * 设置是否支持手动发起快照备份
-                     * @param _isSupportManualSnapshot 是否支持手动发起快照备份
+                     * 设置<p>是否支持手动发起快照备份</p>
+                     * @param _isSupportManualSnapshot <p>是否支持手动发起快照备份</p>
                      * 
                      */
                     void SetIsSupportManualSnapshot(const std::string& _isSupportManualSnapshot);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool IsSupportManualSnapshotHasBeenSet() const;
 
                     /**
-                     * 获取是否支持透明数据加密
-                     * @return IsSupportTransparentDataEncryption 是否支持透明数据加密
+                     * 获取<p>是否支持透明数据加密</p>
+                     * @return IsSupportTransparentDataEncryption <p>是否支持透明数据加密</p>
                      * 
                      */
                     std::string GetIsSupportTransparentDataEncryption() const;
 
                     /**
-                     * 设置是否支持透明数据加密
-                     * @param _isSupportTransparentDataEncryption 是否支持透明数据加密
+                     * 设置<p>是否支持透明数据加密</p>
+                     * @param _isSupportTransparentDataEncryption <p>是否支持透明数据加密</p>
                      * 
                      */
                     void SetIsSupportTransparentDataEncryption(const std::string& _isSupportTransparentDataEncryption);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool IsSupportTransparentDataEncryptionHasBeenSet() const;
 
                     /**
-                     * 获取不支持透明数据加密原因
-                     * @return NoSupportTransparentDataEncryptionReason 不支持透明数据加密原因
+                     * 获取<p>不支持透明数据加密原因</p>
+                     * @return NoSupportTransparentDataEncryptionReason <p>不支持透明数据加密原因</p>
                      * 
                      */
                     std::string GetNoSupportTransparentDataEncryptionReason() const;
 
                     /**
-                     * 设置不支持透明数据加密原因
-                     * @param _noSupportTransparentDataEncryptionReason 不支持透明数据加密原因
+                     * 设置<p>不支持透明数据加密原因</p>
+                     * @param _noSupportTransparentDataEncryptionReason <p>不支持透明数据加密原因</p>
                      * 
                      */
                     void SetNoSupportTransparentDataEncryptionReason(const std::string& _noSupportTransparentDataEncryptionReason);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool NoSupportTransparentDataEncryptionReasonHasBeenSet() const;
 
                     /**
-                     * 获取是否支持手动发起逻辑备份
-                     * @return IsSupportManualLogic 是否支持手动发起逻辑备份
+                     * 获取<p>是否支持手动发起逻辑备份</p>
+                     * @return IsSupportManualLogic <p>是否支持手动发起逻辑备份</p>
                      * 
                      */
                     std::string GetIsSupportManualLogic() const;
 
                     /**
-                     * 设置是否支持手动发起逻辑备份
-                     * @param _isSupportManualLogic 是否支持手动发起逻辑备份
+                     * 设置<p>是否支持手动发起逻辑备份</p>
+                     * @param _isSupportManualLogic <p>是否支持手动发起逻辑备份</p>
                      * 
                      */
                     void SetIsSupportManualLogic(const std::string& _isSupportManualLogic);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool IsSupportManualLogicHasBeenSet() const;
 
                     /**
-                     * 获取是否支持开启全局加密
-                     * @return IsSupportGlobalEncryption 是否支持开启全局加密
+                     * 获取<p>是否支持开启全局加密</p>
+                     * @return IsSupportGlobalEncryption <p>是否支持开启全局加密</p>
                      * 
                      */
                     std::string GetIsSupportGlobalEncryption() const;
 
                     /**
-                     * 设置是否支持开启全局加密
-                     * @param _isSupportGlobalEncryption 是否支持开启全局加密
+                     * 设置<p>是否支持开启全局加密</p>
+                     * @param _isSupportGlobalEncryption <p>是否支持开启全局加密</p>
                      * 
                      */
                     void SetIsSupportGlobalEncryption(const std::string& _isSupportGlobalEncryption);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool IsSupportGlobalEncryptionHasBeenSet() const;
 
                     /**
-                     * 获取不支持全局加密的原因
-                     * @return NoSupportGlobalEncryptionReason 不支持全局加密的原因
+                     * 获取<p>不支持全局加密的原因</p>
+                     * @return NoSupportGlobalEncryptionReason <p>不支持全局加密的原因</p>
                      * 
                      */
                     std::string GetNoSupportGlobalEncryptionReason() const;
 
                     /**
-                     * 设置不支持全局加密的原因
-                     * @param _noSupportGlobalEncryptionReason 不支持全局加密的原因
+                     * 设置<p>不支持全局加密的原因</p>
+                     * @param _noSupportGlobalEncryptionReason <p>不支持全局加密的原因</p>
                      * 
                      */
                     void SetNoSupportGlobalEncryptionReason(const std::string& _noSupportGlobalEncryptionReason);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool NoSupportGlobalEncryptionReasonHasBeenSet() const;
 
                     /**
-                     * 获取不支持透明加密原因状态码
-                     * @return NoSupportTransparentDataEncryptionReasonCode 不支持透明加密原因状态码
+                     * 获取<p>不支持透明加密原因状态码</p>
+                     * @return NoSupportTransparentDataEncryptionReasonCode <p>不支持透明加密原因状态码</p>
                      * 
                      */
                     std::string GetNoSupportTransparentDataEncryptionReasonCode() const;
 
                     /**
-                     * 设置不支持透明加密原因状态码
-                     * @param _noSupportTransparentDataEncryptionReasonCode 不支持透明加密原因状态码
+                     * 设置<p>不支持透明加密原因状态码</p>
+                     * @param _noSupportTransparentDataEncryptionReasonCode <p>不支持透明加密原因状态码</p>
                      * 
                      */
                     void SetNoSupportTransparentDataEncryptionReasonCode(const std::string& _noSupportTransparentDataEncryptionReasonCode);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool NoSupportTransparentDataEncryptionReasonCodeHasBeenSet() const;
 
                     /**
-                     * 获取不支持全局加密原因状态码
-                     * @return NoSupportGlobalEncryptionReasonCode 不支持全局加密原因状态码
+                     * 获取<p>不支持全局加密原因状态码</p>
+                     * @return NoSupportGlobalEncryptionReasonCode <p>不支持全局加密原因状态码</p>
                      * 
                      */
                     std::string GetNoSupportGlobalEncryptionReasonCode() const;
 
                     /**
-                     * 设置不支持全局加密原因状态码
-                     * @param _noSupportGlobalEncryptionReasonCode 不支持全局加密原因状态码
+                     * 设置<p>不支持全局加密原因状态码</p>
+                     * @param _noSupportGlobalEncryptionReasonCode <p>不支持全局加密原因状态码</p>
                      * 
                      */
                     void SetNoSupportGlobalEncryptionReasonCode(const std::string& _noSupportGlobalEncryptionReasonCode);
@@ -301,73 +301,73 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否支持从可用区
+                     * <p>是否支持从可用区</p>
                      */
                     std::string m_isSupportSlaveZone;
                     bool m_isSupportSlaveZoneHasBeenSet;
 
                     /**
-                     * 不支持从可用区的原因
+                     * <p>不支持从可用区的原因</p>
                      */
                     std::string m_nonsupportSlaveZoneReason;
                     bool m_nonsupportSlaveZoneReasonHasBeenSet;
 
                     /**
-                     * 是否支持RO实例
+                     * <p>是否支持RO实例</p>
                      */
                     std::string m_isSupportRo;
                     bool m_isSupportRoHasBeenSet;
 
                     /**
-                     * 不支持RO实例的原因
+                     * <p>不支持RO实例的原因</p>
                      */
                     std::string m_nonsupportRoReason;
                     bool m_nonsupportRoReasonHasBeenSet;
 
                     /**
-                     * 是否支持手动发起快照备份
+                     * <p>是否支持手动发起快照备份</p>
                      */
                     std::string m_isSupportManualSnapshot;
                     bool m_isSupportManualSnapshotHasBeenSet;
 
                     /**
-                     * 是否支持透明数据加密
+                     * <p>是否支持透明数据加密</p>
                      */
                     std::string m_isSupportTransparentDataEncryption;
                     bool m_isSupportTransparentDataEncryptionHasBeenSet;
 
                     /**
-                     * 不支持透明数据加密原因
+                     * <p>不支持透明数据加密原因</p>
                      */
                     std::string m_noSupportTransparentDataEncryptionReason;
                     bool m_noSupportTransparentDataEncryptionReasonHasBeenSet;
 
                     /**
-                     * 是否支持手动发起逻辑备份
+                     * <p>是否支持手动发起逻辑备份</p>
                      */
                     std::string m_isSupportManualLogic;
                     bool m_isSupportManualLogicHasBeenSet;
 
                     /**
-                     * 是否支持开启全局加密
+                     * <p>是否支持开启全局加密</p>
                      */
                     std::string m_isSupportGlobalEncryption;
                     bool m_isSupportGlobalEncryptionHasBeenSet;
 
                     /**
-                     * 不支持全局加密的原因
+                     * <p>不支持全局加密的原因</p>
                      */
                     std::string m_noSupportGlobalEncryptionReason;
                     bool m_noSupportGlobalEncryptionReasonHasBeenSet;
 
                     /**
-                     * 不支持透明加密原因状态码
+                     * <p>不支持透明加密原因状态码</p>
                      */
                     std::string m_noSupportTransparentDataEncryptionReasonCode;
                     bool m_noSupportTransparentDataEncryptionReasonCodeHasBeenSet;
 
                     /**
-                     * 不支持全局加密原因状态码
+                     * <p>不支持全局加密原因状态码</p>
                      */
                     std::string m_noSupportGlobalEncryptionReasonCode;
                     bool m_noSupportGlobalEncryptionReasonCodeHasBeenSet;

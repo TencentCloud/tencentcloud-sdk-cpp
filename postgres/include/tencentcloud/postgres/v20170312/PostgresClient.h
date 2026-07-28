@@ -43,6 +43,8 @@
 #include <tencentcloud/postgres/v20170312/model/CreateBaseBackupResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CreateDBInstanceNetworkAccessRequest.h>
 #include <tencentcloud/postgres/v20170312/model/CreateDBInstanceNetworkAccessResponse.h>
+#include <tencentcloud/postgres/v20170312/model/CreateDBProxyRequest.h>
+#include <tencentcloud/postgres/v20170312/model/CreateDBProxyResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CreateDatabaseRequest.h>
 #include <tencentcloud/postgres/v20170312/model/CreateDatabaseResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CreateInstancesRequest.h>
@@ -117,6 +119,10 @@
 #include <tencentcloud/postgres/v20170312/model/DescribeDBInstanceSecurityGroupsResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBInstancesRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBInstancesResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeDBProxyRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeDBProxyResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeDBProxySpecsRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeDBProxySpecsResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBVersionsRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBVersionsResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBXlogsRequest.h>
@@ -159,6 +165,8 @@
 #include <tencentcloud/postgres/v20170312/model/DescribeZonesResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DestroyDBInstanceRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DestroyDBInstanceResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DestroyDBProxyRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DestroyDBProxyResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DisIsolateDBInstancesRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DisIsolateDBInstancesResponse.h>
 #include <tencentcloud/postgres/v20170312/model/InquiryPriceCreateDBInstancesRequest.h>
@@ -205,6 +213,10 @@
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceSpecResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstancesProjectRequest.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstancesProjectResponse.h>
+#include <tencentcloud/postgres/v20170312/model/ModifyDBProxyRequest.h>
+#include <tencentcloud/postgres/v20170312/model/ModifyDBProxyResponse.h>
+#include <tencentcloud/postgres/v20170312/model/ModifyDBProxyAddressRequest.h>
+#include <tencentcloud/postgres/v20170312/model/ModifyDBProxyAddressResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDatabaseOwnerRequest.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDatabaseOwnerResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyMaintainTimeWindowRequest.h>
@@ -227,6 +239,8 @@
 #include <tencentcloud/postgres/v20170312/model/RebalanceReadOnlyGroupResponse.h>
 #include <tencentcloud/postgres/v20170312/model/RefreshAccountPasswordRequest.h>
 #include <tencentcloud/postgres/v20170312/model/RefreshAccountPasswordResponse.h>
+#include <tencentcloud/postgres/v20170312/model/ReloadBalanceDBProxyNodeRequest.h>
+#include <tencentcloud/postgres/v20170312/model/ReloadBalanceDBProxyNodeResponse.h>
 #include <tencentcloud/postgres/v20170312/model/RemoveDBInstanceFromReadOnlyGroupRequest.h>
 #include <tencentcloud/postgres/v20170312/model/RemoveDBInstanceFromReadOnlyGroupResponse.h>
 #include <tencentcloud/postgres/v20170312/model/RenewInstanceRequest.h>
@@ -291,6 +305,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDBInstanceNetworkAccessResponse> CreateDBInstanceNetworkAccessOutcome;
                 typedef std::future<CreateDBInstanceNetworkAccessOutcome> CreateDBInstanceNetworkAccessOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CreateDBInstanceNetworkAccessRequest&, CreateDBInstanceNetworkAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstanceNetworkAccessAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDBProxyResponse> CreateDBProxyOutcome;
+                typedef std::future<CreateDBProxyOutcome> CreateDBProxyOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::CreateDBProxyRequest&, CreateDBProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBProxyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDatabaseResponse> CreateDatabaseOutcome;
                 typedef std::future<CreateDatabaseOutcome> CreateDatabaseOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CreateDatabaseRequest&, CreateDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatabaseAsyncHandler;
@@ -402,6 +419,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBInstancesResponse> DescribeDBInstancesOutcome;
                 typedef std::future<DescribeDBInstancesOutcome> DescribeDBInstancesOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeDBInstancesRequest&, DescribeDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBProxyResponse> DescribeDBProxyOutcome;
+                typedef std::future<DescribeDBProxyOutcome> DescribeDBProxyOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DescribeDBProxyRequest&, DescribeDBProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBProxyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBProxySpecsResponse> DescribeDBProxySpecsOutcome;
+                typedef std::future<DescribeDBProxySpecsOutcome> DescribeDBProxySpecsOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DescribeDBProxySpecsRequest&, DescribeDBProxySpecsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBProxySpecsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBVersionsResponse> DescribeDBVersionsOutcome;
                 typedef std::future<DescribeDBVersionsOutcome> DescribeDBVersionsOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeDBVersionsRequest&, DescribeDBVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBVersionsAsyncHandler;
@@ -465,6 +488,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DestroyDBInstanceResponse> DestroyDBInstanceOutcome;
                 typedef std::future<DestroyDBInstanceOutcome> DestroyDBInstanceOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DestroyDBInstanceRequest&, DestroyDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyDBInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DestroyDBProxyResponse> DestroyDBProxyOutcome;
+                typedef std::future<DestroyDBProxyOutcome> DestroyDBProxyOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DestroyDBProxyRequest&, DestroyDBProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyDBProxyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisIsolateDBInstancesResponse> DisIsolateDBInstancesOutcome;
                 typedef std::future<DisIsolateDBInstancesOutcome> DisIsolateDBInstancesOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DisIsolateDBInstancesRequest&, DisIsolateDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisIsolateDBInstancesAsyncHandler;
@@ -534,6 +560,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDBInstancesProjectResponse> ModifyDBInstancesProjectOutcome;
                 typedef std::future<ModifyDBInstancesProjectOutcome> ModifyDBInstancesProjectOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyDBInstancesProjectRequest&, ModifyDBInstancesProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstancesProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBProxyResponse> ModifyDBProxyOutcome;
+                typedef std::future<ModifyDBProxyOutcome> ModifyDBProxyOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::ModifyDBProxyRequest&, ModifyDBProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBProxyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBProxyAddressResponse> ModifyDBProxyAddressOutcome;
+                typedef std::future<ModifyDBProxyAddressOutcome> ModifyDBProxyAddressOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::ModifyDBProxyAddressRequest&, ModifyDBProxyAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBProxyAddressAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDatabaseOwnerResponse> ModifyDatabaseOwnerOutcome;
                 typedef std::future<ModifyDatabaseOwnerOutcome> ModifyDatabaseOwnerOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyDatabaseOwnerRequest&, ModifyDatabaseOwnerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatabaseOwnerAsyncHandler;
@@ -567,6 +599,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RefreshAccountPasswordResponse> RefreshAccountPasswordOutcome;
                 typedef std::future<RefreshAccountPasswordOutcome> RefreshAccountPasswordOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::RefreshAccountPasswordRequest&, RefreshAccountPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefreshAccountPasswordAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReloadBalanceDBProxyNodeResponse> ReloadBalanceDBProxyNodeOutcome;
+                typedef std::future<ReloadBalanceDBProxyNodeOutcome> ReloadBalanceDBProxyNodeOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::ReloadBalanceDBProxyNodeRequest&, ReloadBalanceDBProxyNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReloadBalanceDBProxyNodeAsyncHandler;
                 typedef Outcome<Core::Error, Model::RemoveDBInstanceFromReadOnlyGroupResponse> RemoveDBInstanceFromReadOnlyGroupOutcome;
                 typedef std::future<RemoveDBInstanceFromReadOnlyGroupOutcome> RemoveDBInstanceFromReadOnlyGroupOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::RemoveDBInstanceFromReadOnlyGroupRequest&, RemoveDBInstanceFromReadOnlyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveDBInstanceFromReadOnlyGroupAsyncHandler;
@@ -689,6 +724,15 @@ namespace TencentCloud
                 CreateDBInstanceNetworkAccessOutcome CreateDBInstanceNetworkAccess(const Model::CreateDBInstanceNetworkAccessRequest &request);
                 void CreateDBInstanceNetworkAccessAsync(const Model::CreateDBInstanceNetworkAccessRequest& request, const CreateDBInstanceNetworkAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDBInstanceNetworkAccessOutcomeCallable CreateDBInstanceNetworkAccessCallable(const Model::CreateDBInstanceNetworkAccessRequest& request);
+
+                /**
+                 *本接口（CreateDBProxy）用于为指定的 PostgreSQL 实例创建数据库代理（Proxy）。走计费下单流程，下单成功后异步发起 Proxy 创建任务，同步返回订单号 DealName 与 Proxy 实例 ID ProxyGroupId。当前仅支持后付费按量计费。
+                 * @param req CreateDBProxyRequest
+                 * @return CreateDBProxyOutcome
+                 */
+                CreateDBProxyOutcome CreateDBProxy(const Model::CreateDBProxyRequest &request);
+                void CreateDBProxyAsync(const Model::CreateDBProxyRequest& request, const CreateDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDBProxyOutcomeCallable CreateDBProxyCallable(const Model::CreateDBProxyRequest& request);
 
                 /**
                  *此接口用于创建数据库，需指定数据库名及所有者。
@@ -1028,6 +1072,24 @@ namespace TencentCloud
                 DescribeDBInstancesOutcomeCallable DescribeDBInstancesCallable(const Model::DescribeDBInstancesRequest& request);
 
                 /**
+                 *本接口（DescribeDBProxy）用于查询指定 PostgreSQL 实例下的数据库代理（Proxy）信息，包含 Proxy 节点列表与接入地址列表。可选传入 ProxyGroupId 精确查询某一 Proxy；不传则返回该实例下的全部 Proxy。
+                 * @param req DescribeDBProxyRequest
+                 * @return DescribeDBProxyOutcome
+                 */
+                DescribeDBProxyOutcome DescribeDBProxy(const Model::DescribeDBProxyRequest &request);
+                void DescribeDBProxyAsync(const Model::DescribeDBProxyRequest& request, const DescribeDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBProxyOutcomeCallable DescribeDBProxyCallable(const Model::DescribeDBProxyRequest& request);
+
+                /**
+                 *查询代理可售规格
+                 * @param req DescribeDBProxySpecsRequest
+                 * @return DescribeDBProxySpecsOutcome
+                 */
+                DescribeDBProxySpecsOutcome DescribeDBProxySpecs(const Model::DescribeDBProxySpecsRequest &request);
+                void DescribeDBProxySpecsAsync(const Model::DescribeDBProxySpecsRequest& request, const DescribeDBProxySpecsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBProxySpecsOutcomeCallable DescribeDBProxySpecsCallable(const Model::DescribeDBProxySpecsRequest& request);
+
+                /**
                  *本接口（DescribeDBVersions）用于查询支持的数据库版本。
                  * @param req DescribeDBVersionsRequest
                  * @return DescribeDBVersionsOutcome
@@ -1216,6 +1278,15 @@ namespace TencentCloud
                 DestroyDBInstanceOutcome DestroyDBInstance(const Model::DestroyDBInstanceRequest &request);
                 void DestroyDBInstanceAsync(const Model::DestroyDBInstanceRequest& request, const DestroyDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DestroyDBInstanceOutcomeCallable DestroyDBInstanceCallable(const Model::DestroyDBInstanceRequest& request);
+
+                /**
+                 *本接口（DestroyDBProxy）用于销毁指定的数据库代理（Proxy）。接口仅返回 RequestId，销毁动作由计费回调异步触发 ProxyDestroy 任务，内部统一完成「隔离 + 销毁」全部步骤（释放 VIP、解绑安全组、回收资源、上报计费等），用户无需先调用隔离接口。
+                 * @param req DestroyDBProxyRequest
+                 * @return DestroyDBProxyOutcome
+                 */
+                DestroyDBProxyOutcome DestroyDBProxy(const Model::DestroyDBProxyRequest &request);
+                void DestroyDBProxyAsync(const Model::DestroyDBProxyRequest& request, const DestroyDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DestroyDBProxyOutcomeCallable DestroyDBProxyCallable(const Model::DestroyDBProxyRequest& request);
 
                 /**
                  *本接口（DisIsolateDBInstances）用于解隔离实例
@@ -1427,6 +1498,24 @@ namespace TencentCloud
                 ModifyDBInstancesProjectOutcomeCallable ModifyDBInstancesProjectCallable(const Model::ModifyDBInstancesProjectRequest& request);
 
                 /**
+                 *本接口（ModifyDBProxy）用于修改数据库代理（Proxy）。支持两种模式：①仅修改 Description 时同步生效，不下单，DealName 为空；②变更 Proxy 节点规格或数量（ProxyNodeCustom）时走计费下单流程，异步触发变配任务，返回 DealName。可通过 SwitchTag 控制变配执行时机。
+                 * @param req ModifyDBProxyRequest
+                 * @return ModifyDBProxyOutcome
+                 */
+                ModifyDBProxyOutcome ModifyDBProxy(const Model::ModifyDBProxyRequest &request);
+                void ModifyDBProxyAsync(const Model::ModifyDBProxyRequest& request, const ModifyDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBProxyOutcomeCallable ModifyDBProxyCallable(const Model::ModifyDBProxyRequest& request);
+
+                /**
+                 *修改代理地址配置
+                 * @param req ModifyDBProxyAddressRequest
+                 * @return ModifyDBProxyAddressOutcome
+                 */
+                ModifyDBProxyAddressOutcome ModifyDBProxyAddress(const Model::ModifyDBProxyAddressRequest &request);
+                void ModifyDBProxyAddressAsync(const Model::ModifyDBProxyAddressRequest& request, const ModifyDBProxyAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBProxyAddressOutcomeCallable ModifyDBProxyAddressCallable(const Model::ModifyDBProxyAddressRequest& request);
+
+                /**
                  *修改数据库所有者
                  * @param req ModifyDatabaseOwnerRequest
                  * @return ModifyDatabaseOwnerOutcome
@@ -1524,6 +1613,15 @@ namespace TencentCloud
                 RefreshAccountPasswordOutcome RefreshAccountPassword(const Model::RefreshAccountPasswordRequest &request);
                 void RefreshAccountPasswordAsync(const Model::RefreshAccountPasswordRequest& request, const RefreshAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RefreshAccountPasswordOutcomeCallable RefreshAccountPasswordCallable(const Model::RefreshAccountPasswordRequest& request);
+
+                /**
+                 *本接口（ReloadBalanceDBProxyNode）用于重新均衡数据库代理节点
+                 * @param req ReloadBalanceDBProxyNodeRequest
+                 * @return ReloadBalanceDBProxyNodeOutcome
+                 */
+                ReloadBalanceDBProxyNodeOutcome ReloadBalanceDBProxyNode(const Model::ReloadBalanceDBProxyNodeRequest &request);
+                void ReloadBalanceDBProxyNodeAsync(const Model::ReloadBalanceDBProxyNodeRequest& request, const ReloadBalanceDBProxyNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReloadBalanceDBProxyNodeOutcomeCallable ReloadBalanceDBProxyNodeCallable(const Model::ReloadBalanceDBProxyNodeRequest& request);
 
                 /**
                  *本接口（RemoveDBInstanceFromReadOnlyGroup）用户将只读实例从只读组中移除

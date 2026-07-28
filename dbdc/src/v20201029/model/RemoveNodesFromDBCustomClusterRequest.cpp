@@ -24,7 +24,8 @@ using namespace std;
 
 RemoveNodesFromDBCustomClusterRequest::RemoveNodesFromDBCustomClusterRequest() :
     m_clusterIdHasBeenSet(false),
-    m_nodeIdsHasBeenSet(false)
+    m_nodeIdsHasBeenSet(false),
+    m_loginSettingsHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,15 @@ string RemoveNodesFromDBCustomClusterRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_loginSettingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoginSettings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_loginSettings.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -94,6 +104,22 @@ void RemoveNodesFromDBCustomClusterRequest::SetNodeIds(const vector<string>& _no
 bool RemoveNodesFromDBCustomClusterRequest::NodeIdsHasBeenSet() const
 {
     return m_nodeIdsHasBeenSet;
+}
+
+LoginSettings RemoveNodesFromDBCustomClusterRequest::GetLoginSettings() const
+{
+    return m_loginSettings;
+}
+
+void RemoveNodesFromDBCustomClusterRequest::SetLoginSettings(const LoginSettings& _loginSettings)
+{
+    m_loginSettings = _loginSettings;
+    m_loginSettingsHasBeenSet = true;
+}
+
+bool RemoveNodesFromDBCustomClusterRequest::LoginSettingsHasBeenSet() const
+{
+    return m_loginSettingsHasBeenSet;
 }
 
 

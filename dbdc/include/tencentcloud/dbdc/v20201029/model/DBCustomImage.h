@@ -130,6 +130,27 @@ namespace TencentCloud
                      */
                     bool ArchitectureHasBeenSet() const;
 
+                    /**
+                     * 获取<p>操作系统类型</p><p>枚举值：</p><ul><li>windows： windows</li><li>linux： linux</li></ul>
+                     * @return OsType <p>操作系统类型</p><p>枚举值：</p><ul><li>windows： windows</li><li>linux： linux</li></ul>
+                     * 
+                     */
+                    std::string GetOsType() const;
+
+                    /**
+                     * 设置<p>操作系统类型</p><p>枚举值：</p><ul><li>windows： windows</li><li>linux： linux</li></ul>
+                     * @param _osType <p>操作系统类型</p><p>枚举值：</p><ul><li>windows： windows</li><li>linux： linux</li></ul>
+                     * 
+                     */
+                    void SetOsType(const std::string& _osType);
+
+                    /**
+                     * 判断参数 OsType 是否已赋值
+                     * @return OsType 是否已赋值
+                     * 
+                     */
+                    bool OsTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +176,12 @@ namespace TencentCloud
                      */
                     std::string m_architecture;
                     bool m_architectureHasBeenSet;
+
+                    /**
+                     * <p>操作系统类型</p><p>枚举值：</p><ul><li>windows： windows</li><li>linux： linux</li></ul>
+                     */
+                    std::string m_osType;
+                    bool m_osTypeHasBeenSet;
 
                 };
             }

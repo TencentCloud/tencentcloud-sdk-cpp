@@ -24,7 +24,8 @@ LoginSetting::LoginSetting() :
     m_timeOutHasBeenSet(false),
     m_lockThresholdHasBeenSet(false),
     m_lockTimeHasBeenSet(false),
-    m_inactiveUserLockHasBeenSet(false)
+    m_inactiveUserLockHasBeenSet(false),
+    m_enableSingleLoginHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome LoginSetting::Deserialize(const rapidjson::Value &value)
         m_inactiveUserLockHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableSingleLogin") && !value["EnableSingleLogin"].IsNull())
+    {
+        if (!value["EnableSingleLogin"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoginSetting.EnableSingleLogin` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableSingleLogin = value["EnableSingleLogin"].GetUint64();
+        m_enableSingleLoginHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void LoginSetting::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "InactiveUserLock";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_inactiveUserLock, allocator);
+    }
+
+    if (m_enableSingleLoginHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableSingleLogin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableSingleLogin, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void LoginSetting::SetInactiveUserLock(const uint64_t& _inactiveUserLock)
 bool LoginSetting::InactiveUserLockHasBeenSet() const
 {
     return m_inactiveUserLockHasBeenSet;
+}
+
+uint64_t LoginSetting::GetEnableSingleLogin() const
+{
+    return m_enableSingleLogin;
+}
+
+void LoginSetting::SetEnableSingleLogin(const uint64_t& _enableSingleLogin)
+{
+    m_enableSingleLogin = _enableSingleLogin;
+    m_enableSingleLoginHasBeenSet = true;
+}
+
+bool LoginSetting::EnableSingleLoginHasBeenSet() const
+{
+    return m_enableSingleLoginHasBeenSet;
 }
 

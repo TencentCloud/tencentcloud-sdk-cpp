@@ -295,6 +295,27 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>日志类别</p><p>枚举值：</p><ul><li>stdout： stdout</li><li>stderr： stderr</li></ul><p>默认值：&quot;&quot;</p>
+                     * @return LogStream <p>日志类别</p><p>枚举值：</p><ul><li>stdout： stdout</li><li>stderr： stderr</li></ul><p>默认值：&quot;&quot;</p>
+                     * 
+                     */
+                    std::string GetLogStream() const;
+
+                    /**
+                     * 设置<p>日志类别</p><p>枚举值：</p><ul><li>stdout： stdout</li><li>stderr： stderr</li></ul><p>默认值：&quot;&quot;</p>
+                     * @param _logStream <p>日志类别</p><p>枚举值：</p><ul><li>stdout： stdout</li><li>stderr： stderr</li></ul><p>默认值：&quot;&quot;</p>
+                     * 
+                     */
+                    void SetLogStream(const std::string& _logStream);
+
+                    /**
+                     * 判断参数 LogStream 是否已赋值
+                     * @return LogStream 是否已赋值
+                     * 
+                     */
+                    bool LogStreamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -368,6 +389,12 @@ namespace TencentCloud
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * <p>日志类别</p><p>枚举值：</p><ul><li>stdout： stdout</li><li>stderr： stderr</li></ul><p>默认值：&quot;&quot;</p>
+                     */
+                    std::string m_logStream;
+                    bool m_logStreamHasBeenSet;
 
                 };
             }

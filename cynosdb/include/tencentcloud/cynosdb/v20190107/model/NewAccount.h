@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-30
-                     * @return AccountName 账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-30
+                     * 获取<p>账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-30</p>
+                     * @return AccountName <p>账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-30</p>
                      * 
                      */
                     std::string GetAccountName() const;
 
                     /**
-                     * 设置账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-30
-                     * @param _accountName 账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-30
+                     * 设置<p>账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-30</p>
+                     * @param _accountName <p>账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-30</p>
                      * 
                      */
                     void SetAccountName(const std::string& _accountName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AccountNameHasBeenSet() const;
 
                     /**
-                     * 获取主机(%或ipv4地址)
-                     * @return Host 主机(%或ipv4地址)
+                     * 获取<p>主机(%或ipv4地址)</p>
+                     * @return Host <p>主机(%或ipv4地址)</p>
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置主机(%或ipv4地址)
-                     * @param _host 主机(%或ipv4地址)
+                     * 设置<p>主机(%或ipv4地址)</p>
+                     * @param _host <p>主机(%或ipv4地址)</p>
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool HostHasBeenSet() const;
 
                     /**
-                     * 获取密码，密码长度范围为8到64个字符
-                     * @return AccountPassword 密码，密码长度范围为8到64个字符
+                     * 获取<p>密码，密码长度范围为8到64个字符</p>
+                     * @return AccountPassword <p>密码，密码长度范围为8到64个字符</p>
                      * 
                      */
                     std::string GetAccountPassword() const;
 
                     /**
-                     * 设置密码，密码长度范围为8到64个字符
-                     * @param _accountPassword 密码，密码长度范围为8到64个字符
+                     * 设置<p>密码，密码长度范围为8到64个字符</p>
+                     * @param _accountPassword <p>密码，密码长度范围为8到64个字符</p>
                      * 
                      */
                     void SetAccountPassword(const std::string& _accountPassword);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool AccountPasswordHasBeenSet() const;
 
                     /**
-                     * 获取是否开启密码轮转(0:关闭;1:开启)
-                     * @return PasswordRotation 是否开启密码轮转(0:关闭;1:开启)
+                     * 获取<p>是否开启密码轮转(0:关闭;1:开启)</p>
+                     * @return PasswordRotation <p>是否开启密码轮转(0:关闭;1:开启)</p>
                      * 
                      */
                     int64_t GetPasswordRotation() const;
 
                     /**
-                     * 设置是否开启密码轮转(0:关闭;1:开启)
-                     * @param _passwordRotation 是否开启密码轮转(0:关闭;1:开启)
+                     * 设置<p>是否开启密码轮转(0:关闭;1:开启)</p>
+                     * @param _passwordRotation <p>是否开启密码轮转(0:关闭;1:开启)</p>
                      * 
                      */
                     void SetPasswordRotation(const int64_t& _passwordRotation);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool PasswordRotationHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
+                     * 获取<p>描述</p>
+                     * @return Description <p>描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
-                     * @param _description 描述
+                     * 设置<p>描述</p>
+                     * @param _description <p>描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取用户最大连接数，不能大于10240
-                     * @return MaxUserConnections 用户最大连接数，不能大于10240
+                     * 获取<p>用户最大连接数，不能大于10240</p>
+                     * @return MaxUserConnections <p>用户最大连接数，不能大于10240</p>
                      * 
                      */
                     int64_t GetMaxUserConnections() const;
 
                     /**
-                     * 设置用户最大连接数，不能大于10240
-                     * @param _maxUserConnections 用户最大连接数，不能大于10240
+                     * 设置<p>用户最大连接数，不能大于10240</p>
+                     * @param _maxUserConnections <p>用户最大连接数，不能大于10240</p>
                      * 
                      */
                     void SetMaxUserConnections(const int64_t& _maxUserConnections);
@@ -175,37 +175,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-30
+                     * <p>账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-30</p>
                      */
                     std::string m_accountName;
                     bool m_accountNameHasBeenSet;
 
                     /**
-                     * 主机(%或ipv4地址)
+                     * <p>主机(%或ipv4地址)</p>
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
 
                     /**
-                     * 密码，密码长度范围为8到64个字符
+                     * <p>密码，密码长度范围为8到64个字符</p>
                      */
                     std::string m_accountPassword;
                     bool m_accountPasswordHasBeenSet;
 
                     /**
-                     * 是否开启密码轮转(0:关闭;1:开启)
+                     * <p>是否开启密码轮转(0:关闭;1:开启)</p>
                      */
                     int64_t m_passwordRotation;
                     bool m_passwordRotationHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 用户最大连接数，不能大于10240
+                     * <p>用户最大连接数，不能大于10240</p>
                      */
                     int64_t m_maxUserConnections;
                     bool m_maxUserConnectionsHasBeenSet;

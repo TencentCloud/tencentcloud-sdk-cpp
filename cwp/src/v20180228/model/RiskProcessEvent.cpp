@@ -40,7 +40,9 @@ RiskProcessEvent::RiskProcessEvent() :
     m_onlineStatusHasBeenSet(false),
     m_machineExtraInfoHasBeenSet(false),
     m_uuidHasBeenSet(false),
-    m_firstDetectionMethodHasBeenSet(false)
+    m_firstDetectionMethodHasBeenSet(false),
+    m_qUUIDHasBeenSet(false),
+    m_exeMd5HasBeenSet(false)
 {
 }
 
@@ -262,6 +264,26 @@ CoreInternalOutcome RiskProcessEvent::Deserialize(const rapidjson::Value &value)
         m_firstDetectionMethodHasBeenSet = true;
     }
 
+    if (value.HasMember("QUUID") && !value["QUUID"].IsNull())
+    {
+        if (!value["QUUID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskProcessEvent.QUUID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_qUUID = string(value["QUUID"].GetString());
+        m_qUUIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExeMd5") && !value["ExeMd5"].IsNull())
+    {
+        if (!value["ExeMd5"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskProcessEvent.ExeMd5` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_exeMd5 = string(value["ExeMd5"].GetString());
+        m_exeMd5HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -438,6 +460,22 @@ void RiskProcessEvent::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "FirstDetectionMethod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_firstDetectionMethod, allocator);
+    }
+
+    if (m_qUUIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QUUID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_qUUID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_exeMd5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExeMd5";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_exeMd5.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -761,5 +799,37 @@ void RiskProcessEvent::SetFirstDetectionMethod(const uint64_t& _firstDetectionMe
 bool RiskProcessEvent::FirstDetectionMethodHasBeenSet() const
 {
     return m_firstDetectionMethodHasBeenSet;
+}
+
+string RiskProcessEvent::GetQUUID() const
+{
+    return m_qUUID;
+}
+
+void RiskProcessEvent::SetQUUID(const string& _qUUID)
+{
+    m_qUUID = _qUUID;
+    m_qUUIDHasBeenSet = true;
+}
+
+bool RiskProcessEvent::QUUIDHasBeenSet() const
+{
+    return m_qUUIDHasBeenSet;
+}
+
+string RiskProcessEvent::GetExeMd5() const
+{
+    return m_exeMd5;
+}
+
+void RiskProcessEvent::SetExeMd5(const string& _exeMd5)
+{
+    m_exeMd5 = _exeMd5;
+    m_exeMd5HasBeenSet = true;
+}
+
+bool RiskProcessEvent::ExeMd5HasBeenSet() const
+{
+    return m_exeMd5HasBeenSet;
 }
 

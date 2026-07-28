@@ -26,6 +26,8 @@ ClientAttester::ClientAttester() :
     m_typeHasBeenSet(false),
     m_attesterSourceHasBeenSet(false),
     m_attesterDurationHasBeenSet(false),
+    m_usageLimitHasBeenSet(false),
+    m_maxUsageCountHasBeenSet(false),
     m_tCRCEOptionHasBeenSet(false),
     m_tCCaptchaOptionHasBeenSet(false),
     m_tCEOCaptchaOptionHasBeenSet(false)
@@ -85,6 +87,26 @@ CoreInternalOutcome ClientAttester::Deserialize(const rapidjson::Value &value)
         }
         m_attesterDuration = string(value["AttesterDuration"].GetString());
         m_attesterDurationHasBeenSet = true;
+    }
+
+    if (value.HasMember("UsageLimit") && !value["UsageLimit"].IsNull())
+    {
+        if (!value["UsageLimit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClientAttester.UsageLimit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_usageLimit = string(value["UsageLimit"].GetString());
+        m_usageLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxUsageCount") && !value["MaxUsageCount"].IsNull())
+    {
+        if (!value["MaxUsageCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClientAttester.MaxUsageCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxUsageCount = value["MaxUsageCount"].GetInt64();
+        m_maxUsageCountHasBeenSet = true;
     }
 
     if (value.HasMember("TCRCEOption") && !value["TCRCEOption"].IsNull())
@@ -183,6 +205,22 @@ void ClientAttester::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "AttesterDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_attesterDuration.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_usageLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsageLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_usageLimit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxUsageCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxUsageCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxUsageCount, allocator);
     }
 
     if (m_tCRCEOptionHasBeenSet)
@@ -293,6 +331,38 @@ void ClientAttester::SetAttesterDuration(const string& _attesterDuration)
 bool ClientAttester::AttesterDurationHasBeenSet() const
 {
     return m_attesterDurationHasBeenSet;
+}
+
+string ClientAttester::GetUsageLimit() const
+{
+    return m_usageLimit;
+}
+
+void ClientAttester::SetUsageLimit(const string& _usageLimit)
+{
+    m_usageLimit = _usageLimit;
+    m_usageLimitHasBeenSet = true;
+}
+
+bool ClientAttester::UsageLimitHasBeenSet() const
+{
+    return m_usageLimitHasBeenSet;
+}
+
+int64_t ClientAttester::GetMaxUsageCount() const
+{
+    return m_maxUsageCount;
+}
+
+void ClientAttester::SetMaxUsageCount(const int64_t& _maxUsageCount)
+{
+    m_maxUsageCount = _maxUsageCount;
+    m_maxUsageCountHasBeenSet = true;
+}
+
+bool ClientAttester::MaxUsageCountHasBeenSet() const
+{
+    return m_maxUsageCountHasBeenSet;
 }
 
 TCRCEOption ClientAttester::GetTCRCEOption() const

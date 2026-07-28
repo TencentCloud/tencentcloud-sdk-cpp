@@ -36,7 +36,8 @@ FlowApproverDetail::FlowApproverDetail() :
     m_organizationNameHasBeenSet(false),
     m_signIdHasBeenSet(false),
     m_approverRoleNameHasBeenSet(false),
-    m_recipientIdHasBeenSet(false)
+    m_recipientIdHasBeenSet(false),
+    m_forwardRecordsHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,26 @@ CoreInternalOutcome FlowApproverDetail::Deserialize(const rapidjson::Value &valu
         m_recipientIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ForwardRecords") && !value["ForwardRecords"].IsNull())
+    {
+        if (!value["ForwardRecords"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FlowApproverDetail.ForwardRecords` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ForwardRecords"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ForwardRecord item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_forwardRecords.push_back(item);
+        }
+        m_forwardRecordsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +359,21 @@ void FlowApproverDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "RecipientId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_recipientId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forwardRecordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForwardRecords";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_forwardRecords.begin(); itr != m_forwardRecords.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -597,5 +633,21 @@ void FlowApproverDetail::SetRecipientId(const string& _recipientId)
 bool FlowApproverDetail::RecipientIdHasBeenSet() const
 {
     return m_recipientIdHasBeenSet;
+}
+
+vector<ForwardRecord> FlowApproverDetail::GetForwardRecords() const
+{
+    return m_forwardRecords;
+}
+
+void FlowApproverDetail::SetForwardRecords(const vector<ForwardRecord>& _forwardRecords)
+{
+    m_forwardRecords = _forwardRecords;
+    m_forwardRecordsHasBeenSet = true;
+}
+
+bool FlowApproverDetail::ForwardRecordsHasBeenSet() const
+{
+    return m_forwardRecordsHasBeenSet;
 }
 

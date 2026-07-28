@@ -390,6 +390,56 @@ TrtcClient::CreateCloudTranscriptionOutcomeCallable TrtcClient::CreateCloudTrans
     return prom->get_future();
 }
 
+TrtcClient::CreateLiveStreamModerationOutcome TrtcClient::CreateLiveStreamModeration(const CreateLiveStreamModerationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLiveStreamModeration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLiveStreamModerationResponse rsp = CreateLiveStreamModerationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLiveStreamModerationOutcome(rsp);
+        else
+            return CreateLiveStreamModerationOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLiveStreamModerationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::CreateLiveStreamModerationAsync(const CreateLiveStreamModerationRequest& request, const CreateLiveStreamModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateLiveStreamModerationRequest&;
+    using Resp = CreateLiveStreamModerationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateLiveStreamModeration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::CreateLiveStreamModerationOutcomeCallable TrtcClient::CreateLiveStreamModerationCallable(const CreateLiveStreamModerationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateLiveStreamModerationOutcome>>();
+    CreateLiveStreamModerationAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const CreateLiveStreamModerationRequest&,
+        CreateLiveStreamModerationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TrtcClient::CreatePictureOutcome TrtcClient::CreatePicture(const CreatePictureRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePicture");
@@ -682,6 +732,56 @@ TrtcClient::DeleteCloudTranscriptionOutcomeCallable TrtcClient::DeleteCloudTrans
         const TrtcClient*,
         const DeleteCloudTranscriptionRequest&,
         DeleteCloudTranscriptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::DeleteLiveStreamModerationOutcome TrtcClient::DeleteLiveStreamModeration(const DeleteLiveStreamModerationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLiveStreamModeration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLiveStreamModerationResponse rsp = DeleteLiveStreamModerationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLiveStreamModerationOutcome(rsp);
+        else
+            return DeleteLiveStreamModerationOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLiveStreamModerationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DeleteLiveStreamModerationAsync(const DeleteLiveStreamModerationRequest& request, const DeleteLiveStreamModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteLiveStreamModerationRequest&;
+    using Resp = DeleteLiveStreamModerationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteLiveStreamModeration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::DeleteLiveStreamModerationOutcomeCallable TrtcClient::DeleteLiveStreamModerationCallable(const DeleteLiveStreamModerationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteLiveStreamModerationOutcome>>();
+    DeleteLiveStreamModerationAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DeleteLiveStreamModerationRequest&,
+        DeleteLiveStreamModerationOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1182,6 +1282,56 @@ TrtcClient::DescribeCloudTranscriptionOutcomeCallable TrtcClient::DescribeCloudT
         const TrtcClient*,
         const DescribeCloudTranscriptionRequest&,
         DescribeCloudTranscriptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::DescribeLiveStreamModerationOutcome TrtcClient::DescribeLiveStreamModeration(const DescribeLiveStreamModerationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLiveStreamModeration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLiveStreamModerationResponse rsp = DescribeLiveStreamModerationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLiveStreamModerationOutcome(rsp);
+        else
+            return DescribeLiveStreamModerationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLiveStreamModerationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeLiveStreamModerationAsync(const DescribeLiveStreamModerationRequest& request, const DescribeLiveStreamModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLiveStreamModerationRequest&;
+    using Resp = DescribeLiveStreamModerationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLiveStreamModeration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::DescribeLiveStreamModerationOutcomeCallable TrtcClient::DescribeLiveStreamModerationCallable(const DescribeLiveStreamModerationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLiveStreamModerationOutcome>>();
+    DescribeLiveStreamModerationAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeLiveStreamModerationRequest&,
+        DescribeLiveStreamModerationOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dbdc/v20201029/model/LoginSettings.h>
 
 
 namespace TencentCloud
@@ -84,6 +85,27 @@ namespace TencentCloud
                      */
                     bool NodeIdsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>节点的登录参数</p>
+                     * @return LoginSettings <p>节点的登录参数</p>
+                     * 
+                     */
+                    LoginSettings GetLoginSettings() const;
+
+                    /**
+                     * 设置<p>节点的登录参数</p>
+                     * @param _loginSettings <p>节点的登录参数</p>
+                     * 
+                     */
+                    void SetLoginSettings(const LoginSettings& _loginSettings);
+
+                    /**
+                     * 判断参数 LoginSettings 是否已赋值
+                     * @return LoginSettings 是否已赋值
+                     * 
+                     */
+                    bool LoginSettingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +119,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_nodeIds;
                     bool m_nodeIdsHasBeenSet;
+
+                    /**
+                     * <p>节点的登录参数</p>
+                     */
+                    LoginSettings m_loginSettings;
+                    bool m_loginSettingsHasBeenSet;
 
                 };
             }

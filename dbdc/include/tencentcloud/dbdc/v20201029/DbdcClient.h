@@ -161,7 +161,7 @@ namespace TencentCloud
 
 
                 /**
-                 *该接口（AddNodesToDBCustomCluster）用于为 DB Custom 集群上架节点。
+                 *该接口（AddNodesToDBCustomCluster）用于为 DB Custom 集群添加已存在的节点。
                  * @param req AddNodesToDBCustomClusterRequest
                  * @return AddNodesToDBCustomClusterOutcome
                  */
@@ -224,7 +224,7 @@ namespace TencentCloud
                 DescribeDBCustomClusterNodesOutcomeCallable DescribeDBCustomClusterNodesCallable(const Model::DescribeDBCustomClusterNodesRequest& request);
 
                 /**
-                 *该接口（DescribeDBCustomClusters）为DB Custom 集群列表查询接口。
+                 *该接口（DescribeDBCustomClusters）为 DB Custom 集群列表查询接口。
                  * @param req DescribeDBCustomClustersRequest
                  * @return DescribeDBCustomClustersOutcome
                  */
@@ -332,7 +332,7 @@ namespace TencentCloud
                 IsolateDBCustomNodeOutcomeCallable IsolateDBCustomNodeCallable(const Model::IsolateDBCustomNodeRequest& request);
 
                 /**
-                 *该接口（ModifyDBCustomClusterTags）用于修改 DB Custom 集群的标签配置。
+                 *该接口（ModifyDBCustomClusterTags）用于修改 DB Custom 集群绑定的标签。
                  * @param req ModifyDBCustomClusterTagsRequest
                  * @return ModifyDBCustomClusterTagsOutcome
                  */
@@ -341,7 +341,7 @@ namespace TencentCloud
                 ModifyDBCustomClusterTagsOutcomeCallable ModifyDBCustomClusterTagsCallable(const Model::ModifyDBCustomClusterTagsRequest& request);
 
                 /**
-                 *该接口（ModifyDBCustomNodeTags）用于修改 DB Custom 节点的标签配置。
+                 *该接口（ModifyDBCustomNodeTags）用于修改 DB Custom 节点绑定的标签。
                  * @param req ModifyDBCustomNodeTagsRequest
                  * @return ModifyDBCustomNodeTagsOutcome
                  */
@@ -359,7 +359,7 @@ namespace TencentCloud
                 ModifyInstanceNameOutcomeCallable ModifyInstanceNameCallable(const Model::ModifyInstanceNameRequest& request);
 
                 /**
-                 *该接口（RemoveNodesFromDBCustomCluster）用于从 DB Custom 集群移除节点。
+                 *该接口（RemoveNodesFromDBCustomCluster）用于从 DB Custom 集群移出节点。
                  * @param req RemoveNodesFromDBCustomClusterRequest
                  * @return RemoveNodesFromDBCustomClusterOutcome
                  */
@@ -368,7 +368,7 @@ namespace TencentCloud
                 RemoveNodesFromDBCustomClusterOutcomeCallable RemoveNodesFromDBCustomClusterCallable(const Model::RemoveNodesFromDBCustomClusterRequest& request);
 
                 /**
-                 *该接口（RenewDBCustomNode）用于给 DB Custom 节点续费。
+                 *该接口（RenewDBCustomNode）用于给 DB Custom 节点续费，或者给已经隔离的实例解除隔离。
                  * @param req RenewDBCustomNodeRequest
                  * @return RenewDBCustomNodeOutcome
                  */

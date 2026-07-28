@@ -27,7 +27,9 @@ DBCustomClusterNode::DBCustomClusterNode() :
     m_sSHEndpointHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false)
+    m_nodeTypeHasBeenSet(false),
+    m_networkModeHasBeenSet(false),
+    m_eniIPHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome DBCustomClusterNode::Deserialize(const rapidjson::Value &val
         m_nodeTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("NetworkMode") && !value["NetworkMode"].IsNull())
+    {
+        if (!value["NetworkMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBCustomClusterNode.NetworkMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_networkMode = string(value["NetworkMode"].GetString());
+        m_networkModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("EniIP") && !value["EniIP"].IsNull())
+    {
+        if (!value["EniIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBCustomClusterNode.EniIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eniIP = string(value["EniIP"].GetString());
+        m_eniIPHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void DBCustomClusterNode::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "NodeType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_nodeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eniIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EniIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eniIP.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void DBCustomClusterNode::SetNodeType(const string& _nodeType)
 bool DBCustomClusterNode::NodeTypeHasBeenSet() const
 {
     return m_nodeTypeHasBeenSet;
+}
+
+string DBCustomClusterNode::GetNetworkMode() const
+{
+    return m_networkMode;
+}
+
+void DBCustomClusterNode::SetNetworkMode(const string& _networkMode)
+{
+    m_networkMode = _networkMode;
+    m_networkModeHasBeenSet = true;
+}
+
+bool DBCustomClusterNode::NetworkModeHasBeenSet() const
+{
+    return m_networkModeHasBeenSet;
+}
+
+string DBCustomClusterNode::GetEniIP() const
+{
+    return m_eniIP;
+}
+
+void DBCustomClusterNode::SetEniIP(const string& _eniIP)
+{
+    m_eniIP = _eniIP;
+    m_eniIPHasBeenSet = true;
+}
+
+bool DBCustomClusterNode::EniIPHasBeenSet() const
+{
+    return m_eniIPHasBeenSet;
 }
 

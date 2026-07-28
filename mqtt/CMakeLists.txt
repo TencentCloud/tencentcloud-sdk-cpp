@@ -76,9 +76,10 @@ set(mqtt_public_header_model
   include/tencentcloud/mqtt/v20240516/model/CreateHttpAuthenticatorResponse.h
   include/tencentcloud/mqtt/v20240516/model/MQTTMessage.h
   include/tencentcloud/mqtt/v20240516/model/MQTTMessageItem.h
-  include/tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionClientRequest.h
+  include/tencentcloud/mqtt/v20240516/model/DescribeInstanceResponse.h
   include/tencentcloud/mqtt/v20240516/model/UpdateMessageEnrichmentRulePriorityResponse.h
   include/tencentcloud/mqtt/v20240516/model/ModifyJWKSAuthenticatorResponse.h
+  include/tencentcloud/mqtt/v20240516/model/DescribeWillMessageResponse.h
   include/tencentcloud/mqtt/v20240516/model/DeleteDeviceIdentityResponse.h
   include/tencentcloud/mqtt/v20240516/model/CreateInsPublicEndpointResponse.h
   include/tencentcloud/mqtt/v20240516/model/CreateUserResponse.h
@@ -106,6 +107,7 @@ set(mqtt_public_header_model
   include/tencentcloud/mqtt/v20240516/model/CreateTopicRequest.h
   include/tencentcloud/mqtt/v20240516/model/DeleteCaCertificateResponse.h
   include/tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionClientResponse.h
+  include/tencentcloud/mqtt/v20240516/model/DeviceIdentityBackupHistoryItem.h
   include/tencentcloud/mqtt/v20240516/model/DeleteClientSubscriptionRequest.h
   include/tencentcloud/mqtt/v20240516/model/TagFilter.h
   include/tencentcloud/mqtt/v20240516/model/DescribeMessageDetailsResponse.h
@@ -131,8 +133,8 @@ set(mqtt_public_header_model
   include/tencentcloud/mqtt/v20240516/model/RevokedDeviceCertificateRequest.h
   include/tencentcloud/mqtt/v20240516/model/ModifyInsPublicEndpointResponse.h
   include/tencentcloud/mqtt/v20240516/model/CreateInstanceRequest.h
-  include/tencentcloud/mqtt/v20240516/model/DescribeAuthenticatorRequest.h
   include/tencentcloud/mqtt/v20240516/model/RegisterCaCertificateRequest.h
+  include/tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionClientRequest.h
   include/tencentcloud/mqtt/v20240516/model/CreateAuthorizationPolicyResponse.h
   include/tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionsResponse.h
   include/tencentcloud/mqtt/v20240516/model/CreateInsPublicEndpointRequest.h
@@ -142,13 +144,14 @@ set(mqtt_public_header_model
   include/tencentcloud/mqtt/v20240516/model/DescribeDeviceCertificatesResponse.h
   include/tencentcloud/mqtt/v20240516/model/ModifyTopicRequest.h
   include/tencentcloud/mqtt/v20240516/model/CreateUserRequest.h
-  include/tencentcloud/mqtt/v20240516/model/DescribeInstanceResponse.h
+  include/tencentcloud/mqtt/v20240516/model/DescribeAuthenticatorRequest.h
   include/tencentcloud/mqtt/v20240516/model/ModifyInstanceCertBindingResponse.h
   include/tencentcloud/mqtt/v20240516/model/UpdateMessageEnrichmentRulePriorityRequest.h
   include/tencentcloud/mqtt/v20240516/model/SharedSubscriptionGroupWithSubscriptions.h
   include/tencentcloud/mqtt/v20240516/model/DescribeInsVPCEndpointsResponse.h
   include/tencentcloud/mqtt/v20240516/model/DescribeDeviceCertificateRequest.h
   include/tencentcloud/mqtt/v20240516/model/ModifyInsPublicEndpointRequest.h
+  include/tencentcloud/mqtt/v20240516/model/DeviceCertificateBackupHistoryItem.h
   include/tencentcloud/mqtt/v20240516/model/SharedSubscriptionClient.h
   include/tencentcloud/mqtt/v20240516/model/DeleteInsPublicEndpointRequest.h
   include/tencentcloud/mqtt/v20240516/model/DescribeInsPublicEndpointsRequest.h
@@ -170,14 +173,17 @@ set(mqtt_public_header_model
   include/tencentcloud/mqtt/v20240516/model/RevokedDeviceCertificateResponse.h
   include/tencentcloud/mqtt/v20240516/model/PropagatingProperty.h
   include/tencentcloud/mqtt/v20240516/model/CreateHttpAuthenticatorRequest.h
-  include/tencentcloud/mqtt/v20240516/model/DescribeProductSKUListRequest.h
+  include/tencentcloud/mqtt/v20240516/model/DescribeDeviceCertificateBackupHistoryResponse.h
   include/tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionLagRequest.h
+  include/tencentcloud/mqtt/v20240516/model/DescribeWillMessageRequest.h
   include/tencentcloud/mqtt/v20240516/model/DescribeDeviceCertificateResponse.h
   include/tencentcloud/mqtt/v20240516/model/DescribeInstanceListRequest.h
   include/tencentcloud/mqtt/v20240516/model/DeactivateCaCertificateRequest.h
   include/tencentcloud/mqtt/v20240516/model/ModifyDeviceIdentityRequest.h
   include/tencentcloud/mqtt/v20240516/model/CreateJWTAuthenticatorRequest.h
+  include/tencentcloud/mqtt/v20240516/model/DescribeDeviceIdentityBackupHistoryRequest.h
   include/tencentcloud/mqtt/v20240516/model/DescribeCaCertificatesRequest.h
+  include/tencentcloud/mqtt/v20240516/model/DescribeDeviceIdentityBackupHistoryResponse.h
   include/tencentcloud/mqtt/v20240516/model/DeviceCertificateItem.h
   include/tencentcloud/mqtt/v20240516/model/SubscriptionUserProperty.h
   include/tencentcloud/mqtt/v20240516/model/ModifyMessageEnrichmentRuleResponse.h
@@ -185,6 +191,7 @@ set(mqtt_public_header_model
   include/tencentcloud/mqtt/v20240516/model/MQTTTopicItem.h
   include/tencentcloud/mqtt/v20240516/model/PriceTag.h
   include/tencentcloud/mqtt/v20240516/model/ModifyAuthorizationPolicyRequest.h
+  include/tencentcloud/mqtt/v20240516/model/DescribeProductSKUListRequest.h
   include/tencentcloud/mqtt/v20240516/model/DescribeTopicListResponse.h
   include/tencentcloud/mqtt/v20240516/model/DeleteTopicResponse.h
   include/tencentcloud/mqtt/v20240516/model/ModifyInstanceCertBindingRequest.h
@@ -195,6 +202,7 @@ set(mqtt_public_header_model
   include/tencentcloud/mqtt/v20240516/model/DeleteAuthenticatorResponse.h
   include/tencentcloud/mqtt/v20240516/model/DescribeDeviceIdentitiesResponse.h
   include/tencentcloud/mqtt/v20240516/model/IpRule.h
+  include/tencentcloud/mqtt/v20240516/model/DescribeDeviceCertificateBackupHistoryRequest.h
   )
 
 set(mqtt_src
@@ -256,9 +264,10 @@ set(mqtt_src
   src/v20240516/model/CreateHttpAuthenticatorResponse.cpp
   src/v20240516/model/MQTTMessage.cpp
   src/v20240516/model/MQTTMessageItem.cpp
-  src/v20240516/model/DescribeSharedSubscriptionClientRequest.cpp
+  src/v20240516/model/DescribeInstanceResponse.cpp
   src/v20240516/model/UpdateMessageEnrichmentRulePriorityResponse.cpp
   src/v20240516/model/ModifyJWKSAuthenticatorResponse.cpp
+  src/v20240516/model/DescribeWillMessageResponse.cpp
   src/v20240516/model/DeleteDeviceIdentityResponse.cpp
   src/v20240516/model/CreateInsPublicEndpointResponse.cpp
   src/v20240516/model/CreateUserResponse.cpp
@@ -286,6 +295,7 @@ set(mqtt_src
   src/v20240516/model/CreateTopicRequest.cpp
   src/v20240516/model/DeleteCaCertificateResponse.cpp
   src/v20240516/model/DescribeSharedSubscriptionClientResponse.cpp
+  src/v20240516/model/DeviceIdentityBackupHistoryItem.cpp
   src/v20240516/model/DeleteClientSubscriptionRequest.cpp
   src/v20240516/model/TagFilter.cpp
   src/v20240516/model/DescribeMessageDetailsResponse.cpp
@@ -311,8 +321,8 @@ set(mqtt_src
   src/v20240516/model/RevokedDeviceCertificateRequest.cpp
   src/v20240516/model/ModifyInsPublicEndpointResponse.cpp
   src/v20240516/model/CreateInstanceRequest.cpp
-  src/v20240516/model/DescribeAuthenticatorRequest.cpp
   src/v20240516/model/RegisterCaCertificateRequest.cpp
+  src/v20240516/model/DescribeSharedSubscriptionClientRequest.cpp
   src/v20240516/model/CreateAuthorizationPolicyResponse.cpp
   src/v20240516/model/DescribeSharedSubscriptionsResponse.cpp
   src/v20240516/model/CreateInsPublicEndpointRequest.cpp
@@ -322,13 +332,14 @@ set(mqtt_src
   src/v20240516/model/DescribeDeviceCertificatesResponse.cpp
   src/v20240516/model/ModifyTopicRequest.cpp
   src/v20240516/model/CreateUserRequest.cpp
-  src/v20240516/model/DescribeInstanceResponse.cpp
+  src/v20240516/model/DescribeAuthenticatorRequest.cpp
   src/v20240516/model/ModifyInstanceCertBindingResponse.cpp
   src/v20240516/model/UpdateMessageEnrichmentRulePriorityRequest.cpp
   src/v20240516/model/SharedSubscriptionGroupWithSubscriptions.cpp
   src/v20240516/model/DescribeInsVPCEndpointsResponse.cpp
   src/v20240516/model/DescribeDeviceCertificateRequest.cpp
   src/v20240516/model/ModifyInsPublicEndpointRequest.cpp
+  src/v20240516/model/DeviceCertificateBackupHistoryItem.cpp
   src/v20240516/model/SharedSubscriptionClient.cpp
   src/v20240516/model/DeleteInsPublicEndpointRequest.cpp
   src/v20240516/model/DescribeInsPublicEndpointsRequest.cpp
@@ -350,14 +361,17 @@ set(mqtt_src
   src/v20240516/model/RevokedDeviceCertificateResponse.cpp
   src/v20240516/model/PropagatingProperty.cpp
   src/v20240516/model/CreateHttpAuthenticatorRequest.cpp
-  src/v20240516/model/DescribeProductSKUListRequest.cpp
+  src/v20240516/model/DescribeDeviceCertificateBackupHistoryResponse.cpp
   src/v20240516/model/DescribeSharedSubscriptionLagRequest.cpp
+  src/v20240516/model/DescribeWillMessageRequest.cpp
   src/v20240516/model/DescribeDeviceCertificateResponse.cpp
   src/v20240516/model/DescribeInstanceListRequest.cpp
   src/v20240516/model/DeactivateCaCertificateRequest.cpp
   src/v20240516/model/ModifyDeviceIdentityRequest.cpp
   src/v20240516/model/CreateJWTAuthenticatorRequest.cpp
+  src/v20240516/model/DescribeDeviceIdentityBackupHistoryRequest.cpp
   src/v20240516/model/DescribeCaCertificatesRequest.cpp
+  src/v20240516/model/DescribeDeviceIdentityBackupHistoryResponse.cpp
   src/v20240516/model/DeviceCertificateItem.cpp
   src/v20240516/model/SubscriptionUserProperty.cpp
   src/v20240516/model/ModifyMessageEnrichmentRuleResponse.cpp
@@ -365,6 +379,7 @@ set(mqtt_src
   src/v20240516/model/MQTTTopicItem.cpp
   src/v20240516/model/PriceTag.cpp
   src/v20240516/model/ModifyAuthorizationPolicyRequest.cpp
+  src/v20240516/model/DescribeProductSKUListRequest.cpp
   src/v20240516/model/DescribeTopicListResponse.cpp
   src/v20240516/model/DeleteTopicResponse.cpp
   src/v20240516/model/ModifyInstanceCertBindingRequest.cpp
@@ -375,6 +390,7 @@ set(mqtt_src
   src/v20240516/model/DeleteAuthenticatorResponse.cpp
   src/v20240516/model/DescribeDeviceIdentitiesResponse.cpp
   src/v20240516/model/IpRule.cpp
+  src/v20240516/model/DescribeDeviceCertificateBackupHistoryRequest.cpp
   )
 
 set(mqtt_include

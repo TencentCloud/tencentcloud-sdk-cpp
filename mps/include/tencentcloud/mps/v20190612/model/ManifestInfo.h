@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取单位秒。
-                     * @return Windows 单位秒。
+                     * 获取<p>单位秒。</p>
+                     * @return Windows <p>单位秒。</p>
                      * 
                      */
                     uint64_t GetWindows() const;
 
                     /**
-                     * 设置单位秒。
-                     * @param _windows 单位秒。
+                     * 设置<p>单位秒。</p>
+                     * @param _windows <p>单位秒。</p>
                      * 
                      */
                     void SetWindows(const uint64_t& _windows);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool WindowsHasBeenSet() const;
 
                     /**
-                     * 获取打到output广告标签的格式，可选Date Range和Enhanced SCTE-35。
-                     * @return AdMarkupType 打到output广告标签的格式，可选Date Range和Enhanced SCTE-35。
+                     * 获取<p>打到output广告标签的格式，可选Date Range、Enhanced SCTE-35和Standard SCTE-35。</p>
+                     * @return AdMarkupType <p>打到output广告标签的格式，可选Date Range、Enhanced SCTE-35和Standard SCTE-35。</p>
                      * 
                      */
                     std::string GetAdMarkupType() const;
 
                     /**
-                     * 设置打到output广告标签的格式，可选Date Range和Enhanced SCTE-35。
-                     * @param _adMarkupType 打到output广告标签的格式，可选Date Range和Enhanced SCTE-35。
+                     * 设置<p>打到output广告标签的格式，可选Date Range、Enhanced SCTE-35和Standard SCTE-35。</p>
+                     * @param _adMarkupType <p>打到output广告标签的格式，可选Date Range、Enhanced SCTE-35和Standard SCTE-35。</p>
                      * 
                      */
                     void SetAdMarkupType(const std::string& _adMarkupType);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 单位秒。
+                     * <p>单位秒。</p>
                      */
                     uint64_t m_windows;
                     bool m_windowsHasBeenSet;
 
                     /**
-                     * 打到output广告标签的格式，可选Date Range和Enhanced SCTE-35。
+                     * <p>打到output广告标签的格式，可选Date Range、Enhanced SCTE-35和Standard SCTE-35。</p>
                      */
                     std::string m_adMarkupType;
                     bool m_adMarkupTypeHasBeenSet;
