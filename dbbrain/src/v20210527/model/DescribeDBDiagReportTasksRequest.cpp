@@ -31,7 +31,8 @@ DescribeDBDiagReportTasksRequest::DescribeDBDiagReportTasksRequest() :
     m_taskStatusesHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_productHasBeenSet(false)
+    m_productHasBeenSet(false),
+    m_tagFiltersHasBeenSet(false)
 {
 }
 
@@ -122,6 +123,21 @@ string DescribeDBDiagReportTasksRequest::ToJsonString() const
         string key = "Product";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagFiltersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagFilters.begin(); itr != m_tagFilters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -274,6 +290,22 @@ void DescribeDBDiagReportTasksRequest::SetProduct(const string& _product)
 bool DescribeDBDiagReportTasksRequest::ProductHasBeenSet() const
 {
     return m_productHasBeenSet;
+}
+
+vector<TagFilterGroup> DescribeDBDiagReportTasksRequest::GetTagFilters() const
+{
+    return m_tagFilters;
+}
+
+void DescribeDBDiagReportTasksRequest::SetTagFilters(const vector<TagFilterGroup>& _tagFilters)
+{
+    m_tagFilters = _tagFilters;
+    m_tagFiltersHasBeenSet = true;
+}
+
+bool DescribeDBDiagReportTasksRequest::TagFiltersHasBeenSet() const
+{
+    return m_tagFiltersHasBeenSet;
 }
 
 

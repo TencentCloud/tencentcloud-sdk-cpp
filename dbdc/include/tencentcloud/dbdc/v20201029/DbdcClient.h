@@ -35,16 +35,30 @@
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterDetailResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterKubeconfigRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterKubeconfigResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterNodeConfigRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterNodeConfigResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterNodeResourcesRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterNodeResourcesResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterNodesRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterNodesResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterResourcesRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterResourcesResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomClustersRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomClustersResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomImagesRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomImagesResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomNodeSecurityGroupsRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomNodeSecurityGroupsResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomNodeTypesRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomNodeTypesResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomNodesRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomNodesResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomRegionsRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomRegionsResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomTaskStatusRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomTaskStatusResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomZonesRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomZonesResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBInstancesRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBInstancesResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeHostListRequest.h>
@@ -61,8 +75,12 @@
 #include <tencentcloud/dbdc/v20201029/model/DestroyDBCustomNodeResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/IsolateDBCustomNodeRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/IsolateDBCustomNodeResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterNodeConfigRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterNodeConfigResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterTagsRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterTagsResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeSecurityGroupsRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeSecurityGroupsResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeTagsRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeTagsResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyInstanceNameRequest.h>
@@ -103,21 +121,42 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBCustomClusterKubeconfigResponse> DescribeDBCustomClusterKubeconfigOutcome;
                 typedef std::future<DescribeDBCustomClusterKubeconfigOutcome> DescribeDBCustomClusterKubeconfigOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::DescribeDBCustomClusterKubeconfigRequest&, DescribeDBCustomClusterKubeconfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBCustomClusterKubeconfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBCustomClusterNodeConfigResponse> DescribeDBCustomClusterNodeConfigOutcome;
+                typedef std::future<DescribeDBCustomClusterNodeConfigOutcome> DescribeDBCustomClusterNodeConfigOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::DescribeDBCustomClusterNodeConfigRequest&, DescribeDBCustomClusterNodeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBCustomClusterNodeConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBCustomClusterNodeResourcesResponse> DescribeDBCustomClusterNodeResourcesOutcome;
+                typedef std::future<DescribeDBCustomClusterNodeResourcesOutcome> DescribeDBCustomClusterNodeResourcesOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::DescribeDBCustomClusterNodeResourcesRequest&, DescribeDBCustomClusterNodeResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBCustomClusterNodeResourcesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBCustomClusterNodesResponse> DescribeDBCustomClusterNodesOutcome;
                 typedef std::future<DescribeDBCustomClusterNodesOutcome> DescribeDBCustomClusterNodesOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::DescribeDBCustomClusterNodesRequest&, DescribeDBCustomClusterNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBCustomClusterNodesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBCustomClusterResourcesResponse> DescribeDBCustomClusterResourcesOutcome;
+                typedef std::future<DescribeDBCustomClusterResourcesOutcome> DescribeDBCustomClusterResourcesOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::DescribeDBCustomClusterResourcesRequest&, DescribeDBCustomClusterResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBCustomClusterResourcesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBCustomClustersResponse> DescribeDBCustomClustersOutcome;
                 typedef std::future<DescribeDBCustomClustersOutcome> DescribeDBCustomClustersOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::DescribeDBCustomClustersRequest&, DescribeDBCustomClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBCustomClustersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBCustomImagesResponse> DescribeDBCustomImagesOutcome;
                 typedef std::future<DescribeDBCustomImagesOutcome> DescribeDBCustomImagesOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::DescribeDBCustomImagesRequest&, DescribeDBCustomImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBCustomImagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBCustomNodeSecurityGroupsResponse> DescribeDBCustomNodeSecurityGroupsOutcome;
+                typedef std::future<DescribeDBCustomNodeSecurityGroupsOutcome> DescribeDBCustomNodeSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::DescribeDBCustomNodeSecurityGroupsRequest&, DescribeDBCustomNodeSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBCustomNodeSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBCustomNodeTypesResponse> DescribeDBCustomNodeTypesOutcome;
+                typedef std::future<DescribeDBCustomNodeTypesOutcome> DescribeDBCustomNodeTypesOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::DescribeDBCustomNodeTypesRequest&, DescribeDBCustomNodeTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBCustomNodeTypesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBCustomNodesResponse> DescribeDBCustomNodesOutcome;
                 typedef std::future<DescribeDBCustomNodesOutcome> DescribeDBCustomNodesOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::DescribeDBCustomNodesRequest&, DescribeDBCustomNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBCustomNodesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBCustomRegionsResponse> DescribeDBCustomRegionsOutcome;
+                typedef std::future<DescribeDBCustomRegionsOutcome> DescribeDBCustomRegionsOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::DescribeDBCustomRegionsRequest&, DescribeDBCustomRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBCustomRegionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBCustomTaskStatusResponse> DescribeDBCustomTaskStatusOutcome;
                 typedef std::future<DescribeDBCustomTaskStatusOutcome> DescribeDBCustomTaskStatusOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::DescribeDBCustomTaskStatusRequest&, DescribeDBCustomTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBCustomTaskStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBCustomZonesResponse> DescribeDBCustomZonesOutcome;
+                typedef std::future<DescribeDBCustomZonesOutcome> DescribeDBCustomZonesOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::DescribeDBCustomZonesRequest&, DescribeDBCustomZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBCustomZonesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBInstancesResponse> DescribeDBInstancesOutcome;
                 typedef std::future<DescribeDBInstancesOutcome> DescribeDBInstancesOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::DescribeDBInstancesRequest&, DescribeDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstancesAsyncHandler;
@@ -142,9 +181,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::IsolateDBCustomNodeResponse> IsolateDBCustomNodeOutcome;
                 typedef std::future<IsolateDBCustomNodeOutcome> IsolateDBCustomNodeOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::IsolateDBCustomNodeRequest&, IsolateDBCustomNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateDBCustomNodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBCustomClusterNodeConfigResponse> ModifyDBCustomClusterNodeConfigOutcome;
+                typedef std::future<ModifyDBCustomClusterNodeConfigOutcome> ModifyDBCustomClusterNodeConfigOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::ModifyDBCustomClusterNodeConfigRequest&, ModifyDBCustomClusterNodeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBCustomClusterNodeConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBCustomClusterTagsResponse> ModifyDBCustomClusterTagsOutcome;
                 typedef std::future<ModifyDBCustomClusterTagsOutcome> ModifyDBCustomClusterTagsOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::ModifyDBCustomClusterTagsRequest&, ModifyDBCustomClusterTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBCustomClusterTagsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBCustomNodeSecurityGroupsResponse> ModifyDBCustomNodeSecurityGroupsOutcome;
+                typedef std::future<ModifyDBCustomNodeSecurityGroupsOutcome> ModifyDBCustomNodeSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::ModifyDBCustomNodeSecurityGroupsRequest&, ModifyDBCustomNodeSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBCustomNodeSecurityGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBCustomNodeTagsResponse> ModifyDBCustomNodeTagsOutcome;
                 typedef std::future<ModifyDBCustomNodeTagsOutcome> ModifyDBCustomNodeTagsOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::ModifyDBCustomNodeTagsRequest&, ModifyDBCustomNodeTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBCustomNodeTagsAsyncHandler;
@@ -215,6 +260,24 @@ namespace TencentCloud
                 DescribeDBCustomClusterKubeconfigOutcomeCallable DescribeDBCustomClusterKubeconfigCallable(const Model::DescribeDBCustomClusterKubeconfigRequest& request);
 
                 /**
+                 *该接口（DescribeDBCustomClusterNodeConfig）用于查询 DB Custom 集群内节点的配置信息。
+                 * @param req DescribeDBCustomClusterNodeConfigRequest
+                 * @return DescribeDBCustomClusterNodeConfigOutcome
+                 */
+                DescribeDBCustomClusterNodeConfigOutcome DescribeDBCustomClusterNodeConfig(const Model::DescribeDBCustomClusterNodeConfigRequest &request);
+                void DescribeDBCustomClusterNodeConfigAsync(const Model::DescribeDBCustomClusterNodeConfigRequest& request, const DescribeDBCustomClusterNodeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBCustomClusterNodeConfigOutcomeCallable DescribeDBCustomClusterNodeConfigCallable(const Model::DescribeDBCustomClusterNodeConfigRequest& request);
+
+                /**
+                 *该接口（DescribeDBCustomClusterNodeResources）用于查询 DB Custom 集群内节点的资源信息。
+                 * @param req DescribeDBCustomClusterNodeResourcesRequest
+                 * @return DescribeDBCustomClusterNodeResourcesOutcome
+                 */
+                DescribeDBCustomClusterNodeResourcesOutcome DescribeDBCustomClusterNodeResources(const Model::DescribeDBCustomClusterNodeResourcesRequest &request);
+                void DescribeDBCustomClusterNodeResourcesAsync(const Model::DescribeDBCustomClusterNodeResourcesRequest& request, const DescribeDBCustomClusterNodeResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBCustomClusterNodeResourcesOutcomeCallable DescribeDBCustomClusterNodeResourcesCallable(const Model::DescribeDBCustomClusterNodeResourcesRequest& request);
+
+                /**
                  *该接口（DescribeDBCustomClusterNodes）用于查询 DB Custom 集群中的节点列表。
                  * @param req DescribeDBCustomClusterNodesRequest
                  * @return DescribeDBCustomClusterNodesOutcome
@@ -222,6 +285,15 @@ namespace TencentCloud
                 DescribeDBCustomClusterNodesOutcome DescribeDBCustomClusterNodes(const Model::DescribeDBCustomClusterNodesRequest &request);
                 void DescribeDBCustomClusterNodesAsync(const Model::DescribeDBCustomClusterNodesRequest& request, const DescribeDBCustomClusterNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBCustomClusterNodesOutcomeCallable DescribeDBCustomClusterNodesCallable(const Model::DescribeDBCustomClusterNodesRequest& request);
+
+                /**
+                 *该接口（DescribeDBCustomClusterResources）用于查询 DB Custom 集群的资源信息。
+                 * @param req DescribeDBCustomClusterResourcesRequest
+                 * @return DescribeDBCustomClusterResourcesOutcome
+                 */
+                DescribeDBCustomClusterResourcesOutcome DescribeDBCustomClusterResources(const Model::DescribeDBCustomClusterResourcesRequest &request);
+                void DescribeDBCustomClusterResourcesAsync(const Model::DescribeDBCustomClusterResourcesRequest& request, const DescribeDBCustomClusterResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBCustomClusterResourcesOutcomeCallable DescribeDBCustomClusterResourcesCallable(const Model::DescribeDBCustomClusterResourcesRequest& request);
 
                 /**
                  *该接口（DescribeDBCustomClusters）为 DB Custom 集群列表查询接口。
@@ -242,6 +314,24 @@ namespace TencentCloud
                 DescribeDBCustomImagesOutcomeCallable DescribeDBCustomImagesCallable(const Model::DescribeDBCustomImagesRequest& request);
 
                 /**
+                 *该接口（DescribeDBCustomNodeSecurityGroups）用于查询 DB Custom 节点安全组信息。
+                 * @param req DescribeDBCustomNodeSecurityGroupsRequest
+                 * @return DescribeDBCustomNodeSecurityGroupsOutcome
+                 */
+                DescribeDBCustomNodeSecurityGroupsOutcome DescribeDBCustomNodeSecurityGroups(const Model::DescribeDBCustomNodeSecurityGroupsRequest &request);
+                void DescribeDBCustomNodeSecurityGroupsAsync(const Model::DescribeDBCustomNodeSecurityGroupsRequest& request, const DescribeDBCustomNodeSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBCustomNodeSecurityGroupsOutcomeCallable DescribeDBCustomNodeSecurityGroupsCallable(const Model::DescribeDBCustomNodeSecurityGroupsRequest& request);
+
+                /**
+                 *该接口(DescribeDBCustomNodeTypes) 用于查询 DB Custom 节点支持的机型信息。
+                 * @param req DescribeDBCustomNodeTypesRequest
+                 * @return DescribeDBCustomNodeTypesOutcome
+                 */
+                DescribeDBCustomNodeTypesOutcome DescribeDBCustomNodeTypes(const Model::DescribeDBCustomNodeTypesRequest &request);
+                void DescribeDBCustomNodeTypesAsync(const Model::DescribeDBCustomNodeTypesRequest& request, const DescribeDBCustomNodeTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBCustomNodeTypesOutcomeCallable DescribeDBCustomNodeTypesCallable(const Model::DescribeDBCustomNodeTypesRequest& request);
+
+                /**
                  *该接口（DescribeDBCustomNodes）用于查询 DB Custom 节点列表。
                  * @param req DescribeDBCustomNodesRequest
                  * @return DescribeDBCustomNodesOutcome
@@ -251,6 +341,15 @@ namespace TencentCloud
                 DescribeDBCustomNodesOutcomeCallable DescribeDBCustomNodesCallable(const Model::DescribeDBCustomNodesRequest& request);
 
                 /**
+                 *该接口(DescribeDBCustomRegions) 用于查询 DB Custom 支持的地域列表。
+                 * @param req DescribeDBCustomRegionsRequest
+                 * @return DescribeDBCustomRegionsOutcome
+                 */
+                DescribeDBCustomRegionsOutcome DescribeDBCustomRegions(const Model::DescribeDBCustomRegionsRequest &request);
+                void DescribeDBCustomRegionsAsync(const Model::DescribeDBCustomRegionsRequest& request, const DescribeDBCustomRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBCustomRegionsOutcomeCallable DescribeDBCustomRegionsCallable(const Model::DescribeDBCustomRegionsRequest& request);
+
+                /**
                  *该接口（DescribeDBCustomTaskStatus）用于查询 DB Custom 任务的状态。
                  * @param req DescribeDBCustomTaskStatusRequest
                  * @return DescribeDBCustomTaskStatusOutcome
@@ -258,6 +357,15 @@ namespace TencentCloud
                 DescribeDBCustomTaskStatusOutcome DescribeDBCustomTaskStatus(const Model::DescribeDBCustomTaskStatusRequest &request);
                 void DescribeDBCustomTaskStatusAsync(const Model::DescribeDBCustomTaskStatusRequest& request, const DescribeDBCustomTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBCustomTaskStatusOutcomeCallable DescribeDBCustomTaskStatusCallable(const Model::DescribeDBCustomTaskStatusRequest& request);
+
+                /**
+                 *该接口(DescribeDBCustomZones) 用于查询指定地域的 DB Custom 可用区列表。
+                 * @param req DescribeDBCustomZonesRequest
+                 * @return DescribeDBCustomZonesOutcome
+                 */
+                DescribeDBCustomZonesOutcome DescribeDBCustomZones(const Model::DescribeDBCustomZonesRequest &request);
+                void DescribeDBCustomZonesAsync(const Model::DescribeDBCustomZonesRequest& request, const DescribeDBCustomZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBCustomZonesOutcomeCallable DescribeDBCustomZonesCallable(const Model::DescribeDBCustomZonesRequest& request);
 
                 /**
                  *本接口用于查询独享集群内的DB实例列表
@@ -332,6 +440,15 @@ namespace TencentCloud
                 IsolateDBCustomNodeOutcomeCallable IsolateDBCustomNodeCallable(const Model::IsolateDBCustomNodeRequest& request);
 
                 /**
+                 *该接口（ModifyDBCustomClusterNodeConfig）用于修改 DB Custom 集群中节点的配置。
+                 * @param req ModifyDBCustomClusterNodeConfigRequest
+                 * @return ModifyDBCustomClusterNodeConfigOutcome
+                 */
+                ModifyDBCustomClusterNodeConfigOutcome ModifyDBCustomClusterNodeConfig(const Model::ModifyDBCustomClusterNodeConfigRequest &request);
+                void ModifyDBCustomClusterNodeConfigAsync(const Model::ModifyDBCustomClusterNodeConfigRequest& request, const ModifyDBCustomClusterNodeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBCustomClusterNodeConfigOutcomeCallable ModifyDBCustomClusterNodeConfigCallable(const Model::ModifyDBCustomClusterNodeConfigRequest& request);
+
+                /**
                  *该接口（ModifyDBCustomClusterTags）用于修改 DB Custom 集群绑定的标签。
                  * @param req ModifyDBCustomClusterTagsRequest
                  * @return ModifyDBCustomClusterTagsOutcome
@@ -339,6 +456,15 @@ namespace TencentCloud
                 ModifyDBCustomClusterTagsOutcome ModifyDBCustomClusterTags(const Model::ModifyDBCustomClusterTagsRequest &request);
                 void ModifyDBCustomClusterTagsAsync(const Model::ModifyDBCustomClusterTagsRequest& request, const ModifyDBCustomClusterTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDBCustomClusterTagsOutcomeCallable ModifyDBCustomClusterTagsCallable(const Model::ModifyDBCustomClusterTagsRequest& request);
+
+                /**
+                 *该接口（ModifyDBCustomNodeSecurityGroups）用于修改 DB Custom 节点安全组。
+                 * @param req ModifyDBCustomNodeSecurityGroupsRequest
+                 * @return ModifyDBCustomNodeSecurityGroupsOutcome
+                 */
+                ModifyDBCustomNodeSecurityGroupsOutcome ModifyDBCustomNodeSecurityGroups(const Model::ModifyDBCustomNodeSecurityGroupsRequest &request);
+                void ModifyDBCustomNodeSecurityGroupsAsync(const Model::ModifyDBCustomNodeSecurityGroupsRequest& request, const ModifyDBCustomNodeSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBCustomNodeSecurityGroupsOutcomeCallable ModifyDBCustomNodeSecurityGroupsCallable(const Model::ModifyDBCustomNodeSecurityGroupsRequest& request);
 
                 /**
                  *该接口（ModifyDBCustomNodeTags）用于修改 DB Custom 节点绑定的标签。

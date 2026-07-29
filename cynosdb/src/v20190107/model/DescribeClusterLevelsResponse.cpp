@@ -24,7 +24,8 @@ using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
 DescribeClusterLevelsResponse::DescribeClusterLevelsResponse() :
-    m_levelListHasBeenSet(false)
+    m_levelListHasBeenSet(false),
+    m_zonesHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,19 @@ CoreInternalOutcome DescribeClusterLevelsResponse::Deserialize(const string &pay
         m_levelListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Zones") && !rsp["Zones"].IsNull())
+    {
+        if (!rsp["Zones"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Zones` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Zones"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_zones.push_back((*itr).GetString());
+        }
+        m_zonesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -93,6 +107,19 @@ string DescribeClusterLevelsResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_levelList.begin(); itr != m_levelList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_zonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zones";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zones.begin(); itr != m_zones.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -118,6 +145,16 @@ vector<string> DescribeClusterLevelsResponse::GetLevelList() const
 bool DescribeClusterLevelsResponse::LevelListHasBeenSet() const
 {
     return m_levelListHasBeenSet;
+}
+
+vector<string> DescribeClusterLevelsResponse::GetZones() const
+{
+    return m_zones;
+}
+
+bool DescribeClusterLevelsResponse::ZonesHasBeenSet() const
+{
+    return m_zonesHasBeenSet;
 }
 
 

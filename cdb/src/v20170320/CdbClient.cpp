@@ -8790,6 +8790,56 @@ CdbClient::UpgradeDBInstanceEngineVersionOutcomeCallable CdbClient::UpgradeDBIns
     return prom->get_future();
 }
 
+CdbClient::UpgradeRoGroupOutcome CdbClient::UpgradeRoGroup(const UpgradeRoGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeRoGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeRoGroupResponse rsp = UpgradeRoGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeRoGroupOutcome(rsp);
+        else
+            return UpgradeRoGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeRoGroupOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::UpgradeRoGroupAsync(const UpgradeRoGroupRequest& request, const UpgradeRoGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpgradeRoGroupRequest&;
+    using Resp = UpgradeRoGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpgradeRoGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CdbClient::UpgradeRoGroupOutcomeCallable CdbClient::UpgradeRoGroupCallable(const UpgradeRoGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpgradeRoGroupOutcome>>();
+    UpgradeRoGroupAsync(
+    request,
+    [prom](
+        const CdbClient*,
+        const UpgradeRoGroupRequest&,
+        UpgradeRoGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CdbClient::VerifyRootAccountOutcome CdbClient::VerifyRootAccount(const VerifyRootAccountRequest &request)
 {
     auto outcome = MakeRequest(request, "VerifyRootAccount");

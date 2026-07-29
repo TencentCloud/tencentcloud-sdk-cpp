@@ -44,7 +44,8 @@ DataKeyMetadata::DataKeyMetadata() :
     m_sourceHsmClusterIdHasBeenSet(false),
     m_accountAppIdHasBeenSet(false),
     m_accountUinHasBeenSet(false),
-    m_accountNameHasBeenSet(false)
+    m_accountNameHasBeenSet(false),
+    m_creatorUinStringHasBeenSet(false)
 {
 }
 
@@ -293,6 +294,16 @@ CoreInternalOutcome DataKeyMetadata::Deserialize(const rapidjson::Value &value)
         m_accountNameHasBeenSet = true;
     }
 
+    if (value.HasMember("CreatorUinString") && !value["CreatorUinString"].IsNull())
+    {
+        if (!value["CreatorUinString"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataKeyMetadata.CreatorUinString` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creatorUinString = string(value["CreatorUinString"].GetString());
+        m_creatorUinStringHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -490,6 +501,14 @@ void DataKeyMetadata::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "AccountName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_accountName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_creatorUinStringHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatorUinString";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creatorUinString.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -877,5 +896,21 @@ void DataKeyMetadata::SetAccountName(const string& _accountName)
 bool DataKeyMetadata::AccountNameHasBeenSet() const
 {
     return m_accountNameHasBeenSet;
+}
+
+string DataKeyMetadata::GetCreatorUinString() const
+{
+    return m_creatorUinString;
+}
+
+void DataKeyMetadata::SetCreatorUinString(const string& _creatorUinString)
+{
+    m_creatorUinString = _creatorUinString;
+    m_creatorUinStringHasBeenSet = true;
+}
+
+bool DataKeyMetadata::CreatorUinStringHasBeenSet() const
+{
+    return m_creatorUinStringHasBeenSet;
 }
 

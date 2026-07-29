@@ -340,6 +340,34 @@ namespace TencentCloud
                      */
                     bool RegionsQpsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>资源的地域信息</p>
+                     * @return ResourceZone <p>资源的地域信息</p>
+                     * 
+                     */
+                    uint64_t GetResourceZone() const;
+
+                    /**
+                     * 判断参数 ResourceZone 是否已赋值
+                     * @return ResourceZone 是否已赋值
+                     * 
+                     */
+                    bool ResourceZoneHasBeenSet() const;
+
+                    /**
+                     * 获取<p>资源的地域可用区信息</p>
+                     * @return ResourceRegion <p>资源的地域可用区信息</p>
+                     * 
+                     */
+                    uint64_t GetResourceRegion() const;
+
+                    /**
+                     * 判断参数 ResourceRegion 是否已赋值
+                     * @return ResourceRegion 是否已赋值
+                     * 
+                     */
+                    bool ResourceRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -467,6 +495,18 @@ namespace TencentCloud
                      */
                     std::vector<RegionQps> m_regionsQps;
                     bool m_regionsQpsHasBeenSet;
+
+                    /**
+                     * <p>资源的地域信息</p>
+                     */
+                    uint64_t m_resourceZone;
+                    bool m_resourceZoneHasBeenSet;
+
+                    /**
+                     * <p>资源的地域可用区信息</p>
+                     */
+                    uint64_t m_resourceRegion;
+                    bool m_resourceRegionHasBeenSet;
 
                 };
             }

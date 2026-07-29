@@ -27,7 +27,9 @@ CertificateExtra::CertificateExtra() :
     m_replacedForHasBeenSet(false),
     m_renewOrderHasBeenSet(false),
     m_sMCertHasBeenSet(false),
-    m_companyTypeHasBeenSet(false)
+    m_companyTypeHasBeenSet(false),
+    m_serviceRenewCertificateIdHasBeenSet(false),
+    m_serviceOriginCertificateIdHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome CertificateExtra::Deserialize(const rapidjson::Value &value)
         m_companyTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceRenewCertificateId") && !value["ServiceRenewCertificateId"].IsNull())
+    {
+        if (!value["ServiceRenewCertificateId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CertificateExtra.ServiceRenewCertificateId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceRenewCertificateId = string(value["ServiceRenewCertificateId"].GetString());
+        m_serviceRenewCertificateIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServiceOriginCertificateId") && !value["ServiceOriginCertificateId"].IsNull())
+    {
+        if (!value["ServiceOriginCertificateId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CertificateExtra.ServiceOriginCertificateId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceOriginCertificateId = string(value["ServiceOriginCertificateId"].GetString());
+        m_serviceOriginCertificateIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void CertificateExtra::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "CompanyType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_companyType, allocator);
+    }
+
+    if (m_serviceRenewCertificateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceRenewCertificateId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceRenewCertificateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceOriginCertificateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceOriginCertificateId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceOriginCertificateId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void CertificateExtra::SetCompanyType(const int64_t& _companyType)
 bool CertificateExtra::CompanyTypeHasBeenSet() const
 {
     return m_companyTypeHasBeenSet;
+}
+
+string CertificateExtra::GetServiceRenewCertificateId() const
+{
+    return m_serviceRenewCertificateId;
+}
+
+void CertificateExtra::SetServiceRenewCertificateId(const string& _serviceRenewCertificateId)
+{
+    m_serviceRenewCertificateId = _serviceRenewCertificateId;
+    m_serviceRenewCertificateIdHasBeenSet = true;
+}
+
+bool CertificateExtra::ServiceRenewCertificateIdHasBeenSet() const
+{
+    return m_serviceRenewCertificateIdHasBeenSet;
+}
+
+string CertificateExtra::GetServiceOriginCertificateId() const
+{
+    return m_serviceOriginCertificateId;
+}
+
+void CertificateExtra::SetServiceOriginCertificateId(const string& _serviceOriginCertificateId)
+{
+    m_serviceOriginCertificateId = _serviceOriginCertificateId;
+    m_serviceOriginCertificateIdHasBeenSet = true;
+}
+
+bool CertificateExtra::ServiceOriginCertificateIdHasBeenSet() const
+{
+    return m_serviceOriginCertificateIdHasBeenSet;
 }
 

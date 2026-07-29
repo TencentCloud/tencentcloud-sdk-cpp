@@ -25,7 +25,8 @@ IPGroup::IPGroup() :
     m_nameHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_iPTotalCountHasBeenSet(false),
-    m_iPExpireInfoHasBeenSet(false)
+    m_iPExpireInfoHasBeenSet(false),
+    m_refCountHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,16 @@ CoreInternalOutcome IPGroup::Deserialize(const rapidjson::Value &value)
         m_iPExpireInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("RefCount") && !value["RefCount"].IsNull())
+    {
+        if (!value["RefCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IPGroup.RefCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_refCount = value["RefCount"].GetInt64();
+        m_refCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -154,6 +165,14 @@ void IPGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_refCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RefCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_refCount, allocator);
     }
 
 }
@@ -237,5 +256,21 @@ void IPGroup::SetIPExpireInfo(const vector<IPExpireInfo>& _iPExpireInfo)
 bool IPGroup::IPExpireInfoHasBeenSet() const
 {
     return m_iPExpireInfoHasBeenSet;
+}
+
+int64_t IPGroup::GetRefCount() const
+{
+    return m_refCount;
+}
+
+void IPGroup::SetRefCount(const int64_t& _refCount)
+{
+    m_refCount = _refCount;
+    m_refCountHasBeenSet = true;
+}
+
+bool IPGroup::RefCountHasBeenSet() const
+{
+    return m_refCountHasBeenSet;
 }
 

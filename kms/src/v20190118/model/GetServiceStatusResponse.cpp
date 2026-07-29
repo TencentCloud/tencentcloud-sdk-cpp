@@ -44,7 +44,9 @@ GetServiceStatusResponse::GetServiceStatusResponse() :
     m_isAllowedSyncHasBeenSet(false),
     m_qpsLimitHasBeenSet(false),
     m_qpsTotalLimitHasBeenSet(false),
-    m_regionsQpsHasBeenSet(false)
+    m_regionsQpsHasBeenSet(false),
+    m_resourceZoneHasBeenSet(false),
+    m_resourceRegionHasBeenSet(false)
 {
 }
 
@@ -322,6 +324,26 @@ CoreInternalOutcome GetServiceStatusResponse::Deserialize(const string &payload)
         m_regionsQpsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ResourceZone") && !rsp["ResourceZone"].IsNull())
+    {
+        if (!rsp["ResourceZone"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceZone` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceZone = rsp["ResourceZone"].GetUint64();
+        m_resourceZoneHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ResourceRegion") && !rsp["ResourceRegion"].IsNull())
+    {
+        if (!rsp["ResourceRegion"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceRegion` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceRegion = rsp["ResourceRegion"].GetUint64();
+        m_resourceRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -519,6 +541,22 @@ string GetServiceStatusResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_resourceZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_resourceZone, allocator);
+    }
+
+    if (m_resourceRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_resourceRegion, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -741,6 +779,26 @@ vector<RegionQps> GetServiceStatusResponse::GetRegionsQps() const
 bool GetServiceStatusResponse::RegionsQpsHasBeenSet() const
 {
     return m_regionsQpsHasBeenSet;
+}
+
+uint64_t GetServiceStatusResponse::GetResourceZone() const
+{
+    return m_resourceZone;
+}
+
+bool GetServiceStatusResponse::ResourceZoneHasBeenSet() const
+{
+    return m_resourceZoneHasBeenSet;
+}
+
+uint64_t GetServiceStatusResponse::GetResourceRegion() const
+{
+    return m_resourceRegion;
+}
+
+bool GetServiceStatusResponse::ResourceRegionHasBeenSet() const
+{
+    return m_resourceRegionHasBeenSet;
 }
 
 

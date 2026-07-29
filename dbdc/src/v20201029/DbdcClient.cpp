@@ -340,6 +340,106 @@ DbdcClient::DescribeDBCustomClusterKubeconfigOutcomeCallable DbdcClient::Describ
     return prom->get_future();
 }
 
+DbdcClient::DescribeDBCustomClusterNodeConfigOutcome DbdcClient::DescribeDBCustomClusterNodeConfig(const DescribeDBCustomClusterNodeConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBCustomClusterNodeConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBCustomClusterNodeConfigResponse rsp = DescribeDBCustomClusterNodeConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBCustomClusterNodeConfigOutcome(rsp);
+        else
+            return DescribeDBCustomClusterNodeConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBCustomClusterNodeConfigOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::DescribeDBCustomClusterNodeConfigAsync(const DescribeDBCustomClusterNodeConfigRequest& request, const DescribeDBCustomClusterNodeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBCustomClusterNodeConfigRequest&;
+    using Resp = DescribeDBCustomClusterNodeConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBCustomClusterNodeConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::DescribeDBCustomClusterNodeConfigOutcomeCallable DbdcClient::DescribeDBCustomClusterNodeConfigCallable(const DescribeDBCustomClusterNodeConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBCustomClusterNodeConfigOutcome>>();
+    DescribeDBCustomClusterNodeConfigAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const DescribeDBCustomClusterNodeConfigRequest&,
+        DescribeDBCustomClusterNodeConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbdcClient::DescribeDBCustomClusterNodeResourcesOutcome DbdcClient::DescribeDBCustomClusterNodeResources(const DescribeDBCustomClusterNodeResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBCustomClusterNodeResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBCustomClusterNodeResourcesResponse rsp = DescribeDBCustomClusterNodeResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBCustomClusterNodeResourcesOutcome(rsp);
+        else
+            return DescribeDBCustomClusterNodeResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBCustomClusterNodeResourcesOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::DescribeDBCustomClusterNodeResourcesAsync(const DescribeDBCustomClusterNodeResourcesRequest& request, const DescribeDBCustomClusterNodeResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBCustomClusterNodeResourcesRequest&;
+    using Resp = DescribeDBCustomClusterNodeResourcesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBCustomClusterNodeResources", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::DescribeDBCustomClusterNodeResourcesOutcomeCallable DbdcClient::DescribeDBCustomClusterNodeResourcesCallable(const DescribeDBCustomClusterNodeResourcesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBCustomClusterNodeResourcesOutcome>>();
+    DescribeDBCustomClusterNodeResourcesAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const DescribeDBCustomClusterNodeResourcesRequest&,
+        DescribeDBCustomClusterNodeResourcesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbdcClient::DescribeDBCustomClusterNodesOutcome DbdcClient::DescribeDBCustomClusterNodes(const DescribeDBCustomClusterNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBCustomClusterNodes");
@@ -382,6 +482,56 @@ DbdcClient::DescribeDBCustomClusterNodesOutcomeCallable DbdcClient::DescribeDBCu
         const DbdcClient*,
         const DescribeDBCustomClusterNodesRequest&,
         DescribeDBCustomClusterNodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbdcClient::DescribeDBCustomClusterResourcesOutcome DbdcClient::DescribeDBCustomClusterResources(const DescribeDBCustomClusterResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBCustomClusterResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBCustomClusterResourcesResponse rsp = DescribeDBCustomClusterResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBCustomClusterResourcesOutcome(rsp);
+        else
+            return DescribeDBCustomClusterResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBCustomClusterResourcesOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::DescribeDBCustomClusterResourcesAsync(const DescribeDBCustomClusterResourcesRequest& request, const DescribeDBCustomClusterResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBCustomClusterResourcesRequest&;
+    using Resp = DescribeDBCustomClusterResourcesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBCustomClusterResources", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::DescribeDBCustomClusterResourcesOutcomeCallable DbdcClient::DescribeDBCustomClusterResourcesCallable(const DescribeDBCustomClusterResourcesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBCustomClusterResourcesOutcome>>();
+    DescribeDBCustomClusterResourcesAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const DescribeDBCustomClusterResourcesRequest&,
+        DescribeDBCustomClusterResourcesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -490,6 +640,106 @@ DbdcClient::DescribeDBCustomImagesOutcomeCallable DbdcClient::DescribeDBCustomIm
     return prom->get_future();
 }
 
+DbdcClient::DescribeDBCustomNodeSecurityGroupsOutcome DbdcClient::DescribeDBCustomNodeSecurityGroups(const DescribeDBCustomNodeSecurityGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBCustomNodeSecurityGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBCustomNodeSecurityGroupsResponse rsp = DescribeDBCustomNodeSecurityGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBCustomNodeSecurityGroupsOutcome(rsp);
+        else
+            return DescribeDBCustomNodeSecurityGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBCustomNodeSecurityGroupsOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::DescribeDBCustomNodeSecurityGroupsAsync(const DescribeDBCustomNodeSecurityGroupsRequest& request, const DescribeDBCustomNodeSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBCustomNodeSecurityGroupsRequest&;
+    using Resp = DescribeDBCustomNodeSecurityGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBCustomNodeSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::DescribeDBCustomNodeSecurityGroupsOutcomeCallable DbdcClient::DescribeDBCustomNodeSecurityGroupsCallable(const DescribeDBCustomNodeSecurityGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBCustomNodeSecurityGroupsOutcome>>();
+    DescribeDBCustomNodeSecurityGroupsAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const DescribeDBCustomNodeSecurityGroupsRequest&,
+        DescribeDBCustomNodeSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbdcClient::DescribeDBCustomNodeTypesOutcome DbdcClient::DescribeDBCustomNodeTypes(const DescribeDBCustomNodeTypesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBCustomNodeTypes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBCustomNodeTypesResponse rsp = DescribeDBCustomNodeTypesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBCustomNodeTypesOutcome(rsp);
+        else
+            return DescribeDBCustomNodeTypesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBCustomNodeTypesOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::DescribeDBCustomNodeTypesAsync(const DescribeDBCustomNodeTypesRequest& request, const DescribeDBCustomNodeTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBCustomNodeTypesRequest&;
+    using Resp = DescribeDBCustomNodeTypesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBCustomNodeTypes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::DescribeDBCustomNodeTypesOutcomeCallable DbdcClient::DescribeDBCustomNodeTypesCallable(const DescribeDBCustomNodeTypesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBCustomNodeTypesOutcome>>();
+    DescribeDBCustomNodeTypesAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const DescribeDBCustomNodeTypesRequest&,
+        DescribeDBCustomNodeTypesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbdcClient::DescribeDBCustomNodesOutcome DbdcClient::DescribeDBCustomNodes(const DescribeDBCustomNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBCustomNodes");
@@ -540,6 +790,56 @@ DbdcClient::DescribeDBCustomNodesOutcomeCallable DbdcClient::DescribeDBCustomNod
     return prom->get_future();
 }
 
+DbdcClient::DescribeDBCustomRegionsOutcome DbdcClient::DescribeDBCustomRegions(const DescribeDBCustomRegionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBCustomRegions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBCustomRegionsResponse rsp = DescribeDBCustomRegionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBCustomRegionsOutcome(rsp);
+        else
+            return DescribeDBCustomRegionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBCustomRegionsOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::DescribeDBCustomRegionsAsync(const DescribeDBCustomRegionsRequest& request, const DescribeDBCustomRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBCustomRegionsRequest&;
+    using Resp = DescribeDBCustomRegionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBCustomRegions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::DescribeDBCustomRegionsOutcomeCallable DbdcClient::DescribeDBCustomRegionsCallable(const DescribeDBCustomRegionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBCustomRegionsOutcome>>();
+    DescribeDBCustomRegionsAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const DescribeDBCustomRegionsRequest&,
+        DescribeDBCustomRegionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbdcClient::DescribeDBCustomTaskStatusOutcome DbdcClient::DescribeDBCustomTaskStatus(const DescribeDBCustomTaskStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBCustomTaskStatus");
@@ -582,6 +882,56 @@ DbdcClient::DescribeDBCustomTaskStatusOutcomeCallable DbdcClient::DescribeDBCust
         const DbdcClient*,
         const DescribeDBCustomTaskStatusRequest&,
         DescribeDBCustomTaskStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbdcClient::DescribeDBCustomZonesOutcome DbdcClient::DescribeDBCustomZones(const DescribeDBCustomZonesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBCustomZones");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBCustomZonesResponse rsp = DescribeDBCustomZonesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBCustomZonesOutcome(rsp);
+        else
+            return DescribeDBCustomZonesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBCustomZonesOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::DescribeDBCustomZonesAsync(const DescribeDBCustomZonesRequest& request, const DescribeDBCustomZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBCustomZonesRequest&;
+    using Resp = DescribeDBCustomZonesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBCustomZones", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::DescribeDBCustomZonesOutcomeCallable DbdcClient::DescribeDBCustomZonesCallable(const DescribeDBCustomZonesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBCustomZonesOutcome>>();
+    DescribeDBCustomZonesAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const DescribeDBCustomZonesRequest&,
+        DescribeDBCustomZonesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -990,6 +1340,56 @@ DbdcClient::IsolateDBCustomNodeOutcomeCallable DbdcClient::IsolateDBCustomNodeCa
     return prom->get_future();
 }
 
+DbdcClient::ModifyDBCustomClusterNodeConfigOutcome DbdcClient::ModifyDBCustomClusterNodeConfig(const ModifyDBCustomClusterNodeConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBCustomClusterNodeConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBCustomClusterNodeConfigResponse rsp = ModifyDBCustomClusterNodeConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBCustomClusterNodeConfigOutcome(rsp);
+        else
+            return ModifyDBCustomClusterNodeConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBCustomClusterNodeConfigOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::ModifyDBCustomClusterNodeConfigAsync(const ModifyDBCustomClusterNodeConfigRequest& request, const ModifyDBCustomClusterNodeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDBCustomClusterNodeConfigRequest&;
+    using Resp = ModifyDBCustomClusterNodeConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBCustomClusterNodeConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::ModifyDBCustomClusterNodeConfigOutcomeCallable DbdcClient::ModifyDBCustomClusterNodeConfigCallable(const ModifyDBCustomClusterNodeConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDBCustomClusterNodeConfigOutcome>>();
+    ModifyDBCustomClusterNodeConfigAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const ModifyDBCustomClusterNodeConfigRequest&,
+        ModifyDBCustomClusterNodeConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbdcClient::ModifyDBCustomClusterTagsOutcome DbdcClient::ModifyDBCustomClusterTags(const ModifyDBCustomClusterTagsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBCustomClusterTags");
@@ -1032,6 +1432,56 @@ DbdcClient::ModifyDBCustomClusterTagsOutcomeCallable DbdcClient::ModifyDBCustomC
         const DbdcClient*,
         const ModifyDBCustomClusterTagsRequest&,
         ModifyDBCustomClusterTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbdcClient::ModifyDBCustomNodeSecurityGroupsOutcome DbdcClient::ModifyDBCustomNodeSecurityGroups(const ModifyDBCustomNodeSecurityGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBCustomNodeSecurityGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBCustomNodeSecurityGroupsResponse rsp = ModifyDBCustomNodeSecurityGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBCustomNodeSecurityGroupsOutcome(rsp);
+        else
+            return ModifyDBCustomNodeSecurityGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBCustomNodeSecurityGroupsOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::ModifyDBCustomNodeSecurityGroupsAsync(const ModifyDBCustomNodeSecurityGroupsRequest& request, const ModifyDBCustomNodeSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDBCustomNodeSecurityGroupsRequest&;
+    using Resp = ModifyDBCustomNodeSecurityGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBCustomNodeSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::ModifyDBCustomNodeSecurityGroupsOutcomeCallable DbdcClient::ModifyDBCustomNodeSecurityGroupsCallable(const ModifyDBCustomNodeSecurityGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDBCustomNodeSecurityGroupsOutcome>>();
+    ModifyDBCustomNodeSecurityGroupsAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const ModifyDBCustomNodeSecurityGroupsRequest&,
+        ModifyDBCustomNodeSecurityGroupsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -27,8 +27,6 @@
 #include <tencentcloud/trtc/v20190722/model/AsyncTextToSpeechResponse.h>
 #include <tencentcloud/trtc/v20190722/model/ControlAIConversationRequest.h>
 #include <tencentcloud/trtc/v20190722/model/ControlAIConversationResponse.h>
-#include <tencentcloud/trtc/v20190722/model/CreateBasicModerationRequest.h>
-#include <tencentcloud/trtc/v20190722/model/CreateBasicModerationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/CreateCloudModerationRequest.h>
 #include <tencentcloud/trtc/v20190722/model/CreateCloudModerationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/CreateCloudRecordingRequest.h>
@@ -41,8 +39,6 @@
 #include <tencentcloud/trtc/v20190722/model/CreateLiveStreamModerationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/CreatePictureRequest.h>
 #include <tencentcloud/trtc/v20190722/model/CreatePictureResponse.h>
-#include <tencentcloud/trtc/v20190722/model/DeleteBasicModerationRequest.h>
-#include <tencentcloud/trtc/v20190722/model/DeleteBasicModerationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DeleteCloudModerationRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DeleteCloudModerationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DeleteCloudRecordingRequest.h>
@@ -203,9 +199,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ControlAIConversationResponse> ControlAIConversationOutcome;
                 typedef std::future<ControlAIConversationOutcome> ControlAIConversationOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::ControlAIConversationRequest&, ControlAIConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlAIConversationAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateBasicModerationResponse> CreateBasicModerationOutcome;
-                typedef std::future<CreateBasicModerationOutcome> CreateBasicModerationOutcomeCallable;
-                typedef std::function<void(const TrtcClient*, const Model::CreateBasicModerationRequest&, CreateBasicModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBasicModerationAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCloudModerationResponse> CreateCloudModerationOutcome;
                 typedef std::future<CreateCloudModerationOutcome> CreateCloudModerationOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::CreateCloudModerationRequest&, CreateCloudModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudModerationAsyncHandler;
@@ -224,9 +217,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePictureResponse> CreatePictureOutcome;
                 typedef std::future<CreatePictureOutcome> CreatePictureOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::CreatePictureRequest&, CreatePictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePictureAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteBasicModerationResponse> DeleteBasicModerationOutcome;
-                typedef std::future<DeleteBasicModerationOutcome> DeleteBasicModerationOutcomeCallable;
-                typedef std::function<void(const TrtcClient*, const Model::DeleteBasicModerationRequest&, DeleteBasicModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBasicModerationAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCloudModerationResponse> DeleteCloudModerationOutcome;
                 typedef std::future<DeleteCloudModerationOutcome> DeleteCloudModerationOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DeleteCloudModerationRequest&, DeleteCloudModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudModerationAsyncHandler;
@@ -459,16 +449,6 @@ namespace TencentCloud
                 ControlAIConversationOutcomeCallable ControlAIConversationCallable(const Model::ControlAIConversationRequest& request);
 
                 /**
-                 *接口说明：
-启动终端审核功能，完成房间内的音频审核。
-                 * @param req CreateBasicModerationRequest
-                 * @return CreateBasicModerationOutcome
-                 */
-                CreateBasicModerationOutcome CreateBasicModeration(const Model::CreateBasicModerationRequest &request);
-                void CreateBasicModerationAsync(const Model::CreateBasicModerationRequest& request, const CreateBasicModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateBasicModerationOutcomeCallable CreateBasicModerationCallable(const Model::CreateBasicModerationRequest& request);
-
-                /**
                  *启动AI 内容理解功能，完成房间内的音视频切片，视频截帧，或者录制音频流，投递到AI内容理解，完成内容识别。您可以通过此接口实现如下目标：
 ●指定内容参数（ModerationParams）来指定内容理解需要的详细参数。
 ●指定存储参数（ModerationStorageParams）将命中的切片文件指定上传到您希望的云存储，目前支持腾讯云（对象存储COS）以及第三方AWS（S3）和阿里云（OSS）
@@ -543,15 +523,6 @@ namespace TencentCloud
                 CreatePictureOutcome CreatePicture(const Model::CreatePictureRequest &request);
                 void CreatePictureAsync(const Model::CreatePictureRequest& request, const CreatePictureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePictureOutcomeCallable CreatePictureCallable(const Model::CreatePictureRequest& request);
-
-                /**
-                 *成功开启审核任务后，可以使用此接口来停止任务。
-                 * @param req DeleteBasicModerationRequest
-                 * @return DeleteBasicModerationOutcome
-                 */
-                DeleteBasicModerationOutcome DeleteBasicModeration(const Model::DeleteBasicModerationRequest &request);
-                void DeleteBasicModerationAsync(const Model::DeleteBasicModerationRequest& request, const DeleteBasicModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteBasicModerationOutcomeCallable DeleteBasicModerationCallable(const Model::DeleteBasicModerationRequest& request);
 
                 /**
                  *成功开启AI 内容理解任务后，可以使用此接口来停止进行内容识别。

@@ -41,6 +41,8 @@
 #include <tencentcloud/tcb/v20180608/model/CreateAuthDomainResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateBillDealRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateBillDealResponse.h>
+#include <tencentcloud/tcb/v20180608/model/CreateCloudAppRequest.h>
+#include <tencentcloud/tcb/v20180608/model/CreateCloudAppResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateCustomLoginKeyRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateCustomLoginKeyResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateEnvRequest.h>
@@ -67,6 +69,10 @@
 #include <tencentcloud/tcb/v20180608/model/DeleteApiKeyResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteAuthDomainRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteAuthDomainResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteCloudAppRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteCloudAppResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteCloudAppVersionRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteCloudAppVersionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteHTTPServiceRouteRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteHTTPServiceRouteResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteProviderRequest.h>
@@ -89,8 +95,16 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeBillingInfoResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeClientRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeClientResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudAppCosInfoRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudAppCosInfoResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudAppInfoRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudAppInfoResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudAppListRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudAppListResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudAppVersionRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudAppVersionResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudAppVersionListRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudAppVersionListResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionRequest.h>
@@ -250,6 +264,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateBillDealResponse> CreateBillDealOutcome;
                 typedef std::future<CreateBillDealOutcome> CreateBillDealOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateBillDealRequest&, CreateBillDealOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBillDealAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCloudAppResponse> CreateCloudAppOutcome;
+                typedef std::future<CreateCloudAppOutcome> CreateCloudAppOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::CreateCloudAppRequest&, CreateCloudAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudAppAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCustomLoginKeyResponse> CreateCustomLoginKeyOutcome;
                 typedef std::future<CreateCustomLoginKeyOutcome> CreateCustomLoginKeyOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateCustomLoginKeyRequest&, CreateCustomLoginKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomLoginKeyAsyncHandler;
@@ -289,6 +306,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAuthDomainResponse> DeleteAuthDomainOutcome;
                 typedef std::future<DeleteAuthDomainOutcome> DeleteAuthDomainOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteAuthDomainRequest&, DeleteAuthDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuthDomainAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCloudAppResponse> DeleteCloudAppOutcome;
+                typedef std::future<DeleteCloudAppOutcome> DeleteCloudAppOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DeleteCloudAppRequest&, DeleteCloudAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCloudAppVersionResponse> DeleteCloudAppVersionOutcome;
+                typedef std::future<DeleteCloudAppVersionOutcome> DeleteCloudAppVersionOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DeleteCloudAppVersionRequest&, DeleteCloudAppVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudAppVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteHTTPServiceRouteResponse> DeleteHTTPServiceRouteOutcome;
                 typedef std::future<DeleteHTTPServiceRouteOutcome> DeleteHTTPServiceRouteOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteHTTPServiceRouteRequest&, DeleteHTTPServiceRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteHTTPServiceRouteAsyncHandler;
@@ -322,9 +345,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClientResponse> DescribeClientOutcome;
                 typedef std::future<DescribeClientOutcome> DescribeClientOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeClientRequest&, DescribeClientOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudAppCosInfoResponse> DescribeCloudAppCosInfoOutcome;
+                typedef std::future<DescribeCloudAppCosInfoOutcome> DescribeCloudAppCosInfoOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeCloudAppCosInfoRequest&, DescribeCloudAppCosInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudAppCosInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudAppInfoResponse> DescribeCloudAppInfoOutcome;
+                typedef std::future<DescribeCloudAppInfoOutcome> DescribeCloudAppInfoOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeCloudAppInfoRequest&, DescribeCloudAppInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudAppInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudAppListResponse> DescribeCloudAppListOutcome;
                 typedef std::future<DescribeCloudAppListOutcome> DescribeCloudAppListOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudAppListRequest&, DescribeCloudAppListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudAppListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudAppVersionResponse> DescribeCloudAppVersionOutcome;
+                typedef std::future<DescribeCloudAppVersionOutcome> DescribeCloudAppVersionOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeCloudAppVersionRequest&, DescribeCloudAppVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudAppVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudAppVersionListResponse> DescribeCloudAppVersionListOutcome;
+                typedef std::future<DescribeCloudAppVersionListOutcome> DescribeCloudAppVersionListOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeCloudAppVersionListRequest&, DescribeCloudAppVersionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudAppVersionListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudBaseBuildServiceResponse> DescribeCloudBaseBuildServiceOutcome;
                 typedef std::future<DescribeCloudBaseBuildServiceOutcome> DescribeCloudBaseBuildServiceOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseBuildServiceRequest&, DescribeCloudBaseBuildServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseBuildServiceAsyncHandler;
@@ -613,6 +648,15 @@ namespace TencentCloud
                 CreateBillDealOutcomeCallable CreateBillDealCallable(const Model::CreateBillDealRequest& request);
 
                 /**
+                 *创建云应用
+                 * @param req CreateCloudAppRequest
+                 * @return CreateCloudAppOutcome
+                 */
+                CreateCloudAppOutcome CreateCloudApp(const Model::CreateCloudAppRequest &request);
+                void CreateCloudAppAsync(const Model::CreateCloudAppRequest& request, const CreateCloudAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCloudAppOutcomeCallable CreateCloudAppCallable(const Model::CreateCloudAppRequest& request);
+
+                /**
                  *创建自定义登录密钥。在指定云开发环境下生成一对 RSA 1024 位非对称密钥对，系统仅存储公钥，私钥仅在创建时返回一次且不可恢复，请妥善保存。创建新密钥后，该环境下原有未设置过期时间的旧密钥将被自动标记为 2 小时后过期，请确保客户端及时更新密钥配置。
 返回的 KeyID 和 PrivateKey 需与环境 ID 一起组装为 JSON 配置文件，供客户端 Admin SDK 初始化时使用，文件格式如下：
 {
@@ -764,6 +808,24 @@ namespace TencentCloud
                 DeleteAuthDomainOutcomeCallable DeleteAuthDomainCallable(const Model::DeleteAuthDomainRequest& request);
 
                 /**
+                 *删除云应用服务
+                 * @param req DeleteCloudAppRequest
+                 * @return DeleteCloudAppOutcome
+                 */
+                DeleteCloudAppOutcome DeleteCloudApp(const Model::DeleteCloudAppRequest &request);
+                void DeleteCloudAppAsync(const Model::DeleteCloudAppRequest& request, const DeleteCloudAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCloudAppOutcomeCallable DeleteCloudAppCallable(const Model::DeleteCloudAppRequest& request);
+
+                /**
+                 *删除云应用服务版本
+                 * @param req DeleteCloudAppVersionRequest
+                 * @return DeleteCloudAppVersionOutcome
+                 */
+                DeleteCloudAppVersionOutcome DeleteCloudAppVersion(const Model::DeleteCloudAppVersionRequest &request);
+                void DeleteCloudAppVersionAsync(const Model::DeleteCloudAppVersionRequest& request, const DeleteCloudAppVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCloudAppVersionOutcomeCallable DeleteCloudAppVersionCallable(const Model::DeleteCloudAppVersionRequest& request);
+
+                /**
                  *本接口DeleteHTTPServiceRoute用于删除HTTP访问服务域名或者路由。可批量删除多条path路由、删除域名及所有path路由，如果Paths字段为空则删除域名及所有path路由，如果Paths不为空则仅删除path路由。
                  * @param req DeleteHTTPServiceRouteRequest
                  * @return DeleteHTTPServiceRouteOutcome
@@ -876,6 +938,24 @@ namespace TencentCloud
                 DescribeClientOutcomeCallable DescribeClientCallable(const Model::DescribeClientRequest& request);
 
                 /**
+                 *获取云应用cos信息
+                 * @param req DescribeCloudAppCosInfoRequest
+                 * @return DescribeCloudAppCosInfoOutcome
+                 */
+                DescribeCloudAppCosInfoOutcome DescribeCloudAppCosInfo(const Model::DescribeCloudAppCosInfoRequest &request);
+                void DescribeCloudAppCosInfoAsync(const Model::DescribeCloudAppCosInfoRequest& request, const DescribeCloudAppCosInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudAppCosInfoOutcomeCallable DescribeCloudAppCosInfoCallable(const Model::DescribeCloudAppCosInfoRequest& request);
+
+                /**
+                 *查询应用服务信息
+                 * @param req DescribeCloudAppInfoRequest
+                 * @return DescribeCloudAppInfoOutcome
+                 */
+                DescribeCloudAppInfoOutcome DescribeCloudAppInfo(const Model::DescribeCloudAppInfoRequest &request);
+                void DescribeCloudAppInfoAsync(const Model::DescribeCloudAppInfoRequest& request, const DescribeCloudAppInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudAppInfoOutcomeCallable DescribeCloudAppInfoCallable(const Model::DescribeCloudAppInfoRequest& request);
+
+                /**
                  *查询云应用服务列表信息
                  * @param req DescribeCloudAppListRequest
                  * @return DescribeCloudAppListOutcome
@@ -883,6 +963,24 @@ namespace TencentCloud
                 DescribeCloudAppListOutcome DescribeCloudAppList(const Model::DescribeCloudAppListRequest &request);
                 void DescribeCloudAppListAsync(const Model::DescribeCloudAppListRequest& request, const DescribeCloudAppListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudAppListOutcomeCallable DescribeCloudAppListCallable(const Model::DescribeCloudAppListRequest& request);
+
+                /**
+                 *查询云应用服务版本信息
+                 * @param req DescribeCloudAppVersionRequest
+                 * @return DescribeCloudAppVersionOutcome
+                 */
+                DescribeCloudAppVersionOutcome DescribeCloudAppVersion(const Model::DescribeCloudAppVersionRequest &request);
+                void DescribeCloudAppVersionAsync(const Model::DescribeCloudAppVersionRequest& request, const DescribeCloudAppVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudAppVersionOutcomeCallable DescribeCloudAppVersionCallable(const Model::DescribeCloudAppVersionRequest& request);
+
+                /**
+                 *查询云应用服务版本列表信息
+                 * @param req DescribeCloudAppVersionListRequest
+                 * @return DescribeCloudAppVersionListOutcome
+                 */
+                DescribeCloudAppVersionListOutcome DescribeCloudAppVersionList(const Model::DescribeCloudAppVersionListRequest &request);
+                void DescribeCloudAppVersionListAsync(const Model::DescribeCloudAppVersionListRequest& request, const DescribeCloudAppVersionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudAppVersionListOutcomeCallable DescribeCloudAppVersionListCallable(const Model::DescribeCloudAppVersionListRequest& request);
 
                 /**
                  *获取云托管代码上传url

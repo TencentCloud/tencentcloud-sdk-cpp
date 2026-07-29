@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取一键更新的旧证书ID。 通过查询该证书ID绑定的云资源，然后使用新证书对这些云资源进行更新
-                     * @return OldCertificateId 一键更新的旧证书ID。 通过查询该证书ID绑定的云资源，然后使用新证书对这些云资源进行更新
+                     * 获取<p>一键更新的旧证书ID。 通过查询该证书ID绑定的云资源，然后使用新证书对这些云资源进行更新</p>
+                     * @return OldCertificateId <p>一键更新的旧证书ID。 通过查询该证书ID绑定的云资源，然后使用新证书对这些云资源进行更新</p>
                      * 
                      */
                     std::string GetOldCertificateId() const;
 
                     /**
-                     * 设置一键更新的旧证书ID。 通过查询该证书ID绑定的云资源，然后使用新证书对这些云资源进行更新
-                     * @param _oldCertificateId 一键更新的旧证书ID。 通过查询该证书ID绑定的云资源，然后使用新证书对这些云资源进行更新
+                     * 设置<p>一键更新的旧证书ID。 通过查询该证书ID绑定的云资源，然后使用新证书对这些云资源进行更新</p>
+                     * @param _oldCertificateId <p>一键更新的旧证书ID。 通过查询该证书ID绑定的云资源，然后使用新证书对这些云资源进行更新</p>
                      * 
                      */
                     void SetOldCertificateId(const std::string& _oldCertificateId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool OldCertificateIdHasBeenSet() const;
 
                     /**
-                     * 获取需要部署的资源类型，参数值可选（小写）：clb
-                     * @return ResourceTypes 需要部署的资源类型，参数值可选（小写）：clb
+                     * 获取<p>需要部署的资源类型，参数值可选（小写）：clb</p>
+                     * @return ResourceTypes <p>需要部署的资源类型，参数值可选（小写）：clb</p>
                      * 
                      */
                     std::vector<std::string> GetResourceTypes() const;
 
                     /**
-                     * 设置需要部署的资源类型，参数值可选（小写）：clb
-                     * @param _resourceTypes 需要部署的资源类型，参数值可选（小写）：clb
+                     * 设置<p>需要部署的资源类型，参数值可选（小写）：clb</p>
+                     * @param _resourceTypes <p>需要部署的资源类型，参数值可选（小写）：clb</p>
                      * 
                      */
                     void SetResourceTypes(const std::vector<std::string>& _resourceTypes);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ResourceTypesHasBeenSet() const;
 
                     /**
-                     * 获取公钥证书
-                     * @return CertificatePublicKey 公钥证书
+                     * 获取<p>公钥证书</p>
+                     * @return CertificatePublicKey <p>公钥证书</p>
                      * 
                      */
                     std::string GetCertificatePublicKey() const;
 
                     /**
-                     * 设置公钥证书
-                     * @param _certificatePublicKey 公钥证书
+                     * 设置<p>公钥证书</p>
+                     * @param _certificatePublicKey <p>公钥证书</p>
                      * 
                      */
                     void SetCertificatePublicKey(const std::string& _certificatePublicKey);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool CertificatePublicKeyHasBeenSet() const;
 
                     /**
-                     * 获取私钥证书
-                     * @return CertificatePrivateKey 私钥证书
+                     * 获取<p>私钥证书</p>
+                     * @return CertificatePrivateKey <p>私钥证书</p>
                      * 
                      */
                     std::string GetCertificatePrivateKey() const;
 
                     /**
-                     * 设置私钥证书
-                     * @param _certificatePrivateKey 私钥证书
+                     * 设置<p>私钥证书</p>
+                     * @param _certificatePrivateKey <p>私钥证书</p>
                      * 
                      */
                     void SetCertificatePrivateKey(const std::string& _certificatePrivateKey);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool CertificatePrivateKeyHasBeenSet() const;
 
                     /**
-                     * 获取云资源需要部署的地域列表，支持地域的云资源类型必传，取值：clb
-                     * @return ResourceTypesRegions 云资源需要部署的地域列表，支持地域的云资源类型必传，取值：clb
+                     * 获取<p>云资源需要部署的地域列表，支持地域的云资源类型必传，取值：clb</p>
+                     * @return ResourceTypesRegions <p>云资源需要部署的地域列表，支持地域的云资源类型必传，取值：clb</p>
                      * 
                      */
                     std::vector<ResourceTypeRegions> GetResourceTypesRegions() const;
 
                     /**
-                     * 设置云资源需要部署的地域列表，支持地域的云资源类型必传，取值：clb
-                     * @param _resourceTypesRegions 云资源需要部署的地域列表，支持地域的云资源类型必传，取值：clb
+                     * 设置<p>云资源需要部署的地域列表，支持地域的云资源类型必传，取值：clb</p>
+                     * @param _resourceTypesRegions <p>云资源需要部署的地域列表，支持地域的云资源类型必传，取值：clb</p>
                      * 
                      */
                     void SetResourceTypesRegions(const std::vector<ResourceTypeRegions>& _resourceTypesRegions);
@@ -148,37 +148,64 @@ namespace TencentCloud
                      */
                     bool ResourceTypesRegionsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>证书ID</p>
+                     * @return CertificateId <p>证书ID</p>
+                     * 
+                     */
+                    std::string GetCertificateId() const;
+
+                    /**
+                     * 设置<p>证书ID</p>
+                     * @param _certificateId <p>证书ID</p>
+                     * 
+                     */
+                    void SetCertificateId(const std::string& _certificateId);
+
+                    /**
+                     * 判断参数 CertificateId 是否已赋值
+                     * @return CertificateId 是否已赋值
+                     * 
+                     */
+                    bool CertificateIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 一键更新的旧证书ID。 通过查询该证书ID绑定的云资源，然后使用新证书对这些云资源进行更新
+                     * <p>一键更新的旧证书ID。 通过查询该证书ID绑定的云资源，然后使用新证书对这些云资源进行更新</p>
                      */
                     std::string m_oldCertificateId;
                     bool m_oldCertificateIdHasBeenSet;
 
                     /**
-                     * 需要部署的资源类型，参数值可选（小写）：clb
+                     * <p>需要部署的资源类型，参数值可选（小写）：clb</p>
                      */
                     std::vector<std::string> m_resourceTypes;
                     bool m_resourceTypesHasBeenSet;
 
                     /**
-                     * 公钥证书
+                     * <p>公钥证书</p>
                      */
                     std::string m_certificatePublicKey;
                     bool m_certificatePublicKeyHasBeenSet;
 
                     /**
-                     * 私钥证书
+                     * <p>私钥证书</p>
                      */
                     std::string m_certificatePrivateKey;
                     bool m_certificatePrivateKeyHasBeenSet;
 
                     /**
-                     * 云资源需要部署的地域列表，支持地域的云资源类型必传，取值：clb
+                     * <p>云资源需要部署的地域列表，支持地域的云资源类型必传，取值：clb</p>
                      */
                     std::vector<ResourceTypeRegions> m_resourceTypesRegions;
                     bool m_resourceTypesRegionsHasBeenSet;
+
+                    /**
+                     * <p>证书ID</p>
+                     */
+                    std::string m_certificateId;
+                    bool m_certificateIdHasBeenSet;
 
                 };
             }

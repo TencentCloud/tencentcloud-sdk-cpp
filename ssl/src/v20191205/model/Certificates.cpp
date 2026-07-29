@@ -81,7 +81,9 @@ Certificates::Certificates() :
     m_serviceIdHasBeenSet(false),
     m_serviceStatusHasBeenSet(false),
     m_certServiceBeginTimeHasBeenSet(false),
-    m_certServiceEndTimeHasBeenSet(false)
+    m_certServiceEndTimeHasBeenSet(false),
+    m_certServiceShareEnabledHasBeenSet(false),
+    m_certServiceValidCertificateCountHasBeenSet(false)
 {
 }
 
@@ -766,6 +768,26 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
         m_certServiceEndTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("CertServiceShareEnabled") && !value["CertServiceShareEnabled"].IsNull())
+    {
+        if (!value["CertServiceShareEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Certificates.CertServiceShareEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_certServiceShareEnabled = value["CertServiceShareEnabled"].GetBool();
+        m_certServiceShareEnabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("CertServiceValidCertificateCount") && !value["CertServiceValidCertificateCount"].IsNull())
+    {
+        if (!value["CertServiceValidCertificateCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Certificates.CertServiceValidCertificateCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_certServiceValidCertificateCount = value["CertServiceValidCertificateCount"].GetInt64();
+        m_certServiceValidCertificateCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1306,6 +1328,22 @@ void Certificates::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CertServiceEndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_certServiceEndTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certServiceShareEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertServiceShareEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_certServiceShareEnabled, allocator);
+    }
+
+    if (m_certServiceValidCertificateCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertServiceValidCertificateCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_certServiceValidCertificateCount, allocator);
     }
 
 }
@@ -2285,5 +2323,37 @@ void Certificates::SetCertServiceEndTime(const string& _certServiceEndTime)
 bool Certificates::CertServiceEndTimeHasBeenSet() const
 {
     return m_certServiceEndTimeHasBeenSet;
+}
+
+bool Certificates::GetCertServiceShareEnabled() const
+{
+    return m_certServiceShareEnabled;
+}
+
+void Certificates::SetCertServiceShareEnabled(const bool& _certServiceShareEnabled)
+{
+    m_certServiceShareEnabled = _certServiceShareEnabled;
+    m_certServiceShareEnabledHasBeenSet = true;
+}
+
+bool Certificates::CertServiceShareEnabledHasBeenSet() const
+{
+    return m_certServiceShareEnabledHasBeenSet;
+}
+
+int64_t Certificates::GetCertServiceValidCertificateCount() const
+{
+    return m_certServiceValidCertificateCount;
+}
+
+void Certificates::SetCertServiceValidCertificateCount(const int64_t& _certServiceValidCertificateCount)
+{
+    m_certServiceValidCertificateCount = _certServiceValidCertificateCount;
+    m_certServiceValidCertificateCountHasBeenSet = true;
+}
+
+bool Certificates::CertServiceValidCertificateCountHasBeenSet() const
+{
+    return m_certServiceValidCertificateCountHasBeenSet;
 }
 

@@ -2840,6 +2840,56 @@ MonitorClient::DescribeAlarmNoticeCallbacksOutcomeCallable MonitorClient::Descri
     return prom->get_future();
 }
 
+MonitorClient::DescribeAlarmNoticeOnCallUsersFromPrometheusAlertIDOutcome MonitorClient::DescribeAlarmNoticeOnCallUsersFromPrometheusAlertID(const DescribeAlarmNoticeOnCallUsersFromPrometheusAlertIDRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAlarmNoticeOnCallUsersFromPrometheusAlertID");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAlarmNoticeOnCallUsersFromPrometheusAlertIDResponse rsp = DescribeAlarmNoticeOnCallUsersFromPrometheusAlertIDResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAlarmNoticeOnCallUsersFromPrometheusAlertIDOutcome(rsp);
+        else
+            return DescribeAlarmNoticeOnCallUsersFromPrometheusAlertIDOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAlarmNoticeOnCallUsersFromPrometheusAlertIDOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeAlarmNoticeOnCallUsersFromPrometheusAlertIDAsync(const DescribeAlarmNoticeOnCallUsersFromPrometheusAlertIDRequest& request, const DescribeAlarmNoticeOnCallUsersFromPrometheusAlertIDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAlarmNoticeOnCallUsersFromPrometheusAlertIDRequest&;
+    using Resp = DescribeAlarmNoticeOnCallUsersFromPrometheusAlertIDResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAlarmNoticeOnCallUsersFromPrometheusAlertID", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DescribeAlarmNoticeOnCallUsersFromPrometheusAlertIDOutcomeCallable MonitorClient::DescribeAlarmNoticeOnCallUsersFromPrometheusAlertIDCallable(const DescribeAlarmNoticeOnCallUsersFromPrometheusAlertIDRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAlarmNoticeOnCallUsersFromPrometheusAlertIDOutcome>>();
+    DescribeAlarmNoticeOnCallUsersFromPrometheusAlertIDAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DescribeAlarmNoticeOnCallUsersFromPrometheusAlertIDRequest&,
+        DescribeAlarmNoticeOnCallUsersFromPrometheusAlertIDOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MonitorClient::DescribeAlarmNoticesOutcome MonitorClient::DescribeAlarmNotices(const DescribeAlarmNoticesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAlarmNotices");

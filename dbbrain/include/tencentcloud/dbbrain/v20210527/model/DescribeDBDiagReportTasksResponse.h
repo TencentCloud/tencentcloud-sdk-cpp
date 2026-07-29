@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务总数目。
-                     * @return TotalCount 任务总数目。
+                     * 获取<p>任务总数目。</p>
+                     * @return TotalCount <p>任务总数目。</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取任务列表。
-                     * @return Tasks 任务列表。
+                     * 获取<p>任务列表。</p>
+                     * @return Tasks <p>任务列表。</p>
                      * 
                      */
                     std::vector<HealthReportTask> GetTasks() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务总数目。
+                     * <p>任务总数目。</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 任务列表。
+                     * <p>任务列表。</p>
                      */
                     std::vector<HealthReportTask> m_tasks;
                     bool m_tasksHasBeenSet;

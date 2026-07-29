@@ -28,7 +28,8 @@ HealthReportTask::HealthReportTask() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_instanceInfoHasBeenSet(false),
-    m_healthStatusHasBeenSet(false)
+    m_healthStatusHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,26 @@ CoreInternalOutcome HealthReportTask::Deserialize(const rapidjson::Value &value)
         m_healthStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `HealthReportTask.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -202,6 +223,21 @@ void HealthReportTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_healthStatus.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -333,5 +369,21 @@ void HealthReportTask::SetHealthStatus(const HealthStatus& _healthStatus)
 bool HealthReportTask::HealthStatusHasBeenSet() const
 {
     return m_healthStatusHasBeenSet;
+}
+
+vector<TagInfo> HealthReportTask::GetTags() const
+{
+    return m_tags;
+}
+
+void HealthReportTask::SetTags(const vector<TagInfo>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool HealthReportTask::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 

@@ -140,56 +140,6 @@ TrtcClient::ControlAIConversationOutcomeCallable TrtcClient::ControlAIConversati
     return prom->get_future();
 }
 
-TrtcClient::CreateBasicModerationOutcome TrtcClient::CreateBasicModeration(const CreateBasicModerationRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateBasicModeration");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateBasicModerationResponse rsp = CreateBasicModerationResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateBasicModerationOutcome(rsp);
-        else
-            return CreateBasicModerationOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateBasicModerationOutcome(outcome.GetError());
-    }
-}
-
-void TrtcClient::CreateBasicModerationAsync(const CreateBasicModerationRequest& request, const CreateBasicModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const CreateBasicModerationRequest&;
-    using Resp = CreateBasicModerationResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "CreateBasicModeration", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TrtcClient::CreateBasicModerationOutcomeCallable TrtcClient::CreateBasicModerationCallable(const CreateBasicModerationRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<CreateBasicModerationOutcome>>();
-    CreateBasicModerationAsync(
-    request,
-    [prom](
-        const TrtcClient*,
-        const CreateBasicModerationRequest&,
-        CreateBasicModerationOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 TrtcClient::CreateCloudModerationOutcome TrtcClient::CreateCloudModeration(const CreateCloudModerationRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCloudModeration");
@@ -482,56 +432,6 @@ TrtcClient::CreatePictureOutcomeCallable TrtcClient::CreatePictureCallable(const
         const TrtcClient*,
         const CreatePictureRequest&,
         CreatePictureOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-TrtcClient::DeleteBasicModerationOutcome TrtcClient::DeleteBasicModeration(const DeleteBasicModerationRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteBasicModeration");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteBasicModerationResponse rsp = DeleteBasicModerationResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteBasicModerationOutcome(rsp);
-        else
-            return DeleteBasicModerationOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteBasicModerationOutcome(outcome.GetError());
-    }
-}
-
-void TrtcClient::DeleteBasicModerationAsync(const DeleteBasicModerationRequest& request, const DeleteBasicModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DeleteBasicModerationRequest&;
-    using Resp = DeleteBasicModerationResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DeleteBasicModeration", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TrtcClient::DeleteBasicModerationOutcomeCallable TrtcClient::DeleteBasicModerationCallable(const DeleteBasicModerationRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DeleteBasicModerationOutcome>>();
-    DeleteBasicModerationAsync(
-    request,
-    [prom](
-        const TrtcClient*,
-        const DeleteBasicModerationRequest&,
-        DeleteBasicModerationOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

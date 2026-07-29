@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取匹配检索条件的原始日志的数量
-                     * @return Count 匹配检索条件的原始日志的数量
+                     * 获取<p>匹配检索条件的原始日志的数量</p>
+                     * @return Count <p>匹配检索条件的原始日志的数量</p>
                      * 
                      */
                     int64_t GetCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时
-                     * @return Context 透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时
+                     * 获取<p>透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时</p>
+                     * @return Context <p>透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时</p>
                      * 
                      */
                     std::string GetContext() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool ContextHasBeenSet() const;
 
                     /**
-                     * 获取符合检索条件的日志是否已全部返回，如未全部返回可使用Context参数获取后续更多日志
-                     * @return ListOver 符合检索条件的日志是否已全部返回，如未全部返回可使用Context参数获取后续更多日志
+                     * 获取<p>符合检索条件的日志是否已全部返回，如未全部返回可使用Context参数获取后续更多日志</p>
+                     * @return ListOver <p>符合检索条件的日志是否已全部返回，如未全部返回可使用Context参数获取后续更多日志</p>
                      * 
                      */
                     bool GetListOver() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool ListOverHasBeenSet() const;
 
                     /**
-                     * 获取返回的是否为统计分析（即SQL）结果
-                     * @return Analysis 返回的是否为统计分析（即SQL）结果
+                     * 获取<p>返回的是否为统计分析（即SQL）结果</p>
+                     * @return Analysis <p>返回的是否为统计分析（即SQL）结果</p>
                      * 
                      */
                     bool GetAnalysis() const;
@@ -101,8 +101,8 @@ namespace TencentCloud
                     bool AnalysisHasBeenSet() const;
 
                     /**
-                     * 获取匹配检索条件的原始日志
-                     * @return Data 匹配检索条件的原始日志
+                     * 获取<p>匹配检索条件的原始日志</p>
+                     * @return Data <p>匹配检索条件的原始日志</p>
                      * 
                      */
                     std::vector<LogInfo> GetData() const;
@@ -117,31 +117,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 匹配检索条件的原始日志的数量
+                     * <p>匹配检索条件的原始日志的数量</p>
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
-                     * 透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时
+                     * <p>透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时</p>
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;
 
                     /**
-                     * 符合检索条件的日志是否已全部返回，如未全部返回可使用Context参数获取后续更多日志
+                     * <p>符合检索条件的日志是否已全部返回，如未全部返回可使用Context参数获取后续更多日志</p>
                      */
                     bool m_listOver;
                     bool m_listOverHasBeenSet;
 
                     /**
-                     * 返回的是否为统计分析（即SQL）结果
+                     * <p>返回的是否为统计分析（即SQL）结果</p>
                      */
                     bool m_analysis;
                     bool m_analysisHasBeenSet;
 
                     /**
-                     * 匹配检索条件的原始日志
+                     * <p>匹配检索条件的原始日志</p>
                      */
                     std::vector<LogInfo> m_data;
                     bool m_dataHasBeenSet;

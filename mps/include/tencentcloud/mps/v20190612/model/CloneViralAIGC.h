@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ResolutionHasBeenSet() const;
 
                     /**
-                     * 获取<p>模型等级。flagship（VS2.0，默认）、standard（Kling3.0-Omni）</p>
-                     * @return ModelTier <p>模型等级。flagship（VS2.0，默认）、standard（Kling3.0-Omni）</p>
+                     * 获取<p>模型等级。flagship（默认）、standard</p>
+                     * @return ModelTier <p>模型等级。flagship（默认）、standard</p>
                      * 
                      */
                     std::string GetModelTier() const;
 
                     /**
-                     * 设置<p>模型等级。flagship（VS2.0，默认）、standard（Kling3.0-Omni）</p>
-                     * @param _modelTier <p>模型等级。flagship（VS2.0，默认）、standard（Kling3.0-Omni）</p>
+                     * 设置<p>模型等级。flagship（默认）、standard</p>
+                     * @param _modelTier <p>模型等级。flagship（默认）、standard</p>
                      * 
                      */
                     void SetModelTier(const std::string& _modelTier);
@@ -151,7 +151,7 @@ namespace TencentCloud
                     bool m_resolutionHasBeenSet;
 
                     /**
-                     * <p>模型等级。flagship（VS2.0，默认）、standard（Kling3.0-Omni）</p>
+                     * <p>模型等级。flagship（默认）、standard</p>
                      */
                     std::string m_modelTier;
                     bool m_modelTierHasBeenSet;

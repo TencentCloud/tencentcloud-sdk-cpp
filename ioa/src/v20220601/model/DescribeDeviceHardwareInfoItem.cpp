@@ -37,7 +37,8 @@ DescribeDeviceHardwareInfoItem::DescribeDeviceHardwareInfoItem() :
     m_memoryHasBeenSet(false),
     m_hardDiskSizeHasBeenSet(false),
     m_monitorHasBeenSet(false),
-    m_remarkNameHasBeenSet(false)
+    m_remarkNameHasBeenSet(false),
+    m_biosUuidHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,16 @@ CoreInternalOutcome DescribeDeviceHardwareInfoItem::Deserialize(const rapidjson:
         m_remarkNameHasBeenSet = true;
     }
 
+    if (value.HasMember("BiosUuid") && !value["BiosUuid"].IsNull())
+    {
+        if (!value["BiosUuid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeDeviceHardwareInfoItem.BiosUuid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_biosUuid = string(value["BiosUuid"].GetString());
+        m_biosUuidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +368,14 @@ void DescribeDeviceHardwareInfoItem::ToJsonObject(rapidjson::Value &value, rapid
         string key = "RemarkName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_remarkName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_biosUuidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BiosUuid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_biosUuid.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -632,5 +651,21 @@ void DescribeDeviceHardwareInfoItem::SetRemarkName(const string& _remarkName)
 bool DescribeDeviceHardwareInfoItem::RemarkNameHasBeenSet() const
 {
     return m_remarkNameHasBeenSet;
+}
+
+string DescribeDeviceHardwareInfoItem::GetBiosUuid() const
+{
+    return m_biosUuid;
+}
+
+void DescribeDeviceHardwareInfoItem::SetBiosUuid(const string& _biosUuid)
+{
+    m_biosUuid = _biosUuid;
+    m_biosUuidHasBeenSet = true;
+}
+
+bool DescribeDeviceHardwareInfoItem::BiosUuidHasBeenSet() const
+{
+    return m_biosUuidHasBeenSet;
 }
 

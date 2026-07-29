@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要检索分析的日志的起始时间，Unix时间戳（毫秒）
-                     * @return StartTime 要检索分析的日志的起始时间，Unix时间戳（毫秒）
+                     * 获取<p>要检索分析的日志的起始时间，Unix时间戳（毫秒）</p>
+                     * @return StartTime <p>要检索分析的日志的起始时间，Unix时间戳（毫秒）</p>
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置要检索分析的日志的起始时间，Unix时间戳（毫秒）
-                     * @param _startTime 要检索分析的日志的起始时间，Unix时间戳（毫秒）
+                     * 设置<p>要检索分析的日志的起始时间，Unix时间戳（毫秒）</p>
+                     * @param _startTime <p>要检索分析的日志的起始时间，Unix时间戳（毫秒）</p>
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取要检索分析的日志的结束时间，Unix时间戳（毫秒）
-                     * @return EndTime 要检索分析的日志的结束时间，Unix时间戳（毫秒）
+                     * 获取<p>要检索分析的日志的结束时间，Unix时间戳（毫秒）</p>
+                     * @return EndTime <p>要检索分析的日志的结束时间，Unix时间戳（毫秒）</p>
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置要检索分析的日志的结束时间，Unix时间戳（毫秒）
-                     * @param _endTime 要检索分析的日志的结束时间，Unix时间戳（毫秒）
+                     * 设置<p>要检索分析的日志的结束时间，Unix时间戳（毫秒）</p>
+                     * @param _endTime <p>要检索分析的日志的结束时间，Unix时间戳（毫秒）</p>
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取检索分析语句，最大长度为12KB，查询语法可参考文档 https://cloud.tencent.com/document/product/296/50508
-                     * @return QueryString 检索分析语句，最大长度为12KB，查询语法可参考文档 https://cloud.tencent.com/document/product/296/50508
+                     * 获取<p>检索分析语句，最大长度为12KB，查询语法可参考文档 https://cloud.tencent.com/document/product/296/50508</p>
+                     * @return QueryString <p>检索分析语句，最大长度为12KB，查询语法可参考文档 https://cloud.tencent.com/document/product/296/50508</p>
                      * 
                      */
                     std::string GetQueryString() const;
 
                     /**
-                     * 设置检索分析语句，最大长度为12KB，查询语法可参考文档 https://cloud.tencent.com/document/product/296/50508
-                     * @param _queryString 检索分析语句，最大长度为12KB，查询语法可参考文档 https://cloud.tencent.com/document/product/296/50508
+                     * 设置<p>检索分析语句，最大长度为12KB，查询语法可参考文档 https://cloud.tencent.com/document/product/296/50508</p>
+                     * @param _queryString <p>检索分析语句，最大长度为12KB，查询语法可参考文档 https://cloud.tencent.com/document/product/296/50508</p>
                      * 
                      */
                     void SetQueryString(const std::string& _queryString);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool QueryStringHasBeenSet() const;
 
                     /**
-                     * 获取表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数
-                     * @return Count 表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数
+                     * 获取<p>表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数</p>
+                     * @return Count <p>表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数</p>
                      * 
                      */
                     int64_t GetCount() const;
 
                     /**
-                     * 设置表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数
-                     * @param _count 表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数
+                     * 设置<p>表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数</p>
+                     * @param _count <p>表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数</p>
                      * 
                      */
                     void SetCount(const int64_t& _count);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
-                     * @return Sort 原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+                     * 获取<p>原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc</p>
+                     * @return Sort <p>原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc</p>
                      * 
                      */
                     std::string GetSort() const;
 
                     /**
-                     * 设置原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
-                     * @param _sort 原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+                     * 设置<p>原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc</p>
+                     * @param _sort <p>原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc</p>
                      * 
                      */
                     void SetSort(const std::string& _sort);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool SortHasBeenSet() const;
 
                     /**
-                     * 获取透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时
-                     * @return Context 透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时
+                     * 获取<p>透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时</p>
+                     * @return Context <p>透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时</p>
                      * 
                      */
                     std::string GetContext() const;
 
                     /**
-                     * 设置透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时
-                     * @param _context 透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时
+                     * 设置<p>透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时</p>
+                     * @param _context <p>透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时</p>
                      * 
                      */
                     void SetContext(const std::string& _context);
@@ -171,37 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要检索分析的日志的起始时间，Unix时间戳（毫秒）
+                     * <p>要检索分析的日志的起始时间，Unix时间戳（毫秒）</p>
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 要检索分析的日志的结束时间，Unix时间戳（毫秒）
+                     * <p>要检索分析的日志的结束时间，Unix时间戳（毫秒）</p>
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 检索分析语句，最大长度为12KB，查询语法可参考文档 https://cloud.tencent.com/document/product/296/50508
+                     * <p>检索分析语句，最大长度为12KB，查询语法可参考文档 https://cloud.tencent.com/document/product/296/50508</p>
                      */
                     std::string m_queryString;
                     bool m_queryStringHasBeenSet;
 
                     /**
-                     * 表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数
+                     * <p>表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数</p>
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
-                     * 原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+                     * <p>原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc</p>
                      */
                     std::string m_sort;
                     bool m_sortHasBeenSet;
 
                     /**
-                     * 透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时
+                     * <p>透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时</p>
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dbbrain/v20210527/model/TagFilterGroup.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
-                     * @return StartTime 第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
+                     * 获取<p>第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。</p>
+                     * @return StartTime <p>第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
-                     * @param _startTime 第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
+                     * 设置<p>第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。</p>
+                     * @param _startTime <p>第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
-                     * @return EndTime 最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
+                     * 获取<p>最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。</p>
+                     * @return EndTime <p>最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
-                     * @param _endTime 最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
+                     * 设置<p>最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。</p>
+                     * @param _endTime <p>最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -85,15 +86,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例ID数组，用于筛选指定实例的任务列表。
-                     * @return InstanceIds 实例ID数组，用于筛选指定实例的任务列表。
+                     * 获取<p>实例ID数组，用于筛选指定实例的任务列表。。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
+                     * @return InstanceIds <p>实例ID数组，用于筛选指定实例的任务列表。。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例ID数组，用于筛选指定实例的任务列表。
-                     * @param _instanceIds 实例ID数组，用于筛选指定实例的任务列表。
+                     * 设置<p>实例ID数组，用于筛选指定实例的任务列表。。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
+                     * @param _instanceIds <p>实例ID数组，用于筛选指定实例的任务列表。。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -106,15 +107,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 计划任务；"MANUAL" - 手动触发。
-                     * @return Sources 任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 计划任务；"MANUAL" - 手动触发。
+                     * 获取<p>任务的触发来源，支持的取值包括：&quot;DAILY_INSPECTION&quot; - 实例巡检；&quot;SCHEDULED&quot; - 计划任务；&quot;MANUAL&quot; - 手动触发。</p>
+                     * @return Sources <p>任务的触发来源，支持的取值包括：&quot;DAILY_INSPECTION&quot; - 实例巡检；&quot;SCHEDULED&quot; - 计划任务；&quot;MANUAL&quot; - 手动触发。</p>
                      * 
                      */
                     std::vector<std::string> GetSources() const;
 
                     /**
-                     * 设置任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 计划任务；"MANUAL" - 手动触发。
-                     * @param _sources 任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 计划任务；"MANUAL" - 手动触发。
+                     * 设置<p>任务的触发来源，支持的取值包括：&quot;DAILY_INSPECTION&quot; - 实例巡检；&quot;SCHEDULED&quot; - 计划任务；&quot;MANUAL&quot; - 手动触发。</p>
+                     * @param _sources <p>任务的触发来源，支持的取值包括：&quot;DAILY_INSPECTION&quot; - 实例巡检；&quot;SCHEDULED&quot; - 计划任务；&quot;MANUAL&quot; - 手动触发。</p>
                      * 
                      */
                     void SetSources(const std::vector<std::string>& _sources);
@@ -127,15 +128,15 @@ namespace TencentCloud
                     bool SourcesHasBeenSet() const;
 
                     /**
-                     * 获取报告的健康等级，支持的取值包括："HEALTH" - 健康；"SUB_HEALTH" - 亚健康；"RISK" - 危险；"HIGH_RISK" - 高危。
-                     * @return HealthLevels 报告的健康等级，支持的取值包括："HEALTH" - 健康；"SUB_HEALTH" - 亚健康；"RISK" - 危险；"HIGH_RISK" - 高危。
+                     * 获取<p>报告的健康等级，支持的取值包括：&quot;HEALTH&quot; - 健康；&quot;SUB_HEALTH&quot; - 亚健康；&quot;RISK&quot; - 危险；&quot;HIGH_RISK&quot; - 高危。</p>
+                     * @return HealthLevels <p>报告的健康等级，支持的取值包括：&quot;HEALTH&quot; - 健康；&quot;SUB_HEALTH&quot; - 亚健康；&quot;RISK&quot; - 危险；&quot;HIGH_RISK&quot; - 高危。</p>
                      * 
                      */
                     std::string GetHealthLevels() const;
 
                     /**
-                     * 设置报告的健康等级，支持的取值包括："HEALTH" - 健康；"SUB_HEALTH" - 亚健康；"RISK" - 危险；"HIGH_RISK" - 高危。
-                     * @param _healthLevels 报告的健康等级，支持的取值包括："HEALTH" - 健康；"SUB_HEALTH" - 亚健康；"RISK" - 危险；"HIGH_RISK" - 高危。
+                     * 设置<p>报告的健康等级，支持的取值包括：&quot;HEALTH&quot; - 健康；&quot;SUB_HEALTH&quot; - 亚健康；&quot;RISK&quot; - 危险；&quot;HIGH_RISK&quot; - 高危。</p>
+                     * @param _healthLevels <p>报告的健康等级，支持的取值包括：&quot;HEALTH&quot; - 健康；&quot;SUB_HEALTH&quot; - 亚健康；&quot;RISK&quot; - 危险；&quot;HIGH_RISK&quot; - 高危。</p>
                      * 
                      */
                     void SetHealthLevels(const std::string& _healthLevels);
@@ -148,15 +149,15 @@ namespace TencentCloud
                     bool HealthLevelsHasBeenSet() const;
 
                     /**
-                     * 获取任务的状态，支持的取值包括："created" - 新建；"chosen" - 待执行； "running" - 执行中；"failed" - 失败；"finished" - 已完成。
-                     * @return TaskStatuses 任务的状态，支持的取值包括："created" - 新建；"chosen" - 待执行； "running" - 执行中；"failed" - 失败；"finished" - 已完成。
+                     * 获取<p>任务的状态，支持的取值包括：&quot;created&quot; - 新建；&quot;chosen&quot; - 待执行； &quot;running&quot; - 执行中；&quot;failed&quot; - 失败；&quot;finished&quot; - 已完成。</p>
+                     * @return TaskStatuses <p>任务的状态，支持的取值包括：&quot;created&quot; - 新建；&quot;chosen&quot; - 待执行； &quot;running&quot; - 执行中；&quot;failed&quot; - 失败；&quot;finished&quot; - 已完成。</p>
                      * 
                      */
                     std::string GetTaskStatuses() const;
 
                     /**
-                     * 设置任务的状态，支持的取值包括："created" - 新建；"chosen" - 待执行； "running" - 执行中；"failed" - 失败；"finished" - 已完成。
-                     * @param _taskStatuses 任务的状态，支持的取值包括："created" - 新建；"chosen" - 待执行； "running" - 执行中；"failed" - 失败；"finished" - 已完成。
+                     * 设置<p>任务的状态，支持的取值包括：&quot;created&quot; - 新建；&quot;chosen&quot; - 待执行； &quot;running&quot; - 执行中；&quot;failed&quot; - 失败；&quot;finished&quot; - 已完成。</p>
+                     * @param _taskStatuses <p>任务的状态，支持的取值包括：&quot;created&quot; - 新建；&quot;chosen&quot; - 待执行； &quot;running&quot; - 执行中；&quot;failed&quot; - 失败；&quot;finished&quot; - 已完成。</p>
                      * 
                      */
                     void SetTaskStatuses(const std::string& _taskStatuses);
@@ -169,15 +170,15 @@ namespace TencentCloud
                     bool TaskStatusesHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认0。
-                     * @return Offset 偏移量，默认0。
+                     * 获取<p>偏移量，默认0。</p>
+                     * @return Offset <p>偏移量，默认0。</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认0。
-                     * @param _offset 偏移量，默认0。
+                     * 设置<p>偏移量，默认0。</p>
+                     * @param _offset <p>偏移量，默认0。</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -190,15 +191,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认20，最大值为100。
-                     * @return Limit 返回数量，默认20，最大值为100。
+                     * 获取<p>返回数量，默认20，最大值为100。</p>
+                     * @return Limit <p>返回数量，默认20，最大值为100。</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认20，最大值为100。
-                     * @param _limit 返回数量，默认20，最大值为100。
+                     * 设置<p>返回数量，默认20，最大值为100。</p>
+                     * @param _limit <p>返回数量，默认20，最大值为100。</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -211,15 +212,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，"redis" - 云数据库 Redis，默认为"mysql"。
-                     * @return Product 服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，"redis" - 云数据库 Redis，默认为"mysql"。
+                     * 获取<p>服务产品类型，支持值：&quot;mysql&quot; - 云数据库 MySQL；&quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;redis&quot; - 云数据库 Redis，默认为&quot;mysql&quot;。</p>
+                     * @return Product <p>服务产品类型，支持值：&quot;mysql&quot; - 云数据库 MySQL；&quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;redis&quot; - 云数据库 Redis，默认为&quot;mysql&quot;。</p>
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，"redis" - 云数据库 Redis，默认为"mysql"。
-                     * @param _product 服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，"redis" - 云数据库 Redis，默认为"mysql"。
+                     * 设置<p>服务产品类型，支持值：&quot;mysql&quot; - 云数据库 MySQL；&quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;redis&quot; - 云数据库 Redis，默认为&quot;mysql&quot;。</p>
+                     * @param _product <p>服务产品类型，支持值：&quot;mysql&quot; - 云数据库 MySQL；&quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;redis&quot; - 云数据库 Redis，默认为&quot;mysql&quot;。</p>
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -231,61 +232,88 @@ namespace TencentCloud
                      */
                     bool ProductHasBeenSet() const;
 
+                    /**
+                     * 获取<p>根据任务所属实例的标签信息进行过滤</p>
+                     * @return TagFilters <p>根据任务所属实例的标签信息进行过滤</p>
+                     * 
+                     */
+                    std::vector<TagFilterGroup> GetTagFilters() const;
+
+                    /**
+                     * 设置<p>根据任务所属实例的标签信息进行过滤</p>
+                     * @param _tagFilters <p>根据任务所属实例的标签信息进行过滤</p>
+                     * 
+                     */
+                    void SetTagFilters(const std::vector<TagFilterGroup>& _tagFilters);
+
+                    /**
+                     * 判断参数 TagFilters 是否已赋值
+                     * @return TagFilters 是否已赋值
+                     * 
+                     */
+                    bool TagFiltersHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
+                     * <p>第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。
+                     * <p>最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 实例ID数组，用于筛选指定实例的任务列表。
+                     * <p>实例ID数组，用于筛选指定实例的任务列表。。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 计划任务；"MANUAL" - 手动触发。
+                     * <p>任务的触发来源，支持的取值包括：&quot;DAILY_INSPECTION&quot; - 实例巡检；&quot;SCHEDULED&quot; - 计划任务；&quot;MANUAL&quot; - 手动触发。</p>
                      */
                     std::vector<std::string> m_sources;
                     bool m_sourcesHasBeenSet;
 
                     /**
-                     * 报告的健康等级，支持的取值包括："HEALTH" - 健康；"SUB_HEALTH" - 亚健康；"RISK" - 危险；"HIGH_RISK" - 高危。
+                     * <p>报告的健康等级，支持的取值包括：&quot;HEALTH&quot; - 健康；&quot;SUB_HEALTH&quot; - 亚健康；&quot;RISK&quot; - 危险；&quot;HIGH_RISK&quot; - 高危。</p>
                      */
                     std::string m_healthLevels;
                     bool m_healthLevelsHasBeenSet;
 
                     /**
-                     * 任务的状态，支持的取值包括："created" - 新建；"chosen" - 待执行； "running" - 执行中；"failed" - 失败；"finished" - 已完成。
+                     * <p>任务的状态，支持的取值包括：&quot;created&quot; - 新建；&quot;chosen&quot; - 待执行； &quot;running&quot; - 执行中；&quot;failed&quot; - 失败；&quot;finished&quot; - 已完成。</p>
                      */
                     std::string m_taskStatuses;
                     bool m_taskStatusesHasBeenSet;
 
                     /**
-                     * 偏移量，默认0。
+                     * <p>偏移量，默认0。</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，默认20，最大值为100。
+                     * <p>返回数量，默认20，最大值为100。</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，"redis" - 云数据库 Redis，默认为"mysql"。
+                     * <p>服务产品类型，支持值：&quot;mysql&quot; - 云数据库 MySQL；&quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;redis&quot; - 云数据库 Redis，默认为&quot;mysql&quot;。</p>
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
+
+                    /**
+                     * <p>根据任务所属实例的标签信息进行过滤</p>
+                     */
+                    std::vector<TagFilterGroup> m_tagFilters;
+                    bool m_tagFiltersHasBeenSet;
 
                 };
             }

@@ -373,6 +373,8 @@
 #include <tencentcloud/cdb/v20170320/model/UpgradeDBInstanceResponse.h>
 #include <tencentcloud/cdb/v20170320/model/UpgradeDBInstanceEngineVersionRequest.h>
 #include <tencentcloud/cdb/v20170320/model/UpgradeDBInstanceEngineVersionResponse.h>
+#include <tencentcloud/cdb/v20170320/model/UpgradeRoGroupRequest.h>
+#include <tencentcloud/cdb/v20170320/model/UpgradeRoGroupResponse.h>
 #include <tencentcloud/cdb/v20170320/model/VerifyRootAccountRequest.h>
 #include <tencentcloud/cdb/v20170320/model/VerifyRootAccountResponse.h>
 
@@ -914,6 +916,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpgradeDBInstanceEngineVersionResponse> UpgradeDBInstanceEngineVersionOutcome;
                 typedef std::future<UpgradeDBInstanceEngineVersionOutcome> UpgradeDBInstanceEngineVersionOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::UpgradeDBInstanceEngineVersionRequest&, UpgradeDBInstanceEngineVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBInstanceEngineVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpgradeRoGroupResponse> UpgradeRoGroupOutcome;
+                typedef std::future<UpgradeRoGroupOutcome> UpgradeRoGroupOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::UpgradeRoGroupRequest&, UpgradeRoGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeRoGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::VerifyRootAccountResponse> VerifyRootAccountOutcome;
                 typedef std::future<VerifyRootAccountOutcome> VerifyRootAccountOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::VerifyRootAccountRequest&, VerifyRootAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyRootAccountAsyncHandler;
@@ -2555,6 +2560,15 @@ namespace TencentCloud
                 UpgradeDBInstanceEngineVersionOutcome UpgradeDBInstanceEngineVersion(const Model::UpgradeDBInstanceEngineVersionRequest &request);
                 void UpgradeDBInstanceEngineVersionAsync(const Model::UpgradeDBInstanceEngineVersionRequest& request, const UpgradeDBInstanceEngineVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpgradeDBInstanceEngineVersionOutcomeCallable UpgradeDBInstanceEngineVersionCallable(const Model::UpgradeDBInstanceEngineVersionRequest& request);
+
+                /**
+                 *该接口（UpgradeRoGroup）用于只读组升级为纯网络转发模式。
+                 * @param req UpgradeRoGroupRequest
+                 * @return UpgradeRoGroupOutcome
+                 */
+                UpgradeRoGroupOutcome UpgradeRoGroup(const Model::UpgradeRoGroupRequest &request);
+                void UpgradeRoGroupAsync(const Model::UpgradeRoGroupRequest& request, const UpgradeRoGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeRoGroupOutcomeCallable UpgradeRoGroupCallable(const Model::UpgradeRoGroupRequest& request);
 
                 /**
                  *本接口(VerifyRootAccount)用于校验云数据库实例的 ROOT 账号是否有足够的权限进行授权操作。

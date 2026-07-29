@@ -195,6 +195,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/RangeOriginPullParameters.h
   include/tencentcloud/teo/v20220901/model/ApplyFreeCertificateResponse.h
   include/tencentcloud/teo/v20220901/model/CurrentOriginACL.h
+  include/tencentcloud/teo/v20220901/model/DescribeIPGroupReferencesResponse.h
   include/tencentcloud/teo/v20220901/model/CreateEdgeKVNamespaceRequest.h
   include/tencentcloud/teo/v20220901/model/SecurityConfig.h
   include/tencentcloud/teo/v20220901/model/CreateSecurityIPGroupRequest.h
@@ -567,7 +568,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/InferenceEnvironmentVariable.h
   include/tencentcloud/teo/v20220901/model/CreatePlanResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeApplicationProxiesRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeContentQuotaRequest.h
+  include/tencentcloud/teo/v20220901/model/DescribeIPGroupReferencesRequest.h
   include/tencentcloud/teo/v20220901/model/AllowActionParameters.h
   include/tencentcloud/teo/v20220901/model/LogItem.h
   include/tencentcloud/teo/v20220901/model/InferenceResourceConfigForModify.h
@@ -742,6 +743,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeMultiPathGatewaySecretKeyRequest.h
   include/tencentcloud/teo/v20220901/model/DDoSBlockData.h
   include/tencentcloud/teo/v20220901/model/IPSSLSetting.h
+  include/tencentcloud/teo/v20220901/model/DescribeContentQuotaRequest.h
   include/tencentcloud/teo/v20220901/model/ModifyFunctionReplicaRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeMultiPathGatewaysRequest.h
   include/tencentcloud/teo/v20220901/model/BotPortraitRule.h
@@ -812,6 +814,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeDefaultCertificatesResponse.h
   include/tencentcloud/teo/v20220901/model/CreateOriginGroupResponse.h
   include/tencentcloud/teo/v20220901/model/CreateMultiPathGatewayLineRequest.h
+  include/tencentcloud/teo/v20220901/model/IPGroupReference.h
   include/tencentcloud/teo/v20220901/model/CreateContentIdentifierResponse.h
   include/tencentcloud/teo/v20220901/model/HostHeaderParameters.h
   include/tencentcloud/teo/v20220901/model/DescribeConfigGroupVersionsRequest.h
@@ -1058,6 +1061,7 @@ set(teo_src
   src/v20220901/model/RangeOriginPullParameters.cpp
   src/v20220901/model/ApplyFreeCertificateResponse.cpp
   src/v20220901/model/CurrentOriginACL.cpp
+  src/v20220901/model/DescribeIPGroupReferencesResponse.cpp
   src/v20220901/model/CreateEdgeKVNamespaceRequest.cpp
   src/v20220901/model/SecurityConfig.cpp
   src/v20220901/model/CreateSecurityIPGroupRequest.cpp
@@ -1430,7 +1434,7 @@ set(teo_src
   src/v20220901/model/InferenceEnvironmentVariable.cpp
   src/v20220901/model/CreatePlanResponse.cpp
   src/v20220901/model/DescribeApplicationProxiesRequest.cpp
-  src/v20220901/model/DescribeContentQuotaRequest.cpp
+  src/v20220901/model/DescribeIPGroupReferencesRequest.cpp
   src/v20220901/model/AllowActionParameters.cpp
   src/v20220901/model/LogItem.cpp
   src/v20220901/model/InferenceResourceConfigForModify.cpp
@@ -1605,6 +1609,7 @@ set(teo_src
   src/v20220901/model/DescribeMultiPathGatewaySecretKeyRequest.cpp
   src/v20220901/model/DDoSBlockData.cpp
   src/v20220901/model/IPSSLSetting.cpp
+  src/v20220901/model/DescribeContentQuotaRequest.cpp
   src/v20220901/model/ModifyFunctionReplicaRequest.cpp
   src/v20220901/model/DescribeMultiPathGatewaysRequest.cpp
   src/v20220901/model/BotPortraitRule.cpp
@@ -1675,6 +1680,7 @@ set(teo_src
   src/v20220901/model/DescribeDefaultCertificatesResponse.cpp
   src/v20220901/model/CreateOriginGroupResponse.cpp
   src/v20220901/model/CreateMultiPathGatewayLineRequest.cpp
+  src/v20220901/model/IPGroupReference.cpp
   src/v20220901/model/CreateContentIdentifierResponse.cpp
   src/v20220901/model/HostHeaderParameters.cpp
   src/v20220901/model/DescribeConfigGroupVersionsRequest.cpp

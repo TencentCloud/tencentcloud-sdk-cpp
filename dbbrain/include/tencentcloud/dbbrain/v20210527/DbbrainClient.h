@@ -41,6 +41,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportTaskResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportUrlRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportUrlResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportUrlsRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportUrlsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateIgnoreDiagRecordRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateIgnoreDiagRecordResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateKillTaskRequest.h>
@@ -99,6 +101,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagReportContentResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagReportTasksRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagReportTasksResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeDBInstancesRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeDBInstancesResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBPerfTimeSeriesRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBPerfTimeSeriesResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBSpaceStatusRequest.h>
@@ -244,6 +248,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDBDiagReportUrlResponse> CreateDBDiagReportUrlOutcome;
                 typedef std::future<CreateDBDiagReportUrlOutcome> CreateDBDiagReportUrlOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CreateDBDiagReportUrlRequest&, CreateDBDiagReportUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBDiagReportUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDBDiagReportUrlsResponse> CreateDBDiagReportUrlsOutcome;
+                typedef std::future<CreateDBDiagReportUrlsOutcome> CreateDBDiagReportUrlsOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::CreateDBDiagReportUrlsRequest&, CreateDBDiagReportUrlsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBDiagReportUrlsAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateIgnoreDiagRecordResponse> CreateIgnoreDiagRecordOutcome;
                 typedef std::future<CreateIgnoreDiagRecordOutcome> CreateIgnoreDiagRecordOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CreateIgnoreDiagRecordRequest&, CreateIgnoreDiagRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIgnoreDiagRecordAsyncHandler;
@@ -331,6 +338,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBDiagReportTasksResponse> DescribeDBDiagReportTasksOutcome;
                 typedef std::future<DescribeDBDiagReportTasksOutcome> DescribeDBDiagReportTasksOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDBDiagReportTasksRequest&, DescribeDBDiagReportTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBDiagReportTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBInstancesResponse> DescribeDBInstancesOutcome;
+                typedef std::future<DescribeDBInstancesOutcome> DescribeDBInstancesOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeDBInstancesRequest&, DescribeDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBPerfTimeSeriesResponse> DescribeDBPerfTimeSeriesOutcome;
                 typedef std::future<DescribeDBPerfTimeSeriesOutcome> DescribeDBPerfTimeSeriesOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDBPerfTimeSeriesRequest&, DescribeDBPerfTimeSeriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBPerfTimeSeriesAsyncHandler;
@@ -570,6 +580,15 @@ namespace TencentCloud
                 CreateDBDiagReportUrlOutcome CreateDBDiagReportUrl(const Model::CreateDBDiagReportUrlRequest &request);
                 void CreateDBDiagReportUrlAsync(const Model::CreateDBDiagReportUrlRequest& request, const CreateDBDiagReportUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDBDiagReportUrlOutcomeCallable CreateDBDiagReportUrlCallable(const Model::CreateDBDiagReportUrlRequest& request);
+
+                /**
+                 *批量创建健康报告的PDF下载链接，支持一次获取多个报告的下载地址。
+                 * @param req CreateDBDiagReportUrlsRequest
+                 * @return CreateDBDiagReportUrlsOutcome
+                 */
+                CreateDBDiagReportUrlsOutcome CreateDBDiagReportUrls(const Model::CreateDBDiagReportUrlsRequest &request);
+                void CreateDBDiagReportUrlsAsync(const Model::CreateDBDiagReportUrlsRequest& request, const CreateDBDiagReportUrlsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDBDiagReportUrlsOutcomeCallable CreateDBDiagReportUrlsCallable(const Model::CreateDBDiagReportUrlsRequest& request);
 
                 /**
                  *对实例的某个诊断项设置忽略或取消忽略状态。
@@ -831,6 +850,15 @@ namespace TencentCloud
                 DescribeDBDiagReportTasksOutcome DescribeDBDiagReportTasks(const Model::DescribeDBDiagReportTasksRequest &request);
                 void DescribeDBDiagReportTasksAsync(const Model::DescribeDBDiagReportTasksRequest& request, const DescribeDBDiagReportTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBDiagReportTasksOutcomeCallable DescribeDBDiagReportTasksCallable(const Model::DescribeDBDiagReportTasksRequest& request);
+
+                /**
+                 *根据实例ID列表查询数据库实例基本信息，支持跨产品查询（MySQL、CynosDB、MariaDB、DCDB、MongoDB、PostgreSQL、Redis、TDStore等）。不支持分页，通过InstanceIds限制查询数量（最多100条）。
+                 * @param req DescribeDBInstancesRequest
+                 * @return DescribeDBInstancesOutcome
+                 */
+                DescribeDBInstancesOutcome DescribeDBInstances(const Model::DescribeDBInstancesRequest &request);
+                void DescribeDBInstancesAsync(const Model::DescribeDBInstancesRequest& request, const DescribeDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBInstancesOutcomeCallable DescribeDBInstancesCallable(const Model::DescribeDBInstancesRequest& request);
 
                 /**
                  *根据实例ID获取指定时间段的性能趋势。

@@ -490,6 +490,56 @@ DbbrainClient::CreateDBDiagReportUrlOutcomeCallable DbbrainClient::CreateDBDiagR
     return prom->get_future();
 }
 
+DbbrainClient::CreateDBDiagReportUrlsOutcome DbbrainClient::CreateDBDiagReportUrls(const CreateDBDiagReportUrlsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDBDiagReportUrls");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDBDiagReportUrlsResponse rsp = CreateDBDiagReportUrlsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDBDiagReportUrlsOutcome(rsp);
+        else
+            return CreateDBDiagReportUrlsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDBDiagReportUrlsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::CreateDBDiagReportUrlsAsync(const CreateDBDiagReportUrlsRequest& request, const CreateDBDiagReportUrlsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateDBDiagReportUrlsRequest&;
+    using Resp = CreateDBDiagReportUrlsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateDBDiagReportUrls", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbbrainClient::CreateDBDiagReportUrlsOutcomeCallable DbbrainClient::CreateDBDiagReportUrlsCallable(const CreateDBDiagReportUrlsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateDBDiagReportUrlsOutcome>>();
+    CreateDBDiagReportUrlsAsync(
+    request,
+    [prom](
+        const DbbrainClient*,
+        const CreateDBDiagReportUrlsRequest&,
+        CreateDBDiagReportUrlsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbbrainClient::CreateIgnoreDiagRecordOutcome DbbrainClient::CreateIgnoreDiagRecord(const CreateIgnoreDiagRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateIgnoreDiagRecord");
@@ -1932,6 +1982,56 @@ DbbrainClient::DescribeDBDiagReportTasksOutcomeCallable DbbrainClient::DescribeD
         const DbbrainClient*,
         const DescribeDBDiagReportTasksRequest&,
         DescribeDBDiagReportTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbbrainClient::DescribeDBInstancesOutcome DbbrainClient::DescribeDBInstances(const DescribeDBInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBInstancesResponse rsp = DescribeDBInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBInstancesOutcome(rsp);
+        else
+            return DescribeDBInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBInstancesOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeDBInstancesAsync(const DescribeDBInstancesRequest& request, const DescribeDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBInstancesRequest&;
+    using Resp = DescribeDBInstancesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbbrainClient::DescribeDBInstancesOutcomeCallable DbbrainClient::DescribeDBInstancesCallable(const DescribeDBInstancesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBInstancesOutcome>>();
+    DescribeDBInstancesAsync(
+    request,
+    [prom](
+        const DbbrainClient*,
+        const DescribeDBInstancesRequest&,
+        DescribeDBInstancesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

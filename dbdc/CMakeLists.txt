@@ -20,147 +20,199 @@ set(dbdc_public_header
 
 set(dbdc_public_header_model
   include/tencentcloud/dbdc/v20201029/model/IsolateDBCustomNodeRequest.h
-  include/tencentcloud/dbdc/v20201029/model/SystemDisk.h
-  include/tencentcloud/dbdc/v20201029/model/RemoveNodesFromDBCustomClusterRequest.h
-  include/tencentcloud/dbdc/v20201029/model/HostDetail.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterDetailResponse.h
-  include/tencentcloud/dbdc/v20201029/model/Label.h
-  include/tencentcloud/dbdc/v20201029/model/LoginSettings.h
-  include/tencentcloud/dbdc/v20201029/model/DBCustomImage.h
-  include/tencentcloud/dbdc/v20201029/model/DBCustomClusterNode.h
   include/tencentcloud/dbdc/v20201029/model/DestroyDBCustomClusterRequest.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterResourcesRequest.h
+  include/tencentcloud/dbdc/v20201029/model/ModifyInstanceNameRequest.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterNodeConfigResponse.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeInstancesResponse.h
+  include/tencentcloud/dbdc/v20201029/model/SystemDisk.h
+  include/tencentcloud/dbdc/v20201029/model/DBCustomNodeTypeInfo.h
+  include/tencentcloud/dbdc/v20201029/model/ModifyInstanceNameResponse.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterNodeConfigRequest.h
+  include/tencentcloud/dbdc/v20201029/model/CreateDBCustomClusterResponse.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomImagesRequest.h
+  include/tencentcloud/dbdc/v20201029/model/ZoneInfo.h
+  include/tencentcloud/dbdc/v20201029/model/Tag.h
+  include/tencentcloud/dbdc/v20201029/model/DBCustomClusterNodeResource.h
+  include/tencentcloud/dbdc/v20201029/model/CreateDBCustomClusterRequest.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeInstanceListResponse.h
+  include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeSecurityGroupsResponse.h
+  include/tencentcloud/dbdc/v20201029/model/Label.h
+  include/tencentcloud/dbdc/v20201029/model/RemoveNodesFromDBCustomClusterResponse.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomNodesResponse.h
-  include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterTagsResponse.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterResourcesResponse.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterNodesRequest.h
-  include/tencentcloud/dbdc/v20201029/model/DescribeInstanceDetail.h
-  include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomTaskStatusRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeInstanceListRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClustersRequest.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeDBInstancesRequest.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomNodeTypesResponse.h
+  include/tencentcloud/dbdc/v20201029/model/AddNodesToDBCustomClusterRequest.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeHostListResponse.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomRegionsRequest.h
+  include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterTagsRequest.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomTaskStatusResponse.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeInstanceDetailResponse.h
+  include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterNodeConfigResponse.h
+  include/tencentcloud/dbdc/v20201029/model/DBInstanceDetail.h
+  include/tencentcloud/dbdc/v20201029/model/Taint.h
+  include/tencentcloud/dbdc/v20201029/model/DestroyDBCustomNodeRequest.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomZonesRequest.h
+  include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterNodeConfigRequest.h
+  include/tencentcloud/dbdc/v20201029/model/HostDetail.h
+  include/tencentcloud/dbdc/v20201029/model/CheckRoleAuthorizedRequest.h
+  include/tencentcloud/dbdc/v20201029/model/CreateDBCustomNodesRequest.h
+  include/tencentcloud/dbdc/v20201029/model/RenewDBCustomNodeResponse.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomImagesResponse.h
+  include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeTagsResponse.h
+  include/tencentcloud/dbdc/v20201029/model/AddNodesToDBCustomClusterResponse.h
+  include/tencentcloud/dbdc/v20201029/model/DestroyDBCustomClusterResponse.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterNodeResourcesRequest.h
+  include/tencentcloud/dbdc/v20201029/model/ResourceTag.h
+  include/tencentcloud/dbdc/v20201029/model/DataDisk.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomNodeTypesRequest.h
+  include/tencentcloud/dbdc/v20201029/model/LoginSettings.h
+  include/tencentcloud/dbdc/v20201029/model/SecurityGroup.h
+  include/tencentcloud/dbdc/v20201029/model/DBCustomImage.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterNodeResourcesResponse.h
+  include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterTagsResponse.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomRegionsResponse.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeInstanceDetail.h
   include/tencentcloud/dbdc/v20201029/model/InstanceDeviceInfo.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterKubeconfigRequest.h
-  include/tencentcloud/dbdc/v20201029/model/DestroyDBCustomNodeResponse.h
-  include/tencentcloud/dbdc/v20201029/model/DescribeDBInstancesRequest.h
-  include/tencentcloud/dbdc/v20201029/model/AddNodesToDBCustomClusterRequest.h
-  include/tencentcloud/dbdc/v20201029/model/ModifyInstanceNameRequest.h
-  include/tencentcloud/dbdc/v20201029/model/DescribeHostListResponse.h
-  include/tencentcloud/dbdc/v20201029/model/ApiServerNetwork.h
-  include/tencentcloud/dbdc/v20201029/model/ResourceTag.h
+  include/tencentcloud/dbdc/v20201029/model/RemoveNodesFromDBCustomClusterRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClustersResponse.h
-  include/tencentcloud/dbdc/v20201029/model/IsolateDBCustomNodeResponse.h
-  include/tencentcloud/dbdc/v20201029/model/DescribeDBInstancesResponse.h
-  include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomTaskStatusResponse.h
-  include/tencentcloud/dbdc/v20201029/model/CreateDBCustomNodesResponse.h
-  include/tencentcloud/dbdc/v20201029/model/DescribeInstancesResponse.h
-  include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterTagsRequest.h
-  include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeTagsRequest.h
   include/tencentcloud/dbdc/v20201029/model/CheckRoleAuthorizedResponse.h
-  include/tencentcloud/dbdc/v20201029/model/DescribeInstanceDetailResponse.h
+  include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeTagsRequest.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterDetailRequest.h
+  include/tencentcloud/dbdc/v20201029/model/RenewDBCustomNodeRequest.h
+  include/tencentcloud/dbdc/v20201029/model/Filter.h
+  include/tencentcloud/dbdc/v20201029/model/IsolateDBCustomNodeResponse.h
+  include/tencentcloud/dbdc/v20201029/model/DBCustomClusterNodeConfig.h
+  include/tencentcloud/dbdc/v20201029/model/MetaResource.h
+  include/tencentcloud/dbdc/v20201029/model/DBCustomNode.h
+  include/tencentcloud/dbdc/v20201029/model/DBCustomClusterNode.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomNodeSecurityGroupsResponse.h
+  include/tencentcloud/dbdc/v20201029/model/DestroyDBCustomNodeResponse.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomTaskStatusRequest.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeInstancesRequest.h
+  include/tencentcloud/dbdc/v20201029/model/ApiServerNetwork.h
+  include/tencentcloud/dbdc/v20201029/model/RegionInfo.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomZonesResponse.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeDBInstancesResponse.h
+  include/tencentcloud/dbdc/v20201029/model/CreateDBCustomNodesResponse.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomNodeSecurityGroupsRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterNodesResponse.h
   include/tencentcloud/dbdc/v20201029/model/DescribeInstanceDetailRequest.h
-  include/tencentcloud/dbdc/v20201029/model/DescribeInstancesRequest.h
-  include/tencentcloud/dbdc/v20201029/model/DBInstanceDetail.h
-  include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterDetailRequest.h
-  include/tencentcloud/dbdc/v20201029/model/ModifyInstanceNameResponse.h
-  include/tencentcloud/dbdc/v20201029/model/DestroyDBCustomNodeRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterKubeconfigResponse.h
-  include/tencentcloud/dbdc/v20201029/model/Filter.h
   include/tencentcloud/dbdc/v20201029/model/ContainerNetwork.h
-  include/tencentcloud/dbdc/v20201029/model/RenewDBCustomNodeRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeHostListRequest.h
-  include/tencentcloud/dbdc/v20201029/model/CheckRoleAuthorizedRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomNodesRequest.h
-  include/tencentcloud/dbdc/v20201029/model/CreateDBCustomNodesRequest.h
   include/tencentcloud/dbdc/v20201029/model/InstanceExpand.h
-  include/tencentcloud/dbdc/v20201029/model/RenewDBCustomNodeResponse.h
-  include/tencentcloud/dbdc/v20201029/model/Taint.h
-  include/tencentcloud/dbdc/v20201029/model/DescribeInstanceListResponse.h
   include/tencentcloud/dbdc/v20201029/model/DBCustomCluster.h
-  include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomImagesResponse.h
-  include/tencentcloud/dbdc/v20201029/model/CreateDBCustomClusterResponse.h
-  include/tencentcloud/dbdc/v20201029/model/RemoveNodesFromDBCustomClusterResponse.h
-  include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomImagesRequest.h
   include/tencentcloud/dbdc/v20201029/model/DeviceInfo.h
+  include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeSecurityGroupsRequest.h
+  include/tencentcloud/dbdc/v20201029/model/PolicyRule.h
   include/tencentcloud/dbdc/v20201029/model/InstanceDetail.h
-  include/tencentcloud/dbdc/v20201029/model/AddNodesToDBCustomClusterResponse.h
-  include/tencentcloud/dbdc/v20201029/model/Tag.h
-  include/tencentcloud/dbdc/v20201029/model/DestroyDBCustomClusterResponse.h
-  include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeTagsResponse.h
-  include/tencentcloud/dbdc/v20201029/model/CreateDBCustomClusterRequest.h
-  include/tencentcloud/dbdc/v20201029/model/DBCustomNode.h
-  include/tencentcloud/dbdc/v20201029/model/DataDisk.h
   )
 
 set(dbdc_src
   src/v20201029/DbdcClient.cpp
   src/v20201029/model/IsolateDBCustomNodeRequest.cpp
-  src/v20201029/model/SystemDisk.cpp
-  src/v20201029/model/RemoveNodesFromDBCustomClusterRequest.cpp
-  src/v20201029/model/HostDetail.cpp
   src/v20201029/model/DescribeDBCustomClusterDetailResponse.cpp
-  src/v20201029/model/Label.cpp
-  src/v20201029/model/LoginSettings.cpp
-  src/v20201029/model/DBCustomImage.cpp
-  src/v20201029/model/DBCustomClusterNode.cpp
   src/v20201029/model/DestroyDBCustomClusterRequest.cpp
+  src/v20201029/model/DescribeDBCustomClusterResourcesRequest.cpp
+  src/v20201029/model/ModifyInstanceNameRequest.cpp
+  src/v20201029/model/DescribeDBCustomClusterNodeConfigResponse.cpp
+  src/v20201029/model/DescribeInstancesResponse.cpp
+  src/v20201029/model/SystemDisk.cpp
+  src/v20201029/model/DBCustomNodeTypeInfo.cpp
+  src/v20201029/model/ModifyInstanceNameResponse.cpp
+  src/v20201029/model/DescribeDBCustomClusterNodeConfigRequest.cpp
+  src/v20201029/model/CreateDBCustomClusterResponse.cpp
+  src/v20201029/model/DescribeDBCustomImagesRequest.cpp
+  src/v20201029/model/ZoneInfo.cpp
+  src/v20201029/model/Tag.cpp
+  src/v20201029/model/DBCustomClusterNodeResource.cpp
+  src/v20201029/model/CreateDBCustomClusterRequest.cpp
+  src/v20201029/model/DescribeInstanceListResponse.cpp
+  src/v20201029/model/ModifyDBCustomNodeSecurityGroupsResponse.cpp
+  src/v20201029/model/Label.cpp
+  src/v20201029/model/RemoveNodesFromDBCustomClusterResponse.cpp
   src/v20201029/model/DescribeDBCustomNodesResponse.cpp
-  src/v20201029/model/ModifyDBCustomClusterTagsResponse.cpp
+  src/v20201029/model/DescribeDBCustomClusterResourcesResponse.cpp
   src/v20201029/model/DescribeDBCustomClusterNodesRequest.cpp
-  src/v20201029/model/DescribeInstanceDetail.cpp
-  src/v20201029/model/DescribeDBCustomTaskStatusRequest.cpp
   src/v20201029/model/DescribeInstanceListRequest.cpp
   src/v20201029/model/DescribeDBCustomClustersRequest.cpp
+  src/v20201029/model/DescribeDBInstancesRequest.cpp
+  src/v20201029/model/DescribeDBCustomNodeTypesResponse.cpp
+  src/v20201029/model/AddNodesToDBCustomClusterRequest.cpp
+  src/v20201029/model/DescribeHostListResponse.cpp
+  src/v20201029/model/DescribeDBCustomRegionsRequest.cpp
+  src/v20201029/model/ModifyDBCustomClusterTagsRequest.cpp
+  src/v20201029/model/DescribeDBCustomTaskStatusResponse.cpp
+  src/v20201029/model/DescribeInstanceDetailResponse.cpp
+  src/v20201029/model/ModifyDBCustomClusterNodeConfigResponse.cpp
+  src/v20201029/model/DBInstanceDetail.cpp
+  src/v20201029/model/Taint.cpp
+  src/v20201029/model/DestroyDBCustomNodeRequest.cpp
+  src/v20201029/model/DescribeDBCustomZonesRequest.cpp
+  src/v20201029/model/ModifyDBCustomClusterNodeConfigRequest.cpp
+  src/v20201029/model/HostDetail.cpp
+  src/v20201029/model/CheckRoleAuthorizedRequest.cpp
+  src/v20201029/model/CreateDBCustomNodesRequest.cpp
+  src/v20201029/model/RenewDBCustomNodeResponse.cpp
+  src/v20201029/model/DescribeDBCustomImagesResponse.cpp
+  src/v20201029/model/ModifyDBCustomNodeTagsResponse.cpp
+  src/v20201029/model/AddNodesToDBCustomClusterResponse.cpp
+  src/v20201029/model/DestroyDBCustomClusterResponse.cpp
+  src/v20201029/model/DescribeDBCustomClusterNodeResourcesRequest.cpp
+  src/v20201029/model/ResourceTag.cpp
+  src/v20201029/model/DataDisk.cpp
+  src/v20201029/model/DescribeDBCustomNodeTypesRequest.cpp
+  src/v20201029/model/LoginSettings.cpp
+  src/v20201029/model/SecurityGroup.cpp
+  src/v20201029/model/DBCustomImage.cpp
+  src/v20201029/model/DescribeDBCustomClusterNodeResourcesResponse.cpp
+  src/v20201029/model/ModifyDBCustomClusterTagsResponse.cpp
+  src/v20201029/model/DescribeDBCustomRegionsResponse.cpp
+  src/v20201029/model/DescribeInstanceDetail.cpp
   src/v20201029/model/InstanceDeviceInfo.cpp
   src/v20201029/model/DescribeDBCustomClusterKubeconfigRequest.cpp
-  src/v20201029/model/DestroyDBCustomNodeResponse.cpp
-  src/v20201029/model/DescribeDBInstancesRequest.cpp
-  src/v20201029/model/AddNodesToDBCustomClusterRequest.cpp
-  src/v20201029/model/ModifyInstanceNameRequest.cpp
-  src/v20201029/model/DescribeHostListResponse.cpp
-  src/v20201029/model/ApiServerNetwork.cpp
-  src/v20201029/model/ResourceTag.cpp
+  src/v20201029/model/RemoveNodesFromDBCustomClusterRequest.cpp
   src/v20201029/model/DescribeDBCustomClustersResponse.cpp
-  src/v20201029/model/IsolateDBCustomNodeResponse.cpp
-  src/v20201029/model/DescribeDBInstancesResponse.cpp
-  src/v20201029/model/DescribeDBCustomTaskStatusResponse.cpp
-  src/v20201029/model/CreateDBCustomNodesResponse.cpp
-  src/v20201029/model/DescribeInstancesResponse.cpp
-  src/v20201029/model/ModifyDBCustomClusterTagsRequest.cpp
-  src/v20201029/model/ModifyDBCustomNodeTagsRequest.cpp
   src/v20201029/model/CheckRoleAuthorizedResponse.cpp
-  src/v20201029/model/DescribeInstanceDetailResponse.cpp
+  src/v20201029/model/ModifyDBCustomNodeTagsRequest.cpp
+  src/v20201029/model/DescribeDBCustomClusterDetailRequest.cpp
+  src/v20201029/model/RenewDBCustomNodeRequest.cpp
+  src/v20201029/model/Filter.cpp
+  src/v20201029/model/IsolateDBCustomNodeResponse.cpp
+  src/v20201029/model/DBCustomClusterNodeConfig.cpp
+  src/v20201029/model/MetaResource.cpp
+  src/v20201029/model/DBCustomNode.cpp
+  src/v20201029/model/DBCustomClusterNode.cpp
+  src/v20201029/model/DescribeDBCustomNodeSecurityGroupsResponse.cpp
+  src/v20201029/model/DestroyDBCustomNodeResponse.cpp
+  src/v20201029/model/DescribeDBCustomTaskStatusRequest.cpp
+  src/v20201029/model/DescribeInstancesRequest.cpp
+  src/v20201029/model/ApiServerNetwork.cpp
+  src/v20201029/model/RegionInfo.cpp
+  src/v20201029/model/DescribeDBCustomZonesResponse.cpp
+  src/v20201029/model/DescribeDBInstancesResponse.cpp
+  src/v20201029/model/CreateDBCustomNodesResponse.cpp
+  src/v20201029/model/DescribeDBCustomNodeSecurityGroupsRequest.cpp
   src/v20201029/model/DescribeDBCustomClusterNodesResponse.cpp
   src/v20201029/model/DescribeInstanceDetailRequest.cpp
-  src/v20201029/model/DescribeInstancesRequest.cpp
-  src/v20201029/model/DBInstanceDetail.cpp
-  src/v20201029/model/DescribeDBCustomClusterDetailRequest.cpp
-  src/v20201029/model/ModifyInstanceNameResponse.cpp
-  src/v20201029/model/DestroyDBCustomNodeRequest.cpp
   src/v20201029/model/DescribeDBCustomClusterKubeconfigResponse.cpp
-  src/v20201029/model/Filter.cpp
   src/v20201029/model/ContainerNetwork.cpp
-  src/v20201029/model/RenewDBCustomNodeRequest.cpp
   src/v20201029/model/DescribeHostListRequest.cpp
-  src/v20201029/model/CheckRoleAuthorizedRequest.cpp
   src/v20201029/model/DescribeDBCustomNodesRequest.cpp
-  src/v20201029/model/CreateDBCustomNodesRequest.cpp
   src/v20201029/model/InstanceExpand.cpp
-  src/v20201029/model/RenewDBCustomNodeResponse.cpp
-  src/v20201029/model/Taint.cpp
-  src/v20201029/model/DescribeInstanceListResponse.cpp
   src/v20201029/model/DBCustomCluster.cpp
-  src/v20201029/model/DescribeDBCustomImagesResponse.cpp
-  src/v20201029/model/CreateDBCustomClusterResponse.cpp
-  src/v20201029/model/RemoveNodesFromDBCustomClusterResponse.cpp
-  src/v20201029/model/DescribeDBCustomImagesRequest.cpp
   src/v20201029/model/DeviceInfo.cpp
+  src/v20201029/model/ModifyDBCustomNodeSecurityGroupsRequest.cpp
+  src/v20201029/model/PolicyRule.cpp
   src/v20201029/model/InstanceDetail.cpp
-  src/v20201029/model/AddNodesToDBCustomClusterResponse.cpp
-  src/v20201029/model/Tag.cpp
-  src/v20201029/model/DestroyDBCustomClusterResponse.cpp
-  src/v20201029/model/ModifyDBCustomNodeTagsResponse.cpp
-  src/v20201029/model/CreateDBCustomClusterRequest.cpp
-  src/v20201029/model/DBCustomNode.cpp
-  src/v20201029/model/DataDisk.cpp
   )
 
 set(dbdc_include

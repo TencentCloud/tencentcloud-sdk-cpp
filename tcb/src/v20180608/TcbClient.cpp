@@ -490,6 +490,56 @@ TcbClient::CreateBillDealOutcomeCallable TcbClient::CreateBillDealCallable(const
     return prom->get_future();
 }
 
+TcbClient::CreateCloudAppOutcome TcbClient::CreateCloudApp(const CreateCloudAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudAppResponse rsp = CreateCloudAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudAppOutcome(rsp);
+        else
+            return CreateCloudAppOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudAppOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::CreateCloudAppAsync(const CreateCloudAppRequest& request, const CreateCloudAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCloudAppRequest&;
+    using Resp = CreateCloudAppResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCloudApp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::CreateCloudAppOutcomeCallable TcbClient::CreateCloudAppCallable(const CreateCloudAppRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCloudAppOutcome>>();
+    CreateCloudAppAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const CreateCloudAppRequest&,
+        CreateCloudAppOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::CreateCustomLoginKeyOutcome TcbClient::CreateCustomLoginKey(const CreateCustomLoginKeyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCustomLoginKey");
@@ -1140,6 +1190,106 @@ TcbClient::DeleteAuthDomainOutcomeCallable TcbClient::DeleteAuthDomainCallable(c
     return prom->get_future();
 }
 
+TcbClient::DeleteCloudAppOutcome TcbClient::DeleteCloudApp(const DeleteCloudAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudAppResponse rsp = DeleteCloudAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudAppOutcome(rsp);
+        else
+            return DeleteCloudAppOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudAppOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DeleteCloudAppAsync(const DeleteCloudAppRequest& request, const DeleteCloudAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCloudAppRequest&;
+    using Resp = DeleteCloudAppResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCloudApp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DeleteCloudAppOutcomeCallable TcbClient::DeleteCloudAppCallable(const DeleteCloudAppRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCloudAppOutcome>>();
+    DeleteCloudAppAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DeleteCloudAppRequest&,
+        DeleteCloudAppOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::DeleteCloudAppVersionOutcome TcbClient::DeleteCloudAppVersion(const DeleteCloudAppVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudAppVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudAppVersionResponse rsp = DeleteCloudAppVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudAppVersionOutcome(rsp);
+        else
+            return DeleteCloudAppVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudAppVersionOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DeleteCloudAppVersionAsync(const DeleteCloudAppVersionRequest& request, const DeleteCloudAppVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCloudAppVersionRequest&;
+    using Resp = DeleteCloudAppVersionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCloudAppVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DeleteCloudAppVersionOutcomeCallable TcbClient::DeleteCloudAppVersionCallable(const DeleteCloudAppVersionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCloudAppVersionOutcome>>();
+    DeleteCloudAppVersionAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DeleteCloudAppVersionRequest&,
+        DeleteCloudAppVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::DeleteHTTPServiceRouteOutcome TcbClient::DeleteHTTPServiceRoute(const DeleteHTTPServiceRouteRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteHTTPServiceRoute");
@@ -1690,6 +1840,106 @@ TcbClient::DescribeClientOutcomeCallable TcbClient::DescribeClientCallable(const
     return prom->get_future();
 }
 
+TcbClient::DescribeCloudAppCosInfoOutcome TcbClient::DescribeCloudAppCosInfo(const DescribeCloudAppCosInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudAppCosInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudAppCosInfoResponse rsp = DescribeCloudAppCosInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudAppCosInfoOutcome(rsp);
+        else
+            return DescribeCloudAppCosInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudAppCosInfoOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCloudAppCosInfoAsync(const DescribeCloudAppCosInfoRequest& request, const DescribeCloudAppCosInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudAppCosInfoRequest&;
+    using Resp = DescribeCloudAppCosInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudAppCosInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeCloudAppCosInfoOutcomeCallable TcbClient::DescribeCloudAppCosInfoCallable(const DescribeCloudAppCosInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudAppCosInfoOutcome>>();
+    DescribeCloudAppCosInfoAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCloudAppCosInfoRequest&,
+        DescribeCloudAppCosInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::DescribeCloudAppInfoOutcome TcbClient::DescribeCloudAppInfo(const DescribeCloudAppInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudAppInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudAppInfoResponse rsp = DescribeCloudAppInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudAppInfoOutcome(rsp);
+        else
+            return DescribeCloudAppInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudAppInfoOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCloudAppInfoAsync(const DescribeCloudAppInfoRequest& request, const DescribeCloudAppInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudAppInfoRequest&;
+    using Resp = DescribeCloudAppInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudAppInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeCloudAppInfoOutcomeCallable TcbClient::DescribeCloudAppInfoCallable(const DescribeCloudAppInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudAppInfoOutcome>>();
+    DescribeCloudAppInfoAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCloudAppInfoRequest&,
+        DescribeCloudAppInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::DescribeCloudAppListOutcome TcbClient::DescribeCloudAppList(const DescribeCloudAppListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudAppList");
@@ -1732,6 +1982,106 @@ TcbClient::DescribeCloudAppListOutcomeCallable TcbClient::DescribeCloudAppListCa
         const TcbClient*,
         const DescribeCloudAppListRequest&,
         DescribeCloudAppListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::DescribeCloudAppVersionOutcome TcbClient::DescribeCloudAppVersion(const DescribeCloudAppVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudAppVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudAppVersionResponse rsp = DescribeCloudAppVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudAppVersionOutcome(rsp);
+        else
+            return DescribeCloudAppVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudAppVersionOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCloudAppVersionAsync(const DescribeCloudAppVersionRequest& request, const DescribeCloudAppVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudAppVersionRequest&;
+    using Resp = DescribeCloudAppVersionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudAppVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeCloudAppVersionOutcomeCallable TcbClient::DescribeCloudAppVersionCallable(const DescribeCloudAppVersionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudAppVersionOutcome>>();
+    DescribeCloudAppVersionAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCloudAppVersionRequest&,
+        DescribeCloudAppVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::DescribeCloudAppVersionListOutcome TcbClient::DescribeCloudAppVersionList(const DescribeCloudAppVersionListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudAppVersionList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudAppVersionListResponse rsp = DescribeCloudAppVersionListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudAppVersionListOutcome(rsp);
+        else
+            return DescribeCloudAppVersionListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudAppVersionListOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCloudAppVersionListAsync(const DescribeCloudAppVersionListRequest& request, const DescribeCloudAppVersionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudAppVersionListRequest&;
+    using Resp = DescribeCloudAppVersionListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudAppVersionList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeCloudAppVersionListOutcomeCallable TcbClient::DescribeCloudAppVersionListCallable(const DescribeCloudAppVersionListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudAppVersionListOutcome>>();
+    DescribeCloudAppVersionListAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCloudAppVersionListRequest&,
+        DescribeCloudAppVersionListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

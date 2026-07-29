@@ -24,7 +24,8 @@ using namespace std;
 
 ChangeReplicaToMasterRequest::ChangeReplicaToMasterRequest() :
     m_instanceIdHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+    m_groupIdHasBeenSet(false),
+    m_emergencyHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string ChangeReplicaToMasterRequest::ToJsonString() const
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_groupId, allocator);
+    }
+
+    if (m_emergencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Emergency";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_emergency, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void ChangeReplicaToMasterRequest::SetGroupId(const int64_t& _groupId)
 bool ChangeReplicaToMasterRequest::GroupIdHasBeenSet() const
 {
     return m_groupIdHasBeenSet;
+}
+
+bool ChangeReplicaToMasterRequest::GetEmergency() const
+{
+    return m_emergency;
+}
+
+void ChangeReplicaToMasterRequest::SetEmergency(const bool& _emergency)
+{
+    m_emergency = _emergency;
+    m_emergencyHasBeenSet = true;
+}
+
+bool ChangeReplicaToMasterRequest::EmergencyHasBeenSet() const
+{
+    return m_emergencyHasBeenSet;
 }
 
 

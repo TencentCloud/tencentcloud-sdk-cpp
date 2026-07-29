@@ -27,7 +27,8 @@ UploadUpdateCertificateInstanceRequest::UploadUpdateCertificateInstanceRequest()
     m_resourceTypesHasBeenSet(false),
     m_certificatePublicKeyHasBeenSet(false),
     m_certificatePrivateKeyHasBeenSet(false),
-    m_resourceTypesRegionsHasBeenSet(false)
+    m_resourceTypesRegionsHasBeenSet(false),
+    m_certificateIdHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,14 @@ string UploadUpdateCertificateInstanceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_certificateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertificateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_certificateId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -176,6 +185,22 @@ void UploadUpdateCertificateInstanceRequest::SetResourceTypesRegions(const vecto
 bool UploadUpdateCertificateInstanceRequest::ResourceTypesRegionsHasBeenSet() const
 {
     return m_resourceTypesRegionsHasBeenSet;
+}
+
+string UploadUpdateCertificateInstanceRequest::GetCertificateId() const
+{
+    return m_certificateId;
+}
+
+void UploadUpdateCertificateInstanceRequest::SetCertificateId(const string& _certificateId)
+{
+    m_certificateId = _certificateId;
+    m_certificateIdHasBeenSet = true;
+}
+
+bool UploadUpdateCertificateInstanceRequest::CertificateIdHasBeenSet() const
+{
+    return m_certificateIdHasBeenSet;
 }
 
 

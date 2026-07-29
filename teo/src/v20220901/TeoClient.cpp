@@ -5190,6 +5190,56 @@ TeoClient::DescribeHostsSettingOutcomeCallable TeoClient::DescribeHostsSettingCa
     return prom->get_future();
 }
 
+TeoClient::DescribeIPGroupReferencesOutcome TeoClient::DescribeIPGroupReferences(const DescribeIPGroupReferencesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIPGroupReferences");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIPGroupReferencesResponse rsp = DescribeIPGroupReferencesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIPGroupReferencesOutcome(rsp);
+        else
+            return DescribeIPGroupReferencesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIPGroupReferencesOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeIPGroupReferencesAsync(const DescribeIPGroupReferencesRequest& request, const DescribeIPGroupReferencesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeIPGroupReferencesRequest&;
+    using Resp = DescribeIPGroupReferencesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeIPGroupReferences", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DescribeIPGroupReferencesOutcomeCallable TeoClient::DescribeIPGroupReferencesCallable(const DescribeIPGroupReferencesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeIPGroupReferencesOutcome>>();
+    DescribeIPGroupReferencesAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DescribeIPGroupReferencesRequest&,
+        DescribeIPGroupReferencesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TeoClient::DescribeIPRegionOutcome TeoClient::DescribeIPRegion(const DescribeIPRegionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeIPRegion");

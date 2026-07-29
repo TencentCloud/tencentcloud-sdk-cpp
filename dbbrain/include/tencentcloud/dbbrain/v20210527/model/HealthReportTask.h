@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dbbrain/v20210527/model/InstanceBasicInfo.h>
 #include <tencentcloud/dbbrain/v20210527/model/HealthStatus.h>
+#include <tencentcloud/dbbrain/v20210527/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -49,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取异步任务请求 ID。
-                     * @return AsyncRequestId 异步任务请求 ID。
+                     * 获取<p>异步任务请求 ID。</p>
+                     * @return AsyncRequestId <p>异步任务请求 ID。</p>
                      * 
                      */
                     int64_t GetAsyncRequestId() const;
 
                     /**
-                     * 设置异步任务请求 ID。
-                     * @param _asyncRequestId 异步任务请求 ID。
+                     * 设置<p>异步任务请求 ID。</p>
+                     * @param _asyncRequestId <p>异步任务请求 ID。</p>
                      * 
                      */
                     void SetAsyncRequestId(const int64_t& _asyncRequestId);
@@ -70,15 +71,15 @@ namespace TencentCloud
                     bool AsyncRequestIdHasBeenSet() const;
 
                     /**
-                     * 获取任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 定时生成；"MANUAL" - 手动触发。
-                     * @return Source 任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 定时生成；"MANUAL" - 手动触发。
+                     * 获取<p>任务的触发来源，支持的取值包括：&quot;DAILY_INSPECTION&quot; - 实例巡检；&quot;SCHEDULED&quot; - 定时生成；&quot;MANUAL&quot; - 手动触发。</p>
+                     * @return Source <p>任务的触发来源，支持的取值包括：&quot;DAILY_INSPECTION&quot; - 实例巡检；&quot;SCHEDULED&quot; - 定时生成；&quot;MANUAL&quot; - 手动触发。</p>
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
-                     * 设置任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 定时生成；"MANUAL" - 手动触发。
-                     * @param _source 任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 定时生成；"MANUAL" - 手动触发。
+                     * 设置<p>任务的触发来源，支持的取值包括：&quot;DAILY_INSPECTION&quot; - 实例巡检；&quot;SCHEDULED&quot; - 定时生成；&quot;MANUAL&quot; - 手动触发。</p>
+                     * @param _source <p>任务的触发来源，支持的取值包括：&quot;DAILY_INSPECTION&quot; - 实例巡检；&quot;SCHEDULED&quot; - 定时生成；&quot;MANUAL&quot; - 手动触发。</p>
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -91,15 +92,15 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取任务完成进度，单位%。
-                     * @return Progress 任务完成进度，单位%。
+                     * 获取<p>任务完成进度，单位%。</p>
+                     * @return Progress <p>任务完成进度，单位%。</p>
                      * 
                      */
                     int64_t GetProgress() const;
 
                     /**
-                     * 设置任务完成进度，单位%。
-                     * @param _progress 任务完成进度，单位%。
+                     * 设置<p>任务完成进度，单位%。</p>
+                     * @param _progress <p>任务完成进度，单位%。</p>
                      * 
                      */
                     void SetProgress(const int64_t& _progress);
@@ -112,15 +113,15 @@ namespace TencentCloud
                     bool ProgressHasBeenSet() const;
 
                     /**
-                     * 获取任务创建时间。
-                     * @return CreateTime 任务创建时间。
+                     * 获取<p>任务创建时间，如“2025-09-30 12:13:14”。</p>
+                     * @return CreateTime <p>任务创建时间，如“2025-09-30 12:13:14”。</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置任务创建时间。
-                     * @param _createTime 任务创建时间。
+                     * 设置<p>任务创建时间，如“2025-09-30 12:13:14”。</p>
+                     * @param _createTime <p>任务创建时间，如“2025-09-30 12:13:14”。</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -133,15 +134,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务开始执行时间。
-                     * @return StartTime 任务开始执行时间。
+                     * 获取<p>任务开始执行时间，如“2025-09-30 13:13:14”。</p>
+                     * @return StartTime <p>任务开始执行时间，如“2025-09-30 13:13:14”。</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置任务开始执行时间。
-                     * @param _startTime 任务开始执行时间。
+                     * 设置<p>任务开始执行时间，如“2025-09-30 13:13:14”。</p>
+                     * @param _startTime <p>任务开始执行时间，如“2025-09-30 13:13:14”。</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -154,15 +155,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务完成执行时间。
-                     * @return EndTime 任务完成执行时间。
+                     * 获取<p>任务完成执行时间，如“2025-09-30 14:13:14”。</p>
+                     * @return EndTime <p>任务完成执行时间，如“2025-09-30 14:13:14”。</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置任务完成执行时间。
-                     * @param _endTime 任务完成执行时间。
+                     * 设置<p>任务完成执行时间，如“2025-09-30 14:13:14”。</p>
+                     * @param _endTime <p>任务完成执行时间，如“2025-09-30 14:13:14”。</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -175,15 +176,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务所属实例的基础信息。
-                     * @return InstanceInfo 任务所属实例的基础信息。
+                     * 获取<p>任务所属实例的基础信息。</p>
+                     * @return InstanceInfo <p>任务所属实例的基础信息。</p>
                      * 
                      */
                     InstanceBasicInfo GetInstanceInfo() const;
 
                     /**
-                     * 设置任务所属实例的基础信息。
-                     * @param _instanceInfo 任务所属实例的基础信息。
+                     * 设置<p>任务所属实例的基础信息。</p>
+                     * @param _instanceInfo <p>任务所属实例的基础信息。</p>
                      * 
                      */
                     void SetInstanceInfo(const InstanceBasicInfo& _instanceInfo);
@@ -196,15 +197,15 @@ namespace TencentCloud
                     bool InstanceInfoHasBeenSet() const;
 
                     /**
-                     * 获取健康报告中的健康信息。
-                     * @return HealthStatus 健康报告中的健康信息。
+                     * 获取<p>健康报告中的健康信息。</p>
+                     * @return HealthStatus <p>健康报告中的健康信息。</p>
                      * 
                      */
                     HealthStatus GetHealthStatus() const;
 
                     /**
-                     * 设置健康报告中的健康信息。
-                     * @param _healthStatus 健康报告中的健康信息。
+                     * 设置<p>健康报告中的健康信息。</p>
+                     * @param _healthStatus <p>健康报告中的健康信息。</p>
                      * 
                      */
                     void SetHealthStatus(const HealthStatus& _healthStatus);
@@ -216,55 +217,82 @@ namespace TencentCloud
                      */
                     bool HealthStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>任务所属实例的标签信息</p>
+                     * @return Tags <p>任务所属实例的标签信息</p>
+                     * 
+                     */
+                    std::vector<TagInfo> GetTags() const;
+
+                    /**
+                     * 设置<p>任务所属实例的标签信息</p>
+                     * @param _tags <p>任务所属实例的标签信息</p>
+                     * 
+                     */
+                    void SetTags(const std::vector<TagInfo>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 异步任务请求 ID。
+                     * <p>异步任务请求 ID。</p>
                      */
                     int64_t m_asyncRequestId;
                     bool m_asyncRequestIdHasBeenSet;
 
                     /**
-                     * 任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 定时生成；"MANUAL" - 手动触发。
+                     * <p>任务的触发来源，支持的取值包括：&quot;DAILY_INSPECTION&quot; - 实例巡检；&quot;SCHEDULED&quot; - 定时生成；&quot;MANUAL&quot; - 手动触发。</p>
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 任务完成进度，单位%。
+                     * <p>任务完成进度，单位%。</p>
                      */
                     int64_t m_progress;
                     bool m_progressHasBeenSet;
 
                     /**
-                     * 任务创建时间。
+                     * <p>任务创建时间，如“2025-09-30 12:13:14”。</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 任务开始执行时间。
+                     * <p>任务开始执行时间，如“2025-09-30 13:13:14”。</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 任务完成执行时间。
+                     * <p>任务完成执行时间，如“2025-09-30 14:13:14”。</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 任务所属实例的基础信息。
+                     * <p>任务所属实例的基础信息。</p>
                      */
                     InstanceBasicInfo m_instanceInfo;
                     bool m_instanceInfoHasBeenSet;
 
                     /**
-                     * 健康报告中的健康信息。
+                     * <p>健康报告中的健康信息。</p>
                      */
                     HealthStatus m_healthStatus;
                     bool m_healthStatusHasBeenSet;
+
+                    /**
+                     * <p>任务所属实例的标签信息</p>
+                     */
+                    std::vector<TagInfo> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

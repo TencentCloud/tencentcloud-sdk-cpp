@@ -1117,6 +1117,27 @@ namespace TencentCloud
                      */
                     bool RemarkNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>BiosUUID（启动盘标识符）</p>
+                     * @return BiosUuid <p>BiosUUID（启动盘标识符）</p>
+                     * 
+                     */
+                    std::string GetBiosUuid() const;
+
+                    /**
+                     * 设置<p>BiosUUID（启动盘标识符）</p>
+                     * @param _biosUuid <p>BiosUUID（启动盘标识符）</p>
+                     * 
+                     */
+                    void SetBiosUuid(const std::string& _biosUuid);
+
+                    /**
+                     * 判断参数 BiosUuid 是否已赋值
+                     * @return BiosUuid 是否已赋值
+                     * 
+                     */
+                    bool BiosUuidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1424,6 +1445,12 @@ namespace TencentCloud
                      */
                     std::string m_remarkName;
                     bool m_remarkNameHasBeenSet;
+
+                    /**
+                     * <p>BiosUUID（启动盘标识符）</p>
+                     */
+                    std::string m_biosUuid;
+                    bool m_biosUuidHasBeenSet;
 
                 };
             }

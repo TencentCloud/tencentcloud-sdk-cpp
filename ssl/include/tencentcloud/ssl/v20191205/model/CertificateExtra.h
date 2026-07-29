@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取证书可配置域名数量。
-                     * @return DomainNumber 证书可配置域名数量。
+                     * 获取<p>证书可配置域名数量。</p>
+                     * @return DomainNumber <p>证书可配置域名数量。</p>
                      * 
                      */
                     std::string GetDomainNumber() const;
 
                     /**
-                     * 设置证书可配置域名数量。
-                     * @param _domainNumber 证书可配置域名数量。
+                     * 设置<p>证书可配置域名数量。</p>
+                     * @param _domainNumber <p>证书可配置域名数量。</p>
                      * 
                      */
                     void SetDomainNumber(const std::string& _domainNumber);
@@ -68,18 +68,18 @@ namespace TencentCloud
                     bool DomainNumberHasBeenSet() const;
 
                     /**
-                     * 获取续费原证书 ID。
+                     * 获取<p>续费原证书 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OriginCertificateId 续费原证书 ID。
+                     * @return OriginCertificateId <p>续费原证书 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOriginCertificateId() const;
 
                     /**
-                     * 设置续费原证书 ID。
+                     * 设置<p>续费原证书 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _originCertificateId 续费原证书 ID。
+                     * @param _originCertificateId <p>续费原证书 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -93,18 +93,18 @@ namespace TencentCloud
                     bool OriginCertificateIdHasBeenSet() const;
 
                     /**
-                     * 获取重颁发证书原始 ID。
+                     * 获取<p>重颁发证书原始 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReplacedBy 重颁发证书原始 ID。
+                     * @return ReplacedBy <p>重颁发证书原始 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReplacedBy() const;
 
                     /**
-                     * 设置重颁发证书原始 ID。
+                     * 设置<p>重颁发证书原始 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _replacedBy 重颁发证书原始 ID。
+                     * @param _replacedBy <p>重颁发证书原始 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -118,18 +118,18 @@ namespace TencentCloud
                     bool ReplacedByHasBeenSet() const;
 
                     /**
-                     * 获取重颁发证书ID。
+                     * 获取<p>重颁发证书ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReplacedFor 重颁发证书ID。
+                     * @return ReplacedFor <p>重颁发证书ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReplacedFor() const;
 
                     /**
-                     * 设置重颁发证书ID。
+                     * 设置<p>重颁发证书ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _replacedFor 重颁发证书ID。
+                     * @param _replacedFor <p>重颁发证书ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -143,18 +143,18 @@ namespace TencentCloud
                     bool ReplacedForHasBeenSet() const;
 
                     /**
-                     * 获取续费证书 ID。
+                     * 获取<p>续费证书 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RenewOrder 续费证书 ID。
+                     * @return RenewOrder <p>续费证书 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRenewOrder() const;
 
                     /**
-                     * 设置续费证书 ID。
+                     * 设置<p>续费证书 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _renewOrder 续费证书 ID。
+                     * @param _renewOrder <p>续费证书 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -168,15 +168,15 @@ namespace TencentCloud
                     bool RenewOrderHasBeenSet() const;
 
                     /**
-                     * 获取是否是国密证书
-                     * @return SMCert 是否是国密证书
+                     * 获取<p>是否是国密证书</p>
+                     * @return SMCert <p>是否是国密证书</p>
                      * 
                      */
                     int64_t GetSMCert() const;
 
                     /**
-                     * 设置是否是国密证书
-                     * @param _sMCert 是否是国密证书
+                     * 设置<p>是否是国密证书</p>
+                     * @param _sMCert <p>是否是国密证书</p>
                      * 
                      */
                     void SetSMCert(const int64_t& _sMCert);
@@ -189,15 +189,15 @@ namespace TencentCloud
                     bool SMCertHasBeenSet() const;
 
                     /**
-                     * 获取公司类型，取值：1（个人）；2（公司）
-                     * @return CompanyType 公司类型，取值：1（个人）；2（公司）
+                     * 获取<p>公司类型，取值：1（个人）；2（公司）</p>
+                     * @return CompanyType <p>公司类型，取值：1（个人）；2（公司）</p>
                      * 
                      */
                     int64_t GetCompanyType() const;
 
                     /**
-                     * 设置公司类型，取值：1（个人）；2（公司）
-                     * @param _companyType 公司类型，取值：1（个人）；2（公司）
+                     * 设置<p>公司类型，取值：1（个人）；2（公司）</p>
+                     * @param _companyType <p>公司类型，取值：1（个人）；2（公司）</p>
                      * 
                      */
                     void SetCompanyType(const int64_t& _companyType);
@@ -209,53 +209,107 @@ namespace TencentCloud
                      */
                     bool CompanyTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>下一张订阅服务续期证书ID</p>
+                     * @return ServiceRenewCertificateId <p>下一张订阅服务续期证书ID</p>
+                     * 
+                     */
+                    std::string GetServiceRenewCertificateId() const;
+
+                    /**
+                     * 设置<p>下一张订阅服务续期证书ID</p>
+                     * @param _serviceRenewCertificateId <p>下一张订阅服务续期证书ID</p>
+                     * 
+                     */
+                    void SetServiceRenewCertificateId(const std::string& _serviceRenewCertificateId);
+
+                    /**
+                     * 判断参数 ServiceRenewCertificateId 是否已赋值
+                     * @return ServiceRenewCertificateId 是否已赋值
+                     * 
+                     */
+                    bool ServiceRenewCertificateIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>上一张订阅服务来源证书ID</p>
+                     * @return ServiceOriginCertificateId <p>上一张订阅服务来源证书ID</p>
+                     * 
+                     */
+                    std::string GetServiceOriginCertificateId() const;
+
+                    /**
+                     * 设置<p>上一张订阅服务来源证书ID</p>
+                     * @param _serviceOriginCertificateId <p>上一张订阅服务来源证书ID</p>
+                     * 
+                     */
+                    void SetServiceOriginCertificateId(const std::string& _serviceOriginCertificateId);
+
+                    /**
+                     * 判断参数 ServiceOriginCertificateId 是否已赋值
+                     * @return ServiceOriginCertificateId 是否已赋值
+                     * 
+                     */
+                    bool ServiceOriginCertificateIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 证书可配置域名数量。
+                     * <p>证书可配置域名数量。</p>
                      */
                     std::string m_domainNumber;
                     bool m_domainNumberHasBeenSet;
 
                     /**
-                     * 续费原证书 ID。
+                     * <p>续费原证书 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originCertificateId;
                     bool m_originCertificateIdHasBeenSet;
 
                     /**
-                     * 重颁发证书原始 ID。
+                     * <p>重颁发证书原始 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_replacedBy;
                     bool m_replacedByHasBeenSet;
 
                     /**
-                     * 重颁发证书ID。
+                     * <p>重颁发证书ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_replacedFor;
                     bool m_replacedForHasBeenSet;
 
                     /**
-                     * 续费证书 ID。
+                     * <p>续费证书 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_renewOrder;
                     bool m_renewOrderHasBeenSet;
 
                     /**
-                     * 是否是国密证书
+                     * <p>是否是国密证书</p>
                      */
                     int64_t m_sMCert;
                     bool m_sMCertHasBeenSet;
 
                     /**
-                     * 公司类型，取值：1（个人）；2（公司）
+                     * <p>公司类型，取值：1（个人）；2（公司）</p>
                      */
                     int64_t m_companyType;
                     bool m_companyTypeHasBeenSet;
+
+                    /**
+                     * <p>下一张订阅服务续期证书ID</p>
+                     */
+                    std::string m_serviceRenewCertificateId;
+                    bool m_serviceRenewCertificateIdHasBeenSet;
+
+                    /**
+                     * <p>上一张订阅服务来源证书ID</p>
+                     */
+                    std::string m_serviceOriginCertificateId;
+                    bool m_serviceOriginCertificateIdHasBeenSet;
 
                 };
             }

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取组 Id，创建时填 0 即可。
-                     * @return GroupId 组 Id，创建时填 0 即可。
+                     * 获取<p>IP 组 Id，创建时填 0 即可。</p>
+                     * @return GroupId <p>IP 组 Id，创建时填 0 即可。</p>
                      * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
-                     * 设置组 Id，创建时填 0 即可。
-                     * @param _groupId 组 Id，创建时填 0 即可。
+                     * 设置<p>IP 组 Id，创建时填 0 即可。</p>
+                     * @param _groupId <p>IP 组 Id，创建时填 0 即可。</p>
                      * 
                      */
                     void SetGroupId(const int64_t& _groupId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取组名称。
-                     * @return Name 组名称。
+                     * 获取<p>IP 组名称。</p>
+                     * @return Name <p>IP 组名称。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置组名称。
-                     * @param _name 组名称。
+                     * 设置<p>IP 组名称。</p>
+                     * @param _name <p>IP 组名称。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取IP 组内容，仅支持 IP 及 IP 网段。
-                     * @return Content IP 组内容，仅支持 IP 及 IP 网段。
+                     * 获取<p>IP 组内容，仅支持 IP 及 IP 网段。</p>
+                     * @return Content <p>IP 组内容，仅支持 IP 及 IP 网段。</p>
                      * 
                      */
                     std::vector<std::string> GetContent() const;
 
                     /**
-                     * 设置IP 组内容，仅支持 IP 及 IP 网段。
-                     * @param _content IP 组内容，仅支持 IP 及 IP 网段。
+                     * 设置<p>IP 组内容，仅支持 IP 及 IP 网段。</p>
+                     * @param _content <p>IP 组内容，仅支持 IP 及 IP 网段。</p>
                      * 
                      */
                     void SetContent(const std::vector<std::string>& _content);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取IP 组中正在生效的 IP 或网段个数。作为出参时有效，作为入参时无需填写该字段。
-                     * @return IPTotalCount IP 组中正在生效的 IP 或网段个数。作为出参时有效，作为入参时无需填写该字段。
+                     * 获取<p>IP 组中正在生效的 IP 或网段个数。作为出参时有效，作为入参时无需填写该字段。</p>
+                     * @return IPTotalCount <p>IP 组中正在生效的 IP 或网段个数。作为出参时有效，作为入参时无需填写该字段。</p>
                      * 
                      */
                     int64_t GetIPTotalCount() const;
 
                     /**
-                     * 设置IP 组中正在生效的 IP 或网段个数。作为出参时有效，作为入参时无需填写该字段。
-                     * @param _iPTotalCount IP 组中正在生效的 IP 或网段个数。作为出参时有效，作为入参时无需填写该字段。
+                     * 设置<p>IP 组中正在生效的 IP 或网段个数。作为出参时有效，作为入参时无需填写该字段。</p>
+                     * @param _iPTotalCount <p>IP 组中正在生效的 IP 或网段个数。作为出参时有效，作为入参时无需填写该字段。</p>
                      * 
                      */
                     void SetIPTotalCount(const int64_t& _iPTotalCount);
@@ -132,31 +132,15 @@ namespace TencentCloud
                     bool IPTotalCountHasBeenSet() const;
 
                     /**
-                     * 获取IP 定时过期信息。
-作为入参，用于为指定的 IP 地址或网段配置定时过期时间。
-作为出参，包含以下两类信息：
-<li>当前未到期的定时过期信息：尚未触发的过期配置。</li>
-<li>一周内已到期的定时过期信息：已触发的过期配置。</li>
-                     * @return IPExpireInfo IP 定时过期信息。
-作为入参，用于为指定的 IP 地址或网段配置定时过期时间。
-作为出参，包含以下两类信息：
-<li>当前未到期的定时过期信息：尚未触发的过期配置。</li>
-<li>一周内已到期的定时过期信息：已触发的过期配置。</li>
+                     * 获取<p>IP 定时过期信息。<br>作为入参，用于为指定的 IP 地址或网段配置定时过期时间。<br>作为出参，包含以下两类信息：</p><li>当前未到期的定时过期信息：尚未触发的过期配置。</li><li>一周内已到期的定时过期信息：已触发的过期配置。</li>
+                     * @return IPExpireInfo <p>IP 定时过期信息。<br>作为入参，用于为指定的 IP 地址或网段配置定时过期时间。<br>作为出参，包含以下两类信息：</p><li>当前未到期的定时过期信息：尚未触发的过期配置。</li><li>一周内已到期的定时过期信息：已触发的过期配置。</li>
                      * 
                      */
                     std::vector<IPExpireInfo> GetIPExpireInfo() const;
 
                     /**
-                     * 设置IP 定时过期信息。
-作为入参，用于为指定的 IP 地址或网段配置定时过期时间。
-作为出参，包含以下两类信息：
-<li>当前未到期的定时过期信息：尚未触发的过期配置。</li>
-<li>一周内已到期的定时过期信息：已触发的过期配置。</li>
-                     * @param _iPExpireInfo IP 定时过期信息。
-作为入参，用于为指定的 IP 地址或网段配置定时过期时间。
-作为出参，包含以下两类信息：
-<li>当前未到期的定时过期信息：尚未触发的过期配置。</li>
-<li>一周内已到期的定时过期信息：已触发的过期配置。</li>
+                     * 设置<p>IP 定时过期信息。<br>作为入参，用于为指定的 IP 地址或网段配置定时过期时间。<br>作为出参，包含以下两类信息：</p><li>当前未到期的定时过期信息：尚未触发的过期配置。</li><li>一周内已到期的定时过期信息：已触发的过期配置。</li>
+                     * @param _iPExpireInfo <p>IP 定时过期信息。<br>作为入参，用于为指定的 IP 地址或网段配置定时过期时间。<br>作为出参，包含以下两类信息：</p><li>当前未到期的定时过期信息：尚未触发的过期配置。</li><li>一周内已到期的定时过期信息：已触发的过期配置。</li>
                      * 
                      */
                     void SetIPExpireInfo(const std::vector<IPExpireInfo>& _iPExpireInfo);
@@ -168,41 +152,64 @@ namespace TencentCloud
                      */
                     bool IPExpireInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<p>IP 组被引用的数量。</p>
+                     * @return RefCount <p>IP 组被引用的数量。</p>
+                     * 
+                     */
+                    int64_t GetRefCount() const;
+
+                    /**
+                     * 设置<p>IP 组被引用的数量。</p>
+                     * @param _refCount <p>IP 组被引用的数量。</p>
+                     * 
+                     */
+                    void SetRefCount(const int64_t& _refCount);
+
+                    /**
+                     * 判断参数 RefCount 是否已赋值
+                     * @return RefCount 是否已赋值
+                     * 
+                     */
+                    bool RefCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 组 Id，创建时填 0 即可。
+                     * <p>IP 组 Id，创建时填 0 即可。</p>
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 组名称。
+                     * <p>IP 组名称。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * IP 组内容，仅支持 IP 及 IP 网段。
+                     * <p>IP 组内容，仅支持 IP 及 IP 网段。</p>
                      */
                     std::vector<std::string> m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * IP 组中正在生效的 IP 或网段个数。作为出参时有效，作为入参时无需填写该字段。
+                     * <p>IP 组中正在生效的 IP 或网段个数。作为出参时有效，作为入参时无需填写该字段。</p>
                      */
                     int64_t m_iPTotalCount;
                     bool m_iPTotalCountHasBeenSet;
 
                     /**
-                     * IP 定时过期信息。
-作为入参，用于为指定的 IP 地址或网段配置定时过期时间。
-作为出参，包含以下两类信息：
-<li>当前未到期的定时过期信息：尚未触发的过期配置。</li>
-<li>一周内已到期的定时过期信息：已触发的过期配置。</li>
+                     * <p>IP 定时过期信息。<br>作为入参，用于为指定的 IP 地址或网段配置定时过期时间。<br>作为出参，包含以下两类信息：</p><li>当前未到期的定时过期信息：尚未触发的过期配置。</li><li>一周内已到期的定时过期信息：已触发的过期配置。</li>
                      */
                     std::vector<IPExpireInfo> m_iPExpireInfo;
                     bool m_iPExpireInfoHasBeenSet;
+
+                    /**
+                     * <p>IP 组被引用的数量。</p>
+                     */
+                    int64_t m_refCount;
+                    bool m_refCountHasBeenSet;
 
                 };
             }

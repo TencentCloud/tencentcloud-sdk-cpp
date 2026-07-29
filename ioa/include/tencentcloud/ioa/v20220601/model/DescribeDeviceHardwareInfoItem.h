@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设备ID
-                     * @return Id 设备ID
+                     * 获取<p>设备ID</p>
+                     * @return Id <p>设备ID</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置设备ID
-                     * @param _id 设备ID
+                     * 设置<p>设备ID</p>
+                     * @param _id <p>设备ID</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取设备唯一标识符
-                     * @return Mid 设备唯一标识符
+                     * 获取<p>设备唯一标识符</p>
+                     * @return Mid <p>设备唯一标识符</p>
                      * 
                      */
                     std::string GetMid() const;
 
                     /**
-                     * 设置设备唯一标识符
-                     * @param _mid 设备唯一标识符
+                     * 设置<p>设备唯一标识符</p>
+                     * @param _mid <p>设备唯一标识符</p>
                      * 
                      */
                     void SetMid(const std::string& _mid);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool MidHasBeenSet() const;
 
                     /**
-                     * 获取OS平台 0 Windows 1 Linux 2 macOS 4 Android 5 iOS
-                     * @return OsType OS平台 0 Windows 1 Linux 2 macOS 4 Android 5 iOS
+                     * 获取<p>OS平台 0 Windows 1 Linux 2 macOS 4 Android 5 iOS</p>
+                     * @return OsType <p>OS平台 0 Windows 1 Linux 2 macOS 4 Android 5 iOS</p>
                      * 
                      */
                     int64_t GetOsType() const;
 
                     /**
-                     * 设置OS平台 0 Windows 1 Linux 2 macOS 4 Android 5 iOS
-                     * @param _osType OS平台 0 Windows 1 Linux 2 macOS 4 Android 5 iOS
+                     * 设置<p>OS平台 0 Windows 1 Linux 2 macOS 4 Android 5 iOS</p>
+                     * @param _osType <p>OS平台 0 Windows 1 Linux 2 macOS 4 Android 5 iOS</p>
                      * 
                      */
                     void SetOsType(const int64_t& _osType);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool OsTypeHasBeenSet() const;
 
                     /**
-                     * 获取终端名
-                     * @return Name 终端名
+                     * 获取<p>终端名</p>
+                     * @return Name <p>终端名</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置终端名
-                     * @param _name 终端名
+                     * 设置<p>终端名</p>
+                     * @param _name <p>终端名</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取终端用户名
-                     * @return UserName 终端用户名
+                     * 获取<p>终端用户名</p>
+                     * @return UserName <p>终端用户名</p>
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置终端用户名
-                     * @param _userName 终端用户名
+                     * 设置<p>终端用户名</p>
+                     * @param _userName <p>终端用户名</p>
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取授权状态（ 4未授权 5已授权）
-                     * @return Status 授权状态（ 4未授权 5已授权）
+                     * 获取<p>授权状态（ 4未授权 5已授权）</p>
+                     * @return Status <p>授权状态（ 4未授权 5已授权）</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置授权状态（ 4未授权 5已授权）
-                     * @param _status 授权状态（ 4未授权 5已授权）
+                     * 设置<p>授权状态（ 4未授权 5已授权）</p>
+                     * @param _status <p>授权状态（ 4未授权 5已授权）</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取设备所属分组ID
-                     * @return GroupId 设备所属分组ID
+                     * 获取<p>设备所属分组ID</p>
+                     * @return GroupId <p>设备所属分组ID</p>
                      * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
-                     * 设置设备所属分组ID
-                     * @param _groupId 设备所属分组ID
+                     * 设置<p>设备所属分组ID</p>
+                     * @param _groupId <p>设备所属分组ID</p>
                      * 
                      */
                     void SetGroupId(const int64_t& _groupId);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取设备所属分组名
-                     * @return GroupName 设备所属分组名
+                     * 获取<p>设备所属分组名</p>
+                     * @return GroupName <p>设备所属分组名</p>
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置设备所属分组名
-                     * @param _groupName 设备所属分组名
+                     * 设置<p>设备所属分组名</p>
+                     * @param _groupName <p>设备所属分组名</p>
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取设备所属分组路径
-                     * @return GroupNamePath 设备所属分组路径
+                     * 获取<p>设备所属分组路径</p>
+                     * @return GroupNamePath <p>设备所属分组路径</p>
                      * 
                      */
                     std::string GetGroupNamePath() const;
 
                     /**
-                     * 设置设备所属分组路径
-                     * @param _groupNamePath 设备所属分组路径
+                     * 设置<p>设备所属分组路径</p>
+                     * @param _groupNamePath <p>设备所属分组路径</p>
                      * 
                      */
                     void SetGroupNamePath(const std::string& _groupNamePath);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool GroupNamePathHasBeenSet() const;
 
                     /**
-                     * 获取最近登录账户的姓名
-                     * @return AccountName 最近登录账户的姓名
+                     * 获取<p>最近登录账户的姓名</p>
+                     * @return AccountName <p>最近登录账户的姓名</p>
                      * 
                      */
                     std::string GetAccountName() const;
 
                     /**
-                     * 设置最近登录账户的姓名
-                     * @param _accountName 最近登录账户的姓名
+                     * 设置<p>最近登录账户的姓名</p>
+                     * @param _accountName <p>最近登录账户的姓名</p>
                      * 
                      */
                     void SetAccountName(const std::string& _accountName);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool AccountNameHasBeenSet() const;
 
                     /**
-                     * 获取出口IP
-                     * @return Ip 出口IP
+                     * 获取<p>出口IP</p>
+                     * @return Ip <p>出口IP</p>
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置出口IP
-                     * @param _ip 出口IP
+                     * 设置<p>出口IP</p>
+                     * @param _ip <p>出口IP</p>
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取MAC地址
-                     * @return MacAddr MAC地址
+                     * 获取<p>MAC地址</p>
+                     * @return MacAddr <p>MAC地址</p>
                      * 
                      */
                     std::string GetMacAddr() const;
 
                     /**
-                     * 设置MAC地址
-                     * @param _macAddr MAC地址
+                     * 设置<p>MAC地址</p>
+                     * @param _macAddr <p>MAC地址</p>
                      * 
                      */
                     void SetMacAddr(const std::string& _macAddr);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool MacAddrHasBeenSet() const;
 
                     /**
-                     * 获取CPU品牌型号
-                     * @return Cpu CPU品牌型号
+                     * 获取<p>CPU品牌型号</p>
+                     * @return Cpu <p>CPU品牌型号</p>
                      * 
                      */
                     std::string GetCpu() const;
 
                     /**
-                     * 设置CPU品牌型号
-                     * @param _cpu CPU品牌型号
+                     * 设置<p>CPU品牌型号</p>
+                     * @param _cpu <p>CPU品牌型号</p>
                      * 
                      */
                     void SetCpu(const std::string& _cpu);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取内存信息
-                     * @return Memory 内存信息
+                     * 获取<p>内存信息</p>
+                     * @return Memory <p>内存信息</p>
                      * 
                      */
                     std::string GetMemory() const;
 
                     /**
-                     * 设置内存信息
-                     * @param _memory 内存信息
+                     * 设置<p>内存信息</p>
+                     * @param _memory <p>内存信息</p>
                      * 
                      */
                     void SetMemory(const std::string& _memory);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取硬盘信息
-                     * @return HardDiskSize 硬盘信息
+                     * 获取<p>硬盘信息</p>
+                     * @return HardDiskSize <p>硬盘信息</p>
                      * 
                      */
                     std::string GetHardDiskSize() const;
 
                     /**
-                     * 设置硬盘信息
-                     * @param _hardDiskSize 硬盘信息
+                     * 设置<p>硬盘信息</p>
+                     * @param _hardDiskSize <p>硬盘信息</p>
                      * 
                      */
                     void SetHardDiskSize(const std::string& _hardDiskSize);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool HardDiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取显示器品牌型号
-                     * @return Monitor 显示器品牌型号
+                     * 获取<p>显示器品牌型号</p>
+                     * @return Monitor <p>显示器品牌型号</p>
                      * 
                      */
                     std::string GetMonitor() const;
 
                     /**
-                     * 设置显示器品牌型号
-                     * @param _monitor 显示器品牌型号
+                     * 设置<p>显示器品牌型号</p>
+                     * @param _monitor <p>显示器品牌型号</p>
                      * 
                      */
                     void SetMonitor(const std::string& _monitor);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool MonitorHasBeenSet() const;
 
                     /**
-                     * 获取终端备注名
-                     * @return RemarkName 终端备注名
+                     * 获取<p>终端备注名</p>
+                     * @return RemarkName <p>终端备注名</p>
                      * 
                      */
                     std::string GetRemarkName() const;
 
                     /**
-                     * 设置终端备注名
-                     * @param _remarkName 终端备注名
+                     * 设置<p>终端备注名</p>
+                     * @param _remarkName <p>终端备注名</p>
                      * 
                      */
                     void SetRemarkName(const std::string& _remarkName);
@@ -403,109 +403,136 @@ namespace TencentCloud
                      */
                     bool RemarkNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>BiosUUID（启动盘标识符）</p>
+                     * @return BiosUuid <p>BiosUUID（启动盘标识符）</p>
+                     * 
+                     */
+                    std::string GetBiosUuid() const;
+
+                    /**
+                     * 设置<p>BiosUUID（启动盘标识符）</p>
+                     * @param _biosUuid <p>BiosUUID（启动盘标识符）</p>
+                     * 
+                     */
+                    void SetBiosUuid(const std::string& _biosUuid);
+
+                    /**
+                     * 判断参数 BiosUuid 是否已赋值
+                     * @return BiosUuid 是否已赋值
+                     * 
+                     */
+                    bool BiosUuidHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 设备ID
+                     * <p>设备ID</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 设备唯一标识符
+                     * <p>设备唯一标识符</p>
                      */
                     std::string m_mid;
                     bool m_midHasBeenSet;
 
                     /**
-                     * OS平台 0 Windows 1 Linux 2 macOS 4 Android 5 iOS
+                     * <p>OS平台 0 Windows 1 Linux 2 macOS 4 Android 5 iOS</p>
                      */
                     int64_t m_osType;
                     bool m_osTypeHasBeenSet;
 
                     /**
-                     * 终端名
+                     * <p>终端名</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 终端用户名
+                     * <p>终端用户名</p>
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 授权状态（ 4未授权 5已授权）
+                     * <p>授权状态（ 4未授权 5已授权）</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 设备所属分组ID
+                     * <p>设备所属分组ID</p>
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 设备所属分组名
+                     * <p>设备所属分组名</p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 设备所属分组路径
+                     * <p>设备所属分组路径</p>
                      */
                     std::string m_groupNamePath;
                     bool m_groupNamePathHasBeenSet;
 
                     /**
-                     * 最近登录账户的姓名
+                     * <p>最近登录账户的姓名</p>
                      */
                     std::string m_accountName;
                     bool m_accountNameHasBeenSet;
 
                     /**
-                     * 出口IP
+                     * <p>出口IP</p>
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * MAC地址
+                     * <p>MAC地址</p>
                      */
                     std::string m_macAddr;
                     bool m_macAddrHasBeenSet;
 
                     /**
-                     * CPU品牌型号
+                     * <p>CPU品牌型号</p>
                      */
                     std::string m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 内存信息
+                     * <p>内存信息</p>
                      */
                     std::string m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 硬盘信息
+                     * <p>硬盘信息</p>
                      */
                     std::string m_hardDiskSize;
                     bool m_hardDiskSizeHasBeenSet;
 
                     /**
-                     * 显示器品牌型号
+                     * <p>显示器品牌型号</p>
                      */
                     std::string m_monitor;
                     bool m_monitorHasBeenSet;
 
                     /**
-                     * 终端备注名
+                     * <p>终端备注名</p>
                      */
                     std::string m_remarkName;
                     bool m_remarkNameHasBeenSet;
+
+                    /**
+                     * <p>BiosUUID（启动盘标识符）</p>
+                     */
+                    std::string m_biosUuid;
+                    bool m_biosUuidHasBeenSet;
 
                 };
             }

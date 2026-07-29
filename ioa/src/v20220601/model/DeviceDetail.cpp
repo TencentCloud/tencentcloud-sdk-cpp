@@ -71,7 +71,8 @@ DeviceDetail::DeviceDetail() :
     m_accountGroupIdHasBeenSet(false),
     m_screenRecordingPermissionHasBeenSet(false),
     m_diskAccessPermissionHasBeenSet(false),
-    m_remarkNameHasBeenSet(false)
+    m_remarkNameHasBeenSet(false),
+    m_biosUuidHasBeenSet(false)
 {
 }
 
@@ -593,6 +594,16 @@ CoreInternalOutcome DeviceDetail::Deserialize(const rapidjson::Value &value)
         m_remarkNameHasBeenSet = true;
     }
 
+    if (value.HasMember("BiosUuid") && !value["BiosUuid"].IsNull())
+    {
+        if (!value["BiosUuid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceDetail.BiosUuid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_biosUuid = string(value["BiosUuid"].GetString());
+        m_biosUuidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1011,6 +1022,14 @@ void DeviceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "RemarkName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_remarkName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_biosUuidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BiosUuid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_biosUuid.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1830,5 +1849,21 @@ void DeviceDetail::SetRemarkName(const string& _remarkName)
 bool DeviceDetail::RemarkNameHasBeenSet() const
 {
     return m_remarkNameHasBeenSet;
+}
+
+string DeviceDetail::GetBiosUuid() const
+{
+    return m_biosUuid;
+}
+
+void DeviceDetail::SetBiosUuid(const string& _biosUuid)
+{
+    m_biosUuid = _biosUuid;
+    m_biosUuidHasBeenSet = true;
+}
+
+bool DeviceDetail::BiosUuidHasBeenSet() const
+{
+    return m_biosUuidHasBeenSet;
 }
 

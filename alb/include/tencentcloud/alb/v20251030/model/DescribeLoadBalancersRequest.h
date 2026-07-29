@@ -44,59 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询过滤条件，支持以下几个字段
-- **LoadBalancerId**: 负载均衡实例 ID
-- **LoadBalancerName**: 负载均衡名称
-- **LoadBalancerStatus**: 负载均衡状态
-- **VpcId**: 私有网络 ID
-- **tag:tag-key**：按标签键值对筛选，tag-key 请替换为实际的标签键。例如 `tag:env` 表示按标签键 `env` 筛选。
-- **AddressType**: 网络类型
-    - **Intranet**: 内网
-    - **Internet**: 公网 
-- **AddressIpVersion**:
-    - **IPv4**: IPv4 地址
-    - **IPv6** IPv6 地址
-                     * @return Filters 查询过滤条件，支持以下几个字段
-- **LoadBalancerId**: 负载均衡实例 ID
-- **LoadBalancerName**: 负载均衡名称
-- **LoadBalancerStatus**: 负载均衡状态
-- **VpcId**: 私有网络 ID
-- **tag:tag-key**：按标签键值对筛选，tag-key 请替换为实际的标签键。例如 `tag:env` 表示按标签键 `env` 筛选。
-- **AddressType**: 网络类型
-    - **Intranet**: 内网
-    - **Internet**: 公网 
-- **AddressIpVersion**:
-    - **IPv4**: IPv4 地址
-    - **IPv6** IPv6 地址
+                     * 获取<p>查询过滤条件，支持以下几个字段</p><ul><li><strong>LoadBalancerId</strong>: 负载均衡实例 ID</li><li><strong>LoadBalancerName</strong>: 负载均衡名称</li><li><strong>LoadBalancerStatus</strong>: 负载均衡状态</li><li><strong>VpcId</strong>: 私有网络 ID</li><li><strong>tag:tag-key</strong>：按标签键值对筛选，tag-key 请替换为实际的标签键。例如 <code>tag:env</code> 表示按标签键 <code>env</code> 筛选。</li><li><strong>AddressType</strong>: 网络类型<ul><li><strong>Intranet</strong>: 内网</li><li><strong>Internet</strong>: 公网 </li></ul></li><li><strong>AddressIpVersion</strong>:<ul><li><strong>IPv4</strong>: IPv4 地址</li><li><strong>IPv6</strong> IPv6 地址</li></ul></li><li><strong>SecurityGroupId</strong>: 安全组ID</li></ul>
+                     * @return Filters <p>查询过滤条件，支持以下几个字段</p><ul><li><strong>LoadBalancerId</strong>: 负载均衡实例 ID</li><li><strong>LoadBalancerName</strong>: 负载均衡名称</li><li><strong>LoadBalancerStatus</strong>: 负载均衡状态</li><li><strong>VpcId</strong>: 私有网络 ID</li><li><strong>tag:tag-key</strong>：按标签键值对筛选，tag-key 请替换为实际的标签键。例如 <code>tag:env</code> 表示按标签键 <code>env</code> 筛选。</li><li><strong>AddressType</strong>: 网络类型<ul><li><strong>Intranet</strong>: 内网</li><li><strong>Internet</strong>: 公网 </li></ul></li><li><strong>AddressIpVersion</strong>:<ul><li><strong>IPv4</strong>: IPv4 地址</li><li><strong>IPv6</strong> IPv6 地址</li></ul></li><li><strong>SecurityGroupId</strong>: 安全组ID</li></ul>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置查询过滤条件，支持以下几个字段
-- **LoadBalancerId**: 负载均衡实例 ID
-- **LoadBalancerName**: 负载均衡名称
-- **LoadBalancerStatus**: 负载均衡状态
-- **VpcId**: 私有网络 ID
-- **tag:tag-key**：按标签键值对筛选，tag-key 请替换为实际的标签键。例如 `tag:env` 表示按标签键 `env` 筛选。
-- **AddressType**: 网络类型
-    - **Intranet**: 内网
-    - **Internet**: 公网 
-- **AddressIpVersion**:
-    - **IPv4**: IPv4 地址
-    - **IPv6** IPv6 地址
-                     * @param _filters 查询过滤条件，支持以下几个字段
-- **LoadBalancerId**: 负载均衡实例 ID
-- **LoadBalancerName**: 负载均衡名称
-- **LoadBalancerStatus**: 负载均衡状态
-- **VpcId**: 私有网络 ID
-- **tag:tag-key**：按标签键值对筛选，tag-key 请替换为实际的标签键。例如 `tag:env` 表示按标签键 `env` 筛选。
-- **AddressType**: 网络类型
-    - **Intranet**: 内网
-    - **Internet**: 公网 
-- **AddressIpVersion**:
-    - **IPv4**: IPv4 地址
-    - **IPv6** IPv6 地址
+                     * 设置<p>查询过滤条件，支持以下几个字段</p><ul><li><strong>LoadBalancerId</strong>: 负载均衡实例 ID</li><li><strong>LoadBalancerName</strong>: 负载均衡名称</li><li><strong>LoadBalancerStatus</strong>: 负载均衡状态</li><li><strong>VpcId</strong>: 私有网络 ID</li><li><strong>tag:tag-key</strong>：按标签键值对筛选，tag-key 请替换为实际的标签键。例如 <code>tag:env</code> 表示按标签键 <code>env</code> 筛选。</li><li><strong>AddressType</strong>: 网络类型<ul><li><strong>Intranet</strong>: 内网</li><li><strong>Internet</strong>: 公网 </li></ul></li><li><strong>AddressIpVersion</strong>:<ul><li><strong>IPv4</strong>: IPv4 地址</li><li><strong>IPv6</strong> IPv6 地址</li></ul></li><li><strong>SecurityGroupId</strong>: 安全组ID</li></ul>
+                     * @param _filters <p>查询过滤条件，支持以下几个字段</p><ul><li><strong>LoadBalancerId</strong>: 负载均衡实例 ID</li><li><strong>LoadBalancerName</strong>: 负载均衡名称</li><li><strong>LoadBalancerStatus</strong>: 负载均衡状态</li><li><strong>VpcId</strong>: 私有网络 ID</li><li><strong>tag:tag-key</strong>：按标签键值对筛选，tag-key 请替换为实际的标签键。例如 <code>tag:env</code> 表示按标签键 <code>env</code> 筛选。</li><li><strong>AddressType</strong>: 网络类型<ul><li><strong>Intranet</strong>: 内网</li><li><strong>Internet</strong>: 公网 </li></ul></li><li><strong>AddressIpVersion</strong>:<ul><li><strong>IPv4</strong>: IPv4 地址</li><li><strong>IPv6</strong> IPv6 地址</li></ul></li><li><strong>SecurityGroupId</strong>: 安全组ID</li></ul>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -109,23 +65,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取分批次查询时每次显示的条目数。取值范围：**1**~**100**，默认值：**20**。
-
-
-                     * @return MaxResults 分批次查询时每次显示的条目数。取值范围：**1**~**100**，默认值：**20**。
-
-
+                     * 获取<p>分批次查询时每次显示的条目数。取值范围：<strong>1</strong>~<strong>100</strong>，默认值：<strong>20</strong>。</p>
+                     * @return MaxResults <p>分批次查询时每次显示的条目数。取值范围：<strong>1</strong>~<strong>100</strong>，默认值：<strong>20</strong>。</p>
                      * 
                      */
                     int64_t GetMaxResults() const;
 
                     /**
-                     * 设置分批次查询时每次显示的条目数。取值范围：**1**~**100**，默认值：**20**。
-
-
-                     * @param _maxResults 分批次查询时每次显示的条目数。取值范围：**1**~**100**，默认值：**20**。
-
-
+                     * 设置<p>分批次查询时每次显示的条目数。取值范围：<strong>1</strong>~<strong>100</strong>，默认值：<strong>20</strong>。</p>
+                     * @param _maxResults <p>分批次查询时每次显示的条目数。取值范围：<strong>1</strong>~<strong>100</strong>，默认值：<strong>20</strong>。</p>
                      * 
                      */
                     void SetMaxResults(const int64_t& _maxResults);
@@ -138,23 +86,15 @@ namespace TencentCloud
                     bool MaxResultsHasBeenSet() const;
 
                     /**
-                     * 获取是否拥有下一次查询的令牌（Token）。取值：
-- 第一次查询和没有下一次查询时，均无需填写。
-- 如果有下一次查询，取值为上一次API调用返回的**NextToken**值。
-                     * @return NextToken 是否拥有下一次查询的令牌（Token）。取值：
-- 第一次查询和没有下一次查询时，均无需填写。
-- 如果有下一次查询，取值为上一次API调用返回的**NextToken**值。
+                     * 获取<p>是否拥有下一次查询的令牌（Token）。取值：</p><ul><li>第一次查询和没有下一次查询时，均无需填写。</li><li>如果有下一次查询，取值为上一次API调用返回的<strong>NextToken</strong>值。</li></ul>
+                     * @return NextToken <p>是否拥有下一次查询的令牌（Token）。取值：</p><ul><li>第一次查询和没有下一次查询时，均无需填写。</li><li>如果有下一次查询，取值为上一次API调用返回的<strong>NextToken</strong>值。</li></ul>
                      * 
                      */
                     std::string GetNextToken() const;
 
                     /**
-                     * 设置是否拥有下一次查询的令牌（Token）。取值：
-- 第一次查询和没有下一次查询时，均无需填写。
-- 如果有下一次查询，取值为上一次API调用返回的**NextToken**值。
-                     * @param _nextToken 是否拥有下一次查询的令牌（Token）。取值：
-- 第一次查询和没有下一次查询时，均无需填写。
-- 如果有下一次查询，取值为上一次API调用返回的**NextToken**值。
+                     * 设置<p>是否拥有下一次查询的令牌（Token）。取值：</p><ul><li>第一次查询和没有下一次查询时，均无需填写。</li><li>如果有下一次查询，取值为上一次API调用返回的<strong>NextToken</strong>值。</li></ul>
+                     * @param _nextToken <p>是否拥有下一次查询的令牌（Token）。取值：</p><ul><li>第一次查询和没有下一次查询时，均无需填写。</li><li>如果有下一次查询，取值为上一次API调用返回的<strong>NextToken</strong>值。</li></ul>
                      * 
                      */
                     void SetNextToken(const std::string& _nextToken);
@@ -169,34 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询过滤条件，支持以下几个字段
-- **LoadBalancerId**: 负载均衡实例 ID
-- **LoadBalancerName**: 负载均衡名称
-- **LoadBalancerStatus**: 负载均衡状态
-- **VpcId**: 私有网络 ID
-- **tag:tag-key**：按标签键值对筛选，tag-key 请替换为实际的标签键。例如 `tag:env` 表示按标签键 `env` 筛选。
-- **AddressType**: 网络类型
-    - **Intranet**: 内网
-    - **Internet**: 公网 
-- **AddressIpVersion**:
-    - **IPv4**: IPv4 地址
-    - **IPv6** IPv6 地址
+                     * <p>查询过滤条件，支持以下几个字段</p><ul><li><strong>LoadBalancerId</strong>: 负载均衡实例 ID</li><li><strong>LoadBalancerName</strong>: 负载均衡名称</li><li><strong>LoadBalancerStatus</strong>: 负载均衡状态</li><li><strong>VpcId</strong>: 私有网络 ID</li><li><strong>tag:tag-key</strong>：按标签键值对筛选，tag-key 请替换为实际的标签键。例如 <code>tag:env</code> 表示按标签键 <code>env</code> 筛选。</li><li><strong>AddressType</strong>: 网络类型<ul><li><strong>Intranet</strong>: 内网</li><li><strong>Internet</strong>: 公网 </li></ul></li><li><strong>AddressIpVersion</strong>:<ul><li><strong>IPv4</strong>: IPv4 地址</li><li><strong>IPv6</strong> IPv6 地址</li></ul></li><li><strong>SecurityGroupId</strong>: 安全组ID</li></ul>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 分批次查询时每次显示的条目数。取值范围：**1**~**100**，默认值：**20**。
-
-
+                     * <p>分批次查询时每次显示的条目数。取值范围：<strong>1</strong>~<strong>100</strong>，默认值：<strong>20</strong>。</p>
                      */
                     int64_t m_maxResults;
                     bool m_maxResultsHasBeenSet;
 
                     /**
-                     * 是否拥有下一次查询的令牌（Token）。取值：
-- 第一次查询和没有下一次查询时，均无需填写。
-- 如果有下一次查询，取值为上一次API调用返回的**NextToken**值。
+                     * <p>是否拥有下一次查询的令牌（Token）。取值：</p><ul><li>第一次查询和没有下一次查询时，均无需填写。</li><li>如果有下一次查询，取值为上一次API调用返回的<strong>NextToken</strong>值。</li></ul>
                      */
                     std::string m_nextToken;
                     bool m_nextTokenHasBeenSet;

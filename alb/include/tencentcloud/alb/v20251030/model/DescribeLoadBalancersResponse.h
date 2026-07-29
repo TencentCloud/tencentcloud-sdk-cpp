@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用型负载均衡实例列表。
-                     * @return LoadBalancers 应用型负载均衡实例列表。
+                     * 获取<p>应用型负载均衡实例列表。</p>
+                     * @return LoadBalancers <p>应用型负载均衡实例列表。</p>
                      * 
                      */
                     std::vector<LoadBalancer> GetLoadBalancers() const;
@@ -59,12 +59,8 @@ namespace TencentCloud
                     bool LoadBalancersHasBeenSet() const;
 
                     /**
-                     * 获取分批次查询时每次显示的条目数。
-
-
-                     * @return MaxResults 分批次查询时每次显示的条目数。
-
-
+                     * 获取<p>分批次查询时每次显示的条目数。</p>
+                     * @return MaxResults <p>分批次查询时每次显示的条目数。</p>
                      * 
                      */
                     int64_t GetMaxResults() const;
@@ -77,12 +73,8 @@ namespace TencentCloud
                     bool MaxResultsHasBeenSet() const;
 
                     /**
-                     * 获取是否拥有下一次查询的令牌（Token）。取值：
-- 如果**NextToken**为空表示没有下一次查询。
-- 如果**NextToken**有返回值，该取值表示下一次查询开始的令牌。
-                     * @return NextToken 是否拥有下一次查询的令牌（Token）。取值：
-- 如果**NextToken**为空表示没有下一次查询。
-- 如果**NextToken**有返回值，该取值表示下一次查询开始的令牌。
+                     * 获取<p>是否拥有下一次查询的令牌（Token）。取值：</p><ul><li>如果<strong>NextToken</strong>为空表示没有下一次查询。</li><li>如果<strong>NextToken</strong>有返回值，该取值表示下一次查询开始的令牌。</li></ul>
+                     * @return NextToken <p>是否拥有下一次查询的令牌（Token）。取值：</p><ul><li>如果<strong>NextToken</strong>为空表示没有下一次查询。</li><li>如果<strong>NextToken</strong>有返回值，该取值表示下一次查询开始的令牌。</li></ul>
                      * 
                      */
                     std::string GetNextToken() const;
@@ -95,8 +87,8 @@ namespace TencentCloud
                     bool NextTokenHasBeenSet() const;
 
                     /**
-                     * 获取列表条目数。
-                     * @return TotalCount 列表条目数。
+                     * 获取<p>列表条目数。</p>
+                     * @return TotalCount <p>列表条目数。</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -111,29 +103,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用型负载均衡实例列表。
+                     * <p>应用型负载均衡实例列表。</p>
                      */
                     std::vector<LoadBalancer> m_loadBalancers;
                     bool m_loadBalancersHasBeenSet;
 
                     /**
-                     * 分批次查询时每次显示的条目数。
-
-
+                     * <p>分批次查询时每次显示的条目数。</p>
                      */
                     int64_t m_maxResults;
                     bool m_maxResultsHasBeenSet;
 
                     /**
-                     * 是否拥有下一次查询的令牌（Token）。取值：
-- 如果**NextToken**为空表示没有下一次查询。
-- 如果**NextToken**有返回值，该取值表示下一次查询开始的令牌。
+                     * <p>是否拥有下一次查询的令牌（Token）。取值：</p><ul><li>如果<strong>NextToken</strong>为空表示没有下一次查询。</li><li>如果<strong>NextToken</strong>有返回值，该取值表示下一次查询开始的令牌。</li></ul>
                      */
                     std::string m_nextToken;
                     bool m_nextTokenHasBeenSet;
 
                     /**
-                     * 列表条目数。
+                     * <p>列表条目数。</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

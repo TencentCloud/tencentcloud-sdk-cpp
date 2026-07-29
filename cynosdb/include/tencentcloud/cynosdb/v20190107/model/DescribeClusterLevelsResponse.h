@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群类型列表
-                     * @return LevelList 集群类型列表
+                     * 获取<p>集群类型列表</p>
+                     * @return LevelList <p>集群类型列表</p>
                      * 
                      */
                     std::vector<std::string> GetLevelList() const;
@@ -57,13 +57,33 @@ namespace TencentCloud
                      */
                     bool LevelListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>专区列表</p>
+                     * @return Zones <p>专区列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetZones() const;
+
+                    /**
+                     * 判断参数 Zones 是否已赋值
+                     * @return Zones 是否已赋值
+                     * 
+                     */
+                    bool ZonesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群类型列表
+                     * <p>集群类型列表</p>
                      */
                     std::vector<std::string> m_levelList;
                     bool m_levelListHasBeenSet;
+
+                    /**
+                     * <p>专区列表</p>
+                     */
+                    std::vector<std::string> m_zones;
+                    bool m_zonesHasBeenSet;
 
                 };
             }
