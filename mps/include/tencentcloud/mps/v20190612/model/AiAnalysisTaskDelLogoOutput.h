@@ -208,6 +208,48 @@ namespace TencentCloud
                     bool VoiceClonedMarkFileHasBeenSet() const;
 
                     /**
+                     * 获取<p>仅做擦除的视频结果路径</p>
+                     * @return ErasedVideoPath <p>仅做擦除的视频结果路径</p>
+                     * 
+                     */
+                    std::string GetErasedVideoPath() const;
+
+                    /**
+                     * 设置<p>仅做擦除的视频结果路径</p>
+                     * @param _erasedVideoPath <p>仅做擦除的视频结果路径</p>
+                     * 
+                     */
+                    void SetErasedVideoPath(const std::string& _erasedVideoPath);
+
+                    /**
+                     * 判断参数 ErasedVideoPath 是否已赋值
+                     * @return ErasedVideoPath 是否已赋值
+                     * 
+                     */
+                    bool ErasedVideoPathHasBeenSet() const;
+
+                    /**
+                     * 获取<p>音色克隆编辑信息</p><p>用于音色克隆二次修改的编辑信息</p>
+                     * @return DubbingEditInfoUrl <p>音色克隆编辑信息</p><p>用于音色克隆二次修改的编辑信息</p>
+                     * 
+                     */
+                    std::string GetDubbingEditInfoUrl() const;
+
+                    /**
+                     * 设置<p>音色克隆编辑信息</p><p>用于音色克隆二次修改的编辑信息</p>
+                     * @param _dubbingEditInfoUrl <p>音色克隆编辑信息</p><p>用于音色克隆二次修改的编辑信息</p>
+                     * 
+                     */
+                    void SetDubbingEditInfoUrl(const std::string& _dubbingEditInfoUrl);
+
+                    /**
+                     * 判断参数 DubbingEditInfoUrl 是否已赋值
+                     * @return DubbingEditInfoUrl 是否已赋值
+                     * 
+                     */
+                    bool DubbingEditInfoUrlHasBeenSet() const;
+
+                    /**
                      * 获取<p>擦除后文件的FileId。</p>
                      * @return FileId <p>擦除后文件的FileId。</p>
                      * 
@@ -316,6 +358,18 @@ namespace TencentCloud
                      */
                     std::string m_voiceClonedMarkFile;
                     bool m_voiceClonedMarkFileHasBeenSet;
+
+                    /**
+                     * <p>仅做擦除的视频结果路径</p>
+                     */
+                    std::string m_erasedVideoPath;
+                    bool m_erasedVideoPathHasBeenSet;
+
+                    /**
+                     * <p>音色克隆编辑信息</p><p>用于音色克隆二次修改的编辑信息</p>
+                     */
+                    std::string m_dubbingEditInfoUrl;
+                    bool m_dubbingEditInfoUrlHasBeenSet;
 
                     /**
                      * <p>擦除后文件的FileId。</p>

@@ -28,6 +28,8 @@ AiAnalysisTaskDelLogoOutput::AiAnalysisTaskDelLogoOutput() :
     m_subtitlePosHasBeenSet(false),
     m_voiceClonedVideoHasBeenSet(false),
     m_voiceClonedMarkFileHasBeenSet(false),
+    m_erasedVideoPathHasBeenSet(false),
+    m_dubbingEditInfoUrlHasBeenSet(false),
     m_fileIdHasBeenSet(false),
     m_originSubtitleFileIdHasBeenSet(false),
     m_translateSubtitleFileIdHasBeenSet(false)
@@ -123,6 +125,26 @@ CoreInternalOutcome AiAnalysisTaskDelLogoOutput::Deserialize(const rapidjson::Va
         m_voiceClonedMarkFileHasBeenSet = true;
     }
 
+    if (value.HasMember("ErasedVideoPath") && !value["ErasedVideoPath"].IsNull())
+    {
+        if (!value["ErasedVideoPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskDelLogoOutput.ErasedVideoPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_erasedVideoPath = string(value["ErasedVideoPath"].GetString());
+        m_erasedVideoPathHasBeenSet = true;
+    }
+
+    if (value.HasMember("DubbingEditInfoUrl") && !value["DubbingEditInfoUrl"].IsNull())
+    {
+        if (!value["DubbingEditInfoUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskDelLogoOutput.DubbingEditInfoUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dubbingEditInfoUrl = string(value["DubbingEditInfoUrl"].GetString());
+        m_dubbingEditInfoUrlHasBeenSet = true;
+    }
+
     if (value.HasMember("FileId") && !value["FileId"].IsNull())
     {
         if (!value["FileId"].IsString())
@@ -216,6 +238,22 @@ void AiAnalysisTaskDelLogoOutput::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "VoiceClonedMarkFile";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_voiceClonedMarkFile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_erasedVideoPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErasedVideoPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_erasedVideoPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dubbingEditInfoUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DubbingEditInfoUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dubbingEditInfoUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileIdHasBeenSet)
@@ -355,6 +393,38 @@ void AiAnalysisTaskDelLogoOutput::SetVoiceClonedMarkFile(const string& _voiceClo
 bool AiAnalysisTaskDelLogoOutput::VoiceClonedMarkFileHasBeenSet() const
 {
     return m_voiceClonedMarkFileHasBeenSet;
+}
+
+string AiAnalysisTaskDelLogoOutput::GetErasedVideoPath() const
+{
+    return m_erasedVideoPath;
+}
+
+void AiAnalysisTaskDelLogoOutput::SetErasedVideoPath(const string& _erasedVideoPath)
+{
+    m_erasedVideoPath = _erasedVideoPath;
+    m_erasedVideoPathHasBeenSet = true;
+}
+
+bool AiAnalysisTaskDelLogoOutput::ErasedVideoPathHasBeenSet() const
+{
+    return m_erasedVideoPathHasBeenSet;
+}
+
+string AiAnalysisTaskDelLogoOutput::GetDubbingEditInfoUrl() const
+{
+    return m_dubbingEditInfoUrl;
+}
+
+void AiAnalysisTaskDelLogoOutput::SetDubbingEditInfoUrl(const string& _dubbingEditInfoUrl)
+{
+    m_dubbingEditInfoUrl = _dubbingEditInfoUrl;
+    m_dubbingEditInfoUrlHasBeenSet = true;
+}
+
+bool AiAnalysisTaskDelLogoOutput::DubbingEditInfoUrlHasBeenSet() const
+{
+    return m_dubbingEditInfoUrlHasBeenSet;
 }
 
 string AiAnalysisTaskDelLogoOutput::GetFileId() const
