@@ -77,7 +77,8 @@ ApmInstanceDetail::ApmInstanceDetail() :
     m_tokenHasBeenSet(false),
     m_urlLongSegmentThresholdHasBeenSet(false),
     m_urlNumberSegmentThresholdHasBeenSet(false),
-    m_logSpanIdKeyHasBeenSet(false)
+    m_logSpanIdKeyHasBeenSet(false),
+    m_disableAiAbilityHasBeenSet(false)
 {
 }
 
@@ -669,6 +670,16 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
         m_logSpanIdKeyHasBeenSet = true;
     }
 
+    if (value.HasMember("DisableAiAbility") && !value["DisableAiAbility"].IsNull())
+    {
+        if (!value["DisableAiAbility"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.DisableAiAbility` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_disableAiAbility = value["DisableAiAbility"].GetInt64();
+        m_disableAiAbilityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1142,6 +1153,14 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "LogSpanIdKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_logSpanIdKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_disableAiAbilityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableAiAbility";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_disableAiAbility, allocator);
     }
 
 }
@@ -2057,5 +2076,21 @@ void ApmInstanceDetail::SetLogSpanIdKey(const string& _logSpanIdKey)
 bool ApmInstanceDetail::LogSpanIdKeyHasBeenSet() const
 {
     return m_logSpanIdKeyHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetDisableAiAbility() const
+{
+    return m_disableAiAbility;
+}
+
+void ApmInstanceDetail::SetDisableAiAbility(const int64_t& _disableAiAbility)
+{
+    m_disableAiAbility = _disableAiAbility;
+    m_disableAiAbilityHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::DisableAiAbilityHasBeenSet() const
+{
+    return m_disableAiAbilityHasBeenSet;
 }
 

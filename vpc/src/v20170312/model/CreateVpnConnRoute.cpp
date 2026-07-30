@@ -22,7 +22,8 @@ using namespace std;
 
 CreateVpnConnRoute::CreateVpnConnRoute() :
     m_destinationCidrBlockHasBeenSet(false),
-    m_priorityHasBeenSet(false)
+    m_priorityHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome CreateVpnConnRoute::Deserialize(const rapidjson::Value &valu
         m_priorityHasBeenSet = true;
     }
 
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateVpnConnRoute.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void CreateVpnConnRoute::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Priority";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_priority, allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void CreateVpnConnRoute::SetPriority(const uint64_t& _priority)
 bool CreateVpnConnRoute::PriorityHasBeenSet() const
 {
     return m_priorityHasBeenSet;
+}
+
+string CreateVpnConnRoute::GetDescription() const
+{
+    return m_description;
+}
+
+void CreateVpnConnRoute::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool CreateVpnConnRoute::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 

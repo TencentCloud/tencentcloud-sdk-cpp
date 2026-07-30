@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取套餐 ID。
-                     * @return TeamId 套餐 ID。
+                     * 获取<p>套餐 ID。</p>
+                     * @return TeamId <p>套餐 ID。</p>
                      * 
                      */
                     std::string GetTeamId() const;
 
                     /**
-                     * 设置套餐 ID。
-                     * @param _teamId 套餐 ID。
+                     * 设置<p>套餐 ID。</p>
+                     * @param _teamId <p>套餐 ID。</p>
                      * 
                      */
                     void SetTeamId(const std::string& _teamId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool TeamIdHasBeenSet() const;
 
                     /**
-                     * 获取套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）
-                     * @return ProductType 套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）
+                     * 获取<p>套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）</p>
+                     * @return ProductType <p>套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）</p>
                      * 
                      */
                     std::string GetProductType() const;
 
                     /**
-                     * 设置套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）
-                     * @param _productType 套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）
+                     * 设置<p>套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）</p>
+                     * @param _productType <p>套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）</p>
                      * 
                      */
                     void SetProductType(const std::string& _productType);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ProductTypeHasBeenSet() const;
 
                     /**
-                     * 获取套餐名称。最大 128 字符。
-                     * @return Name 套餐名称。最大 128 字符。
+                     * 获取<p>套餐名称。最大 128 字符。</p>
+                     * @return Name <p>套餐名称。最大 128 字符。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置套餐名称。最大 128 字符。
-                     * @param _name 套餐名称。最大 128 字符。
+                     * 设置<p>套餐名称。最大 128 字符。</p>
+                     * @param _name <p>套餐名称。最大 128 字符。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取账号 APP ID。
-                     * @return AppId 账号 APP ID。
+                     * 获取<p>账号 APP ID。</p>
+                     * @return AppId <p>账号 APP ID。</p>
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
-                     * 设置账号 APP ID。
-                     * @param _appId 账号 APP ID。
+                     * 设置<p>账号 APP ID。</p>
+                     * @param _appId <p>账号 APP ID。</p>
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取主账号 UIN。
-                     * @return Uin 主账号 UIN。
+                     * 获取<p>主账号 UIN。</p>
+                     * @return Uin <p>主账号 UIN。</p>
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置主账号 UIN。
-                     * @param _uin 主账号 UIN。
+                     * 设置<p>主账号 UIN。</p>
+                     * @param _uin <p>主账号 UIN。</p>
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取套餐状态。取值：enable（启用）、disable（停用）。
-                     * @return Status 套餐状态。取值：enable（启用）、disable（停用）。
+                     * 获取<p>套餐状态。取值：enable（启用）、disable（停用）。</p>
+                     * @return Status <p>套餐状态。取值：enable（启用）、disable（停用）。</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置套餐状态。取值：enable（启用）、disable（停用）。
-                     * @param _status 套餐状态。取值：enable（启用）、disable（停用）。
+                     * 设置<p>套餐状态。取值：enable（启用）、disable（停用）。</p>
+                     * @param _status <p>套餐状态。取值：enable（启用）、disable（停用）。</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取套餐关停原因。取值：NORMAL（正常）、ISOLATED（隔离/欠费）、FROZEN（冻结）、EXHAUSTED（额度耗尽）、DESTROYED（已销毁）
-                     * @return StopReason 套餐关停原因。取值：NORMAL（正常）、ISOLATED（隔离/欠费）、FROZEN（冻结）、EXHAUSTED（额度耗尽）、DESTROYED（已销毁）
+                     * 获取<p>套餐关停原因。取值：NORMAL（正常）、ISOLATED（隔离/欠费）、FROZEN（冻结）、EXHAUSTED（额度耗尽）、DESTROYED（已销毁）</p>
+                     * @return StopReason <p>套餐关停原因。取值：NORMAL（正常）、ISOLATED（隔离/欠费）、FROZEN（冻结）、EXHAUSTED（额度耗尽）、DESTROYED（已销毁）</p>
                      * 
                      */
                     std::string GetStopReason() const;
 
                     /**
-                     * 设置套餐关停原因。取值：NORMAL（正常）、ISOLATED（隔离/欠费）、FROZEN（冻结）、EXHAUSTED（额度耗尽）、DESTROYED（已销毁）
-                     * @param _stopReason 套餐关停原因。取值：NORMAL（正常）、ISOLATED（隔离/欠费）、FROZEN（冻结）、EXHAUSTED（额度耗尽）、DESTROYED（已销毁）
+                     * 设置<p>套餐关停原因。取值：NORMAL（正常）、ISOLATED（隔离/欠费）、FROZEN（冻结）、EXHAUSTED（额度耗尽）、DESTROYED（已销毁）</p>
+                     * @param _stopReason <p>套餐关停原因。取值：NORMAL（正常）、ISOLATED（隔离/欠费）、FROZEN（冻结）、EXHAUSTED（额度耗尽）、DESTROYED（已销毁）</p>
                      * 
                      */
                     void SetStopReason(const std::string& _stopReason);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool StopReasonHasBeenSet() const;
 
                     /**
-                     * 获取可创建 API Key 上限。
-                     * @return ApiKeyMax 可创建 API Key 上限。
+                     * 获取<p>可创建 API Key 上限。</p>
+                     * @return ApiKeyMax <p>可创建 API Key 上限。</p>
                      * 
                      */
                     int64_t GetApiKeyMax() const;
 
                     /**
-                     * 设置可创建 API Key 上限。
-                     * @param _apiKeyMax 可创建 API Key 上限。
+                     * 设置<p>可创建 API Key 上限。</p>
+                     * @param _apiKeyMax <p>可创建 API Key 上限。</p>
                      * 
                      */
                     void SetApiKeyMax(const int64_t& _apiKeyMax);
@@ -216,15 +216,36 @@ namespace TencentCloud
                     bool ApiKeyMaxHasBeenSet() const;
 
                     /**
-                     * 获取云计费预付费资源包 ID。
-                     * @return PrepayResourceID 云计费预付费资源包 ID。
+                     * 获取<p>当前已创建的 APIKey 数量</p>
+                     * @return ApiKeyCount <p>当前已创建的 APIKey 数量</p>
+                     * 
+                     */
+                    int64_t GetApiKeyCount() const;
+
+                    /**
+                     * 设置<p>当前已创建的 APIKey 数量</p>
+                     * @param _apiKeyCount <p>当前已创建的 APIKey 数量</p>
+                     * 
+                     */
+                    void SetApiKeyCount(const int64_t& _apiKeyCount);
+
+                    /**
+                     * 判断参数 ApiKeyCount 是否已赋值
+                     * @return ApiKeyCount 是否已赋值
+                     * 
+                     */
+                    bool ApiKeyCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>云计费预付费资源包 ID。</p>
+                     * @return PrepayResourceID <p>云计费预付费资源包 ID。</p>
                      * 
                      */
                     std::string GetPrepayResourceID() const;
 
                     /**
-                     * 设置云计费预付费资源包 ID。
-                     * @param _prepayResourceID 云计费预付费资源包 ID。
+                     * 设置<p>云计费预付费资源包 ID。</p>
+                     * @param _prepayResourceID <p>云计费预付费资源包 ID。</p>
                      * 
                      */
                     void SetPrepayResourceID(const std::string& _prepayResourceID);
@@ -237,15 +258,15 @@ namespace TencentCloud
                     bool PrepayResourceIDHasBeenSet() const;
 
                     /**
-                     * 获取创建人。若为子账号创建的套餐，则该值为子账号UIN。
-                     * @return Creator 创建人。若为子账号创建的套餐，则该值为子账号UIN。
+                     * 获取<p>创建人。若为子账号创建的套餐，则该值为子账号UIN。</p>
+                     * @return Creator <p>创建人。若为子账号创建的套餐，则该值为子账号UIN。</p>
                      * 
                      */
                     std::string GetCreator() const;
 
                     /**
-                     * 设置创建人。若为子账号创建的套餐，则该值为子账号UIN。
-                     * @param _creator 创建人。若为子账号创建的套餐，则该值为子账号UIN。
+                     * 设置<p>创建人。若为子账号创建的套餐，则该值为子账号UIN。</p>
+                     * @param _creator <p>创建人。若为子账号创建的套餐，则该值为子账号UIN。</p>
                      * 
                      */
                     void SetCreator(const std::string& _creator);
@@ -258,15 +279,15 @@ namespace TencentCloud
                     bool CreatorHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return CreatedAt 创建时间。
+                     * 获取<p>创建时间。</p>
+                     * @return CreatedAt <p>创建时间。</p>
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _createdAt 创建时间。
+                     * 设置<p>创建时间。</p>
+                     * @param _createdAt <p>创建时间。</p>
                      * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
@@ -279,15 +300,15 @@ namespace TencentCloud
                     bool CreatedAtHasBeenSet() const;
 
                     /**
-                     * 获取更新时间。
-                     * @return UpdatedAt 更新时间。
+                     * 获取<p>更新时间。</p>
+                     * @return UpdatedAt <p>更新时间。</p>
                      * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
-                     * 设置更新时间。
-                     * @param _updatedAt 更新时间。
+                     * 设置<p>更新时间。</p>
+                     * @param _updatedAt <p>更新时间。</p>
                      * 
                      */
                     void SetUpdatedAt(const std::string& _updatedAt);
@@ -300,15 +321,15 @@ namespace TencentCloud
                     bool UpdatedAtHasBeenSet() const;
 
                     /**
-                     * 获取套餐包基本信息。
-                     * @return PackageInfo 套餐包基本信息。
+                     * 获取<p>套餐包基本信息。</p>
+                     * @return PackageInfo <p>套餐包基本信息。</p>
                      * 
                      */
                     TokenPlanPackageInfo GetPackageInfo() const;
 
                     /**
-                     * 设置套餐包基本信息。
-                     * @param _packageInfo 套餐包基本信息。
+                     * 设置<p>套餐包基本信息。</p>
+                     * @param _packageInfo <p>套餐包基本信息。</p>
                      * 
                      */
                     void SetPackageInfo(const TokenPlanPackageInfo& _packageInfo);
@@ -321,15 +342,15 @@ namespace TencentCloud
                     bool PackageInfoHasBeenSet() const;
 
                     /**
-                     * 获取是否开启自动续费。取值：0（未开启），1（开启）
-                     * @return AutoRenewFlag 是否开启自动续费。取值：0（未开启），1（开启）
+                     * 获取<p>是否开启自动续费。取值：0（未开启），1（开启）</p>
+                     * @return AutoRenewFlag <p>是否开启自动续费。取值：0（未开启），1（开启）</p>
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置是否开启自动续费。取值：0（未开启），1（开启）
-                     * @param _autoRenewFlag 是否开启自动续费。取值：0（未开启），1（开启）
+                     * 设置<p>是否开启自动续费。取值：0（未开启），1（开启）</p>
+                     * @param _autoRenewFlag <p>是否开启自动续费。取值：0（未开启），1（开启）</p>
                      * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
@@ -344,85 +365,91 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 套餐 ID。
+                     * <p>套餐 ID。</p>
                      */
                     std::string m_teamId;
                     bool m_teamIdHasBeenSet;
 
                     /**
-                     * 套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）
+                     * <p>套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）</p>
                      */
                     std::string m_productType;
                     bool m_productTypeHasBeenSet;
 
                     /**
-                     * 套餐名称。最大 128 字符。
+                     * <p>套餐名称。最大 128 字符。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 账号 APP ID。
+                     * <p>账号 APP ID。</p>
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 主账号 UIN。
+                     * <p>主账号 UIN。</p>
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 套餐状态。取值：enable（启用）、disable（停用）。
+                     * <p>套餐状态。取值：enable（启用）、disable（停用）。</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 套餐关停原因。取值：NORMAL（正常）、ISOLATED（隔离/欠费）、FROZEN（冻结）、EXHAUSTED（额度耗尽）、DESTROYED（已销毁）
+                     * <p>套餐关停原因。取值：NORMAL（正常）、ISOLATED（隔离/欠费）、FROZEN（冻结）、EXHAUSTED（额度耗尽）、DESTROYED（已销毁）</p>
                      */
                     std::string m_stopReason;
                     bool m_stopReasonHasBeenSet;
 
                     /**
-                     * 可创建 API Key 上限。
+                     * <p>可创建 API Key 上限。</p>
                      */
                     int64_t m_apiKeyMax;
                     bool m_apiKeyMaxHasBeenSet;
 
                     /**
-                     * 云计费预付费资源包 ID。
+                     * <p>当前已创建的 APIKey 数量</p>
+                     */
+                    int64_t m_apiKeyCount;
+                    bool m_apiKeyCountHasBeenSet;
+
+                    /**
+                     * <p>云计费预付费资源包 ID。</p>
                      */
                     std::string m_prepayResourceID;
                     bool m_prepayResourceIDHasBeenSet;
 
                     /**
-                     * 创建人。若为子账号创建的套餐，则该值为子账号UIN。
+                     * <p>创建人。若为子账号创建的套餐，则该值为子账号UIN。</p>
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * <p>创建时间。</p>
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
-                     * 更新时间。
+                     * <p>更新时间。</p>
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;
 
                     /**
-                     * 套餐包基本信息。
+                     * <p>套餐包基本信息。</p>
                      */
                     TokenPlanPackageInfo m_packageInfo;
                     bool m_packageInfoHasBeenSet;
 
                     /**
-                     * 是否开启自动续费。取值：0（未开启），1（开启）
+                     * <p>是否开启自动续费。取值：0（未开启），1（开启）</p>
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;

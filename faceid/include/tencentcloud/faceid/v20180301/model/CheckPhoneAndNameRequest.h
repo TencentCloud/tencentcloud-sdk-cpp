@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取⼿机号。
-                     * @return Mobile ⼿机号。
+                     * 获取<p>⼿机号。</p>
+                     * @return Mobile <p>⼿机号。</p>
                      * 
                      */
                     std::string GetMobile() const;
 
                     /**
-                     * 设置⼿机号。
-                     * @param _mobile ⼿机号。
+                     * 设置<p>⼿机号。</p>
+                     * @param _mobile <p>⼿机号。</p>
                      * 
                      */
                     void SetMobile(const std::string& _mobile);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取姓名。
-                     * @return Name 姓名。
+                     * 获取<p>姓名。</p>
+                     * @return Name <p>姓名。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置姓名。
-                     * @param _name 姓名。
+                     * 设置<p>姓名。</p>
+                     * @param _name <p>姓名。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -86,19 +86,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取敏感数据加密信息。
-- 对传入信息（姓名、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。
-                     * @return Encryption 敏感数据加密信息。
-- 对传入信息（姓名、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 获取<p>敏感数据加密信息。</p><ul><li>对传入信息（姓名、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。</li></ul>
+                     * @return Encryption <p>敏感数据加密信息。</p><ul><li>对传入信息（姓名、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。</li></ul>
                      * 
                      */
                     Encryption GetEncryption() const;
 
                     /**
-                     * 设置敏感数据加密信息。
-- 对传入信息（姓名、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。
-                     * @param _encryption 敏感数据加密信息。
-- 对传入信息（姓名、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 设置<p>敏感数据加密信息。</p><ul><li>对传入信息（姓名、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。</li></ul>
+                     * @param _encryption <p>敏感数据加密信息。</p><ul><li>对传入信息（姓名、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。</li></ul>
                      * 
                      */
                     void SetEncryption(const Encryption& _encryption);
@@ -113,20 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ⼿机号。
+                     * <p>⼿机号。</p>
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 姓名。
+                     * <p>姓名。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 敏感数据加密信息。
-- 对传入信息（姓名、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * <p>敏感数据加密信息。</p><ul><li>对传入信息（姓名、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。</li></ul>
                      */
                     Encryption m_encryption;
                     bool m_encryptionHasBeenSet;

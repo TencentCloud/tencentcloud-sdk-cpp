@@ -33,6 +33,9 @@
 #include <tencentcloud/mps/v20190612/model/AiTryOnConfig.h>
 #include <tencentcloud/mps/v20190612/model/AiPosterSuiteConfig.h>
 #include <tencentcloud/mps/v20190612/model/CreateImageConfig.h>
+#include <tencentcloud/mps/v20190612/model/AiCutoutConfig.h>
+#include <tencentcloud/mps/v20190612/model/AiExpansionConfig.h>
+#include <tencentcloud/mps/v20190612/model/AiStoryboardConfig.h>
 
 
 namespace TencentCloud
@@ -260,6 +263,69 @@ namespace TencentCloud
                      */
                     bool CreateImageConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Ai抠图配置</p>
+                     * @return AiCutoutConfig <p>Ai抠图配置</p>
+                     * 
+                     */
+                    AiCutoutConfig GetAiCutoutConfig() const;
+
+                    /**
+                     * 设置<p>Ai抠图配置</p>
+                     * @param _aiCutoutConfig <p>Ai抠图配置</p>
+                     * 
+                     */
+                    void SetAiCutoutConfig(const AiCutoutConfig& _aiCutoutConfig);
+
+                    /**
+                     * 判断参数 AiCutoutConfig 是否已赋值
+                     * @return AiCutoutConfig 是否已赋值
+                     * 
+                     */
+                    bool AiCutoutConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Ai扩图配置</p>
+                     * @return AiExpansionConfig <p>Ai扩图配置</p>
+                     * 
+                     */
+                    AiExpansionConfig GetAiExpansionConfig() const;
+
+                    /**
+                     * 设置<p>Ai扩图配置</p>
+                     * @param _aiExpansionConfig <p>Ai扩图配置</p>
+                     * 
+                     */
+                    void SetAiExpansionConfig(const AiExpansionConfig& _aiExpansionConfig);
+
+                    /**
+                     * 判断参数 AiExpansionConfig 是否已赋值
+                     * @return AiExpansionConfig 是否已赋值
+                     * 
+                     */
+                    bool AiExpansionConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Ai分镜拆解配置</p>
+                     * @return AiStoryboardConfig <p>Ai分镜拆解配置</p>
+                     * 
+                     */
+                    AiStoryboardConfig GetAiStoryboardConfig() const;
+
+                    /**
+                     * 设置<p>Ai分镜拆解配置</p>
+                     * @param _aiStoryboardConfig <p>Ai分镜拆解配置</p>
+                     * 
+                     */
+                    void SetAiStoryboardConfig(const AiStoryboardConfig& _aiStoryboardConfig);
+
+                    /**
+                     * 判断参数 AiStoryboardConfig 是否已赋值
+                     * @return AiStoryboardConfig 是否已赋值
+                     * 
+                     */
+                    bool AiStoryboardConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -319,6 +385,24 @@ namespace TencentCloud
                      */
                     CreateImageConfig m_createImageConfig;
                     bool m_createImageConfigHasBeenSet;
+
+                    /**
+                     * <p>Ai抠图配置</p>
+                     */
+                    AiCutoutConfig m_aiCutoutConfig;
+                    bool m_aiCutoutConfigHasBeenSet;
+
+                    /**
+                     * <p>Ai扩图配置</p>
+                     */
+                    AiExpansionConfig m_aiExpansionConfig;
+                    bool m_aiExpansionConfigHasBeenSet;
+
+                    /**
+                     * <p>Ai分镜拆解配置</p>
+                     */
+                    AiStoryboardConfig m_aiStoryboardConfig;
+                    bool m_aiStoryboardConfigHasBeenSet;
 
                 };
             }

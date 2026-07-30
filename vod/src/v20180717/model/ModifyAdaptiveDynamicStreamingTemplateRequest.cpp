@@ -31,7 +31,8 @@ ModifyAdaptiveDynamicStreamingTemplateRequest::ModifyAdaptiveDynamicStreamingTem
     m_disableHigherVideoResolutionHasBeenSet(false),
     m_streamInfosHasBeenSet(false),
     m_commentHasBeenSet(false),
-    m_segmentTypeHasBeenSet(false)
+    m_segmentTypeHasBeenSet(false),
+    m_segmentDurationHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,14 @@ string ModifyAdaptiveDynamicStreamingTemplateRequest::ToJsonString() const
         string key = "SegmentType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_segmentType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_segmentDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SegmentDuration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_segmentDuration, allocator);
     }
 
 
@@ -271,6 +280,22 @@ void ModifyAdaptiveDynamicStreamingTemplateRequest::SetSegmentType(const string&
 bool ModifyAdaptiveDynamicStreamingTemplateRequest::SegmentTypeHasBeenSet() const
 {
     return m_segmentTypeHasBeenSet;
+}
+
+int64_t ModifyAdaptiveDynamicStreamingTemplateRequest::GetSegmentDuration() const
+{
+    return m_segmentDuration;
+}
+
+void ModifyAdaptiveDynamicStreamingTemplateRequest::SetSegmentDuration(const int64_t& _segmentDuration)
+{
+    m_segmentDuration = _segmentDuration;
+    m_segmentDurationHasBeenSet = true;
+}
+
+bool ModifyAdaptiveDynamicStreamingTemplateRequest::SegmentDurationHasBeenSet() const
+{
+    return m_segmentDurationHasBeenSet;
 }
 
 

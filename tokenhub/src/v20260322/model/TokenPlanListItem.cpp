@@ -29,6 +29,7 @@ TokenPlanListItem::TokenPlanListItem() :
     m_statusHasBeenSet(false),
     m_stopReasonHasBeenSet(false),
     m_apiKeyMaxHasBeenSet(false),
+    m_apiKeyCountHasBeenSet(false),
     m_prepayResourceIDHasBeenSet(false),
     m_creatorHasBeenSet(false),
     m_createdAtHasBeenSet(false),
@@ -121,6 +122,16 @@ CoreInternalOutcome TokenPlanListItem::Deserialize(const rapidjson::Value &value
         }
         m_apiKeyMax = value["ApiKeyMax"].GetInt64();
         m_apiKeyMaxHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApiKeyCount") && !value["ApiKeyCount"].IsNull())
+    {
+        if (!value["ApiKeyCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TokenPlanListItem.ApiKeyCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_apiKeyCount = value["ApiKeyCount"].GetInt64();
+        m_apiKeyCountHasBeenSet = true;
     }
 
     if (value.HasMember("PrepayResourceID") && !value["PrepayResourceID"].IsNull())
@@ -259,6 +270,14 @@ void TokenPlanListItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ApiKeyMax";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_apiKeyMax, allocator);
+    }
+
+    if (m_apiKeyCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiKeyCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_apiKeyCount, allocator);
     }
 
     if (m_prepayResourceIDHasBeenSet)
@@ -439,6 +458,22 @@ void TokenPlanListItem::SetApiKeyMax(const int64_t& _apiKeyMax)
 bool TokenPlanListItem::ApiKeyMaxHasBeenSet() const
 {
     return m_apiKeyMaxHasBeenSet;
+}
+
+int64_t TokenPlanListItem::GetApiKeyCount() const
+{
+    return m_apiKeyCount;
+}
+
+void TokenPlanListItem::SetApiKeyCount(const int64_t& _apiKeyCount)
+{
+    m_apiKeyCount = _apiKeyCount;
+    m_apiKeyCountHasBeenSet = true;
+}
+
+bool TokenPlanListItem::ApiKeyCountHasBeenSet() const
+{
+    return m_apiKeyCountHasBeenSet;
 }
 
 string TokenPlanListItem::GetPrepayResourceID() const

@@ -1290,6 +1290,56 @@ LighthouseClient::DescribeAllScenesOutcomeCallable LighthouseClient::DescribeAll
     return prom->get_future();
 }
 
+LighthouseClient::DescribeBlueprintBundlesOutcome LighthouseClient::DescribeBlueprintBundles(const DescribeBlueprintBundlesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBlueprintBundles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBlueprintBundlesResponse rsp = DescribeBlueprintBundlesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBlueprintBundlesOutcome(rsp);
+        else
+            return DescribeBlueprintBundlesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBlueprintBundlesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeBlueprintBundlesAsync(const DescribeBlueprintBundlesRequest& request, const DescribeBlueprintBundlesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBlueprintBundlesRequest&;
+    using Resp = DescribeBlueprintBundlesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBlueprintBundles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LighthouseClient::DescribeBlueprintBundlesOutcomeCallable LighthouseClient::DescribeBlueprintBundlesCallable(const DescribeBlueprintBundlesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBlueprintBundlesOutcome>>();
+    DescribeBlueprintBundlesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeBlueprintBundlesRequest&,
+        DescribeBlueprintBundlesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LighthouseClient::DescribeBlueprintInstancesOutcome LighthouseClient::DescribeBlueprintInstances(const DescribeBlueprintInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBlueprintInstances");

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目的端IDC网段
-                     * @return DestinationCidrBlock 目的端IDC网段
+                     * 获取<p>目的端IDC网段</p>
+                     * @return DestinationCidrBlock <p>目的端IDC网段</p>
                      * 
                      */
                     std::string GetDestinationCidrBlock() const;
 
                     /**
-                     * 设置目的端IDC网段
-                     * @param _destinationCidrBlock 目的端IDC网段
+                     * 设置<p>目的端IDC网段</p>
+                     * @param _destinationCidrBlock <p>目的端IDC网段</p>
                      * 
                      */
                     void SetDestinationCidrBlock(const std::string& _destinationCidrBlock);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DestinationCidrBlockHasBeenSet() const;
 
                     /**
-                     * 获取优先级；可选值0，100。
-                     * @return Priority 优先级；可选值0，100。
+                     * 获取<p>优先级；可选值0，100。</p>
+                     * @return Priority <p>优先级；可选值0，100。</p>
                      * 
                      */
                     uint64_t GetPriority() const;
 
                     /**
-                     * 设置优先级；可选值0，100。
-                     * @param _priority 优先级；可选值0，100。
+                     * 设置<p>优先级；可选值0，100。</p>
+                     * @param _priority <p>优先级；可选值0，100。</p>
                      * 
                      */
                     void SetPriority(const uint64_t& _priority);
@@ -88,19 +88,46 @@ namespace TencentCloud
                      */
                     bool PriorityHasBeenSet() const;
 
+                    /**
+                     * 获取<p>路由备注；可选值</p>
+                     * @return Description <p>路由备注；可选值</p>
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置<p>路由备注；可选值</p>
+                     * @param _description <p>路由备注；可选值</p>
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 目的端IDC网段
+                     * <p>目的端IDC网段</p>
                      */
                     std::string m_destinationCidrBlock;
                     bool m_destinationCidrBlockHasBeenSet;
 
                     /**
-                     * 优先级；可选值0，100。
+                     * <p>优先级；可选值0，100。</p>
                      */
                     uint64_t m_priority;
                     bool m_priorityHasBeenSet;
+
+                    /**
+                     * <p>路由备注；可选值</p>
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

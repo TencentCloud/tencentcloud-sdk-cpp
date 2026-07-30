@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取VPN网关对象
-                     * @return VpnGateway VPN网关对象
+                     * 获取<p>VPN网关对象</p>
+                     * @return VpnGateway <p>VPN网关对象</p>
                      * 
                      */
                     VpnGateway GetVpnGateway() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * VPN网关对象
+                     * <p>VPN网关对象</p>
                      */
                     VpnGateway m_vpnGateway;
                     bool m_vpnGatewayHasBeenSet;

@@ -947,15 +947,15 @@ namespace TencentCloud
                     bool LogSpanIdKeyHasBeenSet() const;
 
                     /**
-                     * 获取<p>是否开启探针头采样</p>
-                     * @return EnableHeadSampler <p>是否开启探针头采样</p>
+                     * 获取<p>是否开启探针头采样</p><p>（受限）</p>
+                     * @return EnableHeadSampler <p>是否开启探针头采样</p><p>（受限）</p>
                      * 
                      */
                     bool GetEnableHeadSampler() const;
 
                     /**
-                     * 设置<p>是否开启探针头采样</p>
-                     * @param _enableHeadSampler <p>是否开启探针头采样</p>
+                     * 设置<p>是否开启探针头采样</p><p>（受限）</p>
+                     * @param _enableHeadSampler <p>是否开启探针头采样</p><p>（受限）</p>
                      * 
                      */
                     void SetEnableHeadSampler(const bool& _enableHeadSampler);
@@ -968,15 +968,15 @@ namespace TencentCloud
                     bool EnableHeadSamplerHasBeenSet() const;
 
                     /**
-                     * 获取<p>头采类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 默认</li></ul>
-                     * @return HeadSamplerType <p>头采类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 默认</li></ul>
+                     * 获取<p>头采类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 默认</li></ul><p>（受限）</p>
+                     * @return HeadSamplerType <p>头采类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 默认</li></ul><p>（受限）</p>
                      * 
                      */
                     std::string GetHeadSamplerType() const;
 
                     /**
-                     * 设置<p>头采类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 默认</li></ul>
-                     * @param _headSamplerType <p>头采类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 默认</li></ul>
+                     * 设置<p>头采类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 默认</li></ul><p>（受限）</p>
+                     * @param _headSamplerType <p>头采类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 默认</li></ul><p>（受限）</p>
                      * 
                      */
                     void SetHeadSamplerType(const std::string& _headSamplerType);
@@ -989,15 +989,15 @@ namespace TencentCloud
                     bool HeadSamplerTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>头采采样率</p><p>取值范围：[0, 100]</p>
-                     * @return HeadSamplerArg <p>头采采样率</p><p>取值范围：[0, 100]</p>
+                     * 获取<p>头采采样率</p><p>取值范围：[0, 100]</p><p>（受限）</p>
+                     * @return HeadSamplerArg <p>头采采样率</p><p>取值范围：[0, 100]</p><p>（受限）</p>
                      * 
                      */
                     int64_t GetHeadSamplerArg() const;
 
                     /**
-                     * 设置<p>头采采样率</p><p>取值范围：[0, 100]</p>
-                     * @param _headSamplerArg <p>头采采样率</p><p>取值范围：[0, 100]</p>
+                     * 设置<p>头采采样率</p><p>取值范围：[0, 100]</p><p>（受限）</p>
+                     * @param _headSamplerArg <p>头采采样率</p><p>取值范围：[0, 100]</p><p>（受限）</p>
                      * 
                      */
                     void SetHeadSamplerArg(const int64_t& _headSamplerArg);
@@ -1008,6 +1008,27 @@ namespace TencentCloud
                      * 
                      */
                     bool HeadSamplerArgHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否禁用 AI 能力</p><p>单位：无</p>
+                     * @return DisableAiAbility <p>是否禁用 AI 能力</p><p>单位：无</p>
+                     * 
+                     */
+                    int64_t GetDisableAiAbility() const;
+
+                    /**
+                     * 设置<p>是否禁用 AI 能力</p><p>单位：无</p>
+                     * @param _disableAiAbility <p>是否禁用 AI 能力</p><p>单位：无</p>
+                     * 
+                     */
+                    void SetDisableAiAbility(const int64_t& _disableAiAbility);
+
+                    /**
+                     * 判断参数 DisableAiAbility 是否已赋值
+                     * @return DisableAiAbility 是否已赋值
+                     * 
+                     */
+                    bool DisableAiAbilityHasBeenSet() const;
 
                 private:
 
@@ -1270,22 +1291,28 @@ namespace TencentCloud
                     bool m_logSpanIdKeyHasBeenSet;
 
                     /**
-                     * <p>是否开启探针头采样</p>
+                     * <p>是否开启探针头采样</p><p>（受限）</p>
                      */
                     bool m_enableHeadSampler;
                     bool m_enableHeadSamplerHasBeenSet;
 
                     /**
-                     * <p>头采类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 默认</li></ul>
+                     * <p>头采类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 默认</li></ul><p>（受限）</p>
                      */
                     std::string m_headSamplerType;
                     bool m_headSamplerTypeHasBeenSet;
 
                     /**
-                     * <p>头采采样率</p><p>取值范围：[0, 100]</p>
+                     * <p>头采采样率</p><p>取值范围：[0, 100]</p><p>（受限）</p>
                      */
                     int64_t m_headSamplerArg;
                     bool m_headSamplerArgHasBeenSet;
+
+                    /**
+                     * <p>是否禁用 AI 能力</p><p>单位：无</p>
+                     */
+                    int64_t m_disableAiAbility;
+                    bool m_disableAiAbilityHasBeenSet;
 
                 };
             }

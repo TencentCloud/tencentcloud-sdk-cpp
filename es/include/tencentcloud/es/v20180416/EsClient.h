@@ -177,6 +177,8 @@
 #include <tencentcloud/es/v20180416/model/UpdateIndexResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdateInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/UpdateInstanceResponse.h>
+#include <tencentcloud/es/v20180416/model/UpdateInstancePublicAccessRequest.h>
+#include <tencentcloud/es/v20180416/model/UpdateInstancePublicAccessResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdateIpTraceStatusRequest.h>
 #include <tencentcloud/es/v20180416/model/UpdateIpTraceStatusResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdateJdkRequest.h>
@@ -442,6 +444,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateInstanceResponse> UpdateInstanceOutcome;
                 typedef std::future<UpdateInstanceOutcome> UpdateInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::UpdateInstanceRequest&, UpdateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateInstancePublicAccessResponse> UpdateInstancePublicAccessOutcome;
+                typedef std::future<UpdateInstancePublicAccessOutcome> UpdateInstancePublicAccessOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::UpdateInstancePublicAccessRequest&, UpdateInstancePublicAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstancePublicAccessAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateIpTraceStatusResponse> UpdateIpTraceStatusOutcome;
                 typedef std::future<UpdateIpTraceStatusOutcome> UpdateIpTraceStatusOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::UpdateIpTraceStatusRequest&, UpdateIpTraceStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateIpTraceStatusAsyncHandler;
@@ -1175,6 +1180,15 @@ namespace TencentCloud
                 UpdateInstanceOutcome UpdateInstance(const Model::UpdateInstanceRequest &request);
                 void UpdateInstanceAsync(const Model::UpdateInstanceRequest& request, const UpdateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateInstanceOutcomeCallable UpdateInstanceCallable(const Model::UpdateInstanceRequest& request);
+
+                /**
+                 *更新ES集群实例的Kibana、cerebro公网开关
+                 * @param req UpdateInstancePublicAccessRequest
+                 * @return UpdateInstancePublicAccessOutcome
+                 */
+                UpdateInstancePublicAccessOutcome UpdateInstancePublicAccess(const Model::UpdateInstancePublicAccessRequest &request);
+                void UpdateInstancePublicAccessAsync(const Model::UpdateInstancePublicAccessRequest& request, const UpdateInstancePublicAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateInstancePublicAccessOutcomeCallable UpdateInstancePublicAccessCallable(const Model::UpdateInstancePublicAccessRequest& request);
 
                 /**
                  *更新ES集群IP溯源状态

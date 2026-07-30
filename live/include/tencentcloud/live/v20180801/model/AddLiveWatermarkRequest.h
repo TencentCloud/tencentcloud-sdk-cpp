@@ -43,23 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取水印图片 URL。
-URL中禁止包含的字符：
- ;(){}$>`#"\'|
-                     * @return PictureUrl 水印图片 URL。
-URL中禁止包含的字符：
- ;(){}$>`#"\'|
+                     * 获取<p>水印图片 URL。<br>URL中禁止包含的字符：<br> ;(){}$&gt;`#&quot;'|</p>
+                     * @return PictureUrl <p>水印图片 URL。<br>URL中禁止包含的字符：<br> ;(){}$&gt;`#&quot;'|</p>
                      * 
                      */
                     std::string GetPictureUrl() const;
 
                     /**
-                     * 设置水印图片 URL。
-URL中禁止包含的字符：
- ;(){}$>`#"\'|
-                     * @param _pictureUrl 水印图片 URL。
-URL中禁止包含的字符：
- ;(){}$>`#"\'|
+                     * 设置<p>水印图片 URL。<br>URL中禁止包含的字符：<br> ;(){}$&gt;`#&quot;'|</p>
+                     * @param _pictureUrl <p>水印图片 URL。<br>URL中禁止包含的字符：<br> ;(){}$&gt;`#&quot;'|</p>
                      * 
                      */
                     void SetPictureUrl(const std::string& _pictureUrl);
@@ -72,19 +64,15 @@ URL中禁止包含的字符：
                     bool PictureUrlHasBeenSet() const;
 
                     /**
-                     * 获取水印名称。
-最长30字节。
-                     * @return WatermarkName 水印名称。
-最长30字节。
+                     * 获取<p>水印名称。<br>最长30字节。</p>
+                     * @return WatermarkName <p>水印名称。<br>最长30字节。</p>
                      * 
                      */
                     std::string GetWatermarkName() const;
 
                     /**
-                     * 设置水印名称。
-最长30字节。
-                     * @param _watermarkName 水印名称。
-最长30字节。
+                     * 设置<p>水印名称。<br>最长30字节。</p>
+                     * @param _watermarkName <p>水印名称。<br>最长30字节。</p>
                      * 
                      */
                     void SetWatermarkName(const std::string& _watermarkName);
@@ -97,15 +85,15 @@ URL中禁止包含的字符：
                     bool WatermarkNameHasBeenSet() const;
 
                     /**
-                     * 获取显示位置，X轴偏移，单位是百分比，默认 0。
-                     * @return XPosition 显示位置，X轴偏移，单位是百分比，默认 0。
+                     * 获取<p>显示位置，X轴偏移，单位是百分比，默认 0。</p>
+                     * @return XPosition <p>显示位置，X轴偏移，单位是百分比，默认 0。</p>
                      * 
                      */
                     int64_t GetXPosition() const;
 
                     /**
-                     * 设置显示位置，X轴偏移，单位是百分比，默认 0。
-                     * @param _xPosition 显示位置，X轴偏移，单位是百分比，默认 0。
+                     * 设置<p>显示位置，X轴偏移，单位是百分比，默认 0。</p>
+                     * @param _xPosition <p>显示位置，X轴偏移，单位是百分比，默认 0。</p>
                      * 
                      */
                     void SetXPosition(const int64_t& _xPosition);
@@ -118,15 +106,15 @@ URL中禁止包含的字符：
                     bool XPositionHasBeenSet() const;
 
                     /**
-                     * 获取显示位置，Y轴偏移，单位是百分比，默认 0。
-                     * @return YPosition 显示位置，Y轴偏移，单位是百分比，默认 0。
+                     * 获取<p>显示位置，Y轴偏移，单位是百分比，默认 0。</p>
+                     * @return YPosition <p>显示位置，Y轴偏移，单位是百分比，默认 0。</p>
                      * 
                      */
                     int64_t GetYPosition() const;
 
                     /**
-                     * 设置显示位置，Y轴偏移，单位是百分比，默认 0。
-                     * @param _yPosition 显示位置，Y轴偏移，单位是百分比，默认 0。
+                     * 设置<p>显示位置，Y轴偏移，单位是百分比，默认 0。</p>
+                     * @param _yPosition <p>显示位置，Y轴偏移，单位是百分比，默认 0。</p>
                      * 
                      */
                     void SetYPosition(const int64_t& _yPosition);
@@ -139,15 +127,15 @@ URL中禁止包含的字符：
                     bool YPositionHasBeenSet() const;
 
                     /**
-                     * 获取水印宽度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始宽度。
-                     * @return Width 水印宽度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始宽度。
+                     * 获取<p>水印宽度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始宽度。</p>
+                     * @return Width <p>水印宽度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始宽度。</p>
                      * 
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置水印宽度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始宽度。
-                     * @param _width 水印宽度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始宽度。
+                     * 设置<p>水印宽度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始宽度。</p>
+                     * @param _width <p>水印宽度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始宽度。</p>
                      * 
                      */
                     void SetWidth(const int64_t& _width);
@@ -160,15 +148,15 @@ URL中禁止包含的字符：
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取水印高度，占直播原始画面高度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。
-                     * @return Height 水印高度，占直播原始画面高度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。
+                     * 获取<p>水印高度，占直播原始画面高度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。</p>
+                     * @return Height <p>水印高度，占直播原始画面高度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。</p>
                      * 
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置水印高度，占直播原始画面高度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。
-                     * @param _height 水印高度，占直播原始画面高度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。
+                     * 设置<p>水印高度，占直播原始画面高度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。</p>
+                     * @param _height <p>水印高度，占直播原始画面高度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。</p>
                      * 
                      */
                     void SetHeight(const int64_t& _height);
@@ -181,15 +169,15 @@ URL中禁止包含的字符：
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取背景水印宽度。默认宽度1920。
-                     * @return BackgroundWidth 背景水印宽度。默认宽度1920。
+                     * 获取<p>背景水印宽度。默认宽度1920。</p><p>取值范围：[360, 4096]</p><p>单位：px</p>
+                     * @return BackgroundWidth <p>背景水印宽度。默认宽度1920。</p><p>取值范围：[360, 4096]</p><p>单位：px</p>
                      * 
                      */
                     int64_t GetBackgroundWidth() const;
 
                     /**
-                     * 设置背景水印宽度。默认宽度1920。
-                     * @param _backgroundWidth 背景水印宽度。默认宽度1920。
+                     * 设置<p>背景水印宽度。默认宽度1920。</p><p>取值范围：[360, 4096]</p><p>单位：px</p>
+                     * @param _backgroundWidth <p>背景水印宽度。默认宽度1920。</p><p>取值范围：[360, 4096]</p><p>单位：px</p>
                      * 
                      */
                     void SetBackgroundWidth(const int64_t& _backgroundWidth);
@@ -202,15 +190,15 @@ URL中禁止包含的字符：
                     bool BackgroundWidthHasBeenSet() const;
 
                     /**
-                     * 获取背景水印高度。默认高度1080。
-                     * @return BackgroundHeight 背景水印高度。默认高度1080。
+                     * 获取<p>背景水印高度。默认高度1080。</p><p>取值范围：[360, 4096]</p><p>单位：px</p>
+                     * @return BackgroundHeight <p>背景水印高度。默认高度1080。</p><p>取值范围：[360, 4096]</p><p>单位：px</p>
                      * 
                      */
                     int64_t GetBackgroundHeight() const;
 
                     /**
-                     * 设置背景水印高度。默认高度1080。
-                     * @param _backgroundHeight 背景水印高度。默认高度1080。
+                     * 设置<p>背景水印高度。默认高度1080。</p><p>取值范围：[360, 4096]</p><p>单位：px</p>
+                     * @param _backgroundHeight <p>背景水印高度。默认高度1080。</p><p>取值范围：[360, 4096]</p><p>单位：px</p>
                      * 
                      */
                     void SetBackgroundHeight(const int64_t& _backgroundHeight);
@@ -225,52 +213,49 @@ URL中禁止包含的字符：
                 private:
 
                     /**
-                     * 水印图片 URL。
-URL中禁止包含的字符：
- ;(){}$>`#"\'|
+                     * <p>水印图片 URL。<br>URL中禁止包含的字符：<br> ;(){}$&gt;`#&quot;'|</p>
                      */
                     std::string m_pictureUrl;
                     bool m_pictureUrlHasBeenSet;
 
                     /**
-                     * 水印名称。
-最长30字节。
+                     * <p>水印名称。<br>最长30字节。</p>
                      */
                     std::string m_watermarkName;
                     bool m_watermarkNameHasBeenSet;
 
                     /**
-                     * 显示位置，X轴偏移，单位是百分比，默认 0。
+                     * <p>显示位置，X轴偏移，单位是百分比，默认 0。</p>
                      */
                     int64_t m_xPosition;
                     bool m_xPositionHasBeenSet;
 
                     /**
-                     * 显示位置，Y轴偏移，单位是百分比，默认 0。
+                     * <p>显示位置，Y轴偏移，单位是百分比，默认 0。</p>
                      */
                     int64_t m_yPosition;
                     bool m_yPositionHasBeenSet;
 
                     /**
-                     * 水印宽度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始宽度。
+                     * <p>水印宽度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始宽度。</p>
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 水印高度，占直播原始画面高度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。
+                     * <p>水印高度，占直播原始画面高度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。</p>
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * 背景水印宽度。默认宽度1920。
+                     * <p>背景水印宽度。默认宽度1920。</p><p>取值范围：[360, 4096]</p><p>单位：px</p>
                      */
                     int64_t m_backgroundWidth;
                     bool m_backgroundWidthHasBeenSet;
 
                     /**
-                     * 背景水印高度。默认高度1080。
+                     * <p>背景水印高度。默认高度1080。</p><p>取值范围：[360, 4096]</p><p>单位：px</p>
                      */
                     int64_t m_backgroundHeight;
                     bool m_backgroundHeightHasBeenSet;

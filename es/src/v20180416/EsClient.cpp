@@ -3890,6 +3890,56 @@ EsClient::UpdateInstanceOutcomeCallable EsClient::UpdateInstanceCallable(const U
     return prom->get_future();
 }
 
+EsClient::UpdateInstancePublicAccessOutcome EsClient::UpdateInstancePublicAccess(const UpdateInstancePublicAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateInstancePublicAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateInstancePublicAccessResponse rsp = UpdateInstancePublicAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateInstancePublicAccessOutcome(rsp);
+        else
+            return UpdateInstancePublicAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateInstancePublicAccessOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::UpdateInstancePublicAccessAsync(const UpdateInstancePublicAccessRequest& request, const UpdateInstancePublicAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateInstancePublicAccessRequest&;
+    using Resp = UpdateInstancePublicAccessResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateInstancePublicAccess", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::UpdateInstancePublicAccessOutcomeCallable EsClient::UpdateInstancePublicAccessCallable(const UpdateInstancePublicAccessRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateInstancePublicAccessOutcome>>();
+    UpdateInstancePublicAccessAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const UpdateInstancePublicAccessRequest&,
+        UpdateInstancePublicAccessOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EsClient::UpdateIpTraceStatusOutcome EsClient::UpdateIpTraceStatus(const UpdateIpTraceStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateIpTraceStatus");

@@ -26,9 +26,12 @@ MemoryPlusInfo::MemoryPlusInfo() :
     m_descriptionHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_regionHasBeenSet(false),
+    m_payModeHasBeenSet(false),
+    m_autoRenewHasBeenSet(false),
     m_memoryUsageHasBeenSet(false),
     m_creditUsageHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
+    m_versionHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_isolatedAtHasBeenSet(false),
     m_expiredAtHasBeenSet(false),
@@ -91,6 +94,26 @@ CoreInternalOutcome MemoryPlusInfo::Deserialize(const rapidjson::Value &value)
         m_regionHasBeenSet = true;
     }
 
+    if (value.HasMember("PayMode") && !value["PayMode"].IsNull())
+    {
+        if (!value["PayMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MemoryPlusInfo.PayMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_payMode = value["PayMode"].GetInt64();
+        m_payModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoRenew") && !value["AutoRenew"].IsNull())
+    {
+        if (!value["AutoRenew"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MemoryPlusInfo.AutoRenew` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRenew = value["AutoRenew"].GetInt64();
+        m_autoRenewHasBeenSet = true;
+    }
+
     if (value.HasMember("MemoryUsage") && !value["MemoryUsage"].IsNull())
     {
         if (!value["MemoryUsage"].IsInt64())
@@ -129,6 +152,16 @@ CoreInternalOutcome MemoryPlusInfo::Deserialize(const rapidjson::Value &value)
             m_resourceTags.push_back(item);
         }
         m_resourceTagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Version") && !value["Version"].IsNull())
+    {
+        if (!value["Version"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MemoryPlusInfo.Version` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_version = string(value["Version"].GetString());
+        m_versionHasBeenSet = true;
     }
 
     if (value.HasMember("CreatedAt") && !value["CreatedAt"].IsNull())
@@ -218,6 +251,22 @@ void MemoryPlusInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_payModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_payMode, allocator);
+    }
+
+    if (m_autoRenewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenew";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRenew, allocator);
+    }
+
     if (m_memoryUsageHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -247,6 +296,14 @@ void MemoryPlusInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_versionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createdAtHasBeenSet)
@@ -364,6 +421,38 @@ bool MemoryPlusInfo::RegionHasBeenSet() const
     return m_regionHasBeenSet;
 }
 
+int64_t MemoryPlusInfo::GetPayMode() const
+{
+    return m_payMode;
+}
+
+void MemoryPlusInfo::SetPayMode(const int64_t& _payMode)
+{
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
+}
+
+bool MemoryPlusInfo::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
+}
+
+int64_t MemoryPlusInfo::GetAutoRenew() const
+{
+    return m_autoRenew;
+}
+
+void MemoryPlusInfo::SetAutoRenew(const int64_t& _autoRenew)
+{
+    m_autoRenew = _autoRenew;
+    m_autoRenewHasBeenSet = true;
+}
+
+bool MemoryPlusInfo::AutoRenewHasBeenSet() const
+{
+    return m_autoRenewHasBeenSet;
+}
+
 int64_t MemoryPlusInfo::GetMemoryUsage() const
 {
     return m_memoryUsage;
@@ -410,6 +499,22 @@ void MemoryPlusInfo::SetResourceTags(const vector<ResourceTag>& _resourceTags)
 bool MemoryPlusInfo::ResourceTagsHasBeenSet() const
 {
     return m_resourceTagsHasBeenSet;
+}
+
+string MemoryPlusInfo::GetVersion() const
+{
+    return m_version;
+}
+
+void MemoryPlusInfo::SetVersion(const string& _version)
+{
+    m_version = _version;
+    m_versionHasBeenSet = true;
+}
+
+bool MemoryPlusInfo::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
 }
 
 string MemoryPlusInfo::GetCreatedAt() const

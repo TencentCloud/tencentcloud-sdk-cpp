@@ -51,7 +51,10 @@ RollbackToNewClusterRequest::RollbackToNewClusterRequest() :
     m_originalROInstanceListHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_autoArchiveHasBeenSet(false),
-    m_fromSaveBackupHasBeenSet(false)
+    m_fromSaveBackupHasBeenSet(false),
+    m_syncWayHasBeenSet(false),
+    m_semiSyncTimeoutHasBeenSet(false),
+    m_slaveZoneHasBeenSet(false)
 {
 }
 
@@ -342,6 +345,30 @@ string RollbackToNewClusterRequest::ToJsonString() const
         string key = "FromSaveBackup";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_fromSaveBackup, allocator);
+    }
+
+    if (m_syncWayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncWay";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_syncWay.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_semiSyncTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SemiSyncTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_semiSyncTimeout, allocator);
+    }
+
+    if (m_slaveZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SlaveZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_slaveZone.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -814,6 +841,54 @@ void RollbackToNewClusterRequest::SetFromSaveBackup(const bool& _fromSaveBackup)
 bool RollbackToNewClusterRequest::FromSaveBackupHasBeenSet() const
 {
     return m_fromSaveBackupHasBeenSet;
+}
+
+string RollbackToNewClusterRequest::GetSyncWay() const
+{
+    return m_syncWay;
+}
+
+void RollbackToNewClusterRequest::SetSyncWay(const string& _syncWay)
+{
+    m_syncWay = _syncWay;
+    m_syncWayHasBeenSet = true;
+}
+
+bool RollbackToNewClusterRequest::SyncWayHasBeenSet() const
+{
+    return m_syncWayHasBeenSet;
+}
+
+int64_t RollbackToNewClusterRequest::GetSemiSyncTimeout() const
+{
+    return m_semiSyncTimeout;
+}
+
+void RollbackToNewClusterRequest::SetSemiSyncTimeout(const int64_t& _semiSyncTimeout)
+{
+    m_semiSyncTimeout = _semiSyncTimeout;
+    m_semiSyncTimeoutHasBeenSet = true;
+}
+
+bool RollbackToNewClusterRequest::SemiSyncTimeoutHasBeenSet() const
+{
+    return m_semiSyncTimeoutHasBeenSet;
+}
+
+string RollbackToNewClusterRequest::GetSlaveZone() const
+{
+    return m_slaveZone;
+}
+
+void RollbackToNewClusterRequest::SetSlaveZone(const string& _slaveZone)
+{
+    m_slaveZone = _slaveZone;
+    m_slaveZoneHasBeenSet = true;
+}
+
+bool RollbackToNewClusterRequest::SlaveZoneHasBeenSet() const
+{
+    return m_slaveZoneHasBeenSet;
 }
 
 

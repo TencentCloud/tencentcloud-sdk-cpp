@@ -1244,6 +1244,27 @@ namespace TencentCloud
                      */
                     bool LogSpanIdKeyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否禁用 AI 能力</p><p>单位：无</p>
+                     * @return DisableAiAbility <p>是否禁用 AI 能力</p><p>单位：无</p>
+                     * 
+                     */
+                    int64_t GetDisableAiAbility() const;
+
+                    /**
+                     * 设置<p>是否禁用 AI 能力</p><p>单位：无</p>
+                     * @param _disableAiAbility <p>是否禁用 AI 能力</p><p>单位：无</p>
+                     * 
+                     */
+                    void SetDisableAiAbility(const int64_t& _disableAiAbility);
+
+                    /**
+                     * 判断参数 DisableAiAbility 是否已赋值
+                     * @return DisableAiAbility 是否已赋值
+                     * 
+                     */
+                    bool DisableAiAbilityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1587,6 +1608,12 @@ namespace TencentCloud
                      */
                     std::string m_logSpanIdKey;
                     bool m_logSpanIdKeyHasBeenSet;
+
+                    /**
+                     * <p>是否禁用 AI 能力</p><p>单位：无</p>
+                     */
+                    int64_t m_disableAiAbility;
+                    bool m_disableAiAbilityHasBeenSet;
 
                 };
             }

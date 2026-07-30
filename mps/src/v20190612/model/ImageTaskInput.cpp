@@ -29,7 +29,10 @@ ImageTaskInput::ImageTaskInput() :
     m_transformConfigHasBeenSet(false),
     m_aiTryOnConfigHasBeenSet(false),
     m_aiPosterSuiteConfigHasBeenSet(false),
-    m_createImageConfigHasBeenSet(false)
+    m_createImageConfigHasBeenSet(false),
+    m_aiCutoutConfigHasBeenSet(false),
+    m_aiExpansionConfigHasBeenSet(false),
+    m_aiStoryboardConfigHasBeenSet(false)
 {
 }
 
@@ -191,6 +194,57 @@ CoreInternalOutcome ImageTaskInput::Deserialize(const rapidjson::Value &value)
         m_createImageConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("AiCutoutConfig") && !value["AiCutoutConfig"].IsNull())
+    {
+        if (!value["AiCutoutConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageTaskInput.AiCutoutConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aiCutoutConfig.Deserialize(value["AiCutoutConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aiCutoutConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("AiExpansionConfig") && !value["AiExpansionConfig"].IsNull())
+    {
+        if (!value["AiExpansionConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageTaskInput.AiExpansionConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aiExpansionConfig.Deserialize(value["AiExpansionConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aiExpansionConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("AiStoryboardConfig") && !value["AiStoryboardConfig"].IsNull())
+    {
+        if (!value["AiStoryboardConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageTaskInput.AiStoryboardConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aiStoryboardConfig.Deserialize(value["AiStoryboardConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aiStoryboardConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -277,6 +331,33 @@ void ImageTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_createImageConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aiCutoutConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AiCutoutConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aiCutoutConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aiExpansionConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AiExpansionConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aiExpansionConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aiStoryboardConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AiStoryboardConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aiStoryboardConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -424,5 +505,53 @@ void ImageTaskInput::SetCreateImageConfig(const CreateImageConfig& _createImageC
 bool ImageTaskInput::CreateImageConfigHasBeenSet() const
 {
     return m_createImageConfigHasBeenSet;
+}
+
+AiCutoutConfig ImageTaskInput::GetAiCutoutConfig() const
+{
+    return m_aiCutoutConfig;
+}
+
+void ImageTaskInput::SetAiCutoutConfig(const AiCutoutConfig& _aiCutoutConfig)
+{
+    m_aiCutoutConfig = _aiCutoutConfig;
+    m_aiCutoutConfigHasBeenSet = true;
+}
+
+bool ImageTaskInput::AiCutoutConfigHasBeenSet() const
+{
+    return m_aiCutoutConfigHasBeenSet;
+}
+
+AiExpansionConfig ImageTaskInput::GetAiExpansionConfig() const
+{
+    return m_aiExpansionConfig;
+}
+
+void ImageTaskInput::SetAiExpansionConfig(const AiExpansionConfig& _aiExpansionConfig)
+{
+    m_aiExpansionConfig = _aiExpansionConfig;
+    m_aiExpansionConfigHasBeenSet = true;
+}
+
+bool ImageTaskInput::AiExpansionConfigHasBeenSet() const
+{
+    return m_aiExpansionConfigHasBeenSet;
+}
+
+AiStoryboardConfig ImageTaskInput::GetAiStoryboardConfig() const
+{
+    return m_aiStoryboardConfig;
+}
+
+void ImageTaskInput::SetAiStoryboardConfig(const AiStoryboardConfig& _aiStoryboardConfig)
+{
+    m_aiStoryboardConfig = _aiStoryboardConfig;
+    m_aiStoryboardConfigHasBeenSet = true;
+}
+
+bool ImageTaskInput::AiStoryboardConfigHasBeenSet() const
+{
+    return m_aiStoryboardConfigHasBeenSet;
 }
 

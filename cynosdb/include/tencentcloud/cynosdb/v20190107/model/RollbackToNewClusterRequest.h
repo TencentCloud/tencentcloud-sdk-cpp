@@ -656,6 +656,69 @@ namespace TencentCloud
                      */
                     bool FromSaveBackupHasBeenSet() const;
 
+                    /**
+                     * 获取<p>同步方式。可选值：async、semisync、sync，默认异步。</p>
+                     * @return SyncWay <p>同步方式。可选值：async、semisync、sync，默认异步。</p>
+                     * 
+                     */
+                    std::string GetSyncWay() const;
+
+                    /**
+                     * 设置<p>同步方式。可选值：async、semisync、sync，默认异步。</p>
+                     * @param _syncWay <p>同步方式。可选值：async、semisync、sync，默认异步。</p>
+                     * 
+                     */
+                    void SetSyncWay(const std::string& _syncWay);
+
+                    /**
+                     * 判断参数 SyncWay 是否已赋值
+                     * @return SyncWay 是否已赋值
+                     * 
+                     */
+                    bool SyncWayHasBeenSet() const;
+
+                    /**
+                     * 获取<p>半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。</p><p>取值范围：[1000, 4294967295]</p><p>单位：毫秒</p><p>默认值：10000</p>
+                     * @return SemiSyncTimeout <p>半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。</p><p>取值范围：[1000, 4294967295]</p><p>单位：毫秒</p><p>默认值：10000</p>
+                     * 
+                     */
+                    int64_t GetSemiSyncTimeout() const;
+
+                    /**
+                     * 设置<p>半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。</p><p>取值范围：[1000, 4294967295]</p><p>单位：毫秒</p><p>默认值：10000</p>
+                     * @param _semiSyncTimeout <p>半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。</p><p>取值范围：[1000, 4294967295]</p><p>单位：毫秒</p><p>默认值：10000</p>
+                     * 
+                     */
+                    void SetSemiSyncTimeout(const int64_t& _semiSyncTimeout);
+
+                    /**
+                     * 判断参数 SemiSyncTimeout 是否已赋值
+                     * @return SemiSyncTimeout 是否已赋值
+                     * 
+                     */
+                    bool SemiSyncTimeoutHasBeenSet() const;
+
+                    /**
+                     * 获取<p>备可用区</p>
+                     * @return SlaveZone <p>备可用区</p>
+                     * 
+                     */
+                    std::string GetSlaveZone() const;
+
+                    /**
+                     * 设置<p>备可用区</p>
+                     * @param _slaveZone <p>备可用区</p>
+                     * 
+                     */
+                    void SetSlaveZone(const std::string& _slaveZone);
+
+                    /**
+                     * 判断参数 SlaveZone 是否已赋值
+                     * @return SlaveZone 是否已赋值
+                     * 
+                     */
+                    bool SlaveZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -831,6 +894,24 @@ namespace TencentCloud
                      */
                     bool m_fromSaveBackup;
                     bool m_fromSaveBackupHasBeenSet;
+
+                    /**
+                     * <p>同步方式。可选值：async、semisync、sync，默认异步。</p>
+                     */
+                    std::string m_syncWay;
+                    bool m_syncWayHasBeenSet;
+
+                    /**
+                     * <p>半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。</p><p>取值范围：[1000, 4294967295]</p><p>单位：毫秒</p><p>默认值：10000</p>
+                     */
+                    int64_t m_semiSyncTimeout;
+                    bool m_semiSyncTimeoutHasBeenSet;
+
+                    /**
+                     * <p>备可用区</p>
+                     */
+                    std::string m_slaveZone;
+                    bool m_slaveZoneHasBeenSet;
 
                 };
             }

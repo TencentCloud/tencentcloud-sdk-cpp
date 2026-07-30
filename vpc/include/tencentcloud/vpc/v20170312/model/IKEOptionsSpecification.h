@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool DhGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>IKE SA Lifetime，单位：秒，设置IKE SA的生存周期，取值范围：60-604800</p>
-                     * @return IKESaLifetimeSeconds <p>IKE SA Lifetime，单位：秒，设置IKE SA的生存周期，取值范围：60-604800</p>
+                     * 获取<p>IKE SA Lifetime，单位：秒，设置IKE SA的生存周期</p><p>取值范围：[60, 604800]</p><p>默认值：86400</p>
+                     * @return IKESaLifetimeSeconds <p>IKE SA Lifetime，单位：秒，设置IKE SA的生存周期</p><p>取值范围：[60, 604800]</p><p>默认值：86400</p>
                      * 
                      */
                     uint64_t GetIKESaLifetimeSeconds() const;
 
                     /**
-                     * 设置<p>IKE SA Lifetime，单位：秒，设置IKE SA的生存周期，取值范围：60-604800</p>
-                     * @param _iKESaLifetimeSeconds <p>IKE SA Lifetime，单位：秒，设置IKE SA的生存周期，取值范围：60-604800</p>
+                     * 设置<p>IKE SA Lifetime，单位：秒，设置IKE SA的生存周期</p><p>取值范围：[60, 604800]</p><p>默认值：86400</p>
+                     * @param _iKESaLifetimeSeconds <p>IKE SA Lifetime，单位：秒，设置IKE SA的生存周期</p><p>取值范围：[60, 604800]</p><p>默认值：86400</p>
                      * 
                      */
                     void SetIKESaLifetimeSeconds(const uint64_t& _iKESaLifetimeSeconds);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool IKESaLifetimeSecondsHasBeenSet() const;
 
                     /**
-                     * 获取<p>IKE版本</p>
-                     * @return IKEVersion <p>IKE版本</p>
+                     * 获取<p>IKE版本</p><p>枚举值：</p><ul><li>IKEV1： IKEV1版本</li><li>IKEV2： IKEV2版本</li></ul><p>默认值：IKEV1</p>
+                     * @return IKEVersion <p>IKE版本</p><p>枚举值：</p><ul><li>IKEV1： IKEV1版本</li><li>IKEV2： IKEV2版本</li></ul><p>默认值：IKEV1</p>
                      * 
                      */
                     std::string GetIKEVersion() const;
 
                     /**
-                     * 设置<p>IKE版本</p>
-                     * @param _iKEVersion <p>IKE版本</p>
+                     * 设置<p>IKE版本</p><p>枚举值：</p><ul><li>IKEV1： IKEV1版本</li><li>IKEV2： IKEV2版本</li></ul><p>默认值：IKEV1</p>
+                     * @param _iKEVersion <p>IKE版本</p><p>枚举值：</p><ul><li>IKEV1： IKEV1版本</li><li>IKEV2： IKEV2版本</li></ul><p>默认值：IKEV1</p>
                      * 
                      */
                     void SetIKEVersion(const std::string& _iKEVersion);
@@ -361,13 +361,13 @@ namespace TencentCloud
                     bool m_dhGroupNameHasBeenSet;
 
                     /**
-                     * <p>IKE SA Lifetime，单位：秒，设置IKE SA的生存周期，取值范围：60-604800</p>
+                     * <p>IKE SA Lifetime，单位：秒，设置IKE SA的生存周期</p><p>取值范围：[60, 604800]</p><p>默认值：86400</p>
                      */
                     uint64_t m_iKESaLifetimeSeconds;
                     bool m_iKESaLifetimeSecondsHasBeenSet;
 
                     /**
-                     * <p>IKE版本</p>
+                     * <p>IKE版本</p><p>枚举值：</p><ul><li>IKEV1： IKEV1版本</li><li>IKEV2： IKEV2版本</li></ul><p>默认值：IKEV1</p>
                      */
                     std::string m_iKEVersion;
                     bool m_iKEVersionHasBeenSet;

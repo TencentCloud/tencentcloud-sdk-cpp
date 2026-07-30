@@ -68,7 +68,8 @@ ModifyApmInstanceRequest::ModifyApmInstanceRequest() :
     m_logSpanIdKeyHasBeenSet(false),
     m_enableHeadSamplerHasBeenSet(false),
     m_headSamplerTypeHasBeenSet(false),
-    m_headSamplerArgHasBeenSet(false)
+    m_headSamplerArgHasBeenSet(false),
+    m_disableAiAbilityHasBeenSet(false)
 {
 }
 
@@ -457,6 +458,14 @@ string ModifyApmInstanceRequest::ToJsonString() const
         string key = "HeadSamplerArg";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_headSamplerArg, allocator);
+    }
+
+    if (m_disableAiAbilityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableAiAbility";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_disableAiAbility, allocator);
     }
 
 
@@ -1201,6 +1210,22 @@ void ModifyApmInstanceRequest::SetHeadSamplerArg(const int64_t& _headSamplerArg)
 bool ModifyApmInstanceRequest::HeadSamplerArgHasBeenSet() const
 {
     return m_headSamplerArgHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetDisableAiAbility() const
+{
+    return m_disableAiAbility;
+}
+
+void ModifyApmInstanceRequest::SetDisableAiAbility(const int64_t& _disableAiAbility)
+{
+    m_disableAiAbility = _disableAiAbility;
+    m_disableAiAbilityHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::DisableAiAbilityHasBeenSet() const
+{
+    return m_disableAiAbilityHasBeenSet;
 }
 
 

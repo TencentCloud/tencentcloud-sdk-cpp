@@ -69,7 +69,9 @@ CreateClustersRequest::CreateClustersRequest() :
     m_autoArchiveHasBeenSet(false),
     m_autoArchiveDelayHoursHasBeenSet(false),
     m_clusterLevelHasBeenSet(false),
-    m_cynosVersionHasBeenSet(false)
+    m_cynosVersionHasBeenSet(false),
+    m_syncWayHasBeenSet(false),
+    m_semiSyncTimeoutHasBeenSet(false)
 {
 }
 
@@ -486,6 +488,22 @@ string CreateClustersRequest::ToJsonString() const
         string key = "CynosVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cynosVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncWayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncWay";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_syncWay.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_semiSyncTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SemiSyncTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_semiSyncTimeout, allocator);
     }
 
 
@@ -1246,6 +1264,38 @@ void CreateClustersRequest::SetCynosVersion(const string& _cynosVersion)
 bool CreateClustersRequest::CynosVersionHasBeenSet() const
 {
     return m_cynosVersionHasBeenSet;
+}
+
+string CreateClustersRequest::GetSyncWay() const
+{
+    return m_syncWay;
+}
+
+void CreateClustersRequest::SetSyncWay(const string& _syncWay)
+{
+    m_syncWay = _syncWay;
+    m_syncWayHasBeenSet = true;
+}
+
+bool CreateClustersRequest::SyncWayHasBeenSet() const
+{
+    return m_syncWayHasBeenSet;
+}
+
+int64_t CreateClustersRequest::GetSemiSyncTimeout() const
+{
+    return m_semiSyncTimeout;
+}
+
+void CreateClustersRequest::SetSemiSyncTimeout(const int64_t& _semiSyncTimeout)
+{
+    m_semiSyncTimeout = _semiSyncTimeout;
+    m_semiSyncTimeoutHasBeenSet = true;
+}
+
+bool CreateClustersRequest::SemiSyncTimeoutHasBeenSet() const
+{
+    return m_semiSyncTimeoutHasBeenSet;
 }
 
 

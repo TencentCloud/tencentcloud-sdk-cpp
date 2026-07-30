@@ -1,0 +1,869 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/es/v20180416/model/UpdateInstancePublicAccessRequest.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using namespace TencentCloud::Es::V20180416::Model;
+using namespace std;
+
+UpdateInstancePublicAccessRequest::UpdateInstancePublicAccessRequest() :
+    m_instanceIdHasBeenSet(false),
+    m_instanceNameHasBeenSet(false),
+    m_nodeNumHasBeenSet(false),
+    m_esConfigHasBeenSet(false),
+    m_passwordHasBeenSet(false),
+    m_esAclHasBeenSet(false),
+    m_diskSizeHasBeenSet(false),
+    m_nodeTypeHasBeenSet(false),
+    m_masterNodeNumHasBeenSet(false),
+    m_masterNodeTypeHasBeenSet(false),
+    m_masterNodeDiskSizeHasBeenSet(false),
+    m_forceRestartHasBeenSet(false),
+    m_cosBackupHasBeenSet(false),
+    m_nodeInfoListHasBeenSet(false),
+    m_publicAccessHasBeenSet(false),
+    m_esPublicAclHasBeenSet(false),
+    m_kibanaPublicAccessHasBeenSet(false),
+    m_kibanaPrivateAccessHasBeenSet(false),
+    m_basicSecurityTypeHasBeenSet(false),
+    m_kibanaPrivatePortHasBeenSet(false),
+    m_scaleTypeHasBeenSet(false),
+    m_multiZoneInfoHasBeenSet(false),
+    m_sceneTypeHasBeenSet(false),
+    m_kibanaConfigHasBeenSet(false),
+    m_webNodeTypeInfoHasBeenSet(false),
+    m_switchPrivateLinkHasBeenSet(false),
+    m_enableCerebroHasBeenSet(false),
+    m_cerebroPublicAccessHasBeenSet(false),
+    m_cerebroPrivateAccessHasBeenSet(false),
+    m_esConfigSetHasBeenSet(false),
+    m_operationDurationHasBeenSet(false),
+    m_kibanaAlteringPublicAccessHasBeenSet(false)
+{
+}
+
+string UpdateInstancePublicAccessRequest::ToJsonString() const
+{
+    rapidjson::Document d;
+    d.SetObject();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
+
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_nodeNum, allocator);
+    }
+
+    if (m_esConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EsConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_esConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_passwordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Password";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_esAclHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EsAcl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_esAcl.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_diskSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_diskSize, allocator);
+    }
+
+    if (m_nodeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_nodeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_masterNodeNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MasterNodeNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_masterNodeNum, allocator);
+    }
+
+    if (m_masterNodeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MasterNodeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_masterNodeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_masterNodeDiskSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MasterNodeDiskSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_masterNodeDiskSize, allocator);
+    }
+
+    if (m_forceRestartHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForceRestart";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_forceRestart, allocator);
+    }
+
+    if (m_cosBackupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosBackup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cosBackup.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_nodeInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_nodeInfoList.begin(); itr != m_nodeInfoList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_publicAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_publicAccess.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_esPublicAclHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EsPublicAcl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_esPublicAcl.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_kibanaPublicAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KibanaPublicAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_kibanaPublicAccess.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kibanaPrivateAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KibanaPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_kibanaPrivateAccess.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_basicSecurityTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BasicSecurityType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_basicSecurityType, allocator);
+    }
+
+    if (m_kibanaPrivatePortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KibanaPrivatePort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_kibanaPrivatePort, allocator);
+    }
+
+    if (m_scaleTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScaleType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_scaleType, allocator);
+    }
+
+    if (m_multiZoneInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiZoneInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_multiZoneInfo.begin(); itr != m_multiZoneInfo.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_sceneTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sceneType, allocator);
+    }
+
+    if (m_kibanaConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KibanaConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_kibanaConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_webNodeTypeInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebNodeTypeInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_webNodeTypeInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_switchPrivateLinkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SwitchPrivateLink";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_switchPrivateLink.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableCerebroHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableCerebro";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableCerebro, allocator);
+    }
+
+    if (m_cerebroPublicAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CerebroPublicAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cerebroPublicAccess.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cerebroPrivateAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CerebroPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cerebroPrivateAccess.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_esConfigSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EsConfigSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_esConfigSet.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_operationDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationDuration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operationDuration.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_kibanaAlteringPublicAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KibanaAlteringPublicAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_kibanaAlteringPublicAccess.begin(); itr != m_kibanaAlteringPublicAccess.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    d.Accept(writer);
+    return buffer.GetString();
+}
+
+
+string UpdateInstancePublicAccessRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void UpdateInstancePublicAccessRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string UpdateInstancePublicAccessRequest::GetInstanceName() const
+{
+    return m_instanceName;
+}
+
+void UpdateInstancePublicAccessRequest::SetInstanceName(const string& _instanceName)
+{
+    m_instanceName = _instanceName;
+    m_instanceNameHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::InstanceNameHasBeenSet() const
+{
+    return m_instanceNameHasBeenSet;
+}
+
+uint64_t UpdateInstancePublicAccessRequest::GetNodeNum() const
+{
+    return m_nodeNum;
+}
+
+void UpdateInstancePublicAccessRequest::SetNodeNum(const uint64_t& _nodeNum)
+{
+    m_nodeNum = _nodeNum;
+    m_nodeNumHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::NodeNumHasBeenSet() const
+{
+    return m_nodeNumHasBeenSet;
+}
+
+string UpdateInstancePublicAccessRequest::GetEsConfig() const
+{
+    return m_esConfig;
+}
+
+void UpdateInstancePublicAccessRequest::SetEsConfig(const string& _esConfig)
+{
+    m_esConfig = _esConfig;
+    m_esConfigHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::EsConfigHasBeenSet() const
+{
+    return m_esConfigHasBeenSet;
+}
+
+string UpdateInstancePublicAccessRequest::GetPassword() const
+{
+    return m_password;
+}
+
+void UpdateInstancePublicAccessRequest::SetPassword(const string& _password)
+{
+    m_password = _password;
+    m_passwordHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::PasswordHasBeenSet() const
+{
+    return m_passwordHasBeenSet;
+}
+
+EsAcl UpdateInstancePublicAccessRequest::GetEsAcl() const
+{
+    return m_esAcl;
+}
+
+void UpdateInstancePublicAccessRequest::SetEsAcl(const EsAcl& _esAcl)
+{
+    m_esAcl = _esAcl;
+    m_esAclHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::EsAclHasBeenSet() const
+{
+    return m_esAclHasBeenSet;
+}
+
+uint64_t UpdateInstancePublicAccessRequest::GetDiskSize() const
+{
+    return m_diskSize;
+}
+
+void UpdateInstancePublicAccessRequest::SetDiskSize(const uint64_t& _diskSize)
+{
+    m_diskSize = _diskSize;
+    m_diskSizeHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::DiskSizeHasBeenSet() const
+{
+    return m_diskSizeHasBeenSet;
+}
+
+string UpdateInstancePublicAccessRequest::GetNodeType() const
+{
+    return m_nodeType;
+}
+
+void UpdateInstancePublicAccessRequest::SetNodeType(const string& _nodeType)
+{
+    m_nodeType = _nodeType;
+    m_nodeTypeHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::NodeTypeHasBeenSet() const
+{
+    return m_nodeTypeHasBeenSet;
+}
+
+uint64_t UpdateInstancePublicAccessRequest::GetMasterNodeNum() const
+{
+    return m_masterNodeNum;
+}
+
+void UpdateInstancePublicAccessRequest::SetMasterNodeNum(const uint64_t& _masterNodeNum)
+{
+    m_masterNodeNum = _masterNodeNum;
+    m_masterNodeNumHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::MasterNodeNumHasBeenSet() const
+{
+    return m_masterNodeNumHasBeenSet;
+}
+
+string UpdateInstancePublicAccessRequest::GetMasterNodeType() const
+{
+    return m_masterNodeType;
+}
+
+void UpdateInstancePublicAccessRequest::SetMasterNodeType(const string& _masterNodeType)
+{
+    m_masterNodeType = _masterNodeType;
+    m_masterNodeTypeHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::MasterNodeTypeHasBeenSet() const
+{
+    return m_masterNodeTypeHasBeenSet;
+}
+
+uint64_t UpdateInstancePublicAccessRequest::GetMasterNodeDiskSize() const
+{
+    return m_masterNodeDiskSize;
+}
+
+void UpdateInstancePublicAccessRequest::SetMasterNodeDiskSize(const uint64_t& _masterNodeDiskSize)
+{
+    m_masterNodeDiskSize = _masterNodeDiskSize;
+    m_masterNodeDiskSizeHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::MasterNodeDiskSizeHasBeenSet() const
+{
+    return m_masterNodeDiskSizeHasBeenSet;
+}
+
+bool UpdateInstancePublicAccessRequest::GetForceRestart() const
+{
+    return m_forceRestart;
+}
+
+void UpdateInstancePublicAccessRequest::SetForceRestart(const bool& _forceRestart)
+{
+    m_forceRestart = _forceRestart;
+    m_forceRestartHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::ForceRestartHasBeenSet() const
+{
+    return m_forceRestartHasBeenSet;
+}
+
+CosBackup UpdateInstancePublicAccessRequest::GetCosBackup() const
+{
+    return m_cosBackup;
+}
+
+void UpdateInstancePublicAccessRequest::SetCosBackup(const CosBackup& _cosBackup)
+{
+    m_cosBackup = _cosBackup;
+    m_cosBackupHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::CosBackupHasBeenSet() const
+{
+    return m_cosBackupHasBeenSet;
+}
+
+vector<NodeInfo> UpdateInstancePublicAccessRequest::GetNodeInfoList() const
+{
+    return m_nodeInfoList;
+}
+
+void UpdateInstancePublicAccessRequest::SetNodeInfoList(const vector<NodeInfo>& _nodeInfoList)
+{
+    m_nodeInfoList = _nodeInfoList;
+    m_nodeInfoListHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::NodeInfoListHasBeenSet() const
+{
+    return m_nodeInfoListHasBeenSet;
+}
+
+string UpdateInstancePublicAccessRequest::GetPublicAccess() const
+{
+    return m_publicAccess;
+}
+
+void UpdateInstancePublicAccessRequest::SetPublicAccess(const string& _publicAccess)
+{
+    m_publicAccess = _publicAccess;
+    m_publicAccessHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::PublicAccessHasBeenSet() const
+{
+    return m_publicAccessHasBeenSet;
+}
+
+EsPublicAcl UpdateInstancePublicAccessRequest::GetEsPublicAcl() const
+{
+    return m_esPublicAcl;
+}
+
+void UpdateInstancePublicAccessRequest::SetEsPublicAcl(const EsPublicAcl& _esPublicAcl)
+{
+    m_esPublicAcl = _esPublicAcl;
+    m_esPublicAclHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::EsPublicAclHasBeenSet() const
+{
+    return m_esPublicAclHasBeenSet;
+}
+
+string UpdateInstancePublicAccessRequest::GetKibanaPublicAccess() const
+{
+    return m_kibanaPublicAccess;
+}
+
+void UpdateInstancePublicAccessRequest::SetKibanaPublicAccess(const string& _kibanaPublicAccess)
+{
+    m_kibanaPublicAccess = _kibanaPublicAccess;
+    m_kibanaPublicAccessHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::KibanaPublicAccessHasBeenSet() const
+{
+    return m_kibanaPublicAccessHasBeenSet;
+}
+
+string UpdateInstancePublicAccessRequest::GetKibanaPrivateAccess() const
+{
+    return m_kibanaPrivateAccess;
+}
+
+void UpdateInstancePublicAccessRequest::SetKibanaPrivateAccess(const string& _kibanaPrivateAccess)
+{
+    m_kibanaPrivateAccess = _kibanaPrivateAccess;
+    m_kibanaPrivateAccessHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::KibanaPrivateAccessHasBeenSet() const
+{
+    return m_kibanaPrivateAccessHasBeenSet;
+}
+
+int64_t UpdateInstancePublicAccessRequest::GetBasicSecurityType() const
+{
+    return m_basicSecurityType;
+}
+
+void UpdateInstancePublicAccessRequest::SetBasicSecurityType(const int64_t& _basicSecurityType)
+{
+    m_basicSecurityType = _basicSecurityType;
+    m_basicSecurityTypeHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::BasicSecurityTypeHasBeenSet() const
+{
+    return m_basicSecurityTypeHasBeenSet;
+}
+
+uint64_t UpdateInstancePublicAccessRequest::GetKibanaPrivatePort() const
+{
+    return m_kibanaPrivatePort;
+}
+
+void UpdateInstancePublicAccessRequest::SetKibanaPrivatePort(const uint64_t& _kibanaPrivatePort)
+{
+    m_kibanaPrivatePort = _kibanaPrivatePort;
+    m_kibanaPrivatePortHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::KibanaPrivatePortHasBeenSet() const
+{
+    return m_kibanaPrivatePortHasBeenSet;
+}
+
+int64_t UpdateInstancePublicAccessRequest::GetScaleType() const
+{
+    return m_scaleType;
+}
+
+void UpdateInstancePublicAccessRequest::SetScaleType(const int64_t& _scaleType)
+{
+    m_scaleType = _scaleType;
+    m_scaleTypeHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::ScaleTypeHasBeenSet() const
+{
+    return m_scaleTypeHasBeenSet;
+}
+
+vector<ZoneDetail> UpdateInstancePublicAccessRequest::GetMultiZoneInfo() const
+{
+    return m_multiZoneInfo;
+}
+
+void UpdateInstancePublicAccessRequest::SetMultiZoneInfo(const vector<ZoneDetail>& _multiZoneInfo)
+{
+    m_multiZoneInfo = _multiZoneInfo;
+    m_multiZoneInfoHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::MultiZoneInfoHasBeenSet() const
+{
+    return m_multiZoneInfoHasBeenSet;
+}
+
+int64_t UpdateInstancePublicAccessRequest::GetSceneType() const
+{
+    return m_sceneType;
+}
+
+void UpdateInstancePublicAccessRequest::SetSceneType(const int64_t& _sceneType)
+{
+    m_sceneType = _sceneType;
+    m_sceneTypeHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::SceneTypeHasBeenSet() const
+{
+    return m_sceneTypeHasBeenSet;
+}
+
+string UpdateInstancePublicAccessRequest::GetKibanaConfig() const
+{
+    return m_kibanaConfig;
+}
+
+void UpdateInstancePublicAccessRequest::SetKibanaConfig(const string& _kibanaConfig)
+{
+    m_kibanaConfig = _kibanaConfig;
+    m_kibanaConfigHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::KibanaConfigHasBeenSet() const
+{
+    return m_kibanaConfigHasBeenSet;
+}
+
+WebNodeTypeInfo UpdateInstancePublicAccessRequest::GetWebNodeTypeInfo() const
+{
+    return m_webNodeTypeInfo;
+}
+
+void UpdateInstancePublicAccessRequest::SetWebNodeTypeInfo(const WebNodeTypeInfo& _webNodeTypeInfo)
+{
+    m_webNodeTypeInfo = _webNodeTypeInfo;
+    m_webNodeTypeInfoHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::WebNodeTypeInfoHasBeenSet() const
+{
+    return m_webNodeTypeInfoHasBeenSet;
+}
+
+string UpdateInstancePublicAccessRequest::GetSwitchPrivateLink() const
+{
+    return m_switchPrivateLink;
+}
+
+void UpdateInstancePublicAccessRequest::SetSwitchPrivateLink(const string& _switchPrivateLink)
+{
+    m_switchPrivateLink = _switchPrivateLink;
+    m_switchPrivateLinkHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::SwitchPrivateLinkHasBeenSet() const
+{
+    return m_switchPrivateLinkHasBeenSet;
+}
+
+bool UpdateInstancePublicAccessRequest::GetEnableCerebro() const
+{
+    return m_enableCerebro;
+}
+
+void UpdateInstancePublicAccessRequest::SetEnableCerebro(const bool& _enableCerebro)
+{
+    m_enableCerebro = _enableCerebro;
+    m_enableCerebroHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::EnableCerebroHasBeenSet() const
+{
+    return m_enableCerebroHasBeenSet;
+}
+
+string UpdateInstancePublicAccessRequest::GetCerebroPublicAccess() const
+{
+    return m_cerebroPublicAccess;
+}
+
+void UpdateInstancePublicAccessRequest::SetCerebroPublicAccess(const string& _cerebroPublicAccess)
+{
+    m_cerebroPublicAccess = _cerebroPublicAccess;
+    m_cerebroPublicAccessHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::CerebroPublicAccessHasBeenSet() const
+{
+    return m_cerebroPublicAccessHasBeenSet;
+}
+
+string UpdateInstancePublicAccessRequest::GetCerebroPrivateAccess() const
+{
+    return m_cerebroPrivateAccess;
+}
+
+void UpdateInstancePublicAccessRequest::SetCerebroPrivateAccess(const string& _cerebroPrivateAccess)
+{
+    m_cerebroPrivateAccess = _cerebroPrivateAccess;
+    m_cerebroPrivateAccessHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::CerebroPrivateAccessHasBeenSet() const
+{
+    return m_cerebroPrivateAccessHasBeenSet;
+}
+
+EsConfigSetInfo UpdateInstancePublicAccessRequest::GetEsConfigSet() const
+{
+    return m_esConfigSet;
+}
+
+void UpdateInstancePublicAccessRequest::SetEsConfigSet(const EsConfigSetInfo& _esConfigSet)
+{
+    m_esConfigSet = _esConfigSet;
+    m_esConfigSetHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::EsConfigSetHasBeenSet() const
+{
+    return m_esConfigSetHasBeenSet;
+}
+
+OperationDurationUpdated UpdateInstancePublicAccessRequest::GetOperationDuration() const
+{
+    return m_operationDuration;
+}
+
+void UpdateInstancePublicAccessRequest::SetOperationDuration(const OperationDurationUpdated& _operationDuration)
+{
+    m_operationDuration = _operationDuration;
+    m_operationDurationHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::OperationDurationHasBeenSet() const
+{
+    return m_operationDurationHasBeenSet;
+}
+
+vector<string> UpdateInstancePublicAccessRequest::GetKibanaAlteringPublicAccess() const
+{
+    return m_kibanaAlteringPublicAccess;
+}
+
+void UpdateInstancePublicAccessRequest::SetKibanaAlteringPublicAccess(const vector<string>& _kibanaAlteringPublicAccess)
+{
+    m_kibanaAlteringPublicAccess = _kibanaAlteringPublicAccess;
+    m_kibanaAlteringPublicAccessHasBeenSet = true;
+}
+
+bool UpdateInstancePublicAccessRequest::KibanaAlteringPublicAccessHasBeenSet() const
+{
+    return m_kibanaAlteringPublicAccessHasBeenSet;
+}
+
+

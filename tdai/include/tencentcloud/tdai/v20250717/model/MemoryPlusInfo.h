@@ -153,6 +153,48 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
+                     * 获取<p>计费模式</p><p>枚举值：</p><ul><li>-1： 免费版</li><li>0： 按量付费</li><li>1： 包年包月</li></ul>
+                     * @return PayMode <p>计费模式</p><p>枚举值：</p><ul><li>-1： 免费版</li><li>0： 按量付费</li><li>1： 包年包月</li></ul>
+                     * 
+                     */
+                    int64_t GetPayMode() const;
+
+                    /**
+                     * 设置<p>计费模式</p><p>枚举值：</p><ul><li>-1： 免费版</li><li>0： 按量付费</li><li>1： 包年包月</li></ul>
+                     * @param _payMode <p>计费模式</p><p>枚举值：</p><ul><li>-1： 免费版</li><li>0： 按量付费</li><li>1： 包年包月</li></ul>
+                     * 
+                     */
+                    void SetPayMode(const int64_t& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     * 
+                     */
+                    bool PayModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否自动续费</p><p>枚举值：</p><ul><li>0： 不自动续费</li><li>1： 自动续费</li></ul>
+                     * @return AutoRenew <p>是否自动续费</p><p>枚举值：</p><ul><li>0： 不自动续费</li><li>1： 自动续费</li></ul>
+                     * 
+                     */
+                    int64_t GetAutoRenew() const;
+
+                    /**
+                     * 设置<p>是否自动续费</p><p>枚举值：</p><ul><li>0： 不自动续费</li><li>1： 自动续费</li></ul>
+                     * @param _autoRenew <p>是否自动续费</p><p>枚举值：</p><ul><li>0： 不自动续费</li><li>1： 自动续费</li></ul>
+                     * 
+                     */
+                    void SetAutoRenew(const int64_t& _autoRenew);
+
+                    /**
+                     * 判断参数 AutoRenew 是否已赋值
+                     * @return AutoRenew 是否已赋值
+                     * 
+                     */
+                    bool AutoRenewHasBeenSet() const;
+
+                    /**
                      * 获取<p>记忆条数</p>
                      * @return MemoryUsage <p>记忆条数</p>
                      * 
@@ -214,6 +256,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ResourceTagsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>版本号</p>
+                     * @return Version <p>版本号</p>
+                     * 
+                     */
+                    std::string GetVersion() const;
+
+                    /**
+                     * 设置<p>版本号</p>
+                     * @param _version <p>版本号</p>
+                     * 
+                     */
+                    void SetVersion(const std::string& _version);
+
+                    /**
+                     * 判断参数 Version 是否已赋值
+                     * @return Version 是否已赋值
+                     * 
+                     */
+                    bool VersionHasBeenSet() const;
 
                     /**
                      * 获取<p>创建时间</p>
@@ -332,6 +395,18 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
+                     * <p>计费模式</p><p>枚举值：</p><ul><li>-1： 免费版</li><li>0： 按量付费</li><li>1： 包年包月</li></ul>
+                     */
+                    int64_t m_payMode;
+                    bool m_payModeHasBeenSet;
+
+                    /**
+                     * <p>是否自动续费</p><p>枚举值：</p><ul><li>0： 不自动续费</li><li>1： 自动续费</li></ul>
+                     */
+                    int64_t m_autoRenew;
+                    bool m_autoRenewHasBeenSet;
+
+                    /**
                      * <p>记忆条数</p>
                      */
                     int64_t m_memoryUsage;
@@ -348,6 +423,12 @@ namespace TencentCloud
                      */
                     std::vector<ResourceTag> m_resourceTags;
                     bool m_resourceTagsHasBeenSet;
+
+                    /**
+                     * <p>版本号</p>
+                     */
+                    std::string m_version;
+                    bool m_versionHasBeenSet;
 
                     /**
                      * <p>创建时间</p>

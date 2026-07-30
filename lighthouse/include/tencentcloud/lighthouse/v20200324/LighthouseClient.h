@@ -73,6 +73,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/DeleteSnapshotsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeAllScenesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeAllScenesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintBundlesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintBundlesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsRequest.h>
@@ -350,6 +352,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAllScenesResponse> DescribeAllScenesOutcome;
                 typedef std::future<DescribeAllScenesOutcome> DescribeAllScenesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeAllScenesRequest&, DescribeAllScenesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllScenesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBlueprintBundlesResponse> DescribeBlueprintBundlesOutcome;
+                typedef std::future<DescribeBlueprintBundlesOutcome> DescribeBlueprintBundlesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeBlueprintBundlesRequest&, DescribeBlueprintBundlesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlueprintBundlesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBlueprintInstancesResponse> DescribeBlueprintInstancesOutcome;
                 typedef std::future<DescribeBlueprintInstancesOutcome> DescribeBlueprintInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeBlueprintInstancesRequest&, DescribeBlueprintInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlueprintInstancesAsyncHandler;
@@ -902,6 +907,15 @@ namespace TencentCloud
                 DescribeAllScenesOutcome DescribeAllScenes(const Model::DescribeAllScenesRequest &request);
                 void DescribeAllScenesAsync(const Model::DescribeAllScenesRequest& request, const DescribeAllScenesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAllScenesOutcomeCallable DescribeAllScenesCallable(const Model::DescribeAllScenesRequest& request);
+
+                /**
+                 *本接口(DescribeBlueprintBundles)用于查询镜像所对应的套餐。当前仅支持查询镜像类型为游戏专区的镜像ID。
+                 * @param req DescribeBlueprintBundlesRequest
+                 * @return DescribeBlueprintBundlesOutcome
+                 */
+                DescribeBlueprintBundlesOutcome DescribeBlueprintBundles(const Model::DescribeBlueprintBundlesRequest &request);
+                void DescribeBlueprintBundlesAsync(const Model::DescribeBlueprintBundlesRequest& request, const DescribeBlueprintBundlesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBlueprintBundlesOutcomeCallable DescribeBlueprintBundlesCallable(const Model::DescribeBlueprintBundlesRequest& request);
 
                 /**
                  *本接口（DescribeBlueprintInstances）用于查询镜像实例信息。

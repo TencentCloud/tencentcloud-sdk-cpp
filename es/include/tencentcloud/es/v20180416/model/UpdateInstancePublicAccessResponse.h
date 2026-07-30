@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_LIVE_V20180801_MODEL_ADDLIVEWATERMARKRESPONSE_H_
-#define TENCENTCLOUD_LIVE_V20180801_MODEL_ADDLIVEWATERMARKRESPONSE_H_
+#ifndef TENCENTCLOUD_ES_V20180416_MODEL_UPDATEINSTANCEPUBLICACCESSRESPONSE_H_
+#define TENCENTCLOUD_ES_V20180416_MODEL_UPDATEINSTANCEPUBLICACCESSRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,45 +25,48 @@
 
 namespace TencentCloud
 {
-    namespace Live
+    namespace Es
     {
-        namespace V20180801
+        namespace V20180416
         {
             namespace Model
             {
                 /**
-                * AddLiveWatermark返回参数结构体
+                * UpdateInstancePublicAccess返回参数结构体
                 */
-                class AddLiveWatermarkResponse : public AbstractModel
+                class UpdateInstancePublicAccessResponse : public AbstractModel
                 {
                 public:
-                    AddLiveWatermarkResponse();
-                    ~AddLiveWatermarkResponse() = default;
+                    UpdateInstancePublicAccessResponse();
+                    ~UpdateInstancePublicAccessResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取<p>水印ID。</p>
-                     * @return WatermarkId <p>水印ID。</p>
+                     * 获取订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DealName 订单号
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    uint64_t GetWatermarkId() const;
+                    std::string GetDealName() const;
 
                     /**
-                     * 判断参数 WatermarkId 是否已赋值
-                     * @return WatermarkId 是否已赋值
+                     * 判断参数 DealName 是否已赋值
+                     * @return DealName 是否已赋值
                      * 
                      */
-                    bool WatermarkIdHasBeenSet() const;
+                    bool DealNameHasBeenSet() const;
 
                 private:
 
                     /**
-                     * <p>水印ID。</p>
+                     * 订单号
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t m_watermarkId;
-                    bool m_watermarkIdHasBeenSet;
+                    std::string m_dealName;
+                    bool m_dealNameHasBeenSet;
 
                 };
             }
@@ -71,4 +74,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_LIVE_V20180801_MODEL_ADDLIVEWATERMARKRESPONSE_H_
+#endif // !TENCENTCLOUD_ES_V20180416_MODEL_UPDATEINSTANCEPUBLICACCESSRESPONSE_H_
