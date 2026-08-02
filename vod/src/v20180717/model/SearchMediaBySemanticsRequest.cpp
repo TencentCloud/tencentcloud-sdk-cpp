@@ -25,6 +25,7 @@ using namespace std;
 SearchMediaBySemanticsRequest::SearchMediaBySemanticsRequest() :
     m_subAppIdHasBeenSet(false),
     m_textHasBeenSet(false),
+    m_knowledgeBaseIdHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_categoriesHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -54,6 +55,14 @@ string SearchMediaBySemanticsRequest::ToJsonString() const
         string key = "Text";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_text.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_knowledgeBaseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeBaseId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_knowledgeBaseId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_limitHasBeenSet)
@@ -154,6 +163,22 @@ void SearchMediaBySemanticsRequest::SetText(const string& _text)
 bool SearchMediaBySemanticsRequest::TextHasBeenSet() const
 {
     return m_textHasBeenSet;
+}
+
+string SearchMediaBySemanticsRequest::GetKnowledgeBaseId() const
+{
+    return m_knowledgeBaseId;
+}
+
+void SearchMediaBySemanticsRequest::SetKnowledgeBaseId(const string& _knowledgeBaseId)
+{
+    m_knowledgeBaseId = _knowledgeBaseId;
+    m_knowledgeBaseIdHasBeenSet = true;
+}
+
+bool SearchMediaBySemanticsRequest::KnowledgeBaseIdHasBeenSet() const
+{
+    return m_knowledgeBaseIdHasBeenSet;
 }
 
 uint64_t SearchMediaBySemanticsRequest::GetLimit() const

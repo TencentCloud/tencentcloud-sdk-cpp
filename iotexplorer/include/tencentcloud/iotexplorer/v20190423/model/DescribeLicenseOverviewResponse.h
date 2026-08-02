@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iotexplorer/v20190423/model/LicenseOverview.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,30 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>实例概览</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Data <p>实例概览</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<LicenseOverview> GetData() const;
+
+                    /**
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
+                     * 
+                     */
+                    bool DataHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>实例概览</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<LicenseOverview> m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

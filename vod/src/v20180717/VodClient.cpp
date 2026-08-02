@@ -1640,6 +1640,56 @@ VodClient::CreateJustInTimeTranscodeTemplateOutcomeCallable VodClient::CreateJus
     return prom->get_future();
 }
 
+VodClient::CreateKnowledgeBaseOutcome VodClient::CreateKnowledgeBase(const CreateKnowledgeBaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateKnowledgeBase");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateKnowledgeBaseResponse rsp = CreateKnowledgeBaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateKnowledgeBaseOutcome(rsp);
+        else
+            return CreateKnowledgeBaseOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateKnowledgeBaseOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateKnowledgeBaseAsync(const CreateKnowledgeBaseRequest& request, const CreateKnowledgeBaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateKnowledgeBaseRequest&;
+    using Resp = CreateKnowledgeBaseResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateKnowledgeBase", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateKnowledgeBaseOutcomeCallable VodClient::CreateKnowledgeBaseCallable(const CreateKnowledgeBaseRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateKnowledgeBaseOutcome>>();
+    CreateKnowledgeBaseAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateKnowledgeBaseRequest&,
+        CreateKnowledgeBaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VodClient::CreateLLMComprehendTemplateOutcome VodClient::CreateLLMComprehendTemplate(const CreateLLMComprehendTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateLLMComprehendTemplate");
@@ -3432,6 +3482,56 @@ VodClient::DeleteJustInTimeTranscodeTemplateOutcomeCallable VodClient::DeleteJus
         const VodClient*,
         const DeleteJustInTimeTranscodeTemplateRequest&,
         DeleteJustInTimeTranscodeTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::DeleteKnowledgeBaseOutcome VodClient::DeleteKnowledgeBase(const DeleteKnowledgeBaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteKnowledgeBase");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteKnowledgeBaseResponse rsp = DeleteKnowledgeBaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteKnowledgeBaseOutcome(rsp);
+        else
+            return DeleteKnowledgeBaseOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteKnowledgeBaseOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteKnowledgeBaseAsync(const DeleteKnowledgeBaseRequest& request, const DeleteKnowledgeBaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteKnowledgeBaseRequest&;
+    using Resp = DeleteKnowledgeBaseResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteKnowledgeBase", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DeleteKnowledgeBaseOutcomeCallable VodClient::DeleteKnowledgeBaseCallable(const DeleteKnowledgeBaseRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteKnowledgeBaseOutcome>>();
+    DeleteKnowledgeBaseAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteKnowledgeBaseRequest&,
+        DeleteKnowledgeBaseOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -6082,6 +6182,56 @@ VodClient::DescribeJustInTimeTranscodeTemplatesOutcomeCallable VodClient::Descri
         const VodClient*,
         const DescribeJustInTimeTranscodeTemplatesRequest&,
         DescribeJustInTimeTranscodeTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::DescribeKnowledgeBasesOutcome VodClient::DescribeKnowledgeBases(const DescribeKnowledgeBasesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKnowledgeBases");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKnowledgeBasesResponse rsp = DescribeKnowledgeBasesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKnowledgeBasesOutcome(rsp);
+        else
+            return DescribeKnowledgeBasesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKnowledgeBasesOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeKnowledgeBasesAsync(const DescribeKnowledgeBasesRequest& request, const DescribeKnowledgeBasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeKnowledgeBasesRequest&;
+    using Resp = DescribeKnowledgeBasesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeKnowledgeBases", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeKnowledgeBasesOutcomeCallable VodClient::DescribeKnowledgeBasesCallable(const DescribeKnowledgeBasesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeKnowledgeBasesOutcome>>();
+    DescribeKnowledgeBasesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeKnowledgeBasesRequest&,
+        DescribeKnowledgeBasesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -8982,6 +9132,56 @@ VodClient::ModifyJustInTimeTranscodeTemplateOutcomeCallable VodClient::ModifyJus
         const VodClient*,
         const ModifyJustInTimeTranscodeTemplateRequest&,
         ModifyJustInTimeTranscodeTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::ModifyKnowledgeBaseOutcome VodClient::ModifyKnowledgeBase(const ModifyKnowledgeBaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyKnowledgeBase");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyKnowledgeBaseResponse rsp = ModifyKnowledgeBaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyKnowledgeBaseOutcome(rsp);
+        else
+            return ModifyKnowledgeBaseOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyKnowledgeBaseOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifyKnowledgeBaseAsync(const ModifyKnowledgeBaseRequest& request, const ModifyKnowledgeBaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyKnowledgeBaseRequest&;
+    using Resp = ModifyKnowledgeBaseResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyKnowledgeBase", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::ModifyKnowledgeBaseOutcomeCallable VodClient::ModifyKnowledgeBaseCallable(const ModifyKnowledgeBaseRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyKnowledgeBaseOutcome>>();
+    ModifyKnowledgeBaseAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyKnowledgeBaseRequest&,
+        ModifyKnowledgeBaseOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

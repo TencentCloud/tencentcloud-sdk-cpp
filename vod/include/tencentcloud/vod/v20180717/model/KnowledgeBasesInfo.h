@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/KnowledgeAnalysisInfo.h>
+#include <tencentcloud/vod/v20180717/model/KnowledgeBaseDetail.h>
 
 
 namespace TencentCloud
@@ -89,6 +90,27 @@ namespace TencentCloud
                      */
                     bool KnowledgeAnalysisInfosHasBeenSet() const;
 
+                    /**
+                     * 获取<p>当前媒资当导入的知识库列表，以及使用的解析模板等详细信息</p>
+                     * @return KnowledgeBaseDetails <p>当前媒资当导入的知识库列表，以及使用的解析模板等详细信息</p>
+                     * 
+                     */
+                    std::vector<KnowledgeBaseDetail> GetKnowledgeBaseDetails() const;
+
+                    /**
+                     * 设置<p>当前媒资当导入的知识库列表，以及使用的解析模板等详细信息</p>
+                     * @param _knowledgeBaseDetails <p>当前媒资当导入的知识库列表，以及使用的解析模板等详细信息</p>
+                     * 
+                     */
+                    void SetKnowledgeBaseDetails(const std::vector<KnowledgeBaseDetail>& _knowledgeBaseDetails);
+
+                    /**
+                     * 判断参数 KnowledgeBaseDetails 是否已赋值
+                     * @return KnowledgeBaseDetails 是否已赋值
+                     * 
+                     */
+                    bool KnowledgeBaseDetailsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -102,6 +124,12 @@ namespace TencentCloud
                      */
                     std::vector<KnowledgeAnalysisInfo> m_knowledgeAnalysisInfos;
                     bool m_knowledgeAnalysisInfosHasBeenSet;
+
+                    /**
+                     * <p>当前媒资当导入的知识库列表，以及使用的解析模板等详细信息</p>
+                     */
+                    std::vector<KnowledgeBaseDetail> m_knowledgeBaseDetails;
+                    bool m_knowledgeBaseDetailsHasBeenSet;
 
                 };
             }

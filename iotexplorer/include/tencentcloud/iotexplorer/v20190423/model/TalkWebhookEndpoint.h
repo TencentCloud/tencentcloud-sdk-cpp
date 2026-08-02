@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>Webhook地址，仅支持 80 和 443 端口</p>
-                     * @return Url <p>Webhook地址，仅支持 80 和 443 端口</p>
+                     * 获取<p>Webhook地址</p>
+                     * @return Url <p>Webhook地址</p>
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置<p>Webhook地址，仅支持 80 和 443 端口</p>
-                     * @param _url <p>Webhook地址，仅支持 80 和 443 端口</p>
+                     * 设置<p>Webhook地址</p>
+                     * @param _url <p>Webhook地址</p>
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -91,7 +91,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>Webhook地址，仅支持 80 和 443 端口</p>
+                     * <p>Webhook地址</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

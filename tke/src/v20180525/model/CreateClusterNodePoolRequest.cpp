@@ -37,7 +37,8 @@ CreateClusterNodePoolRequest::CreateClusterNodePoolRequest() :
     m_nodePoolOsHasBeenSet(false),
     m_osCustomizeTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_skipValidateOptionsHasBeenSet(false)
 {
 }
 
@@ -195,6 +196,19 @@ string CreateClusterNodePoolRequest::ToJsonString() const
         string key = "DeletionProtection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deletionProtection, allocator);
+    }
+
+    if (m_skipValidateOptionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkipValidateOptions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_skipValidateOptions.begin(); itr != m_skipValidateOptions.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -443,6 +457,22 @@ void CreateClusterNodePoolRequest::SetDeletionProtection(const bool& _deletionPr
 bool CreateClusterNodePoolRequest::DeletionProtectionHasBeenSet() const
 {
     return m_deletionProtectionHasBeenSet;
+}
+
+vector<string> CreateClusterNodePoolRequest::GetSkipValidateOptions() const
+{
+    return m_skipValidateOptions;
+}
+
+void CreateClusterNodePoolRequest::SetSkipValidateOptions(const vector<string>& _skipValidateOptions)
+{
+    m_skipValidateOptions = _skipValidateOptions;
+    m_skipValidateOptionsHasBeenSet = true;
+}
+
+bool CreateClusterNodePoolRequest::SkipValidateOptionsHasBeenSet() const
+{
+    return m_skipValidateOptionsHasBeenSet;
 }
 
 

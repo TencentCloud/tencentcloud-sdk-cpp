@@ -68,6 +68,27 @@ namespace TencentCloud
                     bool InputCachedCoefficientHasBeenSet() const;
 
                     /**
+                     * 获取<p>缓存创建积分系数</p>
+                     * @return InputCacheCreationCoefficient <p>缓存创建积分系数</p>
+                     * 
+                     */
+                    double GetInputCacheCreationCoefficient() const;
+
+                    /**
+                     * 设置<p>缓存创建积分系数</p>
+                     * @param _inputCacheCreationCoefficient <p>缓存创建积分系数</p>
+                     * 
+                     */
+                    void SetInputCacheCreationCoefficient(const double& _inputCacheCreationCoefficient);
+
+                    /**
+                     * 判断参数 InputCacheCreationCoefficient 是否已赋值
+                     * @return InputCacheCreationCoefficient 是否已赋值
+                     * 
+                     */
+                    bool InputCacheCreationCoefficientHasBeenSet() const;
+
+                    /**
                      * 获取<p>输入积分系数。</p><p>取值范围：[1, 5000]</p><p>默认值：25</p>
                      * @return InputCoefficient <p>输入积分系数。</p><p>取值范围：[1, 5000]</p><p>默认值：25</p>
                      * 
@@ -116,6 +137,12 @@ namespace TencentCloud
                      */
                     double m_inputCachedCoefficient;
                     bool m_inputCachedCoefficientHasBeenSet;
+
+                    /**
+                     * <p>缓存创建积分系数</p>
+                     */
+                    double m_inputCacheCreationCoefficient;
+                    bool m_inputCacheCreationCoefficientHasBeenSet;
 
                     /**
                      * <p>输入积分系数。</p><p>取值范围：[1, 5000]</p><p>默认值：25</p>

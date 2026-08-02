@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<b>点播[应用](/document/product/266/14574) ID。</b>
-                     * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。</b>
+                     * 获取<p><b>点播<a href="/document/product/266/14574">应用</a> ID。</b></p>
+                     * @return SubAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>点播[应用](/document/product/266/14574) ID。</b>
-                     * @param _subAppId <b>点播[应用](/document/product/266/14574) ID。</b>
+                     * 设置<p><b>点播<a href="/document/product/266/14574">应用</a> ID。</b></p>
+                     * @param _subAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -64,31 +64,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取需要删除的 MPS 模板的类型。取值：
-<li>Transcode: 删除转码模板。</li>
-<li>AIAnalysis: 创建智能分析模板。</li>
-<li>SmartSubtitle: 创建智能字幕模板。</li>
-<li>SmartErase: 创建智能擦除模板。</li>
-                     * @return TemplateType 需要删除的 MPS 模板的类型。取值：
-<li>Transcode: 删除转码模板。</li>
-<li>AIAnalysis: 创建智能分析模板。</li>
-<li>SmartSubtitle: 创建智能字幕模板。</li>
-<li>SmartErase: 创建智能擦除模板。</li>
+                     * 获取<p>需要删除的 MPS 模板的类型。取值：</p><li>AIAnalysis: 创建智能分析模板。</li><li>SmartSubtitle: 创建智能字幕模板。</li><li>SmartErase: 创建智能擦除模板。</li><li>EmbedSubtitle: 字幕压制模板。</li>
+                     * @return TemplateType <p>需要删除的 MPS 模板的类型。取值：</p><li>AIAnalysis: 创建智能分析模板。</li><li>SmartSubtitle: 创建智能字幕模板。</li><li>SmartErase: 创建智能擦除模板。</li><li>EmbedSubtitle: 字幕压制模板。</li>
                      * 
                      */
                     std::string GetTemplateType() const;
 
                     /**
-                     * 设置需要删除的 MPS 模板的类型。取值：
-<li>Transcode: 删除转码模板。</li>
-<li>AIAnalysis: 创建智能分析模板。</li>
-<li>SmartSubtitle: 创建智能字幕模板。</li>
-<li>SmartErase: 创建智能擦除模板。</li>
-                     * @param _templateType 需要删除的 MPS 模板的类型。取值：
-<li>Transcode: 删除转码模板。</li>
-<li>AIAnalysis: 创建智能分析模板。</li>
-<li>SmartSubtitle: 创建智能字幕模板。</li>
-<li>SmartErase: 创建智能擦除模板。</li>
+                     * 设置<p>需要删除的 MPS 模板的类型。取值：</p><li>AIAnalysis: 创建智能分析模板。</li><li>SmartSubtitle: 创建智能字幕模板。</li><li>SmartErase: 创建智能擦除模板。</li><li>EmbedSubtitle: 字幕压制模板。</li>
+                     * @param _templateType <p>需要删除的 MPS 模板的类型。取值：</p><li>AIAnalysis: 创建智能分析模板。</li><li>SmartSubtitle: 创建智能字幕模板。</li><li>SmartErase: 创建智能擦除模板。</li><li>EmbedSubtitle: 字幕压制模板。</li>
                      * 
                      */
                     void SetTemplateType(const std::string& _templateType);
@@ -101,15 +85,15 @@ namespace TencentCloud
                     bool TemplateTypeHasBeenSet() const;
 
                     /**
-                     * 获取MPS 任务模板唯一标识。
-                     * @return Definition MPS 任务模板唯一标识。
+                     * 获取<p>MPS 任务模板唯一标识。</p>
+                     * @return Definition <p>MPS 任务模板唯一标识。</p>
                      * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置MPS 任务模板唯一标识。
-                     * @param _definition MPS 任务模板唯一标识。
+                     * 设置<p>MPS 任务模板唯一标识。</p>
+                     * @param _definition <p>MPS 任务模板唯一标识。</p>
                      * 
                      */
                     void SetDefinition(const int64_t& _definition);
@@ -124,23 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <b>点播[应用](/document/product/266/14574) ID。</b>
+                     * <p><b>点播<a href="/document/product/266/14574">应用</a> ID。</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 需要删除的 MPS 模板的类型。取值：
-<li>Transcode: 删除转码模板。</li>
-<li>AIAnalysis: 创建智能分析模板。</li>
-<li>SmartSubtitle: 创建智能字幕模板。</li>
-<li>SmartErase: 创建智能擦除模板。</li>
+                     * <p>需要删除的 MPS 模板的类型。取值：</p><li>AIAnalysis: 创建智能分析模板。</li><li>SmartSubtitle: 创建智能字幕模板。</li><li>SmartErase: 创建智能擦除模板。</li><li>EmbedSubtitle: 字幕压制模板。</li>
                      */
                     std::string m_templateType;
                     bool m_templateTypeHasBeenSet;
 
                     /**
-                     * MPS 任务模板唯一标识。
+                     * <p>MPS 任务模板唯一标识。</p>
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;

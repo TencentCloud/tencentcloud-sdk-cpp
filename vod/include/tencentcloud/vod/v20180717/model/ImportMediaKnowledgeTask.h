@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/ImportMediaKnowledgeTaskInput.h>
 
 
 namespace TencentCloud
@@ -47,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务 ID。
-                     * @return TaskId 任务 ID。
+                     * 获取<p>任务 ID。</p>
+                     * @return TaskId <p>任务 ID。</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务 ID。
-                     * @param _taskId 任务 ID。
+                     * 设置<p>任务 ID。</p>
+                     * @param _taskId <p>任务 ID。</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -68,15 +69,57 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务状态，取值：<li>PROCESSING：处理中；</li><li>FINISH：已完成。</li>
-                     * @return Status 任务状态，取值：<li>PROCESSING：处理中；</li><li>FINISH：已完成。</li>
+                     * 获取<p>媒体文件 ID</p>
+                     * @return FileId <p>媒体文件 ID</p>
+                     * 
+                     */
+                    std::string GetFileId() const;
+
+                    /**
+                     * 设置<p>媒体文件 ID</p>
+                     * @param _fileId <p>媒体文件 ID</p>
+                     * 
+                     */
+                    void SetFileId(const std::string& _fileId);
+
+                    /**
+                     * 判断参数 FileId 是否已赋值
+                     * @return FileId 是否已赋值
+                     * 
+                     */
+                    bool FileIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>导入知识库任务的输入。</p>
+                     * @return Input <p>导入知识库任务的输入。</p>
+                     * 
+                     */
+                    ImportMediaKnowledgeTaskInput GetInput() const;
+
+                    /**
+                     * 设置<p>导入知识库任务的输入。</p>
+                     * @param _input <p>导入知识库任务的输入。</p>
+                     * 
+                     */
+                    void SetInput(const ImportMediaKnowledgeTaskInput& _input);
+
+                    /**
+                     * 判断参数 Input 是否已赋值
+                     * @return Input 是否已赋值
+                     * 
+                     */
+                    bool InputHasBeenSet() const;
+
+                    /**
+                     * 获取<p>任务状态，取值：<li>PROCESSING：处理中；</li><li>FINISH：已完成。</li></p>
+                     * @return Status <p>任务状态，取值：<li>PROCESSING：处理中；</li><li>FINISH：已完成。</li></p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置任务状态，取值：<li>PROCESSING：处理中；</li><li>FINISH：已完成。</li>
-                     * @param _status 任务状态，取值：<li>PROCESSING：处理中；</li><li>FINISH：已完成。</li>
+                     * 设置<p>任务状态，取值：<li>PROCESSING：处理中；</li><li>FINISH：已完成。</li></p>
+                     * @param _status <p>任务状态，取值：<li>PROCESSING：处理中；</li><li>FINISH：已完成。</li></p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -89,15 +132,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取错误码，0 表示成功，其他值表示失败
-                     * @return ErrCode 错误码，0 表示成功，其他值表示失败
+                     * 获取<p>错误码，0 表示成功，其他值表示失败</p>
+                     * @return ErrCode <p>错误码，0 表示成功，其他值表示失败</p>
                      * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
-                     * 设置错误码，0 表示成功，其他值表示失败
-                     * @param _errCode 错误码，0 表示成功，其他值表示失败
+                     * 设置<p>错误码，0 表示成功，其他值表示失败</p>
+                     * @param _errCode <p>错误码，0 表示成功，其他值表示失败</p>
                      * 
                      */
                     void SetErrCode(const int64_t& _errCode);
@@ -110,15 +153,15 @@ namespace TencentCloud
                     bool ErrCodeHasBeenSet() const;
 
                     /**
-                     * 获取错误信息。
-                     * @return Message 错误信息。
+                     * 获取<p>错误信息。</p>
+                     * @return Message <p>错误信息。</p>
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置错误信息。
-                     * @param _message 错误信息。
+                     * 设置<p>错误信息。</p>
+                     * @param _message <p>错误信息。</p>
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -133,25 +176,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务 ID。
+                     * <p>任务 ID。</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务状态，取值：<li>PROCESSING：处理中；</li><li>FINISH：已完成。</li>
+                     * <p>媒体文件 ID</p>
+                     */
+                    std::string m_fileId;
+                    bool m_fileIdHasBeenSet;
+
+                    /**
+                     * <p>导入知识库任务的输入。</p>
+                     */
+                    ImportMediaKnowledgeTaskInput m_input;
+                    bool m_inputHasBeenSet;
+
+                    /**
+                     * <p>任务状态，取值：<li>PROCESSING：处理中；</li><li>FINISH：已完成。</li></p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 错误码，0 表示成功，其他值表示失败
+                     * <p>错误码，0 表示成功，其他值表示失败</p>
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
-                     * 错误信息。
+                     * <p>错误信息。</p>
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;

@@ -238,6 +238,27 @@ namespace TencentCloud
                     bool CustomAreasHasBeenSet() const;
 
                     /**
+                     * 获取<p>字幕压制模板id，只有开启OCR翻译时可以填写</p>
+                     * @return SubtitleEmbedId <p>字幕压制模板id，只有开启OCR翻译时可以填写</p>
+                     * 
+                     */
+                    uint64_t GetSubtitleEmbedId() const;
+
+                    /**
+                     * 设置<p>字幕压制模板id，只有开启OCR翻译时可以填写</p>
+                     * @param _subtitleEmbedId <p>字幕压制模板id，只有开启OCR翻译时可以填写</p>
+                     * 
+                     */
+                    void SetSubtitleEmbedId(const uint64_t& _subtitleEmbedId);
+
+                    /**
+                     * 判断参数 SubtitleEmbedId 是否已赋值
+                     * @return SubtitleEmbedId 是否已赋值
+                     * 
+                     */
+                    bool SubtitleEmbedIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>压制配置，默认开启1, 把字幕压制回原字幕位置。只有开启OCR翻译时可以填写，取0时表示不开启压回原位</p>
                      * @return UseOriginalPos <p>压制配置，默认开启1, 把字幕压制回原字幕位置。只有开启OCR翻译时可以填写，取0时表示不开启压回原位</p>
                      * 
@@ -334,6 +355,12 @@ namespace TencentCloud
                      */
                     std::vector<MPSEraseTimeArea> m_customAreas;
                     bool m_customAreasHasBeenSet;
+
+                    /**
+                     * <p>字幕压制模板id，只有开启OCR翻译时可以填写</p>
+                     */
+                    uint64_t m_subtitleEmbedId;
+                    bool m_subtitleEmbedIdHasBeenSet;
 
                     /**
                      * <p>压制配置，默认开启1, 把字幕压制回原字幕位置。只有开启OCR翻译时可以填写，取0时表示不开启压回原位</p>

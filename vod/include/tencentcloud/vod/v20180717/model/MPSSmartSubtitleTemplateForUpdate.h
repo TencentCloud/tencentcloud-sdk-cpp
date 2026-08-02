@@ -258,6 +258,27 @@ namespace TencentCloud
                     bool SelectingSubtitleAreasConfigHasBeenSet() const;
 
                     /**
+                     * 获取<p>压制模板id，只有ProcessType为0或2（任务类型为ASR或OCR）时才允许填写。开启多个翻译语言时，不允许填写。</p>
+                     * @return SubtitleEmbedId <p>压制模板id，只有ProcessType为0或2（任务类型为ASR或OCR）时才允许填写。开启多个翻译语言时，不允许填写。</p>
+                     * 
+                     */
+                    int64_t GetSubtitleEmbedId() const;
+
+                    /**
+                     * 设置<p>压制模板id，只有ProcessType为0或2（任务类型为ASR或OCR）时才允许填写。开启多个翻译语言时，不允许填写。</p>
+                     * @param _subtitleEmbedId <p>压制模板id，只有ProcessType为0或2（任务类型为ASR或OCR）时才允许填写。开启多个翻译语言时，不允许填写。</p>
+                     * 
+                     */
+                    void SetSubtitleEmbedId(const int64_t& _subtitleEmbedId);
+
+                    /**
+                     * 判断参数 SubtitleEmbedId 是否已赋值
+                     * @return SubtitleEmbedId 是否已赋值
+                     * 
+                     */
+                    bool SubtitleEmbedIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>说话人识别开关，可选值：<br>0：表示不开启说话人识别；<br>1：表示开启说话人识别。</p>
                      * @return SpeakerMode <p>说话人识别开关，可选值：<br>0：表示不开启说话人识别；<br>1：表示开启说话人识别。</p>
                      * 
@@ -360,6 +381,12 @@ namespace TencentCloud
                      */
                     MPSSelectingSubtitleAreasConfig m_selectingSubtitleAreasConfig;
                     bool m_selectingSubtitleAreasConfigHasBeenSet;
+
+                    /**
+                     * <p>压制模板id，只有ProcessType为0或2（任务类型为ASR或OCR）时才允许填写。开启多个翻译语言时，不允许填写。</p>
+                     */
+                    int64_t m_subtitleEmbedId;
+                    bool m_subtitleEmbedIdHasBeenSet;
 
                     /**
                      * <p>说话人识别开关，可选值：<br>0：表示不开启说话人识别；<br>1：表示开启说话人识别。</p>

@@ -24,6 +24,7 @@
 #include <tencentcloud/vod/v20180717/model/MPSAIAnalysisTemplate.h>
 #include <tencentcloud/vod/v20180717/model/MPSSmartSubtitleTemplate.h>
 #include <tencentcloud/vod/v20180717/model/MPSSmartEraseTemplate.h>
+#include <tencentcloud/vod/v20180717/model/MPSEmbedSubtitleTemplate.h>
 
 
 namespace TencentCloud
@@ -67,15 +68,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>需要创建的 MPS 模板的类型。取值：</p><li>AIAnalysis: 创建智能分析模板。</li><li>SmartSubtitle: 创建智能字幕模板。</li><li>SmartErase: 创建智能擦除模板。</li>
-                     * @return TemplateType <p>需要创建的 MPS 模板的类型。取值：</p><li>AIAnalysis: 创建智能分析模板。</li><li>SmartSubtitle: 创建智能字幕模板。</li><li>SmartErase: 创建智能擦除模板。</li>
+                     * 获取<p>需要创建的 MPS 模板的类型。取值：</p><li>AIAnalysis: 创建智能分析模板。</li><li>SmartSubtitle: 创建智能字幕模板。</li><li>SmartErase: 创建智能擦除模板。</li><li>EmbedSubtitle: 创建字幕压制模板。</li>
+                     * @return TemplateType <p>需要创建的 MPS 模板的类型。取值：</p><li>AIAnalysis: 创建智能分析模板。</li><li>SmartSubtitle: 创建智能字幕模板。</li><li>SmartErase: 创建智能擦除模板。</li><li>EmbedSubtitle: 创建字幕压制模板。</li>
                      * 
                      */
                     std::string GetTemplateType() const;
 
                     /**
-                     * 设置<p>需要创建的 MPS 模板的类型。取值：</p><li>AIAnalysis: 创建智能分析模板。</li><li>SmartSubtitle: 创建智能字幕模板。</li><li>SmartErase: 创建智能擦除模板。</li>
-                     * @param _templateType <p>需要创建的 MPS 模板的类型。取值：</p><li>AIAnalysis: 创建智能分析模板。</li><li>SmartSubtitle: 创建智能字幕模板。</li><li>SmartErase: 创建智能擦除模板。</li>
+                     * 设置<p>需要创建的 MPS 模板的类型。取值：</p><li>AIAnalysis: 创建智能分析模板。</li><li>SmartSubtitle: 创建智能字幕模板。</li><li>SmartErase: 创建智能擦除模板。</li><li>EmbedSubtitle: 创建字幕压制模板。</li>
+                     * @param _templateType <p>需要创建的 MPS 模板的类型。取值：</p><li>AIAnalysis: 创建智能分析模板。</li><li>SmartSubtitle: 创建智能字幕模板。</li><li>SmartErase: 创建智能擦除模板。</li><li>EmbedSubtitle: 创建字幕压制模板。</li>
                      * 
                      */
                     void SetTemplateType(const std::string& _templateType);
@@ -171,6 +172,27 @@ namespace TencentCloud
                      */
                     bool SmartEraseTemplateHasBeenSet() const;
 
+                    /**
+                     * 获取<p>字幕压制模板参数，MPSCreateTemplateParams为空时有效。</p>
+                     * @return EmbedSubtitleTemplate <p>字幕压制模板参数，MPSCreateTemplateParams为空时有效。</p>
+                     * 
+                     */
+                    MPSEmbedSubtitleTemplate GetEmbedSubtitleTemplate() const;
+
+                    /**
+                     * 设置<p>字幕压制模板参数，MPSCreateTemplateParams为空时有效。</p>
+                     * @param _embedSubtitleTemplate <p>字幕压制模板参数，MPSCreateTemplateParams为空时有效。</p>
+                     * 
+                     */
+                    void SetEmbedSubtitleTemplate(const MPSEmbedSubtitleTemplate& _embedSubtitleTemplate);
+
+                    /**
+                     * 判断参数 EmbedSubtitleTemplate 是否已赋值
+                     * @return EmbedSubtitleTemplate 是否已赋值
+                     * 
+                     */
+                    bool EmbedSubtitleTemplateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -180,7 +202,7 @@ namespace TencentCloud
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * <p>需要创建的 MPS 模板的类型。取值：</p><li>AIAnalysis: 创建智能分析模板。</li><li>SmartSubtitle: 创建智能字幕模板。</li><li>SmartErase: 创建智能擦除模板。</li>
+                     * <p>需要创建的 MPS 模板的类型。取值：</p><li>AIAnalysis: 创建智能分析模板。</li><li>SmartSubtitle: 创建智能字幕模板。</li><li>SmartErase: 创建智能擦除模板。</li><li>EmbedSubtitle: 创建字幕压制模板。</li>
                      */
                     std::string m_templateType;
                     bool m_templateTypeHasBeenSet;
@@ -208,6 +230,12 @@ namespace TencentCloud
                      */
                     MPSSmartEraseTemplate m_smartEraseTemplate;
                     bool m_smartEraseTemplateHasBeenSet;
+
+                    /**
+                     * <p>字幕压制模板参数，MPSCreateTemplateParams为空时有效。</p>
+                     */
+                    MPSEmbedSubtitleTemplate m_embedSubtitleTemplate;
+                    bool m_embedSubtitleTemplateHasBeenSet;
 
                 };
             }

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取[任务流](https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E6.B5.81)名称。
-                     * @return ProcedureName [任务流](https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E6.B5.81)名称。
+                     * 获取<p><a href="https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E6.B5.81">任务流</a>名称。</p>
+                     * @return ProcedureName <p><a href="https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E6.B5.81">任务流</a>名称。</p>
                      * 
                      */
                     std::string GetProcedureName() const;
 
                     /**
-                     * 设置[任务流](https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E6.B5.81)名称。
-                     * @param _procedureName [任务流](https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E6.B5.81)名称。
+                     * 设置<p><a href="https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E6.B5.81">任务流</a>名称。</p>
+                     * @param _procedureName <p><a href="https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E6.B5.81">任务流</a>名称。</p>
                      * 
                      */
                     void SetProcedureName(const std::string& _procedureName);
@@ -64,19 +64,15 @@ namespace TencentCloud
                     bool ProcedureNameHasBeenSet() const;
 
                     /**
-                     * 获取媒体文件 ID。
-FileId和MediaStoragePath必须提供其中一个。
-                     * @return FileId 媒体文件 ID。
-FileId和MediaStoragePath必须提供其中一个。
+                     * 获取<p>媒体文件 ID。<br>FileId和MediaStoragePath必须提供其中一个。</p>
+                     * @return FileId <p>媒体文件 ID。<br>FileId和MediaStoragePath必须提供其中一个。</p>
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置媒体文件 ID。
-FileId和MediaStoragePath必须提供其中一个。
-                     * @param _fileId 媒体文件 ID。
-FileId和MediaStoragePath必须提供其中一个。
+                     * 设置<p>媒体文件 ID。<br>FileId和MediaStoragePath必须提供其中一个。</p>
+                     * @param _fileId <p>媒体文件 ID。<br>FileId和MediaStoragePath必须提供其中一个。</p>
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -89,23 +85,15 @@ FileId和MediaStoragePath必须提供其中一个。
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取媒体的存储路径。
-只有[FileID + Path 模式](https://cloud.tencent.com/document/product/266/126825)的子应用可以通过MediaStoragePath发起任务。
-FileId和MediaStoragePath必须提供其中一个。
-                     * @return MediaStoragePath 媒体的存储路径。
-只有[FileID + Path 模式](https://cloud.tencent.com/document/product/266/126825)的子应用可以通过MediaStoragePath发起任务。
-FileId和MediaStoragePath必须提供其中一个。
+                     * 获取<p>媒体的存储路径。<br>只有<a href="https://cloud.tencent.com/document/product/266/126825">FileID + Path 模式</a>的子应用可以通过MediaStoragePath发起任务。<br>FileId和MediaStoragePath必须提供其中一个。</p>
+                     * @return MediaStoragePath <p>媒体的存储路径。<br>只有<a href="https://cloud.tencent.com/document/product/266/126825">FileID + Path 模式</a>的子应用可以通过MediaStoragePath发起任务。<br>FileId和MediaStoragePath必须提供其中一个。</p>
                      * 
                      */
                     std::string GetMediaStoragePath() const;
 
                     /**
-                     * 设置媒体的存储路径。
-只有[FileID + Path 模式](https://cloud.tencent.com/document/product/266/126825)的子应用可以通过MediaStoragePath发起任务。
-FileId和MediaStoragePath必须提供其中一个。
-                     * @param _mediaStoragePath 媒体的存储路径。
-只有[FileID + Path 模式](https://cloud.tencent.com/document/product/266/126825)的子应用可以通过MediaStoragePath发起任务。
-FileId和MediaStoragePath必须提供其中一个。
+                     * 设置<p>媒体的存储路径。<br>只有<a href="https://cloud.tencent.com/document/product/266/126825">FileID + Path 模式</a>的子应用可以通过MediaStoragePath发起任务。<br>FileId和MediaStoragePath必须提供其中一个。</p>
+                     * @param _mediaStoragePath <p>媒体的存储路径。<br>只有<a href="https://cloud.tencent.com/document/product/266/126825">FileID + Path 模式</a>的子应用可以通过MediaStoragePath发起任务。<br>FileId和MediaStoragePath必须提供其中一个。</p>
                      * 
                      */
                     void SetMediaStoragePath(const std::string& _mediaStoragePath);
@@ -118,15 +106,15 @@ FileId和MediaStoragePath必须提供其中一个。
                     bool MediaStoragePathHasBeenSet() const;
 
                     /**
-                     * 获取<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 获取<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @return SubAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @param _subAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 设置<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @param _subAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -139,15 +127,15 @@ FileId和MediaStoragePath必须提供其中一个。
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取任务流的优先级，数值越大优先级越高，取值范围是-10到10，不填代表0。
-                     * @return TasksPriority 任务流的优先级，数值越大优先级越高，取值范围是-10到10，不填代表0。
+                     * 获取<p>任务流的优先级，数值越大优先级越高，取值范围是-10到10，不填代表0。</p>
+                     * @return TasksPriority <p>任务流的优先级，数值越大优先级越高，取值范围是-10到10，不填代表0。</p>
                      * 
                      */
                     int64_t GetTasksPriority() const;
 
                     /**
-                     * 设置任务流的优先级，数值越大优先级越高，取值范围是-10到10，不填代表0。
-                     * @param _tasksPriority 任务流的优先级，数值越大优先级越高，取值范围是-10到10，不填代表0。
+                     * 设置<p>任务流的优先级，数值越大优先级越高，取值范围是-10到10，不填代表0。</p>
+                     * @param _tasksPriority <p>任务流的优先级，数值越大优先级越高，取值范围是-10到10，不填代表0。</p>
                      * 
                      */
                     void SetTasksPriority(const int64_t& _tasksPriority);
@@ -160,15 +148,15 @@ FileId和MediaStoragePath必须提供其中一个。
                     bool TasksPriorityHasBeenSet() const;
 
                     /**
-                     * 获取任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。
-                     * @return TasksNotifyMode 任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。
+                     * 获取<p>任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。</p>
+                     * @return TasksNotifyMode <p>任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。</p>
                      * 
                      */
                     std::string GetTasksNotifyMode() const;
 
                     /**
-                     * 设置任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。
-                     * @param _tasksNotifyMode 任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。
+                     * 设置<p>任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。</p>
+                     * @param _tasksNotifyMode <p>任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。</p>
                      * 
                      */
                     void SetTasksNotifyMode(const std::string& _tasksNotifyMode);
@@ -181,15 +169,15 @@ FileId和MediaStoragePath必须提供其中一个。
                     bool TasksNotifyModeHasBeenSet() const;
 
                     /**
-                     * 获取来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @return SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 获取<p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
+                     * @return SessionContext <p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
                      * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
-                     * 设置来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @param _sessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 设置<p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
+                     * @param _sessionContext <p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
                      * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
@@ -202,15 +190,15 @@ FileId和MediaStoragePath必须提供其中一个。
                     bool SessionContextHasBeenSet() const;
 
                     /**
-                     * 获取用于去重的识别码，如果 7 天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-                     * @return SessionId 用于去重的识别码，如果 7 天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 获取<p>用于去重的识别码，如果 7 天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
+                     * @return SessionId <p>用于去重的识别码，如果 7 天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置用于去重的识别码，如果 7 天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-                     * @param _sessionId 用于去重的识别码，如果 7 天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 设置<p>用于去重的识别码，如果 7 天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
+                     * @param _sessionId <p>用于去重的识别码，如果 7 天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -223,15 +211,15 @@ FileId和MediaStoragePath必须提供其中一个。
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取保留字段，特殊用途时使用。
-                     * @return ExtInfo 保留字段，特殊用途时使用。
+                     * 获取<p>保留字段，特殊用途时使用。</p>
+                     * @return ExtInfo <p>保留字段，特殊用途时使用。</p>
                      * 
                      */
                     std::string GetExtInfo() const;
 
                     /**
-                     * 设置保留字段，特殊用途时使用。
-                     * @param _extInfo 保留字段，特殊用途时使用。
+                     * 设置<p>保留字段，特殊用途时使用。</p>
+                     * @param _extInfo <p>保留字段，特殊用途时使用。</p>
                      * 
                      */
                     void SetExtInfo(const std::string& _extInfo);
@@ -246,58 +234,55 @@ FileId和MediaStoragePath必须提供其中一个。
                 private:
 
                     /**
-                     * [任务流](https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E6.B5.81)名称。
+                     * <p><a href="https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E6.B5.81">任务流</a>名称。</p>
                      */
                     std::string m_procedureName;
                     bool m_procedureNameHasBeenSet;
 
                     /**
-                     * 媒体文件 ID。
-FileId和MediaStoragePath必须提供其中一个。
+                     * <p>媒体文件 ID。<br>FileId和MediaStoragePath必须提供其中一个。</p>
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 媒体的存储路径。
-只有[FileID + Path 模式](https://cloud.tencent.com/document/product/266/126825)的子应用可以通过MediaStoragePath发起任务。
-FileId和MediaStoragePath必须提供其中一个。
+                     * <p>媒体的存储路径。<br>只有<a href="https://cloud.tencent.com/document/product/266/126825">FileID + Path 模式</a>的子应用可以通过MediaStoragePath发起任务。<br>FileId和MediaStoragePath必须提供其中一个。</p>
                      */
                     std::string m_mediaStoragePath;
                     bool m_mediaStoragePathHasBeenSet;
 
                     /**
-                     * <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 任务流的优先级，数值越大优先级越高，取值范围是-10到10，不填代表0。
+                     * <p>任务流的优先级，数值越大优先级越高，取值范围是-10到10，不填代表0。</p>
                      */
                     int64_t m_tasksPriority;
                     bool m_tasksPriorityHasBeenSet;
 
                     /**
-                     * 任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。
+                     * <p>任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。</p>
                      */
                     std::string m_tasksNotifyMode;
                     bool m_tasksNotifyModeHasBeenSet;
 
                     /**
-                     * 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * <p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
 
                     /**
-                     * 用于去重的识别码，如果 7 天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * <p>用于去重的识别码，如果 7 天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * 保留字段，特殊用途时使用。
+                     * <p>保留字段，特殊用途时使用。</p>
                      */
                     std::string m_extInfo;
                     bool m_extInfoHasBeenSet;

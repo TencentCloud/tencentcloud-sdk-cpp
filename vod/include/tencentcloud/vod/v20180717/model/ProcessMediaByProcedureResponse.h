@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务类型为 Procedure 的任务 ID，当入参 ProcedureName 对应的任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
-                     * @return TaskId 任务类型为 Procedure 的任务 ID，当入参 ProcedureName 对应的任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
+                     * 获取<p>任务类型为 Procedure 的任务 ID，当入参 ProcedureName 对应的任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。</p>
+                     * @return TaskId <p>任务类型为 Procedure 的任务 ID，当入参 ProcedureName 对应的任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。</p>
                      * 
                      */
                     std::string GetTaskId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务类型为 ReviewAudioVideo 的任务 ID，当入参 ProcedureName 对应的任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
-                     * @return ReviewAudioVideoTaskId 任务类型为 ReviewAudioVideo 的任务 ID，当入参 ProcedureName 对应的任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
+                     * 获取<p>任务类型为 ReviewAudioVideo 的任务 ID，当入参 ProcedureName 对应的任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。</p>
+                     * @return ReviewAudioVideoTaskId <p>任务类型为 ReviewAudioVideo 的任务 ID，当入参 ProcedureName 对应的任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。</p>
                      * 
                      */
                     std::string GetReviewAudioVideoTaskId() const;
@@ -71,19 +71,39 @@ namespace TencentCloud
                      */
                     bool ReviewAudioVideoTaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>任务类型为 ImportMediaKnowledge 的任务 ID，当入参 ProcedureName 对应的任务流模板指定了 ImportMediaKnowledgeTaskSet 时，发起该任务。</p>
+                     * @return ImportMediaKnowledgeTaskIdSet <p>任务类型为 ImportMediaKnowledge 的任务 ID，当入参 ProcedureName 对应的任务流模板指定了 ImportMediaKnowledgeTaskSet 时，发起该任务。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetImportMediaKnowledgeTaskIdSet() const;
+
+                    /**
+                     * 判断参数 ImportMediaKnowledgeTaskIdSet 是否已赋值
+                     * @return ImportMediaKnowledgeTaskIdSet 是否已赋值
+                     * 
+                     */
+                    bool ImportMediaKnowledgeTaskIdSetHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务类型为 Procedure 的任务 ID，当入参 ProcedureName 对应的任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
+                     * <p>任务类型为 Procedure 的任务 ID，当入参 ProcedureName 对应的任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务类型为 ReviewAudioVideo 的任务 ID，当入参 ProcedureName 对应的任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
+                     * <p>任务类型为 ReviewAudioVideo 的任务 ID，当入参 ProcedureName 对应的任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。</p>
                      */
                     std::string m_reviewAudioVideoTaskId;
                     bool m_reviewAudioVideoTaskIdHasBeenSet;
+
+                    /**
+                     * <p>任务类型为 ImportMediaKnowledge 的任务 ID，当入参 ProcedureName 对应的任务流模板指定了 ImportMediaKnowledgeTaskSet 时，发起该任务。</p>
+                     */
+                    std::vector<std::string> m_importMediaKnowledgeTaskIdSet;
+                    bool m_importMediaKnowledgeTaskIdSetHasBeenSet;
 
                 };
             }

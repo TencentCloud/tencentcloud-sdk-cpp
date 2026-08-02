@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/es/v20180416/model/CheckMigrateIndexMetaDataRequest.h>
 #include <tencentcloud/es/v20180416/model/CheckMigrateIndexMetaDataResponse.h>
+#include <tencentcloud/es/v20180416/model/CheckUpdateInstanceRequest.h>
+#include <tencentcloud/es/v20180416/model/CheckUpdateInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/CreateAutoBackUpStrategyRequest.h>
 #include <tencentcloud/es/v20180416/model/CreateAutoBackUpStrategyResponse.h>
 #include <tencentcloud/es/v20180416/model/CreateClusterSnapshotRequest.h>
@@ -141,6 +143,8 @@
 #include <tencentcloud/es/v20180416/model/ModifyAutoBackUpCommonInfoResponse.h>
 #include <tencentcloud/es/v20180416/model/ModifyAutoBackUpStrategyRequest.h>
 #include <tencentcloud/es/v20180416/model/ModifyAutoBackUpStrategyResponse.h>
+#include <tencentcloud/es/v20180416/model/ModifyAutoScaleDiskInfoRequest.h>
+#include <tencentcloud/es/v20180416/model/ModifyAutoScaleDiskInfoResponse.h>
 #include <tencentcloud/es/v20180416/model/ModifyEsVipSecurityGroupRequest.h>
 #include <tencentcloud/es/v20180416/model/ModifyEsVipSecurityGroupResponse.h>
 #include <tencentcloud/es/v20180416/model/QueryIpTraceLogRequest.h>
@@ -216,6 +220,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckMigrateIndexMetaDataResponse> CheckMigrateIndexMetaDataOutcome;
                 typedef std::future<CheckMigrateIndexMetaDataOutcome> CheckMigrateIndexMetaDataOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::CheckMigrateIndexMetaDataRequest&, CheckMigrateIndexMetaDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckMigrateIndexMetaDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckUpdateInstanceResponse> CheckUpdateInstanceOutcome;
+                typedef std::future<CheckUpdateInstanceOutcome> CheckUpdateInstanceOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::CheckUpdateInstanceRequest&, CheckUpdateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckUpdateInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAutoBackUpStrategyResponse> CreateAutoBackUpStrategyOutcome;
                 typedef std::future<CreateAutoBackUpStrategyOutcome> CreateAutoBackUpStrategyOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::CreateAutoBackUpStrategyRequest&, CreateAutoBackUpStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAutoBackUpStrategyAsyncHandler;
@@ -390,6 +397,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAutoBackUpStrategyResponse> ModifyAutoBackUpStrategyOutcome;
                 typedef std::future<ModifyAutoBackUpStrategyOutcome> ModifyAutoBackUpStrategyOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::ModifyAutoBackUpStrategyRequest&, ModifyAutoBackUpStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoBackUpStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAutoScaleDiskInfoResponse> ModifyAutoScaleDiskInfoOutcome;
+                typedef std::future<ModifyAutoScaleDiskInfoOutcome> ModifyAutoScaleDiskInfoOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::ModifyAutoScaleDiskInfoRequest&, ModifyAutoScaleDiskInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoScaleDiskInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyEsVipSecurityGroupResponse> ModifyEsVipSecurityGroupOutcome;
                 typedef std::future<ModifyEsVipSecurityGroupOutcome> ModifyEsVipSecurityGroupOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::ModifyEsVipSecurityGroupRequest&, ModifyEsVipSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEsVipSecurityGroupAsyncHandler;
@@ -488,6 +498,15 @@ namespace TencentCloud
                 CheckMigrateIndexMetaDataOutcome CheckMigrateIndexMetaData(const Model::CheckMigrateIndexMetaDataRequest &request);
                 void CheckMigrateIndexMetaDataAsync(const Model::CheckMigrateIndexMetaDataRequest& request, const CheckMigrateIndexMetaDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckMigrateIndexMetaDataOutcomeCallable CheckMigrateIndexMetaDataCallable(const Model::CheckMigrateIndexMetaDataRequest& request);
+
+                /**
+                 *检查实例变配操作是否可以发起
+                 * @param req CheckUpdateInstanceRequest
+                 * @return CheckUpdateInstanceOutcome
+                 */
+                CheckUpdateInstanceOutcome CheckUpdateInstance(const Model::CheckUpdateInstanceRequest &request);
+                void CheckUpdateInstanceAsync(const Model::CheckUpdateInstanceRequest& request, const CheckUpdateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckUpdateInstanceOutcomeCallable CheckUpdateInstanceCallable(const Model::CheckUpdateInstanceRequest& request);
 
                 /**
                  *新建自动备份快照策略
@@ -1011,6 +1030,15 @@ namespace TencentCloud
                 ModifyAutoBackUpStrategyOutcome ModifyAutoBackUpStrategy(const Model::ModifyAutoBackUpStrategyRequest &request);
                 void ModifyAutoBackUpStrategyAsync(const Model::ModifyAutoBackUpStrategyRequest& request, const ModifyAutoBackUpStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAutoBackUpStrategyOutcomeCallable ModifyAutoBackUpStrategyCallable(const Model::ModifyAutoBackUpStrategyRequest& request);
+
+                /**
+                 *修改自动扩盘参数
+                 * @param req ModifyAutoScaleDiskInfoRequest
+                 * @return ModifyAutoScaleDiskInfoOutcome
+                 */
+                ModifyAutoScaleDiskInfoOutcome ModifyAutoScaleDiskInfo(const Model::ModifyAutoScaleDiskInfoRequest &request);
+                void ModifyAutoScaleDiskInfoAsync(const Model::ModifyAutoScaleDiskInfoRequest& request, const ModifyAutoScaleDiskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAutoScaleDiskInfoOutcomeCallable ModifyAutoScaleDiskInfoCallable(const Model::ModifyAutoScaleDiskInfoRequest& request);
 
                 /**
                  *修改绑定VIP的安全组，传安全组id列表

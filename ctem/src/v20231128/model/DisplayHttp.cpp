@@ -41,7 +41,8 @@ DisplayHttp::DisplayHttp() :
     m_availabilityStateHasBeenSet(false),
     m_responseTimeHasBeenSet(false),
     m_analysisStateHasBeenSet(false),
-    m_aggregationCountHasBeenSet(false)
+    m_aggregationCountHasBeenSet(false),
+    m_availabilityTagHasBeenSet(false)
 {
 }
 
@@ -267,6 +268,16 @@ CoreInternalOutcome DisplayHttp::Deserialize(const rapidjson::Value &value)
         m_aggregationCountHasBeenSet = true;
     }
 
+    if (value.HasMember("AvailabilityTag") && !value["AvailabilityTag"].IsNull())
+    {
+        if (!value["AvailabilityTag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayHttp.AvailabilityTag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_availabilityTag = string(value["AvailabilityTag"].GetString());
+        m_availabilityTagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -441,6 +452,14 @@ void DisplayHttp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "AggregationCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_aggregationCount, allocator);
+    }
+
+    if (m_availabilityTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailabilityTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_availabilityTag.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -780,5 +799,21 @@ void DisplayHttp::SetAggregationCount(const int64_t& _aggregationCount)
 bool DisplayHttp::AggregationCountHasBeenSet() const
 {
     return m_aggregationCountHasBeenSet;
+}
+
+string DisplayHttp::GetAvailabilityTag() const
+{
+    return m_availabilityTag;
+}
+
+void DisplayHttp::SetAvailabilityTag(const string& _availabilityTag)
+{
+    m_availabilityTag = _availabilityTag;
+    m_availabilityTagHasBeenSet = true;
+}
+
+bool DisplayHttp::AvailabilityTagHasBeenSet() const
+{
+    return m_availabilityTagHasBeenSet;
 }
 

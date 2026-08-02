@@ -30,6 +30,7 @@
 #include <tencentcloud/vod/v20180717/model/AiRecognitionTaskInput.h>
 #include <tencentcloud/vod/v20180717/model/WechatMiniProgramPublishTaskInput.h>
 #include <tencentcloud/vod/v20180717/model/ProcedureReviewAudioVideoTaskInput.h>
+#include <tencentcloud/vod/v20180717/model/ImportMediaKnowledgeTaskInput.h>
 
 
 namespace TencentCloud
@@ -53,15 +54,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务流名字。
-                     * @return Name 任务流名字。
+                     * 获取<p>任务流名字。</p>
+                     * @return Name <p>任务流名字。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置任务流名字。
-                     * @param _name 任务流名字。
+                     * 设置<p>任务流名字。</p>
+                     * @param _name <p>任务流名字。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -74,23 +75,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取任务流模板类型，取值范围：
-<li>Preset：系统预置任务流模板；</li>
-<li>Custom：用户自定义任务流模板。</li>
-                     * @return Type 任务流模板类型，取值范围：
-<li>Preset：系统预置任务流模板；</li>
-<li>Custom：用户自定义任务流模板。</li>
+                     * 获取<p>任务流模板类型，取值范围：</p><li>Preset：系统预置任务流模板；</li><li>Custom：用户自定义任务流模板。</li>
+                     * @return Type <p>任务流模板类型，取值范围：</p><li>Preset：系统预置任务流模板；</li><li>Custom：用户自定义任务流模板。</li>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置任务流模板类型，取值范围：
-<li>Preset：系统预置任务流模板；</li>
-<li>Custom：用户自定义任务流模板。</li>
-                     * @param _type 任务流模板类型，取值范围：
-<li>Preset：系统预置任务流模板；</li>
-<li>Custom：用户自定义任务流模板。</li>
+                     * 设置<p>任务流模板类型，取值范围：</p><li>Preset：系统预置任务流模板；</li><li>Custom：用户自定义任务流模板。</li>
+                     * @param _type <p>任务流模板类型，取值范围：</p><li>Preset：系统预置任务流模板；</li><li>Custom：用户自定义任务流模板。</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -103,15 +96,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取模板描述信息，长度限制：256 个字符。
-                     * @return Comment 模板描述信息，长度限制：256 个字符。
+                     * 获取<p>模板描述信息，长度限制：256 个字符。</p>
+                     * @return Comment <p>模板描述信息，长度限制：256 个字符。</p>
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置模板描述信息，长度限制：256 个字符。
-                     * @param _comment 模板描述信息，长度限制：256 个字符。
+                     * 设置<p>模板描述信息，长度限制：256 个字符。</p>
+                     * @param _comment <p>模板描述信息，长度限制：256 个字符。</p>
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -124,18 +117,18 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取视频处理类型任务参数。
+                     * 获取<p>视频处理类型任务参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MediaProcessTask 视频处理类型任务参数。
+                     * @return MediaProcessTask <p>视频处理类型任务参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaProcessTaskInput GetMediaProcessTask() const;
 
                     /**
-                     * 设置视频处理类型任务参数。
+                     * 设置<p>视频处理类型任务参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mediaProcessTask 视频处理类型任务参数。
+                     * @param _mediaProcessTask <p>视频处理类型任务参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -149,22 +142,18 @@ namespace TencentCloud
                     bool MediaProcessTaskHasBeenSet() const;
 
                     /**
-                     * 获取AI 智能审核类型任务参数 \*。
-<font color=red>\*：该参数用于发起旧版审核，不建议使用。推荐使用 ReviewAudioVideoTask 参数发起审核。</font> 
+                     * 获取<p>AI 智能审核类型任务参数 *。<br><font color="red">*：该参数用于发起旧版审核，不建议使用。推荐使用 ReviewAudioVideoTask 参数发起审核。</font></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AiContentReviewTask AI 智能审核类型任务参数 \*。
-<font color=red>\*：该参数用于发起旧版审核，不建议使用。推荐使用 ReviewAudioVideoTask 参数发起审核。</font> 
+                     * @return AiContentReviewTask <p>AI 智能审核类型任务参数 *。<br><font color="red">*：该参数用于发起旧版审核，不建议使用。推荐使用 ReviewAudioVideoTask 参数发起审核。</font></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiContentReviewTaskInput GetAiContentReviewTask() const;
 
                     /**
-                     * 设置AI 智能审核类型任务参数 \*。
-<font color=red>\*：该参数用于发起旧版审核，不建议使用。推荐使用 ReviewAudioVideoTask 参数发起审核。</font> 
+                     * 设置<p>AI 智能审核类型任务参数 *。<br><font color="red">*：该参数用于发起旧版审核，不建议使用。推荐使用 ReviewAudioVideoTask 参数发起审核。</font></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _aiContentReviewTask AI 智能审核类型任务参数 \*。
-<font color=red>\*：该参数用于发起旧版审核，不建议使用。推荐使用 ReviewAudioVideoTask 参数发起审核。</font> 
+                     * @param _aiContentReviewTask <p>AI 智能审核类型任务参数 *。<br><font color="red">*：该参数用于发起旧版审核，不建议使用。推荐使用 ReviewAudioVideoTask 参数发起审核。</font></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -178,18 +167,18 @@ namespace TencentCloud
                     bool AiContentReviewTaskHasBeenSet() const;
 
                     /**
-                     * 获取AI 智能内容分析类型任务参数。
+                     * 获取<p>AI 智能内容分析类型任务参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AiAnalysisTask AI 智能内容分析类型任务参数。
+                     * @return AiAnalysisTask <p>AI 智能内容分析类型任务参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskInput GetAiAnalysisTask() const;
 
                     /**
-                     * 设置AI 智能内容分析类型任务参数。
+                     * 设置<p>AI 智能内容分析类型任务参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _aiAnalysisTask AI 智能内容分析类型任务参数。
+                     * @param _aiAnalysisTask <p>AI 智能内容分析类型任务参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -203,15 +192,15 @@ namespace TencentCloud
                     bool AiAnalysisTaskHasBeenSet() const;
 
                     /**
-                     * 获取AI 内容识别类型任务参数。
-                     * @return AiRecognitionTaskSet AI 内容识别类型任务参数。
+                     * 获取<p>AI 内容识别类型任务参数。</p>
+                     * @return AiRecognitionTaskSet <p>AI 内容识别类型任务参数。</p>
                      * 
                      */
                     std::vector<AiRecognitionTaskInput> GetAiRecognitionTaskSet() const;
 
                     /**
-                     * 设置AI 内容识别类型任务参数。
-                     * @param _aiRecognitionTaskSet AI 内容识别类型任务参数。
+                     * 设置<p>AI 内容识别类型任务参数。</p>
+                     * @param _aiRecognitionTaskSet <p>AI 内容识别类型任务参数。</p>
                      * 
                      */
                     void SetAiRecognitionTaskSet(const std::vector<AiRecognitionTaskInput>& _aiRecognitionTaskSet);
@@ -224,18 +213,18 @@ namespace TencentCloud
                     bool AiRecognitionTaskSetHasBeenSet() const;
 
                     /**
-                     * 获取该参数已不推荐使用，建议使用 AiRecognitionTaskSet。
+                     * 获取<p>该参数已不推荐使用，建议使用 AiRecognitionTaskSet。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AiRecognitionTask 该参数已不推荐使用，建议使用 AiRecognitionTaskSet。
+                     * @return AiRecognitionTask <p>该参数已不推荐使用，建议使用 AiRecognitionTaskSet。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
                     AiRecognitionTaskInput GetAiRecognitionTask() const;
 
                     /**
-                     * 设置该参数已不推荐使用，建议使用 AiRecognitionTaskSet。
+                     * 设置<p>该参数已不推荐使用，建议使用 AiRecognitionTaskSet。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _aiRecognitionTask 该参数已不推荐使用，建议使用 AiRecognitionTaskSet。
+                     * @param _aiRecognitionTask <p>该参数已不推荐使用，建议使用 AiRecognitionTaskSet。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
@@ -249,18 +238,18 @@ namespace TencentCloud
                     bool AiRecognitionTaskHasBeenSet() const;
 
                     /**
-                     * 获取微信小程序发布任务参数。
+                     * 获取<p>微信小程序发布任务参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MiniProgramPublishTask 微信小程序发布任务参数。
+                     * @return MiniProgramPublishTask <p>微信小程序发布任务参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     WechatMiniProgramPublishTaskInput GetMiniProgramPublishTask() const;
 
                     /**
-                     * 设置微信小程序发布任务参数。
+                     * 设置<p>微信小程序发布任务参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _miniProgramPublishTask 微信小程序发布任务参数。
+                     * @param _miniProgramPublishTask <p>微信小程序发布任务参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -274,18 +263,18 @@ namespace TencentCloud
                     bool MiniProgramPublishTaskHasBeenSet() const;
 
                     /**
-                     * 获取音视频审核类型任务参数。
+                     * 获取<p>音视频审核类型任务参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReviewAudioVideoTask 音视频审核类型任务参数。
+                     * @return ReviewAudioVideoTask <p>音视频审核类型任务参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ProcedureReviewAudioVideoTaskInput GetReviewAudioVideoTask() const;
 
                     /**
-                     * 设置音视频审核类型任务参数。
+                     * 设置<p>音视频审核类型任务参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _reviewAudioVideoTask 音视频审核类型任务参数。
+                     * @param _reviewAudioVideoTask <p>音视频审核类型任务参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -299,15 +288,36 @@ namespace TencentCloud
                     bool ReviewAudioVideoTaskHasBeenSet() const;
 
                     /**
-                     * 获取模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @return CreateTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 获取<p>导入智能媒资知识库任务参数。</p>
+                     * @return ImportMediaKnowledgeTaskSet <p>导入智能媒资知识库任务参数。</p>
+                     * 
+                     */
+                    std::vector<ImportMediaKnowledgeTaskInput> GetImportMediaKnowledgeTaskSet() const;
+
+                    /**
+                     * 设置<p>导入智能媒资知识库任务参数。</p>
+                     * @param _importMediaKnowledgeTaskSet <p>导入智能媒资知识库任务参数。</p>
+                     * 
+                     */
+                    void SetImportMediaKnowledgeTaskSet(const std::vector<ImportMediaKnowledgeTaskInput>& _importMediaKnowledgeTaskSet);
+
+                    /**
+                     * 判断参数 ImportMediaKnowledgeTaskSet 是否已赋值
+                     * @return ImportMediaKnowledgeTaskSet 是否已赋值
+                     * 
+                     */
+                    bool ImportMediaKnowledgeTaskSetHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模板创建时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
+                     * @return CreateTime <p>模板创建时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param _createTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 设置<p>模板创建时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
+                     * @param _createTime <p>模板创建时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -320,15 +330,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @return UpdateTime 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 获取<p>模板最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
+                     * @return UpdateTime <p>模板最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param _updateTime 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 设置<p>模板最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
+                     * @param _updateTime <p>模板最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -343,82 +353,85 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务流名字。
+                     * <p>任务流名字。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 任务流模板类型，取值范围：
-<li>Preset：系统预置任务流模板；</li>
-<li>Custom：用户自定义任务流模板。</li>
+                     * <p>任务流模板类型，取值范围：</p><li>Preset：系统预置任务流模板；</li><li>Custom：用户自定义任务流模板。</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 模板描述信息，长度限制：256 个字符。
+                     * <p>模板描述信息，长度限制：256 个字符。</p>
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
-                     * 视频处理类型任务参数。
+                     * <p>视频处理类型任务参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaProcessTaskInput m_mediaProcessTask;
                     bool m_mediaProcessTaskHasBeenSet;
 
                     /**
-                     * AI 智能审核类型任务参数 \*。
-<font color=red>\*：该参数用于发起旧版审核，不建议使用。推荐使用 ReviewAudioVideoTask 参数发起审核。</font> 
+                     * <p>AI 智能审核类型任务参数 *。<br><font color="red">*：该参数用于发起旧版审核，不建议使用。推荐使用 ReviewAudioVideoTask 参数发起审核。</font></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiContentReviewTaskInput m_aiContentReviewTask;
                     bool m_aiContentReviewTaskHasBeenSet;
 
                     /**
-                     * AI 智能内容分析类型任务参数。
+                     * <p>AI 智能内容分析类型任务参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskInput m_aiAnalysisTask;
                     bool m_aiAnalysisTaskHasBeenSet;
 
                     /**
-                     * AI 内容识别类型任务参数。
+                     * <p>AI 内容识别类型任务参数。</p>
                      */
                     std::vector<AiRecognitionTaskInput> m_aiRecognitionTaskSet;
                     bool m_aiRecognitionTaskSetHasBeenSet;
 
                     /**
-                     * 该参数已不推荐使用，建议使用 AiRecognitionTaskSet。
+                     * <p>该参数已不推荐使用，建议使用 AiRecognitionTaskSet。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiRecognitionTaskInput m_aiRecognitionTask;
                     bool m_aiRecognitionTaskHasBeenSet;
 
                     /**
-                     * 微信小程序发布任务参数。
+                     * <p>微信小程序发布任务参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WechatMiniProgramPublishTaskInput m_miniProgramPublishTask;
                     bool m_miniProgramPublishTaskHasBeenSet;
 
                     /**
-                     * 音视频审核类型任务参数。
+                     * <p>音视频审核类型任务参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ProcedureReviewAudioVideoTaskInput m_reviewAudioVideoTask;
                     bool m_reviewAudioVideoTaskHasBeenSet;
 
                     /**
-                     * 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * <p>导入智能媒资知识库任务参数。</p>
+                     */
+                    std::vector<ImportMediaKnowledgeTaskInput> m_importMediaKnowledgeTaskSet;
+                    bool m_importMediaKnowledgeTaskSetHasBeenSet;
+
+                    /**
+                     * <p>模板创建时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * <p>模板最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

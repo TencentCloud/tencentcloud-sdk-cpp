@@ -113,6 +113,27 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
+                     * 获取<p>模板类型</p><p>枚举值：</p><ul><li>Preset： 系统预置模板</li><li>Custom： 用户自定义模板</li></ul>
+                     * @return Type <p>模板类型</p><p>枚举值：</p><ul><li>Preset： 系统预置模板</li><li>Custom： 用户自定义模板</li></ul>
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置<p>模板类型</p><p>枚举值：</p><ul><li>Preset： 系统预置模板</li><li>Custom： 用户自定义模板</li></ul>
+                     * @param _type <p>模板类型</p><p>枚举值：</p><ul><li>Preset： 系统预置模板</li><li>Custom： 用户自定义模板</li></ul>
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
                      * 获取<p>解析级别，可选值为：</p><ul><li>Audio: 音频级解析</li><li>Video: 视频级解析</li></ul>
                      * @return Level <p>解析级别，可选值为：</p><ul><li>Audio: 音频级解析</li><li>Video: 视频级解析</li></ul>
                      * 
@@ -257,6 +278,12 @@ namespace TencentCloud
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
+
+                    /**
+                     * <p>模板类型</p><p>枚举值：</p><ul><li>Preset： 系统预置模板</li><li>Custom： 用户自定义模板</li></ul>
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                     /**
                      * <p>解析级别，可选值为：</p><ul><li>Audio: 音频级解析</li><li>Video: 视频级解析</li></ul>

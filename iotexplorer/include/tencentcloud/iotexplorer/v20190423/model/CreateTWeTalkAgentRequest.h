@@ -28,6 +28,7 @@
 #include <tencentcloud/iotexplorer/v20190423/model/TalkMemoryConfig.h>
 #include <tencentcloud/iotexplorer/v20190423/model/TalkIOTTool.h>
 #include <tencentcloud/iotexplorer/v20190423/model/TalkWebhookTool.h>
+#include <tencentcloud/iotexplorer/v20190423/model/TalkEventCallbackConfig.h>
 
 
 namespace TencentCloud
@@ -280,6 +281,27 @@ namespace TencentCloud
                      */
                     bool MetadataHasBeenSet() const;
 
+                    /**
+                     * 获取<p>回调配置</p>
+                     * @return EventCallbackConfig <p>回调配置</p>
+                     * 
+                     */
+                    TalkEventCallbackConfig GetEventCallbackConfig() const;
+
+                    /**
+                     * 设置<p>回调配置</p>
+                     * @param _eventCallbackConfig <p>回调配置</p>
+                     * 
+                     */
+                    void SetEventCallbackConfig(const TalkEventCallbackConfig& _eventCallbackConfig);
+
+                    /**
+                     * 判断参数 EventCallbackConfig 是否已赋值
+                     * @return EventCallbackConfig 是否已赋值
+                     * 
+                     */
+                    bool EventCallbackConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -347,6 +369,12 @@ namespace TencentCloud
                      */
                     std::string m_metadata;
                     bool m_metadataHasBeenSet;
+
+                    /**
+                     * <p>回调配置</p>
+                     */
+                    TalkEventCallbackConfig m_eventCallbackConfig;
+                    bool m_eventCallbackConfigHasBeenSet;
 
                 };
             }

@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>服务商/模型 ID（byok_model.model_id，形如 model-xxxxxxxx；Platform 类型不传）</p>
-                     * @return ServiceProviderId <p>服务商/模型 ID（byok_model.model_id，形如 model-xxxxxxxx；Platform 类型不传）</p>
+                     * 获取<p>BYOK实例ID</p>
+                     * @return ServiceProviderId <p>BYOK实例ID</p>
                      * 
                      */
                     std::string GetServiceProviderId() const;
 
                     /**
-                     * 设置<p>服务商/模型 ID（byok_model.model_id，形如 model-xxxxxxxx；Platform 类型不传）</p>
-                     * @param _serviceProviderId <p>服务商/模型 ID（byok_model.model_id，形如 model-xxxxxxxx；Platform 类型不传）</p>
+                     * 设置<p>BYOK实例ID</p>
+                     * @param _serviceProviderId <p>BYOK实例ID</p>
                      * 
                      */
                     void SetServiceProviderId(const std::string& _serviceProviderId);
@@ -129,6 +129,48 @@ namespace TencentCloud
                      * 
                      */
                     bool ServiceProviderIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>当前 CMR、当前绑定模型下该 BYOK实例的调度优先级。</p><p>取值范围：[0, 2]</p><p>默认值：0</p>
+                     * @return Order <p>当前 CMR、当前绑定模型下该 BYOK实例的调度优先级。</p><p>取值范围：[0, 2]</p><p>默认值：0</p>
+                     * 
+                     */
+                    uint64_t GetOrder() const;
+
+                    /**
+                     * 设置<p>当前 CMR、当前绑定模型下该 BYOK实例的调度优先级。</p><p>取值范围：[0, 2]</p><p>默认值：0</p>
+                     * @param _order <p>当前 CMR、当前绑定模型下该 BYOK实例的调度优先级。</p><p>取值范围：[0, 2]</p><p>默认值：0</p>
+                     * 
+                     */
+                    void SetOrder(const uint64_t& _order);
+
+                    /**
+                     * 判断参数 Order 是否已赋值
+                     * @return Order 是否已赋值
+                     * 
+                     */
+                    bool OrderHasBeenSet() const;
+
+                    /**
+                     * 获取<p>当前CMR、当前绑定模型的同一有效Order层内，BYOK实例之间的相对选择权重。</p><p>取值范围：[0, 100]</p><p>默认值：10</p>
+                     * @return Weight <p>当前CMR、当前绑定模型的同一有效Order层内，BYOK实例之间的相对选择权重。</p><p>取值范围：[0, 100]</p><p>默认值：10</p>
+                     * 
+                     */
+                    uint64_t GetWeight() const;
+
+                    /**
+                     * 设置<p>当前CMR、当前绑定模型的同一有效Order层内，BYOK实例之间的相对选择权重。</p><p>取值范围：[0, 100]</p><p>默认值：10</p>
+                     * @param _weight <p>当前CMR、当前绑定模型的同一有效Order层内，BYOK实例之间的相对选择权重。</p><p>取值范围：[0, 100]</p><p>默认值：10</p>
+                     * 
+                     */
+                    void SetWeight(const uint64_t& _weight);
+
+                    /**
+                     * 判断参数 Weight 是否已赋值
+                     * @return Weight 是否已赋值
+                     * 
+                     */
+                    bool WeightHasBeenSet() const;
 
                 private:
 
@@ -151,10 +193,22 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * <p>服务商/模型 ID（byok_model.model_id，形如 model-xxxxxxxx；Platform 类型不传）</p>
+                     * <p>BYOK实例ID</p>
                      */
                     std::string m_serviceProviderId;
                     bool m_serviceProviderIdHasBeenSet;
+
+                    /**
+                     * <p>当前 CMR、当前绑定模型下该 BYOK实例的调度优先级。</p><p>取值范围：[0, 2]</p><p>默认值：0</p>
+                     */
+                    uint64_t m_order;
+                    bool m_orderHasBeenSet;
+
+                    /**
+                     * <p>当前CMR、当前绑定模型的同一有效Order层内，BYOK实例之间的相对选择权重。</p><p>取值范围：[0, 100]</p><p>默认值：10</p>
+                     */
+                    uint64_t m_weight;
+                    bool m_weightHasBeenSet;
 
                 };
             }

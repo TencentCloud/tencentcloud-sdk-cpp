@@ -32,7 +32,8 @@ CreateNodePoolRequest::CreateNodePoolRequest() :
     m_deletionProtectionHasBeenSet(false),
     m_unschedulableHasBeenSet(false),
     m_nativeHasBeenSet(false),
-    m_annotationsHasBeenSet(false)
+    m_annotationsHasBeenSet(false),
+    m_skipValidateOptionsHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,19 @@ string CreateNodePoolRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_skipValidateOptionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkipValidateOptions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_skipValidateOptions.begin(); itr != m_skipValidateOptions.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -318,6 +332,22 @@ void CreateNodePoolRequest::SetAnnotations(const vector<Annotation>& _annotation
 bool CreateNodePoolRequest::AnnotationsHasBeenSet() const
 {
     return m_annotationsHasBeenSet;
+}
+
+vector<string> CreateNodePoolRequest::GetSkipValidateOptions() const
+{
+    return m_skipValidateOptions;
+}
+
+void CreateNodePoolRequest::SetSkipValidateOptions(const vector<string>& _skipValidateOptions)
+{
+    m_skipValidateOptions = _skipValidateOptions;
+    m_skipValidateOptionsHasBeenSet = true;
+}
+
+bool CreateNodePoolRequest::SkipValidateOptionsHasBeenSet() const
+{
+    return m_skipValidateOptionsHasBeenSet;
 }
 
 

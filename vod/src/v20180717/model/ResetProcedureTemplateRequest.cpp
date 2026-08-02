@@ -31,7 +31,8 @@ ResetProcedureTemplateRequest::ResetProcedureTemplateRequest() :
     m_aiAnalysisTaskHasBeenSet(false),
     m_aiRecognitionTaskSetHasBeenSet(false),
     m_aiRecognitionTaskHasBeenSet(false),
-    m_reviewAudioVideoTaskHasBeenSet(false)
+    m_reviewAudioVideoTaskHasBeenSet(false),
+    m_importMediaKnowledgeTaskSetHasBeenSet(false)
 {
 }
 
@@ -124,6 +125,21 @@ string ResetProcedureTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_reviewAudioVideoTask.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_importMediaKnowledgeTaskSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImportMediaKnowledgeTaskSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_importMediaKnowledgeTaskSet.begin(); itr != m_importMediaKnowledgeTaskSet.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -276,6 +292,22 @@ void ResetProcedureTemplateRequest::SetReviewAudioVideoTask(const ProcedureRevie
 bool ResetProcedureTemplateRequest::ReviewAudioVideoTaskHasBeenSet() const
 {
     return m_reviewAudioVideoTaskHasBeenSet;
+}
+
+vector<ImportMediaKnowledgeTaskInput> ResetProcedureTemplateRequest::GetImportMediaKnowledgeTaskSet() const
+{
+    return m_importMediaKnowledgeTaskSet;
+}
+
+void ResetProcedureTemplateRequest::SetImportMediaKnowledgeTaskSet(const vector<ImportMediaKnowledgeTaskInput>& _importMediaKnowledgeTaskSet)
+{
+    m_importMediaKnowledgeTaskSet = _importMediaKnowledgeTaskSet;
+    m_importMediaKnowledgeTaskSetHasBeenSet = true;
+}
+
+bool ResetProcedureTemplateRequest::ImportMediaKnowledgeTaskSetHasBeenSet() const
+{
+    return m_importMediaKnowledgeTaskSetHasBeenSet;
 }
 
 

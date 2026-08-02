@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/clb/v20180317/model/FallBackItem.h>
+#include <tencentcloud/clb/v20180317/model/RoutingStrategyArgs.h>
 
 
 namespace TencentCloud
@@ -48,18 +49,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>模型间路由策略。</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>LowestCost： 最低积分路由</li></ul>
+                     * 获取<p>模型间路由策略。</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>CostBasedRouting： 最低积分路由</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CrossModelGroupRoutingStrategy <p>模型间路由策略。</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>LowestCost： 最低积分路由</li></ul>
+                     * @return CrossModelGroupRoutingStrategy <p>模型间路由策略。</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>CostBasedRouting： 最低积分路由</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCrossModelGroupRoutingStrategy() const;
 
                     /**
-                     * 设置<p>模型间路由策略。</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>LowestCost： 最低积分路由</li></ul>
+                     * 设置<p>模型间路由策略。</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>CostBasedRouting： 最低积分路由</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _crossModelGroupRoutingStrategy <p>模型间路由策略。</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>LowestCost： 最低积分路由</li></ul>
+                     * @param _crossModelGroupRoutingStrategy <p>模型间路由策略。</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>CostBasedRouting： 最低积分路由</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,10 +123,60 @@ namespace TencentCloud
                      */
                     bool RoutingStrategyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>CMR实例级别请求组内重试次数</p><p>取值范围：[0, 5]</p><p>默认值：2</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NumRetries <p>CMR实例级别请求组内重试次数</p><p>取值范围：[0, 5]</p><p>默认值：2</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetNumRetries() const;
+
+                    /**
+                     * 设置<p>CMR实例级别请求组内重试次数</p><p>取值范围：[0, 5]</p><p>默认值：2</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _numRetries <p>CMR实例级别请求组内重试次数</p><p>取值范围：[0, 5]</p><p>默认值：2</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNumRetries(const uint64_t& _numRetries);
+
+                    /**
+                     * 判断参数 NumRetries 是否已赋值
+                     * @return NumRetries 是否已赋值
+                     * 
+                     */
+                    bool NumRetriesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>L2模型组内路由调度算法参数</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RoutingStrategyArgs <p>L2模型组内路由调度算法参数</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    RoutingStrategyArgs GetRoutingStrategyArgs() const;
+
+                    /**
+                     * 设置<p>L2模型组内路由调度算法参数</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _routingStrategyArgs <p>L2模型组内路由调度算法参数</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRoutingStrategyArgs(const RoutingStrategyArgs& _routingStrategyArgs);
+
+                    /**
+                     * 判断参数 RoutingStrategyArgs 是否已赋值
+                     * @return RoutingStrategyArgs 是否已赋值
+                     * 
+                     */
+                    bool RoutingStrategyArgsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * <p>模型间路由策略。</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>LowestCost： 最低积分路由</li></ul>
+                     * <p>模型间路由策略。</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>CostBasedRouting： 最低积分路由</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_crossModelGroupRoutingStrategy;
@@ -144,6 +195,20 @@ namespace TencentCloud
                      */
                     std::string m_routingStrategy;
                     bool m_routingStrategyHasBeenSet;
+
+                    /**
+                     * <p>CMR实例级别请求组内重试次数</p><p>取值范围：[0, 5]</p><p>默认值：2</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_numRetries;
+                    bool m_numRetriesHasBeenSet;
+
+                    /**
+                     * <p>L2模型组内路由调度算法参数</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RoutingStrategyArgs m_routingStrategyArgs;
+                    bool m_routingStrategyArgsHasBeenSet;
 
                 };
             }

@@ -257,6 +257,27 @@ namespace TencentCloud
                      */
                     bool AnnotationsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>跳过校验选项，支持 &quot;VpcDnsCheck&quot;</p>
+                     * @return SkipValidateOptions <p>跳过校验选项，支持 &quot;VpcDnsCheck&quot;</p>
+                     * 
+                     */
+                    std::vector<std::string> GetSkipValidateOptions() const;
+
+                    /**
+                     * 设置<p>跳过校验选项，支持 &quot;VpcDnsCheck&quot;</p>
+                     * @param _skipValidateOptions <p>跳过校验选项，支持 &quot;VpcDnsCheck&quot;</p>
+                     * 
+                     */
+                    void SetSkipValidateOptions(const std::vector<std::string>& _skipValidateOptions);
+
+                    /**
+                     * 判断参数 SkipValidateOptions 是否已赋值
+                     * @return SkipValidateOptions 是否已赋值
+                     * 
+                     */
+                    bool SkipValidateOptionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -318,6 +339,12 @@ namespace TencentCloud
                      */
                     std::vector<Annotation> m_annotations;
                     bool m_annotationsHasBeenSet;
+
+                    /**
+                     * <p>跳过校验选项，支持 &quot;VpcDnsCheck&quot;</p>
+                     */
+                    std::vector<std::string> m_skipValidateOptions;
+                    bool m_skipValidateOptionsHasBeenSet;
 
                 };
             }

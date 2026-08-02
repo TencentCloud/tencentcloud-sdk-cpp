@@ -38,7 +38,9 @@ ModifyMediaInfoRequest::ModifyMediaInfoRequest() :
     m_clearTagsHasBeenSet(false),
     m_addSubtitlesHasBeenSet(false),
     m_deleteSubtitleIdsHasBeenSet(false),
-    m_clearSubtitlesHasBeenSet(false)
+    m_clearSubtitlesHasBeenSet(false),
+    m_deleteKnowledgeBasesHasBeenSet(false),
+    m_clearKnowledgeBasesHasBeenSet(false)
 {
 }
 
@@ -209,6 +211,27 @@ string ModifyMediaInfoRequest::ToJsonString() const
         string key = "ClearSubtitles";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_clearSubtitles, allocator);
+    }
+
+    if (m_deleteKnowledgeBasesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteKnowledgeBases";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_deleteKnowledgeBases.begin(); itr != m_deleteKnowledgeBases.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_clearKnowledgeBasesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClearKnowledgeBases";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_clearKnowledgeBases, allocator);
     }
 
 
@@ -473,6 +496,38 @@ void ModifyMediaInfoRequest::SetClearSubtitles(const int64_t& _clearSubtitles)
 bool ModifyMediaInfoRequest::ClearSubtitlesHasBeenSet() const
 {
     return m_clearSubtitlesHasBeenSet;
+}
+
+vector<string> ModifyMediaInfoRequest::GetDeleteKnowledgeBases() const
+{
+    return m_deleteKnowledgeBases;
+}
+
+void ModifyMediaInfoRequest::SetDeleteKnowledgeBases(const vector<string>& _deleteKnowledgeBases)
+{
+    m_deleteKnowledgeBases = _deleteKnowledgeBases;
+    m_deleteKnowledgeBasesHasBeenSet = true;
+}
+
+bool ModifyMediaInfoRequest::DeleteKnowledgeBasesHasBeenSet() const
+{
+    return m_deleteKnowledgeBasesHasBeenSet;
+}
+
+int64_t ModifyMediaInfoRequest::GetClearKnowledgeBases() const
+{
+    return m_clearKnowledgeBases;
+}
+
+void ModifyMediaInfoRequest::SetClearKnowledgeBases(const int64_t& _clearKnowledgeBases)
+{
+    m_clearKnowledgeBases = _clearKnowledgeBases;
+    m_clearKnowledgeBasesHasBeenSet = true;
+}
+
+bool ModifyMediaInfoRequest::ClearKnowledgeBasesHasBeenSet() const
+{
+    return m_clearKnowledgeBasesHasBeenSet;
 }
 
 

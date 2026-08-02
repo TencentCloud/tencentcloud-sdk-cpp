@@ -24,6 +24,7 @@
 #include <tencentcloud/vod/v20180717/model/MPSAIAnalysisTemplateForUpdate.h>
 #include <tencentcloud/vod/v20180717/model/MPSSmartSubtitleTemplateForUpdate.h>
 #include <tencentcloud/vod/v20180717/model/MPSSmartEraseTemplateForUpdate.h>
+#include <tencentcloud/vod/v20180717/model/MPSEmbedSubtitleTemplateForUpdate.h>
 
 
 namespace TencentCloud
@@ -67,15 +68,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>需要修改的 MPS 模板的类型。</p><p>枚举值：</p><ul><li>AIAnalysis： 智能分析模板</li><li>SmartSubtitle： 智能字幕模板</li><li>SmartErase： 智能擦除模板</li></ul>
-                     * @return TemplateType <p>需要修改的 MPS 模板的类型。</p><p>枚举值：</p><ul><li>AIAnalysis： 智能分析模板</li><li>SmartSubtitle： 智能字幕模板</li><li>SmartErase： 智能擦除模板</li></ul>
+                     * 获取<p>需要修改的 MPS 模板的类型。</p><p>枚举值：</p><ul><li>AIAnalysis： 智能分析模板</li><li>SmartSubtitle： 智能字幕模板</li><li>SmartErase： 智能擦除模板</li><li>EmbedSubtitle： 字幕压制模板</li></ul>
+                     * @return TemplateType <p>需要修改的 MPS 模板的类型。</p><p>枚举值：</p><ul><li>AIAnalysis： 智能分析模板</li><li>SmartSubtitle： 智能字幕模板</li><li>SmartErase： 智能擦除模板</li><li>EmbedSubtitle： 字幕压制模板</li></ul>
                      * 
                      */
                     std::string GetTemplateType() const;
 
                     /**
-                     * 设置<p>需要修改的 MPS 模板的类型。</p><p>枚举值：</p><ul><li>AIAnalysis： 智能分析模板</li><li>SmartSubtitle： 智能字幕模板</li><li>SmartErase： 智能擦除模板</li></ul>
-                     * @param _templateType <p>需要修改的 MPS 模板的类型。</p><p>枚举值：</p><ul><li>AIAnalysis： 智能分析模板</li><li>SmartSubtitle： 智能字幕模板</li><li>SmartErase： 智能擦除模板</li></ul>
+                     * 设置<p>需要修改的 MPS 模板的类型。</p><p>枚举值：</p><ul><li>AIAnalysis： 智能分析模板</li><li>SmartSubtitle： 智能字幕模板</li><li>SmartErase： 智能擦除模板</li><li>EmbedSubtitle： 字幕压制模板</li></ul>
+                     * @param _templateType <p>需要修改的 MPS 模板的类型。</p><p>枚举值：</p><ul><li>AIAnalysis： 智能分析模板</li><li>SmartSubtitle： 智能字幕模板</li><li>SmartErase： 智能擦除模板</li><li>EmbedSubtitle： 字幕压制模板</li></ul>
                      * 
                      */
                     void SetTemplateType(const std::string& _templateType);
@@ -171,6 +172,27 @@ namespace TencentCloud
                      */
                     bool SmartEraseTemplateHasBeenSet() const;
 
+                    /**
+                     * 获取<p>字幕压制模板参数，MPSModifyTemplateParams为空时有效。</p>
+                     * @return EmbedSubtitleTemplate <p>字幕压制模板参数，MPSModifyTemplateParams为空时有效。</p>
+                     * 
+                     */
+                    MPSEmbedSubtitleTemplateForUpdate GetEmbedSubtitleTemplate() const;
+
+                    /**
+                     * 设置<p>字幕压制模板参数，MPSModifyTemplateParams为空时有效。</p>
+                     * @param _embedSubtitleTemplate <p>字幕压制模板参数，MPSModifyTemplateParams为空时有效。</p>
+                     * 
+                     */
+                    void SetEmbedSubtitleTemplate(const MPSEmbedSubtitleTemplateForUpdate& _embedSubtitleTemplate);
+
+                    /**
+                     * 判断参数 EmbedSubtitleTemplate 是否已赋值
+                     * @return EmbedSubtitleTemplate 是否已赋值
+                     * 
+                     */
+                    bool EmbedSubtitleTemplateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -180,7 +202,7 @@ namespace TencentCloud
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * <p>需要修改的 MPS 模板的类型。</p><p>枚举值：</p><ul><li>AIAnalysis： 智能分析模板</li><li>SmartSubtitle： 智能字幕模板</li><li>SmartErase： 智能擦除模板</li></ul>
+                     * <p>需要修改的 MPS 模板的类型。</p><p>枚举值：</p><ul><li>AIAnalysis： 智能分析模板</li><li>SmartSubtitle： 智能字幕模板</li><li>SmartErase： 智能擦除模板</li><li>EmbedSubtitle： 字幕压制模板</li></ul>
                      */
                     std::string m_templateType;
                     bool m_templateTypeHasBeenSet;
@@ -208,6 +230,12 @@ namespace TencentCloud
                      */
                     MPSSmartEraseTemplateForUpdate m_smartEraseTemplate;
                     bool m_smartEraseTemplateHasBeenSet;
+
+                    /**
+                     * <p>字幕压制模板参数，MPSModifyTemplateParams为空时有效。</p>
+                     */
+                    MPSEmbedSubtitleTemplateForUpdate m_embedSubtitleTemplate;
+                    bool m_embedSubtitleTemplateHasBeenSet;
 
                 };
             }

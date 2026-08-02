@@ -492,6 +492,27 @@ namespace TencentCloud
                      */
                     bool AggregationCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>可用性标签：解析已失效/端口连接超时/网站请求超时/服务错误（5xx）/高延迟（非宕机）</p>
+                     * @return AvailabilityTag <p>可用性标签：解析已失效/端口连接超时/网站请求超时/服务错误（5xx）/高延迟（非宕机）</p>
+                     * 
+                     */
+                    std::string GetAvailabilityTag() const;
+
+                    /**
+                     * 设置<p>可用性标签：解析已失效/端口连接超时/网站请求超时/服务错误（5xx）/高延迟（非宕机）</p>
+                     * @param _availabilityTag <p>可用性标签：解析已失效/端口连接超时/网站请求超时/服务错误（5xx）/高延迟（非宕机）</p>
+                     * 
+                     */
+                    void SetAvailabilityTag(const std::string& _availabilityTag);
+
+                    /**
+                     * 判断参数 AvailabilityTag 是否已赋值
+                     * @return AvailabilityTag 是否已赋值
+                     * 
+                     */
+                    bool AvailabilityTagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -620,6 +641,12 @@ namespace TencentCloud
                      */
                     int64_t m_aggregationCount;
                     bool m_aggregationCountHasBeenSet;
+
+                    /**
+                     * <p>可用性标签：解析已失效/端口连接超时/网站请求超时/服务错误（5xx）/高延迟（非宕机）</p>
+                     */
+                    std::string m_availabilityTag;
+                    bool m_availabilityTagHasBeenSet;
 
                 };
             }

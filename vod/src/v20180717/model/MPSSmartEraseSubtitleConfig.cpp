@@ -30,6 +30,7 @@ MPSSmartEraseSubtitleConfig::MPSSmartEraseSubtitleConfig() :
     m_transDstLangHasBeenSet(false),
     m_autoAreasHasBeenSet(false),
     m_customAreasHasBeenSet(false),
+    m_subtitleEmbedIdHasBeenSet(false),
     m_useOriginalPosHasBeenSet(false),
     m_useOriginalSizeHasBeenSet(false)
 {
@@ -150,6 +151,16 @@ CoreInternalOutcome MPSSmartEraseSubtitleConfig::Deserialize(const rapidjson::Va
         m_customAreasHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitleEmbedId") && !value["SubtitleEmbedId"].IsNull())
+    {
+        if (!value["SubtitleEmbedId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MPSSmartEraseSubtitleConfig.SubtitleEmbedId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subtitleEmbedId = value["SubtitleEmbedId"].GetUint64();
+        m_subtitleEmbedIdHasBeenSet = true;
+    }
+
     if (value.HasMember("UseOriginalPos") && !value["UseOriginalPos"].IsNull())
     {
         if (!value["UseOriginalPos"].IsInt64())
@@ -261,6 +272,14 @@ void MPSSmartEraseSubtitleConfig::ToJsonObject(rapidjson::Value &value, rapidjso
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_subtitleEmbedIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleEmbedId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subtitleEmbedId, allocator);
     }
 
     if (m_useOriginalPosHasBeenSet)
@@ -424,6 +443,22 @@ void MPSSmartEraseSubtitleConfig::SetCustomAreas(const vector<MPSEraseTimeArea>&
 bool MPSSmartEraseSubtitleConfig::CustomAreasHasBeenSet() const
 {
     return m_customAreasHasBeenSet;
+}
+
+uint64_t MPSSmartEraseSubtitleConfig::GetSubtitleEmbedId() const
+{
+    return m_subtitleEmbedId;
+}
+
+void MPSSmartEraseSubtitleConfig::SetSubtitleEmbedId(const uint64_t& _subtitleEmbedId)
+{
+    m_subtitleEmbedId = _subtitleEmbedId;
+    m_subtitleEmbedIdHasBeenSet = true;
+}
+
+bool MPSSmartEraseSubtitleConfig::SubtitleEmbedIdHasBeenSet() const
+{
+    return m_subtitleEmbedIdHasBeenSet;
 }
 
 int64_t MPSSmartEraseSubtitleConfig::GetUseOriginalPos() const

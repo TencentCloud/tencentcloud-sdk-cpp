@@ -22,7 +22,8 @@ using namespace std;
 
 KnowledgeBasesInfo::KnowledgeBasesInfo() :
     m_basesHasBeenSet(false),
-    m_knowledgeAnalysisInfosHasBeenSet(false)
+    m_knowledgeAnalysisInfosHasBeenSet(false),
+    m_knowledgeBaseDetailsHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,26 @@ CoreInternalOutcome KnowledgeBasesInfo::Deserialize(const rapidjson::Value &valu
         m_knowledgeAnalysisInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("KnowledgeBaseDetails") && !value["KnowledgeBaseDetails"].IsNull())
+    {
+        if (!value["KnowledgeBaseDetails"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `KnowledgeBasesInfo.KnowledgeBaseDetails` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["KnowledgeBaseDetails"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KnowledgeBaseDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_knowledgeBaseDetails.push_back(item);
+        }
+        m_knowledgeBaseDetailsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -93,6 +114,21 @@ void KnowledgeBasesInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
 
         int i=0;
         for (auto itr = m_knowledgeAnalysisInfos.begin(); itr != m_knowledgeAnalysisInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_knowledgeBaseDetailsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeBaseDetails";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_knowledgeBaseDetails.begin(); itr != m_knowledgeBaseDetails.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -132,5 +168,21 @@ void KnowledgeBasesInfo::SetKnowledgeAnalysisInfos(const vector<KnowledgeAnalysi
 bool KnowledgeBasesInfo::KnowledgeAnalysisInfosHasBeenSet() const
 {
     return m_knowledgeAnalysisInfosHasBeenSet;
+}
+
+vector<KnowledgeBaseDetail> KnowledgeBasesInfo::GetKnowledgeBaseDetails() const
+{
+    return m_knowledgeBaseDetails;
+}
+
+void KnowledgeBasesInfo::SetKnowledgeBaseDetails(const vector<KnowledgeBaseDetail>& _knowledgeBaseDetails)
+{
+    m_knowledgeBaseDetails = _knowledgeBaseDetails;
+    m_knowledgeBaseDetailsHasBeenSet = true;
+}
+
+bool KnowledgeBasesInfo::KnowledgeBaseDetailsHasBeenSet() const
+{
+    return m_knowledgeBaseDetailsHasBeenSet;
 }
 

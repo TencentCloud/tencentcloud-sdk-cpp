@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<b>点播[应用](/document/product/266/14574) ID。</b>
-                     * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。</b>
+                     * 获取<p><b>点播<a href="/document/product/266/14574">应用</a> ID。</b></p>
+                     * @return SubAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>点播[应用](/document/product/266/14574) ID。</b>
-                     * @param _subAppId <b>点播[应用](/document/product/266/14574) ID。</b>
+                     * 设置<p><b>点播<a href="/document/product/266/14574">应用</a> ID。</b></p>
+                     * @param _subAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。
-                     * @return FileId 媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。
+                     * 获取<p>媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 <a href="/document/product/266/7830">视频上传完成事件通知</a> 或 <a href="https://console.cloud.tencent.com/vod/media">云点播控制台</a> 获取该字段。</p>
+                     * @return FileId <p>媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 <a href="/document/product/266/7830">视频上传完成事件通知</a> 或 <a href="https://console.cloud.tencent.com/vod/media">云点播控制台</a> 获取该字段。</p>
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。
-                     * @param _fileId 媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。
+                     * 设置<p>媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 <a href="/document/product/266/7830">视频上传完成事件通知</a> 或 <a href="https://console.cloud.tencent.com/vod/media">云点播控制台</a> 获取该字段。</p>
+                     * @param _fileId <p>媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 <a href="/document/product/266/7830">视频上传完成事件通知</a> 或 <a href="https://console.cloud.tencent.com/vod/media">云点播控制台</a> 获取该字段。</p>
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取大模型理解模板的唯一标识
-                     * @return Definition 大模型理解模板的唯一标识
+                     * 获取<p>大模型理解模板的唯一标识</p>
+                     * @return Definition <p>大模型理解模板的唯一标识</p>
                      * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置大模型理解模板的唯一标识
-                     * @param _definition 大模型理解模板的唯一标识
+                     * 设置<p>大模型理解模板的唯一标识</p>
+                     * @param _definition <p>大模型理解模板的唯一标识</p>
                      * 
                      */
                     void SetDefinition(const int64_t& _definition);
@@ -106,23 +106,36 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取需要导入知识库任务类型，可选值有：
-- AiAnalysis.DescriptionTask
-- SmartSubtitle.AsrFullTextTask
-                     * @return ImportTasks 需要导入知识库任务类型，可选值有：
-- AiAnalysis.DescriptionTask
-- SmartSubtitle.AsrFullTextTask
+                     * 获取<p>知识库ID列表，留空时将使用默认知识库</p>
+                     * @return KnowledgeBaseIds <p>知识库ID列表，留空时将使用默认知识库</p>
+                     * 
+                     */
+                    std::vector<std::string> GetKnowledgeBaseIds() const;
+
+                    /**
+                     * 设置<p>知识库ID列表，留空时将使用默认知识库</p>
+                     * @param _knowledgeBaseIds <p>知识库ID列表，留空时将使用默认知识库</p>
+                     * 
+                     */
+                    void SetKnowledgeBaseIds(const std::vector<std::string>& _knowledgeBaseIds);
+
+                    /**
+                     * 判断参数 KnowledgeBaseIds 是否已赋值
+                     * @return KnowledgeBaseIds 是否已赋值
+                     * 
+                     */
+                    bool KnowledgeBaseIdsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>需要导入知识库任务类型，可选值有：</p><ul><li>AiAnalysis.DescriptionTask</li><li>SmartSubtitle.AsrFullTextTask</li></ul>
+                     * @return ImportTasks <p>需要导入知识库任务类型，可选值有：</p><ul><li>AiAnalysis.DescriptionTask</li><li>SmartSubtitle.AsrFullTextTask</li></ul>
                      * @deprecated
                      */
                     std::vector<std::string> GetImportTasks() const;
 
                     /**
-                     * 设置需要导入知识库任务类型，可选值有：
-- AiAnalysis.DescriptionTask
-- SmartSubtitle.AsrFullTextTask
-                     * @param _importTasks 需要导入知识库任务类型，可选值有：
-- AiAnalysis.DescriptionTask
-- SmartSubtitle.AsrFullTextTask
+                     * 设置<p>需要导入知识库任务类型，可选值有：</p><ul><li>AiAnalysis.DescriptionTask</li><li>SmartSubtitle.AsrFullTextTask</li></ul>
+                     * @param _importTasks <p>需要导入知识库任务类型，可选值有：</p><ul><li>AiAnalysis.DescriptionTask</li><li>SmartSubtitle.AsrFullTextTask</li></ul>
                      * @deprecated
                      */
                     void SetImportTasks(const std::vector<std::string>& _importTasks);
@@ -137,27 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <b>点播[应用](/document/product/266/14574) ID。</b>
+                     * <p><b>点播<a href="/document/product/266/14574">应用</a> ID。</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。
+                     * <p>媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 <a href="/document/product/266/7830">视频上传完成事件通知</a> 或 <a href="https://console.cloud.tencent.com/vod/media">云点播控制台</a> 获取该字段。</p>
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 大模型理解模板的唯一标识
+                     * <p>大模型理解模板的唯一标识</p>
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * 需要导入知识库任务类型，可选值有：
-- AiAnalysis.DescriptionTask
-- SmartSubtitle.AsrFullTextTask
+                     * <p>知识库ID列表，留空时将使用默认知识库</p>
+                     */
+                    std::vector<std::string> m_knowledgeBaseIds;
+                    bool m_knowledgeBaseIdsHasBeenSet;
+
+                    /**
+                     * <p>需要导入知识库任务类型，可选值有：</p><ul><li>AiAnalysis.DescriptionTask</li><li>SmartSubtitle.AsrFullTextTask</li></ul>
                      */
                     std::vector<std::string> m_importTasks;
                     bool m_importTasksHasBeenSet;

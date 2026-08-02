@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/MPSSelectingSubtitleAreasConfig.h>
 
 
 namespace TencentCloud
@@ -193,6 +194,90 @@ namespace TencentCloud
                      */
                     bool ProcessTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>字幕OCR提取框选区域配置</p>
+                     * @return SelectingSubtitleAreasConfig <p>字幕OCR提取框选区域配置</p>
+                     * 
+                     */
+                    MPSSelectingSubtitleAreasConfig GetSelectingSubtitleAreasConfig() const;
+
+                    /**
+                     * 设置<p>字幕OCR提取框选区域配置</p>
+                     * @param _selectingSubtitleAreasConfig <p>字幕OCR提取框选区域配置</p>
+                     * 
+                     */
+                    void SetSelectingSubtitleAreasConfig(const MPSSelectingSubtitleAreasConfig& _selectingSubtitleAreasConfig);
+
+                    /**
+                     * 判断参数 SelectingSubtitleAreasConfig 是否已赋值
+                     * @return SelectingSubtitleAreasConfig 是否已赋值
+                     * 
+                     */
+                    bool SelectingSubtitleAreasConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>压制模板id，只有ProcessType为0或2（任务类型为ASR或OCR）时才允许填写</p>
+                     * @return SubtitleEmbedId <p>压制模板id，只有ProcessType为0或2（任务类型为ASR或OCR）时才允许填写</p>
+                     * 
+                     */
+                    int64_t GetSubtitleEmbedId() const;
+
+                    /**
+                     * 设置<p>压制模板id，只有ProcessType为0或2（任务类型为ASR或OCR）时才允许填写</p>
+                     * @param _subtitleEmbedId <p>压制模板id，只有ProcessType为0或2（任务类型为ASR或OCR）时才允许填写</p>
+                     * 
+                     */
+                    void SetSubtitleEmbedId(const int64_t& _subtitleEmbedId);
+
+                    /**
+                     * 判断参数 SubtitleEmbedId 是否已赋值
+                     * @return SubtitleEmbedId 是否已赋值
+                     * 
+                     */
+                    bool SubtitleEmbedIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>说话人识别模式，可选值：<br>0：表示不开启说话人识别；<br>1：表示开启说话人识别；<br>默认值：0</p>
+                     * @return SpeakerMode <p>说话人识别模式，可选值：<br>0：表示不开启说话人识别；<br>1：表示开启说话人识别；<br>默认值：0</p>
+                     * 
+                     */
+                    int64_t GetSpeakerMode() const;
+
+                    /**
+                     * 设置<p>说话人识别模式，可选值：<br>0：表示不开启说话人识别；<br>1：表示开启说话人识别；<br>默认值：0</p>
+                     * @param _speakerMode <p>说话人识别模式，可选值：<br>0：表示不开启说话人识别；<br>1：表示开启说话人识别；<br>默认值：0</p>
+                     * 
+                     */
+                    void SetSpeakerMode(const int64_t& _speakerMode);
+
+                    /**
+                     * 判断参数 SpeakerMode 是否已赋值
+                     * @return SpeakerMode 是否已赋值
+                     * 
+                     */
+                    bool SpeakerModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>说话人识别输出到字幕文件，可选值：<br>0：表示不输出到字幕文件；<br>1：表示输出到vtt字幕文件<br>注意：使用此参数SpeakerMode的值不能为0；<br>默认值：0</p>
+                     * @return SpeakerLabel <p>说话人识别输出到字幕文件，可选值：<br>0：表示不输出到字幕文件；<br>1：表示输出到vtt字幕文件<br>注意：使用此参数SpeakerMode的值不能为0；<br>默认值：0</p>
+                     * 
+                     */
+                    int64_t GetSpeakerLabel() const;
+
+                    /**
+                     * 设置<p>说话人识别输出到字幕文件，可选值：<br>0：表示不输出到字幕文件；<br>1：表示输出到vtt字幕文件<br>注意：使用此参数SpeakerMode的值不能为0；<br>默认值：0</p>
+                     * @param _speakerLabel <p>说话人识别输出到字幕文件，可选值：<br>0：表示不输出到字幕文件；<br>1：表示输出到vtt字幕文件<br>注意：使用此参数SpeakerMode的值不能为0；<br>默认值：0</p>
+                     * 
+                     */
+                    void SetSpeakerLabel(const int64_t& _speakerLabel);
+
+                    /**
+                     * 判断参数 SpeakerLabel 是否已赋值
+                     * @return SpeakerLabel 是否已赋值
+                     * 
+                     */
+                    bool SpeakerLabelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +321,30 @@ namespace TencentCloud
                      */
                     uint64_t m_processType;
                     bool m_processTypeHasBeenSet;
+
+                    /**
+                     * <p>字幕OCR提取框选区域配置</p>
+                     */
+                    MPSSelectingSubtitleAreasConfig m_selectingSubtitleAreasConfig;
+                    bool m_selectingSubtitleAreasConfigHasBeenSet;
+
+                    /**
+                     * <p>压制模板id，只有ProcessType为0或2（任务类型为ASR或OCR）时才允许填写</p>
+                     */
+                    int64_t m_subtitleEmbedId;
+                    bool m_subtitleEmbedIdHasBeenSet;
+
+                    /**
+                     * <p>说话人识别模式，可选值：<br>0：表示不开启说话人识别；<br>1：表示开启说话人识别；<br>默认值：0</p>
+                     */
+                    int64_t m_speakerMode;
+                    bool m_speakerModeHasBeenSet;
+
+                    /**
+                     * <p>说话人识别输出到字幕文件，可选值：<br>0：表示不输出到字幕文件；<br>1：表示输出到vtt字幕文件<br>注意：使用此参数SpeakerMode的值不能为0；<br>默认值：0</p>
+                     */
+                    int64_t m_speakerLabel;
+                    bool m_speakerLabelHasBeenSet;
 
                 };
             }

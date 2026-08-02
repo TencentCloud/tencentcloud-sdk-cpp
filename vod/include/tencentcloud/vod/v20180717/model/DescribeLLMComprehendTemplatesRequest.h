@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/SortBy.h>
 
 
 namespace TencentCloud
@@ -85,6 +86,27 @@ namespace TencentCloud
                     bool DefinitionsHasBeenSet() const;
 
                     /**
+                     * 获取<p>排序方式。<br>Sort.Field 可选 Definition、CreateTime、UpdateTime。</p>
+                     * @return Sort <p>排序方式。<br>Sort.Field 可选 Definition、CreateTime、UpdateTime。</p>
+                     * 
+                     */
+                    SortBy GetSort() const;
+
+                    /**
+                     * 设置<p>排序方式。<br>Sort.Field 可选 Definition、CreateTime、UpdateTime。</p>
+                     * @param _sort <p>排序方式。<br>Sort.Field 可选 Definition、CreateTime、UpdateTime。</p>
+                     * 
+                     */
+                    void SetSort(const SortBy& _sort);
+
+                    /**
+                     * 判断参数 Sort 是否已赋值
+                     * @return Sort 是否已赋值
+                     * 
+                     */
+                    bool SortHasBeenSet() const;
+
+                    /**
                      * 获取<p>分页偏移量，默认值：0。</p>
                      * @return Offset <p>分页偏移量，默认值：0。</p>
                      * 
@@ -139,6 +161,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_definitions;
                     bool m_definitionsHasBeenSet;
+
+                    /**
+                     * <p>排序方式。<br>Sort.Field 可选 Definition、CreateTime、UpdateTime。</p>
+                     */
+                    SortBy m_sort;
+                    bool m_sortHasBeenSet;
 
                     /**
                      * <p>分页偏移量，默认值：0。</p>

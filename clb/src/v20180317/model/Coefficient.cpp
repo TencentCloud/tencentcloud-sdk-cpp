@@ -22,6 +22,7 @@ using namespace std;
 
 Coefficient::Coefficient() :
     m_inputCachedCoefficientHasBeenSet(false),
+    m_inputCacheCreationCoefficientHasBeenSet(false),
     m_inputCoefficientHasBeenSet(false),
     m_outputCoefficientHasBeenSet(false)
 {
@@ -40,6 +41,16 @@ CoreInternalOutcome Coefficient::Deserialize(const rapidjson::Value &value)
         }
         m_inputCachedCoefficient = value["InputCachedCoefficient"].GetDouble();
         m_inputCachedCoefficientHasBeenSet = true;
+    }
+
+    if (value.HasMember("InputCacheCreationCoefficient") && !value["InputCacheCreationCoefficient"].IsNull())
+    {
+        if (!value["InputCacheCreationCoefficient"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Coefficient.InputCacheCreationCoefficient` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputCacheCreationCoefficient = value["InputCacheCreationCoefficient"].GetDouble();
+        m_inputCacheCreationCoefficientHasBeenSet = true;
     }
 
     if (value.HasMember("InputCoefficient") && !value["InputCoefficient"].IsNull())
@@ -77,6 +88,14 @@ void Coefficient::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, m_inputCachedCoefficient, allocator);
     }
 
+    if (m_inputCacheCreationCoefficientHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputCacheCreationCoefficient";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_inputCacheCreationCoefficient, allocator);
+    }
+
     if (m_inputCoefficientHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,22 @@ void Coefficient::SetInputCachedCoefficient(const double& _inputCachedCoefficien
 bool Coefficient::InputCachedCoefficientHasBeenSet() const
 {
     return m_inputCachedCoefficientHasBeenSet;
+}
+
+double Coefficient::GetInputCacheCreationCoefficient() const
+{
+    return m_inputCacheCreationCoefficient;
+}
+
+void Coefficient::SetInputCacheCreationCoefficient(const double& _inputCacheCreationCoefficient)
+{
+    m_inputCacheCreationCoefficient = _inputCacheCreationCoefficient;
+    m_inputCacheCreationCoefficientHasBeenSet = true;
+}
+
+bool Coefficient::InputCacheCreationCoefficientHasBeenSet() const
+{
+    return m_inputCacheCreationCoefficientHasBeenSet;
 }
 
 double Coefficient::GetInputCoefficient() const

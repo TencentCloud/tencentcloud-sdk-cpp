@@ -33,7 +33,8 @@ CreateTWeTalkAgentRequest::CreateTWeTalkAgentRequest() :
     m_memoryConfigHasBeenSet(false),
     m_iOTToolsHasBeenSet(false),
     m_webhookToolsHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+    m_metadataHasBeenSet(false),
+    m_eventCallbackConfigHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,15 @@ string CreateTWeTalkAgentRequest::ToJsonString() const
         string key = "Metadata";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_metadata.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eventCallbackConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventCallbackConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_eventCallbackConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -333,6 +343,22 @@ void CreateTWeTalkAgentRequest::SetMetadata(const string& _metadata)
 bool CreateTWeTalkAgentRequest::MetadataHasBeenSet() const
 {
     return m_metadataHasBeenSet;
+}
+
+TalkEventCallbackConfig CreateTWeTalkAgentRequest::GetEventCallbackConfig() const
+{
+    return m_eventCallbackConfig;
+}
+
+void CreateTWeTalkAgentRequest::SetEventCallbackConfig(const TalkEventCallbackConfig& _eventCallbackConfig)
+{
+    m_eventCallbackConfig = _eventCallbackConfig;
+    m_eventCallbackConfigHasBeenSet = true;
+}
+
+bool CreateTWeTalkAgentRequest::EventCallbackConfigHasBeenSet() const
+{
+    return m_eventCallbackConfigHasBeenSet;
 }
 
 

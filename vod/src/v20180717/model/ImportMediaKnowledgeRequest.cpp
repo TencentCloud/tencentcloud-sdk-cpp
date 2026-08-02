@@ -26,6 +26,7 @@ ImportMediaKnowledgeRequest::ImportMediaKnowledgeRequest() :
     m_subAppIdHasBeenSet(false),
     m_fileIdHasBeenSet(false),
     m_definitionHasBeenSet(false),
+    m_knowledgeBaseIdsHasBeenSet(false),
     m_importTasksHasBeenSet(false)
 {
 }
@@ -59,6 +60,19 @@ string ImportMediaKnowledgeRequest::ToJsonString() const
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_definition, allocator);
+    }
+
+    if (m_knowledgeBaseIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeBaseIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_knowledgeBaseIds.begin(); itr != m_knowledgeBaseIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_importTasksHasBeenSet)
@@ -128,6 +142,22 @@ void ImportMediaKnowledgeRequest::SetDefinition(const int64_t& _definition)
 bool ImportMediaKnowledgeRequest::DefinitionHasBeenSet() const
 {
     return m_definitionHasBeenSet;
+}
+
+vector<string> ImportMediaKnowledgeRequest::GetKnowledgeBaseIds() const
+{
+    return m_knowledgeBaseIds;
+}
+
+void ImportMediaKnowledgeRequest::SetKnowledgeBaseIds(const vector<string>& _knowledgeBaseIds)
+{
+    m_knowledgeBaseIds = _knowledgeBaseIds;
+    m_knowledgeBaseIdsHasBeenSet = true;
+}
+
+bool ImportMediaKnowledgeRequest::KnowledgeBaseIdsHasBeenSet() const
+{
+    return m_knowledgeBaseIdsHasBeenSet;
 }
 
 vector<string> ImportMediaKnowledgeRequest::GetImportTasks() const

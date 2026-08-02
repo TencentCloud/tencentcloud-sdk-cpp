@@ -35,7 +35,9 @@ CreateModelRouterRequest::CreateModelRouterRequest() :
     m_schemaHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_modelRouterBillingConfigHasBeenSet(false),
+    m_clientTokenHasBeenSet(false)
 {
 }
 
@@ -160,6 +162,23 @@ string CreateModelRouterRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_modelRouterBillingConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelRouterBillingConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_modelRouterBillingConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_clientTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -216,12 +235,12 @@ bool CreateModelRouterRequest::CertIdHasBeenSet() const
     return m_certIdHasBeenSet;
 }
 
-ClusterInfo CreateModelRouterRequest::GetClusterInfo() const
+ClusterInfoInput CreateModelRouterRequest::GetClusterInfo() const
 {
     return m_clusterInfo;
 }
 
-void CreateModelRouterRequest::SetClusterInfo(const ClusterInfo& _clusterInfo)
+void CreateModelRouterRequest::SetClusterInfo(const ClusterInfoInput& _clusterInfo)
 {
     m_clusterInfo = _clusterInfo;
     m_clusterInfoHasBeenSet = true;
@@ -374,6 +393,38 @@ void CreateModelRouterRequest::SetVpcId(const string& _vpcId)
 bool CreateModelRouterRequest::VpcIdHasBeenSet() const
 {
     return m_vpcIdHasBeenSet;
+}
+
+ModelRouterBillingConfigInput CreateModelRouterRequest::GetModelRouterBillingConfig() const
+{
+    return m_modelRouterBillingConfig;
+}
+
+void CreateModelRouterRequest::SetModelRouterBillingConfig(const ModelRouterBillingConfigInput& _modelRouterBillingConfig)
+{
+    m_modelRouterBillingConfig = _modelRouterBillingConfig;
+    m_modelRouterBillingConfigHasBeenSet = true;
+}
+
+bool CreateModelRouterRequest::ModelRouterBillingConfigHasBeenSet() const
+{
+    return m_modelRouterBillingConfigHasBeenSet;
+}
+
+string CreateModelRouterRequest::GetClientToken() const
+{
+    return m_clientToken;
+}
+
+void CreateModelRouterRequest::SetClientToken(const string& _clientToken)
+{
+    m_clientToken = _clientToken;
+    m_clientTokenHasBeenSet = true;
+}
+
+bool CreateModelRouterRequest::ClientTokenHasBeenSet() const
+{
+    return m_clientTokenHasBeenSet;
 }
 
 

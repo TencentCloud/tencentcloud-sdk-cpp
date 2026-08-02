@@ -1440,6 +1440,56 @@ DbdcClient::ModifyDBCustomClusterTagsOutcomeCallable DbdcClient::ModifyDBCustomC
     return prom->get_future();
 }
 
+DbdcClient::ModifyDBCustomNodeAttributesOutcome DbdcClient::ModifyDBCustomNodeAttributes(const ModifyDBCustomNodeAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBCustomNodeAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBCustomNodeAttributesResponse rsp = ModifyDBCustomNodeAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBCustomNodeAttributesOutcome(rsp);
+        else
+            return ModifyDBCustomNodeAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBCustomNodeAttributesOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::ModifyDBCustomNodeAttributesAsync(const ModifyDBCustomNodeAttributesRequest& request, const ModifyDBCustomNodeAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDBCustomNodeAttributesRequest&;
+    using Resp = ModifyDBCustomNodeAttributesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBCustomNodeAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::ModifyDBCustomNodeAttributesOutcomeCallable DbdcClient::ModifyDBCustomNodeAttributesCallable(const ModifyDBCustomNodeAttributesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDBCustomNodeAttributesOutcome>>();
+    ModifyDBCustomNodeAttributesAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const ModifyDBCustomNodeAttributesRequest&,
+        ModifyDBCustomNodeAttributesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbdcClient::ModifyDBCustomNodeSecurityGroupsOutcome DbdcClient::ModifyDBCustomNodeSecurityGroups(const ModifyDBCustomNodeSecurityGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBCustomNodeSecurityGroups");

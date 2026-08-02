@@ -91,6 +91,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/RuleTargets.h
   include/tencentcloud/clb/v20180317/model/IntentRouterTierItem.h
   include/tencentcloud/clb/v20180317/model/BatchDeregisterTargetsRequest.h
+  include/tencentcloud/clb/v20180317/model/ModelRouterModelToDisassociate.h
   include/tencentcloud/clb/v20180317/model/ModifyListenerResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeTargetHealthResponse.h
   include/tencentcloud/clb/v20180317/model/GuardrailConfig.h
@@ -249,6 +250,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/InquiryPriceCreateLoadBalancerResponse.h
   include/tencentcloud/clb/v20180317/model/TargetGroupAssociation.h
   include/tencentcloud/clb/v20180317/model/ListenerHealth.h
+  include/tencentcloud/clb/v20180317/model/RoutingStrategyArgs.h
   include/tencentcloud/clb/v20180317/model/DeleteRewriteRequest.h
   include/tencentcloud/clb/v20180317/model/ModifyTargetPortRequest.h
   include/tencentcloud/clb/v20180317/model/DescribeTargetGroupListRequest.h
@@ -339,8 +341,9 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/ModifyLoadBalancerMixIpTargetResponse.h
   include/tencentcloud/clb/v20180317/model/ModifyModelAttributesResponse.h
   include/tencentcloud/clb/v20180317/model/Sort.h
-  include/tencentcloud/clb/v20180317/model/TargetGroupHealthCheck.h
+  include/tencentcloud/clb/v20180317/model/ModelRouterBillingConfigInput.h
   include/tencentcloud/clb/v20180317/model/DisassociateModelsFromModelRouterResponse.h
+  include/tencentcloud/clb/v20180317/model/TargetGroupHealthCheck.h
   include/tencentcloud/clb/v20180317/model/BatchRegisterTargetsRequest.h
   include/tencentcloud/clb/v20180317/model/DescribeResourcesRequest.h
   include/tencentcloud/clb/v20180317/model/ServiceProviderItem.h
@@ -407,6 +410,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/DescribeModelRouterDetailRequest.h
   include/tencentcloud/clb/v20180317/model/RegisterTargetsRequest.h
   include/tencentcloud/clb/v20180317/model/DescribeModelRouterResourcePackageDeductionRequest.h
+  include/tencentcloud/clb/v20180317/model/ClusterInfoInput.h
   include/tencentcloud/clb/v20180317/model/AssociateTargetGroupsResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeKeysResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeLoadBalancersDetailRequest.h
@@ -549,6 +553,7 @@ set(clb_src
   src/v20180317/model/RuleTargets.cpp
   src/v20180317/model/IntentRouterTierItem.cpp
   src/v20180317/model/BatchDeregisterTargetsRequest.cpp
+  src/v20180317/model/ModelRouterModelToDisassociate.cpp
   src/v20180317/model/ModifyListenerResponse.cpp
   src/v20180317/model/DescribeTargetHealthResponse.cpp
   src/v20180317/model/GuardrailConfig.cpp
@@ -707,6 +712,7 @@ set(clb_src
   src/v20180317/model/InquiryPriceCreateLoadBalancerResponse.cpp
   src/v20180317/model/TargetGroupAssociation.cpp
   src/v20180317/model/ListenerHealth.cpp
+  src/v20180317/model/RoutingStrategyArgs.cpp
   src/v20180317/model/DeleteRewriteRequest.cpp
   src/v20180317/model/ModifyTargetPortRequest.cpp
   src/v20180317/model/DescribeTargetGroupListRequest.cpp
@@ -797,8 +803,9 @@ set(clb_src
   src/v20180317/model/ModifyLoadBalancerMixIpTargetResponse.cpp
   src/v20180317/model/ModifyModelAttributesResponse.cpp
   src/v20180317/model/Sort.cpp
-  src/v20180317/model/TargetGroupHealthCheck.cpp
+  src/v20180317/model/ModelRouterBillingConfigInput.cpp
   src/v20180317/model/DisassociateModelsFromModelRouterResponse.cpp
+  src/v20180317/model/TargetGroupHealthCheck.cpp
   src/v20180317/model/BatchRegisterTargetsRequest.cpp
   src/v20180317/model/DescribeResourcesRequest.cpp
   src/v20180317/model/ServiceProviderItem.cpp
@@ -865,6 +872,7 @@ set(clb_src
   src/v20180317/model/DescribeModelRouterDetailRequest.cpp
   src/v20180317/model/RegisterTargetsRequest.cpp
   src/v20180317/model/DescribeModelRouterResourcePackageDeductionRequest.cpp
+  src/v20180317/model/ClusterInfoInput.cpp
   src/v20180317/model/AssociateTargetGroupsResponse.cpp
   src/v20180317/model/DescribeKeysResponse.cpp
   src/v20180317/model/DescribeLoadBalancersDetailRequest.cpp

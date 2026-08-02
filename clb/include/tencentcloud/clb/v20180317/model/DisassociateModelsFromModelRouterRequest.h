@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/clb/v20180317/model/ModelRouterModel.h>
+#include <tencentcloud/clb/v20180317/model/ModelRouterModelToDisassociate.h>
 
 
 namespace TencentCloud
@@ -69,14 +69,14 @@ namespace TencentCloud
                      * @return Models <p>需要解除关联的模型信息</p>
                      * 
                      */
-                    std::vector<ModelRouterModel> GetModels() const;
+                    std::vector<ModelRouterModelToDisassociate> GetModels() const;
 
                     /**
                      * 设置<p>需要解除关联的模型信息</p>
                      * @param _models <p>需要解除关联的模型信息</p>
                      * 
                      */
-                    void SetModels(const std::vector<ModelRouterModel>& _models);
+                    void SetModels(const std::vector<ModelRouterModelToDisassociate>& _models);
 
                     /**
                      * 判断参数 Models 是否已赋值
@@ -96,7 +96,7 @@ namespace TencentCloud
                     /**
                      * <p>需要解除关联的模型信息</p>
                      */
-                    std::vector<ModelRouterModel> m_models;
+                    std::vector<ModelRouterModelToDisassociate> m_models;
                     bool m_modelsHasBeenSet;
 
                 };

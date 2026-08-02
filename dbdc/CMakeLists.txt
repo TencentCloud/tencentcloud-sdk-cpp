@@ -30,6 +30,7 @@ set(dbdc_public_header_model
   include/tencentcloud/dbdc/v20201029/model/DBCustomNodeTypeInfo.h
   include/tencentcloud/dbdc/v20201029/model/ModifyInstanceNameResponse.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterNodeConfigRequest.h
+  include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeAttributesResponse.h
   include/tencentcloud/dbdc/v20201029/model/CreateDBCustomClusterResponse.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomImagesRequest.h
   include/tencentcloud/dbdc/v20201029/model/ZoneInfo.h
@@ -104,6 +105,7 @@ set(dbdc_public_header_model
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomNodeSecurityGroupsRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterNodesResponse.h
   include/tencentcloud/dbdc/v20201029/model/DescribeInstanceDetailRequest.h
+  include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeAttributesRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterKubeconfigResponse.h
   include/tencentcloud/dbdc/v20201029/model/ContainerNetwork.h
   include/tencentcloud/dbdc/v20201029/model/DescribeHostListRequest.h
@@ -129,6 +131,7 @@ set(dbdc_src
   src/v20201029/model/DBCustomNodeTypeInfo.cpp
   src/v20201029/model/ModifyInstanceNameResponse.cpp
   src/v20201029/model/DescribeDBCustomClusterNodeConfigRequest.cpp
+  src/v20201029/model/ModifyDBCustomNodeAttributesResponse.cpp
   src/v20201029/model/CreateDBCustomClusterResponse.cpp
   src/v20201029/model/DescribeDBCustomImagesRequest.cpp
   src/v20201029/model/ZoneInfo.cpp
@@ -203,6 +206,7 @@ set(dbdc_src
   src/v20201029/model/DescribeDBCustomNodeSecurityGroupsRequest.cpp
   src/v20201029/model/DescribeDBCustomClusterNodesResponse.cpp
   src/v20201029/model/DescribeInstanceDetailRequest.cpp
+  src/v20201029/model/ModifyDBCustomNodeAttributesRequest.cpp
   src/v20201029/model/DescribeDBCustomClusterKubeconfigResponse.cpp
   src/v20201029/model/ContainerNetwork.cpp
   src/v20201029/model/DescribeHostListRequest.cpp

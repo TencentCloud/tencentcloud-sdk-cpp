@@ -32,7 +32,9 @@ MountInfo::MountInfo() :
     m_subnetIdHasBeenSet(false),
     m_subnetNameHasBeenSet(false),
     m_ccnIDHasBeenSet(false),
-    m_cidrBlockHasBeenSet(false)
+    m_cidrBlockHasBeenSet(false),
+    m_serverListHasBeenSet(false),
+    m_serverListTruncatedHasBeenSet(false)
 {
 }
 
@@ -161,6 +163,29 @@ CoreInternalOutcome MountInfo::Deserialize(const rapidjson::Value &value)
         m_cidrBlockHasBeenSet = true;
     }
 
+    if (value.HasMember("ServerList") && !value["ServerList"].IsNull())
+    {
+        if (!value["ServerList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MountInfo.ServerList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ServerList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_serverList.push_back((*itr).GetString());
+        }
+        m_serverListHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServerListTruncated") && !value["ServerListTruncated"].IsNull())
+    {
+        if (!value["ServerListTruncated"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `MountInfo.ServerListTruncated` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_serverListTruncated = value["ServerListTruncated"].GetBool();
+        m_serverListTruncatedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +287,27 @@ void MountInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "CidrBlock";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cidrBlock.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serverListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_serverList.begin(); itr != m_serverList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_serverListTruncatedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerListTruncated";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_serverListTruncated, allocator);
     }
 
 }
@@ -457,5 +503,37 @@ void MountInfo::SetCidrBlock(const string& _cidrBlock)
 bool MountInfo::CidrBlockHasBeenSet() const
 {
     return m_cidrBlockHasBeenSet;
+}
+
+vector<string> MountInfo::GetServerList() const
+{
+    return m_serverList;
+}
+
+void MountInfo::SetServerList(const vector<string>& _serverList)
+{
+    m_serverList = _serverList;
+    m_serverListHasBeenSet = true;
+}
+
+bool MountInfo::ServerListHasBeenSet() const
+{
+    return m_serverListHasBeenSet;
+}
+
+bool MountInfo::GetServerListTruncated() const
+{
+    return m_serverListTruncated;
+}
+
+void MountInfo::SetServerListTruncated(const bool& _serverListTruncated)
+{
+    m_serverListTruncated = _serverListTruncated;
+    m_serverListTruncatedHasBeenSet = true;
+}
+
+bool MountInfo::ServerListTruncatedHasBeenSet() const
+{
+    return m_serverListTruncatedHasBeenSet;
 }
 

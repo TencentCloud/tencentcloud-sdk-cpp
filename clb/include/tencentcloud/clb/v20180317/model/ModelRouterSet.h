@@ -414,6 +414,48 @@ namespace TencentCloud
                      */
                     bool VpcIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>带宽</p><p>单位：Mbps</p>
+                     * @return Bandwidth <p>带宽</p><p>单位：Mbps</p>
+                     * 
+                     */
+                    uint64_t GetBandwidth() const;
+
+                    /**
+                     * 设置<p>带宽</p><p>单位：Mbps</p>
+                     * @param _bandwidth <p>带宽</p><p>单位：Mbps</p>
+                     * 
+                     */
+                    void SetBandwidth(const uint64_t& _bandwidth);
+
+                    /**
+                     * 判断参数 Bandwidth 是否已赋值
+                     * @return Bandwidth 是否已赋值
+                     * 
+                     */
+                    bool BandwidthHasBeenSet() const;
+
+                    /**
+                     * 获取<p>弹性公网IP的ID</p>
+                     * @return EipAddressId <p>弹性公网IP的ID</p>
+                     * 
+                     */
+                    std::string GetEipAddressId() const;
+
+                    /**
+                     * 设置<p>弹性公网IP的ID</p>
+                     * @param _eipAddressId <p>弹性公网IP的ID</p>
+                     * 
+                     */
+                    void SetEipAddressId(const std::string& _eipAddressId);
+
+                    /**
+                     * 判断参数 EipAddressId 是否已赋值
+                     * @return EipAddressId 是否已赋值
+                     * 
+                     */
+                    bool EipAddressIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -519,6 +561,18 @@ namespace TencentCloud
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * <p>带宽</p><p>单位：Mbps</p>
+                     */
+                    uint64_t m_bandwidth;
+                    bool m_bandwidthHasBeenSet;
+
+                    /**
+                     * <p>弹性公网IP的ID</p>
+                     */
+                    std::string m_eipAddressId;
+                    bool m_eipAddressIdHasBeenSet;
 
                 };
             }

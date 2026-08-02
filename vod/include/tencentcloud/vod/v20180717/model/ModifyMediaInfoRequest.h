@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体文件唯一标识。
-                     * @return FileId 媒体文件唯一标识。
+                     * 获取<p>媒体文件唯一标识。</p>
+                     * @return FileId <p>媒体文件唯一标识。</p>
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置媒体文件唯一标识。
-                     * @param _fileId 媒体文件唯一标识。
+                     * 设置<p>媒体文件唯一标识。</p>
+                     * @param _fileId <p>媒体文件唯一标识。</p>
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 获取<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @return SubAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @param _subAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 设置<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @param _subAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取媒体文件名称，最长 64 个字符。
-                     * @return Name 媒体文件名称，最长 64 个字符。
+                     * 获取<p>媒体文件名称，最长 64 个字符。</p>
+                     * @return Name <p>媒体文件名称，最长 64 个字符。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置媒体文件名称，最长 64 个字符。
-                     * @param _name 媒体文件名称，最长 64 个字符。
+                     * 设置<p>媒体文件名称，最长 64 个字符。</p>
+                     * @param _name <p>媒体文件名称，最长 64 个字符。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取媒体文件描述，最长 128 个字符。
-                     * @return Description 媒体文件描述，最长 128 个字符。
+                     * 获取<p>媒体文件描述，最长 128 个字符。</p>
+                     * @return Description <p>媒体文件描述，最长 128 个字符。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置媒体文件描述，最长 128 个字符。
-                     * @param _description 媒体文件描述，最长 128 个字符。
+                     * 设置<p>媒体文件描述，最长 128 个字符。</p>
+                     * @param _description <p>媒体文件描述，最长 128 个字符。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取媒体文件分类 ID。
-                     * @return ClassId 媒体文件分类 ID。
+                     * 获取<p>媒体文件分类 ID。</p>
+                     * @return ClassId <p>媒体文件分类 ID。</p>
                      * 
                      */
                     int64_t GetClassId() const;
 
                     /**
-                     * 设置媒体文件分类 ID。
-                     * @param _classId 媒体文件分类 ID。
+                     * 设置<p>媒体文件分类 ID。</p>
+                     * @param _classId <p>媒体文件分类 ID。</p>
                      * 
                      */
                     void SetClassId(const int64_t& _classId);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool ClassIdHasBeenSet() const;
 
                     /**
-                     * 获取媒体文件过期时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。填“9999-12-31T23:59:59Z”表示永不过期。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。
-                     * @return ExpireTime 媒体文件过期时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。填“9999-12-31T23:59:59Z”表示永不过期。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。
+                     * 获取<p>媒体文件过期时间，采用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。填“9999-12-31T23:59:59Z”表示永不过期。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。</p>
+                     * @return ExpireTime <p>媒体文件过期时间，采用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。填“9999-12-31T23:59:59Z”表示永不过期。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。</p>
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置媒体文件过期时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。填“9999-12-31T23:59:59Z”表示永不过期。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。
-                     * @param _expireTime 媒体文件过期时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。填“9999-12-31T23:59:59Z”表示永不过期。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。
+                     * 设置<p>媒体文件过期时间，采用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。填“9999-12-31T23:59:59Z”表示永不过期。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。</p>
+                     * @param _expireTime <p>媒体文件过期时间，采用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。填“9999-12-31T23:59:59Z”表示永不过期。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。</p>
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取视频封面图片文件（如 jpeg, png 等）进行 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 gif、jpeg、png 三种图片格式。
-                     * @return CoverData 视频封面图片文件（如 jpeg, png 等）进行 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 gif、jpeg、png 三种图片格式。
+                     * 获取<p>视频封面图片文件（如 jpeg, png 等）进行 <a href="https://tools.ietf.org/html/rfc4648">Base64</a> 编码后的字符串，仅支持 gif、jpeg、png 三种图片格式。</p>
+                     * @return CoverData <p>视频封面图片文件（如 jpeg, png 等）进行 <a href="https://tools.ietf.org/html/rfc4648">Base64</a> 编码后的字符串，仅支持 gif、jpeg、png 三种图片格式。</p>
                      * 
                      */
                     std::string GetCoverData() const;
 
                     /**
-                     * 设置视频封面图片文件（如 jpeg, png 等）进行 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 gif、jpeg、png 三种图片格式。
-                     * @param _coverData 视频封面图片文件（如 jpeg, png 等）进行 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 gif、jpeg、png 三种图片格式。
+                     * 设置<p>视频封面图片文件（如 jpeg, png 等）进行 <a href="https://tools.ietf.org/html/rfc4648">Base64</a> 编码后的字符串，仅支持 gif、jpeg、png 三种图片格式。</p>
+                     * @param _coverData <p>视频封面图片文件（如 jpeg, png 等）进行 <a href="https://tools.ietf.org/html/rfc4648">Base64</a> 编码后的字符串，仅支持 gif、jpeg、png 三种图片格式。</p>
                      * 
                      */
                     void SetCoverData(const std::string& _coverData);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool CoverDataHasBeenSet() const;
 
                     /**
-                     * 获取新增的一组视频打点信息，如果某个偏移时间已存在打点，则会进行覆盖操作，单个媒体文件最多 100 个打点信息。同一个请求里，AddKeyFrameDescs 的时间偏移参数必须与 DeleteKeyFrameDescs 都不同。
-                     * @return AddKeyFrameDescs 新增的一组视频打点信息，如果某个偏移时间已存在打点，则会进行覆盖操作，单个媒体文件最多 100 个打点信息。同一个请求里，AddKeyFrameDescs 的时间偏移参数必须与 DeleteKeyFrameDescs 都不同。
+                     * 获取<p>新增的一组视频打点信息，如果某个偏移时间已存在打点，则会进行覆盖操作，单个媒体文件最多 100 个打点信息。同一个请求里，AddKeyFrameDescs 的时间偏移参数必须与 DeleteKeyFrameDescs 都不同。</p>
+                     * @return AddKeyFrameDescs <p>新增的一组视频打点信息，如果某个偏移时间已存在打点，则会进行覆盖操作，单个媒体文件最多 100 个打点信息。同一个请求里，AddKeyFrameDescs 的时间偏移参数必须与 DeleteKeyFrameDescs 都不同。</p>
                      * 
                      */
                     std::vector<MediaKeyFrameDescItem> GetAddKeyFrameDescs() const;
 
                     /**
-                     * 设置新增的一组视频打点信息，如果某个偏移时间已存在打点，则会进行覆盖操作，单个媒体文件最多 100 个打点信息。同一个请求里，AddKeyFrameDescs 的时间偏移参数必须与 DeleteKeyFrameDescs 都不同。
-                     * @param _addKeyFrameDescs 新增的一组视频打点信息，如果某个偏移时间已存在打点，则会进行覆盖操作，单个媒体文件最多 100 个打点信息。同一个请求里，AddKeyFrameDescs 的时间偏移参数必须与 DeleteKeyFrameDescs 都不同。
+                     * 设置<p>新增的一组视频打点信息，如果某个偏移时间已存在打点，则会进行覆盖操作，单个媒体文件最多 100 个打点信息。同一个请求里，AddKeyFrameDescs 的时间偏移参数必须与 DeleteKeyFrameDescs 都不同。</p>
+                     * @param _addKeyFrameDescs <p>新增的一组视频打点信息，如果某个偏移时间已存在打点，则会进行覆盖操作，单个媒体文件最多 100 个打点信息。同一个请求里，AddKeyFrameDescs 的时间偏移参数必须与 DeleteKeyFrameDescs 都不同。</p>
                      * 
                      */
                     void SetAddKeyFrameDescs(const std::vector<MediaKeyFrameDescItem>& _addKeyFrameDescs);
@@ -213,15 +213,15 @@ namespace TencentCloud
                     bool AddKeyFrameDescsHasBeenSet() const;
 
                     /**
-                     * 获取要删除的一组视频打点信息的时间偏移，单位：秒。同一个请求里，AddKeyFrameDescs 的时间偏移参数必须与 DeleteKeyFrameDescs 都不同。
-                     * @return DeleteKeyFrameDescs 要删除的一组视频打点信息的时间偏移，单位：秒。同一个请求里，AddKeyFrameDescs 的时间偏移参数必须与 DeleteKeyFrameDescs 都不同。
+                     * 获取<p>要删除的一组视频打点信息的时间偏移，单位：秒。同一个请求里，AddKeyFrameDescs 的时间偏移参数必须与 DeleteKeyFrameDescs 都不同。</p>
+                     * @return DeleteKeyFrameDescs <p>要删除的一组视频打点信息的时间偏移，单位：秒。同一个请求里，AddKeyFrameDescs 的时间偏移参数必须与 DeleteKeyFrameDescs 都不同。</p>
                      * 
                      */
                     std::vector<double> GetDeleteKeyFrameDescs() const;
 
                     /**
-                     * 设置要删除的一组视频打点信息的时间偏移，单位：秒。同一个请求里，AddKeyFrameDescs 的时间偏移参数必须与 DeleteKeyFrameDescs 都不同。
-                     * @param _deleteKeyFrameDescs 要删除的一组视频打点信息的时间偏移，单位：秒。同一个请求里，AddKeyFrameDescs 的时间偏移参数必须与 DeleteKeyFrameDescs 都不同。
+                     * 设置<p>要删除的一组视频打点信息的时间偏移，单位：秒。同一个请求里，AddKeyFrameDescs 的时间偏移参数必须与 DeleteKeyFrameDescs 都不同。</p>
+                     * @param _deleteKeyFrameDescs <p>要删除的一组视频打点信息的时间偏移，单位：秒。同一个请求里，AddKeyFrameDescs 的时间偏移参数必须与 DeleteKeyFrameDescs 都不同。</p>
                      * 
                      */
                     void SetDeleteKeyFrameDescs(const std::vector<double>& _deleteKeyFrameDescs);
@@ -234,19 +234,15 @@ namespace TencentCloud
                     bool DeleteKeyFrameDescsHasBeenSet() const;
 
                     /**
-                     * 获取取值 1 表示清空视频打点信息，其他值无意义。
-同一个请求里，ClearKeyFrameDescs 与 AddKeyFrameDescs 不能同时出现。
-                     * @return ClearKeyFrameDescs 取值 1 表示清空视频打点信息，其他值无意义。
-同一个请求里，ClearKeyFrameDescs 与 AddKeyFrameDescs 不能同时出现。
+                     * 获取<p>取值 1 表示清空视频打点信息，其他值无意义。<br>同一个请求里，ClearKeyFrameDescs 与 AddKeyFrameDescs 不能同时出现。</p>
+                     * @return ClearKeyFrameDescs <p>取值 1 表示清空视频打点信息，其他值无意义。<br>同一个请求里，ClearKeyFrameDescs 与 AddKeyFrameDescs 不能同时出现。</p>
                      * 
                      */
                     int64_t GetClearKeyFrameDescs() const;
 
                     /**
-                     * 设置取值 1 表示清空视频打点信息，其他值无意义。
-同一个请求里，ClearKeyFrameDescs 与 AddKeyFrameDescs 不能同时出现。
-                     * @param _clearKeyFrameDescs 取值 1 表示清空视频打点信息，其他值无意义。
-同一个请求里，ClearKeyFrameDescs 与 AddKeyFrameDescs 不能同时出现。
+                     * 设置<p>取值 1 表示清空视频打点信息，其他值无意义。<br>同一个请求里，ClearKeyFrameDescs 与 AddKeyFrameDescs 不能同时出现。</p>
+                     * @param _clearKeyFrameDescs <p>取值 1 表示清空视频打点信息，其他值无意义。<br>同一个请求里，ClearKeyFrameDescs 与 AddKeyFrameDescs 不能同时出现。</p>
                      * 
                      */
                     void SetClearKeyFrameDescs(const int64_t& _clearKeyFrameDescs);
@@ -259,15 +255,15 @@ namespace TencentCloud
                     bool ClearKeyFrameDescsHasBeenSet() const;
 
                     /**
-                     * 获取新增的一组标签，单个媒体文件最多 16 个标签，单个标签最多 32 个字符。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。
-                     * @return AddTags 新增的一组标签，单个媒体文件最多 16 个标签，单个标签最多 32 个字符。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。
+                     * 获取<p>新增的一组标签，单个媒体文件最多 16 个标签，单个标签最多 32 个字符。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。</p>
+                     * @return AddTags <p>新增的一组标签，单个媒体文件最多 16 个标签，单个标签最多 32 个字符。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。</p>
                      * 
                      */
                     std::vector<std::string> GetAddTags() const;
 
                     /**
-                     * 设置新增的一组标签，单个媒体文件最多 16 个标签，单个标签最多 32 个字符。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。
-                     * @param _addTags 新增的一组标签，单个媒体文件最多 16 个标签，单个标签最多 32 个字符。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。
+                     * 设置<p>新增的一组标签，单个媒体文件最多 16 个标签，单个标签最多 32 个字符。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。</p>
+                     * @param _addTags <p>新增的一组标签，单个媒体文件最多 16 个标签，单个标签最多 32 个字符。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。</p>
                      * 
                      */
                     void SetAddTags(const std::vector<std::string>& _addTags);
@@ -280,15 +276,15 @@ namespace TencentCloud
                     bool AddTagsHasBeenSet() const;
 
                     /**
-                     * 获取要删除的一组标签。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。
-                     * @return DeleteTags 要删除的一组标签。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。
+                     * 获取<p>要删除的一组标签。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。</p>
+                     * @return DeleteTags <p>要删除的一组标签。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。</p>
                      * 
                      */
                     std::vector<std::string> GetDeleteTags() const;
 
                     /**
-                     * 设置要删除的一组标签。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。
-                     * @param _deleteTags 要删除的一组标签。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。
+                     * 设置<p>要删除的一组标签。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。</p>
+                     * @param _deleteTags <p>要删除的一组标签。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。</p>
                      * 
                      */
                     void SetDeleteTags(const std::vector<std::string>& _deleteTags);
@@ -301,19 +297,15 @@ namespace TencentCloud
                     bool DeleteTagsHasBeenSet() const;
 
                     /**
-                     * 获取取值 1 表示清空媒体文件所有标签，其他值无意义。
-同一个请求里，ClearTags 与 AddTags 不能同时出现。
-                     * @return ClearTags 取值 1 表示清空媒体文件所有标签，其他值无意义。
-同一个请求里，ClearTags 与 AddTags 不能同时出现。
+                     * 获取<p>取值 1 表示清空媒体文件所有标签，其他值无意义。<br>同一个请求里，ClearTags 与 AddTags 不能同时出现。</p>
+                     * @return ClearTags <p>取值 1 表示清空媒体文件所有标签，其他值无意义。<br>同一个请求里，ClearTags 与 AddTags 不能同时出现。</p>
                      * 
                      */
                     int64_t GetClearTags() const;
 
                     /**
-                     * 设置取值 1 表示清空媒体文件所有标签，其他值无意义。
-同一个请求里，ClearTags 与 AddTags 不能同时出现。
-                     * @param _clearTags 取值 1 表示清空媒体文件所有标签，其他值无意义。
-同一个请求里，ClearTags 与 AddTags 不能同时出现。
+                     * 设置<p>取值 1 表示清空媒体文件所有标签，其他值无意义。<br>同一个请求里，ClearTags 与 AddTags 不能同时出现。</p>
+                     * @param _clearTags <p>取值 1 表示清空媒体文件所有标签，其他值无意义。<br>同一个请求里，ClearTags 与 AddTags 不能同时出现。</p>
                      * 
                      */
                     void SetClearTags(const int64_t& _clearTags);
@@ -326,15 +318,15 @@ namespace TencentCloud
                     bool ClearTagsHasBeenSet() const;
 
                     /**
-                     * 获取新增一组字幕。单个媒体文件最多 16 个字幕。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。
-                     * @return AddSubtitles 新增一组字幕。单个媒体文件最多 16 个字幕。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。
+                     * 获取<p>新增一组字幕。单个媒体文件最多 16 个字幕。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。</p>
+                     * @return AddSubtitles <p>新增一组字幕。单个媒体文件最多 16 个字幕。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。</p>
                      * 
                      */
                     std::vector<MediaSubtitleInput> GetAddSubtitles() const;
 
                     /**
-                     * 设置新增一组字幕。单个媒体文件最多 16 个字幕。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。
-                     * @param _addSubtitles 新增一组字幕。单个媒体文件最多 16 个字幕。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。
+                     * 设置<p>新增一组字幕。单个媒体文件最多 16 个字幕。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。</p>
+                     * @param _addSubtitles <p>新增一组字幕。单个媒体文件最多 16 个字幕。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。</p>
                      * 
                      */
                     void SetAddSubtitles(const std::vector<MediaSubtitleInput>& _addSubtitles);
@@ -347,15 +339,15 @@ namespace TencentCloud
                     bool AddSubtitlesHasBeenSet() const;
 
                     /**
-                     * 获取待删除字幕的唯一标识。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。
-                     * @return DeleteSubtitleIds 待删除字幕的唯一标识。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。
+                     * 获取<p>待删除字幕的唯一标识。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。</p>
+                     * @return DeleteSubtitleIds <p>待删除字幕的唯一标识。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。</p>
                      * 
                      */
                     std::vector<std::string> GetDeleteSubtitleIds() const;
 
                     /**
-                     * 设置待删除字幕的唯一标识。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。
-                     * @param _deleteSubtitleIds 待删除字幕的唯一标识。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。
+                     * 设置<p>待删除字幕的唯一标识。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。</p>
+                     * @param _deleteSubtitleIds <p>待删除字幕的唯一标识。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。</p>
                      * 
                      */
                     void SetDeleteSubtitleIds(const std::vector<std::string>& _deleteSubtitleIds);
@@ -368,19 +360,15 @@ namespace TencentCloud
                     bool DeleteSubtitleIdsHasBeenSet() const;
 
                     /**
-                     * 获取取值 1 表示清空媒体文件所有的字幕信息，其他值无意义。
-同一个请求里，ClearSubtitles 与 AddSubtitles不能同时出现。
-                     * @return ClearSubtitles 取值 1 表示清空媒体文件所有的字幕信息，其他值无意义。
-同一个请求里，ClearSubtitles 与 AddSubtitles不能同时出现。
+                     * 获取<p>取值 1 表示清空媒体文件所有的字幕信息，其他值无意义。<br>同一个请求里，ClearSubtitles 与 AddSubtitles不能同时出现。</p>
+                     * @return ClearSubtitles <p>取值 1 表示清空媒体文件所有的字幕信息，其他值无意义。<br>同一个请求里，ClearSubtitles 与 AddSubtitles不能同时出现。</p>
                      * 
                      */
                     int64_t GetClearSubtitles() const;
 
                     /**
-                     * 设置取值 1 表示清空媒体文件所有的字幕信息，其他值无意义。
-同一个请求里，ClearSubtitles 与 AddSubtitles不能同时出现。
-                     * @param _clearSubtitles 取值 1 表示清空媒体文件所有的字幕信息，其他值无意义。
-同一个请求里，ClearSubtitles 与 AddSubtitles不能同时出现。
+                     * 设置<p>取值 1 表示清空媒体文件所有的字幕信息，其他值无意义。<br>同一个请求里，ClearSubtitles 与 AddSubtitles不能同时出现。</p>
+                     * @param _clearSubtitles <p>取值 1 表示清空媒体文件所有的字幕信息，其他值无意义。<br>同一个请求里，ClearSubtitles 与 AddSubtitles不能同时出现。</p>
                      * 
                      */
                     void SetClearSubtitles(const int64_t& _clearSubtitles);
@@ -392,106 +380,157 @@ namespace TencentCloud
                      */
                     bool ClearSubtitlesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>待出库的知识库ID。</p>
+                     * @return DeleteKnowledgeBases <p>待出库的知识库ID。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetDeleteKnowledgeBases() const;
+
+                    /**
+                     * 设置<p>待出库的知识库ID。</p>
+                     * @param _deleteKnowledgeBases <p>待出库的知识库ID。</p>
+                     * 
+                     */
+                    void SetDeleteKnowledgeBases(const std::vector<std::string>& _deleteKnowledgeBases);
+
+                    /**
+                     * 判断参数 DeleteKnowledgeBases 是否已赋值
+                     * @return DeleteKnowledgeBases 是否已赋值
+                     * 
+                     */
+                    bool DeleteKnowledgeBasesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>取值 1 表示从所有知识库中移除此媒体文件，其他值无意义。</p><p><br>同一个请求里，ClearKnowledgeBases 与 DeleteKnowledgeBases 不能同时出现。<p></p></p>
+                     * @return ClearKnowledgeBases <p>取值 1 表示从所有知识库中移除此媒体文件，其他值无意义。</p><p><br>同一个请求里，ClearKnowledgeBases 与 DeleteKnowledgeBases 不能同时出现。<p></p></p>
+                     * 
+                     */
+                    int64_t GetClearKnowledgeBases() const;
+
+                    /**
+                     * 设置<p>取值 1 表示从所有知识库中移除此媒体文件，其他值无意义。</p><p><br>同一个请求里，ClearKnowledgeBases 与 DeleteKnowledgeBases 不能同时出现。<p></p></p>
+                     * @param _clearKnowledgeBases <p>取值 1 表示从所有知识库中移除此媒体文件，其他值无意义。</p><p><br>同一个请求里，ClearKnowledgeBases 与 DeleteKnowledgeBases 不能同时出现。<p></p></p>
+                     * 
+                     */
+                    void SetClearKnowledgeBases(const int64_t& _clearKnowledgeBases);
+
+                    /**
+                     * 判断参数 ClearKnowledgeBases 是否已赋值
+                     * @return ClearKnowledgeBases 是否已赋值
+                     * 
+                     */
+                    bool ClearKnowledgeBasesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 媒体文件唯一标识。
+                     * <p>媒体文件唯一标识。</p>
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 媒体文件名称，最长 64 个字符。
+                     * <p>媒体文件名称，最长 64 个字符。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 媒体文件描述，最长 128 个字符。
+                     * <p>媒体文件描述，最长 128 个字符。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 媒体文件分类 ID。
+                     * <p>媒体文件分类 ID。</p>
                      */
                     int64_t m_classId;
                     bool m_classIdHasBeenSet;
 
                     /**
-                     * 媒体文件过期时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。填“9999-12-31T23:59:59Z”表示永不过期。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。
+                     * <p>媒体文件过期时间，采用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。填“9999-12-31T23:59:59Z”表示永不过期。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。</p>
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 视频封面图片文件（如 jpeg, png 等）进行 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 gif、jpeg、png 三种图片格式。
+                     * <p>视频封面图片文件（如 jpeg, png 等）进行 <a href="https://tools.ietf.org/html/rfc4648">Base64</a> 编码后的字符串，仅支持 gif、jpeg、png 三种图片格式。</p>
                      */
                     std::string m_coverData;
                     bool m_coverDataHasBeenSet;
 
                     /**
-                     * 新增的一组视频打点信息，如果某个偏移时间已存在打点，则会进行覆盖操作，单个媒体文件最多 100 个打点信息。同一个请求里，AddKeyFrameDescs 的时间偏移参数必须与 DeleteKeyFrameDescs 都不同。
+                     * <p>新增的一组视频打点信息，如果某个偏移时间已存在打点，则会进行覆盖操作，单个媒体文件最多 100 个打点信息。同一个请求里，AddKeyFrameDescs 的时间偏移参数必须与 DeleteKeyFrameDescs 都不同。</p>
                      */
                     std::vector<MediaKeyFrameDescItem> m_addKeyFrameDescs;
                     bool m_addKeyFrameDescsHasBeenSet;
 
                     /**
-                     * 要删除的一组视频打点信息的时间偏移，单位：秒。同一个请求里，AddKeyFrameDescs 的时间偏移参数必须与 DeleteKeyFrameDescs 都不同。
+                     * <p>要删除的一组视频打点信息的时间偏移，单位：秒。同一个请求里，AddKeyFrameDescs 的时间偏移参数必须与 DeleteKeyFrameDescs 都不同。</p>
                      */
                     std::vector<double> m_deleteKeyFrameDescs;
                     bool m_deleteKeyFrameDescsHasBeenSet;
 
                     /**
-                     * 取值 1 表示清空视频打点信息，其他值无意义。
-同一个请求里，ClearKeyFrameDescs 与 AddKeyFrameDescs 不能同时出现。
+                     * <p>取值 1 表示清空视频打点信息，其他值无意义。<br>同一个请求里，ClearKeyFrameDescs 与 AddKeyFrameDescs 不能同时出现。</p>
                      */
                     int64_t m_clearKeyFrameDescs;
                     bool m_clearKeyFrameDescsHasBeenSet;
 
                     /**
-                     * 新增的一组标签，单个媒体文件最多 16 个标签，单个标签最多 32 个字符。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。
+                     * <p>新增的一组标签，单个媒体文件最多 16 个标签，单个标签最多 32 个字符。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。</p>
                      */
                     std::vector<std::string> m_addTags;
                     bool m_addTagsHasBeenSet;
 
                     /**
-                     * 要删除的一组标签。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。
+                     * <p>要删除的一组标签。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。</p>
                      */
                     std::vector<std::string> m_deleteTags;
                     bool m_deleteTagsHasBeenSet;
 
                     /**
-                     * 取值 1 表示清空媒体文件所有标签，其他值无意义。
-同一个请求里，ClearTags 与 AddTags 不能同时出现。
+                     * <p>取值 1 表示清空媒体文件所有标签，其他值无意义。<br>同一个请求里，ClearTags 与 AddTags 不能同时出现。</p>
                      */
                     int64_t m_clearTags;
                     bool m_clearTagsHasBeenSet;
 
                     /**
-                     * 新增一组字幕。单个媒体文件最多 16 个字幕。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。
+                     * <p>新增一组字幕。单个媒体文件最多 16 个字幕。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。</p>
                      */
                     std::vector<MediaSubtitleInput> m_addSubtitles;
                     bool m_addSubtitlesHasBeenSet;
 
                     /**
-                     * 待删除字幕的唯一标识。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。
+                     * <p>待删除字幕的唯一标识。同一个请求中，AddSubtitles 中指定的字幕 Id 必须与 DeleteSubtitleIds 都不相同。</p>
                      */
                     std::vector<std::string> m_deleteSubtitleIds;
                     bool m_deleteSubtitleIdsHasBeenSet;
 
                     /**
-                     * 取值 1 表示清空媒体文件所有的字幕信息，其他值无意义。
-同一个请求里，ClearSubtitles 与 AddSubtitles不能同时出现。
+                     * <p>取值 1 表示清空媒体文件所有的字幕信息，其他值无意义。<br>同一个请求里，ClearSubtitles 与 AddSubtitles不能同时出现。</p>
                      */
                     int64_t m_clearSubtitles;
                     bool m_clearSubtitlesHasBeenSet;
+
+                    /**
+                     * <p>待出库的知识库ID。</p>
+                     */
+                    std::vector<std::string> m_deleteKnowledgeBases;
+                    bool m_deleteKnowledgeBasesHasBeenSet;
+
+                    /**
+                     * <p>取值 1 表示从所有知识库中移除此媒体文件，其他值无意义。</p><p><br>同一个请求里，ClearKnowledgeBases 与 DeleteKnowledgeBases 不能同时出现。<p></p></p>
+                     */
+                    int64_t m_clearKnowledgeBases;
+                    bool m_clearKnowledgeBasesHasBeenSet;
 
                 };
             }

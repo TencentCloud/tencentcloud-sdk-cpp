@@ -28,7 +28,8 @@ CreateMPSTemplateRequest::CreateMPSTemplateRequest() :
     m_mPSCreateTemplateParamsHasBeenSet(false),
     m_aIAnalysisTemplateHasBeenSet(false),
     m_smartSubtitleTemplateHasBeenSet(false),
-    m_smartEraseTemplateHasBeenSet(false)
+    m_smartEraseTemplateHasBeenSet(false),
+    m_embedSubtitleTemplateHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,15 @@ string CreateMPSTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_smartEraseTemplate.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_embedSubtitleTemplateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EmbedSubtitleTemplate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_embedSubtitleTemplate.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -192,6 +202,22 @@ void CreateMPSTemplateRequest::SetSmartEraseTemplate(const MPSSmartEraseTemplate
 bool CreateMPSTemplateRequest::SmartEraseTemplateHasBeenSet() const
 {
     return m_smartEraseTemplateHasBeenSet;
+}
+
+MPSEmbedSubtitleTemplate CreateMPSTemplateRequest::GetEmbedSubtitleTemplate() const
+{
+    return m_embedSubtitleTemplate;
+}
+
+void CreateMPSTemplateRequest::SetEmbedSubtitleTemplate(const MPSEmbedSubtitleTemplate& _embedSubtitleTemplate)
+{
+    m_embedSubtitleTemplate = _embedSubtitleTemplate;
+    m_embedSubtitleTemplateHasBeenSet = true;
+}
+
+bool CreateMPSTemplateRequest::EmbedSubtitleTemplateHasBeenSet() const
+{
+    return m_embedSubtitleTemplateHasBeenSet;
 }
 
 

@@ -85,6 +85,27 @@ namespace TencentCloud
                     bool TextHasBeenSet() const;
 
                     /**
+                     * 获取<p>知识库ID，留空时将使用默认知识库</p>
+                     * @return KnowledgeBaseId <p>知识库ID，留空时将使用默认知识库</p>
+                     * 
+                     */
+                    std::string GetKnowledgeBaseId() const;
+
+                    /**
+                     * 设置<p>知识库ID，留空时将使用默认知识库</p>
+                     * @param _knowledgeBaseId <p>知识库ID，留空时将使用默认知识库</p>
+                     * 
+                     */
+                    void SetKnowledgeBaseId(const std::string& _knowledgeBaseId);
+
+                    /**
+                     * 判断参数 KnowledgeBaseId 是否已赋值
+                     * @return KnowledgeBaseId 是否已赋值
+                     * 
+                     */
+                    bool KnowledgeBaseIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>返回的记录条数，默认值：20。</p><p>取值范围：[1, 100]</p>
                      * @return Limit <p>返回的记录条数，默认值：20。</p><p>取值范围：[1, 100]</p>
                      * 
@@ -202,6 +223,12 @@ namespace TencentCloud
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
+
+                    /**
+                     * <p>知识库ID，留空时将使用默认知识库</p>
+                     */
+                    std::string m_knowledgeBaseId;
+                    bool m_knowledgeBaseIdHasBeenSet;
 
                     /**
                      * <p>返回的记录条数，默认值：20。</p><p>取值范围：[1, 100]</p>

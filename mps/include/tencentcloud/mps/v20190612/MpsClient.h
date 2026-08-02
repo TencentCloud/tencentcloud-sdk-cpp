@@ -37,6 +37,8 @@
 #include <tencentcloud/mps/v20190612/model/BatchStopStreamLinkFlowResponse.h>
 #include <tencentcloud/mps/v20190612/model/CloneViralRequest.h>
 #include <tencentcloud/mps/v20190612/model/CloneViralResponse.h>
+#include <tencentcloud/mps/v20190612/model/CloneVoiceRequest.h>
+#include <tencentcloud/mps/v20190612/model/CloneVoiceResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateAIAnalysisTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateAIAnalysisTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateAIRecognitionTemplateRequest.h>
@@ -45,6 +47,8 @@
 #include <tencentcloud/mps/v20190612/model/CreateAdaptiveDynamicStreamingTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateAiDramaTaskRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateAiDramaTaskResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateAiFissionTaskRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateAiFissionTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateAigcAudioTaskRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateAigcAudioTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateAigcImageTaskRequest.h>
@@ -453,6 +457,8 @@
 #include <tencentcloud/mps/v20190612/model/StopStreamPackageLinearAssemblyChannelResponse.h>
 #include <tencentcloud/mps/v20190612/model/SyncDubbingRequest.h>
 #include <tencentcloud/mps/v20190612/model/SyncDubbingResponse.h>
+#include <tencentcloud/mps/v20190612/model/TextToSpeechRequest.h>
+#include <tencentcloud/mps/v20190612/model/TextToSpeechResponse.h>
 #include <tencentcloud/mps/v20190612/model/TextToSpeechAsyncRequest.h>
 #include <tencentcloud/mps/v20190612/model/TextToSpeechAsyncResponse.h>
 #include <tencentcloud/mps/v20190612/model/TextTranslationRequest.h>
@@ -498,6 +504,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CloneViralResponse> CloneViralOutcome;
                 typedef std::future<CloneViralOutcome> CloneViralOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CloneViralRequest&, CloneViralOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloneViralAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloneVoiceResponse> CloneVoiceOutcome;
+                typedef std::future<CloneVoiceOutcome> CloneVoiceOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CloneVoiceRequest&, CloneVoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloneVoiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAIAnalysisTemplateResponse> CreateAIAnalysisTemplateOutcome;
                 typedef std::future<CreateAIAnalysisTemplateOutcome> CreateAIAnalysisTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateAIAnalysisTemplateRequest&, CreateAIAnalysisTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAIAnalysisTemplateAsyncHandler;
@@ -510,6 +519,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAiDramaTaskResponse> CreateAiDramaTaskOutcome;
                 typedef std::future<CreateAiDramaTaskOutcome> CreateAiDramaTaskOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateAiDramaTaskRequest&, CreateAiDramaTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAiDramaTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAiFissionTaskResponse> CreateAiFissionTaskOutcome;
+                typedef std::future<CreateAiFissionTaskOutcome> CreateAiFissionTaskOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateAiFissionTaskRequest&, CreateAiFissionTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAiFissionTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAigcAudioTaskResponse> CreateAigcAudioTaskOutcome;
                 typedef std::future<CreateAigcAudioTaskOutcome> CreateAigcAudioTaskOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateAigcAudioTaskRequest&, CreateAigcAudioTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcAudioTaskAsyncHandler;
@@ -1122,6 +1134,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SyncDubbingResponse> SyncDubbingOutcome;
                 typedef std::future<SyncDubbingOutcome> SyncDubbingOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::SyncDubbingRequest&, SyncDubbingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncDubbingAsyncHandler;
+                typedef Outcome<Core::Error, Model::TextToSpeechResponse> TextToSpeechOutcome;
+                typedef std::future<TextToSpeechOutcome> TextToSpeechOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::TextToSpeechRequest&, TextToSpeechOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToSpeechAsyncHandler;
                 typedef Outcome<Core::Error, Model::TextToSpeechAsyncResponse> TextToSpeechAsyncOutcome;
                 typedef std::future<TextToSpeechAsyncOutcome> TextToSpeechAsyncOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::TextToSpeechAsyncRequest&, TextToSpeechAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToSpeechAsyncAsyncHandler;
@@ -1205,6 +1220,15 @@ namespace TencentCloud
                 CloneViralOutcomeCallable CloneViralCallable(const Model::CloneViralRequest& request);
 
                 /**
+                 *同步接口，使用该接口从参考音频克隆一个音色
+                 * @param req CloneVoiceRequest
+                 * @return CloneVoiceOutcome
+                 */
+                CloneVoiceOutcome CloneVoice(const Model::CloneVoiceRequest &request);
+                void CloneVoiceAsync(const Model::CloneVoiceRequest& request, const CloneVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloneVoiceOutcomeCallable CloneVoiceCallable(const Model::CloneVoiceRequest& request);
+
+                /**
                  *创建用户自定义内容分析模板，数量上限：50。
                  * @param req CreateAIAnalysisTemplateRequest
                  * @return CreateAIAnalysisTemplateOutcome
@@ -1239,6 +1263,15 @@ namespace TencentCloud
                 CreateAiDramaTaskOutcome CreateAiDramaTask(const Model::CreateAiDramaTaskRequest &request);
                 void CreateAiDramaTaskAsync(const Model::CreateAiDramaTaskRequest& request, const CreateAiDramaTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAiDramaTaskOutcomeCallable CreateAiDramaTaskCallable(const Model::CreateAiDramaTaskRequest& request);
+
+                /**
+                 *创建ai视频裂变任务
+                 * @param req CreateAiFissionTaskRequest
+                 * @return CreateAiFissionTaskOutcome
+                 */
+                CreateAiFissionTaskOutcome CreateAiFissionTask(const Model::CreateAiFissionTaskRequest &request);
+                void CreateAiFissionTaskAsync(const Model::CreateAiFissionTaskRequest& request, const CreateAiFissionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAiFissionTaskOutcomeCallable CreateAiFissionTaskCallable(const Model::CreateAiFissionTaskRequest& request);
 
                 /**
                  *调用该接口，用于创建AI生音频任务。
@@ -3151,6 +3184,15 @@ namespace TencentCloud
                 SyncDubbingOutcome SyncDubbing(const Model::SyncDubbingRequest &request);
                 void SyncDubbingAsync(const Model::SyncDubbingRequest& request, const SyncDubbingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SyncDubbingOutcomeCallable SyncDubbingCallable(const Model::SyncDubbingRequest& request);
+
+                /**
+                 *同步语音合成，根据输入文本和指定音色生成语音
+                 * @param req TextToSpeechRequest
+                 * @return TextToSpeechOutcome
+                 */
+                TextToSpeechOutcome TextToSpeech(const Model::TextToSpeechRequest &request);
+                void TextToSpeechAsync(const Model::TextToSpeechRequest& request, const TextToSpeechAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TextToSpeechOutcomeCallable TextToSpeechCallable(const Model::TextToSpeechRequest& request);
 
                 /**
                  *异步语音合成接口，支持长文本转语音

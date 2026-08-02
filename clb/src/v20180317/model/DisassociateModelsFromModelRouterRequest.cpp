@@ -82,12 +82,12 @@ bool DisassociateModelsFromModelRouterRequest::ModelRouterIdHasBeenSet() const
     return m_modelRouterIdHasBeenSet;
 }
 
-vector<ModelRouterModel> DisassociateModelsFromModelRouterRequest::GetModels() const
+vector<ModelRouterModelToDisassociate> DisassociateModelsFromModelRouterRequest::GetModels() const
 {
     return m_models;
 }
 
-void DisassociateModelsFromModelRouterRequest::SetModels(const vector<ModelRouterModel>& _models)
+void DisassociateModelsFromModelRouterRequest::SetModels(const vector<ModelRouterModelToDisassociate>& _models)
 {
     m_models = _models;
     m_modelsHasBeenSet = true;

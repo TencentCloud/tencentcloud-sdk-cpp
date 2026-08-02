@@ -22,6 +22,8 @@ using namespace std;
 
 ImportMediaKnowledgeTask::ImportMediaKnowledgeTask() :
     m_taskIdHasBeenSet(false),
+    m_fileIdHasBeenSet(false),
+    m_inputHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_errCodeHasBeenSet(false),
     m_messageHasBeenSet(false)
@@ -41,6 +43,33 @@ CoreInternalOutcome ImportMediaKnowledgeTask::Deserialize(const rapidjson::Value
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileId") && !value["FileId"].IsNull())
+    {
+        if (!value["FileId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImportMediaKnowledgeTask.FileId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileId = string(value["FileId"].GetString());
+        m_fileIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Input") && !value["Input"].IsNull())
+    {
+        if (!value["Input"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImportMediaKnowledgeTask.Input` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_input.Deserialize(value["Input"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_inputHasBeenSet = true;
     }
 
     if (value.HasMember("Status") && !value["Status"].IsNull())
@@ -88,6 +117,23 @@ void ImportMediaKnowledgeTask::ToJsonObject(rapidjson::Value &value, rapidjson::
         value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_fileIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inputHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Input";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_input.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_statusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -129,6 +175,38 @@ void ImportMediaKnowledgeTask::SetTaskId(const string& _taskId)
 bool ImportMediaKnowledgeTask::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+string ImportMediaKnowledgeTask::GetFileId() const
+{
+    return m_fileId;
+}
+
+void ImportMediaKnowledgeTask::SetFileId(const string& _fileId)
+{
+    m_fileId = _fileId;
+    m_fileIdHasBeenSet = true;
+}
+
+bool ImportMediaKnowledgeTask::FileIdHasBeenSet() const
+{
+    return m_fileIdHasBeenSet;
+}
+
+ImportMediaKnowledgeTaskInput ImportMediaKnowledgeTask::GetInput() const
+{
+    return m_input;
+}
+
+void ImportMediaKnowledgeTask::SetInput(const ImportMediaKnowledgeTaskInput& _input)
+{
+    m_input = _input;
+    m_inputHasBeenSet = true;
+}
+
+bool ImportMediaKnowledgeTask::InputHasBeenSet() const
+{
+    return m_inputHasBeenSet;
 }
 
 string ImportMediaKnowledgeTask::GetStatus() const

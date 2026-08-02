@@ -25,7 +25,8 @@ using namespace std;
 
 ProcessMediaByProcedureResponse::ProcessMediaByProcedureResponse() :
     m_taskIdHasBeenSet(false),
-    m_reviewAudioVideoTaskIdHasBeenSet(false)
+    m_reviewAudioVideoTaskIdHasBeenSet(false),
+    m_importMediaKnowledgeTaskIdSetHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,19 @@ CoreInternalOutcome ProcessMediaByProcedureResponse::Deserialize(const string &p
         m_reviewAudioVideoTaskIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ImportMediaKnowledgeTaskIdSet") && !rsp["ImportMediaKnowledgeTaskIdSet"].IsNull())
+    {
+        if (!rsp["ImportMediaKnowledgeTaskIdSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ImportMediaKnowledgeTaskIdSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ImportMediaKnowledgeTaskIdSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_importMediaKnowledgeTaskIdSet.push_back((*itr).GetString());
+        }
+        m_importMediaKnowledgeTaskIdSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +121,19 @@ string ProcessMediaByProcedureResponse::ToJsonString() const
         string key = "ReviewAudioVideoTaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_reviewAudioVideoTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_importMediaKnowledgeTaskIdSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImportMediaKnowledgeTaskIdSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_importMediaKnowledgeTaskIdSet.begin(); itr != m_importMediaKnowledgeTaskIdSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +166,16 @@ string ProcessMediaByProcedureResponse::GetReviewAudioVideoTaskId() const
 bool ProcessMediaByProcedureResponse::ReviewAudioVideoTaskIdHasBeenSet() const
 {
     return m_reviewAudioVideoTaskIdHasBeenSet;
+}
+
+vector<string> ProcessMediaByProcedureResponse::GetImportMediaKnowledgeTaskIdSet() const
+{
+    return m_importMediaKnowledgeTaskIdSet;
+}
+
+bool ProcessMediaByProcedureResponse::ImportMediaKnowledgeTaskIdSetHasBeenSet() const
+{
+    return m_importMediaKnowledgeTaskIdSetHasBeenSet;
 }
 
 

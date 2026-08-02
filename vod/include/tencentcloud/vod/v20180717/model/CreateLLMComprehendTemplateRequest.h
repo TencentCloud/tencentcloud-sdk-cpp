@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取<p>分段摘要解析配置</p>
-                     * @return Summary <p>分段摘要解析配置</p>
+                     * 获取<p>分段摘要解析配置<br>注意：当前版本必须要打开分段摘要，才可以正常进行解析</p>
+                     * @return Summary <p>分段摘要解析配置<br>注意：当前版本必须要打开分段摘要，才可以正常进行解析</p>
                      * 
                      */
                     LLMComprehendSummary GetSummary() const;
 
                     /**
-                     * 设置<p>分段摘要解析配置</p>
-                     * @param _summary <p>分段摘要解析配置</p>
+                     * 设置<p>分段摘要解析配置<br>注意：当前版本必须要打开分段摘要，才可以正常进行解析</p>
+                     * @param _summary <p>分段摘要解析配置<br>注意：当前版本必须要打开分段摘要，才可以正常进行解析</p>
                      * 
                      */
                     void SetSummary(const LLMComprehendSummary& _summary);
@@ -219,7 +219,7 @@ namespace TencentCloud
                     bool m_commentHasBeenSet;
 
                     /**
-                     * <p>分段摘要解析配置</p>
+                     * <p>分段摘要解析配置<br>注意：当前版本必须要打开分段摘要，才可以正常进行解析</p>
                      */
                     LLMComprehendSummary m_summary;
                     bool m_summaryHasBeenSet;

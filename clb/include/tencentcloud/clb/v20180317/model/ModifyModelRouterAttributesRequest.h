@@ -149,6 +149,27 @@ namespace TencentCloud
                      */
                     bool RouterSettingHasBeenSet() const;
 
+                    /**
+                     * 获取<p>带宽</p><p>取值范围：[1, 2048]</p><p>单位：Mbps</p>
+                     * @return Bandwidth <p>带宽</p><p>取值范围：[1, 2048]</p><p>单位：Mbps</p>
+                     * 
+                     */
+                    uint64_t GetBandwidth() const;
+
+                    /**
+                     * 设置<p>带宽</p><p>取值范围：[1, 2048]</p><p>单位：Mbps</p>
+                     * @param _bandwidth <p>带宽</p><p>取值范围：[1, 2048]</p><p>单位：Mbps</p>
+                     * 
+                     */
+                    void SetBandwidth(const uint64_t& _bandwidth);
+
+                    /**
+                     * 判断参数 Bandwidth 是否已赋值
+                     * @return Bandwidth 是否已赋值
+                     * 
+                     */
+                    bool BandwidthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -180,6 +201,12 @@ namespace TencentCloud
                      */
                     RouterSettingWithFallBack m_routerSetting;
                     bool m_routerSettingHasBeenSet;
+
+                    /**
+                     * <p>带宽</p><p>取值范围：[1, 2048]</p><p>单位：Mbps</p>
+                     */
+                    uint64_t m_bandwidth;
+                    bool m_bandwidthHasBeenSet;
 
                 };
             }

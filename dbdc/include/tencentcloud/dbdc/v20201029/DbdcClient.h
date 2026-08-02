@@ -79,6 +79,8 @@
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterNodeConfigResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterTagsRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterTagsResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeAttributesRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeAttributesResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeSecurityGroupsRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeSecurityGroupsResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeTagsRequest.h>
@@ -187,6 +189,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDBCustomClusterTagsResponse> ModifyDBCustomClusterTagsOutcome;
                 typedef std::future<ModifyDBCustomClusterTagsOutcome> ModifyDBCustomClusterTagsOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::ModifyDBCustomClusterTagsRequest&, ModifyDBCustomClusterTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBCustomClusterTagsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBCustomNodeAttributesResponse> ModifyDBCustomNodeAttributesOutcome;
+                typedef std::future<ModifyDBCustomNodeAttributesOutcome> ModifyDBCustomNodeAttributesOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::ModifyDBCustomNodeAttributesRequest&, ModifyDBCustomNodeAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBCustomNodeAttributesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBCustomNodeSecurityGroupsResponse> ModifyDBCustomNodeSecurityGroupsOutcome;
                 typedef std::future<ModifyDBCustomNodeSecurityGroupsOutcome> ModifyDBCustomNodeSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::ModifyDBCustomNodeSecurityGroupsRequest&, ModifyDBCustomNodeSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBCustomNodeSecurityGroupsAsyncHandler;
@@ -456,6 +461,15 @@ namespace TencentCloud
                 ModifyDBCustomClusterTagsOutcome ModifyDBCustomClusterTags(const Model::ModifyDBCustomClusterTagsRequest &request);
                 void ModifyDBCustomClusterTagsAsync(const Model::ModifyDBCustomClusterTagsRequest& request, const ModifyDBCustomClusterTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDBCustomClusterTagsOutcomeCallable ModifyDBCustomClusterTagsCallable(const Model::ModifyDBCustomClusterTagsRequest& request);
+
+                /**
+                 *该接口（ModifyDBCustomNodeAttributes）用于修改 DB Custom 节点的属性。
+                 * @param req ModifyDBCustomNodeAttributesRequest
+                 * @return ModifyDBCustomNodeAttributesOutcome
+                 */
+                ModifyDBCustomNodeAttributesOutcome ModifyDBCustomNodeAttributes(const Model::ModifyDBCustomNodeAttributesRequest &request);
+                void ModifyDBCustomNodeAttributesAsync(const Model::ModifyDBCustomNodeAttributesRequest& request, const ModifyDBCustomNodeAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBCustomNodeAttributesOutcomeCallable ModifyDBCustomNodeAttributesCallable(const Model::ModifyDBCustomNodeAttributesRequest& request);
 
                 /**
                  *该接口（ModifyDBCustomNodeSecurityGroups）用于修改 DB Custom 节点安全组。

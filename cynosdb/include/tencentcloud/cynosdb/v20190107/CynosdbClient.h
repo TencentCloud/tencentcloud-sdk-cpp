@@ -487,8 +487,12 @@
 #include <tencentcloud/cynosdb/v20190107/model/SwitchClusterZoneResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/SwitchProxyVpcRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/SwitchProxyVpcResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/TransferClusterPrepayToPostpayRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/TransferClusterPrepayToPostpayResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/TransferClusterZoneRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/TransferClusterZoneResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/TransferStoragePrepayToPostpayRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/TransferStoragePrepayToPostpayResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/UnbindClusterResourcePackagesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/UnbindClusterResourcePackagesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/UpgradeClusterVersionRequest.h>
@@ -1209,9 +1213,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SwitchProxyVpcResponse> SwitchProxyVpcOutcome;
                 typedef std::future<SwitchProxyVpcOutcome> SwitchProxyVpcOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::SwitchProxyVpcRequest&, SwitchProxyVpcOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchProxyVpcAsyncHandler;
+                typedef Outcome<Core::Error, Model::TransferClusterPrepayToPostpayResponse> TransferClusterPrepayToPostpayOutcome;
+                typedef std::future<TransferClusterPrepayToPostpayOutcome> TransferClusterPrepayToPostpayOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::TransferClusterPrepayToPostpayRequest&, TransferClusterPrepayToPostpayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransferClusterPrepayToPostpayAsyncHandler;
                 typedef Outcome<Core::Error, Model::TransferClusterZoneResponse> TransferClusterZoneOutcome;
                 typedef std::future<TransferClusterZoneOutcome> TransferClusterZoneOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::TransferClusterZoneRequest&, TransferClusterZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransferClusterZoneAsyncHandler;
+                typedef Outcome<Core::Error, Model::TransferStoragePrepayToPostpayResponse> TransferStoragePrepayToPostpayOutcome;
+                typedef std::future<TransferStoragePrepayToPostpayOutcome> TransferStoragePrepayToPostpayOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::TransferStoragePrepayToPostpayRequest&, TransferStoragePrepayToPostpayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransferStoragePrepayToPostpayAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnbindClusterResourcePackagesResponse> UnbindClusterResourcePackagesOutcome;
                 typedef std::future<UnbindClusterResourcePackagesOutcome> UnbindClusterResourcePackagesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::UnbindClusterResourcePackagesRequest&, UnbindClusterResourcePackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindClusterResourcePackagesAsyncHandler;
@@ -3319,6 +3329,15 @@ namespace TencentCloud
                 SwitchProxyVpcOutcomeCallable SwitchProxyVpcCallable(const Model::SwitchProxyVpcRequest& request);
 
                 /**
+                 *本接口（TransferClusterPrepayToPostpay）用于将预付费集群转为后付费集群
+                 * @param req TransferClusterPrepayToPostpayRequest
+                 * @return TransferClusterPrepayToPostpayOutcome
+                 */
+                TransferClusterPrepayToPostpayOutcome TransferClusterPrepayToPostpay(const Model::TransferClusterPrepayToPostpayRequest &request);
+                void TransferClusterPrepayToPostpayAsync(const Model::TransferClusterPrepayToPostpayRequest& request, const TransferClusterPrepayToPostpayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TransferClusterPrepayToPostpayOutcomeCallable TransferClusterPrepayToPostpayCallable(const Model::TransferClusterPrepayToPostpayRequest& request);
+
+                /**
                  *本接口（TransferClusterZone）用于发起跨可用区迁移。
                  * @param req TransferClusterZoneRequest
                  * @return TransferClusterZoneOutcome
@@ -3326,6 +3345,15 @@ namespace TencentCloud
                 TransferClusterZoneOutcome TransferClusterZone(const Model::TransferClusterZoneRequest &request);
                 void TransferClusterZoneAsync(const Model::TransferClusterZoneRequest& request, const TransferClusterZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TransferClusterZoneOutcomeCallable TransferClusterZoneCallable(const Model::TransferClusterZoneRequest& request);
+
+                /**
+                 *本接口（TransferStoragePrepayToPostpay）用于将预付费存储转为后付费存储
+                 * @param req TransferStoragePrepayToPostpayRequest
+                 * @return TransferStoragePrepayToPostpayOutcome
+                 */
+                TransferStoragePrepayToPostpayOutcome TransferStoragePrepayToPostpay(const Model::TransferStoragePrepayToPostpayRequest &request);
+                void TransferStoragePrepayToPostpayAsync(const Model::TransferStoragePrepayToPostpayRequest& request, const TransferStoragePrepayToPostpayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TransferStoragePrepayToPostpayOutcomeCallable TransferStoragePrepayToPostpayCallable(const Model::TransferStoragePrepayToPostpayRequest& request);
 
                 /**
                  *本接口（UnbindClusterResourcePackages）用于解除资源包与集群之间的绑定关系。

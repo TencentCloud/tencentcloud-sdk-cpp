@@ -390,6 +390,56 @@ MpsClient::CloneViralOutcomeCallable MpsClient::CloneViralCallable(const CloneVi
     return prom->get_future();
 }
 
+MpsClient::CloneVoiceOutcome MpsClient::CloneVoice(const CloneVoiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloneVoice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloneVoiceResponse rsp = CloneVoiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloneVoiceOutcome(rsp);
+        else
+            return CloneVoiceOutcome(o.GetError());
+    }
+    else
+    {
+        return CloneVoiceOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CloneVoiceAsync(const CloneVoiceRequest& request, const CloneVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CloneVoiceRequest&;
+    using Resp = CloneVoiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CloneVoice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::CloneVoiceOutcomeCallable MpsClient::CloneVoiceCallable(const CloneVoiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CloneVoiceOutcome>>();
+    CloneVoiceAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const CloneVoiceRequest&,
+        CloneVoiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::CreateAIAnalysisTemplateOutcome MpsClient::CreateAIAnalysisTemplate(const CreateAIAnalysisTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAIAnalysisTemplate");
@@ -582,6 +632,56 @@ MpsClient::CreateAiDramaTaskOutcomeCallable MpsClient::CreateAiDramaTaskCallable
         const MpsClient*,
         const CreateAiDramaTaskRequest&,
         CreateAiDramaTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MpsClient::CreateAiFissionTaskOutcome MpsClient::CreateAiFissionTask(const CreateAiFissionTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAiFissionTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAiFissionTaskResponse rsp = CreateAiFissionTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAiFissionTaskOutcome(rsp);
+        else
+            return CreateAiFissionTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAiFissionTaskOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateAiFissionTaskAsync(const CreateAiFissionTaskRequest& request, const CreateAiFissionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAiFissionTaskRequest&;
+    using Resp = CreateAiFissionTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAiFissionTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::CreateAiFissionTaskOutcomeCallable MpsClient::CreateAiFissionTaskCallable(const CreateAiFissionTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAiFissionTaskOutcome>>();
+    CreateAiFissionTaskAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const CreateAiFissionTaskRequest&,
+        CreateAiFissionTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -10782,6 +10882,56 @@ MpsClient::SyncDubbingOutcomeCallable MpsClient::SyncDubbingCallable(const SyncD
         const MpsClient*,
         const SyncDubbingRequest&,
         SyncDubbingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MpsClient::TextToSpeechOutcome MpsClient::TextToSpeech(const TextToSpeechRequest &request)
+{
+    auto outcome = MakeRequest(request, "TextToSpeech");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TextToSpeechResponse rsp = TextToSpeechResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TextToSpeechOutcome(rsp);
+        else
+            return TextToSpeechOutcome(o.GetError());
+    }
+    else
+    {
+        return TextToSpeechOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::TextToSpeechAsync(const TextToSpeechRequest& request, const TextToSpeechAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const TextToSpeechRequest&;
+    using Resp = TextToSpeechResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "TextToSpeech", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::TextToSpeechOutcomeCallable MpsClient::TextToSpeechCallable(const TextToSpeechRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<TextToSpeechOutcome>>();
+    TextToSpeechAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const TextToSpeechRequest&,
+        TextToSpeechOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

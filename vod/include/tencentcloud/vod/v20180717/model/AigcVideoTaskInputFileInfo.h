@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>文件分类。取值为：</p><ul><li>Image: 图片；<strong>注意，要使用Usage字段定义图片类型</strong>。</li><li>Video: 视频。</li></ul>
-                     * @return Category <p>文件分类。取值为：</p><ul><li>Image: 图片；<strong>注意，要使用Usage字段定义图片类型</strong>。</li><li>Video: 视频。</li></ul>
+                     * 获取<p>文件分类。取值为：</p><ul><li>Image: 图片；</li><li>Video: 视频；</li><li>Audio: 音频；</li></ul>
+                     * @return Category <p>文件分类。取值为：</p><ul><li>Image: 图片；</li><li>Video: 视频；</li><li>Audio: 音频；</li></ul>
                      * 
                      */
                     std::string GetCategory() const;
 
                     /**
-                     * 设置<p>文件分类。取值为：</p><ul><li>Image: 图片；<strong>注意，要使用Usage字段定义图片类型</strong>。</li><li>Video: 视频。</li></ul>
-                     * @param _category <p>文件分类。取值为：</p><ul><li>Image: 图片；<strong>注意，要使用Usage字段定义图片类型</strong>。</li><li>Video: 视频。</li></ul>
+                     * 设置<p>文件分类。取值为：</p><ul><li>Image: 图片；</li><li>Video: 视频；</li><li>Audio: 音频；</li></ul>
+                     * @param _category <p>文件分类。取值为：</p><ul><li>Image: 图片；</li><li>Video: 视频；</li><li>Audio: 音频；</li></ul>
                      * 
                      */
                     void SetCategory(const std::string& _category);
@@ -286,7 +286,7 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * <p>文件分类。取值为：</p><ul><li>Image: 图片；<strong>注意，要使用Usage字段定义图片类型</strong>。</li><li>Video: 视频。</li></ul>
+                     * <p>文件分类。取值为：</p><ul><li>Image: 图片；</li><li>Video: 视频；</li><li>Audio: 音频；</li></ul>
                      */
                     std::string m_category;
                     bool m_categoryHasBeenSet;

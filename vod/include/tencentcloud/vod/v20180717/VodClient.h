@@ -87,6 +87,8 @@
 #include <tencentcloud/vod/v20180717/model/CreateImageSpriteTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateJustInTimeTranscodeTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateJustInTimeTranscodeTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateKnowledgeBaseRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateKnowledgeBaseResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateLLMComprehendTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateLLMComprehendTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateMPSTemplateRequest.h>
@@ -159,6 +161,8 @@
 #include <tencentcloud/vod/v20180717/model/DeleteImageSpriteTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteJustInTimeTranscodeTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteJustInTimeTranscodeTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/DeleteKnowledgeBaseRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteKnowledgeBaseResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteLLMComprehendTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteLLMComprehendTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteMPSTemplateRequest.h>
@@ -265,6 +269,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeImageSpriteTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeJustInTimeTranscodeTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeJustInTimeTranscodeTemplatesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeKnowledgeBasesRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeKnowledgeBasesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeLLMComprehendTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeLLMComprehendTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeLicenseUsageDataRequest.h>
@@ -381,6 +387,8 @@
 #include <tencentcloud/vod/v20180717/model/ModifyImageSpriteTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyJustInTimeTranscodeTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyJustInTimeTranscodeTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/ModifyKnowledgeBaseRequest.h>
+#include <tencentcloud/vod/v20180717/model/ModifyKnowledgeBaseResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyLLMComprehendTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyLLMComprehendTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyMPSTemplateRequest.h>
@@ -587,6 +595,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateJustInTimeTranscodeTemplateResponse> CreateJustInTimeTranscodeTemplateOutcome;
                 typedef std::future<CreateJustInTimeTranscodeTemplateOutcome> CreateJustInTimeTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateJustInTimeTranscodeTemplateRequest&, CreateJustInTimeTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateJustInTimeTranscodeTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateKnowledgeBaseResponse> CreateKnowledgeBaseOutcome;
+                typedef std::future<CreateKnowledgeBaseOutcome> CreateKnowledgeBaseOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateKnowledgeBaseRequest&, CreateKnowledgeBaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateKnowledgeBaseAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateLLMComprehendTemplateResponse> CreateLLMComprehendTemplateOutcome;
                 typedef std::future<CreateLLMComprehendTemplateOutcome> CreateLLMComprehendTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateLLMComprehendTemplateRequest&, CreateLLMComprehendTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLLMComprehendTemplateAsyncHandler;
@@ -695,6 +706,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteJustInTimeTranscodeTemplateResponse> DeleteJustInTimeTranscodeTemplateOutcome;
                 typedef std::future<DeleteJustInTimeTranscodeTemplateOutcome> DeleteJustInTimeTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteJustInTimeTranscodeTemplateRequest&, DeleteJustInTimeTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteJustInTimeTranscodeTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteKnowledgeBaseResponse> DeleteKnowledgeBaseOutcome;
+                typedef std::future<DeleteKnowledgeBaseOutcome> DeleteKnowledgeBaseOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DeleteKnowledgeBaseRequest&, DeleteKnowledgeBaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteKnowledgeBaseAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteLLMComprehendTemplateResponse> DeleteLLMComprehendTemplateOutcome;
                 typedef std::future<DeleteLLMComprehendTemplateOutcome> DeleteLLMComprehendTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteLLMComprehendTemplateRequest&, DeleteLLMComprehendTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLLMComprehendTemplateAsyncHandler;
@@ -854,6 +868,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeJustInTimeTranscodeTemplatesResponse> DescribeJustInTimeTranscodeTemplatesOutcome;
                 typedef std::future<DescribeJustInTimeTranscodeTemplatesOutcome> DescribeJustInTimeTranscodeTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeJustInTimeTranscodeTemplatesRequest&, DescribeJustInTimeTranscodeTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJustInTimeTranscodeTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKnowledgeBasesResponse> DescribeKnowledgeBasesOutcome;
+                typedef std::future<DescribeKnowledgeBasesOutcome> DescribeKnowledgeBasesOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeKnowledgeBasesRequest&, DescribeKnowledgeBasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKnowledgeBasesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLLMComprehendTemplatesResponse> DescribeLLMComprehendTemplatesOutcome;
                 typedef std::future<DescribeLLMComprehendTemplatesOutcome> DescribeLLMComprehendTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeLLMComprehendTemplatesRequest&, DescribeLLMComprehendTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLLMComprehendTemplatesAsyncHandler;
@@ -1028,6 +1045,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyJustInTimeTranscodeTemplateResponse> ModifyJustInTimeTranscodeTemplateOutcome;
                 typedef std::future<ModifyJustInTimeTranscodeTemplateOutcome> ModifyJustInTimeTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyJustInTimeTranscodeTemplateRequest&, ModifyJustInTimeTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyJustInTimeTranscodeTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyKnowledgeBaseResponse> ModifyKnowledgeBaseOutcome;
+                typedef std::future<ModifyKnowledgeBaseOutcome> ModifyKnowledgeBaseOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ModifyKnowledgeBaseRequest&, ModifyKnowledgeBaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyKnowledgeBaseAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLLMComprehendTemplateResponse> ModifyLLMComprehendTemplateOutcome;
                 typedef std::future<ModifyLLMComprehendTemplateOutcome> ModifyLLMComprehendTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyLLMComprehendTemplateRequest&, ModifyLLMComprehendTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLLMComprehendTemplateAsyncHandler;
@@ -1500,6 +1520,15 @@ namespace TencentCloud
                 CreateJustInTimeTranscodeTemplateOutcomeCallable CreateJustInTimeTranscodeTemplateCallable(const Model::CreateJustInTimeTranscodeTemplateRequest& request);
 
                 /**
+                 *创建知识库。用于为智能媒资功能创建一个新的知识库，每个用户最多可创建的20个知识库。
+                 * @param req CreateKnowledgeBaseRequest
+                 * @return CreateKnowledgeBaseOutcome
+                 */
+                CreateKnowledgeBaseOutcome CreateKnowledgeBase(const Model::CreateKnowledgeBaseRequest &request);
+                void CreateKnowledgeBaseAsync(const Model::CreateKnowledgeBaseRequest& request, const CreateKnowledgeBaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateKnowledgeBaseOutcomeCallable CreateKnowledgeBaseCallable(const Model::CreateKnowledgeBaseRequest& request);
+
+                /**
                  *创建大模型解析模板
                  * @param req CreateLLMComprehendTemplateRequest
                  * @return CreateLLMComprehendTemplateOutcome
@@ -1845,6 +1874,16 @@ namespace TencentCloud
                 DeleteJustInTimeTranscodeTemplateOutcome DeleteJustInTimeTranscodeTemplate(const Model::DeleteJustInTimeTranscodeTemplateRequest &request);
                 void DeleteJustInTimeTranscodeTemplateAsync(const Model::DeleteJustInTimeTranscodeTemplateRequest& request, const DeleteJustInTimeTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteJustInTimeTranscodeTemplateOutcomeCallable DeleteJustInTimeTranscodeTemplateCallable(const Model::DeleteJustInTimeTranscodeTemplateRequest& request);
+
+                /**
+                 *删除知识库。
+调用接口后，知识库会处于“删除中”状态，并在后台执行删除操作。
+                 * @param req DeleteKnowledgeBaseRequest
+                 * @return DeleteKnowledgeBaseOutcome
+                 */
+                DeleteKnowledgeBaseOutcome DeleteKnowledgeBase(const Model::DeleteKnowledgeBaseRequest &request);
+                void DeleteKnowledgeBaseAsync(const Model::DeleteKnowledgeBaseRequest& request, const DeleteKnowledgeBaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteKnowledgeBaseOutcomeCallable DeleteKnowledgeBaseCallable(const Model::DeleteKnowledgeBaseRequest& request);
 
                 /**
                  *删除用户自定义大模型解析模板。
@@ -2384,6 +2423,15 @@ namespace TencentCloud
                 DescribeJustInTimeTranscodeTemplatesOutcome DescribeJustInTimeTranscodeTemplates(const Model::DescribeJustInTimeTranscodeTemplatesRequest &request);
                 void DescribeJustInTimeTranscodeTemplatesAsync(const Model::DescribeJustInTimeTranscodeTemplatesRequest& request, const DescribeJustInTimeTranscodeTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeJustInTimeTranscodeTemplatesOutcomeCallable DescribeJustInTimeTranscodeTemplatesCallable(const Model::DescribeJustInTimeTranscodeTemplatesRequest& request);
+
+                /**
+                 *查询知识库列表。返回指定用户下的所有知识库信息。
+                 * @param req DescribeKnowledgeBasesRequest
+                 * @return DescribeKnowledgeBasesOutcome
+                 */
+                DescribeKnowledgeBasesOutcome DescribeKnowledgeBases(const Model::DescribeKnowledgeBasesRequest &request);
+                void DescribeKnowledgeBasesAsync(const Model::DescribeKnowledgeBasesRequest& request, const DescribeKnowledgeBasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKnowledgeBasesOutcomeCallable DescribeKnowledgeBasesCallable(const Model::DescribeKnowledgeBasesRequest& request);
 
                 /**
                  *根据大模型解析模板唯一标识，获取大模型解析模板详情列表。返回结果包含符合条件的所有用户自定义大模型解析模板。
@@ -3007,6 +3055,15 @@ namespace TencentCloud
                 ModifyJustInTimeTranscodeTemplateOutcome ModifyJustInTimeTranscodeTemplate(const Model::ModifyJustInTimeTranscodeTemplateRequest &request);
                 void ModifyJustInTimeTranscodeTemplateAsync(const Model::ModifyJustInTimeTranscodeTemplateRequest& request, const ModifyJustInTimeTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyJustInTimeTranscodeTemplateOutcomeCallable ModifyJustInTimeTranscodeTemplateCallable(const Model::ModifyJustInTimeTranscodeTemplateRequest& request);
+
+                /**
+                 *修改知识库。可以修改知识库的名称和/或描述。至少需要提供 Name 或 Description 中的一个字段。
+                 * @param req ModifyKnowledgeBaseRequest
+                 * @return ModifyKnowledgeBaseOutcome
+                 */
+                ModifyKnowledgeBaseOutcome ModifyKnowledgeBase(const Model::ModifyKnowledgeBaseRequest &request);
+                void ModifyKnowledgeBaseAsync(const Model::ModifyKnowledgeBaseRequest& request, const ModifyKnowledgeBaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyKnowledgeBaseOutcomeCallable ModifyKnowledgeBaseCallable(const Model::ModifyKnowledgeBaseRequest& request);
 
                 /**
                  *修改大模型解析模板

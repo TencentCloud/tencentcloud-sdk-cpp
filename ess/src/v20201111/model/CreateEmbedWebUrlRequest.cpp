@@ -29,7 +29,8 @@ CreateEmbedWebUrlRequest::CreateEmbedWebUrlRequest() :
     m_agentHasBeenSet(false),
     m_reviewerHasBeenSet(false),
     m_optionHasBeenSet(false),
-    m_userDataHasBeenSet(false)
+    m_userDataHasBeenSet(false),
+    m_applicationIdHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,14 @@ string CreateEmbedWebUrlRequest::ToJsonString() const
         string key = "UserData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applicationId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -218,6 +227,22 @@ void CreateEmbedWebUrlRequest::SetUserData(const string& _userData)
 bool CreateEmbedWebUrlRequest::UserDataHasBeenSet() const
 {
     return m_userDataHasBeenSet;
+}
+
+string CreateEmbedWebUrlRequest::GetApplicationId() const
+{
+    return m_applicationId;
+}
+
+void CreateEmbedWebUrlRequest::SetApplicationId(const string& _applicationId)
+{
+    m_applicationId = _applicationId;
+    m_applicationIdHasBeenSet = true;
+}
+
+bool CreateEmbedWebUrlRequest::ApplicationIdHasBeenSet() const
+{
+    return m_applicationIdHasBeenSet;
 }
 
 

@@ -90,6 +90,56 @@ EsClient::CheckMigrateIndexMetaDataOutcomeCallable EsClient::CheckMigrateIndexMe
     return prom->get_future();
 }
 
+EsClient::CheckUpdateInstanceOutcome EsClient::CheckUpdateInstance(const CheckUpdateInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckUpdateInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckUpdateInstanceResponse rsp = CheckUpdateInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckUpdateInstanceOutcome(rsp);
+        else
+            return CheckUpdateInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckUpdateInstanceOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::CheckUpdateInstanceAsync(const CheckUpdateInstanceRequest& request, const CheckUpdateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CheckUpdateInstanceRequest&;
+    using Resp = CheckUpdateInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CheckUpdateInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::CheckUpdateInstanceOutcomeCallable EsClient::CheckUpdateInstanceCallable(const CheckUpdateInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CheckUpdateInstanceOutcome>>();
+    CheckUpdateInstanceAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const CheckUpdateInstanceRequest&,
+        CheckUpdateInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EsClient::CreateAutoBackUpStrategyOutcome EsClient::CreateAutoBackUpStrategy(const CreateAutoBackUpStrategyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAutoBackUpStrategy");
@@ -2982,6 +3032,56 @@ EsClient::ModifyAutoBackUpStrategyOutcomeCallable EsClient::ModifyAutoBackUpStra
         const EsClient*,
         const ModifyAutoBackUpStrategyRequest&,
         ModifyAutoBackUpStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EsClient::ModifyAutoScaleDiskInfoOutcome EsClient::ModifyAutoScaleDiskInfo(const ModifyAutoScaleDiskInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAutoScaleDiskInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAutoScaleDiskInfoResponse rsp = ModifyAutoScaleDiskInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAutoScaleDiskInfoOutcome(rsp);
+        else
+            return ModifyAutoScaleDiskInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAutoScaleDiskInfoOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::ModifyAutoScaleDiskInfoAsync(const ModifyAutoScaleDiskInfoRequest& request, const ModifyAutoScaleDiskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyAutoScaleDiskInfoRequest&;
+    using Resp = ModifyAutoScaleDiskInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyAutoScaleDiskInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::ModifyAutoScaleDiskInfoOutcomeCallable EsClient::ModifyAutoScaleDiskInfoCallable(const ModifyAutoScaleDiskInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyAutoScaleDiskInfoOutcome>>();
+    ModifyAutoScaleDiskInfoAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const ModifyAutoScaleDiskInfoRequest&,
+        ModifyAutoScaleDiskInfoOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

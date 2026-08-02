@@ -45,10 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取新的视频封面 URL。
-* 注意：仅当请求携带 CoverData 时此返回值有效。 *
-                     * @return CoverUrl 新的视频封面 URL。
-* 注意：仅当请求携带 CoverData 时此返回值有效。 *
+                     * 获取<p>新的视频封面 URL。</p><ul><li>注意：仅当请求携带 CoverData 时此返回值有效。 *</li></ul>
+                     * @return CoverUrl <p>新的视频封面 URL。</p><ul><li>注意：仅当请求携带 CoverData 时此返回值有效。 *</li></ul>
                      * 
                      */
                     std::string GetCoverUrl() const;
@@ -61,8 +59,8 @@ namespace TencentCloud
                     bool CoverUrlHasBeenSet() const;
 
                     /**
-                     * 获取新增的字幕信息。
-                     * @return AddedSubtitleSet 新增的字幕信息。
+                     * 获取<p>新增的字幕信息。</p>
+                     * @return AddedSubtitleSet <p>新增的字幕信息。</p>
                      * 
                      */
                     std::vector<MediaSubtitleItem> GetAddedSubtitleSet() const;
@@ -77,14 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 新的视频封面 URL。
-* 注意：仅当请求携带 CoverData 时此返回值有效。 *
+                     * <p>新的视频封面 URL。</p><ul><li>注意：仅当请求携带 CoverData 时此返回值有效。 *</li></ul>
                      */
                     std::string m_coverUrl;
                     bool m_coverUrlHasBeenSet;
 
                     /**
-                     * 新增的字幕信息。
+                     * <p>新增的字幕信息。</p>
                      */
                     std::vector<MediaSubtitleItem> m_addedSubtitleSet;
                     bool m_addedSubtitleSetHasBeenSet;

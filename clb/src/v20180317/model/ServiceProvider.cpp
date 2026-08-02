@@ -26,7 +26,10 @@ ServiceProvider::ServiceProvider() :
     m_protocolHasBeenSet(false),
     m_providerHasBeenSet(false),
     m_serviceProviderIdHasBeenSet(false),
-    m_serviceProviderNameHasBeenSet(false)
+    m_serviceProviderNameHasBeenSet(false),
+    m_orderHasBeenSet(false),
+    m_weightHasBeenSet(false),
+    m_associationStatusHasBeenSet(false)
 {
 }
 
@@ -98,6 +101,36 @@ CoreInternalOutcome ServiceProvider::Deserialize(const rapidjson::Value &value)
         m_serviceProviderNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Order") && !value["Order"].IsNull())
+    {
+        if (!value["Order"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceProvider.Order` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_order = value["Order"].GetUint64();
+        m_orderHasBeenSet = true;
+    }
+
+    if (value.HasMember("Weight") && !value["Weight"].IsNull())
+    {
+        if (!value["Weight"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceProvider.Weight` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_weight = value["Weight"].GetUint64();
+        m_weightHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssociationStatus") && !value["AssociationStatus"].IsNull())
+    {
+        if (!value["AssociationStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceProvider.AssociationStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_associationStatus = string(value["AssociationStatus"].GetString());
+        m_associationStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +189,30 @@ void ServiceProvider::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ServiceProviderName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_serviceProviderName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Order";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_order, allocator);
+    }
+
+    if (m_weightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Weight";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_weight, allocator);
+    }
+
+    if (m_associationStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssociationStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_associationStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -255,5 +312,53 @@ void ServiceProvider::SetServiceProviderName(const string& _serviceProviderName)
 bool ServiceProvider::ServiceProviderNameHasBeenSet() const
 {
     return m_serviceProviderNameHasBeenSet;
+}
+
+uint64_t ServiceProvider::GetOrder() const
+{
+    return m_order;
+}
+
+void ServiceProvider::SetOrder(const uint64_t& _order)
+{
+    m_order = _order;
+    m_orderHasBeenSet = true;
+}
+
+bool ServiceProvider::OrderHasBeenSet() const
+{
+    return m_orderHasBeenSet;
+}
+
+uint64_t ServiceProvider::GetWeight() const
+{
+    return m_weight;
+}
+
+void ServiceProvider::SetWeight(const uint64_t& _weight)
+{
+    m_weight = _weight;
+    m_weightHasBeenSet = true;
+}
+
+bool ServiceProvider::WeightHasBeenSet() const
+{
+    return m_weightHasBeenSet;
+}
+
+string ServiceProvider::GetAssociationStatus() const
+{
+    return m_associationStatus;
+}
+
+void ServiceProvider::SetAssociationStatus(const string& _associationStatus)
+{
+    m_associationStatus = _associationStatus;
+    m_associationStatusHasBeenSet = true;
+}
+
+bool ServiceProvider::AssociationStatusHasBeenSet() const
+{
+    return m_associationStatusHasBeenSet;
 }
 

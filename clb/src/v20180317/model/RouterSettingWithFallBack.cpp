@@ -23,7 +23,9 @@ using namespace std;
 RouterSettingWithFallBack::RouterSettingWithFallBack() :
     m_crossModelGroupRoutingStrategyHasBeenSet(false),
     m_fallBackHasBeenSet(false),
-    m_routingStrategyHasBeenSet(false)
+    m_routingStrategyHasBeenSet(false),
+    m_numRetriesHasBeenSet(false),
+    m_routingStrategyArgsHasBeenSet(false)
 {
 }
 
@@ -69,6 +71,33 @@ CoreInternalOutcome RouterSettingWithFallBack::Deserialize(const rapidjson::Valu
         m_routingStrategyHasBeenSet = true;
     }
 
+    if (value.HasMember("NumRetries") && !value["NumRetries"].IsNull())
+    {
+        if (!value["NumRetries"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RouterSettingWithFallBack.NumRetries` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_numRetries = value["NumRetries"].GetUint64();
+        m_numRetriesHasBeenSet = true;
+    }
+
+    if (value.HasMember("RoutingStrategyArgs") && !value["RoutingStrategyArgs"].IsNull())
+    {
+        if (!value["RoutingStrategyArgs"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RouterSettingWithFallBack.RoutingStrategyArgs` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_routingStrategyArgs.Deserialize(value["RoutingStrategyArgs"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_routingStrategyArgsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +128,23 @@ void RouterSettingWithFallBack::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "RoutingStrategy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_routingStrategy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_numRetriesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NumRetries";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_numRetries, allocator);
+    }
+
+    if (m_routingStrategyArgsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoutingStrategyArgs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_routingStrategyArgs.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -150,5 +196,37 @@ void RouterSettingWithFallBack::SetRoutingStrategy(const string& _routingStrateg
 bool RouterSettingWithFallBack::RoutingStrategyHasBeenSet() const
 {
     return m_routingStrategyHasBeenSet;
+}
+
+uint64_t RouterSettingWithFallBack::GetNumRetries() const
+{
+    return m_numRetries;
+}
+
+void RouterSettingWithFallBack::SetNumRetries(const uint64_t& _numRetries)
+{
+    m_numRetries = _numRetries;
+    m_numRetriesHasBeenSet = true;
+}
+
+bool RouterSettingWithFallBack::NumRetriesHasBeenSet() const
+{
+    return m_numRetriesHasBeenSet;
+}
+
+RoutingStrategyArgs RouterSettingWithFallBack::GetRoutingStrategyArgs() const
+{
+    return m_routingStrategyArgs;
+}
+
+void RouterSettingWithFallBack::SetRoutingStrategyArgs(const RoutingStrategyArgs& _routingStrategyArgs)
+{
+    m_routingStrategyArgs = _routingStrategyArgs;
+    m_routingStrategyArgsHasBeenSet = true;
+}
+
+bool RouterSettingWithFallBack::RoutingStrategyArgsHasBeenSet() const
+{
+    return m_routingStrategyArgsHasBeenSet;
 }
 

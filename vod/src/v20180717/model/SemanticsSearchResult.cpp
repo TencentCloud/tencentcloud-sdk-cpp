@@ -22,6 +22,7 @@ using namespace std;
 
 SemanticsSearchResult::SemanticsSearchResult() :
     m_fileIdHasBeenSet(false),
+    m_titleHasBeenSet(false),
     m_scoreHasBeenSet(false),
     m_startTimeOffsetHasBeenSet(false),
     m_endTimeOffsetHasBeenSet(false)
@@ -41,6 +42,16 @@ CoreInternalOutcome SemanticsSearchResult::Deserialize(const rapidjson::Value &v
         }
         m_fileId = string(value["FileId"].GetString());
         m_fileIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Title") && !value["Title"].IsNull())
+    {
+        if (!value["Title"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SemanticsSearchResult.Title` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_title = string(value["Title"].GetString());
+        m_titleHasBeenSet = true;
     }
 
     if (value.HasMember("Score") && !value["Score"].IsNull())
@@ -88,6 +99,14 @@ void SemanticsSearchResult::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         value.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_titleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Title";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_title.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_scoreHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -129,6 +148,22 @@ void SemanticsSearchResult::SetFileId(const string& _fileId)
 bool SemanticsSearchResult::FileIdHasBeenSet() const
 {
     return m_fileIdHasBeenSet;
+}
+
+string SemanticsSearchResult::GetTitle() const
+{
+    return m_title;
+}
+
+void SemanticsSearchResult::SetTitle(const string& _title)
+{
+    m_title = _title;
+    m_titleHasBeenSet = true;
+}
+
+bool SemanticsSearchResult::TitleHasBeenSet() const
+{
+    return m_titleHasBeenSet;
 }
 
 double SemanticsSearchResult::GetScore() const

@@ -31,6 +31,7 @@ ProcedureTemplate::ProcedureTemplate() :
     m_aiRecognitionTaskHasBeenSet(false),
     m_miniProgramPublishTaskHasBeenSet(false),
     m_reviewAudioVideoTaskHasBeenSet(false),
+    m_importMediaKnowledgeTaskSetHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
@@ -193,6 +194,26 @@ CoreInternalOutcome ProcedureTemplate::Deserialize(const rapidjson::Value &value
         m_reviewAudioVideoTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("ImportMediaKnowledgeTaskSet") && !value["ImportMediaKnowledgeTaskSet"].IsNull())
+    {
+        if (!value["ImportMediaKnowledgeTaskSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ProcedureTemplate.ImportMediaKnowledgeTaskSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ImportMediaKnowledgeTaskSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ImportMediaKnowledgeTaskInput item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_importMediaKnowledgeTaskSet.push_back(item);
+        }
+        m_importMediaKnowledgeTaskSetHasBeenSet = true;
+    }
+
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
     {
         if (!value["CreateTime"].IsString())
@@ -311,6 +332,21 @@ void ProcedureTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_reviewAudioVideoTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_importMediaKnowledgeTaskSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImportMediaKnowledgeTaskSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_importMediaKnowledgeTaskSet.begin(); itr != m_importMediaKnowledgeTaskSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_createTimeHasBeenSet)
@@ -490,6 +526,22 @@ void ProcedureTemplate::SetReviewAudioVideoTask(const ProcedureReviewAudioVideoT
 bool ProcedureTemplate::ReviewAudioVideoTaskHasBeenSet() const
 {
     return m_reviewAudioVideoTaskHasBeenSet;
+}
+
+vector<ImportMediaKnowledgeTaskInput> ProcedureTemplate::GetImportMediaKnowledgeTaskSet() const
+{
+    return m_importMediaKnowledgeTaskSet;
+}
+
+void ProcedureTemplate::SetImportMediaKnowledgeTaskSet(const vector<ImportMediaKnowledgeTaskInput>& _importMediaKnowledgeTaskSet)
+{
+    m_importMediaKnowledgeTaskSet = _importMediaKnowledgeTaskSet;
+    m_importMediaKnowledgeTaskSetHasBeenSet = true;
+}
+
+bool ProcedureTemplate::ImportMediaKnowledgeTaskSetHasBeenSet() const
+{
+    return m_importMediaKnowledgeTaskSetHasBeenSet;
 }
 
 string ProcedureTemplate::GetCreateTime() const

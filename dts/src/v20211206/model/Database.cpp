@@ -26,6 +26,7 @@ Database::Database() :
     m_dbModeHasBeenSet(false),
     m_schemaNameHasBeenSet(false),
     m_newSchemaNameHasBeenSet(false),
+    m_schemaModeHasBeenSet(false),
     m_tableModeHasBeenSet(false),
     m_tablesHasBeenSet(false),
     m_viewModeHasBeenSet(false),
@@ -94,6 +95,16 @@ CoreInternalOutcome Database::Deserialize(const rapidjson::Value &value)
         }
         m_newSchemaName = string(value["NewSchemaName"].GetString());
         m_newSchemaNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SchemaMode") && !value["SchemaMode"].IsNull())
+    {
+        if (!value["SchemaMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Database.SchemaMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_schemaMode = string(value["SchemaMode"].GetString());
+        m_schemaModeHasBeenSet = true;
     }
 
     if (value.HasMember("TableMode") && !value["TableMode"].IsNull())
@@ -293,6 +304,14 @@ void Database::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "NewSchemaName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_newSchemaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schemaModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchemaMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schemaMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tableModeHasBeenSet)
@@ -506,6 +525,22 @@ void Database::SetNewSchemaName(const string& _newSchemaName)
 bool Database::NewSchemaNameHasBeenSet() const
 {
     return m_newSchemaNameHasBeenSet;
+}
+
+string Database::GetSchemaMode() const
+{
+    return m_schemaMode;
+}
+
+void Database::SetSchemaMode(const string& _schemaMode)
+{
+    m_schemaMode = _schemaMode;
+    m_schemaModeHasBeenSet = true;
+}
+
+bool Database::SchemaModeHasBeenSet() const
+{
+    return m_schemaModeHasBeenSet;
 }
 
 string Database::GetTableMode() const

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/clb/v20180317/model/RoutingStrategyArgs.h>
 
 
 namespace TencentCloud
@@ -67,6 +68,69 @@ namespace TencentCloud
                      */
                     bool RoutingStrategyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>模型间路由策略。</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>CostBasedRouting： 最低积分路由</li></ul>
+                     * @return CrossModelGroupRoutingStrategy <p>模型间路由策略。</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>CostBasedRouting： 最低积分路由</li></ul>
+                     * 
+                     */
+                    std::string GetCrossModelGroupRoutingStrategy() const;
+
+                    /**
+                     * 设置<p>模型间路由策略。</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>CostBasedRouting： 最低积分路由</li></ul>
+                     * @param _crossModelGroupRoutingStrategy <p>模型间路由策略。</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>CostBasedRouting： 最低积分路由</li></ul>
+                     * 
+                     */
+                    void SetCrossModelGroupRoutingStrategy(const std::string& _crossModelGroupRoutingStrategy);
+
+                    /**
+                     * 判断参数 CrossModelGroupRoutingStrategy 是否已赋值
+                     * @return CrossModelGroupRoutingStrategy 是否已赋值
+                     * 
+                     */
+                    bool CrossModelGroupRoutingStrategyHasBeenSet() const;
+
+                    /**
+                     * 获取<p>L2模型组内路由调度算法参数</p>
+                     * @return RoutingStrategyArgs <p>L2模型组内路由调度算法参数</p>
+                     * 
+                     */
+                    RoutingStrategyArgs GetRoutingStrategyArgs() const;
+
+                    /**
+                     * 设置<p>L2模型组内路由调度算法参数</p>
+                     * @param _routingStrategyArgs <p>L2模型组内路由调度算法参数</p>
+                     * 
+                     */
+                    void SetRoutingStrategyArgs(const RoutingStrategyArgs& _routingStrategyArgs);
+
+                    /**
+                     * 判断参数 RoutingStrategyArgs 是否已赋值
+                     * @return RoutingStrategyArgs 是否已赋值
+                     * 
+                     */
+                    bool RoutingStrategyArgsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>CMR实例级别请求组内重试次数</p><p>取值范围：[0, 5]</p><p>默认值：2</p>
+                     * @return NumRetries <p>CMR实例级别请求组内重试次数</p><p>取值范围：[0, 5]</p><p>默认值：2</p>
+                     * 
+                     */
+                    uint64_t GetNumRetries() const;
+
+                    /**
+                     * 设置<p>CMR实例级别请求组内重试次数</p><p>取值范围：[0, 5]</p><p>默认值：2</p>
+                     * @param _numRetries <p>CMR实例级别请求组内重试次数</p><p>取值范围：[0, 5]</p><p>默认值：2</p>
+                     * 
+                     */
+                    void SetNumRetries(const uint64_t& _numRetries);
+
+                    /**
+                     * 判断参数 NumRetries 是否已赋值
+                     * @return NumRetries 是否已赋值
+                     * 
+                     */
+                    bool NumRetriesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -74,6 +138,24 @@ namespace TencentCloud
                      */
                     std::string m_routingStrategy;
                     bool m_routingStrategyHasBeenSet;
+
+                    /**
+                     * <p>模型间路由策略。</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>CostBasedRouting： 最低积分路由</li></ul>
+                     */
+                    std::string m_crossModelGroupRoutingStrategy;
+                    bool m_crossModelGroupRoutingStrategyHasBeenSet;
+
+                    /**
+                     * <p>L2模型组内路由调度算法参数</p>
+                     */
+                    RoutingStrategyArgs m_routingStrategyArgs;
+                    bool m_routingStrategyArgsHasBeenSet;
+
+                    /**
+                     * <p>CMR实例级别请求组内重试次数</p><p>取值范围：[0, 5]</p><p>默认值：2</p>
+                     */
+                    uint64_t m_numRetries;
+                    bool m_numRetriesHasBeenSet;
 
                 };
             }

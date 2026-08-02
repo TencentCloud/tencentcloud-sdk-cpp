@@ -24,6 +24,7 @@ LLMComprehendTemplateItem::LLMComprehendTemplateItem() :
     m_definitionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_commentHasBeenSet(false),
+    m_typeHasBeenSet(false),
     m_levelHasBeenSet(false),
     m_summaryHasBeenSet(false),
     m_asrHasBeenSet(false),
@@ -66,6 +67,16 @@ CoreInternalOutcome LLMComprehendTemplateItem::Deserialize(const rapidjson::Valu
         }
         m_comment = string(value["Comment"].GetString());
         m_commentHasBeenSet = true;
+    }
+
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LLMComprehendTemplateItem.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
     }
 
     if (value.HasMember("Level") && !value["Level"].IsNull())
@@ -180,6 +191,14 @@ void LLMComprehendTemplateItem::ToJsonObject(rapidjson::Value &value, rapidjson:
         value.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_levelHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -280,6 +299,22 @@ void LLMComprehendTemplateItem::SetComment(const string& _comment)
 bool LLMComprehendTemplateItem::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
+}
+
+string LLMComprehendTemplateItem::GetType() const
+{
+    return m_type;
+}
+
+void LLMComprehendTemplateItem::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool LLMComprehendTemplateItem::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 string LLMComprehendTemplateItem::GetLevel() const

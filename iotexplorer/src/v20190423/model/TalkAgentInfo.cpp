@@ -37,7 +37,8 @@ TalkAgentInfo::TalkAgentInfo() :
     m_metadataHasBeenSet(false),
     m_bindingsHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_eventCallbackConfigHasBeenSet(false)
 {
 }
 
@@ -281,6 +282,23 @@ CoreInternalOutcome TalkAgentInfo::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("EventCallbackConfig") && !value["EventCallbackConfig"].IsNull())
+    {
+        if (!value["EventCallbackConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TalkAgentInfo.EventCallbackConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_eventCallbackConfig.Deserialize(value["EventCallbackConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_eventCallbackConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -448,6 +466,15 @@ void TalkAgentInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateTime, allocator);
+    }
+
+    if (m_eventCallbackConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventCallbackConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_eventCallbackConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -723,5 +750,21 @@ void TalkAgentInfo::SetUpdateTime(const int64_t& _updateTime)
 bool TalkAgentInfo::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+TalkEventCallbackConfig TalkAgentInfo::GetEventCallbackConfig() const
+{
+    return m_eventCallbackConfig;
+}
+
+void TalkAgentInfo::SetEventCallbackConfig(const TalkEventCallbackConfig& _eventCallbackConfig)
+{
+    m_eventCallbackConfig = _eventCallbackConfig;
+    m_eventCallbackConfigHasBeenSet = true;
+}
+
+bool TalkAgentInfo::EventCallbackConfigHasBeenSet() const
+{
+    return m_eventCallbackConfigHasBeenSet;
 }
 

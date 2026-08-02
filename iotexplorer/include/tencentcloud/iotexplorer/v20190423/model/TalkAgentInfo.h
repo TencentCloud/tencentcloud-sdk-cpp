@@ -32,6 +32,7 @@
 #include <tencentcloud/iotexplorer/v20190423/model/TalkIOTTool.h>
 #include <tencentcloud/iotexplorer/v20190423/model/TalkWebhookTool.h>
 #include <tencentcloud/iotexplorer/v20190423/model/TalkAgentBinding.h>
+#include <tencentcloud/iotexplorer/v20190423/model/TalkEventCallbackConfig.h>
 
 
 namespace TencentCloud
@@ -55,15 +56,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主账号UIN
-                     * @return Uin 主账号UIN
+                     * 获取<p>主账号UIN</p>
+                     * @return Uin <p>主账号UIN</p>
                      * 
                      */
                     int64_t GetUin() const;
 
                     /**
-                     * 设置主账号UIN
-                     * @param _uin 主账号UIN
+                     * 设置<p>主账号UIN</p>
+                     * @param _uin <p>主账号UIN</p>
                      * 
                      */
                     void SetUin(const int64_t& _uin);
@@ -76,15 +77,15 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取账号AppId
-                     * @return AppId 账号AppId
+                     * 获取<p>账号AppId</p>
+                     * @return AppId <p>账号AppId</p>
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
-                     * 设置账号AppId
-                     * @param _appId 账号AppId
+                     * 设置<p>账号AppId</p>
+                     * @param _appId <p>账号AppId</p>
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -97,15 +98,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取实例 ID
-                     * @return InstanceId 实例 ID
+                     * 获取<p>实例 ID</p>
+                     * @return InstanceId <p>实例 ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param _instanceId 实例 ID
+                     * 设置<p>实例 ID</p>
+                     * @param _instanceId <p>实例 ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -118,15 +119,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取智能体ID
-                     * @return AgentId 智能体ID
+                     * 获取<p>智能体ID</p>
+                     * @return AgentId <p>智能体ID</p>
                      * 
                      */
                     std::string GetAgentId() const;
 
                     /**
-                     * 设置智能体ID
-                     * @param _agentId 智能体ID
+                     * 设置<p>智能体ID</p>
+                     * @param _agentId <p>智能体ID</p>
                      * 
                      */
                     void SetAgentId(const std::string& _agentId);
@@ -139,15 +140,15 @@ namespace TencentCloud
                     bool AgentIdHasBeenSet() const;
 
                     /**
-                     * 获取智能体名称
-                     * @return Name 智能体名称
+                     * 获取<p>智能体名称</p>
+                     * @return Name <p>智能体名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置智能体名称
-                     * @param _name 智能体名称
+                     * 设置<p>智能体名称</p>
+                     * @param _name <p>智能体名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -160,15 +161,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取智能体描述
-                     * @return Description 智能体描述
+                     * 获取<p>智能体描述</p>
+                     * @return Description <p>智能体描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置智能体描述
-                     * @param _description 智能体描述
+                     * 设置<p>智能体描述</p>
+                     * @param _description <p>智能体描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -181,15 +182,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取语音识别配置
-                     * @return STTConfig 语音识别配置
+                     * 获取<p>语音识别配置</p>
+                     * @return STTConfig <p>语音识别配置</p>
                      * 
                      */
                     TalkSTTConfig GetSTTConfig() const;
 
                     /**
-                     * 设置语音识别配置
-                     * @param _sTTConfig 语音识别配置
+                     * 设置<p>语音识别配置</p>
+                     * @param _sTTConfig <p>语音识别配置</p>
                      * 
                      */
                     void SetSTTConfig(const TalkSTTConfig& _sTTConfig);
@@ -202,15 +203,15 @@ namespace TencentCloud
                     bool STTConfigHasBeenSet() const;
 
                     /**
-                     * 获取大模型配置
-                     * @return LLMConfig 大模型配置
+                     * 获取<p>大模型配置</p>
+                     * @return LLMConfig <p>大模型配置</p>
                      * 
                      */
                     TalkLLMConfig GetLLMConfig() const;
 
                     /**
-                     * 设置大模型配置
-                     * @param _lLMConfig 大模型配置
+                     * 设置<p>大模型配置</p>
+                     * @param _lLMConfig <p>大模型配置</p>
                      * 
                      */
                     void SetLLMConfig(const TalkLLMConfig& _lLMConfig);
@@ -223,15 +224,15 @@ namespace TencentCloud
                     bool LLMConfigHasBeenSet() const;
 
                     /**
-                     * 获取语音合成配置
-                     * @return TTSConfig 语音合成配置
+                     * 获取<p>语音合成配置</p>
+                     * @return TTSConfig <p>语音合成配置</p>
                      * 
                      */
                     TalkTTSConfig GetTTSConfig() const;
 
                     /**
-                     * 设置语音合成配置
-                     * @param _tTSConfig 语音合成配置
+                     * 设置<p>语音合成配置</p>
+                     * @param _tTSConfig <p>语音合成配置</p>
                      * 
                      */
                     void SetTTSConfig(const TalkTTSConfig& _tTSConfig);
@@ -244,15 +245,15 @@ namespace TencentCloud
                     bool TTSConfigHasBeenSet() const;
 
                     /**
-                     * 获取对话行为配置
-                     * @return ConversationConfig 对话行为配置
+                     * 获取<p>对话行为配置</p>
+                     * @return ConversationConfig <p>对话行为配置</p>
                      * 
                      */
                     TalkConversationConfig GetConversationConfig() const;
 
                     /**
-                     * 设置对话行为配置
-                     * @param _conversationConfig 对话行为配置
+                     * 设置<p>对话行为配置</p>
+                     * @param _conversationConfig <p>对话行为配置</p>
                      * 
                      */
                     void SetConversationConfig(const TalkConversationConfig& _conversationConfig);
@@ -265,15 +266,15 @@ namespace TencentCloud
                     bool ConversationConfigHasBeenSet() const;
 
                     /**
-                     * 获取长期记忆配置
-                     * @return MemoryConfig 长期记忆配置
+                     * 获取<p>长期记忆配置</p>
+                     * @return MemoryConfig <p>长期记忆配置</p>
                      * 
                      */
                     TalkMemoryConfig GetMemoryConfig() const;
 
                     /**
-                     * 设置长期记忆配置
-                     * @param _memoryConfig 长期记忆配置
+                     * 设置<p>长期记忆配置</p>
+                     * @param _memoryConfig <p>长期记忆配置</p>
                      * 
                      */
                     void SetMemoryConfig(const TalkMemoryConfig& _memoryConfig);
@@ -286,15 +287,15 @@ namespace TencentCloud
                     bool MemoryConfigHasBeenSet() const;
 
                     /**
-                     * 获取IoT 工具列表
-                     * @return IOTTools IoT 工具列表
+                     * 获取<p>IoT 工具列表</p>
+                     * @return IOTTools <p>IoT 工具列表</p>
                      * 
                      */
                     std::vector<TalkIOTTool> GetIOTTools() const;
 
                     /**
-                     * 设置IoT 工具列表
-                     * @param _iOTTools IoT 工具列表
+                     * 设置<p>IoT 工具列表</p>
+                     * @param _iOTTools <p>IoT 工具列表</p>
                      * 
                      */
                     void SetIOTTools(const std::vector<TalkIOTTool>& _iOTTools);
@@ -307,15 +308,15 @@ namespace TencentCloud
                     bool IOTToolsHasBeenSet() const;
 
                     /**
-                     * 获取Webhook 工具列表
-                     * @return WebhookTools Webhook 工具列表
+                     * 获取<p>Webhook 工具列表</p>
+                     * @return WebhookTools <p>Webhook 工具列表</p>
                      * 
                      */
                     std::vector<TalkWebhookTool> GetWebhookTools() const;
 
                     /**
-                     * 设置Webhook 工具列表
-                     * @param _webhookTools Webhook 工具列表
+                     * 设置<p>Webhook 工具列表</p>
+                     * @param _webhookTools <p>Webhook 工具列表</p>
                      * 
                      */
                     void SetWebhookTools(const std::vector<TalkWebhookTool>& _webhookTools);
@@ -328,15 +329,15 @@ namespace TencentCloud
                     bool WebhookToolsHasBeenSet() const;
 
                     /**
-                     * 获取元信息JSON object 字符串
-                     * @return Metadata 元信息JSON object 字符串
+                     * 获取<p>元信息JSON object 字符串</p>
+                     * @return Metadata <p>元信息JSON object 字符串</p>
                      * 
                      */
                     std::string GetMetadata() const;
 
                     /**
-                     * 设置元信息JSON object 字符串
-                     * @param _metadata 元信息JSON object 字符串
+                     * 设置<p>元信息JSON object 字符串</p>
+                     * @param _metadata <p>元信息JSON object 字符串</p>
                      * 
                      */
                     void SetMetadata(const std::string& _metadata);
@@ -349,15 +350,15 @@ namespace TencentCloud
                     bool MetadataHasBeenSet() const;
 
                     /**
-                     * 获取绑定关系列表
-                     * @return Bindings 绑定关系列表
+                     * 获取<p>绑定关系列表</p>
+                     * @return Bindings <p>绑定关系列表</p>
                      * 
                      */
                     std::vector<TalkAgentBinding> GetBindings() const;
 
                     /**
-                     * 设置绑定关系列表
-                     * @param _bindings 绑定关系列表
+                     * 设置<p>绑定关系列表</p>
+                     * @param _bindings <p>绑定关系列表</p>
                      * 
                      */
                     void SetBindings(const std::vector<TalkAgentBinding>& _bindings);
@@ -370,15 +371,15 @@ namespace TencentCloud
                     bool BindingsHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，Unix 秒
-                     * @return CreateTime 创建时间，Unix 秒
+                     * 获取<p>创建时间，Unix 秒</p>
+                     * @return CreateTime <p>创建时间，Unix 秒</p>
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
-                     * 设置创建时间，Unix 秒
-                     * @param _createTime 创建时间，Unix 秒
+                     * 设置<p>创建时间，Unix 秒</p>
+                     * @param _createTime <p>创建时间，Unix 秒</p>
                      * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
@@ -391,15 +392,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间，Unix 秒
-                     * @return UpdateTime 更新时间，Unix 秒
+                     * 获取<p>更新时间，Unix 秒</p>
+                     * @return UpdateTime <p>更新时间，Unix 秒</p>
                      * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间，Unix 秒
-                     * @param _updateTime 更新时间，Unix 秒
+                     * 设置<p>更新时间，Unix 秒</p>
+                     * @param _updateTime <p>更新时间，Unix 秒</p>
                      * 
                      */
                     void SetUpdateTime(const int64_t& _updateTime);
@@ -411,109 +412,136 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>事件回调配置</p>
+                     * @return EventCallbackConfig <p>事件回调配置</p>
+                     * 
+                     */
+                    TalkEventCallbackConfig GetEventCallbackConfig() const;
+
+                    /**
+                     * 设置<p>事件回调配置</p>
+                     * @param _eventCallbackConfig <p>事件回调配置</p>
+                     * 
+                     */
+                    void SetEventCallbackConfig(const TalkEventCallbackConfig& _eventCallbackConfig);
+
+                    /**
+                     * 判断参数 EventCallbackConfig 是否已赋值
+                     * @return EventCallbackConfig 是否已赋值
+                     * 
+                     */
+                    bool EventCallbackConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 主账号UIN
+                     * <p>主账号UIN</p>
                      */
                     int64_t m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 账号AppId
+                     * <p>账号AppId</p>
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 实例 ID
+                     * <p>实例 ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 智能体ID
+                     * <p>智能体ID</p>
                      */
                     std::string m_agentId;
                     bool m_agentIdHasBeenSet;
 
                     /**
-                     * 智能体名称
+                     * <p>智能体名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 智能体描述
+                     * <p>智能体描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 语音识别配置
+                     * <p>语音识别配置</p>
                      */
                     TalkSTTConfig m_sTTConfig;
                     bool m_sTTConfigHasBeenSet;
 
                     /**
-                     * 大模型配置
+                     * <p>大模型配置</p>
                      */
                     TalkLLMConfig m_lLMConfig;
                     bool m_lLMConfigHasBeenSet;
 
                     /**
-                     * 语音合成配置
+                     * <p>语音合成配置</p>
                      */
                     TalkTTSConfig m_tTSConfig;
                     bool m_tTSConfigHasBeenSet;
 
                     /**
-                     * 对话行为配置
+                     * <p>对话行为配置</p>
                      */
                     TalkConversationConfig m_conversationConfig;
                     bool m_conversationConfigHasBeenSet;
 
                     /**
-                     * 长期记忆配置
+                     * <p>长期记忆配置</p>
                      */
                     TalkMemoryConfig m_memoryConfig;
                     bool m_memoryConfigHasBeenSet;
 
                     /**
-                     * IoT 工具列表
+                     * <p>IoT 工具列表</p>
                      */
                     std::vector<TalkIOTTool> m_iOTTools;
                     bool m_iOTToolsHasBeenSet;
 
                     /**
-                     * Webhook 工具列表
+                     * <p>Webhook 工具列表</p>
                      */
                     std::vector<TalkWebhookTool> m_webhookTools;
                     bool m_webhookToolsHasBeenSet;
 
                     /**
-                     * 元信息JSON object 字符串
+                     * <p>元信息JSON object 字符串</p>
                      */
                     std::string m_metadata;
                     bool m_metadataHasBeenSet;
 
                     /**
-                     * 绑定关系列表
+                     * <p>绑定关系列表</p>
                      */
                     std::vector<TalkAgentBinding> m_bindings;
                     bool m_bindingsHasBeenSet;
 
                     /**
-                     * 创建时间，Unix 秒
+                     * <p>创建时间，Unix 秒</p>
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间，Unix 秒
+                     * <p>更新时间，Unix 秒</p>
                      */
                     int64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * <p>事件回调配置</p>
+                     */
+                    TalkEventCallbackConfig m_eventCallbackConfig;
+                    bool m_eventCallbackConfigHasBeenSet;
 
                 };
             }

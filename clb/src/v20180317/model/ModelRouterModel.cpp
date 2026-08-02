@@ -24,7 +24,9 @@ ModelRouterModel::ModelRouterModel() :
     m_modelNameHasBeenSet(false),
     m_providerHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_serviceProviderIdHasBeenSet(false)
+    m_serviceProviderIdHasBeenSet(false),
+    m_orderHasBeenSet(false),
+    m_weightHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome ModelRouterModel::Deserialize(const rapidjson::Value &value)
         m_serviceProviderIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Order") && !value["Order"].IsNull())
+    {
+        if (!value["Order"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelRouterModel.Order` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_order = value["Order"].GetUint64();
+        m_orderHasBeenSet = true;
+    }
+
+    if (value.HasMember("Weight") && !value["Weight"].IsNull())
+    {
+        if (!value["Weight"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelRouterModel.Weight` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_weight = value["Weight"].GetUint64();
+        m_weightHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void ModelRouterModel::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ServiceProviderId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_serviceProviderId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Order";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_order, allocator);
+    }
+
+    if (m_weightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Weight";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_weight, allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void ModelRouterModel::SetServiceProviderId(const string& _serviceProviderId)
 bool ModelRouterModel::ServiceProviderIdHasBeenSet() const
 {
     return m_serviceProviderIdHasBeenSet;
+}
+
+uint64_t ModelRouterModel::GetOrder() const
+{
+    return m_order;
+}
+
+void ModelRouterModel::SetOrder(const uint64_t& _order)
+{
+    m_order = _order;
+    m_orderHasBeenSet = true;
+}
+
+bool ModelRouterModel::OrderHasBeenSet() const
+{
+    return m_orderHasBeenSet;
+}
+
+uint64_t ModelRouterModel::GetWeight() const
+{
+    return m_weight;
+}
+
+void ModelRouterModel::SetWeight(const uint64_t& _weight)
+{
+    m_weight = _weight;
+    m_weightHasBeenSet = true;
+}
+
+bool ModelRouterModel::WeightHasBeenSet() const
+{
+    return m_weightHasBeenSet;
 }
 

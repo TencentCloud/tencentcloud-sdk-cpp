@@ -27,7 +27,11 @@ MPSRawSmartSubtitleParameter::MPSRawSmartSubtitleParameter() :
     m_translateSwitchHasBeenSet(false),
     m_translateDstLanguageHasBeenSet(false),
     m_extInfoHasBeenSet(false),
-    m_processTypeHasBeenSet(false)
+    m_processTypeHasBeenSet(false),
+    m_selectingSubtitleAreasConfigHasBeenSet(false),
+    m_subtitleEmbedIdHasBeenSet(false),
+    m_speakerModeHasBeenSet(false),
+    m_speakerLabelHasBeenSet(false)
 {
 }
 
@@ -106,6 +110,53 @@ CoreInternalOutcome MPSRawSmartSubtitleParameter::Deserialize(const rapidjson::V
         m_processTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SelectingSubtitleAreasConfig") && !value["SelectingSubtitleAreasConfig"].IsNull())
+    {
+        if (!value["SelectingSubtitleAreasConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MPSRawSmartSubtitleParameter.SelectingSubtitleAreasConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_selectingSubtitleAreasConfig.Deserialize(value["SelectingSubtitleAreasConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_selectingSubtitleAreasConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubtitleEmbedId") && !value["SubtitleEmbedId"].IsNull())
+    {
+        if (!value["SubtitleEmbedId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MPSRawSmartSubtitleParameter.SubtitleEmbedId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subtitleEmbedId = value["SubtitleEmbedId"].GetInt64();
+        m_subtitleEmbedIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SpeakerMode") && !value["SpeakerMode"].IsNull())
+    {
+        if (!value["SpeakerMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MPSRawSmartSubtitleParameter.SpeakerMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_speakerMode = value["SpeakerMode"].GetInt64();
+        m_speakerModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SpeakerLabel") && !value["SpeakerLabel"].IsNull())
+    {
+        if (!value["SpeakerLabel"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MPSRawSmartSubtitleParameter.SpeakerLabel` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_speakerLabel = value["SpeakerLabel"].GetInt64();
+        m_speakerLabelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +218,39 @@ void MPSRawSmartSubtitleParameter::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "ProcessType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_processType, allocator);
+    }
+
+    if (m_selectingSubtitleAreasConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SelectingSubtitleAreasConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_selectingSubtitleAreasConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_subtitleEmbedIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleEmbedId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subtitleEmbedId, allocator);
+    }
+
+    if (m_speakerModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpeakerMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_speakerMode, allocator);
+    }
+
+    if (m_speakerLabelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpeakerLabel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_speakerLabel, allocator);
     }
 
 }
@@ -282,5 +366,69 @@ void MPSRawSmartSubtitleParameter::SetProcessType(const uint64_t& _processType)
 bool MPSRawSmartSubtitleParameter::ProcessTypeHasBeenSet() const
 {
     return m_processTypeHasBeenSet;
+}
+
+MPSSelectingSubtitleAreasConfig MPSRawSmartSubtitleParameter::GetSelectingSubtitleAreasConfig() const
+{
+    return m_selectingSubtitleAreasConfig;
+}
+
+void MPSRawSmartSubtitleParameter::SetSelectingSubtitleAreasConfig(const MPSSelectingSubtitleAreasConfig& _selectingSubtitleAreasConfig)
+{
+    m_selectingSubtitleAreasConfig = _selectingSubtitleAreasConfig;
+    m_selectingSubtitleAreasConfigHasBeenSet = true;
+}
+
+bool MPSRawSmartSubtitleParameter::SelectingSubtitleAreasConfigHasBeenSet() const
+{
+    return m_selectingSubtitleAreasConfigHasBeenSet;
+}
+
+int64_t MPSRawSmartSubtitleParameter::GetSubtitleEmbedId() const
+{
+    return m_subtitleEmbedId;
+}
+
+void MPSRawSmartSubtitleParameter::SetSubtitleEmbedId(const int64_t& _subtitleEmbedId)
+{
+    m_subtitleEmbedId = _subtitleEmbedId;
+    m_subtitleEmbedIdHasBeenSet = true;
+}
+
+bool MPSRawSmartSubtitleParameter::SubtitleEmbedIdHasBeenSet() const
+{
+    return m_subtitleEmbedIdHasBeenSet;
+}
+
+int64_t MPSRawSmartSubtitleParameter::GetSpeakerMode() const
+{
+    return m_speakerMode;
+}
+
+void MPSRawSmartSubtitleParameter::SetSpeakerMode(const int64_t& _speakerMode)
+{
+    m_speakerMode = _speakerMode;
+    m_speakerModeHasBeenSet = true;
+}
+
+bool MPSRawSmartSubtitleParameter::SpeakerModeHasBeenSet() const
+{
+    return m_speakerModeHasBeenSet;
+}
+
+int64_t MPSRawSmartSubtitleParameter::GetSpeakerLabel() const
+{
+    return m_speakerLabel;
+}
+
+void MPSRawSmartSubtitleParameter::SetSpeakerLabel(const int64_t& _speakerLabel)
+{
+    m_speakerLabel = _speakerLabel;
+    m_speakerLabelHasBeenSet = true;
+}
+
+bool MPSRawSmartSubtitleParameter::SpeakerLabelHasBeenSet() const
+{
+    return m_speakerLabelHasBeenSet;
 }
 

@@ -44,14 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取嵌入的web链接，有效期：5分钟
-链接仅能使用一次
-建议：每次都用接口生成链接，保证链接的有效性
-<br/>EmbedType=PREVIEW_CC_FLOW，该url为h5链接
-                     * @return WebUrl 嵌入的web链接，有效期：5分钟
-链接仅能使用一次
-建议：每次都用接口生成链接，保证链接的有效性
-<br/>EmbedType=PREVIEW_CC_FLOW，该url为h5链接
+                     * 获取<p>嵌入的web链接，有效期：5分钟<br>链接仅能使用一次<br>建议：每次都用接口生成链接，保证链接的有效性<br><br>EmbedType=PREVIEW_CC_FLOW，该url为h5链接</p>
+                     * @return WebUrl <p>嵌入的web链接，有效期：5分钟<br>链接仅能使用一次<br>建议：每次都用接口生成链接，保证链接的有效性<br><br>EmbedType=PREVIEW_CC_FLOW，该url为h5链接</p>
                      * 
                      */
                     std::string GetWebUrl() const;
@@ -66,10 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 嵌入的web链接，有效期：5分钟
-链接仅能使用一次
-建议：每次都用接口生成链接，保证链接的有效性
-<br/>EmbedType=PREVIEW_CC_FLOW，该url为h5链接
+                     * <p>嵌入的web链接，有效期：5分钟<br>链接仅能使用一次<br>建议：每次都用接口生成链接，保证链接的有效性<br><br>EmbedType=PREVIEW_CC_FLOW，该url为h5链接</p>
                      */
                     std::string m_webUrl;
                     bool m_webUrlHasBeenSet;

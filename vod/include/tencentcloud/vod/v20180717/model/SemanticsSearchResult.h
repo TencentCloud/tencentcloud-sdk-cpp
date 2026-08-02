@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体文件唯一标识 ID。
-                     * @return FileId 媒体文件唯一标识 ID。
+                     * 获取<p>媒体文件唯一标识 ID。</p>
+                     * @return FileId <p>媒体文件唯一标识 ID。</p>
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置媒体文件唯一标识 ID。
-                     * @param _fileId 媒体文件唯一标识 ID。
+                     * 设置<p>媒体文件唯一标识 ID。</p>
+                     * @param _fileId <p>媒体文件唯一标识 ID。</p>
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -68,15 +68,36 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取视频在本次检索中的得分，得分越高和检索值越相似，取值范围[0,1]
-                     * @return Score 视频在本次检索中的得分，得分越高和检索值越相似，取值范围[0,1]
+                     * 获取<p>智能媒资为当前片段生成的标题</p>
+                     * @return Title <p>智能媒资为当前片段生成的标题</p>
+                     * 
+                     */
+                    std::string GetTitle() const;
+
+                    /**
+                     * 设置<p>智能媒资为当前片段生成的标题</p>
+                     * @param _title <p>智能媒资为当前片段生成的标题</p>
+                     * 
+                     */
+                    void SetTitle(const std::string& _title);
+
+                    /**
+                     * 判断参数 Title 是否已赋值
+                     * @return Title 是否已赋值
+                     * 
+                     */
+                    bool TitleHasBeenSet() const;
+
+                    /**
+                     * 获取<p>视频在本次检索中的得分，得分越高和检索值越相似，取值范围[0,1]</p>
+                     * @return Score <p>视频在本次检索中的得分，得分越高和检索值越相似，取值范围[0,1]</p>
                      * 
                      */
                     double GetScore() const;
 
                     /**
-                     * 设置视频在本次检索中的得分，得分越高和检索值越相似，取值范围[0,1]
-                     * @param _score 视频在本次检索中的得分，得分越高和检索值越相似，取值范围[0,1]
+                     * 设置<p>视频在本次检索中的得分，得分越高和检索值越相似，取值范围[0,1]</p>
+                     * @param _score <p>视频在本次检索中的得分，得分越高和检索值越相似，取值范围[0,1]</p>
                      * 
                      */
                     void SetScore(const double& _score);
@@ -89,15 +110,15 @@ namespace TencentCloud
                     bool ScoreHasBeenSet() const;
 
                     /**
-                     * 获取视频片段的开始时间，单位：秒
-                     * @return StartTimeOffset 视频片段的开始时间，单位：秒
+                     * 获取<p>视频片段的开始时间，单位：秒</p>
+                     * @return StartTimeOffset <p>视频片段的开始时间，单位：秒</p>
                      * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
-                     * 设置视频片段的开始时间，单位：秒
-                     * @param _startTimeOffset 视频片段的开始时间，单位：秒
+                     * 设置<p>视频片段的开始时间，单位：秒</p>
+                     * @param _startTimeOffset <p>视频片段的开始时间，单位：秒</p>
                      * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
@@ -110,15 +131,15 @@ namespace TencentCloud
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取视频片段的结束时间，单位：秒
-                     * @return EndTimeOffset 视频片段的结束时间，单位：秒
+                     * 获取<p>视频片段的结束时间，单位：秒</p>
+                     * @return EndTimeOffset <p>视频片段的结束时间，单位：秒</p>
                      * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
-                     * 设置视频片段的结束时间，单位：秒
-                     * @param _endTimeOffset 视频片段的结束时间，单位：秒
+                     * 设置<p>视频片段的结束时间，单位：秒</p>
+                     * @param _endTimeOffset <p>视频片段的结束时间，单位：秒</p>
                      * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
@@ -133,25 +154,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 媒体文件唯一标识 ID。
+                     * <p>媒体文件唯一标识 ID。</p>
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 视频在本次检索中的得分，得分越高和检索值越相似，取值范围[0,1]
+                     * <p>智能媒资为当前片段生成的标题</p>
+                     */
+                    std::string m_title;
+                    bool m_titleHasBeenSet;
+
+                    /**
+                     * <p>视频在本次检索中的得分，得分越高和检索值越相似，取值范围[0,1]</p>
                      */
                     double m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
-                     * 视频片段的开始时间，单位：秒
+                     * <p>视频片段的开始时间，单位：秒</p>
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
-                     * 视频片段的结束时间，单位：秒
+                     * <p>视频片段的结束时间，单位：秒</p>
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;

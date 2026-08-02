@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件系统 ID
-                     * @return FileSystemId 文件系统 ID
+                     * 获取<p>文件系统 ID</p>
+                     * @return FileSystemId <p>文件系统 ID</p>
                      * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
-                     * 设置文件系统 ID
-                     * @param _fileSystemId 文件系统 ID
+                     * 设置<p>文件系统 ID</p>
+                     * @param _fileSystemId <p>文件系统 ID</p>
                      * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取挂载点 ID
-                     * @return MountTargetId 挂载点 ID
+                     * 获取<p>挂载点 ID</p>
+                     * @return MountTargetId <p>挂载点 ID</p>
                      * 
                      */
                     std::string GetMountTargetId() const;
 
                     /**
-                     * 设置挂载点 ID
-                     * @param _mountTargetId 挂载点 ID
+                     * 设置<p>挂载点 ID</p>
+                     * @param _mountTargetId <p>挂载点 ID</p>
                      * 
                      */
                     void SetMountTargetId(const std::string& _mountTargetId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool MountTargetIdHasBeenSet() const;
 
                     /**
-                     * 获取挂载点 IP
-                     * @return IpAddress 挂载点 IP
+                     * 获取<p>挂载点 IP</p>
+                     * @return IpAddress <p>挂载点 IP</p>
                      * 
                      */
                     std::string GetIpAddress() const;
 
                     /**
-                     * 设置挂载点 IP
-                     * @param _ipAddress 挂载点 IP
+                     * 设置<p>挂载点 IP</p>
+                     * @param _ipAddress <p>挂载点 IP</p>
                      * 
                      */
                     void SetIpAddress(const std::string& _ipAddress);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool IpAddressHasBeenSet() const;
 
                     /**
-                     * 获取挂载根目录
-                     * @return FSID 挂载根目录
+                     * 获取<p>挂载根目录</p>
+                     * @return FSID <p>挂载根目录</p>
                      * 
                      */
                     std::string GetFSID() const;
 
                     /**
-                     * 设置挂载根目录
-                     * @param _fSID 挂载根目录
+                     * 设置<p>挂载根目录</p>
+                     * @param _fSID <p>挂载根目录</p>
                      * 
                      */
                     void SetFSID(const std::string& _fSID);
@@ -131,23 +131,15 @@ namespace TencentCloud
                     bool FSIDHasBeenSet() const;
 
                     /**
-                     * 获取挂载点状态，包括creating：创建中；available：运行中；
-deleting：删除中；
-create_failed： 创建失败
-                     * @return LifeCycleState 挂载点状态，包括creating：创建中；available：运行中；
-deleting：删除中；
-create_failed： 创建失败
+                     * 获取<p>挂载点状态，包括creating：创建中；available：运行中；<br>deleting：删除中；<br>create_failed： 创建失败</p>
+                     * @return LifeCycleState <p>挂载点状态，包括creating：创建中；available：运行中；<br>deleting：删除中；<br>create_failed： 创建失败</p>
                      * 
                      */
                     std::string GetLifeCycleState() const;
 
                     /**
-                     * 设置挂载点状态，包括creating：创建中；available：运行中；
-deleting：删除中；
-create_failed： 创建失败
-                     * @param _lifeCycleState 挂载点状态，包括creating：创建中；available：运行中；
-deleting：删除中；
-create_failed： 创建失败
+                     * 设置<p>挂载点状态，包括creating：创建中；available：运行中；<br>deleting：删除中；<br>create_failed： 创建失败</p>
+                     * @param _lifeCycleState <p>挂载点状态，包括creating：创建中；available：运行中；<br>deleting：删除中；<br>create_failed： 创建失败</p>
                      * 
                      */
                     void SetLifeCycleState(const std::string& _lifeCycleState);
@@ -160,15 +152,15 @@ create_failed： 创建失败
                     bool LifeCycleStateHasBeenSet() const;
 
                     /**
-                     * 获取网络类型，包括VPC,CCN
-                     * @return NetworkInterface 网络类型，包括VPC,CCN
+                     * 获取<p>网络类型，包括VPC,CCN</p>
+                     * @return NetworkInterface <p>网络类型，包括VPC,CCN</p>
                      * 
                      */
                     std::string GetNetworkInterface() const;
 
                     /**
-                     * 设置网络类型，包括VPC,CCN
-                     * @param _networkInterface 网络类型，包括VPC,CCN
+                     * 设置<p>网络类型，包括VPC,CCN</p>
+                     * @param _networkInterface <p>网络类型，包括VPC,CCN</p>
                      * 
                      */
                     void SetNetworkInterface(const std::string& _networkInterface);
@@ -181,15 +173,15 @@ create_failed： 创建失败
                     bool NetworkInterfaceHasBeenSet() const;
 
                     /**
-                     * 获取私有网络 ID
-                     * @return VpcId 私有网络 ID
+                     * 获取<p>私有网络 ID</p>
+                     * @return VpcId <p>私有网络 ID</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络 ID
-                     * @param _vpcId 私有网络 ID
+                     * 设置<p>私有网络 ID</p>
+                     * @param _vpcId <p>私有网络 ID</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -202,15 +194,15 @@ create_failed： 创建失败
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取私有网络名称
-                     * @return VpcName 私有网络名称
+                     * 获取<p>私有网络名称</p>
+                     * @return VpcName <p>私有网络名称</p>
                      * 
                      */
                     std::string GetVpcName() const;
 
                     /**
-                     * 设置私有网络名称
-                     * @param _vpcName 私有网络名称
+                     * 设置<p>私有网络名称</p>
+                     * @param _vpcName <p>私有网络名称</p>
                      * 
                      */
                     void SetVpcName(const std::string& _vpcName);
@@ -223,15 +215,15 @@ create_failed： 创建失败
                     bool VpcNameHasBeenSet() const;
 
                     /**
-                     * 获取子网 Id
-                     * @return SubnetId 子网 Id
+                     * 获取<p>子网 Id</p>
+                     * @return SubnetId <p>子网 Id</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网 Id
-                     * @param _subnetId 子网 Id
+                     * 设置<p>子网 Id</p>
+                     * @param _subnetId <p>子网 Id</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -244,15 +236,15 @@ create_failed： 创建失败
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取子网名称
-                     * @return SubnetName 子网名称
+                     * 获取<p>子网名称</p>
+                     * @return SubnetName <p>子网名称</p>
                      * 
                      */
                     std::string GetSubnetName() const;
 
                     /**
-                     * 设置子网名称
-                     * @param _subnetName 子网名称
+                     * 设置<p>子网名称</p>
+                     * @param _subnetName <p>子网名称</p>
                      * 
                      */
                     void SetSubnetName(const std::string& _subnetName);
@@ -265,15 +257,15 @@ create_failed： 创建失败
                     bool SubnetNameHasBeenSet() const;
 
                     /**
-                     * 获取CFS Turbo使用的云联网ID
-                     * @return CcnID CFS Turbo使用的云联网ID
+                     * 获取<p>CFS Turbo使用的云联网ID</p>
+                     * @return CcnID <p>CFS Turbo使用的云联网ID</p>
                      * 
                      */
                     std::string GetCcnID() const;
 
                     /**
-                     * 设置CFS Turbo使用的云联网ID
-                     * @param _ccnID CFS Turbo使用的云联网ID
+                     * 设置<p>CFS Turbo使用的云联网ID</p>
+                     * @param _ccnID <p>CFS Turbo使用的云联网ID</p>
                      * 
                      */
                     void SetCcnID(const std::string& _ccnID);
@@ -286,15 +278,15 @@ create_failed： 创建失败
                     bool CcnIDHasBeenSet() const;
 
                     /**
-                     * 获取云联网中CFS Turbo使用的网段
-                     * @return CidrBlock 云联网中CFS Turbo使用的网段
+                     * 获取<p>云联网中CFS Turbo使用的网段</p>
+                     * @return CidrBlock <p>云联网中CFS Turbo使用的网段</p>
                      * 
                      */
                     std::string GetCidrBlock() const;
 
                     /**
-                     * 设置云联网中CFS Turbo使用的网段
-                     * @param _cidrBlock 云联网中CFS Turbo使用的网段
+                     * 设置<p>云联网中CFS Turbo使用的网段</p>
+                     * @param _cidrBlock <p>云联网中CFS Turbo使用的网段</p>
                      * 
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
@@ -306,81 +298,133 @@ create_failed： 创建失败
                      */
                     bool CidrBlockHasBeenSet() const;
 
+                    /**
+                     * 获取<p>占用用户ip列表</p>
+                     * @return ServerList <p>占用用户ip列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetServerList() const;
+
+                    /**
+                     * 设置<p>占用用户ip列表</p>
+                     * @param _serverList <p>占用用户ip列表</p>
+                     * 
+                     */
+                    void SetServerList(const std::vector<std::string>& _serverList);
+
+                    /**
+                     * 判断参数 ServerList 是否已赋值
+                     * @return ServerList 是否已赋值
+                     * 
+                     */
+                    bool ServerListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否占用超过200个ip</p>
+                     * @return ServerListTruncated <p>是否占用超过200个ip</p>
+                     * 
+                     */
+                    bool GetServerListTruncated() const;
+
+                    /**
+                     * 设置<p>是否占用超过200个ip</p>
+                     * @param _serverListTruncated <p>是否占用超过200个ip</p>
+                     * 
+                     */
+                    void SetServerListTruncated(const bool& _serverListTruncated);
+
+                    /**
+                     * 判断参数 ServerListTruncated 是否已赋值
+                     * @return ServerListTruncated 是否已赋值
+                     * 
+                     */
+                    bool ServerListTruncatedHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 文件系统 ID
+                     * <p>文件系统 ID</p>
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 挂载点 ID
+                     * <p>挂载点 ID</p>
                      */
                     std::string m_mountTargetId;
                     bool m_mountTargetIdHasBeenSet;
 
                     /**
-                     * 挂载点 IP
+                     * <p>挂载点 IP</p>
                      */
                     std::string m_ipAddress;
                     bool m_ipAddressHasBeenSet;
 
                     /**
-                     * 挂载根目录
+                     * <p>挂载根目录</p>
                      */
                     std::string m_fSID;
                     bool m_fSIDHasBeenSet;
 
                     /**
-                     * 挂载点状态，包括creating：创建中；available：运行中；
-deleting：删除中；
-create_failed： 创建失败
+                     * <p>挂载点状态，包括creating：创建中；available：运行中；<br>deleting：删除中；<br>create_failed： 创建失败</p>
                      */
                     std::string m_lifeCycleState;
                     bool m_lifeCycleStateHasBeenSet;
 
                     /**
-                     * 网络类型，包括VPC,CCN
+                     * <p>网络类型，包括VPC,CCN</p>
                      */
                     std::string m_networkInterface;
                     bool m_networkInterfaceHasBeenSet;
 
                     /**
-                     * 私有网络 ID
+                     * <p>私有网络 ID</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 私有网络名称
+                     * <p>私有网络名称</p>
                      */
                     std::string m_vpcName;
                     bool m_vpcNameHasBeenSet;
 
                     /**
-                     * 子网 Id
+                     * <p>子网 Id</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 子网名称
+                     * <p>子网名称</p>
                      */
                     std::string m_subnetName;
                     bool m_subnetNameHasBeenSet;
 
                     /**
-                     * CFS Turbo使用的云联网ID
+                     * <p>CFS Turbo使用的云联网ID</p>
                      */
                     std::string m_ccnID;
                     bool m_ccnIDHasBeenSet;
 
                     /**
-                     * 云联网中CFS Turbo使用的网段
+                     * <p>云联网中CFS Turbo使用的网段</p>
                      */
                     std::string m_cidrBlock;
                     bool m_cidrBlockHasBeenSet;
+
+                    /**
+                     * <p>占用用户ip列表</p>
+                     */
+                    std::vector<std::string> m_serverList;
+                    bool m_serverListHasBeenSet;
+
+                    /**
+                     * <p>是否占用超过200个ip</p>
+                     */
+                    bool m_serverListTruncated;
+                    bool m_serverListTruncatedHasBeenSet;
 
                 };
             }

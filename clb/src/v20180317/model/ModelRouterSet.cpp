@@ -37,7 +37,9 @@ ModelRouterSet::ModelRouterSet() :
     m_tagsHasBeenSet(false),
     m_tradeStatusHasBeenSet(false),
     m_vipHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_bandwidthHasBeenSet(false),
+    m_eipAddressIdHasBeenSet(false)
 {
 }
 
@@ -243,6 +245,26 @@ CoreInternalOutcome ModelRouterSet::Deserialize(const rapidjson::Value &value)
         m_vpcIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Bandwidth") && !value["Bandwidth"].IsNull())
+    {
+        if (!value["Bandwidth"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelRouterSet.Bandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bandwidth = value["Bandwidth"].GetUint64();
+        m_bandwidthHasBeenSet = true;
+    }
+
+    if (value.HasMember("EipAddressId") && !value["EipAddressId"].IsNull())
+    {
+        if (!value["EipAddressId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelRouterSet.EipAddressId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eipAddressId = string(value["EipAddressId"].GetString());
+        m_eipAddressIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -399,6 +421,22 @@ void ModelRouterSet::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Bandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bandwidth, allocator);
+    }
+
+    if (m_eipAddressIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EipAddressId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eipAddressId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -674,5 +712,37 @@ void ModelRouterSet::SetVpcId(const string& _vpcId)
 bool ModelRouterSet::VpcIdHasBeenSet() const
 {
     return m_vpcIdHasBeenSet;
+}
+
+uint64_t ModelRouterSet::GetBandwidth() const
+{
+    return m_bandwidth;
+}
+
+void ModelRouterSet::SetBandwidth(const uint64_t& _bandwidth)
+{
+    m_bandwidth = _bandwidth;
+    m_bandwidthHasBeenSet = true;
+}
+
+bool ModelRouterSet::BandwidthHasBeenSet() const
+{
+    return m_bandwidthHasBeenSet;
+}
+
+string ModelRouterSet::GetEipAddressId() const
+{
+    return m_eipAddressId;
+}
+
+void ModelRouterSet::SetEipAddressId(const string& _eipAddressId)
+{
+    m_eipAddressId = _eipAddressId;
+    m_eipAddressIdHasBeenSet = true;
+}
+
+bool ModelRouterSet::EipAddressIdHasBeenSet() const
+{
+    return m_eipAddressIdHasBeenSet;
 }
 

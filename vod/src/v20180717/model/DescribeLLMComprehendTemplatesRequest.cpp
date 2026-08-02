@@ -25,6 +25,7 @@ using namespace std;
 DescribeLLMComprehendTemplatesRequest::DescribeLLMComprehendTemplatesRequest() :
     m_subAppIdHasBeenSet(false),
     m_definitionsHasBeenSet(false),
+    m_sortHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
 {
@@ -56,6 +57,15 @@ string DescribeLLMComprehendTemplatesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_sortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sort.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_offsetHasBeenSet)
@@ -112,6 +122,22 @@ void DescribeLLMComprehendTemplatesRequest::SetDefinitions(const vector<int64_t>
 bool DescribeLLMComprehendTemplatesRequest::DefinitionsHasBeenSet() const
 {
     return m_definitionsHasBeenSet;
+}
+
+SortBy DescribeLLMComprehendTemplatesRequest::GetSort() const
+{
+    return m_sort;
+}
+
+void DescribeLLMComprehendTemplatesRequest::SetSort(const SortBy& _sort)
+{
+    m_sort = _sort;
+    m_sortHasBeenSet = true;
+}
+
+bool DescribeLLMComprehendTemplatesRequest::SortHasBeenSet() const
+{
+    return m_sortHasBeenSet;
 }
 
 uint64_t DescribeLLMComprehendTemplatesRequest::GetOffset() const

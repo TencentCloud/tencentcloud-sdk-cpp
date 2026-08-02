@@ -21,10 +21,11 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/clb/v20180317/model/ClusterInfo.h>
+#include <tencentcloud/clb/v20180317/model/ClusterInfoInput.h>
 #include <tencentcloud/clb/v20180317/model/RateLimitConfigForModelRouter.h>
 #include <tencentcloud/clb/v20180317/model/RouterSettingWithoutFallBack.h>
 #include <tencentcloud/clb/v20180317/model/TagInfo.h>
+#include <tencentcloud/clb/v20180317/model/ModelRouterBillingConfigInput.h>
 
 
 namespace TencentCloud
@@ -89,15 +90,15 @@ namespace TencentCloud
                     bool BudgetIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>证书ID</p><p>入参限制：当Schema为HTTPS时，该参数必传</p>
-                     * @return CertId <p>证书ID</p><p>入参限制：当Schema为HTTPS时，该参数必传</p>
+                     * 获取<p>证书ID</p><p>入参限制：当Scheme为HTTPS时，该参数必传</p>
+                     * @return CertId <p>证书ID</p><p>入参限制：当Scheme为HTTPS时，该参数必传</p>
                      * 
                      */
                     std::string GetCertId() const;
 
                     /**
-                     * 设置<p>证书ID</p><p>入参限制：当Schema为HTTPS时，该参数必传</p>
-                     * @param _certId <p>证书ID</p><p>入参限制：当Schema为HTTPS时，该参数必传</p>
+                     * 设置<p>证书ID</p><p>入参限制：当Scheme为HTTPS时，该参数必传</p>
+                     * @param _certId <p>证书ID</p><p>入参限制：当Scheme为HTTPS时，该参数必传</p>
                      * 
                      */
                     void SetCertId(const std::string& _certId);
@@ -114,14 +115,14 @@ namespace TencentCloud
                      * @return ClusterInfo <p>集群信息</p>
                      * 
                      */
-                    ClusterInfo GetClusterInfo() const;
+                    ClusterInfoInput GetClusterInfo() const;
 
                     /**
                      * 设置<p>集群信息</p>
                      * @param _clusterInfo <p>集群信息</p>
                      * 
                      */
-                    void SetClusterInfo(const ClusterInfo& _clusterInfo);
+                    void SetClusterInfo(const ClusterInfoInput& _clusterInfo);
 
                     /**
                      * 判断参数 ClusterInfo 是否已赋值
@@ -319,6 +320,48 @@ namespace TencentCloud
                      */
                     bool VpcIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>模型路由实例计费信息</p>
+                     * @return ModelRouterBillingConfig <p>模型路由实例计费信息</p>
+                     * 
+                     */
+                    ModelRouterBillingConfigInput GetModelRouterBillingConfig() const;
+
+                    /**
+                     * 设置<p>模型路由实例计费信息</p>
+                     * @param _modelRouterBillingConfig <p>模型路由实例计费信息</p>
+                     * 
+                     */
+                    void SetModelRouterBillingConfig(const ModelRouterBillingConfigInput& _modelRouterBillingConfig);
+
+                    /**
+                     * 判断参数 ModelRouterBillingConfig 是否已赋值
+                     * @return ModelRouterBillingConfig 是否已赋值
+                     * 
+                     */
+                    bool ModelRouterBillingConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>客户端Token，用于保证请求的幂等性。  从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符。</p>
+                     * @return ClientToken <p>客户端Token，用于保证请求的幂等性。  从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符。</p>
+                     * 
+                     */
+                    std::string GetClientToken() const;
+
+                    /**
+                     * 设置<p>客户端Token，用于保证请求的幂等性。  从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符。</p>
+                     * @param _clientToken <p>客户端Token，用于保证请求的幂等性。  从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符。</p>
+                     * 
+                     */
+                    void SetClientToken(const std::string& _clientToken);
+
+                    /**
+                     * 判断参数 ClientToken 是否已赋值
+                     * @return ClientToken 是否已赋值
+                     * 
+                     */
+                    bool ClientTokenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -334,7 +377,7 @@ namespace TencentCloud
                     bool m_budgetIdHasBeenSet;
 
                     /**
-                     * <p>证书ID</p><p>入参限制：当Schema为HTTPS时，该参数必传</p>
+                     * <p>证书ID</p><p>入参限制：当Scheme为HTTPS时，该参数必传</p>
                      */
                     std::string m_certId;
                     bool m_certIdHasBeenSet;
@@ -342,7 +385,7 @@ namespace TencentCloud
                     /**
                      * <p>集群信息</p>
                      */
-                    ClusterInfo m_clusterInfo;
+                    ClusterInfoInput m_clusterInfo;
                     bool m_clusterInfoHasBeenSet;
 
                     /**
@@ -398,6 +441,18 @@ namespace TencentCloud
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * <p>模型路由实例计费信息</p>
+                     */
+                    ModelRouterBillingConfigInput m_modelRouterBillingConfig;
+                    bool m_modelRouterBillingConfigHasBeenSet;
+
+                    /**
+                     * <p>客户端Token，用于保证请求的幂等性。  从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符。</p>
+                     */
+                    std::string m_clientToken;
+                    bool m_clientTokenHasBeenSet;
 
                 };
             }

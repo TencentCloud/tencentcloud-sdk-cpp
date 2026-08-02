@@ -30,6 +30,7 @@ MPSSmartSubtitleTemplate::MPSSmartSubtitleTemplate() :
     m_translateDstLanguageHasBeenSet(false),
     m_processTypeHasBeenSet(false),
     m_selectingSubtitleAreasConfigHasBeenSet(false),
+    m_subtitleEmbedIdHasBeenSet(false),
     m_speakerModeHasBeenSet(false),
     m_speakerLabelHasBeenSet(false)
 {
@@ -137,6 +138,16 @@ CoreInternalOutcome MPSSmartSubtitleTemplate::Deserialize(const rapidjson::Value
         m_selectingSubtitleAreasConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitleEmbedId") && !value["SubtitleEmbedId"].IsNull())
+    {
+        if (!value["SubtitleEmbedId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MPSSmartSubtitleTemplate.SubtitleEmbedId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subtitleEmbedId = value["SubtitleEmbedId"].GetInt64();
+        m_subtitleEmbedIdHasBeenSet = true;
+    }
+
     if (value.HasMember("SpeakerMode") && !value["SpeakerMode"].IsNull())
     {
         if (!value["SpeakerMode"].IsInt64())
@@ -235,6 +246,14 @@ void MPSSmartSubtitleTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_selectingSubtitleAreasConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_subtitleEmbedIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleEmbedId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subtitleEmbedId, allocator);
     }
 
     if (m_speakerModeHasBeenSet)
@@ -398,6 +417,22 @@ void MPSSmartSubtitleTemplate::SetSelectingSubtitleAreasConfig(const MPSSelectin
 bool MPSSmartSubtitleTemplate::SelectingSubtitleAreasConfigHasBeenSet() const
 {
     return m_selectingSubtitleAreasConfigHasBeenSet;
+}
+
+int64_t MPSSmartSubtitleTemplate::GetSubtitleEmbedId() const
+{
+    return m_subtitleEmbedId;
+}
+
+void MPSSmartSubtitleTemplate::SetSubtitleEmbedId(const int64_t& _subtitleEmbedId)
+{
+    m_subtitleEmbedId = _subtitleEmbedId;
+    m_subtitleEmbedIdHasBeenSet = true;
+}
+
+bool MPSSmartSubtitleTemplate::SubtitleEmbedIdHasBeenSet() const
+{
+    return m_subtitleEmbedIdHasBeenSet;
 }
 
 int64_t MPSSmartSubtitleTemplate::GetSpeakerMode() const

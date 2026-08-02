@@ -38,7 +38,8 @@ DisplaySubDomain::DisplaySubDomain() :
     m_lossRateHasBeenSet(false),
     m_dnsTypeHasBeenSet(false),
     m_dnsValueHasBeenSet(false),
-    m_aggregationCountHasBeenSet(false)
+    m_aggregationCountHasBeenSet(false),
+    m_availabilityTagHasBeenSet(false)
 {
 }
 
@@ -234,6 +235,16 @@ CoreInternalOutcome DisplaySubDomain::Deserialize(const rapidjson::Value &value)
         m_aggregationCountHasBeenSet = true;
     }
 
+    if (value.HasMember("AvailabilityTag") && !value["AvailabilityTag"].IsNull())
+    {
+        if (!value["AvailabilityTag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplaySubDomain.AvailabilityTag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_availabilityTag = string(value["AvailabilityTag"].GetString());
+        m_availabilityTagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -384,6 +395,14 @@ void DisplaySubDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "AggregationCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_aggregationCount, allocator);
+    }
+
+    if (m_availabilityTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailabilityTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_availabilityTag.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -675,5 +694,21 @@ void DisplaySubDomain::SetAggregationCount(const int64_t& _aggregationCount)
 bool DisplaySubDomain::AggregationCountHasBeenSet() const
 {
     return m_aggregationCountHasBeenSet;
+}
+
+string DisplaySubDomain::GetAvailabilityTag() const
+{
+    return m_availabilityTag;
+}
+
+void DisplaySubDomain::SetAvailabilityTag(const string& _availabilityTag)
+{
+    m_availabilityTag = _availabilityTag;
+    m_availabilityTagHasBeenSet = true;
+}
+
+bool DisplaySubDomain::AvailabilityTagHasBeenSet() const
+{
+    return m_availabilityTagHasBeenSet;
 }
 

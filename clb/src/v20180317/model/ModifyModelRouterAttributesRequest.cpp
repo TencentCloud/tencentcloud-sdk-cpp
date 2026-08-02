@@ -27,7 +27,8 @@ ModifyModelRouterAttributesRequest::ModifyModelRouterAttributesRequest() :
     m_certIdHasBeenSet(false),
     m_modelRouterNameHasBeenSet(false),
     m_rateLimitConfigHasBeenSet(false),
-    m_routerSettingHasBeenSet(false)
+    m_routerSettingHasBeenSet(false),
+    m_bandwidthHasBeenSet(false)
 {
 }
 
@@ -78,6 +79,14 @@ string ModifyModelRouterAttributesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_routerSetting.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_bandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Bandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bandwidth, allocator);
     }
 
 
@@ -166,6 +175,22 @@ void ModifyModelRouterAttributesRequest::SetRouterSetting(const RouterSettingWit
 bool ModifyModelRouterAttributesRequest::RouterSettingHasBeenSet() const
 {
     return m_routerSettingHasBeenSet;
+}
+
+uint64_t ModifyModelRouterAttributesRequest::GetBandwidth() const
+{
+    return m_bandwidth;
+}
+
+void ModifyModelRouterAttributesRequest::SetBandwidth(const uint64_t& _bandwidth)
+{
+    m_bandwidth = _bandwidth;
+    m_bandwidthHasBeenSet = true;
+}
+
+bool ModifyModelRouterAttributesRequest::BandwidthHasBeenSet() const
+{
+    return m_bandwidthHasBeenSet;
 }
 
 
