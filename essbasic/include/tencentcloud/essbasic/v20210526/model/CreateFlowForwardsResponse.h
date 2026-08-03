@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取失败的合同id以及错误详情
-                     * @return FailedFlows 失败的合同id以及错误详情
+                     * 获取<p>失败的合同id以及错误详情</p>
+                     * @return FailedFlows <p>失败的合同id以及错误详情</p>
                      * 
                      */
                     std::vector<FlowForwardResult> GetFailedFlows() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool FailedFlowsHasBeenSet() const;
 
                     /**
-                     * 获取成功的合同id
-                     * @return SuccessFlows 成功的合同id
+                     * 获取<p>成功的合同id</p>
+                     * @return SuccessFlows <p>成功的合同id</p>
                      * 
                      */
                     std::vector<std::string> GetSuccessFlows() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 失败的合同id以及错误详情
+                     * <p>失败的合同id以及错误详情</p>
                      */
                     std::vector<FlowForwardResult> m_failedFlows;
                     bool m_failedFlowsHasBeenSet;
 
                     /**
-                     * 成功的合同id
+                     * <p>成功的合同id</p>
                      */
                     std::vector<std::string> m_successFlows;
                     bool m_successFlowsHasBeenSet;

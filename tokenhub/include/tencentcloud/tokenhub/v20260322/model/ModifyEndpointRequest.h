@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取自动调整配额
-                     * @return AutoAdjustQuota 自动调整配额
+                     * 获取<p>自动调整配额</p>
+                     * @return AutoAdjustQuota <p>自动调整配额</p>
                      * 
                      */
                     int64_t GetAutoAdjustQuota() const;
 
                     /**
-                     * 设置自动调整配额
-                     * @param _autoAdjustQuota 自动调整配额
+                     * 设置<p>自动调整配额</p>
+                     * @param _autoAdjustQuota <p>自动调整配额</p>
                      * 
                      */
                     void SetAutoAdjustQuota(const int64_t& _autoAdjustQuota);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 自动调整配额
+                     * <p>自动调整配额</p>
                      */
                     int64_t m_autoAdjustQuota;
                     bool m_autoAdjustQuotaHasBeenSet;

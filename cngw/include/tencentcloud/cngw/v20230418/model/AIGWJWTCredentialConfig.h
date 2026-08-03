@@ -47,27 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>JWT 消费者标识，iss claim</p>
-                     * @return Key <p>JWT 消费者标识，iss claim</p>
-                     * 
-                     */
-                    std::string GetKey() const;
-
-                    /**
-                     * 设置<p>JWT 消费者标识，iss claim</p>
-                     * @param _key <p>JWT 消费者标识，iss claim</p>
-                     * 
-                     */
-                    void SetKey(const std::string& _key);
-
-                    /**
-                     * 判断参数 Key 是否已赋值
-                     * @return Key 是否已赋值
-                     * 
-                     */
-                    bool KeyHasBeenSet() const;
-
-                    /**
                      * 获取<p>签名算法，取值：HS256 HS384 HS512 RS256 RS384 RS512 ES256 ES384 ES512</p>
                      * @return Algorithm <p>签名算法，取值：HS256 HS384 HS512 RS256 RS384 RS512 ES256 ES384 ES512</p>
                      * 
@@ -89,25 +68,25 @@ namespace TencentCloud
                     bool AlgorithmHasBeenSet() const;
 
                     /**
-                     * 获取<p>HS 对称密钥，仅 Algorithm 为 HS256/HS384/HS512 时必填；RS/ES* 时留空</p>
-                     * @return Secret <p>HS 对称密钥，仅 Algorithm 为 HS256/HS384/HS512 时必填；RS/ES* 时留空</p>
+                     * 获取<p>JWT 消费者标识，iss claim</p>
+                     * @return Key <p>JWT 消费者标识，iss claim</p>
                      * 
                      */
-                    std::string GetSecret() const;
+                    std::string GetKey() const;
 
                     /**
-                     * 设置<p>HS 对称密钥，仅 Algorithm 为 HS256/HS384/HS512 时必填；RS/ES* 时留空</p>
-                     * @param _secret <p>HS 对称密钥，仅 Algorithm 为 HS256/HS384/HS512 时必填；RS/ES* 时留空</p>
+                     * 设置<p>JWT 消费者标识，iss claim</p>
+                     * @param _key <p>JWT 消费者标识，iss claim</p>
                      * 
                      */
-                    void SetSecret(const std::string& _secret);
+                    void SetKey(const std::string& _key);
 
                     /**
-                     * 判断参数 Secret 是否已赋值
-                     * @return Secret 是否已赋值
+                     * 判断参数 Key 是否已赋值
+                     * @return Key 是否已赋值
                      * 
                      */
-                    bool SecretHasBeenSet() const;
+                    bool KeyHasBeenSet() const;
 
                     /**
                      * 获取<p>RS/ES PEM 格式公钥，仅 Algorithm 为 RS256/RS384/RS512/ES256/ES384/ES512 时必填；HS* 时留空</p>
@@ -130,13 +109,28 @@ namespace TencentCloud
                      */
                     bool RSAPublicKeyHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取<p>HS 对称密钥，仅 Algorithm 为 HS256/HS384/HS512 时必填；RS/ES* 时留空</p>
+                     * @return Secret <p>HS 对称密钥，仅 Algorithm 为 HS256/HS384/HS512 时必填；RS/ES* 时留空</p>
+                     * 
+                     */
+                    std::string GetSecret() const;
 
                     /**
-                     * <p>JWT 消费者标识，iss claim</p>
+                     * 设置<p>HS 对称密钥，仅 Algorithm 为 HS256/HS384/HS512 时必填；RS/ES* 时留空</p>
+                     * @param _secret <p>HS 对称密钥，仅 Algorithm 为 HS256/HS384/HS512 时必填；RS/ES* 时留空</p>
+                     * 
                      */
-                    std::string m_key;
-                    bool m_keyHasBeenSet;
+                    void SetSecret(const std::string& _secret);
+
+                    /**
+                     * 判断参数 Secret 是否已赋值
+                     * @return Secret 是否已赋值
+                     * 
+                     */
+                    bool SecretHasBeenSet() const;
+
+                private:
 
                     /**
                      * <p>签名算法，取值：HS256 HS384 HS512 RS256 RS384 RS512 ES256 ES384 ES512</p>
@@ -145,16 +139,22 @@ namespace TencentCloud
                     bool m_algorithmHasBeenSet;
 
                     /**
-                     * <p>HS 对称密钥，仅 Algorithm 为 HS256/HS384/HS512 时必填；RS/ES* 时留空</p>
+                     * <p>JWT 消费者标识，iss claim</p>
                      */
-                    std::string m_secret;
-                    bool m_secretHasBeenSet;
+                    std::string m_key;
+                    bool m_keyHasBeenSet;
 
                     /**
                      * <p>RS/ES PEM 格式公钥，仅 Algorithm 为 RS256/RS384/RS512/ES256/ES384/ES512 时必填；HS* 时留空</p>
                      */
                     std::string m_rSAPublicKey;
                     bool m_rSAPublicKeyHasBeenSet;
+
+                    /**
+                     * <p>HS 对称密钥，仅 Algorithm 为 HS256/HS384/HS512 时必填；RS/ES* 时留空</p>
+                     */
+                    std::string m_secret;
+                    bool m_secretHasBeenSet;
 
                 };
             }

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取
-                     * @return AppId 
+                     * 获取<p>应用id</p>
+                     * @return AppId <p>应用id</p>
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
-                     * 设置
-                     * @param _appId 
+                     * 设置<p>应用id</p>
+                     * @param _appId <p>应用id</p>
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return ConversationId 
+                     * 获取<p>会话id</p>
+                     * @return ConversationId <p>会话id</p>
                      * 
                      */
                     std::string GetConversationId() const;
 
                     /**
-                     * 设置
-                     * @param _conversationId 
+                     * 设置<p>会话id</p>
+                     * @param _conversationId <p>会话id</p>
                      * 
                      */
                     void SetConversationId(const std::string& _conversationId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ConversationIdHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return CreatedAt 
+                     * 获取<p>触发器创建时间</p>
+                     * @return CreatedAt <p>触发器创建时间</p>
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
-                     * 设置
-                     * @param _createdAt 
+                     * 设置<p>触发器创建时间</p>
+                     * @param _createdAt <p>触发器创建时间</p>
                      * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool CreatedAtHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return FinishedAt 
+                     * 获取<p>结束时间</p>
+                     * @return FinishedAt <p>结束时间</p>
                      * 
                      */
                     std::string GetFinishedAt() const;
 
                     /**
-                     * 设置
-                     * @param _finishedAt 
+                     * 设置<p>结束时间</p>
+                     * @param _finishedAt <p>结束时间</p>
                      * 
                      */
                     void SetFinishedAt(const std::string& _finishedAt);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool FinishedAtHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return InstanceId 
+                     * 获取<p>触发器运行实例id</p>
+                     * @return InstanceId <p>触发器运行实例id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置
-                     * @param _instanceId 
+                     * 设置<p>触发器运行实例id</p>
+                     * @param _instanceId <p>触发器运行实例id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return RequestId 
+                     * 获取<p>请求ID</p>
+                     * @return RequestId <p>请求ID</p>
                      * 
                      */
                     std::string GetRequestId() const;
 
                     /**
-                     * 设置
-                     * @param _requestId 
+                     * 设置<p>请求ID</p>
+                     * @param _requestId <p>请求ID</p>
                      * 
                      */
                     void SetRequestId(const std::string& _requestId);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool RequestIdHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return ResultCode 
+                     * 获取<p>结果码</p>
+                     * @return ResultCode <p>结果码</p>
                      * 
                      */
                     std::string GetResultCode() const;
 
                     /**
-                     * 设置
-                     * @param _resultCode 
+                     * 设置<p>结果码</p>
+                     * @param _resultCode <p>结果码</p>
                      * 
                      */
                     void SetResultCode(const std::string& _resultCode);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool ResultCodeHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return ResultSummary 
+                     * 获取<p>结果摘要</p>
+                     * @return ResultSummary <p>结果摘要</p>
                      * 
                      */
                     std::string GetResultSummary() const;
 
                     /**
-                     * 设置
-                     * @param _resultSummary 
+                     * 设置<p>结果摘要</p>
+                     * @param _resultSummary <p>结果摘要</p>
                      * 
                      */
                     void SetResultSummary(const std::string& _resultSummary);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool ResultSummaryHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return RunId 
+                     * 获取<p>单次对话id</p>
+                     * @return RunId <p>单次对话id</p>
                      * 
                      */
                     std::string GetRunId() const;
 
                     /**
-                     * 设置
-                     * @param _runId 
+                     * 设置<p>单次对话id</p>
+                     * @param _runId <p>单次对话id</p>
                      * 
                      */
                     void SetRunId(const std::string& _runId);
@@ -236,15 +236,36 @@ namespace TencentCloud
                     bool RunIdHasBeenSet() const;
 
                     /**
-                     * 获取<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_INSTANCE_SOURCE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_INSTANCE_SOURCE_APP_TRIGGER</td><td>1</td><td>来源于应用触发器</td></tr></table>
-                     * @return Source <table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_INSTANCE_SOURCE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_INSTANCE_SOURCE_APP_TRIGGER</td><td>1</td><td>来源于应用触发器</td></tr></table>
+                     * 获取<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>
+                     * @return Scope <table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>
+                     * 
+                     */
+                    int64_t GetScope() const;
+
+                    /**
+                     * 设置<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>
+                     * @param _scope <table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>
+                     * 
+                     */
+                    void SetScope(const int64_t& _scope);
+
+                    /**
+                     * 判断参数 Scope 是否已赋值
+                     * @return Scope 是否已赋值
+                     * 
+                     */
+                    bool ScopeHasBeenSet() const;
+
+                    /**
+                     * 获取<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_INSTANCE_SOURCE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_INSTANCE_SOURCE_APP_TRIGGER</td><td>1</td><td>来源于应用触发器</td></tr></tbody></table>
+                     * @return Source <table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_INSTANCE_SOURCE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_INSTANCE_SOURCE_APP_TRIGGER</td><td>1</td><td>来源于应用触发器</td></tr></tbody></table>
                      * 
                      */
                     int64_t GetSource() const;
 
                     /**
-                     * 设置<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_INSTANCE_SOURCE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_INSTANCE_SOURCE_APP_TRIGGER</td><td>1</td><td>来源于应用触发器</td></tr></table>
-                     * @param _source <table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_INSTANCE_SOURCE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_INSTANCE_SOURCE_APP_TRIGGER</td><td>1</td><td>来源于应用触发器</td></tr></table>
+                     * 设置<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_INSTANCE_SOURCE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_INSTANCE_SOURCE_APP_TRIGGER</td><td>1</td><td>来源于应用触发器</td></tr></tbody></table>
+                     * @param _source <table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_INSTANCE_SOURCE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_INSTANCE_SOURCE_APP_TRIGGER</td><td>1</td><td>来源于应用触发器</td></tr></tbody></table>
                      * 
                      */
                     void SetSource(const int64_t& _source);
@@ -257,15 +278,15 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return StartedAt 
+                     * 获取<p>触发器开始执行时间</p>
+                     * @return StartedAt <p>触发器开始执行时间</p>
                      * 
                      */
                     std::string GetStartedAt() const;
 
                     /**
-                     * 设置
-                     * @param _startedAt 
+                     * 设置<p>触发器开始执行时间</p>
+                     * @param _startedAt <p>触发器开始执行时间</p>
                      * 
                      */
                     void SetStartedAt(const std::string& _startedAt);
@@ -278,15 +299,15 @@ namespace TencentCloud
                     bool StartedAtHasBeenSet() const;
 
                     /**
-                     * 获取<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>TIMER_RUN_STATUS_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>TIMER_RUN_STATUS_PENDING</td><td>1</td><td>等待执行</td></tr><tr><td>TIMER_RUN_STATUS_RUNNING</td><td>2</td><td>执行中</td></tr><tr><td>TIMER_RUN_STATUS_RETRY_WAIT</td><td>3</td><td>等待重试</td></tr><tr><td>TIMER_RUN_STATUS_SUCCESS</td><td>4</td><td>成功</td></tr><tr><td>TIMER_RUN_STATUS_DEAD</td><td>5</td><td>失败终态 (重试耗尽 / 不可重试)</td></tr><tr><td>TIMER_RUN_STATUS_CANCELLED</td><td>6</td><td>被任务暂停/删除/修改取消</td></tr></table>
-                     * @return Status <table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>TIMER_RUN_STATUS_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>TIMER_RUN_STATUS_PENDING</td><td>1</td><td>等待执行</td></tr><tr><td>TIMER_RUN_STATUS_RUNNING</td><td>2</td><td>执行中</td></tr><tr><td>TIMER_RUN_STATUS_RETRY_WAIT</td><td>3</td><td>等待重试</td></tr><tr><td>TIMER_RUN_STATUS_SUCCESS</td><td>4</td><td>成功</td></tr><tr><td>TIMER_RUN_STATUS_DEAD</td><td>5</td><td>失败终态 (重试耗尽 / 不可重试)</td></tr><tr><td>TIMER_RUN_STATUS_CANCELLED</td><td>6</td><td>被任务暂停/删除/修改取消</td></tr></table>
+                     * 获取<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>TIMER_RUN_STATUS_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>TIMER_RUN_STATUS_PENDING</td><td>1</td><td>等待执行</td></tr><tr><td>TIMER_RUN_STATUS_RUNNING</td><td>2</td><td>执行中</td></tr><tr><td>TIMER_RUN_STATUS_RETRY_WAIT</td><td>3</td><td>等待重试</td></tr><tr><td>TIMER_RUN_STATUS_SUCCESS</td><td>4</td><td>成功</td></tr><tr><td>TIMER_RUN_STATUS_DEAD</td><td>5</td><td>失败终态 (重试耗尽 / 不可重试)</td></tr><tr><td>TIMER_RUN_STATUS_CANCELLED</td><td>6</td><td>被任务暂停/删除/修改取消</td></tr></tbody></table>
+                     * @return Status <table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>TIMER_RUN_STATUS_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>TIMER_RUN_STATUS_PENDING</td><td>1</td><td>等待执行</td></tr><tr><td>TIMER_RUN_STATUS_RUNNING</td><td>2</td><td>执行中</td></tr><tr><td>TIMER_RUN_STATUS_RETRY_WAIT</td><td>3</td><td>等待重试</td></tr><tr><td>TIMER_RUN_STATUS_SUCCESS</td><td>4</td><td>成功</td></tr><tr><td>TIMER_RUN_STATUS_DEAD</td><td>5</td><td>失败终态 (重试耗尽 / 不可重试)</td></tr><tr><td>TIMER_RUN_STATUS_CANCELLED</td><td>6</td><td>被任务暂停/删除/修改取消</td></tr></tbody></table>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>TIMER_RUN_STATUS_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>TIMER_RUN_STATUS_PENDING</td><td>1</td><td>等待执行</td></tr><tr><td>TIMER_RUN_STATUS_RUNNING</td><td>2</td><td>执行中</td></tr><tr><td>TIMER_RUN_STATUS_RETRY_WAIT</td><td>3</td><td>等待重试</td></tr><tr><td>TIMER_RUN_STATUS_SUCCESS</td><td>4</td><td>成功</td></tr><tr><td>TIMER_RUN_STATUS_DEAD</td><td>5</td><td>失败终态 (重试耗尽 / 不可重试)</td></tr><tr><td>TIMER_RUN_STATUS_CANCELLED</td><td>6</td><td>被任务暂停/删除/修改取消</td></tr></table>
-                     * @param _status <table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>TIMER_RUN_STATUS_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>TIMER_RUN_STATUS_PENDING</td><td>1</td><td>等待执行</td></tr><tr><td>TIMER_RUN_STATUS_RUNNING</td><td>2</td><td>执行中</td></tr><tr><td>TIMER_RUN_STATUS_RETRY_WAIT</td><td>3</td><td>等待重试</td></tr><tr><td>TIMER_RUN_STATUS_SUCCESS</td><td>4</td><td>成功</td></tr><tr><td>TIMER_RUN_STATUS_DEAD</td><td>5</td><td>失败终态 (重试耗尽 / 不可重试)</td></tr><tr><td>TIMER_RUN_STATUS_CANCELLED</td><td>6</td><td>被任务暂停/删除/修改取消</td></tr></table>
+                     * 设置<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>TIMER_RUN_STATUS_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>TIMER_RUN_STATUS_PENDING</td><td>1</td><td>等待执行</td></tr><tr><td>TIMER_RUN_STATUS_RUNNING</td><td>2</td><td>执行中</td></tr><tr><td>TIMER_RUN_STATUS_RETRY_WAIT</td><td>3</td><td>等待重试</td></tr><tr><td>TIMER_RUN_STATUS_SUCCESS</td><td>4</td><td>成功</td></tr><tr><td>TIMER_RUN_STATUS_DEAD</td><td>5</td><td>失败终态 (重试耗尽 / 不可重试)</td></tr><tr><td>TIMER_RUN_STATUS_CANCELLED</td><td>6</td><td>被任务暂停/删除/修改取消</td></tr></tbody></table>
+                     * @param _status <table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>TIMER_RUN_STATUS_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>TIMER_RUN_STATUS_PENDING</td><td>1</td><td>等待执行</td></tr><tr><td>TIMER_RUN_STATUS_RUNNING</td><td>2</td><td>执行中</td></tr><tr><td>TIMER_RUN_STATUS_RETRY_WAIT</td><td>3</td><td>等待重试</td></tr><tr><td>TIMER_RUN_STATUS_SUCCESS</td><td>4</td><td>成功</td></tr><tr><td>TIMER_RUN_STATUS_DEAD</td><td>5</td><td>失败终态 (重试耗尽 / 不可重试)</td></tr><tr><td>TIMER_RUN_STATUS_CANCELLED</td><td>6</td><td>被任务暂停/删除/修改取消</td></tr></tbody></table>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -299,15 +320,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return TraceId 
+                     * 获取<p>TraceId，用于日志记录</p>
+                     * @return TraceId <p>TraceId，用于日志记录</p>
                      * 
                      */
                     std::string GetTraceId() const;
 
                     /**
-                     * 设置
-                     * @param _traceId 
+                     * 设置<p>TraceId，用于日志记录</p>
+                     * @param _traceId <p>TraceId，用于日志记录</p>
                      * 
                      */
                     void SetTraceId(const std::string& _traceId);
@@ -320,15 +341,15 @@ namespace TencentCloud
                     bool TraceIdHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return TriggerId 
+                     * 获取<p>触发器id</p>
+                     * @return TriggerId <p>触发器id</p>
                      * 
                      */
                     std::string GetTriggerId() const;
 
                     /**
-                     * 设置
-                     * @param _triggerId 
+                     * 设置<p>触发器id</p>
+                     * @param _triggerId <p>触发器id</p>
                      * 
                      */
                     void SetTriggerId(const std::string& _triggerId);
@@ -341,15 +362,36 @@ namespace TencentCloud
                     bool TriggerIdHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return WorkflowRunId 
+                     * 获取<p>访客ID</p>
+                     * @return UserId <p>访客ID</p>
+                     * 
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 设置<p>访客ID</p>
+                     * @param _userId <p>访客ID</p>
+                     * 
+                     */
+                    void SetUserId(const std::string& _userId);
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     * 
+                     */
+                    bool UserIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>工作流运行ID</p>
+                     * @return WorkflowRunId <p>工作流运行ID</p>
                      * 
                      */
                     std::string GetWorkflowRunId() const;
 
                     /**
-                     * 设置
-                     * @param _workflowRunId 
+                     * 设置<p>工作流运行ID</p>
+                     * @param _workflowRunId <p>工作流运行ID</p>
                      * 
                      */
                     void SetWorkflowRunId(const std::string& _workflowRunId);
@@ -364,91 +406,103 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 
+                     * <p>应用id</p>
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 
+                     * <p>会话id</p>
                      */
                     std::string m_conversationId;
                     bool m_conversationIdHasBeenSet;
 
                     /**
-                     * 
+                     * <p>触发器创建时间</p>
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
-                     * 
+                     * <p>结束时间</p>
                      */
                     std::string m_finishedAt;
                     bool m_finishedAtHasBeenSet;
 
                     /**
-                     * 
+                     * <p>触发器运行实例id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 
+                     * <p>请求ID</p>
                      */
                     std::string m_requestId;
                     bool m_requestIdHasBeenSet;
 
                     /**
-                     * 
+                     * <p>结果码</p>
                      */
                     std::string m_resultCode;
                     bool m_resultCodeHasBeenSet;
 
                     /**
-                     * 
+                     * <p>结果摘要</p>
                      */
                     std::string m_resultSummary;
                     bool m_resultSummaryHasBeenSet;
 
                     /**
-                     * 
+                     * <p>单次对话id</p>
                      */
                     std::string m_runId;
                     bool m_runIdHasBeenSet;
 
                     /**
-                     * <table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_INSTANCE_SOURCE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_INSTANCE_SOURCE_APP_TRIGGER</td><td>1</td><td>来源于应用触发器</td></tr></table>
+                     * <table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>
+                     */
+                    int64_t m_scope;
+                    bool m_scopeHasBeenSet;
+
+                    /**
+                     * <table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_INSTANCE_SOURCE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_INSTANCE_SOURCE_APP_TRIGGER</td><td>1</td><td>来源于应用触发器</td></tr></tbody></table>
                      */
                     int64_t m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 
+                     * <p>触发器开始执行时间</p>
                      */
                     std::string m_startedAt;
                     bool m_startedAtHasBeenSet;
 
                     /**
-                     * <table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>TIMER_RUN_STATUS_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>TIMER_RUN_STATUS_PENDING</td><td>1</td><td>等待执行</td></tr><tr><td>TIMER_RUN_STATUS_RUNNING</td><td>2</td><td>执行中</td></tr><tr><td>TIMER_RUN_STATUS_RETRY_WAIT</td><td>3</td><td>等待重试</td></tr><tr><td>TIMER_RUN_STATUS_SUCCESS</td><td>4</td><td>成功</td></tr><tr><td>TIMER_RUN_STATUS_DEAD</td><td>5</td><td>失败终态 (重试耗尽 / 不可重试)</td></tr><tr><td>TIMER_RUN_STATUS_CANCELLED</td><td>6</td><td>被任务暂停/删除/修改取消</td></tr></table>
+                     * <table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>TIMER_RUN_STATUS_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>TIMER_RUN_STATUS_PENDING</td><td>1</td><td>等待执行</td></tr><tr><td>TIMER_RUN_STATUS_RUNNING</td><td>2</td><td>执行中</td></tr><tr><td>TIMER_RUN_STATUS_RETRY_WAIT</td><td>3</td><td>等待重试</td></tr><tr><td>TIMER_RUN_STATUS_SUCCESS</td><td>4</td><td>成功</td></tr><tr><td>TIMER_RUN_STATUS_DEAD</td><td>5</td><td>失败终态 (重试耗尽 / 不可重试)</td></tr><tr><td>TIMER_RUN_STATUS_CANCELLED</td><td>6</td><td>被任务暂停/删除/修改取消</td></tr></tbody></table>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 
+                     * <p>TraceId，用于日志记录</p>
                      */
                     std::string m_traceId;
                     bool m_traceIdHasBeenSet;
 
                     /**
-                     * 
+                     * <p>触发器id</p>
                      */
                     std::string m_triggerId;
                     bool m_triggerIdHasBeenSet;
 
                     /**
-                     * 
+                     * <p>访客ID</p>
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
+
+                    /**
+                     * <p>工作流运行ID</p>
                      */
                     std::string m_workflowRunId;
                     bool m_workflowRunIdHasBeenSet;

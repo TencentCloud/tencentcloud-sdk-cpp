@@ -23,7 +23,8 @@ using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
 ResumeSandboxInstanceRequest::ResumeSandboxInstanceRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_timeoutHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string ResumeSandboxInstanceRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Timeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_timeout.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void ResumeSandboxInstanceRequest::SetInstanceId(const string& _instanceId)
 bool ResumeSandboxInstanceRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string ResumeSandboxInstanceRequest::GetTimeout() const
+{
+    return m_timeout;
+}
+
+void ResumeSandboxInstanceRequest::SetTimeout(const string& _timeout)
+{
+    m_timeout = _timeout;
+    m_timeoutHasBeenSet = true;
+}
+
+bool ResumeSandboxInstanceRequest::TimeoutHasBeenSet() const
+{
+    return m_timeoutHasBeenSet;
 }
 
 

@@ -27,7 +27,9 @@ DescribeAppTriggerRunLogListRequest::DescribeAppTriggerRunLogListRequest() :
     m_filterListHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
-    m_triggerIdHasBeenSet(false)
+    m_scopeHasBeenSet(false),
+    m_triggerIdHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -77,12 +79,28 @@ string DescribeAppTriggerRunLogListRequest::ToJsonString() const
         d.AddMember(iKey, m_pageSize, allocator);
     }
 
+    if (m_scopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scope";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_scope, allocator);
+    }
+
     if (m_triggerIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TriggerId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_triggerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -157,6 +175,22 @@ bool DescribeAppTriggerRunLogListRequest::PageSizeHasBeenSet() const
     return m_pageSizeHasBeenSet;
 }
 
+int64_t DescribeAppTriggerRunLogListRequest::GetScope() const
+{
+    return m_scope;
+}
+
+void DescribeAppTriggerRunLogListRequest::SetScope(const int64_t& _scope)
+{
+    m_scope = _scope;
+    m_scopeHasBeenSet = true;
+}
+
+bool DescribeAppTriggerRunLogListRequest::ScopeHasBeenSet() const
+{
+    return m_scopeHasBeenSet;
+}
+
 string DescribeAppTriggerRunLogListRequest::GetTriggerId() const
 {
     return m_triggerId;
@@ -171,6 +205,22 @@ void DescribeAppTriggerRunLogListRequest::SetTriggerId(const string& _triggerId)
 bool DescribeAppTriggerRunLogListRequest::TriggerIdHasBeenSet() const
 {
     return m_triggerIdHasBeenSet;
+}
+
+string DescribeAppTriggerRunLogListRequest::GetUserId() const
+{
+    return m_userId;
+}
+
+void DescribeAppTriggerRunLogListRequest::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool DescribeAppTriggerRunLogListRequest::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 
 

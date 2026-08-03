@@ -24,9 +24,11 @@ using namespace std;
 
 ModifyAppTriggerRequest::ModifyAppTriggerRequest() :
     m_appIdHasBeenSet(false),
+    m_scopeHasBeenSet(false),
     m_triggerHasBeenSet(false),
     m_triggerIdHasBeenSet(false),
-    m_updateMaskHasBeenSet(false)
+    m_updateMaskHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -43,6 +45,14 @@ string ModifyAppTriggerRequest::ToJsonString() const
         string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scope";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_scope, allocator);
     }
 
     if (m_triggerHasBeenSet)
@@ -71,6 +81,14 @@ string ModifyAppTriggerRequest::ToJsonString() const
         m_updateMask.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -93,6 +111,22 @@ void ModifyAppTriggerRequest::SetAppId(const string& _appId)
 bool ModifyAppTriggerRequest::AppIdHasBeenSet() const
 {
     return m_appIdHasBeenSet;
+}
+
+int64_t ModifyAppTriggerRequest::GetScope() const
+{
+    return m_scope;
+}
+
+void ModifyAppTriggerRequest::SetScope(const int64_t& _scope)
+{
+    m_scope = _scope;
+    m_scopeHasBeenSet = true;
+}
+
+bool ModifyAppTriggerRequest::ScopeHasBeenSet() const
+{
+    return m_scopeHasBeenSet;
 }
 
 AppTrigger ModifyAppTriggerRequest::GetTrigger() const
@@ -141,6 +175,22 @@ void ModifyAppTriggerRequest::SetUpdateMask(const FieldMask& _updateMask)
 bool ModifyAppTriggerRequest::UpdateMaskHasBeenSet() const
 {
     return m_updateMaskHasBeenSet;
+}
+
+string ModifyAppTriggerRequest::GetUserId() const
+{
+    return m_userId;
+}
+
+void ModifyAppTriggerRequest::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool ModifyAppTriggerRequest::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 
 

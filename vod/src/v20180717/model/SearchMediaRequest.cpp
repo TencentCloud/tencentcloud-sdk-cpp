@@ -54,7 +54,8 @@ SearchMediaRequest::SearchMediaRequest() :
     m_vidsHasBeenSet(false),
     m_vidHasBeenSet(false),
     m_streamDomainsHasBeenSet(false),
-    m_streamPathsHasBeenSet(false)
+    m_streamPathsHasBeenSet(false),
+    m_knowledgeBasesHasBeenSet(false)
 {
 }
 
@@ -419,6 +420,19 @@ string SearchMediaRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_streamPaths.begin(); itr != m_streamPaths.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_knowledgeBasesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeBases";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_knowledgeBases.begin(); itr != m_knowledgeBases.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -942,6 +956,22 @@ void SearchMediaRequest::SetStreamPaths(const vector<string>& _streamPaths)
 bool SearchMediaRequest::StreamPathsHasBeenSet() const
 {
     return m_streamPathsHasBeenSet;
+}
+
+vector<string> SearchMediaRequest::GetKnowledgeBases() const
+{
+    return m_knowledgeBases;
+}
+
+void SearchMediaRequest::SetKnowledgeBases(const vector<string>& _knowledgeBases)
+{
+    m_knowledgeBases = _knowledgeBases;
+    m_knowledgeBasesHasBeenSet = true;
+}
+
+bool SearchMediaRequest::KnowledgeBasesHasBeenSet() const
+{
+    return m_knowledgeBasesHasBeenSet;
 }
 
 

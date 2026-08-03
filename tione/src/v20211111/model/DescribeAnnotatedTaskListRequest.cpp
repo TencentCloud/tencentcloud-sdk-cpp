@@ -25,6 +25,7 @@ using namespace std;
 DescribeAnnotatedTaskListRequest::DescribeAnnotatedTaskListRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_tagFiltersHasBeenSet(false),
     m_orderHasBeenSet(false),
@@ -53,6 +54,14 @@ string DescribeAnnotatedTaskListRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_filtersHasBeenSet)
@@ -139,6 +148,22 @@ void DescribeAnnotatedTaskListRequest::SetLimit(const int64_t& _limit)
 bool DescribeAnnotatedTaskListRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeAnnotatedTaskListRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void DescribeAnnotatedTaskListRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool DescribeAnnotatedTaskListRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 vector<Filter> DescribeAnnotatedTaskListRequest::GetFilters() const

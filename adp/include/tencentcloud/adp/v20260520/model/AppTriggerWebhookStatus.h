@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取
-                     * @return WebhookUrl 
+                     * 获取<p>推送Webbook地址</p>
+                     * @return WebhookUrl <p>推送Webbook地址</p>
                      * 
                      */
                     std::string GetWebhookUrl() const;
 
                     /**
-                     * 设置
-                     * @param _webhookUrl 
+                     * 设置<p>推送Webbook地址</p>
+                     * @param _webhookUrl <p>推送Webbook地址</p>
                      * 
                      */
                     void SetWebhookUrl(const std::string& _webhookUrl);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 
+                     * <p>推送Webbook地址</p>
                      */
                     std::string m_webhookUrl;
                     bool m_webhookUrlHasBeenSet;

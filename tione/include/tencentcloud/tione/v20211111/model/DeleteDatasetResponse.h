@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取删除的datasetId
-                     * @return DatasetId 删除的datasetId
+                     * 获取<p>删除的datasetId</p>
+                     * @return DatasetId <p>删除的datasetId</p>
                      * 
                      */
                     std::string GetDatasetId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 删除的datasetId
+                     * <p>删除的datasetId</p>
                      */
                     std::string m_datasetId;
                     bool m_datasetIdHasBeenSet;

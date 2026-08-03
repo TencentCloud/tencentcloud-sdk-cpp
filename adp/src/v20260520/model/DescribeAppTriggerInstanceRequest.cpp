@@ -24,7 +24,9 @@ using namespace std;
 
 DescribeAppTriggerInstanceRequest::DescribeAppTriggerInstanceRequest() :
     m_appIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_scopeHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string DescribeAppTriggerInstanceRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scope";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_scope, allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +107,38 @@ void DescribeAppTriggerInstanceRequest::SetInstanceId(const string& _instanceId)
 bool DescribeAppTriggerInstanceRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+int64_t DescribeAppTriggerInstanceRequest::GetScope() const
+{
+    return m_scope;
+}
+
+void DescribeAppTriggerInstanceRequest::SetScope(const int64_t& _scope)
+{
+    m_scope = _scope;
+    m_scopeHasBeenSet = true;
+}
+
+bool DescribeAppTriggerInstanceRequest::ScopeHasBeenSet() const
+{
+    return m_scopeHasBeenSet;
+}
+
+string DescribeAppTriggerInstanceRequest::GetUserId() const
+{
+    return m_userId;
+}
+
+void DescribeAppTriggerInstanceRequest::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool DescribeAppTriggerInstanceRequest::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 
 

@@ -190,6 +190,27 @@ namespace TencentCloud
                      */
                     bool UseToBindHasBeenSet() const;
 
+                    /**
+                     * 获取<p>消费者 ID（以 consumer- 开头）。</p>
+                     * @return ConsumerId <p>消费者 ID（以 consumer- 开头）。</p>
+                     * 
+                     */
+                    std::string GetConsumerId() const;
+
+                    /**
+                     * 设置<p>消费者 ID（以 consumer- 开头）。</p>
+                     * @param _consumerId <p>消费者 ID（以 consumer- 开头）。</p>
+                     * 
+                     */
+                    void SetConsumerId(const std::string& _consumerId);
+
+                    /**
+                     * 判断参数 ConsumerId 是否已赋值
+                     * @return ConsumerId 是否已赋值
+                     * 
+                     */
+                    bool ConsumerIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -233,6 +254,12 @@ namespace TencentCloud
                      */
                     bool m_useToBind;
                     bool m_useToBindHasBeenSet;
+
+                    /**
+                     * <p>消费者 ID（以 consumer- 开头）。</p>
+                     */
+                    std::string m_consumerId;
+                    bool m_consumerIdHasBeenSet;
 
                 };
             }

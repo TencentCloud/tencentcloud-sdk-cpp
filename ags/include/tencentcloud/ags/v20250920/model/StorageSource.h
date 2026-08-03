@@ -27,6 +27,7 @@
 #include <tencentcloud/ags/v20250920/model/CosStorageSource.h>
 #include <tencentcloud/ags/v20250920/model/ImageStorageSource.h>
 #include <tencentcloud/ags/v20250920/model/CfsStorageSource.h>
+#include <tencentcloud/ags/v20250920/model/AgentBucketStorageSource.h>
 
 
 namespace TencentCloud
@@ -112,6 +113,27 @@ namespace TencentCloud
                      */
                     bool CfsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>AgentBucket 存储配置</p>
+                     * @return AgentBucket <p>AgentBucket 存储配置</p>
+                     * 
+                     */
+                    AgentBucketStorageSource GetAgentBucket() const;
+
+                    /**
+                     * 设置<p>AgentBucket 存储配置</p>
+                     * @param _agentBucket <p>AgentBucket 存储配置</p>
+                     * 
+                     */
+                    void SetAgentBucket(const AgentBucketStorageSource& _agentBucket);
+
+                    /**
+                     * 判断参数 AgentBucket 是否已赋值
+                     * @return AgentBucket 是否已赋值
+                     * 
+                     */
+                    bool AgentBucketHasBeenSet() const;
+
                 private:
 
                     /**
@@ -131,6 +153,12 @@ namespace TencentCloud
                      */
                     CfsStorageSource m_cfs;
                     bool m_cfsHasBeenSet;
+
+                    /**
+                     * <p>AgentBucket 存储配置</p>
+                     */
+                    AgentBucketStorageSource m_agentBucket;
+                    bool m_agentBucketHasBeenSet;
 
                 };
             }

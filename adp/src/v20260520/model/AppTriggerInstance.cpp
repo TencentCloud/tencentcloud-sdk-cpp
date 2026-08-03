@@ -30,11 +30,13 @@ AppTriggerInstance::AppTriggerInstance() :
     m_resultCodeHasBeenSet(false),
     m_resultSummaryHasBeenSet(false),
     m_runIdHasBeenSet(false),
+    m_scopeHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_startedAtHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_traceIdHasBeenSet(false),
     m_triggerIdHasBeenSet(false),
+    m_userIdHasBeenSet(false),
     m_workflowRunIdHasBeenSet(false)
 {
 }
@@ -134,6 +136,16 @@ CoreInternalOutcome AppTriggerInstance::Deserialize(const rapidjson::Value &valu
         m_runIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Scope") && !value["Scope"].IsNull())
+    {
+        if (!value["Scope"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppTriggerInstance.Scope` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scope = value["Scope"].GetInt64();
+        m_scopeHasBeenSet = true;
+    }
+
     if (value.HasMember("Source") && !value["Source"].IsNull())
     {
         if (!value["Source"].IsInt64())
@@ -182,6 +194,16 @@ CoreInternalOutcome AppTriggerInstance::Deserialize(const rapidjson::Value &valu
         }
         m_triggerId = string(value["TriggerId"].GetString());
         m_triggerIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserId") && !value["UserId"].IsNull())
+    {
+        if (!value["UserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppTriggerInstance.UserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userId = string(value["UserId"].GetString());
+        m_userIdHasBeenSet = true;
     }
 
     if (value.HasMember("WorkflowRunId") && !value["WorkflowRunId"].IsNull())
@@ -273,6 +295,14 @@ void AppTriggerInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, rapidjson::Value(m_runId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_scopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scope, allocator);
+    }
+
     if (m_sourceHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -311,6 +341,14 @@ void AppTriggerInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "TriggerId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_triggerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_workflowRunIdHasBeenSet)
@@ -468,6 +506,22 @@ bool AppTriggerInstance::RunIdHasBeenSet() const
     return m_runIdHasBeenSet;
 }
 
+int64_t AppTriggerInstance::GetScope() const
+{
+    return m_scope;
+}
+
+void AppTriggerInstance::SetScope(const int64_t& _scope)
+{
+    m_scope = _scope;
+    m_scopeHasBeenSet = true;
+}
+
+bool AppTriggerInstance::ScopeHasBeenSet() const
+{
+    return m_scopeHasBeenSet;
+}
+
 int64_t AppTriggerInstance::GetSource() const
 {
     return m_source;
@@ -546,6 +600,22 @@ void AppTriggerInstance::SetTriggerId(const string& _triggerId)
 bool AppTriggerInstance::TriggerIdHasBeenSet() const
 {
     return m_triggerIdHasBeenSet;
+}
+
+string AppTriggerInstance::GetUserId() const
+{
+    return m_userId;
+}
+
+void AppTriggerInstance::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool AppTriggerInstance::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 
 string AppTriggerInstance::GetWorkflowRunId() const

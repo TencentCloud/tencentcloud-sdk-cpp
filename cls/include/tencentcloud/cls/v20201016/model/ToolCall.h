@@ -131,6 +131,27 @@ namespace TencentCloud
                      */
                     bool IndexHasBeenSet() const;
 
+                    /**
+                     * 获取<p>模型返回的思考签名，执行工具后需在后续请求中原样回传</p>
+                     * @return ThoughtSignature <p>模型返回的思考签名，执行工具后需在后续请求中原样回传</p>
+                     * 
+                     */
+                    std::string GetThoughtSignature() const;
+
+                    /**
+                     * 设置<p>模型返回的思考签名，执行工具后需在后续请求中原样回传</p>
+                     * @param _thoughtSignature <p>模型返回的思考签名，执行工具后需在后续请求中原样回传</p>
+                     * 
+                     */
+                    void SetThoughtSignature(const std::string& _thoughtSignature);
+
+                    /**
+                     * 判断参数 ThoughtSignature 是否已赋值
+                     * @return ThoughtSignature 是否已赋值
+                     * 
+                     */
+                    bool ThoughtSignatureHasBeenSet() const;
+
                 private:
 
                     /**
@@ -156,6 +177,12 @@ namespace TencentCloud
                      */
                     uint64_t m_index;
                     bool m_indexHasBeenSet;
+
+                    /**
+                     * <p>模型返回的思考签名，执行工具后需在后续请求中原样回传</p>
+                     */
+                    std::string m_thoughtSignature;
+                    bool m_thoughtSignatureHasBeenSet;
 
                 };
             }

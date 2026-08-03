@@ -47,43 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 |  |
-| 1 | 不推送 |
-| 2 | 微信公众号 |
-| 3 | 企业微信 AI 机器人 |
-                     * @return PushChannel 
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 |  |
-| 1 | 不推送 |
-| 2 | 微信公众号 |
-| 3 | 企业微信 AI 机器人 |
+                     * 获取<p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 |  |<br>| 1 | 不推送 |<br>| 2 | 微信公众号 |<br>| 3 | 企业微信 AI 机器人 |</p>
+                     * @return PushChannel <p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 |  |<br>| 1 | 不推送 |<br>| 2 | 微信公众号 |<br>| 3 | 企业微信 AI 机器人 |</p>
                      * 
                      */
                     int64_t GetPushChannel() const;
 
                     /**
-                     * 设置
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 |  |
-| 1 | 不推送 |
-| 2 | 微信公众号 |
-| 3 | 企业微信 AI 机器人 |
-                     * @param _pushChannel 
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 |  |
-| 1 | 不推送 |
-| 2 | 微信公众号 |
-| 3 | 企业微信 AI 机器人 |
+                     * 设置<p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 |  |<br>| 1 | 不推送 |<br>| 2 | 微信公众号 |<br>| 3 | 企业微信 AI 机器人 |</p>
+                     * @param _pushChannel <p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 |  |<br>| 1 | 不推送 |<br>| 2 | 微信公众号 |<br>| 3 | 企业微信 AI 机器人 |</p>
                      * 
                      */
                     void SetPushChannel(const int64_t& _pushChannel);
@@ -96,15 +68,15 @@ namespace TencentCloud
                     bool PushChannelHasBeenSet() const;
 
                     /**
-                     * 获取推送会话ID
-                     * @return PushTargetId 推送会话ID
+                     * 获取<p>推送会话ID</p>
+                     * @return PushTargetId <p>推送会话ID</p>
                      * 
                      */
                     std::string GetPushTargetId() const;
 
                     /**
-                     * 设置推送会话ID
-                     * @param _pushTargetId 推送会话ID
+                     * 设置<p>推送会话ID</p>
+                     * @param _pushTargetId <p>推送会话ID</p>
                      * 
                      */
                     void SetPushTargetId(const std::string& _pushTargetId);
@@ -117,39 +89,15 @@ namespace TencentCloud
                     bool PushTargetIdHasBeenSet() const;
 
                     /**
-                     * 获取
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 |  |
-| 1 | 用户 (微信公众号 openid) |
-| 2 | 群聊 (企微机器人 chat_id) |
-                     * @return PushTargetType 
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 |  |
-| 1 | 用户 (微信公众号 openid) |
-| 2 | 群聊 (企微机器人 chat_id) |
+                     * 获取<p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 |  |<br>| 1 | 用户 (微信公众号 openid) |<br>| 2 | 群聊 (企微机器人 chat_id) |</p>
+                     * @return PushTargetType <p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 |  |<br>| 1 | 用户 (微信公众号 openid) |<br>| 2 | 群聊 (企微机器人 chat_id) |</p>
                      * 
                      */
                     int64_t GetPushTargetType() const;
 
                     /**
-                     * 设置
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 |  |
-| 1 | 用户 (微信公众号 openid) |
-| 2 | 群聊 (企微机器人 chat_id) |
-                     * @param _pushTargetType 
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 |  |
-| 1 | 用户 (微信公众号 openid) |
-| 2 | 群聊 (企微机器人 chat_id) |
+                     * 设置<p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 |  |<br>| 1 | 用户 (微信公众号 openid) |<br>| 2 | 群聊 (企微机器人 chat_id) |</p>
+                     * @param _pushTargetType <p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 |  |<br>| 1 | 用户 (微信公众号 openid) |<br>| 2 | 群聊 (企微机器人 chat_id) |</p>
                      * 
                      */
                     void SetPushTargetType(const int64_t& _pushTargetType);
@@ -162,15 +110,15 @@ namespace TencentCloud
                     bool PushTargetTypeHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return PushWebhookUrl 
+                     * 获取<p>推送webhook的url</p>
+                     * @return PushWebhookUrl <p>推送webhook的url</p>
                      * 
                      */
                     std::string GetPushWebhookUrl() const;
 
                     /**
-                     * 设置
-                     * @param _pushWebhookUrl 
+                     * 设置<p>推送webhook的url</p>
+                     * @param _pushWebhookUrl <p>推送webhook的url</p>
                      * 
                      */
                     void SetPushWebhookUrl(const std::string& _pushWebhookUrl);
@@ -185,38 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 |  |
-| 1 | 不推送 |
-| 2 | 微信公众号 |
-| 3 | 企业微信 AI 机器人 |
+                     * <p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 |  |<br>| 1 | 不推送 |<br>| 2 | 微信公众号 |<br>| 3 | 企业微信 AI 机器人 |</p>
                      */
                     int64_t m_pushChannel;
                     bool m_pushChannelHasBeenSet;
 
                     /**
-                     * 推送会话ID
+                     * <p>推送会话ID</p>
                      */
                     std::string m_pushTargetId;
                     bool m_pushTargetIdHasBeenSet;
 
                     /**
-                     * 
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 |  |
-| 1 | 用户 (微信公众号 openid) |
-| 2 | 群聊 (企微机器人 chat_id) |
+                     * <p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 |  |<br>| 1 | 用户 (微信公众号 openid) |<br>| 2 | 群聊 (企微机器人 chat_id) |</p>
                      */
                     int64_t m_pushTargetType;
                     bool m_pushTargetTypeHasBeenSet;
 
                     /**
-                     * 
+                     * <p>推送webhook的url</p>
                      */
                     std::string m_pushWebhookUrl;
                     bool m_pushWebhookUrlHasBeenSet;

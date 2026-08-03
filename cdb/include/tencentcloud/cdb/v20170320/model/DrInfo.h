@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取灾备实例状态
-                     * @return Status 灾备实例状态
+                     * 获取<p>灾备实例状态</p><p>枚举值：</p><ul><li>0： 创建中</li><li>1： 运行中</li><li>4： 正在进行隔离操作</li><li>5： 已隔离</li></ul>
+                     * @return Status <p>灾备实例状态</p><p>枚举值：</p><ul><li>0： 创建中</li><li>1： 运行中</li><li>4： 正在进行隔离操作</li><li>5： 已隔离</li></ul>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置灾备实例状态
-                     * @param _status 灾备实例状态
+                     * 设置<p>灾备实例状态</p><p>枚举值：</p><ul><li>0： 创建中</li><li>1： 运行中</li><li>4： 正在进行隔离操作</li><li>5： 已隔离</li></ul>
+                     * @param _status <p>灾备实例状态</p><p>枚举值：</p><ul><li>0： 创建中</li><li>1： 运行中</li><li>4： 正在进行隔离操作</li><li>5： 已隔离</li></ul>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取可用区信息
-                     * @return Zone 可用区信息
+                     * 获取<p>可用区信息</p>
+                     * @return Zone <p>可用区信息</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区信息
-                     * @param _zone 可用区信息
+                     * 设置<p>可用区信息</p>
+                     * @param _zone <p>可用区信息</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取地域信息
-                     * @return Region 地域信息
+                     * 获取<p>地域信息</p>
+                     * @return Region <p>地域信息</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域信息
-                     * @param _region 地域信息
+                     * 设置<p>地域信息</p>
+                     * @param _region <p>地域信息</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -131,35 +131,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取实例同步状态。可能的返回值为：
-0 - 灾备未同步；
-1 - 灾备同步中；
-2 - 灾备同步成功；
-3 - 灾备同步失败；
-4 - 灾备同步修复中。
-                     * @return SyncStatus 实例同步状态。可能的返回值为：
-0 - 灾备未同步；
-1 - 灾备同步中；
-2 - 灾备同步成功；
-3 - 灾备同步失败；
-4 - 灾备同步修复中。
+                     * 获取<p>实例同步状态。可能的返回值为：<br>0 - 灾备未同步；<br>1 - 灾备同步中；<br>2 - 灾备同步成功；<br>3 - 灾备同步失败；<br>4 - 灾备同步修复中。</p>
+                     * @return SyncStatus <p>实例同步状态。可能的返回值为：<br>0 - 灾备未同步；<br>1 - 灾备同步中；<br>2 - 灾备同步成功；<br>3 - 灾备同步失败；<br>4 - 灾备同步修复中。</p>
                      * 
                      */
                     int64_t GetSyncStatus() const;
 
                     /**
-                     * 设置实例同步状态。可能的返回值为：
-0 - 灾备未同步；
-1 - 灾备同步中；
-2 - 灾备同步成功；
-3 - 灾备同步失败；
-4 - 灾备同步修复中。
-                     * @param _syncStatus 实例同步状态。可能的返回值为：
-0 - 灾备未同步；
-1 - 灾备同步中；
-2 - 灾备同步成功；
-3 - 灾备同步失败；
-4 - 灾备同步修复中。
+                     * 设置<p>实例同步状态。可能的返回值为：<br>0 - 灾备未同步；<br>1 - 灾备同步中；<br>2 - 灾备同步成功；<br>3 - 灾备同步失败；<br>4 - 灾备同步修复中。</p>
+                     * @param _syncStatus <p>实例同步状态。可能的返回值为：<br>0 - 灾备未同步；<br>1 - 灾备同步中；<br>2 - 灾备同步成功；<br>3 - 灾备同步失败；<br>4 - 灾备同步修复中。</p>
                      * 
                      */
                     void SetSyncStatus(const int64_t& _syncStatus);
@@ -172,15 +152,15 @@ namespace TencentCloud
                     bool SyncStatusHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取<p>实例名称</p>
+                     * @return InstanceName <p>实例名称</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _instanceName 实例名称
+                     * 设置<p>实例名称</p>
+                     * @param _instanceName <p>实例名称</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -193,15 +173,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取实例类型
-                     * @return InstanceType 实例类型
+                     * 获取<p>实例类型</p>
+                     * @return InstanceType <p>实例类型</p>
                      * 
                      */
                     int64_t GetInstanceType() const;
 
                     /**
-                     * 设置实例类型
-                     * @param _instanceType 实例类型
+                     * 设置<p>实例类型</p>
+                     * @param _instanceType <p>实例类型</p>
                      * 
                      */
                     void SetInstanceType(const int64_t& _instanceType);
@@ -216,48 +196,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 灾备实例状态
+                     * <p>灾备实例状态</p><p>枚举值：</p><ul><li>0： 创建中</li><li>1： 运行中</li><li>4： 正在进行隔离操作</li><li>5： 已隔离</li></ul>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 可用区信息
+                     * <p>可用区信息</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 地域信息
+                     * <p>地域信息</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 实例同步状态。可能的返回值为：
-0 - 灾备未同步；
-1 - 灾备同步中；
-2 - 灾备同步成功；
-3 - 灾备同步失败；
-4 - 灾备同步修复中。
+                     * <p>实例同步状态。可能的返回值为：<br>0 - 灾备未同步；<br>1 - 灾备同步中；<br>2 - 灾备同步成功；<br>3 - 灾备同步失败；<br>4 - 灾备同步修复中。</p>
                      */
                     int64_t m_syncStatus;
                     bool m_syncStatusHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * <p>实例名称</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 实例类型
+                     * <p>实例类型</p>
                      */
                     int64_t m_instanceType;
                     bool m_instanceTypeHasBeenSet;

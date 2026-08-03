@@ -27,7 +27,9 @@ DescribeAppTriggerSummaryListRequest::DescribeAppTriggerSummaryListRequest() :
     m_filterListHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
-    m_queryHasBeenSet(false)
+    m_queryHasBeenSet(false),
+    m_scopeHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,22 @@ string DescribeAppTriggerSummaryListRequest::ToJsonString() const
         string key = "Query";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_query.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scope";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_scope, allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -171,6 +189,38 @@ void DescribeAppTriggerSummaryListRequest::SetQuery(const string& _query)
 bool DescribeAppTriggerSummaryListRequest::QueryHasBeenSet() const
 {
     return m_queryHasBeenSet;
+}
+
+int64_t DescribeAppTriggerSummaryListRequest::GetScope() const
+{
+    return m_scope;
+}
+
+void DescribeAppTriggerSummaryListRequest::SetScope(const int64_t& _scope)
+{
+    m_scope = _scope;
+    m_scopeHasBeenSet = true;
+}
+
+bool DescribeAppTriggerSummaryListRequest::ScopeHasBeenSet() const
+{
+    return m_scopeHasBeenSet;
+}
+
+string DescribeAppTriggerSummaryListRequest::GetUserId() const
+{
+    return m_userId;
+}
+
+void DescribeAppTriggerSummaryListRequest::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool DescribeAppTriggerSummaryListRequest::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 
 

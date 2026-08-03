@@ -31,10 +31,12 @@ AppTriggerRunLog::AppTriggerRunLog() :
     m_resultSummaryHasBeenSet(false),
     m_runIdHasBeenSet(false),
     m_scheduledFireTimeHasBeenSet(false),
+    m_scopeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_triggerIdHasBeenSet(false),
     m_unreadHasBeenSet(false),
+    m_userIdHasBeenSet(false),
     m_workflowRunIdHasBeenSet(false)
 {
 }
@@ -144,6 +146,16 @@ CoreInternalOutcome AppTriggerRunLog::Deserialize(const rapidjson::Value &value)
         m_scheduledFireTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Scope") && !value["Scope"].IsNull())
+    {
+        if (!value["Scope"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppTriggerRunLog.Scope` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scope = value["Scope"].GetInt64();
+        m_scopeHasBeenSet = true;
+    }
+
     if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
     {
         if (!value["StartTime"].IsString())
@@ -182,6 +194,16 @@ CoreInternalOutcome AppTriggerRunLog::Deserialize(const rapidjson::Value &value)
         }
         m_unread = value["Unread"].GetBool();
         m_unreadHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserId") && !value["UserId"].IsNull())
+    {
+        if (!value["UserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppTriggerRunLog.UserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userId = string(value["UserId"].GetString());
+        m_userIdHasBeenSet = true;
     }
 
     if (value.HasMember("WorkflowRunId") && !value["WorkflowRunId"].IsNull())
@@ -281,6 +303,14 @@ void AppTriggerRunLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_scheduledFireTime.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_scopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scope, allocator);
+    }
+
     if (m_startTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -311,6 +341,14 @@ void AppTriggerRunLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Unread";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unread, allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_workflowRunIdHasBeenSet)
@@ -484,6 +522,22 @@ bool AppTriggerRunLog::ScheduledFireTimeHasBeenSet() const
     return m_scheduledFireTimeHasBeenSet;
 }
 
+int64_t AppTriggerRunLog::GetScope() const
+{
+    return m_scope;
+}
+
+void AppTriggerRunLog::SetScope(const int64_t& _scope)
+{
+    m_scope = _scope;
+    m_scopeHasBeenSet = true;
+}
+
+bool AppTriggerRunLog::ScopeHasBeenSet() const
+{
+    return m_scopeHasBeenSet;
+}
+
 string AppTriggerRunLog::GetStartTime() const
 {
     return m_startTime;
@@ -546,6 +600,22 @@ void AppTriggerRunLog::SetUnread(const bool& _unread)
 bool AppTriggerRunLog::UnreadHasBeenSet() const
 {
     return m_unreadHasBeenSet;
+}
+
+string AppTriggerRunLog::GetUserId() const
+{
+    return m_userId;
+}
+
+void AppTriggerRunLog::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool AppTriggerRunLog::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 
 string AppTriggerRunLog::GetWorkflowRunId() const

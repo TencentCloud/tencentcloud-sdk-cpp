@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取沙箱实例ID
-                     * @return InstanceId 沙箱实例ID
+                     * 获取<p>沙箱实例ID</p>
+                     * @return InstanceId <p>沙箱实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置沙箱实例ID
-                     * @param _instanceId 沙箱实例ID
+                     * 设置<p>沙箱实例ID</p>
+                     * @param _instanceId <p>沙箱实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -63,13 +63,40 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>超时时间，超过这个时间就自动回收实例。支持格式：5m、300s、1h 等，默认 5m。最小 30s，最大 24h</p>
+                     * @return Timeout <p>超时时间，超过这个时间就自动回收实例。支持格式：5m、300s、1h 等，默认 5m。最小 30s，最大 24h</p>
+                     * 
+                     */
+                    std::string GetTimeout() const;
+
+                    /**
+                     * 设置<p>超时时间，超过这个时间就自动回收实例。支持格式：5m、300s、1h 等，默认 5m。最小 30s，最大 24h</p>
+                     * @param _timeout <p>超时时间，超过这个时间就自动回收实例。支持格式：5m、300s、1h 等，默认 5m。最小 30s，最大 24h</p>
+                     * 
+                     */
+                    void SetTimeout(const std::string& _timeout);
+
+                    /**
+                     * 判断参数 Timeout 是否已赋值
+                     * @return Timeout 是否已赋值
+                     * 
+                     */
+                    bool TimeoutHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 沙箱实例ID
+                     * <p>沙箱实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * <p>超时时间，超过这个时间就自动回收实例。支持格式：5m、300s、1h 等，默认 5m。最小 30s，最大 24h</p>
+                     */
+                    std::string m_timeout;
+                    bool m_timeoutHasBeenSet;
 
                 };
             }

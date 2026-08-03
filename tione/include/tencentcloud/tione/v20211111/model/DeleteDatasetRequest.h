@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据集id
-                     * @return DatasetId 数据集id
+                     * 获取<p>数据集id</p>
+                     * @return DatasetId <p>数据集id</p>
                      * 
                      */
                     std::string GetDatasetId() const;
 
                     /**
-                     * 设置数据集id
-                     * @param _datasetId 数据集id
+                     * 设置<p>数据集id</p>
+                     * @param _datasetId <p>数据集id</p>
                      * 
                      */
                     void SetDatasetId(const std::string& _datasetId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DatasetIdHasBeenSet() const;
 
                     /**
-                     * 获取是否删除cos标签文件
-                     * @return DeleteLabelEnable 是否删除cos标签文件
+                     * 获取<p>是否删除cos标签文件</p>
+                     * @return DeleteLabelEnable <p>是否删除cos标签文件</p>
                      * 
                      */
                     bool GetDeleteLabelEnable() const;
 
                     /**
-                     * 设置是否删除cos标签文件
-                     * @param _deleteLabelEnable 是否删除cos标签文件
+                     * 设置<p>是否删除cos标签文件</p>
+                     * @param _deleteLabelEnable <p>是否删除cos标签文件</p>
                      * 
                      */
                     void SetDeleteLabelEnable(const bool& _deleteLabelEnable);
@@ -84,19 +84,46 @@ namespace TencentCloud
                      */
                     bool DeleteLabelEnableHasBeenSet() const;
 
+                    /**
+                     * 获取<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * @return TiProjectId <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * 
+                     */
+                    std::string GetTiProjectId() const;
+
+                    /**
+                     * 设置<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * @param _tiProjectId <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * 
+                     */
+                    void SetTiProjectId(const std::string& _tiProjectId);
+
+                    /**
+                     * 判断参数 TiProjectId 是否已赋值
+                     * @return TiProjectId 是否已赋值
+                     * 
+                     */
+                    bool TiProjectIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 数据集id
+                     * <p>数据集id</p>
                      */
                     std::string m_datasetId;
                     bool m_datasetIdHasBeenSet;
 
                     /**
-                     * 是否删除cos标签文件
+                     * <p>是否删除cos标签文件</p>
                      */
                     bool m_deleteLabelEnable;
                     bool m_deleteLabelEnableHasBeenSet;
+
+                    /**
+                     * <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     */
+                    std::string m_tiProjectId;
+                    bool m_tiProjectIdHasBeenSet;
 
                 };
             }

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取回推房间的RoomId。
-                     * @return RoomId 回推房间的RoomId。
+                     * 获取<p>回推房间的RoomId。</p>
+                     * @return RoomId <p>回推房间的RoomId。</p>
                      * 
                      */
                     std::string GetRoomId() const;
 
                     /**
-                     * 设置回推房间的RoomId。
-                     * @param _roomId 回推房间的RoomId。
+                     * 设置<p>回推房间的RoomId。</p>
+                     * @param _roomId <p>回推房间的RoomId。</p>
                      * 
                      */
                     void SetRoomId(const std::string& _roomId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool RoomIdHasBeenSet() const;
 
                     /**
-                     * 获取房间类型，必须和回推房间所对应的RoomId类型相同，0为整形房间号，1为字符串房间号。
-                     * @return RoomIdType 房间类型，必须和回推房间所对应的RoomId类型相同，0为整形房间号，1为字符串房间号。
+                     * 获取<p>房间类型，必须和回推房间所对应的RoomId类型相同，0为整形房间号，1为字符串房间号。</p>
+                     * @return RoomIdType <p>房间类型，必须和回推房间所对应的RoomId类型相同，0为整形房间号，1为字符串房间号。</p>
                      * 
                      */
                     uint64_t GetRoomIdType() const;
 
                     /**
-                     * 设置房间类型，必须和回推房间所对应的RoomId类型相同，0为整形房间号，1为字符串房间号。
-                     * @param _roomIdType 房间类型，必须和回推房间所对应的RoomId类型相同，0为整形房间号，1为字符串房间号。
+                     * 设置<p>房间类型，必须和回推房间所对应的RoomId类型相同，0为整形房间号，1为字符串房间号。</p>
+                     * @param _roomIdType <p>房间类型，必须和回推房间所对应的RoomId类型相同，0为整形房间号，1为字符串房间号。</p>
                      * 
                      */
                     void SetRoomIdType(const uint64_t& _roomIdType);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool RoomIdTypeHasBeenSet() const;
 
                     /**
-                     * 获取回推房间使用的UserId(https://cloud.tencent.com/document/product/647/46351#userid)，注意这个userId不能与其他TRTC或者转推服务等已经使用的UserId重复，建议可以把房间ID作为userId的标识的一部分。
-                     * @return UserId 回推房间使用的UserId(https://cloud.tencent.com/document/product/647/46351#userid)，注意这个userId不能与其他TRTC或者转推服务等已经使用的UserId重复，建议可以把房间ID作为userId的标识的一部分。
+                     * 获取<p>回推房间使用的UserId(https://cloud.tencent.com/document/product/647/46351#userid)，注意这个userId不能与其他TRTC或者转推服务等已经使用的UserId重复，建议可以把房间ID作为userId的标识的一部分。</p>
+                     * @return UserId <p>回推房间使用的UserId(https://cloud.tencent.com/document/product/647/46351#userid)，注意这个userId不能与其他TRTC或者转推服务等已经使用的UserId重复，建议可以把房间ID作为userId的标识的一部分。</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置回推房间使用的UserId(https://cloud.tencent.com/document/product/647/46351#userid)，注意这个userId不能与其他TRTC或者转推服务等已经使用的UserId重复，建议可以把房间ID作为userId的标识的一部分。
-                     * @param _userId 回推房间使用的UserId(https://cloud.tencent.com/document/product/647/46351#userid)，注意这个userId不能与其他TRTC或者转推服务等已经使用的UserId重复，建议可以把房间ID作为userId的标识的一部分。
+                     * 设置<p>回推房间使用的UserId(https://cloud.tencent.com/document/product/647/46351#userid)，注意这个userId不能与其他TRTC或者转推服务等已经使用的UserId重复，建议可以把房间ID作为userId的标识的一部分。</p>
+                     * @param _userId <p>回推房间使用的UserId(https://cloud.tencent.com/document/product/647/46351#userid)，注意这个userId不能与其他TRTC或者转推服务等已经使用的UserId重复，建议可以把房间ID作为userId的标识的一部分。</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取回推房间UserId对应的用户签名，相当于登录密码，具体计算方法请参考TRTC计算[UserSig](https://cloud.tencent.com/document/product/647/45910#UserSig)的方案。
-                     * @return UserSig 回推房间UserId对应的用户签名，相当于登录密码，具体计算方法请参考TRTC计算[UserSig](https://cloud.tencent.com/document/product/647/45910#UserSig)的方案。
+                     * 获取<p>回推房间UserId对应的用户签名，相当于登录密码，具体计算方法请参考TRTC计算<a href="https://cloud.tencent.com/document/product/647/45910#UserSig">UserSig</a>的方案。</p>
+                     * @return UserSig <p>回推房间UserId对应的用户签名，相当于登录密码，具体计算方法请参考TRTC计算<a href="https://cloud.tencent.com/document/product/647/45910#UserSig">UserSig</a>的方案。</p>
                      * 
                      */
                     std::string GetUserSig() const;
 
                     /**
-                     * 设置回推房间UserId对应的用户签名，相当于登录密码，具体计算方法请参考TRTC计算[UserSig](https://cloud.tencent.com/document/product/647/45910#UserSig)的方案。
-                     * @param _userSig 回推房间UserId对应的用户签名，相当于登录密码，具体计算方法请参考TRTC计算[UserSig](https://cloud.tencent.com/document/product/647/45910#UserSig)的方案。
+                     * 设置<p>回推房间UserId对应的用户签名，相当于登录密码，具体计算方法请参考TRTC计算<a href="https://cloud.tencent.com/document/product/647/45910#UserSig">UserSig</a>的方案。</p>
+                     * @param _userSig <p>回推房间UserId对应的用户签名，相当于登录密码，具体计算方法请参考TRTC计算<a href="https://cloud.tencent.com/document/product/647/45910#UserSig">UserSig</a>的方案。</p>
                      * 
                      */
                     void SetUserSig(const std::string& _userSig);
@@ -133,25 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 回推房间的RoomId。
+                     * <p>回推房间的RoomId。</p>
                      */
                     std::string m_roomId;
                     bool m_roomIdHasBeenSet;
 
                     /**
-                     * 房间类型，必须和回推房间所对应的RoomId类型相同，0为整形房间号，1为字符串房间号。
+                     * <p>房间类型，必须和回推房间所对应的RoomId类型相同，0为整形房间号，1为字符串房间号。</p>
                      */
                     uint64_t m_roomIdType;
                     bool m_roomIdTypeHasBeenSet;
 
                     /**
-                     * 回推房间使用的UserId(https://cloud.tencent.com/document/product/647/46351#userid)，注意这个userId不能与其他TRTC或者转推服务等已经使用的UserId重复，建议可以把房间ID作为userId的标识的一部分。
+                     * <p>回推房间使用的UserId(https://cloud.tencent.com/document/product/647/46351#userid)，注意这个userId不能与其他TRTC或者转推服务等已经使用的UserId重复，建议可以把房间ID作为userId的标识的一部分。</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 回推房间UserId对应的用户签名，相当于登录密码，具体计算方法请参考TRTC计算[UserSig](https://cloud.tencent.com/document/product/647/45910#UserSig)的方案。
+                     * <p>回推房间UserId对应的用户签名，相当于登录密码，具体计算方法请参考TRTC计算<a href="https://cloud.tencent.com/document/product/647/45910#UserSig">UserSig</a>的方案。</p>
                      */
                     std::string m_userSig;
                     bool m_userSigHasBeenSet;

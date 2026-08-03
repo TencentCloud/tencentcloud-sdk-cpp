@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取
-                     * @return ParamList 
+                     * 获取<p>绑定参数列表</p>
+                     * @return ParamList <p>绑定参数列表</p>
                      * 
                      */
                     std::vector<AppTriggerParamBinding> GetParamList() const;
 
                     /**
-                     * 设置
-                     * @param _paramList 
+                     * 设置<p>绑定参数列表</p>
+                     * @param _paramList <p>绑定参数列表</p>
                      * 
                      */
                     void SetParamList(const std::vector<AppTriggerParamBinding>& _paramList);
@@ -71,7 +71,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 
+                     * <p>绑定参数列表</p>
                      */
                     std::vector<AppTriggerParamBinding> m_paramList;
                     bool m_paramListHasBeenSet;

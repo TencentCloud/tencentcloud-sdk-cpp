@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取互通规则ID
-                     * @return L3ConnId 互通规则ID
+                     * 获取<p>互通规则ID</p>
+                     * @return L3ConnId <p>互通规则ID</p>
                      * 
                      */
                     std::string GetL3ConnId() const;
 
                     /**
-                     * 设置互通规则ID
-                     * @param _l3ConnId 互通规则ID
+                     * 设置<p>互通规则ID</p>
+                     * @param _l3ConnId <p>互通规则ID</p>
                      * 
                      */
                     void SetL3ConnId(const std::string& _l3ConnId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool L3ConnIdHasBeenSet() const;
 
                     /**
-                     * 获取互通规则CIDR
-                     * @return Cidr1 互通规则CIDR
+                     * 获取<p>互通规则CIDR</p>
+                     * @return Cidr1 <p>互通规则CIDR</p>
                      * 
                      */
                     std::string GetCidr1() const;
 
                     /**
-                     * 设置互通规则CIDR
-                     * @param _cidr1 互通规则CIDR
+                     * 设置<p>互通规则CIDR</p>
+                     * @param _cidr1 <p>互通规则CIDR</p>
                      * 
                      */
                     void SetCidr1(const std::string& _cidr1);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool Cidr1HasBeenSet() const;
 
                     /**
-                     * 获取互通设备ID
-                     * @return DeviceId1 互通设备ID
+                     * 获取<p>互通设备ID</p>
+                     * @return DeviceId1 <p>互通设备ID</p>
                      * 
                      */
                     std::string GetDeviceId1() const;
 
                     /**
-                     * 设置互通设备ID
-                     * @param _deviceId1 互通设备ID
+                     * 设置<p>互通设备ID</p>
+                     * @param _deviceId1 <p>互通设备ID</p>
                      * 
                      */
                     void SetDeviceId1(const std::string& _deviceId1);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DeviceId1HasBeenSet() const;
 
                     /**
-                     * 获取互通设备ID
-                     * @return DeviceId2 互通设备ID
+                     * 获取<p>互通设备ID</p>
+                     * @return DeviceId2 <p>互通设备ID</p>
                      * 
                      */
                     std::string GetDeviceId2() const;
 
                     /**
-                     * 设置互通设备ID
-                     * @param _deviceId2 互通设备ID
+                     * 设置<p>互通设备ID</p>
+                     * @param _deviceId2 <p>互通设备ID</p>
                      * 
                      */
                     void SetDeviceId2(const std::string& _deviceId2);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DeviceId2HasBeenSet() const;
 
                     /**
-                     * 获取互通规则CIDR
-                     * @return Cidr2 互通规则CIDR
+                     * 获取<p>互通规则CIDR</p>
+                     * @return Cidr2 <p>互通规则CIDR</p>
                      * 
                      */
                     std::string GetCidr2() const;
 
                     /**
-                     * 设置互通规则CIDR
-                     * @param _cidr2 互通规则CIDR
+                     * 设置<p>互通规则CIDR</p>
+                     * @param _cidr2 <p>互通规则CIDR</p>
                      * 
                      */
                     void SetCidr2(const std::string& _cidr2);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 互通规则ID
+                     * <p>互通规则ID</p>
                      */
                     std::string m_l3ConnId;
                     bool m_l3ConnIdHasBeenSet;
 
                     /**
-                     * 互通规则CIDR
+                     * <p>互通规则CIDR</p>
                      */
                     std::string m_cidr1;
                     bool m_cidr1HasBeenSet;
 
                     /**
-                     * 互通设备ID
+                     * <p>互通设备ID</p>
                      */
                     std::string m_deviceId1;
                     bool m_deviceId1HasBeenSet;
 
                     /**
-                     * 互通设备ID
+                     * <p>互通设备ID</p>
                      */
                     std::string m_deviceId2;
                     bool m_deviceId2HasBeenSet;
 
                     /**
-                     * 互通规则CIDR
+                     * <p>互通规则CIDR</p>
                      */
                     std::string m_cidr2;
                     bool m_cidr2HasBeenSet;

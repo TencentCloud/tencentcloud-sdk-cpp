@@ -84,27 +84,6 @@ namespace TencentCloud
                      */
                     bool ImageRegistryTypeHasBeenSet() const;
 
-                    /**
-                     * 获取<p>预热超时时长</p>
-                     * @return TimeoutMinutes <p>预热超时时长</p>
-                     * 
-                     */
-                    int64_t GetTimeoutMinutes() const;
-
-                    /**
-                     * 设置<p>预热超时时长</p>
-                     * @param _timeoutMinutes <p>预热超时时长</p>
-                     * 
-                     */
-                    void SetTimeoutMinutes(const int64_t& _timeoutMinutes);
-
-                    /**
-                     * 判断参数 TimeoutMinutes 是否已赋值
-                     * @return TimeoutMinutes 是否已赋值
-                     * 
-                     */
-                    bool TimeoutMinutesHasBeenSet() const;
-
                 private:
 
                     /**
@@ -118,12 +97,6 @@ namespace TencentCloud
                      */
                     std::string m_imageRegistryType;
                     bool m_imageRegistryTypeHasBeenSet;
-
-                    /**
-                     * <p>预热超时时长</p>
-                     */
-                    int64_t m_timeoutMinutes;
-                    bool m_timeoutMinutesHasBeenSet;
 
                 };
             }

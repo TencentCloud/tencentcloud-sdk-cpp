@@ -21,6 +21,7 @@ using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
 IPSSLConfig::IPSSLConfig() :
+    m_zoneIdHasBeenSet(false),
     m_associatedDomainHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
@@ -30,6 +31,16 @@ CoreInternalOutcome IPSSLConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("ZoneId") && !value["ZoneId"].IsNull())
+    {
+        if (!value["ZoneId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IPSSLConfig.ZoneId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneId = string(value["ZoneId"].GetString());
+        m_zoneIdHasBeenSet = true;
+    }
 
     if (value.HasMember("AssociatedDomain") && !value["AssociatedDomain"].IsNull())
     {
@@ -58,6 +69,14 @@ CoreInternalOutcome IPSSLConfig::Deserialize(const rapidjson::Value &value)
 void IPSSLConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_zoneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_associatedDomainHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -76,6 +95,22 @@ void IPSSLConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
 
 }
 
+
+string IPSSLConfig::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void IPSSLConfig::SetZoneId(const string& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool IPSSLConfig::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
+}
 
 string IPSSLConfig::GetAssociatedDomain() const
 {

@@ -22,6 +22,8 @@ using namespace std;
 
 TriggerStatus::TriggerStatus() :
     m_scheduledStatusHasBeenSet(false),
+    m_scopeHasBeenSet(false),
+    m_userIdHasBeenSet(false),
     m_webhookStatusHasBeenSet(false)
 {
 }
@@ -46,6 +48,26 @@ CoreInternalOutcome TriggerStatus::Deserialize(const rapidjson::Value &value)
         }
 
         m_scheduledStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Scope") && !value["Scope"].IsNull())
+    {
+        if (!value["Scope"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerStatus.Scope` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scope = value["Scope"].GetInt64();
+        m_scopeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserId") && !value["UserId"].IsNull())
+    {
+        if (!value["UserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerStatus.UserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userId = string(value["UserId"].GetString());
+        m_userIdHasBeenSet = true;
     }
 
     if (value.HasMember("WebhookStatus") && !value["WebhookStatus"].IsNull())
@@ -81,6 +103,22 @@ void TriggerStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         m_scheduledStatus.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_scopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scope, allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_webhookStatusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -107,6 +145,38 @@ void TriggerStatus::SetScheduledStatus(const AppTriggerScheduleStatus& _schedule
 bool TriggerStatus::ScheduledStatusHasBeenSet() const
 {
     return m_scheduledStatusHasBeenSet;
+}
+
+int64_t TriggerStatus::GetScope() const
+{
+    return m_scope;
+}
+
+void TriggerStatus::SetScope(const int64_t& _scope)
+{
+    m_scope = _scope;
+    m_scopeHasBeenSet = true;
+}
+
+bool TriggerStatus::ScopeHasBeenSet() const
+{
+    return m_scopeHasBeenSet;
+}
+
+string TriggerStatus::GetUserId() const
+{
+    return m_userId;
+}
+
+void TriggerStatus::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool TriggerStatus::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 
 AppTriggerWebhookStatus TriggerStatus::GetWebhookStatus() const

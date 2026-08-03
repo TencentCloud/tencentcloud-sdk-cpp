@@ -551,6 +551,90 @@ namespace TencentCloud
                      */
                     bool KeyRotationPeriodDaysHasBeenSet() const;
 
+                    /**
+                     * 获取<p>来源服务 ID。</p>
+                     * @return SourceId <p>来源服务 ID。</p>
+                     * 
+                     */
+                    std::string GetSourceId() const;
+
+                    /**
+                     * 设置<p>来源服务 ID。</p>
+                     * @param _sourceId <p>来源服务 ID。</p>
+                     * 
+                     */
+                    void SetSourceId(const std::string& _sourceId);
+
+                    /**
+                     * 判断参数 SourceId 是否已赋值
+                     * @return SourceId 是否已赋值
+                     * 
+                     */
+                    bool SourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>命名空间。</p>
+                     * @return Namespace <p>命名空间。</p>
+                     * 
+                     */
+                    std::string GetNamespace() const;
+
+                    /**
+                     * 设置<p>命名空间。</p>
+                     * @param _namespace <p>命名空间。</p>
+                     * 
+                     */
+                    void SetNamespace(const std::string& _namespace);
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     * 
+                     */
+                    bool NamespaceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>服务名称。</p>
+                     * @return ServiceName <p>服务名称。</p>
+                     * 
+                     */
+                    std::string GetServiceName() const;
+
+                    /**
+                     * 设置<p>服务名称。</p>
+                     * @param _serviceName <p>服务名称。</p>
+                     * 
+                     */
+                    void SetServiceName(const std::string& _serviceName);
+
+                    /**
+                     * 判断参数 ServiceName 是否已赋值
+                     * @return ServiceName 是否已赋值
+                     * 
+                     */
+                    bool ServiceNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>协议类型，如 OpenAI、Custom。</p>
+                     * @return Protocol <p>协议类型，如 OpenAI、Custom。</p>
+                     * 
+                     */
+                    std::string GetProtocol() const;
+
+                    /**
+                     * 设置<p>协议类型，如 OpenAI、Custom。</p>
+                     * @param _protocol <p>协议类型，如 OpenAI、Custom。</p>
+                     * 
+                     */
+                    void SetProtocol(const std::string& _protocol);
+
+                    /**
+                     * 判断参数 Protocol 是否已赋值
+                     * @return Protocol 是否已赋值
+                     * 
+                     */
+                    bool ProtocolHasBeenSet() const;
+
                 private:
 
                     /**
@@ -696,6 +780,30 @@ namespace TencentCloud
                      */
                     uint64_t m_keyRotationPeriodDays;
                     bool m_keyRotationPeriodDaysHasBeenSet;
+
+                    /**
+                     * <p>来源服务 ID。</p>
+                     */
+                    std::string m_sourceId;
+                    bool m_sourceIdHasBeenSet;
+
+                    /**
+                     * <p>命名空间。</p>
+                     */
+                    std::string m_namespace;
+                    bool m_namespaceHasBeenSet;
+
+                    /**
+                     * <p>服务名称。</p>
+                     */
+                    std::string m_serviceName;
+                    bool m_serviceNameHasBeenSet;
+
+                    /**
+                     * <p>协议类型，如 OpenAI、Custom。</p>
+                     */
+                    std::string m_protocol;
+                    bool m_protocolHasBeenSet;
 
                 };
             }

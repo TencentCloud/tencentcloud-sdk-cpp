@@ -21,10 +21,10 @@ using namespace TencentCloud::Cngw::V20230418::Model;
 using namespace std;
 
 AIGWJWTCredentialConfig::AIGWJWTCredentialConfig() :
-    m_keyHasBeenSet(false),
     m_algorithmHasBeenSet(false),
-    m_secretHasBeenSet(false),
-    m_rSAPublicKeyHasBeenSet(false)
+    m_keyHasBeenSet(false),
+    m_rSAPublicKeyHasBeenSet(false),
+    m_secretHasBeenSet(false)
 {
 }
 
@@ -32,16 +32,6 @@ CoreInternalOutcome AIGWJWTCredentialConfig::Deserialize(const rapidjson::Value 
 {
     string requestId = "";
 
-
-    if (value.HasMember("Key") && !value["Key"].IsNull())
-    {
-        if (!value["Key"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AIGWJWTCredentialConfig.Key` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_key = string(value["Key"].GetString());
-        m_keyHasBeenSet = true;
-    }
 
     if (value.HasMember("Algorithm") && !value["Algorithm"].IsNull())
     {
@@ -53,14 +43,14 @@ CoreInternalOutcome AIGWJWTCredentialConfig::Deserialize(const rapidjson::Value 
         m_algorithmHasBeenSet = true;
     }
 
-    if (value.HasMember("Secret") && !value["Secret"].IsNull())
+    if (value.HasMember("Key") && !value["Key"].IsNull())
     {
-        if (!value["Secret"].IsString())
+        if (!value["Key"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `AIGWJWTCredentialConfig.Secret` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AIGWJWTCredentialConfig.Key` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_secret = string(value["Secret"].GetString());
-        m_secretHasBeenSet = true;
+        m_key = string(value["Key"].GetString());
+        m_keyHasBeenSet = true;
     }
 
     if (value.HasMember("RSAPublicKey") && !value["RSAPublicKey"].IsNull())
@@ -73,20 +63,22 @@ CoreInternalOutcome AIGWJWTCredentialConfig::Deserialize(const rapidjson::Value 
         m_rSAPublicKeyHasBeenSet = true;
     }
 
+    if (value.HasMember("Secret") && !value["Secret"].IsNull())
+    {
+        if (!value["Secret"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWJWTCredentialConfig.Secret` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_secret = string(value["Secret"].GetString());
+        m_secretHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void AIGWJWTCredentialConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_keyHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Key";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_key.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_algorithmHasBeenSet)
     {
@@ -96,12 +88,12 @@ void AIGWJWTCredentialConfig::ToJsonObject(rapidjson::Value &value, rapidjson::D
         value.AddMember(iKey, rapidjson::Value(m_algorithm.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_secretHasBeenSet)
+    if (m_keyHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Secret";
+        string key = "Key";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_secret.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_key.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rSAPublicKeyHasBeenSet)
@@ -112,24 +104,16 @@ void AIGWJWTCredentialConfig::ToJsonObject(rapidjson::Value &value, rapidjson::D
         value.AddMember(iKey, rapidjson::Value(m_rSAPublicKey.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_secretHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Secret";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secret.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string AIGWJWTCredentialConfig::GetKey() const
-{
-    return m_key;
-}
-
-void AIGWJWTCredentialConfig::SetKey(const string& _key)
-{
-    m_key = _key;
-    m_keyHasBeenSet = true;
-}
-
-bool AIGWJWTCredentialConfig::KeyHasBeenSet() const
-{
-    return m_keyHasBeenSet;
-}
 
 string AIGWJWTCredentialConfig::GetAlgorithm() const
 {
@@ -147,20 +131,20 @@ bool AIGWJWTCredentialConfig::AlgorithmHasBeenSet() const
     return m_algorithmHasBeenSet;
 }
 
-string AIGWJWTCredentialConfig::GetSecret() const
+string AIGWJWTCredentialConfig::GetKey() const
 {
-    return m_secret;
+    return m_key;
 }
 
-void AIGWJWTCredentialConfig::SetSecret(const string& _secret)
+void AIGWJWTCredentialConfig::SetKey(const string& _key)
 {
-    m_secret = _secret;
-    m_secretHasBeenSet = true;
+    m_key = _key;
+    m_keyHasBeenSet = true;
 }
 
-bool AIGWJWTCredentialConfig::SecretHasBeenSet() const
+bool AIGWJWTCredentialConfig::KeyHasBeenSet() const
 {
-    return m_secretHasBeenSet;
+    return m_keyHasBeenSet;
 }
 
 string AIGWJWTCredentialConfig::GetRSAPublicKey() const
@@ -177,5 +161,21 @@ void AIGWJWTCredentialConfig::SetRSAPublicKey(const string& _rSAPublicKey)
 bool AIGWJWTCredentialConfig::RSAPublicKeyHasBeenSet() const
 {
     return m_rSAPublicKeyHasBeenSet;
+}
+
+string AIGWJWTCredentialConfig::GetSecret() const
+{
+    return m_secret;
+}
+
+void AIGWJWTCredentialConfig::SetSecret(const string& _secret)
+{
+    m_secret = _secret;
+    m_secretHasBeenSet = true;
+}
+
+bool AIGWJWTCredentialConfig::SecretHasBeenSet() const
+{
+    return m_secretHasBeenSet;
 }
 

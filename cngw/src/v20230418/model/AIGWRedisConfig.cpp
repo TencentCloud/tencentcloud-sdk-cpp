@@ -24,7 +24,9 @@ AIGWRedisConfig::AIGWRedisConfig() :
     m_hostHasBeenSet(false),
     m_portHasBeenSet(false),
     m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+    m_passwordHasBeenSet(false),
+    m_redisConfigIdHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome AIGWRedisConfig::Deserialize(const rapidjson::Value &value)
         m_passwordHasBeenSet = true;
     }
 
+    if (value.HasMember("RedisConfigId") && !value["RedisConfigId"].IsNull())
+    {
+        if (!value["RedisConfigId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWRedisConfig.RedisConfigId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_redisConfigId = string(value["RedisConfigId"].GetString());
+        m_redisConfigIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWRedisConfig.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void AIGWRedisConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Password";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_redisConfigIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RedisConfigId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_redisConfigId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void AIGWRedisConfig::SetPassword(const string& _password)
 bool AIGWRedisConfig::PasswordHasBeenSet() const
 {
     return m_passwordHasBeenSet;
+}
+
+string AIGWRedisConfig::GetRedisConfigId() const
+{
+    return m_redisConfigId;
+}
+
+void AIGWRedisConfig::SetRedisConfigId(const string& _redisConfigId)
+{
+    m_redisConfigId = _redisConfigId;
+    m_redisConfigIdHasBeenSet = true;
+}
+
+bool AIGWRedisConfig::RedisConfigIdHasBeenSet() const
+{
+    return m_redisConfigIdHasBeenSet;
+}
+
+string AIGWRedisConfig::GetType() const
+{
+    return m_type;
+}
+
+void AIGWRedisConfig::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool AIGWRedisConfig::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 

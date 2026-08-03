@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取
-                     * @return ParamSchemaConfig 
+                     * 获取<p>触发器webhook参数配置</p>
+                     * @return ParamSchemaConfig <p>触发器webhook参数配置</p>
                      * 
                      */
                     AppTriggerWebhookParamSchemaConfig GetParamSchemaConfig() const;
 
                     /**
-                     * 设置
-                     * @param _paramSchemaConfig 
+                     * 设置<p>触发器webhook参数配置</p>
+                     * @param _paramSchemaConfig <p>触发器webhook参数配置</p>
                      * 
                      */
                     void SetParamSchemaConfig(const AppTriggerWebhookParamSchemaConfig& _paramSchemaConfig);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ParamSchemaConfigHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return WebhookKey 
+                     * 获取<p>webhook的key</p>
+                     * @return WebhookKey <p>webhook的key</p>
                      * 
                      */
                     std::string GetWebhookKey() const;
 
                     /**
-                     * 设置
-                     * @param _webhookKey 
+                     * 设置<p>webhook的key</p>
+                     * @param _webhookKey <p>webhook的key</p>
                      * 
                      */
                     void SetWebhookKey(const std::string& _webhookKey);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool WebhookKeyHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return WebhookToken 
+                     * 获取<p>webhook的密钥</p>
+                     * @return WebhookToken <p>webhook的密钥</p>
                      * 
                      */
                     std::string GetWebhookToken() const;
 
                     /**
-                     * 设置
-                     * @param _webhookToken 
+                     * 设置<p>webhook的密钥</p>
+                     * @param _webhookToken <p>webhook的密钥</p>
                      * 
                      */
                     void SetWebhookToken(const std::string& _webhookToken);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool WebhookTokenHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return WebhookUrl 
+                     * 获取<p>webhook的地址</p>
+                     * @return WebhookUrl <p>webhook的地址</p>
                      * 
                      */
                     std::string GetWebhookUrl() const;
 
                     /**
-                     * 设置
-                     * @param _webhookUrl 
+                     * 设置<p>webhook的地址</p>
+                     * @param _webhookUrl <p>webhook的地址</p>
                      * 
                      */
                     void SetWebhookUrl(const std::string& _webhookUrl);
@@ -134,25 +134,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 
+                     * <p>触发器webhook参数配置</p>
                      */
                     AppTriggerWebhookParamSchemaConfig m_paramSchemaConfig;
                     bool m_paramSchemaConfigHasBeenSet;
 
                     /**
-                     * 
+                     * <p>webhook的key</p>
                      */
                     std::string m_webhookKey;
                     bool m_webhookKeyHasBeenSet;
 
                     /**
-                     * 
+                     * <p>webhook的密钥</p>
                      */
                     std::string m_webhookToken;
                     bool m_webhookTokenHasBeenSet;
 
                     /**
-                     * 
+                     * <p>webhook的地址</p>
                      */
                     std::string m_webhookUrl;
                     bool m_webhookUrlHasBeenSet;

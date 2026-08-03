@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>加密算法，可选值：&#39;3DES-CBC&#39;, &#39;AES-CBC-128&#39;, &#39;AES-CBC-192&#39;, &#39;AES-CBC-256&#39;, &#39;DES-CBC&#39;，&#39;SM4&#39;, 默认为3DES-CBC</p>
-                     * @return PropoEncryAlgorithm <p>加密算法，可选值：&#39;3DES-CBC&#39;, &#39;AES-CBC-128&#39;, &#39;AES-CBC-192&#39;, &#39;AES-CBC-256&#39;, &#39;DES-CBC&#39;，&#39;SM4&#39;, 默认为3DES-CBC</p>
+                     * 获取<p>加密算法，可选值：&#39;3DES-CBC&#39;, &#39;AES-CBC-128&#39;, &#39;AES-CBC-192&#39;, &#39;AES-CBC-256&#39;, &#39;DES-CBC&#39;, &#39;SM4&#39;,  &#39;AES128GCM128&#39;, &#39;AES192GCM128&#39;, &#39;AES256GCM128&#39;</p><p>默认值：3DES-CBC</p><p>仅4.0VPN网关支持 &#39;AES128GCM128&#39;, &#39;AES192GCM128&#39;, &#39;AES256GCM128&#39;</p>
+                     * @return PropoEncryAlgorithm <p>加密算法，可选值：&#39;3DES-CBC&#39;, &#39;AES-CBC-128&#39;, &#39;AES-CBC-192&#39;, &#39;AES-CBC-256&#39;, &#39;DES-CBC&#39;, &#39;SM4&#39;,  &#39;AES128GCM128&#39;, &#39;AES192GCM128&#39;, &#39;AES256GCM128&#39;</p><p>默认值：3DES-CBC</p><p>仅4.0VPN网关支持 &#39;AES128GCM128&#39;, &#39;AES192GCM128&#39;, &#39;AES256GCM128&#39;</p>
                      * 
                      */
                     std::string GetPropoEncryAlgorithm() const;
 
                     /**
-                     * 设置<p>加密算法，可选值：&#39;3DES-CBC&#39;, &#39;AES-CBC-128&#39;, &#39;AES-CBC-192&#39;, &#39;AES-CBC-256&#39;, &#39;DES-CBC&#39;，&#39;SM4&#39;, 默认为3DES-CBC</p>
-                     * @param _propoEncryAlgorithm <p>加密算法，可选值：&#39;3DES-CBC&#39;, &#39;AES-CBC-128&#39;, &#39;AES-CBC-192&#39;, &#39;AES-CBC-256&#39;, &#39;DES-CBC&#39;，&#39;SM4&#39;, 默认为3DES-CBC</p>
+                     * 设置<p>加密算法，可选值：&#39;3DES-CBC&#39;, &#39;AES-CBC-128&#39;, &#39;AES-CBC-192&#39;, &#39;AES-CBC-256&#39;, &#39;DES-CBC&#39;, &#39;SM4&#39;,  &#39;AES128GCM128&#39;, &#39;AES192GCM128&#39;, &#39;AES256GCM128&#39;</p><p>默认值：3DES-CBC</p><p>仅4.0VPN网关支持 &#39;AES128GCM128&#39;, &#39;AES192GCM128&#39;, &#39;AES256GCM128&#39;</p>
+                     * @param _propoEncryAlgorithm <p>加密算法，可选值：&#39;3DES-CBC&#39;, &#39;AES-CBC-128&#39;, &#39;AES-CBC-192&#39;, &#39;AES-CBC-256&#39;, &#39;DES-CBC&#39;, &#39;SM4&#39;,  &#39;AES128GCM128&#39;, &#39;AES192GCM128&#39;, &#39;AES256GCM128&#39;</p><p>默认值：3DES-CBC</p><p>仅4.0VPN网关支持 &#39;AES128GCM128&#39;, &#39;AES192GCM128&#39;, &#39;AES256GCM128&#39;</p>
                      * 
                      */
                     void SetPropoEncryAlgorithm(const std::string& _propoEncryAlgorithm);
@@ -301,7 +301,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>加密算法，可选值：&#39;3DES-CBC&#39;, &#39;AES-CBC-128&#39;, &#39;AES-CBC-192&#39;, &#39;AES-CBC-256&#39;, &#39;DES-CBC&#39;，&#39;SM4&#39;, 默认为3DES-CBC</p>
+                     * <p>加密算法，可选值：&#39;3DES-CBC&#39;, &#39;AES-CBC-128&#39;, &#39;AES-CBC-192&#39;, &#39;AES-CBC-256&#39;, &#39;DES-CBC&#39;, &#39;SM4&#39;,  &#39;AES128GCM128&#39;, &#39;AES192GCM128&#39;, &#39;AES256GCM128&#39;</p><p>默认值：3DES-CBC</p><p>仅4.0VPN网关支持 &#39;AES128GCM128&#39;, &#39;AES192GCM128&#39;, &#39;AES256GCM128&#39;</p>
                      */
                     std::string m_propoEncryAlgorithm;
                     bool m_propoEncryAlgorithmHasBeenSet;

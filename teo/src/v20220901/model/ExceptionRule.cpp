@@ -27,6 +27,7 @@ ExceptionRule::ExceptionRule() :
     m_skipScopeHasBeenSet(false),
     m_skipOptionHasBeenSet(false),
     m_webSecurityModulesForExceptionHasBeenSet(false),
+    m_webSecuritySubmodulesForExceptionHasBeenSet(false),
     m_managedRulesForExceptionHasBeenSet(false),
     m_managedRuleGroupsForExceptionHasBeenSet(false),
     m_requestFieldsForExceptionHasBeenSet(false),
@@ -100,6 +101,19 @@ CoreInternalOutcome ExceptionRule::Deserialize(const rapidjson::Value &value)
             m_webSecurityModulesForException.push_back((*itr).GetString());
         }
         m_webSecurityModulesForExceptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("WebSecuritySubmodulesForException") && !value["WebSecuritySubmodulesForException"].IsNull())
+    {
+        if (!value["WebSecuritySubmodulesForException"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExceptionRule.WebSecuritySubmodulesForException` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["WebSecuritySubmodulesForException"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_webSecuritySubmodulesForException.push_back((*itr).GetString());
+        }
+        m_webSecuritySubmodulesForExceptionHasBeenSet = true;
     }
 
     if (value.HasMember("ManagedRulesForException") && !value["ManagedRulesForException"].IsNull())
@@ -213,6 +227,19 @@ void ExceptionRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_webSecurityModulesForException.begin(); itr != m_webSecurityModulesForException.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_webSecuritySubmodulesForExceptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebSecuritySubmodulesForException";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_webSecuritySubmodulesForException.begin(); itr != m_webSecuritySubmodulesForException.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -364,6 +391,22 @@ void ExceptionRule::SetWebSecurityModulesForException(const vector<string>& _web
 bool ExceptionRule::WebSecurityModulesForExceptionHasBeenSet() const
 {
     return m_webSecurityModulesForExceptionHasBeenSet;
+}
+
+vector<string> ExceptionRule::GetWebSecuritySubmodulesForException() const
+{
+    return m_webSecuritySubmodulesForException;
+}
+
+void ExceptionRule::SetWebSecuritySubmodulesForException(const vector<string>& _webSecuritySubmodulesForException)
+{
+    m_webSecuritySubmodulesForException = _webSecuritySubmodulesForException;
+    m_webSecuritySubmodulesForExceptionHasBeenSet = true;
+}
+
+bool ExceptionRule::WebSecuritySubmodulesForExceptionHasBeenSet() const
+{
+    return m_webSecuritySubmodulesForExceptionHasBeenSet;
 }
 
 vector<string> ExceptionRule::GetManagedRulesForException() const

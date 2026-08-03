@@ -328,15 +328,15 @@ namespace TencentCloud
                     bool ModelServiceRouteHasBeenSet() const;
 
                     /**
-                     * 获取<p>无</p>
-                     * @return MatchHeaders <p>无</p>
+                     * 获取<p>HTTP 请求头匹配规则，用于按请求头路由到不同模型服务。</p>
+                     * @return MatchHeaders <p>HTTP 请求头匹配规则，用于按请求头路由到不同模型服务。</p>
                      * 
                      */
                     std::vector<AIGWKVMatch> GetMatchHeaders() const;
 
                     /**
-                     * 设置<p>无</p>
-                     * @param _matchHeaders <p>无</p>
+                     * 设置<p>HTTP 请求头匹配规则，用于按请求头路由到不同模型服务。</p>
+                     * @param _matchHeaders <p>HTTP 请求头匹配规则，用于按请求头路由到不同模型服务。</p>
                      * 
                      */
                     void SetMatchHeaders(const std::vector<AIGWKVMatch>& _matchHeaders);
@@ -576,7 +576,7 @@ namespace TencentCloud
                     bool m_modelServiceRouteHasBeenSet;
 
                     /**
-                     * <p>无</p>
+                     * <p>HTTP 请求头匹配规则，用于按请求头路由到不同模型服务。</p>
                      */
                     std::vector<AIGWKVMatch> m_matchHeaders;
                     bool m_matchHeadersHasBeenSet;

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取
-                     * @return LastFireTime 
+                     * 获取<p>最近一次触发时间</p><p>参数格式：格式为YYYY-MM-DD hh:mm:ss</p>
+                     * @return LastFireTime <p>最近一次触发时间</p><p>参数格式：格式为YYYY-MM-DD hh:mm:ss</p>
                      * 
                      */
                     std::string GetLastFireTime() const;
 
                     /**
-                     * 设置
-                     * @param _lastFireTime 
+                     * 设置<p>最近一次触发时间</p><p>参数格式：格式为YYYY-MM-DD hh:mm:ss</p>
+                     * @param _lastFireTime <p>最近一次触发时间</p><p>参数格式：格式为YYYY-MM-DD hh:mm:ss</p>
                      * 
                      */
                     void SetLastFireTime(const std::string& _lastFireTime);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool LastFireTimeHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return NextFireTime 
+                     * 获取<p>下一次触发时间</p><p>参数格式：格式为YYYY-MM-DD hh:mm:ss</p>
+                     * @return NextFireTime <p>下一次触发时间</p><p>参数格式：格式为YYYY-MM-DD hh:mm:ss</p>
                      * 
                      */
                     std::string GetNextFireTime() const;
 
                     /**
-                     * 设置
-                     * @param _nextFireTime 
+                     * 设置<p>下一次触发时间</p><p>参数格式：格式为YYYY-MM-DD hh:mm:ss</p>
+                     * @param _nextFireTime <p>下一次触发时间</p><p>参数格式：格式为YYYY-MM-DD hh:mm:ss</p>
                      * 
                      */
                     void SetNextFireTime(const std::string& _nextFireTime);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NextFireTimeHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return PolicySummary 
+                     * 获取<p>触发方式</p>
+                     * @return PolicySummary <p>触发方式</p>
                      * 
                      */
                     std::string GetPolicySummary() const;
 
                     /**
-                     * 设置
-                     * @param _policySummary 
+                     * 设置<p>触发方式</p>
+                     * @param _policySummary <p>触发方式</p>
                      * 
                      */
                     void SetPolicySummary(const std::string& _policySummary);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 
+                     * <p>最近一次触发时间</p><p>参数格式：格式为YYYY-MM-DD hh:mm:ss</p>
                      */
                     std::string m_lastFireTime;
                     bool m_lastFireTimeHasBeenSet;
 
                     /**
-                     * 
+                     * <p>下一次触发时间</p><p>参数格式：格式为YYYY-MM-DD hh:mm:ss</p>
                      */
                     std::string m_nextFireTime;
                     bool m_nextFireTimeHasBeenSet;
 
                     /**
-                     * 
+                     * <p>触发方式</p>
                      */
                     std::string m_policySummary;
                     bool m_policySummaryHasBeenSet;

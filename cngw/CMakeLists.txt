@@ -31,6 +31,7 @@ set(cngw_public_header_model
   include/tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayMCPToolRequest.h
   include/tencentcloud/cngw/v20230418/model/AIGWRedisConfig.h
   include/tencentcloud/cngw/v20230418/model/AIGWIntentRoute.h
+  include/tencentcloud/cngw/v20230418/model/Filter.h
   include/tencentcloud/cngw/v20230418/model/AIGWFallbackServiceItem.h
   include/tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewaySecretKeyValueRequest.h
   include/tencentcloud/cngw/v20230418/model/AIGWLatencyPriorityRouteRule.h
@@ -59,12 +60,12 @@ set(cngw_public_header_model
   include/tencentcloud/cngw/v20230418/model/CNAPIGwConsumer.h
   include/tencentcloud/cngw/v20230418/model/AIGWLogConfig.h
   include/tencentcloud/cngw/v20230418/model/AIGWMCPServerList.h
-  include/tencentcloud/cngw/v20230418/model/AIGWJWTCredentialConfig.h
+  include/tencentcloud/cngw/v20230418/model/AIGWIntentRouteRule.h
   include/tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayLLMModelServiceResponse.h
   include/tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayLLMModelServiceResponse.h
   include/tencentcloud/cngw/v20230418/model/AIGWTopConsumersItem.h
   include/tencentcloud/cngw/v20230418/model/RemoveCloudNativeAPIGatewayConsumerInGroupRequest.h
-  include/tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayLLMModelServiceRequest.h
+  include/tencentcloud/cngw/v20230418/model/AIGWJWTCredentialConfig.h
   include/tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayLLMModelServicesRequest.h
   include/tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayLLMModelAPIRequest.h
   include/tencentcloud/cngw/v20230418/model/CNAPIGwMCPToolParam.h
@@ -88,15 +89,17 @@ set(cngw_public_header_model
   include/tencentcloud/cngw/v20230418/model/DefaultKongRoute.h
   include/tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolListRequest.h
   include/tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayMCPServerResponse.h
-  include/tencentcloud/cngw/v20230418/model/AIGWIntentRouteRule.h
+  include/tencentcloud/cngw/v20230418/model/CNAPIGwParseMCPToolsResult.h
   include/tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayMCPToolRequest.h
   include/tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolACLListRequest.h
   include/tencentcloud/cngw/v20230418/model/ListCloudNativeAPIGatewayLLMModelAPI.h
   include/tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayLLMModelServiceResponse.h
   include/tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolResponse.h
   include/tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayMCPToolACLResponse.h
+  include/tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolsFromFileRequest.h
   include/tencentcloud/cngw/v20230418/model/AIGWOIDCCredentialConfig.h
   include/tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayConsumerGroupResponse.h
+  include/tencentcloud/cngw/v20230418/model/UpdateCloudNativeAPIGatewayMCPToolsResponse.h
   include/tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayLLMModelAPIResponse.h
   include/tencentcloud/cngw/v20230418/model/AIGWMCPUpstreamInfoDetail.h
   include/tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayMCPServerStatusResponse.h
@@ -116,6 +119,7 @@ set(cngw_public_header_model
   include/tencentcloud/cngw/v20230418/model/AIGWCacheAwareRouteConfig.h
   include/tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayMCPToolACLRequest.h
   include/tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayMCPServerResponse.h
+  include/tencentcloud/cngw/v20230418/model/UpdateCloudNativeAPIGatewayMCPToolsRequest.h
   include/tencentcloud/cngw/v20230418/model/AIGWHealthCheckSetting.h
   include/tencentcloud/cngw/v20230418/model/AIGWLLMTokenUsageStatisticsResult.h
   include/tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayLLMModelAPIRequest.h
@@ -130,8 +134,9 @@ set(cngw_public_header_model
   include/tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayLLMModelAPIResponse.h
   include/tencentcloud/cngw/v20230418/model/UnbindCloudNativeAPIGatewaySecretKeyResponse.h
   include/tencentcloud/cngw/v20230418/model/AIGWLLMTokenUsageListResult.h
+  include/tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolsFromFileResponse.h
   include/tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewaySecretKeyRequest.h
-  include/tencentcloud/cngw/v20230418/model/Filter.h
+  include/tencentcloud/cngw/v20230418/model/CNAPIGwMCPToolPreview.h
   include/tencentcloud/cngw/v20230418/model/CNAPIGwMCPTool.h
   include/tencentcloud/cngw/v20230418/model/AIGWMCPToolACLItem.h
   include/tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsResponse.h
@@ -165,6 +170,7 @@ set(cngw_public_header_model
   include/tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPServerRequest.h
   include/tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayLLMTokenUsageListRequest.h
   include/tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayMCPToolStatusRequest.h
+  include/tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayLLMModelServiceRequest.h
   include/tencentcloud/cngw/v20230418/model/AddCloudNativeAPIGatewayConsumerGroupAuthRequest.h
   include/tencentcloud/cngw/v20230418/model/AIGWLLMModelServiceSubRoute.h
   include/tencentcloud/cngw/v20230418/model/AIGWForwardDesensitizeConfig.h
@@ -196,6 +202,7 @@ set(cngw_src
   src/v20230418/model/DeleteCloudNativeAPIGatewayMCPToolRequest.cpp
   src/v20230418/model/AIGWRedisConfig.cpp
   src/v20230418/model/AIGWIntentRoute.cpp
+  src/v20230418/model/Filter.cpp
   src/v20230418/model/AIGWFallbackServiceItem.cpp
   src/v20230418/model/DescribeCloudNativeAPIGatewaySecretKeyValueRequest.cpp
   src/v20230418/model/AIGWLatencyPriorityRouteRule.cpp
@@ -224,12 +231,12 @@ set(cngw_src
   src/v20230418/model/CNAPIGwConsumer.cpp
   src/v20230418/model/AIGWLogConfig.cpp
   src/v20230418/model/AIGWMCPServerList.cpp
-  src/v20230418/model/AIGWJWTCredentialConfig.cpp
+  src/v20230418/model/AIGWIntentRouteRule.cpp
   src/v20230418/model/ModifyCloudNativeAPIGatewayLLMModelServiceResponse.cpp
   src/v20230418/model/CreateCloudNativeAPIGatewayLLMModelServiceResponse.cpp
   src/v20230418/model/AIGWTopConsumersItem.cpp
   src/v20230418/model/RemoveCloudNativeAPIGatewayConsumerInGroupRequest.cpp
-  src/v20230418/model/CreateCloudNativeAPIGatewayLLMModelServiceRequest.cpp
+  src/v20230418/model/AIGWJWTCredentialConfig.cpp
   src/v20230418/model/DescribeCloudNativeAPIGatewayLLMModelServicesRequest.cpp
   src/v20230418/model/CreateCloudNativeAPIGatewayLLMModelAPIRequest.cpp
   src/v20230418/model/CNAPIGwMCPToolParam.cpp
@@ -253,15 +260,17 @@ set(cngw_src
   src/v20230418/model/DefaultKongRoute.cpp
   src/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolListRequest.cpp
   src/v20230418/model/DeleteCloudNativeAPIGatewayMCPServerResponse.cpp
-  src/v20230418/model/AIGWIntentRouteRule.cpp
+  src/v20230418/model/CNAPIGwParseMCPToolsResult.cpp
   src/v20230418/model/ModifyCloudNativeAPIGatewayMCPToolRequest.cpp
   src/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolACLListRequest.cpp
   src/v20230418/model/ListCloudNativeAPIGatewayLLMModelAPI.cpp
   src/v20230418/model/DeleteCloudNativeAPIGatewayLLMModelServiceResponse.cpp
   src/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolResponse.cpp
   src/v20230418/model/ModifyCloudNativeAPIGatewayMCPToolACLResponse.cpp
+  src/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolsFromFileRequest.cpp
   src/v20230418/model/AIGWOIDCCredentialConfig.cpp
   src/v20230418/model/CreateCloudNativeAPIGatewayConsumerGroupResponse.cpp
+  src/v20230418/model/UpdateCloudNativeAPIGatewayMCPToolsResponse.cpp
   src/v20230418/model/DescribeCloudNativeAPIGatewayLLMModelAPIResponse.cpp
   src/v20230418/model/AIGWMCPUpstreamInfoDetail.cpp
   src/v20230418/model/ModifyCloudNativeAPIGatewayMCPServerStatusResponse.cpp
@@ -281,6 +290,7 @@ set(cngw_src
   src/v20230418/model/AIGWCacheAwareRouteConfig.cpp
   src/v20230418/model/ModifyCloudNativeAPIGatewayMCPToolACLRequest.cpp
   src/v20230418/model/CreateCloudNativeAPIGatewayMCPServerResponse.cpp
+  src/v20230418/model/UpdateCloudNativeAPIGatewayMCPToolsRequest.cpp
   src/v20230418/model/AIGWHealthCheckSetting.cpp
   src/v20230418/model/AIGWLLMTokenUsageStatisticsResult.cpp
   src/v20230418/model/DeleteCloudNativeAPIGatewayLLMModelAPIRequest.cpp
@@ -295,8 +305,9 @@ set(cngw_src
   src/v20230418/model/DeleteCloudNativeAPIGatewayLLMModelAPIResponse.cpp
   src/v20230418/model/UnbindCloudNativeAPIGatewaySecretKeyResponse.cpp
   src/v20230418/model/AIGWLLMTokenUsageListResult.cpp
+  src/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolsFromFileResponse.cpp
   src/v20230418/model/ModifyCloudNativeAPIGatewaySecretKeyRequest.cpp
-  src/v20230418/model/Filter.cpp
+  src/v20230418/model/CNAPIGwMCPToolPreview.cpp
   src/v20230418/model/CNAPIGwMCPTool.cpp
   src/v20230418/model/AIGWMCPToolACLItem.cpp
   src/v20230418/model/DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsResponse.cpp
@@ -330,6 +341,7 @@ set(cngw_src
   src/v20230418/model/DescribeCloudNativeAPIGatewayMCPServerRequest.cpp
   src/v20230418/model/DescribeCloudNativeAPIGatewayLLMTokenUsageListRequest.cpp
   src/v20230418/model/ModifyCloudNativeAPIGatewayMCPToolStatusRequest.cpp
+  src/v20230418/model/CreateCloudNativeAPIGatewayLLMModelServiceRequest.cpp
   src/v20230418/model/AddCloudNativeAPIGatewayConsumerGroupAuthRequest.cpp
   src/v20230418/model/AIGWLLMModelServiceSubRoute.cpp
   src/v20230418/model/AIGWForwardDesensitizeConfig.cpp

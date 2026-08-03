@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取镜像地址
-                     * @return Reference 镜像地址
+                     * 获取<p>镜像地址</p>
+                     * @return Reference <p>镜像地址</p>
                      * 
                      */
                     std::string GetReference() const;
 
                     /**
-                     * 设置镜像地址
-                     * @param _reference 镜像地址
+                     * 设置<p>镜像地址</p>
+                     * @param _reference <p>镜像地址</p>
                      * 
                      */
                     void SetReference(const std::string& _reference);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ReferenceHasBeenSet() const;
 
                     /**
-                     * 获取镜像仓库类型：`enterprise`、`personal`。
-                     * @return ImageRegistryType 镜像仓库类型：`enterprise`、`personal`。
+                     * 获取<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>。</p>
+                     * @return ImageRegistryType <p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>。</p>
                      * 
                      */
                     std::string GetImageRegistryType() const;
 
                     /**
-                     * 设置镜像仓库类型：`enterprise`、`personal`。
-                     * @param _imageRegistryType 镜像仓库类型：`enterprise`、`personal`。
+                     * 设置<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>。</p>
+                     * @param _imageRegistryType <p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>。</p>
                      * 
                      */
                     void SetImageRegistryType(const std::string& _imageRegistryType);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ImageRegistryTypeHasBeenSet() const;
 
                     /**
-                     * 获取镜像内部的路径
-                     * @return SubPath 镜像内部的路径
+                     * 获取<p>镜像内部的路径</p>
+                     * @return SubPath <p>镜像内部的路径</p>
                      * 
                      */
                     std::string GetSubPath() const;
 
                     /**
-                     * 设置镜像内部的路径
-                     * @param _subPath 镜像内部的路径
+                     * 设置<p>镜像内部的路径</p>
+                     * @param _subPath <p>镜像内部的路径</p>
                      * 
                      */
                     void SetSubPath(const std::string& _subPath);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool SubPathHasBeenSet() const;
 
                     /**
-                     * 获取镜像 Digest，请求时无需传入
-                     * @return Digest 镜像 Digest，请求时无需传入
+                     * 获取<p>镜像 Digest，请求时无需传入</p>
+                     * @return Digest <p>镜像 Digest，请求时无需传入</p>
                      * 
                      */
                     std::string GetDigest() const;
 
                     /**
-                     * 设置镜像 Digest，请求时无需传入
-                     * @param _digest 镜像 Digest，请求时无需传入
+                     * 设置<p>镜像 Digest，请求时无需传入</p>
+                     * @param _digest <p>镜像 Digest，请求时无需传入</p>
                      * 
                      */
                     void SetDigest(const std::string& _digest);
@@ -133,25 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 镜像地址
+                     * <p>镜像地址</p>
                      */
                     std::string m_reference;
                     bool m_referenceHasBeenSet;
 
                     /**
-                     * 镜像仓库类型：`enterprise`、`personal`。
+                     * <p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>。</p>
                      */
                     std::string m_imageRegistryType;
                     bool m_imageRegistryTypeHasBeenSet;
 
                     /**
-                     * 镜像内部的路径
+                     * <p>镜像内部的路径</p>
                      */
                     std::string m_subPath;
                     bool m_subPathHasBeenSet;
 
                     /**
-                     * 镜像 Digest，请求时无需传入
+                     * <p>镜像 Digest，请求时无需传入</p>
                      */
                     std::string m_digest;
                     bool m_digestHasBeenSet;

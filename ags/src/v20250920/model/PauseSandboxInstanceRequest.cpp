@@ -23,7 +23,8 @@ using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
 PauseSandboxInstanceRequest::PauseSandboxInstanceRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_memoryHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string PauseSandboxInstanceRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_memoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Memory";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_memory, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void PauseSandboxInstanceRequest::SetInstanceId(const string& _instanceId)
 bool PauseSandboxInstanceRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+bool PauseSandboxInstanceRequest::GetMemory() const
+{
+    return m_memory;
+}
+
+void PauseSandboxInstanceRequest::SetMemory(const bool& _memory)
+{
+    m_memory = _memory;
+    m_memoryHasBeenSet = true;
+}
+
+bool PauseSandboxInstanceRequest::MemoryHasBeenSet() const
+{
+    return m_memoryHasBeenSet;
 }
 
 

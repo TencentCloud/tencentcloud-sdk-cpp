@@ -24,7 +24,8 @@ using namespace std;
 
 DeleteDatasetRequest::DeleteDatasetRequest() :
     m_datasetIdHasBeenSet(false),
-    m_deleteLabelEnableHasBeenSet(false)
+    m_deleteLabelEnableHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DeleteDatasetRequest::ToJsonString() const
         string key = "DeleteLabelEnable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deleteLabelEnable, allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DeleteDatasetRequest::SetDeleteLabelEnable(const bool& _deleteLabelEnable)
 bool DeleteDatasetRequest::DeleteLabelEnableHasBeenSet() const
 {
     return m_deleteLabelEnableHasBeenSet;
+}
+
+string DeleteDatasetRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void DeleteDatasetRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool DeleteDatasetRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 

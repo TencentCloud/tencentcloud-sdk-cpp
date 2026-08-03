@@ -50,7 +50,11 @@ CreateCloudNativeAPIGatewayLLMModelServiceRequest::CreateCloudNativeAPIGatewayLL
     m_externalInstanceIdHasBeenSet(false),
     m_extParamsHasBeenSet(false),
     m_keyRotationEnabledHasBeenSet(false),
-    m_keyRotationPeriodDaysHasBeenSet(false)
+    m_keyRotationPeriodDaysHasBeenSet(false),
+    m_sourceIdHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
+    m_serviceNameHasBeenSet(false),
+    m_protocolHasBeenSet(false)
 {
 }
 
@@ -310,6 +314,38 @@ string CreateCloudNativeAPIGatewayLLMModelServiceRequest::ToJsonString() const
         string key = "KeyRotationPeriodDays";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_keyRotationPeriodDays, allocator);
+    }
+
+    if (m_sourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Namespace";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Protocol";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -766,6 +802,70 @@ void CreateCloudNativeAPIGatewayLLMModelServiceRequest::SetKeyRotationPeriodDays
 bool CreateCloudNativeAPIGatewayLLMModelServiceRequest::KeyRotationPeriodDaysHasBeenSet() const
 {
     return m_keyRotationPeriodDaysHasBeenSet;
+}
+
+string CreateCloudNativeAPIGatewayLLMModelServiceRequest::GetSourceId() const
+{
+    return m_sourceId;
+}
+
+void CreateCloudNativeAPIGatewayLLMModelServiceRequest::SetSourceId(const string& _sourceId)
+{
+    m_sourceId = _sourceId;
+    m_sourceIdHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayLLMModelServiceRequest::SourceIdHasBeenSet() const
+{
+    return m_sourceIdHasBeenSet;
+}
+
+string CreateCloudNativeAPIGatewayLLMModelServiceRequest::GetNamespace() const
+{
+    return m_namespace;
+}
+
+void CreateCloudNativeAPIGatewayLLMModelServiceRequest::SetNamespace(const string& _namespace)
+{
+    m_namespace = _namespace;
+    m_namespaceHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayLLMModelServiceRequest::NamespaceHasBeenSet() const
+{
+    return m_namespaceHasBeenSet;
+}
+
+string CreateCloudNativeAPIGatewayLLMModelServiceRequest::GetServiceName() const
+{
+    return m_serviceName;
+}
+
+void CreateCloudNativeAPIGatewayLLMModelServiceRequest::SetServiceName(const string& _serviceName)
+{
+    m_serviceName = _serviceName;
+    m_serviceNameHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayLLMModelServiceRequest::ServiceNameHasBeenSet() const
+{
+    return m_serviceNameHasBeenSet;
+}
+
+string CreateCloudNativeAPIGatewayLLMModelServiceRequest::GetProtocol() const
+{
+    return m_protocol;
+}
+
+void CreateCloudNativeAPIGatewayLLMModelServiceRequest::SetProtocol(const string& _protocol)
+{
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayLLMModelServiceRequest::ProtocolHasBeenSet() const
+{
+    return m_protocolHasBeenSet;
 }
 
 

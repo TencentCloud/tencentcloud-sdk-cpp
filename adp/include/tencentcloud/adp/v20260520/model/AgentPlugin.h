@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取插件基本配置
-                     * @return Config 插件基本配置
+                     * 获取<p>插件基本配置</p>
+                     * @return Config <p>插件基本配置</p>
                      * 
                      */
                     AgentPluginConfig GetConfig() const;
 
                     /**
-                     * 设置插件基本配置
-                     * @param _config 插件基本配置
+                     * 设置<p>插件基本配置</p>
+                     * @param _config <p>插件基本配置</p>
                      * 
                      */
                     void SetConfig(const AgentPluginConfig& _config);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ConfigHasBeenSet() const;
 
                     /**
-                     * 获取插件名称
-                     * @return Name 插件名称
+                     * 获取<p>插件名称</p>
+                     * @return Name <p>插件名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置插件名称
-                     * @param _name 插件名称
+                     * 设置<p>插件名称</p>
+                     * @param _name <p>插件名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取插件图标url
-                     * @return IconUrl 插件图标url
+                     * 获取<p>插件图标url</p>
+                     * @return IconUrl <p>插件图标url</p>
                      * 
                      */
                     std::string GetIconUrl() const;
 
                     /**
-                     * 设置插件图标url
-                     * @param _iconUrl 插件图标url
+                     * 设置<p>插件图标url</p>
+                     * @param _iconUrl <p>插件图标url</p>
                      * 
                      */
                     void SetIconUrl(const std::string& _iconUrl);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool IconUrlHasBeenSet() const;
 
                     /**
-                     * 获取插件描述
-                     * @return Description 插件描述
+                     * 获取<p>插件描述</p>
+                     * @return Description <p>插件描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置插件描述
-                     * @param _description 插件描述
+                     * 设置<p>插件描述</p>
+                     * @param _description <p>插件描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -197,25 +197,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 插件基本配置
+                     * <p>插件基本配置</p>
                      */
                     AgentPluginConfig m_config;
                     bool m_configHasBeenSet;
 
                     /**
-                     * 插件名称
+                     * <p>插件名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 插件图标url
+                     * <p>插件图标url</p>
                      */
                     std::string m_iconUrl;
                     bool m_iconUrlHasBeenSet;
 
                     /**
-                     * 插件描述
+                     * <p>插件描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

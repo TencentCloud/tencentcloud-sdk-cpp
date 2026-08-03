@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取
-                     * @return SchemaList 
+                     * 获取<p>触发器API参数列表</p>
+                     * @return SchemaList <p>触发器API参数列表</p>
                      * 
                      */
                     std::vector<AppTriggerParamSchema> GetSchemaList() const;
 
                     /**
-                     * 设置
-                     * @param _schemaList 
+                     * 设置<p>触发器API参数列表</p>
+                     * @param _schemaList <p>触发器API参数列表</p>
                      * 
                      */
                     void SetSchemaList(const std::vector<AppTriggerParamSchema>& _schemaList);
@@ -71,7 +71,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 
+                     * <p>触发器API参数列表</p>
                      */
                     std::vector<AppTriggerParamSchema> m_schemaList;
                     bool m_schemaListHasBeenSet;

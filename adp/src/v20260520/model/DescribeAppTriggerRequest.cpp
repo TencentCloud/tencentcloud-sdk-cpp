@@ -24,7 +24,9 @@ using namespace std;
 
 DescribeAppTriggerRequest::DescribeAppTriggerRequest() :
     m_appIdHasBeenSet(false),
-    m_triggerIdHasBeenSet(false)
+    m_scopeHasBeenSet(false),
+    m_triggerIdHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -43,12 +45,28 @@ string DescribeAppTriggerRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_scopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scope";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_scope, allocator);
+    }
+
     if (m_triggerIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TriggerId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_triggerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -75,6 +93,22 @@ bool DescribeAppTriggerRequest::AppIdHasBeenSet() const
     return m_appIdHasBeenSet;
 }
 
+int64_t DescribeAppTriggerRequest::GetScope() const
+{
+    return m_scope;
+}
+
+void DescribeAppTriggerRequest::SetScope(const int64_t& _scope)
+{
+    m_scope = _scope;
+    m_scopeHasBeenSet = true;
+}
+
+bool DescribeAppTriggerRequest::ScopeHasBeenSet() const
+{
+    return m_scopeHasBeenSet;
+}
+
 string DescribeAppTriggerRequest::GetTriggerId() const
 {
     return m_triggerId;
@@ -89,6 +123,22 @@ void DescribeAppTriggerRequest::SetTriggerId(const string& _triggerId)
 bool DescribeAppTriggerRequest::TriggerIdHasBeenSet() const
 {
     return m_triggerIdHasBeenSet;
+}
+
+string DescribeAppTriggerRequest::GetUserId() const
+{
+    return m_userId;
+}
+
+void DescribeAppTriggerRequest::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool DescribeAppTriggerRequest::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 
 

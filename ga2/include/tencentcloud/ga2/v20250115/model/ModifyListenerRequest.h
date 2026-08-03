@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>名称，最大长度不能超过60个字节。</p>
-                     * @return Name <p>名称，最大长度不能超过60个字节。</p>
+                     * 获取<p>名称。</p><p>参数格式：以字母或中文开头，长度 2–128 个字符，支持字母、数字、中文、. - _</p>
+                     * @return Name <p>名称。</p><p>参数格式：以字母或中文开头，长度 2–128 个字符，支持字母、数字、中文、. - _</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置<p>名称，最大长度不能超过60个字节。</p>
-                     * @param _name <p>名称，最大长度不能超过60个字节。</p>
+                     * 设置<p>名称。</p><p>参数格式：以字母或中文开头，长度 2–128 个字符，支持字母、数字、中文、. - _</p>
+                     * @param _name <p>名称。</p><p>参数格式：以字母或中文开头，长度 2–128 个字符，支持字母、数字、中文、. - _</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool CipherPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>服务器证书。</p><p>HTTPS监听器才支持此参数修改。</p>
-                     * @return ServerCertificates <p>服务器证书。</p><p>HTTPS监听器才支持此参数修改。</p>
+                     * 获取<p>服务器证书。</p><p>入参限制：当前仅支持传入一本证书；如果要使用多本证书，使用证书接口CreateListenerAdditionalCert来加其他证书。</p><p>HTTPS监听器才支持此参数修改。</p>
+                     * @return ServerCertificates <p>服务器证书。</p><p>入参限制：当前仅支持传入一本证书；如果要使用多本证书，使用证书接口CreateListenerAdditionalCert来加其他证书。</p><p>HTTPS监听器才支持此参数修改。</p>
                      * 
                      */
                     std::vector<std::string> GetServerCertificates() const;
 
                     /**
-                     * 设置<p>服务器证书。</p><p>HTTPS监听器才支持此参数修改。</p>
-                     * @param _serverCertificates <p>服务器证书。</p><p>HTTPS监听器才支持此参数修改。</p>
+                     * 设置<p>服务器证书。</p><p>入参限制：当前仅支持传入一本证书；如果要使用多本证书，使用证书接口CreateListenerAdditionalCert来加其他证书。</p><p>HTTPS监听器才支持此参数修改。</p>
+                     * @param _serverCertificates <p>服务器证书。</p><p>入参限制：当前仅支持传入一本证书；如果要使用多本证书，使用证书接口CreateListenerAdditionalCert来加其他证书。</p><p>HTTPS监听器才支持此参数修改。</p>
                      * 
                      */
                     void SetServerCertificates(const std::vector<std::string>& _serverCertificates);
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool ServerCertificatesHasBeenSet() const;
 
                     /**
-                     * 获取<p>客户端证书。</p><p>HTTPS监听器才支持此参数修改，并且开启双向认证。</p>
-                     * @return ClientCaCertificates <p>客户端证书。</p><p>HTTPS监听器才支持此参数修改，并且开启双向认证。</p>
+                     * 获取<p>客户端证书。</p><p>入参限制：1、当前仅支持传入一本证书；如果要使用多本证书，使用证书接口CreateListenerAdditionalCert来加其他证书。2、证书必须为CA证书。</p><p>HTTPS监听器才支持此参数修改，并且开启双向认证。</p>
+                     * @return ClientCaCertificates <p>客户端证书。</p><p>入参限制：1、当前仅支持传入一本证书；如果要使用多本证书，使用证书接口CreateListenerAdditionalCert来加其他证书。2、证书必须为CA证书。</p><p>HTTPS监听器才支持此参数修改，并且开启双向认证。</p>
                      * 
                      */
                     std::vector<std::string> GetClientCaCertificates() const;
 
                     /**
-                     * 设置<p>客户端证书。</p><p>HTTPS监听器才支持此参数修改，并且开启双向认证。</p>
-                     * @param _clientCaCertificates <p>客户端证书。</p><p>HTTPS监听器才支持此参数修改，并且开启双向认证。</p>
+                     * 设置<p>客户端证书。</p><p>入参限制：1、当前仅支持传入一本证书；如果要使用多本证书，使用证书接口CreateListenerAdditionalCert来加其他证书。2、证书必须为CA证书。</p><p>HTTPS监听器才支持此参数修改，并且开启双向认证。</p>
+                     * @param _clientCaCertificates <p>客户端证书。</p><p>入参限制：1、当前仅支持传入一本证书；如果要使用多本证书，使用证书接口CreateListenerAdditionalCert来加其他证书。2、证书必须为CA证书。</p><p>HTTPS监听器才支持此参数修改，并且开启双向认证。</p>
                      * 
                      */
                     void SetClientCaCertificates(const std::vector<std::string>& _clientCaCertificates);
@@ -351,7 +351,7 @@ namespace TencentCloud
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * <p>名称，最大长度不能超过60个字节。</p>
+                     * <p>名称。</p><p>参数格式：以字母或中文开头，长度 2–128 个字符，支持字母、数字、中文、. - _</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -405,13 +405,13 @@ namespace TencentCloud
                     bool m_cipherPolicyIdHasBeenSet;
 
                     /**
-                     * <p>服务器证书。</p><p>HTTPS监听器才支持此参数修改。</p>
+                     * <p>服务器证书。</p><p>入参限制：当前仅支持传入一本证书；如果要使用多本证书，使用证书接口CreateListenerAdditionalCert来加其他证书。</p><p>HTTPS监听器才支持此参数修改。</p>
                      */
                     std::vector<std::string> m_serverCertificates;
                     bool m_serverCertificatesHasBeenSet;
 
                     /**
-                     * <p>客户端证书。</p><p>HTTPS监听器才支持此参数修改，并且开启双向认证。</p>
+                     * <p>客户端证书。</p><p>入参限制：1、当前仅支持传入一本证书；如果要使用多本证书，使用证书接口CreateListenerAdditionalCert来加其他证书。2、证书必须为CA证书。</p><p>HTTPS监听器才支持此参数修改，并且开启双向认证。</p>
                      */
                     std::vector<std::string> m_clientCaCertificates;
                     bool m_clientCaCertificatesHasBeenSet;

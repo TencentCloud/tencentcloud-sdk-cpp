@@ -47,18 +47,43 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取IP SSL关联的域名。如果Status值为 unbound 时，该字段为空值。
+                     * 获取<p>IP SSL 关联域名所属站点ID。如果Status值为 unbound 时，该字段为空值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AssociatedDomain IP SSL关联的域名。如果Status值为 unbound 时，该字段为空值。
+                     * @return ZoneId <p>IP SSL 关联域名所属站点ID。如果Status值为 unbound 时，该字段为空值。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetZoneId() const;
+
+                    /**
+                     * 设置<p>IP SSL 关联域名所属站点ID。如果Status值为 unbound 时，该字段为空值。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _zoneId <p>IP SSL 关联域名所属站点ID。如果Status值为 unbound 时，该字段为空值。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetZoneId(const std::string& _zoneId);
+
+                    /**
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
+                     * 
+                     */
+                    bool ZoneIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>IP SSL关联的域名。如果Status值为 unbound 时，该字段为空值。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AssociatedDomain <p>IP SSL关联的域名。如果Status值为 unbound 时，该字段为空值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssociatedDomain() const;
 
                     /**
-                     * 设置IP SSL关联的域名。如果Status值为 unbound 时，该字段为空值。
+                     * 设置<p>IP SSL关联的域名。如果Status值为 unbound 时，该字段为空值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _associatedDomain IP SSL关联的域名。如果Status值为 unbound 时，该字段为空值。
+                     * @param _associatedDomain <p>IP SSL关联的域名。如果Status值为 unbound 时，该字段为空值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,31 +97,15 @@ namespace TencentCloud
                     bool AssociatedDomainHasBeenSet() const;
 
                     /**
-                     * 获取关联状态， 取值如下：
-<li>bound：IP SSL配置已绑定</li>
-<li>binding：IP SSL配置绑定中</li>
-<li>unbinding：IP SSL配置解绑中</li>
-<li>unbound：IP SSL配置未绑定</li>
-                     * @return Status 关联状态， 取值如下：
-<li>bound：IP SSL配置已绑定</li>
-<li>binding：IP SSL配置绑定中</li>
-<li>unbinding：IP SSL配置解绑中</li>
-<li>unbound：IP SSL配置未绑定</li>
+                     * 获取<p>关联状态， 取值如下：</p><li>bound：IP SSL配置已绑定</li><li>binding：IP SSL配置绑定中</li><li>unbinding：IP SSL配置解绑中</li><li>unbound：IP SSL配置未绑定</li>
+                     * @return Status <p>关联状态， 取值如下：</p><li>bound：IP SSL配置已绑定</li><li>binding：IP SSL配置绑定中</li><li>unbinding：IP SSL配置解绑中</li><li>unbound：IP SSL配置未绑定</li>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置关联状态， 取值如下：
-<li>bound：IP SSL配置已绑定</li>
-<li>binding：IP SSL配置绑定中</li>
-<li>unbinding：IP SSL配置解绑中</li>
-<li>unbound：IP SSL配置未绑定</li>
-                     * @param _status 关联状态， 取值如下：
-<li>bound：IP SSL配置已绑定</li>
-<li>binding：IP SSL配置绑定中</li>
-<li>unbinding：IP SSL配置解绑中</li>
-<li>unbound：IP SSL配置未绑定</li>
+                     * 设置<p>关联状态， 取值如下：</p><li>bound：IP SSL配置已绑定</li><li>binding：IP SSL配置绑定中</li><li>unbinding：IP SSL配置解绑中</li><li>unbound：IP SSL配置未绑定</li>
+                     * @param _status <p>关联状态， 取值如下：</p><li>bound：IP SSL配置已绑定</li><li>binding：IP SSL配置绑定中</li><li>unbinding：IP SSL配置解绑中</li><li>unbound：IP SSL配置未绑定</li>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -111,18 +120,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * IP SSL关联的域名。如果Status值为 unbound 时，该字段为空值。
+                     * <p>IP SSL 关联域名所属站点ID。如果Status值为 unbound 时，该字段为空值。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zoneId;
+                    bool m_zoneIdHasBeenSet;
+
+                    /**
+                     * <p>IP SSL关联的域名。如果Status值为 unbound 时，该字段为空值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_associatedDomain;
                     bool m_associatedDomainHasBeenSet;
 
                     /**
-                     * 关联状态， 取值如下：
-<li>bound：IP SSL配置已绑定</li>
-<li>binding：IP SSL配置绑定中</li>
-<li>unbinding：IP SSL配置解绑中</li>
-<li>unbound：IP SSL配置未绑定</li>
+                     * <p>关联状态， 取值如下：</p><li>bound：IP SSL配置已绑定</li><li>binding：IP SSL配置绑定中</li><li>unbinding：IP SSL配置解绑中</li><li>unbound：IP SSL配置未绑定</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

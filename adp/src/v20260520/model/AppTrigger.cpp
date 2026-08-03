@@ -21,18 +21,20 @@ using namespace TencentCloud::Adp::V20260520::Model;
 using namespace std;
 
 AppTrigger::AppTrigger() :
-    m_triggerIdHasBeenSet(false),
     m_appIdHasBeenSet(false),
-    m_triggerNameHasBeenSet(false),
-    m_triggerTypeHasBeenSet(false),
+    m_executeConfigHasBeenSet(false),
     m_executeTypeHasBeenSet(false),
+    m_failedCountHasBeenSet(false),
     m_pushConfigHasBeenSet(false),
+    m_scopeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_successCountHasBeenSet(false),
-    m_failedCountHasBeenSet(false),
     m_triggerConfigHasBeenSet(false),
-    m_executeConfigHasBeenSet(false),
-    m_triggerStatusHasBeenSet(false)
+    m_triggerIdHasBeenSet(false),
+    m_triggerNameHasBeenSet(false),
+    m_triggerStatusHasBeenSet(false),
+    m_triggerTypeHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -40,16 +42,6 @@ CoreInternalOutcome AppTrigger::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("TriggerId") && !value["TriggerId"].IsNull())
-    {
-        if (!value["TriggerId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AppTrigger.TriggerId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_triggerId = string(value["TriggerId"].GetString());
-        m_triggerIdHasBeenSet = true;
-    }
 
     if (value.HasMember("AppId") && !value["AppId"].IsNull())
     {
@@ -61,24 +53,21 @@ CoreInternalOutcome AppTrigger::Deserialize(const rapidjson::Value &value)
         m_appIdHasBeenSet = true;
     }
 
-    if (value.HasMember("TriggerName") && !value["TriggerName"].IsNull())
+    if (value.HasMember("ExecuteConfig") && !value["ExecuteConfig"].IsNull())
     {
-        if (!value["TriggerName"].IsString())
+        if (!value["ExecuteConfig"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `AppTrigger.TriggerName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppTrigger.ExecuteConfig` is not object type").SetRequestId(requestId));
         }
-        m_triggerName = string(value["TriggerName"].GetString());
-        m_triggerNameHasBeenSet = true;
-    }
 
-    if (value.HasMember("TriggerType") && !value["TriggerType"].IsNull())
-    {
-        if (!value["TriggerType"].IsInt64())
+        CoreInternalOutcome outcome = m_executeConfig.Deserialize(value["ExecuteConfig"]);
+        if (!outcome.IsSuccess())
         {
-            return CoreInternalOutcome(Core::Error("response `AppTrigger.TriggerType` IsInt64=false incorrectly").SetRequestId(requestId));
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
         }
-        m_triggerType = value["TriggerType"].GetInt64();
-        m_triggerTypeHasBeenSet = true;
+
+        m_executeConfigHasBeenSet = true;
     }
 
     if (value.HasMember("ExecuteType") && !value["ExecuteType"].IsNull())
@@ -89,6 +78,16 @@ CoreInternalOutcome AppTrigger::Deserialize(const rapidjson::Value &value)
         }
         m_executeType = value["ExecuteType"].GetInt64();
         m_executeTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FailedCount") && !value["FailedCount"].IsNull())
+    {
+        if (!value["FailedCount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppTrigger.FailedCount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_failedCount = string(value["FailedCount"].GetString());
+        m_failedCountHasBeenSet = true;
     }
 
     if (value.HasMember("PushConfig") && !value["PushConfig"].IsNull())
@@ -106,6 +105,16 @@ CoreInternalOutcome AppTrigger::Deserialize(const rapidjson::Value &value)
         }
 
         m_pushConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("Scope") && !value["Scope"].IsNull())
+    {
+        if (!value["Scope"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppTrigger.Scope` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scope = value["Scope"].GetInt64();
+        m_scopeHasBeenSet = true;
     }
 
     if (value.HasMember("Status") && !value["Status"].IsNull())
@@ -128,16 +137,6 @@ CoreInternalOutcome AppTrigger::Deserialize(const rapidjson::Value &value)
         m_successCountHasBeenSet = true;
     }
 
-    if (value.HasMember("FailedCount") && !value["FailedCount"].IsNull())
-    {
-        if (!value["FailedCount"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AppTrigger.FailedCount` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_failedCount = string(value["FailedCount"].GetString());
-        m_failedCountHasBeenSet = true;
-    }
-
     if (value.HasMember("TriggerConfig") && !value["TriggerConfig"].IsNull())
     {
         if (!value["TriggerConfig"].IsObject())
@@ -155,21 +154,24 @@ CoreInternalOutcome AppTrigger::Deserialize(const rapidjson::Value &value)
         m_triggerConfigHasBeenSet = true;
     }
 
-    if (value.HasMember("ExecuteConfig") && !value["ExecuteConfig"].IsNull())
+    if (value.HasMember("TriggerId") && !value["TriggerId"].IsNull())
     {
-        if (!value["ExecuteConfig"].IsObject())
+        if (!value["TriggerId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `AppTrigger.ExecuteConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AppTrigger.TriggerId` IsString=false incorrectly").SetRequestId(requestId));
         }
+        m_triggerId = string(value["TriggerId"].GetString());
+        m_triggerIdHasBeenSet = true;
+    }
 
-        CoreInternalOutcome outcome = m_executeConfig.Deserialize(value["ExecuteConfig"]);
-        if (!outcome.IsSuccess())
+    if (value.HasMember("TriggerName") && !value["TriggerName"].IsNull())
+    {
+        if (!value["TriggerName"].IsString())
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            return CoreInternalOutcome(Core::Error("response `AppTrigger.TriggerName` IsString=false incorrectly").SetRequestId(requestId));
         }
-
-        m_executeConfigHasBeenSet = true;
+        m_triggerName = string(value["TriggerName"].GetString());
+        m_triggerNameHasBeenSet = true;
     }
 
     if (value.HasMember("TriggerStatus") && !value["TriggerStatus"].IsNull())
@@ -189,20 +191,32 @@ CoreInternalOutcome AppTrigger::Deserialize(const rapidjson::Value &value)
         m_triggerStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("TriggerType") && !value["TriggerType"].IsNull())
+    {
+        if (!value["TriggerType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppTrigger.TriggerType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_triggerType = value["TriggerType"].GetInt64();
+        m_triggerTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserId") && !value["UserId"].IsNull())
+    {
+        if (!value["UserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppTrigger.UserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userId = string(value["UserId"].GetString());
+        m_userIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void AppTrigger::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_triggerIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TriggerId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_triggerId.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_appIdHasBeenSet)
     {
@@ -212,20 +226,13 @@ void AppTrigger::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_triggerNameHasBeenSet)
+    if (m_executeConfigHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TriggerName";
+        string key = "ExecuteConfig";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_triggerName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_triggerTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TriggerType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_triggerType, allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_executeConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_executeTypeHasBeenSet)
@@ -236,6 +243,14 @@ void AppTrigger::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, m_executeType, allocator);
     }
 
+    if (m_failedCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailedCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_failedCount.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_pushConfigHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -243,6 +258,14 @@ void AppTrigger::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_pushConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_scopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scope, allocator);
     }
 
     if (m_statusHasBeenSet)
@@ -261,14 +284,6 @@ void AppTrigger::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, rapidjson::Value(m_successCount.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_failedCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FailedCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_failedCount.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_triggerConfigHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -278,13 +293,20 @@ void AppTrigger::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         m_triggerConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_executeConfigHasBeenSet)
+    if (m_triggerIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ExecuteConfig";
+        string key = "TriggerId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_executeConfig.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, rapidjson::Value(m_triggerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_triggerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_triggerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_triggerStatusHasBeenSet)
@@ -296,24 +318,24 @@ void AppTrigger::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         m_triggerStatus.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_triggerTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_triggerType, allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string AppTrigger::GetTriggerId() const
-{
-    return m_triggerId;
-}
-
-void AppTrigger::SetTriggerId(const string& _triggerId)
-{
-    m_triggerId = _triggerId;
-    m_triggerIdHasBeenSet = true;
-}
-
-bool AppTrigger::TriggerIdHasBeenSet() const
-{
-    return m_triggerIdHasBeenSet;
-}
 
 string AppTrigger::GetAppId() const
 {
@@ -331,36 +353,20 @@ bool AppTrigger::AppIdHasBeenSet() const
     return m_appIdHasBeenSet;
 }
 
-string AppTrigger::GetTriggerName() const
+ExecuteConfig AppTrigger::GetExecuteConfig() const
 {
-    return m_triggerName;
+    return m_executeConfig;
 }
 
-void AppTrigger::SetTriggerName(const string& _triggerName)
+void AppTrigger::SetExecuteConfig(const ExecuteConfig& _executeConfig)
 {
-    m_triggerName = _triggerName;
-    m_triggerNameHasBeenSet = true;
+    m_executeConfig = _executeConfig;
+    m_executeConfigHasBeenSet = true;
 }
 
-bool AppTrigger::TriggerNameHasBeenSet() const
+bool AppTrigger::ExecuteConfigHasBeenSet() const
 {
-    return m_triggerNameHasBeenSet;
-}
-
-int64_t AppTrigger::GetTriggerType() const
-{
-    return m_triggerType;
-}
-
-void AppTrigger::SetTriggerType(const int64_t& _triggerType)
-{
-    m_triggerType = _triggerType;
-    m_triggerTypeHasBeenSet = true;
-}
-
-bool AppTrigger::TriggerTypeHasBeenSet() const
-{
-    return m_triggerTypeHasBeenSet;
+    return m_executeConfigHasBeenSet;
 }
 
 int64_t AppTrigger::GetExecuteType() const
@@ -379,6 +385,22 @@ bool AppTrigger::ExecuteTypeHasBeenSet() const
     return m_executeTypeHasBeenSet;
 }
 
+string AppTrigger::GetFailedCount() const
+{
+    return m_failedCount;
+}
+
+void AppTrigger::SetFailedCount(const string& _failedCount)
+{
+    m_failedCount = _failedCount;
+    m_failedCountHasBeenSet = true;
+}
+
+bool AppTrigger::FailedCountHasBeenSet() const
+{
+    return m_failedCountHasBeenSet;
+}
+
 TimerPushConfig AppTrigger::GetPushConfig() const
 {
     return m_pushConfig;
@@ -393,6 +415,22 @@ void AppTrigger::SetPushConfig(const TimerPushConfig& _pushConfig)
 bool AppTrigger::PushConfigHasBeenSet() const
 {
     return m_pushConfigHasBeenSet;
+}
+
+int64_t AppTrigger::GetScope() const
+{
+    return m_scope;
+}
+
+void AppTrigger::SetScope(const int64_t& _scope)
+{
+    m_scope = _scope;
+    m_scopeHasBeenSet = true;
+}
+
+bool AppTrigger::ScopeHasBeenSet() const
+{
+    return m_scopeHasBeenSet;
 }
 
 int64_t AppTrigger::GetStatus() const
@@ -427,22 +465,6 @@ bool AppTrigger::SuccessCountHasBeenSet() const
     return m_successCountHasBeenSet;
 }
 
-string AppTrigger::GetFailedCount() const
-{
-    return m_failedCount;
-}
-
-void AppTrigger::SetFailedCount(const string& _failedCount)
-{
-    m_failedCount = _failedCount;
-    m_failedCountHasBeenSet = true;
-}
-
-bool AppTrigger::FailedCountHasBeenSet() const
-{
-    return m_failedCountHasBeenSet;
-}
-
 TriggerConfig AppTrigger::GetTriggerConfig() const
 {
     return m_triggerConfig;
@@ -459,20 +481,36 @@ bool AppTrigger::TriggerConfigHasBeenSet() const
     return m_triggerConfigHasBeenSet;
 }
 
-ExecuteConfig AppTrigger::GetExecuteConfig() const
+string AppTrigger::GetTriggerId() const
 {
-    return m_executeConfig;
+    return m_triggerId;
 }
 
-void AppTrigger::SetExecuteConfig(const ExecuteConfig& _executeConfig)
+void AppTrigger::SetTriggerId(const string& _triggerId)
 {
-    m_executeConfig = _executeConfig;
-    m_executeConfigHasBeenSet = true;
+    m_triggerId = _triggerId;
+    m_triggerIdHasBeenSet = true;
 }
 
-bool AppTrigger::ExecuteConfigHasBeenSet() const
+bool AppTrigger::TriggerIdHasBeenSet() const
 {
-    return m_executeConfigHasBeenSet;
+    return m_triggerIdHasBeenSet;
+}
+
+string AppTrigger::GetTriggerName() const
+{
+    return m_triggerName;
+}
+
+void AppTrigger::SetTriggerName(const string& _triggerName)
+{
+    m_triggerName = _triggerName;
+    m_triggerNameHasBeenSet = true;
+}
+
+bool AppTrigger::TriggerNameHasBeenSet() const
+{
+    return m_triggerNameHasBeenSet;
 }
 
 TriggerStatus AppTrigger::GetTriggerStatus() const
@@ -489,5 +527,37 @@ void AppTrigger::SetTriggerStatus(const TriggerStatus& _triggerStatus)
 bool AppTrigger::TriggerStatusHasBeenSet() const
 {
     return m_triggerStatusHasBeenSet;
+}
+
+int64_t AppTrigger::GetTriggerType() const
+{
+    return m_triggerType;
+}
+
+void AppTrigger::SetTriggerType(const int64_t& _triggerType)
+{
+    m_triggerType = _triggerType;
+    m_triggerTypeHasBeenSet = true;
+}
+
+bool AppTrigger::TriggerTypeHasBeenSet() const
+{
+    return m_triggerTypeHasBeenSet;
+}
+
+string AppTrigger::GetUserId() const
+{
+    return m_userId;
+}
+
+void AppTrigger::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool AppTrigger::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 

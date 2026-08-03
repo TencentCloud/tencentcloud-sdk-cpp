@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取
-                     * @return Schedule 
+                     * 获取<p>触发器定时配置</p>
+                     * @return Schedule <p>触发器定时配置</p>
                      * 
                      */
                     TimerScheduleConfig GetSchedule() const;
 
                     /**
-                     * 设置
-                     * @param _schedule 
+                     * 设置<p>触发器定时配置</p>
+                     * @param _schedule <p>触发器定时配置</p>
                      * 
                      */
                     void SetSchedule(const TimerScheduleConfig& _schedule);
@@ -71,7 +71,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 
+                     * <p>触发器定时配置</p>
                      */
                     TimerScheduleConfig m_schedule;
                     bool m_scheduleHasBeenSet;

@@ -24,7 +24,9 @@ using namespace std;
 
 RunAppTriggerNowRequest::RunAppTriggerNowRequest() :
     m_appIdHasBeenSet(false),
-    m_triggerIdHasBeenSet(false)
+    m_scopeHasBeenSet(false),
+    m_triggerIdHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -43,12 +45,28 @@ string RunAppTriggerNowRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_scopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scope";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_scope, allocator);
+    }
+
     if (m_triggerIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TriggerId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_triggerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -75,6 +93,22 @@ bool RunAppTriggerNowRequest::AppIdHasBeenSet() const
     return m_appIdHasBeenSet;
 }
 
+int64_t RunAppTriggerNowRequest::GetScope() const
+{
+    return m_scope;
+}
+
+void RunAppTriggerNowRequest::SetScope(const int64_t& _scope)
+{
+    m_scope = _scope;
+    m_scopeHasBeenSet = true;
+}
+
+bool RunAppTriggerNowRequest::ScopeHasBeenSet() const
+{
+    return m_scopeHasBeenSet;
+}
+
 string RunAppTriggerNowRequest::GetTriggerId() const
 {
     return m_triggerId;
@@ -89,6 +123,22 @@ void RunAppTriggerNowRequest::SetTriggerId(const string& _triggerId)
 bool RunAppTriggerNowRequest::TriggerIdHasBeenSet() const
 {
     return m_triggerIdHasBeenSet;
+}
+
+string RunAppTriggerNowRequest::GetUserId() const
+{
+    return m_userId;
+}
+
+void RunAppTriggerNowRequest::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool RunAppTriggerNowRequest::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 
 

@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ClientIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>客户端密钥</p><p>参数格式：IdP 注册的 client_secret</p>
-                     * @return ClientSecret <p>客户端密钥</p><p>参数格式：IdP 注册的 client_secret</p>
+                     * 获取<p>IdP 注册的 client_secret</p>
+                     * @return ClientSecret <p>IdP 注册的 client_secret</p>
                      * 
                      */
                     std::string GetClientSecret() const;
 
                     /**
-                     * 设置<p>客户端密钥</p><p>参数格式：IdP 注册的 client_secret</p>
-                     * @param _clientSecret <p>客户端密钥</p><p>参数格式：IdP 注册的 client_secret</p>
+                     * 设置<p>IdP 注册的 client_secret</p>
+                     * @param _clientSecret <p>IdP 注册的 client_secret</p>
                      * 
                      */
                     void SetClientSecret(const std::string& _clientSecret);
@@ -139,7 +139,7 @@ namespace TencentCloud
                     bool m_clientIdHasBeenSet;
 
                     /**
-                     * <p>客户端密钥</p><p>参数格式：IdP 注册的 client_secret</p>
+                     * <p>IdP 注册的 client_secret</p>
                      */
                     std::string m_clientSecret;
                     bool m_clientSecretHasBeenSet;

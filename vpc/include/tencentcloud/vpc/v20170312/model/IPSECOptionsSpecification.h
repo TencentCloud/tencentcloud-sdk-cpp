@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>加密算法，可选值：&#39;3DES-CBC&#39;, &#39;AES-CBC-128&#39;, &#39;AES-CBC-192&#39;, &#39;AES-CBC-256&#39;, &#39;DES-CBC&#39;, &#39;SM4&#39;, &#39;NULL&#39;</p><p>默认值：AES-CBC-128</p>
-                     * @return EncryptAlgorithm <p>加密算法，可选值：&#39;3DES-CBC&#39;, &#39;AES-CBC-128&#39;, &#39;AES-CBC-192&#39;, &#39;AES-CBC-256&#39;, &#39;DES-CBC&#39;, &#39;SM4&#39;, &#39;NULL&#39;</p><p>默认值：AES-CBC-128</p>
+                     * 获取<p>加密算法，可选值：&#39;3DES-CBC&#39;, &#39;AES-CBC-128&#39;, &#39;AES-CBC-192&#39;, &#39;AES-CBC-256&#39;, &#39;DES-CBC&#39;, &#39;SM4&#39;, &#39;NULL&#39;, &#39;AES128GCM128&#39;, &#39;AES192GCM128&#39;, &#39;AES256GCM128&#39;</p><p>默认值：AES-CBC-128</p><p>仅4.0VPN网关支持 &#39;AES128GCM128&#39;, &#39;AES192GCM128&#39;, &#39;AES256GCM128&#39;</p>
+                     * @return EncryptAlgorithm <p>加密算法，可选值：&#39;3DES-CBC&#39;, &#39;AES-CBC-128&#39;, &#39;AES-CBC-192&#39;, &#39;AES-CBC-256&#39;, &#39;DES-CBC&#39;, &#39;SM4&#39;, &#39;NULL&#39;, &#39;AES128GCM128&#39;, &#39;AES192GCM128&#39;, &#39;AES256GCM128&#39;</p><p>默认值：AES-CBC-128</p><p>仅4.0VPN网关支持 &#39;AES128GCM128&#39;, &#39;AES192GCM128&#39;, &#39;AES256GCM128&#39;</p>
                      * 
                      */
                     std::string GetEncryptAlgorithm() const;
 
                     /**
-                     * 设置<p>加密算法，可选值：&#39;3DES-CBC&#39;, &#39;AES-CBC-128&#39;, &#39;AES-CBC-192&#39;, &#39;AES-CBC-256&#39;, &#39;DES-CBC&#39;, &#39;SM4&#39;, &#39;NULL&#39;</p><p>默认值：AES-CBC-128</p>
-                     * @param _encryptAlgorithm <p>加密算法，可选值：&#39;3DES-CBC&#39;, &#39;AES-CBC-128&#39;, &#39;AES-CBC-192&#39;, &#39;AES-CBC-256&#39;, &#39;DES-CBC&#39;, &#39;SM4&#39;, &#39;NULL&#39;</p><p>默认值：AES-CBC-128</p>
+                     * 设置<p>加密算法，可选值：&#39;3DES-CBC&#39;, &#39;AES-CBC-128&#39;, &#39;AES-CBC-192&#39;, &#39;AES-CBC-256&#39;, &#39;DES-CBC&#39;, &#39;SM4&#39;, &#39;NULL&#39;, &#39;AES128GCM128&#39;, &#39;AES192GCM128&#39;, &#39;AES256GCM128&#39;</p><p>默认值：AES-CBC-128</p><p>仅4.0VPN网关支持 &#39;AES128GCM128&#39;, &#39;AES192GCM128&#39;, &#39;AES256GCM128&#39;</p>
+                     * @param _encryptAlgorithm <p>加密算法，可选值：&#39;3DES-CBC&#39;, &#39;AES-CBC-128&#39;, &#39;AES-CBC-192&#39;, &#39;AES-CBC-256&#39;, &#39;DES-CBC&#39;, &#39;SM4&#39;, &#39;NULL&#39;, &#39;AES128GCM128&#39;, &#39;AES192GCM128&#39;, &#39;AES256GCM128&#39;</p><p>默认值：AES-CBC-128</p><p>仅4.0VPN网关支持 &#39;AES128GCM128&#39;, &#39;AES192GCM128&#39;, &#39;AES256GCM128&#39;</p>
                      * 
                      */
                     void SetEncryptAlgorithm(const std::string& _encryptAlgorithm);
@@ -179,7 +179,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>加密算法，可选值：&#39;3DES-CBC&#39;, &#39;AES-CBC-128&#39;, &#39;AES-CBC-192&#39;, &#39;AES-CBC-256&#39;, &#39;DES-CBC&#39;, &#39;SM4&#39;, &#39;NULL&#39;</p><p>默认值：AES-CBC-128</p>
+                     * <p>加密算法，可选值：&#39;3DES-CBC&#39;, &#39;AES-CBC-128&#39;, &#39;AES-CBC-192&#39;, &#39;AES-CBC-256&#39;, &#39;DES-CBC&#39;, &#39;SM4&#39;, &#39;NULL&#39;, &#39;AES128GCM128&#39;, &#39;AES192GCM128&#39;, &#39;AES256GCM128&#39;</p><p>默认值：AES-CBC-128</p><p>仅4.0VPN网关支持 &#39;AES128GCM128&#39;, &#39;AES192GCM128&#39;, &#39;AES256GCM128&#39;</p>
                      */
                     std::string m_encryptAlgorithm;
                     bool m_encryptAlgorithmHasBeenSet;

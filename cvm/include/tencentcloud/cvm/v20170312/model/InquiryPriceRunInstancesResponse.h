@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取该参数表示对应配置实例的价格。
-                     * @return Price 该参数表示对应配置实例的价格。
+                     * 获取<p>该参数表示对应配置实例的价格。</p>
+                     * @return Price <p>该参数表示对应配置实例的价格。</p>
                      * 
                      */
                     Price GetPrice() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 该参数表示对应配置实例的价格。
+                     * <p>该参数表示对应配置实例的价格。</p>
                      */
                     Price m_price;
                     bool m_priceHasBeenSet;

@@ -130,6 +130,48 @@ namespace TencentCloud
                      */
                     bool PasswordHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Redis配置ID</p>
+                     * @return RedisConfigId <p>Redis配置ID</p>
+                     * 
+                     */
+                    std::string GetRedisConfigId() const;
+
+                    /**
+                     * 设置<p>Redis配置ID</p>
+                     * @param _redisConfigId <p>Redis配置ID</p>
+                     * 
+                     */
+                    void SetRedisConfigId(const std::string& _redisConfigId);
+
+                    /**
+                     * 判断参数 RedisConfigId 是否已赋值
+                     * @return RedisConfigId 是否已赋值
+                     * 
+                     */
+                    bool RedisConfigIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Redis部署类型，如standalone（单机）、cluster（集群）</p>
+                     * @return Type <p>Redis部署类型，如standalone（单机）、cluster（集群）</p>
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置<p>Redis部署类型，如standalone（单机）、cluster（集群）</p>
+                     * @param _type <p>Redis部署类型，如standalone（单机）、cluster（集群）</p>
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +197,18 @@ namespace TencentCloud
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
+
+                    /**
+                     * <p>Redis配置ID</p>
+                     */
+                    std::string m_redisConfigId;
+                    bool m_redisConfigIdHasBeenSet;
+
+                    /**
+                     * <p>Redis部署类型，如standalone（单机）、cluster（集群）</p>
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool EndpointConfigurationsHasBeenSet() const;
 
                     /**
-                     * 获取<p>名称。</p><p>入参限制：最大长度不能超过128个字节。</p><p>以大小写字母或中文开头。</p>
-                     * @return Name <p>名称。</p><p>入参限制：最大长度不能超过128个字节。</p><p>以大小写字母或中文开头。</p>
+                     * 获取<p>名称。</p><p>参数格式：以字母或中文开头，长度 2–128 个字符，支持字母、数字、中文、. - _</p>
+                     * @return Name <p>名称。</p><p>参数格式：以字母或中文开头，长度 2–128 个字符，支持字母、数字、中文、. - _</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置<p>名称。</p><p>入参限制：最大长度不能超过128个字节。</p><p>以大小写字母或中文开头。</p>
-                     * @param _name <p>名称。</p><p>入参限制：最大长度不能超过128个字节。</p><p>以大小写字母或中文开头。</p>
+                     * 设置<p>名称。</p><p>参数格式：以字母或中文开头，长度 2–128 个字符，支持字母、数字、中文、. - _</p>
+                     * @param _name <p>名称。</p><p>参数格式：以字母或中文开头，长度 2–128 个字符，支持字母、数字、中文、. - _</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -575,7 +575,7 @@ namespace TencentCloud
                     bool m_endpointConfigurationsHasBeenSet;
 
                     /**
-                     * <p>名称。</p><p>入参限制：最大长度不能超过128个字节。</p><p>以大小写字母或中文开头。</p>
+                     * <p>名称。</p><p>参数格式：以字母或中文开头，长度 2–128 个字符，支持字母、数字、中文、. - _</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

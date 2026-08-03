@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取互通规则ID
-                     * @return L3ConnId 互通规则ID
+                     * 获取<p>互通规则ID</p>
+                     * @return L3ConnId <p>互通规则ID</p>
                      * 
                      */
                     std::string GetL3ConnId() const;
 
                     /**
-                     * 设置互通规则ID
-                     * @param _l3ConnId 互通规则ID
+                     * 设置<p>互通规则ID</p>
+                     * @param _l3ConnId <p>互通规则ID</p>
                      * 
                      */
                     void SetL3ConnId(const std::string& _l3ConnId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool L3ConnIdHasBeenSet() const;
 
                     /**
-                     * 获取互通规则开关
-                     * @return Enable 互通规则开关
+                     * 获取<p>互通规则开关</p>
+                     * @return Enable <p>互通规则开关</p>
                      * 
                      */
                     bool GetEnable() const;
 
                     /**
-                     * 设置互通规则开关
-                     * @param _enable 互通规则开关
+                     * 设置<p>互通规则开关</p>
+                     * @param _enable <p>互通规则开关</p>
                      * 
                      */
                     void SetEnable(const bool& _enable);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 互通规则ID
+                     * <p>互通规则ID</p>
                      */
                     std::string m_l3ConnId;
                     bool m_l3ConnIdHasBeenSet;
 
                     /**
-                     * 互通规则开关
+                     * <p>互通规则开关</p>
                      */
                     bool m_enable;
                     bool m_enableHasBeenSet;

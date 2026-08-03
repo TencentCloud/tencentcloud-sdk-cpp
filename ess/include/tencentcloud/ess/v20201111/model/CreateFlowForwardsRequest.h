@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取执行本接口操作的员工信息。注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
-                     * @return Operator 执行本接口操作的员工信息。注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * 获取<p>执行本接口操作的员工信息。注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
+                     * @return Operator <p>执行本接口操作的员工信息。注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置执行本接口操作的员工信息。注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
-                     * @param _operator 执行本接口操作的员工信息。注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * 设置<p>执行本接口操作的员工信息。注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
+                     * @param _operator <p>执行本接口操作的员工信息。注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -67,23 +67,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取合同对应参与方需要修改的目标经办人。其UserId可在企业控制台中组织管理里面找到。或者使用获取员工信息接口得到。
-
-注意：`需要保证目标经办人已经加入企业且已实名`
-                     * @return TargetUserId 合同对应参与方需要修改的目标经办人。其UserId可在企业控制台中组织管理里面找到。或者使用获取员工信息接口得到。
-
-注意：`需要保证目标经办人已经加入企业且已实名`
+                     * 获取<p>合同对应参与方需要修改的目标经办人。其UserId可在企业控制台中组织管理里面找到。或者使用获取员工信息接口得到。</p><p>注意：<code>需要保证目标经办人已经加入企业且已实名</code></p>
+                     * @return TargetUserId <p>合同对应参与方需要修改的目标经办人。其UserId可在企业控制台中组织管理里面找到。或者使用获取员工信息接口得到。</p><p>注意：<code>需要保证目标经办人已经加入企业且已实名</code></p>
                      * 
                      */
                     std::string GetTargetUserId() const;
 
                     /**
-                     * 设置合同对应参与方需要修改的目标经办人。其UserId可在企业控制台中组织管理里面找到。或者使用获取员工信息接口得到。
-
-注意：`需要保证目标经办人已经加入企业且已实名`
-                     * @param _targetUserId 合同对应参与方需要修改的目标经办人。其UserId可在企业控制台中组织管理里面找到。或者使用获取员工信息接口得到。
-
-注意：`需要保证目标经办人已经加入企业且已实名`
+                     * 设置<p>合同对应参与方需要修改的目标经办人。其UserId可在企业控制台中组织管理里面找到。或者使用获取员工信息接口得到。</p><p>注意：<code>需要保证目标经办人已经加入企业且已实名</code></p>
+                     * @param _targetUserId <p>合同对应参与方需要修改的目标经办人。其UserId可在企业控制台中组织管理里面找到。或者使用获取员工信息接口得到。</p><p>注意：<code>需要保证目标经办人已经加入企业且已实名</code></p>
                      * 
                      */
                     void SetTargetUserId(const std::string& _targetUserId);
@@ -96,15 +88,15 @@ namespace TencentCloud
                     bool TargetUserIdHasBeenSet() const;
 
                     /**
-                     * 获取企业签署方的合同及对应签署方
-                     * @return FlowForwardInfos 企业签署方的合同及对应签署方
+                     * 获取<p>企业签署方的合同及对应签署方</p>
+                     * @return FlowForwardInfos <p>企业签署方的合同及对应签署方</p>
                      * 
                      */
                     std::vector<FlowForwardInfo> GetFlowForwardInfos() const;
 
                     /**
-                     * 设置企业签署方的合同及对应签署方
-                     * @param _flowForwardInfos 企业签署方的合同及对应签署方
+                     * 设置<p>企业签署方的合同及对应签署方</p>
+                     * @param _flowForwardInfos <p>企业签署方的合同及对应签署方</p>
                      * 
                      */
                     void SetFlowForwardInfos(const std::vector<FlowForwardInfo>& _flowForwardInfos);
@@ -117,15 +109,15 @@ namespace TencentCloud
                     bool FlowForwardInfosHasBeenSet() const;
 
                     /**
-                     * 获取代理企业和员工的信息。在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
-                     * @return Agent 代理企业和员工的信息。在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * 获取<p>代理企业和员工的信息。在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
+                     * @return Agent <p>代理企业和员工的信息。在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理企业和员工的信息。在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
-                     * @param _agent 代理企业和员工的信息。在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * 设置<p>代理企业和员工的信息。在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
+                     * @param _agent <p>代理企业和员工的信息。在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -140,27 +132,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 执行本接口操作的员工信息。注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * <p>执行本接口操作的员工信息。注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 合同对应参与方需要修改的目标经办人。其UserId可在企业控制台中组织管理里面找到。或者使用获取员工信息接口得到。
-
-注意：`需要保证目标经办人已经加入企业且已实名`
+                     * <p>合同对应参与方需要修改的目标经办人。其UserId可在企业控制台中组织管理里面找到。或者使用获取员工信息接口得到。</p><p>注意：<code>需要保证目标经办人已经加入企业且已实名</code></p>
                      */
                     std::string m_targetUserId;
                     bool m_targetUserIdHasBeenSet;
 
                     /**
-                     * 企业签署方的合同及对应签署方
+                     * <p>企业签署方的合同及对应签署方</p>
                      */
                     std::vector<FlowForwardInfo> m_flowForwardInfos;
                     bool m_flowForwardInfosHasBeenSet;
 
                     /**
-                     * 代理企业和员工的信息。在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * <p>代理企业和员工的信息。在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;

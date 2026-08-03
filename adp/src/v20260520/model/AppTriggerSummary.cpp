@@ -25,13 +25,15 @@ AppTriggerSummary::AppTriggerSummary() :
     m_executeTypeHasBeenSet(false),
     m_failedCountHasBeenSet(false),
     m_lastSessionIdHasBeenSet(false),
+    m_scopeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_successCountHasBeenSet(false),
     m_triggerIdHasBeenSet(false),
     m_triggerNameHasBeenSet(false),
     m_triggerStatusHasBeenSet(false),
     m_triggerTypeHasBeenSet(false),
-    m_unreadRunLogCountHasBeenSet(false)
+    m_unreadRunLogCountHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -78,6 +80,16 @@ CoreInternalOutcome AppTriggerSummary::Deserialize(const rapidjson::Value &value
         }
         m_lastSessionId = string(value["LastSessionId"].GetString());
         m_lastSessionIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Scope") && !value["Scope"].IsNull())
+    {
+        if (!value["Scope"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppTriggerSummary.Scope` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scope = value["Scope"].GetInt64();
+        m_scopeHasBeenSet = true;
     }
 
     if (value.HasMember("Status") && !value["Status"].IsNull())
@@ -157,6 +169,16 @@ CoreInternalOutcome AppTriggerSummary::Deserialize(const rapidjson::Value &value
         m_unreadRunLogCountHasBeenSet = true;
     }
 
+    if (value.HasMember("UserId") && !value["UserId"].IsNull())
+    {
+        if (!value["UserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppTriggerSummary.UserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userId = string(value["UserId"].GetString());
+        m_userIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +216,14 @@ void AppTriggerSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "LastSessionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lastSessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scope, allocator);
     }
 
     if (m_statusHasBeenSet)
@@ -251,6 +281,14 @@ void AppTriggerSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "UnreadRunLogCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_unreadRunLogCount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -318,6 +356,22 @@ void AppTriggerSummary::SetLastSessionId(const string& _lastSessionId)
 bool AppTriggerSummary::LastSessionIdHasBeenSet() const
 {
     return m_lastSessionIdHasBeenSet;
+}
+
+int64_t AppTriggerSummary::GetScope() const
+{
+    return m_scope;
+}
+
+void AppTriggerSummary::SetScope(const int64_t& _scope)
+{
+    m_scope = _scope;
+    m_scopeHasBeenSet = true;
+}
+
+bool AppTriggerSummary::ScopeHasBeenSet() const
+{
+    return m_scopeHasBeenSet;
 }
 
 int64_t AppTriggerSummary::GetStatus() const
@@ -430,5 +484,21 @@ void AppTriggerSummary::SetUnreadRunLogCount(const string& _unreadRunLogCount)
 bool AppTriggerSummary::UnreadRunLogCountHasBeenSet() const
 {
     return m_unreadRunLogCountHasBeenSet;
+}
+
+string AppTriggerSummary::GetUserId() const
+{
+    return m_userId;
+}
+
+void AppTriggerSummary::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool AppTriggerSummary::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 

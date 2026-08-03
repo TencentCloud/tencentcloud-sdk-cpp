@@ -24,8 +24,7 @@ using namespace std;
 
 CreatePreCacheImageTaskRequest::CreatePreCacheImageTaskRequest() :
     m_imageHasBeenSet(false),
-    m_imageRegistryTypeHasBeenSet(false),
-    m_timeoutMinutesHasBeenSet(false)
+    m_imageRegistryTypeHasBeenSet(false)
 {
 }
 
@@ -50,14 +49,6 @@ string CreatePreCacheImageTaskRequest::ToJsonString() const
         string key = "ImageRegistryType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageRegistryType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_timeoutMinutesHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TimeoutMinutes";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_timeoutMinutes, allocator);
     }
 
 
@@ -98,22 +89,6 @@ void CreatePreCacheImageTaskRequest::SetImageRegistryType(const string& _imageRe
 bool CreatePreCacheImageTaskRequest::ImageRegistryTypeHasBeenSet() const
 {
     return m_imageRegistryTypeHasBeenSet;
-}
-
-int64_t CreatePreCacheImageTaskRequest::GetTimeoutMinutes() const
-{
-    return m_timeoutMinutes;
-}
-
-void CreatePreCacheImageTaskRequest::SetTimeoutMinutes(const int64_t& _timeoutMinutes)
-{
-    m_timeoutMinutes = _timeoutMinutes;
-    m_timeoutMinutesHasBeenSet = true;
-}
-
-bool CreatePreCacheImageTaskRequest::TimeoutMinutesHasBeenSet() const
-{
-    return m_timeoutMinutesHasBeenSet;
 }
 
 

@@ -29,7 +29,8 @@ DescribeCloudNativeAPIGatewayLLMModelAPIsRequest::DescribeCloudNativeAPIGatewayL
     m_filtersHasBeenSet(false),
     m_keywordHasBeenSet(false),
     m_consumerGroupIdHasBeenSet(false),
-    m_useToBindHasBeenSet(false)
+    m_useToBindHasBeenSet(false),
+    m_consumerIdHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,14 @@ string DescribeCloudNativeAPIGatewayLLMModelAPIsRequest::ToJsonString() const
         string key = "UseToBind";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_useToBind, allocator);
+    }
+
+    if (m_consumerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumerId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_consumerId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -221,6 +230,22 @@ void DescribeCloudNativeAPIGatewayLLMModelAPIsRequest::SetUseToBind(const bool& 
 bool DescribeCloudNativeAPIGatewayLLMModelAPIsRequest::UseToBindHasBeenSet() const
 {
     return m_useToBindHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewayLLMModelAPIsRequest::GetConsumerId() const
+{
+    return m_consumerId;
+}
+
+void DescribeCloudNativeAPIGatewayLLMModelAPIsRequest::SetConsumerId(const string& _consumerId)
+{
+    m_consumerId = _consumerId;
+    m_consumerIdHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayLLMModelAPIsRequest::ConsumerIdHasBeenSet() const
+{
+    return m_consumerIdHasBeenSet;
 }
 
 

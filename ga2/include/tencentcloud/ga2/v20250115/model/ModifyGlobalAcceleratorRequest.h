@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GlobalAcceleratorIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>名称，最大长度不能超过60个字节。</p>
-                     * @return Name <p>名称，最大长度不能超过60个字节。</p>
+                     * 获取<p>名称。</p><p>参数格式：以字母或中文开头，长度 2–128 个字符，支持字母、数字、中文、. - _</p>
+                     * @return Name <p>名称。</p><p>参数格式：以字母或中文开头，长度 2–128 个字符，支持字母、数字、中文、. - _</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置<p>名称，最大长度不能超过60个字节。</p>
-                     * @param _name <p>名称，最大长度不能超过60个字节。</p>
+                     * 设置<p>名称。</p><p>参数格式：以字母或中文开头，长度 2–128 个字符，支持字母、数字、中文、. - _</p>
+                     * @param _name <p>名称。</p><p>参数格式：以字母或中文开头，长度 2–128 个字符，支持字母、数字、中文、. - _</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取<p>描述信息，最大长度不能超过100个字节。</p>
-                     * @return Description <p>描述信息，最大长度不能超过100个字节。</p>
+                     * 获取<p>描述信息。</p><p>参数格式：最大长度不超过100 个字符。</p>
+                     * @return Description <p>描述信息。</p><p>参数格式：最大长度不超过100 个字符。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置<p>描述信息，最大长度不能超过100个字节。</p>
-                     * @param _description <p>描述信息，最大长度不能超过100个字节。</p>
+                     * 设置<p>描述信息。</p><p>参数格式：最大长度不超过100 个字符。</p>
+                     * @param _description <p>描述信息。</p><p>参数格式：最大长度不超过100 个字符。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -156,13 +156,13 @@ namespace TencentCloud
                     bool m_globalAcceleratorIdHasBeenSet;
 
                     /**
-                     * <p>名称，最大长度不能超过60个字节。</p>
+                     * <p>名称。</p><p>参数格式：以字母或中文开头，长度 2–128 个字符，支持字母、数字、中文、. - _</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * <p>描述信息，最大长度不能超过100个字节。</p>
+                     * <p>描述信息。</p><p>参数格式：最大长度不超过100 个字符。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

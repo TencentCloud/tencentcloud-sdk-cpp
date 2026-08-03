@@ -1,0 +1,111 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/dlc/v20210125/model/SortField.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Dlc::V20210125::Model;
+using namespace std;
+
+SortField::SortField() :
+    m_fieldHasBeenSet(false),
+    m_orderHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome SortField::Deserialize(const rapidjson::Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("Field") && !value["Field"].IsNull())
+    {
+        if (!value["Field"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SortField.Field` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_field = string(value["Field"].GetString());
+        m_fieldHasBeenSet = true;
+    }
+
+    if (value.HasMember("Order") && !value["Order"].IsNull())
+    {
+        if (!value["Order"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SortField.Order` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_order = string(value["Order"].GetString());
+        m_orderHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void SortField::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+{
+
+    if (m_fieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Field";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_field.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Order";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+string SortField::GetField() const
+{
+    return m_field;
+}
+
+void SortField::SetField(const string& _field)
+{
+    m_field = _field;
+    m_fieldHasBeenSet = true;
+}
+
+bool SortField::FieldHasBeenSet() const
+{
+    return m_fieldHasBeenSet;
+}
+
+string SortField::GetOrder() const
+{
+    return m_order;
+}
+
+void SortField::SetOrder(const string& _order)
+{
+    m_order = _order;
+    m_orderHasBeenSet = true;
+}
+
+bool SortField::OrderHasBeenSet() const
+{
+    return m_orderHasBeenSet;
+}
+

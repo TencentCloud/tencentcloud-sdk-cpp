@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>客户端ID</p>
-                     * @return ClientId <p>客户端ID</p>
+                     * 获取<p>OAuth2 client_id</p>
+                     * @return ClientId <p>OAuth2 client_id</p>
                      * 
                      */
                     std::string GetClientId() const;
 
                     /**
-                     * 设置<p>客户端ID</p>
-                     * @param _clientId <p>客户端ID</p>
+                     * 设置<p>OAuth2 client_id</p>
+                     * @param _clientId <p>OAuth2 client_id</p>
                      * 
                      */
                     void SetClientId(const std::string& _clientId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ClientIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>客户端密钥</p>
-                     * @return ClientSecret <p>客户端密钥</p>
+                     * 获取<p>OAuth2 client_secret</p>
+                     * @return ClientSecret <p>OAuth2 client_secret</p>
                      * 
                      */
                     std::string GetClientSecret() const;
 
                     /**
-                     * 设置<p>客户端密钥</p>
-                     * @param _clientSecret <p>客户端密钥</p>
+                     * 设置<p>OAuth2 client_secret</p>
+                     * @param _clientSecret <p>OAuth2 client_secret</p>
                      * 
                      */
                     void SetClientSecret(const std::string& _clientSecret);
@@ -88,19 +88,46 @@ namespace TencentCloud
                      */
                     bool ClientSecretHasBeenSet() const;
 
+                    /**
+                     * 获取<p>OAuth2 授权回调地址</p>
+                     * @return RedirectURIs <p>OAuth2 授权回调地址</p>
+                     * 
+                     */
+                    std::string GetRedirectURIs() const;
+
+                    /**
+                     * 设置<p>OAuth2 授权回调地址</p>
+                     * @param _redirectURIs <p>OAuth2 授权回调地址</p>
+                     * 
+                     */
+                    void SetRedirectURIs(const std::string& _redirectURIs);
+
+                    /**
+                     * 判断参数 RedirectURIs 是否已赋值
+                     * @return RedirectURIs 是否已赋值
+                     * 
+                     */
+                    bool RedirectURIsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * <p>客户端ID</p>
+                     * <p>OAuth2 client_id</p>
                      */
                     std::string m_clientId;
                     bool m_clientIdHasBeenSet;
 
                     /**
-                     * <p>客户端密钥</p>
+                     * <p>OAuth2 client_secret</p>
                      */
                     std::string m_clientSecret;
                     bool m_clientSecretHasBeenSet;
+
+                    /**
+                     * <p>OAuth2 授权回调地址</p>
+                     */
+                    std::string m_redirectURIs;
+                    bool m_redirectURIsHasBeenSet;
 
                 };
             }

@@ -73,15 +73,15 @@ namespace TencentCloud
                     bool ImageHasBeenSet() const;
 
                     /**
-                     * 获取<p>镜像仓库类型：<code>TCR</code>、<code>CCR</code>。</p>
-                     * @return ImageRegistryType <p>镜像仓库类型：<code>TCR</code>、<code>CCR</code>。</p>
+                     * 获取<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code>。</p><p>枚举值：</p><ul><li>enterprise： TCR 企业容器镜像服务</li><li>personal： CCR 个人容器镜像服务</li></ul>
+                     * @return ImageRegistryType <p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code>。</p><p>枚举值：</p><ul><li>enterprise： TCR 企业容器镜像服务</li><li>personal： CCR 个人容器镜像服务</li></ul>
                      * 
                      */
                     std::string GetImageRegistryType() const;
 
                     /**
-                     * 设置<p>镜像仓库类型：<code>TCR</code>、<code>CCR</code>。</p>
-                     * @param _imageRegistryType <p>镜像仓库类型：<code>TCR</code>、<code>CCR</code>。</p>
+                     * 设置<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code>。</p><p>枚举值：</p><ul><li>enterprise： TCR 企业容器镜像服务</li><li>personal： CCR 个人容器镜像服务</li></ul>
+                     * @param _imageRegistryType <p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code>。</p><p>枚举值：</p><ul><li>enterprise： TCR 企业容器镜像服务</li><li>personal： CCR 个人容器镜像服务</li></ul>
                      * 
                      */
                     void SetImageRegistryType(const std::string& _imageRegistryType);
@@ -270,7 +270,7 @@ namespace TencentCloud
                     bool m_imageHasBeenSet;
 
                     /**
-                     * <p>镜像仓库类型：<code>TCR</code>、<code>CCR</code>。</p>
+                     * <p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code>。</p><p>枚举值：</p><ul><li>enterprise： TCR 企业容器镜像服务</li><li>personal： CCR 个人容器镜像服务</li></ul>
                      */
                     std::string m_imageRegistryType;
                     bool m_imageRegistryTypeHasBeenSet;

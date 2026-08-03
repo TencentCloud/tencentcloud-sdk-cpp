@@ -30,7 +30,8 @@ DescribeConversationMessageListResponse::DescribeConversationMessageListResponse
     m_lastRecordIdHasBeenSet(false),
     m_messageListHasBeenSet(false),
     m_messagesHasBeenSet(false),
-    m_resetInfoHasBeenSet(false)
+    m_resetInfoHasBeenSet(false),
+    m_recordSummaryListHasBeenSet(false)
 {
 }
 
@@ -165,6 +166,26 @@ CoreInternalOutcome DescribeConversationMessageListResponse::Deserialize(const s
         m_resetInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RecordSummaryList") && !rsp["RecordSummaryList"].IsNull())
+    {
+        if (!rsp["RecordSummaryList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RecordSummaryList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["RecordSummaryList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ConversationRecordSummary item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_recordSummaryList.push_back(item);
+        }
+        m_recordSummaryListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -244,6 +265,21 @@ string DescribeConversationMessageListResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_resetInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_recordSummaryListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordSummaryList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_recordSummaryList.begin(); itr != m_recordSummaryList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -326,6 +362,16 @@ ConversationResetInfo DescribeConversationMessageListResponse::GetResetInfo() co
 bool DescribeConversationMessageListResponse::ResetInfoHasBeenSet() const
 {
     return m_resetInfoHasBeenSet;
+}
+
+vector<ConversationRecordSummary> DescribeConversationMessageListResponse::GetRecordSummaryList() const
+{
+    return m_recordSummaryList;
+}
+
+bool DescribeConversationMessageListResponse::RecordSummaryListHasBeenSet() const
+{
+    return m_recordSummaryListHasBeenSet;
 }
 
 

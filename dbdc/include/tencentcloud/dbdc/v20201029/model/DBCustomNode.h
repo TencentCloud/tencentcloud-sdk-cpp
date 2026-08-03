@@ -587,15 +587,15 @@ namespace TencentCloud
                     bool HostIpHasBeenSet() const;
 
                     /**
-                     * 获取<p>网络模式</p><p>枚举值：</p><ul><li>NetworkModePrivateLink： 四层 SSH 服务联通模式</li><li>NetworkModeCrossTenantENI：  三层双网卡访问方式</li></ul>
-                     * @return NetworkMode <p>网络模式</p><p>枚举值：</p><ul><li>NetworkModePrivateLink： 四层 SSH 服务联通模式</li><li>NetworkModeCrossTenantENI：  三层双网卡访问方式</li></ul>
+                     * 获取<p>网络模式</p><p>枚举值：</p><ul><li>privatelink： 四层 SSH 服务联通模式</li><li>cross_tenant_eni：  三层双网卡访问方式</li></ul>
+                     * @return NetworkMode <p>网络模式</p><p>枚举值：</p><ul><li>privatelink： 四层 SSH 服务联通模式</li><li>cross_tenant_eni：  三层双网卡访问方式</li></ul>
                      * 
                      */
                     std::string GetNetworkMode() const;
 
                     /**
-                     * 设置<p>网络模式</p><p>枚举值：</p><ul><li>NetworkModePrivateLink： 四层 SSH 服务联通模式</li><li>NetworkModeCrossTenantENI：  三层双网卡访问方式</li></ul>
-                     * @param _networkMode <p>网络模式</p><p>枚举值：</p><ul><li>NetworkModePrivateLink： 四层 SSH 服务联通模式</li><li>NetworkModeCrossTenantENI：  三层双网卡访问方式</li></ul>
+                     * 设置<p>网络模式</p><p>枚举值：</p><ul><li>privatelink： 四层 SSH 服务联通模式</li><li>cross_tenant_eni：  三层双网卡访问方式</li></ul>
+                     * @param _networkMode <p>网络模式</p><p>枚举值：</p><ul><li>privatelink： 四层 SSH 服务联通模式</li><li>cross_tenant_eni：  三层双网卡访问方式</li></ul>
                      * 
                      */
                     void SetNetworkMode(const std::string& _networkMode);
@@ -784,7 +784,7 @@ namespace TencentCloud
                     bool m_hostIpHasBeenSet;
 
                     /**
-                     * <p>网络模式</p><p>枚举值：</p><ul><li>NetworkModePrivateLink： 四层 SSH 服务联通模式</li><li>NetworkModeCrossTenantENI：  三层双网卡访问方式</li></ul>
+                     * <p>网络模式</p><p>枚举值：</p><ul><li>privatelink： 四层 SSH 服务联通模式</li><li>cross_tenant_eni：  三层双网卡访问方式</li></ul>
                      */
                     std::string m_networkMode;
                     bool m_networkModeHasBeenSet;

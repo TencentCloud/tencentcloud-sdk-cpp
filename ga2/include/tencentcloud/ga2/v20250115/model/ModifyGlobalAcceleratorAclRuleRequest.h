@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool GlobalAcceleratorAclRuleIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>协议。</p><p>入参限制：支持选择&#39;TCP&#39;, &#39;UDP&#39;, &#39;ALL&#39;。</p>
-                     * @return Protocol <p>协议。</p><p>入参限制：支持选择&#39;TCP&#39;, &#39;UDP&#39;, &#39;ALL&#39;。</p>
+                     * 获取<p>协议。</p><p>入参限制：支持选择&#39;TCP&#39;, &#39;UDP&#39;。</p>
+                     * @return Protocol <p>协议。</p><p>入参限制：支持选择&#39;TCP&#39;, &#39;UDP&#39;。</p>
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置<p>协议。</p><p>入参限制：支持选择&#39;TCP&#39;, &#39;UDP&#39;, &#39;ALL&#39;。</p>
-                     * @param _protocol <p>协议。</p><p>入参限制：支持选择&#39;TCP&#39;, &#39;UDP&#39;, &#39;ALL&#39;。</p>
+                     * 设置<p>协议。</p><p>入参限制：支持选择&#39;TCP&#39;, &#39;UDP&#39;。</p>
+                     * @param _protocol <p>协议。</p><p>入参限制：支持选择&#39;TCP&#39;, &#39;UDP&#39;。</p>
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -231,7 +231,7 @@ namespace TencentCloud
                     bool m_globalAcceleratorAclRuleIdHasBeenSet;
 
                     /**
-                     * <p>协议。</p><p>入参限制：支持选择&#39;TCP&#39;, &#39;UDP&#39;, &#39;ALL&#39;。</p>
+                     * <p>协议。</p><p>入参限制：支持选择&#39;TCP&#39;, &#39;UDP&#39;。</p>
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

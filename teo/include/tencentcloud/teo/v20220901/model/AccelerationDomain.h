@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取站点 ID。
-                     * @return ZoneId 站点 ID。
+                     * 获取<p>站点 ID。</p>
+                     * @return ZoneId <p>站点 ID。</p>
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置站点 ID。
-                     * @param _zoneId 站点 ID。
+                     * 设置<p>站点 ID。</p>
+                     * @param _zoneId <p>站点 ID。</p>
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取加速域名名称。
-                     * @return DomainName 加速域名名称。
+                     * 获取<p>加速域名名称。</p>
+                     * @return DomainName <p>加速域名名称。</p>
                      * 
                      */
                     std::string GetDomainName() const;
 
                     /**
-                     * 设置加速域名名称。
-                     * @param _domainName 加速域名名称。
+                     * 设置<p>加速域名名称。</p>
+                     * @param _domainName <p>加速域名名称。</p>
                      * 
                      */
                     void SetDomainName(const std::string& _domainName);
@@ -92,35 +92,15 @@ namespace TencentCloud
                     bool DomainNameHasBeenSet() const;
 
                     /**
-                     * 获取加速域名状态，取值有：
-<li>online：已生效；</li>
-<li>process：部署中；</li>
-<li>offline：已停用；</li>
-<li>forbidden：已封禁；</li>
-<li>init：未生效，待激活站点。</li>
-                     * @return DomainStatus 加速域名状态，取值有：
-<li>online：已生效；</li>
-<li>process：部署中；</li>
-<li>offline：已停用；</li>
-<li>forbidden：已封禁；</li>
-<li>init：未生效，待激活站点。</li>
+                     * 获取<p>加速域名状态</p><p>枚举值：</p><ul><li>online： 已生效</li><li>process： 部署中</li><li>offline： 已停用</li><li>init： 未生效，待激活站点</li></ul>
+                     * @return DomainStatus <p>加速域名状态</p><p>枚举值：</p><ul><li>online： 已生效</li><li>process： 部署中</li><li>offline： 已停用</li><li>init： 未生效，待激活站点</li></ul>
                      * 
                      */
                     std::string GetDomainStatus() const;
 
                     /**
-                     * 设置加速域名状态，取值有：
-<li>online：已生效；</li>
-<li>process：部署中；</li>
-<li>offline：已停用；</li>
-<li>forbidden：已封禁；</li>
-<li>init：未生效，待激活站点。</li>
-                     * @param _domainStatus 加速域名状态，取值有：
-<li>online：已生效；</li>
-<li>process：部署中；</li>
-<li>offline：已停用；</li>
-<li>forbidden：已封禁；</li>
-<li>init：未生效，待激活站点。</li>
+                     * 设置<p>加速域名状态</p><p>枚举值：</p><ul><li>online： 已生效</li><li>process： 部署中</li><li>offline： 已停用</li><li>init： 未生效，待激活站点</li></ul>
+                     * @param _domainStatus <p>加速域名状态</p><p>枚举值：</p><ul><li>online： 已生效</li><li>process： 部署中</li><li>offline： 已停用</li><li>init： 未生效，待激活站点</li></ul>
                      * 
                      */
                     void SetDomainStatus(const std::string& _domainStatus);
@@ -133,15 +113,15 @@ namespace TencentCloud
                     bool DomainStatusHasBeenSet() const;
 
                     /**
-                     * 获取CNAME 地址。
-                     * @return Cname CNAME 地址。
+                     * 获取<p>CNAME 地址。</p>
+                     * @return Cname <p>CNAME 地址。</p>
                      * 
                      */
                     std::string GetCname() const;
 
                     /**
-                     * 设置CNAME 地址。
-                     * @param _cname CNAME 地址。
+                     * 设置<p>CNAME 地址。</p>
+                     * @param _cname <p>CNAME 地址。</p>
                      * 
                      */
                     void SetCname(const std::string& _cname);
@@ -154,30 +134,18 @@ namespace TencentCloud
                     bool CnameHasBeenSet() const;
 
                     /**
-                     * 获取IPv6 状态，取值有：
-<li>follow：遵循站点IPv6配置；</li>
-<li>on：开启状态；</li>
-<li>off：关闭状态。</li>
+                     * 获取<p>IPv6 状态，取值有：</p><li>follow：遵循站点IPv6配置；</li><li>on：开启状态；</li><li>off：关闭状态。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IPv6Status IPv6 状态，取值有：
-<li>follow：遵循站点IPv6配置；</li>
-<li>on：开启状态；</li>
-<li>off：关闭状态。</li>
+                     * @return IPv6Status <p>IPv6 状态，取值有：</p><li>follow：遵循站点IPv6配置；</li><li>on：开启状态；</li><li>off：关闭状态。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIPv6Status() const;
 
                     /**
-                     * 设置IPv6 状态，取值有：
-<li>follow：遵循站点IPv6配置；</li>
-<li>on：开启状态；</li>
-<li>off：关闭状态。</li>
+                     * 设置<p>IPv6 状态，取值有：</p><li>follow：遵循站点IPv6配置；</li><li>on：开启状态；</li><li>off：关闭状态。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _iPv6Status IPv6 状态，取值有：
-<li>follow：遵循站点IPv6配置；</li>
-<li>on：开启状态；</li>
-<li>off：关闭状态。</li>
+                     * @param _iPv6Status <p>IPv6 状态，取值有：</p><li>follow：遵循站点IPv6配置；</li><li>on：开启状态；</li><li>off：关闭状态。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -191,26 +159,18 @@ namespace TencentCloud
                     bool IPv6StatusHasBeenSet() const;
 
                     /**
-                     * 获取加速域名归属权验证状态，取值有： 
-<li>pending：待验证；</li>
-<li>finished：已完成验证。</li>	
+                     * 获取<p>加速域名归属权验证状态，取值有： </p><li>pending：待验证；</li><li>finished：已完成验证。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IdentificationStatus 加速域名归属权验证状态，取值有： 
-<li>pending：待验证；</li>
-<li>finished：已完成验证。</li>	
+                     * @return IdentificationStatus <p>加速域名归属权验证状态，取值有： </p><li>pending：待验证；</li><li>finished：已完成验证。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdentificationStatus() const;
 
                     /**
-                     * 设置加速域名归属权验证状态，取值有： 
-<li>pending：待验证；</li>
-<li>finished：已完成验证。</li>	
+                     * 设置<p>加速域名归属权验证状态，取值有： </p><li>pending：待验证；</li><li>finished：已完成验证。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _identificationStatus 加速域名归属权验证状态，取值有： 
-<li>pending：待验证；</li>
-<li>finished：已完成验证。</li>	
+                     * @param _identificationStatus <p>加速域名归属权验证状态，取值有： </p><li>pending：待验证；</li><li>finished：已完成验证。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -224,18 +184,18 @@ namespace TencentCloud
                     bool IdentificationStatusHasBeenSet() const;
 
                     /**
-                     * 获取加速域名需进行归属权验证才能继续提供服务时，该对象会携带对应验证方式所需要的信息。
+                     * 获取<p>加速域名需进行归属权验证才能继续提供服务时，该对象会携带对应验证方式所需要的信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OwnershipVerification 加速域名需进行归属权验证才能继续提供服务时，该对象会携带对应验证方式所需要的信息。
+                     * @return OwnershipVerification <p>加速域名需进行归属权验证才能继续提供服务时，该对象会携带对应验证方式所需要的信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OwnershipVerification GetOwnershipVerification() const;
 
                     /**
-                     * 设置加速域名需进行归属权验证才能继续提供服务时，该对象会携带对应验证方式所需要的信息。
+                     * 设置<p>加速域名需进行归属权验证才能继续提供服务时，该对象会携带对应验证方式所需要的信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ownershipVerification 加速域名需进行归属权验证才能继续提供服务时，该对象会携带对应验证方式所需要的信息。
+                     * @param _ownershipVerification <p>加速域名需进行归属权验证才能继续提供服务时，该对象会携带对应验证方式所需要的信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -249,18 +209,18 @@ namespace TencentCloud
                     bool OwnershipVerificationHasBeenSet() const;
 
                     /**
-                     * 获取源站信息。
+                     * 获取<p>源站信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OriginDetail 源站信息。
+                     * @return OriginDetail <p>源站信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OriginDetail GetOriginDetail() const;
 
                     /**
-                     * 设置源站信息。
+                     * 设置<p>源站信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _originDetail 源站信息。
+                     * @param _originDetail <p>源站信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -274,30 +234,18 @@ namespace TencentCloud
                     bool OriginDetailHasBeenSet() const;
 
                     /**
-                     * 获取回源协议，取值有：
-<li>FOLLOW：协议跟随；</li>
-<li>HTTP：HTTP协议回源；</li>
-<li>HTTPS：HTTPS协议回源。</li>
+                     * 获取<p>回源协议，取值有：</p><li>FOLLOW：协议跟随；</li><li>HTTP：HTTP协议回源；</li><li>HTTPS：HTTPS协议回源。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OriginProtocol 回源协议，取值有：
-<li>FOLLOW：协议跟随；</li>
-<li>HTTP：HTTP协议回源；</li>
-<li>HTTPS：HTTPS协议回源。</li>
+                     * @return OriginProtocol <p>回源协议，取值有：</p><li>FOLLOW：协议跟随；</li><li>HTTP：HTTP协议回源；</li><li>HTTPS：HTTPS协议回源。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOriginProtocol() const;
 
                     /**
-                     * 设置回源协议，取值有：
-<li>FOLLOW：协议跟随；</li>
-<li>HTTP：HTTP协议回源；</li>
-<li>HTTPS：HTTPS协议回源。</li>
+                     * 设置<p>回源协议，取值有：</p><li>FOLLOW：协议跟随；</li><li>HTTP：HTTP协议回源；</li><li>HTTPS：HTTPS协议回源。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _originProtocol 回源协议，取值有：
-<li>FOLLOW：协议跟随；</li>
-<li>HTTP：HTTP协议回源；</li>
-<li>HTTPS：HTTPS协议回源。</li>
+                     * @param _originProtocol <p>回源协议，取值有：</p><li>FOLLOW：协议跟随；</li><li>HTTP：HTTP协议回源；</li><li>HTTPS：HTTPS协议回源。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -311,18 +259,18 @@ namespace TencentCloud
                     bool OriginProtocolHasBeenSet() const;
 
                     /**
-                     * 获取HTTP 回源端口。
+                     * 获取<p>HTTP 回源端口。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HttpOriginPort HTTP 回源端口。
+                     * @return HttpOriginPort <p>HTTP 回源端口。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHttpOriginPort() const;
 
                     /**
-                     * 设置HTTP 回源端口。
+                     * 设置<p>HTTP 回源端口。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _httpOriginPort HTTP 回源端口。
+                     * @param _httpOriginPort <p>HTTP 回源端口。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -336,18 +284,18 @@ namespace TencentCloud
                     bool HttpOriginPortHasBeenSet() const;
 
                     /**
-                     * 获取HTTPS 回源端口。
+                     * 获取<p>HTTPS 回源端口。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HttpsOriginPort HTTPS 回源端口。
+                     * @return HttpsOriginPort <p>HTTPS 回源端口。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHttpsOriginPort() const;
 
                     /**
-                     * 设置HTTPS 回源端口。
+                     * 设置<p>HTTPS 回源端口。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _httpsOriginPort HTTPS 回源端口。
+                     * @param _httpsOriginPort <p>HTTPS 回源端口。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -361,18 +309,18 @@ namespace TencentCloud
                     bool HttpsOriginPortHasBeenSet() const;
 
                     /**
-                     * 获取加速域名证书信息。
+                     * 获取<p>加速域名证书信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Certificate 加速域名证书信息。
+                     * @return Certificate <p>加速域名证书信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AccelerationDomainCertificate GetCertificate() const;
 
                     /**
-                     * 设置加速域名证书信息。
+                     * 设置<p>加速域名证书信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _certificate 加速域名证书信息。
+                     * @param _certificate <p>加速域名证书信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -386,15 +334,15 @@ namespace TencentCloud
                     bool CertificateHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return CreatedOn 创建时间。
+                     * 获取<p>创建时间。</p>
+                     * @return CreatedOn <p>创建时间。</p>
                      * 
                      */
                     std::string GetCreatedOn() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _createdOn 创建时间。
+                     * 设置<p>创建时间。</p>
+                     * @param _createdOn <p>创建时间。</p>
                      * 
                      */
                     void SetCreatedOn(const std::string& _createdOn);
@@ -407,15 +355,15 @@ namespace TencentCloud
                     bool CreatedOnHasBeenSet() const;
 
                     /**
-                     * 获取修改时间。
-                     * @return ModifiedOn 修改时间。
+                     * 获取<p>修改时间。</p>
+                     * @return ModifiedOn <p>修改时间。</p>
                      * 
                      */
                     std::string GetModifiedOn() const;
 
                     /**
-                     * 设置修改时间。
-                     * @param _modifiedOn 修改时间。
+                     * 设置<p>修改时间。</p>
+                     * @param _modifiedOn <p>修改时间。</p>
                      * 
                      */
                     void SetModifiedOn(const std::string& _modifiedOn);
@@ -430,106 +378,93 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 站点 ID。
+                     * <p>站点 ID。</p>
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 加速域名名称。
+                     * <p>加速域名名称。</p>
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
 
                     /**
-                     * 加速域名状态，取值有：
-<li>online：已生效；</li>
-<li>process：部署中；</li>
-<li>offline：已停用；</li>
-<li>forbidden：已封禁；</li>
-<li>init：未生效，待激活站点。</li>
+                     * <p>加速域名状态</p><p>枚举值：</p><ul><li>online： 已生效</li><li>process： 部署中</li><li>offline： 已停用</li><li>init： 未生效，待激活站点</li></ul>
                      */
                     std::string m_domainStatus;
                     bool m_domainStatusHasBeenSet;
 
                     /**
-                     * CNAME 地址。
+                     * <p>CNAME 地址。</p>
                      */
                     std::string m_cname;
                     bool m_cnameHasBeenSet;
 
                     /**
-                     * IPv6 状态，取值有：
-<li>follow：遵循站点IPv6配置；</li>
-<li>on：开启状态；</li>
-<li>off：关闭状态。</li>
+                     * <p>IPv6 状态，取值有：</p><li>follow：遵循站点IPv6配置；</li><li>on：开启状态；</li><li>off：关闭状态。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iPv6Status;
                     bool m_iPv6StatusHasBeenSet;
 
                     /**
-                     * 加速域名归属权验证状态，取值有： 
-<li>pending：待验证；</li>
-<li>finished：已完成验证。</li>	
+                     * <p>加速域名归属权验证状态，取值有： </p><li>pending：待验证；</li><li>finished：已完成验证。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_identificationStatus;
                     bool m_identificationStatusHasBeenSet;
 
                     /**
-                     * 加速域名需进行归属权验证才能继续提供服务时，该对象会携带对应验证方式所需要的信息。
+                     * <p>加速域名需进行归属权验证才能继续提供服务时，该对象会携带对应验证方式所需要的信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OwnershipVerification m_ownershipVerification;
                     bool m_ownershipVerificationHasBeenSet;
 
                     /**
-                     * 源站信息。
+                     * <p>源站信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OriginDetail m_originDetail;
                     bool m_originDetailHasBeenSet;
 
                     /**
-                     * 回源协议，取值有：
-<li>FOLLOW：协议跟随；</li>
-<li>HTTP：HTTP协议回源；</li>
-<li>HTTPS：HTTPS协议回源。</li>
+                     * <p>回源协议，取值有：</p><li>FOLLOW：协议跟随；</li><li>HTTP：HTTP协议回源；</li><li>HTTPS：HTTPS协议回源。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originProtocol;
                     bool m_originProtocolHasBeenSet;
 
                     /**
-                     * HTTP 回源端口。
+                     * <p>HTTP 回源端口。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_httpOriginPort;
                     bool m_httpOriginPortHasBeenSet;
 
                     /**
-                     * HTTPS 回源端口。
+                     * <p>HTTPS 回源端口。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_httpsOriginPort;
                     bool m_httpsOriginPortHasBeenSet;
 
                     /**
-                     * 加速域名证书信息。
+                     * <p>加速域名证书信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AccelerationDomainCertificate m_certificate;
                     bool m_certificateHasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * <p>创建时间。</p>
                      */
                     std::string m_createdOn;
                     bool m_createdOnHasBeenSet;
 
                     /**
-                     * 修改时间。
+                     * <p>修改时间。</p>
                      */
                     std::string m_modifiedOn;
                     bool m_modifiedOnHasBeenSet;

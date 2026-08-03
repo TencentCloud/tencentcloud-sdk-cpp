@@ -67,25 +67,25 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>密钥协议类型。</p><p>枚举值：</p><ul><li>ApiKey</li><li>Basic</li><li>Hmac</li><li>OAuth2</li><li>JWT</li></ul>
-                     * @return SecretType <p>密钥协议类型。</p><p>枚举值：</p><ul><li>ApiKey</li><li>Basic</li><li>Hmac</li><li>OAuth2</li><li>JWT</li></ul>
+                     * 获取<p>密钥生成方式。</p><p>枚举值：</p><ul><li>System：系统自动生成</li><li>Custom：用户自定义（需传 SecretValue）</li><li>KMS：使用 KMS 密钥（需传 KmsKeyName 与 KmsKeyVersion）</li></ul>
+                     * @return GenerateType <p>密钥生成方式。</p><p>枚举值：</p><ul><li>System：系统自动生成</li><li>Custom：用户自定义（需传 SecretValue）</li><li>KMS：使用 KMS 密钥（需传 KmsKeyName 与 KmsKeyVersion）</li></ul>
                      * 
                      */
-                    std::string GetSecretType() const;
+                    std::string GetGenerateType() const;
 
                     /**
-                     * 设置<p>密钥协议类型。</p><p>枚举值：</p><ul><li>ApiKey</li><li>Basic</li><li>Hmac</li><li>OAuth2</li><li>JWT</li></ul>
-                     * @param _secretType <p>密钥协议类型。</p><p>枚举值：</p><ul><li>ApiKey</li><li>Basic</li><li>Hmac</li><li>OAuth2</li><li>JWT</li></ul>
+                     * 设置<p>密钥生成方式。</p><p>枚举值：</p><ul><li>System：系统自动生成</li><li>Custom：用户自定义（需传 SecretValue）</li><li>KMS：使用 KMS 密钥（需传 KmsKeyName 与 KmsKeyVersion）</li></ul>
+                     * @param _generateType <p>密钥生成方式。</p><p>枚举值：</p><ul><li>System：系统自动生成</li><li>Custom：用户自定义（需传 SecretValue）</li><li>KMS：使用 KMS 密钥（需传 KmsKeyName 与 KmsKeyVersion）</li></ul>
                      * 
                      */
-                    void SetSecretType(const std::string& _secretType);
+                    void SetGenerateType(const std::string& _generateType);
 
                     /**
-                     * 判断参数 SecretType 是否已赋值
-                     * @return SecretType 是否已赋值
+                     * 判断参数 GenerateType 是否已赋值
+                     * @return GenerateType 是否已赋值
                      * 
                      */
-                    bool SecretTypeHasBeenSet() const;
+                    bool GenerateTypeHasBeenSet() const;
 
                     /**
                      * 获取<p>密钥名称，2-60 字符。</p>
@@ -109,27 +109,6 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取<p>密钥生成方式。</p><p>枚举值：</p><ul><li>System：系统自动生成</li><li>Custom：用户自定义（需传 SecretValue）</li><li>KMS：使用 KMS 密钥（需传 KmsKeyName 与 KmsKeyVersion）</li></ul>
-                     * @return GenerateType <p>密钥生成方式。</p><p>枚举值：</p><ul><li>System：系统自动生成</li><li>Custom：用户自定义（需传 SecretValue）</li><li>KMS：使用 KMS 密钥（需传 KmsKeyName 与 KmsKeyVersion）</li></ul>
-                     * 
-                     */
-                    std::string GetGenerateType() const;
-
-                    /**
-                     * 设置<p>密钥生成方式。</p><p>枚举值：</p><ul><li>System：系统自动生成</li><li>Custom：用户自定义（需传 SecretValue）</li><li>KMS：使用 KMS 密钥（需传 KmsKeyName 与 KmsKeyVersion）</li></ul>
-                     * @param _generateType <p>密钥生成方式。</p><p>枚举值：</p><ul><li>System：系统自动生成</li><li>Custom：用户自定义（需传 SecretValue）</li><li>KMS：使用 KMS 密钥（需传 KmsKeyName 与 KmsKeyVersion）</li></ul>
-                     * 
-                     */
-                    void SetGenerateType(const std::string& _generateType);
-
-                    /**
-                     * 判断参数 GenerateType 是否已赋值
-                     * @return GenerateType 是否已赋值
-                     * 
-                     */
-                    bool GenerateTypeHasBeenSet() const;
-
-                    /**
                      * 获取<p>密钥归属资源类型。</p><p>枚举值：</p><ul><li>Consumer：消费者</li><li>ModelService：模型服务</li></ul>
                      * @return ResourceType <p>密钥归属资源类型。</p><p>枚举值：</p><ul><li>Consumer：消费者</li><li>ModelService：模型服务</li></ul>
                      * 
@@ -151,67 +130,25 @@ namespace TencentCloud
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>KMS 密钥名称。GenerateType=KMS 时必填。</p>
-                     * @return KmsKeyName <p>KMS 密钥名称。GenerateType=KMS 时必填。</p>
+                     * 获取<p>密钥协议类型。</p><p>枚举值：</p><ul><li>ApiKey</li><li>Basic</li><li>Hmac</li><li>OAuth2</li><li>JWT</li></ul>
+                     * @return SecretType <p>密钥协议类型。</p><p>枚举值：</p><ul><li>ApiKey</li><li>Basic</li><li>Hmac</li><li>OAuth2</li><li>JWT</li></ul>
                      * 
                      */
-                    std::string GetKmsKeyName() const;
+                    std::string GetSecretType() const;
 
                     /**
-                     * 设置<p>KMS 密钥名称。GenerateType=KMS 时必填。</p>
-                     * @param _kmsKeyName <p>KMS 密钥名称。GenerateType=KMS 时必填。</p>
+                     * 设置<p>密钥协议类型。</p><p>枚举值：</p><ul><li>ApiKey</li><li>Basic</li><li>Hmac</li><li>OAuth2</li><li>JWT</li></ul>
+                     * @param _secretType <p>密钥协议类型。</p><p>枚举值：</p><ul><li>ApiKey</li><li>Basic</li><li>Hmac</li><li>OAuth2</li><li>JWT</li></ul>
                      * 
                      */
-                    void SetKmsKeyName(const std::string& _kmsKeyName);
+                    void SetSecretType(const std::string& _secretType);
 
                     /**
-                     * 判断参数 KmsKeyName 是否已赋值
-                     * @return KmsKeyName 是否已赋值
+                     * 判断参数 SecretType 是否已赋值
+                     * @return SecretType 是否已赋值
                      * 
                      */
-                    bool KmsKeyNameHasBeenSet() const;
-
-                    /**
-                     * 获取<p>KMS 密钥版本。GenerateType=KMS 时必填。</p>
-                     * @return KmsKeyVersion <p>KMS 密钥版本。GenerateType=KMS 时必填。</p>
-                     * 
-                     */
-                    std::string GetKmsKeyVersion() const;
-
-                    /**
-                     * 设置<p>KMS 密钥版本。GenerateType=KMS 时必填。</p>
-                     * @param _kmsKeyVersion <p>KMS 密钥版本。GenerateType=KMS 时必填。</p>
-                     * 
-                     */
-                    void SetKmsKeyVersion(const std::string& _kmsKeyVersion);
-
-                    /**
-                     * 判断参数 KmsKeyVersion 是否已赋值
-                     * @return KmsKeyVersion 是否已赋值
-                     * 
-                     */
-                    bool KmsKeyVersionHasBeenSet() const;
-
-                    /**
-                     * 获取<p>密钥值，长度 8-256。GenerateType=Custom 时必填。</p>
-                     * @return SecretValue <p>密钥值，长度 8-256。GenerateType=Custom 时必填。</p>
-                     * 
-                     */
-                    std::string GetSecretValue() const;
-
-                    /**
-                     * 设置<p>密钥值，长度 8-256。GenerateType=Custom 时必填。</p>
-                     * @param _secretValue <p>密钥值，长度 8-256。GenerateType=Custom 时必填。</p>
-                     * 
-                     */
-                    void SetSecretValue(const std::string& _secretValue);
-
-                    /**
-                     * 判断参数 SecretValue 是否已赋值
-                     * @return SecretValue 是否已赋值
-                     * 
-                     */
-                    bool SecretValueHasBeenSet() const;
+                    bool SecretTypeHasBeenSet() const;
 
                     /**
                      * 获取<p>密钥描述。最长 200 字符。</p>
@@ -256,15 +193,57 @@ namespace TencentCloud
                     bool JWTCredentialConfigHasBeenSet() const;
 
                     /**
-                     * 获取<p>Oauth2凭证配置</p>
-                     * @return OAuthCredentialConfig <p>Oauth2凭证配置</p>
+                     * 获取<p>KMS 密钥名称。GenerateType=KMS 时必填。</p>
+                     * @return KmsKeyName <p>KMS 密钥名称。GenerateType=KMS 时必填。</p>
+                     * 
+                     */
+                    std::string GetKmsKeyName() const;
+
+                    /**
+                     * 设置<p>KMS 密钥名称。GenerateType=KMS 时必填。</p>
+                     * @param _kmsKeyName <p>KMS 密钥名称。GenerateType=KMS 时必填。</p>
+                     * 
+                     */
+                    void SetKmsKeyName(const std::string& _kmsKeyName);
+
+                    /**
+                     * 判断参数 KmsKeyName 是否已赋值
+                     * @return KmsKeyName 是否已赋值
+                     * 
+                     */
+                    bool KmsKeyNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>KMS 密钥版本。GenerateType=KMS 时必填。</p>
+                     * @return KmsKeyVersion <p>KMS 密钥版本。GenerateType=KMS 时必填。</p>
+                     * 
+                     */
+                    std::string GetKmsKeyVersion() const;
+
+                    /**
+                     * 设置<p>KMS 密钥版本。GenerateType=KMS 时必填。</p>
+                     * @param _kmsKeyVersion <p>KMS 密钥版本。GenerateType=KMS 时必填。</p>
+                     * 
+                     */
+                    void SetKmsKeyVersion(const std::string& _kmsKeyVersion);
+
+                    /**
+                     * 判断参数 KmsKeyVersion 是否已赋值
+                     * @return KmsKeyVersion 是否已赋值
+                     * 
+                     */
+                    bool KmsKeyVersionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>OAuth2.0凭证配置</p>
+                     * @return OAuthCredentialConfig <p>OAuth2.0凭证配置</p>
                      * 
                      */
                     AIGWOAuthCredentialConfig GetOAuthCredentialConfig() const;
 
                     /**
-                     * 设置<p>Oauth2凭证配置</p>
-                     * @param _oAuthCredentialConfig <p>Oauth2凭证配置</p>
+                     * 设置<p>OAuth2.0凭证配置</p>
+                     * @param _oAuthCredentialConfig <p>OAuth2.0凭证配置</p>
                      * 
                      */
                     void SetOAuthCredentialConfig(const AIGWOAuthCredentialConfig& _oAuthCredentialConfig);
@@ -297,6 +276,48 @@ namespace TencentCloud
                      */
                     bool OIDCCredentialConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>第三方平台类型</p><p>枚举值：</p><ul><li>Dify： Dify平台</li></ul>
+                     * @return Provider <p>第三方平台类型</p><p>枚举值：</p><ul><li>Dify： Dify平台</li></ul>
+                     * 
+                     */
+                    std::string GetProvider() const;
+
+                    /**
+                     * 设置<p>第三方平台类型</p><p>枚举值：</p><ul><li>Dify： Dify平台</li></ul>
+                     * @param _provider <p>第三方平台类型</p><p>枚举值：</p><ul><li>Dify： Dify平台</li></ul>
+                     * 
+                     */
+                    void SetProvider(const std::string& _provider);
+
+                    /**
+                     * 判断参数 Provider 是否已赋值
+                     * @return Provider 是否已赋值
+                     * 
+                     */
+                    bool ProviderHasBeenSet() const;
+
+                    /**
+                     * 获取<p>密钥值，长度 8-256。GenerateType=Custom 时必填。</p>
+                     * @return SecretValue <p>密钥值，长度 8-256。GenerateType=Custom 时必填。</p>
+                     * 
+                     */
+                    std::string GetSecretValue() const;
+
+                    /**
+                     * 设置<p>密钥值，长度 8-256。GenerateType=Custom 时必填。</p>
+                     * @param _secretValue <p>密钥值，长度 8-256。GenerateType=Custom 时必填。</p>
+                     * 
+                     */
+                    void SetSecretValue(const std::string& _secretValue);
+
+                    /**
+                     * 判断参数 SecretValue 是否已赋值
+                     * @return SecretValue 是否已赋值
+                     * 
+                     */
+                    bool SecretValueHasBeenSet() const;
+
                 private:
 
                     /**
@@ -306,10 +327,10 @@ namespace TencentCloud
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * <p>密钥协议类型。</p><p>枚举值：</p><ul><li>ApiKey</li><li>Basic</li><li>Hmac</li><li>OAuth2</li><li>JWT</li></ul>
+                     * <p>密钥生成方式。</p><p>枚举值：</p><ul><li>System：系统自动生成</li><li>Custom：用户自定义（需传 SecretValue）</li><li>KMS：使用 KMS 密钥（需传 KmsKeyName 与 KmsKeyVersion）</li></ul>
                      */
-                    std::string m_secretType;
-                    bool m_secretTypeHasBeenSet;
+                    std::string m_generateType;
+                    bool m_generateTypeHasBeenSet;
 
                     /**
                      * <p>密钥名称，2-60 字符。</p>
@@ -318,34 +339,16 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * <p>密钥生成方式。</p><p>枚举值：</p><ul><li>System：系统自动生成</li><li>Custom：用户自定义（需传 SecretValue）</li><li>KMS：使用 KMS 密钥（需传 KmsKeyName 与 KmsKeyVersion）</li></ul>
-                     */
-                    std::string m_generateType;
-                    bool m_generateTypeHasBeenSet;
-
-                    /**
                      * <p>密钥归属资源类型。</p><p>枚举值：</p><ul><li>Consumer：消费者</li><li>ModelService：模型服务</li></ul>
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * <p>KMS 密钥名称。GenerateType=KMS 时必填。</p>
+                     * <p>密钥协议类型。</p><p>枚举值：</p><ul><li>ApiKey</li><li>Basic</li><li>Hmac</li><li>OAuth2</li><li>JWT</li></ul>
                      */
-                    std::string m_kmsKeyName;
-                    bool m_kmsKeyNameHasBeenSet;
-
-                    /**
-                     * <p>KMS 密钥版本。GenerateType=KMS 时必填。</p>
-                     */
-                    std::string m_kmsKeyVersion;
-                    bool m_kmsKeyVersionHasBeenSet;
-
-                    /**
-                     * <p>密钥值，长度 8-256。GenerateType=Custom 时必填。</p>
-                     */
-                    std::string m_secretValue;
-                    bool m_secretValueHasBeenSet;
+                    std::string m_secretType;
+                    bool m_secretTypeHasBeenSet;
 
                     /**
                      * <p>密钥描述。最长 200 字符。</p>
@@ -360,7 +363,19 @@ namespace TencentCloud
                     bool m_jWTCredentialConfigHasBeenSet;
 
                     /**
-                     * <p>Oauth2凭证配置</p>
+                     * <p>KMS 密钥名称。GenerateType=KMS 时必填。</p>
+                     */
+                    std::string m_kmsKeyName;
+                    bool m_kmsKeyNameHasBeenSet;
+
+                    /**
+                     * <p>KMS 密钥版本。GenerateType=KMS 时必填。</p>
+                     */
+                    std::string m_kmsKeyVersion;
+                    bool m_kmsKeyVersionHasBeenSet;
+
+                    /**
+                     * <p>OAuth2.0凭证配置</p>
                      */
                     AIGWOAuthCredentialConfig m_oAuthCredentialConfig;
                     bool m_oAuthCredentialConfigHasBeenSet;
@@ -370,6 +385,18 @@ namespace TencentCloud
                      */
                     AIGWOIDCCredentialConfig m_oIDCCredentialConfig;
                     bool m_oIDCCredentialConfigHasBeenSet;
+
+                    /**
+                     * <p>第三方平台类型</p><p>枚举值：</p><ul><li>Dify： Dify平台</li></ul>
+                     */
+                    std::string m_provider;
+                    bool m_providerHasBeenSet;
+
+                    /**
+                     * <p>密钥值，长度 8-256。GenerateType=Custom 时必填。</p>
+                     */
+                    std::string m_secretValue;
+                    bool m_secretValueHasBeenSet;
 
                 };
             }

@@ -23,7 +23,8 @@ using namespace std;
 StorageSource::StorageSource() :
     m_cosHasBeenSet(false),
     m_imageHasBeenSet(false),
-    m_cfsHasBeenSet(false)
+    m_cfsHasBeenSet(false),
+    m_agentBucketHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,23 @@ CoreInternalOutcome StorageSource::Deserialize(const rapidjson::Value &value)
         m_cfsHasBeenSet = true;
     }
 
+    if (value.HasMember("AgentBucket") && !value["AgentBucket"].IsNull())
+    {
+        if (!value["AgentBucket"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `StorageSource.AgentBucket` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_agentBucket.Deserialize(value["AgentBucket"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_agentBucketHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +133,15 @@ void StorageSource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cfs.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_agentBucketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentBucket";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agentBucket.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -166,5 +193,21 @@ void StorageSource::SetCfs(const CfsStorageSource& _cfs)
 bool StorageSource::CfsHasBeenSet() const
 {
     return m_cfsHasBeenSet;
+}
+
+AgentBucketStorageSource StorageSource::GetAgentBucket() const
+{
+    return m_agentBucket;
+}
+
+void StorageSource::SetAgentBucket(const AgentBucketStorageSource& _agentBucket)
+{
+    m_agentBucket = _agentBucket;
+    m_agentBucketHasBeenSet = true;
+}
+
+bool StorageSource::AgentBucketHasBeenSet() const
+{
+    return m_agentBucketHasBeenSet;
 }
 

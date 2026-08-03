@@ -130,6 +130,27 @@ namespace TencentCloud
                     bool PushConfigHasBeenSet() const;
 
                     /**
+                     * 获取<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>
+                     * @return Scope <table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>
+                     * 
+                     */
+                    int64_t GetScope() const;
+
+                    /**
+                     * 设置<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>
+                     * @param _scope <table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>
+                     * 
+                     */
+                    void SetScope(const int64_t& _scope);
+
+                    /**
+                     * 判断参数 Scope 是否已赋值
+                     * @return Scope 是否已赋值
+                     * 
+                     */
+                    bool ScopeHasBeenSet() const;
+
+                    /**
                      * 获取<p>触发器配置</p>
                      * @return TriggerConfig <p>触发器配置</p>
                      * 
@@ -192,6 +213,27 @@ namespace TencentCloud
                      */
                     bool TriggerTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>访客ID</p>
+                     * @return UserId <p>访客ID</p>
+                     * 
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 设置<p>访客ID</p>
+                     * @param _userId <p>访客ID</p>
+                     * 
+                     */
+                    void SetUserId(const std::string& _userId);
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     * 
+                     */
+                    bool UserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -219,6 +261,12 @@ namespace TencentCloud
                     bool m_pushConfigHasBeenSet;
 
                     /**
+                     * <table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>
+                     */
+                    int64_t m_scope;
+                    bool m_scopeHasBeenSet;
+
+                    /**
                      * <p>触发器配置</p>
                      */
                     TriggerConfig m_triggerConfig;
@@ -235,6 +283,12 @@ namespace TencentCloud
                      */
                     int64_t m_triggerType;
                     bool m_triggerTypeHasBeenSet;
+
+                    /**
+                     * <p>访客ID</p>
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
 
                 };
             }

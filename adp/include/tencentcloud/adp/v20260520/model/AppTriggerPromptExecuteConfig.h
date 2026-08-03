@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取
-                     * @return ExecutePrompt 
+                     * 获取<p>触发器执行提示词</p>
+                     * @return ExecutePrompt <p>触发器执行提示词</p>
                      * 
                      */
                     std::string GetExecutePrompt() const;
 
                     /**
-                     * 设置
-                     * @param _executePrompt 
+                     * 设置<p>触发器执行提示词</p>
+                     * @param _executePrompt <p>触发器执行提示词</p>
                      * 
                      */
                     void SetExecutePrompt(const std::string& _executePrompt);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ExecutePromptHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return ParamBindingsApi 
+                     * 获取<p>api参数绑定</p>
+                     * @return ParamBindingsApi <p>api参数绑定</p>
                      * 
                      */
                     AppTriggerParamBindingConfig GetParamBindingsApi() const;
 
                     /**
-                     * 设置
-                     * @param _paramBindingsApi 
+                     * 设置<p>api参数绑定</p>
+                     * @param _paramBindingsApi <p>api参数绑定</p>
                      * 
                      */
                     void SetParamBindingsApi(const AppTriggerParamBindingConfig& _paramBindingsApi);
@@ -92,13 +92,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 
+                     * <p>触发器执行提示词</p>
                      */
                     std::string m_executePrompt;
                     bool m_executePromptHasBeenSet;
 
                     /**
-                     * 
+                     * <p>api参数绑定</p>
                      */
                     AppTriggerParamBindingConfig m_paramBindingsApi;
                     bool m_paramBindingsApiHasBeenSet;

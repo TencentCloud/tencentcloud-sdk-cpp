@@ -62,6 +62,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/DeleteSandboxToolRequest.h
   include/tencentcloud/ags/v20250920/model/UpdateSandboxToolResponse.h
   include/tencentcloud/ags/v20250920/model/VPCConfig.h
+  include/tencentcloud/ags/v20250920/model/AgentBucketStorageSource.h
   include/tencentcloud/ags/v20250920/model/DeleteAPIKeyRequest.h
   include/tencentcloud/ags/v20250920/model/AcquireSandboxInstanceTokenResponse.h
   include/tencentcloud/ags/v20250920/model/ProbeConfiguration.h
@@ -123,6 +124,7 @@ set(ags_src
   src/v20250920/model/DeleteSandboxToolRequest.cpp
   src/v20250920/model/UpdateSandboxToolResponse.cpp
   src/v20250920/model/VPCConfig.cpp
+  src/v20250920/model/AgentBucketStorageSource.cpp
   src/v20250920/model/DeleteAPIKeyRequest.cpp
   src/v20250920/model/AcquireSandboxInstanceTokenResponse.cpp
   src/v20250920/model/ProbeConfiguration.cpp

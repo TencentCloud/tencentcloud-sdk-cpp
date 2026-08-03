@@ -27,9 +27,11 @@ CreateAppTriggerRequest::CreateAppTriggerRequest() :
     m_executeConfigHasBeenSet(false),
     m_executeTypeHasBeenSet(false),
     m_pushConfigHasBeenSet(false),
+    m_scopeHasBeenSet(false),
     m_triggerConfigHasBeenSet(false),
     m_triggerNameHasBeenSet(false),
-    m_triggerTypeHasBeenSet(false)
+    m_triggerTypeHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -74,6 +76,14 @@ string CreateAppTriggerRequest::ToJsonString() const
         m_pushConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_scopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scope";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_scope, allocator);
+    }
+
     if (m_triggerConfigHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -97,6 +107,14 @@ string CreateAppTriggerRequest::ToJsonString() const
         string key = "TriggerType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_triggerType, allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -171,6 +189,22 @@ bool CreateAppTriggerRequest::PushConfigHasBeenSet() const
     return m_pushConfigHasBeenSet;
 }
 
+int64_t CreateAppTriggerRequest::GetScope() const
+{
+    return m_scope;
+}
+
+void CreateAppTriggerRequest::SetScope(const int64_t& _scope)
+{
+    m_scope = _scope;
+    m_scopeHasBeenSet = true;
+}
+
+bool CreateAppTriggerRequest::ScopeHasBeenSet() const
+{
+    return m_scopeHasBeenSet;
+}
+
 TriggerConfig CreateAppTriggerRequest::GetTriggerConfig() const
 {
     return m_triggerConfig;
@@ -217,6 +251,22 @@ void CreateAppTriggerRequest::SetTriggerType(const int64_t& _triggerType)
 bool CreateAppTriggerRequest::TriggerTypeHasBeenSet() const
 {
     return m_triggerTypeHasBeenSet;
+}
+
+string CreateAppTriggerRequest::GetUserId() const
+{
+    return m_userId;
+}
+
+void CreateAppTriggerRequest::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool CreateAppTriggerRequest::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 
 

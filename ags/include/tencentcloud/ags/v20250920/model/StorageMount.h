@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取存储挂载配置名称
-                     * @return Name 存储挂载配置名称
+                     * 获取<p>存储挂载配置名称</p>
+                     * @return Name <p>存储挂载配置名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置存储挂载配置名称
-                     * @param _name 存储挂载配置名称
+                     * 设置<p>存储挂载配置名称</p>
+                     * @param _name <p>存储挂载配置名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -69,15 +69,19 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取存储配置
-                     * @return StorageSource 存储配置
+                     * 获取<p>存储配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StorageSource <p>存储配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     StorageSource GetStorageSource() const;
 
                     /**
-                     * 设置存储配置
-                     * @param _storageSource 存储配置
+                     * 设置<p>存储配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _storageSource <p>存储配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStorageSource(const StorageSource& _storageSource);
@@ -90,15 +94,15 @@ namespace TencentCloud
                     bool StorageSourceHasBeenSet() const;
 
                     /**
-                     * 获取沙箱实例本地挂载路径
-                     * @return MountPath 沙箱实例本地挂载路径
+                     * 获取<p>沙箱实例本地挂载路径</p>
+                     * @return MountPath <p>沙箱实例本地挂载路径</p>
                      * 
                      */
                     std::string GetMountPath() const;
 
                     /**
-                     * 设置沙箱实例本地挂载路径
-                     * @param _mountPath 沙箱实例本地挂载路径
+                     * 设置<p>沙箱实例本地挂载路径</p>
+                     * @param _mountPath <p>沙箱实例本地挂载路径</p>
                      * 
                      */
                     void SetMountPath(const std::string& _mountPath);
@@ -111,15 +115,15 @@ namespace TencentCloud
                     bool MountPathHasBeenSet() const;
 
                     /**
-                     * 获取存储挂载读写权限配置，默认为false
-                     * @return ReadOnly 存储挂载读写权限配置，默认为false
+                     * 获取<p>存储挂载读写权限配置，默认为false</p>
+                     * @return ReadOnly <p>存储挂载读写权限配置，默认为false</p>
                      * 
                      */
                     bool GetReadOnly() const;
 
                     /**
-                     * 设置存储挂载读写权限配置，默认为false
-                     * @param _readOnly 存储挂载读写权限配置，默认为false
+                     * 设置<p>存储挂载读写权限配置，默认为false</p>
+                     * @param _readOnly <p>存储挂载读写权限配置，默认为false</p>
                      * 
                      */
                     void SetReadOnly(const bool& _readOnly);
@@ -134,25 +138,26 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 存储挂载配置名称
+                     * <p>存储挂载配置名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 存储配置
+                     * <p>存储配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     StorageSource m_storageSource;
                     bool m_storageSourceHasBeenSet;
 
                     /**
-                     * 沙箱实例本地挂载路径
+                     * <p>沙箱实例本地挂载路径</p>
                      */
                     std::string m_mountPath;
                     bool m_mountPathHasBeenSet;
 
                     /**
-                     * 存储挂载读写权限配置，默认为false
+                     * <p>存储挂载读写权限配置，默认为false</p>
                      */
                     bool m_readOnly;
                     bool m_readOnlyHasBeenSet;

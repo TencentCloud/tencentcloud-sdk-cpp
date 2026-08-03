@@ -716,6 +716,27 @@ namespace TencentCloud
                      */
                     bool StreamPathsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>知识库ID，匹配集合中任意元素。</p>
+                     * @return KnowledgeBases <p>知识库ID，匹配集合中任意元素。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetKnowledgeBases() const;
+
+                    /**
+                     * 设置<p>知识库ID，匹配集合中任意元素。</p>
+                     * @param _knowledgeBases <p>知识库ID，匹配集合中任意元素。</p>
+                     * 
+                     */
+                    void SetKnowledgeBases(const std::vector<std::string>& _knowledgeBases);
+
+                    /**
+                     * 判断参数 KnowledgeBases 是否已赋值
+                     * @return KnowledgeBases 是否已赋值
+                     * 
+                     */
+                    bool KnowledgeBasesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -909,6 +930,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_streamPaths;
                     bool m_streamPathsHasBeenSet;
+
+                    /**
+                     * <p>知识库ID，匹配集合中任意元素。</p>
+                     */
+                    std::vector<std::string> m_knowledgeBases;
+                    bool m_knowledgeBasesHasBeenSet;
 
                 };
             }

@@ -21,8 +21,8 @@ using namespace TencentCloud::Cngw::V20230418::Model;
 using namespace std;
 
 CNAPIGwCreateCommonResult::CNAPIGwCreateCommonResult() :
-    m_successHasBeenSet(false),
-    m_iDHasBeenSet(false)
+    m_iDHasBeenSet(false),
+    m_successHasBeenSet(false)
 {
 }
 
@@ -30,16 +30,6 @@ CoreInternalOutcome CNAPIGwCreateCommonResult::Deserialize(const rapidjson::Valu
 {
     string requestId = "";
 
-
-    if (value.HasMember("Success") && !value["Success"].IsNull())
-    {
-        if (!value["Success"].IsBool())
-        {
-            return CoreInternalOutcome(Core::Error("response `CNAPIGwCreateCommonResult.Success` IsBool=false incorrectly").SetRequestId(requestId));
-        }
-        m_success = value["Success"].GetBool();
-        m_successHasBeenSet = true;
-    }
 
     if (value.HasMember("ID") && !value["ID"].IsNull())
     {
@@ -51,20 +41,22 @@ CoreInternalOutcome CNAPIGwCreateCommonResult::Deserialize(const rapidjson::Valu
         m_iDHasBeenSet = true;
     }
 
+    if (value.HasMember("Success") && !value["Success"].IsNull())
+    {
+        if (!value["Success"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwCreateCommonResult.Success` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_success = value["Success"].GetBool();
+        m_successHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void CNAPIGwCreateCommonResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_successHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Success";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_success, allocator);
-    }
 
     if (m_iDHasBeenSet)
     {
@@ -74,24 +66,16 @@ void CNAPIGwCreateCommonResult::ToJsonObject(rapidjson::Value &value, rapidjson:
         value.AddMember(iKey, rapidjson::Value(m_iD.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_successHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Success";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_success, allocator);
+    }
+
 }
 
-
-bool CNAPIGwCreateCommonResult::GetSuccess() const
-{
-    return m_success;
-}
-
-void CNAPIGwCreateCommonResult::SetSuccess(const bool& _success)
-{
-    m_success = _success;
-    m_successHasBeenSet = true;
-}
-
-bool CNAPIGwCreateCommonResult::SuccessHasBeenSet() const
-{
-    return m_successHasBeenSet;
-}
 
 string CNAPIGwCreateCommonResult::GetID() const
 {
@@ -107,5 +91,21 @@ void CNAPIGwCreateCommonResult::SetID(const string& _iD)
 bool CNAPIGwCreateCommonResult::IDHasBeenSet() const
 {
     return m_iDHasBeenSet;
+}
+
+bool CNAPIGwCreateCommonResult::GetSuccess() const
+{
+    return m_success;
+}
+
+void CNAPIGwCreateCommonResult::SetSuccess(const bool& _success)
+{
+    m_success = _success;
+    m_successHasBeenSet = true;
+}
+
+bool CNAPIGwCreateCommonResult::SuccessHasBeenSet() const
+{
+    return m_successHasBeenSet;
 }
 

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取镜像地址
-                     * @return Image 镜像地址
+                     * 获取<p>镜像地址</p>
+                     * @return Image <p>镜像地址</p>
                      * 
                      */
                     std::string GetImage() const;
 
                     /**
-                     * 设置镜像地址
-                     * @param _image 镜像地址
+                     * 设置<p>镜像地址</p>
+                     * @param _image <p>镜像地址</p>
                      * 
                      */
                     void SetImage(const std::string& _image);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ImageHasBeenSet() const;
 
                     /**
-                     * 获取镜像 Digest
-                     * @return ImageDigest 镜像 Digest
+                     * 获取<p>镜像 Digest</p>
+                     * @return ImageDigest <p>镜像 Digest</p>
                      * 
                      */
                     std::string GetImageDigest() const;
 
                     /**
-                     * 设置镜像 Digest
-                     * @param _imageDigest 镜像 Digest
+                     * 设置<p>镜像 Digest</p>
+                     * @param _imageDigest <p>镜像 Digest</p>
                      * 
                      */
                     void SetImageDigest(const std::string& _imageDigest);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ImageDigestHasBeenSet() const;
 
                     /**
-                     * 获取镜像仓库类型：`enterprise`、`personal`。
-                     * @return ImageRegistryType 镜像仓库类型：`enterprise`、`personal`。
+                     * 获取<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code> 。</p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>
+                     * @return ImageRegistryType <p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code> 。</p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>
                      * 
                      */
                     std::string GetImageRegistryType() const;
 
                     /**
-                     * 设置镜像仓库类型：`enterprise`、`personal`。
-                     * @param _imageRegistryType 镜像仓库类型：`enterprise`、`personal`。
+                     * 设置<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code> 。</p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>
+                     * @param _imageRegistryType <p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code> 。</p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>
                      * 
                      */
                     void SetImageRegistryType(const std::string& _imageRegistryType);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 镜像地址
+                     * <p>镜像地址</p>
                      */
                     std::string m_image;
                     bool m_imageHasBeenSet;
 
                     /**
-                     * 镜像 Digest
+                     * <p>镜像 Digest</p>
                      */
                     std::string m_imageDigest;
                     bool m_imageDigestHasBeenSet;
 
                     /**
-                     * 镜像仓库类型：`enterprise`、`personal`。
+                     * <p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code> 。</p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>
                      */
                     std::string m_imageRegistryType;
                     bool m_imageRegistryTypeHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取新创建的实例启动模板版本号。
-                     * @return LaunchTemplateVersionNumber 新创建的实例启动模板版本号。
+                     * 获取<p>新创建的实例启动模板版本号。</p>
+                     * @return LaunchTemplateVersionNumber <p>新创建的实例启动模板版本号。</p>
                      * 
                      */
                     int64_t GetLaunchTemplateVersionNumber() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 新创建的实例启动模板版本号。
+                     * <p>新创建的实例启动模板版本号。</p>
                      */
                     int64_t m_launchTemplateVersionNumber;
                     bool m_launchTemplateVersionNumberHasBeenSet;

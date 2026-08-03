@@ -24,7 +24,8 @@ ToolCall::ToolCall() :
     m_idHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_functionHasBeenSet(false),
-    m_indexHasBeenSet(false)
+    m_indexHasBeenSet(false),
+    m_thoughtSignatureHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,16 @@ CoreInternalOutcome ToolCall::Deserialize(const rapidjson::Value &value)
         m_indexHasBeenSet = true;
     }
 
+    if (value.HasMember("ThoughtSignature") && !value["ThoughtSignature"].IsNull())
+    {
+        if (!value["ThoughtSignature"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ToolCall.ThoughtSignature` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_thoughtSignature = string(value["ThoughtSignature"].GetString());
+        m_thoughtSignatureHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +129,14 @@ void ToolCall::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Index";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_index, allocator);
+    }
+
+    if (m_thoughtSignatureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ThoughtSignature";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_thoughtSignature.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -185,5 +204,21 @@ void ToolCall::SetIndex(const uint64_t& _index)
 bool ToolCall::IndexHasBeenSet() const
 {
     return m_indexHasBeenSet;
+}
+
+string ToolCall::GetThoughtSignature() const
+{
+    return m_thoughtSignature;
+}
+
+void ToolCall::SetThoughtSignature(const string& _thoughtSignature)
+{
+    m_thoughtSignature = _thoughtSignature;
+    m_thoughtSignatureHasBeenSet = true;
+}
+
+bool ToolCall::ThoughtSignatureHasBeenSet() const
+{
+    return m_thoughtSignatureHasBeenSet;
 }
 

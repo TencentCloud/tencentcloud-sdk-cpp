@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流量包的唯一资源ID
-                     * @return ResourceId 流量包的唯一资源ID
+                     * 获取<p>流量包的唯一资源ID</p>
+                     * @return ResourceId <p>流量包的唯一资源ID</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置流量包的唯一资源ID
-                     * @param _resourceId 流量包的唯一资源ID
+                     * 设置<p>流量包的唯一资源ID</p>
+                     * @param _resourceId <p>流量包的唯一资源ID</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标识。true代表自动续费，false代表不自动续费
-                     * @return RenewFlag 自动续费标识。true代表自动续费，false代表不自动续费
+                     * 获取<p>自动续费标识。true代表自动续费，false代表不自动续费</p>
+                     * @return RenewFlag <p>自动续费标识。true代表自动续费，false代表不自动续费</p>
                      * 
                      */
                     bool GetRenewFlag() const;
 
                     /**
-                     * 设置自动续费标识。true代表自动续费，false代表不自动续费
-                     * @param _renewFlag 自动续费标识。true代表自动续费，false代表不自动续费
+                     * 设置<p>自动续费标识。true代表自动续费，false代表不自动续费</p>
+                     * @param _renewFlag <p>自动续费标识。true代表自动续费，false代表不自动续费</p>
                      * 
                      */
                     void SetRenewFlag(const bool& _renewFlag);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 流量包的唯一资源ID
+                     * <p>流量包的唯一资源ID</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 自动续费标识。true代表自动续费，false代表不自动续费
+                     * <p>自动续费标识。true代表自动续费，false代表不自动续费</p>
                      */
                     bool m_renewFlag;
                     bool m_renewFlagHasBeenSet;
