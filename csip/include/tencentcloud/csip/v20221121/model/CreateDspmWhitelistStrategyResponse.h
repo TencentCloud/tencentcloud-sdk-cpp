@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取白名单id
-                     * @return WhitelistStrategyId 白名单id
+                     * 获取<p>白名单id</p>
+                     * @return WhitelistStrategyId <p>白名单id</p>
                      * 
                      */
                     std::string GetWhitelistStrategyId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 白名单id
+                     * <p>白名单id</p>
                      */
                     std::string m_whitelistStrategyId;
                     bool m_whitelistStrategyIdHasBeenSet;

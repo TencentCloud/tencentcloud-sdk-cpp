@@ -29,6 +29,8 @@
 #include <tencentcloud/omics/v20221128/model/CreateVolumeResponse.h>
 #include <tencentcloud/omics/v20221128/model/DeleteEnvironmentRequest.h>
 #include <tencentcloud/omics/v20221128/model/DeleteEnvironmentResponse.h>
+#include <tencentcloud/omics/v20221128/model/DeleteEnvironmentCacheRequest.h>
+#include <tencentcloud/omics/v20221128/model/DeleteEnvironmentCacheResponse.h>
 #include <tencentcloud/omics/v20221128/model/DeleteVolumeRequest.h>
 #include <tencentcloud/omics/v20221128/model/DeleteVolumeResponse.h>
 #include <tencentcloud/omics/v20221128/model/DeleteVolumeDataRequest.h>
@@ -108,6 +110,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteEnvironmentResponse> DeleteEnvironmentOutcome;
                 typedef std::future<DeleteEnvironmentOutcome> DeleteEnvironmentOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::DeleteEnvironmentRequest&, DeleteEnvironmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEnvironmentAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteEnvironmentCacheResponse> DeleteEnvironmentCacheOutcome;
+                typedef std::future<DeleteEnvironmentCacheOutcome> DeleteEnvironmentCacheOutcomeCallable;
+                typedef std::function<void(const OmicsClient*, const Model::DeleteEnvironmentCacheRequest&, DeleteEnvironmentCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEnvironmentCacheAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteVolumeResponse> DeleteVolumeOutcome;
                 typedef std::future<DeleteVolumeOutcome> DeleteVolumeOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::DeleteVolumeRequest&, DeleteVolumeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVolumeAsyncHandler;
@@ -221,6 +226,15 @@ namespace TencentCloud
                 DeleteEnvironmentOutcome DeleteEnvironment(const Model::DeleteEnvironmentRequest &request);
                 void DeleteEnvironmentAsync(const Model::DeleteEnvironmentRequest& request, const DeleteEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteEnvironmentOutcomeCallable DeleteEnvironmentCallable(const Model::DeleteEnvironmentRequest& request);
+
+                /**
+                 *删除环境缓存。
+                 * @param req DeleteEnvironmentCacheRequest
+                 * @return DeleteEnvironmentCacheOutcome
+                 */
+                DeleteEnvironmentCacheOutcome DeleteEnvironmentCache(const Model::DeleteEnvironmentCacheRequest &request);
+                void DeleteEnvironmentCacheAsync(const Model::DeleteEnvironmentCacheRequest& request, const DeleteEnvironmentCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteEnvironmentCacheOutcomeCallable DeleteEnvironmentCacheCallable(const Model::DeleteEnvironmentCacheRequest& request);
 
                 /**
                  *删除缓存卷。

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合同(流程)组的合同组Id
-                     * @return FlowGroupId 合同(流程)组的合同组Id
+                     * 获取<p>合同(流程)组的合同组Id</p>
+                     * @return FlowGroupId <p>合同(流程)组的合同组Id</p>
                      * 
                      */
                     std::string GetFlowGroupId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool FlowGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取嵌入式合同组发起链接
-                     * @return PrepareUrl 嵌入式合同组发起链接
+                     * 获取<p>嵌入式合同组发起链接</p>
+                     * @return PrepareUrl <p>嵌入式合同组发起链接</p>
                      * 
                      */
                     std::string GetPrepareUrl() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合同(流程)组的合同组Id
+                     * <p>合同(流程)组的合同组Id</p>
                      */
                     std::string m_flowGroupId;
                     bool m_flowGroupIdHasBeenSet;
 
                     /**
-                     * 嵌入式合同组发起链接
+                     * <p>嵌入式合同组发起链接</p>
                      */
                     std::string m_prepareUrl;
                     bool m_prepareUrlHasBeenSet;

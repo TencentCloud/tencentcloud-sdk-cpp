@@ -29,7 +29,8 @@ CreateDBCustomClusterRequest::CreateDBCustomClusterRequest() :
     m_clusterDescriptionHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_deletionProtectionHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string CreateDBCustomClusterRequest::ToJsonString() const
         string key = "DryRun";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dryRun, allocator);
+    }
+
+    if (m_deletionProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deletionProtection, allocator);
     }
 
 
@@ -223,6 +232,22 @@ void CreateDBCustomClusterRequest::SetDryRun(const bool& _dryRun)
 bool CreateDBCustomClusterRequest::DryRunHasBeenSet() const
 {
     return m_dryRunHasBeenSet;
+}
+
+bool CreateDBCustomClusterRequest::GetDeletionProtection() const
+{
+    return m_deletionProtection;
+}
+
+void CreateDBCustomClusterRequest::SetDeletionProtection(const bool& _deletionProtection)
+{
+    m_deletionProtection = _deletionProtection;
+    m_deletionProtectionHasBeenSet = true;
+}
+
+bool CreateDBCustomClusterRequest::DeletionProtectionHasBeenSet() const
+{
+    return m_deletionProtectionHasBeenSet;
 }
 
 

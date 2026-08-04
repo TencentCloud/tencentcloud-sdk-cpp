@@ -27,7 +27,8 @@ DspmRiskStrategyGroup::DspmRiskStrategyGroup() :
     m_isEnabledHasBeenSet(false),
     m_hitCountHasBeenSet(false),
     m_riskTypeHasBeenSet(false),
-    m_strategyListHasBeenSet(false)
+    m_strategyListHasBeenSet(false),
+    m_ruleSourceHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome DspmRiskStrategyGroup::Deserialize(const rapidjson::Value &v
         m_strategyListHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleSource") && !value["RuleSource"].IsNull())
+    {
+        if (!value["RuleSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspmRiskStrategyGroup.RuleSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleSource = string(value["RuleSource"].GetString());
+        m_ruleSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +195,14 @@ void DspmRiskStrategyGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_ruleSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleSource.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -299,5 +318,21 @@ void DspmRiskStrategyGroup::SetStrategyList(const vector<DspmRiskStrategy>& _str
 bool DspmRiskStrategyGroup::StrategyListHasBeenSet() const
 {
     return m_strategyListHasBeenSet;
+}
+
+string DspmRiskStrategyGroup::GetRuleSource() const
+{
+    return m_ruleSource;
+}
+
+void DspmRiskStrategyGroup::SetRuleSource(const string& _ruleSource)
+{
+    m_ruleSource = _ruleSource;
+    m_ruleSourceHasBeenSet = true;
+}
+
+bool DspmRiskStrategyGroup::RuleSourceHasBeenSet() const
+{
+    return m_ruleSourceHasBeenSet;
 }
 

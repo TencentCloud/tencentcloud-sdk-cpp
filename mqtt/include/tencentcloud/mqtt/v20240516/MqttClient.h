@@ -33,6 +33,8 @@
 #include <tencentcloud/mqtt/v20240516/model/ApplyRegistrationCodeResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateAuthorizationPolicyRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateAuthorizationPolicyResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/CreateBlockRuleRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/CreateBlockRuleResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateDeviceIdentityRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateDeviceIdentityResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateHttpAuthenticatorRequest.h>
@@ -59,6 +61,8 @@
 #include <tencentcloud/mqtt/v20240516/model/DeleteAuthenticatorResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteAuthorizationPolicyRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteAuthorizationPolicyResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DeleteBlockRuleRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DeleteBlockRuleResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteCaCertificateRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteCaCertificateResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteClientSubscriptionRequest.h>
@@ -81,6 +85,8 @@
 #include <tencentcloud/mqtt/v20240516/model/DescribeAuthenticatorResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeAuthorizationPoliciesRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeAuthorizationPoliciesResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeBlockRuleListRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeBlockRuleListResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeCaCertificateRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeCaCertificateResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeCaCertificatesRequest.h>
@@ -139,6 +145,8 @@
 #include <tencentcloud/mqtt/v20240516/model/KickOutClientResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyAuthorizationPolicyRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyAuthorizationPolicyResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/ModifyBlockRuleRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/ModifyBlockRuleResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyDeviceIdentityRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyDeviceIdentityResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyHttpAuthenticatorRequest.h>
@@ -202,6 +210,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAuthorizationPolicyResponse> CreateAuthorizationPolicyOutcome;
                 typedef std::future<CreateAuthorizationPolicyOutcome> CreateAuthorizationPolicyOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::CreateAuthorizationPolicyRequest&, CreateAuthorizationPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuthorizationPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBlockRuleResponse> CreateBlockRuleOutcome;
+                typedef std::future<CreateBlockRuleOutcome> CreateBlockRuleOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::CreateBlockRuleRequest&, CreateBlockRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBlockRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDeviceIdentityResponse> CreateDeviceIdentityOutcome;
                 typedef std::future<CreateDeviceIdentityOutcome> CreateDeviceIdentityOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::CreateDeviceIdentityRequest&, CreateDeviceIdentityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceIdentityAsyncHandler;
@@ -241,6 +252,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAuthorizationPolicyResponse> DeleteAuthorizationPolicyOutcome;
                 typedef std::future<DeleteAuthorizationPolicyOutcome> DeleteAuthorizationPolicyOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DeleteAuthorizationPolicyRequest&, DeleteAuthorizationPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuthorizationPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteBlockRuleResponse> DeleteBlockRuleOutcome;
+                typedef std::future<DeleteBlockRuleOutcome> DeleteBlockRuleOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DeleteBlockRuleRequest&, DeleteBlockRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBlockRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCaCertificateResponse> DeleteCaCertificateOutcome;
                 typedef std::future<DeleteCaCertificateOutcome> DeleteCaCertificateOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DeleteCaCertificateRequest&, DeleteCaCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCaCertificateAsyncHandler;
@@ -274,6 +288,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAuthorizationPoliciesResponse> DescribeAuthorizationPoliciesOutcome;
                 typedef std::future<DescribeAuthorizationPoliciesOutcome> DescribeAuthorizationPoliciesOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeAuthorizationPoliciesRequest&, DescribeAuthorizationPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuthorizationPoliciesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBlockRuleListResponse> DescribeBlockRuleListOutcome;
+                typedef std::future<DescribeBlockRuleListOutcome> DescribeBlockRuleListOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DescribeBlockRuleListRequest&, DescribeBlockRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlockRuleListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCaCertificateResponse> DescribeCaCertificateOutcome;
                 typedef std::future<DescribeCaCertificateOutcome> DescribeCaCertificateOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeCaCertificateRequest&, DescribeCaCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCaCertificateAsyncHandler;
@@ -361,6 +378,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAuthorizationPolicyResponse> ModifyAuthorizationPolicyOutcome;
                 typedef std::future<ModifyAuthorizationPolicyOutcome> ModifyAuthorizationPolicyOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::ModifyAuthorizationPolicyRequest&, ModifyAuthorizationPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAuthorizationPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBlockRuleResponse> ModifyBlockRuleOutcome;
+                typedef std::future<ModifyBlockRuleOutcome> ModifyBlockRuleOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::ModifyBlockRuleRequest&, ModifyBlockRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlockRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDeviceIdentityResponse> ModifyDeviceIdentityOutcome;
                 typedef std::future<ModifyDeviceIdentityOutcome> ModifyDeviceIdentityOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::ModifyDeviceIdentityRequest&, ModifyDeviceIdentityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceIdentityAsyncHandler;
@@ -459,6 +479,15 @@ namespace TencentCloud
                 CreateAuthorizationPolicyOutcome CreateAuthorizationPolicy(const Model::CreateAuthorizationPolicyRequest &request);
                 void CreateAuthorizationPolicyAsync(const Model::CreateAuthorizationPolicyRequest& request, const CreateAuthorizationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAuthorizationPolicyOutcomeCallable CreateAuthorizationPolicyCallable(const Model::CreateAuthorizationPolicyRequest& request);
+
+                /**
+                 *创建封禁规则
+                 * @param req CreateBlockRuleRequest
+                 * @return CreateBlockRuleOutcome
+                 */
+                CreateBlockRuleOutcome CreateBlockRule(const Model::CreateBlockRuleRequest &request);
+                void CreateBlockRuleAsync(const Model::CreateBlockRuleRequest& request, const CreateBlockRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBlockRuleOutcomeCallable CreateBlockRuleCallable(const Model::CreateBlockRuleRequest& request);
 
                 /**
                  *创建一机一密设备签名
@@ -578,6 +607,15 @@ namespace TencentCloud
                 DeleteAuthorizationPolicyOutcomeCallable DeleteAuthorizationPolicyCallable(const Model::DeleteAuthorizationPolicyRequest& request);
 
                 /**
+                 *删除封禁规则
+                 * @param req DeleteBlockRuleRequest
+                 * @return DeleteBlockRuleOutcome
+                 */
+                DeleteBlockRuleOutcome DeleteBlockRule(const Model::DeleteBlockRuleRequest &request);
+                void DeleteBlockRuleAsync(const Model::DeleteBlockRuleRequest& request, const DeleteBlockRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteBlockRuleOutcomeCallable DeleteBlockRuleCallable(const Model::DeleteBlockRuleRequest& request);
+
+                /**
                  *删除Ca证书
                  * @param req DeleteCaCertificateRequest
                  * @return DeleteCaCertificateOutcome
@@ -675,6 +713,15 @@ namespace TencentCloud
                 DescribeAuthorizationPoliciesOutcome DescribeAuthorizationPolicies(const Model::DescribeAuthorizationPoliciesRequest &request);
                 void DescribeAuthorizationPoliciesAsync(const Model::DescribeAuthorizationPoliciesRequest& request, const DescribeAuthorizationPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAuthorizationPoliciesOutcomeCallable DescribeAuthorizationPoliciesCallable(const Model::DescribeAuthorizationPoliciesRequest& request);
+
+                /**
+                 *封禁规则列表
+                 * @param req DescribeBlockRuleListRequest
+                 * @return DescribeBlockRuleListOutcome
+                 */
+                DescribeBlockRuleListOutcome DescribeBlockRuleList(const Model::DescribeBlockRuleListRequest &request);
+                void DescribeBlockRuleListAsync(const Model::DescribeBlockRuleListRequest& request, const DescribeBlockRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBlockRuleListOutcomeCallable DescribeBlockRuleListCallable(const Model::DescribeBlockRuleListRequest& request);
 
                 /**
                  *查询Ca证书详情接口
@@ -946,6 +993,15 @@ namespace TencentCloud
                 ModifyAuthorizationPolicyOutcome ModifyAuthorizationPolicy(const Model::ModifyAuthorizationPolicyRequest &request);
                 void ModifyAuthorizationPolicyAsync(const Model::ModifyAuthorizationPolicyRequest& request, const ModifyAuthorizationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAuthorizationPolicyOutcomeCallable ModifyAuthorizationPolicyCallable(const Model::ModifyAuthorizationPolicyRequest& request);
+
+                /**
+                 *修改封禁规则
+                 * @param req ModifyBlockRuleRequest
+                 * @return ModifyBlockRuleOutcome
+                 */
+                ModifyBlockRuleOutcome ModifyBlockRule(const Model::ModifyBlockRuleRequest &request);
+                void ModifyBlockRuleAsync(const Model::ModifyBlockRuleRequest& request, const ModifyBlockRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBlockRuleOutcomeCallable ModifyBlockRuleCallable(const Model::ModifyBlockRuleRequest& request);
 
                 /**
                  *修改一机一密设备签名

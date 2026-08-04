@@ -44,10 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合同组ID，为32位字符串。
-建议开发者妥善保存此合同组ID，以便于顺利进行后续操作。
-                     * @return FlowGroupId 合同组ID，为32位字符串。
-建议开发者妥善保存此合同组ID，以便于顺利进行后续操作。
+                     * 获取<p>合同组ID，为32位字符串。<br>建议开发者妥善保存此合同组ID，以便于顺利进行后续操作。</p>
+                     * @return FlowGroupId <p>合同组ID，为32位字符串。<br>建议开发者妥善保存此合同组ID，以便于顺利进行后续操作。</p>
                      * 
                      */
                     std::string GetFlowGroupId() const;
@@ -60,8 +58,8 @@ namespace TencentCloud
                     bool FlowGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取嵌入式发起链接
-                     * @return PrepareUrl 嵌入式发起链接
+                     * 获取<p>嵌入式发起链接</p>
+                     * @return PrepareUrl <p>嵌入式发起链接</p>
                      * 
                      */
                     std::string GetPrepareUrl() const;
@@ -76,14 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合同组ID，为32位字符串。
-建议开发者妥善保存此合同组ID，以便于顺利进行后续操作。
+                     * <p>合同组ID，为32位字符串。<br>建议开发者妥善保存此合同组ID，以便于顺利进行后续操作。</p>
                      */
                     std::string m_flowGroupId;
                     bool m_flowGroupIdHasBeenSet;
 
                     /**
-                     * 嵌入式发起链接
+                     * <p>嵌入式发起链接</p>
                      */
                     std::string m_prepareUrl;
                     bool m_prepareUrlHasBeenSet;

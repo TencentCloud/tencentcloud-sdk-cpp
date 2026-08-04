@@ -48,6 +48,7 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/DescribeApplicationsResponse.h
   include/tencentcloud/omics/v20221128/model/DescribeEnvironmentsRequest.h
   include/tencentcloud/omics/v20221128/model/RunGroupNotification.h
+  include/tencentcloud/omics/v20221128/model/DeleteEnvironmentCacheRequest.h
   include/tencentcloud/omics/v20221128/model/CreateEnvironmentRequest.h
   include/tencentcloud/omics/v20221128/model/DescribeInputTemplatesRequest.h
   include/tencentcloud/omics/v20221128/model/Application.h
@@ -105,6 +106,7 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/DescribeProjectsRequest.h
   include/tencentcloud/omics/v20221128/model/CreateVolumeResponse.h
   include/tencentcloud/omics/v20221128/model/DeleteVolumeRequest.h
+  include/tencentcloud/omics/v20221128/model/DeleteEnvironmentCacheResponse.h
   include/tencentcloud/omics/v20221128/model/DescribeProjectsResponse.h
   include/tencentcloud/omics/v20221128/model/Volume.h
   include/tencentcloud/omics/v20221128/model/ModifyVolumeResponse.h
@@ -163,6 +165,7 @@ set(omics_src
   src/v20221128/model/DescribeApplicationsResponse.cpp
   src/v20221128/model/DescribeEnvironmentsRequest.cpp
   src/v20221128/model/RunGroupNotification.cpp
+  src/v20221128/model/DeleteEnvironmentCacheRequest.cpp
   src/v20221128/model/CreateEnvironmentRequest.cpp
   src/v20221128/model/DescribeInputTemplatesRequest.cpp
   src/v20221128/model/Application.cpp
@@ -220,6 +223,7 @@ set(omics_src
   src/v20221128/model/DescribeProjectsRequest.cpp
   src/v20221128/model/CreateVolumeResponse.cpp
   src/v20221128/model/DeleteVolumeRequest.cpp
+  src/v20221128/model/DeleteEnvironmentCacheResponse.cpp
   src/v20221128/model/DescribeProjectsResponse.cpp
   src/v20221128/model/Volume.cpp
   src/v20221128/model/ModifyVolumeResponse.cpp

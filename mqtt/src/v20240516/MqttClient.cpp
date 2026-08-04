@@ -290,6 +290,56 @@ MqttClient::CreateAuthorizationPolicyOutcomeCallable MqttClient::CreateAuthoriza
     return prom->get_future();
 }
 
+MqttClient::CreateBlockRuleOutcome MqttClient::CreateBlockRule(const CreateBlockRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBlockRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBlockRuleResponse rsp = CreateBlockRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBlockRuleOutcome(rsp);
+        else
+            return CreateBlockRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBlockRuleOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::CreateBlockRuleAsync(const CreateBlockRuleRequest& request, const CreateBlockRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateBlockRuleRequest&;
+    using Resp = CreateBlockRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateBlockRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MqttClient::CreateBlockRuleOutcomeCallable MqttClient::CreateBlockRuleCallable(const CreateBlockRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateBlockRuleOutcome>>();
+    CreateBlockRuleAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const CreateBlockRuleRequest&,
+        CreateBlockRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MqttClient::CreateDeviceIdentityOutcome MqttClient::CreateDeviceIdentity(const CreateDeviceIdentityRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDeviceIdentity");
@@ -940,6 +990,56 @@ MqttClient::DeleteAuthorizationPolicyOutcomeCallable MqttClient::DeleteAuthoriza
     return prom->get_future();
 }
 
+MqttClient::DeleteBlockRuleOutcome MqttClient::DeleteBlockRule(const DeleteBlockRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBlockRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBlockRuleResponse rsp = DeleteBlockRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBlockRuleOutcome(rsp);
+        else
+            return DeleteBlockRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBlockRuleOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DeleteBlockRuleAsync(const DeleteBlockRuleRequest& request, const DeleteBlockRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteBlockRuleRequest&;
+    using Resp = DeleteBlockRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteBlockRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MqttClient::DeleteBlockRuleOutcomeCallable MqttClient::DeleteBlockRuleCallable(const DeleteBlockRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteBlockRuleOutcome>>();
+    DeleteBlockRuleAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DeleteBlockRuleRequest&,
+        DeleteBlockRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MqttClient::DeleteCaCertificateOutcome MqttClient::DeleteCaCertificate(const DeleteCaCertificateRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCaCertificate");
@@ -1482,6 +1582,56 @@ MqttClient::DescribeAuthorizationPoliciesOutcomeCallable MqttClient::DescribeAut
         const MqttClient*,
         const DescribeAuthorizationPoliciesRequest&,
         DescribeAuthorizationPoliciesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MqttClient::DescribeBlockRuleListOutcome MqttClient::DescribeBlockRuleList(const DescribeBlockRuleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBlockRuleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBlockRuleListResponse rsp = DescribeBlockRuleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBlockRuleListOutcome(rsp);
+        else
+            return DescribeBlockRuleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBlockRuleListOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DescribeBlockRuleListAsync(const DescribeBlockRuleListRequest& request, const DescribeBlockRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBlockRuleListRequest&;
+    using Resp = DescribeBlockRuleListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBlockRuleList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MqttClient::DescribeBlockRuleListOutcomeCallable MqttClient::DescribeBlockRuleListCallable(const DescribeBlockRuleListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBlockRuleListOutcome>>();
+    DescribeBlockRuleListAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeBlockRuleListRequest&,
+        DescribeBlockRuleListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2932,6 +3082,56 @@ MqttClient::ModifyAuthorizationPolicyOutcomeCallable MqttClient::ModifyAuthoriza
         const MqttClient*,
         const ModifyAuthorizationPolicyRequest&,
         ModifyAuthorizationPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MqttClient::ModifyBlockRuleOutcome MqttClient::ModifyBlockRule(const ModifyBlockRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBlockRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBlockRuleResponse rsp = ModifyBlockRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBlockRuleOutcome(rsp);
+        else
+            return ModifyBlockRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBlockRuleOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::ModifyBlockRuleAsync(const ModifyBlockRuleRequest& request, const ModifyBlockRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyBlockRuleRequest&;
+    using Resp = ModifyBlockRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyBlockRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MqttClient::ModifyBlockRuleOutcomeCallable MqttClient::ModifyBlockRuleCallable(const ModifyBlockRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyBlockRuleOutcome>>();
+    ModifyBlockRuleAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const ModifyBlockRuleRequest&,
+        ModifyBlockRuleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

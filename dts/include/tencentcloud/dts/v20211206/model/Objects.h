@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dts/v20211206/model/Database.h>
+#include <tencentcloud/dts/v20211206/model/OnlineDDL.h>
 #include <tencentcloud/dts/v20211206/model/DBOpFilter.h>
 
 
@@ -49,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取同步对象类型 Partial(部分对象)
-                     * @return Mode 同步对象类型 Partial(部分对象)
+                     * 获取<p>同步对象类型 Partial(部分对象)</p>
+                     * @return Mode <p>同步对象类型 Partial(部分对象)</p>
                      * 
                      */
                     std::string GetMode() const;
 
                     /**
-                     * 设置同步对象类型 Partial(部分对象)
-                     * @param _mode 同步对象类型 Partial(部分对象)
+                     * 设置<p>同步对象类型 Partial(部分对象)</p>
+                     * @param _mode <p>同步对象类型 Partial(部分对象)</p>
                      * 
                      */
                     void SetMode(const std::string& _mode);
@@ -70,18 +71,18 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取同步对象，当 Mode 为 Partial 时，不为空
+                     * 获取<p>同步对象，当 Mode 为 Partial 时，不为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Databases 同步对象，当 Mode 为 Partial 时，不为空
+                     * @return Databases <p>同步对象，当 Mode 为 Partial 时，不为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Database> GetDatabases() const;
 
                     /**
-                     * 设置同步对象，当 Mode 为 Partial 时，不为空
+                     * 设置<p>同步对象，当 Mode 为 Partial 时，不为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _databases 同步对象，当 Mode 为 Partial 时，不为空
+                     * @param _databases <p>同步对象，当 Mode 为 Partial 时，不为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -95,15 +96,15 @@ namespace TencentCloud
                     bool DatabasesHasBeenSet() const;
 
                     /**
-                     * 获取高级对象类型，如function、procedure。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型。当需要同步高级对象时，初始化类型必须包含结构初始化类型，即任务的Options.InitType字段值为Structure或Full
-                     * @return AdvancedObjects 高级对象类型，如function、procedure。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型。当需要同步高级对象时，初始化类型必须包含结构初始化类型，即任务的Options.InitType字段值为Structure或Full
+                     * 获取<p>高级对象类型，如function、procedure。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型。当需要同步高级对象时，初始化类型必须包含结构初始化类型，即任务的Options.InitType字段值为Structure或Full</p>
+                     * @return AdvancedObjects <p>高级对象类型，如function、procedure。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型。当需要同步高级对象时，初始化类型必须包含结构初始化类型，即任务的Options.InitType字段值为Structure或Full</p>
                      * 
                      */
                     std::vector<std::string> GetAdvancedObjects() const;
 
                     /**
-                     * 设置高级对象类型，如function、procedure。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型。当需要同步高级对象时，初始化类型必须包含结构初始化类型，即任务的Options.InitType字段值为Structure或Full
-                     * @param _advancedObjects 高级对象类型，如function、procedure。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型。当需要同步高级对象时，初始化类型必须包含结构初始化类型，即任务的Options.InitType字段值为Structure或Full
+                     * 设置<p>高级对象类型，如function、procedure。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型。当需要同步高级对象时，初始化类型必须包含结构初始化类型，即任务的Options.InitType字段值为Structure或Full</p>
+                     * @param _advancedObjects <p>高级对象类型，如function、procedure。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型。当需要同步高级对象时，初始化类型必须包含结构初始化类型，即任务的Options.InitType字段值为Structure或Full</p>
                      * 
                      */
                     void SetAdvancedObjects(const std::vector<std::string>& _advancedObjects);
@@ -116,15 +117,36 @@ namespace TencentCloud
                     bool AdvancedObjectsHasBeenSet() const;
 
                     /**
-                     * 获取库/表/视图级 DML/DDL 白名单
-                     * @return DatabasesOpFilter 库/表/视图级 DML/DDL 白名单
+                     * 获取<p>此字段已废弃。对于临时表的同步应该使用Objects.Databases[n].Tables[n].TmpTables传入。</p>
+                     * @return OnlineDDL <p>此字段已废弃。对于临时表的同步应该使用Objects.Databases[n].Tables[n].TmpTables传入。</p>
+                     * 
+                     */
+                    OnlineDDL GetOnlineDDL() const;
+
+                    /**
+                     * 设置<p>此字段已废弃。对于临时表的同步应该使用Objects.Databases[n].Tables[n].TmpTables传入。</p>
+                     * @param _onlineDDL <p>此字段已废弃。对于临时表的同步应该使用Objects.Databases[n].Tables[n].TmpTables传入。</p>
+                     * 
+                     */
+                    void SetOnlineDDL(const OnlineDDL& _onlineDDL);
+
+                    /**
+                     * 判断参数 OnlineDDL 是否已赋值
+                     * @return OnlineDDL 是否已赋值
+                     * 
+                     */
+                    bool OnlineDDLHasBeenSet() const;
+
+                    /**
+                     * 获取<p>库/表/视图级 DML/DDL 白名单</p>
+                     * @return DatabasesOpFilter <p>库/表/视图级 DML/DDL 白名单</p>
                      * 
                      */
                     std::vector<DBOpFilter> GetDatabasesOpFilter() const;
 
                     /**
-                     * 设置库/表/视图级 DML/DDL 白名单
-                     * @param _databasesOpFilter 库/表/视图级 DML/DDL 白名单
+                     * 设置<p>库/表/视图级 DML/DDL 白名单</p>
+                     * @param _databasesOpFilter <p>库/表/视图级 DML/DDL 白名单</p>
                      * 
                      */
                     void SetDatabasesOpFilter(const std::vector<DBOpFilter>& _databasesOpFilter);
@@ -139,26 +161,32 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 同步对象类型 Partial(部分对象)
+                     * <p>同步对象类型 Partial(部分对象)</p>
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 同步对象，当 Mode 为 Partial 时，不为空
+                     * <p>同步对象，当 Mode 为 Partial 时，不为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Database> m_databases;
                     bool m_databasesHasBeenSet;
 
                     /**
-                     * 高级对象类型，如function、procedure。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型。当需要同步高级对象时，初始化类型必须包含结构初始化类型，即任务的Options.InitType字段值为Structure或Full
+                     * <p>高级对象类型，如function、procedure。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型。当需要同步高级对象时，初始化类型必须包含结构初始化类型，即任务的Options.InitType字段值为Structure或Full</p>
                      */
                     std::vector<std::string> m_advancedObjects;
                     bool m_advancedObjectsHasBeenSet;
 
                     /**
-                     * 库/表/视图级 DML/DDL 白名单
+                     * <p>此字段已废弃。对于临时表的同步应该使用Objects.Databases[n].Tables[n].TmpTables传入。</p>
+                     */
+                    OnlineDDL m_onlineDDL;
+                    bool m_onlineDDLHasBeenSet;
+
+                    /**
+                     * <p>库/表/视图级 DML/DDL 白名单</p>
                      */
                     std::vector<DBOpFilter> m_databasesOpFilter;
                     bool m_databasesOpFilterHasBeenSet;

@@ -35,7 +35,8 @@ DescribeDBCustomClusterDetailResponse::DescribeDBCustomClusterDetailResponse() :
     m_createdTimeHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_apiServerNetworkHasBeenSet(false),
-    m_containerNetworkHasBeenSet(false)
+    m_containerNetworkHasBeenSet(false),
+    m_deletionProtectionHasBeenSet(false)
 {
 }
 
@@ -217,6 +218,16 @@ CoreInternalOutcome DescribeDBCustomClusterDetailResponse::Deserialize(const str
         m_containerNetworkHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DeletionProtection") && !rsp["DeletionProtection"].IsNull())
+    {
+        if (!rsp["DeletionProtection"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeletionProtection` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_deletionProtection = rsp["DeletionProtection"].GetBool();
+        m_deletionProtectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -330,6 +341,14 @@ string DescribeDBCustomClusterDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_containerNetwork.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_deletionProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deletionProtection, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -462,6 +481,16 @@ ContainerNetwork DescribeDBCustomClusterDetailResponse::GetContainerNetwork() co
 bool DescribeDBCustomClusterDetailResponse::ContainerNetworkHasBeenSet() const
 {
     return m_containerNetworkHasBeenSet;
+}
+
+bool DescribeDBCustomClusterDetailResponse::GetDeletionProtection() const
+{
+    return m_deletionProtection;
+}
+
+bool DescribeDBCustomClusterDetailResponse::DeletionProtectionHasBeenSet() const
+{
+    return m_deletionProtectionHasBeenSet;
 }
 
 

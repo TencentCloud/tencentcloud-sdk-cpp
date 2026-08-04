@@ -31,7 +31,9 @@ DescribeDeviceWorkOrderDetailResponse::DescribeDeviceWorkOrderDetailResponse() :
     m_stepSetHasBeenSet(false),
     m_deviceSetHasBeenSet(false),
     m_baseInfoHasBeenSet(false),
-    m_rejectReasonHasBeenSet(false)
+    m_rejectReasonHasBeenSet(false),
+    m_sLAInfoHasBeenSet(false),
+    m_preOrderSetHasBeenSet(false)
 {
 }
 
@@ -176,6 +178,36 @@ CoreInternalOutcome DescribeDeviceWorkOrderDetailResponse::Deserialize(const str
         m_rejectReasonHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SLAInfo") && !rsp["SLAInfo"].IsNull())
+    {
+        if (!rsp["SLAInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SLAInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_sLAInfo.Deserialize(rsp["SLAInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_sLAInfoHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PreOrderSet") && !rsp["PreOrderSet"].IsNull())
+    {
+        if (!rsp["PreOrderSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PreOrderSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["PreOrderSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_preOrderSet.push_back((*itr).GetString());
+        }
+        m_preOrderSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -263,6 +295,28 @@ string DescribeDeviceWorkOrderDetailResponse::ToJsonString() const
         string key = "RejectReason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_rejectReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sLAInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SLAInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sLAInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_preOrderSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreOrderSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_preOrderSet.begin(); itr != m_preOrderSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -355,6 +409,26 @@ string DescribeDeviceWorkOrderDetailResponse::GetRejectReason() const
 bool DescribeDeviceWorkOrderDetailResponse::RejectReasonHasBeenSet() const
 {
     return m_rejectReasonHasBeenSet;
+}
+
+SLAInfo DescribeDeviceWorkOrderDetailResponse::GetSLAInfo() const
+{
+    return m_sLAInfo;
+}
+
+bool DescribeDeviceWorkOrderDetailResponse::SLAInfoHasBeenSet() const
+{
+    return m_sLAInfoHasBeenSet;
+}
+
+vector<string> DescribeDeviceWorkOrderDetailResponse::GetPreOrderSet() const
+{
+    return m_preOrderSet;
+}
+
+bool DescribeDeviceWorkOrderDetailResponse::PreOrderSetHasBeenSet() const
+{
+    return m_preOrderSetHasBeenSet;
 }
 
 

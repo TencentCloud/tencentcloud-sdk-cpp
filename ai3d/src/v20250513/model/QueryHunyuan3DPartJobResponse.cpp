@@ -28,7 +28,8 @@ QueryHunyuan3DPartJobResponse::QueryHunyuan3DPartJobResponse() :
     m_errorCodeHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
     m_resultFile3DsHasBeenSet(false),
-    m_partSegmentationInfoHasBeenSet(false)
+    m_partSegmentationInfoHasBeenSet(false),
+    m_partSegmentationInfoUrlHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,16 @@ CoreInternalOutcome QueryHunyuan3DPartJobResponse::Deserialize(const string &pay
         m_partSegmentationInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PartSegmentationInfoUrl") && !rsp["PartSegmentationInfoUrl"].IsNull())
+    {
+        if (!rsp["PartSegmentationInfoUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PartSegmentationInfoUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_partSegmentationInfoUrl = string(rsp["PartSegmentationInfoUrl"].GetString());
+        m_partSegmentationInfoUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -181,6 +192,14 @@ string QueryHunyuan3DPartJobResponse::ToJsonString() const
         string key = "PartSegmentationInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_partSegmentationInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_partSegmentationInfoUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PartSegmentationInfoUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_partSegmentationInfoUrl.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -243,6 +262,16 @@ string QueryHunyuan3DPartJobResponse::GetPartSegmentationInfo() const
 bool QueryHunyuan3DPartJobResponse::PartSegmentationInfoHasBeenSet() const
 {
     return m_partSegmentationInfoHasBeenSet;
+}
+
+string QueryHunyuan3DPartJobResponse::GetPartSegmentationInfoUrl() const
+{
+    return m_partSegmentationInfoUrl;
+}
+
+bool QueryHunyuan3DPartJobResponse::PartSegmentationInfoUrlHasBeenSet() const
+{
+    return m_partSegmentationInfoUrlHasBeenSet;
 }
 
 

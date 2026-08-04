@@ -69,6 +69,12 @@
 #include <tencentcloud/dlc/v20210125/model/CheckDataEngineImageCanBeUpgradeResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CheckLockMetaDataRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CheckLockMetaDataResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CheckModifyPartitionRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CheckModifyPartitionResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CheckQueueNameRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CheckQueueNameResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CheckResourceNameRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CheckResourceNameResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CopyJobSpecRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CopyJobSpecResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateCHDFSBindingProductRequest.h>
@@ -91,6 +97,8 @@
 #include <tencentcloud/dlc/v20210125/model/CreateExportTaskResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateImportTaskRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateImportTaskResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateInferenceModelRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateInferenceModelResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateInternalTableRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateInternalTableResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateJobSpecRequest.h>
@@ -105,6 +113,10 @@
 #include <tencentcloud/dlc/v20210125/model/CreateNotebookSessionStatementResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateNotebookSessionStatementSupportBatchSQLRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateNotebookSessionStatementSupportBatchSQLResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreatePartitionRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreatePartitionResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreatePartitionQueueRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreatePartitionQueueResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateRayClusterRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateRayClusterResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateResourceConfigRequest.h>
@@ -163,6 +175,8 @@
 #include <tencentcloud/dlc/v20210125/model/DeleteNativeSparkSessionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteNotebookSessionRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteNotebookSessionResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DeletePartitionQueueRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DeletePartitionQueueResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteRayClusterRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteRayClusterResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteRayJobRequest.h>
@@ -233,6 +247,10 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeEngineNodeSpecResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeEngineUsageInfoRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeEngineUsageInfoResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeFlowDetailListRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeFlowDetailListResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeFlowListRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeFlowListResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeForbiddenTableProRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeForbiddenTableProResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeLakeFsDirSummaryRequest.h>
@@ -265,10 +283,20 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeNotebookSessionsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeOtherCHDFSBindingListRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeOtherCHDFSBindingListResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribePartitionDetailRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribePartitionDetailResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribePartitionQueuesRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribePartitionQueuesResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribePartitionsRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribePartitionsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeResourceGroupUsageInfoRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeResourceGroupUsageInfoResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeResultDownloadRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeResultDownloadResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeSaleRegionsRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeSaleRegionsResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeSaleResourceInfoRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeSaleResourceInfoResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeScriptsRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeScriptsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeSessionImageVersionRequest.h>
@@ -365,6 +393,8 @@
 #include <tencentcloud/dlc/v20210125/model/GenerateInternalTableResponse.h>
 #include <tencentcloud/dlc/v20210125/model/GetExampleDetailRequest.h>
 #include <tencentcloud/dlc/v20210125/model/GetExampleDetailResponse.h>
+#include <tencentcloud/dlc/v20210125/model/GetInferenceModelRequest.h>
+#include <tencentcloud/dlc/v20210125/model/GetInferenceModelResponse.h>
 #include <tencentcloud/dlc/v20210125/model/GetJobSpecRequest.h>
 #include <tencentcloud/dlc/v20210125/model/GetJobSpecResponse.h>
 #include <tencentcloud/dlc/v20210125/model/GetLabDetailRequest.h>
@@ -427,6 +457,8 @@
 #include <tencentcloud/dlc/v20210125/model/ListExampleTagsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ListExamplesRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ListExamplesResponse.h>
+#include <tencentcloud/dlc/v20210125/model/ListInferenceModelsRequest.h>
+#include <tencentcloud/dlc/v20210125/model/ListInferenceModelsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ListJobSpecsRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ListJobSpecsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ListJobsBySpecRequest.h>
@@ -457,6 +489,10 @@
 #include <tencentcloud/dlc/v20210125/model/ModifyGovernEventRuleResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyLabPriorityRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyLabPriorityResponse.h>
+#include <tencentcloud/dlc/v20210125/model/ModifyPartitionDescriptionRequest.h>
+#include <tencentcloud/dlc/v20210125/model/ModifyPartitionDescriptionResponse.h>
+#include <tencentcloud/dlc/v20210125/model/ModifyPartitionQueueRequest.h>
+#include <tencentcloud/dlc/v20210125/model/ModifyPartitionQueueResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifySparkAppRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ModifySparkAppResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifySparkAppBatchRequest.h>
@@ -523,6 +559,8 @@
 #include <tencentcloud/dlc/v20210125/model/UpdateDataMaskStrategyResponse.h>
 #include <tencentcloud/dlc/v20210125/model/UpdateEngineResourceGroupNetworkConfigInfoRequest.h>
 #include <tencentcloud/dlc/v20210125/model/UpdateEngineResourceGroupNetworkConfigInfoResponse.h>
+#include <tencentcloud/dlc/v20210125/model/UpdateInferenceModelRequest.h>
+#include <tencentcloud/dlc/v20210125/model/UpdateInferenceModelResponse.h>
 #include <tencentcloud/dlc/v20210125/model/UpdateJobSpecRequest.h>
 #include <tencentcloud/dlc/v20210125/model/UpdateJobSpecResponse.h>
 #include <tencentcloud/dlc/v20210125/model/UpdateJobSpecPriorityRequest.h>
@@ -634,6 +672,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckLockMetaDataResponse> CheckLockMetaDataOutcome;
                 typedef std::future<CheckLockMetaDataOutcome> CheckLockMetaDataOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CheckLockMetaDataRequest&, CheckLockMetaDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckLockMetaDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckModifyPartitionResponse> CheckModifyPartitionOutcome;
+                typedef std::future<CheckModifyPartitionOutcome> CheckModifyPartitionOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CheckModifyPartitionRequest&, CheckModifyPartitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckModifyPartitionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckQueueNameResponse> CheckQueueNameOutcome;
+                typedef std::future<CheckQueueNameOutcome> CheckQueueNameOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CheckQueueNameRequest&, CheckQueueNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckQueueNameAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckResourceNameResponse> CheckResourceNameOutcome;
+                typedef std::future<CheckResourceNameOutcome> CheckResourceNameOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CheckResourceNameRequest&, CheckResourceNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckResourceNameAsyncHandler;
                 typedef Outcome<Core::Error, Model::CopyJobSpecResponse> CopyJobSpecOutcome;
                 typedef std::future<CopyJobSpecOutcome> CopyJobSpecOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CopyJobSpecRequest&, CopyJobSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CopyJobSpecAsyncHandler;
@@ -667,6 +714,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateImportTaskResponse> CreateImportTaskOutcome;
                 typedef std::future<CreateImportTaskOutcome> CreateImportTaskOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateImportTaskRequest&, CreateImportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImportTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateInferenceModelResponse> CreateInferenceModelOutcome;
+                typedef std::future<CreateInferenceModelOutcome> CreateInferenceModelOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateInferenceModelRequest&, CreateInferenceModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInferenceModelAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInternalTableResponse> CreateInternalTableOutcome;
                 typedef std::future<CreateInternalTableOutcome> CreateInternalTableOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateInternalTableRequest&, CreateInternalTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInternalTableAsyncHandler;
@@ -688,6 +738,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateNotebookSessionStatementSupportBatchSQLResponse> CreateNotebookSessionStatementSupportBatchSQLOutcome;
                 typedef std::future<CreateNotebookSessionStatementSupportBatchSQLOutcome> CreateNotebookSessionStatementSupportBatchSQLOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateNotebookSessionStatementSupportBatchSQLRequest&, CreateNotebookSessionStatementSupportBatchSQLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNotebookSessionStatementSupportBatchSQLAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePartitionResponse> CreatePartitionOutcome;
+                typedef std::future<CreatePartitionOutcome> CreatePartitionOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreatePartitionRequest&, CreatePartitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePartitionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePartitionQueueResponse> CreatePartitionQueueOutcome;
+                typedef std::future<CreatePartitionQueueOutcome> CreatePartitionQueueOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreatePartitionQueueRequest&, CreatePartitionQueueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePartitionQueueAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRayClusterResponse> CreateRayClusterOutcome;
                 typedef std::future<CreateRayClusterOutcome> CreateRayClusterOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateRayClusterRequest&, CreateRayClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRayClusterAsyncHandler;
@@ -775,6 +831,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteNotebookSessionResponse> DeleteNotebookSessionOutcome;
                 typedef std::future<DeleteNotebookSessionOutcome> DeleteNotebookSessionOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DeleteNotebookSessionRequest&, DeleteNotebookSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNotebookSessionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeletePartitionQueueResponse> DeletePartitionQueueOutcome;
+                typedef std::future<DeletePartitionQueueOutcome> DeletePartitionQueueOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DeletePartitionQueueRequest&, DeletePartitionQueueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePartitionQueueAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRayClusterResponse> DeleteRayClusterOutcome;
                 typedef std::future<DeleteRayClusterOutcome> DeleteRayClusterOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DeleteRayClusterRequest&, DeleteRayClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRayClusterAsyncHandler;
@@ -880,6 +939,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEngineUsageInfoResponse> DescribeEngineUsageInfoOutcome;
                 typedef std::future<DescribeEngineUsageInfoOutcome> DescribeEngineUsageInfoOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeEngineUsageInfoRequest&, DescribeEngineUsageInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEngineUsageInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFlowDetailListResponse> DescribeFlowDetailListOutcome;
+                typedef std::future<DescribeFlowDetailListOutcome> DescribeFlowDetailListOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeFlowDetailListRequest&, DescribeFlowDetailListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowDetailListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFlowListResponse> DescribeFlowListOutcome;
+                typedef std::future<DescribeFlowListOutcome> DescribeFlowListOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeFlowListRequest&, DescribeFlowListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeForbiddenTableProResponse> DescribeForbiddenTableProOutcome;
                 typedef std::future<DescribeForbiddenTableProOutcome> DescribeForbiddenTableProOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeForbiddenTableProRequest&, DescribeForbiddenTableProOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeForbiddenTableProAsyncHandler;
@@ -928,12 +993,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOtherCHDFSBindingListResponse> DescribeOtherCHDFSBindingListOutcome;
                 typedef std::future<DescribeOtherCHDFSBindingListOutcome> DescribeOtherCHDFSBindingListOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeOtherCHDFSBindingListRequest&, DescribeOtherCHDFSBindingListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOtherCHDFSBindingListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePartitionDetailResponse> DescribePartitionDetailOutcome;
+                typedef std::future<DescribePartitionDetailOutcome> DescribePartitionDetailOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribePartitionDetailRequest&, DescribePartitionDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePartitionDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePartitionQueuesResponse> DescribePartitionQueuesOutcome;
+                typedef std::future<DescribePartitionQueuesOutcome> DescribePartitionQueuesOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribePartitionQueuesRequest&, DescribePartitionQueuesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePartitionQueuesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePartitionsResponse> DescribePartitionsOutcome;
+                typedef std::future<DescribePartitionsOutcome> DescribePartitionsOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribePartitionsRequest&, DescribePartitionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePartitionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeResourceGroupUsageInfoResponse> DescribeResourceGroupUsageInfoOutcome;
                 typedef std::future<DescribeResourceGroupUsageInfoOutcome> DescribeResourceGroupUsageInfoOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeResourceGroupUsageInfoRequest&, DescribeResourceGroupUsageInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceGroupUsageInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeResultDownloadResponse> DescribeResultDownloadOutcome;
                 typedef std::future<DescribeResultDownloadOutcome> DescribeResultDownloadOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeResultDownloadRequest&, DescribeResultDownloadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResultDownloadAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSaleRegionsResponse> DescribeSaleRegionsOutcome;
+                typedef std::future<DescribeSaleRegionsOutcome> DescribeSaleRegionsOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeSaleRegionsRequest&, DescribeSaleRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSaleRegionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSaleResourceInfoResponse> DescribeSaleResourceInfoOutcome;
+                typedef std::future<DescribeSaleResourceInfoOutcome> DescribeSaleResourceInfoOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeSaleResourceInfoRequest&, DescribeSaleResourceInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSaleResourceInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeScriptsResponse> DescribeScriptsOutcome;
                 typedef std::future<DescribeScriptsOutcome> DescribeScriptsOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeScriptsRequest&, DescribeScriptsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScriptsAsyncHandler;
@@ -1078,6 +1158,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetExampleDetailResponse> GetExampleDetailOutcome;
                 typedef std::future<GetExampleDetailOutcome> GetExampleDetailOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::GetExampleDetailRequest&, GetExampleDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetExampleDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetInferenceModelResponse> GetInferenceModelOutcome;
+                typedef std::future<GetInferenceModelOutcome> GetInferenceModelOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::GetInferenceModelRequest&, GetInferenceModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetInferenceModelAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetJobSpecResponse> GetJobSpecOutcome;
                 typedef std::future<GetJobSpecOutcome> GetJobSpecOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::GetJobSpecRequest&, GetJobSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetJobSpecAsyncHandler;
@@ -1171,6 +1254,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListExamplesResponse> ListExamplesOutcome;
                 typedef std::future<ListExamplesOutcome> ListExamplesOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ListExamplesRequest&, ListExamplesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListExamplesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListInferenceModelsResponse> ListInferenceModelsOutcome;
+                typedef std::future<ListInferenceModelsOutcome> ListInferenceModelsOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::ListInferenceModelsRequest&, ListInferenceModelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListInferenceModelsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListJobSpecsResponse> ListJobSpecsOutcome;
                 typedef std::future<ListJobSpecsOutcome> ListJobSpecsOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ListJobSpecsRequest&, ListJobSpecsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListJobSpecsAsyncHandler;
@@ -1216,6 +1302,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLabPriorityResponse> ModifyLabPriorityOutcome;
                 typedef std::future<ModifyLabPriorityOutcome> ModifyLabPriorityOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ModifyLabPriorityRequest&, ModifyLabPriorityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLabPriorityAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPartitionDescriptionResponse> ModifyPartitionDescriptionOutcome;
+                typedef std::future<ModifyPartitionDescriptionOutcome> ModifyPartitionDescriptionOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::ModifyPartitionDescriptionRequest&, ModifyPartitionDescriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPartitionDescriptionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPartitionQueueResponse> ModifyPartitionQueueOutcome;
+                typedef std::future<ModifyPartitionQueueOutcome> ModifyPartitionQueueOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::ModifyPartitionQueueRequest&, ModifyPartitionQueueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPartitionQueueAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySparkAppResponse> ModifySparkAppOutcome;
                 typedef std::future<ModifySparkAppOutcome> ModifySparkAppOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ModifySparkAppRequest&, ModifySparkAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySparkAppAsyncHandler;
@@ -1315,6 +1407,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateEngineResourceGroupNetworkConfigInfoResponse> UpdateEngineResourceGroupNetworkConfigInfoOutcome;
                 typedef std::future<UpdateEngineResourceGroupNetworkConfigInfoOutcome> UpdateEngineResourceGroupNetworkConfigInfoOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::UpdateEngineResourceGroupNetworkConfigInfoRequest&, UpdateEngineResourceGroupNetworkConfigInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEngineResourceGroupNetworkConfigInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateInferenceModelResponse> UpdateInferenceModelOutcome;
+                typedef std::future<UpdateInferenceModelOutcome> UpdateInferenceModelOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::UpdateInferenceModelRequest&, UpdateInferenceModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInferenceModelAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateJobSpecResponse> UpdateJobSpecOutcome;
                 typedef std::future<UpdateJobSpecOutcome> UpdateJobSpecOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::UpdateJobSpecRequest&, UpdateJobSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateJobSpecAsyncHandler;
@@ -1568,6 +1663,33 @@ namespace TencentCloud
                 CheckLockMetaDataOutcomeCallable CheckLockMetaDataCallable(const Model::CheckLockMetaDataRequest& request);
 
                 /**
+                 *变配校验：判断用户的目标配置是否可以执行变配。校验逻辑：对于缩容场景（目标值 < 当前值），检查 default 队列的 min 值是否足够承受缩容差值。
+                 * @param req CheckModifyPartitionRequest
+                 * @return CheckModifyPartitionOutcome
+                 */
+                CheckModifyPartitionOutcome CheckModifyPartition(const Model::CheckModifyPartitionRequest &request);
+                void CheckModifyPartitionAsync(const Model::CheckModifyPartitionRequest& request, const CheckModifyPartitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckModifyPartitionOutcomeCallable CheckModifyPartitionCallable(const Model::CheckModifyPartitionRequest& request);
+
+                /**
+                 *资源队列名称合法性检测：校验队列名称是否合法，包括非空校验、格式校验（以小写字母开头，只允许小写字母、数字和连字符，长度1~11）和同分区下重名校验。
+                 * @param req CheckQueueNameRequest
+                 * @return CheckQueueNameOutcome
+                 */
+                CheckQueueNameOutcome CheckQueueName(const Model::CheckQueueNameRequest &request);
+                void CheckQueueNameAsync(const Model::CheckQueueNameRequest& request, const CheckQueueNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckQueueNameOutcomeCallable CheckQueueNameCallable(const Model::CheckQueueNameRequest& request);
+
+                /**
+                 *校验资源名称合法性
+                 * @param req CheckResourceNameRequest
+                 * @return CheckResourceNameOutcome
+                 */
+                CheckResourceNameOutcome CheckResourceName(const Model::CheckResourceNameRequest &request);
+                void CheckResourceNameAsync(const Model::CheckResourceNameRequest& request, const CheckResourceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckResourceNameOutcomeCallable CheckResourceNameCallable(const Model::CheckResourceNameRequest& request);
+
+                /**
                  *复制一份已有的作业配置
                  * @param req CopyJobSpecRequest
                  * @return CopyJobSpecOutcome
@@ -1667,6 +1789,15 @@ namespace TencentCloud
                 CreateImportTaskOutcomeCallable CreateImportTaskCallable(const Model::CreateImportTaskRequest& request);
 
                 /**
+                 *创建推理模型（模型上传）
+                 * @param req CreateInferenceModelRequest
+                 * @return CreateInferenceModelOutcome
+                 */
+                CreateInferenceModelOutcome CreateInferenceModel(const Model::CreateInferenceModelRequest &request);
+                void CreateInferenceModelAsync(const Model::CreateInferenceModelRequest& request, const CreateInferenceModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInferenceModelOutcomeCallable CreateInferenceModelCallable(const Model::CreateInferenceModelRequest& request);
+
+                /**
                  *创建托管存储内表（该接口已废弃）
                  * @param req CreateInternalTableRequest
                  * @return CreateInternalTableOutcome
@@ -1728,6 +1859,24 @@ namespace TencentCloud
                 CreateNotebookSessionStatementSupportBatchSQLOutcome CreateNotebookSessionStatementSupportBatchSQL(const Model::CreateNotebookSessionStatementSupportBatchSQLRequest &request);
                 void CreateNotebookSessionStatementSupportBatchSQLAsync(const Model::CreateNotebookSessionStatementSupportBatchSQLRequest& request, const CreateNotebookSessionStatementSupportBatchSQLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateNotebookSessionStatementSupportBatchSQLOutcomeCallable CreateNotebookSessionStatementSupportBatchSQLCallable(const Model::CreateNotebookSessionStatementSupportBatchSQLRequest& request);
+
+                /**
+                 *新增资源包
+                 * @param req CreatePartitionRequest
+                 * @return CreatePartitionOutcome
+                 */
+                CreatePartitionOutcome CreatePartition(const Model::CreatePartitionRequest &request);
+                void CreatePartitionAsync(const Model::CreatePartitionRequest& request, const CreatePartitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePartitionOutcomeCallable CreatePartitionCallable(const Model::CreatePartitionRequest& request);
+
+                /**
+                 *新增资源队列：在指定分区下创建一个新的资源队列，支持设置队列名称、描述、资源规格列表和队列类型。
+                 * @param req CreatePartitionQueueRequest
+                 * @return CreatePartitionQueueOutcome
+                 */
+                CreatePartitionQueueOutcome CreatePartitionQueue(const Model::CreatePartitionQueueRequest &request);
+                void CreatePartitionQueueAsync(const Model::CreatePartitionQueueRequest& request, const CreatePartitionQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePartitionQueueOutcomeCallable CreatePartitionQueueCallable(const Model::CreatePartitionQueueRequest& request);
 
                 /**
                  *创建集群
@@ -1991,6 +2140,15 @@ namespace TencentCloud
                 DeleteNotebookSessionOutcome DeleteNotebookSession(const Model::DeleteNotebookSessionRequest &request);
                 void DeleteNotebookSessionAsync(const Model::DeleteNotebookSessionRequest& request, const DeleteNotebookSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteNotebookSessionOutcomeCallable DeleteNotebookSessionCallable(const Model::DeleteNotebookSessionRequest& request);
+
+                /**
+                 *删除资源队列
+                 * @param req DeletePartitionQueueRequest
+                 * @return DeletePartitionQueueOutcome
+                 */
+                DeletePartitionQueueOutcome DeletePartitionQueue(const Model::DeletePartitionQueueRequest &request);
+                void DeletePartitionQueueAsync(const Model::DeletePartitionQueueRequest& request, const DeletePartitionQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePartitionQueueOutcomeCallable DeletePartitionQueueCallable(const Model::DeletePartitionQueueRequest& request);
 
                 /**
                  *删除集群
@@ -2308,6 +2466,24 @@ namespace TencentCloud
                 DescribeEngineUsageInfoOutcomeCallable DescribeEngineUsageInfoCallable(const Model::DescribeEngineUsageInfoRequest& request);
 
                 /**
+                 *分页查询指定分区的流程详情列表，包含每个流程的基本信息和活动列表
+                 * @param req DescribeFlowDetailListRequest
+                 * @return DescribeFlowDetailListOutcome
+                 */
+                DescribeFlowDetailListOutcome DescribeFlowDetailList(const Model::DescribeFlowDetailListRequest &request);
+                void DescribeFlowDetailListAsync(const Model::DescribeFlowDetailListRequest& request, const DescribeFlowDetailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFlowDetailListOutcomeCallable DescribeFlowDetailListCallable(const Model::DescribeFlowDetailListRequest& request);
+
+                /**
+                 *查询指定分区的流程列表
+                 * @param req DescribeFlowListRequest
+                 * @return DescribeFlowListOutcome
+                 */
+                DescribeFlowListOutcome DescribeFlowList(const Model::DescribeFlowListRequest &request);
+                void DescribeFlowListAsync(const Model::DescribeFlowListRequest& request, const DescribeFlowListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFlowListOutcomeCallable DescribeFlowListCallable(const Model::DescribeFlowListRequest& request);
+
+                /**
                  *本接口（DescribeForbiddenTablePro）用于查询被禁用的表属性列表（新）
                  * @param req DescribeForbiddenTableProRequest
                  * @return DescribeForbiddenTableProOutcome
@@ -2452,6 +2628,33 @@ namespace TencentCloud
                 DescribeOtherCHDFSBindingListOutcomeCallable DescribeOtherCHDFSBindingListCallable(const Model::DescribeOtherCHDFSBindingListRequest& request);
 
                 /**
+                 *获取指定资源分区详情
+                 * @param req DescribePartitionDetailRequest
+                 * @return DescribePartitionDetailOutcome
+                 */
+                DescribePartitionDetailOutcome DescribePartitionDetail(const Model::DescribePartitionDetailRequest &request);
+                void DescribePartitionDetailAsync(const Model::DescribePartitionDetailRequest& request, const DescribePartitionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePartitionDetailOutcomeCallable DescribePartitionDetailCallable(const Model::DescribePartitionDetailRequest& request);
+
+                /**
+                 *查询指定分区的所有队列列表
+                 * @param req DescribePartitionQueuesRequest
+                 * @return DescribePartitionQueuesOutcome
+                 */
+                DescribePartitionQueuesOutcome DescribePartitionQueues(const Model::DescribePartitionQueuesRequest &request);
+                void DescribePartitionQueuesAsync(const Model::DescribePartitionQueuesRequest& request, const DescribePartitionQueuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePartitionQueuesOutcomeCallable DescribePartitionQueuesCallable(const Model::DescribePartitionQueuesRequest& request);
+
+                /**
+                 *获取分区列表信息
+                 * @param req DescribePartitionsRequest
+                 * @return DescribePartitionsOutcome
+                 */
+                DescribePartitionsOutcome DescribePartitions(const Model::DescribePartitionsRequest &request);
+                void DescribePartitionsAsync(const Model::DescribePartitionsRequest& request, const DescribePartitionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePartitionsOutcomeCallable DescribePartitionsCallable(const Model::DescribePartitionsRequest& request);
+
+                /**
                  *本接口根据资源组ID查询资源组CU使用情况
                  * @param req DescribeResourceGroupUsageInfoRequest
                  * @return DescribeResourceGroupUsageInfoOutcome
@@ -2468,6 +2671,24 @@ namespace TencentCloud
                 DescribeResultDownloadOutcome DescribeResultDownload(const Model::DescribeResultDownloadRequest &request);
                 void DescribeResultDownloadAsync(const Model::DescribeResultDownloadRequest& request, const DescribeResultDownloadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeResultDownloadOutcomeCallable DescribeResultDownloadCallable(const Model::DescribeResultDownloadRequest& request);
+
+                /**
+                 *查询可售卖的地域列表，仅返回状态为AVAILABLE的地域
+                 * @param req DescribeSaleRegionsRequest
+                 * @return DescribeSaleRegionsOutcome
+                 */
+                DescribeSaleRegionsOutcome DescribeSaleRegions(const Model::DescribeSaleRegionsRequest &request);
+                void DescribeSaleRegionsAsync(const Model::DescribeSaleRegionsRequest& request, const DescribeSaleRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSaleRegionsOutcomeCallable DescribeSaleRegionsCallable(const Model::DescribeSaleRegionsRequest& request);
+
+                /**
+                 *查询当前地域可售卖的资源规格和最大配额
+                 * @param req DescribeSaleResourceInfoRequest
+                 * @return DescribeSaleResourceInfoOutcome
+                 */
+                DescribeSaleResourceInfoOutcome DescribeSaleResourceInfo(const Model::DescribeSaleResourceInfoRequest &request);
+                void DescribeSaleResourceInfoAsync(const Model::DescribeSaleResourceInfoRequest& request, const DescribeSaleResourceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSaleResourceInfoOutcomeCallable DescribeSaleResourceInfoCallable(const Model::DescribeSaleResourceInfoRequest& request);
 
                 /**
                  *该接口（DescribeScripts）用于查询SQL脚本列表
@@ -2902,6 +3123,15 @@ namespace TencentCloud
                 GetExampleDetailOutcomeCallable GetExampleDetailCallable(const Model::GetExampleDetailRequest& request);
 
                 /**
+                 *获取单个模型详情
+                 * @param req GetInferenceModelRequest
+                 * @return GetInferenceModelOutcome
+                 */
+                GetInferenceModelOutcome GetInferenceModel(const Model::GetInferenceModelRequest &request);
+                void GetInferenceModelAsync(const Model::GetInferenceModelRequest& request, const GetInferenceModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetInferenceModelOutcomeCallable GetInferenceModelCallable(const Model::GetInferenceModelRequest& request);
+
+                /**
                  *根据配置ID获取作业配置详情
                  * @param req GetJobSpecRequest
                  * @return GetJobSpecOutcome
@@ -3181,6 +3411,15 @@ namespace TencentCloud
                 ListExamplesOutcomeCallable ListExamplesCallable(const Model::ListExamplesRequest& request);
 
                 /**
+                 *列出推理模型（支持关键词过滤 + 分页）
+                 * @param req ListInferenceModelsRequest
+                 * @return ListInferenceModelsOutcome
+                 */
+                ListInferenceModelsOutcome ListInferenceModels(const Model::ListInferenceModelsRequest &request);
+                void ListInferenceModelsAsync(const Model::ListInferenceModelsRequest& request, const ListInferenceModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListInferenceModelsOutcomeCallable ListInferenceModelsCallable(const Model::ListInferenceModelsRequest& request);
+
+                /**
                  *分页查询作业配置列表
                  * @param req ListJobSpecsRequest
                  * @return ListJobSpecsOutcome
@@ -3314,6 +3553,24 @@ namespace TencentCloud
                 ModifyLabPriorityOutcome ModifyLabPriority(const Model::ModifyLabPriorityRequest &request);
                 void ModifyLabPriorityAsync(const Model::ModifyLabPriorityRequest& request, const ModifyLabPriorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLabPriorityOutcomeCallable ModifyLabPriorityCallable(const Model::ModifyLabPriorityRequest& request);
+
+                /**
+                 *修改分区描述
+                 * @param req ModifyPartitionDescriptionRequest
+                 * @return ModifyPartitionDescriptionOutcome
+                 */
+                ModifyPartitionDescriptionOutcome ModifyPartitionDescription(const Model::ModifyPartitionDescriptionRequest &request);
+                void ModifyPartitionDescriptionAsync(const Model::ModifyPartitionDescriptionRequest& request, const ModifyPartitionDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPartitionDescriptionOutcomeCallable ModifyPartitionDescriptionCallable(const Model::ModifyPartitionDescriptionRequest& request);
+
+                /**
+                 *编辑资源队列：根据队列ID修改指定资源队列的名称、描述、资源规格列表和队列类型等信息。
+                 * @param req ModifyPartitionQueueRequest
+                 * @return ModifyPartitionQueueOutcome
+                 */
+                ModifyPartitionQueueOutcome ModifyPartitionQueue(const Model::ModifyPartitionQueueRequest &request);
+                void ModifyPartitionQueueAsync(const Model::ModifyPartitionQueueRequest& request, const ModifyPartitionQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPartitionQueueOutcomeCallable ModifyPartitionQueueCallable(const Model::ModifyPartitionQueueRequest& request);
 
                 /**
                  *更新spark作业
@@ -3611,6 +3868,15 @@ namespace TencentCloud
                 UpdateEngineResourceGroupNetworkConfigInfoOutcome UpdateEngineResourceGroupNetworkConfigInfo(const Model::UpdateEngineResourceGroupNetworkConfigInfoRequest &request);
                 void UpdateEngineResourceGroupNetworkConfigInfoAsync(const Model::UpdateEngineResourceGroupNetworkConfigInfoRequest& request, const UpdateEngineResourceGroupNetworkConfigInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateEngineResourceGroupNetworkConfigInfoOutcomeCallable UpdateEngineResourceGroupNetworkConfigInfoCallable(const Model::UpdateEngineResourceGroupNetworkConfigInfoRequest& request);
+
+                /**
+                 *更新推理模型（编辑标签、描述、参数量）
+                 * @param req UpdateInferenceModelRequest
+                 * @return UpdateInferenceModelOutcome
+                 */
+                UpdateInferenceModelOutcome UpdateInferenceModel(const Model::UpdateInferenceModelRequest &request);
+                void UpdateInferenceModelAsync(const Model::UpdateInferenceModelRequest& request, const UpdateInferenceModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateInferenceModelOutcomeCallable UpdateInferenceModelCallable(const Model::UpdateInferenceModelRequest& request);
 
                 /**
                  *更新已有作业配置的字段

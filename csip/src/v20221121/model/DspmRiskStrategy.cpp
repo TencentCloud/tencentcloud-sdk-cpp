@@ -34,7 +34,10 @@ DspmRiskStrategy::DspmRiskStrategy() :
     m_appIdHasBeenSet(false),
     m_nickNameHasBeenSet(false),
     m_uinHasBeenSet(false),
-    m_strategyIdHasBeenSet(false)
+    m_strategyIdHasBeenSet(false),
+    m_ruleSourceHasBeenSet(false),
+    m_assetTypesHasBeenSet(false),
+    m_riskDescriptionHasBeenSet(false)
 {
 }
 
@@ -183,6 +186,39 @@ CoreInternalOutcome DspmRiskStrategy::Deserialize(const rapidjson::Value &value)
         m_strategyIdHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleSource") && !value["RuleSource"].IsNull())
+    {
+        if (!value["RuleSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspmRiskStrategy.RuleSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleSource = string(value["RuleSource"].GetString());
+        m_ruleSourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssetTypes") && !value["AssetTypes"].IsNull())
+    {
+        if (!value["AssetTypes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DspmRiskStrategy.AssetTypes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AssetTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_assetTypes.push_back((*itr).GetString());
+        }
+        m_assetTypesHasBeenSet = true;
+    }
+
+    if (value.HasMember("RiskDescription") && !value["RiskDescription"].IsNull())
+    {
+        if (!value["RiskDescription"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspmRiskStrategy.RiskDescription` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskDescription = string(value["RiskDescription"].GetString());
+        m_riskDescriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +336,35 @@ void DspmRiskStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "StrategyId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_strategyId, allocator);
+    }
+
+    if (m_ruleSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_assetTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetTypes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_assetTypes.begin(); itr != m_assetTypes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_riskDescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskDescription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_riskDescription.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +592,53 @@ void DspmRiskStrategy::SetStrategyId(const uint64_t& _strategyId)
 bool DspmRiskStrategy::StrategyIdHasBeenSet() const
 {
     return m_strategyIdHasBeenSet;
+}
+
+string DspmRiskStrategy::GetRuleSource() const
+{
+    return m_ruleSource;
+}
+
+void DspmRiskStrategy::SetRuleSource(const string& _ruleSource)
+{
+    m_ruleSource = _ruleSource;
+    m_ruleSourceHasBeenSet = true;
+}
+
+bool DspmRiskStrategy::RuleSourceHasBeenSet() const
+{
+    return m_ruleSourceHasBeenSet;
+}
+
+vector<string> DspmRiskStrategy::GetAssetTypes() const
+{
+    return m_assetTypes;
+}
+
+void DspmRiskStrategy::SetAssetTypes(const vector<string>& _assetTypes)
+{
+    m_assetTypes = _assetTypes;
+    m_assetTypesHasBeenSet = true;
+}
+
+bool DspmRiskStrategy::AssetTypesHasBeenSet() const
+{
+    return m_assetTypesHasBeenSet;
+}
+
+string DspmRiskStrategy::GetRiskDescription() const
+{
+    return m_riskDescription;
+}
+
+void DspmRiskStrategy::SetRiskDescription(const string& _riskDescription)
+{
+    m_riskDescription = _riskDescription;
+    m_riskDescriptionHasBeenSet = true;
+}
+
+bool DspmRiskStrategy::RiskDescriptionHasBeenSet() const
+{
+    return m_riskDescriptionHasBeenSet;
 }
 

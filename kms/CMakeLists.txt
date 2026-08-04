@@ -120,6 +120,7 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/DeleteWhiteBoxKeyResponse.h
   include/tencentcloud/kms/v20190118/model/ListDataKeyDetailRequest.h
   include/tencentcloud/kms/v20190118/model/CancelDataKeyDeletionResponse.h
+  include/tencentcloud/kms/v20190118/model/RotateKeyResponse.h
   include/tencentcloud/kms/v20190118/model/ListKeysRequest.h
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxDecryptKeyRequest.h
   include/tencentcloud/kms/v20190118/model/DataKey.h
@@ -161,6 +162,7 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxDecryptKeyResponse.h
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxDeviceFingerprintsResponse.h
   include/tencentcloud/kms/v20190118/model/PostQuantumCryptoDecryptResponse.h
+  include/tencentcloud/kms/v20190118/model/RotateKeyRequest.h
   include/tencentcloud/kms/v20190118/model/DisableDataKeysRequest.h
   include/tencentcloud/kms/v20190118/model/UpdateKeyDescriptionRequest.h
   include/tencentcloud/kms/v20190118/model/UnbindCloudResourceResponse.h
@@ -273,6 +275,7 @@ set(kms_src
   src/v20190118/model/DeleteWhiteBoxKeyResponse.cpp
   src/v20190118/model/ListDataKeyDetailRequest.cpp
   src/v20190118/model/CancelDataKeyDeletionResponse.cpp
+  src/v20190118/model/RotateKeyResponse.cpp
   src/v20190118/model/ListKeysRequest.cpp
   src/v20190118/model/DescribeWhiteBoxDecryptKeyRequest.cpp
   src/v20190118/model/DataKey.cpp
@@ -314,6 +317,7 @@ set(kms_src
   src/v20190118/model/DescribeWhiteBoxDecryptKeyResponse.cpp
   src/v20190118/model/DescribeWhiteBoxDeviceFingerprintsResponse.cpp
   src/v20190118/model/PostQuantumCryptoDecryptResponse.cpp
+  src/v20190118/model/RotateKeyRequest.cpp
   src/v20190118/model/DisableDataKeysRequest.cpp
   src/v20190118/model/UpdateKeyDescriptionRequest.cpp
   src/v20190118/model/UnbindCloudResourceResponse.cpp

@@ -190,6 +190,56 @@ OmicsClient::DeleteEnvironmentOutcomeCallable OmicsClient::DeleteEnvironmentCall
     return prom->get_future();
 }
 
+OmicsClient::DeleteEnvironmentCacheOutcome OmicsClient::DeleteEnvironmentCache(const DeleteEnvironmentCacheRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteEnvironmentCache");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteEnvironmentCacheResponse rsp = DeleteEnvironmentCacheResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteEnvironmentCacheOutcome(rsp);
+        else
+            return DeleteEnvironmentCacheOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteEnvironmentCacheOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::DeleteEnvironmentCacheAsync(const DeleteEnvironmentCacheRequest& request, const DeleteEnvironmentCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteEnvironmentCacheRequest&;
+    using Resp = DeleteEnvironmentCacheResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteEnvironmentCache", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OmicsClient::DeleteEnvironmentCacheOutcomeCallable OmicsClient::DeleteEnvironmentCacheCallable(const DeleteEnvironmentCacheRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteEnvironmentCacheOutcome>>();
+    DeleteEnvironmentCacheAsync(
+    request,
+    [prom](
+        const OmicsClient*,
+        const DeleteEnvironmentCacheRequest&,
+        DeleteEnvironmentCacheOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OmicsClient::DeleteVolumeOutcome OmicsClient::DeleteVolume(const DeleteVolumeRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteVolume");

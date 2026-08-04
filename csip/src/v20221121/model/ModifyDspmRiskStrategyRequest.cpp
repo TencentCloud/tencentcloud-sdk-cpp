@@ -28,7 +28,10 @@ ModifyDspmRiskStrategyRequest::ModifyDspmRiskStrategyRequest() :
     m_isEnabledHasBeenSet(false),
     m_ruleHasBeenSet(false),
     m_riskLevelHasBeenSet(false),
-    m_strategyIdHasBeenSet(false)
+    m_strategyIdHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_dbTypesHasBeenSet(false)
 {
 }
 
@@ -95,6 +98,30 @@ string ModifyDspmRiskStrategyRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dbTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dbTypes.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -199,6 +226,54 @@ void ModifyDspmRiskStrategyRequest::SetStrategyId(const vector<uint64_t>& _strat
 bool ModifyDspmRiskStrategyRequest::StrategyIdHasBeenSet() const
 {
     return m_strategyIdHasBeenSet;
+}
+
+string ModifyDspmRiskStrategyRequest::GetName() const
+{
+    return m_name;
+}
+
+void ModifyDspmRiskStrategyRequest::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool ModifyDspmRiskStrategyRequest::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+string ModifyDspmRiskStrategyRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void ModifyDspmRiskStrategyRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool ModifyDspmRiskStrategyRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
+}
+
+string ModifyDspmRiskStrategyRequest::GetDbTypes() const
+{
+    return m_dbTypes;
+}
+
+void ModifyDspmRiskStrategyRequest::SetDbTypes(const string& _dbTypes)
+{
+    m_dbTypes = _dbTypes;
+    m_dbTypesHasBeenSet = true;
+}
+
+bool ModifyDspmRiskStrategyRequest::DbTypesHasBeenSet() const
+{
+    return m_dbTypesHasBeenSet;
 }
 
 

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工单ID
-                     * @return OrderId 工单ID
+                     * 获取<p>工单ID</p>
+                     * @return OrderId <p>工单ID</p>
                      * 
                      */
                     std::string GetOrderId() const;
 
                     /**
-                     * 设置工单ID
-                     * @param _orderId 工单ID
+                     * 设置<p>工单ID</p>
+                     * @param _orderId <p>工单ID</p>
                      * 
                      */
                     void SetOrderId(const std::string& _orderId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 工单ID
+                     * <p>工单ID</p>
                      */
                     std::string m_orderId;
                     bool m_orderIdHasBeenSet;

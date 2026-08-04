@@ -344,15 +344,15 @@ namespace TencentCloud
                     bool EffectRowHasBeenSet() const;
 
                     /**
-                     * 获取执行时间
-                     * @return ExecTime 执行时间
+                     * 获取执行时间,单位：毫秒
+                     * @return ExecTime 执行时间,单位：毫秒
                      * 
                      */
                     uint64_t GetExecTime() const;
 
                     /**
-                     * 设置执行时间
-                     * @param _execTime 执行时间
+                     * 设置执行时间,单位：毫秒
+                     * @param _execTime 执行时间,单位：毫秒
                      * 
                      */
                     void SetExecTime(const uint64_t& _execTime);
@@ -997,7 +997,7 @@ namespace TencentCloud
                     bool m_effectRowHasBeenSet;
 
                     /**
-                     * 执行时间
+                     * 执行时间,单位：毫秒
                      */
                     uint64_t m_execTime;
                     bool m_execTimeHasBeenSet;

@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool PartSegmentationInfoHasBeenSet() const;
 
                     /**
-                     * 获取<p>是否开启后处理，开启后将只输出一个模型链接，默认关闭。 （开启此接口后，需额外增加20积分）</p>
-                     * @return EnableStagedGeneration <p>是否开启后处理，开启后将只输出一个模型链接，默认关闭。 （开启此接口后，需额外增加20积分）</p>
+                     * 获取<p>是否分步骤进行组件生成；<br>开启后，输入原始模型后，可生成带分割信息的模型以及分割数据，可对此信息编辑后再传入带有分割信息的模型和分割数据进行编辑后的组件生成；<br>此参数默认关闭。</p>
+                     * @return EnableStagedGeneration <p>是否分步骤进行组件生成；<br>开启后，输入原始模型后，可生成带分割信息的模型以及分割数据，可对此信息编辑后再传入带有分割信息的模型和分割数据进行编辑后的组件生成；<br>此参数默认关闭。</p>
                      * 
                      */
                     bool GetEnableStagedGeneration() const;
 
                     /**
-                     * 设置<p>是否开启后处理，开启后将只输出一个模型链接，默认关闭。 （开启此接口后，需额外增加20积分）</p>
-                     * @param _enableStagedGeneration <p>是否开启后处理，开启后将只输出一个模型链接，默认关闭。 （开启此接口后，需额外增加20积分）</p>
+                     * 设置<p>是否分步骤进行组件生成；<br>开启后，输入原始模型后，可生成带分割信息的模型以及分割数据，可对此信息编辑后再传入带有分割信息的模型和分割数据进行编辑后的组件生成；<br>此参数默认关闭。</p>
+                     * @param _enableStagedGeneration <p>是否分步骤进行组件生成；<br>开启后，输入原始模型后，可生成带分割信息的模型以及分割数据，可对此信息编辑后再传入带有分割信息的模型和分割数据进行编辑后的组件生成；<br>此参数默认关闭。</p>
                      * 
                      */
                     void SetEnableStagedGeneration(const bool& _enableStagedGeneration);
@@ -126,6 +126,27 @@ namespace TencentCloud
                      * 
                      */
                     bool EnableStagedGenerationHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启后处理，开启后将只输出一个模型链接，默认关闭。 （开启此接口后，需额外增加20积分）</p>
+                     * @return EnablePostProcess <p>是否开启后处理，开启后将只输出一个模型链接，默认关闭。 （开启此接口后，需额外增加20积分）</p>
+                     * 
+                     */
+                    bool GetEnablePostProcess() const;
+
+                    /**
+                     * 设置<p>是否开启后处理，开启后将只输出一个模型链接，默认关闭。 （开启此接口后，需额外增加20积分）</p>
+                     * @param _enablePostProcess <p>是否开启后处理，开启后将只输出一个模型链接，默认关闭。 （开启此接口后，需额外增加20积分）</p>
+                     * 
+                     */
+                    void SetEnablePostProcess(const bool& _enablePostProcess);
+
+                    /**
+                     * 判断参数 EnablePostProcess 是否已赋值
+                     * @return EnablePostProcess 是否已赋值
+                     * 
+                     */
+                    bool EnablePostProcessHasBeenSet() const;
 
                 private:
 
@@ -148,10 +169,16 @@ namespace TencentCloud
                     bool m_partSegmentationInfoHasBeenSet;
 
                     /**
-                     * <p>是否开启后处理，开启后将只输出一个模型链接，默认关闭。 （开启此接口后，需额外增加20积分）</p>
+                     * <p>是否分步骤进行组件生成；<br>开启后，输入原始模型后，可生成带分割信息的模型以及分割数据，可对此信息编辑后再传入带有分割信息的模型和分割数据进行编辑后的组件生成；<br>此参数默认关闭。</p>
                      */
                     bool m_enableStagedGeneration;
                     bool m_enableStagedGenerationHasBeenSet;
+
+                    /**
+                     * <p>是否开启后处理，开启后将只输出一个模型链接，默认关闭。 （开启此接口后，需额外增加20积分）</p>
+                     */
+                    bool m_enablePostProcess;
+                    bool m_enablePostProcessHasBeenSet;
 
                 };
             }

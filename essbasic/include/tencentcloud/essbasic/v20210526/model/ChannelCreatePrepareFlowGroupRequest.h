@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/BaseFlowInfo.h>
 #include <tencentcloud/essbasic/v20210526/model/Agent.h>
+#include <tencentcloud/essbasic/v20210526/model/FlowGroupOptions.h>
 
 
 namespace TencentCloud
@@ -45,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。
-                     * @return BaseFlowInfos 合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。
+                     * 获取<p>合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。</p>
+                     * @return BaseFlowInfos <p>合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。</p>
                      * 
                      */
                     std::vector<BaseFlowInfo> GetBaseFlowInfos() const;
 
                     /**
-                     * 设置合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。
-                     * @param _baseFlowInfos 合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。
+                     * 设置<p>合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。</p>
+                     * @param _baseFlowInfos <p>合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。</p>
                      * 
                      */
                     void SetBaseFlowInfos(const std::vector<BaseFlowInfo>& _baseFlowInfos);
@@ -66,15 +67,15 @@ namespace TencentCloud
                     bool BaseFlowInfosHasBeenSet() const;
 
                     /**
-                     * 获取合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
-                     * @return FlowGroupName 合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+                     * 获取<p>合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。</p>
+                     * @return FlowGroupName <p>合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。</p>
                      * 
                      */
                     std::string GetFlowGroupName() const;
 
                     /**
-                     * 设置合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
-                     * @param _flowGroupName 合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+                     * 设置<p>合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。</p>
+                     * @param _flowGroupName <p>合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。</p>
                      * 
                      */
                     void SetFlowGroupName(const std::string& _flowGroupName);
@@ -87,15 +88,15 @@ namespace TencentCloud
                     bool FlowGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取资源类型，取值有： <ul><li> **1**：模板</li> <li> **2**：文件</li></ul>
-                     * @return ResourceType 资源类型，取值有： <ul><li> **1**：模板</li> <li> **2**：文件</li></ul>
+                     * 获取<p>资源类型，取值有： <ul><li> <strong>1</strong>：模板</li> <li> <strong>2</strong>：文件</li></ul></p>
+                     * @return ResourceType <p>资源类型，取值有： <ul><li> <strong>1</strong>：模板</li> <li> <strong>2</strong>：文件</li></ul></p>
                      * 
                      */
                     int64_t GetResourceType() const;
 
                     /**
-                     * 设置资源类型，取值有： <ul><li> **1**：模板</li> <li> **2**：文件</li></ul>
-                     * @param _resourceType 资源类型，取值有： <ul><li> **1**：模板</li> <li> **2**：文件</li></ul>
+                     * 设置<p>资源类型，取值有： <ul><li> <strong>1</strong>：模板</li> <li> <strong>2</strong>：文件</li></ul></p>
+                     * @param _resourceType <p>资源类型，取值有： <ul><li> <strong>1</strong>：模板</li> <li> <strong>2</strong>：文件</li></ul></p>
                      * 
                      */
                     void SetResourceType(const int64_t& _resourceType);
@@ -108,51 +109,15 @@ namespace TencentCloud
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a>
-
-此接口下面信息必填。
-<ul>
-<li>渠道应用标识: <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li>
-<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li>
-<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li>
-</ul>
-
-合同的发起企业和发起人必需已经完成实名，并加入企业
-                     * @return Agent 合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a>
-
-此接口下面信息必填。
-<ul>
-<li>渠道应用标识: <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li>
-<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li>
-<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li>
-</ul>
-
-合同的发起企业和发起人必需已经完成实名，并加入企业
+                     * 获取<p>合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a></p><p>此接口下面信息必填。</p><ul><li>渠道应用标识: <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li><li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li></ul><p>合同的发起企业和发起人必需已经完成实名，并加入企业</p>
+                     * @return Agent <p>合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a></p><p>此接口下面信息必填。</p><ul><li>渠道应用标识: <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li><li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li></ul><p>合同的发起企业和发起人必需已经完成实名，并加入企业</p>
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a>
-
-此接口下面信息必填。
-<ul>
-<li>渠道应用标识: <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li>
-<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li>
-<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li>
-</ul>
-
-合同的发起企业和发起人必需已经完成实名，并加入企业
-                     * @param _agent 合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a>
-
-此接口下面信息必填。
-<ul>
-<li>渠道应用标识: <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li>
-<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li>
-<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li>
-</ul>
-
-合同的发起企业和发起人必需已经完成实名，并加入企业
+                     * 设置<p>合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a></p><p>此接口下面信息必填。</p><ul><li>渠道应用标识: <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li><li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li></ul><p>合同的发起企业和发起人必需已经完成实名，并加入企业</p>
+                     * @param _agent <p>合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a></p><p>此接口下面信息必填。</p><ul><li>渠道应用标识: <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li><li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li></ul><p>合同的发起企业和发起人必需已经完成实名，并加入企业</p>
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -164,40 +129,112 @@ namespace TencentCloud
                      */
                     bool AgentHasBeenSet() const;
 
+                    /**
+                     * 获取<p>合同组发起参数控制，包括对合同组名称、过期时间、发起后签署以及查看等操作</p>
+                     * @return FlowGroupOptions <p>合同组发起参数控制，包括对合同组名称、过期时间、发起后签署以及查看等操作</p>
+                     * 
+                     */
+                    FlowGroupOptions GetFlowGroupOptions() const;
+
+                    /**
+                     * 设置<p>合同组发起参数控制，包括对合同组名称、过期时间、发起后签署以及查看等操作</p>
+                     * @param _flowGroupOptions <p>合同组发起参数控制，包括对合同组名称、过期时间、发起后签署以及查看等操作</p>
+                     * 
+                     */
+                    void SetFlowGroupOptions(const FlowGroupOptions& _flowGroupOptions);
+
+                    /**
+                     * 判断参数 FlowGroupOptions 是否已赋值
+                     * @return FlowGroupOptions 是否已赋值
+                     * 
+                     */
+                    bool FlowGroupOptionsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>合同组类型，会应用到所有子合同</p>
+                     * @return FlowGroupType <p>合同组类型，会应用到所有子合同</p>
+                     * 
+                     */
+                    std::string GetFlowGroupType() const;
+
+                    /**
+                     * 设置<p>合同组类型，会应用到所有子合同</p>
+                     * @param _flowGroupType <p>合同组类型，会应用到所有子合同</p>
+                     * 
+                     */
+                    void SetFlowGroupType(const std::string& _flowGroupType);
+
+                    /**
+                     * 判断参数 FlowGroupType 是否已赋值
+                     * @return FlowGroupType 是否已赋值
+                     * 
+                     */
+                    bool FlowGroupTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>合同组过期时间，会应用到所有子合同</p>
+                     * @return FlowGroupDeadline <p>合同组过期时间，会应用到所有子合同</p>
+                     * 
+                     */
+                    int64_t GetFlowGroupDeadline() const;
+
+                    /**
+                     * 设置<p>合同组过期时间，会应用到所有子合同</p>
+                     * @param _flowGroupDeadline <p>合同组过期时间，会应用到所有子合同</p>
+                     * 
+                     */
+                    void SetFlowGroupDeadline(const int64_t& _flowGroupDeadline);
+
+                    /**
+                     * 判断参数 FlowGroupDeadline 是否已赋值
+                     * @return FlowGroupDeadline 是否已赋值
+                     * 
+                     */
+                    bool FlowGroupDeadlineHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。
+                     * <p>合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。</p>
                      */
                     std::vector<BaseFlowInfo> m_baseFlowInfos;
                     bool m_baseFlowInfosHasBeenSet;
 
                     /**
-                     * 合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+                     * <p>合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。</p>
                      */
                     std::string m_flowGroupName;
                     bool m_flowGroupNameHasBeenSet;
 
                     /**
-                     * 资源类型，取值有： <ul><li> **1**：模板</li> <li> **2**：文件</li></ul>
+                     * <p>资源类型，取值有： <ul><li> <strong>1</strong>：模板</li> <li> <strong>2</strong>：文件</li></ul></p>
                      */
                     int64_t m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * 合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a>
-
-此接口下面信息必填。
-<ul>
-<li>渠道应用标识: <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li>
-<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li>
-<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li>
-</ul>
-
-合同的发起企业和发起人必需已经完成实名，并加入企业
+                     * <p>合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a></p><p>此接口下面信息必填。</p><ul><li>渠道应用标识: <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li><li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li></ul><p>合同的发起企业和发起人必需已经完成实名，并加入企业</p>
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
+
+                    /**
+                     * <p>合同组发起参数控制，包括对合同组名称、过期时间、发起后签署以及查看等操作</p>
+                     */
+                    FlowGroupOptions m_flowGroupOptions;
+                    bool m_flowGroupOptionsHasBeenSet;
+
+                    /**
+                     * <p>合同组类型，会应用到所有子合同</p>
+                     */
+                    std::string m_flowGroupType;
+                    bool m_flowGroupTypeHasBeenSet;
+
+                    /**
+                     * <p>合同组过期时间，会应用到所有子合同</p>
+                     */
+                    int64_t m_flowGroupDeadline;
+                    bool m_flowGroupDeadlineHasBeenSet;
 
                 };
             }

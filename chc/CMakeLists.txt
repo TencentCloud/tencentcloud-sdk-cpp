@@ -101,6 +101,7 @@ set(chc_public_header_model
   include/tencentcloud/chc/v20230418/model/DescribePersonnelVisitWorkOrderDetailRequest.h
   include/tencentcloud/chc/v20230418/model/DescribeCustomerInfoResponse.h
   include/tencentcloud/chc/v20230418/model/Device.h
+  include/tencentcloud/chc/v20230418/model/SLAInfo.h
   include/tencentcloud/chc/v20230418/model/CreateServerModelResponse.h
   include/tencentcloud/chc/v20230418/model/DescribeCampusListRequest.h
   include/tencentcloud/chc/v20230418/model/Filter.h
@@ -232,6 +233,7 @@ set(chc_src
   src/v20230418/model/DescribePersonnelVisitWorkOrderDetailRequest.cpp
   src/v20230418/model/DescribeCustomerInfoResponse.cpp
   src/v20230418/model/Device.cpp
+  src/v20230418/model/SLAInfo.cpp
   src/v20230418/model/CreateServerModelResponse.cpp
   src/v20230418/model/DescribeCampusListRequest.cpp
   src/v20230418/model/Filter.cpp

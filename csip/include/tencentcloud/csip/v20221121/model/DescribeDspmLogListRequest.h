@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集团账号的成员id
-                     * @return MemberId 集团账号的成员id
+                     * 获取<p>集团账号的成员id</p>
+                     * @return MemberId <p>集团账号的成员id</p>
                      * 
                      */
                     std::vector<std::string> GetMemberId() const;
 
                     /**
-                     * 设置集团账号的成员id
-                     * @param _memberId 集团账号的成员id
+                     * 设置<p>集团账号的成员id</p>
+                     * @param _memberId <p>集团账号的成员id</p>
                      * 
                      */
                     void SetMemberId(const std::vector<std::string>& _memberId);
@@ -589,15 +589,15 @@ namespace TencentCloud
                     bool RowNumMaxHasBeenSet() const;
 
                     /**
-                     * 获取数据库类型
-                     * @return DbTypes 数据库类型
+                     * 获取数据库类型, 支持的值：cdb，mariadb
+                     * @return DbTypes 数据库类型, 支持的值：cdb，mariadb
                      * 
                      */
                     std::vector<std::string> GetDbTypes() const;
 
                     /**
-                     * 设置数据库类型
-                     * @param _dbTypes 数据库类型
+                     * 设置数据库类型, 支持的值：cdb，mariadb
+                     * @param _dbTypes 数据库类型, 支持的值：cdb，mariadb
                      * 
                      */
                     void SetDbTypes(const std::vector<std::string>& _dbTypes);
@@ -780,7 +780,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集团账号的成员id
+                     * <p>集团账号的成员id</p>
                      */
                     std::vector<std::string> m_memberId;
                     bool m_memberIdHasBeenSet;
@@ -936,7 +936,7 @@ namespace TencentCloud
                     bool m_rowNumMaxHasBeenSet;
 
                     /**
-                     * 数据库类型
+                     * 数据库类型, 支持的值：cdb，mariadb
                      */
                     std::vector<std::string> m_dbTypes;
                     bool m_dbTypesHasBeenSet;

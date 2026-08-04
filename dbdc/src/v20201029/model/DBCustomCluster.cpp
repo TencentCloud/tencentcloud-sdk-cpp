@@ -30,7 +30,8 @@ DBCustomCluster::DBCustomCluster() :
     m_clusterNodeNumHasBeenSet(false),
     m_clusterDescriptionHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_deletionProtectionHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,16 @@ CoreInternalOutcome DBCustomCluster::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("DeletionProtection") && !value["DeletionProtection"].IsNull())
+    {
+        if (!value["DeletionProtection"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBCustomCluster.DeletionProtection` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_deletionProtection = value["DeletionProtection"].GetBool();
+        m_deletionProtectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +252,14 @@ void DBCustomCluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_deletionProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deletionProtection, allocator);
     }
 
 }
@@ -404,5 +423,21 @@ void DBCustomCluster::SetTags(const vector<Tag>& _tags)
 bool DBCustomCluster::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+bool DBCustomCluster::GetDeletionProtection() const
+{
+    return m_deletionProtection;
+}
+
+void DBCustomCluster::SetDeletionProtection(const bool& _deletionProtection)
+{
+    m_deletionProtection = _deletionProtection;
+    m_deletionProtectionHasBeenSet = true;
+}
+
+bool DBCustomCluster::DeletionProtectionHasBeenSet() const
+{
+    return m_deletionProtectionHasBeenSet;
 }
 

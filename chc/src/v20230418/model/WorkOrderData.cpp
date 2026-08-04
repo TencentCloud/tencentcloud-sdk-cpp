@@ -28,7 +28,8 @@ WorkOrderData::WorkOrderData() :
     m_creatorHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_finishTimeHasBeenSet(false),
-    m_ticketIdHasBeenSet(false)
+    m_ticketIdHasBeenSet(false),
+    m_sLAInfoHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,23 @@ CoreInternalOutcome WorkOrderData::Deserialize(const rapidjson::Value &value)
         m_ticketIdHasBeenSet = true;
     }
 
+    if (value.HasMember("SLAInfo") && !value["SLAInfo"].IsNull())
+    {
+        if (!value["SLAInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkOrderData.SLAInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_sLAInfo.Deserialize(value["SLAInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_sLAInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +204,15 @@ void WorkOrderData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "TicketId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ticketId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sLAInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SLAInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sLAInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -317,5 +344,21 @@ void WorkOrderData::SetTicketId(const string& _ticketId)
 bool WorkOrderData::TicketIdHasBeenSet() const
 {
     return m_ticketIdHasBeenSet;
+}
+
+SLAInfo WorkOrderData::GetSLAInfo() const
+{
+    return m_sLAInfo;
+}
+
+void WorkOrderData::SetSLAInfo(const SLAInfo& _sLAInfo)
+{
+    m_sLAInfo = _sLAInfo;
+    m_sLAInfoHasBeenSet = true;
+}
+
+bool WorkOrderData::SLAInfoHasBeenSet() const
+{
+    return m_sLAInfoHasBeenSet;
 }
 

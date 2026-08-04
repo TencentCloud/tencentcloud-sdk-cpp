@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取VPN网关实例ID。
-                     * @return VpnGatewayId VPN网关实例ID。
+                     * 获取<p>VPN网关实例ID。</p>
+                     * @return VpnGatewayId <p>VPN网关实例ID。</p>
                      * 
                      */
                     std::string GetVpnGatewayId() const;
 
                     /**
-                     * 设置VPN网关实例ID。
-                     * @param _vpnGatewayId VPN网关实例ID。
+                     * 设置<p>VPN网关实例ID。</p>
+                     * @param _vpnGatewayId <p>VPN网关实例ID。</p>
                      * 
                      */
                     void SetVpnGatewayId(const std::string& _vpnGatewayId);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool VpnGatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取对端网关ID。例如：cgw-2wqq41m9，可通过[DescribeCustomerGateways](https://cloud.tencent.com/document/product/215/17516)接口查询对端网关。
-                     * @return CustomerGatewayId 对端网关ID。例如：cgw-2wqq41m9，可通过[DescribeCustomerGateways](https://cloud.tencent.com/document/product/215/17516)接口查询对端网关。
+                     * 获取<p>对端网关ID。例如：cgw-2wqq41m9，可通过<a href="https://cloud.tencent.com/document/product/215/17516">DescribeCustomerGateways</a>接口查询对端网关。</p>
+                     * @return CustomerGatewayId <p>对端网关ID。例如：cgw-2wqq41m9，可通过<a href="https://cloud.tencent.com/document/product/215/17516">DescribeCustomerGateways</a>接口查询对端网关。</p>
                      * 
                      */
                     std::string GetCustomerGatewayId() const;
 
                     /**
-                     * 设置对端网关ID。例如：cgw-2wqq41m9，可通过[DescribeCustomerGateways](https://cloud.tencent.com/document/product/215/17516)接口查询对端网关。
-                     * @param _customerGatewayId 对端网关ID。例如：cgw-2wqq41m9，可通过[DescribeCustomerGateways](https://cloud.tencent.com/document/product/215/17516)接口查询对端网关。
+                     * 设置<p>对端网关ID。例如：cgw-2wqq41m9，可通过<a href="https://cloud.tencent.com/document/product/215/17516">DescribeCustomerGateways</a>接口查询对端网关。</p>
+                     * @param _customerGatewayId <p>对端网关ID。例如：cgw-2wqq41m9，可通过<a href="https://cloud.tencent.com/document/product/215/17516">DescribeCustomerGateways</a>接口查询对端网关。</p>
                      * 
                      */
                     void SetCustomerGatewayId(const std::string& _customerGatewayId);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool CustomerGatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取通道名称，可任意命名，但不得超过60个字符。
-                     * @return VpnConnectionName 通道名称，可任意命名，但不得超过60个字符。
+                     * 获取<p>通道名称，可任意命名，但不得超过60个字符。</p>
+                     * @return VpnConnectionName <p>通道名称，可任意命名，但不得超过60个字符。</p>
                      * 
                      */
                     std::string GetVpnConnectionName() const;
 
                     /**
-                     * 设置通道名称，可任意命名，但不得超过60个字符。
-                     * @param _vpnConnectionName 通道名称，可任意命名，但不得超过60个字符。
+                     * 设置<p>通道名称，可任意命名，但不得超过60个字符。</p>
+                     * @param _vpnConnectionName <p>通道名称，可任意命名，但不得超过60个字符。</p>
                      * 
                      */
                     void SetVpnConnectionName(const std::string& _vpnConnectionName);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool VpnConnectionNameHasBeenSet() const;
 
                     /**
-                     * 获取预共享密钥。
-                     * @return PreShareKey 预共享密钥。
+                     * 获取<p>预共享密钥。</p>
+                     * @return PreShareKey <p>预共享密钥。</p>
                      * 
                      */
                     std::string GetPreShareKey() const;
 
                     /**
-                     * 设置预共享密钥。
-                     * @param _preShareKey 预共享密钥。
+                     * 设置<p>预共享密钥。</p>
+                     * @param _preShareKey <p>预共享密钥。</p>
                      * 
                      */
                     void SetPreShareKey(const std::string& _preShareKey);
@@ -134,19 +134,15 @@ namespace TencentCloud
                     bool PreShareKeyHasBeenSet() const;
 
                     /**
-                     * 获取VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
-CCN VPN 形的通道 可以不传VPCID
-                     * @return VpcId VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
-CCN VPN 形的通道 可以不传VPCID
+                     * 获取<p>VPC实例ID。VPC类型网关可通过<a href="https://cloud.tencent.com/document/product/215/15778">DescribeVpcs</a>接口返回值中的VpcId获取，CCN类型网关传空值即可。</p>
+                     * @return VpcId <p>VPC实例ID。VPC类型网关可通过<a href="https://cloud.tencent.com/document/product/215/15778">DescribeVpcs</a>接口返回值中的VpcId获取，CCN类型网关传空值即可。</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
-CCN VPN 形的通道 可以不传VPCID
-                     * @param _vpcId VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
-CCN VPN 形的通道 可以不传VPCID
+                     * 设置<p>VPC实例ID。VPC类型网关可通过<a href="https://cloud.tencent.com/document/product/215/15778">DescribeVpcs</a>接口返回值中的VpcId获取，CCN类型网关传空值即可。</p>
+                     * @param _vpcId <p>VPC实例ID。VPC类型网关可通过<a href="https://cloud.tencent.com/document/product/215/15778">DescribeVpcs</a>接口返回值中的VpcId获取，CCN类型网关传空值即可。</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -159,15 +155,15 @@ CCN VPN 形的通道 可以不传VPCID
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取SPD策略组，例如：{"10.0.0.5/24":["172.123.10.5/16"]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。
-                     * @return SecurityPolicyDatabases SPD策略组，例如：{"10.0.0.5/24":["172.123.10.5/16"]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。
+                     * 获取<p>SPD策略组，例如：{&quot;10.0.0.5/24&quot;:[&quot;172.123.10.5/16&quot;]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。</p>
+                     * @return SecurityPolicyDatabases <p>SPD策略组，例如：{&quot;10.0.0.5/24&quot;:[&quot;172.123.10.5/16&quot;]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。</p>
                      * 
                      */
                     std::vector<SecurityPolicyDatabase> GetSecurityPolicyDatabases() const;
 
                     /**
-                     * 设置SPD策略组，例如：{"10.0.0.5/24":["172.123.10.5/16"]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。
-                     * @param _securityPolicyDatabases SPD策略组，例如：{"10.0.0.5/24":["172.123.10.5/16"]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。
+                     * 设置<p>SPD策略组，例如：{&quot;10.0.0.5/24&quot;:[&quot;172.123.10.5/16&quot;]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。</p>
+                     * @param _securityPolicyDatabases <p>SPD策略组，例如：{&quot;10.0.0.5/24&quot;:[&quot;172.123.10.5/16&quot;]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。</p>
                      * 
                      */
                     void SetSecurityPolicyDatabases(const std::vector<SecurityPolicyDatabase>& _securityPolicyDatabases);
@@ -180,15 +176,15 @@ CCN VPN 形的通道 可以不传VPCID
                     bool SecurityPolicyDatabasesHasBeenSet() const;
 
                     /**
-                     * 获取IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议
-                     * @return IKEOptionsSpecification IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议
+                     * 获取<p>IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议</p>
+                     * @return IKEOptionsSpecification <p>IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议</p>
                      * 
                      */
                     IKEOptionsSpecification GetIKEOptionsSpecification() const;
 
                     /**
-                     * 设置IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议
-                     * @param _iKEOptionsSpecification IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议
+                     * 设置<p>IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议</p>
+                     * @param _iKEOptionsSpecification <p>IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议</p>
                      * 
                      */
                     void SetIKEOptionsSpecification(const IKEOptionsSpecification& _iKEOptionsSpecification);
@@ -201,15 +197,15 @@ CCN VPN 形的通道 可以不传VPCID
                     bool IKEOptionsSpecificationHasBeenSet() const;
 
                     /**
-                     * 获取IPSec配置，腾讯云提供IPSec安全会话设置
-                     * @return IPSECOptionsSpecification IPSec配置，腾讯云提供IPSec安全会话设置
+                     * 获取<p>IPSec配置，腾讯云提供IPSec安全会话设置</p>
+                     * @return IPSECOptionsSpecification <p>IPSec配置，腾讯云提供IPSec安全会话设置</p>
                      * 
                      */
                     IPSECOptionsSpecification GetIPSECOptionsSpecification() const;
 
                     /**
-                     * 设置IPSec配置，腾讯云提供IPSec安全会话设置
-                     * @param _iPSECOptionsSpecification IPSec配置，腾讯云提供IPSec安全会话设置
+                     * 设置<p>IPSec配置，腾讯云提供IPSec安全会话设置</p>
+                     * @param _iPSECOptionsSpecification <p>IPSec配置，腾讯云提供IPSec安全会话设置</p>
                      * 
                      */
                     void SetIPSECOptionsSpecification(const IPSECOptionsSpecification& _iPSECOptionsSpecification);
@@ -222,15 +218,15 @@ CCN VPN 形的通道 可以不传VPCID
                     bool IPSECOptionsSpecificationHasBeenSet() const;
 
                     /**
-                     * 获取指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
-                     * @return Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 获取<p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]</p>
+                     * @return Tags <p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
-                     * @param _tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 设置<p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]</p>
+                     * @param _tags <p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -243,15 +239,15 @@ CCN VPN 形的通道 可以不传VPCID
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取是否支持隧道内健康检查，默认为False。
-                     * @return EnableHealthCheck 是否支持隧道内健康检查，默认为False。
+                     * 获取<p>是否支持隧道内健康检查，默认为False。</p>
+                     * @return EnableHealthCheck <p>是否支持隧道内健康检查，默认为False。</p>
                      * 
                      */
                     bool GetEnableHealthCheck() const;
 
                     /**
-                     * 设置是否支持隧道内健康检查，默认为False。
-                     * @param _enableHealthCheck 是否支持隧道内健康检查，默认为False。
+                     * 设置<p>是否支持隧道内健康检查，默认为False。</p>
+                     * @param _enableHealthCheck <p>是否支持隧道内健康检查，默认为False。</p>
                      * 
                      */
                     void SetEnableHealthCheck(const bool& _enableHealthCheck);
@@ -264,15 +260,15 @@ CCN VPN 形的通道 可以不传VPCID
                     bool EnableHealthCheckHasBeenSet() const;
 
                     /**
-                     * 获取健康检查本端地址，默认值为随机在169.254.128.0/17分配一个IP。
-                     * @return HealthCheckLocalIp 健康检查本端地址，默认值为随机在169.254.128.0/17分配一个IP。
+                     * 获取<p>健康检查本端地址，默认值为随机在169.254.128.0/17分配一个IP。</p>
+                     * @return HealthCheckLocalIp <p>健康检查本端地址，默认值为随机在169.254.128.0/17分配一个IP。</p>
                      * 
                      */
                     std::string GetHealthCheckLocalIp() const;
 
                     /**
-                     * 设置健康检查本端地址，默认值为随机在169.254.128.0/17分配一个IP。
-                     * @param _healthCheckLocalIp 健康检查本端地址，默认值为随机在169.254.128.0/17分配一个IP。
+                     * 设置<p>健康检查本端地址，默认值为随机在169.254.128.0/17分配一个IP。</p>
+                     * @param _healthCheckLocalIp <p>健康检查本端地址，默认值为随机在169.254.128.0/17分配一个IP。</p>
                      * 
                      */
                     void SetHealthCheckLocalIp(const std::string& _healthCheckLocalIp);
@@ -285,15 +281,15 @@ CCN VPN 形的通道 可以不传VPCID
                     bool HealthCheckLocalIpHasBeenSet() const;
 
                     /**
-                     * 获取健康检查对端地址，默认值为随机在169.254.128.0/17分配一个IP。
-                     * @return HealthCheckRemoteIp 健康检查对端地址，默认值为随机在169.254.128.0/17分配一个IP。
+                     * 获取<p>健康检查对端地址，默认值为随机在169.254.128.0/17分配一个IP。</p>
+                     * @return HealthCheckRemoteIp <p>健康检查对端地址，默认值为随机在169.254.128.0/17分配一个IP。</p>
                      * 
                      */
                     std::string GetHealthCheckRemoteIp() const;
 
                     /**
-                     * 设置健康检查对端地址，默认值为随机在169.254.128.0/17分配一个IP。
-                     * @param _healthCheckRemoteIp 健康检查对端地址，默认值为随机在169.254.128.0/17分配一个IP。
+                     * 设置<p>健康检查对端地址，默认值为随机在169.254.128.0/17分配一个IP。</p>
+                     * @param _healthCheckRemoteIp <p>健康检查对端地址，默认值为随机在169.254.128.0/17分配一个IP。</p>
                      * 
                      */
                     void SetHealthCheckRemoteIp(const std::string& _healthCheckRemoteIp);
@@ -306,15 +302,15 @@ CCN VPN 形的通道 可以不传VPCID
                     bool HealthCheckRemoteIpHasBeenSet() const;
 
                     /**
-                     * 获取通道类型, 例如:["STATIC", "StaticRoute", "Policy"]
-                     * @return RouteType 通道类型, 例如:["STATIC", "StaticRoute", "Policy"]
+                     * 获取<p>通道类型, 例如:[&quot;STATIC&quot;, &quot;StaticRoute&quot;, &quot;Policy&quot;, &quot;Bgp&quot;]</p><p>枚举值：</p><ul><li>StaticRoute： 目的路由类型</li><li>Policy： SPD策略类型</li><li>Bgp： BGP类型</li></ul><p>默认值：STATIC</p>
+                     * @return RouteType <p>通道类型, 例如:[&quot;STATIC&quot;, &quot;StaticRoute&quot;, &quot;Policy&quot;, &quot;Bgp&quot;]</p><p>枚举值：</p><ul><li>StaticRoute： 目的路由类型</li><li>Policy： SPD策略类型</li><li>Bgp： BGP类型</li></ul><p>默认值：STATIC</p>
                      * 
                      */
                     std::string GetRouteType() const;
 
                     /**
-                     * 设置通道类型, 例如:["STATIC", "StaticRoute", "Policy"]
-                     * @param _routeType 通道类型, 例如:["STATIC", "StaticRoute", "Policy"]
+                     * 设置<p>通道类型, 例如:[&quot;STATIC&quot;, &quot;StaticRoute&quot;, &quot;Policy&quot;, &quot;Bgp&quot;]</p><p>枚举值：</p><ul><li>StaticRoute： 目的路由类型</li><li>Policy： SPD策略类型</li><li>Bgp： BGP类型</li></ul><p>默认值：STATIC</p>
+                     * @param _routeType <p>通道类型, 例如:[&quot;STATIC&quot;, &quot;StaticRoute&quot;, &quot;Policy&quot;, &quot;Bgp&quot;]</p><p>枚举值：</p><ul><li>StaticRoute： 目的路由类型</li><li>Policy： SPD策略类型</li><li>Bgp： BGP类型</li></ul><p>默认值：STATIC</p>
                      * 
                      */
                     void SetRouteType(const std::string& _routeType);
@@ -327,15 +323,15 @@ CCN VPN 形的通道 可以不传VPCID
                     bool RouteTypeHasBeenSet() const;
 
                     /**
-                     * 获取协商类型，默认为active（主动协商）。可选值：active（主动协商），passive（被动协商），flowTrigger（流量协商）
-                     * @return NegotiationType 协商类型，默认为active（主动协商）。可选值：active（主动协商），passive（被动协商），flowTrigger（流量协商）
+                     * 获取<p>协商类型，默认为active（主动协商）。可选值：active（主动协商），passive（被动协商），flowTrigger（流量协商）</p>
+                     * @return NegotiationType <p>协商类型，默认为active（主动协商）。可选值：active（主动协商），passive（被动协商），flowTrigger（流量协商）</p>
                      * 
                      */
                     std::string GetNegotiationType() const;
 
                     /**
-                     * 设置协商类型，默认为active（主动协商）。可选值：active（主动协商），passive（被动协商），flowTrigger（流量协商）
-                     * @param _negotiationType 协商类型，默认为active（主动协商）。可选值：active（主动协商），passive（被动协商），flowTrigger（流量协商）
+                     * 设置<p>协商类型，默认为active（主动协商）。可选值：active（主动协商），passive（被动协商），flowTrigger（流量协商）</p>
+                     * @param _negotiationType <p>协商类型，默认为active（主动协商）。可选值：active（主动协商），passive（被动协商），flowTrigger（流量协商）</p>
                      * 
                      */
                     void SetNegotiationType(const std::string& _negotiationType);
@@ -348,15 +344,15 @@ CCN VPN 形的通道 可以不传VPCID
                     bool NegotiationTypeHasBeenSet() const;
 
                     /**
-                     * 获取DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
-                     * @return DpdEnable DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
+                     * 获取<p>DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）</p>
+                     * @return DpdEnable <p>DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）</p>
                      * 
                      */
                     int64_t GetDpdEnable() const;
 
                     /**
-                     * 设置DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
-                     * @param _dpdEnable DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
+                     * 设置<p>DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）</p>
+                     * @param _dpdEnable <p>DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）</p>
                      * 
                      */
                     void SetDpdEnable(const int64_t& _dpdEnable);
@@ -369,15 +365,15 @@ CCN VPN 形的通道 可以不传VPCID
                     bool DpdEnableHasBeenSet() const;
 
                     /**
-                     * 获取DPD超时时间。即探测确认对端不存在需要的时间。dpdEnable为1（开启）时有效。默认30，单位为秒
-                     * @return DpdTimeout DPD超时时间。即探测确认对端不存在需要的时间。dpdEnable为1（开启）时有效。默认30，单位为秒
+                     * 获取<p>DPD超时时间。即探测确认对端不存在需要的时间。dpdEnable为1（开启）时有效。默认30，单位为秒</p>
+                     * @return DpdTimeout <p>DPD超时时间。即探测确认对端不存在需要的时间。dpdEnable为1（开启）时有效。默认30，单位为秒</p>
                      * 
                      */
                     std::string GetDpdTimeout() const;
 
                     /**
-                     * 设置DPD超时时间。即探测确认对端不存在需要的时间。dpdEnable为1（开启）时有效。默认30，单位为秒
-                     * @param _dpdTimeout DPD超时时间。即探测确认对端不存在需要的时间。dpdEnable为1（开启）时有效。默认30，单位为秒
+                     * 设置<p>DPD超时时间。即探测确认对端不存在需要的时间。dpdEnable为1（开启）时有效。默认30，单位为秒</p>
+                     * @param _dpdTimeout <p>DPD超时时间。即探测确认对端不存在需要的时间。dpdEnable为1（开启）时有效。默认30，单位为秒</p>
                      * 
                      */
                     void SetDpdTimeout(const std::string& _dpdTimeout);
@@ -390,15 +386,15 @@ CCN VPN 形的通道 可以不传VPCID
                     bool DpdTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
-                     * @return DpdAction DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
+                     * 获取<p>DPD超时后的动作。</p><p>入参限制：dpdEnable为1（开启）时有效。</p><p>枚举值：</p><ul><li>clear： 断开</li><li>restart： 重试</li></ul><p>默认值：restart</p>
+                     * @return DpdAction <p>DPD超时后的动作。</p><p>入参限制：dpdEnable为1（开启）时有效。</p><p>枚举值：</p><ul><li>clear： 断开</li><li>restart： 重试</li></ul><p>默认值：restart</p>
                      * 
                      */
                     std::string GetDpdAction() const;
 
                     /**
-                     * 设置DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
-                     * @param _dpdAction DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
+                     * 设置<p>DPD超时后的动作。</p><p>入参限制：dpdEnable为1（开启）时有效。</p><p>枚举值：</p><ul><li>clear： 断开</li><li>restart： 重试</li></ul><p>默认值：restart</p>
+                     * @param _dpdAction <p>DPD超时后的动作。</p><p>入参限制：dpdEnable为1（开启）时有效。</p><p>枚举值：</p><ul><li>clear： 断开</li><li>restart： 重试</li></ul><p>默认值：restart</p>
                      * 
                      */
                     void SetDpdAction(const std::string& _dpdAction);
@@ -411,36 +407,36 @@ CCN VPN 形的通道 可以不传VPCID
                     bool DpdActionHasBeenSet() const;
 
                     /**
-                     * 获取创建通道路由信息。
-                     * @return Route 创建通道路由信息。
-                     * 
+                     * 获取<p>创建通道路由信息。</p>
+                     * @return Route <p>创建通道路由信息。</p>
+                     * @deprecated
                      */
                     CreateVpnConnRoute GetRoute() const;
 
                     /**
-                     * 设置创建通道路由信息。
-                     * @param _route 创建通道路由信息。
-                     * 
+                     * 设置<p>创建通道路由信息。</p>
+                     * @param _route <p>创建通道路由信息。</p>
+                     * @deprecated
                      */
                     void SetRoute(const CreateVpnConnRoute& _route);
 
                     /**
                      * 判断参数 Route 是否已赋值
                      * @return Route 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool RouteHasBeenSet() const;
 
                     /**
-                     * 获取BGP配置。
-                     * @return BgpConfig BGP配置。
+                     * 获取<p>BGP配置。</p>
+                     * @return BgpConfig <p>BGP配置。</p>
                      * 
                      */
                     BgpConfig GetBgpConfig() const;
 
                     /**
-                     * 设置BGP配置。
-                     * @param _bgpConfig BGP配置。
+                     * 设置<p>BGP配置。</p>
+                     * @param _bgpConfig <p>BGP配置。</p>
                      * 
                      */
                     void SetBgpConfig(const BgpConfig& _bgpConfig);
@@ -453,15 +449,15 @@ CCN VPN 形的通道 可以不传VPCID
                     bool BgpConfigHasBeenSet() const;
 
                     /**
-                     * 获取健康检查NQA配置。
-                     * @return HealthCheckConfig 健康检查NQA配置。
+                     * 获取<p>健康检查NQA配置。</p>
+                     * @return HealthCheckConfig <p>健康检查NQA配置。</p>
                      * 
                      */
                     HealthCheckConfig GetHealthCheckConfig() const;
 
                     /**
-                     * 设置健康检查NQA配置。
-                     * @param _healthCheckConfig 健康检查NQA配置。
+                     * 设置<p>健康检查NQA配置。</p>
+                     * @param _healthCheckConfig <p>健康检查NQA配置。</p>
                      * 
                      */
                     void SetHealthCheckConfig(const HealthCheckConfig& _healthCheckConfig);
@@ -476,122 +472,121 @@ CCN VPN 形的通道 可以不传VPCID
                 private:
 
                     /**
-                     * VPN网关实例ID。
+                     * <p>VPN网关实例ID。</p>
                      */
                     std::string m_vpnGatewayId;
                     bool m_vpnGatewayIdHasBeenSet;
 
                     /**
-                     * 对端网关ID。例如：cgw-2wqq41m9，可通过[DescribeCustomerGateways](https://cloud.tencent.com/document/product/215/17516)接口查询对端网关。
+                     * <p>对端网关ID。例如：cgw-2wqq41m9，可通过<a href="https://cloud.tencent.com/document/product/215/17516">DescribeCustomerGateways</a>接口查询对端网关。</p>
                      */
                     std::string m_customerGatewayId;
                     bool m_customerGatewayIdHasBeenSet;
 
                     /**
-                     * 通道名称，可任意命名，但不得超过60个字符。
+                     * <p>通道名称，可任意命名，但不得超过60个字符。</p>
                      */
                     std::string m_vpnConnectionName;
                     bool m_vpnConnectionNameHasBeenSet;
 
                     /**
-                     * 预共享密钥。
+                     * <p>预共享密钥。</p>
                      */
                     std::string m_preShareKey;
                     bool m_preShareKeyHasBeenSet;
 
                     /**
-                     * VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
-CCN VPN 形的通道 可以不传VPCID
+                     * <p>VPC实例ID。VPC类型网关可通过<a href="https://cloud.tencent.com/document/product/215/15778">DescribeVpcs</a>接口返回值中的VpcId获取，CCN类型网关传空值即可。</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * SPD策略组，例如：{"10.0.0.5/24":["172.123.10.5/16"]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。
+                     * <p>SPD策略组，例如：{&quot;10.0.0.5/24&quot;:[&quot;172.123.10.5/16&quot;]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。</p>
                      */
                     std::vector<SecurityPolicyDatabase> m_securityPolicyDatabases;
                     bool m_securityPolicyDatabasesHasBeenSet;
 
                     /**
-                     * IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议
+                     * <p>IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议</p>
                      */
                     IKEOptionsSpecification m_iKEOptionsSpecification;
                     bool m_iKEOptionsSpecificationHasBeenSet;
 
                     /**
-                     * IPSec配置，腾讯云提供IPSec安全会话设置
+                     * <p>IPSec配置，腾讯云提供IPSec安全会话设置</p>
                      */
                     IPSECOptionsSpecification m_iPSECOptionsSpecification;
                     bool m_iPSECOptionsSpecificationHasBeenSet;
 
                     /**
-                     * 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * <p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 是否支持隧道内健康检查，默认为False。
+                     * <p>是否支持隧道内健康检查，默认为False。</p>
                      */
                     bool m_enableHealthCheck;
                     bool m_enableHealthCheckHasBeenSet;
 
                     /**
-                     * 健康检查本端地址，默认值为随机在169.254.128.0/17分配一个IP。
+                     * <p>健康检查本端地址，默认值为随机在169.254.128.0/17分配一个IP。</p>
                      */
                     std::string m_healthCheckLocalIp;
                     bool m_healthCheckLocalIpHasBeenSet;
 
                     /**
-                     * 健康检查对端地址，默认值为随机在169.254.128.0/17分配一个IP。
+                     * <p>健康检查对端地址，默认值为随机在169.254.128.0/17分配一个IP。</p>
                      */
                     std::string m_healthCheckRemoteIp;
                     bool m_healthCheckRemoteIpHasBeenSet;
 
                     /**
-                     * 通道类型, 例如:["STATIC", "StaticRoute", "Policy"]
+                     * <p>通道类型, 例如:[&quot;STATIC&quot;, &quot;StaticRoute&quot;, &quot;Policy&quot;, &quot;Bgp&quot;]</p><p>枚举值：</p><ul><li>StaticRoute： 目的路由类型</li><li>Policy： SPD策略类型</li><li>Bgp： BGP类型</li></ul><p>默认值：STATIC</p>
                      */
                     std::string m_routeType;
                     bool m_routeTypeHasBeenSet;
 
                     /**
-                     * 协商类型，默认为active（主动协商）。可选值：active（主动协商），passive（被动协商），flowTrigger（流量协商）
+                     * <p>协商类型，默认为active（主动协商）。可选值：active（主动协商），passive（被动协商），flowTrigger（流量协商）</p>
                      */
                     std::string m_negotiationType;
                     bool m_negotiationTypeHasBeenSet;
 
                     /**
-                     * DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
+                     * <p>DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）</p>
                      */
                     int64_t m_dpdEnable;
                     bool m_dpdEnableHasBeenSet;
 
                     /**
-                     * DPD超时时间。即探测确认对端不存在需要的时间。dpdEnable为1（开启）时有效。默认30，单位为秒
+                     * <p>DPD超时时间。即探测确认对端不存在需要的时间。dpdEnable为1（开启）时有效。默认30，单位为秒</p>
                      */
                     std::string m_dpdTimeout;
                     bool m_dpdTimeoutHasBeenSet;
 
                     /**
-                     * DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
+                     * <p>DPD超时后的动作。</p><p>入参限制：dpdEnable为1（开启）时有效。</p><p>枚举值：</p><ul><li>clear： 断开</li><li>restart： 重试</li></ul><p>默认值：restart</p>
                      */
                     std::string m_dpdAction;
                     bool m_dpdActionHasBeenSet;
 
                     /**
-                     * 创建通道路由信息。
+                     * <p>创建通道路由信息。</p>
                      */
                     CreateVpnConnRoute m_route;
                     bool m_routeHasBeenSet;
 
                     /**
-                     * BGP配置。
+                     * <p>BGP配置。</p>
                      */
                     BgpConfig m_bgpConfig;
                     bool m_bgpConfigHasBeenSet;
 
                     /**
-                     * 健康检查NQA配置。
+                     * <p>健康检查NQA配置。</p>
                      */
                     HealthCheckConfig m_healthCheckConfig;
                     bool m_healthCheckConfigHasBeenSet;

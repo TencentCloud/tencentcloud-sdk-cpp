@@ -101,8 +101,8 @@ namespace TencentCloud
                     bool ResultFile3DsHasBeenSet() const;
 
                     /**
-                     * 获取<p>是否分步骤进行组件生成；<br>开启后，输入原始模型后，可生成带分割信息的模型以及分割数据，可对此信息编辑后再传入带有分割信息的模型和分割数据进行编辑后的组件生成；<br>此参数默认关闭。</p>
-                     * @return PartSegmentationInfo <p>是否分步骤进行组件生成；<br>开启后，输入原始模型后，可生成带分割信息的模型以及分割数据，可对此信息编辑后再传入带有分割信息的模型和分割数据进行编辑后的组件生成；<br>此参数默认关闭。</p>
+                     * 获取<p>是否分步骤进行组件生成；<br>开启后，输入原始模型后，可生成带分割信息的模型以及分割数据，可对此信息编辑后再传入带有分割信息的模型和分割数据进行编辑后的组件生成；<br>此参数默认关闭。</p><p>该参数废弃， 超过 9MB 不返回， 请使用 PartSegmentationInfoUrl 下载</p>
+                     * @return PartSegmentationInfo <p>是否分步骤进行组件生成；<br>开启后，输入原始模型后，可生成带分割信息的模型以及分割数据，可对此信息编辑后再传入带有分割信息的模型和分割数据进行编辑后的组件生成；<br>此参数默认关闭。</p><p>该参数废弃， 超过 9MB 不返回， 请使用 PartSegmentationInfoUrl 下载</p>
                      * 
                      */
                     std::string GetPartSegmentationInfo() const;
@@ -113,6 +113,20 @@ namespace TencentCloud
                      * 
                      */
                     bool PartSegmentationInfoHasBeenSet() const;
+
+                    /**
+                     * 获取<p>PartSegmentationInfo 下载地址</p>
+                     * @return PartSegmentationInfoUrl <p>PartSegmentationInfo 下载地址</p>
+                     * 
+                     */
+                    std::string GetPartSegmentationInfoUrl() const;
+
+                    /**
+                     * 判断参数 PartSegmentationInfoUrl 是否已赋值
+                     * @return PartSegmentationInfoUrl 是否已赋值
+                     * 
+                     */
+                    bool PartSegmentationInfoUrlHasBeenSet() const;
 
                 private:
 
@@ -141,10 +155,16 @@ namespace TencentCloud
                     bool m_resultFile3DsHasBeenSet;
 
                     /**
-                     * <p>是否分步骤进行组件生成；<br>开启后，输入原始模型后，可生成带分割信息的模型以及分割数据，可对此信息编辑后再传入带有分割信息的模型和分割数据进行编辑后的组件生成；<br>此参数默认关闭。</p>
+                     * <p>是否分步骤进行组件生成；<br>开启后，输入原始模型后，可生成带分割信息的模型以及分割数据，可对此信息编辑后再传入带有分割信息的模型和分割数据进行编辑后的组件生成；<br>此参数默认关闭。</p><p>该参数废弃， 超过 9MB 不返回， 请使用 PartSegmentationInfoUrl 下载</p>
                      */
                     std::string m_partSegmentationInfo;
                     bool m_partSegmentationInfoHasBeenSet;
+
+                    /**
+                     * <p>PartSegmentationInfo 下载地址</p>
+                     */
+                    std::string m_partSegmentationInfoUrl;
+                    bool m_partSegmentationInfoUrlHasBeenSet;
 
                 };
             }

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/chc/v20230418/model/SLAInfo.h>
 
 
 namespace TencentCloud
@@ -47,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工单号
-                     * @return WorkOrderId 工单号
+                     * 获取<p>工单号</p>
+                     * @return WorkOrderId <p>工单号</p>
                      * 
                      */
                     std::string GetWorkOrderId() const;
 
                     /**
-                     * 设置工单号
-                     * @param _workOrderId 工单号
+                     * 设置<p>工单号</p>
+                     * @param _workOrderId <p>工单号</p>
                      * 
                      */
                     void SetWorkOrderId(const std::string& _workOrderId);
@@ -68,15 +69,15 @@ namespace TencentCloud
                     bool WorkOrderIdHasBeenSet() const;
 
                     /**
-                     * 获取服务类型，一个服务可能会产生多个工单
-                     * @return ServiceType 服务类型，一个服务可能会产生多个工单
+                     * 获取<p>服务类型，一个服务可能会产生多个工单</p>
+                     * @return ServiceType <p>服务类型，一个服务可能会产生多个工单</p>
                      * 
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置服务类型，一个服务可能会产生多个工单
-                     * @param _serviceType 服务类型，一个服务可能会产生多个工单
+                     * 设置<p>服务类型，一个服务可能会产生多个工单</p>
+                     * @param _serviceType <p>服务类型，一个服务可能会产生多个工单</p>
                      * 
                      */
                     void SetServiceType(const std::string& _serviceType);
@@ -89,15 +90,15 @@ namespace TencentCloud
                     bool ServiceTypeHasBeenSet() const;
 
                     /**
-                     * 获取工单类型
-                     * @return OrderType 工单类型
+                     * 获取<p>工单类型</p>
+                     * @return OrderType <p>工单类型</p>
                      * 
                      */
                     std::string GetOrderType() const;
 
                     /**
-                     * 设置工单类型
-                     * @param _orderType 工单类型
+                     * 设置<p>工单类型</p>
+                     * @param _orderType <p>工单类型</p>
                      * 
                      */
                     void SetOrderType(const std::string& _orderType);
@@ -110,15 +111,15 @@ namespace TencentCloud
                     bool OrderTypeHasBeenSet() const;
 
                     /**
-                     * 获取工单状态
-                     * @return OrderStatus 工单状态
+                     * 获取<p>工单状态</p>
+                     * @return OrderStatus <p>工单状态</p>
                      * 
                      */
                     std::string GetOrderStatus() const;
 
                     /**
-                     * 设置工单状态
-                     * @param _orderStatus 工单状态
+                     * 设置<p>工单状态</p>
+                     * @param _orderStatus <p>工单状态</p>
                      * 
                      */
                     void SetOrderStatus(const std::string& _orderStatus);
@@ -131,15 +132,15 @@ namespace TencentCloud
                     bool OrderStatusHasBeenSet() const;
 
                     /**
-                     * 获取工单创建人
-                     * @return Creator 工单创建人
+                     * 获取<p>工单创建人</p>
+                     * @return Creator <p>工单创建人</p>
                      * 
                      */
                     std::string GetCreator() const;
 
                     /**
-                     * 设置工单创建人
-                     * @param _creator 工单创建人
+                     * 设置<p>工单创建人</p>
+                     * @param _creator <p>工单创建人</p>
                      * 
                      */
                     void SetCreator(const std::string& _creator);
@@ -152,15 +153,15 @@ namespace TencentCloud
                     bool CreatorHasBeenSet() const;
 
                     /**
-                     * 获取工单创建时间
-                     * @return CreateTime 工单创建时间
+                     * 获取<p>工单创建时间</p>
+                     * @return CreateTime <p>工单创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置工单创建时间
-                     * @param _createTime 工单创建时间
+                     * 设置<p>工单创建时间</p>
+                     * @param _createTime <p>工单创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -173,15 +174,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取工单完成时间
-                     * @return FinishTime 工单完成时间
+                     * 获取<p>工单完成时间</p>
+                     * @return FinishTime <p>工单完成时间</p>
                      * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
-                     * 设置工单完成时间
-                     * @param _finishTime 工单完成时间
+                     * 设置<p>工单完成时间</p>
+                     * @param _finishTime <p>工单完成时间</p>
                      * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
@@ -194,15 +195,15 @@ namespace TencentCloud
                     bool FinishTimeHasBeenSet() const;
 
                     /**
-                     * 获取工单关联的dcops单号
-                     * @return TicketId 工单关联的dcops单号
+                     * 获取<p>工单关联的dcops单号</p>
+                     * @return TicketId <p>工单关联的dcops单号</p>
                      * 
                      */
                     std::string GetTicketId() const;
 
                     /**
-                     * 设置工单关联的dcops单号
-                     * @param _ticketId 工单关联的dcops单号
+                     * 设置<p>工单关联的dcops单号</p>
+                     * @param _ticketId <p>工单关联的dcops单号</p>
                      * 
                      */
                     void SetTicketId(const std::string& _ticketId);
@@ -214,55 +215,82 @@ namespace TencentCloud
                      */
                     bool TicketIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>SLA</p>
+                     * @return SLAInfo <p>SLA</p>
+                     * 
+                     */
+                    SLAInfo GetSLAInfo() const;
+
+                    /**
+                     * 设置<p>SLA</p>
+                     * @param _sLAInfo <p>SLA</p>
+                     * 
+                     */
+                    void SetSLAInfo(const SLAInfo& _sLAInfo);
+
+                    /**
+                     * 判断参数 SLAInfo 是否已赋值
+                     * @return SLAInfo 是否已赋值
+                     * 
+                     */
+                    bool SLAInfoHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 工单号
+                     * <p>工单号</p>
                      */
                     std::string m_workOrderId;
                     bool m_workOrderIdHasBeenSet;
 
                     /**
-                     * 服务类型，一个服务可能会产生多个工单
+                     * <p>服务类型，一个服务可能会产生多个工单</p>
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
 
                     /**
-                     * 工单类型
+                     * <p>工单类型</p>
                      */
                     std::string m_orderType;
                     bool m_orderTypeHasBeenSet;
 
                     /**
-                     * 工单状态
+                     * <p>工单状态</p>
                      */
                     std::string m_orderStatus;
                     bool m_orderStatusHasBeenSet;
 
                     /**
-                     * 工单创建人
+                     * <p>工单创建人</p>
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
 
                     /**
-                     * 工单创建时间
+                     * <p>工单创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 工单完成时间
+                     * <p>工单完成时间</p>
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;
 
                     /**
-                     * 工单关联的dcops单号
+                     * <p>工单关联的dcops单号</p>
                      */
                     std::string m_ticketId;
                     bool m_ticketIdHasBeenSet;
+
+                    /**
+                     * <p>SLA</p>
+                     */
+                    SLAInfo m_sLAInfo;
+                    bool m_sLAInfoHasBeenSet;
 
                 };
             }

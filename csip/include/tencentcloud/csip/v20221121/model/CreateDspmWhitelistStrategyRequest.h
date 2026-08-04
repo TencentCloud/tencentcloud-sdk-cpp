@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略类型
-                     * @return StrategyType 策略类型
+                     * 获取<p>策略类型</p>
+                     * @return StrategyType <p>策略类型</p>
                      * 
                      */
                     std::string GetStrategyType() const;
 
                     /**
-                     * 设置策略类型
-                     * @param _strategyType 策略类型
+                     * 设置<p>策略类型</p>
+                     * @param _strategyType <p>策略类型</p>
                      * 
                      */
                     void SetStrategyType(const std::string& _strategyType);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool StrategyTypeHasBeenSet() const;
 
                     /**
-                     * 获取集团账号的成员id
-                     * @return MemberId 集团账号的成员id
+                     * 获取<p>集团账号的成员id</p>
+                     * @return MemberId <p>集团账号的成员id</p>
                      * 
                      */
                     std::vector<std::string> GetMemberId() const;
 
                     /**
-                     * 设置集团账号的成员id
-                     * @param _memberId 集团账号的成员id
+                     * 设置<p>集团账号的成员id</p>
+                     * @param _memberId <p>集团账号的成员id</p>
                      * 
                      */
                     void SetMemberId(const std::vector<std::string>& _memberId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool MemberIdHasBeenSet() const;
 
                     /**
-                     * 获取白名单
-                     * @return Name 白名单
+                     * 获取<p>白名单</p>
+                     * @return Name <p>白名单</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置白名单
-                     * @param _name 白名单
+                     * 设置<p>白名单</p>
+                     * @param _name <p>白名单</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取规则
-                     * @return Rule 规则
+                     * 获取<p>规则</p>
+                     * @return Rule <p>规则</p>
                      * 
                      */
                     std::string GetRule() const;
 
                     /**
-                     * 设置规则
-                     * @param _rule 规则
+                     * 设置<p>规则</p>
+                     * @param _rule <p>规则</p>
                      * 
                      */
                     void SetRule(const std::string& _rule);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool RuleHasBeenSet() const;
 
                     /**
-                     * 获取资产id
-                     * @return AssetId 资产id
+                     * 获取<p>资产id</p>
+                     * @return AssetId <p>资产id</p>
                      * 
                      */
                     std::string GetAssetId() const;
 
                     /**
-                     * 设置资产id
-                     * @param _assetId 资产id
+                     * 设置<p>资产id</p>
+                     * @param _assetId <p>资产id</p>
                      * 
                      */
                     void SetAssetId(const std::string& _assetId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool AssetIdHasBeenSet() const;
 
                     /**
-                     * 获取账号
-                     * @return Account 账号
+                     * 获取<p>账号</p>
+                     * @return Account <p>账号</p>
                      * 
                      */
                     std::string GetAccount() const;
 
                     /**
-                     * 设置账号
-                     * @param _account 账号
+                     * 设置<p>账号</p>
+                     * @param _account <p>账号</p>
                      * 
                      */
                     void SetAccount(const std::string& _account);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool AccountHasBeenSet() const;
 
                     /**
-                     * 获取主机
-                     * @return Host 主机
+                     * 获取<p>主机</p>
+                     * @return Host <p>主机</p>
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置主机
-                     * @param _host 主机
+                     * 设置<p>主机</p>
+                     * @param _host <p>主机</p>
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool HostHasBeenSet() const;
 
                     /**
-                     * 获取风险id
-                     * @return RiskId 风险id
+                     * 获取<p>风险id</p>
+                     * @return RiskId <p>风险id</p>
                      * 
                      */
                     std::string GetRiskId() const;
 
                     /**
-                     * 设置风险id
-                     * @param _riskId 风险id
+                     * 设置<p>风险id</p>
+                     * @param _riskId <p>风险id</p>
                      * 
                      */
                     void SetRiskId(const std::string& _riskId);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool RiskIdHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Remark 备注
+                     * 获取<p>备注</p>
+                     * @return Remark <p>备注</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注
-                     * @param _remark 备注
+                     * 设置<p>备注</p>
+                     * @param _remark <p>备注</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -231,61 +231,88 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取<p>白名单的类型</p><p>枚举值：</p><ul><li>static_risk： 静态配置扫描的白名单规则</li><li>audit： 审计白名单规则</li><li>ueba： ueba相关的白名单规则</li></ul>
+                     * @return WhitelistType <p>白名单的类型</p><p>枚举值：</p><ul><li>static_risk： 静态配置扫描的白名单规则</li><li>audit： 审计白名单规则</li><li>ueba： ueba相关的白名单规则</li></ul>
+                     * 
+                     */
+                    std::string GetWhitelistType() const;
+
+                    /**
+                     * 设置<p>白名单的类型</p><p>枚举值：</p><ul><li>static_risk： 静态配置扫描的白名单规则</li><li>audit： 审计白名单规则</li><li>ueba： ueba相关的白名单规则</li></ul>
+                     * @param _whitelistType <p>白名单的类型</p><p>枚举值：</p><ul><li>static_risk： 静态配置扫描的白名单规则</li><li>audit： 审计白名单规则</li><li>ueba： ueba相关的白名单规则</li></ul>
+                     * 
+                     */
+                    void SetWhitelistType(const std::string& _whitelistType);
+
+                    /**
+                     * 判断参数 WhitelistType 是否已赋值
+                     * @return WhitelistType 是否已赋值
+                     * 
+                     */
+                    bool WhitelistTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 策略类型
+                     * <p>策略类型</p>
                      */
                     std::string m_strategyType;
                     bool m_strategyTypeHasBeenSet;
 
                     /**
-                     * 集团账号的成员id
+                     * <p>集团账号的成员id</p>
                      */
                     std::vector<std::string> m_memberId;
                     bool m_memberIdHasBeenSet;
 
                     /**
-                     * 白名单
+                     * <p>白名单</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 规则
+                     * <p>规则</p>
                      */
                     std::string m_rule;
                     bool m_ruleHasBeenSet;
 
                     /**
-                     * 资产id
+                     * <p>资产id</p>
                      */
                     std::string m_assetId;
                     bool m_assetIdHasBeenSet;
 
                     /**
-                     * 账号
+                     * <p>账号</p>
                      */
                     std::string m_account;
                     bool m_accountHasBeenSet;
 
                     /**
-                     * 主机
+                     * <p>主机</p>
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
 
                     /**
-                     * 风险id
+                     * <p>风险id</p>
                      */
                     std::string m_riskId;
                     bool m_riskIdHasBeenSet;
 
                     /**
-                     * 备注
+                     * <p>备注</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * <p>白名单的类型</p><p>枚举值：</p><ul><li>static_risk： 静态配置扫描的白名单规则</li><li>audit： 审计白名单规则</li><li>ueba： ueba相关的白名单规则</li></ul>
+                     */
+                    std::string m_whitelistType;
+                    bool m_whitelistTypeHasBeenSet;
 
                 };
             }

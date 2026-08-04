@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
-                     * @return Operator 执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * 获取<p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
+                     * @return Operator <p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
-                     * @param _operator 执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * 设置<p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
+                     * @param _operator <p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -72,15 +68,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
-                     * @return FlowGroupName 合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+                     * 获取<p>合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。</p>
+                     * @return FlowGroupName <p>合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。</p>
                      * 
                      */
                     std::string GetFlowGroupName() const;
 
                     /**
-                     * 设置合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
-                     * @param _flowGroupName 合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+                     * 设置<p>合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。</p>
+                     * @param _flowGroupName <p>合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。</p>
                      * 
                      */
                     void SetFlowGroupName(const std::string& _flowGroupName);
@@ -93,15 +89,15 @@ namespace TencentCloud
                     bool FlowGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取合同（流程）组的子合同信息，支持2-50个子合同
-                     * @return FlowGroupInfos 合同（流程）组的子合同信息，支持2-50个子合同
+                     * 获取<p>合同（流程）组的子合同信息，支持2-50个子合同</p>
+                     * @return FlowGroupInfos <p>合同（流程）组的子合同信息，支持2-50个子合同</p>
                      * 
                      */
                     std::vector<FlowGroupInfo> GetFlowGroupInfos() const;
 
                     /**
-                     * 设置合同（流程）组的子合同信息，支持2-50个子合同
-                     * @param _flowGroupInfos 合同（流程）组的子合同信息，支持2-50个子合同
+                     * 设置<p>合同（流程）组的子合同信息，支持2-50个子合同</p>
+                     * @param _flowGroupInfos <p>合同（流程）组的子合同信息，支持2-50个子合同</p>
                      * 
                      */
                     void SetFlowGroupInfos(const std::vector<FlowGroupInfo>& _flowGroupInfos);
@@ -114,15 +110,15 @@ namespace TencentCloud
                     bool FlowGroupInfosHasBeenSet() const;
 
                     /**
-                     * 获取资源类型，取值有： <ul><li> **1**：模板</li> <li> **2**：文件</li></ul>
-                     * @return ResourceType 资源类型，取值有： <ul><li> **1**：模板</li> <li> **2**：文件</li></ul>
+                     * 获取<p>资源类型，取值有： <ul><li> <strong>1</strong>：模板</li> <li> <strong>2</strong>：文件</li></ul></p>
+                     * @return ResourceType <p>资源类型，取值有： <ul><li> <strong>1</strong>：模板</li> <li> <strong>2</strong>：文件</li></ul></p>
                      * 
                      */
                     int64_t GetResourceType() const;
 
                     /**
-                     * 设置资源类型，取值有： <ul><li> **1**：模板</li> <li> **2**：文件</li></ul>
-                     * @param _resourceType 资源类型，取值有： <ul><li> **1**：模板</li> <li> **2**：文件</li></ul>
+                     * 设置<p>资源类型，取值有： <ul><li> <strong>1</strong>：模板</li> <li> <strong>2</strong>：文件</li></ul></p>
+                     * @param _resourceType <p>资源类型，取值有： <ul><li> <strong>1</strong>：模板</li> <li> <strong>2</strong>：文件</li></ul></p>
                      * 
                      */
                     void SetResourceType(const int64_t& _resourceType);
@@ -135,19 +131,15 @@ namespace TencentCloud
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
-                     * @return Agent 代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * 获取<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
+                     * @return Agent <p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
-                     * @param _agent 代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * 设置<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
+                     * @param _agent <p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -160,15 +152,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取合同组发起控制参数，当前仅支持FlowGroupNeedWorkflow，表示开启嵌入式合同组发起审批
-                     * @return FlowGroupOptions 合同组发起控制参数，当前仅支持FlowGroupNeedWorkflow，表示开启嵌入式合同组发起审批
+                     * 获取<p>合同组发起控制参数，例如FlowGroupNeedWorkflow，表示开启嵌入式合同组发起审批</p>
+                     * @return FlowGroupOptions <p>合同组发起控制参数，例如FlowGroupNeedWorkflow，表示开启嵌入式合同组发起审批</p>
                      * 
                      */
                     FlowGroupOptions GetFlowGroupOptions() const;
 
                     /**
-                     * 设置合同组发起控制参数，当前仅支持FlowGroupNeedWorkflow，表示开启嵌入式合同组发起审批
-                     * @param _flowGroupOptions 合同组发起控制参数，当前仅支持FlowGroupNeedWorkflow，表示开启嵌入式合同组发起审批
+                     * 设置<p>合同组发起控制参数，例如FlowGroupNeedWorkflow，表示开启嵌入式合同组发起审批</p>
+                     * @param _flowGroupOptions <p>合同组发起控制参数，例如FlowGroupNeedWorkflow，表示开启嵌入式合同组发起审批</p>
                      * 
                      */
                     void SetFlowGroupOptions(const FlowGroupOptions& _flowGroupOptions);
@@ -180,45 +172,97 @@ namespace TencentCloud
                      */
                     bool FlowGroupOptionsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>合同组类型，发起合同组后会应用到所有子合同</p>
+                     * @return FlowGroupType <p>合同组类型，发起合同组后会应用到所有子合同</p>
+                     * 
+                     */
+                    std::string GetFlowGroupType() const;
+
+                    /**
+                     * 设置<p>合同组类型，发起合同组后会应用到所有子合同</p>
+                     * @param _flowGroupType <p>合同组类型，发起合同组后会应用到所有子合同</p>
+                     * 
+                     */
+                    void SetFlowGroupType(const std::string& _flowGroupType);
+
+                    /**
+                     * 判断参数 FlowGroupType 是否已赋值
+                     * @return FlowGroupType 是否已赋值
+                     * 
+                     */
+                    bool FlowGroupTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>合同组过期时间，发起合同组后会应用到所有子合同</p>
+                     * @return FlowGroupDeadline <p>合同组过期时间，发起合同组后会应用到所有子合同</p>
+                     * 
+                     */
+                    int64_t GetFlowGroupDeadline() const;
+
+                    /**
+                     * 设置<p>合同组过期时间，发起合同组后会应用到所有子合同</p>
+                     * @param _flowGroupDeadline <p>合同组过期时间，发起合同组后会应用到所有子合同</p>
+                     * 
+                     */
+                    void SetFlowGroupDeadline(const int64_t& _flowGroupDeadline);
+
+                    /**
+                     * 判断参数 FlowGroupDeadline 是否已赋值
+                     * @return FlowGroupDeadline 是否已赋值
+                     * 
+                     */
+                    bool FlowGroupDeadlineHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * <p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+                     * <p>合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。</p>
                      */
                     std::string m_flowGroupName;
                     bool m_flowGroupNameHasBeenSet;
 
                     /**
-                     * 合同（流程）组的子合同信息，支持2-50个子合同
+                     * <p>合同（流程）组的子合同信息，支持2-50个子合同</p>
                      */
                     std::vector<FlowGroupInfo> m_flowGroupInfos;
                     bool m_flowGroupInfosHasBeenSet;
 
                     /**
-                     * 资源类型，取值有： <ul><li> **1**：模板</li> <li> **2**：文件</li></ul>
+                     * <p>资源类型，取值有： <ul><li> <strong>1</strong>：模板</li> <li> <strong>2</strong>：文件</li></ul></p>
                      */
                     int64_t m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * 代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * <p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 合同组发起控制参数，当前仅支持FlowGroupNeedWorkflow，表示开启嵌入式合同组发起审批
+                     * <p>合同组发起控制参数，例如FlowGroupNeedWorkflow，表示开启嵌入式合同组发起审批</p>
                      */
                     FlowGroupOptions m_flowGroupOptions;
                     bool m_flowGroupOptionsHasBeenSet;
+
+                    /**
+                     * <p>合同组类型，发起合同组后会应用到所有子合同</p>
+                     */
+                    std::string m_flowGroupType;
+                    bool m_flowGroupTypeHasBeenSet;
+
+                    /**
+                     * <p>合同组过期时间，发起合同组后会应用到所有子合同</p>
+                     */
+                    int64_t m_flowGroupDeadline;
+                    bool m_flowGroupDeadlineHasBeenSet;
 
                 };
             }

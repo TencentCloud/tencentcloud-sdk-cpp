@@ -24,6 +24,7 @@
 #include <tencentcloud/chc/v20230418/model/OrderStep.h>
 #include <tencentcloud/chc/v20230418/model/DeviceHistory.h>
 #include <tencentcloud/chc/v20230418/model/DeviceOrderBaseInfo.h>
+#include <tencentcloud/chc/v20230418/model/SLAInfo.h>
 
 
 namespace TencentCloud
@@ -47,8 +48,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工单ID
-                     * @return OrderId 工单ID
+                     * 获取<p>工单ID</p>
+                     * @return OrderId <p>工单ID</p>
                      * 
                      */
                     std::string GetOrderId() const;
@@ -61,8 +62,8 @@ namespace TencentCloud
                     bool OrderIdHasBeenSet() const;
 
                     /**
-                     * 获取服务类型
-                     * @return ServiceType 服务类型
+                     * 获取<p>服务类型</p>
+                     * @return ServiceType <p>服务类型</p>
                      * 
                      */
                     std::string GetServiceType() const;
@@ -75,8 +76,8 @@ namespace TencentCloud
                     bool ServiceTypeHasBeenSet() const;
 
                     /**
-                     * 获取工单类型
-                     * @return OrderType 工单类型
+                     * 获取<p>工单类型</p>
+                     * @return OrderType <p>工单类型</p>
                      * 
                      */
                     std::string GetOrderType() const;
@@ -89,8 +90,8 @@ namespace TencentCloud
                     bool OrderTypeHasBeenSet() const;
 
                     /**
-                     * 获取工单状态
-                     * @return OrderStatus 工单状态
+                     * 获取<p>工单状态</p>
+                     * @return OrderStatus <p>工单状态</p>
                      * 
                      */
                     std::string GetOrderStatus() const;
@@ -103,8 +104,8 @@ namespace TencentCloud
                     bool OrderStatusHasBeenSet() const;
 
                     /**
-                     * 获取工单流程状态
-                     * @return StepSet 工单流程状态
+                     * 获取<p>工单流程状态</p>
+                     * @return StepSet <p>工单流程状态</p>
                      * 
                      */
                     std::vector<OrderStep> GetStepSet() const;
@@ -117,8 +118,8 @@ namespace TencentCloud
                     bool StepSetHasBeenSet() const;
 
                     /**
-                     * 获取工单设备信息
-                     * @return DeviceSet 工单设备信息
+                     * 获取<p>工单设备信息</p>
+                     * @return DeviceSet <p>工单设备信息</p>
                      * 
                      */
                     std::vector<DeviceHistory> GetDeviceSet() const;
@@ -131,8 +132,8 @@ namespace TencentCloud
                     bool DeviceSetHasBeenSet() const;
 
                     /**
-                     * 获取工单的入参信息
-                     * @return BaseInfo 工单的入参信息
+                     * 获取<p>工单的入参信息</p>
+                     * @return BaseInfo <p>工单的入参信息</p>
                      * 
                      */
                     DeviceOrderBaseInfo GetBaseInfo() const;
@@ -145,8 +146,8 @@ namespace TencentCloud
                     bool BaseInfoHasBeenSet() const;
 
                     /**
-                     * 获取工单的拒绝原因，工单状态为reject的时候返回
-                     * @return RejectReason 工单的拒绝原因，工单状态为reject的时候返回
+                     * 获取<p>工单的拒绝原因，工单状态为reject的时候返回</p>
+                     * @return RejectReason <p>工单的拒绝原因，工单状态为reject的时候返回</p>
                      * 
                      */
                     std::string GetRejectReason() const;
@@ -158,55 +159,95 @@ namespace TencentCloud
                      */
                     bool RejectReasonHasBeenSet() const;
 
+                    /**
+                     * 获取<p>工单 SLA 信息</p>
+                     * @return SLAInfo <p>工单 SLA 信息</p>
+                     * 
+                     */
+                    SLAInfo GetSLAInfo() const;
+
+                    /**
+                     * 判断参数 SLAInfo 是否已赋值
+                     * @return SLAInfo 是否已赋值
+                     * 
+                     */
+                    bool SLAInfoHasBeenSet() const;
+
+                    /**
+                     * 获取<p>前序未完成的工单号</p>
+                     * @return PreOrderSet <p>前序未完成的工单号</p>
+                     * 
+                     */
+                    std::vector<std::string> GetPreOrderSet() const;
+
+                    /**
+                     * 判断参数 PreOrderSet 是否已赋值
+                     * @return PreOrderSet 是否已赋值
+                     * 
+                     */
+                    bool PreOrderSetHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 工单ID
+                     * <p>工单ID</p>
                      */
                     std::string m_orderId;
                     bool m_orderIdHasBeenSet;
 
                     /**
-                     * 服务类型
+                     * <p>服务类型</p>
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
 
                     /**
-                     * 工单类型
+                     * <p>工单类型</p>
                      */
                     std::string m_orderType;
                     bool m_orderTypeHasBeenSet;
 
                     /**
-                     * 工单状态
+                     * <p>工单状态</p>
                      */
                     std::string m_orderStatus;
                     bool m_orderStatusHasBeenSet;
 
                     /**
-                     * 工单流程状态
+                     * <p>工单流程状态</p>
                      */
                     std::vector<OrderStep> m_stepSet;
                     bool m_stepSetHasBeenSet;
 
                     /**
-                     * 工单设备信息
+                     * <p>工单设备信息</p>
                      */
                     std::vector<DeviceHistory> m_deviceSet;
                     bool m_deviceSetHasBeenSet;
 
                     /**
-                     * 工单的入参信息
+                     * <p>工单的入参信息</p>
                      */
                     DeviceOrderBaseInfo m_baseInfo;
                     bool m_baseInfoHasBeenSet;
 
                     /**
-                     * 工单的拒绝原因，工单状态为reject的时候返回
+                     * <p>工单的拒绝原因，工单状态为reject的时候返回</p>
                      */
                     std::string m_rejectReason;
                     bool m_rejectReasonHasBeenSet;
+
+                    /**
+                     * <p>工单 SLA 信息</p>
+                     */
+                    SLAInfo m_sLAInfo;
+                    bool m_sLAInfoHasBeenSet;
+
+                    /**
+                     * <p>前序未完成的工单号</p>
+                     */
+                    std::vector<std::string> m_preOrderSet;
+                    bool m_preOrderSetHasBeenSet;
 
                 };
             }

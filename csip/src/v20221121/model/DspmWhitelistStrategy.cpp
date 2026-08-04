@@ -35,7 +35,8 @@ DspmWhitelistStrategy::DspmWhitelistStrategy() :
     m_riskTypeHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_nickNameHasBeenSet(false),
-    m_uinHasBeenSet(false)
+    m_uinHasBeenSet(false),
+    m_whitelistTypeHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome DspmWhitelistStrategy::Deserialize(const rapidjson::Value &v
         m_uinHasBeenSet = true;
     }
 
+    if (value.HasMember("WhitelistType") && !value["WhitelistType"].IsNull())
+    {
+        if (!value["WhitelistType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspmWhitelistStrategy.WhitelistType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_whitelistType = string(value["WhitelistType"].GetString());
+        m_whitelistTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void DspmWhitelistStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Uin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_whitelistTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WhitelistType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_whitelistType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +581,21 @@ void DspmWhitelistStrategy::SetUin(const string& _uin)
 bool DspmWhitelistStrategy::UinHasBeenSet() const
 {
     return m_uinHasBeenSet;
+}
+
+string DspmWhitelistStrategy::GetWhitelistType() const
+{
+    return m_whitelistType;
+}
+
+void DspmWhitelistStrategy::SetWhitelistType(const string& _whitelistType)
+{
+    m_whitelistType = _whitelistType;
+    m_whitelistTypeHasBeenSet = true;
+}
+
+bool DspmWhitelistStrategy::WhitelistTypeHasBeenSet() const
+{
+    return m_whitelistTypeHasBeenSet;
 }
 

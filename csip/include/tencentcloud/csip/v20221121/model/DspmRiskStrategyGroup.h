@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略类型
-                     * @return StrategyType 策略类型
+                     * 获取<p>策略类型</p>
+                     * @return StrategyType <p>策略类型</p>
                      * 
                      */
                     std::string GetStrategyType() const;
 
                     /**
-                     * 设置策略类型
-                     * @param _strategyType 策略类型
+                     * 设置<p>策略类型</p>
+                     * @param _strategyType <p>策略类型</p>
                      * 
                      */
                     void SetStrategyType(const std::string& _strategyType);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool StrategyTypeHasBeenSet() const;
 
                     /**
-                     * 获取策略名
-                     * @return Name 策略名
+                     * 获取<p>策略名</p>
+                     * @return Name <p>策略名</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置策略名
-                     * @param _name 策略名
+                     * 设置<p>策略名</p>
+                     * @param _name <p>策略名</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取策略类型
-                     * @return StrategyCategory 策略类型
+                     * 获取<p>策略类型</p>
+                     * @return StrategyCategory <p>策略类型</p>
                      * 
                      */
                     std::string GetStrategyCategory() const;
 
                     /**
-                     * 设置策略类型
-                     * @param _strategyCategory 策略类型
+                     * 设置<p>策略类型</p>
+                     * @param _strategyCategory <p>策略类型</p>
                      * 
                      */
                     void SetStrategyCategory(const std::string& _strategyCategory);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool StrategyCategoryHasBeenSet() const;
 
                     /**
-                     * 获取是否启用。0-禁用 1-启用
-                     * @return IsEnabled 是否启用。0-禁用 1-启用
+                     * 获取<p>是否启用。0-禁用 1-启用</p>
+                     * @return IsEnabled <p>是否启用。0-禁用 1-启用</p>
                      * 
                      */
                     int64_t GetIsEnabled() const;
 
                     /**
-                     * 设置是否启用。0-禁用 1-启用
-                     * @param _isEnabled 是否启用。0-禁用 1-启用
+                     * 设置<p>是否启用。0-禁用 1-启用</p>
+                     * @param _isEnabled <p>是否启用。0-禁用 1-启用</p>
                      * 
                      */
                     void SetIsEnabled(const int64_t& _isEnabled);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool IsEnabledHasBeenSet() const;
 
                     /**
-                     * 获取命中次数
-                     * @return HitCount 命中次数
+                     * 获取<p>命中次数</p>
+                     * @return HitCount <p>命中次数</p>
                      * 
                      */
                     int64_t GetHitCount() const;
 
                     /**
-                     * 设置命中次数
-                     * @param _hitCount 命中次数
+                     * 设置<p>命中次数</p>
+                     * @param _hitCount <p>命中次数</p>
                      * 
                      */
                     void SetHitCount(const int64_t& _hitCount);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool HitCountHasBeenSet() const;
 
                     /**
-                     * 获取风险类型。risk-风险；alarm-告警。
-                     * @return RiskType 风险类型。risk-风险；alarm-告警。
+                     * 获取<p>风险类型。risk-风险；alarm-告警。</p>
+                     * @return RiskType <p>风险类型。risk-风险；alarm-告警。</p>
                      * 
                      */
                     std::string GetRiskType() const;
 
                     /**
-                     * 设置风险类型。risk-风险；alarm-告警。
-                     * @param _riskType 风险类型。risk-风险；alarm-告警。
+                     * 设置<p>风险类型。risk-风险；alarm-告警。</p>
+                     * @param _riskType <p>风险类型。risk-风险；alarm-告警。</p>
                      * 
                      */
                     void SetRiskType(const std::string& _riskType);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool RiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取策略列表
-                     * @return StrategyList 策略列表
+                     * 获取<p>策略列表</p>
+                     * @return StrategyList <p>策略列表</p>
                      * 
                      */
                     std::vector<DspmRiskStrategy> GetStrategyList() const;
 
                     /**
-                     * 设置策略列表
-                     * @param _strategyList 策略列表
+                     * 设置<p>策略列表</p>
+                     * @param _strategyList <p>策略列表</p>
                      * 
                      */
                     void SetStrategyList(const std::vector<DspmRiskStrategy>& _strategyList);
@@ -194,49 +194,81 @@ namespace TencentCloud
                      */
                     bool StrategyListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>规则来源</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleSource <p>规则来源</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRuleSource() const;
+
+                    /**
+                     * 设置<p>规则来源</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleSource <p>规则来源</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleSource(const std::string& _ruleSource);
+
+                    /**
+                     * 判断参数 RuleSource 是否已赋值
+                     * @return RuleSource 是否已赋值
+                     * 
+                     */
+                    bool RuleSourceHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 策略类型
+                     * <p>策略类型</p>
                      */
                     std::string m_strategyType;
                     bool m_strategyTypeHasBeenSet;
 
                     /**
-                     * 策略名
+                     * <p>策略名</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 策略类型
+                     * <p>策略类型</p>
                      */
                     std::string m_strategyCategory;
                     bool m_strategyCategoryHasBeenSet;
 
                     /**
-                     * 是否启用。0-禁用 1-启用
+                     * <p>是否启用。0-禁用 1-启用</p>
                      */
                     int64_t m_isEnabled;
                     bool m_isEnabledHasBeenSet;
 
                     /**
-                     * 命中次数
+                     * <p>命中次数</p>
                      */
                     int64_t m_hitCount;
                     bool m_hitCountHasBeenSet;
 
                     /**
-                     * 风险类型。risk-风险；alarm-告警。
+                     * <p>风险类型。risk-风险；alarm-告警。</p>
                      */
                     std::string m_riskType;
                     bool m_riskTypeHasBeenSet;
 
                     /**
-                     * 策略列表
+                     * <p>策略列表</p>
                      */
                     std::vector<DspmRiskStrategy> m_strategyList;
                     bool m_strategyListHasBeenSet;
+
+                    /**
+                     * <p>规则来源</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ruleSource;
+                    bool m_ruleSourceHasBeenSet;
 
                 };
             }

@@ -31,7 +31,8 @@ CreateDspmWhitelistStrategyRequest::CreateDspmWhitelistStrategyRequest() :
     m_accountHasBeenSet(false),
     m_hostHasBeenSet(false),
     m_riskIdHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_whitelistTypeHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,14 @@ string CreateDspmWhitelistStrategyRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_whitelistTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WhitelistType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_whitelistType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -269,6 +278,22 @@ void CreateDspmWhitelistStrategyRequest::SetRemark(const string& _remark)
 bool CreateDspmWhitelistStrategyRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string CreateDspmWhitelistStrategyRequest::GetWhitelistType() const
+{
+    return m_whitelistType;
+}
+
+void CreateDspmWhitelistStrategyRequest::SetWhitelistType(const string& _whitelistType)
+{
+    m_whitelistType = _whitelistType;
+    m_whitelistTypeHasBeenSet = true;
+}
+
+bool CreateDspmWhitelistStrategyRequest::WhitelistTypeHasBeenSet() const
+{
+    return m_whitelistTypeHasBeenSet;
 }
 
 

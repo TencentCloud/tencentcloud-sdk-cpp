@@ -1190,6 +1190,156 @@ DlcClient::CheckLockMetaDataOutcomeCallable DlcClient::CheckLockMetaDataCallable
     return prom->get_future();
 }
 
+DlcClient::CheckModifyPartitionOutcome DlcClient::CheckModifyPartition(const CheckModifyPartitionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckModifyPartition");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckModifyPartitionResponse rsp = CheckModifyPartitionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckModifyPartitionOutcome(rsp);
+        else
+            return CheckModifyPartitionOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckModifyPartitionOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CheckModifyPartitionAsync(const CheckModifyPartitionRequest& request, const CheckModifyPartitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CheckModifyPartitionRequest&;
+    using Resp = CheckModifyPartitionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CheckModifyPartition", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::CheckModifyPartitionOutcomeCallable DlcClient::CheckModifyPartitionCallable(const CheckModifyPartitionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CheckModifyPartitionOutcome>>();
+    CheckModifyPartitionAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const CheckModifyPartitionRequest&,
+        CheckModifyPartitionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::CheckQueueNameOutcome DlcClient::CheckQueueName(const CheckQueueNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckQueueName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckQueueNameResponse rsp = CheckQueueNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckQueueNameOutcome(rsp);
+        else
+            return CheckQueueNameOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckQueueNameOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CheckQueueNameAsync(const CheckQueueNameRequest& request, const CheckQueueNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CheckQueueNameRequest&;
+    using Resp = CheckQueueNameResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CheckQueueName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::CheckQueueNameOutcomeCallable DlcClient::CheckQueueNameCallable(const CheckQueueNameRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CheckQueueNameOutcome>>();
+    CheckQueueNameAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const CheckQueueNameRequest&,
+        CheckQueueNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::CheckResourceNameOutcome DlcClient::CheckResourceName(const CheckResourceNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckResourceName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckResourceNameResponse rsp = CheckResourceNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckResourceNameOutcome(rsp);
+        else
+            return CheckResourceNameOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckResourceNameOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CheckResourceNameAsync(const CheckResourceNameRequest& request, const CheckResourceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CheckResourceNameRequest&;
+    using Resp = CheckResourceNameResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CheckResourceName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::CheckResourceNameOutcomeCallable DlcClient::CheckResourceNameCallable(const CheckResourceNameRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CheckResourceNameOutcome>>();
+    CheckResourceNameAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const CheckResourceNameRequest&,
+        CheckResourceNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::CopyJobSpecOutcome DlcClient::CopyJobSpec(const CopyJobSpecRequest &request)
 {
     auto outcome = MakeRequest(request, "CopyJobSpec");
@@ -1740,6 +1890,56 @@ DlcClient::CreateImportTaskOutcomeCallable DlcClient::CreateImportTaskCallable(c
     return prom->get_future();
 }
 
+DlcClient::CreateInferenceModelOutcome DlcClient::CreateInferenceModel(const CreateInferenceModelRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInferenceModel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInferenceModelResponse rsp = CreateInferenceModelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInferenceModelOutcome(rsp);
+        else
+            return CreateInferenceModelOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInferenceModelOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateInferenceModelAsync(const CreateInferenceModelRequest& request, const CreateInferenceModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateInferenceModelRequest&;
+    using Resp = CreateInferenceModelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateInferenceModel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::CreateInferenceModelOutcomeCallable DlcClient::CreateInferenceModelCallable(const CreateInferenceModelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateInferenceModelOutcome>>();
+    CreateInferenceModelAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const CreateInferenceModelRequest&,
+        CreateInferenceModelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::CreateInternalTableOutcome DlcClient::CreateInternalTable(const CreateInternalTableRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateInternalTable");
@@ -2082,6 +2282,106 @@ DlcClient::CreateNotebookSessionStatementSupportBatchSQLOutcomeCallable DlcClien
         const DlcClient*,
         const CreateNotebookSessionStatementSupportBatchSQLRequest&,
         CreateNotebookSessionStatementSupportBatchSQLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::CreatePartitionOutcome DlcClient::CreatePartition(const CreatePartitionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePartition");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePartitionResponse rsp = CreatePartitionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePartitionOutcome(rsp);
+        else
+            return CreatePartitionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePartitionOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreatePartitionAsync(const CreatePartitionRequest& request, const CreatePartitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreatePartitionRequest&;
+    using Resp = CreatePartitionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreatePartition", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::CreatePartitionOutcomeCallable DlcClient::CreatePartitionCallable(const CreatePartitionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreatePartitionOutcome>>();
+    CreatePartitionAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const CreatePartitionRequest&,
+        CreatePartitionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::CreatePartitionQueueOutcome DlcClient::CreatePartitionQueue(const CreatePartitionQueueRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePartitionQueue");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePartitionQueueResponse rsp = CreatePartitionQueueResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePartitionQueueOutcome(rsp);
+        else
+            return CreatePartitionQueueOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePartitionQueueOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreatePartitionQueueAsync(const CreatePartitionQueueRequest& request, const CreatePartitionQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreatePartitionQueueRequest&;
+    using Resp = CreatePartitionQueueResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreatePartitionQueue", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::CreatePartitionQueueOutcomeCallable DlcClient::CreatePartitionQueueCallable(const CreatePartitionQueueRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreatePartitionQueueOutcome>>();
+    CreatePartitionQueueAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const CreatePartitionQueueRequest&,
+        CreatePartitionQueueOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3532,6 +3832,56 @@ DlcClient::DeleteNotebookSessionOutcomeCallable DlcClient::DeleteNotebookSession
         const DlcClient*,
         const DeleteNotebookSessionRequest&,
         DeleteNotebookSessionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DeletePartitionQueueOutcome DlcClient::DeletePartitionQueue(const DeletePartitionQueueRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePartitionQueue");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePartitionQueueResponse rsp = DeletePartitionQueueResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePartitionQueueOutcome(rsp);
+        else
+            return DeletePartitionQueueOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePartitionQueueOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DeletePartitionQueueAsync(const DeletePartitionQueueRequest& request, const DeletePartitionQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeletePartitionQueueRequest&;
+    using Resp = DeletePartitionQueueResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeletePartitionQueue", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DeletePartitionQueueOutcomeCallable DlcClient::DeletePartitionQueueCallable(const DeletePartitionQueueRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeletePartitionQueueOutcome>>();
+    DeletePartitionQueueAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DeletePartitionQueueRequest&,
+        DeletePartitionQueueOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -5290,6 +5640,106 @@ DlcClient::DescribeEngineUsageInfoOutcomeCallable DlcClient::DescribeEngineUsage
     return prom->get_future();
 }
 
+DlcClient::DescribeFlowDetailListOutcome DlcClient::DescribeFlowDetailList(const DescribeFlowDetailListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFlowDetailList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFlowDetailListResponse rsp = DescribeFlowDetailListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFlowDetailListOutcome(rsp);
+        else
+            return DescribeFlowDetailListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFlowDetailListOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeFlowDetailListAsync(const DescribeFlowDetailListRequest& request, const DescribeFlowDetailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeFlowDetailListRequest&;
+    using Resp = DescribeFlowDetailListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeFlowDetailList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeFlowDetailListOutcomeCallable DlcClient::DescribeFlowDetailListCallable(const DescribeFlowDetailListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeFlowDetailListOutcome>>();
+    DescribeFlowDetailListAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeFlowDetailListRequest&,
+        DescribeFlowDetailListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeFlowListOutcome DlcClient::DescribeFlowList(const DescribeFlowListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFlowList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFlowListResponse rsp = DescribeFlowListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFlowListOutcome(rsp);
+        else
+            return DescribeFlowListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFlowListOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeFlowListAsync(const DescribeFlowListRequest& request, const DescribeFlowListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeFlowListRequest&;
+    using Resp = DescribeFlowListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeFlowList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeFlowListOutcomeCallable DlcClient::DescribeFlowListCallable(const DescribeFlowListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeFlowListOutcome>>();
+    DescribeFlowListAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeFlowListRequest&,
+        DescribeFlowListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::DescribeForbiddenTableProOutcome DlcClient::DescribeForbiddenTablePro(const DescribeForbiddenTableProRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeForbiddenTablePro");
@@ -6090,6 +6540,156 @@ DlcClient::DescribeOtherCHDFSBindingListOutcomeCallable DlcClient::DescribeOther
     return prom->get_future();
 }
 
+DlcClient::DescribePartitionDetailOutcome DlcClient::DescribePartitionDetail(const DescribePartitionDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePartitionDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePartitionDetailResponse rsp = DescribePartitionDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePartitionDetailOutcome(rsp);
+        else
+            return DescribePartitionDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePartitionDetailOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribePartitionDetailAsync(const DescribePartitionDetailRequest& request, const DescribePartitionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePartitionDetailRequest&;
+    using Resp = DescribePartitionDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePartitionDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribePartitionDetailOutcomeCallable DlcClient::DescribePartitionDetailCallable(const DescribePartitionDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePartitionDetailOutcome>>();
+    DescribePartitionDetailAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribePartitionDetailRequest&,
+        DescribePartitionDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribePartitionQueuesOutcome DlcClient::DescribePartitionQueues(const DescribePartitionQueuesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePartitionQueues");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePartitionQueuesResponse rsp = DescribePartitionQueuesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePartitionQueuesOutcome(rsp);
+        else
+            return DescribePartitionQueuesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePartitionQueuesOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribePartitionQueuesAsync(const DescribePartitionQueuesRequest& request, const DescribePartitionQueuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePartitionQueuesRequest&;
+    using Resp = DescribePartitionQueuesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePartitionQueues", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribePartitionQueuesOutcomeCallable DlcClient::DescribePartitionQueuesCallable(const DescribePartitionQueuesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePartitionQueuesOutcome>>();
+    DescribePartitionQueuesAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribePartitionQueuesRequest&,
+        DescribePartitionQueuesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribePartitionsOutcome DlcClient::DescribePartitions(const DescribePartitionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePartitions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePartitionsResponse rsp = DescribePartitionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePartitionsOutcome(rsp);
+        else
+            return DescribePartitionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePartitionsOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribePartitionsAsync(const DescribePartitionsRequest& request, const DescribePartitionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePartitionsRequest&;
+    using Resp = DescribePartitionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePartitions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribePartitionsOutcomeCallable DlcClient::DescribePartitionsCallable(const DescribePartitionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePartitionsOutcome>>();
+    DescribePartitionsAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribePartitionsRequest&,
+        DescribePartitionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::DescribeResourceGroupUsageInfoOutcome DlcClient::DescribeResourceGroupUsageInfo(const DescribeResourceGroupUsageInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeResourceGroupUsageInfo");
@@ -6182,6 +6782,106 @@ DlcClient::DescribeResultDownloadOutcomeCallable DlcClient::DescribeResultDownlo
         const DlcClient*,
         const DescribeResultDownloadRequest&,
         DescribeResultDownloadOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeSaleRegionsOutcome DlcClient::DescribeSaleRegions(const DescribeSaleRegionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSaleRegions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSaleRegionsResponse rsp = DescribeSaleRegionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSaleRegionsOutcome(rsp);
+        else
+            return DescribeSaleRegionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSaleRegionsOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeSaleRegionsAsync(const DescribeSaleRegionsRequest& request, const DescribeSaleRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSaleRegionsRequest&;
+    using Resp = DescribeSaleRegionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSaleRegions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeSaleRegionsOutcomeCallable DlcClient::DescribeSaleRegionsCallable(const DescribeSaleRegionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSaleRegionsOutcome>>();
+    DescribeSaleRegionsAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeSaleRegionsRequest&,
+        DescribeSaleRegionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeSaleResourceInfoOutcome DlcClient::DescribeSaleResourceInfo(const DescribeSaleResourceInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSaleResourceInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSaleResourceInfoResponse rsp = DescribeSaleResourceInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSaleResourceInfoOutcome(rsp);
+        else
+            return DescribeSaleResourceInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSaleResourceInfoOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeSaleResourceInfoAsync(const DescribeSaleResourceInfoRequest& request, const DescribeSaleResourceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSaleResourceInfoRequest&;
+    using Resp = DescribeSaleResourceInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSaleResourceInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeSaleResourceInfoOutcomeCallable DlcClient::DescribeSaleResourceInfoCallable(const DescribeSaleResourceInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSaleResourceInfoOutcome>>();
+    DescribeSaleResourceInfoAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeSaleResourceInfoRequest&,
+        DescribeSaleResourceInfoOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -8590,6 +9290,56 @@ DlcClient::GetExampleDetailOutcomeCallable DlcClient::GetExampleDetailCallable(c
     return prom->get_future();
 }
 
+DlcClient::GetInferenceModelOutcome DlcClient::GetInferenceModel(const GetInferenceModelRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetInferenceModel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetInferenceModelResponse rsp = GetInferenceModelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetInferenceModelOutcome(rsp);
+        else
+            return GetInferenceModelOutcome(o.GetError());
+    }
+    else
+    {
+        return GetInferenceModelOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::GetInferenceModelAsync(const GetInferenceModelRequest& request, const GetInferenceModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetInferenceModelRequest&;
+    using Resp = GetInferenceModelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetInferenceModel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::GetInferenceModelOutcomeCallable DlcClient::GetInferenceModelCallable(const GetInferenceModelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetInferenceModelOutcome>>();
+    GetInferenceModelAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const GetInferenceModelRequest&,
+        GetInferenceModelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::GetJobSpecOutcome DlcClient::GetJobSpec(const GetJobSpecRequest &request)
 {
     auto outcome = MakeRequest(request, "GetJobSpec");
@@ -10140,6 +10890,56 @@ DlcClient::ListExamplesOutcomeCallable DlcClient::ListExamplesCallable(const Lis
     return prom->get_future();
 }
 
+DlcClient::ListInferenceModelsOutcome DlcClient::ListInferenceModels(const ListInferenceModelsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListInferenceModels");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListInferenceModelsResponse rsp = ListInferenceModelsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListInferenceModelsOutcome(rsp);
+        else
+            return ListInferenceModelsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListInferenceModelsOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ListInferenceModelsAsync(const ListInferenceModelsRequest& request, const ListInferenceModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListInferenceModelsRequest&;
+    using Resp = ListInferenceModelsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListInferenceModels", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ListInferenceModelsOutcomeCallable DlcClient::ListInferenceModelsCallable(const ListInferenceModelsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListInferenceModelsOutcome>>();
+    ListInferenceModelsAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ListInferenceModelsRequest&,
+        ListInferenceModelsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::ListJobSpecsOutcome DlcClient::ListJobSpecs(const ListJobSpecsRequest &request)
 {
     auto outcome = MakeRequest(request, "ListJobSpecs");
@@ -10882,6 +11682,106 @@ DlcClient::ModifyLabPriorityOutcomeCallable DlcClient::ModifyLabPriorityCallable
         const DlcClient*,
         const ModifyLabPriorityRequest&,
         ModifyLabPriorityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::ModifyPartitionDescriptionOutcome DlcClient::ModifyPartitionDescription(const ModifyPartitionDescriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPartitionDescription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPartitionDescriptionResponse rsp = ModifyPartitionDescriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPartitionDescriptionOutcome(rsp);
+        else
+            return ModifyPartitionDescriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPartitionDescriptionOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ModifyPartitionDescriptionAsync(const ModifyPartitionDescriptionRequest& request, const ModifyPartitionDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyPartitionDescriptionRequest&;
+    using Resp = ModifyPartitionDescriptionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyPartitionDescription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ModifyPartitionDescriptionOutcomeCallable DlcClient::ModifyPartitionDescriptionCallable(const ModifyPartitionDescriptionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyPartitionDescriptionOutcome>>();
+    ModifyPartitionDescriptionAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ModifyPartitionDescriptionRequest&,
+        ModifyPartitionDescriptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::ModifyPartitionQueueOutcome DlcClient::ModifyPartitionQueue(const ModifyPartitionQueueRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPartitionQueue");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPartitionQueueResponse rsp = ModifyPartitionQueueResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPartitionQueueOutcome(rsp);
+        else
+            return ModifyPartitionQueueOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPartitionQueueOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ModifyPartitionQueueAsync(const ModifyPartitionQueueRequest& request, const ModifyPartitionQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyPartitionQueueRequest&;
+    using Resp = ModifyPartitionQueueResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyPartitionQueue", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ModifyPartitionQueueOutcomeCallable DlcClient::ModifyPartitionQueueCallable(const ModifyPartitionQueueRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyPartitionQueueOutcome>>();
+    ModifyPartitionQueueAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ModifyPartitionQueueRequest&,
+        ModifyPartitionQueueOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -12532,6 +13432,56 @@ DlcClient::UpdateEngineResourceGroupNetworkConfigInfoOutcomeCallable DlcClient::
         const DlcClient*,
         const UpdateEngineResourceGroupNetworkConfigInfoRequest&,
         UpdateEngineResourceGroupNetworkConfigInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::UpdateInferenceModelOutcome DlcClient::UpdateInferenceModel(const UpdateInferenceModelRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateInferenceModel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateInferenceModelResponse rsp = UpdateInferenceModelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateInferenceModelOutcome(rsp);
+        else
+            return UpdateInferenceModelOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateInferenceModelOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::UpdateInferenceModelAsync(const UpdateInferenceModelRequest& request, const UpdateInferenceModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateInferenceModelRequest&;
+    using Resp = UpdateInferenceModelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateInferenceModel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::UpdateInferenceModelOutcomeCallable DlcClient::UpdateInferenceModelCallable(const UpdateInferenceModelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateInferenceModelOutcome>>();
+    UpdateInferenceModelAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const UpdateInferenceModelRequest&,
+        UpdateInferenceModelOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

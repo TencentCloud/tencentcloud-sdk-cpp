@@ -26,7 +26,10 @@ ChannelCreatePrepareFlowGroupRequest::ChannelCreatePrepareFlowGroupRequest() :
     m_baseFlowInfosHasBeenSet(false),
     m_flowGroupNameHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_agentHasBeenSet(false),
+    m_flowGroupOptionsHasBeenSet(false),
+    m_flowGroupTypeHasBeenSet(false),
+    m_flowGroupDeadlineHasBeenSet(false)
 {
 }
 
@@ -75,6 +78,31 @@ string ChannelCreatePrepareFlowGroupRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_flowGroupOptionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowGroupOptions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_flowGroupOptions.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_flowGroupTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowGroupType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowGroupType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowGroupDeadlineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowGroupDeadline";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_flowGroupDeadline, allocator);
     }
 
 
@@ -147,6 +175,54 @@ void ChannelCreatePrepareFlowGroupRequest::SetAgent(const Agent& _agent)
 bool ChannelCreatePrepareFlowGroupRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+FlowGroupOptions ChannelCreatePrepareFlowGroupRequest::GetFlowGroupOptions() const
+{
+    return m_flowGroupOptions;
+}
+
+void ChannelCreatePrepareFlowGroupRequest::SetFlowGroupOptions(const FlowGroupOptions& _flowGroupOptions)
+{
+    m_flowGroupOptions = _flowGroupOptions;
+    m_flowGroupOptionsHasBeenSet = true;
+}
+
+bool ChannelCreatePrepareFlowGroupRequest::FlowGroupOptionsHasBeenSet() const
+{
+    return m_flowGroupOptionsHasBeenSet;
+}
+
+string ChannelCreatePrepareFlowGroupRequest::GetFlowGroupType() const
+{
+    return m_flowGroupType;
+}
+
+void ChannelCreatePrepareFlowGroupRequest::SetFlowGroupType(const string& _flowGroupType)
+{
+    m_flowGroupType = _flowGroupType;
+    m_flowGroupTypeHasBeenSet = true;
+}
+
+bool ChannelCreatePrepareFlowGroupRequest::FlowGroupTypeHasBeenSet() const
+{
+    return m_flowGroupTypeHasBeenSet;
+}
+
+int64_t ChannelCreatePrepareFlowGroupRequest::GetFlowGroupDeadline() const
+{
+    return m_flowGroupDeadline;
+}
+
+void ChannelCreatePrepareFlowGroupRequest::SetFlowGroupDeadline(const int64_t& _flowGroupDeadline)
+{
+    m_flowGroupDeadline = _flowGroupDeadline;
+    m_flowGroupDeadlineHasBeenSet = true;
+}
+
+bool ChannelCreatePrepareFlowGroupRequest::FlowGroupDeadlineHasBeenSet() const
+{
+    return m_flowGroupDeadlineHasBeenSet;
 }
 
 

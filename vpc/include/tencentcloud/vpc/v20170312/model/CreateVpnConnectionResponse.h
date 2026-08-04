@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通道实例对象。
-                     * @return VpnConnection 通道实例对象。
+                     * 获取<p>通道实例对象。</p>
+                     * @return VpnConnection <p>通道实例对象。</p>
                      * 
                      */
                     VpnConnection GetVpnConnection() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 通道实例对象。
+                     * <p>通道实例对象。</p>
                      */
                     VpnConnection m_vpnConnection;
                     bool m_vpnConnectionHasBeenSet;

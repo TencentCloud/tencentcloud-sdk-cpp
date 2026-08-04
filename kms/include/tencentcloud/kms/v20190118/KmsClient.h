@@ -141,6 +141,8 @@
 #include <tencentcloud/kms/v20190118/model/PostQuantumCryptoVerifyResponse.h>
 #include <tencentcloud/kms/v20190118/model/ReEncryptRequest.h>
 #include <tencentcloud/kms/v20190118/model/ReEncryptResponse.h>
+#include <tencentcloud/kms/v20190118/model/RotateKeyRequest.h>
+#include <tencentcloud/kms/v20190118/model/RotateKeyResponse.h>
 #include <tencentcloud/kms/v20190118/model/ScheduleDataKeyDeletionRequest.h>
 #include <tencentcloud/kms/v20190118/model/ScheduleDataKeyDeletionResponse.h>
 #include <tencentcloud/kms/v20190118/model/ScheduleKeyDeletionRequest.h>
@@ -350,6 +352,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ReEncryptResponse> ReEncryptOutcome;
                 typedef std::future<ReEncryptOutcome> ReEncryptOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::ReEncryptRequest&, ReEncryptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReEncryptAsyncHandler;
+                typedef Outcome<Core::Error, Model::RotateKeyResponse> RotateKeyOutcome;
+                typedef std::future<RotateKeyOutcome> RotateKeyOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::RotateKeyRequest&, RotateKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RotateKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ScheduleDataKeyDeletionResponse> ScheduleDataKeyDeletionOutcome;
                 typedef std::future<ScheduleDataKeyDeletionOutcome> ScheduleDataKeyDeletionOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::ScheduleDataKeyDeletionRequest&, ScheduleDataKeyDeletionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScheduleDataKeyDeletionAsyncHandler;
@@ -911,6 +916,15 @@ namespace TencentCloud
                 ReEncryptOutcome ReEncrypt(const Model::ReEncryptRequest &request);
                 void ReEncryptAsync(const Model::ReEncryptRequest& request, const ReEncryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReEncryptOutcomeCallable ReEncryptCallable(const Model::ReEncryptRequest& request);
+
+                /**
+                 *对指定的CMK（用户主密钥）执行立即轮转操作。可以通过调用DescribeKey，返回上次轮转时间和下次轮转时间，判断是否轮转成功。
+                 * @param req RotateKeyRequest
+                 * @return RotateKeyOutcome
+                 */
+                RotateKeyOutcome RotateKey(const Model::RotateKeyRequest &request);
+                void RotateKeyAsync(const Model::RotateKeyRequest& request, const RotateKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RotateKeyOutcomeCallable RotateKeyCallable(const Model::RotateKeyRequest& request);
 
                 /**
                  *计划删除数据密钥

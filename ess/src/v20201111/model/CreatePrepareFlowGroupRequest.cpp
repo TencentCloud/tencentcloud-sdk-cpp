@@ -28,7 +28,9 @@ CreatePrepareFlowGroupRequest::CreatePrepareFlowGroupRequest() :
     m_flowGroupInfosHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_agentHasBeenSet(false),
-    m_flowGroupOptionsHasBeenSet(false)
+    m_flowGroupOptionsHasBeenSet(false),
+    m_flowGroupTypeHasBeenSet(false),
+    m_flowGroupDeadlineHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,22 @@ string CreatePrepareFlowGroupRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_flowGroupOptions.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_flowGroupTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowGroupType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowGroupType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowGroupDeadlineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowGroupDeadline";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_flowGroupDeadline, allocator);
     }
 
 
@@ -199,6 +217,38 @@ void CreatePrepareFlowGroupRequest::SetFlowGroupOptions(const FlowGroupOptions& 
 bool CreatePrepareFlowGroupRequest::FlowGroupOptionsHasBeenSet() const
 {
     return m_flowGroupOptionsHasBeenSet;
+}
+
+string CreatePrepareFlowGroupRequest::GetFlowGroupType() const
+{
+    return m_flowGroupType;
+}
+
+void CreatePrepareFlowGroupRequest::SetFlowGroupType(const string& _flowGroupType)
+{
+    m_flowGroupType = _flowGroupType;
+    m_flowGroupTypeHasBeenSet = true;
+}
+
+bool CreatePrepareFlowGroupRequest::FlowGroupTypeHasBeenSet() const
+{
+    return m_flowGroupTypeHasBeenSet;
+}
+
+int64_t CreatePrepareFlowGroupRequest::GetFlowGroupDeadline() const
+{
+    return m_flowGroupDeadline;
+}
+
+void CreatePrepareFlowGroupRequest::SetFlowGroupDeadline(const int64_t& _flowGroupDeadline)
+{
+    m_flowGroupDeadline = _flowGroupDeadline;
+    m_flowGroupDeadlineHasBeenSet = true;
+}
+
+bool CreatePrepareFlowGroupRequest::FlowGroupDeadlineHasBeenSet() const
+{
+    return m_flowGroupDeadlineHasBeenSet;
 }
 
 
