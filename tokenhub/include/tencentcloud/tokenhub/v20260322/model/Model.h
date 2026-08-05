@@ -241,15 +241,15 @@ namespace TencentCloud
                     bool ProviderHasBeenSet() const;
 
                     /**
-                     * 获取<p>模型状态。取值：online（上线）、offline（下线）。</p><p>枚举值：</p><ul><li>online ： 上线</li><li>pre-offline： 预下线</li></ul>
-                     * @return Status <p>模型状态。取值：online（上线）、offline（下线）。</p><p>枚举值：</p><ul><li>online ： 上线</li><li>pre-offline： 预下线</li></ul>
+                     * 获取<p>模型状态。取值：online（上线）、offline（下线）。</p><p>枚举值：</p><ul><li>online ： 上线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护中</li></ul>
+                     * @return Status <p>模型状态。取值：online（上线）、offline（下线）。</p><p>枚举值：</p><ul><li>online ： 上线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护中</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置<p>模型状态。取值：online（上线）、offline（下线）。</p><p>枚举值：</p><ul><li>online ： 上线</li><li>pre-offline： 预下线</li></ul>
-                     * @param _status <p>模型状态。取值：online（上线）、offline（下线）。</p><p>枚举值：</p><ul><li>online ： 上线</li><li>pre-offline： 预下线</li></ul>
+                     * 设置<p>模型状态。取值：online（上线）、offline（下线）。</p><p>枚举值：</p><ul><li>online ： 上线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护中</li></ul>
+                     * @param _status <p>模型状态。取值：online（上线）、offline（下线）。</p><p>枚举值：</p><ul><li>online ： 上线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护中</li></ul>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -429,6 +429,27 @@ namespace TencentCloud
                      */
                     bool OfflineAtHasBeenSet() const;
 
+                    /**
+                     * 获取<p>停止新购时间</p>
+                     * @return DiscontinuedAt <p>停止新购时间</p>
+                     * 
+                     */
+                    std::string GetDiscontinuedAt() const;
+
+                    /**
+                     * 设置<p>停止新购时间</p>
+                     * @param _discontinuedAt <p>停止新购时间</p>
+                     * 
+                     */
+                    void SetDiscontinuedAt(const std::string& _discontinuedAt);
+
+                    /**
+                     * 判断参数 DiscontinuedAt 是否已赋值
+                     * @return DiscontinuedAt 是否已赋值
+                     * 
+                     */
+                    bool DiscontinuedAtHasBeenSet() const;
+
                 private:
 
                     /**
@@ -486,7 +507,7 @@ namespace TencentCloud
                     bool m_providerHasBeenSet;
 
                     /**
-                     * <p>模型状态。取值：online（上线）、offline（下线）。</p><p>枚举值：</p><ul><li>online ： 上线</li><li>pre-offline： 预下线</li></ul>
+                     * <p>模型状态。取值：online（上线）、offline（下线）。</p><p>枚举值：</p><ul><li>online ： 上线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护中</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -538,6 +559,12 @@ namespace TencentCloud
                      */
                     std::string m_offlineAt;
                     bool m_offlineAtHasBeenSet;
+
+                    /**
+                     * <p>停止新购时间</p>
+                     */
+                    std::string m_discontinuedAt;
+                    bool m_discontinuedAtHasBeenSet;
 
                 };
             }

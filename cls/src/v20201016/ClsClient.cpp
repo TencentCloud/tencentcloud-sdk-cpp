@@ -3490,6 +3490,56 @@ ClsClient::DeleteKafkaRechargeOutcomeCallable ClsClient::DeleteKafkaRechargeCall
     return prom->get_future();
 }
 
+ClsClient::DeleteLogOutcome ClsClient::DeleteLog(const DeleteLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLogResponse rsp = DeleteLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLogOutcome(rsp);
+        else
+            return DeleteLogOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLogOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteLogAsync(const DeleteLogRequest& request, const DeleteLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteLogRequest&;
+    using Resp = DeleteLogResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DeleteLogOutcomeCallable ClsClient::DeleteLogCallable(const DeleteLogRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteLogOutcome>>();
+    DeleteLogAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DeleteLogRequest&,
+        DeleteLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClsClient::DeleteLogsetOutcome ClsClient::DeleteLogset(const DeleteLogsetRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteLogset");
@@ -8832,6 +8882,56 @@ ClsClient::ModifyKafkaRechargeOutcomeCallable ClsClient::ModifyKafkaRechargeCall
         const ClsClient*,
         const ModifyKafkaRechargeRequest&,
         ModifyKafkaRechargeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::ModifyLogOutcome ClsClient::ModifyLog(const ModifyLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLogResponse rsp = ModifyLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLogOutcome(rsp);
+        else
+            return ModifyLogOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLogOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyLogAsync(const ModifyLogRequest& request, const ModifyLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyLogRequest&;
+    using Resp = ModifyLogResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::ModifyLogOutcomeCallable ClsClient::ModifyLogCallable(const ModifyLogRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyLogOutcome>>();
+    ModifyLogAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const ModifyLogRequest&,
+        ModifyLogOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

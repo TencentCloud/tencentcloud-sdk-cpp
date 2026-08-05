@@ -38,7 +38,8 @@ Model::Model() :
     m_recommendWeightHasBeenSet(false),
     m_modelAccessInfoHasBeenSet(false),
     m_freeTrialInfoHasBeenSet(false),
-    m_offlineAtHasBeenSet(false)
+    m_offlineAtHasBeenSet(false),
+    m_discontinuedAtHasBeenSet(false)
 {
 }
 
@@ -268,6 +269,16 @@ CoreInternalOutcome Model::Deserialize(const rapidjson::Value &value)
         m_offlineAtHasBeenSet = true;
     }
 
+    if (value.HasMember("DiscontinuedAt") && !value["DiscontinuedAt"].IsNull())
+    {
+        if (!value["DiscontinuedAt"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Model.DiscontinuedAt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_discontinuedAt = string(value["DiscontinuedAt"].GetString());
+        m_discontinuedAtHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -433,6 +444,14 @@ void Model::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "OfflineAt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_offlineAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_discontinuedAtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiscontinuedAt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_discontinuedAt.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -724,5 +743,21 @@ void Model::SetOfflineAt(const string& _offlineAt)
 bool Model::OfflineAtHasBeenSet() const
 {
     return m_offlineAtHasBeenSet;
+}
+
+string Model::GetDiscontinuedAt() const
+{
+    return m_discontinuedAt;
+}
+
+void Model::SetDiscontinuedAt(const string& _discontinuedAt)
+{
+    m_discontinuedAt = _discontinuedAt;
+    m_discontinuedAtHasBeenSet = true;
+}
+
+bool Model::DiscontinuedAtHasBeenSet() const
+{
+    return m_discontinuedAtHasBeenSet;
 }
 

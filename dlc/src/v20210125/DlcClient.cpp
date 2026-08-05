@@ -1940,6 +1940,56 @@ DlcClient::CreateInferenceModelOutcomeCallable DlcClient::CreateInferenceModelCa
     return prom->get_future();
 }
 
+DlcClient::CreateInferenceServiceOutcome DlcClient::CreateInferenceService(const CreateInferenceServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInferenceService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInferenceServiceResponse rsp = CreateInferenceServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInferenceServiceOutcome(rsp);
+        else
+            return CreateInferenceServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInferenceServiceOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateInferenceServiceAsync(const CreateInferenceServiceRequest& request, const CreateInferenceServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateInferenceServiceRequest&;
+    using Resp = CreateInferenceServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateInferenceService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::CreateInferenceServiceOutcomeCallable DlcClient::CreateInferenceServiceCallable(const CreateInferenceServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateInferenceServiceOutcome>>();
+    CreateInferenceServiceAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const CreateInferenceServiceRequest&,
+        CreateInferenceServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::CreateInternalTableOutcome DlcClient::CreateInternalTable(const CreateInternalTableRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateInternalTable");
@@ -2132,6 +2182,56 @@ DlcClient::CreateMetaDatabaseOutcomeCallable DlcClient::CreateMetaDatabaseCallab
         const DlcClient*,
         const CreateMetaDatabaseRequest&,
         CreateMetaDatabaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::CreateModelVersionOutcome DlcClient::CreateModelVersion(const CreateModelVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateModelVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateModelVersionResponse rsp = CreateModelVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateModelVersionOutcome(rsp);
+        else
+            return CreateModelVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateModelVersionOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateModelVersionAsync(const CreateModelVersionRequest& request, const CreateModelVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateModelVersionRequest&;
+    using Resp = CreateModelVersionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateModelVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::CreateModelVersionOutcomeCallable DlcClient::CreateModelVersionCallable(const CreateModelVersionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateModelVersionOutcome>>();
+    CreateModelVersionAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const CreateModelVersionRequest&,
+        CreateModelVersionOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -9340,6 +9440,56 @@ DlcClient::GetInferenceModelOutcomeCallable DlcClient::GetInferenceModelCallable
     return prom->get_future();
 }
 
+DlcClient::GetInferenceServiceOutcome DlcClient::GetInferenceService(const GetInferenceServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetInferenceService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetInferenceServiceResponse rsp = GetInferenceServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetInferenceServiceOutcome(rsp);
+        else
+            return GetInferenceServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return GetInferenceServiceOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::GetInferenceServiceAsync(const GetInferenceServiceRequest& request, const GetInferenceServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetInferenceServiceRequest&;
+    using Resp = GetInferenceServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetInferenceService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::GetInferenceServiceOutcomeCallable DlcClient::GetInferenceServiceCallable(const GetInferenceServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetInferenceServiceOutcome>>();
+    GetInferenceServiceAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const GetInferenceServiceRequest&,
+        GetInferenceServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::GetJobSpecOutcome DlcClient::GetJobSpec(const GetJobSpecRequest &request)
 {
     auto outcome = MakeRequest(request, "GetJobSpec");
@@ -9732,6 +9882,156 @@ DlcClient::GetLabYamlOutcomeCallable DlcClient::GetLabYamlCallable(const GetLabY
         const DlcClient*,
         const GetLabYamlRequest&,
         GetLabYamlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::GetModelConfigOutcome DlcClient::GetModelConfig(const GetModelConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetModelConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetModelConfigResponse rsp = GetModelConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetModelConfigOutcome(rsp);
+        else
+            return GetModelConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return GetModelConfigOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::GetModelConfigAsync(const GetModelConfigRequest& request, const GetModelConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetModelConfigRequest&;
+    using Resp = GetModelConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetModelConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::GetModelConfigOutcomeCallable DlcClient::GetModelConfigCallable(const GetModelConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetModelConfigOutcome>>();
+    GetModelConfigAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const GetModelConfigRequest&,
+        GetModelConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::GetModelFilesOutcome DlcClient::GetModelFiles(const GetModelFilesRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetModelFiles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetModelFilesResponse rsp = GetModelFilesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetModelFilesOutcome(rsp);
+        else
+            return GetModelFilesOutcome(o.GetError());
+    }
+    else
+    {
+        return GetModelFilesOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::GetModelFilesAsync(const GetModelFilesRequest& request, const GetModelFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetModelFilesRequest&;
+    using Resp = GetModelFilesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetModelFiles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::GetModelFilesOutcomeCallable DlcClient::GetModelFilesCallable(const GetModelFilesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetModelFilesOutcome>>();
+    GetModelFilesAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const GetModelFilesRequest&,
+        GetModelFilesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::GetModelReadmeOutcome DlcClient::GetModelReadme(const GetModelReadmeRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetModelReadme");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetModelReadmeResponse rsp = GetModelReadmeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetModelReadmeOutcome(rsp);
+        else
+            return GetModelReadmeOutcome(o.GetError());
+    }
+    else
+    {
+        return GetModelReadmeOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::GetModelReadmeAsync(const GetModelReadmeRequest& request, const GetModelReadmeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetModelReadmeRequest&;
+    using Resp = GetModelReadmeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetModelReadme", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::GetModelReadmeOutcomeCallable DlcClient::GetModelReadmeCallable(const GetModelReadmeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetModelReadmeOutcome>>();
+    GetModelReadmeAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const GetModelReadmeRequest&,
+        GetModelReadmeOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -10890,6 +11190,56 @@ DlcClient::ListExamplesOutcomeCallable DlcClient::ListExamplesCallable(const Lis
     return prom->get_future();
 }
 
+DlcClient::ListInferenceEnginesOutcome DlcClient::ListInferenceEngines(const ListInferenceEnginesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListInferenceEngines");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListInferenceEnginesResponse rsp = ListInferenceEnginesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListInferenceEnginesOutcome(rsp);
+        else
+            return ListInferenceEnginesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListInferenceEnginesOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ListInferenceEnginesAsync(const ListInferenceEnginesRequest& request, const ListInferenceEnginesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListInferenceEnginesRequest&;
+    using Resp = ListInferenceEnginesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListInferenceEngines", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ListInferenceEnginesOutcomeCallable DlcClient::ListInferenceEnginesCallable(const ListInferenceEnginesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListInferenceEnginesOutcome>>();
+    ListInferenceEnginesAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ListInferenceEnginesRequest&,
+        ListInferenceEnginesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::ListInferenceModelsOutcome DlcClient::ListInferenceModels(const ListInferenceModelsRequest &request)
 {
     auto outcome = MakeRequest(request, "ListInferenceModels");
@@ -10932,6 +11282,56 @@ DlcClient::ListInferenceModelsOutcomeCallable DlcClient::ListInferenceModelsCall
         const DlcClient*,
         const ListInferenceModelsRequest&,
         ListInferenceModelsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::ListInferenceServicesOutcome DlcClient::ListInferenceServices(const ListInferenceServicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListInferenceServices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListInferenceServicesResponse rsp = ListInferenceServicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListInferenceServicesOutcome(rsp);
+        else
+            return ListInferenceServicesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListInferenceServicesOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ListInferenceServicesAsync(const ListInferenceServicesRequest& request, const ListInferenceServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListInferenceServicesRequest&;
+    using Resp = ListInferenceServicesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListInferenceServices", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ListInferenceServicesOutcomeCallable DlcClient::ListInferenceServicesCallable(const ListInferenceServicesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListInferenceServicesOutcome>>();
+    ListInferenceServicesAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ListInferenceServicesRequest&,
+        ListInferenceServicesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -11082,6 +11482,56 @@ DlcClient::ListLabsOutcomeCallable DlcClient::ListLabsCallable(const ListLabsReq
         const DlcClient*,
         const ListLabsRequest&,
         ListLabsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::ListModelVersionsOutcome DlcClient::ListModelVersions(const ListModelVersionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListModelVersions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListModelVersionsResponse rsp = ListModelVersionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListModelVersionsOutcome(rsp);
+        else
+            return ListModelVersionsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListModelVersionsOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ListModelVersionsAsync(const ListModelVersionsRequest& request, const ListModelVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListModelVersionsRequest&;
+    using Resp = ListModelVersionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListModelVersions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ListModelVersionsOutcomeCallable DlcClient::ListModelVersionsCallable(const ListModelVersionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListModelVersionsOutcome>>();
+    ListModelVersionsAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ListModelVersionsRequest&,
+        ListModelVersionsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -12140,6 +12590,106 @@ DlcClient::PauseStandardEngineResourceGroupsOutcomeCallable DlcClient::PauseStan
     return prom->get_future();
 }
 
+DlcClient::QueryDashboardOverviewOutcome DlcClient::QueryDashboardOverview(const QueryDashboardOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryDashboardOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryDashboardOverviewResponse rsp = QueryDashboardOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryDashboardOverviewOutcome(rsp);
+        else
+            return QueryDashboardOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryDashboardOverviewOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::QueryDashboardOverviewAsync(const QueryDashboardOverviewRequest& request, const QueryDashboardOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const QueryDashboardOverviewRequest&;
+    using Resp = QueryDashboardOverviewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "QueryDashboardOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::QueryDashboardOverviewOutcomeCallable DlcClient::QueryDashboardOverviewCallable(const QueryDashboardOverviewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<QueryDashboardOverviewOutcome>>();
+    QueryDashboardOverviewAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const QueryDashboardOverviewRequest&,
+        QueryDashboardOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::QueryDashboardServiceListOutcome DlcClient::QueryDashboardServiceList(const QueryDashboardServiceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryDashboardServiceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryDashboardServiceListResponse rsp = QueryDashboardServiceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryDashboardServiceListOutcome(rsp);
+        else
+            return QueryDashboardServiceListOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryDashboardServiceListOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::QueryDashboardServiceListAsync(const QueryDashboardServiceListRequest& request, const QueryDashboardServiceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const QueryDashboardServiceListRequest&;
+    using Resp = QueryDashboardServiceListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "QueryDashboardServiceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::QueryDashboardServiceListOutcomeCallable DlcClient::QueryDashboardServiceListCallable(const QueryDashboardServiceListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<QueryDashboardServiceListOutcome>>();
+    QueryDashboardServiceListAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const QueryDashboardServiceListRequest&,
+        QueryDashboardServiceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::QueryInternalTableWarehouseOutcome DlcClient::QueryInternalTableWarehouse(const QueryInternalTableWarehouseRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryInternalTableWarehouse");
@@ -12182,6 +12732,56 @@ DlcClient::QueryInternalTableWarehouseOutcomeCallable DlcClient::QueryInternalTa
         const DlcClient*,
         const QueryInternalTableWarehouseRequest&,
         QueryInternalTableWarehouseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::QueryMonitorOverviewOutcome DlcClient::QueryMonitorOverview(const QueryMonitorOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryMonitorOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryMonitorOverviewResponse rsp = QueryMonitorOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryMonitorOverviewOutcome(rsp);
+        else
+            return QueryMonitorOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryMonitorOverviewOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::QueryMonitorOverviewAsync(const QueryMonitorOverviewRequest& request, const QueryMonitorOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const QueryMonitorOverviewRequest&;
+    using Resp = QueryMonitorOverviewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "QueryMonitorOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::QueryMonitorOverviewOutcomeCallable DlcClient::QueryMonitorOverviewCallable(const QueryMonitorOverviewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<QueryMonitorOverviewOutcome>>();
+    QueryMonitorOverviewAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const QueryMonitorOverviewRequest&,
+        QueryMonitorOverviewOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -12490,6 +13090,56 @@ DlcClient::RestartDataEngineOutcomeCallable DlcClient::RestartDataEngineCallable
     return prom->get_future();
 }
 
+DlcClient::RestartInferenceServiceOutcome DlcClient::RestartInferenceService(const RestartInferenceServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "RestartInferenceService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RestartInferenceServiceResponse rsp = RestartInferenceServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RestartInferenceServiceOutcome(rsp);
+        else
+            return RestartInferenceServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return RestartInferenceServiceOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::RestartInferenceServiceAsync(const RestartInferenceServiceRequest& request, const RestartInferenceServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RestartInferenceServiceRequest&;
+    using Resp = RestartInferenceServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RestartInferenceService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::RestartInferenceServiceOutcomeCallable DlcClient::RestartInferenceServiceCallable(const RestartInferenceServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RestartInferenceServiceOutcome>>();
+    RestartInferenceServiceAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const RestartInferenceServiceRequest&,
+        RestartInferenceServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::RevokeDLCCatalogAccessOutcome DlcClient::RevokeDLCCatalogAccess(const RevokeDLCCatalogAccessRequest &request)
 {
     auto outcome = MakeRequest(request, "RevokeDLCCatalogAccess");
@@ -12782,6 +13432,56 @@ DlcClient::StartRayClusterOutcomeCallable DlcClient::StartRayClusterCallable(con
         const DlcClient*,
         const StartRayClusterRequest&,
         StartRayClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::StopInferenceServiceOutcome DlcClient::StopInferenceService(const StopInferenceServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopInferenceService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopInferenceServiceResponse rsp = StopInferenceServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopInferenceServiceOutcome(rsp);
+        else
+            return StopInferenceServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return StopInferenceServiceOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::StopInferenceServiceAsync(const StopInferenceServiceRequest& request, const StopInferenceServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const StopInferenceServiceRequest&;
+    using Resp = StopInferenceServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "StopInferenceService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::StopInferenceServiceOutcomeCallable DlcClient::StopInferenceServiceCallable(const StopInferenceServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<StopInferenceServiceOutcome>>();
+    StopInferenceServiceAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const StopInferenceServiceRequest&,
+        StopInferenceServiceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

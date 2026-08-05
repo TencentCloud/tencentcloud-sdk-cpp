@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>四层计费项</p>
-                     * @return BillingItem <p>四层计费项</p>
+                     * 获取<p>四层计费项</p><p>枚举值：</p><ul><li>sv_dlc_standard_cu_standard_cu： 标准型cpu，最小单位32</li><li>sv_dlc_high_memory_cu_high_memory_cu： 高内存型cpu，最小单位32</li><li>sv_dlc_gn7_gn75xlarge80： T4，最小单位1</li><li>sv_dlc_gn10xp_gn10xp2xlarge40： V100，最小单位1</li></ul><p>若您想要了解更多的计费规格和产品细节，欢迎联系我们。</p>
+                     * @return BillingItem <p>四层计费项</p><p>枚举值：</p><ul><li>sv_dlc_standard_cu_standard_cu： 标准型cpu，最小单位32</li><li>sv_dlc_high_memory_cu_high_memory_cu： 高内存型cpu，最小单位32</li><li>sv_dlc_gn7_gn75xlarge80： T4，最小单位1</li><li>sv_dlc_gn10xp_gn10xp2xlarge40： V100，最小单位1</li></ul><p>若您想要了解更多的计费规格和产品细节，欢迎联系我们。</p>
                      * 
                      */
                     std::string GetBillingItem() const;
 
                     /**
-                     * 设置<p>四层计费项</p>
-                     * @param _billingItem <p>四层计费项</p>
+                     * 设置<p>四层计费项</p><p>枚举值：</p><ul><li>sv_dlc_standard_cu_standard_cu： 标准型cpu，最小单位32</li><li>sv_dlc_high_memory_cu_high_memory_cu： 高内存型cpu，最小单位32</li><li>sv_dlc_gn7_gn75xlarge80： T4，最小单位1</li><li>sv_dlc_gn10xp_gn10xp2xlarge40： V100，最小单位1</li></ul><p>若您想要了解更多的计费规格和产品细节，欢迎联系我们。</p>
+                     * @param _billingItem <p>四层计费项</p><p>枚举值：</p><ul><li>sv_dlc_standard_cu_standard_cu： 标准型cpu，最小单位32</li><li>sv_dlc_high_memory_cu_high_memory_cu： 高内存型cpu，最小单位32</li><li>sv_dlc_gn7_gn75xlarge80： T4，最小单位1</li><li>sv_dlc_gn10xp_gn10xp2xlarge40： V100，最小单位1</li></ul><p>若您想要了解更多的计费规格和产品细节，欢迎联系我们。</p>
                      * 
                      */
                     void SetBillingItem(const std::string& _billingItem);
@@ -156,18 +156,18 @@ namespace TencentCloud
                     bool SpecHasBeenSet() const;
 
                     /**
-                     * 获取<p>GPU类型，仅GU有值</p>
+                     * 获取<p>GPU类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GpuType <p>GPU类型，仅GU有值</p>
+                     * @return GpuType <p>GPU类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGpuType() const;
 
                     /**
-                     * 设置<p>GPU类型，仅GU有值</p>
+                     * 设置<p>GPU类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _gpuType <p>GPU类型，仅GU有值</p>
+                     * @param _gpuType <p>GPU类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -217,7 +217,7 @@ namespace TencentCloud
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * <p>四层计费项</p>
+                     * <p>四层计费项</p><p>枚举值：</p><ul><li>sv_dlc_standard_cu_standard_cu： 标准型cpu，最小单位32</li><li>sv_dlc_high_memory_cu_high_memory_cu： 高内存型cpu，最小单位32</li><li>sv_dlc_gn7_gn75xlarge80： T4，最小单位1</li><li>sv_dlc_gn10xp_gn10xp2xlarge40： V100，最小单位1</li></ul><p>若您想要了解更多的计费规格和产品细节，欢迎联系我们。</p>
                      */
                     std::string m_billingItem;
                     bool m_billingItemHasBeenSet;
@@ -235,7 +235,7 @@ namespace TencentCloud
                     bool m_specHasBeenSet;
 
                     /**
-                     * <p>GPU类型，仅GU有值</p>
+                     * <p>GPU类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gpuType;

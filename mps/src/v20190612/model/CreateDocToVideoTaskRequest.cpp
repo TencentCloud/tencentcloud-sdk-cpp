@@ -24,7 +24,8 @@ using namespace std;
 
 CreateDocToVideoTaskRequest::CreateDocToVideoTaskRequest() :
     m_inputHasBeenSet(false),
-    m_cosInfoHasBeenSet(false)
+    m_cosInfoHasBeenSet(false),
+    m_resourceIdHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,14 @@ string CreateDocToVideoTaskRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cosInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -91,6 +100,22 @@ void CreateDocToVideoTaskRequest::SetCosInfo(const DocToVideoCosInfo& _cosInfo)
 bool CreateDocToVideoTaskRequest::CosInfoHasBeenSet() const
 {
     return m_cosInfoHasBeenSet;
+}
+
+string CreateDocToVideoTaskRequest::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void CreateDocToVideoTaskRequest::SetResourceId(const string& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool CreateDocToVideoTaskRequest::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
 }
 
 

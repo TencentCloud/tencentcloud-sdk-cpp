@@ -43,6 +43,8 @@ CreateAICallRequest::CreateAICallRequest() :
     m_endFunctionDescHasBeenSet(false),
     m_transferFunctionEnableHasBeenSet(false),
     m_transferItemsHasBeenSet(false),
+    m_transferToAgentEnableHasBeenSet(false),
+    m_transferToAgentItemsHasBeenSet(false),
     m_notifyDurationHasBeenSet(false),
     m_notifyMessageHasBeenSet(false),
     m_notifyMaxCountHasBeenSet(false),
@@ -62,7 +64,9 @@ CreateAICallRequest::CreateAICallRequest() :
     m_maxCallDurationMsHasBeenSet(false),
     m_maxRingTimeoutSecondHasBeenSet(false),
     m_ambientSoundTypeHasBeenSet(false),
-    m_ambientSoundVolumeHasBeenSet(false)
+    m_ambientSoundVolumeHasBeenSet(false),
+    m_acquireTimeoutSecondHasBeenSet(false),
+    m_customSTTConfigHasBeenSet(false)
 {
 }
 
@@ -250,6 +254,29 @@ string CreateAICallRequest::ToJsonString() const
         }
     }
 
+    if (m_transferToAgentEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransferToAgentEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_transferToAgentEnable, allocator);
+    }
+
+    if (m_transferToAgentItemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransferToAgentItems";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_transferToAgentItems.begin(); itr != m_transferToAgentItems.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_notifyDurationHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -430,6 +457,22 @@ string CreateAICallRequest::ToJsonString() const
         string key = "AmbientSoundVolume";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ambientSoundVolume, allocator);
+    }
+
+    if (m_acquireTimeoutSecondHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AcquireTimeoutSecond";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_acquireTimeoutSecond, allocator);
+    }
+
+    if (m_customSTTConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomSTTConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_customSTTConfig.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -760,6 +803,38 @@ bool CreateAICallRequest::TransferItemsHasBeenSet() const
     return m_transferItemsHasBeenSet;
 }
 
+bool CreateAICallRequest::GetTransferToAgentEnable() const
+{
+    return m_transferToAgentEnable;
+}
+
+void CreateAICallRequest::SetTransferToAgentEnable(const bool& _transferToAgentEnable)
+{
+    m_transferToAgentEnable = _transferToAgentEnable;
+    m_transferToAgentEnableHasBeenSet = true;
+}
+
+bool CreateAICallRequest::TransferToAgentEnableHasBeenSet() const
+{
+    return m_transferToAgentEnableHasBeenSet;
+}
+
+vector<TransferToAgentItem> CreateAICallRequest::GetTransferToAgentItems() const
+{
+    return m_transferToAgentItems;
+}
+
+void CreateAICallRequest::SetTransferToAgentItems(const vector<TransferToAgentItem>& _transferToAgentItems)
+{
+    m_transferToAgentItems = _transferToAgentItems;
+    m_transferToAgentItemsHasBeenSet = true;
+}
+
+bool CreateAICallRequest::TransferToAgentItemsHasBeenSet() const
+{
+    return m_transferToAgentItemsHasBeenSet;
+}
+
 int64_t CreateAICallRequest::GetNotifyDuration() const
 {
     return m_notifyDuration;
@@ -1078,6 +1153,38 @@ void CreateAICallRequest::SetAmbientSoundVolume(const double& _ambientSoundVolum
 bool CreateAICallRequest::AmbientSoundVolumeHasBeenSet() const
 {
     return m_ambientSoundVolumeHasBeenSet;
+}
+
+uint64_t CreateAICallRequest::GetAcquireTimeoutSecond() const
+{
+    return m_acquireTimeoutSecond;
+}
+
+void CreateAICallRequest::SetAcquireTimeoutSecond(const uint64_t& _acquireTimeoutSecond)
+{
+    m_acquireTimeoutSecond = _acquireTimeoutSecond;
+    m_acquireTimeoutSecondHasBeenSet = true;
+}
+
+bool CreateAICallRequest::AcquireTimeoutSecondHasBeenSet() const
+{
+    return m_acquireTimeoutSecondHasBeenSet;
+}
+
+string CreateAICallRequest::GetCustomSTTConfig() const
+{
+    return m_customSTTConfig;
+}
+
+void CreateAICallRequest::SetCustomSTTConfig(const string& _customSTTConfig)
+{
+    m_customSTTConfig = _customSTTConfig;
+    m_customSTTConfigHasBeenSet = true;
+}
+
+bool CreateAICallRequest::CustomSTTConfigHasBeenSet() const
+{
+    return m_customSTTConfigHasBeenSet;
 }
 
 

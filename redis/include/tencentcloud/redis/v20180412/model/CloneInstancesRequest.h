@@ -549,6 +549,27 @@ namespace TencentCloud
                      */
                     bool SSLBindPrivateIPv4HasBeenSet() const;
 
+                    /**
+                     * 获取<p>指实例类型</p><p>枚举值：</p><ul><li>local： 通用 I 型</li><li>localv2： 通用 II 型</li></ul><p>不传则默认和原实例类型保持一致</p>
+                     * @return ProductVersion <p>指实例类型</p><p>枚举值：</p><ul><li>local： 通用 I 型</li><li>localv2： 通用 II 型</li></ul><p>不传则默认和原实例类型保持一致</p>
+                     * 
+                     */
+                    std::string GetProductVersion() const;
+
+                    /**
+                     * 设置<p>指实例类型</p><p>枚举值：</p><ul><li>local： 通用 I 型</li><li>localv2： 通用 II 型</li></ul><p>不传则默认和原实例类型保持一致</p>
+                     * @param _productVersion <p>指实例类型</p><p>枚举值：</p><ul><li>local： 通用 I 型</li><li>localv2： 通用 II 型</li></ul><p>不传则默认和原实例类型保持一致</p>
+                     * 
+                     */
+                    void SetProductVersion(const std::string& _productVersion);
+
+                    /**
+                     * 判断参数 ProductVersion 是否已赋值
+                     * @return ProductVersion 是否已赋值
+                     * 
+                     */
+                    bool ProductVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -694,6 +715,12 @@ namespace TencentCloud
                      */
                     bool m_sSLBindPrivateIPv4;
                     bool m_sSLBindPrivateIPv4HasBeenSet;
+
+                    /**
+                     * <p>指实例类型</p><p>枚举值：</p><ul><li>local： 通用 I 型</li><li>localv2： 通用 II 型</li></ul><p>不传则默认和原实例类型保持一致</p>
+                     */
+                    std::string m_productVersion;
+                    bool m_productVersionHasBeenSet;
 
                 };
             }

@@ -99,6 +99,8 @@
 #include <tencentcloud/dlc/v20210125/model/CreateImportTaskResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateInferenceModelRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateInferenceModelResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateInferenceServiceRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateInferenceServiceResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateInternalTableRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateInternalTableResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateJobSpecRequest.h>
@@ -107,6 +109,8 @@
 #include <tencentcloud/dlc/v20210125/model/CreateLabResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateMetaDatabaseRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateMetaDatabaseResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateModelVersionRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateModelVersionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateNotebookSessionRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateNotebookSessionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateNotebookSessionStatementRequest.h>
@@ -395,6 +399,8 @@
 #include <tencentcloud/dlc/v20210125/model/GetExampleDetailResponse.h>
 #include <tencentcloud/dlc/v20210125/model/GetInferenceModelRequest.h>
 #include <tencentcloud/dlc/v20210125/model/GetInferenceModelResponse.h>
+#include <tencentcloud/dlc/v20210125/model/GetInferenceServiceRequest.h>
+#include <tencentcloud/dlc/v20210125/model/GetInferenceServiceResponse.h>
 #include <tencentcloud/dlc/v20210125/model/GetJobSpecRequest.h>
 #include <tencentcloud/dlc/v20210125/model/GetJobSpecResponse.h>
 #include <tencentcloud/dlc/v20210125/model/GetLabDetailRequest.h>
@@ -411,6 +417,12 @@
 #include <tencentcloud/dlc/v20210125/model/GetLabServiceUrlsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/GetLabYamlRequest.h>
 #include <tencentcloud/dlc/v20210125/model/GetLabYamlResponse.h>
+#include <tencentcloud/dlc/v20210125/model/GetModelConfigRequest.h>
+#include <tencentcloud/dlc/v20210125/model/GetModelConfigResponse.h>
+#include <tencentcloud/dlc/v20210125/model/GetModelFilesRequest.h>
+#include <tencentcloud/dlc/v20210125/model/GetModelFilesResponse.h>
+#include <tencentcloud/dlc/v20210125/model/GetModelReadmeRequest.h>
+#include <tencentcloud/dlc/v20210125/model/GetModelReadmeResponse.h>
 #include <tencentcloud/dlc/v20210125/model/GetOptimizerPolicyRequest.h>
 #include <tencentcloud/dlc/v20210125/model/GetOptimizerPolicyResponse.h>
 #include <tencentcloud/dlc/v20210125/model/GetRayClusterRequest.h>
@@ -457,14 +469,20 @@
 #include <tencentcloud/dlc/v20210125/model/ListExampleTagsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ListExamplesRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ListExamplesResponse.h>
+#include <tencentcloud/dlc/v20210125/model/ListInferenceEnginesRequest.h>
+#include <tencentcloud/dlc/v20210125/model/ListInferenceEnginesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ListInferenceModelsRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ListInferenceModelsResponse.h>
+#include <tencentcloud/dlc/v20210125/model/ListInferenceServicesRequest.h>
+#include <tencentcloud/dlc/v20210125/model/ListInferenceServicesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ListJobSpecsRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ListJobSpecsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ListJobsBySpecRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ListJobsBySpecResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ListLabsRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ListLabsResponse.h>
+#include <tencentcloud/dlc/v20210125/model/ListModelVersionsRequest.h>
+#include <tencentcloud/dlc/v20210125/model/ListModelVersionsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ListRayClusterJobsRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ListRayClusterJobsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ListRayClustersRequest.h>
@@ -507,8 +525,14 @@
 #include <tencentcloud/dlc/v20210125/model/ModifyWorkGroupResponse.h>
 #include <tencentcloud/dlc/v20210125/model/PauseStandardEngineResourceGroupsRequest.h>
 #include <tencentcloud/dlc/v20210125/model/PauseStandardEngineResourceGroupsResponse.h>
+#include <tencentcloud/dlc/v20210125/model/QueryDashboardOverviewRequest.h>
+#include <tencentcloud/dlc/v20210125/model/QueryDashboardOverviewResponse.h>
+#include <tencentcloud/dlc/v20210125/model/QueryDashboardServiceListRequest.h>
+#include <tencentcloud/dlc/v20210125/model/QueryDashboardServiceListResponse.h>
 #include <tencentcloud/dlc/v20210125/model/QueryInternalTableWarehouseRequest.h>
 #include <tencentcloud/dlc/v20210125/model/QueryInternalTableWarehouseResponse.h>
+#include <tencentcloud/dlc/v20210125/model/QueryMonitorOverviewRequest.h>
+#include <tencentcloud/dlc/v20210125/model/QueryMonitorOverviewResponse.h>
 #include <tencentcloud/dlc/v20210125/model/QueryResultRequest.h>
 #include <tencentcloud/dlc/v20210125/model/QueryResultResponse.h>
 #include <tencentcloud/dlc/v20210125/model/QueryTaskCostDetailRequest.h>
@@ -521,6 +545,8 @@
 #include <tencentcloud/dlc/v20210125/model/ReportHeartbeatMetaDataResponse.h>
 #include <tencentcloud/dlc/v20210125/model/RestartDataEngineRequest.h>
 #include <tencentcloud/dlc/v20210125/model/RestartDataEngineResponse.h>
+#include <tencentcloud/dlc/v20210125/model/RestartInferenceServiceRequest.h>
+#include <tencentcloud/dlc/v20210125/model/RestartInferenceServiceResponse.h>
 #include <tencentcloud/dlc/v20210125/model/RevokeDLCCatalogAccessRequest.h>
 #include <tencentcloud/dlc/v20210125/model/RevokeDLCCatalogAccessResponse.h>
 #include <tencentcloud/dlc/v20210125/model/RollbackDataEngineImageRequest.h>
@@ -533,6 +559,8 @@
 #include <tencentcloud/dlc/v20210125/model/StartLabResponse.h>
 #include <tencentcloud/dlc/v20210125/model/StartRayClusterRequest.h>
 #include <tencentcloud/dlc/v20210125/model/StartRayClusterResponse.h>
+#include <tencentcloud/dlc/v20210125/model/StopInferenceServiceRequest.h>
+#include <tencentcloud/dlc/v20210125/model/StopInferenceServiceResponse.h>
 #include <tencentcloud/dlc/v20210125/model/StopLabRequest.h>
 #include <tencentcloud/dlc/v20210125/model/StopLabResponse.h>
 #include <tencentcloud/dlc/v20210125/model/StopRayClusterRequest.h>
@@ -717,6 +745,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateInferenceModelResponse> CreateInferenceModelOutcome;
                 typedef std::future<CreateInferenceModelOutcome> CreateInferenceModelOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateInferenceModelRequest&, CreateInferenceModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInferenceModelAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateInferenceServiceResponse> CreateInferenceServiceOutcome;
+                typedef std::future<CreateInferenceServiceOutcome> CreateInferenceServiceOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateInferenceServiceRequest&, CreateInferenceServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInferenceServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInternalTableResponse> CreateInternalTableOutcome;
                 typedef std::future<CreateInternalTableOutcome> CreateInternalTableOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateInternalTableRequest&, CreateInternalTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInternalTableAsyncHandler;
@@ -729,6 +760,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateMetaDatabaseResponse> CreateMetaDatabaseOutcome;
                 typedef std::future<CreateMetaDatabaseOutcome> CreateMetaDatabaseOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateMetaDatabaseRequest&, CreateMetaDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMetaDatabaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateModelVersionResponse> CreateModelVersionOutcome;
+                typedef std::future<CreateModelVersionOutcome> CreateModelVersionOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateModelVersionRequest&, CreateModelVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateModelVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateNotebookSessionResponse> CreateNotebookSessionOutcome;
                 typedef std::future<CreateNotebookSessionOutcome> CreateNotebookSessionOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateNotebookSessionRequest&, CreateNotebookSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNotebookSessionAsyncHandler;
@@ -1161,6 +1195,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetInferenceModelResponse> GetInferenceModelOutcome;
                 typedef std::future<GetInferenceModelOutcome> GetInferenceModelOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::GetInferenceModelRequest&, GetInferenceModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetInferenceModelAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetInferenceServiceResponse> GetInferenceServiceOutcome;
+                typedef std::future<GetInferenceServiceOutcome> GetInferenceServiceOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::GetInferenceServiceRequest&, GetInferenceServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetInferenceServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetJobSpecResponse> GetJobSpecOutcome;
                 typedef std::future<GetJobSpecOutcome> GetJobSpecOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::GetJobSpecRequest&, GetJobSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetJobSpecAsyncHandler;
@@ -1185,6 +1222,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetLabYamlResponse> GetLabYamlOutcome;
                 typedef std::future<GetLabYamlOutcome> GetLabYamlOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::GetLabYamlRequest&, GetLabYamlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLabYamlAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetModelConfigResponse> GetModelConfigOutcome;
+                typedef std::future<GetModelConfigOutcome> GetModelConfigOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::GetModelConfigRequest&, GetModelConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetModelConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetModelFilesResponse> GetModelFilesOutcome;
+                typedef std::future<GetModelFilesOutcome> GetModelFilesOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::GetModelFilesRequest&, GetModelFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetModelFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetModelReadmeResponse> GetModelReadmeOutcome;
+                typedef std::future<GetModelReadmeOutcome> GetModelReadmeOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::GetModelReadmeRequest&, GetModelReadmeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetModelReadmeAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetOptimizerPolicyResponse> GetOptimizerPolicyOutcome;
                 typedef std::future<GetOptimizerPolicyOutcome> GetOptimizerPolicyOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::GetOptimizerPolicyRequest&, GetOptimizerPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetOptimizerPolicyAsyncHandler;
@@ -1254,9 +1300,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListExamplesResponse> ListExamplesOutcome;
                 typedef std::future<ListExamplesOutcome> ListExamplesOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ListExamplesRequest&, ListExamplesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListExamplesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListInferenceEnginesResponse> ListInferenceEnginesOutcome;
+                typedef std::future<ListInferenceEnginesOutcome> ListInferenceEnginesOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::ListInferenceEnginesRequest&, ListInferenceEnginesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListInferenceEnginesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListInferenceModelsResponse> ListInferenceModelsOutcome;
                 typedef std::future<ListInferenceModelsOutcome> ListInferenceModelsOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ListInferenceModelsRequest&, ListInferenceModelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListInferenceModelsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListInferenceServicesResponse> ListInferenceServicesOutcome;
+                typedef std::future<ListInferenceServicesOutcome> ListInferenceServicesOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::ListInferenceServicesRequest&, ListInferenceServicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListInferenceServicesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListJobSpecsResponse> ListJobSpecsOutcome;
                 typedef std::future<ListJobSpecsOutcome> ListJobSpecsOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ListJobSpecsRequest&, ListJobSpecsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListJobSpecsAsyncHandler;
@@ -1266,6 +1318,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListLabsResponse> ListLabsOutcome;
                 typedef std::future<ListLabsOutcome> ListLabsOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ListLabsRequest&, ListLabsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListLabsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListModelVersionsResponse> ListModelVersionsOutcome;
+                typedef std::future<ListModelVersionsOutcome> ListModelVersionsOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::ListModelVersionsRequest&, ListModelVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListModelVersionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListRayClusterJobsResponse> ListRayClusterJobsOutcome;
                 typedef std::future<ListRayClusterJobsOutcome> ListRayClusterJobsOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ListRayClusterJobsRequest&, ListRayClusterJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListRayClusterJobsAsyncHandler;
@@ -1329,9 +1384,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PauseStandardEngineResourceGroupsResponse> PauseStandardEngineResourceGroupsOutcome;
                 typedef std::future<PauseStandardEngineResourceGroupsOutcome> PauseStandardEngineResourceGroupsOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::PauseStandardEngineResourceGroupsRequest&, PauseStandardEngineResourceGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PauseStandardEngineResourceGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryDashboardOverviewResponse> QueryDashboardOverviewOutcome;
+                typedef std::future<QueryDashboardOverviewOutcome> QueryDashboardOverviewOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::QueryDashboardOverviewRequest&, QueryDashboardOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryDashboardOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryDashboardServiceListResponse> QueryDashboardServiceListOutcome;
+                typedef std::future<QueryDashboardServiceListOutcome> QueryDashboardServiceListOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::QueryDashboardServiceListRequest&, QueryDashboardServiceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryDashboardServiceListAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryInternalTableWarehouseResponse> QueryInternalTableWarehouseOutcome;
                 typedef std::future<QueryInternalTableWarehouseOutcome> QueryInternalTableWarehouseOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::QueryInternalTableWarehouseRequest&, QueryInternalTableWarehouseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryInternalTableWarehouseAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryMonitorOverviewResponse> QueryMonitorOverviewOutcome;
+                typedef std::future<QueryMonitorOverviewOutcome> QueryMonitorOverviewOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::QueryMonitorOverviewRequest&, QueryMonitorOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMonitorOverviewAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryResultResponse> QueryResultOutcome;
                 typedef std::future<QueryResultOutcome> QueryResultOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::QueryResultRequest&, QueryResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryResultAsyncHandler;
@@ -1350,6 +1414,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RestartDataEngineResponse> RestartDataEngineOutcome;
                 typedef std::future<RestartDataEngineOutcome> RestartDataEngineOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::RestartDataEngineRequest&, RestartDataEngineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartDataEngineAsyncHandler;
+                typedef Outcome<Core::Error, Model::RestartInferenceServiceResponse> RestartInferenceServiceOutcome;
+                typedef std::future<RestartInferenceServiceOutcome> RestartInferenceServiceOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::RestartInferenceServiceRequest&, RestartInferenceServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartInferenceServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::RevokeDLCCatalogAccessResponse> RevokeDLCCatalogAccessOutcome;
                 typedef std::future<RevokeDLCCatalogAccessOutcome> RevokeDLCCatalogAccessOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::RevokeDLCCatalogAccessRequest&, RevokeDLCCatalogAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevokeDLCCatalogAccessAsyncHandler;
@@ -1368,6 +1435,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StartRayClusterResponse> StartRayClusterOutcome;
                 typedef std::future<StartRayClusterOutcome> StartRayClusterOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::StartRayClusterRequest&, StartRayClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartRayClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopInferenceServiceResponse> StopInferenceServiceOutcome;
+                typedef std::future<StopInferenceServiceOutcome> StopInferenceServiceOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::StopInferenceServiceRequest&, StopInferenceServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopInferenceServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopLabResponse> StopLabOutcome;
                 typedef std::future<StopLabOutcome> StopLabOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::StopLabRequest&, StopLabOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopLabAsyncHandler;
@@ -1798,6 +1868,15 @@ namespace TencentCloud
                 CreateInferenceModelOutcomeCallable CreateInferenceModelCallable(const Model::CreateInferenceModelRequest& request);
 
                 /**
+                 *创建推理服务（含默认部署）
+                 * @param req CreateInferenceServiceRequest
+                 * @return CreateInferenceServiceOutcome
+                 */
+                CreateInferenceServiceOutcome CreateInferenceService(const Model::CreateInferenceServiceRequest &request);
+                void CreateInferenceServiceAsync(const Model::CreateInferenceServiceRequest& request, const CreateInferenceServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInferenceServiceOutcomeCallable CreateInferenceServiceCallable(const Model::CreateInferenceServiceRequest& request);
+
+                /**
                  *创建托管存储内表（该接口已废弃）
                  * @param req CreateInternalTableRequest
                  * @return CreateInternalTableOutcome
@@ -1832,6 +1911,15 @@ namespace TencentCloud
                 CreateMetaDatabaseOutcome CreateMetaDatabase(const Model::CreateMetaDatabaseRequest &request);
                 void CreateMetaDatabaseAsync(const Model::CreateMetaDatabaseRequest& request, const CreateMetaDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateMetaDatabaseOutcomeCallable CreateMetaDatabaseCallable(const Model::CreateMetaDatabaseRequest& request);
+
+                /**
+                 *创建模型新版本
+                 * @param req CreateModelVersionRequest
+                 * @return CreateModelVersionOutcome
+                 */
+                CreateModelVersionOutcome CreateModelVersion(const Model::CreateModelVersionRequest &request);
+                void CreateModelVersionAsync(const Model::CreateModelVersionRequest& request, const CreateModelVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateModelVersionOutcomeCallable CreateModelVersionCallable(const Model::CreateModelVersionRequest& request);
 
                 /**
                  *本接口（CreateNotebookSession）用于创建交互式session（notebook）
@@ -3132,6 +3220,15 @@ namespace TencentCloud
                 GetInferenceModelOutcomeCallable GetInferenceModelCallable(const Model::GetInferenceModelRequest& request);
 
                 /**
+                 *获取单个推理服务详情
+                 * @param req GetInferenceServiceRequest
+                 * @return GetInferenceServiceOutcome
+                 */
+                GetInferenceServiceOutcome GetInferenceService(const Model::GetInferenceServiceRequest &request);
+                void GetInferenceServiceAsync(const Model::GetInferenceServiceRequest& request, const GetInferenceServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetInferenceServiceOutcomeCallable GetInferenceServiceCallable(const Model::GetInferenceServiceRequest& request);
+
+                /**
                  *根据配置ID获取作业配置详情
                  * @param req GetJobSpecRequest
                  * @return GetJobSpecOutcome
@@ -3202,6 +3299,33 @@ namespace TencentCloud
                 GetLabYamlOutcome GetLabYaml(const Model::GetLabYamlRequest &request);
                 void GetLabYamlAsync(const Model::GetLabYamlRequest& request, const GetLabYamlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetLabYamlOutcomeCallable GetLabYamlCallable(const Model::GetLabYamlRequest& request);
+
+                /**
+                 *获取模型 config.json 配置（默认最新版本）
+                 * @param req GetModelConfigRequest
+                 * @return GetModelConfigOutcome
+                 */
+                GetModelConfigOutcome GetModelConfig(const Model::GetModelConfigRequest &request);
+                void GetModelConfigAsync(const Model::GetModelConfigRequest& request, const GetModelConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetModelConfigOutcomeCallable GetModelConfigCallable(const Model::GetModelConfigRequest& request);
+
+                /**
+                 *获取模型文件树（默认最新版本）
+                 * @param req GetModelFilesRequest
+                 * @return GetModelFilesOutcome
+                 */
+                GetModelFilesOutcome GetModelFiles(const Model::GetModelFilesRequest &request);
+                void GetModelFilesAsync(const Model::GetModelFilesRequest& request, const GetModelFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetModelFilesOutcomeCallable GetModelFilesCallable(const Model::GetModelFilesRequest& request);
+
+                /**
+                 *获取模型 README 信息（默认最新版本）
+                 * @param req GetModelReadmeRequest
+                 * @return GetModelReadmeOutcome
+                 */
+                GetModelReadmeOutcome GetModelReadme(const Model::GetModelReadmeRequest &request);
+                void GetModelReadmeAsync(const Model::GetModelReadmeRequest& request, const GetModelReadmeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetModelReadmeOutcomeCallable GetModelReadmeCallable(const Model::GetModelReadmeRequest& request);
 
                 /**
                  *GetOptimizerPolicy
@@ -3411,6 +3535,15 @@ namespace TencentCloud
                 ListExamplesOutcomeCallable ListExamplesCallable(const Model::ListExamplesRequest& request);
 
                 /**
+                 *列出推理引擎
+                 * @param req ListInferenceEnginesRequest
+                 * @return ListInferenceEnginesOutcome
+                 */
+                ListInferenceEnginesOutcome ListInferenceEngines(const Model::ListInferenceEnginesRequest &request);
+                void ListInferenceEnginesAsync(const Model::ListInferenceEnginesRequest& request, const ListInferenceEnginesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListInferenceEnginesOutcomeCallable ListInferenceEnginesCallable(const Model::ListInferenceEnginesRequest& request);
+
+                /**
                  *列出推理模型（支持关键词过滤 + 分页）
                  * @param req ListInferenceModelsRequest
                  * @return ListInferenceModelsOutcome
@@ -3418,6 +3551,15 @@ namespace TencentCloud
                 ListInferenceModelsOutcome ListInferenceModels(const Model::ListInferenceModelsRequest &request);
                 void ListInferenceModelsAsync(const Model::ListInferenceModelsRequest& request, const ListInferenceModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListInferenceModelsOutcomeCallable ListInferenceModelsCallable(const Model::ListInferenceModelsRequest& request);
+
+                /**
+                 *列出推理服务（支持关键词和状态过滤 + 分页）
+                 * @param req ListInferenceServicesRequest
+                 * @return ListInferenceServicesOutcome
+                 */
+                ListInferenceServicesOutcome ListInferenceServices(const Model::ListInferenceServicesRequest &request);
+                void ListInferenceServicesAsync(const Model::ListInferenceServicesRequest& request, const ListInferenceServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListInferenceServicesOutcomeCallable ListInferenceServicesCallable(const Model::ListInferenceServicesRequest& request);
 
                 /**
                  *分页查询作业配置列表
@@ -3445,6 +3587,15 @@ namespace TencentCloud
                 ListLabsOutcome ListLabs(const Model::ListLabsRequest &request);
                 void ListLabsAsync(const Model::ListLabsRequest& request, const ListLabsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListLabsOutcomeCallable ListLabsCallable(const Model::ListLabsRequest& request);
+
+                /**
+                 *列出模型所有版本
+                 * @param req ListModelVersionsRequest
+                 * @return ListModelVersionsOutcome
+                 */
+                ListModelVersionsOutcome ListModelVersions(const Model::ListModelVersionsRequest &request);
+                void ListModelVersionsAsync(const Model::ListModelVersionsRequest& request, const ListModelVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListModelVersionsOutcomeCallable ListModelVersionsCallable(const Model::ListModelVersionsRequest& request);
 
                 /**
                  *查询指定 Ray 集群下提交的所有作业，分页返回。底层委托给 ListRayJobs，强制注入 ClusterId 作为过滤条件。
@@ -3636,6 +3787,24 @@ namespace TencentCloud
                 PauseStandardEngineResourceGroupsOutcomeCallable PauseStandardEngineResourceGroupsCallable(const Model::PauseStandardEngineResourceGroupsRequest& request);
 
                 /**
+                 *返回指定时间范围内所有推理服务的聚合 KPI 值。
+                 * @param req QueryDashboardOverviewRequest
+                 * @return QueryDashboardOverviewOutcome
+                 */
+                QueryDashboardOverviewOutcome QueryDashboardOverview(const Model::QueryDashboardOverviewRequest &request);
+                void QueryDashboardOverviewAsync(const Model::QueryDashboardOverviewRequest& request, const QueryDashboardOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryDashboardOverviewOutcomeCallable QueryDashboardOverviewCallable(const Model::QueryDashboardOverviewRequest& request);
+
+                /**
+                 *查询监控大盘服务列表
+                 * @param req QueryDashboardServiceListRequest
+                 * @return QueryDashboardServiceListOutcome
+                 */
+                QueryDashboardServiceListOutcome QueryDashboardServiceList(const Model::QueryDashboardServiceListRequest &request);
+                void QueryDashboardServiceListAsync(const Model::QueryDashboardServiceListRequest& request, const QueryDashboardServiceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryDashboardServiceListOutcomeCallable QueryDashboardServiceListCallable(const Model::QueryDashboardServiceListRequest& request);
+
+                /**
                  *本接口（QueryInternalTableWarehouse）用于获取原生表warehouse路径
                  * @param req QueryInternalTableWarehouseRequest
                  * @return QueryInternalTableWarehouseOutcome
@@ -3643,6 +3812,15 @@ namespace TencentCloud
                 QueryInternalTableWarehouseOutcome QueryInternalTableWarehouse(const Model::QueryInternalTableWarehouseRequest &request);
                 void QueryInternalTableWarehouseAsync(const Model::QueryInternalTableWarehouseRequest& request, const QueryInternalTableWarehouseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryInternalTableWarehouseOutcomeCallable QueryInternalTableWarehouseCallable(const Model::QueryInternalTableWarehouseRequest& request);
+
+                /**
+                 *查询监控概览数据（瞬时值）
+                 * @param req QueryMonitorOverviewRequest
+                 * @return QueryMonitorOverviewOutcome
+                 */
+                QueryMonitorOverviewOutcome QueryMonitorOverview(const Model::QueryMonitorOverviewRequest &request);
+                void QueryMonitorOverviewAsync(const Model::QueryMonitorOverviewRequest& request, const QueryMonitorOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryMonitorOverviewOutcomeCallable QueryMonitorOverviewCallable(const Model::QueryMonitorOverviewRequest& request);
 
                 /**
                  *获取任务结果查询
@@ -3699,6 +3877,15 @@ namespace TencentCloud
                 RestartDataEngineOutcomeCallable RestartDataEngineCallable(const Model::RestartDataEngineRequest& request);
 
                 /**
+                 *重启推理服务（操作所有部署）。
+                 * @param req RestartInferenceServiceRequest
+                 * @return RestartInferenceServiceOutcome
+                 */
+                RestartInferenceServiceOutcome RestartInferenceService(const Model::RestartInferenceServiceRequest &request);
+                void RestartInferenceServiceAsync(const Model::RestartInferenceServiceRequest& request, const RestartInferenceServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestartInferenceServiceOutcomeCallable RestartInferenceServiceCallable(const Model::RestartInferenceServiceRequest& request);
+
+                /**
                  *撤销DLC Catalog访问权限
                  * @param req RevokeDLCCatalogAccessRequest
                  * @return RevokeDLCCatalogAccessOutcome
@@ -3751,6 +3938,15 @@ namespace TencentCloud
                 StartRayClusterOutcome StartRayCluster(const Model::StartRayClusterRequest &request);
                 void StartRayClusterAsync(const Model::StartRayClusterRequest& request, const StartRayClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StartRayClusterOutcomeCallable StartRayClusterCallable(const Model::StartRayClusterRequest& request);
+
+                /**
+                 *停止推理服务（操作所有部署）。
+                 * @param req StopInferenceServiceRequest
+                 * @return StopInferenceServiceOutcome
+                 */
+                StopInferenceServiceOutcome StopInferenceService(const Model::StopInferenceServiceRequest &request);
+                void StopInferenceServiceAsync(const Model::StopInferenceServiceRequest& request, const StopInferenceServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopInferenceServiceOutcomeCallable StopInferenceServiceCallable(const Model::StopInferenceServiceRequest& request);
 
                 /**
                  *停止实验室

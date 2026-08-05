@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取默认值
-                     * @return DefaultValue 默认值
+                     * 获取<p>默认值</p>
+                     * @return DefaultValue <p>默认值</p>
                      * 
                      */
                     std::string GetDefaultValue() const;
 
                     /**
-                     * 设置默认值
-                     * @param _defaultValue 默认值
+                     * 设置<p>默认值</p>
+                     * @param _defaultValue <p>默认值</p>
                      * 
                      */
                     void SetDefaultValue(const std::string& _defaultValue);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DefaultValueHasBeenSet() const;
 
                     /**
-                     * 获取可选值列表
-                     * @return EnumValueList 可选值列表
+                     * 获取<p>可选值列表</p>
+                     * @return EnumValueList <p>可选值列表</p>
                      * 
                      */
                     std::vector<std::string> GetEnumValueList() const;
 
                     /**
-                     * 设置可选值列表
-                     * @param _enumValueList 可选值列表
+                     * 设置<p>可选值列表</p>
+                     * @param _enumValueList <p>可选值列表</p>
                      * 
                      */
                     void SetEnumValueList(const std::vector<std::string>& _enumValueList);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool EnumValueListHasBeenSet() const;
 
                     /**
-                     * 获取最大值（仅数值类型有效）
-                     * @return MaxValue 最大值（仅数值类型有效）
+                     * 获取<p>最大值（仅数值类型有效）</p>
+                     * @return MaxValue <p>最大值（仅数值类型有效）</p>
                      * 
                      */
                     double GetMaxValue() const;
 
                     /**
-                     * 设置最大值（仅数值类型有效）
-                     * @param _maxValue 最大值（仅数值类型有效）
+                     * 设置<p>最大值（仅数值类型有效）</p>
+                     * @param _maxValue <p>最大值（仅数值类型有效）</p>
                      * 
                      */
                     void SetMaxValue(const double& _maxValue);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool MaxValueHasBeenSet() const;
 
                     /**
-                     * 获取最小值（仅数值类型有效）
-                     * @return MinValue 最小值（仅数值类型有效）
+                     * 获取<p>最小值（仅数值类型有效）</p>
+                     * @return MinValue <p>最小值（仅数值类型有效）</p>
                      * 
                      */
                     double GetMinValue() const;
 
                     /**
-                     * 设置最小值（仅数值类型有效）
-                     * @param _minValue 最小值（仅数值类型有效）
+                     * 设置<p>最小值（仅数值类型有效）</p>
+                     * @param _minValue <p>最小值（仅数值类型有效）</p>
                      * 
                      */
                     void SetMinValue(const double& _minValue);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool MinValueHasBeenSet() const;
 
                     /**
-                     * 获取超参名称
-                     * @return Name 超参名称
+                     * 获取<p>超参名称</p>
+                     * @return Name <p>超参名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置超参名称
-                     * @param _name 超参名称
+                     * 设置<p>超参名称</p>
+                     * @param _name <p>超参名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取超参类型。1-浮点数, 2-整数, 3-字符串
-                     * @return Type 超参类型。1-浮点数, 2-整数, 3-字符串
+                     * 获取<p>超参类型。1-浮点数, 2-整数, 3-字符串</p>
+                     * @return Type <p>超参类型。1-浮点数, 2-整数, 3-字符串</p>
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置超参类型。1-浮点数, 2-整数, 3-字符串
-                     * @param _type 超参类型。1-浮点数, 2-整数, 3-字符串
+                     * 设置<p>超参类型。1-浮点数, 2-整数, 3-字符串</p>
+                     * @param _type <p>超参类型。1-浮点数, 2-整数, 3-字符串</p>
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -175,37 +175,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 默认值
+                     * <p>默认值</p>
                      */
                     std::string m_defaultValue;
                     bool m_defaultValueHasBeenSet;
 
                     /**
-                     * 可选值列表
+                     * <p>可选值列表</p>
                      */
                     std::vector<std::string> m_enumValueList;
                     bool m_enumValueListHasBeenSet;
 
                     /**
-                     * 最大值（仅数值类型有效）
+                     * <p>最大值（仅数值类型有效）</p>
                      */
                     double m_maxValue;
                     bool m_maxValueHasBeenSet;
 
                     /**
-                     * 最小值（仅数值类型有效）
+                     * <p>最小值（仅数值类型有效）</p>
                      */
                     double m_minValue;
                     bool m_minValueHasBeenSet;
 
                     /**
-                     * 超参名称
+                     * <p>超参名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 超参类型。1-浮点数, 2-整数, 3-字符串
+                     * <p>超参类型。1-浮点数, 2-整数, 3-字符串</p>
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;

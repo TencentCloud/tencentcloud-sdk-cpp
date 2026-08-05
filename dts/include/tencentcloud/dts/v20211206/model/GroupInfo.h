@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取消费者组账号
-                     * @return Account 消费者组账号
+                     * 获取<p>消费者组账号</p>
+                     * @return Account <p>消费者组账号</p>
                      * 
                      */
                     std::string GetAccount() const;
 
                     /**
-                     * 设置消费者组账号
-                     * @param _account 消费者组账号
+                     * 设置<p>消费者组账号</p>
+                     * @param _account <p>消费者组账号</p>
                      * 
                      */
                     void SetAccount(const std::string& _account);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool AccountHasBeenSet() const;
 
                     /**
-                     * 获取消费者组名称
-                     * @return ConsumerGroupName 消费者组名称
+                     * 获取<p>消费者组名称</p>
+                     * @return ConsumerGroupName <p>消费者组名称</p>
                      * 
                      */
                     std::string GetConsumerGroupName() const;
 
                     /**
-                     * 设置消费者组名称
-                     * @param _consumerGroupName 消费者组名称
+                     * 设置<p>消费者组名称</p>
+                     * @param _consumerGroupName <p>消费者组名称</p>
                      * 
                      */
                     void SetConsumerGroupName(const std::string& _consumerGroupName);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool ConsumerGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取消费者组备注
-                     * @return Description 消费者组备注
+                     * 获取<p>消费者组备注</p>
+                     * @return Description <p>消费者组备注</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置消费者组备注
-                     * @param _description 消费者组备注
+                     * 设置<p>消费者组备注</p>
+                     * @param _description <p>消费者组备注</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取消费组偏移量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区的偏移量。各分区的偏移量详见StateOfPartition字段
-                     * @return ConsumerGroupOffset 消费组偏移量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区的偏移量。各分区的偏移量详见StateOfPartition字段
+                     * 获取<p>消费组偏移量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区的偏移量。各分区的偏移量详见StateOfPartition字段</p>
+                     * @return ConsumerGroupOffset <p>消费组偏移量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区的偏移量。各分区的偏移量详见StateOfPartition字段</p>
                      * 
                      */
                     int64_t GetConsumerGroupOffset() const;
 
                     /**
-                     * 设置消费组偏移量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区的偏移量。各分区的偏移量详见StateOfPartition字段
-                     * @param _consumerGroupOffset 消费组偏移量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区的偏移量。各分区的偏移量详见StateOfPartition字段
+                     * 设置<p>消费组偏移量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区的偏移量。各分区的偏移量详见StateOfPartition字段</p>
+                     * @param _consumerGroupOffset <p>消费组偏移量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区的偏移量。各分区的偏移量详见StateOfPartition字段</p>
                      * 
                      */
                     void SetConsumerGroupOffset(const int64_t& _consumerGroupOffset);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool ConsumerGroupOffsetHasBeenSet() const;
 
                     /**
-                     * 获取消费组未消费的数据量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区未消费的数据量。各分区未消费数据量详见StateOfPartition字段
-                     * @return ConsumerGroupLag 消费组未消费的数据量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区未消费的数据量。各分区未消费数据量详见StateOfPartition字段
+                     * 获取<p>消费组未消费的数据量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区未消费的数据量。各分区未消费数据量详见StateOfPartition字段</p>
+                     * @return ConsumerGroupLag <p>消费组未消费的数据量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区未消费的数据量。各分区未消费数据量详见StateOfPartition字段</p>
                      * 
                      */
                     int64_t GetConsumerGroupLag() const;
 
                     /**
-                     * 设置消费组未消费的数据量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区未消费的数据量。各分区未消费数据量详见StateOfPartition字段
-                     * @param _consumerGroupLag 消费组未消费的数据量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区未消费的数据量。各分区未消费数据量详见StateOfPartition字段
+                     * 设置<p>消费组未消费的数据量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区未消费的数据量。各分区未消费数据量详见StateOfPartition字段</p>
+                     * @param _consumerGroupLag <p>消费组未消费的数据量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区未消费的数据量。各分区未消费数据量详见StateOfPartition字段</p>
                      * 
                      */
                     void SetConsumerGroupLag(const int64_t& _consumerGroupLag);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool ConsumerGroupLagHasBeenSet() const;
 
                     /**
-                     * 获取消费延迟(单位为秒)
-                     * @return Latency 消费延迟(单位为秒)
+                     * 获取<p>消费延迟(单位为秒)</p>
+                     * @return Latency <p>消费延迟(单位为秒)</p>
                      * 
                      */
                     int64_t GetLatency() const;
 
                     /**
-                     * 设置消费延迟(单位为秒)
-                     * @param _latency 消费延迟(单位为秒)
+                     * 设置<p>消费延迟(单位为秒)</p>
+                     * @param _latency <p>消费延迟(单位为秒)</p>
                      * 
                      */
                     void SetLatency(const int64_t& _latency);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool LatencyHasBeenSet() const;
 
                     /**
-                     * 获取各分区的消费状态
-                     * @return StateOfPartition 各分区的消费状态
+                     * 获取<p>各分区的消费状态</p>
+                     * @return StateOfPartition <p>各分区的消费状态</p>
                      * 
                      */
                     std::vector<MonitorInfo> GetStateOfPartition() const;
 
                     /**
-                     * 设置各分区的消费状态
-                     * @param _stateOfPartition 各分区的消费状态
+                     * 设置<p>各分区的消费状态</p>
+                     * @param _stateOfPartition <p>各分区的消费状态</p>
                      * 
                      */
                     void SetStateOfPartition(const std::vector<MonitorInfo>& _stateOfPartition);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool StateOfPartitionHasBeenSet() const;
 
                     /**
-                     * 获取消费者组创建时间，格式为YYYY-MM-DD hh:mm:ss
-                     * @return CreatedAt 消费者组创建时间，格式为YYYY-MM-DD hh:mm:ss
+                     * 获取<p>消费者组创建时间。</p>
+                     * @return CreatedAt <p>消费者组创建时间。</p>
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
-                     * 设置消费者组创建时间，格式为YYYY-MM-DD hh:mm:ss
-                     * @param _createdAt 消费者组创建时间，格式为YYYY-MM-DD hh:mm:ss
+                     * 设置<p>消费者组创建时间。</p>
+                     * @param _createdAt <p>消费者组创建时间。</p>
                      * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool CreatedAtHasBeenSet() const;
 
                     /**
-                     * 获取消费者组修改时间，格式为YYYY-MM-DD hh:mm:ss
-                     * @return UpdatedAt 消费者组修改时间，格式为YYYY-MM-DD hh:mm:ss
+                     * 获取<p>消费者组修改时间。</p>
+                     * @return UpdatedAt <p>消费者组修改时间。</p>
                      * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
-                     * 设置消费者组修改时间，格式为YYYY-MM-DD hh:mm:ss
-                     * @param _updatedAt 消费者组修改时间，格式为YYYY-MM-DD hh:mm:ss
+                     * 设置<p>消费者组修改时间。</p>
+                     * @param _updatedAt <p>消费者组修改时间。</p>
                      * 
                      */
                     void SetUpdatedAt(const std::string& _updatedAt);
@@ -238,15 +238,15 @@ namespace TencentCloud
                     bool UpdatedAtHasBeenSet() const;
 
                     /**
-                     * 获取消费者组状态，包括Dead、Empty、Stable等，只有Dead和Empty两种状态可以执行reset操作
-                     * @return ConsumerGroupState 消费者组状态，包括Dead、Empty、Stable等，只有Dead和Empty两种状态可以执行reset操作
+                     * 获取<p>消费者组状态，包括Dead、Empty、Stable等，只有Dead和Empty两种状态可以执行reset操作</p>
+                     * @return ConsumerGroupState <p>消费者组状态，包括Dead、Empty、Stable等，只有Dead和Empty两种状态可以执行reset操作</p>
                      * 
                      */
                     std::string GetConsumerGroupState() const;
 
                     /**
-                     * 设置消费者组状态，包括Dead、Empty、Stable等，只有Dead和Empty两种状态可以执行reset操作
-                     * @param _consumerGroupState 消费者组状态，包括Dead、Empty、Stable等，只有Dead和Empty两种状态可以执行reset操作
+                     * 设置<p>消费者组状态，包括Dead、Empty、Stable等，只有Dead和Empty两种状态可以执行reset操作</p>
+                     * @param _consumerGroupState <p>消费者组状态，包括Dead、Empty、Stable等，只有Dead和Empty两种状态可以执行reset操作</p>
                      * 
                      */
                     void SetConsumerGroupState(const std::string& _consumerGroupState);
@@ -259,15 +259,15 @@ namespace TencentCloud
                     bool ConsumerGroupStateHasBeenSet() const;
 
                     /**
-                     * 获取每个消费者正在消费的分区
-                     * @return PartitionAssignment 每个消费者正在消费的分区
+                     * 获取<p>每个消费者正在消费的分区</p>
+                     * @return PartitionAssignment <p>每个消费者正在消费的分区</p>
                      * 
                      */
                     std::vector<PartitionAssignment> GetPartitionAssignment() const;
 
                     /**
-                     * 设置每个消费者正在消费的分区
-                     * @param _partitionAssignment 每个消费者正在消费的分区
+                     * 设置<p>每个消费者正在消费的分区</p>
+                     * @param _partitionAssignment <p>每个消费者正在消费的分区</p>
                      * 
                      */
                     void SetPartitionAssignment(const std::vector<PartitionAssignment>& _partitionAssignment);
@@ -282,67 +282,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 消费者组账号
+                     * <p>消费者组账号</p>
                      */
                     std::string m_account;
                     bool m_accountHasBeenSet;
 
                     /**
-                     * 消费者组名称
+                     * <p>消费者组名称</p>
                      */
                     std::string m_consumerGroupName;
                     bool m_consumerGroupNameHasBeenSet;
 
                     /**
-                     * 消费者组备注
+                     * <p>消费者组备注</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 消费组偏移量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区的偏移量。各分区的偏移量详见StateOfPartition字段
+                     * <p>消费组偏移量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区的偏移量。各分区的偏移量详见StateOfPartition字段</p>
                      */
                     int64_t m_consumerGroupOffset;
                     bool m_consumerGroupOffsetHasBeenSet;
 
                     /**
-                     * 消费组未消费的数据量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区未消费的数据量。各分区未消费数据量详见StateOfPartition字段
+                     * <p>消费组未消费的数据量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区未消费的数据量。各分区未消费数据量详见StateOfPartition字段</p>
                      */
                     int64_t m_consumerGroupLag;
                     bool m_consumerGroupLagHasBeenSet;
 
                     /**
-                     * 消费延迟(单位为秒)
+                     * <p>消费延迟(单位为秒)</p>
                      */
                     int64_t m_latency;
                     bool m_latencyHasBeenSet;
 
                     /**
-                     * 各分区的消费状态
+                     * <p>各分区的消费状态</p>
                      */
                     std::vector<MonitorInfo> m_stateOfPartition;
                     bool m_stateOfPartitionHasBeenSet;
 
                     /**
-                     * 消费者组创建时间，格式为YYYY-MM-DD hh:mm:ss
+                     * <p>消费者组创建时间。</p>
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
-                     * 消费者组修改时间，格式为YYYY-MM-DD hh:mm:ss
+                     * <p>消费者组修改时间。</p>
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;
 
                     /**
-                     * 消费者组状态，包括Dead、Empty、Stable等，只有Dead和Empty两种状态可以执行reset操作
+                     * <p>消费者组状态，包括Dead、Empty、Stable等，只有Dead和Empty两种状态可以执行reset操作</p>
                      */
                     std::string m_consumerGroupState;
                     bool m_consumerGroupStateHasBeenSet;
 
                     /**
-                     * 每个消费者正在消费的分区
+                     * <p>每个消费者正在消费的分区</p>
                      */
                     std::vector<PartitionAssignment> m_partitionAssignment;
                     bool m_partitionAssignmentHasBeenSet;

@@ -25,7 +25,8 @@ using namespace std;
 DeleteConsumerGroupRequest::DeleteConsumerGroupRequest() :
     m_subscribeIdHasBeenSet(false),
     m_consumerGroupNameHasBeenSet(false),
-    m_accountNameHasBeenSet(false)
+    m_accountNameHasBeenSet(false),
+    m_backendJobIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DeleteConsumerGroupRequest::ToJsonString() const
         string key = "AccountName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_accountName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backendJobIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackendJobId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backendJobId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DeleteConsumerGroupRequest::SetAccountName(const string& _accountName)
 bool DeleteConsumerGroupRequest::AccountNameHasBeenSet() const
 {
     return m_accountNameHasBeenSet;
+}
+
+string DeleteConsumerGroupRequest::GetBackendJobId() const
+{
+    return m_backendJobId;
+}
+
+void DeleteConsumerGroupRequest::SetBackendJobId(const string& _backendJobId)
+{
+    m_backendJobId = _backendJobId;
+    m_backendJobIdHasBeenSet = true;
+}
+
+bool DeleteConsumerGroupRequest::BackendJobIdHasBeenSet() const
+{
+    return m_backendJobIdHasBeenSet;
 }
 
 

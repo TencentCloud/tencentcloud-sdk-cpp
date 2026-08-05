@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取在设定了SealId时，返回值为0或1；若未设定SealId，则返回公司的总印章数量
-                     * @return TotalCount 在设定了SealId时，返回值为0或1；若未设定SealId，则返回公司的总印章数量
+                     * 获取<p>在设定了SealId时，返回值为0或1；若未设定SealId，则返回公司的总印章数量</p>
+                     * @return TotalCount <p>在设定了SealId时，返回值为0或1；若未设定SealId，则返回公司的总印章数量</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取查询到的印章结果数组
-                     * @return Seals 查询到的印章结果数组
+                     * 获取<p>查询到的印章结果数组</p>
+                     * @return Seals <p>查询到的印章结果数组</p>
                      * 
                      */
                     std::vector<OccupiedSeal> GetSeals() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 在设定了SealId时，返回值为0或1；若未设定SealId，则返回公司的总印章数量
+                     * <p>在设定了SealId时，返回值为0或1；若未设定SealId，则返回公司的总印章数量</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 查询到的印章结果数组
+                     * <p>查询到的印章结果数组</p>
                      */
                     std::vector<OccupiedSeal> m_seals;
                     bool m_sealsHasBeenSet;

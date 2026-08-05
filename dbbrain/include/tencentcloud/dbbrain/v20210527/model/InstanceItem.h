@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID。
-                     * @return InstanceId 实例ID。
+                     * 获取<p>实例ID。</p>
+                     * @return InstanceId <p>实例ID。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _instanceId 实例ID。
+                     * 设置<p>实例ID。</p>
+                     * @param _instanceId <p>实例ID。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库类型，如 mysql、cynosdb、mariadb、dcdb、mongodb、postgres、redis、dbbrain-mysql、tdstore。
-                     * @return Product 数据库类型，如 mysql、cynosdb、mariadb、dcdb、mongodb、postgres、redis、dbbrain-mysql、tdstore。
+                     * 获取<p>数据库类型，如 mysql、cynosdb、mariadb、dcdb、mongodb、postgres、redis、dbbrain-mysql、tdstore。</p>
+                     * @return Product <p>数据库类型，如 mysql、cynosdb、mariadb、dcdb、mongodb、postgres、redis、dbbrain-mysql、tdstore。</p>
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置数据库类型，如 mysql、cynosdb、mariadb、dcdb、mongodb、postgres、redis、dbbrain-mysql、tdstore。
-                     * @param _product 数据库类型，如 mysql、cynosdb、mariadb、dcdb、mongodb、postgres、redis、dbbrain-mysql、tdstore。
+                     * 设置<p>数据库类型，如 mysql、cynosdb、mariadb、dcdb、mongodb、postgres、redis、dbbrain-mysql、tdstore。</p>
+                     * @param _product <p>数据库类型，如 mysql、cynosdb、mariadb、dcdb、mongodb、postgres、redis、dbbrain-mysql、tdstore。</p>
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取地域英文ID。
-                     * @return Region 地域英文ID。
+                     * 获取<p>地域英文ID。</p>
+                     * @return Region <p>地域英文ID。</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域英文ID。
-                     * @param _region 地域英文ID。
+                     * 设置<p>地域英文ID。</p>
+                     * @param _region <p>地域英文ID。</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -110,18 +110,18 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取集群ID，仅集群类产品返回。
+                     * 获取<p>集群ID，仅集群类产品返回。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterId 集群ID，仅集群类产品返回。
+                     * @return ClusterId <p>集群ID，仅集群类产品返回。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID，仅集群类产品返回。
+                     * 设置<p>集群ID，仅集群类产品返回。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clusterId 集群ID，仅集群类产品返回。
+                     * @param _clusterId <p>集群ID，仅集群类产品返回。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -135,18 +135,18 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取引擎版本。
+                     * 获取<p>引擎版本。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EngineVersion 引擎版本。
+                     * @return EngineVersion <p>引擎版本。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineVersion() const;
 
                     /**
-                     * 设置引擎版本。
+                     * 设置<p>引擎版本。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _engineVersion 引擎版本。
+                     * @param _engineVersion <p>引擎版本。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -160,18 +160,18 @@ namespace TencentCloud
                     bool EngineVersionHasBeenSet() const;
 
                     /**
-                     * 获取实例状态，1表示运行中。
+                     * 获取<p>实例状态，1表示运行中。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 实例状态，1表示运行中。
+                     * @return Status <p>实例状态，1表示运行中。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置实例状态，1表示运行中。
+                     * 设置<p>实例状态，1表示运行中。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 实例状态，1表示运行中。
+                     * @param _status <p>实例状态，1表示运行中。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -185,18 +185,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取实例创建时间。
+                     * 获取<p>实例创建时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 实例创建时间。
+                     * @return CreateTime <p>实例创建时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置实例创建时间。
+                     * 设置<p>实例创建时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 实例创建时间。
+                     * @param _createTime <p>实例创建时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -210,18 +210,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例到期时间。
+                     * 获取<p>实例到期时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeadlineTime 实例到期时间。
+                     * @return DeadlineTime <p>实例到期时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeadlineTime() const;
 
                     /**
-                     * 设置实例到期时间。
+                     * 设置<p>实例到期时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _deadlineTime 实例到期时间。
+                     * @param _deadlineTime <p>实例到期时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -237,53 +237,53 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID。
+                     * <p>实例ID。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 数据库类型，如 mysql、cynosdb、mariadb、dcdb、mongodb、postgres、redis、dbbrain-mysql、tdstore。
+                     * <p>数据库类型，如 mysql、cynosdb、mariadb、dcdb、mongodb、postgres、redis、dbbrain-mysql、tdstore。</p>
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
 
                     /**
-                     * 地域英文ID。
+                     * <p>地域英文ID。</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 集群ID，仅集群类产品返回。
+                     * <p>集群ID，仅集群类产品返回。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 引擎版本。
+                     * <p>引擎版本。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;
 
                     /**
-                     * 实例状态，1表示运行中。
+                     * <p>实例状态，1表示运行中。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 实例创建时间。
+                     * <p>实例创建时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 实例到期时间。
+                     * <p>实例到期时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deadlineTime;

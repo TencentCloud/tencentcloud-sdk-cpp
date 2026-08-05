@@ -161,6 +161,8 @@
 #include <tencentcloud/cls/v20201016/model/DeleteIndexResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteKafkaRechargeRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteKafkaRechargeResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteLogRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteLogResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteLogsetRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteLogsetResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteMachineGroupRequest.h>
@@ -375,6 +377,8 @@
 #include <tencentcloud/cls/v20201016/model/ModifyKafkaConsumerGroupOffsetResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyKafkaRechargeRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyKafkaRechargeResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifyLogRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifyLogResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyLogsetRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyLogsetResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyMachineGroupRequest.h>
@@ -656,6 +660,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteKafkaRechargeResponse> DeleteKafkaRechargeOutcome;
                 typedef std::future<DeleteKafkaRechargeOutcome> DeleteKafkaRechargeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteKafkaRechargeRequest&, DeleteKafkaRechargeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteKafkaRechargeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLogResponse> DeleteLogOutcome;
+                typedef std::future<DeleteLogOutcome> DeleteLogOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteLogRequest&, DeleteLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteLogsetResponse> DeleteLogsetOutcome;
                 typedef std::future<DeleteLogsetOutcome> DeleteLogsetOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteLogsetRequest&, DeleteLogsetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLogsetAsyncHandler;
@@ -977,6 +984,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyKafkaRechargeResponse> ModifyKafkaRechargeOutcome;
                 typedef std::future<ModifyKafkaRechargeOutcome> ModifyKafkaRechargeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyKafkaRechargeRequest&, ModifyKafkaRechargeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyKafkaRechargeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLogResponse> ModifyLogOutcome;
+                typedef std::future<ModifyLogOutcome> ModifyLogOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifyLogRequest&, ModifyLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLogsetResponse> ModifyLogsetOutcome;
                 typedef std::future<ModifyLogsetOutcome> ModifyLogsetOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyLogsetRequest&, ModifyLogsetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLogsetAsyncHandler;
@@ -1705,6 +1715,15 @@ namespace TencentCloud
                 DeleteKafkaRechargeOutcome DeleteKafkaRecharge(const Model::DeleteKafkaRechargeRequest &request);
                 void DeleteKafkaRechargeAsync(const Model::DeleteKafkaRechargeRequest& request, const DeleteKafkaRechargeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteKafkaRechargeOutcomeCallable DeleteKafkaRechargeCallable(const Model::DeleteKafkaRechargeRequest& request);
+
+                /**
+                 *修改日志信息
+                 * @param req DeleteLogRequest
+                 * @return DeleteLogOutcome
+                 */
+                DeleteLogOutcome DeleteLog(const Model::DeleteLogRequest &request);
+                void DeleteLogAsync(const Model::DeleteLogRequest& request, const DeleteLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLogOutcomeCallable DeleteLogCallable(const Model::DeleteLogRequest& request);
 
                 /**
                  *本接口用于删除日志集。
@@ -2670,6 +2689,15 @@ API 中 Region 填写任意一个地域均可，建议使用广州(ap-guangzhou)
                 ModifyKafkaRechargeOutcome ModifyKafkaRecharge(const Model::ModifyKafkaRechargeRequest &request);
                 void ModifyKafkaRechargeAsync(const Model::ModifyKafkaRechargeRequest& request, const ModifyKafkaRechargeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyKafkaRechargeOutcomeCallable ModifyKafkaRechargeCallable(const Model::ModifyKafkaRechargeRequest& request);
+
+                /**
+                 *修改日志信息
+                 * @param req ModifyLogRequest
+                 * @return ModifyLogOutcome
+                 */
+                ModifyLogOutcome ModifyLog(const Model::ModifyLogRequest &request);
+                void ModifyLogAsync(const Model::ModifyLogRequest& request, const ModifyLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLogOutcomeCallable ModifyLogCallable(const Model::ModifyLogRequest& request);
 
                 /**
                  *本接口用于修改日志集信息

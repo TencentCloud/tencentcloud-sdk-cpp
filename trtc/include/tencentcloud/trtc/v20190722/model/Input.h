@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trtc/v20190722/model/AgoraParam.h>
 
 
 namespace TencentCloud
@@ -88,6 +89,27 @@ namespace TencentCloud
                      */
                     bool FormatHasBeenSet() const;
 
+                    /**
+                     * 获取<p>声网拉流进房参数</p>
+                     * @return AgoraParam <p>声网拉流进房参数</p>
+                     * 
+                     */
+                    AgoraParam GetAgoraParam() const;
+
+                    /**
+                     * 设置<p>声网拉流进房参数</p>
+                     * @param _agoraParam <p>声网拉流进房参数</p>
+                     * 
+                     */
+                    void SetAgoraParam(const AgoraParam& _agoraParam);
+
+                    /**
+                     * 判断参数 AgoraParam 是否已赋值
+                     * @return AgoraParam 是否已赋值
+                     * 
+                     */
+                    bool AgoraParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +123,12 @@ namespace TencentCloud
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;
+
+                    /**
+                     * <p>声网拉流进房参数</p>
+                     */
+                    AgoraParam m_agoraParam;
+                    bool m_agoraParamHasBeenSet;
 
                 };
             }

@@ -117,6 +117,27 @@ namespace TencentCloud
                      */
                     bool AccountNameHasBeenSet() const;
 
+                    /**
+                     * 获取
+                     * @return BackendJobId 
+                     * 
+                     */
+                    std::string GetBackendJobId() const;
+
+                    /**
+                     * 设置
+                     * @param _backendJobId 
+                     * 
+                     */
+                    void SetBackendJobId(const std::string& _backendJobId);
+
+                    /**
+                     * 判断参数 BackendJobId 是否已赋值
+                     * @return BackendJobId 是否已赋值
+                     * 
+                     */
+                    bool BackendJobIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +160,12 @@ namespace TencentCloud
                      */
                     std::string m_accountName;
                     bool m_accountNameHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    std::string m_backendJobId;
+                    bool m_backendJobIdHasBeenSet;
 
                 };
             }

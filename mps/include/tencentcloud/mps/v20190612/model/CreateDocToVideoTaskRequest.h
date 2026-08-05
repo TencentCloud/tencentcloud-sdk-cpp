@@ -86,6 +86,27 @@ namespace TencentCloud
                      */
                     bool CosInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<p>资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。</p>
+                     * @return ResourceId <p>资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。</p>
+                     * 
+                     */
+                    std::string GetResourceId() const;
+
+                    /**
+                     * 设置<p>资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。</p>
+                     * @param _resourceId <p>资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。</p>
+                     * 
+                     */
+                    void SetResourceId(const std::string& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     * 
+                     */
+                    bool ResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -99,6 +120,12 @@ namespace TencentCloud
                      */
                     DocToVideoCosInfo m_cosInfo;
                     bool m_cosInfoHasBeenSet;
+
+                    /**
+                     * <p>资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。</p>
+                     */
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
 
                 };
             }

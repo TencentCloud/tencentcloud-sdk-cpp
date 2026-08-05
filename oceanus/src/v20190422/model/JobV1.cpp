@@ -68,7 +68,10 @@ JobV1::JobV1() :
     m_stateCOSBucketHasBeenSet(false),
     m_newStateCOSBucketHasBeenSet(false),
     m_stateCOSBucketTypeHasBeenSet(false),
-    m_newStateCOSBucketTypeHasBeenSet(false)
+    m_newStateCOSBucketTypeHasBeenSet(false),
+    m_healthScoreHasBeenSet(false),
+    m_lastDiagnoseTimeHasBeenSet(false),
+    m_managerUinHasBeenSet(false)
 {
 }
 
@@ -574,6 +577,36 @@ CoreInternalOutcome JobV1::Deserialize(const rapidjson::Value &value)
         m_newStateCOSBucketTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("HealthScore") && !value["HealthScore"].IsNull())
+    {
+        if (!value["HealthScore"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobV1.HealthScore` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthScore = value["HealthScore"].GetInt64();
+        m_healthScoreHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastDiagnoseTime") && !value["LastDiagnoseTime"].IsNull())
+    {
+        if (!value["LastDiagnoseTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobV1.LastDiagnoseTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastDiagnoseTime = string(value["LastDiagnoseTime"].GetString());
+        m_lastDiagnoseTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ManagerUin") && !value["ManagerUin"].IsNull())
+    {
+        if (!value["ManagerUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobV1.ManagerUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_managerUin = string(value["ManagerUin"].GetString());
+        m_managerUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -971,6 +1004,30 @@ void JobV1::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "NewStateCOSBucketType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_newStateCOSBucketType, allocator);
+    }
+
+    if (m_healthScoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthScore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_healthScore, allocator);
+    }
+
+    if (m_lastDiagnoseTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastDiagnoseTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastDiagnoseTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_managerUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ManagerUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_managerUin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1742,5 +1799,53 @@ void JobV1::SetNewStateCOSBucketType(const int64_t& _newStateCOSBucketType)
 bool JobV1::NewStateCOSBucketTypeHasBeenSet() const
 {
     return m_newStateCOSBucketTypeHasBeenSet;
+}
+
+int64_t JobV1::GetHealthScore() const
+{
+    return m_healthScore;
+}
+
+void JobV1::SetHealthScore(const int64_t& _healthScore)
+{
+    m_healthScore = _healthScore;
+    m_healthScoreHasBeenSet = true;
+}
+
+bool JobV1::HealthScoreHasBeenSet() const
+{
+    return m_healthScoreHasBeenSet;
+}
+
+string JobV1::GetLastDiagnoseTime() const
+{
+    return m_lastDiagnoseTime;
+}
+
+void JobV1::SetLastDiagnoseTime(const string& _lastDiagnoseTime)
+{
+    m_lastDiagnoseTime = _lastDiagnoseTime;
+    m_lastDiagnoseTimeHasBeenSet = true;
+}
+
+bool JobV1::LastDiagnoseTimeHasBeenSet() const
+{
+    return m_lastDiagnoseTimeHasBeenSet;
+}
+
+string JobV1::GetManagerUin() const
+{
+    return m_managerUin;
+}
+
+void JobV1::SetManagerUin(const string& _managerUin)
+{
+    m_managerUin = _managerUin;
+    m_managerUinHasBeenSet = true;
+}
+
+bool JobV1::ManagerUinHasBeenSet() const
+{
+    return m_managerUinHasBeenSet;
 }
 

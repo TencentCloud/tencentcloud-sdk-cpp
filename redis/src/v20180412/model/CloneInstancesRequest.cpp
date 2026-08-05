@@ -46,7 +46,8 @@ CloneInstancesRequest::CloneInstancesRequest() :
     m_encryptPasswordHasBeenSet(false),
     m_passwordPolicyHasBeenSet(false),
     m_enableSSLHasBeenSet(false),
-    m_sSLBindPrivateIPv4HasBeenSet(false)
+    m_sSLBindPrivateIPv4HasBeenSet(false),
+    m_productVersionHasBeenSet(false)
 {
 }
 
@@ -272,6 +273,14 @@ string CloneInstancesRequest::ToJsonString() const
         string key = "SSLBindPrivateIPv4";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sSLBindPrivateIPv4, allocator);
+    }
+
+    if (m_productVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -664,6 +673,22 @@ void CloneInstancesRequest::SetSSLBindPrivateIPv4(const bool& _sSLBindPrivateIPv
 bool CloneInstancesRequest::SSLBindPrivateIPv4HasBeenSet() const
 {
     return m_sSLBindPrivateIPv4HasBeenSet;
+}
+
+string CloneInstancesRequest::GetProductVersion() const
+{
+    return m_productVersion;
+}
+
+void CloneInstancesRequest::SetProductVersion(const string& _productVersion)
+{
+    m_productVersion = _productVersion;
+    m_productVersionHasBeenSet = true;
+}
+
+bool CloneInstancesRequest::ProductVersionHasBeenSet() const
+{
+    return m_productVersionHasBeenSet;
 }
 
 

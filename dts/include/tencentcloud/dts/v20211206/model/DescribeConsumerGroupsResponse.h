@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指定实例下的消费者组总数
-                     * @return TotalCount 指定实例下的消费者组总数
+                     * 获取<p>指定实例下的消费者组总数</p>
+                     * @return TotalCount <p>指定实例下的消费者组总数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取消费者组列表
-                     * @return Items 消费者组列表
+                     * 获取<p>消费者组列表</p>
+                     * @return Items <p>消费者组列表</p>
                      * 
                      */
                     std::vector<GroupInfo> GetItems() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 指定实例下的消费者组总数
+                     * <p>指定实例下的消费者组总数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 消费者组列表
+                     * <p>消费者组列表</p>
                      */
                     std::vector<GroupInfo> m_items;
                     bool m_itemsHasBeenSet;

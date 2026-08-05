@@ -108,6 +108,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DateParam.h
   include/tencentcloud/ckafka/v20190819/model/ScalingDownResp.h
   include/tencentcloud/ckafka/v20190819/model/PrivateLinkParam.h
+  include/tencentcloud/ckafka/v20190819/model/DescribeGroupInfoResponse.h
   include/tencentcloud/ckafka/v20190819/model/CreateTopicResp.h
   include/tencentcloud/ckafka/v20190819/model/TaskStatusResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeGroup.h
@@ -120,11 +121,13 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DescribeGroupOffsetsRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTopicResp.h
   include/tencentcloud/ckafka/v20190819/model/InstanceDetail.h
+  include/tencentcloud/ckafka/v20190819/model/ThrottleRuleResult.h
   include/tencentcloud/ckafka/v20190819/model/InstanceQuotaConfigResp.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicDetailResponse.h
   include/tencentcloud/ckafka/v20190819/model/SecurityGroupRouteResp.h
   include/tencentcloud/ckafka/v20190819/model/LatestBrokerVersion.h
   include/tencentcloud/ckafka/v20190819/model/DeleteAclRequest.h
+  include/tencentcloud/ckafka/v20190819/model/DeleteThrottleRuleRequest.h
   include/tencentcloud/ckafka/v20190819/model/RouteDTO.h
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTaskResponse.h
   include/tencentcloud/ckafka/v20190819/model/FetchLatestDatahubMessageListRequest.h
@@ -162,7 +165,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/CreateMetaSyncDatahubTaskRequest.h
   include/tencentcloud/ckafka/v20190819/model/TopicInSyncReplicaInfo.h
   include/tencentcloud/ckafka/v20190819/model/DescribeRegionRequest.h
-  include/tencentcloud/ckafka/v20190819/model/DescribeGroupInfoResponse.h
+  include/tencentcloud/ckafka/v20190819/model/CreateThrottleRuleRequest.h
   include/tencentcloud/ckafka/v20190819/model/DtsConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/ModifyAccessPolicyRequest.h
   include/tencentcloud/ckafka/v20190819/model/GroupOffsetResponse.h
@@ -272,6 +275,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DescribeUserResponse.h
   include/tencentcloud/ckafka/v20190819/model/CosParam.h
   include/tencentcloud/ckafka/v20190819/model/ZoneResponse.h
+  include/tencentcloud/ckafka/v20190819/model/DescribeThrottleRulesResponse.h
   include/tencentcloud/ckafka/v20190819/model/DeleteInstancePreRequest.h
   include/tencentcloud/ckafka/v20190819/model/ClickHouseSchema.h
   include/tencentcloud/ckafka/v20190819/model/ConsumerGroupTopic.h
@@ -338,10 +342,13 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/CreateInstancePostResp.h
   include/tencentcloud/ckafka/v20190819/model/IsolatedInstancePreResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTopicResponse.h
+  include/tencentcloud/ckafka/v20190819/model/DescribeThrottleRulesRequest.h
   include/tencentcloud/ckafka/v20190819/model/CreateCdcClusterResponse.h
   include/tencentcloud/ckafka/v20190819/model/OperateResponseData.h
   include/tencentcloud/ckafka/v20190819/model/ClusterInfo.h
   include/tencentcloud/ckafka/v20190819/model/DeleteGroupRequest.h
+  include/tencentcloud/ckafka/v20190819/model/CreateThrottleRuleResponse.h
+  include/tencentcloud/ckafka/v20190819/model/ModifyThrottleRuleResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeConnectResourceRequest.h
   include/tencentcloud/ckafka/v20190819/model/DeleteRouteResponse.h
   include/tencentcloud/ckafka/v20190819/model/CreatePrometheusResponse.h
@@ -350,11 +357,13 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/Partition.h
   include/tencentcloud/ckafka/v20190819/model/CreateAclResponse.h
   include/tencentcloud/ckafka/v20190819/model/TransformParam.h
+  include/tencentcloud/ckafka/v20190819/model/ModifyThrottleRuleRequest.h
   include/tencentcloud/ckafka/v20190819/model/DeleteInstancePreResponse.h
   include/tencentcloud/ckafka/v20190819/model/DatahubTopicResp.h
   include/tencentcloud/ckafka/v20190819/model/DescribeCvmInfoResponse.h
   include/tencentcloud/ckafka/v20190819/model/DeleteRouteTriggerTimeResponse.h
   include/tencentcloud/ckafka/v20190819/model/DealInstanceDTO.h
+  include/tencentcloud/ckafka/v20190819/model/ThrottleRuleDetail.h
   include/tencentcloud/ckafka/v20190819/model/DescribeConnectResource.h
   include/tencentcloud/ckafka/v20190819/model/DescribeUserRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeModifyTypeResponse.h
@@ -378,6 +387,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/InquireCkafkaPriceResponse.h
   include/tencentcloud/ckafka/v20190819/model/ListCvmAndIpInfoRsp.h
   include/tencentcloud/ckafka/v20190819/model/CreateRouteResponse.h
+  include/tencentcloud/ckafka/v20190819/model/DeleteThrottleRuleResponse.h
   include/tencentcloud/ckafka/v20190819/model/DeleteDatahubTaskResponse.h
   include/tencentcloud/ckafka/v20190819/model/EventBusParam.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicFlowRankingResponse.h
@@ -490,6 +500,7 @@ set(ckafka_src
   src/v20190819/model/DateParam.cpp
   src/v20190819/model/ScalingDownResp.cpp
   src/v20190819/model/PrivateLinkParam.cpp
+  src/v20190819/model/DescribeGroupInfoResponse.cpp
   src/v20190819/model/CreateTopicResp.cpp
   src/v20190819/model/TaskStatusResponse.cpp
   src/v20190819/model/DescribeGroup.cpp
@@ -502,11 +513,13 @@ set(ckafka_src
   src/v20190819/model/DescribeGroupOffsetsRequest.cpp
   src/v20190819/model/DescribeDatahubTopicResp.cpp
   src/v20190819/model/InstanceDetail.cpp
+  src/v20190819/model/ThrottleRuleResult.cpp
   src/v20190819/model/InstanceQuotaConfigResp.cpp
   src/v20190819/model/DescribeTopicDetailResponse.cpp
   src/v20190819/model/SecurityGroupRouteResp.cpp
   src/v20190819/model/LatestBrokerVersion.cpp
   src/v20190819/model/DeleteAclRequest.cpp
+  src/v20190819/model/DeleteThrottleRuleRequest.cpp
   src/v20190819/model/RouteDTO.cpp
   src/v20190819/model/DescribeDatahubTaskResponse.cpp
   src/v20190819/model/FetchLatestDatahubMessageListRequest.cpp
@@ -544,7 +557,7 @@ set(ckafka_src
   src/v20190819/model/CreateMetaSyncDatahubTaskRequest.cpp
   src/v20190819/model/TopicInSyncReplicaInfo.cpp
   src/v20190819/model/DescribeRegionRequest.cpp
-  src/v20190819/model/DescribeGroupInfoResponse.cpp
+  src/v20190819/model/CreateThrottleRuleRequest.cpp
   src/v20190819/model/DtsConnectParam.cpp
   src/v20190819/model/ModifyAccessPolicyRequest.cpp
   src/v20190819/model/GroupOffsetResponse.cpp
@@ -654,6 +667,7 @@ set(ckafka_src
   src/v20190819/model/DescribeUserResponse.cpp
   src/v20190819/model/CosParam.cpp
   src/v20190819/model/ZoneResponse.cpp
+  src/v20190819/model/DescribeThrottleRulesResponse.cpp
   src/v20190819/model/DeleteInstancePreRequest.cpp
   src/v20190819/model/ClickHouseSchema.cpp
   src/v20190819/model/ConsumerGroupTopic.cpp
@@ -720,10 +734,13 @@ set(ckafka_src
   src/v20190819/model/CreateInstancePostResp.cpp
   src/v20190819/model/IsolatedInstancePreResponse.cpp
   src/v20190819/model/DescribeDatahubTopicResponse.cpp
+  src/v20190819/model/DescribeThrottleRulesRequest.cpp
   src/v20190819/model/CreateCdcClusterResponse.cpp
   src/v20190819/model/OperateResponseData.cpp
   src/v20190819/model/ClusterInfo.cpp
   src/v20190819/model/DeleteGroupRequest.cpp
+  src/v20190819/model/CreateThrottleRuleResponse.cpp
+  src/v20190819/model/ModifyThrottleRuleResponse.cpp
   src/v20190819/model/DescribeConnectResourceRequest.cpp
   src/v20190819/model/DeleteRouteResponse.cpp
   src/v20190819/model/CreatePrometheusResponse.cpp
@@ -732,11 +749,13 @@ set(ckafka_src
   src/v20190819/model/Partition.cpp
   src/v20190819/model/CreateAclResponse.cpp
   src/v20190819/model/TransformParam.cpp
+  src/v20190819/model/ModifyThrottleRuleRequest.cpp
   src/v20190819/model/DeleteInstancePreResponse.cpp
   src/v20190819/model/DatahubTopicResp.cpp
   src/v20190819/model/DescribeCvmInfoResponse.cpp
   src/v20190819/model/DeleteRouteTriggerTimeResponse.cpp
   src/v20190819/model/DealInstanceDTO.cpp
+  src/v20190819/model/ThrottleRuleDetail.cpp
   src/v20190819/model/DescribeConnectResource.cpp
   src/v20190819/model/DescribeUserRequest.cpp
   src/v20190819/model/DescribeModifyTypeResponse.cpp
@@ -760,6 +779,7 @@ set(ckafka_src
   src/v20190819/model/InquireCkafkaPriceResponse.cpp
   src/v20190819/model/ListCvmAndIpInfoRsp.cpp
   src/v20190819/model/CreateRouteResponse.cpp
+  src/v20190819/model/DeleteThrottleRuleResponse.cpp
   src/v20190819/model/DeleteDatahubTaskResponse.cpp
   src/v20190819/model/EventBusParam.cpp
   src/v20190819/model/DescribeTopicFlowRankingResponse.cpp

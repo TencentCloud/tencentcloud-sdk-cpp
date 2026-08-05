@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据订阅的实例ID
-                     * @return SubscribeId 数据订阅的实例ID
+                     * 获取<p>数据订阅的实例ID</p>
+                     * @return SubscribeId <p>数据订阅的实例ID</p>
                      * 
                      */
                     std::string GetSubscribeId() const;
 
                     /**
-                     * 设置数据订阅的实例ID
-                     * @param _subscribeId 数据订阅的实例ID
+                     * 设置<p>数据订阅的实例ID</p>
+                     * @param _subscribeId <p>数据订阅的实例ID</p>
                      * 
                      */
                     void SetSubscribeId(const std::string& _subscribeId);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool SubscribeIdHasBeenSet() const;
 
                     /**
-                     * 获取数据订阅实例的名称
-                     * @return SubscribeName 数据订阅实例的名称
+                     * 获取<p>数据订阅实例的名称</p>
+                     * @return SubscribeName <p>数据订阅实例的名称</p>
                      * 
                      */
                     std::string GetSubscribeName() const;
 
                     /**
-                     * 设置数据订阅实例的名称
-                     * @param _subscribeName 数据订阅实例的名称
+                     * 设置<p>数据订阅实例的名称</p>
+                     * @param _subscribeName <p>数据订阅实例的名称</p>
                      * 
                      */
                     void SetSubscribeName(const std::string& _subscribeName);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool SubscribeNameHasBeenSet() const;
 
                     /**
-                     * 获取订阅实例发送数据的kafka topic
-                     * @return Topic 订阅实例发送数据的kafka topic
+                     * 获取<p>订阅实例发送数据的kafka topic</p>
+                     * @return Topic <p>订阅实例发送数据的kafka topic</p>
                      * 
                      */
                     std::string GetTopic() const;
 
                     /**
-                     * 设置订阅实例发送数据的kafka topic
-                     * @param _topic 订阅实例发送数据的kafka topic
+                     * 设置<p>订阅实例发送数据的kafka topic</p>
+                     * @param _topic <p>订阅实例发送数据的kafka topic</p>
                      * 
                      */
                     void SetTopic(const std::string& _topic);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool TopicHasBeenSet() const;
 
                     /**
-                     * 获取订阅实例的类型，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)
-                     * @return Product 订阅实例的类型，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)
+                     * 获取<p>订阅实例的类型，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)</p>
+                     * @return Product <p>订阅实例的类型，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)</p>
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置订阅实例的类型，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)
-                     * @param _product 订阅实例的类型，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)
+                     * 设置<p>订阅实例的类型，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)</p>
+                     * @param _product <p>订阅实例的类型，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)</p>
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -134,15 +134,15 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取订阅的数据库实例ID（如果订阅的是云数据库）如果实例不是腾讯云上的，此值为空。
-                     * @return InstanceId 订阅的数据库实例ID（如果订阅的是云数据库）如果实例不是腾讯云上的，此值为空。
+                     * 获取<p>订阅的数据库实例ID（如果订阅的是云数据库）如果实例不是腾讯云上的，此值为空。</p>
+                     * @return InstanceId <p>订阅的数据库实例ID（如果订阅的是云数据库）如果实例不是腾讯云上的，此值为空。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置订阅的数据库实例ID（如果订阅的是云数据库）如果实例不是腾讯云上的，此值为空。
-                     * @param _instanceId 订阅的数据库实例ID（如果订阅的是云数据库）如果实例不是腾讯云上的，此值为空。
+                     * 设置<p>订阅的数据库实例ID（如果订阅的是云数据库）如果实例不是腾讯云上的，此值为空。</p>
+                     * @param _instanceId <p>订阅的数据库实例ID（如果订阅的是云数据库）如果实例不是腾讯云上的，此值为空。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -155,15 +155,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取云数据库状态：running 运行中，isolated 已隔离，offline 已下线。如果不是云上，此值为空
-                     * @return InstanceStatus 云数据库状态：running 运行中，isolated 已隔离，offline 已下线。如果不是云上，此值为空
+                     * 获取<p>云数据库状态：running 运行中，isolated 已隔离，offline 已下线。如果不是云上，此值为空</p>
+                     * @return InstanceStatus <p>云数据库状态：running 运行中，isolated 已隔离，offline 已下线。如果不是云上，此值为空</p>
                      * 
                      */
                     std::string GetInstanceStatus() const;
 
                     /**
-                     * 设置云数据库状态：running 运行中，isolated 已隔离，offline 已下线。如果不是云上，此值为空
-                     * @param _instanceStatus 云数据库状态：running 运行中，isolated 已隔离，offline 已下线。如果不是云上，此值为空
+                     * 设置<p>云数据库状态：running 运行中，isolated 已隔离，offline 已下线。如果不是云上，此值为空</p>
+                     * @param _instanceStatus <p>云数据库状态：running 运行中，isolated 已隔离，offline 已下线。如果不是云上，此值为空</p>
                      * 
                      */
                     void SetInstanceStatus(const std::string& _instanceStatus);
@@ -176,15 +176,15 @@ namespace TencentCloud
                     bool InstanceStatusHasBeenSet() const;
 
                     /**
-                     * 获取数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining, 按量转包年包月中 post2PrePayIng
-                     * @return Status 数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining, 按量转包年包月中 post2PrePayIng
+                     * 获取<p>数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining, 按量转包年包月中 post2PrePayIng</p>
+                     * @return Status <p>数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining, 按量转包年包月中 post2PrePayIng</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining, 按量转包年包月中 post2PrePayIng
-                     * @param _status 数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining, 按量转包年包月中 post2PrePayIng
+                     * 设置<p>数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining, 按量转包年包月中 post2PrePayIng</p>
+                     * @param _status <p>数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining, 按量转包年包月中 post2PrePayIng</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -197,15 +197,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error
-                     * @return SubsStatus 数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error
+                     * 获取<p>数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error</p>
+                     * @return SubsStatus <p>数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error</p>
                      * 
                      */
                     std::string GetSubsStatus() const;
 
                     /**
-                     * 设置数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error
-                     * @param _subsStatus 数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error
+                     * 设置<p>数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error</p>
+                     * @param _subsStatus <p>数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error</p>
                      * 
                      */
                     void SetSubsStatus(const std::string& _subsStatus);
@@ -218,15 +218,15 @@ namespace TencentCloud
                     bool SubsStatusHasBeenSet() const;
 
                     /**
-                     * 获取上次修改时间，时间格式如：Y-m-d h:m:s
-                     * @return ModifyTime 上次修改时间，时间格式如：Y-m-d h:m:s
+                     * 获取<p>上次修改时间，时间格式如：Y-m-d h:m:s</p>
+                     * @return ModifyTime <p>上次修改时间，时间格式如：Y-m-d h:m:s</p>
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
-                     * 设置上次修改时间，时间格式如：Y-m-d h:m:s
-                     * @param _modifyTime 上次修改时间，时间格式如：Y-m-d h:m:s
+                     * 设置<p>上次修改时间，时间格式如：Y-m-d h:m:s</p>
+                     * @param _modifyTime <p>上次修改时间，时间格式如：Y-m-d h:m:s</p>
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -239,15 +239,15 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，时间格式如：Y-m-d h:m:s
-                     * @return CreateTime 创建时间，时间格式如：Y-m-d h:m:s
+                     * 获取<p>创建时间，时间格式如：Y-m-d h:m:s</p>
+                     * @return CreateTime <p>创建时间，时间格式如：Y-m-d h:m:s</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间，时间格式如：Y-m-d h:m:s
-                     * @param _createTime 创建时间，时间格式如：Y-m-d h:m:s
+                     * 设置<p>创建时间，时间格式如：Y-m-d h:m:s</p>
+                     * @param _createTime <p>创建时间，时间格式如：Y-m-d h:m:s</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -260,15 +260,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取隔离时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-                     * @return IsolateTime 隔离时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
+                     * 获取<p>隔离时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00</p>
+                     * @return IsolateTime <p>隔离时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00</p>
                      * 
                      */
                     std::string GetIsolateTime() const;
 
                     /**
-                     * 设置隔离时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-                     * @param _isolateTime 隔离时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
+                     * 设置<p>隔离时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00</p>
+                     * @param _isolateTime <p>隔离时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00</p>
                      * 
                      */
                     void SetIsolateTime(const std::string& _isolateTime);
@@ -281,15 +281,15 @@ namespace TencentCloud
                     bool IsolateTimeHasBeenSet() const;
 
                     /**
-                     * 获取包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-                     * @return ExpireTime 包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
+                     * 获取<p>包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00</p>
+                     * @return ExpireTime <p>包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00</p>
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-                     * @param _expireTime 包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
+                     * 设置<p>包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00</p>
+                     * @param _expireTime <p>包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00</p>
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -302,15 +302,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取下线时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-                     * @return OfflineTime 下线时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
+                     * 获取<p>下线时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00</p>
+                     * @return OfflineTime <p>下线时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00</p>
                      * 
                      */
                     std::string GetOfflineTime() const;
 
                     /**
-                     * 设置下线时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
-                     * @param _offlineTime 下线时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
+                     * 设置<p>下线时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00</p>
+                     * @param _offlineTime <p>下线时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00</p>
                      * 
                      */
                     void SetOfflineTime(const std::string& _offlineTime);
@@ -323,15 +323,15 @@ namespace TencentCloud
                     bool OfflineTimeHasBeenSet() const;
 
                     /**
-                     * 获取计费方式，0 - 包年包月，1 - 按量计费
-                     * @return PayType 计费方式，0 - 包年包月，1 - 按量计费
+                     * 获取<p>计费方式，0 - 包年包月，1 - 按量计费</p>
+                     * @return PayType <p>计费方式，0 - 包年包月，1 - 按量计费</p>
                      * 
                      */
                     int64_t GetPayType() const;
 
                     /**
-                     * 设置计费方式，0 - 包年包月，1 - 按量计费
-                     * @param _payType 计费方式，0 - 包年包月，1 - 按量计费
+                     * 设置<p>计费方式，0 - 包年包月，1 - 按量计费</p>
+                     * @param _payType <p>计费方式，0 - 包年包月，1 - 按量计费</p>
                      * 
                      */
                     void SetPayType(const int64_t& _payType);
@@ -344,15 +344,15 @@ namespace TencentCloud
                     bool PayTypeHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费
-                     * @return AutoRenewFlag 自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费
+                     * 获取<p>自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费</p>
+                     * @return AutoRenewFlag <p>自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费</p>
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费
-                     * @param _autoRenewFlag 自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费
+                     * 设置<p>自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费</p>
+                     * @param _autoRenewFlag <p>自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费</p>
                      * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
@@ -365,15 +365,15 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取数据订阅实例所属地域
-                     * @return Region 数据订阅实例所属地域
+                     * 获取<p>数据订阅实例所属地域</p>
+                     * @return Region <p>数据订阅实例所属地域</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置数据订阅实例所属地域
-                     * @param _region 数据订阅实例所属地域
+                     * 设置<p>数据订阅实例所属地域</p>
+                     * @param _region <p>数据订阅实例所属地域</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -386,15 +386,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取接入方式。枚举值：extranet(公网) vpncloud(vpn接入) dcg(专线接入) ccn(云联网) cdb(云数据库) cvm(云主机自建) intranet(自研上云) vpc(私有网络vpc)
-                     * @return AccessType 接入方式。枚举值：extranet(公网) vpncloud(vpn接入) dcg(专线接入) ccn(云联网) cdb(云数据库) cvm(云主机自建) intranet(自研上云) vpc(私有网络vpc)
+                     * 获取<p>接入方式。枚举值：extranet(公网) vpncloud(vpn接入) dcg(专线接入) ccn(云联网) cdb(云数据库) cvm(云主机自建) intranet(自研上云) vpc(私有网络vpc)</p>
+                     * @return AccessType <p>接入方式。枚举值：extranet(公网) vpncloud(vpn接入) dcg(专线接入) ccn(云联网) cdb(云数据库) cvm(云主机自建) intranet(自研上云) vpc(私有网络vpc)</p>
                      * 
                      */
                     std::string GetAccessType() const;
 
                     /**
-                     * 设置接入方式。枚举值：extranet(公网) vpncloud(vpn接入) dcg(专线接入) ccn(云联网) cdb(云数据库) cvm(云主机自建) intranet(自研上云) vpc(私有网络vpc)
-                     * @param _accessType 接入方式。枚举值：extranet(公网) vpncloud(vpn接入) dcg(专线接入) ccn(云联网) cdb(云数据库) cvm(云主机自建) intranet(自研上云) vpc(私有网络vpc)
+                     * 设置<p>接入方式。枚举值：extranet(公网) vpncloud(vpn接入) dcg(专线接入) ccn(云联网) cdb(云数据库) cvm(云主机自建) intranet(自研上云) vpc(私有网络vpc)</p>
+                     * @param _accessType <p>接入方式。枚举值：extranet(公网) vpncloud(vpn接入) dcg(专线接入) ccn(云联网) cdb(云数据库) cvm(云主机自建) intranet(自研上云) vpc(私有网络vpc)</p>
                      * 
                      */
                     void SetAccessType(const std::string& _accessType);
@@ -407,15 +407,15 @@ namespace TencentCloud
                     bool AccessTypeHasBeenSet() const;
 
                     /**
-                     * 获取数据库节点信息
-                     * @return Endpoints 数据库节点信息
+                     * 获取<p>数据库节点信息</p>
+                     * @return Endpoints <p>数据库节点信息</p>
                      * 
                      */
                     std::vector<EndpointItem> GetEndpoints() const;
 
                     /**
-                     * 设置数据库节点信息
-                     * @param _endpoints 数据库节点信息
+                     * 设置<p>数据库节点信息</p>
+                     * @param _endpoints <p>数据库节点信息</p>
                      * 
                      */
                     void SetEndpoints(const std::vector<EndpointItem>& _endpoints);
@@ -428,15 +428,15 @@ namespace TencentCloud
                     bool EndpointsHasBeenSet() const;
 
                     /**
-                     * 获取数据订阅版本, 当前支持kafka和kafkaPro（专业版）
-                     * @return SubscribeVersion 数据订阅版本, 当前支持kafka和kafkaPro（专业版）
+                     * 获取<p>数据订阅版本, 当前支持kafka和kafkaPro（专业版）</p>
+                     * @return SubscribeVersion <p>数据订阅版本, 当前支持kafka和kafkaPro（专业版）</p>
                      * 
                      */
                     std::string GetSubscribeVersion() const;
 
                     /**
-                     * 设置数据订阅版本, 当前支持kafka和kafkaPro（专业版）
-                     * @param _subscribeVersion 数据订阅版本, 当前支持kafka和kafkaPro（专业版）
+                     * 设置<p>数据订阅版本, 当前支持kafka和kafkaPro（专业版）</p>
+                     * @param _subscribeVersion <p>数据订阅版本, 当前支持kafka和kafkaPro（专业版）</p>
                      * 
                      */
                     void SetSubscribeVersion(const std::string& _subscribeVersion);
@@ -449,18 +449,18 @@ namespace TencentCloud
                     bool SubscribeVersionHasBeenSet() const;
 
                     /**
-                     * 获取标签
+                     * 获取<p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags 标签
+                     * @return Tags <p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TagItem> GetTags() const;
 
                     /**
-                     * 设置标签
+                     * 设置<p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tags 标签
+                     * @param _tags <p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -474,18 +474,18 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取任务报错信息，如果有的话。
+                     * 获取<p>任务报错信息，如果有的话。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Errors 任务报错信息，如果有的话。
+                     * @return Errors <p>任务报错信息，如果有的话。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SubsErr> GetErrors() const;
 
                     /**
-                     * 设置任务报错信息，如果有的话。
+                     * 设置<p>任务报错信息，如果有的话。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _errors 任务报错信息，如果有的话。
+                     * @param _errors <p>任务报错信息，如果有的话。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -499,15 +499,15 @@ namespace TencentCloud
                     bool ErrorsHasBeenSet() const;
 
                     /**
-                     * 获取订阅实例规格
-                     * @return InstanceClass 订阅实例规格
+                     * 获取<p>订阅实例规格</p>
+                     * @return InstanceClass <p>订阅实例规格</p>
                      * 
                      */
                     std::string GetInstanceClass() const;
 
                     /**
-                     * 设置订阅实例规格
-                     * @param _instanceClass 订阅实例规格
+                     * 设置<p>订阅实例规格</p>
+                     * @param _instanceClass <p>订阅实例规格</p>
                      * 
                      */
                     void SetInstanceClass(const std::string& _instanceClass);
@@ -519,141 +519,168 @@ namespace TencentCloud
                      */
                     bool InstanceClassHasBeenSet() const;
 
+                    /**
+                     * 获取<p>新版订阅消费端路由阶段</p>
+                     * @return ConsumerRoutePhase <p>新版订阅消费端路由阶段</p>
+                     * 
+                     */
+                    std::string GetConsumerRoutePhase() const;
+
+                    /**
+                     * 设置<p>新版订阅消费端路由阶段</p>
+                     * @param _consumerRoutePhase <p>新版订阅消费端路由阶段</p>
+                     * 
+                     */
+                    void SetConsumerRoutePhase(const std::string& _consumerRoutePhase);
+
+                    /**
+                     * 判断参数 ConsumerRoutePhase 是否已赋值
+                     * @return ConsumerRoutePhase 是否已赋值
+                     * 
+                     */
+                    bool ConsumerRoutePhaseHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 数据订阅的实例ID
+                     * <p>数据订阅的实例ID</p>
                      */
                     std::string m_subscribeId;
                     bool m_subscribeIdHasBeenSet;
 
                     /**
-                     * 数据订阅实例的名称
+                     * <p>数据订阅实例的名称</p>
                      */
                     std::string m_subscribeName;
                     bool m_subscribeNameHasBeenSet;
 
                     /**
-                     * 订阅实例发送数据的kafka topic
+                     * <p>订阅实例发送数据的kafka topic</p>
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
 
                     /**
-                     * 订阅实例的类型，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)
+                     * <p>订阅实例的类型，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)</p>
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
 
                     /**
-                     * 订阅的数据库实例ID（如果订阅的是云数据库）如果实例不是腾讯云上的，此值为空。
+                     * <p>订阅的数据库实例ID（如果订阅的是云数据库）如果实例不是腾讯云上的，此值为空。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 云数据库状态：running 运行中，isolated 已隔离，offline 已下线。如果不是云上，此值为空
+                     * <p>云数据库状态：running 运行中，isolated 已隔离，offline 已下线。如果不是云上，此值为空</p>
                      */
                     std::string m_instanceStatus;
                     bool m_instanceStatusHasBeenSet;
 
                     /**
-                     * 数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining, 按量转包年包月中 post2PrePayIng
+                     * <p>数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining, 按量转包年包月中 post2PrePayIng</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error
+                     * <p>数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error</p>
                      */
                     std::string m_subsStatus;
                     bool m_subsStatusHasBeenSet;
 
                     /**
-                     * 上次修改时间，时间格式如：Y-m-d h:m:s
+                     * <p>上次修改时间，时间格式如：Y-m-d h:m:s</p>
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * 创建时间，时间格式如：Y-m-d h:m:s
+                     * <p>创建时间，时间格式如：Y-m-d h:m:s</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 隔离时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
+                     * <p>隔离时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00</p>
                      */
                     std::string m_isolateTime;
                     bool m_isolateTimeHasBeenSet;
 
                     /**
-                     * 包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
+                     * <p>包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00</p>
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 下线时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
+                     * <p>下线时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00</p>
                      */
                     std::string m_offlineTime;
                     bool m_offlineTimeHasBeenSet;
 
                     /**
-                     * 计费方式，0 - 包年包月，1 - 按量计费
+                     * <p>计费方式，0 - 包年包月，1 - 按量计费</p>
                      */
                     int64_t m_payType;
                     bool m_payTypeHasBeenSet;
 
                     /**
-                     * 自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费
+                     * <p>自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费</p>
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 数据订阅实例所属地域
+                     * <p>数据订阅实例所属地域</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 接入方式。枚举值：extranet(公网) vpncloud(vpn接入) dcg(专线接入) ccn(云联网) cdb(云数据库) cvm(云主机自建) intranet(自研上云) vpc(私有网络vpc)
+                     * <p>接入方式。枚举值：extranet(公网) vpncloud(vpn接入) dcg(专线接入) ccn(云联网) cdb(云数据库) cvm(云主机自建) intranet(自研上云) vpc(私有网络vpc)</p>
                      */
                     std::string m_accessType;
                     bool m_accessTypeHasBeenSet;
 
                     /**
-                     * 数据库节点信息
+                     * <p>数据库节点信息</p>
                      */
                     std::vector<EndpointItem> m_endpoints;
                     bool m_endpointsHasBeenSet;
 
                     /**
-                     * 数据订阅版本, 当前支持kafka和kafkaPro（专业版）
+                     * <p>数据订阅版本, 当前支持kafka和kafkaPro（专业版）</p>
                      */
                     std::string m_subscribeVersion;
                     bool m_subscribeVersionHasBeenSet;
 
                     /**
-                     * 标签
+                     * <p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagItem> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 任务报错信息，如果有的话。
+                     * <p>任务报错信息，如果有的话。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SubsErr> m_errors;
                     bool m_errorsHasBeenSet;
 
                     /**
-                     * 订阅实例规格
+                     * <p>订阅实例规格</p>
                      */
                     std::string m_instanceClass;
                     bool m_instanceClassHasBeenSet;
+
+                    /**
+                     * <p>新版订阅消费端路由阶段</p>
+                     */
+                    std::string m_consumerRoutePhase;
+                    bool m_consumerRoutePhaseHasBeenSet;
 
                 };
             }

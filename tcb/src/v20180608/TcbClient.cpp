@@ -5040,3 +5040,53 @@ TcbClient::UpdateTableOutcomeCallable TcbClient::UpdateTableCallable(const Updat
     return prom->get_future();
 }
 
+TcbClient::VerifyHTTPServiceRouteOutcome TcbClient::VerifyHTTPServiceRoute(const VerifyHTTPServiceRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "VerifyHTTPServiceRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VerifyHTTPServiceRouteResponse rsp = VerifyHTTPServiceRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VerifyHTTPServiceRouteOutcome(rsp);
+        else
+            return VerifyHTTPServiceRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return VerifyHTTPServiceRouteOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::VerifyHTTPServiceRouteAsync(const VerifyHTTPServiceRouteRequest& request, const VerifyHTTPServiceRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const VerifyHTTPServiceRouteRequest&;
+    using Resp = VerifyHTTPServiceRouteResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "VerifyHTTPServiceRoute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::VerifyHTTPServiceRouteOutcomeCallable TcbClient::VerifyHTTPServiceRouteCallable(const VerifyHTTPServiceRouteRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<VerifyHTTPServiceRouteOutcome>>();
+    VerifyHTTPServiceRouteAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const VerifyHTTPServiceRouteRequest&,
+        VerifyHTTPServiceRouteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+

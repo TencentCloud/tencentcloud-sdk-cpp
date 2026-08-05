@@ -1090,6 +1090,56 @@ CkafkaClient::CreateRouteOutcomeCallable CkafkaClient::CreateRouteCallable(const
     return prom->get_future();
 }
 
+CkafkaClient::CreateThrottleRuleOutcome CkafkaClient::CreateThrottleRule(const CreateThrottleRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateThrottleRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateThrottleRuleResponse rsp = CreateThrottleRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateThrottleRuleOutcome(rsp);
+        else
+            return CreateThrottleRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateThrottleRuleOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::CreateThrottleRuleAsync(const CreateThrottleRuleRequest& request, const CreateThrottleRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateThrottleRuleRequest&;
+    using Resp = CreateThrottleRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateThrottleRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CkafkaClient::CreateThrottleRuleOutcomeCallable CkafkaClient::CreateThrottleRuleCallable(const CreateThrottleRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateThrottleRuleOutcome>>();
+    CreateThrottleRuleAsync(
+    request,
+    [prom](
+        const CkafkaClient*,
+        const CreateThrottleRuleRequest&,
+        CreateThrottleRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CkafkaClient::CreateTokenOutcome CkafkaClient::CreateToken(const CreateTokenRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateToken");
@@ -1832,6 +1882,56 @@ CkafkaClient::DeleteRouteTriggerTimeOutcomeCallable CkafkaClient::DeleteRouteTri
         const CkafkaClient*,
         const DeleteRouteTriggerTimeRequest&,
         DeleteRouteTriggerTimeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CkafkaClient::DeleteThrottleRuleOutcome CkafkaClient::DeleteThrottleRule(const DeleteThrottleRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteThrottleRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteThrottleRuleResponse rsp = DeleteThrottleRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteThrottleRuleOutcome(rsp);
+        else
+            return DeleteThrottleRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteThrottleRuleOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DeleteThrottleRuleAsync(const DeleteThrottleRuleRequest& request, const DeleteThrottleRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteThrottleRuleRequest&;
+    using Resp = DeleteThrottleRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteThrottleRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CkafkaClient::DeleteThrottleRuleOutcomeCallable CkafkaClient::DeleteThrottleRuleCallable(const DeleteThrottleRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteThrottleRuleOutcome>>();
+    DeleteThrottleRuleAsync(
+    request,
+    [prom](
+        const CkafkaClient*,
+        const DeleteThrottleRuleRequest&,
+        DeleteThrottleRuleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3240,6 +3340,56 @@ CkafkaClient::DescribeTaskStatusOutcomeCallable CkafkaClient::DescribeTaskStatus
     return prom->get_future();
 }
 
+CkafkaClient::DescribeThrottleRulesOutcome CkafkaClient::DescribeThrottleRules(const DescribeThrottleRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeThrottleRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeThrottleRulesResponse rsp = DescribeThrottleRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeThrottleRulesOutcome(rsp);
+        else
+            return DescribeThrottleRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeThrottleRulesOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DescribeThrottleRulesAsync(const DescribeThrottleRulesRequest& request, const DescribeThrottleRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeThrottleRulesRequest&;
+    using Resp = DescribeThrottleRulesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeThrottleRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CkafkaClient::DescribeThrottleRulesOutcomeCallable CkafkaClient::DescribeThrottleRulesCallable(const DescribeThrottleRulesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeThrottleRulesOutcome>>();
+    DescribeThrottleRulesAsync(
+    request,
+    [prom](
+        const CkafkaClient*,
+        const DescribeThrottleRulesRequest&,
+        DescribeThrottleRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CkafkaClient::DescribeTopicOutcome CkafkaClient::DescribeTopic(const DescribeTopicRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTopic");
@@ -4582,6 +4732,56 @@ CkafkaClient::ModifyRoutineMaintenanceTaskOutcomeCallable CkafkaClient::ModifyRo
         const CkafkaClient*,
         const ModifyRoutineMaintenanceTaskRequest&,
         ModifyRoutineMaintenanceTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CkafkaClient::ModifyThrottleRuleOutcome CkafkaClient::ModifyThrottleRule(const ModifyThrottleRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyThrottleRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyThrottleRuleResponse rsp = ModifyThrottleRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyThrottleRuleOutcome(rsp);
+        else
+            return ModifyThrottleRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyThrottleRuleOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::ModifyThrottleRuleAsync(const ModifyThrottleRuleRequest& request, const ModifyThrottleRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyThrottleRuleRequest&;
+    using Resp = ModifyThrottleRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyThrottleRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CkafkaClient::ModifyThrottleRuleOutcomeCallable CkafkaClient::ModifyThrottleRuleCallable(const ModifyThrottleRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyThrottleRuleOutcome>>();
+    ModifyThrottleRuleAsync(
+    request,
+    [prom](
+        const CkafkaClient*,
+        const ModifyThrottleRuleRequest&,
+        ModifyThrottleRuleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

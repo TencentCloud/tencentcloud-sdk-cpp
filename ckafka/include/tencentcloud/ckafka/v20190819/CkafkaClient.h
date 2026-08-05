@@ -65,6 +65,8 @@
 #include <tencentcloud/ckafka/v20190819/model/CreatePrometheusResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateRouteRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateRouteResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateThrottleRuleRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateThrottleRuleResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateTokenRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateTokenResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateTopicRequest.h>
@@ -95,6 +97,8 @@
 #include <tencentcloud/ckafka/v20190819/model/DeleteRouteResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteRouteTriggerTimeRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteRouteTriggerTimeResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DeleteThrottleRuleRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DeleteThrottleRuleResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteTopicRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteTopicResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteUserRequest.h>
@@ -151,6 +155,8 @@
 #include <tencentcloud/ckafka/v20190819/model/DescribeSecurityGroupRoutesResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeTaskStatusRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeTaskStatusResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeThrottleRulesRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeThrottleRulesResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeTopicRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeTopicResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeTopicAttributesRequest.h>
@@ -205,6 +211,8 @@
 #include <tencentcloud/ckafka/v20190819/model/ModifyPasswordResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyRoutineMaintenanceTaskRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyRoutineMaintenanceTaskResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/ModifyThrottleRuleRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/ModifyThrottleRuleResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyTopicAttributesRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyTopicAttributesResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/PauseDatahubTaskRequest.h>
@@ -296,6 +304,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRouteResponse> CreateRouteOutcome;
                 typedef std::future<CreateRouteOutcome> CreateRouteOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateRouteRequest&, CreateRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRouteAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateThrottleRuleResponse> CreateThrottleRuleOutcome;
+                typedef std::future<CreateThrottleRuleOutcome> CreateThrottleRuleOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::CreateThrottleRuleRequest&, CreateThrottleRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateThrottleRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTokenResponse> CreateTokenOutcome;
                 typedef std::future<CreateTokenOutcome> CreateTokenOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateTokenRequest&, CreateTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTokenAsyncHandler;
@@ -341,6 +352,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRouteTriggerTimeResponse> DeleteRouteTriggerTimeOutcome;
                 typedef std::future<DeleteRouteTriggerTimeOutcome> DeleteRouteTriggerTimeOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DeleteRouteTriggerTimeRequest&, DeleteRouteTriggerTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRouteTriggerTimeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteThrottleRuleResponse> DeleteThrottleRuleOutcome;
+                typedef std::future<DeleteThrottleRuleOutcome> DeleteThrottleRuleOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DeleteThrottleRuleRequest&, DeleteThrottleRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteThrottleRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTopicResponse> DeleteTopicOutcome;
                 typedef std::future<DeleteTopicOutcome> DeleteTopicOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DeleteTopicRequest&, DeleteTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTopicAsyncHandler;
@@ -425,6 +439,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTaskStatusResponse> DescribeTaskStatusOutcome;
                 typedef std::future<DescribeTaskStatusOutcome> DescribeTaskStatusOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeTaskStatusRequest&, DescribeTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeThrottleRulesResponse> DescribeThrottleRulesOutcome;
+                typedef std::future<DescribeThrottleRulesOutcome> DescribeThrottleRulesOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DescribeThrottleRulesRequest&, DescribeThrottleRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeThrottleRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopicResponse> DescribeTopicOutcome;
                 typedef std::future<DescribeTopicOutcome> DescribeTopicOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeTopicRequest&, DescribeTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicAsyncHandler;
@@ -506,6 +523,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRoutineMaintenanceTaskResponse> ModifyRoutineMaintenanceTaskOutcome;
                 typedef std::future<ModifyRoutineMaintenanceTaskOutcome> ModifyRoutineMaintenanceTaskOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::ModifyRoutineMaintenanceTaskRequest&, ModifyRoutineMaintenanceTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoutineMaintenanceTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyThrottleRuleResponse> ModifyThrottleRuleOutcome;
+                typedef std::future<ModifyThrottleRuleOutcome> ModifyThrottleRuleOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::ModifyThrottleRuleRequest&, ModifyThrottleRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyThrottleRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTopicAttributesResponse> ModifyTopicAttributesOutcome;
                 typedef std::future<ModifyTopicAttributesOutcome> ModifyTopicAttributesOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::ModifyTopicAttributesRequest&, ModifyTopicAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicAttributesAsyncHandler;
@@ -720,6 +740,15 @@ namespace TencentCloud
                 CreateRouteOutcomeCallable CreateRouteCallable(const Model::CreateRouteRequest& request);
 
                 /**
+                 *实例限流规则相关接口
+                 * @param req CreateThrottleRuleRequest
+                 * @return CreateThrottleRuleOutcome
+                 */
+                CreateThrottleRuleOutcome CreateThrottleRule(const Model::CreateThrottleRuleRequest &request);
+                void CreateThrottleRuleAsync(const Model::CreateThrottleRuleRequest& request, const CreateThrottleRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateThrottleRuleOutcomeCallable CreateThrottleRuleCallable(const Model::CreateThrottleRuleRequest& request);
+
+                /**
                  *创建最高权限的token
                  * @param req CreateTokenRequest
                  * @return CreateTokenOutcome
@@ -853,6 +882,15 @@ namespace TencentCloud
                 DeleteRouteTriggerTimeOutcome DeleteRouteTriggerTime(const Model::DeleteRouteTriggerTimeRequest &request);
                 void DeleteRouteTriggerTimeAsync(const Model::DeleteRouteTriggerTimeRequest& request, const DeleteRouteTriggerTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteRouteTriggerTimeOutcomeCallable DeleteRouteTriggerTimeCallable(const Model::DeleteRouteTriggerTimeRequest& request);
+
+                /**
+                 *删除实例限流规则
+                 * @param req DeleteThrottleRuleRequest
+                 * @return DeleteThrottleRuleOutcome
+                 */
+                DeleteThrottleRuleOutcome DeleteThrottleRule(const Model::DeleteThrottleRuleRequest &request);
+                void DeleteThrottleRuleAsync(const Model::DeleteThrottleRuleRequest& request, const DeleteThrottleRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteThrottleRuleOutcomeCallable DeleteThrottleRuleCallable(const Model::DeleteThrottleRuleRequest& request);
 
                 /**
                  *删除ckafka主题
@@ -1107,6 +1145,15 @@ namespace TencentCloud
                 DescribeTaskStatusOutcomeCallable DescribeTaskStatusCallable(const Model::DescribeTaskStatusRequest& request);
 
                 /**
+                 *获取实例限流规则列表
+                 * @param req DescribeThrottleRulesRequest
+                 * @return DescribeThrottleRulesOutcome
+                 */
+                DescribeThrottleRulesOutcome DescribeThrottleRules(const Model::DescribeThrottleRulesRequest &request);
+                void DescribeThrottleRulesAsync(const Model::DescribeThrottleRulesRequest& request, const DescribeThrottleRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeThrottleRulesOutcomeCallable DescribeThrottleRulesCallable(const Model::DescribeThrottleRulesRequest& request);
+
+                /**
                  *接口请求域名：https://ckafka.tencentcloudapi.com
 本接口（DescribeTopic）用于在用户获取消息队列 CKafka 实例的主题列表
                  * @param req DescribeTopicRequest
@@ -1349,6 +1396,15 @@ namespace TencentCloud
                 ModifyRoutineMaintenanceTaskOutcome ModifyRoutineMaintenanceTask(const Model::ModifyRoutineMaintenanceTaskRequest &request);
                 void ModifyRoutineMaintenanceTaskAsync(const Model::ModifyRoutineMaintenanceTaskRequest& request, const ModifyRoutineMaintenanceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyRoutineMaintenanceTaskOutcomeCallable ModifyRoutineMaintenanceTaskCallable(const Model::ModifyRoutineMaintenanceTaskRequest& request);
+
+                /**
+                 *修改限流规则接口
+                 * @param req ModifyThrottleRuleRequest
+                 * @return ModifyThrottleRuleOutcome
+                 */
+                ModifyThrottleRuleOutcome ModifyThrottleRule(const Model::ModifyThrottleRuleRequest &request);
+                void ModifyThrottleRuleAsync(const Model::ModifyThrottleRuleRequest& request, const ModifyThrottleRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyThrottleRuleOutcomeCallable ModifyThrottleRuleCallable(const Model::ModifyThrottleRuleRequest& request);
 
                 /**
                  *本接口用于修改主题属性。

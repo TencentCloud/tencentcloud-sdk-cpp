@@ -31,6 +31,7 @@ CreateSealByImageRequest::CreateSealByImageRequest() :
     m_sealTypeHasBeenSet(false),
     m_sealHorizontalTextHasBeenSet(false),
     m_sealStyleHasBeenSet(false),
+    m_subSealTypeHasBeenSet(false),
     m_sealSizeHasBeenSet(false),
     m_taxIdentifyCodeHasBeenSet(false),
     m_sealDescriptionHasBeenSet(false),
@@ -109,6 +110,14 @@ string CreateSealByImageRequest::ToJsonString() const
         string key = "SealStyle";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sealStyle.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subSealTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubSealType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subSealType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sealSizeHasBeenSet)
@@ -284,6 +293,22 @@ void CreateSealByImageRequest::SetSealStyle(const string& _sealStyle)
 bool CreateSealByImageRequest::SealStyleHasBeenSet() const
 {
     return m_sealStyleHasBeenSet;
+}
+
+string CreateSealByImageRequest::GetSubSealType() const
+{
+    return m_subSealType;
+}
+
+void CreateSealByImageRequest::SetSubSealType(const string& _subSealType)
+{
+    m_subSealType = _subSealType;
+    m_subSealTypeHasBeenSet = true;
+}
+
+bool CreateSealByImageRequest::SubSealTypeHasBeenSet() const
+{
+    return m_subSealTypeHasBeenSet;
 }
 
 string CreateSealByImageRequest::GetSealSize() const

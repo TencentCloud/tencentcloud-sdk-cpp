@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订阅实例id，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。
-                     * @return SubscribeId 订阅实例id，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。
+                     * 获取<p>订阅实例id，可通过<a href="https://cloud.tencent.com/document/product/571/102943">DescribeSubscribeJobs</a>接口获取。</p>
+                     * @return SubscribeId <p>订阅实例id，可通过<a href="https://cloud.tencent.com/document/product/571/102943">DescribeSubscribeJobs</a>接口获取。</p>
                      * 
                      */
                     std::string GetSubscribeId() const;
 
                     /**
-                     * 设置订阅实例id，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。
-                     * @param _subscribeId 订阅实例id，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。
+                     * 设置<p>订阅实例id，可通过<a href="https://cloud.tencent.com/document/product/571/102943">DescribeSubscribeJobs</a>接口获取。</p>
+                     * @param _subscribeId <p>订阅实例id，可通过<a href="https://cloud.tencent.com/document/product/571/102943">DescribeSubscribeJobs</a>接口获取。</p>
                      * 
                      */
                     void SetSubscribeId(const std::string& _subscribeId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SubscribeIdHasBeenSet() const;
 
                     /**
-                     * 获取返回记录的起始偏移量。默认0
-                     * @return Offset 返回记录的起始偏移量。默认0
+                     * 获取<p>返回记录的起始偏移量。默认0</p>
+                     * @return Offset <p>返回记录的起始偏移量。默认0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置返回记录的起始偏移量。默认0
-                     * @param _offset 返回记录的起始偏移量。默认0
+                     * 设置<p>返回记录的起始偏移量。默认0</p>
+                     * @param _offset <p>返回记录的起始偏移量。默认0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取单次返回的记录数量。默认10
-                     * @return Limit 单次返回的记录数量。默认10
+                     * 获取<p>单次返回的记录数量。默认10</p>
+                     * @return Limit <p>单次返回的记录数量。默认10</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置单次返回的记录数量。默认10
-                     * @param _limit 单次返回的记录数量。默认10
+                     * 设置<p>单次返回的记录数量。默认10</p>
+                     * @param _limit <p>单次返回的记录数量。默认10</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订阅实例id，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。
+                     * <p>订阅实例id，可通过<a href="https://cloud.tencent.com/document/product/571/102943">DescribeSubscribeJobs</a>接口获取。</p>
                      */
                     std::string m_subscribeId;
                     bool m_subscribeIdHasBeenSet;
 
                     /**
-                     * 返回记录的起始偏移量。默认0
+                     * <p>返回记录的起始偏移量。默认0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 单次返回的记录数量。默认10
+                     * <p>单次返回的记录数量。默认10</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

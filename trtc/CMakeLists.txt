@@ -77,6 +77,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/DescribeCloudTranscriptionResponse.h
   include/tencentcloud/trtc/v20190722/model/DescribeUserInfoRequest.h
   include/tencentcloud/trtc/v20190722/model/DeleteCloudModerationResponse.h
+  include/tencentcloud/trtc/v20190722/model/AgoraParam.h
   include/tencentcloud/trtc/v20190722/model/DescribeRelayUsageRequest.h
   include/tencentcloud/trtc/v20190722/model/DismissRoomResponse.h
   include/tencentcloud/trtc/v20190722/model/WaterMarkParams.h
@@ -349,6 +350,7 @@ set(trtc_src
   src/v20190722/model/DescribeCloudTranscriptionResponse.cpp
   src/v20190722/model/DescribeUserInfoRequest.cpp
   src/v20190722/model/DeleteCloudModerationResponse.cpp
+  src/v20190722/model/AgoraParam.cpp
   src/v20190722/model/DescribeRelayUsageRequest.cpp
   src/v20190722/model/DismissRoomResponse.cpp
   src/v20190722/model/WaterMarkParams.cpp

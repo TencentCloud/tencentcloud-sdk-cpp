@@ -42,7 +42,8 @@ SubscribeInfo::SubscribeInfo() :
     m_subscribeVersionHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_errorsHasBeenSet(false),
-    m_instanceClassHasBeenSet(false)
+    m_instanceClassHasBeenSet(false),
+    m_consumerRoutePhaseHasBeenSet(false)
 {
 }
 
@@ -301,6 +302,16 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
         m_instanceClassHasBeenSet = true;
     }
 
+    if (value.HasMember("ConsumerRoutePhase") && !value["ConsumerRoutePhase"].IsNull())
+    {
+        if (!value["ConsumerRoutePhase"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.ConsumerRoutePhase` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_consumerRoutePhase = string(value["ConsumerRoutePhase"].GetString());
+        m_consumerRoutePhaseHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -503,6 +514,14 @@ void SubscribeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "InstanceClass";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceClass.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_consumerRoutePhaseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumerRoutePhase";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_consumerRoutePhase.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -858,5 +877,21 @@ void SubscribeInfo::SetInstanceClass(const string& _instanceClass)
 bool SubscribeInfo::InstanceClassHasBeenSet() const
 {
     return m_instanceClassHasBeenSet;
+}
+
+string SubscribeInfo::GetConsumerRoutePhase() const
+{
+    return m_consumerRoutePhase;
+}
+
+void SubscribeInfo::SetConsumerRoutePhase(const string& _consumerRoutePhase)
+{
+    m_consumerRoutePhase = _consumerRoutePhase;
+    m_consumerRoutePhaseHasBeenSet = true;
+}
+
+bool SubscribeInfo::ConsumerRoutePhaseHasBeenSet() const
+{
+    return m_consumerRoutePhaseHasBeenSet;
 }
 

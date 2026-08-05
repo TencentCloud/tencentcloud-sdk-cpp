@@ -29,7 +29,8 @@ DBCustomClusterNode::DBCustomClusterNode() :
     m_zoneHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
     m_networkModeHasBeenSet(false),
-    m_eniIPHasBeenSet(false)
+    m_eniIPHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,19 @@ CoreInternalOutcome DBCustomClusterNode::Deserialize(const rapidjson::Value &val
         m_eniIPHasBeenSet = true;
     }
 
+    if (value.HasMember("SecurityGroupIds") && !value["SecurityGroupIds"].IsNull())
+    {
+        if (!value["SecurityGroupIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DBCustomClusterNode.SecurityGroupIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SecurityGroupIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_securityGroupIds.push_back((*itr).GetString());
+        }
+        m_securityGroupIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +219,19 @@ void DBCustomClusterNode::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "EniIP";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_eniIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -352,5 +379,21 @@ void DBCustomClusterNode::SetEniIP(const string& _eniIP)
 bool DBCustomClusterNode::EniIPHasBeenSet() const
 {
     return m_eniIPHasBeenSet;
+}
+
+vector<string> DBCustomClusterNode::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void DBCustomClusterNode::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool DBCustomClusterNode::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
 }
 

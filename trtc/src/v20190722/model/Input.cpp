@@ -22,7 +22,8 @@ using namespace std;
 
 Input::Input() :
     m_urlHasBeenSet(false),
-    m_formatHasBeenSet(false)
+    m_formatHasBeenSet(false),
+    m_agoraParamHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,23 @@ CoreInternalOutcome Input::Deserialize(const rapidjson::Value &value)
         m_formatHasBeenSet = true;
     }
 
+    if (value.HasMember("AgoraParam") && !value["AgoraParam"].IsNull())
+    {
+        if (!value["AgoraParam"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Input.AgoraParam` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_agoraParam.Deserialize(value["AgoraParam"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_agoraParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +90,15 @@ void Input::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "Format";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_format.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agoraParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgoraParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agoraParam.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -107,5 +134,21 @@ void Input::SetFormat(const string& _format)
 bool Input::FormatHasBeenSet() const
 {
     return m_formatHasBeenSet;
+}
+
+AgoraParam Input::GetAgoraParam() const
+{
+    return m_agoraParam;
+}
+
+void Input::SetAgoraParam(const AgoraParam& _agoraParam)
+{
+    m_agoraParam = _agoraParam;
+    m_agoraParamHasBeenSet = true;
+}
+
+bool Input::AgoraParamHasBeenSet() const
+{
+    return m_agoraParamHasBeenSet;
 }
 

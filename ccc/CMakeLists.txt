@@ -155,6 +155,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/ExtensionInfo.h
   include/tencentcloud/ccc/v20200210/model/BindNumberCallOutSkillGroupRequest.h
   include/tencentcloud/ccc/v20200210/model/DeletePredictiveDialingCampaignResponse.h
+  include/tencentcloud/ccc/v20200210/model/TransferToAgentItem.h
   include/tencentcloud/ccc/v20200210/model/IVRKeyPressedElement.h
   include/tencentcloud/ccc/v20200210/model/DescribeFlashSMSListRequest.h
   include/tencentcloud/ccc/v20200210/model/UnbindNumberCallOutSkillGroupResponse.h
@@ -409,6 +410,7 @@ set(ccc_src
   src/v20200210/model/ExtensionInfo.cpp
   src/v20200210/model/BindNumberCallOutSkillGroupRequest.cpp
   src/v20200210/model/DeletePredictiveDialingCampaignResponse.cpp
+  src/v20200210/model/TransferToAgentItem.cpp
   src/v20200210/model/IVRKeyPressedElement.cpp
   src/v20200210/model/DescribeFlashSMSListRequest.cpp
   src/v20200210/model/UnbindNumberCallOutSkillGroupResponse.cpp

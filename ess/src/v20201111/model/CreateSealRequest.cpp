@@ -28,6 +28,7 @@ CreateSealRequest::CreateSealRequest() :
     m_agentHasBeenSet(false),
     m_generateSourceHasBeenSet(false),
     m_sealTypeHasBeenSet(false),
+    m_subSealTypeHasBeenSet(false),
     m_fileNameHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_widthHasBeenSet(false),
@@ -92,6 +93,14 @@ string CreateSealRequest::ToJsonString() const
         string key = "SealType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sealType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subSealTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubSealType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subSealType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileNameHasBeenSet)
@@ -299,6 +308,22 @@ void CreateSealRequest::SetSealType(const string& _sealType)
 bool CreateSealRequest::SealTypeHasBeenSet() const
 {
     return m_sealTypeHasBeenSet;
+}
+
+string CreateSealRequest::GetSubSealType() const
+{
+    return m_subSealType;
+}
+
+void CreateSealRequest::SetSubSealType(const string& _subSealType)
+{
+    m_subSealType = _subSealType;
+    m_subSealTypeHasBeenSet = true;
+}
+
+bool CreateSealRequest::SubSealTypeHasBeenSet() const
+{
+    return m_subSealTypeHasBeenSet;
 }
 
 string CreateSealRequest::GetFileName() const

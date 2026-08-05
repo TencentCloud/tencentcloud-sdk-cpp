@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ResourceSpecHasBeenSet() const;
 
                     /**
-                     * 获取<p>配额数量</p>
-                     * @return Quota <p>配额数量</p>
+                     * 获取<p>配额数量</p><p>请注意，CPU类型计费项为32的整数倍，GPU类型计费项为1的整数倍。</p>
+                     * @return Quota <p>配额数量</p><p>请注意，CPU类型计费项为32的整数倍，GPU类型计费项为1的整数倍。</p>
                      * 
                      */
                     int64_t GetQuota() const;
 
                     /**
-                     * 设置<p>配额数量</p>
-                     * @param _quota <p>配额数量</p>
+                     * 设置<p>配额数量</p><p>请注意，CPU类型计费项为32的整数倍，GPU类型计费项为1的整数倍。</p>
+                     * @param _quota <p>配额数量</p><p>请注意，CPU类型计费项为32的整数倍，GPU类型计费项为1的整数倍。</p>
                      * 
                      */
                     void SetQuota(const int64_t& _quota);
@@ -98,7 +98,7 @@ namespace TencentCloud
                     bool m_resourceSpecHasBeenSet;
 
                     /**
-                     * <p>配额数量</p>
+                     * <p>配额数量</p><p>请注意，CPU类型计费项为32的整数倍，GPU类型计费项为1的整数倍。</p>
                      */
                     int64_t m_quota;
                     bool m_quotaHasBeenSet;

@@ -1228,6 +1228,69 @@ namespace TencentCloud
                      */
                     bool NewStateCOSBucketTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>健康分数</p>
+                     * @return HealthScore <p>健康分数</p>
+                     * 
+                     */
+                    int64_t GetHealthScore() const;
+
+                    /**
+                     * 设置<p>健康分数</p>
+                     * @param _healthScore <p>健康分数</p>
+                     * 
+                     */
+                    void SetHealthScore(const int64_t& _healthScore);
+
+                    /**
+                     * 判断参数 HealthScore 是否已赋值
+                     * @return HealthScore 是否已赋值
+                     * 
+                     */
+                    bool HealthScoreHasBeenSet() const;
+
+                    /**
+                     * 获取<p>最新诊断时间</p><p>参数格式：RFC3339</p>
+                     * @return LastDiagnoseTime <p>最新诊断时间</p><p>参数格式：RFC3339</p>
+                     * 
+                     */
+                    std::string GetLastDiagnoseTime() const;
+
+                    /**
+                     * 设置<p>最新诊断时间</p><p>参数格式：RFC3339</p>
+                     * @param _lastDiagnoseTime <p>最新诊断时间</p><p>参数格式：RFC3339</p>
+                     * 
+                     */
+                    void SetLastDiagnoseTime(const std::string& _lastDiagnoseTime);
+
+                    /**
+                     * 判断参数 LastDiagnoseTime 是否已赋值
+                     * @return LastDiagnoseTime 是否已赋值
+                     * 
+                     */
+                    bool LastDiagnoseTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>负责人Uin</p>
+                     * @return ManagerUin <p>负责人Uin</p>
+                     * 
+                     */
+                    std::string GetManagerUin() const;
+
+                    /**
+                     * 设置<p>负责人Uin</p>
+                     * @param _managerUin <p>负责人Uin</p>
+                     * 
+                     */
+                    void SetManagerUin(const std::string& _managerUin);
+
+                    /**
+                     * 判断参数 ManagerUin 是否已赋值
+                     * @return ManagerUin 是否已赋值
+                     * 
+                     */
+                    bool ManagerUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1560,6 +1623,24 @@ namespace TencentCloud
                      */
                     int64_t m_newStateCOSBucketType;
                     bool m_newStateCOSBucketTypeHasBeenSet;
+
+                    /**
+                     * <p>健康分数</p>
+                     */
+                    int64_t m_healthScore;
+                    bool m_healthScoreHasBeenSet;
+
+                    /**
+                     * <p>最新诊断时间</p><p>参数格式：RFC3339</p>
+                     */
+                    std::string m_lastDiagnoseTime;
+                    bool m_lastDiagnoseTimeHasBeenSet;
+
+                    /**
+                     * <p>负责人Uin</p>
+                     */
+                    std::string m_managerUin;
+                    bool m_managerUinHasBeenSet;
 
                 };
             }

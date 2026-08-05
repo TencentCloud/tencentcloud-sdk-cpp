@@ -195,6 +195,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeBaasPackageListResponse.h
   include/tencentcloud/tcb/v20180608/model/SearchClsLogResponse.h
   include/tencentcloud/tcb/v20180608/model/TkeClusterInfo.h
+  include/tencentcloud/tcb/v20180608/model/VerifyHTTPServiceRouteRequest.h
   include/tencentcloud/tcb/v20180608/model/Provider.h
   include/tencentcloud/tcb/v20180608/model/DescribeSafeRuleResponse.h
   include/tencentcloud/tcb/v20180608/model/CustomLogConfig.h
@@ -304,8 +305,10 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeAuthDomainsRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeVmSpecResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeAIModelsRequest.h
+  include/tencentcloud/tcb/v20180608/model/VerifyHTTPServiceRouteCheckItem.h
   include/tencentcloud/tcb/v20180608/model/RunSqlRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvPlansResponse.h
+  include/tencentcloud/tcb/v20180608/model/VerifyHTTPServiceRouteResponse.h
   include/tencentcloud/tcb/v20180608/model/MessageLocalized.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudAppVersionRequest.h
   include/tencentcloud/tcb/v20180608/model/OwnershipVerificationDnsInfo.h
@@ -512,6 +515,7 @@ set(tcb_src
   src/v20180608/model/DescribeBaasPackageListResponse.cpp
   src/v20180608/model/SearchClsLogResponse.cpp
   src/v20180608/model/TkeClusterInfo.cpp
+  src/v20180608/model/VerifyHTTPServiceRouteRequest.cpp
   src/v20180608/model/Provider.cpp
   src/v20180608/model/DescribeSafeRuleResponse.cpp
   src/v20180608/model/CustomLogConfig.cpp
@@ -621,8 +625,10 @@ set(tcb_src
   src/v20180608/model/DescribeAuthDomainsRequest.cpp
   src/v20180608/model/DescribeVmSpecResponse.cpp
   src/v20180608/model/DescribeAIModelsRequest.cpp
+  src/v20180608/model/VerifyHTTPServiceRouteCheckItem.cpp
   src/v20180608/model/RunSqlRequest.cpp
   src/v20180608/model/DescribeEnvPlansResponse.cpp
+  src/v20180608/model/VerifyHTTPServiceRouteResponse.cpp
   src/v20180608/model/MessageLocalized.cpp
   src/v20180608/model/DescribeCloudAppVersionRequest.cpp
   src/v20180608/model/OwnershipVerificationDnsInfo.cpp
