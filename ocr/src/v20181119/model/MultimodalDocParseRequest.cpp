@@ -27,7 +27,8 @@ MultimodalDocParseRequest::MultimodalDocParseRequest() :
     m_fileTypeHasBeenSet(false),
     m_resultTypeHasBeenSet(false),
     m_enableSubImgHasBeenSet(false),
-    m_pageRangeHasBeenSet(false)
+    m_pageRangeHasBeenSet(false),
+    m_taskTypeHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string MultimodalDocParseRequest::ToJsonString() const
         string key = "PageRange";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_pageRange.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_taskType, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void MultimodalDocParseRequest::SetPageRange(const string& _pageRange)
 bool MultimodalDocParseRequest::PageRangeHasBeenSet() const
 {
     return m_pageRangeHasBeenSet;
+}
+
+int64_t MultimodalDocParseRequest::GetTaskType() const
+{
+    return m_taskType;
+}
+
+void MultimodalDocParseRequest::SetTaskType(const int64_t& _taskType)
+{
+    m_taskType = _taskType;
+    m_taskTypeHasBeenSet = true;
+}
+
+bool MultimodalDocParseRequest::TaskTypeHasBeenSet() const
+{
+    return m_taskTypeHasBeenSet;
 }
 
 

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取旋转角度
-                     * @return Angle 旋转角度
+                     * 获取<p>旋转角度</p>
+                     * @return Angle <p>旋转角度</p>
                      * 
                      */
                     double GetAngle() const;
 
                     /**
-                     * 设置旋转角度
-                     * @param _angle 旋转角度
+                     * 设置<p>旋转角度</p>
+                     * @param _angle <p>旋转角度</p>
                      * 
                      */
                     void SetAngle(const double& _angle);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool AngleHasBeenSet() const;
 
                     /**
-                     * 获取预处理后图片高度
-                     * @return Height 预处理后图片高度
+                     * 获取<p>预处理后图片高度</p><p>单位：px</p>
+                     * @return Height <p>预处理后图片高度</p><p>单位：px</p>
                      * 
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置预处理后图片高度
-                     * @param _height 预处理后图片高度
+                     * 设置<p>预处理后图片高度</p><p>单位：px</p>
+                     * @param _height <p>预处理后图片高度</p><p>单位：px</p>
                      * 
                      */
                     void SetHeight(const int64_t& _height);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取预处理后图片宽度
-                     * @return Width 预处理后图片宽度
+                     * 获取<p>预处理后图片宽度</p><p>单位：px</p>
+                     * @return Width <p>预处理后图片宽度</p><p>单位：px</p>
                      * 
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置预处理后图片宽度
-                     * @param _width 预处理后图片宽度
+                     * 设置<p>预处理后图片宽度</p><p>单位：px</p>
+                     * @param _width <p>预处理后图片宽度</p><p>单位：px</p>
                      * 
                      */
                     void SetWidth(const int64_t& _width);
@@ -111,18 +111,18 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取文档元素
+                     * 获取<p>文档元素</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResultList 文档元素
+                     * @return ResultList <p>文档元素</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ResultList> GetResultList() const;
 
                     /**
-                     * 设置文档元素
+                     * 设置<p>文档元素</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resultList 文档元素
+                     * @param _resultList <p>文档元素</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -136,15 +136,15 @@ namespace TencentCloud
                     bool ResultListHasBeenSet() const;
 
                     /**
-                     * 获取输入图片高度
-                     * @return OrgHeight 输入图片高度
+                     * 获取<p>输入图片高度</p><p>单位：px</p>
+                     * @return OrgHeight <p>输入图片高度</p><p>单位：px</p>
                      * 
                      */
                     int64_t GetOrgHeight() const;
 
                     /**
-                     * 设置输入图片高度
-                     * @param _orgHeight 输入图片高度
+                     * 设置<p>输入图片高度</p><p>单位：px</p>
+                     * @param _orgHeight <p>输入图片高度</p><p>单位：px</p>
                      * 
                      */
                     void SetOrgHeight(const int64_t& _orgHeight);
@@ -157,15 +157,15 @@ namespace TencentCloud
                     bool OrgHeightHasBeenSet() const;
 
                     /**
-                     * 获取输入图片宽度
-                     * @return OrgWidth 输入图片宽度
+                     * 获取<p>输入图片宽度</p><p>单位：px</p>
+                     * @return OrgWidth <p>输入图片宽度</p><p>单位：px</p>
                      * 
                      */
                     int64_t GetOrgWidth() const;
 
                     /**
-                     * 设置输入图片宽度
-                     * @param _orgWidth 输入图片宽度
+                     * 设置<p>输入图片宽度</p><p>单位：px</p>
+                     * @param _orgWidth <p>输入图片宽度</p><p>单位：px</p>
                      * 
                      */
                     void SetOrgWidth(const int64_t& _orgWidth);
@@ -178,15 +178,15 @@ namespace TencentCloud
                     bool OrgWidthHasBeenSet() const;
 
                     /**
-                     * 获取预处理后的图片base64编码
-                     * @return ImageBase64 预处理后的图片base64编码
+                     * 获取<p>预处理后的图片base64编码</p>
+                     * @return ImageBase64 <p>预处理后的图片base64编码</p>
                      * 
                      */
                     std::string GetImageBase64() const;
 
                     /**
-                     * 设置预处理后的图片base64编码
-                     * @param _imageBase64 预处理后的图片base64编码
+                     * 设置<p>预处理后的图片base64编码</p>
+                     * @param _imageBase64 <p>预处理后的图片base64编码</p>
                      * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
@@ -201,44 +201,44 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 旋转角度
+                     * <p>旋转角度</p>
                      */
                     double m_angle;
                     bool m_angleHasBeenSet;
 
                     /**
-                     * 预处理后图片高度
+                     * <p>预处理后图片高度</p><p>单位：px</p>
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * 预处理后图片宽度
+                     * <p>预处理后图片宽度</p><p>单位：px</p>
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 文档元素
+                     * <p>文档元素</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ResultList> m_resultList;
                     bool m_resultListHasBeenSet;
 
                     /**
-                     * 输入图片高度
+                     * <p>输入图片高度</p><p>单位：px</p>
                      */
                     int64_t m_orgHeight;
                     bool m_orgHeightHasBeenSet;
 
                     /**
-                     * 输入图片宽度
+                     * <p>输入图片宽度</p><p>单位：px</p>
                      */
                     int64_t m_orgWidth;
                     bool m_orgWidthHasBeenSet;
 
                     /**
-                     * 预处理后的图片base64编码
+                     * <p>预处理后的图片base64编码</p>
                      */
                     std::string m_imageBase64;
                     bool m_imageBase64HasBeenSet;

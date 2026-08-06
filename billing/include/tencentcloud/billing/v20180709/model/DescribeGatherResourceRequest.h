@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool TreeNodeUniqKeyHasBeenSet() const;
 
                     /**
-                     * 获取<p>资源目录类别，枚举值如下：<br>all - 全部<br>none - 未归集</p>
-                     * @return GatherType <p>资源目录类别，枚举值如下：<br>all - 全部<br>none - 未归集</p>
+                     * 获取<p>资源目录类别，枚举值如下：<br>all - 全部<br>none - 未归集</p><p>枚举值：</p><ul><li>all： 全部</li><li>none： 未归集</li><li>allocation： 已公摊资源</li><li>gather： 已归集资源</li></ul>
+                     * @return GatherType <p>资源目录类别，枚举值如下：<br>all - 全部<br>none - 未归集</p><p>枚举值：</p><ul><li>all： 全部</li><li>none： 未归集</li><li>allocation： 已公摊资源</li><li>gather： 已归集资源</li></ul>
                      * 
                      */
                     std::string GetGatherType() const;
 
                     /**
-                     * 设置<p>资源目录类别，枚举值如下：<br>all - 全部<br>none - 未归集</p>
-                     * @param _gatherType <p>资源目录类别，枚举值如下：<br>all - 全部<br>none - 未归集</p>
+                     * 设置<p>资源目录类别，枚举值如下：<br>all - 全部<br>none - 未归集</p><p>枚举值：</p><ul><li>all： 全部</li><li>none： 未归集</li><li>allocation： 已公摊资源</li><li>gather： 已归集资源</li></ul>
+                     * @param _gatherType <p>资源目录类别，枚举值如下：<br>all - 全部<br>none - 未归集</p><p>枚举值：</p><ul><li>all： 全部</li><li>none： 未归集</li><li>allocation： 已公摊资源</li><li>gather： 已归集资源</li></ul>
                      * 
                      */
                     void SetGatherType(const std::string& _gatherType);
@@ -468,7 +468,7 @@ namespace TencentCloud
                     bool m_treeNodeUniqKeyHasBeenSet;
 
                     /**
-                     * <p>资源目录类别，枚举值如下：<br>all - 全部<br>none - 未归集</p>
+                     * <p>资源目录类别，枚举值如下：<br>all - 全部<br>none - 未归集</p><p>枚举值：</p><ul><li>all： 全部</li><li>none： 未归集</li><li>allocation： 已公摊资源</li><li>gather： 已归集资源</li></ul>
                      */
                     std::string m_gatherType;
                     bool m_gatherTypeHasBeenSet;

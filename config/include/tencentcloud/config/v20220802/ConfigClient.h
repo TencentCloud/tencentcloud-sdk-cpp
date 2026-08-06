@@ -87,6 +87,8 @@
 #include <tencentcloud/config/v20220802/model/ListAggregateCompliancePacksResponse.h>
 #include <tencentcloud/config/v20220802/model/ListAggregateConfigRuleEvaluationResultsRequest.h>
 #include <tencentcloud/config/v20220802/model/ListAggregateConfigRuleEvaluationResultsResponse.h>
+#include <tencentcloud/config/v20220802/model/ListAggregateConfigRuleResourceEvaluationResultsRequest.h>
+#include <tencentcloud/config/v20220802/model/ListAggregateConfigRuleResourceEvaluationResultsResponse.h>
 #include <tencentcloud/config/v20220802/model/ListAggregateConfigRulesRequest.h>
 #include <tencentcloud/config/v20220802/model/ListAggregateConfigRulesResponse.h>
 #include <tencentcloud/config/v20220802/model/ListAggregateDiscoveredResourcesRequest.h>
@@ -99,6 +101,8 @@
 #include <tencentcloud/config/v20220802/model/ListCompliancePacksResponse.h>
 #include <tencentcloud/config/v20220802/model/ListConfigRuleEvaluationResultsRequest.h>
 #include <tencentcloud/config/v20220802/model/ListConfigRuleEvaluationResultsResponse.h>
+#include <tencentcloud/config/v20220802/model/ListConfigRuleResourceEvaluationResultsRequest.h>
+#include <tencentcloud/config/v20220802/model/ListConfigRuleResourceEvaluationResultsResponse.h>
 #include <tencentcloud/config/v20220802/model/ListConfigRulesRequest.h>
 #include <tencentcloud/config/v20220802/model/ListConfigRulesResponse.h>
 #include <tencentcloud/config/v20220802/model/ListDiscoveredResourcesRequest.h>
@@ -259,6 +263,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListAggregateConfigRuleEvaluationResultsResponse> ListAggregateConfigRuleEvaluationResultsOutcome;
                 typedef std::future<ListAggregateConfigRuleEvaluationResultsOutcome> ListAggregateConfigRuleEvaluationResultsOutcomeCallable;
                 typedef std::function<void(const ConfigClient*, const Model::ListAggregateConfigRuleEvaluationResultsRequest&, ListAggregateConfigRuleEvaluationResultsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAggregateConfigRuleEvaluationResultsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListAggregateConfigRuleResourceEvaluationResultsResponse> ListAggregateConfigRuleResourceEvaluationResultsOutcome;
+                typedef std::future<ListAggregateConfigRuleResourceEvaluationResultsOutcome> ListAggregateConfigRuleResourceEvaluationResultsOutcomeCallable;
+                typedef std::function<void(const ConfigClient*, const Model::ListAggregateConfigRuleResourceEvaluationResultsRequest&, ListAggregateConfigRuleResourceEvaluationResultsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAggregateConfigRuleResourceEvaluationResultsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListAggregateConfigRulesResponse> ListAggregateConfigRulesOutcome;
                 typedef std::future<ListAggregateConfigRulesOutcome> ListAggregateConfigRulesOutcomeCallable;
                 typedef std::function<void(const ConfigClient*, const Model::ListAggregateConfigRulesRequest&, ListAggregateConfigRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAggregateConfigRulesAsyncHandler;
@@ -277,6 +284,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListConfigRuleEvaluationResultsResponse> ListConfigRuleEvaluationResultsOutcome;
                 typedef std::future<ListConfigRuleEvaluationResultsOutcome> ListConfigRuleEvaluationResultsOutcomeCallable;
                 typedef std::function<void(const ConfigClient*, const Model::ListConfigRuleEvaluationResultsRequest&, ListConfigRuleEvaluationResultsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListConfigRuleEvaluationResultsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListConfigRuleResourceEvaluationResultsResponse> ListConfigRuleResourceEvaluationResultsOutcome;
+                typedef std::future<ListConfigRuleResourceEvaluationResultsOutcome> ListConfigRuleResourceEvaluationResultsOutcomeCallable;
+                typedef std::function<void(const ConfigClient*, const Model::ListConfigRuleResourceEvaluationResultsRequest&, ListConfigRuleResourceEvaluationResultsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListConfigRuleResourceEvaluationResultsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListConfigRulesResponse> ListConfigRulesOutcome;
                 typedef std::future<ListConfigRulesOutcome> ListConfigRulesOutcomeCallable;
                 typedef std::function<void(const ConfigClient*, const Model::ListConfigRulesRequest&, ListConfigRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListConfigRulesAsyncHandler;
@@ -644,6 +654,15 @@ namespace TencentCloud
                 ListAggregateConfigRuleEvaluationResultsOutcomeCallable ListAggregateConfigRuleEvaluationResultsCallable(const Model::ListAggregateConfigRuleEvaluationResultsRequest& request);
 
                 /**
+                 *账号组查询配置规则资源评估结果列表
+                 * @param req ListAggregateConfigRuleResourceEvaluationResultsRequest
+                 * @return ListAggregateConfigRuleResourceEvaluationResultsOutcome
+                 */
+                ListAggregateConfigRuleResourceEvaluationResultsOutcome ListAggregateConfigRuleResourceEvaluationResults(const Model::ListAggregateConfigRuleResourceEvaluationResultsRequest &request);
+                void ListAggregateConfigRuleResourceEvaluationResultsAsync(const Model::ListAggregateConfigRuleResourceEvaluationResultsRequest& request, const ListAggregateConfigRuleResourceEvaluationResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListAggregateConfigRuleResourceEvaluationResultsOutcomeCallable ListAggregateConfigRuleResourceEvaluationResultsCallable(const Model::ListAggregateConfigRuleResourceEvaluationResultsRequest& request);
+
+                /**
                  *账号组获取规则列表
                  * @param req ListAggregateConfigRulesRequest
                  * @return ListAggregateConfigRulesOutcome
@@ -696,6 +715,15 @@ namespace TencentCloud
                 ListConfigRuleEvaluationResultsOutcome ListConfigRuleEvaluationResults(const Model::ListConfigRuleEvaluationResultsRequest &request);
                 void ListConfigRuleEvaluationResultsAsync(const Model::ListConfigRuleEvaluationResultsRequest& request, const ListConfigRuleEvaluationResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListConfigRuleEvaluationResultsOutcomeCallable ListConfigRuleEvaluationResultsCallable(const Model::ListConfigRuleEvaluationResultsRequest& request);
+
+                /**
+                 *查询配置规则资源评估结果列表
+                 * @param req ListConfigRuleResourceEvaluationResultsRequest
+                 * @return ListConfigRuleResourceEvaluationResultsOutcome
+                 */
+                ListConfigRuleResourceEvaluationResultsOutcome ListConfigRuleResourceEvaluationResults(const Model::ListConfigRuleResourceEvaluationResultsRequest &request);
+                void ListConfigRuleResourceEvaluationResultsAsync(const Model::ListConfigRuleResourceEvaluationResultsRequest& request, const ListConfigRuleResourceEvaluationResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListConfigRuleResourceEvaluationResultsOutcomeCallable ListConfigRuleResourceEvaluationResultsCallable(const Model::ListConfigRuleResourceEvaluationResultsRequest& request);
 
                 /**
                  *获取规则列表

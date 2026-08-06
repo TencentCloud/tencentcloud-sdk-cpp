@@ -29,7 +29,8 @@ KibanaView::KibanaView() :
     m_cpuNumHasBeenSet(false),
     m_cpuUsageHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_nodeIdHasBeenSet(false)
+    m_nodeIdHasBeenSet(false),
+    m_userIpHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome KibanaView::Deserialize(const rapidjson::Value &value)
         m_nodeIdHasBeenSet = true;
     }
 
+    if (value.HasMember("UserIp") && !value["UserIp"].IsNull())
+    {
+        if (!value["UserIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KibanaView.UserIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userIp = string(value["UserIp"].GetString());
+        m_userIpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void KibanaView::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "NodeId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_nodeId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userIp.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void KibanaView::SetNodeId(const string& _nodeId)
 bool KibanaView::NodeIdHasBeenSet() const
 {
     return m_nodeIdHasBeenSet;
+}
+
+string KibanaView::GetUserIp() const
+{
+    return m_userIp;
+}
+
+void KibanaView::SetUserIp(const string& _userIp)
+{
+    m_userIp = _userIp;
+    m_userIpHasBeenSet = true;
+}
+
+bool KibanaView::UserIpHasBeenSet() const
+{
+    return m_userIpHasBeenSet;
 }
 

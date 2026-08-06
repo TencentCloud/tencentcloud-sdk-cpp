@@ -26,7 +26,8 @@ using namespace std;
 SubmitQuestionMarkAgentJobResponse::SubmitQuestionMarkAgentJobResponse() :
     m_jobIdHasBeenSet(false),
     m_questionInfoHasBeenSet(false),
-    m_questionCountHasBeenSet(false)
+    m_questionCountHasBeenSet(false),
+    m_originalImageUrlHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome SubmitQuestionMarkAgentJobResponse::Deserialize(const string
         m_questionCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("OriginalImageUrl") && !rsp["OriginalImageUrl"].IsNull())
+    {
+        if (!rsp["OriginalImageUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OriginalImageUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originalImageUrl = string(rsp["OriginalImageUrl"].GetString());
+        m_originalImageUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +154,14 @@ string SubmitQuestionMarkAgentJobResponse::ToJsonString() const
         string key = "QuestionCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_questionCount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originalImageUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginalImageUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originalImageUrl.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -185,6 +204,16 @@ string SubmitQuestionMarkAgentJobResponse::GetQuestionCount() const
 bool SubmitQuestionMarkAgentJobResponse::QuestionCountHasBeenSet() const
 {
     return m_questionCountHasBeenSet;
+}
+
+string SubmitQuestionMarkAgentJobResponse::GetOriginalImageUrl() const
+{
+    return m_originalImageUrl;
+}
+
+bool SubmitQuestionMarkAgentJobResponse::OriginalImageUrlHasBeenSet() const
+{
+    return m_originalImageUrlHasBeenSet;
 }
 
 

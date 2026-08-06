@@ -75,6 +75,8 @@
 #include <tencentcloud/dbdc/v20201029/model/DestroyDBCustomNodeResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/IsolateDBCustomNodeRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/IsolateDBCustomNodeResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterAttributesRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterAttributesResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterNodeConfigRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterNodeConfigResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterTagsRequest.h>
@@ -183,6 +185,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::IsolateDBCustomNodeResponse> IsolateDBCustomNodeOutcome;
                 typedef std::future<IsolateDBCustomNodeOutcome> IsolateDBCustomNodeOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::IsolateDBCustomNodeRequest&, IsolateDBCustomNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateDBCustomNodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBCustomClusterAttributesResponse> ModifyDBCustomClusterAttributesOutcome;
+                typedef std::future<ModifyDBCustomClusterAttributesOutcome> ModifyDBCustomClusterAttributesOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::ModifyDBCustomClusterAttributesRequest&, ModifyDBCustomClusterAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBCustomClusterAttributesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBCustomClusterNodeConfigResponse> ModifyDBCustomClusterNodeConfigOutcome;
                 typedef std::future<ModifyDBCustomClusterNodeConfigOutcome> ModifyDBCustomClusterNodeConfigOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::ModifyDBCustomClusterNodeConfigRequest&, ModifyDBCustomClusterNodeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBCustomClusterNodeConfigAsyncHandler;
@@ -443,6 +448,15 @@ namespace TencentCloud
                 IsolateDBCustomNodeOutcome IsolateDBCustomNode(const Model::IsolateDBCustomNodeRequest &request);
                 void IsolateDBCustomNodeAsync(const Model::IsolateDBCustomNodeRequest& request, const IsolateDBCustomNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 IsolateDBCustomNodeOutcomeCallable IsolateDBCustomNodeCallable(const Model::IsolateDBCustomNodeRequest& request);
+
+                /**
+                 *该接口（ModifyDBCustomClusterAttributes）用于修改 DB Custom 集群的属性。
+                 * @param req ModifyDBCustomClusterAttributesRequest
+                 * @return ModifyDBCustomClusterAttributesOutcome
+                 */
+                ModifyDBCustomClusterAttributesOutcome ModifyDBCustomClusterAttributes(const Model::ModifyDBCustomClusterAttributesRequest &request);
+                void ModifyDBCustomClusterAttributesAsync(const Model::ModifyDBCustomClusterAttributesRequest& request, const ModifyDBCustomClusterAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBCustomClusterAttributesOutcomeCallable ModifyDBCustomClusterAttributesCallable(const Model::ModifyDBCustomClusterAttributesRequest& request);
 
                 /**
                  *该接口（ModifyDBCustomClusterNodeConfig）用于修改 DB Custom 集群中节点的配置。

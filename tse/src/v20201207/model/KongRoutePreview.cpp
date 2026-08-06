@@ -39,7 +39,8 @@ KongRoutePreview::KongRoutePreview() :
     m_requestBufferingHasBeenSet(false),
     m_responseBufferingHasBeenSet(false),
     m_regexPriorityHasBeenSet(false),
-    m_queryStringParametersHasBeenSet(false)
+    m_queryStringParametersHasBeenSet(false),
+    m_routeSourceHasBeenSet(false)
 {
 }
 
@@ -273,6 +274,16 @@ CoreInternalOutcome KongRoutePreview::Deserialize(const rapidjson::Value &value)
         m_queryStringParametersHasBeenSet = true;
     }
 
+    if (value.HasMember("RouteSource") && !value["RouteSource"].IsNull())
+    {
+        if (!value["RouteSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KongRoutePreview.RouteSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_routeSource = string(value["RouteSource"].GetString());
+        m_routeSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -469,6 +480,14 @@ void KongRoutePreview::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_routeSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RouteSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_routeSource.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -776,5 +795,21 @@ void KongRoutePreview::SetQueryStringParameters(const vector<KVMapping>& _queryS
 bool KongRoutePreview::QueryStringParametersHasBeenSet() const
 {
     return m_queryStringParametersHasBeenSet;
+}
+
+string KongRoutePreview::GetRouteSource() const
+{
+    return m_routeSource;
+}
+
+void KongRoutePreview::SetRouteSource(const string& _routeSource)
+{
+    m_routeSource = _routeSource;
+    m_routeSourceHasBeenSet = true;
+}
+
+bool KongRoutePreview::RouteSourceHasBeenSet() const
+{
+    return m_routeSourceHasBeenSet;
 }
 

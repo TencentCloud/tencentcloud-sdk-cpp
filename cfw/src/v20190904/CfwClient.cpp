@@ -1140,6 +1140,56 @@ CfwClient::CreateVpcFwGroupOutcomeCallable CfwClient::CreateVpcFwGroupCallable(c
     return prom->get_future();
 }
 
+CfwClient::CreateWhiteRuleOutcome CfwClient::CreateWhiteRule(const CreateWhiteRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateWhiteRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateWhiteRuleResponse rsp = CreateWhiteRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateWhiteRuleOutcome(rsp);
+        else
+            return CreateWhiteRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateWhiteRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::CreateWhiteRuleAsync(const CreateWhiteRuleRequest& request, const CreateWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateWhiteRuleRequest&;
+    using Resp = CreateWhiteRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateWhiteRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::CreateWhiteRuleOutcomeCallable CfwClient::CreateWhiteRuleCallable(const CreateWhiteRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateWhiteRuleOutcome>>();
+    CreateWhiteRuleAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const CreateWhiteRuleRequest&,
+        CreateWhiteRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfwClient::DeleteAcRuleOutcome CfwClient::DeleteAcRule(const DeleteAcRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAcRule");
@@ -1632,6 +1682,56 @@ CfwClient::DeleteVpcFwGroupOutcomeCallable CfwClient::DeleteVpcFwGroupCallable(c
         const CfwClient*,
         const DeleteVpcFwGroupRequest&,
         DeleteVpcFwGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::DeleteWhiteRuleOutcome CfwClient::DeleteWhiteRule(const DeleteWhiteRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteWhiteRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteWhiteRuleResponse rsp = DeleteWhiteRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteWhiteRuleOutcome(rsp);
+        else
+            return DeleteWhiteRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteWhiteRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DeleteWhiteRuleAsync(const DeleteWhiteRuleRequest& request, const DeleteWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteWhiteRuleRequest&;
+    using Resp = DeleteWhiteRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteWhiteRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DeleteWhiteRuleOutcomeCallable CfwClient::DeleteWhiteRuleCallable(const DeleteWhiteRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteWhiteRuleOutcome>>();
+    DeleteWhiteRuleAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DeleteWhiteRuleRequest&,
+        DeleteWhiteRuleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -7382,6 +7482,56 @@ CfwClient::ModifyVpcFwSequenceRulesOutcomeCallable CfwClient::ModifyVpcFwSequenc
         const CfwClient*,
         const ModifyVpcFwSequenceRulesRequest&,
         ModifyVpcFwSequenceRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::ModifyWhiteRuleOutcome CfwClient::ModifyWhiteRule(const ModifyWhiteRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyWhiteRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyWhiteRuleResponse rsp = ModifyWhiteRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyWhiteRuleOutcome(rsp);
+        else
+            return ModifyWhiteRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyWhiteRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::ModifyWhiteRuleAsync(const ModifyWhiteRuleRequest& request, const ModifyWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyWhiteRuleRequest&;
+    using Resp = ModifyWhiteRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyWhiteRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::ModifyWhiteRuleOutcomeCallable CfwClient::ModifyWhiteRuleCallable(const ModifyWhiteRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyWhiteRuleOutcome>>();
+    ModifyWhiteRuleAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const ModifyWhiteRuleRequest&,
+        ModifyWhiteRuleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

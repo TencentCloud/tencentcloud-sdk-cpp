@@ -30,7 +30,9 @@ Device::Device() :
     m_packageNameHasBeenSet(false),
     m_platformHasBeenSet(false),
     m_systemVersionHasBeenSet(false),
-    m_sdkBuildVersionHasBeenSet(false)
+    m_sdkBuildVersionHasBeenSet(false),
+    m_signTokenHasBeenSet(false),
+    m_tokenTimeHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,26 @@ CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
         m_sdkBuildVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("SignToken") && !value["SignToken"].IsNull())
+    {
+        if (!value["SignToken"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.SignToken` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_signToken = string(value["SignToken"].GetString());
+        m_signTokenHasBeenSet = true;
+    }
+
+    if (value.HasMember("TokenTime") && !value["TokenTime"].IsNull())
+    {
+        if (!value["TokenTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.TokenTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tokenTime = string(value["TokenTime"].GetString());
+        m_tokenTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +246,22 @@ void Device::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "SdkBuildVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sdkBuildVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_signTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignToken";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_signToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tokenTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tokenTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +425,37 @@ void Device::SetSdkBuildVersion(const string& _sdkBuildVersion)
 bool Device::SdkBuildVersionHasBeenSet() const
 {
     return m_sdkBuildVersionHasBeenSet;
+}
+
+string Device::GetSignToken() const
+{
+    return m_signToken;
+}
+
+void Device::SetSignToken(const string& _signToken)
+{
+    m_signToken = _signToken;
+    m_signTokenHasBeenSet = true;
+}
+
+bool Device::SignTokenHasBeenSet() const
+{
+    return m_signTokenHasBeenSet;
+}
+
+string Device::GetTokenTime() const
+{
+    return m_tokenTime;
+}
+
+void Device::SetTokenTime(const string& _tokenTime)
+{
+    m_tokenTime = _tokenTime;
+    m_tokenTimeHasBeenSet = true;
+}
+
+bool Device::TokenTimeHasBeenSet() const
+{
+    return m_tokenTimeHasBeenSet;
 }
 

@@ -28,7 +28,11 @@ DescribeCloudNativeAPIGatewayRoutesRequest::DescribeCloudNativeAPIGatewayRoutesR
     m_offsetHasBeenSet(false),
     m_serviceNameHasBeenSet(false),
     m_routeNameHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_routeTypesHasBeenSet(false),
+    m_grayRoutesFirstHasBeenSet(false),
+    m_orderFieldHasBeenSet(false),
+    m_orderTypeHasBeenSet(false)
 {
 }
 
@@ -92,6 +96,43 @@ string DescribeCloudNativeAPIGatewayRoutesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_routeTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RouteTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_routeTypes.begin(); itr != m_routeTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_grayRoutesFirstHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GrayRoutesFirst";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_grayRoutesFirst, allocator);
+    }
+
+    if (m_orderFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -196,6 +237,70 @@ void DescribeCloudNativeAPIGatewayRoutesRequest::SetFilters(const vector<ListFil
 bool DescribeCloudNativeAPIGatewayRoutesRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+vector<string> DescribeCloudNativeAPIGatewayRoutesRequest::GetRouteTypes() const
+{
+    return m_routeTypes;
+}
+
+void DescribeCloudNativeAPIGatewayRoutesRequest::SetRouteTypes(const vector<string>& _routeTypes)
+{
+    m_routeTypes = _routeTypes;
+    m_routeTypesHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayRoutesRequest::RouteTypesHasBeenSet() const
+{
+    return m_routeTypesHasBeenSet;
+}
+
+bool DescribeCloudNativeAPIGatewayRoutesRequest::GetGrayRoutesFirst() const
+{
+    return m_grayRoutesFirst;
+}
+
+void DescribeCloudNativeAPIGatewayRoutesRequest::SetGrayRoutesFirst(const bool& _grayRoutesFirst)
+{
+    m_grayRoutesFirst = _grayRoutesFirst;
+    m_grayRoutesFirstHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayRoutesRequest::GrayRoutesFirstHasBeenSet() const
+{
+    return m_grayRoutesFirstHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewayRoutesRequest::GetOrderField() const
+{
+    return m_orderField;
+}
+
+void DescribeCloudNativeAPIGatewayRoutesRequest::SetOrderField(const string& _orderField)
+{
+    m_orderField = _orderField;
+    m_orderFieldHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayRoutesRequest::OrderFieldHasBeenSet() const
+{
+    return m_orderFieldHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewayRoutesRequest::GetOrderType() const
+{
+    return m_orderType;
+}
+
+void DescribeCloudNativeAPIGatewayRoutesRequest::SetOrderType(const string& _orderType)
+{
+    m_orderType = _orderType;
+    m_orderTypeHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayRoutesRequest::OrderTypeHasBeenSet() const
+{
+    return m_orderTypeHasBeenSet;
 }
 
 

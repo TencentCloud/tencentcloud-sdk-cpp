@@ -256,6 +256,48 @@ namespace TencentCloud
                      */
                     bool SdkBuildVersionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>验签token，验签功能启用请联系我们。</p>
+                     * @return SignToken <p>验签token，验签功能启用请联系我们。</p>
+                     * 
+                     */
+                    std::string GetSignToken() const;
+
+                    /**
+                     * 设置<p>验签token，验签功能启用请联系我们。</p>
+                     * @param _signToken <p>验签token，验签功能启用请联系我们。</p>
+                     * 
+                     */
+                    void SetSignToken(const std::string& _signToken);
+
+                    /**
+                     * 判断参数 SignToken 是否已赋值
+                     * @return SignToken 是否已赋值
+                     * 
+                     */
+                    bool SignTokenHasBeenSet() const;
+
+                    /**
+                     * 获取<p>token生成时间戳，毫秒级。</p>
+                     * @return TokenTime <p>token生成时间戳，毫秒级。</p>
+                     * 
+                     */
+                    std::string GetTokenTime() const;
+
+                    /**
+                     * 设置<p>token生成时间戳，毫秒级。</p>
+                     * @param _tokenTime <p>token生成时间戳，毫秒级。</p>
+                     * 
+                     */
+                    void SetTokenTime(const std::string& _tokenTime);
+
+                    /**
+                     * 判断参数 TokenTime 是否已赋值
+                     * @return TokenTime 是否已赋值
+                     * 
+                     */
+                    bool TokenTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -317,6 +359,18 @@ namespace TencentCloud
                      */
                     std::string m_sdkBuildVersion;
                     bool m_sdkBuildVersionHasBeenSet;
+
+                    /**
+                     * <p>验签token，验签功能启用请联系我们。</p>
+                     */
+                    std::string m_signToken;
+                    bool m_signTokenHasBeenSet;
+
+                    /**
+                     * <p>token生成时间戳，毫秒级。</p>
+                     */
+                    std::string m_tokenTime;
+                    bool m_tokenTimeHasBeenSet;
 
                 };
             }

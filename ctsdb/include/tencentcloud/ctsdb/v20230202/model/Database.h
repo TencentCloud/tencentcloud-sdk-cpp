@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
+                     * 获取<p>实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterID 实例ID
+                     * @return ClusterID <p>实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterID() const;
 
                     /**
-                     * 设置实例ID
+                     * 设置<p>实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clusterID 实例ID
+                     * @param _clusterID <p>实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool ClusterIDHasBeenSet() const;
 
                     /**
-                     * 获取数据库名
+                     * 获取<p>数据库名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 数据库名
+                     * @return Name <p>数据库名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置数据库名
+                     * 设置<p>数据库名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 数据库名
+                     * @param _name <p>数据库名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取降冷时间（天）
+                     * 获取<p>降冷时间（天）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CoolDownInDays 降冷时间（天）
+                     * @return CoolDownInDays <p>降冷时间（天）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCoolDownInDays() const;
 
                     /**
-                     * 设置降冷时间（天）
+                     * 设置<p>降冷时间（天）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _coolDownInDays 降冷时间（天）
+                     * @param _coolDownInDays <p>降冷时间（天）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool CoolDownInDaysHasBeenSet() const;
 
                     /**
-                     * 获取数据保留时间（天）
+                     * 获取<p>数据保留时间（天）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RetentionInDays 数据保留时间（天）
+                     * @return RetentionInDays <p>数据保留时间（天）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRetentionInDays() const;
 
                     /**
-                     * 设置数据保留时间（天）
+                     * 设置<p>数据保留时间（天）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _retentionInDays 数据保留时间（天）
+                     * @param _retentionInDays <p>数据保留时间（天）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool RetentionInDaysHasBeenSet() const;
 
                     /**
-                     * 获取备注
+                     * 获取<p>备注</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Remark 备注
+                     * @return Remark <p>备注</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注
+                     * 设置<p>备注</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _remark 备注
+                     * @param _remark <p>备注</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取状态：0: 资源初始化中， 1: 资源创建中， 2: 正常状态， 3: 资源删除中， 4: 资源已删除， 5: 资源禁用中， 6: 资源已禁用， 7: 资源异常，需要人工操作
+                     * 获取<p>状态：0: 资源初始化中， 1: 资源创建中， 2: 正常状态， 3: 资源删除中， 4: 资源已删除， 5: 资源禁用中， 6: 资源已禁用， 7: 资源异常，需要人工操作</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 状态：0: 资源初始化中， 1: 资源创建中， 2: 正常状态， 3: 资源删除中， 4: 资源已删除， 5: 资源禁用中， 6: 资源已禁用， 7: 资源异常，需要人工操作
+                     * @return Status <p>状态：0: 资源初始化中， 1: 资源创建中， 2: 正常状态， 3: 资源删除中， 4: 资源已删除， 5: 资源禁用中， 6: 资源已禁用， 7: 资源异常，需要人工操作</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态：0: 资源初始化中， 1: 资源创建中， 2: 正常状态， 3: 资源删除中， 4: 资源已删除， 5: 资源禁用中， 6: 资源已禁用， 7: 资源异常，需要人工操作
+                     * 设置<p>状态：0: 资源初始化中， 1: 资源创建中， 2: 正常状态， 3: 资源删除中， 4: 资源已删除， 5: 资源禁用中， 6: 资源已禁用， 7: 资源异常，需要人工操作</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 状态：0: 资源初始化中， 1: 资源创建中， 2: 正常状态， 3: 资源删除中， 4: 资源已删除， 5: 资源禁用中， 6: 资源已禁用， 7: 资源异常，需要人工操作
+                     * @param _status <p>状态：0: 资源初始化中， 1: 资源创建中， 2: 正常状态， 3: 资源删除中， 4: 资源已删除， 5: 资源禁用中， 6: 资源已禁用， 7: 资源异常，需要人工操作</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
+                     * 获取<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreatedAt 创建时间
+                     * @return CreatedAt <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
-                     * 设置创建时间
+                     * 设置<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createdAt 创建时间
+                     * @param _createdAt <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool CreatedAtHasBeenSet() const;
 
                     /**
-                     * 获取最后修改时间
+                     * 获取<p>最后修改时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdatedAt 最后修改时间
+                     * @return UpdatedAt <p>最后修改时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
-                     * 设置最后修改时间
+                     * 设置<p>最后修改时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updatedAt 最后修改时间
+                     * @param _updatedAt <p>最后修改时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -246,63 +246,95 @@ namespace TencentCloud
                      */
                     bool UpdatedAtHasBeenSet() const;
 
+                    /**
+                     * 获取<p>降冷开启时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CoolDownTime <p>降冷开启时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCoolDownTime() const;
+
+                    /**
+                     * 设置<p>降冷开启时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _coolDownTime <p>降冷开启时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCoolDownTime(const std::string& _coolDownTime);
+
+                    /**
+                     * 判断参数 CoolDownTime 是否已赋值
+                     * @return CoolDownTime 是否已赋值
+                     * 
+                     */
+                    bool CoolDownTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterID;
                     bool m_clusterIDHasBeenSet;
 
                     /**
-                     * 数据库名
+                     * <p>数据库名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 降冷时间（天）
+                     * <p>降冷时间（天）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_coolDownInDays;
                     bool m_coolDownInDaysHasBeenSet;
 
                     /**
-                     * 数据保留时间（天）
+                     * <p>数据保留时间（天）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_retentionInDays;
                     bool m_retentionInDaysHasBeenSet;
 
                     /**
-                     * 备注
+                     * <p>备注</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 状态：0: 资源初始化中， 1: 资源创建中， 2: 正常状态， 3: 资源删除中， 4: 资源已删除， 5: 资源禁用中， 6: 资源已禁用， 7: 资源异常，需要人工操作
+                     * <p>状态：0: 资源初始化中， 1: 资源创建中， 2: 正常状态， 3: 资源删除中， 4: 资源已删除， 5: 资源禁用中， 6: 资源已禁用， 7: 资源异常，需要人工操作</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
-                     * 最后修改时间
+                     * <p>最后修改时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;
+
+                    /**
+                     * <p>降冷开启时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_coolDownTime;
+                    bool m_coolDownTimeHasBeenSet;
 
                 };
             }

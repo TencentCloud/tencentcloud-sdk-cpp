@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取识别出的车牌号码。
-                     * @return Number 识别出的车牌号码。
+                     * 获取<p>识别出的车牌号码。</p>
+                     * @return Number <p>识别出的车牌号码。</p>
                      * 
                      */
                     std::string GetNumber() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool NumberHasBeenSet() const;
 
                     /**
-                     * 获取置信度，0 - 100 之间。
-                     * @return Confidence 置信度，0 - 100 之间。
+                     * 获取<p>置信度，0 - 100 之间。</p>
+                     * @return Confidence <p>置信度，0 - 100 之间。</p>
                      * 
                      */
                     int64_t GetConfidence() const;
@@ -74,8 +74,8 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取文本行在原图片中的像素坐标框。
-                     * @return Rect 文本行在原图片中的像素坐标框。
+                     * 获取<p>文本行在原图片中的像素坐标框。</p>
+                     * @return Rect <p>文本行在原图片中的像素坐标框。</p>
                      * 
                      */
                     Rect GetRect() const;
@@ -88,8 +88,8 @@ namespace TencentCloud
                     bool RectHasBeenSet() const;
 
                     /**
-                     * 获取识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿”、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。
-                     * @return Color 识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿”、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。
+                     * 获取<p>识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿”、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。</p>
+                     * @return Color <p>识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿”、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。</p>
                      * 
                      */
                     std::string GetColor() const;
@@ -102,8 +102,8 @@ namespace TencentCloud
                     bool ColorHasBeenSet() const;
 
                     /**
-                     * 获取全部车牌信息。
-                     * @return LicensePlateInfos 全部车牌信息。
+                     * 获取<p>全部车牌信息。</p>
+                     * @return LicensePlateInfos <p>全部车牌信息。</p>
                      * 
                      */
                     std::vector<LicensePlateInfo> GetLicensePlateInfos() const;
@@ -116,8 +116,8 @@ namespace TencentCloud
                     bool LicensePlateInfosHasBeenSet() const;
 
                     /**
-                     * 获取车牌类别， 如： 实体车牌、非实体车牌 示例值：实体车牌
-                     * @return LicensePlateCategory 车牌类别， 如： 实体车牌、非实体车牌 示例值：实体车牌
+                     * 获取<p>车牌类别， 如： 标准实体车牌、非标准实体车牌、临牌，喷漆车牌  示例值：实体车牌</p>
+                     * @return LicensePlateCategory <p>车牌类别， 如： 标准实体车牌、非标准实体车牌、临牌，喷漆车牌  示例值：实体车牌</p>
                      * 
                      */
                     std::string GetLicensePlateCategory() const;
@@ -132,37 +132,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 识别出的车牌号码。
+                     * <p>识别出的车牌号码。</p>
                      */
                     std::string m_number;
                     bool m_numberHasBeenSet;
 
                     /**
-                     * 置信度，0 - 100 之间。
+                     * <p>置信度，0 - 100 之间。</p>
                      */
                     int64_t m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * 文本行在原图片中的像素坐标框。
+                     * <p>文本行在原图片中的像素坐标框。</p>
                      */
                     Rect m_rect;
                     bool m_rectHasBeenSet;
 
                     /**
-                     * 识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿”、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。
+                     * <p>识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿”、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。</p>
                      */
                     std::string m_color;
                     bool m_colorHasBeenSet;
 
                     /**
-                     * 全部车牌信息。
+                     * <p>全部车牌信息。</p>
                      */
                     std::vector<LicensePlateInfo> m_licensePlateInfos;
                     bool m_licensePlateInfosHasBeenSet;
 
                     /**
-                     * 车牌类别， 如： 实体车牌、非实体车牌 示例值：实体车牌
+                     * <p>车牌类别， 如： 标准实体车牌、非标准实体车牌、临牌，喷漆车牌  示例值：实体车牌</p>
                      */
                     std::string m_licensePlateCategory;
                     bool m_licensePlateCategoryHasBeenSet;

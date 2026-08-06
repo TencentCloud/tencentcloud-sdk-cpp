@@ -24,7 +24,8 @@ KongActiveHealthCheck::KongActiveHealthCheck() :
     m_healthyIntervalHasBeenSet(false),
     m_unHealthyIntervalHasBeenSet(false),
     m_httpPathHasBeenSet(false),
-    m_timeoutHasBeenSet(false)
+    m_timeoutHasBeenSet(false),
+    m_hostHeaderHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome KongActiveHealthCheck::Deserialize(const rapidjson::Value &v
         m_timeoutHasBeenSet = true;
     }
 
+    if (value.HasMember("HostHeader") && !value["HostHeader"].IsNull())
+    {
+        if (!value["HostHeader"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KongActiveHealthCheck.HostHeader` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostHeader = string(value["HostHeader"].GetString());
+        m_hostHeaderHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void KongActiveHealthCheck::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Timeout";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timeout, allocator);
+    }
+
+    if (m_hostHeaderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostHeader";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostHeader.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void KongActiveHealthCheck::SetTimeout(const double& _timeout)
 bool KongActiveHealthCheck::TimeoutHasBeenSet() const
 {
     return m_timeoutHasBeenSet;
+}
+
+string KongActiveHealthCheck::GetHostHeader() const
+{
+    return m_hostHeader;
+}
+
+void KongActiveHealthCheck::SetHostHeader(const string& _hostHeader)
+{
+    m_hostHeader = _hostHeader;
+    m_hostHeaderHasBeenSet = true;
+}
+
+bool KongActiveHealthCheck::HostHeaderHasBeenSet() const
+{
+    return m_hostHeaderHasBeenSet;
 }
 

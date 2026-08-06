@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取转发规则的路径。长度限制为：1~200。
-                     * @return Url 转发规则的路径。长度限制为：1~200。
+                     * 获取<p>转发规则的路径。长度限制为：1~200。</p>
+                     * @return Url <p>转发规则的路径。长度限制为：1~200。</p>
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置转发规则的路径。长度限制为：1~200。
-                     * @param _url 转发规则的路径。长度限制为：1~200。
+                     * 设置<p>转发规则的路径。长度限制为：1~200。</p>
+                     * @param _url <p>转发规则的路径。长度限制为：1~200。</p>
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取转发规则的域名。长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。
-                     * @return Domain 转发规则的域名。长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。
+                     * 获取<p>转发规则的域名。长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。</p>
+                     * @return Domain <p>转发规则的域名。长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置转发规则的域名。长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。
-                     * @param _domain 转发规则的域名。长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。
+                     * 设置<p>转发规则的域名。长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。</p>
+                     * @param _domain <p>转发规则的域名。长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~86400，单位：秒。
-                     * @return SessionExpireTime 会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~86400，单位：秒。
+                     * 获取<p>会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~86400，单位：秒。</p>
+                     * @return SessionExpireTime <p>会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~86400，单位：秒。</p>
                      * 
                      */
                     int64_t GetSessionExpireTime() const;
 
                     /**
-                     * 设置会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~86400，单位：秒。
-                     * @param _sessionExpireTime 会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~86400，单位：秒。
+                     * 设置<p>会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~86400，单位：秒。</p>
+                     * @param _sessionExpireTime <p>会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~86400，单位：秒。</p>
                      * 
                      */
                     void SetSessionExpireTime(const int64_t& _sessionExpireTime);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool SessionExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取健康检查信息。详情请参见：[健康检查](https://cloud.tencent.com/document/product/214/6097)
-                     * @return HealthCheck 健康检查信息。详情请参见：[健康检查](https://cloud.tencent.com/document/product/214/6097)
+                     * 获取<p>健康检查信息。详情请参见：<a href="https://cloud.tencent.com/document/product/214/6097">健康检查</a></p>
+                     * @return HealthCheck <p>健康检查信息。详情请参见：<a href="https://cloud.tencent.com/document/product/214/6097">健康检查</a></p>
                      * 
                      */
                     HealthCheck GetHealthCheck() const;
 
                     /**
-                     * 设置健康检查信息。详情请参见：[健康检查](https://cloud.tencent.com/document/product/214/6097)
-                     * @param _healthCheck 健康检查信息。详情请参见：[健康检查](https://cloud.tencent.com/document/product/214/6097)
+                     * 设置<p>健康检查信息。详情请参见：<a href="https://cloud.tencent.com/document/product/214/6097">健康检查</a></p>
+                     * @param _healthCheck <p>健康检查信息。详情请参见：<a href="https://cloud.tencent.com/document/product/214/6097">健康检查</a></p>
                      * 
                      */
                     void SetHealthCheck(const HealthCheck& _healthCheck);
@@ -134,15 +134,15 @@ namespace TencentCloud
                     bool HealthCheckHasBeenSet() const;
 
                     /**
-                     * 获取证书信息；此参数和MultiCertInfo不能同时传入。
-                     * @return Certificate 证书信息；此参数和MultiCertInfo不能同时传入。
+                     * 获取<p>证书信息；此参数和MultiCertInfo不能同时传入。</p>
+                     * @return Certificate <p>证书信息；此参数和MultiCertInfo不能同时传入。</p>
                      * 
                      */
                     CertificateInput GetCertificate() const;
 
                     /**
-                     * 设置证书信息；此参数和MultiCertInfo不能同时传入。
-                     * @param _certificate 证书信息；此参数和MultiCertInfo不能同时传入。
+                     * 设置<p>证书信息；此参数和MultiCertInfo不能同时传入。</p>
+                     * @param _certificate <p>证书信息；此参数和MultiCertInfo不能同时传入。</p>
                      * 
                      */
                     void SetCertificate(const CertificateInput& _certificate);
@@ -155,19 +155,15 @@ namespace TencentCloud
                     bool CertificateHasBeenSet() const;
 
                     /**
-                     * 获取规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH
-分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。
-                     * @return Scheduler 规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH
-分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。
+                     * 获取<p>规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH<br>分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。</p>
+                     * @return Scheduler <p>规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH<br>分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。</p>
                      * 
                      */
                     std::string GetScheduler() const;
 
                     /**
-                     * 设置规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH
-分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。
-                     * @param _scheduler 规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH
-分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。
+                     * 设置<p>规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH<br>分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。</p>
+                     * @param _scheduler <p>规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH<br>分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。</p>
                      * 
                      */
                     void SetScheduler(const std::string& _scheduler);
@@ -180,15 +176,15 @@ namespace TencentCloud
                     bool SchedulerHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/GRPC/GRPCS/TRPC，TRPC暂未对外开放，默认HTTP。
-                     * @return ForwardType 负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/GRPC/GRPCS/TRPC，TRPC暂未对外开放，默认HTTP。
+                     * 获取<p>负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/GRPC/GRPCS/TRPC，TRPC暂未对外开放，默认HTTP。</p>
+                     * @return ForwardType <p>负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/GRPC/GRPCS/TRPC，TRPC暂未对外开放，默认HTTP。</p>
                      * 
                      */
                     std::string GetForwardType() const;
 
                     /**
-                     * 设置负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/GRPC/GRPCS/TRPC，TRPC暂未对外开放，默认HTTP。
-                     * @param _forwardType 负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/GRPC/GRPCS/TRPC，TRPC暂未对外开放，默认HTTP。
+                     * 设置<p>负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/GRPC/GRPCS/TRPC，TRPC暂未对外开放，默认HTTP。</p>
+                     * @param _forwardType <p>负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/GRPC/GRPCS/TRPC，TRPC暂未对外开放，默认HTTP。</p>
                      * 
                      */
                     void SetForwardType(const std::string& _forwardType);
@@ -201,15 +197,15 @@ namespace TencentCloud
                     bool ForwardTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否将该域名设为默认域名，注意，一个监听器下只能设置一个默认域名。
-                     * @return DefaultServer 是否将该域名设为默认域名，注意，一个监听器下只能设置一个默认域名。
+                     * 获取<p>是否将该域名设为默认域名，注意，一个监听器下只能设置一个默认域名。</p>
+                     * @return DefaultServer <p>是否将该域名设为默认域名，注意，一个监听器下只能设置一个默认域名。</p>
                      * 
                      */
                     bool GetDefaultServer() const;
 
                     /**
-                     * 设置是否将该域名设为默认域名，注意，一个监听器下只能设置一个默认域名。
-                     * @param _defaultServer 是否将该域名设为默认域名，注意，一个监听器下只能设置一个默认域名。
+                     * 设置<p>是否将该域名设为默认域名，注意，一个监听器下只能设置一个默认域名。</p>
+                     * @param _defaultServer <p>是否将该域名设为默认域名，注意，一个监听器下只能设置一个默认域名。</p>
                      * 
                      */
                     void SetDefaultServer(const bool& _defaultServer);
@@ -222,15 +218,15 @@ namespace TencentCloud
                     bool DefaultServerHasBeenSet() const;
 
                     /**
-                     * 获取是否开启Http2，注意，只有HTTPS域名才能开启Http2。
-                     * @return Http2 是否开启Http2，注意，只有HTTPS域名才能开启Http2。
+                     * 获取<p>是否开启Http2，注意，只有HTTPS域名才能开启Http2。</p>
+                     * @return Http2 <p>是否开启Http2，注意，只有HTTPS域名才能开启Http2。</p>
                      * 
                      */
                     bool GetHttp2() const;
 
                     /**
-                     * 设置是否开启Http2，注意，只有HTTPS域名才能开启Http2。
-                     * @param _http2 是否开启Http2，注意，只有HTTPS域名才能开启Http2。
+                     * 设置<p>是否开启Http2，注意，只有HTTPS域名才能开启Http2。</p>
+                     * @param _http2 <p>是否开启Http2，注意，只有HTTPS域名才能开启Http2。</p>
                      * 
                      */
                     void SetHttp2(const bool& _http2);
@@ -243,15 +239,15 @@ namespace TencentCloud
                     bool Http2HasBeenSet() const;
 
                     /**
-                     * 获取后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组
-                     * @return TargetType 后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组
+                     * 获取<p>后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组</p><p>枚举值：</p><ul><li>NODE： 绑定普通节点</li><li>TARGETGROUP： 绑定目标组 v1</li><li>TARGETGROUP-V2： 绑定目标组 v2</li></ul>
+                     * @return TargetType <p>后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组</p><p>枚举值：</p><ul><li>NODE： 绑定普通节点</li><li>TARGETGROUP： 绑定目标组 v1</li><li>TARGETGROUP-V2： 绑定目标组 v2</li></ul>
                      * 
                      */
                     std::string GetTargetType() const;
 
                     /**
-                     * 设置后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组
-                     * @param _targetType 后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组
+                     * 设置<p>后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组</p><p>枚举值：</p><ul><li>NODE： 绑定普通节点</li><li>TARGETGROUP： 绑定目标组 v1</li><li>TARGETGROUP-V2： 绑定目标组 v2</li></ul>
+                     * @param _targetType <p>后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组</p><p>枚举值：</p><ul><li>NODE： 绑定普通节点</li><li>TARGETGROUP： 绑定目标组 v1</li><li>TARGETGROUP-V2： 绑定目标组 v2</li></ul>
                      * 
                      */
                     void SetTargetType(const std::string& _targetType);
@@ -264,15 +260,15 @@ namespace TencentCloud
                     bool TargetTypeHasBeenSet() const;
 
                     /**
-                     * 获取TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。
-                     * @return TrpcCallee TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。
+                     * 获取<p>TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。</p>
+                     * @return TrpcCallee <p>TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。</p>
                      * 
                      */
                     std::string GetTrpcCallee() const;
 
                     /**
-                     * 设置TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。
-                     * @param _trpcCallee TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。
+                     * 设置<p>TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。</p>
+                     * @param _trpcCallee <p>TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。</p>
                      * 
                      */
                     void SetTrpcCallee(const std::string& _trpcCallee);
@@ -285,15 +281,15 @@ namespace TencentCloud
                     bool TrpcCalleeHasBeenSet() const;
 
                     /**
-                     * 获取TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放
-                     * @return TrpcFunc TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放
+                     * 获取<p>TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放</p>
+                     * @return TrpcFunc <p>TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放</p>
                      * 
                      */
                     std::string GetTrpcFunc() const;
 
                     /**
-                     * 设置TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放
-                     * @param _trpcFunc TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放
+                     * 设置<p>TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放</p>
+                     * @param _trpcFunc <p>TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放</p>
                      * 
                      */
                     void SetTrpcFunc(const std::string& _trpcFunc);
@@ -306,15 +302,15 @@ namespace TencentCloud
                     bool TrpcFuncHasBeenSet() const;
 
                     /**
-                     * 获取是否开启QUIC，注意，只有HTTPS域名才能开启QUIC
-                     * @return Quic 是否开启QUIC，注意，只有HTTPS域名才能开启QUIC
+                     * 获取<p>是否开启QUIC，注意，只有HTTPS域名才能开启QUIC</p>
+                     * @return Quic <p>是否开启QUIC，注意，只有HTTPS域名才能开启QUIC</p>
                      * 
                      */
                     bool GetQuic() const;
 
                     /**
-                     * 设置是否开启QUIC，注意，只有HTTPS域名才能开启QUIC
-                     * @param _quic 是否开启QUIC，注意，只有HTTPS域名才能开启QUIC
+                     * 设置<p>是否开启QUIC，注意，只有HTTPS域名才能开启QUIC</p>
+                     * @param _quic <p>是否开启QUIC，注意，只有HTTPS域名才能开启QUIC</p>
                      * 
                      */
                     void SetQuic(const bool& _quic);
@@ -327,15 +323,15 @@ namespace TencentCloud
                     bool QuicHasBeenSet() const;
 
                     /**
-                     * 获取转发规则的域名列表。每个域名的长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。
-                     * @return Domains 转发规则的域名列表。每个域名的长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。
+                     * 获取<p>转发规则的域名列表。每个域名的长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。</p>
+                     * @return Domains <p>转发规则的域名列表。每个域名的长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。</p>
                      * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
-                     * 设置转发规则的域名列表。每个域名的长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。
-                     * @param _domains 转发规则的域名列表。每个域名的长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。
+                     * 设置<p>转发规则的域名列表。每个域名的长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。</p>
+                     * @param _domains <p>转发规则的域名列表。每个域名的长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。</p>
                      * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
@@ -348,15 +344,15 @@ namespace TencentCloud
                     bool DomainsHasBeenSet() const;
 
                     /**
-                     * 获取证书信息，支持同时传入不同算法类型的多本服务端证书；此参数和Certificate不能同时传入。
-                     * @return MultiCertInfo 证书信息，支持同时传入不同算法类型的多本服务端证书；此参数和Certificate不能同时传入。
+                     * 获取<p>证书信息，支持同时传入不同算法类型的多本服务端证书；此参数和Certificate不能同时传入。</p>
+                     * @return MultiCertInfo <p>证书信息，支持同时传入不同算法类型的多本服务端证书；此参数和Certificate不能同时传入。</p>
                      * 
                      */
                     MultiCertInfo GetMultiCertInfo() const;
 
                     /**
-                     * 设置证书信息，支持同时传入不同算法类型的多本服务端证书；此参数和Certificate不能同时传入。
-                     * @param _multiCertInfo 证书信息，支持同时传入不同算法类型的多本服务端证书；此参数和Certificate不能同时传入。
+                     * 设置<p>证书信息，支持同时传入不同算法类型的多本服务端证书；此参数和Certificate不能同时传入。</p>
+                     * @param _multiCertInfo <p>证书信息，支持同时传入不同算法类型的多本服务端证书；此参数和Certificate不能同时传入。</p>
                      * 
                      */
                     void SetMultiCertInfo(const MultiCertInfo& _multiCertInfo);
@@ -369,15 +365,15 @@ namespace TencentCloud
                     bool MultiCertInfoHasBeenSet() const;
 
                     /**
-                     * 获取自定义cookie名
-                     * @return CookieName 自定义cookie名
+                     * 获取<p>自定义cookie名</p>
+                     * @return CookieName <p>自定义cookie名</p>
                      * 
                      */
                     std::string GetCookieName() const;
 
                     /**
-                     * 设置自定义cookie名
-                     * @param _cookieName 自定义cookie名
+                     * 设置<p>自定义cookie名</p>
+                     * @param _cookieName <p>自定义cookie名</p>
                      * 
                      */
                     void SetCookieName(const std::string& _cookieName);
@@ -392,98 +388,97 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 转发规则的路径。长度限制为：1~200。
+                     * <p>转发规则的路径。长度限制为：1~200。</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 转发规则的域名。长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。
+                     * <p>转发规则的域名。长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~86400，单位：秒。
+                     * <p>会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~86400，单位：秒。</p>
                      */
                     int64_t m_sessionExpireTime;
                     bool m_sessionExpireTimeHasBeenSet;
 
                     /**
-                     * 健康检查信息。详情请参见：[健康检查](https://cloud.tencent.com/document/product/214/6097)
+                     * <p>健康检查信息。详情请参见：<a href="https://cloud.tencent.com/document/product/214/6097">健康检查</a></p>
                      */
                     HealthCheck m_healthCheck;
                     bool m_healthCheckHasBeenSet;
 
                     /**
-                     * 证书信息；此参数和MultiCertInfo不能同时传入。
+                     * <p>证书信息；此参数和MultiCertInfo不能同时传入。</p>
                      */
                     CertificateInput m_certificate;
                     bool m_certificateHasBeenSet;
 
                     /**
-                     * 规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH
-分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。
+                     * <p>规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH<br>分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。</p>
                      */
                     std::string m_scheduler;
                     bool m_schedulerHasBeenSet;
 
                     /**
-                     * 负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/GRPC/GRPCS/TRPC，TRPC暂未对外开放，默认HTTP。
+                     * <p>负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/GRPC/GRPCS/TRPC，TRPC暂未对外开放，默认HTTP。</p>
                      */
                     std::string m_forwardType;
                     bool m_forwardTypeHasBeenSet;
 
                     /**
-                     * 是否将该域名设为默认域名，注意，一个监听器下只能设置一个默认域名。
+                     * <p>是否将该域名设为默认域名，注意，一个监听器下只能设置一个默认域名。</p>
                      */
                     bool m_defaultServer;
                     bool m_defaultServerHasBeenSet;
 
                     /**
-                     * 是否开启Http2，注意，只有HTTPS域名才能开启Http2。
+                     * <p>是否开启Http2，注意，只有HTTPS域名才能开启Http2。</p>
                      */
                     bool m_http2;
                     bool m_http2HasBeenSet;
 
                     /**
-                     * 后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组
+                     * <p>后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组</p><p>枚举值：</p><ul><li>NODE： 绑定普通节点</li><li>TARGETGROUP： 绑定目标组 v1</li><li>TARGETGROUP-V2： 绑定目标组 v2</li></ul>
                      */
                     std::string m_targetType;
                     bool m_targetTypeHasBeenSet;
 
                     /**
-                     * TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。
+                     * <p>TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。</p>
                      */
                     std::string m_trpcCallee;
                     bool m_trpcCalleeHasBeenSet;
 
                     /**
-                     * TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放
+                     * <p>TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放</p>
                      */
                     std::string m_trpcFunc;
                     bool m_trpcFuncHasBeenSet;
 
                     /**
-                     * 是否开启QUIC，注意，只有HTTPS域名才能开启QUIC
+                     * <p>是否开启QUIC，注意，只有HTTPS域名才能开启QUIC</p>
                      */
                     bool m_quic;
                     bool m_quicHasBeenSet;
 
                     /**
-                     * 转发规则的域名列表。每个域名的长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。
+                     * <p>转发规则的域名列表。每个域名的长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。</p>
                      */
                     std::vector<std::string> m_domains;
                     bool m_domainsHasBeenSet;
 
                     /**
-                     * 证书信息，支持同时传入不同算法类型的多本服务端证书；此参数和Certificate不能同时传入。
+                     * <p>证书信息，支持同时传入不同算法类型的多本服务端证书；此参数和Certificate不能同时传入。</p>
                      */
                     MultiCertInfo m_multiCertInfo;
                     bool m_multiCertInfoHasBeenSet;
 
                     /**
-                     * 自定义cookie名
+                     * <p>自定义cookie名</p>
                      */
                     std::string m_cookieName;
                     bool m_cookieNameHasBeenSet;

@@ -89,6 +89,31 @@ namespace TencentCloud
                      */
                     bool RiskLabelsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>综合风险分数。</p><p>取值范围：[1, 1000]</p><p>数值越大，风险越大。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RiskScore <p>综合风险分数。</p><p>取值范围：[1, 1000]</p><p>数值越大，风险越大。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRiskScore() const;
+
+                    /**
+                     * 设置<p>综合风险分数。</p><p>取值范围：[1, 1000]</p><p>数值越大，风险越大。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _riskScore <p>综合风险分数。</p><p>取值范围：[1, 1000]</p><p>数值越大，风险越大。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRiskScore(const int64_t& _riskScore);
+
+                    /**
+                     * 判断参数 RiskScore 是否已赋值
+                     * @return RiskScore 是否已赋值
+                     * 
+                     */
+                    bool RiskScoreHasBeenSet() const;
+
                 private:
 
                     /**
@@ -102,6 +127,13 @@ namespace TencentCloud
                      */
                     std::vector<RiskLabel> m_riskLabels;
                     bool m_riskLabelsHasBeenSet;
+
+                    /**
+                     * <p>综合风险分数。</p><p>取值范围：[1, 1000]</p><p>数值越大，风险越大。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_riskScore;
+                    bool m_riskScoreHasBeenSet;
 
                 };
             }

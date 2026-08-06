@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负
-                     * @return Angle 图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负
+                     * 获取<p>图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负</p>
+                     * @return Angle <p>图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负</p>
                      * 
                      */
                     double GetAngle() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool AngleHasBeenSet() const;
 
                     /**
-                     * 获取配置结构化文本信息
-                     * @return StructuralList 配置结构化文本信息
+                     * 获取<p>配置结构化文本信息</p>
+                     * @return StructuralList <p>配置结构化文本信息</p>
                      * 
                      */
                     std::vector<GroupInfo> GetStructuralList() const;
@@ -74,8 +74,8 @@ namespace TencentCloud
                     bool StructuralListHasBeenSet() const;
 
                     /**
-                     * 获取还原文本信息
-                     * @return WordList 还原文本信息
+                     * 获取<p>还原文本信息</p>
+                     * @return WordList <p>还原文本信息</p>
                      * 
                      */
                     std::vector<WordItem> GetWordList() const;
@@ -88,8 +88,8 @@ namespace TencentCloud
                     bool WordListHasBeenSet() const;
 
                     /**
-                     * 获取样本识别字段数
-                     * @return TokenNum 样本识别字段数
+                     * 获取<p>样本识别字段数</p>
+                     * @return TokenNum <p>样本识别字段数</p>
                      * 
                      */
                     int64_t GetTokenNum() const;
@@ -104,25 +104,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负
+                     * <p>图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负</p>
                      */
                     double m_angle;
                     bool m_angleHasBeenSet;
 
                     /**
-                     * 配置结构化文本信息
+                     * <p>配置结构化文本信息</p>
                      */
                     std::vector<GroupInfo> m_structuralList;
                     bool m_structuralListHasBeenSet;
 
                     /**
-                     * 还原文本信息
+                     * <p>还原文本信息</p>
                      */
                     std::vector<WordItem> m_wordList;
                     bool m_wordListHasBeenSet;
 
                     /**
-                     * 样本识别字段数
+                     * <p>样本识别字段数</p>
                      */
                     int64_t m_tokenNum;
                     bool m_tokenNumHasBeenSet;

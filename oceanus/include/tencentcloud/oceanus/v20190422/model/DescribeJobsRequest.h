@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取按照一个或者多个作业ID查询。作业ID形如：cql-11112222，每次请求的作业上限为100。参数不支持同时指定JobIds和Filters。
-                     * @return JobIds 按照一个或者多个作业ID查询。作业ID形如：cql-11112222，每次请求的作业上限为100。参数不支持同时指定JobIds和Filters。
+                     * 获取<p>按照一个或者多个作业ID查询。作业ID形如：cql-11112222，每次请求的作业上限为100。参数不支持同时指定JobIds和Filters。</p>
+                     * @return JobIds <p>按照一个或者多个作业ID查询。作业ID形如：cql-11112222，每次请求的作业上限为100。参数不支持同时指定JobIds和Filters。</p>
                      * 
                      */
                     std::vector<std::string> GetJobIds() const;
 
                     /**
-                     * 设置按照一个或者多个作业ID查询。作业ID形如：cql-11112222，每次请求的作业上限为100。参数不支持同时指定JobIds和Filters。
-                     * @param _jobIds 按照一个或者多个作业ID查询。作业ID形如：cql-11112222，每次请求的作业上限为100。参数不支持同时指定JobIds和Filters。
+                     * 设置<p>按照一个或者多个作业ID查询。作业ID形如：cql-11112222，每次请求的作业上限为100。参数不支持同时指定JobIds和Filters。</p>
+                     * @param _jobIds <p>按照一个或者多个作业ID查询。作业ID形如：cql-11112222，每次请求的作业上限为100。参数不支持同时指定JobIds和Filters。</p>
                      * 
                      */
                     void SetJobIds(const std::vector<std::string>& _jobIds);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool JobIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，支持的 Filter.Name 为：作业名 Name、作业状态 Status、所属集群 ClusterId、作业id JobId、集群名称 ClusterName。 每次请求的 Filters 个数的上限为 5，Filter.Values 的个数上限为 5。参数不支持同时指定 JobIds 和 Filters。
-                     * @return Filters 过滤条件，支持的 Filter.Name 为：作业名 Name、作业状态 Status、所属集群 ClusterId、作业id JobId、集群名称 ClusterName。 每次请求的 Filters 个数的上限为 5，Filter.Values 的个数上限为 5。参数不支持同时指定 JobIds 和 Filters。
+                     * 获取<p>过滤条件，支持的 Filter.Name 为：作业名 Name、作业状态 Status、所属集群 ClusterId、作业id JobId、集群名称 ClusterName。 每次请求的 Filters 个数的上限为 5，Filter.Values 的个数上限为 5。参数不支持同时指定 JobIds 和 Filters。</p>
+                     * @return Filters <p>过滤条件，支持的 Filter.Name 为：作业名 Name、作业状态 Status、所属集群 ClusterId、作业id JobId、集群名称 ClusterName。 每次请求的 Filters 个数的上限为 5，Filter.Values 的个数上限为 5。参数不支持同时指定 JobIds 和 Filters。</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，支持的 Filter.Name 为：作业名 Name、作业状态 Status、所属集群 ClusterId、作业id JobId、集群名称 ClusterName。 每次请求的 Filters 个数的上限为 5，Filter.Values 的个数上限为 5。参数不支持同时指定 JobIds 和 Filters。
-                     * @param _filters 过滤条件，支持的 Filter.Name 为：作业名 Name、作业状态 Status、所属集群 ClusterId、作业id JobId、集群名称 ClusterName。 每次请求的 Filters 个数的上限为 5，Filter.Values 的个数上限为 5。参数不支持同时指定 JobIds 和 Filters。
+                     * 设置<p>过滤条件，支持的 Filter.Name 为：作业名 Name、作业状态 Status、所属集群 ClusterId、作业id JobId、集群名称 ClusterName。 每次请求的 Filters 个数的上限为 5，Filter.Values 的个数上限为 5。参数不支持同时指定 JobIds 和 Filters。</p>
+                     * @param _filters <p>过滤条件，支持的 Filter.Name 为：作业名 Name、作业状态 Status、所属集群 ClusterId、作业id JobId、集群名称 ClusterName。 每次请求的 Filters 个数的上限为 5，Filter.Values 的个数上限为 5。参数不支持同时指定 JobIds 和 Filters。</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0
-                     * @return Offset 偏移量，默认为0
+                     * 获取<p>偏移量，默认为0</p>
+                     * @return Offset <p>偏移量，默认为0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0
-                     * @param _offset 偏移量，默认为0
+                     * 设置<p>偏移量，默认为0</p>
+                     * @param _offset <p>偏移量，默认为0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页大小，默认为20，最大值为100
-                     * @return Limit 分页大小，默认为20，最大值为100
+                     * 获取<p>分页大小，默认为20，最大值为100</p>
+                     * @return Limit <p>分页大小，默认为20，最大值为100</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页大小，默认为20，最大值为100
-                     * @param _limit 分页大小，默认为20，最大值为100
+                     * 设置<p>分页大小，默认为20，最大值为100</p>
+                     * @param _limit <p>分页大小，默认为20，最大值为100</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取工作空间 SerialId
-                     * @return WorkSpaceId 工作空间 SerialId
+                     * 获取<p>工作空间 SerialId</p>
+                     * @return WorkSpaceId <p>工作空间 SerialId</p>
                      * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
-                     * 设置工作空间 SerialId
-                     * @param _workSpaceId 工作空间 SerialId
+                     * 设置<p>工作空间 SerialId</p>
+                     * @param _workSpaceId <p>工作空间 SerialId</p>
                      * 
                      */
                     void SetWorkSpaceId(const std::string& _workSpaceId);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool WorkSpaceIdHasBeenSet() const;
 
                     /**
-                     * 获取查询额外的作业信息,例如 JobEventInfo	
-                     * @return ExtraResult 查询额外的作业信息,例如 JobEventInfo	
+                     * 获取<p>查询额外的作业信息,例如 JobEventInfo</p>
+                     * @return ExtraResult <p>查询额外的作业信息,例如 JobEventInfo</p>
                      * 
                      */
                     std::vector<std::string> GetExtraResult() const;
 
                     /**
-                     * 设置查询额外的作业信息,例如 JobEventInfo	
-                     * @param _extraResult 查询额外的作业信息,例如 JobEventInfo	
+                     * 设置<p>查询额外的作业信息,例如 JobEventInfo</p>
+                     * @param _extraResult <p>查询额外的作业信息,例如 JobEventInfo</p>
                      * 
                      */
                     void SetExtraResult(const std::vector<std::string>& _extraResult);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool ExtraResultHasBeenSet() const;
 
                     /**
-                     * 获取查询引用connector
-                     * @return ConnectorOptions 查询引用connector
+                     * 获取<p>查询引用connector</p>
+                     * @return ConnectorOptions <p>查询引用connector</p>
                      * 
                      */
                     std::string GetConnectorOptions() const;
 
                     /**
-                     * 设置查询引用connector
-                     * @param _connectorOptions 查询引用connector
+                     * 设置<p>查询引用connector</p>
+                     * @param _connectorOptions <p>查询引用connector</p>
                      * 
                      */
                     void SetConnectorOptions(const std::string& _connectorOptions);
@@ -193,43 +193,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 按照一个或者多个作业ID查询。作业ID形如：cql-11112222，每次请求的作业上限为100。参数不支持同时指定JobIds和Filters。
+                     * <p>按照一个或者多个作业ID查询。作业ID形如：cql-11112222，每次请求的作业上限为100。参数不支持同时指定JobIds和Filters。</p>
                      */
                     std::vector<std::string> m_jobIds;
                     bool m_jobIdsHasBeenSet;
 
                     /**
-                     * 过滤条件，支持的 Filter.Name 为：作业名 Name、作业状态 Status、所属集群 ClusterId、作业id JobId、集群名称 ClusterName。 每次请求的 Filters 个数的上限为 5，Filter.Values 的个数上限为 5。参数不支持同时指定 JobIds 和 Filters。
+                     * <p>过滤条件，支持的 Filter.Name 为：作业名 Name、作业状态 Status、所属集群 ClusterId、作业id JobId、集群名称 ClusterName。 每次请求的 Filters 个数的上限为 5，Filter.Values 的个数上限为 5。参数不支持同时指定 JobIds 和 Filters。</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0
+                     * <p>偏移量，默认为0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页大小，默认为20，最大值为100
+                     * <p>分页大小，默认为20，最大值为100</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 工作空间 SerialId
+                     * <p>工作空间 SerialId</p>
                      */
                     std::string m_workSpaceId;
                     bool m_workSpaceIdHasBeenSet;
 
                     /**
-                     * 查询额外的作业信息,例如 JobEventInfo	
+                     * <p>查询额外的作业信息,例如 JobEventInfo</p>
                      */
                     std::vector<std::string> m_extraResult;
                     bool m_extraResultHasBeenSet;
 
                     /**
-                     * 查询引用connector
+                     * <p>查询引用connector</p>
                      */
                     std::string m_connectorOptions;
                     bool m_connectorOptionsHasBeenSet;

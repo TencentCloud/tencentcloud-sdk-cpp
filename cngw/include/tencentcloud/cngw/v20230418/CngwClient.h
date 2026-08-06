@@ -57,6 +57,8 @@
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayMCPToolResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewaySecretKeyRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewaySecretKeyResponse.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeCNGWServicesWithRoutesRequest.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeCNGWServicesWithRoutesResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayConsumerRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayConsumerResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayConsumerGroupRequest.h>
@@ -190,6 +192,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCloudNativeAPIGatewaySecretKeyResponse> DeleteCloudNativeAPIGatewaySecretKeyOutcome;
                 typedef std::future<DeleteCloudNativeAPIGatewaySecretKeyOutcome> DeleteCloudNativeAPIGatewaySecretKeyOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DeleteCloudNativeAPIGatewaySecretKeyRequest&, DeleteCloudNativeAPIGatewaySecretKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudNativeAPIGatewaySecretKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCNGWServicesWithRoutesResponse> DescribeCNGWServicesWithRoutesOutcome;
+                typedef std::future<DescribeCNGWServicesWithRoutesOutcome> DescribeCNGWServicesWithRoutesOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::DescribeCNGWServicesWithRoutesRequest&, DescribeCNGWServicesWithRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCNGWServicesWithRoutesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayConsumerResponse> DescribeCloudNativeAPIGatewayConsumerOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewayConsumerOutcome> DescribeCloudNativeAPIGatewayConsumerOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DescribeCloudNativeAPIGatewayConsumerRequest&, DescribeCloudNativeAPIGatewayConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayConsumerAsyncHandler;
@@ -447,6 +452,15 @@ namespace TencentCloud
                 DeleteCloudNativeAPIGatewaySecretKeyOutcome DeleteCloudNativeAPIGatewaySecretKey(const Model::DeleteCloudNativeAPIGatewaySecretKeyRequest &request);
                 void DeleteCloudNativeAPIGatewaySecretKeyAsync(const Model::DeleteCloudNativeAPIGatewaySecretKeyRequest& request, const DeleteCloudNativeAPIGatewaySecretKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteCloudNativeAPIGatewaySecretKeyOutcomeCallable DeleteCloudNativeAPIGatewaySecretKeyCallable(const Model::DeleteCloudNativeAPIGatewaySecretKeyRequest& request);
+
+                /**
+                 *查询云原生网关服务和路由列表
+                 * @param req DescribeCNGWServicesWithRoutesRequest
+                 * @return DescribeCNGWServicesWithRoutesOutcome
+                 */
+                DescribeCNGWServicesWithRoutesOutcome DescribeCNGWServicesWithRoutes(const Model::DescribeCNGWServicesWithRoutesRequest &request);
+                void DescribeCNGWServicesWithRoutesAsync(const Model::DescribeCNGWServicesWithRoutesRequest& request, const DescribeCNGWServicesWithRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCNGWServicesWithRoutesOutcomeCallable DescribeCNGWServicesWithRoutesCallable(const Model::DescribeCNGWServicesWithRoutesRequest& request);
 
                 /**
                  *查询云原生消费者详情

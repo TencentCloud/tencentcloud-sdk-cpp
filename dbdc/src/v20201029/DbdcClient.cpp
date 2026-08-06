@@ -1340,6 +1340,56 @@ DbdcClient::IsolateDBCustomNodeOutcomeCallable DbdcClient::IsolateDBCustomNodeCa
     return prom->get_future();
 }
 
+DbdcClient::ModifyDBCustomClusterAttributesOutcome DbdcClient::ModifyDBCustomClusterAttributes(const ModifyDBCustomClusterAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBCustomClusterAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBCustomClusterAttributesResponse rsp = ModifyDBCustomClusterAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBCustomClusterAttributesOutcome(rsp);
+        else
+            return ModifyDBCustomClusterAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBCustomClusterAttributesOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::ModifyDBCustomClusterAttributesAsync(const ModifyDBCustomClusterAttributesRequest& request, const ModifyDBCustomClusterAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDBCustomClusterAttributesRequest&;
+    using Resp = ModifyDBCustomClusterAttributesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBCustomClusterAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::ModifyDBCustomClusterAttributesOutcomeCallable DbdcClient::ModifyDBCustomClusterAttributesCallable(const ModifyDBCustomClusterAttributesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDBCustomClusterAttributesOutcome>>();
+    ModifyDBCustomClusterAttributesAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const ModifyDBCustomClusterAttributesRequest&,
+        ModifyDBCustomClusterAttributesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbdcClient::ModifyDBCustomClusterNodeConfigOutcome DbdcClient::ModifyDBCustomClusterNodeConfig(const ModifyDBCustomClusterNodeConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBCustomClusterNodeConfig");

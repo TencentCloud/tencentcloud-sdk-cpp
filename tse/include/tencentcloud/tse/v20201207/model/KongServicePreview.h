@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务ID
-                     * @return ID 服务ID
+                     * 获取<p>服务ID</p>
+                     * @return ID <p>服务ID</p>
                      * 
                      */
                     std::string GetID() const;
 
                     /**
-                     * 设置服务ID
-                     * @param _iD 服务ID
+                     * 设置<p>服务ID</p>
+                     * @param _iD <p>服务ID</p>
                      * 
                      */
                     void SetID(const std::string& _iD);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取服务名字
-                     * @return Name 服务名字
+                     * 获取<p>服务名字</p>
+                     * @return Name <p>服务名字</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置服务名字
-                     * @param _name 服务名字
+                     * 设置<p>服务名字</p>
+                     * @param _name <p>服务名字</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取标签
-                     * @return Tags 标签
+                     * 获取<p>标签</p>
+                     * @return Tags <p>标签</p>
                      * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
-                     * 设置标签
-                     * @param _tags 标签
+                     * 设置<p>标签</p>
+                     * @param _tags <p>标签</p>
                      * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取后端配置
-                     * @return UpstreamInfo 后端配置
+                     * 获取<p>后端配置</p>
+                     * @return UpstreamInfo <p>后端配置</p>
                      * 
                      */
                     KongUpstreamInfo GetUpstreamInfo() const;
 
                     /**
-                     * 设置后端配置
-                     * @param _upstreamInfo 后端配置
+                     * 设置<p>后端配置</p>
+                     * @param _upstreamInfo <p>后端配置</p>
                      * 
                      */
                     void SetUpstreamInfo(const KongUpstreamInfo& _upstreamInfo);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool UpstreamInfoHasBeenSet() const;
 
                     /**
-                     * 获取后端类型
-                     * @return UpstreamType 后端类型
+                     * 获取<p>后端类型</p>
+                     * @return UpstreamType <p>后端类型</p>
                      * 
                      */
                     std::string GetUpstreamType() const;
 
                     /**
-                     * 设置后端类型
-                     * @param _upstreamType 后端类型
+                     * 设置<p>后端类型</p>
+                     * @param _upstreamType <p>后端类型</p>
                      * 
                      */
                     void SetUpstreamType(const std::string& _upstreamType);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool UpstreamTypeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreatedTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreatedTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createdTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createdTime <p>创建时间</p>
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否可编辑
-                     * @return Editable 是否可编辑
+                     * 获取<p>是否可编辑</p>
+                     * @return Editable <p>是否可编辑</p>
                      * 
                      */
                     bool GetEditable() const;
 
                     /**
-                     * 设置是否可编辑
-                     * @param _editable 是否可编辑
+                     * 设置<p>是否可编辑</p>
+                     * @param _editable <p>是否可编辑</p>
                      * 
                      */
                     void SetEditable(const bool& _editable);
@@ -195,18 +195,18 @@ namespace TencentCloud
                     bool EditableHasBeenSet() const;
 
                     /**
-                     * 获取请求路径
+                     * 获取<p>请求路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Path 请求路径
+                     * @return Path <p>请求路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置请求路径
+                     * 设置<p>请求路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _path 请求路径
+                     * @param _path <p>请求路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,49 +222,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务ID
+                     * <p>服务ID</p>
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 服务名字
+                     * <p>服务名字</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 标签
+                     * <p>标签</p>
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 后端配置
+                     * <p>后端配置</p>
                      */
                     KongUpstreamInfo m_upstreamInfo;
                     bool m_upstreamInfoHasBeenSet;
 
                     /**
-                     * 后端类型
+                     * <p>后端类型</p>
                      */
                     std::string m_upstreamType;
                     bool m_upstreamTypeHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 是否可编辑
+                     * <p>是否可编辑</p>
                      */
                     bool m_editable;
                     bool m_editableHasBeenSet;
 
                     /**
-                     * 请求路径
+                     * <p>请求路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;

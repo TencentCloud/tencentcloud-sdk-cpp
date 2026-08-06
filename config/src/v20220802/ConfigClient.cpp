@@ -1640,6 +1640,56 @@ ConfigClient::ListAggregateConfigRuleEvaluationResultsOutcomeCallable ConfigClie
     return prom->get_future();
 }
 
+ConfigClient::ListAggregateConfigRuleResourceEvaluationResultsOutcome ConfigClient::ListAggregateConfigRuleResourceEvaluationResults(const ListAggregateConfigRuleResourceEvaluationResultsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAggregateConfigRuleResourceEvaluationResults");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAggregateConfigRuleResourceEvaluationResultsResponse rsp = ListAggregateConfigRuleResourceEvaluationResultsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAggregateConfigRuleResourceEvaluationResultsOutcome(rsp);
+        else
+            return ListAggregateConfigRuleResourceEvaluationResultsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAggregateConfigRuleResourceEvaluationResultsOutcome(outcome.GetError());
+    }
+}
+
+void ConfigClient::ListAggregateConfigRuleResourceEvaluationResultsAsync(const ListAggregateConfigRuleResourceEvaluationResultsRequest& request, const ListAggregateConfigRuleResourceEvaluationResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListAggregateConfigRuleResourceEvaluationResultsRequest&;
+    using Resp = ListAggregateConfigRuleResourceEvaluationResultsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListAggregateConfigRuleResourceEvaluationResults", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ConfigClient::ListAggregateConfigRuleResourceEvaluationResultsOutcomeCallable ConfigClient::ListAggregateConfigRuleResourceEvaluationResultsCallable(const ListAggregateConfigRuleResourceEvaluationResultsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListAggregateConfigRuleResourceEvaluationResultsOutcome>>();
+    ListAggregateConfigRuleResourceEvaluationResultsAsync(
+    request,
+    [prom](
+        const ConfigClient*,
+        const ListAggregateConfigRuleResourceEvaluationResultsRequest&,
+        ListAggregateConfigRuleResourceEvaluationResultsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ConfigClient::ListAggregateConfigRulesOutcome ConfigClient::ListAggregateConfigRules(const ListAggregateConfigRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "ListAggregateConfigRules");
@@ -1932,6 +1982,56 @@ ConfigClient::ListConfigRuleEvaluationResultsOutcomeCallable ConfigClient::ListC
         const ConfigClient*,
         const ListConfigRuleEvaluationResultsRequest&,
         ListConfigRuleEvaluationResultsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ConfigClient::ListConfigRuleResourceEvaluationResultsOutcome ConfigClient::ListConfigRuleResourceEvaluationResults(const ListConfigRuleResourceEvaluationResultsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListConfigRuleResourceEvaluationResults");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListConfigRuleResourceEvaluationResultsResponse rsp = ListConfigRuleResourceEvaluationResultsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListConfigRuleResourceEvaluationResultsOutcome(rsp);
+        else
+            return ListConfigRuleResourceEvaluationResultsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListConfigRuleResourceEvaluationResultsOutcome(outcome.GetError());
+    }
+}
+
+void ConfigClient::ListConfigRuleResourceEvaluationResultsAsync(const ListConfigRuleResourceEvaluationResultsRequest& request, const ListConfigRuleResourceEvaluationResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListConfigRuleResourceEvaluationResultsRequest&;
+    using Resp = ListConfigRuleResourceEvaluationResultsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListConfigRuleResourceEvaluationResults", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ConfigClient::ListConfigRuleResourceEvaluationResultsOutcomeCallable ConfigClient::ListConfigRuleResourceEvaluationResultsCallable(const ListConfigRuleResourceEvaluationResultsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListConfigRuleResourceEvaluationResultsOutcome>>();
+    ListConfigRuleResourceEvaluationResultsAsync(
+    request,
+    [prom](
+        const ConfigClient*,
+        const ListConfigRuleResourceEvaluationResultsRequest&,
+        ListConfigRuleResourceEvaluationResultsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

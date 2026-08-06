@@ -151,6 +151,8 @@
 #include <tencentcloud/tse/v20201207/model/DescribeAutoScalerResourceStrategiesResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeAutoScalerResourceStrategyBindingGroupsRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeAutoScalerResourceStrategyBindingGroupsResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeCNGWServicesWithRoutesRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeCNGWServicesWithRoutesResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayCORSRequest.h>
@@ -549,6 +551,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAutoScalerResourceStrategyBindingGroupsResponse> DescribeAutoScalerResourceStrategyBindingGroupsOutcome;
                 typedef std::future<DescribeAutoScalerResourceStrategyBindingGroupsOutcome> DescribeAutoScalerResourceStrategyBindingGroupsOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeAutoScalerResourceStrategyBindingGroupsRequest&, DescribeAutoScalerResourceStrategyBindingGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoScalerResourceStrategyBindingGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCNGWServicesWithRoutesResponse> DescribeCNGWServicesWithRoutesOutcome;
+                typedef std::future<DescribeCNGWServicesWithRoutesOutcome> DescribeCNGWServicesWithRoutesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeCNGWServicesWithRoutesRequest&, DescribeCNGWServicesWithRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCNGWServicesWithRoutesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayResponse> DescribeCloudNativeAPIGatewayOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewayOutcome> DescribeCloudNativeAPIGatewayOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeCloudNativeAPIGatewayRequest&, DescribeCloudNativeAPIGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayAsyncHandler;
@@ -1415,6 +1420,15 @@ namespace TencentCloud
                 DescribeAutoScalerResourceStrategyBindingGroupsOutcome DescribeAutoScalerResourceStrategyBindingGroups(const Model::DescribeAutoScalerResourceStrategyBindingGroupsRequest &request);
                 void DescribeAutoScalerResourceStrategyBindingGroupsAsync(const Model::DescribeAutoScalerResourceStrategyBindingGroupsRequest& request, const DescribeAutoScalerResourceStrategyBindingGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAutoScalerResourceStrategyBindingGroupsOutcomeCallable DescribeAutoScalerResourceStrategyBindingGroupsCallable(const Model::DescribeAutoScalerResourceStrategyBindingGroupsRequest& request);
+
+                /**
+                 *查询云原生网关服务和路由列表
+                 * @param req DescribeCNGWServicesWithRoutesRequest
+                 * @return DescribeCNGWServicesWithRoutesOutcome
+                 */
+                DescribeCNGWServicesWithRoutesOutcome DescribeCNGWServicesWithRoutes(const Model::DescribeCNGWServicesWithRoutesRequest &request);
+                void DescribeCNGWServicesWithRoutesAsync(const Model::DescribeCNGWServicesWithRoutesRequest& request, const DescribeCNGWServicesWithRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCNGWServicesWithRoutesOutcomeCallable DescribeCNGWServicesWithRoutesCallable(const Model::DescribeCNGWServicesWithRoutesRequest& request);
 
                 /**
                  *获取云原生API网关实例信息

@@ -22,7 +22,8 @@ using namespace std;
 
 DataScore::DataScore() :
     m_riskLevelHasBeenSet(false),
-    m_riskLabelsHasBeenSet(false)
+    m_riskLabelsHasBeenSet(false),
+    m_riskScoreHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome DataScore::Deserialize(const rapidjson::Value &value)
         m_riskLabelsHasBeenSet = true;
     }
 
+    if (value.HasMember("RiskScore") && !value["RiskScore"].IsNull())
+    {
+        if (!value["RiskScore"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataScore.RiskScore` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskScore = value["RiskScore"].GetInt64();
+        m_riskScoreHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -89,6 +100,14 @@ void DataScore::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_riskScoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskScore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_riskScore, allocator);
     }
 
 }
@@ -124,5 +143,21 @@ void DataScore::SetRiskLabels(const vector<RiskLabel>& _riskLabels)
 bool DataScore::RiskLabelsHasBeenSet() const
 {
     return m_riskLabelsHasBeenSet;
+}
+
+int64_t DataScore::GetRiskScore() const
+{
+    return m_riskScore;
+}
+
+void DataScore::SetRiskScore(const int64_t& _riskScore)
+{
+    m_riskScore = _riskScore;
+    m_riskScoreHasBeenSet = true;
+}
+
+bool DataScore::RiskScoreHasBeenSet() const
+{
+    return m_riskScoreHasBeenSet;
 }
 

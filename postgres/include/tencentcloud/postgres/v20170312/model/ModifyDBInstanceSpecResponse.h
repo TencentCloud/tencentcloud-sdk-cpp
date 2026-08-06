@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订单号。
-                     * @return DealName 订单号。
+                     * 获取<p>订单号。</p>
+                     * @return DealName <p>订单号。</p>
                      * 
                      */
                     std::string GetDealName() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool DealNameHasBeenSet() const;
 
                     /**
-                     * 获取冻结流水号。
-                     * @return BillId 冻结流水号。
+                     * 获取<p>冻结流水号。</p>
+                     * @return BillId <p>冻结流水号。</p>
                      * 
                      */
                     std::string GetBillId() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订单号。
+                     * <p>订单号。</p>
                      */
                     std::string m_dealName;
                     bool m_dealNameHasBeenSet;
 
                     /**
-                     * 冻结流水号。
+                     * <p>冻结流水号。</p>
                      */
                     std::string m_billId;
                     bool m_billIdHasBeenSet;

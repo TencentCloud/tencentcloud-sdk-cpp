@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网关ID
-                     * @return GatewayId 网关ID
+                     * 获取<p>网关ID</p>
+                     * @return GatewayId <p>网关ID</p>
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
-                     * 设置网关ID
-                     * @param _gatewayId 网关ID
+                     * 设置<p>网关ID</p>
+                     * @param _gatewayId <p>网关ID</p>
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取列表数量
-                     * @return Limit 列表数量
+                     * 获取<p>列表数量</p>
+                     * @return Limit <p>列表数量</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置列表数量
-                     * @param _limit 列表数量
+                     * 设置<p>列表数量</p>
+                     * @param _limit <p>列表数量</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取列表 offset
-                     * @return Offset 列表 offset
+                     * 获取<p>列表 offset</p>
+                     * @return Offset <p>列表 offset</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置列表 offset
-                     * @param _offset 列表 offset
+                     * 设置<p>列表 offset</p>
+                     * @param _offset <p>列表 offset</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，多个过滤条件之间是与的关系，支持 name,upstreamType
-                     * @return Filters 过滤条件，多个过滤条件之间是与的关系，支持 name,upstreamType
+                     * 获取<p>过滤条件，多个过滤条件之间是与的关系，支持 name,upstreamType</p>
+                     * @return Filters <p>过滤条件，多个过滤条件之间是与的关系，支持 name,upstreamType</p>
                      * 
                      */
                     std::vector<ListFilter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，多个过滤条件之间是与的关系，支持 name,upstreamType
-                     * @param _filters 过滤条件，多个过滤条件之间是与的关系，支持 name,upstreamType
+                     * 设置<p>过滤条件，多个过滤条件之间是与的关系，支持 name,upstreamType</p>
+                     * @param _filters <p>过滤条件，多个过滤条件之间是与的关系，支持 name,upstreamType</p>
                      * 
                      */
                     void SetFilters(const std::vector<ListFilter>& _filters);
@@ -127,31 +127,85 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取<p>排序字段</p>
+                     * @return OrderField <p>排序字段</p>
+                     * 
+                     */
+                    std::string GetOrderField() const;
+
+                    /**
+                     * 设置<p>排序字段</p>
+                     * @param _orderField <p>排序字段</p>
+                     * 
+                     */
+                    void SetOrderField(const std::string& _orderField);
+
+                    /**
+                     * 判断参数 OrderField 是否已赋值
+                     * @return OrderField 是否已赋值
+                     * 
+                     */
+                    bool OrderFieldHasBeenSet() const;
+
+                    /**
+                     * 获取<p>排序方式</p><p>枚举值：</p><ul><li>DESC： 降序</li><li>ASC： 升序</li></ul>
+                     * @return OrderType <p>排序方式</p><p>枚举值：</p><ul><li>DESC： 降序</li><li>ASC： 升序</li></ul>
+                     * 
+                     */
+                    std::string GetOrderType() const;
+
+                    /**
+                     * 设置<p>排序方式</p><p>枚举值：</p><ul><li>DESC： 降序</li><li>ASC： 升序</li></ul>
+                     * @param _orderType <p>排序方式</p><p>枚举值：</p><ul><li>DESC： 降序</li><li>ASC： 升序</li></ul>
+                     * 
+                     */
+                    void SetOrderType(const std::string& _orderType);
+
+                    /**
+                     * 判断参数 OrderType 是否已赋值
+                     * @return OrderType 是否已赋值
+                     * 
+                     */
+                    bool OrderTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 网关ID
+                     * <p>网关ID</p>
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * 列表数量
+                     * <p>列表数量</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 列表 offset
+                     * <p>列表 offset</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 过滤条件，多个过滤条件之间是与的关系，支持 name,upstreamType
+                     * <p>过滤条件，多个过滤条件之间是与的关系，支持 name,upstreamType</p>
                      */
                     std::vector<ListFilter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * <p>排序字段</p>
+                     */
+                    std::string m_orderField;
+                    bool m_orderFieldHasBeenSet;
+
+                    /**
+                     * <p>排序方式</p><p>枚举值：</p><ul><li>DESC： 降序</li><li>ASC： 升序</li></ul>
+                     */
+                    std::string m_orderType;
+                    bool m_orderTypeHasBeenSet;
 
                 };
             }

@@ -33,7 +33,9 @@ ExtractDocMultiRequest::ExtractDocMultiRequest() :
     m_enableCoordHasBeenSet(false),
     m_outputParentKeyHasBeenSet(false),
     m_configAdvancedHasBeenSet(false),
-    m_outputLanguageHasBeenSet(false)
+    m_outputLanguageHasBeenSet(false),
+    m_newItemNamesHasBeenSet(false),
+    m_multiModelVersionHasBeenSet(false)
 {
 }
 
@@ -136,6 +138,29 @@ string ExtractDocMultiRequest::ToJsonString() const
         string key = "OutputLanguage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_outputLanguage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_newItemNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewItemNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_newItemNames.begin(); itr != m_newItemNames.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_multiModelVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiModelVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_multiModelVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -320,6 +345,38 @@ void ExtractDocMultiRequest::SetOutputLanguage(const string& _outputLanguage)
 bool ExtractDocMultiRequest::OutputLanguageHasBeenSet() const
 {
     return m_outputLanguageHasBeenSet;
+}
+
+vector<ItemNames> ExtractDocMultiRequest::GetNewItemNames() const
+{
+    return m_newItemNames;
+}
+
+void ExtractDocMultiRequest::SetNewItemNames(const vector<ItemNames>& _newItemNames)
+{
+    m_newItemNames = _newItemNames;
+    m_newItemNamesHasBeenSet = true;
+}
+
+bool ExtractDocMultiRequest::NewItemNamesHasBeenSet() const
+{
+    return m_newItemNamesHasBeenSet;
+}
+
+string ExtractDocMultiRequest::GetMultiModelVersion() const
+{
+    return m_multiModelVersion;
+}
+
+void ExtractDocMultiRequest::SetMultiModelVersion(const string& _multiModelVersion)
+{
+    m_multiModelVersion = _multiModelVersion;
+    m_multiModelVersionHasBeenSet = true;
+}
+
+bool ExtractDocMultiRequest::MultiModelVersionHasBeenSet() const
+{
+    return m_multiModelVersionHasBeenSet;
 }
 
 

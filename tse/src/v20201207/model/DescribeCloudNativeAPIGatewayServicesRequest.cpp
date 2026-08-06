@@ -26,7 +26,9 @@ DescribeCloudNativeAPIGatewayServicesRequest::DescribeCloudNativeAPIGatewayServi
     m_gatewayIdHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_orderFieldHasBeenSet(false),
+    m_orderTypeHasBeenSet(false)
 {
 }
 
@@ -74,6 +76,22 @@ string DescribeCloudNativeAPIGatewayServicesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_orderFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -146,6 +164,38 @@ void DescribeCloudNativeAPIGatewayServicesRequest::SetFilters(const vector<ListF
 bool DescribeCloudNativeAPIGatewayServicesRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewayServicesRequest::GetOrderField() const
+{
+    return m_orderField;
+}
+
+void DescribeCloudNativeAPIGatewayServicesRequest::SetOrderField(const string& _orderField)
+{
+    m_orderField = _orderField;
+    m_orderFieldHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayServicesRequest::OrderFieldHasBeenSet() const
+{
+    return m_orderFieldHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewayServicesRequest::GetOrderType() const
+{
+    return m_orderType;
+}
+
+void DescribeCloudNativeAPIGatewayServicesRequest::SetOrderType(const string& _orderType)
+{
+    m_orderType = _orderType;
+    m_orderTypeHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayServicesRequest::OrderTypeHasBeenSet() const
+{
+    return m_orderTypeHasBeenSet;
 }
 
 

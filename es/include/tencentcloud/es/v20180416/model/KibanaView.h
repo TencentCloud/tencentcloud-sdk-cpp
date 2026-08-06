@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Kibana节点IP
-                     * @return Ip Kibana节点IP
+                     * 获取<p>Kibana节点IP</p>
+                     * @return Ip <p>Kibana节点IP</p>
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置Kibana节点IP
-                     * @param _ip Kibana节点IP
+                     * 设置<p>Kibana节点IP</p>
+                     * @param _ip <p>Kibana节点IP</p>
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取节点总磁盘大小
-                     * @return DiskSize 节点总磁盘大小
+                     * 获取<p>节点总磁盘大小</p>
+                     * @return DiskSize <p>节点总磁盘大小</p>
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
-                     * 设置节点总磁盘大小
-                     * @param _diskSize 节点总磁盘大小
+                     * 设置<p>节点总磁盘大小</p>
+                     * @param _diskSize <p>节点总磁盘大小</p>
                      * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取磁盘使用率
-                     * @return DiskUsage 磁盘使用率
+                     * 获取<p>磁盘使用率</p>
+                     * @return DiskUsage <p>磁盘使用率</p>
                      * 
                      */
                     double GetDiskUsage() const;
 
                     /**
-                     * 设置磁盘使用率
-                     * @param _diskUsage 磁盘使用率
+                     * 设置<p>磁盘使用率</p>
+                     * @param _diskUsage <p>磁盘使用率</p>
                      * 
                      */
                     void SetDiskUsage(const double& _diskUsage);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool DiskUsageHasBeenSet() const;
 
                     /**
-                     * 获取节点内存大小
-                     * @return MemSize 节点内存大小
+                     * 获取<p>节点内存大小</p>
+                     * @return MemSize <p>节点内存大小</p>
                      * 
                      */
                     int64_t GetMemSize() const;
 
                     /**
-                     * 设置节点内存大小
-                     * @param _memSize 节点内存大小
+                     * 设置<p>节点内存大小</p>
+                     * @param _memSize <p>节点内存大小</p>
                      * 
                      */
                     void SetMemSize(const int64_t& _memSize);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool MemSizeHasBeenSet() const;
 
                     /**
-                     * 获取内存使用率
-                     * @return MemUsage 内存使用率
+                     * 获取<p>内存使用率</p>
+                     * @return MemUsage <p>内存使用率</p>
                      * 
                      */
                     double GetMemUsage() const;
 
                     /**
-                     * 设置内存使用率
-                     * @param _memUsage 内存使用率
+                     * 设置<p>内存使用率</p>
+                     * @param _memUsage <p>内存使用率</p>
                      * 
                      */
                     void SetMemUsage(const double& _memUsage);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool MemUsageHasBeenSet() const;
 
                     /**
-                     * 获取节点cpu个数
-                     * @return CpuNum 节点cpu个数
+                     * 获取<p>节点cpu个数</p>
+                     * @return CpuNum <p>节点cpu个数</p>
                      * 
                      */
                     int64_t GetCpuNum() const;
 
                     /**
-                     * 设置节点cpu个数
-                     * @param _cpuNum 节点cpu个数
+                     * 设置<p>节点cpu个数</p>
+                     * @param _cpuNum <p>节点cpu个数</p>
                      * 
                      */
                     void SetCpuNum(const int64_t& _cpuNum);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool CpuNumHasBeenSet() const;
 
                     /**
-                     * 获取cpu使用率
-                     * @return CpuUsage cpu使用率
+                     * 获取<p>cpu使用率</p>
+                     * @return CpuUsage <p>cpu使用率</p>
                      * 
                      */
                     double GetCpuUsage() const;
 
                     /**
-                     * 设置cpu使用率
-                     * @param _cpuUsage cpu使用率
+                     * 设置<p>cpu使用率</p>
+                     * @param _cpuUsage <p>cpu使用率</p>
                      * 
                      */
                     void SetCpuUsage(const double& _cpuUsage);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool CpuUsageHasBeenSet() const;
 
                     /**
-                     * 获取可用区
-                     * @return Zone 可用区
+                     * 获取<p>可用区</p>
+                     * @return Zone <p>可用区</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区
-                     * @param _zone 可用区
+                     * 设置<p>可用区</p>
+                     * @param _zone <p>可用区</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取ts-0noqayxu-az6-hot-03222010-0
-                     * @return NodeId ts-0noqayxu-az6-hot-03222010-0
+                     * 获取<p>ts-0noqayxu-az6-hot-03222010-0</p>
+                     * @return NodeId <p>ts-0noqayxu-az6-hot-03222010-0</p>
                      * 
                      */
                     std::string GetNodeId() const;
 
                     /**
-                     * 设置ts-0noqayxu-az6-hot-03222010-0
-                     * @param _nodeId ts-0noqayxu-az6-hot-03222010-0
+                     * 设置<p>ts-0noqayxu-az6-hot-03222010-0</p>
+                     * @param _nodeId <p>ts-0noqayxu-az6-hot-03222010-0</p>
                      * 
                      */
                     void SetNodeId(const std::string& _nodeId);
@@ -235,61 +235,88 @@ namespace TencentCloud
                      */
                     bool NodeIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>客户侧Ip信息</p>
+                     * @return UserIp <p>客户侧Ip信息</p>
+                     * 
+                     */
+                    std::string GetUserIp() const;
+
+                    /**
+                     * 设置<p>客户侧Ip信息</p>
+                     * @param _userIp <p>客户侧Ip信息</p>
+                     * 
+                     */
+                    void SetUserIp(const std::string& _userIp);
+
+                    /**
+                     * 判断参数 UserIp 是否已赋值
+                     * @return UserIp 是否已赋值
+                     * 
+                     */
+                    bool UserIpHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Kibana节点IP
+                     * <p>Kibana节点IP</p>
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 节点总磁盘大小
+                     * <p>节点总磁盘大小</p>
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 磁盘使用率
+                     * <p>磁盘使用率</p>
                      */
                     double m_diskUsage;
                     bool m_diskUsageHasBeenSet;
 
                     /**
-                     * 节点内存大小
+                     * <p>节点内存大小</p>
                      */
                     int64_t m_memSize;
                     bool m_memSizeHasBeenSet;
 
                     /**
-                     * 内存使用率
+                     * <p>内存使用率</p>
                      */
                     double m_memUsage;
                     bool m_memUsageHasBeenSet;
 
                     /**
-                     * 节点cpu个数
+                     * <p>节点cpu个数</p>
                      */
                     int64_t m_cpuNum;
                     bool m_cpuNumHasBeenSet;
 
                     /**
-                     * cpu使用率
+                     * <p>cpu使用率</p>
                      */
                     double m_cpuUsage;
                     bool m_cpuUsageHasBeenSet;
 
                     /**
-                     * 可用区
+                     * <p>可用区</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * ts-0noqayxu-az6-hot-03222010-0
+                     * <p>ts-0noqayxu-az6-hot-03222010-0</p>
                      */
                     std::string m_nodeId;
                     bool m_nodeIdHasBeenSet;
+
+                    /**
+                     * <p>客户侧Ip信息</p>
+                     */
+                    std::string m_userIp;
+                    bool m_userIpHasBeenSet;
 
                 };
             }

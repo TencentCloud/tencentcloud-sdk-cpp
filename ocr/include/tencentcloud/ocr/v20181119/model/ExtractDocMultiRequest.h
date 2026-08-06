@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/ConfigAdvanced.h>
+#include <tencentcloud/ocr/v20181119/model/ItemNames.h>
 
 
 namespace TencentCloud
@@ -44,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
-                     * @return ImageUrl 图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 获取<p>图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>
+                     * @return ImageUrl <p>图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>
                      * 
                      */
                     std::string GetImageUrl() const;
 
                     /**
-                     * 设置图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
-                     * @param _imageUrl 图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 设置<p>图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>
+                     * @param _imageUrl <p>图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>
                      * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
@@ -65,15 +66,15 @@ namespace TencentCloud
                     bool ImageUrlHasBeenSet() const;
 
                     /**
-                     * 获取图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
-                     * @return ImageBase64 图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 获取<p>图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>
+                     * @return ImageBase64 <p>图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>
                      * 
                      */
                     std::string GetImageBase64() const;
 
                     /**
-                     * 设置图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
-                     * @param _imageBase64 图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 设置<p>图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>
+                     * @param _imageBase64 <p>图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>
                      * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
@@ -86,15 +87,15 @@ namespace TencentCloud
                     bool ImageBase64HasBeenSet() const;
 
                     /**
-                     * 获取需要识别的PDF页面的对应页码，仅支持PDF单页识别，默认值为前3页。
-                     * @return PdfPageNumber 需要识别的PDF页面的对应页码，仅支持PDF单页识别，默认值为前3页。
+                     * 获取<p>需要识别的PDF页面的对应页码，仅支持PDF单页识别。</p>
+                     * @return PdfPageNumber <p>需要识别的PDF页面的对应页码，仅支持PDF单页识别。</p>
                      * 
                      */
                     uint64_t GetPdfPageNumber() const;
 
                     /**
-                     * 设置需要识别的PDF页面的对应页码，仅支持PDF单页识别，默认值为前3页。
-                     * @param _pdfPageNumber 需要识别的PDF页面的对应页码，仅支持PDF单页识别，默认值为前3页。
+                     * 设置<p>需要识别的PDF页面的对应页码，仅支持PDF单页识别。</p>
+                     * @param _pdfPageNumber <p>需要识别的PDF页面的对应页码，仅支持PDF单页识别。</p>
                      * 
                      */
                     void SetPdfPageNumber(const uint64_t& _pdfPageNumber);
@@ -107,15 +108,15 @@ namespace TencentCloud
                     bool PdfPageNumberHasBeenSet() const;
 
                     /**
-                     * 获取自定义结构化功能需返回的字段名称，例：若客户想新增返回姓名、性别两个字段的识别结果，则输入ItemNames=["姓名","性别"]
-                     * @return ItemNames 自定义结构化功能需返回的字段名称，例：若客户想新增返回姓名、性别两个字段的识别结果，则输入ItemNames=["姓名","性别"]
+                     * 获取<p>自定义结构化功能需返回的字段名称，例：若客户想新增返回姓名、性别两个字段的识别结果，则输入ItemNames=[&quot;姓名&quot;,&quot;性别&quot;]</p>
+                     * @return ItemNames <p>自定义结构化功能需返回的字段名称，例：若客户想新增返回姓名、性别两个字段的识别结果，则输入ItemNames=[&quot;姓名&quot;,&quot;性别&quot;]</p>
                      * 
                      */
                     std::vector<std::string> GetItemNames() const;
 
                     /**
-                     * 设置自定义结构化功能需返回的字段名称，例：若客户想新增返回姓名、性别两个字段的识别结果，则输入ItemNames=["姓名","性别"]
-                     * @param _itemNames 自定义结构化功能需返回的字段名称，例：若客户想新增返回姓名、性别两个字段的识别结果，则输入ItemNames=["姓名","性别"]
+                     * 设置<p>自定义结构化功能需返回的字段名称，例：若客户想新增返回姓名、性别两个字段的识别结果，则输入ItemNames=[&quot;姓名&quot;,&quot;性别&quot;]</p>
+                     * @param _itemNames <p>自定义结构化功能需返回的字段名称，例：若客户想新增返回姓名、性别两个字段的识别结果，则输入ItemNames=[&quot;姓名&quot;,&quot;性别&quot;]</p>
                      * 
                      */
                     void SetItemNames(const std::vector<std::string>& _itemNames);
@@ -128,23 +129,15 @@ namespace TencentCloud
                     bool ItemNamesHasBeenSet() const;
 
                     /**
-                     * 获取true：仅输出自定义字段
-false：输出默认字段+自定义字段
-默认true
-                     * @return ItemNamesShowMode true：仅输出自定义字段
-false：输出默认字段+自定义字段
-默认true
+                     * 获取<p>true：仅输出自定义字段<br>false：输出默认字段+自定义字段<br>默认true</p>
+                     * @return ItemNamesShowMode <p>true：仅输出自定义字段<br>false：输出默认字段+自定义字段<br>默认true</p>
                      * 
                      */
                     bool GetItemNamesShowMode() const;
 
                     /**
-                     * 设置true：仅输出自定义字段
-false：输出默认字段+自定义字段
-默认true
-                     * @param _itemNamesShowMode true：仅输出自定义字段
-false：输出默认字段+自定义字段
-默认true
+                     * 设置<p>true：仅输出自定义字段<br>false：输出默认字段+自定义字段<br>默认true</p>
+                     * @param _itemNamesShowMode <p>true：仅输出自定义字段<br>false：输出默认字段+自定义字段<br>默认true</p>
                      * 
                      */
                     void SetItemNamesShowMode(const bool& _itemNamesShowMode);
@@ -157,15 +150,15 @@ false：输出默认字段+自定义字段
                     bool ItemNamesShowModeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启全文字段识别
-                     * @return ReturnFullText 是否开启全文字段识别
+                     * 获取<p>是否开启全文字段识别</p>
+                     * @return ReturnFullText <p>是否开启全文字段识别</p>
                      * 
                      */
                     bool GetReturnFullText() const;
 
                     /**
-                     * 设置是否开启全文字段识别
-                     * @param _returnFullText 是否开启全文字段识别
+                     * 设置<p>是否开启全文字段识别</p>
+                     * @param _returnFullText <p>是否开启全文字段识别</p>
                      * 
                      */
                     void SetReturnFullText(const bool& _returnFullText);
@@ -178,115 +171,15 @@ false：输出默认字段+自定义字段
                     bool ReturnFullTextHasBeenSet() const;
 
                     /**
-                     * 获取配置id支持：
-General -- 通用场景 
-InvoiceEng -- 国际invoice模板 
-WayBillEng --海运订单模板
-CustomsDeclaration -- 进出口报关单
-WeightNote -- 磅单
-MedicalMeter -- 血压仪表识别
-BillOfLading -- 海运提单
-EntrustmentBook -- 海运托书
-Statement -- 对账单识别模板
-BookingConfirmation -- 配舱通知书识别模板
-AirWayBill -- 航空运单识别模板
-Table -- 表格模板
-SteelLabel -- 实物标签识别模板
-CarInsurance -- 车辆保险单识别模板
-MultiRealEstateCertificate -- 房产材料识别模板
-MultiRealEstateMaterial -- 房产证明识别模板
-HongKongUtilityBill -- 中国香港水电煤单识别模板
-OverseasCheques -- 海外支票
-RegistrationCertificate -- 备案证
-​GridPhoto -- 电网系统照片
-​SignaturePage -- 签署页
-​SalesDeliveryNote -- 销售发货单
-
-
-
-                     * @return ConfigId 配置id支持：
-General -- 通用场景 
-InvoiceEng -- 国际invoice模板 
-WayBillEng --海运订单模板
-CustomsDeclaration -- 进出口报关单
-WeightNote -- 磅单
-MedicalMeter -- 血压仪表识别
-BillOfLading -- 海运提单
-EntrustmentBook -- 海运托书
-Statement -- 对账单识别模板
-BookingConfirmation -- 配舱通知书识别模板
-AirWayBill -- 航空运单识别模板
-Table -- 表格模板
-SteelLabel -- 实物标签识别模板
-CarInsurance -- 车辆保险单识别模板
-MultiRealEstateCertificate -- 房产材料识别模板
-MultiRealEstateMaterial -- 房产证明识别模板
-HongKongUtilityBill -- 中国香港水电煤单识别模板
-OverseasCheques -- 海外支票
-RegistrationCertificate -- 备案证
-​GridPhoto -- 电网系统照片
-​SignaturePage -- 签署页
-​SalesDeliveryNote -- 销售发货单
-
-
-
+                     * 获取<p>配置id支持：<br>General -- 通用场景<br>InvoiceEng -- 国际invoice模板<br>WayBillEng --海运订单模板<br>CustomsDeclaration -- 进出口报关单<br>WeightNote -- 磅单<br>MedicalMeter -- 血压仪表识别<br>BillOfLading -- 海运提单<br>EntrustmentBook -- 海运托书<br>Statement -- 对账单识别模板<br>BookingConfirmation -- 配舱通知书识别模板<br>AirWayBill -- 航空运单识别模板<br>Table -- 表格模板<br>SteelLabel -- 实物标签识别模板<br>CarInsurance -- 车辆保险单识别模板<br>MultiRealEstateCertificate -- 房产材料识别模板<br>MultiRealEstateMaterial -- 房产证明识别模板<br>HongKongUtilityBill -- 中国香港水电煤单识别模板<br>OverseasCheques -- 海外支票<br>RegistrationCertificate -- 备案证<br>u200bGridPhoto -- 电网系统照片<br>u200bSignaturePage -- 签署页<br>u200bSalesDeliveryNote -- 销售发货单</p>
+                     * @return ConfigId <p>配置id支持：<br>General -- 通用场景<br>InvoiceEng -- 国际invoice模板<br>WayBillEng --海运订单模板<br>CustomsDeclaration -- 进出口报关单<br>WeightNote -- 磅单<br>MedicalMeter -- 血压仪表识别<br>BillOfLading -- 海运提单<br>EntrustmentBook -- 海运托书<br>Statement -- 对账单识别模板<br>BookingConfirmation -- 配舱通知书识别模板<br>AirWayBill -- 航空运单识别模板<br>Table -- 表格模板<br>SteelLabel -- 实物标签识别模板<br>CarInsurance -- 车辆保险单识别模板<br>MultiRealEstateCertificate -- 房产材料识别模板<br>MultiRealEstateMaterial -- 房产证明识别模板<br>HongKongUtilityBill -- 中国香港水电煤单识别模板<br>OverseasCheques -- 海外支票<br>RegistrationCertificate -- 备案证<br>u200bGridPhoto -- 电网系统照片<br>u200bSignaturePage -- 签署页<br>u200bSalesDeliveryNote -- 销售发货单</p>
                      * 
                      */
                     std::string GetConfigId() const;
 
                     /**
-                     * 设置配置id支持：
-General -- 通用场景 
-InvoiceEng -- 国际invoice模板 
-WayBillEng --海运订单模板
-CustomsDeclaration -- 进出口报关单
-WeightNote -- 磅单
-MedicalMeter -- 血压仪表识别
-BillOfLading -- 海运提单
-EntrustmentBook -- 海运托书
-Statement -- 对账单识别模板
-BookingConfirmation -- 配舱通知书识别模板
-AirWayBill -- 航空运单识别模板
-Table -- 表格模板
-SteelLabel -- 实物标签识别模板
-CarInsurance -- 车辆保险单识别模板
-MultiRealEstateCertificate -- 房产材料识别模板
-MultiRealEstateMaterial -- 房产证明识别模板
-HongKongUtilityBill -- 中国香港水电煤单识别模板
-OverseasCheques -- 海外支票
-RegistrationCertificate -- 备案证
-​GridPhoto -- 电网系统照片
-​SignaturePage -- 签署页
-​SalesDeliveryNote -- 销售发货单
-
-
-
-                     * @param _configId 配置id支持：
-General -- 通用场景 
-InvoiceEng -- 国际invoice模板 
-WayBillEng --海运订单模板
-CustomsDeclaration -- 进出口报关单
-WeightNote -- 磅单
-MedicalMeter -- 血压仪表识别
-BillOfLading -- 海运提单
-EntrustmentBook -- 海运托书
-Statement -- 对账单识别模板
-BookingConfirmation -- 配舱通知书识别模板
-AirWayBill -- 航空运单识别模板
-Table -- 表格模板
-SteelLabel -- 实物标签识别模板
-CarInsurance -- 车辆保险单识别模板
-MultiRealEstateCertificate -- 房产材料识别模板
-MultiRealEstateMaterial -- 房产证明识别模板
-HongKongUtilityBill -- 中国香港水电煤单识别模板
-OverseasCheques -- 海外支票
-RegistrationCertificate -- 备案证
-​GridPhoto -- 电网系统照片
-​SignaturePage -- 签署页
-​SalesDeliveryNote -- 销售发货单
-
-
-
+                     * 设置<p>配置id支持：<br>General -- 通用场景<br>InvoiceEng -- 国际invoice模板<br>WayBillEng --海运订单模板<br>CustomsDeclaration -- 进出口报关单<br>WeightNote -- 磅单<br>MedicalMeter -- 血压仪表识别<br>BillOfLading -- 海运提单<br>EntrustmentBook -- 海运托书<br>Statement -- 对账单识别模板<br>BookingConfirmation -- 配舱通知书识别模板<br>AirWayBill -- 航空运单识别模板<br>Table -- 表格模板<br>SteelLabel -- 实物标签识别模板<br>CarInsurance -- 车辆保险单识别模板<br>MultiRealEstateCertificate -- 房产材料识别模板<br>MultiRealEstateMaterial -- 房产证明识别模板<br>HongKongUtilityBill -- 中国香港水电煤单识别模板<br>OverseasCheques -- 海外支票<br>RegistrationCertificate -- 备案证<br>u200bGridPhoto -- 电网系统照片<br>u200bSignaturePage -- 签署页<br>u200bSalesDeliveryNote -- 销售发货单</p>
+                     * @param _configId <p>配置id支持：<br>General -- 通用场景<br>InvoiceEng -- 国际invoice模板<br>WayBillEng --海运订单模板<br>CustomsDeclaration -- 进出口报关单<br>WeightNote -- 磅单<br>MedicalMeter -- 血压仪表识别<br>BillOfLading -- 海运提单<br>EntrustmentBook -- 海运托书<br>Statement -- 对账单识别模板<br>BookingConfirmation -- 配舱通知书识别模板<br>AirWayBill -- 航空运单识别模板<br>Table -- 表格模板<br>SteelLabel -- 实物标签识别模板<br>CarInsurance -- 车辆保险单识别模板<br>MultiRealEstateCertificate -- 房产材料识别模板<br>MultiRealEstateMaterial -- 房产证明识别模板<br>HongKongUtilityBill -- 中国香港水电煤单识别模板<br>OverseasCheques -- 海外支票<br>RegistrationCertificate -- 备案证<br>u200bGridPhoto -- 电网系统照片<br>u200bSignaturePage -- 签署页<br>u200bSalesDeliveryNote -- 销售发货单</p>
                      * 
                      */
                     void SetConfigId(const std::string& _configId);
@@ -299,15 +192,15 @@ RegistrationCertificate -- 备案证
                     bool ConfigIdHasBeenSet() const;
 
                     /**
-                     * 获取是否开启全文字段坐标值的识别
-                     * @return EnableCoord 是否开启全文字段坐标值的识别
+                     * 获取<p>是否开启全文字段坐标值的识别</p>
+                     * @return EnableCoord <p>是否开启全文字段坐标值的识别</p>
                      * 
                      */
                     bool GetEnableCoord() const;
 
                     /**
-                     * 设置是否开启全文字段坐标值的识别
-                     * @param _enableCoord 是否开启全文字段坐标值的识别
+                     * 设置<p>是否开启全文字段坐标值的识别</p>
+                     * @param _enableCoord <p>是否开启全文字段坐标值的识别</p>
                      * 
                      */
                     void SetEnableCoord(const bool& _enableCoord);
@@ -320,15 +213,15 @@ RegistrationCertificate -- 备案证
                     bool EnableCoordHasBeenSet() const;
 
                     /**
-                     * 获取是否开启父子key识别，默认是
-                     * @return OutputParentKey 是否开启父子key识别，默认是
+                     * 获取<p>是否开启父子key识别，默认是</p>
+                     * @return OutputParentKey <p>是否开启父子key识别，默认是</p>
                      * 
                      */
                     bool GetOutputParentKey() const;
 
                     /**
-                     * 设置是否开启父子key识别，默认是
-                     * @param _outputParentKey 是否开启父子key识别，默认是
+                     * 设置<p>是否开启父子key识别，默认是</p>
+                     * @param _outputParentKey <p>是否开启父子key识别，默认是</p>
                      * 
                      */
                     void SetOutputParentKey(const bool& _outputParentKey);
@@ -341,15 +234,15 @@ RegistrationCertificate -- 备案证
                     bool OutputParentKeyHasBeenSet() const;
 
                     /**
-                     * 获取模板的单个属性配置
-                     * @return ConfigAdvanced 模板的单个属性配置
+                     * 获取<p>模板的单个属性配置</p>
+                     * @return ConfigAdvanced <p>模板的单个属性配置</p>
                      * 
                      */
                     ConfigAdvanced GetConfigAdvanced() const;
 
                     /**
-                     * 设置模板的单个属性配置
-                     * @param _configAdvanced 模板的单个属性配置
+                     * 设置<p>模板的单个属性配置</p>
+                     * @param _configAdvanced <p>模板的单个属性配置</p>
                      * 
                      */
                     void SetConfigAdvanced(const ConfigAdvanced& _configAdvanced);
@@ -362,19 +255,15 @@ RegistrationCertificate -- 备案证
                     bool ConfigAdvancedHasBeenSet() const;
 
                     /**
-                     * 获取cn时，添加的key为中文  
-en时，添加的key为英语
-                     * @return OutputLanguage cn时，添加的key为中文  
-en时，添加的key为英语
+                     * 获取<p>cn时，添加的key为中文<br>en时，添加的key为英语</p>
+                     * @return OutputLanguage <p>cn时，添加的key为中文<br>en时，添加的key为英语</p>
                      * 
                      */
                     std::string GetOutputLanguage() const;
 
                     /**
-                     * 设置cn时，添加的key为中文  
-en时，添加的key为英语
-                     * @param _outputLanguage cn时，添加的key为中文  
-en时，添加的key为英语
+                     * 设置<p>cn时，添加的key为中文<br>en时，添加的key为英语</p>
+                     * @param _outputLanguage <p>cn时，添加的key为中文<br>en时，添加的key为英语</p>
                      * 
                      */
                     void SetOutputLanguage(const std::string& _outputLanguage);
@@ -386,101 +275,127 @@ en时，添加的key为英语
                      */
                     bool OutputLanguageHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自定义抽取需要的字段名称、字段类型、字段提示词</p>
+                     * @return NewItemNames <p>自定义抽取需要的字段名称、字段类型、字段提示词</p>
+                     * 
+                     */
+                    std::vector<ItemNames> GetNewItemNames() const;
+
+                    /**
+                     * 设置<p>自定义抽取需要的字段名称、字段类型、字段提示词</p>
+                     * @param _newItemNames <p>自定义抽取需要的字段名称、字段类型、字段提示词</p>
+                     * 
+                     */
+                    void SetNewItemNames(const std::vector<ItemNames>& _newItemNames);
+
+                    /**
+                     * 判断参数 NewItemNames 是否已赋值
+                     * @return NewItemNames 是否已赋值
+                     * 
+                     */
+                    bool NewItemNamesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>文档抽取（多模态）识别服务所用的算法模型版本<br>-目前入参支持“1.0”和“2.0“两个输入。</p><ul><li>2026年7月20日开始，默认为“2.0”，之前使用过本接口的账号若未填写本参数默认为“1.0”。</li><li>2026年7月20日后开通服务的账号仅支持输入“2.0”。</li><li>不同算法模型版本对应的文档抽取识别算法不同，新版本的整体效果会优于旧版本，建议使用“2.0”版本。<br>示例值：2.0</li></ul>
+                     * @return MultiModelVersion <p>文档抽取（多模态）识别服务所用的算法模型版本<br>-目前入参支持“1.0”和“2.0“两个输入。</p><ul><li>2026年7月20日开始，默认为“2.0”，之前使用过本接口的账号若未填写本参数默认为“1.0”。</li><li>2026年7月20日后开通服务的账号仅支持输入“2.0”。</li><li>不同算法模型版本对应的文档抽取识别算法不同，新版本的整体效果会优于旧版本，建议使用“2.0”版本。<br>示例值：2.0</li></ul>
+                     * 
+                     */
+                    std::string GetMultiModelVersion() const;
+
+                    /**
+                     * 设置<p>文档抽取（多模态）识别服务所用的算法模型版本<br>-目前入参支持“1.0”和“2.0“两个输入。</p><ul><li>2026年7月20日开始，默认为“2.0”，之前使用过本接口的账号若未填写本参数默认为“1.0”。</li><li>2026年7月20日后开通服务的账号仅支持输入“2.0”。</li><li>不同算法模型版本对应的文档抽取识别算法不同，新版本的整体效果会优于旧版本，建议使用“2.0”版本。<br>示例值：2.0</li></ul>
+                     * @param _multiModelVersion <p>文档抽取（多模态）识别服务所用的算法模型版本<br>-目前入参支持“1.0”和“2.0“两个输入。</p><ul><li>2026年7月20日开始，默认为“2.0”，之前使用过本接口的账号若未填写本参数默认为“1.0”。</li><li>2026年7月20日后开通服务的账号仅支持输入“2.0”。</li><li>不同算法模型版本对应的文档抽取识别算法不同，新版本的整体效果会优于旧版本，建议使用“2.0”版本。<br>示例值：2.0</li></ul>
+                     * 
+                     */
+                    void SetMultiModelVersion(const std::string& _multiModelVersion);
+
+                    /**
+                     * 判断参数 MultiModelVersion 是否已赋值
+                     * @return MultiModelVersion 是否已赋值
+                     * 
+                     */
+                    bool MultiModelVersionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * <p>图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;
 
                     /**
-                     * 图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * <p>图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>
                      */
                     std::string m_imageBase64;
                     bool m_imageBase64HasBeenSet;
 
                     /**
-                     * 需要识别的PDF页面的对应页码，仅支持PDF单页识别，默认值为前3页。
+                     * <p>需要识别的PDF页面的对应页码，仅支持PDF单页识别。</p>
                      */
                     uint64_t m_pdfPageNumber;
                     bool m_pdfPageNumberHasBeenSet;
 
                     /**
-                     * 自定义结构化功能需返回的字段名称，例：若客户想新增返回姓名、性别两个字段的识别结果，则输入ItemNames=["姓名","性别"]
+                     * <p>自定义结构化功能需返回的字段名称，例：若客户想新增返回姓名、性别两个字段的识别结果，则输入ItemNames=[&quot;姓名&quot;,&quot;性别&quot;]</p>
                      */
                     std::vector<std::string> m_itemNames;
                     bool m_itemNamesHasBeenSet;
 
                     /**
-                     * true：仅输出自定义字段
-false：输出默认字段+自定义字段
-默认true
+                     * <p>true：仅输出自定义字段<br>false：输出默认字段+自定义字段<br>默认true</p>
                      */
                     bool m_itemNamesShowMode;
                     bool m_itemNamesShowModeHasBeenSet;
 
                     /**
-                     * 是否开启全文字段识别
+                     * <p>是否开启全文字段识别</p>
                      */
                     bool m_returnFullText;
                     bool m_returnFullTextHasBeenSet;
 
                     /**
-                     * 配置id支持：
-General -- 通用场景 
-InvoiceEng -- 国际invoice模板 
-WayBillEng --海运订单模板
-CustomsDeclaration -- 进出口报关单
-WeightNote -- 磅单
-MedicalMeter -- 血压仪表识别
-BillOfLading -- 海运提单
-EntrustmentBook -- 海运托书
-Statement -- 对账单识别模板
-BookingConfirmation -- 配舱通知书识别模板
-AirWayBill -- 航空运单识别模板
-Table -- 表格模板
-SteelLabel -- 实物标签识别模板
-CarInsurance -- 车辆保险单识别模板
-MultiRealEstateCertificate -- 房产材料识别模板
-MultiRealEstateMaterial -- 房产证明识别模板
-HongKongUtilityBill -- 中国香港水电煤单识别模板
-OverseasCheques -- 海外支票
-RegistrationCertificate -- 备案证
-​GridPhoto -- 电网系统照片
-​SignaturePage -- 签署页
-​SalesDeliveryNote -- 销售发货单
-
-
-
+                     * <p>配置id支持：<br>General -- 通用场景<br>InvoiceEng -- 国际invoice模板<br>WayBillEng --海运订单模板<br>CustomsDeclaration -- 进出口报关单<br>WeightNote -- 磅单<br>MedicalMeter -- 血压仪表识别<br>BillOfLading -- 海运提单<br>EntrustmentBook -- 海运托书<br>Statement -- 对账单识别模板<br>BookingConfirmation -- 配舱通知书识别模板<br>AirWayBill -- 航空运单识别模板<br>Table -- 表格模板<br>SteelLabel -- 实物标签识别模板<br>CarInsurance -- 车辆保险单识别模板<br>MultiRealEstateCertificate -- 房产材料识别模板<br>MultiRealEstateMaterial -- 房产证明识别模板<br>HongKongUtilityBill -- 中国香港水电煤单识别模板<br>OverseasCheques -- 海外支票<br>RegistrationCertificate -- 备案证<br>u200bGridPhoto -- 电网系统照片<br>u200bSignaturePage -- 签署页<br>u200bSalesDeliveryNote -- 销售发货单</p>
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;
 
                     /**
-                     * 是否开启全文字段坐标值的识别
+                     * <p>是否开启全文字段坐标值的识别</p>
                      */
                     bool m_enableCoord;
                     bool m_enableCoordHasBeenSet;
 
                     /**
-                     * 是否开启父子key识别，默认是
+                     * <p>是否开启父子key识别，默认是</p>
                      */
                     bool m_outputParentKey;
                     bool m_outputParentKeyHasBeenSet;
 
                     /**
-                     * 模板的单个属性配置
+                     * <p>模板的单个属性配置</p>
                      */
                     ConfigAdvanced m_configAdvanced;
                     bool m_configAdvancedHasBeenSet;
 
                     /**
-                     * cn时，添加的key为中文  
-en时，添加的key为英语
+                     * <p>cn时，添加的key为中文<br>en时，添加的key为英语</p>
                      */
                     std::string m_outputLanguage;
                     bool m_outputLanguageHasBeenSet;
+
+                    /**
+                     * <p>自定义抽取需要的字段名称、字段类型、字段提示词</p>
+                     */
+                    std::vector<ItemNames> m_newItemNames;
+                    bool m_newItemNamesHasBeenSet;
+
+                    /**
+                     * <p>文档抽取（多模态）识别服务所用的算法模型版本<br>-目前入参支持“1.0”和“2.0“两个输入。</p><ul><li>2026年7月20日开始，默认为“2.0”，之前使用过本接口的账号若未填写本参数默认为“1.0”。</li><li>2026年7月20日后开通服务的账号仅支持输入“2.0”。</li><li>不同算法模型版本对应的文档抽取识别算法不同，新版本的整体效果会优于旧版本，建议使用“2.0”版本。<br>示例值：2.0</li></ul>
+                     */
+                    std::string m_multiModelVersion;
+                    bool m_multiModelVersionHasBeenSet;
 
                 };
             }

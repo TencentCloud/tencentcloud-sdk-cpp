@@ -65,6 +65,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/ManagedAIModelGroup.h
   include/tencentcloud/tcb/v20180608/model/ReleaseEnvResponse.h
   include/tencentcloud/tcb/v20180608/model/EmailSmtpConfig.h
+  include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunBuildLogRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeHTTPServiceRouteRequest.h
   include/tencentcloud/tcb/v20180608/model/MongoConnector.h
   include/tencentcloud/tcb/v20180608/model/DescribeCurveDataResponse.h
@@ -89,7 +90,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeGatewayVersionsResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeGatewayVersionsRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateEnvResourceRequest.h
-  include/tencentcloud/tcb/v20180608/model/DescribeVmInstancesRequest.h
+  include/tencentcloud/tcb/v20180608/model/CloudBaseRunBuildLog.h
   include/tencentcloud/tcb/v20180608/model/DescribeHostingDomainTaskRequest.h
   include/tencentcloud/tcb/v20180608/model/StaticConfig.h
   include/tencentcloud/tcb/v20180608/model/EmailProviderConfig.h
@@ -152,7 +153,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/ListPGUserMigrationsResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeBillingInfoRequest.h
   include/tencentcloud/tcb/v20180608/model/HpaPolicy.h
-  include/tencentcloud/tcb/v20180608/model/EmailTemplateConfig.h
+  include/tencentcloud/tcb/v20180608/model/DescribeVmInstancesRequest.h
   include/tencentcloud/tcb/v20180608/model/UnbindStorageSourceRequest.h
   include/tencentcloud/tcb/v20180608/model/LogObject.h
   include/tencentcloud/tcb/v20180608/model/StaticCmd.h
@@ -253,6 +254,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/ResourcePermission.h
   include/tencentcloud/tcb/v20180608/model/Variable.h
   include/tencentcloud/tcb/v20180608/model/ModifyHTTPServiceRouteResponse.h
+  include/tencentcloud/tcb/v20180608/model/EmailTemplateConfig.h
   include/tencentcloud/tcb/v20180608/model/GetProvidersResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeQuotaDataRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateStaticStoreResponse.h
@@ -304,6 +306,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/BuildSource.h
   include/tencentcloud/tcb/v20180608/model/DescribeAuthDomainsRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeVmSpecResponse.h
+  include/tencentcloud/tcb/v20180608/model/ModifyStorageSourceRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeAIModelsRequest.h
   include/tencentcloud/tcb/v20180608/model/VerifyHTTPServiceRouteCheckItem.h
   include/tencentcloud/tcb/v20180608/model/RunSqlRequest.h
@@ -314,7 +317,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/OwnershipVerificationDnsInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribeTableResponse.h
   include/tencentcloud/tcb/v20180608/model/MetricUsage.h
-  include/tencentcloud/tcb/v20180608/model/ModifyStorageSourceRequest.h
+  include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunBuildLogResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeDatabaseACLRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCreditsUsageResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeDatabaseACLResponse.h
@@ -385,6 +388,7 @@ set(tcb_src
   src/v20180608/model/ManagedAIModelGroup.cpp
   src/v20180608/model/ReleaseEnvResponse.cpp
   src/v20180608/model/EmailSmtpConfig.cpp
+  src/v20180608/model/DescribeCloudBaseRunBuildLogRequest.cpp
   src/v20180608/model/DescribeHTTPServiceRouteRequest.cpp
   src/v20180608/model/MongoConnector.cpp
   src/v20180608/model/DescribeCurveDataResponse.cpp
@@ -409,7 +413,7 @@ set(tcb_src
   src/v20180608/model/DescribeGatewayVersionsResponse.cpp
   src/v20180608/model/DescribeGatewayVersionsRequest.cpp
   src/v20180608/model/CreateEnvResourceRequest.cpp
-  src/v20180608/model/DescribeVmInstancesRequest.cpp
+  src/v20180608/model/CloudBaseRunBuildLog.cpp
   src/v20180608/model/DescribeHostingDomainTaskRequest.cpp
   src/v20180608/model/StaticConfig.cpp
   src/v20180608/model/EmailProviderConfig.cpp
@@ -472,7 +476,7 @@ set(tcb_src
   src/v20180608/model/ListPGUserMigrationsResponse.cpp
   src/v20180608/model/DescribeBillingInfoRequest.cpp
   src/v20180608/model/HpaPolicy.cpp
-  src/v20180608/model/EmailTemplateConfig.cpp
+  src/v20180608/model/DescribeVmInstancesRequest.cpp
   src/v20180608/model/UnbindStorageSourceRequest.cpp
   src/v20180608/model/LogObject.cpp
   src/v20180608/model/StaticCmd.cpp
@@ -573,6 +577,7 @@ set(tcb_src
   src/v20180608/model/ResourcePermission.cpp
   src/v20180608/model/Variable.cpp
   src/v20180608/model/ModifyHTTPServiceRouteResponse.cpp
+  src/v20180608/model/EmailTemplateConfig.cpp
   src/v20180608/model/GetProvidersResponse.cpp
   src/v20180608/model/DescribeQuotaDataRequest.cpp
   src/v20180608/model/CreateStaticStoreResponse.cpp
@@ -624,6 +629,7 @@ set(tcb_src
   src/v20180608/model/BuildSource.cpp
   src/v20180608/model/DescribeAuthDomainsRequest.cpp
   src/v20180608/model/DescribeVmSpecResponse.cpp
+  src/v20180608/model/ModifyStorageSourceRequest.cpp
   src/v20180608/model/DescribeAIModelsRequest.cpp
   src/v20180608/model/VerifyHTTPServiceRouteCheckItem.cpp
   src/v20180608/model/RunSqlRequest.cpp
@@ -634,7 +640,7 @@ set(tcb_src
   src/v20180608/model/OwnershipVerificationDnsInfo.cpp
   src/v20180608/model/DescribeTableResponse.cpp
   src/v20180608/model/MetricUsage.cpp
-  src/v20180608/model/ModifyStorageSourceRequest.cpp
+  src/v20180608/model/DescribeCloudBaseRunBuildLogResponse.cpp
   src/v20180608/model/DescribeDatabaseACLRequest.cpp
   src/v20180608/model/DescribeCreditsUsageResponse.cpp
   src/v20180608/model/DescribeDatabaseACLResponse.cpp

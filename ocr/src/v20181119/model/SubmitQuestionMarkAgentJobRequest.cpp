@@ -31,7 +31,9 @@ SubmitQuestionMarkAgentJobRequest::SubmitQuestionMarkAgentJobRequest() :
     m_questionConfigMapHasBeenSet(false),
     m_referenceAnswerHasBeenSet(false),
     m_imageBase64ListHasBeenSet(false),
-    m_imageUrlListHasBeenSet(false)
+    m_imageUrlListHasBeenSet(false),
+    m_assistMarkTypeHasBeenSet(false),
+    m_answerAssistMapHasBeenSet(false)
 {
 }
 
@@ -122,6 +124,22 @@ string SubmitQuestionMarkAgentJobRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_assistMarkTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssistMarkType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_assistMarkType, allocator);
+    }
+
+    if (m_answerAssistMapHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnswerAssistMap";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_answerAssistMap.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -274,6 +292,38 @@ void SubmitQuestionMarkAgentJobRequest::SetImageUrlList(const vector<string>& _i
 bool SubmitQuestionMarkAgentJobRequest::ImageUrlListHasBeenSet() const
 {
     return m_imageUrlListHasBeenSet;
+}
+
+int64_t SubmitQuestionMarkAgentJobRequest::GetAssistMarkType() const
+{
+    return m_assistMarkType;
+}
+
+void SubmitQuestionMarkAgentJobRequest::SetAssistMarkType(const int64_t& _assistMarkType)
+{
+    m_assistMarkType = _assistMarkType;
+    m_assistMarkTypeHasBeenSet = true;
+}
+
+bool SubmitQuestionMarkAgentJobRequest::AssistMarkTypeHasBeenSet() const
+{
+    return m_assistMarkTypeHasBeenSet;
+}
+
+string SubmitQuestionMarkAgentJobRequest::GetAnswerAssistMap() const
+{
+    return m_answerAssistMap;
+}
+
+void SubmitQuestionMarkAgentJobRequest::SetAnswerAssistMap(const string& _answerAssistMap)
+{
+    m_answerAssistMap = _answerAssistMap;
+    m_answerAssistMapHasBeenSet = true;
+}
+
+bool SubmitQuestionMarkAgentJobRequest::AnswerAssistMapHasBeenSet() const
+{
+    return m_answerAssistMapHasBeenSet;
 }
 
 

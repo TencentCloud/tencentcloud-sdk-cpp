@@ -55,6 +55,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayLLMModelAPIRequest.h
   include/tencentcloud/tse/v20201207/model/GovernanceServiceDestination.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayConsumerListRequest.h
+  include/tencentcloud/tse/v20201207/model/KongServiceWithRoutes.h
   include/tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayConsumerRequest.h
   include/tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayCanaryRuleResponse.h
   include/tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayLLMModelAPI.h
@@ -110,6 +111,8 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/CreateConfigFileGroupResponse.h
   include/tencentcloud/tse/v20201207/model/CreateGovernanceAliasRequest.h
   include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayServiceRequest.h
+  include/tencentcloud/tse/v20201207/model/DescribeCNGWServicesWithRoutesRequest.h
+  include/tencentcloud/tse/v20201207/model/KongServiceRoute.h
   include/tencentcloud/tse/v20201207/model/DescribeAutoScalerResourceStrategyBindingGroupsRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeWafProtectionRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeAutoScalerResourceStrategiesRequest.h
@@ -303,6 +306,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayConsumerGroupRequest.h
   include/tencentcloud/tse/v20201207/model/CreateGovernanceInstancesResponse.h
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayLLMModelAPIRequest.h
+  include/tencentcloud/tse/v20201207/model/DescribeCNGWServicesWithRoutesResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayLLMModelAPIsRequest.h
   include/tencentcloud/tse/v20201207/model/CreateGatewayServiceResult.h
   include/tencentcloud/tse/v20201207/model/DescribeInstanceInfoByIpResult.h
@@ -562,6 +566,7 @@ set(tse_src
   src/v20201207/model/CreateCloudNativeAPIGatewayLLMModelAPIRequest.cpp
   src/v20201207/model/GovernanceServiceDestination.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayConsumerListRequest.cpp
+  src/v20201207/model/KongServiceWithRoutes.cpp
   src/v20201207/model/CreateCloudNativeAPIGatewayConsumerRequest.cpp
   src/v20201207/model/CreateCloudNativeAPIGatewayCanaryRuleResponse.cpp
   src/v20201207/model/CloudNativeAPIGatewayLLMModelAPI.cpp
@@ -617,6 +622,8 @@ set(tse_src
   src/v20201207/model/CreateConfigFileGroupResponse.cpp
   src/v20201207/model/CreateGovernanceAliasRequest.cpp
   src/v20201207/model/ModifyCloudNativeAPIGatewayServiceRequest.cpp
+  src/v20201207/model/DescribeCNGWServicesWithRoutesRequest.cpp
+  src/v20201207/model/KongServiceRoute.cpp
   src/v20201207/model/DescribeAutoScalerResourceStrategyBindingGroupsRequest.cpp
   src/v20201207/model/DescribeWafProtectionRequest.cpp
   src/v20201207/model/DescribeAutoScalerResourceStrategiesRequest.cpp
@@ -810,6 +817,7 @@ set(tse_src
   src/v20201207/model/DescribeCloudNativeAPIGatewayConsumerGroupRequest.cpp
   src/v20201207/model/CreateGovernanceInstancesResponse.cpp
   src/v20201207/model/DeleteCloudNativeAPIGatewayLLMModelAPIRequest.cpp
+  src/v20201207/model/DescribeCNGWServicesWithRoutesResponse.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayLLMModelAPIsRequest.cpp
   src/v20201207/model/CreateGatewayServiceResult.cpp
   src/v20201207/model/DescribeInstanceInfoByIpResult.cpp

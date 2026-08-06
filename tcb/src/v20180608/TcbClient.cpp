@@ -2140,6 +2140,56 @@ TcbClient::DescribeCloudBaseBuildServiceOutcomeCallable TcbClient::DescribeCloud
     return prom->get_future();
 }
 
+TcbClient::DescribeCloudBaseRunBuildLogOutcome TcbClient::DescribeCloudBaseRunBuildLog(const DescribeCloudBaseRunBuildLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudBaseRunBuildLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudBaseRunBuildLogResponse rsp = DescribeCloudBaseRunBuildLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudBaseRunBuildLogOutcome(rsp);
+        else
+            return DescribeCloudBaseRunBuildLogOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudBaseRunBuildLogOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCloudBaseRunBuildLogAsync(const DescribeCloudBaseRunBuildLogRequest& request, const DescribeCloudBaseRunBuildLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudBaseRunBuildLogRequest&;
+    using Resp = DescribeCloudBaseRunBuildLogResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudBaseRunBuildLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeCloudBaseRunBuildLogOutcomeCallable TcbClient::DescribeCloudBaseRunBuildLogCallable(const DescribeCloudBaseRunBuildLogRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudBaseRunBuildLogOutcome>>();
+    DescribeCloudBaseRunBuildLogAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCloudBaseRunBuildLogRequest&,
+        DescribeCloudBaseRunBuildLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::DescribeCloudBaseRunServerVersionOutcome TcbClient::DescribeCloudBaseRunServerVersion(const DescribeCloudBaseRunServerVersionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudBaseRunServerVersion");

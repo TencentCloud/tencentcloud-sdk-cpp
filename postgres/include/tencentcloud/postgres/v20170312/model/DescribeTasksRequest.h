@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取按照任务ID进行查询。其余云API中返回的FlowId和TaskId等价。
-                     * @return TaskId 按照任务ID进行查询。其余云API中返回的FlowId和TaskId等价。
+                     * 获取<p>按照任务ID进行查询。其余云API中返回的FlowId和TaskId等价。</p>
+                     * @return TaskId <p>按照任务ID进行查询。其余云API中返回的FlowId和TaskId等价。</p>
                      * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
-                     * 设置按照任务ID进行查询。其余云API中返回的FlowId和TaskId等价。
-                     * @param _taskId 按照任务ID进行查询。其余云API中返回的FlowId和TaskId等价。
+                     * 设置<p>按照任务ID进行查询。其余云API中返回的FlowId和TaskId等价。</p>
+                     * @param _taskId <p>按照任务ID进行查询。其余云API中返回的FlowId和TaskId等价。</p>
                      * 
                      */
                     void SetTaskId(const uint64_t& _taskId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取按照数据库实例ID进行查询。
-                     * @return DBInstanceId 按照数据库实例ID进行查询。
+                     * 获取<p>按照数据库实例ID进行查询。</p>
+                     * @return DBInstanceId <p>按照数据库实例ID进行查询。</p>
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置按照数据库实例ID进行查询。
-                     * @param _dBInstanceId 按照数据库实例ID进行查询。
+                     * 设置<p>按照数据库实例ID进行查询。</p>
+                     * @param _dBInstanceId <p>按照数据库实例ID进行查询。</p>
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取任务的最早开始时间，形如2024-08-23 00:00:00,默认只展示180天内的数据。
-                     * @return MinStartTime 任务的最早开始时间，形如2024-08-23 00:00:00,默认只展示180天内的数据。
+                     * 获取<p>任务的最早开始时间，形如2024-08-23 00:00:00,默认只展示180天内的数据。</p>
+                     * @return MinStartTime <p>任务的最早开始时间，形如2024-08-23 00:00:00,默认只展示180天内的数据。</p>
                      * 
                      */
                     std::string GetMinStartTime() const;
 
                     /**
-                     * 设置任务的最早开始时间，形如2024-08-23 00:00:00,默认只展示180天内的数据。
-                     * @param _minStartTime 任务的最早开始时间，形如2024-08-23 00:00:00,默认只展示180天内的数据。
+                     * 设置<p>任务的最早开始时间，形如2024-08-23 00:00:00,默认只展示180天内的数据。</p>
+                     * @param _minStartTime <p>任务的最早开始时间，形如2024-08-23 00:00:00,默认只展示180天内的数据。</p>
                      * 
                      */
                     void SetMinStartTime(const std::string& _minStartTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool MinStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务的最晚开始时间，形如2024-08-23 00:00:00，默认为当前时间。
-                     * @return MaxStartTime 任务的最晚开始时间，形如2024-08-23 00:00:00，默认为当前时间。
+                     * 获取<p>任务的最晚开始时间，形如2024-08-23 00:00:00，默认为当前时间。</p>
+                     * @return MaxStartTime <p>任务的最晚开始时间，形如2024-08-23 00:00:00，默认为当前时间。</p>
                      * 
                      */
                     std::string GetMaxStartTime() const;
 
                     /**
-                     * 设置任务的最晚开始时间，形如2024-08-23 00:00:00，默认为当前时间。
-                     * @param _maxStartTime 任务的最晚开始时间，形如2024-08-23 00:00:00，默认为当前时间。
+                     * 设置<p>任务的最晚开始时间，形如2024-08-23 00:00:00，默认为当前时间。</p>
+                     * @param _maxStartTime <p>任务的最晚开始时间，形如2024-08-23 00:00:00，默认为当前时间。</p>
                      * 
                      */
                     void SetMaxStartTime(const std::string& _maxStartTime);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool MaxStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取每页显示数量，取值范围为1-100，默认为返回20条。
-                     * @return Limit 每页显示数量，取值范围为1-100，默认为返回20条。
+                     * 获取<p>每页显示数量，取值范围为1-100，默认为返回20条。</p>
+                     * @return Limit <p>每页显示数量，取值范围为1-100，默认为返回20条。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页显示数量，取值范围为1-100，默认为返回20条。
-                     * @param _limit 每页显示数量，取值范围为1-100，默认为返回20条。
+                     * 设置<p>每页显示数量，取值范围为1-100，默认为返回20条。</p>
+                     * @param _limit <p>每页显示数量，取值范围为1-100，默认为返回20条。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取数据偏移量，从0开始。
-                     * @return Offset 数据偏移量，从0开始。
+                     * 获取<p>数据偏移量，从0开始。</p>
+                     * @return Offset <p>数据偏移量，从0开始。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置数据偏移量，从0开始。
-                     * @param _offset 数据偏移量，从0开始。
+                     * 设置<p>数据偏移量，从0开始。</p>
+                     * @param _offset <p>数据偏移量，从0开始。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，支持StartTime,EndTime，默认为StartTime。
-                     * @return OrderBy 排序字段，支持StartTime,EndTime，默认为StartTime。
+                     * 获取<p>排序字段，支持StartTime,EndTime，默认为StartTime。</p>
+                     * @return OrderBy <p>排序字段，支持StartTime,EndTime，默认为StartTime。</p>
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序字段，支持StartTime,EndTime，默认为StartTime。
-                     * @param _orderBy 排序字段，支持StartTime,EndTime，默认为StartTime。
+                     * 设置<p>排序字段，支持StartTime,EndTime，默认为StartTime。</p>
+                     * @param _orderBy <p>排序字段，支持StartTime,EndTime，默认为StartTime。</p>
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取排序方式，包括升序：asc，降序：desc，默认为desc。
-                     * @return OrderByType 排序方式，包括升序：asc，降序：desc，默认为desc。
+                     * 获取<p>排序方式，包括升序：asc，降序：desc，默认为desc。</p>
+                     * @return OrderByType <p>排序方式，包括升序：asc，降序：desc，默认为desc。</p>
                      * 
                      */
                     std::string GetOrderByType() const;
 
                     /**
-                     * 设置排序方式，包括升序：asc，降序：desc，默认为desc。
-                     * @param _orderByType 排序方式，包括升序：asc，降序：desc，默认为desc。
+                     * 设置<p>排序方式，包括升序：asc，降序：desc，默认为desc。</p>
+                     * @param _orderByType <p>排序方式，包括升序：asc，降序：desc，默认为desc。</p>
                      * 
                      */
                     void SetOrderByType(const std::string& _orderByType);
@@ -213,49 +213,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 按照任务ID进行查询。其余云API中返回的FlowId和TaskId等价。
+                     * <p>按照任务ID进行查询。其余云API中返回的FlowId和TaskId等价。</p>
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 按照数据库实例ID进行查询。
+                     * <p>按照数据库实例ID进行查询。</p>
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 任务的最早开始时间，形如2024-08-23 00:00:00,默认只展示180天内的数据。
+                     * <p>任务的最早开始时间，形如2024-08-23 00:00:00,默认只展示180天内的数据。</p>
                      */
                     std::string m_minStartTime;
                     bool m_minStartTimeHasBeenSet;
 
                     /**
-                     * 任务的最晚开始时间，形如2024-08-23 00:00:00，默认为当前时间。
+                     * <p>任务的最晚开始时间，形如2024-08-23 00:00:00，默认为当前时间。</p>
                      */
                     std::string m_maxStartTime;
                     bool m_maxStartTimeHasBeenSet;
 
                     /**
-                     * 每页显示数量，取值范围为1-100，默认为返回20条。
+                     * <p>每页显示数量，取值范围为1-100，默认为返回20条。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 数据偏移量，从0开始。
+                     * <p>数据偏移量，从0开始。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 排序字段，支持StartTime,EndTime，默认为StartTime。
+                     * <p>排序字段，支持StartTime,EndTime，默认为StartTime。</p>
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 排序方式，包括升序：asc，降序：desc，默认为desc。
+                     * <p>排序方式，包括升序：asc，降序：desc，默认为desc。</p>
                      */
                     std::string m_orderByType;
                     bool m_orderByTypeHasBeenSet;

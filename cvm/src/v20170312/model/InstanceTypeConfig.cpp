@@ -28,7 +28,9 @@ InstanceTypeConfig::InstanceTypeConfig() :
     m_cPUHasBeenSet(false),
     m_memoryHasBeenSet(false),
     m_fPGAHasBeenSet(false),
-    m_gpuCountHasBeenSet(false)
+    m_gpuCountHasBeenSet(false),
+    m_gpuTypeHasBeenSet(false),
+    m_gpuMemoryHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,26 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const rapidjson::Value &valu
         m_gpuCountHasBeenSet = true;
     }
 
+    if (value.HasMember("GpuType") && !value["GpuType"].IsNull())
+    {
+        if (!value["GpuType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.GpuType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gpuType = string(value["GpuType"].GetString());
+        m_gpuTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("GpuMemory") && !value["GpuMemory"].IsNull())
+    {
+        if (!value["GpuMemory"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.GpuMemory` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_gpuMemory = value["GpuMemory"].GetDouble();
+        m_gpuMemoryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +208,22 @@ void InstanceTypeConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "GpuCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_gpuCount, allocator);
+    }
+
+    if (m_gpuTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GpuType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gpuType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gpuMemoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GpuMemory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gpuMemory, allocator);
     }
 
 }
@@ -317,5 +355,37 @@ void InstanceTypeConfig::SetGpuCount(const double& _gpuCount)
 bool InstanceTypeConfig::GpuCountHasBeenSet() const
 {
     return m_gpuCountHasBeenSet;
+}
+
+string InstanceTypeConfig::GetGpuType() const
+{
+    return m_gpuType;
+}
+
+void InstanceTypeConfig::SetGpuType(const string& _gpuType)
+{
+    m_gpuType = _gpuType;
+    m_gpuTypeHasBeenSet = true;
+}
+
+bool InstanceTypeConfig::GpuTypeHasBeenSet() const
+{
+    return m_gpuTypeHasBeenSet;
+}
+
+double InstanceTypeConfig::GetGpuMemory() const
+{
+    return m_gpuMemory;
+}
+
+void InstanceTypeConfig::SetGpuMemory(const double& _gpuMemory)
+{
+    m_gpuMemory = _gpuMemory;
+    m_gpuMemoryHasBeenSet = true;
+}
+
+bool InstanceTypeConfig::GpuMemoryHasBeenSet() const
+{
+    return m_gpuMemoryHasBeenSet;
 }
 

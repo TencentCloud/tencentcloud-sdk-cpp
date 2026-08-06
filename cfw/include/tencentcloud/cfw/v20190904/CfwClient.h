@@ -67,6 +67,8 @@
 #include <tencentcloud/cfw/v20190904/model/CreateSecurityGroupRulesResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateVpcFwGroupRequest.h>
 #include <tencentcloud/cfw/v20190904/model/CreateVpcFwGroupResponse.h>
+#include <tencentcloud/cfw/v20190904/model/CreateWhiteRuleRequest.h>
+#include <tencentcloud/cfw/v20190904/model/CreateWhiteRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteAcRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteAcRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteAddressTemplateRequest.h>
@@ -87,6 +89,8 @@
 #include <tencentcloud/cfw/v20190904/model/DeleteSecurityGroupRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteVpcFwGroupRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteVpcFwGroupResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DeleteWhiteRuleRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DeleteWhiteRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAcListsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAcListsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAclRegInfoRequest.h>
@@ -317,6 +321,8 @@
 #include <tencentcloud/cfw/v20190904/model/ModifyVpcFwGroupResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyVpcFwSequenceRulesRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyVpcFwSequenceRulesResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyWhiteRuleRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyWhiteRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/OpenClusterNatFwSwitchRequest.h>
 #include <tencentcloud/cfw/v20190904/model/OpenClusterNatFwSwitchResponse.h>
 #include <tencentcloud/cfw/v20190904/model/RemoveAcRuleRequest.h>
@@ -425,6 +431,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateVpcFwGroupResponse> CreateVpcFwGroupOutcome;
                 typedef std::future<CreateVpcFwGroupOutcome> CreateVpcFwGroupOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::CreateVpcFwGroupRequest&, CreateVpcFwGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVpcFwGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateWhiteRuleResponse> CreateWhiteRuleOutcome;
+                typedef std::future<CreateWhiteRuleOutcome> CreateWhiteRuleOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::CreateWhiteRuleRequest&, CreateWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWhiteRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAcRuleResponse> DeleteAcRuleOutcome;
                 typedef std::future<DeleteAcRuleOutcome> DeleteAcRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DeleteAcRuleRequest&, DeleteAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAcRuleAsyncHandler;
@@ -455,6 +464,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteVpcFwGroupResponse> DeleteVpcFwGroupOutcome;
                 typedef std::future<DeleteVpcFwGroupOutcome> DeleteVpcFwGroupOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DeleteVpcFwGroupRequest&, DeleteVpcFwGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVpcFwGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteWhiteRuleResponse> DeleteWhiteRuleOutcome;
+                typedef std::future<DeleteWhiteRuleOutcome> DeleteWhiteRuleOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DeleteWhiteRuleRequest&, DeleteWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWhiteRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAcListsResponse> DescribeAcListsOutcome;
                 typedef std::future<DescribeAcListsOutcome> DescribeAcListsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeAcListsRequest&, DescribeAcListsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAcListsAsyncHandler;
@@ -800,6 +812,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyVpcFwSequenceRulesResponse> ModifyVpcFwSequenceRulesOutcome;
                 typedef std::future<ModifyVpcFwSequenceRulesOutcome> ModifyVpcFwSequenceRulesOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyVpcFwSequenceRulesRequest&, ModifyVpcFwSequenceRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpcFwSequenceRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyWhiteRuleResponse> ModifyWhiteRuleOutcome;
+                typedef std::future<ModifyWhiteRuleOutcome> ModifyWhiteRuleOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyWhiteRuleRequest&, ModifyWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWhiteRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::OpenClusterNatFwSwitchResponse> OpenClusterNatFwSwitchOutcome;
                 typedef std::future<OpenClusterNatFwSwitchOutcome> OpenClusterNatFwSwitchOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::OpenClusterNatFwSwitchRequest&, OpenClusterNatFwSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenClusterNatFwSwitchAsyncHandler;
@@ -1044,6 +1059,15 @@ namespace TencentCloud
                 CreateVpcFwGroupOutcomeCallable CreateVpcFwGroupCallable(const Model::CreateVpcFwGroupRequest& request);
 
                 /**
+                 *创建入侵防御白名单。先选择 RuleType，再按该类型填写 Rules[].Info；每条策略使用唯一 RuleName。创建成功后调用 DescribeWhiteRule，使用 RuleName+OperatorType 9 查询并精确核对 RuleName，取得 WhiteId。
+                 * @param req CreateWhiteRuleRequest
+                 * @return CreateWhiteRuleOutcome
+                 */
+                CreateWhiteRuleOutcome CreateWhiteRule(const Model::CreateWhiteRuleRequest &request);
+                void CreateWhiteRuleAsync(const Model::CreateWhiteRuleRequest& request, const CreateWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateWhiteRuleOutcomeCallable CreateWhiteRuleCallable(const Model::CreateWhiteRuleRequest& request);
+
+                /**
                  *删除规则
                  * @param req DeleteAcRuleRequest
                  * @return DeleteAcRuleOutcome
@@ -1132,6 +1156,15 @@ namespace TencentCloud
                 DeleteVpcFwGroupOutcome DeleteVpcFwGroup(const Model::DeleteVpcFwGroupRequest &request);
                 void DeleteVpcFwGroupAsync(const Model::DeleteVpcFwGroupRequest& request, const DeleteVpcFwGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteVpcFwGroupOutcomeCallable DeleteVpcFwGroupCallable(const Model::DeleteVpcFwGroupRequest& request);
+
+                /**
+                 *按 WhiteId 删除入侵防御白名单。先从 DescribeWhiteRule.Data[].WhiteId 读取目标 ID；提交删除后调用 DescribeWhiteRule，Filters 使用 Name=WD、OperatorType=1 和目标 WhiteId，Data 为空表示删除完成。
+                 * @param req DeleteWhiteRuleRequest
+                 * @return DeleteWhiteRuleOutcome
+                 */
+                DeleteWhiteRuleOutcome DeleteWhiteRule(const Model::DeleteWhiteRuleRequest &request);
+                void DeleteWhiteRuleAsync(const Model::DeleteWhiteRuleRequest& request, const DeleteWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteWhiteRuleOutcomeCallable DeleteWhiteRuleCallable(const Model::DeleteWhiteRuleRequest& request);
 
                 /**
                  *访问控制列表
@@ -2173,6 +2206,15 @@ VPC间规则需指定EdgeId。Nat边界规则需指定地域Region与Direction�
                 ModifyVpcFwSequenceRulesOutcome ModifyVpcFwSequenceRules(const Model::ModifyVpcFwSequenceRulesRequest &request);
                 void ModifyVpcFwSequenceRulesAsync(const Model::ModifyVpcFwSequenceRulesRequest& request, const ModifyVpcFwSequenceRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyVpcFwSequenceRulesOutcomeCallable ModifyVpcFwSequenceRulesCallable(const Model::ModifyVpcFwSequenceRulesRequest& request);
+
+                /**
+                 *修改入侵防御白名单采用整条替换。先调用 DescribeWhiteRule，选择 BanEdit=0 的策略并沿用其 WhiteId 和 RuleType；Rule 提交修改后的全部可写字段。Info 多值字段按笛卡尔积展开，第一项更新原 WhiteId，其余组合创建新 WhiteId，展开后最多 100 条且新增组合消耗配额。成功后调用 DescribeWhiteRule：原策略使用 Name=WD、OperatorType=1 精确查询，新组合使用 Name=RuleName、OperatorType=9 查询并逐项核对。
+                 * @param req ModifyWhiteRuleRequest
+                 * @return ModifyWhiteRuleOutcome
+                 */
+                ModifyWhiteRuleOutcome ModifyWhiteRule(const Model::ModifyWhiteRuleRequest &request);
+                void ModifyWhiteRuleAsync(const Model::ModifyWhiteRuleRequest& request, const ModifyWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyWhiteRuleOutcomeCallable ModifyWhiteRuleCallable(const Model::ModifyWhiteRuleRequest& request);
 
                 /**
                  *开启NAT CCN集群模式防火墙开关

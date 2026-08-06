@@ -32,7 +32,8 @@ ModifyDBInstanceSpecRequest::ModifyDBInstanceSpecRequest() :
     m_switchTagHasBeenSet(false),
     m_switchStartTimeHasBeenSet(false),
     m_switchEndTimeHasBeenSet(false),
-    m_cpuHasBeenSet(false)
+    m_cpuHasBeenSet(false),
+    m_syncModifyParamsHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,21 @@ string ModifyDBInstanceSpecRequest::ToJsonString() const
         string key = "Cpu";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_cpu, allocator);
+    }
+
+    if (m_syncModifyParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncModifyParams";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_syncModifyParams.begin(); itr != m_syncModifyParams.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -294,6 +310,22 @@ void ModifyDBInstanceSpecRequest::SetCpu(const uint64_t& _cpu)
 bool ModifyDBInstanceSpecRequest::CpuHasBeenSet() const
 {
     return m_cpuHasBeenSet;
+}
+
+vector<ParamEntry> ModifyDBInstanceSpecRequest::GetSyncModifyParams() const
+{
+    return m_syncModifyParams;
+}
+
+void ModifyDBInstanceSpecRequest::SetSyncModifyParams(const vector<ParamEntry>& _syncModifyParams)
+{
+    m_syncModifyParams = _syncModifyParams;
+    m_syncModifyParamsHasBeenSet = true;
+}
+
+bool ModifyDBInstanceSpecRequest::SyncModifyParamsHasBeenSet() const
+{
+    return m_syncModifyParamsHasBeenSet;
 }
 
 

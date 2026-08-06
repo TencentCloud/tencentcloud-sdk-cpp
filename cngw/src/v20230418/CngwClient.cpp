@@ -890,6 +890,56 @@ CngwClient::DeleteCloudNativeAPIGatewaySecretKeyOutcomeCallable CngwClient::Dele
     return prom->get_future();
 }
 
+CngwClient::DescribeCNGWServicesWithRoutesOutcome CngwClient::DescribeCNGWServicesWithRoutes(const DescribeCNGWServicesWithRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCNGWServicesWithRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCNGWServicesWithRoutesResponse rsp = DescribeCNGWServicesWithRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCNGWServicesWithRoutesOutcome(rsp);
+        else
+            return DescribeCNGWServicesWithRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCNGWServicesWithRoutesOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::DescribeCNGWServicesWithRoutesAsync(const DescribeCNGWServicesWithRoutesRequest& request, const DescribeCNGWServicesWithRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCNGWServicesWithRoutesRequest&;
+    using Resp = DescribeCNGWServicesWithRoutesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCNGWServicesWithRoutes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::DescribeCNGWServicesWithRoutesOutcomeCallable CngwClient::DescribeCNGWServicesWithRoutesCallable(const DescribeCNGWServicesWithRoutesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCNGWServicesWithRoutesOutcome>>();
+    DescribeCNGWServicesWithRoutesAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const DescribeCNGWServicesWithRoutesRequest&,
+        DescribeCNGWServicesWithRoutesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CngwClient::DescribeCloudNativeAPIGatewayConsumerOutcome CngwClient::DescribeCloudNativeAPIGatewayConsumer(const DescribeCloudNativeAPIGatewayConsumerRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayConsumer");

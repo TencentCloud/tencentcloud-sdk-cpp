@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
-                     * @return Result 无
+                     * 获取<p>无</p>
+                     * @return Result <p>无</p>
                      * 
                      */
                     KongServices GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 无
+                     * <p>无</p>
                      */
                     KongServices m_result;
                     bool m_resultHasBeenSet;

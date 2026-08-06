@@ -58,7 +58,8 @@ GatherResourceSummary::GatherResourceSummary() :
     m_actionTypeHasBeenSet(false),
     m_actionTypeNameHasBeenSet(false),
     m_splitItemIdHasBeenSet(false),
-    m_splitItemNameHasBeenSet(false)
+    m_splitItemNameHasBeenSet(false),
+    m_effectiveModeHasBeenSet(false)
 {
 }
 
@@ -491,6 +492,16 @@ CoreInternalOutcome GatherResourceSummary::Deserialize(const rapidjson::Value &v
         m_splitItemNameHasBeenSet = true;
     }
 
+    if (value.HasMember("EffectiveMode") && !value["EffectiveMode"].IsNull())
+    {
+        if (!value["EffectiveMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatherResourceSummary.EffectiveMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_effectiveMode = string(value["EffectiveMode"].GetString());
+        m_effectiveModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -823,6 +834,14 @@ void GatherResourceSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "SplitItemName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_splitItemName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_effectiveModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EffectiveMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_effectiveMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1434,5 +1453,21 @@ void GatherResourceSummary::SetSplitItemName(const string& _splitItemName)
 bool GatherResourceSummary::SplitItemNameHasBeenSet() const
 {
     return m_splitItemNameHasBeenSet;
+}
+
+string GatherResourceSummary::GetEffectiveMode() const
+{
+    return m_effectiveMode;
+}
+
+void GatherResourceSummary::SetEffectiveMode(const string& _effectiveMode)
+{
+    m_effectiveMode = _effectiveMode;
+    m_effectiveModeHasBeenSet = true;
+}
+
+bool GatherResourceSummary::EffectiveModeHasBeenSet() const
+{
+    return m_effectiveModeHasBeenSet;
 }
 

@@ -51,8 +51,6 @@
 #include <tencentcloud/ocr/v20181119/model/DescribeQuestionMarkAgentJobResponse.h>
 #include <tencentcloud/ocr/v20181119/model/DriverLicenseOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/DriverLicenseOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/EduPaperOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/EduPaperOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/EnglishOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/EnglishOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/EnterpriseLicenseOCRRequest.h>
@@ -67,12 +65,6 @@
 #include <tencentcloud/ocr/v20181119/model/ExtractDocBasicResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ExtractDocMultiRequest.h>
 #include <tencentcloud/ocr/v20181119/model/ExtractDocMultiResponse.h>
-#include <tencentcloud/ocr/v20181119/model/ExtractDocMultiProRequest.h>
-#include <tencentcloud/ocr/v20181119/model/ExtractDocMultiProResponse.h>
-#include <tencentcloud/ocr/v20181119/model/FlightInvoiceOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/FlightInvoiceOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/FormulaOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/FormulaOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/GeneralAccurateOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/GeneralAccurateOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/GeneralBasicOCRRequest.h>
@@ -95,8 +87,6 @@
 #include <tencentcloud/ocr/v20181119/model/IDCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ImageEnhancementRequest.h>
 #include <tencentcloud/ocr/v20181119/model/ImageEnhancementResponse.h>
-#include <tencentcloud/ocr/v20181119/model/InsuranceBillOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/InsuranceBillOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/LicensePlateOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/LicensePlateOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/MLIDCardOCRRequest.h>
@@ -243,9 +233,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DriverLicenseOCRResponse> DriverLicenseOCROutcome;
                 typedef std::future<DriverLicenseOCROutcome> DriverLicenseOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::DriverLicenseOCRRequest&, DriverLicenseOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> DriverLicenseOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::EduPaperOCRResponse> EduPaperOCROutcome;
-                typedef std::future<EduPaperOCROutcome> EduPaperOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::EduPaperOCRRequest&, EduPaperOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> EduPaperOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnglishOCRResponse> EnglishOCROutcome;
                 typedef std::future<EnglishOCROutcome> EnglishOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::EnglishOCRRequest&, EnglishOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnglishOCRAsyncHandler;
@@ -267,15 +254,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ExtractDocMultiResponse> ExtractDocMultiOutcome;
                 typedef std::future<ExtractDocMultiOutcome> ExtractDocMultiOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::ExtractDocMultiRequest&, ExtractDocMultiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExtractDocMultiAsyncHandler;
-                typedef Outcome<Core::Error, Model::ExtractDocMultiProResponse> ExtractDocMultiProOutcome;
-                typedef std::future<ExtractDocMultiProOutcome> ExtractDocMultiProOutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::ExtractDocMultiProRequest&, ExtractDocMultiProOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExtractDocMultiProAsyncHandler;
-                typedef Outcome<Core::Error, Model::FlightInvoiceOCRResponse> FlightInvoiceOCROutcome;
-                typedef std::future<FlightInvoiceOCROutcome> FlightInvoiceOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::FlightInvoiceOCRRequest&, FlightInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> FlightInvoiceOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::FormulaOCRResponse> FormulaOCROutcome;
-                typedef std::future<FormulaOCROutcome> FormulaOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::FormulaOCRRequest&, FormulaOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> FormulaOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::GeneralAccurateOCRResponse> GeneralAccurateOCROutcome;
                 typedef std::future<GeneralAccurateOCROutcome> GeneralAccurateOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::GeneralAccurateOCRRequest&, GeneralAccurateOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> GeneralAccurateOCRAsyncHandler;
@@ -309,9 +287,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ImageEnhancementResponse> ImageEnhancementOutcome;
                 typedef std::future<ImageEnhancementOutcome> ImageEnhancementOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::ImageEnhancementRequest&, ImageEnhancementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageEnhancementAsyncHandler;
-                typedef Outcome<Core::Error, Model::InsuranceBillOCRResponse> InsuranceBillOCROutcome;
-                typedef std::future<InsuranceBillOCROutcome> InsuranceBillOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::InsuranceBillOCRRequest&, InsuranceBillOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> InsuranceBillOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::LicensePlateOCRResponse> LicensePlateOCROutcome;
                 typedef std::future<LicensePlateOCROutcome> LicensePlateOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::LicensePlateOCRRequest&, LicensePlateOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> LicensePlateOCRAsyncHandler;
@@ -610,17 +585,6 @@ namespace TencentCloud
                 DriverLicenseOCROutcomeCallable DriverLicenseOCRCallable(const Model::DriverLicenseOCRRequest& request);
 
                 /**
-                 *本接口支持数学试题内容的识别和结构化输出，包括通用文本解析和小学/初中/高中数学公式解析能力（包括91种题型，180种符号），公式返回格式为 Latex 格式文本。
-
-默认接口请求频率限制：5次/秒。
-                 * @param req EduPaperOCRRequest
-                 * @return EduPaperOCROutcome
-                 */
-                EduPaperOCROutcome EduPaperOCR(const Model::EduPaperOCRRequest &request);
-                void EduPaperOCRAsync(const Model::EduPaperOCRRequest& request, const EduPaperOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                EduPaperOCROutcomeCallable EduPaperOCRCallable(const Model::EduPaperOCRRequest& request);
-
-                /**
                  *本接口支持图像英文文字的检测和识别，返回文字框位置与文字内容。支持多场景、任意版面下的英文、字母、数字和常见字符的识别，同时覆盖英文印刷体和英文手写体识别。
 
 默认接口请求频率限制：10次/秒。
@@ -700,42 +664,6 @@ namespace TencentCloud
                 ExtractDocMultiOutcome ExtractDocMulti(const Model::ExtractDocMultiRequest &request);
                 void ExtractDocMultiAsync(const Model::ExtractDocMultiRequest& request, const ExtractDocMultiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ExtractDocMultiOutcomeCallable ExtractDocMultiCallable(const Model::ExtractDocMultiRequest& request);
-
-                /**
-                 *本接口当前仅支持复杂磅单收发货单抽取，更多强推理场景支持定制咨询。点击[立即体验](https://ocrdemo.cloud.tencent.com/?action=ExtractDocMultiPro)。
-
-默认接口请求频率限制：5次/秒。
-                 * @param req ExtractDocMultiProRequest
-                 * @return ExtractDocMultiProOutcome
-                 */
-                ExtractDocMultiProOutcome ExtractDocMultiPro(const Model::ExtractDocMultiProRequest &request);
-                void ExtractDocMultiProAsync(const Model::ExtractDocMultiProRequest& request, const ExtractDocMultiProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ExtractDocMultiProOutcomeCallable ExtractDocMultiProCallable(const Model::ExtractDocMultiProRequest& request);
-
-                /**
-                 *<b>此接口不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href="https://cloud.tencent.com/document/product/866/90802">通用票据识别（高级版）</a>。</b>
-本接口支持机票行程单关键字段的识别，包括旅客姓名、有效身份证件号码、电子客票号码、验证码、填开单位、其他税费、燃油附加费、民航发展基金、保险费、销售单位代号、始发地、目的地、航班号、时间、日期、座位等级、承运人、发票消费类型、票价、合计金额、填开日期、国内国际标签、印刷序号、客票级别/类别、客票生效日期、有效期截止日期、免费行李等字段，支持航班信息多行明细输出。
-
-默认接口请求频率限制：5次/秒。
-                 * @param req FlightInvoiceOCRRequest
-                 * @return FlightInvoiceOCROutcome
-                 */
-                FlightInvoiceOCROutcome FlightInvoiceOCR(const Model::FlightInvoiceOCRRequest &request);
-                void FlightInvoiceOCRAsync(const Model::FlightInvoiceOCRRequest& request, const FlightInvoiceOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                FlightInvoiceOCROutcomeCallable FlightInvoiceOCRCallable(const Model::FlightInvoiceOCRRequest& request);
-
-                /**
-                 *接口下线
-
-本接口支持识别主流初高中数学符号和公式，返回公式的 Latex 格式文本。
-
-默认接口请求频率限制：5次/秒。
-                 * @param req FormulaOCRRequest
-                 * @return FormulaOCROutcome
-                 */
-                FormulaOCROutcome FormulaOCR(const Model::FormulaOCRRequest &request);
-                void FormulaOCRAsync(const Model::FormulaOCRRequest& request, const FormulaOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                FormulaOCROutcomeCallable FormulaOCRCallable(const Model::FormulaOCRRequest& request);
 
                 /**
                  *本接口支持图像整体文字的检测和识别。支持中文、英文、中英文、数字和特殊字符号的识别，并返回文字框位置和文字内容。
@@ -1072,18 +1000,7 @@ namespace TencentCloud
                 ImageEnhancementOutcomeCallable ImageEnhancementCallable(const Model::ImageEnhancementRequest& request);
 
                 /**
-                 *本接口支持病案首页、费用清单、结算单、医疗发票四种保险理赔单据的文本识别和结构化输出。
-
-默认接口请求频率限制：1次/秒。
-                 * @param req InsuranceBillOCRRequest
-                 * @return InsuranceBillOCROutcome
-                 */
-                InsuranceBillOCROutcome InsuranceBillOCR(const Model::InsuranceBillOCRRequest &request);
-                void InsuranceBillOCRAsync(const Model::InsuranceBillOCRRequest& request, const InsuranceBillOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                InsuranceBillOCROutcomeCallable InsuranceBillOCRCallable(const Model::InsuranceBillOCRRequest& request);
-
-                /**
-                 *本接口支持对中国大陆机动车车牌的自动定位和识别，返回地域编号和车牌号码与车牌颜色信息。
+                 *本接口支持对中国大陆机动车车牌的自动定位和识别，返回地域编号和车牌号码与车牌颜色信息。 
 
 默认接口请求频率限制：10次/秒。
                  * @param req LicensePlateOCRRequest

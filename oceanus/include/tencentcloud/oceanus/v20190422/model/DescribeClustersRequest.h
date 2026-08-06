@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取按照一个或者多个集群 ID 查询，每次请求的集群上限为 100
-                     * @return ClusterIds 按照一个或者多个集群 ID 查询，每次请求的集群上限为 100
+                     * 获取<p>按照一个或者多个集群 ID 查询，每次请求的集群上限为 100</p>
+                     * @return ClusterIds <p>按照一个或者多个集群 ID 查询，每次请求的集群上限为 100</p>
                      * 
                      */
                     std::vector<std::string> GetClusterIds() const;
 
                     /**
-                     * 设置按照一个或者多个集群 ID 查询，每次请求的集群上限为 100
-                     * @param _clusterIds 按照一个或者多个集群 ID 查询，每次请求的集群上限为 100
+                     * 设置<p>按照一个或者多个集群 ID 查询，每次请求的集群上限为 100</p>
+                     * @param _clusterIds <p>按照一个或者多个集群 ID 查询，每次请求的集群上限为 100</p>
                      * 
                      */
                     void SetClusterIds(const std::vector<std::string>& _clusterIds);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ClusterIdsHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认 0
-                     * @return Offset 偏移量，默认 0
+                     * 获取<p>偏移量，默认 0</p>
+                     * @return Offset <p>偏移量，默认 0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认 0
-                     * @param _offset 偏移量，默认 0
+                     * 设置<p>偏移量，默认 0</p>
+                     * @param _offset <p>偏移量，默认 0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取请求的集群数量，默认 20，最大值 100
-                     * @return Limit 请求的集群数量，默认 20，最大值 100
+                     * 获取<p>请求的集群数量，默认 20，最大值 100</p>
+                     * @return Limit <p>请求的集群数量，默认 20，最大值 100</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置请求的集群数量，默认 20，最大值 100
-                     * @param _limit 请求的集群数量，默认 20，最大值 100
+                     * 设置<p>请求的集群数量，默认 20，最大值 100</p>
+                     * @param _limit <p>请求的集群数量，默认 20，最大值 100</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取集群信息结果排序规则，1 按时间降序，2 按照时间升序，3  按照状态排序
-                     * @return OrderType 集群信息结果排序规则，1 按时间降序，2 按照时间升序，3  按照状态排序
+                     * 获取<p>集群信息结果排序规则，1 按时间降序，2 按照时间升序，3  按照状态排序</p>
+                     * @return OrderType <p>集群信息结果排序规则，1 按时间降序，2 按照时间升序，3  按照状态排序</p>
                      * 
                      */
                     int64_t GetOrderType() const;
 
                     /**
-                     * 设置集群信息结果排序规则，1 按时间降序，2 按照时间升序，3  按照状态排序
-                     * @param _orderType 集群信息结果排序规则，1 按时间降序，2 按照时间升序，3  按照状态排序
+                     * 设置<p>集群信息结果排序规则，1 按时间降序，2 按照时间升序，3  按照状态排序</p>
+                     * @param _orderType <p>集群信息结果排序规则，1 按时间降序，2 按照时间升序，3  按照状态排序</p>
                      * 
                      */
                     void SetOrderType(const int64_t& _orderType);
@@ -128,39 +128,15 @@ namespace TencentCloud
                     bool OrderTypeHasBeenSet() const;
 
                     /**
-                     * 获取过滤规则
-    
-- Name
-    按照集群的名字进行模糊查询。例如：测试
-    类型： String
-    必选： 否
-    
-                     * @return Filters 过滤规则
-    
-- Name
-    按照集群的名字进行模糊查询。例如：测试
-    类型： String
-    必选： 否
-    
+                     * 获取<p>过滤规则</p><ul><li>Name<br>  按照集群的名字进行模糊查询。例如：测试<br>  类型： String<br>  必选： 否</li></ul>
+                     * @return Filters <p>过滤规则</p><ul><li>Name<br>  按照集群的名字进行模糊查询。例如：测试<br>  类型： String<br>  必选： 否</li></ul>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤规则
-    
-- Name
-    按照集群的名字进行模糊查询。例如：测试
-    类型： String
-    必选： 否
-    
-                     * @param _filters 过滤规则
-    
-- Name
-    按照集群的名字进行模糊查询。例如：测试
-    类型： String
-    必选： 否
-    
+                     * 设置<p>过滤规则</p><ul><li>Name<br>  按照集群的名字进行模糊查询。例如：测试<br>  类型： String<br>  必选： 否</li></ul>
+                     * @param _filters <p>过滤规则</p><ul><li>Name<br>  按照集群的名字进行模糊查询。例如：测试<br>  类型： String<br>  必选： 否</li></ul>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -173,15 +149,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取工作空间 SerialId
-                     * @return WorkSpaceId 工作空间 SerialId
+                     * 获取<p>工作空间 SerialId</p>
+                     * @return WorkSpaceId <p>工作空间 SerialId</p>
                      * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
-                     * 设置工作空间 SerialId
-                     * @param _workSpaceId 工作空间 SerialId
+                     * 设置<p>工作空间 SerialId</p>
+                     * @param _workSpaceId <p>工作空间 SerialId</p>
                      * 
                      */
                     void SetWorkSpaceId(const std::string& _workSpaceId);
@@ -196,43 +172,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 按照一个或者多个集群 ID 查询，每次请求的集群上限为 100
+                     * <p>按照一个或者多个集群 ID 查询，每次请求的集群上限为 100</p>
                      */
                     std::vector<std::string> m_clusterIds;
                     bool m_clusterIdsHasBeenSet;
 
                     /**
-                     * 偏移量，默认 0
+                     * <p>偏移量，默认 0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 请求的集群数量，默认 20，最大值 100
+                     * <p>请求的集群数量，默认 20，最大值 100</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 集群信息结果排序规则，1 按时间降序，2 按照时间升序，3  按照状态排序
+                     * <p>集群信息结果排序规则，1 按时间降序，2 按照时间升序，3  按照状态排序</p>
                      */
                     int64_t m_orderType;
                     bool m_orderTypeHasBeenSet;
 
                     /**
-                     * 过滤规则
-    
-- Name
-    按照集群的名字进行模糊查询。例如：测试
-    类型： String
-    必选： 否
-    
+                     * <p>过滤规则</p><ul><li>Name<br>  按照集群的名字进行模糊查询。例如：测试<br>  类型： String<br>  必选： 否</li></ul>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 工作空间 SerialId
+                     * <p>工作空间 SerialId</p>
                      */
                     std::string m_workSpaceId;
                     bool m_workSpaceIdHasBeenSet;

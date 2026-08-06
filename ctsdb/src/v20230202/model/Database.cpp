@@ -28,7 +28,8 @@ Database::Database() :
     m_remarkHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_coolDownTimeHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome Database::Deserialize(const rapidjson::Value &value)
         m_updatedAtHasBeenSet = true;
     }
 
+    if (value.HasMember("CoolDownTime") && !value["CoolDownTime"].IsNull())
+    {
+        if (!value["CoolDownTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Database.CoolDownTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_coolDownTime = string(value["CoolDownTime"].GetString());
+        m_coolDownTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void Database::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "UpdatedAt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updatedAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_coolDownTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CoolDownTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_coolDownTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void Database::SetUpdatedAt(const string& _updatedAt)
 bool Database::UpdatedAtHasBeenSet() const
 {
     return m_updatedAtHasBeenSet;
+}
+
+string Database::GetCoolDownTime() const
+{
+    return m_coolDownTime;
+}
+
+void Database::SetCoolDownTime(const string& _coolDownTime)
+{
+    m_coolDownTime = _coolDownTime;
+    m_coolDownTimeHasBeenSet = true;
+}
+
+bool Database::CoolDownTimeHasBeenSet() const
+{
+    return m_coolDownTimeHasBeenSet;
 }
 

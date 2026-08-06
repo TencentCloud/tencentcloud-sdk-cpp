@@ -47,39 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源类型。
-<li>Storage：存储资源包。</li>
-<li>Traffic：流量资源包。</li>
-<li>Transcode：普通转码资源包。</li>
-<li>TESHD：极速高清转码资源包。</li>
-<li>Review：音视频审核转码资源包。</li>
-<li>MediaProcess：媒体处理时长资源包。</li>
-                     * @return ResourceType 资源类型。
-<li>Storage：存储资源包。</li>
-<li>Traffic：流量资源包。</li>
-<li>Transcode：普通转码资源包。</li>
-<li>TESHD：极速高清转码资源包。</li>
-<li>Review：音视频审核转码资源包。</li>
-<li>MediaProcess：媒体处理时长资源包。</li>
+                     * 获取<p>资源类型。</p><p>枚举值：</p><ul><li>Storage： 存储资源</li><li>Traffic： 流量资源</li><li>Transcode： 转码资源</li><li>TESHD： 极速高清转码资源</li><li>Review： 音视频审核资源</li><li>MediaProcess： 媒体处理资源</li><li>MLLMMediaProcess： 大模型媒体处理资源</li></ul>
+                     * @return ResourceType <p>资源类型。</p><p>枚举值：</p><ul><li>Storage： 存储资源</li><li>Traffic： 流量资源</li><li>Transcode： 转码资源</li><li>TESHD： 极速高清转码资源</li><li>Review： 音视频审核资源</li><li>MediaProcess： 媒体处理资源</li><li>MLLMMediaProcess： 大模型媒体处理资源</li></ul>
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置资源类型。
-<li>Storage：存储资源包。</li>
-<li>Traffic：流量资源包。</li>
-<li>Transcode：普通转码资源包。</li>
-<li>TESHD：极速高清转码资源包。</li>
-<li>Review：音视频审核转码资源包。</li>
-<li>MediaProcess：媒体处理时长资源包。</li>
-                     * @param _resourceType 资源类型。
-<li>Storage：存储资源包。</li>
-<li>Traffic：流量资源包。</li>
-<li>Transcode：普通转码资源包。</li>
-<li>TESHD：极速高清转码资源包。</li>
-<li>Review：音视频审核转码资源包。</li>
-<li>MediaProcess：媒体处理时长资源包。</li>
+                     * 设置<p>资源类型。</p><p>枚举值：</p><ul><li>Storage： 存储资源</li><li>Traffic： 流量资源</li><li>Transcode： 转码资源</li><li>TESHD： 极速高清转码资源</li><li>Review： 音视频审核资源</li><li>MediaProcess： 媒体处理资源</li><li>MLLMMediaProcess： 大模型媒体处理资源</li></ul>
+                     * @param _resourceType <p>资源类型。</p><p>枚举值：</p><ul><li>Storage： 存储资源</li><li>Traffic： 流量资源</li><li>Transcode： 转码资源</li><li>TESHD： 极速高清转码资源</li><li>Review： 音视频审核资源</li><li>MediaProcess： 媒体处理资源</li><li>MLLMMediaProcess： 大模型媒体处理资源</li></ul>
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -92,39 +68,15 @@ namespace TencentCloud
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取资源包额度。
-<li>音视频存储资源包，单位为字节。</li>
-<li>音视频转码资源包，单位为秒。</li>
-<li>音视频审核资源包，单位为秒。</li>
-<li>音视频极速高清资源包，单位为秒。</li>
-<li>音视频加速资源包，单位为字节。</li>
-<li>媒体处理时长资源包，单位为秒。</li>
-                     * @return Amount 资源包额度。
-<li>音视频存储资源包，单位为字节。</li>
-<li>音视频转码资源包，单位为秒。</li>
-<li>音视频审核资源包，单位为秒。</li>
-<li>音视频极速高清资源包，单位为秒。</li>
-<li>音视频加速资源包，单位为字节。</li>
-<li>媒体处理时长资源包，单位为秒。</li>
+                     * 获取<p>资源包额度。</p><li>音视频存储资源包，单位为字节。</li><li>音视频转码资源包，单位为秒。</li><li>音视频审核资源包，单位为秒。</li><li>音视频极速高清资源包，单位为秒。</li><li>音视频加速资源包，单位为字节。</li><li>媒体处理时长资源包，单位为秒。</li>
+                     * @return Amount <p>资源包额度。</p><li>音视频存储资源包，单位为字节。</li><li>音视频转码资源包，单位为秒。</li><li>音视频审核资源包，单位为秒。</li><li>音视频极速高清资源包，单位为秒。</li><li>音视频加速资源包，单位为字节。</li><li>媒体处理时长资源包，单位为秒。</li>
                      * 
                      */
                     int64_t GetAmount() const;
 
                     /**
-                     * 设置资源包额度。
-<li>音视频存储资源包，单位为字节。</li>
-<li>音视频转码资源包，单位为秒。</li>
-<li>音视频审核资源包，单位为秒。</li>
-<li>音视频极速高清资源包，单位为秒。</li>
-<li>音视频加速资源包，单位为字节。</li>
-<li>媒体处理时长资源包，单位为秒。</li>
-                     * @param _amount 资源包额度。
-<li>音视频存储资源包，单位为字节。</li>
-<li>音视频转码资源包，单位为秒。</li>
-<li>音视频审核资源包，单位为秒。</li>
-<li>音视频极速高清资源包，单位为秒。</li>
-<li>音视频加速资源包，单位为字节。</li>
-<li>媒体处理时长资源包，单位为秒。</li>
+                     * 设置<p>资源包额度。</p><li>音视频存储资源包，单位为字节。</li><li>音视频转码资源包，单位为秒。</li><li>音视频审核资源包，单位为秒。</li><li>音视频极速高清资源包，单位为秒。</li><li>音视频加速资源包，单位为字节。</li><li>媒体处理时长资源包，单位为秒。</li>
+                     * @param _amount <p>资源包额度。</p><li>音视频存储资源包，单位为字节。</li><li>音视频转码资源包，单位为秒。</li><li>音视频审核资源包，单位为秒。</li><li>音视频极速高清资源包，单位为秒。</li><li>音视频加速资源包，单位为字节。</li><li>媒体处理时长资源包，单位为秒。</li>
                      * 
                      */
                     void SetAmount(const int64_t& _amount);
@@ -137,39 +89,15 @@ namespace TencentCloud
                     bool AmountHasBeenSet() const;
 
                     /**
-                     * 获取资源包余量。
-<li>音视频存储资源包，单位为字节。</li>
-<li>音视频转码资源包，单位为秒。</li>
-<li>音视频审核资源包，单位为秒。</li>
-<li>音视频极速高清资源包，单位为秒。</li>
-<li>音视频加速资源包，单位为字节。</li>
-<li>媒体处理时长资源包，单位为秒。</li>
-                     * @return Left 资源包余量。
-<li>音视频存储资源包，单位为字节。</li>
-<li>音视频转码资源包，单位为秒。</li>
-<li>音视频审核资源包，单位为秒。</li>
-<li>音视频极速高清资源包，单位为秒。</li>
-<li>音视频加速资源包，单位为字节。</li>
-<li>媒体处理时长资源包，单位为秒。</li>
+                     * 获取<p>资源包余量。</p><li>音视频存储资源包，单位为字节。</li><li>音视频转码资源包，单位为秒。</li><li>音视频审核资源包，单位为秒。</li><li>音视频极速高清资源包，单位为秒。</li><li>音视频加速资源包，单位为字节。</li><li>媒体处理时长资源包，单位为秒。</li>
+                     * @return Left <p>资源包余量。</p><li>音视频存储资源包，单位为字节。</li><li>音视频转码资源包，单位为秒。</li><li>音视频审核资源包，单位为秒。</li><li>音视频极速高清资源包，单位为秒。</li><li>音视频加速资源包，单位为字节。</li><li>媒体处理时长资源包，单位为秒。</li>
                      * 
                      */
                     int64_t GetLeft() const;
 
                     /**
-                     * 设置资源包余量。
-<li>音视频存储资源包，单位为字节。</li>
-<li>音视频转码资源包，单位为秒。</li>
-<li>音视频审核资源包，单位为秒。</li>
-<li>音视频极速高清资源包，单位为秒。</li>
-<li>音视频加速资源包，单位为字节。</li>
-<li>媒体处理时长资源包，单位为秒。</li>
-                     * @param _left 资源包余量。
-<li>音视频存储资源包，单位为字节。</li>
-<li>音视频转码资源包，单位为秒。</li>
-<li>音视频审核资源包，单位为秒。</li>
-<li>音视频极速高清资源包，单位为秒。</li>
-<li>音视频加速资源包，单位为字节。</li>
-<li>媒体处理时长资源包，单位为秒。</li>
+                     * 设置<p>资源包余量。</p><li>音视频存储资源包，单位为字节。</li><li>音视频转码资源包，单位为秒。</li><li>音视频审核资源包，单位为秒。</li><li>音视频极速高清资源包，单位为秒。</li><li>音视频加速资源包，单位为字节。</li><li>媒体处理时长资源包，单位为秒。</li>
+                     * @param _left <p>资源包余量。</p><li>音视频存储资源包，单位为字节。</li><li>音视频转码资源包，单位为秒。</li><li>音视频审核资源包，单位为秒。</li><li>音视频极速高清资源包，单位为秒。</li><li>音视频加速资源包，单位为字节。</li><li>媒体处理时长资源包，单位为秒。</li>
                      * 
                      */
                     void SetLeft(const int64_t& _left);
@@ -184,37 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源类型。
-<li>Storage：存储资源包。</li>
-<li>Traffic：流量资源包。</li>
-<li>Transcode：普通转码资源包。</li>
-<li>TESHD：极速高清转码资源包。</li>
-<li>Review：音视频审核转码资源包。</li>
-<li>MediaProcess：媒体处理时长资源包。</li>
+                     * <p>资源类型。</p><p>枚举值：</p><ul><li>Storage： 存储资源</li><li>Traffic： 流量资源</li><li>Transcode： 转码资源</li><li>TESHD： 极速高清转码资源</li><li>Review： 音视频审核资源</li><li>MediaProcess： 媒体处理资源</li><li>MLLMMediaProcess： 大模型媒体处理资源</li></ul>
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * 资源包额度。
-<li>音视频存储资源包，单位为字节。</li>
-<li>音视频转码资源包，单位为秒。</li>
-<li>音视频审核资源包，单位为秒。</li>
-<li>音视频极速高清资源包，单位为秒。</li>
-<li>音视频加速资源包，单位为字节。</li>
-<li>媒体处理时长资源包，单位为秒。</li>
+                     * <p>资源包额度。</p><li>音视频存储资源包，单位为字节。</li><li>音视频转码资源包，单位为秒。</li><li>音视频审核资源包，单位为秒。</li><li>音视频极速高清资源包，单位为秒。</li><li>音视频加速资源包，单位为字节。</li><li>媒体处理时长资源包，单位为秒。</li>
                      */
                     int64_t m_amount;
                     bool m_amountHasBeenSet;
 
                     /**
-                     * 资源包余量。
-<li>音视频存储资源包，单位为字节。</li>
-<li>音视频转码资源包，单位为秒。</li>
-<li>音视频审核资源包，单位为秒。</li>
-<li>音视频极速高清资源包，单位为秒。</li>
-<li>音视频加速资源包，单位为字节。</li>
-<li>媒体处理时长资源包，单位为秒。</li>
+                     * <p>资源包余量。</p><li>音视频存储资源包，单位为字节。</li><li>音视频转码资源包，单位为秒。</li><li>音视频审核资源包，单位为秒。</li><li>音视频极速高清资源包，单位为秒。</li><li>音视频加速资源包，单位为字节。</li><li>媒体处理时长资源包，单位为秒。</li>
                      */
                     int64_t m_left;
                     bool m_leftHasBeenSet;

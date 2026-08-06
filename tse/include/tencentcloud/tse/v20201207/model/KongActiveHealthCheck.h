@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主动健康检查健康探测间隔，单位：秒，0表示不开启
-                     * @return HealthyInterval 主动健康检查健康探测间隔，单位：秒，0表示不开启
+                     * 获取<p>主动健康检查健康探测间隔，单位：秒，0表示不开启</p>
+                     * @return HealthyInterval <p>主动健康检查健康探测间隔，单位：秒，0表示不开启</p>
                      * 
                      */
                     uint64_t GetHealthyInterval() const;
 
                     /**
-                     * 设置主动健康检查健康探测间隔，单位：秒，0表示不开启
-                     * @param _healthyInterval 主动健康检查健康探测间隔，单位：秒，0表示不开启
+                     * 设置<p>主动健康检查健康探测间隔，单位：秒，0表示不开启</p>
+                     * @param _healthyInterval <p>主动健康检查健康探测间隔，单位：秒，0表示不开启</p>
                      * 
                      */
                     void SetHealthyInterval(const uint64_t& _healthyInterval);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool HealthyIntervalHasBeenSet() const;
 
                     /**
-                     * 获取主动健康检查异常探测间隔，单位：秒，0表示不开启
-                     * @return UnHealthyInterval 主动健康检查异常探测间隔，单位：秒，0表示不开启
+                     * 获取<p>主动健康检查异常探测间隔，单位：秒，0表示不开启</p>
+                     * @return UnHealthyInterval <p>主动健康检查异常探测间隔，单位：秒，0表示不开启</p>
                      * 
                      */
                     uint64_t GetUnHealthyInterval() const;
 
                     /**
-                     * 设置主动健康检查异常探测间隔，单位：秒，0表示不开启
-                     * @param _unHealthyInterval 主动健康检查异常探测间隔，单位：秒，0表示不开启
+                     * 设置<p>主动健康检查异常探测间隔，单位：秒，0表示不开启</p>
+                     * @param _unHealthyInterval <p>主动健康检查异常探测间隔，单位：秒，0表示不开启</p>
                      * 
                      */
                     void SetUnHealthyInterval(const uint64_t& _unHealthyInterval);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool UnHealthyIntervalHasBeenSet() const;
 
                     /**
-                     * 获取在 GET HTTP 请求中使用的路径，以作为主动运行状况检查的探测器运行。默认： ”/”。
-                     * @return HttpPath 在 GET HTTP 请求中使用的路径，以作为主动运行状况检查的探测器运行。默认： ”/”。
+                     * 获取<p>在 GET HTTP 请求中使用的路径，以作为主动运行状况检查的探测器运行。默认： ”/”。</p>
+                     * @return HttpPath <p>在 GET HTTP 请求中使用的路径，以作为主动运行状况检查的探测器运行。默认： ”/”。</p>
                      * 
                      */
                     std::string GetHttpPath() const;
 
                     /**
-                     * 设置在 GET HTTP 请求中使用的路径，以作为主动运行状况检查的探测器运行。默认： ”/”。
-                     * @param _httpPath 在 GET HTTP 请求中使用的路径，以作为主动运行状况检查的探测器运行。默认： ”/”。
+                     * 设置<p>在 GET HTTP 请求中使用的路径，以作为主动运行状况检查的探测器运行。默认： ”/”。</p>
+                     * @param _httpPath <p>在 GET HTTP 请求中使用的路径，以作为主动运行状况检查的探测器运行。默认： ”/”。</p>
                      * 
                      */
                     void SetHttpPath(const std::string& _httpPath);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool HttpPathHasBeenSet() const;
 
                     /**
-                     * 获取GET HTTP 请求的超时时间，单位：秒。默认 60。
-                     * @return Timeout GET HTTP 请求的超时时间，单位：秒。默认 60。
+                     * 获取<p>GET HTTP 请求的超时时间，单位：秒。默认 60。</p>
+                     * @return Timeout <p>GET HTTP 请求的超时时间，单位：秒。默认 60。</p>
                      * 
                      */
                     double GetTimeout() const;
 
                     /**
-                     * 设置GET HTTP 请求的超时时间，单位：秒。默认 60。
-                     * @param _timeout GET HTTP 请求的超时时间，单位：秒。默认 60。
+                     * 设置<p>GET HTTP 请求的超时时间，单位：秒。默认 60。</p>
+                     * @param _timeout <p>GET HTTP 请求的超时时间，单位：秒。默认 60。</p>
                      * 
                      */
                     void SetTimeout(const double& _timeout);
@@ -130,31 +130,58 @@ namespace TencentCloud
                      */
                     bool TimeoutHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Host头</p>
+                     * @return HostHeader <p>Host头</p>
+                     * 
+                     */
+                    std::string GetHostHeader() const;
+
+                    /**
+                     * 设置<p>Host头</p>
+                     * @param _hostHeader <p>Host头</p>
+                     * 
+                     */
+                    void SetHostHeader(const std::string& _hostHeader);
+
+                    /**
+                     * 判断参数 HostHeader 是否已赋值
+                     * @return HostHeader 是否已赋值
+                     * 
+                     */
+                    bool HostHeaderHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 主动健康检查健康探测间隔，单位：秒，0表示不开启
+                     * <p>主动健康检查健康探测间隔，单位：秒，0表示不开启</p>
                      */
                     uint64_t m_healthyInterval;
                     bool m_healthyIntervalHasBeenSet;
 
                     /**
-                     * 主动健康检查异常探测间隔，单位：秒，0表示不开启
+                     * <p>主动健康检查异常探测间隔，单位：秒，0表示不开启</p>
                      */
                     uint64_t m_unHealthyInterval;
                     bool m_unHealthyIntervalHasBeenSet;
 
                     /**
-                     * 在 GET HTTP 请求中使用的路径，以作为主动运行状况检查的探测器运行。默认： ”/”。
+                     * <p>在 GET HTTP 请求中使用的路径，以作为主动运行状况检查的探测器运行。默认： ”/”。</p>
                      */
                     std::string m_httpPath;
                     bool m_httpPathHasBeenSet;
 
                     /**
-                     * GET HTTP 请求的超时时间，单位：秒。默认 60。
+                     * <p>GET HTTP 请求的超时时间，单位：秒。默认 60。</p>
                      */
                     double m_timeout;
                     bool m_timeoutHasBeenSet;
+
+                    /**
+                     * <p>Host头</p>
+                     */
+                    std::string m_hostHeader;
+                    bool m_hostHeaderHasBeenSet;
 
                 };
             }

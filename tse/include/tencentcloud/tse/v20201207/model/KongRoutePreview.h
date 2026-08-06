@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务ID
-                     * @return ID 服务ID
+                     * 获取<p>服务ID</p>
+                     * @return ID <p>服务ID</p>
                      * 
                      */
                     std::string GetID() const;
 
                     /**
-                     * 设置服务ID
-                     * @param _iD 服务ID
+                     * 设置<p>服务ID</p>
+                     * @param _iD <p>服务ID</p>
                      * 
                      */
                     void SetID(const std::string& _iD);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取服务名字
-                     * @return Name 服务名字
+                     * 获取<p>服务名字</p>
+                     * @return Name <p>服务名字</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置服务名字
-                     * @param _name 服务名字
+                     * 设置<p>服务名字</p>
+                     * @param _name <p>服务名字</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -90,18 +90,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取无
+                     * 获取<p>无</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Methods 无
+                     * @return Methods <p>无</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetMethods() const;
 
                     /**
-                     * 设置无
+                     * 设置<p>无</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _methods 无
+                     * @param _methods <p>无</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -115,18 +115,18 @@ namespace TencentCloud
                     bool MethodsHasBeenSet() const;
 
                     /**
-                     * 获取无
+                     * 获取<p>无</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Paths 无
+                     * @return Paths <p>无</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetPaths() const;
 
                     /**
-                     * 设置无
+                     * 设置<p>无</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _paths 无
+                     * @param _paths <p>无</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -140,18 +140,18 @@ namespace TencentCloud
                     bool PathsHasBeenSet() const;
 
                     /**
-                     * 获取无
+                     * 获取<p>无</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Hosts 无
+                     * @return Hosts <p>无</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetHosts() const;
 
                     /**
-                     * 设置无
+                     * 设置<p>无</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hosts 无
+                     * @param _hosts <p>无</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -165,15 +165,15 @@ namespace TencentCloud
                     bool HostsHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return Protocols 无
+                     * 获取<p>无</p>
+                     * @return Protocols <p>无</p>
                      * 
                      */
                     std::vector<std::string> GetProtocols() const;
 
                     /**
-                     * 设置无
-                     * @param _protocols 无
+                     * 设置<p>无</p>
+                     * @param _protocols <p>无</p>
                      * 
                      */
                     void SetProtocols(const std::vector<std::string>& _protocols);
@@ -186,15 +186,15 @@ namespace TencentCloud
                     bool ProtocolsHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return PreserveHost 无
+                     * 获取<p>无</p>
+                     * @return PreserveHost <p>无</p>
                      * 
                      */
                     bool GetPreserveHost() const;
 
                     /**
-                     * 设置无
-                     * @param _preserveHost 无
+                     * 设置<p>无</p>
+                     * @param _preserveHost <p>无</p>
                      * 
                      */
                     void SetPreserveHost(const bool& _preserveHost);
@@ -207,15 +207,15 @@ namespace TencentCloud
                     bool PreserveHostHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return HttpsRedirectStatusCode 无
+                     * 获取<p>无</p>
+                     * @return HttpsRedirectStatusCode <p>无</p>
                      * 
                      */
                     int64_t GetHttpsRedirectStatusCode() const;
 
                     /**
-                     * 设置无
-                     * @param _httpsRedirectStatusCode 无
+                     * 设置<p>无</p>
+                     * @param _httpsRedirectStatusCode <p>无</p>
                      * 
                      */
                     void SetHttpsRedirectStatusCode(const int64_t& _httpsRedirectStatusCode);
@@ -228,15 +228,15 @@ namespace TencentCloud
                     bool HttpsRedirectStatusCodeHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return StripPath 无
+                     * 获取<p>无</p>
+                     * @return StripPath <p>无</p>
                      * 
                      */
                     bool GetStripPath() const;
 
                     /**
-                     * 设置无
-                     * @param _stripPath 无
+                     * 设置<p>无</p>
+                     * @param _stripPath <p>无</p>
                      * 
                      */
                     void SetStripPath(const bool& _stripPath);
@@ -249,15 +249,15 @@ namespace TencentCloud
                     bool StripPathHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return CreatedTime 无
+                     * 获取<p>无</p>
+                     * @return CreatedTime <p>无</p>
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置无
-                     * @param _createdTime 无
+                     * 设置<p>无</p>
+                     * @param _createdTime <p>无</p>
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -270,18 +270,18 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启了强制HTTPS
+                     * 获取<p>是否开启了强制HTTPS</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ForceHttps 是否开启了强制HTTPS
+                     * @return ForceHttps <p>是否开启了强制HTTPS</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
                     bool GetForceHttps() const;
 
                     /**
-                     * 设置是否开启了强制HTTPS
+                     * 设置<p>是否开启了强制HTTPS</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _forceHttps 是否开启了强制HTTPS
+                     * @param _forceHttps <p>是否开启了强制HTTPS</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool ForceHttpsHasBeenSet() const;
 
                     /**
-                     * 获取服务名
-                     * @return ServiceName 服务名
+                     * 获取<p>服务名</p>
+                     * @return ServiceName <p>服务名</p>
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
-                     * 设置服务名
-                     * @param _serviceName 服务名
+                     * 设置<p>服务名</p>
+                     * @param _serviceName <p>服务名</p>
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -316,15 +316,15 @@ namespace TencentCloud
                     bool ServiceNameHasBeenSet() const;
 
                     /**
-                     * 获取服务ID
-                     * @return ServiceID 服务ID
+                     * 获取<p>服务ID</p>
+                     * @return ServiceID <p>服务ID</p>
                      * 
                      */
                     std::string GetServiceID() const;
 
                     /**
-                     * 设置服务ID
-                     * @param _serviceID 服务ID
+                     * 设置<p>服务ID</p>
+                     * @param _serviceID <p>服务ID</p>
                      * 
                      */
                     void SetServiceID(const std::string& _serviceID);
@@ -337,15 +337,15 @@ namespace TencentCloud
                     bool ServiceIDHasBeenSet() const;
 
                     /**
-                     * 获取目的端口
-                     * @return DestinationPorts 目的端口
+                     * 获取<p>目的端口</p>
+                     * @return DestinationPorts <p>目的端口</p>
                      * 
                      */
                     std::vector<uint64_t> GetDestinationPorts() const;
 
                     /**
-                     * 设置目的端口
-                     * @param _destinationPorts 目的端口
+                     * 设置<p>目的端口</p>
+                     * @param _destinationPorts <p>目的端口</p>
                      * 
                      */
                     void SetDestinationPorts(const std::vector<uint64_t>& _destinationPorts);
@@ -358,15 +358,15 @@ namespace TencentCloud
                     bool DestinationPortsHasBeenSet() const;
 
                     /**
-                     * 获取路由的Headers
-                     * @return Headers 路由的Headers
+                     * 获取<p>路由的Headers</p>
+                     * @return Headers <p>路由的Headers</p>
                      * 
                      */
                     std::vector<KVMapping> GetHeaders() const;
 
                     /**
-                     * 设置路由的Headers
-                     * @param _headers 路由的Headers
+                     * 设置<p>路由的Headers</p>
+                     * @param _headers <p>路由的Headers</p>
                      * 
                      */
                     void SetHeaders(const std::vector<KVMapping>& _headers);
@@ -379,15 +379,15 @@ namespace TencentCloud
                     bool HeadersHasBeenSet() const;
 
                     /**
-                     * 获取是否缓存请求body，默认true
-                     * @return RequestBuffering 是否缓存请求body，默认true
+                     * 获取<p>是否缓存请求body，默认true</p>
+                     * @return RequestBuffering <p>是否缓存请求body，默认true</p>
                      * 
                      */
                     bool GetRequestBuffering() const;
 
                     /**
-                     * 设置是否缓存请求body，默认true
-                     * @param _requestBuffering 是否缓存请求body，默认true
+                     * 设置<p>是否缓存请求body，默认true</p>
+                     * @param _requestBuffering <p>是否缓存请求body，默认true</p>
                      * 
                      */
                     void SetRequestBuffering(const bool& _requestBuffering);
@@ -400,15 +400,15 @@ namespace TencentCloud
                     bool RequestBufferingHasBeenSet() const;
 
                     /**
-                     * 获取是否缓存响应body，默认true
-                     * @return ResponseBuffering 是否缓存响应body，默认true
+                     * 获取<p>是否缓存响应body，默认true</p>
+                     * @return ResponseBuffering <p>是否缓存响应body，默认true</p>
                      * 
                      */
                     bool GetResponseBuffering() const;
 
                     /**
-                     * 设置是否缓存响应body，默认true
-                     * @param _responseBuffering 是否缓存响应body，默认true
+                     * 设置<p>是否缓存响应body，默认true</p>
+                     * @param _responseBuffering <p>是否缓存响应body，默认true</p>
                      * 
                      */
                     void SetResponseBuffering(const bool& _responseBuffering);
@@ -421,15 +421,15 @@ namespace TencentCloud
                     bool ResponseBufferingHasBeenSet() const;
 
                     /**
-                     * 获取正则优先级
-                     * @return RegexPriority 正则优先级
+                     * 获取<p>正则优先级</p>
+                     * @return RegexPriority <p>正则优先级</p>
                      * 
                      */
                     int64_t GetRegexPriority() const;
 
                     /**
-                     * 设置正则优先级
-                     * @param _regexPriority 正则优先级
+                     * 设置<p>正则优先级</p>
+                     * @param _regexPriority <p>正则优先级</p>
                      * 
                      */
                     void SetRegexPriority(const int64_t& _regexPriority);
@@ -442,15 +442,15 @@ namespace TencentCloud
                     bool RegexPriorityHasBeenSet() const;
 
                     /**
-                     * 获取querystring参数
-                     * @return QueryStringParameters querystring参数
+                     * 获取<p>querystring参数</p>
+                     * @return QueryStringParameters <p>querystring参数</p>
                      * 
                      */
                     std::vector<KVMapping> GetQueryStringParameters() const;
 
                     /**
-                     * 设置querystring参数
-                     * @param _queryStringParameters querystring参数
+                     * 设置<p>querystring参数</p>
+                     * @param _queryStringParameters <p>querystring参数</p>
                      * 
                      */
                     void SetQueryStringParameters(const std::vector<KVMapping>& _queryStringParameters);
@@ -462,125 +462,152 @@ namespace TencentCloud
                      */
                     bool QueryStringParametersHasBeenSet() const;
 
+                    /**
+                     * 获取<p>路由来源</p>
+                     * @return RouteSource <p>路由来源</p>
+                     * 
+                     */
+                    std::string GetRouteSource() const;
+
+                    /**
+                     * 设置<p>路由来源</p>
+                     * @param _routeSource <p>路由来源</p>
+                     * 
+                     */
+                    void SetRouteSource(const std::string& _routeSource);
+
+                    /**
+                     * 判断参数 RouteSource 是否已赋值
+                     * @return RouteSource 是否已赋值
+                     * 
+                     */
+                    bool RouteSourceHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 服务ID
+                     * <p>服务ID</p>
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 服务名字
+                     * <p>服务名字</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 无
+                     * <p>无</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_methods;
                     bool m_methodsHasBeenSet;
 
                     /**
-                     * 无
+                     * <p>无</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_paths;
                     bool m_pathsHasBeenSet;
 
                     /**
-                     * 无
+                     * <p>无</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_hosts;
                     bool m_hostsHasBeenSet;
 
                     /**
-                     * 无
+                     * <p>无</p>
                      */
                     std::vector<std::string> m_protocols;
                     bool m_protocolsHasBeenSet;
 
                     /**
-                     * 无
+                     * <p>无</p>
                      */
                     bool m_preserveHost;
                     bool m_preserveHostHasBeenSet;
 
                     /**
-                     * 无
+                     * <p>无</p>
                      */
                     int64_t m_httpsRedirectStatusCode;
                     bool m_httpsRedirectStatusCodeHasBeenSet;
 
                     /**
-                     * 无
+                     * <p>无</p>
                      */
                     bool m_stripPath;
                     bool m_stripPathHasBeenSet;
 
                     /**
-                     * 无
+                     * <p>无</p>
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 是否开启了强制HTTPS
+                     * <p>是否开启了强制HTTPS</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_forceHttps;
                     bool m_forceHttpsHasBeenSet;
 
                     /**
-                     * 服务名
+                     * <p>服务名</p>
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
 
                     /**
-                     * 服务ID
+                     * <p>服务ID</p>
                      */
                     std::string m_serviceID;
                     bool m_serviceIDHasBeenSet;
 
                     /**
-                     * 目的端口
+                     * <p>目的端口</p>
                      */
                     std::vector<uint64_t> m_destinationPorts;
                     bool m_destinationPortsHasBeenSet;
 
                     /**
-                     * 路由的Headers
+                     * <p>路由的Headers</p>
                      */
                     std::vector<KVMapping> m_headers;
                     bool m_headersHasBeenSet;
 
                     /**
-                     * 是否缓存请求body，默认true
+                     * <p>是否缓存请求body，默认true</p>
                      */
                     bool m_requestBuffering;
                     bool m_requestBufferingHasBeenSet;
 
                     /**
-                     * 是否缓存响应body，默认true
+                     * <p>是否缓存响应body，默认true</p>
                      */
                     bool m_responseBuffering;
                     bool m_responseBufferingHasBeenSet;
 
                     /**
-                     * 正则优先级
+                     * <p>正则优先级</p>
                      */
                     int64_t m_regexPriority;
                     bool m_regexPriorityHasBeenSet;
 
                     /**
-                     * querystring参数
+                     * <p>querystring参数</p>
                      */
                     std::vector<KVMapping> m_queryStringParameters;
                     bool m_queryStringParametersHasBeenSet;
+
+                    /**
+                     * <p>路由来源</p>
+                     */
+                    std::string m_routeSource;
+                    bool m_routeSourceHasBeenSet;
 
                 };
             }

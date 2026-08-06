@@ -44,7 +44,8 @@ CreateReadOnlyDBInstanceRequest::CreateReadOnlyDBInstanceRequest() :
     m_nameHasBeenSet(false),
     m_dBVersionHasBeenSet(false),
     m_dedicatedClusterIdHasBeenSet(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -240,6 +241,21 @@ string CreateReadOnlyDBInstanceRequest::ToJsonString() const
         string key = "DeletionProtection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deletionProtection, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -600,6 +616,22 @@ void CreateReadOnlyDBInstanceRequest::SetDeletionProtection(const bool& _deletio
 bool CreateReadOnlyDBInstanceRequest::DeletionProtectionHasBeenSet() const
 {
     return m_deletionProtectionHasBeenSet;
+}
+
+vector<Tag> CreateReadOnlyDBInstanceRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateReadOnlyDBInstanceRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateReadOnlyDBInstanceRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/postgres/v20170312/model/ParamEntry.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，形如：postgres-6bwgamo3。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
-                     * @return DBInstanceId 实例ID，形如：postgres-6bwgamo3。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * 获取<p>实例ID，形如：postgres-6bwgamo3。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
+                     * @return DBInstanceId <p>实例ID，形如：postgres-6bwgamo3。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置实例ID，形如：postgres-6bwgamo3。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
-                     * @param _dBInstanceId 实例ID，形如：postgres-6bwgamo3。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * 设置<p>实例ID，形如：postgres-6bwgamo3。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
+                     * @param _dBInstanceId <p>实例ID，形如：postgres-6bwgamo3。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取修改后的实例内存大小，单位GiB。
-                     * @return Memory 修改后的实例内存大小，单位GiB。
+                     * 获取<p>修改后的实例内存大小，单位GB。</p>
+                     * @return Memory <p>修改后的实例内存大小，单位GB。</p>
                      * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
-                     * 设置修改后的实例内存大小，单位GiB。
-                     * @param _memory 修改后的实例内存大小，单位GiB。
+                     * 设置<p>修改后的实例内存大小，单位GB。</p>
+                     * @param _memory <p>修改后的实例内存大小，单位GB。</p>
                      * 
                      */
                     void SetMemory(const uint64_t& _memory);
@@ -85,15 +86,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取修改后的实例磁盘大小，单位GiB。该参数的设置步长为10。
-                     * @return Storage 修改后的实例磁盘大小，单位GiB。该参数的设置步长为10。
+                     * 获取<p>修改后的实例磁盘大小，单位GB。该参数的设置步长为10。</p>
+                     * @return Storage <p>修改后的实例磁盘大小，单位GB。该参数的设置步长为10。</p>
                      * 
                      */
                     uint64_t GetStorage() const;
 
                     /**
-                     * 设置修改后的实例磁盘大小，单位GiB。该参数的设置步长为10。
-                     * @param _storage 修改后的实例磁盘大小，单位GiB。该参数的设置步长为10。
+                     * 设置<p>修改后的实例磁盘大小，单位GB。该参数的设置步长为10。</p>
+                     * @param _storage <p>修改后的实例磁盘大小，单位GB。该参数的设置步长为10。</p>
                      * 
                      */
                     void SetStorage(const uint64_t& _storage);
@@ -106,27 +107,15 @@ namespace TencentCloud
                     bool StorageHasBeenSet() const;
 
                     /**
-                     * 获取是否自动使用代金券：
-<li>0：否</li>
-<li>1：是</li>
-默认值：0
-                     * @return AutoVoucher 是否自动使用代金券：
-<li>0：否</li>
-<li>1：是</li>
-默认值：0
+                     * 获取<p>是否自动使用代金券：</p><li>0：否</li><li>1：是</li>默认值：0
+                     * @return AutoVoucher <p>是否自动使用代金券：</p><li>0：否</li><li>1：是</li>默认值：0
                      * 
                      */
                     uint64_t GetAutoVoucher() const;
 
                     /**
-                     * 设置是否自动使用代金券：
-<li>0：否</li>
-<li>1：是</li>
-默认值：0
-                     * @param _autoVoucher 是否自动使用代金券：
-<li>0：否</li>
-<li>1：是</li>
-默认值：0
+                     * 设置<p>是否自动使用代金券：</p><li>0：否</li><li>1：是</li>默认值：0
+                     * @param _autoVoucher <p>是否自动使用代金券：</p><li>0：否</li><li>1：是</li>默认值：0
                      * 
                      */
                     void SetAutoVoucher(const uint64_t& _autoVoucher);
@@ -139,15 +128,15 @@ namespace TencentCloud
                     bool AutoVoucherHasBeenSet() const;
 
                     /**
-                     * 获取代金券ID列表，目前仅支持指定一张代金券。
-                     * @return VoucherIds 代金券ID列表，目前仅支持指定一张代金券。
+                     * 获取<p>代金券ID列表，目前仅支持指定一张代金券。</p>
+                     * @return VoucherIds <p>代金券ID列表，目前仅支持指定一张代金券。</p>
                      * 
                      */
                     std::vector<std::string> GetVoucherIds() const;
 
                     /**
-                     * 设置代金券ID列表，目前仅支持指定一张代金券。
-                     * @param _voucherIds 代金券ID列表，目前仅支持指定一张代金券。
+                     * 设置<p>代金券ID列表，目前仅支持指定一张代金券。</p>
+                     * @param _voucherIds <p>代金券ID列表，目前仅支持指定一张代金券。</p>
                      * 
                      */
                     void SetVoucherIds(const std::vector<std::string>& _voucherIds);
@@ -160,15 +149,15 @@ namespace TencentCloud
                     bool VoucherIdsHasBeenSet() const;
 
                     /**
-                     * 获取活动ID。
-                     * @return ActivityId 活动ID。
+                     * 获取<p>活动ID。</p>
+                     * @return ActivityId <p>活动ID。</p>
                      * 
                      */
                     uint64_t GetActivityId() const;
 
                     /**
-                     * 设置活动ID。
-                     * @param _activityId 活动ID。
+                     * 设置<p>活动ID。</p>
+                     * @param _activityId <p>活动ID。</p>
                      * 
                      */
                     void SetActivityId(const uint64_t& _activityId);
@@ -181,31 +170,15 @@ namespace TencentCloud
                     bool ActivityIdHasBeenSet() const;
 
                     /**
-                     * 获取指定实例配置完成变更后的切换时间。
-<li>0：立即切换 </li>
-<li>1：指定时间切换</li>
-<li>2：维护时间窗口内</li>切换
-默认值：0 
-                     * @return SwitchTag 指定实例配置完成变更后的切换时间。
-<li>0：立即切换 </li>
-<li>1：指定时间切换</li>
-<li>2：维护时间窗口内</li>切换
-默认值：0 
+                     * 获取<p>指定实例配置完成变更后的切换时间。</p><li>0：立即切换 </li><li>1：指定时间切换</li><li>2：维护时间窗口内</li>切换默认值：0
+                     * @return SwitchTag <p>指定实例配置完成变更后的切换时间。</p><li>0：立即切换 </li><li>1：指定时间切换</li><li>2：维护时间窗口内</li>切换默认值：0
                      * 
                      */
                     uint64_t GetSwitchTag() const;
 
                     /**
-                     * 设置指定实例配置完成变更后的切换时间。
-<li>0：立即切换 </li>
-<li>1：指定时间切换</li>
-<li>2：维护时间窗口内</li>切换
-默认值：0 
-                     * @param _switchTag 指定实例配置完成变更后的切换时间。
-<li>0：立即切换 </li>
-<li>1：指定时间切换</li>
-<li>2：维护时间窗口内</li>切换
-默认值：0 
+                     * 设置<p>指定实例配置完成变更后的切换时间。</p><li>0：立即切换 </li><li>1：指定时间切换</li><li>2：维护时间窗口内</li>切换默认值：0
+                     * @param _switchTag <p>指定实例配置完成变更后的切换时间。</p><li>0：立即切换 </li><li>1：指定时间切换</li><li>2：维护时间窗口内</li>切换默认值：0
                      * 
                      */
                     void SetSwitchTag(const uint64_t& _switchTag);
@@ -218,15 +191,15 @@ namespace TencentCloud
                     bool SwitchTagHasBeenSet() const;
 
                     /**
-                     * 获取切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。
-                     * @return SwitchStartTime 切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。
+                     * 获取<p>切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。</p>
+                     * @return SwitchStartTime <p>切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。</p>
                      * 
                      */
                     std::string GetSwitchStartTime() const;
 
                     /**
-                     * 设置切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。
-                     * @param _switchStartTime 切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。
+                     * 设置<p>切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。</p>
+                     * @param _switchStartTime <p>切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。</p>
                      * 
                      */
                     void SetSwitchStartTime(const std::string& _switchStartTime);
@@ -239,15 +212,15 @@ namespace TencentCloud
                     bool SwitchStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。
-                     * @return SwitchEndTime 切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。
+                     * 获取<p>切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。</p>
+                     * @return SwitchEndTime <p>切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。</p>
                      * 
                      */
                     std::string GetSwitchEndTime() const;
 
                     /**
-                     * 设置切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。
-                     * @param _switchEndTime 切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。
+                     * 设置<p>切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。</p>
+                     * @param _switchEndTime <p>切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。</p>
                      * 
                      */
                     void SetSwitchEndTime(const std::string& _switchEndTime);
@@ -260,15 +233,15 @@ namespace TencentCloud
                     bool SwitchEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取修改后的实例CPU大小，单位Core。不填写该参数时，默认根据Memory确定Cpu大小。如Memory为2，支持的规格有1核2GiB，则不传入Cpu时，Cpu默认为1。
-                     * @return Cpu 修改后的实例CPU大小，单位Core。不填写该参数时，默认根据Memory确定Cpu大小。如Memory为2，支持的规格有1核2GiB，则不传入Cpu时，Cpu默认为1。
+                     * 获取<p>修改后的实例CPU大小，单位Core。不填写该参数时，默认根据Memory确定Cpu大小。如Memory为2，支持的规格有1核2GB，则不传入Cpu时，Cpu默认为1。</p>
+                     * @return Cpu <p>修改后的实例CPU大小，单位Core。不填写该参数时，默认根据Memory确定Cpu大小。如Memory为2，支持的规格有1核2GB，则不传入Cpu时，Cpu默认为1。</p>
                      * 
                      */
                     uint64_t GetCpu() const;
 
                     /**
-                     * 设置修改后的实例CPU大小，单位Core。不填写该参数时，默认根据Memory确定Cpu大小。如Memory为2，支持的规格有1核2GiB，则不传入Cpu时，Cpu默认为1。
-                     * @param _cpu 修改后的实例CPU大小，单位Core。不填写该参数时，默认根据Memory确定Cpu大小。如Memory为2，支持的规格有1核2GiB，则不传入Cpu时，Cpu默认为1。
+                     * 设置<p>修改后的实例CPU大小，单位Core。不填写该参数时，默认根据Memory确定Cpu大小。如Memory为2，支持的规格有1核2GB，则不传入Cpu时，Cpu默认为1。</p>
+                     * @param _cpu <p>修改后的实例CPU大小，单位Core。不填写该参数时，默认根据Memory确定Cpu大小。如Memory为2，支持的规格有1核2GB，则不传入Cpu时，Cpu默认为1。</p>
                      * 
                      */
                     void SetCpu(const uint64_t& _cpu);
@@ -280,74 +253,94 @@ namespace TencentCloud
                      */
                     bool CpuHasBeenSet() const;
 
+                    /**
+                     * 获取<p>变配时同步修改的参数列表</p>
+                     * @return SyncModifyParams <p>变配时同步修改的参数列表</p>
+                     * 
+                     */
+                    std::vector<ParamEntry> GetSyncModifyParams() const;
+
+                    /**
+                     * 设置<p>变配时同步修改的参数列表</p>
+                     * @param _syncModifyParams <p>变配时同步修改的参数列表</p>
+                     * 
+                     */
+                    void SetSyncModifyParams(const std::vector<ParamEntry>& _syncModifyParams);
+
+                    /**
+                     * 判断参数 SyncModifyParams 是否已赋值
+                     * @return SyncModifyParams 是否已赋值
+                     * 
+                     */
+                    bool SyncModifyParamsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID，形如：postgres-6bwgamo3。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * <p>实例ID，形如：postgres-6bwgamo3。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 修改后的实例内存大小，单位GiB。
+                     * <p>修改后的实例内存大小，单位GB。</p>
                      */
                     uint64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 修改后的实例磁盘大小，单位GiB。该参数的设置步长为10。
+                     * <p>修改后的实例磁盘大小，单位GB。该参数的设置步长为10。</p>
                      */
                     uint64_t m_storage;
                     bool m_storageHasBeenSet;
 
                     /**
-                     * 是否自动使用代金券：
-<li>0：否</li>
-<li>1：是</li>
-默认值：0
+                     * <p>是否自动使用代金券：</p><li>0：否</li><li>1：是</li>默认值：0
                      */
                     uint64_t m_autoVoucher;
                     bool m_autoVoucherHasBeenSet;
 
                     /**
-                     * 代金券ID列表，目前仅支持指定一张代金券。
+                     * <p>代金券ID列表，目前仅支持指定一张代金券。</p>
                      */
                     std::vector<std::string> m_voucherIds;
                     bool m_voucherIdsHasBeenSet;
 
                     /**
-                     * 活动ID。
+                     * <p>活动ID。</p>
                      */
                     uint64_t m_activityId;
                     bool m_activityIdHasBeenSet;
 
                     /**
-                     * 指定实例配置完成变更后的切换时间。
-<li>0：立即切换 </li>
-<li>1：指定时间切换</li>
-<li>2：维护时间窗口内</li>切换
-默认值：0 
+                     * <p>指定实例配置完成变更后的切换时间。</p><li>0：立即切换 </li><li>1：指定时间切换</li><li>2：维护时间窗口内</li>切换默认值：0
                      */
                     uint64_t m_switchTag;
                     bool m_switchTagHasBeenSet;
 
                     /**
-                     * 切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。
+                     * <p>切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。</p>
                      */
                     std::string m_switchStartTime;
                     bool m_switchStartTimeHasBeenSet;
 
                     /**
-                     * 切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。
+                     * <p>切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。</p>
                      */
                     std::string m_switchEndTime;
                     bool m_switchEndTimeHasBeenSet;
 
                     /**
-                     * 修改后的实例CPU大小，单位Core。不填写该参数时，默认根据Memory确定Cpu大小。如Memory为2，支持的规格有1核2GiB，则不传入Cpu时，Cpu默认为1。
+                     * <p>修改后的实例CPU大小，单位Core。不填写该参数时，默认根据Memory确定Cpu大小。如Memory为2，支持的规格有1核2GB，则不传入Cpu时，Cpu默认为1。</p>
                      */
                     uint64_t m_cpu;
                     bool m_cpuHasBeenSet;
+
+                    /**
+                     * <p>变配时同步修改的参数列表</p>
+                     */
+                    std::vector<ParamEntry> m_syncModifyParams;
+                    bool m_syncModifyParamsHasBeenSet;
 
                 };
             }

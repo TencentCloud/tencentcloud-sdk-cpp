@@ -49,7 +49,11 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_productVersionHasBeenSet(false),
     m_redisClusterIdHasBeenSet(false),
     m_alarmPolicyListHasBeenSet(false),
-    m_encryptPasswordHasBeenSet(false)
+    m_encryptPasswordHasBeenSet(false),
+    m_passwordPolicyHasBeenSet(false),
+    m_enableSSLHasBeenSet(false),
+    m_sSLBindPrivateIPv4HasBeenSet(false),
+    m_connectionModeHasBeenSet(false)
 {
 }
 
@@ -298,6 +302,39 @@ string CreateInstancesRequest::ToJsonString() const
         string key = "EncryptPassword";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_encryptPassword, allocator);
+    }
+
+    if (m_passwordPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PasswordPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_passwordPolicy.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_enableSSLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableSSL";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableSSL, allocator);
+    }
+
+    if (m_sSLBindPrivateIPv4HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SSLBindPrivateIPv4";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sSLBindPrivateIPv4, allocator);
+    }
+
+    if (m_connectionModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectionMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_connectionMode, allocator);
     }
 
 
@@ -738,6 +775,70 @@ void CreateInstancesRequest::SetEncryptPassword(const bool& _encryptPassword)
 bool CreateInstancesRequest::EncryptPasswordHasBeenSet() const
 {
     return m_encryptPasswordHasBeenSet;
+}
+
+PasswordPolicy CreateInstancesRequest::GetPasswordPolicy() const
+{
+    return m_passwordPolicy;
+}
+
+void CreateInstancesRequest::SetPasswordPolicy(const PasswordPolicy& _passwordPolicy)
+{
+    m_passwordPolicy = _passwordPolicy;
+    m_passwordPolicyHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::PasswordPolicyHasBeenSet() const
+{
+    return m_passwordPolicyHasBeenSet;
+}
+
+bool CreateInstancesRequest::GetEnableSSL() const
+{
+    return m_enableSSL;
+}
+
+void CreateInstancesRequest::SetEnableSSL(const bool& _enableSSL)
+{
+    m_enableSSL = _enableSSL;
+    m_enableSSLHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::EnableSSLHasBeenSet() const
+{
+    return m_enableSSLHasBeenSet;
+}
+
+bool CreateInstancesRequest::GetSSLBindPrivateIPv4() const
+{
+    return m_sSLBindPrivateIPv4;
+}
+
+void CreateInstancesRequest::SetSSLBindPrivateIPv4(const bool& _sSLBindPrivateIPv4)
+{
+    m_sSLBindPrivateIPv4 = _sSLBindPrivateIPv4;
+    m_sSLBindPrivateIPv4HasBeenSet = true;
+}
+
+bool CreateInstancesRequest::SSLBindPrivateIPv4HasBeenSet() const
+{
+    return m_sSLBindPrivateIPv4HasBeenSet;
+}
+
+int64_t CreateInstancesRequest::GetConnectionMode() const
+{
+    return m_connectionMode;
+}
+
+void CreateInstancesRequest::SetConnectionMode(const int64_t& _connectionMode)
+{
+    m_connectionMode = _connectionMode;
+    m_connectionModeHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::ConnectionModeHasBeenSet() const
+{
+    return m_connectionModeHasBeenSet;
 }
 
 

@@ -86,7 +86,8 @@ DeployContainerApplicationRequest::DeployContainerApplicationRequest() :
     m_partitionHasBeenSet(false),
     m_incrementalDeploymentHasBeenSet(false),
     m_doNotStartHasBeenSet(false),
-    m_imagePullSecretListHasBeenSet(false)
+    m_imagePullSecretListHasBeenSet(false),
+    m_meshSidecarVersionHasBeenSet(false)
 {
 }
 
@@ -674,6 +675,14 @@ string DeployContainerApplicationRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_meshSidecarVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MeshSidecarVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_meshSidecarVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1706,6 +1715,22 @@ void DeployContainerApplicationRequest::SetImagePullSecretList(const vector<stri
 bool DeployContainerApplicationRequest::ImagePullSecretListHasBeenSet() const
 {
     return m_imagePullSecretListHasBeenSet;
+}
+
+string DeployContainerApplicationRequest::GetMeshSidecarVersion() const
+{
+    return m_meshSidecarVersion;
+}
+
+void DeployContainerApplicationRequest::SetMeshSidecarVersion(const string& _meshSidecarVersion)
+{
+    m_meshSidecarVersion = _meshSidecarVersion;
+    m_meshSidecarVersionHasBeenSet = true;
+}
+
+bool DeployContainerApplicationRequest::MeshSidecarVersionHasBeenSet() const
+{
+    return m_meshSidecarVersionHasBeenSet;
 }
 
 

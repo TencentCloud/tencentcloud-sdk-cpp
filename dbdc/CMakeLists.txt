@@ -23,6 +23,7 @@ set(dbdc_public_header_model
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterDetailResponse.h
   include/tencentcloud/dbdc/v20201029/model/DestroyDBCustomClusterRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterResourcesRequest.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeInstancesRequest.h
   include/tencentcloud/dbdc/v20201029/model/ModifyInstanceNameRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterNodeConfigResponse.h
   include/tencentcloud/dbdc/v20201029/model/DescribeInstancesResponse.h
@@ -71,6 +72,7 @@ set(dbdc_public_header_model
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterNodeResourcesRequest.h
   include/tencentcloud/dbdc/v20201029/model/ResourceTag.h
   include/tencentcloud/dbdc/v20201029/model/DataDisk.h
+  include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterAttributesRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomNodeTypesRequest.h
   include/tencentcloud/dbdc/v20201029/model/LoginSettings.h
   include/tencentcloud/dbdc/v20201029/model/SecurityGroup.h
@@ -96,7 +98,7 @@ set(dbdc_public_header_model
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomNodeSecurityGroupsResponse.h
   include/tencentcloud/dbdc/v20201029/model/DestroyDBCustomNodeResponse.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomTaskStatusRequest.h
-  include/tencentcloud/dbdc/v20201029/model/DescribeInstancesRequest.h
+  include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterAttributesResponse.h
   include/tencentcloud/dbdc/v20201029/model/ApiServerNetwork.h
   include/tencentcloud/dbdc/v20201029/model/RegionInfo.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomZonesResponse.h
@@ -124,6 +126,7 @@ set(dbdc_src
   src/v20201029/model/DescribeDBCustomClusterDetailResponse.cpp
   src/v20201029/model/DestroyDBCustomClusterRequest.cpp
   src/v20201029/model/DescribeDBCustomClusterResourcesRequest.cpp
+  src/v20201029/model/DescribeInstancesRequest.cpp
   src/v20201029/model/ModifyInstanceNameRequest.cpp
   src/v20201029/model/DescribeDBCustomClusterNodeConfigResponse.cpp
   src/v20201029/model/DescribeInstancesResponse.cpp
@@ -172,6 +175,7 @@ set(dbdc_src
   src/v20201029/model/DescribeDBCustomClusterNodeResourcesRequest.cpp
   src/v20201029/model/ResourceTag.cpp
   src/v20201029/model/DataDisk.cpp
+  src/v20201029/model/ModifyDBCustomClusterAttributesRequest.cpp
   src/v20201029/model/DescribeDBCustomNodeTypesRequest.cpp
   src/v20201029/model/LoginSettings.cpp
   src/v20201029/model/SecurityGroup.cpp
@@ -197,7 +201,7 @@ set(dbdc_src
   src/v20201029/model/DescribeDBCustomNodeSecurityGroupsResponse.cpp
   src/v20201029/model/DestroyDBCustomNodeResponse.cpp
   src/v20201029/model/DescribeDBCustomTaskStatusRequest.cpp
-  src/v20201029/model/DescribeInstancesRequest.cpp
+  src/v20201029/model/ModifyDBCustomClusterAttributesResponse.cpp
   src/v20201029/model/ApiServerNetwork.cpp
   src/v20201029/model/RegionInfo.cpp
   src/v20201029/model/DescribeDBCustomZonesResponse.cpp

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取识别出的车牌号码。
-                     * @return Number 识别出的车牌号码。
+                     * 获取<p>识别出的车牌号码。</p>
+                     * @return Number <p>识别出的车牌号码。</p>
                      * 
                      */
                     std::string GetNumber() const;
 
                     /**
-                     * 设置识别出的车牌号码。
-                     * @param _number 识别出的车牌号码。
+                     * 设置<p>识别出的车牌号码。</p>
+                     * @param _number <p>识别出的车牌号码。</p>
                      * 
                      */
                     void SetNumber(const std::string& _number);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool NumberHasBeenSet() const;
 
                     /**
-                     * 获取置信度，0 - 100 之间。
-                     * @return Confidence 置信度，0 - 100 之间。
+                     * 获取<p>置信度，0 - 100 之间。</p>
+                     * @return Confidence <p>置信度，0 - 100 之间。</p>
                      * 
                      */
                     int64_t GetConfidence() const;
 
                     /**
-                     * 设置置信度，0 - 100 之间。
-                     * @param _confidence 置信度，0 - 100 之间。
+                     * 设置<p>置信度，0 - 100 之间。</p>
+                     * @param _confidence <p>置信度，0 - 100 之间。</p>
                      * 
                      */
                     void SetConfidence(const int64_t& _confidence);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取文本行在原图片中的像素坐标框。
-                     * @return Rect 文本行在原图片中的像素坐标框。
+                     * 获取<p>文本行在原图片中的像素坐标框。</p>
+                     * @return Rect <p>文本行在原图片中的像素坐标框。</p>
                      * 
                      */
                     Rect GetRect() const;
 
                     /**
-                     * 设置文本行在原图片中的像素坐标框。
-                     * @param _rect 文本行在原图片中的像素坐标框。
+                     * 设置<p>文本行在原图片中的像素坐标框。</p>
+                     * @param _rect <p>文本行在原图片中的像素坐标框。</p>
                      * 
                      */
                     void SetRect(const Rect& _rect);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool RectHasBeenSet() const;
 
                     /**
-                     * 获取识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。
-                     * @return Color 识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。
+                     * 获取<p>识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。</p>
+                     * @return Color <p>识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。</p>
                      * 
                      */
                     std::string GetColor() const;
 
                     /**
-                     * 设置识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。
-                     * @param _color 识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。
+                     * 设置<p>识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。</p>
+                     * @param _color <p>识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。</p>
                      * 
                      */
                     void SetColor(const std::string& _color);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool ColorHasBeenSet() const;
 
                     /**
-                     * 获取车牌类别， 如： 实体车牌、非实体车牌
-                     * @return LicensePlateCategory 车牌类别， 如： 实体车牌、非实体车牌
+                     * 获取<p>车牌类别， 如： 标准实体车牌、非标准实体车牌、临牌、喷漆车牌</p>
+                     * @return LicensePlateCategory <p>车牌类别， 如： 标准实体车牌、非标准实体车牌、临牌、喷漆车牌</p>
                      * 
                      */
                     std::string GetLicensePlateCategory() const;
 
                     /**
-                     * 设置车牌类别， 如： 实体车牌、非实体车牌
-                     * @param _licensePlateCategory 车牌类别， 如： 实体车牌、非实体车牌
+                     * 设置<p>车牌类别， 如： 标准实体车牌、非标准实体车牌、临牌、喷漆车牌</p>
+                     * @param _licensePlateCategory <p>车牌类别， 如： 标准实体车牌、非标准实体车牌、临牌、喷漆车牌</p>
                      * 
                      */
                     void SetLicensePlateCategory(const std::string& _licensePlateCategory);
@@ -155,31 +155,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 识别出的车牌号码。
+                     * <p>识别出的车牌号码。</p>
                      */
                     std::string m_number;
                     bool m_numberHasBeenSet;
 
                     /**
-                     * 置信度，0 - 100 之间。
+                     * <p>置信度，0 - 100 之间。</p>
                      */
                     int64_t m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * 文本行在原图片中的像素坐标框。
+                     * <p>文本行在原图片中的像素坐标框。</p>
                      */
                     Rect m_rect;
                     bool m_rectHasBeenSet;
 
                     /**
-                     * 识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。
+                     * <p>识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。</p>
                      */
                     std::string m_color;
                     bool m_colorHasBeenSet;
 
                     /**
-                     * 车牌类别， 如： 实体车牌、非实体车牌
+                     * <p>车牌类别， 如： 标准实体车牌、非标准实体车牌、临牌、喷漆车牌</p>
                      */
                     std::string m_licensePlateCategory;
                     bool m_licensePlateCategoryHasBeenSet;

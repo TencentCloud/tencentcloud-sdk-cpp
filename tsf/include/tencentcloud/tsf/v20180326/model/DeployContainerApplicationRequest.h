@@ -1400,6 +1400,27 @@ namespace TencentCloud
                      */
                     bool ImagePullSecretListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用于区分使用sidecar的版本是稳定版还是发行版</p><p>枚举值：</p><ul><li>stable： sidecar稳定版</li><li>release： sidecar发行版</li></ul>
+                     * @return MeshSidecarVersion <p>用于区分使用sidecar的版本是稳定版还是发行版</p><p>枚举值：</p><ul><li>stable： sidecar稳定版</li><li>release： sidecar发行版</li></ul>
+                     * 
+                     */
+                    std::string GetMeshSidecarVersion() const;
+
+                    /**
+                     * 设置<p>用于区分使用sidecar的版本是稳定版还是发行版</p><p>枚举值：</p><ul><li>stable： sidecar稳定版</li><li>release： sidecar发行版</li></ul>
+                     * @param _meshSidecarVersion <p>用于区分使用sidecar的版本是稳定版还是发行版</p><p>枚举值：</p><ul><li>stable： sidecar稳定版</li><li>release： sidecar发行版</li></ul>
+                     * 
+                     */
+                    void SetMeshSidecarVersion(const std::string& _meshSidecarVersion);
+
+                    /**
+                     * 判断参数 MeshSidecarVersion 是否已赋值
+                     * @return MeshSidecarVersion 是否已赋值
+                     * 
+                     */
+                    bool MeshSidecarVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1785,6 +1806,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_imagePullSecretList;
                     bool m_imagePullSecretListHasBeenSet;
+
+                    /**
+                     * <p>用于区分使用sidecar的版本是稳定版还是发行版</p><p>枚举值：</p><ul><li>stable： sidecar稳定版</li><li>release： sidecar发行版</li></ul>
+                     */
+                    std::string m_meshSidecarVersion;
+                    bool m_meshSidecarVersionHasBeenSet;
 
                 };
             }

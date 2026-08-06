@@ -86,6 +86,20 @@ namespace TencentCloud
                      */
                     bool QuestionCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>客户图片url</p>
+                     * @return OriginalImageUrl <p>客户图片url</p>
+                     * 
+                     */
+                    std::string GetOriginalImageUrl() const;
+
+                    /**
+                     * 判断参数 OriginalImageUrl 是否已赋值
+                     * @return OriginalImageUrl 是否已赋值
+                     * 
+                     */
+                    bool OriginalImageUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,6 +119,12 @@ namespace TencentCloud
                      */
                     std::string m_questionCount;
                     bool m_questionCountHasBeenSet;
+
+                    /**
+                     * <p>客户图片url</p>
+                     */
+                    std::string m_originalImageUrl;
+                    bool m_originalImageUrlHasBeenSet;
 
                 };
             }
