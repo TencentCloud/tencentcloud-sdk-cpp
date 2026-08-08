@@ -171,6 +171,10 @@
          httpProfile.SetEndpoint("cbs.ap-guangzhou.tencentcloudapi.com");
          httpProfile.SetReqTimeout(5);
          httpProfile.SetCaPath("/tmp/nodir/");
+         // Also override CAINFO so that libcurl's compile-time default
+         // CA bundle (if any) is disabled. Both CA sources must be
+         // invalid for the SSL handshake to reliably fail.
+         httpProfile.SetCaInfo("/tmp/noexist.pem");
 
          ClientProfile clientProfile = ClientProfile(httpProfile);
 
