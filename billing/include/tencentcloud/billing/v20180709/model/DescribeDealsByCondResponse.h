@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订单列表
-                     * @return Deals 订单列表
+                     * 获取<p>订单列表</p>
+                     * @return Deals <p>订单列表</p>
                      * 
                      */
                     std::vector<Deal> GetDeals() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool DealsHasBeenSet() const;
 
                     /**
-                     * 获取订单总数
-                     * @return TotalCount 订单总数
+                     * 获取<p>订单总数</p>
+                     * @return TotalCount <p>订单总数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订单列表
+                     * <p>订单列表</p>
                      */
                     std::vector<Deal> m_deals;
                     bool m_dealsHasBeenSet;
 
                     /**
-                     * 订单总数
+                     * <p>订单总数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

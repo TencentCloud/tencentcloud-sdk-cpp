@@ -21,12 +21,14 @@ set(oceanus_public_header
 set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/ParseConnectorRequest.h
   include/tencentcloud/oceanus/v20190422/model/CopyJobResult.h
+  include/tencentcloud/oceanus/v20190422/model/StatementResult.h
   include/tencentcloud/oceanus/v20190422/model/CreateResourceRequest.h
   include/tencentcloud/oceanus/v20190422/model/ModifyFolderRequest.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobSubmissionLogResponse.h
   include/tencentcloud/oceanus/v20190422/model/DeleteJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/ModifyWorkSpaceRequest.h
   include/tencentcloud/oceanus/v20190422/model/ModifyJobResponse.h
+  include/tencentcloud/oceanus/v20190422/model/ModifyMetaTableResponse.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobConfigResponse.h
   include/tencentcloud/oceanus/v20190422/model/CreateResourceConfigResponse.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobConfigRequest.h
@@ -47,6 +49,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/DescribeJobConfigsRequest.h
   include/tencentcloud/oceanus/v20190422/model/StopJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/ResultColumn.h
+  include/tencentcloud/oceanus/v20190422/model/CreateMetaDatabaseRequest.h
   include/tencentcloud/oceanus/v20190422/model/Setats.h
   include/tencentcloud/oceanus/v20190422/model/TreeJobSets.h
   include/tencentcloud/oceanus/v20190422/model/ResourceItem.h
@@ -68,16 +71,17 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/CreateWorkSpaceResponse.h
   include/tencentcloud/oceanus/v20190422/model/SlaveZone.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobResponse.h
-  include/tencentcloud/oceanus/v20190422/model/SqlGatewayItem.h
+  include/tencentcloud/oceanus/v20190422/model/DeleteResourcesResponse.h
   include/tencentcloud/oceanus/v20190422/model/DescribeVariablesRequest.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobRuntimeInfoResponse.h
   include/tencentcloud/oceanus/v20190422/model/StopJobDescription.h
   include/tencentcloud/oceanus/v20190422/model/CreateFolderRequest.h
   include/tencentcloud/oceanus/v20190422/model/DeleteJobConfigsResponse.h
+  include/tencentcloud/oceanus/v20190422/model/SqlGatewayItem.h
   include/tencentcloud/oceanus/v20190422/model/DeleteTableConfigRequest.h
-  include/tencentcloud/oceanus/v20190422/model/StatementResult.h
+  include/tencentcloud/oceanus/v20190422/model/Savepoint.h
   include/tencentcloud/oceanus/v20190422/model/DescribeTreeJobsRsp.h
-  include/tencentcloud/oceanus/v20190422/model/DeleteResourcesResponse.h
+  include/tencentcloud/oceanus/v20190422/model/CreateConnectorRequest.h
   include/tencentcloud/oceanus/v20190422/model/DeleteTableConfigResponse.h
   include/tencentcloud/oceanus/v20190422/model/SlotSharingGroupSpec.h
   include/tencentcloud/oceanus/v20190422/model/Tag.h
@@ -85,6 +89,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/FetchSqlGatewayStatementResultResponse.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobSavepointResponse.h
   include/tencentcloud/oceanus/v20190422/model/JobGraphNode.h
+  include/tencentcloud/oceanus/v20190422/model/ModifyMetaTableRequest.h
   include/tencentcloud/oceanus/v20190422/model/CreateWorkSpaceRequest.h
   include/tencentcloud/oceanus/v20190422/model/DeleteResourceConfigsRequest.h
   include/tencentcloud/oceanus/v20190422/model/DescribeVariablesResponse.h
@@ -115,6 +120,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/DeleteJobConfigsRequest.h
   include/tencentcloud/oceanus/v20190422/model/RenewOceanusClusterRequest.h
   include/tencentcloud/oceanus/v20190422/model/TraceModeConfiguration.h
+  include/tencentcloud/oceanus/v20190422/model/CreateMetaTableResponse.h
   include/tencentcloud/oceanus/v20190422/model/RunJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/DeleteWorkSpaceResponse.h
   include/tencentcloud/oceanus/v20190422/model/HadoopYarnItem.h
@@ -123,7 +129,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/DeleteJobsResponse.h
   include/tencentcloud/oceanus/v20190422/model/Property.h
   include/tencentcloud/oceanus/v20190422/model/JobGraphEdge.h
-  include/tencentcloud/oceanus/v20190422/model/Savepoint.h
+  include/tencentcloud/oceanus/v20190422/model/CreateMetaTableRequest.h
   include/tencentcloud/oceanus/v20190422/model/RunSqlGatewayStatementResponse.h
   include/tencentcloud/oceanus/v20190422/model/SystemResourceItem.h
   include/tencentcloud/oceanus/v20190422/model/DescribeResourceRelatedJobsRequest.h
@@ -131,7 +137,6 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/RoleAuth.h
   include/tencentcloud/oceanus/v20190422/model/DescribeTreeResourcesRsp.h
   include/tencentcloud/oceanus/v20190422/model/ResourceRefDetail.h
-  include/tencentcloud/oceanus/v20190422/model/SetatsCvmInfo.h
   include/tencentcloud/oceanus/v20190422/model/TreeResourceItem.h
   include/tencentcloud/oceanus/v20190422/model/DescribeTreeResourcesResponse.h
   include/tencentcloud/oceanus/v20190422/model/CreateVariableResponse.h
@@ -179,10 +184,11 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/CheckSavepointResponse.h
   include/tencentcloud/oceanus/v20190422/model/DeleteOceanusClusterResponse.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobsResponse.h
+  include/tencentcloud/oceanus/v20190422/model/CreateMetaDatabaseResponse.h
   include/tencentcloud/oceanus/v20190422/model/ExpertModeConfiguration.h
   include/tencentcloud/oceanus/v20190422/model/SqlGatewayEndpoint.h
   include/tencentcloud/oceanus/v20190422/model/Order.h
-  include/tencentcloud/oceanus/v20190422/model/CreateConnectorRequest.h
+  include/tencentcloud/oceanus/v20190422/model/SetatsCvmInfo.h
   include/tencentcloud/oceanus/v20190422/model/CopyJobItem.h
   include/tencentcloud/oceanus/v20190422/model/DescribeTreeJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobConfigsResponse.h
@@ -195,12 +201,14 @@ set(oceanus_src
   src/v20190422/OceanusClient.cpp
   src/v20190422/model/ParseConnectorRequest.cpp
   src/v20190422/model/CopyJobResult.cpp
+  src/v20190422/model/StatementResult.cpp
   src/v20190422/model/CreateResourceRequest.cpp
   src/v20190422/model/ModifyFolderRequest.cpp
   src/v20190422/model/DescribeJobSubmissionLogResponse.cpp
   src/v20190422/model/DeleteJobsRequest.cpp
   src/v20190422/model/ModifyWorkSpaceRequest.cpp
   src/v20190422/model/ModifyJobResponse.cpp
+  src/v20190422/model/ModifyMetaTableResponse.cpp
   src/v20190422/model/CreateJobConfigResponse.cpp
   src/v20190422/model/CreateResourceConfigResponse.cpp
   src/v20190422/model/CreateJobConfigRequest.cpp
@@ -221,6 +229,7 @@ set(oceanus_src
   src/v20190422/model/DescribeJobConfigsRequest.cpp
   src/v20190422/model/StopJobsRequest.cpp
   src/v20190422/model/ResultColumn.cpp
+  src/v20190422/model/CreateMetaDatabaseRequest.cpp
   src/v20190422/model/Setats.cpp
   src/v20190422/model/TreeJobSets.cpp
   src/v20190422/model/ResourceItem.cpp
@@ -242,16 +251,17 @@ set(oceanus_src
   src/v20190422/model/CreateWorkSpaceResponse.cpp
   src/v20190422/model/SlaveZone.cpp
   src/v20190422/model/CreateJobResponse.cpp
-  src/v20190422/model/SqlGatewayItem.cpp
+  src/v20190422/model/DeleteResourcesResponse.cpp
   src/v20190422/model/DescribeVariablesRequest.cpp
   src/v20190422/model/DescribeJobRuntimeInfoResponse.cpp
   src/v20190422/model/StopJobDescription.cpp
   src/v20190422/model/CreateFolderRequest.cpp
   src/v20190422/model/DeleteJobConfigsResponse.cpp
+  src/v20190422/model/SqlGatewayItem.cpp
   src/v20190422/model/DeleteTableConfigRequest.cpp
-  src/v20190422/model/StatementResult.cpp
+  src/v20190422/model/Savepoint.cpp
   src/v20190422/model/DescribeTreeJobsRsp.cpp
-  src/v20190422/model/DeleteResourcesResponse.cpp
+  src/v20190422/model/CreateConnectorRequest.cpp
   src/v20190422/model/DeleteTableConfigResponse.cpp
   src/v20190422/model/SlotSharingGroupSpec.cpp
   src/v20190422/model/Tag.cpp
@@ -259,6 +269,7 @@ set(oceanus_src
   src/v20190422/model/FetchSqlGatewayStatementResultResponse.cpp
   src/v20190422/model/DescribeJobSavepointResponse.cpp
   src/v20190422/model/JobGraphNode.cpp
+  src/v20190422/model/ModifyMetaTableRequest.cpp
   src/v20190422/model/CreateWorkSpaceRequest.cpp
   src/v20190422/model/DeleteResourceConfigsRequest.cpp
   src/v20190422/model/DescribeVariablesResponse.cpp
@@ -289,6 +300,7 @@ set(oceanus_src
   src/v20190422/model/DeleteJobConfigsRequest.cpp
   src/v20190422/model/RenewOceanusClusterRequest.cpp
   src/v20190422/model/TraceModeConfiguration.cpp
+  src/v20190422/model/CreateMetaTableResponse.cpp
   src/v20190422/model/RunJobsRequest.cpp
   src/v20190422/model/DeleteWorkSpaceResponse.cpp
   src/v20190422/model/HadoopYarnItem.cpp
@@ -297,7 +309,7 @@ set(oceanus_src
   src/v20190422/model/DeleteJobsResponse.cpp
   src/v20190422/model/Property.cpp
   src/v20190422/model/JobGraphEdge.cpp
-  src/v20190422/model/Savepoint.cpp
+  src/v20190422/model/CreateMetaTableRequest.cpp
   src/v20190422/model/RunSqlGatewayStatementResponse.cpp
   src/v20190422/model/SystemResourceItem.cpp
   src/v20190422/model/DescribeResourceRelatedJobsRequest.cpp
@@ -305,7 +317,6 @@ set(oceanus_src
   src/v20190422/model/RoleAuth.cpp
   src/v20190422/model/DescribeTreeResourcesRsp.cpp
   src/v20190422/model/ResourceRefDetail.cpp
-  src/v20190422/model/SetatsCvmInfo.cpp
   src/v20190422/model/TreeResourceItem.cpp
   src/v20190422/model/DescribeTreeResourcesResponse.cpp
   src/v20190422/model/CreateVariableResponse.cpp
@@ -353,10 +364,11 @@ set(oceanus_src
   src/v20190422/model/CheckSavepointResponse.cpp
   src/v20190422/model/DeleteOceanusClusterResponse.cpp
   src/v20190422/model/DescribeJobsResponse.cpp
+  src/v20190422/model/CreateMetaDatabaseResponse.cpp
   src/v20190422/model/ExpertModeConfiguration.cpp
   src/v20190422/model/SqlGatewayEndpoint.cpp
   src/v20190422/model/Order.cpp
-  src/v20190422/model/CreateConnectorRequest.cpp
+  src/v20190422/model/SetatsCvmInfo.cpp
   src/v20190422/model/CopyJobItem.cpp
   src/v20190422/model/DescribeTreeJobsRequest.cpp
   src/v20190422/model/DescribeJobConfigsResponse.cpp

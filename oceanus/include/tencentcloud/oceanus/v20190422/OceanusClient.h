@@ -37,6 +37,10 @@
 #include <tencentcloud/oceanus/v20190422/model/CreateJobResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateJobConfigRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateJobConfigResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/CreateMetaDatabaseRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/CreateMetaDatabaseResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/CreateMetaTableRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/CreateMetaTableResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateOceanusClusterRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateOceanusClusterResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateResourceRequest.h>
@@ -107,6 +111,8 @@
 #include <tencentcloud/oceanus/v20190422/model/ModifyFolderResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyJobRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyJobResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/ModifyMetaTableRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/ModifyMetaTableResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyWorkSpaceRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyWorkSpaceResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/ParseConnectorRequest.h>
@@ -158,6 +164,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateJobConfigResponse> CreateJobConfigOutcome;
                 typedef std::future<CreateJobConfigOutcome> CreateJobConfigOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::CreateJobConfigRequest&, CreateJobConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateJobConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMetaDatabaseResponse> CreateMetaDatabaseOutcome;
+                typedef std::future<CreateMetaDatabaseOutcome> CreateMetaDatabaseOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::CreateMetaDatabaseRequest&, CreateMetaDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMetaDatabaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMetaTableResponse> CreateMetaTableOutcome;
+                typedef std::future<CreateMetaTableOutcome> CreateMetaTableOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::CreateMetaTableRequest&, CreateMetaTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMetaTableAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateOceanusClusterResponse> CreateOceanusClusterOutcome;
                 typedef std::future<CreateOceanusClusterOutcome> CreateOceanusClusterOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::CreateOceanusClusterRequest&, CreateOceanusClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOceanusClusterAsyncHandler;
@@ -263,6 +275,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyJobResponse> ModifyJobOutcome;
                 typedef std::future<ModifyJobOutcome> ModifyJobOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::ModifyJobRequest&, ModifyJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyMetaTableResponse> ModifyMetaTableOutcome;
+                typedef std::future<ModifyMetaTableOutcome> ModifyMetaTableOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::ModifyMetaTableRequest&, ModifyMetaTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMetaTableAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyWorkSpaceResponse> ModifyWorkSpaceOutcome;
                 typedef std::future<ModifyWorkSpaceOutcome> ModifyWorkSpaceOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::ModifyWorkSpaceRequest&, ModifyWorkSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWorkSpaceAsyncHandler;
@@ -352,6 +367,24 @@ namespace TencentCloud
                 CreateJobConfigOutcome CreateJobConfig(const Model::CreateJobConfigRequest &request);
                 void CreateJobConfigAsync(const Model::CreateJobConfigRequest& request, const CreateJobConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateJobConfigOutcomeCallable CreateJobConfigCallable(const Model::CreateJobConfigRequest& request);
+
+                /**
+                 *创建元数据库
+                 * @param req CreateMetaDatabaseRequest
+                 * @return CreateMetaDatabaseOutcome
+                 */
+                CreateMetaDatabaseOutcome CreateMetaDatabase(const Model::CreateMetaDatabaseRequest &request);
+                void CreateMetaDatabaseAsync(const Model::CreateMetaDatabaseRequest& request, const CreateMetaDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMetaDatabaseOutcomeCallable CreateMetaDatabaseCallable(const Model::CreateMetaDatabaseRequest& request);
+
+                /**
+                 *创建元数据表
+                 * @param req CreateMetaTableRequest
+                 * @return CreateMetaTableOutcome
+                 */
+                CreateMetaTableOutcome CreateMetaTable(const Model::CreateMetaTableRequest &request);
+                void CreateMetaTableAsync(const Model::CreateMetaTableRequest& request, const CreateMetaTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMetaTableOutcomeCallable CreateMetaTableCallable(const Model::CreateMetaTableRequest& request);
 
                 /**
                  *创建Oceanus集群
@@ -675,6 +708,15 @@ namespace TencentCloud
                 ModifyJobOutcome ModifyJob(const Model::ModifyJobRequest &request);
                 void ModifyJobAsync(const Model::ModifyJobRequest& request, const ModifyJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyJobOutcomeCallable ModifyJobCallable(const Model::ModifyJobRequest& request);
+
+                /**
+                 *修改元数据表
+                 * @param req ModifyMetaTableRequest
+                 * @return ModifyMetaTableOutcome
+                 */
+                ModifyMetaTableOutcome ModifyMetaTable(const Model::ModifyMetaTableRequest &request);
+                void ModifyMetaTableAsync(const Model::ModifyMetaTableRequest& request, const ModifyMetaTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMetaTableOutcomeCallable ModifyMetaTableCallable(const Model::ModifyMetaTableRequest& request);
 
                 /**
                  *修改工作空间

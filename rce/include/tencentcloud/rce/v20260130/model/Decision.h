@@ -67,6 +67,31 @@ namespace TencentCloud
                      */
                     bool DecisionResultHasBeenSet() const;
 
+                    /**
+                     * 获取<p>命中策略后的决策动作，可在控制台配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Disposition <p>命中策略后的决策动作，可在控制台配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDisposition() const;
+
+                    /**
+                     * 设置<p>命中策略后的决策动作，可在控制台配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _disposition <p>命中策略后的决策动作，可在控制台配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDisposition(const std::string& _disposition);
+
+                    /**
+                     * 判断参数 Disposition 是否已赋值
+                     * @return Disposition 是否已赋值
+                     * 
+                     */
+                    bool DispositionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -74,6 +99,13 @@ namespace TencentCloud
                      */
                     std::string m_decisionResult;
                     bool m_decisionResultHasBeenSet;
+
+                    /**
+                     * <p>命中策略后的决策动作，可在控制台配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_disposition;
+                    bool m_dispositionHasBeenSet;
 
                 };
             }

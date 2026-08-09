@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始时间 2016-01-01 00:00:00
-                     * @return StartTime 开始时间 2016-01-01 00:00:00
+                     * 获取<p>开始时间 2016-01-01 00:00:00</p>
+                     * @return StartTime <p>开始时间 2016-01-01 00:00:00</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间 2016-01-01 00:00:00
-                     * @param _startTime 开始时间 2016-01-01 00:00:00
+                     * 设置<p>开始时间 2016-01-01 00:00:00</p>
+                     * @param _startTime <p>开始时间 2016-01-01 00:00:00</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间 2016-02-01 00:00:00 建议跨度不超过3个月
-                     * @return EndTime 结束时间 2016-02-01 00:00:00 建议跨度不超过3个月
+                     * 获取<p>结束时间 2016-02-01 00:00:00 建议跨度不超过3个月</p>
+                     * @return EndTime <p>结束时间 2016-02-01 00:00:00 建议跨度不超过3个月</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间 2016-02-01 00:00:00 建议跨度不超过3个月
-                     * @param _endTime 结束时间 2016-02-01 00:00:00 建议跨度不超过3个月
+                     * 设置<p>结束时间 2016-02-01 00:00:00 建议跨度不超过3个月</p>
+                     * @param _endTime <p>结束时间 2016-02-01 00:00:00 建议跨度不超过3个月</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取一页多少条数据，默认是20条，最大不超过1000
-                     * @return Limit 一页多少条数据，默认是20条，最大不超过1000
+                     * 获取<p>一页多少条数据，默认是20条，最大不超过1000</p>
+                     * @return Limit <p>一页多少条数据，默认是20条，最大不超过1000</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置一页多少条数据，默认是20条，最大不超过1000
-                     * @param _limit 一页多少条数据，默认是20条，最大不超过1000
+                     * 设置<p>一页多少条数据，默认是20条，最大不超过1000</p>
+                     * @param _limit <p>一页多少条数据，默认是20条，最大不超过1000</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取第多少页，从0开始，默认是0
-                     * @return Offset 第多少页，从0开始，默认是0
+                     * 获取<p>第多少页，从0开始，默认是0</p>
+                     * @return Offset <p>第多少页，从0开始，默认是0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置第多少页，从0开始，默认是0
-                     * @param _offset 第多少页，从0开始，默认是0
+                     * 设置<p>第多少页，从0开始，默认是0</p>
+                     * @param _offset <p>第多少页，从0开始，默认是0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -127,63 +127,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取订单状态,默认为4（成功的订单）
-订单的状态
-1：未支付
-2：已支付3：发货中
-4：已发货
-5：发货失败
-6：已退款
-7：已关单
-8：订单过期
-9：订单已失效
-10：产品已失效
-11：代付拒绝
-12：支付中
-                     * @return Status 订单状态,默认为4（成功的订单）
-订单的状态
-1：未支付
-2：已支付3：发货中
-4：已发货
-5：发货失败
-6：已退款
-7：已关单
-8：订单过期
-9：订单已失效
-10：产品已失效
-11：代付拒绝
-12：支付中
+                     * 获取<p>订单状态</p><p>枚举值：</p><ul><li>1：  待支付</li><li>2：  已支付</li><li>3：  发货中</li><li>4：  已发货</li><li>5：  发货失败</li><li>6：  已退款</li><li>7：  已取消</li><li>8：  订单过期</li><li>9 ：  订单已失效</li><li>10：  产品已失效</li><li>11：  代付拒绝</li><li>12：  支付中</li><li>13：  退款中</li><li>30：  服务市场订单待用户确认完成</li></ul><p>默认值：4（已发货，成功的订单）</p><p>其中，状态2、3、5、12、13、30 在<a href="https://console.cloud.tencent.com/expense/deal">控制台</a>统一显示“处理中”；<br>状态4 在<a href="https://console.cloud.tencent.com/expense/deal">控制台</a>中显示交易成功；<br>状态9、10 在<a href="https://console.cloud.tencent.com/expense/deal">控制台</a>中无对应状态</p>
+                     * @return Status <p>订单状态</p><p>枚举值：</p><ul><li>1：  待支付</li><li>2：  已支付</li><li>3：  发货中</li><li>4：  已发货</li><li>5：  发货失败</li><li>6：  已退款</li><li>7：  已取消</li><li>8：  订单过期</li><li>9 ：  订单已失效</li><li>10：  产品已失效</li><li>11：  代付拒绝</li><li>12：  支付中</li><li>13：  退款中</li><li>30：  服务市场订单待用户确认完成</li></ul><p>默认值：4（已发货，成功的订单）</p><p>其中，状态2、3、5、12、13、30 在<a href="https://console.cloud.tencent.com/expense/deal">控制台</a>统一显示“处理中”；<br>状态4 在<a href="https://console.cloud.tencent.com/expense/deal">控制台</a>中显示交易成功；<br>状态9、10 在<a href="https://console.cloud.tencent.com/expense/deal">控制台</a>中无对应状态</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置订单状态,默认为4（成功的订单）
-订单的状态
-1：未支付
-2：已支付3：发货中
-4：已发货
-5：发货失败
-6：已退款
-7：已关单
-8：订单过期
-9：订单已失效
-10：产品已失效
-11：代付拒绝
-12：支付中
-                     * @param _status 订单状态,默认为4（成功的订单）
-订单的状态
-1：未支付
-2：已支付3：发货中
-4：已发货
-5：发货失败
-6：已退款
-7：已关单
-8：订单过期
-9：订单已失效
-10：产品已失效
-11：代付拒绝
-12：支付中
+                     * 设置<p>订单状态</p><p>枚举值：</p><ul><li>1：  待支付</li><li>2：  已支付</li><li>3：  发货中</li><li>4：  已发货</li><li>5：  发货失败</li><li>6：  已退款</li><li>7：  已取消</li><li>8：  订单过期</li><li>9 ：  订单已失效</li><li>10：  产品已失效</li><li>11：  代付拒绝</li><li>12：  支付中</li><li>13：  退款中</li><li>30：  服务市场订单待用户确认完成</li></ul><p>默认值：4（已发货，成功的订单）</p><p>其中，状态2、3、5、12、13、30 在<a href="https://console.cloud.tencent.com/expense/deal">控制台</a>统一显示“处理中”；<br>状态4 在<a href="https://console.cloud.tencent.com/expense/deal">控制台</a>中显示交易成功；<br>状态9、10 在<a href="https://console.cloud.tencent.com/expense/deal">控制台</a>中无对应状态</p>
+                     * @param _status <p>订单状态</p><p>枚举值：</p><ul><li>1：  待支付</li><li>2：  已支付</li><li>3：  发货中</li><li>4：  已发货</li><li>5：  发货失败</li><li>6：  已退款</li><li>7：  已取消</li><li>8：  订单过期</li><li>9 ：  订单已失效</li><li>10：  产品已失效</li><li>11：  代付拒绝</li><li>12：  支付中</li><li>13：  退款中</li><li>30：  服务市场订单待用户确认完成</li></ul><p>默认值：4（已发货，成功的订单）</p><p>其中，状态2、3、5、12、13、30 在<a href="https://console.cloud.tencent.com/expense/deal">控制台</a>统一显示“处理中”；<br>状态4 在<a href="https://console.cloud.tencent.com/expense/deal">控制台</a>中显示交易成功；<br>状态9、10 在<a href="https://console.cloud.tencent.com/expense/deal">控制台</a>中无对应状态</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -196,15 +148,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取子订单号
-                     * @return OrderId 子订单号
+                     * 获取<p>子订单号</p>
+                     * @return OrderId <p>子订单号</p>
                      * 
                      */
                     std::string GetOrderId() const;
 
                     /**
-                     * 设置子订单号
-                     * @param _orderId 子订单号
+                     * 设置<p>子订单号</p>
+                     * @param _orderId <p>子订单号</p>
                      * 
                      */
                     void SetOrderId(const std::string& _orderId);
@@ -217,15 +169,15 @@ namespace TencentCloud
                     bool OrderIdHasBeenSet() const;
 
                     /**
-                     * 获取大订单号
-                     * @return BigDealId 大订单号
+                     * 获取<p>大订单号</p>
+                     * @return BigDealId <p>大订单号</p>
                      * 
                      */
                     std::string GetBigDealId() const;
 
                     /**
-                     * 设置大订单号
-                     * @param _bigDealId 大订单号
+                     * 设置<p>大订单号</p>
+                     * @param _bigDealId <p>大订单号</p>
                      * 
                      */
                     void SetBigDealId(const std::string& _bigDealId);
@@ -238,15 +190,15 @@ namespace TencentCloud
                     bool BigDealIdHasBeenSet() const;
 
                     /**
-                     * 获取资源id
-                     * @return ResourceId 资源id
+                     * 获取<p>资源id</p>
+                     * @return ResourceId <p>资源id</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源id
-                     * @param _resourceId 资源id
+                     * 设置<p>资源id</p>
+                     * @param _resourceId <p>资源id</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -259,15 +211,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取订单状态
-                     * @return StatusSet 订单状态
+                     * 获取<p>订单状态</p>
+                     * @return StatusSet <p>订单状态</p>
                      * 
                      */
                     std::vector<int64_t> GetStatusSet() const;
 
                     /**
-                     * 设置订单状态
-                     * @param _statusSet 订单状态
+                     * 设置<p>订单状态</p>
+                     * @param _statusSet <p>订单状态</p>
                      * 
                      */
                     void SetStatusSet(const std::vector<int64_t>& _statusSet);
@@ -282,67 +234,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开始时间 2016-01-01 00:00:00
+                     * <p>开始时间 2016-01-01 00:00:00</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间 2016-02-01 00:00:00 建议跨度不超过3个月
+                     * <p>结束时间 2016-02-01 00:00:00 建议跨度不超过3个月</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 一页多少条数据，默认是20条，最大不超过1000
+                     * <p>一页多少条数据，默认是20条，最大不超过1000</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 第多少页，从0开始，默认是0
+                     * <p>第多少页，从0开始，默认是0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 订单状态,默认为4（成功的订单）
-订单的状态
-1：未支付
-2：已支付3：发货中
-4：已发货
-5：发货失败
-6：已退款
-7：已关单
-8：订单过期
-9：订单已失效
-10：产品已失效
-11：代付拒绝
-12：支付中
+                     * <p>订单状态</p><p>枚举值：</p><ul><li>1：  待支付</li><li>2：  已支付</li><li>3：  发货中</li><li>4：  已发货</li><li>5：  发货失败</li><li>6：  已退款</li><li>7：  已取消</li><li>8：  订单过期</li><li>9 ：  订单已失效</li><li>10：  产品已失效</li><li>11：  代付拒绝</li><li>12：  支付中</li><li>13：  退款中</li><li>30：  服务市场订单待用户确认完成</li></ul><p>默认值：4（已发货，成功的订单）</p><p>其中，状态2、3、5、12、13、30 在<a href="https://console.cloud.tencent.com/expense/deal">控制台</a>统一显示“处理中”；<br>状态4 在<a href="https://console.cloud.tencent.com/expense/deal">控制台</a>中显示交易成功；<br>状态9、10 在<a href="https://console.cloud.tencent.com/expense/deal">控制台</a>中无对应状态</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 子订单号
+                     * <p>子订单号</p>
                      */
                     std::string m_orderId;
                     bool m_orderIdHasBeenSet;
 
                     /**
-                     * 大订单号
+                     * <p>大订单号</p>
                      */
                     std::string m_bigDealId;
                     bool m_bigDealIdHasBeenSet;
 
                     /**
-                     * 资源id
+                     * <p>资源id</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 订单状态
+                     * <p>订单状态</p>
                      */
                     std::vector<int64_t> m_statusSet;
                     bool m_statusSetHasBeenSet;

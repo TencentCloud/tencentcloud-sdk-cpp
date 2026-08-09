@@ -21,7 +21,8 @@ using namespace TencentCloud::Rce::V20260130::Model;
 using namespace std;
 
 Decision::Decision() :
-    m_decisionResultHasBeenSet(false)
+    m_decisionResultHasBeenSet(false),
+    m_dispositionHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome Decision::Deserialize(const rapidjson::Value &value)
         m_decisionResultHasBeenSet = true;
     }
 
+    if (value.HasMember("Disposition") && !value["Disposition"].IsNull())
+    {
+        if (!value["Disposition"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Decision.Disposition` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_disposition = string(value["Disposition"].GetString());
+        m_dispositionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void Decision::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "DecisionResult";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_decisionResult.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dispositionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Disposition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_disposition.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void Decision::SetDecisionResult(const string& _decisionResult)
 bool Decision::DecisionResultHasBeenSet() const
 {
     return m_decisionResultHasBeenSet;
+}
+
+string Decision::GetDisposition() const
+{
+    return m_disposition;
+}
+
+void Decision::SetDisposition(const string& _disposition)
+{
+    m_disposition = _disposition;
+    m_dispositionHasBeenSet = true;
+}
+
+bool Decision::DispositionHasBeenSet() const
+{
+    return m_dispositionHasBeenSet;
 }
 

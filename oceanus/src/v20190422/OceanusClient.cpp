@@ -390,6 +390,106 @@ OceanusClient::CreateJobConfigOutcomeCallable OceanusClient::CreateJobConfigCall
     return prom->get_future();
 }
 
+OceanusClient::CreateMetaDatabaseOutcome OceanusClient::CreateMetaDatabase(const CreateMetaDatabaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMetaDatabase");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMetaDatabaseResponse rsp = CreateMetaDatabaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMetaDatabaseOutcome(rsp);
+        else
+            return CreateMetaDatabaseOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMetaDatabaseOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::CreateMetaDatabaseAsync(const CreateMetaDatabaseRequest& request, const CreateMetaDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateMetaDatabaseRequest&;
+    using Resp = CreateMetaDatabaseResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateMetaDatabase", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OceanusClient::CreateMetaDatabaseOutcomeCallable OceanusClient::CreateMetaDatabaseCallable(const CreateMetaDatabaseRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateMetaDatabaseOutcome>>();
+    CreateMetaDatabaseAsync(
+    request,
+    [prom](
+        const OceanusClient*,
+        const CreateMetaDatabaseRequest&,
+        CreateMetaDatabaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+OceanusClient::CreateMetaTableOutcome OceanusClient::CreateMetaTable(const CreateMetaTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMetaTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMetaTableResponse rsp = CreateMetaTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMetaTableOutcome(rsp);
+        else
+            return CreateMetaTableOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMetaTableOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::CreateMetaTableAsync(const CreateMetaTableRequest& request, const CreateMetaTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateMetaTableRequest&;
+    using Resp = CreateMetaTableResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateMetaTable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OceanusClient::CreateMetaTableOutcomeCallable OceanusClient::CreateMetaTableCallable(const CreateMetaTableRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateMetaTableOutcome>>();
+    CreateMetaTableAsync(
+    request,
+    [prom](
+        const OceanusClient*,
+        const CreateMetaTableRequest&,
+        CreateMetaTableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OceanusClient::CreateOceanusClusterOutcome OceanusClient::CreateOceanusCluster(const CreateOceanusClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateOceanusCluster");
@@ -2132,6 +2232,56 @@ OceanusClient::ModifyJobOutcomeCallable OceanusClient::ModifyJobCallable(const M
         const OceanusClient*,
         const ModifyJobRequest&,
         ModifyJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+OceanusClient::ModifyMetaTableOutcome OceanusClient::ModifyMetaTable(const ModifyMetaTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMetaTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMetaTableResponse rsp = ModifyMetaTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMetaTableOutcome(rsp);
+        else
+            return ModifyMetaTableOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMetaTableOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::ModifyMetaTableAsync(const ModifyMetaTableRequest& request, const ModifyMetaTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyMetaTableRequest&;
+    using Resp = ModifyMetaTableResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyMetaTable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OceanusClient::ModifyMetaTableOutcomeCallable OceanusClient::ModifyMetaTableCallable(const ModifyMetaTableRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyMetaTableOutcome>>();
+    ModifyMetaTableAsync(
+    request,
+    [prom](
+        const OceanusClient*,
+        const ModifyMetaTableRequest&,
+        ModifyMetaTableOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

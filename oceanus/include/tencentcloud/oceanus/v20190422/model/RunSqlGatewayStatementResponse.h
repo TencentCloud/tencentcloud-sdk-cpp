@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取错误信息
+                     * 获取<p>错误信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ErrorMessage 错误信息
+                     * @return ErrorMessage <p>错误信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool ErrorMessageHasBeenSet() const;
 
                     /**
-                     * 获取会话id，若入参未传，则返回自动创建的会话id，若入参已经传递，则返回值与原传入值一致
-                     * @return SessionId 会话id，若入参未传，则返回自动创建的会话id，若入参已经传递，则返回值与原传入值一致
+                     * 获取<p>会话id，若入参未传，则返回自动创建的会话id，若入参已经传递，则返回值与原传入值一致</p>
+                     * @return SessionId <p>会话id，若入参未传，则返回自动创建的会话id，若入参已经传递，则返回值与原传入值一致</p>
                      * 
                      */
                     std::string GetSessionId() const;
@@ -74,8 +74,8 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取返回执行id，可以根据该执行id和会话id获取执行结果
-                     * @return OperationHandleId 返回执行id，可以根据该执行id和会话id获取执行结果
+                     * 获取<p>返回执行id，可以根据该执行id和会话id获取执行结果</p>
+                     * @return OperationHandleId <p>返回执行id，可以根据该执行id和会话id获取执行结果</p>
                      * 
                      */
                     std::string GetOperationHandleId() const;
@@ -90,20 +90,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 错误信息
+                     * <p>错误信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_errorMessage;
                     bool m_errorMessageHasBeenSet;
 
                     /**
-                     * 会话id，若入参未传，则返回自动创建的会话id，若入参已经传递，则返回值与原传入值一致
+                     * <p>会话id，若入参未传，则返回自动创建的会话id，若入参已经传递，则返回值与原传入值一致</p>
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * 返回执行id，可以根据该执行id和会话id获取执行结果
+                     * <p>返回执行id，可以根据该执行id和会话id获取执行结果</p>
                      */
                     std::string m_operationHandleId;
                     bool m_operationHandleIdHasBeenSet;

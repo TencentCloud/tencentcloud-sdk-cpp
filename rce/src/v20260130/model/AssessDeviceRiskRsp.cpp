@@ -22,7 +22,8 @@ using namespace std;
 
 AssessDeviceRiskRsp::AssessDeviceRiskRsp() :
     m_scoreHasBeenSet(false),
-    m_deviceHasBeenSet(false)
+    m_deviceHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,23 @@ CoreInternalOutcome AssessDeviceRiskRsp::Deserialize(const rapidjson::Value &val
         m_deviceHasBeenSet = true;
     }
 
+    if (value.HasMember("Environment") && !value["Environment"].IsNull())
+    {
+        if (!value["Environment"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssessDeviceRiskRsp.Environment` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_environment.Deserialize(value["Environment"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_environmentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +106,15 @@ void AssessDeviceRiskRsp::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_device.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_environmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Environment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_environment.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -123,5 +150,21 @@ void AssessDeviceRiskRsp::SetDevice(const Device& _device)
 bool AssessDeviceRiskRsp::DeviceHasBeenSet() const
 {
     return m_deviceHasBeenSet;
+}
+
+Environment AssessDeviceRiskRsp::GetEnvironment() const
+{
+    return m_environment;
+}
+
+void AssessDeviceRiskRsp::SetEnvironment(const Environment& _environment)
+{
+    m_environment = _environment;
+    m_environmentHasBeenSet = true;
+}
+
+bool AssessDeviceRiskRsp::EnvironmentHasBeenSet() const
+{
+    return m_environmentHasBeenSet;
 }
 
