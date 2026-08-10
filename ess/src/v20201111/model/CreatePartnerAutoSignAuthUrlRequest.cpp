@@ -28,7 +28,8 @@ CreatePartnerAutoSignAuthUrlRequest::CreatePartnerAutoSignAuthUrlRequest() :
     m_authorizedOrganizationIdHasBeenSet(false),
     m_authorizedOrganizationNameHasBeenSet(false),
     m_sealTypesHasBeenSet(false),
-    m_authToMeHasBeenSet(false)
+    m_authToMeHasBeenSet(false),
+    m_limitAuthTypeHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string CreatePartnerAutoSignAuthUrlRequest::ToJsonString() const
         string key = "AuthToMe";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_authToMe, allocator);
+    }
+
+    if (m_limitAuthTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LimitAuthType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limitAuthType, allocator);
     }
 
 
@@ -196,6 +205,22 @@ void CreatePartnerAutoSignAuthUrlRequest::SetAuthToMe(const bool& _authToMe)
 bool CreatePartnerAutoSignAuthUrlRequest::AuthToMeHasBeenSet() const
 {
     return m_authToMeHasBeenSet;
+}
+
+uint64_t CreatePartnerAutoSignAuthUrlRequest::GetLimitAuthType() const
+{
+    return m_limitAuthType;
+}
+
+void CreatePartnerAutoSignAuthUrlRequest::SetLimitAuthType(const uint64_t& _limitAuthType)
+{
+    m_limitAuthType = _limitAuthType;
+    m_limitAuthTypeHasBeenSet = true;
+}
+
+bool CreatePartnerAutoSignAuthUrlRequest::LimitAuthTypeHasBeenSet() const
+{
+    return m_limitAuthTypeHasBeenSet;
 }
 
 

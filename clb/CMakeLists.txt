@@ -88,6 +88,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/DeleteLoadBalancerRequest.h
   include/tencentcloud/clb/v20180317/model/ModelRouterQuota.h
   include/tencentcloud/clb/v20180317/model/AddModelRewriteRequest.h
+  include/tencentcloud/clb/v20180317/model/ServiceProviderHealthCheckConfigInput.h
   include/tencentcloud/clb/v20180317/model/RuleTargets.h
   include/tencentcloud/clb/v20180317/model/IntentRouterTierItem.h
   include/tencentcloud/clb/v20180317/model/BatchDeregisterTargetsRequest.h
@@ -288,6 +289,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/DescribeModelRewriteResponse.h
   include/tencentcloud/clb/v20180317/model/Listener.h
   include/tencentcloud/clb/v20180317/model/ConfigListItem.h
+  include/tencentcloud/clb/v20180317/model/ServiceProviderHealthCheckConfigOutput.h
   include/tencentcloud/clb/v20180317/model/DisassociateBudgetRequest.h
   include/tencentcloud/clb/v20180317/model/DeregisterTargetGroupInstancesResponse.h
   include/tencentcloud/clb/v20180317/model/CreateBudgetResponse.h
@@ -550,6 +552,7 @@ set(clb_src
   src/v20180317/model/DeleteLoadBalancerRequest.cpp
   src/v20180317/model/ModelRouterQuota.cpp
   src/v20180317/model/AddModelRewriteRequest.cpp
+  src/v20180317/model/ServiceProviderHealthCheckConfigInput.cpp
   src/v20180317/model/RuleTargets.cpp
   src/v20180317/model/IntentRouterTierItem.cpp
   src/v20180317/model/BatchDeregisterTargetsRequest.cpp
@@ -750,6 +753,7 @@ set(clb_src
   src/v20180317/model/DescribeModelRewriteResponse.cpp
   src/v20180317/model/Listener.cpp
   src/v20180317/model/ConfigListItem.cpp
+  src/v20180317/model/ServiceProviderHealthCheckConfigOutput.cpp
   src/v20180317/model/DisassociateBudgetRequest.cpp
   src/v20180317/model/DeregisterTargetGroupInstancesResponse.cpp
   src/v20180317/model/CreateBudgetResponse.cpp

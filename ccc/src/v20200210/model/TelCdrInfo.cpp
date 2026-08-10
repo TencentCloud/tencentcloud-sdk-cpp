@@ -38,6 +38,7 @@ TelCdrInfo::TelCdrInfo() :
     m_acceptTimestampHasBeenSet(false),
     m_endedTimestampHasBeenSet(false),
     m_iVRKeyPressedHasBeenSet(false),
+    m_iVRKeyPressedExHasBeenSet(false),
     m_hungUpSideHasBeenSet(false),
     m_serveParticipantsHasBeenSet(false),
     m_skillGroupIdHasBeenSet(false),
@@ -45,13 +46,13 @@ TelCdrInfo::TelCdrInfo() :
     m_startTimestampHasBeenSet(false),
     m_queuedTimestampHasBeenSet(false),
     m_postIVRKeyPressedHasBeenSet(false),
+    m_postIVRKeyPressedExHasBeenSet(false),
     m_queuedSkillGroupIdHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_protectedCallerHasBeenSet(false),
     m_protectedCalleeHasBeenSet(false),
     m_uuiHasBeenSet(false),
     m_uUIHasBeenSet(false),
-    m_iVRKeyPressedExHasBeenSet(false),
     m_asrUrlHasBeenSet(false),
     m_asrStatusHasBeenSet(false),
     m_customRecordURLHasBeenSet(false),
@@ -251,6 +252,26 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
         m_iVRKeyPressedHasBeenSet = true;
     }
 
+    if (value.HasMember("IVRKeyPressedEx") && !value["IVRKeyPressedEx"].IsNull())
+    {
+        if (!value["IVRKeyPressedEx"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.IVRKeyPressedEx` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["IVRKeyPressedEx"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            IVRKeyPressedElement item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_iVRKeyPressedEx.push_back(item);
+        }
+        m_iVRKeyPressedExHasBeenSet = true;
+    }
+
     if (value.HasMember("HungUpSide") && !value["HungUpSide"].IsNull())
     {
         if (!value["HungUpSide"].IsString())
@@ -341,6 +362,26 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
         m_postIVRKeyPressedHasBeenSet = true;
     }
 
+    if (value.HasMember("PostIVRKeyPressedEx") && !value["PostIVRKeyPressedEx"].IsNull())
+    {
+        if (!value["PostIVRKeyPressedEx"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.PostIVRKeyPressedEx` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PostIVRKeyPressedEx"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            IVRKeyPressedElement item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_postIVRKeyPressedEx.push_back(item);
+        }
+        m_postIVRKeyPressedExHasBeenSet = true;
+    }
+
     if (value.HasMember("QueuedSkillGroupId") && !value["QueuedSkillGroupId"].IsNull())
     {
         if (!value["QueuedSkillGroupId"].IsInt64())
@@ -399,26 +440,6 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
         }
         m_uUI = string(value["UUI"].GetString());
         m_uUIHasBeenSet = true;
-    }
-
-    if (value.HasMember("IVRKeyPressedEx") && !value["IVRKeyPressedEx"].IsNull())
-    {
-        if (!value["IVRKeyPressedEx"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.IVRKeyPressedEx` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["IVRKeyPressedEx"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            IVRKeyPressedElement item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_iVRKeyPressedEx.push_back(item);
-        }
-        m_iVRKeyPressedExHasBeenSet = true;
     }
 
     if (value.HasMember("AsrUrl") && !value["AsrUrl"].IsNull())
@@ -686,6 +707,21 @@ void TelCdrInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         }
     }
 
+    if (m_iVRKeyPressedExHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IVRKeyPressedEx";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_iVRKeyPressedEx.begin(); itr != m_iVRKeyPressedEx.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_hungUpSideHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -756,6 +792,21 @@ void TelCdrInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         }
     }
 
+    if (m_postIVRKeyPressedExHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PostIVRKeyPressedEx";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_postIVRKeyPressedEx.begin(); itr != m_postIVRKeyPressedEx.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_queuedSkillGroupIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -802,21 +853,6 @@ void TelCdrInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "UUI";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uUI.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_iVRKeyPressedExHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IVRKeyPressedEx";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_iVRKeyPressedEx.begin(); itr != m_iVRKeyPressedEx.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
     }
 
     if (m_asrUrlHasBeenSet)
@@ -1192,6 +1228,22 @@ bool TelCdrInfo::IVRKeyPressedHasBeenSet() const
     return m_iVRKeyPressedHasBeenSet;
 }
 
+vector<IVRKeyPressedElement> TelCdrInfo::GetIVRKeyPressedEx() const
+{
+    return m_iVRKeyPressedEx;
+}
+
+void TelCdrInfo::SetIVRKeyPressedEx(const vector<IVRKeyPressedElement>& _iVRKeyPressedEx)
+{
+    m_iVRKeyPressedEx = _iVRKeyPressedEx;
+    m_iVRKeyPressedExHasBeenSet = true;
+}
+
+bool TelCdrInfo::IVRKeyPressedExHasBeenSet() const
+{
+    return m_iVRKeyPressedExHasBeenSet;
+}
+
 string TelCdrInfo::GetHungUpSide() const
 {
     return m_hungUpSide;
@@ -1304,6 +1356,22 @@ bool TelCdrInfo::PostIVRKeyPressedHasBeenSet() const
     return m_postIVRKeyPressedHasBeenSet;
 }
 
+vector<IVRKeyPressedElement> TelCdrInfo::GetPostIVRKeyPressedEx() const
+{
+    return m_postIVRKeyPressedEx;
+}
+
+void TelCdrInfo::SetPostIVRKeyPressedEx(const vector<IVRKeyPressedElement>& _postIVRKeyPressedEx)
+{
+    m_postIVRKeyPressedEx = _postIVRKeyPressedEx;
+    m_postIVRKeyPressedExHasBeenSet = true;
+}
+
+bool TelCdrInfo::PostIVRKeyPressedExHasBeenSet() const
+{
+    return m_postIVRKeyPressedExHasBeenSet;
+}
+
 int64_t TelCdrInfo::GetQueuedSkillGroupId() const
 {
     return m_queuedSkillGroupId;
@@ -1398,22 +1466,6 @@ void TelCdrInfo::SetUUI(const string& _uUI)
 bool TelCdrInfo::UUIHasBeenSet() const
 {
     return m_uUIHasBeenSet;
-}
-
-vector<IVRKeyPressedElement> TelCdrInfo::GetIVRKeyPressedEx() const
-{
-    return m_iVRKeyPressedEx;
-}
-
-void TelCdrInfo::SetIVRKeyPressedEx(const vector<IVRKeyPressedElement>& _iVRKeyPressedEx)
-{
-    m_iVRKeyPressedEx = _iVRKeyPressedEx;
-    m_iVRKeyPressedExHasBeenSet = true;
-}
-
-bool TelCdrInfo::IVRKeyPressedExHasBeenSet() const
-{
-    return m_iVRKeyPressedExHasBeenSet;
 }
 
 string TelCdrInfo::GetAsrUrl() const

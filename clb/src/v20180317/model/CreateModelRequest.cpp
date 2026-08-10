@@ -35,7 +35,8 @@ CreateModelRequest::CreateModelRequest() :
     m_subnetIdHasBeenSet(false),
     m_hostHeaderHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_verifySSLHasBeenSet(false)
+    m_verifySSLHasBeenSet(false),
+    m_healthCheckConfigHasBeenSet(false)
 {
 }
 
@@ -169,6 +170,15 @@ string CreateModelRequest::ToJsonString() const
         string key = "VerifySSL";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_verifySSL, allocator);
+    }
+
+    if (m_healthCheckConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheckConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_healthCheckConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -385,6 +395,22 @@ void CreateModelRequest::SetVerifySSL(const bool& _verifySSL)
 bool CreateModelRequest::VerifySSLHasBeenSet() const
 {
     return m_verifySSLHasBeenSet;
+}
+
+ServiceProviderHealthCheckConfigInput CreateModelRequest::GetHealthCheckConfig() const
+{
+    return m_healthCheckConfig;
+}
+
+void CreateModelRequest::SetHealthCheckConfig(const ServiceProviderHealthCheckConfigInput& _healthCheckConfig)
+{
+    m_healthCheckConfig = _healthCheckConfig;
+    m_healthCheckConfigHasBeenSet = true;
+}
+
+bool CreateModelRequest::HealthCheckConfigHasBeenSet() const
+{
+    return m_healthCheckConfigHasBeenSet;
 }
 
 

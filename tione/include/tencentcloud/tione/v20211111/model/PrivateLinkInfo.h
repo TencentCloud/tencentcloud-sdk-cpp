@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取私有连接所在的VPCID
+                     * 获取<p>私有连接所在的VPCID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VpcId 私有连接所在的VPCID
+                     * @return VpcId <p>私有连接所在的VPCID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有连接所在的VPCID
+                     * 设置<p>私有连接所在的VPCID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vpcId 私有连接所在的VPCID
+                     * @param _vpcId <p>私有连接所在的VPCID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取私有连接所在的子网ID
+                     * 获取<p>私有连接所在的子网ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubnetId 私有连接所在的子网ID
+                     * @return SubnetId <p>私有连接所在的子网ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置私有连接所在的子网ID
+                     * 设置<p>私有连接所在的子网ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subnetId 私有连接所在的子网ID
+                     * @param _subnetId <p>私有连接所在的子网ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取HTTP内网调用地址
+                     * 获取<p>HTTP内网调用地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InnerHttpAddr HTTP内网调用地址
+                     * @return InnerHttpAddr <p>HTTP内网调用地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetInnerHttpAddr() const;
 
                     /**
-                     * 设置HTTP内网调用地址
+                     * 设置<p>HTTP内网调用地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _innerHttpAddr HTTP内网调用地址
+                     * @param _innerHttpAddr <p>HTTP内网调用地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool InnerHttpAddrHasBeenSet() const;
 
                     /**
-                     * 获取HTTPS内网调用地址
+                     * 获取<p>HTTPS内网调用地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InnerHttpsAddr HTTPS内网调用地址
+                     * @return InnerHttpsAddr <p>HTTPS内网调用地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetInnerHttpsAddr() const;
 
                     /**
-                     * 设置HTTPS内网调用地址
+                     * 设置<p>HTTPS内网调用地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _innerHttpsAddr HTTPS内网调用地址
+                     * @param _innerHttpsAddr <p>HTTPS内网调用地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool InnerHttpsAddrHasBeenSet() const;
 
                     /**
-                     * 获取私有连接状态
+                     * 获取<p>私有连接状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return State 私有连接状态
+                     * @return State <p>私有连接状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置私有连接状态
+                     * 设置<p>私有连接状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _state 私有连接状态
+                     * @param _state <p>私有连接状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,15 +172,15 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取grpc内网调用地址
-                     * @return InnerGrpcAddr grpc内网调用地址
+                     * 获取<p>grpc内网调用地址</p>
+                     * @return InnerGrpcAddr <p>grpc内网调用地址</p>
                      * 
                      */
                     std::vector<std::string> GetInnerGrpcAddr() const;
 
                     /**
-                     * 设置grpc内网调用地址
-                     * @param _innerGrpcAddr grpc内网调用地址
+                     * 设置<p>grpc内网调用地址</p>
+                     * @param _innerGrpcAddr <p>grpc内网调用地址</p>
                      * 
                      */
                     void SetInnerGrpcAddr(const std::vector<std::string>& _innerGrpcAddr);
@@ -192,48 +192,129 @@ namespace TencentCloud
                      */
                     bool InnerGrpcAddrHasBeenSet() const;
 
+                    /**
+                     * 获取<p>创建者 UIN</p>
+                     * @return CreatedBy <p>创建者 UIN</p>
+                     * 
+                     */
+                    std::string GetCreatedBy() const;
+
+                    /**
+                     * 设置<p>创建者 UIN</p>
+                     * @param _createdBy <p>创建者 UIN</p>
+                     * 
+                     */
+                    void SetCreatedBy(const std::string& _createdBy);
+
+                    /**
+                     * 判断参数 CreatedBy 是否已赋值
+                     * @return CreatedBy 是否已赋值
+                     * 
+                     */
+                    bool CreatedByHasBeenSet() const;
+
+                    /**
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>子用户名称</p>
+                     * @return SubUinName <p>子用户名称</p>
+                     * 
+                     */
+                    std::string GetSubUinName() const;
+
+                    /**
+                     * 设置<p>子用户名称</p>
+                     * @param _subUinName <p>子用户名称</p>
+                     * 
+                     */
+                    void SetSubUinName(const std::string& _subUinName);
+
+                    /**
+                     * 判断参数 SubUinName 是否已赋值
+                     * @return SubUinName 是否已赋值
+                     * 
+                     */
+                    bool SubUinNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 私有连接所在的VPCID
+                     * <p>私有连接所在的VPCID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 私有连接所在的子网ID
+                     * <p>私有连接所在的子网ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * HTTP内网调用地址
+                     * <p>HTTP内网调用地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_innerHttpAddr;
                     bool m_innerHttpAddrHasBeenSet;
 
                     /**
-                     * HTTPS内网调用地址
+                     * <p>HTTPS内网调用地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_innerHttpsAddr;
                     bool m_innerHttpsAddrHasBeenSet;
 
                     /**
-                     * 私有连接状态
+                     * <p>私有连接状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * grpc内网调用地址
+                     * <p>grpc内网调用地址</p>
                      */
                     std::vector<std::string> m_innerGrpcAddr;
                     bool m_innerGrpcAddrHasBeenSet;
+
+                    /**
+                     * <p>创建者 UIN</p>
+                     */
+                    std::string m_createdBy;
+                    bool m_createdByHasBeenSet;
+
+                    /**
+                     * <p>创建时间</p>
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * <p>子用户名称</p>
+                     */
+                    std::string m_subUinName;
+                    bool m_subUinNameHasBeenSet;
 
                 };
             }

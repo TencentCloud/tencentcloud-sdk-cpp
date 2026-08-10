@@ -6890,6 +6890,106 @@ CdbClient::ModifyDBInstanceVipVportOutcomeCallable CdbClient::ModifyDBInstanceVi
     return prom->get_future();
 }
 
+CdbClient::ModifyInstanceChargeTypeOutcome CdbClient::ModifyInstanceChargeType(const ModifyInstanceChargeTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceChargeType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceChargeTypeResponse rsp = ModifyInstanceChargeTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceChargeTypeOutcome(rsp);
+        else
+            return ModifyInstanceChargeTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceChargeTypeOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ModifyInstanceChargeTypeAsync(const ModifyInstanceChargeTypeRequest& request, const ModifyInstanceChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyInstanceChargeTypeRequest&;
+    using Resp = ModifyInstanceChargeTypeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstanceChargeType", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CdbClient::ModifyInstanceChargeTypeOutcomeCallable CdbClient::ModifyInstanceChargeTypeCallable(const ModifyInstanceChargeTypeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyInstanceChargeTypeOutcome>>();
+    ModifyInstanceChargeTypeAsync(
+    request,
+    [prom](
+        const CdbClient*,
+        const ModifyInstanceChargeTypeRequest&,
+        ModifyInstanceChargeTypeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CdbClient::ModifyInstanceDestroyProtectOutcome CdbClient::ModifyInstanceDestroyProtect(const ModifyInstanceDestroyProtectRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceDestroyProtect");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceDestroyProtectResponse rsp = ModifyInstanceDestroyProtectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceDestroyProtectOutcome(rsp);
+        else
+            return ModifyInstanceDestroyProtectOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceDestroyProtectOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ModifyInstanceDestroyProtectAsync(const ModifyInstanceDestroyProtectRequest& request, const ModifyInstanceDestroyProtectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyInstanceDestroyProtectRequest&;
+    using Resp = ModifyInstanceDestroyProtectResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstanceDestroyProtect", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CdbClient::ModifyInstanceDestroyProtectOutcomeCallable CdbClient::ModifyInstanceDestroyProtectCallable(const ModifyInstanceDestroyProtectRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyInstanceDestroyProtectOutcome>>();
+    ModifyInstanceDestroyProtectAsync(
+    request,
+    [prom](
+        const CdbClient*,
+        const ModifyInstanceDestroyProtectRequest&,
+        ModifyInstanceDestroyProtectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CdbClient::ModifyInstanceParamOutcome CdbClient::ModifyInstanceParam(const ModifyInstanceParamRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyInstanceParam");

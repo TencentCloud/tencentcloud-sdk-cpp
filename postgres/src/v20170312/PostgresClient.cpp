@@ -1140,6 +1140,56 @@ PostgresClient::DeleteDBInstanceNetworkAccessOutcomeCallable PostgresClient::Del
     return prom->get_future();
 }
 
+PostgresClient::DeleteDatabaseOutcome PostgresClient::DeleteDatabase(const DeleteDatabaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDatabase");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDatabaseResponse rsp = DeleteDatabaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDatabaseOutcome(rsp);
+        else
+            return DeleteDatabaseOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDatabaseOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DeleteDatabaseAsync(const DeleteDatabaseRequest& request, const DeleteDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteDatabaseRequest&;
+    using Resp = DeleteDatabaseResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteDatabase", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+PostgresClient::DeleteDatabaseOutcomeCallable PostgresClient::DeleteDatabaseCallable(const DeleteDatabaseRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteDatabaseOutcome>>();
+    DeleteDatabaseAsync(
+    request,
+    [prom](
+        const PostgresClient*,
+        const DeleteDatabaseRequest&,
+        DeleteDatabaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 PostgresClient::DeleteLogBackupOutcome PostgresClient::DeleteLogBackup(const DeleteLogBackupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteLogBackup");

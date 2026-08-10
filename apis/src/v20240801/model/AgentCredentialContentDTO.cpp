@@ -23,7 +23,9 @@ using namespace std;
 AgentCredentialContentDTO::AgentCredentialContentDTO() :
     m_sTSSystemHasBeenSet(false),
     m_sTSServiceHasBeenSet(false),
-    m_headersHasBeenSet(false)
+    m_headersHasBeenSet(false),
+    m_apiKeysHasBeenSet(false),
+    m_faultToleranceHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,43 @@ CoreInternalOutcome AgentCredentialContentDTO::Deserialize(const rapidjson::Valu
         m_headersHasBeenSet = true;
     }
 
+    if (value.HasMember("ApiKeys") && !value["ApiKeys"].IsNull())
+    {
+        if (!value["ApiKeys"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AgentCredentialContentDTO.ApiKeys` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ApiKeys"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AgentCredentialApiKeyDTO item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_apiKeys.push_back(item);
+        }
+        m_apiKeysHasBeenSet = true;
+    }
+
+    if (value.HasMember("FaultTolerance") && !value["FaultTolerance"].IsNull())
+    {
+        if (!value["FaultTolerance"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentCredentialContentDTO.FaultTolerance` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_faultTolerance.Deserialize(value["FaultTolerance"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_faultToleranceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +147,30 @@ void AgentCredentialContentDTO::ToJsonObject(rapidjson::Value &value, rapidjson:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_apiKeysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiKeys";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_apiKeys.begin(); itr != m_apiKeys.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_faultToleranceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FaultTolerance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_faultTolerance.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -159,5 +222,37 @@ void AgentCredentialContentDTO::SetHeaders(const vector<AgentCredentialContentHe
 bool AgentCredentialContentDTO::HeadersHasBeenSet() const
 {
     return m_headersHasBeenSet;
+}
+
+vector<AgentCredentialApiKeyDTO> AgentCredentialContentDTO::GetApiKeys() const
+{
+    return m_apiKeys;
+}
+
+void AgentCredentialContentDTO::SetApiKeys(const vector<AgentCredentialApiKeyDTO>& _apiKeys)
+{
+    m_apiKeys = _apiKeys;
+    m_apiKeysHasBeenSet = true;
+}
+
+bool AgentCredentialContentDTO::ApiKeysHasBeenSet() const
+{
+    return m_apiKeysHasBeenSet;
+}
+
+FaultToleranceDTO AgentCredentialContentDTO::GetFaultTolerance() const
+{
+    return m_faultTolerance;
+}
+
+void AgentCredentialContentDTO::SetFaultTolerance(const FaultToleranceDTO& _faultTolerance)
+{
+    m_faultTolerance = _faultTolerance;
+    m_faultToleranceHasBeenSet = true;
+}
+
+bool AgentCredentialContentDTO::FaultToleranceHasBeenSet() const
+{
+    return m_faultToleranceHasBeenSet;
 }
 

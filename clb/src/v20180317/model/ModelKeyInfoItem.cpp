@@ -37,7 +37,8 @@ ModelKeyInfoItem::ModelKeyInfoItem() :
     m_subnetIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_verifySSLHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_healthCheckConfigHasBeenSet(false)
 {
 }
 
@@ -249,6 +250,23 @@ CoreInternalOutcome ModelKeyInfoItem::Deserialize(const rapidjson::Value &value)
         m_vpcIdHasBeenSet = true;
     }
 
+    if (value.HasMember("HealthCheckConfig") && !value["HealthCheckConfig"].IsNull())
+    {
+        if (!value["HealthCheckConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelKeyInfoItem.HealthCheckConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_healthCheckConfig.Deserialize(value["HealthCheckConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_healthCheckConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -416,6 +434,15 @@ void ModelKeyInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthCheckConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheckConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_healthCheckConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -691,5 +718,21 @@ void ModelKeyInfoItem::SetVpcId(const string& _vpcId)
 bool ModelKeyInfoItem::VpcIdHasBeenSet() const
 {
     return m_vpcIdHasBeenSet;
+}
+
+ServiceProviderHealthCheckConfigOutput ModelKeyInfoItem::GetHealthCheckConfig() const
+{
+    return m_healthCheckConfig;
+}
+
+void ModelKeyInfoItem::SetHealthCheckConfig(const ServiceProviderHealthCheckConfigOutput& _healthCheckConfig)
+{
+    m_healthCheckConfig = _healthCheckConfig;
+    m_healthCheckConfigHasBeenSet = true;
+}
+
+bool ModelKeyInfoItem::HealthCheckConfigHasBeenSet() const
+{
+    return m_healthCheckConfigHasBeenSet;
 }
 

@@ -24,6 +24,7 @@
 #include <tencentcloud/clb/v20180317/model/ModelItem.h>
 #include <tencentcloud/clb/v20180317/model/KeyItem.h>
 #include <tencentcloud/clb/v20180317/model/TagInfo.h>
+#include <tencentcloud/clb/v20180317/model/ServiceProviderHealthCheckConfigInput.h>
 
 
 namespace TencentCloud
@@ -318,6 +319,27 @@ namespace TencentCloud
                      */
                     bool VerifySSLHasBeenSet() const;
 
+                    /**
+                     * 获取<p>健康检查配置</p>
+                     * @return HealthCheckConfig <p>健康检查配置</p>
+                     * 
+                     */
+                    ServiceProviderHealthCheckConfigInput GetHealthCheckConfig() const;
+
+                    /**
+                     * 设置<p>健康检查配置</p>
+                     * @param _healthCheckConfig <p>健康检查配置</p>
+                     * 
+                     */
+                    void SetHealthCheckConfig(const ServiceProviderHealthCheckConfigInput& _healthCheckConfig);
+
+                    /**
+                     * 判断参数 HealthCheckConfig 是否已赋值
+                     * @return HealthCheckConfig 是否已赋值
+                     * 
+                     */
+                    bool HealthCheckConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -397,6 +419,12 @@ namespace TencentCloud
                      */
                     bool m_verifySSL;
                     bool m_verifySSLHasBeenSet;
+
+                    /**
+                     * <p>健康检查配置</p>
+                     */
+                    ServiceProviderHealthCheckConfigInput m_healthCheckConfig;
+                    bool m_healthCheckConfigHasBeenSet;
 
                 };
             }

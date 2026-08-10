@@ -297,6 +297,10 @@
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceSecurityGroupsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceVipVportRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceVipVportResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyInstanceChargeTypeRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyInstanceChargeTypeResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyInstanceDestroyProtectRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyInstanceDestroyProtectResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyInstanceParamRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyInstanceParamResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyInstancePasswordComplexityRequest.h>
@@ -802,6 +806,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceVipVportResponse> ModifyDBInstanceVipVportOutcome;
                 typedef std::future<ModifyDBInstanceVipVportOutcome> ModifyDBInstanceVipVportOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyDBInstanceVipVportRequest&, ModifyDBInstanceVipVportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceVipVportAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceChargeTypeResponse> ModifyInstanceChargeTypeOutcome;
+                typedef std::future<ModifyInstanceChargeTypeOutcome> ModifyInstanceChargeTypeOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyInstanceChargeTypeRequest&, ModifyInstanceChargeTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceChargeTypeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceDestroyProtectResponse> ModifyInstanceDestroyProtectOutcome;
+                typedef std::future<ModifyInstanceDestroyProtectOutcome> ModifyInstanceDestroyProtectOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyInstanceDestroyProtectRequest&, ModifyInstanceDestroyProtectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceDestroyProtectAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstanceParamResponse> ModifyInstanceParamOutcome;
                 typedef std::future<ModifyInstanceParamOutcome> ModifyInstanceParamOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyInstanceParamRequest&, ModifyInstanceParamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceParamAsyncHandler;
@@ -2194,6 +2204,24 @@ namespace TencentCloud
                 ModifyDBInstanceVipVportOutcome ModifyDBInstanceVipVport(const Model::ModifyDBInstanceVipVportRequest &request);
                 void ModifyDBInstanceVipVportAsync(const Model::ModifyDBInstanceVipVportRequest& request, const ModifyDBInstanceVipVportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDBInstanceVipVportOutcomeCallable ModifyDBInstanceVipVportCallable(const Model::ModifyDBInstanceVipVportRequest& request);
+
+                /**
+                 *本接口(ModifyInstanceChargeType)用于将实例的计费模式从包年包月改为按量计费。
+                 * @param req ModifyInstanceChargeTypeRequest
+                 * @return ModifyInstanceChargeTypeOutcome
+                 */
+                ModifyInstanceChargeTypeOutcome ModifyInstanceChargeType(const Model::ModifyInstanceChargeTypeRequest &request);
+                void ModifyInstanceChargeTypeAsync(const Model::ModifyInstanceChargeTypeRequest& request, const ModifyInstanceChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceChargeTypeOutcomeCallable ModifyInstanceChargeTypeCallable(const Model::ModifyInstanceChargeTypeRequest& request);
+
+                /**
+                 *该接口（ModifyInstanceDestroyProtect）用于修改实例销毁保护状态。
+                 * @param req ModifyInstanceDestroyProtectRequest
+                 * @return ModifyInstanceDestroyProtectOutcome
+                 */
+                ModifyInstanceDestroyProtectOutcome ModifyInstanceDestroyProtect(const Model::ModifyInstanceDestroyProtectRequest &request);
+                void ModifyInstanceDestroyProtectAsync(const Model::ModifyInstanceDestroyProtectRequest& request, const ModifyInstanceDestroyProtectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceDestroyProtectOutcomeCallable ModifyInstanceDestroyProtectCallable(const Model::ModifyInstanceDestroyProtectRequest& request);
 
                 /**
                  *本接口(ModifyInstanceParam)用于修改云数据库实例的参数。

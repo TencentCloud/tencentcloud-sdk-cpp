@@ -31,6 +31,8 @@
 #include <tencentcloud/apis/v20240801/model/PluginConfigDTO.h>
 #include <tencentcloud/apis/v20240801/model/PromptModerateConfigDTO.h>
 #include <tencentcloud/apis/v20240801/model/SensitiveDataCheckConfigDTO.h>
+#include <tencentcloud/apis/v20240801/model/TokenLengthRouteDTO.h>
+#include <tencentcloud/apis/v20240801/model/TaskComplexityRouteDTO.h>
 
 
 namespace TencentCloud
@@ -911,6 +913,81 @@ namespace TencentCloud
                      */
                     bool RawCustomModelProtocolConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>路由策略</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RouteStrategy <p>路由策略</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRouteStrategy() const;
+
+                    /**
+                     * 设置<p>路由策略</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _routeStrategy <p>路由策略</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRouteStrategy(const std::string& _routeStrategy);
+
+                    /**
+                     * 判断参数 RouteStrategy 是否已赋值
+                     * @return RouteStrategy 是否已赋值
+                     * 
+                     */
+                    bool RouteStrategyHasBeenSet() const;
+
+                    /**
+                     * 获取<p>token长度路由配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TokenLengthRoute <p>token长度路由配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<TokenLengthRouteDTO> GetTokenLengthRoute() const;
+
+                    /**
+                     * 设置<p>token长度路由配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tokenLengthRoute <p>token长度路由配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTokenLengthRoute(const std::vector<TokenLengthRouteDTO>& _tokenLengthRoute);
+
+                    /**
+                     * 判断参数 TokenLengthRoute 是否已赋值
+                     * @return TokenLengthRoute 是否已赋值
+                     * 
+                     */
+                    bool TokenLengthRouteHasBeenSet() const;
+
+                    /**
+                     * 获取<p>任务复杂度路由配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskComplexityRoute <p>任务复杂度路由配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    TaskComplexityRouteDTO GetTaskComplexityRoute() const;
+
+                    /**
+                     * 设置<p>任务复杂度路由配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskComplexityRoute <p>任务复杂度路由配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskComplexityRoute(const TaskComplexityRouteDTO& _taskComplexityRoute);
+
+                    /**
+                     * 判断参数 TaskComplexityRoute 是否已赋值
+                     * @return TaskComplexityRoute 是否已赋值
+                     * 
+                     */
+                    bool TaskComplexityRouteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1155,6 +1232,27 @@ namespace TencentCloud
                      */
                     std::string m_rawCustomModelProtocolConfig;
                     bool m_rawCustomModelProtocolConfigHasBeenSet;
+
+                    /**
+                     * <p>路由策略</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_routeStrategy;
+                    bool m_routeStrategyHasBeenSet;
+
+                    /**
+                     * <p>token长度路由配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TokenLengthRouteDTO> m_tokenLengthRoute;
+                    bool m_tokenLengthRouteHasBeenSet;
+
+                    /**
+                     * <p>任务复杂度路由配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TaskComplexityRouteDTO m_taskComplexityRoute;
+                    bool m_taskComplexityRouteHasBeenSet;
 
                 };
             }

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取起始时间戳，Unix 秒级时间戳，最大支持近180天。
-                     * @return StartTimeStamp 起始时间戳，Unix 秒级时间戳，最大支持近180天。
+                     * 获取<p>起始时间戳，Unix 秒级时间戳，最大支持近180天。</p>
+                     * @return StartTimeStamp <p>起始时间戳，Unix 秒级时间戳，最大支持近180天。</p>
                      * 
                      */
                     int64_t GetStartTimeStamp() const;
 
                     /**
-                     * 设置起始时间戳，Unix 秒级时间戳，最大支持近180天。
-                     * @param _startTimeStamp 起始时间戳，Unix 秒级时间戳，最大支持近180天。
+                     * 设置<p>起始时间戳，Unix 秒级时间戳，最大支持近180天。</p>
+                     * @param _startTimeStamp <p>起始时间戳，Unix 秒级时间戳，最大支持近180天。</p>
                      * 
                      */
                     void SetStartTimeStamp(const int64_t& _startTimeStamp);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool StartTimeStampHasBeenSet() const;
 
                     /**
-                     * 获取结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。
-                     * @return EndTimeStamp 结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。
+                     * 获取<p>结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。</p>
+                     * @return EndTimeStamp <p>结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。</p>
                      * 
                      */
                     int64_t GetEndTimeStamp() const;
 
                     /**
-                     * 设置结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。
-                     * @param _endTimeStamp 结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。
+                     * 设置<p>结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。</p>
+                     * @param _endTimeStamp <p>结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。</p>
                      * 
                      */
                     void SetEndTimeStamp(const int64_t& _endTimeStamp);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EndTimeStampHasBeenSet() const;
 
                     /**
-                     * 获取应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @return SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 获取<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
+                     * @return SdkAppId <p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
                      * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
-                     * 设置应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @param _sdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 设置<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
+                     * @param _sdkAppId <p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
                      * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取分页尺寸（必填），上限 100
-                     * @return PageSize 分页尺寸（必填），上限 100
+                     * 获取<p>分页尺寸（必填），上限 100</p>
+                     * @return PageSize <p>分页尺寸（必填），上限 100</p>
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置分页尺寸（必填），上限 100
-                     * @param _pageSize 分页尺寸（必填），上限 100
+                     * 设置<p>分页尺寸（必填），上限 100</p>
+                     * @param _pageSize <p>分页尺寸（必填），上限 100</p>
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取分页页码（必填），从 0 开始
-                     * @return PageNumber 分页页码（必填），从 0 开始
+                     * 获取<p>分页页码（必填），从 0 开始</p>
+                     * @return PageNumber <p>分页页码（必填），从 0 开始</p>
                      * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
-                     * 设置分页页码（必填），从 0 开始
-                     * @param _pageNumber 分页页码（必填），从 0 开始
+                     * 设置<p>分页页码（必填），从 0 开始</p>
+                     * @param _pageNumber <p>分页页码（必填），从 0 开始</p>
                      * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取实例 ID（废弃）
-                     * @return InstanceId 实例 ID（废弃）
+                     * 获取<p>实例 ID（废弃）</p>
+                     * @return InstanceId <p>实例 ID（废弃）</p>
                      * @deprecated
                      */
                     int64_t GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID（废弃）
-                     * @param _instanceId 实例 ID（废弃）
+                     * 设置<p>实例 ID（废弃）</p>
+                     * @param _instanceId <p>实例 ID（废弃）</p>
                      * @deprecated
                      */
                     void SetInstanceId(const int64_t& _instanceId);
@@ -169,57 +169,57 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取返回数据条数，上限（废弃）
-                     * @return Limit 返回数据条数，上限（废弃）
-                     * 
+                     * 获取<p>返回数据条数，上限（废弃）</p>
+                     * @return Limit <p>返回数据条数，上限（废弃）</p>
+                     * @deprecated
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数据条数，上限（废弃）
-                     * @param _limit 返回数据条数，上限（废弃）
-                     * 
+                     * 设置<p>返回数据条数，上限（废弃）</p>
+                     * @param _limit <p>返回数据条数，上限（废弃）</p>
+                     * @deprecated
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移（废弃）
-                     * @return Offset 偏移（废弃）
-                     * 
+                     * 获取<p>偏移（废弃）</p>
+                     * @return Offset <p>偏移（废弃）</p>
+                     * @deprecated
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移（废弃）
-                     * @param _offset 偏移（废弃）
-                     * 
+                     * 设置<p>偏移（废弃）</p>
+                     * @param _offset <p>偏移（废弃）</p>
+                     * @deprecated
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取按手机号筛选
-                     * @return Phones 按手机号筛选
+                     * 获取<p>按手机号筛选</p>
+                     * @return Phones <p>按手机号筛选</p>
                      * 
                      */
                     std::vector<std::string> GetPhones() const;
 
                     /**
-                     * 设置按手机号筛选
-                     * @param _phones 按手机号筛选
+                     * 设置<p>按手机号筛选</p>
+                     * @param _phones <p>按手机号筛选</p>
                      * 
                      */
                     void SetPhones(const std::vector<std::string>& _phones);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool PhonesHasBeenSet() const;
 
                     /**
-                     * 获取按SessionId筛选
-                     * @return SessionIds 按SessionId筛选
+                     * 获取<p>按SessionId筛选</p>
+                     * @return SessionIds <p>按SessionId筛选</p>
                      * 
                      */
                     std::vector<std::string> GetSessionIds() const;
 
                     /**
-                     * 设置按SessionId筛选
-                     * @param _sessionIds 按SessionId筛选
+                     * 设置<p>按SessionId筛选</p>
+                     * @param _sessionIds <p>按SessionId筛选</p>
                      * 
                      */
                     void SetSessionIds(const std::vector<std::string>& _sessionIds);
@@ -255,61 +255,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 起始时间戳，Unix 秒级时间戳，最大支持近180天。
+                     * <p>起始时间戳，Unix 秒级时间戳，最大支持近180天。</p>
                      */
                     int64_t m_startTimeStamp;
                     bool m_startTimeStampHasBeenSet;
 
                     /**
-                     * 结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。
+                     * <p>结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。</p>
                      */
                     int64_t m_endTimeStamp;
                     bool m_endTimeStampHasBeenSet;
 
                     /**
-                     * 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * <p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
                      */
                     int64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 分页尺寸（必填），上限 100
+                     * <p>分页尺寸（必填），上限 100</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 分页页码（必填），从 0 开始
+                     * <p>分页页码（必填），从 0 开始</p>
                      */
                     int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 实例 ID（废弃）
+                     * <p>实例 ID（废弃）</p>
                      */
                     int64_t m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 返回数据条数，上限（废弃）
+                     * <p>返回数据条数，上限（废弃）</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移（废弃）
+                     * <p>偏移（废弃）</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 按手机号筛选
+                     * <p>按手机号筛选</p>
                      */
                     std::vector<std::string> m_phones;
                     bool m_phonesHasBeenSet;
 
                     /**
-                     * 按SessionId筛选
+                     * <p>按SessionId筛选</p>
                      */
                     std::vector<std::string> m_sessionIds;
                     bool m_sessionIdsHasBeenSet;

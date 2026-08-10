@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取cos桶名
-                     * @return CosBucket cos桶名
+                     * 获取<p>cos桶名</p>
+                     * @return CosBucket <p>cos桶名</p>
                      * 
                      */
                     std::string GetCosBucket() const;
 
                     /**
-                     * 设置cos桶名
-                     * @param _cosBucket cos桶名
+                     * 设置<p>cos桶名</p>
+                     * @param _cosBucket <p>cos桶名</p>
                      * 
                      */
                     void SetCosBucket(const std::string& _cosBucket);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool CosBucketHasBeenSet() const;
 
                     /**
-                     * 获取bucket 桶下的备份路径
-                     * @return BasePath bucket 桶下的备份路径
+                     * 获取<p>bucket 桶下的备份路径</p>
+                     * @return BasePath <p>bucket 桶下的备份路径</p>
                      * 
                      */
                     std::string GetBasePath() const;
 
                     /**
-                     * 设置bucket 桶下的备份路径
-                     * @param _basePath bucket 桶下的备份路径
+                     * 设置<p>bucket 桶下的备份路径</p>
+                     * @param _basePath <p>bucket 桶下的备份路径</p>
                      * 
                      */
                     void SetBasePath(const std::string& _basePath);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool BasePathHasBeenSet() const;
 
                     /**
-                     * 获取云上集群迁移集群名
-                     * @return ClusterInstanceId 云上集群迁移集群名
+                     * 获取<p>云上集群迁移集群名</p>
+                     * @return ClusterInstanceId <p>云上集群迁移集群名</p>
                      * 
                      */
                     std::string GetClusterInstanceId() const;
 
                     /**
-                     * 设置云上集群迁移集群名
-                     * @param _clusterInstanceId 云上集群迁移集群名
+                     * 设置<p>云上集群迁移集群名</p>
+                     * @param _clusterInstanceId <p>云上集群迁移集群名</p>
                      * 
                      */
                     void SetClusterInstanceId(const std::string& _clusterInstanceId);
@@ -105,25 +105,52 @@ namespace TencentCloud
                      */
                     bool ClusterInstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>es 集群仓库</p>
+                     * @return PaasEsRepository <p>es 集群仓库</p>
+                     * 
+                     */
+                    std::string GetPaasEsRepository() const;
+
+                    /**
+                     * 设置<p>es 集群仓库</p>
+                     * @param _paasEsRepository <p>es 集群仓库</p>
+                     * 
+                     */
+                    void SetPaasEsRepository(const std::string& _paasEsRepository);
+
+                    /**
+                     * 判断参数 PaasEsRepository 是否已赋值
+                     * @return PaasEsRepository 是否已赋值
+                     * 
+                     */
+                    bool PaasEsRepositoryHasBeenSet() const;
+
                 private:
 
                     /**
-                     * cos桶名
+                     * <p>cos桶名</p>
                      */
                     std::string m_cosBucket;
                     bool m_cosBucketHasBeenSet;
 
                     /**
-                     * bucket 桶下的备份路径
+                     * <p>bucket 桶下的备份路径</p>
                      */
                     std::string m_basePath;
                     bool m_basePathHasBeenSet;
 
                     /**
-                     * 云上集群迁移集群名
+                     * <p>云上集群迁移集群名</p>
                      */
                     std::string m_clusterInstanceId;
                     bool m_clusterInstanceIdHasBeenSet;
+
+                    /**
+                     * <p>es 集群仓库</p>
+                     */
+                    std::string m_paasEsRepository;
+                    bool m_paasEsRepositoryHasBeenSet;
 
                 };
             }

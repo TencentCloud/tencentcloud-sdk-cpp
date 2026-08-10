@@ -40,6 +40,156 @@ CdsClient::CdsClient(const Credential &credential, const string &region, const C
 }
 
 
+CdsClient::CreateReportPdfOutcome CdsClient::CreateReportPdf(const CreateReportPdfRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateReportPdf");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateReportPdfResponse rsp = CreateReportPdfResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateReportPdfOutcome(rsp);
+        else
+            return CreateReportPdfOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateReportPdfOutcome(outcome.GetError());
+    }
+}
+
+void CdsClient::CreateReportPdfAsync(const CreateReportPdfRequest& request, const CreateReportPdfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateReportPdfRequest&;
+    using Resp = CreateReportPdfResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateReportPdf", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CdsClient::CreateReportPdfOutcomeCallable CdsClient::CreateReportPdfCallable(const CreateReportPdfRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateReportPdfOutcome>>();
+    CreateReportPdfAsync(
+    request,
+    [prom](
+        const CdsClient*,
+        const CreateReportPdfRequest&,
+        CreateReportPdfOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CdsClient::CreateTimerReportOutcome CdsClient::CreateTimerReport(const CreateTimerReportRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTimerReport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTimerReportResponse rsp = CreateTimerReportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTimerReportOutcome(rsp);
+        else
+            return CreateTimerReportOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTimerReportOutcome(outcome.GetError());
+    }
+}
+
+void CdsClient::CreateTimerReportAsync(const CreateTimerReportRequest& request, const CreateTimerReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateTimerReportRequest&;
+    using Resp = CreateTimerReportResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateTimerReport", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CdsClient::CreateTimerReportOutcomeCallable CdsClient::CreateTimerReportCallable(const CreateTimerReportRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateTimerReportOutcome>>();
+    CreateTimerReportAsync(
+    request,
+    [prom](
+        const CdsClient*,
+        const CreateTimerReportRequest&,
+        CreateTimerReportOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CdsClient::DescribeAssetsListOutcome CdsClient::DescribeAssetsList(const DescribeAssetsListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetsList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetsListResponse rsp = DescribeAssetsListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetsListOutcome(rsp);
+        else
+            return DescribeAssetsListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetsListOutcome(outcome.GetError());
+    }
+}
+
+void CdsClient::DescribeAssetsListAsync(const DescribeAssetsListRequest& request, const DescribeAssetsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAssetsListRequest&;
+    using Resp = DescribeAssetsListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetsList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CdsClient::DescribeAssetsListOutcomeCallable CdsClient::DescribeAssetsListCallable(const DescribeAssetsListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAssetsListOutcome>>();
+    DescribeAssetsListAsync(
+    request,
+    [prom](
+        const CdsClient*,
+        const DescribeAssetsListRequest&,
+        DescribeAssetsListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CdsClient::DescribeDbauditInstanceTypeOutcome CdsClient::DescribeDbauditInstanceType(const DescribeDbauditInstanceTypeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDbauditInstanceType");
@@ -182,6 +332,106 @@ CdsClient::DescribeDbauditUsedRegionsOutcomeCallable CdsClient::DescribeDbauditU
         const CdsClient*,
         const DescribeDbauditUsedRegionsRequest&,
         DescribeDbauditUsedRegionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CdsClient::DescribeReportListOutcome CdsClient::DescribeReportList(const DescribeReportListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReportList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReportListResponse rsp = DescribeReportListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReportListOutcome(rsp);
+        else
+            return DescribeReportListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReportListOutcome(outcome.GetError());
+    }
+}
+
+void CdsClient::DescribeReportListAsync(const DescribeReportListRequest& request, const DescribeReportListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeReportListRequest&;
+    using Resp = DescribeReportListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeReportList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CdsClient::DescribeReportListOutcomeCallable CdsClient::DescribeReportListCallable(const DescribeReportListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeReportListOutcome>>();
+    DescribeReportListAsync(
+    request,
+    [prom](
+        const CdsClient*,
+        const DescribeReportListRequest&,
+        DescribeReportListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CdsClient::DescribeReportMissionListOutcome CdsClient::DescribeReportMissionList(const DescribeReportMissionListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReportMissionList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReportMissionListResponse rsp = DescribeReportMissionListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReportMissionListOutcome(rsp);
+        else
+            return DescribeReportMissionListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReportMissionListOutcome(outcome.GetError());
+    }
+}
+
+void CdsClient::DescribeReportMissionListAsync(const DescribeReportMissionListRequest& request, const DescribeReportMissionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeReportMissionListRequest&;
+    using Resp = DescribeReportMissionListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeReportMissionList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CdsClient::DescribeReportMissionListOutcomeCallable CdsClient::DescribeReportMissionListCallable(const DescribeReportMissionListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeReportMissionListOutcome>>();
+    DescribeReportMissionListAsync(
+    request,
+    [prom](
+        const CdsClient*,
+        const DescribeReportMissionListRequest&,
+        DescribeReportMissionListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

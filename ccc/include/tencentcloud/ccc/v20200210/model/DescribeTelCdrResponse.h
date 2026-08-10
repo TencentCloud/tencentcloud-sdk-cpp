@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取话单记录总数
-                     * @return TotalCount 话单记录总数
+                     * 获取<p>话单记录总数</p>
+                     * @return TotalCount <p>话单记录总数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取话单记录
-                     * @return TelCdrs 话单记录
+                     * 获取<p>话单记录</p>
+                     * @return TelCdrs <p>话单记录</p>
                      * @deprecated
                      */
                     std::vector<TelCdrInfo> GetTelCdrs() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool TelCdrsHasBeenSet() const;
 
                     /**
-                     * 获取话单记录
-                     * @return TelCdrList 话单记录
+                     * 获取<p>话单记录</p>
+                     * @return TelCdrList <p>话单记录</p>
                      * 
                      */
                     std::vector<TelCdrInfo> GetTelCdrList() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 话单记录总数
+                     * <p>话单记录总数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 话单记录
+                     * <p>话单记录</p>
                      */
                     std::vector<TelCdrInfo> m_telCdrs;
                     bool m_telCdrsHasBeenSet;
 
                     /**
-                     * 话单记录
+                     * <p>话单记录</p>
                      */
                     std::vector<TelCdrInfo> m_telCdrList;
                     bool m_telCdrListHasBeenSet;

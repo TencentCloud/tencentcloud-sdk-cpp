@@ -50,7 +50,10 @@ ModifyModelServiceRequest::ModifyModelServiceRequest() :
     m_fallbackStatusHasBeenSet(false),
     m_fallbackModelsHasBeenSet(false),
     m_modelProtocolHasBeenSet(false),
-    m_rawCustomModelProtocolConfigHasBeenSet(false)
+    m_rawCustomModelProtocolConfigHasBeenSet(false),
+    m_routeStrategyHasBeenSet(false),
+    m_tokenLengthRouteHasBeenSet(false),
+    m_taskComplexityRouteHasBeenSet(false)
 {
 }
 
@@ -319,6 +322,38 @@ string ModifyModelServiceRequest::ToJsonString() const
         string key = "RawCustomModelProtocolConfig";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_rawCustomModelProtocolConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_routeStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RouteStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_routeStrategy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tokenLengthRouteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenLengthRoute";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tokenLengthRoute.begin(); itr != m_tokenLengthRoute.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_taskComplexityRouteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskComplexityRoute";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_taskComplexityRoute.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -775,6 +810,54 @@ void ModifyModelServiceRequest::SetRawCustomModelProtocolConfig(const string& _r
 bool ModifyModelServiceRequest::RawCustomModelProtocolConfigHasBeenSet() const
 {
     return m_rawCustomModelProtocolConfigHasBeenSet;
+}
+
+string ModifyModelServiceRequest::GetRouteStrategy() const
+{
+    return m_routeStrategy;
+}
+
+void ModifyModelServiceRequest::SetRouteStrategy(const string& _routeStrategy)
+{
+    m_routeStrategy = _routeStrategy;
+    m_routeStrategyHasBeenSet = true;
+}
+
+bool ModifyModelServiceRequest::RouteStrategyHasBeenSet() const
+{
+    return m_routeStrategyHasBeenSet;
+}
+
+vector<TokenLengthRouteDTO> ModifyModelServiceRequest::GetTokenLengthRoute() const
+{
+    return m_tokenLengthRoute;
+}
+
+void ModifyModelServiceRequest::SetTokenLengthRoute(const vector<TokenLengthRouteDTO>& _tokenLengthRoute)
+{
+    m_tokenLengthRoute = _tokenLengthRoute;
+    m_tokenLengthRouteHasBeenSet = true;
+}
+
+bool ModifyModelServiceRequest::TokenLengthRouteHasBeenSet() const
+{
+    return m_tokenLengthRouteHasBeenSet;
+}
+
+TaskComplexityRouteDTO ModifyModelServiceRequest::GetTaskComplexityRoute() const
+{
+    return m_taskComplexityRoute;
+}
+
+void ModifyModelServiceRequest::SetTaskComplexityRoute(const TaskComplexityRouteDTO& _taskComplexityRoute)
+{
+    m_taskComplexityRoute = _taskComplexityRoute;
+    m_taskComplexityRouteHasBeenSet = true;
+}
+
+bool ModifyModelServiceRequest::TaskComplexityRouteHasBeenSet() const
+{
+    return m_taskComplexityRouteHasBeenSet;
 }
 
 

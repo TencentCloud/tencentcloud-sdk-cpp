@@ -122,7 +122,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceParametersRequest.h
   include/tencentcloud/postgres/v20170312/model/CreateAuditLogFileResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyPrivilege.h
-  include/tencentcloud/postgres/v20170312/model/NetworkAccess.h
+  include/tencentcloud/postgres/v20170312/model/DeleteDatabaseResponse.h
   include/tencentcloud/postgres/v20170312/model/DestroyDBProxyRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBInstanceAttributeRequest.h
   include/tencentcloud/postgres/v20170312/model/ResetAccountPasswordResponse.h
@@ -138,6 +138,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/DestroyDBProxyResponse.h
   include/tencentcloud/postgres/v20170312/model/SwitchDBInstancePrimaryResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyReadOnlyDBInstanceWeightResponse.h
+  include/tencentcloud/postgres/v20170312/model/NetworkAccess.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceHAConfigRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeAuditLogFilesResponse.h
   include/tencentcloud/postgres/v20170312/model/DeleteReadOnlyGroupNetworkAccessResponse.h
@@ -206,7 +207,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/ModifyReadOnlyDBInstanceWeightRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeAuditInstanceListRequest.h
   include/tencentcloud/postgres/v20170312/model/ModifyAccountPrivilegesResponse.h
-  include/tencentcloud/postgres/v20170312/model/ModifyDBProxyResponse.h
+  include/tencentcloud/postgres/v20170312/model/DeleteDatabaseRequest.h
   include/tencentcloud/postgres/v20170312/model/Database.h
   include/tencentcloud/postgres/v20170312/model/DeleteReadOnlyGroupRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBBackupsRequest.h
@@ -252,6 +253,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/ModifyAccountRemarkRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeParameterTemplateAttributesRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBErrlogsResponse.h
+  include/tencentcloud/postgres/v20170312/model/ModifyDBProxyResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyBackupPlanRequest.h
   include/tencentcloud/postgres/v20170312/model/DeleteBaseBackupRequest.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBProxyAddressResponse.h
@@ -421,7 +423,7 @@ set(postgres_src
   src/v20170312/model/ModifyDBInstanceParametersRequest.cpp
   src/v20170312/model/CreateAuditLogFileResponse.cpp
   src/v20170312/model/ModifyPrivilege.cpp
-  src/v20170312/model/NetworkAccess.cpp
+  src/v20170312/model/DeleteDatabaseResponse.cpp
   src/v20170312/model/DestroyDBProxyRequest.cpp
   src/v20170312/model/DescribeDBInstanceAttributeRequest.cpp
   src/v20170312/model/ResetAccountPasswordResponse.cpp
@@ -437,6 +439,7 @@ set(postgres_src
   src/v20170312/model/DestroyDBProxyResponse.cpp
   src/v20170312/model/SwitchDBInstancePrimaryResponse.cpp
   src/v20170312/model/ModifyReadOnlyDBInstanceWeightResponse.cpp
+  src/v20170312/model/NetworkAccess.cpp
   src/v20170312/model/ModifyDBInstanceHAConfigRequest.cpp
   src/v20170312/model/DescribeAuditLogFilesResponse.cpp
   src/v20170312/model/DeleteReadOnlyGroupNetworkAccessResponse.cpp
@@ -505,7 +508,7 @@ set(postgres_src
   src/v20170312/model/ModifyReadOnlyDBInstanceWeightRequest.cpp
   src/v20170312/model/DescribeAuditInstanceListRequest.cpp
   src/v20170312/model/ModifyAccountPrivilegesResponse.cpp
-  src/v20170312/model/ModifyDBProxyResponse.cpp
+  src/v20170312/model/DeleteDatabaseRequest.cpp
   src/v20170312/model/Database.cpp
   src/v20170312/model/DeleteReadOnlyGroupRequest.cpp
   src/v20170312/model/DescribeDBBackupsRequest.cpp
@@ -551,6 +554,7 @@ set(postgres_src
   src/v20170312/model/ModifyAccountRemarkRequest.cpp
   src/v20170312/model/DescribeParameterTemplateAttributesRequest.cpp
   src/v20170312/model/DescribeDBErrlogsResponse.cpp
+  src/v20170312/model/ModifyDBProxyResponse.cpp
   src/v20170312/model/ModifyBackupPlanRequest.cpp
   src/v20170312/model/DeleteBaseBackupRequest.cpp
   src/v20170312/model/ModifyDBProxyAddressResponse.cpp

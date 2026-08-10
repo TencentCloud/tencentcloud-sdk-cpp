@@ -32,7 +32,8 @@ ImageTaskInput::ImageTaskInput() :
     m_createImageConfigHasBeenSet(false),
     m_aiCutoutConfigHasBeenSet(false),
     m_aiExpansionConfigHasBeenSet(false),
-    m_aiStoryboardConfigHasBeenSet(false)
+    m_aiStoryboardConfigHasBeenSet(false),
+    m_understandImageConfigHasBeenSet(false)
 {
 }
 
@@ -245,6 +246,23 @@ CoreInternalOutcome ImageTaskInput::Deserialize(const rapidjson::Value &value)
         m_aiStoryboardConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("UnderstandImageConfig") && !value["UnderstandImageConfig"].IsNull())
+    {
+        if (!value["UnderstandImageConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageTaskInput.UnderstandImageConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_understandImageConfig.Deserialize(value["UnderstandImageConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_understandImageConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -358,6 +376,15 @@ void ImageTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_aiStoryboardConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_understandImageConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnderstandImageConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_understandImageConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -553,5 +580,21 @@ void ImageTaskInput::SetAiStoryboardConfig(const AiStoryboardConfig& _aiStoryboa
 bool ImageTaskInput::AiStoryboardConfigHasBeenSet() const
 {
     return m_aiStoryboardConfigHasBeenSet;
+}
+
+UnderstandImageConfig ImageTaskInput::GetUnderstandImageConfig() const
+{
+    return m_understandImageConfig;
+}
+
+void ImageTaskInput::SetUnderstandImageConfig(const UnderstandImageConfig& _understandImageConfig)
+{
+    m_understandImageConfig = _understandImageConfig;
+    m_understandImageConfigHasBeenSet = true;
+}
+
+bool ImageTaskInput::UnderstandImageConfigHasBeenSet() const
+{
+    return m_understandImageConfigHasBeenSet;
 }
 

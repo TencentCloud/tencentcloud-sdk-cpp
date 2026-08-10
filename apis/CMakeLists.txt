@@ -22,6 +22,7 @@ set(apis_public_header_model
   include/tencentcloud/apis/v20240801/model/CreateModelServiceRequest.h
   include/tencentcloud/apis/v20240801/model/FieldValueDTO.h
   include/tencentcloud/apis/v20240801/model/AgentAppSecretKeyVO.h
+  include/tencentcloud/apis/v20240801/model/TokenLengthRouteDTO.h
   include/tencentcloud/apis/v20240801/model/McpSecurityRule.h
   include/tencentcloud/apis/v20240801/model/ModifyAgentAppRequest.h
   include/tencentcloud/apis/v20240801/model/InvokeLimitConfigDTO.h
@@ -50,6 +51,7 @@ set(apis_public_header_model
   include/tencentcloud/apis/v20240801/model/ModifyModelResponse.h
   include/tencentcloud/apis/v20240801/model/ServiceDatabaseReqParam.h
   include/tencentcloud/apis/v20240801/model/CreateAgentAppServicesResponse.h
+  include/tencentcloud/apis/v20240801/model/TaskComplexityRouteDTO.h
   include/tencentcloud/apis/v20240801/model/CreateAgentAppModelServicesRequest.h
   include/tencentcloud/apis/v20240801/model/DescribeModelServicesResponseVO.h
   include/tencentcloud/apis/v20240801/model/DeleteMcpServerResponse.h
@@ -89,6 +91,7 @@ set(apis_public_header_model
   include/tencentcloud/apis/v20240801/model/DescribeAgentAppResp.h
   include/tencentcloud/apis/v20240801/model/CreateMcpServerRequest.h
   include/tencentcloud/apis/v20240801/model/DeleteModelServiceRequest.h
+  include/tencentcloud/apis/v20240801/model/AgentCredentialApiKeyDTO.h
   include/tencentcloud/apis/v20240801/model/DescribeServicesRequest.h
   include/tencentcloud/apis/v20240801/model/DeleteAgentAppRequest.h
   include/tencentcloud/apis/v20240801/model/ModifyServiceRequest.h
@@ -105,6 +108,7 @@ set(apis_public_header_model
   include/tencentcloud/apis/v20240801/model/AgentAppModelServiceDTO.h
   include/tencentcloud/apis/v20240801/model/McpTool.h
   include/tencentcloud/apis/v20240801/model/DescribeMcpServerRequest.h
+  include/tencentcloud/apis/v20240801/model/FaultToleranceDTO.h
   include/tencentcloud/apis/v20240801/model/IpConfig.h
   include/tencentcloud/apis/v20240801/model/ServiceVO.h
   include/tencentcloud/apis/v20240801/model/ModifyAgentCredentialResponse.h
@@ -168,6 +172,7 @@ set(apis_src
   src/v20240801/model/CreateModelServiceRequest.cpp
   src/v20240801/model/FieldValueDTO.cpp
   src/v20240801/model/AgentAppSecretKeyVO.cpp
+  src/v20240801/model/TokenLengthRouteDTO.cpp
   src/v20240801/model/McpSecurityRule.cpp
   src/v20240801/model/ModifyAgentAppRequest.cpp
   src/v20240801/model/InvokeLimitConfigDTO.cpp
@@ -196,6 +201,7 @@ set(apis_src
   src/v20240801/model/ModifyModelResponse.cpp
   src/v20240801/model/ServiceDatabaseReqParam.cpp
   src/v20240801/model/CreateAgentAppServicesResponse.cpp
+  src/v20240801/model/TaskComplexityRouteDTO.cpp
   src/v20240801/model/CreateAgentAppModelServicesRequest.cpp
   src/v20240801/model/DescribeModelServicesResponseVO.cpp
   src/v20240801/model/DeleteMcpServerResponse.cpp
@@ -235,6 +241,7 @@ set(apis_src
   src/v20240801/model/DescribeAgentAppResp.cpp
   src/v20240801/model/CreateMcpServerRequest.cpp
   src/v20240801/model/DeleteModelServiceRequest.cpp
+  src/v20240801/model/AgentCredentialApiKeyDTO.cpp
   src/v20240801/model/DescribeServicesRequest.cpp
   src/v20240801/model/DeleteAgentAppRequest.cpp
   src/v20240801/model/ModifyServiceRequest.cpp
@@ -251,6 +258,7 @@ set(apis_src
   src/v20240801/model/AgentAppModelServiceDTO.cpp
   src/v20240801/model/McpTool.cpp
   src/v20240801/model/DescribeMcpServerRequest.cpp
+  src/v20240801/model/FaultToleranceDTO.cpp
   src/v20240801/model/IpConfig.cpp
   src/v20240801/model/ServiceVO.cpp
   src/v20240801/model/ModifyAgentCredentialResponse.cpp

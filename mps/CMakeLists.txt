@@ -343,6 +343,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/AiReviewPornAsrTaskOutput.h
   include/tencentcloud/mps/v20190612/model/ComposeTransitionItem.h
   include/tencentcloud/mps/v20190612/model/DeleteStreamPackageSourceRequest.h
+  include/tencentcloud/mps/v20190612/model/UnderstandImageConfig.h
   include/tencentcloud/mps/v20190612/model/DeleteAIAnalysisTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/DescribeMDPMPSUserInfoRequest.h
   include/tencentcloud/mps/v20190612/model/SSAIChannelInfo.h
@@ -1429,6 +1430,7 @@ set(mps_src
   src/v20190612/model/AiReviewPornAsrTaskOutput.cpp
   src/v20190612/model/ComposeTransitionItem.cpp
   src/v20190612/model/DeleteStreamPackageSourceRequest.cpp
+  src/v20190612/model/UnderstandImageConfig.cpp
   src/v20190612/model/DeleteAIAnalysisTemplateRequest.cpp
   src/v20190612/model/DescribeMDPMPSUserInfoRequest.cpp
   src/v20190612/model/SSAIChannelInfo.cpp

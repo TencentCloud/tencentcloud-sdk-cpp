@@ -58,7 +58,10 @@ DescribeModelServiceResponseVO::DescribeModelServiceResponseVO() :
     m_fallbackStatusHasBeenSet(false),
     m_fallbackModelsHasBeenSet(false),
     m_modelProtocolHasBeenSet(false),
-    m_rawCustomModelProtocolConfigHasBeenSet(false)
+    m_rawCustomModelProtocolConfigHasBeenSet(false),
+    m_routeStrategyHasBeenSet(false),
+    m_tokenLengthRouteHasBeenSet(false),
+    m_taskComplexityRouteHasBeenSet(false)
 {
 }
 
@@ -521,6 +524,53 @@ CoreInternalOutcome DescribeModelServiceResponseVO::Deserialize(const rapidjson:
         m_rawCustomModelProtocolConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("RouteStrategy") && !value["RouteStrategy"].IsNull())
+    {
+        if (!value["RouteStrategy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeModelServiceResponseVO.RouteStrategy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_routeStrategy = string(value["RouteStrategy"].GetString());
+        m_routeStrategyHasBeenSet = true;
+    }
+
+    if (value.HasMember("TokenLengthRoute") && !value["TokenLengthRoute"].IsNull())
+    {
+        if (!value["TokenLengthRoute"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeModelServiceResponseVO.TokenLengthRoute` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TokenLengthRoute"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TokenLengthRouteDTO item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tokenLengthRoute.push_back(item);
+        }
+        m_tokenLengthRouteHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskComplexityRoute") && !value["TaskComplexityRoute"].IsNull())
+    {
+        if (!value["TaskComplexityRoute"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeModelServiceResponseVO.TaskComplexityRoute` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_taskComplexityRoute.Deserialize(value["TaskComplexityRoute"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_taskComplexityRouteHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -871,6 +921,38 @@ void DescribeModelServiceResponseVO::ToJsonObject(rapidjson::Value &value, rapid
         string key = "RawCustomModelProtocolConfig";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_rawCustomModelProtocolConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_routeStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RouteStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_routeStrategy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tokenLengthRouteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenLengthRoute";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tokenLengthRoute.begin(); itr != m_tokenLengthRoute.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_taskComplexityRouteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskComplexityRoute";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_taskComplexityRoute.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1482,5 +1564,53 @@ void DescribeModelServiceResponseVO::SetRawCustomModelProtocolConfig(const strin
 bool DescribeModelServiceResponseVO::RawCustomModelProtocolConfigHasBeenSet() const
 {
     return m_rawCustomModelProtocolConfigHasBeenSet;
+}
+
+string DescribeModelServiceResponseVO::GetRouteStrategy() const
+{
+    return m_routeStrategy;
+}
+
+void DescribeModelServiceResponseVO::SetRouteStrategy(const string& _routeStrategy)
+{
+    m_routeStrategy = _routeStrategy;
+    m_routeStrategyHasBeenSet = true;
+}
+
+bool DescribeModelServiceResponseVO::RouteStrategyHasBeenSet() const
+{
+    return m_routeStrategyHasBeenSet;
+}
+
+vector<TokenLengthRouteDTO> DescribeModelServiceResponseVO::GetTokenLengthRoute() const
+{
+    return m_tokenLengthRoute;
+}
+
+void DescribeModelServiceResponseVO::SetTokenLengthRoute(const vector<TokenLengthRouteDTO>& _tokenLengthRoute)
+{
+    m_tokenLengthRoute = _tokenLengthRoute;
+    m_tokenLengthRouteHasBeenSet = true;
+}
+
+bool DescribeModelServiceResponseVO::TokenLengthRouteHasBeenSet() const
+{
+    return m_tokenLengthRouteHasBeenSet;
+}
+
+TaskComplexityRouteDTO DescribeModelServiceResponseVO::GetTaskComplexityRoute() const
+{
+    return m_taskComplexityRoute;
+}
+
+void DescribeModelServiceResponseVO::SetTaskComplexityRoute(const TaskComplexityRouteDTO& _taskComplexityRoute)
+{
+    m_taskComplexityRoute = _taskComplexityRoute;
+    m_taskComplexityRouteHasBeenSet = true;
+}
+
+bool DescribeModelServiceResponseVO::TaskComplexityRouteHasBeenSet() const
+{
+    return m_taskComplexityRouteHasBeenSet;
 }
 

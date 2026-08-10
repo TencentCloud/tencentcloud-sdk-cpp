@@ -1,0 +1,76 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/clb/v20180317/model/ServiceProviderHealthCheckConfigInput.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Clb::V20180317::Model;
+using namespace std;
+
+ServiceProviderHealthCheckConfigInput::ServiceProviderHealthCheckConfigInput() :
+    m_healthCheckEnabledHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome ServiceProviderHealthCheckConfigInput::Deserialize(const rapidjson::Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("HealthCheckEnabled") && !value["HealthCheckEnabled"].IsNull())
+    {
+        if (!value["HealthCheckEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceProviderHealthCheckConfigInput.HealthCheckEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthCheckEnabled = value["HealthCheckEnabled"].GetBool();
+        m_healthCheckEnabledHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void ServiceProviderHealthCheckConfigInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+{
+
+    if (m_healthCheckEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheckEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_healthCheckEnabled, allocator);
+    }
+
+}
+
+
+bool ServiceProviderHealthCheckConfigInput::GetHealthCheckEnabled() const
+{
+    return m_healthCheckEnabled;
+}
+
+void ServiceProviderHealthCheckConfigInput::SetHealthCheckEnabled(const bool& _healthCheckEnabled)
+{
+    m_healthCheckEnabled = _healthCheckEnabled;
+    m_healthCheckEnabledHasBeenSet = true;
+}
+
+bool ServiceProviderHealthCheckConfigInput::HealthCheckEnabledHasBeenSet() const
+{
+    return m_healthCheckEnabledHasBeenSet;
+}
+

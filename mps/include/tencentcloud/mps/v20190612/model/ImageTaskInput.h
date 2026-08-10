@@ -36,6 +36,7 @@
 #include <tencentcloud/mps/v20190612/model/AiCutoutConfig.h>
 #include <tencentcloud/mps/v20190612/model/AiExpansionConfig.h>
 #include <tencentcloud/mps/v20190612/model/AiStoryboardConfig.h>
+#include <tencentcloud/mps/v20190612/model/UnderstandImageConfig.h>
 
 
 namespace TencentCloud
@@ -326,6 +327,27 @@ namespace TencentCloud
                      */
                     bool AiStoryboardConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>图片理解配置</p>
+                     * @return UnderstandImageConfig <p>图片理解配置</p>
+                     * 
+                     */
+                    UnderstandImageConfig GetUnderstandImageConfig() const;
+
+                    /**
+                     * 设置<p>图片理解配置</p>
+                     * @param _understandImageConfig <p>图片理解配置</p>
+                     * 
+                     */
+                    void SetUnderstandImageConfig(const UnderstandImageConfig& _understandImageConfig);
+
+                    /**
+                     * 判断参数 UnderstandImageConfig 是否已赋值
+                     * @return UnderstandImageConfig 是否已赋值
+                     * 
+                     */
+                    bool UnderstandImageConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -403,6 +425,12 @@ namespace TencentCloud
                      */
                     AiStoryboardConfig m_aiStoryboardConfig;
                     bool m_aiStoryboardConfigHasBeenSet;
+
+                    /**
+                     * <p>图片理解配置</p>
+                     */
+                    UnderstandImageConfig m_understandImageConfig;
+                    bool m_understandImageConfigHasBeenSet;
 
                 };
             }

@@ -91,7 +91,8 @@ TaskFullRespInfo::TaskFullRespInfo() :
     m_gpuExecutorSizeHasBeenSet(false),
     m_shuffleWriteBytesSumHasBeenSet(false),
     m_activeCoreHasBeenSet(false),
-    m_queueTimeHasBeenSet(false)
+    m_queueTimeHasBeenSet(false),
+    m_resourceGroupTypeHasBeenSet(false)
 {
 }
 
@@ -831,6 +832,16 @@ CoreInternalOutcome TaskFullRespInfo::Deserialize(const rapidjson::Value &value)
         m_queueTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceGroupType") && !value["ResourceGroupType"].IsNull())
+    {
+        if (!value["ResourceGroupType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskFullRespInfo.ResourceGroupType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceGroupType = string(value["ResourceGroupType"].GetString());
+        m_resourceGroupTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1407,6 +1418,14 @@ void TaskFullRespInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "QueueTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_queueTime, allocator);
+    }
+
+    if (m_resourceGroupTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceGroupType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2546,5 +2565,21 @@ void TaskFullRespInfo::SetQueueTime(const int64_t& _queueTime)
 bool TaskFullRespInfo::QueueTimeHasBeenSet() const
 {
     return m_queueTimeHasBeenSet;
+}
+
+string TaskFullRespInfo::GetResourceGroupType() const
+{
+    return m_resourceGroupType;
+}
+
+void TaskFullRespInfo::SetResourceGroupType(const string& _resourceGroupType)
+{
+    m_resourceGroupType = _resourceGroupType;
+    m_resourceGroupTypeHasBeenSet = true;
+}
+
+bool TaskFullRespInfo::ResourceGroupTypeHasBeenSet() const
+{
+    return m_resourceGroupTypeHasBeenSet;
 }
 

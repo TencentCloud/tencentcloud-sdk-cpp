@@ -1652,6 +1652,27 @@ namespace TencentCloud
                      */
                     bool QueueTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>资源组类型</p>
+                     * @return ResourceGroupType <p>资源组类型</p>
+                     * 
+                     */
+                    std::string GetResourceGroupType() const;
+
+                    /**
+                     * 设置<p>资源组类型</p>
+                     * @param _resourceGroupType <p>资源组类型</p>
+                     * 
+                     */
+                    void SetResourceGroupType(const std::string& _resourceGroupType);
+
+                    /**
+                     * 判断参数 ResourceGroupType 是否已赋值
+                     * @return ResourceGroupType 是否已赋值
+                     * 
+                     */
+                    bool ResourceGroupTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2107,6 +2128,12 @@ namespace TencentCloud
                      */
                     int64_t m_queueTime;
                     bool m_queueTimeHasBeenSet;
+
+                    /**
+                     * <p>资源组类型</p>
+                     */
+                    std::string m_resourceGroupType;
+                    bool m_resourceGroupTypeHasBeenSet;
 
                 };
             }

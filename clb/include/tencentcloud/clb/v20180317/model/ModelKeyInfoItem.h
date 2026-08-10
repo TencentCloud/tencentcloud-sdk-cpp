@@ -27,6 +27,7 @@
 #include <tencentcloud/clb/v20180317/model/KeyDetailItem.h>
 #include <tencentcloud/clb/v20180317/model/ServiceProviderModelItem.h>
 #include <tencentcloud/clb/v20180317/model/TagInfo.h>
+#include <tencentcloud/clb/v20180317/model/ServiceProviderHealthCheckConfigOutput.h>
 
 
 namespace TencentCloud
@@ -318,15 +319,15 @@ namespace TencentCloud
                     bool ServiceProviderNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>模型状态</p><p>枚举值：</p><ul><li>Active： 运行中</li><li>Provisioning： 创建中</li><li>Configuring： 变配中</li><li>Deleting： 删除中</li><li>ProvisionFailed： 创建失败</li><li>ConfigureFailed： 变配失败</li><li>DeletionFailed： 删除失败</li><li>Disabled： 已禁用</li></ul>
-                     * @return Status <p>模型状态</p><p>枚举值：</p><ul><li>Active： 运行中</li><li>Provisioning： 创建中</li><li>Configuring： 变配中</li><li>Deleting： 删除中</li><li>ProvisionFailed： 创建失败</li><li>ConfigureFailed： 变配失败</li><li>DeletionFailed： 删除失败</li><li>Disabled： 已禁用</li></ul>
+                     * 获取<p>模型状态</p><p>枚举值：</p><ul><li>Active： 运行中</li><li>Provisioning： 创建中</li><li>Configuring： 变配中</li></ul>
+                     * @return Status <p>模型状态</p><p>枚举值：</p><ul><li>Active： 运行中</li><li>Provisioning： 创建中</li><li>Configuring： 变配中</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置<p>模型状态</p><p>枚举值：</p><ul><li>Active： 运行中</li><li>Provisioning： 创建中</li><li>Configuring： 变配中</li><li>Deleting： 删除中</li><li>ProvisionFailed： 创建失败</li><li>ConfigureFailed： 变配失败</li><li>DeletionFailed： 删除失败</li><li>Disabled： 已禁用</li></ul>
-                     * @param _status <p>模型状态</p><p>枚举值：</p><ul><li>Active： 运行中</li><li>Provisioning： 创建中</li><li>Configuring： 变配中</li><li>Deleting： 删除中</li><li>ProvisionFailed： 创建失败</li><li>ConfigureFailed： 变配失败</li><li>DeletionFailed： 删除失败</li><li>Disabled： 已禁用</li></ul>
+                     * 设置<p>模型状态</p><p>枚举值：</p><ul><li>Active： 运行中</li><li>Provisioning： 创建中</li><li>Configuring： 变配中</li></ul>
+                     * @param _status <p>模型状态</p><p>枚举值：</p><ul><li>Active： 运行中</li><li>Provisioning： 创建中</li><li>Configuring： 变配中</li></ul>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -430,6 +431,27 @@ namespace TencentCloud
                      */
                     bool VpcIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>健康检查配置</p>
+                     * @return HealthCheckConfig <p>健康检查配置</p>
+                     * 
+                     */
+                    ServiceProviderHealthCheckConfigOutput GetHealthCheckConfig() const;
+
+                    /**
+                     * 设置<p>健康检查配置</p>
+                     * @param _healthCheckConfig <p>健康检查配置</p>
+                     * 
+                     */
+                    void SetHealthCheckConfig(const ServiceProviderHealthCheckConfigOutput& _healthCheckConfig);
+
+                    /**
+                     * 判断参数 HealthCheckConfig 是否已赋值
+                     * @return HealthCheckConfig 是否已赋值
+                     * 
+                     */
+                    bool HealthCheckConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -509,7 +531,7 @@ namespace TencentCloud
                     bool m_serviceProviderNameHasBeenSet;
 
                     /**
-                     * <p>模型状态</p><p>枚举值：</p><ul><li>Active： 运行中</li><li>Provisioning： 创建中</li><li>Configuring： 变配中</li><li>Deleting： 删除中</li><li>ProvisionFailed： 创建失败</li><li>ConfigureFailed： 变配失败</li><li>DeletionFailed： 删除失败</li><li>Disabled： 已禁用</li></ul>
+                     * <p>模型状态</p><p>枚举值：</p><ul><li>Active： 运行中</li><li>Provisioning： 创建中</li><li>Configuring： 变配中</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -539,6 +561,12 @@ namespace TencentCloud
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * <p>健康检查配置</p>
+                     */
+                    ServiceProviderHealthCheckConfigOutput m_healthCheckConfig;
+                    bool m_healthCheckConfigHasBeenSet;
 
                 };
             }

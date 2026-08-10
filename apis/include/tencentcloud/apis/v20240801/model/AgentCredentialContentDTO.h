@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/apis/v20240801/model/AgentCredentialContentHeaderDTO.h>
+#include <tencentcloud/apis/v20240801/model/AgentCredentialApiKeyDTO.h>
+#include <tencentcloud/apis/v20240801/model/FaultToleranceDTO.h>
 
 
 namespace TencentCloud
@@ -48,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取如果认证类型为sts时，该项必填
-                     * @return STSSystem 如果认证类型为sts时，该项必填
+                     * 获取<p>如果认证类型为sts时，该项必填</p>
+                     * @return STSSystem <p>如果认证类型为sts时，该项必填</p>
                      * 
                      */
                     std::string GetSTSSystem() const;
 
                     /**
-                     * 设置如果认证类型为sts时，该项必填
-                     * @param _sTSSystem 如果认证类型为sts时，该项必填
+                     * 设置<p>如果认证类型为sts时，该项必填</p>
+                     * @param _sTSSystem <p>如果认证类型为sts时，该项必填</p>
                      * 
                      */
                     void SetSTSSystem(const std::string& _sTSSystem);
@@ -69,15 +71,15 @@ namespace TencentCloud
                     bool STSSystemHasBeenSet() const;
 
                     /**
-                     * 获取如果认证类型为sts时，该项必填
-                     * @return STSService 如果认证类型为sts时，该项必填
+                     * 获取<p>如果认证类型为sts时，该项必填</p>
+                     * @return STSService <p>如果认证类型为sts时，该项必填</p>
                      * 
                      */
                     std::string GetSTSService() const;
 
                     /**
-                     * 设置如果认证类型为sts时，该项必填
-                     * @param _sTSService 如果认证类型为sts时，该项必填
+                     * 设置<p>如果认证类型为sts时，该项必填</p>
+                     * @param _sTSService <p>如果认证类型为sts时，该项必填</p>
                      * 
                      */
                     void SetSTSService(const std::string& _sTSService);
@@ -90,15 +92,15 @@ namespace TencentCloud
                     bool STSServiceHasBeenSet() const;
 
                     /**
-                     * 获取如果认证类型为reqKey时，该项必填
-                     * @return Headers 如果认证类型为reqKey时，该项必填
+                     * 获取<p>如果认证类型为reqKey时，该项必填</p>
+                     * @return Headers <p>如果认证类型为reqKey时，该项必填</p>
                      * 
                      */
                     std::vector<AgentCredentialContentHeaderDTO> GetHeaders() const;
 
                     /**
-                     * 设置如果认证类型为reqKey时，该项必填
-                     * @param _headers 如果认证类型为reqKey时，该项必填
+                     * 设置<p>如果认证类型为reqKey时，该项必填</p>
+                     * @param _headers <p>如果认证类型为reqKey时，该项必填</p>
                      * 
                      */
                     void SetHeaders(const std::vector<AgentCredentialContentHeaderDTO>& _headers);
@@ -110,25 +112,89 @@ namespace TencentCloud
                      */
                     bool HeadersHasBeenSet() const;
 
+                    /**
+                     * 获取<p>如果认证类型为apiKey时，该项必填</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApiKeys <p>如果认证类型为apiKey时，该项必填</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<AgentCredentialApiKeyDTO> GetApiKeys() const;
+
+                    /**
+                     * 设置<p>如果认证类型为apiKey时，该项必填</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _apiKeys <p>如果认证类型为apiKey时，该项必填</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApiKeys(const std::vector<AgentCredentialApiKeyDTO>& _apiKeys);
+
+                    /**
+                     * 判断参数 ApiKeys 是否已赋值
+                     * @return ApiKeys 是否已赋值
+                     * 
+                     */
+                    bool ApiKeysHasBeenSet() const;
+
+                    /**
+                     * 获取<p>容错策略，仅Type为apiKey时支持</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FaultTolerance <p>容错策略，仅Type为apiKey时支持</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    FaultToleranceDTO GetFaultTolerance() const;
+
+                    /**
+                     * 设置<p>容错策略，仅Type为apiKey时支持</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _faultTolerance <p>容错策略，仅Type为apiKey时支持</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFaultTolerance(const FaultToleranceDTO& _faultTolerance);
+
+                    /**
+                     * 判断参数 FaultTolerance 是否已赋值
+                     * @return FaultTolerance 是否已赋值
+                     * 
+                     */
+                    bool FaultToleranceHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 如果认证类型为sts时，该项必填
+                     * <p>如果认证类型为sts时，该项必填</p>
                      */
                     std::string m_sTSSystem;
                     bool m_sTSSystemHasBeenSet;
 
                     /**
-                     * 如果认证类型为sts时，该项必填
+                     * <p>如果认证类型为sts时，该项必填</p>
                      */
                     std::string m_sTSService;
                     bool m_sTSServiceHasBeenSet;
 
                     /**
-                     * 如果认证类型为reqKey时，该项必填
+                     * <p>如果认证类型为reqKey时，该项必填</p>
                      */
                     std::vector<AgentCredentialContentHeaderDTO> m_headers;
                     bool m_headersHasBeenSet;
+
+                    /**
+                     * <p>如果认证类型为apiKey时，该项必填</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AgentCredentialApiKeyDTO> m_apiKeys;
+                    bool m_apiKeysHasBeenSet;
+
+                    /**
+                     * <p>容错策略，仅Type为apiKey时支持</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    FaultToleranceDTO m_faultTolerance;
+                    bool m_faultToleranceHasBeenSet;
 
                 };
             }

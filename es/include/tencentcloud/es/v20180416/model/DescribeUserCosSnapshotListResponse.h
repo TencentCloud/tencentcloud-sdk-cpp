@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取cos 快照信息列表
-                     * @return CosSnapshotInfoList cos 快照信息列表
+                     * 获取<p>cos 快照信息列表</p>
+                     * @return CosSnapshotInfoList <p>cos 快照信息列表</p>
                      * 
                      */
                     std::vector<CosSnapShotInfo> GetCosSnapshotInfoList() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool CosSnapshotInfoListHasBeenSet() const;
 
                     /**
-                     * 获取cos 快照数量
-                     * @return TotalCount cos 快照数量
+                     * 获取<p>cos 快照数量</p>
+                     * @return TotalCount <p>cos 快照数量</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * cos 快照信息列表
+                     * <p>cos 快照信息列表</p>
                      */
                     std::vector<CosSnapShotInfo> m_cosSnapshotInfoList;
                     bool m_cosSnapshotInfoListHasBeenSet;
 
                     /**
-                     * cos 快照数量
+                     * <p>cos 快照数量</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

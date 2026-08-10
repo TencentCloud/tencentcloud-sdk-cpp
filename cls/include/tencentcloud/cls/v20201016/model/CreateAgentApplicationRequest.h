@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ApplicationNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>接入类型</p><p>枚举值：</p><ul><li>Langfuse： Langfuse 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li></ul>
-                     * @return AccessType <p>接入类型</p><p>枚举值：</p><ul><li>Langfuse： Langfuse 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li></ul>
+                     * 获取<p>接入类型</p><p>枚举值：</p><ul><li>Langfuse： Langfuse 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li><li>Agent： 用户创建 Agent 应用时，系统按统一规范自动创建对应的 CLS 主题（Topic），并为主题打上统一标签，便于后续在 Agent 可观测场景下做统一管理与检索。</li></ul>
+                     * @return AccessType <p>接入类型</p><p>枚举值：</p><ul><li>Langfuse： Langfuse 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li><li>Agent： 用户创建 Agent 应用时，系统按统一规范自动创建对应的 CLS 主题（Topic），并为主题打上统一标签，便于后续在 Agent 可观测场景下做统一管理与检索。</li></ul>
                      * 
                      */
                     std::string GetAccessType() const;
 
                     /**
-                     * 设置<p>接入类型</p><p>枚举值：</p><ul><li>Langfuse： Langfuse 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li></ul>
-                     * @param _accessType <p>接入类型</p><p>枚举值：</p><ul><li>Langfuse： Langfuse 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li></ul>
+                     * 设置<p>接入类型</p><p>枚举值：</p><ul><li>Langfuse： Langfuse 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li><li>Agent： 用户创建 Agent 应用时，系统按统一规范自动创建对应的 CLS 主题（Topic），并为主题打上统一标签，便于后续在 Agent 可观测场景下做统一管理与检索。</li></ul>
+                     * @param _accessType <p>接入类型</p><p>枚举值：</p><ul><li>Langfuse： Langfuse 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li><li>Agent： 用户创建 Agent 应用时，系统按统一规范自动创建对应的 CLS 主题（Topic），并为主题打上统一标签，便于后续在 Agent 可观测场景下做统一管理与检索。</li></ul>
                      * 
                      */
                     void SetAccessType(const std::string& _accessType);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_applicationNameHasBeenSet;
 
                     /**
-                     * <p>接入类型</p><p>枚举值：</p><ul><li>Langfuse： Langfuse 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li></ul>
+                     * <p>接入类型</p><p>枚举值：</p><ul><li>Langfuse： Langfuse 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li><li>Agent： 用户创建 Agent 应用时，系统按统一规范自动创建对应的 CLS 主题（Topic），并为主题打上统一标签，便于后续在 Agent 可观测场景下做统一管理与检索。</li></ul>
                      */
                     std::string m_accessType;
                     bool m_accessTypeHasBeenSet;

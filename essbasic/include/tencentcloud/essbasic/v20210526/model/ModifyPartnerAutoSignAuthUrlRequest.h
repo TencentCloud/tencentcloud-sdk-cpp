@@ -169,6 +169,27 @@ namespace TencentCloud
                      */
                     bool SealTypesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>限制授权方式</p><p>枚举值：</p><ul><li>0： 默认，授权页面展示全部授权方式 </li><li>1： 仅按印章类型授权 </li><li>3： 仅按印章id授权</li></ul><p>默认值：0</p>
+                     * @return LimitAuthType <p>限制授权方式</p><p>枚举值：</p><ul><li>0： 默认，授权页面展示全部授权方式 </li><li>1： 仅按印章类型授权 </li><li>3： 仅按印章id授权</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    std::string GetLimitAuthType() const;
+
+                    /**
+                     * 设置<p>限制授权方式</p><p>枚举值：</p><ul><li>0： 默认，授权页面展示全部授权方式 </li><li>1： 仅按印章类型授权 </li><li>3： 仅按印章id授权</li></ul><p>默认值：0</p>
+                     * @param _limitAuthType <p>限制授权方式</p><p>枚举值：</p><ul><li>0： 默认，授权页面展示全部授权方式 </li><li>1： 仅按印章类型授权 </li><li>3： 仅按印章id授权</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    void SetLimitAuthType(const std::string& _limitAuthType);
+
+                    /**
+                     * 判断参数 LimitAuthType 是否已赋值
+                     * @return LimitAuthType 是否已赋值
+                     * 
+                     */
+                    bool LimitAuthTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +227,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_sealTypes;
                     bool m_sealTypesHasBeenSet;
+
+                    /**
+                     * <p>限制授权方式</p><p>枚举值：</p><ul><li>0： 默认，授权页面展示全部授权方式 </li><li>1： 仅按印章类型授权 </li><li>3： 仅按印章id授权</li></ul><p>默认值：0</p>
+                     */
+                    std::string m_limitAuthType;
+                    bool m_limitAuthTypeHasBeenSet;
 
                 };
             }

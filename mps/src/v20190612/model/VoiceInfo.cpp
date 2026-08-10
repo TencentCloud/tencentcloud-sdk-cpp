@@ -30,7 +30,8 @@ VoiceInfo::VoiceInfo() :
     m_languagesHasBeenSet(false),
     m_audioUrlHasBeenSet(false),
     m_labelsHasBeenSet(false),
-    m_scenesHasBeenSet(false)
+    m_scenesHasBeenSet(false),
+    m_engineHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,16 @@ CoreInternalOutcome VoiceInfo::Deserialize(const rapidjson::Value &value)
         m_scenesHasBeenSet = true;
     }
 
+    if (value.HasMember("Engine") && !value["Engine"].IsNull())
+    {
+        if (!value["Engine"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VoiceInfo.Engine` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_engine = string(value["Engine"].GetString());
+        m_engineHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -248,6 +259,14 @@ void VoiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_engineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Engine";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_engine.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -411,5 +430,21 @@ void VoiceInfo::SetScenes(const vector<string>& _scenes)
 bool VoiceInfo::ScenesHasBeenSet() const
 {
     return m_scenesHasBeenSet;
+}
+
+string VoiceInfo::GetEngine() const
+{
+    return m_engine;
+}
+
+void VoiceInfo::SetEngine(const string& _engine)
+{
+    m_engine = _engine;
+    m_engineHasBeenSet = true;
+}
+
+bool VoiceInfo::EngineHasBeenSet() const
+{
+    return m_engineHasBeenSet;
 }
 

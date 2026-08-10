@@ -19,36 +19,70 @@ set(cds_public_header
   )
 
 set(cds_public_header_model
-  include/tencentcloud/cds/v20180420/model/ModifyDbauditInstancesRenewFlagResponse.h
-  include/tencentcloud/cds/v20180420/model/DescribeDbauditInstanceTypeResponse.h
-  include/tencentcloud/cds/v20180420/model/InquiryPriceDbauditInstanceResponse.h
-  include/tencentcloud/cds/v20180420/model/CdsAuditInstance.h
-  include/tencentcloud/cds/v20180420/model/ModifyDbauditInstancesRenewFlagRequest.h
-  include/tencentcloud/cds/v20180420/model/DescribeDbauditUsedRegionsResponse.h
-  include/tencentcloud/cds/v20180420/model/DescribeDbauditInstancesRequest.h
-  include/tencentcloud/cds/v20180420/model/DescribeDbauditInstanceTypeRequest.h
-  include/tencentcloud/cds/v20180420/model/RegionInfo.h
-  include/tencentcloud/cds/v20180420/model/DescribeDbauditInstancesResponse.h
+  include/tencentcloud/cds/v20180420/model/CreateReportPdfRequest.h
+  include/tencentcloud/cds/v20180420/model/IdWithName.h
   include/tencentcloud/cds/v20180420/model/DbauditTypesInfo.h
-  include/tencentcloud/cds/v20180420/model/DescribeDbauditUsedRegionsRequest.h
+  include/tencentcloud/cds/v20180420/model/ModifyDbauditInstancesRenewFlagRequest.h
+  include/tencentcloud/cds/v20180420/model/DescribeReportMissionListRequest.h
+  include/tencentcloud/cds/v20180420/model/DescribeAssetsListRequest.h
   include/tencentcloud/cds/v20180420/model/InquiryPriceDbauditInstanceRequest.h
+  include/tencentcloud/cds/v20180420/model/CreateReportPdfResponse.h
+  include/tencentcloud/cds/v20180420/model/DescribeDbauditInstanceTypeResponse.h
+  include/tencentcloud/cds/v20180420/model/AssetsInfo.h
+  include/tencentcloud/cds/v20180420/model/DescribeReportMissionListResponse.h
+  include/tencentcloud/cds/v20180420/model/CdsAuditInstance.h
+  include/tencentcloud/cds/v20180420/model/DescribeDbauditUsedRegionsResponse.h
+  include/tencentcloud/cds/v20180420/model/AuditCapability.h
+  include/tencentcloud/cds/v20180420/model/CreateTimerReportResponse.h
+  include/tencentcloud/cds/v20180420/model/RegionInfo.h
+  include/tencentcloud/cds/v20180420/model/DescribeDbauditInstancesRequest.h
+  include/tencentcloud/cds/v20180420/model/ModifyDbauditInstancesRenewFlagResponse.h
+  include/tencentcloud/cds/v20180420/model/DescribeDbauditUsedRegionsRequest.h
+  include/tencentcloud/cds/v20180420/model/InquiryPriceDbauditInstanceResponse.h
+  include/tencentcloud/cds/v20180420/model/ReportMission.h
+  include/tencentcloud/cds/v20180420/model/NameValueString.h
+  include/tencentcloud/cds/v20180420/model/Reports.h
+  include/tencentcloud/cds/v20180420/model/DsgcBindingInfo.h
+  include/tencentcloud/cds/v20180420/model/CreateTimerReportRequest.h
+  include/tencentcloud/cds/v20180420/model/DescribeReportListResponse.h
+  include/tencentcloud/cds/v20180420/model/DescribeDbauditInstanceTypeRequest.h
+  include/tencentcloud/cds/v20180420/model/DescribeReportListRequest.h
+  include/tencentcloud/cds/v20180420/model/DescribeAssetsListResponse.h
+  include/tencentcloud/cds/v20180420/model/DescribeDbauditInstancesResponse.h
   )
 
 set(cds_src
   src/v20180420/CdsClient.cpp
-  src/v20180420/model/ModifyDbauditInstancesRenewFlagResponse.cpp
-  src/v20180420/model/DescribeDbauditInstanceTypeResponse.cpp
-  src/v20180420/model/InquiryPriceDbauditInstanceResponse.cpp
-  src/v20180420/model/CdsAuditInstance.cpp
-  src/v20180420/model/ModifyDbauditInstancesRenewFlagRequest.cpp
-  src/v20180420/model/DescribeDbauditUsedRegionsResponse.cpp
-  src/v20180420/model/DescribeDbauditInstancesRequest.cpp
-  src/v20180420/model/DescribeDbauditInstanceTypeRequest.cpp
-  src/v20180420/model/RegionInfo.cpp
-  src/v20180420/model/DescribeDbauditInstancesResponse.cpp
+  src/v20180420/model/CreateReportPdfRequest.cpp
+  src/v20180420/model/IdWithName.cpp
   src/v20180420/model/DbauditTypesInfo.cpp
-  src/v20180420/model/DescribeDbauditUsedRegionsRequest.cpp
+  src/v20180420/model/ModifyDbauditInstancesRenewFlagRequest.cpp
+  src/v20180420/model/DescribeReportMissionListRequest.cpp
+  src/v20180420/model/DescribeAssetsListRequest.cpp
   src/v20180420/model/InquiryPriceDbauditInstanceRequest.cpp
+  src/v20180420/model/CreateReportPdfResponse.cpp
+  src/v20180420/model/DescribeDbauditInstanceTypeResponse.cpp
+  src/v20180420/model/AssetsInfo.cpp
+  src/v20180420/model/DescribeReportMissionListResponse.cpp
+  src/v20180420/model/CdsAuditInstance.cpp
+  src/v20180420/model/DescribeDbauditUsedRegionsResponse.cpp
+  src/v20180420/model/AuditCapability.cpp
+  src/v20180420/model/CreateTimerReportResponse.cpp
+  src/v20180420/model/RegionInfo.cpp
+  src/v20180420/model/DescribeDbauditInstancesRequest.cpp
+  src/v20180420/model/ModifyDbauditInstancesRenewFlagResponse.cpp
+  src/v20180420/model/DescribeDbauditUsedRegionsRequest.cpp
+  src/v20180420/model/InquiryPriceDbauditInstanceResponse.cpp
+  src/v20180420/model/ReportMission.cpp
+  src/v20180420/model/NameValueString.cpp
+  src/v20180420/model/Reports.cpp
+  src/v20180420/model/DsgcBindingInfo.cpp
+  src/v20180420/model/CreateTimerReportRequest.cpp
+  src/v20180420/model/DescribeReportListResponse.cpp
+  src/v20180420/model/DescribeDbauditInstanceTypeRequest.cpp
+  src/v20180420/model/DescribeReportListRequest.cpp
+  src/v20180420/model/DescribeAssetsListResponse.cpp
+  src/v20180420/model/DescribeDbauditInstancesResponse.cpp
   )
 
 set(cds_include

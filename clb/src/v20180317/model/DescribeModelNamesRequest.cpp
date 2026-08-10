@@ -25,7 +25,8 @@ using namespace std;
 DescribeModelNamesRequest::DescribeModelNamesRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,21 @@ string DescribeModelNamesRequest::ToJsonString() const
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -114,6 +130,22 @@ void DescribeModelNamesRequest::SetVpcId(const string& _vpcId)
 bool DescribeModelNamesRequest::VpcIdHasBeenSet() const
 {
     return m_vpcIdHasBeenSet;
+}
+
+vector<Filter> DescribeModelNamesRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeModelNamesRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeModelNamesRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

@@ -25,7 +25,8 @@ using namespace std;
 
 UpgradeDBInstanceResponse::UpgradeDBInstanceResponse() :
     m_dealIdsHasBeenSet(false),
-    m_asyncRequestIdHasBeenSet(false)
+    m_asyncRequestIdHasBeenSet(false),
+    m_jobIdHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,16 @@ CoreInternalOutcome UpgradeDBInstanceResponse::Deserialize(const string &payload
         m_asyncRequestIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("JobId") && !rsp["JobId"].IsNull())
+    {
+        if (!rsp["JobId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobId = rsp["JobId"].GetInt64();
+        m_jobIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +126,14 @@ string UpgradeDBInstanceResponse::ToJsonString() const
         string key = "AsyncRequestId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_asyncRequestId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_jobId, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -147,6 +166,16 @@ string UpgradeDBInstanceResponse::GetAsyncRequestId() const
 bool UpgradeDBInstanceResponse::AsyncRequestIdHasBeenSet() const
 {
     return m_asyncRequestIdHasBeenSet;
+}
+
+int64_t UpgradeDBInstanceResponse::GetJobId() const
+{
+    return m_jobId;
+}
+
+bool UpgradeDBInstanceResponse::JobIdHasBeenSet() const
+{
+    return m_jobIdHasBeenSet;
 }
 
 

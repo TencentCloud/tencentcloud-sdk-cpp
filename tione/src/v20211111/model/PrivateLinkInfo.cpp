@@ -26,7 +26,10 @@ PrivateLinkInfo::PrivateLinkInfo() :
     m_innerHttpAddrHasBeenSet(false),
     m_innerHttpsAddrHasBeenSet(false),
     m_stateHasBeenSet(false),
-    m_innerGrpcAddrHasBeenSet(false)
+    m_innerGrpcAddrHasBeenSet(false),
+    m_createdByHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_subUinNameHasBeenSet(false)
 {
 }
 
@@ -104,6 +107,36 @@ CoreInternalOutcome PrivateLinkInfo::Deserialize(const rapidjson::Value &value)
         m_innerGrpcAddrHasBeenSet = true;
     }
 
+    if (value.HasMember("CreatedBy") && !value["CreatedBy"].IsNull())
+    {
+        if (!value["CreatedBy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrivateLinkInfo.CreatedBy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdBy = string(value["CreatedBy"].GetString());
+        m_createdByHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrivateLinkInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubUinName") && !value["SubUinName"].IsNull())
+    {
+        if (!value["SubUinName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrivateLinkInfo.SubUinName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subUinName = string(value["SubUinName"].GetString());
+        m_subUinNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -172,6 +205,30 @@ void PrivateLinkInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_createdByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatedBy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdBy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subUinNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubUinName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subUinName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -271,5 +328,53 @@ void PrivateLinkInfo::SetInnerGrpcAddr(const vector<string>& _innerGrpcAddr)
 bool PrivateLinkInfo::InnerGrpcAddrHasBeenSet() const
 {
     return m_innerGrpcAddrHasBeenSet;
+}
+
+string PrivateLinkInfo::GetCreatedBy() const
+{
+    return m_createdBy;
+}
+
+void PrivateLinkInfo::SetCreatedBy(const string& _createdBy)
+{
+    m_createdBy = _createdBy;
+    m_createdByHasBeenSet = true;
+}
+
+bool PrivateLinkInfo::CreatedByHasBeenSet() const
+{
+    return m_createdByHasBeenSet;
+}
+
+string PrivateLinkInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void PrivateLinkInfo::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool PrivateLinkInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string PrivateLinkInfo::GetSubUinName() const
+{
+    return m_subUinName;
+}
+
+void PrivateLinkInfo::SetSubUinName(const string& _subUinName)
+{
+    m_subUinName = _subUinName;
+    m_subUinNameHasBeenSet = true;
+}
+
+bool PrivateLinkInfo::SubUinNameHasBeenSet() const
+{
+    return m_subUinNameHasBeenSet;
 }
 

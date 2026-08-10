@@ -25,7 +25,8 @@ using namespace std;
 DescribeUserCosSnapshotListRequest::DescribeUserCosSnapshotListRequest() :
     m_cosBucketHasBeenSet(false),
     m_basePathHasBeenSet(false),
-    m_clusterInstanceIdHasBeenSet(false)
+    m_clusterInstanceIdHasBeenSet(false),
+    m_paasEsRepositoryHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeUserCosSnapshotListRequest::ToJsonString() const
         string key = "ClusterInstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_paasEsRepositoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PaasEsRepository";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_paasEsRepository.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeUserCosSnapshotListRequest::SetClusterInstanceId(const string& _clu
 bool DescribeUserCosSnapshotListRequest::ClusterInstanceIdHasBeenSet() const
 {
     return m_clusterInstanceIdHasBeenSet;
+}
+
+string DescribeUserCosSnapshotListRequest::GetPaasEsRepository() const
+{
+    return m_paasEsRepository;
+}
+
+void DescribeUserCosSnapshotListRequest::SetPaasEsRepository(const string& _paasEsRepository)
+{
+    m_paasEsRepository = _paasEsRepository;
+    m_paasEsRepositoryHasBeenSet = true;
+}
+
+bool DescribeUserCosSnapshotListRequest::PaasEsRepositoryHasBeenSet() const
+{
+    return m_paasEsRepositoryHasBeenSet;
 }
 
 

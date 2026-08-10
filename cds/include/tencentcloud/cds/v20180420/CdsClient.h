@@ -23,12 +23,22 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/cds/v20180420/model/CreateReportPdfRequest.h>
+#include <tencentcloud/cds/v20180420/model/CreateReportPdfResponse.h>
+#include <tencentcloud/cds/v20180420/model/CreateTimerReportRequest.h>
+#include <tencentcloud/cds/v20180420/model/CreateTimerReportResponse.h>
+#include <tencentcloud/cds/v20180420/model/DescribeAssetsListRequest.h>
+#include <tencentcloud/cds/v20180420/model/DescribeAssetsListResponse.h>
 #include <tencentcloud/cds/v20180420/model/DescribeDbauditInstanceTypeRequest.h>
 #include <tencentcloud/cds/v20180420/model/DescribeDbauditInstanceTypeResponse.h>
 #include <tencentcloud/cds/v20180420/model/DescribeDbauditInstancesRequest.h>
 #include <tencentcloud/cds/v20180420/model/DescribeDbauditInstancesResponse.h>
 #include <tencentcloud/cds/v20180420/model/DescribeDbauditUsedRegionsRequest.h>
 #include <tencentcloud/cds/v20180420/model/DescribeDbauditUsedRegionsResponse.h>
+#include <tencentcloud/cds/v20180420/model/DescribeReportListRequest.h>
+#include <tencentcloud/cds/v20180420/model/DescribeReportListResponse.h>
+#include <tencentcloud/cds/v20180420/model/DescribeReportMissionListRequest.h>
+#include <tencentcloud/cds/v20180420/model/DescribeReportMissionListResponse.h>
 #include <tencentcloud/cds/v20180420/model/InquiryPriceDbauditInstanceRequest.h>
 #include <tencentcloud/cds/v20180420/model/InquiryPriceDbauditInstanceResponse.h>
 #include <tencentcloud/cds/v20180420/model/ModifyDbauditInstancesRenewFlagRequest.h>
@@ -47,6 +57,15 @@ namespace TencentCloud
                 CdsClient(const Credential &credential, const std::string &region);
                 CdsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateReportPdfResponse> CreateReportPdfOutcome;
+                typedef std::future<CreateReportPdfOutcome> CreateReportPdfOutcomeCallable;
+                typedef std::function<void(const CdsClient*, const Model::CreateReportPdfRequest&, CreateReportPdfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReportPdfAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTimerReportResponse> CreateTimerReportOutcome;
+                typedef std::future<CreateTimerReportOutcome> CreateTimerReportOutcomeCallable;
+                typedef std::function<void(const CdsClient*, const Model::CreateTimerReportRequest&, CreateTimerReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTimerReportAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetsListResponse> DescribeAssetsListOutcome;
+                typedef std::future<DescribeAssetsListOutcome> DescribeAssetsListOutcomeCallable;
+                typedef std::function<void(const CdsClient*, const Model::DescribeAssetsListRequest&, DescribeAssetsListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetsListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDbauditInstanceTypeResponse> DescribeDbauditInstanceTypeOutcome;
                 typedef std::future<DescribeDbauditInstanceTypeOutcome> DescribeDbauditInstanceTypeOutcomeCallable;
                 typedef std::function<void(const CdsClient*, const Model::DescribeDbauditInstanceTypeRequest&, DescribeDbauditInstanceTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDbauditInstanceTypeAsyncHandler;
@@ -56,6 +75,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDbauditUsedRegionsResponse> DescribeDbauditUsedRegionsOutcome;
                 typedef std::future<DescribeDbauditUsedRegionsOutcome> DescribeDbauditUsedRegionsOutcomeCallable;
                 typedef std::function<void(const CdsClient*, const Model::DescribeDbauditUsedRegionsRequest&, DescribeDbauditUsedRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDbauditUsedRegionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeReportListResponse> DescribeReportListOutcome;
+                typedef std::future<DescribeReportListOutcome> DescribeReportListOutcomeCallable;
+                typedef std::function<void(const CdsClient*, const Model::DescribeReportListRequest&, DescribeReportListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReportListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeReportMissionListResponse> DescribeReportMissionListOutcome;
+                typedef std::future<DescribeReportMissionListOutcome> DescribeReportMissionListOutcomeCallable;
+                typedef std::function<void(const CdsClient*, const Model::DescribeReportMissionListRequest&, DescribeReportMissionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReportMissionListAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquiryPriceDbauditInstanceResponse> InquiryPriceDbauditInstanceOutcome;
                 typedef std::future<InquiryPriceDbauditInstanceOutcome> InquiryPriceDbauditInstanceOutcomeCallable;
                 typedef std::function<void(const CdsClient*, const Model::InquiryPriceDbauditInstanceRequest&, InquiryPriceDbauditInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceDbauditInstanceAsyncHandler;
@@ -64,6 +89,33 @@ namespace TencentCloud
                 typedef std::function<void(const CdsClient*, const Model::ModifyDbauditInstancesRenewFlagRequest&, ModifyDbauditInstancesRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDbauditInstancesRenewFlagAsyncHandler;
 
 
+
+                /**
+                 *下载报表PDF
+                 * @param req CreateReportPdfRequest
+                 * @return CreateReportPdfOutcome
+                 */
+                CreateReportPdfOutcome CreateReportPdf(const Model::CreateReportPdfRequest &request);
+                void CreateReportPdfAsync(const Model::CreateReportPdfRequest& request, const CreateReportPdfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateReportPdfOutcomeCallable CreateReportPdfCallable(const Model::CreateReportPdfRequest& request);
+
+                /**
+                 *新建报表任务
+                 * @param req CreateTimerReportRequest
+                 * @return CreateTimerReportOutcome
+                 */
+                CreateTimerReportOutcome CreateTimerReport(const Model::CreateTimerReportRequest &request);
+                void CreateTimerReportAsync(const Model::CreateTimerReportRequest& request, const CreateTimerReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTimerReportOutcomeCallable CreateTimerReportCallable(const Model::CreateTimerReportRequest& request);
+
+                /**
+                 *查询资产列表
+                 * @param req DescribeAssetsListRequest
+                 * @return DescribeAssetsListOutcome
+                 */
+                DescribeAssetsListOutcome DescribeAssetsList(const Model::DescribeAssetsListRequest &request);
+                void DescribeAssetsListAsync(const Model::DescribeAssetsListRequest& request, const DescribeAssetsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetsListOutcomeCallable DescribeAssetsListCallable(const Model::DescribeAssetsListRequest& request);
 
                 /**
                  *本接口 (DescribeDbauditInstanceType) 用于查询可售卖的产品规格列表。
@@ -91,6 +143,24 @@ namespace TencentCloud
                 DescribeDbauditUsedRegionsOutcome DescribeDbauditUsedRegions(const Model::DescribeDbauditUsedRegionsRequest &request);
                 void DescribeDbauditUsedRegionsAsync(const Model::DescribeDbauditUsedRegionsRequest& request, const DescribeDbauditUsedRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDbauditUsedRegionsOutcomeCallable DescribeDbauditUsedRegionsCallable(const Model::DescribeDbauditUsedRegionsRequest& request);
+
+                /**
+                 *查询报表列表
+                 * @param req DescribeReportListRequest
+                 * @return DescribeReportListOutcome
+                 */
+                DescribeReportListOutcome DescribeReportList(const Model::DescribeReportListRequest &request);
+                void DescribeReportListAsync(const Model::DescribeReportListRequest& request, const DescribeReportListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReportListOutcomeCallable DescribeReportListCallable(const Model::DescribeReportListRequest& request);
+
+                /**
+                 *查询报表任务列表
+                 * @param req DescribeReportMissionListRequest
+                 * @return DescribeReportMissionListOutcome
+                 */
+                DescribeReportMissionListOutcome DescribeReportMissionList(const Model::DescribeReportMissionListRequest &request);
+                void DescribeReportMissionListAsync(const Model::DescribeReportMissionListRequest& request, const DescribeReportMissionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReportMissionListOutcomeCallable DescribeReportMissionListCallable(const Model::DescribeReportMissionListRequest& request);
 
                 /**
                  *用于查询数据安全审计产品实例价格

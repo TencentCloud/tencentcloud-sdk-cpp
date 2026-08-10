@@ -27,6 +27,8 @@
 #include <tencentcloud/csip/v20221121/model/AddDspmAssetManagerResponse.h>
 #include <tencentcloud/csip/v20221121/model/AddNewBindRoleUserRequest.h>
 #include <tencentcloud/csip/v20221121/model/AddNewBindRoleUserResponse.h>
+#include <tencentcloud/csip/v20221121/model/AddVulWhitelistRequest.h>
+#include <tencentcloud/csip/v20221121/model/AddVulWhitelistResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateAccessKeyCheckTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateAccessKeyCheckTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateAccessKeySyncTaskRequest.h>
@@ -77,6 +79,8 @@
 #include <tencentcloud/csip/v20221121/model/CreateDspmRiskExportJobResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmWhitelistStrategyRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmWhitelistStrategyResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateHostVulExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateHostVulExportJobResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateIaCAccessTokenRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateIaCAccessTokenResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateIaCFileExportJobRequest.h>
@@ -87,6 +91,16 @@
 #include <tencentcloud/csip/v20221121/model/CreateRiskCenterScanTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateSkillScanRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateSkillScanResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateVulFixRetryTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateVulFixRetryTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateVulFixTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateVulFixTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateVulFixedExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateVulFixedExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateVulReScanRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateVulReScanResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateVulScanManualRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateVulScanManualResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteCosAkAssetRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteCosAkAssetResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteCosPolicyRequest.h>
@@ -125,6 +139,8 @@
 #include <tencentcloud/csip/v20221121/model/DeleteIaCFileResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteRiskScanTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteRiskScanTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteVulWhitelistRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteVulWhitelistResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAIAgentAssetListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAIAgentAssetListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAILinkSettingRequest.h>
@@ -371,6 +387,14 @@
 #include <tencentcloud/csip/v20221121/model/DescribeGatewayAssetsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeHighBaseLineRiskListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeHighBaseLineRiskListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeHostKBRiskListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeHostKBRiskListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeHostVulItemVPRInfoRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeHostVulItemVPRInfoResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeHostVulOverviewRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeHostVulOverviewResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeHostVulRiskListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeHostVulRiskListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeIaCFileListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeIaCFileListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeIaCFileOverviewRequest.h>
@@ -383,6 +407,10 @@
 #include <tencentcloud/csip/v20221121/model/DescribeIpInvokeRecordResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeIpInvokeRecordDetailRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeIpInvokeRecordDetailResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeKBDetailRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeKBDetailResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeKBUpdatableMachineListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeKBUpdatableMachineListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeKeySandboxCredentialRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeKeySandboxCredentialResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeKeySandboxCredentialListRequest.h>
@@ -479,8 +507,38 @@
 #include <tencentcloud/csip/v20221121/model/DescribeVULRiskDetailResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeVpcAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeVpcAssetsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulComponentRelateHostRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulComponentRelateHostResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulFixTaskDetailRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulFixTaskDetailResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulFixTaskListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulFixTaskListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulFixableMachineListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulFixableMachineListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulFixedHostDetailRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulFixedHostDetailResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulFixedListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulFixedListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulHostRelateComponentRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulHostRelateComponentResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulIgnoreRuleListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulIgnoreRuleListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulItemListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulItemListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulLabelListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulLabelListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeVulRiskListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeVulRiskListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulRiskRelateComponentRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulRiskRelateComponentResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulRiskRelateHostRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulRiskRelateHostResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulScanPeriodicRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulScanPeriodicResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulScanTaskDetailRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulScanTaskDetailResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulScanTaskListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVulScanTaskListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeVulViewVulRiskListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeVulViewVulRiskListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DownloadDspmExportLogRequest.h>
@@ -573,6 +631,12 @@
 #include <tencentcloud/csip/v20221121/model/ModifyRiskCenterScanTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyUebaRuleSwitchRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyUebaRuleSwitchResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyVulScanPeriodicRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyVulScanPeriodicResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyVulWhitelistConfigRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyVulWhitelistConfigResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyVulWhitelistSwitchRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyVulWhitelistSwitchResponse.h>
 #include <tencentcloud/csip/v20221121/model/ResetDspmAssetAccountPasswordRequest.h>
 #include <tencentcloud/csip/v20221121/model/ResetDspmAssetAccountPasswordResponse.h>
 #include <tencentcloud/csip/v20221121/model/RetryDspmExportLogRequest.h>
@@ -583,6 +647,8 @@
 #include <tencentcloud/csip/v20221121/model/SendDspmAssetLoginSmsCodeResponse.h>
 #include <tencentcloud/csip/v20221121/model/StopRiskCenterTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/StopRiskCenterTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/StopVulScanTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/StopVulScanTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/SyncDspmAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/SyncDspmAssetsResponse.h>
 #include <tencentcloud/csip/v20221121/model/SyncDspmUsersRequest.h>
@@ -615,6 +681,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddNewBindRoleUserResponse> AddNewBindRoleUserOutcome;
                 typedef std::future<AddNewBindRoleUserOutcome> AddNewBindRoleUserOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::AddNewBindRoleUserRequest&, AddNewBindRoleUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddNewBindRoleUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddVulWhitelistResponse> AddVulWhitelistOutcome;
+                typedef std::future<AddVulWhitelistOutcome> AddVulWhitelistOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::AddVulWhitelistRequest&, AddVulWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddVulWhitelistAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAccessKeyCheckTaskResponse> CreateAccessKeyCheckTaskOutcome;
                 typedef std::future<CreateAccessKeyCheckTaskOutcome> CreateAccessKeyCheckTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateAccessKeyCheckTaskRequest&, CreateAccessKeyCheckTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccessKeyCheckTaskAsyncHandler;
@@ -690,6 +759,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDspmWhitelistStrategyResponse> CreateDspmWhitelistStrategyOutcome;
                 typedef std::future<CreateDspmWhitelistStrategyOutcome> CreateDspmWhitelistStrategyOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateDspmWhitelistStrategyRequest&, CreateDspmWhitelistStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmWhitelistStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateHostVulExportJobResponse> CreateHostVulExportJobOutcome;
+                typedef std::future<CreateHostVulExportJobOutcome> CreateHostVulExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateHostVulExportJobRequest&, CreateHostVulExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHostVulExportJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateIaCAccessTokenResponse> CreateIaCAccessTokenOutcome;
                 typedef std::future<CreateIaCAccessTokenOutcome> CreateIaCAccessTokenOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateIaCAccessTokenRequest&, CreateIaCAccessTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIaCAccessTokenAsyncHandler;
@@ -705,6 +777,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSkillScanResponse> CreateSkillScanOutcome;
                 typedef std::future<CreateSkillScanOutcome> CreateSkillScanOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateSkillScanRequest&, CreateSkillScanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSkillScanAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVulFixRetryTaskResponse> CreateVulFixRetryTaskOutcome;
+                typedef std::future<CreateVulFixRetryTaskOutcome> CreateVulFixRetryTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateVulFixRetryTaskRequest&, CreateVulFixRetryTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVulFixRetryTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVulFixTaskResponse> CreateVulFixTaskOutcome;
+                typedef std::future<CreateVulFixTaskOutcome> CreateVulFixTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateVulFixTaskRequest&, CreateVulFixTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVulFixTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVulFixedExportJobResponse> CreateVulFixedExportJobOutcome;
+                typedef std::future<CreateVulFixedExportJobOutcome> CreateVulFixedExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateVulFixedExportJobRequest&, CreateVulFixedExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVulFixedExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVulReScanResponse> CreateVulReScanOutcome;
+                typedef std::future<CreateVulReScanOutcome> CreateVulReScanOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateVulReScanRequest&, CreateVulReScanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVulReScanAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVulScanManualResponse> CreateVulScanManualOutcome;
+                typedef std::future<CreateVulScanManualOutcome> CreateVulScanManualOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateVulScanManualRequest&, CreateVulScanManualOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVulScanManualAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCosAkAssetResponse> DeleteCosAkAssetOutcome;
                 typedef std::future<DeleteCosAkAssetOutcome> DeleteCosAkAssetOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteCosAkAssetRequest&, DeleteCosAkAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCosAkAssetAsyncHandler;
@@ -762,6 +849,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRiskScanTaskResponse> DeleteRiskScanTaskOutcome;
                 typedef std::future<DeleteRiskScanTaskOutcome> DeleteRiskScanTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteRiskScanTaskRequest&, DeleteRiskScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRiskScanTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteVulWhitelistResponse> DeleteVulWhitelistOutcome;
+                typedef std::future<DeleteVulWhitelistOutcome> DeleteVulWhitelistOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteVulWhitelistRequest&, DeleteVulWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVulWhitelistAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAIAgentAssetListResponse> DescribeAIAgentAssetListOutcome;
                 typedef std::future<DescribeAIAgentAssetListOutcome> DescribeAIAgentAssetListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeAIAgentAssetListRequest&, DescribeAIAgentAssetListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIAgentAssetListAsyncHandler;
@@ -1131,6 +1221,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeHighBaseLineRiskListResponse> DescribeHighBaseLineRiskListOutcome;
                 typedef std::future<DescribeHighBaseLineRiskListOutcome> DescribeHighBaseLineRiskListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeHighBaseLineRiskListRequest&, DescribeHighBaseLineRiskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHighBaseLineRiskListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHostKBRiskListResponse> DescribeHostKBRiskListOutcome;
+                typedef std::future<DescribeHostKBRiskListOutcome> DescribeHostKBRiskListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeHostKBRiskListRequest&, DescribeHostKBRiskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostKBRiskListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHostVulItemVPRInfoResponse> DescribeHostVulItemVPRInfoOutcome;
+                typedef std::future<DescribeHostVulItemVPRInfoOutcome> DescribeHostVulItemVPRInfoOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeHostVulItemVPRInfoRequest&, DescribeHostVulItemVPRInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostVulItemVPRInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHostVulOverviewResponse> DescribeHostVulOverviewOutcome;
+                typedef std::future<DescribeHostVulOverviewOutcome> DescribeHostVulOverviewOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeHostVulOverviewRequest&, DescribeHostVulOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostVulOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHostVulRiskListResponse> DescribeHostVulRiskListOutcome;
+                typedef std::future<DescribeHostVulRiskListOutcome> DescribeHostVulRiskListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeHostVulRiskListRequest&, DescribeHostVulRiskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostVulRiskListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIaCFileListResponse> DescribeIaCFileListOutcome;
                 typedef std::future<DescribeIaCFileListOutcome> DescribeIaCFileListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeIaCFileListRequest&, DescribeIaCFileListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIaCFileListAsyncHandler;
@@ -1149,6 +1251,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIpInvokeRecordDetailResponse> DescribeIpInvokeRecordDetailOutcome;
                 typedef std::future<DescribeIpInvokeRecordDetailOutcome> DescribeIpInvokeRecordDetailOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeIpInvokeRecordDetailRequest&, DescribeIpInvokeRecordDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpInvokeRecordDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKBDetailResponse> DescribeKBDetailOutcome;
+                typedef std::future<DescribeKBDetailOutcome> DescribeKBDetailOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeKBDetailRequest&, DescribeKBDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKBDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKBUpdatableMachineListResponse> DescribeKBUpdatableMachineListOutcome;
+                typedef std::future<DescribeKBUpdatableMachineListOutcome> DescribeKBUpdatableMachineListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeKBUpdatableMachineListRequest&, DescribeKBUpdatableMachineListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKBUpdatableMachineListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeKeySandboxCredentialResponse> DescribeKeySandboxCredentialOutcome;
                 typedef std::future<DescribeKeySandboxCredentialOutcome> DescribeKeySandboxCredentialOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeKeySandboxCredentialRequest&, DescribeKeySandboxCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKeySandboxCredentialAsyncHandler;
@@ -1293,9 +1401,54 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVpcAssetsResponse> DescribeVpcAssetsOutcome;
                 typedef std::future<DescribeVpcAssetsOutcome> DescribeVpcAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeVpcAssetsRequest&, DescribeVpcAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcAssetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVulComponentRelateHostResponse> DescribeVulComponentRelateHostOutcome;
+                typedef std::future<DescribeVulComponentRelateHostOutcome> DescribeVulComponentRelateHostOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeVulComponentRelateHostRequest&, DescribeVulComponentRelateHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulComponentRelateHostAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVulFixTaskDetailResponse> DescribeVulFixTaskDetailOutcome;
+                typedef std::future<DescribeVulFixTaskDetailOutcome> DescribeVulFixTaskDetailOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeVulFixTaskDetailRequest&, DescribeVulFixTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulFixTaskDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVulFixTaskListResponse> DescribeVulFixTaskListOutcome;
+                typedef std::future<DescribeVulFixTaskListOutcome> DescribeVulFixTaskListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeVulFixTaskListRequest&, DescribeVulFixTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulFixTaskListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVulFixableMachineListResponse> DescribeVulFixableMachineListOutcome;
+                typedef std::future<DescribeVulFixableMachineListOutcome> DescribeVulFixableMachineListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeVulFixableMachineListRequest&, DescribeVulFixableMachineListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulFixableMachineListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVulFixedHostDetailResponse> DescribeVulFixedHostDetailOutcome;
+                typedef std::future<DescribeVulFixedHostDetailOutcome> DescribeVulFixedHostDetailOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeVulFixedHostDetailRequest&, DescribeVulFixedHostDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulFixedHostDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVulFixedListResponse> DescribeVulFixedListOutcome;
+                typedef std::future<DescribeVulFixedListOutcome> DescribeVulFixedListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeVulFixedListRequest&, DescribeVulFixedListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulFixedListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVulHostRelateComponentResponse> DescribeVulHostRelateComponentOutcome;
+                typedef std::future<DescribeVulHostRelateComponentOutcome> DescribeVulHostRelateComponentOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeVulHostRelateComponentRequest&, DescribeVulHostRelateComponentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulHostRelateComponentAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVulIgnoreRuleListResponse> DescribeVulIgnoreRuleListOutcome;
+                typedef std::future<DescribeVulIgnoreRuleListOutcome> DescribeVulIgnoreRuleListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeVulIgnoreRuleListRequest&, DescribeVulIgnoreRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulIgnoreRuleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVulItemListResponse> DescribeVulItemListOutcome;
+                typedef std::future<DescribeVulItemListOutcome> DescribeVulItemListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeVulItemListRequest&, DescribeVulItemListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulItemListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVulLabelListResponse> DescribeVulLabelListOutcome;
+                typedef std::future<DescribeVulLabelListOutcome> DescribeVulLabelListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeVulLabelListRequest&, DescribeVulLabelListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulLabelListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVulRiskListResponse> DescribeVulRiskListOutcome;
                 typedef std::future<DescribeVulRiskListOutcome> DescribeVulRiskListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeVulRiskListRequest&, DescribeVulRiskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulRiskListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVulRiskRelateComponentResponse> DescribeVulRiskRelateComponentOutcome;
+                typedef std::future<DescribeVulRiskRelateComponentOutcome> DescribeVulRiskRelateComponentOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeVulRiskRelateComponentRequest&, DescribeVulRiskRelateComponentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulRiskRelateComponentAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVulRiskRelateHostResponse> DescribeVulRiskRelateHostOutcome;
+                typedef std::future<DescribeVulRiskRelateHostOutcome> DescribeVulRiskRelateHostOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeVulRiskRelateHostRequest&, DescribeVulRiskRelateHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulRiskRelateHostAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVulScanPeriodicResponse> DescribeVulScanPeriodicOutcome;
+                typedef std::future<DescribeVulScanPeriodicOutcome> DescribeVulScanPeriodicOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeVulScanPeriodicRequest&, DescribeVulScanPeriodicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulScanPeriodicAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVulScanTaskDetailResponse> DescribeVulScanTaskDetailOutcome;
+                typedef std::future<DescribeVulScanTaskDetailOutcome> DescribeVulScanTaskDetailOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeVulScanTaskDetailRequest&, DescribeVulScanTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulScanTaskDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVulScanTaskListResponse> DescribeVulScanTaskListOutcome;
+                typedef std::future<DescribeVulScanTaskListOutcome> DescribeVulScanTaskListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeVulScanTaskListRequest&, DescribeVulScanTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulScanTaskListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVulViewVulRiskListResponse> DescribeVulViewVulRiskListOutcome;
                 typedef std::future<DescribeVulViewVulRiskListOutcome> DescribeVulViewVulRiskListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeVulViewVulRiskListRequest&, DescribeVulViewVulRiskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulViewVulRiskListAsyncHandler;
@@ -1434,6 +1587,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyUebaRuleSwitchResponse> ModifyUebaRuleSwitchOutcome;
                 typedef std::future<ModifyUebaRuleSwitchOutcome> ModifyUebaRuleSwitchOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyUebaRuleSwitchRequest&, ModifyUebaRuleSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUebaRuleSwitchAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyVulScanPeriodicResponse> ModifyVulScanPeriodicOutcome;
+                typedef std::future<ModifyVulScanPeriodicOutcome> ModifyVulScanPeriodicOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyVulScanPeriodicRequest&, ModifyVulScanPeriodicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVulScanPeriodicAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyVulWhitelistConfigResponse> ModifyVulWhitelistConfigOutcome;
+                typedef std::future<ModifyVulWhitelistConfigOutcome> ModifyVulWhitelistConfigOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyVulWhitelistConfigRequest&, ModifyVulWhitelistConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVulWhitelistConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyVulWhitelistSwitchResponse> ModifyVulWhitelistSwitchOutcome;
+                typedef std::future<ModifyVulWhitelistSwitchOutcome> ModifyVulWhitelistSwitchOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyVulWhitelistSwitchRequest&, ModifyVulWhitelistSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVulWhitelistSwitchAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetDspmAssetAccountPasswordResponse> ResetDspmAssetAccountPasswordOutcome;
                 typedef std::future<ResetDspmAssetAccountPasswordOutcome> ResetDspmAssetAccountPasswordOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ResetDspmAssetAccountPasswordRequest&, ResetDspmAssetAccountPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetDspmAssetAccountPasswordAsyncHandler;
@@ -1449,6 +1611,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopRiskCenterTaskResponse> StopRiskCenterTaskOutcome;
                 typedef std::future<StopRiskCenterTaskOutcome> StopRiskCenterTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::StopRiskCenterTaskRequest&, StopRiskCenterTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopRiskCenterTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopVulScanTaskResponse> StopVulScanTaskOutcome;
+                typedef std::future<StopVulScanTaskOutcome> StopVulScanTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::StopVulScanTaskRequest&, StopVulScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopVulScanTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::SyncDspmAssetsResponse> SyncDspmAssetsOutcome;
                 typedef std::future<SyncDspmAssetsOutcome> SyncDspmAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::SyncDspmAssetsRequest&, SyncDspmAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncDspmAssetsAsyncHandler;
@@ -1487,6 +1652,15 @@ namespace TencentCloud
                 AddNewBindRoleUserOutcome AddNewBindRoleUser(const Model::AddNewBindRoleUserRequest &request);
                 void AddNewBindRoleUserAsync(const Model::AddNewBindRoleUserRequest& request, const AddNewBindRoleUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddNewBindRoleUserOutcomeCallable AddNewBindRoleUserCallable(const Model::AddNewBindRoleUserRequest& request);
+
+                /**
+                 *添加漏洞白名单
+                 * @param req AddVulWhitelistRequest
+                 * @return AddVulWhitelistOutcome
+                 */
+                AddVulWhitelistOutcome AddVulWhitelist(const Model::AddVulWhitelistRequest &request);
+                void AddVulWhitelistAsync(const Model::AddVulWhitelistRequest& request, const AddVulWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddVulWhitelistOutcomeCallable AddVulWhitelistCallable(const Model::AddVulWhitelistRequest& request);
 
                 /**
                  *检测AK 异步任务
@@ -1714,6 +1888,15 @@ namespace TencentCloud
                 CreateDspmWhitelistStrategyOutcomeCallable CreateDspmWhitelistStrategyCallable(const Model::CreateDspmWhitelistStrategyRequest& request);
 
                 /**
+                 *创建主机列漏洞表导出任务
+                 * @param req CreateHostVulExportJobRequest
+                 * @return CreateHostVulExportJobOutcome
+                 */
+                CreateHostVulExportJobOutcome CreateHostVulExportJob(const Model::CreateHostVulExportJobRequest &request);
+                void CreateHostVulExportJobAsync(const Model::CreateHostVulExportJobRequest& request, const CreateHostVulExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateHostVulExportJobOutcomeCallable CreateHostVulExportJobCallable(const Model::CreateHostVulExportJobRequest& request);
+
+                /**
                  *创建IaC检测接入Token
                  * @param req CreateIaCAccessTokenRequest
                  * @return CreateIaCAccessTokenOutcome
@@ -1757,6 +1940,51 @@ namespace TencentCloud
                 CreateSkillScanOutcome CreateSkillScan(const Model::CreateSkillScanRequest &request);
                 void CreateSkillScanAsync(const Model::CreateSkillScanRequest& request, const CreateSkillScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSkillScanOutcomeCallable CreateSkillScanCallable(const Model::CreateSkillScanRequest& request);
+
+                /**
+                 *对修复失败的漏洞修复任务进行重试，仅针对原任务中修复失败的主机重新下发修复指令。仅当任务状态为部分修复失败或全部修复失败时允许重试。
+                 * @param req CreateVulFixRetryTaskRequest
+                 * @return CreateVulFixRetryTaskOutcome
+                 */
+                CreateVulFixRetryTaskOutcome CreateVulFixRetryTask(const Model::CreateVulFixRetryTaskRequest &request);
+                void CreateVulFixRetryTaskAsync(const Model::CreateVulFixRetryTaskRequest& request, const CreateVulFixRetryTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVulFixRetryTaskOutcomeCallable CreateVulFixRetryTaskCallable(const Model::CreateVulFixRetryTaskRequest& request);
+
+                /**
+                 *用户手动提交漏洞修复任务，指定需要修复的漏洞和目标主机，系统创建修复任务并下发执行。支持指定修复超时时间、是否创建快照等选项。通过FixItems数组精确控制每个漏洞/KB补丁修复哪些主机。
+                 * @param req CreateVulFixTaskRequest
+                 * @return CreateVulFixTaskOutcome
+                 */
+                CreateVulFixTaskOutcome CreateVulFixTask(const Model::CreateVulFixTaskRequest &request);
+                void CreateVulFixTaskAsync(const Model::CreateVulFixTaskRequest& request, const CreateVulFixTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVulFixTaskOutcomeCallable CreateVulFixTaskCallable(const Model::CreateVulFixTaskRequest& request);
+
+                /**
+                 *创建已修复漏洞列表的导出任务。支持与 DescribeVulFixedList 相同的过滤条件，导出通过异步任务实现，返回 JobID 后前端轮询查询导出任务状态。导出字段包含漏洞ID、漏洞名称、漏洞等级、VPR评级、漏洞类型、CVE编号、主机名称、实例ID、关联组件&路径、修复时间。
+                 * @param req CreateVulFixedExportJobRequest
+                 * @return CreateVulFixedExportJobOutcome
+                 */
+                CreateVulFixedExportJobOutcome CreateVulFixedExportJob(const Model::CreateVulFixedExportJobRequest &request);
+                void CreateVulFixedExportJobAsync(const Model::CreateVulFixedExportJobRequest& request, const CreateVulFixedExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVulFixedExportJobOutcomeCallable CreateVulFixedExportJobCallable(const Model::CreateVulFixedExportJobRequest& request);
+
+                /**
+                 *创建漏洞重新扫描
+                 * @param req CreateVulReScanRequest
+                 * @return CreateVulReScanOutcome
+                 */
+                CreateVulReScanOutcome CreateVulReScan(const Model::CreateVulReScanRequest &request);
+                void CreateVulReScanAsync(const Model::CreateVulReScanRequest& request, const CreateVulReScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVulReScanOutcomeCallable CreateVulReScanCallable(const Model::CreateVulReScanRequest& request);
+
+                /**
+                 *创建漏洞扫描（一键扫描）
+                 * @param req CreateVulScanManualRequest
+                 * @return CreateVulScanManualOutcome
+                 */
+                CreateVulScanManualOutcome CreateVulScanManual(const Model::CreateVulScanManualRequest &request);
+                void CreateVulScanManualAsync(const Model::CreateVulScanManualRequest& request, const CreateVulScanManualAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVulScanManualOutcomeCallable CreateVulScanManualCallable(const Model::CreateVulScanManualRequest& request);
 
                 /**
                  *删除已删除的cos ak资产
@@ -1928,6 +2156,15 @@ namespace TencentCloud
                 DeleteRiskScanTaskOutcome DeleteRiskScanTask(const Model::DeleteRiskScanTaskRequest &request);
                 void DeleteRiskScanTaskAsync(const Model::DeleteRiskScanTaskRequest& request, const DeleteRiskScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteRiskScanTaskOutcomeCallable DeleteRiskScanTaskCallable(const Model::DeleteRiskScanTaskRequest& request);
+
+                /**
+                 *删除漏洞白名单
+                 * @param req DeleteVulWhitelistRequest
+                 * @return DeleteVulWhitelistOutcome
+                 */
+                DeleteVulWhitelistOutcome DeleteVulWhitelist(const Model::DeleteVulWhitelistRequest &request);
+                void DeleteVulWhitelistAsync(const Model::DeleteVulWhitelistRequest& request, const DeleteVulWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVulWhitelistOutcomeCallable DeleteVulWhitelistCallable(const Model::DeleteVulWhitelistRequest& request);
 
                 /**
                  *获取 AI agent 资产列表
@@ -3037,6 +3274,42 @@ namespace TencentCloud
                 DescribeHighBaseLineRiskListOutcomeCallable DescribeHighBaseLineRiskListCallable(const Model::DescribeHighBaseLineRiskListRequest& request);
 
                 /**
+                 *获取主机kb风险列表
+                 * @param req DescribeHostKBRiskListRequest
+                 * @return DescribeHostKBRiskListOutcome
+                 */
+                DescribeHostKBRiskListOutcome DescribeHostKBRiskList(const Model::DescribeHostKBRiskListRequest &request);
+                void DescribeHostKBRiskListAsync(const Model::DescribeHostKBRiskListRequest& request, const DescribeHostKBRiskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHostKBRiskListOutcomeCallable DescribeHostKBRiskListCallable(const Model::DescribeHostKBRiskListRequest& request);
+
+                /**
+                 *获取主机漏洞VPR信息
+                 * @param req DescribeHostVulItemVPRInfoRequest
+                 * @return DescribeHostVulItemVPRInfoOutcome
+                 */
+                DescribeHostVulItemVPRInfoOutcome DescribeHostVulItemVPRInfo(const Model::DescribeHostVulItemVPRInfoRequest &request);
+                void DescribeHostVulItemVPRInfoAsync(const Model::DescribeHostVulItemVPRInfoRequest& request, const DescribeHostVulItemVPRInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHostVulItemVPRInfoOutcomeCallable DescribeHostVulItemVPRInfoCallable(const Model::DescribeHostVulItemVPRInfoRequest& request);
+
+                /**
+                 *获取主机漏洞概览
+                 * @param req DescribeHostVulOverviewRequest
+                 * @return DescribeHostVulOverviewOutcome
+                 */
+                DescribeHostVulOverviewOutcome DescribeHostVulOverview(const Model::DescribeHostVulOverviewRequest &request);
+                void DescribeHostVulOverviewAsync(const Model::DescribeHostVulOverviewRequest& request, const DescribeHostVulOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHostVulOverviewOutcomeCallable DescribeHostVulOverviewCallable(const Model::DescribeHostVulOverviewRequest& request);
+
+                /**
+                 *获取主机漏洞风险列表
+                 * @param req DescribeHostVulRiskListRequest
+                 * @return DescribeHostVulRiskListOutcome
+                 */
+                DescribeHostVulRiskListOutcome DescribeHostVulRiskList(const Model::DescribeHostVulRiskListRequest &request);
+                void DescribeHostVulRiskListAsync(const Model::DescribeHostVulRiskListRequest& request, const DescribeHostVulRiskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHostVulRiskListOutcomeCallable DescribeHostVulRiskListCallable(const Model::DescribeHostVulRiskListRequest& request);
+
+                /**
                  *获取IaC检测文件列表
                  * @param req DescribeIaCFileListRequest
                  * @return DescribeIaCFileListOutcome
@@ -3089,6 +3362,24 @@ namespace TencentCloud
                 DescribeIpInvokeRecordDetailOutcome DescribeIpInvokeRecordDetail(const Model::DescribeIpInvokeRecordDetailRequest &request);
                 void DescribeIpInvokeRecordDetailAsync(const Model::DescribeIpInvokeRecordDetailRequest& request, const DescribeIpInvokeRecordDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIpInvokeRecordDetailOutcomeCallable DescribeIpInvokeRecordDetailCallable(const Model::DescribeIpInvokeRecordDetailRequest& request);
+
+                /**
+                 *根据用户输入的 KB 内部 ID 查询单个 Windows KB 补丁的详情信息，返回 KB 基本信息、发布时间、是否需要重启，以及该 KB 关联的漏洞列表。
+                 * @param req DescribeKBDetailRequest
+                 * @return DescribeKBDetailOutcome
+                 */
+                DescribeKBDetailOutcome DescribeKBDetail(const Model::DescribeKBDetailRequest &request);
+                void DescribeKBDetailAsync(const Model::DescribeKBDetailRequest& request, const DescribeKBDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKBDetailOutcomeCallable DescribeKBDetailCallable(const Model::DescribeKBDetailRequest& request);
+
+                /**
+                 *查询指定KB补丁可以更新的主机列表。用于Windows系统补丁修复场景，在用户提交KB补丁更新任务前，查询哪些主机缺少该补丁且支持自动更新。
+                 * @param req DescribeKBUpdatableMachineListRequest
+                 * @return DescribeKBUpdatableMachineListOutcome
+                 */
+                DescribeKBUpdatableMachineListOutcome DescribeKBUpdatableMachineList(const Model::DescribeKBUpdatableMachineListRequest &request);
+                void DescribeKBUpdatableMachineListAsync(const Model::DescribeKBUpdatableMachineListRequest& request, const DescribeKBUpdatableMachineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKBUpdatableMachineListOutcomeCallable DescribeKBUpdatableMachineListCallable(const Model::DescribeKBUpdatableMachineListRequest& request);
 
                 /**
                  *查询凭证详情，返回凭证元数据和打码后的凭据数据。access类型返回Access数组（Key原文、Value打码），sts类型返回STS对象（System原文、SecretID和SecretKey打码）
@@ -3523,6 +3814,96 @@ namespace TencentCloud
                 DescribeVpcAssetsOutcomeCallable DescribeVpcAssetsCallable(const Model::DescribeVpcAssetsRequest& request);
 
                 /**
+                 *获取漏洞组件关联主机
+                 * @param req DescribeVulComponentRelateHostRequest
+                 * @return DescribeVulComponentRelateHostOutcome
+                 */
+                DescribeVulComponentRelateHostOutcome DescribeVulComponentRelateHost(const Model::DescribeVulComponentRelateHostRequest &request);
+                void DescribeVulComponentRelateHostAsync(const Model::DescribeVulComponentRelateHostRequest& request, const DescribeVulComponentRelateHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVulComponentRelateHostOutcomeCallable DescribeVulComponentRelateHostCallable(const Model::DescribeVulComponentRelateHostRequest& request);
+
+                /**
+                 *查询指定漏洞修复任务的详情信息，包含每台主机的修复状态、快照状态等明细数据，支持分页和筛选。
+                 * @param req DescribeVulFixTaskDetailRequest
+                 * @return DescribeVulFixTaskDetailOutcome
+                 */
+                DescribeVulFixTaskDetailOutcome DescribeVulFixTaskDetail(const Model::DescribeVulFixTaskDetailRequest &request);
+                void DescribeVulFixTaskDetailAsync(const Model::DescribeVulFixTaskDetailRequest& request, const DescribeVulFixTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVulFixTaskDetailOutcomeCallable DescribeVulFixTaskDetailCallable(const Model::DescribeVulFixTaskDetailRequest& request);
+
+                /**
+                 *分页查询漏洞修复任务记录列表，支持按修复状态、时间范围等条件筛选，展示每个修复任务的概要信息。
+                 * @param req DescribeVulFixTaskListRequest
+                 * @return DescribeVulFixTaskListOutcome
+                 */
+                DescribeVulFixTaskListOutcome DescribeVulFixTaskList(const Model::DescribeVulFixTaskListRequest &request);
+                void DescribeVulFixTaskListAsync(const Model::DescribeVulFixTaskListRequest& request, const DescribeVulFixTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVulFixTaskListOutcomeCallable DescribeVulFixTaskListCallable(const Model::DescribeVulFixTaskListRequest& request);
+
+                /**
+                 *查询指定漏洞可以被修复的主机列表。在用户提交修复任务前，需要先查询哪些主机支持自动修复，为用户选择修复目标提供数据支持。
+                 * @param req DescribeVulFixableMachineListRequest
+                 * @return DescribeVulFixableMachineListOutcome
+                 */
+                DescribeVulFixableMachineListOutcome DescribeVulFixableMachineList(const Model::DescribeVulFixableMachineListRequest &request);
+                void DescribeVulFixableMachineListAsync(const Model::DescribeVulFixableMachineListRequest& request, const DescribeVulFixableMachineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVulFixableMachineListOutcomeCallable DescribeVulFixableMachineListCallable(const Model::DescribeVulFixableMachineListRequest& request);
+
+                /**
+                 *查询某个已修复漏洞在指定主机上的修复详情，包含漏洞基本信息、修复主机信息以及关联组件&路径的详细列表（组件名称、命中版本、关联路径、修复命令）。
+                 * @param req DescribeVulFixedHostDetailRequest
+                 * @return DescribeVulFixedHostDetailOutcome
+                 */
+                DescribeVulFixedHostDetailOutcome DescribeVulFixedHostDetail(const Model::DescribeVulFixedHostDetailRequest &request);
+                void DescribeVulFixedHostDetailAsync(const Model::DescribeVulFixedHostDetailRequest& request, const DescribeVulFixedHostDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVulFixedHostDetailOutcomeCallable DescribeVulFixedHostDetailCallable(const Model::DescribeVulFixedHostDetailRequest& request);
+
+                /**
+                 *查询已被修复的漏洞列表，展示修复成功的漏洞信息及修复情况统计，帮助用户了解修复成效。
+                 * @param req DescribeVulFixedListRequest
+                 * @return DescribeVulFixedListOutcome
+                 */
+                DescribeVulFixedListOutcome DescribeVulFixedList(const Model::DescribeVulFixedListRequest &request);
+                void DescribeVulFixedListAsync(const Model::DescribeVulFixedListRequest& request, const DescribeVulFixedListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVulFixedListOutcomeCallable DescribeVulFixedListCallable(const Model::DescribeVulFixedListRequest& request);
+
+                /**
+                 *获取漏洞主机关联组件
+                 * @param req DescribeVulHostRelateComponentRequest
+                 * @return DescribeVulHostRelateComponentOutcome
+                 */
+                DescribeVulHostRelateComponentOutcome DescribeVulHostRelateComponent(const Model::DescribeVulHostRelateComponentRequest &request);
+                void DescribeVulHostRelateComponentAsync(const Model::DescribeVulHostRelateComponentRequest& request, const DescribeVulHostRelateComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVulHostRelateComponentOutcomeCallable DescribeVulHostRelateComponentCallable(const Model::DescribeVulHostRelateComponentRequest& request);
+
+                /**
+                 *获取漏洞忽略列表
+                 * @param req DescribeVulIgnoreRuleListRequest
+                 * @return DescribeVulIgnoreRuleListOutcome
+                 */
+                DescribeVulIgnoreRuleListOutcome DescribeVulIgnoreRuleList(const Model::DescribeVulIgnoreRuleListRequest &request);
+                void DescribeVulIgnoreRuleListAsync(const Model::DescribeVulIgnoreRuleListRequest& request, const DescribeVulIgnoreRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVulIgnoreRuleListOutcomeCallable DescribeVulIgnoreRuleListCallable(const Model::DescribeVulIgnoreRuleListRequest& request);
+
+                /**
+                 *获取漏洞列表
+                 * @param req DescribeVulItemListRequest
+                 * @return DescribeVulItemListOutcome
+                 */
+                DescribeVulItemListOutcome DescribeVulItemList(const Model::DescribeVulItemListRequest &request);
+                void DescribeVulItemListAsync(const Model::DescribeVulItemListRequest& request, const DescribeVulItemListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVulItemListOutcomeCallable DescribeVulItemListCallable(const Model::DescribeVulItemListRequest& request);
+
+                /**
+                 *获取漏洞标签列表
+                 * @param req DescribeVulLabelListRequest
+                 * @return DescribeVulLabelListOutcome
+                 */
+                DescribeVulLabelListOutcome DescribeVulLabelList(const Model::DescribeVulLabelListRequest &request);
+                void DescribeVulLabelListAsync(const Model::DescribeVulLabelListRequest& request, const DescribeVulLabelListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVulLabelListOutcomeCallable DescribeVulLabelListCallable(const Model::DescribeVulLabelListRequest& request);
+
+                /**
                  *查询云边界分析-暴露路径下主机节点的漏洞列表
                  * @param req DescribeVulRiskListRequest
                  * @return DescribeVulRiskListOutcome
@@ -3530,6 +3911,51 @@ namespace TencentCloud
                 DescribeVulRiskListOutcome DescribeVulRiskList(const Model::DescribeVulRiskListRequest &request);
                 void DescribeVulRiskListAsync(const Model::DescribeVulRiskListRequest& request, const DescribeVulRiskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVulRiskListOutcomeCallable DescribeVulRiskListCallable(const Model::DescribeVulRiskListRequest& request);
+
+                /**
+                 *获取漏洞关联组件
+                 * @param req DescribeVulRiskRelateComponentRequest
+                 * @return DescribeVulRiskRelateComponentOutcome
+                 */
+                DescribeVulRiskRelateComponentOutcome DescribeVulRiskRelateComponent(const Model::DescribeVulRiskRelateComponentRequest &request);
+                void DescribeVulRiskRelateComponentAsync(const Model::DescribeVulRiskRelateComponentRequest& request, const DescribeVulRiskRelateComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVulRiskRelateComponentOutcomeCallable DescribeVulRiskRelateComponentCallable(const Model::DescribeVulRiskRelateComponentRequest& request);
+
+                /**
+                 *获取漏洞或KB关联的主机
+                 * @param req DescribeVulRiskRelateHostRequest
+                 * @return DescribeVulRiskRelateHostOutcome
+                 */
+                DescribeVulRiskRelateHostOutcome DescribeVulRiskRelateHost(const Model::DescribeVulRiskRelateHostRequest &request);
+                void DescribeVulRiskRelateHostAsync(const Model::DescribeVulRiskRelateHostRequest& request, const DescribeVulRiskRelateHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVulRiskRelateHostOutcomeCallable DescribeVulRiskRelateHostCallable(const Model::DescribeVulRiskRelateHostRequest& request);
+
+                /**
+                 *获取漏洞扫描（周期扫描）
+                 * @param req DescribeVulScanPeriodicRequest
+                 * @return DescribeVulScanPeriodicOutcome
+                 */
+                DescribeVulScanPeriodicOutcome DescribeVulScanPeriodic(const Model::DescribeVulScanPeriodicRequest &request);
+                void DescribeVulScanPeriodicAsync(const Model::DescribeVulScanPeriodicRequest& request, const DescribeVulScanPeriodicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVulScanPeriodicOutcomeCallable DescribeVulScanPeriodicCallable(const Model::DescribeVulScanPeriodicRequest& request);
+
+                /**
+                 *获取扫描漏洞任务详情
+                 * @param req DescribeVulScanTaskDetailRequest
+                 * @return DescribeVulScanTaskDetailOutcome
+                 */
+                DescribeVulScanTaskDetailOutcome DescribeVulScanTaskDetail(const Model::DescribeVulScanTaskDetailRequest &request);
+                void DescribeVulScanTaskDetailAsync(const Model::DescribeVulScanTaskDetailRequest& request, const DescribeVulScanTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVulScanTaskDetailOutcomeCallable DescribeVulScanTaskDetailCallable(const Model::DescribeVulScanTaskDetailRequest& request);
+
+                /**
+                 *获取漏洞扫描任务记录
+                 * @param req DescribeVulScanTaskListRequest
+                 * @return DescribeVulScanTaskListOutcome
+                 */
+                DescribeVulScanTaskListOutcome DescribeVulScanTaskList(const Model::DescribeVulScanTaskListRequest &request);
+                void DescribeVulScanTaskListAsync(const Model::DescribeVulScanTaskListRequest& request, const DescribeVulScanTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVulScanTaskListOutcomeCallable DescribeVulScanTaskListCallable(const Model::DescribeVulScanTaskListRequest& request);
 
                 /**
                  *获取漏洞视角的漏洞风险列表
@@ -3946,6 +4372,33 @@ namespace TencentCloud
                 ModifyUebaRuleSwitchOutcomeCallable ModifyUebaRuleSwitchCallable(const Model::ModifyUebaRuleSwitchRequest& request);
 
                 /**
+                 *修改漏洞扫描（周期扫描）
+                 * @param req ModifyVulScanPeriodicRequest
+                 * @return ModifyVulScanPeriodicOutcome
+                 */
+                ModifyVulScanPeriodicOutcome ModifyVulScanPeriodic(const Model::ModifyVulScanPeriodicRequest &request);
+                void ModifyVulScanPeriodicAsync(const Model::ModifyVulScanPeriodicRequest& request, const ModifyVulScanPeriodicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyVulScanPeriodicOutcomeCallable ModifyVulScanPeriodicCallable(const Model::ModifyVulScanPeriodicRequest& request);
+
+                /**
+                 *修改漏洞白名单配置
+                 * @param req ModifyVulWhitelistConfigRequest
+                 * @return ModifyVulWhitelistConfigOutcome
+                 */
+                ModifyVulWhitelistConfigOutcome ModifyVulWhitelistConfig(const Model::ModifyVulWhitelistConfigRequest &request);
+                void ModifyVulWhitelistConfigAsync(const Model::ModifyVulWhitelistConfigRequest& request, const ModifyVulWhitelistConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyVulWhitelistConfigOutcomeCallable ModifyVulWhitelistConfigCallable(const Model::ModifyVulWhitelistConfigRequest& request);
+
+                /**
+                 *修改漏洞白名单开关
+                 * @param req ModifyVulWhitelistSwitchRequest
+                 * @return ModifyVulWhitelistSwitchOutcome
+                 */
+                ModifyVulWhitelistSwitchOutcome ModifyVulWhitelistSwitch(const Model::ModifyVulWhitelistSwitchRequest &request);
+                void ModifyVulWhitelistSwitchAsync(const Model::ModifyVulWhitelistSwitchRequest& request, const ModifyVulWhitelistSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyVulWhitelistSwitchOutcomeCallable ModifyVulWhitelistSwitchCallable(const Model::ModifyVulWhitelistSwitchRequest& request);
+
+                /**
                  *重置Dspm资产账号密码
                  * @param req ResetDspmAssetAccountPasswordRequest
                  * @return ResetDspmAssetAccountPasswordOutcome
@@ -3989,6 +4442,15 @@ namespace TencentCloud
                 StopRiskCenterTaskOutcome StopRiskCenterTask(const Model::StopRiskCenterTaskRequest &request);
                 void StopRiskCenterTaskAsync(const Model::StopRiskCenterTaskRequest& request, const StopRiskCenterTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopRiskCenterTaskOutcomeCallable StopRiskCenterTaskCallable(const Model::StopRiskCenterTaskRequest& request);
+
+                /**
+                 *停止漏洞扫描（任务扫描）
+                 * @param req StopVulScanTaskRequest
+                 * @return StopVulScanTaskOutcome
+                 */
+                StopVulScanTaskOutcome StopVulScanTask(const Model::StopVulScanTaskRequest &request);
+                void StopVulScanTaskAsync(const Model::StopVulScanTaskRequest& request, const StopVulScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopVulScanTaskOutcomeCallable StopVulScanTaskCallable(const Model::StopVulScanTaskRequest& request);
 
                 /**
                  *同步dspm支持的资产

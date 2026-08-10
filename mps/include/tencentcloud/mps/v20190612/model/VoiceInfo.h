@@ -256,6 +256,27 @@ namespace TencentCloud
                      */
                     bool ScenesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>音色所属引擎</p>
+                     * @return Engine <p>音色所属引擎</p>
+                     * 
+                     */
+                    std::string GetEngine() const;
+
+                    /**
+                     * 设置<p>音色所属引擎</p>
+                     * @param _engine <p>音色所属引擎</p>
+                     * 
+                     */
+                    void SetEngine(const std::string& _engine);
+
+                    /**
+                     * 判断参数 Engine 是否已赋值
+                     * @return Engine 是否已赋值
+                     * 
+                     */
+                    bool EngineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -317,6 +338,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_scenes;
                     bool m_scenesHasBeenSet;
+
+                    /**
+                     * <p>音色所属引擎</p>
+                     */
+                    std::string m_engine;
+                    bool m_engineHasBeenSet;
 
                 };
             }

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用状态 (OFFLINE:未上线, RUNNING:运行中, DISABLED:停用)。枚举值: 1:未上线, 2:运行中, 3:停用
-                     * @return Status 应用状态 (OFFLINE:未上线, RUNNING:运行中, DISABLED:停用)。枚举值: 1:未上线, 2:运行中, 3:停用
+                     * 获取<p>应用状态</p><p>枚举值：</p><ul><li>1： 未上线</li><li>2： 运行中</li><li>3： 停用</li><li>4： 导入中</li></ul>
+                     * @return Status <p>应用状态</p><p>枚举值：</p><ul><li>1： 未上线</li><li>2： 运行中</li><li>3： 停用</li><li>4： 导入中</li></ul>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置应用状态 (OFFLINE:未上线, RUNNING:运行中, DISABLED:停用)。枚举值: 1:未上线, 2:运行中, 3:停用
-                     * @param _status 应用状态 (OFFLINE:未上线, RUNNING:运行中, DISABLED:停用)。枚举值: 1:未上线, 2:运行中, 3:停用
+                     * 设置<p>应用状态</p><p>枚举值：</p><ul><li>1： 未上线</li><li>2： 运行中</li><li>3： 停用</li><li>4： 导入中</li></ul>
+                     * @param _status <p>应用状态</p><p>枚举值：</p><ul><li>1： 未上线</li><li>2： 运行中</li><li>3： 停用</li><li>4： 导入中</li></ul>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取状态描述
-                     * @return StatusDescription 状态描述
+                     * 获取<p>状态描述</p>
+                     * @return StatusDescription <p>状态描述</p>
                      * 
                      */
                     std::string GetStatusDescription() const;
 
                     /**
-                     * 设置状态描述
-                     * @param _statusDescription 状态描述
+                     * 设置<p>状态描述</p>
+                     * @param _statusDescription <p>状态描述</p>
                      * 
                      */
                     void SetStatusDescription(const std::string& _statusDescription);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用状态 (OFFLINE:未上线, RUNNING:运行中, DISABLED:停用)。枚举值: 1:未上线, 2:运行中, 3:停用
+                     * <p>应用状态</p><p>枚举值：</p><ul><li>1： 未上线</li><li>2： 运行中</li><li>3： 停用</li><li>4： 导入中</li></ul>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 状态描述
+                     * <p>状态描述</p>
                      */
                     std::string m_statusDescription;
                     bool m_statusDescriptionHasBeenSet;

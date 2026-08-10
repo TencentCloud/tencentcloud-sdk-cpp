@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取欢迎语内容
-                     * @return Greeting 欢迎语内容
+                     * 获取<p>欢迎语内容</p>
+                     * @return Greeting <p>欢迎语内容</p>
                      * 
                      */
                     std::string GetGreeting() const;
 
                     /**
-                     * 设置欢迎语内容
-                     * @param _greeting 欢迎语内容
+                     * 设置<p>欢迎语内容</p>
+                     * @param _greeting <p>欢迎语内容</p>
                      * 
                      */
                     void SetGreeting(const std::string& _greeting);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool GreetingHasBeenSet() const;
 
                     /**
-                     * 获取开场问题列表
-                     * @return OpeningQuestionList 开场问题列表
+                     * 获取<p>开场问题列表</p>
+                     * @return OpeningQuestionList <p>开场问题列表</p>
                      * 
                      */
                     std::vector<std::string> GetOpeningQuestionList() const;
 
                     /**
-                     * 设置开场问题列表
-                     * @param _openingQuestionList 开场问题列表
+                     * 设置<p>开场问题列表</p>
+                     * @param _openingQuestionList <p>开场问题列表</p>
                      * 
                      */
                     void SetOpeningQuestionList(const std::vector<std::string>& _openingQuestionList);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 欢迎语内容
+                     * <p>欢迎语内容</p>
                      */
                     std::string m_greeting;
                     bool m_greetingHasBeenSet;
 
                     /**
-                     * 开场问题列表
+                     * <p>开场问题列表</p>
                      */
                     std::vector<std::string> m_openingQuestionList;
                     bool m_openingQuestionListHasBeenSet;
