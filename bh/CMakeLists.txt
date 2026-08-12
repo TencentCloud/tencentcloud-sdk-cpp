@@ -176,6 +176,7 @@ set(bh_public_header_model
   include/tencentcloud/bh/v20230418/model/DescribeLDAPUnitSetResponse.h
   include/tencentcloud/bh/v20230418/model/DescribeUserGroupMembersResponse.h
   include/tencentcloud/bh/v20230418/model/UserDirectory.h
+  include/tencentcloud/bh/v20230418/model/SubtaskResult.h
   include/tencentcloud/bh/v20230418/model/DescribeSecuritySettingResponse.h
   include/tencentcloud/bh/v20230418/model/DescribeDeviceGroupsRequest.h
   include/tencentcloud/bh/v20230418/model/ModifyAccessWhiteListRuleRequest.h
@@ -203,7 +204,7 @@ set(bh_public_header_model
   include/tencentcloud/bh/v20230418/model/DescribeAssetSyncFlagRequest.h
   include/tencentcloud/bh/v20230418/model/CreateUserRequest.h
   include/tencentcloud/bh/v20230418/model/DescribeChangePwdTaskRequest.h
-  include/tencentcloud/bh/v20230418/model/SearchFileBySidResponse.h
+  include/tencentcloud/bh/v20230418/model/ResourceDeployZone.h
   include/tencentcloud/bh/v20230418/model/ModifyAuthModeSettingRequest.h
   include/tencentcloud/bh/v20230418/model/DescribeOperationEventRequest.h
   include/tencentcloud/bh/v20230418/model/SetLDAPSyncFlagRequest.h
@@ -221,6 +222,7 @@ set(bh_public_header_model
   include/tencentcloud/bh/v20230418/model/SearchFileResult.h
   include/tencentcloud/bh/v20230418/model/EnableWebAccessResponse.h
   include/tencentcloud/bh/v20230418/model/ReplayInformation.h
+  include/tencentcloud/bh/v20230418/model/ParamInitResourceSubnet.h
   include/tencentcloud/bh/v20230418/model/CreateDeviceAccountRequest.h
   include/tencentcloud/bh/v20230418/model/AddDeviceGroupMembersResponse.h
   include/tencentcloud/bh/v20230418/model/DeleteCmdTemplatesRequest.h
@@ -264,7 +266,7 @@ set(bh_public_header_model
   include/tencentcloud/bh/v20230418/model/CheckLDAPConnectionResponse.h
   include/tencentcloud/bh/v20230418/model/ModifyReconnectionSettingRequest.h
   include/tencentcloud/bh/v20230418/model/RunOperationTaskRequest.h
-  include/tencentcloud/bh/v20230418/model/SubtaskResult.h
+  include/tencentcloud/bh/v20230418/model/SearchFileBySidResponse.h
   include/tencentcloud/bh/v20230418/model/Acl.h
   include/tencentcloud/bh/v20230418/model/TagFilter.h
   include/tencentcloud/bh/v20230418/model/DescribeDevicesRequest.h
@@ -448,6 +450,7 @@ set(bh_src
   src/v20230418/model/DescribeLDAPUnitSetResponse.cpp
   src/v20230418/model/DescribeUserGroupMembersResponse.cpp
   src/v20230418/model/UserDirectory.cpp
+  src/v20230418/model/SubtaskResult.cpp
   src/v20230418/model/DescribeSecuritySettingResponse.cpp
   src/v20230418/model/DescribeDeviceGroupsRequest.cpp
   src/v20230418/model/ModifyAccessWhiteListRuleRequest.cpp
@@ -475,7 +478,7 @@ set(bh_src
   src/v20230418/model/DescribeAssetSyncFlagRequest.cpp
   src/v20230418/model/CreateUserRequest.cpp
   src/v20230418/model/DescribeChangePwdTaskRequest.cpp
-  src/v20230418/model/SearchFileBySidResponse.cpp
+  src/v20230418/model/ResourceDeployZone.cpp
   src/v20230418/model/ModifyAuthModeSettingRequest.cpp
   src/v20230418/model/DescribeOperationEventRequest.cpp
   src/v20230418/model/SetLDAPSyncFlagRequest.cpp
@@ -493,6 +496,7 @@ set(bh_src
   src/v20230418/model/SearchFileResult.cpp
   src/v20230418/model/EnableWebAccessResponse.cpp
   src/v20230418/model/ReplayInformation.cpp
+  src/v20230418/model/ParamInitResourceSubnet.cpp
   src/v20230418/model/CreateDeviceAccountRequest.cpp
   src/v20230418/model/AddDeviceGroupMembersResponse.cpp
   src/v20230418/model/DeleteCmdTemplatesRequest.cpp
@@ -536,7 +540,7 @@ set(bh_src
   src/v20230418/model/CheckLDAPConnectionResponse.cpp
   src/v20230418/model/ModifyReconnectionSettingRequest.cpp
   src/v20230418/model/RunOperationTaskRequest.cpp
-  src/v20230418/model/SubtaskResult.cpp
+  src/v20230418/model/SearchFileBySidResponse.cpp
   src/v20230418/model/Acl.cpp
   src/v20230418/model/TagFilter.cpp
   src/v20230418/model/DescribeDevicesRequest.cpp

@@ -22,7 +22,9 @@
 using namespace TencentCloud::Postgres::V20170312::Model;
 using namespace std;
 
-DeleteDatabaseRequest::DeleteDatabaseRequest()
+DeleteDatabaseRequest::DeleteDatabaseRequest() :
+    m_dBInstanceIdHasBeenSet(false),
+    m_databaseNameHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,22 @@ string DeleteDatabaseRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_dBInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dBInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_databaseNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatabaseName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_databaseName.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +58,37 @@ string DeleteDatabaseRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DeleteDatabaseRequest::GetDBInstanceId() const
+{
+    return m_dBInstanceId;
+}
+
+void DeleteDatabaseRequest::SetDBInstanceId(const string& _dBInstanceId)
+{
+    m_dBInstanceId = _dBInstanceId;
+    m_dBInstanceIdHasBeenSet = true;
+}
+
+bool DeleteDatabaseRequest::DBInstanceIdHasBeenSet() const
+{
+    return m_dBInstanceIdHasBeenSet;
+}
+
+string DeleteDatabaseRequest::GetDatabaseName() const
+{
+    return m_databaseName;
+}
+
+void DeleteDatabaseRequest::SetDatabaseName(const string& _databaseName)
+{
+    m_databaseName = _databaseName;
+    m_databaseNameHasBeenSet = true;
+}
+
+bool DeleteDatabaseRequest::DatabaseNameHasBeenSet() const
+{
+    return m_databaseNameHasBeenSet;
+}
 
 

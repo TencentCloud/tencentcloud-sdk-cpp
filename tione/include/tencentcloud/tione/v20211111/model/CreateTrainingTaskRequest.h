@@ -664,6 +664,27 @@ namespace TencentCloud
                      */
                     bool ResourceSupplyAttributeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>队列ID</p>
+                     * @return Queues <p>队列ID</p>
+                     * 
+                     */
+                    std::vector<std::string> GetQueues() const;
+
+                    /**
+                     * 设置<p>队列ID</p>
+                     * @param _queues <p>队列ID</p>
+                     * 
+                     */
+                    void SetQueues(const std::vector<std::string>& _queues);
+
+                    /**
+                     * 判断参数 Queues 是否已赋值
+                     * @return Queues 是否已赋值
+                     * 
+                     */
+                    bool QueuesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -839,6 +860,12 @@ namespace TencentCloud
                      */
                     ResourceSupplyAttribute m_resourceSupplyAttribute;
                     bool m_resourceSupplyAttributeHasBeenSet;
+
+                    /**
+                     * <p>队列ID</p>
+                     */
+                    std::vector<std::string> m_queues;
+                    bool m_queuesHasBeenSet;
 
                 };
             }

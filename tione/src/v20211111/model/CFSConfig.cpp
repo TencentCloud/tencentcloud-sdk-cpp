@@ -24,7 +24,8 @@ CFSConfig::CFSConfig() :
     m_idHasBeenSet(false),
     m_pathHasBeenSet(false),
     m_mountTypeHasBeenSet(false),
-    m_protocolHasBeenSet(false)
+    m_protocolHasBeenSet(false),
+    m_isPresetStorageHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome CFSConfig::Deserialize(const rapidjson::Value &value)
         m_protocolHasBeenSet = true;
     }
 
+    if (value.HasMember("IsPresetStorage") && !value["IsPresetStorage"].IsNull())
+    {
+        if (!value["IsPresetStorage"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CFSConfig.IsPresetStorage` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isPresetStorage = value["IsPresetStorage"].GetBool();
+        m_isPresetStorageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void CFSConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isPresetStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPresetStorage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isPresetStorage, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void CFSConfig::SetProtocol(const string& _protocol)
 bool CFSConfig::ProtocolHasBeenSet() const
 {
     return m_protocolHasBeenSet;
+}
+
+bool CFSConfig::GetIsPresetStorage() const
+{
+    return m_isPresetStorage;
+}
+
+void CFSConfig::SetIsPresetStorage(const bool& _isPresetStorage)
+{
+    m_isPresetStorage = _isPresetStorage;
+    m_isPresetStorageHasBeenSet = true;
+}
+
+bool CFSConfig::IsPresetStorageHasBeenSet() const
+{
+    return m_isPresetStorageHasBeenSet;
 }
 

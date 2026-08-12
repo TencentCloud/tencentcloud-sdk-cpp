@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取镜像类型。取值有：<li>TCR：腾讯云容器镜像服务的镜像。</li>
-                     * @return ImageType 镜像类型。取值有：<li>TCR：腾讯云容器镜像服务的镜像。</li>
+                     * 获取<p>镜像类型。取值有：<li>TCR：腾讯云容器镜像服务的镜像。</li></p>
+                     * @return ImageType <p>镜像类型。取值有：<li>TCR：腾讯云容器镜像服务的镜像。</li></p>
                      * 
                      */
                     std::string GetImageType() const;
 
                     /**
-                     * 设置镜像类型。取值有：<li>TCR：腾讯云容器镜像服务的镜像。</li>
-                     * @param _imageType 镜像类型。取值有：<li>TCR：腾讯云容器镜像服务的镜像。</li>
+                     * 设置<p>镜像类型。取值有：<li>TCR：腾讯云容器镜像服务的镜像。</li></p>
+                     * @param _imageType <p>镜像类型。取值有：<li>TCR：腾讯云容器镜像服务的镜像。</li></p>
                      * 
                      */
                     void SetImageType(const std::string& _imageType);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool ImageTypeHasBeenSet() const;
 
                     /**
-                     * 获取TCR 镜像仓库信息。当 ImageType 为 TCR 时必填。
-                     * @return TcrRepositoryConfig TCR 镜像仓库信息。当 ImageType 为 TCR 时必填。
+                     * 获取<p>TCR 镜像仓库信息。当 ImageType 为 TCR 时必填。</p>
+                     * @return TcrRepositoryConfig <p>TCR 镜像仓库信息。当 ImageType 为 TCR 时必填。</p>
                      * 
                      */
                     InferenceTCRRepositoryConfig GetTcrRepositoryConfig() const;
 
                     /**
-                     * 设置TCR 镜像仓库信息。当 ImageType 为 TCR 时必填。
-                     * @param _tcrRepositoryConfig TCR 镜像仓库信息。当 ImageType 为 TCR 时必填。
+                     * 设置<p>TCR 镜像仓库信息。当 ImageType 为 TCR 时必填。</p>
+                     * @param _tcrRepositoryConfig <p>TCR 镜像仓库信息。当 ImageType 为 TCR 时必填。</p>
                      * 
                      */
                     void SetTcrRepositoryConfig(const InferenceTCRRepositoryConfig& _tcrRepositoryConfig);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool TcrRepositoryConfigHasBeenSet() const;
 
                     /**
-                     * 获取容器启动时执行的命令，未填写时默认使用镜像的 Entrypoint/CMD。最长支持 1024 字符。
-                     * @return StartupCommand 容器启动时执行的命令，未填写时默认使用镜像的 Entrypoint/CMD。最长支持 1024 字符。
+                     * 获取<p>容器启动时执行的命令，未填写时默认使用镜像的 Entrypoint/CMD。最长支持 1024 字符。</p>
+                     * @return StartupCommand <p>容器启动时执行的命令，未填写时默认使用镜像的 Entrypoint/CMD。最长支持 1024 字符。</p>
                      * 
                      */
                     std::string GetStartupCommand() const;
 
                     /**
-                     * 设置容器启动时执行的命令，未填写时默认使用镜像的 Entrypoint/CMD。最长支持 1024 字符。
-                     * @param _startupCommand 容器启动时执行的命令，未填写时默认使用镜像的 Entrypoint/CMD。最长支持 1024 字符。
+                     * 设置<p>容器启动时执行的命令，未填写时默认使用镜像的 Entrypoint/CMD。最长支持 1024 字符。</p>
+                     * @param _startupCommand <p>容器启动时执行的命令，未填写时默认使用镜像的 Entrypoint/CMD。最长支持 1024 字符。</p>
                      * 
                      */
                     void SetStartupCommand(const std::string& _startupCommand);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool StartupCommandHasBeenSet() const;
 
                     /**
-                     * 获取容器运行时的环境变量。最多支持 10 个变量。
-                     * @return EnvironmentVariables 容器运行时的环境变量。最多支持 10 个变量。
+                     * 获取<p>容器运行时的环境变量。最多支持 10 个变量。</p>
+                     * @return EnvironmentVariables <p>容器运行时的环境变量。最多支持 10 个变量。</p>
                      * 
                      */
                     std::vector<InferenceEnvironmentVariable> GetEnvironmentVariables() const;
 
                     /**
-                     * 设置容器运行时的环境变量。最多支持 10 个变量。
-                     * @param _environmentVariables 容器运行时的环境变量。最多支持 10 个变量。
+                     * 设置<p>容器运行时的环境变量。最多支持 10 个变量。</p>
+                     * @param _environmentVariables <p>容器运行时的环境变量。最多支持 10 个变量。</p>
                      * 
                      */
                     void SetEnvironmentVariables(const std::vector<InferenceEnvironmentVariable>& _environmentVariables);
@@ -135,25 +135,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 镜像类型。取值有：<li>TCR：腾讯云容器镜像服务的镜像。</li>
+                     * <p>镜像类型。取值有：<li>TCR：腾讯云容器镜像服务的镜像。</li></p>
                      */
                     std::string m_imageType;
                     bool m_imageTypeHasBeenSet;
 
                     /**
-                     * TCR 镜像仓库信息。当 ImageType 为 TCR 时必填。
+                     * <p>TCR 镜像仓库信息。当 ImageType 为 TCR 时必填。</p>
                      */
                     InferenceTCRRepositoryConfig m_tcrRepositoryConfig;
                     bool m_tcrRepositoryConfigHasBeenSet;
 
                     /**
-                     * 容器启动时执行的命令，未填写时默认使用镜像的 Entrypoint/CMD。最长支持 1024 字符。
+                     * <p>容器启动时执行的命令，未填写时默认使用镜像的 Entrypoint/CMD。最长支持 1024 字符。</p>
                      */
                     std::string m_startupCommand;
                     bool m_startupCommandHasBeenSet;
 
                     /**
-                     * 容器运行时的环境变量。最多支持 10 个变量。
+                     * <p>容器运行时的环境变量。最多支持 10 个变量。</p>
                      */
                     std::vector<InferenceEnvironmentVariable> m_environmentVariables;
                     bool m_environmentVariablesHasBeenSet;

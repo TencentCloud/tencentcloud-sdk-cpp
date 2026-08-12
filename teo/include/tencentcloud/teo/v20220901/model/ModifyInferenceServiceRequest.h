@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/InferenceContainerConfigForModify.h>
 #include <tencentcloud/teo/v20220901/model/InferenceResourceConfigForModify.h>
+#include <tencentcloud/teo/v20220901/model/InferenceAffinityConfig.h>
 
 
 namespace TencentCloud
@@ -171,6 +172,27 @@ namespace TencentCloud
                     bool ResourceConfigHasBeenSet() const;
 
                     /**
+                     * 获取<p>推理服务亲和性配置</p>
+                     * @return AffinityConfig <p>推理服务亲和性配置</p>
+                     * 
+                     */
+                    InferenceAffinityConfig GetAffinityConfig() const;
+
+                    /**
+                     * 设置<p>推理服务亲和性配置</p>
+                     * @param _affinityConfig <p>推理服务亲和性配置</p>
+                     * 
+                     */
+                    void SetAffinityConfig(const InferenceAffinityConfig& _affinityConfig);
+
+                    /**
+                     * 判断参数 AffinityConfig 是否已赋值
+                     * @return AffinityConfig 是否已赋值
+                     * 
+                     */
+                    bool AffinityConfigHasBeenSet() const;
+
+                    /**
                      * 获取<p>描述信息。长度限制不超过 60 个字符。</p>
                      * @return Description <p>描述信息。长度限制不超过 60 个字符。</p>
                      * 
@@ -228,6 +250,12 @@ namespace TencentCloud
                      */
                     InferenceResourceConfigForModify m_resourceConfig;
                     bool m_resourceConfigHasBeenSet;
+
+                    /**
+                     * <p>推理服务亲和性配置</p>
+                     */
+                    InferenceAffinityConfig m_affinityConfig;
+                    bool m_affinityConfigHasBeenSet;
 
                     /**
                      * <p>描述信息。长度限制不超过 60 个字符。</p>

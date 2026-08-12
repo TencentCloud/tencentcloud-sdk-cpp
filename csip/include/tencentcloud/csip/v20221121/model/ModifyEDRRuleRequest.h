@@ -25,6 +25,9 @@
 #include <tencentcloud/csip/v20221121/model/RuleContentProcessNetwork.h>
 #include <tencentcloud/csip/v20221121/model/EdrAlertTarget.h>
 #include <tencentcloud/csip/v20221121/model/InstanceIDWithAppIdItem.h>
+#include <tencentcloud/csip/v20221121/model/ClusterIDWithAppIdItem.h>
+#include <tencentcloud/csip/v20221121/model/ImageIDWithAppIdItem.h>
+#include <tencentcloud/csip/v20221121/model/ConditionMatch.h>
 
 
 namespace TencentCloud
@@ -613,6 +616,111 @@ namespace TencentCloud
                      */
                     bool ExcludeInstanceIDsWithAppIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>安全中心标签ID列表（主机资产范围「按标签选择」，仅对主机生效）；上限 100（超限截断）。标签来源接口 DescribeAssetTagTree</p>
+                     * @return TagIDs <p>安全中心标签ID列表（主机资产范围「按标签选择」，仅对主机生效）；上限 100（超限截断）。标签来源接口 DescribeAssetTagTree</p>
+                     * 
+                     */
+                    std::vector<std::string> GetTagIDs() const;
+
+                    /**
+                     * 设置<p>安全中心标签ID列表（主机资产范围「按标签选择」，仅对主机生效）；上限 100（超限截断）。标签来源接口 DescribeAssetTagTree</p>
+                     * @param _tagIDs <p>安全中心标签ID列表（主机资产范围「按标签选择」，仅对主机生效）；上限 100（超限截断）。标签来源接口 DescribeAssetTagTree</p>
+                     * 
+                     */
+                    void SetTagIDs(const std::vector<std::string>& _tagIDs);
+
+                    /**
+                     * 判断参数 TagIDs 是否已赋值
+                     * @return TagIDs 是否已赋值
+                     * 
+                     */
+                    bool TagIDsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>指定生效集群列表（每项含 AppId + ClusterID，TCSSScope=0 时使用）。入参数组上限 3000（超限截断保留前 3000 项）</p>
+                     * @return ClusterIDsWithAppId <p>指定生效集群列表（每项含 AppId + ClusterID，TCSSScope=0 时使用）。入参数组上限 3000（超限截断保留前 3000 项）</p>
+                     * 
+                     */
+                    std::vector<ClusterIDWithAppIdItem> GetClusterIDsWithAppId() const;
+
+                    /**
+                     * 设置<p>指定生效集群列表（每项含 AppId + ClusterID，TCSSScope=0 时使用）。入参数组上限 3000（超限截断保留前 3000 项）</p>
+                     * @param _clusterIDsWithAppId <p>指定生效集群列表（每项含 AppId + ClusterID，TCSSScope=0 时使用）。入参数组上限 3000（超限截断保留前 3000 项）</p>
+                     * 
+                     */
+                    void SetClusterIDsWithAppId(const std::vector<ClusterIDWithAppIdItem>& _clusterIDsWithAppId);
+
+                    /**
+                     * 判断参数 ClusterIDsWithAppId 是否已赋值
+                     * @return ClusterIDsWithAppId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIDsWithAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>排除集群列表（每项含 AppId + ClusterID）；入参数组上限 3000（超限截断保留前 3000 项）</p>
+                     * @return ExcludeClusterIDsWithAppId <p>排除集群列表（每项含 AppId + ClusterID）；入参数组上限 3000（超限截断保留前 3000 项）</p>
+                     * 
+                     */
+                    std::vector<ClusterIDWithAppIdItem> GetExcludeClusterIDsWithAppId() const;
+
+                    /**
+                     * 设置<p>排除集群列表（每项含 AppId + ClusterID）；入参数组上限 3000（超限截断保留前 3000 项）</p>
+                     * @param _excludeClusterIDsWithAppId <p>排除集群列表（每项含 AppId + ClusterID）；入参数组上限 3000（超限截断保留前 3000 项）</p>
+                     * 
+                     */
+                    void SetExcludeClusterIDsWithAppId(const std::vector<ClusterIDWithAppIdItem>& _excludeClusterIDsWithAppId);
+
+                    /**
+                     * 判断参数 ExcludeClusterIDsWithAppId 是否已赋值
+                     * @return ExcludeClusterIDsWithAppId 是否已赋值
+                     * 
+                     */
+                    bool ExcludeClusterIDsWithAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>直接选择镜像（每项含 AppId + ImageID，在集群基础上进一步过滤）。多账号场景下各账号只存属于自己的镜像；入参数组上限 3000（超限截断保留前 3000 项）</p>
+                     * @return ImageIDsWithAppId <p>直接选择镜像（每项含 AppId + ImageID，在集群基础上进一步过滤）。多账号场景下各账号只存属于自己的镜像；入参数组上限 3000（超限截断保留前 3000 项）</p>
+                     * 
+                     */
+                    std::vector<ImageIDWithAppIdItem> GetImageIDsWithAppId() const;
+
+                    /**
+                     * 设置<p>直接选择镜像（每项含 AppId + ImageID，在集群基础上进一步过滤）。多账号场景下各账号只存属于自己的镜像；入参数组上限 3000（超限截断保留前 3000 项）</p>
+                     * @param _imageIDsWithAppId <p>直接选择镜像（每项含 AppId + ImageID，在集群基础上进一步过滤）。多账号场景下各账号只存属于自己的镜像；入参数组上限 3000（超限截断保留前 3000 项）</p>
+                     * 
+                     */
+                    void SetImageIDsWithAppId(const std::vector<ImageIDWithAppIdItem>& _imageIDsWithAppId);
+
+                    /**
+                     * 判断参数 ImageIDsWithAppId 是否已赋值
+                     * @return ImageIDsWithAppId 是否已赋值
+                     * 
+                     */
+                    bool ImageIDsWithAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>容器条件匹配</p>
+                     * @return ConditionMatches <p>容器条件匹配</p>
+                     * 
+                     */
+                    std::vector<ConditionMatch> GetConditionMatches() const;
+
+                    /**
+                     * 设置<p>容器条件匹配</p>
+                     * @param _conditionMatches <p>容器条件匹配</p>
+                     * 
+                     */
+                    void SetConditionMatches(const std::vector<ConditionMatch>& _conditionMatches);
+
+                    /**
+                     * 判断参数 ConditionMatches 是否已赋值
+                     * @return ConditionMatches 是否已赋值
+                     * 
+                     */
+                    bool ConditionMatchesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -776,6 +884,36 @@ namespace TencentCloud
                      */
                     std::vector<InstanceIDWithAppIdItem> m_excludeInstanceIDsWithAppId;
                     bool m_excludeInstanceIDsWithAppIdHasBeenSet;
+
+                    /**
+                     * <p>安全中心标签ID列表（主机资产范围「按标签选择」，仅对主机生效）；上限 100（超限截断）。标签来源接口 DescribeAssetTagTree</p>
+                     */
+                    std::vector<std::string> m_tagIDs;
+                    bool m_tagIDsHasBeenSet;
+
+                    /**
+                     * <p>指定生效集群列表（每项含 AppId + ClusterID，TCSSScope=0 时使用）。入参数组上限 3000（超限截断保留前 3000 项）</p>
+                     */
+                    std::vector<ClusterIDWithAppIdItem> m_clusterIDsWithAppId;
+                    bool m_clusterIDsWithAppIdHasBeenSet;
+
+                    /**
+                     * <p>排除集群列表（每项含 AppId + ClusterID）；入参数组上限 3000（超限截断保留前 3000 项）</p>
+                     */
+                    std::vector<ClusterIDWithAppIdItem> m_excludeClusterIDsWithAppId;
+                    bool m_excludeClusterIDsWithAppIdHasBeenSet;
+
+                    /**
+                     * <p>直接选择镜像（每项含 AppId + ImageID，在集群基础上进一步过滤）。多账号场景下各账号只存属于自己的镜像；入参数组上限 3000（超限截断保留前 3000 项）</p>
+                     */
+                    std::vector<ImageIDWithAppIdItem> m_imageIDsWithAppId;
+                    bool m_imageIDsWithAppIdHasBeenSet;
+
+                    /**
+                     * <p>容器条件匹配</p>
+                     */
+                    std::vector<ConditionMatch> m_conditionMatches;
+                    bool m_conditionMatchesHasBeenSet;
 
                 };
             }

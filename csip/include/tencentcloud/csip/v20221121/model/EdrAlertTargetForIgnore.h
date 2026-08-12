@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * EDR告警定位信息，用于永久忽略
+                * EDR告警定位信息，用于永久忽略/取消忽略
                 */
                 class EdrAlertTargetForIgnore : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>告警主键ID</p>
-                     * @return Id <p>告警主键ID</p>
+                     * 获取告警主键ID
+                     * @return Id 告警主键ID
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置<p>告警主键ID</p>
-                     * @param _id <p>告警主键ID</p>
+                     * 设置告警主键ID
+                     * @param _id 告警主键ID
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取<p>告警所属账号ID（跨账号，前端必传）</p>
-                     * @return AppId <p>告警所属账号ID（跨账号，前端必传）</p>
+                     * 获取告警所属账号ID（跨账号，前端必传）
+                     * @return AppId 告警所属账号ID（跨账号，前端必传）
                      * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
-                     * 设置<p>告警所属账号ID（跨账号，前端必传）</p>
-                     * @param _appId <p>告警所属账号ID（跨账号，前端必传）</p>
+                     * 设置告警所属账号ID（跨账号，前端必传）
+                     * @param _appId 告警所属账号ID（跨账号，前端必传）
                      * 
                      */
                     void SetAppId(const uint64_t& _appId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>告警唯一标识</p>
-                     * @return AlertId <p>告警唯一标识</p>
+                     * 获取告警唯一标识
+                     * @return AlertId 告警唯一标识
                      * 
                      */
                     std::string GetAlertId() const;
 
                     /**
-                     * 设置<p>告警唯一标识</p>
-                     * @param _alertId <p>告警唯一标识</p>
+                     * 设置告警唯一标识
+                     * @param _alertId 告警唯一标识
                      * 
                      */
                     void SetAlertId(const std::string& _alertId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool AlertIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>主机UUID（可选）</p>
-                     * @return Quuid <p>主机UUID（可选）</p>
+                     * 获取主机UUID（可选）
+                     * @return Quuid 主机UUID（可选）
                      * 
                      */
                     std::string GetQuuid() const;
 
                     /**
-                     * 设置<p>主机UUID（可选）</p>
-                     * @param _quuid <p>主机UUID（可选）</p>
+                     * 设置主机UUID（可选）
+                     * @param _quuid 主机UUID（可选）
                      * 
                      */
                     void SetQuuid(const std::string& _quuid);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool QuuidHasBeenSet() const;
 
                     /**
-                     * 获取<p>实例ID（可选，用于白名单写入）</p>
-                     * @return InstanceId <p>实例ID（可选，用于白名单写入）</p>
+                     * 获取实例ID（可选，用于白名单删除）
+                     * @return InstanceId 实例ID（可选，用于白名单删除）
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置<p>实例ID（可选，用于白名单写入）</p>
-                     * @param _instanceId <p>实例ID（可选，用于白名单写入）</p>
+                     * 设置实例ID（可选，用于白名单删除）
+                     * @param _instanceId 实例ID（可选，用于白名单删除）
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -154,31 +154,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>告警主键ID</p>
+                     * 告警主键ID
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * <p>告警所属账号ID（跨账号，前端必传）</p>
+                     * 告警所属账号ID（跨账号，前端必传）
                      */
                     uint64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * <p>告警唯一标识</p>
+                     * 告警唯一标识
                      */
                     std::string m_alertId;
                     bool m_alertIdHasBeenSet;
 
                     /**
-                     * <p>主机UUID（可选）</p>
+                     * 主机UUID（可选）
                      */
                     std::string m_quuid;
                     bool m_quuidHasBeenSet;
 
                     /**
-                     * <p>实例ID（可选，用于白名单写入）</p>
+                     * 实例ID（可选，用于白名单删除）
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

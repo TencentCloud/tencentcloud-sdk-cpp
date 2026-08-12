@@ -301,6 +301,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DropDMSPartitionsResponse.h
   include/tencentcloud/dlc/v20210125/model/DeleteMetaDatabaseResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeUsersRequest.h
+  include/tencentcloud/dlc/v20210125/model/TCHousePInfo.h
   include/tencentcloud/dlc/v20210125/model/CreateExportTaskResponse.h
   include/tencentcloud/dlc/v20210125/model/AddUsersToWorkGroupRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateDataMaskStrategyRequest.h
@@ -1102,6 +1103,7 @@ set(dlc_src
   src/v20210125/model/DropDMSPartitionsResponse.cpp
   src/v20210125/model/DeleteMetaDatabaseResponse.cpp
   src/v20210125/model/DescribeUsersRequest.cpp
+  src/v20210125/model/TCHousePInfo.cpp
   src/v20210125/model/CreateExportTaskResponse.cpp
   src/v20210125/model/AddUsersToWorkGroupRequest.cpp
   src/v20210125/model/CreateDataMaskStrategyRequest.cpp

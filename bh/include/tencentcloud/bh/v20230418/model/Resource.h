@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/bh/v20230418/model/Clb.h>
+#include <tencentcloud/bh/v20230418/model/ResourceDeployZone.h>
 
 
 namespace TencentCloud
@@ -48,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务实例ID，如bh-saas-s3ed4r5e
-                     * @return ResourceId 服务实例ID，如bh-saas-s3ed4r5e
+                     * 获取<p>服务实例ID，如bh-saas-s3ed4r5e</p>
+                     * @return ResourceId <p>服务实例ID，如bh-saas-s3ed4r5e</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置服务实例ID，如bh-saas-s3ed4r5e
-                     * @param _resourceId 服务实例ID，如bh-saas-s3ed4r5e
+                     * 设置<p>服务实例ID，如bh-saas-s3ed4r5e</p>
+                     * @param _resourceId <p>服务实例ID，如bh-saas-s3ed4r5e</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -69,15 +70,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取地域编码
-                     * @return ApCode 地域编码
+                     * 获取<p>地域编码</p>
+                     * @return ApCode <p>地域编码</p>
                      * 
                      */
                     std::string GetApCode() const;
 
                     /**
-                     * 设置地域编码
-                     * @param _apCode 地域编码
+                     * 设置<p>地域编码</p>
+                     * @param _apCode <p>地域编码</p>
                      * 
                      */
                     void SetApCode(const std::string& _apCode);
@@ -90,15 +91,15 @@ namespace TencentCloud
                     bool ApCodeHasBeenSet() const;
 
                     /**
-                     * 获取服务实例规格信息
-                     * @return SvArgs 服务实例规格信息
+                     * 获取<p>服务实例规格信息</p>
+                     * @return SvArgs <p>服务实例规格信息</p>
                      * 
                      */
                     std::string GetSvArgs() const;
 
                     /**
-                     * 设置服务实例规格信息
-                     * @param _svArgs 服务实例规格信息
+                     * 设置<p>服务实例规格信息</p>
+                     * @param _svArgs <p>服务实例规格信息</p>
                      * 
                      */
                     void SetSvArgs(const std::string& _svArgs);
@@ -111,15 +112,15 @@ namespace TencentCloud
                     bool SvArgsHasBeenSet() const;
 
                     /**
-                     * 获取VPC ID
-                     * @return VpcId VPC ID
+                     * 获取<p>VPC ID</p>
+                     * @return VpcId <p>VPC ID</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC ID
-                     * @param _vpcId VPC ID
+                     * 设置<p>VPC ID</p>
+                     * @param _vpcId <p>VPC ID</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -132,15 +133,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取服务规格对应的资产数
-                     * @return Nodes 服务规格对应的资产数
+                     * 获取<p>服务规格对应的资产数</p>
+                     * @return Nodes <p>服务规格对应的资产数</p>
                      * 
                      */
                     uint64_t GetNodes() const;
 
                     /**
-                     * 设置服务规格对应的资产数
-                     * @param _nodes 服务规格对应的资产数
+                     * 设置<p>服务规格对应的资产数</p>
+                     * @param _nodes <p>服务规格对应的资产数</p>
                      * 
                      */
                     void SetNodes(const uint64_t& _nodes);
@@ -153,15 +154,15 @@ namespace TencentCloud
                     bool NodesHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标记，0 - 表示默认状态，1 - 表示自动续费，2 - 表示明确不自动续费
-                     * @return RenewFlag 自动续费标记，0 - 表示默认状态，1 - 表示自动续费，2 - 表示明确不自动续费
+                     * 获取<p>自动续费标记，0 - 表示默认状态，1 - 表示自动续费，2 - 表示明确不自动续费</p>
+                     * @return RenewFlag <p>自动续费标记，0 - 表示默认状态，1 - 表示自动续费，2 - 表示明确不自动续费</p>
                      * 
                      */
                     uint64_t GetRenewFlag() const;
 
                     /**
-                     * 设置自动续费标记，0 - 表示默认状态，1 - 表示自动续费，2 - 表示明确不自动续费
-                     * @param _renewFlag 自动续费标记，0 - 表示默认状态，1 - 表示自动续费，2 - 表示明确不自动续费
+                     * 设置<p>自动续费标记，0 - 表示默认状态，1 - 表示自动续费，2 - 表示明确不自动续费</p>
+                     * @param _renewFlag <p>自动续费标记，0 - 表示默认状态，1 - 表示自动续费，2 - 表示明确不自动续费</p>
                      * 
                      */
                     void SetRenewFlag(const uint64_t& _renewFlag);
@@ -174,15 +175,15 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取过期时间
-                     * @return ExpireTime 过期时间
+                     * 获取<p>过期时间</p>
+                     * @return ExpireTime <p>过期时间</p>
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置过期时间
-                     * @param _expireTime 过期时间
+                     * 设置<p>过期时间</p>
+                     * @param _expireTime <p>过期时间</p>
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -195,15 +196,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取资源状态，0 - 未初始化，1 - 正常，2 - 隔离，3 - 销毁，4 - 初始化失败，5 - 初始化中
-                     * @return Status 资源状态，0 - 未初始化，1 - 正常，2 - 隔离，3 - 销毁，4 - 初始化失败，5 - 初始化中
+                     * 获取<p>资源状态，0 - 未初始化，1 - 正常，2 - 隔离，3 - 销毁，4 - 初始化失败，5 - 初始化中</p>
+                     * @return Status <p>资源状态，0 - 未初始化，1 - 正常，2 - 隔离，3 - 销毁，4 - 初始化失败，5 - 初始化中</p>
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置资源状态，0 - 未初始化，1 - 正常，2 - 隔离，3 - 销毁，4 - 初始化失败，5 - 初始化中
-                     * @param _status 资源状态，0 - 未初始化，1 - 正常，2 - 隔离，3 - 销毁，4 - 初始化失败，5 - 初始化中
+                     * 设置<p>资源状态，0 - 未初始化，1 - 正常，2 - 隔离，3 - 销毁，4 - 初始化失败，5 - 初始化中</p>
+                     * @param _status <p>资源状态，0 - 未初始化，1 - 正常，2 - 隔离，3 - 销毁，4 - 初始化失败，5 - 初始化中</p>
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -216,15 +217,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取服务实例名，如T-Sec-堡垒机（SaaS型）
-                     * @return ResourceName 服务实例名，如T-Sec-堡垒机（SaaS型）
+                     * 获取<p>服务实例名，如T-Sec-堡垒机（SaaS型）</p>
+                     * @return ResourceName <p>服务实例名，如T-Sec-堡垒机（SaaS型）</p>
                      * 
                      */
                     std::string GetResourceName() const;
 
                     /**
-                     * 设置服务实例名，如T-Sec-堡垒机（SaaS型）
-                     * @param _resourceName 服务实例名，如T-Sec-堡垒机（SaaS型）
+                     * 设置<p>服务实例名，如T-Sec-堡垒机（SaaS型）</p>
+                     * @param _resourceName <p>服务实例名，如T-Sec-堡垒机（SaaS型）</p>
                      * 
                      */
                     void SetResourceName(const std::string& _resourceName);
@@ -237,15 +238,15 @@ namespace TencentCloud
                     bool ResourceNameHasBeenSet() const;
 
                     /**
-                     * 获取定价模型ID
-                     * @return Pid 定价模型ID
+                     * 获取<p>定价模型ID</p>
+                     * @return Pid <p>定价模型ID</p>
                      * 
                      */
                     uint64_t GetPid() const;
 
                     /**
-                     * 设置定价模型ID
-                     * @param _pid 定价模型ID
+                     * 设置<p>定价模型ID</p>
+                     * @param _pid <p>定价模型ID</p>
                      * 
                      */
                     void SetPid(const uint64_t& _pid);
@@ -258,15 +259,15 @@ namespace TencentCloud
                     bool PidHasBeenSet() const;
 
                     /**
-                     * 获取资源创建时间
-                     * @return CreateTime 资源创建时间
+                     * 获取<p>资源创建时间</p>
+                     * @return CreateTime <p>资源创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置资源创建时间
-                     * @param _createTime 资源创建时间
+                     * 设置<p>资源创建时间</p>
+                     * @param _createTime <p>资源创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -279,15 +280,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取商品码, p_cds_dasb
-                     * @return ProductCode 商品码, p_cds_dasb
+                     * 获取<p>商品码, p_cds_dasb</p>
+                     * @return ProductCode <p>商品码, p_cds_dasb</p>
                      * 
                      */
                     std::string GetProductCode() const;
 
                     /**
-                     * 设置商品码, p_cds_dasb
-                     * @param _productCode 商品码, p_cds_dasb
+                     * 设置<p>商品码, p_cds_dasb</p>
+                     * @param _productCode <p>商品码, p_cds_dasb</p>
                      * 
                      */
                     void SetProductCode(const std::string& _productCode);
@@ -300,15 +301,15 @@ namespace TencentCloud
                     bool ProductCodeHasBeenSet() const;
 
                     /**
-                     * 获取子商品码, sp_cds_dasb_bh_saas
-                     * @return SubProductCode 子商品码, sp_cds_dasb_bh_saas
+                     * 获取<p>子商品码, sp_cds_dasb_bh_saas</p>
+                     * @return SubProductCode <p>子商品码, sp_cds_dasb_bh_saas</p>
                      * 
                      */
                     std::string GetSubProductCode() const;
 
                     /**
-                     * 设置子商品码, sp_cds_dasb_bh_saas
-                     * @param _subProductCode 子商品码, sp_cds_dasb_bh_saas
+                     * 设置<p>子商品码, sp_cds_dasb_bh_saas</p>
+                     * @param _subProductCode <p>子商品码, sp_cds_dasb_bh_saas</p>
                      * 
                      */
                     void SetSubProductCode(const std::string& _subProductCode);
@@ -321,15 +322,15 @@ namespace TencentCloud
                     bool SubProductCodeHasBeenSet() const;
 
                     /**
-                     * 获取可用区
-                     * @return Zone 可用区
+                     * 获取<p>可用区</p>
+                     * @return Zone <p>可用区</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区
-                     * @param _zone 可用区
+                     * 设置<p>可用区</p>
+                     * @param _zone <p>可用区</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -342,15 +343,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取是否过期，true-过期，false-未过期
-                     * @return Expired 是否过期，true-过期，false-未过期
+                     * 获取<p>是否过期，true-过期，false-未过期</p>
+                     * @return Expired <p>是否过期，true-过期，false-未过期</p>
                      * 
                      */
                     bool GetExpired() const;
 
                     /**
-                     * 设置是否过期，true-过期，false-未过期
-                     * @param _expired 是否过期，true-过期，false-未过期
+                     * 设置<p>是否过期，true-过期，false-未过期</p>
+                     * @param _expired <p>是否过期，true-过期，false-未过期</p>
                      * 
                      */
                     void SetExpired(const bool& _expired);
@@ -363,15 +364,15 @@ namespace TencentCloud
                     bool ExpiredHasBeenSet() const;
 
                     /**
-                     * 获取是否开通，true-开通，false-未开通
-                     * @return Deployed 是否开通，true-开通，false-未开通
+                     * 获取<p>是否开通，true-开通，false-未开通</p>
+                     * @return Deployed <p>是否开通，true-开通，false-未开通</p>
                      * 
                      */
                     bool GetDeployed() const;
 
                     /**
-                     * 设置是否开通，true-开通，false-未开通
-                     * @param _deployed 是否开通，true-开通，false-未开通
+                     * 设置<p>是否开通，true-开通，false-未开通</p>
+                     * @param _deployed <p>是否开通，true-开通，false-未开通</p>
                      * 
                      */
                     void SetDeployed(const bool& _deployed);
@@ -384,15 +385,15 @@ namespace TencentCloud
                     bool DeployedHasBeenSet() const;
 
                     /**
-                     * 获取开通服务的 VPC 名称
-                     * @return VpcName 开通服务的 VPC 名称
+                     * 获取<p>开通服务的 VPC 名称</p>
+                     * @return VpcName <p>开通服务的 VPC 名称</p>
                      * 
                      */
                     std::string GetVpcName() const;
 
                     /**
-                     * 设置开通服务的 VPC 名称
-                     * @param _vpcName 开通服务的 VPC 名称
+                     * 设置<p>开通服务的 VPC 名称</p>
+                     * @param _vpcName <p>开通服务的 VPC 名称</p>
                      * 
                      */
                     void SetVpcName(const std::string& _vpcName);
@@ -405,15 +406,15 @@ namespace TencentCloud
                     bool VpcNameHasBeenSet() const;
 
                     /**
-                     * 获取开通服务的 VPC 对应的网段
-                     * @return VpcCidrBlock 开通服务的 VPC 对应的网段
+                     * 获取<p>开通服务的 VPC 对应的网段</p>
+                     * @return VpcCidrBlock <p>开通服务的 VPC 对应的网段</p>
                      * 
                      */
                     std::string GetVpcCidrBlock() const;
 
                     /**
-                     * 设置开通服务的 VPC 对应的网段
-                     * @param _vpcCidrBlock 开通服务的 VPC 对应的网段
+                     * 设置<p>开通服务的 VPC 对应的网段</p>
+                     * @param _vpcCidrBlock <p>开通服务的 VPC 对应的网段</p>
                      * 
                      */
                     void SetVpcCidrBlock(const std::string& _vpcCidrBlock);
@@ -426,15 +427,15 @@ namespace TencentCloud
                     bool VpcCidrBlockHasBeenSet() const;
 
                     /**
-                     * 获取开通服务的子网ID
-                     * @return SubnetId 开通服务的子网ID
+                     * 获取<p>开通服务的子网ID</p>
+                     * @return SubnetId <p>开通服务的子网ID</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置开通服务的子网ID
-                     * @param _subnetId 开通服务的子网ID
+                     * 设置<p>开通服务的子网ID</p>
+                     * @param _subnetId <p>开通服务的子网ID</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -447,15 +448,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取开通服务的子网名称
-                     * @return SubnetName 开通服务的子网名称
+                     * 获取<p>开通服务的子网名称</p>
+                     * @return SubnetName <p>开通服务的子网名称</p>
                      * 
                      */
                     std::string GetSubnetName() const;
 
                     /**
-                     * 设置开通服务的子网名称
-                     * @param _subnetName 开通服务的子网名称
+                     * 设置<p>开通服务的子网名称</p>
+                     * @param _subnetName <p>开通服务的子网名称</p>
                      * 
                      */
                     void SetSubnetName(const std::string& _subnetName);
@@ -468,15 +469,15 @@ namespace TencentCloud
                     bool SubnetNameHasBeenSet() const;
 
                     /**
-                     * 获取开通服务的子网网段
-                     * @return CidrBlock 开通服务的子网网段
+                     * 获取<p>开通服务的子网网段</p>
+                     * @return CidrBlock <p>开通服务的子网网段</p>
                      * 
                      */
                     std::string GetCidrBlock() const;
 
                     /**
-                     * 设置开通服务的子网网段
-                     * @param _cidrBlock 开通服务的子网网段
+                     * 设置<p>开通服务的子网网段</p>
+                     * @param _cidrBlock <p>开通服务的子网网段</p>
                      * 
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
@@ -489,15 +490,15 @@ namespace TencentCloud
                     bool CidrBlockHasBeenSet() const;
 
                     /**
-                     * 获取外部IP
-                     * @return PublicIpSet 外部IP
+                     * 获取<p>外部IP</p>
+                     * @return PublicIpSet <p>外部IP</p>
                      * 
                      */
                     std::vector<std::string> GetPublicIpSet() const;
 
                     /**
-                     * 设置外部IP
-                     * @param _publicIpSet 外部IP
+                     * 设置<p>外部IP</p>
+                     * @param _publicIpSet <p>外部IP</p>
                      * 
                      */
                     void SetPublicIpSet(const std::vector<std::string>& _publicIpSet);
@@ -510,15 +511,15 @@ namespace TencentCloud
                     bool PublicIpSetHasBeenSet() const;
 
                     /**
-                     * 获取内部IP
-                     * @return PrivateIpSet 内部IP
+                     * 获取<p>内部IP</p>
+                     * @return PrivateIpSet <p>内部IP</p>
                      * 
                      */
                     std::vector<std::string> GetPrivateIpSet() const;
 
                     /**
-                     * 设置内部IP
-                     * @param _privateIpSet 内部IP
+                     * 设置<p>内部IP</p>
+                     * @param _privateIpSet <p>内部IP</p>
                      * 
                      */
                     void SetPrivateIpSet(const std::vector<std::string>& _privateIpSet);
@@ -531,15 +532,15 @@ namespace TencentCloud
                     bool PrivateIpSetHasBeenSet() const;
 
                     /**
-                     * 获取服务开通的高级功能列表，如:[DB]
-                     * @return ModuleSet 服务开通的高级功能列表，如:[DB]
+                     * 获取<p>服务开通的高级功能列表，如:[DB]</p>
+                     * @return ModuleSet <p>服务开通的高级功能列表，如:[DB]</p>
                      * 
                      */
                     std::vector<std::string> GetModuleSet() const;
 
                     /**
-                     * 设置服务开通的高级功能列表，如:[DB]
-                     * @param _moduleSet 服务开通的高级功能列表，如:[DB]
+                     * 设置<p>服务开通的高级功能列表，如:[DB]</p>
+                     * @param _moduleSet <p>服务开通的高级功能列表，如:[DB]</p>
                      * 
                      */
                     void SetModuleSet(const std::vector<std::string>& _moduleSet);
@@ -552,15 +553,15 @@ namespace TencentCloud
                     bool ModuleSetHasBeenSet() const;
 
                     /**
-                     * 获取已使用的授权点数
-                     * @return UsedNodes 已使用的授权点数
+                     * 获取<p>已使用的授权点数</p>
+                     * @return UsedNodes <p>已使用的授权点数</p>
                      * 
                      */
                     uint64_t GetUsedNodes() const;
 
                     /**
-                     * 设置已使用的授权点数
-                     * @param _usedNodes 已使用的授权点数
+                     * 设置<p>已使用的授权点数</p>
+                     * @param _usedNodes <p>已使用的授权点数</p>
                      * 
                      */
                     void SetUsedNodes(const uint64_t& _usedNodes);
@@ -573,15 +574,15 @@ namespace TencentCloud
                     bool UsedNodesHasBeenSet() const;
 
                     /**
-                     * 获取扩展点数
-                     * @return ExtendPoints 扩展点数
+                     * 获取<p>扩展点数</p>
+                     * @return ExtendPoints <p>扩展点数</p>
                      * 
                      */
                     uint64_t GetExtendPoints() const;
 
                     /**
-                     * 设置扩展点数
-                     * @param _extendPoints 扩展点数
+                     * 设置<p>扩展点数</p>
+                     * @param _extendPoints <p>扩展点数</p>
                      * 
                      */
                     void SetExtendPoints(const uint64_t& _extendPoints);
@@ -594,15 +595,15 @@ namespace TencentCloud
                     bool ExtendPointsHasBeenSet() const;
 
                     /**
-                     * 获取带宽扩展包个数(4M)
-                     * @return PackageBandwidth 带宽扩展包个数(4M)
+                     * 获取<p>带宽扩展包个数(4M)</p>
+                     * @return PackageBandwidth <p>带宽扩展包个数(4M)</p>
                      * 
                      */
                     uint64_t GetPackageBandwidth() const;
 
                     /**
-                     * 设置带宽扩展包个数(4M)
-                     * @param _packageBandwidth 带宽扩展包个数(4M)
+                     * 设置<p>带宽扩展包个数(4M)</p>
+                     * @param _packageBandwidth <p>带宽扩展包个数(4M)</p>
                      * 
                      */
                     void SetPackageBandwidth(const uint64_t& _packageBandwidth);
@@ -615,15 +616,15 @@ namespace TencentCloud
                     bool PackageBandwidthHasBeenSet() const;
 
                     /**
-                     * 获取授权点数扩展包个数(50点)
-                     * @return PackageNode 授权点数扩展包个数(50点)
+                     * 获取<p>授权点数扩展包个数(50点)</p>
+                     * @return PackageNode <p>授权点数扩展包个数(50点)</p>
                      * 
                      */
                     uint64_t GetPackageNode() const;
 
                     /**
-                     * 设置授权点数扩展包个数(50点)
-                     * @param _packageNode 授权点数扩展包个数(50点)
+                     * 设置<p>授权点数扩展包个数(50点)</p>
+                     * @param _packageNode <p>授权点数扩展包个数(50点)</p>
                      * 
                      */
                     void SetPackageNode(const uint64_t& _packageNode);
@@ -636,15 +637,15 @@ namespace TencentCloud
                     bool PackageNodeHasBeenSet() const;
 
                     /**
-                     * 获取日志投递规格信息
-                     * @return LogDeliveryArgs 日志投递规格信息
+                     * 获取<p>日志投递规格信息</p>
+                     * @return LogDeliveryArgs <p>日志投递规格信息</p>
                      * 
                      */
                     std::string GetLogDeliveryArgs() const;
 
                     /**
-                     * 设置日志投递规格信息
-                     * @param _logDeliveryArgs 日志投递规格信息
+                     * 设置<p>日志投递规格信息</p>
+                     * @param _logDeliveryArgs <p>日志投递规格信息</p>
                      * 
                      */
                     void SetLogDeliveryArgs(const std::string& _logDeliveryArgs);
@@ -657,15 +658,15 @@ namespace TencentCloud
                     bool LogDeliveryArgsHasBeenSet() const;
 
                     /**
-                     * 获取堡垒机资源LB	
-                     * @return ClbSet 堡垒机资源LB	
+                     * 获取<p>堡垒机资源LB</p>
+                     * @return ClbSet <p>堡垒机资源LB</p>
                      * 
                      */
                     std::vector<Clb> GetClbSet() const;
 
                     /**
-                     * 设置堡垒机资源LB	
-                     * @param _clbSet 堡垒机资源LB	
+                     * 设置<p>堡垒机资源LB</p>
+                     * @param _clbSet <p>堡垒机资源LB</p>
                      * 
                      */
                     void SetClbSet(const std::vector<Clb>& _clbSet);
@@ -678,15 +679,15 @@ namespace TencentCloud
                     bool ClbSetHasBeenSet() const;
 
                     /**
-                     * 获取网络域个数
-                     * @return DomainCount 网络域个数
+                     * 获取<p>网络域个数</p>
+                     * @return DomainCount <p>网络域个数</p>
                      * 
                      */
                     uint64_t GetDomainCount() const;
 
                     /**
-                     * 设置网络域个数
-                     * @param _domainCount 网络域个数
+                     * 设置<p>网络域个数</p>
+                     * @param _domainCount <p>网络域个数</p>
                      * 
                      */
                     void SetDomainCount(const uint64_t& _domainCount);
@@ -699,15 +700,15 @@ namespace TencentCloud
                     bool DomainCountHasBeenSet() const;
 
                     /**
-                     * 获取已经使用的网络域个数
-                     * @return UsedDomainCount 已经使用的网络域个数
+                     * 获取<p>已经使用的网络域个数</p>
+                     * @return UsedDomainCount <p>已经使用的网络域个数</p>
                      * 
                      */
                     uint64_t GetUsedDomainCount() const;
 
                     /**
-                     * 设置已经使用的网络域个数
-                     * @param _usedDomainCount 已经使用的网络域个数
+                     * 设置<p>已经使用的网络域个数</p>
+                     * @param _usedDomainCount <p>已经使用的网络域个数</p>
                      * 
                      */
                     void SetUsedDomainCount(const uint64_t& _usedDomainCount);
@@ -720,15 +721,36 @@ namespace TencentCloud
                     bool UsedDomainCountHasBeenSet() const;
 
                     /**
-                     * 获取0 非试用版，1 试用版
-                     * @return Trial 0 非试用版，1 试用版
+                     * 获取<p>开启的网络域个数（不包含默认网络域）</p>
+                     * @return EnabledDomainCount <p>开启的网络域个数（不包含默认网络域）</p>
+                     * 
+                     */
+                    uint64_t GetEnabledDomainCount() const;
+
+                    /**
+                     * 设置<p>开启的网络域个数（不包含默认网络域）</p>
+                     * @param _enabledDomainCount <p>开启的网络域个数（不包含默认网络域）</p>
+                     * 
+                     */
+                    void SetEnabledDomainCount(const uint64_t& _enabledDomainCount);
+
+                    /**
+                     * 判断参数 EnabledDomainCount 是否已赋值
+                     * @return EnabledDomainCount 是否已赋值
+                     * 
+                     */
+                    bool EnabledDomainCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>0 非试用版，1 试用版</p>
+                     * @return Trial <p>0 非试用版，1 试用版</p>
                      * 
                      */
                     uint64_t GetTrial() const;
 
                     /**
-                     * 设置0 非试用版，1 试用版
-                     * @param _trial 0 非试用版，1 试用版
+                     * 设置<p>0 非试用版，1 试用版</p>
+                     * @param _trial <p>0 非试用版，1 试用版</p>
                      * 
                      */
                     void SetTrial(const uint64_t& _trial);
@@ -741,15 +763,15 @@ namespace TencentCloud
                     bool TrialHasBeenSet() const;
 
                     /**
-                     * 获取日志投递规格信息
-                     * @return LogDelivery 日志投递规格信息
+                     * 获取<p>日志投递规格信息</p>
+                     * @return LogDelivery <p>日志投递规格信息</p>
                      * 
                      */
                     std::string GetLogDelivery() const;
 
                     /**
-                     * 设置日志投递规格信息
-                     * @param _logDelivery 日志投递规格信息
+                     * 设置<p>日志投递规格信息</p>
+                     * @param _logDelivery <p>日志投递规格信息</p>
                      * 
                      */
                     void SetLogDelivery(const std::string& _logDelivery);
@@ -762,15 +784,15 @@ namespace TencentCloud
                     bool LogDeliveryHasBeenSet() const;
 
                     /**
-                     * 获取cdc集群id
-                     * @return CdcClusterId cdc集群id
+                     * 获取<p>cdc集群id</p>
+                     * @return CdcClusterId <p>cdc集群id</p>
                      * 
                      */
                     std::string GetCdcClusterId() const;
 
                     /**
-                     * 设置cdc集群id
-                     * @param _cdcClusterId cdc集群id
+                     * 设置<p>cdc集群id</p>
+                     * @param _cdcClusterId <p>cdc集群id</p>
                      * 
                      */
                     void SetCdcClusterId(const std::string& _cdcClusterId);
@@ -783,15 +805,15 @@ namespace TencentCloud
                     bool CdcClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取部署模式 默认0 0-cvm 1-tke
-                     * @return DeployModel 部署模式 默认0 0-cvm 1-tke
+                     * 获取<p>部署模式 默认0 0-cvm 1-tke</p>
+                     * @return DeployModel <p>部署模式 默认0 0-cvm 1-tke</p>
                      * 
                      */
                     uint64_t GetDeployModel() const;
 
                     /**
-                     * 设置部署模式 默认0 0-cvm 1-tke
-                     * @param _deployModel 部署模式 默认0 0-cvm 1-tke
+                     * 设置<p>部署模式 默认0 0-cvm 1-tke</p>
+                     * @param _deployModel <p>部署模式 默认0 0-cvm 1-tke</p>
                      * 
                      */
                     void SetDeployModel(const uint64_t& _deployModel);
@@ -804,15 +826,15 @@ namespace TencentCloud
                     bool DeployModelHasBeenSet() const;
 
                     /**
-                     * 获取0 默认值，非内网访问，1 内网访问，2 内网访问开通中，3 内网访问关闭中
-                     * @return IntranetAccess 0 默认值，非内网访问，1 内网访问，2 内网访问开通中，3 内网访问关闭中
+                     * 获取<p>0 默认值，非内网访问，1 内网访问，2 内网访问开通中，3 内网访问关闭中</p>
+                     * @return IntranetAccess <p>0 默认值，非内网访问，1 内网访问，2 内网访问开通中，3 内网访问关闭中</p>
                      * 
                      */
                     uint64_t GetIntranetAccess() const;
 
                     /**
-                     * 设置0 默认值，非内网访问，1 内网访问，2 内网访问开通中，3 内网访问关闭中
-                     * @param _intranetAccess 0 默认值，非内网访问，1 内网访问，2 内网访问开通中，3 内网访问关闭中
+                     * 设置<p>0 默认值，非内网访问，1 内网访问，2 内网访问开通中，3 内网访问关闭中</p>
+                     * @param _intranetAccess <p>0 默认值，非内网访问，1 内网访问，2 内网访问开通中，3 内网访问关闭中</p>
                      * 
                      */
                     void SetIntranetAccess(const uint64_t& _intranetAccess);
@@ -825,15 +847,15 @@ namespace TencentCloud
                     bool IntranetAccessHasBeenSet() const;
 
                     /**
-                     * 获取内网访问的ip
-                     * @return IntranetPrivateIpSet 内网访问的ip
+                     * 获取<p>内网访问的ip</p>
+                     * @return IntranetPrivateIpSet <p>内网访问的ip</p>
                      * 
                      */
                     std::vector<std::string> GetIntranetPrivateIpSet() const;
 
                     /**
-                     * 设置内网访问的ip
-                     * @param _intranetPrivateIpSet 内网访问的ip
+                     * 设置<p>内网访问的ip</p>
+                     * @param _intranetPrivateIpSet <p>内网访问的ip</p>
                      * 
                      */
                     void SetIntranetPrivateIpSet(const std::vector<std::string>& _intranetPrivateIpSet);
@@ -846,15 +868,15 @@ namespace TencentCloud
                     bool IntranetPrivateIpSetHasBeenSet() const;
 
                     /**
-                     * 获取开通内网访问的vpc
-                     * @return IntranetVpcId 开通内网访问的vpc
+                     * 获取<p>开通内网访问的vpc</p>
+                     * @return IntranetVpcId <p>开通内网访问的vpc</p>
                      * 
                      */
                     std::string GetIntranetVpcId() const;
 
                     /**
-                     * 设置开通内网访问的vpc
-                     * @param _intranetVpcId 开通内网访问的vpc
+                     * 设置<p>开通内网访问的vpc</p>
+                     * @param _intranetVpcId <p>开通内网访问的vpc</p>
                      * 
                      */
                     void SetIntranetVpcId(const std::string& _intranetVpcId);
@@ -867,36 +889,57 @@ namespace TencentCloud
                     bool IntranetVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取开通内网访问的subnetId
-                     * @return IntranetSubnetId 开通内网访问的subnetId
-                     * 
+                     * 获取<p>开通内网访问的subnetId</p>
+                     * @return IntranetSubnetId <p>开通内网访问的subnetId</p>
+                     * @deprecated
                      */
                     std::string GetIntranetSubnetId() const;
 
                     /**
-                     * 设置开通内网访问的subnetId
-                     * @param _intranetSubnetId 开通内网访问的subnetId
-                     * 
+                     * 设置<p>开通内网访问的subnetId</p>
+                     * @param _intranetSubnetId <p>开通内网访问的subnetId</p>
+                     * @deprecated
                      */
                     void SetIntranetSubnetId(const std::string& _intranetSubnetId);
 
                     /**
                      * 判断参数 IntranetSubnetId 是否已赋值
                      * @return IntranetSubnetId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IntranetSubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取开通内网访问vpc的网段
-                     * @return IntranetVpcCidr 开通内网访问vpc的网段
+                     * 获取<p>开通内网访问的子网集合</p>
+                     * @return IntranetSubnetIdSet <p>开通内网访问的子网集合</p>
+                     * 
+                     */
+                    std::vector<std::string> GetIntranetSubnetIdSet() const;
+
+                    /**
+                     * 设置<p>开通内网访问的子网集合</p>
+                     * @param _intranetSubnetIdSet <p>开通内网访问的子网集合</p>
+                     * 
+                     */
+                    void SetIntranetSubnetIdSet(const std::vector<std::string>& _intranetSubnetIdSet);
+
+                    /**
+                     * 判断参数 IntranetSubnetIdSet 是否已赋值
+                     * @return IntranetSubnetIdSet 是否已赋值
+                     * 
+                     */
+                    bool IntranetSubnetIdSetHasBeenSet() const;
+
+                    /**
+                     * 获取<p>开通内网访问vpc的网段</p>
+                     * @return IntranetVpcCidr <p>开通内网访问vpc的网段</p>
                      * 
                      */
                     std::string GetIntranetVpcCidr() const;
 
                     /**
-                     * 设置开通内网访问vpc的网段
-                     * @param _intranetVpcCidr 开通内网访问vpc的网段
+                     * 设置<p>开通内网访问vpc的网段</p>
+                     * @param _intranetVpcCidr <p>开通内网访问vpc的网段</p>
                      * 
                      */
                     void SetIntranetVpcCidr(const std::string& _intranetVpcCidr);
@@ -909,15 +952,15 @@ namespace TencentCloud
                     bool IntranetVpcCidrHasBeenSet() const;
 
                     /**
-                     * 获取堡垒机内网ip自定义域名
-                     * @return DomainName 堡垒机内网ip自定义域名
+                     * 获取<p>堡垒机内网ip自定义域名</p>
+                     * @return DomainName <p>堡垒机内网ip自定义域名</p>
                      * 
                      */
                     std::string GetDomainName() const;
 
                     /**
-                     * 设置堡垒机内网ip自定义域名
-                     * @param _domainName 堡垒机内网ip自定义域名
+                     * 设置<p>堡垒机内网ip自定义域名</p>
+                     * @param _domainName <p>堡垒机内网ip自定义域名</p>
                      * 
                      */
                     void SetDomainName(const std::string& _domainName);
@@ -930,15 +973,15 @@ namespace TencentCloud
                     bool DomainNameHasBeenSet() const;
 
                     /**
-                     * 获取是否共享clb，true-共享clb，false-独享clb
-                     * @return ShareClb 是否共享clb，true-共享clb，false-独享clb
+                     * 获取<p>是否共享clb，true-共享clb，false-独享clb</p>
+                     * @return ShareClb <p>是否共享clb，true-共享clb，false-独享clb</p>
                      * 
                      */
                     bool GetShareClb() const;
 
                     /**
-                     * 设置是否共享clb，true-共享clb，false-独享clb
-                     * @param _shareClb 是否共享clb，true-共享clb，false-独享clb
+                     * 设置<p>是否共享clb，true-共享clb，false-独享clb</p>
+                     * @param _shareClb <p>是否共享clb，true-共享clb，false-独享clb</p>
                      * 
                      */
                     void SetShareClb(const bool& _shareClb);
@@ -951,15 +994,15 @@ namespace TencentCloud
                     bool ShareClbHasBeenSet() const;
 
                     /**
-                     * 获取共享clb id
-                     * @return OpenClbId 共享clb id
+                     * 获取<p>共享clb id</p>
+                     * @return OpenClbId <p>共享clb id</p>
                      * 
                      */
                     std::string GetOpenClbId() const;
 
                     /**
-                     * 设置共享clb id
-                     * @param _openClbId 共享clb id
+                     * 设置<p>共享clb id</p>
+                     * @param _openClbId <p>共享clb id</p>
                      * 
                      */
                     void SetOpenClbId(const std::string& _openClbId);
@@ -972,15 +1015,15 @@ namespace TencentCloud
                     bool OpenClbIdHasBeenSet() const;
 
                     /**
-                     * 获取运营商信息
-                     * @return LbVipIsp 运营商信息
+                     * 获取<p>运营商信息</p>
+                     * @return LbVipIsp <p>运营商信息</p>
                      * 
                      */
                     std::string GetLbVipIsp() const;
 
                     /**
-                     * 设置运营商信息
-                     * @param _lbVipIsp 运营商信息
+                     * 设置<p>运营商信息</p>
+                     * @param _lbVipIsp <p>运营商信息</p>
                      * 
                      */
                     void SetLbVipIsp(const std::string& _lbVipIsp);
@@ -993,15 +1036,15 @@ namespace TencentCloud
                     bool LbVipIspHasBeenSet() const;
 
                     /**
-                     * 获取linux资产命令行运维端口
-                     * @return TUICmdPort linux资产命令行运维端口
+                     * 获取<p>linux资产命令行运维端口</p>
+                     * @return TUICmdPort <p>linux资产命令行运维端口</p>
                      * 
                      */
                     int64_t GetTUICmdPort() const;
 
                     /**
-                     * 设置linux资产命令行运维端口
-                     * @param _tUICmdPort linux资产命令行运维端口
+                     * 设置<p>linux资产命令行运维端口</p>
+                     * @param _tUICmdPort <p>linux资产命令行运维端口</p>
                      * 
                      */
                     void SetTUICmdPort(const int64_t& _tUICmdPort);
@@ -1014,15 +1057,15 @@ namespace TencentCloud
                     bool TUICmdPortHasBeenSet() const;
 
                     /**
-                     * 获取linux资产直连端口
-                     * @return TUIDirectPort linux资产直连端口
+                     * 获取<p>linux资产直连端口</p>
+                     * @return TUIDirectPort <p>linux资产直连端口</p>
                      * 
                      */
                     int64_t GetTUIDirectPort() const;
 
                     /**
-                     * 设置linux资产直连端口
-                     * @param _tUIDirectPort linux资产直连端口
+                     * 设置<p>linux资产直连端口</p>
+                     * @param _tUIDirectPort <p>linux资产直连端口</p>
                      * 
                      */
                     void SetTUIDirectPort(const int64_t& _tUIDirectPort);
@@ -1035,15 +1078,15 @@ namespace TencentCloud
                     bool TUIDirectPortHasBeenSet() const;
 
                     /**
-                     * 获取1 默认值，web访问开启，0 web访问关闭，2 web访问开通中，3 web访问关闭中
-                     * @return WebAccess 1 默认值，web访问开启，0 web访问关闭，2 web访问开通中，3 web访问关闭中
+                     * 获取<p>1 默认值，web访问开启，0 web访问关闭，2 web访问开通中，3 web访问关闭中</p>
+                     * @return WebAccess <p>1 默认值，web访问开启，0 web访问关闭，2 web访问开通中，3 web访问关闭中</p>
                      * 
                      */
                     uint64_t GetWebAccess() const;
 
                     /**
-                     * 设置1 默认值，web访问开启，0 web访问关闭，2 web访问开通中，3 web访问关闭中
-                     * @param _webAccess 1 默认值，web访问开启，0 web访问关闭，2 web访问开通中，3 web访问关闭中
+                     * 设置<p>1 默认值，web访问开启，0 web访问关闭，2 web访问开通中，3 web访问关闭中</p>
+                     * @param _webAccess <p>1 默认值，web访问开启，0 web访问关闭，2 web访问开通中，3 web访问关闭中</p>
                      * 
                      */
                     void SetWebAccess(const uint64_t& _webAccess);
@@ -1056,15 +1099,15 @@ namespace TencentCloud
                     bool WebAccessHasBeenSet() const;
 
                     /**
-                     * 获取1 默认值，客户单访问开启，0 客户端访问关闭，2 客户端访问开通中，3 客户端访问关闭中
-                     * @return ClientAccess 1 默认值，客户单访问开启，0 客户端访问关闭，2 客户端访问开通中，3 客户端访问关闭中
+                     * 获取<p>1 默认值，客户单访问开启，0 客户端访问关闭，2 客户端访问开通中，3 客户端访问关闭中</p>
+                     * @return ClientAccess <p>1 默认值，客户单访问开启，0 客户端访问关闭，2 客户端访问开通中，3 客户端访问关闭中</p>
                      * 
                      */
                     uint64_t GetClientAccess() const;
 
                     /**
-                     * 设置1 默认值，客户单访问开启，0 客户端访问关闭，2 客户端访问开通中，3 客户端访问关闭中
-                     * @param _clientAccess 1 默认值，客户单访问开启，0 客户端访问关闭，2 客户端访问开通中，3 客户端访问关闭中
+                     * 设置<p>1 默认值，客户单访问开启，0 客户端访问关闭，2 客户端访问开通中，3 客户端访问关闭中</p>
+                     * @param _clientAccess <p>1 默认值，客户单访问开启，0 客户端访问关闭，2 客户端访问开通中，3 客户端访问关闭中</p>
                      * 
                      */
                     void SetClientAccess(const uint64_t& _clientAccess);
@@ -1077,15 +1120,15 @@ namespace TencentCloud
                     bool ClientAccessHasBeenSet() const;
 
                     /**
-                     * 获取1 默认值，外网访问开启，0 外网访问关闭，2 外网访问开通中，3 外网访问关闭中
-                     * @return ExternalAccess 1 默认值，外网访问开启，0 外网访问关闭，2 外网访问开通中，3 外网访问关闭中
+                     * 获取<p>1 默认值，外网访问开启，0 外网访问关闭，2 外网访问开通中，3 外网访问关闭中</p>
+                     * @return ExternalAccess <p>1 默认值，外网访问开启，0 外网访问关闭，2 外网访问开通中，3 外网访问关闭中</p>
                      * 
                      */
                     uint64_t GetExternalAccess() const;
 
                     /**
-                     * 设置1 默认值，外网访问开启，0 外网访问关闭，2 外网访问开通中，3 外网访问关闭中
-                     * @param _externalAccess 1 默认值，外网访问开启，0 外网访问关闭，2 外网访问开通中，3 外网访问关闭中
+                     * 设置<p>1 默认值，外网访问开启，0 外网访问关闭，2 外网访问开通中，3 外网访问关闭中</p>
+                     * @param _externalAccess <p>1 默认值，外网访问开启，0 外网访问关闭，2 外网访问开通中，3 外网访问关闭中</p>
                      * 
                      */
                     void SetExternalAccess(const uint64_t& _externalAccess);
@@ -1098,15 +1141,15 @@ namespace TencentCloud
                     bool ExternalAccessHasBeenSet() const;
 
                     /**
-                     * 获取0默认值。0-免费版（试用版）ioa，1-付费版ioa
-                     * @return IOAResource 0默认值。0-免费版（试用版）ioa，1-付费版ioa
+                     * 获取<p>0默认值。0-免费版（试用版）ioa，1-付费版ioa</p>
+                     * @return IOAResource <p>0默认值。0-免费版（试用版）ioa，1-付费版ioa</p>
                      * 
                      */
                     uint64_t GetIOAResource() const;
 
                     /**
-                     * 设置0默认值。0-免费版（试用版）ioa，1-付费版ioa
-                     * @param _iOAResource 0默认值。0-免费版（试用版）ioa，1-付费版ioa
+                     * 设置<p>0默认值。0-免费版（试用版）ioa，1-付费版ioa</p>
+                     * @param _iOAResource <p>0默认值。0-免费版（试用版）ioa，1-付费版ioa</p>
                      * 
                      */
                     void SetIOAResource(const uint64_t& _iOAResource);
@@ -1119,15 +1162,15 @@ namespace TencentCloud
                     bool IOAResourceHasBeenSet() const;
 
                     /**
-                     * 获取零信任堡垒机用户扩展包个数。1个扩展包对应20个用户数
-                     * @return PackageIOAUserCount 零信任堡垒机用户扩展包个数。1个扩展包对应20个用户数
+                     * 获取<p>零信任堡垒机用户扩展包个数。1个扩展包对应20个用户数</p>
+                     * @return PackageIOAUserCount <p>零信任堡垒机用户扩展包个数。1个扩展包对应20个用户数</p>
                      * 
                      */
                     uint64_t GetPackageIOAUserCount() const;
 
                     /**
-                     * 设置零信任堡垒机用户扩展包个数。1个扩展包对应20个用户数
-                     * @param _packageIOAUserCount 零信任堡垒机用户扩展包个数。1个扩展包对应20个用户数
+                     * 设置<p>零信任堡垒机用户扩展包个数。1个扩展包对应20个用户数</p>
+                     * @param _packageIOAUserCount <p>零信任堡垒机用户扩展包个数。1个扩展包对应20个用户数</p>
                      * 
                      */
                     void SetPackageIOAUserCount(const uint64_t& _packageIOAUserCount);
@@ -1140,15 +1183,15 @@ namespace TencentCloud
                     bool PackageIOAUserCountHasBeenSet() const;
 
                     /**
-                     * 获取 零信任堡垒机带宽扩展包个数。一个扩展包表示4M带宽
-                     * @return PackageIOABandwidth  零信任堡垒机带宽扩展包个数。一个扩展包表示4M带宽
+                     * 获取<p>零信任堡垒机带宽扩展包个数。一个扩展包表示4M带宽</p>
+                     * @return PackageIOABandwidth <p>零信任堡垒机带宽扩展包个数。一个扩展包表示4M带宽</p>
                      * 
                      */
                     uint64_t GetPackageIOABandwidth() const;
 
                     /**
-                     * 设置 零信任堡垒机带宽扩展包个数。一个扩展包表示4M带宽
-                     * @param _packageIOABandwidth  零信任堡垒机带宽扩展包个数。一个扩展包表示4M带宽
+                     * 设置<p>零信任堡垒机带宽扩展包个数。一个扩展包表示4M带宽</p>
+                     * @param _packageIOABandwidth <p>零信任堡垒机带宽扩展包个数。一个扩展包表示4M带宽</p>
                      * 
                      */
                     void SetPackageIOABandwidth(const uint64_t& _packageIOABandwidth);
@@ -1161,15 +1204,15 @@ namespace TencentCloud
                     bool PackageIOABandwidthHasBeenSet() const;
 
                     /**
-                     * 获取堡垒机实例对应的零信任实例id
-                     * @return IOAResourceId 堡垒机实例对应的零信任实例id
+                     * 获取<p>堡垒机实例对应的零信任实例id</p>
+                     * @return IOAResourceId <p>堡垒机实例对应的零信任实例id</p>
                      * 
                      */
                     std::string GetIOAResourceId() const;
 
                     /**
-                     * 设置堡垒机实例对应的零信任实例id
-                     * @param _iOAResourceId 堡垒机实例对应的零信任实例id
+                     * 设置<p>堡垒机实例对应的零信任实例id</p>
+                     * @param _iOAResourceId <p>堡垒机实例对应的零信任实例id</p>
                      * 
                      */
                     void SetIOAResourceId(const std::string& _iOAResourceId);
@@ -1182,15 +1225,15 @@ namespace TencentCloud
                     bool IOAResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取资源类型 免费版/标准版/专业版 /国密版 free/standard/pro/gm
-                     * @return ResourceEdition 资源类型 免费版/标准版/专业版 /国密版 free/standard/pro/gm
+                     * 获取<p>资源类型 免费版/标准版/专业版 /国密版 free/standard/pro/gm</p>
+                     * @return ResourceEdition <p>资源类型 免费版/标准版/专业版 /国密版 free/standard/pro/gm</p>
                      * 
                      */
                     std::string GetResourceEdition() const;
 
                     /**
-                     * 设置资源类型 免费版/标准版/专业版 /国密版 free/standard/pro/gm
-                     * @param _resourceEdition 资源类型 免费版/标准版/专业版 /国密版 free/standard/pro/gm
+                     * 设置<p>资源类型 免费版/标准版/专业版 /国密版 free/standard/pro/gm</p>
+                     * @param _resourceEdition <p>资源类型 免费版/标准版/专业版 /国密版 free/standard/pro/gm</p>
                      * 
                      */
                     void SetResourceEdition(const std::string& _resourceEdition);
@@ -1203,15 +1246,15 @@ namespace TencentCloud
                     bool ResourceEditionHasBeenSet() const;
 
                     /**
-                     * 获取计费周期 年：y，月：m，日：d，时：h，分：M，秒：s，一次性购买：p
-                     * @return TimeUnit 计费周期 年：y，月：m，日：d，时：h，分：M，秒：s，一次性购买：p
+                     * 获取<p>计费周期 年：y，月：m，日：d，时：h，分：M，秒：s，一次性购买：p</p>
+                     * @return TimeUnit <p>计费周期 年：y，月：m，日：d，时：h，分：M，秒：s，一次性购买：p</p>
                      * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
-                     * 设置计费周期 年：y，月：m，日：d，时：h，分：M，秒：s，一次性购买：p
-                     * @param _timeUnit 计费周期 年：y，月：m，日：d，时：h，分：M，秒：s，一次性购买：p
+                     * 设置<p>计费周期 年：y，月：m，日：d，时：h，分：M，秒：s，一次性购买：p</p>
+                     * @param _timeUnit <p>计费周期 年：y，月：m，日：d，时：h，分：M，秒：s，一次性购买：p</p>
                      * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
@@ -1224,15 +1267,15 @@ namespace TencentCloud
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取计费时长
-                     * @return TimeSpan 计费时长
+                     * 获取<p>计费时长</p>
+                     * @return TimeSpan <p>计费时长</p>
                      * 
                      */
                     uint64_t GetTimeSpan() const;
 
                     /**
-                     * 设置计费时长
-                     * @param _timeSpan 计费时长
+                     * 设置<p>计费时长</p>
+                     * @param _timeSpan <p>计费时长</p>
                      * 
                      */
                     void SetTimeSpan(const uint64_t& _timeSpan);
@@ -1245,15 +1288,15 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取计费模式 0后付费，1预付费
-                     * @return PayMode 计费模式 0后付费，1预付费
+                     * 获取<p>计费模式 0后付费，1预付费</p>
+                     * @return PayMode <p>计费模式 0后付费，1预付费</p>
                      * 
                      */
                     uint64_t GetPayMode() const;
 
                     /**
-                     * 设置计费模式 0后付费，1预付费
-                     * @param _payMode 计费模式 0后付费，1预付费
+                     * 设置<p>计费模式 0后付费，1预付费</p>
+                     * @param _payMode <p>计费模式 0后付费，1预付费</p>
                      * 
                      */
                     void SetPayMode(const uint64_t& _payMode);
@@ -1266,15 +1309,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取计费侧地域
-                     * @return BillingRegion 计费侧地域
+                     * 获取<p>计费侧地域</p>
+                     * @return BillingRegion <p>计费侧地域</p>
                      * 
                      */
                     std::string GetBillingRegion() const;
 
                     /**
-                     * 设置计费侧地域
-                     * @param _billingRegion 计费侧地域
+                     * 设置<p>计费侧地域</p>
+                     * @param _billingRegion <p>计费侧地域</p>
                      * 
                      */
                     void SetBillingRegion(const std::string& _billingRegion);
@@ -1287,15 +1330,15 @@ namespace TencentCloud
                     bool BillingRegionHasBeenSet() const;
 
                     /**
-                     * 获取计费侧可用区
-                     * @return BillingZone 计费侧可用区
+                     * 获取<p>计费侧可用区</p>
+                     * @return BillingZone <p>计费侧可用区</p>
                      * 
                      */
                     std::string GetBillingZone() const;
 
                     /**
-                     * 设置计费侧可用区
-                     * @param _billingZone 计费侧可用区
+                     * 设置<p>计费侧可用区</p>
+                     * @param _billingZone <p>计费侧可用区</p>
                      * 
                      */
                     void SetBillingZone(const std::string& _billingZone);
@@ -1307,367 +1350,433 @@ namespace TencentCloud
                      */
                     bool BillingZoneHasBeenSet() const;
 
+                    /**
+                     * 获取<p>部署的cvm个数</p>
+                     * @return DeployCvmCount <p>部署的cvm个数</p>
+                     * 
+                     */
+                    uint64_t GetDeployCvmCount() const;
+
+                    /**
+                     * 设置<p>部署的cvm个数</p>
+                     * @param _deployCvmCount <p>部署的cvm个数</p>
+                     * 
+                     */
+                    void SetDeployCvmCount(const uint64_t& _deployCvmCount);
+
+                    /**
+                     * 判断参数 DeployCvmCount 是否已赋值
+                     * @return DeployCvmCount 是否已赋值
+                     * 
+                     */
+                    bool DeployCvmCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>堡垒机实例的可用区信息</p>
+                     * @return ResourceZoneSet <p>堡垒机实例的可用区信息</p>
+                     * 
+                     */
+                    std::vector<ResourceDeployZone> GetResourceZoneSet() const;
+
+                    /**
+                     * 设置<p>堡垒机实例的可用区信息</p>
+                     * @param _resourceZoneSet <p>堡垒机实例的可用区信息</p>
+                     * 
+                     */
+                    void SetResourceZoneSet(const std::vector<ResourceDeployZone>& _resourceZoneSet);
+
+                    /**
+                     * 判断参数 ResourceZoneSet 是否已赋值
+                     * @return ResourceZoneSet 是否已赋值
+                     * 
+                     */
+                    bool ResourceZoneSetHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 服务实例ID，如bh-saas-s3ed4r5e
+                     * <p>服务实例ID，如bh-saas-s3ed4r5e</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 地域编码
+                     * <p>地域编码</p>
                      */
                     std::string m_apCode;
                     bool m_apCodeHasBeenSet;
 
                     /**
-                     * 服务实例规格信息
+                     * <p>服务实例规格信息</p>
                      */
                     std::string m_svArgs;
                     bool m_svArgsHasBeenSet;
 
                     /**
-                     * VPC ID
+                     * <p>VPC ID</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 服务规格对应的资产数
+                     * <p>服务规格对应的资产数</p>
                      */
                     uint64_t m_nodes;
                     bool m_nodesHasBeenSet;
 
                     /**
-                     * 自动续费标记，0 - 表示默认状态，1 - 表示自动续费，2 - 表示明确不自动续费
+                     * <p>自动续费标记，0 - 表示默认状态，1 - 表示自动续费，2 - 表示明确不自动续费</p>
                      */
                     uint64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 过期时间
+                     * <p>过期时间</p>
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 资源状态，0 - 未初始化，1 - 正常，2 - 隔离，3 - 销毁，4 - 初始化失败，5 - 初始化中
+                     * <p>资源状态，0 - 未初始化，1 - 正常，2 - 隔离，3 - 销毁，4 - 初始化失败，5 - 初始化中</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 服务实例名，如T-Sec-堡垒机（SaaS型）
+                     * <p>服务实例名，如T-Sec-堡垒机（SaaS型）</p>
                      */
                     std::string m_resourceName;
                     bool m_resourceNameHasBeenSet;
 
                     /**
-                     * 定价模型ID
+                     * <p>定价模型ID</p>
                      */
                     uint64_t m_pid;
                     bool m_pidHasBeenSet;
 
                     /**
-                     * 资源创建时间
+                     * <p>资源创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 商品码, p_cds_dasb
+                     * <p>商品码, p_cds_dasb</p>
                      */
                     std::string m_productCode;
                     bool m_productCodeHasBeenSet;
 
                     /**
-                     * 子商品码, sp_cds_dasb_bh_saas
+                     * <p>子商品码, sp_cds_dasb_bh_saas</p>
                      */
                     std::string m_subProductCode;
                     bool m_subProductCodeHasBeenSet;
 
                     /**
-                     * 可用区
+                     * <p>可用区</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 是否过期，true-过期，false-未过期
+                     * <p>是否过期，true-过期，false-未过期</p>
                      */
                     bool m_expired;
                     bool m_expiredHasBeenSet;
 
                     /**
-                     * 是否开通，true-开通，false-未开通
+                     * <p>是否开通，true-开通，false-未开通</p>
                      */
                     bool m_deployed;
                     bool m_deployedHasBeenSet;
 
                     /**
-                     * 开通服务的 VPC 名称
+                     * <p>开通服务的 VPC 名称</p>
                      */
                     std::string m_vpcName;
                     bool m_vpcNameHasBeenSet;
 
                     /**
-                     * 开通服务的 VPC 对应的网段
+                     * <p>开通服务的 VPC 对应的网段</p>
                      */
                     std::string m_vpcCidrBlock;
                     bool m_vpcCidrBlockHasBeenSet;
 
                     /**
-                     * 开通服务的子网ID
+                     * <p>开通服务的子网ID</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 开通服务的子网名称
+                     * <p>开通服务的子网名称</p>
                      */
                     std::string m_subnetName;
                     bool m_subnetNameHasBeenSet;
 
                     /**
-                     * 开通服务的子网网段
+                     * <p>开通服务的子网网段</p>
                      */
                     std::string m_cidrBlock;
                     bool m_cidrBlockHasBeenSet;
 
                     /**
-                     * 外部IP
+                     * <p>外部IP</p>
                      */
                     std::vector<std::string> m_publicIpSet;
                     bool m_publicIpSetHasBeenSet;
 
                     /**
-                     * 内部IP
+                     * <p>内部IP</p>
                      */
                     std::vector<std::string> m_privateIpSet;
                     bool m_privateIpSetHasBeenSet;
 
                     /**
-                     * 服务开通的高级功能列表，如:[DB]
+                     * <p>服务开通的高级功能列表，如:[DB]</p>
                      */
                     std::vector<std::string> m_moduleSet;
                     bool m_moduleSetHasBeenSet;
 
                     /**
-                     * 已使用的授权点数
+                     * <p>已使用的授权点数</p>
                      */
                     uint64_t m_usedNodes;
                     bool m_usedNodesHasBeenSet;
 
                     /**
-                     * 扩展点数
+                     * <p>扩展点数</p>
                      */
                     uint64_t m_extendPoints;
                     bool m_extendPointsHasBeenSet;
 
                     /**
-                     * 带宽扩展包个数(4M)
+                     * <p>带宽扩展包个数(4M)</p>
                      */
                     uint64_t m_packageBandwidth;
                     bool m_packageBandwidthHasBeenSet;
 
                     /**
-                     * 授权点数扩展包个数(50点)
+                     * <p>授权点数扩展包个数(50点)</p>
                      */
                     uint64_t m_packageNode;
                     bool m_packageNodeHasBeenSet;
 
                     /**
-                     * 日志投递规格信息
+                     * <p>日志投递规格信息</p>
                      */
                     std::string m_logDeliveryArgs;
                     bool m_logDeliveryArgsHasBeenSet;
 
                     /**
-                     * 堡垒机资源LB	
+                     * <p>堡垒机资源LB</p>
                      */
                     std::vector<Clb> m_clbSet;
                     bool m_clbSetHasBeenSet;
 
                     /**
-                     * 网络域个数
+                     * <p>网络域个数</p>
                      */
                     uint64_t m_domainCount;
                     bool m_domainCountHasBeenSet;
 
                     /**
-                     * 已经使用的网络域个数
+                     * <p>已经使用的网络域个数</p>
                      */
                     uint64_t m_usedDomainCount;
                     bool m_usedDomainCountHasBeenSet;
 
                     /**
-                     * 0 非试用版，1 试用版
+                     * <p>开启的网络域个数（不包含默认网络域）</p>
+                     */
+                    uint64_t m_enabledDomainCount;
+                    bool m_enabledDomainCountHasBeenSet;
+
+                    /**
+                     * <p>0 非试用版，1 试用版</p>
                      */
                     uint64_t m_trial;
                     bool m_trialHasBeenSet;
 
                     /**
-                     * 日志投递规格信息
+                     * <p>日志投递规格信息</p>
                      */
                     std::string m_logDelivery;
                     bool m_logDeliveryHasBeenSet;
 
                     /**
-                     * cdc集群id
+                     * <p>cdc集群id</p>
                      */
                     std::string m_cdcClusterId;
                     bool m_cdcClusterIdHasBeenSet;
 
                     /**
-                     * 部署模式 默认0 0-cvm 1-tke
+                     * <p>部署模式 默认0 0-cvm 1-tke</p>
                      */
                     uint64_t m_deployModel;
                     bool m_deployModelHasBeenSet;
 
                     /**
-                     * 0 默认值，非内网访问，1 内网访问，2 内网访问开通中，3 内网访问关闭中
+                     * <p>0 默认值，非内网访问，1 内网访问，2 内网访问开通中，3 内网访问关闭中</p>
                      */
                     uint64_t m_intranetAccess;
                     bool m_intranetAccessHasBeenSet;
 
                     /**
-                     * 内网访问的ip
+                     * <p>内网访问的ip</p>
                      */
                     std::vector<std::string> m_intranetPrivateIpSet;
                     bool m_intranetPrivateIpSetHasBeenSet;
 
                     /**
-                     * 开通内网访问的vpc
+                     * <p>开通内网访问的vpc</p>
                      */
                     std::string m_intranetVpcId;
                     bool m_intranetVpcIdHasBeenSet;
 
                     /**
-                     * 开通内网访问的subnetId
+                     * <p>开通内网访问的subnetId</p>
                      */
                     std::string m_intranetSubnetId;
                     bool m_intranetSubnetIdHasBeenSet;
 
                     /**
-                     * 开通内网访问vpc的网段
+                     * <p>开通内网访问的子网集合</p>
+                     */
+                    std::vector<std::string> m_intranetSubnetIdSet;
+                    bool m_intranetSubnetIdSetHasBeenSet;
+
+                    /**
+                     * <p>开通内网访问vpc的网段</p>
                      */
                     std::string m_intranetVpcCidr;
                     bool m_intranetVpcCidrHasBeenSet;
 
                     /**
-                     * 堡垒机内网ip自定义域名
+                     * <p>堡垒机内网ip自定义域名</p>
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
 
                     /**
-                     * 是否共享clb，true-共享clb，false-独享clb
+                     * <p>是否共享clb，true-共享clb，false-独享clb</p>
                      */
                     bool m_shareClb;
                     bool m_shareClbHasBeenSet;
 
                     /**
-                     * 共享clb id
+                     * <p>共享clb id</p>
                      */
                     std::string m_openClbId;
                     bool m_openClbIdHasBeenSet;
 
                     /**
-                     * 运营商信息
+                     * <p>运营商信息</p>
                      */
                     std::string m_lbVipIsp;
                     bool m_lbVipIspHasBeenSet;
 
                     /**
-                     * linux资产命令行运维端口
+                     * <p>linux资产命令行运维端口</p>
                      */
                     int64_t m_tUICmdPort;
                     bool m_tUICmdPortHasBeenSet;
 
                     /**
-                     * linux资产直连端口
+                     * <p>linux资产直连端口</p>
                      */
                     int64_t m_tUIDirectPort;
                     bool m_tUIDirectPortHasBeenSet;
 
                     /**
-                     * 1 默认值，web访问开启，0 web访问关闭，2 web访问开通中，3 web访问关闭中
+                     * <p>1 默认值，web访问开启，0 web访问关闭，2 web访问开通中，3 web访问关闭中</p>
                      */
                     uint64_t m_webAccess;
                     bool m_webAccessHasBeenSet;
 
                     /**
-                     * 1 默认值，客户单访问开启，0 客户端访问关闭，2 客户端访问开通中，3 客户端访问关闭中
+                     * <p>1 默认值，客户单访问开启，0 客户端访问关闭，2 客户端访问开通中，3 客户端访问关闭中</p>
                      */
                     uint64_t m_clientAccess;
                     bool m_clientAccessHasBeenSet;
 
                     /**
-                     * 1 默认值，外网访问开启，0 外网访问关闭，2 外网访问开通中，3 外网访问关闭中
+                     * <p>1 默认值，外网访问开启，0 外网访问关闭，2 外网访问开通中，3 外网访问关闭中</p>
                      */
                     uint64_t m_externalAccess;
                     bool m_externalAccessHasBeenSet;
 
                     /**
-                     * 0默认值。0-免费版（试用版）ioa，1-付费版ioa
+                     * <p>0默认值。0-免费版（试用版）ioa，1-付费版ioa</p>
                      */
                     uint64_t m_iOAResource;
                     bool m_iOAResourceHasBeenSet;
 
                     /**
-                     * 零信任堡垒机用户扩展包个数。1个扩展包对应20个用户数
+                     * <p>零信任堡垒机用户扩展包个数。1个扩展包对应20个用户数</p>
                      */
                     uint64_t m_packageIOAUserCount;
                     bool m_packageIOAUserCountHasBeenSet;
 
                     /**
-                     *  零信任堡垒机带宽扩展包个数。一个扩展包表示4M带宽
+                     * <p>零信任堡垒机带宽扩展包个数。一个扩展包表示4M带宽</p>
                      */
                     uint64_t m_packageIOABandwidth;
                     bool m_packageIOABandwidthHasBeenSet;
 
                     /**
-                     * 堡垒机实例对应的零信任实例id
+                     * <p>堡垒机实例对应的零信任实例id</p>
                      */
                     std::string m_iOAResourceId;
                     bool m_iOAResourceIdHasBeenSet;
 
                     /**
-                     * 资源类型 免费版/标准版/专业版 /国密版 free/standard/pro/gm
+                     * <p>资源类型 免费版/标准版/专业版 /国密版 free/standard/pro/gm</p>
                      */
                     std::string m_resourceEdition;
                     bool m_resourceEditionHasBeenSet;
 
                     /**
-                     * 计费周期 年：y，月：m，日：d，时：h，分：M，秒：s，一次性购买：p
+                     * <p>计费周期 年：y，月：m，日：d，时：h，分：M，秒：s，一次性购买：p</p>
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * 计费时长
+                     * <p>计费时长</p>
                      */
                     uint64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 计费模式 0后付费，1预付费
+                     * <p>计费模式 0后付费，1预付费</p>
                      */
                     uint64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 计费侧地域
+                     * <p>计费侧地域</p>
                      */
                     std::string m_billingRegion;
                     bool m_billingRegionHasBeenSet;
 
                     /**
-                     * 计费侧可用区
+                     * <p>计费侧可用区</p>
                      */
                     std::string m_billingZone;
                     bool m_billingZoneHasBeenSet;
+
+                    /**
+                     * <p>部署的cvm个数</p>
+                     */
+                    uint64_t m_deployCvmCount;
+                    bool m_deployCvmCountHasBeenSet;
+
+                    /**
+                     * <p>堡垒机实例的可用区信息</p>
+                     */
+                    std::vector<ResourceDeployZone> m_resourceZoneSet;
+                    bool m_resourceZoneSetHasBeenSet;
 
                 };
             }

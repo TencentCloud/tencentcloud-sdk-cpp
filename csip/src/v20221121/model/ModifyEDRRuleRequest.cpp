@@ -49,7 +49,12 @@ ModifyEDRRuleRequest::ModifyEDRRuleRequest() :
     m_targetAppIDsHasBeenSet(false),
     m_targetHasBeenSet(false),
     m_instanceIDsWithAppIdHasBeenSet(false),
-    m_excludeInstanceIDsWithAppIdHasBeenSet(false)
+    m_excludeInstanceIDsWithAppIdHasBeenSet(false),
+    m_tagIDsHasBeenSet(false),
+    m_clusterIDsWithAppIdHasBeenSet(false),
+    m_excludeClusterIDsWithAppIdHasBeenSet(false),
+    m_imageIDsWithAppIdHasBeenSet(false),
+    m_conditionMatchesHasBeenSet(false)
 {
 }
 
@@ -332,6 +337,79 @@ string ModifyEDRRuleRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_excludeInstanceIDsWithAppId.begin(); itr != m_excludeInstanceIDsWithAppId.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_tagIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagIDs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tagIDs.begin(); itr != m_tagIDs.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_clusterIDsWithAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterIDsWithAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_clusterIDsWithAppId.begin(); itr != m_clusterIDsWithAppId.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_excludeClusterIDsWithAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludeClusterIDsWithAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_excludeClusterIDsWithAppId.begin(); itr != m_excludeClusterIDsWithAppId.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_imageIDsWithAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageIDsWithAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_imageIDsWithAppId.begin(); itr != m_imageIDsWithAppId.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_conditionMatchesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConditionMatches";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_conditionMatches.begin(); itr != m_conditionMatches.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -776,6 +854,86 @@ void ModifyEDRRuleRequest::SetExcludeInstanceIDsWithAppId(const vector<InstanceI
 bool ModifyEDRRuleRequest::ExcludeInstanceIDsWithAppIdHasBeenSet() const
 {
     return m_excludeInstanceIDsWithAppIdHasBeenSet;
+}
+
+vector<string> ModifyEDRRuleRequest::GetTagIDs() const
+{
+    return m_tagIDs;
+}
+
+void ModifyEDRRuleRequest::SetTagIDs(const vector<string>& _tagIDs)
+{
+    m_tagIDs = _tagIDs;
+    m_tagIDsHasBeenSet = true;
+}
+
+bool ModifyEDRRuleRequest::TagIDsHasBeenSet() const
+{
+    return m_tagIDsHasBeenSet;
+}
+
+vector<ClusterIDWithAppIdItem> ModifyEDRRuleRequest::GetClusterIDsWithAppId() const
+{
+    return m_clusterIDsWithAppId;
+}
+
+void ModifyEDRRuleRequest::SetClusterIDsWithAppId(const vector<ClusterIDWithAppIdItem>& _clusterIDsWithAppId)
+{
+    m_clusterIDsWithAppId = _clusterIDsWithAppId;
+    m_clusterIDsWithAppIdHasBeenSet = true;
+}
+
+bool ModifyEDRRuleRequest::ClusterIDsWithAppIdHasBeenSet() const
+{
+    return m_clusterIDsWithAppIdHasBeenSet;
+}
+
+vector<ClusterIDWithAppIdItem> ModifyEDRRuleRequest::GetExcludeClusterIDsWithAppId() const
+{
+    return m_excludeClusterIDsWithAppId;
+}
+
+void ModifyEDRRuleRequest::SetExcludeClusterIDsWithAppId(const vector<ClusterIDWithAppIdItem>& _excludeClusterIDsWithAppId)
+{
+    m_excludeClusterIDsWithAppId = _excludeClusterIDsWithAppId;
+    m_excludeClusterIDsWithAppIdHasBeenSet = true;
+}
+
+bool ModifyEDRRuleRequest::ExcludeClusterIDsWithAppIdHasBeenSet() const
+{
+    return m_excludeClusterIDsWithAppIdHasBeenSet;
+}
+
+vector<ImageIDWithAppIdItem> ModifyEDRRuleRequest::GetImageIDsWithAppId() const
+{
+    return m_imageIDsWithAppId;
+}
+
+void ModifyEDRRuleRequest::SetImageIDsWithAppId(const vector<ImageIDWithAppIdItem>& _imageIDsWithAppId)
+{
+    m_imageIDsWithAppId = _imageIDsWithAppId;
+    m_imageIDsWithAppIdHasBeenSet = true;
+}
+
+bool ModifyEDRRuleRequest::ImageIDsWithAppIdHasBeenSet() const
+{
+    return m_imageIDsWithAppIdHasBeenSet;
+}
+
+vector<ConditionMatch> ModifyEDRRuleRequest::GetConditionMatches() const
+{
+    return m_conditionMatches;
+}
+
+void ModifyEDRRuleRequest::SetConditionMatches(const vector<ConditionMatch>& _conditionMatches)
+{
+    m_conditionMatches = _conditionMatches;
+    m_conditionMatchesHasBeenSet = true;
+}
+
+bool ModifyEDRRuleRequest::ConditionMatchesHasBeenSet() const
+{
+    return m_conditionMatchesHasBeenSet;
 }
 
 

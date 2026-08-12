@@ -151,6 +151,111 @@ namespace TencentCloud
                      */
                     bool InstanceSizeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>网关内网IP。</p>
+                     * @return GatewayIp <p>网关内网IP。</p>
+                     * 
+                     */
+                    std::string GetGatewayIp() const;
+
+                    /**
+                     * 设置<p>网关内网IP。</p>
+                     * @param _gatewayIp <p>网关内网IP。</p>
+                     * 
+                     */
+                    void SetGatewayIp(const std::string& _gatewayIp);
+
+                    /**
+                     * 判断参数 GatewayIp 是否已赋值
+                     * @return GatewayIp 是否已赋值
+                     * 
+                     */
+                    bool GatewayIpHasBeenSet() const;
+
+                    /**
+                     * 获取<p>用户名。</p>
+                     * @return Username <p>用户名。</p>
+                     * 
+                     */
+                    std::string GetUsername() const;
+
+                    /**
+                     * 设置<p>用户名。</p>
+                     * @param _username <p>用户名。</p>
+                     * 
+                     */
+                    void SetUsername(const std::string& _username);
+
+                    /**
+                     * 判断参数 Username 是否已赋值
+                     * @return Username 是否已赋值
+                     * 
+                     */
+                    bool UsernameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>网关接入token。</p>
+                     * @return Token <p>网关接入token。</p>
+                     * 
+                     */
+                    std::string GetToken() const;
+
+                    /**
+                     * 设置<p>网关接入token。</p>
+                     * @param _token <p>网关接入token。</p>
+                     * 
+                     */
+                    void SetToken(const std::string& _token);
+
+                    /**
+                     * 判断参数 Token 是否已赋值
+                     * @return Token 是否已赋值
+                     * 
+                     */
+                    bool TokenHasBeenSet() const;
+
+                    /**
+                     * 获取<p>网关注册URL。</p>
+                     * @return RegisterCenterUrl <p>网关注册URL。</p>
+                     * 
+                     */
+                    std::string GetRegisterCenterUrl() const;
+
+                    /**
+                     * 设置<p>网关注册URL。</p>
+                     * @param _registerCenterUrl <p>网关注册URL。</p>
+                     * 
+                     */
+                    void SetRegisterCenterUrl(const std::string& _registerCenterUrl);
+
+                    /**
+                     * 判断参数 RegisterCenterUrl 是否已赋值
+                     * @return RegisterCenterUrl 是否已赋值
+                     * 
+                     */
+                    bool RegisterCenterUrlHasBeenSet() const;
+
+                    /**
+                     * 获取<p>网关上报URL。</p>
+                     * @return TelemetryUrl <p>网关上报URL。</p>
+                     * 
+                     */
+                    std::string GetTelemetryUrl() const;
+
+                    /**
+                     * 设置<p>网关上报URL。</p>
+                     * @param _telemetryUrl <p>网关上报URL。</p>
+                     * 
+                     */
+                    void SetTelemetryUrl(const std::string& _telemetryUrl);
+
+                    /**
+                     * 判断参数 TelemetryUrl 是否已赋值
+                     * @return TelemetryUrl 是否已赋值
+                     * 
+                     */
+                    bool TelemetryUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +287,36 @@ namespace TencentCloud
                      */
                     int64_t m_instanceSize;
                     bool m_instanceSizeHasBeenSet;
+
+                    /**
+                     * <p>网关内网IP。</p>
+                     */
+                    std::string m_gatewayIp;
+                    bool m_gatewayIpHasBeenSet;
+
+                    /**
+                     * <p>用户名。</p>
+                     */
+                    std::string m_username;
+                    bool m_usernameHasBeenSet;
+
+                    /**
+                     * <p>网关接入token。</p>
+                     */
+                    std::string m_token;
+                    bool m_tokenHasBeenSet;
+
+                    /**
+                     * <p>网关注册URL。</p>
+                     */
+                    std::string m_registerCenterUrl;
+                    bool m_registerCenterUrlHasBeenSet;
+
+                    /**
+                     * <p>网关上报URL。</p>
+                     */
+                    std::string m_telemetryUrl;
+                    bool m_telemetryUrlHasBeenSet;
 
                 };
             }

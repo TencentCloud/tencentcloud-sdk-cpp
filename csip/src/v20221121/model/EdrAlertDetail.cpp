@@ -68,7 +68,17 @@ EdrAlertDetail::EdrAlertDetail() :
     m_virusNameHasBeenSet(false),
     m_virusFamilyHasBeenSet(false),
     m_netResponsePayloadHasBeenSet(false),
-    m_netSvcPsHasBeenSet(false)
+    m_netSvcPsHasBeenSet(false),
+    m_containerNameHasBeenSet(false),
+    m_imageNameHasBeenSet(false),
+    m_clusterNameHasBeenSet(false),
+    m_runStatusHasBeenSet(false),
+    m_podNameHasBeenSet(false),
+    m_podIpHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
+    m_podWorkloadTypeHasBeenSet(false),
+    m_clusterCaMD5HasBeenSet(false),
+    m_podUniqueIdHasBeenSet(false)
 {
 }
 
@@ -577,6 +587,106 @@ CoreInternalOutcome EdrAlertDetail::Deserialize(const rapidjson::Value &value)
         m_netSvcPsHasBeenSet = true;
     }
 
+    if (value.HasMember("ContainerName") && !value["ContainerName"].IsNull())
+    {
+        if (!value["ContainerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdrAlertDetail.ContainerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerName = string(value["ContainerName"].GetString());
+        m_containerNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ImageName") && !value["ImageName"].IsNull())
+    {
+        if (!value["ImageName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdrAlertDetail.ImageName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageName = string(value["ImageName"].GetString());
+        m_imageNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterName") && !value["ClusterName"].IsNull())
+    {
+        if (!value["ClusterName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdrAlertDetail.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterName = string(value["ClusterName"].GetString());
+        m_clusterNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunStatus") && !value["RunStatus"].IsNull())
+    {
+        if (!value["RunStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdrAlertDetail.RunStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_runStatus = string(value["RunStatus"].GetString());
+        m_runStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("PodName") && !value["PodName"].IsNull())
+    {
+        if (!value["PodName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdrAlertDetail.PodName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_podName = string(value["PodName"].GetString());
+        m_podNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("PodIp") && !value["PodIp"].IsNull())
+    {
+        if (!value["PodIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdrAlertDetail.PodIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_podIp = string(value["PodIp"].GetString());
+        m_podIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("Namespace") && !value["Namespace"].IsNull())
+    {
+        if (!value["Namespace"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdrAlertDetail.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_namespace = string(value["Namespace"].GetString());
+        m_namespaceHasBeenSet = true;
+    }
+
+    if (value.HasMember("PodWorkloadType") && !value["PodWorkloadType"].IsNull())
+    {
+        if (!value["PodWorkloadType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdrAlertDetail.PodWorkloadType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_podWorkloadType = string(value["PodWorkloadType"].GetString());
+        m_podWorkloadTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterCaMD5") && !value["ClusterCaMD5"].IsNull())
+    {
+        if (!value["ClusterCaMD5"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdrAlertDetail.ClusterCaMD5` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterCaMD5 = string(value["ClusterCaMD5"].GetString());
+        m_clusterCaMD5HasBeenSet = true;
+    }
+
+    if (value.HasMember("PodUniqueId") && !value["PodUniqueId"].IsNull())
+    {
+        if (!value["PodUniqueId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdrAlertDetail.PodUniqueId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_podUniqueId = string(value["PodUniqueId"].GetString());
+        m_podUniqueIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -979,6 +1089,86 @@ void EdrAlertDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "NetSvcPs";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_netSvcPs.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_runStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_podName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_podIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Namespace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podWorkloadTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodWorkloadType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_podWorkloadType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterCaMD5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterCaMD5";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterCaMD5.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podUniqueIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodUniqueId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_podUniqueId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1750,5 +1940,165 @@ void EdrAlertDetail::SetNetSvcPs(const string& _netSvcPs)
 bool EdrAlertDetail::NetSvcPsHasBeenSet() const
 {
     return m_netSvcPsHasBeenSet;
+}
+
+string EdrAlertDetail::GetContainerName() const
+{
+    return m_containerName;
+}
+
+void EdrAlertDetail::SetContainerName(const string& _containerName)
+{
+    m_containerName = _containerName;
+    m_containerNameHasBeenSet = true;
+}
+
+bool EdrAlertDetail::ContainerNameHasBeenSet() const
+{
+    return m_containerNameHasBeenSet;
+}
+
+string EdrAlertDetail::GetImageName() const
+{
+    return m_imageName;
+}
+
+void EdrAlertDetail::SetImageName(const string& _imageName)
+{
+    m_imageName = _imageName;
+    m_imageNameHasBeenSet = true;
+}
+
+bool EdrAlertDetail::ImageNameHasBeenSet() const
+{
+    return m_imageNameHasBeenSet;
+}
+
+string EdrAlertDetail::GetClusterName() const
+{
+    return m_clusterName;
+}
+
+void EdrAlertDetail::SetClusterName(const string& _clusterName)
+{
+    m_clusterName = _clusterName;
+    m_clusterNameHasBeenSet = true;
+}
+
+bool EdrAlertDetail::ClusterNameHasBeenSet() const
+{
+    return m_clusterNameHasBeenSet;
+}
+
+string EdrAlertDetail::GetRunStatus() const
+{
+    return m_runStatus;
+}
+
+void EdrAlertDetail::SetRunStatus(const string& _runStatus)
+{
+    m_runStatus = _runStatus;
+    m_runStatusHasBeenSet = true;
+}
+
+bool EdrAlertDetail::RunStatusHasBeenSet() const
+{
+    return m_runStatusHasBeenSet;
+}
+
+string EdrAlertDetail::GetPodName() const
+{
+    return m_podName;
+}
+
+void EdrAlertDetail::SetPodName(const string& _podName)
+{
+    m_podName = _podName;
+    m_podNameHasBeenSet = true;
+}
+
+bool EdrAlertDetail::PodNameHasBeenSet() const
+{
+    return m_podNameHasBeenSet;
+}
+
+string EdrAlertDetail::GetPodIp() const
+{
+    return m_podIp;
+}
+
+void EdrAlertDetail::SetPodIp(const string& _podIp)
+{
+    m_podIp = _podIp;
+    m_podIpHasBeenSet = true;
+}
+
+bool EdrAlertDetail::PodIpHasBeenSet() const
+{
+    return m_podIpHasBeenSet;
+}
+
+string EdrAlertDetail::GetNamespace() const
+{
+    return m_namespace;
+}
+
+void EdrAlertDetail::SetNamespace(const string& _namespace)
+{
+    m_namespace = _namespace;
+    m_namespaceHasBeenSet = true;
+}
+
+bool EdrAlertDetail::NamespaceHasBeenSet() const
+{
+    return m_namespaceHasBeenSet;
+}
+
+string EdrAlertDetail::GetPodWorkloadType() const
+{
+    return m_podWorkloadType;
+}
+
+void EdrAlertDetail::SetPodWorkloadType(const string& _podWorkloadType)
+{
+    m_podWorkloadType = _podWorkloadType;
+    m_podWorkloadTypeHasBeenSet = true;
+}
+
+bool EdrAlertDetail::PodWorkloadTypeHasBeenSet() const
+{
+    return m_podWorkloadTypeHasBeenSet;
+}
+
+string EdrAlertDetail::GetClusterCaMD5() const
+{
+    return m_clusterCaMD5;
+}
+
+void EdrAlertDetail::SetClusterCaMD5(const string& _clusterCaMD5)
+{
+    m_clusterCaMD5 = _clusterCaMD5;
+    m_clusterCaMD5HasBeenSet = true;
+}
+
+bool EdrAlertDetail::ClusterCaMD5HasBeenSet() const
+{
+    return m_clusterCaMD5HasBeenSet;
+}
+
+string EdrAlertDetail::GetPodUniqueId() const
+{
+    return m_podUniqueId;
+}
+
+void EdrAlertDetail::SetPodUniqueId(const string& _podUniqueId)
+{
+    m_podUniqueId = _podUniqueId;
+    m_podUniqueIdHasBeenSet = true;
+}
+
+bool EdrAlertDetail::PodUniqueIdHasBeenSet() const
+{
+    return m_podUniqueIdHasBeenSet;
 }
 

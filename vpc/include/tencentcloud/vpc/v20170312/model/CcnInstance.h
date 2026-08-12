@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取关联实例ID。
-                     * @return InstanceId 关联实例ID。
+                     * 获取<p>关联实例ID。</p>
+                     * @return InstanceId <p>关联实例ID。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置关联实例ID。
-                     * @param _instanceId 关联实例ID。
+                     * 设置<p>关联实例ID。</p>
+                     * @param _instanceId <p>关联实例ID。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取关联实例ID所属大区，例如：ap-guangzhou。
-                     * @return InstanceRegion 关联实例ID所属大区，例如：ap-guangzhou。
+                     * 获取<p>关联实例ID所属大区，例如：ap-guangzhou。</p>
+                     * @return InstanceRegion <p>关联实例ID所属大区，例如：ap-guangzhou。</p>
                      * 
                      */
                     std::string GetInstanceRegion() const;
 
                     /**
-                     * 设置关联实例ID所属大区，例如：ap-guangzhou。
-                     * @param _instanceRegion 关联实例ID所属大区，例如：ap-guangzhou。
+                     * 设置<p>关联实例ID所属大区，例如：ap-guangzhou。</p>
+                     * @param _instanceRegion <p>关联实例ID所属大区，例如：ap-guangzhou。</p>
                      * 
                      */
                     void SetInstanceRegion(const std::string& _instanceRegion);
@@ -89,31 +89,15 @@ namespace TencentCloud
                     bool InstanceRegionHasBeenSet() const;
 
                     /**
-                     * 获取关联实例类型，可选值：
-<li>`VPC`：私有网络</li>
-<li>`DIRECTCONNECT`：专线网关</li>
-<li>`BMVPC`：黑石私有网络</li>
-<li>`VPNGW`：VPNGW类型</li>
-                     * @return InstanceType 关联实例类型，可选值：
-<li>`VPC`：私有网络</li>
-<li>`DIRECTCONNECT`：专线网关</li>
-<li>`BMVPC`：黑石私有网络</li>
-<li>`VPNGW`：VPNGW类型</li>
+                     * 获取<p>关联实例类型，可选值：</p><li><code>VPC</code>：私有网络</li><li><code>DIRECTCONNECT</code>：专线网关</li><li><code>BMVPC</code>：黑石私有网络</li><li><code>VPNGW</code>：VPNGW类型</li>
+                     * @return InstanceType <p>关联实例类型，可选值：</p><li><code>VPC</code>：私有网络</li><li><code>DIRECTCONNECT</code>：专线网关</li><li><code>BMVPC</code>：黑石私有网络</li><li><code>VPNGW</code>：VPNGW类型</li>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置关联实例类型，可选值：
-<li>`VPC`：私有网络</li>
-<li>`DIRECTCONNECT`：专线网关</li>
-<li>`BMVPC`：黑石私有网络</li>
-<li>`VPNGW`：VPNGW类型</li>
-                     * @param _instanceType 关联实例类型，可选值：
-<li>`VPC`：私有网络</li>
-<li>`DIRECTCONNECT`：专线网关</li>
-<li>`BMVPC`：黑石私有网络</li>
-<li>`VPNGW`：VPNGW类型</li>
+                     * 设置<p>关联实例类型，可选值：</p><li><code>VPC</code>：私有网络</li><li><code>DIRECTCONNECT</code>：专线网关</li><li><code>BMVPC</code>：黑石私有网络</li><li><code>VPNGW</code>：VPNGW类型</li>
+                     * @param _instanceType <p>关联实例类型，可选值：</p><li><code>VPC</code>：私有网络</li><li><code>DIRECTCONNECT</code>：专线网关</li><li><code>BMVPC</code>：黑石私有网络</li><li><code>VPNGW</code>：VPNGW类型</li>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -126,15 +110,15 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Description 备注
+                     * 获取<p>备注</p>
+                     * @return Description <p>备注</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置备注
-                     * @param _description 备注
+                     * 设置<p>备注</p>
+                     * @param _description <p>备注</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -147,15 +131,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取实例关联的路由表ID。
-                     * @return RouteTableId 实例关联的路由表ID。
+                     * 获取<p>实例关联的路由表ID。</p>
+                     * @return RouteTableId <p>实例关联的路由表ID。</p>
                      * 
                      */
                     std::string GetRouteTableId() const;
 
                     /**
-                     * 设置实例关联的路由表ID。
-                     * @param _routeTableId 实例关联的路由表ID。
+                     * 设置<p>实例关联的路由表ID。</p>
+                     * @param _routeTableId <p>实例关联的路由表ID。</p>
                      * 
                      */
                     void SetRouteTableId(const std::string& _routeTableId);
@@ -168,15 +152,15 @@ namespace TencentCloud
                     bool RouteTableIdHasBeenSet() const;
 
                     /**
-                     * 获取实例付费方式
-                     * @return OrderType 实例付费方式
+                     * 获取<p>实例付费方式</p><p>枚举值：</p><ul><li>PayByCcnOwner： CCN所在账号付费</li><li>PayByInstanceOwner： 关联实例所在账号付费</li></ul>
+                     * @return OrderType <p>实例付费方式</p><p>枚举值：</p><ul><li>PayByCcnOwner： CCN所在账号付费</li><li>PayByInstanceOwner： 关联实例所在账号付费</li></ul>
                      * 
                      */
                     std::string GetOrderType() const;
 
                     /**
-                     * 设置实例付费方式
-                     * @param _orderType 实例付费方式
+                     * 设置<p>实例付费方式</p><p>枚举值：</p><ul><li>PayByCcnOwner： CCN所在账号付费</li><li>PayByInstanceOwner： 关联实例所在账号付费</li></ul>
+                     * @param _orderType <p>实例付费方式</p><p>枚举值：</p><ul><li>PayByCcnOwner： CCN所在账号付费</li><li>PayByInstanceOwner： 关联实例所在账号付费</li></ul>
                      * 
                      */
                     void SetOrderType(const std::string& _orderType);
@@ -191,41 +175,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 关联实例ID。
+                     * <p>关联实例ID。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 关联实例ID所属大区，例如：ap-guangzhou。
+                     * <p>关联实例ID所属大区，例如：ap-guangzhou。</p>
                      */
                     std::string m_instanceRegion;
                     bool m_instanceRegionHasBeenSet;
 
                     /**
-                     * 关联实例类型，可选值：
-<li>`VPC`：私有网络</li>
-<li>`DIRECTCONNECT`：专线网关</li>
-<li>`BMVPC`：黑石私有网络</li>
-<li>`VPNGW`：VPNGW类型</li>
+                     * <p>关联实例类型，可选值：</p><li><code>VPC</code>：私有网络</li><li><code>DIRECTCONNECT</code>：专线网关</li><li><code>BMVPC</code>：黑石私有网络</li><li><code>VPNGW</code>：VPNGW类型</li>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 备注
+                     * <p>备注</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 实例关联的路由表ID。
+                     * <p>实例关联的路由表ID。</p>
                      */
                     std::string m_routeTableId;
                     bool m_routeTableIdHasBeenSet;
 
                     /**
-                     * 实例付费方式
+                     * <p>实例付费方式</p><p>枚举值：</p><ul><li>PayByCcnOwner： CCN所在账号付费</li><li>PayByInstanceOwner： 关联实例所在账号付费</li></ul>
                      */
                     std::string m_orderType;
                     bool m_orderTypeHasBeenSet;

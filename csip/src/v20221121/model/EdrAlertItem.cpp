@@ -36,6 +36,7 @@ EdrAlertItem::EdrAlertItem() :
     m_quuidHasBeenSet(false),
     m_isProVersionHasBeenSet(false),
     m_alertSourceHasBeenSet(false),
+    m_machineTypeHasBeenSet(false),
     m_imageIdHasBeenSet(false),
     m_containerIdHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
@@ -47,7 +48,10 @@ EdrAlertItem::EdrAlertItem() :
     m_instanceNameHasBeenSet(false),
     m_publicIpHasBeenSet(false),
     m_privateIpHasBeenSet(false),
-    m_raspOpenHasBeenSet(false)
+    m_raspOpenHasBeenSet(false),
+    m_containerNameHasBeenSet(false),
+    m_imageNameHasBeenSet(false),
+    m_clusterNameHasBeenSet(false)
 {
 }
 
@@ -206,6 +210,16 @@ CoreInternalOutcome EdrAlertItem::Deserialize(const rapidjson::Value &value)
         m_alertSourceHasBeenSet = true;
     }
 
+    if (value.HasMember("MachineType") && !value["MachineType"].IsNull())
+    {
+        if (!value["MachineType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdrAlertItem.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineType = string(value["MachineType"].GetString());
+        m_machineTypeHasBeenSet = true;
+    }
+
     if (value.HasMember("ImageId") && !value["ImageId"].IsNull())
     {
         if (!value["ImageId"].IsString())
@@ -324,6 +338,36 @@ CoreInternalOutcome EdrAlertItem::Deserialize(const rapidjson::Value &value)
         }
         m_raspOpen = value["RaspOpen"].GetBool();
         m_raspOpenHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContainerName") && !value["ContainerName"].IsNull())
+    {
+        if (!value["ContainerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdrAlertItem.ContainerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerName = string(value["ContainerName"].GetString());
+        m_containerNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ImageName") && !value["ImageName"].IsNull())
+    {
+        if (!value["ImageName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdrAlertItem.ImageName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageName = string(value["ImageName"].GetString());
+        m_imageNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterName") && !value["ClusterName"].IsNull())
+    {
+        if (!value["ClusterName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdrAlertItem.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterName = string(value["ClusterName"].GetString());
+        m_clusterNameHasBeenSet = true;
     }
 
 
@@ -453,6 +497,14 @@ void EdrAlertItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(m_alertSource.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_machineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_imageIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -547,6 +599,30 @@ void EdrAlertItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "RaspOpen";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_raspOpen, allocator);
+    }
+
+    if (m_containerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -792,6 +868,22 @@ bool EdrAlertItem::AlertSourceHasBeenSet() const
     return m_alertSourceHasBeenSet;
 }
 
+string EdrAlertItem::GetMachineType() const
+{
+    return m_machineType;
+}
+
+void EdrAlertItem::SetMachineType(const string& _machineType)
+{
+    m_machineType = _machineType;
+    m_machineTypeHasBeenSet = true;
+}
+
+bool EdrAlertItem::MachineTypeHasBeenSet() const
+{
+    return m_machineTypeHasBeenSet;
+}
+
 string EdrAlertItem::GetImageId() const
 {
     return m_imageId;
@@ -982,5 +1074,53 @@ void EdrAlertItem::SetRaspOpen(const bool& _raspOpen)
 bool EdrAlertItem::RaspOpenHasBeenSet() const
 {
     return m_raspOpenHasBeenSet;
+}
+
+string EdrAlertItem::GetContainerName() const
+{
+    return m_containerName;
+}
+
+void EdrAlertItem::SetContainerName(const string& _containerName)
+{
+    m_containerName = _containerName;
+    m_containerNameHasBeenSet = true;
+}
+
+bool EdrAlertItem::ContainerNameHasBeenSet() const
+{
+    return m_containerNameHasBeenSet;
+}
+
+string EdrAlertItem::GetImageName() const
+{
+    return m_imageName;
+}
+
+void EdrAlertItem::SetImageName(const string& _imageName)
+{
+    m_imageName = _imageName;
+    m_imageNameHasBeenSet = true;
+}
+
+bool EdrAlertItem::ImageNameHasBeenSet() const
+{
+    return m_imageNameHasBeenSet;
+}
+
+string EdrAlertItem::GetClusterName() const
+{
+    return m_clusterName;
+}
+
+void EdrAlertItem::SetClusterName(const string& _clusterName)
+{
+    m_clusterName = _clusterName;
+    m_clusterNameHasBeenSet = true;
+}
+
+bool EdrAlertItem::ClusterNameHasBeenSet() const
+{
+    return m_clusterNameHasBeenSet;
 }
 

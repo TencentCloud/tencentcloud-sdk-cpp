@@ -53,6 +53,7 @@ Resource::Resource() :
     m_clbSetHasBeenSet(false),
     m_domainCountHasBeenSet(false),
     m_usedDomainCountHasBeenSet(false),
+    m_enabledDomainCountHasBeenSet(false),
     m_trialHasBeenSet(false),
     m_logDeliveryHasBeenSet(false),
     m_cdcClusterIdHasBeenSet(false),
@@ -61,6 +62,7 @@ Resource::Resource() :
     m_intranetPrivateIpSetHasBeenSet(false),
     m_intranetVpcIdHasBeenSet(false),
     m_intranetSubnetIdHasBeenSet(false),
+    m_intranetSubnetIdSetHasBeenSet(false),
     m_intranetVpcCidrHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_shareClbHasBeenSet(false),
@@ -80,7 +82,9 @@ Resource::Resource() :
     m_timeSpanHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_billingRegionHasBeenSet(false),
-    m_billingZoneHasBeenSet(false)
+    m_billingZoneHasBeenSet(false),
+    m_deployCvmCountHasBeenSet(false),
+    m_resourceZoneSetHasBeenSet(false)
 {
 }
 
@@ -428,6 +432,16 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
         m_usedDomainCountHasBeenSet = true;
     }
 
+    if (value.HasMember("EnabledDomainCount") && !value["EnabledDomainCount"].IsNull())
+    {
+        if (!value["EnabledDomainCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.EnabledDomainCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enabledDomainCount = value["EnabledDomainCount"].GetUint64();
+        m_enabledDomainCountHasBeenSet = true;
+    }
+
     if (value.HasMember("Trial") && !value["Trial"].IsNull())
     {
         if (!value["Trial"].IsUint64())
@@ -509,6 +523,19 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
         }
         m_intranetSubnetId = string(value["IntranetSubnetId"].GetString());
         m_intranetSubnetIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("IntranetSubnetIdSet") && !value["IntranetSubnetIdSet"].IsNull())
+    {
+        if (!value["IntranetSubnetIdSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Resource.IntranetSubnetIdSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["IntranetSubnetIdSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_intranetSubnetIdSet.push_back((*itr).GetString());
+        }
+        m_intranetSubnetIdSetHasBeenSet = true;
     }
 
     if (value.HasMember("IntranetVpcCidr") && !value["IntranetVpcCidr"].IsNull())
@@ -709,6 +736,36 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
         }
         m_billingZone = string(value["BillingZone"].GetString());
         m_billingZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeployCvmCount") && !value["DeployCvmCount"].IsNull())
+    {
+        if (!value["DeployCvmCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.DeployCvmCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deployCvmCount = value["DeployCvmCount"].GetUint64();
+        m_deployCvmCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceZoneSet") && !value["ResourceZoneSet"].IsNull())
+    {
+        if (!value["ResourceZoneSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Resource.ResourceZoneSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ResourceZoneSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ResourceDeployZone item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_resourceZoneSet.push_back(item);
+        }
+        m_resourceZoneSetHasBeenSet = true;
     }
 
 
@@ -996,6 +1053,14 @@ void Resource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         value.AddMember(iKey, m_usedDomainCount, allocator);
     }
 
+    if (m_enabledDomainCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnabledDomainCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enabledDomainCount, allocator);
+    }
+
     if (m_trialHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -1063,6 +1128,19 @@ void Resource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "IntranetSubnetId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_intranetSubnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_intranetSubnetIdSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntranetSubnetIdSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_intranetSubnetIdSet.begin(); itr != m_intranetSubnetIdSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_intranetVpcCidrHasBeenSet)
@@ -1223,6 +1301,29 @@ void Resource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "BillingZone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_billingZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deployCvmCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeployCvmCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deployCvmCount, allocator);
+    }
+
+    if (m_resourceZoneSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceZoneSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceZoneSet.begin(); itr != m_resourceZoneSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1740,6 +1841,22 @@ bool Resource::UsedDomainCountHasBeenSet() const
     return m_usedDomainCountHasBeenSet;
 }
 
+uint64_t Resource::GetEnabledDomainCount() const
+{
+    return m_enabledDomainCount;
+}
+
+void Resource::SetEnabledDomainCount(const uint64_t& _enabledDomainCount)
+{
+    m_enabledDomainCount = _enabledDomainCount;
+    m_enabledDomainCountHasBeenSet = true;
+}
+
+bool Resource::EnabledDomainCountHasBeenSet() const
+{
+    return m_enabledDomainCountHasBeenSet;
+}
+
 uint64_t Resource::GetTrial() const
 {
     return m_trial;
@@ -1866,6 +1983,22 @@ void Resource::SetIntranetSubnetId(const string& _intranetSubnetId)
 bool Resource::IntranetSubnetIdHasBeenSet() const
 {
     return m_intranetSubnetIdHasBeenSet;
+}
+
+vector<string> Resource::GetIntranetSubnetIdSet() const
+{
+    return m_intranetSubnetIdSet;
+}
+
+void Resource::SetIntranetSubnetIdSet(const vector<string>& _intranetSubnetIdSet)
+{
+    m_intranetSubnetIdSet = _intranetSubnetIdSet;
+    m_intranetSubnetIdSetHasBeenSet = true;
+}
+
+bool Resource::IntranetSubnetIdSetHasBeenSet() const
+{
+    return m_intranetSubnetIdSetHasBeenSet;
 }
 
 string Resource::GetIntranetVpcCidr() const
@@ -2186,5 +2319,37 @@ void Resource::SetBillingZone(const string& _billingZone)
 bool Resource::BillingZoneHasBeenSet() const
 {
     return m_billingZoneHasBeenSet;
+}
+
+uint64_t Resource::GetDeployCvmCount() const
+{
+    return m_deployCvmCount;
+}
+
+void Resource::SetDeployCvmCount(const uint64_t& _deployCvmCount)
+{
+    m_deployCvmCount = _deployCvmCount;
+    m_deployCvmCountHasBeenSet = true;
+}
+
+bool Resource::DeployCvmCountHasBeenSet() const
+{
+    return m_deployCvmCountHasBeenSet;
+}
+
+vector<ResourceDeployZone> Resource::GetResourceZoneSet() const
+{
+    return m_resourceZoneSet;
+}
+
+void Resource::SetResourceZoneSet(const vector<ResourceDeployZone>& _resourceZoneSet)
+{
+    m_resourceZoneSet = _resourceZoneSet;
+    m_resourceZoneSetHasBeenSet = true;
+}
+
+bool Resource::ResourceZoneSetHasBeenSet() const
+{
+    return m_resourceZoneSetHasBeenSet;
 }
 

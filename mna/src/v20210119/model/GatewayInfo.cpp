@@ -25,7 +25,12 @@ GatewayInfo::GatewayInfo() :
     m_gatewayNameHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_instanceSizeHasBeenSet(false)
+    m_instanceSizeHasBeenSet(false),
+    m_gatewayIpHasBeenSet(false),
+    m_usernameHasBeenSet(false),
+    m_tokenHasBeenSet(false),
+    m_registerCenterUrlHasBeenSet(false),
+    m_telemetryUrlHasBeenSet(false)
 {
 }
 
@@ -84,6 +89,56 @@ CoreInternalOutcome GatewayInfo::Deserialize(const rapidjson::Value &value)
         m_instanceSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("GatewayIp") && !value["GatewayIp"].IsNull())
+    {
+        if (!value["GatewayIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatewayInfo.GatewayIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gatewayIp = string(value["GatewayIp"].GetString());
+        m_gatewayIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("Username") && !value["Username"].IsNull())
+    {
+        if (!value["Username"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatewayInfo.Username` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_username = string(value["Username"].GetString());
+        m_usernameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Token") && !value["Token"].IsNull())
+    {
+        if (!value["Token"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatewayInfo.Token` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_token = string(value["Token"].GetString());
+        m_tokenHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegisterCenterUrl") && !value["RegisterCenterUrl"].IsNull())
+    {
+        if (!value["RegisterCenterUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatewayInfo.RegisterCenterUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_registerCenterUrl = string(value["RegisterCenterUrl"].GetString());
+        m_registerCenterUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("TelemetryUrl") && !value["TelemetryUrl"].IsNull())
+    {
+        if (!value["TelemetryUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatewayInfo.TelemetryUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_telemetryUrl = string(value["TelemetryUrl"].GetString());
+        m_telemetryUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +184,46 @@ void GatewayInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "InstanceSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceSize, allocator);
+    }
+
+    if (m_gatewayIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewayIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gatewayIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_usernameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Username";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_username.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Token";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_token.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_registerCenterUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegisterCenterUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_registerCenterUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_telemetryUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TelemetryUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_telemetryUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +307,85 @@ void GatewayInfo::SetInstanceSize(const int64_t& _instanceSize)
 bool GatewayInfo::InstanceSizeHasBeenSet() const
 {
     return m_instanceSizeHasBeenSet;
+}
+
+string GatewayInfo::GetGatewayIp() const
+{
+    return m_gatewayIp;
+}
+
+void GatewayInfo::SetGatewayIp(const string& _gatewayIp)
+{
+    m_gatewayIp = _gatewayIp;
+    m_gatewayIpHasBeenSet = true;
+}
+
+bool GatewayInfo::GatewayIpHasBeenSet() const
+{
+    return m_gatewayIpHasBeenSet;
+}
+
+string GatewayInfo::GetUsername() const
+{
+    return m_username;
+}
+
+void GatewayInfo::SetUsername(const string& _username)
+{
+    m_username = _username;
+    m_usernameHasBeenSet = true;
+}
+
+bool GatewayInfo::UsernameHasBeenSet() const
+{
+    return m_usernameHasBeenSet;
+}
+
+string GatewayInfo::GetToken() const
+{
+    return m_token;
+}
+
+void GatewayInfo::SetToken(const string& _token)
+{
+    m_token = _token;
+    m_tokenHasBeenSet = true;
+}
+
+bool GatewayInfo::TokenHasBeenSet() const
+{
+    return m_tokenHasBeenSet;
+}
+
+string GatewayInfo::GetRegisterCenterUrl() const
+{
+    return m_registerCenterUrl;
+}
+
+void GatewayInfo::SetRegisterCenterUrl(const string& _registerCenterUrl)
+{
+    m_registerCenterUrl = _registerCenterUrl;
+    m_registerCenterUrlHasBeenSet = true;
+}
+
+bool GatewayInfo::RegisterCenterUrlHasBeenSet() const
+{
+    return m_registerCenterUrlHasBeenSet;
+}
+
+string GatewayInfo::GetTelemetryUrl() const
+{
+    return m_telemetryUrl;
+}
+
+void GatewayInfo::SetTelemetryUrl(const string& _telemetryUrl)
+{
+    m_telemetryUrl = _telemetryUrl;
+    m_telemetryUrlHasBeenSet = true;
+}
+
+bool GatewayInfo::TelemetryUrlHasBeenSet() const
+{
+    return m_telemetryUrlHasBeenSet;
 }
 

@@ -61,6 +61,8 @@
 #include <tencentcloud/tcbr/v20220217/model/StartVersionInstanceResponse.h>
 #include <tencentcloud/tcbr/v20220217/model/StopVersionInstanceRequest.h>
 #include <tencentcloud/tcbr/v20220217/model/StopVersionInstanceResponse.h>
+#include <tencentcloud/tcbr/v20220217/model/SubmitServerConfigChangeDiffRequest.h>
+#include <tencentcloud/tcbr/v20220217/model/SubmitServerConfigChangeDiffResponse.h>
 #include <tencentcloud/tcbr/v20220217/model/SubmitServerRollbackRequest.h>
 #include <tencentcloud/tcbr/v20220217/model/SubmitServerRollbackResponse.h>
 #include <tencentcloud/tcbr/v20220217/model/UpdateCloudRunServerRequest.h>
@@ -136,6 +138,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopVersionInstanceResponse> StopVersionInstanceOutcome;
                 typedef std::future<StopVersionInstanceOutcome> StopVersionInstanceOutcomeCallable;
                 typedef std::function<void(const TcbrClient*, const Model::StopVersionInstanceRequest&, StopVersionInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopVersionInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitServerConfigChangeDiffResponse> SubmitServerConfigChangeDiffOutcome;
+                typedef std::future<SubmitServerConfigChangeDiffOutcome> SubmitServerConfigChangeDiffOutcomeCallable;
+                typedef std::function<void(const TcbrClient*, const Model::SubmitServerConfigChangeDiffRequest&, SubmitServerConfigChangeDiffOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitServerConfigChangeDiffAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitServerRollbackResponse> SubmitServerRollbackOutcome;
                 typedef std::future<SubmitServerRollbackOutcome> SubmitServerRollbackOutcomeCallable;
                 typedef std::function<void(const TcbrClient*, const Model::SubmitServerRollbackRequest&, SubmitServerRollbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitServerRollbackAsyncHandler;
@@ -315,6 +320,15 @@ namespace TencentCloud
                 StopVersionInstanceOutcome StopVersionInstance(const Model::StopVersionInstanceRequest &request);
                 void StopVersionInstanceAsync(const Model::StopVersionInstanceRequest& request, const StopVersionInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopVersionInstanceOutcomeCallable StopVersionInstanceCallable(const Model::StopVersionInstanceRequest& request);
+
+                /**
+                 *更新配置并使用最新镜像发布
+                 * @param req SubmitServerConfigChangeDiffRequest
+                 * @return SubmitServerConfigChangeDiffOutcome
+                 */
+                SubmitServerConfigChangeDiffOutcome SubmitServerConfigChangeDiff(const Model::SubmitServerConfigChangeDiffRequest &request);
+                void SubmitServerConfigChangeDiffAsync(const Model::SubmitServerConfigChangeDiffRequest& request, const SubmitServerConfigChangeDiffAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitServerConfigChangeDiffOutcomeCallable SubmitServerConfigChangeDiffCallable(const Model::SubmitServerConfigChangeDiffRequest& request);
 
                 /**
                  *回滚版本

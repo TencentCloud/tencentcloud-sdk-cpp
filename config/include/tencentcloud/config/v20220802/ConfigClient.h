@@ -47,6 +47,8 @@
 #include <tencentcloud/config/v20220802/model/DeleteAggregateCompliancePackResponse.h>
 #include <tencentcloud/config/v20220802/model/DeleteAggregateConfigRuleRequest.h>
 #include <tencentcloud/config/v20220802/model/DeleteAggregateConfigRuleResponse.h>
+#include <tencentcloud/config/v20220802/model/DeleteAggregatorsRequest.h>
+#include <tencentcloud/config/v20220802/model/DeleteAggregatorsResponse.h>
 #include <tencentcloud/config/v20220802/model/DeleteAlarmPolicyRequest.h>
 #include <tencentcloud/config/v20220802/model/DeleteAlarmPolicyResponse.h>
 #include <tencentcloud/config/v20220802/model/DeleteCompliancePackRequest.h>
@@ -139,6 +141,8 @@
 #include <tencentcloud/config/v20220802/model/UpdateAggregateConfigDeliverResponse.h>
 #include <tencentcloud/config/v20220802/model/UpdateAggregateConfigRuleRequest.h>
 #include <tencentcloud/config/v20220802/model/UpdateAggregateConfigRuleResponse.h>
+#include <tencentcloud/config/v20220802/model/UpdateAggregatorRequest.h>
+#include <tencentcloud/config/v20220802/model/UpdateAggregatorResponse.h>
 #include <tencentcloud/config/v20220802/model/UpdateAlarmPolicyRequest.h>
 #include <tencentcloud/config/v20220802/model/UpdateAlarmPolicyResponse.h>
 #include <tencentcloud/config/v20220802/model/UpdateCompliancePackRequest.h>
@@ -203,6 +207,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAggregateConfigRuleResponse> DeleteAggregateConfigRuleOutcome;
                 typedef std::future<DeleteAggregateConfigRuleOutcome> DeleteAggregateConfigRuleOutcomeCallable;
                 typedef std::function<void(const ConfigClient*, const Model::DeleteAggregateConfigRuleRequest&, DeleteAggregateConfigRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAggregateConfigRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAggregatorsResponse> DeleteAggregatorsOutcome;
+                typedef std::future<DeleteAggregatorsOutcome> DeleteAggregatorsOutcomeCallable;
+                typedef std::function<void(const ConfigClient*, const Model::DeleteAggregatorsRequest&, DeleteAggregatorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAggregatorsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAlarmPolicyResponse> DeleteAlarmPolicyOutcome;
                 typedef std::future<DeleteAlarmPolicyOutcome> DeleteAlarmPolicyOutcomeCallable;
                 typedef std::function<void(const ConfigClient*, const Model::DeleteAlarmPolicyRequest&, DeleteAlarmPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAlarmPolicyAsyncHandler;
@@ -341,6 +348,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateAggregateConfigRuleResponse> UpdateAggregateConfigRuleOutcome;
                 typedef std::future<UpdateAggregateConfigRuleOutcome> UpdateAggregateConfigRuleOutcomeCallable;
                 typedef std::function<void(const ConfigClient*, const Model::UpdateAggregateConfigRuleRequest&, UpdateAggregateConfigRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAggregateConfigRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateAggregatorResponse> UpdateAggregatorOutcome;
+                typedef std::future<UpdateAggregatorOutcome> UpdateAggregatorOutcomeCallable;
+                typedef std::function<void(const ConfigClient*, const Model::UpdateAggregatorRequest&, UpdateAggregatorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAggregatorAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateAlarmPolicyResponse> UpdateAlarmPolicyOutcome;
                 typedef std::future<UpdateAlarmPolicyOutcome> UpdateAlarmPolicyOutcomeCallable;
                 typedef std::function<void(const ConfigClient*, const Model::UpdateAlarmPolicyRequest&, UpdateAlarmPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAlarmPolicyAsyncHandler;
@@ -472,6 +482,15 @@ namespace TencentCloud
                 DeleteAggregateConfigRuleOutcome DeleteAggregateConfigRule(const Model::DeleteAggregateConfigRuleRequest &request);
                 void DeleteAggregateConfigRuleAsync(const Model::DeleteAggregateConfigRuleRequest& request, const DeleteAggregateConfigRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAggregateConfigRuleOutcomeCallable DeleteAggregateConfigRuleCallable(const Model::DeleteAggregateConfigRuleRequest& request);
+
+                /**
+                 *删除账号组
+                 * @param req DeleteAggregatorsRequest
+                 * @return DeleteAggregatorsOutcome
+                 */
+                DeleteAggregatorsOutcome DeleteAggregators(const Model::DeleteAggregatorsRequest &request);
+                void DeleteAggregatorsAsync(const Model::DeleteAggregatorsRequest& request, const DeleteAggregatorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAggregatorsOutcomeCallable DeleteAggregatorsCallable(const Model::DeleteAggregatorsRequest& request);
 
                 /**
                  *删除告警规则
@@ -886,6 +905,15 @@ namespace TencentCloud
                 UpdateAggregateConfigRuleOutcome UpdateAggregateConfigRule(const Model::UpdateAggregateConfigRuleRequest &request);
                 void UpdateAggregateConfigRuleAsync(const Model::UpdateAggregateConfigRuleRequest& request, const UpdateAggregateConfigRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateAggregateConfigRuleOutcomeCallable UpdateAggregateConfigRuleCallable(const Model::UpdateAggregateConfigRuleRequest& request);
+
+                /**
+                 *编辑账号组
+                 * @param req UpdateAggregatorRequest
+                 * @return UpdateAggregatorOutcome
+                 */
+                UpdateAggregatorOutcome UpdateAggregator(const Model::UpdateAggregatorRequest &request);
+                void UpdateAggregatorAsync(const Model::UpdateAggregatorRequest& request, const UpdateAggregatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateAggregatorOutcomeCallable UpdateAggregatorCallable(const Model::UpdateAggregatorRequest& request);
 
                 /**
                  *更新告警规则

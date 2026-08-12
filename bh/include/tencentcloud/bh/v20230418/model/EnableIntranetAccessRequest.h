@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/bh/v20230418/model/ParamInitResourceSubnet.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取堡垒机实例id
-                     * @return ResourceId 堡垒机实例id
+                     * 获取<p>堡垒机实例id</p>
+                     * @return ResourceId <p>堡垒机实例id</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置堡垒机实例id
-                     * @param _resourceId 堡垒机实例id
+                     * 设置<p>堡垒机实例id</p>
+                     * @param _resourceId <p>堡垒机实例id</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取开通内网访问的vpc id
-                     * @return VpcId 开通内网访问的vpc id
+                     * 获取<p>开通内网访问的vpc id</p>
+                     * @return VpcId <p>开通内网访问的vpc id</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置开通内网访问的vpc id
-                     * @param _vpcId 开通内网访问的vpc id
+                     * 设置<p>开通内网访问的vpc id</p>
+                     * @param _vpcId <p>开通内网访问的vpc id</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -85,15 +86,57 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取vpc的网段
-                     * @return VpcCidrBlock vpc的网段
+                     * 获取<p>vpc名称</p>
+                     * @return VpcName <p>vpc名称</p>
+                     * 
+                     */
+                    std::string GetVpcName() const;
+
+                    /**
+                     * 设置<p>vpc名称</p>
+                     * @param _vpcName <p>vpc名称</p>
+                     * 
+                     */
+                    void SetVpcName(const std::string& _vpcName);
+
+                    /**
+                     * 判断参数 VpcName 是否已赋值
+                     * @return VpcName 是否已赋值
+                     * 
+                     */
+                    bool VpcNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>vpc地域</p>
+                     * @return VpcRegion <p>vpc地域</p>
+                     * 
+                     */
+                    std::string GetVpcRegion() const;
+
+                    /**
+                     * 设置<p>vpc地域</p>
+                     * @param _vpcRegion <p>vpc地域</p>
+                     * 
+                     */
+                    void SetVpcRegion(const std::string& _vpcRegion);
+
+                    /**
+                     * 判断参数 VpcRegion 是否已赋值
+                     * @return VpcRegion 是否已赋值
+                     * 
+                     */
+                    bool VpcRegionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>vpc的网段</p>
+                     * @return VpcCidrBlock <p>vpc的网段</p>
                      * 
                      */
                     std::string GetVpcCidrBlock() const;
 
                     /**
-                     * 设置vpc的网段
-                     * @param _vpcCidrBlock vpc的网段
+                     * 设置<p>vpc的网段</p>
+                     * @param _vpcCidrBlock <p>vpc的网段</p>
                      * 
                      */
                     void SetVpcCidrBlock(const std::string& _vpcCidrBlock);
@@ -106,36 +149,36 @@ namespace TencentCloud
                     bool VpcCidrBlockHasBeenSet() const;
 
                     /**
-                     * 获取开通内网访问的subnet id
-                     * @return SubnetId 开通内网访问的subnet id
-                     * 
+                     * 获取<p>开通内网访问的subnet id</p>
+                     * @return SubnetId <p>开通内网访问的subnet id</p>
+                     * @deprecated
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置开通内网访问的subnet id
-                     * @param _subnetId 开通内网访问的subnet id
-                     * 
+                     * 设置<p>开通内网访问的subnet id</p>
+                     * @param _subnetId <p>开通内网访问的subnet id</p>
+                     * @deprecated
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取内网ip的自定义域名，可为空
-                     * @return DomainName 内网ip的自定义域名，可为空
+                     * 获取<p>内网ip的自定义域名，可为空</p>
+                     * @return DomainName <p>内网ip的自定义域名，可为空</p>
                      * 
                      */
                     std::string GetDomainName() const;
 
                     /**
-                     * 设置内网ip的自定义域名，可为空
-                     * @param _domainName 内网ip的自定义域名，可为空
+                     * 设置<p>内网ip的自定义域名，可为空</p>
+                     * @param _domainName <p>内网ip的自定义域名，可为空</p>
                      * 
                      */
                     void SetDomainName(const std::string& _domainName);
@@ -147,37 +190,76 @@ namespace TencentCloud
                      */
                     bool DomainNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>开通内网的子网信息</p>
+                     * @return IntranetSubnets <p>开通内网的子网信息</p>
+                     * 
+                     */
+                    std::vector<ParamInitResourceSubnet> GetIntranetSubnets() const;
+
+                    /**
+                     * 设置<p>开通内网的子网信息</p>
+                     * @param _intranetSubnets <p>开通内网的子网信息</p>
+                     * 
+                     */
+                    void SetIntranetSubnets(const std::vector<ParamInitResourceSubnet>& _intranetSubnets);
+
+                    /**
+                     * 判断参数 IntranetSubnets 是否已赋值
+                     * @return IntranetSubnets 是否已赋值
+                     * 
+                     */
+                    bool IntranetSubnetsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 堡垒机实例id
+                     * <p>堡垒机实例id</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 开通内网访问的vpc id
+                     * <p>开通内网访问的vpc id</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * vpc的网段
+                     * <p>vpc名称</p>
+                     */
+                    std::string m_vpcName;
+                    bool m_vpcNameHasBeenSet;
+
+                    /**
+                     * <p>vpc地域</p>
+                     */
+                    std::string m_vpcRegion;
+                    bool m_vpcRegionHasBeenSet;
+
+                    /**
+                     * <p>vpc的网段</p>
                      */
                     std::string m_vpcCidrBlock;
                     bool m_vpcCidrBlockHasBeenSet;
 
                     /**
-                     * 开通内网访问的subnet id
+                     * <p>开通内网访问的subnet id</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 内网ip的自定义域名，可为空
+                     * <p>内网ip的自定义域名，可为空</p>
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
+
+                    /**
+                     * <p>开通内网的子网信息</p>
+                     */
+                    std::vector<ParamInitResourceSubnet> m_intranetSubnets;
+                    bool m_intranetSubnetsHasBeenSet;
 
                 };
             }

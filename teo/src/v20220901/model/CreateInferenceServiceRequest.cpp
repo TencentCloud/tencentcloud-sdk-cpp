@@ -28,6 +28,7 @@ CreateInferenceServiceRequest::CreateInferenceServiceRequest() :
     m_listenPortHasBeenSet(false),
     m_containersHasBeenSet(false),
     m_resourceConfigHasBeenSet(false),
+    m_affinityConfigHasBeenSet(false),
     m_requestPathsHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
@@ -86,6 +87,15 @@ string CreateInferenceServiceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_resourceConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_affinityConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AffinityConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_affinityConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_requestPathsHasBeenSet)
@@ -195,6 +205,22 @@ void CreateInferenceServiceRequest::SetResourceConfig(const InferenceResourceCon
 bool CreateInferenceServiceRequest::ResourceConfigHasBeenSet() const
 {
     return m_resourceConfigHasBeenSet;
+}
+
+InferenceAffinityConfig CreateInferenceServiceRequest::GetAffinityConfig() const
+{
+    return m_affinityConfig;
+}
+
+void CreateInferenceServiceRequest::SetAffinityConfig(const InferenceAffinityConfig& _affinityConfig)
+{
+    m_affinityConfig = _affinityConfig;
+    m_affinityConfigHasBeenSet = true;
+}
+
+bool CreateInferenceServiceRequest::AffinityConfigHasBeenSet() const
+{
+    return m_affinityConfigHasBeenSet;
 }
 
 vector<string> CreateInferenceServiceRequest::GetRequestPaths() const

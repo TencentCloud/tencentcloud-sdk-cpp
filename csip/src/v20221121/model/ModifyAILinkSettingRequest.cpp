@@ -31,7 +31,13 @@ ModifyAILinkSettingRequest::ModifyAILinkSettingRequest() :
     m_scopeHasBeenSet(false),
     m_quuidsHasBeenSet(false),
     m_excludeQuuidsHasBeenSet(false),
-    m_autoIncludeHasBeenSet(false)
+    m_autoIncludeHasBeenSet(false),
+    m_tagIDsHasBeenSet(false),
+    m_tCSSScopeHasBeenSet(false),
+    m_clusterIDsHasBeenSet(false),
+    m_excludeClusterIDsHasBeenSet(false),
+    m_instanceIdsHasBeenSet(false),
+    m_excludeInstanceIdsHasBeenSet(false)
 {
 }
 
@@ -127,6 +133,79 @@ string ModifyAILinkSettingRequest::ToJsonString() const
         string key = "AutoInclude";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoInclude, allocator);
+    }
+
+    if (m_tagIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagIDs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tagIDs.begin(); itr != m_tagIDs.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tCSSScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TCSSScope";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_tCSSScope, allocator);
+    }
+
+    if (m_clusterIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterIDs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_clusterIDs.begin(); itr != m_clusterIDs.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_excludeClusterIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludeClusterIDs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludeClusterIDs.begin(); itr != m_excludeClusterIDs.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_instanceIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_instanceIds.begin(); itr != m_instanceIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_excludeInstanceIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludeInstanceIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludeInstanceIds.begin(); itr != m_excludeInstanceIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -279,6 +358,102 @@ void ModifyAILinkSettingRequest::SetAutoInclude(const uint64_t& _autoInclude)
 bool ModifyAILinkSettingRequest::AutoIncludeHasBeenSet() const
 {
     return m_autoIncludeHasBeenSet;
+}
+
+vector<string> ModifyAILinkSettingRequest::GetTagIDs() const
+{
+    return m_tagIDs;
+}
+
+void ModifyAILinkSettingRequest::SetTagIDs(const vector<string>& _tagIDs)
+{
+    m_tagIDs = _tagIDs;
+    m_tagIDsHasBeenSet = true;
+}
+
+bool ModifyAILinkSettingRequest::TagIDsHasBeenSet() const
+{
+    return m_tagIDsHasBeenSet;
+}
+
+uint64_t ModifyAILinkSettingRequest::GetTCSSScope() const
+{
+    return m_tCSSScope;
+}
+
+void ModifyAILinkSettingRequest::SetTCSSScope(const uint64_t& _tCSSScope)
+{
+    m_tCSSScope = _tCSSScope;
+    m_tCSSScopeHasBeenSet = true;
+}
+
+bool ModifyAILinkSettingRequest::TCSSScopeHasBeenSet() const
+{
+    return m_tCSSScopeHasBeenSet;
+}
+
+vector<string> ModifyAILinkSettingRequest::GetClusterIDs() const
+{
+    return m_clusterIDs;
+}
+
+void ModifyAILinkSettingRequest::SetClusterIDs(const vector<string>& _clusterIDs)
+{
+    m_clusterIDs = _clusterIDs;
+    m_clusterIDsHasBeenSet = true;
+}
+
+bool ModifyAILinkSettingRequest::ClusterIDsHasBeenSet() const
+{
+    return m_clusterIDsHasBeenSet;
+}
+
+vector<string> ModifyAILinkSettingRequest::GetExcludeClusterIDs() const
+{
+    return m_excludeClusterIDs;
+}
+
+void ModifyAILinkSettingRequest::SetExcludeClusterIDs(const vector<string>& _excludeClusterIDs)
+{
+    m_excludeClusterIDs = _excludeClusterIDs;
+    m_excludeClusterIDsHasBeenSet = true;
+}
+
+bool ModifyAILinkSettingRequest::ExcludeClusterIDsHasBeenSet() const
+{
+    return m_excludeClusterIDsHasBeenSet;
+}
+
+vector<string> ModifyAILinkSettingRequest::GetInstanceIds() const
+{
+    return m_instanceIds;
+}
+
+void ModifyAILinkSettingRequest::SetInstanceIds(const vector<string>& _instanceIds)
+{
+    m_instanceIds = _instanceIds;
+    m_instanceIdsHasBeenSet = true;
+}
+
+bool ModifyAILinkSettingRequest::InstanceIdsHasBeenSet() const
+{
+    return m_instanceIdsHasBeenSet;
+}
+
+vector<string> ModifyAILinkSettingRequest::GetExcludeInstanceIds() const
+{
+    return m_excludeInstanceIds;
+}
+
+void ModifyAILinkSettingRequest::SetExcludeInstanceIds(const vector<string>& _excludeInstanceIds)
+{
+    m_excludeInstanceIds = _excludeInstanceIds;
+    m_excludeInstanceIdsHasBeenSet = true;
+}
+
+bool ModifyAILinkSettingRequest::ExcludeInstanceIdsHasBeenSet() const
+{
+    return m_excludeInstanceIdsHasBeenSet;
 }
 
 

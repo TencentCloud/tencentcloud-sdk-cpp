@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取cfs的实例的ID
-                     * @return Id cfs的实例的ID
+                     * 获取<p>cfs的实例的ID</p>
+                     * @return Id <p>cfs的实例的ID</p>
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置cfs的实例的ID
-                     * @param _id cfs的实例的ID
+                     * 设置<p>cfs的实例的ID</p>
+                     * @param _id <p>cfs的实例的ID</p>
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取存储的路径
-                     * @return Path 存储的路径
+                     * 获取<p>存储的路径</p>
+                     * @return Path <p>存储的路径</p>
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置存储的路径
-                     * @param _path 存储的路径
+                     * 设置<p>存储的路径</p>
+                     * @param _path <p>存储的路径</p>
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -89,18 +89,18 @@ namespace TencentCloud
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取cfs的挂载类型，可选值为：STORAGE、SOURCE 分别表示存储拓展模式和数据源模式，默认为 STORAGE
+                     * 获取<p>cfs的挂载类型，可选值为：STORAGE、SOURCE 分别表示存储拓展模式和数据源模式，默认为 STORAGE</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MountType cfs的挂载类型，可选值为：STORAGE、SOURCE 分别表示存储拓展模式和数据源模式，默认为 STORAGE
+                     * @return MountType <p>cfs的挂载类型，可选值为：STORAGE、SOURCE 分别表示存储拓展模式和数据源模式，默认为 STORAGE</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMountType() const;
 
                     /**
-                     * 设置cfs的挂载类型，可选值为：STORAGE、SOURCE 分别表示存储拓展模式和数据源模式，默认为 STORAGE
+                     * 设置<p>cfs的挂载类型，可选值为：STORAGE、SOURCE 分别表示存储拓展模式和数据源模式，默认为 STORAGE</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mountType cfs的挂载类型，可选值为：STORAGE、SOURCE 分别表示存储拓展模式和数据源模式，默认为 STORAGE
+                     * @param _mountType <p>cfs的挂载类型，可选值为：STORAGE、SOURCE 分别表示存储拓展模式和数据源模式，默认为 STORAGE</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -114,18 +114,18 @@ namespace TencentCloud
                     bool MountTypeHasBeenSet() const;
 
                     /**
-                     * 获取协议 1: NFS, 2: TURBO
+                     * 获取<p>协议 1: NFS, 2: TURBO</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Protocol 协议 1: NFS, 2: TURBO
+                     * @return Protocol <p>协议 1: NFS, 2: TURBO</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置协议 1: NFS, 2: TURBO
+                     * 设置<p>协议 1: NFS, 2: TURBO</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _protocol 协议 1: NFS, 2: TURBO
+                     * @param _protocol <p>协议 1: NFS, 2: TURBO</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -138,33 +138,60 @@ namespace TencentCloud
                      */
                     bool ProtocolHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否平台预置存储</p>
+                     * @return IsPresetStorage <p>是否平台预置存储</p>
+                     * 
+                     */
+                    bool GetIsPresetStorage() const;
+
+                    /**
+                     * 设置<p>是否平台预置存储</p>
+                     * @param _isPresetStorage <p>是否平台预置存储</p>
+                     * 
+                     */
+                    void SetIsPresetStorage(const bool& _isPresetStorage);
+
+                    /**
+                     * 判断参数 IsPresetStorage 是否已赋值
+                     * @return IsPresetStorage 是否已赋值
+                     * 
+                     */
+                    bool IsPresetStorageHasBeenSet() const;
+
                 private:
 
                     /**
-                     * cfs的实例的ID
+                     * <p>cfs的实例的ID</p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 存储的路径
+                     * <p>存储的路径</p>
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
-                     * cfs的挂载类型，可选值为：STORAGE、SOURCE 分别表示存储拓展模式和数据源模式，默认为 STORAGE
+                     * <p>cfs的挂载类型，可选值为：STORAGE、SOURCE 分别表示存储拓展模式和数据源模式，默认为 STORAGE</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mountType;
                     bool m_mountTypeHasBeenSet;
 
                     /**
-                     * 协议 1: NFS, 2: TURBO
+                     * <p>协议 1: NFS, 2: TURBO</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
+
+                    /**
+                     * <p>是否平台预置存储</p>
+                     */
+                    bool m_isPresetStorage;
+                    bool m_isPresetStorageHasBeenSet;
 
                 };
             }

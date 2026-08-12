@@ -536,6 +536,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/ModifyL7AccRuleResponse.h
   include/tencentcloud/teo/v20220901/model/FileAscriptionInfo.h
   include/tencentcloud/teo/v20220901/model/CreateRealtimeLogDeliveryTaskResponse.h
+  include/tencentcloud/teo/v20220901/model/SessionIdAffinityConfig.h
   include/tencentcloud/teo/v20220901/model/DescribeTopL7CacheDataResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeFunctionRuntimeEnvironmentResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeInferenceServiceDeploymentLogsRequest.h
@@ -736,6 +737,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/ErrorPage.h
   include/tencentcloud/teo/v20220901/model/APIResource.h
   include/tencentcloud/teo/v20220901/model/HTTP2Parameters.h
+  include/tencentcloud/teo/v20220901/model/InferenceAffinityConfig.h
   include/tencentcloud/teo/v20220901/model/DescribeOverviewL7DataRequest.h
   include/tencentcloud/teo/v20220901/model/CreateMultiPathGatewayRequest.h
   include/tencentcloud/teo/v20220901/model/DeleteSharedCNAMEResponse.h
@@ -1402,6 +1404,7 @@ set(teo_src
   src/v20220901/model/ModifyL7AccRuleResponse.cpp
   src/v20220901/model/FileAscriptionInfo.cpp
   src/v20220901/model/CreateRealtimeLogDeliveryTaskResponse.cpp
+  src/v20220901/model/SessionIdAffinityConfig.cpp
   src/v20220901/model/DescribeTopL7CacheDataResponse.cpp
   src/v20220901/model/DescribeFunctionRuntimeEnvironmentResponse.cpp
   src/v20220901/model/DescribeInferenceServiceDeploymentLogsRequest.cpp
@@ -1602,6 +1605,7 @@ set(teo_src
   src/v20220901/model/ErrorPage.cpp
   src/v20220901/model/APIResource.cpp
   src/v20220901/model/HTTP2Parameters.cpp
+  src/v20220901/model/InferenceAffinityConfig.cpp
   src/v20220901/model/DescribeOverviewL7DataRequest.cpp
   src/v20220901/model/CreateMultiPathGatewayRequest.cpp
   src/v20220901/model/DeleteSharedCNAMEResponse.cpp

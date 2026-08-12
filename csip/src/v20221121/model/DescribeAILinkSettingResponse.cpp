@@ -31,7 +31,13 @@ DescribeAILinkSettingResponse::DescribeAILinkSettingResponse() :
     m_scopeHasBeenSet(false),
     m_quuidsHasBeenSet(false),
     m_excludeQuuidsHasBeenSet(false),
-    m_autoIncludeHasBeenSet(false)
+    m_autoIncludeHasBeenSet(false),
+    m_tagIDsHasBeenSet(false),
+    m_tCSSScopeHasBeenSet(false),
+    m_clusterIDsHasBeenSet(false),
+    m_excludeClusterIDsHasBeenSet(false),
+    m_instanceIdsHasBeenSet(false),
+    m_excludeInstanceIdsHasBeenSet(false)
 {
 }
 
@@ -155,6 +161,81 @@ CoreInternalOutcome DescribeAILinkSettingResponse::Deserialize(const string &pay
         m_autoIncludeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TagIDs") && !rsp["TagIDs"].IsNull())
+    {
+        if (!rsp["TagIDs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TagIDs` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["TagIDs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_tagIDs.push_back((*itr).GetString());
+        }
+        m_tagIDsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TCSSScope") && !rsp["TCSSScope"].IsNull())
+    {
+        if (!rsp["TCSSScope"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TCSSScope` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tCSSScope = rsp["TCSSScope"].GetUint64();
+        m_tCSSScopeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ClusterIDs") && !rsp["ClusterIDs"].IsNull())
+    {
+        if (!rsp["ClusterIDs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClusterIDs` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ClusterIDs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_clusterIDs.push_back((*itr).GetString());
+        }
+        m_clusterIDsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ExcludeClusterIDs") && !rsp["ExcludeClusterIDs"].IsNull())
+    {
+        if (!rsp["ExcludeClusterIDs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExcludeClusterIDs` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ExcludeClusterIDs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_excludeClusterIDs.push_back((*itr).GetString());
+        }
+        m_excludeClusterIDsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("InstanceIds") && !rsp["InstanceIds"].IsNull())
+    {
+        if (!rsp["InstanceIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["InstanceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_instanceIds.push_back((*itr).GetString());
+        }
+        m_instanceIdsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ExcludeInstanceIds") && !rsp["ExcludeInstanceIds"].IsNull())
+    {
+        if (!rsp["ExcludeInstanceIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExcludeInstanceIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ExcludeInstanceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_excludeInstanceIds.push_back((*itr).GetString());
+        }
+        m_excludeInstanceIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -237,6 +318,79 @@ string DescribeAILinkSettingResponse::ToJsonString() const
         string key = "AutoInclude";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoInclude, allocator);
+    }
+
+    if (m_tagIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagIDs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tagIDs.begin(); itr != m_tagIDs.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tCSSScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TCSSScope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tCSSScope, allocator);
+    }
+
+    if (m_clusterIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterIDs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_clusterIDs.begin(); itr != m_clusterIDs.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_excludeClusterIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludeClusterIDs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludeClusterIDs.begin(); itr != m_excludeClusterIDs.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_instanceIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_instanceIds.begin(); itr != m_instanceIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_excludeInstanceIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludeInstanceIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludeInstanceIds.begin(); itr != m_excludeInstanceIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -329,6 +483,66 @@ uint64_t DescribeAILinkSettingResponse::GetAutoInclude() const
 bool DescribeAILinkSettingResponse::AutoIncludeHasBeenSet() const
 {
     return m_autoIncludeHasBeenSet;
+}
+
+vector<string> DescribeAILinkSettingResponse::GetTagIDs() const
+{
+    return m_tagIDs;
+}
+
+bool DescribeAILinkSettingResponse::TagIDsHasBeenSet() const
+{
+    return m_tagIDsHasBeenSet;
+}
+
+uint64_t DescribeAILinkSettingResponse::GetTCSSScope() const
+{
+    return m_tCSSScope;
+}
+
+bool DescribeAILinkSettingResponse::TCSSScopeHasBeenSet() const
+{
+    return m_tCSSScopeHasBeenSet;
+}
+
+vector<string> DescribeAILinkSettingResponse::GetClusterIDs() const
+{
+    return m_clusterIDs;
+}
+
+bool DescribeAILinkSettingResponse::ClusterIDsHasBeenSet() const
+{
+    return m_clusterIDsHasBeenSet;
+}
+
+vector<string> DescribeAILinkSettingResponse::GetExcludeClusterIDs() const
+{
+    return m_excludeClusterIDs;
+}
+
+bool DescribeAILinkSettingResponse::ExcludeClusterIDsHasBeenSet() const
+{
+    return m_excludeClusterIDsHasBeenSet;
+}
+
+vector<string> DescribeAILinkSettingResponse::GetInstanceIds() const
+{
+    return m_instanceIds;
+}
+
+bool DescribeAILinkSettingResponse::InstanceIdsHasBeenSet() const
+{
+    return m_instanceIdsHasBeenSet;
+}
+
+vector<string> DescribeAILinkSettingResponse::GetExcludeInstanceIds() const
+{
+    return m_excludeInstanceIds;
+}
+
+bool DescribeAILinkSettingResponse::ExcludeInstanceIdsHasBeenSet() const
+{
+    return m_excludeInstanceIdsHasBeenSet;
 }
 
 

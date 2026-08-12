@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/bh/v20230418/model/ParamInitResourceSubnet.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要开通服务的资源ID
-                     * @return ResourceId 需要开通服务的资源ID
+                     * 获取<p>需要开通服务的资源ID</p>
+                     * @return ResourceId <p>需要开通服务的资源ID</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置需要开通服务的资源ID
-                     * @param _resourceId 需要开通服务的资源ID
+                     * 设置<p>需要开通服务的资源ID</p>
+                     * @param _resourceId <p>需要开通服务的资源ID</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取需要开通服务的地域
-                     * @return ApCode 需要开通服务的地域
+                     * 获取<p>需要开通服务的地域</p>
+                     * @return ApCode <p>需要开通服务的地域</p>
                      * 
                      */
                     std::string GetApCode() const;
 
                     /**
-                     * 设置需要开通服务的地域
-                     * @param _apCode 需要开通服务的地域
+                     * 设置<p>需要开通服务的地域</p>
+                     * @param _apCode <p>需要开通服务的地域</p>
                      * 
                      */
                     void SetApCode(const std::string& _apCode);
@@ -85,15 +86,15 @@ namespace TencentCloud
                     bool ApCodeHasBeenSet() const;
 
                     /**
-                     * 获取子网所在可用区
-                     * @return Zone 子网所在可用区
+                     * 获取<p>子网所在可用区</p>
+                     * @return Zone <p>子网所在可用区</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置子网所在可用区
-                     * @param _zone 子网所在可用区
+                     * 设置<p>子网所在可用区</p>
+                     * @param _zone <p>子网所在可用区</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -106,15 +107,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取需要开通服务的VPC
-                     * @return VpcId 需要开通服务的VPC
+                     * 获取<p>需要开通服务的VPC</p>
+                     * @return VpcId <p>需要开通服务的VPC</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置需要开通服务的VPC
-                     * @param _vpcId 需要开通服务的VPC
+                     * 设置<p>需要开通服务的VPC</p>
+                     * @param _vpcId <p>需要开通服务的VPC</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -127,15 +128,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取需要开通服务的子网ID
-                     * @return SubnetId 需要开通服务的子网ID
+                     * 获取<p>需要开通服务的子网ID</p>
+                     * @return SubnetId <p>需要开通服务的子网ID</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置需要开通服务的子网ID
-                     * @param _subnetId 需要开通服务的子网ID
+                     * 设置<p>需要开通服务的子网ID</p>
+                     * @param _subnetId <p>需要开通服务的子网ID</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -148,15 +149,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取需要开通服务的子网网段
-                     * @return CidrBlock 需要开通服务的子网网段
+                     * 获取<p>需要开通服务的子网网段</p>
+                     * @return CidrBlock <p>需要开通服务的子网网段</p>
                      * 
                      */
                     std::string GetCidrBlock() const;
 
                     /**
-                     * 设置需要开通服务的子网网段
-                     * @param _cidrBlock 需要开通服务的子网网段
+                     * 设置<p>需要开通服务的子网网段</p>
+                     * @param _cidrBlock <p>需要开通服务的子网网段</p>
                      * 
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
@@ -169,15 +170,15 @@ namespace TencentCloud
                     bool CidrBlockHasBeenSet() const;
 
                     /**
-                     * 获取需要开通服务的VPC名称
-                     * @return VpcName 需要开通服务的VPC名称
+                     * 获取<p>需要开通服务的VPC名称</p>
+                     * @return VpcName <p>需要开通服务的VPC名称</p>
                      * 
                      */
                     std::string GetVpcName() const;
 
                     /**
-                     * 设置需要开通服务的VPC名称
-                     * @param _vpcName 需要开通服务的VPC名称
+                     * 设置<p>需要开通服务的VPC名称</p>
+                     * @param _vpcName <p>需要开通服务的VPC名称</p>
                      * 
                      */
                     void SetVpcName(const std::string& _vpcName);
@@ -190,15 +191,15 @@ namespace TencentCloud
                     bool VpcNameHasBeenSet() const;
 
                     /**
-                     * 获取需要开通服务的VPC对应的网段
-                     * @return VpcCidrBlock 需要开通服务的VPC对应的网段
+                     * 获取<p>需要开通服务的VPC对应的网段</p>
+                     * @return VpcCidrBlock <p>需要开通服务的VPC对应的网段</p>
                      * 
                      */
                     std::string GetVpcCidrBlock() const;
 
                     /**
-                     * 设置需要开通服务的VPC对应的网段
-                     * @param _vpcCidrBlock 需要开通服务的VPC对应的网段
+                     * 设置<p>需要开通服务的VPC对应的网段</p>
+                     * @param _vpcCidrBlock <p>需要开通服务的VPC对应的网段</p>
                      * 
                      */
                     void SetVpcCidrBlock(const std::string& _vpcCidrBlock);
@@ -211,15 +212,15 @@ namespace TencentCloud
                     bool VpcCidrBlockHasBeenSet() const;
 
                     /**
-                     * 获取需要开通服务的子网名称
-                     * @return SubnetName 需要开通服务的子网名称
+                     * 获取<p>需要开通服务的子网名称</p>
+                     * @return SubnetName <p>需要开通服务的子网名称</p>
                      * 
                      */
                     std::string GetSubnetName() const;
 
                     /**
-                     * 设置需要开通服务的子网名称
-                     * @param _subnetName 需要开通服务的子网名称
+                     * 设置<p>需要开通服务的子网名称</p>
+                     * @param _subnetName <p>需要开通服务的子网名称</p>
                      * 
                      */
                     void SetSubnetName(const std::string& _subnetName);
@@ -232,15 +233,15 @@ namespace TencentCloud
                     bool SubnetNameHasBeenSet() const;
 
                     /**
-                     * 获取需要开通实例所属的CDC集群ID
-                     * @return CdcClusterId 需要开通实例所属的CDC集群ID
+                     * 获取<p>需要开通实例所属的CDC集群ID</p>
+                     * @return CdcClusterId <p>需要开通实例所属的CDC集群ID</p>
                      * 
                      */
                     std::string GetCdcClusterId() const;
 
                     /**
-                     * 设置需要开通实例所属的CDC集群ID
-                     * @param _cdcClusterId 需要开通实例所属的CDC集群ID
+                     * 设置<p>需要开通实例所属的CDC集群ID</p>
+                     * @param _cdcClusterId <p>需要开通实例所属的CDC集群ID</p>
                      * 
                      */
                     void SetCdcClusterId(const std::string& _cdcClusterId);
@@ -253,15 +254,15 @@ namespace TencentCloud
                     bool CdcClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取开通堡垒机指定共享的clbId
-                     * @return ShareClbId 开通堡垒机指定共享的clbId
+                     * 获取<p>开通堡垒机指定共享的clbId</p>
+                     * @return ShareClbId <p>开通堡垒机指定共享的clbId</p>
                      * 
                      */
                     std::string GetShareClbId() const;
 
                     /**
-                     * 设置开通堡垒机指定共享的clbId
-                     * @param _shareClbId 开通堡垒机指定共享的clbId
+                     * 设置<p>开通堡垒机指定共享的clbId</p>
+                     * @param _shareClbId <p>开通堡垒机指定共享的clbId</p>
                      * 
                      */
                     void SetShareClbId(const std::string& _shareClbId);
@@ -274,15 +275,15 @@ namespace TencentCloud
                     bool ShareClbIdHasBeenSet() const;
 
                     /**
-                     * 获取0-关闭web访问堡垒机，1-开启web访问堡垒机
-                     * @return WebAccess 0-关闭web访问堡垒机，1-开启web访问堡垒机
+                     * 获取<p>0-关闭web访问堡垒机，1-开启web访问堡垒机</p>
+                     * @return WebAccess <p>0-关闭web访问堡垒机，1-开启web访问堡垒机</p>
                      * 
                      */
                     uint64_t GetWebAccess() const;
 
                     /**
-                     * 设置0-关闭web访问堡垒机，1-开启web访问堡垒机
-                     * @param _webAccess 0-关闭web访问堡垒机，1-开启web访问堡垒机
+                     * 设置<p>0-关闭web访问堡垒机，1-开启web访问堡垒机</p>
+                     * @param _webAccess <p>0-关闭web访问堡垒机，1-开启web访问堡垒机</p>
                      * 
                      */
                     void SetWebAccess(const uint64_t& _webAccess);
@@ -295,15 +296,15 @@ namespace TencentCloud
                     bool WebAccessHasBeenSet() const;
 
                     /**
-                     * 获取0-关闭客户端访问堡垒机，1-开启客户端访问堡垒机
-                     * @return ClientAccess 0-关闭客户端访问堡垒机，1-开启客户端访问堡垒机
+                     * 获取<p>0-关闭客户端访问堡垒机，1-开启客户端访问堡垒机</p>
+                     * @return ClientAccess <p>0-关闭客户端访问堡垒机，1-开启客户端访问堡垒机</p>
                      * 
                      */
                     uint64_t GetClientAccess() const;
 
                     /**
-                     * 设置0-关闭客户端访问堡垒机，1-开启客户端访问堡垒机
-                     * @param _clientAccess 0-关闭客户端访问堡垒机，1-开启客户端访问堡垒机
+                     * 设置<p>0-关闭客户端访问堡垒机，1-开启客户端访问堡垒机</p>
+                     * @param _clientAccess <p>0-关闭客户端访问堡垒机，1-开启客户端访问堡垒机</p>
                      * 
                      */
                     void SetClientAccess(const uint64_t& _clientAccess);
@@ -316,15 +317,15 @@ namespace TencentCloud
                     bool ClientAccessHasBeenSet() const;
 
                     /**
-                     * 获取0-关闭内网访问堡垒机，1-开启内网访问堡垒机
-                     * @return IntranetAccess 0-关闭内网访问堡垒机，1-开启内网访问堡垒机
+                     * 获取<p>0-关闭内网访问堡垒机，1-开启内网访问堡垒机</p>
+                     * @return IntranetAccess <p>0-关闭内网访问堡垒机，1-开启内网访问堡垒机</p>
                      * 
                      */
                     uint64_t GetIntranetAccess() const;
 
                     /**
-                     * 设置0-关闭内网访问堡垒机，1-开启内网访问堡垒机
-                     * @param _intranetAccess 0-关闭内网访问堡垒机，1-开启内网访问堡垒机
+                     * 设置<p>0-关闭内网访问堡垒机，1-开启内网访问堡垒机</p>
+                     * @param _intranetAccess <p>0-关闭内网访问堡垒机，1-开启内网访问堡垒机</p>
                      * 
                      */
                     void SetIntranetAccess(const uint64_t& _intranetAccess);
@@ -337,15 +338,15 @@ namespace TencentCloud
                     bool IntranetAccessHasBeenSet() const;
 
                     /**
-                     * 获取0-关闭公网访问堡垒机，1-开启公网访问堡垒机
-                     * @return ExternalAccess 0-关闭公网访问堡垒机，1-开启公网访问堡垒机
+                     * 获取<p>0-关闭公网访问堡垒机，1-开启公网访问堡垒机</p>
+                     * @return ExternalAccess <p>0-关闭公网访问堡垒机，1-开启公网访问堡垒机</p>
                      * 
                      */
                     uint64_t GetExternalAccess() const;
 
                     /**
-                     * 设置0-关闭公网访问堡垒机，1-开启公网访问堡垒机
-                     * @param _externalAccess 0-关闭公网访问堡垒机，1-开启公网访问堡垒机
+                     * 设置<p>0-关闭公网访问堡垒机，1-开启公网访问堡垒机</p>
+                     * @param _externalAccess <p>0-关闭公网访问堡垒机，1-开启公网访问堡垒机</p>
                      * 
                      */
                     void SetExternalAccess(const uint64_t& _externalAccess);
@@ -357,97 +358,232 @@ namespace TencentCloud
                      */
                     bool ExternalAccessHasBeenSet() const;
 
+                    /**
+                     * 获取<p>开通堡垒机的子网信息</p>
+                     * @return DeploySubnets <p>开通堡垒机的子网信息</p>
+                     * 
+                     */
+                    std::vector<ParamInitResourceSubnet> GetDeploySubnets() const;
+
+                    /**
+                     * 设置<p>开通堡垒机的子网信息</p>
+                     * @param _deploySubnets <p>开通堡垒机的子网信息</p>
+                     * 
+                     */
+                    void SetDeploySubnets(const std::vector<ParamInitResourceSubnet>& _deploySubnets);
+
+                    /**
+                     * 判断参数 DeploySubnets 是否已赋值
+                     * @return DeploySubnets 是否已赋值
+                     * 
+                     */
+                    bool DeploySubnetsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>开通内网访问的VPC ID</p>
+                     * @return IntranetVpcId <p>开通内网访问的VPC ID</p>
+                     * 
+                     */
+                    std::string GetIntranetVpcId() const;
+
+                    /**
+                     * 设置<p>开通内网访问的VPC ID</p>
+                     * @param _intranetVpcId <p>开通内网访问的VPC ID</p>
+                     * 
+                     */
+                    void SetIntranetVpcId(const std::string& _intranetVpcId);
+
+                    /**
+                     * 判断参数 IntranetVpcId 是否已赋值
+                     * @return IntranetVpcId 是否已赋值
+                     * 
+                     */
+                    bool IntranetVpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>开通内网访问的VPC 网段</p>
+                     * @return IntranetVpcCidrBlock <p>开通内网访问的VPC 网段</p>
+                     * 
+                     */
+                    std::string GetIntranetVpcCidrBlock() const;
+
+                    /**
+                     * 设置<p>开通内网访问的VPC 网段</p>
+                     * @param _intranetVpcCidrBlock <p>开通内网访问的VPC 网段</p>
+                     * 
+                     */
+                    void SetIntranetVpcCidrBlock(const std::string& _intranetVpcCidrBlock);
+
+                    /**
+                     * 判断参数 IntranetVpcCidrBlock 是否已赋值
+                     * @return IntranetVpcCidrBlock 是否已赋值
+                     * 
+                     */
+                    bool IntranetVpcCidrBlockHasBeenSet() const;
+
+                    /**
+                     * 获取<p>开通内网访问的VPC名称</p>
+                     * @return IntranetVpcName <p>开通内网访问的VPC名称</p>
+                     * 
+                     */
+                    std::string GetIntranetVpcName() const;
+
+                    /**
+                     * 设置<p>开通内网访问的VPC名称</p>
+                     * @param _intranetVpcName <p>开通内网访问的VPC名称</p>
+                     * 
+                     */
+                    void SetIntranetVpcName(const std::string& _intranetVpcName);
+
+                    /**
+                     * 判断参数 IntranetVpcName 是否已赋值
+                     * @return IntranetVpcName 是否已赋值
+                     * 
+                     */
+                    bool IntranetVpcNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>开通内网访问的子网信息</p>
+                     * @return IntranetSubnets <p>开通内网访问的子网信息</p>
+                     * 
+                     */
+                    std::vector<ParamInitResourceSubnet> GetIntranetSubnets() const;
+
+                    /**
+                     * 设置<p>开通内网访问的子网信息</p>
+                     * @param _intranetSubnets <p>开通内网访问的子网信息</p>
+                     * 
+                     */
+                    void SetIntranetSubnets(const std::vector<ParamInitResourceSubnet>& _intranetSubnets);
+
+                    /**
+                     * 判断参数 IntranetSubnets 是否已赋值
+                     * @return IntranetSubnets 是否已赋值
+                     * 
+                     */
+                    bool IntranetSubnetsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 需要开通服务的资源ID
+                     * <p>需要开通服务的资源ID</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 需要开通服务的地域
+                     * <p>需要开通服务的地域</p>
                      */
                     std::string m_apCode;
                     bool m_apCodeHasBeenSet;
 
                     /**
-                     * 子网所在可用区
+                     * <p>子网所在可用区</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 需要开通服务的VPC
+                     * <p>需要开通服务的VPC</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 需要开通服务的子网ID
+                     * <p>需要开通服务的子网ID</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 需要开通服务的子网网段
+                     * <p>需要开通服务的子网网段</p>
                      */
                     std::string m_cidrBlock;
                     bool m_cidrBlockHasBeenSet;
 
                     /**
-                     * 需要开通服务的VPC名称
+                     * <p>需要开通服务的VPC名称</p>
                      */
                     std::string m_vpcName;
                     bool m_vpcNameHasBeenSet;
 
                     /**
-                     * 需要开通服务的VPC对应的网段
+                     * <p>需要开通服务的VPC对应的网段</p>
                      */
                     std::string m_vpcCidrBlock;
                     bool m_vpcCidrBlockHasBeenSet;
 
                     /**
-                     * 需要开通服务的子网名称
+                     * <p>需要开通服务的子网名称</p>
                      */
                     std::string m_subnetName;
                     bool m_subnetNameHasBeenSet;
 
                     /**
-                     * 需要开通实例所属的CDC集群ID
+                     * <p>需要开通实例所属的CDC集群ID</p>
                      */
                     std::string m_cdcClusterId;
                     bool m_cdcClusterIdHasBeenSet;
 
                     /**
-                     * 开通堡垒机指定共享的clbId
+                     * <p>开通堡垒机指定共享的clbId</p>
                      */
                     std::string m_shareClbId;
                     bool m_shareClbIdHasBeenSet;
 
                     /**
-                     * 0-关闭web访问堡垒机，1-开启web访问堡垒机
+                     * <p>0-关闭web访问堡垒机，1-开启web访问堡垒机</p>
                      */
                     uint64_t m_webAccess;
                     bool m_webAccessHasBeenSet;
 
                     /**
-                     * 0-关闭客户端访问堡垒机，1-开启客户端访问堡垒机
+                     * <p>0-关闭客户端访问堡垒机，1-开启客户端访问堡垒机</p>
                      */
                     uint64_t m_clientAccess;
                     bool m_clientAccessHasBeenSet;
 
                     /**
-                     * 0-关闭内网访问堡垒机，1-开启内网访问堡垒机
+                     * <p>0-关闭内网访问堡垒机，1-开启内网访问堡垒机</p>
                      */
                     uint64_t m_intranetAccess;
                     bool m_intranetAccessHasBeenSet;
 
                     /**
-                     * 0-关闭公网访问堡垒机，1-开启公网访问堡垒机
+                     * <p>0-关闭公网访问堡垒机，1-开启公网访问堡垒机</p>
                      */
                     uint64_t m_externalAccess;
                     bool m_externalAccessHasBeenSet;
+
+                    /**
+                     * <p>开通堡垒机的子网信息</p>
+                     */
+                    std::vector<ParamInitResourceSubnet> m_deploySubnets;
+                    bool m_deploySubnetsHasBeenSet;
+
+                    /**
+                     * <p>开通内网访问的VPC ID</p>
+                     */
+                    std::string m_intranetVpcId;
+                    bool m_intranetVpcIdHasBeenSet;
+
+                    /**
+                     * <p>开通内网访问的VPC 网段</p>
+                     */
+                    std::string m_intranetVpcCidrBlock;
+                    bool m_intranetVpcCidrBlockHasBeenSet;
+
+                    /**
+                     * <p>开通内网访问的VPC名称</p>
+                     */
+                    std::string m_intranetVpcName;
+                    bool m_intranetVpcNameHasBeenSet;
+
+                    /**
+                     * <p>开通内网访问的子网信息</p>
+                     */
+                    std::vector<ParamInitResourceSubnet> m_intranetSubnets;
+                    bool m_intranetSubnetsHasBeenSet;
 
                 };
             }

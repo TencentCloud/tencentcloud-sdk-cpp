@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 地域信息
+                * 云资产所在地域信息。
                 */
                 class RegionInfo : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>地域</p>
-                     * @return Region <p>地域</p>
+                     * 获取地域标志，如 ap-guangzhou、ap-shanghai、ap-beijing。
+                     * @return Region 地域标志，如 ap-guangzhou、ap-shanghai、ap-beijing。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置<p>地域</p>
-                     * @param _region <p>地域</p>
+                     * 设置地域标志，如 ap-guangzhou、ap-shanghai、ap-beijing。
+                     * @param _region 地域标志，如 ap-guangzhou、ap-shanghai、ap-beijing。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -68,57 +68,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取<p>地域编码</p>
-                     * @return RegionCode <p>地域编码</p>
-                     * 
-                     */
-                    std::string GetRegionCode() const;
-
-                    /**
-                     * 设置<p>地域编码</p>
-                     * @param _regionCode <p>地域编码</p>
-                     * 
-                     */
-                    void SetRegionCode(const std::string& _regionCode);
-
-                    /**
-                     * 判断参数 RegionCode 是否已赋值
-                     * @return RegionCode 是否已赋值
-                     * 
-                     */
-                    bool RegionCodeHasBeenSet() const;
-
-                    /**
-                     * 获取<p>地域ID</p>
-                     * @return RegionId <p>地域ID</p>
-                     * 
-                     */
-                    uint64_t GetRegionId() const;
-
-                    /**
-                     * 设置<p>地域ID</p>
-                     * @param _regionId <p>地域ID</p>
-                     * 
-                     */
-                    void SetRegionId(const uint64_t& _regionId);
-
-                    /**
-                     * 判断参数 RegionId 是否已赋值
-                     * @return RegionId 是否已赋值
-                     * 
-                     */
-                    bool RegionIdHasBeenSet() const;
-
-                    /**
-                     * 获取<p>地域名称</p>
-                     * @return RegionName <p>地域名称</p>
+                     * 获取地域中文名，如华南地区（广州）、华东地区（上海）、华北地区（北京）。
+                     * @return RegionName 地域中文名，如华南地区（广州）、华东地区（上海）、华北地区（北京）。
                      * 
                      */
                     std::string GetRegionName() const;
 
                     /**
-                     * 设置<p>地域名称</p>
-                     * @param _regionName <p>地域名称</p>
+                     * 设置地域中文名，如华南地区（广州）、华东地区（上海）、华北地区（北京）。
+                     * @param _regionName 地域中文名，如华南地区（广州）、华东地区（上海）、华北地区（北京）。
                      * 
                      */
                     void SetRegionName(const std::string& _regionName);
@@ -131,15 +89,57 @@ namespace TencentCloud
                     bool RegionNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>地域英文名称</p>
-                     * @return RegionNameEn <p>地域英文名称</p>
+                     * 获取地域数字 ID。
+                     * @return RegionId 地域数字 ID。
+                     * 
+                     */
+                    uint64_t GetRegionId() const;
+
+                    /**
+                     * 设置地域数字 ID。
+                     * @param _regionId 地域数字 ID。
+                     * 
+                     */
+                    void SetRegionId(const uint64_t& _regionId);
+
+                    /**
+                     * 判断参数 RegionId 是否已赋值
+                     * @return RegionId 是否已赋值
+                     * 
+                     */
+                    bool RegionIdHasBeenSet() const;
+
+                    /**
+                     * 获取地域简码，如 gz、sh、bj。
+                     * @return RegionCode 地域简码，如 gz、sh、bj。
+                     * 
+                     */
+                    std::string GetRegionCode() const;
+
+                    /**
+                     * 设置地域简码，如 gz、sh、bj。
+                     * @param _regionCode 地域简码，如 gz、sh、bj。
+                     * 
+                     */
+                    void SetRegionCode(const std::string& _regionCode);
+
+                    /**
+                     * 判断参数 RegionCode 是否已赋值
+                     * @return RegionCode 是否已赋值
+                     * 
+                     */
+                    bool RegionCodeHasBeenSet() const;
+
+                    /**
+                     * 获取地域英文名。
+                     * @return RegionNameEn 地域英文名。
                      * 
                      */
                     std::string GetRegionNameEn() const;
 
                     /**
-                     * 设置<p>地域英文名称</p>
-                     * @param _regionNameEn <p>地域英文名称</p>
+                     * 设置地域英文名。
+                     * @param _regionNameEn 地域英文名。
                      * 
                      */
                     void SetRegionNameEn(const std::string& _regionNameEn);
@@ -154,31 +154,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>地域</p>
+                     * 地域标志，如 ap-guangzhou、ap-shanghai、ap-beijing。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * <p>地域编码</p>
-                     */
-                    std::string m_regionCode;
-                    bool m_regionCodeHasBeenSet;
-
-                    /**
-                     * <p>地域ID</p>
-                     */
-                    uint64_t m_regionId;
-                    bool m_regionIdHasBeenSet;
-
-                    /**
-                     * <p>地域名称</p>
+                     * 地域中文名，如华南地区（广州）、华东地区（上海）、华北地区（北京）。
                      */
                     std::string m_regionName;
                     bool m_regionNameHasBeenSet;
 
                     /**
-                     * <p>地域英文名称</p>
+                     * 地域数字 ID。
+                     */
+                    uint64_t m_regionId;
+                    bool m_regionIdHasBeenSet;
+
+                    /**
+                     * 地域简码，如 gz、sh、bj。
+                     */
+                    std::string m_regionCode;
+                    bool m_regionCodeHasBeenSet;
+
+                    /**
+                     * 地域英文名。
                      */
                     std::string m_regionNameEn;
                     bool m_regionNameEnHasBeenSet;

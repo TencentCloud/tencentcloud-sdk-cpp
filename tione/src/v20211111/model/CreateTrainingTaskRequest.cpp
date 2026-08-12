@@ -51,7 +51,8 @@ CreateTrainingTaskRequest::CreateTrainingTaskRequest() :
     m_exposeNetworkConfigHasBeenSet(false),
     m_envsHasBeenSet(false),
     m_trainToolConfigHasBeenSet(false),
-    m_resourceSupplyAttributeHasBeenSet(false)
+    m_resourceSupplyAttributeHasBeenSet(false),
+    m_queuesHasBeenSet(false)
 {
 }
 
@@ -336,6 +337,19 @@ string CreateTrainingTaskRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_resourceSupplyAttribute.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_queuesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Queues";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_queues.begin(); itr != m_queues.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -808,6 +822,22 @@ void CreateTrainingTaskRequest::SetResourceSupplyAttribute(const ResourceSupplyA
 bool CreateTrainingTaskRequest::ResourceSupplyAttributeHasBeenSet() const
 {
     return m_resourceSupplyAttributeHasBeenSet;
+}
+
+vector<string> CreateTrainingTaskRequest::GetQueues() const
+{
+    return m_queues;
+}
+
+void CreateTrainingTaskRequest::SetQueues(const vector<string>& _queues)
+{
+    m_queues = _queues;
+    m_queuesHasBeenSet = true;
+}
+
+bool CreateTrainingTaskRequest::QueuesHasBeenSet() const
+{
+    return m_queuesHasBeenSet;
 }
 
 

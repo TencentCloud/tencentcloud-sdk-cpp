@@ -116,28 +116,28 @@ namespace TencentCloud
                     /**
                      * 获取<p>自选主机Quuid列表</p>
                      * @return Quuids <p>自选主机Quuid列表</p>
-                     * 
+                     * @deprecated
                      */
                     std::vector<std::string> GetQuuids() const;
 
                     /**
                      * 判断参数 Quuids 是否已赋值
                      * @return Quuids 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool QuuidsHasBeenSet() const;
 
                     /**
                      * 获取<p>排除主机Quuid列表</p>
                      * @return ExcludeQuuids <p>排除主机Quuid列表</p>
-                     * 
+                     * @deprecated
                      */
                     std::vector<std::string> GetExcludeQuuids() const;
 
                     /**
                      * 判断参数 ExcludeQuuids 是否已赋值
                      * @return ExcludeQuuids 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ExcludeQuuidsHasBeenSet() const;
 
@@ -154,6 +154,90 @@ namespace TencentCloud
                      * 
                      */
                     bool AutoIncludeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>标签</p>
+                     * @return TagIDs <p>标签</p>
+                     * 
+                     */
+                    std::vector<std::string> GetTagIDs() const;
+
+                    /**
+                     * 判断参数 TagIDs 是否已赋值
+                     * @return TagIDs 是否已赋值
+                     * 
+                     */
+                    bool TagIDsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>0，1</p><p>枚举值：</p><ul><li>0： 部分</li><li>1： 全部</li></ul>
+                     * @return TCSSScope <p>0，1</p><p>枚举值：</p><ul><li>0： 部分</li><li>1： 全部</li></ul>
+                     * 
+                     */
+                    uint64_t GetTCSSScope() const;
+
+                    /**
+                     * 判断参数 TCSSScope 是否已赋值
+                     * @return TCSSScope 是否已赋值
+                     * 
+                     */
+                    bool TCSSScopeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集群ID</p>
+                     * @return ClusterIDs <p>集群ID</p>
+                     * 
+                     */
+                    std::vector<std::string> GetClusterIDs() const;
+
+                    /**
+                     * 判断参数 ClusterIDs 是否已赋值
+                     * @return ClusterIDs 是否已赋值
+                     * 
+                     */
+                    bool ClusterIDsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>排除集群ID</p>
+                     * @return ExcludeClusterIDs <p>排除集群ID</p>
+                     * 
+                     */
+                    std::vector<std::string> GetExcludeClusterIDs() const;
+
+                    /**
+                     * 判断参数 ExcludeClusterIDs 是否已赋值
+                     * @return ExcludeClusterIDs 是否已赋值
+                     * 
+                     */
+                    bool ExcludeClusterIDsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>实例ID</p>
+                     * @return InstanceIds <p>实例ID</p>
+                     * 
+                     */
+                    std::vector<std::string> GetInstanceIds() const;
+
+                    /**
+                     * 判断参数 InstanceIds 是否已赋值
+                     * @return InstanceIds 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>排除实例ID</p>
+                     * @return ExcludeInstanceIds <p>排除实例ID</p>
+                     * 
+                     */
+                    std::vector<std::string> GetExcludeInstanceIds() const;
+
+                    /**
+                     * 判断参数 ExcludeInstanceIds 是否已赋值
+                     * @return ExcludeInstanceIds 是否已赋值
+                     * 
+                     */
+                    bool ExcludeInstanceIdsHasBeenSet() const;
 
                 private:
 
@@ -204,6 +288,42 @@ namespace TencentCloud
                      */
                     uint64_t m_autoInclude;
                     bool m_autoIncludeHasBeenSet;
+
+                    /**
+                     * <p>标签</p>
+                     */
+                    std::vector<std::string> m_tagIDs;
+                    bool m_tagIDsHasBeenSet;
+
+                    /**
+                     * <p>0，1</p><p>枚举值：</p><ul><li>0： 部分</li><li>1： 全部</li></ul>
+                     */
+                    uint64_t m_tCSSScope;
+                    bool m_tCSSScopeHasBeenSet;
+
+                    /**
+                     * <p>集群ID</p>
+                     */
+                    std::vector<std::string> m_clusterIDs;
+                    bool m_clusterIDsHasBeenSet;
+
+                    /**
+                     * <p>排除集群ID</p>
+                     */
+                    std::vector<std::string> m_excludeClusterIDs;
+                    bool m_excludeClusterIDsHasBeenSet;
+
+                    /**
+                     * <p>实例ID</p>
+                     */
+                    std::vector<std::string> m_instanceIds;
+                    bool m_instanceIdsHasBeenSet;
+
+                    /**
+                     * <p>排除实例ID</p>
+                     */
+                    std::vector<std::string> m_excludeInstanceIds;
+                    bool m_excludeInstanceIdsHasBeenSet;
 
                 };
             }

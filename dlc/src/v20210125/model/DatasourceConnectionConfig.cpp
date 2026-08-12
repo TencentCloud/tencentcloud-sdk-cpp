@@ -32,7 +32,8 @@ DatasourceConnectionConfig::DatasourceConnectionConfig() :
     m_tDSQLPostgreSqlHasBeenSet(false),
     m_tCHouseDHasBeenSet(false),
     m_tccHiveHasBeenSet(false),
-    m_mongoDBHasBeenSet(false)
+    m_mongoDBHasBeenSet(false),
+    m_tCHousePHasBeenSet(false)
 {
 }
 
@@ -245,6 +246,23 @@ CoreInternalOutcome DatasourceConnectionConfig::Deserialize(const rapidjson::Val
         m_mongoDBHasBeenSet = true;
     }
 
+    if (value.HasMember("TCHouseP") && !value["TCHouseP"].IsNull())
+    {
+        if (!value["TCHouseP"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasourceConnectionConfig.TCHouseP` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tCHouseP.Deserialize(value["TCHouseP"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tCHousePHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -358,6 +376,15 @@ void DatasourceConnectionConfig::ToJsonObject(rapidjson::Value &value, rapidjson
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mongoDB.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_tCHousePHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TCHouseP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tCHouseP.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -553,5 +580,21 @@ void DatasourceConnectionConfig::SetMongoDB(const DataSourceInfo& _mongoDB)
 bool DatasourceConnectionConfig::MongoDBHasBeenSet() const
 {
     return m_mongoDBHasBeenSet;
+}
+
+TCHousePInfo DatasourceConnectionConfig::GetTCHouseP() const
+{
+    return m_tCHouseP;
+}
+
+void DatasourceConnectionConfig::SetTCHouseP(const TCHousePInfo& _tCHouseP)
+{
+    m_tCHouseP = _tCHouseP;
+    m_tCHousePHasBeenSet = true;
+}
+
+bool DatasourceConnectionConfig::TCHousePHasBeenSet() const
+{
+    return m_tCHousePHasBeenSet;
 }
 

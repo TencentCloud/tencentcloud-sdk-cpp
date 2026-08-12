@@ -1056,6 +1056,216 @@ namespace TencentCloud
                      */
                     bool NetSvcPsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>容器名称</p>
+                     * @return ContainerName <p>容器名称</p>
+                     * 
+                     */
+                    std::string GetContainerName() const;
+
+                    /**
+                     * 设置<p>容器名称</p>
+                     * @param _containerName <p>容器名称</p>
+                     * 
+                     */
+                    void SetContainerName(const std::string& _containerName);
+
+                    /**
+                     * 判断参数 ContainerName 是否已赋值
+                     * @return ContainerName 是否已赋值
+                     * 
+                     */
+                    bool ContainerNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>容器镜像名称</p>
+                     * @return ImageName <p>容器镜像名称</p>
+                     * 
+                     */
+                    std::string GetImageName() const;
+
+                    /**
+                     * 设置<p>容器镜像名称</p>
+                     * @param _imageName <p>容器镜像名称</p>
+                     * 
+                     */
+                    void SetImageName(const std::string& _imageName);
+
+                    /**
+                     * 判断参数 ImageName 是否已赋值
+                     * @return ImageName 是否已赋值
+                     * 
+                     */
+                    bool ImageNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集群名称</p>
+                     * @return ClusterName <p>集群名称</p>
+                     * 
+                     */
+                    std::string GetClusterName() const;
+
+                    /**
+                     * 设置<p>集群名称</p>
+                     * @param _clusterName <p>集群名称</p>
+                     * 
+                     */
+                    void SetClusterName(const std::string& _clusterName);
+
+                    /**
+                     * 判断参数 ClusterName 是否已赋值
+                     * @return ClusterName 是否已赋值
+                     * 
+                     */
+                    bool ClusterNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>容器运行状态（原始枚举 RUNNING/PAUSED/STOPPED…，前端自行映射）</p><p>枚举值：</p><ul><li>RUNNING： 运行</li><li>PAUSED： 暂停</li><li>STOPPED： 停止</li><li>CREATED： 已经创建</li><li>DESTROYED： 已销毁</li><li>RESTARTING： 重启中</li><li>REMOVING： 迁移中</li><li>DEAD： DEAD</li><li>UNKNOWN： 未知</li></ul>
+                     * @return RunStatus <p>容器运行状态（原始枚举 RUNNING/PAUSED/STOPPED…，前端自行映射）</p><p>枚举值：</p><ul><li>RUNNING： 运行</li><li>PAUSED： 暂停</li><li>STOPPED： 停止</li><li>CREATED： 已经创建</li><li>DESTROYED： 已销毁</li><li>RESTARTING： 重启中</li><li>REMOVING： 迁移中</li><li>DEAD： DEAD</li><li>UNKNOWN： 未知</li></ul>
+                     * 
+                     */
+                    std::string GetRunStatus() const;
+
+                    /**
+                     * 设置<p>容器运行状态（原始枚举 RUNNING/PAUSED/STOPPED…，前端自行映射）</p><p>枚举值：</p><ul><li>RUNNING： 运行</li><li>PAUSED： 暂停</li><li>STOPPED： 停止</li><li>CREATED： 已经创建</li><li>DESTROYED： 已销毁</li><li>RESTARTING： 重启中</li><li>REMOVING： 迁移中</li><li>DEAD： DEAD</li><li>UNKNOWN： 未知</li></ul>
+                     * @param _runStatus <p>容器运行状态（原始枚举 RUNNING/PAUSED/STOPPED…，前端自行映射）</p><p>枚举值：</p><ul><li>RUNNING： 运行</li><li>PAUSED： 暂停</li><li>STOPPED： 停止</li><li>CREATED： 已经创建</li><li>DESTROYED： 已销毁</li><li>RESTARTING： 重启中</li><li>REMOVING： 迁移中</li><li>DEAD： DEAD</li><li>UNKNOWN： 未知</li></ul>
+                     * 
+                     */
+                    void SetRunStatus(const std::string& _runStatus);
+
+                    /**
+                     * 判断参数 RunStatus 是否已赋值
+                     * @return RunStatus 是否已赋值
+                     * 
+                     */
+                    bool RunStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>POD 名称</p>
+                     * @return PodName <p>POD 名称</p>
+                     * 
+                     */
+                    std::string GetPodName() const;
+
+                    /**
+                     * 设置<p>POD 名称</p>
+                     * @param _podName <p>POD 名称</p>
+                     * 
+                     */
+                    void SetPodName(const std::string& _podName);
+
+                    /**
+                     * 判断参数 PodName 是否已赋值
+                     * @return PodName 是否已赋值
+                     * 
+                     */
+                    bool PodNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>POD IP</p>
+                     * @return PodIp <p>POD IP</p>
+                     * 
+                     */
+                    std::string GetPodIp() const;
+
+                    /**
+                     * 设置<p>POD IP</p>
+                     * @param _podIp <p>POD IP</p>
+                     * 
+                     */
+                    void SetPodIp(const std::string& _podIp);
+
+                    /**
+                     * 判断参数 PodIp 是否已赋值
+                     * @return PodIp 是否已赋值
+                     * 
+                     */
+                    bool PodIpHasBeenSet() const;
+
+                    /**
+                     * 获取<p>命名空间</p>
+                     * @return Namespace <p>命名空间</p>
+                     * 
+                     */
+                    std::string GetNamespace() const;
+
+                    /**
+                     * 设置<p>命名空间</p>
+                     * @param _namespace <p>命名空间</p>
+                     * 
+                     */
+                    void SetNamespace(const std::string& _namespace);
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     * 
+                     */
+                    bool NamespaceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>POD 负载类型</p>
+                     * @return PodWorkloadType <p>POD 负载类型</p>
+                     * 
+                     */
+                    std::string GetPodWorkloadType() const;
+
+                    /**
+                     * 设置<p>POD 负载类型</p>
+                     * @param _podWorkloadType <p>POD 负载类型</p>
+                     * 
+                     */
+                    void SetPodWorkloadType(const std::string& _podWorkloadType);
+
+                    /**
+                     * 判断参数 PodWorkloadType 是否已赋值
+                     * @return PodWorkloadType 是否已赋值
+                     * 
+                     */
+                    bool PodWorkloadTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集群 ca 证书 md5</p>
+                     * @return ClusterCaMD5 <p>集群 ca 证书 md5</p>
+                     * 
+                     */
+                    std::string GetClusterCaMD5() const;
+
+                    /**
+                     * 设置<p>集群 ca 证书 md5</p>
+                     * @param _clusterCaMD5 <p>集群 ca 证书 md5</p>
+                     * 
+                     */
+                    void SetClusterCaMD5(const std::string& _clusterCaMD5);
+
+                    /**
+                     * 判断参数 ClusterCaMD5 是否已赋值
+                     * @return ClusterCaMD5 是否已赋值
+                     * 
+                     */
+                    bool ClusterCaMD5HasBeenSet() const;
+
+                    /**
+                     * 获取<p>POD 唯一 id</p>
+                     * @return PodUniqueId <p>POD 唯一 id</p>
+                     * 
+                     */
+                    std::string GetPodUniqueId() const;
+
+                    /**
+                     * 设置<p>POD 唯一 id</p>
+                     * @param _podUniqueId <p>POD 唯一 id</p>
+                     * 
+                     */
+                    void SetPodUniqueId(const std::string& _podUniqueId);
+
+                    /**
+                     * 判断参数 PodUniqueId 是否已赋值
+                     * @return PodUniqueId 是否已赋值
+                     * 
+                     */
+                    bool PodUniqueIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1345,6 +1555,66 @@ namespace TencentCloud
                      */
                     std::string m_netSvcPs;
                     bool m_netSvcPsHasBeenSet;
+
+                    /**
+                     * <p>容器名称</p>
+                     */
+                    std::string m_containerName;
+                    bool m_containerNameHasBeenSet;
+
+                    /**
+                     * <p>容器镜像名称</p>
+                     */
+                    std::string m_imageName;
+                    bool m_imageNameHasBeenSet;
+
+                    /**
+                     * <p>集群名称</p>
+                     */
+                    std::string m_clusterName;
+                    bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * <p>容器运行状态（原始枚举 RUNNING/PAUSED/STOPPED…，前端自行映射）</p><p>枚举值：</p><ul><li>RUNNING： 运行</li><li>PAUSED： 暂停</li><li>STOPPED： 停止</li><li>CREATED： 已经创建</li><li>DESTROYED： 已销毁</li><li>RESTARTING： 重启中</li><li>REMOVING： 迁移中</li><li>DEAD： DEAD</li><li>UNKNOWN： 未知</li></ul>
+                     */
+                    std::string m_runStatus;
+                    bool m_runStatusHasBeenSet;
+
+                    /**
+                     * <p>POD 名称</p>
+                     */
+                    std::string m_podName;
+                    bool m_podNameHasBeenSet;
+
+                    /**
+                     * <p>POD IP</p>
+                     */
+                    std::string m_podIp;
+                    bool m_podIpHasBeenSet;
+
+                    /**
+                     * <p>命名空间</p>
+                     */
+                    std::string m_namespace;
+                    bool m_namespaceHasBeenSet;
+
+                    /**
+                     * <p>POD 负载类型</p>
+                     */
+                    std::string m_podWorkloadType;
+                    bool m_podWorkloadTypeHasBeenSet;
+
+                    /**
+                     * <p>集群 ca 证书 md5</p>
+                     */
+                    std::string m_clusterCaMD5;
+                    bool m_clusterCaMD5HasBeenSet;
+
+                    /**
+                     * <p>POD 唯一 id</p>
+                     */
+                    std::string m_podUniqueId;
+                    bool m_podUniqueIdHasBeenSet;
 
                 };
             }

@@ -22,9 +22,9 @@ using namespace std;
 
 RegionInfo::RegionInfo() :
     m_regionHasBeenSet(false),
-    m_regionCodeHasBeenSet(false),
-    m_regionIdHasBeenSet(false),
     m_regionNameHasBeenSet(false),
+    m_regionIdHasBeenSet(false),
+    m_regionCodeHasBeenSet(false),
     m_regionNameEnHasBeenSet(false)
 {
 }
@@ -44,14 +44,14 @@ CoreInternalOutcome RegionInfo::Deserialize(const rapidjson::Value &value)
         m_regionHasBeenSet = true;
     }
 
-    if (value.HasMember("RegionCode") && !value["RegionCode"].IsNull())
+    if (value.HasMember("RegionName") && !value["RegionName"].IsNull())
     {
-        if (!value["RegionCode"].IsString())
+        if (!value["RegionName"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `RegionInfo.RegionCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionInfo.RegionName` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_regionCode = string(value["RegionCode"].GetString());
-        m_regionCodeHasBeenSet = true;
+        m_regionName = string(value["RegionName"].GetString());
+        m_regionNameHasBeenSet = true;
     }
 
     if (value.HasMember("RegionId") && !value["RegionId"].IsNull())
@@ -64,14 +64,14 @@ CoreInternalOutcome RegionInfo::Deserialize(const rapidjson::Value &value)
         m_regionIdHasBeenSet = true;
     }
 
-    if (value.HasMember("RegionName") && !value["RegionName"].IsNull())
+    if (value.HasMember("RegionCode") && !value["RegionCode"].IsNull())
     {
-        if (!value["RegionName"].IsString())
+        if (!value["RegionCode"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `RegionInfo.RegionName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RegionInfo.RegionCode` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_regionName = string(value["RegionName"].GetString());
-        m_regionNameHasBeenSet = true;
+        m_regionCode = string(value["RegionCode"].GetString());
+        m_regionCodeHasBeenSet = true;
     }
 
     if (value.HasMember("RegionNameEn") && !value["RegionNameEn"].IsNull())
@@ -99,12 +99,12 @@ void RegionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_regionCodeHasBeenSet)
+    if (m_regionNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RegionCode";
+        string key = "RegionName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_regionCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionIdHasBeenSet)
@@ -115,12 +115,12 @@ void RegionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, m_regionId, allocator);
     }
 
-    if (m_regionNameHasBeenSet)
+    if (m_regionCodeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RegionName";
+        string key = "RegionCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_regionName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionNameEnHasBeenSet)
@@ -150,20 +150,20 @@ bool RegionInfo::RegionHasBeenSet() const
     return m_regionHasBeenSet;
 }
 
-string RegionInfo::GetRegionCode() const
+string RegionInfo::GetRegionName() const
 {
-    return m_regionCode;
+    return m_regionName;
 }
 
-void RegionInfo::SetRegionCode(const string& _regionCode)
+void RegionInfo::SetRegionName(const string& _regionName)
 {
-    m_regionCode = _regionCode;
-    m_regionCodeHasBeenSet = true;
+    m_regionName = _regionName;
+    m_regionNameHasBeenSet = true;
 }
 
-bool RegionInfo::RegionCodeHasBeenSet() const
+bool RegionInfo::RegionNameHasBeenSet() const
 {
-    return m_regionCodeHasBeenSet;
+    return m_regionNameHasBeenSet;
 }
 
 uint64_t RegionInfo::GetRegionId() const
@@ -182,20 +182,20 @@ bool RegionInfo::RegionIdHasBeenSet() const
     return m_regionIdHasBeenSet;
 }
 
-string RegionInfo::GetRegionName() const
+string RegionInfo::GetRegionCode() const
 {
-    return m_regionName;
+    return m_regionCode;
 }
 
-void RegionInfo::SetRegionName(const string& _regionName)
+void RegionInfo::SetRegionCode(const string& _regionCode)
 {
-    m_regionName = _regionName;
-    m_regionNameHasBeenSet = true;
+    m_regionCode = _regionCode;
+    m_regionCodeHasBeenSet = true;
 }
 
-bool RegionInfo::RegionNameHasBeenSet() const
+bool RegionInfo::RegionCodeHasBeenSet() const
 {
-    return m_regionNameHasBeenSet;
+    return m_regionCodeHasBeenSet;
 }
 
 string RegionInfo::GetRegionNameEn() const

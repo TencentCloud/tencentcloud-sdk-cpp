@@ -26,6 +26,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/csip/v20221121/model/RuleContentCmdLine.h>
 #include <tencentcloud/csip/v20221121/model/RuleContentProcessNetwork.h>
+#include <tencentcloud/csip/v20221121/model/ConditionMatch.h>
+#include <tencentcloud/csip/v20221121/model/EDRRuleTagItem.h>
 
 
 namespace TencentCloud
@@ -741,6 +743,90 @@ namespace TencentCloud
                      */
                     bool ExcludeInstanceIDsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>生效集群ID列表（TCSSScope=0 时有值；空返回 []）</p>
+                     * @return ClusterIDs <p>生效集群ID列表（TCSSScope=0 时有值；空返回 []）</p>
+                     * 
+                     */
+                    std::vector<std::string> GetClusterIDs() const;
+
+                    /**
+                     * 设置<p>生效集群ID列表（TCSSScope=0 时有值；空返回 []）</p>
+                     * @param _clusterIDs <p>生效集群ID列表（TCSSScope=0 时有值；空返回 []）</p>
+                     * 
+                     */
+                    void SetClusterIDs(const std::vector<std::string>& _clusterIDs);
+
+                    /**
+                     * 判断参数 ClusterIDs 是否已赋值
+                     * @return ClusterIDs 是否已赋值
+                     * 
+                     */
+                    bool ClusterIDsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>排除集群ID列表（空返回 []）</p>
+                     * @return ExcludeClusterIDs <p>排除集群ID列表（空返回 []）</p>
+                     * 
+                     */
+                    std::vector<std::string> GetExcludeClusterIDs() const;
+
+                    /**
+                     * 设置<p>排除集群ID列表（空返回 []）</p>
+                     * @param _excludeClusterIDs <p>排除集群ID列表（空返回 []）</p>
+                     * 
+                     */
+                    void SetExcludeClusterIDs(const std::vector<std::string>& _excludeClusterIDs);
+
+                    /**
+                     * 判断参数 ExcludeClusterIDs 是否已赋值
+                     * @return ExcludeClusterIDs 是否已赋值
+                     * 
+                     */
+                    bool ExcludeClusterIDsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>容器条件匹配</p>
+                     * @return ConditionMatches <p>容器条件匹配</p>
+                     * 
+                     */
+                    std::vector<ConditionMatch> GetConditionMatches() const;
+
+                    /**
+                     * 设置<p>容器条件匹配</p>
+                     * @param _conditionMatches <p>容器条件匹配</p>
+                     * 
+                     */
+                    void SetConditionMatches(const std::vector<ConditionMatch>& _conditionMatches);
+
+                    /**
+                     * 判断参数 ConditionMatches 是否已赋值
+                     * @return ConditionMatches 是否已赋值
+                     * 
+                     */
+                    bool ConditionMatchesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>安全中心标签</p>
+                     * @return TagItems <p>安全中心标签</p>
+                     * 
+                     */
+                    std::vector<EDRRuleTagItem> GetTagItems() const;
+
+                    /**
+                     * 设置<p>安全中心标签</p>
+                     * @param _tagItems <p>安全中心标签</p>
+                     * 
+                     */
+                    void SetTagItems(const std::vector<EDRRuleTagItem>& _tagItems);
+
+                    /**
+                     * 判断参数 TagItems 是否已赋值
+                     * @return TagItems 是否已赋值
+                     * 
+                     */
+                    bool TagItemsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -940,6 +1026,30 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_excludeInstanceIDs;
                     bool m_excludeInstanceIDsHasBeenSet;
+
+                    /**
+                     * <p>生效集群ID列表（TCSSScope=0 时有值；空返回 []）</p>
+                     */
+                    std::vector<std::string> m_clusterIDs;
+                    bool m_clusterIDsHasBeenSet;
+
+                    /**
+                     * <p>排除集群ID列表（空返回 []）</p>
+                     */
+                    std::vector<std::string> m_excludeClusterIDs;
+                    bool m_excludeClusterIDsHasBeenSet;
+
+                    /**
+                     * <p>容器条件匹配</p>
+                     */
+                    std::vector<ConditionMatch> m_conditionMatches;
+                    bool m_conditionMatchesHasBeenSet;
+
+                    /**
+                     * <p>安全中心标签</p>
+                     */
+                    std::vector<EDRRuleTagItem> m_tagItems;
+                    bool m_tagItemsHasBeenSet;
 
                 };
             }

@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/InferenceContainerConfig.h>
 #include <tencentcloud/teo/v20220901/model/InferenceResourceConfig.h>
+#include <tencentcloud/teo/v20220901/model/InferenceAffinityConfig.h>
 
 
 namespace TencentCloud
@@ -150,6 +151,27 @@ namespace TencentCloud
                     bool ResourceConfigHasBeenSet() const;
 
                     /**
+                     * 获取<p>推理服务亲和性配置。</p>
+                     * @return AffinityConfig <p>推理服务亲和性配置。</p>
+                     * 
+                     */
+                    InferenceAffinityConfig GetAffinityConfig() const;
+
+                    /**
+                     * 设置<p>推理服务亲和性配置。</p>
+                     * @param _affinityConfig <p>推理服务亲和性配置。</p>
+                     * 
+                     */
+                    void SetAffinityConfig(const InferenceAffinityConfig& _affinityConfig);
+
+                    /**
+                     * 判断参数 AffinityConfig 是否已赋值
+                     * @return AffinityConfig 是否已赋值
+                     * 
+                     */
+                    bool AffinityConfigHasBeenSet() const;
+
+                    /**
                      * 获取<p>推理服务的请求路径列表。最多支持 20 个路径。</p>
                      * @return RequestPaths <p>推理服务的请求路径列表。最多支持 20 个路径。</p>
                      * 
@@ -222,6 +244,12 @@ namespace TencentCloud
                      */
                     InferenceResourceConfig m_resourceConfig;
                     bool m_resourceConfigHasBeenSet;
+
+                    /**
+                     * <p>推理服务亲和性配置。</p>
+                     */
+                    InferenceAffinityConfig m_affinityConfig;
+                    bool m_affinityConfigHasBeenSet;
 
                     /**
                      * <p>推理服务的请求路径列表。最多支持 20 个路径。</p>

@@ -245,6 +245,8 @@
 #include <tencentcloud/tcr/v20190924/model/ModifyInstanceTokenResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyNamespaceRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyNamespaceResponse.h>
+#include <tencentcloud/tcr/v20190924/model/ModifyReplicationRequest.h>
+#include <tencentcloud/tcr/v20190924/model/ModifyReplicationResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyRepositoryRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyRepositoryResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyRepositoryAccessPersonalRequest.h>
@@ -618,6 +620,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyNamespaceResponse> ModifyNamespaceOutcome;
                 typedef std::future<ModifyNamespaceOutcome> ModifyNamespaceOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ModifyNamespaceRequest&, ModifyNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNamespaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyReplicationResponse> ModifyReplicationOutcome;
+                typedef std::future<ModifyReplicationOutcome> ModifyReplicationOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::ModifyReplicationRequest&, ModifyReplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReplicationAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRepositoryResponse> ModifyRepositoryOutcome;
                 typedef std::future<ModifyRepositoryOutcome> ModifyRepositoryOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ModifyRepositoryRequest&, ModifyRepositoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRepositoryAsyncHandler;
@@ -1660,6 +1665,15 @@ namespace TencentCloud
                 ModifyNamespaceOutcome ModifyNamespace(const Model::ModifyNamespaceRequest &request);
                 void ModifyNamespaceAsync(const Model::ModifyNamespaceRequest& request, const ModifyNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyNamespaceOutcomeCallable ModifyNamespaceCallable(const Model::ModifyNamespaceRequest& request);
+
+                /**
+                 *修改实例同步规则
+                 * @param req ModifyReplicationRequest
+                 * @return ModifyReplicationOutcome
+                 */
+                ModifyReplicationOutcome ModifyReplication(const Model::ModifyReplicationRequest &request);
+                void ModifyReplicationAsync(const Model::ModifyReplicationRequest& request, const ModifyReplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyReplicationOutcomeCallable ModifyReplicationCallable(const Model::ModifyReplicationRequest& request);
 
                 /**
                  *更新镜像仓库信息，可修改仓库描述信息

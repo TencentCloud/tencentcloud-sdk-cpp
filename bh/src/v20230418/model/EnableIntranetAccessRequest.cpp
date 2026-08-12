@@ -25,9 +25,12 @@ using namespace std;
 EnableIntranetAccessRequest::EnableIntranetAccessRequest() :
     m_resourceIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
+    m_vpcNameHasBeenSet(false),
+    m_vpcRegionHasBeenSet(false),
     m_vpcCidrBlockHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false)
+    m_domainNameHasBeenSet(false),
+    m_intranetSubnetsHasBeenSet(false)
 {
 }
 
@@ -54,6 +57,22 @@ string EnableIntranetAccessRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_vpcNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vpcName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vpcRegion.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_vpcCidrBlockHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -76,6 +95,21 @@ string EnableIntranetAccessRequest::ToJsonString() const
         string key = "DomainName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_domainName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_intranetSubnetsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntranetSubnets";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_intranetSubnets.begin(); itr != m_intranetSubnets.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -116,6 +150,38 @@ void EnableIntranetAccessRequest::SetVpcId(const string& _vpcId)
 bool EnableIntranetAccessRequest::VpcIdHasBeenSet() const
 {
     return m_vpcIdHasBeenSet;
+}
+
+string EnableIntranetAccessRequest::GetVpcName() const
+{
+    return m_vpcName;
+}
+
+void EnableIntranetAccessRequest::SetVpcName(const string& _vpcName)
+{
+    m_vpcName = _vpcName;
+    m_vpcNameHasBeenSet = true;
+}
+
+bool EnableIntranetAccessRequest::VpcNameHasBeenSet() const
+{
+    return m_vpcNameHasBeenSet;
+}
+
+string EnableIntranetAccessRequest::GetVpcRegion() const
+{
+    return m_vpcRegion;
+}
+
+void EnableIntranetAccessRequest::SetVpcRegion(const string& _vpcRegion)
+{
+    m_vpcRegion = _vpcRegion;
+    m_vpcRegionHasBeenSet = true;
+}
+
+bool EnableIntranetAccessRequest::VpcRegionHasBeenSet() const
+{
+    return m_vpcRegionHasBeenSet;
 }
 
 string EnableIntranetAccessRequest::GetVpcCidrBlock() const
@@ -164,6 +230,22 @@ void EnableIntranetAccessRequest::SetDomainName(const string& _domainName)
 bool EnableIntranetAccessRequest::DomainNameHasBeenSet() const
 {
     return m_domainNameHasBeenSet;
+}
+
+vector<ParamInitResourceSubnet> EnableIntranetAccessRequest::GetIntranetSubnets() const
+{
+    return m_intranetSubnets;
+}
+
+void EnableIntranetAccessRequest::SetIntranetSubnets(const vector<ParamInitResourceSubnet>& _intranetSubnets)
+{
+    m_intranetSubnets = _intranetSubnets;
+    m_intranetSubnetsHasBeenSet = true;
+}
+
+bool EnableIntranetAccessRequest::IntranetSubnetsHasBeenSet() const
+{
+    return m_intranetSubnetsHasBeenSet;
 }
 
 

@@ -190,3 +190,103 @@ RceClient::AssessEnvironmentRiskOutcomeCallable RceClient::AssessEnvironmentRisk
     return prom->get_future();
 }
 
+RceClient::AssessRiskOutcome RceClient::AssessRisk(const AssessRiskRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssessRisk");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssessRiskResponse rsp = AssessRiskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssessRiskOutcome(rsp);
+        else
+            return AssessRiskOutcome(o.GetError());
+    }
+    else
+    {
+        return AssessRiskOutcome(outcome.GetError());
+    }
+}
+
+void RceClient::AssessRiskAsync(const AssessRiskRequest& request, const AssessRiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AssessRiskRequest&;
+    using Resp = AssessRiskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AssessRisk", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RceClient::AssessRiskOutcomeCallable RceClient::AssessRiskCallable(const AssessRiskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AssessRiskOutcome>>();
+    AssessRiskAsync(
+    request,
+    [prom](
+        const RceClient*,
+        const AssessRiskRequest&,
+        AssessRiskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RceClient::ReportEventOutcome RceClient::ReportEvent(const ReportEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReportEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReportEventResponse rsp = ReportEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReportEventOutcome(rsp);
+        else
+            return ReportEventOutcome(o.GetError());
+    }
+    else
+    {
+        return ReportEventOutcome(outcome.GetError());
+    }
+}
+
+void RceClient::ReportEventAsync(const ReportEventRequest& request, const ReportEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ReportEventRequest&;
+    using Resp = ReportEventResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ReportEvent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RceClient::ReportEventOutcomeCallable RceClient::ReportEventCallable(const ReportEventRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ReportEventOutcome>>();
+    ReportEventAsync(
+    request,
+    [prom](
+        const RceClient*,
+        const ReportEventRequest&,
+        ReportEventOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+

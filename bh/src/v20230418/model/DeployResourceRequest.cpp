@@ -37,7 +37,12 @@ DeployResourceRequest::DeployResourceRequest() :
     m_webAccessHasBeenSet(false),
     m_clientAccessHasBeenSet(false),
     m_intranetAccessHasBeenSet(false),
-    m_externalAccessHasBeenSet(false)
+    m_externalAccessHasBeenSet(false),
+    m_deploySubnetsHasBeenSet(false),
+    m_intranetVpcIdHasBeenSet(false),
+    m_intranetVpcCidrBlockHasBeenSet(false),
+    m_intranetVpcNameHasBeenSet(false),
+    m_intranetSubnetsHasBeenSet(false)
 {
 }
 
@@ -166,6 +171,60 @@ string DeployResourceRequest::ToJsonString() const
         string key = "ExternalAccess";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_externalAccess, allocator);
+    }
+
+    if (m_deploySubnetsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeploySubnets";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_deploySubnets.begin(); itr != m_deploySubnets.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_intranetVpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntranetVpcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_intranetVpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_intranetVpcCidrBlockHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntranetVpcCidrBlock";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_intranetVpcCidrBlock.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_intranetVpcNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntranetVpcName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_intranetVpcName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_intranetSubnetsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntranetSubnets";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_intranetSubnets.begin(); itr != m_intranetSubnets.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -414,6 +473,86 @@ void DeployResourceRequest::SetExternalAccess(const uint64_t& _externalAccess)
 bool DeployResourceRequest::ExternalAccessHasBeenSet() const
 {
     return m_externalAccessHasBeenSet;
+}
+
+vector<ParamInitResourceSubnet> DeployResourceRequest::GetDeploySubnets() const
+{
+    return m_deploySubnets;
+}
+
+void DeployResourceRequest::SetDeploySubnets(const vector<ParamInitResourceSubnet>& _deploySubnets)
+{
+    m_deploySubnets = _deploySubnets;
+    m_deploySubnetsHasBeenSet = true;
+}
+
+bool DeployResourceRequest::DeploySubnetsHasBeenSet() const
+{
+    return m_deploySubnetsHasBeenSet;
+}
+
+string DeployResourceRequest::GetIntranetVpcId() const
+{
+    return m_intranetVpcId;
+}
+
+void DeployResourceRequest::SetIntranetVpcId(const string& _intranetVpcId)
+{
+    m_intranetVpcId = _intranetVpcId;
+    m_intranetVpcIdHasBeenSet = true;
+}
+
+bool DeployResourceRequest::IntranetVpcIdHasBeenSet() const
+{
+    return m_intranetVpcIdHasBeenSet;
+}
+
+string DeployResourceRequest::GetIntranetVpcCidrBlock() const
+{
+    return m_intranetVpcCidrBlock;
+}
+
+void DeployResourceRequest::SetIntranetVpcCidrBlock(const string& _intranetVpcCidrBlock)
+{
+    m_intranetVpcCidrBlock = _intranetVpcCidrBlock;
+    m_intranetVpcCidrBlockHasBeenSet = true;
+}
+
+bool DeployResourceRequest::IntranetVpcCidrBlockHasBeenSet() const
+{
+    return m_intranetVpcCidrBlockHasBeenSet;
+}
+
+string DeployResourceRequest::GetIntranetVpcName() const
+{
+    return m_intranetVpcName;
+}
+
+void DeployResourceRequest::SetIntranetVpcName(const string& _intranetVpcName)
+{
+    m_intranetVpcName = _intranetVpcName;
+    m_intranetVpcNameHasBeenSet = true;
+}
+
+bool DeployResourceRequest::IntranetVpcNameHasBeenSet() const
+{
+    return m_intranetVpcNameHasBeenSet;
+}
+
+vector<ParamInitResourceSubnet> DeployResourceRequest::GetIntranetSubnets() const
+{
+    return m_intranetSubnets;
+}
+
+void DeployResourceRequest::SetIntranetSubnets(const vector<ParamInitResourceSubnet>& _intranetSubnets)
+{
+    m_intranetSubnets = _intranetSubnets;
+    m_intranetSubnetsHasBeenSet = true;
+}
+
+bool DeployResourceRequest::IntranetSubnetsHasBeenSet() const
+{
+    return m_intranetSubnetsHasBeenSet;
 }
 
 

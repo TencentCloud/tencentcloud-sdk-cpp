@@ -640,6 +640,56 @@ ConfigClient::DeleteAggregateConfigRuleOutcomeCallable ConfigClient::DeleteAggre
     return prom->get_future();
 }
 
+ConfigClient::DeleteAggregatorsOutcome ConfigClient::DeleteAggregators(const DeleteAggregatorsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAggregators");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAggregatorsResponse rsp = DeleteAggregatorsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAggregatorsOutcome(rsp);
+        else
+            return DeleteAggregatorsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAggregatorsOutcome(outcome.GetError());
+    }
+}
+
+void ConfigClient::DeleteAggregatorsAsync(const DeleteAggregatorsRequest& request, const DeleteAggregatorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAggregatorsRequest&;
+    using Resp = DeleteAggregatorsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAggregators", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ConfigClient::DeleteAggregatorsOutcomeCallable ConfigClient::DeleteAggregatorsCallable(const DeleteAggregatorsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAggregatorsOutcome>>();
+    DeleteAggregatorsAsync(
+    request,
+    [prom](
+        const ConfigClient*,
+        const DeleteAggregatorsRequest&,
+        DeleteAggregatorsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ConfigClient::DeleteAlarmPolicyOutcome ConfigClient::DeleteAlarmPolicy(const DeleteAlarmPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAlarmPolicy");
@@ -2932,6 +2982,56 @@ ConfigClient::UpdateAggregateConfigRuleOutcomeCallable ConfigClient::UpdateAggre
         const ConfigClient*,
         const UpdateAggregateConfigRuleRequest&,
         UpdateAggregateConfigRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ConfigClient::UpdateAggregatorOutcome ConfigClient::UpdateAggregator(const UpdateAggregatorRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAggregator");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAggregatorResponse rsp = UpdateAggregatorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAggregatorOutcome(rsp);
+        else
+            return UpdateAggregatorOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAggregatorOutcome(outcome.GetError());
+    }
+}
+
+void ConfigClient::UpdateAggregatorAsync(const UpdateAggregatorRequest& request, const UpdateAggregatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateAggregatorRequest&;
+    using Resp = UpdateAggregatorResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateAggregator", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ConfigClient::UpdateAggregatorOutcomeCallable ConfigClient::UpdateAggregatorCallable(const UpdateAggregatorRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateAggregatorOutcome>>();
+    UpdateAggregatorAsync(
+    request,
+    [prom](
+        const ConfigClient*,
+        const UpdateAggregatorRequest&,
+        UpdateAggregatorOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

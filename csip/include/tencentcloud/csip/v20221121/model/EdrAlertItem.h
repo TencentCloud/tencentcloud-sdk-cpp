@@ -362,6 +362,27 @@ namespace TencentCloud
                     bool AlertSourceHasBeenSet() const;
 
                     /**
+                     * 获取<p>机器类型（列表接口专有；不限于容器告警，主机告警同样返回）。按 Quuid 富化自 machines.machine_type，原始枚举值原样透传、不做 i18n 翻译，前端自行映射展示。取值如 CVM / LH / Other / EKS-NATIVE 等；查不到对应机器信息时降级为空串 ""（与 InstanceName / PublicIp / PrivateIp 等资产富化字段降级行为一致）。告警详情接口（DescribeEdrAlertInfo）不返回此字段</p>
+                     * @return MachineType <p>机器类型（列表接口专有；不限于容器告警，主机告警同样返回）。按 Quuid 富化自 machines.machine_type，原始枚举值原样透传、不做 i18n 翻译，前端自行映射展示。取值如 CVM / LH / Other / EKS-NATIVE 等；查不到对应机器信息时降级为空串 ""（与 InstanceName / PublicIp / PrivateIp 等资产富化字段降级行为一致）。告警详情接口（DescribeEdrAlertInfo）不返回此字段</p>
+                     * 
+                     */
+                    std::string GetMachineType() const;
+
+                    /**
+                     * 设置<p>机器类型（列表接口专有；不限于容器告警，主机告警同样返回）。按 Quuid 富化自 machines.machine_type，原始枚举值原样透传、不做 i18n 翻译，前端自行映射展示。取值如 CVM / LH / Other / EKS-NATIVE 等；查不到对应机器信息时降级为空串 ""（与 InstanceName / PublicIp / PrivateIp 等资产富化字段降级行为一致）。告警详情接口（DescribeEdrAlertInfo）不返回此字段</p>
+                     * @param _machineType <p>机器类型（列表接口专有；不限于容器告警，主机告警同样返回）。按 Quuid 富化自 machines.machine_type，原始枚举值原样透传、不做 i18n 翻译，前端自行映射展示。取值如 CVM / LH / Other / EKS-NATIVE 等；查不到对应机器信息时降级为空串 ""（与 InstanceName / PublicIp / PrivateIp 等资产富化字段降级行为一致）。告警详情接口（DescribeEdrAlertInfo）不返回此字段</p>
+                     * 
+                     */
+                    void SetMachineType(const std::string& _machineType);
+
+                    /**
+                     * 判断参数 MachineType 是否已赋值
+                     * @return MachineType 是否已赋值
+                     * 
+                     */
+                    bool MachineTypeHasBeenSet() const;
+
+                    /**
                      * 获取<p>镜像ID</p>
                      * @return ImageId <p>镜像ID</p>
                      * 
@@ -613,6 +634,69 @@ namespace TencentCloud
                      */
                     bool RaspOpenHasBeenSet() const;
 
+                    /**
+                     * 获取<p>容器名称</p>
+                     * @return ContainerName <p>容器名称</p>
+                     * 
+                     */
+                    std::string GetContainerName() const;
+
+                    /**
+                     * 设置<p>容器名称</p>
+                     * @param _containerName <p>容器名称</p>
+                     * 
+                     */
+                    void SetContainerName(const std::string& _containerName);
+
+                    /**
+                     * 判断参数 ContainerName 是否已赋值
+                     * @return ContainerName 是否已赋值
+                     * 
+                     */
+                    bool ContainerNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>容器镜像名称</p>
+                     * @return ImageName <p>容器镜像名称</p>
+                     * 
+                     */
+                    std::string GetImageName() const;
+
+                    /**
+                     * 设置<p>容器镜像名称</p>
+                     * @param _imageName <p>容器镜像名称</p>
+                     * 
+                     */
+                    void SetImageName(const std::string& _imageName);
+
+                    /**
+                     * 判断参数 ImageName 是否已赋值
+                     * @return ImageName 是否已赋值
+                     * 
+                     */
+                    bool ImageNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集群名称</p>
+                     * @return ClusterName <p>集群名称</p>
+                     * 
+                     */
+                    std::string GetClusterName() const;
+
+                    /**
+                     * 设置<p>集群名称</p>
+                     * @param _clusterName <p>集群名称</p>
+                     * 
+                     */
+                    void SetClusterName(const std::string& _clusterName);
+
+                    /**
+                     * 判断参数 ClusterName 是否已赋值
+                     * @return ClusterName 是否已赋值
+                     * 
+                     */
+                    bool ClusterNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -706,6 +790,12 @@ namespace TencentCloud
                     bool m_alertSourceHasBeenSet;
 
                     /**
+                     * <p>机器类型（列表接口专有；不限于容器告警，主机告警同样返回）。按 Quuid 富化自 machines.machine_type，原始枚举值原样透传、不做 i18n 翻译，前端自行映射展示。取值如 CVM / LH / Other / EKS-NATIVE 等；查不到对应机器信息时降级为空串 ""（与 InstanceName / PublicIp / PrivateIp 等资产富化字段降级行为一致）。告警详情接口（DescribeEdrAlertInfo）不返回此字段</p>
+                     */
+                    std::string m_machineType;
+                    bool m_machineTypeHasBeenSet;
+
+                    /**
                      * <p>镜像ID</p>
                      */
                     std::string m_imageId;
@@ -776,6 +866,24 @@ namespace TencentCloud
                      */
                     bool m_raspOpen;
                     bool m_raspOpenHasBeenSet;
+
+                    /**
+                     * <p>容器名称</p>
+                     */
+                    std::string m_containerName;
+                    bool m_containerNameHasBeenSet;
+
+                    /**
+                     * <p>容器镜像名称</p>
+                     */
+                    std::string m_imageName;
+                    bool m_imageNameHasBeenSet;
+
+                    /**
+                     * <p>集群名称</p>
+                     */
+                    std::string m_clusterName;
+                    bool m_clusterNameHasBeenSet;
 
                 };
             }

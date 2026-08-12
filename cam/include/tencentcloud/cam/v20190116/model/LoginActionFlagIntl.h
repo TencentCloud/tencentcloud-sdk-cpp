@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取手机
-                     * @return Phone 手机
+                     * 获取<p>手机</p>
+                     * @return Phone <p>手机</p>
                      * 
                      */
                     uint64_t GetPhone() const;
 
                     /**
-                     * 设置手机
-                     * @param _phone 手机
+                     * 设置<p>手机</p>
+                     * @param _phone <p>手机</p>
                      * 
                      */
                     void SetPhone(const uint64_t& _phone);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool PhoneHasBeenSet() const;
 
                     /**
-                     * 获取硬token
-                     * @return Token 硬token
+                     * 获取<p>硬token</p>
+                     * @return Token <p>硬token</p>
                      * 
                      */
                     uint64_t GetToken() const;
 
                     /**
-                     * 设置硬token
-                     * @param _token 硬token
+                     * 设置<p>硬token</p>
+                     * @param _token <p>硬token</p>
                      * 
                      */
                     void SetToken(const uint64_t& _token);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TokenHasBeenSet() const;
 
                     /**
-                     * 获取软token
-                     * @return Stoken 软token
+                     * 获取<p>软token</p>
+                     * @return Stoken <p>软token</p>
                      * 
                      */
                     uint64_t GetStoken() const;
 
                     /**
-                     * 设置软token
-                     * @param _stoken 软token
+                     * 设置<p>软token</p>
+                     * @param _stoken <p>软token</p>
                      * 
                      */
                     void SetStoken(const uint64_t& _stoken);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool StokenHasBeenSet() const;
 
                     /**
-                     * 获取微信
-                     * @return Wechat 微信
+                     * 获取<p>微信</p>
+                     * @return Wechat <p>微信</p>
                      * 
                      */
                     uint64_t GetWechat() const;
 
                     /**
-                     * 设置微信
-                     * @param _wechat 微信
+                     * 设置<p>微信</p>
+                     * @param _wechat <p>微信</p>
                      * 
                      */
                     void SetWechat(const uint64_t& _wechat);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool WechatHasBeenSet() const;
 
                     /**
-                     * 获取自定义
-                     * @return Custom 自定义
+                     * 获取<p>自定义</p>
+                     * @return Custom <p>自定义</p>
                      * 
                      */
                     uint64_t GetCustom() const;
 
                     /**
-                     * 设置自定义
-                     * @param _custom 自定义
+                     * 设置<p>自定义</p>
+                     * @param _custom <p>自定义</p>
                      * 
                      */
                     void SetCustom(const uint64_t& _custom);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool CustomHasBeenSet() const;
 
                     /**
-                     * 获取邮件
-                     * @return Mail 邮件
+                     * 获取<p>邮件</p>
+                     * @return Mail <p>邮件</p>
                      * 
                      */
                     uint64_t GetMail() const;
 
                     /**
-                     * 设置邮件
-                     * @param _mail 邮件
+                     * 设置<p>邮件</p>
+                     * @param _mail <p>邮件</p>
                      * 
                      */
                     void SetMail(const uint64_t& _mail);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool MailHasBeenSet() const;
 
                     /**
-                     * 获取u2f硬件token
-                     * @return U2FToken u2f硬件token
+                     * 获取<p>u2f硬件token</p>
+                     * @return U2FToken <p>u2f硬件token</p>
                      * 
                      */
                     uint64_t GetU2FToken() const;
 
                     /**
-                     * 设置u2f硬件token
-                     * @param _u2FToken u2f硬件token
+                     * 设置<p>u2f硬件token</p>
+                     * @param _u2FToken <p>u2f硬件token</p>
                      * 
                      */
                     void SetU2FToken(const uint64_t& _u2FToken);
@@ -193,49 +193,76 @@ namespace TencentCloud
                      */
                     bool U2FTokenHasBeenSet() const;
 
+                    /**
+                     * 获取<p>passkey通行密钥</p>
+                     * @return Passkey <p>passkey通行密钥</p>
+                     * 
+                     */
+                    uint64_t GetPasskey() const;
+
+                    /**
+                     * 设置<p>passkey通行密钥</p>
+                     * @param _passkey <p>passkey通行密钥</p>
+                     * 
+                     */
+                    void SetPasskey(const uint64_t& _passkey);
+
+                    /**
+                     * 判断参数 Passkey 是否已赋值
+                     * @return Passkey 是否已赋值
+                     * 
+                     */
+                    bool PasskeyHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 手机
+                     * <p>手机</p>
                      */
                     uint64_t m_phone;
                     bool m_phoneHasBeenSet;
 
                     /**
-                     * 硬token
+                     * <p>硬token</p>
                      */
                     uint64_t m_token;
                     bool m_tokenHasBeenSet;
 
                     /**
-                     * 软token
+                     * <p>软token</p>
                      */
                     uint64_t m_stoken;
                     bool m_stokenHasBeenSet;
 
                     /**
-                     * 微信
+                     * <p>微信</p>
                      */
                     uint64_t m_wechat;
                     bool m_wechatHasBeenSet;
 
                     /**
-                     * 自定义
+                     * <p>自定义</p>
                      */
                     uint64_t m_custom;
                     bool m_customHasBeenSet;
 
                     /**
-                     * 邮件
+                     * <p>邮件</p>
                      */
                     uint64_t m_mail;
                     bool m_mailHasBeenSet;
 
                     /**
-                     * u2f硬件token
+                     * <p>u2f硬件token</p>
                      */
                     uint64_t m_u2FToken;
                     bool m_u2FTokenHasBeenSet;
+
+                    /**
+                     * <p>passkey通行密钥</p>
+                     */
+                    uint64_t m_passkey;
+                    bool m_passkeyHasBeenSet;
 
                 };
             }

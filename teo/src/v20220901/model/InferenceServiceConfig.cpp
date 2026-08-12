@@ -24,7 +24,8 @@ InferenceServiceConfig::InferenceServiceConfig() :
     m_listenPortHasBeenSet(false),
     m_requestPathsHasBeenSet(false),
     m_containersHasBeenSet(false),
-    m_resourceConfigHasBeenSet(false)
+    m_resourceConfigHasBeenSet(false),
+    m_affinityConfigHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,23 @@ CoreInternalOutcome InferenceServiceConfig::Deserialize(const rapidjson::Value &
         m_resourceConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("AffinityConfig") && !value["AffinityConfig"].IsNull())
+    {
+        if (!value["AffinityConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InferenceServiceConfig.AffinityConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_affinityConfig.Deserialize(value["AffinityConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_affinityConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +161,15 @@ void InferenceServiceConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_resourceConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_affinityConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AffinityConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_affinityConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -210,5 +237,21 @@ void InferenceServiceConfig::SetResourceConfig(const InferenceResourceConfig& _r
 bool InferenceServiceConfig::ResourceConfigHasBeenSet() const
 {
     return m_resourceConfigHasBeenSet;
+}
+
+InferenceAffinityConfig InferenceServiceConfig::GetAffinityConfig() const
+{
+    return m_affinityConfig;
+}
+
+void InferenceServiceConfig::SetAffinityConfig(const InferenceAffinityConfig& _affinityConfig)
+{
+    m_affinityConfig = _affinityConfig;
+    m_affinityConfigHasBeenSet = true;
+}
+
+bool InferenceServiceConfig::AffinityConfigHasBeenSet() const
+{
+    return m_affinityConfigHasBeenSet;
 }
 

@@ -53,7 +53,11 @@ EDRRule::EDRRule() :
     m_processNetworkRulesHasBeenSet(false),
     m_appIDHasBeenSet(false),
     m_instanceIDsHasBeenSet(false),
-    m_excludeInstanceIDsHasBeenSet(false)
+    m_excludeInstanceIDsHasBeenSet(false),
+    m_clusterIDsHasBeenSet(false),
+    m_excludeClusterIDsHasBeenSet(false),
+    m_conditionMatchesHasBeenSet(false),
+    m_tagItemsHasBeenSet(false)
 {
 }
 
@@ -442,6 +446,72 @@ CoreInternalOutcome EDRRule::Deserialize(const rapidjson::Value &value)
         m_excludeInstanceIDsHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterIDs") && !value["ClusterIDs"].IsNull())
+    {
+        if (!value["ClusterIDs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EDRRule.ClusterIDs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ClusterIDs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_clusterIDs.push_back((*itr).GetString());
+        }
+        m_clusterIDsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExcludeClusterIDs") && !value["ExcludeClusterIDs"].IsNull())
+    {
+        if (!value["ExcludeClusterIDs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EDRRule.ExcludeClusterIDs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExcludeClusterIDs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_excludeClusterIDs.push_back((*itr).GetString());
+        }
+        m_excludeClusterIDsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConditionMatches") && !value["ConditionMatches"].IsNull())
+    {
+        if (!value["ConditionMatches"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EDRRule.ConditionMatches` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ConditionMatches"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ConditionMatch item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_conditionMatches.push_back(item);
+        }
+        m_conditionMatchesHasBeenSet = true;
+    }
+
+    if (value.HasMember("TagItems") && !value["TagItems"].IsNull())
+    {
+        if (!value["TagItems"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EDRRule.TagItems` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagItems"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            EDRRuleTagItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagItems.push_back(item);
+        }
+        m_tagItemsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -772,6 +842,62 @@ void EDRRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         for (auto itr = m_excludeInstanceIDs.begin(); itr != m_excludeInstanceIDs.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_clusterIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterIDs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_clusterIDs.begin(); itr != m_clusterIDs.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_excludeClusterIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludeClusterIDs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludeClusterIDs.begin(); itr != m_excludeClusterIDs.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_conditionMatchesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConditionMatches";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_conditionMatches.begin(); itr != m_conditionMatches.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_tagItemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagItems";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagItems.begin(); itr != m_tagItems.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -1304,5 +1430,69 @@ void EDRRule::SetExcludeInstanceIDs(const vector<string>& _excludeInstanceIDs)
 bool EDRRule::ExcludeInstanceIDsHasBeenSet() const
 {
     return m_excludeInstanceIDsHasBeenSet;
+}
+
+vector<string> EDRRule::GetClusterIDs() const
+{
+    return m_clusterIDs;
+}
+
+void EDRRule::SetClusterIDs(const vector<string>& _clusterIDs)
+{
+    m_clusterIDs = _clusterIDs;
+    m_clusterIDsHasBeenSet = true;
+}
+
+bool EDRRule::ClusterIDsHasBeenSet() const
+{
+    return m_clusterIDsHasBeenSet;
+}
+
+vector<string> EDRRule::GetExcludeClusterIDs() const
+{
+    return m_excludeClusterIDs;
+}
+
+void EDRRule::SetExcludeClusterIDs(const vector<string>& _excludeClusterIDs)
+{
+    m_excludeClusterIDs = _excludeClusterIDs;
+    m_excludeClusterIDsHasBeenSet = true;
+}
+
+bool EDRRule::ExcludeClusterIDsHasBeenSet() const
+{
+    return m_excludeClusterIDsHasBeenSet;
+}
+
+vector<ConditionMatch> EDRRule::GetConditionMatches() const
+{
+    return m_conditionMatches;
+}
+
+void EDRRule::SetConditionMatches(const vector<ConditionMatch>& _conditionMatches)
+{
+    m_conditionMatches = _conditionMatches;
+    m_conditionMatchesHasBeenSet = true;
+}
+
+bool EDRRule::ConditionMatchesHasBeenSet() const
+{
+    return m_conditionMatchesHasBeenSet;
+}
+
+vector<EDRRuleTagItem> EDRRule::GetTagItems() const
+{
+    return m_tagItems;
+}
+
+void EDRRule::SetTagItems(const vector<EDRRuleTagItem>& _tagItems)
+{
+    m_tagItems = _tagItems;
+    m_tagItemsHasBeenSet = true;
+}
+
+bool EDRRule::TagItemsHasBeenSet() const
+{
+    return m_tagItemsHasBeenSet;
 }
 

@@ -990,6 +990,56 @@ TcbrClient::StopVersionInstanceOutcomeCallable TcbrClient::StopVersionInstanceCa
     return prom->get_future();
 }
 
+TcbrClient::SubmitServerConfigChangeDiffOutcome TcbrClient::SubmitServerConfigChangeDiff(const SubmitServerConfigChangeDiffRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitServerConfigChangeDiff");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitServerConfigChangeDiffResponse rsp = SubmitServerConfigChangeDiffResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitServerConfigChangeDiffOutcome(rsp);
+        else
+            return SubmitServerConfigChangeDiffOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitServerConfigChangeDiffOutcome(outcome.GetError());
+    }
+}
+
+void TcbrClient::SubmitServerConfigChangeDiffAsync(const SubmitServerConfigChangeDiffRequest& request, const SubmitServerConfigChangeDiffAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SubmitServerConfigChangeDiffRequest&;
+    using Resp = SubmitServerConfigChangeDiffResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SubmitServerConfigChangeDiff", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbrClient::SubmitServerConfigChangeDiffOutcomeCallable TcbrClient::SubmitServerConfigChangeDiffCallable(const SubmitServerConfigChangeDiffRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SubmitServerConfigChangeDiffOutcome>>();
+    SubmitServerConfigChangeDiffAsync(
+    request,
+    [prom](
+        const TcbrClient*,
+        const SubmitServerConfigChangeDiffRequest&,
+        SubmitServerConfigChangeDiffOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbrClient::SubmitServerRollbackOutcome TcbrClient::SubmitServerRollback(const SubmitServerRollbackRequest &request)
 {
     auto outcome = MakeRequest(request, "SubmitServerRollback");

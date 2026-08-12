@@ -21,7 +21,8 @@ using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
 ResourceSupplyAttribute::ResourceSupplyAttribute() :
-    m_supplyTypeHasBeenSet(false)
+    m_supplyTypeHasBeenSet(false),
+    m_clusterTypeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome ResourceSupplyAttribute::Deserialize(const rapidjson::Value 
         m_supplyTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterType") && !value["ClusterType"].IsNull())
+    {
+        if (!value["ClusterType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceSupplyAttribute.ClusterType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterType = string(value["ClusterType"].GetString());
+        m_clusterTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void ResourceSupplyAttribute::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "SupplyType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_supplyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void ResourceSupplyAttribute::SetSupplyType(const string& _supplyType)
 bool ResourceSupplyAttribute::SupplyTypeHasBeenSet() const
 {
     return m_supplyTypeHasBeenSet;
+}
+
+string ResourceSupplyAttribute::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void ResourceSupplyAttribute::SetClusterType(const string& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool ResourceSupplyAttribute::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
 }
 

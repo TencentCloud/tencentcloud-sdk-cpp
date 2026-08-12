@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * instance_id和对应的appid账号信息
+                * 主机实例定位信息
                 */
                 class InstanceIDWithAppIdItem : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>APPID</p>
-                     * @return AppId <p>APPID</p>
+                     * 获取机器所属AppId
+                     * @return AppId 机器所属AppId
                      * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
-                     * 设置<p>APPID</p>
-                     * @param _appId <p>APPID</p>
+                     * 设置机器所属AppId
+                     * @param _appId 机器所属AppId
                      * 
                      */
                     void SetAppId(const uint64_t& _appId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>实例ID</p>
-                     * @return InstanceID <p>实例ID</p>
+                     * 获取机器实例ID
+                     * @return InstanceID 机器实例ID
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
-                     * 设置<p>实例ID</p>
-                     * @param _instanceID <p>实例ID</p>
+                     * 设置机器实例ID
+                     * @param _instanceID 机器实例ID
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>APPID</p>
+                     * 机器所属AppId
                      */
                     uint64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * <p>实例ID</p>
+                     * 机器实例ID
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;

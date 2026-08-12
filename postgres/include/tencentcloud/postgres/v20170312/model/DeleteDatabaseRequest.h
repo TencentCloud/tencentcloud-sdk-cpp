@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>实例ID。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
+                     * @return DBInstanceId <p>实例ID。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
+                     * 
+                     */
+                    std::string GetDBInstanceId() const;
+
+                    /**
+                     * 设置<p>实例ID。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
+                     * @param _dBInstanceId <p>实例ID。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
+                     * 
+                     */
+                    void SetDBInstanceId(const std::string& _dBInstanceId);
+
+                    /**
+                     * 判断参数 DBInstanceId 是否已赋值
+                     * @return DBInstanceId 是否已赋值
+                     * 
+                     */
+                    bool DBInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>数据库名称</p>
+                     * @return DatabaseName <p>数据库名称</p>
+                     * 
+                     */
+                    std::string GetDatabaseName() const;
+
+                    /**
+                     * 设置<p>数据库名称</p>
+                     * @param _databaseName <p>数据库名称</p>
+                     * 
+                     */
+                    void SetDatabaseName(const std::string& _databaseName);
+
+                    /**
+                     * 判断参数 DatabaseName 是否已赋值
+                     * @return DatabaseName 是否已赋值
+                     * 
+                     */
+                    bool DatabaseNameHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>实例ID。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
+                     */
+                    std::string m_dBInstanceId;
+                    bool m_dBInstanceIdHasBeenSet;
+
+                    /**
+                     * <p>数据库名称</p>
+                     */
+                    std::string m_databaseName;
+                    bool m_databaseNameHasBeenSet;
 
                 };
             }
